@@ -1,8 +1,16 @@
 import { Linkedin, Twitter } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
+  const { pathname } = useLocation();
   const { t } = useLanguage();
+
+  const handleLogoClick = () => {
+    if (pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   return (
     <footer className="bg-primary section-padding py-16">
@@ -10,13 +18,13 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-6">
+            <Link to="/" className="flex items-center gap-3 mb-6" onClick={handleLogoClick}>
               <img
                 src="/bionixus-logo.png"
                 alt="BioNixus"
                 className="h-10 w-auto object-contain"
               />
-            </div>
+            </Link>
             <p className="text-primary-foreground/70 max-w-md leading-relaxed mb-6">
               {t.footer.tagline}. Delivering evidence-based insights to pharmaceutical and biotech leaders worldwide.
             </p>
@@ -41,24 +49,24 @@ const Footer = () => {
             <h4 className="font-semibold text-primary-foreground mb-6">Company</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#about" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                <Link to="/#about" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
                   {t.nav.about}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#services" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                <Link to="/#services" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
                   {t.nav.services}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#insights" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                <Link to="/#insights" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
                   {t.nav.insights}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#contact" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                <Link to="/#contact" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
                   Careers
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

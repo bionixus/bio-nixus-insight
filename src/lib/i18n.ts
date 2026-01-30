@@ -79,6 +79,21 @@ export const translations = {
         },
       ],
     },
+    blog: {
+      title: 'Latest Insights',
+      subtitle: 'Thought leadership and research perspectives from our global team',
+      readMore: 'Read Article',
+      readMoreArticles: 'Read more articles',
+      filterAllTopics: 'All topics',
+      filterAllCountries: 'All countries',
+      filterByTopic: 'Topic',
+      filterByCountry: 'Country',
+      items: [
+        { category: 'Market Access', country: 'Europe', title: 'The Future of Value-Based Healthcare Agreements in Europe', excerpt: 'How innovative contracting models are reshaping pharmaceutical pricing and access strategies across major European markets.', date: '2024 Q4 Report' },
+        { category: 'Digital Health', country: 'USA', title: 'AI-Driven Drug Discovery: Market Implications', excerpt: 'Analyzing the competitive landscape shift as artificial intelligence transforms pharmaceutical R&D and time-to-market.', date: 'Strategic Brief' },
+        { category: 'Oncology', country: 'UK', title: 'Precision Medicine Market Dynamics 2025', excerpt: 'Comprehensive analysis of biomarker-driven therapies and the evolving oncology treatment paradigm.', date: 'Industry Analysis' },
+      ],
+    },
     stats: {
       title: 'Global Impact',
       items: [
@@ -98,6 +113,12 @@ export const translations = {
       cta: 'Schedule a Consultation',
       email: 'admin@bionixus.com',
       headquarters: 'Wyoming, USA',
+    },
+    localePrompt: {
+      title: 'You are opening from {region}.',
+      question: 'Do you want to switch to {language}?',
+      yes: 'Yes',
+      no: 'No',
     },
     footer: {
       tagline: 'Strategic Healthcare Intelligence',
@@ -175,6 +196,21 @@ export const translations = {
         },
       ],
     },
+    blog: {
+      title: 'Aktuelle Erkenntnisse',
+      subtitle: 'Thought Leadership und Forschungsperspektiven von unserem globalen Team',
+      readMore: 'Artikel lesen',
+      readMoreArticles: 'Weitere Artikel lesen',
+      filterAllTopics: 'Alle Themen',
+      filterAllCountries: 'Alle Länder',
+      filterByTopic: 'Thema',
+      filterByCountry: 'Land',
+      items: [
+        { category: 'Marktzugang', country: 'Europa', title: 'Die Zukunft wertbasierter Gesundheitsvereinbarungen in Europa', excerpt: 'Wie innovative Vertragsmodelle pharmazeutische Preis- und Zugangsstrategien in großen europäischen Märkten umgestalten.', date: '2024 Q4 Bericht' },
+        { category: 'Digitale Gesundheit', country: 'USA', title: 'KI-gesteuerte Arzneimittelentdeckung: Marktimplikationen', excerpt: 'Analyse der Wettbewerbslandschaftsverschiebung, während künstliche Intelligenz pharmazeutische F&E transformiert.', date: 'Strategische Kurzanalyse' },
+        { category: 'Onkologie', country: 'UK', title: 'Präzisionsmedizin Marktdynamik 2025', excerpt: 'Umfassende Analyse von Biomarker-gesteuerten Therapien und dem sich entwickelnden Onkologie-Behandlungsparadigma.', date: 'Branchenanalyse' },
+      ],
+    },
     stats: {
       title: 'Globale Wirkung',
       items: [
@@ -194,6 +230,12 @@ export const translations = {
       cta: 'Beratung vereinbaren',
       email: 'admin@bionixus.com',
       headquarters: 'Wyoming, USA',
+    },
+    localePrompt: {
+      title: 'Sie öffnen von {region}.',
+      question: 'Möchten Sie zu {language} wechseln?',
+      yes: 'Ja',
+      no: 'Nein',
     },
     footer: {
       tagline: 'Strategische Gesundheitsintelligenz',
@@ -271,6 +313,21 @@ export const translations = {
         },
       ],
     },
+    blog: {
+      title: 'Dernières Perspectives',
+      subtitle: 'Leadership éclairé et perspectives de recherche de notre équipe mondiale',
+      readMore: 'Lire l\'article',
+      readMoreArticles: 'Lire plus d\'articles',
+      filterAllTopics: 'Tous les thèmes',
+      filterAllCountries: 'Tous les pays',
+      filterByTopic: 'Thème',
+      filterByCountry: 'Pays',
+      items: [
+        { category: 'Accès au Marché', country: 'Europe', title: 'L\'Avenir des Accords de Santé Basés sur la Valeur en Europe', excerpt: 'Comment les modèles contractuels innovants remodèlent les stratégies de prix et d\'accès pharmaceutiques.', date: 'Rapport T4 2024' },
+        { category: 'Santé Numérique', country: 'USA', title: 'Découverte de Médicaments par l\'IA: Implications Marché', excerpt: 'Analyse du changement de paysage concurrentiel alors que l\'IA transforme la R&D pharmaceutique.', date: 'Note Stratégique' },
+        { category: 'Oncologie', country: 'Royaume-Uni', title: 'Dynamique du Marché de la Médecine de Précision 2025', excerpt: 'Analyse complète des thérapies guidées par biomarqueurs et du paradigme de traitement oncologique.', date: 'Analyse Sectorielle' },
+      ],
+    },
     stats: {
       title: 'Impact Mondial',
       items: [
@@ -290,6 +347,12 @@ export const translations = {
       cta: 'Planifier une Consultation',
       email: 'admin@bionixus.com',
       headquarters: 'Wyoming, USA',
+    },
+    localePrompt: {
+      title: 'Vous ouvrez depuis {region}.',
+      question: 'Voulez-vous passer à {language} ?',
+      yes: 'Oui',
+      no: 'Non',
     },
     footer: {
       tagline: 'Intelligence Stratégique en Santé',
@@ -367,6 +430,21 @@ export const translations = {
         },
       ],
     },
+    blog: {
+      title: 'Últimas Perspectivas',
+      subtitle: 'Liderazgo de pensamiento y perspectivas de investigación de nuestro equipo global',
+      readMore: 'Leer Artículo',
+      readMoreArticles: 'Leer más artículos',
+      filterAllTopics: 'Todos los temas',
+      filterAllCountries: 'Todos los países',
+      filterByTopic: 'Tema',
+      filterByCountry: 'País',
+      items: [
+        { category: 'Acceso al Mercado', country: 'Europa', title: 'El Futuro de los Acuerdos de Salud Basados en Valor en Europa', excerpt: 'Cómo los modelos de contratación innovadores están remodelando las estrategias de precios farmacéuticos.', date: 'Informe Q4 2024' },
+        { category: 'Salud Digital', country: 'EE. UU.', title: 'Descubrimiento de Fármacos con IA: Implicaciones de Mercado', excerpt: 'Análisis del cambio en el panorama competitivo mientras la IA transforma la I+D farmacéutica.', date: 'Brief Estratégico' },
+        { category: 'Oncología', country: 'Reino Unido', title: 'Dinámica del Mercado de Medicina de Precisión 2025', excerpt: 'Análisis integral de terapias guiadas por biomarcadores y el paradigma de tratamiento oncológico.', date: 'Análisis Industrial' },
+      ],
+    },
     stats: {
       title: 'Impacto Global',
       items: [
@@ -386,6 +464,12 @@ export const translations = {
       cta: 'Programar Consulta',
       email: 'admin@bionixus.com',
       headquarters: 'Wyoming, USA',
+    },
+    localePrompt: {
+      title: 'Está abriendo desde {region}.',
+      question: '¿Desea cambiar a {language}?',
+      yes: 'Sí',
+      no: 'No',
     },
     footer: {
       tagline: 'Inteligencia Estratégica en Salud',
@@ -463,6 +547,21 @@ export const translations = {
         },
       ],
     },
+    blog: {
+      title: '最新洞察',
+      subtitle: '来自我们全球团队的思想领导力和研究视角',
+      readMore: '阅读文章',
+      readMoreArticles: '阅读更多文章',
+      filterAllTopics: '全部主题',
+      filterAllCountries: '全部国家',
+      filterByTopic: '主题',
+      filterByCountry: '国家',
+      items: [
+        { category: '市场准入', country: '欧洲', title: '欧洲基于价值的医疗协议的未来', excerpt: '创新合同模式如何重塑主要欧洲市场的制药定价和准入策略。', date: '2024年第四季度报告' },
+        { category: '数字健康', country: '美国', title: 'AI驱动的药物发现：市场影响', excerpt: '分析人工智能改变制药研发和上市时间时的竞争格局变化。', date: '战略简报' },
+        { category: '肿瘤学', country: '英国', title: '2025年精准医疗市场动态', excerpt: '对生物标志物驱动疗法和不断发展的肿瘤治疗范式的全面分析。', date: '行业分析' },
+      ],
+    },
     stats: {
       title: '全球影响',
       items: [
@@ -482,6 +581,12 @@ export const translations = {
       cta: '预约咨询',
       email: 'admin@bionixus.com',
       headquarters: 'Wyoming, USA',
+    },
+    localePrompt: {
+      title: '您正在从 {region} 打开。',
+      question: '是否切换到 {language}？',
+      yes: '是',
+      no: '否',
     },
     footer: {
       tagline: '战略医疗健康智能',
@@ -559,6 +664,21 @@ export const translations = {
         },
       ],
     },
+    blog: {
+      title: 'أحدث الرؤى',
+      subtitle: 'القيادة الفكرية ووجهات نظر البحث من فريقنا العالمي',
+      readMore: 'اقرأ المقال',
+      readMoreArticles: 'اقرأ المزيد من المقالات',
+      filterAllTopics: 'جميع المواضيع',
+      filterAllCountries: 'جميع البلدان',
+      filterByTopic: 'الموضوع',
+      filterByCountry: 'البلد',
+      items: [
+        { category: 'الوصول إلى السوق', country: 'أوروبا', title: 'مستقبل اتفاقيات الرعاية الصحية القائمة على القيمة في أوروبا', excerpt: 'كيف تعيد نماذج التعاقد المبتكرة تشكيل استراتيجيات التسعير والوصول الصيدلاني عبر الأسواق الأوروبية الرئيسية.', date: 'تقرير الربع الرابع 2024' },
+        { category: 'الصحة الرقمية', country: 'الولايات المتحدة', title: 'اكتشاف الأدوية بالذكاء الاصطناعي: تداعيات السوق', excerpt: 'تحليل تحول المشهد التنافسي بينما يحول الذكاء الاصطناعي البحث والتطوير الصيدلاني ووقت الوصول إلى السوق.', date: 'موجز استراتيجي' },
+        { category: 'الأورام', country: 'المملكة المتحدة', title: 'ديناميكيات سوق الطب الدقيق 2025', excerpt: 'تحليل شامل للعلاجات الموجهة بالمؤشرات الحيوية ونموذج علاج الأورام المتطور.', date: 'تحليل الصناعة' },
+      ],
+    },
     stats: {
       title: 'التأثير العالمي',
       items: [
@@ -578,6 +698,12 @@ export const translations = {
       cta: 'حدد موعد استشارة',
       email: 'admin@bionixus.com',
       headquarters: 'Wyoming, USA',
+    },
+    localePrompt: {
+      title: 'أنت تفتح من {region}.',
+      question: 'هل تريد التبديل إلى {language}؟',
+      yes: 'نعم',
+      no: 'لا',
     },
     footer: {
       tagline: 'الذكاء الاستراتيجي للرعاية الصحية',

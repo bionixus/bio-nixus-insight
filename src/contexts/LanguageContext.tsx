@@ -1,6 +1,8 @@
 import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 import { Language, translations, languages } from '@/lib/i18n'; // stats: 10+, 120, 15+
 
+const LANGUAGE_STORAGE_KEY = 'bionixus-language';
+
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
@@ -11,7 +13,12 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguageState] = useState<Language>('en');
+
+  const setLanguage = (lang: Language) => {
+    setLanguageState(lang);
+    localStorage.setItem(LANGUAGE_STORAGE_KEY, lang);
+  };
 
   const currentLang = languages.find(l => l.code === language);
   const isRTL = currentLang?.rtl || false;
@@ -22,7 +29,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   }, [language, isRTL]);
 
   const value = {
-    language,
+    language: language,
     setLanguage,
     t: translations[language],
     isRTL,
