@@ -18,39 +18,50 @@ export const translations = {
       contact: 'Contact',
     },
     hero: {
-      tagline: 'Healthcare Market Research',
-      title: 'Strategic Intelligence for Healthcare Innovation',
-      subtitle: 'We transform complex healthcare data into actionable insights that drive pharmaceutical excellence and patient outcomes worldwide.',
-      cta: 'Explore Our Expertise',
-      ctaSecondary: 'View Case Studies',
+      tagline: 'EMEA Healthcare Market Research',
+      title: 'EMEA Healthcare Market Research for Pharmaceutical Excellence',
+      subtitle: 'Transform Physician & Hospital Insights into Strategic Intelligence Across UK, Europe & MENA Markets',
+      valueProposition: 'We deliver comprehensive quantitative and qualitative market research services that transform clinical data into actionable pharmaceutical intelligence. Our specialized methodology captures authentic physician perspectives from NHS and private healthcare settings, hospital trends, and patient insights across UK, European, and MENA markets to power your drug development, market access, and commercial strategies.',
+      serviceHighlights: [
+        'UK NHS & Private Healthcare Research',
+        'Pan-European Physician Surveys',
+        'Qualitative KOL Interviews',
+        'Multi-Country Data Analytics',
+        'UK • Europe • MENA Coverage',
+      ],
+      cta: 'Get UK Research Proposal',
+      ctaSecondary: 'View European Case Studies',
+      trustBar: 'Trusted by pharmaceutical companies in',
+      trustCountries: 'UK • Germany • France • Spain • Italy • UAE • Saudi Arabia • Egypt • Kuwait • Qatar',
+      complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'SFDA Compliant', 'ICH-GCP'],
     },
     services: {
-      title: 'Our Expertise',
-      subtitle: 'Comprehensive healthcare market research solutions tailored to your strategic needs',
+      title: 'Comprehensive Healthcare Market Research Services for UK & European Pharmaceutical Companies',
+      subtitle: 'Quantitative and qualitative insights from physicians and hospitals across UK, Europe & MENA',
       items: [
         {
-          title: 'Market Access & Pricing',
-          description: 'Navigate complex reimbursement landscapes with evidence-based pricing strategies and payer engagement frameworks.',
+          title: 'Quantitative Healthcare Research & Physician Surveys Across UK & Europe',
+          description: 'Robust statistical insights from large-scale physician and healthcare professional surveys across UK, European and MENA markets. NHS physician surveys and GP practice research, private healthcare provider studies (UK, Germany, France), hospital preference studies, prescription behavior tracking, NICE/HTA decision-maker insights, payer and reimbursement landscape analysis. Multi-country physician surveys (UAE, Saudi Arabia, Egypt, Kuwait, Qatar). Deliverables: Statistical reports, UK/EU market size estimates, NHS pathway analysis, trend forecasting, segmentation analysis, cross-country comparative insights.',
         },
         {
-          title: 'Competitive Intelligence',
-          description: 'Stay ahead with real-time competitive monitoring, pipeline analysis, and strategic positioning insights.',
+          title: 'Qualitative Pharmaceutical Research & Expert Insights - UK & Europe',
+          description: 'Deep-dive qualitative research capturing nuanced clinical perspectives and unmet medical needs. UK: In-depth NHS consultant and GP interviews, private healthcare specialist insights, NICE committee member engagement, Royal College expert advisory boards. European: Pan-European KOL mapping and interviews, multi-country healthcare stakeholder focus groups, cross-border treatment pathway analysis. MENA: Regional physician and hospital administrator interviews, Gulf healthcare system insights. Deliverables: Thematic analysis reports, UK NHS insights, European consensus summaries, strategic market access recommendations.',
         },
         {
-          title: 'Patient Journey Mapping',
-          description: 'Understand the complete patient experience from diagnosis to treatment to optimize touchpoints and outcomes.',
+          title: 'Market Access & HTA Strategy',
+          description: 'NICE, G-BA, HAS and HTA body requirement integration. Evidence-based pricing strategies and payer engagement frameworks for UK and European markets. Reimbursement landscape modeling and cost-effectiveness analysis for HTA submissions.',
         },
         {
-          title: 'KOL & Stakeholder Analysis',
-          description: 'Identify and engage key opinion leaders with data-driven influence mapping and relationship strategies.',
+          title: 'KOL & Stakeholder Mapping',
+          description: 'UK and Pan-European KOL mapping and engagement. NHS consultant and Royal College member networks. Multi-country medical association partnerships and hospital provider panels.',
         },
         {
-          title: 'Clinical Trial Optimization',
-          description: 'Accelerate development with site selection analytics, patient recruitment strategies, and protocol optimization.',
+          title: 'Geographic Coverage: UK • Europe • MENA',
+          description: 'UK: NHS England, Scotland, Wales, Northern Ireland; London teaching hospitals; NICE, MHRA stakeholder research. Europe: Germany (G-BA, IQWiG), France (HAS, CEPS), Spain, Italy, Netherlands, Belgium, Switzerland. MENA: UAE (DHA, HAAD), Saudi Arabia (Vision 2030), Egypt, Kuwait, Qatar.',
         },
         {
-          title: 'Launch Excellence',
-          description: 'Maximize launch impact with integrated go-to-market strategies, forecasting, and market shaping initiatives.',
+          title: 'Methodology & Compliance',
+          description: 'MHRA and EMA regulatory alignment. GDPR-compliant data collection. NHS Research Ethics Committee (REC) standards. Multi-lingual survey deployment (English, German, French, Spanish, Italian, Arabic). Secure data encryption and HEOR analysis.',
         },
       ],
     },
@@ -121,10 +132,16 @@ export const translations = {
       no: 'No',
     },
     footer: {
-      tagline: 'Strategic Healthcare Intelligence',
+      tagline: 'EMEA Healthcare Market Research | Pharma Insights Europe & MENA',
       copyright: '© 2024 BioNixus. All rights reserved.',
       privacy: 'Privacy Policy',
       terms: 'Terms of Service',
+    },
+    cookieConsent: {
+      message: 'We use cookies to improve your experience and analyse site traffic. By clicking Accept you agree to our use of cookies and our Privacy Policy.',
+      accept: 'Accept',
+      decline: 'Decline',
+      privacyLink: 'Privacy Policy',
     },
   },
   de: {
@@ -135,11 +152,16 @@ export const translations = {
       contact: 'Kontakt',
     },
     hero: {
-      tagline: 'Gesundheitsmarktforschung',
-      title: 'Strategische Intelligenz für Gesundheitsinnovation',
-      subtitle: 'Wir transformieren komplexe Gesundheitsdaten in umsetzbare Erkenntnisse, die pharmazeutische Exzellenz und Patientenergebnisse weltweit vorantreiben.',
-      cta: 'Unsere Expertise entdecken',
-      ctaSecondary: 'Fallstudien ansehen',
+      tagline: 'EMEA Healthcare Market Research',
+      title: 'EMEA Healthcare Market Research for Pharmaceutical Excellence',
+      subtitle: 'Transform Physician & Hospital Insights into Strategic Intelligence Across UK, Europe & MENA Markets',
+      valueProposition: 'We deliver comprehensive quantitative and qualitative market research services that transform clinical data into actionable pharmaceutical intelligence. Our specialized methodology captures authentic physician perspectives from NHS and private healthcare settings, hospital trends, and patient insights across UK, European, and MENA markets to power your drug development, market access, and commercial strategies.',
+      serviceHighlights: ['UK NHS & Private Healthcare Research', 'Pan-European Physician Surveys', 'Qualitative KOL Interviews', 'Multi-Country Data Analytics', 'UK • Europe • MENA Coverage'],
+      cta: 'Get UK Research Proposal',
+      ctaSecondary: 'View European Case Studies',
+      trustBar: 'Trusted by pharmaceutical companies in',
+      trustCountries: 'UK • Germany • France • Spain • Italy • UAE • Saudi Arabia • Egypt • Kuwait • Qatar',
+      complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'SFDA Compliant', 'ICH-GCP'],
     },
     services: {
       title: 'Unsere Expertise',
@@ -243,6 +265,12 @@ export const translations = {
       privacy: 'Datenschutz',
       terms: 'Nutzungsbedingungen',
     },
+    cookieConsent: {
+      message: 'Wir verwenden Cookies, um Ihre Erfahrung zu verbessern und den Website-Traffic zu analysieren. Mit Klick auf Akzeptieren stimmen Sie unserer Cookie-Nutzung und der Datenschutzerklärung zu.',
+      accept: 'Akzeptieren',
+      decline: 'Ablehnen',
+      privacyLink: 'Datenschutz',
+    },
   },
   fr: {
     nav: {
@@ -252,11 +280,16 @@ export const translations = {
       contact: 'Contact',
     },
     hero: {
-      tagline: 'Études de Marché Santé',
-      title: 'Intelligence Stratégique pour l\'Innovation en Santé',
-      subtitle: 'Nous transformons des données de santé complexes en insights actionnables qui favorisent l\'excellence pharmaceutique et les résultats patients dans le monde entier.',
-      cta: 'Découvrir Notre Expertise',
-      ctaSecondary: 'Voir les Études de Cas',
+      tagline: 'EMEA Healthcare Market Research',
+      title: 'EMEA Healthcare Market Research for Pharmaceutical Excellence',
+      subtitle: 'Transform Physician & Hospital Insights into Strategic Intelligence Across UK, Europe & MENA Markets',
+      valueProposition: 'We deliver comprehensive quantitative and qualitative market research services that transform clinical data into actionable pharmaceutical intelligence. Our specialized methodology captures authentic physician perspectives from NHS and private healthcare settings, hospital trends, and patient insights across UK, European, and MENA markets to power your drug development, market access, and commercial strategies.',
+      serviceHighlights: ['UK NHS & Private Healthcare Research', 'Pan-European Physician Surveys', 'Qualitative KOL Interviews', 'Multi-Country Data Analytics', 'UK • Europe • MENA Coverage'],
+      cta: 'Get UK Research Proposal',
+      ctaSecondary: 'View European Case Studies',
+      trustBar: 'Trusted by pharmaceutical companies in',
+      trustCountries: 'UK • Germany • France • Spain • Italy • UAE • Saudi Arabia • Egypt • Kuwait • Qatar',
+      complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'SFDA Compliant', 'ICH-GCP'],
     },
     services: {
       title: 'Notre Expertise',
@@ -360,6 +393,12 @@ export const translations = {
       privacy: 'Politique de Confidentialité',
       terms: 'Conditions d\'Utilisation',
     },
+    cookieConsent: {
+      message: 'Nous utilisons des cookies pour améliorer votre expérience et analyser le trafic. En cliquant sur Accepter, vous acceptez notre utilisation des cookies et notre Politique de Confidentialité.',
+      accept: 'Accepter',
+      decline: 'Refuser',
+      privacyLink: 'Politique de Confidentialité',
+    },
   },
   es: {
     nav: {
@@ -369,11 +408,16 @@ export const translations = {
       contact: 'Contacto',
     },
     hero: {
-      tagline: 'Investigación de Mercado Sanitario',
-      title: 'Inteligencia Estratégica para la Innovación en Salud',
-      subtitle: 'Transformamos datos sanitarios complejos en insights accionables que impulsan la excelencia farmacéutica y los resultados de los pacientes en todo el mundo.',
-      cta: 'Explorar Nuestra Experiencia',
-      ctaSecondary: 'Ver Casos de Estudio',
+      tagline: 'EMEA Healthcare Market Research',
+      title: 'EMEA Healthcare Market Research for Pharmaceutical Excellence',
+      subtitle: 'Transform Physician & Hospital Insights into Strategic Intelligence Across UK, Europe & MENA Markets',
+      valueProposition: 'We deliver comprehensive quantitative and qualitative market research services that transform clinical data into actionable pharmaceutical intelligence. Our specialized methodology captures authentic physician perspectives from NHS and private healthcare settings, hospital trends, and patient insights across UK, European, and MENA markets to power your drug development, market access, and commercial strategies.',
+      serviceHighlights: ['UK NHS & Private Healthcare Research', 'Pan-European Physician Surveys', 'Qualitative KOL Interviews', 'Multi-Country Data Analytics', 'UK • Europe • MENA Coverage'],
+      cta: 'Get UK Research Proposal',
+      ctaSecondary: 'View European Case Studies',
+      trustBar: 'Trusted by pharmaceutical companies in',
+      trustCountries: 'UK • Germany • France • Spain • Italy • UAE • Saudi Arabia • Egypt • Kuwait • Qatar',
+      complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'SFDA Compliant', 'ICH-GCP'],
     },
     services: {
       title: 'Nuestra Experiencia',
@@ -477,6 +521,12 @@ export const translations = {
       privacy: 'Política de Privacidad',
       terms: 'Términos de Servicio',
     },
+    cookieConsent: {
+      message: 'Utilizamos cookies para mejorar su experiencia y analizar el tráfico del sitio. Al hacer clic en Aceptar, acepta nuestro uso de cookies y nuestra Política de Privacidad.',
+      accept: 'Aceptar',
+      decline: 'Rechazar',
+      privacyLink: 'Política de Privacidad',
+    },
   },
   zh: {
     nav: {
@@ -486,11 +536,16 @@ export const translations = {
       contact: '联系我们',
     },
     hero: {
-      tagline: '医疗健康市场研究',
-      title: '医疗创新的战略智能',
-      subtitle: '我们将复杂的医疗健康数据转化为可操作的洞察，推动全球制药卓越和患者成果。',
-      cta: '探索我们的专业知识',
-      ctaSecondary: '查看案例研究',
+      tagline: 'EMEA Healthcare Market Research',
+      title: 'EMEA Healthcare Market Research for Pharmaceutical Excellence',
+      subtitle: 'Transform Physician & Hospital Insights into Strategic Intelligence Across UK, Europe & MENA Markets',
+      valueProposition: 'We deliver comprehensive quantitative and qualitative market research services that transform clinical data into actionable pharmaceutical intelligence. Our specialized methodology captures authentic physician perspectives from NHS and private healthcare settings, hospital trends, and patient insights across UK, European, and MENA markets to power your drug development, market access, and commercial strategies.',
+      serviceHighlights: ['UK NHS & Private Healthcare Research', 'Pan-European Physician Surveys', 'Qualitative KOL Interviews', 'Multi-Country Data Analytics', 'UK • Europe • MENA Coverage'],
+      cta: 'Get UK Research Proposal',
+      ctaSecondary: 'View European Case Studies',
+      trustBar: 'Trusted by pharmaceutical companies in',
+      trustCountries: 'UK • Germany • France • Spain • Italy • UAE • Saudi Arabia • Egypt • Kuwait • Qatar',
+      complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'SFDA Compliant', 'ICH-GCP'],
     },
     services: {
       title: '我们的专业领域',
@@ -594,6 +649,12 @@ export const translations = {
       privacy: '隐私政策',
       terms: '服务条款',
     },
+    cookieConsent: {
+      message: '我们使用 Cookie 来改善您的体验并分析网站流量。点击“接受”即表示您同意我们使用 Cookie 和我们的隐私政策。',
+      accept: '接受',
+      decline: '拒绝',
+      privacyLink: '隐私政策',
+    },
   },
   ar: {
     nav: {
@@ -603,15 +664,70 @@ export const translations = {
       contact: 'اتصل بنا',
     },
     hero: {
-      tagline: 'أبحاث سوق الرعاية الصحية',
-      title: 'الذكاء الاستراتيجي للابتكار في الرعاية الصحية',
-      subtitle: 'نحول بيانات الرعاية الصحية المعقدة إلى رؤى قابلة للتنفيذ تدفع التميز الصيدلاني ونتائج المرضى في جميع أنحاء العالم.',
-      cta: 'استكشف خبرتنا',
-      ctaSecondary: 'عرض دراسات الحالة',
+      tagline: 'أبحاث السوق الصحية في الشرق الأوسط والخليج',
+      title: 'أبحاث السوق الصحية والدوائية في الشرق الأوسط ودول الخليج',
+      subtitle: 'حوّل رؤى الأطباء والمستشفيات إلى ذكاء استراتيجي عبر أسواق الخليج وشمال أفريقيا',
+      valueProposition: 'نقدم خدمات أبحاث سوق كمية ونوعية شاملة تحول البيانات السريرية إلى معلومات دوائية قابلة للتنفيذ. منهجيتنا المتخصصة تلتقط وجهات نظر الأطباء الحقيقية من القطاعين الحكومي والخاص، اتجاهات المستشفيات، ورؤى المرضى عبر أسواق دول الخليج والشرق الأوسط لدعم استراتيجيات تطوير الأدوية، الوصول للسوق، والتسويق التجاري.',
+      serviceHighlights: ['أبحاث المستشفيات الحكومية والخاصة', 'استبيانات الأطباء الكمية', 'مقابلات الخبراء النوعية', 'تحليل البيانات متعدد الدول', 'تغطية شاملة للخليج والشرق الأوسط'],
+      cta: 'احصل على عرض أسعار',
+      ctaSecondary: 'استعرض دراسات الحالة',
+      trustBar: 'موثوق به من قبل شركات الأدوية في',
+      trustCountries: 'السعودية • الإمارات • الكويت • قطر • مصر • المغرب • الجزائر • تونس',
+      complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'SFDA Compliant', 'ICH-GCP'],
     },
     services: {
       title: 'خبرتنا',
       subtitle: 'حلول شاملة لأبحاث سوق الرعاية الصحية مصممة وفقاً لاحتياجاتك الاستراتيجية',
+      servicePrimaryAr: [
+        {
+          title: 'أبحاث السوق الكمية واستبيانات الأطباء في دول الخليج والشرق الأوسط',
+          lead: 'رؤى إحصائية قوية من استبيانات واسعة النطاق للأطباء والمهنيين الصحيين عبر أسواق الخليج، شمال أفريقيا والشرق الأوسط. منهجياتنا الكمية تقدم الأدلة التي تحتاجها لاتخاذ قرارات استراتيجية.',
+          countries: [
+            { name: 'المملكة العربية السعودية', items: ['استبيانات أطباء وزارة الصحة والقطاع الخاص', 'دراسات المستشفيات الجامعية والتخصصية (الرياض، جدة، الدمام)', 'تحليل سلوك الوصفات الطبية والتفضيلات العلاجية', 'أبحاث مدن الملك فهد الطبية ومجمع الملك عبدالله الطبي', 'دراسات رؤية 2030 والتحول الصحي', 'تحليل حجم السوق والتنبؤ بالاتجاهات'] },
+            { name: 'الإمارات العربية المتحدة', items: ['أبحاث هيئة الصحة بدبي (DHA) ودائرة الصحة أبوظبي (DOH)', 'دراسات المستشفيات الخاصة والمراكز التخصصية', 'تحليل السياحة العلاجية والرعاية التخصصية', 'استبيانات الأطباء في دبي، أبوظبي، الشارقة', 'أبحاث مدينة دبي الطبية ومستشفى كليفلاند كلينك'] },
+            { name: 'الكويت', items: ['دراسات نظام الرعاية الصحية بوزارة الصحة', 'أبحاث المستشفيات التخصصية والمجمعات الطبية', 'تحليل تفضيلات الأطباء والأنماط العلاجية'] },
+            { name: 'قطر', items: ['أبحاث مؤسسة حمد الطبية والمؤسسات الصحية', 'دراسات المستشفيات الخاصة والعيادات التخصصية', 'تحليل المبادرات الصحية والاستراتيجية الوطنية للصحة'] },
+            { name: 'مصر', items: ['أبحاث أكبر سوق دوائي في شمال أفريقيا', 'استبيانات المستشفيات الحكومية والجامعية (القاهرة، الإسكندرية)', 'دراسات القطاع الخاص والمراكز الطبية التخصصية', 'تحليل شبكات المستشفيات والرعاية الأولية', 'أبحاث التأمين الصحي الشامل'] },
+            { name: 'المغرب', items: ['دراسات النظام الصحي في الرباط، الدار البيضاء، مراكش', 'أبحاث المستشفيات الجامعية CHU', 'تحليل القطاع الخاص والعيادات التخصصية'] },
+            { name: 'الجزائر', items: ['أبحاث القطاع الصحي العام والخاص', 'دراسات المستشفيات الجامعية في الجزائر، وهران، قسنطينة', 'تحليل سوق الأدوية والتوزيع'] },
+            { name: 'تونس', items: ['أبحاث النظام الصحي الوطني', 'دراسات المستشفيات الجامعية والمراكز المتخصصة', 'تحليل القطاع الخاص الصحي'] },
+            { name: 'إيران', items: ['أبحاث سوق الأدوية الإيراني', 'دراسات المستشفيات والمراكز البحثية الطبية', 'تحليل النظام الصحي والتصنيع المحلي للأدوية'] },
+          ],
+          deliverables: 'المخرجات: تقارير إحصائية شاملة، تقديرات حجم السوق، تحليل مسارات العلاج، التنبؤ بالاتجاهات، تحليل التقسيم، رؤى مقارنة عبر الدول، لوحات الذكاء التنافسي',
+        },
+        {
+          title: 'الأبحاث النوعية ورؤى الخبراء الطبيين في الشرق الأوسط',
+          lead: 'أبحاث نوعية متعمقة تلتقط وجهات النظر السريرية الدقيقة، الاحتياجات الطبية غير الملباة، والذكاء الاستراتيجي من خلال التفاعل مع الخبراء عبر الأسواق الرئيسية.',
+          countries: [
+            { name: 'المملكة العربية السعودية - البحث النوعي', items: ['مقابلات متعمقة مع استشاريين وأطباء متخصصين', 'مجموعات النقاش مع مديري المستشفيات', 'مجالس استشارية للخبراء الطبيين KOL', 'دراسات تجربة المرضى', 'تحليل الاحتياجات غير الملباة في التخصصات العلاجية'] },
+            { name: 'الإمارات العربية المتحدة - رؤى الخبراء', items: ['مقابلات الأطباء الاستشاريين في القطاعين العام والخاص', 'جلسات الخبراء الطبيين والقادة الرأي KOL', 'مجموعات التركيز مع المهنيين الصحيين', 'دراسات مسارات العلاج عبر الحدود'] },
+            { name: 'الكويت وقطر - البحث النوعي', items: ['مقابلات الخبراء الطبيين والاستشاريين', 'مجالس استشارية للأطباء', 'دراسات النظام الصحي والسياسات'] },
+            { name: 'مصر - رؤى متعمقة', items: ['مقابلات أساتذة الجامعات والاستشاريين', 'مجموعات نقاش مع الأطباء المتخصصين', 'دراسات الممارسات الطبية الإثنوغرافية', 'تحليل وجهات نظر المرضى الثقافية'] },
+            { name: 'المغرب والجزائر وتونس - البحث النوعي', items: ['مقابلات الخبراء الطبيين في شمال أفريقيا', 'دراسات النظم الصحية المقارنة', 'تحليل السياق الثقافي والاجتماعي'] },
+            { name: 'إيران - رؤى الخبراء', items: ['مقابلات الأطباء والباحثين الإيرانيين', 'دراسات السوق والنظام الصحي', 'تحليل التصنيع المحلي والابتكار'] },
+          ],
+          deliverables: 'المخرجات: تقارير التحليل الموضوعي، رؤى النظام الصحي، ملخصات إجماع الخبراء، توصيات استراتيجية للوصول للسوق، استراتيجيات التفاعل مع KOL، تقييمات الاحتياجات غير الملباة',
+        },
+      ],
+      serviceSecondaryAr: [
+        {
+          title: 'استراتيجية الوصول للسوق ودعم الاقتصاد الصحي',
+          intro: 'الاستفادة من رؤى أبحاث السوق العميقة لدعم استراتيجيات الوصول للسوق والتسعير والسداد عبر أسواق الخليج والشرق الأوسط.',
+          regions: [
+            { name: 'دول الخليج العربي', items: ['تحليل المشهد التنظيمي والتسعير (SFDA، DHA، MOH)', 'استراتيجية المناقصات الحكومية والوصول لقوائم المستشفيات', 'رؤى أصحاب المصلحة الحكوميين', 'تطوير عرض القيمة والرسائل التسويقية'] },
+            { name: 'مصر وشمال أفريقيا', items: ['استراتيجية التسعير والسداد', 'تحليل التأمين الصحي والقطاع الخاص', 'أبحاث الاقتصاد الصحي والنتائج (HEOR)'] },
+          ],
+          note: 'خدماتنا في الوصول للسوق قائمة على الأبحاث، باستخدام رؤى الأطباء، الجهات الدافعة، وأصحاب المصلحة المجمعة من خلال قدراتنا الأساسية في أبحاث السوق.',
+        },
+        {
+          title: 'دراسات الجدوى للتجارب السريرية ومعلومات المواقع البحثية',
+          intro: 'دعم التطوير السريري برؤى بحثية استراتيجية حول جدوى التجارب، اختيار المواقع، وشبكات الباحثين.',
+          regions: [
+            { name: 'خدمات أبحاث التجارب السريرية', items: ['دراسات الجدوى وتحديد المواقع البحثية في الخليج والشرق الأوسط', 'رسم خرائط الباحثين وتحديد KOL', 'رؤى توظيف المرضى وتحسين البروتوكول', 'تحليل المشهد التنافسي للتجارب', 'تقييم أداء وقدرات المواقع'] },
+          ],
+          note: 'تستفيد خدمات التجارب السريرية من شبكات الأطباء الواسعة ومعرفتنا بالنظام الصحي لدعم برامج التطوير السريري الخاصة بك.',
+        },
+      ],
       items: [
         {
           title: 'الوصول إلى السوق والتسعير',
@@ -620,22 +736,6 @@ export const translations = {
         {
           title: 'الاستخبارات التنافسية',
           description: 'ابق في المقدمة مع المراقبة التنافسية في الوقت الفعلي وتحليل خط الأنابيب ورؤى الموقع الاستراتيجي.',
-        },
-        {
-          title: 'رسم خريطة رحلة المريض',
-          description: 'فهم تجربة المريض الكاملة من التشخيص إلى العلاج لتحسين نقاط الاتصال والنتائج.',
-        },
-        {
-          title: 'تحليل قادة الرأي وأصحاب المصلحة',
-          description: 'تحديد وإشراك قادة الرأي الرئيسيين من خلال رسم خرائط التأثير المستندة إلى البيانات واستراتيجيات العلاقات.',
-        },
-        {
-          title: 'تحسين التجارب السريرية',
-          description: 'تسريع التطوير من خلال تحليلات اختيار الموقع واستراتيجيات تجنيد المرضى وتحسين البروتوكول.',
-        },
-        {
-          title: 'التميز في الإطلاق',
-          description: 'تعظيم تأثير الإطلاق من خلال استراتيجيات الذهاب إلى السوق المتكاملة والتنبؤ ومبادرات تشكيل السوق.',
         },
       ],
     },
@@ -710,6 +810,120 @@ export const translations = {
       copyright: '© 2024 بيونيكسس. جميع الحقوق محفوظة.',
       privacy: 'سياسة الخصوصية',
       terms: 'شروط الخدمة',
+    },
+    cookieConsent: {
+      message: 'نستخدم ملفات تعريف الارتباط لتحسين تجربتك وتحليل حركة الموقع. بالنقر على قبول فإنك توافق على استخدامنا لملفات تعريف الارتباط وسياسة الخصوصية.',
+      accept: 'قبول',
+      decline: 'رفض',
+      privacyLink: 'سياسة الخصوصية',
+    },
+    geographicCoverageAr: {
+      title: 'أبحاث السوق الصحية عبر دول الخليج والشرق الأوسط',
+      countries: [
+        {
+          name: 'المملكة العربية السعودية - مركز الأبحاث الدوائية',
+          featured: true,
+          marketSize: 'أكبر سوق دوائي في منطقة الخليج',
+          sections: [
+            { heading: 'التغطية الجغرافية', items: ['الرياض: مستشفيات وزارة الصحة، المدن الطبية، القطاع الخاص', 'جدة: المستشفيات الجامعية، المراكز التخصصية', 'الدمام والمنطقة الشرقية: المجمعات الطبية', 'المدينة المنورة، مكة المكرمة، أبها: التغطية الإقليمية'] },
+            { heading: 'المؤسسات الصحية الرئيسية', items: ['وزارة الصحة - شبكة المستشفيات الحكومية', 'مدينة الملك فهد الطبية', 'مجمع الملك عبدالله الطبي', 'مستشفى الملك فيصل التخصصي', 'القطاع الخاص: مستشفى المملكة، سليمان الحبيب، دله'] },
+            { heading: 'التخصصات البحثية', text: 'السكري، القلب والأوعية الدموية، الأورام، الأمراض النادرة، طب الأطفال، صحة المرأة' },
+            { heading: 'الامتثال التنظيمي', text: 'متوافق مع هيئة الغذاء والدواء السعودية (SFDA) ووزارة الصحة' },
+          ],
+        },
+        {
+          name: 'الإمارات العربية المتحدة - مركز الابتكار الصحي',
+          featured: true,
+          marketSize: 'سوق صحي متقدم مع سياحة علاجية',
+          sections: [
+            { heading: 'التغطية الجغرافية', items: ['دبي: مدينة دبي الطبية، مستشفيات القطاع الخاص', 'أبوظبي: مستشفى كليفلاند كلينك، مدينة الشيخ خليفة الطبية', 'الشارقة والإمارات الشمالية: المستشفيات الإقليمية'] },
+            { heading: 'المؤسسات الصحية الرئيسية', items: ['هيئة الصحة بدبي (DHA)', 'دائرة الصحة أبوظبي (DOH)', 'مستشفى كليفلاند كلينك أبوظبي', 'مستشفى الجليلة التخصصي للأطفال', 'القطاع الخاص: NMC، ميدكير، برجيل'] },
+            { heading: 'التخصصات البحثية', text: 'الأورام، القلب، الجراحة التخصصية، الطب التجديدي، الأمراض الاستقلابية' },
+          ],
+        },
+        {
+          name: 'الكويت - نظام صحي متقدم',
+          featured: false,
+          sections: [
+            { heading: 'التغطية', items: ['مستشفيات وزارة الصحة', 'المجمعات الطبية التخصصية', 'القطاع الخاص والعيادات'] },
+            { heading: 'التخصصات البحثية', text: 'السكري، أمراض القلب، جراحة السمنة، الأمراض المزمنة' },
+          ],
+        },
+        {
+          name: 'قطر - التميز الطبي',
+          featured: false,
+          sections: [
+            { heading: 'المؤسسات الرئيسية', items: ['مؤسسة حمد الطبية', 'سدرة للطب', 'مستشفى العمادي', 'المراكز الطبية التخصصية'] },
+            { heading: 'التخصصات البحثية', text: 'طب الأطفال، صحة المرأة، الأورام، الطب الرياضي' },
+          ],
+        },
+        {
+          name: 'مصر - أكبر سوق في شمال أفريقيا',
+          featured: true,
+          marketSize: '100+ مليون نسمة، سوق دوائي متنامي',
+          sections: [
+            { heading: 'التغطية الجغرافية', items: ['القاهرة الكبرى: المستشفيات الجامعية، المراكز التخصصية', 'الإسكندرية: مستشفيات جامعية وخاصة', 'الدلتا والصعيد: مستشفيات إقليمية'] },
+            { heading: 'المؤسسات الصحية', items: ['مستشفيات جامعة القاهرة وعين شمس', 'المعهد القومي للأورام', 'معهد القلب القومي', 'القطاع الخاص: دار الفؤاد، السعودي الألماني، كليوباترا'] },
+            { heading: 'التخصصات البحثية', text: 'الأورام، القلب والأوعية الدموية، السكري، الكبد، الأمراض المعدية، صحة الأم والطفل' },
+            { heading: 'الامتثال', text: 'متوافق مع هيئة الدواء المصرية ووزارة الصحة' },
+          ],
+        },
+        {
+          name: 'المغرب - سوق شمال أفريقيا الاستراتيجي',
+          featured: false,
+          sections: [
+            { heading: 'التغطية الجغرافية', items: ['الدار البيضاء: المستشفيات الجامعية CHU، القطاع الخاص', 'الرباط: المراكز الطبية الحكومية', 'مراكش، فاس، طنجة: التغطية الإقليمية'] },
+            { heading: 'التخصصات البحثية', text: 'الأورام، أمراض القلب، السكري، الأمراض المعدية' },
+          ],
+        },
+        {
+          name: 'الجزائر - سوق متنامي',
+          featured: false,
+          sections: [
+            { heading: 'التغطية', items: ['الجزائر العاصمة، وهران، قسنطينة', 'المستشفيات الجامعية CHU', 'القطاع العام والخاص'] },
+          ],
+        },
+        {
+          name: 'تونس - مركز طبي إقليمي',
+          featured: false,
+          sections: [
+            { heading: 'التغطية', items: ['تونس العاصمة، صفاقس، سوسة', 'المستشفيات الجامعية', 'العيادات التخصصية'] },
+          ],
+        },
+      ],
+    },
+    methodologyAr: {
+      title: 'منهجية أبحاث السوق الصحية القائمة على الأدلة',
+      steps: [
+        {
+          title: 'المرحلة 1: تصميم البحث وتطوير البروتوكول',
+          items: ['منهجية مخصصة متوافقة مع المجال العلاجي', 'الامتثال التنظيمي (SFDA، DHA، وزارات الصحة الإقليمية)', 'حماية البيانات والخصوصية', 'معايير البحث السريري الدولية (ICH-GCP)', 'حسابات القوة الإحصائية', 'التكيف الثقافي واللغوي'],
+        },
+        {
+          title: 'المرحلة 2: توظيف الأطباء والمهنيين الصحيين',
+          subsections: [
+            { heading: 'دول الخليج', items: ['قوائم الأطباء المعتمدين من الهيئات الصحية', 'شبكات الاستشاريين في المستشفيات الحكومية والخاصة', 'تغطية التخصصات المتعددة (الأورام، القلب، الغدد الصماء، إلخ)', 'التمثيل عبر مستويات المستشفيات (أولية، ثانوية، ثالثية)'] },
+            { heading: 'مصر وشمال أفريقيا', items: ['شراكات مع الجمعيات الطبية', 'شبكات الأطباء الجامعيين', 'الوصول للقطاعين العام والخاص'] },
+          ],
+        },
+        {
+          title: 'المرحلة 3: جمع البيانات وضمان الجودة',
+          items: ['نشر الاستبيانات متعددة اللغات (العربية، الإنجليزية، الفارسية)', 'التحقق من البيانات في الوقت الفعلي', 'بروتوكولات التحقق من هوية الأطباء', 'مراقبة الامتثال للخصوصية وحماية البيانات', 'التشفير الآمن للبيانات والتخزين', 'فريق بحث ثنائي اللغة (عربي-إنجليزي)'],
+        },
+        {
+          title: 'المرحلة 4: التحليل المتقدم وتوليد الرؤى',
+          subsections: [
+            { heading: 'التحليل الإحصائي', items: ['نمذجة الانحدار والتحليلات التنبؤية', 'تقسيم السوق وتحليل المجموعات', 'الترميز الموضوعي للبيانات النوعية', 'التحليل المقارن عبر البلدان'] },
+            { heading: 'تحليلات خاصة بالمنطقة', items: ['رسم خرائط مسارات العلاج الإقليمية', 'اقتصاديات الصحة وأبحاث النتائج (HEOR)', 'نمذجة فعالية التكلفة', 'تحليل مشهد الدفع والسداد'] },
+          ],
+        },
+        {
+          title: 'المرحلة 5: التقارير الاستراتيجية والتوصيات',
+          subsections: [
+            { heading: 'المخرجات', items: ['لوحات المعلومات التنفيذية (عربي-إنجليزي)', 'توصيات استراتيجية للوصول للسوق', 'رؤى المشهد التنظيمي الإقليمي', 'تقييمات فرص السوق', 'ذكاء دوائي قابل للتنفيذ', 'دعم التقديمات التنظيمية'] },
+          ],
+        },
+      ],
     },
   },
 } as const;

@@ -10,8 +10,18 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const icons = [TrendingUp, Target, Users, Microscope, Rocket, BarChart3];
 
+type PrimaryArBlock = { title: string; lead: string; countries: { name: string; items: string[] }[]; deliverables: string };
+type SecondaryArBlock = { title: string; intro: string; regions: { name: string; items: string[] }[]; note: string };
+
 const ServicesSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const rawPrimaryAr = 'servicePrimaryAr' in t.services ? (t.services as { servicePrimaryAr?: PrimaryArBlock | PrimaryArBlock[] }).servicePrimaryAr : undefined;
+  const primaryBlocks: PrimaryArBlock[] = Array.isArray(rawPrimaryAr) ? rawPrimaryAr : (rawPrimaryAr ? [rawPrimaryAr] : []);
+  const rawSecondaryAr = 'serviceSecondaryAr' in t.services ? (t.services as { serviceSecondaryAr?: SecondaryArBlock | SecondaryArBlock[] }).serviceSecondaryAr : undefined;
+  const secondaryBlocks: SecondaryArBlock[] = Array.isArray(rawSecondaryAr) ? rawSecondaryAr : (rawSecondaryAr ? [rawSecondaryAr] : []);
+  const showPrimaryAr = language === 'ar' && primaryBlocks.length > 0;
+  const showSecondaryAr = language === 'ar' && secondaryBlocks.length > 0;
+  const gridItems = showPrimaryAr ? t.services.items.slice(primaryBlocks.length) : t.services.items;
 
   return (
     <section id="services" className="section-padding bg-cream">
@@ -26,10 +36,76 @@ const ServicesSection = () => {
           </p>
         </div>
 
+        {/* Arabic primary blocks (quantitative + qualitative MENA content) */}
+        {showPrimaryAr && primaryBlocks.map((block, blockIndex) => (
+          <div
+            key={blockIndex}
+            className="service-primary mb-12 md:mb-16 rounded-xl bg-background p-8 md:p-10 shadow-sm border border-border animate-fade-up"
+            dir="rtl"
+          >
+            <h3 className="text-xl md:text-2xl font-display font-semibold text-foreground mb-4">
+              {block.title}
+            </h3>
+            <p className="service-lead text-muted-foreground leading-relaxed mb-8">
+              {block.lead}
+            </p>
+            <div className="service-details space-y-6">
+              {block.countries.map((country, i) => (
+                <div key={i}>
+                  <h4 className="font-semibold text-foreground mb-2 mt-6 first:mt-0">
+                    {country.name}:
+                  </h4>
+                  <ul className="list-disc list-inside text-muted-foreground space-y-1">
+                    {country.items.map((item, j) => (
+                      <li key={j}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+              <div className="deliverables mt-6 pt-4 border-t border-border">
+                <strong className="text-foreground">{block.deliverables}</strong>
+              </div>
+            </div>
+          </div>
+        ))}
+
+        {/* Arabic secondary blocks (Market Access, Clinical Trials, etc.) */}
+        {showSecondaryAr && secondaryBlocks.map((block, blockIndex) => (
+          <div
+            key={blockIndex}
+            className="service-secondary mb-12 md:mb-16 rounded-xl bg-background p-8 md:p-10 shadow-sm border border-border animate-fade-up"
+            dir="rtl"
+          >
+            <h3 className="text-xl md:text-2xl font-display font-semibold text-foreground mb-4">
+              {block.title}
+            </h3>
+            <p className="service-intro text-muted-foreground leading-relaxed mb-8">
+              {block.intro}
+            </p>
+            <div className="service-overview space-y-6">
+              {block.regions.map((region, i) => (
+                <div key={i}>
+                  <h4 className="font-semibold text-foreground mb-2 mt-6 first:mt-0">
+                    {region.name}:
+                  </h4>
+                  <ul className="list-disc list-inside text-muted-foreground space-y-1">
+                    {region.items.map((item, j) => (
+                      <li key={j}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+              <p className="service-note mt-6 pt-4 border-t border-border text-muted-foreground italic">
+                {block.note}
+              </p>
+            </div>
+          </div>
+        ))}
+
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {t.services.items.map((service, index) => {
-            const Icon = icons[index];
+          {gridItems.map((service, index) => {
+            const Icon = icons[showPrimaryAr ? index + primaryBlocks.length : index];
             return (
               <div
                 key={index}

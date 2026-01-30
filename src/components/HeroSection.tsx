@@ -2,10 +2,13 @@ import { ArrowRight, Play } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const HeroSection = () => {
-  const { t } = useLanguage();
+  const { t, language, isRTL } = useLanguage();
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section
+      className={`relative min-h-screen flex items-center overflow-hidden ${language === 'ar' ? 'hero-arabic' : ''}`}
+      dir={isRTL ? 'rtl' : undefined}
+    >
       {/* Background with gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-navy-deep via-navy-medium to-primary" />
       
@@ -28,24 +31,41 @@ const HeroSection = () => {
             </span>
           </div>
 
-          {/* Main Title */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-semibold text-white leading-tight mb-6 animate-fade-up animation-delay-200 text-balance">
+          {/* Main Title (H1) */}
+          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-semibold text-white leading-tight mb-4 animate-fade-up animation-delay-200 text-balance">
             {t.hero.title}
           </h1>
 
-          {/* Subtitle */}
-          <p className="text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed mb-10 animate-fade-up animation-delay-400">
+          {/* Subtitle (H2) */}
+          <h2 className="text-xl md:text-2xl font-display font-medium text-white/90 max-w-3xl leading-tight mb-6 animate-fade-up animation-delay-300">
             {t.hero.subtitle}
+          </h2>
+
+          {/* Value Proposition */}
+          <p className="text-base md:text-lg text-white/70 max-w-3xl leading-relaxed mb-8 animate-fade-up animation-delay-400">
+            {t.hero.valueProposition}
           </p>
+
+          {/* Service Highlights */}
+          <div className="flex flex-wrap gap-3 mb-10 animate-fade-up animation-delay-500">
+            {t.hero.serviceHighlights.map((item, i) => (
+              <span
+                key={i}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/10 text-white/90 text-sm font-medium"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-up animation-delay-600">
             <a
-              href="#services"
+              href="#contact"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gold-warm text-navy-deep rounded-lg font-semibold hover:bg-gold-light transition-colors group"
             >
               {t.hero.cta}
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className={`w-5 h-5 transition-transform ${isRTL ? 'rtl:scale-x-[-1] group-hover:-translate-x-1' : 'group-hover:translate-x-1'}`} />
             </a>
             <a
               href="#insights"
@@ -54,6 +74,23 @@ const HeroSection = () => {
               <Play className="w-5 h-5" />
               {t.hero.ctaSecondary}
             </a>
+          </div>
+
+          {/* Trust Bar */}
+          <div className="mt-16 pt-10 border-t border-white/20 animate-fade-up animation-delay-700">
+            <p className="text-white/70 text-sm mb-4">
+              {t.hero.trustBar} <strong className="text-white/90">{t.hero.trustCountries}</strong>
+            </p>
+            <div className="flex flex-wrap gap-3">
+              {t.hero.complianceBadges.map((badge, i) => (
+                <span
+                  key={i}
+                  className="px-3 py-1.5 rounded-md bg-white/10 text-white/90 text-xs font-medium"
+                >
+                  {badge}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 
