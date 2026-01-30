@@ -28,12 +28,11 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-display font-bold text-xl">B</span>
-            </div>
-            <span className="font-display text-2xl font-semibold text-foreground">
-              BioNixus
-            </span>
+            <img
+              src="/bionixus-logo.png"
+              alt="BioNixus"
+              className="h-9 w-auto object-contain"
+            />
           </a>
 
           {/* Desktop Navigation */}

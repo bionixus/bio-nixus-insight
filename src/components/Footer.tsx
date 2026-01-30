@@ -11,12 +11,11 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-gold-warm rounded-lg flex items-center justify-center">
-                <span className="text-navy-deep font-display font-bold text-xl">B</span>
-              </div>
-              <span className="font-display text-2xl font-semibold text-primary-foreground">
-                BioNixus
-              </span>
+              <img
+                src="/bionixus-logo.png"
+                alt="BioNixus"
+                className="h-10 w-auto object-contain"
+              />
             </div>
             <p className="text-primary-foreground/70 max-w-md leading-relaxed mb-6">
               {t.footer.tagline}. Delivering evidence-based insights to pharmaceutical and biotech leaders worldwide.
@@ -69,10 +68,9 @@ const Footer = () => {
             <h4 className="font-semibold text-primary-foreground mb-6">{t.nav.contact}</h4>
             <ul className="space-y-3 text-primary-foreground/70">
               <li>{t.contact.email}</li>
-              <li>+41 44 555 1234</li>
-              <li>Zürich, Switzerland</li>
+              <li>+44 7727 666682</li>
+              <li>{t.contact.headquarters}</li>
               <li>London, UK</li>
-              <li>Boston, USA</li>
             </ul>
           </div>
         </div>

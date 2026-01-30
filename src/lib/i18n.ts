@@ -83,9 +83,9 @@ export const translations = {
       title: 'Global Impact',
       items: [
         { value: '50+', label: 'Countries Covered' },
-        { value: '200+', label: 'Pharma Clients' },
-        { value: '1000+', label: 'Projects Delivered' },
-        { value: '25+', label: 'Years Experience' },
+        { value: '10+', label: 'Pharma Clients' },
+        { value: '120+', label: 'Projects Delivered' },
+        { value: '15+', label: 'Years Experience' },
       ],
     },
     testimonials: {
@@ -96,7 +96,8 @@ export const translations = {
       title: "Let's Connect",
       subtitle: 'Ready to transform your healthcare market strategy? Our team of experts is here to help.',
       cta: 'Schedule a Consultation',
-      email: 'contact@bionixus.com',
+      email: 'admin@bionixus.com',
+      headquarters: 'Wyoming, USA',
     },
     footer: {
       tagline: 'Strategic Healthcare Intelligence',
@@ -178,9 +179,9 @@ export const translations = {
       title: 'Globale Wirkung',
       items: [
         { value: '50+', label: 'Abgedeckte Länder' },
-        { value: '200+', label: 'Pharma-Kunden' },
-        { value: '1000+', label: 'Gelieferte Projekte' },
-        { value: '25+', label: 'Jahre Erfahrung' },
+        { value: '10+', label: 'Pharma-Kunden' },
+        { value: '120+', label: 'Gelieferte Projekte' },
+        { value: '15+', label: 'Jahre Erfahrung' },
       ],
     },
     testimonials: {
@@ -191,7 +192,8 @@ export const translations = {
       title: 'Kontaktieren Sie uns',
       subtitle: 'Bereit, Ihre Gesundheitsmarktstrategie zu transformieren? Unser Expertenteam steht Ihnen zur Verfügung.',
       cta: 'Beratung vereinbaren',
-      email: 'kontakt@bionixus.com',
+      email: 'admin@bionixus.com',
+      headquarters: 'Wyoming, USA',
     },
     footer: {
       tagline: 'Strategische Gesundheitsintelligenz',
@@ -273,9 +275,9 @@ export const translations = {
       title: 'Impact Mondial',
       items: [
         { value: '50+', label: 'Pays Couverts' },
-        { value: '200+', label: 'Clients Pharma' },
-        { value: '1000+', label: 'Projets Livrés' },
-        { value: '25+', label: 'Ans d\'Expérience' },
+        { value: '10+', label: 'Clients Pharma' },
+        { value: '120+', label: 'Projets Livrés' },
+        { value: '15+', label: 'Ans d\'Expérience' },
       ],
     },
     testimonials: {
@@ -286,7 +288,8 @@ export const translations = {
       title: 'Connectons-nous',
       subtitle: 'Prêt à transformer votre stratégie de marché santé? Notre équipe d\'experts est là pour vous aider.',
       cta: 'Planifier une Consultation',
-      email: 'contact@bionixus.com',
+      email: 'admin@bionixus.com',
+      headquarters: 'Wyoming, USA',
     },
     footer: {
       tagline: 'Intelligence Stratégique en Santé',
@@ -368,9 +371,9 @@ export const translations = {
       title: 'Impacto Global',
       items: [
         { value: '50+', label: 'Países Cubiertos' },
-        { value: '200+', label: 'Clientes Pharma' },
-        { value: '1000+', label: 'Proyectos Entregados' },
-        { value: '25+', label: 'Años de Experiencia' },
+        { value: '10+', label: 'Clientes Pharma' },
+        { value: '120+', label: 'Proyectos Entregados' },
+        { value: '15+', label: 'Años de Experiencia' },
       ],
     },
     testimonials: {
@@ -381,7 +384,8 @@ export const translations = {
       title: 'Conectemos',
       subtitle: '¿Listo para transformar su estrategia de mercado sanitario? Nuestro equipo de expertos está aquí para ayudar.',
       cta: 'Programar Consulta',
-      email: 'contacto@bionixus.com',
+      email: 'admin@bionixus.com',
+      headquarters: 'Wyoming, USA',
     },
     footer: {
       tagline: 'Inteligencia Estratégica en Salud',
@@ -463,9 +467,9 @@ export const translations = {
       title: '全球影响',
       items: [
         { value: '50+', label: '覆盖国家' },
-        { value: '200+', label: '制药客户' },
-        { value: '1000+', label: '交付项目' },
-        { value: '25+', label: '年经验' },
+        { value: '10+', label: '制药客户' },
+        { value: '120+', label: '交付项目' },
+        { value: '15+', label: '年经验' },
       ],
     },
     testimonials: {
@@ -476,7 +480,8 @@ export const translations = {
       title: '让我们联系',
       subtitle: '准备好转变您的医疗健康市场战略了吗？我们的专家团队随时为您服务。',
       cta: '预约咨询',
-      email: 'contact@bionixus.com',
+      email: 'admin@bionixus.com',
+      headquarters: 'Wyoming, USA',
     },
     footer: {
       tagline: '战略医疗健康智能',
@@ -558,9 +563,9 @@ export const translations = {
       title: 'التأثير العالمي',
       items: [
         { value: '+50', label: 'دولة مغطاة' },
-        { value: '+200', label: 'عميل صيدلاني' },
-        { value: '+1000', label: 'مشروع منجز' },
-        { value: '+25', label: 'سنة خبرة' },
+        { value: '+10', label: 'شركاء نجاح' },
+        { value: '+120', label: 'مشروع منجز' },
+        { value: '+15', label: 'سنة خبرة' },
       ],
     },
     testimonials: {
@@ -571,7 +576,8 @@ export const translations = {
       title: 'لنتواصل',
       subtitle: 'هل أنت مستعد لتحويل استراتيجية سوق الرعاية الصحية الخاصة بك؟ فريق خبرائنا هنا للمساعدة.',
       cta: 'حدد موعد استشارة',
-      email: 'contact@bionixus.com',
+      email: 'admin@bionixus.com',
+      headquarters: 'Wyoming, USA',
     },
     footer: {
       tagline: 'الذكاء الاستراتيجي للرعاية الصحية',

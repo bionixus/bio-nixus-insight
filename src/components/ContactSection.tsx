@@ -24,7 +24,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <div className="text-sm text-muted-foreground">Email</div>
-                  <a href="mailto:contact@bionixus.com" className="text-foreground font-medium hover:text-primary transition-colors">
+                  <a href="mailto:admin@bionixus.com" className="text-foreground font-medium hover:text-primary transition-colors">
                     {t.contact.email}
                   </a>
                 </div>
@@ -36,7 +36,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <div className="text-sm text-muted-foreground">Headquarters</div>
-                  <div className="text-foreground font-medium">Zürich, Switzerland</div>
+                  <div className="text-foreground font-medium">{t.contact.headquarters}</div>
                 </div>
               </div>
 
@@ -46,15 +46,15 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <div className="text-sm text-muted-foreground">Phone</div>
-                  <a href="tel:+41445551234" className="text-foreground font-medium hover:text-primary transition-colors">
-                    +41 44 555 1234
+                  <a href="tel:+447727666682" className="text-foreground font-medium hover:text-primary transition-colors">
+                    +44 7727 666682
                   </a>
                 </div>
               </div>
             </div>
 
             <a
-              href="mailto:contact@bionixus.com"
+              href="mailto:admin@bionixus.com"
               className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-opacity group"
             >
               {t.contact.cta}

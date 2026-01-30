@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
-import { Language, translations, languages } from '@/lib/i18n';
+import { Language, translations, languages } from '@/lib/i18n'; // stats: 10+, 120, 15+
 
 interface LanguageContextType {
   language: Language;
