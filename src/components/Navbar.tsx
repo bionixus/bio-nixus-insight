@@ -19,7 +19,14 @@ const Navbar = () => {
   const basePath = languagePaths[language] || '/';
 
   const handleLogoClick = () => {
-    const isHome = pathname === '/' || pathname === '/de' || pathname === '/ar';
+    const isHome =
+      pathname === '/' ||
+      pathname === '/de' ||
+      pathname === '/fr' ||
+      pathname === '/es' ||
+      pathname === '/zh' ||
+      pathname === '/ar' ||
+      pathname.startsWith('/zh/');
     if (isHome) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }

@@ -1,12 +1,12 @@
 export type Language = 'en' | 'de' | 'fr' | 'es' | 'zh' | 'ar';
 
 export const languages: { code: Language; name: string; flag: string; rtl?: boolean }[] = [
-  { code: 'en', name: 'English', flag: 'GB' },
-  { code: 'de', name: 'Deutsch', flag: 'DE' },
-  { code: 'fr', name: 'Francais', flag: 'FR' },
-  { code: 'es', name: 'Espanol', flag: 'ES' },
-  { code: 'zh', name: 'Chinese', flag: 'CN' },
-  { code: 'ar', name: 'Arabic', flag: 'SA', rtl: true },
+  { code: 'en', name: 'English', flag: '🇬🇧' },
+  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
+  { code: 'fr', name: 'Français', flag: '🇫🇷' },
+  { code: 'es', name: 'Español', flag: '🇪🇸' },
+  { code: 'zh', name: 'Chinese', flag: '🇨🇳' },
+  { code: 'ar', name: 'Arabic', flag: '🇸🇦', rtl: true },
 ];
 
 export const translations = {
@@ -191,6 +191,12 @@ export const translations = {
       accept: 'Accept',
       decline: 'Decline',
       privacyLink: 'Privacy Policy',
+    },
+    notFound: {
+      title: '404',
+      message: 'Page not found',
+      description: 'The page you are looking for does not exist or has been moved.',
+      backHome: 'Return to Home',
     },
   },
   de: {
@@ -393,6 +399,12 @@ export const translations = {
       decline: 'Ablehnen',
       privacyLink: 'Datenschutz',
     },
+    notFound: {
+      title: '404',
+      message: 'Seite nicht gefunden',
+      description: 'Die gesuchte Seite existiert nicht oder wurde verschoben.',
+      backHome: 'Zur Startseite',
+    },
   },
   fr: {
     nav: {
@@ -593,6 +605,12 @@ export const translations = {
       accept: 'Accepter',
       decline: 'Refuser',
       privacyLink: 'Politique de Confidentialité',
+    },
+    notFound: {
+      title: '404',
+      message: 'Page non trouvée',
+      description: 'La page recherchée n\'existe pas ou a été déplacée.',
+      backHome: 'Retour à l\'accueil',
     },
   },
   es: {
@@ -795,6 +813,12 @@ export const translations = {
       decline: 'Rechazar',
       privacyLink: 'Política de Privacidad',
     },
+    notFound: {
+      title: '404',
+      message: 'Página no encontrada',
+      description: 'La página que busca no existe o ha sido movida.',
+      backHome: 'Volver al inicio',
+    },
   },
   zh: {
     nav: {
@@ -995,6 +1019,12 @@ export const translations = {
       accept: '接受',
       decline: '拒绝',
       privacyLink: '隐私政策',
+    },
+    notFound: {
+      title: '404',
+      message: '页面未找到',
+      description: '您查找的页面不存在或已被移动。',
+      backHome: '返回首页',
     },
   },
   ar: {
@@ -1206,6 +1236,12 @@ export const translations = {
       accept: 'قبول',
       decline: 'رفض',
       privacyLink: 'سياسة الخصوصية',
+    },
+    notFound: {
+      title: '404',
+      message: 'الصفحة غير موجودة',
+      description: 'الصفحة التي تبحث عنها غير موجودة أو تم نقلها.',
+      backHome: 'العودة للصفحة الرئيسية',
     },
     geographicCoverageAr: {
       title: 'أبحاث السوق الصحية عبر دول الخليج والشرق الأوسط',

@@ -190,7 +190,7 @@ const ContactSection = () => {
                     {t.contact.successCaseStudiesText}
                   </a>
                   {c.successFollowUpBetween}
-                  <a href={language === 'fr' ? `${basePath}/methodologie` : language === 'es' ? `${basePath}/metodologia` : language === 'zh' ? `${basePath}/methodology` : '#methodology'} className="text-primary font-medium hover:underline">
+                  <a href={`${basePath}#methodology`} className="text-primary font-medium hover:underline">
                     {t.contact.successMethodologyText}
                   </a>
                   {c.successFollowUpEnd}
