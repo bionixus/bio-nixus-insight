@@ -1,4 +1,5 @@
 import { ArrowRight, Play } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const HeroSection = () => {
@@ -6,8 +7,9 @@ const HeroSection = () => {
 
   return (
     <section
-      className={`relative min-h-screen flex items-center overflow-hidden ${language === 'ar' ? 'hero-arabic' : ''}`}
+      className={`relative min-h-screen flex items-center overflow-hidden ${language === 'ar' ? 'hero-arabic' : ''} ${language === 'de' ? 'hero-german' : ''} ${language === 'fr' ? 'hero-french' : ''} ${language === 'es' ? 'hero-spanish' : ''} ${language === 'zh' ? 'hero-chinese' : ''}`}
       dir={isRTL ? 'rtl' : undefined}
+      lang={language}
     >
       {/* Background with gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-navy-deep via-navy-medium to-primary" />
@@ -61,19 +63,19 @@ const HeroSection = () => {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-up animation-delay-600">
             <a
-              href="#contact"
+              href="#request-proposal"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gold-warm text-navy-deep rounded-lg font-semibold hover:bg-gold-light transition-colors group"
             >
               {t.hero.cta}
               <ArrowRight className={`w-5 h-5 transition-transform ${isRTL ? 'rtl:scale-x-[-1] group-hover:-translate-x-1' : 'group-hover:translate-x-1'}`} />
             </a>
-            <a
-              href="#insights"
+            <Link
+              to="/case-studies"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-lg font-medium border border-white/20 hover:bg-white/20 transition-colors group"
             >
               <Play className="w-5 h-5" />
               {t.hero.ctaSecondary}
-            </a>
+            </Link>
           </div>
 
           {/* Trust Bar */}

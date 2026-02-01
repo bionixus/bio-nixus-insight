@@ -25,15 +25,8 @@ const InsightsSection = () => {
               className="group cursor-pointer animate-fade-up"
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              {/* Image placeholder */}
-              <div className="relative aspect-[16/10] rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-navy-deep to-navy-medium">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center">
-                    <span className="text-2xl font-display font-bold text-white/80">
-                      {index + 1}
-                    </span>
-                  </div>
-                </div>
+              {/* Same grade blue background for all cards */}
+              <div className="relative aspect-[16/10] rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-primary via-primary/95 to-navy-medium">
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
               </div>
 

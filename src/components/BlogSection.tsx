@@ -124,22 +124,14 @@ const BlogSection = ({ posts: postsProp }: BlogSectionProps) => {
               className="group cursor-pointer animate-fade-up"
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              {/* Cover: use image if from Notion, else placeholder */}
-              <div className="relative aspect-[16/10] rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-navy-deep to-navy-medium">
-                {post.coverImage ? (
+              {/* Same grade blue background – or Notion cover if provided */}
+              <div className="relative aspect-[16/10] rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-primary via-primary/95 to-navy-medium">
+                {post.coverImage && (
                   <img
                     src={post.coverImage}
                     alt=""
                     className="absolute inset-0 w-full h-full object-cover"
                   />
-                ) : (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center">
-                      <span className="text-2xl font-display font-bold text-white/80">
-                        {index + 1}
-                      </span>
-                    </div>
-                  </div>
                 )}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
               </div>

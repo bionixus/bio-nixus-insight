@@ -1,29 +1,9 @@
 import { Quote } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-const testimonials = [
-  {
-    quote: "BioNixus transformed our market access strategy with insights that were both rigorous and actionable. Their global perspective was invaluable.",
-    author: "Dr. Sarah Mitchell",
-    role: "VP Market Access",
-    company: "Global Pharma Inc.",
-  },
-  {
-    quote: "The depth of competitive intelligence and speed of delivery exceeded our expectations. A true strategic partner.",
-    author: "Michael Chen",
-    role: "Chief Strategy Officer",
-    company: "BioTech Innovations",
-  },
-  {
-    quote: "Their KOL mapping and patient journey research directly influenced our launch success in three major European markets.",
-    author: "Dr. Elena Rodriguez",
-    role: "Commercial Director",
-    company: "Precision Therapeutics",
-  },
-];
-
 const TestimonialsSection = () => {
   const { t } = useLanguage();
+  const testimonials = t.testimonials.items;
 
   return (
     <section className="section-padding bg-cream-dark">
@@ -69,20 +49,29 @@ const TestimonialsSection = () => {
           ))}
         </div>
 
-        {/* Client Logos */}
+        {/* Trusted by Industry Leaders – continuous marquee ticker */}
         <div className="mt-20 pt-12 border-t border-border">
           <p className="text-center text-sm text-muted-foreground mb-8 uppercase tracking-widest">
             Trusted by Industry Leaders
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-12 opacity-60">
-            {['Pfizer', 'Roche', 'Novartis', 'Sanofi', 'AstraZeneca', 'Merck'].map((company) => (
-              <div
-                key={company}
-                className="text-xl font-display font-semibold text-foreground/50"
-              >
-                {company}
-              </div>
-            ))}
+          <div className="overflow-hidden select-none w-full" aria-hidden="true">
+            <div
+              className="flex animate-marquee will-change-transform"
+              style={{ width: 'max-content' }}
+            >
+              {[...Array(3)].map((_, set) => (
+                <div key={set} className="flex items-center gap-16 shrink-0 px-8">
+                  {['Pfizer', 'Roche', 'Novartis', 'Sanofi', 'AstraZeneca', 'Merck'].map((company) => (
+                    <span
+                      key={`${set}-${company}`}
+                      className="text-xl font-display font-semibold text-foreground/60 whitespace-nowrap"
+                    >
+                      {company}
+                    </span>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -8,12 +8,269 @@ type CountryCard = {
   sections: CoverageSection[];
 };
 type GeographicCoverageAr = { title: string; countries: CountryCard[] };
+type RegionDe = {
+  name: string;
+  class?: string;
+  countries?: { name: string; items: string[] }[];
+  subregions?: { name: string; items: string[] }[];
+};
+type GeographicCoverageDe = { title: string; regions: RegionDe[] };
+
+type GeographicCoverageFr = GeographicCoverageDe;
+type GeographicCoverageEs = GeographicCoverageDe;
+type GeographicCoverageZh = GeographicCoverageDe;
 
 const GeographicCoverageSection = () => {
   const { t, language } = useLanguage();
-  const data = 'geographicCoverageAr' in t ? (t as { geographicCoverageAr?: GeographicCoverageAr }).geographicCoverageAr : undefined;
+  const dataEn = 'geographicCoverageEn' in t ? (t as { geographicCoverageEn?: GeographicCoverageDe }).geographicCoverageEn : undefined;
+  const dataAr = 'geographicCoverageAr' in t ? (t as { geographicCoverageAr?: GeographicCoverageAr }).geographicCoverageAr : undefined;
+  const dataDe = 'geographicCoverageDe' in t ? (t as { geographicCoverageDe?: GeographicCoverageDe }).geographicCoverageDe : undefined;
+  const dataFr = 'geographicCoverageFr' in t ? (t as { geographicCoverageFr?: GeographicCoverageFr }).geographicCoverageFr : undefined;
+  const dataEs = 'geographicCoverageEs' in t ? (t as { geographicCoverageEs?: GeographicCoverageEs }).geographicCoverageEs : undefined;
+  const dataZh = 'geographicCoverageZh' in t ? (t as { geographicCoverageZh?: GeographicCoverageZh }).geographicCoverageZh : undefined;
 
-  if (language !== 'ar' || !data) return null;
+  // English geographic coverage
+  if (language === 'en' && dataEn) {
+    return (
+      <section
+        id="geographic-coverage"
+        className="geographic-coverage section-padding bg-muted/30"
+        lang="en"
+      >
+        <div className="container-wide">
+          <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up">
+            {dataEn.title}
+          </h2>
+          <div className="region-overview space-y-10">
+            {dataEn.regions.map((region, i) => (
+              <div key={i} className={`region ${region.class || ''}`}>
+                <h3 className="text-xl font-display font-semibold text-foreground mb-6">
+                  {region.name}
+                </h3>
+                {region.countries && (
+                  <div className="country-grid grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {region.countries.map((country, j) => (
+                      <div key={j} className="country rounded-xl bg-background p-6 shadow-sm border border-border">
+                        <h4 className="font-semibold text-foreground mb-3">{country.name}</h4>
+                        <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
+                          {country.items.map((item, k) => (
+                            <li key={k}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Chinese geographic coverage
+  if (language === 'zh' && dataZh) {
+    return (
+      <section
+        id="geographic-coverage"
+        className="geographic-coverage section-padding bg-muted/30"
+        lang="zh-CN"
+      >
+        <div className="container-wide">
+          <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up">
+            {dataZh.title}
+          </h2>
+          <div className="regions-grid space-y-10">
+            {dataZh.regions.map((region, i) => (
+              <div key={i} className={`region ${region.class || ''}`}>
+                <h3 className="text-xl font-display font-semibold text-foreground mb-6">
+                  {region.name}
+                </h3>
+                {region.countries ? (
+                  <div className="countries-compact grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {region.countries.map((country, j) => (
+                      <div key={j} className="country rounded-xl bg-background p-6 shadow-sm border border-border">
+                        <h4 className="font-semibold text-foreground mb-3">{country.name}</h4>
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          {country.items.join(' ')}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                ) : region.subregions ? (
+                  <div className="subregions space-y-6">
+                    {region.subregions.map((sub, j) => (
+                      <div key={j} className="subregion">
+                        <h4 className="font-semibold text-foreground mb-2">{sub.name}：</h4>
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          {sub.items.join(' ')}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Spanish geographic coverage
+  if (language === 'es' && dataEs) {
+    return (
+      <section
+        id="geographic-coverage"
+        className="geographic-coverage section-padding bg-muted/30"
+        lang="es"
+      >
+        <div className="container-wide">
+          <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up">
+            {dataEs.title}
+          </h2>
+          <div className="regions-grid space-y-10">
+            {dataEs.regions.map((region, i) => (
+              <div key={i} className={`region ${region.class || ''}`}>
+                <h3 className="text-xl font-display font-semibold text-foreground mb-6">
+                  {region.name}
+                </h3>
+                {region.countries ? (
+                  <div className="countries-compact grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {region.countries.map((country, j) => (
+                      <div key={j} className="country rounded-xl bg-background p-6 shadow-sm border border-border">
+                        <h4 className="font-semibold text-foreground mb-3">{country.name}</h4>
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          {country.items.join(' ')}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                ) : region.subregions ? (
+                  <div className="subregions space-y-6">
+                    {region.subregions.map((sub, j) => (
+                      <div key={j} className="subregion">
+                        <h4 className="font-semibold text-foreground mb-2">{sub.name}:</h4>
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          {sub.items.join(' ')}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // French geographic coverage
+  if (language === 'fr' && dataFr) {
+    return (
+      <section
+        id="geographic-coverage"
+        className="geographic-coverage section-padding bg-muted/30"
+        lang="fr"
+      >
+        <div className="container-wide">
+          <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up">
+            {dataFr.title}
+          </h2>
+          <div className="regions-grid space-y-10">
+            {dataFr.regions.map((region, i) => (
+              <div key={i} className={`region ${region.class || ''}`}>
+                <h3 className="text-xl font-display font-semibold text-foreground mb-6">
+                  {region.name}
+                </h3>
+                {region.countries ? (
+                  <div className="countries-compact grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {region.countries.map((country, j) => (
+                      <div key={j} className="country rounded-xl bg-background p-6 shadow-sm border border-border">
+                        <h4 className="font-semibold text-foreground mb-3">{country.name}</h4>
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          {country.items.join(' ')}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                ) : region.subregions ? (
+                  <div className="subregions space-y-6">
+                    {region.subregions.map((sub, j) => (
+                      <div key={j} className="subregion">
+                        <h4 className="font-semibold text-foreground mb-2">{sub.name} :</h4>
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          {sub.items.join(' ')}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // German geographic coverage
+  if (language === 'de' && dataDe) {
+    return (
+      <section
+        id="geographic-coverage"
+        className="geographic-coverage section-padding bg-muted/30"
+        lang="de"
+      >
+        <div className="container-wide">
+          <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up">
+            {dataDe.title}
+          </h2>
+          <div className="region-overview space-y-10">
+            {dataDe.regions.map((region, i) => (
+              <div key={i} className={`region ${region.class || ''}`}>
+                <h3 className="text-xl font-display font-semibold text-foreground mb-6">
+                  {region.name}
+                </h3>
+                {region.countries ? (
+                  <div className="country-grid grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {region.countries.map((country, j) => (
+                      <div key={j} className="country rounded-xl bg-background p-6 shadow-sm border border-border">
+                        <h4 className="font-semibold text-foreground mb-3">{country.name}</h4>
+                        <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
+                          {country.items.map((item, k) => (
+                            <li key={k}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                ) : region.subregions ? (
+                  <div className="space-y-6">
+                    {region.subregions.map((sub, j) => (
+                      <div key={j} className="subregion">
+                        <h4 className="font-semibold text-foreground mb-2">{sub.name}</h4>
+                        <ul className="list-disc list-inside text-muted-foreground space-y-1">
+                          {sub.items.map((item, k) => (
+                            <li key={k}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Arabic geographic coverage
+  if (language !== 'ar' || !dataAr) return null;
 
   return (
     <section
@@ -23,10 +280,10 @@ const GeographicCoverageSection = () => {
     >
       <div className="container-wide">
         <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up">
-          {data.title}
+          {dataAr.title}
         </h2>
         <div className="country-details grid md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
-          {data.countries.map((country, i) => (
+          {dataAr.countries.map((country, i) => (
             <div
               key={i}
               className={`country-card rounded-xl bg-background p-6 md:p-8 shadow-sm border border-border animate-fade-up ${country.featured ? 'featured border-primary/30 ring-1 ring-primary/10' : ''}`}

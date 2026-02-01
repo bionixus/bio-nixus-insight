@@ -5,6 +5,7 @@ import HeroSection from '@/components/HeroSection';
 import ServicesSection from '@/components/ServicesSection';
 import GeographicCoverageSection from '@/components/GeographicCoverageSection';
 import MethodologySection from '@/components/MethodologySection';
+import TherapeuticAreasSection from '@/components/TherapeuticAreasSection';
 import StatsSection from '@/components/StatsSection';
 import BlogSection from '@/components/BlogSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
@@ -35,6 +36,7 @@ const Index = () => {
         <ServicesSection />
         <GeographicCoverageSection />
         <MethodologySection />
+        <TherapeuticAreasSection />
         <StatsSection />
         <BlogSection />
         <TestimonialsSection />

@@ -12,8 +12,19 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+function getInitialLanguage(): Language {
+  if (typeof window === 'undefined') return 'en';
+  const path = window.location.pathname;
+  if (path.startsWith('/de')) return 'de';
+  if (path.startsWith('/ar')) return 'ar';
+  if (path.startsWith('/fr')) return 'fr';
+  if (path.startsWith('/es')) return 'es';
+  if (path.startsWith('/zh')) return 'zh';
+  return 'en';
+}
+
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguageState] = useState<Language>('en');
+  const [language, setLanguageState] = useState<Language>(getInitialLanguage);
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
@@ -25,13 +36,13 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
-    document.documentElement.lang = language;
+    document.documentElement.lang = language === 'zh' ? 'zh-CN' : language;
   }, [language, isRTL]);
 
   const value = {
-    language: language,
+    language,
     setLanguage,
-    t: translations[language],
+    t: translations[language] ?? translations.en,
     isRTL,
   };
 

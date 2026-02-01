@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languages } from '@/lib/i18n';
+import { languagePaths } from '@/lib/seo';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,22 +14,31 @@ import {
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { pathname } = useLocation();
+  const navigate = useNavigate();
   const { language, setLanguage, t } = useLanguage();
+  const basePath = languagePaths[language] || '/';
 
   const handleLogoClick = () => {
-    if (pathname === '/') {
+    const isHome = pathname === '/' || pathname === '/de' || pathname === '/ar';
+    if (isHome) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
+  const handleLanguageChange = (code: typeof language) => {
+    setLanguage(code);
+    const path = languagePaths[code] || '/';
+    navigate(path);
+    setIsOpen(false);
+  };
+
   const currentLang = languages.find(l => l.code === language);
 
-  // Use /#section so links work from any page (e.g. /blog) and scroll to the right section on home
   const navItems = [
-    { href: '/#services', label: t.nav.services },
-    { href: '/#insights', label: t.nav.insights },
-    { href: '/#about', label: t.nav.about },
-    { href: '/#contact', label: t.nav.contact },
+    { href: `${basePath}#services`, label: t.nav.services },
+    { href: `${basePath}#insights`, label: t.nav.insights },
+    { href: `${basePath}#about`, label: t.nav.about },
+    { href: `${basePath}#contact`, label: t.nav.contact },
   ];
 
   return (
@@ -36,7 +46,7 @@ const Navbar = () => {
       <div className="container-wide section-padding py-4">
         <div className="flex items-center justify-between">
           {/* Logo – links to home, scrolls to hero when already on home */}
-          <Link to="/" className="flex items-center gap-3" onClick={handleLogoClick}>
+          <Link to={basePath} className="flex items-center gap-3" onClick={handleLogoClick}>
             <img
               src="/bionixus-logo.png"
               alt="BioNixus"
@@ -69,7 +79,7 @@ const Navbar = () => {
                 {languages.map((lang) => (
                   <DropdownMenuItem
                     key={lang.code}
-                    onClick={() => setLanguage(lang.code)}
+                    onClick={() => handleLanguageChange(lang.code)}
                     className={`cursor-pointer ${language === lang.code ? 'bg-muted' : ''}`}
                   >
                     <span className="mr-2">{lang.flag}</span>
@@ -80,7 +90,7 @@ const Navbar = () => {
             </DropdownMenu>
 
             <Link
-              to="/#contact"
+              to={`${basePath}#contact`}
               className="px-5 py-2.5 bg-primary text-primary-foreground rounded-lg font-medium text-sm hover:opacity-90 transition-opacity"
             >
               {t.nav.contact}
@@ -119,10 +129,7 @@ const Navbar = () => {
                 {languages.map((lang) => (
                   <button
                     key={lang.code}
-                    onClick={() => {
-                      setLanguage(lang.code);
-                      setIsOpen(false);
-                    }}
+                    onClick={() => handleLanguageChange(lang.code)}
                     className={`px-3 py-2 rounded-lg text-sm ${
                       language === lang.code
                         ? 'bg-primary text-primary-foreground'

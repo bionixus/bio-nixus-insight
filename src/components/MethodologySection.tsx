@@ -6,12 +6,196 @@ type MethodologyStep = {
   subsections?: { heading: string; items: string[] }[];
 };
 type MethodologyAr = { title: string; steps: MethodologyStep[] };
+type MethodologyStepDe = { title: string; description: string };
+type MethodologyDe = { title: string; steps: MethodologyStepDe[] };
+
+type MethodologyFr = MethodologyDe;
+type MethodologyEs = MethodologyDe;
+type MethodologyZh = MethodologyDe;
+
+type MethodologyEn = { title: string; intro?: string; steps: MethodologyStepDe[] };
 
 const MethodologySection = () => {
   const { t, language } = useLanguage();
-  const data = 'methodologyAr' in t ? (t as { methodologyAr?: MethodologyAr }).methodologyAr : undefined;
+  const dataEn = 'methodologyEn' in t ? (t as { methodologyEn?: MethodologyEn }).methodologyEn : undefined;
+  const dataAr = 'methodologyAr' in t ? (t as { methodologyAr?: MethodologyAr }).methodologyAr : undefined;
+  const dataDe = 'methodologyDe' in t ? (t as { methodologyDe?: MethodologyDe }).methodologyDe : undefined;
+  const dataFr = 'methodologyFr' in t ? (t as { methodologyFr?: MethodologyFr }).methodologyFr : undefined;
+  const dataEs = 'methodologyEs' in t ? (t as { methodologyEs?: MethodologyEs }).methodologyEs : undefined;
+  const dataZh = 'methodologyZh' in t ? (t as { methodologyZh?: MethodologyZh }).methodologyZh : undefined;
 
-  if (language !== 'ar' || !data) return null;
+  // English methodology
+  if (language === 'en' && dataEn) {
+    return (
+      <section
+        id="methodology"
+        className="methodology section-padding bg-cream"
+        lang="en"
+      >
+        <div className="container-wide">
+          <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up">
+            {dataEn.title}
+          </h2>
+          {dataEn.intro && (
+            <p className="text-center text-muted-foreground text-lg max-w-3xl mx-auto mb-10">
+              {dataEn.intro}
+            </p>
+          )}
+          <div className="methodology-compact space-y-6">
+            {dataEn.steps.map((step, i) => (
+              <div
+                key={i}
+                className="step rounded-xl bg-background p-6 md:p-8 shadow-sm border border-border animate-fade-up"
+                style={{ animationDelay: `${i * 80}ms` }}
+              >
+                <h3 className="text-lg md:text-xl font-display font-semibold text-foreground mb-3">
+                  {step.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Chinese methodology (compact)
+  if (language === 'zh' && dataZh) {
+    return (
+      <section
+        id="methodology"
+        className="methodology section-padding bg-cream"
+        lang="zh-CN"
+      >
+        <div className="container-wide">
+          <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up">
+            {dataZh.title}
+          </h2>
+          <div className="methodology-steps space-y-6">
+            {dataZh.steps.map((step, i) => (
+              <div
+                key={i}
+                className="step rounded-xl bg-background p-6 md:p-8 shadow-sm border border-border animate-fade-up"
+                style={{ animationDelay: `${i * 80}ms` }}
+              >
+                <h3 className="text-lg md:text-xl font-display font-semibold text-foreground mb-3">
+                  {step.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Spanish methodology (compact)
+  if (language === 'es' && dataEs) {
+    return (
+      <section
+        id="methodology"
+        className="methodology section-padding bg-cream"
+        lang="es"
+      >
+        <div className="container-wide">
+          <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up">
+            {dataEs.title}
+          </h2>
+          <div className="methodology-steps space-y-6">
+            {dataEs.steps.map((step, i) => (
+              <div
+                key={i}
+                className="step rounded-xl bg-background p-6 md:p-8 shadow-sm border border-border animate-fade-up"
+                style={{ animationDelay: `${i * 80}ms` }}
+              >
+                <h3 className="text-lg md:text-xl font-display font-semibold text-foreground mb-3">
+                  {step.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // French methodology (compact)
+  if (language === 'fr' && dataFr) {
+    return (
+      <section
+        id="methodology"
+        className="methodology section-padding bg-cream"
+        lang="fr"
+      >
+        <div className="container-wide">
+          <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up">
+            {dataFr.title}
+          </h2>
+          <div className="methodology-steps space-y-6">
+            {dataFr.steps.map((step, i) => (
+              <div
+                key={i}
+                className="step rounded-xl bg-background p-6 md:p-8 shadow-sm border border-border animate-fade-up"
+                style={{ animationDelay: `${i * 80}ms` }}
+              >
+                <h3 className="text-lg md:text-xl font-display font-semibold text-foreground mb-3">
+                  {step.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // German methodology (compact)
+  if (language === 'de' && dataDe) {
+    return (
+      <section
+        id="methodology"
+        className="methodology section-padding bg-cream"
+        lang="de"
+      >
+        <div className="container-wide">
+          <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up">
+            {dataDe.title}
+          </h2>
+          <div className="methodology-compact space-y-6">
+            {dataDe.steps.map((step, i) => (
+              <div
+                key={i}
+                className="step rounded-xl bg-background p-6 md:p-8 shadow-sm border border-border animate-fade-up"
+                style={{ animationDelay: `${i * 80}ms` }}
+              >
+                <h3 className="text-lg md:text-xl font-display font-semibold text-foreground mb-3">
+                  {step.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Arabic methodology
+  if (language !== 'ar' || !dataAr) return null;
 
   return (
     <section
@@ -21,10 +205,10 @@ const MethodologySection = () => {
     >
       <div className="container-wide">
         <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up">
-          {data.title}
+          {dataAr.title}
         </h2>
         <div className="methodology-steps space-y-8 md:space-y-10">
-          {data.steps.map((step, i) => (
+          {dataAr.steps.map((step, i) => (
             <div
               key={i}
               className="step rounded-xl bg-background p-6 md:p-8 shadow-sm border border-border animate-fade-up"
