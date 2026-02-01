@@ -1,12 +1,12 @@
 export type Language = 'en' | 'de' | 'fr' | 'es' | 'zh' | 'ar';
 
 export const languages: { code: Language; name: string; flag: string; rtl?: boolean }[] = [
-  { code: 'en', name: 'English', flag: '🇬🇧' },
-  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-  { code: 'fr', name: 'Français', flag: '🇫🇷' },
-  { code: 'es', name: 'Español', flag: '🇪🇸' },
-  { code: 'zh', name: '中文', flag: '🇨🇳' },
-  { code: 'ar', name: 'العربية', flag: '🇸🇦', rtl: true },
+  { code: 'en', name: 'English', flag: 'GB' },
+  { code: 'de', name: 'Deutsch', flag: 'DE' },
+  { code: 'fr', name: 'Francais', flag: 'FR' },
+  { code: 'es', name: 'Espanol', flag: 'ES' },
+  { code: 'zh', name: 'Chinese', flag: 'CN' },
+  { code: 'ar', name: 'Arabic', flag: 'SA', rtl: true },
 ];
 
 export const translations = {

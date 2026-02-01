@@ -1,13 +1,13 @@
 /**
- * WordPress → Blog mapping for topic (category) and country.
+ * WordPress to Blog mapping for topic (category) and country.
  *
  * HOW TO FETCH ARTICLES FROM WORDPRESS
  * -------------------------------------
  * 1. WordPress REST API endpoint: https://yoursite.com/wp-json/wp/v2/posts
  *
  * 2. Required custom fields or taxonomies in WordPress:
- *    - Categories (built-in) → maps to category (topic filter)
- *    - Custom taxonomy "Country" or custom field → maps to country filter
+ *    - Categories (built-in) maps to category (topic filter)
+ *    - Custom taxonomy "Country" or custom field maps to country filter
  *
  * 3. Recommended plugins for enhanced REST API:
  *    - ACF to REST API (if using Advanced Custom Fields)
@@ -35,7 +35,7 @@ export interface WordPressPost {
   acf?: {
     country?: string;
   };
-  /** Category IDs (you'll need to resolve names separately or use _embed) */
+  /** Category IDs (you will need to resolve names separately or use _embed) */
   categories?: number[];
 }
 
@@ -67,7 +67,7 @@ export async function fetchWordPressPosts(
   const params = new URLSearchParams({
     per_page: String(perPage),
     page: String(page),
-    _embed: 'true', // Include featured images and terms
+    _embed: 'true',
   });
 
   if (category) {
@@ -94,33 +94,26 @@ function stripHtml(html: string): string {
 
 /**
  * Map one WordPress post to BlogPost.
- * Categories → category (topic), ACF/custom field → country.
+ * Categories map to category (topic), ACF/custom field maps to country.
  */
 export function wordPressPostToBlogPost(post: WordPressPost): BlogPost {
-  // Get title (strip HTML)
   const title = stripHtml(post.title.rendered);
 
-  // Get excerpt (strip HTML and limit length)
   const excerpt = stripHtml(post.excerpt.rendered).slice(0, 200);
 
-  // Format date
   const date = new Date(post.date).toLocaleDateString('en-GB', {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
   });
 
-  // Get category from embedded terms (first category found)
   const terms = post._embedded?.['wp:term']?.flat() ?? [];
   const categoryTerm = terms.find((t) => t.taxonomy === 'category');
   const category = categoryTerm?.name ?? '';
 
-  // Get country from ACF field or custom taxonomy
-  // Adjust based on your WordPress setup
   const countryTerm = terms.find((t) => t.taxonomy === 'country');
   const country = countryTerm?.name ?? post.acf?.country ?? '';
 
-  // Get featured image
   const coverImage = post._embedded?.['wp:featuredmedia']?.[0]?.source_url;
 
   return {
@@ -137,14 +130,13 @@ export function wordPressPostToBlogPost(post: WordPressPost): BlogPost {
 
 /**
  * Fetch and map WordPress posts to BlogPost[].
- * Use this to get posts ready for <BlogSection posts={posts} />.
+ * Use this to get posts ready for BlogSection posts prop.
  *
  * Example:
  *   const posts = await getWordPressBlogPosts({
  *     siteUrl: 'https://blog.bionixus.com',
  *     perPage: 6,
  *   });
- *   <BlogSection posts={posts} />
  */
 export async function getWordPressBlogPosts(
   options: WordPressFetchOptions
