@@ -100,9 +100,9 @@ export const translations = {
       filterByTopic: 'Topic',
       filterByCountry: 'Country',
       items: [
-        { category: 'Market Access', country: 'Europe', title: 'The Future of Value-Based Healthcare Agreements in Europe', excerpt: 'How innovative contracting models are reshaping pharmaceutical pricing and access strategies across major European markets.', date: '2024 Q4 Report' },
-        { category: 'Digital Health', country: 'USA', title: 'AI-Driven Drug Discovery: Market Implications', excerpt: 'Analyzing the competitive landscape shift as artificial intelligence transforms pharmaceutical R&D and time-to-market.', date: 'Strategic Brief' },
-        { category: 'Oncology', country: 'UK', title: 'Precision Medicine Market Dynamics 2025', excerpt: 'Comprehensive analysis of biomarker-driven therapies and the evolving oncology treatment paradigm.', date: 'Industry Analysis' },
+        { category: 'Market Access', country: 'Europe', title: 'The Future of Value-Based Healthcare Agreements in Europe', excerpt: 'How innovative contracting models are reshaping pharmaceutical pricing and access strategies across major European markets.', date: '2024 Q4 Report', coverImage: '/blog-insight-1.png' },
+        { category: 'Digital Health', country: 'USA', title: 'AI-Driven Drug Discovery: Market Implications', excerpt: 'Analyzing the competitive landscape shift as artificial intelligence transforms pharmaceutical R&D and time-to-market.', date: 'Strategic Brief', coverImage: '/blog-insight-2.png' },
+        { category: 'Oncology', country: 'UK', title: 'Precision Medicine Market Dynamics 2025', excerpt: 'Comprehensive analysis of biomarker-driven therapies and the evolving oncology treatment paradigm.', date: 'Industry Analysis', coverImage: '/blog-insight-3.png' },
       ],
     },
     stats: {
@@ -307,9 +307,9 @@ export const translations = {
       filterByTopic: 'Thema',
       filterByCountry: 'Land',
       items: [
-        { category: 'Marktzugang', country: 'Europa', title: 'Die Zukunft wertbasierter Gesundheitsvereinbarungen in Europa', excerpt: 'Wie innovative Vertragsmodelle pharmazeutische Preis- und Zugangsstrategien in großen europäischen Märkten umgestalten.', date: '2024 Q4 Bericht' },
-        { category: 'Digitale Gesundheit', country: 'USA', title: 'KI-gesteuerte Arzneimittelentdeckung: Marktimplikationen', excerpt: 'Analyse der Wettbewerbslandschaftsverschiebung, während künstliche Intelligenz pharmazeutische F&E transformiert.', date: 'Strategische Kurzanalyse' },
-        { category: 'Onkologie', country: 'UK', title: 'Präzisionsmedizin Marktdynamik 2025', excerpt: 'Umfassende Analyse von Biomarker-gesteuerten Therapien und dem sich entwickelnden Onkologie-Behandlungsparadigma.', date: 'Branchenanalyse' },
+        { category: 'Marktzugang', country: 'Europa', title: 'Die Zukunft wertbasierter Gesundheitsvereinbarungen in Europa', excerpt: 'Wie innovative Vertragsmodelle pharmazeutische Preis- und Zugangsstrategien in großen europäischen Märkten umgestalten.', date: '2024 Q4 Bericht', coverImage: '/blog-insight-1.png' },
+        { category: 'Digitale Gesundheit', country: 'USA', title: 'KI-gesteuerte Arzneimittelentdeckung: Marktimplikationen', excerpt: 'Analyse der Wettbewerbslandschaftsverschiebung, während künstliche Intelligenz pharmazeutische F&E transformiert.', date: 'Strategische Kurzanalyse', coverImage: '/blog-insight-2.png' },
+        { category: 'Onkologie', country: 'UK', title: 'Präzisionsmedizin Marktdynamik 2025', excerpt: 'Umfassende Analyse von Biomarker-gesteuerten Therapien und dem sich entwickelnden Onkologie-Behandlungsparadigma.', date: 'Branchenanalyse', coverImage: '/blog-insight-3.png' },
       ],
     },
     stats: {
@@ -514,9 +514,9 @@ export const translations = {
       filterByTopic: 'Thème',
       filterByCountry: 'Pays',
       items: [
-        { category: 'Accès au Marché', country: 'Europe', title: 'L\'Avenir des Accords de Santé Basés sur la Valeur en Europe', excerpt: 'Comment les modèles contractuels innovants remodèlent les stratégies de prix et d\'accès pharmaceutiques.', date: 'Rapport T4 2024' },
-        { category: 'Santé Numérique', country: 'USA', title: 'Découverte de Médicaments par l\'IA: Implications Marché', excerpt: 'Analyse du changement de paysage concurrentiel alors que l\'IA transforme la R&D pharmaceutique.', date: 'Note Stratégique' },
-        { category: 'Oncologie', country: 'Royaume-Uni', title: 'Dynamique du Marché de la Médecine de Précision 2025', excerpt: 'Analyse complète des thérapies guidées par biomarqueurs et du paradigme de traitement oncologique.', date: 'Analyse Sectorielle' },
+        { category: 'Accès au Marché', country: 'Europe', title: 'L\'Avenir des Accords de Santé Basés sur la Valeur en Europe', excerpt: 'Comment les modèles contractuels innovants remodèlent les stratégies de prix et d\'accès pharmaceutiques.', date: 'Rapport T4 2024', coverImage: '/blog-insight-1.png' },
+        { category: 'Santé Numérique', country: 'USA', title: 'Découverte de Médicaments par l\'IA: Implications Marché', excerpt: 'Analyse du changement de paysage concurrentiel alors que l\'IA transforme la R&D pharmaceutique.', date: 'Note Stratégique', coverImage: '/blog-insight-2.png' },
+        { category: 'Oncologie', country: 'Royaume-Uni', title: 'Dynamique du Marché de la Médecine de Précision 2025', excerpt: 'Analyse complète des thérapies guidées par biomarqueurs et du paradigme de traitement oncologique.', date: 'Analyse Sectorielle', coverImage: '/blog-insight-3.png' },
       ],
     },
     stats: {
@@ -721,9 +721,9 @@ export const translations = {
       filterByTopic: 'Tema',
       filterByCountry: 'País',
       items: [
-        { category: 'Acceso al Mercado', country: 'Europa', title: 'El Futuro de los Acuerdos de Salud Basados en Valor en Europa', excerpt: 'Cómo los modelos de contratación innovadores están remodelando las estrategias de precios farmacéuticos.', date: 'Informe Q4 2024' },
-        { category: 'Salud Digital', country: 'EE. UU.', title: 'Descubrimiento de Fármacos con IA: Implicaciones de Mercado', excerpt: 'Análisis del cambio en el panorama competitivo mientras la IA transforma la I+D farmacéutica.', date: 'Brief Estratégico' },
-        { category: 'Oncología', country: 'Reino Unido', title: 'Dinámica del Mercado de Medicina de Precisión 2025', excerpt: 'Análisis integral de terapias guiadas por biomarcadores y el paradigma de tratamiento oncológico.', date: 'Análisis Industrial' },
+        { category: 'Acceso al Mercado', country: 'Europa', title: 'El Futuro de los Acuerdos de Salud Basados en Valor en Europa', excerpt: 'Cómo los modelos de contratación innovadores están remodelando las estrategias de precios farmacéuticos.', date: 'Informe Q4 2024', coverImage: '/blog-insight-1.png' },
+        { category: 'Salud Digital', country: 'EE. UU.', title: 'Descubrimiento de Fármacos con IA: Implicaciones de Mercado', excerpt: 'Análisis del cambio en el panorama competitivo mientras la IA transforma la I+D farmacéutica.', date: 'Brief Estratégico', coverImage: '/blog-insight-2.png' },
+        { category: 'Oncología', country: 'Reino Unido', title: 'Dinámica del Mercado de Medicina de Precisión 2025', excerpt: 'Análisis integral de terapias guiadas por biomarcadores y el paradigma de tratamiento oncológico.', date: 'Análisis Industrial', coverImage: '/blog-insight-3.png' },
       ],
     },
     stats: {
@@ -928,9 +928,9 @@ export const translations = {
       filterByTopic: '主题',
       filterByCountry: '国家',
       items: [
-        { category: '市场准入', country: '欧洲', title: '欧洲基于价值的医疗协议的未来', excerpt: '创新合同模式如何重塑主要欧洲市场的制药定价和准入策略。', date: '2024年第四季度报告' },
-        { category: '数字健康', country: '美国', title: 'AI驱动的药物发现：市场影响', excerpt: '分析人工智能改变制药研发和上市时间时的竞争格局变化。', date: '战略简报' },
-        { category: '肿瘤学', country: '英国', title: '2025年精准医疗市场动态', excerpt: '对生物标志物驱动疗法和不断发展的肿瘤治疗范式的全面分析。', date: '行业分析' },
+        { category: '市场准入', country: '欧洲', title: '欧洲基于价值的医疗协议的未来', excerpt: '创新合同模式如何重塑主要欧洲市场的制药定价和准入策略。', date: '2024年第四季度报告', coverImage: '/blog-insight-1.png' },
+        { category: '数字健康', country: '美国', title: 'AI驱动的药物发现：市场影响', excerpt: '分析人工智能改变制药研发和上市时间时的竞争格局变化。', date: '战略简报', coverImage: '/blog-insight-2.png' },
+        { category: '肿瘤学', country: '英国', title: '2025年精准医疗市场动态', excerpt: '对生物标志物驱动疗法和不断发展的肿瘤治疗范式的全面分析。', date: '行业分析', coverImage: '/blog-insight-3.png' },
       ],
     },
     stats: {
@@ -1145,9 +1145,9 @@ export const translations = {
       filterByTopic: 'الموضوع',
       filterByCountry: 'البلد',
       items: [
-        { category: 'الوصول إلى السوق', country: 'أوروبا', title: 'مستقبل اتفاقيات الرعاية الصحية القائمة على القيمة في أوروبا', excerpt: 'كيف تعيد نماذج التعاقد المبتكرة تشكيل استراتيجيات التسعير والوصول الصيدلاني عبر الأسواق الأوروبية الرئيسية.', date: 'تقرير الربع الرابع 2024' },
-        { category: 'الصحة الرقمية', country: 'الولايات المتحدة', title: 'اكتشاف الأدوية بالذكاء الاصطناعي: تداعيات السوق', excerpt: 'تحليل تحول المشهد التنافسي بينما يحول الذكاء الاصطناعي البحث والتطوير الصيدلاني ووقت الوصول إلى السوق.', date: 'موجز استراتيجي' },
-        { category: 'الأورام', country: 'المملكة المتحدة', title: 'ديناميكيات سوق الطب الدقيق 2025', excerpt: 'تحليل شامل للعلاجات الموجهة بالمؤشرات الحيوية ونموذج علاج الأورام المتطور.', date: 'تحليل الصناعة' },
+        { category: 'الوصول إلى السوق', country: 'أوروبا', title: 'مستقبل اتفاقيات الرعاية الصحية القائمة على القيمة في أوروبا', excerpt: 'كيف تعيد نماذج التعاقد المبتكرة تشكيل استراتيجيات التسعير والوصول الصيدلاني عبر الأسواق الأوروبية الرئيسية.', date: 'تقرير الربع الرابع 2024', coverImage: '/blog-insight-1.png' },
+        { category: 'الصحة الرقمية', country: 'الولايات المتحدة', title: 'اكتشاف الأدوية بالذكاء الاصطناعي: تداعيات السوق', excerpt: 'تحليل تحول المشهد التنافسي بينما يحول الذكاء الاصطناعي البحث والتطوير الصيدلاني ووقت الوصول إلى السوق.', date: 'موجز استراتيجي', coverImage: '/blog-insight-2.png' },
+        { category: 'الأورام', country: 'المملكة المتحدة', title: 'ديناميكيات سوق الطب الدقيق 2025', excerpt: 'تحليل شامل للعلاجات الموجهة بالمؤشرات الحيوية ونموذج علاج الأورام المتطور.', date: 'تحليل الصناعة', coverImage: '/blog-insight-3.png' },
       ],
     },
     stats: {
