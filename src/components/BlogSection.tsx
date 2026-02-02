@@ -11,8 +11,19 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 
+import blogImage1 from '@/assets/blog-insight-1.png';
+import blogImage2 from '@/assets/blog-insight-2.png';
+import blogImage3 from '@/assets/blog-insight-3.png';
+
 interface BlogSectionProps {
   posts?: BlogPost[];
+}
+
+const DEFAULT_COVER_IMAGES = [blogImage1, blogImage2, blogImage3];
+
+function getImageSrc(url: string | undefined, index: number): string {
+  if (url?.startsWith('http')) return url;
+  return DEFAULT_COVER_IMAGES[index % DEFAULT_COVER_IMAGES.length];
 }
 
 const BlogSection = ({ posts }: BlogSectionProps) => {
@@ -112,13 +123,11 @@ const BlogSection = ({ posts }: BlogSectionProps) => {
               style={{ animationDelay: `${index * 150}ms` }}
             >
               <div className="relative aspect-[16/10] rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-primary via-primary/95 to-navy-medium">
-                {post.coverImage && (
-                  <img
-                    src={post.coverImage}
-                    alt=""
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                )}
+                <img
+                  src={getImageSrc(post.coverImage, index)}
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
               </div>
               <div className="space-y-3">
