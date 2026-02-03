@@ -11,9 +11,11 @@ import BlogSection from '@/components/BlogSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import { useSanityBlog } from '@/hooks/useSanityBlog';
 
 const Index = () => {
   const { hash } = useLocation();
+  const { data: sanityPosts } = useSanityBlog();
 
   useEffect(() => {
     if (hash) {
@@ -38,7 +40,7 @@ const Index = () => {
         <MethodologySection />
         <TherapeuticAreasSection />
         <StatsSection />
-        <BlogSection />
+        <BlogSection posts={sanityPosts?.slice(0, 3) ?? undefined} />
         <TestimonialsSection />
         <ContactSection />
       </main>

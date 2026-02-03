@@ -50,6 +50,17 @@ npm run dev
 - Click on "New codespace" to launch a new Codespace environment.
 - Edit files directly within the Codespace and commit and push your changes once you're done.
 
+## Testing Case Studies
+
+Case studies (PDFs behind a contact gate) use a separate Sanity project. To test:
+
+1. **Env** – `.env` already has `VITE_SANITY_CASE_STUDIES_PROJECT_ID=gj6cv27f`.
+2. **CORS** – In [sanity.io/manage](https://sanity.io/manage) → project **gj6cv27f** → API → CORS, add `http://localhost:5173` and your production URL.
+3. **Studio** – First time: `cd day-one/apps/studio-case-studies && npm install`. Then from root: `npm run studio:case-studies`. Create a Case Study with a PDF.
+4. **Site** – `npm run dev`, open `/case-studies`, request access, then view the PDF.
+
+Full steps: [docs/CASE-STUDIES-SETUP.md](docs/CASE-STUDIES-SETUP.md).
+
 ## What technologies are used for this project?
 
 This project is built with:

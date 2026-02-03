@@ -76,7 +76,17 @@ const Privacy = () => {
 
           <h2 id="terms" className="mt-12 text-xl font-semibold scroll-mt-20">Terms of Service</h2>
           <p>
-            Use of this website and our services is subject to these terms. By using our site you agree to this Privacy Policy and our use of cookies as described. We provide healthcare market research services; content on this site is for general information only and does not constitute professional advice. We reserve the right to update these terms; continued use after changes constitutes acceptance.
+            Use of this website and our services is subject to these terms. By using our site you agree to this Privacy Policy and our use of cookies as described.
+          </p>
+
+          <h3 className="mt-6 text-lg font-semibold">Our commitment to you</h3>
+          <p>
+            We respect our clients and value the trust you place in us. BioNixus is committed to acting with integrity, transparency, and professionalism in all our engagements. We will always support you throughout our partnership—from initial enquiry through delivery and beyond—and we aim to respond to your needs promptly and fairly. Our goal is to build long-term relationships founded on mutual respect and high-quality healthcare market research.
+          </p>
+
+          <h3 className="mt-6 text-lg font-semibold">Services and content</h3>
+          <p>
+            We provide healthcare market research services. Content on this site is for general information only and does not constitute professional advice. We reserve the right to update these terms; continued use after changes constitutes acceptance.
           </p>
 
           <p className="mt-10">

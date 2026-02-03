@@ -1,12 +1,15 @@
+import { useState } from 'react';
 import { Linkedin, Facebook, Instagram } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
+import { ClientPortalDialog } from '@/components/ClientPortalDialog';
 
 const Footer = () => {
   const { pathname } = useLocation();
   const { t, language, isRTL } = useLanguage();
   const basePath = languagePaths[language] || '/';
+  const [portalOpen, setPortalOpen] = useState(false);
 
   const handleLogoClick = () => {
     const isHome =
@@ -105,20 +108,23 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link
-                  to={`${basePath}#contact`}
+                <a
+                  href="https://careers.bionixus.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
                   {t.footer.careers}
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
-                  to={`${basePath}#portal`}
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                <button
+                  type="button"
+                  onClick={() => setPortalOpen(true)}
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem] text-left"
                 >
                   {t.footer.clientsPortal}
-                </Link>
+                </button>
               </li>
               <li>
                 <Link
@@ -207,6 +213,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <ClientPortalDialog open={portalOpen} onOpenChange={setPortalOpen} />
     </footer>
   );
 };

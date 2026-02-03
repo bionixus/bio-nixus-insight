@@ -42,6 +42,7 @@ const Navbar = () => {
   const currentLang = languages.find(l => l.code === language);
 
   const navItems = [
+    { href: basePath, label: t.nav.home },
     { href: `${basePath}#services`, label: t.nav.services },
     { href: `${basePath}#insights`, label: t.nav.insights },
     { href: `${basePath}#about`, label: t.nav.about },

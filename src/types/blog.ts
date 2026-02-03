@@ -11,4 +11,8 @@ export interface BlogPost {
   category: string; // topic
   country: string;
   coverImage?: string;
+  /** Full article body (HTML supported when rendered on post page) */
+  body?: string;
+  /** Language code (en, de, fr, es, zh, ar). Empty = show in all languages. */
+  language?: string;
 }

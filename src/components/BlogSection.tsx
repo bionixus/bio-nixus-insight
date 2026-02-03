@@ -117,39 +117,42 @@ const BlogSection = ({ posts }: BlogSectionProps) => {
 
         <div className="grid lg:grid-cols-3 gap-8">
           {filteredPosts.map((post, index) => (
-            <article
+            <Link
               key={post.id}
-              className="group cursor-pointer animate-fade-up"
+              to={`/blog/${post.slug}`}
+              className="group block animate-fade-up"
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              <div className="relative aspect-[16/10] rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-primary via-primary/95 to-navy-medium">
-                <img
-                  src={getImageSrc(post.coverImage, index)}
-                  alt=""
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
-              </div>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 flex-wrap">
-                  <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full">
-                    {post.category}
-                  </span>
-                  <span className="text-sm text-muted-foreground">{post.country}</span>
-                  <span className="text-sm text-muted-foreground">{post.date}</span>
+              <article className="cursor-pointer">
+                <div className="relative aspect-[16/10] rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-primary via-primary/95 to-navy-medium">
+                  <img
+                    src={getImageSrc(post.coverImage, index)}
+                    alt=""
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
                 </div>
-                <h3 className="text-xl font-display font-semibold text-foreground group-hover:text-primary transition-colors leading-tight">
-                  {post.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {post.excerpt}
-                </p>
-                <div className="flex items-center gap-2 text-primary font-medium pt-2 group-hover:gap-3 transition-all">
-                  {t.blog.readMore}
-                  <ArrowUpRight className="w-4 h-4" />
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3 flex-wrap">
+                    <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full">
+                      {post.category}
+                    </span>
+                    <span className="text-sm text-muted-foreground">{post.country}</span>
+                    <span className="text-sm text-muted-foreground">{post.date}</span>
+                  </div>
+                  <h3 className="text-xl font-display font-semibold text-foreground group-hover:text-primary transition-colors leading-tight">
+                    {post.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {post.excerpt}
+                  </p>
+                  <div className="flex items-center gap-2 text-primary font-medium pt-2 group-hover:gap-3 transition-all">
+                    {t.blog.readMore}
+                    <ArrowUpRight className="w-4 h-4" />
+                  </div>
                 </div>
-              </div>
-            </article>
+              </article>
+            </Link>
           ))}
         </div>
 
