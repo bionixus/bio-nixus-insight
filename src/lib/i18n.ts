@@ -30,7 +30,7 @@ export const translations = {
         'Multi-Country Data Analytics',
         'UK • Europe • MENA Coverage',
       ],
-      cta: 'Request a Proposal',
+      cta: 'Request A Proposal',
       ctaSecondary: 'View BioNixus Case Studies',
       trustBar: 'Trusted by pharmaceutical companies in',
       trustCountries: 'UK • Germany • France • Spain • Italy • UAE • Saudi Arabia • Egypt • Kuwait • Qatar',
@@ -42,27 +42,74 @@ export const translations = {
       items: [
         {
           title: 'Quantitative Healthcare Research & Physician Surveys',
-          description: 'Large-scale statistical insights from physicians and healthcare professionals across UK, Europe, and MENA. Services: NHS and private provider research, hospital preference studies, prescription tracking, HTA decision-maker insights, payer analysis, multi-country surveys (UAE, Saudi Arabia, Egypt, Kuwait, Qatar). Deliverables: Statistical reports, market sizing, pathway analysis, forecasting, segmentation, comparative insights.',
+          description: 'Large-scale statistical insights from physicians and healthcare professionals across UK, Europe, and MENA.',
+          bullets: [
+            'NHS and private provider research',
+            'Hospital preference studies',
+            'Prescription tracking',
+            'HTA decision-maker insights',
+            'Payer analysis',
+            'Multi-country surveys (UAE, Saudi Arabia, Egypt, Kuwait, Qatar)',
+            'Statistical reports and market sizing',
+            'Pathway analysis, forecasting, and segmentation',
+            'Comparative insights',
+          ],
         },
         {
           title: 'Qualitative Pharmaceutical Research & Expert Insights',
-          description: 'Deep-dive qualitative research capturing clinical perspectives and unmet medical needs across UK, Europe, and MENA. Services: NHS consultant/GP interviews, NICE committee engagement, Pan-European KOL mapping, multi-country focus groups, treatment pathway analysis, Gulf healthcare insights. Deliverables: Thematic analysis, consensus summaries, market access recommendations, KOL strategies.',
+          description: 'Deep-dive qualitative research capturing clinical perspectives and unmet medical needs across UK, Europe, and MENA.',
+          bullets: [
+            'NHS consultant / GP interviews',
+            'NICE committee engagement',
+            'Pan-European KOL mapping',
+            'Multi-country focus groups',
+            'Treatment pathway analysis',
+            'Gulf healthcare insights',
+            'Thematic analysis and consensus summaries',
+            'Market access recommendations',
+            'KOL strategies',
+          ],
         },
         {
           title: 'Market Access & HTA Strategy',
-          description: 'NICE, G-BA, HAS and HTA body requirement integration. Evidence-based pricing strategies and payer engagement frameworks for UK and European markets. Reimbursement landscape modeling and cost-effectiveness analysis for HTA submissions.',
+          description: 'Evidence-based pricing and payer engagement for UK and European markets.',
+          bullets: [
+            'NICE, G-BA, HAS and HTA body requirement integration',
+            'Evidence-based pricing strategies',
+            'Payer engagement frameworks',
+            'Reimbursement landscape modeling',
+            'Cost-effectiveness analysis for HTA submissions',
+          ],
         },
         {
           title: 'KOL & Stakeholder Mapping',
-          description: 'UK and Pan-European KOL mapping and engagement. NHS consultant and Royal College member networks. Multi-country medical association partnerships and hospital provider panels.',
+          description: 'KOL mapping and engagement across UK and Europe.',
+          bullets: [
+            'UK and Pan-European KOL mapping and engagement',
+            'NHS consultant and Royal College member networks',
+            'Multi-country medical association partnerships',
+            'Hospital provider panels',
+          ],
         },
         {
           title: 'Geographic Coverage: UK • Europe • MENA',
-          description: 'UK: NHS England, Scotland, Wales, Northern Ireland; London teaching hospitals; NICE, MHRA stakeholder research. Europe: Germany (G-BA, IQWiG), France (HAS, CEPS), Spain, Italy, Netherlands, Belgium, Switzerland. MENA: UAE (DHA, HAAD), Saudi Arabia (Vision 2030), Egypt, Kuwait, Qatar.',
+          description: 'Research and stakeholder coverage across UK, European, and MENA markets.',
+          bullets: [
+            'UK: NHS England, Scotland, Wales, Northern Ireland; London teaching hospitals; NICE, MHRA stakeholder research',
+            'Europe: Germany (G-BA, IQWiG), France (HAS, CEPS), Spain, Italy, Netherlands, Belgium, Switzerland',
+            'MENA: UAE (DHA, HAAD), Saudi Arabia, Egypt, Kuwait, Qatar',
+          ],
         },
         {
           title: 'Methodology & Compliance',
-          description: 'MHRA and EMA regulatory alignment. GDPR-compliant data collection. NHS Research Ethics Committee (REC) standards. Multi-lingual survey deployment (English, German, French, Spanish, Italian, Arabic). Secure data encryption and HEOR analysis.',
+          description: 'Regulatory alignment and secure, compliant research delivery.',
+          bullets: [
+            'MHRA and EMA regulatory alignment',
+            'GDPR-compliant data collection',
+            'NHS Research Ethics Committee (REC) standards',
+            'Multi-lingual survey deployment (English, German, French, Spanish, Italian, Arabic)',
+            'Secure data encryption and HEOR analysis',
+          ],
         },
       ],
     },
@@ -106,7 +153,7 @@ export const translations = {
         { category: 'Oncology', country: 'UK', title: 'Precision Medicine Market Dynamics 2025', excerpt: 'Comprehensive analysis of biomarker-driven therapies and the evolving oncology treatment paradigm.', date: 'Industry Analysis', coverImage: '/blog-insight-3.png' },
         { category: 'Clinical Trials', country: 'Germany', title: 'Clinical Trial Feasibility in European Markets', excerpt: 'Strategic insights for optimizing clinical trial site selection and patient recruitment across Germany and neighboring markets.', date: 'Research Report', coverImage: '/blog-insight-1.png' },
         { category: 'Healthcare Research', country: 'UAE', title: 'Healthcare Market Dynamics in the UAE', excerpt: 'Comprehensive analysis of pharmaceutical market access, regulatory landscape, and commercial opportunities in the United Arab Emirates.', date: 'Market Analysis', coverImage: '/blog-insight-2.png' },
-        { category: 'Market Access', country: 'Saudi Arabia', title: 'Saudi Vision 2030 and Pharmaceutical Innovation', excerpt: 'How Saudi Arabia\'s healthcare transformation is creating new opportunities for pharmaceutical companies in the MENA region.', date: 'Strategic Brief', coverImage: '/blog-insight-3.png' },
+        { category: 'Market Access', country: 'Saudi Arabia', title: 'Pharmaceutical Innovation in Saudi Arabia', excerpt: 'How Saudi Arabia\'s healthcare transformation is creating new opportunities for pharmaceutical companies in the MENA region.', date: 'Strategic Brief', coverImage: '/blog-insight-3.png' },
       ],
     },
     stats: {
@@ -137,7 +184,7 @@ export const translations = {
       emailLabel: 'Email',
       headquartersLabel: 'Headquarters',
       phoneLabel: 'Phone',
-      formTitle: 'Request a Proposal',
+      formTitle: 'Request A Proposal',
       firstName: 'First Name',
       lastName: 'Last Name',
       workEmail: 'Work Email',
@@ -267,7 +314,7 @@ export const translations = {
         },
         {
           title: 'Geografische Abdeckung: Europa • MENA',
-          description: 'UK: NHS England, Schottland, Wales, Nordirland; Londoner Lehrkrankenhäuser; NICE, MHRA Stakeholder-Forschung. Europa: Deutschland (G-BA, IQWiG), Frankreich (HAS, CEPS), Spanien, Italien, Niederlande, Belgien, Schweiz. MENA: UAE (DHA, HAAD), Saudi-Arabien (Vision 2030), Ägypten, Kuwait, Katar.',
+          description: 'UK: NHS England, Schottland, Wales, Nordirland; Londoner Lehrkrankenhäuser; NICE, MHRA Stakeholder-Forschung. Europa: Deutschland (G-BA, IQWiG), Frankreich (HAS, CEPS), Spanien, Italien, Niederlande, Belgien, Schweiz. MENA: UAE (DHA, HAAD), Saudi-Arabien, Ägypten, Kuwait, Katar.',
         },
         {
           title: 'Methodik & Compliance',
@@ -279,7 +326,7 @@ export const translations = {
       title: 'Geografische Abdeckung: Europa • MENA',
       regions: [
         { name: 'Europa - Pan-europäisches Forschungsnetzwerk', countries: [{ name: 'Deutschland', items: ['G-BA und IQWiG Stakeholder-Forschung', 'Krankenhaus und ambulante Versorgung'] }, { name: 'Frankreich', items: ['HAS und CEPS Entscheider-Erkenntnisse', 'Öffentliche und private Krankenhäuser'] }, { name: 'Weitere Märkte', items: ['UK, Spanien, Italien, Niederlande, Belgien, Schweiz', 'Regionale Gesundheitssysteme und Fachversorgung'] }] },
-        { name: 'MENA - Strategische Markterweiterung', countries: [{ name: 'UAE', items: ['DHA- und HAAD-regulierte Einrichtungen', 'Dubai Healthcare City'] }, { name: 'Saudi-Arabien', items: ['MOH und Vision 2030 Gesundheitswesen-Transformation'] }, { name: 'Weitere Märkte', items: ['Ägypten, Kuwait, Katar', 'Öffentliche und private Gesundheitsnetzwerke'] }] },
+        { name: 'MENA - Strategische Markterweiterung', countries: [{ name: 'UAE', items: ['DHA- und HAAD-regulierte Einrichtungen', 'Dubai Healthcare City'] }, { name: 'Saudi-Arabien', items: ['MOH Gesundheitswesen-Transformation'] }, { name: 'Weitere Märkte', items: ['Ägypten, Kuwait, Katar', 'Öffentliche und private Gesundheitsnetzwerke'] }] },
       ],
     },
     methodologyDe: {
@@ -339,7 +386,7 @@ export const translations = {
         { category: 'Onkologie', country: 'UK', title: 'Präzisionsmedizin Marktdynamik 2025', excerpt: 'Umfassende Analyse von Biomarker-gesteuerten Therapien und dem sich entwickelnden Onkologie-Behandlungsparadigma.', date: 'Branchenanalyse', coverImage: '/blog-insight-3.png' },
         { category: 'Klinische Studien', country: 'Deutschland', title: 'Klinische Studiendurchführbarkeit in europäischen Märkten', excerpt: 'Strategische Erkenntnisse zur Optimierung der Standortauswahl und Patientenrekrutierung in Deutschland und Nachbarmärkten.', date: 'Forschungsbericht', coverImage: '/blog-insight-1.png' },
         { category: 'Gesundheitsforschung', country: 'UAE', title: 'Gesundheitsmarktdynamik in den VAE', excerpt: 'Umfassende Analyse des pharmazeutischen Marktzugangs, der regulatorischen Landschaft und kommerzieller Chancen in den Vereinigten Arabischen Emiraten.', date: 'Marktanalyse', coverImage: '/blog-insight-2.png' },
-        { category: 'Marktzugang', country: 'Saudi-Arabien', title: 'Saudi Vision 2030 und pharmazeutische Innovation', excerpt: 'Wie die Gesundheitstransformation Saudi-Arabiens neue Chancen für Pharmaunternehmen in der MENA-Region schafft.', date: 'Strategische Kurzanalyse', coverImage: '/blog-insight-3.png' },
+        { category: 'Marktzugang', country: 'Saudi-Arabien', title: 'Pharmazeutische Innovation in Saudi-Arabien', excerpt: 'Wie die Gesundheitstransformation Saudi-Arabiens neue Chancen für Pharmaunternehmen in der MENA-Region schafft.', date: 'Strategische Kurzanalyse', coverImage: '/blog-insight-3.png' },
       ],
     },
     stats: {
@@ -499,7 +546,7 @@ export const translations = {
         },
         {
           title: 'Couverture Géographique: Europe • MENA',
-          description: 'UK: NHS England, Écosse, Pays de Galles, Irlande du Nord; hôpitaux universitaires London; recherche parties prenantes NICE, MHRA. Europe: Allemagne (G-BA, IQWiG), France (HAS, CEPS), Espagne, Italie, Pays-Bas, Belgique, Suisse. MENA: EAU (DHA, HAAD), Arabie Saoudite (Vision 2030), Égypte, Koweït, Qatar.',
+          description: 'UK: NHS England, Écosse, Pays de Galles, Irlande du Nord; hôpitaux universitaires London; recherche parties prenantes NICE, MHRA. Europe: Allemagne (G-BA, IQWiG), France (HAS, CEPS), Espagne, Italie, Pays-Bas, Belgique, Suisse. MENA: EAU (DHA, HAAD), Arabie Saoudite, Égypte, Koweït, Qatar.',
         },
         {
           title: 'Méthodologie & Conformité',
@@ -511,7 +558,7 @@ export const translations = {
       title: 'Couverture Géographique: Europe • MENA',
       regions: [
         { name: 'Europe - Réseau de Recherche Pan-européen', countries: [{ name: 'Allemagne', items: ['Recherche parties prenantes G-BA et IQWiG', 'Soins hospitaliers et ambulatoires'] }, { name: 'France', items: ['Insights décideurs HAS et CEPS', 'Hôpitaux publics et privés'] }, { name: 'Autres marchés', items: ['UK, Espagne, Italie, Pays-Bas, Belgique, Suisse', 'Systèmes de santé régionaux et soins spécialisés'] }] },
-        { name: 'MENA - Expansion Stratégique', countries: [{ name: 'EAU', items: ['Établissements réglementés DHA et HAAD', 'Dubai Healthcare City'] }, { name: 'Arabie Saoudite', items: ['Transformation santé MOH et Vision 2030'] }, { name: 'Autres marchés', items: ['Égypte, Koweït, Qatar', 'Réseaux de santé publics et privés'] }] },
+        { name: 'MENA - Expansion Stratégique', countries: [{ name: 'EAU', items: ['Établissements réglementés DHA et HAAD', 'Dubai Healthcare City'] }, { name: 'Arabie Saoudite', items: ['Transformation santé MOH'] }, { name: 'Autres marchés', items: ['Égypte, Koweït, Qatar', 'Réseaux de santé publics et privés'] }] },
       ],
     },
     methodologyFr: {
@@ -571,7 +618,7 @@ export const translations = {
         { category: 'Oncologie', country: 'Royaume-Uni', title: 'Dynamique du Marché de la Médecine de Précision 2025', excerpt: 'Analyse complète des thérapies guidées par biomarqueurs et du paradigme de traitement oncologique.', date: 'Analyse Sectorielle', coverImage: '/blog-insight-3.png' },
         { category: 'Essais Cliniques', country: 'Allemagne', title: 'Faisabilité des Essais Cliniques sur les Marchés Européens', excerpt: 'Insights stratégiques pour optimiser la sélection des sites et le recrutement des patients en Allemagne et marchés voisins.', date: 'Rapport de Recherche', coverImage: '/blog-insight-1.png' },
         { category: 'Recherche Santé', country: 'EAU', title: 'Dynamique du Marché de la Santé aux EAU', excerpt: 'Analyse complète de l\'accès au marché pharmaceutique, du paysage réglementaire et des opportunités commerciales aux Émirats Arabes Unis.', date: 'Analyse de Marché', coverImage: '/blog-insight-2.png' },
-        { category: 'Accès au Marché', country: 'Arabie Saoudite', title: 'Vision Saoudienne 2030 et Innovation Pharmaceutique', excerpt: 'Comment la transformation de la santé en Arabie Saoudite crée de nouvelles opportunités pour les entreprises pharmaceutiques dans la région MENA.', date: 'Note Stratégique', coverImage: '/blog-insight-3.png' },
+        { category: 'Accès au Marché', country: 'Arabie Saoudite', title: 'Innovation Pharmaceutique en Arabie Saoudite', excerpt: 'Comment la transformation de la santé en Arabie Saoudite crée de nouvelles opportunités pour les entreprises pharmaceutiques dans la région MENA.', date: 'Note Stratégique', coverImage: '/blog-insight-3.png' },
       ],
     },
     stats: {
@@ -731,7 +778,7 @@ export const translations = {
         },
         {
           title: 'Cobertura Geográfica: UK • Europa • MENA',
-          description: 'UK: NHS England, Escocia, Gales, Irlanda del Norte; hospitales universitarios Londres; investigación stakeholders NICE, MHRA. Europa: Alemania (G-BA, IQWiG), Francia (HAS, CEPS), España, Italia, Países Bajos, Bélgica, Suiza. MENA: EAU (DHA, HAAD), Arabia Saudí (Visión 2030), Egipto, Kuwait, Qatar.',
+          description: 'UK: NHS England, Escocia, Gales, Irlanda del Norte; hospitales universitarios Londres; investigación stakeholders NICE, MHRA. Europa: Alemania (G-BA, IQWiG), Francia (HAS, CEPS), España, Italia, Países Bajos, Bélgica, Suiza. MENA: EAU (DHA, HAAD), Arabia Saudí, Egipto, Kuwait, Qatar.',
         },
         {
           title: 'Metodología y Cumplimiento',
@@ -743,7 +790,7 @@ export const translations = {
       title: 'Cobertura Geográfica: Europa • MENA',
       regions: [
         { name: 'Europa - Red de Investigación Pan-europea', countries: [{ name: 'Alemania', items: ['Investigación stakeholders G-BA e IQWiG', 'Atención hospitalaria y ambulatoria'] }, { name: 'Francia', items: ['Insights decisores HAS y CEPS', 'Hospitales públicos y privados'] }, { name: 'Mercados adicionales', items: ['UK, España, Italia, Países Bajos, Bélgica, Suiza', 'Sistemas de salud regionales y atención especializada'] }] },
-        { name: 'MENA - Expansión Estratégica', countries: [{ name: 'EAU', items: ['Instalaciones reguladas DHA y HAAD', 'Dubai Healthcare City'] }, { name: 'Arabia Saudí', items: ['Transformación sanitaria MOH y Visión 2030'] }, { name: 'Mercados adicionales', items: ['Egipto, Kuwait, Qatar', 'Redes sanitarias públicas y privadas'] }] },
+        { name: 'MENA - Expansión Estratégica', countries: [{ name: 'EAU', items: ['Instalaciones reguladas DHA y HAAD', 'Dubai Healthcare City'] }, { name: 'Arabia Saudí', items: ['Transformación sanitaria MOH'] }, { name: 'Mercados adicionales', items: ['Egipto, Kuwait, Qatar', 'Redes sanitarias públicas y privadas'] }] },
       ],
     },
     methodologyEs: {
@@ -803,7 +850,7 @@ export const translations = {
         { category: 'Oncología', country: 'Reino Unido', title: 'Dinámica del Mercado de Medicina de Precisión 2025', excerpt: 'Análisis integral de terapias guiadas por biomarcadores y el paradigma de tratamiento oncológico.', date: 'Análisis Industrial', coverImage: '/blog-insight-3.png' },
         { category: 'Ensayos Clínicos', country: 'Alemania', title: 'Viabilidad de Ensayos Clínicos en Mercados Europeos', excerpt: 'Insights estratégicos para optimizar la selección de sitios y reclutamiento de pacientes en Alemania y mercados vecinos.', date: 'Informe de Investigación', coverImage: '/blog-insight-1.png' },
         { category: 'Investigación Sanitaria', country: 'EAU', title: 'Dinámica del Mercado Sanitario en los EAU', excerpt: 'Análisis integral del acceso al mercado farmacéutico, panorama regulatorio y oportunidades comerciales en los Emiratos Árabes Unidos.', date: 'Análisis de Mercado', coverImage: '/blog-insight-2.png' },
-        { category: 'Acceso al Mercado', country: 'Arabia Saudita', title: 'Visión Saudí 2030 e Innovación Farmacéutica', excerpt: 'Cómo la transformación sanitaria de Arabia Saudita está creando nuevas oportunidades para empresas farmacéuticas en la región MENA.', date: 'Brief Estratégico', coverImage: '/blog-insight-3.png' },
+        { category: 'Acceso al Mercado', country: 'Arabia Saudita', title: 'Innovación Farmacéutica en Arabia Saudita', excerpt: 'Cómo la transformación sanitaria de Arabia Saudita está creando nuevas oportunidades para empresas farmacéuticas en la región MENA.', date: 'Brief Estratégico', coverImage: '/blog-insight-3.png' },
       ],
     },
     stats: {
@@ -962,7 +1009,7 @@ export const translations = {
         },
         {
           title: '地理覆盖：英国•欧洲•中东和非洲',
-          description: '英国：NHS英格兰、苏格兰、威尔士、北爱尔兰；伦敦教学医院；NICE、MHRA利益相关方研究。欧洲：德国（G-BA、IQWiG）、法国（HAS、CEPS）、西班牙、意大利、荷兰、比利时、瑞士。中东和非洲：阿联酋（DHA、HAAD）、沙特（2030愿景）、埃及、科威特、卡塔尔。',
+          description: '英国：NHS英格兰、苏格兰、威尔士、北爱尔兰；伦敦教学医院；NICE、MHRA利益相关方研究。欧洲：德国（G-BA、IQWiG）、法国（HAS、CEPS）、西班牙、意大利、荷兰、比利时、瑞士。中东和非洲：阿联酋（DHA、HAAD）、沙特、埃及、科威特、卡塔尔。',
         },
         {
           title: '方法与合规',
@@ -974,7 +1021,7 @@ export const translations = {
       title: '地理覆盖：欧洲•中东和非洲',
       regions: [
         { name: '欧洲 - 泛欧研究网络', countries: [{ name: '德国', items: ['G-BA和IQWiG利益相关方研究', '医院和门诊护理'] }, { name: '法国', items: ['HAS和CEPS决策者洞察', '公立和私立医院'] }, { name: '其他市场', items: ['西班牙、意大利、荷兰、比利时、瑞士', '埃及、科威特、卡塔尔', '地区卫生系统和专科护理', '公立和私立医疗网络'] }] },
-        { name: '中东和非洲 - 战略市场扩展', countries: [{ name: '阿联酋', items: ['DHA和HAAD监管机构', '迪拜医疗城'] }, { name: '沙特阿拉伯', items: ['卫生部和2030愿景医疗转型'] }, { name: '其他市场', items: ['埃及、科威特、卡塔尔', '公立和私立医疗网络'] }] },
+        { name: '中东和非洲 - 战略市场扩展', countries: [{ name: '阿联酋', items: ['DHA和HAAD监管机构', '迪拜医疗城'] }, { name: '沙特阿拉伯', items: ['卫生部医疗转型'] }, { name: '其他市场', items: ['埃及、科威特、卡塔尔', '公立和私立医疗网络'] }] },
       ],
     },
     methodologyZh: {
@@ -1034,7 +1081,7 @@ export const translations = {
         { category: '肿瘤学', country: '英国', title: '2025年精准医疗市场动态', excerpt: '对生物标志物驱动疗法和不断发展的肿瘤治疗范式的全面分析。', date: '行业分析', coverImage: '/blog-insight-3.png' },
         { category: '临床试验', country: '德国', title: '欧洲市场临床试验可行性', excerpt: '优化德国及邻近市场临床试验站点选择和患者招募的战略洞察。', date: '研究报告', coverImage: '/blog-insight-1.png' },
         { category: '医疗研究', country: '阿联酋', title: '阿联酋医疗市场动态', excerpt: '对阿拉伯联合酋长国制药市场准入、监管环境和商业机会的全面分析。', date: '市场分析', coverImage: '/blog-insight-2.png' },
-        { category: '市场准入', country: '沙特阿拉伯', title: '沙特2030愿景与制药创新', excerpt: '沙特阿拉伯的医疗转型如何为MENA地区的制药公司创造新机遇。', date: '战略简报', coverImage: '/blog-insight-3.png' },
+        { category: '市场准入', country: '沙特阿拉伯', title: '沙特阿拉伯与制药创新', excerpt: '沙特阿拉伯的医疗转型如何为MENA地区的制药公司创造新机遇。', date: '战略简报', coverImage: '/blog-insight-3.png' },
       ],
     },
     stats: {
@@ -1175,7 +1222,7 @@ export const translations = {
           title: 'أبحاث السوق الكمية واستبيانات الأطباء في دول الخليج والشرق الأوسط',
           lead: 'رؤى إحصائية قوية من استبيانات واسعة النطاق للأطباء والمهنيين الصحيين عبر أسواق الخليج، شمال أفريقيا والشرق الأوسط. منهجياتنا الكمية تقدم الأدلة التي تحتاجها لاتخاذ قرارات استراتيجية.',
           countries: [
-            { name: 'المملكة العربية السعودية', items: ['استبيانات أطباء وزارة الصحة والقطاع الخاص', 'دراسات المستشفيات الجامعية والتخصصية (الرياض، جدة، الدمام)', 'تحليل سلوك الوصفات الطبية والتفضيلات العلاجية', 'أبحاث مدن الملك فهد الطبية ومجمع الملك عبدالله الطبي', 'دراسات رؤية 2030 والتحول الصحي', 'تحليل حجم السوق والتنبؤ بالاتجاهات'] },
+            { name: 'المملكة العربية السعودية', items: ['استبيانات أطباء وزارة الصحة والقطاع الخاص', 'دراسات المستشفيات الجامعية والتخصصية (الرياض، جدة، الدمام)', 'تحليل سلوك الوصفات الطبية والتفضيلات العلاجية', 'أبحاث مدن الملك فهد الطبية ومجمع الملك عبدالله الطبي', 'دراسات التحول الصحي', 'تحليل حجم السوق والتنبؤ بالاتجاهات'] },
             { name: 'الإمارات العربية المتحدة', items: ['أبحاث هيئة الصحة بدبي (DHA) ودائرة الصحة أبوظبي (DOH)', 'دراسات المستشفيات الخاصة والمراكز التخصصية', 'تحليل السياحة العلاجية والرعاية التخصصية', 'استبيانات الأطباء في دبي، أبوظبي، الشارقة', 'أبحاث مدينة دبي الطبية ومستشفى كليفلاند كلينك'] },
             { name: 'الكويت', items: ['دراسات نظام الرعاية الصحية بوزارة الصحة', 'أبحاث المستشفيات التخصصية والمجمعات الطبية', 'تحليل تفضيلات الأطباء والأنماط العلاجية'] },
             { name: 'قطر', items: ['أبحاث مؤسسة حمد الطبية والمؤسسات الصحية', 'دراسات المستشفيات الخاصة والعيادات التخصصية', 'تحليل المبادرات الصحية والاستراتيجية الوطنية للصحة'] },
@@ -1271,7 +1318,7 @@ export const translations = {
         { category: 'الأورام', country: 'المملكة المتحدة', title: 'ديناميكيات سوق الطب الدقيق 2025', excerpt: 'تحليل شامل للعلاجات الموجهة بالمؤشرات الحيوية ونموذج علاج الأورام المتطور.', date: 'تحليل الصناعة', coverImage: '/blog-insight-3.png' },
         { category: 'التجارب السريرية', country: 'ألمانيا', title: 'جدوى التجارب السريرية في الأسواق الأوروبية', excerpt: 'رؤى استراتيجية لتحسين اختيار المواقع وتوظيف المرضى في ألمانيا والأسواق المجاورة.', date: 'تقرير بحثي', coverImage: '/blog-insight-1.png' },
         { category: 'البحوث الصحية', country: 'الإمارات', title: 'ديناميكيات سوق الرعاية الصحية في الإمارات', excerpt: 'تحليل شامل للوصول إلى السوق الصيدلاني والمشهد التنظيمي والفرص التجارية في الإمارات العربية المتحدة.', date: 'تحليل السوق', coverImage: '/blog-insight-2.png' },
-        { category: 'الوصول إلى السوق', country: 'المملكة العربية السعودية', title: 'رؤية السعودية 2030 والابتكار الصيدلاني', excerpt: 'كيف يخلق التحول الصحي في المملكة العربية السعودية فرصًا جديدة لشركات الأدوية في منطقة الشرق الأوسط وشمال أفريقيا.', date: 'موجز استراتيجي', coverImage: '/blog-insight-3.png' },
+        { category: 'الوصول إلى السوق', country: 'المملكة العربية السعودية', title: 'الابتكار الصيدلاني في المملكة العربية السعودية', excerpt: 'كيف يخلق التحول الصحي في المملكة العربية السعودية فرصًا جديدة لشركات الأدوية في منطقة الشرق الأوسط وشمال أفريقيا.', date: 'موجز استراتيجي', coverImage: '/blog-insight-3.png' },
       ],
     },
     stats: {

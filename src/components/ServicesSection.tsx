@@ -385,6 +385,13 @@ const ServicesSection = () => {
                 <p className="text-muted-foreground leading-relaxed">
                   {service.description}
                 </p>
+                {'bullets' in service && Array.isArray((service as { bullets?: string[] }).bullets) && (
+                  <ul className="mt-4 list-disc list-inside text-muted-foreground leading-relaxed space-y-1">
+                    {(service as { bullets: string[] }).bullets.map((b, i) => (
+                      <li key={i}>{b}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
             );
           })}

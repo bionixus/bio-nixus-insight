@@ -16,16 +16,29 @@ function getCaseStudiesClient(): SanityClient {
     projectId,
     dataset,
     apiVersion,
-    useCdn: false,
+    useCdn: true,
   });
 }
 
 const imageBuilder = createImageUrlBuilder({ projectId, dataset });
 
-function getCoverImageUrl(mainImage: RawCaseStudy['mainImage']): string | undefined {
+/** Options for responsive, fast-loading images (WebP, capped size). */
+const COVER_OPTS = { w: 1200, q: 80, fm: 'webp' } as const;
+const THUMB_OPTS = { w: 600, q: 75, fm: 'webp' } as const;
+
+function getCoverImageUrl(
+  mainImage: RawCaseStudy['mainImage'],
+  options: 'cover' | 'thumb' = 'cover'
+): string | undefined {
   if (!mainImage) return undefined;
   try {
-    return imageBuilder.image(mainImage).url();
+    const opts = options === 'thumb' ? THUMB_OPTS : COVER_OPTS;
+    return imageBuilder
+      .image(mainImage)
+      .width(opts.w)
+      .quality(opts.q)
+      .format(opts.fm as 'webp')
+      .url();
   } catch {
     return undefined;
   }
@@ -86,7 +99,7 @@ function formatDate(iso: string | undefined): string {
   }
 }
 
-function mapToCaseStudy(r: RawCaseStudy): CaseStudy {
+function mapToCaseStudy(r: RawCaseStudy, imageSize: 'cover' | 'thumb' = 'cover'): CaseStudy {
   return {
     id: r._id,
     slug: r.slug ?? r._id,
@@ -96,7 +109,7 @@ function mapToCaseStudy(r: RawCaseStudy): CaseStudy {
     date: formatDate(r.date),
     category: r.category ?? '',
     country: r.country ?? '',
-    coverImage: getCoverImageUrl(r.mainImage),
+    coverImage: getCoverImageUrl(r.mainImage, imageSize),
     pdfUrl: r.pdfUrl ?? '',
     language: r.language,
   };
@@ -110,7 +123,7 @@ export async function fetchCaseStudies(): Promise<CaseStudy[]> {
   try {
     const client = getCaseStudiesClient();
     const raw = await client.fetch<RawCaseStudy[]>(CASE_STUDIES_QUERY);
-    return raw.map(mapToCaseStudy);
+    return raw.map((r) => mapToCaseStudy(r, 'thumb'));
   } catch (err) {
     console.error('Sanity case studies fetch error:', err);
     return [];

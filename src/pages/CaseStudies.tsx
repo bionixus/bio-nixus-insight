@@ -146,6 +146,8 @@ const CaseStudies = () => {
                               src={item.coverImage}
                               alt=""
                               className="absolute inset-0 w-full h-full object-cover"
+                              loading="lazy"
+                              decoding="async"
                             />
                           ) : (
                             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5" />

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -19,6 +19,8 @@ export function PdfCarousel({ pdfUrl, className = '' }: PdfCarouselProps) {
   const [numPages, setNumPages] = useState<number | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [loadError, setLoadError] = useState<string | null>(null);
+  const [isInView, setIsInView] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const onLoadSuccess = ({ numPages: n }: { numPages: number }) => {
     setNumPages(n);
@@ -31,6 +33,19 @@ export function PdfCarousel({ pdfUrl, className = '' }: PdfCarouselProps) {
   };
 
   useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) setIsInView(true);
+      },
+      { rootMargin: '120px', threshold: 0.1 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
     setCurrentPage(1);
     setNumPages(null);
     setLoadError(null);
@@ -38,9 +53,10 @@ export function PdfCarousel({ pdfUrl, className = '' }: PdfCarouselProps) {
 
   const canPrev = currentPage > 1;
   const canNext = numPages !== null && currentPage < numPages;
+  const shouldLoadPdf = Boolean(pdfUrl && isInView && !loadError);
 
   return (
-    <div className={`rounded-xl border bg-muted/30 overflow-hidden ${className}`}>
+    <div ref={containerRef} className={`rounded-xl border bg-muted/30 overflow-hidden ${className}`}>
       {loadError && (
         <p className="p-4 text-sm text-destructive">{loadError}</p>
       )}
@@ -74,21 +90,26 @@ export function PdfCarousel({ pdfUrl, className = '' }: PdfCarouselProps) {
             </Button>
           </div>
           <div className="flex justify-center p-4 bg-background min-h-[320px]">
-            <Document
-              file={pdfUrl}
-              onLoadSuccess={onLoadSuccess}
-              onLoadError={onLoadError}
-              loading={<span className="text-muted-foreground text-sm">Loading PDF…</span>}
-            >
-              {numPages !== null && (
-                <Page
-                  pageNumber={currentPage}
-                  width={Math.min(640, typeof window !== 'undefined' ? window.innerWidth - 48 : 640)}
-                  renderTextLayer
-                  renderAnnotationLayer
-                />
-              )}
-            </Document>
+            {!shouldLoadPdf && (
+              <span className="text-muted-foreground text-sm">Loading…</span>
+            )}
+            {shouldLoadPdf && (
+              <Document
+                file={pdfUrl}
+                onLoadSuccess={onLoadSuccess}
+                onLoadError={onLoadError}
+                loading={<span className="text-muted-foreground text-sm">Loading PDF…</span>}
+              >
+                {numPages !== null && (
+                  <Page
+                    pageNumber={currentPage}
+                    width={Math.min(640, typeof window !== 'undefined' ? window.innerWidth - 48 : 640)}
+                    renderTextLayer={false}
+                    renderAnnotationLayer={false}
+                  />
+                )}
+              </Document>
+            )}
           </div>
         </>
       )}
