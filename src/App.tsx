@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { StatsigProvider } from "@/components/StatsigProvider";
+import { Analytics } from "@vercel/analytics/react";
 import DocumentHead from "@/components/DocumentHead";
 import LocalePrompt from "@/components/LocalePrompt";
 import CookieConsent from "@/components/CookieConsent";
@@ -55,6 +56,7 @@ const App = () => (
             </Routes>
             <LocalePrompt />
             <CookieConsent />
+            <Analytics />
           </TooltipProvider>
         </LanguageProvider>
       </BrowserRouter>
