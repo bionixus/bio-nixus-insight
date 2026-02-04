@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { seoByLanguage, getCanonicalUrl, getHreflangLinks } from '@/lib/seo';
+import { seoByLanguage, getCanonicalUrl, getHreflangLinks, defaultOgImageUrl, defaultOgImageAlt } from '@/lib/seo';
 
 const DocumentHead = () => {
   const { language } = useLanguage();
@@ -25,8 +25,12 @@ const DocumentHead = () => {
     setMeta('keywords', seo.keywords);
     setMeta('og:title', seo.title, true);
     setMeta('og:description', seo.description, true);
+    setMeta('og:image', defaultOgImageUrl, true);
+    setMeta('og:image:alt', defaultOgImageAlt, true);
     setMeta('twitter:title', seo.title);
     setMeta('twitter:description', seo.description);
+    setMeta('twitter:image', defaultOgImageUrl);
+    setMeta('twitter:image:alt', defaultOgImageAlt);
 
     if (language === 'de') {
       setMeta('geo.region', 'DE;GB;FR;ES;IT;AE;SA;EG');

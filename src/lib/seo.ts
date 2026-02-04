@@ -5,6 +5,12 @@ function getBaseUrl() {
   return 'https://bionixus.com';
 }
 
+/** Main preview and social share image — BioNixus logo (used for og:image and twitter:image). */
+export const defaultOgImageUrl = 'https://bionixus.com/bionixus-logo.png';
+
+/** Alt text for the default OG image (BioNixus logo). */
+export const defaultOgImageAlt = 'BioNixus – EMEA Healthcare Market Research';
+
 export const seoByLanguage: Record<Language, {
   title: string;
   description: string;
