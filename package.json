@@ -15,6 +15,7 @@
     "test:watch": "vitest",
     "process-logo": "node scripts/process-logo.mjs",
     "create-favicon": "node scripts/create-favicon.mjs",
+    "create-og-image": "node scripts/create-og-image.mjs",
     "studio": "npm run dev --prefix day-one/apps/studio",
     "studio:deploy": "cd day-one/apps/studio && npx sanity deploy",
     "studio:schema-deploy": "cd day-one/apps/studio && npx sanity schema deploy",
