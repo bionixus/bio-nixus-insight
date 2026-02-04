@@ -386,7 +386,11 @@ export async function uploadBlogPost(
 
     // Step 4: Upload Open Graph image
     if (!options.silent) log('\nStep 4: Processing Open Graph Image', 'yellow')
-    const openGraph = postData.openGraph as { ogImage?: { url?: string; localPath?: string; alt?: string } } | undefined
+    const openGraph = postData.openGraph as {
+      ogTitle?: string;
+      ogDescription?: string;
+      ogImage?: { url?: string; localPath?: string; alt?: string };
+    } | undefined
     let ogImage: Record<string, unknown> | null = null
     if (openGraph?.ogImage) {
       ogImage = await uploadImageToSanity({
