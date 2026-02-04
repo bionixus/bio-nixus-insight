@@ -1,9 +1,12 @@
 import { ArrowRight, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { languagePaths } from '@/lib/seo';
 
 const HeroSection = () => {
   const { t, language, isRTL } = useLanguage();
+  const basePath = languagePaths[language] || '/';
+  const contactPath = `${basePath === '/' ? '' : basePath}/contact`;
 
   return (
     <section
@@ -62,13 +65,13 @@ const HeroSection = () => {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-up animation-delay-600">
-            <a
-              href="#request-proposal"
+            <Link
+              to={contactPath}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gold-warm text-navy-deep rounded-lg font-semibold hover:bg-gold-light transition-colors group"
             >
               {t.hero.cta}
               <ArrowRight className={`w-5 h-5 transition-transform ${isRTL ? 'rtl:scale-x-[-1] group-hover:-translate-x-1' : 'group-hover:translate-x-1'}`} />
-            </a>
+            </Link>
             <Link
               to="/case-studies"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-lg font-medium border border-white/20 hover:bg-white/20 transition-colors group"

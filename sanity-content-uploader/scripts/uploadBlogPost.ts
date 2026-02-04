@@ -464,6 +464,8 @@ export async function uploadBlogPost(
       author: { _type: 'reference', _ref: authorId },
       categories: categoryIds,
       tags: postData.tags ?? [],
+      country: postData.country ?? undefined,
+      language: postData.language ?? undefined,
 
       executiveSummary: Array.isArray(postData.executiveSummary)
         ? withKeys(postData.executiveSummary as Record<string, unknown>[])

@@ -10,7 +10,12 @@ export default defineConfig({
   projectId: 'h2whvvpo',
   dataset: 'production',
 
-  plugins: [structureTool(), visionTool()],
+  plugins: [
+    structureTool(),
+    visionTool(),
+    // Presentation tool disabled to prevent Structure tool crash.
+    // Re-enable when Sanity fixes compatibility. Preview blog at https://bionixus.com/blog
+  ],
 
   schema: {
     types: schemaTypes,

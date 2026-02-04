@@ -1,0 +1,88 @@
+{
+  "role": "You are an expert healthcare and pharmaceutical market research content writer for BioNixus (EMEA healthcare market research firm).",
+  "task": "Create exactly 20 blog articles. Each article targets ONE main keyword from the list below. Output must conform to the Sanity blogPost schema and be exportable to a sheet or doc for later import into Sanity.",
+  "keywords": [
+    "healthcare market research Europe",
+    "pharmaceutical market research UK",
+    "physician surveys healthcare",
+    "hospital market research",
+    "market access Europe pharmaceutical",
+    "competitive intelligence pharma",
+    "healthcare insights MENA",
+    "clinical trials market research",
+    "oncology market research Europe",
+    "digital health market research",
+    "healthcare quantitative research",
+    "KOL research pharmaceutical",
+    "healthcare qualitative research",
+    "market research UAE healthcare",
+    "Saudi Arabia pharmaceutical market",
+    "healthcare consulting Europe",
+    "biotech market research",
+    "HTA market access research",
+    "healthcare surveys physicians",
+    "life sciences market research"
+  ],
+  "schema": {
+    "documentType": "blogPost",
+    "requiredFields": {
+      "title": "string, SEO-friendly, ~60 chars, include main keyword",
+      "slug": "string, lowercase, hyphens, no spaces, e.g. healthcare-market-research-europe",
+      "excerpt": "string, 150-200 words, 2-4 sentences",
+      "bodyHtml": "string, FULL ARTICLE BODY IN HTML, McKinsey style (see styleGuide), 800-1500 words. Allowed tags: p, h2, h3, h4, ul, ol, li, strong, em, a. Use id on h2/h3 for tableOfContents anchors.",
+      "focusKeyword": "string, the one main keyword for this article",
+      "language": "string, one of: en, de, fr, es, zh, ar",
+      "publishedAt": "string, ISO 8601 datetime"
+    },
+    "recommendedFields": {
+      "metaTitle": "string, 50-60 chars",
+      "metaDescription": "string, 150-160 chars",
+      "keywords": "array of strings, 5-10 related keywords",
+      "country": "string, one of: UK, Germany, France, Spain, Italy, UAE, Saudi Arabia, Egypt, Europe, MENA, Other",
+      "tags": "array of strings, 3-8 tags",
+      "categoryTitle": "string, one of: Market Access, Digital Health, Oncology, Clinical Trials, Healthcare Research, Other",
+      "executiveSummary": "string, 2-4 bullet points or short paragraphs, plain text",
+      "tableOfContents": "array of { heading: string, anchor: string }",
+      "readingTime": "number, integer minutes",
+      "faq": "array of { question: string, answer: string }, 3-5 items",
+      "ctaSection": "object: { title, description, buttonText, buttonUrl }"
+    }
+  },
+  "styleGuide": {
+    "name": "McKinsey style",
+    "rules": [
+      "Opening: one short paragraph stating the issue and why it matters (2-4 sentences).",
+      "Structure: h2 for main sections, h3 for subsections; headings clear and scannable.",
+      "Paragraphs: short (2-4 sentences), one idea per paragraph, lead with conclusion or key point.",
+      "Use ul/ol for 3+ items; keep content scannable.",
+      "Tone: professional, data-oriented, no fluff; focus on reader and market.",
+      "Include 1-2 concrete numbers or trends where plausible.",
+      "Close: short summary or forward-looking sentence.",
+      "Body must be valid HTML only: p, h2, h3, h4, ul, ol, li, strong, em, a with href. Add id on h2/h3 for anchors."
+    ]
+  },
+  "outputFormat": {
+    "format": "JSON array of exactly 20 objects",
+    "eachObject": {
+      "title": "string",
+      "slug": "string",
+      "excerpt": "string",
+      "bodyHtml": "string (escape quotes for JSON)",
+      "focusKeyword": "string",
+      "language": "string",
+      "publishedAt": "string",
+      "metaTitle": "string",
+      "metaDescription": "string",
+      "keywords": "array",
+      "country": "string",
+      "tags": "array",
+      "categoryTitle": "string",
+      "executiveSummary": "string",
+      "tableOfContents": "array of { heading, anchor }",
+      "readingTime": "number",
+      "faq": "array of { question, answer }",
+      "ctaSection": "object { title, description, buttonText, buttonUrl }"
+    },
+    "instructions": "Return only the JSON array. Ensure bodyHtml is valid HTML with escaped quotes. Space publishedAt across recent months. Optionally also provide a CSV-style header + 20 rows for pasting into Google Sheets (tab or comma separated, escape bodyHtml content)."
+  }
+}

@@ -17,6 +17,8 @@ import BlogPost from "./pages/BlogPost";
 import CaseStudies from "./pages/CaseStudies";
 import CaseStudy from "./pages/CaseStudy";
 import Privacy from "./pages/Privacy";
+import Contact from "./pages/Contact";
+import Methodology from "./pages/Methodology";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -51,6 +53,18 @@ const App = () => (
               <Route path="/case-studies" element={<CaseStudies />} />
               <Route path="/case-studies/:slug" element={<CaseStudy />} />
               <Route path="/privacy" element={<Privacy />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/de/contact" element={<Contact />} />
+              <Route path="/fr/contact" element={<Contact />} />
+              <Route path="/es/contact" element={<Contact />} />
+              <Route path="/zh/contact" element={<Contact />} />
+              <Route path="/ar/contact" element={<Contact />} />
+              <Route path="/methodology" element={<Methodology />} />
+              <Route path="/de/methodology" element={<Methodology />} />
+              <Route path="/fr/methodology" element={<Methodology />} />
+              <Route path="/es/methodology" element={<Methodology />} />
+              <Route path="/zh/methodology" element={<Methodology />} />
+              <Route path="/ar/methodology" element={<Methodology />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

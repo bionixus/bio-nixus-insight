@@ -61,6 +61,18 @@ const staticRoutes = [
   { path: '/ar', priority: '0.9' },
   { path: '/blog', priority: '0.9' },
   { path: '/case-studies', priority: '0.9' },
+  { path: '/contact', priority: '0.9' },
+  { path: '/de/contact', priority: '0.8' },
+  { path: '/fr/contact', priority: '0.8' },
+  { path: '/es/contact', priority: '0.8' },
+  { path: '/zh/contact', priority: '0.8' },
+  { path: '/ar/contact', priority: '0.8' },
+  { path: '/methodology', priority: '0.9' },
+  { path: '/de/methodology', priority: '0.8' },
+  { path: '/fr/methodology', priority: '0.8' },
+  { path: '/es/methodology', priority: '0.8' },
+  { path: '/zh/methodology', priority: '0.8' },
+  { path: '/ar/methodology', priority: '0.8' },
   { path: '/privacy', priority: '0.5' },
 ];
 

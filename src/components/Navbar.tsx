@@ -46,7 +46,7 @@ const Navbar = () => {
     { href: `${basePath}#services`, label: t.nav.services },
     { href: `${basePath}#insights`, label: t.nav.insights },
     { href: `${basePath}#about`, label: t.nav.about },
-    { href: `${basePath}#contact`, label: t.nav.contact },
+    { href: `${basePath === '/' ? '' : basePath}/contact`, label: t.nav.contact },
   ];
 
   return (
@@ -98,7 +98,7 @@ const Navbar = () => {
             </DropdownMenu>
 
             <Link
-              to={`${basePath}#contact`}
+              to={`${basePath === '/' ? '' : basePath}/contact`}
               className="px-5 py-2.5 bg-primary text-primary-foreground rounded-lg font-medium text-sm hover:opacity-90 transition-opacity"
             >
               {t.nav.contact}

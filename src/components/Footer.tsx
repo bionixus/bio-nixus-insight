@@ -134,6 +134,14 @@ const Footer = () => {
                   {t.footer.caseStudies}
                 </Link>
               </li>
+              <li>
+                <Link
+                  to={`${basePath === '/' ? '' : basePath}/methodology`}
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  {t.footer.methodology}
+                </Link>
+              </li>
             </ul>
           </div>
 

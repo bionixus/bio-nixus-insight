@@ -337,6 +337,20 @@ const BlogPost = () => {
               </nav>
             )}
 
+            {Array.isArray(post.executiveSummary) && post.executiveSummary.length > 0 && (
+              <section className="mb-8 p-5 rounded-lg border border-primary/20 bg-primary/5">
+                <h2 className="text-lg font-display font-semibold text-primary mb-3">
+                  Executive summary
+                </h2>
+                <div className="prose-body text-foreground leading-relaxed">
+                  <PortableText
+                    value={post.executiveSummary as PortableTextBlock[]}
+                    components={portableTextComponents}
+                  />
+                </div>
+              </section>
+            )}
+
             <div className="prose prose-neutral dark:prose-invert max-w-none">
               {(() => {
                 const body = getBodyToRender(post, slug)
@@ -379,7 +393,11 @@ const BlogPost = () => {
               </section>
             )}
 
-            {post.ctaSection && (post.ctaSection.title || post.ctaSection.description) && (
+            {post.ctaSection &&
+              (post.ctaSection.title ||
+                post.ctaSection.description ||
+                post.ctaSection.buttonText ||
+                post.ctaSection.buttonUrl) && (
               <Card className="mt-12 border-primary/20 bg-primary/5">
                 <CardHeader>
                   {post.ctaSection.title && (

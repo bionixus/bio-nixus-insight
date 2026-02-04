@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Mail, MapPin, Phone } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
@@ -186,13 +187,13 @@ const ContactSection = () => {
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {c.successFollowUpIntro}
-                  <a href="/case-studies" className="text-primary font-medium hover:underline">
+                  <Link to="/case-studies" className="text-primary font-medium hover:underline">
                     {t.contact.successCaseStudiesText}
-                  </a>
+                  </Link>
                   {c.successFollowUpBetween}
-                  <a href={`${basePath}#methodology`} className="text-primary font-medium hover:underline">
+                  <Link to={`${basePath === '/' ? '' : basePath}/methodology`} className="text-primary font-medium hover:underline">
                     {t.contact.successMethodologyText}
-                  </a>
+                  </Link>
                   {c.successFollowUpEnd}
                 </p>
               </div>
