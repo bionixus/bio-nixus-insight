@@ -161,13 +161,13 @@ const ContactSection = () => {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
               {(t.contact as { ctaSecondary?: string }).ctaSecondary && (
-                <a
-                  href="#services"
+                <Link
+                  to={basePath === '/' ? '/#services' : `${basePath}#services`}
                   className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-foreground rounded-lg font-semibold border border-border hover:bg-secondary/80 transition-colors group"
                 >
                   {(t.contact as { ctaSecondary: string }).ctaSecondary}
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
               )}
             </div>
           </div>

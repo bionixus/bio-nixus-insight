@@ -112,7 +112,7 @@ export function CaseStudyContactGate({
           <DialogTitle>{title}</DialogTitle>
           <DialogDescription>{caseStudyTitle}</DialogDescription>
         </DialogHeader>
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form action={FORMSPREE_ENDPOINT} method="POST" onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="gate-firstName">{c.firstName}</Label>

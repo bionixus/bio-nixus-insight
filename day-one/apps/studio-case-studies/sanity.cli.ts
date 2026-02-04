@@ -5,4 +5,5 @@ export default defineCliConfig({
     projectId: 'gj6cv27f',
     dataset: 'production',
   },
+  studioHost: 'bionixus-cases',
 })
