@@ -1,0 +1,32 @@
+{
+  "seo": {
+    "metaTitle": "UAE Healthcare Market: Trends & Opportunities 2025",
+    "metaDescription": "Analysis of UAE healthcare market trends, growth drivers, and opportunities for pharmaceutical companies.",
+    "focusKeyword": "UAE healthcare market",
+    "keywords": ["UAE healthcare", "healthcare trends UAE", "pharmaceutical opportunities UAE"]
+  },
+  "title": "UAE Healthcare Market: Trends & Opportunities 2025",
+  "slug": {"current": "uae-healthcare-market-trends-2025"},
+  "excerpt": "Comprehensive analysis of the UAE healthcare market landscape, emerging trends, and strategic opportunities for pharmaceutical companies.",
+  "readingTime": 10,
+  "tags": ["UAE Healthcare", "Market Trends", "Opportunities"],
+  "body": [
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [{"_type": "span", "text": "The UAE healthcare market is experiencing unprecedented growth..."}]
+    }
+  ],
+  "faq": [
+    {
+      "question": "What is driving UAE healthcare market growth?",
+      "answer": "Key drivers include government investment, rising chronic disease prevalence, medical tourism, and digital health adoption."
+    }
+  ],
+  "ctaSection": {
+    "title": "Explore UAE Market Opportunities",
+    "description": "Get expert insights into UAE healthcare market dynamics.",
+    "buttonText": "Contact Us",
+    "buttonUrl": "https://bionixus.com/contact"
+  }
+}

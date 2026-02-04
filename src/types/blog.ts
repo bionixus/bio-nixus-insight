@@ -1,18 +1,36 @@
+import type { PortableTextBlock } from '@portabletext/types'
+
 /**
  * Blog post type – structured for easy Notion integration later.
  * Notion API can map: id, slug, title, excerpt, date, category (topic), country, coverImage.
  */
+export interface BlogPostFaqItem {
+  question?: string;
+  answer?: string;
+}
+
+export interface BlogPostCtaSection {
+  title?: string;
+  description?: string;
+  buttonText?: string;
+  buttonUrl?: string;
+}
+
 export interface BlogPost {
   id: string;
   slug: string;
   title: string;
   excerpt: string;
   date: string;
-  category: string; // topic
+  category: string;
   country: string;
   coverImage?: string;
-  /** Full article body (HTML supported when rendered on post page) */
-  body?: string;
-  /** Language code (en, de, fr, es, zh, ar). Empty = show in all languages. */
+  body?: string | PortableTextBlock[];
   language?: string;
+  readingTime?: number;
+  tags?: string[];
+  tableOfContents?: { heading?: string; anchor?: string }[];
+  executiveSummary?: unknown[];
+  faq?: BlogPostFaqItem[];
+  ctaSection?: BlogPostCtaSection;
 }

@@ -373,7 +373,7 @@ const ServicesSection = () => {
             return (
               <div
                 key={index}
-                className="group bg-background p-8 rounded-xl shadow-sm hover:shadow-elegant transition-all duration-500 border border-border hover:border-primary/20 animate-fade-up"
+                className="service-card group animate-fade-up"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="w-14 h-14 rounded-xl bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors">
@@ -382,11 +382,11 @@ const ServicesSection = () => {
                 <h3 className="text-xl font-display font-semibold text-foreground mb-4 group-hover:text-primary transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="service-card-muted text-muted-foreground leading-relaxed">
                   {service.description}
                 </p>
                 {'bullets' in service && Array.isArray((service as { bullets?: string[] }).bullets) && (
-                  <ul className="mt-4 list-disc list-inside text-muted-foreground leading-relaxed space-y-1">
+                  <ul className="service-card-muted mt-4 list-disc list-inside text-muted-foreground leading-relaxed space-y-1">
                     {(service as { bullets: string[] }).bullets.map((b, i) => (
                       <li key={i}>{b}</li>
                     ))}

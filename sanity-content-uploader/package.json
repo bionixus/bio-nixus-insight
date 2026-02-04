@@ -1,0 +1,27 @@
+{
+  "name": "sanity-content-uploader",
+  "version": "1.0.0",
+  "scripts": {
+    "upload": "ts-node scripts/uploadBlogPost.ts",
+    "upload:batch": "ts-node scripts/batchUpload.ts",
+    "upload:dry-run": "ts-node scripts/uploadBlogPost.ts --dry-run",
+    "batch:dry-run": "ts-node scripts/batchUpload.ts --dry-run",
+    "patch-article": "ts-node scripts/patchArticleBody.ts",
+    "patch-faq-keys": "ts-node scripts/patchFaqKeys.ts"
+  },
+  "dependencies": {
+    "@sanity/client": "^6.10.0",
+    "@sanity/image-url": "^1.0.2",
+    "axios": "^1.6.2",
+    "dotenv": "^16.3.1",
+    "form-data": "^4.0.0",
+    "mime-types": "^2.1.35",
+    "sharp": "^0.33.1"
+  },
+  "devDependencies": {
+    "@types/mime-types": "^2.1.4",
+    "@types/node": "^20.10.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}

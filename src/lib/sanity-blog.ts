@@ -1,22 +1,14 @@
 /**
  * Fetch blog posts from Sanity CMS.
- * Maps Sanity post documents to BlogPost format.
- *
- * Required Sanity schema (post type):
- *   - title (string)
- *   - slug.current (string)
- *   - excerpt (text) or description
- *   - publishedAt (datetime) or _createdAt
- *   - category (string) or category->title
- *   - country (string)
- *   - mainImage (image) - for cover image
+ * Supports both "post" (legacy) and "blogPost" (SEO, OG, portable text body) schema types.
  */
 
 import { getSanityClient } from './sanity';
 import type { BlogPost } from '@/types/blog';
 
-const POSTS_QUERY = `*[_type == "post" && defined(slug.current)] | order(publishedAt desc, _createdAt desc) {
+const POSTS_QUERY = `*[_type in ["post", "blogPost"] && defined(slug.current)] | order(publishedAt desc, _createdAt desc) {
   _id,
+  _type,
   title,
   "slug": slug.current,
   excerpt,
@@ -24,51 +16,95 @@ const POSTS_QUERY = `*[_type == "post" && defined(slug.current)] | order(publish
   "date": coalesce(publishedAt, _createdAt),
   category,
   "categoryTitle": category->title,
+  "categories": categories[]->title,
   country,
   "countryTitle": country->title,
   "coverImage": mainImage.asset->url
 }[0...50]`;
 
-const POST_BY_SLUG_QUERY = `*[_type == "post" && slug.current == $slug][0] {
+const POST_BY_SLUG_QUERY = `*[_type in ["post", "blogPost"] && slug.current == $slug][0] {
   _id,
+  _type,
   title,
   "slug": slug.current,
   excerpt,
   body,
+  bodyHtml,
   language,
   "date": coalesce(publishedAt, _createdAt),
   category,
   "categoryTitle": category->title,
+  "categories": categories[]->title,
   country,
   "countryTitle": country->title,
-  "coverImage": mainImage.asset->url
+  "coverImage": mainImage.asset->url,
+  readingTime,
+  tags,
+  tableOfContents,
+  executiveSummary,
+  faq,
+  ctaSection
 }`;
 
 function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | null {
   if (!p) return null;
+  const categoryStr =
+    typeof p.category === 'string'
+      ? p.category
+      : (p as RawSanityPost & { categoryTitle?: string }).categoryTitle ??
+        (Array.isArray((p as RawSanityPost & { categories?: string[] }).categories)
+          ? (p as RawSanityPost & { categories: string[] }).categories[0]
+          : '') ??
+        '';
+  const countryStr =
+    typeof p.country === 'string'
+      ? p.country
+      : (p as RawSanityPost & { countryTitle?: string }).countryTitle ?? '';
   return {
     id: p._id,
     slug: p.slug ?? p._id,
     title: p.title ?? 'Untitled',
     excerpt: (p.excerpt ?? '').slice(0, 200),
     date: formatDate(p.date),
-    category: typeof p.category === 'string' ? p.category : p.category?.title ?? '',
-    country: typeof p.country === 'string' ? p.country : p.country?.title ?? '',
+    category: categoryStr,
+    country: countryStr,
     coverImage: p.coverImage ?? undefined,
-    ...(includeBody && { body: p.body ?? undefined }),
+    ...(includeBody && (() => {
+      const raw = p as RawSanityPost & { bodyHtml?: string };
+      const out: Record<string, unknown> = {};
+      if (typeof raw.bodyHtml === 'string' && raw.bodyHtml.trim() !== '') {
+        out.body = raw.bodyHtml;
+      } else if (typeof p.body === 'string' || Array.isArray(p.body)) {
+        out.body = p.body;
+      }
+      if (raw.readingTime != null) out.readingTime = raw.readingTime;
+      if (Array.isArray(raw.tags)) out.tags = raw.tags;
+      if (Array.isArray(raw.tableOfContents)) out.tableOfContents = raw.tableOfContents;
+      if (Array.isArray(raw.executiveSummary)) out.executiveSummary = raw.executiveSummary;
+      if (Array.isArray(raw.faq)) out.faq = raw.faq;
+      if (raw.ctaSection && typeof raw.ctaSection === 'object') out.ctaSection = raw.ctaSection;
+      return out;
+    })()),
     language: p.language ?? undefined,
   };
 }
 
-export async function fetchSanityPosts(): Promise<BlogPost[]> {
+/** Test Sanity connection. Returns { ok: true } or { ok: false, error: string }. */
+export async function checkSanityConnection(): Promise<{ ok: true } | { ok: false; error: string }> {
   try {
     const client = getSanityClient();
-    const raw = await client.fetch<RawSanityPost[]>(POSTS_QUERY);
-    return raw.map((p) => mapRawToPost(p)!);
+    await client.fetch<number>('count(*[_type in ["post", "blogPost"]])');
+    return { ok: true };
   } catch (err) {
-    console.error('Sanity fetch error:', err);
-    return [];
+    const message = err instanceof Error ? err.message : String(err);
+    return { ok: false, error: message };
   }
+}
+
+export async function fetchSanityPosts(): Promise<BlogPost[]> {
+  const client = getSanityClient();
+  const raw = await client.fetch<RawSanityPost[]>(POSTS_QUERY);
+  return raw.map((p) => mapRawToPost(p)!);
 }
 
 export async function fetchSanityPostBySlug(slug: string): Promise<BlogPost | null> {
@@ -97,15 +133,24 @@ function formatDate(iso: string | undefined): string {
 
 interface RawSanityPost {
   _id: string;
+  _type?: string;
   title?: string;
   slug?: string;
   excerpt?: string;
-  body?: string;
+  body?: string | unknown[];
+  bodyHtml?: string;
   language?: string;
   date?: string;
   category?: string;
   categoryTitle?: string;
+  categories?: string[];
   country?: string;
   countryTitle?: string;
   coverImage?: string;
+  readingTime?: number;
+  tags?: string[];
+  tableOfContents?: { heading?: string; anchor?: string }[];
+  executiveSummary?: unknown[];
+  faq?: { question?: string; answer?: string }[];
+  ctaSection?: { title?: string; description?: string; buttonText?: string; buttonUrl?: string };
 }

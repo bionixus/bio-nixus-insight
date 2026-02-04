@@ -16,10 +16,14 @@
     "process-logo": "node scripts/process-logo.mjs",
     "create-favicon": "node scripts/create-favicon.mjs",
     "studio": "npm run dev --prefix day-one/apps/studio",
+    "studio:deploy": "cd day-one/apps/studio && npx sanity deploy",
+    "studio:schema-deploy": "cd day-one/apps/studio && npx sanity schema deploy",
     "studio:case-studies": "npm run dev --prefix day-one/apps/studio-case-studies"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
+    "@portabletext/react": "^6.0.2",
+    "@portabletext/types": "^4.0.1",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-alert-dialog": "^1.1.14",
     "@radix-ui/react-aspect-ratio": "^1.1.7",

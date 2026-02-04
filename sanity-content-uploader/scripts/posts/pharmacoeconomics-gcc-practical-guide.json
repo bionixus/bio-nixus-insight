@@ -1,0 +1,32 @@
+{
+  "seo": {
+    "metaTitle": "Pharmacoeconomics in GCC: A Practical Guide 2025",
+    "metaDescription": "Essential guide to pharmacoeconomic evaluation and HTA requirements across GCC markets.",
+    "focusKeyword": "pharmacoeconomics GCC",
+    "keywords": ["pharmacoeconomics", "HTA GCC", "health economics Middle East"]
+  },
+  "title": "Pharmacoeconomics in GCC Markets: A Practical Guide",
+  "slug": {"current": "pharmacoeconomics-gcc-practical-guide"},
+  "excerpt": "Navigate pharmacoeconomic requirements and HTA frameworks across UAE, Saudi Arabia, and Kuwait markets.",
+  "readingTime": 12,
+  "tags": ["Pharmacoeconomics", "HTA", "GCC Markets"],
+  "body": [
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [{"_type": "span", "text": "Pharmacoeconomic evaluation is increasingly critical for market access in GCC countries..."}]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Do GCC countries require pharmacoeconomic dossiers?",
+      "answer": "While not universally mandated, pharmacoeconomic evaluations are increasingly requested for high-cost therapies, particularly in UAE and Saudi Arabia."
+    }
+  ],
+  "ctaSection": {
+    "title": "Need Pharmacoeconomic Expertise?",
+    "description": "We develop GCC-compliant pharmacoeconomic models and HTA dossiers.",
+    "buttonText": "Learn More",
+    "buttonUrl": "https://bionixus.com/services/pharmacoeconomics"
+  }
+}

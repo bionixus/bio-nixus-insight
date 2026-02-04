@@ -11,6 +11,7 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "localhost",
     port: 8082,
+    strictPort: false,
     hmr: {
       overlay: true,
     },
