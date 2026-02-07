@@ -25,7 +25,15 @@ export default async function handler(req, res) {
         );
 
         if (!caseStudy) {
-            return res.status(404).send('Case study not found');
+            return res.status(404).json({
+                error: 'Case study not found',
+                requestedSlug: slug,
+                config: {
+                    projectId: sanityClient.config().projectId,
+                    dataset: sanityClient.config().dataset,
+                    apiVersion: sanityClient.config().apiVersion,
+                }
+            });
         }
 
         // Generate HTML with proper meta tags

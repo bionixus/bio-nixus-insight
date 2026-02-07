@@ -11,7 +11,8 @@ export default function middleware(request) {
 
     if (isCrawler) {
         const url = new URL(request.url);
-        const pathParts = url.pathname.split('/');
+        // Remove trailing slash if present for cleaner splitting but be safe
+        const pathParts = url.pathname.split('/').filter(Boolean);
         const slug = pathParts[pathParts.length - 1];
 
         // Determine if it's a blog post or case study

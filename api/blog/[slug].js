@@ -25,7 +25,15 @@ export default async function handler(req, res) {
         );
 
         if (!post) {
-            return res.status(404).send('Post not found');
+            return res.status(404).json({
+                error: 'Post not found',
+                requestedSlug: slug,
+                config: {
+                    projectId: sanityClient.config().projectId,
+                    dataset: sanityClient.config().dataset,
+                    apiVersion: sanityClient.config().apiVersion,
+                }
+            });
         }
 
         // Generate HTML with proper meta tags
