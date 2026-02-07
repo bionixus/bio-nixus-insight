@@ -1,85 +1,121 @@
 import { createClient } from '@sanity/client';
 
 const sanityClient = createClient({
-    projectId: process.env.VITE_SANITY_PROJECT_ID || 'h2whvvpo',
-    dataset: process.env.VITE_SANITY_DATASET || 'production',
-    useCdn: true,
-    apiVersion: '2024-01-01',
-    token: process.env.VITE_SANITY_API_TOKEN, // Optional, only needed for private datasets
+  projectId: process.env.VITE_SANITY_PROJECT_ID || 'h2whvvpo',
+  dataset: process.env.VITE_SANITY_DATASET || 'production',
+  useCdn: true,
+  apiVersion: '2024-01-01',
 });
 
+const QUERY = `*[_type in ["post", "blogPost"] && slug.current == $slug][0]{
+  title,
+  excerpt,
+  "coverImage": mainImage.asset->url,
+  publishedAt,
+  category,
+  "categoryTitle": category->title,
+  "categories": categories[]->title,
+  tags
+}`;
+
+/** Escape HTML entities to prevent XSS in meta content attributes */
+function esc(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
 export default async function handler(req, res) {
-    const { slug } = req.query;
+  const { slug } = req.query;
 
-    try {
-        // Fetch post data from Sanity
-        const post = await sanityClient.fetch(
-            `*[_type == "post" && slug.current == $slug][0]{
-        title,
-        excerpt,
-        "coverImage": mainImage.asset->url,
-        publishedAt,
-        "category": categories[0]->title
-      }`,
-            { slug }
-        );
+  if (!slug) {
+    return res.status(400).json({ error: 'Missing slug' });
+  }
 
-        if (!post) {
-            return res.status(404).json({
-                error: 'Post not found',
-                requestedSlug: slug,
-                config: {
-                    projectId: sanityClient.config().projectId,
-                    dataset: sanityClient.config().dataset,
-                    apiVersion: sanityClient.config().apiVersion,
-                }
-            });
-        }
+  try {
+    const post = await sanityClient.fetch(QUERY, { slug });
 
-        // Generate HTML with proper meta tags
-        const html = `
-<!DOCTYPE html>
+    if (!post) {
+      // Return minimal HTML with default BioNixus OG for unknown posts
+      return res.status(404).send(buildFallbackHtml(slug));
+    }
+
+    const title = esc(post.title || 'BioNixus Blog');
+    const description = esc(
+      post.excerpt || `${post.title} — Read the full article on BioNixus.`
+    );
+    const image = post.coverImage || 'https://bionixus.com/og-image.png';
+    const url = `https://bionixus.com/blog/${esc(slug)}`;
+    const category =
+      typeof post.category === 'string'
+        ? post.category
+        : post.categoryTitle ||
+          (Array.isArray(post.categories) ? post.categories[0] : '') ||
+          '';
+
+    const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${post.title} | BioNixus</title>
-  <meta name="description" content="${post.excerpt || post.title}">
-  
-  <!-- Open Graph / Facebook -->
+  <title>${title} | BioNixus</title>
+  <meta name="description" content="${description}">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
   <meta property="og:type" content="article">
-  <meta property="og:title" content="${post.title}">
-  <meta property="og:description" content="${post.excerpt || post.title}">
-  <meta property="og:url" content="https://bionixus.com/blog/${slug}">
-  ${post.coverImage ? `<meta property="og:image" content="${post.coverImage}">` : ''}
-  ${post.coverImage ? `<meta property="og:image:width" content="1200">` : ''}
-  ${post.coverImage ? `<meta property="og:image:height" content="630">` : ''}
-  
+  <meta property="og:site_name" content="BioNixus">
+  <meta property="og:title" content="${title}">
+  <meta property="og:description" content="${description}">
+  <meta property="og:url" content="${url}">
+  <meta property="og:image" content="${esc(image)}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="${title}">
+  ${post.publishedAt ? `<meta property="article:published_time" content="${esc(post.publishedAt)}">` : ''}
+  ${category ? `<meta property="article:section" content="${esc(category)}">` : ''}
+  ${Array.isArray(post.tags) ? post.tags.map((t) => `<meta property="article:tag" content="${esc(t)}">`).join('\n  ') : ''}
+
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="${post.title}">
-  <meta name="twitter:description" content="${post.excerpt || post.title}">
-  ${post.coverImage ? `<meta name="twitter:image" content="${post.coverImage}">` : ''}
-  
-  <!-- Redirect to the actual page after crawlers are done -->
-  <meta http-equiv="refresh" content="0;url=/blog/${slug}">
-  <link rel="canonical" href="https://bionixus.com/blog/${slug}">
+  <meta name="twitter:site" content="@BioNixus">
+  <meta name="twitter:title" content="${title}">
+  <meta name="twitter:description" content="${description}">
+  <meta name="twitter:image" content="${esc(image)}">
+
+  <link rel="canonical" href="${url}">
 </head>
 <body>
-  <h1>${post.title}</h1>
-  <p>${post.excerpt || ''}</p>
-  <script>
-    // Redirect immediately for human visitors
-    window.location.href = '/blog/${slug}';
-  </script>
+  <h1>${title}</h1>
+  <p>${description}</p>
+  <a href="${url}">Read on BioNixus</a>
 </body>
-</html>
-    `;
+</html>`;
 
-        res.setHeader('Content-Type', 'text/html');
-        res.status(200).send(html);
-    } catch (error) {
-        console.error('Error fetching post:', error);
-        res.status(500).send('Error fetching post');
-    }
+    res.setHeader('Content-Type', 'text/html; charset=utf-8');
+    res.setHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=86400');
+    return res.status(200).send(html);
+  } catch (error) {
+    console.error('OG handler error:', error);
+    return res.status(500).send(buildFallbackHtml(slug));
+  }
+}
+
+function buildFallbackHtml(slug) {
+  const url = `https://bionixus.com/blog/${esc(slug)}`;
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BioNixus Blog</title>
+  <meta property="og:title" content="BioNixus – EMEA Healthcare Market Research">
+  <meta property="og:description" content="Leading UK healthcare market research firm delivering pharmaceutical insights across Europe and MENA.">
+  <meta property="og:image" content="https://bionixus.com/og-image.png">
+  <meta property="og:url" content="${url}">
+  <link rel="canonical" href="${url}">
+</head>
+<body><p>BioNixus Blog</p></body>
+</html>`;
 }

@@ -3,6 +3,17 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
+      "source": "/blog/:slug",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(facebookexternalhit|Facebot|Twitterbot|LinkedInBot|WhatsApp|Slackbot|TelegramBot|Discordbot|Googlebot|bingbot|Pinterestbot|redditbot).*"
+        }
+      ],
+      "destination": "/api/blog/:slug"
+    },
+    {
       "source": "/((?!api/.*).*)",
       "destination": "/index.html"
     }
