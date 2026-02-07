@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import DOMPurify from 'dompurify';
 import { PortableText } from '@portabletext/react';
 import type { PortableTextBlock } from '@portabletext/types';
+import { Helmet } from 'react-helmet-async';
 import { fetchSanityPostBySlug } from '@/lib/sanity-blog';
 
 /** Detect if string looks like HTML (contains tags). */
@@ -201,20 +202,20 @@ const BlogPost = () => {
   const fallbackPost: BlogPostType | null =
     slug?.startsWith('fallback-') && t.blog.items
       ? (() => {
-          const i = parseInt(slug.replace('fallback-', ''), 10);
-          const item = t.blog.items[i];
-          if (!item) return null;
-          return {
-            id: `fallback-${i}`,
-            slug: `fallback-${i}`,
-            title: item.title,
-            excerpt: item.excerpt,
-            date: item.date,
-            category: item.category,
-            country: item.country,
-            coverImage: 'coverImage' in item && typeof item.coverImage === 'string' ? item.coverImage : undefined,
-          };
-        })()
+        const i = parseInt(slug.replace('fallback-', ''), 10);
+        const item = t.blog.items[i];
+        if (!item) return null;
+        return {
+          id: `fallback-${i}`,
+          slug: `fallback-${i}`,
+          title: item.title,
+          excerpt: item.excerpt,
+          date: item.date,
+          category: item.category,
+          country: item.country,
+          coverImage: 'coverImage' in item && typeof item.coverImage === 'string' ? item.coverImage : undefined,
+        };
+      })()
       : null;
 
   const post = sanityPost ?? fallbackPost;
@@ -263,6 +264,31 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        {/* Dynamic meta tags for this specific blog post */}
+        <title>{post.title} | BioNixus</title>
+        <meta name="description" content={post.excerpt || post.title} />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.excerpt || post.title} />
+        <meta property="og:url" content={`https://bionixus.com/blog/${slug}`} />
+        {post.coverImage && <meta property="og:image" content={post.coverImage} />}
+        {post.coverImage && <meta property="og:image:width" content="1200" />}
+        {post.coverImage && <meta property="og:image:height" content="630" />}
+        {post.date && <meta property="article:published_time" content={post.date} />}
+        {post.category && <meta property="article:section" content={post.category} />}
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.excerpt || post.title} />
+        {post.coverImage && <meta name="twitter:image" content={post.coverImage} />}
+
+        {/* Canonical URL */}
+        <link rel="canonical" href={`https://bionixus.com/blog/${slug}`} />
+      </Helmet>
       <Navbar />
       <main className="section-padding">
         <div className="container-wide max-w-3xl mx-auto">
@@ -398,32 +424,32 @@ const BlogPost = () => {
                 post.ctaSection.description ||
                 post.ctaSection.buttonText ||
                 post.ctaSection.buttonUrl) && (
-              <Card className="mt-12 border-primary/20 bg-primary/5">
-                <CardHeader>
-                  {post.ctaSection.title && (
-                    <CardTitle className="text-xl">{post.ctaSection.title}</CardTitle>
+                <Card className="mt-12 border-primary/20 bg-primary/5">
+                  <CardHeader>
+                    {post.ctaSection.title && (
+                      <CardTitle className="text-xl">{post.ctaSection.title}</CardTitle>
+                    )}
+                    {post.ctaSection.description && (
+                      <CardDescription className="text-base mt-1 text-muted-foreground">
+                        {post.ctaSection.description}
+                      </CardDescription>
+                    )}
+                  </CardHeader>
+                  {post.ctaSection.buttonText && post.ctaSection.buttonUrl && (
+                    <CardContent>
+                      <Button asChild>
+                        <a
+                          href={post.ctaSection!.buttonUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {post.ctaSection!.buttonText}
+                        </a>
+                      </Button>
+                    </CardContent>
                   )}
-                  {post.ctaSection.description && (
-                    <CardDescription className="text-base mt-1 text-muted-foreground">
-                      {post.ctaSection.description}
-                    </CardDescription>
-                  )}
-                </CardHeader>
-                {post.ctaSection.buttonText && post.ctaSection.buttonUrl && (
-                  <CardContent>
-                    <Button asChild>
-                      <a
-                        href={post.ctaSection!.buttonUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {post.ctaSection!.buttonText}
-                      </a>
-                    </Button>
-                  </CardContent>
-                )}
-              </Card>
-            )}
+                </Card>
+              )}
           </article>
         </div>
       </main>

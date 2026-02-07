@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import DOMPurify from 'dompurify';
+import { Helmet } from 'react-helmet-async';
 import { fetchCaseStudyBySlug } from '@/lib/sanity-case-studies';
 import { isCaseStudiesConfigured } from '@/lib/sanity-case-studies';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -76,6 +77,31 @@ const CaseStudyPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        {/* Dynamic meta tags for this specific case study */}
+        <title>{caseStudy.title} | BioNixus Case Studies</title>
+        <meta name="description" content={caseStudy.excerpt || caseStudy.title} />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={caseStudy.title} />
+        <meta property="og:description" content={caseStudy.excerpt || caseStudy.title} />
+        <meta property="og:url" content={`https://bionixus.com/case-studies/${slug}`} />
+        {caseStudy.coverImage && <meta property="og:image" content={caseStudy.coverImage} />}
+        {caseStudy.coverImage && <meta property="og:image:width" content="1200" />}
+        {caseStudy.coverImage && <meta property="og:image:height" content="630" />}
+        {caseStudy.date && <meta property="article:published_time" content={caseStudy.date} />}
+        {caseStudy.category && <meta property="article:section" content={caseStudy.category} />}
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={caseStudy.title} />
+        <meta name="twitter:description" content={caseStudy.excerpt || caseStudy.title} />
+        {caseStudy.coverImage && <meta name="twitter:image" content={caseStudy.coverImage} />}
+
+        {/* Canonical URL */}
+        <link rel="canonical" href={`https://bionixus.com/case-studies/${slug}`} />
+      </Helmet>
       <Navbar />
       <main className="section-padding">
         <div className="container-wide max-w-3xl mx-auto">
