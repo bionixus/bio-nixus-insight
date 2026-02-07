@@ -39,8 +39,9 @@ export default async function handler(req, res) {
     const post = await sanityClient.fetch(QUERY, { slug });
 
     if (!post) {
-      // Return minimal HTML with default BioNixus OG for unknown posts
-      return res.status(404).send(buildFallbackHtml(slug));
+      // Return 200 with default BioNixus OG so crawlers don't flag a bad response
+      res.setHeader('Content-Type', 'text/html; charset=utf-8');
+      return res.status(200).send(buildFallbackHtml(slug));
     }
 
     const title = esc(post.title || 'BioNixus Blog');
@@ -99,7 +100,8 @@ export default async function handler(req, res) {
     return res.status(200).send(html);
   } catch (error) {
     console.error('OG handler error:', error);
-    return res.status(500).send(buildFallbackHtml(slug));
+    res.setHeader('Content-Type', 'text/html; charset=utf-8');
+    return res.status(200).send(buildFallbackHtml(slug));
   }
 }
 
