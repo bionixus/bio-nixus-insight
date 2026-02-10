@@ -2,6 +2,7 @@ import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
+import {PreviewAction} from './components/PreviewAction'
 
 export default defineConfig({
   name: 'default',
@@ -19,5 +20,14 @@ export default defineConfig({
 
   schema: {
     types: schemaTypes,
+  },
+
+  document: {
+    actions: (prev, context) => {
+      if (context.schemaType === 'newsletter') {
+        return [PreviewAction, ...prev]
+      }
+      return prev
+    },
   },
 })

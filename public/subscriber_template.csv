@@ -1,0 +1,5 @@
+firstName,lastName,email,personalEmail,mobile,title,company,language,segments,notes
+John,Doe,john.doe@hospital.sa,,+966501234567,Medical Director,King Faisal Specialist Hospital,en,pharma_clients,Key decision maker
+Sarah,Ahmed,sarah.ahmed@pfizer.ae,sarah.personal@gmail.com,+971501234567,Clinical Research Manager,Pfizer UAE,ar,"pharma_clients,kols",Interested in oncology trials
+Mohammed,Ali,m.ali@clinic.kw,,,Senior Pharmacist,Kuwait Medical Clinic,en,all,Regular webinar attendee
+Dr. Fatima,Hassan,f.hassan@hamad.qa,,+97455123456,Head of Oncology,Hamad Medical Corporation,ar,"hospital_admins,kols",VIP - quarterly meetings

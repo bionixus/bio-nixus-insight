@@ -20,6 +20,10 @@ import CaseStudy from "./pages/CaseStudy";
 import Privacy from "./pages/Privacy";
 import Contact from "./pages/Contact";
 import Methodology from "./pages/Methodology";
+import AdminImportSubscribers from "./pages/AdminImportSubscribers";
+import AdminDashboard from "./pages/AdminDashboard";
+import AdminLogin from "./pages/AdminLogin";
+import VerifyEmail from "./pages/VerifyEmail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -67,6 +71,10 @@ const App = () => (
                 <Route path="/es/methodology" element={<Methodology />} />
                 <Route path="/zh/methodology" element={<Methodology />} />
                 <Route path="/ar/methodology" element={<Methodology />} />
+                <Route path="/verify-email" element={<VerifyEmail />} />
+                <Route path="/admin/dashboard" element={<AdminDashboard />} />
+                <Route path="/admin/login" element={<AdminLogin />} />
+                <Route path="/admin/import-subscribers" element={<AdminImportSubscribers />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>

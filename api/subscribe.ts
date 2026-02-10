@@ -1,4 +1,7 @@
 import { createClient } from '@sanity/client'
+import { Resend } from 'resend'
+import { generateVerificationEmail } from '../src/lib/emails/verificationEmail'
+import crypto from 'crypto'
 
 const sanityServer = createClient({
   projectId: process.env.VITE_SANITY_PROJECT_ID || 'h2whvvpo',
@@ -8,55 +11,115 @@ const sanityServer = createClient({
   token: process.env.SANITY_API_TOKEN,
 })
 
+const resend = new Resend(process.env.RESEND_API_KEY)
+
+const BASE_URL = process.env.VITE_BASE_URL || 'https://bionixus.com'
+
 export default async function handler(req: any, res: any) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' })
   }
 
-  const { email, name, language } = req.body
+  const {
+    firstName,
+    lastName,
+    email,
+    personalEmail,
+    mobile,
+    title,
+    company,
+    language,
+  } = req.body
 
-  if (!email) {
-    return res.status(400).json({ error: 'Email is required' })
+  if (!firstName || !lastName || !email) {
+    return res.status(400).json({ error: 'First name, last name, and email are required' })
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  if (!emailRegex.test(email)) {
+    return res.status(400).json({ error: 'Invalid email format' })
   }
 
   try {
-    // Check if subscriber already exists
     const existing = await sanityServer.fetch(
       `
       *[_type == "subscriber" && email == $email][0]
     `,
-      { email }
+      { email: email.toLowerCase().trim() }
     )
 
-    if (existing) {
-      // Resubscribe if previously unsubscribed
-      if (!existing.subscribed) {
-        await sanityServer
-          .patch(existing._id)
-          .set({ subscribed: true, unsubscribedAt: null })
-          .commit()
-
-        return res.status(200).json({ success: true, message: 'Resubscribed successfully!' })
-      }
-
-      return res.status(400).json({ error: 'Email already subscribed' })
+    if (existing && existing.subscribed && existing.emailVerified) {
+      return res.status(400).json({ error: 'Email already subscribed and verified' })
     }
 
-    // Create new subscriber
-    await sanityServer.create({
-      _type: 'subscriber',
-      email,
-      name: name || '',
-      language: language || 'en',
-      segments: ['all'],
-      subscribed: true,
-      subscribedAt: new Date().toISOString(),
-      source: 'website',
+    // Generate verification token
+    const verificationToken = crypto.randomBytes(32).toString('hex')
+    const verificationLink = `${BASE_URL}/verify-email?token=${verificationToken}`
+
+    let subscriberId: string
+
+    if (existing) {
+      // Update existing subscriber
+      await sanityServer
+        .patch(existing._id)
+        .set({
+          subscribed: true,
+          emailVerified: false,
+          verificationToken,
+          unsubscribedAt: null,
+          firstName: firstName.trim(),
+          lastName: lastName.trim(),
+          personalEmail: personalEmail?.trim() || null,
+          mobile: mobile?.trim() || null,
+          title: title?.trim() || null,
+          company: company?.trim() || null,
+          language: language || 'en',
+        })
+        .commit()
+
+      subscriberId = existing._id
+    } else {
+      // Create new subscriber
+      const result = await sanityServer.create({
+        _type: 'subscriber',
+        firstName: firstName.trim(),
+        lastName: lastName.trim(),
+        email: email.toLowerCase().trim(),
+        personalEmail: personalEmail?.trim() || null,
+        mobile: mobile?.trim() || null,
+        title: title?.trim() || null,
+        company: company?.trim() || null,
+        language: language || 'en',
+        segments: ['all'],
+        subscribed: true,
+        emailVerified: false,
+        verificationToken,
+        subscribedAt: new Date().toISOString(),
+        source: 'website',
+      })
+
+      subscriberId = result._id
+    }
+
+    // Send verification email
+    await resend.emails.send({
+      from: 'BioNixus <newsletter@bionixus.com>',
+      to: email,
+      subject:
+        language === 'ar'
+          ? 'تأكيد اشتراكك في BioNixus'
+          : 'Verify your BioNixus subscription',
+      html: generateVerificationEmail(firstName, verificationLink, language),
+      tags: [
+        { name: 'type', value: 'verification' },
+        { name: 'subscriber_id', value: subscriberId },
+      ],
     })
 
-    // TODO: Send welcome email via Resend
-
-    return res.status(200).json({ success: true })
+    return res.status(200).json({
+      success: true,
+      message: 'Verification email sent! Please check your inbox.',
+    })
   } catch (error: any) {
     console.error('Subscription error:', error)
     return res.status(500).json({ error: 'Failed to subscribe' })

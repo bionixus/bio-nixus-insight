@@ -23,12 +23,87 @@ export default {
       description: 'Preview text shown in email inbox (50-100 characters)',
       validation: (Rule: any) => Rule.max(100),
     },
+
+    // Content Type Selector
     {
-      name: 'content',
-      title: 'Newsletter Content',
-      type: 'localeBlock',
+      name: 'contentType',
+      title: 'Content Type',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Rich Text Editor', value: 'richtext' },
+          { title: 'HTML Code', value: 'html' },
+        ],
+        layout: 'radio',
+      },
+      initialValue: 'richtext',
       validation: (Rule: any) => Rule.required(),
     },
+
+    // OPTION 1: Rich Text
+    {
+      name: 'content',
+      title: 'Newsletter Content (Rich Text)',
+      type: 'localeBlock',
+      hidden: ({ document }: any) => document?.contentType !== 'richtext',
+      description: 'Use the visual editor to create your newsletter',
+    },
+
+    // OPTION 2: HTML Code
+    {
+      name: 'htmlContent',
+      title: 'Newsletter Content (HTML)',
+      type: 'object',
+      hidden: ({ document }: any) => document?.contentType !== 'html',
+      description: 'Write raw HTML for complete control',
+      fields: [
+        {
+          name: 'en',
+          title: 'English HTML',
+          type: 'text',
+          rows: 20,
+          validation: (Rule: any) =>
+            Rule.custom((value: string) => {
+              if (!value) return true
+              if (!value.includes('<') && !value.includes('>')) {
+                return 'This should contain HTML tags'
+              }
+              return true
+            }),
+        },
+        {
+          name: 'ar',
+          title: 'Arabic HTML',
+          type: 'text',
+          rows: 20,
+        },
+        {
+          name: 'de',
+          title: 'German HTML',
+          type: 'text',
+          rows: 20,
+        },
+        {
+          name: 'fr',
+          title: 'French HTML',
+          type: 'text',
+          rows: 20,
+        },
+        {
+          name: 'es',
+          title: 'Spanish HTML',
+          type: 'text',
+          rows: 20,
+        },
+        {
+          name: 'zh',
+          title: 'Chinese HTML',
+          type: 'text',
+          rows: 20,
+        },
+      ],
+    },
+
     {
       name: 'featuredImage',
       title: 'Featured Image',
@@ -117,7 +192,7 @@ export default {
           draft: '📝',
           scheduled: '⏰',
           sent: '✅',
-        }[status] || '❓'
+        }[status as string] || '❓'
 
       return {
         title: `${statusEmoji} ${title}`,
