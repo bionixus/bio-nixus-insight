@@ -5,6 +5,7 @@ import { category } from './category'
 import { post } from './post'
 import subscriber from './subscriber'
 import newsletter from './newsletter'
+import contentCalendar from './contentCalendar'
 
 export const schemaTypes = [
   // Object types
@@ -19,4 +20,5 @@ export const schemaTypes = [
   blogPost,
   subscriber,
   newsletter,
+  contentCalendar,
 ]

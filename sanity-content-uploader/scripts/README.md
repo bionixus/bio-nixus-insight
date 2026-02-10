@@ -11,9 +11,9 @@
 2. **Configure environment variables:**
    Create `.env` file in the package root with:
    ```
-   SANITY_PROJECT_ID=your_project_id
+   SANITY_PROJECT_ID=h2whvvpo
    SANITY_DATASET=production
-   SANITY_TOKEN=your_write_token
+   SANITY_TOKEN=skCrWA5fcpR5eXSbZKJn4hMfKMXAT9HccNrCtqwzTuNxIFPG3HxxuDy5kWExIyM7Lynoi2gtuz8MfZsfwjCxKSCEI1bwhkzXHmJiva5f2OmGoXJ6hKFKq1aS3WcykgBeRDYD7DB8r1XIhrNSeCBOVs4RBKhfd3Fj6AyAi6x3YuAAdFd9wa3O
    SANITY_API_VERSION=2024-01-01
    ```
 

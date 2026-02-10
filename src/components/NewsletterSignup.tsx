@@ -66,10 +66,9 @@ export function NewsletterSignup() {
 
           <input
             type="text"
-            placeholder="Last Name *"
+            placeholder="Last Name (Optional)"
             value={formData.lastName}
             onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-            required
           />
         </div>
 

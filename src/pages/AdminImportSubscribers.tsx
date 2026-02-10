@@ -81,7 +81,7 @@ Mohammed,Ali,m.ali@clinic.kw,,+96550123456,Pharmacist,Kuwait Clinic,en,all,`
         <h3>📝 CSV Format Requirements:</h3>
         <ul style={{ lineHeight: '1.8' }}>
           <li>
-            <strong>Required columns:</strong> firstName, lastName, email
+            <strong>Required columns:</strong> firstName, email (lastName is optional)
           </li>
           <li>
             <strong>Optional columns:</strong> personalEmail, mobile, title, company, language,

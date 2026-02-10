@@ -14,7 +14,6 @@ export default {
       name: 'lastName',
       title: 'Last Name',
       type: 'string',
-      validation: (Rule: any) => Rule.required(),
     },
     {
       name: 'email',
@@ -219,6 +218,7 @@ export default {
       options: {
         list: [
           { title: 'Website Form', value: 'website' },
+          { title: 'Contact Form', value: 'contact_form' },
           { title: 'CSV Import', value: 'csv_import' },
           { title: 'LinkedIn', value: 'linkedin' },
           { title: 'Event/Conference', value: 'event' },
@@ -246,7 +246,7 @@ export default {
     prepare(selection: any) {
       const { firstName, lastName, email, company, subscribed } = selection
       return {
-        title: `${firstName} ${lastName}`,
+        title: [firstName, lastName].filter(Boolean).join(' ') || 'Unnamed',
         subtitle: `${email} ${company ? `• ${company}` : ''} ${subscribed ? '✅' : '❌'}`,
         media: undefined,
       }

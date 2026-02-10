@@ -103,6 +103,7 @@ export default async function handler(req: any, res: any) {
         // Send via Resend
         const result = await resend.emails.send({
           from: 'Mohammad Al-Ubaydli <newsletter@bionixus.com>',
+          replyTo: 'digital@bionixus.uk',
           to: subscriber.email,
           subject: subject,
           html: emailHTML,

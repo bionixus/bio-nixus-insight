@@ -301,6 +301,20 @@ export default function AdminDashboard() {
         </div>
         <div style={{ display: 'flex', gap: '10px' }}>
           <button
+            onClick={() => navigate('/admin/calendar')}
+            style={{
+              padding: '10px 20px',
+              background: 'white',
+              color: '#667eea',
+              border: 'none',
+              borderRadius: '6px',
+              cursor: 'pointer',
+              fontWeight: 'bold',
+            }}
+          >
+            📅 Calendar
+          </button>
+          <button
             onClick={() => navigate('/admin/analytics')}
             style={{
               padding: '10px 20px',
@@ -571,7 +585,7 @@ export default function AdminDashboard() {
                     </td>
                     <td style={tableCellStyle}>
                       <strong>
-                        {sub.firstName} {sub.lastName}
+                        {[sub.firstName, sub.lastName].filter(Boolean).join(' ')}
                       </strong>
                       {sub.title && (
                         <div style={{ fontSize: '12px', color: '#666' }}>{sub.title}</div>

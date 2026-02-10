@@ -24,6 +24,8 @@ import AdminImportSubscribers from "./pages/AdminImportSubscribers";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminLogin from "./pages/AdminLogin";
 import AdminAnalytics from "./pages/AdminAnalytics";
+import AdminCalendar from "./pages/AdminCalendar";
+import AdminCalendarNew from "./pages/AdminCalendarNew";
 import VerifyEmail from "./pages/VerifyEmail";
 import NotFound from "./pages/NotFound";
 
@@ -77,6 +79,8 @@ const App = () => (
                 <Route path="/admin/login" element={<AdminLogin />} />
                 <Route path="/admin/import-subscribers" element={<AdminImportSubscribers />} />
                 <Route path="/admin/analytics" element={<AdminAnalytics />} />
+                <Route path="/admin/calendar" element={<AdminCalendar />} />
+                <Route path="/admin/calendar/new" element={<AdminCalendarNew />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>

@@ -88,6 +88,24 @@ const ContactSection = () => {
       });
       if (res.ok) {
         setSubmitted(true);
+        // Also save to Sanity as a subscriber (fire-and-forget, don't block success)
+        try {
+          await fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              firstName,
+              lastName: lastName || undefined,
+              email: workEmail,
+              mobile: phone || undefined,
+              company: company || undefined,
+              language,
+              source: 'contact_form',
+            }),
+          });
+        } catch {
+          // Silently ignore - Formspree submission is the primary action
+        }
       } else {
         const json = await res.json().catch(() => ({}));
         const errorMsg = json.error || v('error');

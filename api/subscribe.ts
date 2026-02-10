@@ -29,10 +29,11 @@ export default async function handler(req: any, res: any) {
     title,
     company,
     language,
+    source,
   } = req.body
 
-  if (!firstName || !lastName || !email) {
-    return res.status(400).json({ error: 'First name, last name, and email are required' })
+  if (!firstName || !email) {
+    return res.status(400).json({ error: 'First name and email are required' })
   }
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -68,7 +69,7 @@ export default async function handler(req: any, res: any) {
           verificationToken,
           unsubscribedAt: null,
           firstName: firstName.trim(),
-          lastName: lastName.trim(),
+          lastName: lastName?.trim() || null,
           personalEmail: personalEmail?.trim() || null,
           mobile: mobile?.trim() || null,
           title: title?.trim() || null,
@@ -83,7 +84,7 @@ export default async function handler(req: any, res: any) {
       const result = await sanityServer.create({
         _type: 'subscriber',
         firstName: firstName.trim(),
-        lastName: lastName.trim(),
+        lastName: lastName?.trim() || null,
         email: email.toLowerCase().trim(),
         personalEmail: personalEmail?.trim() || null,
         mobile: mobile?.trim() || null,
@@ -95,7 +96,7 @@ export default async function handler(req: any, res: any) {
         emailVerified: false,
         verificationToken,
         subscribedAt: new Date().toISOString(),
-        source: 'website',
+        source: source || 'website',
       })
 
       subscriberId = result._id

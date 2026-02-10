@@ -519,7 +519,7 @@ export async function uploadBlogPost(
         log(`Document Type: ${result._type}`, 'cyan')
         log(`Title: ${result.title}`, 'cyan')
         log(`Slug: ${(result.slug as { current?: string })?.current}`, 'cyan')
-        const projectId = process.env.SANITY_PROJECT_ID || 'your-project'
+        const projectId = process.env.SANITY_PROJECT_ID || 'h2whvvpo'
         log(`\nView in Sanity Studio:`, 'yellow')
         log(`https://${projectId}.sanity.studio/desk/blogPost;${result._id}`, 'blue')
       }

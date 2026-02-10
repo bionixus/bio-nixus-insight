@@ -8,7 +8,7 @@ Connect Sanity to power the blog/insights section on [https://bio-nixus-insight.
 
 1. Go to [sanity.io/manage](https://sanity.io/manage)
 2. Create a new project (or use existing)
-3. Note your **Project ID** (e.g. `abc123`)
+3. Note your **Project ID** (BioNixus Blog: `h2whvvpo`, Case Studies: `gj6cv27f`)
 
 ---
 
@@ -68,9 +68,14 @@ export default {
 Create `.env` in the project root (copy from `.env.example`):
 
 ```env
-VITE_SANITY_PROJECT_ID=your-project-id
+VITE_SANITY_PROJECT_ID=h2whvvpo
 VITE_SANITY_DATASET=production
-VITE_SANITY_API_TOKEN=sk_your_token_here
+VITE_SANITY_API_TOKEN=
+SANITY_API_TOKEN=skCrWA5fcpR5eXSbZKJn4hMfKMXAT9HccNrCtqwzTuNxIFPG3HxxuDy5kWExIyM7Lynoi2gtuz8MfZsfwjCxKSCEI1bwhkzXHmJiva5f2OmGoXJ6hKFKq1aS3WcykgBeRDYD7DB8r1XIhrNSeCBOVs4RBKhfd3Fj6AyAi6x3YuAAdFd9wa3O
+RESEND_API_KEY=re_XaGvfMdJ_E16Vs44Ewh9eTCFCAzjqJ6cW
+RESEND_WEBHOOK_SECRET=whsec_8cEHGAUUEpxYo40mudctJG2Wn/FLbIBX
+ADMIN_PASSWORD=BioNixus2026!
+VITE_BASE_URL=https://bionixus.com
 ```
 
 ### Vercel
@@ -78,9 +83,13 @@ VITE_SANITY_API_TOKEN=sk_your_token_here
 1. Go to [vercel.com](https://vercel.com) → your project **bio-nixus-insight**
 2. **Settings** → **Environment Variables**
 3. Add:
-   - `VITE_SANITY_PROJECT_ID` = your project ID
+   - `VITE_SANITY_PROJECT_ID` = `h2whvvpo`
    - `VITE_SANITY_DATASET` = `production`
-   - `VITE_SANITY_API_TOKEN` = your token
+   - `SANITY_API_TOKEN` = (write token from Sanity manage)
+   - `RESEND_API_KEY` = (from Resend dashboard)
+   - `RESEND_WEBHOOK_SECRET` = (from Resend webhook settings)
+   - `ADMIN_PASSWORD` = `BioNixus2026!`
+   - `VITE_BASE_URL` = `https://bionixus.com`
 4. **Save** and redeploy
 
 ---

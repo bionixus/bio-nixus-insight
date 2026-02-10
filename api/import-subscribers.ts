@@ -49,11 +49,11 @@ export default async function handler(req: any, res: any) {
 
       try {
         // Validate required fields
-        if (!record.firstName || !record.lastName || !record.email) {
+        if (!record.firstName || !record.email) {
           results.errors.push({
             row: i + 2, // +2 because: +1 for 0-index, +1 for header row
             email: record.email || 'N/A',
-            error: 'Missing required fields (firstName, lastName, email)',
+            error: 'Missing required fields (firstName, email)',
           })
           results.skipped++
           continue
@@ -96,7 +96,7 @@ export default async function handler(req: any, res: any) {
         await sanityServer.create({
           _type: 'subscriber',
           firstName: record.firstName.trim(),
-          lastName: record.lastName.trim(),
+          lastName: record.lastName?.trim() || null,
           email: record.email.toLowerCase().trim(),
           personalEmail: record.personalEmail?.trim() || null,
           mobile: record.mobile?.trim() || null,

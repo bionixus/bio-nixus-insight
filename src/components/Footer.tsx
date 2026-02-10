@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Linkedin, Facebook, Instagram } from 'lucide-react';
+import { Linkedin, Facebook, Instagram, Mail } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
@@ -10,6 +10,37 @@ const Footer = () => {
   const { t, language, isRTL } = useLanguage();
   const basePath = languagePaths[language] || '/';
   const [portalOpen, setPortalOpen] = useState(false);
+  const [nlName, setNlName] = useState('');
+  const [nlEmail, setNlEmail] = useState('');
+  const [nlLoading, setNlLoading] = useState(false);
+  const [nlStatus, setNlStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const f = t.footer as Record<string, string>;
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!nlName.trim() || !nlEmail.trim()) return;
+    setNlLoading(true);
+    setNlStatus('idle');
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ firstName: nlName.trim(), email: nlEmail.trim(), language }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setNlStatus('success');
+        setNlName('');
+        setNlEmail('');
+      } else {
+        setNlStatus('error');
+      }
+    } catch {
+      setNlStatus('error');
+    } finally {
+      setNlLoading(false);
+    }
+  };
 
   const handleLogoClick = () => {
     const isHome =
@@ -40,7 +71,7 @@ const Footer = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Brand */}
+          {/* Brand + Newsletter */}
           <div className="lg:col-span-2">
             <Link to={basePath} className="flex items-center gap-3 mb-6" onClick={handleLogoClick}>
               <img
@@ -49,6 +80,56 @@ const Footer = () => {
                 className="h-10 w-auto object-contain [filter:brightness(0)_invert(1)]"
               />
             </Link>
+
+            {/* Newsletter Signup */}
+            <div className="mb-6">
+              <h4 className="font-semibold text-primary-foreground mb-2 uppercase tracking-wide text-sm flex items-center gap-2">
+                <Mail className="w-4 h-4" />
+                {f.newsletterHeading || 'Newsletter'}
+              </h4>
+              <p className="text-primary-foreground/60 text-sm mb-3">
+                {f.newsletterDesc || 'Get healthcare insights delivered to your inbox.'}
+              </p>
+              {nlStatus === 'success' ? (
+                <p className="text-green-300 text-sm font-medium">
+                  ✓ {f.newsletterSuccess || 'Check your email to verify!'}
+                </p>
+              ) : (
+                <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-2">
+                  <input
+                    type="text"
+                    value={nlName}
+                    onChange={(e) => setNlName(e.target.value)}
+                    placeholder={f.newsletterPlaceholder || 'Your name'}
+                    required
+                    className="flex-1 min-w-0 px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-primary-foreground placeholder:text-primary-foreground/40 text-sm focus:outline-none focus:border-white/40 transition-colors"
+                  />
+                  <input
+                    type="email"
+                    value={nlEmail}
+                    onChange={(e) => setNlEmail(e.target.value)}
+                    placeholder={f.newsletterEmailPlaceholder || 'Work email'}
+                    required
+                    className="flex-1 min-w-0 px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-primary-foreground placeholder:text-primary-foreground/40 text-sm focus:outline-none focus:border-white/40 transition-colors"
+                  />
+                  <button
+                    type="submit"
+                    disabled={nlLoading}
+                    className="px-4 py-2 rounded-lg bg-white text-primary font-semibold text-sm hover:bg-white/90 transition-colors disabled:opacity-60 disabled:cursor-not-allowed whitespace-nowrap"
+                  >
+                    {nlLoading
+                      ? (f.newsletterSubscribing || 'Subscribing...')
+                      : (f.newsletterButton || 'Subscribe')}
+                  </button>
+                </form>
+              )}
+              {nlStatus === 'error' && (
+                <p className="text-red-300 text-sm mt-1">
+                  {f.newsletterError || 'Something went wrong. Try again.'}
+                </p>
+              )}
+            </div>
+
             <div className="flex gap-4">
               <a
                 href="https://www.linkedin.com/company/bionixus/about/?viewAsMember=true"

@@ -12,7 +12,7 @@ npm install
 # Create .env file (or copy from .env.example)
 echo "SANITY_PROJECT_ID=h2whvvpo" > .env
 echo "SANITY_DATASET=production" >> .env
-echo "SANITY_TOKEN=your_token_here" >> .env
+echo "SANITY_TOKEN=skCrWA5fcpR5eXSbZKJn4hMfKMXAT9HccNrCtqwzTuNxIFPG3HxxuDy5kWExIyM7Lynoi2gtuz8MfZsfwjCxKSCEI1bwhkzXHmJiva5f2OmGoXJ6hKFKq1aS3WcykgBeRDYD7DB8r1XIhrNSeCBOVs4RBKhfd3Fj6AyAi6x3YuAAdFd9wa3O" >> .env
 echo "SANITY_API_VERSION=2024-01-01" >> .env
 ```
 

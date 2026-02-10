@@ -130,7 +130,7 @@ Title: Healthcare Market Research in UAE
 Slug: healthcare-market-research-uae-guide-2025
 
 View in Sanity Studio:
-https://your-project.sanity.studio/desk/blogPost;blogPost-abc123
+https://h2whvvpo.sanity.studio/desk/blogPost;blogPost-abc123
 
 --------------------------------------------------------------------------------
 Statistics:
@@ -319,9 +319,9 @@ ls -la .env
 cat .env
 
 # Should contain:
-SANITY_PROJECT_ID=your_id_here
+SANITY_PROJECT_ID=h2whvvpo
 SANITY_DATASET=production
-SANITY_TOKEN=your_token_here
+SANITY_TOKEN=skCrWA5fcpR5eXSbZKJn4hMfKMXAT9HccNrCtqwzTuNxIFPG3HxxuDy5kWExIyM7Lynoi2gtuz8MfZsfwjCxKSCEI1bwhkzXHmJiva5f2OmGoXJ6hKFKq1aS3WcykgBeRDYD7DB8r1XIhrNSeCBOVs4RBKhfd3Fj6AyAi6x3YuAAdFd9wa3O
 ```
 
 ### Error: "Unauthorized"
