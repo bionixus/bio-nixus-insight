@@ -301,6 +301,20 @@ export default function AdminDashboard() {
         </div>
         <div style={{ display: 'flex', gap: '10px' }}>
           <button
+            onClick={() => navigate('/admin/send-newsletter')}
+            style={{
+              padding: '10px 20px',
+              background: '#28a745',
+              color: 'white',
+              border: 'none',
+              borderRadius: '6px',
+              cursor: 'pointer',
+              fontWeight: 'bold',
+            }}
+          >
+            📧 Send Newsletter
+          </button>
+          <button
             onClick={() => navigate('/admin/calendar')}
             style={{
               padding: '10px 20px',
