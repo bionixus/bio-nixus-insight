@@ -24,7 +24,7 @@ export default function AdminCalendarNew() {
     try {
       const token = getAuthToken()
 
-      const response = await fetch('/api/calendar/events', {
+      const response = await fetch('/api/calendar', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

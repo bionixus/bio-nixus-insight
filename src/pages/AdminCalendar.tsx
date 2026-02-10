@@ -39,7 +39,7 @@ export default function AdminCalendar() {
         type: filters.type
       })
 
-      const response = await fetch(`/api/calendar/events?${params}`, {
+      const response = await fetch(`/api/calendar?${params}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       })
 
@@ -141,7 +141,7 @@ export default function AdminCalendar() {
               if (!confirm('Sync newsletters and blog posts to the calendar?')) return
               try {
                 const token = getAuthToken()
-                const response = await fetch('/api/calendar/sync', {
+                const response = await fetch('/api/calendar?action=sync', {
                   method: 'POST',
                   headers: { Authorization: `Bearer ${token}` },
                 })
@@ -641,7 +641,7 @@ function EventDetailModal({ event, onClose, onRefresh }: any) {
     setUpdating(true)
     try {
       const token = getAuthToken()
-      const response = await fetch('/api/calendar/events', {
+      const response = await fetch('/api/calendar', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ eventId: event._id, status: newStatus }),
@@ -657,7 +657,7 @@ function EventDetailModal({ event, onClose, onRefresh }: any) {
     setUpdating(true)
     try {
       const token = getAuthToken()
-      const response = await fetch('/api/calendar/events', {
+      const response = await fetch('/api/calendar', {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ eventId: event._id }),
@@ -843,7 +843,7 @@ function CreateEventModal({ onClose, onCreated }: any) {
           endDate: form.endDate ? new Date(form.endDate).toISOString() : undefined,
         }
       }
-      const response = await fetch('/api/calendar/events', {
+      const response = await fetch('/api/calendar', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify(body),

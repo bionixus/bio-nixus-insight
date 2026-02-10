@@ -37,7 +37,7 @@ function BulkActionsPanel({ selectedIds, onActionComplete }: any) {
 
     try {
       const token = getAuthToken()
-      const response = await fetch('/api/admin/bulk-actions', {
+      const response = await fetch('/api/admin?action=bulk-actions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -210,7 +210,7 @@ export default function AdminDashboard() {
         )
       )
 
-      const response = await fetch(`/api/admin/subscribers?${params}`, {
+      const response = await fetch(`/api/admin?action=subscribers&${params}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
 
@@ -503,7 +503,7 @@ export default function AdminDashboard() {
 
               try {
                 const token = getAuthToken()
-                const response = await fetch('/api/admin/calculate-engagement', {
+                const response = await fetch('/api/admin?action=calculate-engagement', {
                   method: 'POST',
                   headers: { Authorization: `Bearer ${token}` },
                 })

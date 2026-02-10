@@ -14,7 +14,7 @@ export default function AdminLogin() {
 
     try {
       // Verify password
-      const response = await fetch('/api/admin/verify', {
+      const response = await fetch('/api/admin?action=verify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ password }),

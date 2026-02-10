@@ -10,7 +10,127 @@ const sanityServer = createClient({
   token: process.env.SANITY_API_TOKEN?.trim(),
 })
 
-async function handler(req: any, res: any) {
+function checkAuth(req: any, res: any): boolean {
+  const authHeader = req.headers.authorization
+  if (!authHeader || !authHeader.startsWith('Bearer ') || authHeader.substring(7) !== ADMIN_PASSWORD) {
+    res.status(401).json({ error: 'Unauthorized' })
+    return false
+  }
+  return true
+}
+
+export default async function handler(req: any, res: any) {
+  if (!checkAuth(req, res)) return
+
+  const { action } = req.query
+
+  // ─── sync: POST – sync newsletters/posts to calendar ───
+  if (action === 'sync') {
+    if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' })
+    return handleSync(req, res)
+  }
+
+  // ─── Default: events CRUD ───
+  return handleEvents(req, res)
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// Sync handler (was api/calendar/sync.ts)
+// ═══════════════════════════════════════════════════════════════════
+async function handleSync(req: any, res: any) {
+  try {
+    // Find newsletters without calendar entries
+    const newsletters = await sanityServer.fetch(`
+      *[_type == "newsletter" && status == "sent" && defined(sentAt)] {
+        _id,
+        title,
+        sentAt,
+        targetSegments
+      }
+    `)
+
+    // Find blog posts without calendar entries
+    const posts = await sanityServer.fetch(`
+      *[_type == "post" && defined(publishedAt)] {
+        _id,
+        title,
+        publishedAt,
+        author
+      }
+    `)
+
+    let created = 0
+
+    // Create calendar entries for sent newsletters
+    for (const newsletter of newsletters) {
+      const existing = await sanityServer.fetch(`
+        *[_type == "contentCalendar" && linkedContent.newsletter._ref == $id][0]
+      `, { id: newsletter._id })
+
+      if (!existing) {
+        await sanityServer.create({
+          _type: 'contentCalendar',
+          title: newsletter.title || 'Newsletter',
+          type: 'newsletter',
+          scheduledDate: newsletter.sentAt,
+          status: 'published',
+          publishedAt: newsletter.sentAt,
+          targetAudience: newsletter.targetSegments || [],
+          linkedContent: {
+            newsletter: {
+              _type: 'reference',
+              _ref: newsletter._id
+            }
+          }
+        })
+        created++
+      }
+    }
+
+    // Create calendar entries for published posts
+    for (const post of posts) {
+      const existing = await sanityServer.fetch(`
+        *[_type == "contentCalendar" && linkedContent.post._ref == $id][0]
+      `, { id: post._id })
+
+      if (!existing) {
+        await sanityServer.create({
+          _type: 'contentCalendar',
+          title: post.title || 'Blog Post',
+          type: 'blog',
+          scheduledDate: post.publishedAt,
+          status: 'published',
+          publishedAt: post.publishedAt,
+          linkedContent: {
+            post: {
+              _type: 'reference',
+              _ref: post._id
+            }
+          },
+          author: post.author ? {
+            _type: 'reference',
+            _ref: post.author._ref
+          } : undefined
+        })
+        created++
+      }
+    }
+
+    return res.status(200).json({
+      success: true,
+      created,
+      message: `Created ${created} calendar entries`
+    })
+  } catch (error: any) {
+    console.error('Sync error:', error)
+    return res.status(500).json({ error: error.message })
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// Events CRUD handler (was api/calendar/events.ts)
+// ═══════════════════════════════════════════════════════════════════
+async function handleEvents(req: any, res: any) {
   // ─── POST: Create a new calendar event ───
   if (req.method === 'POST') {
     try {
@@ -51,7 +171,6 @@ async function handler(req: any, res: any) {
         return res.status(400).json({ error: 'eventId is required' })
       }
 
-      // If marking as published, auto-set publishedAt
       if (updates.status === 'published' && !updates.publishedAt) {
         updates.publishedAt = new Date().toISOString()
       }
@@ -87,7 +206,6 @@ async function handler(req: any, res: any) {
   try {
     const { start, end, type } = req.query
 
-    // Build query
     let conditions = ['_type == "contentCalendar"']
 
     if (start) {
@@ -104,7 +222,6 @@ async function handler(req: any, res: any) {
 
     const whereClause = conditions.join(' && ')
 
-    // Fetch calendar events
     const calendarEvents = await sanityServer.fetch(`
       *[${whereClause}] | order(scheduledDate asc) {
         _id,
@@ -126,7 +243,6 @@ async function handler(req: any, res: any) {
       }
     `)
 
-    // Fetch published newsletters
     const newsletters = await sanityServer.fetch(`
       *[_type == "newsletter" && defined(scheduledFor)] {
         _id,
@@ -139,7 +255,6 @@ async function handler(req: any, res: any) {
       }
     `)
 
-    // Fetch published blog posts
     const posts = await sanityServer.fetch(`
       *[_type == "post" && defined(publishedAt)] {
         _id,
@@ -153,7 +268,6 @@ async function handler(req: any, res: any) {
       }
     `)
 
-    // Convert newsletters to calendar events
     const newsletterEvents = newsletters.map((n: any) => ({
       _id: `newsletter-${n._id}`,
       sourceId: n._id,
@@ -167,7 +281,6 @@ async function handler(req: any, res: any) {
       isAutoGenerated: true
     }))
 
-    // Convert blog posts to calendar events
     const postEvents = posts.map((p: any) => ({
       _id: `post-${p._id}`,
       sourceId: p._id,
@@ -182,7 +295,6 @@ async function handler(req: any, res: any) {
       isAutoGenerated: true
     }))
 
-    // Combine all events
     const allEvents = [
       ...calendarEvents,
       ...newsletterEvents,
@@ -215,12 +327,4 @@ async function handler(req: any, res: any) {
     console.error('Calendar fetch error:', error)
     return res.status(500).json({ error: error.message })
   }
-}
-
-export default function authHandler(req: any, res: any) {
-  const authHeader = req.headers.authorization
-  if (!authHeader || !authHeader.startsWith('Bearer ') || authHeader.substring(7) !== ADMIN_PASSWORD) {
-    return res.status(401).json({ error: 'Unauthorized' })
-  }
-  return handler(req, res)
 }

@@ -17,7 +17,7 @@ export default function AdminAnalytics() {
     setLoading(true)
     try {
       const token = getAuthToken()
-      const response = await fetch('/api/admin/analytics', {
+      const response = await fetch('/api/admin?action=analytics', {
         headers: { Authorization: `Bearer ${token}` },
       })
       const data = await response.json()
