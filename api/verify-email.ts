@@ -1,4 +1,6 @@
 import { createClient } from '@sanity/client'
+import { Resend } from 'resend'
+import { generateWelcomeEmail } from '../src/lib/emails/welcomeEmail'
 
 const sanityServer = createClient({
   projectId: process.env.VITE_SANITY_PROJECT_ID || 'h2whvvpo',
@@ -7,6 +9,8 @@ const sanityServer = createClient({
   apiVersion: '2024-01-01',
   token: process.env.SANITY_API_TOKEN,
 })
+
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 export default async function handler(req: any, res: any) {
   if (req.method !== 'POST') {
@@ -42,9 +46,29 @@ export default async function handler(req: any, res: any) {
       .set({
         emailVerified: true,
         verifiedAt: new Date().toISOString(),
-        verificationToken: null, // Clear token after use
+        verificationToken: null,
       })
       .commit()
+
+    // Send welcome email
+    try {
+      await resend.emails.send({
+        from: 'Mohammad Al-Ubaydli <newsletter@bionixus.com>',
+        to: subscriber.email,
+        subject:
+          subscriber.language === 'ar'
+            ? 'مرحباً بك في BioNixus لرؤى الرعاية الصحية'
+            : 'Welcome to BioNixus Healthcare Insights',
+        html: generateWelcomeEmail(subscriber.firstName, subscriber.language),
+        tags: [
+          { name: 'type', value: 'welcome' },
+          { name: 'subscriber_id', value: subscriber._id },
+        ],
+      })
+    } catch (emailError) {
+      console.error('Failed to send welcome email:', emailError)
+      // Don't fail the verification if welcome email fails
+    }
 
     return res.status(200).json({ success: true })
   } catch (error: any) {

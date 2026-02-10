@@ -133,6 +133,84 @@ export default {
       readOnly: true,
     },
 
+    // Email Analytics
+    {
+      name: 'analytics',
+      title: 'Email Analytics',
+      type: 'object',
+      fields: [
+        {
+          name: 'emailsSent',
+          title: 'Total Emails Sent',
+          type: 'number',
+          initialValue: 0,
+        },
+        {
+          name: 'emailsOpened',
+          title: 'Emails Opened',
+          type: 'number',
+          initialValue: 0,
+        },
+        {
+          name: 'emailsClicked',
+          title: 'Emails Clicked',
+          type: 'number',
+          initialValue: 0,
+        },
+        {
+          name: 'lastEmailSent',
+          title: 'Last Email Sent',
+          type: 'datetime',
+        },
+        {
+          name: 'lastEmailOpened',
+          title: 'Last Email Opened',
+          type: 'datetime',
+        },
+        {
+          name: 'lastEmailClicked',
+          title: 'Last Email Clicked',
+          type: 'datetime',
+        },
+        {
+          name: 'openRate',
+          title: 'Open Rate (%)',
+          type: 'number',
+          readOnly: true,
+        },
+        {
+          name: 'clickRate',
+          title: 'Click Rate (%)',
+          type: 'number',
+          readOnly: true,
+        },
+      ],
+    },
+
+    // Engagement Score
+    {
+      name: 'engagementScore',
+      title: 'Engagement Score',
+      type: 'number',
+      description: '0-100 score based on email activity',
+      readOnly: true,
+      initialValue: 0,
+    },
+    {
+      name: 'engagementLevel',
+      title: 'Engagement Level',
+      type: 'string',
+      options: {
+        list: [
+          { title: '🔥 Highly Engaged', value: 'high' },
+          { title: '✅ Engaged', value: 'medium' },
+          { title: '⚠️ Low Engagement', value: 'low' },
+          { title: '😴 Inactive', value: 'inactive' },
+        ],
+      },
+      readOnly: true,
+    },
+
     // Source Tracking
     {
       name: 'source',

@@ -52,11 +52,13 @@ export default async function handler(req: any, res: any) {
     // 2. Get subscribers
     const subscribers = await sanityServer.fetch(
       `
-      *[_type == "subscriber" && subscribed == true && count((segments[@ in $targetSegments])) > 0] {
+      *[_type == "subscriber" && subscribed == true && emailVerified == true && count((segments[@ in $targetSegments])) > 0] {
         _id,
         email,
-        name,
-        language
+        firstName,
+        lastName,
+        language,
+        analytics
       }
     `,
       { targetSegments: newsletter.targetSegments }
@@ -88,17 +90,18 @@ export default async function handler(req: any, res: any) {
         }
 
         // Generate email HTML
+        const subscriberName = [subscriber.firstName, subscriber.lastName].filter(Boolean).join(' ')
         const emailHTML = generateEmailTemplate({
           subject,
           preheader,
           content: bodyContent,
-          subscriberName: subscriber.name,
+          subscriberName,
           subscriberId: subscriber._id,
           unsubscribeLink: `${BASE_URL}/unsubscribe?id=${subscriber._id}`,
         })
 
         // Send via Resend
-        return await resend.emails.send({
+        const result = await resend.emails.send({
           from: 'Mohammad Al-Ubaydli <newsletter@bionixus.com>',
           to: subscriber.email,
           subject: subject,
@@ -108,10 +111,23 @@ export default async function handler(req: any, res: any) {
           },
           tags: [
             { name: 'newsletter_id', value: newsletter._id },
+            { name: 'newsletter_title', value: newsletter.title || '' },
+            { name: 'subscriber_id', value: subscriber._id },
             { name: 'language', value: locale },
             { name: 'content_type', value: newsletter.contentType },
           ],
         })
+
+        // After successfully sending each email
+        await sanityServer
+          .patch(subscriber._id)
+          .set({
+            'analytics.emailsSent': (subscriber.analytics?.emailsSent || 0) + 1,
+            'analytics.lastEmailSent': new Date().toISOString()
+          })
+          .commit()
+
+        return result
       })
     )
 
@@ -129,6 +145,16 @@ export default async function handler(req: any, res: any) {
           totalSent: subscribers.length,
           successCount,
           failedCount,
+          openCount: 0,
+          uniqueOpenCount: 0,
+          clickCount: 0,
+          uniqueClickCount: 0,
+          bounceCount: 0,
+          complaintCount: 0,
+          unsubscribeCount: 0,
+          openRate: 0,
+          clickRate: 0,
+          bounceRate: 0,
         },
       })
       .commit()

@@ -1,0 +1,182 @@
+export function generateWelcomeEmail(
+  firstName: string,
+  language: string = 'en'
+) {
+  const content = {
+    en: {
+      subject: 'Welcome to BioNixus Healthcare Insights',
+      title: 'Welcome Aboard! 🎉',
+      greeting: `Hi ${firstName},`,
+      intro: 'Thank you for verifying your email and joining BioNixus Healthcare Market Research.',
+      whatToExpect: 'What to expect from us:',
+      benefits: [
+        '📊 Monthly GCC pharmaceutical market insights',
+        '🔬 Exclusive clinical trial intelligence reports',
+        '💡 Expert analysis on biosimilars and oncology trends',
+        '🌍 Regional healthcare policy updates',
+        '🎯 Customized content based on your interests',
+      ],
+      resources: 'Explore our resources:',
+      resourceLinks: [
+        { text: 'Latest Market Reports', url: 'https://bionixus.com/reports' },
+        { text: 'Clinical Trial Database', url: 'https://bionixus.com/trials' },
+        { text: 'Expert Consultations', url: 'https://bionixus.com/consult' },
+      ],
+      footer:
+        "We're excited to have you in our community of pharmaceutical professionals across the GCC region.",
+      cta: 'Explore Resources',
+      signature:
+        'Best regards,<br><strong>Mohammad Al-Ubaydli</strong><br>Founder, BioNixus Healthcare Market Research',
+    },
+    ar: {
+      subject: 'مرحباً بك في BioNixus لرؤى الرعاية الصحية',
+      title: 'مرحباً بك! 🎉',
+      greeting: `مرحباً ${firstName}،`,
+      intro: 'شكراً لتأكيد بريدك الإلكتروني والانضمام إلى BioNixus لأبحاث سوق الرعاية الصحية.',
+      whatToExpect: 'ما يمكن توقعه منا:',
+      benefits: [
+        '📊 رؤى شهرية لسوق الأدوية في دول مجلس التعاون الخليجي',
+        '🔬 تقارير حصرية عن التجارب السريرية',
+        '💡 تحليلات خبراء حول الأدوية الحيوية المماثلة واتجاهات علاج الأورام',
+        '🌍 تحديثات السياسات الصحية الإقليمية',
+        '🎯 محتوى مخصص بناءً على اهتماماتك',
+      ],
+      resources: 'استكشف مواردنا:',
+      resourceLinks: [
+        { text: 'أحدث تقارير السوق', url: 'https://bionixus.com/reports' },
+        { text: 'قاعدة بيانات التجارب السريرية', url: 'https://bionixus.com/trials' },
+        { text: 'استشارات الخبراء', url: 'https://bionixus.com/consult' },
+      ],
+      footer:
+        'نحن متحمسون لوجودك في مجتمعنا من المتخصصين في مجال الأدوية عبر منطقة الخليج.',
+      cta: 'استكشف الموارد',
+      signature:
+        'مع أطيب التحيات،<br><strong>محمد العبيدلي</strong><br>المؤسس، BioNixus لأبحاث سوق الرعاية الصحية',
+    },
+  }
+
+  const lang = content[language as keyof typeof content] || content.en
+  const isRTL = language === 'ar'
+
+  return `
+<!DOCTYPE html>
+<html lang="${language}" dir="${isRTL ? 'rtl' : 'ltr'}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${lang.subject}</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background: #f4f4f4;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background: #f4f4f4; padding: 20px;">
+    <tr>
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+          
+          <!-- Hero Header -->
+          <tr>
+            <td style="background: linear-gradient(135deg, #0066cc 0%, #004999 100%); padding: 50px 40px; text-align: center;">
+              <h1 style="color: white; margin: 0 0 15px 0; font-size: 32px;">${lang.title}</h1>
+              <p style="color: #e6f2ff; margin: 0; font-size: 16px;">BioNixus Healthcare Market Research</p>
+            </td>
+          </tr>
+          
+          <!-- Content -->
+          <tr>
+            <td style="padding: 40px;">
+              <p style="font-size: 16px; line-height: 1.6; color: #333; margin: 0 0 20px 0;">
+                ${lang.greeting}
+              </p>
+              
+              <p style="font-size: 16px; line-height: 1.6; color: #333; margin: 0 0 30px 0;">
+                ${lang.intro}
+              </p>
+
+              <!-- What to Expect -->
+              <h2 style="color: #0066cc; font-size: 22px; margin: 30px 0 20px 0; border-bottom: 2px solid #0066cc; padding-bottom: 10px;">
+                ${lang.whatToExpect}
+              </h2>
+              
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 30px;">
+                ${lang.benefits
+                  .map(
+                    (benefit: string) => `
+                  <tr>
+                    <td style="padding: 10px 0; font-size: 15px; line-height: 1.6; color: #333;">
+                      ${benefit}
+                    </td>
+                  </tr>
+                `
+                  )
+                  .join('')}
+              </table>
+
+              <!-- Resources -->
+              <h2 style="color: #0066cc; font-size: 22px; margin: 30px 0 20px 0; border-bottom: 2px solid #0066cc; padding-bottom: 10px;">
+                ${lang.resources}
+              </h2>
+              
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 30px;">
+                ${lang.resourceLinks
+                  .map(
+                    (link: any) => `
+                  <tr>
+                    <td style="padding: 8px 0;">
+                      <a href="${link.url}" style="color: #0066cc; text-decoration: none; font-size: 15px; font-weight: 500;">
+                        → ${link.text}
+                      </a>
+                    </td>
+                  </tr>
+                `
+                  )
+                  .join('')}
+              </table>
+
+              <!-- CTA Button -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin: 35px 0;">
+                <tr>
+                  <td align="center">
+                    <a href="https://bionixus.com/dashboard" 
+                       style="display: inline-block; padding: 16px 40px; background: #0066cc; 
+                              color: white !important; text-decoration: none; border-radius: 8px; 
+                              font-weight: bold; font-size: 16px; box-shadow: 0 4px 8px rgba(0,102,204,0.3);">
+                      ${lang.cta} →
+                    </a>
+                  </td>
+                </tr>
+              </table>
+
+              <div style="background: #f8f9fa; border-left: 4px solid #0066cc; padding: 20px; margin: 30px 0; border-radius: 4px;">
+                <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #555;">
+                  ${lang.footer}
+                </p>
+              </div>
+
+              <p style="font-size: 15px; line-height: 1.8; color: #666; margin: 30px 0 0 0;">
+                ${lang.signature}
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Footer -->
+          <tr>
+            <td style="background: #f8f9fa; padding: 30px; text-align: center; border-top: 1px solid #e0e0e0;">
+              <p style="margin: 0 0 10px 0; font-size: 12px; color: #666;">
+                <strong>BioNixus Healthcare Market Research</strong>
+              </p>
+              <p style="margin: 0 0 15px 0; font-size: 12px; color: #666;">
+                Pharmaceutical Intelligence | GCC Markets
+              </p>
+              <p style="margin: 0; font-size: 11px; color: #999;">
+                <a href="https://bionixus.com/unsubscribe" style="color: #0066cc; text-decoration: none;">Unsubscribe</a> | 
+                <a href="https://bionixus.com/preferences" style="color: #0066cc; text-decoration: none;">Update Preferences</a>
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+  `
+}

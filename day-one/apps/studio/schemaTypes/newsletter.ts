@@ -167,12 +167,62 @@ export default {
         },
         {
           name: 'successCount',
-          title: 'Successfully Sent',
+          title: 'Successfully Delivered',
           type: 'number',
         },
         {
           name: 'failedCount',
           title: 'Failed',
+          type: 'number',
+        },
+        {
+          name: 'openCount',
+          title: 'Total Opens',
+          type: 'number',
+        },
+        {
+          name: 'uniqueOpenCount',
+          title: 'Unique Opens',
+          type: 'number',
+        },
+        {
+          name: 'clickCount',
+          title: 'Total Clicks',
+          type: 'number',
+        },
+        {
+          name: 'uniqueClickCount',
+          title: 'Unique Clicks',
+          type: 'number',
+        },
+        {
+          name: 'bounceCount',
+          title: 'Bounces',
+          type: 'number',
+        },
+        {
+          name: 'complaintCount',
+          title: 'Spam Complaints',
+          type: 'number',
+        },
+        {
+          name: 'unsubscribeCount',
+          title: 'Unsubscribes',
+          type: 'number',
+        },
+        {
+          name: 'openRate',
+          title: 'Open Rate (%)',
+          type: 'number',
+        },
+        {
+          name: 'clickRate',
+          title: 'Click Rate (%)',
+          type: 'number',
+        },
+        {
+          name: 'bounceRate',
+          title: 'Bounce Rate (%)',
           type: 'number',
         },
       ],

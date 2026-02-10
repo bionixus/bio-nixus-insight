@@ -2,12 +2,188 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAdminAuth, getAuthToken } from '@/hooks/useAdminAuth'
 
+function BulkActionsPanel({ selectedIds, onActionComplete }: any) {
+  const [action, setAction] = useState('')
+  const [segmentData, setSegmentData] = useState({
+    segment: '',
+    segments: [] as string[],
+    language: 'en',
+  })
+  const [loading, setLoading] = useState(false)
+
+  const handleBulkAction = async () => {
+    if (selectedIds.length === 0) {
+      alert('Please select subscribers first')
+      return
+    }
+
+    const actionLabels: any = {
+      delete: 'unsubscribe',
+      hard_delete: 'permanently delete',
+      add_segment: 'add segment to',
+      remove_segment: 'remove segment from',
+      replace_segments: 'replace segments for',
+      change_language: 'change language for',
+      resubscribe: 'reactivate',
+    }
+
+    const confirmed = confirm(
+      `Are you sure you want to ${actionLabels[action]} ${selectedIds.length} subscriber(s)?`
+    )
+
+    if (!confirmed) return
+
+    setLoading(true)
+
+    try {
+      const token = getAuthToken()
+      const response = await fetch('/api/admin/bulk-actions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          action,
+          subscriberIds: selectedIds,
+          data:
+            action.includes('segment') || action === 'change_language'
+              ? segmentData
+              : undefined,
+        }),
+      })
+
+      const result = await response.json()
+
+      if (result.success) {
+        alert(`✅ Successfully processed ${result.affected} subscriber(s)`)
+        onActionComplete()
+      } else {
+        alert(`❌ Error: ${result.error}`)
+      }
+    } catch (error) {
+      alert('❌ Failed to perform bulk action')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  if (selectedIds.length === 0) {
+    return (
+      <div
+        style={{
+          background: '#fff3cd',
+          padding: '15px',
+          borderRadius: '6px',
+          marginBottom: '20px',
+          border: '1px solid #ffc107',
+        }}
+      >
+        💡 Select subscribers using checkboxes to perform bulk actions
+      </div>
+    )
+  }
+
+  return (
+    <div
+      style={{
+        background: 'white',
+        padding: '20px',
+        borderRadius: '8px',
+        marginBottom: '20px',
+        boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+      }}
+    >
+      <h3 style={{ marginTop: 0 }}>⚡ Bulk Actions ({selectedIds.length} selected)</h3>
+
+      <div style={{ display: 'grid', gridTemplateColumns: '2fr 2fr 1fr', gap: '15px' }}>
+        <select
+          value={action}
+          onChange={(e) => setAction(e.target.value)}
+          style={{
+            padding: '10px',
+            border: '1px solid #ddd',
+            borderRadius: '6px',
+            fontSize: '14px',
+          }}
+        >
+          <option value="">Select Action...</option>
+          <option value="delete">🚫 Unsubscribe</option>
+          <option value="hard_delete">⚠️ Permanently Delete</option>
+          <option value="add_segment">➕ Add Segment</option>
+          <option value="remove_segment">➖ Remove Segment</option>
+          <option value="replace_segments">🔄 Replace All Segments</option>
+          <option value="change_language">🌍 Change Language</option>
+          <option value="resubscribe">✅ Reactivate</option>
+        </select>
+
+        {action === 'add_segment' || action === 'remove_segment' ? (
+          <select
+            value={segmentData.segment}
+            onChange={(e) => setSegmentData({ ...segmentData, segment: e.target.value })}
+            style={{
+              padding: '10px',
+              border: '1px solid #ddd',
+              borderRadius: '6px',
+              fontSize: '14px',
+            }}
+          >
+            <option value="">Choose Segment...</option>
+            <option value="pharma_clients">Pharmaceutical Clients</option>
+            <option value="hospital_admins">Hospital Administrators</option>
+            <option value="kols">Key Opinion Leaders</option>
+            <option value="trial_participants">Clinical Trial Participants</option>
+            <option value="market_research">Market Research Leads</option>
+          </select>
+        ) : action === 'change_language' ? (
+          <select
+            value={segmentData.language}
+            onChange={(e) => setSegmentData({ ...segmentData, language: e.target.value })}
+            style={{
+              padding: '10px',
+              border: '1px solid #ddd',
+              borderRadius: '6px',
+              fontSize: '14px',
+            }}
+          >
+            <option value="en">English</option>
+            <option value="ar">العربية</option>
+            <option value="de">Deutsch</option>
+            <option value="fr">Français</option>
+            <option value="es">Español</option>
+            <option value="zh">中文</option>
+          </select>
+        ) : (
+          <div></div>
+        )}
+
+        <button
+          onClick={handleBulkAction}
+          disabled={!action || loading}
+          style={{
+            padding: '10px 20px',
+            background: !action || loading ? '#ccc' : '#dc3545',
+            color: 'white',
+            border: 'none',
+            borderRadius: '6px',
+            cursor: !action || loading ? 'not-allowed' : 'pointer',
+            fontWeight: 'bold',
+          }}
+        >
+          {loading ? '⏳ Processing...' : '⚡ Apply'}
+        </button>
+      </div>
+    </div>
+  )
+}
+
 export default function AdminDashboard() {
   const { loading: authLoading, isAuthenticated } = useAdminAuth()
   const navigate = useNavigate()
 
   const [data, setData] = useState<any>(null)
   const [loading, setLoading] = useState(true)
+  const [selectedIds, setSelectedIds] = useState<string[]>([])
   const [filters, setFilters] = useState({
     page: 1,
     perPage: 50,
@@ -15,11 +191,11 @@ export default function AdminDashboard() {
     status: 'all',
     segment: 'all',
     verified: 'all',
+    engagement: 'all',
   })
 
   useEffect(() => {
     if (!isAuthenticated) return
-
     fetchData()
   }, [isAuthenticated, filters])
 
@@ -35,9 +211,7 @@ export default function AdminDashboard() {
       )
 
       const response = await fetch(`/api/admin/subscribers?${params}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
+        headers: { Authorization: `Bearer ${token}` },
       })
 
       const result = await response.json()
@@ -84,6 +258,20 @@ export default function AdminDashboard() {
     }
   }
 
+  const toggleSelection = (id: string) => {
+    setSelectedIds((prev) =>
+      prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]
+    )
+  }
+
+  const toggleSelectAll = () => {
+    if (selectedIds.length === data?.subscribers?.length) {
+      setSelectedIds([])
+    } else {
+      setSelectedIds(data?.subscribers?.map((s: any) => s._id) || [])
+    }
+  }
+
   if (authLoading) {
     return <div style={{ padding: '40px', textAlign: 'center' }}>Loading...</div>
   }
@@ -112,6 +300,20 @@ export default function AdminDashboard() {
           <p style={{ margin: 0, opacity: 0.9 }}>BioNixus Healthcare Market Research</p>
         </div>
         <div style={{ display: 'flex', gap: '10px' }}>
+          <button
+            onClick={() => navigate('/admin/analytics')}
+            style={{
+              padding: '10px 20px',
+              background: 'white',
+              color: '#667eea',
+              border: 'none',
+              borderRadius: '6px',
+              cursor: 'pointer',
+              fontWeight: 'bold',
+            }}
+          >
+            📈 Analytics
+          </button>
           <button
             onClick={() => navigate('/admin/import-subscribers')}
             style={{
@@ -160,6 +362,15 @@ export default function AdminDashboard() {
         </div>
       )}
 
+      {/* Bulk Actions */}
+      <BulkActionsPanel
+        selectedIds={selectedIds}
+        onActionComplete={() => {
+          setSelectedIds([])
+          fetchData()
+        }}
+      />
+
       {/* Filters */}
       <div
         style={{
@@ -173,7 +384,7 @@ export default function AdminDashboard() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: '2fr 1fr 1fr 1fr',
+            gridTemplateColumns: '2fr 1fr 1fr 1fr 1fr',
             gap: '15px',
             marginBottom: '15px',
           }}
@@ -237,22 +448,74 @@ export default function AdminDashboard() {
             <option value="verified">✉️ Verified</option>
             <option value="unverified">⏳ Unverified</option>
           </select>
+
+          <select
+            value={filters.engagement}
+            onChange={(e) => setFilters({ ...filters, engagement: e.target.value, page: 1 })}
+            style={{
+              padding: '10px',
+              border: '1px solid #ddd',
+              borderRadius: '6px',
+              fontSize: '14px',
+            }}
+          >
+            <option value="all">All Engagement Levels</option>
+            <option value="high">🔥 Highly Engaged</option>
+            <option value="medium">✅ Engaged</option>
+            <option value="low">⚠️ Low Engagement</option>
+            <option value="inactive">😴 Inactive</option>
+          </select>
         </div>
 
-        <button
-          onClick={handleExport}
-          style={{
-            padding: '10px 20px',
-            background: '#28a745',
-            color: 'white',
-            border: 'none',
-            borderRadius: '6px',
-            cursor: 'pointer',
-            fontWeight: 'bold',
-          }}
-        >
-          📥 Export Filtered Results
-        </button>
+        <div style={{ display: 'flex', gap: '10px' }}>
+          <button
+            onClick={handleExport}
+            style={{
+              padding: '10px 20px',
+              background: '#28a745',
+              color: 'white',
+              border: 'none',
+              borderRadius: '6px',
+              cursor: 'pointer',
+              fontWeight: 'bold',
+            }}
+          >
+            📥 Export Filtered Results
+          </button>
+          <button
+            onClick={async () => {
+              const confirmed = confirm('Recalculate engagement scores for all subscribers? This may take a minute.')
+              if (!confirmed) return
+
+              try {
+                const token = getAuthToken()
+                const response = await fetch('/api/admin/calculate-engagement', {
+                  method: 'POST',
+                  headers: { Authorization: `Bearer ${token}` },
+                })
+
+                const result = await response.json()
+                if (result.success) {
+                  alert(`✅ ${result.message}`)
+                  fetchData() // Refresh
+                }
+              } catch (error) {
+                alert('❌ Failed to calculate engagement scores')
+              }
+            }}
+            style={{
+              padding: '10px 20px',
+              background: '#6f42c1',
+              color: 'white',
+              border: 'none',
+              borderRadius: '6px',
+              cursor: 'pointer',
+              fontWeight: 'bold',
+            }}
+          >
+            🔄 Recalculate Engagement Scores
+          </button>
+        </div>
       </div>
 
       {/* Subscribers Table */}
@@ -264,24 +527,48 @@ export default function AdminDashboard() {
             style={{
               background: 'white',
               borderRadius: '8px',
-              overflow: 'hidden',
+              overflow: 'auto',
               boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
             }}
           >
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
               <thead>
                 <tr style={{ background: '#f8f9fa', borderBottom: '2px solid #dee2e6' }}>
+                  <th style={tableHeaderStyle}>
+                    <input
+                      type="checkbox"
+                      checked={
+                        selectedIds.length === data?.subscribers?.length &&
+                        data?.subscribers?.length > 0
+                      }
+                      onChange={toggleSelectAll}
+                    />
+                  </th>
                   <th style={tableHeaderStyle}>Name</th>
                   <th style={tableHeaderStyle}>Email</th>
                   <th style={tableHeaderStyle}>Company</th>
                   <th style={tableHeaderStyle}>Status</th>
+                  <th style={tableHeaderStyle}>Engagement</th>
                   <th style={tableHeaderStyle}>Verified</th>
                   <th style={tableHeaderStyle}>Subscribed</th>
                 </tr>
               </thead>
               <tbody>
                 {data?.subscribers?.map((sub: any) => (
-                  <tr key={sub._id} style={{ borderBottom: '1px solid #dee2e6' }}>
+                  <tr
+                    key={sub._id}
+                    style={{
+                      borderBottom: '1px solid #dee2e6',
+                      background: selectedIds.includes(sub._id) ? '#e8f0fe' : 'transparent',
+                    }}
+                  >
+                    <td style={tableCellStyle}>
+                      <input
+                        type="checkbox"
+                        checked={selectedIds.includes(sub._id)}
+                        onChange={() => toggleSelection(sub._id)}
+                      />
+                    </td>
                     <td style={tableCellStyle}>
                       <strong>
                         {sub.firstName} {sub.lastName}
@@ -310,6 +597,40 @@ export default function AdminDashboard() {
                       >
                         {sub.subscribed ? '✅ Active' : '❌ Inactive'}
                       </span>
+                    </td>
+                    <td style={tableCellStyle}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <div
+                          style={{
+                            width: '60px',
+                            height: '8px',
+                            background: '#e9ecef',
+                            borderRadius: '4px',
+                            overflow: 'hidden',
+                          }}
+                        >
+                          <div
+                            style={{
+                              width: `${sub.engagementScore || 0}%`,
+                              height: '100%',
+                              background: getEngagementColor(sub.engagementLevel),
+                              transition: 'width 0.3s',
+                            }}
+                          ></div>
+                        </div>
+                        <span
+                          style={{
+                            fontSize: '12px',
+                            fontWeight: 'bold',
+                            color: getEngagementColor(sub.engagementLevel),
+                          }}
+                        >
+                          {sub.engagementScore || 0}
+                        </span>
+                        <span style={{ fontSize: '18px' }}>
+                          {getEngagementEmoji(sub.engagementLevel)}
+                        </span>
+                      </div>
                     </td>
                     <td style={tableCellStyle}>{sub.emailVerified ? '✅' : '⏳'}</td>
                     <td style={tableCellStyle}>
@@ -392,6 +713,26 @@ function StatCard({ icon, label, value, color }: any) {
       <div style={{ fontSize: '28px', fontWeight: 'bold', color }}>{value}</div>
     </div>
   )
+}
+
+function getEngagementColor(level: string) {
+  switch (level) {
+    case 'high': return '#28a745'
+    case 'medium': return '#17a2b8'
+    case 'low': return '#ffc107'
+    case 'inactive': return '#dc3545'
+    default: return '#6c757d'
+  }
+}
+
+function getEngagementEmoji(level: string) {
+  switch (level) {
+    case 'high': return '🔥'
+    case 'medium': return '✅'
+    case 'low': return '⚠️'
+    case 'inactive': return '😴'
+    default: return '❓'
+  }
 }
 
 const tableHeaderStyle = {

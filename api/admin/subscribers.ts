@@ -29,6 +29,7 @@ export default async function handler(req: any, res: any) {
       status = 'all',
       segment = 'all',
       verified = 'all',
+      engagement = 'all',
     } = req.query
 
     const pageNum = parseInt(page)
@@ -63,6 +64,10 @@ export default async function handler(req: any, res: any) {
       conditions.push('emailVerified == false')
     }
 
+    if (engagement !== 'all') {
+      conditions.push(`engagementLevel == "${engagement}"`)
+    }
+
     const whereClause = conditions.join(' && ')
 
     // Get subscribers
@@ -82,7 +87,9 @@ export default async function handler(req: any, res: any) {
         emailVerified,
         subscribedAt,
         unsubscribedAt,
-        source
+        source,
+        engagementScore,
+        engagementLevel
       }
     `)
 
