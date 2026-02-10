@@ -21,7 +21,7 @@ export default {
       title: 'Preheader Text',
       type: 'localeText',
       description: 'Preview text shown in email inbox (50-100 characters)',
-      validation: (Rule: any) => Rule.max(100),
+      // validation removed: max() not supported on localeText type
     },
 
     // Content Type Selector

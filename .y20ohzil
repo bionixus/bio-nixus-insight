@@ -1,0 +1,6 @@
+# Sanity CMS (optional - blog falls back to i18n when not set)
+# Project ID from apps/studio/sanity.config.ts
+VITE_SANITY_PROJECT_ID=mlqhgwfk
+VITE_SANITY_DATASET=production
+# API token for read access (create at sanity.io/manage → API → Tokens)
+VITE_SANITY_API_TOKEN=sk...

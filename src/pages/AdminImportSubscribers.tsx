@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useAdminAuth } from '@/hooks/useAdminAuth'
+import { useAdminAuth, getAuthToken } from '@/hooks/useAdminAuth'
 
 export default function AdminImportSubscribers() {
   const { loading: authLoading, isAuthenticated } = useAdminAuth()
@@ -29,9 +29,13 @@ export default function AdminImportSubscribers() {
       const csvData = await csvFile.text()
 
       // Send to API
+      const token = getAuthToken()
       const response = await fetch('/api/import-subscribers', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
         body: JSON.stringify({ csvData, skipDuplicates }),
       })
 

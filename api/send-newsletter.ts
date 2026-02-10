@@ -7,16 +7,23 @@ const sanityServer = createClient({
   dataset: process.env.VITE_SANITY_DATASET || 'production',
   useCdn: false,
   apiVersion: '2024-01-01',
-  token: process.env.SANITY_API_TOKEN,
+  token: process.env.SANITY_API_TOKEN?.trim(),
 })
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
 const BASE_URL = process.env.VITE_BASE_URL || 'https://bionixus.com'
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'BioNixus2026!'
 
 export default async function handler(req: any, res: any) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' })
+  }
+
+  // Auth check
+  const authHeader = req.headers.authorization
+  if (!authHeader || !authHeader.startsWith('Bearer ') || authHeader.substring(7) !== ADMIN_PASSWORD) {
+    return res.status(401).json({ error: 'Unauthorized' })
   }
 
   const { newsletterId } = req.body

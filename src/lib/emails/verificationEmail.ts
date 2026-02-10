@@ -24,6 +24,46 @@ export function generateVerificationEmail(
       footer:
         'إذا لم تشترك في هذه النشرة الإخبارية، يمكنك تجاهل هذا البريد الإلكتروني بأمان.',
     },
+    de: {
+      subject: 'Bestätigen Sie Ihr BioNixus-Abonnement',
+      title: 'Willkommen bei BioNixus!',
+      greeting: `Hallo ${firstName},`,
+      message:
+        'Vielen Dank für Ihr Abonnement der BioNixus Healthcare-Marktforschungs-Insights. Bitte bestätigen Sie Ihre E-Mail-Adresse, um Ihr Abonnement abzuschließen.',
+      button: 'E-Mail-Adresse bestätigen',
+      footer:
+        'Wenn Sie diesen Newsletter nicht abonniert haben, können Sie diese E-Mail ignorieren.',
+    },
+    fr: {
+      subject: 'Confirmez votre abonnement BioNixus',
+      title: 'Bienvenue chez BioNixus !',
+      greeting: `Bonjour ${firstName},`,
+      message:
+        'Merci de vous être abonné(e) aux insights de BioNixus en recherche de marché santé. Veuillez confirmer votre adresse e-mail pour finaliser votre abonnement.',
+      button: 'Confirmer l\'adresse e-mail',
+      footer:
+        'Si vous ne vous êtes pas abonné(e) à cette newsletter, vous pouvez ignorer cet e-mail.',
+    },
+    es: {
+      subject: 'Confirma tu suscripción a BioNixus',
+      title: '¡Bienvenido/a a BioNixus!',
+      greeting: `Hola ${firstName},`,
+      message:
+        'Gracias por suscribirte a los insights de investigación de mercado sanitario de BioNixus. Por favor, verifica tu dirección de correo electrónico para completar tu suscripción.',
+      button: 'Verificar correo electrónico',
+      footer:
+        'Si no te suscribiste a este boletín, puedes ignorar este correo electrónico.',
+    },
+    zh: {
+      subject: '确认您的 BioNixus 订阅',
+      title: '欢迎加入 BioNixus！',
+      greeting: `您好 ${firstName}，`,
+      message:
+        '感谢您订阅 BioNixus 医疗市场研究洞察。请验证您的电子邮件地址以完成订阅。',
+      button: '验证电子邮件',
+      footer:
+        '如果您没有订阅此通讯，可以安全地忽略此电子邮件。',
+    },
   }
 
   const lang = content[language as keyof typeof content] || content.en
