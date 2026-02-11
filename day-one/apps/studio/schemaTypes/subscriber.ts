@@ -117,7 +117,7 @@ export default {
       title: 'Email Verified',
       type: 'boolean',
       initialValue: false,
-      readOnly: true,
+      description: 'Toggle manually for imported subscribers, or auto-set via email verification link',
     },
     {
       name: 'verificationToken',
