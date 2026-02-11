@@ -81,6 +81,11 @@ export default async function handler(req: any, res: any) {
     }
 
     // 3. Send emails
+    console.log(`[Newsletter] Sending to ${subscribers.length} subscribers...`)
+    console.log(`[Newsletter] RESEND_API_KEY present: ${!!process.env.RESEND_API_KEY}`)
+    console.log(`[Newsletter] RESEND_API_KEY length: ${process.env.RESEND_API_KEY?.trim()?.length || 0}`)
+
+    const errors: string[] = []
     const results = await Promise.allSettled(
       subscribers.map(async (subscriber: any) => {
         const locale = subscriber.language || 'en'
@@ -113,6 +118,7 @@ export default async function handler(req: any, res: any) {
         })
 
         // Send via Resend
+        console.log(`[Newsletter] Sending to ${subscriber.email}...`)
         const result = await resend.emails.send({
           from: 'Mohammad Al-Ubaydli <newsletter@bionixus.com>',
           replyTo: 'digital@bionixus.uk',
@@ -131,6 +137,16 @@ export default async function handler(req: any, res: any) {
           ],
         })
 
+        // Check for Resend API errors (Resend returns { data, error })
+        if (result.error) {
+          const errMsg = `${subscriber.email}: ${result.error.name} - ${result.error.message}`
+          console.error(`[Newsletter] FAILED:`, errMsg)
+          errors.push(errMsg)
+          throw new Error(errMsg)
+        }
+
+        console.log(`[Newsletter] SUCCESS: ${subscriber.email} -> ${result.data?.id}`)
+
         // After successfully sending each email
         await sanityServer
           .patch(subscriber._id)
@@ -148,7 +164,24 @@ export default async function handler(req: any, res: any) {
     const successCount = results.filter((r) => r.status === 'fulfilled').length
     const failedCount = results.filter((r) => r.status === 'rejected').length
 
-    // 5. Update newsletter in Sanity
+    console.log(`[Newsletter] Results: ${successCount} succeeded, ${failedCount} failed`)
+    if (errors.length > 0) {
+      console.error(`[Newsletter] Errors:`, errors)
+    }
+
+    // 5. Only mark as sent if at least one email succeeded
+    if (successCount === 0) {
+      return res.status(500).json({
+        success: false,
+        error: `All ${failedCount} emails failed to send`,
+        errors,
+        totalSent: subscribers.length,
+        successCount: 0,
+        failedCount,
+      })
+    }
+
+    // Update newsletter in Sanity
     await sanityServer
       .patch(newsletter._id)
       .set({
@@ -177,6 +210,7 @@ export default async function handler(req: any, res: any) {
       totalSent: subscribers.length,
       successCount,
       failedCount,
+      errors: errors.length > 0 ? errors : undefined,
     })
   } catch (error: any) {
     console.error('Newsletter send error:', error)

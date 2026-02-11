@@ -90,10 +90,13 @@ export default function AdminSendNewsletter() {
         })
         fetchNewsletters() // Refresh to show updated status
       } else {
+        const errorDetails = data.errors?.length > 0
+          ? `\n\nErrors:\n${data.errors.join('\n')}`
+          : ''
         setResult({
           id: newsletterId,
           success: false,
-          message: data.error || 'Failed to send newsletter',
+          message: (data.error || 'Failed to send newsletter') + errorDetails,
         })
       }
     } catch (err: any) {
