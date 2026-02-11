@@ -89,6 +89,7 @@ export default {
           { title: 'Market Research Leads', value: 'market_research' },
           { title: 'Key Opinion Leaders (KOLs)', value: 'kols' },
           { title: 'Healthcare Providers', value: 'healthcare_providers' },
+          { title: 'Pharma Cold Leads', value: 'pharma_cold_leads' },
         ],
       },
       initialValue: ['all'],

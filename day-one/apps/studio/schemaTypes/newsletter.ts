@@ -124,6 +124,7 @@ export default {
           { title: 'Hospital Administrators', value: 'hospital_admins' },
           { title: 'Clinical Trial Participants', value: 'trial_participants' },
           { title: 'Market Research Leads', value: 'market_research' },
+          { title: 'Pharma Cold Leads (no verification needed)', value: 'pharma_cold_leads' },
         ],
       },
       validation: (Rule: any) => Rule.required().min(1),

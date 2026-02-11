@@ -57,9 +57,14 @@ export default async function handler(req: any, res: any) {
     }
 
     // 2. Get subscribers
+    // Cold leads (pharma_cold_leads segment) don't require email verification
+    const hasColdLeads = newsletter.targetSegments?.includes('pharma_cold_leads')
     const subscribers = await sanityServer.fetch(
       `
-      *[_type == "subscriber" && subscribed == true && emailVerified == true && count((segments[@ in $targetSegments])) > 0] {
+      *[_type == "subscriber" && subscribed == true && count((segments[@ in $targetSegments])) > 0 && (
+        emailVerified == true ||
+        ($hasColdLeads && "pharma_cold_leads" in segments)
+      )] {
         _id,
         email,
         firstName,
@@ -68,7 +73,7 @@ export default async function handler(req: any, res: any) {
         analytics
       }
     `,
-      { targetSegments: newsletter.targetSegments }
+      { targetSegments: newsletter.targetSegments, hasColdLeads: hasColdLeads || false }
     )
 
     if (subscribers.length === 0) {
