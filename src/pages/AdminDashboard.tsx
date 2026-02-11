@@ -25,6 +25,8 @@ function BulkActionsPanel({ selectedIds, onActionComplete }: any) {
       replace_segments: 'replace segments for',
       change_language: 'change language for',
       resubscribe: 'reactivate',
+      verify: 'mark as verified',
+      unverify: 'mark as unverified',
     }
 
     const confirmed = confirm(
@@ -108,13 +110,15 @@ function BulkActionsPanel({ selectedIds, onActionComplete }: any) {
           }}
         >
           <option value="">Select Action...</option>
-          <option value="delete">🚫 Unsubscribe</option>
-          <option value="hard_delete">⚠️ Permanently Delete</option>
+          <option value="verify">✅ Mark as Verified</option>
+          <option value="unverify">❌ Mark as Unverified</option>
           <option value="add_segment">➕ Add Segment</option>
           <option value="remove_segment">➖ Remove Segment</option>
           <option value="replace_segments">🔄 Replace All Segments</option>
           <option value="change_language">🌍 Change Language</option>
-          <option value="resubscribe">✅ Reactivate</option>
+          <option value="resubscribe">🔄 Reactivate</option>
+          <option value="delete">🚫 Unsubscribe</option>
+          <option value="hard_delete">⚠️ Permanently Delete</option>
         </select>
 
         {action === 'add_segment' || action === 'remove_segment' ? (
@@ -129,11 +133,15 @@ function BulkActionsPanel({ selectedIds, onActionComplete }: any) {
             }}
           >
             <option value="">Choose Segment...</option>
+            <option value="all">All Subscribers</option>
             <option value="pharma_clients">Pharmaceutical Clients</option>
             <option value="hospital_admins">Hospital Administrators</option>
             <option value="kols">Key Opinion Leaders</option>
             <option value="trial_participants">Clinical Trial Participants</option>
             <option value="market_research">Market Research Leads</option>
+            <option value="healthcare_providers">Healthcare Providers</option>
+            <option value="pharma_cold_leads">Pharma Cold Leads</option>
+            <option value="test_list">Test List</option>
           </select>
         ) : action === 'change_language' ? (
           <select

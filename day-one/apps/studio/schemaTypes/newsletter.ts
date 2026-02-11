@@ -125,6 +125,7 @@ export default {
           { title: 'Clinical Trial Participants', value: 'trial_participants' },
           { title: 'Market Research Leads', value: 'market_research' },
           { title: 'Pharma Cold Leads (no verification needed)', value: 'pharma_cold_leads' },
+          { title: 'Test List (no verification needed)', value: 'test_list' },
         ],
       },
       validation: (Rule: any) => Rule.required().min(1),

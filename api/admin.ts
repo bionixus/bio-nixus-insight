@@ -256,6 +256,26 @@ async function handleBulkActions(req: any, res: any) {
             affected++
             break
 
+          case 'verify':
+            await sanityServer
+              .patch(id)
+              .set({
+                emailVerified: true,
+                verifiedAt: new Date().toISOString(),
+              })
+              .commit()
+            affected++
+            break
+
+          case 'unverify':
+            await sanityServer
+              .patch(id)
+              .set({ emailVerified: false })
+              .unset(['verifiedAt'])
+              .commit()
+            affected++
+            break
+
           default:
             break
         }

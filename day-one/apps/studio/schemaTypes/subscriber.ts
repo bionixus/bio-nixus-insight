@@ -90,6 +90,7 @@ export default {
           { title: 'Key Opinion Leaders (KOLs)', value: 'kols' },
           { title: 'Healthcare Providers', value: 'healthcare_providers' },
           { title: 'Pharma Cold Leads', value: 'pharma_cold_leads' },
+          { title: 'Test List', value: 'test_list' },
         ],
       },
       initialValue: ['all'],
