@@ -43,7 +43,12 @@ const POST_BY_SLUG_QUERY = `*[_type in ["post", "blogPost"] && slug.current == $
   tableOfContents,
   executiveSummary,
   faq,
-  ctaSection
+  ctaSection,
+  seo,
+  openGraph,
+  "ogImageUrl": openGraph.ogImage.asset->url,
+  "authorName": author->name,
+  "authorImage": author->image.asset->url
 }`;
 
 function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | null {
@@ -83,6 +88,20 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
       if (Array.isArray(raw.executiveSummary)) out.executiveSummary = raw.executiveSummary;
       if (Array.isArray(raw.faq)) out.faq = raw.faq;
       if (raw.ctaSection && typeof raw.ctaSection === 'object') out.ctaSection = raw.ctaSection;
+      // SEO / OG / Author
+      if (raw.seo) {
+        out.seoMetaTitle = raw.seo.metaTitle;
+        out.seoMetaDescription = raw.seo.metaDescription;
+        out.seoCanonicalUrl = raw.seo.canonicalUrl;
+        out.seoNoIndex = raw.seo.noIndex;
+      }
+      if (raw.openGraph) {
+        out.ogTitle = raw.openGraph.ogTitle;
+        out.ogDescription = raw.openGraph.ogDescription;
+      }
+      if (raw.ogImageUrl) out.ogImage = raw.ogImageUrl;
+      if (raw.authorName) out.authorName = raw.authorName;
+      if (raw.authorImage) out.authorImage = raw.authorImage;
       return out;
     })()),
     language: p.language ?? undefined,
@@ -153,4 +172,17 @@ interface RawSanityPost {
   executiveSummary?: unknown[];
   faq?: { question?: string; answer?: string }[];
   ctaSection?: { title?: string; description?: string; buttonText?: string; buttonUrl?: string };
+  seo?: {
+    metaTitle?: string;
+    metaDescription?: string;
+    canonicalUrl?: string;
+    noIndex?: boolean;
+  };
+  openGraph?: {
+    ogTitle?: string;
+    ogDescription?: string;
+  };
+  ogImageUrl?: string;
+  authorName?: string;
+  authorImage?: string;
 }

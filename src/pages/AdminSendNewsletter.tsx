@@ -10,6 +10,18 @@ const sanityClient = createClient({
   apiVersion: '2024-01-01',
 })
 
+const ALL_SEGMENTS = [
+  { value: 'all', label: 'All Subscribers' },
+  { value: 'pharma_clients', label: 'Pharmaceutical Clients' },
+  { value: 'hospital_admins', label: 'Hospital Administrators' },
+  { value: 'trial_participants', label: 'Clinical Trial Participants' },
+  { value: 'market_research', label: 'Market Research Leads' },
+  { value: 'kols', label: 'Key Opinion Leaders (KOLs)' },
+  { value: 'healthcare_providers', label: 'Healthcare Providers' },
+  { value: 'pharma_cold_leads', label: 'Pharma Cold Leads' },
+  { value: 'test_list', label: 'Test List' },
+]
+
 interface Newsletter {
   _id: string
   title: string
@@ -135,6 +147,52 @@ export default function AdminSendNewsletter() {
     }
   }
 
+  // ─── Segment editing ───
+  const [editingSegments, setEditingSegments] = useState<string | null>(null) // newsletter _id being edited
+  const [pendingSegments, setPendingSegments] = useState<string[]>([])
+  const [savingSegments, setSavingSegments] = useState(false)
+
+  function openSegmentEditor(nl: Newsletter) {
+    setEditingSegments(nl._id)
+    setPendingSegments([...(nl.targetSegments || [])])
+  }
+
+  function toggleSegment(value: string) {
+    setPendingSegments((prev) =>
+      prev.includes(value) ? prev.filter((s) => s !== value) : [...prev, value]
+    )
+  }
+
+  async function saveSegments(newsletterId: string) {
+    if (pendingSegments.length === 0) {
+      alert('At least one segment is required.')
+      return
+    }
+    setSavingSegments(true)
+    try {
+      const token = getAuthToken()
+      const response = await fetch('/api/admin?action=update-newsletter-segments', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ newsletterId, segments: pendingSegments }),
+      })
+      const data = await response.json()
+      if (response.ok && data.success) {
+        setEditingSegments(null)
+        fetchNewsletters()
+      } else {
+        alert(data.error || 'Failed to update segments')
+      }
+    } catch (err) {
+      alert('Could not update segments. Please try again.')
+    } finally {
+      setSavingSegments(false)
+    }
+  }
+
   if (authLoading || loading) {
     return (
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
@@ -229,10 +287,106 @@ export default function AdminSendNewsletter() {
                   <p style={{ margin: '4px 0', color: '#555', fontSize: '14px' }}>
                     <strong>Subject:</strong> {nl.subject?.en || '(no subject)'}
                   </p>
-                  {nl.targetSegments && nl.targetSegments.length > 0 && (
-                    <p style={{ margin: '4px 0', color: '#888', fontSize: '13px' }}>
-                      <strong>Segments:</strong> {nl.targetSegments.join(', ')}
-                    </p>
+                  {/* Segment display / editor */}
+                  {editingSegments === nl._id ? (
+                    <div style={{ margin: '8px 0' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+                        <strong style={{ fontSize: '13px', color: '#555' }}>Segments:</strong>
+                        <button
+                          onClick={() => setEditingSegments(null)}
+                          style={{
+                            background: 'none',
+                            border: 'none',
+                            color: '#999',
+                            cursor: 'pointer',
+                            fontSize: '13px',
+                            textDecoration: 'underline',
+                          }}
+                        >
+                          Cancel
+                        </button>
+                      </div>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '8px' }}>
+                        {ALL_SEGMENTS.map((seg) => {
+                          const isSelected = pendingSegments.includes(seg.value)
+                          return (
+                            <button
+                              key={seg.value}
+                              onClick={() => toggleSegment(seg.value)}
+                              style={{
+                                padding: '4px 12px',
+                                borderRadius: '16px',
+                                fontSize: '12px',
+                                fontWeight: isSelected ? '600' : '400',
+                                color: isSelected ? 'white' : '#555',
+                                background: isSelected ? '#667eea' : '#f0f0f0',
+                                border: isSelected ? '1px solid #667eea' : '1px solid #ddd',
+                                cursor: 'pointer',
+                                transition: 'all 0.15s',
+                              }}
+                            >
+                              {isSelected ? '✓ ' : ''}{seg.label}
+                            </button>
+                          )
+                        })}
+                      </div>
+                      <button
+                        onClick={() => saveSegments(nl._id)}
+                        disabled={savingSegments}
+                        style={{
+                          padding: '6px 16px',
+                          background: savingSegments ? '#ccc' : '#28a745',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '6px',
+                          cursor: savingSegments ? 'wait' : 'pointer',
+                          fontWeight: 'bold',
+                          fontSize: '13px',
+                        }}
+                      >
+                        {savingSegments ? 'Saving...' : 'Save Segments'}
+                      </button>
+                    </div>
+                  ) : (
+                    nl.targetSegments && nl.targetSegments.length > 0 && (
+                      <div style={{ margin: '4px 0', display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
+                        <strong style={{ fontSize: '13px', color: '#888' }}>Segments:</strong>
+                        {nl.targetSegments.map((seg) => {
+                          const label = ALL_SEGMENTS.find((s) => s.value === seg)?.label || seg
+                          return (
+                            <span
+                              key={seg}
+                              style={{
+                                display: 'inline-block',
+                                padding: '2px 10px',
+                                borderRadius: '12px',
+                                fontSize: '11px',
+                                background: '#eef1ff',
+                                color: '#667eea',
+                                border: '1px solid #d4dafc',
+                              }}
+                            >
+                              {label}
+                            </span>
+                          )
+                        })}
+                        <button
+                          onClick={() => openSegmentEditor(nl)}
+                          style={{
+                            background: 'none',
+                            border: '1px dashed #bbb',
+                            borderRadius: '12px',
+                            padding: '2px 10px',
+                            fontSize: '11px',
+                            color: '#888',
+                            cursor: 'pointer',
+                          }}
+                          title="Add or remove segments"
+                        >
+                          ✏️ Edit
+                        </button>
+                      </div>
+                    )
                   )}
                   {nl.sentAt && (
                     <p style={{ margin: '4px 0', color: '#888', fontSize: '13px' }}>

@@ -263,32 +263,40 @@ const BlogPost = () => {
     );
   }
 
+  const pageUrl = `https://bionixus.com/blog/${slug}`;
+  const metaTitle = post.seoMetaTitle || post.title;
+  const metaDescription = post.seoMetaDescription || post.excerpt || post.title;
+  const socialTitle = post.ogTitle || metaTitle;
+  const socialDescription = post.ogDescription || metaDescription;
+  const socialImage = post.ogImage || post.coverImage;
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
         {/* Dynamic meta tags for this specific blog post */}
-        <title>{post.title} | BioNixus</title>
-        <meta name="description" content={post.excerpt || post.title} />
+        <title>{metaTitle} | BioNixus</title>
+        <meta name="description" content={metaDescription} />
+        {post.seoNoIndex && <meta name="robots" content="noindex,nofollow" />}
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="article" />
-        <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.excerpt || post.title} />
-        <meta property="og:url" content={`https://bionixus.com/blog/${slug}`} />
-        {post.coverImage && <meta property="og:image" content={post.coverImage} />}
-        {post.coverImage && <meta property="og:image:width" content="1200" />}
-        {post.coverImage && <meta property="og:image:height" content="630" />}
+        <meta property="og:title" content={socialTitle} />
+        <meta property="og:description" content={socialDescription} />
+        <meta property="og:url" content={pageUrl} />
+        {socialImage && <meta property="og:image" content={socialImage} />}
+        {socialImage && <meta property="og:image:width" content="1200" />}
+        {socialImage && <meta property="og:image:height" content="630" />}
         {post.date && <meta property="article:published_time" content={post.date} />}
         {post.category && <meta property="article:section" content={post.category} />}
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={post.title} />
-        <meta name="twitter:description" content={post.excerpt || post.title} />
-        {post.coverImage && <meta name="twitter:image" content={post.coverImage} />}
+        <meta name="twitter:title" content={socialTitle} />
+        <meta name="twitter:description" content={socialDescription} />
+        {socialImage && <meta name="twitter:image" content={socialImage} />}
 
         {/* Canonical URL */}
-        <link rel="canonical" href={`https://bionixus.com/blog/${slug}`} />
+        <link rel="canonical" href={post.seoCanonicalUrl || pageUrl} />
       </Helmet>
       <Navbar />
       <main className="section-padding">
@@ -336,9 +344,23 @@ const BlogPost = () => {
               {post.title}
             </h1>
 
+            {/* Author row */}
+            {post.authorName && (
+              <div className="flex items-center gap-2 mb-4">
+                {post.authorImage && (
+                  <img
+                    src={post.authorImage}
+                    alt={post.authorName}
+                    className="w-8 h-8 rounded-full object-cover"
+                  />
+                )}
+                <span className="text-sm font-medium text-foreground">{post.authorName}</span>
+              </div>
+            )}
+
             <div className="mb-6">
               <ShareButtons
-                url={`https://bionixus.com/blog/${slug}`}
+                url={pageUrl}
                 title={post.title}
                 contentType="blog"
                 slug={slug!}

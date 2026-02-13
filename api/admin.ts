@@ -73,6 +73,12 @@ export default async function handler(req: any, res: any) {
     return handleResetNewsletter(req, res)
   }
 
+  // ─── update-newsletter-segments: POST ───
+  if (action === 'update-newsletter-segments') {
+    if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' })
+    return handleUpdateNewsletterSegments(req, res)
+  }
+
   // ─── share-analytics: GET ───
   if (action === 'share-analytics') {
     if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' })
@@ -475,6 +481,32 @@ async function handleResetNewsletter(req: any, res: any) {
     return res.status(200).json({ success: true, message: 'Newsletter reset to draft' })
   } catch (error: any) {
     console.error('Reset newsletter error:', error)
+    return res.status(500).json({ error: error.message })
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// Update Newsletter Segments handler
+// ═══════════════════════════════════════════════════════════════════
+async function handleUpdateNewsletterSegments(req: any, res: any) {
+  const { newsletterId, segments } = req.body
+
+  if (!newsletterId) {
+    return res.status(400).json({ error: 'Newsletter ID is required' })
+  }
+  if (!Array.isArray(segments)) {
+    return res.status(400).json({ error: 'Segments must be an array' })
+  }
+
+  try {
+    await sanityServer
+      .patch(newsletterId)
+      .set({ targetSegments: segments })
+      .commit()
+
+    return res.status(200).json({ success: true, message: 'Segments updated', segments })
+  } catch (error: any) {
+    console.error('Update newsletter segments error:', error)
     return res.status(500).json({ error: error.message })
   }
 }

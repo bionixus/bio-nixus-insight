@@ -124,6 +124,8 @@ export default {
           { title: 'Hospital Administrators', value: 'hospital_admins' },
           { title: 'Clinical Trial Participants', value: 'trial_participants' },
           { title: 'Market Research Leads', value: 'market_research' },
+          { title: 'Key Opinion Leaders (KOLs)', value: 'kols' },
+          { title: 'Healthcare Providers', value: 'healthcare_providers' },
           { title: 'Pharma Cold Leads (no verification needed)', value: 'pharma_cold_leads' },
           { title: 'Test List (no verification needed)', value: 'test_list' },
         ],

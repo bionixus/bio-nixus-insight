@@ -8,6 +8,16 @@ const sanityClient = createClient({
     token: process.env.VITE_SANITY_API_TOKEN, // Optional, only needed for private datasets
 });
 
+/** Escape HTML entities to prevent XSS in meta content attributes */
+function esc(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
 export default async function handler(req, res) {
     const { slug } = req.query;
 
@@ -19,7 +29,11 @@ export default async function handler(req, res) {
         excerpt,
         "coverImage": mainImage.asset->url,
         publishedAt,
-        "category": category
+        "category": category,
+        seo,
+        openGraph,
+        "ogImageUrl": openGraph.ogImage.asset->url,
+        tags
       }`,
             { slug }
         );
@@ -36,45 +50,55 @@ export default async function handler(req, res) {
             });
         }
 
+        // Use SEO/OG fields when available, fall back to defaults
+        const title = esc(caseStudy.seo?.metaTitle || caseStudy.title || 'BioNixus Case Study');
+        const description = esc(
+          caseStudy.seo?.metaDescription || caseStudy.excerpt || caseStudy.title
+        );
+        const ogTitle = esc(caseStudy.openGraph?.ogTitle || title);
+        const ogDescription = esc(caseStudy.openGraph?.ogDescription || description);
+        const image = caseStudy.ogImageUrl || caseStudy.coverImage || 'https://bionixus.com/og-image.png';
+        const url = `https://bionixus.com/case-studies/${esc(slug)}`;
+        const canonical = caseStudy.seo?.canonicalUrl || url;
+
         // Generate HTML with proper meta tags
-        const html = `
-<!DOCTYPE html>
+        const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${caseStudy.title} | BioNixus Case Studies</title>
-  <meta name="description" content="${caseStudy.excerpt || caseStudy.title}">
-  
-  <!-- Open Graph / Facebook -->
+  <title>${title} | BioNixus Case Studies</title>
+  <meta name="description" content="${description}">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
   <meta property="og:type" content="article">
-  <meta property="og:title" content="${caseStudy.title}">
-  <meta property="og:description" content="${caseStudy.excerpt || caseStudy.title}">
-  <meta property="og:url" content="https://bionixus.com/case-studies/${slug}">
-  ${caseStudy.coverImage ? `<meta property="og:image" content="${caseStudy.coverImage}">` : ''}
-  ${caseStudy.coverImage ? `<meta property="og:image:width" content="1200">` : ''}
-  ${caseStudy.coverImage ? `<meta property="og:image:height" content="630">` : ''}
-  
+  <meta property="og:site_name" content="BioNixus">
+  <meta property="og:title" content="${ogTitle}">
+  <meta property="og:description" content="${ogDescription}">
+  <meta property="og:url" content="${url}">
+  <meta property="og:image" content="${esc(image)}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="${ogTitle}">
+  ${caseStudy.publishedAt ? `<meta property="article:published_time" content="${esc(caseStudy.publishedAt)}">` : ''}
+  ${caseStudy.category ? `<meta property="article:section" content="${esc(caseStudy.category)}">` : ''}
+  ${Array.isArray(caseStudy.tags) ? caseStudy.tags.map((t) => `<meta property="article:tag" content="${esc(t)}">`).join('\n  ') : ''}
+
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="${caseStudy.title}">
-  <meta name="twitter:description" content="${caseStudy.excerpt || caseStudy.title}">
-  ${caseStudy.coverImage ? `<meta name="twitter:image" content="${caseStudy.coverImage}">` : ''}
-  
-  <!-- Redirect to the actual page after crawlers are done -->
-  <meta http-equiv="refresh" content="0;url=/case-studies/${slug}">
-  <link rel="canonical" href="https://bionixus.com/case-studies/${slug}">
+  <meta name="twitter:site" content="@BioNixus">
+  <meta name="twitter:title" content="${ogTitle}">
+  <meta name="twitter:description" content="${ogDescription}">
+  <meta name="twitter:image" content="${esc(image)}">
+
+  <link rel="canonical" href="${esc(canonical)}">
 </head>
 <body>
-  <h1>${caseStudy.title}</h1>
-  <p>${caseStudy.excerpt || ''}</p>
-  <script>
-    // Redirect immediately for human visitors
-    window.location.href = '/case-studies/${slug}';
-  </script>
+  <h1>${title}</h1>
+  <p>${description}</p>
+  <a href="${url}">Read on BioNixus</a>
 </body>
-</html>
-    `;
+</html>`;
 
         res.setHeader('Content-Type', 'text/html');
         res.status(200).send(html);

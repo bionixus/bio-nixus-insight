@@ -33,4 +33,14 @@ export interface BlogPost {
   executiveSummary?: unknown[];
   faq?: BlogPostFaqItem[];
   ctaSection?: BlogPostCtaSection;
+  // SEO / OG / Author
+  seoMetaTitle?: string;
+  seoMetaDescription?: string;
+  seoCanonicalUrl?: string;
+  seoNoIndex?: boolean;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  authorName?: string;
+  authorImage?: string;
 }
