@@ -19,6 +19,60 @@ export const config = {
 
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'BioNixus2026!'
 
+// Canonical segment values
+const VALID_SEGMENTS = [
+  'all',
+  'pharma_clients',
+  'hospital_admins',
+  'trial_participants',
+  'market_research',
+  'kols',
+  'healthcare_providers',
+  'pharma_cold_leads',
+  'test_list',
+]
+
+// Map common variations/aliases to canonical values
+const SEGMENT_ALIASES: Record<string, string> = {
+  market_research_leads: 'market_research',
+  market_research: 'market_research',
+  pharma_clients: 'pharma_clients',
+  pharmaceutical_clients: 'pharma_clients',
+  hospital_admins: 'hospital_admins',
+  hospital_administrators: 'hospital_admins',
+  trial_participants: 'trial_participants',
+  clinical_trial_participants: 'trial_participants',
+  kols: 'kols',
+  key_opinion_leaders: 'kols',
+  healthcare_providers: 'healthcare_providers',
+  pharma_cold_leads: 'pharma_cold_leads',
+  test_list: 'test_list',
+  all: 'all',
+  all_subscribers: 'all',
+}
+
+function normalizeSegment(raw: string): string | null {
+  const key = raw.trim().toLowerCase().replace(/[\s-]+/g, '_')
+  if (SEGMENT_ALIASES[key]) return SEGMENT_ALIASES[key]
+  if (VALID_SEGMENTS.includes(key)) return key
+  return null // unrecognized
+}
+
+interface CsvRecord {
+  firstName?: string
+  lastName?: string
+  email?: string
+  personalEmail?: string
+  mobile?: string
+  title?: string
+  company?: string
+  language?: string
+  segments?: string
+  notes?: string
+  subscribed?: string
+  [key: string]: string | undefined
+}
+
 export default async function handler(req: any, res: any) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' })
@@ -37,18 +91,34 @@ export default async function handler(req: any, res: any) {
       return res.status(400).json({ error: 'No CSV data provided' })
     }
 
-    // Parse CSV
-    const records = parse(csvData, {
-      columns: true, // Use first row as headers
+    // Parse CSV with duplicate column handling
+    // The `columns` callback deduplicates headers by appending _2, _3, etc.
+    const seenCols: Record<string, number> = {}
+    const records: CsvRecord[] = parse(csvData, {
+      columns: (headers: string[]) => {
+        return headers.map((h: string) => {
+          const name = h.trim()
+          if (!seenCols[name]) {
+            seenCols[name] = 1
+            return name
+          }
+          seenCols[name]++
+          return `${name}_${seenCols[name]}` // e.g., "title_2"
+        })
+      },
       skip_empty_lines: true,
       trim: true,
+      relax_column_count: true, // tolerate rows with fewer/more columns
+      relax_quotes: true, // tolerate improperly quoted fields
     })
 
     const results = {
       total: records.length,
       imported: 0,
       skipped: 0,
+      duplicates: 0,
       errors: [] as any[],
+      segmentWarnings: [] as string[],
     }
 
     // Process each record
@@ -82,22 +152,41 @@ export default async function handler(req: any, res: any) {
         // Check for duplicates
         if (skipDuplicates) {
           const existing = await sanityServer.fetch(
-            `
-            *[_type == "subscriber" && email == $email][0]
-          `,
+            `*[_type == "subscriber" && email == $email][0]`,
             { email: record.email.toLowerCase().trim() }
           )
 
           if (existing) {
+            results.duplicates++
             results.skipped++
             continue
           }
         }
 
-        // Parse segments (comma-separated string to array)
-        let segments = ['all']
+        // Parse and normalize segments
+        let segments: string[] = ['all']
         if (record.segments) {
-          segments = record.segments.split(',').map((s: string) => s.trim())
+          const rawSegments = record.segments.split(',').map((s: string) => s.trim()).filter(Boolean)
+          const normalized: string[] = []
+
+          for (const raw of rawSegments) {
+            const mapped = normalizeSegment(raw)
+            if (mapped) {
+              if (!normalized.includes(mapped)) {
+                normalized.push(mapped)
+              }
+            } else {
+              // Track unrecognized segment but don't fail
+              const warning = `Row ${i + 2}: Unknown segment "${raw}" ignored`
+              if (!results.segmentWarnings.includes(warning)) {
+                results.segmentWarnings.push(warning)
+              }
+            }
+          }
+
+          if (normalized.length > 0) {
+            segments = normalized
+          }
         }
 
         // Create subscriber

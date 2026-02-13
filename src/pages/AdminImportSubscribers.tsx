@@ -52,7 +52,8 @@ export default function AdminImportSubscribers() {
     const template = `firstName,lastName,email,personalEmail,mobile,title,company,language,segments,notes
 John,Doe,john.doe@hospital.sa,,+966501234567,Medical Director,King Faisal Hospital,en,pharma_clients,VIP client
 Sarah,Ahmed,sarah.ahmed@pharma.ae,sarah@gmail.com,+971501234567,Clinical Research Manager,Pfizer UAE,ar,"pharma_clients,kols",Interested in oncology
-Mohammed,Ali,m.ali@clinic.kw,,+96550123456,Pharmacist,Kuwait Clinic,en,all,`
+Mohammed,Ali,m.ali@clinic.kw,,+96550123456,Pharmacist,Kuwait Clinic,en,market_research,
+Hana,Salem,hana@example.com,,,Marketing Manager,Acme Pharma,en,healthcare_providers,New lead from event`
 
     const blob = new Blob([template], { type: 'text/csv' })
     const url = window.URL.createObjectURL(blob)
@@ -95,7 +96,9 @@ Mohammed,Ali,m.ali@clinic.kw,,+96550123456,Pharmacist,Kuwait Clinic,en,all,`
             <strong>Language:</strong> Use language codes (en, ar, de, fr, es, zh)
           </li>
           <li>
-            <strong>Segments:</strong> Comma-separated in quotes, e.g., "pharma_clients,kols"
+            <strong>Segments:</strong> Comma-separated in quotes, e.g., "pharma_clients,kols".
+            Valid: all, pharma_clients, hospital_admins, trial_participants, market_research, kols, healthcare_providers, pharma_cold_leads, test_list.
+            Common aliases are auto-normalized (e.g., Market_Research_Leads → market_research).
           </li>
           <li>
             <strong>Mobile:</strong> Include country code, e.g., +966501234567
@@ -181,10 +184,22 @@ Mohammed,Ali,m.ali@clinic.kw,,+96550123456,Pharmacist,Kuwait Clinic,en,all,`
             </p>
             <p>
               ⏭️ <strong>Skipped:</strong> {results.skipped}
+              {results.duplicates > 0 && ` (${results.duplicates} duplicates)`}
             </p>
           </div>
 
-          {results.errors.length > 0 && (
+          {results.segmentWarnings && results.segmentWarnings.length > 0 && (
+            <div style={{ marginBottom: '15px', padding: '12px', background: '#fff3cd', borderRadius: '6px', border: '1px solid #ffc107' }}>
+              <h4 style={{ margin: '0 0 8px 0', color: '#856404' }}>⚠️ Segment Warnings:</h4>
+              <ul style={{ margin: 0, paddingLeft: '20px', fontSize: '13px', color: '#856404' }}>
+                {results.segmentWarnings.map((w: string, idx: number) => (
+                  <li key={idx}>{w}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {results.errors && results.errors.length > 0 && (
             <div style={{ marginTop: '20px' }}>
               <h4 style={{ color: '#dc3545' }}>❌ Errors:</h4>
               <div
@@ -243,6 +258,8 @@ Mohammed,Ali,m.ali@clinic.kw,,+96550123456,Pharmacist,Kuwait Clinic,en,all,`
         <ul style={{ lineHeight: '1.8' }}>
           <li>Use Excel or Google Sheets to prepare your CSV</li>
           <li>Ensure no empty rows between data</li>
+          <li>Duplicate column names are handled automatically (e.g., two "title" columns)</li>
+          <li>Segment values are auto-normalized (Market_Research_Leads → market_research)</li>
           <li>Test with a small batch first (5-10 subscribers)</li>
           <li>Check email formats carefully before import</li>
           <li>For large imports (1000+), consider splitting into batches</li>
