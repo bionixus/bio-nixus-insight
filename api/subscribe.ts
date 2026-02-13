@@ -1,6 +1,6 @@
 import { createClient } from '@sanity/client'
 import { Resend } from 'resend'
-import { generateVerificationEmail } from '../src/lib/emails/verificationEmail'
+import { generateVerificationEmail } from './_emails/verificationEmail.js'
 import crypto from 'crypto'
 
 const sanityServer = createClient({
@@ -50,7 +50,11 @@ export default async function handler(req: any, res: any) {
     )
 
     if (existing && existing.subscribed && existing.emailVerified) {
-      return res.status(400).json({ error: 'Email already subscribed and verified' })
+      return res.status(200).json({
+        success: true,
+        alreadySubscribed: true,
+        message: 'You are already subscribed! Check your email for our latest updates.',
+      })
     }
 
     // Generate verification token
@@ -104,7 +108,7 @@ export default async function handler(req: any, res: any) {
 
     // Send verification email
     await resend.emails.send({
-      from: 'BioNixus <newsletter@bionixus.com>',
+      from: 'BioNixus Market Research <newsletter@bionixus.com>',
       to: email,
       subject:
         language === 'ar'

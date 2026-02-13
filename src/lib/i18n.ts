@@ -260,6 +260,7 @@ export const translations = {
       newsletterButton: 'Subscribe',
       newsletterSubscribing: 'Subscribing...',
       newsletterSuccess: 'Check your email to verify!',
+      newsletterAlready: 'You are already subscribed — check your email for our latest updates!',
       newsletterError: 'Something went wrong. Try again.',
     },
     caseStudiesPage: {
@@ -501,6 +502,7 @@ export const translations = {
       newsletterButton: 'Abonnieren',
       newsletterSubscribing: 'Wird abonniert...',
       newsletterSuccess: 'Prüfen Sie Ihre E-Mail zur Bestätigung!',
+      newsletterAlready: 'Sie sind bereits abonniert — prüfen Sie Ihre E-Mail für unsere neuesten Updates!',
       newsletterError: 'Etwas ist schiefgelaufen. Versuchen Sie es erneut.',
     },
     caseStudiesPage: {
@@ -742,6 +744,7 @@ export const translations = {
       newsletterButton: 'S\'abonner',
       newsletterSubscribing: 'Abonnement en cours...',
       newsletterSuccess: 'Vérifiez votre e-mail pour confirmer !',
+      newsletterAlready: 'Vous êtes déjà abonné — consultez votre e-mail pour nos dernières mises à jour !',
       newsletterError: 'Une erreur est survenue. Réessayez.',
     },
     caseStudiesPage: {
@@ -983,6 +986,7 @@ export const translations = {
       newsletterButton: 'Suscribirse',
       newsletterSubscribing: 'Suscribiendo...',
       newsletterSuccess: '¡Revise su correo para verificar!',
+      newsletterAlready: '¡Ya está suscrito! Revise su correo para nuestras últimas actualizaciones.',
       newsletterError: 'Algo salió mal. Inténtelo de nuevo.',
     },
     caseStudiesPage: {
@@ -1223,6 +1227,7 @@ export const translations = {
       newsletterButton: '订阅',
       newsletterSubscribing: '订阅中...',
       newsletterSuccess: '请查看您的邮箱以确认！',
+      newsletterAlready: '您已订阅 — 请查看邮箱获取我们的最新动态！',
       newsletterError: '出了点问题，请重试。',
     },
     caseStudiesPage: {
@@ -1469,6 +1474,7 @@ export const translations = {
       newsletterButton: 'اشترك',
       newsletterSubscribing: 'جاري الاشتراك...',
       newsletterSuccess: 'تحقق من بريدك الإلكتروني للتأكيد!',
+      newsletterAlready: 'أنت مشترك بالفعل — تحقق من بريدك الإلكتروني لآخر التحديثات!',
       newsletterError: 'حدث خطأ ما. حاول مرة أخرى.',
     },
     caseStudiesPage: {

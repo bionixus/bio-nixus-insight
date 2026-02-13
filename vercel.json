@@ -14,6 +14,10 @@
       "destination": "/api/blog/:slug"
     },
     {
+      "source": "/unsubscribe",
+      "destination": "/api/unsubscribe"
+    },
+    {
       "source": "/((?!api/.*).*)",
       "destination": "/index.html"
     }

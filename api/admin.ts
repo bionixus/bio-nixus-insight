@@ -1,4 +1,5 @@
 import { createClient } from '@sanity/client'
+import crypto from 'crypto'
 
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'BioNixus2026!'
 
@@ -33,6 +34,12 @@ export default async function handler(req: any, res: any) {
     return res.status(401).json({ error: 'Invalid password' })
   }
 
+  // ─── track-share: POST, public (no auth – called by anonymous visitors) ───
+  if (action === 'track-share') {
+    if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' })
+    return handleTrackShare(req, res)
+  }
+
   // All other actions require auth
   if (!checkAuth(req, res)) return
 
@@ -60,7 +67,19 @@ export default async function handler(req: any, res: any) {
     return handleAnalytics(req, res)
   }
 
-  return res.status(400).json({ error: 'Unknown action. Use ?action=subscribers|bulk-actions|calculate-engagement|analytics|verify' })
+  // ─── reset-newsletter: POST ───
+  if (action === 'reset-newsletter') {
+    if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' })
+    return handleResetNewsletter(req, res)
+  }
+
+  // ─── share-analytics: GET ───
+  if (action === 'share-analytics') {
+    if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' })
+    return handleShareAnalytics(req, res)
+  }
+
+  return res.status(400).json({ error: 'Unknown action. Use ?action=subscribers|bulk-actions|calculate-engagement|analytics|reset-newsletter|share-analytics|verify' })
 }
 
 // ═══════════════════════════════════════════════════════════════════
@@ -433,5 +452,167 @@ async function handleAnalytics(req: any, res: any) {
   } catch (error: any) {
     console.error('Analytics error:', error)
     return res.status(500).json({ error: error.message })
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// Reset Newsletter handler
+// ═══════════════════════════════════════════════════════════════════
+async function handleResetNewsletter(req: any, res: any) {
+  const { newsletterId } = req.body
+
+  if (!newsletterId) {
+    return res.status(400).json({ error: 'Newsletter ID is required' })
+  }
+
+  try {
+    await sanityServer
+      .patch(newsletterId)
+      .set({ status: 'draft' })
+      .unset(['sentAt', 'stats'])
+      .commit()
+
+    return res.status(200).json({ success: true, message: 'Newsletter reset to draft' })
+  } catch (error: any) {
+    console.error('Reset newsletter error:', error)
+    return res.status(500).json({ error: error.message })
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// Share Analytics handler
+// ═══════════════════════════════════════════════════════════════════
+async function handleShareAnalytics(_req: any, res: any) {
+  try {
+    // Summary stats
+    const summary = await sanityServer.fetch(`{
+      "total": count(*[_type == "shareEvent"]),
+      "byPlatform": {
+        "linkedin": count(*[_type == "shareEvent" && platform == "linkedin"]),
+        "twitter": count(*[_type == "shareEvent" && platform == "twitter"]),
+        "facebook": count(*[_type == "shareEvent" && platform == "facebook"]),
+        "whatsapp": count(*[_type == "shareEvent" && platform == "whatsapp"]),
+        "copy": count(*[_type == "shareEvent" && platform == "copy"])
+      },
+      "byContentType": {
+        "blog": count(*[_type == "shareEvent" && contentType == "blog"]),
+        "caseStudy": count(*[_type == "shareEvent" && contentType == "case-study"])
+      }
+    }`)
+
+    // Top shared content
+    const topContent = await sanityServer.fetch(`
+      *[_type == "shareEvent"] {
+        contentSlug,
+        contentTitle,
+        contentType
+      } | order(contentSlug asc)
+    `)
+
+    // Aggregate top content by slug
+    const slugCounts: Record<string, { title: string; type: string; count: number }> = {}
+    for (const item of topContent) {
+      const key = `${item.contentType}:${item.contentSlug}`
+      if (!slugCounts[key]) {
+        slugCounts[key] = { title: item.contentTitle || item.contentSlug, type: item.contentType, count: 0 }
+      }
+      slugCounts[key].count++
+    }
+    const topShared = Object.values(slugCounts)
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 10)
+
+    // Shares by country (top 15)
+    const countryEvents = await sanityServer.fetch(`
+      *[_type == "shareEvent" && defined(country) && country != "unknown"] {
+        country
+      }
+    `)
+    const countryCounts: Record<string, number> = {}
+    for (const item of countryEvents) {
+      countryCounts[item.country] = (countryCounts[item.country] || 0) + 1
+    }
+    const byCountry = Object.entries(countryCounts)
+      .map(([country, count]) => ({ country, count }))
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 15)
+
+    // Recent events (last 50)
+    const recentEvents = await sanityServer.fetch(`
+      *[_type == "shareEvent"] | order(timestamp desc) [0...50] {
+        _id,
+        platform,
+        contentType,
+        contentSlug,
+        contentTitle,
+        country,
+        city,
+        timestamp,
+        anonymousId
+      }
+    `)
+
+    return res.status(200).json({
+      summary,
+      topShared,
+      byCountry,
+      recentEvents,
+    })
+  } catch (error: any) {
+    console.error('Share analytics error:', error)
+    return res.status(500).json({ error: error.message })
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// Track Share handler (public – no auth required)
+// ═══════════════════════════════════════════════════════════════════
+function hashIp(ip: string): string {
+  return crypto.createHash('sha256').update(ip).digest('hex').slice(0, 16)
+}
+
+async function handleTrackShare(req: any, res: any) {
+  try {
+    const { platform, contentType, contentSlug, contentTitle, anonymousId } =
+      typeof req.body === 'string' ? JSON.parse(req.body) : req.body
+
+    if (!platform || !contentType || !contentSlug) {
+      return res.status(400).json({ error: 'Missing required fields' })
+    }
+
+    // Vercel provides geo headers automatically
+    const country =
+      req.headers['x-vercel-ip-country'] ||
+      req.headers['cf-ipcountry'] ||
+      'unknown'
+    const city = req.headers['x-vercel-ip-city'] || ''
+    const userAgent = req.headers['user-agent'] || ''
+    const rawIp =
+      req.headers['x-forwarded-for']?.split(',')[0]?.trim() ||
+      req.headers['x-real-ip'] ||
+      req.socket?.remoteAddress ||
+      ''
+
+    const doc = {
+      _type: 'shareEvent',
+      platform,
+      contentType,
+      contentSlug,
+      contentTitle: contentTitle || '',
+      country: decodeURIComponent(country),
+      city: decodeURIComponent(city),
+      userAgent: userAgent.slice(0, 500),
+      ipHash: rawIp ? hashIp(rawIp) : '',
+      timestamp: new Date().toISOString(),
+      anonymousId: anonymousId || '',
+    }
+
+    await sanityServer.create(doc)
+
+    return res.status(200).json({ success: true })
+  } catch (err: any) {
+    console.error('track-share error:', err.message)
+    // Return 200 anyway – tracking should never break UX
+    return res.status(200).json({ success: false })
   }
 }

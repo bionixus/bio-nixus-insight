@@ -110,6 +110,7 @@ import {
 } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import ShareButtons from '@/components/ShareButtons';
 import type { BlogPost as BlogPostType } from '@/types/blog';
 
 /** Portable text block renderers – match McKinsey prose-body styles */
@@ -331,9 +332,18 @@ const BlogPost = () => {
               )}
             </div>
 
-            <h1 className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-4">
               {post.title}
             </h1>
+
+            <div className="mb-6">
+              <ShareButtons
+                url={`https://bionixus.com/blog/${slug}`}
+                title={post.title}
+                contentType="blog"
+                slug={slug!}
+              />
+            </div>
 
             {post.coverImage && (
               <div className="aspect-[16/10] rounded-xl overflow-hidden mb-8 bg-muted">

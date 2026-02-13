@@ -13,7 +13,7 @@ const Footer = () => {
   const [nlName, setNlName] = useState('');
   const [nlEmail, setNlEmail] = useState('');
   const [nlLoading, setNlLoading] = useState(false);
-  const [nlStatus, setNlStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [nlStatus, setNlStatus] = useState<'idle' | 'success' | 'already' | 'error'>('idle');
   const f = t.footer as Record<string, string>;
 
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
@@ -28,7 +28,9 @@ const Footer = () => {
         body: JSON.stringify({ firstName: nlName.trim(), email: nlEmail.trim(), language }),
       });
       const data = await res.json();
-      if (data.success) {
+      if (data.success && data.alreadySubscribed) {
+        setNlStatus('already');
+      } else if (data.success) {
         setNlStatus('success');
         setNlName('');
         setNlEmail('');
@@ -90,7 +92,11 @@ const Footer = () => {
               <p className="text-primary-foreground/60 text-sm mb-3">
                 {f.newsletterDesc || 'Get healthcare insights delivered to your inbox.'}
               </p>
-              {nlStatus === 'success' ? (
+              {nlStatus === 'already' ? (
+                <p className="text-amber-300 text-sm font-medium">
+                  ✉ {f.newsletterAlready || 'You are already subscribed — check your email for our latest updates!'}
+                </p>
+              ) : nlStatus === 'success' ? (
                 <p className="text-green-300 text-sm font-medium">
                   ✓ {f.newsletterSuccess || 'Check your email to verify!'}
                 </p>

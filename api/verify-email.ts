@@ -1,6 +1,6 @@
 import { createClient } from '@sanity/client'
 import { Resend } from 'resend'
-import { generateWelcomeEmail } from '../src/lib/emails/welcomeEmail'
+import { generateWelcomeEmail } from './_emails/welcomeEmail.js'
 
 const sanityServer = createClient({
   projectId: process.env.VITE_SANITY_PROJECT_ID || 'h2whvvpo',
@@ -53,13 +53,13 @@ export default async function handler(req: any, res: any) {
     // Send welcome email
     try {
       await resend.emails.send({
-        from: 'Mohammad Al-Ubaydli <newsletter@bionixus.com>',
+        from: 'BioNixus Market Research <newsletter@bionixus.com>',
         to: subscriber.email,
         subject:
           subscriber.language === 'ar'
             ? 'مرحباً بك في BioNixus لرؤى الرعاية الصحية'
             : 'Welcome to BioNixus Healthcare Insights',
-        html: generateWelcomeEmail(subscriber.firstName, subscriber.language),
+        html: generateWelcomeEmail(subscriber.firstName, subscriber.language, subscriber._id),
         tags: [
           { name: 'type', value: 'welcome' },
           { name: 'subscriber_id', value: subscriber._id },

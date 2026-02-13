@@ -55,6 +55,10 @@ const CASE_STUDIES_QUERY = `*[_type == "caseStudy" && defined(slug.current)] | o
   category,
   country,
   mainImage,
+  tags,
+  readingTime,
+  "authorName": author->name,
+  "authorImage": author->image,
   "pdfUrl": pdfFile.asset->url
 }[0...50]`;
 
@@ -69,6 +73,17 @@ const CASE_STUDY_BY_SLUG_QUERY = `*[_type == "caseStudy" && slug.current == $slu
   category,
   country,
   mainImage,
+  tags,
+  readingTime,
+  "authorName": author->name,
+  "authorImage": author->image,
+  tableOfContents,
+  executiveSummary,
+  faq,
+  ctaSection,
+  seo,
+  openGraph,
+  "ogImageUrl": openGraph.ogImage.asset->url,
   "pdfUrl": pdfFile.asset->url
 }`;
 
@@ -84,6 +99,25 @@ interface RawCaseStudy {
   country?: string;
   mainImage?: { _type?: string; asset?: { _ref: string } };
   pdfUrl?: string;
+  authorName?: string;
+  authorImage?: { _type?: string; asset?: { _ref: string } };
+  tags?: string[];
+  readingTime?: number;
+  tableOfContents?: { heading?: string; anchor?: string }[];
+  executiveSummary?: unknown[];
+  faq?: { question?: string; answer?: string }[];
+  ctaSection?: { title?: string; description?: string; buttonText?: string; buttonUrl?: string };
+  seo?: {
+    metaTitle?: string;
+    metaDescription?: string;
+    canonicalUrl?: string;
+    noIndex?: boolean;
+  };
+  openGraph?: {
+    ogTitle?: string;
+    ogDescription?: string;
+  };
+  ogImageUrl?: string;
 }
 
 function formatDate(iso: string | undefined): string {
@@ -112,6 +146,21 @@ function mapToCaseStudy(r: RawCaseStudy, imageSize: 'cover' | 'thumb' = 'cover')
     coverImage: getCoverImageUrl(r.mainImage, imageSize),
     pdfUrl: r.pdfUrl ?? '',
     language: r.language,
+    authorName: r.authorName,
+    authorImage: getCoverImageUrl(r.authorImage, 'thumb'),
+    tags: r.tags,
+    readingTime: r.readingTime,
+    tableOfContents: r.tableOfContents,
+    executiveSummary: r.executiveSummary,
+    faq: r.faq,
+    ctaSection: r.ctaSection,
+    seoMetaTitle: r.seo?.metaTitle,
+    seoMetaDescription: r.seo?.metaDescription,
+    seoCanonicalUrl: r.seo?.canonicalUrl,
+    seoNoIndex: r.seo?.noIndex,
+    ogTitle: r.openGraph?.ogTitle,
+    ogDescription: r.openGraph?.ogDescription,
+    ogImage: r.ogImageUrl,
   };
 }
 

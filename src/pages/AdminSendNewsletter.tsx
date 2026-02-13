@@ -114,16 +114,24 @@ export default function AdminSendNewsletter() {
     if (!confirm('Reset this newsletter back to draft status? This allows re-sending.')) return
 
     try {
-      await sanityClient
-        .patch(newsletterId)
-        .set({ status: 'draft', sentAt: undefined })
-        .unset(['sentAt', 'stats'])
-        .commit({ token: import.meta.env.VITE_SANITY_TOKEN })
+      const token = getAuthToken()
+      const response = await fetch('/api/admin?action=reset-newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ newsletterId }),
+      })
 
-      alert('Newsletter reset to draft. Note: you may need to reset it directly in Sanity Studio if this fails due to permissions.')
-      fetchNewsletters()
+      const data = await response.json()
+      if (response.ok && data.success) {
+        fetchNewsletters()
+      } else {
+        alert(data.error || 'Failed to reset newsletter')
+      }
     } catch (err) {
-      alert('Could not reset — please go to Sanity Studio and change the status to "Draft" manually.')
+      alert('Could not reset newsletter. Please try again.')
     }
   }
 

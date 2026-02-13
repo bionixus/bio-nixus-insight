@@ -28,23 +28,17 @@ export default async function handler(req: any, res: any) {
 
   const { newsletterId } = req.body
 
+  if (!newsletterId) {
+    return res.status(400).json({ error: 'Newsletter ID is required' })
+  }
+
   try {
     // 1. Get newsletter from Sanity
+    console.log(`[Newsletter] Fetching newsletter ${newsletterId}...`)
     const newsletter = await sanityServer.fetch(
-      `
-      *[_type == "newsletter" && _id == $id][0] {
-        _id,
-        title,
-        subject,
-        preheader,
-        contentType,
-        content,
-        htmlContent,
-        featuredImage,
-        targetSegments,
-        status
-      }
-    `,
+      `*[_type == "newsletter" && _id == $id][0] {
+        _id, title, subject, preheader, contentType, content, htmlContent, targetSegments, status
+      }`,
       { id: newsletterId }
     )
 
@@ -56,59 +50,47 @@ export default async function handler(req: any, res: any) {
       return res.status(400).json({ error: 'Newsletter already sent' })
     }
 
+    console.log(`[Newsletter] Found: "${newsletter.title}", type: ${newsletter.contentType}, segments: ${newsletter.targetSegments?.join(', ')}`)
+
     // 2. Get subscribers
-    // Cold leads and test list don't require email verification
-    const hasNoVerifySegment = newsletter.targetSegments?.some(
+    const targetSegments = newsletter.targetSegments || ['all']
+    const hasNoVerifySegment = targetSegments.some(
       (s: string) => s === 'pharma_cold_leads' || s === 'test_list'
     )
+
     const subscribers = await sanityServer.fetch(
-      `
-      *[_type == "subscriber" && subscribed == true && count((segments[@ in $targetSegments])) > 0 && (
+      `*[_type == "subscriber" && subscribed == true && count((segments[@ in $targetSegments])) > 0 && (
         emailVerified == true ||
         ($hasNoVerifySegment && ("pharma_cold_leads" in segments || "test_list" in segments))
-      )] {
-        _id,
-        email,
-        firstName,
-        lastName,
-        language,
-        analytics
-      }
-    `,
-      { targetSegments: newsletter.targetSegments, hasNoVerifySegment: hasNoVerifySegment || false }
+      )] { _id, email, firstName, lastName, language }`,
+      { targetSegments, hasNoVerifySegment: hasNoVerifySegment || false }
     )
 
-    if (subscribers.length === 0) {
+    console.log(`[Newsletter] Found ${subscribers.length} matching subscribers`)
+
+    if (!subscribers || subscribers.length === 0) {
       return res.status(400).json({ error: 'No subscribers found for target segments' })
     }
 
-    // 3. Send emails
-    console.log(`[Newsletter] Sending to ${subscribers.length} subscribers...`)
-    console.log(`[Newsletter] RESEND_API_KEY present: ${!!process.env.RESEND_API_KEY}`)
-    console.log(`[Newsletter] RESEND_API_KEY length: ${process.env.RESEND_API_KEY?.trim()?.length || 0}`)
-
+    // 3. Send emails one by one (reliable, avoids race conditions)
     const errors: string[] = []
-    const results = await Promise.allSettled(
-      subscribers.map(async (subscriber: any) => {
+    let successCount = 0
+    let failedCount = 0
+
+    for (const subscriber of subscribers) {
+      try {
         const locale = subscriber.language || 'en'
+        const subject = newsletter.subject?.[locale] || newsletter.subject?.en || newsletter.title || 'Newsletter'
+        const preheader = newsletter.preheader?.[locale] || newsletter.preheader?.en || ''
 
-        // Get localized content
-        const subject = newsletter.subject[locale] || newsletter.subject.en
-        const preheader = newsletter.preheader?.[locale] || newsletter.preheader?.en
-
-        // Handle different content types
-        let bodyContent: string
-
+        let bodyContent = ''
         if (newsletter.contentType === 'html') {
-          // Use raw HTML directly
           bodyContent = newsletter.htmlContent?.[locale] || newsletter.htmlContent?.en || ''
         } else {
-          // Convert portable text to HTML
-          const portableTextContent = newsletter.content?.[locale] || newsletter.content?.en
-          bodyContent = portableTextToHTML(portableTextContent)
+          const ptContent = newsletter.content?.[locale] || newsletter.content?.en
+          bodyContent = ptContent ? portableTextToHTML(ptContent) : ''
         }
 
-        // Generate email HTML
         const subscriberName = [subscriber.firstName, subscriber.lastName].filter(Boolean).join(' ')
         const emailHTML = generateEmailTemplate({
           subject,
@@ -119,71 +101,47 @@ export default async function handler(req: any, res: any) {
           unsubscribeLink: `${BASE_URL}/unsubscribe?id=${subscriber._id}`,
         })
 
-        // Send via Resend
         console.log(`[Newsletter] Sending to ${subscriber.email}...`)
         const result = await resend.emails.send({
-          from: 'Mohammad Al-Ubaydli <newsletter@bionixus.com>',
+          from: 'BioNixus Market Research <newsletter@bionixus.com>',
           replyTo: 'digital@bionixus.uk',
           to: subscriber.email,
-          subject: subject,
+          subject,
           html: emailHTML,
-          headers: {
-            'X-Entity-Ref-ID': newsletter._id,
-          },
+          headers: { 'X-Entity-Ref-ID': newsletter._id },
           tags: [
             { name: 'newsletter_id', value: newsletter._id },
-            { name: 'newsletter_title', value: newsletter.title || '' },
             { name: 'subscriber_id', value: subscriber._id },
             { name: 'language', value: locale },
-            { name: 'content_type', value: newsletter.contentType },
           ],
         })
 
-        // Check for Resend API errors (Resend returns { data, error })
         if (result.error) {
-          const errMsg = `${subscriber.email}: ${result.error.name} - ${result.error.message}`
-          console.error(`[Newsletter] FAILED:`, errMsg)
-          errors.push(errMsg)
-          throw new Error(errMsg)
+          console.error(`[Newsletter] FAILED ${subscriber.email}: ${result.error.message}`)
+          errors.push(`${subscriber.email}: ${result.error.message}`)
+          failedCount++
+        } else {
+          console.log(`[Newsletter] SUCCESS ${subscriber.email} -> ${result.data?.id}`)
+          successCount++
         }
-
-        console.log(`[Newsletter] SUCCESS: ${subscriber.email} -> ${result.data?.id}`)
-
-        // After successfully sending each email
-        await sanityServer
-          .patch(subscriber._id)
-          .set({
-            'analytics.emailsSent': (subscriber.analytics?.emailsSent || 0) + 1,
-            'analytics.lastEmailSent': new Date().toISOString()
-          })
-          .commit()
-
-        return result
-      })
-    )
-
-    // 4. Calculate statistics
-    const successCount = results.filter((r) => r.status === 'fulfilled').length
-    const failedCount = results.filter((r) => r.status === 'rejected').length
-
-    console.log(`[Newsletter] Results: ${successCount} succeeded, ${failedCount} failed`)
-    if (errors.length > 0) {
-      console.error(`[Newsletter] Errors:`, errors)
+      } catch (err: any) {
+        console.error(`[Newsletter] ERROR ${subscriber.email}: ${err.message}`)
+        errors.push(`${subscriber.email}: ${err.message}`)
+        failedCount++
+      }
     }
 
-    // 5. Only mark as sent if at least one email succeeded
+    console.log(`[Newsletter] Done: ${successCount} succeeded, ${failedCount} failed`)
+
+    // 4. Mark as sent if at least one succeeded
     if (successCount === 0) {
       return res.status(500).json({
         success: false,
-        error: `All ${failedCount} emails failed to send`,
+        error: `All ${failedCount} emails failed`,
         errors,
-        totalSent: subscribers.length,
-        successCount: 0,
-        failedCount,
       })
     }
 
-    // Update newsletter in Sanity
     await sanityServer
       .patch(newsletter._id)
       .set({
@@ -193,16 +151,10 @@ export default async function handler(req: any, res: any) {
           totalSent: subscribers.length,
           successCount,
           failedCount,
-          openCount: 0,
-          uniqueOpenCount: 0,
-          clickCount: 0,
-          uniqueClickCount: 0,
-          bounceCount: 0,
-          complaintCount: 0,
-          unsubscribeCount: 0,
-          openRate: 0,
-          clickRate: 0,
-          bounceRate: 0,
+          openCount: 0, uniqueOpenCount: 0,
+          clickCount: 0, uniqueClickCount: 0,
+          bounceCount: 0, complaintCount: 0, unsubscribeCount: 0,
+          openRate: 0, clickRate: 0, bounceRate: 0,
         },
       })
       .commit()
@@ -215,8 +167,8 @@ export default async function handler(req: any, res: any) {
       errors: errors.length > 0 ? errors : undefined,
     })
   } catch (error: any) {
-    console.error('Newsletter send error:', error)
-    return res.status(500).json({ error: error.message })
+    console.error('[Newsletter] Fatal error:', error?.message || error)
+    return res.status(500).json({ error: error?.message || 'Unknown error occurred' })
   }
 }
 
@@ -283,44 +235,52 @@ function generateEmailTemplate({
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>${escapeHtml(subject)}</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f4f4; }
-    .container { max-width: 600px; margin: 20px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    .header { text-align: center; border-bottom: 3px solid #0066cc; padding-bottom: 20px; margin-bottom: 30px; }
-    .logo { font-size: 24px; font-weight: bold; color: #0066cc; }
-    .content { margin: 20px 0; }
-    .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #e0e0e0; font-size: 12px; color: #666; text-align: center; }
+    body, html { margin: 0; padding: 0; width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f4f4f4; }
+    img { max-width: 100% !important; height: auto !important; display: block; border: 0; }
+    table { border-collapse: collapse; }
     a { color: #0066cc; text-decoration: none; }
-    .button { display: inline-block; padding: 12px 24px; background: #0066cc; color: white !important; border-radius: 4px; text-decoration: none; margin: 20px 0; }
   </style>
 </head>
-<body>
-  <div style="display: none; max-height: 0; overflow: hidden;">${escapeHtml(preheader || '')}</div>
+<body style="margin: 0; padding: 0; background-color: #f4f4f4;">
+  <div style="display: none; max-height: 0; overflow: hidden; font-size: 1px; line-height: 1px;">${escapeHtml(preheader || '')}</div>
   
-  <div class="container">
-    <div class="header">
-      <div class="logo">BioNixus</div>
-      <p style="color: #666; margin: 10px 0 0 0;">Healthcare Market Research</p>
-    </div>
-    
-    <div class="content">
-      ${subscriberName ? `<p>Hi ${escapeHtml(subscriberName)},</p>` : ''}
-      ${content}
-    </div>
-    
-    <div class="footer">
-      <p><strong>BioNixus Healthcare Market Research</strong></p>
-      <p>Pharmaceutical Intelligence | GCC Markets</p>
-      <p style="margin-top: 20px;">
-        <a href="${escapeHtml(unsubscribeLink)}">Unsubscribe</a> | 
-        <a href="${BASE_URL}">Visit Website</a>
-      </p>
-      <p style="margin-top: 10px; font-size: 11px; color: #999;">
-        You're receiving this because you subscribed to BioNixus newsletters.
-      </p>
-    </div>
-  </div>
+  <!--[if mso]><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center"><![endif]-->
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width: 680px; margin: 0 auto; background: #ffffff;">
+    <!-- Header -->
+    <tr>
+      <td style="text-align: center; background: linear-gradient(135deg, #0a1628 0%, #1a2d4d 100%); background-color: #0a1628; padding: 28px 20px;">
+        <div style="font-size: 26px; font-weight: bold; color: #ffffff; letter-spacing: 2px; text-transform: uppercase;">BioNixus</div>
+        <p style="color: #c8a45a; margin: 8px 0 0 0; font-size: 14px; letter-spacing: 1px;">Healthcare Market Research</p>
+      </td>
+    </tr>
+    <!-- Greeting -->
+    ${subscriberName ? `<tr><td style="padding: 24px 24px 0 24px; font-size: 16px; color: #333;">Hi ${escapeHtml(subscriberName)},</td></tr>` : ''}
+    <!-- Content -->
+    <tr>
+      <td style="padding: 16px 0 0 0;">
+        ${content}
+      </td>
+    </tr>
+    <!-- Footer -->
+    <tr>
+      <td style="padding: 24px; border-top: 1px solid #e0e0e0; font-size: 12px; color: #666; text-align: center;">
+        <p style="margin: 0 0 4px 0;"><strong>BioNixus Healthcare Market Research</strong></p>
+        <p style="margin: 0 0 16px 0;">Pharmaceutical Intelligence | GCC Markets</p>
+        <p style="margin: 0 0 8px 0;">
+          <a href="${escapeHtml(unsubscribeLink)}" style="color: #0066cc;">Unsubscribe</a> &nbsp;|&nbsp; 
+          <a href="${BASE_URL}" style="color: #0066cc;">Visit Website</a>
+        </p>
+        <p style="margin: 8px 0 0 0; font-size: 11px; color: #999;">
+          You're receiving this because you subscribed to BioNixus newsletters.
+        </p>
+      </td>
+    </tr>
+  </table>
+  <!--[if mso]></td></tr></table><![endif]-->
 </body>
 </html>
   `

@@ -6,15 +6,21 @@ export default function AdminAnalytics() {
   const { loading: authLoading, isAuthenticated } = useAdminAuth()
   const navigate = useNavigate()
   const [analytics, setAnalytics] = useState<any>(null)
+  const [shareData, setShareData] = useState<any>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     if (!isAuthenticated) return
-    fetchAnalytics()
+    fetchAll()
   }, [isAuthenticated])
 
-  const fetchAnalytics = async () => {
+  const fetchAll = async () => {
     setLoading(true)
+    await Promise.all([fetchAnalytics(), fetchShareAnalytics()])
+    setLoading(false)
+  }
+
+  const fetchAnalytics = async () => {
     try {
       const token = getAuthToken()
       const response = await fetch('/api/admin?action=analytics', {
@@ -24,8 +30,19 @@ export default function AdminAnalytics() {
       setAnalytics(data)
     } catch (error) {
       console.error('Failed to fetch analytics:', error)
-    } finally {
-      setLoading(false)
+    }
+  }
+
+  const fetchShareAnalytics = async () => {
+    try {
+      const token = getAuthToken()
+      const response = await fetch('/api/admin?action=share-analytics', {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      const data = await response.json()
+      setShareData(data)
+    } catch (error) {
+      console.error('Failed to fetch share analytics:', error)
     }
   }
 
@@ -63,7 +80,7 @@ export default function AdminAnalytics() {
             ← Dashboard
           </button>
           <button
-            onClick={fetchAnalytics}
+            onClick={fetchAll}
             style={{
               padding: '10px 20px',
               background: '#28a745',
@@ -219,6 +236,199 @@ export default function AdminAnalytics() {
           </tbody>
         </table>
       </div>
+
+      {/* ════════════════════════════════════════════════════════════ */}
+      {/*  SHARE ANALYTICS SECTION                                    */}
+      {/* ════════════════════════════════════════════════════════════ */}
+      <div style={{ marginTop: '50px', marginBottom: '20px' }}>
+        <h2>🔗 Share Analytics</h2>
+        <p style={{ color: '#666', fontSize: '14px' }}>
+          Tracking when visitors share blog posts or case studies via social media or copy link.
+        </p>
+      </div>
+
+      {/* Share Summary Cards */}
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+          gap: '16px',
+          marginBottom: '30px',
+        }}
+      >
+        <MetricCard icon="🔗" label="Total Shares" value={shareData?.summary?.total || 0} color="#6f42c1" />
+        <MetricCard icon="💼" label="LinkedIn" value={shareData?.summary?.byPlatform?.linkedin || 0} color="#0077B5" />
+        <MetricCard icon="🐦" label="X / Twitter" value={shareData?.summary?.byPlatform?.twitter || 0} color="#1DA1F2" />
+        <MetricCard icon="📘" label="Facebook" value={shareData?.summary?.byPlatform?.facebook || 0} color="#1877F2" />
+        <MetricCard icon="💬" label="WhatsApp" value={shareData?.summary?.byPlatform?.whatsapp || 0} color="#25D366" />
+        <MetricCard icon="📋" label="Copy Link" value={shareData?.summary?.byPlatform?.copy || 0} color="#6c757d" />
+      </div>
+
+      {/* Top Shared Content */}
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: '20px',
+          marginBottom: '20px',
+        }}
+      >
+        <div
+          style={{
+            background: 'white',
+            padding: '20px',
+            borderRadius: '8px',
+            boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+          }}
+        >
+          <h3>🏆 Top Shared Content</h3>
+          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+            <thead>
+              <tr style={{ borderBottom: '2px solid #dee2e6' }}>
+                <th style={tableHeaderStyle}>Content</th>
+                <th style={tableHeaderStyle}>Type</th>
+                <th style={tableHeaderStyle}>Shares</th>
+              </tr>
+            </thead>
+            <tbody>
+              {shareData?.topShared?.length > 0 ? (
+                shareData.topShared.map((item: any, i: number) => (
+                  <tr key={i} style={{ borderBottom: '1px solid #dee2e6' }}>
+                    <td style={tableCellStyle}>
+                      <strong>{item.title}</strong>
+                    </td>
+                    <td style={tableCellStyle}>
+                      <span
+                        style={{
+                          padding: '2px 8px',
+                          borderRadius: '4px',
+                          fontSize: '11px',
+                          fontWeight: 'bold',
+                          background: item.type === 'blog' ? '#e3f2fd' : '#f3e5f5',
+                          color: item.type === 'blog' ? '#1565c0' : '#7b1fa2',
+                        }}
+                      >
+                        {item.type === 'blog' ? 'Blog' : 'Case Study'}
+                      </span>
+                    </td>
+                    <td style={{ ...tableCellStyle, fontWeight: 'bold', color: '#6f42c1' }}>
+                      {item.count}
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan={3} style={{ ...tableCellStyle, textAlign: 'center', color: '#999', padding: '30px' }}>
+                    No share data yet.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Shares by Country */}
+        <div
+          style={{
+            background: 'white',
+            padding: '20px',
+            borderRadius: '8px',
+            boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+          }}
+        >
+          <h3>🌍 Shares by Country</h3>
+          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+            <thead>
+              <tr style={{ borderBottom: '2px solid #dee2e6' }}>
+                <th style={tableHeaderStyle}>Country</th>
+                <th style={tableHeaderStyle}>Shares</th>
+              </tr>
+            </thead>
+            <tbody>
+              {shareData?.byCountry?.length > 0 ? (
+                shareData.byCountry.map((item: any, i: number) => (
+                  <tr key={i} style={{ borderBottom: '1px solid #dee2e6' }}>
+                    <td style={tableCellStyle}>{item.country}</td>
+                    <td style={{ ...tableCellStyle, fontWeight: 'bold' }}>{item.count}</td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan={2} style={{ ...tableCellStyle, textAlign: 'center', color: '#999', padding: '30px' }}>
+                    No country data yet.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Recent Share Events */}
+      <div
+        style={{
+          background: 'white',
+          padding: '20px',
+          borderRadius: '8px',
+          boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+          marginBottom: '20px',
+        }}
+      >
+        <h3>🕐 Recent Share Events</h3>
+        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+          <thead>
+            <tr style={{ borderBottom: '2px solid #dee2e6' }}>
+              <th style={tableHeaderStyle}>Time</th>
+              <th style={tableHeaderStyle}>Platform</th>
+              <th style={tableHeaderStyle}>Content</th>
+              <th style={tableHeaderStyle}>Type</th>
+              <th style={tableHeaderStyle}>Country</th>
+              <th style={tableHeaderStyle}>City</th>
+            </tr>
+          </thead>
+          <tbody>
+            {shareData?.recentEvents?.length > 0 ? (
+              shareData.recentEvents.map((evt: any) => (
+                <tr key={evt._id} style={{ borderBottom: '1px solid #dee2e6' }}>
+                  <td style={tableCellStyle}>
+                    {evt.timestamp
+                      ? new Date(evt.timestamp).toLocaleString()
+                      : '-'}
+                  </td>
+                  <td style={tableCellStyle}>
+                    <span style={{ textTransform: 'capitalize' }}>{platformLabel(evt.platform)}</span>
+                  </td>
+                  <td style={tableCellStyle}>
+                    <strong>{evt.contentTitle || evt.contentSlug}</strong>
+                  </td>
+                  <td style={tableCellStyle}>
+                    <span
+                      style={{
+                        padding: '2px 8px',
+                        borderRadius: '4px',
+                        fontSize: '11px',
+                        fontWeight: 'bold',
+                        background: evt.contentType === 'blog' ? '#e3f2fd' : '#f3e5f5',
+                        color: evt.contentType === 'blog' ? '#1565c0' : '#7b1fa2',
+                      }}
+                    >
+                      {evt.contentType === 'blog' ? 'Blog' : 'Case Study'}
+                    </span>
+                  </td>
+                  <td style={tableCellStyle}>{evt.country || '-'}</td>
+                  <td style={tableCellStyle}>{evt.city || '-'}</td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan={6} style={{ ...tableCellStyle, textAlign: 'center', color: '#999', padding: '30px' }}>
+                  No share events yet. Shares will appear here when visitors use the share buttons on blog posts and case studies.
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
     </div>
   )
 }
@@ -245,6 +455,17 @@ function getOpenRateColor(rate: number) {
   if (rate >= 40) return '#28a745' // Green
   if (rate >= 20) return '#ffc107' // Yellow
   return '#dc3545' // Red
+}
+
+function platformLabel(p: string) {
+  const map: Record<string, string> = {
+    linkedin: 'LinkedIn',
+    twitter: 'X / Twitter',
+    facebook: 'Facebook',
+    whatsapp: 'WhatsApp',
+    copy: 'Copy Link',
+  }
+  return map[p] || p
 }
 
 const tableHeaderStyle = {
