@@ -174,6 +174,8 @@ export default async function handler(req: any, res: any) {
       segments: string[]
       subscribed: boolean
       subscribedAt: string
+      emailVerified: boolean
+      verifiedAt: string
       source: string
       notes: string | null
     }
@@ -263,6 +265,8 @@ export default async function handler(req: any, res: any) {
         segments,
         subscribed: record.subscribed === 'false' ? false : true,
         subscribedAt: new Date().toISOString(),
+        emailVerified: true,
+        verifiedAt: new Date().toISOString(),
         source: 'csv_import',
         notes: record.notes?.trim() || null,
       })
