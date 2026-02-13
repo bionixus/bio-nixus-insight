@@ -229,6 +229,15 @@ Hana,Salem,hana@example.com,,,Marketing Manager,Acme Pharma,en,healthcare_provid
             </div>
           )}
 
+          {results.debug && (
+            <details style={{ marginTop: '15px', fontSize: '12px', color: '#666' }}>
+              <summary style={{ cursor: 'pointer' }}>Debug Info</summary>
+              <pre style={{ background: '#f8f8f8', padding: '10px', borderRadius: '4px', overflow: 'auto', maxHeight: '200px' }}>
+                {JSON.stringify(results.debug, null, 2)}
+              </pre>
+            </details>
+          )}
+
           <button
             onClick={() => navigate('/')}
             style={{
