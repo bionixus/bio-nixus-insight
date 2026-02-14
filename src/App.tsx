@@ -53,8 +53,14 @@ function DeferredAnalytics() {
 
   useEffect(() => {
     // Wait until after first paint + idle time before loading heavy analytics
-    const id = requestIdleCallback(() => setReady(true), { timeout: 4000 });
-    return () => cancelIdleCallback(id);
+    // requestIdleCallback is not available on older iOS Safari (<16.4), fall back to setTimeout
+    if (typeof requestIdleCallback === 'function') {
+      const id = requestIdleCallback(() => setReady(true), { timeout: 4000 });
+      return () => cancelIdleCallback(id);
+    } else {
+      const id = setTimeout(() => setReady(true), 3000);
+      return () => clearTimeout(id);
+    }
   }, []);
 
   if (!ready) return null;
