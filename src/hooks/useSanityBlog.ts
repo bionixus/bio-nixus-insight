@@ -12,14 +12,19 @@ export function useSanityBlog() {
     queryKey: ['sanity-blog', language],
     queryFn: fetchSanityPosts,
     enabled: isSanityConfigured(),
-    staleTime: 5 * 60 * 1000, // 5 minutes — Sanity CDN is fast, no need to re-fetch on every page visit
-    gcTime: 30 * 60 * 1000, // keep in cache for 30 minutes even when unmounted
-    refetchOnWindowFocus: false,
+    staleTime: 60 * 1000, // 1 minute
   });
 
+  // Filter by language, then ensure sorted by publish date (newest first)
   const data = useMemo(() => {
     const posts = query.data ?? [];
-    return posts.filter((p) => !p.language || p.language === language);
+    return posts
+      .filter((p) => !p.language || p.language === language)
+      .sort((a, b) => {
+        const da = a.date ? new Date(a.date).getTime() : 0;
+        const db = b.date ? new Date(b.date).getTime() : 0;
+        return db - da; // newest first
+      });
   }, [query.data, language]);
 
   return { ...query, data };
