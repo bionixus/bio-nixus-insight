@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Mail, MapPin, Phone } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 type ContactValidation = {
   firstName?: string;
@@ -45,6 +46,7 @@ function sendErrorEmail(
 
 const ContactSection = () => {
   const { t, language } = useLanguage();
+  const sectionRef = useScrollReveal<HTMLElement>({ stagger: 80 });
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
@@ -122,11 +124,11 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="section-padding bg-background">
+    <section id="contact" className="section-padding bg-background" ref={sectionRef}>
       <div className="container-wide">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
-          <div className="animate-slide-in-left">
+          <div className="sr sr-left">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6">
               {t.contact.title}
             </h2>
@@ -196,7 +198,7 @@ const ContactSection = () => {
           </div>
 
           {/* Right - Contact Form Card or Success Message */}
-          <div id="request-proposal" className="bg-card p-8 lg:p-10 rounded-2xl shadow-elegant border border-border animate-slide-in-right scroll-mt-24">
+          <div id="request-proposal" className="bg-card p-8 lg:p-10 rounded-2xl shadow-elegant border border-border sr sr-right scroll-mt-24">
             {submitted ? (
               <div className="success-message text-center" lang={language}>
                 <div className="success-icon w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-primary">

@@ -5,10 +5,16 @@ import { ArrowLeft, Globe, Users, TrendingUp, Shield, Target, Microscope } from 
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { Helmet } from 'react-helmet-async';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const About = () => {
   const { language } = useLanguage();
   const basePath = languagePaths[language] || '/';
+  const heroRef = useScrollReveal<HTMLElement>({ stagger: 80 });
+  const storyRef = useScrollReveal<HTMLElement>({ stagger: 100 });
+  const diffRef = useScrollReveal<HTMLElement>({ stagger: 120 });
+  const valuesRef = useScrollReveal<HTMLElement>({ stagger: 100 });
+  const presenceRef = useScrollReveal<HTMLElement>({ stagger: 100 });
 
   return (
     <div className="min-h-screen bg-background">
@@ -35,28 +41,28 @@ const About = () => {
         </div>
 
         {/* Hero */}
-        <section className="section-padding pt-4 pb-16">
+        <section className="section-padding pt-4 pb-16" ref={heroRef}>
           <div className="container-wide max-w-5xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 sr sr-left sr-fast">
               About BioNixus
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl sr sr-up sr-line">
               International Market Research Company with Deep EMEA Heritage
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mb-8">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mb-8 sr sr-up">
               BioNixus is an international healthcare market research firm headquartered in the United States with offices in London, United Kingdom. We specialise in pharmaceutical and life sciences consulting across Europe, the Middle East, and North Africa.
             </p>
           </div>
         </section>
 
         {/* Our Story */}
-        <section className="section-padding py-16 bg-cream-dark">
+        <section className="section-padding py-16 bg-cream-dark" ref={storyRef}>
           <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-8">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-8 sr sr-up sr-line">
               Our Story
             </h2>
             <div className="grid md:grid-cols-2 gap-12">
-              <div className="space-y-5 text-muted-foreground leading-relaxed">
+              <div className="space-y-5 text-muted-foreground leading-relaxed sr sr-left">
                 <p>
                   BioNixus was founded on a simple premise: pharmaceutical companies deserve actionable, on-the-ground intelligence from the markets they serve — not repackaged secondary data from thousands of miles away.
                 </p>
@@ -64,7 +70,7 @@ const About = () => {
                   We recognised that the MENA region — home to some of the world's fastest-growing pharmaceutical markets — was consistently underserved by traditional research firms. Physicians in Saudi Arabia, the UAE, Egypt, Kuwait, and Qatar had critical insights to share, but the existing research infrastructure wasn't built to reach them effectively.
                 </p>
               </div>
-              <div className="space-y-5 text-muted-foreground leading-relaxed">
+              <div className="space-y-5 text-muted-foreground leading-relaxed sr sr-right">
                 <p>
                   Today, BioNixus operates across 17+ countries, delivering quantitative and qualitative research in English, Arabic, French, German, Spanish, and Chinese. Our dual presence in the USA and UK positions us as a bridge between Western pharmaceutical innovation and EMEA market realities.
                 </p>
@@ -77,17 +83,17 @@ const About = () => {
         </section>
 
         {/* What Sets Us Apart */}
-        <section className="section-padding py-16">
+        <section className="section-padding py-16" ref={diffRef}>
           <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4 sr sr-up sr-line">
               What Sets Us Apart
             </h2>
-            <p className="text-muted-foreground mb-12 max-w-2xl">
+            <p className="text-muted-foreground mb-12 max-w-2xl sr sr-up">
               Three core differentiators define the BioNixus approach to healthcare market research.
             </p>
             <div className="grid md:grid-cols-3 gap-8">
               {/* Differentiator 1 */}
-              <div className="bg-card border border-border rounded-xl p-8">
+              <div className="bg-card border border-border rounded-xl p-8 sr sr-scale-up sr-spring hover-lift">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
                   <Globe className="w-6 h-6 text-primary" />
                 </div>
@@ -99,7 +105,7 @@ const About = () => {
                 </p>
               </div>
               {/* Differentiator 2 */}
-              <div className="bg-card border border-border rounded-xl p-8">
+              <div className="bg-card border border-border rounded-xl p-8 sr sr-scale-up sr-spring hover-lift">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
                   <TrendingUp className="w-6 h-6 text-primary" />
                 </div>
@@ -111,7 +117,7 @@ const About = () => {
                 </p>
               </div>
               {/* Differentiator 3 */}
-              <div className="bg-card border border-border rounded-xl p-8">
+              <div className="bg-card border border-border rounded-xl p-8 sr sr-scale-up sr-spring hover-lift">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
                   <Users className="w-6 h-6 text-primary" />
                 </div>
@@ -127,13 +133,13 @@ const About = () => {
         </section>
 
         {/* Our Values */}
-        <section className="section-padding py-16 bg-cream-dark">
+        <section className="section-padding py-16 bg-cream-dark" ref={valuesRef}>
           <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-12">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-12 sr sr-up sr-line">
               Our Values
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="flex gap-5">
+              <div className="flex gap-5 sr sr-left hover-lift">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-1">
                   <Shield className="w-5 h-5 text-primary" />
                 </div>
@@ -144,7 +150,7 @@ const About = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex gap-5">
+              <div className="flex gap-5 sr sr-right hover-lift">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-1">
                   <Target className="w-5 h-5 text-primary" />
                 </div>
@@ -155,7 +161,7 @@ const About = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex gap-5">
+              <div className="flex gap-5 sr sr-left hover-lift">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-1">
                   <Microscope className="w-5 h-5 text-primary" />
                 </div>
@@ -166,7 +172,7 @@ const About = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex gap-5">
+              <div className="flex gap-5 sr sr-right hover-lift">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-1">
                   <Globe className="w-5 h-5 text-primary" />
                 </div>
@@ -182,13 +188,13 @@ const About = () => {
         </section>
 
         {/* Global Presence */}
-        <section className="section-padding py-16">
+        <section className="section-padding py-16" ref={presenceRef}>
           <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-8">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-8 sr sr-up sr-line">
               Global Presence
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-card border border-border rounded-xl p-8">
+              <div className="bg-card border border-border rounded-xl p-8 sr sr-left hover-lift">
                 <h3 className="text-lg font-display font-semibold text-foreground mb-3">
                   United States — Headquarters
                 </h3>
@@ -198,7 +204,7 @@ const About = () => {
                   <a href="tel:+18884655557" className="text-primary hover:underline">+1 888 465 5557</a>
                 </p>
               </div>
-              <div className="bg-card border border-border rounded-xl p-8">
+              <div className="bg-card border border-border rounded-xl p-8 sr sr-right hover-lift">
                 <h3 className="text-lg font-display font-semibold text-foreground mb-3">
                   United Kingdom — London Office
                 </h3>
@@ -209,10 +215,10 @@ const About = () => {
                 </p>
               </div>
             </div>
-            <div className="mt-12 text-center">
+            <div className="mt-12 text-center sr sr-up">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors shimmer"
               >
                 Request a Proposal
               </Link>

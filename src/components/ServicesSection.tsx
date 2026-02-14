@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const icons = [TrendingUp, Target, Users, Microscope, Rocket, BarChart3];
 
@@ -28,6 +29,7 @@ type SecondaryDeBlock = { title: string; intro: string; items: string[] };
 
 const ServicesSection = () => {
   const { t, language } = useLanguage();
+  const sectionRef = useScrollReveal<HTMLElement>({ stagger: 100 });
   const rawPrimaryAr = 'servicePrimaryAr' in t.services ? (t.services as { servicePrimaryAr?: PrimaryArBlock | PrimaryArBlock[] }).servicePrimaryAr : undefined;
   const primaryBlocks: PrimaryArBlock[] = Array.isArray(rawPrimaryAr) ? rawPrimaryAr : (rawPrimaryAr ? [rawPrimaryAr] : []);
   const rawSecondaryAr = 'serviceSecondaryAr' in t.services ? (t.services as { serviceSecondaryAr?: SecondaryArBlock | SecondaryArBlock[] }).serviceSecondaryAr : undefined;
@@ -67,14 +69,14 @@ const ServicesSection = () => {
         : t.services.items;
 
   return (
-    <section id="services" className="section-padding bg-cream">
+    <section id="services" className="section-padding bg-cream" ref={sectionRef}>
       <div className="container-wide">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 animate-fade-up">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 sr sr-up sr-line sr-line-center">
             {t.services.title}
           </h2>
-          <p className="text-lg text-muted-foreground animate-fade-up animation-delay-200">
+          <p className="text-lg text-muted-foreground sr sr-up">
             {t.services.subtitle}
           </p>
         </div>
@@ -408,16 +410,14 @@ const ServicesSection = () => {
               <Link
                 key={index}
                 to={linkHref}
-                className="service-card group animate-fade-up cursor-pointer"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="service-card group sr sr-scale-up sr-spring hover-lift cursor-pointer"
               >
                 {cardContent}
               </Link>
             ) : (
               <div
                 key={index}
-                className="service-card group animate-fade-up"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="service-card group sr sr-scale-up sr-spring hover-lift"
               >
                 {cardContent}
               </div>

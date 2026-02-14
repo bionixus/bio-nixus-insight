@@ -1,4 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 type TherapeuticArea = { name: string; description: string };
 type TherapeuticAreasDe = { title: string; areas: TherapeuticArea[] };
@@ -9,6 +10,7 @@ type TherapeuticAreasZh = TherapeuticAreasDe;
 
 const TherapeuticAreasSection = () => {
   const { t, language } = useLanguage();
+  const sectionRef = useScrollReveal<HTMLElement>({ stagger: 60 });
   const dataDe = 'therapeuticAreasDe' in t ? (t as { therapeuticAreasDe?: TherapeuticAreasDe }).therapeuticAreasDe : undefined;
   const dataFr = 'therapeuticAreasFr' in t ? (t as { therapeuticAreasFr?: TherapeuticAreasFr }).therapeuticAreasFr : undefined;
   const dataEs = 'therapeuticAreasEs' in t ? (t as { therapeuticAreasEs?: TherapeuticAreasEs }).therapeuticAreasEs : undefined;
@@ -22,17 +24,17 @@ const TherapeuticAreasSection = () => {
       id="therapeutic-areas"
       className="therapeutic-areas section-padding bg-muted/30"
       lang={language}
+      ref={sectionRef}
     >
       <div className="container-wide">
-        <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up">
+        <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 sr sr-up sr-line sr-line-center">
           {data.title}
         </h2>
         <div className="areas-grid grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {data.areas.map((area, i) => (
             <div
               key={i}
-              className="area rounded-xl bg-background p-6 shadow-sm border border-border animate-fade-up"
-              style={{ animationDelay: `${i * 50}ms` }}
+              className="area rounded-xl bg-background p-6 shadow-sm border border-border sr sr-scale-up sr-spring hover-lift"
             >
               <h4 className="font-display font-semibold text-foreground mb-2">
                 {area.name}

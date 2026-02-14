@@ -1,4 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 type CoverageSection = { heading: string; items?: string[]; text?: string };
 type CountryCard = {
@@ -22,6 +23,7 @@ type GeographicCoverageZh = GeographicCoverageDe;
 
 const GeographicCoverageSection = () => {
   const { t, language } = useLanguage();
+  const sectionRef = useScrollReveal<HTMLElement>({ stagger: 80 });
   const dataEn = 'geographicCoverageEn' in t ? (t as { geographicCoverageEn?: GeographicCoverageDe }).geographicCoverageEn : undefined;
   const dataAr = 'geographicCoverageAr' in t ? (t as { geographicCoverageAr?: GeographicCoverageAr }).geographicCoverageAr : undefined;
   const dataDe = 'geographicCoverageDe' in t ? (t as { geographicCoverageDe?: GeographicCoverageDe }).geographicCoverageDe : undefined;
@@ -36,21 +38,22 @@ const GeographicCoverageSection = () => {
         id="geographic-coverage"
         className="geographic-coverage section-padding bg-muted/30"
         lang="en"
+        ref={sectionRef}
       >
         <div className="container-wide">
-          <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up">
+          <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 sr sr-up sr-line sr-line-center">
             {dataEn.title}
           </h2>
           <div className="region-overview space-y-10">
             {dataEn.regions.map((region, i) => (
-              <div key={i} className={`region ${region.class || ''}`}>
+              <div key={i} className={`region ${region.class || ''} sr sr-up`}>
                 <h3 className="text-xl font-display font-semibold text-foreground mb-6">
                   {region.name}
                 </h3>
                 {region.countries && (
                   <div className="country-grid grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {region.countries.map((country, j) => (
-                      <div key={j} className="country rounded-xl bg-background p-6 shadow-sm border border-border">
+                      <div key={j} className="country rounded-xl bg-background p-6 shadow-sm border border-border sr sr-scale-up hover-lift">
                         <h4 className="font-semibold text-foreground mb-3">{country.name}</h4>
                         <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
                           {country.items.map((item, k) => (

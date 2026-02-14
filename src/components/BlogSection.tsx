@@ -12,6 +12,7 @@ import {
 } from '@/components/ui/select';
 
 import { optimizeSanityImage } from '@/lib/image-utils';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 import blogImage1 from '@/assets/blog-insight-1.png';
 import blogImage2 from '@/assets/blog-insight-2.png';
@@ -35,6 +36,7 @@ function getImageSrcSet(url: string | undefined): string | undefined {
 
 const BlogSection = ({ posts }: BlogSectionProps) => {
   const { t } = useLanguage();
+  const sectionRef = useScrollReveal<HTMLElement>({ stagger: 120 });
   const [selectedCategory, setSelectedCategory] = useState<string>('');
   const [selectedCountry, setSelectedCountry] = useState<string>('');
 
@@ -70,19 +72,19 @@ const BlogSection = ({ posts }: BlogSectionProps) => {
   }, [list, selectedCategory, selectedCountry]);
 
   return (
-    <section id="insights" className="section-padding bg-background">
+    <section id="insights" className="section-padding bg-background" ref={sectionRef}>
       <div className="container-wide">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 animate-fade-up">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 sr sr-up sr-line sr-line-center">
             {t.blog.title}
           </h2>
-          <p className="text-lg text-muted-foreground animate-fade-up animation-delay-200">
+          <p className="text-lg text-muted-foreground sr sr-up">
             {t.blog.subtitle}
           </p>
         </div>
 
         {list.length > 0 && (categories.length > 1 || countries.length > 1) && (
-          <div className="flex flex-wrap gap-4 mb-10 animate-fade-up">
+          <div className="flex flex-wrap gap-4 mb-10 sr sr-up">
             {categories.length > 1 && (
               <div className="flex items-center gap-2">
                 <span className="text-sm text-muted-foreground whitespace-nowrap">{t.blog.filterByTopic}</span>
@@ -127,8 +129,7 @@ const BlogSection = ({ posts }: BlogSectionProps) => {
             <Link
               key={post.id}
               to={`/blog/${post.slug}`}
-              className="group block animate-fade-up"
-              style={{ animationDelay: `${index * 150}ms` }}
+              className="group block sr sr-scale-up sr-spring hover-lift"
             >
               <article className="cursor-pointer">
                 <div className="relative aspect-[16/10] rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-primary via-primary/95 to-navy-medium">
@@ -175,7 +176,7 @@ const BlogSection = ({ posts }: BlogSectionProps) => {
           </p>
         )}
 
-        <div className="text-center mt-12 animate-fade-up">
+        <div className="text-center mt-12 sr sr-up">
           <Link
             to="/blog"
             className="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary/90 transition-colors"

@@ -67,7 +67,7 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-up animation-delay-600">
             <Link
               to={contactPath}
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gold-warm text-navy-deep rounded-lg font-semibold hover:bg-gold-light transition-colors group"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gold-warm text-navy-deep rounded-lg font-semibold hover:bg-gold-light transition-colors group shimmer"
             >
               {t.hero.cta}
               <ArrowRight className={`w-5 h-5 transition-transform ${isRTL ? 'rtl:scale-x-[-1] group-hover:-translate-x-1' : 'group-hover:translate-x-1'}`} />
@@ -99,10 +99,10 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Decorative elements */}
+        {/* Decorative elements with gentle floating */}
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-2/3 hidden lg:block">
-          <div className="absolute top-0 right-20 w-72 h-72 rounded-full bg-gold-warm/10 blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-white/5 blur-3xl" />
+          <div className="absolute top-0 right-20 w-72 h-72 rounded-full bg-gold-warm/10 blur-3xl float-gentle" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-white/5 blur-3xl float-gentle-delayed" />
         </div>
       </div>
 

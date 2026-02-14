@@ -1,4 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 type MethodologyStep = {
   title: string;
@@ -17,6 +18,7 @@ type MethodologyEn = { title: string; intro?: string; steps: MethodologyStepDe[]
 
 const MethodologySection = () => {
   const { t, language } = useLanguage();
+  const sectionRef = useScrollReveal<HTMLElement>({ stagger: 100 });
   const dataEn = 'methodologyEn' in t ? (t as { methodologyEn?: MethodologyEn }).methodologyEn : undefined;
   const dataAr = 'methodologyAr' in t ? (t as { methodologyAr?: MethodologyAr }).methodologyAr : undefined;
   const dataDe = 'methodologyDe' in t ? (t as { methodologyDe?: MethodologyDe }).methodologyDe : undefined;
@@ -31,13 +33,14 @@ const MethodologySection = () => {
         id="methodology"
         className="methodology section-padding bg-cream"
         lang="en"
+        ref={sectionRef}
       >
         <div className="container-wide">
-          <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up">
+          <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 sr sr-up sr-line sr-line-center">
             {dataEn.title}
           </h2>
           {dataEn.intro && (
-            <p className="text-center text-muted-foreground text-lg max-w-3xl mx-auto mb-10">
+            <p className="text-center text-muted-foreground text-lg max-w-3xl mx-auto mb-10 sr sr-up">
               {dataEn.intro}
             </p>
           )}
@@ -45,8 +48,7 @@ const MethodologySection = () => {
             {dataEn.steps.map((step, i) => (
               <div
                 key={i}
-                className="step rounded-xl bg-background p-6 md:p-8 shadow-sm border border-border animate-fade-up"
-                style={{ animationDelay: `${i * 80}ms` }}
+                className="step rounded-xl bg-background p-6 md:p-8 shadow-sm border border-border sr sr-left hover-lift"
               >
                 <h3 className="text-lg md:text-xl font-display font-semibold text-foreground mb-3">
                   {step.title}

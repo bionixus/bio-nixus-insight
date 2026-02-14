@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 function parseStatValue(value: string): { number: number; suffix: string } {
@@ -20,6 +20,7 @@ const StatsSection = () => {
   const [inView, setInView] = useState(false);
   const parsed = t.stats.items.map((s) => parseStatValue(s.value));
   const [counts, setCounts] = useState<number[]>(() => parsed.map(() => 0));
+  const [done, setDone] = useState(false);
   const rafRef = useRef<number>(0);
   const startRef = useRef<number | null>(null);
 
@@ -47,16 +48,20 @@ const StatsSection = () => {
       const progress = Math.min(elapsed / DURATION_MS, 1);
       const eased = easeOutExpo(progress);
       setCounts(targets.map((target) => Math.round(eased * target)));
-      if (progress < 1) rafRef.current = requestAnimationFrame(step);
+      if (progress < 1) {
+        rafRef.current = requestAnimationFrame(step);
+      } else {
+        setDone(true);
+      }
     };
     rafRef.current = requestAnimationFrame(step);
     return () => cancelAnimationFrame(rafRef.current);
   }, [inView, t.stats.items]);
 
   return (
-    <section ref={sectionRef} id="about" className="section-padding bg-primary">
+    <section ref={sectionRef} id="about" className="section-padding bg-primary overflow-hidden">
       <div className="container-wide">
-        <h2 className="text-3xl md:text-4xl font-display font-semibold text-primary-foreground text-center mb-16 animate-fade-up">
+        <h2 className={`text-3xl md:text-4xl font-display font-semibold text-primary-foreground text-center mb-16 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           {t.stats.title}
         </h2>
 
@@ -64,14 +69,14 @@ const StatsSection = () => {
           {t.stats.items.map((stat, index) => (
             <div
               key={index}
-              className="text-center animate-fade-up"
-              style={{ animationDelay: `${index * 150}ms` }}
+              className={`text-center transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              style={{ transitionDelay: `${index * 150}ms` }}
             >
-              <div className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gold-warm mb-3 tabular-nums">
+              <div className={`text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gold-warm mb-3 tabular-nums ${done ? 'glow-pop' : ''}`}>
                 {counts[index] ?? 0}
                 {parsed[index]?.suffix ?? ''}
               </div>
-              <div className="text-primary-foreground/80 font-medium">
+              <div className={`text-primary-foreground/80 font-medium transition-all duration-500 ${done ? 'opacity-100' : 'opacity-60'}`}>
                 {stat.label}
               </div>
             </div>

@@ -1,19 +1,21 @@
 import { Quote } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const TestimonialsSection = () => {
   const { t } = useLanguage();
   const testimonials = t.testimonials.items;
+  const sectionRef = useScrollReveal<HTMLElement>({ stagger: 120 });
 
   return (
-    <section className="section-padding bg-cream-dark">
+    <section className="section-padding bg-cream-dark" ref={sectionRef}>
       <div className="container-wide">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 animate-fade-up">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 sr sr-up sr-line sr-line-center">
             {t.testimonials.title}
           </h2>
-          <p className="text-lg text-foreground/70 animate-fade-up animation-delay-200">
+          <p className="text-lg text-foreground/70 sr sr-up">
             {t.testimonials.subtitle}
           </p>
         </div>
@@ -23,8 +25,7 @@ const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-background p-8 rounded-xl shadow-sm border border-border animate-fade-up"
-              style={{ animationDelay: `${index * 150}ms` }}
+              className="bg-background p-8 rounded-xl shadow-sm border border-border sr sr-scale-up sr-spring hover-lift"
             >
               <Quote className="w-10 h-10 text-gold-warm mb-6" />
               <blockquote className="text-lg text-foreground leading-relaxed mb-8 font-display italic">
