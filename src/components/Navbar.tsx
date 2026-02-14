@@ -45,8 +45,8 @@ const Navbar = () => {
     { href: basePath, label: t.nav.home },
     { href: `${basePath}#services`, label: t.nav.services },
     { href: `${basePath}#insights`, label: t.nav.insights },
-    { href: `${basePath}#about`, label: t.nav.about },
-    { href: `${basePath === '/' ? '' : basePath}/contact`, label: t.nav.contact },
+    { href: `${basePath}#about`, label: 'Expertise' },
+    { href: '/about', label: t.nav.about },
   ];
 
   return (

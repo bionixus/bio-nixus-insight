@@ -6,9 +6,20 @@ import {
   Rocket, 
   BarChart3 
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const icons = [TrendingUp, Target, Users, Microscope, Rocket, BarChart3];
+
+/** Maps each service card index to its dedicated page slug (or null for no link). */
+const serviceLinks: (string | null)[] = [
+  '/services/quantitative-research',
+  '/services/qualitative-research',
+  '/services/market-access',
+  '/services/kol-stakeholder-mapping',
+  null, // Geographic Coverage — no dedicated page
+  null, // Methodology & Compliance — no dedicated page
+];
 
 type PrimaryArBlock = { title: string; lead: string; countries: { name: string; items: string[] }[]; deliverables: string };
 type SecondaryArBlock = { title: string; intro: string; regions: { name: string; items: string[] }[]; note: string };
@@ -367,15 +378,13 @@ const ServicesSection = () => {
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {gridItems.map((service, index) => {
-            const Icon = icons[
-              showPrimaryFr || showPrimaryEs || showPrimaryZh ? index : showPrimaryAr ? index + primaryBlocks.length : showPrimaryDe ? index + primaryDeBlocks.length : index
-            ];
-            return (
-              <div
-                key={index}
-                className="service-card group animate-fade-up"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
+            const iconIndex =
+              showPrimaryFr || showPrimaryEs || showPrimaryZh ? index : showPrimaryAr ? index + primaryBlocks.length : showPrimaryDe ? index + primaryDeBlocks.length : index;
+            const Icon = icons[iconIndex];
+            const linkHref = serviceLinks[iconIndex] || null;
+
+            const cardContent = (
+              <>
                 <div className="w-14 h-14 rounded-xl bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors">
                   <Icon className="w-7 h-7 text-primary" />
                 </div>
@@ -392,6 +401,25 @@ const ServicesSection = () => {
                     ))}
                   </ul>
                 )}
+              </>
+            );
+
+            return linkHref ? (
+              <Link
+                key={index}
+                to={linkHref}
+                className="service-card group animate-fade-up cursor-pointer"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                {cardContent}
+              </Link>
+            ) : (
+              <div
+                key={index}
+                className="service-card group animate-fade-up"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                {cardContent}
               </div>
             );
           })}
