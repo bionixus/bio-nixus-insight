@@ -17,7 +17,7 @@ const Footer = lazy(() => import('@/components/Footer'));
 
 const Index = () => {
   const { hash } = useLocation();
-  const { data: sanityPosts } = useSanityBlog();
+  const { data: sanityPosts, isLoading: blogLoading } = useSanityBlog();
 
   useEffect(() => {
     if (hash) {
@@ -43,7 +43,7 @@ const Index = () => {
           <MethodologySection />
           <TherapeuticAreasSection />
           <StatsSection />
-          <BlogSection posts={sanityPosts?.slice(0, 3) ?? undefined} />
+          <BlogSection posts={sanityPosts?.slice(0, 3) ?? undefined} isLoading={blogLoading} />
           <TestimonialsSection />
           <ContactSection />
         </Suspense>

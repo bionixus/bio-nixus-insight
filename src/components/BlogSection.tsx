@@ -20,6 +20,8 @@ import blogImage3 from '@/assets/blog-insight-3.png';
 
 interface BlogSectionProps {
   posts?: BlogPost[];
+  /** When true, shows skeleton cards instead of fallback content */
+  isLoading?: boolean;
 }
 
 const DEFAULT_COVER_IMAGES = [blogImage1, blogImage2, blogImage3];
@@ -34,7 +36,7 @@ function getImageSrcSet(url: string | undefined): string | undefined {
   return `${optimizeSanityImage(url, 400, 250)} 400w, ${optimizeSanityImage(url, 640, 400)} 640w, ${optimizeSanityImage(url, 768, 480)} 768w`;
 }
 
-const BlogSection = ({ posts }: BlogSectionProps) => {
+const BlogSection = ({ posts, isLoading }: BlogSectionProps) => {
   const { t } = useLanguage();
   const sectionRef = useScrollReveal<HTMLElement>({ stagger: 120 });
   const [selectedCategory, setSelectedCategory] = useState<string>('');
@@ -51,7 +53,8 @@ const BlogSection = ({ posts }: BlogSectionProps) => {
     coverImage: 'coverImage' in item && typeof item.coverImage === 'string' ? item.coverImage : undefined,
   }));
 
-  const list = (posts && posts.length > 0 ? posts : fallbackItems) as BlogPost[];
+  // Show real posts if available; only fall back to hardcoded items when NOT loading and no posts returned
+  const list = (posts && posts.length > 0 ? posts : (isLoading ? [] : fallbackItems)) as BlogPost[];
 
   const categories = useMemo(() => {
     const set = new Set(list.map((p) => p.category).filter(Boolean));
@@ -125,6 +128,22 @@ const BlogSection = ({ posts }: BlogSectionProps) => {
         )}
 
         <div className="grid lg:grid-cols-3 gap-8">
+          {/* Skeleton loading cards */}
+          {isLoading && filteredPosts.length === 0 && [0, 1, 2].map((i) => (
+            <div key={`skeleton-${i}`} className="animate-pulse sr sr-scale-up" style={{ opacity: 1 }}>
+              <div className="aspect-[16/10] rounded-xl bg-muted/50 mb-6" />
+              <div className="space-y-3">
+                <div className="flex gap-3">
+                  <div className="h-5 w-20 bg-muted/40 rounded-full" />
+                  <div className="h-5 w-16 bg-muted/30 rounded" />
+                </div>
+                <div className="h-6 w-full bg-muted/50 rounded" />
+                <div className="h-4 w-5/6 bg-muted/30 rounded" />
+                <div className="h-4 w-2/3 bg-muted/20 rounded" />
+              </div>
+            </div>
+          ))}
+
           {filteredPosts.map((post, index) => (
             <Link
               key={post.id}
@@ -170,7 +189,7 @@ const BlogSection = ({ posts }: BlogSectionProps) => {
           ))}
         </div>
 
-        {filteredPosts.length === 0 && (
+        {filteredPosts.length === 0 && !isLoading && (
           <p className="text-center text-muted-foreground py-12 animate-fade-up">
             No articles match the selected filters.
           </p>
