@@ -563,6 +563,7 @@ const BlogPost = () => {
             currentSlug={slug!}
             category={post.category}
             date={post.date}
+            country={post.country}
           />
         </div>
       </main>

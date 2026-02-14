@@ -51,16 +51,40 @@ const POST_BY_SLUG_QUERY = `*[_type in ["post", "blogPost"] && slug.current == $
   "authorImage": author->image.asset->url
 }`;
 
+/**
+ * Infer a category from post title/excerpt when the Sanity `category` field is empty.
+ * Matches against common healthcare market research topics.
+ */
+function inferCategory(title?: string, excerpt?: string): string {
+  const text = `${title ?? ''} ${excerpt ?? ''}`.toLowerCase();
+  const rules: [string, string[]][] = [
+    ['Market Access', ['market access', 'hta', 'pricing', 'reimbursement', 'pharmacoeconomics', 'vpag', 'jca']],
+    ['Regulatory & Policy', ['regulatory', 'sfda', 'fda', 'ema', 'approval', 'regulation', 'orphan drug', 'rare disease', 'designation']],
+    ['Quantitative Research', ['quantitative', 'physician survey', 'survey', 'sentiment index', 'data quality']],
+    ['Qualitative Research', ['qualitative', 'kol', 'advisory board', 'interview', 'ethnograph']],
+    ['Market Intelligence', ['market research', 'market entry', 'market trend', 'competitive intelligence', 'market size', 'market guide', 'definitive guide']],
+    ['Digital Health', ['digital health', 'digital transformation', 'telemedicine', 'ai in health']],
+    ['Clinical Development', ['clinical trial', 'clinical development', 'pipeline', 'glp-1', 'obesity']],
+    ['Hospital & Provider', ['hospital', 'provider', 'strategic sourcing', 'procurement']],
+  ];
+  for (const [category, keywords] of rules) {
+    if (keywords.some((kw) => text.includes(kw))) return category;
+  }
+  return 'Industry Insights';
+}
+
 function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | null {
   if (!p) return null;
-  const categoryStr =
-    typeof p.category === 'string'
+  const rawCategory =
+    typeof p.category === 'string' && p.category.trim()
       ? p.category
       : (p as RawSanityPost & { categoryTitle?: string }).categoryTitle ??
         (Array.isArray((p as RawSanityPost & { categories?: string[] }).categories)
           ? (p as RawSanityPost & { categories: string[] }).categories[0]
           : '') ??
         '';
+  // Use the Sanity category if present, otherwise infer from title/excerpt
+  const categoryStr = rawCategory || inferCategory(p.title, p.excerpt);
   const countryStr =
     typeof p.country === 'string'
       ? p.country
@@ -141,27 +165,25 @@ export async function fetchSanityPostBySlug(slug: string): Promise<BlogPost | nu
  * Fetch related posts by same category, excluding the current post.
  * Also returns prev/next posts by date for navigation chain.
  */
+/**
+ * Related posts query: finds posts by same category OR same country (since category is often null).
+ * Falls back to latest posts excluding the current one.
+ */
 const RELATED_POSTS_QUERY = `{
-  "related": *[_type in ["post", "blogPost"] && defined(slug.current) && slug.current != $slug && category == $category] | order(publishedAt desc, _createdAt desc)[0...3] {
-    _id,
-    _type,
-    title,
-    "slug": slug.current,
-    excerpt,
-    "date": coalesce(publishedAt, _createdAt),
-    category,
-    country,
-    "coverImage": mainImage.asset->url
+  "byCategory": *[_type in ["post", "blogPost"] && defined(slug.current) && slug.current != $slug && category == $category && $category != ""] | order(publishedAt desc, _createdAt desc)[0...3] {
+    _id, _type, title, "slug": slug.current, excerpt, "date": coalesce(publishedAt, _createdAt), category, country, "coverImage": mainImage.asset->url
+  },
+  "byCountry": *[_type in ["post", "blogPost"] && defined(slug.current) && slug.current != $slug && country == $country && $country != ""] | order(publishedAt desc, _createdAt desc)[0...6] {
+    _id, _type, title, "slug": slug.current, excerpt, "date": coalesce(publishedAt, _createdAt), category, country, "coverImage": mainImage.asset->url
+  },
+  "latest": *[_type in ["post", "blogPost"] && defined(slug.current) && slug.current != $slug] | order(publishedAt desc, _createdAt desc)[0...6] {
+    _id, _type, title, "slug": slug.current, excerpt, "date": coalesce(publishedAt, _createdAt), category, country, "coverImage": mainImage.asset->url
   },
   "prev": *[_type in ["post", "blogPost"] && defined(slug.current) && coalesce(publishedAt, _createdAt) < $date] | order(publishedAt desc, _createdAt desc)[0] {
-    _id,
-    title,
-    "slug": slug.current
+    _id, title, "slug": slug.current
   },
   "next": *[_type in ["post", "blogPost"] && defined(slug.current) && coalesce(publishedAt, _createdAt) > $date] | order(publishedAt asc, _createdAt asc)[0] {
-    _id,
-    title,
-    "slug": slug.current
+    _id, title, "slug": slug.current
   }
 }`;
 
@@ -174,17 +196,40 @@ export interface RelatedPostsData {
 export async function fetchRelatedPosts(
   slug: string,
   category: string,
-  date: string
+  date: string,
+  country?: string
 ): Promise<RelatedPostsData> {
   try {
     const client = getSanityClient();
     const raw = await client.fetch<{
-      related: RawSanityPost[];
+      byCategory: RawSanityPost[];
+      byCountry: RawSanityPost[];
+      latest: RawSanityPost[];
       prev: { _id: string; title: string; slug: string } | null;
       next: { _id: string; title: string; slug: string } | null;
-    }>(RELATED_POSTS_QUERY, { slug, category: category || '', date: date || '' });
+    }>(RELATED_POSTS_QUERY, {
+      slug,
+      category: category || '',
+      country: country || '',
+      date: date || '',
+    });
+
+    // Priority: same category > same country > latest posts. Deduplicate & limit to 3.
+    const seen = new Set<string>();
+    const merged: BlogPost[] = [];
+    for (const pool of [raw.byCategory, raw.byCountry, raw.latest]) {
+      for (const p of pool || []) {
+        if (seen.has(p._id) || merged.length >= 3) continue;
+        const mapped = mapRawToPost(p);
+        if (mapped) {
+          seen.add(p._id);
+          merged.push(mapped);
+        }
+      }
+    }
+
     return {
-      related: (raw.related || []).map((p) => mapRawToPost(p)!).filter(Boolean),
+      related: merged,
       prev: raw.prev ? { slug: raw.prev.slug, title: raw.prev.title } : null,
       next: raw.next ? { slug: raw.next.slug, title: raw.next.title } : null,
     };

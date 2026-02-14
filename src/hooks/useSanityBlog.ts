@@ -12,7 +12,9 @@ export function useSanityBlog() {
     queryKey: ['sanity-blog', language],
     queryFn: fetchSanityPosts,
     enabled: isSanityConfigured(),
-    staleTime: 60 * 1000, // 1 minute
+    staleTime: 5 * 60 * 1000, // 5 minutes — Sanity CDN is fast, no need to re-fetch on every page visit
+    gcTime: 30 * 60 * 1000, // keep in cache for 30 minutes even when unmounted
+    refetchOnWindowFocus: false,
   });
 
   const data = useMemo(() => {

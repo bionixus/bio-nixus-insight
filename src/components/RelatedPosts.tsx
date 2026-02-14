@@ -1,53 +1,97 @@
 import { Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
 import { fetchRelatedPosts } from '@/lib/sanity-blog';
 import { isSanityConfigured } from '@/lib/sanity';
 import { optimizeSanityImage } from '@/lib/image-utils';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 import type { BlogPost } from '@/types/blog';
+
+import blogImage1 from '@/assets/blog-insight-1.png';
+import blogImage2 from '@/assets/blog-insight-2.png';
+import blogImage3 from '@/assets/blog-insight-3.png';
+
+const DEFAULT_COVERS = [blogImage1, blogImage2, blogImage3];
+
+function getCover(url: string | undefined, i: number): string {
+  if (url?.startsWith('http')) return optimizeSanityImage(url, 480, 300);
+  return DEFAULT_COVERS[i % DEFAULT_COVERS.length];
+}
+
+function getCoverSrcSet(url: string | undefined): string | undefined {
+  if (!url?.startsWith('http') || !url.includes('cdn.sanity.io')) return undefined;
+  return `${optimizeSanityImage(url, 400, 250)} 400w, ${optimizeSanityImage(url, 640, 400)} 640w`;
+}
 
 interface RelatedPostsProps {
   currentSlug: string;
   category: string;
   date: string;
+  country?: string;
 }
 
-function PostCard({ post }: { post: BlogPost }) {
+/* ─── Single related-post card ─── */
+function PostCard({ post, index }: { post: BlogPost; index: number }) {
   return (
     <Link
       to={`/blog/${post.slug}`}
-      className="group block rounded-lg border border-border bg-card p-4 hover:border-primary/40 transition-colors"
+      className="group block sr sr-scale-up sr-spring hover-lift rounded-xl overflow-hidden border border-border bg-card"
     >
-      {post.coverImage && (
-        <div className="aspect-[16/10] rounded-md overflow-hidden mb-3 bg-muted">
-          <img
-            src={optimizeSanityImage(post.coverImage, 400, 250)}
-            alt={post.title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-            loading="lazy"
-            decoding="async"
-            width={400}
-            height={250}
-          />
+      {/* Image */}
+      <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-navy-medium">
+        <img
+          src={getCover(post.coverImage, index)}
+          srcSet={getCoverSrcSet(post.coverImage)}
+          sizes="(max-width: 768px) 90vw, 33vw"
+          alt={post.title}
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
+          decoding="async"
+          width={480}
+          height={300}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        {/* Category badge */}
+        {post.category && (
+          <span className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-sm text-primary text-xs font-semibold rounded-full shadow-sm">
+            {post.category}
+          </span>
+        )}
+      </div>
+
+      {/* Content */}
+      <div className="p-5 space-y-3">
+        <div className="flex items-center gap-3 text-xs text-muted-foreground">
+          {post.country && <span>{post.country}</span>}
+          {post.country && post.date && <span className="w-1 h-1 rounded-full bg-border" />}
+          {post.date && <span>{post.date}</span>}
         </div>
-      )}
-      <span className="text-xs text-primary font-semibold">{post.category}</span>
-      <h4 className="text-sm font-semibold text-foreground mt-1 line-clamp-2 group-hover:text-primary transition-colors">
-        {post.title}
-      </h4>
-      {post.date && (
-        <span className="text-xs text-muted-foreground mt-1 block">{post.date}</span>
-      )}
+        <h4 className="text-base font-display font-semibold text-foreground leading-snug line-clamp-2 group-hover:text-primary transition-colors">
+          {post.title}
+        </h4>
+        {post.excerpt && (
+          <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
+            {post.excerpt}
+          </p>
+        )}
+        <div className="flex items-center gap-1.5 text-primary text-sm font-medium pt-1 group-hover:gap-2.5 transition-all">
+          Read article
+          <ArrowUpRight className="w-3.5 h-3.5" />
+        </div>
+      </div>
     </Link>
   );
 }
 
-const RelatedPosts = ({ currentSlug, category, date }: RelatedPostsProps) => {
+/* ─── Main component ─── */
+const RelatedPosts = ({ currentSlug, category, date, country }: RelatedPostsProps) => {
+  const sectionRef = useScrollReveal<HTMLDivElement>({ stagger: 100 });
   const { data } = useQuery({
-    queryKey: ['related-posts', currentSlug, category],
-    queryFn: () => fetchRelatedPosts(currentSlug, category, date),
+    queryKey: ['related-posts', currentSlug, category, country],
+    queryFn: () => fetchRelatedPosts(currentSlug, category, date, country),
     enabled: isSanityConfigured() && Boolean(currentSlug),
-    staleTime: 5 * 60 * 1000, // 5 min
+    staleTime: 5 * 60 * 1000,
+    gcTime: 30 * 60 * 1000,
   });
 
   if (!data) return null;
@@ -59,17 +103,27 @@ const RelatedPosts = ({ currentSlug, category, date }: RelatedPostsProps) => {
   if (!hasRelated && !hasNav) return null;
 
   return (
-    <div className="mt-16 border-t border-border pt-10">
+    <div className="mt-20 pt-12 border-t border-border" ref={sectionRef}>
       {/* Prev / Next navigation */}
       {hasNav && (
-        <nav className="flex justify-between items-stretch gap-4 mb-10" aria-label="Post navigation">
+        <nav
+          className="flex justify-between items-stretch gap-6 mb-14"
+          aria-label="Post navigation"
+        >
           {prev ? (
             <Link
               to={`/blog/${prev.slug}`}
-              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors max-w-[45%]"
+              className="group flex items-center gap-3 px-5 py-4 rounded-xl border border-border bg-card hover:border-primary/40 hover:shadow-md transition-all max-w-[48%] sr sr-left"
             >
-              <ArrowLeft className="w-4 h-4 flex-shrink-0" />
-              <span className="line-clamp-1">{prev.title}</span>
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+                <ArrowLeft className="w-4 h-4 text-primary" />
+              </div>
+              <div className="min-w-0">
+                <span className="text-xs text-muted-foreground uppercase tracking-wider">Previous</span>
+                <p className="text-sm font-semibold text-foreground line-clamp-1 group-hover:text-primary transition-colors">
+                  {prev.title}
+                </p>
+              </div>
             </Link>
           ) : (
             <div />
@@ -77,10 +131,17 @@ const RelatedPosts = ({ currentSlug, category, date }: RelatedPostsProps) => {
           {next ? (
             <Link
               to={`/blog/${next.slug}`}
-              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors text-right max-w-[45%]"
+              className="group flex items-center gap-3 px-5 py-4 rounded-xl border border-border bg-card hover:border-primary/40 hover:shadow-md transition-all max-w-[48%] text-right sr sr-right"
             >
-              <span className="line-clamp-1">{next.title}</span>
-              <ArrowRight className="w-4 h-4 flex-shrink-0" />
+              <div className="min-w-0">
+                <span className="text-xs text-muted-foreground uppercase tracking-wider">Next</span>
+                <p className="text-sm font-semibold text-foreground line-clamp-1 group-hover:text-primary transition-colors">
+                  {next.title}
+                </p>
+              </div>
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+                <ArrowRight className="w-4 h-4 text-primary" />
+              </div>
             </Link>
           ) : (
             <div />
@@ -91,12 +152,14 @@ const RelatedPosts = ({ currentSlug, category, date }: RelatedPostsProps) => {
       {/* Related posts */}
       {hasRelated && (
         <section aria-label="Related articles">
-          <h3 className="text-lg font-display font-semibold text-foreground mb-5">
-            Related articles
-          </h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {related.map((post) => (
-              <PostCard key={post.id} post={post} />
+          <div className="flex items-center gap-4 mb-8">
+            <h3 className="text-xl md:text-2xl font-display font-semibold text-foreground sr sr-up sr-line">
+              Continue Reading
+            </h3>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {related.map((post, i) => (
+              <PostCard key={post.id} post={post} index={i} />
             ))}
           </div>
         </section>

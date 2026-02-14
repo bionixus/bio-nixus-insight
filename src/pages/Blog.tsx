@@ -67,8 +67,21 @@ const Blog = () => {
           </section>
         ) : isLoading ? (
           <section className="section-padding">
-            <div className="container-wide text-center py-20">
-              <p className="text-muted-foreground">Loading articles...</p>
+            <div className="container-wide">
+              <div className="text-center max-w-3xl mx-auto mb-12">
+                <div className="h-10 w-64 mx-auto bg-muted/60 rounded-lg animate-pulse mb-4" />
+                <div className="h-5 w-96 mx-auto bg-muted/40 rounded-lg animate-pulse" />
+              </div>
+              <div className="grid lg:grid-cols-3 gap-8">
+                {[0, 1, 2].map((i) => (
+                  <div key={i} className="animate-pulse">
+                    <div className="aspect-[16/10] rounded-xl bg-muted/50 mb-6" />
+                    <div className="h-4 w-20 bg-muted/40 rounded mb-3" />
+                    <div className="h-6 w-full bg-muted/50 rounded mb-2" />
+                    <div className="h-4 w-3/4 bg-muted/30 rounded" />
+                  </div>
+                ))}
+              </div>
             </div>
           </section>
         ) : (
