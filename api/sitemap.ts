@@ -1,8 +1,11 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { createClient } from '@sanity/client';
+/**
+ * Dynamic sitemap — Edge Function (doesn't count toward Hobby plan's 12 serverless fn limit).
+ * Queries Sanity live so new articles/case-studies appear automatically.
+ */
+
+export const config = { runtime: 'edge' };
 
 const BASE = 'https://www.bionixus.com';
-
 const LANGUAGES = ['', '/de', '/fr', '/es', '/zh', '/ar'];
 
 const corePages = [
@@ -34,57 +37,45 @@ const standalonePages = [
   { path: '/privacy', priority: '0.3', changefreq: 'yearly' },
 ];
 
-function escapeXml(s: string): string {
-  return s
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&apos;');
+function esc(s: string): string {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
-function urlEntry(loc: string, lastmod: string, changefreq: string, priority: string): string {
-  return `  <url>
-    <loc>${escapeXml(loc)}</loc>
-    <lastmod>${escapeXml(lastmod)}</lastmod>
-    <changefreq>${escapeXml(changefreq)}</changefreq>
-    <priority>${escapeXml(priority)}</priority>
-  </url>`;
+function entry(loc: string, lastmod: string, changefreq: string, priority: string): string {
+  return `  <url>\n    <loc>${esc(loc)}</loc>\n    <lastmod>${esc(lastmod)}</lastmod>\n    <changefreq>${esc(changefreq)}</changefreq>\n    <priority>${esc(priority)}</priority>\n  </url>`;
 }
 
-interface SlugRow {
-  slug: string;
-  lastmod: string | null;
-}
+interface Row { slug: string; lastmod: string | null }
 
-async function fetchSlugs(
-  projectId: string,
-  dataset: string,
-  types: string | string[]
-): Promise<SlugRow[]> {
+async function fetchSlugs(projectId: string, dataset: string, types: string[]): Promise<Row[]> {
+  const query = encodeURIComponent(
+    `*[_type in $types && defined(slug.current)]{ "slug": slug.current, "lastmod": coalesce(publishedAt, _updatedAt, _createdAt) }`
+  );
+  const params = encodeURIComponent(JSON.stringify({ types }));
+  const url = `https://${projectId}.api.sanity.io/v2024-01-01/data/query/${dataset}?query=${query}&$types=${params}`;
+
   try {
-    const client = createClient({ projectId, dataset, apiVersion: '2024-01-01', useCdn: true });
-    const typeArray = Array.isArray(types) ? types : [types];
-    const query = `*[_type in $types && defined(slug.current)]{ "slug": slug.current, "lastmod": coalesce(publishedAt, _updatedAt, _createdAt) }`;
-    const list: SlugRow[] = await Promise.race([
-      client.fetch(query, { types: typeArray }),
-      new Promise<never>((_, reject) => setTimeout(() => reject(new Error('timeout')), 10000)),
-    ]);
-    // Deduplicate by slug, keep the most recent lastmod
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 8000);
+    const res = await fetch(url, { signal: controller.signal });
+    clearTimeout(timer);
+    if (!res.ok) return [];
+    const json = await res.json() as { result?: Row[] };
+    // Deduplicate by slug
     const map = new Map<string, string>();
-    for (const row of list) {
-      if (!row.slug) continue;
-      const existing = map.get(row.slug);
-      const date = row.lastmod ? row.lastmod.slice(0, 10) : '';
-      if (!existing || date > existing) map.set(row.slug, date);
+    for (const r of json.result ?? []) {
+      if (!r.slug) continue;
+      const d = r.lastmod ? r.lastmod.slice(0, 10) : '';
+      const prev = map.get(r.slug);
+      if (!prev || d > prev) map.set(r.slug, d);
     }
-    return Array.from(map.entries()).map(([slug, lastmod]) => ({ slug, lastmod }));
+    return [...map.entries()].map(([slug, lastmod]) => ({ slug, lastmod }));
   } catch {
     return [];
   }
 }
 
-export default async function handler(_req: VercelRequest, res: VercelResponse) {
+export default async function handler(req: Request): Promise<Response> {
   const blogProjectId = process.env.VITE_SANITY_PROJECT_ID || 'h2whvvpo';
   const blogDataset = process.env.VITE_SANITY_DATASET || 'production';
   const caseProjectId = process.env.VITE_SANITY_CASE_STUDIES_PROJECT_ID || 'gj6cv27f';
@@ -92,51 +83,43 @@ export default async function handler(_req: VercelRequest, res: VercelResponse) 
 
   const [blogSlugs, caseSlugs] = await Promise.all([
     fetchSlugs(blogProjectId, blogDataset, ['post', 'blogPost']),
-    fetchSlugs(caseProjectId, caseDataset, 'caseStudy'),
+    fetchSlugs(caseProjectId, caseDataset, ['caseStudy']),
   ]);
 
   const today = new Date().toISOString().slice(0, 10);
   const urls: string[] = [];
 
-  // Static routes — core pages in every language
+  // Core pages in every language
   for (const lang of LANGUAGES) {
     for (const page of corePages) {
       const path = lang === '' ? page.path : `${lang}${page.path}`;
-      const priority =
-        lang === ''
-          ? page.priority
-          : String(Math.round(Math.max(0.5, parseFloat(page.priority) - 0.1) * 10) / 10);
-      urls.push(urlEntry(BASE + path, today, page.changefreq, priority));
+      const pri = lang === '' ? page.priority : String(Math.round(Math.max(0.5, parseFloat(page.priority) - 0.1) * 10) / 10);
+      urls.push(entry(BASE + path, today, page.changefreq, pri));
     }
   }
 
-  // Standalone pages (no language variants)
+  // Standalone pages
   for (const page of standalonePages) {
-    urls.push(urlEntry(BASE + page.path, today, page.changefreq, page.priority));
+    urls.push(entry(BASE + page.path, today, page.changefreq, page.priority));
   }
 
   // Blog posts
   for (const { slug, lastmod } of blogSlugs) {
-    urls.push(
-      urlEntry(`${BASE}/blog/${encodeURIComponent(slug)}`, lastmod || today, 'monthly', '0.7')
-    );
+    urls.push(entry(`${BASE}/blog/${encodeURIComponent(slug)}`, lastmod || today, 'monthly', '0.7'));
   }
 
   // Case studies
   for (const { slug, lastmod } of caseSlugs) {
-    urls.push(
-      urlEntry(`${BASE}/case-studies/${encodeURIComponent(slug)}`, lastmod || today, 'monthly', '0.7')
-    );
+    urls.push(entry(`${BASE}/case-studies/${encodeURIComponent(slug)}`, lastmod || today, 'monthly', '0.7'));
   }
 
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.join('\n')}
-</urlset>
-`;
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`;
 
-  // Cache for 1 hour on CDN, revalidate in background after that
-  res.setHeader('Content-Type', 'application/xml; charset=utf-8');
-  res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate=86400');
-  res.status(200).send(xml);
+  return new Response(xml, {
+    status: 200,
+    headers: {
+      'Content-Type': 'application/xml; charset=utf-8',
+      'Cache-Control': 's-maxage=3600, stale-while-revalidate=86400',
+    },
+  });
 }
