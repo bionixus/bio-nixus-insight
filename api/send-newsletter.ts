@@ -1,6 +1,13 @@
 import { Resend } from 'resend'
+import { SESv2Client, SendEmailCommand } from '@aws-sdk/client-sesv2'
 import { createClient } from '@sanity/client'
 import { toHTML } from '@portabletext/to-html'
+
+// ─── Config ───
+export const config = {
+  api: { bodyParser: { sizeLimit: '2mb' } },
+  maxDuration: 120, // Allow up to 120s for large sends
+}
 
 const sanityServer = createClient({
   projectId: process.env.VITE_SANITY_PROJECT_ID || 'h2whvvpo',
@@ -15,6 +22,125 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 const BASE_URL = process.env.VITE_BASE_URL || 'https://bionixus.com'
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'BioNixus2026!'
 
+// ─── AWS SES setup (optional — used when env vars are set) ───
+const SES_ENABLED = !!(
+  process.env.AWS_SES_ACCESS_KEY_ID &&
+  process.env.AWS_SES_SECRET_ACCESS_KEY &&
+  process.env.AWS_SES_REGION
+)
+const SES_FROM = process.env.AWS_SES_FROM_EMAIL || 'BioNixus Market Research <newsletter@bionixus.com>'
+const SES_REPLY_TO = process.env.AWS_SES_REPLY_TO || 'digital@bionixus.uk'
+const SES_CONFIG_SET = process.env.AWS_SES_CONFIG_SET || '' // Optional: for open/click tracking
+
+let sesClient: SESv2Client | null = null
+if (SES_ENABLED) {
+  sesClient = new SESv2Client({
+    region: process.env.AWS_SES_REGION!,
+    credentials: {
+      accessKeyId: process.env.AWS_SES_ACCESS_KEY_ID!,
+      secretAccessKey: process.env.AWS_SES_SECRET_ACCESS_KEY!,
+    },
+  })
+}
+
+// ─── Provider abstraction ───
+type SendResult = { success: boolean; messageId?: string; error?: string }
+
+async function sendViaSES(
+  to: string,
+  subject: string,
+  html: string,
+  tags: { name: string; value: string }[]
+): Promise<SendResult> {
+  if (!sesClient) return { success: false, error: 'SES not configured' }
+
+  try {
+    const cmd = new SendEmailCommand({
+      FromEmailAddress: SES_FROM,
+      ReplyToAddresses: [SES_REPLY_TO],
+      Destination: { ToAddresses: [to] },
+      Content: {
+        Simple: {
+          Subject: { Data: subject, Charset: 'UTF-8' },
+          Body: { Html: { Data: html, Charset: 'UTF-8' } },
+        },
+      },
+      EmailTags: tags.map((t) => ({ Name: t.name, Value: t.value })),
+      ...(SES_CONFIG_SET ? { ConfigurationSetName: SES_CONFIG_SET } : {}),
+    })
+
+    const result = await sesClient.send(cmd)
+    return { success: true, messageId: result.MessageId }
+  } catch (err: any) {
+    return { success: false, error: err.message || 'SES send error' }
+  }
+}
+
+async function sendViaResend(
+  to: string,
+  subject: string,
+  html: string,
+  tags: { name: string; value: string }[],
+  newsletterId: string
+): Promise<SendResult> {
+  try {
+    const result = await resend.emails.send({
+      from: 'BioNixus Market Research <newsletter@bionixus.com>',
+      replyTo: 'digital@bionixus.uk',
+      to,
+      subject,
+      html,
+      headers: { 'X-Entity-Ref-ID': newsletterId },
+      tags,
+    })
+
+    if (result.error) {
+      return { success: false, error: result.error.message }
+    }
+    return { success: true, messageId: result.data?.id }
+  } catch (err: any) {
+    return { success: false, error: err.message || 'Resend send error' }
+  }
+}
+
+async function sendEmail(
+  to: string,
+  subject: string,
+  html: string,
+  tags: { name: string; value: string }[],
+  newsletterId: string
+): Promise<SendResult> {
+  if (SES_ENABLED) {
+    return sendViaSES(to, subject, html, tags)
+  }
+  return sendViaResend(to, subject, html, tags, newsletterId)
+}
+
+// ─── Parallel batch helper ───
+async function sendBatch(
+  items: { subscriber: any; subject: string; html: string; tags: { name: string; value: string }[] }[],
+  newsletterId: string
+): Promise<{ subscriber: any; result: SendResult }[]> {
+  return Promise.all(
+    items.map(async (item) => {
+      const result = await sendEmail(
+        item.subscriber.email,
+        item.subject,
+        item.html,
+        item.tags,
+        newsletterId
+      )
+      return { subscriber: item.subscriber, result }
+    })
+  )
+}
+
+// Small delay helper
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
+
+// ═══════════════════════════════════════════════════════════════════
+// Main handler
+// ═══════════════════════════════════════════════════════════════════
 export default async function handler(req: any, res: any) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' })
@@ -34,7 +160,10 @@ export default async function handler(req: any, res: any) {
 
   try {
     // 1. Get newsletter from Sanity
+    const provider = SES_ENABLED ? 'AWS SES' : 'Resend'
+    console.log(`[Newsletter] Provider: ${provider}`)
     console.log(`[Newsletter] Fetching newsletter ${newsletterId}...`)
+
     const newsletter = await sanityServer.fetch(
       `*[_type == "newsletter" && _id == $id][0] {
         _id, title, subject, preheader, contentType, content, htmlContent, targetSegments, status
@@ -50,7 +179,7 @@ export default async function handler(req: any, res: any) {
       return res.status(400).json({ error: 'Newsletter already sent' })
     }
 
-    console.log(`[Newsletter] Found: "${newsletter.title}", type: ${newsletter.contentType}, segments: ${newsletter.targetSegments?.join(', ')}`)
+    console.log(`[Newsletter] Found: "${newsletter.title}", segments: ${newsletter.targetSegments?.join(', ')}`)
 
     // 2. Get subscribers
     const targetSegments = newsletter.targetSegments || ['all']
@@ -72,73 +201,113 @@ export default async function handler(req: any, res: any) {
       return res.status(400).json({ error: 'No subscribers found for target segments' })
     }
 
-    // 3. Send emails one by one (reliable, avoids race conditions)
+    // 3. Prepare all emails
+    const emailItems: { subscriber: any; subject: string; html: string; tags: { name: string; value: string }[] }[] = []
+
+    for (const subscriber of subscribers) {
+      const locale = subscriber.language || 'en'
+      const subject = newsletter.subject?.[locale] || newsletter.subject?.en || newsletter.title || 'Newsletter'
+      const preheader = newsletter.preheader?.[locale] || newsletter.preheader?.en || ''
+
+      let bodyContent = ''
+      if (newsletter.contentType === 'html') {
+        bodyContent = newsletter.htmlContent?.[locale] || newsletter.htmlContent?.en || ''
+      } else {
+        const ptContent = newsletter.content?.[locale] || newsletter.content?.en
+        bodyContent = ptContent ? portableTextToHTML(ptContent) : ''
+      }
+
+      const subscriberName = [subscriber.firstName, subscriber.lastName].filter(Boolean).join(' ')
+      const html = generateEmailTemplate({
+        subject,
+        preheader,
+        content: bodyContent,
+        subscriberName,
+        subscriberId: subscriber._id,
+        unsubscribeLink: `${BASE_URL}/unsubscribe?id=${subscriber._id}`,
+      })
+
+      emailItems.push({
+        subscriber,
+        subject,
+        html,
+        tags: [
+          { name: 'newsletter_id', value: newsletter._id },
+          { name: 'subscriber_id', value: subscriber._id },
+          { name: 'language', value: locale },
+        ],
+      })
+    }
+
+    // 4. Send in parallel batches
+    //    SES: up to 14/sec typical rate, use batches of 10 with 200ms delay
+    //    Resend: 100/day limit on free tier, send sequentially (batch of 2)
+    const BATCH_SIZE = SES_ENABLED ? 10 : 2
+    const BATCH_DELAY = SES_ENABLED ? 200 : 100 // ms between batches
+
     const errors: string[] = []
+    const failedEmails: { email: string; subscriberId: string; reason: string }[] = []
+    const successIds: string[] = []
     let successCount = 0
     let failedCount = 0
 
-    for (const subscriber of subscribers) {
-      try {
-        const locale = subscriber.language || 'en'
-        const subject = newsletter.subject?.[locale] || newsletter.subject?.en || newsletter.title || 'Newsletter'
-        const preheader = newsletter.preheader?.[locale] || newsletter.preheader?.en || ''
+    for (let i = 0; i < emailItems.length; i += BATCH_SIZE) {
+      const batch = emailItems.slice(i, i + BATCH_SIZE)
+      const batchNum = Math.floor(i / BATCH_SIZE) + 1
+      const totalBatches = Math.ceil(emailItems.length / BATCH_SIZE)
 
-        let bodyContent = ''
-        if (newsletter.contentType === 'html') {
-          bodyContent = newsletter.htmlContent?.[locale] || newsletter.htmlContent?.en || ''
-        } else {
-          const ptContent = newsletter.content?.[locale] || newsletter.content?.en
-          bodyContent = ptContent ? portableTextToHTML(ptContent) : ''
-        }
+      console.log(`[Newsletter] Sending batch ${batchNum}/${totalBatches} (${batch.length} emails)...`)
 
-        const subscriberName = [subscriber.firstName, subscriber.lastName].filter(Boolean).join(' ')
-        const emailHTML = generateEmailTemplate({
-          subject,
-          preheader,
-          content: bodyContent,
-          subscriberName,
-          subscriberId: subscriber._id,
-          unsubscribeLink: `${BASE_URL}/unsubscribe?id=${subscriber._id}`,
-        })
+      const results = await sendBatch(batch, newsletter._id)
 
-        console.log(`[Newsletter] Sending to ${subscriber.email}...`)
-        const result = await resend.emails.send({
-          from: 'BioNixus Market Research <newsletter@bionixus.com>',
-          replyTo: 'digital@bionixus.uk',
-          to: subscriber.email,
-          subject,
-          html: emailHTML,
-          headers: { 'X-Entity-Ref-ID': newsletter._id },
-          tags: [
-            { name: 'newsletter_id', value: newsletter._id },
-            { name: 'subscriber_id', value: subscriber._id },
-            { name: 'language', value: locale },
-          ],
-        })
-
-        if (result.error) {
-          console.error(`[Newsletter] FAILED ${subscriber.email}: ${result.error.message}`)
-          errors.push(`${subscriber.email}: ${result.error.message}`)
-          failedCount++
-        } else {
-          console.log(`[Newsletter] SUCCESS ${subscriber.email} -> ${result.data?.id}`)
+      for (const { subscriber, result } of results) {
+        if (result.success) {
+          console.log(`[Newsletter] ✓ ${subscriber.email} -> ${result.messageId}`)
+          successIds.push(subscriber._id)
           successCount++
+        } else {
+          console.error(`[Newsletter] ✗ ${subscriber.email}: ${result.error}`)
+          errors.push(`${subscriber.email}: ${result.error}`)
+          failedEmails.push({
+            email: subscriber.email,
+            subscriberId: subscriber._id,
+            reason: result.error || 'Unknown error',
+          })
+          failedCount++
         }
-      } catch (err: any) {
-        console.error(`[Newsletter] ERROR ${subscriber.email}: ${err.message}`)
-        errors.push(`${subscriber.email}: ${err.message}`)
-        failedCount++
+      }
+
+      // Rate-limiting delay between batches
+      if (i + BATCH_SIZE < emailItems.length) {
+        await sleep(BATCH_DELAY)
       }
     }
 
-    console.log(`[Newsletter] Done: ${successCount} succeeded, ${failedCount} failed`)
+    console.log(`[Newsletter] Done: ${successCount} succeeded, ${failedCount} failed (via ${provider})`)
 
-    // 4. Mark as sent if at least one succeeded
+    // 5. Update subscriber analytics (batch by 50)
+    const now = new Date().toISOString()
+    for (let i = 0; i < successIds.length; i += 50) {
+      const batch = successIds.slice(i, i + 50)
+      let tx = sanityServer.transaction()
+      for (const id of batch) {
+        tx = tx.patch(id, (p: any) =>
+          p.setIfMissing({ analytics: {} })
+           .inc({ 'analytics.emailsSent': 1 })
+           .set({ 'analytics.lastEmailSent': now })
+        )
+      }
+      try { await tx.commit() } catch (e) { console.error('Subscriber analytics batch error:', e) }
+    }
+
+    // 6. Mark as sent if at least one succeeded
     if (successCount === 0) {
       return res.status(500).json({
         success: false,
         error: `All ${failedCount} emails failed`,
+        provider,
         errors,
+        failedEmails,
       })
     }
 
@@ -146,7 +315,7 @@ export default async function handler(req: any, res: any) {
       .patch(newsletter._id)
       .set({
         status: 'sent',
-        sentAt: new Date().toISOString(),
+        sentAt: now,
         stats: {
           totalSent: subscribers.length,
           successCount,
@@ -159,11 +328,31 @@ export default async function handler(req: any, res: any) {
       })
       .commit()
 
+    // 7. Store failed emails as separate documents
+    if (failedEmails.length > 0) {
+      let tx = sanityServer.transaction()
+      for (const fe of failedEmails) {
+        tx = tx.create({
+          _type: 'failedEmail',
+          newsletterId: newsletter._id,
+          newsletterTitle: newsletter.title,
+          email: fe.email,
+          subscriberId: fe.subscriberId,
+          reason: fe.reason,
+          eventType: 'send_failed',
+          timestamp: now,
+        })
+      }
+      try { await tx.commit() } catch (e) { console.error('Failed email tracking error:', e) }
+    }
+
     return res.status(200).json({
       success: true,
+      provider,
       totalSent: subscribers.length,
       successCount,
       failedCount,
+      failedEmails: failedEmails.length > 0 ? failedEmails : undefined,
       errors: errors.length > 0 ? errors : undefined,
     })
   } catch (error: any) {
@@ -172,7 +361,9 @@ export default async function handler(req: any, res: any) {
   }
 }
 
-/** Convert portable text to HTML using @portabletext/to-html */
+// ═══════════════════════════════════════════════════════════════════
+// Portable Text to HTML
+// ═══════════════════════════════════════════════════════════════════
 function portableTextToHTML(content: any): string {
   if (!content) return ''
 
@@ -220,7 +411,9 @@ function escapeHtml(str: string): string {
     .replace(/"/g, '&quot;')
 }
 
+// ═══════════════════════════════════════════════════════════════════
 // Email template generator
+// ═══════════════════════════════════════════════════════════════════
 function generateEmailTemplate({
   subject,
   preheader,

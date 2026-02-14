@@ -137,6 +137,62 @@ export async function fetchSanityPostBySlug(slug: string): Promise<BlogPost | nu
   }
 }
 
+/**
+ * Fetch related posts by same category, excluding the current post.
+ * Also returns prev/next posts by date for navigation chain.
+ */
+const RELATED_POSTS_QUERY = `{
+  "related": *[_type in ["post", "blogPost"] && defined(slug.current) && slug.current != $slug && category == $category] | order(publishedAt desc, _createdAt desc)[0...3] {
+    _id,
+    _type,
+    title,
+    "slug": slug.current,
+    excerpt,
+    "date": coalesce(publishedAt, _createdAt),
+    category,
+    country,
+    "coverImage": mainImage.asset->url
+  },
+  "prev": *[_type in ["post", "blogPost"] && defined(slug.current) && coalesce(publishedAt, _createdAt) < $date] | order(publishedAt desc, _createdAt desc)[0] {
+    _id,
+    title,
+    "slug": slug.current
+  },
+  "next": *[_type in ["post", "blogPost"] && defined(slug.current) && coalesce(publishedAt, _createdAt) > $date] | order(publishedAt asc, _createdAt asc)[0] {
+    _id,
+    title,
+    "slug": slug.current
+  }
+}`;
+
+export interface RelatedPostsData {
+  related: BlogPost[];
+  prev: { slug: string; title: string } | null;
+  next: { slug: string; title: string } | null;
+}
+
+export async function fetchRelatedPosts(
+  slug: string,
+  category: string,
+  date: string
+): Promise<RelatedPostsData> {
+  try {
+    const client = getSanityClient();
+    const raw = await client.fetch<{
+      related: RawSanityPost[];
+      prev: { _id: string; title: string; slug: string } | null;
+      next: { _id: string; title: string; slug: string } | null;
+    }>(RELATED_POSTS_QUERY, { slug, category: category || '', date: date || '' });
+    return {
+      related: (raw.related || []).map((p) => mapRawToPost(p)!).filter(Boolean),
+      prev: raw.prev ? { slug: raw.prev.slug, title: raw.prev.title } : null,
+      next: raw.next ? { slug: raw.next.slug, title: raw.next.title } : null,
+    };
+  } catch {
+    return { related: [], prev: null, next: null };
+  }
+}
+
 function formatDate(iso: string | undefined): string {
   if (!iso) return '';
   try {

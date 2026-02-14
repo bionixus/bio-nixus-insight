@@ -1,15 +1,21 @@
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { Helmet } from 'react-helmet-async';
 
 const Privacy = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Privacy Policy & Terms of Service | BioNixus</title>
+        <meta name="description" content="BioNixus privacy policy and terms of service. GDPR-compliant data protection, cookie policy, and your rights regarding personal data collected through our healthcare market research services." />
+        <link rel="canonical" href="https://www.bionixus.com/privacy" />
+      </Helmet>
       <Navbar />
       <main className="section-padding py-16">
         <div className="container-wide max-w-3xl prose prose-slate dark:prose-invert">
           <h1 className="text-3xl font-display font-semibold mb-2">Privacy Policy</h1>
-          <p className="text-muted-foreground text-sm">Last updated: January 2025</p>
+          <p className="text-muted-foreground text-sm">Last updated: February 2026</p>
 
           <h2 className="mt-8 text-xl font-semibold">1. Introduction</h2>
           <p>
@@ -18,7 +24,7 @@ const Privacy = () => {
 
           <h2 className="mt-8 text-xl font-semibold">2. Data controller</h2>
           <p>
-            BioNixus, Wyoming, USA, is the data controller for the personal data we process. For questions about this policy or your data, contact us at{' '}
+            BioNixus, headquartered at 1309 Coffeen Ave, Sheridan, WY 82801, USA, with a UK office at 128 City Road, London, EC1V 2NX, GB, is the data controller for the personal data we process. For questions about this policy or your data, contact us at{' '}
             <a href="mailto:admin@bionixus.com" className="text-primary underline hover:no-underline">admin@bionixus.com</a>.
           </p>
 

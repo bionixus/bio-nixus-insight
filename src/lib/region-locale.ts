@@ -114,57 +114,11 @@ export function getRegionSuggestion(): RegionSuggestion | null {
 }
 
 /**
- * Map country code (from IP geolocation) to our app Language.
- * Used to suggest language based on where the user is opening from.
- */
-const countryCodeToLanguage: Record<string, Language> = {
-  AE: 'ar', SA: 'ar', EG: 'ar', KW: 'ar', BH: 'ar', QA: 'ar', OM: 'ar', YE: 'ar', SY: 'ar', JO: 'ar', LB: 'ar', IQ: 'ar', PS: 'ar', SD: 'ar', LY: 'ar', TN: 'ar', DZ: 'ar', MA: 'ar',
-  DE: 'de', AT: 'de', CH: 'de', LI: 'de', LU: 'de',
-  FR: 'fr', BE: 'fr', MC: 'fr',
-  ES: 'es', MX: 'es', AR: 'es', CO: 'es', CL: 'es', PE: 'es', VE: 'es', EC: 'es', GT: 'es', CU: 'es', BO: 'es', DO: 'es', HN: 'es', PY: 'es', SV: 'es', NI: 'es', CR: 'es', PA: 'es', UY: 'es', PR: 'es',
-  CN: 'zh', TW: 'zh', HK: 'zh', SG: 'zh', MO: 'zh',
-};
-
-/**
- * Fetch the user's country from their IP using a free geolocation API.
- * Returns country name and code, or null if fetch fails or country is English-speaking (no popup needed).
- */
-export async function getCountryFromIP(): Promise<{ countryName: string; countryCode: string } | null> {
-  try {
-    const res = await fetch('https://ipapi.co/json/', { signal: AbortSignal.timeout(5000) });
-    if (!res.ok) return null;
-    const data = await res.json();
-    const countryCode = data.country_code as string | undefined;
-    const countryName = data.country_name as string | undefined;
-    if (!countryCode || !countryName) return null;
-    return { countryName, countryCode };
-  } catch {
-    return null;
-  }
-}
-
-/**
- * Get region suggestion from country (IP-based). Returns null if country is English or not in our map.
- */
-export function getSuggestionFromCountry(countryName: string, countryCode: string): RegionSuggestion | null {
-  const code = countryCode.toUpperCase();
-  const language = countryCodeToLanguage[code] ?? null;
-  if (!language || language === 'en') return null;
-
-  const languageName = languageDisplayNames[language];
-  return { language, regionName: countryName, languageName };
-}
-
-/**
- * Get suggestion: first try IP-based country, then fall back to browser locale.
- * Call this after a delay (e.g. 5 seconds) so the popup doesn’t show immediately.
+ * Get suggestion using browser locale detection (no external API call).
+ * Uses navigator.language which is fast, reliable, and avoids rate-limit errors
+ * from third-party geolocation services.
  */
 export async function getRegionSuggestionAsync(): Promise<RegionSuggestion | null> {
-  const fromIP = await getCountryFromIP();
-  if (fromIP) {
-    const suggestion = getSuggestionFromCountry(fromIP.countryName, fromIP.countryCode);
-    if (suggestion) return suggestion;
-  }
   return getRegionSuggestion();
 }
 

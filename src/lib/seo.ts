@@ -2,11 +2,11 @@ import type { Language } from './i18n';
 
 function getBaseUrl() {
   if (typeof window !== 'undefined') return window.location.origin;
-  return 'https://bionixus.com';
+  return 'https://www.bionixus.com';
 }
 
 /** Social share image (Facebook, Twitter, LinkedIn): 1200×630, full logo visible. */
-export const defaultOgImageUrl = 'https://bionixus.com/og-image.png';
+export const defaultOgImageUrl = 'https://www.bionixus.com/og-image.png';
 export const defaultOgImageWidth = 1200;
 export const defaultOgImageHeight = 630;
 
@@ -20,9 +20,9 @@ export const seoByLanguage: Record<Language, {
   canonicalPath: string;
 }> = {
   en: {
-    title: 'Healthcare Market Research Services | UK & European Pharmaceutical Insights',
-    description: 'Comprehensive healthcare market research for pharmaceutical companies. Quantitative and qualitative physician surveys across UK, Europe & MENA.',
-    keywords: 'healthcare market research, pharmaceutical consulting, competitive intelligence, market access, clinical trials, biotech, life sciences',
+    title: 'BioNixus — #1 Healthcare Market Research Company in MENA | Pharma Insights Europe & Middle East',
+    description: 'BioNixus is the leading healthcare market research company in the MENA region. Headquartered in the USA with offices in London, UK — delivering quantitative & qualitative pharmaceutical insights from physicians across UAE, Saudi Arabia, Egypt, Kuwait, Qatar, and Europe.',
+    keywords: 'healthcare market research, MENA market research, pharmaceutical consulting, competitive intelligence, market access, clinical trials, UAE healthcare research, Saudi Arabia pharma research, biotech, life sciences',
     canonicalPath: '/',
   },
   de: {

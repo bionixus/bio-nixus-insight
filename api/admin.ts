@@ -85,7 +85,19 @@ export default async function handler(req: any, res: any) {
     return handleShareAnalytics(req, res)
   }
 
-  return res.status(400).json({ error: 'Unknown action. Use ?action=subscribers|bulk-actions|calculate-engagement|analytics|reset-newsletter|share-analytics|verify' })
+  // ─── failed-emails: GET ───
+  if (action === 'failed-emails') {
+    if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' })
+    return handleFailedEmails(req, res)
+  }
+
+  // ─── delete-failed-emails: POST ───
+  if (action === 'delete-failed-emails') {
+    if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' })
+    return handleDeleteFailedEmails(req, res)
+  }
+
+  return res.status(400).json({ error: 'Unknown action' })
 }
 
 // ═══════════════════════════════════════════════════════════════════
@@ -413,50 +425,162 @@ function calculateEngagementScore(
 }
 
 // ═══════════════════════════════════════════════════════════════════
-// Analytics handler (was api/admin/analytics.ts)
+// Analytics handler — pulls from BOTH newsletter stats AND subscriber analytics
 // ═══════════════════════════════════════════════════════════════════
-async function handleAnalytics(req: any, res: any) {
+async function handleAnalytics(_req: any, res: any) {
   try {
-    const stats = await sanityServer.fetch(`{
-      "totalSent": math::sum(*[_type == "subscriber"].analytics.emailsSent),
-      "totalOpens": math::sum(*[_type == "subscriber"].analytics.emailsOpened),
-      "totalClicks": math::sum(*[_type == "subscriber"].analytics.emailsClicked),
-      "avgOpenRate": math::avg(*[_type == "subscriber" && defined(analytics.openRate)].analytics.openRate),
-      "avgClickRate": math::avg(*[_type == "subscriber" && defined(analytics.clickRate)].analytics.clickRate)
+    // Newsletter-level stats (primary source — always accurate)
+    const newsletterStats = await sanityServer.fetch(`{
+      "totalSent": math::sum(*[_type == "newsletter" && status == "sent"].stats.totalSent),
+      "totalSuccess": math::sum(*[_type == "newsletter" && status == "sent"].stats.successCount),
+      "totalFailed": math::sum(*[_type == "newsletter" && status == "sent"].stats.failedCount),
+      "totalOpens": math::sum(*[_type == "newsletter" && status == "sent"].stats.openCount),
+      "totalClicks": math::sum(*[_type == "newsletter" && status == "sent"].stats.clickCount),
+      "totalBounces": math::sum(*[_type == "newsletter" && status == "sent"].stats.bounceCount),
+      "totalComplaints": math::sum(*[_type == "newsletter" && status == "sent"].stats.complaintCount),
+      "newsletterCount": count(*[_type == "newsletter" && status == "sent"])
     }`)
 
-    const topEngaged = await sanityServer.fetch(`
-      *[_type == "subscriber" && subscribed == true && analytics.emailsOpened > 0]
-      | order(analytics.emailsOpened desc) [0...10] {
-        _id,
-        firstName,
-        lastName,
-        email,
-        analytics
+    // Subscriber-level stats (secondary — populated by webhooks)
+    const subscriberStats = await sanityServer.fetch(`{
+      "subTotalSent": math::sum(*[_type == "subscriber"].analytics.emailsSent),
+      "subTotalOpens": math::sum(*[_type == "subscriber"].analytics.emailsOpened),
+      "subTotalClicks": math::sum(*[_type == "subscriber"].analytics.emailsClicked)
+    }`)
+
+    // Use the best available data
+    const totalSent = newsletterStats.totalSent || subscriberStats.subTotalSent || 0
+    const totalSuccess = newsletterStats.totalSuccess || totalSent
+    const totalFailed = newsletterStats.totalFailed || 0
+    const totalOpens = newsletterStats.totalOpens || subscriberStats.subTotalOpens || 0
+    const totalClicks = newsletterStats.totalClicks || subscriberStats.subTotalClicks || 0
+    const totalBounces = newsletterStats.totalBounces || 0
+
+    const avgOpenRate = totalSuccess > 0 ? ((totalOpens / totalSuccess) * 100).toFixed(1) : '0'
+    const avgClickRate = totalSuccess > 0 ? ((totalClicks / totalSuccess) * 100).toFixed(1) : '0'
+    const bounceRate = totalSent > 0 ? ((totalBounces / totalSent) * 100).toFixed(1) : '0'
+
+    // Failed email count
+    const failedEmailCount = await sanityServer.fetch(`count(*[_type == "failedEmail"])`)
+
+    // Per-newsletter breakdown (last 10 sent)
+    const newsletters = await sanityServer.fetch(`
+      *[_type == "newsletter" && status == "sent"] | order(sentAt desc) [0...10] {
+        _id, title, sentAt, targetSegments, stats
       }
     `)
 
+    // Top engaged subscribers
+    const topEngaged = await sanityServer.fetch(`
+      *[_type == "subscriber" && subscribed == true && defined(analytics) && analytics.emailsOpened > 0]
+      | order(analytics.emailsOpened desc) [0...10] {
+        _id, firstName, lastName, email, analytics
+      }
+    `)
+
+    // Inactive subscribers (sent but never opened)
     const inactive = await sanityServer.fetch(`
-      *[_type == "subscriber" && subscribed == true && analytics.emailsSent > 0 && analytics.emailsOpened == 0]
+      *[_type == "subscriber" && subscribed == true && defined(analytics) && analytics.emailsSent > 0 && (analytics.emailsOpened == 0 || !defined(analytics.emailsOpened))]
       | order(analytics.emailsSent desc) [0...20] {
-        _id,
-        firstName,
-        lastName,
-        email,
-        analytics,
-        subscribedAt
+        _id, firstName, lastName, email, analytics, subscribedAt
       }
     `)
 
     return res.status(200).json({
-      ...stats,
-      avgOpenRate: stats.avgOpenRate?.toFixed(2) || 0,
-      avgClickRate: stats.avgClickRate?.toFixed(2) || 0,
+      totalSent,
+      totalSuccess,
+      totalFailed,
+      totalOpens,
+      totalClicks,
+      totalBounces,
+      avgOpenRate,
+      avgClickRate,
+      bounceRate,
+      failedEmailCount,
+      newsletterCount: newsletterStats.newsletterCount || 0,
+      newsletters,
       topEngaged,
       inactive,
     })
   } catch (error: any) {
     console.error('Analytics error:', error)
+    return res.status(500).json({ error: error.message })
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// Failed Emails handler
+// ═══════════════════════════════════════════════════════════════════
+async function handleFailedEmails(_req: any, res: any) {
+  try {
+    const failedEmails = await sanityServer.fetch(`
+      *[_type == "failedEmail"] | order(timestamp desc) [0...200] {
+        _id, newsletterId, newsletterTitle, email, subscriberId, reason, eventType, timestamp
+      }
+    `)
+    const total = await sanityServer.fetch(`count(*[_type == "failedEmail"])`)
+    return res.status(200).json({ failedEmails, total })
+  } catch (error: any) {
+    console.error('Failed emails error:', error)
+    return res.status(500).json({ error: error.message })
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// Delete Failed Emails + optionally hard-delete subscriber
+// ═══════════════════════════════════════════════════════════════════
+async function handleDeleteFailedEmails(req: any, res: any) {
+  const { failedEmailIds, alsoDeleteSubscribers } = req.body
+
+  if (!Array.isArray(failedEmailIds) || failedEmailIds.length === 0) {
+    return res.status(400).json({ error: 'failedEmailIds array is required' })
+  }
+
+  try {
+    let deletedRecords = 0
+    let deletedSubscribers = 0
+
+    // Get subscriber IDs before deleting records (if also deleting subscribers)
+    let subscriberIds: string[] = []
+    if (alsoDeleteSubscribers) {
+      const records = await sanityServer.fetch(
+        `*[_type == "failedEmail" && _id in $ids]{ subscriberId }`,
+        { ids: failedEmailIds }
+      )
+      subscriberIds = [...new Set(records.map((r: any) => r.subscriberId).filter(Boolean))] as string[]
+    }
+
+    // Delete failed email records in batches
+    for (let i = 0; i < failedEmailIds.length; i += 50) {
+      const batch = failedEmailIds.slice(i, i + 50)
+      let tx = sanityServer.transaction()
+      for (const id of batch) {
+        tx = tx.delete(id)
+      }
+      await tx.commit()
+      deletedRecords += batch.length
+    }
+
+    // Optionally hard-delete the subscribers too
+    if (alsoDeleteSubscribers && subscriberIds.length > 0) {
+      for (let i = 0; i < subscriberIds.length; i += 50) {
+        const batch = subscriberIds.slice(i, i + 50)
+        let tx = sanityServer.transaction()
+        for (const id of batch) {
+          tx = tx.delete(id)
+        }
+        await tx.commit()
+        deletedSubscribers += batch.length
+      }
+    }
+
+    return res.status(200).json({
+      success: true,
+      deletedRecords,
+      deletedSubscribers,
+    })
+  } catch (error: any) {
+    console.error('Delete failed emails error:', error)
     return res.status(500).json({ error: error.message })
   }
 }

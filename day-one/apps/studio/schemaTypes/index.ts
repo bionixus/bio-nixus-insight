@@ -7,6 +7,7 @@ import subscriber from './subscriber'
 import newsletter from './newsletter'
 import contentCalendar from './contentCalendar'
 import shareEvent from './shareEvent'
+import failedEmail from './failedEmail'
 
 export const schemaTypes = [
   // Object types
@@ -23,4 +24,5 @@ export const schemaTypes = [
   newsletter,
   contentCalendar,
   shareEvent,
+  failedEmail,
 ]

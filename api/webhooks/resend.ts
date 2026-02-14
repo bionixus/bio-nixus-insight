@@ -32,17 +32,19 @@ export default async function handler(req: any, res: any) {
   const event = req.body
 
   try {
-    // Extract subscriber ID from email tags
+    // Extract IDs from email tags
     const subscriberId = event.data?.tags?.find((t: any) => t.name === 'subscriber_id')?.value
+    const newsletterId = event.data?.tags?.find((t: any) => t.name === 'newsletter_id')?.value
 
     if (!subscriberId) {
       console.log('No subscriber ID in webhook event')
       return res.status(200).json({ received: true })
     }
 
-    const subscriber = await sanityServer.fetch(`
-      *[_type == "subscriber" && _id == $id][0]
-    `, { id: subscriberId })
+    const subscriber = await sanityServer.fetch(
+      `*[_type == "subscriber" && _id == $id][0]`,
+      { id: subscriberId }
+    )
 
     if (!subscriber) {
       console.log('Subscriber not found:', subscriberId)
@@ -53,22 +55,14 @@ export default async function handler(req: any, res: any) {
 
     switch (event.type) {
       case 'email.sent':
-        // Email successfully sent
-        await sanityServer
-          .patch(subscriberId)
-          .set({
-            'analytics.emailsSent': (analytics.emailsSent || 0) + 1,
-            'analytics.lastEmailSent': new Date().toISOString()
-          })
-          .commit()
+        // Already tracked in send-newsletter.ts, skip duplicate counting
         break
 
       case 'email.delivered':
-        // Email delivered to inbox
+        // Email delivered to inbox — no action needed
         break
 
       case 'email.opened': {
-        // Email opened by subscriber
         const newOpens = (analytics.emailsOpened || 0) + 1
         const openRate = ((newOpens / (analytics.emailsSent || 1)) * 100).toFixed(2)
 
@@ -90,11 +84,21 @@ export default async function handler(req: any, res: any) {
             engagementLevel: openLevel,
           })
           .commit()
+
+        // Also update newsletter-level open count
+        if (newsletterId) {
+          try {
+            await sanityServer
+              .patch(newsletterId)
+              .setIfMissing({ stats: {} })
+              .inc({ 'stats.openCount': 1 })
+              .commit()
+          } catch (e) { /* ignore newsletter stat error */ }
+        }
         break
       }
 
       case 'email.clicked': {
-        // Link clicked in email
         const newClicks = (analytics.emailsClicked || 0) + 1
         const clickRate = ((newClicks / (analytics.emailsSent || 1)) * 100).toFixed(2)
 
@@ -116,31 +120,89 @@ export default async function handler(req: any, res: any) {
             engagementLevel: clickLevel,
           })
           .commit()
+
+        // Also update newsletter-level click count
+        if (newsletterId) {
+          try {
+            await sanityServer
+              .patch(newsletterId)
+              .setIfMissing({ stats: {} })
+              .inc({ 'stats.clickCount': 1 })
+              .commit()
+          } catch (e) { /* ignore */ }
+        }
         break
       }
 
-      case 'email.bounced':
-        // Email bounced (hard or soft)
-        // Mark for review or unsubscribe
+      case 'email.bounced': {
+        const bounceType = event.data?.bounce_type || 'unknown'
+        const eventType = bounceType === 'hard' ? 'hard_bounce' : 'soft_bounce'
+
+        // Create a failedEmail record
+        await sanityServer.create({
+          _type: 'failedEmail',
+          newsletterId: newsletterId || '',
+          newsletterTitle: '',
+          email: subscriber.email,
+          subscriberId,
+          reason: `Bounced (${bounceType}): ${event.data?.message || ''}`.trim(),
+          eventType,
+          timestamp: new Date().toISOString(),
+        })
+
+        // Append note and update newsletter bounce count
         await sanityServer
           .patch(subscriberId)
           .set({
-            notes: `${subscriber.notes || ''}\n[${new Date().toISOString()}] Email bounced: ${event.data?.bounce_type}`
+            notes: `${subscriber.notes || ''}\n[${new Date().toISOString()}] Email bounced: ${bounceType}`.trim(),
           })
           .commit()
-        break
 
-      case 'email.complained':
-        // Subscriber marked as spam
+        if (newsletterId) {
+          try {
+            await sanityServer
+              .patch(newsletterId)
+              .setIfMissing({ stats: {} })
+              .inc({ 'stats.bounceCount': 1 })
+              .commit()
+          } catch (e) { /* ignore */ }
+        }
+        break
+      }
+
+      case 'email.complained': {
+        // Subscriber marked as spam — unsubscribe and record
+        await sanityServer.create({
+          _type: 'failedEmail',
+          newsletterId: newsletterId || '',
+          newsletterTitle: '',
+          email: subscriber.email,
+          subscriberId,
+          reason: 'Marked as spam by recipient',
+          eventType: 'complaint',
+          timestamp: new Date().toISOString(),
+        })
+
         await sanityServer
           .patch(subscriberId)
           .set({
             subscribed: false,
             unsubscribedAt: new Date().toISOString(),
-            notes: `${subscriber.notes || ''}\n[${new Date().toISOString()}] Marked as spam`
+            notes: `${subscriber.notes || ''}\n[${new Date().toISOString()}] Marked as spam`.trim(),
           })
           .commit()
+
+        if (newsletterId) {
+          try {
+            await sanityServer
+              .patch(newsletterId)
+              .setIfMissing({ stats: {} })
+              .inc({ 'stats.complaintCount': 1 })
+              .commit()
+          } catch (e) { /* ignore */ }
+        }
         break
+      }
     }
 
     return res.status(200).json({ received: true })

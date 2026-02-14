@@ -1,17 +1,19 @@
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { useLocation } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
-import ServicesSection from '@/components/ServicesSection';
-import GeographicCoverageSection from '@/components/GeographicCoverageSection';
-import MethodologySection from '@/components/MethodologySection';
-import TherapeuticAreasSection from '@/components/TherapeuticAreasSection';
-import StatsSection from '@/components/StatsSection';
-import BlogSection from '@/components/BlogSection';
-import TestimonialsSection from '@/components/TestimonialsSection';
-import ContactSection from '@/components/ContactSection';
-import Footer from '@/components/Footer';
 import { useSanityBlog } from '@/hooks/useSanityBlog';
+
+// Lazy-load below-fold sections to cut initial JS by ~200KB+
+const ServicesSection = lazy(() => import('@/components/ServicesSection'));
+const GeographicCoverageSection = lazy(() => import('@/components/GeographicCoverageSection'));
+const MethodologySection = lazy(() => import('@/components/MethodologySection'));
+const TherapeuticAreasSection = lazy(() => import('@/components/TherapeuticAreasSection'));
+const StatsSection = lazy(() => import('@/components/StatsSection'));
+const BlogSection = lazy(() => import('@/components/BlogSection'));
+const TestimonialsSection = lazy(() => import('@/components/TestimonialsSection'));
+const ContactSection = lazy(() => import('@/components/ContactSection'));
+const Footer = lazy(() => import('@/components/Footer'));
 
 const Index = () => {
   const { hash } = useLocation();
@@ -35,16 +37,20 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <ServicesSection />
-        <GeographicCoverageSection />
-        <MethodologySection />
-        <TherapeuticAreasSection />
-        <StatsSection />
-        <BlogSection posts={sanityPosts?.slice(0, 3) ?? undefined} />
-        <TestimonialsSection />
-        <ContactSection />
+        <Suspense fallback={null}>
+          <ServicesSection />
+          <GeographicCoverageSection />
+          <MethodologySection />
+          <TherapeuticAreasSection />
+          <StatsSection />
+          <BlogSection posts={sanityPosts?.slice(0, 3) ?? undefined} />
+          <TestimonialsSection />
+          <ContactSection />
+        </Suspense>
       </main>
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </div>
   );
 };

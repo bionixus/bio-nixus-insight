@@ -125,7 +125,7 @@ const CaseStudyPage = () => {
     );
   }
 
-  const pageUrl = `https://bionixus.com/case-studies/${slug}`;
+  const pageUrl = `https://www.bionixus.com/case-studies/${slug}`;
   const metaTitle = caseStudy.seoMetaTitle || caseStudy.title;
   const metaDescription = caseStudy.seoMetaDescription || caseStudy.excerpt || caseStudy.title;
   const socialTitle = caseStudy.ogTitle || metaTitle;

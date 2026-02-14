@@ -22,4 +22,30 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    target: 'esnext',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'ui-vendor': [
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-dropdown-menu',
+            '@radix-ui/react-tabs',
+            '@radix-ui/react-accordion',
+            '@radix-ui/react-tooltip',
+            '@radix-ui/react-select',
+          ],
+          'sanity': ['@sanity/client', '@sanity/image-url', '@portabletext/react'],
+          'charts': ['recharts'],
+          'query': ['@tanstack/react-query'],
+          'dompurify': ['dompurify'],
+          'icons': ['lucide-react'],
+          'helmet': ['react-helmet-async'],
+          'statsig': ['@statsig/js-client', '@statsig/react-bindings', '@statsig/web-analytics', '@statsig/session-replay'],
+          'toast': ['sonner', 'next-themes'],
+        },
+      },
+    },
+  },
 }));

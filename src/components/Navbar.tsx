@@ -56,9 +56,11 @@ const Navbar = () => {
           {/* Logo – links to home, scrolls to hero when already on home */}
           <Link to={basePath} className="flex items-center gap-3" onClick={handleLogoClick}>
             <img
-              src="/bionixus-logo.png"
+              src="/bionixus-logo.webp"
               alt="BioNixus"
               className="h-9 w-auto object-contain"
+              width={126}
+              height={36}
             />
           </Link>
 

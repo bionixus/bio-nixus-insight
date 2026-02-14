@@ -77,9 +77,13 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <Link to={basePath} className="flex items-center gap-3 mb-6" onClick={handleLogoClick}>
               <img
-                src="/bionixus-logo-footer.png"
+                src="/bionixus-logo-footer.webp"
                 alt="BioNixus"
                 className="h-10 w-auto object-contain [filter:brightness(0)_invert(1)]"
+                width={200}
+                height={80}
+                loading="lazy"
+                decoding="async"
               />
             </Link>
 
@@ -141,6 +145,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/company/bionixus/about/?viewAsMember=true"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="BioNixus on LinkedIn"
                 className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
               >
                 <Linkedin className="w-5 h-5 text-primary-foreground" />
@@ -149,6 +154,7 @@ const Footer = () => {
                 href="https://www.facebook.com/Bionixus"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="BioNixus on Facebook"
                 className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
               >
                 <Facebook className="w-5 h-5 text-primary-foreground" />
@@ -157,6 +163,7 @@ const Footer = () => {
                 href="https://www.instagram.com/bionixus_?igsh=MWhuZnAycms3Nm13bQ==&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="BioNixus on Instagram"
                 className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
               >
                 <Instagram className="w-5 h-5 text-primary-foreground" />
@@ -172,7 +179,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <Link
-                  to={`${basePath}#about`}
+                  to="/about"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
                   {t.footer.about}
@@ -180,7 +187,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to={`${basePath}#services`}
+                  to="/services"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
                   {t.footer.services}

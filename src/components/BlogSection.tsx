@@ -11,6 +11,8 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 
+import { optimizeSanityImage } from '@/lib/image-utils';
+
 import blogImage1 from '@/assets/blog-insight-1.png';
 import blogImage2 from '@/assets/blog-insight-2.png';
 import blogImage3 from '@/assets/blog-insight-3.png';
@@ -22,8 +24,13 @@ interface BlogSectionProps {
 const DEFAULT_COVER_IMAGES = [blogImage1, blogImage2, blogImage3];
 
 function getImageSrc(url: string | undefined, index: number): string {
-  if (url?.startsWith('http')) return url;
+  if (url?.startsWith('http')) return optimizeSanityImage(url, 400, 250);
   return DEFAULT_COVER_IMAGES[index % DEFAULT_COVER_IMAGES.length];
+}
+
+function getImageSrcSet(url: string | undefined): string | undefined {
+  if (!url?.startsWith('http') || !url.includes('cdn.sanity.io')) return undefined;
+  return `${optimizeSanityImage(url, 400, 250)} 400w, ${optimizeSanityImage(url, 640, 400)} 640w, ${optimizeSanityImage(url, 768, 480)} 768w`;
 }
 
 const BlogSection = ({ posts }: BlogSectionProps) => {
@@ -80,7 +87,7 @@ const BlogSection = ({ posts }: BlogSectionProps) => {
               <div className="flex items-center gap-2">
                 <span className="text-sm text-muted-foreground whitespace-nowrap">{t.blog.filterByTopic}</span>
                 <Select value={selectedCategory || 'all'} onValueChange={(v) => setSelectedCategory(v === 'all' ? '' : v)}>
-                  <SelectTrigger className="w-[180px]">
+                  <SelectTrigger className="w-[180px]" aria-label="Filter by topic">
                     <SelectValue placeholder={t.blog.filterAllTopics} />
                   </SelectTrigger>
                   <SelectContent>
@@ -98,7 +105,7 @@ const BlogSection = ({ posts }: BlogSectionProps) => {
               <div className="flex items-center gap-2">
                 <span className="text-sm text-muted-foreground whitespace-nowrap">{t.blog.filterByCountry}</span>
                 <Select value={selectedCountry || 'all'} onValueChange={(v) => setSelectedCountry(v === 'all' ? '' : v)}>
-                  <SelectTrigger className="w-[180px]">
+                  <SelectTrigger className="w-[180px]" aria-label="Filter by country">
                     <SelectValue placeholder={t.blog.filterAllCountries} />
                   </SelectTrigger>
                   <SelectContent>
@@ -127,8 +134,14 @@ const BlogSection = ({ posts }: BlogSectionProps) => {
                 <div className="relative aspect-[16/10] rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-primary via-primary/95 to-navy-medium">
                   <img
                     src={getImageSrc(post.coverImage, index)}
-                    alt=""
+                    srcSet={getImageSrcSet(post.coverImage)}
+                    sizes="(max-width: 1024px) 90vw, 33vw"
+                    alt={post.title || 'Blog post cover'}
                     className="absolute inset-0 w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                    width={400}
+                    height={250}
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
                 </div>

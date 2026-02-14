@@ -5,6 +5,8 @@ import { PortableText } from '@portabletext/react';
 import type { PortableTextBlock } from '@portabletext/types';
 import { Helmet } from 'react-helmet-async';
 import { fetchSanityPostBySlug } from '@/lib/sanity-blog';
+import { optimizeSanityImage } from '@/lib/image-utils';
+import RelatedPosts from '@/components/RelatedPosts';
 
 /** Detect if string looks like HTML (contains tags). */
 function isHtmlString(s: string): boolean {
@@ -263,12 +265,62 @@ const BlogPost = () => {
     );
   }
 
-  const pageUrl = `https://bionixus.com/blog/${slug}`;
+  const pageUrl = `https://www.bionixus.com/blog/${slug}`;
   const metaTitle = post.seoMetaTitle || post.title;
   const metaDescription = post.seoMetaDescription || post.excerpt || post.title;
   const socialTitle = post.ogTitle || metaTitle;
   const socialDescription = post.ogDescription || metaDescription;
   const socialImage = post.ogImage || post.coverImage;
+
+  // --- Structured Data (JSON-LD) ---
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: metaDescription,
+    url: pageUrl,
+    ...(socialImage && { image: socialImage }),
+    ...(post.date && { datePublished: post.date }),
+    ...(post.authorName && {
+      author: { '@type': 'Person', name: post.authorName },
+    }),
+    publisher: {
+      '@type': 'Organization',
+      name: 'BioNixus',
+      url: 'https://www.bionixus.com',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.bionixus.com/og-image.png',
+      },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.bionixus.com/blog' },
+      { '@type': 'ListItem', position: 3, name: post.title },
+    ],
+  };
+
+  const faqSchema =
+    Array.isArray(post.faq) && post.faq.length > 0
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: post.faq.map((item) => ({
+            '@type': 'Question',
+            name: item.question || '',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: item.answer || '',
+            },
+          })),
+        }
+      : null;
 
   return (
     <div className="min-h-screen bg-background">
@@ -280,23 +332,37 @@ const BlogPost = () => {
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="BioNixus" />
         <meta property="og:title" content={socialTitle} />
         <meta property="og:description" content={socialDescription} />
         <meta property="og:url" content={pageUrl} />
         {socialImage && <meta property="og:image" content={socialImage} />}
         {socialImage && <meta property="og:image:width" content="1200" />}
         {socialImage && <meta property="og:image:height" content="630" />}
+        {socialImage && <meta property="og:image:alt" content={post.title} />}
         {post.date && <meta property="article:published_time" content={post.date} />}
         {post.category && <meta property="article:section" content={post.category} />}
+        {post.authorName && <meta property="article:author" content={post.authorName} />}
+        {Array.isArray(post.tags) && post.tags.map((tag) => (
+          <meta key={tag} property="article:tag" content={tag} />
+        ))}
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@BioNixus" />
         <meta name="twitter:title" content={socialTitle} />
         <meta name="twitter:description" content={socialDescription} />
         {socialImage && <meta name="twitter:image" content={socialImage} />}
 
         {/* Canonical URL */}
         <link rel="canonical" href={post.seoCanonicalUrl || pageUrl} />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {faqSchema && (
+          <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        )}
       </Helmet>
       <Navbar />
       <main className="section-padding">
@@ -349,9 +415,13 @@ const BlogPost = () => {
               <div className="flex items-center gap-2 mb-4">
                 {post.authorImage && (
                   <img
-                    src={post.authorImage}
+                    src={optimizeSanityImage(post.authorImage, 64, 64)}
                     alt={post.authorName}
                     className="w-8 h-8 rounded-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                    width={32}
+                    height={32}
                   />
                 )}
                 <span className="text-sm font-medium text-foreground">{post.authorName}</span>
@@ -370,9 +440,13 @@ const BlogPost = () => {
             {post.coverImage && (
               <div className="aspect-[16/10] rounded-xl overflow-hidden mb-8 bg-muted">
                 <img
-                  src={post.coverImage}
-                  alt=""
+                  src={optimizeSanityImage(post.coverImage, 768, 480)}
+                  alt={post.title || 'Article cover image'}
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                  width={768}
+                  height={480}
                 />
               </div>
             )}
@@ -483,6 +557,13 @@ const BlogPost = () => {
                 </Card>
               )}
           </article>
+
+          {/* Related posts + prev/next navigation */}
+          <RelatedPosts
+            currentSlug={slug!}
+            category={post.category}
+            date={post.date}
+          />
         </div>
       </main>
       <Footer />

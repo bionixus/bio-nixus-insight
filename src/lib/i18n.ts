@@ -159,8 +159,8 @@ export const translations = {
     stats: {
       title: 'Global Impact',
       items: [
-        { value: '50+', label: 'Countries Covered' },
-        { value: '10+', label: 'Pharma Clients' },
+        { value: '17+', label: 'Countries Covered' },
+        { value: '14+', label: 'Therapeutic Areas' },
         { value: '120+', label: 'Projects Delivered' },
         { value: '15+', label: 'Years Experience' },
       ],
@@ -169,14 +169,14 @@ export const translations = {
       title: 'Client Perspectives',
       subtitle: 'Trusted by leading pharmaceutical and biotech companies worldwide',
       items: [
-        { quote: 'BioNixus transformed our market access strategy with insights that were both rigorous and actionable. Their perspective was invaluable.', author: 'Dr. Sarah Mitchell', role: 'VP Market Access', company: 'Global Pharma Inc.' },
-        { quote: 'The depth of competitive intelligence and speed of delivery exceeded our expectations. A true strategic partner.', author: 'Michael Chen', role: 'Chief Strategy Officer', company: 'BioTech Company' },
-        { quote: 'Their KOL mapping and patient journey research directly influenced our launch success in three major European markets.', author: 'Dr. Elena Rodriguez', role: 'Commercial Director', company: 'Leading Pharma Company' },
+        { quote: 'BioNixus transformed our market access strategy with insights that were both rigorous and actionable. Their regional depth across MENA was unmatched.', author: 'Senior Director', role: 'VP Market Access', company: 'Top-5 Global Pharma Company' },
+        { quote: 'The depth of competitive intelligence and speed of delivery exceeded our expectations. A true strategic partner for our EMEA expansion.', author: 'Strategy Lead', role: 'Chief Strategy Officer', company: 'Mid-Cap Biotech Firm' },
+        { quote: 'Their KOL mapping and patient journey research directly influenced our launch success in three major European markets.', author: 'Commercial Lead', role: 'Commercial Director', company: 'Specialty Pharma Company' },
       ],
     },
     contactPage: {
       heroTitle: "One conversation can change your launch.",
-      heroSubtitle: "Join 50+ pharma teams who use BioNixus to unlock EMEA insights—faster. Get a tailored proposal in 24 hours. No commitment, no fluff.",
+      heroSubtitle: "Join pharmaceutical teams across EMEA who use BioNixus to unlock market insights—faster. Get a tailored proposal in 24 hours. No commitment, no fluff.",
       statLine: "Trusted by leading pharmaceutical companies in UK • Germany • France • UAE • Saudi Arabia • Egypt",
       badges: ['24h proposal turnaround', 'EMEA-native fieldwork', 'NICE & HTA-ready insights'],
     },
@@ -195,9 +195,9 @@ export const translations = {
       cta: 'Schedule a Consultation',
       ctaSecondary: 'Explore Our Services',
       email: 'admin@bionixus.com',
-      headquarters: 'Wyoming, USA',
+      headquarters: 'Sheridan, WY, USA | London, UK',
       emailLabel: 'Email',
-      headquartersLabel: 'Headquarters',
+      headquartersLabel: 'Offices',
       phoneLabel: 'Phone',
       formTitle: 'Request A Proposal',
       firstName: 'First Name',
@@ -417,8 +417,8 @@ export const translations = {
     stats: {
       title: 'Globale Wirkung',
       items: [
-        { value: '50+', label: 'Abgedeckte Länder' },
-        { value: '10+', label: 'Pharma-Kunden' },
+        { value: '17+', label: 'Abgedeckte Länder' },
+        { value: '14+', label: 'Therapiegebiete' },
         { value: '120+', label: 'Gelieferte Projekte' },
         { value: '15+', label: 'Jahre Erfahrung' },
       ],
@@ -427,9 +427,9 @@ export const translations = {
       title: 'Kundenperspektiven',
       subtitle: 'Vertraut von führenden Pharma- und Biotech-Unternehmen weltweit',
       items: [
-        { quote: 'BioNixus hat unsere Marktzugangsstrategie mit Erkenntnissen transformiert, die sowohl rigoros als auch umsetzbar waren. Ihre Perspektive war von unschätzbarem Wert.', author: 'Dr. Sarah Mitchell', role: 'VP Marktzugang', company: 'Global Pharma Inc.' },
-        { quote: 'Die Tiefe der Wettbewerbsintelligenz und die Liefergeschwindigkeit übertrafen unsere Erwartungen. Ein wahrer strategischer Partner.', author: 'Michael Chen', role: 'Chief Strategy Officer', company: 'BioTech Company' },
-        { quote: 'Ihr Meinungsführer-Mapping (KOL) und Patient-Journey-Forschung beeinflussten unseren Markteintrittserfolg in drei europäischen Kernmärkten direkt.', author: 'Dr. Elena Rodriguez', role: 'Commercial Director', company: 'Leading Pharma Company' },
+        { quote: 'BioNixus hat unsere Marktzugangsstrategie mit Erkenntnissen transformiert, die sowohl rigoros als auch umsetzbar waren. Ihre regionale Tiefe in MENA war unübertroffen.', author: 'Senior Director', role: 'VP Marktzugang', company: 'Top-5 Globales Pharmaunternehmen' },
+        { quote: 'Die Tiefe der Wettbewerbsintelligenz und die Liefergeschwindigkeit übertrafen unsere Erwartungen. Ein wahrer strategischer Partner für unsere EMEA-Expansion.', author: 'Strategieleiter', role: 'Chief Strategy Officer', company: 'Mittelständisches Biotech-Unternehmen' },
+        { quote: 'Ihr Meinungsführer-Mapping (KOL) und Patient-Journey-Forschung beeinflussten unseren Markteintrittserfolg in drei europäischen Kernmärkten direkt.', author: 'Commercial Lead', role: 'Commercial Director', company: 'Spezial-Pharmaunternehmen' },
       ],
     },
     contact: {
@@ -438,9 +438,9 @@ export const translations = {
       cta: 'Beratung vereinbaren',
       ctaSecondary: 'Unsere Leistungen erkunden',
       email: 'admin@bionixus.com',
-      headquarters: 'Wyoming, USA',
+      headquarters: 'Sheridan, WY, USA | London, UK',
       emailLabel: 'E-Mail',
-      headquartersLabel: 'Hauptsitz',
+      headquartersLabel: 'Büros',
       phoneLabel: 'Telefon',
       formTitle: 'Angebot anfordern',
       firstName: 'Vorname',
@@ -565,7 +565,7 @@ export const translations = {
       items: [
         {
           title: 'Recherche Quantitative & Enquêtes Médecins',
-          description: 'Insights statistiques à grande échelle des médecins et professionnels de santé en UK, Europe et MENA. Services: recherche NHS et secteur privé, études de préférence hospitalière, suivi des prescriptions, insights décideurs Évaluation des Technologies de Santé (ETS), analyse payeurs, enquêtes multi-pays (EAU, Arabie Saoudite, Égypte, Koweït, Qatar). Livrables: rapports statistiques, sizing marché, analyse des parcours, prévisions, segmentation, insights comparatifs.',
+          description: 'Insights statistiques à grande échelle des médecins et professionnels de santé en UK, Europe et MENA. Services: recherche NHS et secteur privé, études de préférence hospitalière, suivi des prescriptions, insights décideurs Évaluation des Technologies de Santé (ETS), analyse payeurs, enquêtes multi-pays (EAU, Arabie Saoudite, Égypte, Koweït, Qatar). Livrables: rapports statistiques, dimensionnement du marché, analyse des parcours, prévisions, segmentation, insights comparatifs.',
         },
         {
           title: 'Recherche Qualitative Pharmaceutique & Insights Experts',
@@ -581,7 +581,7 @@ export const translations = {
         },
         {
           title: 'Couverture Géographique: Europe • MENA',
-          description: 'UK: NHS England, Écosse, Pays de Galles, Irlande du Nord; hôpitaux universitaires London; recherche parties prenantes NICE, MHRA. Europe: Allemagne (G-BA, IQWiG), France (HAS, CEPS), Espagne, Italie, Pays-Bas, Belgique, Suisse. MENA: EAU (DHA, HAAD), Arabie Saoudite, Égypte, Koweït, Qatar.',
+          description: 'UK: NHS England, Écosse, Pays de Galles, Irlande du Nord; hôpitaux universitaires de Londres; recherche parties prenantes NICE, MHRA. Europe: Allemagne (G-BA, IQWiG), France (HAS, CEPS), Espagne, Italie, Pays-Bas, Belgique, Suisse. MENA: EAU (DHA, HAAD), Arabie Saoudite, Égypte, Koweït, Qatar.',
         },
         {
           title: 'Méthodologie & Conformité',
@@ -659,19 +659,19 @@ export const translations = {
     stats: {
       title: 'Impact Mondial',
       items: [
-        { value: '50+', label: 'Pays Couverts' },
-        { value: '10+', label: 'Clients Pharma' },
+        { value: '17+', label: 'Pays Couverts' },
+        { value: '14+', label: 'Aires Thérapeutiques' },
         { value: '120+', label: 'Projets Livrés' },
-        { value: '15+', label: 'Ans d\'Expérience' },
+        { value: '15+', label: 'Années d\'Expérience' },
       ],
     },
     testimonials: {
       title: 'Perspectives Clients',
       subtitle: 'Approuvé par les principales entreprises pharmaceutiques et biotechnologiques mondiales',
       items: [
-        { quote: 'BioNixus a transformé notre stratégie d\'accès au marché avec des insights à la fois rigoureux et exploitables. Leur perspective a été inestimable.', author: 'Dr. Sarah Mitchell', role: 'VP Accès au Marché', company: 'Global Pharma Inc.' },
-        { quote: 'La profondeur de l\'intelligence concurrentielle et la rapidité de livraison ont dépassé nos attentes. Un véritable partenaire stratégique.', author: 'Michael Chen', role: 'Chief Strategy Officer', company: 'BioTech Company' },
-        { quote: 'Leur cartographie des Leaders d\'Opinion Clés (KOL) et la recherche du parcours patient ont directement influencé notre succès de lancement sur trois marchés européens majeurs.', author: 'Dr. Elena Rodriguez', role: 'Directeur Commercial', company: 'Leading Pharma Company' },
+        { quote: 'BioNixus a transformé notre stratégie d\'accès au marché avec des insights à la fois rigoureux et exploitables. Leur profondeur régionale en MENA était inégalée.', author: 'Directeur Senior', role: 'VP Accès au Marché', company: 'Entreprise Pharma Top-5 Mondiale' },
+        { quote: 'La profondeur de l\'intelligence concurrentielle et la rapidité de livraison ont dépassé nos attentes. Un véritable partenaire stratégique pour notre expansion EMEA.', author: 'Responsable Stratégie', role: 'Chief Strategy Officer', company: 'Société Biotech Mid-Cap' },
+        { quote: 'Leur cartographie des Leaders d\'Opinion Clés (KOL) et la recherche du parcours patient ont directement influencé notre succès de lancement sur trois marchés européens majeurs.', author: 'Responsable Commercial', role: 'Directeur Commercial', company: 'Société Pharma Spécialisée' },
       ],
     },
     contact: {
@@ -680,9 +680,9 @@ export const translations = {
       cta: 'Demander une Proposition',
       ctaSecondary: 'Explorer nos Services',
       email: 'admin@bionixus.com',
-      headquarters: 'Wyoming, USA',
+      headquarters: 'Sheridan, WY, USA | London, UK',
       emailLabel: 'E-mail',
-      headquartersLabel: 'Siège',
+      headquartersLabel: 'Bureaux',
       phoneLabel: 'Téléphone',
       formTitle: 'Demander une proposition',
       firstName: 'Prénom',
@@ -807,11 +807,11 @@ export const translations = {
       items: [
         {
           title: 'Investigación Cuantitativa Sanitaria y Encuestas Médicas',
-          description: 'Insights estadísticos a gran escala de médicos y profesionales sanitarios en UK, Europa y MENA. Servicios: investigación NHS y proveedores privados, estudios de preferencia hospitalaria, seguimiento de prescripciones, insights decisores Evaluación de Tecnologías Sanitarias (ETS), análisis pagadores, encuestas multi-país (EAU, Arabia Saudí, Egipto, Kuwait, Qatar). Entregables: informes estadísticos, sizing de mercado, análisis de rutas, pronósticos, segmentación, insights comparativos.',
+          description: 'Insights estadísticos a gran escala de médicos y profesionales sanitarios en UK, Europa y MENA. Servicios: investigación NHS y proveedores privados, estudios de preferencia hospitalaria, seguimiento de prescripciones, insights decisores Evaluación de Tecnologías Sanitarias (ETS), análisis pagadores, encuestas multi-país (EAU, Arabia Saudí, Egipto, Kuwait, Qatar). Entregables: informes estadísticos, dimensionamiento del mercado, análisis de rutas, pronósticos, segmentación, insights comparativos.',
         },
         {
           title: 'Investigación Cualitativa Farmacéutica e Insights Expertos',
-          description: 'Investigación cualitativa profunda capturando perspectivas clínicas y necesidades médicas no cubiertas en UK, Europa y MENA. Servicios: entrevistas consultores NHS/GP, engagement comités NICE, mapeo KOL pan-europeo, grupos focales multi-país, análisis de rutas de tratamiento, insights sistema sanitario del Golfe. Entregables: análisis temático, resúmenes consenso, recomendaciones acceso mercado, estrategias KOL.',
+          description: 'Investigación cualitativa profunda capturando perspectivas clínicas y necesidades médicas no cubiertas en UK, Europa y MENA. Servicios: entrevistas consultores NHS/GP, engagement comités NICE, mapeo KOL pan-europeo, grupos focales multi-país, análisis de rutas de tratamiento, insights sistema sanitario del Golfo. Entregables: análisis temático, resúmenes consenso, recomendaciones acceso mercado, estrategias KOL.',
         },
         {
           title: 'Acceso al Mercado y Estrategia Evaluación de Tecnologías Sanitarias (ETS)',
@@ -901,8 +901,8 @@ export const translations = {
     stats: {
       title: 'Impacto Global',
       items: [
-        { value: '50+', label: 'Países Cubiertos' },
-        { value: '10+', label: 'Clientes Pharma' },
+        { value: '17+', label: 'Países Cubiertos' },
+        { value: '14+', label: 'Áreas Terapéuticas' },
         { value: '120+', label: 'Proyectos Entregados' },
         { value: '15+', label: 'Años de Experiencia' },
       ],
@@ -911,9 +911,9 @@ export const translations = {
       title: 'Perspectivas de Clientes',
       subtitle: 'Confiado por empresas farmacéuticas y biotecnológicas líderes en todo el mundo',
       items: [
-        { quote: 'BioNixus transformó nuestra estrategia de acceso al mercado con insights rigurosos y accionables. Su perspectiva fue invaluable.', author: 'Dr. Sarah Mitchell', role: 'VP Acceso al Mercado', company: 'Global Pharma Inc.' },
-        { quote: 'La profundidad de la inteligencia competitiva y la rapidez de entrega superaron nuestras expectativas. Un verdadero socio estratégico.', author: 'Michael Chen', role: 'Chief Strategy Officer', company: 'BioTech Company' },
-        { quote: 'Su mapeo de Líderes de Opinión Clave (KOL) y la investigación del recorrido del paciente influyeron directamente en nuestro éxito de lanzamiento en tres mercados europeos clave.', author: 'Dr. Elena Rodriguez', role: 'Director Comercial', company: 'Leading Pharma Company' },
+        { quote: 'BioNixus transformó nuestra estrategia de acceso al mercado con insights rigurosos y accionables. Su profundidad regional en MENA fue incomparable.', author: 'Director Senior', role: 'VP Acceso al Mercado', company: 'Empresa Pharma Top-5 Global' },
+        { quote: 'La profundidad de la inteligencia competitiva y la rapidez de entrega superaron nuestras expectativas. Un verdadero socio estratégico para nuestra expansión EMEA.', author: 'Líder de Estrategia', role: 'Chief Strategy Officer', company: 'Empresa Biotech Mid-Cap' },
+        { quote: 'Su mapeo de Líderes de Opinión Clave (KOL) y la investigación del recorrido del paciente influyeron directamente en nuestro éxito de lanzamiento en tres mercados europeos clave.', author: 'Líder Comercial', role: 'Director Comercial', company: 'Empresa Pharma Especializada' },
       ],
     },
     contact: {
@@ -922,9 +922,9 @@ export const translations = {
       cta: 'Solicitar Propuesta',
       ctaSecondary: 'Explorar Nuestros Servicios',
       email: 'admin@bionixus.com',
-      headquarters: 'Wyoming, USA',
+      headquarters: 'Sheridan, WY, USA | London, UK',
       emailLabel: 'Correo',
-      headquartersLabel: 'Sede',
+      headquartersLabel: 'Oficinas',
       phoneLabel: 'Teléfono',
       formTitle: 'Solicitar propuesta',
       firstName: 'Nombre',
@@ -1025,6 +1025,7 @@ export const translations = {
   },
   zh: {
     nav: {
+      home: '首页',
       services: '服务',
       insights: '洞察',
       about: '关于我们',
@@ -1142,8 +1143,8 @@ export const translations = {
     stats: {
       title: '全球影响',
       items: [
-        { value: '50+', label: '覆盖国家' },
-        { value: '10+', label: '制药客户' },
+        { value: '17+', label: '覆盖国家' },
+        { value: '14+', label: '治疗领域' },
         { value: '120+', label: '交付项目' },
         { value: '15+', label: '年经验' },
       ],
@@ -1152,9 +1153,9 @@ export const translations = {
       title: '客户观点',
       subtitle: '受到全球领先制药和生物技术公司的信赖',
       items: [
-        { quote: 'BioNixus以严谨且可执行的洞察转变了我们的市场准入策略。他们的视角极具价值。', author: 'Dr. Sarah Mitchell', role: '市场准入副总裁', company: 'Global Pharma Inc.' },
-        { quote: '竞争情报的深度和交付速度均显著超出了我们的预期。他们堪称真正的战略合作伙伴。', author: 'Michael Chen', role: '首席战略官', company: 'BioTech Company' },
-        { quote: '他们的关键意见领袖 (KOL) 映射和患者旅程研究直接影响了我们在三大欧洲市场的上市成功。', author: 'Dr. Elena Rodriguez', role: '商业总监', company: 'Leading Pharma Company' },
+        { quote: 'BioNixus以严谨且可执行的洞察转变了我们的市场准入策略。他们在MENA地区的深度无与伦比。', author: '高级总监', role: '市场准入副总裁', company: '全球Top-5制药公司' },
+        { quote: '竞争情报的深度和交付速度均显著超出了我们的预期。是我们EMEA扩展中真正的战略合作伙伴。', author: '战略负责人', role: '首席战略官', company: '中型生物科技公司' },
+        { quote: '他们的关键意见领袖 (KOL) 映射和患者旅程研究直接影响了我们在三大欧洲市场的上市成功。', author: '商业负责人', role: '商业总监', company: '专科制药公司' },
       ],
     },
     contact: {
@@ -1163,9 +1164,9 @@ export const translations = {
       cta: '索取方案',
       ctaSecondary: '探索我们的服务',
       email: 'admin@bionixus.com',
-      headquarters: 'Wyoming, USA',
+      headquarters: 'Sheridan, WY, USA | London, UK',
       emailLabel: '邮箱',
-      headquartersLabel: '总部',
+      headquartersLabel: '办公室',
       phoneLabel: '电话',
       formTitle: '索取方案',
       firstName: '名',
@@ -1389,8 +1390,8 @@ export const translations = {
     stats: {
       title: 'التأثير العالمي',
       items: [
-        { value: '+50', label: 'دولة مغطاة' },
-        { value: '+10', label: 'شركاء نجاح' },
+        { value: '+17', label: 'دولة مغطاة' },
+        { value: '+14', label: 'مجال علاجي' },
         { value: '+120', label: 'مشروع منجز' },
         { value: '+15', label: 'سنة خبرة' },
       ],
@@ -1399,9 +1400,9 @@ export const translations = {
       title: 'آراء العملاء',
       subtitle: 'موثوق به من قبل شركات الأدوية والتكنولوجيا الحيوية الرائدة في جميع أنحاء العالم',
       items: [
-        { quote: 'حوّلت BioNixus استراتيجية وصولنا إلى السوق برؤى دقيقة وقابلة للتطبيق. وكانت وجهة نظرهم لا تقدر بثمن.', author: 'Dr. Sarah Mitchell', role: 'VP Market Access', company: 'Global Pharma Inc.' },
-        { quote: 'لقد تجاوز عمق الذكاء التنافسي وسرعة التسليم توقعاتنا بشكل كبير. إنهم شريك استراتيجي حقيقي بامتياز.', author: 'Michael Chen', role: 'Chief Strategy Officer', company: 'BioTech Company' },
-        { quote: 'أثر رسم خرائط KOL وأبحاث رحلة المريض بشكل مباشر على نجاح إطلاقنا في ثلاثة أسواق أوروبية رئيسية.', author: 'Dr. Elena Rodriguez', role: 'Commercial Director', company: 'Leading Pharma Company' },
+        { quote: 'حوّلت BioNixus استراتيجية وصولنا إلى السوق برؤى دقيقة وقابلة للتطبيق. عمقهم الإقليمي في منطقة الشرق الأوسط وشمال أفريقيا لا مثيل له.', author: 'مدير أول', role: 'نائب رئيس الوصول للسوق', company: 'شركة أدوية عالمية من أكبر 5' },
+        { quote: 'لقد تجاوز عمق الذكاء التنافسي وسرعة التسليم توقعاتنا بشكل كبير. شريك استراتيجي حقيقي لتوسعنا في أوروبا والشرق الأوسط.', author: 'مسؤول الاستراتيجية', role: 'رئيس الاستراتيجية', company: 'شركة تكنولوجيا حيوية متوسطة' },
+        { quote: 'أثر رسم خرائط KOL وأبحاث رحلة المريض بشكل مباشر على نجاح إطلاقنا في ثلاثة أسواق أوروبية رئيسية.', author: 'المسؤول التجاري', role: 'المدير التجاري', company: 'شركة أدوية متخصصة' },
       ],
     },
     contact: {
@@ -1410,9 +1411,9 @@ export const translations = {
       cta: 'حدد موعد استشارة',
       ctaSecondary: 'استكشف خدماتنا',
       email: 'admin@bionixus.com',
-      headquarters: 'Wyoming, USA',
+      headquarters: 'Sheridan, WY, USA | London, UK',
       emailLabel: 'البريد الإلكتروني',
-      headquartersLabel: 'المقر الرئيسي',
+      headquartersLabel: 'المكاتب',
       phoneLabel: 'الهاتف',
       formTitle: 'طلب عرض',
       firstName: 'الاسم الأول',

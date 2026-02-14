@@ -13,7 +13,7 @@ const TestimonialsSection = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 animate-fade-up">
             {t.testimonials.title}
           </h2>
-          <p className="text-lg text-muted-foreground animate-fade-up animation-delay-200">
+          <p className="text-lg text-foreground/70 animate-fade-up animation-delay-200">
             {t.testimonials.subtitle}
           </p>
         </div>
@@ -51,8 +51,8 @@ const TestimonialsSection = () => {
 
         {/* Trusted by Industry Leaders – continuous marquee ticker */}
         <div className="mt-20 pt-12 border-t border-border">
-          <p className="text-center text-sm text-muted-foreground mb-8 uppercase tracking-widest">
-            Trusted by Industry Leaders
+          <p className="text-center text-sm text-foreground/70 mb-8 uppercase tracking-widest">
+            Industry Leaders We Serve Alongside
           </p>
           <div className="overflow-hidden select-none w-full" aria-hidden="true">
             <div
@@ -64,7 +64,7 @@ const TestimonialsSection = () => {
                   {['Pfizer', 'Roche', 'Novartis', 'Sanofi', 'AstraZeneca', 'Merck'].map((company) => (
                     <span
                       key={`${set}-${company}`}
-                      className="text-xl font-display font-semibold text-foreground/60 whitespace-nowrap"
+                      className="text-xl font-display font-semibold text-foreground/75 whitespace-nowrap"
                     >
                       {company}
                     </span>

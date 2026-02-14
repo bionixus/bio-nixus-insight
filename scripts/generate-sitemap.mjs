@@ -13,7 +13,7 @@ const root = join(__dirname, '..');
 const publicDir = join(root, 'public');
 const outPath = join(publicDir, 'sitemap.xml');
 
-const BASE = 'https://bionixus.com';
+const BASE = 'https://www.bionixus.com';
 
 // Load .env into process.env for VITE_* (simple parse)
 function loadEnv() {
@@ -44,39 +44,54 @@ function urlEntry(loc, lastmod = null, changefreq = 'weekly', priority = '0.8') 
   </url>`;
 }
 
-// Static routes (from App.tsx + seo)
-const staticRoutes = [
-  { path: '/', priority: '1.0' },
-  { path: '/de', priority: '0.9' },
-  { path: '/fr', priority: '0.9' },
-  { path: '/es', priority: '0.9' },
-  { path: '/zh', priority: '0.9' },
-  { path: '/zh/about', priority: '0.8' },
-  { path: '/zh/healthcare-market-research', priority: '0.8' },
-  { path: '/zh/quantitative-research', priority: '0.8' },
-  { path: '/zh/qualitative-research', priority: '0.8' },
-  { path: '/zh/market-access', priority: '0.8' },
-  { path: '/zh/clinical-trials', priority: '0.8' },
-  { path: '/zh/contact', priority: '0.8' },
-  { path: '/ar', priority: '0.9' },
-  { path: '/blog', priority: '0.9' },
-  { path: '/case-studies', priority: '0.9' },
+const LANGUAGES = ['', '/de', '/fr', '/es', '/zh', '/ar'];
+
+// Static routes — English + all language variants
+const corePages = [
+  { path: '/', priority: '1.0', changefreq: 'daily' },
+  { path: '/about', priority: '0.9' },
+  { path: '/healthcare-market-research', priority: '0.9' },
+  { path: '/quantitative-research', priority: '0.8' },
+  { path: '/qualitative-research', priority: '0.8' },
+  { path: '/market-access', priority: '0.8' },
+  { path: '/clinical-trials', priority: '0.8' },
   { path: '/contact', priority: '0.9' },
-  { path: '/de/contact', priority: '0.8' },
-  { path: '/fr/contact', priority: '0.8' },
-  { path: '/es/contact', priority: '0.8' },
-  { path: '/zh/contact', priority: '0.8' },
-  { path: '/ar/contact', priority: '0.8' },
-  { path: '/methodology', priority: '0.9' },
-  { path: '/de/methodology', priority: '0.8' },
-  { path: '/fr/methodology', priority: '0.8' },
-  { path: '/es/methodology', priority: '0.8' },
-  { path: '/zh/methodology', priority: '0.8' },
-  { path: '/ar/methodology', priority: '0.8' },
-  { path: '/privacy', priority: '0.5' },
+  { path: '/methodology', priority: '0.8' },
 ];
 
-async function fetchSanitySlugs(projectId, dataset, type) {
+const standalonePages = [
+  { path: '/blog', priority: '0.9', changefreq: 'daily' },
+  { path: '/case-studies', priority: '0.9', changefreq: 'weekly' },
+  { path: '/services', priority: '0.9', changefreq: 'monthly' },
+  { path: '/services/quantitative-research', priority: '0.8', changefreq: 'monthly' },
+  { path: '/services/qualitative-research', priority: '0.8', changefreq: 'monthly' },
+  { path: '/services/market-access', priority: '0.8', changefreq: 'monthly' },
+  { path: '/services/competitive-intelligence', priority: '0.8', changefreq: 'monthly' },
+  { path: '/services/clinical-trial-support', priority: '0.8', changefreq: 'monthly' },
+  { path: '/services/kol-stakeholder-mapping', priority: '0.8', changefreq: 'monthly' },
+  { path: '/faq', priority: '0.7', changefreq: 'monthly' },
+  { path: '/resources', priority: '0.7', changefreq: 'monthly' },
+  { path: '/privacy', priority: '0.3', changefreq: 'yearly' },
+];
+
+function buildStaticRoutes() {
+  const routes = [];
+  // Core pages in every language
+  for (const lang of LANGUAGES) {
+    for (const page of corePages) {
+      const path = lang === '' ? page.path : `${lang}${page.path}`;
+      const priority = lang === '' ? page.priority : String(Math.max(0.5, parseFloat(page.priority) - 0.1));
+      routes.push({ path, priority, changefreq: page.changefreq || 'weekly' });
+    }
+  }
+  // Standalone pages (no language variants)
+  for (const page of standalonePages) {
+    routes.push(page);
+  }
+  return routes;
+}
+
+async function fetchSanitySlugs(projectId, dataset, types) {
   try {
     const { createClient } = await import('@sanity/client');
     const client = createClient({
@@ -85,16 +100,20 @@ async function fetchSanitySlugs(projectId, dataset, type) {
       apiVersion: '2024-01-01',
       useCdn: true,
     });
-    const query = `*[_type == "${type}" && defined(slug.current)]{ "slug": slug.current }`;
+    // Fetch multiple types at once
+    const typeArray = Array.isArray(types) ? types : [types];
+    const query = `*[_type in $types && defined(slug.current)]{ "slug": slug.current }`;
     const list = await Promise.race([
-      client.fetch(query),
+      client.fetch(query, { types: typeArray }),
       new Promise((_, reject) =>
         setTimeout(() => reject(new Error('timeout')), 15000)
       ),
     ]);
-    return (list || []).map((o) => o.slug).filter(Boolean);
+    // Deduplicate slugs (in case same slug exists in both post and blogPost)
+    const slugs = [...new Set((list || []).map((o) => o.slug).filter(Boolean))];
+    return slugs;
   } catch (err) {
-    console.warn(`Sitemap: could not fetch ${type} slugs:`, err.message);
+    console.warn(`Sitemap: could not fetch slugs:`, err.message);
     return [];
   }
 }
@@ -108,15 +127,16 @@ async function main() {
   const caseDataset = process.env.VITE_SANITY_CASE_STUDIES_DATASET || 'production';
 
   const [blogSlugs, caseSlugs] = await Promise.all([
-    fetchSanitySlugs(blogProjectId, blogDataset, 'post'),
+    fetchSanitySlugs(blogProjectId, blogDataset, ['post', 'blogPost']),
     fetchSanitySlugs(caseProjectId, caseDataset, 'caseStudy'),
   ]);
 
   const today = new Date().toISOString().slice(0, 10);
   const urls = [];
 
-  for (const { path, priority } of staticRoutes) {
-    urls.push(urlEntry(BASE + path, today, 'weekly', priority));
+  const staticRoutes = buildStaticRoutes();
+  for (const { path, priority, changefreq } of staticRoutes) {
+    urls.push(urlEntry(BASE + path, today, changefreq || 'weekly', priority));
   }
   for (const slug of blogSlugs) {
     urls.push(urlEntry(`${BASE}/blog/${encodeURIComponent(slug)}`, today, 'monthly', '0.7'));
