@@ -6,7 +6,7 @@ import { toHTML } from '@portabletext/to-html'
 // ─── Config ───
 export const config = {
   api: { bodyParser: { sizeLimit: '2mb' } },
-  maxDuration: 120, // Allow up to 120s for large sends
+  maxDuration: 300, // 5 min — 305 emails × ~600ms each + retries
 }
 
 const sanityServer = createClient({
@@ -243,11 +243,12 @@ export default async function handler(req: any, res: any) {
       })
     }
 
-    // 4. Send in parallel batches
-    //    SES: up to 14/sec typical rate, use batches of 10 with 200ms delay
-    //    Resend: 100/day limit on free tier, send sequentially (batch of 2)
-    const BATCH_SIZE = SES_ENABLED ? 10 : 2
-    const BATCH_DELAY = SES_ENABLED ? 200 : 100 // ms between batches
+    // 4. Send sequentially respecting rate limits
+    //    SES: up to 14/sec — batches of 10 with 800ms delay
+    //    Resend: 2/sec limit — send one-by-one with 600ms delay + retry on 429
+    const BATCH_SIZE = SES_ENABLED ? 10 : 1
+    const BATCH_DELAY = SES_ENABLED ? 800 : 600 // ms between batches
+    const MAX_RETRIES = 3
 
     const errors: string[] = []
     const failedEmails: { email: string; subscriberId: string; reason: string }[] = []
@@ -260,28 +261,50 @@ export default async function handler(req: any, res: any) {
       const batchNum = Math.floor(i / BATCH_SIZE) + 1
       const totalBatches = Math.ceil(emailItems.length / BATCH_SIZE)
 
-      console.log(`[Newsletter] Sending batch ${batchNum}/${totalBatches} (${batch.length} emails)...`)
+      if (batchNum % 50 === 1 || BATCH_SIZE > 1) {
+        console.log(`[Newsletter] Sending ${batchNum}/${totalBatches} (${batch.length} emails)...`)
+      }
 
       const results = await sendBatch(batch, newsletter._id)
 
       for (const { subscriber, result } of results) {
         if (result.success) {
-          console.log(`[Newsletter] ✓ ${subscriber.email} -> ${result.messageId}`)
           successIds.push(subscriber._id)
           successCount++
+        } else if (result.error?.includes('Too many requests') || result.error?.includes('rate')) {
+          // Rate-limited — retry with exponential backoff
+          let retrySuccess = false
+          for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+            const backoff = attempt * 1500 // 1.5s, 3s, 4.5s
+            console.log(`[Newsletter] Rate-limited ${subscriber.email}, retry ${attempt}/${MAX_RETRIES} in ${backoff}ms`)
+            await sleep(backoff)
+            const retry = await sendEmail(subscriber.email, batch[0].subject, batch[0].html, batch[0].tags, newsletter._id)
+            if (retry.success) {
+              successIds.push(subscriber._id)
+              successCount++
+              retrySuccess = true
+              break
+            }
+            if (!retry.error?.includes('Too many requests') && !retry.error?.includes('rate')) {
+              // Different error — don't retry
+              break
+            }
+          }
+          if (!retrySuccess) {
+            console.error(`[Newsletter] ✗ ${subscriber.email}: ${result.error} (after ${MAX_RETRIES} retries)`)
+            errors.push(`${subscriber.email}: ${result.error}`)
+            failedEmails.push({ email: subscriber.email, subscriberId: subscriber._id, reason: result.error || 'Rate limit exceeded' })
+            failedCount++
+          }
         } else {
           console.error(`[Newsletter] ✗ ${subscriber.email}: ${result.error}`)
           errors.push(`${subscriber.email}: ${result.error}`)
-          failedEmails.push({
-            email: subscriber.email,
-            subscriberId: subscriber._id,
-            reason: result.error || 'Unknown error',
-          })
+          failedEmails.push({ email: subscriber.email, subscriberId: subscriber._id, reason: result.error || 'Unknown error' })
           failedCount++
         }
       }
 
-      // Rate-limiting delay between batches
+      // Rate-limiting delay between sends
       if (i + BATCH_SIZE < emailItems.length) {
         await sleep(BATCH_DELAY)
       }
