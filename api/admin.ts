@@ -1,4 +1,5 @@
 import { createClient } from '@sanity/client'
+import { GoogleAuth } from 'google-auth-library'
 import crypto from 'crypto'
 
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'BioNixus2026!'
@@ -95,6 +96,12 @@ export default async function handler(req: any, res: any) {
   if (action === 'delete-failed-emails') {
     if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' })
     return handleDeleteFailedEmails(req, res)
+  }
+
+  // ─── gsc-rankings: GET ───
+  if (action === 'gsc-rankings') {
+    if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' })
+    return handleGscRankings(req, res)
   }
 
   return res.status(400).json({ error: 'Unknown action' })
@@ -770,5 +777,151 @@ async function handleTrackShare(req: any, res: any) {
     console.error('track-share error:', err.message)
     // Return 200 anyway – tracking should never break UX
     return res.status(200).json({ success: false })
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// GSC Rankings handler — Google Search Console keyword tracking
+// ═══════════════════════════════════════════════════════════════════
+// GSC supports domain properties (sc-domain:) and URL prefix properties (https://)
+// Try domain first, fall back to URL prefix
+const GSC_SITE_URLS = [
+  'sc-domain:bionixus.com',
+  'https://www.bionixus.com',
+  'https://bionixus.com',
+]
+
+function getGoogleAuth() {
+  const clientEmail = process.env.GSC_CLIENT_EMAIL
+  const privateKey = process.env.GSC_PRIVATE_KEY?.replace(/\\n/g, '\n')
+
+  if (!clientEmail || !privateKey) {
+    throw new Error('GSC_CLIENT_EMAIL and GSC_PRIVATE_KEY environment variables are required')
+  }
+
+  return new GoogleAuth({
+    credentials: {
+      client_email: clientEmail,
+      private_key: privateKey,
+    },
+    scopes: ['https://www.googleapis.com/auth/webmasters.readonly'],
+  })
+}
+
+async function handleGscRankings(req: any, res: any) {
+  try {
+    const {
+      days = '28',
+      limit = '50',
+      page,
+      country,
+      device,
+      query: searchQuery,
+      sort = 'clicks',
+      groupByPage,
+    } = req.query
+
+    // Date range (GSC data has ~3 day lag)
+    const endDate = new Date()
+    endDate.setDate(endDate.getDate() - 3)
+    const startDate = new Date(endDate)
+    startDate.setDate(startDate.getDate() - parseInt(days))
+
+    const fmtDate = (d: Date) => d.toISOString().split('T')[0]
+
+    // Dimensions
+    const dimensions: string[] = ['query']
+    if (page || groupByPage === 'true') dimensions.push('page')
+
+    // Filters
+    const filters: any[] = []
+    if (page) filters.push({ dimension: 'page', operator: 'contains', expression: page })
+    if (country) filters.push({ dimension: 'country', operator: 'equals', expression: country.toUpperCase() })
+    if (device) filters.push({ dimension: 'device', operator: 'equals', expression: device.toUpperCase() })
+    if (searchQuery) filters.push({ dimension: 'query', operator: 'contains', expression: searchQuery })
+
+    const dimensionFilterGroups: any[] = []
+    if (filters.length > 0) dimensionFilterGroups.push({ groupType: 'and', filters })
+
+    // Authenticate and call GSC API
+    const auth = getGoogleAuth()
+    const client = await auth.getClient()
+    const accessToken = await client.getAccessToken()
+
+    const body: Record<string, any> = {
+      startDate: fmtDate(startDate),
+      endDate: fmtDate(endDate),
+      dimensions,
+      rowLimit: Math.min(parseInt(limit), 1000),
+      startRow: 0,
+    }
+    if (dimensionFilterGroups.length > 0) body.dimensionFilterGroups = dimensionFilterGroups
+
+    // Try each site URL format until one works
+    let response: Response | null = null
+    let usedSiteUrl = ''
+    for (const siteUrl of GSC_SITE_URLS) {
+      const encodedSite = encodeURIComponent(siteUrl)
+      const apiUrl = `https://www.googleapis.com/webmasters/v3/sites/${encodedSite}/searchAnalytics/query`
+
+      const attempt = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${accessToken.token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+      })
+
+      if (attempt.ok) {
+        response = attempt
+        usedSiteUrl = siteUrl
+        break
+      }
+      // If 403, try next format; for other errors, return immediately
+      if (attempt.status !== 403) {
+        const errText = await attempt.text()
+        console.error('GSC API error:', attempt.status, errText)
+        return res.status(attempt.status).json({ error: 'Google Search Console API error', details: errText })
+      }
+    }
+
+    if (!response) {
+      return res.status(403).json({
+        error: 'No accessible GSC property found',
+        details: `Tried: ${GSC_SITE_URLS.join(', ')}. Ensure the service account email is added as a user in Google Search Console.`,
+      })
+    }
+
+    const data = await response.json() as { rows?: { keys: string[]; clicks: number; impressions: number; ctr: number; position: number }[] }
+
+    // Map to clean format
+    const rankings = (data.rows || []).map((row) => ({
+      query: row.keys[0],
+      ...(dimensions.includes('page') && { page: row.keys[1] }),
+      clicks: row.clicks,
+      impressions: row.impressions,
+      ctr: (row.ctr * 100).toFixed(1) + '%',
+      position: row.position.toFixed(1),
+    }))
+
+    // Sort
+    if (['clicks', 'impressions', 'position'].includes(sort)) {
+      rankings.sort((a: any, b: any) => {
+        const aVal = parseFloat(String(a[sort]))
+        const bVal = parseFloat(String(b[sort]))
+        return sort === 'position' ? aVal - bVal : bVal - aVal
+      })
+    }
+
+    return res.status(200).json({
+      site: usedSiteUrl,
+      dateRange: { start: fmtDate(startDate), end: fmtDate(endDate) },
+      totalKeywords: rankings.length,
+      rankings,
+    })
+  } catch (error: any) {
+    console.error('GSC rankings error:', error)
+    return res.status(500).json({ error: error.message })
   }
 }

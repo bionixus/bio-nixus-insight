@@ -296,6 +296,11 @@ const MenaMarketData = () => {
                   <p className="text-sm text-muted-foreground mt-4 pt-4 border-t border-border">
                     <span className="font-medium text-foreground">Key insight:</span> {m.keyFact}
                   </p>
+                  {m.country === 'Kuwait' && (
+                    <Link to="/pharmaceutical-companies-kuwait" className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline mt-2">
+                      View full Kuwait pharma industry guide <ArrowRight className="w-3 h-3" />
+                    </Link>
+                  )}
                 </div>
               ))}
             </div>

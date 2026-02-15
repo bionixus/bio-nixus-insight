@@ -269,6 +269,11 @@ const ServiceDetail = () => {
           <div className="container-wide max-w-4xl mx-auto">
             <h2 className="text-2xl font-display font-semibold text-foreground mb-4">Geographic Coverage</h2>
             <p className="text-muted-foreground leading-relaxed text-lg">{svc.geoCoverage}</p>
+            {svc.geoCoverage.includes('Kuwait') && (
+              <Link to="/pharmaceutical-companies-kuwait" className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline mt-3">
+                Explore our Kuwait pharmaceutical industry guide <ArrowRight className="w-3 h-3" />
+              </Link>
+            )}
           </div>
         </section>
 

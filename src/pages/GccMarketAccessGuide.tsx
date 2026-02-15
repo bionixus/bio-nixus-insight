@@ -389,6 +389,11 @@ const GccMarketAccessGuide = () => {
                         )}
                       </ul>
                     </div>
+                    {rb.country === 'Kuwait' && (
+                      <Link to="/pharmaceutical-companies-kuwait" className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline mt-4">
+                        View full Kuwait pharmaceutical industry guide <ArrowRight className="w-3 h-3" />
+                      </Link>
+                    )}
                   </div>
                 </div>
               ))}

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
@@ -60,6 +61,11 @@ const GeographicCoverageSection = () => {
                             <li key={k}>{item}</li>
                           ))}
                         </ul>
+                        {country.name === 'Kuwait' && (
+                          <Link to="/pharmaceutical-companies-kuwait" className="inline-block mt-3 text-xs font-medium text-primary hover:underline">
+                            Pharma industry guide &rarr;
+                          </Link>
+                        )}
                       </div>
                     ))}
                   </div>

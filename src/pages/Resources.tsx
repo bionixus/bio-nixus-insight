@@ -1,7 +1,7 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Download, FileText, BarChart3, Globe, Microscope, ArrowRight } from 'lucide-react';
+import { ArrowLeft, Download, FileText, BarChart3, Globe, Microscope, ArrowRight, Building2 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { Helmet } from 'react-helmet-async';
@@ -29,6 +29,13 @@ const resources: Resource[] = [
     type: 'Guide',
     icon: <BarChart3 className="w-6 h-6" />,
     href: '/gcc-market-access-guide',
+  },
+  {
+    title: 'Pharmaceutical Companies in Kuwait: Industry Guide 2026',
+    description: 'Comprehensive guide to pharmaceutical companies operating in Kuwait — local manufacturers, MNC offices, distributors, $1.2B market data, MOH drug registration, and distribution channels.',
+    type: 'Industry Guide',
+    icon: <Building2 className="w-6 h-6" />,
+    href: '/pharmaceutical-companies-kuwait',
   },
   {
     title: 'Physician Survey Methodology Whitepaper',
