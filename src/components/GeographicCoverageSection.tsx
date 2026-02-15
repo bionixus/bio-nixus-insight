@@ -66,6 +66,36 @@ const GeographicCoverageSection = () => {
                             Pharma industry guide &rarr;
                           </Link>
                         )}
+                        {country.name === 'Saudi Arabia' && (
+                          <Link to="/pharmaceutical-companies-saudi-arabia" className="inline-block mt-3 text-xs font-medium text-primary hover:underline">
+                            Pharma industry guide &rarr;
+                          </Link>
+                        )}
+                        {country.name === 'UAE' && (
+                          <Link to="/pharmaceutical-companies-uae" className="inline-block mt-3 text-xs font-medium text-primary hover:underline">
+                            Pharma industry guide &rarr;
+                          </Link>
+                        )}
+                        {country.name === 'Qatar' && (
+                          <Link to="/pharmaceutical-companies-qatar" className="inline-block mt-3 text-xs font-medium text-primary hover:underline">
+                            Pharma industry guide &rarr;
+                          </Link>
+                        )}
+                        {country.name === 'Bahrain' && (
+                          <Link to="/pharmaceutical-companies-bahrain" className="inline-block mt-3 text-xs font-medium text-primary hover:underline">
+                            Pharma industry guide &rarr;
+                          </Link>
+                        )}
+                        {country.name === 'Oman' && (
+                          <Link to="/pharmaceutical-companies-oman" className="inline-block mt-3 text-xs font-medium text-primary hover:underline">
+                            Pharma industry guide &rarr;
+                          </Link>
+                        )}
+                        {country.name === 'Egypt' && (
+                          <Link to="/pharmaceutical-companies-egypt" className="inline-block mt-3 text-xs font-medium text-primary hover:underline">
+                            Pharma industry guide &rarr;
+                          </Link>
+                        )}
                       </div>
                     ))}
                   </div>

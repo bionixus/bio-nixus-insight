@@ -269,11 +269,53 @@ const ServiceDetail = () => {
           <div className="container-wide max-w-4xl mx-auto">
             <h2 className="text-2xl font-display font-semibold text-foreground mb-4">Geographic Coverage</h2>
             <p className="text-muted-foreground leading-relaxed text-lg">{svc.geoCoverage}</p>
-            {svc.geoCoverage.includes('Kuwait') && (
-              <Link to="/pharmaceutical-companies-kuwait" className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline mt-3">
-                Explore our Kuwait pharmaceutical industry guide <ArrowRight className="w-3 h-3" />
-              </Link>
-            )}
+            <div className="flex flex-wrap gap-x-6 gap-y-2 mt-4">
+              {svc.geoCoverage.includes('Kuwait') && (
+                <Link to="/pharmaceutical-companies-kuwait" className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
+                  Kuwait pharma guide <ArrowRight className="w-3 h-3" />
+                </Link>
+              )}
+              {svc.geoCoverage.includes('Saudi') && (
+                <Link to="/pharmaceutical-companies-saudi-arabia" className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
+                  Saudi Arabia pharma guide <ArrowRight className="w-3 h-3" />
+                </Link>
+              )}
+              {svc.geoCoverage.includes('UAE') && (
+                <Link to="/pharmaceutical-companies-uae" className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
+                  UAE pharma guide <ArrowRight className="w-3 h-3" />
+                </Link>
+              )}
+              {svc.geoCoverage.includes('Egypt') && (
+                <Link to="/pharmaceutical-companies-egypt" className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
+                  Egypt pharma guide <ArrowRight className="w-3 h-3" />
+                </Link>
+              )}
+              {svc.geoCoverage.includes('Qatar') && (
+                <Link to="/pharmaceutical-companies-qatar" className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
+                  Qatar pharma guide <ArrowRight className="w-3 h-3" />
+                </Link>
+              )}
+              {svc.geoCoverage.includes('Oman') && (
+                <Link to="/pharmaceutical-companies-oman" className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
+                  Oman pharma guide <ArrowRight className="w-3 h-3" />
+                </Link>
+              )}
+              {svc.geoCoverage.includes('Bahrain') && (
+                <Link to="/pharmaceutical-companies-bahrain" className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
+                  Bahrain pharma guide <ArrowRight className="w-3 h-3" />
+                </Link>
+              )}
+              {svc.geoCoverage.includes('Iraq') && (
+                <Link to="/pharmaceutical-companies-iraq" className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
+                  Iraq pharma guide <ArrowRight className="w-3 h-3" />
+                </Link>
+              )}
+              {svc.geoCoverage.includes('Iran') && (
+                <Link to="/pharmaceutical-companies-iran" className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
+                  Iran pharma guide <ArrowRight className="w-3 h-3" />
+                </Link>
+              )}
+            </div>
           </div>
         </section>
 

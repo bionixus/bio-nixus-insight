@@ -394,6 +394,31 @@ const GccMarketAccessGuide = () => {
                         View full Kuwait pharmaceutical industry guide <ArrowRight className="w-3 h-3" />
                       </Link>
                     )}
+                    {rb.country === 'Saudi Arabia' && (
+                      <Link to="/pharmaceutical-companies-saudi-arabia" className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline mt-4">
+                        View full Saudi Arabia pharmaceutical industry guide <ArrowRight className="w-3 h-3" />
+                      </Link>
+                    )}
+                    {rb.country === 'UAE' && (
+                      <Link to="/pharmaceutical-companies-uae" className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline mt-4">
+                        View full UAE pharmaceutical industry guide <ArrowRight className="w-3 h-3" />
+                      </Link>
+                    )}
+                    {rb.country === 'Qatar' && (
+                      <Link to="/pharmaceutical-companies-qatar" className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline mt-4">
+                        View full Qatar pharmaceutical industry guide <ArrowRight className="w-3 h-3" />
+                      </Link>
+                    )}
+                    {rb.country === 'Bahrain' && (
+                      <Link to="/pharmaceutical-companies-bahrain" className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline mt-4">
+                        View full Bahrain pharmaceutical industry guide <ArrowRight className="w-3 h-3" />
+                      </Link>
+                    )}
+                    {rb.country === 'Oman' && (
+                      <Link to="/pharmaceutical-companies-oman" className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline mt-4">
+                        View full Oman pharmaceutical industry guide <ArrowRight className="w-3 h-3" />
+                      </Link>
+                    )}
                   </div>
                 </div>
               ))}

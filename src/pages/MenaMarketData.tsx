@@ -301,6 +301,46 @@ const MenaMarketData = () => {
                       View full Kuwait pharma industry guide <ArrowRight className="w-3 h-3" />
                     </Link>
                   )}
+                  {m.country === 'Saudi Arabia' && (
+                    <Link to="/pharmaceutical-companies-saudi-arabia" className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline mt-2">
+                      View full Saudi Arabia pharma industry guide <ArrowRight className="w-3 h-3" />
+                    </Link>
+                  )}
+                  {m.country === 'UAE' && (
+                    <Link to="/pharmaceutical-companies-uae" className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline mt-2">
+                      View full UAE pharma industry guide <ArrowRight className="w-3 h-3" />
+                    </Link>
+                  )}
+                  {m.country === 'Qatar' && (
+                    <Link to="/pharmaceutical-companies-qatar" className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline mt-2">
+                      View full Qatar pharma industry guide <ArrowRight className="w-3 h-3" />
+                    </Link>
+                  )}
+                  {m.country === 'Bahrain' && (
+                    <Link to="/pharmaceutical-companies-bahrain" className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline mt-2">
+                      View full Bahrain pharma industry guide <ArrowRight className="w-3 h-3" />
+                    </Link>
+                  )}
+                  {m.country === 'Oman' && (
+                    <Link to="/pharmaceutical-companies-oman" className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline mt-2">
+                      View full Oman pharma industry guide <ArrowRight className="w-3 h-3" />
+                    </Link>
+                  )}
+                  {m.country === 'Egypt' && (
+                    <Link to="/pharmaceutical-companies-egypt" className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline mt-2">
+                      View full Egypt pharma industry guide <ArrowRight className="w-3 h-3" />
+                    </Link>
+                  )}
+                  {m.country === 'Iraq' && (
+                    <Link to="/pharmaceutical-companies-iraq" className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline mt-2">
+                      View full Iraq pharma industry guide <ArrowRight className="w-3 h-3" />
+                    </Link>
+                  )}
+                  {m.country === 'Iran' && (
+                    <Link to="/pharmaceutical-companies-iran" className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline mt-2">
+                      View full Iran pharma industry guide <ArrowRight className="w-3 h-3" />
+                    </Link>
+                  )}
                 </div>
               ))}
             </div>
