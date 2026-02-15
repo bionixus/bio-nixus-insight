@@ -30,7 +30,7 @@ export interface BlogPost {
   readingTime?: number;
   tags?: string[];
   tableOfContents?: { heading?: string; anchor?: string }[];
-  executiveSummary?: unknown[];
+  executiveSummary?: string | unknown[];
   faq?: BlogPostFaqItem[];
   ctaSection?: BlogPostCtaSection;
   // SEO / OG / Author

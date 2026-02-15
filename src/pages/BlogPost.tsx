@@ -469,16 +469,22 @@ const BlogPost = () => {
               </nav>
             )}
 
-            {Array.isArray(post.executiveSummary) && post.executiveSummary.length > 0 && (
+            {post.executiveSummary && (
+              Array.isArray(post.executiveSummary) ? post.executiveSummary.length > 0 : typeof post.executiveSummary === 'string' && (post.executiveSummary as string).trim()
+            ) && (
               <section className="mb-8 p-5 rounded-lg border border-primary/20 bg-primary/5">
                 <h2 className="text-lg font-display font-semibold text-primary mb-3">
                   Executive summary
                 </h2>
                 <div className="prose-body text-foreground leading-relaxed">
-                  <PortableText
-                    value={post.executiveSummary as PortableTextBlock[]}
-                    components={portableTextComponents}
-                  />
+                  {typeof post.executiveSummary === 'string' ? (
+                    <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.executiveSummary as string) }} />
+                  ) : (
+                    <PortableText
+                      value={post.executiveSummary as PortableTextBlock[]}
+                      components={portableTextComponents}
+                    />
+                  )}
                 </div>
               </section>
             )}

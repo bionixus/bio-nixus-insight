@@ -11,36 +11,63 @@ import ScrollToTop from "@/components/ScrollToTop";
 // Eager: homepage (above the fold, most visited)
 import Index from "./pages/Index";
 
+/**
+ * Resilient lazy loader: retries the dynamic import once after a short delay,
+ * then falls back to a full page reload. This prevents the
+ * "'text/html' is not a valid JavaScript MIME type" crash that occurs
+ * when Vercel serves index.html for a chunk that no longer exists after
+ * a new deployment (stale browser cache referencing old hashed filenames).
+ */
+function lazyWithRetry<T extends React.ComponentType<unknown>>(
+  factory: () => Promise<{ default: T }>,
+) {
+  return lazy(() =>
+    factory().catch(() =>
+      // First retry after a brief pause (may just be a transient network hiccup)
+      new Promise<{ default: T }>((resolve) => setTimeout(resolve, 1500)).then(() =>
+        factory().catch(() => {
+          // Chunk genuinely missing (new deployment) → hard-reload to get the latest HTML + chunks
+          window.location.reload();
+          // Return a never-resolving promise so React doesn't try to render stale content
+          return new Promise<{ default: T }>(() => {});
+        }),
+      ),
+    ),
+  );
+}
+
 // Lazy: non-critical UI loaded after first paint
 const Toaster = lazy(() => import("@/components/ui/toaster").then(m => ({ default: m.Toaster })));
 const Sonner = lazy(() => import("@/components/ui/sonner").then(m => ({ default: m.Toaster })));
-const LocalePrompt = lazy(() => import("@/components/LocalePrompt"));
-const CookieConsent = lazy(() => import("@/components/CookieConsent"));
+const LocalePrompt = lazyWithRetry(() => import("@/components/LocalePrompt"));
+const CookieConsent = lazyWithRetry(() => import("@/components/CookieConsent"));
 
 // Lazy: all other routes — loaded only when navigated to
-const Blog = lazy(() => import("./pages/Blog"));
-const BlogPost = lazy(() => import("./pages/BlogPost"));
-const CaseStudies = lazy(() => import("./pages/CaseStudies"));
-const CaseStudy = lazy(() => import("./pages/CaseStudy"));
-const About = lazy(() => import("./pages/About"));
-const Services = lazy(() => import("./pages/Services"));
-const FAQ = lazy(() => import("./pages/FAQ"));
-const Resources = lazy(() => import("./pages/Resources"));
-const ServiceDetail = lazy(() => import("./pages/ServiceDetail"));
-const Privacy = lazy(() => import("./pages/Privacy"));
-const Contact = lazy(() => import("./pages/Contact"));
-const Methodology = lazy(() => import("./pages/Methodology"));
-const VerifyEmail = lazy(() => import("./pages/VerifyEmail"));
-const NotFound = lazy(() => import("./pages/NotFound"));
+const Blog = lazyWithRetry(() => import("./pages/Blog"));
+const BlogPost = lazyWithRetry(() => import("./pages/BlogPost"));
+const CaseStudies = lazyWithRetry(() => import("./pages/CaseStudies"));
+const CaseStudy = lazyWithRetry(() => import("./pages/CaseStudy"));
+const About = lazyWithRetry(() => import("./pages/About"));
+const Services = lazyWithRetry(() => import("./pages/Services"));
+const FAQ = lazyWithRetry(() => import("./pages/FAQ"));
+const Resources = lazyWithRetry(() => import("./pages/Resources"));
+const ServiceDetail = lazyWithRetry(() => import("./pages/ServiceDetail"));
+const Privacy = lazyWithRetry(() => import("./pages/Privacy"));
+const Contact = lazyWithRetry(() => import("./pages/Contact"));
+const Methodology = lazyWithRetry(() => import("./pages/Methodology"));
+const VerifyEmail = lazyWithRetry(() => import("./pages/VerifyEmail"));
+const MenaMarketData = lazyWithRetry(() => import("./pages/MenaMarketData"));
+const GccMarketAccessGuide = lazyWithRetry(() => import("./pages/GccMarketAccessGuide"));
+const NotFound = lazyWithRetry(() => import("./pages/NotFound"));
 
 // Lazy: admin routes (rarely visited by public)
-const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
-const AdminLogin = lazy(() => import("./pages/AdminLogin"));
-const AdminImportSubscribers = lazy(() => import("./pages/AdminImportSubscribers"));
-const AdminAnalytics = lazy(() => import("./pages/AdminAnalytics"));
-const AdminCalendar = lazy(() => import("./pages/AdminCalendar"));
-const AdminCalendarNew = lazy(() => import("./pages/AdminCalendarNew"));
-const AdminSendNewsletter = lazy(() => import("./pages/AdminSendNewsletter"));
+const AdminDashboard = lazyWithRetry(() => import("./pages/AdminDashboard"));
+const AdminLogin = lazyWithRetry(() => import("./pages/AdminLogin"));
+const AdminImportSubscribers = lazyWithRetry(() => import("./pages/AdminImportSubscribers"));
+const AdminAnalytics = lazyWithRetry(() => import("./pages/AdminAnalytics"));
+const AdminCalendar = lazyWithRetry(() => import("./pages/AdminCalendar"));
+const AdminCalendarNew = lazyWithRetry(() => import("./pages/AdminCalendarNew"));
+const AdminSendNewsletter = lazyWithRetry(() => import("./pages/AdminSendNewsletter"));
 
 const queryClient = new QueryClient();
 
@@ -109,6 +136,8 @@ const App = () => (
               <Route path="/services/:slug" element={<ServiceDetail />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/resources" element={<Resources />} />
+              <Route path="/mena-pharma-market-data" element={<MenaMarketData />} />
+              <Route path="/gcc-market-access-guide" element={<GccMarketAccessGuide />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
               <Route path="/case-studies" element={<CaseStudies />} />

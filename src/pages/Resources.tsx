@@ -1,7 +1,7 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Download, FileText, BarChart3, Globe, Microscope } from 'lucide-react';
+import { ArrowLeft, Download, FileText, BarChart3, Globe, Microscope, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { Helmet } from 'react-helmet-async';
@@ -12,28 +12,29 @@ interface Resource {
   type: string;
   icon: React.ReactNode;
   comingSoon?: boolean;
+  href?: string;
 }
 
 const resources: Resource[] = [
   {
-    title: 'MENA Pharmaceutical Market Guide 2026',
-    description: 'Comprehensive overview of the pharmaceutical landscape across UAE, Saudi Arabia, Egypt, Kuwait, and Qatar — regulatory frameworks, market sizing, and key trends.',
-    type: 'Market Guide',
+    title: 'MENA Pharmaceutical Market Data 2026',
+    description: 'Country-by-country pharmaceutical market data: $33.9B+ total market, growth rates, per-capita spending, regulatory bodies, and therapeutic area trends for Saudi Arabia, UAE, Egypt, Kuwait, Qatar, Bahrain & Oman.',
+    type: 'Data Resource',
     icon: <Globe className="w-6 h-6" />,
-    comingSoon: true,
+    href: '/mena-pharma-market-data',
+  },
+  {
+    title: 'GCC Pharmaceutical Market Access Guide 2026',
+    description: 'Complete guide to drug registration, pricing, and reimbursement across the 6 GCC countries. Regulatory authority requirements, timelines, and practical guidance for pharmaceutical companies.',
+    type: 'Guide',
+    icon: <BarChart3 className="w-6 h-6" />,
+    href: '/gcc-market-access-guide',
   },
   {
     title: 'Physician Survey Methodology Whitepaper',
     description: 'Our approach to large-scale quantitative physician surveys across EMEA — sample design, recruitment strategies, quality assurance, and statistical analysis.',
     type: 'Whitepaper',
     icon: <FileText className="w-6 h-6" />,
-    comingSoon: true,
-  },
-  {
-    title: 'Market Access in the GCC — A Practical Guide',
-    description: 'Navigate pricing, reimbursement, and formulary access across Saudi Arabia, UAE, Kuwait, and Qatar. Regulatory bodies, submission processes, and timelines.',
-    type: 'Guide',
-    icon: <BarChart3 className="w-6 h-6" />,
     comingSoon: true,
   },
   {
@@ -104,7 +105,14 @@ const Resources = () => {
                   <p className="text-muted-foreground leading-relaxed mb-6 flex-1">
                     {res.description}
                   </p>
-                  {res.comingSoon ? (
+                  {res.href ? (
+                    <Link
+                      to={res.href}
+                      className="inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline"
+                    >
+                      Read Guide <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  ) : res.comingSoon ? (
                     <span className="inline-flex items-center gap-2 text-muted-foreground text-sm font-medium">
                       Coming Soon
                     </span>

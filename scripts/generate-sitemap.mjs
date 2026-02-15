@@ -69,6 +69,8 @@ const standalonePages = [
   { path: '/services/competitive-intelligence', priority: '0.8', changefreq: 'monthly' },
   { path: '/services/clinical-trial-support', priority: '0.8', changefreq: 'monthly' },
   { path: '/services/kol-stakeholder-mapping', priority: '0.8', changefreq: 'monthly' },
+  { path: '/mena-pharma-market-data', priority: '0.9', changefreq: 'monthly' },
+  { path: '/gcc-market-access-guide', priority: '0.9', changefreq: 'monthly' },
   { path: '/faq', priority: '0.7', changefreq: 'monthly' },
   { path: '/resources', priority: '0.7', changefreq: 'monthly' },
   { path: '/privacy', priority: '0.3', changefreq: 'yearly' },
@@ -80,7 +82,7 @@ function buildStaticRoutes() {
   for (const lang of LANGUAGES) {
     for (const page of corePages) {
       const path = lang === '' ? page.path : `${lang}${page.path}`;
-      const priority = lang === '' ? page.priority : String(Math.max(0.5, parseFloat(page.priority) - 0.1));
+      const priority = lang === '' ? page.priority : String(Math.round(Math.max(0.5, parseFloat(page.priority) - 0.1) * 10) / 10);
       routes.push({ path, priority, changefreq: page.changefreq || 'weekly' });
     }
   }

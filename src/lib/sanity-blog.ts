@@ -108,8 +108,18 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
       }
       if (raw.readingTime != null) out.readingTime = raw.readingTime;
       if (Array.isArray(raw.tags)) out.tags = raw.tags;
-      if (Array.isArray(raw.tableOfContents)) out.tableOfContents = raw.tableOfContents;
+      if (Array.isArray(raw.tableOfContents)) {
+        // Normalise: Sanity schema uses title/slug, frontend expects heading/anchor
+        out.tableOfContents = raw.tableOfContents.map((item) => ({
+          heading: (item as Record<string, string>).heading ?? (item as Record<string, string>).title ?? '',
+          anchor: (item as Record<string, string>).anchor ?? (item as Record<string, string>).slug ?? '',
+        }));
+      }
       if (Array.isArray(raw.executiveSummary)) out.executiveSummary = raw.executiveSummary;
+      // Also support executiveSummary as a plain string (bodyHtml-style posts)
+      if (typeof raw.executiveSummary === 'string' && (raw.executiveSummary as string).trim()) {
+        out.executiveSummary = raw.executiveSummary;
+      }
       if (Array.isArray(raw.faq)) out.faq = raw.faq;
       if (raw.ctaSection && typeof raw.ctaSection === 'object') out.ctaSection = raw.ctaSection;
       // SEO / OG / Author
@@ -270,7 +280,7 @@ interface RawSanityPost {
   readingTime?: number;
   tags?: string[];
   tableOfContents?: { heading?: string; anchor?: string }[];
-  executiveSummary?: unknown[];
+  executiveSummary?: string | unknown[];
   faq?: { question?: string; answer?: string }[];
   ctaSection?: { title?: string; description?: string; buttonText?: string; buttonUrl?: string };
   seo?: {
