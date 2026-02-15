@@ -85,13 +85,17 @@ function PostCard({ post, index }: { post: BlogPost; index: number }) {
 
 /* ─── Main component ─── */
 const RelatedPosts = ({ currentSlug, category, date, country }: RelatedPostsProps) => {
-  const sectionRef = useScrollReveal<HTMLDivElement>({ stagger: 100 });
   const { data } = useQuery({
     queryKey: ['related-posts', currentSlug, category, country],
     queryFn: () => fetchRelatedPosts(currentSlug, category, date, country),
     enabled: isSanityConfigured() && Boolean(currentSlug),
-    staleTime: 5 * 60 * 1000,
-    gcTime: 30 * 60 * 1000,
+    staleTime: 60 * 1000,
+  });
+
+  // Pass data length as key so the observer re-runs when async content loads
+  const sectionRef = useScrollReveal<HTMLDivElement>({
+    stagger: 100,
+    key: data ? data.related.length : 0,
   });
 
   if (!data) return null;

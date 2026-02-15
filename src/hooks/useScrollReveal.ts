@@ -7,6 +7,8 @@ type ScrollRevealOptions = {
   rootMargin?: string;
   /** Base stagger delay in ms applied per child index. Default 0 (no stagger) */
   stagger?: number;
+  /** Optional key — change this to force re-observation (useful for async content). */
+  key?: string | number | boolean;
 };
 
 /**
@@ -19,7 +21,7 @@ export function useScrollReveal<T extends HTMLElement = HTMLElement>(
   options: ScrollRevealOptions = {}
 ) {
   const ref = useRef<T>(null);
-  const { threshold = 0.15, rootMargin = '-40px', stagger = 0 } = options;
+  const { threshold = 0.15, rootMargin = '-40px', stagger = 0, key } = options;
 
   const reveal = useCallback(
     (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
@@ -52,7 +54,8 @@ export function useScrollReveal<T extends HTMLElement = HTMLElement>(
     });
 
     return () => io.disconnect();
-  }, [reveal, threshold, rootMargin]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [reveal, threshold, rootMargin, key]);
 
   return ref;
 }
