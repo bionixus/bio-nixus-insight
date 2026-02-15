@@ -98,6 +98,12 @@ export default async function handler(req: any, res: any) {
     return handleDeleteFailedEmails(req, res)
   }
 
+  // ─── sync-resend: POST — pull open/click/bounce data from Resend API ───
+  if (action === 'sync-resend') {
+    if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' })
+    return handleSyncResend(req, res)
+  }
+
   // ─── gsc-rankings: GET ───
   if (action === 'gsc-rankings') {
     if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' })
@@ -446,6 +452,213 @@ function calculateEngagementScore(
   else if (score >= 15) level = 'low'
 
   return { score, level }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// Sync Resend — pull all email event data from Resend API
+// Groups by recipient email, counts sent/opened/clicked, updates Sanity
+// ═══════════════════════════════════════════════════════════════════
+async function handleSyncResend(_req: any, res: any) {
+  const RESEND_KEY = process.env.RESEND_API_KEY
+  if (!RESEND_KEY) {
+    return res.status(500).json({ error: 'RESEND_API_KEY not configured' })
+  }
+
+  try {
+    // 1. Fetch ALL emails from Resend (paginated via cursor)
+    type ResendEmail = {
+      id: string
+      to: string[]
+      subject: string
+      last_event: string
+      created_at: string
+    }
+
+    const allEmails: ResendEmail[] = []
+    let cursor: string | undefined
+    let page = 0
+    const PAGE_SIZE = 100
+
+    while (true) {
+      page++
+      const url = new URL('https://api.resend.com/emails')
+      url.searchParams.set('limit', String(PAGE_SIZE))
+      if (cursor) url.searchParams.set('cursor', cursor)
+
+      const resp = await fetch(url.toString(), {
+        headers: { Authorization: `Bearer ${RESEND_KEY}` },
+      })
+
+      if (!resp.ok) {
+        const text = await resp.text()
+        console.error(`Resend API error (page ${page}):`, text)
+        break
+      }
+
+      const json = await resp.json() as { data: ResendEmail[], pagination?: { cursor?: string, has_more?: boolean } }
+      allEmails.push(...(json.data || []))
+
+      // Pagination via cursor
+      if (json.pagination?.has_more && json.pagination.cursor) {
+        cursor = json.pagination.cursor
+      } else {
+        break
+      }
+
+      // Safety: max 20 pages (2000 emails)
+      if (page >= 20) break
+    }
+
+    console.log(`[sync-resend] Fetched ${allEmails.length} emails from Resend across ${page} page(s)`)
+
+    if (allEmails.length === 0) {
+      return res.status(200).json({ success: true, message: 'No emails found in Resend', synced: 0 })
+    }
+
+    // 2. Group by recipient email address
+    // Event hierarchy: sent < delivered < delivery_delayed < opened < clicked
+    // bounced and complained are terminal
+    type EmailStats = {
+      emailsSent: number
+      emailsOpened: number
+      emailsClicked: number
+      lastEmailSent: string | null
+      lastEmailOpened: string | null
+      lastEmailClicked: string | null
+      bounced: boolean
+    }
+
+    const byEmail = new Map<string, EmailStats>()
+
+    for (const email of allEmails) {
+      const recipients = email.to || []
+      for (const addr of recipients) {
+        const lowerAddr = addr.toLowerCase().trim()
+        if (!byEmail.has(lowerAddr)) {
+          byEmail.set(lowerAddr, {
+            emailsSent: 0,
+            emailsOpened: 0,
+            emailsClicked: 0,
+            lastEmailSent: null,
+            lastEmailOpened: null,
+            lastEmailClicked: null,
+            bounced: false,
+          })
+        }
+        const stats = byEmail.get(lowerAddr)!
+        const event = email.last_event
+        const ts = email.created_at
+
+        // Every email counts as "sent" (even if it bounced later)
+        stats.emailsSent++
+        if (!stats.lastEmailSent || ts > stats.lastEmailSent) stats.lastEmailSent = ts
+
+        // "opened" means it was opened (also true if clicked, since click implies open)
+        if (event === 'opened' || event === 'clicked') {
+          stats.emailsOpened++
+          if (!stats.lastEmailOpened || ts > stats.lastEmailOpened) stats.lastEmailOpened = ts
+        }
+
+        if (event === 'clicked') {
+          stats.emailsClicked++
+          if (!stats.lastEmailClicked || ts > stats.lastEmailClicked) stats.lastEmailClicked = ts
+        }
+
+        if (event === 'bounced') {
+          stats.bounced = true
+        }
+      }
+    }
+
+    console.log(`[sync-resend] ${byEmail.size} unique recipient emails found`)
+
+    // 3. Fetch all active subscribers from Sanity (email → _id mapping)
+    const subscribers: { _id: string; email: string; subscribedAt?: string; _createdAt: string }[] =
+      await sanityServer.fetch(`*[_type == "subscriber" && subscribed == true]{ _id, email, subscribedAt, _createdAt }`)
+
+    const subByEmail = new Map<string, typeof subscribers[0]>()
+    for (const sub of subscribers) {
+      subByEmail.set(sub.email.toLowerCase().trim(), sub)
+    }
+
+    // 4. Merge and update Sanity in batches
+    const BATCH = 50
+    let synced = 0
+    let skipped = 0
+    const entriesToUpdate: { sub: typeof subscribers[0]; stats: EmailStats }[] = []
+
+    for (const [email, stats] of byEmail) {
+      const sub = subByEmail.get(email)
+      if (!sub) {
+        skipped++
+        continue
+      }
+      entriesToUpdate.push({ sub, stats })
+    }
+
+    for (let i = 0; i < entriesToUpdate.length; i += BATCH) {
+      const chunk = entriesToUpdate.slice(i, i + BATCH)
+      let tx = sanityServer.transaction()
+
+      for (const { sub, stats } of chunk) {
+        // Compute engagement score with the synced stats
+        const { score, level } = calculateEngagementScore(stats, sub.subscribedAt || sub._createdAt)
+
+        tx = tx.patch(sub._id, (p: any) =>
+          p
+            .setIfMissing({ analytics: {} })
+            .set({
+              'analytics.emailsSent': stats.emailsSent,
+              'analytics.emailsOpened': stats.emailsOpened,
+              'analytics.emailsClicked': stats.emailsClicked,
+              ...(stats.lastEmailSent ? { 'analytics.lastEmailSent': stats.lastEmailSent } : {}),
+              ...(stats.lastEmailOpened ? { 'analytics.lastEmailOpened': stats.lastEmailOpened } : {}),
+              ...(stats.lastEmailClicked ? { 'analytics.lastEmailClicked': stats.lastEmailClicked } : {}),
+              ...(stats.emailsSent > 0
+                ? { 'analytics.openRate': Math.round((stats.emailsOpened / stats.emailsSent) * 10000) / 100 }
+                : {}),
+              ...(stats.emailsSent > 0
+                ? { 'analytics.clickRate': Math.round((stats.emailsClicked / stats.emailsSent) * 10000) / 100 }
+                : {}),
+              engagementScore: score,
+              engagementLevel: level,
+            })
+        )
+      }
+
+      await tx.commit()
+      synced += chunk.length
+      console.log(`[sync-resend] Updated ${synced}/${entriesToUpdate.length} subscribers`)
+    }
+
+    // 5. Also recalculate scores for subscribers NOT in Resend (they stay "new")
+    const subIdsUpdated = new Set(entriesToUpdate.map(e => e.sub._id))
+    const remaining = subscribers.filter(s => !subIdsUpdated.has(s._id))
+
+    for (let i = 0; i < remaining.length; i += BATCH) {
+      const chunk = remaining.slice(i, i + BATCH)
+      let tx = sanityServer.transaction()
+      for (const sub of chunk) {
+        tx = tx.patch(sub._id, (p: any) =>
+          p.set({ engagementScore: 0, engagementLevel: 'new' })
+        )
+      }
+      await tx.commit()
+    }
+
+    return res.status(200).json({
+      success: true,
+      message: `Synced ${synced} subscribers from ${allEmails.length} Resend emails. ${skipped} emails had no matching subscriber. ${remaining.length} subscribers marked as "new" (no emails sent).`,
+      totalResendEmails: allEmails.length,
+      uniqueRecipients: byEmail.size,
+      synced,
+      skipped,
+      newSubscribers: remaining.length,
+    })
+  } catch (error: any) {
+    console.error('Sync Resend error:', error)
+    return res.status(500).json({ error: error.message })
+  }
 }
 
 // ═══════════════════════════════════════════════════════════════════

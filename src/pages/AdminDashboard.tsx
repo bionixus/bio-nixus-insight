@@ -552,6 +552,45 @@ export default function AdminDashboard() {
           >
             🔄 Recalculate Engagement Scores
           </button>
+          <button
+            onClick={async () => {
+              const confirmed = confirm(
+                'Sync email data from Resend? This pulls all open/click/bounce data and updates engagement scores. May take a minute.'
+              )
+              if (!confirmed) return
+
+              try {
+                const token = getAuthToken()
+                const response = await fetch('/api/admin?action=sync-resend', {
+                  method: 'POST',
+                  headers: { Authorization: `Bearer ${token}` },
+                })
+
+                const result = await response.json()
+                if (result.success) {
+                  alert(
+                    `✅ ${result.message}\n\nResend emails: ${result.totalResendEmails}\nUnique recipients: ${result.uniqueRecipients}\nSubscribers synced: ${result.synced}`
+                  )
+                  fetchData() // Refresh
+                } else {
+                  alert(`❌ ${result.error || 'Sync failed'}`)
+                }
+              } catch (error) {
+                alert('❌ Failed to sync from Resend')
+              }
+            }}
+            style={{
+              padding: '10px 20px',
+              background: '#0070f3',
+              color: 'white',
+              border: 'none',
+              borderRadius: '6px',
+              cursor: 'pointer',
+              fontWeight: 'bold',
+            }}
+          >
+            📬 Sync from Resend
+          </button>
         </div>
       </div>
 
