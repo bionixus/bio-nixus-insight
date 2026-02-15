@@ -464,10 +464,14 @@ export default function AdminDashboard() {
             }}
           >
             <option value="all">All Segments</option>
-            <option value="pharma_clients">Pharma Clients</option>
-            <option value="hospital_admins">Hospital Admins</option>
-            <option value="kols">KOLs</option>
-            <option value="trial_participants">Trial Participants</option>
+            <option value="pharma_clients">Pharmaceutical Clients</option>
+            <option value="hospital_admins">Hospital Administrators</option>
+            <option value="trial_participants">Clinical Trial Participants</option>
+            <option value="market_research">Market Research Leads</option>
+            <option value="kols">Key Opinion Leaders (KOLs)</option>
+            <option value="healthcare_providers">Healthcare Providers</option>
+            <option value="pharma_cold_leads">Pharma Cold Leads</option>
+            <option value="test_list">Test List</option>
           </select>
 
           <select
