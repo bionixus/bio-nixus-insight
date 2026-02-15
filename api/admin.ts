@@ -344,27 +344,30 @@ async function handleCalculateEngagement(req: any, res: any) {
       *[_type == "subscriber" && subscribed == true] {
         _id,
         analytics,
-        subscribedAt
+        subscribedAt,
+        _createdAt
       }
     `)
 
     let updated = 0
+    const BATCH = 50 // Sanity transaction limit
 
-    for (const subscriber of subscribers) {
-      const { score, level } = calculateEngagementScore(
-        subscriber.analytics || {},
-        subscriber.subscribedAt
-      )
+    for (let i = 0; i < subscribers.length; i += BATCH) {
+      const chunk = subscribers.slice(i, i + BATCH)
+      let tx = sanityServer.transaction()
 
-      await sanityServer
-        .patch(subscriber._id)
-        .set({
-          engagementScore: score,
-          engagementLevel: level
-        })
-        .commit()
+      for (const sub of chunk) {
+        const { score, level } = calculateEngagementScore(
+          sub.analytics || {},
+          sub.subscribedAt || sub._createdAt
+        )
+        tx = tx.patch(sub._id, (p: any) =>
+          p.set({ engagementScore: score, engagementLevel: level })
+        )
+      }
 
-      updated++
+      await tx.commit()
+      updated += chunk.length
     }
 
     return res.status(200).json({
@@ -378,34 +381,48 @@ async function handleCalculateEngagement(req: any, res: any) {
   }
 }
 
+/**
+ * Engagement score (0-100) based on:
+ *   1. Open rate        → 0-40 pts
+ *   2. Click rate       → 0-30 pts  (clicks weighted 1.5×)
+ *   3. Recency bonus    → 0-20 pts  (how recently they opened)
+ *   4. Consistency bonus → 0-10 pts  (3+ emails, opened ≥25%)
+ *
+ * Levels:
+ *   - "new"      → never received an email yet
+ *   - "inactive" → received email(s) but score < 15
+ *   - "low"      → score 15-39
+ *   - "medium"   → score 40-69
+ *   - "high"     → score ≥ 70
+ */
 function calculateEngagementScore(
   analytics: any,
-  subscribedAt: string
+  subscribedAt?: string
 ): { score: number; level: string } {
-  let score = 0
-  const now = new Date()
-  const subscribeDate = new Date(subscribedAt)
+  const emailsSent = analytics?.emailsSent || 0
+  const emailsOpened = analytics?.emailsOpened || 0
+  const emailsClicked = analytics?.emailsClicked || 0
 
-  const emailsSent = analytics.emailsSent || 0
-  const emailsOpened = analytics.emailsOpened || 0
-  const emailsClicked = analytics.emailsClicked || 0
+  // If they've never been sent an email, they're "new" not "inactive"
+  if (emailsSent === 0) {
+    return { score: 0, level: 'new' }
+  }
+
+  let score = 0
+  const now = Date.now()
 
   // 1. Open rate (0-40 points)
-  if (emailsSent > 0) {
-    const openRate = (emailsOpened / emailsSent) * 100
-    score += Math.min(40, openRate)
-  }
+  const openRate = (emailsOpened / emailsSent) * 100
+  score += Math.min(40, openRate)
 
-  // 2. Click rate (0-30 points)
-  if (emailsSent > 0) {
-    const clickRate = (emailsClicked / emailsSent) * 100
-    score += Math.min(30, clickRate * 1.5)
-  }
+  // 2. Click rate (0-30 points) — clicks weighted 1.5×
+  const clickRate = (emailsClicked / emailsSent) * 100
+  score += Math.min(30, clickRate * 1.5)
 
   // 3. Recency bonus (0-20 points)
-  if (analytics.lastEmailOpened) {
-    const lastOpenDate = new Date(analytics.lastEmailOpened)
-    const daysSinceLastOpen = Math.floor((now.getTime() - lastOpenDate.getTime()) / (1000 * 60 * 60 * 24))
+  if (analytics?.lastEmailOpened) {
+    const lastOpenDate = new Date(analytics.lastEmailOpened).getTime()
+    const daysSinceLastOpen = Math.floor((now - lastOpenDate) / (1000 * 60 * 60 * 24))
 
     if (daysSinceLastOpen <= 7) score += 20
     else if (daysSinceLastOpen <= 30) score += 15
@@ -421,14 +438,14 @@ function calculateEngagementScore(
     else if (consistencyRate >= 25) score += 4
   }
 
-  score = Math.min(100, Math.max(0, score))
+  score = Math.min(100, Math.max(0, Math.round(score)))
 
   let level = 'inactive'
   if (score >= 70) level = 'high'
   else if (score >= 40) level = 'medium'
   else if (score >= 15) level = 'low'
 
-  return { score: Math.round(score), level }
+  return { score, level }
 }
 
 // ═══════════════════════════════════════════════════════════════════

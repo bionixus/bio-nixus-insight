@@ -213,49 +213,42 @@ export default async function handler(req: any, res: any) {
 }
 
 // Calculate engagement score (0-100) and level
-// Mirrors logic from src/lib/engagement-score.ts
+// Mirrors logic from api/admin.ts calculateEngagementScore
 function calculateEngagement(analytics: any, subscribedAt?: string): { score: number; level: string } {
-  let score = 0
-
   const emailsSent = analytics?.emailsSent || 0
   const emailsOpened = analytics?.emailsOpened || 0
   const emailsClicked = analytics?.emailsClicked || 0
 
-  // 1. Open rate (0-40 points)
-  if (emailsSent > 0) {
-    const openRate = (emailsOpened / emailsSent) * 100
-    score += Math.min(40, openRate)
-  }
+  if (emailsSent === 0) return { score: 0, level: 'new' }
 
-  // 2. Click rate (0-30 points)
-  if (emailsSent > 0) {
-    const clickRate = (emailsClicked / emailsSent) * 100
-    score += Math.min(30, clickRate * 1.5) // Clicks are more valuable
-  }
+  let score = 0
+  const now = Date.now()
+
+  // 1. Open rate (0-40 points)
+  score += Math.min(40, (emailsOpened / emailsSent) * 100)
+
+  // 2. Click rate (0-30 points, weighted 1.5×)
+  score += Math.min(30, (emailsClicked / emailsSent) * 100 * 1.5)
 
   // 3. Recency bonus (0-20 points)
   if (analytics?.lastEmailOpened) {
-    const now = Date.now()
-    const lastOpenDate = new Date(analytics.lastEmailOpened).getTime()
-    const daysSinceLastOpen = Math.floor((now - lastOpenDate) / (1000 * 60 * 60 * 24))
-
-    if (daysSinceLastOpen <= 7) score += 20
-    else if (daysSinceLastOpen <= 30) score += 15
-    else if (daysSinceLastOpen <= 90) score += 10
-    else if (daysSinceLastOpen <= 180) score += 5
+    const daysSince = Math.floor((now - new Date(analytics.lastEmailOpened).getTime()) / 86400000)
+    if (daysSince <= 7) score += 20
+    else if (daysSince <= 30) score += 15
+    else if (daysSince <= 90) score += 10
+    else if (daysSince <= 180) score += 5
   }
 
   // 4. Consistency bonus (0-10 points)
   if (emailsSent >= 3) {
-    const consistencyRate = (emailsOpened / emailsSent) * 100
-    if (consistencyRate >= 75) score += 10
-    else if (consistencyRate >= 50) score += 7
-    else if (consistencyRate >= 25) score += 4
+    const rate = (emailsOpened / emailsSent) * 100
+    if (rate >= 75) score += 10
+    else if (rate >= 50) score += 7
+    else if (rate >= 25) score += 4
   }
 
   score = Math.min(100, Math.max(0, Math.round(score)))
 
-  // Determine level
   let level = 'inactive'
   if (score >= 70) level = 'high'
   else if (score >= 40) level = 'medium'

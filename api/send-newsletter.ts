@@ -312,19 +312,25 @@ export default async function handler(req: any, res: any) {
 
     console.log(`[Newsletter] Done: ${successCount} succeeded, ${failedCount} failed (via ${provider})`)
 
-    // 5. Update subscriber analytics (batch by 50)
+    // 5. Update subscriber analytics (batch by 25, flush incrementally to avoid timeout)
     const now = new Date().toISOString()
-    for (let i = 0; i < successIds.length; i += 50) {
-      const batch = successIds.slice(i, i + 50)
+    const ANALYTICS_BATCH = 25
+    for (let i = 0; i < successIds.length; i += ANALYTICS_BATCH) {
+      const chunk = successIds.slice(i, i + ANALYTICS_BATCH)
       let tx = sanityServer.transaction()
-      for (const id of batch) {
+      for (const id of chunk) {
         tx = tx.patch(id, (p: any) =>
           p.setIfMissing({ analytics: {} })
            .inc({ 'analytics.emailsSent': 1 })
            .set({ 'analytics.lastEmailSent': now })
         )
       }
-      try { await tx.commit() } catch (e) { console.error('Subscriber analytics batch error:', e) }
+      try {
+        await tx.commit()
+        console.log(`[Newsletter] Analytics updated for ${Math.min(i + ANALYTICS_BATCH, successIds.length)}/${successIds.length}`)
+      } catch (e: any) {
+        console.error(`Subscriber analytics batch error (${i}-${i + ANALYTICS_BATCH}):`, e?.message || e)
+      }
     }
 
     // 6. Mark as sent if at least one succeeded

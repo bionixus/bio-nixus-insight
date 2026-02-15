@@ -500,6 +500,7 @@ export default function AdminDashboard() {
             <option value="medium">✅ Engaged</option>
             <option value="low">⚠️ Low Engagement</option>
             <option value="inactive">😴 Inactive</option>
+            <option value="new">🆕 New (No Emails Sent)</option>
           </select>
         </div>
 
@@ -757,6 +758,7 @@ function getEngagementColor(level: string) {
     case 'medium': return '#17a2b8'
     case 'low': return '#ffc107'
     case 'inactive': return '#dc3545'
+    case 'new': return '#6f42c1'
     default: return '#6c757d'
   }
 }
@@ -767,6 +769,7 @@ function getEngagementEmoji(level: string) {
     case 'medium': return '✅'
     case 'low': return '⚠️'
     case 'inactive': return '😴'
+    case 'new': return '🆕'
     default: return '❓'
   }
 }
