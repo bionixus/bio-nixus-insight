@@ -22,8 +22,12 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 const BASE_URL = process.env.VITE_BASE_URL || 'https://bionixus.com'
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'BioNixus2026!'
 
-// ─── AWS SES setup (optional — used when env vars are set) ───
+// ─── AWS SES setup (opt-in — requires USE_AWS_SES=true in addition to credentials) ───
+// SES stays disabled until explicitly enabled, so Resend is the default even if
+// AWS credentials are present (e.g. from a Vercel integration). Once SES is out of
+// sandbox, set USE_AWS_SES=true in Vercel env vars to switch.
 const SES_ENABLED = !!(
+  process.env.USE_AWS_SES === 'true' &&
   process.env.AWS_SES_ACCESS_KEY_ID &&
   process.env.AWS_SES_SECRET_ACCESS_KEY &&
   process.env.AWS_SES_REGION
