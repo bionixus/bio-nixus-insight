@@ -30,7 +30,7 @@ export default function AdminImportSubscribers() {
 
       // Send to API
       const token = getAuthToken()
-      const response = await fetch('/api/import-subscribers', {
+      const response = await fetch('/api/admin?action=import-subscribers', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

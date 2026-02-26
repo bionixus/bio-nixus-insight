@@ -245,7 +245,7 @@ export default function AdminDashboard() {
     })
 
     try {
-      const response = await fetch(`/api/export-subscribers?${params}`, {
+      const response = await fetch(`/api/admin?action=export-subscribers&${params}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
 

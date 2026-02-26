@@ -5,7 +5,7 @@ export function generateWelcomeEmail(
 ) {
   const unsubscribeUrl = subscriberId
     ? `https://bionixus.com/unsubscribe?id=${subscriberId}`
-    : 'https://bionixus.com/unsubscribe'
+    : 'https://bionixus.com/unsubscribe';
   const content = {
     en: {
       subject: 'Welcome to BioNixus Healthcare Insights',
@@ -87,12 +87,12 @@ export function generateWelcomeEmail(
       subject: 'Bienvenue chez BioNixus Healthcare Insights',
       title: 'Bienvenue à bord ! 🎉',
       greeting: `Bonjour ${firstName},`,
-      intro: 'Merci d\'avoir confirmé votre e-mail et rejoint BioNixus en recherche de marché santé.',
+      intro: "Merci d'avoir confirmé votre e-mail et rejoint BioNixus en recherche de marché santé.",
       whatToExpect: 'Ce que vous pouvez attendre de nous :',
       benefits: [
         '📊 Insights mensuels sur le marché pharmaceutique',
         '🔬 Rapports de renseignement exclusifs',
-        '💡 Analyses d\'experts sur les biosimilaires et les tendances en oncologie',
+        "💡 Analyses d'experts sur les biosimilaires et les tendances en oncologie",
         '🌍 Mises à jour régionales sur les politiques de santé',
         '🎯 Contenu personnalisé selon vos intérêts',
       ],
@@ -155,10 +155,10 @@ export function generateWelcomeEmail(
       ctaMeeting: '预约会议',
       signature: '此致敬礼，<br><strong>Mohammad Alsaadany</strong><br>Director, BioNixus Healthcare Market Research',
     },
-  }
+  };
 
-  const lang = content[language as keyof typeof content] || content.en
-  const isRTL = language === 'ar'
+  const lang = content[language as keyof typeof content] || content.en;
+  const isRTL = language === 'ar';
 
   return `
 <!DOCTYPE html>
@@ -174,7 +174,6 @@ export function generateWelcomeEmail(
       <td align="center">
         <table width="600" cellpadding="0" cellspacing="0" style="background: #ffffff; border-radius: 6px; overflow: hidden; box-shadow: 0 4px 24px rgba(20,34,56,0.08);">
 
-          <!-- Hero Header — deep navy gradient -->
           <tr>
             <td style="background: linear-gradient(135deg, #101c2e 0%, #1a2d4d 50%, #22304a 100%); padding: 50px 40px; text-align: center;">
               <h1 style="color: #ffffff; margin: 0 0 8px 0; font-family: 'Playfair Display', Georgia, serif; font-size: 30px; font-weight: 600; letter-spacing: -0.3px;">${lang.title}</h1>
@@ -183,7 +182,6 @@ export function generateWelcomeEmail(
             </td>
           </tr>
 
-          <!-- Content -->
           <tr>
             <td style="padding: 44px 40px 48px;">
               <p style="font-size: 16px; line-height: 1.7; color: #142238; margin: 0 0 18px 0; font-weight: 500;">
@@ -194,7 +192,6 @@ export function generateWelcomeEmail(
                 ${lang.intro}
               </p>
 
-              <!-- What to Expect -->
               <h2 style="color: #142238; font-family: 'Playfair Display', Georgia, serif; font-size: 20px; margin: 0 0 18px 0; padding-bottom: 10px; border-bottom: 2px solid #f5a504;">
                 ${lang.whatToExpect}
               </h2>
@@ -213,7 +210,6 @@ export function generateWelcomeEmail(
                   .join('')}
               </table>
 
-              <!-- Resources -->
               <h2 style="color: #142238; font-family: 'Playfair Display', Georgia, serif; font-size: 20px; margin: 0 0 18px 0; padding-bottom: 10px; border-bottom: 2px solid #f5a504;">
                 ${lang.resources}
               </h2>
@@ -234,7 +230,6 @@ export function generateWelcomeEmail(
                   .join('')}
               </table>
 
-              <!-- CTA Buttons -->
               <table width="100%" cellpadding="0" cellspacing="0" style="margin: 36px 0;">
                 <tr>
                   <td align="center" style="padding-bottom: 14px;">
@@ -260,7 +255,6 @@ export function generateWelcomeEmail(
                 </tr>
               </table>
 
-              <!-- Quote block — gold left border -->
               <div style="background: #f7f5f0; border-left: 4px solid #f5a504; padding: 20px; margin: 30px 0; border-radius: 0 4px 4px 0;">
                 <p style="margin: 0; font-size: 14px; line-height: 1.7; color: #3a4a5e;">
                   ${lang.footer}
@@ -273,7 +267,6 @@ export function generateWelcomeEmail(
             </td>
           </tr>
 
-          <!-- Footer — warm cream -->
           <tr>
             <td style="background: #f7f5f0; padding: 28px 40px; text-align: center; border-top: 1px solid #e8e4dd;">
               <p style="margin: 0 0 4px; font-size: 12px; color: #5a6478; font-weight: 500;">
@@ -296,5 +289,6 @@ export function generateWelcomeEmail(
   </table>
 </body>
 </html>
-  `
+  `;
 }
+

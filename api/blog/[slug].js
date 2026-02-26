@@ -1,7 +1,7 @@
 import { createClient } from '@sanity/client';
 import { toHTML } from '@portabletext/to-html';
-import { buildSeoDescription, normalizeSeoTitle } from '../seo-meta.js';
-import { sendCompressedHtml } from '../compression.js';
+import { buildSeoDescription, normalizeSeoTitle } from '../../src/server/seo-meta.js';
+import { sendCompressedHtml } from '../../src/server/compression.js';
 
 const sanityClient = createClient({
   projectId: process.env.VITE_SANITY_PROJECT_ID || 'h2whvvpo',

@@ -1,6 +1,6 @@
 import { createClient } from '@sanity/client'
 import { Resend } from 'resend'
-import { generateWelcomeEmail } from './_emails/welcomeEmail.js'
+import { generateWelcomeEmail } from '../src/server/emails/welcomeEmail'
 
 const sanityServer = createClient({
   projectId: process.env.VITE_SANITY_PROJECT_ID || 'h2whvvpo',

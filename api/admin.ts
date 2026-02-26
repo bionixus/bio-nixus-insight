@@ -1,6 +1,7 @@
 import { createClient } from '@sanity/client'
 import { GoogleAuth } from 'google-auth-library'
 import crypto from 'crypto'
+import { parse } from 'csv-parse/sync'
 
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'BioNixus2026!'
 
@@ -108,6 +109,18 @@ export default async function handler(req: any, res: any) {
   if (action === 'gsc-rankings') {
     if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' })
     return handleGscRankings(req, res)
+  }
+
+  // ─── import-subscribers: POST ───
+  if (action === 'import-subscribers') {
+    if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' })
+    return handleImportSubscribers(req, res)
+  }
+
+  // ─── export-subscribers: GET ───
+  if (action === 'export-subscribers') {
+    if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' })
+    return handleExportSubscribers(req, res)
   }
 
   return res.status(400).json({ error: 'Unknown action' })
@@ -1153,5 +1166,301 @@ async function handleGscRankings(req: any, res: any) {
   } catch (error: any) {
     console.error('GSC rankings error:', error)
     return res.status(500).json({ error: error.message })
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// Import Subscribers handler (merged from api/import-subscribers.ts)
+// ═══════════════════════════════════════════════════════════════════
+const VALID_SEGMENTS = [
+  'all',
+  'pharma_clients',
+  'hospital_admins',
+  'trial_participants',
+  'market_research',
+  'kols',
+  'healthcare_providers',
+  'pharma_cold_leads',
+  'test_list',
+]
+
+const SEGMENT_ALIASES: Record<string, string> = {
+  market_research_leads: 'market_research',
+  market_research: 'market_research',
+  pharma_clients: 'pharma_clients',
+  pharmaceutical_clients: 'pharma_clients',
+  hospital_admins: 'hospital_admins',
+  hospital_administrators: 'hospital_admins',
+  trial_participants: 'trial_participants',
+  clinical_trial_participants: 'trial_participants',
+  kols: 'kols',
+  key_opinion_leaders: 'kols',
+  healthcare_providers: 'healthcare_providers',
+  pharma_cold_leads: 'pharma_cold_leads',
+  test_list: 'test_list',
+  all: 'all',
+  all_subscribers: 'all',
+}
+
+function normalizeSegment(raw: string): string | null {
+  const key = raw.trim().toLowerCase().replace(/[\s-]+/g, '_')
+  if (SEGMENT_ALIASES[key]) return SEGMENT_ALIASES[key]
+  if (VALID_SEGMENTS.includes(key)) return key
+  return null
+}
+
+interface CsvRecord {
+  firstName?: string
+  lastName?: string
+  email?: string
+  personalEmail?: string
+  mobile?: string
+  title?: string
+  company?: string
+  language?: string
+  segments?: string
+  notes?: string
+  subscribed?: string
+  [key: string]: string | undefined
+}
+
+async function handleImportSubscribers(req: any, res: any) {
+  try {
+    const { csvData, skipDuplicates = true } = req.body
+
+    if (!csvData) {
+      return res.status(400).json({ error: 'No CSV data provided' })
+    }
+
+    let cleanCsv = csvData.replace(/^\uFEFF/, '').replace(/\r\n/g, '\n').replace(/\r/g, '\n')
+    const firstNewline = cleanCsv.indexOf('\n')
+    if (firstNewline === -1) {
+      return res.status(400).json({ error: 'CSV has no data rows' })
+    }
+
+    const headerLine = cleanCsv.substring(0, firstNewline)
+    const dataLines = cleanCsv.substring(firstNewline + 1)
+    const headerCols = headerLine.split(',').map((h: string) => h.trim())
+    const seenCols: Record<string, number> = {}
+    const fixedHeaders = headerCols.map((name: string) => {
+      if (!seenCols[name]) {
+        seenCols[name] = 1
+        return name
+      }
+      seenCols[name]++
+      return `${name}_${seenCols[name]}`
+    })
+    cleanCsv = fixedHeaders.join(',') + '\n' + dataLines
+
+    const records: CsvRecord[] = parse(cleanCsv, {
+      columns: true,
+      skip_empty_lines: true,
+      trim: true,
+      relax_column_count: true,
+      relax_quotes: true,
+      bom: true,
+    })
+
+    const results = {
+      total: records.length,
+      imported: 0,
+      skipped: 0,
+      duplicates: 0,
+      errors: [] as any[],
+      segmentWarnings: [] as string[],
+      debug: {
+        headersDetected: fixedHeaders,
+        firstRecordKeys: records.length > 0 ? Object.keys(records[0]) : [],
+      },
+    }
+
+    let existingEmails = new Set<string>()
+    if (skipDuplicates) {
+      const allEmails = records
+        .map((r) => r.email?.toLowerCase().trim())
+        .filter(Boolean) as string[]
+      for (let i = 0; i < allEmails.length; i += 200) {
+        const batch = allEmails.slice(i, i + 200)
+        const existing: { email: string }[] = await sanityServer.fetch(
+          `*[_type == "subscriber" && email in $emails]{ email }`,
+          { emails: batch }
+        )
+        existing.forEach((e) => existingEmails.add(e.email.toLowerCase()))
+      }
+    }
+
+    interface SubscriberDoc {
+      _type: string
+      firstName: string
+      lastName: string | null
+      email: string
+      personalEmail: string | null
+      mobile: string | null
+      title: string | null
+      company: string | null
+      language: string
+      segments: string[]
+      subscribed: boolean
+      subscribedAt: string
+      emailVerified: boolean
+      verifiedAt: string
+      source: string
+      notes: string | null
+    }
+
+    const docsToCreate: SubscriberDoc[] = []
+    for (let i = 0; i < records.length; i++) {
+      const record = records[i]
+      if (!record.firstName || !record.email) {
+        results.errors.push({ row: i + 2, email: record.email || 'N/A', error: 'Missing required fields (firstName, email)' })
+        results.skipped++
+        continue
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+      const email = record.email.toLowerCase().trim()
+      if (!emailRegex.test(email)) {
+        results.errors.push({ row: i + 2, email: record.email, error: 'Invalid email format' })
+        results.skipped++
+        continue
+      }
+
+      if (skipDuplicates && existingEmails.has(email)) {
+        results.duplicates++
+        results.skipped++
+        continue
+      }
+      if (existingEmails.has(email)) {
+        results.duplicates++
+        results.skipped++
+        continue
+      }
+      existingEmails.add(email)
+
+      let segments: string[] = ['all']
+      if (record.segments) {
+        const rawSegments = record.segments.split(',').map((s: string) => s.trim()).filter(Boolean)
+        const normalized: string[] = []
+        for (const raw of rawSegments) {
+          const mapped = normalizeSegment(raw)
+          if (mapped) {
+            if (!normalized.includes(mapped)) normalized.push(mapped)
+          } else {
+            const warning = `Unknown segment "${raw}" (auto-mapped to "all")`
+            if (!results.segmentWarnings.includes(warning)) results.segmentWarnings.push(warning)
+          }
+        }
+        if (normalized.length > 0) segments = normalized
+      }
+
+      docsToCreate.push({
+        _type: 'subscriber',
+        firstName: record.firstName.trim(),
+        lastName: record.lastName?.trim() || null,
+        email,
+        personalEmail: record.personalEmail?.trim() || null,
+        mobile: record.mobile?.trim() || null,
+        title: record.title?.trim() || null,
+        company: record.company?.trim() || null,
+        language: record.language?.toLowerCase() || 'en',
+        segments,
+        subscribed: record.subscribed === 'false' ? false : true,
+        subscribedAt: new Date().toISOString(),
+        emailVerified: true,
+        verifiedAt: new Date().toISOString(),
+        source: 'csv_import',
+        notes: record.notes?.trim() || null,
+      })
+    }
+
+    const BATCH_SIZE = 50
+    for (let i = 0; i < docsToCreate.length; i += BATCH_SIZE) {
+      const batch = docsToCreate.slice(i, i + BATCH_SIZE)
+      try {
+        let transaction = sanityServer.transaction()
+        for (const doc of batch) transaction = transaction.create(doc)
+        await transaction.commit()
+        results.imported += batch.length
+      } catch {
+        for (const doc of batch) {
+          try {
+            await sanityServer.create(doc)
+            results.imported++
+          } catch (error: any) {
+            results.errors.push({ row: 'N/A', email: doc.email, error: error.message })
+            results.skipped++
+          }
+        }
+      }
+    }
+
+    return res.status(200).json(results)
+  } catch (error: any) {
+    console.error('CSV import error:', error)
+    return res.status(500).json({ error: error.message })
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// Export Subscribers handler (merged from api/export-subscribers.ts)
+// ═══════════════════════════════════════════════════════════════════
+async function handleExportSubscribers(req: any, res: any) {
+  try {
+    const { status = 'all', segment = 'all', verified = 'all' } = req.query
+    let query = '*[_type == "subscriber"'
+    const conditions: string[] = []
+
+    if (status === 'subscribed') conditions.push('subscribed == true')
+    else if (status === 'unsubscribed') conditions.push('subscribed == false')
+    if (segment !== 'all') conditions.push(`"${segment}" in segments`)
+    if (verified === 'verified') conditions.push('emailVerified == true')
+    else if (verified === 'unverified') conditions.push('emailVerified == false')
+    if (conditions.length > 0) query += ' && ' + conditions.join(' && ')
+    query += '] | order(subscribedAt desc)'
+
+    const subscribers = await sanityServer.fetch(query)
+    const headers = [
+      'First Name', 'Last Name', 'Work Email', 'Personal Email', 'Mobile', 'Title',
+      'Company', 'Language', 'Segments', 'Subscribed', 'Email Verified', 'Subscribed At',
+      'Source', 'Notes',
+    ]
+    const rows = subscribers.map((sub: any) => [
+      sub.firstName || '',
+      sub.lastName || '',
+      sub.email || '',
+      sub.personalEmail || '',
+      sub.mobile || '',
+      sub.title || '',
+      sub.company || '',
+      sub.language || 'en',
+      (sub.segments || []).join(', '),
+      sub.subscribed ? 'Yes' : 'No',
+      sub.emailVerified ? 'Yes' : 'No',
+      sub.subscribedAt ? new Date(sub.subscribedAt).toISOString().split('T')[0] : '',
+      sub.source || '',
+      sub.notes || '',
+    ])
+    const csvContent = [
+      headers.join(','),
+      ...rows.map((row: string[]) =>
+        row
+          .map((cell: string) =>
+            typeof cell === 'string' && (cell.includes(',') || cell.includes('"'))
+              ? `"${cell.replace(/"/g, '""')}"`
+              : cell
+          )
+          .join(',')
+      ),
+    ].join('\n')
+
+    res.setHeader('Content-Type', 'text/csv')
+    res.setHeader(
+      'Content-Disposition',
+      `attachment; filename="subscribers-${new Date().toISOString().split('T')[0]}.csv"`
+    )
+    res.send(csvContent)
+  } catch (error: any) {
+    console.error('Export error:', error)
+    return res.status(500).json({ error: 'Export failed' })
   }
 }

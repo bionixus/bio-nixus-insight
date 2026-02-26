@@ -40,9 +40,9 @@ export function generateVerificationEmail(
       greeting: `Bonjour ${firstName},`,
       message:
         'Merci de vous être abonné(e) aux insights de BioNixus en recherche de marché santé. Veuillez confirmer votre adresse e-mail pour finaliser votre abonnement.',
-      button: 'Confirmer l\'adresse e-mail',
+      button: "Confirmer l'adresse e-mail",
       footer:
-        'Si vous ne vous êtes pas abonné(e) à cette newsletter, vous pouvez ignorer cet e-mail.',
+        "Si vous ne vous êtes pas abonné(e) à cette newsletter, vous pouvez ignorer cet e-mail.",
     },
     es: {
       subject: 'Confirma tu suscripción a BioNixus',
@@ -64,10 +64,10 @@ export function generateVerificationEmail(
       footer:
         '如果您没有订阅此通讯，可以安全地忽略此电子邮件。',
     },
-  }
+  };
 
-  const lang = content[language as keyof typeof content] || content.en
-  const isRTL = language === 'ar'
+  const lang = content[language as keyof typeof content] || content.en;
+  const isRTL = language === 'ar';
 
   return `
 <!DOCTYPE html>
@@ -83,7 +83,6 @@ export function generateVerificationEmail(
       <td align="center">
         <table width="600" cellpadding="0" cellspacing="0" style="background: #ffffff; border-radius: 6px; overflow: hidden; box-shadow: 0 4px 24px rgba(20,34,56,0.08);">
 
-          <!-- Header — deep navy gradient -->
           <tr>
             <td style="background: linear-gradient(135deg, #101c2e 0%, #1a2d4d 50%, #22304a 100%); padding: 48px 40px; text-align: center;">
               <h1 style="color: #ffffff; margin: 0 0 6px 0; font-family: 'Playfair Display', Georgia, serif; font-size: 30px; font-weight: 600; letter-spacing: -0.3px;">${lang.title}</h1>
@@ -91,7 +90,6 @@ export function generateVerificationEmail(
             </td>
           </tr>
 
-          <!-- Content -->
           <tr>
             <td style="padding: 44px 40px 48px;">
               <p style="font-size: 16px; line-height: 1.7; color: #142238; margin: 0 0 18px 0; font-weight: 500;">
@@ -102,7 +100,6 @@ export function generateVerificationEmail(
                 ${lang.message}
               </p>
 
-              <!-- CTA Button — gold accent -->
               <table width="100%" cellpadding="0" cellspacing="0">
                 <tr>
                   <td align="center">
@@ -123,7 +120,6 @@ export function generateVerificationEmail(
             </td>
           </tr>
 
-          <!-- Footer — warm cream -->
           <tr>
             <td style="background: #f7f5f0; padding: 28px 40px; text-align: center; border-top: 1px solid #e8e4dd;">
               <p style="margin: 0; font-size: 12px; color: #5a6478; font-weight: 500;">
@@ -141,5 +137,6 @@ export function generateVerificationEmail(
   </table>
 </body>
 </html>
-  `
+  `;
 }
+
