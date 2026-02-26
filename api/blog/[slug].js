@@ -1,5 +1,7 @@
 import { createClient } from '@sanity/client';
 import { toHTML } from '@portabletext/to-html';
+import { buildSeoDescription, normalizeSeoTitle } from '../seo-meta.js';
+import { sendCompressedHtml } from '../compression.js';
 
 const sanityClient = createClient({
   projectId: process.env.VITE_SANITY_PROJECT_ID || 'h2whvvpo',
@@ -50,12 +52,6 @@ function portableTextToPlain(blocks) {
     .join('\n\n');
 }
 
-// Convert Portable Text to HTML for full body rendering
-function stripHtml(str) {
-  if (!str) return '';
-  return String(str).replace(/<[^>]*>/g, '').trim();
-}
-
 function portableTextToHTML(content) {
   if (!content) return '';
   try {
@@ -63,7 +59,7 @@ function portableTextToHTML(content) {
       components: {
         types: {
           image: ({ value }) =>
-            `<img src="${esc(value?.url || value?.asset?.url || '')}" alt="${esc(value?.alt || '')}" style="max-width:100%;height:auto;margin:20px 0;" />`,
+            `<img src="${esc(value?.url || value?.asset?.url || '')}" alt="${esc(value?.alt || '')}" loading="lazy" decoding="async" style="max-width:100%;height:auto;margin:20px 0;" />`,
           // Handle any unknown block types gracefully
           _fallback: ({ value }) => {
             if (value?._type === 'block' && value?.children) {
@@ -128,13 +124,20 @@ export default async function handler(req, res) {
     const post = await sanityClient.fetch(QUERY, { slug });
 
     if (!post) {
-      res.setHeader('Content-Type', 'text/html; charset=utf-8');
-      return res.status(200).send(buildFallbackHtml(slug));
+      return sendCompressedHtml(req, res, buildFallbackHtml(slug));
     }
 
-    const title = esc(post.title || 'BioNixus Blog');
-    const rawDescription = post.excerpt || `${post.title} — Read the full article on BioNixus.`;
-    const description = esc(stripHtml(rawDescription)).slice(0, 300);
+    const normalizedTitle = normalizeSeoTitle(post.title || 'BioNixus Blog', 'BioNixus Blog');
+    const title = esc(normalizedTitle);
+    const rawBodyText =
+      typeof post?.body === 'string' ? post.body : portableTextToPlain(Array.isArray(post?.body) ? post.body : []);
+    const description = esc(
+      buildSeoDescription({
+        preferred: post.excerpt,
+        bodySource: rawBodyText,
+        fallback: `${post?.title || 'BioNixus'} — Read the full article on BioNixus.`,
+      })
+    );
     const image = post.coverImage || `${BASE}/og-image.png`;
     const url = `${BASE}/blog/${esc(slug)}`;
     const author = post.author || 'BioNixus Research Team';
@@ -244,12 +247,14 @@ export default async function handler(req, res) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${title} | BioNixus</title>
+  <title>${esc(normalizeSeoTitle(`${normalizedTitle} | BioNixus`, 'BioNixus'))}</title>
   <meta name="description" content="${description}">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph / Facebook / LinkedIn -->
   <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ar_SA">
   <meta property="og:site_name" content="BioNixus">
   <meta property="og:title" content="${title}">
   <meta property="og:description" content="${description}">
@@ -296,13 +301,10 @@ export default async function handler(req, res) {
 </body>
 </html>`;
 
-    res.setHeader('Content-Type', 'text/html; charset=utf-8');
-    res.setHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=86400');
-    return res.status(200).send(html);
+    return sendCompressedHtml(req, res, html);
   } catch (error) {
     console.error('OG handler error:', error);
-    res.setHeader('Content-Type', 'text/html; charset=utf-8');
-    return res.status(200).send(buildFallbackHtml(slug));
+    return sendCompressedHtml(req, res, buildFallbackHtml(slug));
   }
 }
 
@@ -318,6 +320,9 @@ function buildFallbackHtml(slug) {
   <meta property="og:description" content="Leading UK healthcare market research firm delivering pharmaceutical insights across Europe and MENA.">
   <meta property="og:image" content="${BASE}/og-image.png">
   <meta property="og:url" content="${url}">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ar_SA">
   <link rel="canonical" href="${url}">
 </head>
 <body><p>BioNixus Blog</p></body>

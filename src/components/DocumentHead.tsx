@@ -1,14 +1,19 @@
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { seoByLanguage, getCanonicalUrl, getHreflangLinks, defaultOgImageUrl, defaultOgImageAlt, defaultOgImageWidth, defaultOgImageHeight } from '@/lib/seo';
+import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { seoByLanguage, getCanonicalPath, getCanonicalUrl, getHreflangLinks, defaultOgImageUrl, getOgLocale, getOgLocaleAlternates } from '@/lib/seo';
+import { buildSeoDescription, ensureFallbackH1, normalizeSeoTitle } from '@/lib/seo-meta';
 
 const DocumentHead = () => {
   const { language } = useLanguage();
+  const { pathname } = useLocation();
   const seo = seoByLanguage[language];
-  const canonicalPath = seo.canonicalPath || '/';
+  const canonicalPath = getCanonicalPath(pathname || seo.canonicalPath || '/');
+  const canonicalUrl = getCanonicalUrl(canonicalPath);
 
   useEffect(() => {
-    document.title = seo.title;
+    document.title = normalizeSeoTitle(seo.title, 'BioNixus');
 
     const setMeta = (name: string, content: string, isProperty = false) => {
       const attr = isProperty ? 'property' : 'name';
@@ -21,18 +26,15 @@ const DocumentHead = () => {
       el.setAttribute('content', content);
     };
 
-    setMeta('description', seo.description);
+    const bodyText = document.querySelector('main')?.textContent || '';
+    const normalizedDescription = buildSeoDescription({
+      preferred: seo.description,
+      bodySource: bodyText,
+      fallback: seo.description,
+    });
+
+    setMeta('description', normalizedDescription);
     setMeta('keywords', seo.keywords);
-    setMeta('og:title', seo.title, true);
-    setMeta('og:description', seo.description, true);
-    setMeta('og:image', defaultOgImageUrl, true);
-    setMeta('og:image:width', String(defaultOgImageWidth), true);
-    setMeta('og:image:height', String(defaultOgImageHeight), true);
-    setMeta('og:image:alt', defaultOgImageAlt, true);
-    setMeta('twitter:title', seo.title);
-    setMeta('twitter:description', seo.description);
-    setMeta('twitter:image', defaultOgImageUrl);
-    setMeta('twitter:image:alt', defaultOgImageAlt);
 
     if (language === 'de') {
       setMeta('geo.region', 'DE;GB;FR;ES;IT;AE;SA;EG');
@@ -44,21 +46,59 @@ const DocumentHead = () => {
       canonical.setAttribute('rel', 'canonical');
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute('href', getCanonicalUrl(canonicalPath));
+    canonical.setAttribute('href', canonicalUrl);
 
     const existingHreflang = document.querySelectorAll('link[rel="alternate"][hreflang]');
     existingHreflang.forEach((el) => el.remove());
 
-    getHreflangLinks().forEach(({ lang, href }) => {
+    getHreflangLinks(pathname).forEach(({ lang, href }) => {
       const link = document.createElement('link');
       link.setAttribute('rel', 'alternate');
       link.setAttribute('hreflang', lang);
       link.setAttribute('href', href);
       document.head.appendChild(link);
     });
-  }, [language]);
 
-  return null;
+    ensureFallbackH1(seo.title);
+
+    const enforceHeadLimits = () => {
+      document.title = normalizeSeoTitle(document.title || seo.title, 'BioNixus');
+      const descEl = document.querySelector('meta[name="description"]');
+      const descRaw = descEl?.getAttribute('content') || seo.description;
+      const nextDesc = buildSeoDescription({
+        preferred: descRaw,
+        bodySource: document.querySelector('main')?.textContent || '',
+        fallback: seo.description,
+      });
+      if (descEl) descEl.setAttribute('content', nextDesc);
+      ensureFallbackH1(document.title);
+    };
+
+    enforceHeadLimits();
+    const observer = new MutationObserver(enforceHeadLimits);
+    observer.observe(document.head, { childList: true, subtree: true, characterData: true });
+    observer.observe(document.body, { childList: true, subtree: true });
+    return () => observer.disconnect();
+  }, [language, pathname, canonicalUrl]);
+
+  const title = normalizeSeoTitle(seo.title, 'BioNixus');
+  const description = buildSeoDescription({
+    preferred: seo.description,
+    bodySource: typeof document !== 'undefined' ? document.querySelector('main')?.textContent || '' : '',
+    fallback: seo.description,
+  });
+
+  return (
+    <OpenGraphMeta
+      title={title}
+      description={description}
+      image={defaultOgImageUrl}
+      url={canonicalUrl}
+      type="website"
+      locale={getOgLocale(language)}
+      alternateLocales={getOgLocaleAlternates(language)}
+    />
+  );
 };
 
 export default DocumentHead;

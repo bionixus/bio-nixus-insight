@@ -193,6 +193,61 @@ const Footer = () => {
                   {t.footer.services}
                 </Link>
               </li>
+              <li className="pt-2">
+                <p className="text-primary-foreground/90 text-xs font-semibold uppercase tracking-wider mb-2">
+                  Our Services
+                </p>
+                <ul className="space-y-2">
+                  <li>
+                    <Link
+                      to="/services/quantitative-research"
+                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.92rem]"
+                    >
+                      Quantitative Research
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/services/qualitative-research"
+                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.92rem]"
+                    >
+                      Qualitative Research
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/services/market-access"
+                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.92rem]"
+                    >
+                      Market Access
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/services/competitive-intelligence"
+                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.92rem]"
+                    >
+                      Competitive Intelligence
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/services/clinical-trial-support"
+                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.92rem]"
+                    >
+                      Clinical Trial Support
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/services/kol-stakeholder-mapping"
+                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.92rem]"
+                    >
+                      KOL & Stakeholder Mapping
+                    </Link>
+                  </li>
+                </ul>
+              </li>
               <li>
                 <Link
                   to={`${basePath}#insights`}
@@ -234,6 +289,14 @@ const Footer = () => {
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
                   {t.footer.methodology}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/sitemap"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  Sitemap
                 </Link>
               </li>
             </ul>

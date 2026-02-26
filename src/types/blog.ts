@@ -43,4 +43,6 @@ export interface BlogPost {
   ogImage?: string;
   authorName?: string;
   authorImage?: string;
+  publishedAtIso?: string;
+  updatedAtIso?: string;
 }

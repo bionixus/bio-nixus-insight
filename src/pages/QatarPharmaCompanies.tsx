@@ -5,6 +5,7 @@ import { ArrowRight, Share2, BookOpen, Building2, Globe, ShieldCheck, Pill, Tren
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { Helmet } from 'react-helmet-async';
+import OpenGraphMeta from '@/components/OpenGraphMeta';
 
 interface PharmaCompany {
   name: string;
@@ -49,6 +50,9 @@ const QatarPharmaCompanies = () => {
   const basePath = languagePaths[language] || '/';
   const citationUrl = 'https://www.bionixus.com/pharmaceutical-companies-qatar';
 
+  const ogTitle = "Pharmaceutical Companies in Qatar — Complete Industry Guide 2026";
+  const ogDescription = "Comprehensive guide: 18 pharmaceutical companies in Qatar, $0.9B market data, MOPH registration, Qatar National Vision 2030, Sidra Medicine, and market outlook.";
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
@@ -56,14 +60,19 @@ const QatarPharmaCompanies = () => {
         <meta name="description" content="Complete guide to pharmaceutical companies in Qatar for 2026: top pharma companies list, $0.9B market size, MOPH drug registration, Qatar National Vision 2030, Sidra Medicine, and industry outlook." />
         <meta name="keywords" content="pharmaceutical companies in Qatar, Qatar pharmaceutical companies, pharma companies in Qatar, top pharmaceutical companies in Qatar, list of pharmaceutical companies in Qatar, MOPH drug registration, Qatar pharma market, Qatar National Vision 2030 pharmaceutical" />
         <link rel="canonical" href={citationUrl} />
-        <meta property="og:title" content="Pharmaceutical Companies in Qatar — Complete Industry Guide 2026" />
-        <meta property="og:description" content="Comprehensive guide: 18 pharmaceutical companies in Qatar, $0.9B market data, MOPH registration, Qatar National Vision 2030, Sidra Medicine, and market outlook." />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content={citationUrl} />
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: 'Pharmaceutical Companies in Qatar: Complete Industry Guide 2026', description: 'Comprehensive guide to pharmaceutical companies operating in Qatar — local manufacturers, MNC offices, distributors, $0.9B market data, MOPH regulatory landscape, and Qatar National Vision 2030 outlook.', url: citationUrl, datePublished: '2026-02-15', dateModified: '2026-02-15', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' } })}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' }, { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.bionixus.com/resources' }, { '@type': 'ListItem', position: 3, name: 'Pharmaceutical Companies in Qatar' }] })}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqItems.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) })}</script>
       </Helmet>
+      <OpenGraphMeta
+        title={ogTitle}
+        description={ogDescription}
+        image="https://www.bionixus.com/og-image.png"
+        url={citationUrl}
+        type="article"
+        locale={language === 'ar' ? 'ar_SA' : 'en_US'}
+        alternateLocales={language === 'ar' ? ['en_US'] : ['ar_SA']}
+      />
       <Navbar />
       <main>
         <div className="section-padding pt-24 pb-4"><div className="container-wide"><div className="flex items-center gap-2 text-sm text-muted-foreground mb-6"><Link to={basePath} className="hover:text-primary transition-colors">Home</Link><span>/</span><Link to="/resources" className="hover:text-primary transition-colors">Resources</Link><span>/</span><span className="text-foreground">Pharmaceutical Companies in Qatar</span></div></div></div>

@@ -3,6 +3,8 @@ import Footer from '@/components/Footer';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, CheckCircle } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
+import { useLanguage } from '@/contexts/LanguageContext';
+import SchemaMarkup from '@/components/SchemaMarkup';
 
 interface ServiceData {
   title: string;
@@ -190,12 +192,26 @@ const serviceData: Record<string, ServiceData> = {
 
 const ServiceDetail = () => {
   const { slug } = useParams<{ slug: string }>();
+  const { language } = useLanguage();
   const svc = slug ? serviceData[slug] : undefined;
 
   if (!svc) return <Navigate to="/services" replace />;
 
   return (
     <div className="min-h-screen bg-background">
+      <SchemaMarkup
+        pageType="service"
+        pageUrl={`https://www.bionixus.com/services/${slug}`}
+        language={language}
+        serviceName={svc.title}
+        serviceDescription={svc.metaDescription}
+        providerAreaServed={svc.geoCoverage}
+        breadcrumb={[
+          { name: 'Home', item: 'https://www.bionixus.com/' },
+          { name: 'Services', item: 'https://www.bionixus.com/services' },
+          { name: svc.title, item: `https://www.bionixus.com/services/${slug}` },
+        ]}
+      />
       <Helmet>
         <title>{svc.metaTitle}</title>
         <meta name="description" content={svc.metaDescription} />

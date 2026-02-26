@@ -5,6 +5,7 @@ import { ArrowRight, Share2, BookOpen, Building2, Globe, ShieldCheck, Pill, Tren
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { Helmet } from 'react-helmet-async';
+import OpenGraphMeta from '@/components/OpenGraphMeta';
 
 interface PharmaCompany {
   name: string;
@@ -50,6 +51,9 @@ const IranPharmaCompanies = () => {
   const basePath = languagePaths[language] || '/';
   const citationUrl = 'https://www.bionixus.com/pharmaceutical-companies-iran';
 
+  const ogTitle = "Pharmaceutical Companies in Iran — Complete Industry Guide 2026";
+  const ogDescription = "Comprehensive guide: pharmaceutical companies in Iran, $4.2B market data, 95% local production, IFDA registration, and market outlook.";
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
@@ -57,14 +61,19 @@ const IranPharmaCompanies = () => {
         <meta name="description" content="Complete guide to pharmaceutical companies in Iran for 2026: top pharma companies list, $4.2B market size, 95% local production, IFDA drug registration, and industry outlook." />
         <meta name="keywords" content="pharmaceutical companies in Iran, Iran pharmaceutical companies, pharma companies in Iran, top pharmaceutical companies in Iran, list of pharmaceutical companies in Iran, IFDA drug registration, Iran pharma market, Iranian pharma manufacturers" />
         <link rel="canonical" href={citationUrl} />
-        <meta property="og:title" content="Pharmaceutical Companies in Iran — Complete Industry Guide 2026" />
-        <meta property="og:description" content="Comprehensive guide: pharmaceutical companies in Iran, $4.2B market data, 95% local production, IFDA registration, and market outlook." />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content={citationUrl} />
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: 'Pharmaceutical Companies in Iran: Complete Industry Guide 2026', description: 'Comprehensive guide to pharmaceutical companies operating in Iran — local manufacturers, MNC offices, distributors, $4.2B market data, IFDA regulatory landscape, and 95% local production.', url: citationUrl, datePublished: '2026-02-15', dateModified: '2026-02-15', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' } })}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' }, { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.bionixus.com/resources' }, { '@type': 'ListItem', position: 3, name: 'Pharmaceutical Companies in Iran' }] })}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqItems.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) })}</script>
       </Helmet>
+      <OpenGraphMeta
+        title={ogTitle}
+        description={ogDescription}
+        image="https://www.bionixus.com/og-image.png"
+        url={citationUrl}
+        type="article"
+        locale={language === 'ar' ? 'ar_SA' : 'en_US'}
+        alternateLocales={language === 'ar' ? ['en_US'] : ['ar_SA']}
+      />
       <Navbar />
       <main>
         <div className="section-padding pt-24 pb-4"><div className="container-wide"><div className="flex items-center gap-2 text-sm text-muted-foreground mb-6"><Link to={basePath} className="hover:text-primary transition-colors">Home</Link><span>/</span><Link to="/resources" className="hover:text-primary transition-colors">Resources</Link><span>/</span><span className="text-foreground">Pharmaceutical Companies in Iran</span></div></div></div>

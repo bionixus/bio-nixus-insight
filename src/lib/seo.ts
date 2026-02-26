@@ -1,7 +1,6 @@
 import type { Language } from './i18n';
 
 function getBaseUrl() {
-  if (typeof window !== 'undefined') return window.location.origin;
   return 'https://www.bionixus.com';
 }
 
@@ -66,19 +65,88 @@ export const languagePaths: Record<Language, string> = {
   zh: '/zh',
 };
 
-export function getHreflangLinks() {
+function normalizePath(path: string): string {
+  if (!path) return '/';
+  const noQuery = path.split('?')[0].split('#')[0] || '/';
+  if (noQuery === '/') return '/';
+  return noQuery.endsWith('/') ? noQuery.slice(0, -1) : noQuery;
+}
+
+const localizedRouteGroups: Record<string, Record<string, string>> = {
+  '/': {
+    en: '/',
+    de: '/de',
+    fr: '/fr',
+    es: '/es',
+    zh: '/zh',
+    ar: '/ar',
+  },
+  '/contact': {
+    en: '/contact',
+    de: '/de/contact',
+    fr: '/fr/contact',
+    es: '/es/contact',
+    zh: '/zh/contact',
+    ar: '/ar/contact',
+  },
+  '/methodology': {
+    en: '/methodology',
+    de: '/de/methodology',
+    fr: '/fr/methodology',
+    es: '/es/methodology',
+    zh: '/zh/methodology',
+    ar: '/ar/methodology',
+  },
+};
+
+function findRouteGroup(pathname: string) {
+  const normalized = normalizePath(pathname);
+  for (const groupKey of Object.keys(localizedRouteGroups)) {
+    const variants = Object.values(localizedRouteGroups[groupKey]);
+    if (variants.includes(normalized)) return groupKey;
+  }
+  return null;
+}
+
+export function getCanonicalPath(pathname: string = '/') {
+  const normalized = normalizePath(pathname);
+  const group = findRouteGroup(normalized);
+  if (!group) return normalized;
+  return localizedRouteGroups[group].en;
+}
+
+export function getHreflangLinks(pathname: string = '/') {
   const base = getBaseUrl();
+  const normalized = normalizePath(pathname);
+  const group = findRouteGroup(normalized);
+  if (!group) {
+    return [
+      { lang: 'x-default', href: `${base}${normalized}` },
+      { lang: 'en', href: `${base}${normalized}` },
+    ];
+  }
+
+  const routes = localizedRouteGroups[group];
   return [
-    { lang: 'x-default', href: `${base}/` },
-    { lang: 'en', href: `${base}/` },
-    { lang: 'de', href: `${base}/de` },
-    { lang: 'fr', href: `${base}/fr` },
-    { lang: 'es', href: `${base}/es` },
-    { lang: 'zh-CN', href: `${base}/zh` },
-    { lang: 'ar', href: `${base}/ar` },
+    { lang: 'x-default', href: `${base}${routes.en}` },
+    { lang: 'en', href: `${base}${routes.en}` },
+    { lang: 'de', href: `${base}${routes.de}` },
+    { lang: 'fr', href: `${base}${routes.fr}` },
+    { lang: 'es', href: `${base}${routes.es}` },
+    { lang: 'zh-CN', href: `${base}${routes.zh}` },
+    { lang: 'ar', href: `${base}${routes.ar}` },
   ];
 }
 
 export function getCanonicalUrl(path: string = '/') {
   return `${getBaseUrl()}${path}`;
+}
+
+export function getOgLocale(language: Language): string {
+  if (language === 'ar') return 'ar_SA';
+  return 'en_US';
+}
+
+export function getOgLocaleAlternates(language: Language): string[] {
+  return language === 'ar' ? ['en_US'] : ['ar_SA'];
 }

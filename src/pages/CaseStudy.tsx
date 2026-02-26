@@ -6,7 +6,10 @@ import type { PortableTextBlock } from '@portabletext/types';
 import { Helmet } from 'react-helmet-async';
 import { fetchCaseStudyBySlug } from '@/lib/sanity-case-studies';
 import { isCaseStudiesConfigured } from '@/lib/sanity-case-studies';
+import { buildSeoDescription, normalizeSeoTitle } from '@/lib/seo-meta';
 import { useLanguage } from '@/contexts/LanguageContext';
+import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { getOgLocale, getOgLocaleAlternates } from '@/lib/seo';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { PdfCarousel } from '@/components/PdfCarousel';
@@ -74,7 +77,7 @@ const portableTextComponents = {
 
 const CaseStudyPage = () => {
   const { slug } = useParams<{ slug: string }>();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const cs = (t as { caseStudiesPage?: Record<string, string> }).caseStudiesPage ?? {};
 
   const { data: caseStudy, isLoading, isError } = useQuery({
@@ -126,16 +129,29 @@ const CaseStudyPage = () => {
   }
 
   const pageUrl = `https://www.bionixus.com/case-studies/${slug}`;
-  const metaTitle = caseStudy.seoMetaTitle || caseStudy.title;
-  const metaDescription = caseStudy.seoMetaDescription || caseStudy.excerpt || caseStudy.title;
+  const metaTitle = normalizeSeoTitle(caseStudy.seoMetaTitle || caseStudy.title, 'BioNixus Case Studies');
+  const metaDescription = buildSeoDescription({
+    preferred: caseStudy.seoMetaDescription,
+    bodySource: caseStudy.body || caseStudy.excerpt || caseStudy.title,
+    fallback: caseStudy.excerpt || caseStudy.title,
+  });
   const socialTitle = caseStudy.ogTitle || metaTitle;
   const socialDescription = caseStudy.ogDescription || metaDescription;
   const socialImage = caseStudy.ogImage || caseStudy.coverImage;
 
   return (
     <div className="min-h-screen bg-background">
+      <OpenGraphMeta
+        title={socialTitle}
+        description={socialDescription}
+        image={socialImage || 'https://www.bionixus.com/og-image.png'}
+        url={pageUrl}
+        type="article"
+        locale={getOgLocale(language)}
+        alternateLocales={getOgLocaleAlternates(language)}
+      />
       <Helmet>
-        <title>{metaTitle} | BioNixus Case Studies</title>
+        <title>{normalizeSeoTitle(`${metaTitle} | BioNixus Case Studies`, 'BioNixus Case Studies')}</title>
         <meta name="description" content={metaDescription} />
         {caseStudy.seoNoIndex && <meta name="robots" content="noindex,nofollow" />}
 
@@ -157,7 +173,7 @@ const CaseStudyPage = () => {
         {socialImage && <meta name="twitter:image" content={socialImage} />}
 
         {/* Canonical URL */}
-        <link rel="canonical" href={caseStudy.seoCanonicalUrl || pageUrl} />
+        <link rel="canonical" href={pageUrl} />
       </Helmet>
       <Navbar />
       <main className="section-padding">
@@ -211,6 +227,10 @@ const CaseStudyPage = () => {
                       src={caseStudy.authorImage}
                       alt={caseStudy.authorName}
                       className="w-8 h-8 rounded-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                      width={32}
+                      height={32}
                     />
                   )}
                   <span className="text-sm font-medium text-foreground">{caseStudy.authorName}</span>
@@ -240,10 +260,12 @@ const CaseStudyPage = () => {
               <div className="aspect-[16/10] rounded-xl overflow-hidden mb-8 bg-muted">
                 <img
                   src={caseStudy.coverImage}
-                  alt=""
+                  alt={caseStudy.title || 'Case study cover image'}
                   className="w-full h-full object-cover"
                   loading="lazy"
                   decoding="async"
+                  width={1280}
+                  height={800}
                 />
               </div>
             )}

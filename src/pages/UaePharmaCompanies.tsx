@@ -5,6 +5,7 @@ import { ArrowRight, Share2, BookOpen, Building2, Globe, ShieldCheck, Pill, Tren
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { Helmet } from 'react-helmet-async';
+import OpenGraphMeta from '@/components/OpenGraphMeta';
 
 interface PharmaCompany {
   name: string;
@@ -52,6 +53,9 @@ const UaePharmaCompanies = () => {
   const basePath = languagePaths[language] || '/';
   const citationUrl = 'https://www.bionixus.com/pharmaceutical-companies-uae';
 
+  const ogTitle = "Pharmaceutical Companies in the UAE — Complete Industry Guide 2026";
+  const ogDescription = "Comprehensive guide: 20+ pharmaceutical companies in the UAE, $4.5B market data, MOHAP/DHA/DOH registration (fastest in GCC), medical tourism hub, and market outlook.";
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
@@ -59,14 +63,19 @@ const UaePharmaCompanies = () => {
         <meta name="description" content="Complete guide to pharmaceutical companies in the UAE for 2026: top pharma companies list, $4.5B market size, MOHAP/DHA/DOH registration (6-14 months fastest in GCC), medical tourism, and industry outlook." />
         <meta name="keywords" content="pharmaceutical companies in UAE, UAE pharmaceutical companies, pharma companies in UAE, top pharmaceutical companies in UAE, list of pharmaceutical companies in UAE, MOHAP drug registration, DHA DOH UAE pharma, UAE pharma market" />
         <link rel="canonical" href={citationUrl} />
-        <meta property="og:title" content="Pharmaceutical Companies in the UAE — Complete Industry Guide 2026" />
-        <meta property="og:description" content="Comprehensive guide: 20+ pharmaceutical companies in the UAE, $4.5B market data, MOHAP/DHA/DOH registration (fastest in GCC), medical tourism hub, and market outlook." />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content={citationUrl} />
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: 'Pharmaceutical Companies in the UAE: Complete Industry Guide 2026', description: 'Comprehensive guide to pharmaceutical companies operating in the United Arab Emirates — local manufacturers, MNC offices, distributors, $4.5B market data, MOHAP/DHA/DOH regulatory landscape, and medical tourism outlook.', url: citationUrl, datePublished: '2026-02-15', dateModified: '2026-02-15', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' } })}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' }, { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.bionixus.com/resources' }, { '@type': 'ListItem', position: 3, name: 'Pharmaceutical Companies in the UAE' }] })}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqItems.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) })}</script>
       </Helmet>
+      <OpenGraphMeta
+        title={ogTitle}
+        description={ogDescription}
+        image="https://www.bionixus.com/og-image.png"
+        url={citationUrl}
+        type="article"
+        locale={language === 'ar' ? 'ar_SA' : 'en_US'}
+        alternateLocales={language === 'ar' ? ['en_US'] : ['ar_SA']}
+      />
       <Navbar />
       <main>
         <div className="section-padding pt-24 pb-4"><div className="container-wide"><div className="flex items-center gap-2 text-sm text-muted-foreground mb-6"><Link to={basePath} className="hover:text-primary transition-colors">Home</Link><span>/</span><Link to="/resources" className="hover:text-primary transition-colors">Resources</Link><span>/</span><span className="text-foreground">Pharmaceutical Companies in the UAE</span></div></div></div>

@@ -6,7 +6,11 @@ import type { PortableTextBlock } from '@portabletext/types';
 import { Helmet } from 'react-helmet-async';
 import { fetchSanityPostBySlug } from '@/lib/sanity-blog';
 import { optimizeSanityImage } from '@/lib/image-utils';
+import { buildSeoDescription, normalizeSeoTitle } from '@/lib/seo-meta';
 import RelatedPosts from '@/components/RelatedPosts';
+import SchemaMarkup from '@/components/SchemaMarkup';
+import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { getOgLocale, getOgLocaleAlternates } from '@/lib/seo';
 
 /** Detect if string looks like HTML (contains tags). */
 function isHtmlString(s: string): boolean {
@@ -193,7 +197,7 @@ function getBodyToRender(
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const { data: sanityPost, isLoading, isError } = useQuery({
     queryKey: ['sanity-post', slug],
@@ -266,67 +270,54 @@ const BlogPost = () => {
   }
 
   const pageUrl = `https://www.bionixus.com/blog/${slug}`;
-  const metaTitle = post.seoMetaTitle || post.title;
-  const metaDescription = post.seoMetaDescription || post.excerpt || post.title;
+  const bodySourceForMeta = typeof post.body === 'string' ? post.body : post.excerpt || post.title;
+  const metaTitle = normalizeSeoTitle(post.seoMetaTitle || post.title, 'BioNixus');
+  const metaDescription = buildSeoDescription({
+    preferred: post.seoMetaDescription,
+    bodySource: bodySourceForMeta,
+    fallback: post.excerpt || post.title,
+  });
   const socialTitle = post.ogTitle || metaTitle;
   const socialDescription = post.ogDescription || metaDescription;
   const socialImage = post.ogImage || post.coverImage;
 
-  // --- Structured Data (JSON-LD) ---
-  const articleSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: post.title,
-    description: metaDescription,
-    url: pageUrl,
-    ...(socialImage && { image: socialImage }),
-    ...(post.date && { datePublished: post.date }),
-    ...(post.authorName && {
-      author: { '@type': 'Person', name: post.authorName },
-    }),
-    publisher: {
-      '@type': 'Organization',
-      name: 'BioNixus',
-      url: 'https://www.bionixus.com',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://www.bionixus.com/og-image.png',
-      },
-    },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
-  };
-
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com' },
-      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.bionixus.com/blog' },
-      { '@type': 'ListItem', position: 3, name: post.title },
-    ],
-  };
-
-  const faqSchema =
-    Array.isArray(post.faq) && post.faq.length > 0
-      ? {
-          '@context': 'https://schema.org',
-          '@type': 'FAQPage',
-          mainEntity: post.faq.map((item) => ({
-            '@type': 'Question',
-            name: item.question || '',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: item.answer || '',
-            },
-          })),
-        }
-      : null;
-
   return (
     <div className="min-h-screen bg-background">
+      <OpenGraphMeta
+        title={socialTitle}
+        description={socialDescription}
+        image={socialImage || 'https://www.bionixus.com/og-image.png'}
+        url={pageUrl}
+        type="article"
+        locale={getOgLocale(language)}
+        alternateLocales={getOgLocaleAlternates(language)}
+      />
+      <SchemaMarkup
+        pageType="blog"
+        pageUrl={pageUrl}
+        language={language}
+        headline={post.title}
+        description={metaDescription}
+        imageUrl={socialImage}
+        authorName={post.authorName || 'BioNixus Research Team'}
+        publishedAt={post.publishedAtIso}
+        modifiedAt={post.updatedAtIso || post.publishedAtIso}
+        breadcrumb={[
+          { name: 'Home', item: 'https://www.bionixus.com/' },
+          { name: 'Blog', item: 'https://www.bionixus.com/blog' },
+          { name: post.title, item: pageUrl },
+        ]}
+        faqItems={
+          Array.isArray(post.faq)
+            ? post.faq
+                .filter((item) => Boolean(item.question && item.answer))
+                .map((item) => ({ question: item.question!, answer: item.answer! }))
+            : []
+        }
+      />
       <Helmet>
         {/* Dynamic meta tags for this specific blog post */}
-        <title>{metaTitle} | BioNixus</title>
+        <title>{normalizeSeoTitle(`${metaTitle} | BioNixus`, 'BioNixus')}</title>
         <meta name="description" content={metaDescription} />
         {post.seoNoIndex && <meta name="robots" content="noindex,nofollow" />}
 
@@ -355,14 +346,8 @@ const BlogPost = () => {
         {socialImage && <meta name="twitter:image" content={socialImage} />}
 
         {/* Canonical URL */}
-        <link rel="canonical" href={post.seoCanonicalUrl || pageUrl} />
+        <link rel="canonical" href={pageUrl} />
 
-        {/* Structured Data */}
-        <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-        {faqSchema && (
-          <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-        )}
       </Helmet>
       <Navbar />
       <main className="section-padding">
@@ -570,6 +555,7 @@ const BlogPost = () => {
             category={post.category}
             date={post.date}
             country={post.country}
+            tags={post.tags}
           />
         </div>
       </main>

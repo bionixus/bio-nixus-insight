@@ -20,8 +20,13 @@ export const caseStudy = defineType({
           title: 'Meta Title',
           type: 'string',
           validation: (Rule) =>
-            Rule.max(60).warning('Should be under 60 characters'),
-          description: 'Title for search engines (50-60 chars optimal)',
+            Rule.required().custom((value) => {
+              const len = (value || '').length
+              if (len === 0) return 'Meta title is required (0/60).'
+              if (len > 60) return `Meta title is too long (${len}/60).`
+              return true
+            }),
+          description: 'Title for search engines. Keep within 60 characters.',
         }),
         defineField({
           name: 'metaDescription',
@@ -29,8 +34,14 @@ export const caseStudy = defineType({
           type: 'text',
           rows: 3,
           validation: (Rule) =>
-            Rule.max(160).warning('Should be under 160 characters'),
-          description: 'Description for search engines (150-160 chars optimal)',
+            Rule.required().custom((value) => {
+              const len = (value || '').length
+              if (len === 0) return 'Meta description is required (0/155).'
+              if (len < 70) return `Meta description is too short (${len}/70 minimum).`
+              if (len > 155) return `Meta description is too long (${len}/155 maximum).`
+              return true
+            }),
+          description: 'Description for search engines. Target 70-155 characters.',
         }),
         defineField({
           name: 'focusKeyword',
@@ -101,7 +112,7 @@ export const caseStudy = defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().min(5).error('H1/Title is required and should be at least 5 characters.'),
     }),
     defineField({
       name: 'slug',

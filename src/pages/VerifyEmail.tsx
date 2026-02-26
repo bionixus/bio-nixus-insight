@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useNavigate, useSearchParams } from 'react-router-dom'
+import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 
 export default function VerifyEmail() {
   const navigate = useNavigate()
@@ -83,6 +83,14 @@ export default function VerifyEmail() {
             >
               Go to Homepage
             </button>
+            <div style={{ marginTop: '16px', display: 'flex', justifyContent: 'center', gap: '14px', flexWrap: 'wrap' }}>
+              <Link to="/blog" style={{ color: '#0066cc', textDecoration: 'underline' }}>
+                Browse Insights
+              </Link>
+              <Link to="/services" style={{ color: '#0066cc', textDecoration: 'underline' }}>
+                Explore Services
+              </Link>
+            </div>
           </>
         )}
 
@@ -106,6 +114,14 @@ export default function VerifyEmail() {
             >
               Back to Homepage
             </button>
+            <div style={{ marginTop: '16px', display: 'flex', justifyContent: 'center', gap: '14px', flexWrap: 'wrap' }}>
+              <Link to="/contact" style={{ color: '#0066cc', textDecoration: 'underline' }}>
+                Contact Support
+              </Link>
+              <Link to="/blog" style={{ color: '#0066cc', textDecoration: 'underline' }}>
+                View Latest Articles
+              </Link>
+            </div>
           </>
         )}
       </div>

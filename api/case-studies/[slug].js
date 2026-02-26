@@ -1,5 +1,7 @@
 import { createClient } from '@sanity/client';
 import { toHTML } from '@portabletext/to-html';
+import { buildSeoDescription, normalizeSeoTitle } from '../seo-meta.js';
+import { sendCompressedHtml } from '../compression.js';
 
 const sanityClient = createClient({
   projectId: process.env.VITE_SANITY_CASE_STUDIES_PROJECT_ID || 'gj6cv27f',
@@ -89,17 +91,34 @@ export default async function handler(req, res) {
     );
 
     if (!cs) {
-      res.setHeader('Content-Type', 'text/html; charset=utf-8');
-      return res.status(200).send(buildFallbackHtml(slug));
+      return sendCompressedHtml(req, res, buildFallbackHtml(slug));
     }
 
-    const title = esc(cs.seo?.metaTitle || cs.title || 'BioNixus Case Study');
-    const description = esc(cs.seo?.metaDescription || cs.excerpt || cs.title);
-    const ogTitle = esc(cs.openGraph?.ogTitle || cs.title || title);
-    const ogDescription = esc(cs.openGraph?.ogDescription || description);
+    const normalizedTitle = normalizeSeoTitle(
+      cs.seo?.metaTitle || cs.title || 'BioNixus Case Study',
+      'BioNixus Case Study'
+    );
+    const title = esc(normalizedTitle);
+    const description = esc(
+      buildSeoDescription({
+        preferred: cs.seo?.metaDescription || cs.excerpt,
+        bodySource:
+          (typeof cs?.body === 'string' ? cs.body : portableTextToPlain(Array.isArray(cs?.body) ? cs.body : [])) ||
+          (typeof cs?.methodology === 'string' ? cs.methodology : portableTextToPlain(Array.isArray(cs?.methodology) ? cs.methodology : [])),
+        fallback: cs.title || 'BioNixus case study',
+      })
+    );
+    const ogTitle = esc(normalizeSeoTitle(cs.openGraph?.ogTitle || cs.title || normalizedTitle, normalizedTitle));
+    const ogDescription = esc(
+      buildSeoDescription({
+        preferred: cs.openGraph?.ogDescription || cs.seo?.metaDescription || cs.excerpt,
+        bodySource: typeof cs?.body === 'string' ? cs.body : portableTextToPlain(Array.isArray(cs?.body) ? cs.body : []),
+        fallback: cs.title || 'BioNixus case study',
+      })
+    );
     const image = cs.ogImageUrl || cs.coverImage || `${BASE}/og-image.png`;
     const url = `${BASE}/case-studies/${esc(slug)}`;
-    const canonical = cs.seo?.canonicalUrl || url;
+    const canonical = url;
 
     // Render body
     let bodyHtml = '';
@@ -158,11 +177,13 @@ export default async function handler(req, res) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${title} | BioNixus Case Studies</title>
+  <title>${esc(normalizeSeoTitle(`${normalizedTitle} | BioNixus Case Studies`, 'BioNixus Case Studies'))}</title>
   <meta name="description" content="${description}">
   <meta name="robots" content="index, follow">
 
   <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ar_SA">
   <meta property="og:site_name" content="BioNixus">
   <meta property="og:title" content="${ogTitle}">
   <meta property="og:description" content="${ogDescription}">
@@ -204,13 +225,10 @@ export default async function handler(req, res) {
 </body>
 </html>`;
 
-    res.setHeader('Content-Type', 'text/html; charset=utf-8');
-    res.setHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=86400');
-    return res.status(200).send(html);
+    return sendCompressedHtml(req, res, html);
   } catch (error) {
     console.error('Case study OG handler error:', error);
-    res.setHeader('Content-Type', 'text/html; charset=utf-8');
-    return res.status(200).send(buildFallbackHtml(slug));
+    return sendCompressedHtml(req, res, buildFallbackHtml(slug));
   }
 }
 
@@ -226,6 +244,9 @@ function buildFallbackHtml(slug) {
   <meta property="og:description" content="Leading UK healthcare market research firm.">
   <meta property="og:image" content="${BASE}/og-image.png">
   <meta property="og:url" content="${url}">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ar_SA">
   <link rel="canonical" href="${url}">
 </head>
 <body><p>BioNixus Case Studies</p></body>

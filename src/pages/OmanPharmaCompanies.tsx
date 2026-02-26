@@ -5,6 +5,7 @@ import { ArrowRight, Share2, BookOpen, Building2, Globe, ShieldCheck, Pill, Tren
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { Helmet } from 'react-helmet-async';
+import OpenGraphMeta from '@/components/OpenGraphMeta';
 
 interface PharmaCompany {
   name: string;
@@ -50,6 +51,9 @@ const OmanPharmaCompanies = () => {
   const basePath = languagePaths[language] || '/';
   const citationUrl = 'https://www.bionixus.com/pharmaceutical-companies-oman';
 
+  const ogTitle = "Pharmaceutical Companies in Oman — Complete Industry Guide 2026";
+  const ogDescription = "Comprehensive guide: 18+ pharmaceutical companies in Oman, $0.7B market data, MOH DGPA registration, Vision 2040, and market outlook.";
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
@@ -57,14 +61,19 @@ const OmanPharmaCompanies = () => {
         <meta name="description" content="Complete guide to pharmaceutical companies in Oman for 2026: top pharma companies list, $0.7B market size, MOH DGPA drug registration, Vision 2040, and industry outlook." />
         <meta name="keywords" content="pharmaceutical companies in Oman, Oman pharmaceutical companies, pharma companies in Oman, top pharmaceutical companies in Oman, list of pharmaceutical companies in Oman, MOH DGPA drug registration, Oman pharma market, Vision 2040 pharmaceutical" />
         <link rel="canonical" href={citationUrl} />
-        <meta property="og:title" content="Pharmaceutical Companies in Oman — Complete Industry Guide 2026" />
-        <meta property="og:description" content="Comprehensive guide: 18+ pharmaceutical companies in Oman, $0.7B market data, MOH DGPA registration, Vision 2040, and market outlook." />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content={citationUrl} />
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: 'Pharmaceutical Companies in Oman: Complete Industry Guide 2026', description: 'Comprehensive guide to pharmaceutical companies operating in Oman — local manufacturers, MNC offices, distributors, $0.7B market data, MOH DGPA regulatory landscape, and Vision 2040 outlook.', url: citationUrl, datePublished: '2026-02-15', dateModified: '2026-02-15', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' } })}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' }, { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.bionixus.com/resources' }, { '@type': 'ListItem', position: 3, name: 'Pharmaceutical Companies in Oman' }] })}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqItems.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) })}</script>
       </Helmet>
+      <OpenGraphMeta
+        title={ogTitle}
+        description={ogDescription}
+        image="https://www.bionixus.com/og-image.png"
+        url={citationUrl}
+        type="article"
+        locale={language === 'ar' ? 'ar_SA' : 'en_US'}
+        alternateLocales={language === 'ar' ? ['en_US'] : ['ar_SA']}
+      />
       <Navbar />
       <main>
         <div className="section-padding pt-24 pb-4"><div className="container-wide"><div className="flex items-center gap-2 text-sm text-muted-foreground mb-6"><Link to={basePath} className="hover:text-primary transition-colors">Home</Link><span>/</span><Link to="/resources" className="hover:text-primary transition-colors">Resources</Link><span>/</span><span className="text-foreground">Pharmaceutical Companies in Oman</span></div></div></div>

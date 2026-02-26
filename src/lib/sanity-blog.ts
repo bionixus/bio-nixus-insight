@@ -6,6 +6,10 @@
 import { getSanityClient } from './sanity';
 import type { BlogPost } from '@/types/blog';
 
+function stripHtml(input: string): string {
+  return input.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
 const POSTS_QUERY = `*[_type in ["post", "blogPost"] && defined(slug.current)] | order(publishedAt desc, _createdAt desc) {
   _id,
   _type,
@@ -14,6 +18,8 @@ const POSTS_QUERY = `*[_type in ["post", "blogPost"] && defined(slug.current)] |
   excerpt,
   language,
   "date": coalesce(publishedAt, _createdAt),
+  "publishedAtIso": coalesce(publishedAt, _createdAt),
+  "updatedAtIso": coalesce(updatedAt, _updatedAt, publishedAt, _createdAt),
   category,
   "categoryTitle": category->title,
   "categories": categories[]->title,
@@ -21,6 +27,28 @@ const POSTS_QUERY = `*[_type in ["post", "blogPost"] && defined(slug.current)] |
   "countryTitle": country->title,
   "coverImage": mainImage.asset->url
 }[0...50]`;
+
+const LATEST_INSIGHTS_QUERY = `*[
+  _type in ["post", "blogPost"] &&
+  defined(slug.current) &&
+  (!defined(language) || language == $language)
+] | order(publishedAt desc, _createdAt desc) {
+  _id,
+  _type,
+  title,
+  "slug": slug.current,
+  excerpt,
+  language,
+  "date": coalesce(publishedAt, _createdAt),
+  "publishedAtIso": coalesce(publishedAt, _createdAt),
+  "updatedAtIso": coalesce(updatedAt, _updatedAt, publishedAt, _createdAt),
+  category,
+  "categoryTitle": category->title,
+  "categories": categories[]->title,
+  country,
+  "countryTitle": country->title,
+  "coverImage": mainImage.asset->url
+}[0...$limit]`;
 
 const POST_BY_SLUG_QUERY = `*[_type in ["post", "blogPost"] && slug.current == $slug][0] {
   _id,
@@ -32,6 +60,8 @@ const POST_BY_SLUG_QUERY = `*[_type in ["post", "blogPost"] && slug.current == $
   bodyHtml,
   language,
   "date": coalesce(publishedAt, _createdAt),
+  "publishedAtIso": coalesce(publishedAt, _createdAt),
+  "updatedAtIso": coalesce(updatedAt, _updatedAt, publishedAt, _createdAt),
   category,
   "categoryTitle": category->title,
   "categories": categories[]->title,
@@ -75,6 +105,8 @@ function inferCategory(title?: string, excerpt?: string): string {
 
 function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | null {
   if (!p) return null;
+  const excerptRaw = p.excerpt ?? '';
+  const excerptText = stripHtml(excerptRaw);
   const rawCategory =
     typeof p.category === 'string' && p.category.trim()
       ? p.category
@@ -93,11 +125,14 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
     id: p._id,
     slug: p.slug ?? p._id,
     title: p.title ?? 'Untitled',
-    excerpt: (p.excerpt ?? '').slice(0, 200),
+    // Always expose excerpt as clean text for cards/meta even if legacy data contains HTML.
+    excerpt: excerptText.slice(0, 200),
     date: formatDate(p.date),
     category: categoryStr,
     country: countryStr,
     coverImage: p.coverImage ?? undefined,
+    publishedAtIso: p.publishedAtIso,
+    updatedAtIso: p.updatedAtIso,
     ...(includeBody && (() => {
       const raw = p as RawSanityPost & { bodyHtml?: string };
       const out: Record<string, unknown> = {};
@@ -160,6 +195,19 @@ export async function fetchSanityPosts(): Promise<BlogPost[]> {
   return raw.map((p) => mapRawToPost(p)!);
 }
 
+/**
+ * Fast path for homepage "Latest Insights":
+ * fetches only the latest N posts for current language on the server side.
+ */
+export async function fetchSanityLatestInsights(language: string, limit = 3): Promise<BlogPost[]> {
+  const client = getSanityClient();
+  const raw = await client.fetch<RawSanityPost[]>(LATEST_INSIGHTS_QUERY, {
+    language,
+    limit: Math.max(1, Math.min(limit, 6)),
+  });
+  return raw.map((p) => mapRawToPost(p)!).filter(Boolean);
+}
+
 export async function fetchSanityPostBySlug(slug: string): Promise<BlogPost | null> {
   try {
     const client = getSanityClient();
@@ -180,6 +228,15 @@ export async function fetchSanityPostBySlug(slug: string): Promise<BlogPost | nu
  * Falls back to latest posts excluding the current one.
  */
 const RELATED_POSTS_QUERY = `{
+  "byTags": *[
+    _type in ["post", "blogPost"] &&
+    defined(slug.current) &&
+    slug.current != $slug &&
+    count((tags[])[@ in $tags]) > 0 &&
+    count($tags) > 0
+  ] | order(publishedAt desc, _createdAt desc)[0...8] {
+    _id, _type, title, "slug": slug.current, excerpt, "date": coalesce(publishedAt, _createdAt), category, country, "coverImage": mainImage.asset->url
+  },
   "byCategory": *[_type in ["post", "blogPost"] && defined(slug.current) && slug.current != $slug && category == $category && $category != ""] | order(publishedAt desc, _createdAt desc)[0...3] {
     _id, _type, title, "slug": slug.current, excerpt, "date": coalesce(publishedAt, _createdAt), category, country, "coverImage": mainImage.asset->url
   },
@@ -207,11 +264,13 @@ export async function fetchRelatedPosts(
   slug: string,
   category: string,
   date: string,
-  country?: string
+  country?: string,
+  tags: string[] = []
 ): Promise<RelatedPostsData> {
   try {
     const client = getSanityClient();
     const raw = await client.fetch<{
+      byTags: RawSanityPost[];
       byCategory: RawSanityPost[];
       byCountry: RawSanityPost[];
       latest: RawSanityPost[];
@@ -221,15 +280,16 @@ export async function fetchRelatedPosts(
       slug,
       category: category || '',
       country: country || '',
+      tags: Array.isArray(tags) ? tags : [],
       date: date || '',
     });
 
-    // Priority: same category > same country > latest posts. Deduplicate & limit to 3.
+    // Priority: same tags > same category > same country > latest posts. Deduplicate & limit to 5.
     const seen = new Set<string>();
     const merged: BlogPost[] = [];
-    for (const pool of [raw.byCategory, raw.byCountry, raw.latest]) {
+    for (const pool of [raw.byTags, raw.byCategory, raw.byCountry, raw.latest]) {
       for (const p of pool || []) {
-        if (seen.has(p._id) || merged.length >= 3) continue;
+        if (seen.has(p._id) || merged.length >= 5) continue;
         const mapped = mapRawToPost(p);
         if (mapped) {
           seen.add(p._id);
@@ -271,6 +331,8 @@ interface RawSanityPost {
   bodyHtml?: string;
   language?: string;
   date?: string;
+  publishedAtIso?: string;
+  updatedAtIso?: string;
   category?: string;
   categoryTitle?: string;
   categories?: string[];

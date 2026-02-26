@@ -2,7 +2,22 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  // Keep content paths tight so Tailwind purges unused classes aggressively.
+  content: ["./index.html", "./src/**/*.{ts,tsx}"],
+  safelist: [
+    // Dynamically toggled reveal/animation classes
+    "sr",
+    "revealed",
+    "sr-up",
+    "sr-down",
+    "sr-left",
+    "sr-right",
+    "sr-scale",
+    "sr-scale-up",
+    "sr-fast",
+    "sr-slow",
+    "sr-spring",
+  ],
   prefix: "",
   theme: {
     container: {

@@ -35,7 +35,7 @@
         {
           "type": "header",
           "key": "user-agent",
-          "value": ".*(facebookexternalhit|Facebot|Twitterbot|LinkedInBot|WhatsApp|Slackbot|TelegramBot|Discordbot|Googlebot|bingbot|Pinterestbot|redditbot).*"
+          "value": ".*(facebookexternalhit|Facebot|facebot|Twitterbot|twitterbot|LinkedInBot|linkedinbot|WhatsApp|whatsapp|Slackbot|slackbot|TelegramBot|telegrambot|Discordbot|discordbot|Googlebot|googlebot|bingbot|Bingbot|Pinterestbot|pinterestbot|redditbot|Redditbot|AhrefsBot|ahrefsbot|AhrefsSiteAudit).*"
         }
       ],
       "destination": "/api/blog/:slug"
@@ -46,7 +46,7 @@
         {
           "type": "header",
           "key": "user-agent",
-          "value": ".*(facebookexternalhit|Facebot|Twitterbot|LinkedInBot|WhatsApp|Slackbot|TelegramBot|Discordbot|Googlebot|bingbot|Pinterestbot|redditbot).*"
+          "value": ".*(facebookexternalhit|Facebot|facebot|Twitterbot|twitterbot|LinkedInBot|linkedinbot|WhatsApp|whatsapp|Slackbot|slackbot|TelegramBot|telegrambot|Discordbot|discordbot|Googlebot|googlebot|bingbot|Bingbot|Pinterestbot|pinterestbot|redditbot|Redditbot|AhrefsBot|ahrefsbot|AhrefsSiteAudit).*"
         }
       ],
       "destination": "/api/case-studies/:slug"

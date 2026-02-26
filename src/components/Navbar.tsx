@@ -79,6 +79,12 @@ const Navbar = () => {
 
           {/* Language Selector & CTA */}
           <div className="hidden md:flex items-center gap-4">
+            <Link
+              to="/global-websites"
+              className="px-3 py-2 rounded-lg border border-border bg-background text-foreground/80 text-sm hover:bg-muted hover:text-foreground transition-colors"
+            >
+              Global Sites
+            </Link>
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-muted transition-colors text-sm">
                 <span>{currentLang?.flag}</span>
@@ -135,6 +141,13 @@ const Navbar = () => {
                   {item.label}
                 </Link>
               ))}
+              <Link
+                to="/global-websites"
+                className="text-foreground/80 hover:text-foreground font-medium"
+                onClick={() => setIsOpen(false)}
+              >
+                Global Sites
+              </Link>
               <div className="flex items-center gap-2 pt-4 border-t border-border">
                 {languages.map((lang) => (
                   <button

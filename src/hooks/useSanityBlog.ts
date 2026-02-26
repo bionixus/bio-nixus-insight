@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { fetchSanityPosts } from '@/lib/sanity-blog';
+import { fetchSanityLatestInsights, fetchSanityPosts } from '@/lib/sanity-blog';
 import { isSanityConfigured } from '@/lib/sanity';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -28,4 +28,17 @@ export function useSanityBlog() {
   }, [query.data, language]);
 
   return { ...query, data };
+}
+
+/** Optimized hook for homepage Latest Insights (returns latest 3 posts). */
+export function useSanityLatestInsights(limit = 3) {
+  const { language } = useLanguage();
+
+  return useQuery({
+    queryKey: ['sanity-latest-insights', language, limit],
+    queryFn: () => fetchSanityLatestInsights(language, limit),
+    enabled: isSanityConfigured(),
+    staleTime: 2 * 60 * 1000,
+    gcTime: 10 * 60 * 1000,
+  });
 }

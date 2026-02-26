@@ -51,6 +51,7 @@ const About = lazyWithRetry(() => import("./pages/About"));
 const Services = lazyWithRetry(() => import("./pages/Services"));
 const FAQ = lazyWithRetry(() => import("./pages/FAQ"));
 const Resources = lazyWithRetry(() => import("./pages/Resources"));
+const SiteMapPage = lazyWithRetry(() => import("./pages/SiteMapPage"));
 const ServiceDetail = lazyWithRetry(() => import("./pages/ServiceDetail"));
 const Privacy = lazyWithRetry(() => import("./pages/Privacy"));
 const Contact = lazyWithRetry(() => import("./pages/Contact"));
@@ -58,6 +59,9 @@ const Methodology = lazyWithRetry(() => import("./pages/Methodology"));
 const VerifyEmail = lazyWithRetry(() => import("./pages/VerifyEmail"));
 const MenaMarketData = lazyWithRetry(() => import("./pages/MenaMarketData"));
 const GccMarketAccessGuide = lazyWithRetry(() => import("./pages/GccMarketAccessGuide"));
+const QuantitativeHealthcareMarketResearchGuide = lazyWithRetry(() => import("./pages/QuantitativeHealthcareMarketResearchGuide"));
+const GlobalWebsites = lazyWithRetry(() => import("./pages/GlobalWebsites"));
+const GlobalWebsiteCountry = lazyWithRetry(() => import("./pages/GlobalWebsiteCountry"));
 const KuwaitPharmaCompanies = lazyWithRetry(() => import("./pages/KuwaitPharmaCompanies"));
 const SaudiPharmaCompanies = lazyWithRetry(() => import("./pages/SaudiPharmaCompanies"));
 const UaePharmaCompanies = lazyWithRetry(() => import("./pages/UaePharmaCompanies"));
@@ -145,8 +149,12 @@ const App = () => (
               <Route path="/services/:slug" element={<ServiceDetail />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/resources" element={<Resources />} />
+              <Route path="/sitemap" element={<SiteMapPage />} />
               <Route path="/mena-pharma-market-data" element={<MenaMarketData />} />
               <Route path="/gcc-market-access-guide" element={<GccMarketAccessGuide />} />
+              <Route path="/quantitative-healthcare-market-research" element={<QuantitativeHealthcareMarketResearchGuide />} />
+              <Route path="/global-websites" element={<GlobalWebsites />} />
+              <Route path="/global-websites/:countrySlug" element={<GlobalWebsiteCountry />} />
               <Route path="/pharmaceutical-companies-kuwait" element={<KuwaitPharmaCompanies />} />
               <Route path="/pharmaceutical-companies-saudi-arabia" element={<SaudiPharmaCompanies />} />
               <Route path="/pharmaceutical-companies-uae" element={<UaePharmaCompanies />} />

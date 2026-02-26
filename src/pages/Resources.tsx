@@ -17,6 +17,13 @@ interface Resource {
 
 const resources: Resource[] = [
   {
+    title: 'The Comprehensive Guide to Quantitative Healthcare Market Research (2026 Edition)',
+    description: 'A long-form quantitative healthcare market research playbook for Saudi Arabia and UAE: survey design, tracking studies, specialized HCP recruitment, AI-era data validation, and original GCC benchmark chart.',
+    type: 'Flagship Guide',
+    icon: <BarChart3 className="w-6 h-6" />,
+    href: '/quantitative-healthcare-market-research',
+  },
+  {
     title: 'MENA Pharmaceutical Market Data 2026',
     description: 'Country-by-country pharmaceutical market data: $33.9B+ total market, growth rates, per-capita spending, regulatory bodies, and therapeutic area trends for Saudi Arabia, UAE, Egypt, Kuwait, Qatar, Bahrain & Oman.',
     type: 'Data Resource',
@@ -29,6 +36,13 @@ const resources: Resource[] = [
     type: 'Guide',
     icon: <BarChart3 className="w-6 h-6" />,
     href: '/gcc-market-access-guide',
+  },
+  {
+    title: 'Global Websites and Country Navigation',
+    description: 'Browse BioNixus websites by top markets and region groups, including language routes and global resource entry points.',
+    type: 'Navigation Hub',
+    icon: <Globe className="w-6 h-6" />,
+    href: '/global-websites',
   },
   {
     title: 'Pharmaceutical Companies in Saudi Arabia: Industry Guide 2026',
@@ -112,6 +126,14 @@ const resources: Resource[] = [
 const Resources = () => {
   const { language } = useLanguage();
   const basePath = languagePaths[language] || '/';
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.bionixus.com/resources' },
+    ],
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -122,6 +144,7 @@ const Resources = () => {
           content="Download healthcare market research resources from BioNixus: MENA pharmaceutical market guides, physician survey methodology whitepapers, GCC market access guides, and KOL mapping best practices."
         />
         <link rel="canonical" href="https://www.bionixus.com/resources" />
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
       <Navbar />
       <main>
@@ -133,6 +156,10 @@ const Resources = () => {
             >
               <ArrowLeft className="w-4 h-4" /> Back to home
             </Link>
+            <nav className="text-sm text-muted-foreground mb-4" aria-label="Breadcrumb">
+              <Link to="/" className="hover:text-primary">Home</Link> <span>/</span>{' '}
+              <span className="text-foreground">Resources</span>
+            </nav>
           </div>
         </div>
 

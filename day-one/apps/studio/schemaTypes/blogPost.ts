@@ -20,8 +20,13 @@ export const blogPost = defineType({
           title: 'Meta Title',
           type: 'string',
           validation: (Rule) =>
-            Rule.max(60).warning('Should be under 60 characters'),
-          description: 'Title for search engines (50-60 chars optimal)',
+            Rule.required().custom((value) => {
+              const len = (value || '').length
+              if (len === 0) return 'Meta title is required (0/60).'
+              if (len > 60) return `Meta title is too long (${len}/60).`
+              return true
+            }),
+          description: 'Title for search engines. Keep within 60 characters.',
         }),
         defineField({
           name: 'metaDescription',
@@ -29,8 +34,14 @@ export const blogPost = defineType({
           type: 'text',
           rows: 3,
           validation: (Rule) =>
-            Rule.max(160).warning('Should be under 160 characters'),
-          description: 'Description for search engines (150-160 chars optimal)',
+            Rule.required().custom((value) => {
+              const len = (value || '').length
+              if (len === 0) return 'Meta description is required (0/155).'
+              if (len < 70) return `Meta description is too short (${len}/70 minimum).`
+              if (len > 155) return `Meta description is too long (${len}/155 maximum).`
+              return true
+            }),
+          description: 'Description for search engines. Target 70-155 characters.',
         }),
         defineField({
           name: 'focusKeyword',
@@ -101,7 +112,7 @@ export const blogPost = defineType({
       name: 'title',
       title: 'Article Title',
       type: 'string',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().min(5).error('H1/Title is required and should be at least 5 characters.'),
     }),
     defineField({
       name: 'slug',
@@ -157,6 +168,29 @@ export const blogPost = defineType({
       title: 'Categories',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'category' } }],
+    }),
+    // Plain-string category used by frontend filters and legacy queries
+    defineField({
+      name: 'category',
+      title: 'Primary Category',
+      type: 'string',
+      description: 'Topic filter used on homepage/blog lists (e.g. Market Access, Quantitative Research).',
+      options: {
+        list: [
+          { title: 'Market Access', value: 'Market Access' },
+          { title: 'Digital Health', value: 'Digital Health' },
+          { title: 'Oncology', value: 'Oncology' },
+          { title: 'Clinical Trials', value: 'Clinical Trials' },
+          { title: 'Healthcare Research', value: 'Healthcare Research' },
+          { title: 'Quantitative Research', value: 'Quantitative Research' },
+          { title: 'Qualitative Research', value: 'Qualitative Research' },
+          { title: 'Regulatory & Policy', value: 'Regulatory & Policy' },
+          { title: 'Market Intelligence', value: 'Market Intelligence' },
+          { title: 'Industry Insights', value: 'Industry Insights' },
+          { title: 'Other', value: 'Other' },
+        ],
+        layout: 'dropdown',
+      },
     }),
     defineField({
       name: 'tags',
@@ -358,7 +392,7 @@ export const blogPost = defineType({
       name: 'relatedPosts',
       title: 'Related Posts',
       type: 'array',
-      of: [{ type: 'reference', to: [{ type: 'blogPost' }] }],
+      of: [{ type: 'reference', to: [{ type: 'blogPost' }, { type: 'post' }] }],
     }),
     defineField({
       name: 'ctaSection',

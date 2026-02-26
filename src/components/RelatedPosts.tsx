@@ -28,6 +28,7 @@ interface RelatedPostsProps {
   category: string;
   date: string;
   country?: string;
+  tags?: string[];
 }
 
 /* ─── Single related-post card ─── */
@@ -84,10 +85,10 @@ function PostCard({ post, index }: { post: BlogPost; index: number }) {
 }
 
 /* ─── Main component ─── */
-const RelatedPosts = ({ currentSlug, category, date, country }: RelatedPostsProps) => {
+const RelatedPosts = ({ currentSlug, category, date, country, tags }: RelatedPostsProps) => {
   const { data } = useQuery({
-    queryKey: ['related-posts', currentSlug, category, country],
-    queryFn: () => fetchRelatedPosts(currentSlug, category, date, country),
+    queryKey: ['related-posts', currentSlug, category, country, tags?.join('|') || ''],
+    queryFn: () => fetchRelatedPosts(currentSlug, category, date, country, tags || []),
     enabled: isSanityConfigured() && Boolean(currentSlug),
     staleTime: 60 * 1000,
   });
@@ -158,7 +159,7 @@ const RelatedPosts = ({ currentSlug, category, date, country }: RelatedPostsProp
         <section aria-label="Related articles">
           <div className="flex items-center gap-4 mb-8">
             <h3 className="text-xl md:text-2xl font-display font-semibold text-foreground sr sr-up sr-line">
-              Continue Reading
+              Related Articles
             </h3>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

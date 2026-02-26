@@ -5,6 +5,7 @@ import { ArrowRight, Share2, BookOpen, Building2, Globe, ShieldCheck, Pill, Tren
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { Helmet } from 'react-helmet-async';
+import OpenGraphMeta from '@/components/OpenGraphMeta';
 
 /* ------------------------------------------------------------------ */
 /* Pharmaceutical companies operating in Kuwait — local & MNC offices  */
@@ -74,6 +75,9 @@ const KuwaitPharmaCompanies = () => {
   const basePath = languagePaths[language] || '/';
   const citationUrl = 'https://www.bionixus.com/pharmaceutical-companies-kuwait';
 
+  const ogTitle = "Pharmaceutical Companies in Kuwait — Complete Industry Guide 2026";
+  const ogDescription = "Comprehensive guide: 20+ pharmaceutical companies in Kuwait, $1.2B market data, MOH registration process, distribution channels, and market outlook for pharma companies.";
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
@@ -87,10 +91,6 @@ const KuwaitPharmaCompanies = () => {
           content="pharmaceutical companies in Kuwait, Kuwait pharmaceutical companies, pharma companies in Kuwait, top pharmaceutical companies in Kuwait, list of pharmaceutical companies in Kuwait, Kuwait pharma market, drug registration Kuwait, Kuwait MOH pharmaceutical, Kuwait pharmaceutical industry 2026"
         />
         <link rel="canonical" href={citationUrl} />
-        <meta property="og:title" content="Pharmaceutical Companies in Kuwait — Complete Industry Guide 2026" />
-        <meta property="og:description" content="Comprehensive guide: 20+ pharmaceutical companies in Kuwait, $1.2B market data, MOH registration process, distribution channels, and market outlook for pharma companies." />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content={citationUrl} />
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org',
@@ -127,6 +127,15 @@ const KuwaitPharmaCompanies = () => {
           })}
         </script>
       </Helmet>
+      <OpenGraphMeta
+        title={ogTitle}
+        description={ogDescription}
+        image="https://www.bionixus.com/og-image.png"
+        url={citationUrl}
+        type="article"
+        locale={language === 'ar' ? 'ar_SA' : 'en_US'}
+        alternateLocales={language === 'ar' ? ['en_US'] : ['ar_SA']}
+      />
       <Navbar />
       <main>
         {/* Breadcrumb */}

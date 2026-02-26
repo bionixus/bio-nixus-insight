@@ -6,6 +6,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { Helmet } from 'react-helmet-async';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import SchemaMarkup from '@/components/SchemaMarkup';
 
 const About = () => {
   const { language } = useLanguage();
@@ -18,6 +19,18 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SchemaMarkup
+        pageType="about"
+        pageUrl="https://www.bionixus.com/about"
+        language={language}
+        people={[
+          {
+            name: 'Mohammad Alsaadany',
+            jobTitle: 'Healthcare Market Research Expert',
+            sameAs: 'https://www.linkedin.com/in/mohammad-alsaadany',
+          },
+        ]}
+      />
       <Helmet>
         <title>About BioNixus | International Healthcare Market Research — EMEA Heritage</title>
         <meta

@@ -26,7 +26,8 @@ export function getSanityClient(): SanityClient {
       projectId,
       dataset,
       apiVersion,
-      useCdn: !token,
+      // Home/blog listing queries are read-heavy; CDN noticeably improves TTFB.
+      useCdn: true,
       ...(token ? { token } : {}),
     });
   }
