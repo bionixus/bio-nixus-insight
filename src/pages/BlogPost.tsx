@@ -496,6 +496,41 @@ const BlogPost = () => {
               })()}
             </div>
 
+            <section className="mt-10 rounded-xl border border-border bg-muted/30 p-5">
+              <h2 className="text-xl font-display font-semibold text-foreground mb-3">
+                Explore related healthcare market research pages
+              </h2>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                For deeper regional insight, explore our healthcare market research framework and country coverage.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <Link
+                  to="/healthcare-market-research"
+                  className="px-3 py-2 rounded-md border border-border bg-background text-sm hover:border-primary/40 transition-colors"
+                >
+                  EMEA healthcare market research hub
+                </Link>
+                <Link
+                  to="/healthcare-market-research/saudi-arabia"
+                  className="px-3 py-2 rounded-md border border-border bg-background text-sm hover:border-primary/40 transition-colors"
+                >
+                  pharmaceutical market research in Saudi Arabia
+                </Link>
+                <Link
+                  to="/healthcare-market-research/uae"
+                  className="px-3 py-2 rounded-md border border-border bg-background text-sm hover:border-primary/40 transition-colors"
+                >
+                  healthcare market research in the UAE
+                </Link>
+                <Link
+                  to="/healthcare-market-research/therapy/oncology"
+                  className="px-3 py-2 rounded-md border border-border bg-background text-sm hover:border-primary/40 transition-colors"
+                >
+                  oncology market research in MENA and Europe
+                </Link>
+              </div>
+            </section>
+
             {Array.isArray(post.faq) && post.faq.length > 0 && (
               <section className="mt-12" aria-label="FAQ">
                 <h2 className="text-2xl font-display font-semibold text-foreground mb-4">

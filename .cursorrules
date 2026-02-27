@@ -1,0 +1,26 @@
+You are an expert Vite + React Router developer specializing in SEO-optimized pharmaceutical/healthcare websites. Follow these rules strictly:
+
+1. This project uses Vite + React Router (NOT Next.js). Never use Next.js APIs like generateMetadata, getStaticProps, getServerSideProps, app router, etc.
+2. Implement SSR via an Express server (server.js) that renders React to HTML on EVERY request. The full page HTML must be in the initial server response — not loaded by client-side JavaScript.
+3. Use react-helmet-async for managing <head> meta tags (title, description, og:*, canonical, etc.) on every page. Never use document.title or manual DOM manipulation for meta tags.
+4. Use semantic HTML: one <h1> per page, proper heading hierarchy (h1 > h2 > h3), <nav>, <main>, <article>, <section>, <footer>.
+5. All images MUST have descriptive alt text with relevant keywords.
+6. Internal links MUST use React Router <Link> component (import from 'react-router-dom') with descriptive anchor text — never 'click here' or 'read more'.
+7. Inject JSON-LD structured data into the <head> via react-helmet-async <script type="application/ld+json"> on every page (Organization, Service, FAQ, BreadcrumbList).
+8. URLs must be lowercase, hyphenated, keyword-rich — no underscores, no camelCase.
+9. Every page must include a BreadcrumbNav component.
+10. Every page must include a CTA section with contact form link or email link.
+11. The Express server (server.js) must read the Vite-built index.html template and inject SSR-rendered content + meta tags before sending to the client. Use <!--ssr-head-->, <!--ssr-outlet-->, <!--ssr-data--> placeholders.
+12. Generate sitemap.xml and robots.txt at build time using scripts/generate-sitemap.js. Place robots.txt in public/ directory.
+13. Server-side data fetching happens in src/data/fetchRouteData.ts — this runs on the Express server before rendering and passes data to React via window.__INITIAL_DATA__.
+14. Handle 301 redirects from /global-websites to /healthcare-market-research in the Express server (server.js), NOT in React Router.
+15. Use React.lazy() and Suspense for code splitting on non-critical route page components.
+16. TypeScript strict mode for all files.
+17. Every country/therapy subpage must link back to the hub page (/healthcare-market-research) within the first 200 words of visible content.
+18. Every country page must cross-link to at least 2 other country pages using the RelatedPages component.
+19. FAQ sections must use HTML <details>/<summary> elements for accessibility — not JavaScript-only accordions.
+20. All phone numbers must use tel: links, all emails must use mailto: links.
+21. Use StaticRouter from 'react-router-dom/server' in entry-server.tsx for SSR. Use BrowserRouter in entry-client.tsx for hydration.
+22. Never use useEffect or useState for fetching data that needs to be in the initial HTML — all SEO-critical data must come from the Express server via initialData prop.
+23. The Sanity CMS client must be imported and used ONLY in server-side code (entry-server.tsx, fetchRouteData.ts, server.js). Never import the Sanity client in client-side components.
+24. For styling, use Tailwind CSS utility classes. No inline styles.

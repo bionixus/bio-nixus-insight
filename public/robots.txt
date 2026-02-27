@@ -1,3 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /studio/
+
+Sitemap: https://www.bionixus.com/sitemap.xml
 # Standard crawlers
 User-agent: Googlebot
 Allow: /

@@ -48,6 +48,14 @@ const Navbar = () => {
     { href: '/blog', label: t.nav.insights },
   ];
 
+  const healthcareMarketCountries = [
+    { label: 'Saudi Arabia', href: '/healthcare-market-research/saudi-arabia' },
+    { label: 'UAE', href: '/healthcare-market-research/uae' },
+    { label: 'Kuwait', href: '/healthcare-market-research/kuwait' },
+    { label: 'United Kingdom', href: '/healthcare-market-research/uk' },
+    { label: 'Europe', href: '/healthcare-market-research/europe' },
+  ];
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <div className="container-wide section-padding py-4">
@@ -74,6 +82,26 @@ const Navbar = () => {
                 {item.label}
               </Link>
             ))}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="nav-link text-foreground/80 hover:text-foreground inline-flex items-center gap-1">
+                Healthcare Market Research
+                <ChevronDown className="w-4 h-4 text-muted-foreground" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="center" className="min-w-[240px]">
+                <DropdownMenuItem asChild>
+                  <Link to="/healthcare-market-research" className="cursor-pointer">
+                    EMEA Healthcare Research Hub
+                  </Link>
+                </DropdownMenuItem>
+                {healthcareMarketCountries.map((country) => (
+                  <DropdownMenuItem key={country.href} asChild>
+                    <Link to={country.href} className="cursor-pointer">
+                      {country.label}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           {/* Language Selector & CTA */}
@@ -144,6 +172,25 @@ const Navbar = () => {
                   {item.label}
                 </Link>
               ))}
+              <Link
+                to="/healthcare-market-research"
+                className="text-foreground/80 hover:text-foreground font-medium"
+                onClick={() => setIsOpen(false)}
+              >
+                Healthcare Market Research
+              </Link>
+              <div className="pl-4 border-l border-border space-y-2">
+                {healthcareMarketCountries.map((country) => (
+                  <Link
+                    key={country.href}
+                    to={country.href}
+                    className="block text-sm text-foreground/70 hover:text-foreground"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {country.label}
+                  </Link>
+                ))}
+              </div>
               <Link
                 to="/global-websites"
                 className="text-foreground/80 hover:text-foreground font-medium"
