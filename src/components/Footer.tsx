@@ -171,10 +171,10 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Company */}
+          {/* Company & Offerings */}
           <div>
             <h4 className="font-semibold text-primary-foreground mb-6 uppercase tracking-wide text-sm">
-              {t.footer.companyHeading}
+              {t.footer.companyHeading || 'Company & Offerings'}
             </h4>
             <ul className="space-y-3">
               <li>
@@ -193,175 +193,29 @@ const Footer = () => {
                   {t.footer.services}
                 </Link>
               </li>
-              <li className="pt-2">
-                <p className="text-primary-foreground/90 text-xs font-semibold uppercase tracking-wider mb-2">
-                  Our Services
-                </p>
-                <ul className="space-y-2">
-                  <li>
-                    <Link
-                      to="/services/quantitative-research"
-                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.92rem]"
-                    >
-                      Quantitative Research
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/services/qualitative-research"
-                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.92rem]"
-                    >
-                      Qualitative Research
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/services/market-access"
-                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.92rem]"
-                    >
-                      Market Access
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/services/competitive-intelligence"
-                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.92rem]"
-                    >
-                      Competitive Intelligence
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/services/clinical-trial-support"
-                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.92rem]"
-                    >
-                      Clinical Trial Support
-                    </Link>
-                  </li>
-                </ul>
+              <li>
+                <Link
+                  to="/healthcare-market-research"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  Healthcare Market Research Hub
+                </Link>
               </li>
-              <li className="pt-2">
-                <p className="text-primary-foreground/90 text-xs font-semibold uppercase tracking-wider mb-2">
-                  Healthcare Market Research
-                </p>
-                <ul className="space-y-2">
-                  <li>
-                    <Link
-                      to="/healthcare-market-research"
-                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.92rem]"
-                    >
-                      EMEA Research Hub
-                    </Link>
-                  </li>
-                </ul>
-                <p className="text-primary-foreground/80 text-[11px] font-semibold uppercase tracking-wider mt-3 mb-2">
-                  MENA Markets
-                </p>
-                <ul className="space-y-2">
-                  <li>
-                    <Link
-                      to="/healthcare-market-research/saudi-arabia"
-                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.92rem]"
-                    >
-                      Saudi Arabia
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/healthcare-market-research/uae"
-                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.92rem]"
-                    >
-                      UAE
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/healthcare-market-research/kuwait"
-                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.92rem]"
-                    >
-                      Kuwait
-                    </Link>
-                  </li>
-                </ul>
-                <p className="text-primary-foreground/80 text-[11px] font-semibold uppercase tracking-wider mt-3 mb-2">
-                  UK and Europe
-                </p>
-                <ul className="space-y-2">
-                  <li>
-                    <Link
-                      to="/healthcare-market-research/uk"
-                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.92rem]"
-                    >
-                      United Kingdom
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/healthcare-market-research/europe"
-                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.92rem]"
-                    >
-                      Europe
-                    </Link>
-                  </li>
-                </ul>
-                <p className="text-primary-foreground/80 text-[11px] font-semibold uppercase tracking-wider mt-3 mb-2">
-                  Therapy Areas
-                </p>
-                <ul className="space-y-2">
-                  <li>
-                    <Link
-                      to="/healthcare-market-research/therapy/oncology"
-                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.92rem]"
-                    >
-                      Oncology
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/healthcare-market-research/therapy/diabetes"
-                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.92rem]"
-                    >
-                      Diabetes
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/healthcare-market-research/therapy/respiratory"
-                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.92rem]"
-                    >
-                      Respiratory
-                    </Link>
-                  </li>
-                </ul>
-                <p className="text-primary-foreground/80 text-[11px] font-semibold uppercase tracking-wider mt-3 mb-2">
-                  Research Services
-                </p>
-                <ul className="space-y-2">
-                  <li>
-                    <Link
-                      to="/healthcare-market-research/services/market-access"
-                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.92rem]"
-                    >
-                      Market Access
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/healthcare-market-research/services/physician-insights"
-                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.92rem]"
-                    >
-                      Physician Insights
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/healthcare-market-research/services/kol-mapping"
-                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.92rem]"
-                    >
-                      KOL Mapping
-                    </Link>
-                  </li>
-                </ul>
+              <li>
+                <Link
+                  to="/case-studies"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  {t.footer.caseStudies}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/blog"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  Insights & Blog
+                </Link>
               </li>
               <li>
                 <a
@@ -381,14 +235,6 @@ const Footer = () => {
                 >
                   {t.footer.clientsPortal}
                 </button>
-              </li>
-              <li>
-                <Link
-                  to="/case-studies"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  {t.footer.caseStudies}
-                </Link>
               </li>
               <li>
                 <Link

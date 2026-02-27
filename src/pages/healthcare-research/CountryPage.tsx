@@ -40,9 +40,9 @@ export default function CountryPage() {
 
   const countryContent =
     data.pageType === 'country' &&
-    data.slug === config.slug &&
-    data.countryContent &&
-    typeof data.countryContent === 'object'
+      data.slug === config.slug &&
+      data.countryContent &&
+      typeof data.countryContent === 'object'
       ? (data.countryContent as Record<string, unknown>)
       : null;
 
@@ -234,6 +234,55 @@ export default function CountryPage() {
           </div>
         </section>
       ) : null}
+
+      {/* Targeted Intelligence & Insight Guides */}
+      {(config.slug === 'saudi-arabia' || config.slug === 'uae' || config.slug === 'uk' || config.slug === 'europe') && (
+        <section className="py-12 bg-primary/5 border-y border-primary/10">
+          <div className="container-wide max-w-6xl mx-auto">
+            <h2 className="text-3xl font-display font-semibold text-foreground mb-6">Deep Dive: {config.name} Market Intelligence</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {config.slug === 'saudi-arabia' && (
+                <>
+                  <Link to="/blog/pharma-market-entry-saudi-arabia-playbook" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
+                    <h3 className="text-base font-semibold text-foreground mb-2">Saudi Market Entry Playbook</h3>
+                    <p className="text-sm text-muted-foreground">Master NUPCO, localized manufacturing, and distributor strategy.</p>
+                  </Link>
+                  <Link to="/blog/sfda-drug-registration-guide" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
+                    <h3 className="text-base font-semibold text-foreground mb-2">SFDA Registration Guide</h3>
+                    <p className="text-sm text-muted-foreground">Navigating pathways, CTD formatting, and timelines.</p>
+                  </Link>
+                  <Link to="/blog/top-therapy-areas-pharma-growth-saudi-arabia" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
+                    <h3 className="text-base font-semibold text-foreground mb-2">Top 10 Growth Therapy Areas</h3>
+                    <p className="text-sm text-muted-foreground">The most lucrative segments driven by Vision 2030.</p>
+                  </Link>
+                </>
+              )}
+              {config.slug === 'uae' && (
+                <>
+                  <Link to="/blog/market-access-strategy-uae" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
+                    <h3 className="text-base font-semibold text-foreground mb-2">UAE Market Access Strategy</h3>
+                    <p className="text-sm text-muted-foreground">DOH, DHA, and MOHAP formulary inclusion tactics.</p>
+                  </Link>
+                  <Link to="/blog/kol-mapping-pharma-middle-east" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
+                    <h3 className="text-base font-semibold text-foreground mb-2">GCC KOL Mapping</h3>
+                    <p className="text-sm text-muted-foreground">Identifying true clinical influencers across the Emirates.</p>
+                  </Link>
+                  <Link to="/blog/competitive-intelligence-pharma-gcc" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
+                    <h3 className="text-base font-semibold text-foreground mb-2">GCC Competitive Intelligence</h3>
+                    <p className="text-sm text-muted-foreground">Tracking rival formularies and medical affairs engagement.</p>
+                  </Link>
+                </>
+              )}
+              {(config.slug === 'uk' || config.slug === 'europe') && (
+                <Link to="/blog/nice-hta-evidence-requirements-guide" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
+                  <h3 className="text-base font-semibold text-foreground mb-2">NICE HTA Evidence Guide</h3>
+                  <p className="text-sm text-muted-foreground">Securing NHS commissioning and managing cost-effectiveness.</p>
+                </Link>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
 
       <FAQSection
         items={faqItems}

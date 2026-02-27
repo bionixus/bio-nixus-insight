@@ -147,6 +147,55 @@ export default function ServicePage() {
               </article>
             ))}
           </div>
+
+          {/* Targeted Internal Linking based on Service */}
+          {service === 'market-access' && (
+            <div className="mt-10 p-6 bg-card border border-border rounded-xl">
+              <h3 className="text-xl font-display font-semibold text-foreground mb-4">Deep Dive: Market Access Guides</h3>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/blog/market-access-strategy-uae" className="group flex-1 p-4 rounded-lg bg-muted/50 hover:bg-muted border border-transparent hover:border-primary/20 transition-all">
+                  <h4 className="font-semibold text-primary group-hover:underline mb-1">UAE Market Access Strategy</h4>
+                  <p className="text-sm text-muted-foreground">Navigate DOH, DHA, and MOHAP formulary inclusion.</p>
+                </Link>
+                <Link to="/blog/nice-hta-evidence-requirements-guide" className="group flex-1 p-4 rounded-lg bg-muted/50 hover:bg-muted border border-transparent hover:border-primary/20 transition-all">
+                  <h4 className="font-semibold text-primary group-hover:underline mb-1">NICE HTA Evidence Guide</h4>
+                  <p className="text-sm text-muted-foreground">Navigating UK cost-effectiveness and QALY thresholds.</p>
+                </Link>
+              </div>
+            </div>
+          )}
+
+          {service === 'kol-mapping' && (
+            <div className="mt-10 p-6 bg-card border border-border rounded-xl">
+              <h3 className="text-xl font-display font-semibold text-foreground mb-4">Deep Dive: KOL Intelligence</h3>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/blog/kol-mapping-pharma-middle-east" className="group flex-1 p-4 rounded-lg bg-muted/50 hover:bg-muted border border-transparent hover:border-primary/20 transition-all">
+                  <h4 className="font-semibold text-primary group-hover:underline mb-1">GCC KOL Mapping Guide</h4>
+                  <p className="text-sm text-muted-foreground">Identifying true clinical influencers in the Middle East.</p>
+                </Link>
+                <Link to="/blog/competitive-intelligence-pharma-gcc" className="group flex-1 p-4 rounded-lg bg-muted/50 hover:bg-muted border border-transparent hover:border-primary/20 transition-all">
+                  <h4 className="font-semibold text-primary group-hover:underline mb-1">Pharma Competitive Intelligence</h4>
+                  <p className="text-sm text-muted-foreground">Tracking competitor formularies and Medical Affairs activities.</p>
+                </Link>
+              </div>
+            </div>
+          )}
+
+          {service === 'qualitative-research' && (
+            <div className="mt-10 p-6 bg-card border border-border rounded-xl">
+              <h3 className="text-xl font-display font-semibold text-foreground mb-4">Deep Dive: Qualitative Methods</h3>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/blog/patient-journey-mapping-saudi-arabia" className="group flex-1 p-4 rounded-lg bg-muted/50 hover:bg-muted border border-transparent hover:border-primary/20 transition-all">
+                  <h4 className="font-semibold text-primary group-hover:underline mb-1">Saudi Patient Journey Mapping</h4>
+                  <p className="text-sm text-muted-foreground">Understanding culturally nuanced treatment pathways.</p>
+                </Link>
+                <Link to="/blog/healthcare-market-research-methodologies-gcc" className="group flex-1 p-4 rounded-lg bg-muted/50 hover:bg-muted border border-transparent hover:border-primary/20 transition-all">
+                  <h4 className="font-semibold text-primary group-hover:underline mb-1">GCC Research Methodologies</h4>
+                  <p className="text-sm text-muted-foreground">Best practices for IDIs and focus groups in the region.</p>
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

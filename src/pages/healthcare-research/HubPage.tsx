@@ -65,42 +65,42 @@ export default function HubPage() {
     Array.isArray(hubContent?.trustSignals) && hubContent.trustSignals.length > 0
       ? (hubContent.trustSignals as { label: string; value: string }[])
       : [
-          { label: 'UK Registration', value: '14408704' },
-          { label: 'Core Markets', value: 'MENA, UK, Europe' },
-          { label: 'Methods', value: 'CATI, CAPI, IDIs, Quant' },
-          { label: 'Compliance', value: 'ESOMAR / GDPR' },
-          { label: 'Coverage Model', value: 'Hub-and-spoke regional execution' },
-        ];
+        { label: 'UK Registration', value: '14408704' },
+        { label: 'Core Markets', value: 'MENA, UK, Europe' },
+        { label: 'Methods', value: 'CATI, CAPI, IDIs, Quant' },
+        { label: 'Compliance', value: 'ESOMAR / GDPR' },
+        { label: 'Coverage Model', value: 'Hub-and-spoke regional execution' },
+      ];
   const services =
     Array.isArray(hubContent?.servicesOverview) && hubContent.servicesOverview.length > 0
       ? (hubContent.servicesOverview as { title?: string; description?: string; slug?: string }[])
       : [
-          {
-            title: 'Quantitative Research',
-            description: 'Decision-ready survey programs for segmentation, adoption, and forecast confidence.',
-            slug: 'quantitative-research',
-          },
-          {
-            title: 'Qualitative Research',
-            description: 'IDIs and moderated interviews to uncover stakeholder rationale and barriers.',
-            slug: 'qualitative-research',
-          },
-          {
-            title: 'KOL Mapping',
-            description: 'Influence network mapping for expert engagement and evidence dissemination planning.',
-            slug: 'kol-mapping',
-          },
-          {
-            title: 'Physician Insights',
-            description: 'Structured physician intelligence to support launch planning and brand optimization.',
-            slug: 'physician-insights',
-          },
-          {
-            title: 'Market Access',
-            description: 'Access-focused evidence programs aligned to payer and institutional expectations.',
-            slug: 'market-access',
-          },
-        ];
+        {
+          title: 'Quantitative Research',
+          description: 'Decision-ready survey programs for segmentation, adoption, and forecast confidence.',
+          slug: 'quantitative-research',
+        },
+        {
+          title: 'Qualitative Research',
+          description: 'IDIs and moderated interviews to uncover stakeholder rationale and barriers.',
+          slug: 'qualitative-research',
+        },
+        {
+          title: 'KOL Mapping',
+          description: 'Influence network mapping for expert engagement and evidence dissemination planning.',
+          slug: 'kol-mapping',
+        },
+        {
+          title: 'Physician Insights',
+          description: 'Structured physician intelligence to support launch planning and brand optimization.',
+          slug: 'physician-insights',
+        },
+        {
+          title: 'Market Access',
+          description: 'Access-focused evidence programs aligned to payer and institutional expectations.',
+          slug: 'market-access',
+        },
+      ];
 
   return (
     <main>
@@ -198,6 +198,35 @@ export default function HubPage() {
                 {area} market research
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 bg-muted/10">
+        <div className="container-wide max-w-6xl mx-auto">
+          <h2 className="text-3xl font-display font-semibold text-foreground mb-6">Featured Guides & Market Insights</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <Link
+              to="/blog/sfda-drug-registration-guide"
+              className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors"
+            >
+              <h3 className="text-base font-semibold text-foreground mb-2">SFDA Drug Registration Guide</h3>
+              <p className="text-sm text-muted-foreground">Master the Saudi regulatory landscape and pathway requirements.</p>
+            </Link>
+            <Link
+              to="/blog/market-access-strategy-uae"
+              className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors"
+            >
+              <h3 className="text-base font-semibold text-foreground mb-2">UAE Market Access Strategy</h3>
+              <p className="text-sm text-muted-foreground">Navigate DOH, DHA, and MOHAP formulary inclusion.</p>
+            </Link>
+            <Link
+              to="/blog/kol-mapping-pharma-middle-east"
+              className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors"
+            >
+              <h3 className="text-base font-semibold text-foreground mb-2">KOL Mapping in the GCC</h3>
+              <p className="text-sm text-muted-foreground">Identifying true clinical influencers in the Middle East.</p>
+            </Link>
           </div>
         </div>
       </section>

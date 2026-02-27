@@ -26,6 +26,7 @@ export interface BlogPost {
   country: string;
   coverImage?: string;
   body?: string | PortableTextBlock[];
+  bodyHtml?: string;
   language?: string;
   readingTime?: number;
   tags?: string[];

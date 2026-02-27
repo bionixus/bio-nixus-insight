@@ -53,6 +53,15 @@ const STATIC_ROUTES = [
   '/pharmaceutical-companies-bahrain',
   '/pharmaceutical-companies-iraq',
   '/pharmaceutical-companies-iran',
+  '/blog/sfda-drug-registration-guide',
+  '/blog/healthcare-market-research-methodologies-gcc',
+  '/blog/kol-mapping-pharma-middle-east',
+  '/blog/market-access-strategy-uae',
+  '/blog/top-therapy-areas-pharma-growth-saudi-arabia',
+  '/blog/pharma-market-entry-saudi-arabia-playbook',
+  '/blog/competitive-intelligence-pharma-gcc',
+  '/blog/nice-hta-evidence-requirements-guide',
+  '/blog/patient-journey-mapping-saudi-arabia',
 ];
 
 function routeMeta(url) {
@@ -77,15 +86,15 @@ const pages = [...new Set(allRoutes)].map((url) => ({ url, ...routeMeta(url) }))
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${pages
-  .map(
-    (page) => `  <url>
+    .map(
+      (page) => `  <url>
     <loc>${BASE_URL}${page.url}</loc>
     <lastmod>${now}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
   </url>`,
-  )
-  .join('\n')}
+    )
+    .join('\n')}
 </urlset>
 `;
 

@@ -5,6 +5,7 @@
 
 import { getSanityClient } from './sanity';
 import type { BlogPost } from '@/types/blog';
+import { hardcodedSeoPosts, getHardcodedPostBySlug } from '@/data/blog-posts-index';
 
 function stripHtml(input: string): string {
   return input.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
@@ -111,10 +112,10 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
     typeof p.category === 'string' && p.category.trim()
       ? p.category
       : (p as RawSanityPost & { categoryTitle?: string }).categoryTitle ??
-        (Array.isArray((p as RawSanityPost & { categories?: string[] }).categories)
-          ? (p as RawSanityPost & { categories: string[] }).categories[0]
-          : '') ??
-        '';
+      (Array.isArray((p as RawSanityPost & { categories?: string[] }).categories)
+        ? (p as RawSanityPost & { categories: string[] }).categories[0]
+        : '') ??
+      '';
   // Use the Sanity category if present, otherwise infer from title/excerpt
   const categoryStr = rawCategory || inferCategory(p.title, p.excerpt);
   const countryStr =
@@ -190,31 +191,68 @@ export async function checkSanityConnection(): Promise<{ ok: true } | { ok: fals
 }
 
 export async function fetchSanityPosts(): Promise<BlogPost[]> {
-  const client = getSanityClient();
-  const raw = await client.fetch<RawSanityPost[]>(POSTS_QUERY);
-  return raw.map((p) => mapRawToPost(p)!);
+  try {
+    const client = getSanityClient();
+    const raw = await client.fetch<RawSanityPost[]>(POSTS_QUERY);
+    const sanityPosts = raw.map((p) => mapRawToPost(p)!).filter(Boolean);
+    // Merge sanity posts with hardcoded posts, avoiding duplicates based on slug
+    const sanitySlugs = new Set(sanityPosts.map((p) => p.slug));
+    const newHardcoded = hardcodedSeoPosts.filter((p) => !sanitySlugs.has(p.slug));
+    return [...sanityPosts, ...newHardcoded];
+  } catch (err) {
+    console.error('Failed to fetch from Sanity CMS, fallback to hardcoded posts', err);
+    return [...hardcodedSeoPosts];
+  }
 }
 
-/**
- * Fast path for homepage "Latest Insights":
- * fetches only the latest N posts for current language on the server side.
- */
 export async function fetchSanityLatestInsights(language: string, limit = 3): Promise<BlogPost[]> {
-  const client = getSanityClient();
-  const raw = await client.fetch<RawSanityPost[]>(LATEST_INSIGHTS_QUERY, {
-    language,
-    limit: Math.max(1, Math.min(limit, 6)),
-  });
-  return raw.map((p) => mapRawToPost(p)!).filter(Boolean);
+  try {
+    const client = getSanityClient();
+    const raw = await client.fetch<RawSanityPost[]>(LATEST_INSIGHTS_QUERY, {
+      language,
+      limit: Math.max(1, Math.min(limit, 6)),
+    });
+    const sanityPosts = raw.map((p) => mapRawToPost(p)!).filter(Boolean);
+
+    // Fill up the rest with hardcoded posts
+    const sanitySlugs = new Set(sanityPosts.map((p) => p.slug));
+    const newHardcoded = hardcodedSeoPosts.filter((p) => !sanitySlugs.has(p.slug) && (!p.language || p.language === language));
+
+    const combined = [...sanityPosts, ...newHardcoded];
+    // Sort by date mostly for the combined list
+    combined.sort((a, b) => {
+      const da = a.date ? new Date(a.date).getTime() : 0;
+      const db = b.date ? new Date(b.date).getTime() : 0;
+      return db - da;
+    });
+    return combined.slice(0, Math.max(1, Math.min(limit, 6)));
+  } catch (err) {
+    console.error('Failed to fetch latest insights from Sanity CMS, fallback to hardcoded posts', err);
+    const hardcodedFiltered = hardcodedSeoPosts.filter((p) => !p.language || p.language === language);
+    hardcodedFiltered.sort((a, b) => {
+      const da = a.date ? new Date(a.date).getTime() : 0;
+      const db = b.date ? new Date(b.date).getTime() : 0;
+      return db - da;
+    });
+    return hardcodedFiltered.slice(0, Math.max(1, Math.min(limit, 6)));
+  }
 }
 
 export async function fetchSanityPostBySlug(slug: string): Promise<BlogPost | null> {
+  const hardcodedFallback = getHardcodedPostBySlug(slug);
+
   try {
     const client = getSanityClient();
     const raw = await client.fetch<RawSanityPost | null>(POST_BY_SLUG_QUERY, { slug });
-    return mapRawToPost(raw, true);
+    const mapped = mapRawToPost(raw, true);
+    if (mapped) return mapped;
+
+    // If not found in Sanity but available in hardcoded fallback
+    if (hardcodedFallback) return hardcodedFallback;
+    return null;
   } catch (err) {
-    console.error('Sanity fetch error:', err);
+    console.error('Sanity fetch error for slug:', slug, err);
+    if (hardcodedFallback) return hardcodedFallback;
     return null;
   }
 }
