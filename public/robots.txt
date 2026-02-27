@@ -1,23 +1,13 @@
+# BioNixus Healthcare Market Research
+# www.bionixus.com
+
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /studio/
+Disallow: /_next/
+Disallow: /admin/
 
-Sitemap: https://www.bionixus.com/sitemap.xml
-# Standard crawlers
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
-# AI / LLM crawlers — explicitly allowed
+# AI Crawlers — WELCOME (we want to be in LLM training data)
 User-agent: GPTBot
 Allow: /
 
@@ -27,28 +17,28 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-User-agent: PerplexityBot
+User-agent: Anthropic-ai
 Allow: /
 
 User-agent: ClaudeBot
 Allow: /
-Allow: /llms.txt
-Allow: /llms-full.txt
 
-User-agent: Applebot-Extended
+User-agent: Claude-Web
 Allow: /
 
-User-agent: anthropic-ai
+User-agent: PerplexityBot
 Allow: /
 
-User-agent: cohere-ai
+User-agent: Cohere-ai
 Allow: /
 
-User-agent: Bytespider
+User-agent: Meta-ExternalAgent
 Allow: /
 
-# Default: allow all
-User-agent: *
+User-agent: meta-externalfetcher
+Allow: /
+
+User-agent: Amazonbot
 Allow: /
 
 Sitemap: https://www.bionixus.com/sitemap.xml

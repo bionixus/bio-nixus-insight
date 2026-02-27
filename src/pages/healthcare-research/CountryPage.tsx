@@ -1,4 +1,4 @@
-import { Link, Navigate, useParams } from 'react-router-dom';
+import { Link, Navigate, useLocation, useParams } from 'react-router-dom';
 import { useInitialData } from '@/App';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
@@ -25,8 +25,14 @@ function portableTextToParagraphs(value: unknown): string[] {
 
 export default function CountryPage() {
   const { country } = useParams<{ country: string }>();
+  const location = useLocation();
   const { data } = useInitialData();
-  const config = country ? COUNTRY_CONFIGS[country] : undefined;
+  const aliasSlug = location.pathname.match(/^\/(saudi-arabia|uae|kuwait|uk|europe)$/)?.[1];
+  const resolvedSlug =
+    country ||
+    (typeof data.slug === 'string' ? data.slug : undefined) ||
+    aliasSlug;
+  const config = resolvedSlug ? COUNTRY_CONFIGS[resolvedSlug] : undefined;
 
   if (!config) {
     return <Navigate to="/healthcare-market-research" replace />;

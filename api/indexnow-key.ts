@@ -20,6 +20,17 @@ type ServerEntryModule = {
 
 let templateCache = '';
 let serverEntryCache: ServerEntryModule | null = null;
+const REDIRECTS: Record<string, string> = {
+  '/healthcare-market-research-saudi-arabia': '/healthcare-market-research/saudi-arabia',
+  '/healthcare-market-research-uae': '/healthcare-market-research/uae',
+  '/healthcare-market-research-kuwait': '/healthcare-market-research/kuwait',
+  '/healthcare-market-research-uk': '/healthcare-market-research/uk',
+  '/healthcare-market-research-europe': '/healthcare-market-research/europe',
+  '/quantitative-market-research': '/services/quantitative-research',
+  '/qualitative-market-research': '/services/qualitative-research',
+  '/techniques-and-tools-in-quantitative-healthcare-market-research': '/services/quantitative-research',
+  '/global-websites': '/healthcare-market-research',
+};
 
 function getTemplate(): string {
   if (templateCache) return templateCache;
@@ -68,6 +79,19 @@ async function handleSsrRequest(
 ) {
   const url = req.url || '/';
   const pathname = url.split('?')[0] || '/';
+  const query = url.includes('?') ? `?${url.split('?').slice(1).join('?')}` : '';
+
+  if (pathname !== '/' && pathname.endsWith('/')) {
+    res.setHeader('Cache-Control', 'public, max-age=3600');
+    res.redirect(301, `${pathname.slice(0, -1)}${query}`);
+    return;
+  }
+
+  if (REDIRECTS[pathname]) {
+    res.setHeader('Cache-Control', 'public, max-age=3600');
+    res.redirect(301, REDIRECTS[pathname]);
+    return;
+  }
 
   if (pathname === '/global-websites') {
     res.setHeader('Cache-Control', 'public, max-age=3600');
@@ -77,9 +101,8 @@ async function handleSsrRequest(
 
   if (pathname.startsWith('/global-websites/')) {
     const redirectedPath = pathname.replace('/global-websites', '/healthcare-market-research');
-    const suffix = url.slice(pathname.length);
     res.setHeader('Cache-Control', 'public, max-age=3600');
-    res.redirect(301, `${redirectedPath}${suffix}`);
+    res.redirect(301, `${redirectedPath}${query}`);
     return;
   }
 

@@ -45,8 +45,10 @@ const COUNTRY_QUERY = `*[_type == "countryResearchPage" && slug.current == $slug
 
 export async function fetchRouteData(url: string): Promise<Record<string, unknown>> {
   const path = url.split('?')[0];
+  const aliasCountryPath = path.match(/^\/(saudi-arabia|uae|kuwait|uk|europe)$/);
+  const normalizedPath = aliasCountryPath ? `/healthcare-market-research/${aliasCountryPath[1]}` : path;
 
-  if (path === '/healthcare-market-research' || path === '/healthcare-market-research/') {
+  if (normalizedPath === '/healthcare-market-research' || normalizedPath === '/healthcare-market-research/') {
     let hubContent: Record<string, unknown> | null = null;
     try {
       hubContent = await sanityServer.fetch(HUB_QUERY);
@@ -63,7 +65,7 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
     };
   }
 
-  const countryMatch = path.match(/^\/healthcare-market-research\/([a-z-]+)$/);
+  const countryMatch = normalizedPath.match(/^\/healthcare-market-research\/([a-z-]+)$/);
   if (countryMatch) {
     const slug = countryMatch[1];
     const config = COUNTRY_CONFIGS[slug];
@@ -84,7 +86,7 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
     }
   }
 
-  const therapyMatch = path.match(/^\/healthcare-market-research\/therapy\/([a-z-]+)$/);
+  const therapyMatch = normalizedPath.match(/^\/healthcare-market-research\/therapy\/([a-z-]+)$/);
   if (therapyMatch && THERAPY_AREAS.includes(therapyMatch[1])) {
     return {
       pageType: 'therapy',
@@ -92,7 +94,7 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
     };
   }
 
-  const serviceMatch = path.match(/^\/healthcare-market-research\/services\/([a-z-]+)$/);
+  const serviceMatch = normalizedPath.match(/^\/healthcare-market-research\/services\/([a-z-]+)$/);
   if (serviceMatch && SERVICES.includes(serviceMatch[1])) {
     return {
       pageType: 'service',

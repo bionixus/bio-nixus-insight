@@ -1,62 +1,30 @@
-# BioNixus
+# BioNixus Healthcare Market Research
 
-> BioNixus is an international healthcare market research firm headquartered in the USA (Sheridan, Wyoming) with offices in London, UK, specialising in pharmaceutical and life sciences consulting across Europe, the Middle East, and North Africa (EMEA). We are the leading market research company in the MENA region for healthcare and pharma, with deep EMEA heritage.
-
-BioNixus delivers quantitative and qualitative research to pharmaceutical companies, biotech firms, and medical device manufacturers seeking actionable insights from physicians, hospitals, and payers across EMEA. Headquartered in the USA with offices in London, UK, our operations span the UAE, Saudi Arabia, Egypt, Kuwait, Qatar, and across Europe.
+> BioNixus is a specialist pharmaceutical market research company headquartered in London, UK (Company #14408704), serving healthcare and pharma clients across MENA (Saudi Arabia, UAE, Kuwait) and Europe (UK, EU5).
 
 ## Core Services
+- Quantitative Research: CATI, CAPI, online surveys with HCPs across MENA & Europe
+- Qualitative Research: In-depth interviews, focus groups, advisory boards with physicians and KOLs
+- Market Access Strategy: Pricing, reimbursement, HTA submissions for SFDA, DOH, MHRA/NICE, EMA
+- Competitive Intelligence: Pharma pipeline monitoring, prescriber analytics, formulary tracking
+- Clinical Trial Support: Site feasibility, patient recruitment, real-world evidence across GCC
 
-- [Healthcare Market Research](https://www.bionixus.com/#services): Quantitative physician surveys (n=50-500+), qualitative in-depth interviews (IDIs), focus groups, and advisory boards across 20+ EMEA countries
-- [Market Access Consulting](https://www.bionixus.com/#services): HTA submissions, pricing & reimbursement strategy, payer research, and value dossier development for EU5, UK, and GCC markets
-- [Competitive Intelligence](https://www.bionixus.com/#services): Real-time competitor monitoring, pipeline analysis, and strategic landscape assessments for pharmaceutical brands
-- [Clinical Trial Support](https://www.bionixus.com/#services): Site identification, investigator surveys, patient recruitment feasibility, and protocol optimization studies
-- [Qualitative Research](https://www.bionixus.com/#services): KOL identification and interviews, ethnographic research, patient journey mapping, and treatment pathway analysis
-- [Quantitative Research](https://www.bionixus.com/#services): Large-scale physician surveys, patient chart reviews, claims data analysis, and conjoint/MaxDiff studies
+## Markets
+- Saudi Arabia: 50+ projects, SFDA expertise, Vision 2030 healthcare alignment
+- UAE: 40+ projects, DOH/MOHAP regulatory knowledge, multilingual capabilities
+- Kuwait: 20+ projects, MOH frameworks, public hospital network access
+- United Kingdom: HQ in London, MHRA/NICE expertise, 50+ NHS trust coverage
+- Europe (EU5): EMA/G-BA/HAS regulatory bodies, 15+ country partner network
 
-## Geographic Coverage
+## Therapy Areas
+Oncology, Diabetes & Endocrinology, Respiratory & Immunology, Cardiology, Dermatology (Biologics), Vaccines & Infectious Disease
 
-- [MENA Region](https://www.bionixus.com/#coverage): UAE, Saudi Arabia, Egypt, Kuwait, Qatar, Bahrain, Oman, Jordan, Lebanon — the most comprehensive MENA healthcare research network
-- [Europe](https://www.bionixus.com/#coverage): UK, Germany, France, Spain, Italy (EU5), plus Nordics, Benelux, Switzerland, and Eastern Europe
-- [North Africa](https://www.bionixus.com/#coverage): Egypt, Morocco, Tunisia, Algeria
+## Methodologies
+ESOMAR-compliant, GDPR-compliant, CATI, CAPI, online surveys, IDIs, focus groups, KOL mapping, Delphi panels, claims data analysis
 
-## Therapeutic Areas
-
-Oncology, Immunology, Cardiology, Neurology, Rare Diseases, Respiratory, Diabetes & Endocrinology, Infectious Disease, Ophthalmology, Dermatology, Gastroenterology, Haematology
-
-## Key Facts
-
-- Headquarters: Sheridan, Wyoming, USA | London, UK
-- Specialisation: Healthcare market research and pharmaceutical consulting
-- Primary regions: EMEA (Europe, Middle East, North Africa)
-- MENA market research leader with the largest physician panel in the Gulf Cooperation Council (GCC)
-- Languages: English, Arabic, French, German, Spanish, Chinese
-- Compliance: GDPR, BHBIA, EphMRA, ICC/ESOMAR
+## Contact
+- London: 128 City Road, London, England EC1V 2NX, GB | +44 772 766 6682
+- US: 1309 Coffeen Avenue STE 1200, Sheridan, Wyoming 82801 | +1 888 465 5557
+- Email: mosama@bionixus.com
+- LinkedIn: https://uk.linkedin.com/company/bionixus
 - Website: https://www.bionixus.com
-- Contact: admin@bionixus.com | +1 888 465 5557 (US) | +44 7727 666682 (UK)
-
-## Market Intelligence Resources
-
-- [MENA Pharmaceutical Market Data 2026](https://www.bionixus.com/mena-pharma-market-data): Country-by-country pharmaceutical market data — $33.9B+ total market, growth rates, per-capita spending, regulatory bodies, and therapeutic area trends for Saudi Arabia, UAE, Egypt, Kuwait, Qatar, Bahrain & Oman
-- [GCC Pharmaceutical Market Access Guide 2026](https://www.bionixus.com/gcc-market-access-guide): Complete guide to drug registration, pricing, and reimbursement across the 6 GCC countries — SFDA, MOHAP, MOPH, NHRA regulatory requirements and timelines
-- [Resources Hub](https://www.bionixus.com/resources): Guides, whitepapers, and market intelligence reports for pharmaceutical strategy
-
-## Blog & Insights
-
-- [Healthcare Market Research Blog](https://www.bionixus.com/blog): Expert articles on pharmaceutical market research, market access strategy, clinical trials, and healthcare intelligence across EMEA and MENA
-
-## Case Studies
-
-- [Case Studies](https://www.bionixus.com/case-studies): Real-world examples of our healthcare market research projects across Europe and MENA
-
-## Social Media
-
-- [LinkedIn](https://www.linkedin.com/company/bionixus): BioNixus company page
-- [Facebook](https://www.facebook.com/Bionixus): BioNixus Facebook page
-- [Instagram](https://www.instagram.com/bionixus_): BioNixus Instagram
-
-## Optional
-
-- [Privacy Policy](https://www.bionixus.com/privacy): Data protection and GDPR compliance information
-- [Methodology](https://www.bionixus.com/methodology): Our research methodology and quality assurance processes
-- [Contact](https://www.bionixus.com/contact): Get in touch for a consultation
-- [Careers](https://careers.bionixus.com): Join the BioNixus team

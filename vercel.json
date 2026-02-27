@@ -83,17 +83,6 @@
       "destination": "/api/case-studies/:slug"
     },
     {
-      "source": "/((?!api/|assets/|.*\\.(ico|json|txt|xml|png|jpg|jpeg|svg|gif)$).*)",
-      "has": [
-        {
-          "type": "header",
-          "key": "user-agent",
-          "value": ".*(facebookexternalhit|Facebot|facebot|Twitterbot|twitterbot|LinkedInBot|linkedinbot|WhatsApp|whatsapp|Slackbot|slackbot|TelegramBot|telegrambot|Discordbot|discordbot|Googlebot|googlebot|bingbot|Bingbot|Pinterestbot|pinterestbot|redditbot|Redditbot|AhrefsBot|ahrefsbot|AhrefsSiteAudit|ChatGPT-User|OAI-SearchBot|GPTBot|ClaudeBot|PerplexityBot|anthropic-ai|Applebot|cohere-ai|Bytespider).*"
-        }
-      ],
-      "destination": "/api/bot-home"
-    },
-    {
       "source": "/unsubscribe",
       "destination": "/api/unsubscribe"
     },

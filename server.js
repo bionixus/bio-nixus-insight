@@ -11,6 +11,17 @@ const port = Number(process.env.PORT || 5173);
 async function startServer() {
   const app = express();
   app.use(compression());
+  const REDIRECTS = {
+    '/healthcare-market-research-saudi-arabia': '/healthcare-market-research/saudi-arabia',
+    '/healthcare-market-research-uae': '/healthcare-market-research/uae',
+    '/healthcare-market-research-kuwait': '/healthcare-market-research/kuwait',
+    '/healthcare-market-research-uk': '/healthcare-market-research/uk',
+    '/healthcare-market-research-europe': '/healthcare-market-research/europe',
+    '/quantitative-market-research': '/services/quantitative-research',
+    '/qualitative-market-research': '/services/qualitative-research',
+    '/techniques-and-tools-in-quantitative-healthcare-market-research': '/services/quantitative-research',
+    '/global-websites': '/healthcare-market-research',
+  };
 
   let vite;
   if (!isProduction) {
@@ -25,15 +36,32 @@ async function startServer() {
     app.use(express.static(path.resolve(__dirname, 'dist/client'), { index: false }));
   }
 
-  app.get('/global-websites', (_req, res) => {
-    res.redirect(301, '/healthcare-market-research');
+  app.get('/robots.txt', (_req, res) => {
+    res.sendFile(path.resolve(__dirname, 'public/robots.txt'));
+  });
+
+  app.get('/llms.txt', (_req, res) => {
+    res.type('text/plain').sendFile(path.resolve(__dirname, 'public/llms.txt'));
   });
 
   app.use(async (req, res, next) => {
     try {
+      if (req.path !== '/' && req.path.endsWith('/')) {
+        const trimmedPath = req.path.slice(0, -1);
+        const suffix = req.originalUrl.slice(req.path.length);
+        res.redirect(301, `${trimmedPath}${suffix}`);
+        return;
+      }
+
+      if (REDIRECTS[req.path]) {
+        res.redirect(301, REDIRECTS[req.path]);
+        return;
+      }
+
       if (req.path.startsWith('/global-websites/')) {
-        const nextPath = req.path.replace('/global-websites', '/healthcare-market-research');
-        res.redirect(301, nextPath);
+        const redirectPath = req.path.replace('/global-websites', '/healthcare-market-research');
+        const suffix = req.originalUrl.slice(req.path.length);
+        res.redirect(301, `${redirectPath}${suffix}`);
         return;
       }
 
