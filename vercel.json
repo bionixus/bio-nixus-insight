@@ -2,7 +2,7 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist/client",
   "functions": {
-    "api/ssr.ts": {
+    "api/indexnow-key.ts": {
       "includeFiles": "dist/**"
     }
   },
@@ -62,7 +62,7 @@
     },
     {
       "source": "/((?!api/).*)",
-      "destination": "/api/ssr"
+      "destination": "/api/indexnow-key?__ssr=1"
     }
   ]
 }
