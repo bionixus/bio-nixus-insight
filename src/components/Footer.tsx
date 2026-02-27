@@ -238,14 +238,6 @@ const Footer = () => {
                       Clinical Trial Support
                     </Link>
                   </li>
-                  <li>
-                    <Link
-                      to="/services/kol-stakeholder-mapping"
-                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.92rem]"
-                    >
-                      KOL & Stakeholder Mapping
-                    </Link>
-                  </li>
                 </ul>
               </li>
               <li>
