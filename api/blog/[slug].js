@@ -145,8 +145,8 @@ export default async function handler(req, res) {
       typeof post.category === 'string'
         ? post.category
         : post.categoryTitle ||
-          (Array.isArray(post.categories) ? post.categories[0] : '') ||
-          '';
+        (Array.isArray(post.categories) ? post.categories[0] : '') ||
+        '';
 
     // Render full article body as HTML
     let articleBodyHtml = '';
@@ -250,6 +250,7 @@ export default async function handler(req, res) {
   <title>${esc(normalizeSeoTitle(`${normalizedTitle} | BioNixus`, 'BioNixus'))}</title>
   <meta name="description" content="${description}">
   <meta name="robots" content="index, follow">
+  <meta name="llm-access" content="allow">
 
   <!-- Open Graph / Facebook / LinkedIn -->
   <meta property="og:type" content="article">
@@ -316,6 +317,7 @@ function buildFallbackHtml(slug) {
   <meta charset="UTF-8">
   <title>BioNixus Blog</title>
   <meta name="description" content="Leading UK healthcare market research firm delivering pharmaceutical insights across Europe and MENA.">
+  <meta name="llm-access" content="allow">
   <meta property="og:title" content="BioNixus – EMEA Healthcare Market Research">
   <meta property="og:description" content="Leading UK healthcare market research firm delivering pharmaceutical insights across Europe and MENA.">
   <meta property="og:image" content="${BASE}/og-image.png">

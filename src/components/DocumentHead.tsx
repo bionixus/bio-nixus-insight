@@ -35,6 +35,7 @@ const DocumentHead = () => {
 
     setMeta('description', normalizedDescription);
     setMeta('keywords', seo.keywords);
+    setMeta('llm-access', 'allow');
 
     if (language === 'de') {
       setMeta('geo.region', 'DE;GB;FR;ES;IT;AE;SA;EG');

@@ -180,6 +180,7 @@ export default async function handler(req, res) {
   <title>${esc(normalizeSeoTitle(`${normalizedTitle} | BioNixus Case Studies`, 'BioNixus Case Studies'))}</title>
   <meta name="description" content="${description}">
   <meta name="robots" content="index, follow">
+  <meta name="llm-access" content="allow">
 
   <meta property="og:type" content="article">
   <meta property="og:locale" content="en_US">
@@ -240,6 +241,7 @@ function buildFallbackHtml(slug) {
   <meta charset="UTF-8">
   <title>BioNixus Case Studies</title>
   <meta name="description" content="Healthcare market research case studies by BioNixus.">
+  <meta name="llm-access" content="allow">
   <meta property="og:title" content="BioNixus – EMEA Healthcare Market Research">
   <meta property="og:description" content="Leading UK healthcare market research firm.">
   <meta property="og:image" content="${BASE}/og-image.png">

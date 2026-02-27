@@ -10,25 +10,51 @@
     {
       "source": "/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
-        { "key": "Cross-Origin-Opener-Policy", "value": "same-origin-allow-popups" }
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin-allow-popups"
+        }
       ]
     }
   ],
   "redirects": [
     {
       "source": "/:path(.*)",
-      "has": [{ "type": "host", "value": "bionixus.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "bionixus.com"
+        }
+      ],
       "destination": "https://www.bionixus.com/:path",
       "statusCode": 301
     }
@@ -40,7 +66,7 @@
         {
           "type": "header",
           "key": "user-agent",
-          "value": ".*(facebookexternalhit|Facebot|facebot|Twitterbot|twitterbot|LinkedInBot|linkedinbot|WhatsApp|whatsapp|Slackbot|slackbot|TelegramBot|telegrambot|Discordbot|discordbot|Googlebot|googlebot|bingbot|Bingbot|Pinterestbot|pinterestbot|redditbot|Redditbot|AhrefsBot|ahrefsbot|AhrefsSiteAudit).*"
+          "value": ".*(facebookexternalhit|Facebot|facebot|Twitterbot|twitterbot|LinkedInBot|linkedinbot|WhatsApp|whatsapp|Slackbot|slackbot|TelegramBot|telegrambot|Discordbot|discordbot|Googlebot|googlebot|bingbot|Bingbot|Pinterestbot|pinterestbot|redditbot|Redditbot|AhrefsBot|ahrefsbot|AhrefsSiteAudit|ChatGPT-User|OAI-SearchBot|GPTBot|ClaudeBot|PerplexityBot|anthropic-ai|Applebot|cohere-ai|Bytespider).*"
         }
       ],
       "destination": "/api/blog/:slug"
@@ -51,10 +77,21 @@
         {
           "type": "header",
           "key": "user-agent",
-          "value": ".*(facebookexternalhit|Facebot|facebot|Twitterbot|twitterbot|LinkedInBot|linkedinbot|WhatsApp|whatsapp|Slackbot|slackbot|TelegramBot|telegrambot|Discordbot|discordbot|Googlebot|googlebot|bingbot|Bingbot|Pinterestbot|pinterestbot|redditbot|Redditbot|AhrefsBot|ahrefsbot|AhrefsSiteAudit).*"
+          "value": ".*(facebookexternalhit|Facebot|facebot|Twitterbot|twitterbot|LinkedInBot|linkedinbot|WhatsApp|whatsapp|Slackbot|slackbot|TelegramBot|telegrambot|Discordbot|discordbot|Googlebot|googlebot|bingbot|Bingbot|Pinterestbot|pinterestbot|redditbot|Redditbot|AhrefsBot|ahrefsbot|AhrefsSiteAudit|ChatGPT-User|OAI-SearchBot|GPTBot|ClaudeBot|PerplexityBot|anthropic-ai|Applebot|cohere-ai|Bytespider).*"
         }
       ],
       "destination": "/api/case-studies/:slug"
+    },
+    {
+      "source": "/((?!api/|assets/|.*\\.(ico|json|txt|xml|png|jpg|jpeg|svg|gif)$).*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(facebookexternalhit|Facebot|facebot|Twitterbot|twitterbot|LinkedInBot|linkedinbot|WhatsApp|whatsapp|Slackbot|slackbot|TelegramBot|telegrambot|Discordbot|discordbot|Googlebot|googlebot|bingbot|Bingbot|Pinterestbot|pinterestbot|redditbot|Redditbot|AhrefsBot|ahrefsbot|AhrefsSiteAudit|ChatGPT-User|OAI-SearchBot|GPTBot|ClaudeBot|PerplexityBot|anthropic-ai|Applebot|cohere-ai|Bytespider).*"
+        }
+      ],
+      "destination": "/api/bot-home"
     },
     {
       "source": "/unsubscribe",
