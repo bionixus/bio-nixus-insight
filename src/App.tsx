@@ -60,6 +60,7 @@ const VerifyEmail = lazyWithRetry(() => import("./pages/VerifyEmail"));
 const MenaMarketData = lazyWithRetry(() => import("./pages/MenaMarketData"));
 const GccMarketAccessGuide = lazyWithRetry(() => import("./pages/GccMarketAccessGuide"));
 const MarketResearch = lazyWithRetry(() => import("./pages/MarketResearch"));
+const BionixusMarketResearchMiddleEast = lazyWithRetry(() => import("./pages/BionixusMarketResearchMiddleEast"));
 const QuantitativeHealthcareMarketResearchGuide = lazyWithRetry(() => import("./pages/QuantitativeHealthcareMarketResearchGuide"));
 const GlobalWebsites = lazyWithRetry(() => import("./pages/GlobalWebsites"));
 const GlobalWebsiteCountry = lazyWithRetry(() => import("./pages/GlobalWebsiteCountry"));
@@ -155,6 +156,7 @@ const App = () => {
               <Route path="/mena-pharma-market-data" element={<MenaMarketData />} />
               <Route path="/gcc-market-access-guide" element={<GccMarketAccessGuide />} />
               <Route path="/market-research" element={<MarketResearch />} />
+              <Route path="/bionixus-market-research-middle-east" element={<BionixusMarketResearchMiddleEast />} />
               <Route path="/quantitative-healthcare-market-research" element={<QuantitativeHealthcareMarketResearchGuide />} />
               <Route path="/global-websites" element={<GlobalWebsites />} />
               <Route path="/global-websites/:countrySlug" element={<GlobalWebsiteCountry />} />

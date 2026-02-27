@@ -72,6 +72,7 @@ const staticPages = [
   { path: '/services/kol-stakeholder-mapping', priority: '0.8', changefreq: 'monthly' },
   { path: '/mena-pharma-market-data', priority: '0.9', changefreq: 'monthly' },
   { path: '/gcc-market-access-guide', priority: '0.9', changefreq: 'monthly' },
+  { path: '/bionixus-market-research-middle-east', priority: '0.9', changefreq: 'monthly' },
   { path: '/quantitative-healthcare-market-research', priority: '0.9', changefreq: 'monthly' },
   { path: '/pharmaceutical-companies-kuwait', priority: '0.9', changefreq: 'monthly' },
   { path: '/pharmaceutical-companies-saudi-arabia', priority: '0.9', changefreq: 'monthly' },
