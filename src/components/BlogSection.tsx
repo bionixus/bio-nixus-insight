@@ -1,15 +1,8 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import type { BlogPost } from '@/types/blog';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
 
 import { optimizeSanityImage } from '@/lib/image-utils';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
@@ -38,9 +31,6 @@ function getImageSrcSet(url: string | undefined): string | undefined {
 
 const BlogSection = ({ posts, isLoading }: BlogSectionProps) => {
   const { t } = useLanguage();
-  const sectionRef = useScrollReveal<HTMLElement>({ stagger: 120 });
-  const [selectedCategory, setSelectedCategory] = useState<string>('');
-  const [selectedCountry, setSelectedCountry] = useState<string>('');
 
   const fallbackItems = t.blog.items.map((item, i) => ({
     id: `fallback-${i}`,
@@ -55,24 +45,10 @@ const BlogSection = ({ posts, isLoading }: BlogSectionProps) => {
 
   // Show real posts if available; only fall back to hardcoded items when NOT loading and no posts returned
   const list = (posts && posts.length > 0 ? posts : (isLoading ? [] : fallbackItems)) as BlogPost[];
+  const revealKey = `${isLoading ? 'loading' : 'ready'}-${Array.isArray(posts) ? posts.length : 0}-${list.length}`;
+  const sectionRef = useScrollReveal<HTMLElement>({ stagger: 120, key: revealKey });
 
-  const categories = useMemo(() => {
-    const set = new Set(list.map((p) => p.category).filter(Boolean));
-    return Array.from(set).sort();
-  }, [list]);
-
-  const countries = useMemo(() => {
-    const set = new Set(list.map((p) => p.country).filter(Boolean));
-    return Array.from(set).sort();
-  }, [list]);
-
-  const filteredPosts = useMemo(() => {
-    return list.filter((p) => {
-      if (selectedCategory && p.category !== selectedCategory) return false;
-      if (selectedCountry && p.country !== selectedCountry) return false;
-      return true;
-    });
-  }, [list, selectedCategory, selectedCountry]);
+  const filteredPosts = useMemo(() => list, [list]);
 
   return (
     <section id="insights" className="section-padding bg-background" ref={sectionRef}>
@@ -85,47 +61,6 @@ const BlogSection = ({ posts, isLoading }: BlogSectionProps) => {
             {t.blog.subtitle}
           </p>
         </div>
-
-        {list.length > 0 && (categories.length > 1 || countries.length > 1) && (
-          <div className="flex flex-wrap gap-4 mb-10 sr sr-up">
-            {categories.length > 1 && (
-              <div className="flex items-center gap-2">
-                <span className="text-sm text-muted-foreground whitespace-nowrap">{t.blog.filterByTopic}</span>
-                <Select value={selectedCategory || 'all'} onValueChange={(v) => setSelectedCategory(v === 'all' ? '' : v)}>
-                  <SelectTrigger className="w-[180px]" aria-label="Filter by topic">
-                    <SelectValue placeholder={t.blog.filterAllTopics} />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">{t.blog.filterAllTopics}</SelectItem>
-                    {categories.map((cat) => (
-                      <SelectItem key={cat} value={cat}>
-                        {cat}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-            )}
-            {countries.length > 1 && (
-              <div className="flex items-center gap-2">
-                <span className="text-sm text-muted-foreground whitespace-nowrap">{t.blog.filterByCountry}</span>
-                <Select value={selectedCountry || 'all'} onValueChange={(v) => setSelectedCountry(v === 'all' ? '' : v)}>
-                  <SelectTrigger className="w-[180px]" aria-label="Filter by country">
-                    <SelectValue placeholder={t.blog.filterAllCountries} />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">{t.blog.filterAllCountries}</SelectItem>
-                    {countries.map((c) => (
-                      <SelectItem key={c} value={c}>
-                        {c}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-            )}
-          </div>
-        )}
 
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Skeleton loading cards */}

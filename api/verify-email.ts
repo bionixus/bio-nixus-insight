@@ -1,6 +1,6 @@
 import { createClient } from '@sanity/client'
 import { Resend } from 'resend'
-import { generateWelcomeEmail } from '../src/server/emails/welcomeEmail'
+import { generateWelcomeEmail } from '../src/server/emails/welcomeEmail.js'
 
 const sanityServer = createClient({
   projectId: process.env.VITE_SANITY_PROJECT_ID || 'h2whvvpo',
@@ -11,6 +11,9 @@ const sanityServer = createClient({
 })
 
 const resend = new Resend(process.env.RESEND_API_KEY)
+const VERIFY_SUBSCRIBER_QUERY: string = `
+  *[_type == "subscriber" && verificationToken == $token][0]
+`
 
 export default async function handler(req: any, res: any) {
   if (req.method !== 'POST') {
@@ -25,11 +28,10 @@ export default async function handler(req: any, res: any) {
 
   try {
     // Find subscriber with this token
+    const tokenValue = String(token)
     const subscriber = await sanityServer.fetch(
-      `
-      *[_type == "subscriber" && verificationToken == $token][0]
-    `,
-      { token }
+      VERIFY_SUBSCRIBER_QUERY as any,
+      { token: tokenValue } as any
     )
 
     if (!subscriber) {

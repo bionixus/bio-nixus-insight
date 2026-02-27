@@ -62,7 +62,11 @@ const DocumentHead = () => {
     ensureFallbackH1(seo.title);
 
     const enforceHeadLimits = () => {
-      document.title = normalizeSeoTitle(document.title || seo.title, 'BioNixus');
+      const normalizedTitle = normalizeSeoTitle(document.title || seo.title, 'BioNixus');
+      if (document.title !== normalizedTitle) {
+        document.title = normalizedTitle;
+      }
+
       const descEl = document.querySelector('meta[name="description"]');
       const descRaw = descEl?.getAttribute('content') || seo.description;
       const nextDesc = buildSeoDescription({
@@ -70,15 +74,19 @@ const DocumentHead = () => {
         bodySource: document.querySelector('main')?.textContent || '',
         fallback: seo.description,
       });
-      if (descEl) descEl.setAttribute('content', nextDesc);
+      if (descEl && descEl.getAttribute('content') !== nextDesc) {
+        descEl.setAttribute('content', nextDesc);
+      }
       ensureFallbackH1(document.title);
     };
 
     enforceHeadLimits();
-    const observer = new MutationObserver(enforceHeadLimits);
-    observer.observe(document.head, { childList: true, subtree: true, characterData: true });
-    observer.observe(document.body, { childList: true, subtree: true });
-    return () => observer.disconnect();
+    const rafId = requestAnimationFrame(enforceHeadLimits);
+    const timeoutId = window.setTimeout(enforceHeadLimits, 400);
+    return () => {
+      cancelAnimationFrame(rafId);
+      clearTimeout(timeoutId);
+    };
   }, [language, pathname, canonicalUrl]);
 
   const title = normalizeSeoTitle(seo.title, 'BioNixus');

@@ -249,14 +249,6 @@ const Footer = () => {
                 </ul>
               </li>
               <li>
-                <Link
-                  to={`${basePath}#insights`}
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  {t.footer.insights}
-                </Link>
-              </li>
-              <li>
                 <a
                   href="https://careers.bionixus.com/"
                   target="_blank"
@@ -281,14 +273,6 @@ const Footer = () => {
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
                   {t.footer.caseStudies}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to={`${basePath === '/' ? '' : basePath}/methodology`}
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  {t.footer.methodology}
                 </Link>
               </li>
               <li>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Globe2 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languages } from '@/lib/i18n';
 import { languagePaths } from '@/lib/seo';
@@ -43,10 +43,9 @@ const Navbar = () => {
 
   const navItems = [
     { href: basePath, label: t.nav.home },
-    { href: `${basePath}#services`, label: t.nav.services },
-    { href: `${basePath}#insights`, label: t.nav.insights },
-    { href: `${basePath}#about`, label: 'Expertise' },
     { href: '/about', label: t.nav.about },
+    { href: '/services', label: t.nav.services },
+    { href: '/#insights', label: t.nav.insights },
   ];
 
   return (
@@ -81,9 +80,13 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-4">
             <Link
               to="/global-websites"
-              className="px-3 py-2 rounded-lg border border-border bg-background text-foreground/80 text-sm hover:bg-muted hover:text-foreground transition-colors"
+              aria-label="Global Sites"
+              className="group relative p-2 rounded-lg border border-border bg-background text-foreground/80 hover:bg-muted hover:text-foreground transition-colors"
             >
-              Global Sites
+              <Globe2 className="w-4 h-4" />
+              <span className="pointer-events-none absolute left-1/2 top-full mt-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-foreground px-2 py-1 text-xs text-background opacity-0 shadow-sm transition-opacity group-hover:opacity-100">
+                Global Sites
+              </span>
             </Link>
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-muted transition-colors text-sm">

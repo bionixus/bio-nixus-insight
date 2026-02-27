@@ -91,10 +91,10 @@ export const regionGroups: RegionGroup[] = [
 ];
 
 export const globalResources: ResourceLink[] = [
-  { label: 'Resources', url: 'https://www.bionixus.com/resources' },
-  { label: 'Case Studies', url: 'https://www.bionixus.com/case-studies' },
-  { label: 'Services', url: 'https://www.bionixus.com/services' },
-  { label: 'Contact', url: 'https://www.bionixus.com/contact' },
+  { label: 'Resources', url: '/resources' },
+  { label: 'Case Studies', url: '/case-studies' },
+  { label: 'Services', url: '/services' },
+  { label: 'Contact', url: '/contact' },
 ];
 
 export const formatLanguages = (languages: string[]) => languages.join(' | ');

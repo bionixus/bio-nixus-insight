@@ -116,21 +116,22 @@ function DeferredAnalytics() {
 const LazyStatsigInit = lazy(() => import("@/components/StatsigInit"));
 const LazyVercelAnalytics = lazy(() => import("@vercel/analytics/react").then(m => ({ default: m.Analytics })));
 
-const App = () => (
-  <HelmetProvider>
-    <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <ScrollToTop />
-        <LanguageProvider>
-          <SyncLanguageFromPath />
-          <DocumentHead />
-          <TooltipProvider>
-            <Suspense fallback={null}>
-              <Toaster />
-              <Sonner />
-            </Suspense>
-            <Suspense fallback={<div style={{ padding: '2rem', textAlign: 'center', color: '#666', fontFamily: 'system-ui' }}>Loading...</div>}>
-            <Routes>
+const App = () => {
+  return (
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <BrowserRouter>
+          <ScrollToTop />
+          <LanguageProvider>
+            <SyncLanguageFromPath />
+            <DocumentHead />
+            <TooltipProvider>
+              <Suspense fallback={null}>
+                <Toaster />
+                <Sonner />
+              </Suspense>
+              <Suspense fallback={<div style={{ padding: '2rem', textAlign: 'center', color: '#666', fontFamily: 'system-ui' }}>Loading...</div>}>
+              <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/de" element={<Index />} />
               <Route path="/fr" element={<Index />} />
@@ -191,18 +192,19 @@ const App = () => (
               <Route path="/admin/send-newsletter" element={<AdminSendNewsletter />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
-            </Routes>
-            </Suspense>
-            <Suspense fallback={null}>
-              <LocalePrompt />
-              <CookieConsent />
-            </Suspense>
-            <DeferredAnalytics />
-          </TooltipProvider>
-        </LanguageProvider>
-      </BrowserRouter>
-    </QueryClientProvider>
-  </HelmetProvider>
-);
+              </Routes>
+              </Suspense>
+              <Suspense fallback={null}>
+                <LocalePrompt />
+                <CookieConsent />
+              </Suspense>
+              <DeferredAnalytics />
+            </TooltipProvider>
+          </LanguageProvider>
+        </BrowserRouter>
+      </QueryClientProvider>
+    </HelmetProvider>
+  );
+};
 
 export default App;

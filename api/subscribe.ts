@@ -1,6 +1,6 @@
 import { createClient } from '@sanity/client'
 import { Resend } from 'resend'
-import { generateVerificationEmail } from '../src/server/emails/verificationEmail'
+import { generateVerificationEmail } from '../src/server/emails/verificationEmail.js'
 import crypto from 'crypto'
 
 const sanityServer = createClient({
