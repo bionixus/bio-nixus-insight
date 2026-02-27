@@ -45,7 +45,7 @@ const Navbar = () => {
     { href: basePath, label: t.nav.home },
     { href: '/about', label: t.nav.about },
     { href: '/services', label: t.nav.services },
-    { href: '/#insights', label: t.nav.insights },
+    { href: '/blog', label: t.nav.insights },
   ];
 
   return (
