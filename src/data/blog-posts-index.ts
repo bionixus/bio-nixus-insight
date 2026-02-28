@@ -1,16 +1,13 @@
 import { BlogPost } from '@/types/blog';
-import { menaHealthcareStatistics2025 } from './blog-mena-healthcare-statistics-2025';
-import { nupcoTenderingGuide } from './blog-nupco-saudi-arabia-tendering-guide';
-import { uaeFormularyGuide } from './blog-abu-dhabi-doh-vs-dubai-dha-formulary';
 
 /**
  * Array of all hardcoded blog posts designed for SEO strategy,
  * matching the Infomine competitive outranking plan.
+ * (Note: High-value MENA/KSA/UAE guides are now moved to Sanity)
  */
 export const hardcodedSeoPosts: BlogPost[] = [
-    menaHealthcareStatistics2025,
-    nupcoTenderingGuide,
-    uaeFormularyGuide
+    // Legacy hardcoded posts can be added here if needed,
+    // though Sanity is now the primary content source.
 ];
 
 /** Helper to find a hardcoded post by slug */
