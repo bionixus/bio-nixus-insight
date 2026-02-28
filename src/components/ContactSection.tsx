@@ -32,14 +32,14 @@ function sendErrorEmail(
   const subject = encodeURIComponent('Meeting With BioNixus Team');
   const body = encodeURIComponent(
     `I'd like to schedule a meeting with BioNixus team to discuss more about BioNixus Market Research Services.\n\n` +
-      `--- FORM DATA ---\n` +
-      `First Name: ${firstName}\n` +
-      `Last Name: ${lastName}\n` +
-      `Email: ${workEmail}\n` +
-      `Company: ${company}\n` +
-      (phone ? `Phone: ${phone}\n` : '') +
-      `\nMessage:\n${message}\n\n` +
-      `--- NOTE ---\nThe online form encountered an error (${errorDetails}). Please process this inquiry manually.`
+    `--- FORM DATA ---\n` +
+    `First Name: ${firstName}\n` +
+    `Last Name: ${lastName}\n` +
+    `Email: ${workEmail}\n` +
+    `Company: ${company}\n` +
+    (phone ? `Phone: ${phone}\n` : '') +
+    `\nMessage:\n${message}\n\n` +
+    `--- NOTE ---\nThe online form encountered an error (${errorDetails}). Please process this inquiry manually.`
   );
   window.location.href = `mailto:${ERROR_EMAIL}?subject=${subject}&body=${body}`;
 }
@@ -161,6 +161,21 @@ const ContactSection = () => {
 
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center">
+                  <MapPin className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <div className="text-sm text-muted-foreground">Regional Representation</div>
+                  <div className="text-foreground font-medium mt-1">
+                    Dubai, UAE<br />
+                    Jeddah, Saudi Arabia<br />
+                    Kuwait City, Kuwait<br />
+                    Cairo, Egypt
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center">
                   <Phone className="w-5 h-5 text-primary" />
                 </div>
                 <div>
@@ -224,127 +239,127 @@ const ContactSection = () => {
               </div>
             ) : (
               <>
-            <h3 className="text-xl font-semibold text-foreground mb-6">{t.contact.formTitle}</h3>
-            <form
-              action={FORMSPREE_ENDPOINT}
-              method="POST"
-              className="space-y-6"
-              onSubmit={handleSubmit}
-            >
-              <div className="grid sm:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-2">
-                    {t.contact.firstName}
-                  </label>
-                  <input
-                    id="firstName"
-                    name="firstName"
-                    type="text"
-                    required
-                    aria-invalid={Boolean(errors.firstName)}
-                    className={`w-full px-4 py-3 rounded-lg border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.firstName ? 'border-destructive' : 'border-input'}`}
-                    placeholder={place('firstNamePlaceholder', 'John')}
-                  />
-                  {errors.firstName && <p className="text-sm text-destructive mt-1">{errors.firstName}</p>}
-                </div>
-                <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-foreground mb-2">
-                    {t.contact.lastName}
-                  </label>
-                  <input
-                    id="lastName"
-                    name="lastName"
-                    type="text"
-                    required
-                    aria-invalid={Boolean(errors.lastName)}
-                    className={`w-full px-4 py-3 rounded-lg border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.lastName ? 'border-destructive' : 'border-input'}`}
-                    placeholder={place('lastNamePlaceholder', 'Smith')}
-                  />
-                  {errors.lastName && <p className="text-sm text-destructive mt-1">{errors.lastName}</p>}
-                </div>
-              </div>
+                <h3 className="text-xl font-semibold text-foreground mb-6">{t.contact.formTitle}</h3>
+                <form
+                  action={FORMSPREE_ENDPOINT}
+                  method="POST"
+                  className="space-y-6"
+                  onSubmit={handleSubmit}
+                >
+                  <div className="grid sm:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-2">
+                        {t.contact.firstName}
+                      </label>
+                      <input
+                        id="firstName"
+                        name="firstName"
+                        type="text"
+                        required
+                        aria-invalid={Boolean(errors.firstName)}
+                        className={`w-full px-4 py-3 rounded-lg border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.firstName ? 'border-destructive' : 'border-input'}`}
+                        placeholder={place('firstNamePlaceholder', 'John')}
+                      />
+                      {errors.firstName && <p className="text-sm text-destructive mt-1">{errors.firstName}</p>}
+                    </div>
+                    <div>
+                      <label htmlFor="lastName" className="block text-sm font-medium text-foreground mb-2">
+                        {t.contact.lastName}
+                      </label>
+                      <input
+                        id="lastName"
+                        name="lastName"
+                        type="text"
+                        required
+                        aria-invalid={Boolean(errors.lastName)}
+                        className={`w-full px-4 py-3 rounded-lg border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.lastName ? 'border-destructive' : 'border-input'}`}
+                        placeholder={place('lastNamePlaceholder', 'Smith')}
+                      />
+                      {errors.lastName && <p className="text-sm text-destructive mt-1">{errors.lastName}</p>}
+                    </div>
+                  </div>
 
-              <div>
-                <label htmlFor="workEmail" className="block text-sm font-medium text-foreground mb-2">
-                  {t.contact.workEmail}
-                </label>
-                <input
-                  id="workEmail"
-                  name="workEmail"
-                  type="email"
-                  required
-                  aria-invalid={Boolean(errors.workEmail)}
-                  className={`w-full px-4 py-3 rounded-lg border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.workEmail ? 'border-destructive' : 'border-input'}`}
-                  placeholder={place('workEmailPlaceholder', 'john@company.com')}
-                />
-                {errors.workEmail && <p className="text-sm text-destructive mt-1">{errors.workEmail}</p>}
-              </div>
+                  <div>
+                    <label htmlFor="workEmail" className="block text-sm font-medium text-foreground mb-2">
+                      {t.contact.workEmail}
+                    </label>
+                    <input
+                      id="workEmail"
+                      name="workEmail"
+                      type="email"
+                      required
+                      aria-invalid={Boolean(errors.workEmail)}
+                      className={`w-full px-4 py-3 rounded-lg border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.workEmail ? 'border-destructive' : 'border-input'}`}
+                      placeholder={place('workEmailPlaceholder', 'john@company.com')}
+                    />
+                    {errors.workEmail && <p className="text-sm text-destructive mt-1">{errors.workEmail}</p>}
+                  </div>
 
-              <div>
-                <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
-                  {t.contact.company}
-                </label>
-                <input
-                  id="company"
-                  name="company"
-                  type="text"
-                  required
-                  aria-invalid={Boolean(errors.company)}
-                  className={`w-full px-4 py-3 rounded-lg border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.company ? 'border-destructive' : 'border-input'}`}
-                  placeholder={place('companyPlaceholder', 'Your Company')}
-                />
-                {errors.company && <p className="text-sm text-destructive mt-1">{errors.company}</p>}
-              </div>
+                  <div>
+                    <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
+                      {t.contact.company}
+                    </label>
+                    <input
+                      id="company"
+                      name="company"
+                      type="text"
+                      required
+                      aria-invalid={Boolean(errors.company)}
+                      className={`w-full px-4 py-3 rounded-lg border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.company ? 'border-destructive' : 'border-input'}`}
+                      placeholder={place('companyPlaceholder', 'Your Company')}
+                    />
+                    {errors.company && <p className="text-sm text-destructive mt-1">{errors.company}</p>}
+                  </div>
 
-              {hasPhoneField && (
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                    {c.phoneFieldLabel}
-                  </label>
-                  <input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
-                    placeholder={place('phonePlaceholder', '')}
-                  />
-                </div>
-              )}
+                  {hasPhoneField && (
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
+                        {c.phoneFieldLabel}
+                      </label>
+                      <input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+                        placeholder={place('phonePlaceholder', '')}
+                      />
+                    </div>
+                  )}
 
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                  {t.contact.message}
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  required
-                  aria-invalid={Boolean(errors.message)}
-                  className={`w-full px-4 py-3 rounded-lg border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors resize-none ${errors.message ? 'border-destructive' : 'border-input'}`}
-                  placeholder={place('messagePlaceholder', 'Tell us about your research needs...')}
-                />
-                {errors.message && <p className="text-sm text-destructive mt-1">{errors.message}</p>}
-              </div>
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                      {t.contact.message}
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={4}
+                      required
+                      aria-invalid={Boolean(errors.message)}
+                      className={`w-full px-4 py-3 rounded-lg border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors resize-none ${errors.message ? 'border-destructive' : 'border-input'}`}
+                      placeholder={place('messagePlaceholder', 'Tell us about your research needs...')}
+                    />
+                    {errors.message && <p className="text-sm text-destructive mt-1">{errors.message}</p>}
+                  </div>
 
-              {hasPrivacyNote && (
-                <p className="text-sm text-muted-foreground">
-                  {c.privacyNote}
-                </p>
-              )}
+                  {hasPrivacyNote && (
+                    <p className="text-sm text-muted-foreground">
+                      {c.privacyNote}
+                    </p>
+                  )}
 
-              {submitError && (
-                <p className="text-sm text-destructive">{submitError}</p>
-              )}
+                  {submitError && (
+                    <p className="text-sm text-destructive">{submitError}</p>
+                  )}
 
-              <button
-                type="submit"
-                disabled={submitting}
-                className="w-full py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-opacity disabled:opacity-70 disabled:cursor-not-allowed"
-              >
-                {submitting ? '...' : t.contact.submitButton}
-              </button>
-            </form>
+                  <button
+                    type="submit"
+                    disabled={submitting}
+                    className="w-full py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-opacity disabled:opacity-70 disabled:cursor-not-allowed"
+                  >
+                    {submitting ? '...' : t.contact.submitButton}
+                  </button>
+                </form>
               </>
             )}
           </div>
