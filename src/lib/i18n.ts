@@ -197,7 +197,7 @@ export const translations = {
       email: 'admin@bionixus.com',
       headquarters: 'Sheridan, WY, USA | London, UK',
       emailLabel: 'Email',
-      headquartersLabel: 'Offices',
+      headquartersLabel: 'Regional Headquarters',
       phoneLabel: 'Phone',
       formTitle: 'Request A Proposal',
       firstName: 'First Name',
