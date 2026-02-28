@@ -8,6 +8,7 @@ import { saudiPharmaEntryPlaybook } from './blog-saudi-market-entry';
 import { ciPharmaGccGuide } from './blog-ci-pharma-gcc';
 import { niceHtaGuide } from './blog-nice-hta-guide';
 import { patientJourneySaudiArabia } from './blog-patient-journey-saudi';
+import { menaHealthcareStatistics2025 } from './blog-mena-healthcare-statistics-2025';
 
 /**
  * Array of all hardcoded blog posts designed for SEO strategy,
@@ -23,6 +24,7 @@ export const hardcodedSeoPosts: BlogPost[] = [
     ciPharmaGccGuide,
     niceHtaGuide,
     patientJourneySaudiArabia,
+    menaHealthcareStatistics2025,
 ];
 
 /** Helper to find a hardcoded post by slug */

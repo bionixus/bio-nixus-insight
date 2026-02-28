@@ -182,6 +182,7 @@ export const blogPost = defineType({
           { title: 'Oncology', value: 'Oncology' },
           { title: 'Clinical Trials', value: 'Clinical Trials' },
           { title: 'Healthcare Research', value: 'Healthcare Research' },
+          { title: 'Healthcare Market Research', value: 'Healthcare Market Research' },
           { title: 'Quantitative Research', value: 'Quantitative Research' },
           { title: 'Qualitative Research', value: 'Qualitative Research' },
           { title: 'Regulatory & Policy', value: 'Regulatory & Policy' },
@@ -206,6 +207,7 @@ export const blogPost = defineType({
       options: {
         list: [
           { title: 'UK', value: 'UK' },
+          { title: 'United Kingdom', value: 'United Kingdom' },
           { title: 'Germany', value: 'Germany' },
           { title: 'France', value: 'France' },
           { title: 'Spain', value: 'Spain' },
@@ -213,6 +215,8 @@ export const blogPost = defineType({
           { title: 'UAE', value: 'UAE' },
           { title: 'Saudi Arabia', value: 'Saudi Arabia' },
           { title: 'Egypt', value: 'Egypt' },
+          { title: 'GCC', value: 'GCC' },
+          { title: 'Middle East', value: 'Middle East' },
           { title: 'Europe', value: 'Europe' },
           { title: 'MENA', value: 'MENA' },
           { title: 'Other', value: 'Other' },

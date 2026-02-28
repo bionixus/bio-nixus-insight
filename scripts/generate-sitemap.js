@@ -62,6 +62,7 @@ const STATIC_ROUTES = [
   '/blog/competitive-intelligence-pharma-gcc',
   '/blog/nice-hta-evidence-requirements-guide',
   '/blog/patient-journey-mapping-saudi-arabia',
+  '/blog/middle-east-healthcare-market-statistics-2025',
 ];
 
 function routeMeta(url) {
