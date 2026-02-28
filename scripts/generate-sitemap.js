@@ -65,6 +65,7 @@ const STATIC_ROUTES = [
   '/blog/middle-east-healthcare-market-statistics-2025',
   '/blog/nupco-saudi-arabia-tendering-guide',
   '/blog/abu-dhabi-doh-vs-dubai-dha-formulary-guide',
+  '/blog/regional-crisis-impact-middle-east-economies-healthcare-2026',
 ];
 
 function routeMeta(url) {
