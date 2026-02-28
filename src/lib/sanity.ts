@@ -15,7 +15,7 @@ export const sanityConfig = {
   projectId,
   dataset,
   apiVersion,
-  useCdn: true,
+  useCdn: false,
 };
 
 let client: SanityClient | null = null;
@@ -26,8 +26,8 @@ export function getSanityClient(): SanityClient {
       projectId,
       dataset,
       apiVersion,
-      // Home/blog listing queries are read-heavy; CDN noticeably improves TTFB.
-      useCdn: true,
+      // Keep blog reads fresh immediately after publish/unpublish actions.
+      useCdn: false,
       ...(token ? { token } : {}),
     });
   }

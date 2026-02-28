@@ -21,6 +21,7 @@ export interface CountryConfig {
   relatedTherapies: string[];
   keyStats: CountryKeyStat[];
   faqQuestions: CountryFAQItem[];
+  isCity?: boolean;
 }
 
 export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
@@ -268,5 +269,129 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
       },
     ],
   },
+  riyadh: {
+    name: 'Riyadh',
+    slug: 'riyadh',
+    region: 'mena',
+    metaSuffix: 'Riyadh pharmaceutical market research targeting MOH, SFDA, NUPCO, and KFSH&RC ecosystems.',
+    ogDescription:
+      'BioNixus executes deep-dive pharmaceutical market research in Riyadh, providing access to top-tier government hospitals, NUPCO procurement stakeholders, and specialized KOLs.',
+    h1: 'Pharmaceutical Market Research in Riyadh',
+    relatedCountries: ['saudi-arabia', 'jeddah', 'dubai'],
+    relatedTherapies: ['oncology', 'rare-diseases', 'immunology', 'diabetes'],
+    keyStats: [
+      { label: 'Healthcare Hub', value: 'Center of Vision 2030 Transformation' },
+      { label: 'Key Regulators', value: 'MOH, SFDA, NUPCO HQ' },
+      { label: 'Major Institutions', value: 'KFSH&RC, NGHA, KSMC' },
+      { label: 'Research Focus', value: 'Tertiary care & government tendering' },
+    ],
+    faqQuestions: [
+      {
+        question: 'Why is Riyadh critical for pharmaceutical market access in Saudi Arabia?',
+        answer: 'Riyadh is the absolute epicentre of healthcare decision-making in Saudi Arabia. It houses the Ministry of Health (MOH), the Saudi Food and Drug Authority (SFDA), and the National Unified Procurement Company (NUPCO). A successful pharmaceutical launch requires deep alignment with Riyadh-based stakeholders who dictate national formularies, establish clinical guidelines, and control state-level health budgets under the Vision 2030 framework. BioNixus maps this complex web of influence, providing commercial teams with direct pathways to engage tertiary care KOLs and procurement committees.'
+      },
+      {
+        question: 'How does BioNixus recruit KOLs from top Riyadh hospitals like KFSH&RC?',
+        answer: 'Recruiting from highly specialized institutions like King Faisal Specialist Hospital & Research Centre (KFSH&RC) or National Guard Health Affairs (NGHA) requires more than standard panel access. BioNixus leverages established peer-to-peer networks and medical society relationships to engage tier-1 Key Opinion Leaders (KOLs) and departmental heads. We design research protocols that respect their time constraints while extracting deep insights on treatment sequencing, rare disease protocols, and oncology biomarker adoption.'
+      },
+      {
+        question: 'What role does NUPCO play in Riyadh-focused market research?',
+        answer: 'NUPCO is the centralized procurement arm for government healthcare facilities in Saudi Arabia, headquartered in Riyadh. Understanding NUPCO’s tendering criteria, supply chain logic, and economic evaluation matrix is mandatory for institutional market access. Our targeted qualitative research includes stakeholders with visibility into NUPCO’s purchasing behavior, helping pharmaceutical companies optimize their pricing, packaging, and supply volume strategies before submitting formal bids.'
+      }
+    ],
+    isCity: true,
+  },
+  jeddah: {
+    name: 'Jeddah',
+    slug: 'jeddah',
+    region: 'mena',
+    metaSuffix: 'Jeddah pharmaceutical insights focusing on Western Region commercial healthcare dynamics.',
+    ogDescription: 'BioNixus provides pharmaceutical market research in Jeddah, analyzing private hospital networks, Western Region patient pathways, and commercial healthcare expansion.',
+    h1: 'Pharmaceutical Market Research in Jeddah',
+    relatedCountries: ['saudi-arabia', 'riyadh', 'uae'],
+    relatedTherapies: ['cardiology', 'diabetes', 'oncology', 'vaccines'],
+    keyStats: [
+      { label: 'Commercial Hub', value: 'Gateway to the Western Region' },
+      { label: 'Private Sector', value: 'High concentration of private hospital networks' },
+      { label: 'Major Institutions', value: 'KAUH, DSFH, IMC' },
+      { label: 'Research Focus', value: 'Private insurance & commercial adoption' },
+    ],
+    faqQuestions: [
+      {
+        question: 'How does the Jeddah healthcare market differ from Riyadh?',
+        answer: 'While Riyadh is driven heavily by centralized government procurement and tertiary state hospitals, Jeddah has a thriving and highly competitive private healthcare ecosystem. Hospitals like Dr. Soliman Fakeeh Hospital (DSFH) and International Medical Center (IMC) drive significant pharmaceutical volume through private insurance and out-of-pocket channels. Market research in Jeddah focuses heavily on commercial dynamics, private payer negotiations, and physician brand preference outside of the strict state tendering systems.'
+      },
+      {
+        question: 'Why include Jeddah in a broader Saudi Arabia market entry study?',
+        answer: 'Focusing exclusively on Riyadh creates a blind spot regarding the Western Region, which represents a massive portion of the Saudi population. Jeddah serves as the commercial gateway and healthcare hub for this region, including Mecca and Medina. Patient demographics, seasonal healthcare surges (due to Hajj/Umrah), and physician prescribing behaviors vary significantly from the central region. BioNixus ensures your Saudi strategy captures these regional nuances for accurate demand forecasting.'
+      },
+      {
+        question: 'Does BioNixus cover academic medical centers in Jeddah?',
+        answer: 'Yes. King Abdulaziz University Hospital (KAUH) is a major center of excellence and clinical research in Jeddah. We actively engage academic KOLs and clinical trial investigators within KAUH to gather insights on emerging treatment paradigms, medical education needs, and early adoption trends for specialized biologics and advanced therapies.'
+      }
+    ],
+    isCity: true,
+  },
+  dubai: {
+    name: 'Dubai',
+    slug: 'dubai',
+    region: 'mena',
+    metaSuffix: 'Dubai healthcare market research targeting DHA regulations and DHCC operations.',
+    ogDescription: 'BioNixus executes Dubai pharmaceutical market research, navigating DHA formularies, mandatory insurance dynamics, and the private healthcare ecosystem.',
+    h1: 'Pharmaceutical Market Research in Dubai',
+    relatedCountries: ['uae', 'abu-dhabi', 'saudi-arabia'],
+    relatedTherapies: ['aesthetic-medicine', 'diabetes', 'oncology', 'cardiology'],
+    keyStats: [
+      { label: 'Key Regulator', value: 'Dubai Health Authority (DHA)' },
+      { label: 'Health Insurance', value: 'Mandatory (ISAHD) ecosystem' },
+      { label: 'Major Hubs', value: 'Dubai Healthcare City (DHCC)' },
+      { label: 'Research Focus', value: 'Private sector speed & health tourism' },
+    ],
+    faqQuestions: [
+      {
+        question: 'How do DHA regulations impact pharmaceutical market research in Dubai?',
+        answer: 'The Dubai Health Authority (DHA) governs healthcare delivery, professional licensing, and pharmaceutical guidelines in the emirate. Because Dubai operates on a mandatory health insurance model (ISAHD), market access research requires deep understanding of fragmented private payers (TPA/insurance companies). BioNixus conducts Payer and Key Account research to uncover willingness-to-pay, formulary inclusion hurdles, and co-pay sensitivities that dictate commercial success in Dubai’s fast-paced private sector.'
+      },
+      {
+        question: 'What is the significance of Dubai Healthcare City (DHCC) in clinical research?',
+        answer: 'Dubai Healthcare City (DHCC) is a specialized free zone housing over 160 clinical partners, including multinational pharmaceutical hubs and specialized clinics. It concentrates high-net-worth patient traffic and medical tourism. Researching DHCC physicians provides early signals on premium drug adoption, aesthetic medicine trends, and cash-pay biologic therapies that are distinct from standard public care pathways.'
+      },
+      {
+        question: 'How fast do physicians in Dubai adopt new pharmaceutical treatments?',
+        answer: 'Dubai is characterized by rapid early adoption of innovative therapies, driven by a highly competitive private hospital sector aggressively marketing the latest treatments to attract patients. However, this adoption is gated by the speed of insurance approvals. Our UAE market research specifically dissects this dynamic, evaluating the gap between physician willingness-to-prescribe and actual payer reimbursement timelines.'
+      }
+    ],
+    isCity: true,
+  },
+  'abu-dhabi': {
+    name: 'Abu Dhabi',
+    slug: 'abu-dhabi',
+    region: 'mena',
+    metaSuffix: 'Abu Dhabi pharmaceutical insights covering DOH requirements and SEHA hospital networks.',
+    ogDescription: 'BioNixus provides pharmaceutical market research in Abu Dhabi, analyzing DOH regulatory strategies, Malaffi data integration, and SEHA procurement behavior.',
+    h1: 'Pharmaceutical Market Research in Abu Dhabi',
+    relatedCountries: ['uae', 'dubai', 'saudi-arabia'],
+    relatedTherapies: ['oncology', 'rare-diseases', 'immunology', 'vaccines'],
+    keyStats: [
+      { label: 'Key Regulator', value: 'Department of Health (DOH)' },
+      { label: 'Public Network', value: 'SEHA (PureHealth)' },
+      { label: 'Major Institutions', value: 'Cleveland Clinic, SSMC' },
+      { label: 'Research Focus', value: 'Structured access & localized manufacturing' },
+    ],
+    faqQuestions: [
+      {
+        question: 'What are the main differences between Abu Dhabi and Dubai for pharma market access?',
+        answer: 'While Dubai is highly fragmented and private-sector driven, Abu Dhabi is highly structured, centralized, and dominated by the Department of Health (DOH) regulations and the SEHA (PureHealth) public hospital network. National health insurance for locals (Thiqa) and expatriates (Daman) dictates a much more rigorous, evidence-based formulary inclusion process. BioNixus runs specialized HTA (Health Technology Assessment) feasibility research to ensure pharmaceutical dossiers align with Abu Dhabi’s strict pharmacoeconomic expectations.'
+      },
+      {
+        question: 'How does BioNixus engage KOLs at Cleveland Clinic Abu Dhabi and SSMC?',
+        answer: 'Institutions like Cleveland Clinic Abu Dhabi (CCAD) and Sheikh Shakhbout Medical City (SSMC) house the UAE’s most advanced specialists, treating highly complex disease states. Our field teams utilize peer-level recruitment strategies to bypass traditional gatekeepers, securing in-depth interviews with these tier-1 specialists on complex treatment algorithms, particularly in oncology, rare diseases, and advanced immunology.'
+      },
+      {
+        question: 'How does Abu Dhabi’s push for localized pharmaceutical manufacturing affect market entry?',
+        answer: 'Abu Dhabi is rapidly positioning itself as a life sciences and biopharma manufacturing hub, offering significant incentives for companies that localize production. Through competitive intelligence and stakeholder mapping, BioNixus helps multinational pharma companies evaluate the strategic benefits of local partnering versus traditional distribution, providing clarity on how local manufacturing status impacts DOH formulary prioritization.'
+      }
+    ],
+    isCity: true,
+  }
 };
-

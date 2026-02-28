@@ -63,6 +63,8 @@ const STATIC_ROUTES = [
   '/blog/nice-hta-evidence-requirements-guide',
   '/blog/patient-journey-mapping-saudi-arabia',
   '/blog/middle-east-healthcare-market-statistics-2025',
+  '/blog/nupco-saudi-arabia-tendering-guide',
+  '/blog/abu-dhabi-doh-vs-dubai-dha-formulary-guide',
 ];
 
 function routeMeta(url) {
@@ -77,6 +79,15 @@ function routeMeta(url) {
 const allRoutes = [
   ...STATIC_ROUTES,
   '/healthcare-market-research',
+  '/healthcare-market-research/saudi-arabia',
+  '/healthcare-market-research/riyadh',
+  '/healthcare-market-research/jeddah',
+  '/healthcare-market-research/uae',
+  '/healthcare-market-research/dubai',
+  '/healthcare-market-research/abu-dhabi',
+  '/healthcare-market-research/kuwait',
+  '/healthcare-market-research/uk',
+  '/healthcare-market-research/europe',
   ...COUNTRIES.map((slug) => `/healthcare-market-research/${slug}`),
   ...THERAPIES.map((slug) => `/healthcare-market-research/therapy/${slug}`),
   ...SERVICES.map((slug) => `/healthcare-market-research/services/${slug}`),

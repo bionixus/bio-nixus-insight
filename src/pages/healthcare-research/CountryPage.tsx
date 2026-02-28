@@ -27,7 +27,7 @@ export default function CountryPage() {
   const { country } = useParams<{ country: string }>();
   const location = useLocation();
   const { data } = useInitialData();
-  const aliasSlug = location.pathname.match(/^\/(saudi-arabia|uae|kuwait|uk|europe)$/)?.[1];
+  const aliasSlug = location.pathname.match(/^\/(saudi-arabia|uae|kuwait|uk|europe|riyadh|jeddah|dubai|abu-dhabi)$/)?.[1];
   const resolvedSlug =
     country ||
     (typeof data.slug === 'string' ? data.slug : undefined) ||

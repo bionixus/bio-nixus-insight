@@ -144,7 +144,7 @@ export default function HubPage() {
         <div className="container-wide max-w-6xl mx-auto">
           <h2 className="text-3xl font-display font-semibold text-foreground mb-6">Regional Expertise</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-5">
-            {countries.map((country) => (
+            {countries.filter(c => !c.isCity).map((country) => (
               <Link
                 key={country.slug}
                 to={`/healthcare-market-research/${country.slug}`}
@@ -155,6 +155,42 @@ export default function HubPage() {
                 <span className="text-primary text-sm font-medium">
                   Market research in {country.name}
                 </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 bg-muted/5">
+        <div className="container-wide max-w-6xl mx-auto">
+          <h2 className="text-3xl font-display font-semibold text-foreground mb-6">Primary Research Hubs</h2>
+          <p className="text-muted-foreground mb-8 max-w-3xl">Deep-dive city-level intelligence for the Middle East's most complex healthcare clusters.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {countries.filter(c => c.isCity).map((city) => (
+              <Link
+                key={city.slug}
+                to={`/healthcare-market-research/${city.slug}`}
+                className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 hover:border-primary/40 transition-all hover:shadow-lg"
+              >
+                <div className="relative z-10">
+                  <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{city.name}</h3>
+                  <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{city.metaSuffix}</p>
+                  <ul className="space-y-2 mb-6">
+                    {city.keyStats.slice(0, 2).map((stat, i) => (
+                      <li key={i} className="text-xs flex justify-between border-b border-border/50 pb-1">
+                        <span className="text-muted-foreground">{stat.label}</span>
+                        <span className="font-medium text-foreground">{stat.value}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <span className="text-primary text-sm font-semibold flex items-center">
+                    Explore {city.name} Hub
+                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </div>
+                <div className="absolute top-0 right-0 -mr-8 -mt-8 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors" />
               </Link>
             ))}
           </div>
@@ -214,25 +250,25 @@ export default function HubPage() {
               <p className="text-sm text-muted-foreground">Comprehensive market data, disease prevalence, and growth metrics.</p>
             </Link>
             <Link
+              to="/blog/nupco-saudi-arabia-tendering-guide"
+              className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors"
+            >
+              <h3 className="text-base font-semibold text-foreground mb-2">NUPCO Saudi Arabia Master Guide</h3>
+              <p className="text-sm text-muted-foreground">Master the institutional tendering and procurement process.</p>
+            </Link>
+            <Link
+              to="/blog/abu-dhabi-doh-vs-dubai-dha-formulary-guide"
+              className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors"
+            >
+              <h3 className="text-base font-semibold text-foreground mb-2">UAE: DOH vs. DHA Formulary Guide</h3>
+              <p className="text-sm text-muted-foreground">Strategic comparison for emirate-level market access.</p>
+            </Link>
+            <Link
               to="/blog/sfda-drug-registration-guide"
               className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors"
             >
               <h3 className="text-base font-semibold text-foreground mb-2">SFDA Drug Registration Guide</h3>
               <p className="text-sm text-muted-foreground">Master the Saudi regulatory landscape and pathway requirements.</p>
-            </Link>
-            <Link
-              to="/blog/market-access-strategy-uae"
-              className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors"
-            >
-              <h3 className="text-base font-semibold text-foreground mb-2">UAE Market Access Strategy</h3>
-              <p className="text-sm text-muted-foreground">Navigate DOH, DHA, and MOHAP formulary inclusion.</p>
-            </Link>
-            <Link
-              to="/blog/kol-mapping-pharma-middle-east"
-              className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors"
-            >
-              <h3 className="text-base font-semibold text-foreground mb-2">KOL Mapping in the GCC</h3>
-              <p className="text-sm text-muted-foreground">Identifying true clinical influencers in the Middle East.</p>
             </Link>
           </div>
         </div>
