@@ -14,6 +14,7 @@ const LocalePrompt = lazy(() => import('@/components/LocalePrompt'));
 const CookieConsent = lazy(() => import('@/components/CookieConsent'));
 const LazyStatsigInit = lazy(() => import('@/components/StatsigInit'));
 const LazyVercelAnalytics = lazy(() => import('@vercel/analytics/react').then((m) => ({ default: m.Analytics })));
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,7 @@ function DeferredAnalytics() {
   return (
     <Suspense fallback={null}>
       <LazyStatsigInit />
+      <GoogleAnalytics />
       <LazyVercelAnalytics />
     </Suspense>
   );

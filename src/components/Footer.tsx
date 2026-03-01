@@ -187,6 +187,22 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  to="/market-research"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  Market Research Hub
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/market-research-saudi-arabia-pharmaceutical"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  Saudi Pharma Market Research
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/services"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >

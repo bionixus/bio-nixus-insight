@@ -17,6 +17,8 @@ const Navbar = () => {
   const navigate = useNavigate();
   const { language, setLanguage, t } = useLanguage();
   const basePath = languagePaths[language] || '/';
+  const localizedContactPath =
+    language === 'fr' ? '/fr/contacts' : language === 'ar' ? '/ar/contacts' : `${basePath === '/' ? '' : basePath}/contact`;
 
   const handleLogoClick = () => {
     const isHome =
@@ -137,7 +139,7 @@ const Navbar = () => {
             </DropdownMenu>
 
             <Link
-              to={`${basePath === '/' ? '' : basePath}/contact`}
+              to={localizedContactPath}
               className="px-5 py-2.5 bg-primary text-primary-foreground rounded-lg font-medium text-sm hover:opacity-90 transition-opacity"
             >
               {t.nav.contact}

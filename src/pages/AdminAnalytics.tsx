@@ -2,6 +2,27 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAdminAuth, getAuthToken } from '@/hooks/useAdminAuth'
 
+const cardStyle: React.CSSProperties = {
+  background: 'white',
+  padding: '20px',
+  borderRadius: '8px',
+  marginBottom: '20px',
+  boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+}
+
+const thStyle: React.CSSProperties = {
+  padding: '12px',
+  textAlign: 'left',
+  fontSize: '14px',
+  fontWeight: 'bold',
+  color: '#495057',
+}
+
+const tdStyle: React.CSSProperties = {
+  padding: '12px',
+  fontSize: '14px',
+}
+
 export default function AdminAnalytics() {
   const { loading: authLoading, isAuthenticated } = useAdminAuth()
   const navigate = useNavigate()
@@ -11,6 +32,8 @@ export default function AdminAnalytics() {
   const [selectedFailed, setSelectedFailed] = useState<Set<string>>(new Set())
   const [deletingFailed, setDeletingFailed] = useState(false)
   const [loading, setLoading] = useState(true)
+  const [gscRankings, setGscRankings] = useState<any[]>([])
+  const [gscLoading, setGscLoading] = useState(false)
 
   useEffect(() => {
     if (!isAuthenticated) return
@@ -19,7 +42,7 @@ export default function AdminAnalytics() {
 
   const fetchAll = async () => {
     setLoading(true)
-    await Promise.all([fetchAnalytics(), fetchShareAnalytics(), fetchFailedEmails()])
+    await Promise.all([fetchAnalytics(), fetchShareAnalytics(), fetchFailedEmails(), fetchGscRankings()])
     setLoading(false)
   }
 
@@ -60,6 +83,26 @@ export default function AdminAnalytics() {
       setSelectedFailed(new Set())
     } catch (error) {
       console.error('Failed to fetch failed emails:', error)
+    }
+  }
+
+  const fetchGscRankings = async () => {
+    setGscLoading(true)
+    try {
+      const token = getAuthToken()
+      const response = await fetch('/api/admin?action=gsc-rankings&days=28&limit=20', {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      const data = await response.json()
+      if (data.error) {
+        console.error('GSC Error:', data.error)
+      } else {
+        setGscRankings(data)
+      }
+    } catch (error) {
+      console.error('Failed to fetch GSC rankings:', error)
+    } finally {
+      setGscLoading(false)
     }
   }
 
@@ -447,6 +490,57 @@ export default function AdminAnalytics() {
           </tbody>
         </table>
       </div>
+
+      {/* ════════════ GOOGLE SEARCH CONSOLE ════════════ */}
+      <div style={{ marginTop: '50px', marginBottom: '20px' }}>
+        <h2>🔍 SEO: Google Search Console</h2>
+        <p style={{ color: '#666', fontSize: '14px' }}>Top organic search keywords and rankings (Last 28 days).</p>
+      </div>
+
+      <div style={cardStyle}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
+          <h3 style={{ margin: 0 }}>🏆 Keyword Rankings</h3>
+          <button
+            onClick={fetchGscRankings}
+            disabled={gscLoading}
+            style={btnStyle('#0066cc', true)}
+          >
+            {gscLoading ? 'Loading GSC...' : 'Refresh GSC Data'}
+          </button>
+        </div>
+        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+          <thead>
+            <tr style={{ borderBottom: '2px solid #dee2e6' }}>
+              <th style={thStyle}>Query / Keyword</th>
+              <th style={thStyle}>Clicks</th>
+              <th style={thStyle}>Impressions</th>
+              <th style={thStyle}>CTR</th>
+              <th style={thStyle}>Position</th>
+            </tr>
+          </thead>
+          <tbody>
+            {gscRankings?.length > 0 ? (
+              gscRankings.map((row: any, i: number) => (
+                <tr key={i} style={{ borderBottom: '1px solid #dee2e6' }}>
+                  <td style={tdStyle}><strong>{row.query}</strong></td>
+                  <td style={tdStyle}>{row.clicks}</td>
+                  <td style={tdStyle}>{row.impressions}</td>
+                  <td style={tdStyle}>{row.ctr}</td>
+                  <td style={{ ...tdStyle, fontWeight: 'bold', color: parseFloat(row.position) <= 10 ? '#28a745' : '#666' }}>
+                    {row.position}
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan={5} style={{ ...tdStyle, textAlign: 'center', color: '#999', padding: '30px' }}>
+                  {gscLoading ? 'Fetching data from Google Search Console...' : 'No keyword data found. Ensure GSC_CLIENT_EMAIL has access to the GSC property.'}
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
     </div>
   )
 }
@@ -502,23 +596,3 @@ function btnStyle(bg: string, small = false): React.CSSProperties {
   }
 }
 
-const cardStyle: React.CSSProperties = {
-  background: 'white',
-  padding: '20px',
-  borderRadius: '8px',
-  marginBottom: '20px',
-  boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-}
-
-const thStyle: React.CSSProperties = {
-  padding: '12px',
-  textAlign: 'left',
-  fontSize: '14px',
-  fontWeight: 'bold',
-  color: '#495057',
-}
-
-const tdStyle: React.CSSProperties = {
-  padding: '12px',
-  fontSize: '14px',
-}

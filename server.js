@@ -18,8 +18,9 @@ async function startServer() {
     '/healthcare-market-research-uk': '/healthcare-market-research/uk',
     '/healthcare-market-research-europe': '/healthcare-market-research/europe',
     '/quantitative-market-research': '/services/quantitative-research',
-    '/qualitative-market-research': '/services/qualitative-research',
     '/techniques-and-tools-in-quantitative-healthcare-market-research': '/services/quantitative-research',
+    '/fr/contact': '/fr/contacts',
+    '/ar/contact': '/ar/contacts',
     '/global-websites': '/healthcare-market-research',
   };
 

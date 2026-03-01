@@ -42,10 +42,13 @@ function escapeXml(s) {
     .replace(/'/g, '&apos;');
 }
 
-function urlEntry(loc, lastmod = null, changefreq = 'weekly', priority = '0.8') {
+function urlEntry(loc, lastmod = null, changefreq = 'weekly', priority = '0.8', alternates = []) {
   const lastmodTag = lastmod ? `\n    <lastmod>${escapeXml(lastmod)}</lastmod>` : '';
+  const alternatesTags = alternates
+    .map((alt) => `\n    <xhtml:link rel="alternate" hreflang="${escapeXml(alt.lang)}" href="${escapeXml(alt.href)}" />`)
+    .join('');
   return `  <url>
-    <loc>${escapeXml(loc)}</loc>${lastmodTag}
+    <loc>${escapeXml(loc)}</loc>${lastmodTag}${alternatesTags}
     <changefreq>${escapeXml(changefreq)}</changefreq>
     <priority>${escapeXml(priority)}</priority>
   </url>`;
@@ -62,16 +65,27 @@ const staticPages = [
   { path: '/contact', priority: '0.9' },
   { path: '/methodology', priority: '0.8' },
   { path: '/blog', priority: '0.9', changefreq: 'daily' },
+  { path: '/de/blog', priority: '0.8', changefreq: 'weekly' },
+  { path: '/fr/blog', priority: '0.8', changefreq: 'weekly' },
+  { path: '/de/success-in-startups', priority: '0.7', changefreq: 'monthly' },
+  { path: '/ar/arabic-blog-alsawdyh', priority: '0.7', changefreq: 'monthly' },
   { path: '/case-studies', priority: '0.9', changefreq: 'weekly' },
   { path: '/services', priority: '0.9', changefreq: 'monthly' },
   { path: '/services/quantitative-research', priority: '0.8', changefreq: 'monthly' },
   { path: '/services/qualitative-research', priority: '0.8', changefreq: 'monthly' },
   { path: '/services/market-access', priority: '0.8', changefreq: 'monthly' },
+  { path: '/es/market-access', priority: '0.8', changefreq: 'monthly' },
   { path: '/services/competitive-intelligence', priority: '0.8', changefreq: 'monthly' },
   { path: '/services/clinical-trial-support', priority: '0.8', changefreq: 'monthly' },
   { path: '/services/kol-stakeholder-mapping', priority: '0.8', changefreq: 'monthly' },
   { path: '/mena-pharma-market-data', priority: '0.9', changefreq: 'monthly' },
   { path: '/gcc-market-access-guide', priority: '0.9', changefreq: 'monthly' },
+  { path: '/market-research', priority: '0.9', changefreq: 'monthly' },
+  { path: '/market-research-saudi-arabia-pharmaceutical', priority: '0.9', changefreq: 'weekly' },
+  { path: '/market-research-healthcare', priority: '0.9', changefreq: 'weekly' },
+  { path: '/qualitative-market-research', priority: '0.9', changefreq: 'weekly' },
+  { path: '/pharmacies-saudi-arabia-marketing', priority: '0.8', changefreq: 'monthly' },
+  { path: '/bionixus-ai-chatbots-increase-sales-and-lead-generation', priority: '0.7', changefreq: 'monthly' },
   { path: '/bionixus-market-research-middle-east', priority: '0.9', changefreq: 'monthly' },
   { path: '/quantitative-healthcare-market-research', priority: '0.9', changefreq: 'monthly' },
   { path: '/pharmaceutical-companies-kuwait', priority: '0.9', changefreq: 'monthly' },
@@ -86,6 +100,8 @@ const staticPages = [
   { path: '/global-websites', priority: '0.7', changefreq: 'monthly' },
   { path: '/faq', priority: '0.7', changefreq: 'monthly' },
   { path: '/resources', priority: '0.7', changefreq: 'monthly' },
+  { path: '/fr/contacts', priority: '0.7', changefreq: 'monthly' },
+  { path: '/ar/contacts', priority: '0.7', changefreq: 'monthly' },
   { path: '/privacy', priority: '0.3', changefreq: 'yearly' },
 ];
 
@@ -138,6 +154,38 @@ function buildStaticRoutes() {
     });
   }
   return routes;
+}
+
+const hreflangGroups = [
+  { en: '/', de: '/de', fr: '/fr', es: '/es', ar: '/ar', 'zh-CN': '/zh', 'x-default': '/' },
+  { en: '/contact', de: '/de/contact', fr: '/fr/contacts', es: '/es/contact', ar: '/ar/contacts', 'zh-CN': '/zh/contact', 'x-default': '/contact' },
+  { en: '/blog', de: '/de/blog', fr: '/fr/blog', es: '/blog', ar: '/blog', 'zh-CN': '/blog', 'x-default': '/blog' },
+  { en: '/services/market-access', de: '/services/market-access', fr: '/services/market-access', es: '/es/market-access', ar: '/services/market-access', 'zh-CN': '/services/market-access', 'x-default': '/services/market-access' },
+  {
+    en: '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
+    de: '/de/success-in-startups',
+    fr: '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
+    es: '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
+    ar: '/ar/arabic-blog-alsawdyh',
+    'zh-CN': '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
+    'x-default': '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
+  },
+];
+
+function pathFromAbsoluteUrl(url) {
+  try {
+    return new URL(url).pathname;
+  } catch {
+    return '';
+  }
+}
+
+function alternatesForUrl(url) {
+  const path = pathFromAbsoluteUrl(url);
+  if (!path) return [];
+  const group = hreflangGroups.find((item) => Object.values(item).includes(path));
+  if (!group) return [];
+  return Object.entries(group).map(([lang, p]) => ({ lang, href: `${BASE}${p}` }));
 }
 
 async function fetchSanitySlugs(projectId, dataset, types) {
@@ -384,11 +432,18 @@ async function main() {
   const urls = [...finalUrls.entries()]
     .sort(([a], [b]) => a.localeCompare(b))
     .map(([loc, meta]) =>
-      urlEntry(loc, meta.lastmod || today, meta.changefreq || 'weekly', meta.priority || '0.8')
+      urlEntry(
+        loc,
+        meta.lastmod || today,
+        meta.changefreq || 'weekly',
+        meta.priority || '0.8',
+        alternatesForUrl(loc)
+      )
     );
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${urls.join('\n')}
 </urlset>
 `;

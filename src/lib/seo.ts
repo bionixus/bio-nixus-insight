@@ -84,10 +84,10 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
   '/contact': {
     en: '/contact',
     de: '/de/contact',
-    fr: '/fr/contact',
+    fr: '/fr/contacts',
     es: '/es/contact',
     zh: '/zh/contact',
-    ar: '/ar/contact',
+    ar: '/ar/contacts',
   },
   '/methodology': {
     en: '/methodology',
@@ -96,6 +96,70 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     es: '/es/methodology',
     zh: '/zh/methodology',
     ar: '/ar/methodology',
+  },
+  '/blog': {
+    en: '/blog',
+    de: '/de/blog',
+    fr: '/fr/blog',
+    es: '/blog',
+    zh: '/blog',
+    ar: '/blog',
+  },
+  '/market-access': {
+    en: '/services/market-access',
+    de: '/services/market-access',
+    fr: '/services/market-access',
+    es: '/es/market-access',
+    zh: '/services/market-access',
+    ar: '/services/market-access',
+  },
+  '/market-research': {
+    en: '/market-research',
+    de: '/market-research',
+    fr: '/market-research',
+    es: '/market-research',
+    zh: '/market-research',
+    ar: '/market-research',
+  },
+  '/market-research-saudi-arabia-pharmaceutical': {
+    en: '/market-research-saudi-arabia-pharmaceutical',
+    de: '/market-research-saudi-arabia-pharmaceutical',
+    fr: '/market-research-saudi-arabia-pharmaceutical',
+    es: '/market-research-saudi-arabia-pharmaceutical',
+    zh: '/market-research-saudi-arabia-pharmaceutical',
+    ar: '/market-research-saudi-arabia-pharmaceutical',
+  },
+  '/market-research-healthcare': {
+    en: '/market-research-healthcare',
+    de: '/market-research-healthcare',
+    fr: '/market-research-healthcare',
+    es: '/market-research-healthcare',
+    zh: '/market-research-healthcare',
+    ar: '/market-research-healthcare',
+  },
+  '/qualitative-market-research': {
+    en: '/qualitative-market-research',
+    de: '/qualitative-market-research',
+    fr: '/qualitative-market-research',
+    es: '/qualitative-market-research',
+    zh: '/qualitative-market-research',
+    ar: '/qualitative-market-research',
+  },
+  '/pharmacies-saudi-arabia-marketing': {
+    en: '/pharmacies-saudi-arabia-marketing',
+    de: '/pharmacies-saudi-arabia-marketing',
+    fr: '/pharmacies-saudi-arabia-marketing',
+    es: '/pharmacies-saudi-arabia-marketing',
+    zh: '/pharmacies-saudi-arabia-marketing',
+    ar: '/pharmacies-saudi-arabia-marketing',
+  },
+  '/bionixus-ai-chatbots-increase-sales-and-lead-generation': {
+    en: '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
+    de: '/de/success-in-startups',
+    fr: '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
+    es: '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
+    zh: '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
+    ar: '/ar/arabic-blog-alsawdyh',
   },
 };
 
@@ -112,7 +176,8 @@ export function getCanonicalPath(pathname: string = '/') {
   const normalized = normalizePath(pathname);
   const group = findRouteGroup(normalized);
   if (!group) return normalized;
-  return localizedRouteGroups[group].en;
+  const routes = localizedRouteGroups[group];
+  return Object.values(routes).includes(normalized) ? normalized : routes.en;
 }
 
 export function getHreflangLinks(pathname: string = '/') {
@@ -127,14 +192,15 @@ export function getHreflangLinks(pathname: string = '/') {
   }
 
   const routes = localizedRouteGroups[group];
+  const routeFor = (lang: 'en' | 'de' | 'fr' | 'es' | 'zh' | 'ar') => routes[lang] || routes.en;
   return [
-    { lang: 'x-default', href: `${base}${routes.en}` },
-    { lang: 'en', href: `${base}${routes.en}` },
-    { lang: 'de', href: `${base}${routes.de}` },
-    { lang: 'fr', href: `${base}${routes.fr}` },
-    { lang: 'es', href: `${base}${routes.es}` },
-    { lang: 'zh-CN', href: `${base}${routes.zh}` },
-    { lang: 'ar', href: `${base}${routes.ar}` },
+    { lang: 'x-default', href: `${base}${routeFor('en')}` },
+    { lang: 'en', href: `${base}${routeFor('en')}` },
+    { lang: 'de', href: `${base}${routeFor('de')}` },
+    { lang: 'fr', href: `${base}${routeFor('fr')}` },
+    { lang: 'es', href: `${base}${routeFor('es')}` },
+    { lang: 'zh-CN', href: `${base}${routeFor('zh')}` },
+    { lang: 'ar', href: `${base}${routeFor('ar')}` },
   ];
 }
 

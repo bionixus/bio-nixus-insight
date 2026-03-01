@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import ServicesSection from '@/components/ServicesSection';
@@ -40,6 +41,27 @@ const Index = () => {
       <main>
         <HeroSection />
         <ServicesSection />
+        <section className="section-padding py-10 bg-muted/20">
+          <div className="container-wide max-w-6xl mx-auto">
+            <h2 className="text-2xl font-display font-semibold text-foreground mb-4">
+              Featured Market Research Pages
+            </h2>
+            <div className="grid md:grid-cols-3 gap-4">
+              <Link to="/market-research" className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 transition-colors">
+                <h3 className="font-semibold text-foreground mb-1">Market Research Services Hub</h3>
+                <p className="text-sm text-muted-foreground">Compare quantitative, qualitative, and healthcare-specific services.</p>
+              </Link>
+              <Link to="/market-research-saudi-arabia-pharmaceutical" className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 transition-colors">
+                <h3 className="font-semibold text-foreground mb-1">Saudi Arabia Pharmaceutical Research</h3>
+                <p className="text-sm text-muted-foreground">SFDA and Vision 2030 aligned market intelligence for Saudi execution.</p>
+              </Link>
+              <Link to="/market-research-healthcare" className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 transition-colors">
+                <h3 className="font-semibold text-foreground mb-1">Healthcare Market Research</h3>
+                <p className="text-sm text-muted-foreground">Decision-ready insight programs for healthcare and pharmaceutical teams.</p>
+              </Link>
+            </div>
+          </div>
+        </section>
         <GeographicCoverageSection />
         <MethodologySection />
         <TherapeuticAreasSection />

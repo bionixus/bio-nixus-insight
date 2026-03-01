@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -29,28 +30,56 @@ const blogBreadcrumbSchema = {
 
 const Blog = () => {
   const { data: posts, isLoading, isError, error } = useSanityBlog();
+  const { pathname } = useLocation();
+  const isGerman = pathname.startsWith('/de/');
+  const isFrench = pathname.startsWith('/fr/');
+  const canonical = isGerman ? 'https://www.bionixus.com/de/blog' : isFrench ? 'https://www.bionixus.com/fr/blog' : 'https://www.bionixus.com/blog';
+  const title = isGerman
+    ? 'Healthcare Markt-Insights Blog | BioNixus'
+    : isFrench
+      ? 'Blog Insights Marché Santé | BioNixus'
+      : 'Healthcare Market Research Blog | BioNixus';
+  const description = isGerman
+    ? 'Insights zu pharmazeutischer Marktforschung, Marktzugang und Gesundheitsstrategien für EMEA.'
+    : isFrench
+      ? 'Insights sur les études de marché santé, le market access et la stratégie pharmaceutique en EMEA.'
+      : 'Expert insights on pharmaceutical market research, market access, clinical trials, and healthcare intelligence across Europe, UAE, Saudi Arabia, and MENA.';
+  const introTitle = isGerman ? 'Regionale Insights für DACH und EMEA' : isFrench ? 'Insights régionaux pour la France et l’EMEA' : 'Regional healthcare intelligence updates';
+  const introText = isGerman
+    ? 'Diese Blog-Übersicht enthält praxisnahe Inhalte für pharmazeutische Teams in Deutschland, Europa und der MENA-Region.'
+    : isFrench
+      ? 'Cette page blog met en avant des analyses actionnables pour les équipes pharma en France, en Europe et en MENA.'
+      : 'This blog index highlights practical insights for healthcare and pharma teams across Europe and MENA.';
 
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Healthcare Market Research Blog | BioNixus</title>
-        <meta name="description" content="Expert insights on pharmaceutical market research, market access, clinical trials, and healthcare intelligence across Europe, UAE, Saudi Arabia, and MENA." />
-        <link rel="canonical" href="https://www.bionixus.com/blog" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={canonical} />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="BioNixus" />
-        <meta property="og:title" content="Healthcare Market Research Blog | BioNixus" />
-        <meta property="og:description" content="Expert insights on pharmaceutical market research, market access, and healthcare intelligence across Europe and MENA." />
-        <meta property="og:url" content="https://www.bionixus.com/blog" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonical} />
         <meta property="og:image" content="https://www.bionixus.com/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@BioNixus" />
-        <meta name="twitter:title" content="Healthcare Market Research Blog | BioNixus" />
-        <meta name="twitter:description" content="Expert insights on pharmaceutical market research, market access, and healthcare intelligence across Europe and MENA." />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
         <script type="application/ld+json">{JSON.stringify(blogCollectionSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(blogBreadcrumbSchema)}</script>
       </Helmet>
       <Navbar />
       <main>
+        {(isGerman || isFrench) && (
+          <section className="section-padding pt-24 pb-8">
+            <div className="container-wide max-w-4xl mx-auto">
+              <h1 className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-3">{introTitle}</h1>
+              <p className="text-muted-foreground leading-relaxed">{introText}</p>
+            </div>
+          </section>
+        )}
         {isError ? (
           <section className="section-padding">
             <div className="container-wide max-w-xl mx-auto text-center py-12 px-4 rounded-lg bg-destructive/10 border border-destructive/20">

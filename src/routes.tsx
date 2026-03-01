@@ -17,8 +17,16 @@ import VerifyEmail from '@/pages/VerifyEmail';
 import MenaMarketData from '@/pages/MenaMarketData';
 import GccMarketAccessGuide from '@/pages/GccMarketAccessGuide';
 import MarketResearch from '@/pages/MarketResearch';
+import MarketResearchSaudiArabiaPharmaceutical from '@/pages/MarketResearchSaudiArabiaPharmaceutical';
+import MarketResearchHealthcare from '@/pages/MarketResearchHealthcare';
+import QualitativeMarketResearch from '@/pages/QualitativeMarketResearch';
 import BionixusMarketResearchMiddleEast from '@/pages/BionixusMarketResearchMiddleEast';
 import QuantitativeHealthcareMarketResearchGuide from '@/pages/QuantitativeHealthcareMarketResearchGuide';
+import SpanishMarketAccess from '@/pages/SpanishMarketAccess';
+import GermanSuccessInStartups from '@/pages/GermanSuccessInStartups';
+import ArabicBlogAlsawdyh from '@/pages/ArabicBlogAlsawdyh';
+import PharmaciesSaudiArabiaMarketing from '@/pages/PharmaciesSaudiArabiaMarketing';
+import AiChatbotsLeadGeneration from '@/pages/AiChatbotsLeadGeneration';
 import GlobalWebsites from '@/pages/GlobalWebsites';
 import GlobalWebsiteCountry from '@/pages/GlobalWebsiteCountry';
 import KuwaitPharmaCompanies from '@/pages/KuwaitPharmaCompanies';
@@ -82,6 +90,9 @@ export const routes: RouteObject[] = [
   { path: '/mena-pharma-market-data', element: <MenaMarketData /> },
   { path: '/gcc-market-access-guide', element: <GccMarketAccessGuide /> },
   { path: '/market-research', element: <MarketResearch /> },
+  { path: '/market-research-saudi-arabia-pharmaceutical', element: <MarketResearchSaudiArabiaPharmaceutical /> },
+  { path: '/market-research-healthcare', element: <MarketResearchHealthcare /> },
+  { path: '/qualitative-market-research', element: <QualitativeMarketResearch /> },
   { path: '/bionixus-market-research-middle-east', element: <BionixusMarketResearchMiddleEast /> },
   {
     path: '/quantitative-healthcare-market-research',
@@ -108,13 +119,22 @@ export const routes: RouteObject[] = [
   { path: '/pharmaceutical-companies-iraq', element: <IraqPharmaCompanies /> },
   { path: '/pharmaceutical-companies-iran', element: <IranPharmaCompanies /> },
   { path: '/blog', element: <Blog /> },
+  { path: '/de/blog', element: <Blog /> },
+  { path: '/fr/blog', element: <Blog /> },
+  { path: '/es/market-access', element: <SpanishMarketAccess /> },
+  { path: '/de/success-in-startups', element: <GermanSuccessInStartups /> },
+  { path: '/ar/arabic-blog-alsawdyh', element: <ArabicBlogAlsawdyh /> },
+  { path: '/pharmacies-saudi-arabia-marketing', element: <PharmaciesSaudiArabiaMarketing /> },
+  { path: '/bionixus-ai-chatbots-increase-sales-and-lead-generation', element: <AiChatbotsLeadGeneration /> },
   { path: '/blog/:slug', element: <BlogPost /> },
   { path: '/case-studies', element: <CaseStudies /> },
   { path: '/case-studies/:slug', element: suspensePage(<CaseStudy />) },
   { path: '/privacy', element: <Privacy /> },
   { path: '/contact', element: <Contact /> },
   { path: '/de/contact', element: <Contact /> },
+  { path: '/fr/contacts', element: <Contact /> },
   { path: '/fr/contact', element: <Contact /> },
+  { path: '/ar/contacts', element: <Contact /> },
   { path: '/es/contact', element: <Contact /> },
   { path: '/zh/contact', element: <Contact /> },
   { path: '/ar/contact', element: <Contact /> },
