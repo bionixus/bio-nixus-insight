@@ -128,10 +128,10 @@ const CaseStudies = () => {
             {/* Authority stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto">
               {[
+                { icon: <TrendingUp className="w-5 h-5" />, value: '120+', label: 'Projects Delivered' },
+                { icon: <Globe className="w-5 h-5" />, value: '17+', label: 'Countries Covered' },
+                { icon: <FlaskConical className="w-5 h-5" />, value: '14+', label: 'Therapeutic Areas' },
                 { icon: <Users className="w-5 h-5" />, value: '25+', label: 'Clients Served' },
-                { icon: <Globe className="w-5 h-5" />, value: '15+', label: 'Countries Covered' },
-                { icon: <FlaskConical className="w-5 h-5" />, value: '12+', label: 'Therapeutic Areas' },
-                { icon: <TrendingUp className="w-5 h-5" />, value: '40+', label: 'Projects Delivered' },
               ].map(({ icon, value, label }) => (
                 <div key={label} className="text-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-5">
                   <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-gold-warm/20 text-gold-warm mb-3">
