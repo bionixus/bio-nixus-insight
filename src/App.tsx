@@ -6,6 +6,7 @@ import { LanguageProvider } from '@/contexts/LanguageContext';
 import DocumentHead from '@/components/DocumentHead';
 import SyncLanguageFromPath from '@/components/SyncLanguageFromPath';
 import ScrollToTop from '@/components/ScrollToTop';
+import GoogleTagManager from '@/components/GoogleTagManager';
 import { routes } from '@/routes';
 
 const Toaster = lazy(() => import('@/components/ui/toaster').then((m) => ({ default: m.Toaster })));
@@ -41,7 +42,6 @@ function DeferredAnalytics() {
   return (
     <Suspense fallback={null}>
       <LazyStatsigInit />
-      <GoogleAnalytics />
       <LazyVercelAnalytics />
     </Suspense>
   );
@@ -53,7 +53,9 @@ function AppProviders({ children }: { children: ReactNode }) {
       <ScrollToTop />
       <LanguageProvider>
         <SyncLanguageFromPath />
+        <GoogleTagManager />
         <DocumentHead />
+        <GoogleAnalytics />
         <TooltipProvider>
           <Suspense fallback={null}>
             <Toaster />
