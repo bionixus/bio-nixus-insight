@@ -145,6 +145,11 @@ async function startServer() {
         helmetData?.script?.toString() || '',
       ].join('\n');
 
+      let statusCode = 200;
+      if (headTags.includes('name="prerender-status"') && headTags.includes('content="404"')) {
+        statusCode = 404;
+      }
+
       const page = template
         .replace('<!--ssr-head-->', headTags)
         .replace('<!--ssr-outlet-->', appHtml)
@@ -153,7 +158,7 @@ async function startServer() {
           `<script>window.__INITIAL_DATA__ = ${JSON.stringify(initialData).replace(/</g, '\\u003c')}</script>`,
         );
 
-      res.status(200).set({ 'Content-Type': 'text/html' }).end(page);
+      res.status(statusCode).set({ 'Content-Type': 'text/html' }).end(page);
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error('SSR request failed:', error);
