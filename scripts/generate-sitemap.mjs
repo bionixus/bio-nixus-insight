@@ -11,6 +11,7 @@
  * Or use prebuild so it runs automatically.
  */
 import { writeFileSync, readFileSync, existsSync } from 'fs';
+import { execSync } from 'child_process';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -188,7 +189,29 @@ function alternatesForUrl(url) {
   return Object.entries(group).map(([lang, p]) => ({ lang, href: `${BASE}${p}` }));
 }
 
-async function fetchSanitySlugs(projectId, dataset, types) {
+/**
+ * Returns git last-modified date for a file as YYYY-MM-DD.
+ * Falls back to today if git has no log for the file.
+ */
+function getGitLastModified(filePath) {
+  try {
+    const result = execSync(
+      `git log -1 --format=%cI -- "${filePath}"`,
+      { cwd: root, encoding: 'utf8' }
+    ).trim();
+    if (!result) return null;
+    // W3C datetime format YYYY-MM-DD
+    return result.slice(0, 10);
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Fetch slugs AND their _updatedAt timestamps from Sanity.
+ * Returns array of { slug, lastmod } objects.
+ */
+async function fetchSanityContent(projectId, dataset, types) {
   try {
     const { createClient } = await import('@sanity/client');
     const client = createClient({
@@ -197,20 +220,27 @@ async function fetchSanitySlugs(projectId, dataset, types) {
       apiVersion: '2024-01-01',
       useCdn: true,
     });
-    // Fetch multiple types at once
     const typeArray = Array.isArray(types) ? types : [types];
-    const query = `*[_type in $types && defined(slug.current)]{ "slug": slug.current }`;
+    const query = `*[_type in $types && defined(slug.current)]{ "slug": slug.current, _updatedAt }`;
     const list = await Promise.race([
       client.fetch(query, { types: typeArray }),
       new Promise((_, reject) =>
         setTimeout(() => reject(new Error('timeout')), 15000)
       ),
     ]);
-    // Deduplicate slugs (in case same slug exists in both post and blogPost)
-    const slugs = [...new Set((list || []).map((o) => o.slug).filter(Boolean))];
-    return slugs;
+    // Deduplicate: keep freshest _updatedAt for each slug
+    const map = new Map();
+    for (const item of (list || [])) {
+      if (!item.slug) continue;
+      const existing = map.get(item.slug);
+      const updatedAt = item._updatedAt ? item._updatedAt.slice(0, 10) : null;
+      if (!existing || (updatedAt && updatedAt > existing.lastmod)) {
+        map.set(item.slug, { slug: item.slug, lastmod: updatedAt });
+      }
+    }
+    return [...map.values()];
   } catch (err) {
-    console.warn(`Sitemap: could not fetch slugs:`, err.message);
+    console.warn(`Sitemap: could not fetch Sanity content:`, err.message);
     return [];
   }
 }
@@ -356,6 +386,49 @@ function mergeMeta(a, b) {
   return { priority, changefreq, lastmod };
 }
 
+/**
+ * Maps static sitemap paths to their primary source file(s) for git date lookup.
+ * The first file found wins; falls back to today if none are tracked.
+ */
+const STATIC_PAGE_FILES = {
+  '/': ['src/pages/Index.tsx'],
+  '/about': ['src/pages/About.tsx'],
+  '/services': ['src/pages/Services.tsx'],
+  '/services/quantitative-research': ['src/pages/ServiceDetail.tsx'],
+  '/services/qualitative-research': ['src/pages/ServiceDetail.tsx'],
+  '/services/market-access': ['src/pages/ServiceDetail.tsx'],
+  '/services/competitive-intelligence': ['src/pages/ServiceDetail.tsx'],
+  '/services/clinical-trial-support': ['src/pages/ServiceDetail.tsx'],
+  '/services/kol-stakeholder-mapping': ['src/pages/ServiceDetail.tsx'],
+  '/blog': ['src/pages/Blog.tsx'],
+  '/case-studies': ['src/pages/CaseStudies.tsx'],
+  '/contact': ['src/pages/Contact.tsx'],
+  '/methodology': ['src/pages/Methodology.tsx'],
+  '/faq': ['src/pages/FAQ.tsx'],
+  '/resources': ['src/pages/Resources.tsx'],
+  '/privacy': ['src/pages/Privacy.tsx'],
+  '/market-research': ['src/pages/MarketResearch.tsx'],
+  '/market-research-healthcare': ['src/pages/MarketResearchHealthcare.tsx'],
+  '/market-research-saudi-arabia-pharmaceutical': ['src/pages/MarketResearchSaudiArabiaPharmaceutical.tsx'],
+  '/qualitative-market-research': ['src/pages/QualitativeMarketResearch.tsx'],
+  '/quantitative-healthcare-market-research': ['src/pages/QuantitativeHealthcareMarketResearchGuide.tsx'],
+  '/mena-pharma-market-data': ['src/pages/MenaMarketData.tsx'],
+  '/gcc-market-access-guide': ['src/pages/GccMarketAccessGuide.tsx'],
+  '/bionixus-market-research-middle-east': ['src/pages/BionixusMarketResearchMiddleEast.tsx'],
+  '/bionixus-ai-chatbots-increase-sales-and-lead-generation': ['src/pages/AiChatbotsLeadGeneration.tsx'],
+  '/pharmacies-saudi-arabia-marketing': ['src/pages/PharmaciesSaudiArabiaMarketing.tsx'],
+  '/pharmaceutical-companies-kuwait': ['src/pages/KuwaitPharmaCompanies.tsx'],
+  '/pharmaceutical-companies-saudi-arabia': ['src/pages/SaudiPharmaCompanies.tsx'],
+  '/pharmaceutical-companies-uae': ['src/pages/UaePharmaCompanies.tsx'],
+  '/pharmaceutical-companies-egypt': ['src/pages/EgyptPharmaCompanies.tsx'],
+  '/pharmaceutical-companies-qatar': ['src/pages/QatarPharmaCompanies.tsx'],
+  '/pharmaceutical-companies-oman': ['src/pages/OmanPharmaCompanies.tsx'],
+  '/pharmaceutical-companies-bahrain': ['src/pages/BahrainPharmaCompanies.tsx'],
+  '/pharmaceutical-companies-iraq': ['src/pages/IraqPharmaCompanies.tsx'],
+  '/pharmaceutical-companies-iran': ['src/pages/IranPharmaCompanies.tsx'],
+  '/global-websites': ['src/pages/GlobalWebsites.tsx'],
+};
+
 async function main() {
   loadEnv();
 
@@ -364,9 +437,9 @@ async function main() {
   const caseProjectId = process.env.VITE_SANITY_CASE_STUDIES_PROJECT_ID || 'gj6cv27f';
   const caseDataset = process.env.VITE_SANITY_CASE_STUDIES_DATASET || 'production';
 
-  const [blogSlugs, caseSlugs] = await Promise.all([
-    fetchSanitySlugs(blogProjectId, blogDataset, ['post', 'blogPost']),
-    fetchSanitySlugs(caseProjectId, caseDataset, 'caseStudy'),
+  const [blogContent, caseContent] = await Promise.all([
+    fetchSanityContent(blogProjectId, blogDataset, ['post', 'blogPost']),
+    fetchSanityContent(caseProjectId, caseDataset, 'caseStudy'),
   ]);
 
   const today = new Date().toISOString().slice(0, 10);
@@ -376,28 +449,35 @@ async function main() {
   const staticRoutes = buildStaticRoutes();
   for (const { path, priority, changefreq } of staticRoutes) {
     const url = BASE + path;
+    // Try to get the real last-modified date from git for the source file
+    const sourceFiles = STATIC_PAGE_FILES[path] || [];
+    let lastmod = null;
+    for (const relFile of sourceFiles) {
+      lastmod = getGitLastModified(join(root, relFile));
+      if (lastmod) break;
+    }
     candidates.set(url, {
       priority: priority || '0.8',
       changefreq: changefreq || 'weekly',
-      lastmod: today,
+      lastmod: lastmod || today,
       enforceCanonical: false,
     });
   }
-  for (const slug of blogSlugs) {
+  for (const { slug, lastmod } of blogContent) {
     const url = `${BASE}/blog/${encodeURIComponent(slug)}`;
     candidates.set(url, {
       priority: '0.7',
       changefreq: 'monthly',
-      lastmod: today,
+      lastmod: lastmod || today,
       enforceCanonical: true,
     });
   }
-  for (const slug of caseSlugs) {
+  for (const { slug, lastmod } of caseContent) {
     const url = `${BASE}/case-studies/${encodeURIComponent(slug)}`;
     candidates.set(url, {
       priority: '0.7',
       changefreq: 'monthly',
-      lastmod: today,
+      lastmod: lastmod || today,
       enforceCanonical: true,
     });
   }
