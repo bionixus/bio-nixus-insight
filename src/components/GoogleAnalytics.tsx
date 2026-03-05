@@ -9,7 +9,6 @@ import { useEffect } from 'react';
 export default function GoogleAnalytics() {
     const location = useLocation();
     const gaId = import.meta.env.VITE_GA_ID || import.meta.env.VITE_GA_MEASUREMENT_ID;
-    const gtmId = import.meta.env.VITE_GTM_ID;
 
     useEffect(() => {
         if (gaId && window.gtag) {
@@ -19,8 +18,7 @@ export default function GoogleAnalytics() {
         }
     }, [location, gaId]);
 
-    // Avoid duplicate page tracking when GTM is active.
-    if (!gaId || gtmId) return null;
+    if (!gaId) return null;
 
     return (
         <Helmet>
