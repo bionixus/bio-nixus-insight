@@ -14,6 +14,13 @@ type MarketSection = {
   paragraphs: string[];
 };
 
+type UaeSection = {
+  id: string;
+  title: string;
+  paragraphs?: string[];
+  bullets?: string[];
+};
+
 function buildMarketSections(countryName: string, regionName: string): MarketSection[] {
   return [
     {
@@ -131,6 +138,106 @@ function countWords(text: string) {
   return text.trim().split(/\s+/).filter(Boolean).length;
 }
 
+const UAE_FAQS = [
+  {
+    question: 'What is the typical sample size for UAE physician research?',
+    answer:
+      'Quantitative studies usually range from n=50 for niche specialties to n=200+ for broader physician segments. Qualitative programs often reach thematic saturation with 10-15 in-depth interviews.',
+  },
+  {
+    question: 'How do you access physicians in SEHA hospitals?',
+    answer:
+      'We use institutional partnerships, medical conference recruitment, and physician society channels, with the required ethics and facility-level approvals managed as part of execution.',
+  },
+  {
+    question: 'Is Arabic-language research necessary in the UAE?',
+    answer:
+      'English is common in clinical settings, but Arabic modules are important for Emirati physician segments, patient studies, and pharmacy-level research. We support both languages.',
+  },
+  {
+    question: 'What is the MOHAP registration timeline for pharmaceuticals?',
+    answer:
+      'Typical timelines are around 6-12 months depending on therapy class, dossier complexity, local evidence needs, and pricing or reimbursement negotiations.',
+  },
+];
+
+const UAE_SECTIONS: UaeSection[] = [
+  {
+    id: 'market-overview',
+    title: 'UAE Pharmaceutical Market at a Glance',
+    bullets: [
+      'Market value: AED 17.8 billion (USD 4.8B) pharmaceutical market (2024)',
+      'Growth rate: 8.2% CAGR (2024-2028), above global average',
+      'Hospital infrastructure: 160+ public and private hospitals; 3,800+ pharmacies',
+      'Medical tourism: 500,000+ international patients annually driving specialty demand',
+      'Regulatory bodies: DHA (Dubai), MOHAP (federal), DOH (Abu Dhabi)',
+    ],
+    paragraphs: [
+      'The UAE pharmaceutical market is one of the most execution-ready healthcare environments in MENA, with concentrated specialist hubs in Dubai and Abu Dhabi, high private insurance penetration, and strong infrastructure for advanced therapies.',
+      'Commercial strategy in the Emirates requires emirate-specific design: Dubai dynamics differ from Abu Dhabi and Northern Emirates in provider mix, payer behavior, and institutional adoption pathways.',
+    ],
+  },
+  {
+    id: 'services',
+    title: 'Comprehensive UAE Pharmaceutical Market Research Services',
+    bullets: [
+      'Quantitative physician and HCP surveys across public and private systems',
+      'Qualitative KOL interviews and multi-stakeholder focus groups',
+      'MOHAP and payer-aligned market access and pricing intelligence',
+      'KOL and influence-network mapping by therapeutic area and emirate',
+      'Pharmacy channel studies across chain and independent networks',
+    ],
+    paragraphs: [
+      'BioNixus combines quantitative and qualitative methods to produce decision-ready evidence for launch planning, market access, and lifecycle optimization in the UAE.',
+      'Programs are built for practical execution: sample design, stakeholder prioritization, evidence packaging, and implementation support are aligned to the same decision framework.',
+    ],
+  },
+  {
+    id: 'geographic-coverage',
+    title: 'UAE Healthcare System Coverage',
+    bullets: [
+      'Dubai: Dubai Healthcare City, Mediclinic network, NMC, key DHA institutions',
+      'Abu Dhabi: SEHA network, Cleveland Clinic Abu Dhabi, Burjeel, SSMC',
+      'Northern Emirates: Sharjah, RAK, Ajman, Fujairah, and related provider clusters',
+    ],
+  },
+  {
+    id: 'compliance',
+    title: 'Regulatory and Compliance Framework',
+    bullets: [
+      'DHA, MOHAP, and DOH alignment for study design and execution',
+      'ICH-GCP standards and local ethics expectations',
+      'Arabic and English informed consent and field protocols',
+      'Enterprise-grade data security and privacy controls',
+    ],
+    paragraphs: [
+      'Our UAE market research model is designed for compliance-by-default, so evidence quality and governance expectations are met from recruitment through reporting.',
+    ],
+  },
+  {
+    id: 'methodology',
+    title: 'UAE Field Methodology',
+    bullets: [
+      'License-verified physician recruitment (DHA and MOHAP practitioner checks)',
+      'Modes: online, CATI, and targeted face-to-face in major emirates',
+      'Arabic-speaking interviewer support where required',
+      'Quality controls: attention checks, geolocation logic, and callback audits',
+      'Segmentation: emirate, public vs. private, specialist vs. PCP, payer context',
+    ],
+  },
+  {
+    id: 'therapeutic-areas',
+    title: 'Priority Therapeutic Areas in the UAE',
+    bullets: [
+      'Oncology and specialty access pathways',
+      'Diabetes and metabolic disorders with high-prevalence dynamics',
+      'Cardiovascular treatment and technology adoption patterns',
+      'Rare diseases and orphan-access barriers',
+      'Respiratory care and biologic adoption trends',
+    ],
+  },
+];
+
 const GlobalWebsiteCountry = () => {
   const { countrySlug } = useParams<{ countrySlug: string }>();
   const { language } = useLanguage();
@@ -160,6 +267,7 @@ const GlobalWebsiteCountry = () => {
   }
 
   const canonicalUrl = `https://www.bionixus.com/global-websites/${country.slug}`;
+  const isUaePage = country.slug === 'united-arab-emirates';
   const marketSections = useMemo(
     () => buildMarketSections(country.countryName, country.regionName),
     [country.countryName, country.regionName]
@@ -172,12 +280,79 @@ const GlobalWebsiteCountry = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>{country.countryName} | BioNixus Global Websites</title>
+        <title>
+          {isUaePage
+            ? 'UAE Pharmaceutical Market Research | Dubai and Abu Dhabi Healthcare Insights | BioNixus'
+            : `${country.countryName} | BioNixus Global Websites`}
+        </title>
         <meta
           name="description"
-          content={`Comprehensive ${country.countryName} healthcare market strategy guide by BioNixus with standardized structure, stakeholder mapping, access logic, and execution roadmap.`}
+          content={
+            isUaePage
+              ? 'Leading UAE pharmaceutical market research services with physician surveys, KOL interviews, and market access intelligence across Dubai, Abu Dhabi, and Northern Emirates.'
+              : `Comprehensive ${country.countryName} healthcare market strategy guide by BioNixus with standardized structure, stakeholder mapping, access logic, and execution roadmap.`
+          }
         />
+        <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+        <meta name="llm-access" content="allow" />
         <link rel="canonical" href={canonicalUrl} />
+        <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
+        <link rel="alternate" hrefLang="en" href={canonicalUrl} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta
+          property="og:title"
+          content={
+            isUaePage
+              ? 'Leading Pharmaceutical Market Research in the UAE | BioNixus'
+              : `${country.countryName} Healthcare Market Strategy | BioNixus`
+          }
+        />
+        <meta
+          property="og:description"
+          content={
+            isUaePage
+              ? 'Dubai and Abu Dhabi healthcare intelligence for drug development, market access, and commercialization in the Emirates.'
+              : `Healthcare market strategy blueprint for ${country.countryName}.`
+          }
+        />
+        {isUaePage ? (
+          <>
+            <script type="application/ld+json">
+              {JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'ProfessionalService',
+                name: 'BioNixus UAE - Pharmaceutical Market Research',
+                url: canonicalUrl,
+                telephone: '+971-4-XXX-XXXX',
+                areaServed: ['Dubai', 'Abu Dhabi', 'Sharjah', 'United Arab Emirates'],
+                serviceType: 'Pharmaceutical Market Research',
+                address: {
+                  '@type': 'PostalAddress',
+                  streetAddress: 'Unit 2406, Swiss Tower, Cluster Y, JLT',
+                  addressLocality: 'Dubai',
+                  addressCountry: 'AE',
+                },
+                geo: {
+                  '@type': 'GeoCoordinates',
+                  latitude: 25.0657,
+                  longitude: 55.141,
+                },
+              })}
+            </script>
+            <script type="application/ld+json">
+              {JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'FAQPage',
+                mainEntity: UAE_FAQS.map((item) => ({
+                  '@type': 'Question',
+                  name: item.question,
+                  acceptedAnswer: { '@type': 'Answer', text: item.answer },
+                })),
+              })}
+            </script>
+          </>
+        ) : null}
       </Helmet>
 
       <Navbar />
@@ -192,16 +367,22 @@ const GlobalWebsiteCountry = () => {
               <ArrowLeft className="w-4 h-4" /> Back to Global Websites
             </Link>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-4">
-              {country.countryName} Healthcare Market Strategy
+              {isUaePage ? 'Leading Pharmaceutical Market Research in the UAE' : `${country.countryName} Healthcare Market Strategy`}
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl">
-              A standardized long-form market blueprint for {country.countryName} within our {country.regionName}{' '}
-              coverage. This page follows the same structure used across all global market pages for consistency in
-              planning, execution, and leadership comparison.
+              {isUaePage
+                ? 'Dubai and Abu Dhabi healthcare intelligence for drug development and market access. We deliver quantitative and qualitative research converting clinical perspectives into commercial strategy across the Emirates.'
+                : `A standardized long-form market blueprint for ${country.countryName} within our ${country.regionName} coverage. This page follows the same structure used across all global market pages for consistency in planning, execution, and leadership comparison.`}
             </p>
-            <p className="text-sm text-muted-foreground mt-4">
-              Estimated page length: ~{estimatedWordCount.toLocaleString()} words
-            </p>
+            {isUaePage ? (
+              <p className="text-sm text-muted-foreground mt-4">
+                Trusted by teams operating in Dubai Healthcare City, SEHA network, Abu Dhabi, Sharjah, and Northern Emirates.
+              </p>
+            ) : (
+              <p className="text-sm text-muted-foreground mt-4">
+                Estimated page length: ~{estimatedWordCount.toLocaleString()} words
+              </p>
+            )}
           </div>
         </section>
 
@@ -233,35 +414,138 @@ const GlobalWebsiteCountry = () => {
           </div>
         </section>
 
-        <section className="section-padding py-8 bg-muted/30">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl font-display font-semibold text-foreground mb-5">Market Table of Contents</h2>
-            <ol className="grid md:grid-cols-2 gap-3">
-              {marketSections.map((section) => (
-                <li key={section.id} className="bg-card border border-border rounded-lg px-4 py-3">
-                  <a href={`#${section.id}`} className="text-primary font-medium hover:underline">
-                    {section.title}
-                  </a>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </section>
-
-        <section className="section-padding py-10">
-          <div className="container-wide max-w-5xl mx-auto space-y-8">
-            {marketSections.map((section) => (
-              <article key={section.id} id={section.id} className="bg-card border border-border rounded-xl p-6 md:p-8">
-                <h2 className="text-2xl font-display font-semibold text-foreground mb-4">{section.title}</h2>
-                <div className="space-y-4 text-muted-foreground leading-relaxed">
-                  {section.paragraphs.map((paragraph, idx) => (
-                    <p key={`${section.id}-${idx}`}>{paragraph}</p>
+        {isUaePage ? (
+          <>
+            <section className="section-padding py-8 bg-muted/30">
+              <div className="container-wide max-w-5xl mx-auto">
+                <h2 className="text-2xl font-display font-semibold text-foreground mb-5">UAE Trust and Compliance Highlights</h2>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
+                  {['DHA Compliant', 'MOHAP Aligned', 'HAAD Recognized', 'ICH-GCP Standards', 'GDPR Compliant'].map((item) => (
+                    <div key={item} className="bg-card border border-border rounded-lg px-4 py-3 text-sm font-medium text-foreground">
+                      {item}
+                    </div>
                   ))}
                 </div>
-              </article>
-            ))}
-          </div>
-        </section>
+              </div>
+            </section>
+
+            <section className="section-padding py-10">
+              <div className="container-wide max-w-5xl mx-auto space-y-8">
+                {UAE_SECTIONS.map((section) => (
+                  <article key={section.id} id={section.id} className="bg-card border border-border rounded-xl p-6 md:p-8">
+                    <h2 className="text-2xl font-display font-semibold text-foreground mb-4">{section.title}</h2>
+                    {section.paragraphs ? (
+                      <div className="space-y-3 text-muted-foreground leading-relaxed mb-4">
+                        {section.paragraphs.map((paragraph) => (
+                          <p key={`${section.id}-${paragraph.slice(0, 24)}`}>{paragraph}</p>
+                        ))}
+                      </div>
+                    ) : null}
+                    {section.bullets ? (
+                      <ul className="list-disc pl-5 space-y-2 text-muted-foreground leading-relaxed">
+                        {section.bullets.map((bullet) => (
+                          <li key={`${section.id}-${bullet.slice(0, 24)}`}>{bullet}</li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </article>
+                ))}
+
+                <article id="case-studies" className="bg-card border border-border rounded-xl p-6 md:p-8">
+                  <h2 className="text-2xl font-display font-semibold text-foreground mb-4">UAE Market Research Success Stories</h2>
+                  <div className="space-y-6 text-muted-foreground leading-relaxed">
+                    <div>
+                      <h3 className="text-lg font-semibold text-foreground mb-2">Case Study 1: Oncology Launch Readiness</h3>
+                      <p>
+                        A European biotech used a mixed-method UAE study (oncology survey plus KOL interviews and payer input) to validate launch viability, refine pricing assumptions, and prioritize advisory board engagement.
+                      </p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-foreground mb-2">Case Study 2: Diabetes Access Strategy</h3>
+                      <p>
+                        A top global pharma team used endocrinologist and payer intelligence to optimize GLP-1 access sequencing and accelerate formulary progress through UAE private and national insurance channels.
+                      </p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-foreground mb-2">Case Study 3: Rare Disease KOL Mapping</h3>
+                      <p>
+                        A rare-disease biotech established a UAE advisory structure with specialist mapping, diagnosis-flow analysis, and advocacy planning to improve education and patient identification pathways.
+                      </p>
+                    </div>
+                  </div>
+                </article>
+
+                <article id="uae-faq" className="bg-card border border-border rounded-xl p-6 md:p-8">
+                  <h2 className="text-2xl font-display font-semibold text-foreground mb-4">Frequently Asked Questions</h2>
+                  <div className="space-y-3">
+                    {UAE_FAQS.map((item) => (
+                      <details key={item.question} className="rounded-lg border border-border px-4 py-3">
+                        <summary className="cursor-pointer font-medium text-foreground">{item.question}</summary>
+                        <p className="mt-3 text-muted-foreground leading-relaxed">{item.answer}</p>
+                      </details>
+                    ))}
+                  </div>
+                </article>
+
+                <article id="related-resources" className="bg-card border border-border rounded-xl p-6 md:p-8">
+                  <h2 className="text-2xl font-display font-semibold text-foreground mb-4">Related Resources</h2>
+                  <div className="grid md:grid-cols-2 gap-3">
+                    <Link to="/market-research-saudi-arabia-pharmaceutical" className="text-primary hover:underline">
+                      Saudi Arabia Pharmaceutical Market Research
+                    </Link>
+                    <Link to="/healthcare-market-research" className="text-primary hover:underline">
+                      Healthcare Market Research Hub
+                    </Link>
+                    <Link to="/services/quantitative-research" className="text-primary hover:underline">
+                      Quantitative Research Services
+                    </Link>
+                    <Link to="/services/qualitative-research" className="text-primary hover:underline">
+                      Qualitative Research Services
+                    </Link>
+                    <Link to="/services/market-access" className="text-primary hover:underline">
+                      Market Access and HTA Strategy
+                    </Link>
+                    <Link to="/services/kol-stakeholder-mapping" className="text-primary hover:underline">
+                      KOL and Stakeholder Mapping
+                    </Link>
+                  </div>
+                </article>
+              </div>
+            </section>
+          </>
+        ) : (
+          <>
+            <section className="section-padding py-8 bg-muted/30">
+              <div className="container-wide max-w-5xl mx-auto">
+                <h2 className="text-2xl font-display font-semibold text-foreground mb-5">Market Table of Contents</h2>
+                <ol className="grid md:grid-cols-2 gap-3">
+                  {marketSections.map((section) => (
+                    <li key={section.id} className="bg-card border border-border rounded-lg px-4 py-3">
+                      <a href={`#${section.id}`} className="text-primary font-medium hover:underline">
+                        {section.title}
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </section>
+
+            <section className="section-padding py-10">
+              <div className="container-wide max-w-5xl mx-auto space-y-8">
+                {marketSections.map((section) => (
+                  <article key={section.id} id={section.id} className="bg-card border border-border rounded-xl p-6 md:p-8">
+                    <h2 className="text-2xl font-display font-semibold text-foreground mb-4">{section.title}</h2>
+                    <div className="space-y-4 text-muted-foreground leading-relaxed">
+                      {section.paragraphs.map((paragraph, idx) => (
+                        <p key={`${section.id}-${idx}`}>{paragraph}</p>
+                      ))}
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </section>
+          </>
+        )}
 
         <section className="section-padding py-10 bg-muted/30">
           <div className="container-wide max-w-5xl mx-auto">
