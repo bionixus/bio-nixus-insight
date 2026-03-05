@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, ArrowRight, ExternalLink } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
-import { formatLanguages, getCountryBySlug } from '@/lib/globalWebsitesData';
+import { formatLanguages, getCountryBySlug, getCountryDirectory } from '@/lib/globalWebsitesData';
 import { useMemo } from 'react';
 
 type MarketSection = {
@@ -19,6 +19,11 @@ type UaeSection = {
   title: string;
   paragraphs?: string[];
   bullets?: string[];
+};
+
+type FaqItem = {
+  question: string;
+  answer: string;
 };
 
 function buildMarketSections(countryName: string, regionName: string): MarketSection[] {
@@ -161,6 +166,31 @@ const UAE_FAQS = [
   },
 ];
 
+function buildGenericFaq(countryName: string): FaqItem[] {
+  return [
+    {
+      question: `How quickly can BioNixus start market research in ${countryName}?`,
+      answer:
+        'Most projects can start within 1-2 weeks after scope alignment. Timelines depend on respondent complexity, regulatory context, and required evidence depth.',
+    },
+    {
+      question: `What methods are used in ${countryName} projects?`,
+      answer:
+        'We combine quantitative surveys, qualitative interviews, stakeholder mapping, and market-access evidence workflows to match your decision priorities.',
+    },
+    {
+      question: `Do you support both local and international stakeholder perspectives in ${countryName}?`,
+      answer:
+        'Yes. We map local treatment pathways and institutional decision points while also benchmarking cross-market dynamics for regional or global teams.',
+    },
+    {
+      question: `Can BioNixus support market access and pricing strategy in ${countryName}?`,
+      answer:
+        'Yes. We design evidence generation and payer-facing insight programs that help teams prioritize pricing logic, reimbursement narratives, and adoption planning.',
+    },
+  ];
+}
+
 const UAE_SECTIONS: UaeSection[] = [
   {
     id: 'market-overview',
@@ -268,6 +298,12 @@ const GlobalWebsiteCountry = () => {
 
   const canonicalUrl = `https://www.bionixus.com/global-websites/${country.slug}`;
   const isUaePage = country.slug === 'united-arab-emirates';
+  const genericFaq = useMemo(() => buildGenericFaq(country.countryName), [country.countryName]);
+  const relatedCountries = useMemo(() => {
+    return getCountryDirectory()
+      .filter((item) => item.regionKey === country.regionKey && item.slug !== country.slug)
+      .slice(0, 4);
+  }, [country.regionKey, country.slug]);
   const marketSections = useMemo(
     () => buildMarketSections(country.countryName, country.regionName),
     [country.countryName, country.regionName]
@@ -283,14 +319,14 @@ const GlobalWebsiteCountry = () => {
         <title>
           {isUaePage
             ? 'UAE Pharmaceutical Market Research | Dubai and Abu Dhabi Healthcare Insights | BioNixus'
-            : `${country.countryName} | BioNixus Global Websites`}
+            : `${country.countryName} Pharmaceutical Market Research | Global Healthcare Intelligence | BioNixus`}
         </title>
         <meta
           name="description"
           content={
             isUaePage
               ? 'Leading UAE pharmaceutical market research services with physician surveys, KOL interviews, and market access intelligence across Dubai, Abu Dhabi, and Northern Emirates.'
-              : `Comprehensive ${country.countryName} healthcare market strategy guide by BioNixus with standardized structure, stakeholder mapping, access logic, and execution roadmap.`
+              : `Pharmaceutical market research in ${country.countryName} with stakeholder mapping, access intelligence, and execution-ready healthcare strategy guidance from BioNixus.`
           }
         />
         <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
@@ -305,7 +341,7 @@ const GlobalWebsiteCountry = () => {
           content={
             isUaePage
               ? 'Leading Pharmaceutical Market Research in the UAE | BioNixus'
-              : `${country.countryName} Healthcare Market Strategy | BioNixus`
+              : `${country.countryName} Pharmaceutical Market Research | BioNixus`
           }
         />
         <meta
@@ -313,9 +349,54 @@ const GlobalWebsiteCountry = () => {
           content={
             isUaePage
               ? 'Dubai and Abu Dhabi healthcare intelligence for drug development, market access, and commercialization in the Emirates.'
-              : `Healthcare market strategy blueprint for ${country.countryName}.`
+              : `Country-specific healthcare market strategy and pharmaceutical intelligence for ${country.countryName}.`
           }
         />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            name: `${country.countryName} Pharmaceutical Market Research`,
+            url: canonicalUrl,
+            description: `Country-specific healthcare market strategy and pharmaceutical intelligence for ${country.countryName}.`,
+            inLanguage: 'en',
+            isPartOf: {
+              '@type': 'WebSite',
+              name: 'BioNixus',
+              url: 'https://www.bionixus.com',
+            },
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Service',
+            name: `Pharmaceutical Market Research in ${country.countryName}`,
+            serviceType: 'Pharmaceutical Market Research',
+            areaServed: {
+              '@type': 'Country',
+              name: country.countryName,
+            },
+            provider: {
+              '@type': 'Organization',
+              name: 'BioNixus',
+              url: 'https://www.bionixus.com',
+            },
+          })}
+        </script>
+        {!isUaePage ? (
+          <script type="application/ld+json">
+            {JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: genericFaq.map((item) => ({
+                '@type': 'Question',
+                name: item.question,
+                acceptedAnswer: { '@type': 'Answer', text: item.answer },
+              })),
+            })}
+          </script>
+        ) : null}
         {isUaePage ? (
           <>
             <script type="application/ld+json">
@@ -568,6 +649,43 @@ const GlobalWebsiteCountry = () => {
             </div>
           </div>
         </section>
+
+        {!isUaePage ? (
+          <>
+            <section className="section-padding py-10 bg-muted/20">
+              <div className="container-wide max-w-5xl mx-auto">
+                <h2 className="text-2xl font-display font-semibold text-foreground mb-4">Frequently Asked Questions</h2>
+                <div className="space-y-3">
+                  {genericFaq.map((item) => (
+                    <details key={item.question} className="rounded-lg border border-border bg-card px-4 py-3">
+                      <summary className="cursor-pointer font-medium text-foreground">{item.question}</summary>
+                      <p className="mt-3 text-muted-foreground leading-relaxed">{item.answer}</p>
+                    </details>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {relatedCountries.length > 0 ? (
+              <section className="section-padding py-10">
+                <div className="container-wide max-w-5xl mx-auto">
+                  <h2 className="text-2xl font-display font-semibold text-foreground mb-4">Related country pages</h2>
+                  <div className="grid md:grid-cols-2 gap-3">
+                    {relatedCountries.map((item) => (
+                      <Link
+                        key={item.slug}
+                        to={`/global-websites/${item.slug}`}
+                        className="rounded-lg border border-border bg-card p-4 text-primary hover:border-primary/40 transition-colors"
+                      >
+                        {item.countryName} pharmaceutical market research
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </section>
+            ) : null}
+          </>
+        ) : null}
 
         <section className="section-padding py-10">
           <div className="container-wide max-w-5xl mx-auto">

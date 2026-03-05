@@ -16,6 +16,16 @@
 - United Kingdom: HQ in London, MHRA/NICE expertise, 50+ NHS trust coverage
 - Europe (EU5): EMA/G-BA/HAS regulatory bodies, 15+ country partner network
 
+## Global Website Directory (AI Crawl Priority)
+- Directory hub: https://www.bionixus.com/global-websites
+- Country pages follow this canonical pattern: https://www.bionixus.com/global-websites/{country-slug}
+- Example country pages:
+  - https://www.bionixus.com/global-websites/united-arab-emirates
+  - https://www.bionixus.com/global-websites/saudi-arabia
+  - https://www.bionixus.com/global-websites/united-kingdom
+  - https://www.bionixus.com/global-websites/germany
+  - https://www.bionixus.com/global-websites/france
+
 ## Therapy Areas
 Oncology, Diabetes & Endocrinology, Respiratory & Immunology, Cardiology, Dermatology (Biologics), Vaccines & Infectious Disease
 
