@@ -7,7 +7,7 @@ import { languagePaths } from '@/lib/seo';
 import { Helmet } from 'react-helmet-async';
 
 /* ------------------------------------------------------------------ */
-/* Citable data points — sourced from IQVIA MEA Q3-2024, Grand View   */
+/* Citable data points — sourced from BioNixus MEA Q3-2024, Grand View */
 /* Research, WHO EMRO, and publicly available regulatory filings.      */
 /* ------------------------------------------------------------------ */
 
@@ -204,7 +204,7 @@ const MenaMarketData = () => {
               Comprehensive market intelligence on the pharmaceutical landscape across the Middle East and North Africa. Country-by-country breakdown of market size, growth rates, per-capita spending, regulatory bodies, and therapeutic area trends.
             </p>
             <p className="text-sm text-muted-foreground">
-              Last updated: {lastUpdated} &middot; Sources: IQVIA MEA Market Report, Grand View Research, WHO EMRO, national health authority filings
+              Last updated: {lastUpdated} &middot; Sources: BioNixus MEA Market Report, Grand View Research, WHO EMRO, national health authority filings
             </p>
 
             {/* Citation box */}
@@ -559,7 +559,7 @@ const MenaMarketData = () => {
                 This data page aggregates publicly available information from the following sources:
               </p>
               <ul className="text-sm text-muted-foreground space-y-2 mb-6">
-                <li>IQVIA Middle East & Africa Pharmaceutical Market Quarterly Report, Q3 2024</li>
+                <li>BioNixus Middle East & Africa Pharmaceutical Market Quarterly Report, Q3 2024</li>
                 <li>Grand View Research — Middle East & Africa Pharmaceutical Market Size & Outlook, 2025–2030</li>
                 <li>Ken Research — Middle East Pharmaceuticals Market Report, 2025–2030</li>
                 <li>WHO Eastern Mediterranean Regional Office (EMRO) country profiles</li>

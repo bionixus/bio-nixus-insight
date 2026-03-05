@@ -428,7 +428,8 @@ const BlogPost = () => {
                   src={optimizeSanityImage(post.coverImage, 768, 480)}
                   alt={post.title || 'Article cover image'}
                   className="w-full h-full object-cover"
-                  loading="lazy"
+                  loading="eager"
+                  fetchPriority="high"
                   decoding="async"
                   width={768}
                   height={480}

@@ -104,6 +104,32 @@ const Services = () => {
                 </Link>
               ))}
             </div>
+
+            <div className="mt-10 rounded-xl border border-border bg-muted/20 p-6">
+              <h2 className="text-xl font-display font-semibold text-foreground mb-3">
+                Strategic links for faster discovery
+              </h2>
+              <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                Explore high-priority research hubs and country guides used most often by healthcare and pharmaceutical teams.
+              </p>
+              <div className="grid md:grid-cols-2 gap-3">
+                <Link to="/market-research" className="text-primary hover:underline">
+                  Market research services hub
+                </Link>
+                <Link to="/market-research-saudi-arabia-pharmaceutical" className="text-primary hover:underline">
+                  Saudi Arabia pharmaceutical research page
+                </Link>
+                <Link to="/healthcare-market-research" className="text-primary hover:underline">
+                  Healthcare market research regional hub
+                </Link>
+                <Link to="/global-websites" className="text-primary hover:underline">
+                  Global websites directory and country navigation
+                </Link>
+                <Link to="/pharmaceutical-companies-uae" className="text-primary hover:underline">
+                  UAE pharmaceutical companies guide
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
 

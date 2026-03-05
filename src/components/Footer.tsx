@@ -219,6 +219,14 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  to="/global-websites"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  Global Websites
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/case-studies"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >

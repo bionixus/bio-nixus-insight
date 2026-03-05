@@ -165,7 +165,7 @@ const KuwaitPharmaCompanies = () => {
               A comprehensive guide to the pharmaceutical industry in Kuwait — covering major pharma companies, market size and growth, drug registration with the Ministry of Health, distribution channels, and strategic opportunities for pharmaceutical and life sciences companies entering the Kuwaiti market.
             </p>
             <p className="text-sm text-muted-foreground">
-              Last updated: February 2026 &middot; Sources: Kuwait MOH, IQVIA MEA, Ken Research, KSPICO, YIACO, company filings
+              Last updated: February 2026 &middot; Sources: Kuwait MOH, BioNixus MEA, Ken Research, KSPICO, YIACO, company filings
             </p>
 
             {/* Citation box */}
@@ -637,7 +637,7 @@ const KuwaitPharmaCompanies = () => {
                 This guide aggregates publicly available information from the following sources:
               </p>
               <ul className="text-sm text-muted-foreground space-y-2 mb-6">
-                <li>IQVIA Middle East &amp; Africa Pharmaceutical Market Quarterly Report, Q3 2024</li>
+                <li>BioNixus Middle East &amp; Africa Pharmaceutical Market Quarterly Report, Q3 2024</li>
                 <li>Ken Research — Kuwait Pharmaceutical Market Size &amp; Outlook, 2025&ndash;2030</li>
                 <li>Grand View Research — Kuwait Pharmaceutical Market Report, 2025&ndash;2030</li>
                 <li>Kuwait Ministry of Health — Drug &amp; Food Control Administration publications</li>
@@ -646,7 +646,7 @@ const KuwaitPharmaCompanies = () => {
                 <li>BioNixus proprietary research from physician surveys across Kuwait (2024&ndash;2025)</li>
               </ul>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Company data reflects publicly available information as of February 2026. Market valuations are estimated based on IQVIA and third-party research. For customised market intelligence on Kuwait, <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.
+                Company data reflects publicly available information as of February 2026. Market valuations are estimated based on BioNixus and third-party research. For customised market intelligence on Kuwait, <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.
               </p>
             </div>
           </div>

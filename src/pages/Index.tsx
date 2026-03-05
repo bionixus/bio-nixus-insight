@@ -46,7 +46,7 @@ const Index = () => {
             <h2 className="text-2xl font-display font-semibold text-foreground mb-4">
               Featured Market Research Pages
             </h2>
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               <Link to="/market-research" className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 transition-colors">
                 <h3 className="font-semibold text-foreground mb-1">Market Research Services Hub</h3>
                 <p className="text-sm text-muted-foreground">Compare quantitative, qualitative, and healthcare-specific services.</p>
@@ -58,6 +58,10 @@ const Index = () => {
               <Link to="/market-research-healthcare" className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 transition-colors">
                 <h3 className="font-semibold text-foreground mb-1">Healthcare Market Research</h3>
                 <p className="text-sm text-muted-foreground">Decision-ready insight programs for healthcare and pharmaceutical teams.</p>
+              </Link>
+              <Link to="/global-websites" className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 transition-colors">
+                <h3 className="font-semibold text-foreground mb-1">Global Websites Directory</h3>
+                <p className="text-sm text-muted-foreground">Explore country and regional BioNixus pages with language coverage.</p>
               </Link>
             </div>
           </div>

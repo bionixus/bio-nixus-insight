@@ -150,6 +150,15 @@ const GlobalWebsites = () => {
                 </li>
               ))}
             </ul>
+            <div className="mt-6 rounded-xl border border-border bg-muted/20 p-5">
+              <h2 className="text-lg font-display font-semibold text-foreground mb-2">Looking for service-focused research planning?</h2>
+              <p className="text-sm text-muted-foreground mb-3">
+                Visit our healthcare market research hub for methodology, therapy, and country execution guidance.
+              </p>
+              <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">
+                Open healthcare market research hub
+              </Link>
+            </div>
           </div>
         </section>
       </main>

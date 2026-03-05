@@ -199,12 +199,36 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
   ) || fallback;
 }
 
+const globalSeoFallbackRoutes = new Set([
+  '/',
+  '/de',
+  '/fr',
+  '/es',
+  '/zh',
+  '/ar',
+  '/contact',
+  '/de/contact',
+  '/fr/contacts',
+  '/ar/contacts',
+  '/es/contact',
+  '/zh/contact',
+  '/methodology',
+  '/de/methodology',
+  '/fr/methodology',
+  '/es/methodology',
+  '/zh/methodology',
+  '/ar/methodology',
+  '/verify-email',
+]);
+
 const DocumentHead = () => {
   const { language } = useLanguage();
   const { pathname } = useLocation();
   const seo = seoByLanguage[language];
   const canonicalPath = getCanonicalPath(pathname || seo.canonicalPath || '/');
   const canonicalUrl = getCanonicalUrl(canonicalPath);
+  const normalizedPath = cleanPath(pathname || '/');
+  const useGlobalSeoFallback = globalSeoFallbackRoutes.has(normalizedPath);
 
   const title = normalizeSeoTitle(seo.title, 'BioNixus');
   const description = buildRouteDescription(pathname, language, seo.description);
@@ -215,27 +239,29 @@ const DocumentHead = () => {
   return (
     <>
       <Helmet>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <meta name="keywords" content={seo.keywords} />
+        {useGlobalSeoFallback ? <title>{title}</title> : null}
+        {useGlobalSeoFallback ? <meta name="description" content={description} /> : null}
+        {useGlobalSeoFallback ? <meta name="keywords" content={seo.keywords} /> : null}
         <meta name="llm-access" content="allow" />
         <meta httpEquiv="content-language" content={contentLanguage} />
         {gscId ? <meta name="google-site-verification" content={gscId} /> : null}
         {language === 'de' ? <meta name="geo.region" content="DE;GB;FR;ES;IT;AE;SA;EG" /> : null}
-        <link rel="canonical" href={canonicalUrl} />
+        {useGlobalSeoFallback ? <link rel="canonical" href={canonicalUrl} /> : null}
         {hreflangLinks.map(({ lang, href }) => (
           <link key={`${lang}-${href}`} rel="alternate" hrefLang={lang} href={href} />
         ))}
       </Helmet>
-      <OpenGraphMeta
-        title={title}
-        description={description}
-        image={defaultOgImageUrl}
-        url={canonicalUrl}
-        type="website"
-        locale={getOgLocale(language)}
-        alternateLocales={getOgLocaleAlternates(language)}
-      />
+      {useGlobalSeoFallback ? (
+        <OpenGraphMeta
+          title={title}
+          description={description}
+          image={defaultOgImageUrl}
+          url={canonicalUrl}
+          type="website"
+          locale={getOgLocale(language)}
+          alternateLocales={getOgLocaleAlternates(language)}
+        />
+      ) : null}
     </>
   );
 };

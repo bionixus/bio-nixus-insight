@@ -72,14 +72,12 @@ const Blog = () => {
       </Helmet>
       <Navbar />
       <main>
-        {(isGerman || isFrench) && (
-          <section className="section-padding pt-24 pb-8">
-            <div className="container-wide max-w-4xl mx-auto">
-              <h1 className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-3">{introTitle}</h1>
-              <p className="text-muted-foreground leading-relaxed">{introText}</p>
-            </div>
-          </section>
-        )}
+        <section className="section-padding pt-24 pb-8">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h1 className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-3">{introTitle}</h1>
+            <p className="text-muted-foreground leading-relaxed">{introText}</p>
+          </div>
+        </section>
         {isError ? (
           <section className="section-padding">
             <div className="container-wide max-w-xl mx-auto text-center py-12 px-4 rounded-lg bg-destructive/10 border border-destructive/20">

@@ -22,7 +22,7 @@ const NotFound = () => {
         <title>404 - {(t as any).notFound?.message || 'Page Not Found'} | BioNixus</title>
         <meta name="prerender-status" content="404" />
       </Helmet>
-      <div className="min-h-screen flex flex-col bg-background">
+      <div className="min-h-screen flex flex-col bg-background" data-route-status="404">
         <Navbar />
         <main className="flex-1 flex items-center justify-center section-padding">
           <div className="text-center max-w-md">

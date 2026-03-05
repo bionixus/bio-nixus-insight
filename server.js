@@ -21,7 +21,6 @@ async function startServer() {
     '/techniques-and-tools-in-quantitative-healthcare-market-research': '/services/quantitative-research',
     '/fr/contact': '/fr/contacts',
     '/ar/contact': '/ar/contacts',
-    '/global-websites': '/healthcare-market-research',
     '/adobe-experience-cloud': '/services',
     '/ar/about': '/about',
     '/ar/healthcare-market-research-saudi-arabia-ksa': '/healthcare-market-research/saudi-arabia',
@@ -107,13 +106,6 @@ async function startServer() {
         return;
       }
 
-      if (req.path.startsWith('/global-websites/')) {
-        const redirectPath = req.path.replace('/global-websites', '/healthcare-market-research');
-        const suffix = req.originalUrl.slice(req.path.length);
-        res.redirect(301, `${redirectPath}${suffix}`);
-        return;
-      }
-
       const url = req.originalUrl;
 
       let template;
@@ -146,7 +138,10 @@ async function startServer() {
       ].join('\n');
 
       let statusCode = 200;
-      if (headTags.includes('name="prerender-status"') && headTags.includes('content="404"')) {
+      if (
+        (headTags.includes('name="prerender-status"') && headTags.includes('content="404"'))
+        || appHtml.includes('data-route-status="404"')
+      ) {
         statusCode = 404;
       }
 

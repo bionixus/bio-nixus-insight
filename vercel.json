@@ -87,8 +87,12 @@
       "destination": "/api/unsubscribe"
     },
     {
+      "source": "/",
+      "destination": "/api/indexnow-key?__ssr=1&url=/"
+    },
+    {
       "source": "/((?!api/).*)",
-      "destination": "/api/indexnow-key?__ssr=1"
+      "destination": "/api/indexnow-key?__ssr=1&url=/$1"
     }
   ]
 }

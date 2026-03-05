@@ -274,6 +274,53 @@ export default function HubPage() {
         </div>
       </section>
 
+      <section className="py-10">
+        <div className="container-wide max-w-6xl mx-auto">
+          <h2 className="text-2xl font-display font-semibold text-foreground mb-4">Country industry guide shortcuts</h2>
+          <div className="flex flex-wrap gap-2">
+            {[
+              '/pharmaceutical-companies-saudi-arabia',
+              '/pharmaceutical-companies-uae',
+              '/pharmaceutical-companies-egypt',
+              '/pharmaceutical-companies-kuwait',
+              '/pharmaceutical-companies-qatar',
+              '/pharmaceutical-companies-oman',
+            ].map((path) => (
+              <Link
+                key={path}
+                to={path}
+                className="px-3 py-2 rounded-md border border-border bg-card text-sm text-foreground hover:border-primary/40 transition-colors"
+              >
+                {path.replace('/pharmaceutical-companies-', '').replaceAll('-', ' ')} pharma companies
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-10 bg-muted/20">
+        <div className="container-wide max-w-6xl mx-auto">
+          <h2 className="text-2xl font-display font-semibold text-foreground mb-4">Global and regional navigation</h2>
+          <p className="text-muted-foreground mb-4 max-w-3xl">
+            Use the global directory for corporate market coverage and country routing, or stay in this hub for service-led healthcare market research planning.
+          </p>
+          <div className="grid md:grid-cols-2 gap-3">
+            <Link
+              to="/global-websites"
+              className="rounded-lg border border-border bg-card p-4 text-primary hover:border-primary/40 transition-colors"
+            >
+              Open global websites directory
+            </Link>
+            <Link
+              to="/services"
+              className="rounded-lg border border-border bg-card p-4 text-primary hover:border-primary/40 transition-colors"
+            >
+              Compare healthcare research services
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <FAQSection items={hubFaqItems} />
       <CTASection variant="research-proposal" />
     </main>

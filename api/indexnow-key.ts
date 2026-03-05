@@ -30,7 +30,6 @@ const REDIRECTS: Record<string, string> = {
   '/techniques-and-tools-in-quantitative-healthcare-market-research': '/services/quantitative-research',
   '/fr/contact': '/fr/contacts',
   '/ar/contact': '/ar/contacts',
-  '/global-websites': '/healthcare-market-research',
   '/adobe-experience-cloud': '/services',
   '/ar/about': '/about',
   '/ar/healthcare-market-research-saudi-arabia-ksa': '/healthcare-market-research/saudi-arabia',
@@ -119,14 +118,18 @@ function injectHtml(
 }
 
 async function handleSsrRequest(
-  req: { url?: string },
+  req: { url?: string; query?: Record<string, string | string[] | undefined> },
   res: {
     setHeader: (name: string, value: string) => void;
     redirect: (statusCode: number, url: string) => void;
     status: (statusCode: number) => { send: (body: string) => void };
   },
 ) {
-  const url = req.url || '/';
+  const rewrittenPath = typeof req.query?.url === 'string' ? req.query.url : '';
+  const normalizedRewrittenPath = rewrittenPath
+    ? (rewrittenPath.startsWith('/') ? rewrittenPath : `/${rewrittenPath}`)
+    : '';
+  const url = normalizedRewrittenPath || req.url || '/';
   const pathname = url.split('?')[0] || '/';
   const query = url.includes('?') ? `?${url.split('?').slice(1).join('?')}` : '';
 
@@ -142,28 +145,24 @@ async function handleSsrRequest(
     return;
   }
 
-  if (pathname === '/global-websites') {
-    res.setHeader('Cache-Control', 'public, max-age=3600');
-    res.redirect(301, '/healthcare-market-research');
-    return;
-  }
-
-  if (pathname.startsWith('/global-websites/')) {
-    const redirectedPath = pathname.replace('/global-websites', '/healthcare-market-research');
-    res.setHeader('Cache-Control', 'public, max-age=3600');
-    res.redirect(301, `${redirectedPath}${query}`);
-    return;
-  }
-
   const template = getTemplate();
   const serverEntry = await getServerEntry();
   const initialData = await serverEntry.fetchRouteData(url);
   const { html: appHtml, helmetData } = serverEntry.render(url, initialData);
+  const headTags = [
+    helmetData?.title?.toString() || '',
+    helmetData?.meta?.toString() || '',
+    helmetData?.link?.toString() || '',
+    helmetData?.script?.toString() || '',
+  ].join('\n');
+  const isNotFoundPage =
+    (headTags.includes('name="prerender-status"') && headTags.includes('content="404"'))
+    || appHtml.includes('data-route-status="404"');
   const page = injectHtml(template, appHtml, helmetData, initialData);
 
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
   res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=60, stale-while-revalidate=300');
-  res.status(200).send(page);
+  res.status(isNotFoundPage ? 404 : 200).send(page);
 }
 
 export default async function handler(

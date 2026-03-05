@@ -16,6 +16,7 @@ import Methodology from '@/pages/Methodology';
 import VerifyEmail from '@/pages/VerifyEmail';
 import MenaMarketData from '@/pages/MenaMarketData';
 import GccMarketAccessGuide from '@/pages/GccMarketAccessGuide';
+import NotFound from '@/pages/NotFound';
 import MarketResearch from '@/pages/MarketResearch';
 import MarketResearchSaudiArabiaPharmaceutical from '@/pages/MarketResearchSaudiArabiaPharmaceutical';
 import MarketResearchHealthcare from '@/pages/MarketResearchHealthcare';
@@ -51,7 +52,6 @@ const AdminCalendar = lazy(() => import('@/pages/AdminCalendar'));
 const AdminCalendarNew = lazy(() => import('@/pages/AdminCalendarNew'));
 const AdminSendNewsletter = lazy(() => import('@/pages/AdminSendNewsletter'));
 const CaseStudy = lazy(() => import('@/pages/CaseStudy'));
-const NotFound = lazy(() => import('@/pages/NotFound'));
 
 function suspensePage(node: ReactNode) {
   return (
