@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import DOMPurify from 'dompurify';
@@ -173,7 +173,7 @@ import { isSanityConfigured } from '@/lib/sanity';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Clock, Calendar, MapPin, BookOpen, ChevronRight, Lightbulb, ArrowRight, HelpCircle } from 'lucide-react';
 import {
   Accordion,
   AccordionContent,
@@ -185,47 +185,106 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import ShareButtons from '@/components/ShareButtons';
 import type { BlogPost as BlogPostType } from '@/types/blog';
 
-/** Portable text block renderers – match McKinsey prose-body styles */
+/** Reading progress bar – fixed at top of viewport */
+function ReadingProgressBar() {
+  const [progress, setProgress] = useState(0);
+
+  const handleScroll = useCallback(() => {
+    const el = document.documentElement;
+    const scrollTop = el.scrollTop || document.body.scrollTop;
+    const scrollHeight = el.scrollHeight - el.clientHeight;
+    if (scrollHeight > 0) {
+      setProgress(Math.min(100, (scrollTop / scrollHeight) * 100));
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [handleScroll]);
+
+  return (
+    <div className="fixed top-0 left-0 right-0 z-50 h-[3px] bg-transparent">
+      <div
+        className="h-full bg-gradient-to-r from-primary via-primary/80 to-accent transition-[width] duration-150 ease-out"
+        style={{ width: `${progress}%` }}
+      />
+    </div>
+  );
+}
+
+/** Portable text block renderers – clean, interactive design */
 const portableTextComponents = {
   block: {
     h2: ({ children, value }: { children?: React.ReactNode, value?: any }) => (
-      <h2 id={slugifyHeading(value)} className="text-xl font-display font-semibold mt-10 mb-4 pb-0 border-l-4 border-primary pl-4 text-primary">
-        {children}
+      <h2
+        id={slugifyHeading(value)}
+        className="group text-2xl font-display font-bold mt-12 mb-5 text-foreground relative scroll-mt-6 flex items-center gap-3"
+      >
+        <span className="inline-block w-1 h-7 rounded-full bg-gradient-to-b from-primary to-accent shrink-0" />
+        <span>{children}</span>
+        <a href={`#${slugifyHeading(value)}`} className="opacity-0 group-hover:opacity-50 transition-opacity text-primary ml-1" aria-label="Link to section">
+          #
+        </a>
       </h2>
     ),
     h3: ({ children, value }: { children?: React.ReactNode, value?: any }) => (
-      <h3 id={slugifyHeading(value)} className="text-lg font-display font-semibold text-foreground mt-8 mb-3">
+      <h3
+        id={slugifyHeading(value)}
+        className="text-lg font-display font-semibold text-foreground mt-8 mb-3 scroll-mt-6"
+      >
         {children}
       </h3>
     ),
     h4: ({ children, value }: { children?: React.ReactNode, value?: any }) => (
-      <h4 id={slugifyHeading(value)} className="text-base font-display font-semibold text-primary mt-0 mb-3">
+      <h4
+        id={slugifyHeading(value)}
+        className="text-base font-display font-semibold text-primary/90 mt-6 mb-3 scroll-mt-6"
+      >
         {children}
       </h4>
     ),
     blockquote: ({ children }: { children?: React.ReactNode }) => (
-      <blockquote className="border-l-4 border-primary pl-4 my-4 text-muted-foreground italic">
+      <blockquote className="relative my-6 pl-5 pr-4 py-4 rounded-r-lg border-l-4 border-primary bg-primary/[0.03] text-muted-foreground italic">
         {children}
       </blockquote>
     ),
     normal: ({ children }: { children?: React.ReactNode }) => (
-      <p className="mb-4 text-foreground">{children}</p>
+      <p className="mb-5 text-foreground leading-[1.8] text-[0.95rem]">{children}</p>
     ),
   },
   list: {
     bullet: ({ children }: { children?: React.ReactNode }) => (
-      <ul className="list-disc pl-6 my-5 space-y-2">{children}</ul>
+      <ul className="my-6 space-y-3 pl-0 list-none">{children}</ul>
     ),
     number: ({ children }: { children?: React.ReactNode }) => (
-      <ol className="list-decimal pl-6 my-5 space-y-2">{children}</ol>
+      <ol className="my-6 space-y-3 pl-0 list-none counter-reset-list"
+        style={{ counterReset: 'list-counter' }}
+      >
+        {children}
+      </ol>
     ),
   },
   listItem: {
     bullet: ({ children }: { children?: React.ReactNode }) => (
-      <li className="text-foreground">{children}</li>
+      <li className="flex items-start gap-3 text-foreground leading-[1.8] text-[0.95rem] pl-1">
+        <span className="mt-[0.6rem] h-1.5 w-1.5 rounded-full bg-primary/60 shrink-0" />
+        <span>{children}</span>
+      </li>
     ),
     number: ({ children }: { children?: React.ReactNode }) => (
-      <li className="text-foreground">{children}</li>
+      <li
+        className="flex items-start gap-3 text-foreground leading-[1.8] text-[0.95rem] pl-1"
+        style={{ counterIncrement: 'list-counter' }}
+      >
+        <span
+          className="mt-[0.35rem] flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary text-xs font-semibold"
+          aria-hidden="true"
+        >
+          <span className="before-content" style={{ content: 'counter(list-counter)' }} />
+        </span>
+        <span>{children}</span>
+      </li>
     ),
   },
   marks: {
@@ -233,12 +292,12 @@ const portableTextComponents = {
       <strong className="font-semibold text-foreground">{children}</strong>
     ),
     em: ({ children }: { children?: React.ReactNode }) => (
-      <em>{children}</em>
+      <em className="text-muted-foreground">{children}</em>
     ),
     link: ({ children, value }: { children?: React.ReactNode; value?: { href?: string } }) => (
       <a
         href={value?.href}
-        className="text-primary underline hover:no-underline"
+        className="text-primary font-medium underline decoration-primary/30 underline-offset-2 hover:decoration-primary/80 transition-colors"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -462,71 +521,88 @@ const BlogPost = () => {
         <link rel="canonical" href={pageUrl} />
 
       </Helmet>
+      <ReadingProgressBar />
       <Navbar />
       <main className="section-padding">
         <div className="container-wide max-w-3xl mx-auto">
           <Link
             to="/blog"
-            className="inline-flex items-center gap-2 text-primary font-medium hover:underline mb-8"
+            className="group inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary font-medium transition-colors mb-8"
           >
-            <ArrowLeft className="w-4 h-4" /> Back to articles
+            <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-0.5" /> Back to articles
           </Link>
 
           <article>
-            <div className="flex flex-wrap items-center gap-3 mb-4">
+            {/* Meta badges */}
+            <div className="flex flex-wrap items-center gap-2 mb-5">
               {post.category && (
-                <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full">
+                <span className="inline-flex items-center gap-1 px-3 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full tracking-wide uppercase">
                   {post.category}
                 </span>
               )}
               {post.country && (
-                <span className="text-sm text-muted-foreground">{post.country}</span>
+                <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-muted text-muted-foreground text-xs font-medium rounded-full">
+                  <MapPin className="w-3 h-3" />
+                  {post.country}
+                </span>
               )}
               {post.date && (
-                <span className="text-sm text-muted-foreground">{post.date}</span>
+                <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-muted text-muted-foreground text-xs font-medium rounded-full">
+                  <Calendar className="w-3 h-3" />
+                  {post.date}
+                </span>
               )}
               {post.readingTime != null && (
-                <span className="text-sm text-muted-foreground">
+                <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-muted text-muted-foreground text-xs font-medium rounded-full">
+                  <Clock className="w-3 h-3" />
                   {post.readingTime} min read
                 </span>
               )}
-              {Array.isArray(post.tags) && post.tags.length > 0 && (
-                <div className="flex flex-wrap gap-1.5">
-                  {post.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2 py-0.5 bg-muted text-muted-foreground text-xs rounded"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              )}
             </div>
 
-            <h1 className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-4">
+            <h1 className="text-3xl md:text-[2.5rem] md:leading-tight font-display font-bold text-foreground mb-5 tracking-tight">
               {post.title}
             </h1>
 
-            {/* Author row */}
-            {post.authorName && (
-              <div className="flex items-center gap-2 mb-4">
-                {post.authorImage && (
-                  <img
-                    src={optimizeSanityImage(post.authorImage, 64, 64)}
-                    alt={post.authorName}
-                    className="w-8 h-8 rounded-full object-cover"
-                    loading="lazy"
-                    decoding="async"
-                    width={32}
-                    height={32}
-                  />
-                )}
-                <span className="text-sm font-medium text-foreground">{post.authorName}</span>
+            {/* Tags */}
+            {Array.isArray(post.tags) && post.tags.length > 0 && (
+              <div className="flex flex-wrap gap-2 mb-5">
+                {post.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-2.5 py-0.5 bg-primary/[0.06] text-primary/80 text-xs font-medium rounded-md border border-primary/10"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             )}
 
-            <div className="mb-6">
+            {/* Author row + share */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8 pb-6 border-b border-border">
+              {post.authorName && (
+                <div className="flex items-center gap-3">
+                  {post.authorImage ? (
+                    <img
+                      src={optimizeSanityImage(post.authorImage, 64, 64)}
+                      alt={post.authorName}
+                      className="w-10 h-10 rounded-full object-cover ring-2 ring-primary/10"
+                      loading="lazy"
+                      decoding="async"
+                      width={40}
+                      height={40}
+                    />
+                  ) : (
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-semibold text-sm">
+                      {post.authorName.charAt(0)}
+                    </div>
+                  )}
+                  <div>
+                    <span className="text-sm font-semibold text-foreground block">{post.authorName}</span>
+                    {post.date && <span className="text-xs text-muted-foreground">{post.date}</span>}
+                  </div>
+                </div>
+              )}
               <ShareButtons
                 url={pageUrl}
                 title={post.title}
@@ -535,8 +611,9 @@ const BlogPost = () => {
               />
             </div>
 
+            {/* Cover image */}
             {post.coverImage && (
-              <div className="aspect-[16/10] rounded-xl overflow-hidden mb-8 bg-muted">
+              <div className="aspect-[16/9] rounded-2xl overflow-hidden mb-10 bg-muted shadow-sm ring-1 ring-border/50">
                 <img
                   src={optimizeSanityImage(post.coverImage, 768, 480)}
                   alt={post.title || 'Article cover image'}
@@ -550,17 +627,24 @@ const BlogPost = () => {
               </div>
             )}
 
+            {/* Table of contents */}
             {Array.isArray(post.tableOfContents) && post.tableOfContents.length > 0 && (
-              <nav className="mb-8 p-4 rounded-lg bg-muted/50 border border-border">
-                <h2 className="text-sm font-semibold text-foreground mb-3">On this page</h2>
-                <ul className="space-y-1.5 text-sm">
+              <nav className="mb-10 rounded-xl bg-gradient-to-b from-muted/60 to-muted/30 border border-border/60 overflow-hidden">
+                <div className="flex items-center gap-2 px-5 pt-4 pb-2">
+                  <BookOpen className="w-4 h-4 text-primary" />
+                  <h2 className="text-sm font-semibold text-foreground tracking-wide uppercase">Contents</h2>
+                </div>
+                <ul className="px-5 pb-4 space-y-0.5">
                   {post.tableOfContents.map((item, i) => (
                     <li key={i}>
                       <a
                         href={item.anchor ? `#${item.anchor}` : undefined}
-                        className="text-primary hover:underline"
+                        className="group flex items-center gap-2 py-1.5 text-sm text-muted-foreground hover:text-primary transition-colors rounded-md hover:bg-primary/[0.04] px-2 -mx-2"
                       >
-                        {item.heading ?? ''}
+                        <span className="text-xs font-mono text-primary/40 group-hover:text-primary/70 w-5 text-right shrink-0">
+                          {String(i + 1).padStart(2, '0')}
+                        </span>
+                        <span>{item.heading ?? ''}</span>
                       </a>
                     </li>
                   ))}
@@ -568,14 +652,19 @@ const BlogPost = () => {
               </nav>
             )}
 
+            {/* Executive summary */}
             {post.executiveSummary && (
               Array.isArray(post.executiveSummary) ? post.executiveSummary.length > 0 : typeof post.executiveSummary === 'string' && (post.executiveSummary as string).trim()
             ) && (
-                <section className="mb-8 p-5 rounded-lg border border-primary/20 bg-primary/5">
-                  <h2 className="text-lg font-display font-semibold text-primary mb-3">
-                    Executive summary
-                  </h2>
-                  <div className="prose-body text-foreground leading-relaxed">
+                <section className="mb-10 rounded-xl border border-primary/15 bg-gradient-to-br from-primary/[0.04] to-transparent p-6 relative overflow-hidden">
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-primary/60 to-accent" />
+                  <div className="flex items-center gap-2 mb-4">
+                    <Lightbulb className="w-5 h-5 text-primary" />
+                    <h2 className="text-lg font-display font-bold text-foreground">
+                      Executive Summary
+                    </h2>
+                  </div>
+                  <div className="prose-body text-foreground leading-relaxed text-[0.95rem]">
                     {typeof post.executiveSummary === 'string' ? (
                       <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.executiveSummary as string) }} />
                     ) : (
@@ -588,6 +677,7 @@ const BlogPost = () => {
                 </section>
               )}
 
+            {/* Article body */}
             <div className="prose prose-neutral dark:prose-invert max-w-none">
               {(() => {
                 const body = getBodyToRender(post, slug)
@@ -610,66 +700,72 @@ const BlogPost = () => {
               })()}
             </div>
 
-            <section className="mt-10 rounded-xl border border-border bg-muted/30 p-5">
-              <h2 className="text-xl font-display font-semibold text-foreground mb-3">
-                Explore related healthcare market research pages
+            {/* Related research links */}
+            <section className="mt-12 rounded-xl border border-border/60 bg-gradient-to-br from-muted/40 to-background p-6">
+              <h2 className="text-lg font-display font-bold text-foreground mb-2">
+                Explore related healthcare market research
               </h2>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+              <p className="text-sm text-muted-foreground leading-relaxed mb-5">
                 For deeper regional insight, explore our healthcare market research framework and country coverage.
               </p>
-              <div className="flex flex-wrap gap-2">
-                <Link
-                  to="/healthcare-market-research"
-                  className="px-3 py-2 rounded-md border border-border bg-background text-sm hover:border-primary/40 transition-colors"
-                >
-                  EMEA healthcare market research hub
-                </Link>
-                <Link
-                  to="/healthcare-market-research/saudi-arabia"
-                  className="px-3 py-2 rounded-md border border-border bg-background text-sm hover:border-primary/40 transition-colors"
-                >
-                  pharmaceutical market research in Saudi Arabia
-                </Link>
-                <Link
-                  to="/healthcare-market-research/uae"
-                  className="px-3 py-2 rounded-md border border-border bg-background text-sm hover:border-primary/40 transition-colors"
-                >
-                  healthcare market research in the UAE
-                </Link>
-                <Link
-                  to="/healthcare-market-research/therapy/oncology"
-                  className="px-3 py-2 rounded-md border border-border bg-background text-sm hover:border-primary/40 transition-colors"
-                >
-                  oncology market research in MENA and Europe
-                </Link>
-              </div>
-            </section>
-
-            <section className="mt-8 rounded-xl border border-border bg-card p-5">
-              <h2 className="text-xl font-display font-semibold text-foreground mb-3">
-                More healthcare insight pages
-              </h2>
-              <div className="grid md:grid-cols-2 gap-2">
-                {blogRecoveryPaths.slice(0, 12).map((path) => (
-                  <Link key={path} to={path} className="text-primary hover:underline break-all text-sm">
-                    {formatInsightTopicFromPath(path)}
+              <div className="grid sm:grid-cols-2 gap-2.5">
+                {[
+                  { to: '/healthcare-market-research', label: 'EMEA healthcare market research hub' },
+                  { to: '/healthcare-market-research/saudi-arabia', label: 'Pharmaceutical market research in Saudi Arabia' },
+                  { to: '/healthcare-market-research/uae', label: 'Healthcare market research in the UAE' },
+                  { to: '/healthcare-market-research/therapy/oncology', label: 'Oncology market research in MENA and Europe' },
+                ].map(({ to, label }) => (
+                  <Link
+                    key={to}
+                    to={to}
+                    className="group flex items-center gap-2 px-4 py-3 rounded-lg border border-border bg-background text-sm font-medium hover:border-primary/30 hover:bg-primary/[0.03] transition-all"
+                  >
+                    <span className="flex-1">{label}</span>
+                    <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
                   </Link>
                 ))}
               </div>
             </section>
 
+            {/* More insight pages */}
+            <section className="mt-6 rounded-xl border border-border/60 bg-card p-6">
+              <h2 className="text-lg font-display font-bold text-foreground mb-4">
+                More healthcare insight pages
+              </h2>
+              <div className="grid md:grid-cols-2 gap-x-6 gap-y-2">
+                {blogRecoveryPaths.slice(0, 12).map((path) => (
+                  <Link
+                    key={path}
+                    to={path}
+                    className="group flex items-center gap-2 py-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <ChevronRight className="w-3.5 h-3.5 shrink-0 text-primary/40 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
+                    <span className="break-words">{formatInsightTopicFromPath(path)}</span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+
+            {/* FAQ section */}
             {Array.isArray(post.faq) && post.faq.length > 0 && (
               <section className="mt-12" aria-label="FAQ">
-                <h2 className="text-2xl font-display font-semibold text-foreground mb-4">
-                  Frequently asked questions
-                </h2>
-                <Accordion type="single" collapsible className="w-full">
+                <div className="flex items-center gap-2 mb-6">
+                  <HelpCircle className="w-5 h-5 text-primary" />
+                  <h2 className="text-2xl font-display font-bold text-foreground">
+                    Frequently Asked Questions
+                  </h2>
+                </div>
+                <Accordion type="single" collapsible className="w-full space-y-2">
                   {post.faq.map((item, i) => (
-                    <AccordionItem key={i} value={`faq-${i}`}>
-                      <AccordionTrigger className="text-left">
+                    <AccordionItem
+                      key={i}
+                      value={`faq-${i}`}
+                      className="border border-border/60 rounded-lg px-5 data-[state=open]:bg-muted/30 data-[state=open]:border-primary/20 transition-colors overflow-hidden"
+                    >
+                      <AccordionTrigger className="text-left text-[0.95rem] font-medium hover:no-underline hover:text-primary py-4">
                         {item.question || 'Question'}
                       </AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground">
+                      <AccordionContent className="text-muted-foreground text-[0.9rem] leading-relaxed pb-5">
                         {item.answer || ''}
                       </AccordionContent>
                     </AccordionItem>
@@ -678,31 +774,34 @@ const BlogPost = () => {
               </section>
             )}
 
+            {/* CTA section */}
             {post.ctaSection &&
               (post.ctaSection.title ||
                 post.ctaSection.description ||
                 post.ctaSection.buttonText ||
                 post.ctaSection.buttonUrl) && (
-                <Card className="mt-12 border-primary/20 bg-primary/5">
-                  <CardHeader>
+                <Card className="mt-12 border-0 bg-gradient-to-br from-primary to-primary/90 text-primary-foreground shadow-lg overflow-hidden relative">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,hsl(var(--accent)/0.15),transparent_60%)]" />
+                  <CardHeader className="relative">
                     {post.ctaSection.title && (
-                      <CardTitle className="text-xl">{post.ctaSection.title}</CardTitle>
+                      <CardTitle className="text-xl text-primary-foreground">{post.ctaSection.title}</CardTitle>
                     )}
                     {post.ctaSection.description && (
-                      <CardDescription className="text-base mt-1 text-muted-foreground">
+                      <CardDescription className="text-base mt-1 text-primary-foreground/80">
                         {post.ctaSection.description}
                       </CardDescription>
                     )}
                   </CardHeader>
                   {post.ctaSection.buttonText && post.ctaSection.buttonUrl && (
-                    <CardContent>
-                      <Button asChild>
+                    <CardContent className="relative">
+                      <Button asChild variant="secondary" size="lg" className="group font-semibold">
                         <a
                           href={post.ctaSection!.buttonUrl}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
                           {post.ctaSection!.buttonText}
+                          <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-0.5" />
                         </a>
                       </Button>
                     </CardContent>
