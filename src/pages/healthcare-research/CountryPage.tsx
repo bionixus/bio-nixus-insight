@@ -236,6 +236,37 @@ export default function CountryPage() {
       ) : null}
 
       {/* Targeted Intelligence & Insight Guides */}
+      {config.slug === 'saudi-arabia' && (
+        <section className="py-12 bg-card border-y border-border">
+          <div className="container-wide max-w-5xl mx-auto space-y-8 text-foreground">
+            <h2 className="text-3xl font-display font-semibold">
+              Deep Dive: The 2026 Saudi Pharmaceutical Landscape
+            </h2>
+            <div className="space-y-6 text-base leading-relaxed text-muted-foreground">
+              <p>
+                The Saudi Arabian pharmaceutical market is undergoing a structural revolution driven by Vision 2030. The traditional model of relying on imported branded portfolios and generic distributorships is being rapidly replaced by aggressive localization mandates. For pharmaceutical executives targeting the Kingdom, success now hinges on deep alignment with the Ministry of Investment's (MISA) and Ministry of Health's (MOH) push for local manufacturing, clinical trial expansion, and value-based procurement.
+              </p>
+              <h3 className="text-xl font-semibold text-foreground mt-4 mb-2">Navigating NUPCO and the Shift to Value</h3>
+              <p>
+                As the National Unified Procurement Company (NUPCO) consolidates its monopsony power across government healthcare sectors, navigating institutional access requires unprecedented sophistication. NUPCO is moving beyond simple unit-price tendering toward comprehensive supply chain integration and preference for localized fill-and-finish partnerships. BioNixus conducts targeted market access feasibility studies to help global pharma teams map tender influence, evaluate competitive pricing intelligence, and align value dossiers with NUPCO’s evolving pharmacoeconomic expectations.
+              </p>
+              <h3 className="text-xl font-semibold text-foreground mt-4 mb-2">The Impact of the Health Holding Company (HHC)</h3>
+              <p>
+                The corporatization of the MOH into the Health Holding Company (HHC) and the creation of regional health clusters represent a massive shift from central decision-making to regional accountability. Commercial teams can no longer rely on a single central strategy. Our qualitative research maps the specific decision dynamics within tier-1 clusters across Riyadh, Jeddah, and the Eastern Province. We help key account managers (KAMs) understand precisely who controls protocol adoption, formulary inclusion, and therapeutic switching at the cluster level.
+              </p>
+              <h3 className="text-xl font-semibold text-foreground mt-4 mb-2">SFDA Regulatory Agility and Patient Pathways</h3>
+              <p>
+                The Saudi Food and Drug Authority (SFDA) is positioning itself as a top-tier global regulator, offering accelerated pathways for breakthrough therapies and orphan drugs. However, securing regulatory approval is only the first step. BioNixus maps complex patient pathways—from diagnosis at primary care centers to specialized tertiary interventions at institutions like KFSH&RC and NGHA. By analyzing patient drop-off rates, biomarker testing bottlenecks, and physician prescribing behavior, we enable commercial teams to build highly effective patient support programs (PSPs) and targeted medical education initiatives.
+              </p>
+              <h3 className="text-xl font-semibold text-foreground mt-4 mb-2">Omnichannel Strategy and KOL Engagement</h3>
+              <p>
+                Saudi healthcare professionals (HCPs) are among the most digitally literate in the region, yet traditional field force models are increasingly facing access fatigue. BioNixus provides deep omnichannel intelligence, evaluating channel preferences, content consumption habits, and peer-to-peer influence networks among Saudi Key Opinion Leaders (KOLs). We identify the "true influencers"—who drive clinical consensus in specialized therapy areas like oncology, immunology, and rare diseases—allowing your medical and commercial teams to deploy resource-efficient, high-impact engagement strategies.
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
+
       {(config.slug === 'saudi-arabia' || config.slug === 'uae' || config.slug === 'uk' || config.slug === 'europe') && (
         <section className="py-12 bg-primary/5 border-y border-primary/10">
           <div className="container-wide max-w-6xl mx-auto">

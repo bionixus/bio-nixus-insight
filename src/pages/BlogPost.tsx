@@ -24,10 +24,63 @@ function slugifyHeading(value: any): string {
     .replace(/(^-|-$)/g, '');
 }
 
+function formatInsightTopicFromPath(path: string): string {
+  const acronymMap: Record<string, string> = {
+    ai: 'AI',
+    cms: 'CMS',
+    doh: 'DOH',
+    dha: 'DHA',
+    emea: 'EMEA',
+    fda: 'FDA',
+    gcc: 'GCC',
+    gdpr: 'GDPR',
+    gcp: 'GCP',
+    hcv: 'HCV',
+    hipaa: 'HIPAA',
+    hta: 'HTA',
+    ich: 'ICH',
+    kcc: 'KCC',
+    kfda: 'KFDA',
+    kims: 'KIMS',
+    kol: 'KOL',
+    ksa: 'KSA',
+    mena: 'MENA',
+    moh: 'MOH',
+    mohap: 'MOHAP',
+    nice: 'NICE',
+    nupco: 'NUPCO',
+    sfda: 'SFDA',
+    uae: 'UAE',
+    uk: 'UK',
+    us: 'US',
+  };
+
+  const slug = path.startsWith('/blog/') ? path.slice('/blog/'.length) : path;
+  const decoded = decodeURIComponent(slug);
+  const words = decoded
+    .replace(/[-_]+/g, ' ')
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
+
+  if (words.length === 0) return path;
+
+  return words
+    .map((word) => {
+      // Keep non-latin words untouched (for Arabic and others)
+      if (!/[a-zA-Z]/.test(word)) return word;
+      const lower = word.toLowerCase();
+      if (acronymMap[lower]) return acronymMap[lower];
+      if (/^[A-Z0-9]+$/.test(word)) return word;
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(' ');
+}
+
 /** Detect if string looks like HTML (contains tags). */
 function isHtmlString(s: string): boolean {
   const t = s.trim();
-  return t.length > 0 && /<[a-z\d\/]/i.test(t);
+  return t.length > 0 && /<[a-z\d/]/i.test(t);
 }
 
 /** Extract plain text from portable text blocks (for fallback HTML detection). */
@@ -551,7 +604,7 @@ const BlogPost = () => {
               <div className="grid md:grid-cols-2 gap-2">
                 {blogRecoveryPaths.slice(0, 12).map((path) => (
                   <Link key={path} to={path} className="text-primary hover:underline break-all text-sm">
-                    {path}
+                    {formatInsightTopicFromPath(path)}
                   </Link>
                 ))}
               </div>
