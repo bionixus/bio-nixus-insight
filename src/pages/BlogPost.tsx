@@ -172,7 +172,7 @@ import { isSanityConfigured } from '@/lib/sanity';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, BarChart3, CheckCircle2, ShieldCheck, TrendingUp } from 'lucide-react';
 import {
   Accordion,
   AccordionContent,
@@ -183,6 +183,145 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import ShareButtons from '@/components/ShareButtons';
 import type { BlogPost as BlogPostType } from '@/types/blog';
+
+const GCC_PHARMA_2026_SLUG = 'gcc-pharmaceuticals-market-2026';
+
+function PremiumGcc2026Enhancement() {
+  const kpiCards = [
+    { label: 'Estimated GCC Pharma Market', value: '$38.4B', note: '2026 directional estimate', icon: TrendingUp },
+    { label: 'Average Growth Range', value: '7-10%', note: 'annual momentum across GCC', icon: BarChart3 },
+    { label: 'Policy Pressure Points', value: '4', note: 'registration, pricing, access, supply', icon: ShieldCheck },
+  ];
+
+  const countryBars = [
+    { country: 'Saudi Arabia', width: 96, share: '42%' },
+    { country: 'UAE', width: 78, share: '24%' },
+    { country: 'Kuwait', width: 52, share: '11%' },
+    { country: 'Qatar', width: 44, share: '9%' },
+    { country: 'Bahrain + Oman', width: 34, share: '14%' },
+  ];
+
+  return (
+    <section className="mb-10 rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/10 via-background to-background p-5 md:p-7">
+      <h2 className="text-2xl font-display font-semibold text-foreground mb-2">
+        GCC Pharma 2026 dashboard
+      </h2>
+      <p className="text-sm md:text-base text-muted-foreground mb-6">
+        Quick visual brief for strategy teams who need signal density, not long walls of text.
+      </p>
+
+      <div className="grid gap-3 md:grid-cols-3 mb-6">
+        {kpiCards.map((card) => {
+          const Icon = card.icon;
+          return (
+            <article key={card.label} className="rounded-xl border border-border bg-card p-4 shadow-sm">
+              <div className="flex items-start justify-between gap-3">
+                <p className="text-xs uppercase tracking-wide text-muted-foreground">{card.label}</p>
+                <Icon className="w-4 h-4 text-primary" aria-hidden="true" />
+              </div>
+              <p className="text-2xl font-display font-semibold text-foreground mt-2">{card.value}</p>
+              <p className="text-xs text-muted-foreground mt-1">{card.note}</p>
+            </article>
+          );
+        })}
+      </div>
+
+      <div className="grid gap-5 lg:grid-cols-2 mb-6">
+        <article className="rounded-xl border border-border bg-card p-4">
+          <h3 className="text-base font-semibold text-foreground mb-3">
+            Premium trend view (2023-2026 index)
+          </h3>
+          <div className="rounded-lg border border-border bg-background p-3">
+            <svg viewBox="0 0 520 220" role="img" aria-label="GCC pharmaceutical market trend index chart" className="w-full h-auto">
+              <defs>
+                <linearGradient id="gccTrendFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="hsl(var(--primary) / 0.45)" />
+                  <stop offset="100%" stopColor="hsl(var(--primary) / 0.05)" />
+                </linearGradient>
+              </defs>
+              <line x1="40" y1="20" x2="40" y2="185" stroke="hsl(var(--muted-foreground) / 0.35)" strokeWidth="1" />
+              <line x1="40" y1="185" x2="495" y2="185" stroke="hsl(var(--muted-foreground) / 0.35)" strokeWidth="1" />
+              <path d="M40 165 L160 150 L280 126 L400 92 L495 62 L495 185 L40 185 Z" fill="url(#gccTrendFill)" />
+              <path d="M40 165 L160 150 L280 126 L400 92 L495 62" fill="none" stroke="hsl(var(--primary))" strokeWidth="3" />
+              <circle cx="40" cy="165" r="4" fill="hsl(var(--primary))" />
+              <circle cx="160" cy="150" r="4" fill="hsl(var(--primary))" />
+              <circle cx="280" cy="126" r="4" fill="hsl(var(--primary))" />
+              <circle cx="400" cy="92" r="4" fill="hsl(var(--primary))" />
+              <circle cx="495" cy="62" r="4" fill="hsl(var(--primary))" />
+              <text x="34" y="204" fontSize="12" fill="hsl(var(--muted-foreground))">2023</text>
+              <text x="154" y="204" fontSize="12" fill="hsl(var(--muted-foreground))">2024</text>
+              <text x="274" y="204" fontSize="12" fill="hsl(var(--muted-foreground))">2025</text>
+              <text x="394" y="204" fontSize="12" fill="hsl(var(--muted-foreground))">2026</text>
+            </svg>
+          </div>
+        </article>
+
+        <article className="rounded-xl border border-border bg-card p-4">
+          <h3 className="text-base font-semibold text-foreground mb-3">
+            Country momentum split
+          </h3>
+          <ul className="space-y-3">
+            {countryBars.map((item) => (
+              <li key={item.country}>
+                <div className="flex items-center justify-between text-sm mb-1">
+                  <span className="text-foreground">{item.country}</span>
+                  <span className="text-muted-foreground">{item.share}</span>
+                </div>
+                <div className="h-2.5 rounded-full bg-muted overflow-hidden">
+                  <div className="h-full rounded-full bg-primary" style={{ width: `${item.width}%` }} />
+                </div>
+              </li>
+            ))}
+          </ul>
+        </article>
+      </div>
+
+      <div className="grid gap-3 md:grid-cols-2 mb-6">
+        <img
+          src="/images/quant-hcp-survey-executive.png"
+          alt="Executive healthcare survey dashboard for GCC pharmaceutical market strategy"
+          className="w-full h-52 object-cover rounded-xl border border-border"
+          loading="lazy"
+          decoding="async"
+          width={640}
+          height={320}
+        />
+        <img
+          src="/images/quant-ai-validation-lab.png"
+          alt="AI assisted validation workflow image for pharmaceutical data quality in GCC markets"
+          className="w-full h-52 object-cover rounded-xl border border-border"
+          loading="lazy"
+          decoding="async"
+          width={640}
+          height={320}
+        />
+      </div>
+
+      <article className="rounded-xl border border-primary/30 bg-primary/5 p-4">
+        <h3 className="text-base font-semibold text-foreground mb-3">Action checklist for leadership teams</h3>
+        <ul className="space-y-2.5">
+          <li className="flex items-start gap-2 text-sm text-foreground">
+            <CheckCircle2 className="w-4 h-4 mt-0.5 text-primary" aria-hidden="true" />
+            Build a 90-day country-priority sequence (Saudi -&gt; UAE -&gt; Kuwait/Qatar) with budget gates.
+          </li>
+          <li className="flex items-start gap-2 text-sm text-foreground">
+            <CheckCircle2 className="w-4 h-4 mt-0.5 text-primary" aria-hidden="true" />
+            Localize evidence strategy early for HTA and payer conversations, not after registration.
+          </li>
+          <li className="flex items-start gap-2 text-sm text-foreground">
+            <CheckCircle2 className="w-4 h-4 mt-0.5 text-primary" aria-hidden="true" />
+            Track competitor formulary movement monthly to avoid late-cycle pricing surprises.
+          </li>
+        </ul>
+        <div className="mt-4 text-sm">
+          <Link to="/gcc-market-access-guide" className="text-primary font-medium hover:underline">
+            See the full GCC market access guide
+          </Link>
+        </div>
+      </article>
+    </section>
+  );
+}
 
 /** Portable text block renderers – match McKinsey prose-body styles */
 const portableTextComponents = {
@@ -263,6 +402,7 @@ function getBodyToRender(
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const { t, language } = useLanguage();
+  const isGccPharma2026 = slug === GCC_PHARMA_2026_SLUG;
 
   const { data: sanityPost, isLoading, isError } = useQuery({
     queryKey: ['sanity-post', slug],
@@ -501,6 +641,8 @@ const BlogPost = () => {
                 />
               </div>
             )}
+
+            {isGccPharma2026 && <PremiumGcc2026Enhancement />}
 
             {Array.isArray(post.tableOfContents) && post.tableOfContents.length > 0 && (
               <nav className="mb-8 p-4 rounded-lg bg-muted/50 border border-border">

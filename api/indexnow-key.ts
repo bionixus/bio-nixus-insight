@@ -125,11 +125,13 @@ async function handleSsrRequest(
     status: (statusCode: number) => { send: (body: string) => void };
   },
 ) {
-  const rewrittenPath = typeof req.query?.url === 'string' ? req.query.url : '';
+  const rawQueryUrl = Array.isArray(req.query?.url) ? req.query?.url[0] : req.query?.url;
+  const rewrittenPath = typeof rawQueryUrl === 'string' ? decodeURIComponent(rawQueryUrl) : '';
   const normalizedRewrittenPath = rewrittenPath
     ? (rewrittenPath.startsWith('/') ? rewrittenPath : `/${rewrittenPath}`)
     : '';
-  const url = normalizedRewrittenPath || req.url || '/';
+  const fallbackUrl = req.url || '/';
+  const url = normalizedRewrittenPath || fallbackUrl;
   const pathname = url.split('?')[0] || '/';
   const query = url.includes('?') ? `?${url.split('?').slice(1).join('?')}` : '';
 
