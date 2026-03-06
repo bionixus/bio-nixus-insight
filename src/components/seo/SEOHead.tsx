@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 
 interface SEOHeadProps {
   title: string;
@@ -13,13 +14,18 @@ interface SEOHeadProps {
 export function SEOHead({
   title,
   description,
-  canonical,
+  canonical: _canonical,
   ogImage = 'https://www.bionixus.com/og-image.png',
   ogType = 'website',
   noindex = false,
   jsonLd = [],
 }: SEOHeadProps) {
-  const canonicalUrl = canonical.startsWith('http') ? canonical : `https://www.bionixus.com${canonical}`;
+  const { pathname } = useLocation();
+  const canonicalPath = (() => {
+    const clean = (pathname || '/').split('?')[0].split('#')[0] || '/';
+    return clean === '/' ? '/' : clean.replace(/\/+$/, '');
+  })();
+  const canonicalUrl = `https://www.bionixus.com${canonicalPath}`;
 
   return (
     <Helmet>
