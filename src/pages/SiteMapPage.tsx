@@ -54,6 +54,17 @@ function pathToLabel(path: string) {
     .join(' / ');
 }
 
+function categorizePath(path: string) {
+  if (path.startsWith('/blog/')) return 'Blog Insights';
+  if (path.startsWith('/case-studies/')) return 'Case Studies';
+  if (path.startsWith('/global-websites/')) return 'Global Websites';
+  if (path.startsWith('/healthcare-market-research/')) return 'Healthcare Country Pages';
+  if (path.startsWith('/pharmaceutical-companies-')) return 'Pharmaceutical Company Guides';
+  if (/^\/(ar|de|fr|es|zh)(\/|$)/.test(path)) return 'Language & Localized Pages';
+  if (path.startsWith('/services/')) return 'Service Pages';
+  return 'Core & Strategic Pages';
+}
+
 export default function SiteMapPage() {
   const { data: blogPosts = [] } = useSanityBlog();
   const { data: caseStudies = [] } = useQuery({
@@ -71,6 +82,22 @@ export default function SiteMapPage() {
       { '@type': 'ListItem', position: 2, name: 'Sitemap', item: canonicalUrl },
     ],
   };
+  const groupedCoverageLinks = reportZeroLinkPaths.reduce<Record<string, string[]>>((acc, path) => {
+    const bucket = categorizePath(path);
+    if (!acc[bucket]) acc[bucket] = [];
+    acc[bucket].push(path);
+    return acc;
+  }, {});
+  const coverageGroupOrder = [
+    'Core & Strategic Pages',
+    'Language & Localized Pages',
+    'Service Pages',
+    'Global Websites',
+    'Healthcare Country Pages',
+    'Pharmaceutical Company Guides',
+    'Blog Insights',
+    'Case Studies',
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -173,15 +200,24 @@ export default function SiteMapPage() {
             <p className="text-sm text-muted-foreground mb-4">
               Internal links included for URLs flagged with zero internal links in the latest crawl reports.
             </p>
-            <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
-              {reportZeroLinkPaths.map((path) => (
-                <li key={path}>
-                  <Link to={path} className="text-primary hover:underline break-all">
-                    {pathToLabel(path)}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <div className="grid md:grid-cols-2 gap-6">
+              {coverageGroupOrder
+                .filter((group) => Array.isArray(groupedCoverageLinks[group]) && groupedCoverageLinks[group].length > 0)
+                .map((group) => (
+                  <article key={group} className="rounded-xl border border-border bg-card p-5">
+                    <h3 className="text-base font-semibold text-foreground mb-3">{group}</h3>
+                    <ul className="space-y-2">
+                      {groupedCoverageLinks[group].map((path) => (
+                        <li key={path}>
+                          <Link to={path} className="text-primary hover:underline break-all text-sm">
+                            {pathToLabel(path)}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                ))}
+            </div>
           </section>
         </div>
       </main>

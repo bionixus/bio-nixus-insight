@@ -426,6 +426,50 @@ const GccMarketAccessGuide = () => {
           </div>
         </section>
 
+        {/* Internal links */}
+        <section className="section-padding py-12 bg-muted/20">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl font-display font-semibold text-foreground mb-3">
+              Related GCC market access resources
+            </h2>
+            <p className="text-muted-foreground mb-6">
+              Explore country-specific regulatory guides, regional market data, and execution-focused service pages.
+            </p>
+            <div className="grid md:grid-cols-2 gap-3">
+              <Link to="/services/market-access" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                Market access consulting services for pharma teams
+              </Link>
+              <Link to="/mena-pharma-market-data" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                MENA pharmaceutical market data and growth outlook
+              </Link>
+              <Link to="/market-research-saudi-arabia-pharmaceutical" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                Saudi Arabia pharmaceutical market research and SFDA strategy
+              </Link>
+              <Link to="/global-websites/united-arab-emirates" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                UAE pharmaceutical market research and access intelligence
+              </Link>
+              <Link to="/global-websites/kuwait" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                Kuwait pharmaceutical market research and KFDA context
+              </Link>
+              <Link to="/global-websites/qatar" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                Qatar pharmaceutical market research and formulary dynamics
+              </Link>
+              <Link to="/global-websites/bahrain" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                Bahrain pharmaceutical market research and NHRA context
+              </Link>
+              <Link to="/global-websites/oman" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                Oman pharmaceutical market research and regulatory pathway insights
+              </Link>
+              <Link to="/blog/nupco-saudi-arabia-tendering-guide" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                NUPCO tendering guide for Saudi market access teams
+              </Link>
+              <Link to="/blog/market-access-strategy-uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                UAE market access strategy guide for pharmaceutical launches
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* FAQ */}
         <section className="section-padding py-16" id="faq">
           <div className="container-wide max-w-5xl mx-auto">
