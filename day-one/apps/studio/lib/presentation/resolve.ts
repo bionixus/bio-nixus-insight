@@ -1,7 +1,7 @@
 import { defineDocuments, defineLocations } from 'sanity/presentation'
 
 /**
- * Maps blogPost and post documents to frontend routes for the Presentation tool.
+ * Maps blogPost documents to frontend routes for the Presentation tool.
  * Preview base URL is set in sanity.config.ts (localhost:5173 or bionixus.com).
  */
 export const locations = {
@@ -16,17 +16,6 @@ export const locations = {
       ],
     }),
   }),
-  post: defineLocations({
-    select: { title: 'title', slug: 'slug.current' },
-    resolve: (doc) => ({
-      locations: [
-        ...(doc.slug
-          ? [{ title: doc.title ?? 'Post', href: `/blog/${doc.slug}` }]
-          : []),
-        { title: 'Blog', href: '/blog' },
-      ],
-    }),
-  }),
 }
 
 /**
@@ -35,10 +24,10 @@ export const locations = {
 export const mainDocuments = defineDocuments([
   {
     route: '/blog',
-    filter: `_type in ["blogPost", "post"]`,
+    filter: `_type == "blogPost"`,
   },
   {
     route: '/blog/:slug',
-    filter: `_type in ["blogPost", "post"] && slug.current == $slug`,
+    filter: `_type == "blogPost" && slug.current == $slug`,
   },
 ])

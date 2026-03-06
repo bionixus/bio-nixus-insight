@@ -6,6 +6,7 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { CTASection } from '@/components/shared/CTASection';
 import { buildHubPageSchemas } from '@/lib/seo/schemas';
 import { COUNTRY_CONFIGS } from '@/lib/constants/countries';
+import { healthcareCountryRecoveryPaths } from '@/lib/internalLinkRecovery';
 
 const HUB_FAQS = [
   {
@@ -317,6 +318,13 @@ export default function HubPage() {
             >
               Compare healthcare research services
             </Link>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-2 mt-4">
+            {healthcareCountryRecoveryPaths.slice(0, 24).map((path) => (
+              <Link key={path} to={path} className="text-primary hover:underline break-all text-sm">
+                {path}
+              </Link>
+            ))}
           </div>
         </div>
       </section>

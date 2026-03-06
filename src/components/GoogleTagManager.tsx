@@ -5,12 +5,49 @@ import { useLocation } from 'react-router-dom';
 declare global {
   interface Window {
     dataLayer?: Array<Record<string, unknown>>;
+    __gtmLoaded?: boolean;
   }
 }
 
 export default function GoogleTagManager() {
   const location = useLocation();
   const gtmId = import.meta.env.VITE_GTM_ID;
+
+  useEffect(() => {
+    if (!gtmId) return;
+    if (window.__gtmLoaded) return;
+
+    const loadGtm = () => {
+      if (window.__gtmLoaded) return;
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtm.js?id=${gtmId}`;
+      document.head.appendChild(script);
+      window.__gtmLoaded = true;
+    };
+
+    const schedule = () => {
+      if ('requestIdleCallback' in window) {
+        (window as Window & { requestIdleCallback: (cb: IdleRequestCallback, options?: IdleRequestOptions) => number })
+          .requestIdleCallback(() => loadGtm(), { timeout: 3000 });
+        return;
+      }
+      window.setTimeout(loadGtm, 1200);
+    };
+
+    if (document.readyState === 'complete') {
+      schedule();
+      return;
+    }
+
+    const onLoad = () => schedule();
+    window.addEventListener('load', onLoad, { once: true });
+    return () => {
+      window.removeEventListener('load', onLoad);
+    };
+  }, [gtmId]);
 
   useEffect(() => {
     if (!gtmId || !window.dataLayer) return;
@@ -26,15 +63,7 @@ export default function GoogleTagManager() {
 
   return (
     <>
-      <Helmet>
-        <script>
-          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','${gtmId}');`}
-        </script>
-      </Helmet>
+      <Helmet />
       <noscript>
         <iframe
           src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}

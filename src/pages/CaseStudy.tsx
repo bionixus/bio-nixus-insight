@@ -153,7 +153,7 @@ const CaseStudyPage = () => {
       <Helmet>
         <title>{normalizeSeoTitle(`${metaTitle} | BioNixus Case Studies`, 'BioNixus Case Studies')}</title>
         <meta name="description" content={metaDescription} />
-        {caseStudy.seoNoIndex && <meta name="robots" content="noindex,nofollow" />}
+        <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="article" />

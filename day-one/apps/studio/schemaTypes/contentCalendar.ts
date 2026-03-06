@@ -65,7 +65,7 @@ export default {
           name: 'post',
           title: 'Blog Post',
           type: 'reference',
-          to: [{ type: 'post' }]
+          to: [{ type: 'blogPost' }]
         }
       ]
     },

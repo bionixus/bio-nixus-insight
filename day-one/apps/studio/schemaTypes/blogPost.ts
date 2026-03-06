@@ -396,7 +396,7 @@ export const blogPost = defineType({
       name: 'relatedPosts',
       title: 'Related Posts',
       type: 'array',
-      of: [{ type: 'reference', to: [{ type: 'blogPost' }, { type: 'post' }] }],
+      of: [{ type: 'reference', to: [{ type: 'blogPost' }] }],
     }),
     defineField({
       name: 'ctaSection',

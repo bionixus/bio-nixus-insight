@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { Helmet } from 'react-helmet-async';
+import { serviceRecoveryPaths } from '@/lib/internalLinkRecovery';
 
 const services = [
   {
@@ -128,6 +129,13 @@ const Services = () => {
                 <Link to="/pharmaceutical-companies-uae" className="text-primary hover:underline">
                   UAE pharmaceutical companies guide
                 </Link>
+              </div>
+              <div className="grid md:grid-cols-2 gap-2 mt-4">
+                {serviceRecoveryPaths.slice(0, 14).map((path) => (
+                  <Link key={path} to={path} className="text-primary hover:underline break-all">
+                    {path}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>

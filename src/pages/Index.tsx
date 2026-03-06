@@ -15,6 +15,7 @@ import Footer from '@/components/Footer';
 import { useSanityLatestInsights } from '@/hooks/useSanityBlog';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { priorityRecoveryPaths } from '@/lib/internalLinkRecovery';
 
 const Index = () => {
   const { hash } = useLocation();
@@ -66,13 +67,42 @@ const Index = () => {
             </div>
           </div>
         </section>
-        <GeographicCoverageSection />
-        <MethodologySection />
-        <TherapeuticAreasSection />
-        <StatsSection />
-        <BlogSection posts={sanityPosts ?? undefined} isLoading={blogLoading} />
-        <TestimonialsSection />
-        <ContactSection />
+        <section className="section-padding py-8">
+          <div className="container-wide max-w-6xl mx-auto">
+            <h2 className="text-2xl font-display font-semibold text-foreground mb-4">Discovery links for priority research pages</h2>
+            <p className="text-sm text-muted-foreground mb-4">
+              Quick navigation to high-priority healthcare and pharmaceutical URLs to improve crawl depth across strategic content clusters.
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+              {priorityRecoveryPaths.slice(0, 18).map((path) => (
+                <Link key={path} to={path} className="text-primary hover:underline break-all">
+                  {path}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+        <div className="cv-auto">
+          <GeographicCoverageSection />
+        </div>
+        <div className="cv-auto">
+          <MethodologySection />
+        </div>
+        <div className="cv-auto">
+          <TherapeuticAreasSection />
+        </div>
+        <div className="cv-auto">
+          <StatsSection />
+        </div>
+        <div className="cv-auto">
+          <BlogSection posts={sanityPosts ?? undefined} isLoading={blogLoading} />
+        </div>
+        <div className="cv-auto">
+          <TestimonialsSection />
+        </div>
+        <div className="cv-auto">
+          <ContactSection />
+        </div>
       </main>
       <Footer />
     </div>

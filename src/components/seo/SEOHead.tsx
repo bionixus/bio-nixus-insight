@@ -26,7 +26,9 @@ export function SEOHead({
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={canonicalUrl} />
-      {noindex ? <meta name="robots" content="noindex, nofollow" /> : null}
+      {noindex
+        ? <meta name="robots" content="noindex, nofollow" />
+        : <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />}
 
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />

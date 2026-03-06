@@ -13,7 +13,7 @@ const sanityClient = createClient({
 const BASE = 'https://www.bionixus.com';
 
 // Fetch full post including body content for Googlebot
-const QUERY = `*[_type in ["post", "blogPost"] && slug.current == $slug][0]{
+const QUERY = `*[_type == "blogPost" && slug.current == $slug][0]{
   title,
   excerpt,
   "body": coalesce(body, content),

@@ -4,7 +4,6 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import DocumentHead from '@/components/DocumentHead';
-import SyncLanguageFromPath from '@/components/SyncLanguageFromPath';
 import ScrollToTop from '@/components/ScrollToTop';
 import GoogleTagManager from '@/components/GoogleTagManager';
 import { routes } from '@/routes';
@@ -52,7 +51,6 @@ function AppProviders({ children }: { children: ReactNode }) {
     <QueryClientProvider client={queryClient}>
       <ScrollToTop />
       <LanguageProvider>
-        <SyncLanguageFromPath />
         <GoogleTagManager />
         <DocumentHead />
         <GoogleAnalytics />

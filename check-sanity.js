@@ -9,7 +9,7 @@ const client = createClient({
 
 async function listPosts() {
     console.log('Fetching posts...');
-    const posts = await client.fetch(`*[_type == "post"]{title, "slug": slug.current, _id}`);
+    const posts = await client.fetch(`*[_type == "blogPost"]{title, "slug": slug.current, _id}`);
     console.log('Found posts:', posts);
 }
 

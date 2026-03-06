@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import BlogSection from '@/components/BlogSection';
 import { useSanityBlog } from '@/hooks/useSanityBlog';
+import { blogRecoveryPaths } from '@/lib/internalLinkRecovery';
 
 const blogCollectionSchema = {
   '@context': 'https://schema.org',
@@ -114,6 +115,21 @@ const Blog = () => {
         ) : (
           <BlogSection posts={posts ?? undefined} />
         )}
+        <section className="section-padding py-8">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl font-display font-semibold text-foreground mb-4">Crawl-ready blog coverage links</h2>
+            <p className="text-sm text-muted-foreground mb-4">
+              Supplemental internal links to high-priority insight URLs from the latest crawl report.
+            </p>
+            <div className="grid md:grid-cols-2 gap-2">
+              {blogRecoveryPaths.slice(0, 28).map((path) => (
+                <Link key={path} to={path} className="text-primary hover:underline break-all">
+                  {path}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
         <section className="section-padding bg-muted/30">
           <div className="container-wide text-center">
             <Link

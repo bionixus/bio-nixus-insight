@@ -275,6 +275,11 @@
 }
 
 @layer utilities {
+  .cv-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 900px;
+  }
+
   /* ========================================================
      Legacy animation classes (still used by Hero on load)
      ======================================================== */

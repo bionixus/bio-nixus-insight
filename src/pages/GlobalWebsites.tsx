@@ -12,6 +12,7 @@ import {
   getCountryDirectory,
   formatLanguages,
 } from '@/lib/globalWebsitesData';
+import { healthcareCountryRecoveryPaths, languageRecoveryPaths } from '@/lib/internalLinkRecovery';
 
 const canonicalUrl = 'https://www.bionixus.com/global-websites';
 
@@ -158,6 +159,26 @@ const GlobalWebsites = () => {
               <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">
                 Open healthcare market research hub
               </Link>
+            </div>
+            <div className="mt-6 rounded-xl border border-border bg-card p-5">
+              <h2 className="text-lg font-display font-semibold text-foreground mb-3">Regional discovery links</h2>
+              <div className="grid md:grid-cols-2 gap-2">
+                {languageRecoveryPaths.slice(0, 12).map((path) => (
+                  <Link key={path} to={path} className="text-primary hover:underline break-all text-sm">
+                    {path}
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <div className="mt-6 rounded-xl border border-border bg-card p-5">
+              <h2 className="text-lg font-display font-semibold text-foreground mb-3">Healthcare market country paths</h2>
+              <div className="grid md:grid-cols-2 gap-2">
+                {healthcareCountryRecoveryPaths.slice(0, 16).map((path) => (
+                  <Link key={path} to={path} className="text-primary hover:underline break-all text-sm">
+                    {path}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </section>

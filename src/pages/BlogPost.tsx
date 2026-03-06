@@ -11,6 +11,7 @@ import RelatedPosts from '@/components/RelatedPosts';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { getOgLocale, getOgLocaleAlternates } from '@/lib/seo';
+import { blogRecoveryPaths } from '@/lib/internalLinkRecovery';
 
 /** Detect if string looks like HTML (contains tags). */
 function isHtmlString(s: string): boolean {
@@ -319,7 +320,7 @@ const BlogPost = () => {
         {/* Dynamic meta tags for this specific blog post */}
         <title>{normalizeSeoTitle(`${metaTitle} | BioNixus`, 'BioNixus')}</title>
         <meta name="description" content={metaDescription} />
-        {post.seoNoIndex && <meta name="robots" content="noindex,nofollow" />}
+        <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="article" />
@@ -529,6 +530,19 @@ const BlogPost = () => {
                 >
                   oncology market research in MENA and Europe
                 </Link>
+              </div>
+            </section>
+
+            <section className="mt-8 rounded-xl border border-border bg-card p-5">
+              <h2 className="text-xl font-display font-semibold text-foreground mb-3">
+                More healthcare insight pages
+              </h2>
+              <div className="grid md:grid-cols-2 gap-2">
+                {blogRecoveryPaths.slice(0, 12).map((path) => (
+                  <Link key={path} to={path} className="text-primary hover:underline break-all text-sm">
+                    {path}
+                  </Link>
+                ))}
               </div>
             </section>
 

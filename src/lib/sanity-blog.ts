@@ -1,6 +1,6 @@
 /**
  * Fetch blog posts from Sanity CMS.
- * Supports both "post" (legacy) and "blogPost" (SEO, OG, portable text body) schema types.
+ * Uses "blogPost" as the single source of truth.
  */
 
 import { getSanityClient } from './sanity';
@@ -11,7 +11,7 @@ function stripHtml(input: string): string {
   return input.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
-const POSTS_QUERY = `*[_type in ["post", "blogPost"] && defined(slug.current)] | order(publishedAt desc, _createdAt desc) {
+const POSTS_QUERY = `*[_type == "blogPost" && defined(slug.current)] | order(publishedAt desc, _createdAt desc) {
   _id,
   _type,
   title,
@@ -30,7 +30,7 @@ const POSTS_QUERY = `*[_type in ["post", "blogPost"] && defined(slug.current)] |
 }[0...50]`;
 
 const LATEST_INSIGHTS_QUERY = `*[
-  _type in ["post", "blogPost"] &&
+  _type == "blogPost" &&
   defined(slug.current) &&
   (!defined(language) || language == $language)
 ] | order(publishedAt desc, _createdAt desc) {
@@ -51,7 +51,7 @@ const LATEST_INSIGHTS_QUERY = `*[
   "coverImage": mainImage.asset->url
 }[0...$limit]`;
 
-const POST_BY_SLUG_QUERY = `*[_type in ["post", "blogPost"] && slug.current == $slug][0] {
+const POST_BY_SLUG_QUERY = `*[_type == "blogPost" && slug.current == $slug][0] {
   _id,
   _type,
   title,
@@ -182,7 +182,7 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
 export async function checkSanityConnection(): Promise<{ ok: true } | { ok: false; error: string }> {
   try {
     const client = getSanityClient();
-    await client.fetch<number>('count(*[_type in ["post", "blogPost"]])');
+    await client.fetch<number>('count(*[_type == "blogPost"])');
     return { ok: true };
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
@@ -267,7 +267,7 @@ export async function fetchSanityPostBySlug(slug: string): Promise<BlogPost | nu
  */
 const RELATED_POSTS_QUERY = `{
   "byTags": *[
-    _type in ["post", "blogPost"] &&
+    _type == "blogPost" &&
     defined(slug.current) &&
     slug.current != $slug &&
     count((tags[])[@ in $tags]) > 0 &&
@@ -275,19 +275,19 @@ const RELATED_POSTS_QUERY = `{
   ] | order(publishedAt desc, _createdAt desc)[0...8] {
     _id, _type, title, "slug": slug.current, excerpt, "date": coalesce(publishedAt, _createdAt), category, country, "coverImage": mainImage.asset->url
   },
-  "byCategory": *[_type in ["post", "blogPost"] && defined(slug.current) && slug.current != $slug && category == $category && $category != ""] | order(publishedAt desc, _createdAt desc)[0...3] {
+  "byCategory": *[_type == "blogPost" && defined(slug.current) && slug.current != $slug && category == $category && $category != ""] | order(publishedAt desc, _createdAt desc)[0...3] {
     _id, _type, title, "slug": slug.current, excerpt, "date": coalesce(publishedAt, _createdAt), category, country, "coverImage": mainImage.asset->url
   },
-  "byCountry": *[_type in ["post", "blogPost"] && defined(slug.current) && slug.current != $slug && country == $country && $country != ""] | order(publishedAt desc, _createdAt desc)[0...6] {
+  "byCountry": *[_type == "blogPost" && defined(slug.current) && slug.current != $slug && country == $country && $country != ""] | order(publishedAt desc, _createdAt desc)[0...6] {
     _id, _type, title, "slug": slug.current, excerpt, "date": coalesce(publishedAt, _createdAt), category, country, "coverImage": mainImage.asset->url
   },
-  "latest": *[_type in ["post", "blogPost"] && defined(slug.current) && slug.current != $slug] | order(publishedAt desc, _createdAt desc)[0...6] {
+  "latest": *[_type == "blogPost" && defined(slug.current) && slug.current != $slug] | order(publishedAt desc, _createdAt desc)[0...6] {
     _id, _type, title, "slug": slug.current, excerpt, "date": coalesce(publishedAt, _createdAt), category, country, "coverImage": mainImage.asset->url
   },
-  "prev": *[_type in ["post", "blogPost"] && defined(slug.current) && coalesce(publishedAt, _createdAt) < $date] | order(publishedAt desc, _createdAt desc)[0] {
+  "prev": *[_type == "blogPost" && defined(slug.current) && coalesce(publishedAt, _createdAt) < $date] | order(publishedAt desc, _createdAt desc)[0] {
     _id, title, "slug": slug.current
   },
-  "next": *[_type in ["post", "blogPost"] && defined(slug.current) && coalesce(publishedAt, _createdAt) > $date] | order(publishedAt asc, _createdAt asc)[0] {
+  "next": *[_type == "blogPost" && defined(slug.current) && coalesce(publishedAt, _createdAt) > $date] | order(publishedAt asc, _createdAt asc)[0] {
     _id, title, "slug": slug.current
   }
 }`;

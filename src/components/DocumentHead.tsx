@@ -225,7 +225,7 @@ const DocumentHead = () => {
   const { language } = useLanguage();
   const { pathname } = useLocation();
   const seo = seoByLanguage[language];
-  const canonicalPath = getCanonicalPath(pathname || seo.canonicalPath || '/');
+  const canonicalPath = getCanonicalPath(pathname || '/');
   const canonicalUrl = getCanonicalUrl(canonicalPath);
   const normalizedPath = cleanPath(pathname || '/');
   const useGlobalSeoFallback = globalSeoFallbackRoutes.has(normalizedPath);
@@ -246,7 +246,7 @@ const DocumentHead = () => {
         <meta httpEquiv="content-language" content={contentLanguage} />
         {gscId ? <meta name="google-site-verification" content={gscId} /> : null}
         {language === 'de' ? <meta name="geo.region" content="DE;GB;FR;ES;IT;AE;SA;EG" /> : null}
-        {useGlobalSeoFallback ? <link rel="canonical" href={canonicalUrl} /> : null}
+        <link rel="canonical" href={canonicalUrl} />
         {hreflangLinks.map(({ lang, href }) => (
           <link key={`${lang}-${href}`} rel="alternate" hrefLang={lang} href={href} />
         ))}
