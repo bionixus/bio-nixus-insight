@@ -15,6 +15,7 @@ const CookieConsent = lazy(() => import('@/components/CookieConsent'));
 const LazyStatsigInit = lazy(() => import('@/components/StatsigInit'));
 const LazyVercelAnalytics = lazy(() => import('@vercel/analytics/react').then((m) => ({ default: m.Analytics })));
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import MicrosoftClarity from '@/components/MicrosoftClarity';
 
 const queryClient = new QueryClient();
 
@@ -54,6 +55,7 @@ function AppProviders({ children }: { children: ReactNode }) {
         <GoogleTagManager />
         <DocumentHead />
         <GoogleAnalytics />
+        <MicrosoftClarity />
         <TooltipProvider>
           <Suspense fallback={null}>
             <Toaster />
