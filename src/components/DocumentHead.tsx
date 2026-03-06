@@ -1,13 +1,17 @@
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { seoByLanguage, getCanonicalUrl, getHreflangLinks, defaultOgImageUrl, defaultOgImageAlt, defaultOgImageWidth, defaultOgImageHeight } from '@/lib/seo';
 
 const DocumentHead = () => {
   const { language } = useLanguage();
+  const { pathname } = useLocation();
   const seo = seoByLanguage[language];
-  const canonicalPath = seo.canonicalPath || '/';
 
   useEffect(() => {
+    // Blog and case-study pages manage their own meta tags via their components
+    if (pathname.startsWith('/blog/') || pathname.startsWith('/case-studies/')) return;
+
     document.title = seo.title;
 
     const setMeta = (name: string, content: string, isProperty = false) => {
@@ -44,7 +48,7 @@ const DocumentHead = () => {
       canonical.setAttribute('rel', 'canonical');
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute('href', getCanonicalUrl(canonicalPath));
+    canonical.setAttribute('href', getCanonicalUrl(pathname));
 
     const existingHreflang = document.querySelectorAll('link[rel="alternate"][hreflang]');
     existingHreflang.forEach((el) => el.remove());
@@ -56,7 +60,7 @@ const DocumentHead = () => {
       link.setAttribute('href', href);
       document.head.appendChild(link);
     });
-  }, [language]);
+  }, [language, pathname]);
 
   return null;
 };

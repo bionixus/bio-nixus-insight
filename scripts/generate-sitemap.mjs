@@ -76,7 +76,7 @@ const staticRoutes = [
   { path: '/privacy', priority: '0.5' },
 ];
 
-async function fetchSanitySlugs(projectId, dataset, type) {
+async function fetchSanitySlugs(projectId, dataset, types) {
   try {
     const { createClient } = await import('@sanity/client');
     const client = createClient({
@@ -85,7 +85,9 @@ async function fetchSanitySlugs(projectId, dataset, type) {
       apiVersion: '2024-01-01',
       useCdn: true,
     });
-    const query = `*[_type == "${type}" && defined(slug.current)]{ "slug": slug.current }`;
+    const typeList = Array.isArray(types) ? types : [types];
+    const typeFilter = typeList.map((t) => `"${t}"`).join(', ');
+    const query = `*[_type in [${typeFilter}] && defined(slug.current)]{ "slug": slug.current }`;
     const list = await Promise.race([
       client.fetch(query),
       new Promise((_, reject) =>
@@ -94,7 +96,7 @@ async function fetchSanitySlugs(projectId, dataset, type) {
     ]);
     return (list || []).map((o) => o.slug).filter(Boolean);
   } catch (err) {
-    console.warn(`Sitemap: could not fetch ${type} slugs:`, err.message);
+    console.warn(`Sitemap: could not fetch ${types} slugs:`, err.message);
     return [];
   }
 }
@@ -108,7 +110,7 @@ async function main() {
   const caseDataset = process.env.VITE_SANITY_CASE_STUDIES_DATASET || 'production';
 
   const [blogSlugs, caseSlugs] = await Promise.all([
-    fetchSanitySlugs(blogProjectId, blogDataset, 'post'),
+    fetchSanitySlugs(blogProjectId, blogDataset, ['post', 'blogPost']),
     fetchSanitySlugs(caseProjectId, caseDataset, 'caseStudy'),
   ]);
 

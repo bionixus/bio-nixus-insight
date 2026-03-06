@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import DOMPurify from 'dompurify';
@@ -218,6 +219,53 @@ const BlogPost = () => {
       : null;
 
   const post = sanityPost ?? fallbackPost;
+
+  // Set document meta tags for social sharing (client-side, for SPA navigation)
+  useEffect(() => {
+    if (!post) return;
+
+    const title = post.ogTitle || post.metaTitle || post.title;
+    const description = post.ogDescription || post.metaDescription || post.excerpt || '';
+    const rawImage = post.ogImage || post.coverImage;
+    const image = rawImage
+      ? rawImage.includes('cdn.sanity.io')
+        ? `${rawImage}${rawImage.includes('?') ? '&' : '?'}w=1200&h=630&fit=crop&auto=format`
+        : rawImage
+      : 'https://bionixus.com/og-image.png';
+    const pageUrl = `https://bionixus.com/blog/${slug}`;
+
+    document.title = `${title} | BioNixus`;
+
+    const setMeta = (attr: string, key: string, content: string) => {
+      let el = document.querySelector(`meta[${attr}="${key}"]`);
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute(attr, key);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', content);
+    };
+
+    setMeta('name', 'description', description);
+    setMeta('property', 'og:title', title);
+    setMeta('property', 'og:description', description);
+    setMeta('property', 'og:image', image);
+    setMeta('property', 'og:image:width', '1200');
+    setMeta('property', 'og:image:height', '630');
+    setMeta('property', 'og:url', pageUrl);
+    setMeta('property', 'og:type', 'article');
+    setMeta('name', 'twitter:title', title);
+    setMeta('name', 'twitter:description', description);
+    setMeta('name', 'twitter:image', image);
+
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', pageUrl);
+  }, [post, slug]);
 
   if (!slug) {
     return (

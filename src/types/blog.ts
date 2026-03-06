@@ -33,4 +33,9 @@ export interface BlogPost {
   executiveSummary?: unknown[];
   faq?: BlogPostFaqItem[];
   ctaSection?: BlogPostCtaSection;
+  metaTitle?: string;
+  metaDescription?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
 }

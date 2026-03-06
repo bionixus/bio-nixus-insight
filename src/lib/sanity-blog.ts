@@ -43,7 +43,12 @@ const POST_BY_SLUG_QUERY = `*[_type in ["post", "blogPost"] && slug.current == $
   tableOfContents,
   executiveSummary,
   faq,
-  ctaSection
+  ctaSection,
+  "metaTitle": seo.metaTitle,
+  "metaDescription": seo.metaDescription,
+  "ogTitle": openGraph.ogTitle,
+  "ogDescription": openGraph.ogDescription,
+  "ogImage": openGraph.ogImage.asset->url
 }`;
 
 function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | null {
@@ -83,6 +88,11 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
       if (Array.isArray(raw.executiveSummary)) out.executiveSummary = raw.executiveSummary;
       if (Array.isArray(raw.faq)) out.faq = raw.faq;
       if (raw.ctaSection && typeof raw.ctaSection === 'object') out.ctaSection = raw.ctaSection;
+      if (raw.metaTitle) out.metaTitle = raw.metaTitle;
+      if (raw.metaDescription) out.metaDescription = raw.metaDescription;
+      if (raw.ogTitle) out.ogTitle = raw.ogTitle;
+      if (raw.ogDescription) out.ogDescription = raw.ogDescription;
+      if (raw.ogImage) out.ogImage = raw.ogImage;
       return out;
     })()),
     language: p.language ?? undefined,
@@ -153,4 +163,9 @@ interface RawSanityPost {
   executiveSummary?: unknown[];
   faq?: { question?: string; answer?: string }[];
   ctaSection?: { title?: string; description?: string; buttonText?: string; buttonUrl?: string };
+  metaTitle?: string;
+  metaDescription?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
 }
