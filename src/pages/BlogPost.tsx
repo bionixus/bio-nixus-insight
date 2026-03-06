@@ -13,6 +13,17 @@ import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { getOgLocale, getOgLocaleAlternates } from '@/lib/seo';
 import { blogRecoveryPaths } from '@/lib/internalLinkRecovery';
 
+/** Helper to convert PortableText block to a URL-friendly slug */
+function slugifyHeading(value: any): string {
+  if (!value || !Array.isArray(value.children)) return '';
+  const text = value.children.map((child: { text?: string }) => child.text || '').join('');
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+}
+
 /** Detect if string looks like HTML (contains tags). */
 function isHtmlString(s: string): boolean {
   const t = s.trim();
@@ -123,18 +134,18 @@ import type { BlogPost as BlogPostType } from '@/types/blog';
 /** Portable text block renderers – match McKinsey prose-body styles */
 const portableTextComponents = {
   block: {
-    h2: ({ children }: { children?: React.ReactNode }) => (
-      <h2 className="text-xl font-display font-semibold mt-10 mb-4 pb-0 border-l-4 border-primary pl-4 text-primary">
+    h2: ({ children, value }: { children?: React.ReactNode, value?: any }) => (
+      <h2 id={slugifyHeading(value)} className="text-xl font-display font-semibold mt-10 mb-4 pb-0 border-l-4 border-primary pl-4 text-primary">
         {children}
       </h2>
     ),
-    h3: ({ children }: { children?: React.ReactNode }) => (
-      <h3 className="text-lg font-display font-semibold text-foreground mt-8 mb-3">
+    h3: ({ children, value }: { children?: React.ReactNode, value?: any }) => (
+      <h3 id={slugifyHeading(value)} className="text-lg font-display font-semibold text-foreground mt-8 mb-3">
         {children}
       </h3>
     ),
-    h4: ({ children }: { children?: React.ReactNode }) => (
-      <h4 className="text-base font-display font-semibold text-primary mt-0 mb-3">
+    h4: ({ children, value }: { children?: React.ReactNode, value?: any }) => (
+      <h4 id={slugifyHeading(value)} className="text-base font-display font-semibold text-primary mt-0 mb-3">
         {children}
       </h4>
     ),
@@ -311,8 +322,8 @@ const BlogPost = () => {
         faqItems={
           Array.isArray(post.faq)
             ? post.faq
-                .filter((item) => Boolean(item.question && item.answer))
-                .map((item) => ({ question: item.question!, answer: item.answer! }))
+              .filter((item) => Boolean(item.question && item.answer))
+              .map((item) => ({ question: item.question!, answer: item.answer! }))
             : []
         }
       />
@@ -459,22 +470,22 @@ const BlogPost = () => {
             {post.executiveSummary && (
               Array.isArray(post.executiveSummary) ? post.executiveSummary.length > 0 : typeof post.executiveSummary === 'string' && (post.executiveSummary as string).trim()
             ) && (
-              <section className="mb-8 p-5 rounded-lg border border-primary/20 bg-primary/5">
-                <h2 className="text-lg font-display font-semibold text-primary mb-3">
-                  Executive summary
-                </h2>
-                <div className="prose-body text-foreground leading-relaxed">
-                  {typeof post.executiveSummary === 'string' ? (
-                    <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.executiveSummary as string) }} />
-                  ) : (
-                    <PortableText
-                      value={post.executiveSummary as PortableTextBlock[]}
-                      components={portableTextComponents}
-                    />
-                  )}
-                </div>
-              </section>
-            )}
+                <section className="mb-8 p-5 rounded-lg border border-primary/20 bg-primary/5">
+                  <h2 className="text-lg font-display font-semibold text-primary mb-3">
+                    Executive summary
+                  </h2>
+                  <div className="prose-body text-foreground leading-relaxed">
+                    {typeof post.executiveSummary === 'string' ? (
+                      <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.executiveSummary as string) }} />
+                    ) : (
+                      <PortableText
+                        value={post.executiveSummary as PortableTextBlock[]}
+                        components={portableTextComponents}
+                      />
+                    )}
+                  </div>
+                </section>
+              )}
 
             <div className="prose prose-neutral dark:prose-invert max-w-none">
               {(() => {

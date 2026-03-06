@@ -15,7 +15,6 @@ import Footer from '@/components/Footer';
 import { useSanityLatestInsights } from '@/hooks/useSanityBlog';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { priorityRecoveryPaths } from '@/lib/internalLinkRecovery';
 
 const Index = () => {
   const { hash } = useLocation();
@@ -64,21 +63,6 @@ const Index = () => {
                 <h3 className="font-semibold text-foreground mb-1">Global Websites Directory</h3>
                 <p className="text-sm text-muted-foreground">Explore country and regional BioNixus pages with language coverage.</p>
               </Link>
-            </div>
-          </div>
-        </section>
-        <section className="section-padding py-8">
-          <div className="container-wide max-w-6xl mx-auto">
-            <h2 className="text-2xl font-display font-semibold text-foreground mb-4">Discovery links for priority research pages</h2>
-            <p className="text-sm text-muted-foreground mb-4">
-              Quick navigation to high-priority healthcare and pharmaceutical URLs to improve crawl depth across strategic content clusters.
-            </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-              {priorityRecoveryPaths.slice(0, 18).map((path) => (
-                <Link key={path} to={path} className="text-primary hover:underline break-all">
-                  {path}
-                </Link>
-              ))}
             </div>
           </div>
         </section>
