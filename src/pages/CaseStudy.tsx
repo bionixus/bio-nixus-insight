@@ -115,16 +115,23 @@ const CaseStudyPage = () => {
 
   if (!caseStudy || isError) {
     return (
-      <div className="min-h-screen bg-background">
-        <Navbar />
-        <main className="section-padding container-wide">
-          <p className="text-muted-foreground">Case study not found.</p>
-          <Link to="/case-studies" className="mt-4 inline-flex items-center gap-2 text-primary font-medium hover:underline">
-            <ArrowLeft className="w-4 h-4" /> {cs.backToHome ?? 'Back to case studies'}
-          </Link>
-        </main>
-        <Footer />
-      </div>
+      <>
+        <Helmet>
+          <title>Case Study Not Found | BioNixus</title>
+          <meta name="prerender-status" content="404" />
+          <meta name="robots" content="noindex" />
+        </Helmet>
+        <div className="min-h-screen bg-background" data-route-status="404">
+          <Navbar />
+          <main className="section-padding container-wide">
+            <p className="text-muted-foreground">Case study not found.</p>
+            <Link to="/case-studies" className="mt-4 inline-flex items-center gap-2 text-primary font-medium hover:underline">
+              <ArrowLeft className="w-4 h-4" /> {cs.backToHome ?? 'Back to case studies'}
+            </Link>
+          </main>
+          <Footer />
+        </div>
+      </>
     );
   }
 

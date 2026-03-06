@@ -1407,23 +1407,30 @@ const GlobalWebsiteCountry = () => {
 
   if (!country) {
     return (
-      <div className="min-h-screen bg-background">
-        <Navbar />
-        <main className="section-padding pt-24 pb-20">
-          <div className="container-wide max-w-4xl mx-auto">
-            <h1 className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-4">
-              Country page not found
-            </h1>
-            <p className="text-muted-foreground mb-8">
-              The requested country page is not available. Browse all countries from the global websites hub.
-            </p>
-            <Link to="/global-websites" className="inline-flex items-center gap-2 text-primary font-medium hover:underline">
-              <ArrowLeft className="w-4 h-4" /> Back to Global Websites
-            </Link>
-          </div>
-        </main>
-        <Footer />
-      </div>
+      <>
+        <Helmet>
+          <title>Country Page Not Found | BioNixus</title>
+          <meta name="prerender-status" content="404" />
+          <meta name="robots" content="noindex" />
+        </Helmet>
+        <div className="min-h-screen bg-background" data-route-status="404">
+          <Navbar />
+          <main className="section-padding pt-24 pb-20">
+            <div className="container-wide max-w-4xl mx-auto">
+              <h1 className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-4">
+                Country page not found
+              </h1>
+              <p className="text-muted-foreground mb-8">
+                The requested country page is not available. Browse all countries from the global websites hub.
+              </p>
+              <Link to="/global-websites" className="inline-flex items-center gap-2 text-primary font-medium hover:underline">
+                <ArrowLeft className="w-4 h-4" /> Back to Global Websites
+              </Link>
+            </div>
+          </main>
+          <Footer />
+        </div>
+      </>
     );
   }
 

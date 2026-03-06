@@ -401,16 +401,23 @@ const BlogPost = () => {
 
   if (!slug) {
     return (
-      <div className="min-h-screen bg-background">
-        <Navbar />
-        <main className="section-padding container-wide">
-          <p className="text-muted-foreground">Invalid article.</p>
-          <Link to="/blog" className="mt-4 inline-flex items-center gap-2 text-primary font-medium hover:underline">
-            <ArrowLeft className="w-4 h-4" /> Back to articles
-          </Link>
-        </main>
-        <Footer />
-      </div>
+      <>
+        <Helmet>
+          <title>Article Not Found | BioNixus</title>
+          <meta name="prerender-status" content="404" />
+          <meta name="robots" content="noindex" />
+        </Helmet>
+        <div className="min-h-screen bg-background" data-route-status="404">
+          <Navbar />
+          <main className="section-padding container-wide">
+            <p className="text-muted-foreground">Invalid article.</p>
+            <Link to="/blog" className="mt-4 inline-flex items-center gap-2 text-primary font-medium hover:underline">
+              <ArrowLeft className="w-4 h-4" /> Back to articles
+            </Link>
+          </main>
+          <Footer />
+        </div>
+      </>
     );
   }
 
@@ -428,16 +435,23 @@ const BlogPost = () => {
 
   if (!post && (isError || !sanityPost)) {
     return (
-      <div className="min-h-screen bg-background">
-        <Navbar />
-        <main className="section-padding container-wide">
-          <p className="text-muted-foreground">Article not found.</p>
-          <Link to="/blog" className="mt-4 inline-flex items-center gap-2 text-primary font-medium hover:underline">
-            <ArrowLeft className="w-4 h-4" /> Back to articles
-          </Link>
-        </main>
-        <Footer />
-      </div>
+      <>
+        <Helmet>
+          <title>Article Not Found | BioNixus</title>
+          <meta name="prerender-status" content="404" />
+          <meta name="robots" content="noindex" />
+        </Helmet>
+        <div className="min-h-screen bg-background" data-route-status="404">
+          <Navbar />
+          <main className="section-padding container-wide">
+            <p className="text-muted-foreground">Article not found.</p>
+            <Link to="/blog" className="mt-4 inline-flex items-center gap-2 text-primary font-medium hover:underline">
+              <ArrowLeft className="w-4 h-4" /> Back to articles
+            </Link>
+          </main>
+          <Footer />
+        </div>
+      </>
     );
   }
 

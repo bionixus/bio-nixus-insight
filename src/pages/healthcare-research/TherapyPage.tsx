@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link, Navigate, useParams } from 'react-router-dom';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { CTASection } from '@/components/shared/CTASection';
@@ -71,12 +71,17 @@ const THERAPY_SECTIONS: Record<string, { title: string; points: string[] }> = {
   },
 };
 
+const VALID_THERAPY_AREAS = Object.keys(THERAPY_COPY);
+
 export default function TherapyPage() {
   const { area = '' } = useParams<{ area: string }>();
+
+  if (!area || !VALID_THERAPY_AREAS.includes(area)) {
+    return <Navigate to="/healthcare-market-research" replace />;
+  }
+
   const titleArea = area.replace(/-/g, ' ');
-  const copy =
-    THERAPY_COPY[area] ||
-    'Therapy-focused pharmaceutical market research with actionable evidence for stakeholder engagement and growth planning.';
+  const copy = THERAPY_COPY[area];
   const therapyFaqs = [
     {
       question: `How does BioNixus approach ${titleArea} pharmaceutical market research?`,
