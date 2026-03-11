@@ -20,6 +20,7 @@ type ServerEntryModule = {
 
 let templateCache = '';
 let serverEntryCache: ServerEntryModule | null = null;
+const LOCALE_ROOT_WITH_SLASH = new Set(['/de/', '/fr/', '/es/', '/zh/', '/ar/']);
 const REDIRECTS: Record<string, string> = {
   '/healthcare-market-research-saudi-arabia': '/healthcare-market-research/saudi-arabia',
   '/healthcare-market-research-uae': '/healthcare-market-research/uae',
@@ -38,10 +39,12 @@ const REDIRECTS: Record<string, string> = {
   '/best-market-research-company-saudi-arabia': '/market-research-saudi-arabia-pharmaceutical',
   '/bionixus-ai-crm-tools': '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
   '/bionixus-market-research-customer-experience-blog': '/blog',
+  '/career-portal': '/about',
   '/careers': '/about',
   '/chatgpt-is-down': '/blog',
   '/contact-details-bionixus': '/contact',
   '/customer-experience': '/services/competitive-intelligence',
+  '/cx-ai-services': '/services/competitive-intelligence',
   '/de/about': '/about',
   '/de/contacts': '/de/contact',
   '/de/services': '/services',
@@ -55,6 +58,7 @@ const REDIRECTS: Record<string, string> = {
   '/page': '/',
   '/privacy-policy': '/privacy',
   '/quantitative-market-research-healthcare': '/quantitative-healthcare-market-research',
+  '/recruitment-services': '/services',
   '/sales-growth': '/services',
   '/startup-digital-marketing-package': '/services',
   '/terms-and-conditions': '/privacy',
@@ -135,7 +139,7 @@ async function handleSsrRequest(
   const pathname = url.split('?')[0] || '/';
   const query = url.includes('?') ? `?${url.split('?').slice(1).join('?')}` : '';
 
-  if (pathname !== '/' && pathname.endsWith('/')) {
+  if (pathname !== '/' && pathname.endsWith('/') && !LOCALE_ROOT_WITH_SLASH.has(pathname)) {
     res.setHeader('Cache-Control', 'public, max-age=3600');
     res.redirect(301, `${pathname.slice(0, -1)}${query}`);
     return;

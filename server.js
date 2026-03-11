@@ -11,6 +11,7 @@ const port = Number(process.env.PORT || 5173);
 async function startServer() {
   const app = express();
   app.use(compression());
+  const LOCALE_ROOT_WITH_SLASH = new Set(['/de/', '/fr/', '/es/', '/zh/', '/ar/']);
   const REDIRECTS = {
     '/healthcare-market-research-saudi-arabia': '/healthcare-market-research/saudi-arabia',
     '/healthcare-market-research-uae': '/healthcare-market-research/uae',
@@ -29,10 +30,12 @@ async function startServer() {
     '/best-market-research-company-saudi-arabia': '/market-research-saudi-arabia-pharmaceutical',
     '/bionixus-ai-crm-tools': '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
     '/bionixus-market-research-customer-experience-blog': '/blog',
+    '/career-portal': '/about',
     '/careers': '/about',
     '/chatgpt-is-down': '/blog',
     '/contact-details-bionixus': '/contact',
     '/customer-experience': '/services/competitive-intelligence',
+    '/cx-ai-services': '/services/competitive-intelligence',
     '/de/about': '/about',
     '/de/contacts': '/de/contact',
     '/de/services': '/services',
@@ -46,6 +49,7 @@ async function startServer() {
     '/page': '/',
     '/privacy-policy': '/privacy',
     '/quantitative-market-research-healthcare': '/quantitative-healthcare-market-research',
+    '/recruitment-services': '/services',
     '/sales-growth': '/services',
     '/startup-digital-marketing-package': '/services',
     '/terms-and-conditions': '/privacy',
@@ -94,7 +98,7 @@ async function startServer() {
 
   app.use(async (req, res, next) => {
     try {
-      if (req.path !== '/' && req.path.endsWith('/')) {
+      if (req.path !== '/' && req.path.endsWith('/') && !LOCALE_ROOT_WITH_SLASH.has(req.path)) {
         const trimmedPath = req.path.slice(0, -1);
         const suffix = req.originalUrl.slice(req.path.length);
         res.redirect(301, `${trimmedPath}${suffix}`);
