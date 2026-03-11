@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "node server.js",
+    "seo:check": "node scripts/seo-hard-check.mjs",
     "generate-sitemap": "node scripts/generate-sitemap.mjs",
     "prebuild": "npm run generate-sitemap",
     "build": "npm run build:client && npm run build:server && npm run build:prerender-home && npm run build:sitemap",
