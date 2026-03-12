@@ -51,11 +51,11 @@ const Navbar = () => {
   ];
 
   const healthcareMarketCountries = [
+    { label: 'Europe', href: '/healthcare-market-research/europe' },
+    { label: 'UK', href: '/healthcare-market-research/uk' },
     { label: 'Saudi Arabia', href: '/healthcare-market-research/saudi-arabia' },
     { label: 'UAE', href: '/healthcare-market-research/uae' },
     { label: 'Kuwait', href: '/healthcare-market-research/kuwait' },
-    { label: 'United Kingdom', href: '/healthcare-market-research/uk' },
-    { label: 'Europe', href: '/healthcare-market-research/europe' },
   ];
 
   return (

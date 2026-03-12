@@ -4,8 +4,8 @@ export function generateWelcomeEmail(
   subscriberId: string = ''
 ) {
   const unsubscribeUrl = subscriberId
-    ? `https://bionixus.com/unsubscribe?id=${subscriberId}`
-    : 'https://bionixus.com/unsubscribe'
+    ? `https://www.bionixus.com/unsubscribe?id=${subscriberId}`
+    : 'https://www.bionixus.com/unsubscribe'
   const content = {
     en: {
       subject: 'Welcome to BioNixus Healthcare Insights',
@@ -285,7 +285,7 @@ export function generateWelcomeEmail(
               <p style="margin: 0; font-size: 11px; color: #8a94a6;">
                 <a href="${unsubscribeUrl}" style="color: #1a2d4d; text-decoration: none; font-weight: 500;">Unsubscribe</a>
                 &nbsp;&middot;&nbsp;
-                <a href="https://bionixus.com" style="color: #1a2d4d; text-decoration: none; font-weight: 500;">Visit Website</a>
+                <a href="https://www.bionixus.com" style="color: #1a2d4d; text-decoration: none; font-weight: 500;">Visit Website</a>
               </p>
             </td>
           </tr>

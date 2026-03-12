@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
+import { getHreflangLinks } from '@/lib/seo';
 
 interface SEOHeadProps {
   title: string;
@@ -26,12 +27,16 @@ export function SEOHead({
     return clean === '/' ? '/' : clean.replace(/\/+$/, '');
   })();
   const canonicalUrl = `https://www.bionixus.com${canonicalPath}`;
+  const hreflangLinks = getHreflangLinks(pathname);
 
   return (
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={canonicalUrl} />
+      {hreflangLinks.map(({ lang, href }) => (
+        <link key={`${lang}-${href}`} rel="alternate" hrefLang={lang} href={href} />
+      ))}
       {noindex
         ? <meta name="robots" content="noindex, nofollow" />
         : <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />}

@@ -19,7 +19,7 @@ const sanityServer = createClient({
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
-const BASE_URL = process.env.VITE_BASE_URL || 'https://bionixus.com'
+const BASE_URL = process.env.VITE_BASE_URL || 'https://www.bionixus.com'
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'BioNixus2026!'
 
 // ─── AWS SES setup (opt-in — requires USE_AWS_SES=true in addition to credentials) ───

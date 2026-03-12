@@ -18,6 +18,11 @@ type ServerEntryModule = {
   fetchRouteData: (url: string) => Promise<Record<string, unknown>>;
 };
 
+type RequestLike = {
+  url?: string;
+  query?: Record<string, string | string[] | undefined>;
+};
+
 let templateCache = '';
 let serverEntryCache: ServerEntryModule | null = null;
 const LOCALE_ROOT_WITH_SLASH = new Set(['/de/', '/fr/', '/es/', '/zh/', '/ar/']);
@@ -121,15 +126,30 @@ function injectHtml(
     );
 }
 
+function getParamFromUrl(url: string | undefined, key: string): string | undefined {
+  if (!url) return undefined;
+  const queryPart = url.includes('?') ? url.slice(url.indexOf('?') + 1) : '';
+  if (!queryPart) return undefined;
+  const params = new URLSearchParams(queryPart);
+  return params.get(key) ?? undefined;
+}
+
+function getRequestParam(req: RequestLike, key: string): string | undefined {
+  const queryValue = req.query?.[key];
+  if (typeof queryValue === 'string' && queryValue.length > 0) return queryValue;
+  if (Array.isArray(queryValue) && queryValue.length > 0) return queryValue[0];
+  return getParamFromUrl(req.url, key);
+}
+
 async function handleSsrRequest(
-  req: { url?: string; query?: Record<string, string | string[] | undefined> },
+  req: RequestLike,
   res: {
     setHeader: (name: string, value: string) => void;
     redirect: (statusCode: number, url: string) => void;
     status: (statusCode: number) => { send: (body: string) => void };
   },
 ) {
-  const rawQueryUrl = Array.isArray(req.query?.url) ? req.query?.url[0] : req.query?.url;
+  const rawQueryUrl = getRequestParam(req, 'url');
   const rewrittenPath = typeof rawQueryUrl === 'string' ? decodeURIComponent(rawQueryUrl) : '';
   const normalizedRewrittenPath = rewrittenPath
     ? (rewrittenPath.startsWith('/') ? rewrittenPath : `/${rewrittenPath}`)
@@ -172,7 +192,7 @@ async function handleSsrRequest(
 }
 
 export default async function handler(
-  req: { query?: Record<string, string | string[] | undefined>; url?: string },
+  req: RequestLike,
   res: {
     setHeader: (name: string, value: string) => void;
     redirect: (statusCode: number, url: string) => void;
@@ -180,7 +200,7 @@ export default async function handler(
   },
 ) {
   try {
-    if (req.query?.__ssr === '1') {
+    if (getRequestParam(req, '__ssr') === '1') {
       await handleSsrRequest(req, res);
       return;
     }

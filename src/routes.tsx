@@ -92,6 +92,11 @@ export const routes: RouteObject[] = [
   { path: '/market-research', element: <MarketResearch /> },
   { path: '/market-research-saudi-arabia-pharmaceutical', element: <MarketResearchSaudiArabiaPharmaceutical /> },
   { path: '/market-research-healthcare', element: <MarketResearchHealthcare /> },
+  { path: '/de/market-research-healthcare', element: <MarketResearchHealthcare /> },
+  { path: '/fr/market-research-healthcare', element: <MarketResearchHealthcare /> },
+  { path: '/es/market-research-healthcare', element: <MarketResearchHealthcare /> },
+  { path: '/zh/market-research-healthcare', element: <MarketResearchHealthcare /> },
+  { path: '/ar/market-research-healthcare', element: <MarketResearchHealthcare /> },
   { path: '/qualitative-market-research', element: <QualitativeMarketResearch /> },
   { path: '/bionixus-market-research-middle-east', element: <BionixusMarketResearchMiddleEast /> },
   {

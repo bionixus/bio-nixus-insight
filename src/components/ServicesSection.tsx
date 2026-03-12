@@ -384,9 +384,16 @@ const ServicesSection = () => {
               showPrimaryFr || showPrimaryEs || showPrimaryZh ? index : showPrimaryAr ? index + primaryBlocks.length : showPrimaryDe ? index + primaryDeBlocks.length : index;
             const Icon = icons[iconIndex];
             const linkHref = serviceLinks[iconIndex] || null;
+            const isPriorityCard = iconIndex === 0;
+            const showCountryDepthBadge = iconIndex === 4;
 
             const cardContent = (
               <>
+                {showCountryDepthBadge ? (
+                  <span className="inline-flex mb-3 rounded-full bg-primary/15 px-2.5 py-1 text-[11px] font-semibold text-primary">
+                    Country-Level Depth
+                  </span>
+                ) : null}
                 <div className="w-14 h-14 rounded-xl bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors">
                   <Icon className="w-7 h-7 text-primary" />
                 </div>
@@ -410,19 +417,35 @@ const ServicesSection = () => {
               <Link
                 key={index}
                 to={linkHref}
-                className="service-card group sr sr-scale-up sr-spring hover-lift cursor-pointer"
+                className={`service-card group sr sr-scale-up sr-spring hover-lift cursor-pointer ${
+                  isPriorityCard ? 'border-primary/40 bg-gradient-to-br from-primary/10 via-background to-background' : ''
+                }`}
               >
                 {cardContent}
               </Link>
             ) : (
               <div
                 key={index}
-                className="service-card group sr sr-scale-up sr-spring hover-lift"
+                className={`service-card group sr sr-scale-up sr-spring hover-lift ${
+                  isPriorityCard ? 'border-primary/40 bg-gradient-to-br from-primary/10 via-background to-background' : ''
+                }`}
               >
                 {cardContent}
               </div>
             );
           })}
+        </div>
+
+        <div className="mt-10 rounded-xl border border-primary/20 bg-primary/5 p-6 text-center sr sr-up">
+          <p className="text-foreground font-medium mb-4">
+            Need a tailored healthcare market research scope for your pharmaceutical priorities?
+          </p>
+          <Link
+            to="/contact"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
+          >
+            Request a proposal
+          </Link>
         </div>
       </div>
     </section>

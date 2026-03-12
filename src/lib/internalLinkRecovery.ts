@@ -1,4 +1,6 @@
-export const reportZeroLinkPaths = [
+import { getCountryDirectory } from './globalWebsitesData';
+
+const rawReportZeroLinkPaths = [
   '/adobe-experience-cloud',
   '/ar',
   '/ar/about',
@@ -21,6 +23,8 @@ export const reportZeroLinkPaths = [
   '/blog/deutsche-pharmaunternehmen-2026-pipeline-updates',
   '/blog/emea-jca-market-access-update-2026',
   '/blog/fda-update-glp-1-obesity-market-crackdown-2026',
+  '/blog/gcc-pharmaceuticals-market-2026',
+  '/blog/gcc-pharmaceuticals-market-arabic-2026',
   '/blog/gesundheitsmarkt-deutschland-2026',
   '/blog/healthcare-market-research-europe',
   '/blog/healthcare-market-research-europe-2026',
@@ -60,6 +64,8 @@ export const reportZeroLinkPaths = [
   '/blog/top-healthcare-market-research-companies-mena',
   '/blog/top-therapy-areas-pharma-growth-saudi-arabia',
   '/blog/uae-healthcare-market-trends-2025',
+  '/blog/%D8%A3%D8%A8%D8%AD%D8%A7%D8%AB-%D8%A7%D9%84%D8%B3%D9%88%D9%82-%D8%A7%D9%84%D8%AF%D9%88%D8%A7%D8%A6%D9%8A%D8%A9-%D9%81%D9%8A-%D8%A7%D9%84%D8%B4%D8%B1%D9%82-%D8%A7%D9%84%D8%A3%D9%88%D8%B3%D8%B7-%D9%88-%D8%AF%D9%88%D9%84-%D8%A7%D9%84%D8%AE%D9%84%D9%8A%D8%AC-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A',
+  '/blog/%D8%B3%D9%88%D9%82-%D8%A7%D9%84%D8%AF%D9%88%D8%A7%D8%A1-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A-2026',
   '/careers',
   '/case-studies/biologics-market-analysis-uae',
   '/case-studies/gcc-oncology-market',
@@ -155,7 +161,56 @@ export const reportZeroLinkPaths = [
   '/zh',
 ];
 
+const redirectAliasPaths = new Set([
+  '/healthcare-market-research-saudi-arabia',
+  '/healthcare-market-research-uae',
+  '/healthcare-market-research-kuwait',
+  '/healthcare-market-research-uk',
+  '/healthcare-market-research-europe',
+  '/quantitative-market-research',
+  '/techniques-and-tools-in-quantitative-healthcare-market-research',
+  '/fr/contact',
+  '/ar/contact',
+  '/adobe-experience-cloud',
+  '/ar/about',
+  '/ar/healthcare-market-research-saudi-arabia-ksa',
+  '/ar/services',
+  '/ar/sustainability-saudi-arabia-ksa',
+  '/best-market-research-company-saudi-arabia',
+  '/bionixus-ai-crm-tools',
+  '/bionixus-market-research-customer-experience-blog',
+  '/career-portal',
+  '/careers',
+  '/chatgpt-is-down',
+  '/contact-details-bionixus',
+  '/customer-experience',
+  '/cx-ai-services',
+  '/de/about',
+  '/de/contacts',
+  '/de/services',
+  '/digital-transformation',
+  '/fr/about',
+  '/fr/services',
+  '/fr/success-in-startups',
+  '/market-research-customer-insight',
+  '/market-research-home',
+  '/market-research-methods-simplified-how-to-understand-your-customers-like-marvel',
+  '/page',
+  '/privacy-policy',
+  '/quantitative-market-research-healthcare',
+  '/recruitment-services',
+  '/sales-growth',
+  '/startup-digital-marketing-package',
+  '/terms-and-conditions',
+]);
+
+const globalWebsiteRecoveryPaths = getCountryDirectory().map((country) => `/global-websites/${country.slug}`);
+const combinedRecoveryPaths = Array.from(new Set([...rawReportZeroLinkPaths, ...globalWebsiteRecoveryPaths]));
+
+export const reportZeroLinkPaths = combinedRecoveryPaths.filter((path) => !redirectAliasPaths.has(path));
+
 export const blogRecoveryPaths = reportZeroLinkPaths.filter((path) => path.startsWith('/blog/'));
+export const caseStudyRecoveryPaths = reportZeroLinkPaths.filter((path) => path.startsWith('/case-studies/'));
 export const healthcareCountryRecoveryPaths = reportZeroLinkPaths.filter((path) =>
   path.startsWith('/healthcare-market-research/'),
 );

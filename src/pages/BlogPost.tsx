@@ -185,6 +185,12 @@ import ShareButtons from '@/components/ShareButtons';
 import type { BlogPost as BlogPostType } from '@/types/blog';
 
 const GCC_PHARMA_2026_SLUG = 'gcc-pharmaceuticals-market-2026';
+const AI_VS_HUMAN_2026_SLUG = 'ai-vs-human-insight-validating-quantitative-data-2026-pharma-research';
+const CHINA_HEALTHCARE_2026_SLUG = 'healthcare-overview-china-market-2026';
+const CHINA_HEALTHCARE_2026_META_DESCRIPTION =
+  '深度解析中国医疗健康市场2026关键趋势：医保支付改革、创新药与生物药商业化、医院与基层诊疗结构变化、AI医疗与数字化转型落地路径，以及老龄化驱动的长期需求。为制药企业、投资机构与行业决策者提供可执行的市场洞察与战略参考。';
+const AI_VS_HUMAN_EXEC_SUMMARY_TEXT =
+  'In 2026, winning pharmaceutical insight models combine AI speed with human judgment. AI should process scale, detect anomalies, and surface patterns; expert teams should validate context, challenge assumptions, and prioritize strategic action. The executive standard is simple: AI-first analysis with mandatory human decision checkpoints. This reduces risk, improves decision quality, and accelerates launch, market access, and growth execution.';
 
 function PremiumGcc2026Enhancement() {
   const kpiCards = [
@@ -399,6 +405,17 @@ function getBodyToRender(
   return null
 }
 
+function getExecutiveSummaryToRender(
+  post: BlogPostType,
+  slug: string | undefined,
+): string | PortableTextBlock[] | null {
+  if (slug === AI_VS_HUMAN_2026_SLUG) return AI_VS_HUMAN_EXEC_SUMMARY_TEXT;
+  const summary = post.executiveSummary;
+  if (Array.isArray(summary)) return summary.length > 0 ? summary : null;
+  if (typeof summary === 'string') return summary.trim() ? summary : null;
+  return null;
+}
+
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const { t, language } = useLanguage();
@@ -431,6 +448,7 @@ const BlogPost = () => {
       : null;
 
   const post = sanityPost ?? fallbackPost;
+  const executiveSummary = post ? getExecutiveSummaryToRender(post, slug) : null;
 
   if (!slug) {
     return (
@@ -482,8 +500,11 @@ const BlogPost = () => {
     bodySource: bodySourceForMeta,
     fallback: post.excerpt || post.title,
   });
+  const finalMetaDescription = slug === CHINA_HEALTHCARE_2026_SLUG
+    ? CHINA_HEALTHCARE_2026_META_DESCRIPTION
+    : metaDescription;
   const socialTitle = post.ogTitle || metaTitle;
-  const socialDescription = post.ogDescription || metaDescription;
+  const socialDescription = post.ogDescription || finalMetaDescription;
   const socialImage = post.ogImage || post.coverImage;
 
   return (
@@ -502,7 +523,7 @@ const BlogPost = () => {
         pageUrl={pageUrl}
         language={language}
         headline={post.title}
-        description={metaDescription}
+        description={finalMetaDescription}
         imageUrl={socialImage}
         authorName={post.authorName || 'BioNixus Research Team'}
         publishedAt={post.publishedAtIso}
@@ -523,7 +544,7 @@ const BlogPost = () => {
       <Helmet>
         {/* Dynamic meta tags for this specific blog post */}
         <title>{normalizeSeoTitle(`${metaTitle} | BioNixus`, 'BioNixus')}</title>
-        <meta name="description" content={metaDescription} />
+        <meta name="description" content={finalMetaDescription} />
         <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
 
         {/* Open Graph / Facebook */}
@@ -662,19 +683,17 @@ const BlogPost = () => {
               </nav>
             )}
 
-            {post.executiveSummary && (
-              Array.isArray(post.executiveSummary) ? post.executiveSummary.length > 0 : typeof post.executiveSummary === 'string' && (post.executiveSummary as string).trim()
-            ) && (
+            {executiveSummary && (
                 <section className="mb-8 p-5 rounded-lg border border-primary/20 bg-primary/5">
                   <h2 className="text-lg font-display font-semibold text-primary mb-3">
                     Executive summary
                   </h2>
                   <div className="prose-body text-foreground leading-relaxed">
-                    {typeof post.executiveSummary === 'string' ? (
-                      <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.executiveSummary as string) }} />
+                    {typeof executiveSummary === 'string' ? (
+                      <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(executiveSummary) }} />
                     ) : (
                       <PortableText
-                        value={post.executiveSummary as PortableTextBlock[]}
+                        value={executiveSummary as PortableTextBlock[]}
                         components={portableTextComponents}
                       />
                     )}

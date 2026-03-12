@@ -122,7 +122,7 @@ const Blog = () => {
               Supplemental internal links to high-priority insight URLs from the latest crawl report.
             </p>
             <div className="grid md:grid-cols-2 gap-2">
-              {blogRecoveryPaths.slice(0, 28).map((path) => (
+              {blogRecoveryPaths.map((path) => (
                 <Link key={path} to={path} className="text-primary hover:underline break-all">
                   {path}
                 </Link>

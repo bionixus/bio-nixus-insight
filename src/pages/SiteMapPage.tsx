@@ -11,6 +11,16 @@ const staticLinks = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
   { to: '/services', label: 'Services' },
+  { to: '/market-research', label: 'Market Research Hub' },
+  { to: '/market-research-healthcare', label: 'Healthcare Market Research' },
+  { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Saudi Pharmaceutical Market Research' },
+  { to: '/qualitative-market-research', label: 'Qualitative Market Research' },
+  { to: '/quantitative-healthcare-market-research', label: 'Quantitative Healthcare Market Research' },
+  { to: '/bionixus-market-research-middle-east', label: 'Middle East Market Research' },
+  { to: '/healthcare-market-research', label: 'Healthcare Research Hub' },
+  { to: '/global-websites', label: 'Global Websites' },
+  { to: '/gcc-market-access-guide', label: 'GCC Market Access Guide' },
+  { to: '/mena-pharma-market-data', label: 'MENA Pharma Market Data' },
   { to: '/blog', label: 'Blog' },
   { to: '/case-studies', label: 'Case Studies' },
   { to: '/resources', label: 'Resources' },
@@ -39,6 +49,22 @@ const pharmaCountryLinks = [
   { to: '/pharmaceutical-companies-bahrain', label: 'Pharmaceutical Companies in Bahrain' },
   { to: '/pharmaceutical-companies-iraq', label: 'Pharmaceutical Companies in Iraq' },
   { to: '/pharmaceutical-companies-iran', label: 'Pharmaceutical Companies in Iran' },
+];
+
+const healthcareCountryLinks = [
+  { to: '/healthcare-market-research/europe', label: 'Healthcare Market Research in Europe' },
+  { to: '/healthcare-market-research/uk', label: 'Healthcare Market Research in UK' },
+  { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare Market Research in Saudi Arabia' },
+  { to: '/healthcare-market-research/uae', label: 'Healthcare Market Research in UAE' },
+  { to: '/healthcare-market-research/kuwait', label: 'Healthcare Market Research in Kuwait' },
+];
+
+const localizedLinks = [
+  { to: '/de/market-research-healthcare', label: 'DE: Healthcare Market Research' },
+  { to: '/fr/market-research-healthcare', label: 'FR: Healthcare Market Research' },
+  { to: '/es/market-research-healthcare', label: 'ES: Healthcare Market Research' },
+  { to: '/zh/market-research-healthcare', label: 'ZH: Healthcare Market Research' },
+  { to: '/ar/market-research-healthcare', label: 'AR: Healthcare Market Research' },
 ];
 
 function pathToLabel(path: string) {
@@ -157,6 +183,34 @@ export default function SiteMapPage() {
               <h2 className="font-semibold text-foreground mb-4">Pharma Country Guides</h2>
               <ul className="space-y-2">
                 {pharmaCountryLinks.map((item) => (
+                  <li key={item.to}>
+                    <Link to={item.to} className="text-primary hover:underline">
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-10 mt-12">
+            <section>
+              <h2 className="font-semibold text-foreground mb-4">Healthcare Country Pages</h2>
+              <ul className="space-y-2">
+                {healthcareCountryLinks.map((item) => (
+                  <li key={item.to}>
+                    <Link to={item.to} className="text-primary hover:underline">
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="font-semibold text-foreground mb-4">Localized Healthcare Pages</h2>
+              <ul className="space-y-2">
+                {localizedLinks.map((item) => (
                   <li key={item.to}>
                     <Link to={item.to} className="text-primary hover:underline">
                       {item.label}

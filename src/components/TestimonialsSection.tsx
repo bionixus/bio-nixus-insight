@@ -10,6 +10,32 @@ const TestimonialsSection = () => {
   return (
     <section className="section-padding bg-cream-dark" ref={sectionRef}>
       <div className="container-wide">
+        {/* Trusted by Industry Leaders – continuous marquee ticker */}
+        <div className="mb-16 pb-12 border-b border-border">
+          <p className="text-center text-sm text-foreground/70 mb-8 uppercase tracking-widest">
+            Industry Leaders We Serve Alongside
+          </p>
+          <div className="overflow-hidden select-none w-full" aria-hidden="true">
+            <div
+              className="flex animate-marquee will-change-transform"
+              style={{ width: 'max-content' }}
+            >
+              {[...Array(3)].map((_, set) => (
+                <div key={set} className="flex items-center gap-16 shrink-0 px-8">
+                  {['Pfizer', 'Roche', 'Novartis', 'Sanofi', 'AstraZeneca', 'Merck'].map((company) => (
+                    <span
+                      key={`${set}-${company}`}
+                      className="text-xl font-display font-semibold text-foreground/75 whitespace-nowrap"
+                    >
+                      {company}
+                    </span>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 sr sr-up sr-line sr-line-center">
@@ -50,31 +76,6 @@ const TestimonialsSection = () => {
           ))}
         </div>
 
-        {/* Trusted by Industry Leaders – continuous marquee ticker */}
-        <div className="mt-20 pt-12 border-t border-border">
-          <p className="text-center text-sm text-foreground/70 mb-8 uppercase tracking-widest">
-            Industry Leaders We Serve Alongside
-          </p>
-          <div className="overflow-hidden select-none w-full" aria-hidden="true">
-            <div
-              className="flex animate-marquee will-change-transform"
-              style={{ width: 'max-content' }}
-            >
-              {[...Array(3)].map((_, set) => (
-                <div key={set} className="flex items-center gap-16 shrink-0 px-8">
-                  {['Pfizer', 'Roche', 'Novartis', 'Sanofi', 'AstraZeneca', 'Merck'].map((company) => (
-                    <span
-                      key={`${set}-${company}`}
-                      className="text-xl font-display font-semibold text-foreground/75 whitespace-nowrap"
-                    >
-                      {company}
-                    </span>
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

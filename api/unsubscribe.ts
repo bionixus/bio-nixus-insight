@@ -81,7 +81,7 @@ function unsubscribeHtml(message: string, success: boolean): string {
     <div class="icon">${success ? '✅' : '⚠️'}</div>
     <h1>${success ? 'Unsubscribed' : 'Oops'}</h1>
     <p>${message}</p>
-    <p style="margin-top: 20px;"><a href="https://bionixus.com">← Back to BioNixus</a></p>
+    <p style="margin-top: 20px;"><a href="https://www.bionixus.com">← Back to BioNixus</a></p>
   </div>
 </body>
 </html>`

@@ -139,11 +139,11 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
   },
   '/market-research-healthcare': {
     en: '/market-research-healthcare',
-    de: '/market-research-healthcare',
-    fr: '/market-research-healthcare',
-    es: '/market-research-healthcare',
-    zh: '/market-research-healthcare',
-    ar: '/market-research-healthcare',
+    de: '/de/market-research-healthcare',
+    fr: '/fr/market-research-healthcare',
+    es: '/es/market-research-healthcare',
+    zh: '/zh/market-research-healthcare',
+    ar: '/ar/market-research-healthcare',
   },
   '/qualitative-market-research': {
     en: '/qualitative-market-research',
@@ -192,23 +192,25 @@ export function getHreflangLinks(pathname: string = '/') {
   const base = getBaseUrl();
   const normalized = normalizePath(pathname);
   const group = findRouteGroup(normalized);
+  const canonicalHrefForPath = (path: string) => `${base}${getCanonicalPath(path)}`;
   if (!group) {
+    const fallbackHref = canonicalHrefForPath(normalized);
     return [
-      { lang: 'x-default', href: `${base}${normalized}` },
-      { lang: 'en', href: `${base}${normalized}` },
+      { lang: 'x-default', href: fallbackHref },
+      { lang: 'en', href: fallbackHref },
     ];
   }
 
   const routes = localizedRouteGroups[group];
   const routeFor = (lang: 'en' | 'de' | 'fr' | 'es' | 'zh' | 'ar') => routes[lang] || routes.en;
   return [
-    { lang: 'x-default', href: `${base}${routeFor('en')}` },
-    { lang: 'en', href: `${base}${routeFor('en')}` },
-    { lang: 'de', href: `${base}${routeFor('de')}` },
-    { lang: 'fr', href: `${base}${routeFor('fr')}` },
-    { lang: 'es', href: `${base}${routeFor('es')}` },
-    { lang: 'zh-CN', href: `${base}${routeFor('zh')}` },
-    { lang: 'ar', href: `${base}${routeFor('ar')}` },
+    { lang: 'x-default', href: canonicalHrefForPath(routeFor('en')) },
+    { lang: 'en', href: canonicalHrefForPath(routeFor('en')) },
+    { lang: 'de', href: canonicalHrefForPath(routeFor('de')) },
+    { lang: 'fr', href: canonicalHrefForPath(routeFor('fr')) },
+    { lang: 'es', href: canonicalHrefForPath(routeFor('es')) },
+    { lang: 'zh-CN', href: canonicalHrefForPath(routeFor('zh')) },
+    { lang: 'ar', href: canonicalHrefForPath(routeFor('ar')) },
   ];
 }
 
