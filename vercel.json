@@ -48,6 +48,11 @@
   ],
   "redirects": [
     {
+      "source": "/assets/index-:hash.js",
+      "destination": "/assets/index.js",
+      "statusCode": 301
+    },
+    {
       "source": "/:path(.*)",
       "has": [
         {

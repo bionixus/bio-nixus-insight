@@ -68,6 +68,7 @@ const staticPages = [
   { path: '/global-websites', priority: '0.9', changefreq: 'weekly' },
   { path: '/healthcare-market-research', priority: '0.9', changefreq: 'weekly' },
   { path: '/blog', priority: '0.9', changefreq: 'daily' },
+  { path: '/insights', priority: '0.8', changefreq: 'weekly' },
   { path: '/de/blog', priority: '0.8', changefreq: 'weekly' },
   { path: '/fr/blog', priority: '0.8', changefreq: 'weekly' },
   { path: '/de/success-in-startups', priority: '0.7', changefreq: 'monthly' },

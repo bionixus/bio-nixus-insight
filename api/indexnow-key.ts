@@ -115,7 +115,34 @@ function buildFallbackTitle(pathname: string): string {
   const cleanPath = (pathname || '/').split('?')[0].split('#')[0] || '/';
   const path = cleanPath === '/' ? '/' : cleanPath.replace(/\/+$/, '');
   const localeRoots = new Set(['/', '/de', '/fr', '/es', '/ar', '/zh']);
+  if (path === '/') return 'Healthcare & Pharmaceutical Market Research | BioNixus';
+  if (path === '/zh') return 'EMEA Healthcare Market Research (Chinese) | BioNixus';
   if (localeRoots.has(path)) return 'BioNixus | Healthcare & Pharmaceutical Market Research';
+
+  if (
+    path === '/contact'
+    || path === '/de/contact'
+    || path === '/fr/contacts'
+    || path === '/es/contact'
+    || path === '/zh/contact'
+    || path === '/ar/contacts'
+  ) {
+    return 'Contact BioNixus Healthcare Research Team | BioNixus';
+  }
+
+  if (
+    path === '/methodology'
+    || path === '/de/methodology'
+    || path === '/fr/methodology'
+    || path === '/es/methodology'
+    || path === '/zh/methodology'
+    || path === '/ar/methodology'
+  ) {
+    return 'Healthcare Research Methodology & Process | BioNixus';
+  }
+
+  if (path === '/sitemap') return 'Sitemap & Content Directory | BioNixus';
+  if (path === '/privacy') return 'Privacy Policy & Terms for BioNixus Services';
 
   if (path === '/case-studies') return 'Healthcare & Pharmaceutical Case Studies | BioNixus';
   if (path.startsWith('/case-studies/')) {
@@ -194,45 +221,39 @@ function normalizeDescriptionLength(description: string, max = 155): string {
 
 function ensureTitleTag(html: string, pathname: string): string {
   const fallbackTitle = normalizeTitleLength(buildFallbackTitle(pathname));
-  const existingTitle = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
-  if (!existingTitle) {
-    return html.replace(
-      /<meta name="viewport"[^>]*>/i,
-      `$&\n<title>${fallbackTitle}</title>`,
-    );
-  }
-  const currentTitle = (existingTitle[1] || '').trim();
-  if (currentTitle.length === 0) {
-    return html.replace(/<title[^>]*>[\s\S]*?<\/title>/i, `<title>${fallbackTitle}</title>`);
-  }
+  const matches = Array.from(html.matchAll(/<title[^>]*>([\s\S]*?)<\/title>/ig));
+  const chosen = matches
+    .map((m) => (m[1] || '').trim())
+    .filter(Boolean)
+    .at(-1);
+  const normalized = normalizeTitleLength(chosen || fallbackTitle);
+  const strengthened = normalized.length < 30 ? fallbackTitle : normalized;
 
-  const normalized = normalizeTitleLength(currentTitle);
-  if (normalized === currentTitle) return html;
-  return html.replace(/<title[^>]*>[\s\S]*?<\/title>/i, `<title>${normalized}</title>`);
+  const withoutTitles = html.replace(/<title[^>]*>[\s\S]*?<\/title>/ig, '');
+  return withoutTitles.replace(
+    /<meta name="viewport"[^>]*>/i,
+    `$&\n<title>${strengthened}</title>`,
+  );
 }
 
 function ensureMetaDescriptionTag(html: string, pathname: string): string {
   const fallbackDescription = normalizeDescriptionLength(buildFallbackDescription(pathname));
-  const metaMatch = html.match(/<meta[^>]+name=(["'])description\1[^>]*>/i);
+  const matches = Array.from(html.matchAll(/<meta[^>]+name=(["'])description\1[^>]*>/ig));
+  const chosen = matches
+    .map((m) => {
+      const tag = m[0];
+      const contentMatch = tag.match(/content=(["'])([\s\S]*?)\1/i);
+      return (contentMatch?.[2] || '').trim();
+    })
+    .filter(Boolean)
+    .at(-1);
+  const normalizedContent = normalizeDescriptionLength(chosen || fallbackDescription);
 
-  if (!metaMatch) {
-    return html.replace(
-      /<title[^>]*>[\s\S]*?<\/title>/i,
-      `$&\n<meta name="description" content="${fallbackDescription}" />`,
-    );
-  }
-
-  const fullMetaTag = metaMatch[0];
-  const contentMatch = fullMetaTag.match(/content=(["'])([\s\S]*?)\1/i);
-  const currentContent = contentMatch?.[2]?.trim() || '';
-  const normalizedContent = normalizeDescriptionLength(currentContent || fallbackDescription);
-  if (currentContent === normalizedContent) return html;
-
-  const rebuiltTag = contentMatch
-    ? fullMetaTag.replace(/content=(["'])([\s\S]*?)\1/i, `content="${normalizedContent}"`)
-    : fullMetaTag.replace(/\/?>$/, ` content="${normalizedContent}" />`);
-
-  return html.replace(fullMetaTag, rebuiltTag);
+  const withoutDescriptions = html.replace(/<meta[^>]+name=(["'])description\1[^>]*>\s*/ig, '');
+  return withoutDescriptions.replace(
+    /<title[^>]*>[\s\S]*?<\/title>/i,
+    `$&\n<meta name="description" content="${normalizedContent}" />`,
+  );
 }
 
 function getTemplate(): string {

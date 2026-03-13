@@ -8,6 +8,7 @@ import About from '@/pages/About';
 import Services from '@/pages/Services';
 import FAQ from '@/pages/FAQ';
 import Resources from '@/pages/Resources';
+import Insights from '@/pages/Insights';
 import SiteMapPage from '@/pages/SiteMapPage';
 import ServiceDetail from '@/pages/ServiceDetail';
 import Privacy from '@/pages/Privacy';
@@ -87,6 +88,7 @@ export const routes: RouteObject[] = [
   { path: '/services/:slug', element: <ServiceDetail /> },
   { path: '/faq', element: <FAQ /> },
   { path: '/resources', element: <Resources /> },
+  { path: '/insights', element: <Insights /> },
   { path: '/sitemap', element: <SiteMapPage /> },
   { path: '/mena-pharma-market-data', element: <MenaMarketData /> },
   { path: '/gcc-market-access-guide', element: <GccMarketAccessGuide /> },

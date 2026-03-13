@@ -28,6 +28,7 @@ export default defineConfig(({ mode, isSsrBuild }) => ({
       ? {}
       : {
           output: {
+            entryFileNames: 'assets/index.js',
             manualChunks: {
               'react-vendor': ['react', 'react-dom', 'react-router-dom'],
               'ui-vendor': [
