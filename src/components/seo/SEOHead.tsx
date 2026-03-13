@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { getHreflangLinks } from '@/lib/seo';
+import { buildSeoDescription, normalizeSeoTitle } from '@/lib/seo-meta';
 
 interface SEOHeadProps {
   title: string;
@@ -22,6 +23,11 @@ export function SEOHead({
   jsonLd = [],
 }: SEOHeadProps) {
   const { pathname } = useLocation();
+  const safeTitle = normalizeSeoTitle(title, 'BioNixus');
+  const safeDescription = buildSeoDescription({
+    preferred: description,
+    fallback: 'BioNixus healthcare and pharmaceutical market research insights and services.',
+  });
   const canonicalPath = (() => {
     const clean = (pathname || '/').split('?')[0].split('#')[0] || '/';
     return clean === '/' ? '/' : clean.replace(/\/+$/, '');
@@ -31,8 +37,8 @@ export function SEOHead({
 
   return (
     <Helmet>
-      <title>{title}</title>
-      <meta name="description" content={description} />
+      <title>{safeTitle}</title>
+      <meta name="description" content={safeDescription} />
       <link rel="canonical" href={canonicalUrl} />
       {hreflangLinks.map(({ lang, href }) => (
         <link key={`${lang}-${href}`} rel="alternate" hrefLang={lang} href={href} />
@@ -41,16 +47,16 @@ export function SEOHead({
         ? <meta name="robots" content="noindex, nofollow" />
         : <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />}
 
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
+      <meta property="og:title" content={safeTitle} />
+      <meta property="og:description" content={safeDescription} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:type" content={ogType} />
       <meta property="og:image" content={ogImage} />
       <meta property="og:site_name" content="BioNixus" />
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
+      <meta name="twitter:title" content={safeTitle} />
+      <meta name="twitter:description" content={safeDescription} />
       <meta name="twitter:image" content={ogImage} />
 
       {jsonLd.map((schema, index) => (

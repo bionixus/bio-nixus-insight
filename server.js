@@ -22,6 +22,138 @@ function applyHtmlLang(template, pathname) {
   return template.replace(/<html[^>]*>/i, `<html lang="${lang}" dir="${dir}">`);
 }
 
+function titleCaseFromSlug(value) {
+  return String(value || '')
+    .split('-')
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(' ');
+}
+
+function buildFallbackTitle(pathname) {
+  const cleanPath = (pathname || '/').split('?')[0].split('#')[0] || '/';
+  const path = cleanPath === '/' ? '/' : cleanPath.replace(/\/+$/, '');
+  const localeRoots = new Set(['/', '/de', '/fr', '/es', '/ar', '/zh']);
+  if (localeRoots.has(path)) return 'BioNixus | Healthcare & Pharmaceutical Market Research';
+
+  if (path === '/case-studies') return 'Healthcare & Pharmaceutical Case Studies | BioNixus';
+  if (path.startsWith('/case-studies/')) {
+    const slug = path.split('/').pop() || 'case-study';
+    return `${titleCaseFromSlug(slug)} | BioNixus Case Study`;
+  }
+
+  if (path === '/blog') return 'Healthcare & Pharmaceutical Blog Insights | BioNixus';
+  if (path.startsWith('/blog/')) {
+    const slug = path.split('/').pop() || 'insight';
+    return `${titleCaseFromSlug(slug)} | BioNixus Blog`;
+  }
+
+  if (path.startsWith('/healthcare-market-research/')) {
+    const slug = path.split('/').pop() || 'market';
+    return `Healthcare Market Research in ${titleCaseFromSlug(slug)} | BioNixus`;
+  }
+
+  const segment = path.split('/').filter(Boolean).pop() || 'home';
+  return `${titleCaseFromSlug(segment)} | BioNixus`;
+}
+
+function normalizeTitleLength(title, max = 60) {
+  const clean = String(title || '').replace(/\s+/g, ' ').trim();
+  if (!clean) return 'BioNixus';
+  if (clean.length <= max) return clean;
+
+  const suffix = '| BioNixus';
+  if (clean.endsWith(suffix)) {
+    const prefixMax = Math.max(12, max - suffix.length - 1);
+    const prefix = clean.slice(0, prefixMax).trim().replace(/[|,;:\-–—\s]+$/, '');
+    return `${prefix} ${suffix}`;
+  }
+
+  return clean.slice(0, Math.max(0, max - 1)).trim().replace(/[|,;:\-–—\s]+$/, '');
+}
+
+function buildFallbackDescription(pathname) {
+  const cleanPath = (pathname || '/').split('?')[0].split('#')[0] || '/';
+  const path = cleanPath === '/' ? '/' : cleanPath.replace(/\/+$/, '');
+
+  if (path === '/' || path === '/de' || path === '/fr' || path === '/es' || path === '/ar' || path === '/zh') {
+    return 'Healthcare and pharmaceutical market research across MENA, GCC, UK, and Europe with quantitative and qualitative insights by BioNixus.';
+  }
+  if (path === '/case-studies') {
+    return 'Explore BioNixus healthcare and pharmaceutical case studies across Europe, the Middle East, and Africa.';
+  }
+  if (path.startsWith('/case-studies/')) {
+    const slug = path.split('/').pop() || 'case-study';
+    return `${titleCaseFromSlug(slug)} case study from BioNixus with actionable healthcare and pharmaceutical market research outcomes.`;
+  }
+  if (path === '/blog') {
+    return 'Read BioNixus healthcare and pharmaceutical market insights on market access, physician behavior, and regional growth strategy.';
+  }
+  if (path.startsWith('/blog/')) {
+    const slug = path.split('/').pop() || 'insight';
+    return `${titleCaseFromSlug(slug)} insight article from BioNixus covering healthcare and pharmaceutical market strategy.`;
+  }
+  if (path.startsWith('/healthcare-market-research/')) {
+    const slug = path.split('/').pop() || 'market';
+    return `Pharmaceutical market research in ${titleCaseFromSlug(slug)} with localized stakeholder insight and execution-focused strategy support from BioNixus.`;
+  }
+
+  const segment = path.split('/').filter(Boolean).pop() || 'home';
+  return `${titleCaseFromSlug(segment)} page from BioNixus with healthcare and pharmaceutical market research insights and services context.`;
+}
+
+function normalizeDescriptionLength(description, max = 155) {
+  const clean = String(description || '').replace(/\s+/g, ' ').trim();
+  if (!clean) return 'BioNixus healthcare and pharmaceutical market research insights.';
+  if (clean.length <= max) return clean;
+  const cut = clean.slice(0, max - 1);
+  const lastSpace = cut.lastIndexOf(' ');
+  return `${(lastSpace > 90 ? cut.slice(0, lastSpace) : cut).trim().replace(/[|,;:\-–—\s]+$/, '')}.`;
+}
+
+function ensureTitleTag(html, pathname) {
+  const fallbackTitle = normalizeTitleLength(buildFallbackTitle(pathname));
+  const existingTitle = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+  if (!existingTitle) {
+    return html.replace(
+      /<meta name="viewport"[^>]*>/i,
+      `$&\n<title>${fallbackTitle}</title>`,
+    );
+  }
+  const currentTitle = (existingTitle[1] || '').trim();
+  if (currentTitle.length === 0) {
+    return html.replace(/<title[^>]*>[\s\S]*?<\/title>/i, `<title>${fallbackTitle}</title>`);
+  }
+
+  const normalized = normalizeTitleLength(currentTitle);
+  if (normalized === currentTitle) return html;
+  return html.replace(/<title[^>]*>[\s\S]*?<\/title>/i, `<title>${normalized}</title>`);
+}
+
+function ensureMetaDescriptionTag(html, pathname) {
+  const fallbackDescription = normalizeDescriptionLength(buildFallbackDescription(pathname));
+  const metaMatch = html.match(/<meta[^>]+name=(["'])description\1[^>]*>/i);
+
+  if (!metaMatch) {
+    return html.replace(
+      /<title[^>]*>[\s\S]*?<\/title>/i,
+      `$&\n<meta name="description" content="${fallbackDescription}" />`,
+    );
+  }
+
+  const fullMetaTag = metaMatch[0];
+  const contentMatch = fullMetaTag.match(/content=(["'])([\s\S]*?)\1/i);
+  const currentContent = contentMatch?.[2]?.trim() || '';
+  const normalizedContent = normalizeDescriptionLength(currentContent || fallbackDescription);
+  if (currentContent === normalizedContent) return html;
+
+  const rebuiltTag = contentMatch
+    ? fullMetaTag.replace(/content=(["'])([\s\S]*?)\1/i, `content="${normalizedContent}"`)
+    : fullMetaTag.replace(/\/?>$/, ` content="${normalizedContent}" />`);
+
+  return html.replace(fullMetaTag, rebuiltTag);
+}
+
 async function startServer() {
   const app = express();
   app.use(compression());
@@ -170,7 +302,10 @@ async function startServer() {
           '<!--ssr-data-->',
           `<script>window.__INITIAL_DATA__ = ${JSON.stringify(initialData).replace(/</g, '\\u003c')}</script>`,
         );
-      const localizedPage = applyHtmlLang(page, pathname);
+      const localizedPage = ensureMetaDescriptionTag(
+        ensureTitleTag(applyHtmlLang(page, req.path), req.path),
+        req.path,
+      );
 
       res.status(statusCode).set({ 'Content-Type': 'text/html' }).end(localizedPage);
     } catch (error) {
