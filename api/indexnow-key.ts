@@ -89,6 +89,20 @@ const REDIRECTS: Record<string, string> = {
   '/fr/page-zzw-z8': '/fr',
 };
 
+function inferHtmlLang(pathname: string): { lang: string; dir: 'ltr' | 'rtl' } {
+  if (pathname.startsWith('/de')) return { lang: 'de', dir: 'ltr' };
+  if (pathname.startsWith('/fr')) return { lang: 'fr', dir: 'ltr' };
+  if (pathname.startsWith('/es')) return { lang: 'es', dir: 'ltr' };
+  if (pathname.startsWith('/ar')) return { lang: 'ar', dir: 'rtl' };
+  if (pathname.startsWith('/zh')) return { lang: 'zh-CN', dir: 'ltr' };
+  return { lang: 'en', dir: 'ltr' };
+}
+
+function applyHtmlLang(template: string, pathname: string): string {
+  const { lang, dir } = inferHtmlLang(pathname);
+  return template.replace(/<html[^>]*>/i, `<html lang="${lang}" dir="${dir}">`);
+}
+
 function getTemplate(): string {
   if (templateCache) return templateCache;
   const templatePath = path.join(process.cwd(), 'dist', 'client', 'index.html');
@@ -106,6 +120,7 @@ async function getServerEntry(): Promise<ServerEntryModule> {
 
 function injectHtml(
   template: string,
+  pathname: string,
   appHtml: string,
   helmetData: HelmetLike | undefined,
   initialData: Record<string, unknown>,
@@ -117,13 +132,14 @@ function injectHtml(
     helmetData?.script?.toString() || '',
   ].join('\n');
 
-  return template
+  const page = template
     .replace('<!--ssr-head-->', headTags)
     .replace('<!--ssr-outlet-->', appHtml)
     .replace(
       '<!--ssr-data-->',
       `<script>window.__INITIAL_DATA__ = ${JSON.stringify(initialData).replace(/</g, '\\u003c')}</script>`,
     );
+  return applyHtmlLang(page, pathname);
 }
 
 function getParamFromUrl(url: string | undefined, key: string): string | undefined {
@@ -184,7 +200,7 @@ async function handleSsrRequest(
   const isNotFoundPage =
     (headTags.includes('name="prerender-status"') && headTags.includes('content="404"'))
     || appHtml.includes('data-route-status="404"');
-  const page = injectHtml(template, appHtml, helmetData, initialData);
+  const page = injectHtml(template, pathname, appHtml, helmetData, initialData);
 
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
   res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=60, stale-while-revalidate=300');

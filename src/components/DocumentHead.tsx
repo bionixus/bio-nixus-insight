@@ -33,6 +33,65 @@ function clampDescription(text: string, max = 160): string {
   return `${(lastSpace > 100 ? cut.slice(0, lastSpace) : cut).trim()}.`;
 }
 
+function buildRouteTitle(pathname: string, language: Language, fallback: string): string {
+  const path = cleanPath(pathname);
+  const parts = path.split('/').filter(Boolean);
+  const noPrefixParts = ['de', 'fr', 'es', 'ar', 'zh'].includes(parts[0]) ? parts.slice(1) : parts;
+  const makeTitle = (value: string) => normalizeSeoTitle(value, 'BioNixus');
+
+  if (path === '/' || path === '/de' || path === '/fr' || path === '/es' || path === '/zh' || path === '/ar') {
+    return makeTitle(fallback);
+  }
+
+  if (path === '/blog' || path === '/de/blog' || path === '/fr/blog') {
+    return makeTitle('Healthcare & Pharmaceutical Blog Insights | BioNixus');
+  }
+
+  if (path.startsWith('/blog/')) {
+    const slug = noPrefixParts.slice(1).join('-');
+    const topic = titleCase(slug);
+    return makeTitle(`${topic} | BioNixus Blog`);
+  }
+
+  if (path === '/case-studies') {
+    return makeTitle('Healthcare & Pharmaceutical Case Studies | BioNixus');
+  }
+
+  if (path.startsWith('/case-studies/')) {
+    const slug = noPrefixParts.slice(1).join('-');
+    const topic = titleCase(slug);
+    return makeTitle(`${topic} | BioNixus Case Study`);
+  }
+
+  if (path.startsWith('/services/')) {
+    const service = titleCase(noPrefixParts[1] || 'service');
+    return makeTitle(`${service} Services | BioNixus`);
+  }
+
+  if (path.startsWith('/healthcare-market-research/services/')) {
+    const service = titleCase(noPrefixParts[2] || 'service');
+    return makeTitle(`${service} Healthcare Research Service | BioNixus`);
+  }
+
+  if (path.startsWith('/healthcare-market-research/therapy/')) {
+    const therapy = titleCase(noPrefixParts[2] || 'therapy');
+    return makeTitle(`${therapy} Healthcare Market Research | BioNixus`);
+  }
+
+  if (path.startsWith('/healthcare-market-research/')) {
+    const country = titleCase(noPrefixParts[1] || 'market');
+    return makeTitle(`Healthcare Market Research in ${country} | BioNixus`);
+  }
+
+  if (path.startsWith('/pharmaceutical-companies-')) {
+    const country = titleCase(path.replace('/pharmaceutical-companies-', ''));
+    return makeTitle(`Pharmaceutical Companies in ${country} | BioNixus`);
+  }
+
+  const topic = titleCase(noPrefixParts.join(' ') || slugToWords(path.replace(/\//g, ' ')));
+  return makeTitle(`${topic} | BioNixus`);
+}
+
 function buildRouteDescription(pathname: string, language: Language, fallback: string): string {
   const path = cleanPath(pathname);
   const parts = path.split('/').filter(Boolean);
@@ -199,38 +258,13 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
   ) || fallback;
 }
 
-const globalSeoFallbackRoutes = new Set([
-  '/',
-  '/de',
-  '/fr',
-  '/es',
-  '/zh',
-  '/ar',
-  '/contact',
-  '/de/contact',
-  '/fr/contacts',
-  '/ar/contacts',
-  '/es/contact',
-  '/zh/contact',
-  '/methodology',
-  '/de/methodology',
-  '/fr/methodology',
-  '/es/methodology',
-  '/zh/methodology',
-  '/ar/methodology',
-  '/verify-email',
-]);
-
 const DocumentHead = () => {
   const { language } = useLanguage();
   const { pathname } = useLocation();
   const seo = seoByLanguage[language];
   const canonicalPath = getCanonicalPath(pathname || '/');
   const canonicalUrl = getCanonicalUrl(canonicalPath);
-  const normalizedPath = cleanPath(pathname || '/');
-  const useGlobalSeoFallback = globalSeoFallbackRoutes.has(normalizedPath);
-
-  const title = normalizeSeoTitle(seo.title, 'BioNixus');
+  const title = buildRouteTitle(pathname, language, seo.title);
   const description = buildRouteDescription(pathname, language, seo.description);
   const contentLanguage = language === 'zh' ? 'zh-CN' : language;
   const gscId = import.meta.env.VITE_GSC_VERIFICATION;
@@ -239,9 +273,9 @@ const DocumentHead = () => {
   return (
     <>
       <Helmet>
-        {useGlobalSeoFallback ? <title>{title}</title> : null}
-        {useGlobalSeoFallback ? <meta name="description" content={description} /> : null}
-        {useGlobalSeoFallback ? <meta name="keywords" content={seo.keywords} /> : null}
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="keywords" content={seo.keywords} />
         <meta name="llm-access" content="allow" />
         <meta httpEquiv="content-language" content={contentLanguage} />
         {gscId ? <meta name="google-site-verification" content={gscId} /> : null}
@@ -251,17 +285,15 @@ const DocumentHead = () => {
           <link key={`${lang}-${href}`} rel="alternate" hrefLang={lang} href={href} />
         ))}
       </Helmet>
-      {useGlobalSeoFallback ? (
-        <OpenGraphMeta
-          title={title}
-          description={description}
-          image={defaultOgImageUrl}
-          url={canonicalUrl}
-          type="website"
-          locale={getOgLocale(language)}
-          alternateLocales={getOgLocaleAlternates(language)}
-        />
-      ) : null}
+      <OpenGraphMeta
+        title={title}
+        description={description}
+        image={defaultOgImageUrl}
+        url={canonicalUrl}
+        type="website"
+        locale={getOgLocale(language)}
+        alternateLocales={getOgLocaleAlternates(language)}
+      />
     </>
   );
 };

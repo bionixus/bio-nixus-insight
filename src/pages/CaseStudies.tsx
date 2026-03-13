@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { fetchCaseStudies, isCaseStudiesConfigured } from '@/lib/sanity-case-studies';
+import { SEOHead } from '@/components/seo/SEOHead';
 import type { CaseStudy } from '@/types/caseStudy';
 import {
   Select,
@@ -105,6 +106,11 @@ const CaseStudies = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Healthcare & Pharmaceutical Case Studies | BioNixus"
+        description="Explore BioNixus case studies in healthcare and pharmaceutical market research across Europe, the Middle East, and Africa."
+        canonical="/case-studies"
+      />
       <Navbar />
       <main>
 

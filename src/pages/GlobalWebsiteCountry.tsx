@@ -2209,7 +2209,7 @@ const GlobalWebsiteCountry = () => {
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
-                    to="/insights"
+                    to="/blog"
                     className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-border bg-card text-foreground font-semibold hover:bg-muted transition-colors"
                   >
                     Download Kuwait Pharma Report 2025
@@ -2235,7 +2235,7 @@ const GlobalWebsiteCountry = () => {
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
-                    to="/insights"
+                    to="/blog"
                     className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-border bg-card text-foreground font-semibold hover:bg-muted transition-colors"
                   >
                     Download Qatar Pharma Report 2025
@@ -2261,7 +2261,7 @@ const GlobalWebsiteCountry = () => {
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
-                    to="/insights"
+                    to="/blog"
                     className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-border bg-card text-foreground font-semibold hover:bg-muted transition-colors"
                   >
                     Download Bahrain Pharma Report 2025
@@ -2287,7 +2287,7 @@ const GlobalWebsiteCountry = () => {
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
-                    to="/insights"
+                    to="/blog"
                     className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-border bg-card text-foreground font-semibold hover:bg-muted transition-colors"
                   >
                     Download Oman Pharma Report 2025
@@ -2313,7 +2313,7 @@ const GlobalWebsiteCountry = () => {
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
-                    to="/insights"
+                    to="/blog"
                     className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-border bg-card text-foreground font-semibold hover:bg-muted transition-colors"
                   >
                     Download Egypt Pharma Report 2025

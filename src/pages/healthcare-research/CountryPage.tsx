@@ -5,7 +5,7 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { RelatedPages } from '@/components/healthcare-research/RelatedPages';
 import { CTASection } from '@/components/shared/CTASection';
-import { COUNTRY_CONFIGS } from '@/lib/constants/countries';
+import { COUNTRY_CONFIGS, type CountryConfig, type CountryRegion } from '@/lib/constants/countries';
 import { buildCountryPageSchemas } from '@/lib/seo/schemas';
 
 function portableTextToParagraphs(value: unknown): string[] {
@@ -23,6 +23,68 @@ function portableTextToParagraphs(value: unknown): string[] {
     .filter(Boolean);
 }
 
+const COUNTRY_NAME_OVERRIDES: Record<string, string> = {
+  'united-states': 'United States',
+  'united-kingdom': 'United Kingdom',
+  'united-arab-emirates': 'United Arab Emirates',
+};
+
+const EUROPE_SLUGS = new Set(['germany', 'france', 'italy', 'spain', 'sweden', 'denmark', 'switzerland']);
+const UK_SLUGS = new Set(['united-kingdom', 'uk']);
+
+function slugToCountryName(slug: string): string {
+  if (COUNTRY_NAME_OVERRIDES[slug]) return COUNTRY_NAME_OVERRIDES[slug];
+  return slug
+    .split('-')
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(' ');
+}
+
+function inferRegion(slug: string): CountryRegion {
+  if (UK_SLUGS.has(slug)) return 'uk';
+  if (EUROPE_SLUGS.has(slug)) return 'europe';
+  return 'mena';
+}
+
+function buildFallbackCountryConfig(slug: string): CountryConfig {
+  const countryName = slugToCountryName(slug);
+  return {
+    name: countryName,
+    slug,
+    region: inferRegion(slug),
+    metaSuffix: `${countryName} healthcare and pharmaceutical market research insights for launch, access, and growth decisions.`,
+    ogDescription:
+      `BioNixus delivers decision-ready pharmaceutical market research in ${countryName} with localized stakeholder insights, market access context, and practical strategy support.`,
+    h1: `Pharmaceutical Market Research in ${countryName}`,
+    relatedCountries: ['saudi-arabia', 'uae', 'uk', 'europe'],
+    relatedTherapies: ['oncology', 'diabetes', 'respiratory', 'immunology'],
+    keyStats: [
+      { label: 'Market Focus', value: `${countryName} healthcare ecosystem` },
+      { label: 'Research Scope', value: 'Physician, payer, and hospital stakeholders' },
+      { label: 'Delivery Model', value: 'Quantitative + qualitative mixed-methods' },
+      { label: 'Primary Output', value: 'Decision-ready pharmaceutical insight' },
+    ],
+    faqQuestions: [
+      {
+        question: `How does BioNixus support pharmaceutical market research in ${countryName}?`,
+        answer:
+          `BioNixus supports pharmaceutical market research in ${countryName} through localized stakeholder mapping, fit-for-purpose methodology, and execution focused on practical commercial, medical, and access decisions.`,
+      },
+      {
+        question: `Which stakeholder groups are typically included in ${countryName} studies?`,
+        answer:
+          `Most ${countryName} studies include prescribing specialists, institutional influencers, pharmacy stakeholders, and access-relevant decision contributors, depending on the therapy area and strategic objective.`,
+      },
+      {
+        question: `What outputs do clients receive from ${countryName} market research programs?`,
+        answer:
+          `Programs typically deliver structured insight summaries, segment priorities, stakeholder influence mapping, and action-focused recommendations that can be applied to launch, expansion, or optimization plans in ${countryName}.`,
+      },
+    ],
+  };
+}
+
 export default function CountryPage() {
   const { country } = useParams<{ country: string }>();
   const location = useLocation();
@@ -32,7 +94,8 @@ export default function CountryPage() {
     country ||
     (typeof data.slug === 'string' ? data.slug : undefined) ||
     aliasSlug;
-  const config = resolvedSlug ? COUNTRY_CONFIGS[resolvedSlug] : undefined;
+  const configuredCountry = resolvedSlug ? COUNTRY_CONFIGS[resolvedSlug] : undefined;
+  const config = resolvedSlug ? configuredCountry ?? buildFallbackCountryConfig(resolvedSlug) : undefined;
 
   if (!config) {
     return <Navigate to="/healthcare-market-research" replace />;

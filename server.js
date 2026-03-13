@@ -8,6 +8,20 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === 'production';
 const port = Number(process.env.PORT || 5173);
 
+function inferHtmlLang(pathname) {
+  if (pathname.startsWith('/de')) return { lang: 'de', dir: 'ltr' };
+  if (pathname.startsWith('/fr')) return { lang: 'fr', dir: 'ltr' };
+  if (pathname.startsWith('/es')) return { lang: 'es', dir: 'ltr' };
+  if (pathname.startsWith('/ar')) return { lang: 'ar', dir: 'rtl' };
+  if (pathname.startsWith('/zh')) return { lang: 'zh-CN', dir: 'ltr' };
+  return { lang: 'en', dir: 'ltr' };
+}
+
+function applyHtmlLang(template, pathname) {
+  const { lang, dir } = inferHtmlLang(pathname || '/');
+  return template.replace(/<html[^>]*>/i, `<html lang="${lang}" dir="${dir}">`);
+}
+
 async function startServer() {
   const app = express();
   app.use(compression());
@@ -156,8 +170,9 @@ async function startServer() {
           '<!--ssr-data-->',
           `<script>window.__INITIAL_DATA__ = ${JSON.stringify(initialData).replace(/</g, '\\u003c')}</script>`,
         );
+      const localizedPage = applyHtmlLang(page, pathname);
 
-      res.status(statusCode).set({ 'Content-Type': 'text/html' }).end(page);
+      res.status(statusCode).set({ 'Content-Type': 'text/html' }).end(localizedPage);
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error('SSR request failed:', error);
