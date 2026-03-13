@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BioNixus | Pharma Market Research — Europe, Middle East & Africa</title>
+<meta name="description" content="Specialist pharmaceutical market research across Europe, Middle East and Africa. Quantitative surveys, qualitative KOL interviews, and market access strategy for pharma teams.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===================================================================
+   BIONIXUS PREMIUM — Luxury Pharma Intelligence Aesthetic
+   Typography: Cormorant Garamond (display) + Outfit (body)
+   Palette: Deep midnight navy, champagne gold, surgical teal
+   =================================================================== */
+
+:root {
+  --midnight: #06101F;
+  --midnight-95: rgba(6,16,31,0.95);
+  --navy: #0C1B33;
+  --navy-light: #12284A;
+  --slate: #1B3254;
+  --gold: #C9A84C;
+  --gold-light: #E4CC7A;
+  --gold-muted: rgba(201,168,76,0.15);
+  --teal: #0EA5A0;
+  --teal-light: #14CFC8;
+  --teal-muted: rgba(14,165,160,0.12);
+  --coral: #E06852;
+  --ivory: #FAFAF6;
+  --cream: #F4F2ED;
+  --warm-white: #FFFEFB;
+  --gray-100: #EDE9E3;
+  --gray-200: #D6D0C7;
+  --gray-300: #B8B0A4;
+  --gray-500: #7A7267;
+  --gray-700: #3D3830;
+  --gray-900: #1A1712;
+  --font-display: 'Cormorant Garamond', 'Georgia', serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+  --max-w: 1260px;
+  --section-pad: clamp(80px, 10vw, 130px);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+img, svg, video { max-width: 100%; height: auto; }
+section, nav, footer { max-width: 100vw; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; overflow-x: hidden; }
+body { font-family: var(--font-body); color: var(--gray-700); background: var(--warm-white); overflow-x: hidden; line-height: 1.7; font-weight: 400; }
+
+/* TEXTURE OVERLAY */
+body::before {
+  content: ''; position: fixed; inset: 0; z-index: 9999; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.018'/%3E%3C/svg%3E");
+  background-repeat: repeat; opacity: 0.5;
+}
+
+::selection { background: var(--gold-muted); color: var(--navy); }
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: scale(1); } }
+@keyframes drawLine { from { stroke-dashoffset: 1000; } to { stroke-dashoffset: 0; } }
+@keyframes breathe { 0%,100% { opacity: 0.4; } 50% { opacity: 0.8; } }
+@keyframes orbitSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+@keyframes countPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.02); } }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-33.333%); } }
+
+.reveal { opacity: 0; transform: translateY(40px); transition: all 0.9s var(--ease-out-expo); }
+.reveal.vis { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.12s; }
+.reveal-d2 { transition-delay: 0.24s; }
+.reveal-d3 { transition-delay: 0.36s; }
+.reveal-d4 { transition-delay: 0.48s; }
+.reveal-d5 { transition-delay: 0.6s; }
+
+/* ===== NAVIGATION ===== */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 0 40px; transition: all 0.5s;
+  background: transparent;
+}
+nav.solid {
+  background: var(--midnight-95); backdrop-filter: blur(24px) saturate(1.4);
+  border-bottom: 1px solid rgba(201,168,76,0.08);
+}
+.nav-inner {
+  max-width: var(--max-w); margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between; height: 80px;
+}
+.nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.nav-logo-mark {
+  width: 40px; height: 40px; border: 1.5px solid var(--gold); border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden; padding: 6px;
+}
+.nav-logo-mark svg { width: 100%; height: 100%; }
+.nav-logo-mark::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(201,168,76,0.1), transparent);
+}
+.nav-logo-text {
+  font-family: var(--font-display); font-weight: 600; font-size: 26px; color: var(--warm-white);
+  letter-spacing: 1px;
+}
+.nav-links { display: flex; align-items: center; gap: 6px; }
+.nav-links a {
+  color: rgba(255,255,255,0.6); text-decoration: none; font-size: 13.5px; font-weight: 400;
+  padding: 8px 18px; border-radius: 8px; transition: all 0.3s; letter-spacing: 0.3px;
+}
+.nav-links a:hover { color: var(--gold-light); }
+.nav-dropdown { position: relative; }
+.nav-dropdown > a::after { content: ' ▾'; font-size: 9px; opacity: 0.5; }
+.nav-dropdown-menu {
+  position: absolute; top: calc(100% + 8px); left: -16px; min-width: 320px;
+  background: var(--warm-white); border-radius: 16px; padding: 16px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.04);
+  opacity: 0; pointer-events: none; transform: translateY(12px); transition: all 0.35s var(--ease-out-expo);
+}
+.nav-dropdown:hover .nav-dropdown-menu { opacity: 1; pointer-events: all; transform: translateY(0); }
+.nav-dropdown-menu a {
+  display: block; padding: 12px 16px; border-radius: 10px; color: var(--gray-700) !important;
+  font-size: 14px; font-weight: 500; transition: all 0.2s;
+}
+.nav-dropdown-menu a:hover { background: var(--cream) !important; color: var(--navy) !important; }
+.nav-dropdown-menu a small { display: block; font-size: 12px; color: var(--gray-500); font-weight: 400; margin-top: 2px; }
+.nav-cta {
+  background: transparent !important; border: 1.5px solid var(--gold) !important;
+  color: var(--gold) !important; padding: 10px 26px !important; border-radius: 10px !important;
+  font-weight: 500 !important; letter-spacing: 0.5px !important; transition: all 0.3s !important;
+}
+.nav-cta:hover { background: var(--gold) !important; color: var(--midnight) !important; }
+.mobile-toggle { display: none; background: none; border: none; color: var(--gold); font-size: 26px; cursor: pointer; }
+
+/* ===== HERO ===== */
+.hero {
+  position: relative; min-height: 100vh; display: flex; align-items: center;
+  background: var(--midnight); overflow: hidden; width: 100%;
+}
+.hero-bg-gradient {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 55% at 65% 45%, rgba(12,27,51,1) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 45% at 20% 80%, rgba(14,165,160,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 35% 30% at 85% 15%, rgba(201,168,76,0.06) 0%, transparent 40%),
+    linear-gradient(180deg, var(--midnight) 0%, #081628 100%);
+}
+
+/* Hero molecular grid — SVG based */
+.hero-molecule-grid {
+  position: absolute; inset: 0; overflow: hidden; opacity: 0.04;
+}
+.hero-molecule-grid svg { width: 100%; height: 100%; }
+
+/* Orbital rings */
+.hero-orbital {
+  position: absolute; width: 700px; height: 700px; top: 50%; left: 60%;
+  transform: translate(-50%, -50%); pointer-events: none;
+}
+.hero-orbital .ring {
+  position: absolute; inset: 0; border: 1px solid rgba(201,168,76,0.06);
+  border-radius: 50%; animation: orbitSlow 60s linear infinite;
+}
+.hero-orbital .ring:nth-child(2) {
+  inset: 60px; border-color: rgba(14,165,160,0.05); animation-duration: 45s; animation-direction: reverse;
+}
+.hero-orbital .ring:nth-child(3) {
+  inset: 140px; border-color: rgba(201,168,76,0.04); animation-duration: 90s;
+}
+.hero-orbital .ring .node {
+  position: absolute; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--gold); opacity: 0.5; animation: breathe 3s ease-in-out infinite;
+}
+.hero-orbital .ring:nth-child(1) .node { top: 0; left: 50%; transform: translate(-50%, -50%); }
+.hero-orbital .ring:nth-child(2) .node { bottom: 0; right: 0; transform: translate(50%, 50%); background: var(--teal); }
+.hero-orbital .ring:nth-child(3) .node { top: 50%; left: 0; transform: translate(-50%, -50%); }
+
+.hero-inner {
+  max-width: var(--max-w); margin: 0 auto; padding: 0 40px; padding-top: 80px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  position: relative; z-index: 2; width: 100%; box-sizing: border-box;
+}
+.hero-content { animation: fadeUp 1s var(--ease-out-expo); }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px; margin-bottom: 32px;
+  font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 3px;
+  color: var(--gold);
+}
+.hero-eyebrow .line { width: 32px; height: 1px; background: var(--gold); opacity: 0.4; }
+.hero h1 {
+  font-family: var(--font-display); font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+  font-weight: 300; color: var(--warm-white); line-height: 1.12; letter-spacing: -0.5px;
+  margin-bottom: 28px;
+}
+.hero h1 em {
+  font-weight: 500; font-style: italic;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.hero-sub {
+  font-size: 17px; line-height: 1.8; color: rgba(255,255,255,0.45);
+  margin-bottom: 44px; max-width: 500px; font-weight: 300;
+}
+.hero-actions { display: flex; gap: 20px; align-items: center; margin-bottom: 56px; }
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold), #B8933E); color: var(--midnight);
+  padding: 17px 36px; border-radius: 12px; font-size: 14px; font-weight: 600;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 10px;
+  letter-spacing: 0.5px; transition: all 0.35s; border: none; cursor: pointer;
+  box-shadow: 0 4px 20px rgba(201,168,76,0.25);
+}
+.btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(201,168,76,0.35); }
+.btn-ghost {
+  color: rgba(255,255,255,0.55); padding: 17px 32px; border-radius: 12px;
+  font-size: 14px; font-weight: 400; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid rgba(255,255,255,0.1); transition: all 0.35s; letter-spacing: 0.3px;
+}
+.btn-ghost:hover { border-color: rgba(255,255,255,0.25); color: var(--warm-white); }
+.hero-social-proof { display: flex; align-items: center; gap: 20px; }
+.hero-avatars { display: flex; }
+.hero-avatars img, .hero-avatars .av {
+  width: 38px; height: 38px; border-radius: 50%; border: 2px solid var(--midnight);
+  margin-left: -10px; object-fit: cover;
+}
+.hero-avatars .av:first-child { margin-left: 0; }
+.hero-avatars .av { display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; color: white; }
+.av-1 { background: linear-gradient(135deg, #2563EB, #1D4ED8); }
+.av-2 { background: linear-gradient(135deg, var(--teal), #0B8A86); }
+.av-3 { background: linear-gradient(135deg, var(--coral), #C85640); }
+.av-4 { background: linear-gradient(135deg, var(--gold), #A8872E); }
+.hero-proof-label { font-size: 13px; color: rgba(255,255,255,0.35); line-height: 1.5; font-weight: 300; }
+.hero-proof-label strong { color: rgba(255,255,255,0.7); font-weight: 500; }
+
+/* HERO VISUAL — Premium Dashboard Card */
+.hero-visual { animation: scaleIn 1s var(--ease-out-expo) 0.2s both; }
+.dash-card {
+  background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 24px; padding: 36px; position: relative;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+.dash-card::before {
+  content: ''; position: absolute; top: -1px; left: 60px; right: 60px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.4;
+}
+.dash-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; }
+.dash-header h3 { font-family: var(--font-display); font-size: 18px; color: rgba(255,255,255,0.8); font-weight: 400; letter-spacing: 0.5px; }
+.dash-live { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--teal); font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; }
+.dash-live .pulse { width: 6px; height: 6px; background: var(--teal); border-radius: 50%; animation: breathe 2s ease-in-out infinite; box-shadow: 0 0 8px var(--teal); }
+
+/* Chart area */
+.dash-chart { margin-bottom: 28px; position: relative; height: 200px; }
+.dash-chart svg { width: 100%; height: 100%; }
+.chart-line { fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.chart-line-gold { stroke: var(--gold); }
+.chart-line-teal { stroke: var(--teal); opacity: 0.6; }
+.chart-area-gold { fill: url(#goldGrad); }
+.chart-area-teal { fill: url(#tealGrad); }
+.chart-grid-line { stroke: rgba(255,255,255,0.04); stroke-width: 1; }
+.chart-dot { fill: var(--gold); filter: drop-shadow(0 0 6px rgba(201,168,76,0.5)); }
+.chart-dot-teal { fill: var(--teal); filter: drop-shadow(0 0 6px rgba(14,165,160,0.5)); }
+.chart-label { font-family: var(--font-body); font-size: 10px; fill: rgba(255,255,255,0.25); font-weight: 400; }
+.chart-tooltip {
+  position: absolute; top: 30px; right: 20px;
+  background: rgba(6,16,31,0.85); border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 10px; padding: 12px 16px; backdrop-filter: blur(8px);
+}
+.chart-tooltip-val { font-family: var(--font-display); font-size: 28px; color: var(--gold); font-weight: 500; }
+.chart-tooltip-label { font-size: 11px; color: rgba(255,255,255,0.35); font-weight: 400; }
+.chart-tooltip-change { font-size: 11px; color: var(--teal); font-weight: 500; margin-top: 2px; }
+
+/* Dashboard metrics row */
+.dash-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.dash-metric {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 14px; padding: 18px; text-align: center; transition: all 0.3s;
+}
+.dash-metric:hover { border-color: rgba(201,168,76,0.15); background: rgba(201,168,76,0.03); }
+.dash-metric-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.2px; color: rgba(255,255,255,0.3); margin-bottom: 6px; font-weight: 500; }
+.dash-metric-val { font-family: var(--font-display); font-size: 30px; font-weight: 500; color: var(--warm-white); }
+.dash-metric-sub { font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 2px; }
+
+/* ===== COMPLIANCE RIBBON ===== */
+.compliance {
+  background: var(--navy); padding: 20px 40px;
+  border-top: 1px solid rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.compliance-inner {
+  max-width: var(--max-w); margin: 0 auto;
+  display: flex; justify-content: center; gap: 48px; flex-wrap: wrap;
+}
+.compliance-item {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 12px; color: rgba(255,255,255,0.3); font-weight: 400; letter-spacing: 0.5px;
+}
+.compliance-item .icon { color: var(--gold); font-size: 13px; opacity: 0.7; }
+
+/* ===== STATS SECTION ===== */
+.stats {
+  background: var(--warm-white); padding: 72px 40px;
+  border-bottom: 1px solid var(--gray-100);
+}
+.stats-inner {
+  max-width: var(--max-w); margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+}
+.stat {
+  text-align: center; padding: 20px 32px; position: relative;
+}
+.stat:not(:last-child)::after {
+  content: ''; position: absolute; right: 0; top: 15%; height: 70%;
+  width: 1px; background: linear-gradient(180deg, transparent, var(--gray-200), transparent);
+}
+.stat-num {
+  font-family: var(--font-display); font-size: 56px; font-weight: 300;
+  color: var(--navy); line-height: 1; margin-bottom: 8px; letter-spacing: -2px;
+}
+.stat-label { font-size: 13px; color: var(--gray-500); font-weight: 400; letter-spacing: 0.5px; }
+
+/* ===== SECTION PRIMITIVES ===== */
+.section-pad { padding: var(--section-pad) 40px; }
+.inner { max-width: var(--max-w); margin: 0 auto; }
+.section-head { margin-bottom: 72px; }
+.section-head.center { text-align: center; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 10px; margin-bottom: 20px;
+  font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 3px;
+}
+.eyebrow .line { width: 24px; height: 1px; }
+.eyebrow-gold { color: var(--gold); }
+.eyebrow-gold .line { background: var(--gold); opacity: 0.3; }
+.eyebrow-teal { color: var(--teal); }
+.eyebrow-teal .line { background: var(--teal); opacity: 0.3; }
+.section-title {
+  font-family: var(--font-display); font-size: clamp(2rem, 3.2vw, 3rem);
+  font-weight: 300; color: var(--navy); line-height: 1.15; letter-spacing: -0.3px;
+}
+.section-title em { font-weight: 500; font-style: italic; }
+.section-title-light { color: var(--warm-white); }
+.section-sub { font-size: 17px; color: var(--gray-500); max-width: 560px; margin-top: 16px; font-weight: 300; line-height: 1.8; }
+.section-sub.centered { margin: 16px auto 0; }
+
+/* ===== SERVICES ===== */
+.services { background: var(--cream); }
+.services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+.svc-card {
+  background: var(--warm-white); border-radius: 20px; padding: 44px;
+  border: 1px solid var(--gray-100); transition: all 0.45s var(--ease-out-expo);
+  position: relative; overflow: hidden;
+}
+.svc-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--teal)); opacity: 0;
+  transition: opacity 0.4s;
+}
+.svc-card:hover { border-color: transparent; box-shadow: 0 24px 80px rgba(6,16,31,0.08); transform: translateY(-6px); }
+.svc-card:hover::before { opacity: 1; }
+.svc-icon {
+  width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center;
+  margin-bottom: 24px; font-size: 24px;
+}
+.svc-icon-blue { background: linear-gradient(135deg, #EBF4FF, #D6E8FC); color: #2563EB; }
+.svc-icon-teal { background: linear-gradient(135deg, #E6FAF8, #C0F0EC); color: var(--teal); }
+.svc-icon-coral { background: linear-gradient(135deg, #FFF0ED, #FDDDD6); color: var(--coral); }
+.svc-icon-gold { background: linear-gradient(135deg, #FDF6E3, #F5E8C4); color: var(--gold); }
+.svc-card h3 {
+  font-family: var(--font-display); font-size: 24px; font-weight: 500; color: var(--navy);
+  margin-bottom: 14px; letter-spacing: -0.3px;
+}
+.svc-card p { font-size: 15px; color: var(--gray-500); line-height: 1.75; margin-bottom: 24px; font-weight: 300; }
+.svc-link {
+  display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600;
+  color: var(--gold); text-decoration: none; letter-spacing: 0.5px; transition: gap 0.3s;
+}
+.svc-link:hover { gap: 14px; }
+
+/* ===== CASE STUDIES — Dark ===== */
+.cases { background: var(--midnight); position: relative; overflow: hidden; }
+.cases-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 30% 70%, rgba(14,165,160,0.06), transparent),
+              radial-gradient(ellipse 40% 40% at 80% 20%, rgba(201,168,76,0.04), transparent);
+}
+.cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; position: relative; z-index: 2; }
+.case-card {
+  background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 20px; padding: 36px; transition: all 0.4s var(--ease-out-expo);
+  position: relative; overflow: hidden;
+}
+.case-card::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  opacity: 0; transition: opacity 0.4s;
+}
+.case-card:nth-child(1)::after { background: var(--coral); }
+.case-card:nth-child(2)::after { background: var(--teal); }
+.case-card:nth-child(3)::after { background: var(--gold); }
+.case-card:hover { border-color: rgba(255,255,255,0.1); transform: translateY(-6px); background: rgba(255,255,255,0.04); }
+.case-card:hover::after { opacity: 1; }
+.case-img {
+  width: 100%; height: 180px; border-radius: 14px; margin-bottom: 24px;
+  position: relative; overflow: hidden;
+}
+.case-img-inner {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+}
+/* SVG mini-charts inside case study cards */
+.case-chart svg { width: 100%; height: 100%; }
+.case-tag {
+  position: absolute; top: 12px; left: 12px; font-size: 10px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 1.2px; padding: 5px 12px; border-radius: 8px;
+  z-index: 2;
+}
+.tag-onco { background: rgba(224,104,82,0.9); color: white; }
+.tag-neuro { background: rgba(45,111,204,0.9); color: white; }
+.tag-access { background: rgba(201,168,76,0.9); color: var(--midnight); }
+.case-card h3 { font-family: var(--font-display); font-size: 20px; font-weight: 400; color: var(--warm-white); margin-bottom: 12px; line-height: 1.35; }
+.case-card p { font-size: 14px; color: rgba(255,255,255,0.35); line-height: 1.7; margin-bottom: 24px; font-weight: 300; }
+.case-stat { display: flex; align-items: baseline; gap: 10px; }
+.case-stat-val { font-family: var(--font-display); font-size: 40px; font-weight: 300; letter-spacing: -1px; }
+.case-stat-label { font-size: 12px; color: rgba(255,255,255,0.3); font-weight: 400; }
+.case-card:nth-child(1) .case-stat-val { color: var(--coral); }
+.case-card:nth-child(2) .case-stat-val { color: var(--teal); }
+.case-card:nth-child(3) .case-stat-val { color: var(--gold); }
+
+/* ===== LEAD MAGNET ===== */
+.lead-magnet { background: var(--warm-white); }
+.lm-card {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--slate) 100%);
+  border-radius: 28px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 0;
+  overflow: hidden; position: relative;
+  box-shadow: 0 40px 80px rgba(6,16,31,0.2);
+}
+.lm-card::before {
+  content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(201,168,76,0.08), transparent 60%); pointer-events: none;
+}
+.lm-content { padding: 64px; position: relative; z-index: 2; }
+.lm-content h2 { font-family: var(--font-display); font-size: 34px; font-weight: 300; color: var(--warm-white); margin-bottom: 16px; line-height: 1.2; }
+.lm-content h2 em { font-weight: 500; font-style: italic; color: var(--gold); }
+.lm-content p { font-size: 16px; color: rgba(255,255,255,0.4); line-height: 1.8; margin-bottom: 28px; font-weight: 300; }
+.lm-features { list-style: none; }
+.lm-features li {
+  font-size: 14px; color: rgba(255,255,255,0.45); padding: 8px 0;
+  display: flex; align-items: center; gap: 12px; font-weight: 300;
+}
+.lm-features li .icon { color: var(--gold); font-size: 16px; opacity: 0.8; }
+.lm-form-wrap {
+  background: var(--warm-white); padding: 56px 48px; display: flex; flex-direction: column; justify-content: center;
+}
+.lm-form-title { font-family: var(--font-display); font-size: 22px; font-weight: 500; color: var(--navy); margin-bottom: 28px; }
+.field { margin-bottom: 20px; }
+.field label { display: block; font-size: 12px; font-weight: 600; color: var(--gray-500); margin-bottom: 8px; letter-spacing: 0.5px; text-transform: uppercase; }
+.field input, .field select {
+  width: 100%; padding: 14px 18px; border: 1.5px solid var(--gray-200); border-radius: 12px;
+  font-family: var(--font-body); font-size: 15px; color: var(--gray-700);
+  transition: all 0.25s; background: var(--warm-white);
+}
+.field input:focus, .field select:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 4px var(--gold-muted); }
+.field input::placeholder { color: var(--gray-300); font-weight: 300; }
+.btn-submit {
+  width: 100%; padding: 16px; border: none; border-radius: 12px; font-family: var(--font-body);
+  font-size: 14px; font-weight: 600; cursor: pointer; letter-spacing: 0.5px; transition: all 0.3s;
+  background: var(--navy); color: var(--warm-white);
+}
+.btn-submit:hover { background: var(--slate); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(6,16,31,0.15); }
+.form-disclaimer { font-size: 11.5px; color: var(--gray-300); text-align: center; margin-top: 16px; font-weight: 300; }
+
+/* ===== TESTIMONIALS ===== */
+.testimonials { background: var(--cream); }
+.test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.test-card {
+  background: var(--warm-white); border-radius: 20px; padding: 40px;
+  border: 1px solid var(--gray-100); position: relative;
+  transition: all 0.4s var(--ease-out-expo);
+}
+.test-card:hover { box-shadow: 0 16px 60px rgba(6,16,31,0.06); transform: translateY(-4px); }
+.test-quote-mark {
+  font-family: var(--font-display); font-size: 72px; color: var(--gold); opacity: 0.2;
+  position: absolute; top: 20px; right: 32px; line-height: 1;
+}
+.test-stars { letter-spacing: 3px; margin-bottom: 20px; color: var(--gold); font-size: 15px; }
+.test-text { font-family: var(--font-display); font-size: 17px; color: var(--gray-700); line-height: 1.65; margin-bottom: 28px; font-weight: 400; font-style: italic; }
+.test-author { display: flex; align-items: center; gap: 14px; }
+.test-avatar {
+  width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 600; color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.test-name { font-size: 14px; font-weight: 600; color: var(--navy); }
+.test-role { font-size: 12.5px; color: var(--gray-500); font-weight: 400; }
+.test-verified { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; color: var(--teal); font-weight: 500; margin-top: 2px; }
+
+/* ===== TEAM ===== */
+.team { background: var(--warm-white); }
+.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 36px; }
+.team-member { text-align: center; }
+.team-photo {
+  width: 160px; height: 160px; border-radius: 50%; margin: 0 auto 20px;
+  position: relative; overflow: hidden;
+}
+.team-photo-inner {
+  width: 100%; height: 100%; border-radius: 50%;
+  background: linear-gradient(135deg, var(--cream), var(--gray-100));
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-size: 44px; font-weight: 300; color: var(--navy);
+  border: 3px solid var(--warm-white); box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+}
+.team-photo::after {
+  content: ''; position: absolute; inset: -3px; border-radius: 50%;
+  border: 1px solid var(--gold); opacity: 0; transition: opacity 0.4s;
+}
+.team-member:hover .team-photo::after { opacity: 0.4; }
+.team-name { font-family: var(--font-display); font-size: 20px; font-weight: 500; color: var(--navy); margin-bottom: 4px; }
+.team-title { font-size: 13px; color: var(--gray-500); font-weight: 400; margin-bottom: 10px; }
+.team-ln { font-size: 12px; color: var(--gold); text-decoration: none; font-weight: 600; letter-spacing: 0.3px; }
+.team-ln:hover { text-decoration: underline; }
+
+/* ===== INSIGHTS ===== */
+.insights { background: var(--cream); }
+.insights-grid { display: grid; grid-template-columns: 1.3fr 0.7fr 0.7fr; gap: 28px; }
+.ins-card {
+  background: var(--warm-white); border-radius: 20px; overflow: hidden;
+  border: 1px solid var(--gray-100); transition: all 0.4s var(--ease-out-expo);
+}
+.ins-card:hover { box-shadow: 0 20px 60px rgba(6,16,31,0.07); transform: translateY(-4px); }
+.ins-img {
+  position: relative; overflow: hidden;
+}
+.ins-img-bg {
+  width: 100%; height: 220px; display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.ins-card.featured .ins-img-bg { height: 300px; }
+.ins-img-bg.bg-navy { background: linear-gradient(135deg, var(--navy) 0%, var(--slate) 100%); }
+.ins-img-bg.bg-teal { background: linear-gradient(135deg, #0B3D3B, #0EA5A0); }
+.ins-img-bg.bg-gold { background: linear-gradient(135deg, #3D2E0D, var(--gold)); }
+/* Inline SVG illustrations for blog images */
+.ins-illustration { opacity: 0.12; }
+.ins-img-tag {
+  position: absolute; top: 16px; left: 16px; font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1.5px; padding: 5px 14px; border-radius: 8px;
+  background: rgba(201,168,76,0.9); color: var(--midnight);
+}
+.ins-body { padding: 28px; }
+.ins-date { font-size: 12px; color: var(--gray-300); font-weight: 500; margin-bottom: 10px; letter-spacing: 0.3px; }
+.ins-body h3 { font-family: var(--font-display); font-size: 19px; font-weight: 500; color: var(--navy); margin-bottom: 10px; line-height: 1.35; }
+.ins-card.featured .ins-body h3 { font-size: 24px; }
+.ins-body p { font-size: 14px; color: var(--gray-500); line-height: 1.7; font-weight: 300; }
+.ins-read { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--gold); text-decoration: none; margin-top: 14px; letter-spacing: 0.3px; }
+
+/* ===== FAQ ===== */
+.faq-section { background: var(--warm-white); }
+.faq-wrap { max-width: 780px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid var(--gray-100); }
+.faq-q {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 28px 0; cursor: pointer; background: none; border: none; width: 100%;
+  font-family: var(--font-display); font-size: 19px; font-weight: 400; color: var(--navy);
+  text-align: left; transition: color 0.3s; letter-spacing: -0.2px;
+}
+.faq-q:hover { color: var(--gold); }
+.faq-icon { font-size: 22px; color: var(--gray-300); transition: all 0.35s; font-weight: 300; }
+.faq-item.open .faq-icon { transform: rotate(45deg); color: var(--gold); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.5s var(--ease-out-expo); }
+.faq-a-inner { padding: 0 0 28px; font-size: 15px; color: var(--gray-500); line-height: 1.8; font-weight: 300; }
+.faq-item.open .faq-a { max-height: 350px; }
+
+/* ===== LOGOS ===== */
+.logos { background: var(--cream); padding: 64px 40px; border-top: 1px solid var(--gray-100); }
+.logos-inner { max-width: var(--max-w); margin: 0 auto; text-align: center; }
+.logos-label { font-size: 12px; color: var(--gray-300); font-weight: 400; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 36px; }
+.logos-row { overflow: hidden; width: 100%; }
+.logos-track { display: flex; align-items: center; width: max-content; animation: marquee 22s linear infinite; }
+.logos-set { display: flex; align-items: center; gap: 64px; flex-shrink: 0; padding: 0 20px; }
+.logo-brand {
+  font-family: var(--font-display); font-size: 26px; font-weight: 500; color: var(--gray-200);
+  letter-spacing: 0.5px; transition: color 0.35s; cursor: default;
+}
+.logo-brand:hover { color: var(--gray-500); }
+
+/* ===== FINAL CTA ===== */
+.final-cta { background: var(--warm-white); }
+.cta-card {
+  max-width: 860px; margin: 0 auto; text-align: center;
+  background: var(--midnight); border-radius: 28px; padding: 80px 56px;
+  position: relative; overflow: hidden;
+  box-shadow: 0 40px 100px rgba(6,16,31,0.3);
+}
+.cta-card::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 130%, rgba(201,168,76,0.08), transparent);
+}
+.cta-card::after {
+  content: ''; position: absolute; top: -1px; left: 80px; right: 80px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.3;
+}
+.cta-card h2 { font-family: var(--font-display); font-size: 40px; font-weight: 300; color: var(--warm-white); margin-bottom: 16px; position: relative; letter-spacing: -0.5px; }
+.cta-card p { font-size: 17px; color: rgba(255,255,255,0.4); margin-bottom: 40px; position: relative; font-weight: 300; }
+.cta-actions { display: flex; justify-content: center; gap: 20px; position: relative; }
+
+/* ===== FOOTER ===== */
+footer { background: var(--navy); padding: 88px 40px 44px; }
+.footer-inner { max-width: var(--max-w); margin: 0 auto; }
+.footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 56px; margin-bottom: 72px; }
+.footer-brand-text { font-size: 14px; color: rgba(255,255,255,0.3); line-height: 1.8; margin-top: 20px; font-weight: 300; }
+.footer-col h4 { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.2); margin-bottom: 24px; }
+.footer-col a { display: block; font-size: 14px; color: rgba(255,255,255,0.4); text-decoration: none; padding: 5px 0; transition: color 0.3s; font-weight: 300; }
+.footer-col a:hover { color: var(--gold); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.05); padding-top: 36px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-bottom p { font-size: 12.5px; color: rgba(255,255,255,0.2); font-weight: 300; }
+.footer-bottom-links { display: flex; gap: 28px; }
+.footer-bottom-links a { font-size: 12.5px; color: rgba(255,255,255,0.2); text-decoration: none; font-weight: 300; }
+.footer-bottom-links a:hover { color: rgba(255,255,255,0.5); }
+
+/* ===== STICKY CTA ===== */
+.sticky-btn {
+  position: fixed; bottom: 28px; right: 28px; z-index: 999;
+  background: linear-gradient(135deg, var(--gold), #B8933E); color: var(--midnight);
+  padding: 16px 32px; border-radius: 14px; font-size: 13px; font-weight: 600;
+  text-decoration: none; letter-spacing: 0.5px;
+  box-shadow: 0 8px 32px rgba(201,168,76,0.35);
+  display: flex; align-items: center; gap: 10px;
+  transform: translateY(120px); opacity: 0; transition: all 0.5s var(--ease-out-expo);
+}
+.sticky-btn.show { transform: translateY(0); opacity: 1; }
+.sticky-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 48px rgba(201,168,76,0.45); }
+
+/* ===== DIFFERENTIATOR ===== */
+.diff-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.diff-card {
+  background: var(--warm-white); border-radius: 20px; padding: 40px;
+  border: 1px solid var(--gray-100); text-align: center;
+}
+.diff-card-num { font-family: var(--font-display); font-size: 48px; font-weight: 300; color: var(--navy); margin-bottom: 8px; }
+.diff-card-text { font-size: 14px; color: var(--gray-500); font-weight: 400; margin-bottom: 20px; }
+.diff-card-tag { font-size: 12px; color: var(--teal); font-weight: 600; letter-spacing: 0.5px; }
+.diff-banner {
+  margin-top: 40px; background: var(--warm-white); border: 1px solid var(--gray-100);
+  border-radius: 20px; padding: 40px; display: grid; grid-template-columns: auto 1fr;
+  gap: 24px; align-items: center;
+}
+.diff-banner-icon {
+  width: 56px; height: 56px; border-radius: 16px;
+  background: linear-gradient(135deg, var(--gold-muted), rgba(201,168,76,0.08));
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.diff-banner-title { font-family: var(--font-display); font-size: 20px; font-weight: 500; color: var(--navy); margin-bottom: 6px; }
+.diff-banner-text { font-size: 15px; color: var(--gray-500); font-weight: 300; line-height: 1.7; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1080px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+  .hero-visual { display: none; }
+  .services-grid, .cases-grid, .test-grid { grid-template-columns: 1fr; }
+  .diff-grid { grid-template-columns: 1fr; }
+  .diff-banner { grid-template-columns: 1fr; text-align: center; }
+  .diff-banner-icon { margin: 0 auto; }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .insights-grid { grid-template-columns: 1fr; }
+  .lm-card { grid-template-columns: 1fr; }
+  .lm-form-wrap { padding: 48px; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  :root { --section-pad: 64px; }
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .mobile-toggle { display: block; }
+  .hero-inner { padding: 0 20px; padding-top: 80px; }
+  .hero h1 { font-size: 2.2rem; }
+  .hero-actions { flex-direction: column; align-items: flex-start; }
+  .hero-social-proof { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .stats-inner { grid-template-columns: repeat(2, 1fr); }
+  .stat:not(:last-child)::after { display: none; }
+  .stat-num { font-size: 42px; }
+  .diff-grid { grid-template-columns: 1fr; }
+  .diff-card { padding: 28px; }
+  .diff-card-num { font-size: 40px; }
+  .diff-banner { padding: 28px; gap: 16px; }
+  .team-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .team-photo { width: 120px; height: 120px; }
+  .team-photo-inner { font-size: 34px; }
+  .footer-top { grid-template-columns: 1fr; gap: 40px; }
+  .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+  .cta-card { padding: 56px 24px; }
+  .cta-card h2 { font-size: 28px; }
+  .cta-actions { flex-direction: column; align-items: center; }
+  .logos-set { gap: 28px; }
+  .logo-brand { font-size: 20px; }
+  .section-pad { padding-left: 20px; padding-right: 20px; }
+  .compliance-inner { gap: 20px; }
+  .compliance-item { font-size: 11px; }
+  .lm-content { padding: 36px; }
+  .lm-form-wrap { padding: 36px; }
+  .btn-gold, .btn-ghost { width: 100%; justify-content: center; text-align: center; }
+  .section-title { font-size: 1.8rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="https://www.bionixus.com/" class="nav-logo">
+      <div class="nav-logo-mark"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 28C16 28 3 20 3 11.5C3 8.5 5 5.5 8.5 5.5C11 5.5 13.5 7 16 10C18.5 7 21 5.5 23.5 5.5C27 5.5 29 8.5 29 11.5C29 20 16 28 16 28Z" fill="var(--gold)" stroke="rgba(201,168,76,0.6)" stroke-width="0.5"/><path d="M4 16.5L9 16.5L11.5 12L14 20L16.5 14L18 17L20.5 10L23 18L25 16.5L28 16.5" stroke="#16A34A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/><defs><linearGradient id="hg1" x1="3" y1="5" x2="29" y2="28" gradientUnits="userSpaceOnUse"><stop stop-color="rgba(14,165,160,0.35)"/><stop offset="1" stop-color="rgba(201,168,76,0.25)"/></linearGradient></defs></svg></div>
+      <span class="nav-logo-text">BioNixus</span>
+    </a>
+    <div class="nav-links">
+      <a href="https://www.bionixus.com/about">About</a>
+      <div class="nav-dropdown">
+        <a href="https://www.bionixus.com/services">Services</a>
+        <div class="nav-dropdown-menu">
+          <a href="https://www.bionixus.com/services/quantitative-research">Quantitative Research<small>Physician surveys, market sizing, prescribing data</small></a>
+          <a href="https://www.bionixus.com/services/qualitative-research">Qualitative Research<small>KOL interviews, focus groups, expert panels</small></a>
+          <a href="https://www.bionixus.com/services/market-access">Market Access &amp; HTA<small>G-BA, HAS, SFDA pricing &amp; reimbursement</small></a>
+          <a href="https://www.bionixus.com/services/kol-stakeholder-mapping">KOL &amp; Stakeholder Mapping<small>Influence mapping &amp; engagement strategy</small></a>
+        </div>
+      </div>
+      <a href="https://www.bionixus.com/case-studies">Case Studies</a>
+      <a href="https://www.bionixus.com/blog">Blog &amp; Reports</a>
+      <a href="https://www.bionixus.com/contact" class="nav-cta">Book a Call</a>
+    </div>
+    <button class="mobile-toggle">☰</button>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg-gradient"></div>
+  <div class="hero-molecule-grid">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="none">
+      <defs>
+        <pattern id="hexGrid" width="60" height="52" patternUnits="userSpaceOnUse">
+          <path d="M30 0 L60 15 L60 37 L30 52 L0 37 L0 15 Z" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="0.5"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#hexGrid)"/>
+    </svg>
+  </div>
+  <div class="hero-orbital">
+    <div class="ring"><div class="node"></div></div>
+    <div class="ring"><div class="node"></div></div>
+    <div class="ring"><div class="node"></div></div>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow"><span class="line"></span> Pharmaceutical Market Intelligence</div>
+      <h1>Research that shapes <em>pharma strategy</em></h1>
+      <p class="hero-sub">Quantitative physician surveys, qualitative KOL programmes, and market access intelligence across Europe, Middle East, and Africa — for pharma teams that need precision.</p>
+      <div class="hero-actions">
+        <a href="https://www.bionixus.com/contact" class="btn-gold">Book a Discovery Call →</a>
+        <a href="https://www.bionixus.com/case-studies" class="btn-ghost"><span>◈</span> View Case Studies</a>
+      </div>
+      <div class="hero-social-proof">
+        <div class="hero-avatars">
+          <span class="av av-1">PF</span><span class="av av-2">RO</span><span class="av av-3">NV</span><span class="av av-4">AZ</span>
+        </div>
+        <div class="hero-proof-label">Trusted by teams at <strong>15 pharma companies</strong><br>across 27 countries</div>
+      </div>
+    </div>
+
+    <!-- HERO DASHBOARD VISUAL -->
+    <div class="hero-visual">
+      <div class="dash-card">
+        <div class="dash-header">
+          <h3>Market Intelligence Dashboard</h3>
+          <div class="dash-live"><span class="pulse"></span> Live</div>
+        </div>
+
+        <!-- Premium SVG Chart -->
+        <div class="dash-chart">
+          <div class="chart-tooltip">
+            <div class="chart-tooltip-val">$3.8B</div>
+            <div class="chart-tooltip-label">MEA Pharma Market (2026E)</div>
+            <div class="chart-tooltip-change">↑ 12.3% YoY growth</div>
+          </div>
+          <svg viewBox="0 0 500 180" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="goldGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="rgba(201,168,76,0.25)"/>
+                <stop offset="100%" stop-color="rgba(201,168,76,0)"/>
+              </linearGradient>
+              <linearGradient id="tealGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="rgba(14,165,160,0.12)"/>
+                <stop offset="100%" stop-color="rgba(14,165,160,0)"/>
+              </linearGradient>
+            </defs>
+            <!-- Grid lines -->
+            <line x1="0" y1="45" x2="500" y2="45" class="chart-grid-line"/>
+            <line x1="0" y1="90" x2="500" y2="90" class="chart-grid-line"/>
+            <line x1="0" y1="135" x2="500" y2="135" class="chart-grid-line"/>
+            <!-- X-axis labels -->
+            <text x="20" y="175" class="chart-label">2020</text>
+            <text x="100" y="175" class="chart-label">2021</text>
+            <text x="180" y="175" class="chart-label">2022</text>
+            <text x="260" y="175" class="chart-label">2023</text>
+            <text x="340" y="175" class="chart-label">2024</text>
+            <text x="420" y="175" class="chart-label">2025</text>
+            <text x="470" y="175" class="chart-label">26E</text>
+            <!-- Teal line (EU market) -->
+            <path d="M20,120 C60,118 100,110 140,105 C180,100 220,98 260,88 C300,78 340,72 380,65 C420,58 460,50 490,45" class="chart-area-teal"/>
+            <path d="M20,120 C60,118 100,110 140,105 C180,100 220,98 260,88 C300,78 340,72 380,65 C420,58 460,50 490,45 L490,160 L20,160 Z" class="chart-area-teal"/>
+            <path d="M20,120 C60,118 100,110 140,105 C180,100 220,98 260,88 C300,78 340,72 380,65 C420,58 460,50 490,45" class="chart-line chart-line-teal"/>
+            <!-- Gold line (GCC market) -->
+            <path d="M20,140 C60,135 100,125 140,118 C180,108 220,95 260,82 C300,68 340,55 380,42 C420,32 460,25 490,18" class="chart-line chart-line-gold" stroke-dasharray="800" stroke-dashoffset="800" style="animation: drawLine 2.5s ease-out 0.5s forwards"/>
+            <path d="M20,140 C60,135 100,125 140,118 C180,108 220,95 260,82 C300,68 340,55 380,42 C420,32 460,25 490,18 L490,160 L20,160 Z" class="chart-area-gold" style="opacity:0;animation:fadeIn 1s ease-out 1.5s forwards"/>
+            <!-- Data points -->
+            <circle cx="490" cy="18" r="4.5" class="chart-dot" style="opacity:0;animation:fadeIn 0.5s ease-out 2.5s forwards"/>
+            <circle cx="490" cy="45" r="3.5" class="chart-dot-teal" style="opacity:0;animation:fadeIn 0.5s ease-out 2.5s forwards"/>
+            <!-- Legend -->
+            <line x1="20" y1="10" x2="38" y2="10" stroke="rgba(201,168,76,0.8)" stroke-width="2"/>
+            <text x="42" y="14" class="chart-label" style="fill:rgba(255,255,255,0.4)">MEA Growth</text>
+            <line x1="120" y1="10" x2="138" y2="10" stroke="rgba(14,165,160,0.5)" stroke-width="2"/>
+            <text x="142" y="14" class="chart-label" style="fill:rgba(255,255,255,0.4)">Europe Benchmark</text>
+          </svg>
+        </div>
+
+        <!-- Dashboard Metrics -->
+        <div class="dash-metrics">
+          <div class="dash-metric">
+            <div class="dash-metric-label">Europe</div>
+            <div class="dash-metric-val">11</div>
+            <div class="dash-metric-sub">markets incl. UK</div>
+          </div>
+          <div class="dash-metric">
+            <div class="dash-metric-label">Middle East</div>
+            <div class="dash-metric-val">9</div>
+            <div class="dash-metric-sub">countries</div>
+          </div>
+          <div class="dash-metric">
+            <div class="dash-metric-label">Africa</div>
+            <div class="dash-metric-val">7</div>
+            <div class="dash-metric-sub">key markets</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLIANCE -->
+<div class="compliance">
+  <div class="compliance-inner">
+    <div class="compliance-item"><span class="icon">◆</span> EMA Aligned</div>
+    <div class="compliance-item"><span class="icon">◆</span> GDPR Compliant</div>
+    <div class="compliance-item"><span class="icon">◆</span> SFDA Compliant</div>
+    <div class="compliance-item"><span class="icon">◆</span> MOHAP Compliant</div>
+    <div class="compliance-item"><span class="icon">◆</span> GCP Standards</div>
+  </div>
+</div>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stats-inner">
+    <div class="stat reveal"><div class="stat-num" data-t="27">0</div><div class="stat-label">Countries Covered</div></div>
+    <div class="stat reveal reveal-d1"><div class="stat-num" data-t="25">0</div><div class="stat-label">Therapeutic Areas</div></div>
+    <div class="stat reveal reveal-d2"><div class="stat-num" data-t="120">0</div><div class="stat-label">Projects Delivered</div></div>
+    <div class="stat reveal reveal-d3"><div class="stat-num" data-t="15">0</div><div class="stat-label">Years of Excellence</div></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services section-pad" id="services">
+  <div class="inner">
+    <div class="section-head center">
+      <div class="eyebrow eyebrow-gold"><span class="line"></span> Our Capabilities <span class="line"></span></div>
+      <h2 class="section-title">Four pillars of <em>pharmaceutical intelligence</em></h2>
+      <p class="section-sub centered">Each engagement is designed to answer a specific strategic question — not generate generic reports.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card reveal">
+        <div class="svc-icon svc-icon-blue">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 16V11M12 16V8M17 16V5"/></svg>
+        </div>
+        <h3>Quantitative Research</h3>
+        <p>Large-scale statistical insights from physicians across European and Middle Eastern healthcare systems. From prescribing data to HTA decision-maker analysis and African market sizing.</p>
+        <a href="https://www.bionixus.com/services/quantitative-research" class="svc-link">Explore methods →</a>
+      </div>
+      <div class="svc-card reveal reveal-d1">
+        <div class="svc-icon svc-icon-teal">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg>
+        </div>
+        <h3>Qualitative &amp; KOL Research</h3>
+        <p>Deep-dive interviews with key opinion leaders, hospital specialists, and Gulf healthcare leaders. Clinical perspectives structured into actionable strategic frameworks across Europe, Middle East, and Africa.</p>
+        <a href="https://www.bionixus.com/services/qualitative-research" class="svc-link">See our approach →</a>
+      </div>
+      <div class="svc-card reveal reveal-d2">
+        <div class="svc-icon svc-icon-coral">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Market Access &amp; HTA Strategy</h3>
+        <p>Evidence-based pricing, payer engagement, and reimbursement modelling for G-BA, HAS, AIFA, and SFDA submissions. Bridging clinical evidence and commercial success across European and MEA markets.</p>
+        <a href="https://www.bionixus.com/services/market-access" class="svc-link">Learn about HTA support →</a>
+      </div>
+      <div class="svc-card reveal reveal-d3">
+        <div class="svc-icon svc-icon-gold">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+        </div>
+        <h3>KOL &amp; Stakeholder Mapping</h3>
+        <p>Systematic identification and influence mapping across European, Middle Eastern, and African markets. From leading university hospital consultants to Gulf ministry advisors and African health authority stakeholders.</p>
+        <a href="https://www.bionixus.com/services/kol-stakeholder-mapping" class="svc-link">View methodology →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="cases section-pad" id="cases">
+  <div class="cases-bg"></div>
+  <div class="inner" style="position:relative;z-index:2">
+    <div class="section-head center">
+      <div class="eyebrow eyebrow-teal"><span class="line"></span> Evidence of Impact <span class="line"></span></div>
+      <h2 class="section-title section-title-light">Case studies from <em>real engagements</em></h2>
+      <p class="section-sub centered" style="color:rgba(255,255,255,0.35)">Quantified outcomes from recent pharmaceutical research projects.</p>
+    </div>
+    <div class="cases-grid">
+      <div class="case-card reveal">
+        <div class="case-img" style="background:linear-gradient(135deg,#1A0C08,#3D1810)">
+          <span class="case-tag tag-onco">Oncology</span>
+          <div class="case-img-inner">
+            <svg width="100%" height="100%" viewBox="0 0 300 180" preserveAspectRatio="none">
+              <!-- Dot scatter plot -->
+              <circle cx="40" cy="120" r="6" fill="rgba(224,104,82,0.3)"/><circle cx="65" cy="95" r="8" fill="rgba(224,104,82,0.4)"/>
+              <circle cx="100" cy="80" r="5" fill="rgba(224,104,82,0.25)"/><circle cx="130" cy="60" r="10" fill="rgba(224,104,82,0.5)"/>
+              <circle cx="160" cy="55" r="7" fill="rgba(224,104,82,0.35)"/><circle cx="190" cy="40" r="9" fill="rgba(224,104,82,0.45)"/>
+              <circle cx="220" cy="35" r="12" fill="rgba(224,104,82,0.6)"/><circle cx="255" cy="28" r="6" fill="rgba(224,104,82,0.3)"/>
+              <circle cx="280" cy="22" r="14" fill="rgba(224,104,82,0.7)"/>
+              <path d="M40,120 Q100,85 160,55 T280,22" fill="none" stroke="rgba(224,104,82,0.3)" stroke-width="1.5" stroke-dasharray="4,4"/>
+            </svg>
+          </div>
+        </div>
+        <h3>EMEA-wide KOL mapping for a top-5 pharma immunotherapy launch</h3>
+        <p>Mapped 240+ oncology KOLs across 8 European and Gulf markets. Identified 18 tier-1 influencers who shaped HTA committee decisions and formulary access.</p>
+        <div class="case-stat"><div class="case-stat-val">94%</div><div class="case-stat-label">KOL engagement rate</div></div>
+      </div>
+      <div class="case-card reveal reveal-d1">
+        <div class="case-img" style="background:linear-gradient(135deg,#061A19,#0B3D3B)">
+          <span class="case-tag tag-neuro">Neuroscience</span>
+          <div class="case-img-inner">
+            <svg width="100%" height="100%" viewBox="0 0 300 180" preserveAspectRatio="none">
+              <!-- Bar chart -->
+              <rect x="30" y="110" width="28" height="50" rx="4" fill="rgba(14,165,160,0.2)"/>
+              <rect x="70" y="85" width="28" height="75" rx="4" fill="rgba(14,165,160,0.3)"/>
+              <rect x="110" y="60" width="28" height="100" rx="4" fill="rgba(14,165,160,0.4)"/>
+              <rect x="150" y="45" width="28" height="115" rx="4" fill="rgba(14,165,160,0.5)"/>
+              <rect x="190" y="30" width="28" height="130" rx="4" fill="rgba(14,165,160,0.6)"/>
+              <rect x="230" y="20" width="28" height="140" rx="4" fill="rgba(14,165,160,0.7)"/>
+              <line x1="20" y1="160" x2="280" y2="160" stroke="rgba(14,165,160,0.15)" stroke-width="1"/>
+            </svg>
+          </div>
+        </div>
+        <h3>Physician preference study across Saudi Arabia and UAE</h3>
+        <p>Surveyed 180 neurologists across KSA and UAE to quantify prescribing behaviour and unmet needs for a new CNS therapy.</p>
+        <div class="case-stat"><div class="case-stat-val">3×</div><div class="case-stat-label">faster market entry</div></div>
+      </div>
+      <div class="case-card reveal reveal-d2">
+        <div class="case-img" style="background:linear-gradient(135deg,#1A1508,#3D2E0D)">
+          <span class="case-tag tag-access">Market Access</span>
+          <div class="case-img-inner">
+            <svg width="100%" height="100%" viewBox="0 0 300 180" preserveAspectRatio="none">
+              <!-- Donut chart -->
+              <circle cx="150" cy="90" r="55" fill="none" stroke="rgba(201,168,76,0.1)" stroke-width="16"/>
+              <circle cx="150" cy="90" r="55" fill="none" stroke="rgba(201,168,76,0.6)" stroke-width="16" stroke-dasharray="260 345" stroke-dashoffset="86" stroke-linecap="round"/>
+              <circle cx="150" cy="90" r="55" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="16" stroke-dasharray="60 345" stroke-dashoffset="-174" stroke-linecap="round"/>
+              <text x="150" y="86" text-anchor="middle" font-family="Cormorant Garamond" font-size="28" fill="rgba(201,168,76,0.8)" font-weight="300">$42M</text>
+              <text x="150" y="106" text-anchor="middle" font-family="Outfit" font-size="10" fill="rgba(201,168,76,0.4)">GCC Revenue</text>
+            </svg>
+          </div>
+        </div>
+        <h3>SFDA market access strategy for a mid-cap biotech rare disease therapy</h3>
+        <p>Built the cost-effectiveness evidence package and payer engagement strategy that secured regulatory approval and formulary listing across Saudi Arabia and UAE.</p>
+        <div class="case-stat"><div class="case-stat-val">$42M</div><div class="case-stat-label">projected GCC revenue</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY BIONIXUS — DIFFERENTIATOR -->
+<section class="section-pad" style="background:var(--cream)">
+  <div class="inner">
+    <div class="section-head center">
+      <div class="eyebrow eyebrow-gold"><span class="line"></span> Why BioNixus <span class="line"></span></div>
+      <h2 class="section-title">Claims are easy. <em>Evidence is rare.</em></h2>
+      <p class="section-sub centered">In a market where competitors claim to be "the fastest growing" without a single verifiable source, we let our work speak for itself.</p>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-card reveal">
+        <div class="diff-card-num">120+</div>
+        <div class="diff-card-text">Projects delivered with quantified outcomes</div>
+        <div class="diff-card-tag">VERIFIED BY CLIENT RECORDS</div>
+      </div>
+      <div class="diff-card reveal reveal-d1">
+        <div class="diff-card-num">27</div>
+        <div class="diff-card-text">Countries with on-the-ground research capability</div>
+        <div class="diff-card-tag">DIRECT FIELDWORK, NOT OUTSOURCED</div>
+      </div>
+      <div class="diff-card reveal reveal-d2">
+        <div class="diff-card-num">100%</div>
+        <div class="diff-card-text">Senior-led engagement on every project</div>
+        <div class="diff-card-tag">NO JUNIOR-ONLY DELEGATION</div>
+      </div>
+    </div>
+    <div class="diff-banner reveal reveal-d3">
+      <div class="diff-banner-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+      </div>
+      <div>
+        <div class="diff-banner-title">Our differentiator isn't a tagline — it's transparency</div>
+        <div class="diff-banner-text">When we say we cover 27 countries, we mean our researchers are physically in those markets. When we publish case studies, the outcomes are quantified with real metrics. We don't claim rankings we can't substantiate — we earn trust through evidence, regulatory rigour, and repeat engagements.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD MAGNET -->
+<section class="lead-magnet section-pad" id="download">
+  <div class="inner">
+    <div class="lm-card">
+      <div class="lm-content reveal">
+        <div class="eyebrow eyebrow-gold" style="margin-bottom:28px"><span class="line"></span> Free Report</div>
+        <h2>Middle East &amp; Africa Pharmaceutical <em>Landscape 2026</em></h2>
+        <p>Our latest research covering regulatory shifts, market sizing, and strategic opportunities across Saudi Arabia, UAE, Kuwait, Egypt, South Africa, Kenya, and Nigeria.</p>
+        <ul class="lm-features">
+          <li><span class="icon">◈</span> SFDA, MOHAP &amp; African regulatory tracker</li>
+          <li><span class="icon">◈</span> Market size estimates by therapeutic area</li>
+          <li><span class="icon">◈</span> Competitive landscape &amp; whitespace analysis</li>
+          <li><span class="icon">◈</span> 5-year growth projections by country</li>
+        </ul>
+      </div>
+      <div class="lm-form-wrap reveal reveal-d2">
+        <div class="lm-form-title">Download the report</div>
+        <div class="field"><label>Work Email</label><input type="email" placeholder="you@pharma.com"></div>
+        <div class="field"><label>Company</label><input type="text" placeholder="Your company name"></div>
+        <button class="btn-submit">Get Free Report →</button>
+        <p class="form-disclaimer">No spam. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials section-pad" id="testimonials">
+  <div class="inner">
+    <div class="section-head center">
+      <div class="eyebrow eyebrow-gold"><span class="line"></span> Client Perspectives <span class="line"></span></div>
+      <h2 class="section-title">What pharmaceutical <em>leaders say</em></h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card reveal">
+        <div class="test-quote-mark">"</div>
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">BioNixus transformed our market access strategy with insights that were both rigorous and actionable. Their depth across the Middle East and Africa was something we hadn't found elsewhere.</p>
+        <div class="test-author">
+          <div class="test-avatar" style="background:linear-gradient(135deg,#2563EB,#1D4ED8)">DA</div>
+          <div>
+            <div class="test-name">Dr. Ahmed Al-Rashid</div>
+            <div class="test-role">VP Market Access, Top-5 Global Pharma</div>
+            <div class="test-verified">✓ Verified</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card reveal reveal-d1">
+        <div class="test-quote-mark">"</div>
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">The speed and quality of competitive intelligence exceeded our expectations. A genuinely strategic partner — not just a data vendor.</p>
+        <div class="test-author">
+          <div class="test-avatar" style="background:linear-gradient(135deg,var(--coral),#C85640)">SM</div>
+          <div>
+            <div class="test-name">Sarah Mitchell</div>
+            <div class="test-role">Chief Strategy Officer, Mid-Cap Biotech</div>
+            <div class="test-verified">✓ Verified</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card reveal reveal-d2">
+        <div class="test-quote-mark">"</div>
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">Their KOL mapping and patient journey work directly influenced our launch success in three European markets. Deep therapeutic understanding.</p>
+        <div class="test-author">
+          <div class="test-avatar" style="background:linear-gradient(135deg,var(--navy),var(--slate))">JK</div>
+          <div>
+            <div class="test-name">James Kowalski</div>
+            <div class="test-role">Commercial Director, Specialty Pharma UK</div>
+            <div class="test-verified">✓ Verified</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSIGHTS -->
+<section class="insights section-pad" id="insights">
+  <div class="inner">
+    <div class="section-head center">
+      <div class="eyebrow eyebrow-gold"><span class="line"></span> Blog &amp; Reports <span class="line"></span></div>
+      <h2 class="section-title">Latest <em>insights</em> from our team</h2>
+    </div>
+    <div class="insights-grid">
+      <div class="ins-card featured reveal">
+        <div class="ins-img">
+          <div class="ins-img-bg bg-navy">
+            <span class="ins-img-tag">Featured</span>
+            <svg class="ins-illustration" width="200" height="200" viewBox="0 0 200 200"><circle cx="100" cy="100" r="80" fill="none" stroke="white" stroke-width="0.5"/><circle cx="100" cy="100" r="55" fill="none" stroke="white" stroke-width="0.5"/><circle cx="100" cy="100" r="30" fill="none" stroke="white" stroke-width="0.5"/><line x1="20" y1="100" x2="180" y2="100" stroke="white" stroke-width="0.3"/><line x1="100" y1="20" x2="100" y2="180" stroke="white" stroke-width="0.3"/><circle cx="140" cy="60" r="5" fill="rgba(201,168,76,0.6)"/><circle cx="65" cy="130" r="4" fill="rgba(14,165,160,0.6)"/><circle cx="120" cy="110" r="6" fill="rgba(224,104,82,0.5)"/></svg>
+          </div>
+        </div>
+        <div class="ins-body">
+          <div class="ins-date">February 2026</div>
+          <h3>Saudi Arabia's Orphan Drug Designation: What Pharma Companies Need to Know</h3>
+          <p>A comprehensive guide to SFDA's evolving orphan drug framework and the commercial implications for companies targeting the KSA rare disease market.</p>
+          <a href="https://www.bionixus.com/blog" class="ins-read">Read article →</a>
+        </div>
+      </div>
+      <div class="ins-card reveal reveal-d1">
+        <div class="ins-img">
+          <div class="ins-img-bg bg-teal" style="height:180px">
+            <svg class="ins-illustration" width="140" height="140" viewBox="0 0 140 140"><rect x="10" y="80" width="16" height="50" rx="3" fill="rgba(255,255,255,0.5)"/><rect x="34" y="55" width="16" height="75" rx="3" fill="rgba(255,255,255,0.5)"/><rect x="58" y="40" width="16" height="90" rx="3" fill="rgba(255,255,255,0.6)"/><rect x="82" y="25" width="16" height="105" rx="3" fill="rgba(255,255,255,0.7)"/><rect x="106" y="10" width="16" height="120" rx="3" fill="rgba(255,255,255,0.8)"/></svg>
+          </div>
+        </div>
+        <div class="ins-body">
+          <div class="ins-date">January 2026</div>
+          <h3>GCC Supply Chain Risks in Pharmaceutical Distribution</h3>
+          <p>Mapping critical vulnerabilities in cross-border pharma logistics across the Gulf region.</p>
+          <a href="https://www.bionixus.com/blog" class="ins-read">Read article →</a>
+        </div>
+      </div>
+      <div class="ins-card reveal reveal-d2">
+        <div class="ins-img">
+          <div class="ins-img-bg bg-gold" style="height:180px">
+            <svg class="ins-illustration" width="140" height="140" viewBox="0 0 140 140"><path d="M20,120 Q50,40 70,70 T120,20" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2"/><circle cx="20" cy="120" r="4" fill="rgba(255,255,255,0.5)"/><circle cx="70" cy="70" r="4" fill="rgba(255,255,255,0.5)"/><circle cx="120" cy="20" r="5" fill="rgba(255,255,255,0.7)"/></svg>
+          </div>
+        </div>
+        <div class="ins-body">
+          <div class="ins-date">December 2025</div>
+          <h3>Pharma Expansion into East Africa: Regulatory Pathways &amp; Market Entry</h3>
+          <p>Navigating the regulatory landscape in Kenya, Ethiopia, Nigeria, and South Africa for pharmaceutical market entry.</p>
+          <a href="https://www.bionixus.com/blog" class="ins-read">Read article →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section section-pad" id="faq">
+  <div class="inner">
+    <div class="section-head center">
+      <div class="eyebrow eyebrow-gold"><span class="line"></span> Common Questions <span class="line"></span></div>
+      <h2 class="section-title">Frequently asked <em>questions</em></h2>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-item open">
+        <button class="faq-q">What markets does BioNixus cover? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">We conduct primary and secondary research across 27 countries spanning three regions: Europe (11 markets across the UK and continental Europe), Middle East (Saudi Arabia, UAE, Kuwait, Qatar, Oman, Bahrain, Jordan, Lebanon, and Iraq), and Africa (Egypt, Algeria, Tunisia, Morocco, South Africa, Kenya, and Nigeria). Multilingual fieldwork in English, Arabic, German, French, Spanish, and Italian.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What therapeutic areas do you specialise in? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">We work across 25+ therapeutic areas with particular depth in oncology, neuroscience, immunology, rare diseases, and cardiovascular. Our physician panels include specialists, GPs, hospital pharmacists, and payers across each market.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How is BioNixus different from IQVIA or large CROs? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">We offer the analytical rigour of a large consultancy with the agility and senior attention of a specialist firm. Every project is led by a senior researcher. Our Middle East and Africa expertise is unmatched: on-the-ground relationships with regulators, KOLs, and healthcare institutions across the Gulf and Sub-Saharan Africa that global firms typically outsource.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What does a typical engagement look like? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Most begin with a 30-minute discovery call. We provide a proposal within 48 hours. Typical timelines: 4–8 weeks for quantitative, 2–4 weeks for qualitative KOL interviews. Interim check-ins and a final presentation with actionable recommendations included.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What compliance standards do you follow? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Aligned with EMA regulatory frameworks, GDPR data protection, SFDA guidelines for Saudi Arabia, MOHAP requirements for the UAE, and Good Clinical Practice (GCP) standards. All data encrypted at rest and in transit, with physician identity verification as standard protocol.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can we start with a small pilot? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Absolutely. Many long-term relationships started with a single-market pilot. We recommend a focused quantitative survey or 10–15 KOL interviews as a low-risk way to evaluate our methodology before scaling to multi-country programmes.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGOS -->
+<section class="logos">
+  <div class="logos-inner">
+    <div class="logos-label">Industry Leaders We Serve Alongside</div>
+    <div class="logos-row" aria-hidden="true">
+      <div class="logos-track">
+        <div class="logos-set">
+          <span class="logo-brand">Pfizer</span>
+          <span class="logo-brand">Roche</span>
+          <span class="logo-brand">Novartis</span>
+          <span class="logo-brand">Sanofi</span>
+          <span class="logo-brand">AstraZeneca</span>
+          <span class="logo-brand">Merck</span>
+        </div>
+        <div class="logos-set">
+          <span class="logo-brand">Pfizer</span>
+          <span class="logo-brand">Roche</span>
+          <span class="logo-brand">Novartis</span>
+          <span class="logo-brand">Sanofi</span>
+          <span class="logo-brand">AstraZeneca</span>
+          <span class="logo-brand">Merck</span>
+        </div>
+        <div class="logos-set">
+          <span class="logo-brand">Pfizer</span>
+          <span class="logo-brand">Roche</span>
+          <span class="logo-brand">Novartis</span>
+          <span class="logo-brand">Sanofi</span>
+          <span class="logo-brand">AstraZeneca</span>
+          <span class="logo-brand">Merck</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta section-pad" id="contact">
+  <div class="inner">
+    <div class="cta-card">
+      <h2>Ready to move your <em>strategy</em> forward?</h2>
+      <p>Book a 15-minute discovery call. No pitch deck — just a focused conversation about your research needs.</p>
+      <div class="cta-actions">
+        <a href="https://www.bionixus.com/contact" class="btn-gold" style="font-size:15px;padding:18px 40px">Book a Discovery Call →</a>
+        <a href="mailto:admin@bionixus.com" class="btn-ghost" style="border-color:rgba(255,255,255,0.12)">✉ admin@bionixus.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="https://www.bionixus.com/" class="nav-logo">
+          <div class="nav-logo-mark"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 28C16 28 3 20 3 11.5C3 8.5 5 5.5 8.5 5.5C11 5.5 13.5 7 16 10C18.5 7 21 5.5 23.5 5.5C27 5.5 29 8.5 29 11.5C29 20 16 28 16 28Z" fill="var(--gold)" stroke="rgba(201,168,76,0.6)" stroke-width="0.5"/><path d="M4 16.5L9 16.5L11.5 12L14 20L16.5 14L18 17L20.5 10L23 18L25 16.5L28 16.5" stroke="#16A34A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/><defs><linearGradient id="hg2" x1="3" y1="5" x2="29" y2="28" gradientUnits="userSpaceOnUse"><stop stop-color="rgba(14,165,160,0.35)"/><stop offset="1" stop-color="rgba(201,168,76,0.25)"/></linearGradient></defs></svg></div>
+          <span class="nav-logo-text">BioNixus</span>
+        </a>
+        <p class="footer-brand-text">Specialist pharmaceutical market research across Europe, Middle East, and Africa. Helping pharma and biotech teams make evidence-based commercial decisions.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="https://www.bionixus.com/services/quantitative-research">Quantitative Research</a>
+        <a href="https://www.bionixus.com/services/qualitative-research">Qualitative Research</a>
+        <a href="https://www.bionixus.com/services/market-access">Market Access &amp; HTA</a>
+        <a href="https://www.bionixus.com/services/kol-stakeholder-mapping">KOL Mapping</a>
+        <a href="https://www.bionixus.com/pharmaceutical-companies-saudi-arabia">Saudi Arabia Pharma</a>
+        <a href="https://www.bionixus.com/bionixus-market-research-middle-east">Africa Market Entry</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="https://www.bionixus.com/about">About Us</a>
+        <a href="https://www.bionixus.com/about">Our Team</a>
+        <a href="https://www.bionixus.com/case-studies">Case Studies</a>
+        <a href="https://www.bionixus.com/blog">Blog &amp; Reports</a>
+        <a href="https://www.bionixus.com/contact">Careers</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>
+        <a href="tel:+447727666682">+44 7727 666682 (UK)</a>
+        <a href="tel:+18884655557">+1 888 465 5557 (US)</a>
+        <a href="https://www.bionixus.com/contact">London, UK</a>
+        <a href="https://www.bionixus.com/contact">Dubai · Jeddah · Cairo · Kuwait · Nairobi</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 BioNixus. Company #14408704. Registered in England &amp; Wales.</p>
+      <div class="footer-bottom-links">
+        <a href="https://www.bionixus.com/privacy">Privacy</a>
+        <a href="https://www.bionixus.com/privacy">Terms</a>
+        <a href="https://www.bionixus.com/sitemap">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY CTA -->
+<a href="https://www.bionixus.com/contact" class="sticky-btn" id="stickyBtn">◈ Book a Call</a>
+
+<script>
+// Nav scroll
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => nav.classList.toggle('solid', scrollY > 60));
+
+// Sticky CTA
+const sb = document.getElementById('stickyBtn');
+window.addEventListener('scroll', () => sb.classList.toggle('show', scrollY > 700));
+
+// Scroll reveal
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+// Counter animation
+function countUp(el, target) {
+  const dur = 2200, start = performance.now();
+  const tick = now => {
+    const p = Math.min((now - start) / dur, 1);
+    const eased = 1 - Math.pow(1 - p, 4);
+    el.textContent = Math.round(target * eased) + '+';
+    if (p < 1) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+}
+const co = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { countUp(e.target, +e.target.dataset.t); co.unobserve(e.target); }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.stat-num').forEach(el => co.observe(el));
+
+// FAQ
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+</script>
+</body>
+</html>

@@ -6,7 +6,6 @@ import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { fetchCaseStudies, isCaseStudiesConfigured } from '@/lib/sanity-case-studies';
-import { caseStudyRecoveryPaths } from '@/lib/internalLinkRecovery';
 import type { CaseStudy } from '@/types/caseStudy';
 import {
   Select,
@@ -274,22 +273,6 @@ const CaseStudies = () => {
             {!loading && caseStudies.length === 0 && filteredList.length === 0 && (
               <p className="text-center text-muted-foreground py-12">No case studies match your filters.</p>
             )}
-          </div>
-        </section>
-
-        <section className="section-padding py-8 bg-muted/20">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl font-display font-semibold text-foreground mb-4">Crawl-ready case study links</h2>
-            <p className="text-sm text-muted-foreground mb-4">
-              Supplemental internal links to case study URLs flagged in crawl reports.
-            </p>
-            <div className="grid md:grid-cols-2 gap-2">
-              {caseStudyRecoveryPaths.map((path) => (
-                <Link key={path} to={path} className="text-primary hover:underline break-all">
-                  {path}
-                </Link>
-              ))}
-            </div>
           </div>
         </section>
 

@@ -250,9 +250,9 @@ export default function SiteMapPage() {
           </div>
 
           <section className="mt-12">
-            <h2 className="font-semibold text-foreground mb-4">SEO Report Coverage Links</h2>
+            <h2 className="font-semibold text-foreground mb-4">Additional Content Links</h2>
             <p className="text-sm text-muted-foreground mb-4">
-              Internal links included for URLs flagged with zero internal links in the latest crawl reports.
+              Supplemental links for extended content coverage across the site.
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               {coverageGroupOrder
