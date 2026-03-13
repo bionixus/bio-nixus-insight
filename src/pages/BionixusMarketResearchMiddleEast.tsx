@@ -503,7 +503,7 @@ const BionixusMarketResearchMiddleEast = () => {
                   <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                   <span>{item}</span>
                 </div>
-              ))}
+            ))}
             </div>
           </div>
         </section>
