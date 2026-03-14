@@ -235,6 +235,14 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  to="/insights"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  BioNixus Insights Hub
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/blog"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >

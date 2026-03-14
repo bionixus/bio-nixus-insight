@@ -163,7 +163,6 @@ const hreflangGroups = [
   { en: '/', de: '/de', fr: '/fr', es: '/es', ar: '/ar', 'zh-CN': '/zh', 'x-default': '/' },
   { en: '/contact', de: '/de/contact', fr: '/fr/contacts', es: '/es/contact', ar: '/ar/contacts', 'zh-CN': '/zh/contact', 'x-default': '/contact' },
   { en: '/blog', de: '/de/blog', fr: '/fr/blog', es: '/blog', ar: '/blog', 'zh-CN': '/blog', 'x-default': '/blog' },
-  { en: '/global-websites', de: '/de', fr: '/fr', es: '/es', ar: '/ar', 'zh-CN': '/zh', 'x-default': '/global-websites' },
   { en: '/services/market-access', de: '/services/market-access', fr: '/services/market-access', es: '/es/market-access', ar: '/services/market-access', 'zh-CN': '/services/market-access', 'x-default': '/services/market-access' },
   {
     en: '/bionixus-ai-chatbots-increase-sales-and-lead-generation',

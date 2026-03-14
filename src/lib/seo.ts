@@ -97,14 +97,6 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     zh: '/zh/methodology',
     ar: '/ar/methodology',
   },
-  '/global-websites': {
-    en: '/global-websites',
-    de: '/de',
-    fr: '/fr',
-    es: '/es',
-    zh: '/zh',
-    ar: '/ar',
-  },
   '/blog': {
     en: '/blog',
     de: '/de/blog',
@@ -203,7 +195,7 @@ export function getHreflangLinks(pathname: string = '/') {
 
   const routes = localizedRouteGroups[group];
   const routeFor = (lang: 'en' | 'de' | 'fr' | 'es' | 'zh' | 'ar') => routes[lang] || routes.en;
-  return [
+  const rawLinks = [
     { lang: 'x-default', href: canonicalHrefForPath(routeFor('en')) },
     { lang: 'en', href: canonicalHrefForPath(routeFor('en')) },
     { lang: 'de', href: canonicalHrefForPath(routeFor('de')) },
@@ -212,6 +204,13 @@ export function getHreflangLinks(pathname: string = '/') {
     { lang: 'zh-CN', href: canonicalHrefForPath(routeFor('zh')) },
     { lang: 'ar', href: canonicalHrefForPath(routeFor('ar')) },
   ];
+  // Avoid duplicate href targets being assigned to multiple languages.
+  const seenHrefs = new Set<string>();
+  return rawLinks.filter(({ href }) => {
+    if (seenHrefs.has(href)) return false;
+    seenHrefs.add(href);
+    return true;
+  });
 }
 
 export function getCanonicalUrl(path: string = '/') {
