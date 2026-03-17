@@ -12,6 +12,11 @@ const staticLinks = [
   { to: '/about', label: 'About' },
   { to: '/services', label: 'Services' },
   { to: '/market-research', label: 'Market Research Hub' },
+  { to: '/market-research-uae', label: 'Market Research UAE' },
+  { to: '/market-research-ksa', label: 'Market Research KSA' },
+  { to: '/market-research-saudi', label: 'Market Research Saudi' },
+  { to: '/market-research-kuwait', label: 'Market Research Kuwait' },
+  { to: '/market-research-egypt', label: 'Market Research Egypt' },
   { to: '/market-research-healthcare', label: 'Healthcare Market Research' },
   { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Saudi Pharmaceutical Market Research' },
   { to: '/qualitative-market-research', label: 'Qualitative Market Research' },
@@ -65,6 +70,11 @@ const localizedLinks = [
   { to: '/es/market-research-healthcare', label: 'ES: Healthcare Market Research' },
   { to: '/zh/market-research-healthcare', label: 'ZH: Healthcare Market Research' },
   { to: '/ar/market-research-healthcare', label: 'AR: Healthcare Market Research' },
+  { to: '/ar/market-research-uae', label: 'AR: Market Research UAE' },
+  { to: '/ar/market-research-ksa', label: 'AR: Market Research KSA' },
+  { to: '/ar/market-research-saudi', label: 'AR: Market Research Saudi' },
+  { to: '/ar/market-research-kuwait', label: 'AR: Market Research Kuwait' },
+  { to: '/ar/market-research-egypt', label: 'AR: Market Research Egypt' },
 ];
 
 function pathToLabel(path: string) {

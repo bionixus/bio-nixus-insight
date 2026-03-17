@@ -277,6 +277,46 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  to="/market-research-uae"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  Market Research UAE
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/market-research-ksa"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  Market Research KSA
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/market-research-saudi"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  Market Research Saudi
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/market-research-kuwait"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  Market Research Kuwait
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/market-research-egypt"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  Market Research Egypt
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/bionixus-market-research-middle-east"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >

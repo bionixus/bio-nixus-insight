@@ -54,6 +54,16 @@ import OmanPharmaCompanies from '@/pages/OmanPharmaCompanies';
 import BahrainPharmaCompanies from '@/pages/BahrainPharmaCompanies';
 import IraqPharmaCompanies from '@/pages/IraqPharmaCompanies';
 import IranPharmaCompanies from '@/pages/IranPharmaCompanies';
+import MarketResearchUae from '@/pages/MarketResearchUae';
+import MarketResearchKsa from '@/pages/MarketResearchKsa';
+import MarketResearchSaudi from '@/pages/MarketResearchSaudi';
+import MarketResearchKuwait from '@/pages/MarketResearchKuwait';
+import MarketResearchEgypt from '@/pages/MarketResearchEgypt';
+import ArMarketResearchUae from '@/pages/ArMarketResearchUae';
+import ArMarketResearchKsa from '@/pages/ArMarketResearchKsa';
+import ArMarketResearchSaudi from '@/pages/ArMarketResearchSaudi';
+import ArMarketResearchKuwait from '@/pages/ArMarketResearchKuwait';
+import ArMarketResearchEgypt from '@/pages/ArMarketResearchEgypt';
 import HubPage from '@/pages/healthcare-research/HubPage';
 import CountryPage from '@/pages/healthcare-research/CountryPage';
 import TherapyPage from '@/pages/healthcare-research/TherapyPage';
@@ -106,6 +116,11 @@ export const routes: RouteObject[] = [
   { path: '/mena-pharma-market-data', element: <MenaMarketData /> },
   { path: '/gcc-market-access-guide', element: <GccMarketAccessGuide /> },
   { path: '/market-research', element: <MarketResearch /> },
+  { path: '/market-research-uae', element: <MarketResearchUae /> },
+  { path: '/market-research-ksa', element: <MarketResearchKsa /> },
+  { path: '/market-research-saudi', element: <MarketResearchSaudi /> },
+  { path: '/market-research-kuwait', element: <MarketResearchKuwait /> },
+  { path: '/market-research-egypt', element: <MarketResearchEgypt /> },
   { path: '/market-research-saudi-arabia-pharmaceutical', element: <MarketResearchSaudiArabiaPharmaceutical /> },
   { path: '/market-research-healthcare', element: <MarketResearchHealthcare /> },
   { path: '/de/market-research-healthcare', element: <MarketResearchHealthcare /> },
@@ -179,6 +194,11 @@ export const routes: RouteObject[] = [
   { path: '/es/methodology', element: <Methodology /> },
   { path: '/zh/methodology', element: <Methodology /> },
   { path: '/ar/methodology', element: <Methodology /> },
+  { path: '/ar/market-research-uae', element: <ArMarketResearchUae /> },
+  { path: '/ar/market-research-ksa', element: <ArMarketResearchKsa /> },
+  { path: '/ar/market-research-saudi', element: <ArMarketResearchSaudi /> },
+  { path: '/ar/market-research-kuwait', element: <ArMarketResearchKuwait /> },
+  { path: '/ar/market-research-egypt', element: <ArMarketResearchEgypt /> },
   { path: '/verify-email', element: <VerifyEmail /> },
   { path: '/admin/dashboard', element: suspensePage(<AdminDashboard />) },
   { path: '/admin/login', element: suspensePage(<AdminLogin />) },

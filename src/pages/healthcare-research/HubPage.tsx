@@ -141,6 +141,15 @@ export default function HubPage() {
             broad strategy to proposal-ready execution.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+            <Link to="/market-research-uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              Market research UAE for healthcare and pharma
+            </Link>
+            <Link to="/market-research-ksa" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              Market research KSA for launch and access planning
+            </Link>
+            <Link to="/market-research-egypt" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              Market research Egypt for MENA expansion
+            </Link>
             <Link to="/healthcare-market-research-agency-gcc" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
               Healthcare market research agency GCC
             </Link>

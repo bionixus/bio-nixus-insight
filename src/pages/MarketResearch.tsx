@@ -85,6 +85,26 @@ const MarketResearch = () => {
               </Link>
               .
             </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 mt-6">
+              <Link to="/market-research-uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                Market Research UAE
+              </Link>
+              <Link to="/market-research-ksa" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                Market Research KSA
+              </Link>
+              <Link to="/market-research-saudi" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                Market Research Saudi
+              </Link>
+              <Link to="/market-research-kuwait" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                Market Research Kuwait
+              </Link>
+              <Link to="/market-research-egypt" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                Market Research Egypt
+              </Link>
+              <Link to="/pharmaceutical-companies-uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                Pharma market research top companies in UAE
+              </Link>
+            </div>
           </div>
         </section>
 
