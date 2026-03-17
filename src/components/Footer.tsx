@@ -271,6 +271,51 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <p className="pt-2 text-[11px] uppercase tracking-wider text-primary-foreground/45">
+                  New Sitemap Pages
+                </p>
+              </li>
+              <li>
+                <Link
+                  to="/bionixus-market-research-middle-east"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  Middle East Pharmaceutical Market Research
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/gcc-pharmaceutical-market-research"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  GCC Pharmaceutical Market Research
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/uae-pharmaceutical-market-research"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  UAE Pharmaceutical Market Research
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/saudi-payer-market-access-research"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  Saudi Payer Market Access Research
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/gcc-hcp-recruitment-market-research"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  GCC HCP Recruitment Market Research
+                </Link>
+              </li>
+              <li>
                 <a
                   href="https://careers.bionixus.com/"
                   target="_blank"
