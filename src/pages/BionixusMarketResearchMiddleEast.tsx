@@ -798,7 +798,13 @@ const BionixusMarketResearchMiddleEast = () => {
               <p className="text-sm text-muted-foreground mb-4">
                 Get a concise strategy brief covering stakeholder sequencing, access risk checkpoints, and a 90-day activation template.
               </p>
-              <form action="https://formspree.io/f/mldnbjkj" method="POST" className="grid sm:grid-cols-[1fr_auto] gap-3">
+              <form action="https://formspree.io/f/xgozewew" method="POST" className="grid sm:grid-cols-[1fr_auto] gap-3">
+                <input type="hidden" name="_subject" value="Report request: GCC Pharmaceutical Research Brief" />
+                <input type="hidden" name="requestType" value="Report Download Request" />
+                <input type="hidden" name="formVariant" value="middle_east_page_report_brief" />
+                <input type="hidden" name="reportName" value="GCC Pharmaceutical Research Brief" />
+                <input type="hidden" name="sourcePage" value="/bionixus-market-research-middle-east" />
+                <input type="hidden" name="sourceUrl" value="https://www.bionixus.com/bionixus-market-research-middle-east" />
                 <input
                   type="email"
                   name="email"

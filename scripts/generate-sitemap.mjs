@@ -169,15 +169,13 @@ function buildStaticRoutes() {
 const hreflangGroups = [
   { en: '/', de: '/de', fr: '/fr', es: '/es', ar: '/ar', 'zh-CN': '/zh', 'x-default': '/' },
   { en: '/contact', de: '/de/contact', fr: '/fr/contacts', es: '/es/contact', ar: '/ar/contacts', 'zh-CN': '/zh/contact', 'x-default': '/contact' },
-  { en: '/blog', de: '/de/blog', fr: '/fr/blog', es: '/blog', ar: '/blog', 'zh-CN': '/blog', 'x-default': '/blog' },
-  { en: '/services/market-access', de: '/services/market-access', fr: '/services/market-access', es: '/es/market-access', ar: '/services/market-access', 'zh-CN': '/services/market-access', 'x-default': '/services/market-access' },
+  // Only list languages that actually have distinct localized URLs.
+  { en: '/blog', de: '/de/blog', fr: '/fr/blog', 'x-default': '/blog' },
+  { en: '/services/market-access', es: '/es/market-access', 'x-default': '/services/market-access' },
   {
     en: '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
     de: '/de/success-in-startups',
-    fr: '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
-    es: '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
     ar: '/ar/arabic-blog-alsawdyh',
-    'zh-CN': '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
     'x-default': '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
   },
 ];

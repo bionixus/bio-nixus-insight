@@ -79,7 +79,26 @@ const ContactSection = () => {
     const company = (data.get('company') as string)?.trim() || '';
     const phone = (data.get('phone') as string)?.trim() || '';
     const message = (data.get('message') as string)?.trim() || '';
+    const currentUrl = window.location.href;
+    const currentPath = window.location.pathname;
+    const params = new URL(currentUrl).searchParams;
+    const utmSource = params.get('utm_source') || '';
+    const utmMedium = params.get('utm_medium') || '';
+    const utmCampaign = params.get('utm_campaign') || '';
+    const utmContent = params.get('utm_content') || '';
+    const utmTerm = params.get('utm_term') || '';
+
     data.set('_subject', `New Form Submission - ${firstName} ${lastName}`);
+    data.set('requestType', 'Contact Request');
+    data.set('formVariant', 'contact_section');
+    data.set('sourcePage', currentPath);
+    data.set('sourceUrl', currentUrl);
+    data.set('reportName', '');
+    data.set('utmSource', utmSource);
+    data.set('utmMedium', utmMedium);
+    data.set('utmCampaign', utmCampaign);
+    data.set('utmContent', utmContent);
+    data.set('utmTerm', utmTerm);
 
     setSubmitting(true);
     try {
@@ -103,6 +122,13 @@ const ContactSection = () => {
               company: company || undefined,
               language,
               source: 'contact_form',
+              sourcePage: currentPath,
+              sourceUrl: currentUrl,
+              utmSource: utmSource || undefined,
+              utmMedium: utmMedium || undefined,
+              utmCampaign: utmCampaign || undefined,
+              utmContent: utmContent || undefined,
+              utmTerm: utmTerm || undefined,
             }),
           });
         } catch {

@@ -17,12 +17,26 @@ export function NewsletterSignup() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
+    const currentUrl = window.location.href
+    const currentPath = window.location.pathname
+    const params = new URL(currentUrl).searchParams
 
     try {
       const response = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          source: 'newsletter_signup',
+          formVariant: 'newsletter_component',
+          sourcePage: currentPath,
+          sourceUrl: currentUrl,
+          utmSource: params.get('utm_source') || undefined,
+          utmMedium: params.get('utm_medium') || undefined,
+          utmCampaign: params.get('utm_campaign') || undefined,
+          utmContent: params.get('utm_content') || undefined,
+          utmTerm: params.get('utm_term') || undefined,
+        }),
       })
 
       const result = await response.json()

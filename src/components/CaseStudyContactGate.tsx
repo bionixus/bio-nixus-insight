@@ -68,6 +68,9 @@ export function CaseStudyContactGate({
     const company = (data.get('company') as string)?.trim() || '';
     const phone = (data.get('phone') as string)?.trim() || '';
     const message = (data.get('message') as string)?.trim() || '';
+    const currentUrl = window.location.href;
+    const currentPath = window.location.pathname;
+    const params = new URL(currentUrl).searchParams;
 
     if (!firstName) next.firstName = v('firstName');
     if (!lastName) next.lastName = v('lastName');
@@ -83,6 +86,15 @@ export function CaseStudyContactGate({
     data.set('_subject', `New Form Submission - ${firstName} ${lastName}`);
     data.set('requestType', 'Case Study Access Request');
     data.set('caseStudyTitle', caseStudyTitle);
+    data.set('formVariant', 'case_study_gate');
+    data.set('sourcePage', currentPath);
+    data.set('sourceUrl', currentUrl);
+    data.set('reportName', caseStudyTitle);
+    data.set('utmSource', params.get('utm_source') || '');
+    data.set('utmMedium', params.get('utm_medium') || '');
+    data.set('utmCampaign', params.get('utm_campaign') || '');
+    data.set('utmContent', params.get('utm_content') || '');
+    data.set('utmTerm', params.get('utm_term') || '');
 
     setSubmitting(true);
     try {

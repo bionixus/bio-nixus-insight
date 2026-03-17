@@ -1188,7 +1188,13 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
               <p className="text-muted-foreground text-sm leading-relaxed mb-5">
                 Get the condensed briefing for leadership teams with methodology checklist, KPI scorecard, and GCC implementation timeline.
               </p>
-              <form action="https://formspree.io/f/mldnbjkj" method="POST" className="grid sm:grid-cols-[1fr_auto] gap-3">
+              <form action="https://formspree.io/f/xgozewew" method="POST" className="grid sm:grid-cols-[1fr_auto] gap-3">
+                <input type="hidden" name="_subject" value="Report request: Quantitative Executive Summary PDF" />
+                <input type="hidden" name="requestType" value="Report Download Request" />
+                <input type="hidden" name="formVariant" value="quantitative_page_pdf_download" />
+                <input type="hidden" name="reportName" value="Quantitative Executive Summary PDF" />
+                <input type="hidden" name="sourcePage" value="/quantitative-healthcare-market-research" />
+                <input type="hidden" name="sourceUrl" value="https://www.bionixus.com/quantitative-healthcare-market-research" />
                 <input
                   type="email"
                   name="email"
