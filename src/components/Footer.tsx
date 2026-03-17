@@ -250,88 +250,6 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <p className="pt-2 text-[11px] uppercase tracking-wider text-primary-foreground/45">
-                  Quantitative Research Highlights
-                </p>
-              </li>
-              <li>
-                <Link
-                  to="/blog/quantitative-healthcare-market-research-ksa"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Quantitative Healthcare Market Research in KSA
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/blog/quantitative-healthcare-market-research-uae"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Quantitative Healthcare Market Research in UAE
-                </Link>
-              </li>
-              <li>
-                <p className="pt-2 text-[11px] uppercase tracking-wider text-primary-foreground/45">
-                  New Sitemap Pages
-                </p>
-              </li>
-              <li>
-                <Link
-                  to="/market-research-uae"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Market Research UAE
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/market-research-ksa"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Market Research KSA
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/market-research-saudi"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Market Research Saudi
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/market-research-kuwait"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Market Research Kuwait
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/market-research-egypt"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Market Research Egypt
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/bionixus-market-research-middle-east"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Middle East Pharmaceutical Market Research
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/gcc-pharmaceutical-market-research"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  GCC Pharmaceutical Market Research
-                </Link>
-              </li>
-              <li>
                 <Link
                   to="/uae-pharmaceutical-market-research"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
@@ -341,90 +259,10 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/saudi-payer-market-access-research"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Saudi Payer Market Access Research
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/gcc-hcp-recruitment-market-research"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  GCC HCP Recruitment Market Research
-                </Link>
-              </li>
-              <li>
-                <Link
                   to="/healthcare-market-research-agency-gcc"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
                   Healthcare Market Research Agency GCC
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/uae-market-access-research"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  UAE Market Access Research
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/kuwait-market-access-research"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Kuwait Market Access Research
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/qatar-market-access-research"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Qatar Market Access Research
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/healthcare-fieldwork-middle-east"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Healthcare Fieldwork Middle East
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/real-world-evidence-gcc"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Real World Evidence GCC
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/heor-consulting-saudi-arabia"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  HEOR Consulting Saudi Arabia
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/patient-support-program-research-gcc"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Patient Support Program Research GCC
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/budget-impact-model-saudi-arabia"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Budget Impact Model Saudi Arabia
                 </Link>
               </li>
               <li>
