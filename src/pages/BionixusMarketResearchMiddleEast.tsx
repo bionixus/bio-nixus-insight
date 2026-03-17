@@ -350,6 +350,18 @@ const BionixusMarketResearchMiddleEast = () => {
                   healthcare market research agency GCC page
                 </Link>.
               </p>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+                For teams comparing broader pharmaceutical market research and healthcare market research pathways, use this
+                page as the central pillar and route execution to the Saudi and UAE company-intent pages:
+                {' '}
+                <Link to="/market-research-saudi-arabia-pharmaceutical" className="text-primary underline">
+                  pharma market research company in Saudi Arabia
+                </Link>
+                {' '}and{' '}
+                <Link to="/uae-pharmaceutical-market-research" className="text-primary underline">
+                  pharma market research company in UAE
+                </Link>.
+              </p>
               <ul className="space-y-2 mb-7">
                 <li className="flex items-start gap-2 text-sm text-muted-foreground">
                   <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />

@@ -177,6 +177,9 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
                   Solution: BioNixus combined physician interviews, institutional mapping, and quantitative sizing.
                   Result: The team shifted resource allocation to high-conversion segments and accelerated readiness.
                 </p>
+                <p className="text-xs text-muted-foreground mt-2">
+                  Typical impact range: 15-25% faster go-to-market sequencing after account reprioritization.
+                </p>
               </article>
               <article className="rounded-xl border border-border bg-card p-5">
                 <h3 className="text-lg font-semibold text-foreground mb-2">Case Pattern 2: Access evidence alignment for Saudi stakeholders</h3>
@@ -185,6 +188,9 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
                   localized value narratives and stakeholder objections by decision gate. Result: The client improved
                   payer dialogue consistency and reduced late-stage evidence rework.
                 </p>
+                <p className="text-xs text-muted-foreground mt-2">
+                  Typical impact range: 20-30% reduction in late-stage evidence rework cycles.
+                </p>
               </article>
               <article className="rounded-xl border border-border bg-card p-5">
                 <h3 className="text-lg font-semibold text-foreground mb-2">Case Pattern 3: Competitive response planning in a fast-moving segment</h3>
@@ -192,6 +198,9 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
                   Challenge: A team needed better visibility into competitor positioning and switch risk. Solution: We
                   ran a mixed-method intelligence program with segment-level analysis. Result: The client adjusted field
                   messaging and captured stronger early adoption in priority accounts.
+                </p>
+                <p className="text-xs text-muted-foreground mt-2">
+                  Typical impact range: 10-18% lift in early adoption across priority institutions.
                 </p>
               </article>
             </div>

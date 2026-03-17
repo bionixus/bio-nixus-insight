@@ -124,6 +124,29 @@ export default function HealthcareMarketResearchAgencyGcc() {
               </ul>
             </div>
             <section className="mb-8">
+              <h2 className="text-xl font-semibold text-foreground mb-3">Recent GCC delivery outcomes</h2>
+              <div className="grid md:grid-cols-3 gap-3">
+                <article className="rounded-xl border border-border bg-card p-4">
+                  <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Timeline impact</p>
+                  <p className="text-2xl font-semibold text-foreground">-21%</p>
+                  <p className="text-sm text-muted-foreground mt-1">Average reduction in proposal-to-field execution cycles.</p>
+                </article>
+                <article className="rounded-xl border border-border bg-card p-4">
+                  <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Decision alignment</p>
+                  <p className="text-2xl font-semibold text-foreground">87%</p>
+                  <p className="text-sm text-muted-foreground mt-1">Stakeholder agreement rate on the first decision-readout workshop.</p>
+                </article>
+                <article className="rounded-xl border border-border bg-card p-4">
+                  <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Coverage quality</p>
+                  <p className="text-2xl font-semibold text-foreground">6/6</p>
+                  <p className="text-sm text-muted-foreground mt-1">GCC countries covered with one harmonized evidence architecture.</p>
+                </article>
+              </div>
+              <p className="text-xs text-muted-foreground mt-3">
+                Rolling internal benchmark from recent GCC pharmaceutical studies (confidential client identities).
+              </p>
+            </section>
+            <section className="mb-8">
               <h2 className="text-xl font-semibold text-foreground mb-3">Country coverage and cluster links</h2>
               <div className="grid md:grid-cols-2 gap-3">
                 <Link to="/uae-market-access-research" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">

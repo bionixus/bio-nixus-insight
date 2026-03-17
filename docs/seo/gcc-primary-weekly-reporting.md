@@ -24,3 +24,15 @@ Capture this minimum set:
 - pharma market research company gcc
 - pharmaceutical market research middle east
 - gcc healthcare market research company
+- pharma market research company saudi arabia
+- pharma market research company uae
+- pharmaceutical market research
+- healthcare market research
+
+## Biweekly Snippet Decision Log
+
+| Date | URL | Test Type | Winner | Decision Notes |
+| --- | --- | --- | --- | --- |
+| 2026-03-31 | /healthcare-market-research-agency-gcc | Title | TBD | First 14-day title cycle review |
+| 2026-03-31 | /market-research-saudi-arabia-pharmaceutical | Title | TBD | Keep only if CTR rises with stable position |
+| 2026-03-31 | /uae-pharmaceutical-market-research | Title | TBD | Keep only if CTR rises with stable position |

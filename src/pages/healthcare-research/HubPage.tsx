@@ -130,6 +130,39 @@ export default function HubPage() {
         </div>
       </section>
 
+      <section className="py-10">
+        <div className="container-wide max-w-6xl mx-auto">
+          <h2 className="text-2xl font-display font-semibold text-foreground mb-3">
+            Global healthcare and pharmaceutical market research priorities
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-4 max-w-4xl">
+            Teams searching for pharmaceutical market research and healthcare market research need one framework that connects
+            country evidence, market access planning, and commercial activation. Use these high-intent pages to move from
+            broad strategy to proposal-ready execution.
+          </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+            <Link to="/healthcare-market-research-agency-gcc" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              Healthcare market research agency GCC
+            </Link>
+            <Link to="/market-research-saudi-arabia-pharmaceutical" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              Pharma market research company in Saudi Arabia
+            </Link>
+            <Link to="/uae-pharmaceutical-market-research" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              Pharma market research company in UAE
+            </Link>
+            <Link to="/bionixus-market-research-middle-east" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              Pharmaceutical market research in Middle East
+            </Link>
+            <Link to="/real-world-evidence-gcc" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              Real world evidence GCC programs
+            </Link>
+            <Link to="/gcc-market-access-guide" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              GCC market access guide
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="py-10 bg-muted/20">
         <div className="container-wide max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
           {trustSignals.map((item) => (
@@ -258,10 +291,10 @@ export default function HubPage() {
               <p className="text-sm text-muted-foreground">2026 framework for survey design, tracker governance, and GCC validation standards.</p>
             </Link>
             <Link
-              to="/blog/middle-east-healthcare-market-statistics-2025"
+              to="/blog/middle-east-healthcare-market-statistics-2026"
               className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors"
             >
-              <h3 className="text-base font-semibold text-primary mb-2">MENA Healthcare Statistics 2025</h3>
+              <h3 className="text-base font-semibold text-primary mb-2">MENA Healthcare Statistics 2026</h3>
               <p className="text-sm text-muted-foreground">Comprehensive market data, disease prevalence, and growth metrics.</p>
             </Link>
             <Link

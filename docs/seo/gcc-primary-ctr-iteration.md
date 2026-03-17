@@ -40,3 +40,26 @@ Decision rule:
 - CTR
 - Average position
 - Leads from `/healthcare-market-research-agency-gcc`
+
+## Parallel CTR Cycles (Additional BOFU Pages)
+
+### Page: `/market-research-saudi-arabia-pharmaceutical`
+- Title Variant A:
+  - `Pharma Market Research Company in Saudi Arabia | SFDA & Market Access Evidence | BioNixus`
+- Title Variant B:
+  - `Pharma Market Research Company Saudi Arabia | Proposal-Ready SFDA Insights | BioNixus`
+- Meta control:
+  - `BioNixus is a pharma market research company in Saudi Arabia delivering SFDA-aligned evidence, KSA stakeholder intelligence, and bilingual fieldwork for launch and access decisions.`
+
+### Page: `/uae-pharmaceutical-market-research`
+- Title Variant A:
+  - `Pharma Market Research Company in UAE | BioNixus`
+- Title Variant B:
+  - `Pharma Market Research Company UAE | Emirate-Level Launch Evidence | BioNixus`
+- Meta control:
+  - `BioNixus is a pharma market research company in UAE delivering emirate-level evidence for pricing, access, physician pathways, and launch execution.`
+
+### Execution Rule
+- Run title tests first for 14 days on each BOFU page.
+- Lock title winner per page, then run meta tests for next 14 days.
+- Only keep a variant when position is stable and CTR improves.
