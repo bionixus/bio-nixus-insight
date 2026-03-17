@@ -714,7 +714,12 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
               Quantitative healthcare market research is the disciplined measurement of clinical and commercial behavior translated
               into statistically interpretable findings that reduce decision risk. For teams building a full
               <Link to="/healthcare-market-research" className="text-primary hover:underline"> healthcare market research</Link> strategy,
-              this means treating methodology as an operating system rather than a reporting task.
+              this means treating methodology as an operating system rather than a reporting task. Teams selecting a delivery
+              partner can compare fit using our{' '}
+              <Link to="/healthcare-market-research-agency-gcc" className="text-primary hover:underline">
+                healthcare market research agency GCC
+              </Link>{' '}
+              checklist.
             </p>
             <ul className="space-y-3 text-muted-foreground leading-relaxed mb-5 list-disc pl-5">
               <li>Define audiences precisely before instrument design to avoid hidden composition bias.</li>

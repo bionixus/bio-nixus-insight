@@ -395,6 +395,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.bionixus.com/budget-impact-model-saudi-arabia</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.bionixus.com/case-studies</loc>
     <lastmod>2026-03-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -562,7 +568,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/gcc-market-access-guide</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -771,15 +777,39 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.bionixus.com/healthcare-fieldwork-middle-east</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.bionixus.com/healthcare-market-research</loc>
     <lastmod>2026-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.bionixus.com/healthcare-market-research-agency-gcc</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/heor-consulting-saudi-arabia</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.bionixus.com/insights</loc>
     <lastmod>2026-03-17</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/kuwait-market-access-research</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
@@ -796,7 +826,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/market-research-saudi-arabia-pharmaceutical</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -810,6 +840,12 @@
     <loc>https://www.bionixus.com/methodology</loc>
     <lastmod>2026-02-04</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/patient-support-program-research-gcc</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
@@ -879,6 +915,12 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://www.bionixus.com/qatar-market-access-research</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.bionixus.com/qualitative-market-research</loc>
     <lastmod>2026-03-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -889,6 +931,12 @@
     <lastmod>2026-03-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/real-world-evidence-gcc</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/resources</loc>
@@ -944,6 +992,12 @@
   <url>
     <loc>https://www.bionixus.com/services/quantitative-research</loc>
     <lastmod>2026-02-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/uae-market-access-research</loc>
+    <lastmod>2026-03-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

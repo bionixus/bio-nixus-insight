@@ -33,6 +33,9 @@ export default function QatarMarketAccessResearch() {
               <li>Practical action plans for 30/60/90 day execution.</li>
             </ul>
             <div className="mt-8 flex flex-wrap gap-3">
+              <Link to="/healthcare-market-research-agency-gcc" className="rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground">
+                Back to healthcare market research agency GCC
+              </Link>
               <Link to="/gcc-market-access-guide" className="rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground">
                 GCC market access guide
               </Link>

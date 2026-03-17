@@ -345,6 +345,10 @@ const BionixusMarketResearchMiddleEast = () => {
               <p className="text-sm text-muted-foreground leading-relaxed mb-6">
                 If you are evaluating healthcare market research company options in the Middle East, this page outlines how
                 BioNixus converts regional intelligence into launch-readiness and market-access decisions that teams can execute quickly.
+                For BOFU agency selection criteria, see our{' '}
+                <Link to="/healthcare-market-research-agency-gcc" className="text-primary underline">
+                  healthcare market research agency GCC page
+                </Link>.
               </p>
               <ul className="space-y-2 mb-7">
                 <li className="flex items-start gap-2 text-sm text-muted-foreground">

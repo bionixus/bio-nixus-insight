@@ -466,6 +466,9 @@ const GccMarketAccessGuide = () => {
               <Link to="/blog/market-access-strategy-uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 UAE market access strategy guide for pharmaceutical launches
               </Link>
+              <Link to="/healthcare-market-research-agency-gcc" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                Healthcare market research agency GCC for proposal-ready decisions
+              </Link>
               <Link to="/uae-market-access-research" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 Market access research UAE for pricing and reimbursement planning
               </Link>

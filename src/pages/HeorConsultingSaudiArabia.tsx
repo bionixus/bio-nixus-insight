@@ -32,6 +32,9 @@ export default function HeorConsultingSaudiArabia() {
               <li>Cross-functional translation for market access and commercial teams.</li>
             </ul>
             <div className="mt-8 flex flex-wrap gap-3">
+              <Link to="/healthcare-market-research-agency-gcc" className="rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground">
+                Back to healthcare market research agency GCC
+              </Link>
               <Link to="/budget-impact-model-saudi-arabia" className="rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground">
                 Budget impact model Saudi Arabia
               </Link>

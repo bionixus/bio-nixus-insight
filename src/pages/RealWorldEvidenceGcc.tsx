@@ -32,6 +32,9 @@ export default function RealWorldEvidenceGcc() {
               <li>Evidence translation for commercial, medical, and access stakeholders.</li>
             </ul>
             <div className="mt-8 flex flex-wrap gap-3">
+              <Link to="/healthcare-market-research-agency-gcc" className="rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground">
+                Back to healthcare market research agency GCC
+              </Link>
               <Link to="/heor-consulting-saudi-arabia" className="rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground">
                 HEOR consulting in Saudi Arabia
               </Link>
