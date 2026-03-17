@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
+import { ExecutiveDecisionBlock } from '@/components/page/PremiumPageSections';
 
 const pageUrl = 'https://www.bionixus.com/healthcare-market-research-agency-gcc';
 const lastUpdated = '2026-03-17';
@@ -89,6 +90,23 @@ export default function HealthcareMarketResearchAgencyGcc() {
               </Link>
               .
             </p>
+            <ExecutiveDecisionBlock
+              heading="GCC agency selection framework"
+              points={[
+                {
+                  title: 'Why it matters',
+                  body: 'Agency choice affects decision speed, evidence trust, and launch risk across multiple GCC markets.',
+                },
+                {
+                  title: 'What the evidence says',
+                  body: 'Teams perform better when one partner aligns commercial, medical, and access outputs in one framework.',
+                },
+                {
+                  title: 'What to do next',
+                  body: 'Prioritize country depth, quality governance, and proposal-to-action translation before vendor selection.',
+                },
+              ]}
+            />
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <article className="rounded-xl border border-border bg-card p-5">
                 <h2 className="font-semibold text-foreground mb-2">Commercial and launch readiness</h2>

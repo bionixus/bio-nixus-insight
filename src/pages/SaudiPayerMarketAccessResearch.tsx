@@ -1,49 +1,57 @@
-import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
-
-const pageUrl = 'https://www.bionixus.com/saudi-payer-market-access-research';
+import StrategicServicePage from '@/pages/templates/StrategicServicePage';
 
 export default function SaudiPayerMarketAccessResearch() {
   return (
-    <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>Saudi Payer Market Access Research | BioNixus</title>
-        <meta
-          name="description"
-          content="Saudi payer market access research for pharmaceutical evidence design, procurement pathway analysis, and reimbursement-focused launch planning."
-        />
-        <link rel="canonical" href={pageUrl} />
-      </Helmet>
-      <Navbar />
-      <main>
-        <BreadcrumbNav items={[{ name: 'Home', href: '/' }, { name: 'Saudi Payer Market Access Research', href: '/saudi-payer-market-access-research' }]} />
-        <section className="section-padding py-14">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h1 className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-4">Saudi Payer Market Access Research</h1>
-            <p className="text-muted-foreground leading-relaxed mb-5">
-              Saudi access decisions depend on payer expectations, procurement pathways, and stakeholder sequencing. This cluster page links tactical access research to the Middle East commercial pillar.
-            </p>
-            <div className="grid md:grid-cols-3 gap-4">
-              <article className="rounded-xl border border-border bg-card p-4 text-sm text-muted-foreground">Value evidence threshold diagnostics</article>
-              <article className="rounded-xl border border-border bg-card p-4 text-sm text-muted-foreground">Institutional procurement pathway mapping</article>
-              <article className="rounded-xl border border-border bg-card p-4 text-sm text-muted-foreground">Access barrier prioritization and mitigation</article>
-            </div>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/bionixus-market-research-middle-east" className="rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground">
-                Open Middle East Pillar
-              </Link>
-              <Link to="/contact" className="rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted">
-                Scope market access research
-              </Link>
-            </div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </div>
+    <StrategicServicePage
+      title="Saudi Payer Market Access Research | BioNixus"
+      description="Saudi payer market access research for pharmaceutical evidence design, procurement pathway analysis, and reimbursement-focused launch planning."
+      canonicalUrl="https://www.bionixus.com/saudi-payer-market-access-research"
+      breadcrumbLabel="Saudi Payer Market Access Research"
+      h1="Saudi Payer Market Access Research"
+      intro="Saudi access decisions depend on payer expectations, procurement pathways, and stakeholder sequencing. This page links tactical access research to the Middle East commercial pillar."
+      links={[
+        { to: '/bionixus-market-research-middle-east', label: 'Open Middle East pillar', primary: true },
+        { to: '/healthcare-market-research-agency-gcc', label: 'Healthcare market research agency GCC', primary: true },
+        { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Pharma market research company in Saudi Arabia' },
+        { to: '/contact', label: 'Scope market access research' },
+      ]}
+      bullets={[
+        'Value evidence threshold diagnostics by payer segment.',
+        'Institutional procurement pathway mapping.',
+        'Access barrier prioritization and mitigation planning.',
+      ]}
+      decisionPoints={[
+        {
+          title: 'Why it matters',
+          body: 'Payer and procurement alignment determines reimbursement velocity and launch efficiency in KSA.',
+        },
+        {
+          title: 'What the evidence says',
+          body: 'Programs with explicit threshold diagnostics reduce late-stage evidence rework.',
+        },
+        {
+          title: 'What to do next',
+          body: 'Map payer objections first, align evidence pack, and run role-specific sequencing by institution type.',
+        },
+      ]}
+      metrics={[
+        {
+          label: 'Scope velocity',
+          value: '1-2 weeks',
+          detail: 'Objective-to-executable payer research scope in most KSA programs.',
+        },
+        {
+          label: 'Pathway focus',
+          value: 'Payer + procurement',
+          detail: 'Evidence architecture aligns with real institutional access pathways.',
+        },
+        {
+          label: 'Action cadence',
+          value: '30/60/90',
+          detail: 'Decision map built for cross-functional launch and access operations.',
+        },
+      ]}
+    />
   );
 }
 

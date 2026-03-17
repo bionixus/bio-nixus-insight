@@ -4,6 +4,7 @@ import { ArrowRight, BarChart3, MessageSquareQuote, Trophy, ShieldCheck, FlaskCo
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { ExecutiveDecisionBlock, ProofMetricGrid } from '@/components/page/PremiumPageSections';
 
 const pageUrl = 'https://www.bionixus.com/market-research';
 const faqItems = [
@@ -107,6 +108,45 @@ const MarketResearch = () => {
             </div>
           </div>
         </section>
+
+        <ExecutiveDecisionBlock
+          heading="Executive decision layer"
+          points={[
+            {
+              title: 'Why it matters',
+              body: 'Market research only creates value when evidence is mapped directly to launch, access, and growth decisions.',
+            },
+            {
+              title: 'What the evidence says',
+              body: 'Teams that combine quant and qual methods reduce planning blind spots and align faster across functions.',
+            },
+            {
+              title: 'What to do next',
+              body: 'Pick one decision priority, choose the fit-for-purpose method, and run a 30/60/90 implementation cadence.',
+            },
+          ]}
+        />
+
+        <ProofMetricGrid
+          heading="Execution proof snapshot"
+          metrics={[
+            {
+              label: 'Proposal speed',
+              value: '10-14 days',
+              detail: 'Typical objective-to-scope turnaround for priority pharma and healthcare studies.',
+            },
+            {
+              label: 'Coverage model',
+              value: 'GCC + Europe',
+              detail: 'Country-level modules with one decision framework for leadership comparability.',
+            },
+            {
+              label: 'Decision utility',
+              value: '30/60/90',
+              detail: 'Insight translated into action checkpoints instead of report-only outputs.',
+            },
+          ]}
+        />
 
         <section className="section-padding py-8">
           <div className="container-wide max-w-5xl mx-auto grid md:grid-cols-4 gap-4">

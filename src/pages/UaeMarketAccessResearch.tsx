@@ -1,52 +1,57 @@
-import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
-
-const pageUrl = 'https://www.bionixus.com/uae-market-access-research';
+import StrategicServicePage from '@/pages/templates/StrategicServicePage';
 
 export default function UaeMarketAccessResearch() {
   return (
-    <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>Market Access Research UAE | BioNixus</title>
-        <meta
-          name="description"
-          content="Market access research UAE for pricing, reimbursement, and formulary pathway decisions across DHA, DOH, and MOHAP contexts."
-        />
-        <link rel="canonical" href={pageUrl} />
-      </Helmet>
-      <Navbar />
-      <main>
-        <BreadcrumbNav items={[{ name: 'Home', href: '/' }, { name: 'Market Access Research UAE', href: '/uae-market-access-research' }]} />
-        <section className="section-padding py-14">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h1 className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-4">Market Access Research UAE</h1>
-            <p className="text-muted-foreground leading-relaxed mb-5">
-              BioNixus helps teams plan UAE market access with emirate-specific evidence, payer objection mapping, and pricing strategy guidance aligned to real institutional decision pathways.
-            </p>
-            <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5">
-              <li>DOH vs DHA vs MOHAP pathway implications for launch planning.</li>
-              <li>Evidence testing for pricing and reimbursement narratives.</li>
-              <li>Hospital and committee-level access friction diagnostics.</li>
-            </ul>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/healthcare-market-research-agency-gcc" className="rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground">
-                Back to healthcare market research agency GCC
-              </Link>
-              <Link to="/gcc-market-access-guide" className="rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground">
-                GCC market access guide
-              </Link>
-              <Link to="/contact" className="rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted">
-                Request UAE access scope
-              </Link>
-            </div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </div>
+    <StrategicServicePage
+      title="Market Access Research UAE | BioNixus"
+      description="Market access research UAE for pricing, reimbursement, and formulary pathway decisions across DHA, DOH, and MOHAP contexts."
+      canonicalUrl="https://www.bionixus.com/uae-market-access-research"
+      breadcrumbLabel="Market Access Research UAE"
+      h1="Market Access Research UAE"
+      intro="BioNixus helps teams plan UAE market access with emirate-specific evidence, payer objection mapping, and pricing strategy guidance aligned to real institutional decision pathways."
+      links={[
+        { to: '/healthcare-market-research-agency-gcc', label: 'Healthcare market research agency GCC', primary: true },
+        { to: '/gcc-market-access-guide', label: 'GCC market access guide', primary: true },
+        { to: '/uae-pharmaceutical-market-research', label: 'Pharma market research company UAE' },
+        { to: '/contact', label: 'Request UAE access scope' },
+      ]}
+      bullets={[
+        'DOH vs DHA vs MOHAP pathway implications for launch planning.',
+        'Evidence testing for pricing and reimbursement narratives.',
+        'Hospital and committee-level access friction diagnostics.',
+      ]}
+      decisionPoints={[
+        {
+          title: 'Why it matters',
+          body: 'Emirate variation changes pathway timelines and access feasibility for the same product.',
+        },
+        {
+          title: 'What the evidence says',
+          body: 'Early payer-objection mapping shortens revision cycles and improves evidence fit.',
+        },
+        {
+          title: 'What to do next',
+          body: 'Prioritize one target pathway, pressure-test value narrative, then sequence institutional engagement.',
+        },
+      ]}
+      metrics={[
+        {
+          label: 'Scoping cycle',
+          value: '7-12 days',
+          detail: 'Typical objective-to-proposal timeline for UAE access scopes.',
+        },
+        {
+          label: 'Pathway depth',
+          value: '3 contexts',
+          detail: 'DHA, DOH, and MOHAP-specific guidance rather than one generic UAE model.',
+        },
+        {
+          label: 'Action horizon',
+          value: '30/60/90',
+          detail: 'Execution roadmap linked to launch and reimbursement milestones.',
+        },
+      ]}
+    />
   );
 }
 

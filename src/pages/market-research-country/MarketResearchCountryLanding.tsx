@@ -101,6 +101,49 @@ export default function MarketResearchCountryLanding({
               </ul>
             </div>
             <section className="mb-8">
+              <h2 className="text-xl font-semibold text-foreground mb-3">Decision blueprint for leadership teams</h2>
+              <div className="grid md:grid-cols-3 gap-3">
+                <article className="rounded-xl border border-border bg-card p-4">
+                  <h3 className="font-semibold text-foreground mb-2">Why it matters</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Country-level differences can change launch outcomes, payer friction, and timeline risk for the same brand strategy.
+                  </p>
+                </article>
+                <article className="rounded-xl border border-border bg-card p-4">
+                  <h3 className="font-semibold text-foreground mb-2">What the evidence says</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Teams with clear stakeholder architecture and controlled field quality make faster and more consistent decisions.
+                  </p>
+                </article>
+                <article className="rounded-xl border border-border bg-card p-4">
+                  <h3 className="font-semibold text-foreground mb-2">What to do next</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Lock one objective, run a focused diagnostic sprint, and convert findings into a 30/60/90 action sequence.
+                  </p>
+                </article>
+              </div>
+            </section>
+            <section className="mb-8">
+              <h2 className="text-xl font-semibold text-foreground mb-3">KPI scorecard for this market</h2>
+              <div className="grid md:grid-cols-3 gap-3">
+                <article className="rounded-xl border border-border bg-card p-4">
+                  <p className="text-xs uppercase tracking-wide text-muted-foreground">Signal quality</p>
+                  <p className="text-lg font-semibold text-foreground mt-1">Qualified completion rate</p>
+                  <p className="text-sm text-muted-foreground mt-1">Monitors how much screening effort converts into final analytic evidence.</p>
+                </article>
+                <article className="rounded-xl border border-border bg-card p-4">
+                  <p className="text-xs uppercase tracking-wide text-muted-foreground">Commercial relevance</p>
+                  <p className="text-lg font-semibold text-foreground mt-1">Decision conversion rate</p>
+                  <p className="text-sm text-muted-foreground mt-1">Tracks what proportion of insights are translated into approved actions.</p>
+                </article>
+                <article className="rounded-xl border border-border bg-card p-4">
+                  <p className="text-xs uppercase tracking-wide text-muted-foreground">Execution speed</p>
+                  <p className="text-lg font-semibold text-foreground mt-1">Proposal-to-field timeline</p>
+                  <p className="text-sm text-muted-foreground mt-1">Shows whether the research model supports practical launch and access windows.</p>
+                </article>
+              </div>
+            </section>
+            <section className="mb-8">
               <h2 className="text-xl font-semibold text-foreground mb-3">Related country and intent pages</h2>
               <div className="grid md:grid-cols-2 gap-3">
                 {relatedLinks.map((link) => (

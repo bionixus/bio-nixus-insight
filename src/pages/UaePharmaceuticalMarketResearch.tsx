@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
+import { ExecutiveDecisionBlock } from '@/components/page/PremiumPageSections';
 
 const pageUrl = 'https://www.bionixus.com/uae-pharmaceutical-market-research';
 const faqItems = [
@@ -72,6 +73,23 @@ export default function UaePharmaceuticalMarketResearch() {
             <p className="text-muted-foreground leading-relaxed mb-5">
               UAE research execution requires emirate-aware design across DHA, DOH, and MOHAP pathways. This page supports the Middle East pillar with UAE-specific planning depth.
             </p>
+            <ExecutiveDecisionBlock
+              heading="UAE decision framework for leadership teams"
+              points={[
+                {
+                  title: 'Why it matters',
+                  body: 'Emirate-level variation can change access and launch outcomes even when product strategy stays constant.',
+                },
+                {
+                  title: 'What the evidence says',
+                  body: 'Teams that model DHA, DOH, and MOHAP contexts separately make more reliable sequencing decisions.',
+                },
+                {
+                  title: 'What to do next',
+                  body: 'Build one UAE backbone with emirate-specific modules, then align output to commercial and access owners.',
+                },
+              ]}
+            />
             <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5">
               <li>Channel-specific demand modeling by emirate and provider type.</li>
               <li>Payer and institutional access barriers mapped for launch planning.</li>

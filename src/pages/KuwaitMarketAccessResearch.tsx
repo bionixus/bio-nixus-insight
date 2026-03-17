@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
+import { ExecutiveDecisionBlock, PremiumHero, ProofMetricGrid } from '@/components/page/PremiumPageSections';
 
 const pageUrl = 'https://www.bionixus.com/kuwait-market-access-research';
 
@@ -20,17 +21,55 @@ export default function KuwaitMarketAccessResearch() {
       <Navbar />
       <main>
         <BreadcrumbNav items={[{ name: 'Home', href: '/' }, { name: 'Market Access Research Kuwait', href: '/kuwait-market-access-research' }]} />
-        <section className="section-padding py-14">
+        <PremiumHero
+          h1="Market Access Research Kuwait"
+          intro="Kuwait access strategy needs institution-level evidence and realistic stakeholder sequencing. BioNixus translates market signals into practical payer and formulary actions."
+          links={[
+            { to: '/gcc-market-access-guide', label: 'GCC market access guide' },
+            { to: '/healthcare-market-research-agency-gcc', label: 'Healthcare market research agency GCC' },
+            { to: '/pharmaceutical-companies-kuwait', label: 'Top pharma companies in Kuwait' },
+            { to: '/contact', label: 'Request Kuwait access scope' },
+          ]}
+        />
+        <ExecutiveDecisionBlock
+          heading="Kuwait access decision framework"
+          points={[
+            {
+              title: 'Why it matters',
+              body: 'Kuwait decisions are shaped by concentrated institutional influence and procurement dynamics.',
+            },
+            {
+              title: 'What the evidence says',
+              body: 'Teams with early barrier mapping and value-message testing reduce late-stage access friction.',
+            },
+            {
+              title: 'What to do next',
+              body: 'Run access barrier diagnosis first, then map formulary influence and align the evidence package.',
+            },
+          ]}
+        />
+        <ProofMetricGrid
+          heading="Execution proof snapshot"
+          metrics={[
+            {
+              label: 'Scoping velocity',
+              value: '7-12 days',
+              detail: 'Objective-to-proposal turnaround for Kuwait-focused access scopes.',
+            },
+            {
+              label: 'Access model coverage',
+              value: 'Public + private',
+              detail: 'Stakeholder architecture includes payer, institutional, and procurement influence.',
+            },
+            {
+              label: 'Decision output',
+              value: '30/60/90',
+              detail: 'Action roadmap linked to launch and access timelines.',
+            },
+          ]}
+        />
+        <section className="section-padding py-6">
           <div className="container-wide max-w-5xl mx-auto">
-            <h1 className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-4">Market Access Research Kuwait</h1>
-            <p className="text-muted-foreground leading-relaxed mb-5">
-              Kuwait access strategy needs institution-level evidence and realistic stakeholder sequencing. BioNixus translates market signals into practical payer and formulary actions.
-            </p>
-            <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5">
-              <li>Access barrier diagnosis by treatment area and care setting.</li>
-              <li>Value narrative testing for local decision environments.</li>
-              <li>Procurement and formulary influence mapping.</li>
-            </ul>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/healthcare-market-research-agency-gcc" className="rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground">
                 Back to healthcare market research agency GCC

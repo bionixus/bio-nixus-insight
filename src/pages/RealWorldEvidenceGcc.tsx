@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
+import { ExecutiveDecisionBlock, PremiumHero } from '@/components/page/PremiumPageSections';
 
 const pageUrl = 'https://www.bionixus.com/real-world-evidence-gcc';
 const faqItems = [
@@ -63,17 +64,35 @@ export default function RealWorldEvidenceGcc() {
       <Navbar />
       <main>
         <BreadcrumbNav items={[{ name: 'Home', href: '/' }, { name: 'Real World Evidence GCC', href: '/real-world-evidence-gcc' }]} />
-        <section className="section-padding py-14">
+        <PremiumHero
+          h1="Real World Evidence GCC"
+          intro="BioNixus helps teams generate real world evidence in GCC markets with fit-for-purpose design, local relevance, and decision-ready outputs for market access and lifecycle strategy."
+          links={[
+            { to: '/healthcare-market-research-agency-gcc', label: 'Healthcare market research agency GCC' },
+            { to: '/heor-consulting-saudi-arabia', label: 'HEOR consulting in Saudi Arabia' },
+            { to: '/gcc-market-access-guide', label: 'GCC market access guide' },
+            { to: '/contact', label: 'Request RWE scope' },
+          ]}
+        />
+        <ExecutiveDecisionBlock
+          heading="RWE decision framework"
+          points={[
+            {
+              title: 'Why it matters',
+              body: 'RWE bridges clinical reality and payer expectations when market-access choices carry high financial risk.',
+            },
+            {
+              title: 'What the evidence says',
+              body: 'Protocol quality and transparent assumptions are the strongest drivers of trusted RWE outputs.',
+            },
+            {
+              title: 'What to do next',
+              body: 'Prioritize one decision objective, align protocol scope, and map outputs to commercial/access actions.',
+            },
+          ]}
+        />
+        <section className="section-padding py-6">
           <div className="container-wide max-w-5xl mx-auto">
-            <h1 className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-4">Real World Evidence GCC</h1>
-            <p className="text-muted-foreground leading-relaxed mb-5">
-              BioNixus helps teams generate real world evidence in GCC markets with fit-for-purpose design, local relevance, and decision-ready outputs for market access and lifecycle strategy.
-            </p>
-            <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5">
-              <li>RWE study framing aligned to payer and institutional decisions.</li>
-              <li>Data quality governance and transparent analytical assumptions.</li>
-              <li>Evidence translation for commercial, medical, and access stakeholders.</li>
-            </ul>
             <div className="mt-6 rounded-xl border border-border bg-muted/20 p-5">
               <h2 className="text-lg font-semibold text-foreground mb-3">GCC RWE delivery proof points</h2>
               <div className="grid md:grid-cols-3 gap-3">

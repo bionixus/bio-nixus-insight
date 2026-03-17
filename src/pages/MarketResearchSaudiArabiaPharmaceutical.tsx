@@ -5,6 +5,7 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { CTASection } from '@/components/shared/CTASection';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
+import { ExecutiveDecisionBlock } from '@/components/page/PremiumPageSections';
 
 const faqItems = [
   {
@@ -94,6 +95,24 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
             </p>
           </div>
         </section>
+
+        <ExecutiveDecisionBlock
+          heading="Saudi executive decision framework"
+          points={[
+            {
+              title: 'Why it matters',
+              body: 'KSA launch and access outcomes are highly sensitive to institutional behavior and evidence fit.',
+            },
+            {
+              title: 'What the evidence says',
+              body: 'Programs with early procurement and payer mapping reduce downstream timeline and adoption risk.',
+            },
+            {
+              title: 'What to do next',
+              body: 'Anchor decisions on SFDA-aware evidence and run one aligned commercial-medical-access action plan.',
+            },
+          ]}
+        />
 
         <section className="py-12">
           <div className="container-wide max-w-5xl mx-auto space-y-5 text-muted-foreground leading-relaxed">

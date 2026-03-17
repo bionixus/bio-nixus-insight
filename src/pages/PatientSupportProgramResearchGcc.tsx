@@ -1,49 +1,57 @@
-import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
-
-const pageUrl = 'https://www.bionixus.com/patient-support-program-research-gcc';
+import StrategicServicePage from '@/pages/templates/StrategicServicePage';
 
 export default function PatientSupportProgramResearchGcc() {
   return (
-    <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>Patient Support Program Research GCC | BioNixus</title>
-        <meta
-          name="description"
-          content="Patient support program research GCC for adherence, persistence, and pathway optimization with practical evidence for pharmaceutical and medical teams."
-        />
-        <link rel="canonical" href={pageUrl} />
-      </Helmet>
-      <Navbar />
-      <main>
-        <BreadcrumbNav items={[{ name: 'Home', href: '/' }, { name: 'Patient Support Program Research GCC', href: '/patient-support-program-research-gcc' }]} />
-        <section className="section-padding py-14">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h1 className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-4">Patient Support Program Research GCC</h1>
-            <p className="text-muted-foreground leading-relaxed mb-5">
-              BioNixus designs patient support program research for GCC markets to improve adherence, persistence, and operational quality across diagnosis-to-treatment pathways.
-            </p>
-            <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5">
-              <li>Patient-journey diagnostics with drop-off and bottleneck mapping.</li>
-              <li>PSP effectiveness assessment with practical optimization hypotheses.</li>
-              <li>Stakeholder evidence synthesis for medical, access, and commercial teams.</li>
-            </ul>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/real-world-evidence-gcc" className="rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground">
-                Real world evidence GCC
-              </Link>
-              <Link to="/contact" className="rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted">
-                Request PSP research scope
-              </Link>
-            </div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </div>
+    <StrategicServicePage
+      title="Patient Support Program Research GCC | BioNixus"
+      description="Patient support program research GCC for adherence, persistence, and pathway optimization with practical evidence for pharmaceutical and medical teams."
+      canonicalUrl="https://www.bionixus.com/patient-support-program-research-gcc"
+      breadcrumbLabel="Patient Support Program Research GCC"
+      h1="Patient Support Program Research GCC"
+      intro="BioNixus designs patient support program research for GCC markets to improve adherence, persistence, and operational quality across diagnosis-to-treatment pathways."
+      links={[
+        { to: '/real-world-evidence-gcc', label: 'Real world evidence GCC', primary: true },
+        { to: '/healthcare-fieldwork-middle-east', label: 'Healthcare fieldwork Middle East', primary: true },
+        { to: '/healthcare-market-research-agency-gcc', label: 'Healthcare market research agency GCC' },
+        { to: '/contact', label: 'Request PSP research scope' },
+      ]}
+      bullets={[
+        'Patient-journey diagnostics with drop-off and bottleneck mapping.',
+        'PSP effectiveness assessment with practical optimization hypotheses.',
+        'Stakeholder evidence synthesis for medical, access, and commercial teams.',
+      ]}
+      decisionPoints={[
+        {
+          title: 'Why it matters',
+          body: 'PSP quality impacts adherence outcomes and brand performance after launch.',
+        },
+        {
+          title: 'What the evidence says',
+          body: 'Journey friction diagnostics identify where support interventions improve persistence most.',
+        },
+        {
+          title: 'What to do next',
+          body: 'Prioritize one patient journey, validate drop-off causes, and deploy targeted support improvements.',
+        },
+      ]}
+      metrics={[
+        {
+          label: 'Journey coverage',
+          value: 'End-to-end',
+          detail: 'From diagnosis to ongoing treatment support and persistence checkpoints.',
+        },
+        {
+          label: 'Optimization model',
+          value: 'Hypothesis-led',
+          detail: 'Every recommendation ties to a measurable adherence or experience objective.',
+        },
+        {
+          label: 'Action horizon',
+          value: '30/60/90',
+          detail: 'Structured optimization windows for cross-functional PSP owners.',
+        },
+      ]}
+    />
   );
 }
 
