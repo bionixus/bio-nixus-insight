@@ -151,6 +151,13 @@ const MarketResearch = () => {
                     Quantitative research services for healthcare and pharma teams, including market sizing,
                     segmentation, physician surveys, pricing research, and advanced statistical modeling.
                   </p>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                    For implementation standards, benchmarks, and execution workflow, review the{' '}
+                    <Link to="/quantitative-healthcare-market-research" className="text-primary underline">
+                      quantitative healthcare market research guide
+                    </Link>
+                    .
+                  </p>
                   <Link
                     to="/services/quantitative-research"
                     className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity"
@@ -258,6 +265,10 @@ const MarketResearch = () => {
               <Link to="/market-research-healthcare" className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 transition-colors">
                 <h3 className="font-semibold text-foreground mb-1">Healthcare market research programs</h3>
                 <p className="text-sm text-muted-foreground">Healthcare-specific evidence for commercial, medical, and access teams.</p>
+              </Link>
+              <Link to="/bionixus-market-research-middle-east" className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 transition-colors">
+                <h3 className="font-semibold text-foreground mb-1">Middle East pharmaceutical market research</h3>
+                <p className="text-sm text-muted-foreground">GCC evidence playbooks for launch readiness, access strategy, and 90-day activation planning.</p>
               </Link>
               <Link to="/qualitative-market-research" className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 transition-colors">
                 <h3 className="font-semibold text-foreground mb-1">Qualitative market research</h3>

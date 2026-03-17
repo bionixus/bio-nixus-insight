@@ -45,6 +45,24 @@ const Index = () => {
       highlight: false,
     },
     {
+      to: '/bionixus-market-research-middle-east',
+      title: 'Middle East Pharmaceutical Market Research',
+      description:
+        'GCC-focused pharmaceutical evidence programs for launch sequencing, market access, and cross-country execution.',
+      highlight: true,
+      label: 'GCC Priority',
+      decisionHint: 'Best for Middle East launch and access decisions',
+    },
+    {
+      to: '/quantitative-healthcare-market-research',
+      title: 'Quantitative Healthcare Market Research Guide',
+      description:
+        'Execution-ready 2026 guide for survey architecture, tracker governance, and AI-assisted validation in Saudi Arabia and UAE.',
+      highlight: true,
+      label: 'Featured Guide',
+      decisionHint: 'Best for quantitative design decisions',
+    },
+    {
       to: '/global-websites',
       title: 'Global Websites Directory',
       description:

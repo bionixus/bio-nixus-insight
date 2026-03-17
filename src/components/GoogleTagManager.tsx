@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -59,20 +58,5 @@ export default function GoogleTagManager() {
     });
   }, [gtmId, location.pathname, location.search]);
 
-  if (!gtmId) return null;
-
-  return (
-    <>
-      <Helmet />
-      <noscript>
-        <iframe
-          src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
-          height="0"
-          width="0"
-          style={{ display: 'none', visibility: 'hidden' }}
-          title="gtm"
-        />
-      </noscript>
-    </>
-  );
+  return null;
 }

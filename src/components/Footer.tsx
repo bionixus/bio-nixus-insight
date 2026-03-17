@@ -250,6 +250,27 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <p className="pt-2 text-[11px] uppercase tracking-wider text-primary-foreground/45">
+                  Quantitative Research Highlights
+                </p>
+              </li>
+              <li>
+                <Link
+                  to="/blog/quantitative-healthcare-market-research-ksa"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  Quantitative Healthcare Market Research in KSA
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/blog/quantitative-healthcare-market-research-uae"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  Quantitative Healthcare Market Research in UAE
+                </Link>
+              </li>
+              <li>
                 <a
                   href="https://careers.bionixus.com/"
                   target="_blank"

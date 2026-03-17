@@ -24,6 +24,10 @@ import MarketResearchHealthcare from '@/pages/MarketResearchHealthcare';
 import QualitativeMarketResearch from '@/pages/QualitativeMarketResearch';
 import BionixusMarketResearchMiddleEast from '@/pages/BionixusMarketResearchMiddleEast';
 import QuantitativeHealthcareMarketResearchGuide from '@/pages/QuantitativeHealthcareMarketResearchGuide';
+import GccPharmaceuticalMarketResearch from '@/pages/GccPharmaceuticalMarketResearch';
+import UaePharmaceuticalMarketResearch from '@/pages/UaePharmaceuticalMarketResearch';
+import SaudiPayerMarketAccessResearch from '@/pages/SaudiPayerMarketAccessResearch';
+import GccHcpRecruitmentMarketResearch from '@/pages/GccHcpRecruitmentMarketResearch';
 import SpanishMarketAccess from '@/pages/SpanishMarketAccess';
 import GermanSuccessInStartups from '@/pages/GermanSuccessInStartups';
 import ArabicBlogAlsawdyh from '@/pages/ArabicBlogAlsawdyh';
@@ -102,6 +106,10 @@ export const routes: RouteObject[] = [
   { path: '/ar/market-research-healthcare', element: <MarketResearchHealthcare /> },
   { path: '/qualitative-market-research', element: <QualitativeMarketResearch /> },
   { path: '/bionixus-market-research-middle-east', element: <BionixusMarketResearchMiddleEast /> },
+  { path: '/gcc-pharmaceutical-market-research', element: <GccPharmaceuticalMarketResearch /> },
+  { path: '/uae-pharmaceutical-market-research', element: <UaePharmaceuticalMarketResearch /> },
+  { path: '/saudi-payer-market-access-research', element: <SaudiPayerMarketAccessResearch /> },
+  { path: '/gcc-hcp-recruitment-market-research', element: <GccHcpRecruitmentMarketResearch /> },
   {
     path: '/quantitative-healthcare-market-research',
     element: <QuantitativeHealthcareMarketResearchGuide />,

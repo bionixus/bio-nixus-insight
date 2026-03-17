@@ -1,20 +1,26 @@
-import { lazy, Suspense, createContext, useContext, useEffect, useState, type ReactNode } from 'react';
+import { Component, lazy, Suspense, createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 import { useRoutes } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { TooltipProvider } from '@/components/ui/tooltip';
+import { Toaster } from '@/components/ui/toaster';
+import { Toaster as Sonner } from '@/components/ui/sonner';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import DocumentHead from '@/components/DocumentHead';
 import ScrollToTop from '@/components/ScrollToTop';
 import GoogleTagManager from '@/components/GoogleTagManager';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
+import LocalePrompt from '@/components/LocalePrompt';
+import CookieConsent from '@/components/CookieConsent';
 import { routes } from '@/routes';
 
-const Toaster = lazy(() => import('@/components/ui/toaster').then((m) => ({ default: m.Toaster })));
-const Sonner = lazy(() => import('@/components/ui/sonner').then((m) => ({ default: m.Toaster })));
-const LocalePrompt = lazy(() => import('@/components/LocalePrompt'));
-const CookieConsent = lazy(() => import('@/components/CookieConsent'));
-const LazyStatsigInit = lazy(() => import('@/components/StatsigInit'));
-const LazyVercelAnalytics = lazy(() => import('@vercel/analytics/react').then((m) => ({ default: m.Analytics })));
-import GoogleAnalytics from '@/components/GoogleAnalytics';
+const LazyStatsigInit = lazy(() =>
+  import('@/components/StatsigInit').catch(() => ({ default: () => null }))
+);
+const LazyVercelAnalytics = lazy(() =>
+  import('@vercel/analytics/react')
+    .then((m) => ({ default: m.Analytics ?? (() => null) }))
+    .catch(() => ({ default: () => null }))
+);
 
 const queryClient = new QueryClient();
 
@@ -28,6 +34,12 @@ export function useInitialData() {
   return useContext(InitialDataContext);
 }
 
+class SilentBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
+  state = { failed: false };
+  static getDerivedStateFromError() { return { failed: true }; }
+  render() { return this.state.failed ? null : this.props.children; }
+}
+
 function DeferredAnalytics() {
   const [ready, setReady] = useState(false);
 
@@ -39,10 +51,12 @@ function DeferredAnalytics() {
   if (!ready) return null;
 
   return (
-    <Suspense fallback={null}>
-      <LazyStatsigInit />
-      <LazyVercelAnalytics />
-    </Suspense>
+    <SilentBoundary>
+      <Suspense fallback={null}>
+        <LazyStatsigInit />
+        <LazyVercelAnalytics />
+      </Suspense>
+    </SilentBoundary>
   );
 }
 
@@ -55,15 +69,11 @@ function AppProviders({ children }: { children: ReactNode }) {
         <DocumentHead />
         <GoogleAnalytics />
         <TooltipProvider>
-          <Suspense fallback={null}>
-            <Toaster />
-            <Sonner />
-          </Suspense>
+          <Toaster />
+          <Sonner />
           {children}
-          <Suspense fallback={null}>
-            <LocalePrompt />
-            <CookieConsent />
-          </Suspense>
+          <LocalePrompt />
+          <CookieConsent />
           <DeferredAnalytics />
         </TooltipProvider>
       </LanguageProvider>

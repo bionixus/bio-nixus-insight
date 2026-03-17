@@ -258,7 +258,9 @@ function ensureMetaDescriptionTag(html: string, pathname: string): string {
 
 function getTemplate(): string {
   if (templateCache) return templateCache;
-  const templatePath = path.join(process.cwd(), 'dist', 'client', 'index.html');
+  const primary = path.join(process.cwd(), 'dist', 'client', '_ssr-template.html');
+  const fallback = path.join(process.cwd(), 'dist', 'client', 'index.html');
+  const templatePath = fs.existsSync(primary) ? primary : fallback;
   templateCache = fs.readFileSync(templatePath, 'utf-8');
   return templateCache;
 }

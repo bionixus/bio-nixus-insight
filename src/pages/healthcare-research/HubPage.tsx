@@ -244,8 +244,22 @@ export default function HubPage() {
           <h2 className="text-3xl font-display font-semibold text-foreground mb-6">Featured Guides & Market Insights</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             <Link
-              to="/blog/middle-east-healthcare-market-statistics-2025"
+              to="/bionixus-market-research-middle-east"
               className="block p-5 rounded-xl border border-primary/20 bg-primary/5 hover:border-primary/40 transition-colors"
+            >
+              <h3 className="text-base font-semibold text-primary mb-2">Middle East Pharmaceutical Market Research</h3>
+              <p className="text-sm text-muted-foreground">Commercial and market access evidence framework for KSA, UAE, Kuwait, Qatar, Bahrain, and Oman.</p>
+            </Link>
+            <Link
+              to="/quantitative-healthcare-market-research"
+              className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors"
+            >
+              <h3 className="text-base font-semibold text-primary mb-2">Featured Guide: Quantitative Healthcare Market Research</h3>
+              <p className="text-sm text-muted-foreground">2026 framework for survey design, tracker governance, and GCC validation standards.</p>
+            </Link>
+            <Link
+              to="/blog/middle-east-healthcare-market-statistics-2025"
+              className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors"
             >
               <h3 className="text-base font-semibold text-primary mb-2">MENA Healthcare Statistics 2025</h3>
               <p className="text-sm text-muted-foreground">Comprehensive market data, disease prevalence, and growth metrics.</p>

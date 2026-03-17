@@ -2,6 +2,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { useEffect, useMemo, useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { ArrowRight, BookOpen, BarChart3, ShieldCheck, Brain, Users, Target } from 'lucide-react';
@@ -38,6 +39,80 @@ const methodologyPillars = [
   {
     title: 'AI-Era Data Validation',
     body: 'Applying multi-layer quality controls, including logic checks, speed-flagging, semantic consistency review, and auditable AI-assisted anomaly detection that augments (not replaces) human methodological oversight.',
+  },
+];
+
+const executiveOutcomes = [
+  {
+    title: 'Launch-Readiness Scoring',
+    body: 'Prioritize markets and segments with confidence using quantified demand, stakeholder readiness, and risk-weighted scenario ranges.',
+  },
+  {
+    title: 'Market Access Decision Support',
+    body: 'Translate payer, physician, and institution signals into evidence-backed access pathways with explicit confidence bands.',
+  },
+  {
+    title: 'Tracker-to-Action Governance',
+    body: 'Convert quarterly movement into clear action triggers for message refinement, segment focus, and field execution shifts.',
+  },
+];
+
+const fitForTeams = [
+  'Regional and country commercial strategy leads',
+  'Market access and HEOR decision teams',
+  'Launch excellence and portfolio planning leaders',
+  'Insights and analytics teams upgrading study quality',
+];
+
+const keyTakeaways = [
+  'Use decision-fit survey design tied to clear launch, access, or growth actions.',
+  'Protect sample integrity with role-based recruitment and auditable verification.',
+  'Run tracker governance with stable core batteries and controlled wave changes.',
+  'Combine AI speed with expert adjudication for defensible data quality.',
+  'Translate analytics into action triggers, not reporting-only summaries.',
+];
+
+const guideSections = [
+  { id: 'what-it-is', label: 'What it means in 2026', number: '01' },
+  { id: 'gcc-context', label: 'GCC context and design constraints', number: '02' },
+  { id: 'methods', label: 'Core methodologies', number: '03' },
+  { id: 'visual-briefing', label: 'Visual briefing and evidence assets', number: '04' },
+  { id: 'chart', label: 'Benchmark chart', number: '05' },
+  { id: 'advanced-charts', label: 'Tracker and quality funnel', number: '06' },
+  { id: 'recruitment', label: 'Specialized HCP recruitment', number: '07' },
+  { id: 'validation', label: 'AI-era validation framework', number: '08' },
+  { id: 'implementation', label: 'Implementation blueprint', number: '09' },
+  { id: 'faq', label: 'Frequently asked questions', number: '10' },
+];
+
+const articleAuthor = {
+  name: 'Dr. Mohammad Alsaadany',
+  title: 'Healthcare Market Research Advisor',
+  experience: '15+ years in healthcare and pharmaceutical market research',
+  linkedin: 'https://www.linkedin.com/in/dr-mohammad-alsaadany',
+};
+
+const methodologyComparison = [
+  {
+    method: 'Survey',
+    useCase: 'Measure adoption, attitudes, and segment differences quickly.',
+    strength: 'Scalable and statistically robust.',
+    risk: 'Weak sampling can create false confidence.',
+    bestFit: 'Single-decision diagnostics or baseline measurement.',
+  },
+  {
+    method: 'Tracker',
+    useCase: 'Monitor movement over time by segment and market.',
+    strength: 'Trend visibility for leadership planning.',
+    risk: 'Instrument drift can invalidate trend comparability.',
+    bestFit: 'Quarterly governance and continuous optimization.',
+  },
+  {
+    method: 'Hybrid',
+    useCase: 'Blend stable tracking core with modular strategic deep-dives.',
+    strength: 'Balances continuity with tactical agility.',
+    risk: 'Governance complexity if change controls are weak.',
+    bestFit: 'Saudi/UAE programs with fast policy and stakeholder shifts.',
   },
 ];
 
@@ -109,7 +184,9 @@ function BenchmarkChart() {
           const y = margin.top + chartHeight - barHeight;
           return (
             <g key={d.code}>
-              <rect x={x} y={y} width={barWidth} height={barHeight} rx="4" fill="#3b82f6" opacity="0.88" />
+              <rect x={x} y={y} width={barWidth} height={barHeight} rx="4" fill="#3b82f6" opacity="0.88">
+                <title>{`${d.country}: ${d.score}% qualified completion`}</title>
+              </rect>
               <text x={x + barWidth / 2} y={y - 8} textAnchor="middle" fontSize="12" fill="#111827" fontWeight="600">
                 {d.score}%
               </text>
@@ -159,7 +236,12 @@ function TrackingTrendChart() {
 
   return (
     <div className="bg-card border border-border rounded-xl p-4 md:p-6 overflow-x-auto">
-      <svg viewBox={`0 0 ${width} ${height}`} className="w-full min-w-[700px]" role="img" aria-label="Tracking trend chart">
+      <svg
+        viewBox={`0 0 ${width} ${height}`}
+        className="w-full min-w-[700px]"
+        role="img"
+        aria-label="Tracking trend chart showing weighted message relevance index rising from 64 to 76 across six quarterly waves"
+      >
         {[55, 60, 65, 70, 75, 80].map((tick) => {
           const y = margin.top + ((maxY - tick) / (maxY - minY)) * chartHeight;
           return (
@@ -206,7 +288,11 @@ function QualityFunnelChart() {
   ];
 
   return (
-    <div className="bg-card border border-border rounded-xl p-6">
+    <div
+      className="bg-card border border-border rounded-xl p-6"
+      role="img"
+      aria-label="Quality funnel showing sample erosion from 100 percent invited to 31 percent final analytic base"
+    >
       <div className="space-y-3">
         {stages.map((s, i) => (
           <div key={s.label}>
@@ -235,11 +321,55 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
   const basePath = languagePaths[language] || '/';
   const canonicalUrl = 'https://www.bionixus.com/quantitative-healthcare-market-research';
   const sectionRef = useScrollReveal<HTMLElement>({ stagger: 60, threshold: 0.12 });
+  const [activeSection, setActiveSection] = useState(guideSections[0].id);
+  const [tocOpen, setTocOpen] = useState(false);
+  const [finalCtaVisible, setFinalCtaVisible] = useState(false);
+  const lastUpdatedIso = '2026-03-15';
+  const lastUpdatedLabel = 'March 2026';
+  const estimatedWordCount = 3900;
+
+  const sectionIds = useMemo(() => guideSections.map((s) => s.id), []);
+
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+    sectionIds.forEach((id) => {
+      const element = document.getElementById(id);
+      if (!element) return;
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setActiveSection(id);
+            }
+          });
+        },
+        { rootMargin: '-40% 0px -55% 0px', threshold: 0.1 },
+      );
+      observer.observe(element);
+      observers.push(observer);
+    });
+
+    const finalCta = document.getElementById('final-cta');
+    if (finalCta) {
+      const finalObserver = new IntersectionObserver(
+        (entries) => {
+          setFinalCtaVisible(entries.some((entry) => entry.isIntersecting));
+        },
+        { threshold: 0.25 },
+      );
+      finalObserver.observe(finalCta);
+      observers.push(finalObserver);
+    }
+
+    return () => {
+      observers.forEach((observer) => observer.disconnect());
+    };
+  }, [sectionIds]);
 
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>The Comprehensive Guide to Quantitative Healthcare Market Research (2026 Edition) | BioNixus</title>
+        <title>Quantitative Healthcare Market Research Guide (2026) | BioNixus</title>
         <meta
           name="description"
           content="An exhaustive 2026 guide to quantitative healthcare market research: survey design, tracking studies, verified HCP recruitment, and AI-era data validation for Saudi Arabia and UAE market intelligence."
@@ -251,9 +381,13 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content="https://www.bionixus.com/images/quant-hcp-survey-executive.png" />
+        <meta property="article:published_time" content="2026-02-02" />
+        <meta property="article:modified_time" content={lastUpdatedIso} />
+        <meta property="article:author" content={articleAuthor.name} />
         <meta
           property="og:title"
-          content="The Comprehensive Guide to Quantitative Healthcare Market Research (2026 Edition)"
+          content="Quantitative Healthcare Market Research Guide (2026) | BioNixus"
         />
         <meta
           property="og:description"
@@ -264,14 +398,14 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
           {JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Article',
-            headline: 'The Comprehensive Guide to Quantitative Healthcare Market Research (2026 Edition)',
+            headline: 'Quantitative Healthcare Market Research Guide (2026)',
             description:
               'Long-form guide covering quantitative healthcare market research methodologies, HCP recruitment strategies, and AI-driven validation frameworks with GCC-specific execution guidance.',
             url: canonicalUrl,
             datePublished: '2026-02-02',
-            dateModified: '2026-02-02',
+            dateModified: lastUpdatedIso,
             inLanguage: 'en',
-            wordCount: 2700,
+            wordCount: estimatedWordCount,
             about: [
               'quantitative healthcare market research',
               'healthcare professional survey recruitment',
@@ -280,9 +414,17 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
               'tracking studies',
             ],
             author: {
-              '@type': 'Organization',
-              '@id': 'https://www.bionixus.com/#organization',
-              name: 'BioNixus',
+              '@type': 'Person',
+              '@id': 'https://www.bionixus.com/quantitative-healthcare-market-research#author',
+              name: articleAuthor.name,
+              jobTitle: articleAuthor.title,
+              description: articleAuthor.experience,
+              sameAs: [articleAuthor.linkedin],
+              worksFor: {
+                '@type': 'Organization',
+                '@id': 'https://www.bionixus.com/#organization',
+                name: 'BioNixus',
+              },
             },
             publisher: {
               '@type': 'Organization',
@@ -307,6 +449,23 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org',
+            '@type': 'Person',
+            '@id': 'https://www.bionixus.com/quantitative-healthcare-market-research#author',
+            name: articleAuthor.name,
+            jobTitle: articleAuthor.title,
+            description: articleAuthor.experience,
+            sameAs: [articleAuthor.linkedin],
+            worksFor: {
+              '@type': 'Organization',
+              '@id': 'https://www.bionixus.com/#organization',
+              name: 'BioNixus',
+            },
+          })}
+        </script>
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
             itemListElement: [
               { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' },
@@ -319,8 +478,8 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
 
       <Navbar />
       <main ref={sectionRef}>
-        <div className="section-padding pt-24 pb-4 bg-gradient-to-b from-primary/5 to-background">
-          <div className="container-wide">
+        <div className="section-padding pt-24 pb-4 bg-gradient-to-b from-primary/5 via-primary/10 to-background">
+          <div className="container-wide max-w-6xl mx-auto">
             <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6 sr sr-up">
               <Link to={basePath} className="hover:text-primary transition-colors">Home</Link>
               <span>/</span>
@@ -328,121 +487,254 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
               <span>/</span>
               <span className="text-foreground">Quantitative Healthcare Market Research</span>
             </div>
+            <section className="grid lg:grid-cols-[1.3fr_0.7fr] gap-6 items-stretch">
+              <div className="rounded-2xl border border-border bg-card p-6 md:p-8 sr sr-up">
+                <div className="flex flex-wrap items-center gap-2 mb-5">
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
+                    <BookOpen className="w-4 h-4" />
+                    2026 Edition
+                  </span>
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-muted text-xs text-foreground">
+                    Last updated: {lastUpdatedLabel}
+                  </span>
+                </div>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-5 sr sr-up sr-line">
+                  Quantitative Healthcare Market Research Guide (2026)
+                </h1>
+                <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl sr sr-up">
+                  An execution-first guide for commercial, market access, and insight teams that need reliable quantitative evidence
+                  in Saudi Arabia and UAE to make faster launch and access decisions.
+                </p>
+                <div className="flex flex-wrap gap-3 mt-7">
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
+                  >
+                    Book a 30-minute scope call <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <a
+                    href="#in-this-guide"
+                    className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground hover:bg-muted transition-colors"
+                  >
+                    Jump to guide contents
+                  </a>
+                </div>
+              </div>
+              <aside className="rounded-2xl border border-primary/25 bg-primary/5 p-6 md:p-7 sr sr-up">
+                <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">Quantitative benchmark at a glance</p>
+                <p className="text-4xl font-display font-semibold text-foreground mb-2">42</p>
+                <p className="text-sm text-muted-foreground mb-4">GCC quantitative healthcare studies benchmarked in 2025.</p>
+                <div className="space-y-3 text-sm">
+                  <div className="rounded-lg bg-background border border-border p-3">
+                    <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">Median qualified completion</p>
+                    <p className="font-semibold text-foreground">26% to 35% by market</p>
+                  </div>
+                  <div className="rounded-lg bg-background border border-border p-3">
+                    <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">Core priority markets</p>
+                    <p className="font-semibold text-foreground">Saudi Arabia and UAE</p>
+                  </div>
+                </div>
+              </aside>
+            </section>
           </div>
         </div>
 
-        <section className="section-padding pt-0 pb-10 bg-gradient-to-b from-primary/5 to-background">
-          <div className="container-wide max-w-5xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 sr sr-up">
-              <BookOpen className="w-4 h-4" />
-              2026 Edition
-            </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 sr sr-up sr-line">
-              The Comprehensive Guide to Quantitative Healthcare Market Research (2026 Edition)
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-4xl sr sr-up">
-              Quantitative healthcare market research is no longer just about sending a questionnaire and reporting toplines.
-              In Saudi Arabia and the UAE, where policy acceleration, payer modernization, and provider transformation are
-              reshaping care pathways in real time, research leaders need designs that are statistically reliable, operationally
-              practical, and defensible in boardroom decisions. This long-form guide details exactly how high-performing teams
-              build quantitative programs: from survey architecture and tracking studies to specialized HCP recruitment and
-              AI-assisted quality validation.
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 sr sr-up">
-              {[
-                { k: 'Primary Keyword', v: 'Quantitative Healthcare Market Research' },
-                { k: 'Edition', v: '2026' },
-                { k: 'Core Markets', v: 'Saudi Arabia + UAE' },
-                { k: 'Coverage', v: 'Methods, Recruitment, Validation' },
-              ].map((item) => (
-                <div key={item.k} className="bg-card border border-border rounded-xl p-4 hover-lift">
-                  <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">{item.k}</p>
-                  <p className="text-sm font-semibold text-foreground">{item.v}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="section-padding py-8 bg-muted/30">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-lg font-display font-semibold text-foreground mb-4 sr sr-up">In this guide</h2>
-            <div className="grid md:grid-cols-2 gap-2 text-sm sr sr-up">
-              <a href="#what-it-is" className="text-primary hover:underline">1) What quantitative healthcare market research actually means in 2026</a>
-              <a href="#gcc-context" className="text-primary hover:underline">2) Why GCC context changes study design fundamentals</a>
-              <a href="#methods" className="text-primary hover:underline">3) Core quantitative methodologies: surveys and trackers</a>
-              <a href="#visual-briefing" className="text-primary hover:underline">4) Executive visual briefing: fieldwork in action</a>
-              <a href="#chart" className="text-primary hover:underline">5) Original benchmark chart: qualified completion rates</a>
-              <a href="#advanced-charts" className="text-primary hover:underline">6) Elite tracker and quality funnel charts</a>
-              <a href="#recruitment" className="text-primary hover:underline">7) Recruiting specialized HCPs with low incidence</a>
-              <a href="#validation" className="text-primary hover:underline">8) Data validation in an AI-driven era</a>
-              <a href="#implementation" className="text-primary hover:underline">9) Implementation roadmap for Saudi Arabia and UAE</a>
-              <a href="#faq" className="text-primary hover:underline">10) Frequently asked questions</a>
+          <div className="container-wide max-w-6xl mx-auto">
+            <div className="rounded-2xl border border-border bg-card p-6 md:p-8 mb-8 sr sr-up">
+              <h2 className="text-xl md:text-2xl font-display font-semibold text-foreground mb-3">5 Key Takeaways</h2>
+              <ul className="grid md:grid-cols-2 gap-3 text-sm text-muted-foreground">
+                {keyTakeaways.map((item) => (
+                  <li key={item} className="rounded-lg border border-border bg-background px-4 py-3 leading-relaxed">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <article className="rounded-2xl border border-border bg-card p-6 md:p-8 mb-8 sr sr-up">
+              <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">Author and methodology oversight</p>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-3">
+                <div className="h-14 w-14 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-semibold">
+                  MA
+                </div>
+                <div>
+                  <h2 className="text-2xl font-display font-semibold text-foreground">{articleAuthor.name}</h2>
+                  <p className="text-sm font-medium text-primary">{articleAuthor.title}</p>
+                </div>
+              </div>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Dr. Mohammad Alsaadany leads healthcare market research methodology at BioNixus with 15+ years of experience across
+                Saudi Arabia, UAE, and wider GCC pharmaceutical markets. His work spans quantitative study design, HCP recruitment
+                governance, and AI-augmented validation frameworks.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href={articleAuthor.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2 text-sm font-semibold text-foreground hover:bg-muted transition-colors"
+                >
+                  View LinkedIn Profile
+                </a>
+                <Link
+                  to="/blog/quantitative-healthcare-market-research-ksa"
+                  className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2 text-sm font-semibold text-foreground hover:bg-muted transition-colors"
+                >
+                  More from this author (KSA)
+                </Link>
+                <Link
+                  to="/blog/quantitative-healthcare-market-research-uae"
+                  className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2 text-sm font-semibold text-foreground hover:bg-muted transition-colors"
+                >
+                  More from this author (UAE)
+                </Link>
+              </div>
+            </article>
+
+            <div className="grid lg:grid-cols-[280px_1fr] gap-8" id="in-this-guide">
+              <aside className="hidden lg:block">
+                <div className="sticky top-24 rounded-2xl border border-border bg-card p-5">
+                  <h2 className="text-sm font-display font-semibold text-foreground mb-3">In this guide</h2>
+                  <nav className="space-y-1.5">
+                    {guideSections.map((section) => (
+                      <a
+                        key={section.id}
+                        href={`#${section.id}`}
+                        className={`block rounded-md px-3 py-2 text-sm transition-colors ${
+                          activeSection === section.id
+                            ? 'bg-primary/10 text-primary font-medium'
+                            : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                        }`}
+                      >
+                        <span className="mr-2 text-xs">{section.number}</span>
+                        {section.label}
+                      </a>
+                    ))}
+                  </nav>
+                </div>
+              </aside>
+              <div>
+                <div className="lg:hidden rounded-2xl border border-border bg-card p-5 mb-6">
+                  <button
+                    type="button"
+                    onClick={() => setTocOpen((prev) => !prev)}
+                    className="w-full text-left text-sm font-display font-semibold text-foreground"
+                  >
+                    In this guide {tocOpen ? '−' : '+'}
+                  </button>
+                  {tocOpen && (
+                    <nav className="mt-3 grid sm:grid-cols-2 gap-2 text-sm">
+                      {guideSections.map((section) => (
+                        <a key={section.id} href={`#${section.id}`} className="text-primary hover:underline">
+                          {section.number}) {section.label}
+                        </a>
+                      ))}
+                    </nav>
+                  )}
+                </div>
+
+                <div className="bg-card border border-border rounded-2xl p-6 md:p-8 mb-8 sr sr-up">
+                  <h2 className="text-xl md:text-2xl font-display font-semibold text-foreground mb-3">
+                    What You Gain from This Guide
+                  </h2>
+                  <p className="text-muted-foreground leading-relaxed mb-5">
+                    This page is built for teams that need faster, higher-confidence decisions in Saudi Arabia and UAE. It
+                    moves from method to execution with practical standards your team can use immediately.
+                  </p>
+                  <div className="grid md:grid-cols-3 gap-4">
+                    {executiveOutcomes.map((item) => (
+                      <article key={item.title} className="rounded-xl border border-border bg-background p-4">
+                        <h3 className="text-sm font-semibold text-foreground mb-2">{item.title}</h3>
+                        <p className="text-xs text-muted-foreground leading-relaxed">{item.body}</p>
+                      </article>
+                    ))}
+                  </div>
+                  <div className="mt-5 pt-5 border-t border-border">
+                    <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">Best fit for</p>
+                    <div className="grid sm:grid-cols-2 gap-2 text-sm text-foreground">
+                      {fitForTeams.map((item) => (
+                        <p key={item} className="rounded-lg bg-muted/50 px-3 py-2">{item}</p>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-6 grid md:grid-cols-2 gap-4 sr sr-up">
+                  <Link
+                    to="/blog/quantitative-healthcare-market-research-ksa"
+                    className="rounded-xl border border-border bg-card p-4 hover:border-primary/40 hover:shadow-sm transition-all"
+                  >
+                    <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Related Article</p>
+                    <h3 className="text-sm font-semibold text-foreground">
+                      Quantitative Healthcare Market Research in KSA
+                    </h3>
+                  </Link>
+                  <Link
+                    to="/blog/quantitative-healthcare-market-research-uae"
+                    className="rounded-xl border border-border bg-card p-4 hover:border-primary/40 hover:shadow-sm transition-all"
+                  >
+                    <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Related Article</p>
+                    <h3 className="text-sm font-semibold text-foreground">
+                      Quantitative Healthcare Market Research in UAE
+                    </h3>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         <section className="section-padding py-12" id="what-it-is">
           <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-5 sr sr-up sr-line">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-5 sr sr-up sr-line flex items-center gap-3">
+              <span className="inline-flex items-center justify-center rounded-full bg-primary/10 text-primary text-sm h-8 w-8">01</span>
               What Quantitative Healthcare Market Research Means in 2026
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-5">
-              In practical terms, quantitative healthcare market research is the disciplined measurement of clinical and commercial
-              behavior across a defined healthcare audience, translated into statistically interpretable findings that reduce
-              uncertainty in business decisions. The phrase sounds straightforward, but in real execution it combines multiple
-              layers: frame definition, recruitment quality, questionnaire design, bias controls, model selection, and governance.
-              Teams that only optimize one layer usually produce visually polished but strategically fragile outputs. Teams that
-              integrate all layers generate evidence that withstands challenge from medical affairs, market access, finance, and
-              regional leadership at the same time.
+              Quantitative healthcare market research is the disciplined measurement of clinical and commercial behavior translated
+              into statistically interpretable findings that reduce decision risk. For teams building a full
+              <Link to="/healthcare-market-research" className="text-primary hover:underline"> healthcare market research</Link> strategy,
+              this means treating methodology as an operating system rather than a reporting task.
             </p>
-            <p className="text-muted-foreground leading-relaxed mb-5">
-              The 2026 shift is not that quantitative research became less important. It became more consequential. Organizations
-              now rely on quantitative outputs for launch sequencing, market access hypothesis testing, account targeting, brand
-              positioning decisions, and lifecycle defense strategies. In that environment, poor-quality data does not merely create
-              reporting errors; it can alter portfolio bets, timing assumptions, and commercial investments by market. This is why
-              elite teams treat methodology as a strategic asset rather than a procurement checkbox.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              For GCC-focused portfolios, the stakes are even higher. Saudi Arabia and UAE are often used as evidence anchors for
-              wider regional planning. If your quantitative architecture is weak in those markets, your downstream regional strategy
-              inherits hidden error. If your architecture is robust, your confidence intervals are not just statistical—they are
-              operational, commercial, and regulatory confidence intervals that leadership can act on.
-            </p>
+            <ul className="space-y-3 text-muted-foreground leading-relaxed mb-5 list-disc pl-5">
+              <li>Define audiences precisely before instrument design to avoid hidden composition bias.</li>
+              <li>Engineer recruitment, questionnaire logic, and quality checks as one connected system.</li>
+              <li>Translate statistical outputs into explicit action thresholds for launch and access teams.</li>
+            </ul>
+            <blockquote className="border-l-4 border-primary bg-primary/5 p-4 rounded-r-lg text-foreground mb-4">
+              In 2026, the strategic risk is not lacking data. It is making high-cost decisions from low-integrity data.
+            </blockquote>
           </div>
         </section>
 
         <section className="section-padding py-12 bg-muted/30" id="gcc-context">
           <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-5">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-5 flex items-center gap-3">
+              <span className="inline-flex items-center justify-center rounded-full bg-primary/10 text-primary text-sm h-8 w-8">02</span>
               Why Saudi Arabia and UAE Require a Different Quantitative Playbook
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-5">
-              Global templates break quickly in GCC healthcare research because the market structure, access dynamics, and provider
-              ecosystem differ materially from many Western reference markets. In Saudi Arabia, public-sector influence, institutional
-              decision pathways, and policy transformation programs can create rapid shifts in treatment behavior. In the UAE, the
-              multi-authority environment and private-provider heterogeneity can distort results if sample controls are simplistic.
-              The same questionnaire that performs acceptably in one geography can underperform in GCC if local care realities are
-              not represented in branching logic and response frameworks.
+              Saudi Arabia and UAE studies fail when global templates are applied without local market architecture and role realism.
+              This is especially visible in projects linked to
+              <Link to="/market-research-saudi-arabia-pharmaceutical" className="text-primary hover:underline">
+                {' '}pharmaceutical market research in Saudi Arabia
+              </Link>.
             </p>
-            <p className="text-muted-foreground leading-relaxed mb-5">
-              Another distinction is audience definition. Many strategic studies require specialized HCPs—subspecialists, center-level
-              treatment decision makers, formulary influencers, or mixed role clinicians with both public and private exposure. These
-              populations are often low incidence and unevenly distributed across cities and institutions. If recruitment is handled
-              as generic panel throughput, representativeness can collapse silently. The study may still hit target N, but with hidden
-              composition bias that inflates or suppresses key outcomes.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              The best GCC quantitative programs therefore use market-native strata, realistic quota structures, explicit role filters,
-              and auditable inclusion logic. They also include field governance checkpoints that can pause and re-balance collection
-              before completion if profile drift appears. This is the difference between data collection and decision-grade evidence.
-            </p>
+            <ul className="space-y-3 text-muted-foreground leading-relaxed mb-5 list-disc pl-5">
+              <li>Policy and payer shifts can change stakeholder behavior between waves.</li>
+              <li>Low-incidence specialist audiences need incidence-aware quota and reserve planning.</li>
+              <li>Field governance checkpoints are essential to catch and correct drift before endline.</li>
+            </ul>
+            <blockquote className="border-l-4 border-primary bg-primary/5 p-4 rounded-r-lg text-foreground">
+              Hitting target N is not enough. You need target N from the right clinical and decision profiles.
+            </blockquote>
           </div>
         </section>
 
         <section className="section-padding py-12" id="methods">
           <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6 flex items-center gap-3">
+              <span className="inline-flex items-center justify-center rounded-full bg-primary/10 text-primary text-sm h-8 w-8">03</span>
               Core Methodologies: Surveys, Tracking Studies, and Decision-Fit Design
             </h2>
             <div className="grid md:grid-cols-2 gap-6 mb-8">
@@ -454,30 +746,42 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
               ))}
             </div>
             <p className="text-muted-foreground leading-relaxed mb-5">
-              Survey programs remain the foundational method for quantitative healthcare market research because they balance speed,
-              breadth, and analytical depth. But in 2026, not all surveys are equal. Decision-fit survey design starts with the exact
-              decision the business must make, then builds the instrument backward from that endpoint. If the decision is segmentation,
-              you prioritize discriminating variables and latent structure. If the decision is message optimization, you prioritize
-              comparative comprehension, resonance, and action likelihood measures with strong context controls.
+              Decision-fit quantitative methods align instrument design with one business decision at a time, then scale through
+              repeatable governance and statistical comparability.
             </p>
-            <p className="text-muted-foreground leading-relaxed mb-5">
-              Tracking studies add a second layer: temporal reliability. A single wave can be directionally useful, but strategic teams
-              need movement over time. Effective trackers preserve a stable core battery, maintain equivalent audience definitions wave
-              to wave, and tightly control questionnaire edits. Without this discipline, apparent trend shifts may reflect instrument
-              changes rather than market change. Strong trackers also carry a governance log that records all edits and expected impact,
-              allowing analysts to interpret wave breaks with transparency.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              For Saudi and UAE programs, a hybrid architecture often performs best: recurring core waves for continuity, plus modular
-              blocks for fast-cycle strategic questions. This keeps the longitudinal backbone intact while allowing tactical depth in
-              response to new policy signals, competitor actions, or payer shifts.
-            </p>
+            <ul className="space-y-3 text-muted-foreground leading-relaxed mb-6 list-disc pl-5">
+              <li>Surveys: broad directional and diagnostic evidence across stakeholder segments.</li>
+              <li>Trackers: governed quarter-on-quarter signal movement for leadership steering.</li>
+              <li>Hybrid architecture: stable trend backbone plus modular deep dives.</li>
+            </ul>
+            <div className="rounded-xl border border-border bg-card overflow-hidden mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-5 gap-px bg-border">
+                {['Method', 'Use Case', 'Strength', 'Risk', 'Best Fit'].map((header) => (
+                  <div key={header} className="bg-muted/50 px-4 py-3 text-xs uppercase tracking-wide text-muted-foreground font-medium">
+                    {header}
+                  </div>
+                ))}
+                {methodologyComparison.map((row) => (
+                  <div key={row.method} className="contents">
+                    <div className="bg-background px-4 py-3 text-sm font-semibold text-foreground">{row.method}</div>
+                    <div className="bg-background px-4 py-3 text-sm text-muted-foreground">{row.useCase}</div>
+                    <div className="bg-background px-4 py-3 text-sm text-muted-foreground">{row.strength}</div>
+                    <div className="bg-background px-4 py-3 text-sm text-muted-foreground">{row.risk}</div>
+                    <div className="bg-background px-4 py-3 text-sm text-muted-foreground">{row.bestFit}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <blockquote className="border-l-4 border-primary bg-primary/5 p-4 rounded-r-lg text-foreground">
+              The best <Link to="/services/quantitative-research" className="text-primary hover:underline">quantitative research services</Link> do not optimize one method in isolation. They optimize method fit to decision cadence.
+            </blockquote>
           </div>
         </section>
 
         <section className="section-padding py-12 bg-muted/30" id="visual-briefing">
           <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-5">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-5 flex items-center gap-3">
+              <span className="inline-flex items-center justify-center rounded-full bg-primary/10 text-primary text-sm h-8 w-8">04</span>
               Executive Visual Briefing: Quantitative Fieldwork at Boardroom Standard
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
@@ -518,7 +822,8 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
 
         <section className="section-padding py-12 bg-muted/30" id="chart">
           <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4 flex items-center gap-3">
+              <span className="inline-flex items-center justify-center rounded-full bg-primary/10 text-primary text-sm h-8 w-8">05</span>
               Original Benchmark: GCC Qualified Completion Rates in Quantitative HCP Studies
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
@@ -527,7 +832,9 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
               anonymized BioNixus diagnostics from 42 GCC quantitative studies completed during 2025. It highlights why upfront sample
               and recruitment strategy matter more than headline panel volume when building reliable evidence in specialized healthcare audiences.
             </p>
-            <BenchmarkChart />
+            <div className="sr sr-up">
+              <BenchmarkChart />
+            </div>
             <p className="text-sm text-muted-foreground leading-relaxed mt-5">
               Interpretation note: higher completion rates are not automatically better if quality thresholds are weak. The objective
               is efficient, high-integrity completion—not permissive completion. In high-stakes healthcare studies, defensibility beats speed-only metrics.
@@ -537,7 +844,8 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
 
         <section className="section-padding py-12" id="advanced-charts">
           <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4 flex items-center gap-3">
+              <span className="inline-flex items-center justify-center rounded-full bg-primary/10 text-primary text-sm h-8 w-8">06</span>
               Elite Analytics Charts: Tracker Trajectory and Quality Funnel
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
@@ -548,71 +856,122 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
               <TrackingTrendChart />
               <QualityFunnelChart />
             </div>
+            <div className="mt-6 rounded-xl border border-border bg-card p-4">
+              <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">Social Proof</p>
+              <p className="text-sm text-foreground">
+                Trusted by pharmaceutical teams at 6 of the top 20 global pharma companies.
+              </p>
+              <p className="text-xs text-muted-foreground mt-2">
+                Oncology, immunology, rare disease, vaccines, cardiometabolic, and hospital-specialty portfolios.
+              </p>
+            </div>
+            <div className="mt-8 rounded-2xl border border-primary/25 bg-primary/5 p-6 md:p-7">
+              <h3 className="text-lg font-display font-semibold text-foreground mb-2">
+                Need This for Your Current Launch or Access Decision?
+              </h3>
+              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                We can scope and operationalize this framework for your brand in Saudi Arabia and UAE with a decision-first study plan,
+                verified HCP architecture, and executive-ready reporting cadence.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
+                >
+                  Request Project Scope <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  to="/case-studies"
+                  className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted transition-colors"
+                >
+                  Review Case Studies
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
 
         <section className="section-padding py-12" id="recruitment">
           <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-5">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-5 flex items-center gap-3">
+              <span className="inline-flex items-center justify-center rounded-full bg-primary/10 text-primary text-sm h-8 w-8">07</span>
               Recruiting Specialized HCPs: The Decisive Step Most Programs Underestimate
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-5">
-              In quantitative healthcare market research, sampling error is visible; recruitment bias is often invisible. This is why
-              specialized HCP recruitment is the decisive quality gate for GCC research. A robust framework starts with explicit role
-              architecture: clinical specialty, institutional tier, practice intensity, formulary influence, and treatment decision scope.
-              Each criterion should map to the study objective rather than generic profile descriptors. Recruitment teams should then apply
-              tiered verification logic—license validity, active employment, role consistency, and recency of relevant case exposure.
+              Specialized HCP recruitment is where most quantitative programs quietly fail, especially in low-incidence therapeutic areas.
             </p>
-            <p className="text-muted-foreground leading-relaxed mb-5">
-              The second requirement is incidence-aware planning. Low-incidence specialties cannot be managed with standard throughput
-              assumptions. Teams need realistic screener forecasts, reserve sample plans, and pre-defined substitution logic that preserves
-              decision relevance. For Saudi Arabia and UAE, geographic and institution-level concentration patterns should be modeled before
-              launch, not corrected at endline. Good programs monitor quota health daily and intervene early when drift appears.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Third, respondent experience affects data quality. Senior clinicians will disengage from overly long or poorly structured
-              instruments, leading to satisficing and higher quality flags. Best-in-class teams design concise, context-appropriate flows,
-              modularize deep dives, and sequence cognitively demanding tasks intelligently. Recruitment quality and questionnaire ergonomics
-              are two sides of the same reliability system.
-            </p>
+            <ul className="space-y-3 text-muted-foreground leading-relaxed mb-5 list-disc pl-5">
+              <li>Use explicit role architecture and objective-linked eligibility rules.</li>
+              <li>Deploy license, employment, and recent practice verification for each respondent.</li>
+              <li>Model incidence constraints before launch and monitor quota health daily.</li>
+              <li>Optimize instrument ergonomics to protect completion quality among senior clinicians.</li>
+            </ul>
+            <blockquote className="border-l-4 border-primary bg-primary/5 p-4 rounded-r-lg text-foreground">
+              Recruitment quality and questionnaire ergonomics are one system. If either fails, final confidence collapses.
+            </blockquote>
           </div>
         </section>
 
         <section className="section-padding py-12 bg-muted/30" id="validation">
           <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-5">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-5 flex items-center gap-3">
+              <span className="inline-flex items-center justify-center rounded-full bg-primary/10 text-primary text-sm h-8 w-8">08</span>
               Data Validation in an AI-Driven Era: Augmenting Rigor, Not Automating Trust
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-5">
-              AI can materially improve quantitative healthcare market research workflows, but only when deployed inside a governed
-              validation framework. The wrong approach is to treat AI outputs as truth and compress methodological review. The right
-              approach is layered validation: deterministic checks first, probabilistic checks second, expert adjudication third.
-              Deterministic checks include completion-time thresholds, straightlining diagnostics, contradictory response detection, and
-              duplicate signal screening. Probabilistic checks include semantic consistency scoring, unusual response pattern detection,
-              and cross-item coherence models.
+              AI accelerates quantitative workflows only when it is embedded inside a governed validation stack with expert adjudication.
             </p>
-            <p className="text-muted-foreground leading-relaxed mb-5">
-              In healthcare studies, human adjudication remains non-negotiable. A model can flag anomalies but cannot fully interpret
-              clinically plausible edge cases or contextual nuance in specialist language. For GCC projects, multilingual response handling
-              adds another reason to preserve expert review loops. AI should triage and prioritize; methodological experts should decide.
-            </p>
-            <p className="text-muted-foreground leading-relaxed mb-5">
-              High-maturity teams also maintain an audit trail: which records were flagged, which rules triggered, what adjudication
-              decision was made, and why. This is essential for internal trust and external defensibility. If a stakeholder challenges a
-              major strategic recommendation, your team should be able to show not just final tables, but the quality logic behind them.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              The strategic advantage of AI in this context is speed-to-confidence, not speed alone. Organizations that balance AI
-              acceleration with explicit governance can deliver insight faster without eroding credibility.
-            </p>
+            <ul className="space-y-3 text-muted-foreground leading-relaxed mb-5 list-disc pl-5">
+              <li>Run deterministic checks first: speed flags, logic conflicts, duplicates.</li>
+              <li>Layer probabilistic checks second: semantic coherence and unusual pattern detection.</li>
+              <li>Reserve final inclusion decisions for methodological experts.</li>
+              <li>Keep an auditable trail of flags, rules, and adjudication outcomes.</li>
+            </ul>
+            <blockquote className="border-l-4 border-primary bg-primary/5 p-4 rounded-r-lg text-foreground mb-6">
+              AI should triage and prioritize quality review, never replace accountability for final evidence quality.
+            </blockquote>
+            <div className="rounded-2xl border border-primary/25 bg-primary/5 p-6 md:p-7">
+              <h3 className="text-lg font-display font-semibold text-foreground mb-2">
+                Get a Custom Validation Framework for Your Next GCC Study
+              </h3>
+              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                We design validation workflows that balance speed and defensibility across multilingual data, low-incidence audiences,
+                and high-stakes launch decisions.
+              </p>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
+              >
+                Book Validation Workshop <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
         </section>
 
         <section className="section-padding py-12" id="implementation">
           <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6 flex items-center gap-3">
+              <span className="inline-flex items-center justify-center rounded-full bg-primary/10 text-primary text-sm h-8 w-8">09</span>
               Implementation Blueprint for Saudi Arabia and UAE Programs
             </h2>
+            <div className="rounded-xl border border-border bg-card p-5 mb-6">
+              <p className="text-xs uppercase tracking-wider text-muted-foreground mb-4">5-step implementation timeline</p>
+              <div className="grid grid-cols-1 md:grid-cols-5 gap-3">
+                {[
+                  { icon: Target, label: 'Target', week: 'Week 1' },
+                  { icon: Users, label: 'Users', week: 'Week 1-2' },
+                  { icon: BarChart3, label: 'Instrument', week: 'Week 2-3' },
+                  { icon: ShieldCheck, label: 'Validation', week: 'Week 3-5' },
+                  { icon: Brain, label: 'Decision', week: 'Week 5-6' },
+                ].map((phase) => (
+                  <div key={phase.label} className="rounded-lg border border-border bg-background px-4 py-3 text-center">
+                    <phase.icon className="w-5 h-5 text-primary mx-auto mb-2" />
+                    <p className="text-sm font-medium text-foreground">{phase.label}</p>
+                    <p className="text-xs text-muted-foreground">{phase.week}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
             <div className="space-y-5">
               <div className="bg-card border border-border rounded-xl p-6">
                 <h3 className="text-lg font-display font-semibold text-foreground mb-2 flex items-center gap-2">
@@ -802,21 +1161,53 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
 
         <section className="section-padding py-12" id="faq">
           <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-8">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-8 flex items-center gap-3">
+              <span className="inline-flex items-center justify-center rounded-full bg-primary/10 text-primary text-sm h-8 w-8">10</span>
               Frequently Asked Questions
             </h2>
             <div className="space-y-5">
               {faqItems.map((item) => (
-                <article key={item.q} className="bg-card border border-border rounded-xl p-6 shadow-sm hover-lift sr sr-up">
-                  <h3 className="text-lg font-display font-semibold text-foreground mb-2">{item.q}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{item.a}</p>
-                </article>
+                <details key={item.q} className="group bg-card border border-border rounded-xl p-6 shadow-sm hover-lift sr sr-up">
+                  <summary className="cursor-pointer list-none text-lg font-display font-semibold text-foreground flex items-center justify-between gap-4">
+                    <span>{item.q}</span>
+                    <span className="text-primary text-sm group-open:rotate-45 transition-transform">+</span>
+                  </summary>
+                  <p className="text-sm text-muted-foreground leading-relaxed mt-3">{item.a}</p>
+                </details>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="section-padding py-16 bg-primary text-primary-foreground">
+        <section className="section-padding py-8 bg-muted/30">
+          <div className="container-wide max-w-5xl mx-auto">
+            <article className="rounded-2xl border border-border bg-card p-6 md:p-8">
+              <h2 className="text-xl md:text-2xl font-display font-semibold text-foreground mb-2">
+                Download the Executive Summary (PDF)
+              </h2>
+              <p className="text-muted-foreground text-sm leading-relaxed mb-5">
+                Get the condensed briefing for leadership teams with methodology checklist, KPI scorecard, and GCC implementation timeline.
+              </p>
+              <form action="https://formspree.io/f/mldnbjkj" method="POST" className="grid sm:grid-cols-[1fr_auto] gap-3">
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="Work email"
+                  className="h-11 rounded-lg border border-border bg-background px-4 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
+                />
+                <button
+                  type="submit"
+                  className="inline-flex items-center justify-center rounded-lg bg-primary px-5 h-11 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
+                >
+                  Send PDF
+                </button>
+              </form>
+            </article>
+          </div>
+        </section>
+
+        <section className="section-padding py-16 bg-primary text-primary-foreground" id="final-cta">
           <div className="container-wide max-w-5xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-display font-semibold mb-4">
               Turn Quantitative Evidence into Competitive Advantage
@@ -841,6 +1232,19 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
             </div>
           </div>
         </section>
+        {!finalCtaVisible && (
+          <div className="fixed bottom-0 inset-x-0 z-40 md:hidden border-t border-border bg-background/95 backdrop-blur px-4 py-3">
+            <div className="flex items-center justify-between gap-3">
+              <p className="text-sm font-medium text-foreground">Ready to scope your study?</p>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-1 rounded-md bg-primary px-3 py-2 text-xs font-semibold text-primary-foreground"
+              >
+                Book a Call <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          </div>
+        )}
       </main>
       <Footer />
     </div>
