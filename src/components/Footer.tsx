@@ -316,6 +316,78 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link
+                  to="/healthcare-market-research-agency-gcc"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  Healthcare Market Research Agency GCC
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/uae-market-access-research"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  UAE Market Access Research
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/kuwait-market-access-research"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  Kuwait Market Access Research
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/qatar-market-access-research"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  Qatar Market Access Research
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/healthcare-fieldwork-middle-east"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  Healthcare Fieldwork Middle East
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/real-world-evidence-gcc"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  Real World Evidence GCC
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/heor-consulting-saudi-arabia"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  HEOR Consulting Saudi Arabia
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/patient-support-program-research-gcc"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  Patient Support Program Research GCC
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/budget-impact-model-saudi-arabia"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  Budget Impact Model Saudi Arabia
+                </Link>
+              </li>
+              <li>
                 <a
                   href="https://careers.bionixus.com/"
                   target="_blank"

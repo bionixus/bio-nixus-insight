@@ -325,6 +325,20 @@ export default function CountryPage() {
               <p>
                 Saudi healthcare professionals (HCPs) are among the most digitally literate in the region, yet traditional field force models are increasingly facing access fatigue. BioNixus provides deep omnichannel intelligence, evaluating channel preferences, content consumption habits, and peer-to-peer influence networks among Saudi Key Opinion Leaders (KOLs). We identify the "true influencers"—who drive clinical consensus in specialized therapy areas like oncology, immunology, and rare diseases—allowing your medical and commercial teams to deploy resource-efficient, high-impact engagement strategies.
               </p>
+              <h3 className="text-xl font-semibold text-foreground mt-4 mb-2">Oncology market research in Saudi Arabia</h3>
+              <p>
+                Oncology market research in Saudi Arabia requires practical evidence on referral flows, treatment sequencing,
+                biomarker testing constraints, and institutional adoption criteria. BioNixus combines specialist interviews,
+                account-level mapping, and quantitative validation to help teams prioritize oncology launch and access actions
+                with stronger confidence.
+              </p>
+              <p>
+                For focused Saudi execution planning, visit our{' '}
+                <Link to="/market-research-saudi-arabia-pharmaceutical" className="text-primary underline">
+                  pharma market research company in Saudi Arabia page
+                </Link>{' '}
+                and connect country-level oncology evidence to field and access strategy.
+              </p>
             </div>
           </div>
         </section>

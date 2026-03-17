@@ -285,6 +285,27 @@ export default function HubPage() {
               <h3 className="text-base font-semibold text-foreground mb-2">SFDA Drug Registration Guide</h3>
               <p className="text-sm text-muted-foreground">Master the Saudi regulatory landscape and pathway requirements.</p>
             </Link>
+            <Link
+              to="/healthcare-market-research-agency-gcc"
+              className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors"
+            >
+              <h3 className="text-base font-semibold text-foreground mb-2">Healthcare Market Research Agency GCC</h3>
+              <p className="text-sm text-muted-foreground">BOFU guide for selecting a GCC healthcare and pharma research partner.</p>
+            </Link>
+            <Link
+              to="/market-research-saudi-arabia-pharmaceutical"
+              className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors"
+            >
+              <h3 className="text-base font-semibold text-foreground mb-2">Pharma Market Research Company in Saudi Arabia</h3>
+              <p className="text-sm text-muted-foreground">KSA-focused page for SFDA, launch, and market access execution planning.</p>
+            </Link>
+            <Link
+              to="/uae-pharmaceutical-market-research"
+              className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors"
+            >
+              <h3 className="text-base font-semibold text-foreground mb-2">Pharma Market Research Company in UAE</h3>
+              <p className="text-sm text-muted-foreground">UAE-focused page for emirate-specific evidence and access planning.</p>
+            </Link>
           </div>
         </div>
       </section>

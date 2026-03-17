@@ -64,8 +64,8 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Pharmaceutical Market Research in Saudi Arabia | SFDA, Vision 2030 & Market Access | BioNixus"
-        description="Saudi Arabia pharmaceutical market research services with SFDA-aligned evidence, Vision 2030 market intelligence, local stakeholder insights, and bilingual field execution."
+        title="Pharma Market Research Company in Saudi Arabia | SFDA & Market Access Evidence | BioNixus"
+        description="BioNixus is a pharma market research company in Saudi Arabia delivering SFDA-aligned evidence, KSA stakeholder intelligence, and bilingual fieldwork for launch and access decisions."
         canonical="/market-research-saudi-arabia-pharmaceutical"
         jsonLd={jsonLd}
       />
@@ -85,12 +85,12 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
         <section className="py-16 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
           <div className="container-wide max-w-5xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-display font-semibold mb-4">
-              Pharmaceutical Market Research in Saudi Arabia
+              Pharma Market Research Company in Saudi Arabia
             </h1>
             <p className="text-lg leading-relaxed text-primary-foreground/90">
               Saudi Arabia is one of the most strategic healthcare markets in the region. BioNixus helps pharmaceutical
               teams translate SFDA requirements, institutional procurement behavior, and physician decision dynamics into
-              practical launch and growth strategies.
+              practical launch and growth strategies with execution-ready market evidence.
             </p>
           </div>
         </section>

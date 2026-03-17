@@ -679,6 +679,26 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
                     </h3>
                   </Link>
                 </div>
+                <div className="mt-4 grid md:grid-cols-2 gap-4 sr sr-up">
+                  <Link
+                    to="/healthcare-fieldwork-middle-east"
+                    className="rounded-xl border border-border bg-card p-4 hover:border-primary/40 hover:shadow-sm transition-all"
+                  >
+                    <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Execution Resource</p>
+                    <h3 className="text-sm font-semibold text-foreground">
+                      Healthcare fieldwork in GCC and Middle East
+                    </h3>
+                  </Link>
+                  <Link
+                    to="/real-world-evidence-gcc"
+                    className="rounded-xl border border-border bg-card p-4 hover:border-primary/40 hover:shadow-sm transition-all"
+                  >
+                    <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Execution Resource</p>
+                    <h3 className="text-sm font-semibold text-foreground">
+                      Real world evidence GCC for launch and access strategy
+                    </h3>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

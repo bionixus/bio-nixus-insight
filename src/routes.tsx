@@ -28,6 +28,15 @@ import GccPharmaceuticalMarketResearch from '@/pages/GccPharmaceuticalMarketRese
 import UaePharmaceuticalMarketResearch from '@/pages/UaePharmaceuticalMarketResearch';
 import SaudiPayerMarketAccessResearch from '@/pages/SaudiPayerMarketAccessResearch';
 import GccHcpRecruitmentMarketResearch from '@/pages/GccHcpRecruitmentMarketResearch';
+import HealthcareMarketResearchAgencyGcc from '@/pages/HealthcareMarketResearchAgencyGcc';
+import UaeMarketAccessResearch from '@/pages/UaeMarketAccessResearch';
+import KuwaitMarketAccessResearch from '@/pages/KuwaitMarketAccessResearch';
+import QatarMarketAccessResearch from '@/pages/QatarMarketAccessResearch';
+import HealthcareFieldworkMiddleEast from '@/pages/HealthcareFieldworkMiddleEast';
+import RealWorldEvidenceGcc from '@/pages/RealWorldEvidenceGcc';
+import HeorConsultingSaudiArabia from '@/pages/HeorConsultingSaudiArabia';
+import PatientSupportProgramResearchGcc from '@/pages/PatientSupportProgramResearchGcc';
+import BudgetImpactModelSaudiArabia from '@/pages/BudgetImpactModelSaudiArabia';
 import SpanishMarketAccess from '@/pages/SpanishMarketAccess';
 import GermanSuccessInStartups from '@/pages/GermanSuccessInStartups';
 import ArabicBlogAlsawdyh from '@/pages/ArabicBlogAlsawdyh';
@@ -110,6 +119,15 @@ export const routes: RouteObject[] = [
   { path: '/uae-pharmaceutical-market-research', element: <UaePharmaceuticalMarketResearch /> },
   { path: '/saudi-payer-market-access-research', element: <SaudiPayerMarketAccessResearch /> },
   { path: '/gcc-hcp-recruitment-market-research', element: <GccHcpRecruitmentMarketResearch /> },
+  { path: '/healthcare-market-research-agency-gcc', element: <HealthcareMarketResearchAgencyGcc /> },
+  { path: '/uae-market-access-research', element: <UaeMarketAccessResearch /> },
+  { path: '/kuwait-market-access-research', element: <KuwaitMarketAccessResearch /> },
+  { path: '/qatar-market-access-research', element: <QatarMarketAccessResearch /> },
+  { path: '/healthcare-fieldwork-middle-east', element: <HealthcareFieldworkMiddleEast /> },
+  { path: '/real-world-evidence-gcc', element: <RealWorldEvidenceGcc /> },
+  { path: '/heor-consulting-saudi-arabia', element: <HeorConsultingSaudiArabia /> },
+  { path: '/patient-support-program-research-gcc', element: <PatientSupportProgramResearchGcc /> },
+  { path: '/budget-impact-model-saudi-arabia', element: <BudgetImpactModelSaudiArabia /> },
   {
     path: '/quantitative-healthcare-market-research',
     element: <QuantitativeHealthcareMarketResearchGuide />,
