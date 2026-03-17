@@ -1,0 +1,50 @@
+keyword,cluster,intent,geo,aweresearch_presence,infomine_presence,bionixus_presence,current_status,priority_hint
+healthcare market research gcc,core-commercial,commercial,GCC,high,high,medium,thin,high
+pharmaceutical market research gcc,core-commercial,commercial,GCC,medium,high,high,covered,medium
+healthcare market research agency gcc,bofu-agency,transactional,GCC,low,high,low,missing,high
+pharma market research company saudi arabia,bofu-agency,transactional,KSA,low,medium,medium,thin,high
+pharma market research company uae,bofu-agency,transactional,UAE,low,medium,medium,thin,high
+healthcare market research company middle east,bofu-agency,transactional,Middle East,medium,high,medium,thin,high
+market access research uae,market-access-country,commercial,UAE,low,medium,low,missing,high
+market access research kuwait,market-access-country,commercial,Kuwait,low,low,low,missing,high
+market access research qatar,market-access-country,commercial,Qatar,low,low,low,missing,high
+pricing reimbursement strategy uae,market-access-country,commercial,UAE,low,low,low,missing,high
+healthcare fieldwork middle east,fieldwork,commercial,Middle East,medium,high,low,missing,high
+healthcare fieldwork gcc,fieldwork,commercial,GCC,medium,high,low,missing,high
+pharma fieldwork saudi arabia,fieldwork,commercial,KSA,low,high,low,missing,high
+pharma fieldwork uae,fieldwork,commercial,UAE,low,high,low,missing,high
+patient support program research,patient-support,commercial,GCC,low,high,low,missing,high
+patient journey research gcc,patient-insights,commercial,GCC,low,medium,low,missing,high
+patient adherence research middle east,patient-insights,commercial,Middle East,low,medium,low,missing,high
+real world evidence gcc,rwe-heor,commercial,GCC,low,low,low,missing,high
+real world data healthcare middle east,rwe-heor,informational,Middle East,low,low,low,missing,high
+heor consulting saudi arabia,rwe-heor,commercial,KSA,low,low,low,missing,high
+budget impact model saudi arabia,rwe-heor,commercial,KSA,low,low,low,missing,high
+cost effectiveness analysis gcc,rwe-heor,commercial,GCC,low,low,low,missing,high
+oncology market research saudi arabia,therapy-country,commercial,KSA,medium,medium,medium,thin,high
+diabetes market research uae,therapy-country,commercial,UAE,medium,medium,low,missing,high
+respiratory market access gcc,therapy-country,commercial,GCC,medium,low,low,missing,medium
+vaccines market research gcc,therapy-country,commercial,GCC,low,low,medium,thin,medium
+immunology market research middle east,therapy-country,commercial,Middle East,low,low,medium,thin,medium
+rare disease market access saudi arabia,therapy-country,commercial,KSA,low,low,low,missing,medium
+hcp recruitment gcc,hcp-sampling,commercial,GCC,low,low,high,covered,medium
+physician recruitment saudi arabia,hcp-sampling,commercial,KSA,low,medium,medium,thin,high
+specialist physician panel uae,hcp-sampling,commercial,UAE,low,medium,low,missing,medium
+quantitative healthcare market research,methodology-core,commercial,Global,medium,medium,high,covered,low
+qualitative market research healthcare gcc,methodology-core,commercial,GCC,medium,medium,high,covered,low
+conjoint analysis pharma gcc,methodology-advanced,commercial,GCC,low,low,medium,thin,medium
+maxdiff pharma pricing middle east,methodology-advanced,commercial,Middle East,low,low,medium,thin,medium
+segmentation study pharma gcc,methodology-advanced,commercial,GCC,low,low,medium,thin,medium
+brand tracking pharma gcc,brand-commercial,commercial,GCC,medium,medium,low,missing,high
+launch readiness pharma gcc,brand-commercial,commercial,GCC,low,medium,medium,thin,medium
+commercial effectiveness pharma middle east,brand-commercial,commercial,Middle East,low,medium,low,missing,medium
+medical affairs insight research gcc,medical-affairs,commercial,GCC,low,low,low,missing,medium
+msl insight research middle east,medical-affairs,commercial,Middle East,low,low,low,missing,medium
+saudi pharmaceutical market research,core-country,commercial,KSA,medium,high,high,covered,low
+uae pharmaceutical market research,core-country,commercial,UAE,medium,high,high,covered,low
+kuwait pharmaceutical market research,core-country,commercial,Kuwait,medium,medium,medium,thin,medium
+qatar pharmaceutical market research,core-country,commercial,Qatar,medium,medium,medium,thin,medium
+oman pharmaceutical market research,core-country,commercial,Oman,medium,medium,medium,thin,medium
+bahrain pharmaceutical market research,core-country,commercial,Bahrain,medium,low,medium,thin,medium
+middle east pharmaceutical market research,core-commercial,commercial,Middle East,high,high,high,covered,low
+gcc pharmaceutical market research,core-commercial,commercial,GCC,medium,medium,high,covered,low

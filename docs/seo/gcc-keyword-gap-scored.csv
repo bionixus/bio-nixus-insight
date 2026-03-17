@@ -1,0 +1,31 @@
+keyword,cluster,intent,geo,bionixus_status,business_intent_score,competitor_pressure_score,topical_readiness_score,total_priority_score,priority_tier,recommended_motion
+healthcare market research agency gcc,bofu-agency,transactional,GCC,missing,5,4,3,12,P1,create-net-new
+pharma market research company saudi arabia,bofu-agency,transactional,KSA,thin,5,3,4,12,P1,refresh-existing
+pharma market research company uae,bofu-agency,transactional,UAE,thin,5,3,4,12,P1,refresh-existing
+healthcare market research company middle east,bofu-agency,transactional,Middle East,thin,5,4,3,12,P1,refresh-existing
+market access research uae,market-access-country,commercial,UAE,missing,5,3,3,11,P1,create-net-new
+market access research kuwait,market-access-country,commercial,Kuwait,missing,5,2,3,10,P1,create-net-new
+market access research qatar,market-access-country,commercial,Qatar,missing,5,2,3,10,P1,create-net-new
+pricing reimbursement strategy uae,market-access-country,commercial,UAE,missing,5,2,3,10,P1,create-net-new
+healthcare fieldwork middle east,fieldwork,commercial,Middle East,missing,5,4,2,11,P1,create-net-new
+healthcare fieldwork gcc,fieldwork,commercial,GCC,missing,5,4,2,11,P1,create-net-new
+pharma fieldwork saudi arabia,fieldwork,commercial,KSA,missing,5,4,2,11,P1,create-net-new
+pharma fieldwork uae,fieldwork,commercial,UAE,missing,5,4,2,11,P1,create-net-new
+patient support program research,patient-support,commercial,GCC,missing,5,4,2,11,P1,create-net-new
+patient journey research gcc,patient-insights,commercial,GCC,missing,4,3,2,9,P1,create-net-new
+patient adherence research middle east,patient-insights,commercial,Middle East,missing,4,3,2,9,P1,create-net-new
+real world evidence gcc,rwe-heor,commercial,GCC,missing,5,2,2,9,P1,create-net-new
+real world data healthcare middle east,rwe-heor,informational,Middle East,missing,4,2,2,8,P2,create-net-new
+heor consulting saudi arabia,rwe-heor,commercial,KSA,missing,5,2,2,9,P1,create-net-new
+budget impact model saudi arabia,rwe-heor,commercial,KSA,missing,5,2,2,9,P1,create-net-new
+cost effectiveness analysis gcc,rwe-heor,commercial,GCC,missing,4,2,2,8,P2,create-net-new
+oncology market research saudi arabia,therapy-country,commercial,KSA,thin,4,3,4,11,P1,refresh-existing
+diabetes market research uae,therapy-country,commercial,UAE,missing,4,3,3,10,P1,create-net-new
+respiratory market access gcc,therapy-country,commercial,GCC,missing,4,2,3,9,P1,create-net-new
+physician recruitment saudi arabia,hcp-sampling,commercial,KSA,thin,4,3,4,11,P1,refresh-existing
+specialist physician panel uae,hcp-sampling,commercial,UAE,missing,4,3,3,10,P1,create-net-new
+brand tracking pharma gcc,brand-commercial,commercial,GCC,missing,4,3,3,10,P1,create-net-new
+launch readiness pharma gcc,brand-commercial,commercial,GCC,thin,4,3,4,11,P1,refresh-existing
+commercial effectiveness pharma middle east,brand-commercial,commercial,Middle East,missing,4,3,3,10,P1,create-net-new
+medical affairs insight research gcc,medical-affairs,commercial,GCC,missing,4,2,2,8,P2,create-net-new
+msl insight research middle east,medical-affairs,commercial,Middle East,missing,4,2,2,8,P2,create-net-new

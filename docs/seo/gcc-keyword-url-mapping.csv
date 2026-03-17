@@ -1,0 +1,26 @@
+keyword,cluster,current_status,target_url,recommended_url_type,primary_action,notes
+healthcare market research agency gcc,bofu-agency,missing,,new-page,create,Create BOFU comparison/service page for GCC agency-intent searchers
+pharma market research company saudi arabia,bofu-agency,thin,https://www.bionixus.com/market-research-saudi-arabia-pharmaceutical,existing-page,refresh,Retune title/H1/body to explicit "company" intent
+pharma market research company uae,bofu-agency,thin,https://www.bionixus.com/uae-pharmaceutical-market-research,existing-page,refresh,Add company-intent section + conversion proof
+healthcare market research company middle east,bofu-agency,thin,https://www.bionixus.com/bionixus-market-research-middle-east,existing-page,refresh,Strengthen exact-match entity + agency language
+market access research uae,market-access-country,missing,,new-page,create,Publish UAE-specific payer/access research landing page
+market access research kuwait,market-access-country,missing,,new-page,create,Publish Kuwait-specific market-access research landing page
+market access research qatar,market-access-country,missing,,new-page,create,Publish Qatar-specific market-access research landing page
+pricing reimbursement strategy uae,market-access-country,missing,,new-page,create,Publish UAE pricing/reimbursement strategy page
+healthcare fieldwork middle east,fieldwork,missing,,new-page,create,Launch Middle East healthcare fieldwork service page
+healthcare fieldwork gcc,fieldwork,missing,,new-page,create,Launch GCC fieldwork page; interlink to country fieldwork pages
+pharma fieldwork saudi arabia,fieldwork,missing,,new-page,create,Publish KSA fieldwork-specific page
+pharma fieldwork uae,fieldwork,missing,,new-page,create,Publish UAE fieldwork-specific page
+patient support program research,patient-support,missing,,new-page,create,Create PSP research and outcomes page
+patient journey research gcc,patient-insights,missing,,new-page,create,Create GCC patient-journey insights page
+patient adherence research middle east,patient-insights,missing,,new-page,create,Create adherence/persistence research page
+real world evidence gcc,rwe-heor,missing,,new-page,create,Create RWE GCC page with design, governance, and outputs
+heor consulting saudi arabia,rwe-heor,missing,,new-page,create,Create HEOR KSA page with payer and modeling terms
+budget impact model saudi arabia,rwe-heor,missing,,new-page,create,Create budget-impact-model KSA landing page
+oncology market research saudi arabia,therapy-country,thin,https://www.bionixus.com/healthcare-market-research/saudi-arabia,existing-page,refresh,Add oncology-specific section and internal links to oncology blogs
+diabetes market research uae,therapy-country,missing,,new-page,create,Create diabetes UAE market-research page
+respiratory market access gcc,therapy-country,missing,,new-page,create,Create respiratory market-access GCC page
+physician recruitment saudi arabia,hcp-sampling,thin,https://www.bionixus.com/gcc-hcp-recruitment-market-research,existing-page,refresh,Add KSA-specific physician recruitment subsection
+specialist physician panel uae,hcp-sampling,missing,,new-page,create,Create UAE specialist panel recruitment page
+brand tracking pharma gcc,brand-commercial,missing,,new-page,create,Create GCC pharma brand-tracking service page
+launch readiness pharma gcc,brand-commercial,thin,https://www.bionixus.com/bionixus-market-research-middle-east,existing-page,refresh,Add launch-readiness framework section and schema FAQ update
