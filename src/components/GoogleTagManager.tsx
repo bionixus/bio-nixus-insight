@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { hasAnalyticsConsent, onConsentChange } from '@/lib/consent';
 
 declare global {
   interface Window {
@@ -11,9 +12,12 @@ declare global {
 export default function GoogleTagManager() {
   const location = useLocation();
   const gtmId = import.meta.env.VITE_GTM_ID;
+  const [consentGranted, setConsentGranted] = useState(() => hasAnalyticsConsent());
+
+  useEffect(() => onConsentChange(() => setConsentGranted(hasAnalyticsConsent())), []);
 
   useEffect(() => {
-    if (!gtmId) return;
+    if (!gtmId || !consentGranted) return;
     if (window.__gtmLoaded) return;
 
     const loadGtm = () => {
@@ -46,17 +50,17 @@ export default function GoogleTagManager() {
     return () => {
       window.removeEventListener('load', onLoad);
     };
-  }, [gtmId]);
+  }, [gtmId, consentGranted]);
 
   useEffect(() => {
-    if (!gtmId || !window.dataLayer) return;
+    if (!gtmId || !consentGranted || !window.dataLayer) return;
     window.dataLayer.push({
       event: 'page_view',
       page_path: location.pathname + location.search,
       page_title: document.title,
       page_location: window.location.href,
     });
-  }, [gtmId, location.pathname, location.search]);
+  }, [gtmId, consentGranted, location.pathname, location.search]);
 
   return null;
 }

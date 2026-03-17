@@ -9,6 +9,7 @@ import DocumentHead from '@/components/DocumentHead';
 import ScrollToTop from '@/components/ScrollToTop';
 import GoogleTagManager from '@/components/GoogleTagManager';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import GA4EventTracker from '@/components/GA4EventTracker';
 import LocalePrompt from '@/components/LocalePrompt';
 import CookieConsent from '@/components/CookieConsent';
 import { routes } from '@/routes';
@@ -68,6 +69,7 @@ function AppProviders({ children }: { children: ReactNode }) {
         <GoogleTagManager />
         <DocumentHead />
         <GoogleAnalytics />
+        <GA4EventTracker />
         <TooltipProvider>
           <Toaster />
           <Sonner />

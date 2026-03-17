@@ -1031,7 +1031,6 @@ async function handleTrackShare(req: any, res: any) {
 const GSC_SITE_URLS = [
   'sc-domain:bionixus.com',
   'https://www.bionixus.com',
-  'https://bionixus.com',
 ]
 
 function getGoogleAuth() {

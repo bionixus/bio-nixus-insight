@@ -16,6 +16,7 @@ const CookieConsent = () => {
 
   const setConsent = (value: 'accepted' | 'declined') => {
     localStorage.setItem(COOKIE_CONSENT_KEY, value);
+    window.dispatchEvent(new Event('bionixus-consent-changed'));
     setVisible(false);
   };
 
@@ -36,7 +37,7 @@ const CookieConsent = () => {
             </Link>
           </p>
           <div className="flex gap-3 w-full sm:w-auto">
-            <Button onClick={() => setConsent('decline')} variant="outline" size="sm">
+            <Button onClick={() => setConsent('declined')} variant="outline" size="sm">
               {t.cookieConsent.decline}
             </Button>
             <Button onClick={() => setConsent('accepted')} size="sm">

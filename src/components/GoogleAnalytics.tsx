@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { hasAnalyticsConsent, onConsentChange } from '@/lib/consent';
 
 /**
  * Google Analytics (GA4) Tracker Component.
@@ -10,9 +11,12 @@ export default function GoogleAnalytics() {
     const location = useLocation();
     const gaId = import.meta.env.VITE_GA_ID || import.meta.env.VITE_GA_MEASUREMENT_ID;
     const gtmId = import.meta.env.VITE_GTM_ID;
+    const [consentGranted, setConsentGranted] = useState(() => hasAnalyticsConsent());
+
+    useEffect(() => onConsentChange(() => setConsentGranted(hasAnalyticsConsent())), []);
 
     useEffect(() => {
-        if (!gaId || gtmId) return;
+        if (!gaId || gtmId || !consentGranted) return;
 
         if (!window.gtag) {
             const loadGtag = () => {
@@ -42,9 +46,9 @@ export default function GoogleAnalytics() {
                 page_path: location.pathname,
             });
         }
-    }, [location.pathname, gaId, gtmId]);
+    }, [location.pathname, gaId, gtmId, consentGranted]);
 
-    if (!gaId || gtmId) return null;
+    if (!gaId || gtmId || !consentGranted) return null;
 
     return (
         <Helmet>

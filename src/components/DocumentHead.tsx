@@ -275,11 +275,14 @@ const DocumentHead = () => {
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />
+        <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
         <meta name="keywords" content={seo.keywords} />
         <meta name="llm-access" content="allow" />
         <meta httpEquiv="content-language" content={contentLanguage} />
         {gscId ? <meta name="google-site-verification" content={gscId} /> : null}
         {language === 'de' ? <meta name="geo.region" content="DE;GB;FR;ES;IT;AE;SA;EG" /> : null}
+        <link rel="dns-prefetch" href="https://cdn.sanity.io" />
+        <link rel="preconnect" href="https://cdn.sanity.io" crossOrigin="" />
         <link rel="canonical" href={canonicalUrl} />
         {hreflangLinks.map(({ lang, href }) => (
           <link key={`${lang}-${href}`} rel="alternate" hrefLang={lang} href={href} />

@@ -178,6 +178,7 @@ function ensureMetaDescriptionTag(html, pathname) {
 async function startServer() {
   const app = express();
   app.use(compression());
+  const CANONICAL_HOST = 'www.bionixus.com';
   const LOCALE_ROOT_WITH_SLASH = new Set(['/de/', '/fr/', '/es/', '/zh/', '/ar/']);
   const REDIRECTS = {
     '/healthcare-market-research-saudi-arabia': '/healthcare-market-research/saudi-arabia',
@@ -261,6 +262,30 @@ async function startServer() {
 
   app.get('/llms.txt', (_req, res) => {
     res.type('text/plain').sendFile(path.resolve(__dirname, 'public/llms.txt'));
+  });
+
+  // Fallback canonicalization for non-edge environments.
+  app.use((req, res, next) => {
+    const forwardedHost = String(req.headers['x-forwarded-host'] || req.headers.host || '')
+      .split(',')[0]
+      .trim()
+      .toLowerCase();
+    const host = forwardedHost.replace(/:\d+$/, '');
+    const forwardedProto = String(req.headers['x-forwarded-proto'] || req.protocol || 'http')
+      .split(',')[0]
+      .trim()
+      .toLowerCase();
+    const isLocal = host === 'localhost' || host === '127.0.0.1' || host.endsWith('.local');
+
+    if (!isLocal && (host === 'bionixus.com' || host === CANONICAL_HOST)) {
+      if (host !== CANONICAL_HOST || forwardedProto !== 'https') {
+        const target = `https://${CANONICAL_HOST}${req.originalUrl || req.url || '/'}`;
+        res.redirect(301, target);
+        return;
+      }
+    }
+
+    next();
   });
 
   app.use(async (req, res, next) => {
