@@ -24,7 +24,7 @@ const pageUrl = 'https://www.bionixus.com/bionixus-market-research-middle-east';
 const pageImage = 'https://www.bionixus.com/images/quant-hcp-survey-executive.png';
 const lastUpdated = '2026-03-17';
 const editorialLead = 'Dr. Mohammad Alsaadany';
-const contactHref = '/contact?utm_source=middle-east-page&utm_medium=organic&utm_campaign=middle-east-pharma-research';
+const contactHref = '/contact';
 
 const proofCards = [
   {
@@ -358,7 +358,7 @@ const BionixusMarketResearchMiddleEast = () => {
               </ul>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
-                  to={`${contactHref}&utm_content=hero_primary_cta`}
+                  to={contactHref}
                   onClick={() => trackCtaClick('book_strategy_call', 'hero_primary')}
                   className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
                 >
@@ -658,7 +658,7 @@ const BionixusMarketResearchMiddleEast = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
-                  to={`${contactHref}&utm_content=mid_scroll_scope_cta`}
+                  to={contactHref}
                   onClick={() => trackCtaClick('request_research_scope', 'mid_scroll')}
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-5 py-3 text-primary font-semibold hover:bg-white/90 transition-colors"
                 >
@@ -837,7 +837,7 @@ const BionixusMarketResearchMiddleEast = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
-                  to={`${contactHref}&utm_content=final_strategy_cta`}
+                  to={contactHref}
                   onClick={() => trackCtaClick('book_strategy_call', 'final_cta')}
                   className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors"
                 >
@@ -859,7 +859,7 @@ const BionixusMarketResearchMiddleEast = () => {
 
       <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-border bg-background/95 backdrop-blur p-3 md:hidden">
         <Link
-          to={`${contactHref}&utm_content=sticky_mobile_cta`}
+          to={contactHref}
           onClick={() => trackCtaClick('book_strategy_call', 'sticky_mobile')}
           className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground"
         >

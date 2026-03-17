@@ -380,7 +380,8 @@ export default function MarketResearchHealthcare() {
   const { pathname } = useLocation();
   const copy = copyByLanguage[language] ?? copyByLanguage.en;
   const basePath = languagePaths[language] || '/';
-  const contactPath = `${basePath === '/' ? '' : basePath}/contact`;
+  const contactPath =
+    language === 'fr' ? '/fr/contacts' : language === 'ar' ? '/ar/contacts' : `${basePath === '/' ? '' : basePath}/contact`;
 
   const jsonLd = [
     {

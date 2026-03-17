@@ -6,7 +6,8 @@ import { languagePaths } from '@/lib/seo';
 const HeroSection = () => {
   const { t, language, isRTL } = useLanguage();
   const basePath = languagePaths[language] || '/';
-  const contactPath = `${basePath === '/' ? '' : basePath}/contact`;
+  const contactPath =
+    language === 'fr' ? '/fr/contacts' : language === 'ar' ? '/ar/contacts' : `${basePath === '/' ? '' : basePath}/contact`;
 
   return (
     <section
