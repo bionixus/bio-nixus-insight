@@ -133,6 +133,36 @@ const staticPages = [
   { path: '/fr/contacts', priority: '0.7', changefreq: 'monthly' },
   { path: '/ar/contacts', priority: '0.7', changefreq: 'monthly' },
   { path: '/privacy', priority: '0.3', changefreq: 'yearly' },
+  { path: '/sitemap', priority: '0.6', changefreq: 'weekly' },
+  { path: '/de/methodology', priority: '0.6', changefreq: 'monthly' },
+  { path: '/fr/methodology', priority: '0.6', changefreq: 'monthly' },
+  { path: '/es/methodology', priority: '0.6', changefreq: 'monthly' },
+  { path: '/zh/methodology', priority: '0.6', changefreq: 'monthly' },
+  { path: '/ar/methodology', priority: '0.6', changefreq: 'monthly' },
+  { path: '/fr/contact', priority: '0.7', changefreq: 'monthly' },
+];
+
+/** Country slugs with dedicated healthcare hub pages (see src/lib/constants/countries.ts). */
+const healthcareCountrySlugs = [
+  'saudi-arabia',
+  'uae',
+  'kuwait',
+  'uk',
+  'europe',
+  'riyadh',
+  'jeddah',
+  'dubai',
+  'abu-dhabi',
+];
+
+const healthcareTherapySlugs = ['oncology', 'diabetes', 'respiratory', 'immunology', 'biologics', 'vaccines'];
+
+const healthcareServiceSlugs = [
+  'market-access',
+  'physician-insights',
+  'kol-mapping',
+  'quantitative-research',
+  'qualitative-research',
 ];
 
 const globalWebsiteCountrySlugs = [
@@ -180,6 +210,27 @@ function buildStaticRoutes() {
     routes.push({
       path: `/global-websites/${slug}`,
       priority: '0.6',
+      changefreq: 'monthly',
+    });
+  }
+  for (const slug of healthcareCountrySlugs) {
+    routes.push({
+      path: `/healthcare-market-research/${slug}`,
+      priority: '0.85',
+      changefreq: 'weekly',
+    });
+  }
+  for (const area of healthcareTherapySlugs) {
+    routes.push({
+      path: `/healthcare-market-research/therapy/${area}`,
+      priority: '0.75',
+      changefreq: 'monthly',
+    });
+  }
+  for (const service of healthcareServiceSlugs) {
+    routes.push({
+      path: `/healthcare-market-research/services/${service}`,
+      priority: '0.75',
       changefreq: 'monthly',
     });
   }
@@ -484,7 +535,22 @@ const STATIC_PAGE_FILES = {
   '/pharmaceutical-companies-iraq': ['src/pages/IraqPharmaCompanies.tsx'],
   '/pharmaceutical-companies-iran': ['src/pages/IranPharmaCompanies.tsx'],
   '/global-websites': ['src/pages/GlobalWebsites.tsx'],
+  '/sitemap': ['src/pages/SiteMapPage.tsx'],
+  '/de/methodology': ['src/pages/Methodology.tsx'],
+  '/fr/methodology': ['src/pages/Methodology.tsx'],
+  '/es/methodology': ['src/pages/Methodology.tsx'],
+  '/zh/methodology': ['src/pages/Methodology.tsx'],
+  '/ar/methodology': ['src/pages/Methodology.tsx'],
+  '/fr/contact': ['src/pages/Contact.tsx'],
 };
+
+/** Git lastmod for dynamic healthcare paths (shared source files). */
+const HEALTHCARE_HUB_GIT_FILES = [
+  'src/pages/healthcare-research/HubPage.tsx',
+  'src/pages/healthcare-research/CountryPage.tsx',
+  'src/pages/healthcare-research/TherapyPage.tsx',
+  'src/pages/healthcare-research/ServicePage.tsx',
+];
 
 async function main() {
   loadEnv();
@@ -507,7 +573,10 @@ async function main() {
   for (const { path, priority, changefreq } of staticRoutes) {
     const url = BASE + path;
     // Try to get the real last-modified date from git for the source file
-    const sourceFiles = STATIC_PAGE_FILES[path] || [];
+    let sourceFiles = STATIC_PAGE_FILES[path] || [];
+    if (sourceFiles.length === 0 && path.startsWith('/healthcare-market-research/')) {
+      sourceFiles = HEALTHCARE_HUB_GIT_FILES;
+    }
     let lastmod = null;
     for (const relFile of sourceFiles) {
       lastmod = getGitLastModified(join(root, relFile));
@@ -518,6 +587,8 @@ async function main() {
       changefreq: changefreq || 'weekly',
       lastmod: lastmod || today,
       enforceCanonical: false,
+      /** Do not drop URLs when live fetch fails (CI/Vercel/build without reachable origin). */
+      skipLiveResolution: true,
     });
   }
   for (const { slug, lastmod } of blogContent) {
@@ -527,6 +598,8 @@ async function main() {
       changefreq: 'monthly',
       lastmod: lastmod || today,
       enforceCanonical: true,
+      skipLiveResolution: false,
+      fallbackOnFetchFailure: true,
     });
   }
   for (const { slug, lastmod } of caseContent) {
@@ -536,6 +609,8 @@ async function main() {
       changefreq: 'monthly',
       lastmod: lastmod || today,
       enforceCanonical: true,
+      skipLiveResolution: false,
+      fallbackOnFetchFailure: true,
     });
   }
 
@@ -545,10 +620,46 @@ async function main() {
   const finalUrls = new Map();
 
   for (const [candidateUrl, meta] of candidates) {
+    if (meta.skipLiveResolution) {
+      const { skipLiveResolution: _s, fallbackOnFetchFailure: _f, ...rest } = meta;
+      const existing = finalUrls.get(candidateUrl);
+      if (existing) {
+        finalUrls.set(candidateUrl, mergeMeta(existing, rest));
+      } else {
+        finalUrls.set(candidateUrl, rest);
+      }
+      continue;
+    }
+
     const result = await resolveCanonicalIndexableUrl(
       candidateUrl,
       Boolean(meta.enforceCanonical)
     );
+
+    const fetchFailed =
+      !result.include &&
+      meta.fallbackOnFetchFailure &&
+      typeof result.reason === 'string' &&
+      (result.reason.startsWith('fetch-error') ||
+        result.reason.startsWith('status-5') ||
+        result.reason === 'max-hops');
+
+    if (!result.include && fetchFailed) {
+      redirectedOrResolved.push({
+        from: candidateUrl,
+        to: candidateUrl,
+        reason: `${result.reason} (listed-without-live-check)`,
+      });
+      const { skipLiveResolution: _s, fallbackOnFetchFailure: _f, ...rest } = meta;
+      const existing = finalUrls.get(candidateUrl);
+      if (existing) {
+        finalUrls.set(candidateUrl, mergeMeta(existing, rest));
+      } else {
+        finalUrls.set(candidateUrl, rest);
+      }
+      continue;
+    }
+
     if (!result.include) {
       excluded.push({ url: candidateUrl, reason: result.reason });
       continue;
@@ -558,11 +669,12 @@ async function main() {
       redirectedOrResolved.push({ from: candidateUrl, to: result.include, reason: result.reason });
     }
 
+    const { skipLiveResolution: _s, fallbackOnFetchFailure: _f, ...rest } = meta;
     const existing = finalUrls.get(result.include);
     if (existing) {
-      finalUrls.set(result.include, mergeMeta(existing, meta));
+      finalUrls.set(result.include, mergeMeta(existing, rest));
     } else {
-      finalUrls.set(result.include, meta);
+      finalUrls.set(result.include, rest);
     }
   }
 
