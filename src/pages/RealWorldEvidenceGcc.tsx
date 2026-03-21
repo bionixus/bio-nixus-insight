@@ -40,6 +40,7 @@ const jsonLd = [
   },
   buildBreadcrumbSchema([
     { name: 'Home', href: '/' },
+    { name: 'Real World Evidence', href: '/real-world-evidence' },
     { name: 'Real World Evidence GCC', href: '/real-world-evidence-gcc' },
   ]),
   buildFAQSchema(faqItems),
@@ -63,7 +64,13 @@ export default function RealWorldEvidenceGcc() {
       </Helmet>
       <Navbar />
       <main>
-        <BreadcrumbNav items={[{ name: 'Home', href: '/' }, { name: 'Real World Evidence GCC', href: '/real-world-evidence-gcc' }]} />
+        <BreadcrumbNav
+          items={[
+            { name: 'Home', href: '/' },
+            { name: 'Real World Evidence', href: '/real-world-evidence' },
+            { name: 'GCC', href: '/real-world-evidence-gcc' },
+          ]}
+        />
         <PremiumHero
           h1="Real World Evidence GCC"
           intro="BioNixus helps teams generate real world evidence in GCC markets with fit-for-purpose design, local relevance, and decision-ready outputs for market access and lifecycle strategy."

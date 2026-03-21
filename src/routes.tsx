@@ -33,6 +33,7 @@ import UaeMarketAccessResearch from '@/pages/UaeMarketAccessResearch';
 import KuwaitMarketAccessResearch from '@/pages/KuwaitMarketAccessResearch';
 import QatarMarketAccessResearch from '@/pages/QatarMarketAccessResearch';
 import HealthcareFieldworkMiddleEast from '@/pages/HealthcareFieldworkMiddleEast';
+import RealWorldEvidence from '@/pages/RealWorldEvidence';
 import RealWorldEvidenceGcc from '@/pages/RealWorldEvidenceGcc';
 import HeorConsultingSaudiArabia from '@/pages/HeorConsultingSaudiArabia';
 import PatientSupportProgramResearchGcc from '@/pages/PatientSupportProgramResearchGcc';
@@ -139,6 +140,7 @@ export const routes: RouteObject[] = [
   { path: '/kuwait-market-access-research', element: <KuwaitMarketAccessResearch /> },
   { path: '/qatar-market-access-research', element: <QatarMarketAccessResearch /> },
   { path: '/healthcare-fieldwork-middle-east', element: <HealthcareFieldworkMiddleEast /> },
+  { path: '/real-world-evidence', element: <RealWorldEvidence /> },
   { path: '/real-world-evidence-gcc', element: <RealWorldEvidenceGcc /> },
   { path: '/heor-consulting-saudi-arabia', element: <HeorConsultingSaudiArabia /> },
   { path: '/patient-support-program-research-gcc', element: <PatientSupportProgramResearchGcc /> },

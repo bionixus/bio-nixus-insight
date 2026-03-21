@@ -168,6 +168,9 @@ export default function HubPage() {
             <Link to="/bionixus-market-research-middle-east" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
               Pharmaceutical market research in Middle East
             </Link>
+            <Link to="/real-world-evidence" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              Real world evidence (RWE) for pharmaceutical teams
+            </Link>
             <Link to="/real-world-evidence-gcc" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
               Real world evidence GCC programs
             </Link>

@@ -243,6 +243,14 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  to="/real-world-evidence"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  Real World Evidence (RWE) for pharma
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/insights"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >

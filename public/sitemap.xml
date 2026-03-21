@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.bionixus.com/</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr" />
@@ -429,7 +429,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/case-studies</loc>
-    <lastmod>2026-03-14</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -817,7 +817,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -901,7 +901,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/market-research-uae</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/market-research-uae" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.bionixus.com/ar/market-research-uae" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bionixus.com/market-research-uae" />
@@ -1011,6 +1011,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.bionixus.com/real-world-evidence</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.bionixus.com/real-world-evidence-gcc</loc>
     <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -1081,7 +1087,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/uae-pharmaceutical-market-research</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

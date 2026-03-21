@@ -234,6 +234,7 @@ export const priorityRecoveryPaths = [
   '/market-research-saudi-arabia-pharmaceutical',
   '/market-research-healthcare',
   '/qualitative-market-research',
+  '/real-world-evidence',
   '/healthcare-market-research',
   '/global-websites',
   '/services',

@@ -83,6 +83,10 @@ function buildRouteTitle(pathname: string, language: Language, fallback: string)
     return makeTitle(`Healthcare Market Research in ${country} | BioNixus`);
   }
 
+  if (path === '/real-world-evidence') {
+    return makeTitle('Real World Evidence (RWE) for Pharma | BioNixus EMEA & MENA');
+  }
+
   if (path.startsWith('/pharmaceutical-companies-')) {
     const country = titleCase(path.replace('/pharmaceutical-companies-', ''));
     return makeTitle(`Pharmaceutical Companies in ${country} | BioNixus`);
@@ -180,6 +184,12 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
     const country = titleCase(noPrefixParts[1] || 'market');
     return clampDescription(
       `Pharmaceutical market research in ${country} with localized stakeholder insights, healthcare system context, and execution-focused strategy support.`
+    );
+  }
+
+  if (path === '/real-world-evidence') {
+    return clampDescription(
+      'BioNixus real world evidence (RWE) for pharma: principal-led study design, EMEA and MENA execution, HTA and payer-ready narratives, and GCC programs for medical, access, and commercial decisions.'
     );
   }
 
