@@ -32,3 +32,6 @@ dist-ssr
 bio-nixus-insight-website-backup-*.zip
 .vercel
 .env*.local
+
+# Local scratch / debug output (not for repo)
+tmp/
