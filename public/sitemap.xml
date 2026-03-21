@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/ar</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr" />
@@ -35,7 +35,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/ar/arabic-blog-alsawdyh</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/bionixus-ai-chatbots-increase-sales-and-lead-generation" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/success-in-startups" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.bionixus.com/ar/arabic-blog-alsawdyh" />
@@ -45,7 +45,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/ar/contacts</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/contact" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/contact" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr/contacts" />
@@ -423,7 +423,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/budget-impact-model-saudi-arabia</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -436,6 +436,12 @@
   <url>
     <loc>https://www.bionixus.com/case-studies/biologics-market-analysis-uae</loc>
     <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/case-studies/cns-case-study</loc>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -466,7 +472,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/de</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr" />
@@ -479,7 +485,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/de/blog</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/blog" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/blog" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr/blog" />
@@ -489,7 +495,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/de/contact</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/contact" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/contact" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr/contacts" />
@@ -502,7 +508,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/de/success-in-startups</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/bionixus-ai-chatbots-increase-sales-and-lead-generation" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/success-in-startups" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.bionixus.com/ar/arabic-blog-alsawdyh" />
@@ -512,7 +518,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/es</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr" />
@@ -525,7 +531,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/es/contact</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/contact" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/contact" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr/contacts" />
@@ -538,7 +544,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/es/market-access</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/services/market-access" />
     <xhtml:link rel="alternate" hreflang="es" href="https://www.bionixus.com/es/market-access" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bionixus.com/services/market-access" />
@@ -553,7 +559,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/fr</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr" />
@@ -566,7 +572,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/fr/blog</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/blog" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/blog" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr/blog" />
@@ -576,7 +582,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/fr/contacts</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/contact" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/contact" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr/contacts" />
@@ -589,7 +595,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/gcc-hcp-recruitment-market-research</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -613,199 +619,199 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/algeria</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/bahrain</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/canada</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/china</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/denmark</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/egypt</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/france</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/germany</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/iraq</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/italy</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/japan</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/jordan</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/kenya</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/kuwait</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/lebanon</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/libya</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/mexico</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/morocco</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/nigeria</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/oman</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/qatar</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/saudi-arabia</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/singapore</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/south-africa</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/spain</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/sweden</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/switzerland</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/tunisia</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/turkey</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/united-arab-emirates</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/united-kingdom</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/united-states</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-fieldwork-middle-east</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -823,19 +829,19 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/heor-consulting-saudi-arabia</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/insights</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/kuwait-market-access-research</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -916,7 +922,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/patient-support-program-research-gcc</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -988,7 +994,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/qatar-market-access-research</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1018,7 +1024,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/saudi-payer-market-access-research</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1069,7 +1075,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/uae-market-access-research</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1081,7 +1087,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/zh</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr" />
@@ -1094,7 +1100,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/zh/contact</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/contact" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/contact" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr/contacts" />

@@ -32,10 +32,44 @@ Node.prototype.insertBefore = function <T extends Node>(newNode: T, refNode: Nod
   return origInsertBefore.call(this, newNode, refNode) as T;
 };
 
+// Recover from stale client bundles after deploys.
+// If a lazy chunk URL no longer exists, force a single hard refresh.
+function installChunkLoadRecovery() {
+  if (typeof window === 'undefined') return;
+  const RELOAD_KEY = 'bionixus-chunk-recovery-reloaded';
+
+  const shouldRecover = (message: string) => {
+    const normalized = message.toLowerCase();
+    return (
+      normalized.includes('failed to fetch dynamically imported module') ||
+      normalized.includes('loading chunk') ||
+      normalized.includes('chunkloaderror')
+    );
+  };
+
+  const recover = () => {
+    if (window.sessionStorage.getItem(RELOAD_KEY) === '1') return;
+    window.sessionStorage.setItem(RELOAD_KEY, '1');
+    window.location.reload();
+  };
+
+  window.addEventListener('unhandledrejection', (event) => {
+    const reason = event.reason as { message?: string } | undefined;
+    const message = reason?.message || String(reason || '');
+    if (shouldRecover(message)) recover();
+  });
+
+  window.addEventListener('error', (event) => {
+    const message = event.message || '';
+    if (shouldRecover(message)) recover();
+  });
+}
+
 const root = document.getElementById('root');
 const initialData = window.__INITIAL_DATA__ || {};
 
 if (root) {
+  installChunkLoadRecovery();
   root.innerHTML = '';
   createRoot(root).render(
     <HelmetProvider>

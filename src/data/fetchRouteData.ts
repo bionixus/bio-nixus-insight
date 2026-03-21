@@ -1,5 +1,6 @@
 import { COUNTRY_CONFIGS } from '@/lib/constants/countries';
 import { sanityServer } from '@/lib/sanity-server';
+import { fetchCaseStudies } from '@/lib/sanity-case-studies';
 
 const THERAPY_AREAS = ['oncology', 'diabetes', 'respiratory', 'immunology', 'biologics', 'vaccines'];
 const SERVICES = [
@@ -99,6 +100,19 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
     return {
       pageType: 'service',
       service: serviceMatch[1],
+    };
+  }
+
+  if (normalizedPath === '/case-studies' || normalizedPath === '/case-studies/') {
+    let caseStudies: Awaited<ReturnType<typeof fetchCaseStudies>> = [];
+    try {
+      caseStudies = await fetchCaseStudies();
+    } catch {
+      caseStudies = [];
+    }
+    return {
+      pageType: 'case-studies',
+      caseStudies,
     };
   }
 

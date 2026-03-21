@@ -235,6 +235,14 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  to="/case-studies/cns-case-study"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  CNS and brain health market research case study
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/insights"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >

@@ -67,6 +67,7 @@ const rawReportZeroLinkPaths = [
   '/blog/%D8%B3%D9%88%D9%82-%D8%A7%D9%84%D8%AF%D9%88%D8%A7%D8%A1-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A-2026',
   '/careers',
   '/case-studies/biologics-market-analysis-uae',
+  '/case-studies/cns-case-study',
   '/case-studies/gcc-oncology-market',
   '/case-studies/uae-influenza-vaccines-report-2025-2026',
   '/chatgpt-is-down',

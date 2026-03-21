@@ -1,6 +1,6 @@
+import { lazy, Suspense } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
-import DOMPurify from 'dompurify';
 import { PortableText } from '@portabletext/react';
 import type { PortableTextBlock } from '@portabletext/types';
 import { Helmet } from 'react-helmet-async';
@@ -12,7 +12,6 @@ import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { getOgLocale, getOgLocaleAlternates } from '@/lib/seo';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { PdfCarousel } from '@/components/PdfCarousel';
 import { ArrowLeft } from 'lucide-react';
 import {
   Accordion,
@@ -24,16 +23,18 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import ShareButtons from '@/components/ShareButtons';
 
+const PdfCarousel = lazy(() =>
+  import('@/components/PdfCarousel').then((module) => ({ default: module.PdfCarousel })),
+);
+
 function sanitizeBodyHtml(html: string): string {
-  return DOMPurify.sanitize(html, {
-    ADD_ATTR: ['class', 'style', 'id'],
-    ALLOWED_TAGS: [
-      'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'div', 'span', 'br', 'hr',
-      'ul', 'ol', 'li', 'strong', 'em', 'b', 'i', 'a', 'blockquote',
-      'table', 'thead', 'tbody', 'tr', 'th', 'td', 'sub', 'sup',
-    ],
-    ALLOW_DATA_ATTR: false,
-  });
+  // Keep rich CMS layout tags/inline styles while stripping executable payloads.
+  return html
+    .replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, '')
+    .replace(/<iframe[\s\S]*?>[\s\S]*?<\/iframe>/gi, '')
+    .replace(/\s(on\w+)=["'][^"']*["']/gi, '')
+    .replace(/\s(on\w+)=\{[^}]*\}/gi, '')
+    .replace(/\s(href|src)=["']\s*javascript:[^"']*["']/gi, '');
 }
 
 const portableTextComponents = {
@@ -250,9 +251,11 @@ const CaseStudyPage = () => {
               )}
             </div>
 
-            {caseStudy.pdfUrl && (
+            {typeof window !== 'undefined' && caseStudy.pdfUrl && (
               <div className="mb-10">
-                <PdfCarousel pdfUrl={caseStudy.pdfUrl} />
+                <Suspense fallback={<div className="text-sm text-muted-foreground">Loading PDF preview...</div>}>
+                  <PdfCarousel pdfUrl={caseStudy.pdfUrl} />
+                </Suspense>
               </div>
             )}
 

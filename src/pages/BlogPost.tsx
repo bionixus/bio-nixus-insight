@@ -392,6 +392,24 @@ const portableTextComponents = {
   },
 }
 
+/** Use in-app navigation for same-site CTAs; keep external URLs as plain anchors. */
+function resolveCtaHref(buttonUrl: string): { kind: 'internal'; to: string } | { kind: 'external'; href: string } {
+  const raw = (buttonUrl || '').trim();
+  if (!raw) return { kind: 'external', href: '#' };
+  if (raw.startsWith('/')) return { kind: 'internal', to: raw };
+  try {
+    const u = new URL(raw);
+    const host = u.hostname.replace(/^www\./i, '');
+    if (host === 'bionixus.com') {
+      const path = `${u.pathname}${u.search}${u.hash}` || '/';
+      return { kind: 'internal', to: path };
+    }
+  } catch {
+    /* not a valid absolute URL */
+  }
+  return { kind: 'external', href: raw };
+}
+
 function getBodyToRender(
   post: BlogPostType,
   slug: string | undefined
@@ -810,13 +828,17 @@ const BlogPost = () => {
                   {post.ctaSection.buttonText && post.ctaSection.buttonUrl && (
                     <CardContent>
                       <Button asChild>
-                        <a
-                          href={post.ctaSection!.buttonUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {post.ctaSection!.buttonText}
-                        </a>
+                        {(() => {
+                          const target = resolveCtaHref(post.ctaSection!.buttonUrl!);
+                          if (target.kind === 'internal') {
+                            return <Link to={target.to}>{post.ctaSection!.buttonText}</Link>;
+                          }
+                          return (
+                            <a href={target.href} target="_blank" rel="noopener noreferrer">
+                              {post.ctaSection!.buttonText}
+                            </a>
+                          );
+                        })()}
                       </Button>
                     </CardContent>
                   )}

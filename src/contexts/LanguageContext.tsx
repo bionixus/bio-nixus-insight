@@ -11,7 +11,14 @@ interface LanguageContextType {
   isRTL: boolean;
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+const fallbackLanguageContext: LanguageContextType = {
+  language: 'en',
+  setLanguage: () => {},
+  t: translations.en,
+  isRTL: false,
+};
+
+const LanguageContext = createContext<LanguageContextType | undefined>(fallbackLanguageContext);
 
 function getLanguageFromPath(pathname: string): Language | null {
   if (pathname === '/de' || pathname.startsWith('/de/')) return 'de';
@@ -82,8 +89,5 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
 
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
-  if (!context) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
-  }
-  return context;
+  return context ?? fallbackLanguageContext;
 };

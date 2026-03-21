@@ -71,6 +71,22 @@ const Index = () => {
       label: 'Country-Level Depth',
       decisionHint: 'Best for multi-country planning',
     },
+    {
+      to: '/qualitative-market-research',
+      title: 'Qualitative Market Research',
+      description:
+        'KOL interviews, advisory boards, and ethnographic insight for pharmaceutical positioning, access narratives, and stakeholder understanding.',
+      highlight: false,
+    },
+    {
+      to: '/global-websites/united-arab-emirates',
+      title: 'UAE Pharmaceutical Market Research',
+      description:
+        'Dubai and Abu Dhabi healthcare intelligence for drug development, market access, and quantitative and qualitative research across the Emirates.',
+      highlight: true,
+      label: 'UAE Priority',
+      decisionHint: 'Best for UAE launch and access execution',
+    },
   ];
 
   useEffect(() => {

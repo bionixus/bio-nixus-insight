@@ -1,6 +1,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, Lock, Clock, FlaskConical, Globe, Users, TrendingUp, Star } from 'lucide-react';
+import { useInitialData } from '@/App';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -60,13 +61,20 @@ const CaseStudies = () => {
   const { t, language } = useLanguage();
   const basePath = languagePaths[language] || '/';
   const cs = (t as { caseStudiesPage?: Record<string, string> }).caseStudiesPage ?? {};
+  const { data: initialData } = useInitialData();
+  const ssrCaseStudies = Array.isArray(initialData.caseStudies)
+    ? (initialData.caseStudies as CaseStudy[])
+    : [];
 
-  const [caseStudies, setCaseStudies] = useState<CaseStudy[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [caseStudies, setCaseStudies] = useState<CaseStudy[]>(ssrCaseStudies);
+  const [loading, setLoading] = useState(ssrCaseStudies.length === 0);
   const [selectedCategory, setSelectedCategory] = useState<string>('');
   const [selectedCountry, setSelectedCountry] = useState<string>('');
 
   useEffect(() => {
+    if (ssrCaseStudies.length > 0) {
+      return;
+    }
     if (!isCaseStudiesConfigured()) {
       setLoading(false);
       return;
@@ -81,7 +89,7 @@ const CaseStudies = () => {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [ssrCaseStudies.length]);
 
   const categories = useMemo(() => {
     const set = new Set(caseStudies.map((c) => c.category).filter(Boolean));

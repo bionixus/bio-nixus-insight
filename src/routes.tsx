@@ -64,6 +64,7 @@ import ArMarketResearchKsa from '@/pages/ArMarketResearchKsa';
 import ArMarketResearchSaudi from '@/pages/ArMarketResearchSaudi';
 import ArMarketResearchKuwait from '@/pages/ArMarketResearchKuwait';
 import ArMarketResearchEgypt from '@/pages/ArMarketResearchEgypt';
+import CaseStudy from '@/pages/CaseStudy';
 import HubPage from '@/pages/healthcare-research/HubPage';
 import CountryPage from '@/pages/healthcare-research/CountryPage';
 import TherapyPage from '@/pages/healthcare-research/TherapyPage';
@@ -76,7 +77,6 @@ const AdminAnalytics = lazy(() => import('@/pages/AdminAnalytics'));
 const AdminCalendar = lazy(() => import('@/pages/AdminCalendar'));
 const AdminCalendarNew = lazy(() => import('@/pages/AdminCalendarNew'));
 const AdminSendNewsletter = lazy(() => import('@/pages/AdminSendNewsletter'));
-const CaseStudy = lazy(() => import('@/pages/CaseStudy'));
 
 function suspensePage(node: ReactNode) {
   return (

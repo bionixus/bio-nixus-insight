@@ -12,11 +12,12 @@ const sanityClient = createClient({
 
 const BASE = 'https://www.bionixus.com';
 
-// Fetch full post including body content for Googlebot
+// Fetch full post including body content for crawlers (AhrefsBot, Googlebot, etc.)
 const QUERY = `*[_type == "blogPost" && slug.current == $slug][0]{
   title,
   excerpt,
   "body": coalesce(body, content),
+  bodyHtml,
   htmlContent,
   "coverImage": mainImage.asset->url,
   publishedAt,
@@ -41,6 +42,61 @@ function esc(str) {
 function escJson(str) {
   if (!str) return '';
   return String(str).replace(/\\/g, '\\\\').replace(/"/g, '\\"').replace(/\n/g, '\\n');
+}
+
+/** Resolve Sanity locale objects { en: "..." } or plain strings */
+function pickLocalizedString(field) {
+  if (field == null) return '';
+  if (typeof field === 'string') return field;
+  if (typeof field === 'object' && field !== null) {
+    if (typeof field.en === 'string' && field.en.trim()) return field.en;
+    const first = Object.values(field).find((v) => typeof v === 'string' && v.trim());
+    return typeof first === 'string' ? first : '';
+  }
+  return '';
+}
+
+/**
+ * In-article internal links for SEO crawlers that receive this static HTML (not the React SPA).
+ * Placed inside <article> so tools count them as content outlinks.
+ */
+function buildRelatedInternalLinksNav(slug) {
+  const links = [
+    ['Healthcare market research hub for EMEA', `${BASE}/healthcare-market-research`],
+    ['More pharmaceutical and healthcare insights on our blog', `${BASE}/blog`],
+    ['Contact BioNixus about a market research project', `${BASE}/contact`],
+  ];
+  if (slug === 'healthcare-market-research-europe') {
+    links.unshift([
+      'Healthcare market research in Europe — country coverage and HTA context',
+      `${BASE}/healthcare-market-research/europe`,
+    ]);
+    links.splice(2, 0, [
+      'Healthcare market research in the United Kingdom',
+      `${BASE}/healthcare-market-research/uk`,
+    ]);
+  } else if (slug === 'pharmaceutical-market-research-uk') {
+    links.unshift([
+      'Healthcare market research in the United Kingdom',
+      `${BASE}/healthcare-market-research/uk`,
+    ]);
+    links.splice(2, 0, [
+      'Healthcare market research in Europe',
+      `${BASE}/healthcare-market-research/europe`,
+    ]);
+  }
+  const items = links
+    .map(
+      ([label, href]) =>
+        `<li><a href="${esc(href)}">${esc(label)}</a></li>`,
+    )
+    .join('\n      ');
+  return `<nav class="related-internal" aria-label="Related pages on this site">
+    <h2>Explore related pages</h2>
+    <ul>
+      ${items}
+    </ul>
+  </nav>`;
 }
 
 // Convert Portable Text to plain text (for structured data)
@@ -148,14 +204,14 @@ export default async function handler(req, res) {
         (Array.isArray(post.categories) ? post.categories[0] : '') ||
         '';
 
-    // Render full article body as HTML
+    // Render full article body as HTML (bodyHtml is the primary field in Studio uploader posts)
     let articleBodyHtml = '';
-    if (post.htmlContent) {
-      // If stored as raw HTML (locale object or string)
-      const htmlContent = typeof post.htmlContent === 'object'
-        ? (post.htmlContent.en || Object.values(post.htmlContent)[0] || '')
-        : post.htmlContent;
-      articleBodyHtml = htmlContent;
+    const bodyHtmlRaw = pickLocalizedString(post.bodyHtml);
+    const htmlContentRaw = pickLocalizedString(post.htmlContent);
+    if (bodyHtmlRaw) {
+      articleBodyHtml = bodyHtmlRaw;
+    } else if (htmlContentRaw) {
+      articleBodyHtml = htmlContentRaw;
     } else if (post.body) {
       // Portable Text — could be a flat array or a locale object { en: [...], ar: [...] }
       let bodyBlocks = post.body;
@@ -297,6 +353,7 @@ export default async function handler(req, res) {
     <div class="article-body">
       ${articleBodyHtml || `<p>${description}</p>`}
     </div>
+    ${buildRelatedInternalLinksNav(String(slug))}
     ${faqHtml}
   </article>
 </body>
