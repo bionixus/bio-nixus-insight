@@ -274,16 +274,20 @@ function alternatesForUrl(url) {
 
 /**
  * Returns git last-modified date for a file as YYYY-MM-DD.
- * Falls back to today if git has no log for the file.
+ * Falls back to null if not in a git checkout (e.g. Vercel build) or file has no history.
+ * Stderr is silenced so CI logs are not flooded with "fatal: not a git repository".
  */
 function getGitLastModified(filePath) {
+  if (!existsSync(join(root, '.git'))) {
+    return null;
+  }
   try {
-    const result = execSync(
-      `git log -1 --format=%cI -- "${filePath}"`,
-      { cwd: root, encoding: 'utf8' }
-    ).trim();
+    const result = execSync(`git log -1 --format=%cI -- "${filePath}"`, {
+      cwd: root,
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'ignore'],
+    }).trim();
     if (!result) return null;
-    // W3C datetime format YYYY-MM-DD
     return result.slice(0, 10);
   } catch {
     return null;
