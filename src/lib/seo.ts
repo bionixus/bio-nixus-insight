@@ -253,6 +253,19 @@ export function getHreflangLinks(pathname: string = '/') {
   });
 }
 
+/**
+ * Map a canonical English path to the correct URL for the active UI language
+ * (e.g. /blog → /de/blog when entries exist in localizedRouteGroups).
+ */
+export function getLocalizedPathForLanguage(enCanonicalPath: string, lang: Language): string {
+  const normalized = normalizePath(enCanonicalPath);
+  const routes = localizedRouteGroups[normalized as keyof typeof localizedRouteGroups];
+  if (routes && typeof routes[lang] === 'string') {
+    return routes[lang];
+  }
+  return normalized;
+}
+
 export function getCanonicalUrl(path: string = '/') {
   return `${getBaseUrl()}${path}`;
 }

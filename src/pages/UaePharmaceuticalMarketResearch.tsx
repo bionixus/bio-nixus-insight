@@ -9,6 +9,11 @@ import { ExecutiveDecisionBlock } from '@/components/page/PremiumPageSections';
 const pageUrl = 'https://www.bionixus.com/uae-pharmaceutical-market-research';
 const faqItems = [
   {
+    question: 'What is pharma market research in the UAE?',
+    answer:
+      'Pharma market research in the UAE is evidence generation for drug launch, access, and lifecycle decisions across DHA, DOH, and MOHAP contexts. BioNixus focuses on physician behavior, payer and formulary dynamics, and institution-level adoption so teams can prioritize Dubai, Abu Dhabi, and Northern Emirates execution.',
+  },
+  {
     question: 'Why does UAE pharmaceutical research need emirate-specific design?',
     answer:
       'Decision pathways differ across DHA, DOH, and MOHAP contexts. Emirate-specific design improves relevance for pricing, reimbursement, and launch sequencing decisions.',
@@ -29,8 +34,8 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'Pharma Market Research Company in UAE',
-    serviceType: 'UAE pharmaceutical market research',
+    name: 'Pharma market research in UAE',
+    serviceType: 'Pharmaceutical and healthcare market research in the United Arab Emirates',
     areaServed: {
       '@type': 'Country',
       name: 'United Arab Emirates',
@@ -52,10 +57,10 @@ export default function UaePharmaceuticalMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Pharma Market Research Company in UAE | BioNixus</title>
+        <title>Pharma Market Research in UAE | Healthcare & Pharmaceutical Company | BioNixus</title>
         <meta
           name="description"
-          content="BioNixus is a pharma market research company in UAE delivering emirate-level evidence for pricing, access, physician pathways, and launch execution."
+          content="Pharma market research in the UAE and healthcare market research for Dubai and Abu Dhabi: BioNixus delivers emirate-aware DHA, DOH, and MOHAP evidence for pricing, access, physician pathways, and launch."
         />
         <link rel="canonical" href={pageUrl} />
         {jsonLd.map((schema, index) => (
@@ -71,7 +76,15 @@ export default function UaePharmaceuticalMarketResearch() {
           <div className="container-wide max-w-5xl mx-auto">
             <h1 className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-4">Pharma Market Research Company in UAE</h1>
             <p className="text-muted-foreground leading-relaxed mb-5">
-              UAE research execution requires emirate-aware design across DHA, DOH, and MOHAP pathways. This page supports the Middle East pillar with UAE-specific planning depth.
+              UAE research execution requires emirate-aware design across DHA, DOH, and MOHAP pathways. For broader{' '}
+              <Link to="/market-research-uae" className="text-primary underline">
+                market research in the UAE
+              </Link>{' '}
+              and the{' '}
+              <Link to="/healthcare-market-research/uae" className="text-primary underline">
+                healthcare market research UAE hub
+              </Link>
+              , use those pages alongside this pharma-focused route.
             </p>
             <ExecutiveDecisionBlock
               heading="UAE decision framework for leadership teams"
@@ -95,6 +108,14 @@ export default function UaePharmaceuticalMarketResearch() {
               <li>Payer and institutional access barriers mapped for launch planning.</li>
               <li>Evidence translation for commercial and market access teams.</li>
             </ul>
+            <div className="mt-6 rounded-xl border border-border bg-muted/20 p-5">
+              <h2 className="text-lg font-semibold text-foreground mb-2">Healthcare market research in the UAE</h2>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Healthcare market research in the UAE spans hospitals, payers, pharmacies, and specialist networks. BioNixus
+                aligns pharma programs with that wider system view so access and clinical narratives stay consistent
+                across stakeholders.
+              </p>
+            </div>
             <div className="mt-6 rounded-xl border border-border bg-card p-5">
               <h2 className="text-lg font-semibold text-foreground mb-2">Company-intent execution focus</h2>
               <p className="text-sm text-muted-foreground leading-relaxed">

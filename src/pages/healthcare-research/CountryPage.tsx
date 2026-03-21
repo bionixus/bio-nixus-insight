@@ -142,8 +142,8 @@ export default function CountryPage() {
   return (
     <main>
       <SEOHead
-        title={`Pharmaceutical Market Research in ${config.name} | BioNixus`}
-        description={config.ogDescription}
+        title={config.metaTitle ?? `Pharmaceutical Market Research in ${config.name} | BioNixus`}
+        description={config.metaDescription ?? config.ogDescription}
         canonical={`/healthcare-market-research/${config.slug}`}
         jsonLd={buildCountryPageSchemas(config)}
       />
@@ -160,12 +160,30 @@ export default function CountryPage() {
         <div className="container-wide max-w-5xl mx-auto">
           <h1 className="text-4xl font-display font-semibold mb-4">{heroHeading}</h1>
           <p className="text-lg text-primary-foreground/90 leading-relaxed max-w-4xl">
-            BioNixus supports evidence-led market decisions in {config.name} through localized research design,
-            stakeholder mapping, and actionable insight synthesis. Explore the full regional framework in our{' '}
-            <Link to="/healthcare-market-research" className="underline font-semibold">
-              healthcare market research hub
-            </Link>{' '}
-            before drilling into country-level execution priorities.
+            {config.slug === 'uae' ? (
+              <>
+                BioNixus supports healthcare market research in the UAE and pharma market research in the UAE through
+                localized research design, stakeholder mapping, and actionable insight synthesis. Explore the full regional
+                framework in our{' '}
+                <Link to="/healthcare-market-research" className="underline font-semibold">
+                  healthcare market research hub
+                </Link>{' '}
+                and the dedicated{' '}
+                <Link to="/market-research-uae" className="underline font-semibold">
+                  market research in the UAE
+                </Link>{' '}
+                page before drilling into country-level execution priorities.
+              </>
+            ) : (
+              <>
+                BioNixus supports evidence-led market decisions in {config.name} through localized research design,
+                stakeholder mapping, and actionable insight synthesis. Explore the full regional framework in our{' '}
+                <Link to="/healthcare-market-research" className="underline font-semibold">
+                  healthcare market research hub
+                </Link>{' '}
+                before drilling into country-level execution priorities.
+              </>
+            )}
           </p>
         </div>
       </section>

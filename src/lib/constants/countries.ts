@@ -22,6 +22,10 @@ export interface CountryConfig {
   keyStats: CountryKeyStat[];
   faqQuestions: CountryFAQItem[];
   isCity?: boolean;
+  /** When set, overrides default Pharmaceutical title pattern for SEO (e.g. UAE keyword targets). */
+  metaTitle?: string;
+  /** When set, overrides ogDescription for <meta name="description">. */
+  metaDescription?: string;
 }
 
 export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
@@ -79,6 +83,9 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     slug: 'uae',
     region: 'mena',
     metaSuffix: 'UAE pharmaceutical insights across Abu Dhabi, Dubai, and Sharjah healthcare systems.',
+    metaTitle: 'Healthcare Market Research in UAE | Pharma & Pharmaceutical | BioNixus',
+    metaDescription:
+      'Healthcare market research in the UAE and pharma market research for Dubai, Abu Dhabi, and Northern Emirates: DHA, DOH, and MOHAP-aware physician, payer, and hospital evidence by BioNixus.',
     ogDescription:
       'BioNixus provides UAE pharmaceutical market research with DOH and MOHAP context, multilingual field execution, and access to major hospital networks.',
     h1: 'Pharmaceutical Market Research in the UAE',

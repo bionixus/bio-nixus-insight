@@ -183,6 +183,7 @@ async function startServer() {
   const REDIRECTS = {
     '/healthcare-market-research-saudi-arabia': '/healthcare-market-research/saudi-arabia',
     '/healthcare-market-research-uae': '/healthcare-market-research/uae',
+    '/healthcare-market-research-in-uae': '/healthcare-market-research/uae',
     '/healthcare-market-research-kuwait': '/healthcare-market-research/kuwait',
     '/healthcare-market-research-uk': '/healthcare-market-research/uk',
     '/healthcare-market-research-europe': '/healthcare-market-research/europe',
@@ -212,6 +213,8 @@ async function startServer() {
     '/fr/services': '/services',
     '/fr/success-in-startups': '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
     '/market-research-customer-insight': '/market-research',
+    '/market-research-in-uae': '/market-research-uae',
+    '/pharma-market-research-in-uae': '/uae-pharmaceutical-market-research',
     '/market-research-home': '/market-research',
     '/market-research-methods-simplified-how-to-understand-your-customers-like-marvel': '/methodology',
     '/page': '/',

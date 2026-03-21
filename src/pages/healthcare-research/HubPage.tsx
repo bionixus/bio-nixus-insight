@@ -136,13 +136,19 @@ export default function HubPage() {
             Global healthcare and pharmaceutical market research priorities
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-4 max-w-4xl">
-            Teams searching for pharmaceutical market research and healthcare market research need one framework that connects
-            country evidence, market access planning, and commercial activation. Use these high-intent pages to move from
-            broad strategy to proposal-ready execution.
+            Teams searching for pharmaceutical market research, healthcare market research, and market research in the UAE
+            need one framework that connects country evidence, market access planning, and commercial activation. Use these
+            high-intent pages to move from broad strategy to proposal-ready execution.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
             <Link to="/market-research-uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              Market research UAE for healthcare and pharma
+              Market research in UAE — healthcare and pharmaceutical
+            </Link>
+            <Link
+              to="/healthcare-market-research/uae"
+              className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
+            >
+              Healthcare market research in UAE (country hub)
             </Link>
             <Link to="/market-research-ksa" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
               Market research KSA for launch and access planning
@@ -157,7 +163,7 @@ export default function HubPage() {
               Pharma market research company in Saudi Arabia
             </Link>
             <Link to="/uae-pharmaceutical-market-research" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              Pharma market research company in UAE
+              Pharma market research in UAE — company page
             </Link>
             <Link to="/bionixus-market-research-middle-east" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
               Pharmaceutical market research in Middle East
