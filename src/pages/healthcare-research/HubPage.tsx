@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useInitialData } from '@/App';
+import { useInitialData } from '@/contexts/InitialDataContext';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';

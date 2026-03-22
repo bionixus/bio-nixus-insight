@@ -1,6 +1,13 @@
 import { COUNTRY_CONFIGS } from '@/lib/constants/countries';
 import { sanityServer } from '@/lib/sanity-server';
 import { fetchCaseStudies } from '@/lib/sanity-case-studies';
+import {
+  fetchSanityPostBySlugWithClient,
+  fetchSanityPostsWithClient,
+  fetchRelatedPostsWithClient,
+  type RelatedPostsData,
+} from '@/lib/sanity-blog';
+import type { BlogPost } from '@/types/blog';
 
 const THERAPY_AREAS = ['oncology', 'diabetes', 'respiratory', 'immunology', 'biologics', 'vaccines'];
 const SERVICES = [
@@ -113,6 +120,55 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
     return {
       pageType: 'case-studies',
       caseStudies,
+    };
+  }
+
+  const blogIndexPaths = new Set([
+    '/blog',
+    '/blog/',
+    '/de/blog',
+    '/de/blog/',
+    '/fr/blog',
+    '/fr/blog/',
+  ]);
+  if (blogIndexPaths.has(path)) {
+    let blogPosts: BlogPost[] = [];
+    try {
+      blogPosts = await fetchSanityPostsWithClient(sanityServer);
+    } catch {
+      blogPosts = [];
+    }
+    return {
+      pageType: 'blog-index',
+      blogPosts,
+    };
+  }
+
+  const blogPostMatch = path.match(/^\/blog\/([^/]+)\/?$/);
+  if (blogPostMatch) {
+    const slug = decodeURIComponent(blogPostMatch[1]);
+    let blogPost: BlogPost | null = null;
+    let relatedPosts: RelatedPostsData = { related: [], prev: null, next: null };
+    try {
+      blogPost = await fetchSanityPostBySlugWithClient(slug, sanityServer);
+      if (blogPost) {
+        relatedPosts = await fetchRelatedPostsWithClient(
+          slug,
+          blogPost.category,
+          blogPost.publishedAtIso || blogPost.date,
+          blogPost.country,
+          blogPost.tags ?? [],
+          sanityServer,
+        );
+      }
+    } catch {
+      blogPost = null;
+    }
+    return {
+      pageType: 'blog-post',
+      blogSlug: slug,
+      blogPost,
+      relatedPosts,
     };
   }
 

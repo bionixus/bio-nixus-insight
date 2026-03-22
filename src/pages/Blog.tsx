@@ -6,6 +6,8 @@ import Footer from '@/components/Footer';
 import BlogSection from '@/components/BlogSection';
 import { useSanityBlog } from '@/hooks/useSanityBlog';
 import { blogRecoveryPaths } from '@/lib/internalLinkRecovery';
+import { useInitialData } from '@/contexts/InitialDataContext';
+import type { BlogPost } from '@/types/blog';
 
 const blogCollectionSchema = {
   '@context': 'https://schema.org',
@@ -30,7 +32,12 @@ const blogBreadcrumbSchema = {
 };
 
 const Blog = () => {
-  const { data: posts, isLoading, isError, error } = useSanityBlog();
+  const { data: routeData } = useInitialData();
+  const ssrPosts =
+    routeData.pageType === 'blog-index' && Array.isArray(routeData.blogPosts)
+      ? (routeData.blogPosts as BlogPost[])
+      : undefined;
+  const { data: posts, isLoading, isError, error } = useSanityBlog(ssrPosts);
   const { pathname } = useLocation();
   const isGerman = pathname.startsWith('/de/');
   const isFrench = pathname.startsWith('/fr/');

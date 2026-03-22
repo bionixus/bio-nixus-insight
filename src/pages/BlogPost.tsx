@@ -1,10 +1,10 @@
 import { useParams, Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
-import DOMPurify from 'dompurify';
+import DOMPurify from 'isomorphic-dompurify';
 import { PortableText } from '@portabletext/react';
 import type { PortableTextBlock } from '@portabletext/types';
 import { Helmet } from 'react-helmet-async';
-import { fetchSanityPostBySlug } from '@/lib/sanity-blog';
+import { fetchSanityPostBySlug, type RelatedPostsData } from '@/lib/sanity-blog';
 import { optimizeSanityImage } from '@/lib/image-utils';
 import { buildSeoDescription, normalizeSeoTitle } from '@/lib/seo-meta';
 import RelatedPosts from '@/components/RelatedPosts';
@@ -170,6 +170,7 @@ function sanitizeBodyHtml(html: string): string {
 
 import { isSanityConfigured } from '@/lib/sanity';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useInitialData } from '@/contexts/InitialDataContext';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { ArrowLeft, BarChart3, CheckCircle2, ShieldCheck, TrendingUp } from 'lucide-react';
@@ -437,13 +438,25 @@ function getExecutiveSummaryToRender(
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const { t, language } = useLanguage();
+  const { data: routeData } = useInitialData();
   const isGccPharma2026 = slug === GCC_PHARMA_2026_SLUG;
+
+  const ssrBlogBundle =
+    Boolean(slug) &&
+    routeData.pageType === 'blog-post' &&
+    routeData.blogSlug === slug;
 
   const { data: sanityPost, isLoading, isError } = useQuery({
     queryKey: ['sanity-post', slug],
     queryFn: () => fetchSanityPostBySlug(slug!),
-    enabled: Boolean(slug) && isSanityConfigured(),
+    enabled: Boolean(slug) && (isSanityConfigured() || ssrBlogBundle),
+    initialData: ssrBlogBundle ? (routeData.blogPost as BlogPostType | null) : undefined,
   });
+
+  const initialRelated: RelatedPostsData | undefined =
+    ssrBlogBundle && routeData.relatedPosts
+      ? (routeData.relatedPosts as RelatedPostsData)
+      : undefined;
 
   // Resolve fallback post (e.g. fallback-0, fallback-1) from i18n
   const fallbackPost: BlogPostType | null =
@@ -850,9 +863,10 @@ const BlogPost = () => {
           <RelatedPosts
             currentSlug={slug!}
             category={post.category}
-            date={post.date}
+            date={post.publishedAtIso || post.date}
             country={post.country}
             tags={post.tags}
+            initialRelated={initialRelated}
           />
         </div>
       </main>

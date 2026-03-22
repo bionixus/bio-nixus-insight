@@ -3,6 +3,7 @@
  * Uses "blogPost" as the single source of truth.
  */
 
+import type { SanityClient } from '@sanity/client';
 import { getSanityClient } from './sanity';
 import type { BlogPost } from '@/types/blog';
 import { hardcodedSeoPosts, getHardcodedPostBySlug } from '@/data/blog-posts-index';
@@ -190,12 +191,10 @@ export async function checkSanityConnection(): Promise<{ ok: true } | { ok: fals
   }
 }
 
-export async function fetchSanityPosts(): Promise<BlogPost[]> {
+export async function fetchSanityPostsWithClient(client: SanityClient): Promise<BlogPost[]> {
   try {
-    const client = getSanityClient();
     const raw = await client.fetch<RawSanityPost[]>(POSTS_QUERY);
     const sanityPosts = raw.map((p) => mapRawToPost(p)!).filter(Boolean);
-    // Merge sanity posts with hardcoded posts, avoiding duplicates based on slug
     const sanitySlugs = new Set(sanityPosts.map((p) => p.slug));
     const newHardcoded = hardcodedSeoPosts.filter((p) => !sanitySlugs.has(p.slug));
     return [...sanityPosts, ...newHardcoded];
@@ -203,6 +202,10 @@ export async function fetchSanityPosts(): Promise<BlogPost[]> {
     console.error('Failed to fetch from Sanity CMS, fallback to hardcoded posts', err);
     return [...hardcodedSeoPosts];
   }
+}
+
+export async function fetchSanityPosts(): Promise<BlogPost[]> {
+  return fetchSanityPostsWithClient(getSanityClient());
 }
 
 export async function fetchSanityLatestInsights(language: string, limit = 3): Promise<BlogPost[]> {
@@ -238,16 +241,17 @@ export async function fetchSanityLatestInsights(language: string, limit = 3): Pr
   }
 }
 
-export async function fetchSanityPostBySlug(slug: string): Promise<BlogPost | null> {
+export async function fetchSanityPostBySlugWithClient(
+  slug: string,
+  client: SanityClient,
+): Promise<BlogPost | null> {
   const hardcodedFallback = getHardcodedPostBySlug(slug);
 
   try {
-    const client = getSanityClient();
     const raw = await client.fetch<RawSanityPost | null>(POST_BY_SLUG_QUERY, { slug });
     const mapped = mapRawToPost(raw, true);
     if (mapped) return mapped;
 
-    // If not found in Sanity but available in hardcoded fallback
     if (hardcodedFallback) return hardcodedFallback;
     return null;
   } catch (err) {
@@ -255,6 +259,10 @@ export async function fetchSanityPostBySlug(slug: string): Promise<BlogPost | nu
     if (hardcodedFallback) return hardcodedFallback;
     return null;
   }
+}
+
+export async function fetchSanityPostBySlug(slug: string): Promise<BlogPost | null> {
+  return fetchSanityPostBySlugWithClient(slug, getSanityClient());
 }
 
 /**
@@ -298,15 +306,15 @@ export interface RelatedPostsData {
   next: { slug: string; title: string } | null;
 }
 
-export async function fetchRelatedPosts(
+export async function fetchRelatedPostsWithClient(
   slug: string,
   category: string,
   date: string,
-  country?: string,
-  tags: string[] = []
+  country: string | undefined,
+  tags: string[],
+  client: SanityClient,
 ): Promise<RelatedPostsData> {
   try {
-    const client = getSanityClient();
     const raw = await client.fetch<{
       byTags: RawSanityPost[];
       byCategory: RawSanityPost[];
@@ -322,7 +330,6 @@ export async function fetchRelatedPosts(
       date: date || '',
     });
 
-    // Priority: same tags > same category > same country > latest posts. Deduplicate & limit to 5.
     const seen = new Set<string>();
     const merged: BlogPost[] = [];
     for (const pool of [raw.byTags, raw.byCategory, raw.byCountry, raw.latest]) {
@@ -344,6 +351,16 @@ export async function fetchRelatedPosts(
   } catch {
     return { related: [], prev: null, next: null };
   }
+}
+
+export async function fetchRelatedPosts(
+  slug: string,
+  category: string,
+  date: string,
+  country?: string,
+  tags: string[] = [],
+): Promise<RelatedPostsData> {
+  return fetchRelatedPostsWithClient(slug, category, date, country, tags, getSanityClient());
 }
 
 function formatDate(iso: string | undefined): string {

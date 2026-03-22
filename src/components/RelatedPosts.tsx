@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
-import { fetchRelatedPosts } from '@/lib/sanity-blog';
+import { fetchRelatedPosts, type RelatedPostsData } from '@/lib/sanity-blog';
 import { isSanityConfigured } from '@/lib/sanity';
 import { optimizeSanityImage } from '@/lib/image-utils';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
@@ -29,6 +29,8 @@ interface RelatedPostsProps {
   date: string;
   country?: string;
   tags?: string[];
+  /** From Express SSR (`fetchRouteData`) so related links appear in initial HTML */
+  initialRelated?: RelatedPostsData;
 }
 
 /* ─── Single related-post card ─── */
@@ -85,12 +87,21 @@ function PostCard({ post, index }: { post: BlogPost; index: number }) {
 }
 
 /* ─── Main component ─── */
-const RelatedPosts = ({ currentSlug, category, date, country, tags }: RelatedPostsProps) => {
+const RelatedPosts = ({
+  currentSlug,
+  category,
+  date,
+  country,
+  tags,
+  initialRelated,
+}: RelatedPostsProps) => {
+  const hasSsrRelated = initialRelated != null;
   const { data } = useQuery({
     queryKey: ['related-posts', currentSlug, category, country, tags?.join('|') || ''],
     queryFn: () => fetchRelatedPosts(currentSlug, category, date, country, tags || []),
-    enabled: isSanityConfigured() && Boolean(currentSlug),
+    enabled: Boolean(currentSlug) && (isSanityConfigured() || hasSsrRelated),
     staleTime: 60 * 1000,
+    initialData: initialRelated,
   });
 
   // Pass data length as key so the observer re-runs when async content loads

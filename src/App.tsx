@@ -1,4 +1,4 @@
-import { Component, lazy, Suspense, createContext, useContext, useEffect, useState, type ReactNode } from 'react';
+import { Component, lazy, Suspense, useEffect, useState, type ReactNode } from 'react';
 import { useRoutes } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { TooltipProvider } from '@/components/ui/tooltip';
@@ -13,6 +13,7 @@ import GA4EventTracker from '@/components/GA4EventTracker';
 import LocalePrompt from '@/components/LocalePrompt';
 import CookieConsent from '@/components/CookieConsent';
 import { routes } from '@/routes';
+import { InitialDataProvider } from '@/contexts/InitialDataContext';
 
 const LazyStatsigInit = lazy(() =>
   import('@/components/StatsigInit').catch(() => ({ default: () => null }))
@@ -24,16 +25,6 @@ const LazyVercelAnalytics = lazy(() =>
 );
 
 const queryClient = new QueryClient();
-
-interface InitialDataContextType {
-  data: Record<string, unknown>;
-}
-
-const InitialDataContext = createContext<InitialDataContextType>({ data: {} });
-
-export function useInitialData() {
-  return useContext(InitialDataContext);
-}
 
 class SilentBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
   state = { failed: false };
@@ -90,8 +81,8 @@ interface AppProps {
 export default function App({ initialData = {} }: AppProps) {
   const element = useRoutes(routes);
   return (
-    <InitialDataContext.Provider value={{ data: initialData }}>
+    <InitialDataProvider value={initialData}>
       <AppProviders>{element}</AppProviders>
-    </InitialDataContext.Provider>
+    </InitialDataProvider>
   );
 }

@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, Lock, Clock, FlaskConical, Globe, Users, TrendingUp, Star } from 'lucide-react';
-import { useInitialData } from '@/App';
+import { useInitialData } from '@/contexts/InitialDataContext';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';

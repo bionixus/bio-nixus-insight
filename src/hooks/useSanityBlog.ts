@@ -3,16 +3,19 @@ import { useQuery } from '@tanstack/react-query';
 import { fetchSanityLatestInsights, fetchSanityPosts } from '@/lib/sanity-blog';
 import { isSanityConfigured } from '@/lib/sanity';
 import { useLanguage } from '@/contexts/LanguageContext';
+import type { BlogPost } from '@/types/blog';
 
 /** Returns posts filtered by current site language. Posts with no language set are shown in all locales. */
-export function useSanityBlog() {
+export function useSanityBlog(ssrPosts?: BlogPost[] | null) {
   const { language } = useLanguage();
+  const hasSsrIndex = Array.isArray(ssrPosts);
 
   const query = useQuery({
     queryKey: ['sanity-blog', language],
     queryFn: fetchSanityPosts,
-    enabled: isSanityConfigured(),
+    enabled: isSanityConfigured() || hasSsrIndex,
     staleTime: 60 * 1000, // 1 minute
+    initialData: hasSsrIndex ? ssrPosts! : undefined,
   });
 
   // Filter by language, then ensure sorted by publish date (newest first)

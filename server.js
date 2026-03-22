@@ -326,7 +326,11 @@ async function startServer() {
         render = serverMod.render;
         fetchRouteData = serverMod.fetchRouteData;
       } else {
-        template = fs.readFileSync(path.resolve(__dirname, 'dist/client/index.html'), 'utf-8');
+        const distClient = path.resolve(__dirname, 'dist/client');
+        const ssrTemplate = path.join(distClient, '_ssr-template.html');
+        const indexHtml = path.join(distClient, 'index.html');
+        const templateFile = fs.existsSync(ssrTemplate) ? ssrTemplate : indexHtml;
+        template = fs.readFileSync(templateFile, 'utf-8');
 
         const serverMod = await import('./dist/server/server-entry.js');
         render = serverMod.render;
