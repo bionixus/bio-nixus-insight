@@ -42,7 +42,7 @@ export default defineConfig(({ mode, isSsrBuild }) => ({
               sanity: ['@sanity/client', '@sanity/image-url', '@portabletext/react'],
               charts: ['recharts'],
               query: ['@tanstack/react-query'],
-              dompurify: ['dompurify'],
+              'sanitize-html': ['sanitize-html'],
               icons: ['lucide-react'],
               helmet: ['react-helmet-async'],
               statsig: [

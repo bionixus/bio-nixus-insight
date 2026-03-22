@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
-import DOMPurify from 'isomorphic-dompurify';
+import { sanitizeBodyHtml } from '@/lib/sanitize-body-html';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import {
@@ -19,18 +19,6 @@ import 'react-pdf/dist/Page/TextLayer.css';
 const pdfVersion = (pdfjs as { version?: string }).version ?? '5.4.296';
 if (typeof window !== 'undefined' && pdfjs.GlobalWorkerOptions) {
   pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfVersion}/build/pdf.worker.min.mjs`;
-}
-
-function sanitizeBodyHtml(html: string): string {
-  return DOMPurify.sanitize(html, {
-    ADD_ATTR: ['class', 'style'],
-    ALLOWED_TAGS: [
-      'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'div', 'span', 'br', 'hr',
-      'ul', 'ol', 'li', 'strong', 'em', 'b', 'i', 'a', 'blockquote',
-      'table', 'thead', 'tbody', 'tr', 'th', 'td', 'sub', 'sup',
-    ],
-    ALLOW_DATA_ATTR: false,
-  });
 }
 
 const FREE_SLIDES_COUNT = 3;

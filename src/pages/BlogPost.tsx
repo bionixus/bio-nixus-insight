@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
-import DOMPurify from 'isomorphic-dompurify';
+import { sanitizeBodyHtml } from '@/lib/sanitize-body-html';
 import { PortableText } from '@portabletext/react';
 import type { PortableTextBlock } from '@portabletext/types';
 import { Helmet } from 'react-helmet-async';
@@ -97,7 +97,7 @@ function portableTextToPlainString(blocks: PortableTextBlock[]): string {
     .join('\n')
 }
 
-/** Render string body as HTML (sanitized). Safe for plain text too – DOMPurify escapes it. */
+/** Render string body as HTML (sanitized). Plain text is escaped by the sanitizer. */
 function renderStringBody(body: string) {
   const sanitized = sanitizeBodyHtml(body);
   return (
@@ -154,19 +154,6 @@ const UAE_GUIDE_BODY_HTML = `<p>The United Arab Emirates has emerged as the heal
 </ul>
 
 <p>BioNixus supports pharmaceutical and life sciences clients with end-to-end healthcare market research across UAE, Saudi Arabia, Egypt, and the wider MENA region—from study design and fieldwork to analysis and strategic recommendations.</p>`
-
-/** Sanitize HTML for blog body: allow common content tags, id/class/style for headings and links */
-function sanitizeBodyHtml(html: string): string {
-  return DOMPurify.sanitize(html, {
-    ADD_ATTR: ['class', 'style', 'id'],
-    ALLOWED_TAGS: [
-      'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'div', 'span', 'br', 'hr',
-      'ul', 'ol', 'li', 'strong', 'em', 'b', 'i', 'a', 'blockquote',
-      'table', 'thead', 'tbody', 'tr', 'th', 'td', 'sub', 'sup',
-    ],
-    ALLOW_DATA_ATTR: false,
-  });
-}
 
 import { isSanityConfigured } from '@/lib/sanity';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -721,7 +708,7 @@ const BlogPost = () => {
                   </h2>
                   <div className="prose-body text-foreground leading-relaxed">
                     {typeof executiveSummary === 'string' ? (
-                      <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(executiveSummary) }} />
+                      <div dangerouslySetInnerHTML={{ __html: sanitizeBodyHtml(executiveSummary) }} />
                     ) : (
                       <PortableText
                         value={executiveSummary as PortableTextBlock[]}
