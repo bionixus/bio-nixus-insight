@@ -9,27 +9,35 @@ import { blogRecoveryPaths } from '@/lib/internalLinkRecovery';
 import { useInitialData } from '@/contexts/InitialDataContext';
 import type { BlogPost } from '@/types/blog';
 
-const blogCollectionSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'CollectionPage',
-  name: 'Healthcare Market Research Blog',
-  description: 'Expert insights on pharmaceutical market research, market access, and healthcare intelligence across Europe and MENA.',
-  url: 'https://www.bionixus.com/blog',
-  publisher: {
-    '@type': 'Organization',
-    name: 'BioNixus',
-    url: 'https://www.bionixus.com',
-  },
-};
+function buildBlogCollectionSchema(
+  canonical: string,
+  name: string,
+  description: string,
+) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name,
+    description,
+    url: canonical,
+    publisher: {
+      '@type': 'Organization',
+      name: 'BioNixus',
+      url: 'https://www.bionixus.com',
+    },
+  };
+}
 
-const blogBreadcrumbSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com' },
-    { '@type': 'ListItem', position: 2, name: 'Blog' },
-  ],
-};
+function buildBlogBreadcrumbSchema(canonical: string, blogLabel: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' },
+      { '@type': 'ListItem', position: 2, name: blogLabel, item: canonical },
+    ],
+  };
+}
 
 const Blog = () => {
   const { data: routeData } = useInitialData();
@@ -59,6 +67,9 @@ const Blog = () => {
       ? 'Cette page blog met en avant des analyses actionnables pour les équipes pharma en France, en Europe et en MENA.'
       : 'This blog index highlights practical insights for healthcare and pharma teams across Europe and MENA.';
 
+  const collectionSchema = buildBlogCollectionSchema(canonical, title, description);
+  const breadcrumbSchema = buildBlogBreadcrumbSchema(canonical, 'Blog');
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
@@ -75,8 +86,8 @@ const Blog = () => {
         <meta name="twitter:site" content="@BioNixus" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <script type="application/ld+json">{JSON.stringify(blogCollectionSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(blogBreadcrumbSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(collectionSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
       <Navbar />
       <main>

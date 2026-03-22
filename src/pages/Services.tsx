@@ -46,6 +46,30 @@ const services = [
   },
 ];
 
+const servicesHubJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Healthcare Market Research Services',
+  description:
+    'Quantitative physician surveys, qualitative KOL research, market access, competitive intelligence, clinical trial support, and stakeholder mapping across EMEA and MENA.',
+  url: 'https://www.bionixus.com/services',
+  publisher: {
+    '@type': 'Organization',
+    name: 'BioNixus',
+    url: 'https://www.bionixus.com',
+  },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: services.length,
+    itemListElement: services.map((svc, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: svc.title,
+      url: `https://www.bionixus.com/services/${svc.slug}`,
+    })),
+  },
+};
+
 const Services = () => {
   const { language } = useLanguage();
   const basePath = languagePaths[language] || '/';
@@ -59,6 +83,7 @@ const Services = () => {
           content="BioNixus provides comprehensive healthcare market research services: quantitative physician surveys, qualitative KOL interviews, market access consulting, competitive intelligence, clinical trial support, and stakeholder mapping across 17+ EMEA countries."
         />
         <link rel="canonical" href="https://www.bionixus.com/services" />
+        <script type="application/ld+json">{JSON.stringify(servicesHubJsonLd)}</script>
       </Helmet>
       <Navbar />
       <main>

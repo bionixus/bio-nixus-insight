@@ -131,9 +131,19 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
     );
   }
 
-  if (path === '/blog' || path === '/de/blog' || path === '/fr/blog') {
+  if (path === '/blog') {
     return clampDescription(
       'Read BioNixus healthcare and pharmaceutical market research insights on market access, physician behavior, Saudi Arabia strategy, and regional trends.'
+    );
+  }
+  if (path === '/de/blog') {
+    return clampDescription(
+      'BioNixus Markt-Insights: pharmazeutische Marktforschung, Marktzugang, Klinikstudien und Healthcare-Strategie für DACH und EMEA.'
+    );
+  }
+  if (path === '/fr/blog') {
+    return clampDescription(
+      'Insights BioNixus : études de marché pharma et santé, market access, essais cliniques et stratégie pour la France et l’EMEA.'
     );
   }
 
