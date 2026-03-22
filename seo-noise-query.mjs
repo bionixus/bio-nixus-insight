@@ -60,3 +60,17 @@ export function canonicalRedirectTarget(input) {
   }
   return { full, changed, original };
 }
+
+/**
+ * True when SSR output is the app NotFound route (must return HTTP 404, not 200).
+ * Helmet attribute order varies; avoid brittle substring checks to prevent soft-404 in GSC.
+ * @param {string} headTags
+ * @param {string} appHtml
+ */
+export function isSsrNotFoundPage(headTags, appHtml) {
+  if (typeof appHtml === 'string' && appHtml.includes('data-route-status="404"')) return true;
+  const h = typeof headTags === 'string' ? headTags : '';
+  if (/name=["']prerender-status["'][^>]*\bcontent=["']404["']/i.test(h)) return true;
+  if (/\bcontent=["']404["'][^>]*name=["']prerender-status["']/i.test(h)) return true;
+  return false;
+}

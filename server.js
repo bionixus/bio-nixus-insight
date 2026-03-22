@@ -3,7 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import express from 'express';
 import compression from 'compression';
-import { canonicalRedirectTarget } from './seo-noise-query.mjs';
+import { canonicalRedirectTarget, isSsrNotFoundPage } from './seo-noise-query.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === 'production';
@@ -218,6 +218,8 @@ async function startServer() {
     '/digital-transformation': '/services',
     '/fr/about': '/about',
     '/fr/services': '/services',
+    '/fr/quantitative-research': '/services/quantitative-research',
+    '/fr/qualitative-research': '/services/qualitative-research',
     '/fr/success-in-startups': '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
     '/market-research-customer-insight': '/market-research',
     '/market-research-in-uae': '/market-research-uae',
@@ -347,13 +349,7 @@ async function startServer() {
         helmetData?.script?.toString() || '',
       ].join('\n');
 
-      let statusCode = 200;
-      if (
-        (headTags.includes('name="prerender-status"') && headTags.includes('content="404"'))
-        || appHtml.includes('data-route-status="404"')
-      ) {
-        statusCode = 404;
-      }
+      const statusCode = isSsrNotFoundPage(headTags, appHtml) ? 404 : 200;
 
       const page = template
         .replace('<!--ssr-head-->', headTags)

@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { canonicalRedirectTarget } from '../seo-noise-query.mjs';
+import { canonicalRedirectTarget, isSsrNotFoundPage } from '../seo-noise-query.mjs';
 
 type HelmetLike = {
   title?: { toString: () => string };
@@ -57,6 +57,8 @@ const REDIRECTS: Record<string, string> = {
   '/digital-transformation': '/services',
   '/fr/about': '/about',
   '/fr/services': '/services',
+  '/fr/quantitative-research': '/services/quantitative-research',
+  '/fr/qualitative-research': '/services/qualitative-research',
   '/fr/success-in-startups': '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
   '/market-research-customer-insight': '/market-research',
   '/market-research-in-uae': '/market-research-uae',
@@ -369,14 +371,12 @@ async function handleSsrRequest(
     helmetData?.link?.toString() || '',
     helmetData?.script?.toString() || '',
   ].join('\n');
-  const isNotFoundPage =
-    (headTags.includes('name="prerender-status"') && headTags.includes('content="404"'))
-    || appHtml.includes('data-route-status="404"');
+  const notFound = isSsrNotFoundPage(headTags, appHtml);
   const page = injectHtml(template, pathname, appHtml, helmetData, initialData);
 
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
   res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=60, stale-while-revalidate=300');
-  res.status(isNotFoundPage ? 404 : 200).send(page);
+  res.status(notFound ? 404 : 200).send(page);
 }
 
 export default async function handler(
