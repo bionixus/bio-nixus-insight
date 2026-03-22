@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import express from 'express';
 import compression from 'compression';
+import { canonicalRedirectTarget } from './seo-noise-query.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === 'production';
@@ -186,7 +187,6 @@ async function startServer() {
   const app = express();
   app.use(compression());
   const CANONICAL_HOST = 'www.bionixus.com';
-  const LOCALE_ROOT_WITH_SLASH = new Set(['/de/', '/fr/', '/es/', '/zh/', '/ar/']);
   const REDIRECTS = {
     '/healthcare-market-research-saudi-arabia': '/healthcare-market-research/saudi-arabia',
     '/healthcare-market-research-uae': '/healthcare-market-research/uae',
@@ -300,10 +300,10 @@ async function startServer() {
 
   app.use(async (req, res, next) => {
     try {
-      if (req.path !== '/' && req.path.endsWith('/') && !LOCALE_ROOT_WITH_SLASH.has(req.path)) {
-        const trimmedPath = req.path.slice(0, -1);
-        const suffix = req.originalUrl.slice(req.path.length);
-        res.redirect(301, `${trimmedPath}${suffix}`);
+      const rawPathAndQuery = (req.originalUrl || req.url || '/').split('#')[0];
+      const canonical = canonicalRedirectTarget(rawPathAndQuery);
+      if (canonical.changed && canonical.full !== canonical.original) {
+        res.redirect(301, canonical.full);
         return;
       }
 

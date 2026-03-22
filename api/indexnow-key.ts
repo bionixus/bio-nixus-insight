@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { canonicalRedirectTarget } from '../seo-noise-query.mjs';
 
 type HelmetLike = {
   title?: { toString: () => string };
@@ -25,7 +26,6 @@ type RequestLike = {
 
 let templateCache = '';
 let serverEntryCache: ServerEntryModule | null = null;
-const LOCALE_ROOT_WITH_SLASH = new Set(['/de/', '/fr/', '/es/', '/zh/', '/ar/']);
 const REDIRECTS: Record<string, string> = {
   '/healthcare-market-research-saudi-arabia': '/healthcare-market-research/saudi-arabia',
   '/healthcare-market-research-uae': '/healthcare-market-research/uae',
@@ -336,15 +336,22 @@ async function handleSsrRequest(
     ? (rewrittenPath.startsWith('/') ? rewrittenPath : `/${rewrittenPath}`)
     : '';
   const fallbackUrl = req.url || '/';
-  const url = normalizedRewrittenPath || fallbackUrl;
+
+  let url: string;
+  if (normalizedRewrittenPath) {
+    const cr = canonicalRedirectTarget(normalizedRewrittenPath.split('#')[0]);
+    if (cr.changed) {
+      res.setHeader('Cache-Control', 'public, max-age=3600');
+      res.redirect(301, cr.full);
+      return;
+    }
+    url = cr.full;
+  } else {
+    url = fallbackUrl;
+  }
+
   const pathname = url.split('?')[0] || '/';
   const query = url.includes('?') ? `?${url.split('?').slice(1).join('?')}` : '';
-
-  if (pathname !== '/' && pathname.endsWith('/') && !LOCALE_ROOT_WITH_SLASH.has(pathname)) {
-    res.setHeader('Cache-Control', 'public, max-age=3600');
-    res.redirect(301, `${pathname.slice(0, -1)}${query}`);
-    return;
-  }
 
   if (REDIRECTS[pathname]) {
     res.setHeader('Cache-Control', 'public, max-age=3600');
