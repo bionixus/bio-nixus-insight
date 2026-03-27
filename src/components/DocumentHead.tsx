@@ -11,6 +11,18 @@ function cleanPath(pathname: string): string {
   return p === '/' ? '/' : p.replace(/\/+$/, '');
 }
 
+/**
+ * These routes render a full Helmet (title, description, canonical, OG). DocumentHead must not
+ * duplicate them or crawlers see multiple <title> tags (e.g. slug-derived title + CMS title).
+ */
+function routeProvidesOwnDocumentHead(pathname: string): boolean {
+  const path = cleanPath(pathname);
+  if (path === '/blog' || path === '/de/blog' || path === '/fr/blog') return true;
+  if (/^\/blog\/.+/.test(path)) return true;
+  if (/^\/case-studies\/.+/.test(path)) return true;
+  return false;
+}
+
 function slugToWords(value: string): string {
   return value
     .replace(/[-_]+/g, ' ')
@@ -289,6 +301,18 @@ const DocumentHead = () => {
   const contentLanguage = language === 'zh' ? 'zh-CN' : language;
   const gscId = import.meta.env.VITE_GSC_VERIFICATION;
   const hreflangLinks = getHreflangLinks(pathname);
+
+  if (routeProvidesOwnDocumentHead(pathname || '/')) {
+    return (
+      <Helmet>
+        <meta name="llm-access" content="allow" />
+        <meta httpEquiv="content-language" content={contentLanguage} />
+        {gscId ? <meta name="google-site-verification" content={gscId} /> : null}
+        <link rel="dns-prefetch" href="https://cdn.sanity.io" />
+        <link rel="preconnect" href="https://cdn.sanity.io" crossOrigin="" />
+      </Helmet>
+    );
+  }
 
   return (
     <>
