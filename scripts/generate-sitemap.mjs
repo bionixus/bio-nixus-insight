@@ -139,7 +139,6 @@ const staticPages = [
   { path: '/es/methodology', priority: '0.6', changefreq: 'monthly' },
   { path: '/zh/methodology', priority: '0.6', changefreq: 'monthly' },
   { path: '/ar/methodology', priority: '0.6', changefreq: 'monthly' },
-  { path: '/fr/contact', priority: '0.7', changefreq: 'monthly' },
 ];
 
 /** Country slugs with dedicated healthcare hub pages (see src/lib/constants/countries.ts). */
@@ -545,7 +544,8 @@ const STATIC_PAGE_FILES = {
   '/es/methodology': ['src/pages/Methodology.tsx'],
   '/zh/methodology': ['src/pages/Methodology.tsx'],
   '/ar/methodology': ['src/pages/Methodology.tsx'],
-  '/fr/contact': ['src/pages/Contact.tsx'],
+  '/fr/contacts': ['src/pages/Contact.tsx'],
+  '/ar/contacts': ['src/pages/Contact.tsx'],
 };
 
 /** Git lastmod for dynamic healthcare paths (shared source files). */
