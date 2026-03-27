@@ -36,9 +36,9 @@ const MethodologySection = () => {
         ref={sectionRef}
       >
         <div className="container-wide">
-          <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 sr sr-up sr-line sr-line-center">
+          <h1 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 sr sr-up sr-line sr-line-center">
             {dataEn.title}
-          </h2>
+          </h1>
           {dataEn.intro && (
             <p className="text-center text-muted-foreground text-lg max-w-3xl mx-auto mb-10 sr sr-up">
               {dataEn.intro}
@@ -50,9 +50,9 @@ const MethodologySection = () => {
                 key={i}
                 className="step rounded-xl bg-background p-6 md:p-8 shadow-sm border border-border sr sr-left hover-lift"
               >
-                <h3 className="text-lg md:text-xl font-display font-semibold text-foreground mb-3">
+                <h2 className="text-lg md:text-xl font-display font-semibold text-foreground mb-3">
                   {step.title}
-                </h3>
+                </h2>
                 <p className="text-muted-foreground leading-relaxed">
                   {step.description}
                 </p>
@@ -73,9 +73,9 @@ const MethodologySection = () => {
         lang="zh-CN"
       >
         <div className="container-wide">
-          <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up">
+          <h1 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up">
             {dataZh.title}
-          </h2>
+          </h1>
           <div className="methodology-steps space-y-6">
             {dataZh.steps.map((step, i) => (
               <div
@@ -83,9 +83,9 @@ const MethodologySection = () => {
                 className="step rounded-xl bg-background p-6 md:p-8 shadow-sm border border-border animate-fade-up"
                 style={{ animationDelay: `${i * 80}ms` }}
               >
-                <h3 className="text-lg md:text-xl font-display font-semibold text-foreground mb-3">
+                <h2 className="text-lg md:text-xl font-display font-semibold text-foreground mb-3">
                   {step.title}
-                </h3>
+                </h2>
                 <p className="text-muted-foreground leading-relaxed">
                   {step.description}
                 </p>
@@ -106,9 +106,9 @@ const MethodologySection = () => {
         lang="es"
       >
         <div className="container-wide">
-          <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up">
+          <h1 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up">
             {dataEs.title}
-          </h2>
+          </h1>
           <div className="methodology-steps space-y-6">
             {dataEs.steps.map((step, i) => (
               <div
@@ -116,9 +116,9 @@ const MethodologySection = () => {
                 className="step rounded-xl bg-background p-6 md:p-8 shadow-sm border border-border animate-fade-up"
                 style={{ animationDelay: `${i * 80}ms` }}
               >
-                <h3 className="text-lg md:text-xl font-display font-semibold text-foreground mb-3">
+                <h2 className="text-lg md:text-xl font-display font-semibold text-foreground mb-3">
                   {step.title}
-                </h3>
+                </h2>
                 <p className="text-muted-foreground leading-relaxed">
                   {step.description}
                 </p>
@@ -139,9 +139,9 @@ const MethodologySection = () => {
         lang="fr"
       >
         <div className="container-wide">
-          <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up">
+          <h1 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up">
             {dataFr.title}
-          </h2>
+          </h1>
           <div className="methodology-steps space-y-6">
             {dataFr.steps.map((step, i) => (
               <div
@@ -149,9 +149,9 @@ const MethodologySection = () => {
                 className="step rounded-xl bg-background p-6 md:p-8 shadow-sm border border-border animate-fade-up"
                 style={{ animationDelay: `${i * 80}ms` }}
               >
-                <h3 className="text-lg md:text-xl font-display font-semibold text-foreground mb-3">
+                <h2 className="text-lg md:text-xl font-display font-semibold text-foreground mb-3">
                   {step.title}
-                </h3>
+                </h2>
                 <p className="text-muted-foreground leading-relaxed">
                   {step.description}
                 </p>
@@ -172,9 +172,9 @@ const MethodologySection = () => {
         lang="de"
       >
         <div className="container-wide">
-          <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up">
+          <h1 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up">
             {dataDe.title}
-          </h2>
+          </h1>
           <div className="methodology-compact space-y-6">
             {dataDe.steps.map((step, i) => (
               <div
@@ -182,9 +182,9 @@ const MethodologySection = () => {
                 className="step rounded-xl bg-background p-6 md:p-8 shadow-sm border border-border animate-fade-up"
                 style={{ animationDelay: `${i * 80}ms` }}
               >
-                <h3 className="text-lg md:text-xl font-display font-semibold text-foreground mb-3">
+                <h2 className="text-lg md:text-xl font-display font-semibold text-foreground mb-3">
                   {step.title}
-                </h3>
+                </h2>
                 <p className="text-muted-foreground leading-relaxed">
                   {step.description}
                 </p>
@@ -206,9 +206,9 @@ const MethodologySection = () => {
       dir="rtl"
     >
       <div className="container-wide">
-        <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up">
+        <h1 className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up">
           {dataAr.title}
-        </h2>
+        </h1>
         <div className="methodology-steps space-y-8 md:space-y-10">
           {dataAr.steps.map((step, i) => (
             <div
@@ -216,9 +216,9 @@ const MethodologySection = () => {
               className="step rounded-xl bg-background p-6 md:p-8 shadow-sm border border-border animate-fade-up"
               style={{ animationDelay: `${i * 80}ms` }}
             >
-              <h3 className="text-lg md:text-xl font-display font-semibold text-foreground mb-4">
+              <h2 className="text-lg md:text-xl font-display font-semibold text-foreground mb-4">
                 {step.title}
-              </h3>
+              </h2>
               {step.items ? (
                 <ul className="list-disc list-inside text-muted-foreground space-y-2">
                   {step.items.map((item, j) => (
@@ -229,9 +229,9 @@ const MethodologySection = () => {
                 <div className="space-y-4">
                   {step.subsections.map((sub, j) => (
                     <div key={j}>
-                      <h4 className="font-semibold text-foreground text-sm mb-2 mt-4 first:mt-0">
+                      <h3 className="font-semibold text-foreground text-sm mb-2 mt-4 first:mt-0">
                         {sub.heading}:
-                      </h4>
+                      </h3>
                       <ul className="list-disc list-inside text-muted-foreground space-y-1">
                         {sub.items.map((item, k) => (
                           <li key={k}>{item}</li>
