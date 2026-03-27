@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import express from 'express';
 import compression from 'compression';
 import { canonicalRedirectTarget, isSsrNotFoundPage } from './seo-noise-query.mjs';
+import { BLOG_LEGACY_FULL_PATH_REDIRECTS } from './blog-legacy-redirects.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === 'production';
@@ -253,6 +254,7 @@ async function startServer() {
     '/fr/page-zz8hgv': '/fr',
     '/fr/page-zzW-Z8': '/fr',
     '/fr/page-zzw-z8': '/fr',
+    ...BLOG_LEGACY_FULL_PATH_REDIRECTS,
   };
 
   let vite;

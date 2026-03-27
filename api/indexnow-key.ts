@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { canonicalRedirectTarget, isSsrNotFoundPage } from '../seo-noise-query.mjs';
+import { BLOG_LEGACY_FULL_PATH_REDIRECTS } from '../blog-legacy-redirects.mjs';
 
 type HelmetLike = {
   title?: { toString: () => string };
@@ -92,6 +93,7 @@ const REDIRECTS: Record<string, string> = {
   '/fr/page-zz8hgv': '/fr',
   '/fr/page-zzW-Z8': '/fr',
   '/fr/page-zzw-z8': '/fr',
+  ...BLOG_LEGACY_FULL_PATH_REDIRECTS,
 };
 
 function inferHtmlLang(pathname: string): { lang: string; dir: 'ltr' | 'rtl' } {

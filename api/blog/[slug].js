@@ -2,6 +2,7 @@ import { createClient } from '@sanity/client';
 import { toHTML } from '@portabletext/to-html';
 import { buildSeoDescription, normalizeSeoTitle } from '../../src/server/seo-meta.js';
 import { sendCompressedHtml } from '../../src/server/compression.js';
+import { LEGACY_BLOG_SLUG_TO_CANONICAL } from '../../blog-legacy-redirects.mjs';
 
 const sanityClient = createClient({
   projectId: process.env.VITE_SANITY_PROJECT_ID || 'h2whvvpo',
@@ -66,7 +67,7 @@ function buildRelatedInternalLinksNav(slug) {
     ['More pharmaceutical and healthcare insights on our blog', `${BASE}/blog`],
     ['Contact BioNixus about a market research project', `${BASE}/contact`],
   ];
-  if (slug === 'healthcare-market-research-europe') {
+  if (slug === 'healthcare-market-research-europe' || slug === 'healthcare-market-research-europe-2026') {
     links.unshift([
       'Healthcare market research in Europe — country coverage and HTA context',
       `${BASE}/healthcare-market-research/europe`,
@@ -75,7 +76,7 @@ function buildRelatedInternalLinksNav(slug) {
       'Healthcare market research in the United Kingdom',
       `${BASE}/healthcare-market-research/uk`,
     ]);
-  } else if (slug === 'pharmaceutical-market-research-uk') {
+  } else if (slug === 'pharmaceutical-market-research-uk' || slug === 'pharmaceutical-market-research-uk-2026') {
     links.unshift([
       'Healthcare market research in the United Kingdom',
       `${BASE}/healthcare-market-research/uk`,
@@ -84,6 +85,23 @@ function buildRelatedInternalLinksNav(slug) {
       'Healthcare market research in Europe',
       `${BASE}/healthcare-market-research/europe`,
     ]);
+  } else if (
+    slug === 'gcc-pharmaceuticals-market-2026'
+    || slug === 'gcc-pharmaceutical-market-comparison-uae-saudi-kuwait'
+  ) {
+    links.unshift(
+      ['GCC pharmaceutical market research overview', `${BASE}/gcc-pharmaceutical-market-research`],
+      ['Healthcare market research in Saudi Arabia', `${BASE}/healthcare-market-research/saudi-arabia`],
+      ['Healthcare market research in the UAE', `${BASE}/healthcare-market-research/uae`],
+    );
+  } else if (
+    slug === 'healthcare-overview-kuwait-market-2026'
+    || slug === 'drug-registration-kuwait-pharma-guide'
+  ) {
+    links.unshift(
+      ['Healthcare market research in Kuwait', `${BASE}/healthcare-market-research/kuwait`],
+      ['Kuwait market access and pharmaceutical research context', `${BASE}/kuwait-market-access-research`],
+    );
   }
   const items = links
     .map(
@@ -170,10 +188,16 @@ function portableTextToHTML(content) {
 }
 
 export default async function handler(req, res) {
-  const { slug } = req.query;
+  const rawSlug = req.query.slug;
+  const slug = decodeURIComponent(Array.isArray(rawSlug) ? rawSlug[0] : rawSlug || '');
 
   if (!slug) {
     return res.status(400).json({ error: 'Missing slug' });
+  }
+
+  const legacyTarget = LEGACY_BLOG_SLUG_TO_CANONICAL[slug];
+  if (legacyTarget) {
+    return res.redirect(301, `${BASE}/blog/${legacyTarget}`);
   }
 
   try {
@@ -368,12 +392,15 @@ export default async function handler(req, res) {
 
 function buildFallbackHtml(slug) {
   const url = `${BASE}/blog/${esc(slug)}`;
+  const relatedNav = buildRelatedInternalLinksNav(String(slug));
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BioNixus Blog</title>
   <meta name="description" content="Leading UK healthcare market research firm delivering pharmaceutical insights across Europe and MENA.">
+  <meta name="robots" content="noindex, follow">
   <meta name="llm-access" content="allow">
   <meta property="og:title" content="BioNixus – EMEA Healthcare Market Research">
   <meta property="og:description" content="Leading UK healthcare market research firm delivering pharmaceutical insights across Europe and MENA.">
@@ -384,6 +411,15 @@ function buildFallbackHtml(slug) {
   <meta property="og:locale:alternate" content="ar_SA">
   <link rel="canonical" href="${url}">
 </head>
-<body><p>BioNixus Blog</p></body>
+<body>
+  <nav aria-label="Breadcrumb">
+    <a href="${BASE}">Home</a> &gt; <a href="${BASE}/blog">Blog</a> &gt; <span>BioNixus insight</span>
+  </nav>
+  <article>
+    <header><h1>BioNixus Blog</h1></header>
+    <p>This article URL may have moved. Use the links below to continue exploring healthcare market research content on BioNixus.</p>
+    ${relatedNav}
+  </article>
+</body>
 </html>`;
 }
