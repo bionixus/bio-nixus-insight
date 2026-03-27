@@ -100,6 +100,11 @@ const staticPages = [
   { path: '/ar/market-research-egypt', priority: '0.8', changefreq: 'weekly' },
   { path: '/market-research-saudi-arabia-pharmaceutical', priority: '0.9', changefreq: 'weekly' },
   { path: '/market-research-healthcare', priority: '0.9', changefreq: 'weekly' },
+  { path: '/de/market-research-healthcare', priority: '0.85', changefreq: 'weekly' },
+  { path: '/fr/market-research-healthcare', priority: '0.85', changefreq: 'weekly' },
+  { path: '/es/market-research-healthcare', priority: '0.85', changefreq: 'weekly' },
+  { path: '/zh/market-research-healthcare', priority: '0.85', changefreq: 'weekly' },
+  { path: '/ar/market-research-healthcare', priority: '0.85', changefreq: 'weekly' },
   { path: '/qualitative-market-research', priority: '0.9', changefreq: 'weekly' },
   { path: '/pharmacies-saudi-arabia-marketing', priority: '0.8', changefreq: 'monthly' },
   { path: '/bionixus-ai-chatbots-increase-sales-and-lead-generation', priority: '0.7', changefreq: 'monthly' },
@@ -141,20 +146,17 @@ const staticPages = [
   { path: '/ar/methodology', priority: '0.6', changefreq: 'monthly' },
 ];
 
-/** Country slugs with dedicated healthcare hub pages (see src/lib/constants/countries.ts). */
-const healthcareCountrySlugs = [
-  'saudi-arabia',
-  'uae',
-  'kuwait',
-  'uk',
-  'europe',
-  'riyadh',
-  'jeddah',
-  'dubai',
-  'abu-dhabi',
+const healthcareTherapySlugs = [
+  'aesthetic-medicine',
+  'biologics',
+  'cardiology',
+  'diabetes',
+  'immunology',
+  'oncology',
+  'rare-diseases',
+  'respiratory',
+  'vaccines',
 ];
-
-const healthcareTherapySlugs = ['oncology', 'diabetes', 'respiratory', 'immunology', 'biologics', 'vaccines'];
 
 const healthcareServiceSlugs = [
   'market-access',
@@ -199,6 +201,24 @@ const globalWebsiteCountrySlugs = [
   'south-africa',
 ];
 
+/**
+ * /healthcare-market-research/{slug} — Global Websites slugs plus hub aliases (uae, uk, europe, GCC cities).
+ */
+const healthcareMarketResearchCountrySlugs = [
+  ...new Set([
+    ...globalWebsiteCountrySlugs,
+    'saudi-arabia',
+    'uae',
+    'kuwait',
+    'uk',
+    'europe',
+    'riyadh',
+    'jeddah',
+    'dubai',
+    'abu-dhabi',
+  ]),
+].sort((a, b) => a.localeCompare(b));
+
 function buildStaticRoutes() {
   const routes = [];
   for (const page of staticPages) {
@@ -212,7 +232,7 @@ function buildStaticRoutes() {
       changefreq: 'monthly',
     });
   }
-  for (const slug of healthcareCountrySlugs) {
+  for (const slug of healthcareMarketResearchCountrySlugs) {
     routes.push({
       path: `/healthcare-market-research/${slug}`,
       priority: '0.85',
@@ -238,6 +258,15 @@ function buildStaticRoutes() {
 
 const hreflangGroups = [
   { en: '/', de: '/de', fr: '/fr', es: '/es', ar: '/ar', 'zh-CN': '/zh', 'x-default': '/' },
+  {
+    en: '/market-research-healthcare',
+    de: '/de/market-research-healthcare',
+    fr: '/fr/market-research-healthcare',
+    es: '/es/market-research-healthcare',
+    ar: '/ar/market-research-healthcare',
+    'zh-CN': '/zh/market-research-healthcare',
+    'x-default': '/market-research-healthcare',
+  },
   { en: '/contact', de: '/de/contact', fr: '/fr/contacts', es: '/es/contact', ar: '/ar/contacts', 'zh-CN': '/zh/contact', 'x-default': '/contact' },
   // Only list languages that actually have distinct localized URLs.
   { en: '/blog', de: '/de/blog', fr: '/fr/blog', 'x-default': '/blog' },
@@ -506,6 +535,11 @@ const STATIC_PAGE_FILES = {
   '/ar/market-research-egypt': ['src/pages/ArMarketResearchEgypt.tsx'],
   '/healthcare-market-research': ['src/pages/healthcare-research/HubPage.tsx'],
   '/market-research-healthcare': ['src/pages/MarketResearchHealthcare.tsx'],
+  '/de/market-research-healthcare': ['src/pages/MarketResearchHealthcare.tsx'],
+  '/fr/market-research-healthcare': ['src/pages/MarketResearchHealthcare.tsx'],
+  '/es/market-research-healthcare': ['src/pages/MarketResearchHealthcare.tsx'],
+  '/zh/market-research-healthcare': ['src/pages/MarketResearchHealthcare.tsx'],
+  '/ar/market-research-healthcare': ['src/pages/MarketResearchHealthcare.tsx'],
   '/market-research-saudi-arabia-pharmaceutical': ['src/pages/MarketResearchSaudiArabiaPharmaceutical.tsx'],
   '/qualitative-market-research': ['src/pages/QualitativeMarketResearch.tsx'],
   '/quantitative-healthcare-market-research': ['src/pages/QuantitativeHealthcareMarketResearchGuide.tsx'],

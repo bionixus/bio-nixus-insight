@@ -9,7 +9,17 @@ import {
 } from '@/lib/sanity-blog';
 import type { BlogPost } from '@/types/blog';
 
-const THERAPY_AREAS = ['oncology', 'diabetes', 'respiratory', 'immunology', 'biologics', 'vaccines'];
+const THERAPY_AREAS = [
+  'aesthetic-medicine',
+  'biologics',
+  'cardiology',
+  'diabetes',
+  'immunology',
+  'oncology',
+  'rare-diseases',
+  'respiratory',
+  'vaccines',
+];
 const SERVICES = [
   'market-access',
   'physician-insights',
