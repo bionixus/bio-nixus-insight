@@ -76,6 +76,7 @@ export default function RealWorldEvidenceGcc() {
           intro="BioNixus helps teams generate real world evidence in GCC markets with fit-for-purpose design, local relevance, and decision-ready outputs for market access and lifecycle strategy."
           links={[
             { to: '/healthcare-market-research-agency-gcc', label: 'Healthcare market research agency GCC' },
+            { to: '/patient-support-program-research-gcc', label: 'Patient support program research GCC' },
             { to: '/heor-consulting-saudi-arabia', label: 'HEOR consulting in Saudi Arabia' },
             { to: '/gcc-market-access-guide', label: 'GCC market access guide' },
             { to: '/contact', label: 'Request RWE scope' },
@@ -123,6 +124,9 @@ export default function RealWorldEvidenceGcc() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/healthcare-market-research-agency-gcc" className="rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground">
                 Back to healthcare market research agency GCC
+              </Link>
+              <Link to="/patient-support-program-research-gcc" className="rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted">
+                Patient support program research GCC
               </Link>
               <Link to="/heor-consulting-saudi-arabia" className="rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground">
                 HEOR consulting in Saudi Arabia

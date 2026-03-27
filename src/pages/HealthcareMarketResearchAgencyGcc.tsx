@@ -182,6 +182,9 @@ export default function HealthcareMarketResearchAgencyGcc() {
                 <Link to="/real-world-evidence-gcc" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                   Real world evidence GCC
                 </Link>
+                <Link to="/patient-support-program-research-gcc" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                  Patient support program research GCC
+                </Link>
                 <Link to="/heor-consulting-saudi-arabia" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                   HEOR consulting Saudi Arabia
                 </Link>

@@ -138,6 +138,7 @@ const rawReportZeroLinkPaths = [
   '/mena-pharma-market-data',
   '/methodology',
   '/page',
+  '/patient-support-program-research-gcc',
   '/pharmaceutical-companies-bahrain',
   '/pharmaceutical-companies-egypt',
   '/pharmaceutical-companies-iran',

@@ -40,6 +40,9 @@ export default function GccPharmaceuticalMarketResearch() {
               <Link to="/bionixus-market-research-middle-east" className="rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground">
                 Open Middle East Pharmaceutical Market Research Pillar
               </Link>
+              <Link to="/patient-support-program-research-gcc" className="rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted">
+                Patient support program research GCC
+              </Link>
               <Link to="/contact" className="rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted">
                 Book a strategy call
               </Link>

@@ -478,6 +478,9 @@ const GccMarketAccessGuide = () => {
               <Link to="/real-world-evidence-gcc" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 Real world evidence GCC to support payer and access decisions
               </Link>
+              <Link to="/patient-support-program-research-gcc" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                Patient support program research GCC for adherence and persistence insight
+              </Link>
               <Link to="/uae-market-access-research" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 Market access research UAE for pricing and reimbursement planning
               </Link>
