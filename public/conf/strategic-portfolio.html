@@ -654,7 +654,7 @@ section { padding: 88px 24px; }
 .cases-diag-panel {
   border: 1px solid var(--line);
   background: var(--white);
-  padding: 28px 28px 18px;
+  padding: 28px;
   margin: 0 auto 36px;
   max-width: 780px;
   box-shadow: 0 1px 0 rgba(11,31,51,.04);
@@ -663,15 +663,6 @@ section { padding: 88px 24px; }
   width: 100%;
   height: auto;
   display: block;
-}
-.cases-diag-foot {
-  font-size: .72rem;
-  color: var(--muted);
-  margin-top: 14px;
-  padding-top: 12px;
-  border-top: 1px solid var(--line-soft);
-  line-height: 1.5;
-  font-style: italic;
 }
 .case-visual svg {
   width: 100%;
@@ -1361,9 +1352,9 @@ footer a:focus-visible {
     </header>
 
     <div class="cases-diag-panel">
-      <svg class="cases-diag-svg" viewBox="0 0 680 258" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="p4-title p4-desc">
+      <svg class="cases-diag-svg" viewBox="0 0 680 238" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="p4-title p4-desc">
         <title id="p4-title">Egypt case portfolio — sector mix</title>
-        <desc id="p4-desc">Share of six highlighted mandates by industry vertical: diagnostics and healthcare 30 percent, financial services 20, tourism and transport 14, industrial manufacturing 25, mobility and technology 11. Diagnostics aggregates two case studies.</desc>
+        <desc id="p4-desc">Portfolio mix by sector: diagnostics and healthcare 30 percent, financial services 20, tourism and transport 14, industrial manufacturing 25, mobility and technology 11.</desc>
         <defs>
           <linearGradient id="p4g-dx" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0b1f33"/><stop offset="100%" stop-color="#1a4d7c"/></linearGradient>
           <linearGradient id="p4g-fs" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1a4d7c"/><stop offset="100%" stop-color="#2a5f8f"/></linearGradient>
@@ -1371,40 +1362,38 @@ footer a:focus-visible {
           <linearGradient id="p4g-mf" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#3d7ab0"/><stop offset="100%" stop-color="#4a8fa8"/></linearGradient>
           <linearGradient id="p4g-mo" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#4a8fa8"/><stop offset="100%" stop-color="#6eb0c4"/></linearGradient>
         </defs>
-        <text x="0" y="18" fill="#0b1f33" font-size="13" font-family="Source Serif 4,Georgia,serif" font-weight="600">Portfolio mix — six select mandates</text>
-        <text x="0" y="36" fill="#6b7c8c" font-size="10" font-family="Inter,sans-serif">Each bar = share of total featured engagements (n = 6). Diagnostics combines two labs.</text>
+        <text x="0" y="18" fill="#0b1f33" font-size="13" font-family="Source Serif 4,Georgia,serif" font-weight="600">Portfolio mix by sector</text>
         <g font-family="Inter,sans-serif" font-size="9" fill="#9aa8b5">
-          <text x="168" y="56" text-anchor="start">0%</text>
-          <text x="331" y="56" text-anchor="middle">33%</text>
-          <text x="494" y="56" text-anchor="middle">67%</text>
-          <text x="658" y="56" text-anchor="end">100%</text>
+          <text x="168" y="38" text-anchor="start">0%</text>
+          <text x="331" y="38" text-anchor="middle">33%</text>
+          <text x="494" y="38" text-anchor="middle">67%</text>
+          <text x="658" y="38" text-anchor="end">100%</text>
         </g>
         <g stroke="#eceff3">
-          <line x1="168" y1="62" x2="168" y2="246"/><line x1="331" y1="62" x2="331" y2="246"/><line x1="494" y1="62" x2="494" y2="246"/><line x1="658" y1="62" x2="658" y2="246"/>
+          <line x1="168" y1="44" x2="168" y2="228"/><line x1="331" y1="44" x2="331" y2="228"/><line x1="494" y1="44" x2="494" y2="228"/><line x1="658" y1="44" x2="658" y2="228"/>
         </g>
-        <rect x="168" y="68" width="490" height="26" rx="3" fill="#f4f6f8" stroke="#dde3ea"/>
-        <rect x="168" y="68" width="147" height="26" rx="3" fill="url(#p4g-dx)"/>
-        <text x="12" y="84" fill="#0b1f33" font-size="11" font-family="Inter,sans-serif" font-weight="600">Diagnostics &amp; healthcare</text>
-        <text x="242" y="84" fill="#fff" font-size="10" font-family="Inter,sans-serif" font-weight="600">30%</text>
-        <rect x="168" y="106" width="490" height="26" rx="3" fill="#f4f6f8" stroke="#dde3ea"/>
-        <rect x="168" y="106" width="98" height="26" rx="3" fill="url(#p4g-fs)"/>
-        <text x="12" y="122" fill="#0b1f33" font-size="11" font-family="Inter,sans-serif" font-weight="600">Financial services</text>
-        <text x="215" y="122" fill="#fff" font-size="10" font-family="Inter,sans-serif" font-weight="600">20%</text>
-        <rect x="168" y="144" width="490" height="26" rx="3" fill="#f4f6f8" stroke="#dde3ea"/>
-        <rect x="168" y="144" width="69" height="26" rx="3" fill="url(#p4g-tr)"/>
-        <text x="12" y="160" fill="#0b1f33" font-size="11" font-family="Inter,sans-serif" font-weight="600">Tourism &amp; transport</text>
-        <text x="200" y="160" fill="#fff" font-size="10" font-family="Inter,sans-serif" font-weight="600">14%</text>
-        <rect x="168" y="182" width="490" height="26" rx="3" fill="#f4f6f8" stroke="#dde3ea"/>
-        <rect x="168" y="182" width="122" height="26" rx="3" fill="url(#p4g-mf)"/>
-        <text x="12" y="198" fill="#0b1f33" font-size="11" font-family="Inter,sans-serif" font-weight="600">Industrial manufacturing</text>
-        <text x="225" y="198" fill="#fff" font-size="10" font-family="Inter,sans-serif" font-weight="600">25%</text>
-        <rect x="168" y="220" width="490" height="26" rx="3" fill="#f4f6f8" stroke="#dde3ea"/>
-        <rect x="168" y="220" width="54" height="26" rx="3" fill="url(#p4g-mo)"/>
-        <text x="12" y="236" fill="#0b1f33" font-size="11" font-family="Inter,sans-serif" font-weight="600">Mobility &amp; technology</text>
-        <text x="232" y="236" fill="#0b1f33" font-size="10" font-family="Inter,sans-serif" font-weight="600">11%</text>
-        <line x1="168" y1="248" x2="658" y2="248" stroke="#0b1f33" stroke-width="1.2" stroke-linecap="round"/>
+        <rect x="168" y="50" width="490" height="26" rx="3" fill="#f4f6f8" stroke="#dde3ea"/>
+        <rect x="168" y="50" width="147" height="26" rx="3" fill="url(#p4g-dx)"/>
+        <text x="12" y="66" fill="#0b1f33" font-size="11" font-family="Inter,sans-serif" font-weight="600">Diagnostics &amp; healthcare</text>
+        <text x="242" y="66" fill="#fff" font-size="10" font-family="Inter,sans-serif" font-weight="600">30%</text>
+        <rect x="168" y="88" width="490" height="26" rx="3" fill="#f4f6f8" stroke="#dde3ea"/>
+        <rect x="168" y="88" width="98" height="26" rx="3" fill="url(#p4g-fs)"/>
+        <text x="12" y="104" fill="#0b1f33" font-size="11" font-family="Inter,sans-serif" font-weight="600">Financial services</text>
+        <text x="215" y="104" fill="#fff" font-size="10" font-family="Inter,sans-serif" font-weight="600">20%</text>
+        <rect x="168" y="126" width="490" height="26" rx="3" fill="#f4f6f8" stroke="#dde3ea"/>
+        <rect x="168" y="126" width="69" height="26" rx="3" fill="url(#p4g-tr)"/>
+        <text x="12" y="142" fill="#0b1f33" font-size="11" font-family="Inter,sans-serif" font-weight="600">Tourism &amp; transport</text>
+        <text x="200" y="142" fill="#fff" font-size="10" font-family="Inter,sans-serif" font-weight="600">14%</text>
+        <rect x="168" y="164" width="490" height="26" rx="3" fill="#f4f6f8" stroke="#dde3ea"/>
+        <rect x="168" y="164" width="122" height="26" rx="3" fill="url(#p4g-mf)"/>
+        <text x="12" y="180" fill="#0b1f33" font-size="11" font-family="Inter,sans-serif" font-weight="600">Industrial manufacturing</text>
+        <text x="225" y="180" fill="#fff" font-size="10" font-family="Inter,sans-serif" font-weight="600">25%</text>
+        <rect x="168" y="202" width="490" height="26" rx="3" fill="#f4f6f8" stroke="#dde3ea"/>
+        <rect x="168" y="202" width="54" height="26" rx="3" fill="url(#p4g-mo)"/>
+        <text x="12" y="218" fill="#0b1f33" font-size="11" font-family="Inter,sans-serif" font-weight="600">Mobility &amp; technology</text>
+        <text x="232" y="218" fill="#0b1f33" font-size="10" font-family="Inter,sans-serif" font-weight="600">11%</text>
+        <line x1="168" y1="230" x2="658" y2="230" stroke="#0b1f33" stroke-width="1.2" stroke-linecap="round"/>
       </svg>
-      <p class="cases-diag-foot">Each bar is the share of the six featured studies. Diagnostics combines Cairo Labs and Hassab Diagnostics. Other verticals each represent one mandate.</p>
     </div>
 
     <article class="case-card">
