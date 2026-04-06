@@ -55,6 +55,10 @@ function buildRouteTitle(pathname: string, language: Language, fallback: string)
     return makeTitle(fallback);
   }
 
+  if (path === '/conf') {
+    return makeTitle('BioNixus — Strategic Portfolio | Market Research & Consulting');
+  }
+
   if (path === '/blog' || path === '/de/blog' || path === '/fr/blog') {
     return makeTitle('Healthcare & Pharmaceutical Blog Insights | BioNixus');
   }
@@ -116,6 +120,12 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
   if (path === '/') {
     return clampDescription(
       'Healthcare and pharmaceutical market research across MENA, GCC, UK, and Europe with quantitative, qualitative, and market access insight programs.'
+    );
+  }
+
+  if (path === '/conf') {
+    return clampDescription(
+      'BioNixus strategic portfolio: healthcare and consumer market research, global pharma relationships, MENA field capabilities, and board-ready consulting methodology across Egypt and the region.'
     );
   }
 

@@ -57,6 +57,16 @@
   ],
   "redirects": [
     {
+      "source": "/conf/",
+      "destination": "/conf",
+      "statusCode": 301
+    },
+    {
+      "source": "/conf/strategic-portfolio.html",
+      "destination": "/conf",
+      "statusCode": 301
+    },
+    {
       "source": "/assets/index-:hash.js",
       "destination": "/assets/index.js",
       "statusCode": 301
@@ -106,6 +116,10 @@
     }
   ],
   "rewrites": [
+    {
+      "source": "/conf",
+      "destination": "/conf/strategic-portfolio.html"
+    },
     {
       "source": "/blog/:slug",
       "has": [

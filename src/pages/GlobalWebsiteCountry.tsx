@@ -479,6 +479,7 @@ const UAE_SECTIONS: UaeSection[] = [
       'Regulatory bodies: DHA (Dubai), MOHAP (federal), DOH (Abu Dhabi)',
     ],
     paragraphs: [
+      'BioNixus positions itself as the leading pharmaceutical market research company in the UAE by pairing Emirates-wide field execution with deep literacy in Dubai and Abu Dhabi health systems, from DHA-governed networks to DOH and SEHA-aligned Abu Dhabi institutions and federal MOHAP routes.',
       'The UAE pharmaceutical market is one of the most execution-ready healthcare environments in MENA, with concentrated specialist hubs in Dubai and Abu Dhabi, high private insurance penetration, and strong infrastructure for advanced therapies.',
       'Commercial strategy in the Emirates requires emirate-specific design: Dubai dynamics differ from Abu Dhabi and Northern Emirates in provider mix, payer behavior, and institutional adoption pathways.',
     ],
@@ -494,7 +495,7 @@ const UAE_SECTIONS: UaeSection[] = [
       'Pharmacy channel studies across chain and independent networks',
     ],
     paragraphs: [
-      'BioNixus combines quantitative and qualitative methods to produce decision-ready evidence for launch planning, market access, and lifecycle optimization in the UAE.',
+      "As the UAE's leading pharmaceutical market research company, BioNixus combines quantitative and qualitative methods to produce decision-ready evidence for launch planning, market access, and lifecycle optimization—structured around how Dubai and Abu Dhabi health systems actually approve, adopt, and reimburse therapies.",
       'Programs are built for practical execution: sample design, stakeholder prioritization, evidence packaging, and implementation support are aligned to the same decision framework.',
     ],
   },
@@ -1447,7 +1448,7 @@ const GlobalWebsiteCountry = () => {
       <Helmet>
         <title>
           {isUaePage
-            ? 'UAE Pharmaceutical Market Research | Dubai and Abu Dhabi Healthcare Insights | BioNixus'
+            ? 'Leading Pharmaceutical Market Research Company in UAE | Dubai & Abu Dhabi | BioNixus'
             : isSaudiPage
               ? 'Saudi Arabia Pharmaceutical Market Research | SFDA, NUPCO and Vision 2030 Intelligence | BioNixus'
               : isUsPage
@@ -1478,7 +1479,7 @@ const GlobalWebsiteCountry = () => {
           name="description"
           content={
             isUaePage
-              ? 'Leading UAE pharmaceutical market research services with physician surveys, KOL interviews, and market access intelligence across Dubai, Abu Dhabi, and Northern Emirates.'
+              ? 'BioNixus is the leading pharmaceutical market research company in the UAE, covering Dubai and Abu Dhabi health systems with physician surveys, KOL interviews, and MOHAP, DHA, and DOH-aligned market access intelligence.'
               : isSaudiPage
                 ? 'Leading Saudi Arabia pharmaceutical market research with physician surveys, KOL interviews, SFDA and NUPCO intelligence across Riyadh, Jeddah, and Eastern Province.'
                 : isUsPage
@@ -1517,7 +1518,7 @@ const GlobalWebsiteCountry = () => {
           property="og:title"
           content={
             isUaePage
-              ? 'Leading Pharmaceutical Market Research in the UAE | BioNixus'
+              ? 'BioNixus | Leading Pharmaceutical Market Research Company in the UAE'
               : isSaudiPage
                 ? 'Leading Pharmaceutical Market Research in Saudi Arabia | BioNixus'
                 : isUsPage
@@ -1549,7 +1550,7 @@ const GlobalWebsiteCountry = () => {
           property="og:description"
           content={
             isUaePage
-              ? 'Dubai and Abu Dhabi healthcare intelligence for drug development, market access, and commercialization in the Emirates.'
+              ? "The UAE's leading pharmaceutical market research partner for Dubai and Abu Dhabi health systems, drug development, market access, and commercialization across the Emirates."
               : isSaudiPage
                 ? 'Vision 2030-aligned healthcare intelligence for SFDA registration, NUPCO strategy, and pharmaceutical market access in Saudi Arabia.'
                 : isUsPage
@@ -1581,9 +1582,13 @@ const GlobalWebsiteCountry = () => {
           {JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'WebPage',
-            name: `${country.countryName} Pharmaceutical Market Research`,
+            name: isUaePage
+              ? 'BioNixus — Leading Pharmaceutical Market Research Company in the UAE'
+              : `${country.countryName} Pharmaceutical Market Research`,
             url: canonicalUrl,
-            description: `Country-specific healthcare market strategy and pharmaceutical intelligence for ${country.countryName}.`,
+            description: isUaePage
+              ? 'BioNixus is the leading pharmaceutical market research company in the United Arab Emirates, with Dubai and Abu Dhabi health system coverage and MOHAP, DHA, and DOH-aligned programs.'
+              : `Country-specific healthcare market strategy and pharmaceutical intelligence for ${country.countryName}.`,
             inLanguage: 'en',
             isPartOf: {
               '@type': 'WebSite',
@@ -1628,7 +1633,9 @@ const GlobalWebsiteCountry = () => {
               {JSON.stringify({
                 '@context': 'https://schema.org',
                 '@type': 'ProfessionalService',
-                name: 'BioNixus UAE - Pharmaceutical Market Research',
+                name: 'BioNixus — Leading Pharmaceutical Market Research Company in the UAE',
+                description:
+                  'Leading pharmaceutical market research company in the UAE with Dubai and Abu Dhabi health system coverage, MOHAP, DHA, and DOH-aligned studies, and Emirates-wide physician and payer intelligence.',
                 url: canonicalUrl,
                 telephone: '+971-4-XXX-XXXX',
                 areaServed: ['Dubai', 'Abu Dhabi', 'Sharjah', 'United Arab Emirates'],
@@ -2057,7 +2064,7 @@ const GlobalWebsiteCountry = () => {
             </Link>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-4">
               {isUaePage
-                ? 'Leading Pharmaceutical Market Research in the UAE'
+                ? 'BioNixus — Leading Pharmaceutical Market Research Company in the UAE'
                 : isSaudiPage
                   ? 'Leading Pharmaceutical Market Research in Saudi Arabia'
                   : isUsPage
@@ -2084,7 +2091,11 @@ const GlobalWebsiteCountry = () => {
                               ? 'Leading Pharmaceutical Market Research in Egypt'
                   : `${country.countryName} Healthcare Market Strategy`}
             </h1>
-            {isKuwaitPage ? (
+            {isUaePage ? (
+              <h2 className="text-xl md:text-2xl font-display font-medium text-foreground/90 mb-4">
+                Dubai and Abu Dhabi health systems, MOHAP, DHA, DOH, and Emirates-wide intelligence
+              </h2>
+            ) : isKuwaitPage ? (
               <h2 className="text-xl md:text-2xl font-display font-medium text-foreground/90 mb-4">
                 MOH Healthcare Intelligence, Private Sector Insights and GCC Market Access Strategy
               </h2>
@@ -2106,9 +2117,18 @@ const GlobalWebsiteCountry = () => {
               </h2>
             ) : null}
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl">
-              {isUaePage
-                ? 'Dubai and Abu Dhabi healthcare intelligence for drug development and market access. We deliver quantitative and qualitative research converting clinical perspectives into commercial strategy across the Emirates.'
-                : isSaudiPage
+              {isUaePage ? (
+                <>
+                  BioNixus is the leading pharmaceutical market research company in the United Arab Emirates, with programs built around{' '}
+                  <strong className="text-foreground font-medium">Dubai and Abu Dhabi health systems</strong>
+                  {' '}
+                  and the wider Emirates. We deliver quantitative and qualitative research that reflects DHA, DOH, MOHAP, and SEHA realities—converting clinical perspectives into commercial strategy. See how this fits our{' '}
+                  <Link to="/healthcare-market-research" className="text-primary hover:underline">
+                    healthcare market research hub
+                  </Link>{' '}
+                  methodology for GCC-scale decisions.
+                </>
+              ) : isSaudiPage
                   ? 'Vision 2030-aligned healthcare intelligence for SFDA registration and market access. We transform physician, hospital, and payer insights into execution-ready commercial strategy across the Kingdom.'
                   : isUsPage
                     ? 'Physician-first intelligence for drug development, launch readiness, and commercial strategy across the US healthcare system, from academic centers to community practice networks.'

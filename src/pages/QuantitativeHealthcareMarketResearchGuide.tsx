@@ -184,9 +184,16 @@ function BenchmarkChart() {
           const y = margin.top + chartHeight - barHeight;
           return (
             <g key={d.code}>
-              <rect x={x} y={y} width={barWidth} height={barHeight} rx="4" fill="#3b82f6" opacity="0.88">
-                <title>{`${d.country}: ${d.score}% qualified completion`}</title>
-              </rect>
+              <rect
+                x={x}
+                y={y}
+                width={barWidth}
+                height={barHeight}
+                rx="4"
+                fill="#3b82f6"
+                opacity="0.88"
+                aria-label={`${d.country}: ${d.score}% qualified completion`}
+              />
               <text x={x + barWidth / 2} y={y - 8} textAnchor="middle" fontSize="12" fill="#111827" fontWeight="600">
                 {d.score}%
               </text>

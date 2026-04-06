@@ -64,6 +64,7 @@ function buildFallbackTitle(pathname) {
 
   if (path === '/sitemap') return 'Sitemap & Content Directory | BioNixus';
   if (path === '/privacy') return 'Privacy Policy & Terms for BioNixus Services';
+  if (path === '/conf') return 'BioNixus — Strategic Portfolio | Market Research & Consulting';
 
   if (path === '/case-studies') return 'Healthcare & Pharmaceutical Case Studies | BioNixus';
   if (path.startsWith('/case-studies/')) {
@@ -111,6 +112,9 @@ function buildFallbackDescription(pathname) {
 
   if (path === '/' || path === '/de' || path === '/fr' || path === '/es' || path === '/ar' || path === '/zh') {
     return 'Healthcare and pharmaceutical market research across MENA, GCC, UK, and Europe with quantitative and qualitative insights by BioNixus.';
+  }
+  if (path === '/conf') {
+    return 'BioNixus strategic portfolio overview: healthcare and consumer market research, global pharma relationships, Egypt and MENA capabilities, and research-to-action methodology.';
   }
   if (path === '/case-studies') {
     return 'Explore BioNixus healthcare and pharmaceutical case studies across Europe, the Middle East, and Africa.';
@@ -256,6 +260,22 @@ async function startServer() {
     '/fr/page-zzw-z8': '/fr',
     ...BLOG_LEGACY_FULL_PATH_REDIRECTS,
   };
+
+  const strategicPortfolioAbsolutePath = path.resolve(
+    __dirname,
+    isProduction ? path.join('dist/client', 'conf/strategic-portfolio.html') : path.join('public', 'conf/strategic-portfolio.html'),
+  );
+
+  /** Full-page static deck (authoritative HTML, not the SPA shell). */
+  app.get('/conf/', (_req, res) => {
+    res.redirect(301, '/conf');
+  });
+  app.get('/conf/strategic-portfolio.html', (_req, res) => {
+    res.redirect(301, '/conf');
+  });
+  app.get('/conf', (_req, res) => {
+    res.type('html').sendFile(strategicPortfolioAbsolutePath);
+  });
 
   let vite;
   if (!isProduction) {
