@@ -362,7 +362,7 @@ export default function CountryPage() {
         </section>
       )}
 
-      {(config.slug === 'saudi-arabia' || config.slug === 'uae' || config.slug === 'uk' || config.slug === 'europe') && (
+      {(config.slug === 'saudi-arabia' || config.slug === 'uae' || config.slug === 'uk' || config.slug === 'europe' || config.slug === 'egypt') && (
         <section className="py-12 bg-primary/5 border-y border-primary/10">
           <div className="container-wide max-w-6xl mx-auto">
             <h2 className="text-3xl font-display font-semibold text-foreground mb-6">Deep Dive: {config.name} Market Intelligence</h2>
@@ -396,6 +396,22 @@ export default function CountryPage() {
                   <Link to="/blog/competitive-intelligence-pharma-gcc" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
                     <h3 className="text-base font-semibold text-foreground mb-2">GCC Competitive Intelligence</h3>
                     <p className="text-sm text-muted-foreground">Tracking rival formularies and medical affairs engagement.</p>
+                  </Link>
+                </>
+              )}
+              {config.slug === 'egypt' && (
+                <>
+                  <Link to="/insights/top-market-research-companies-egypt-2026" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
+                    <h3 className="text-base font-semibold text-foreground mb-2">Top Market Research Companies in Egypt (2026)</h3>
+                    <p className="text-sm text-muted-foreground">Independent guide to 10 leading firms for healthcare, pharma, and consumer research.</p>
+                  </Link>
+                  <Link to="/pharmaceutical-companies-egypt" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
+                    <h3 className="text-base font-semibold text-foreground mb-2">Pharmaceutical Companies in Egypt</h3>
+                    <p className="text-sm text-muted-foreground">20+ pharma companies, $5.8B market data, and EDA regulatory landscape.</p>
+                  </Link>
+                  <Link to="/conf" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
+                    <h3 className="text-base font-semibold text-foreground mb-2">BioNixus Strategic Portfolio</h3>
+                    <p className="text-sm text-muted-foreground">Full capability overview: 127+ projects across healthcare and consumer research.</p>
                   </Link>
                 </>
               )}

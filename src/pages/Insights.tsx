@@ -116,6 +116,18 @@ export default function Insights() {
               >
                 View Case Studies
               </Link>
+              <Link
+                to="/insights/top-market-research-companies-egypt-2026"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Top Market Research Companies in Egypt (2026)
+              </Link>
+              <Link
+                to="/conf"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Strategic Portfolio
+              </Link>
             </div>
           </div>
         </section>

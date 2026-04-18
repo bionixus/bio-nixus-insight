@@ -286,8 +286,8 @@ export default function TopMarketResearchCompaniesEgypt2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Market Research Companies in Egypt (2026 Guide) | BioNixus"
-        description="Independent guide: 10 leading market research firms in Egypt for healthcare, pharma, and consumer research — compared by capability and Egypt expertise."
+        title="Top Market Research Companies in Egypt (2026) | BioNixus"
+        description="10 leading market research firms in Egypt for healthcare, pharma, and consumer research — compared by capability and Egypt expertise."
         image="https://www.bionixus.com/og-image.png"
         url={CANONICAL}
         type="article"

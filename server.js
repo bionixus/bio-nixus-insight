@@ -64,9 +64,9 @@ function buildFallbackTitle(pathname) {
 
   if (path === '/sitemap') return 'Sitemap & Content Directory | BioNixus';
   if (path === '/privacy') return 'Privacy Policy & Terms for BioNixus Services';
-  if (path === '/conf') return 'Top Market Research Companies in Egypt | Healthcare & Consumer | BioNixus';
+  if (path === '/conf') return 'Top Market Research Companies in Egypt | BioNixus';
   if (path === '/ar/conf') return 'أفضل شركات أبحاث السوق في مصر | BioNixus';
-  if (path === '/insights/top-market-research-companies-egypt-2026') return 'Top Market Research Companies in Egypt (2026 Guide) | BioNixus';
+  if (path === '/insights/top-market-research-companies-egypt-2026') return 'Top Market Research Companies in Egypt (2026) | BioNixus';
   if (path === '/ar/insights/top-market-research-companies-egypt-2026') return 'أفضل شركات أبحاث السوق في مصر (دليل 2026) | BioNixus';
 
   if (path === '/case-studies') return 'Healthcare & Pharmaceutical Case Studies | BioNixus';
@@ -122,10 +122,10 @@ function buildFallbackDescription(pathname) {
     return 'Healthcare and pharmaceutical market research across MENA, GCC, UK, and Europe with quantitative and qualitative insights by BioNixus.';
   }
   if (path === '/conf') {
-    return 'BioNixus — Egypt\'s leading market research and strategic consulting firm. Healthcare, pharma, consumer and corporate research across MENA. 127 projects, 48 global clients, 15-year track record.';
+    return 'BioNixus — Egypt\'s leading market research firm. Healthcare, pharma, and consumer research across MENA. 127 projects, 48 global clients.';
   }
   if (path === '/ar/conf') {
-    return 'بيونيكسس — الشركة الرائدة في أبحاث السوق والاستشارات الاستراتيجية في مصر. أبحاث الرعاية الصحية والأدوية والمستهلكين عبر منطقة الشرق الأوسط وشمال أفريقيا.';
+    return 'بيونيكسس — الشركة الرائدة في أبحاث السوق في مصر. أبحاث الرعاية الصحية والأدوية والمستهلكين عبر الشرق الأوسط. ١٢٧ مشروعًا، ٤٨ عميلًا عالميًا.';
   }
   if (path === '/case-studies') {
     return 'Explore BioNixus healthcare and pharmaceutical case studies across Europe, the Middle East, and Africa.';

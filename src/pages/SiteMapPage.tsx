@@ -33,6 +33,8 @@ const staticLinks = [
   { to: '/contact', label: 'Contact' },
   { to: '/privacy', label: 'Privacy' },
   { to: '/methodology', label: 'Methodology' },
+  { to: '/conf', label: 'Strategic Portfolio' },
+  { to: '/insights/top-market-research-companies-egypt-2026', label: 'Top Market Research Companies in Egypt (2026)' },
 ];
 
 const serviceLinks = [
@@ -62,6 +64,7 @@ const healthcareCountryLinks = [
   { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare Market Research in Saudi Arabia' },
   { to: '/healthcare-market-research/uae', label: 'Healthcare Market Research in UAE' },
   { to: '/healthcare-market-research/kuwait', label: 'Healthcare Market Research in Kuwait' },
+  { to: '/healthcare-market-research/egypt', label: 'Healthcare Market Research in Egypt' },
 ];
 
 const localizedLinks = [

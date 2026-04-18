@@ -432,6 +432,32 @@ export default function ArTopMarketResearchCompaniesEgypt2026() {
           </div>
         </section>
 
+        {/* Related resources */}
+        <section className="section-padding py-12">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-xl font-display font-semibold text-foreground mb-6">موارد ذات صلة</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                { to: '/ar/conf', label: 'الملف الاستراتيجي لبيونيكسس', desc: 'نظرة شاملة على قدرات أبحاث السوق والاستشارات.' },
+                { to: '/pharmaceutical-companies-egypt', label: 'الشركات الدوائية في مصر', desc: 'أكثر من 20 شركة أدوية، بيانات سوق $5.8B، ودليل هيئة الدواء.' },
+                { to: '/healthcare-market-research/egypt', label: 'أبحاث سوق الرعاية الصحية في مصر', desc: 'محور الدولة مع الأسئلة الشائعة والإحصاءات والتركيز العلاجي.' },
+                { to: '/ar/market-research-egypt', label: 'أبحاث السوق في مصر', desc: 'صفحة استخبارات القطاع الصحي والدوائي.' },
+                { to: '/insights/top-market-research-companies-egypt-2026', label: 'English Version', desc: 'Read the full guide in English.' },
+                { to: '/ar/contacts', label: 'طلب عرض سعر', desc: 'تواصل معنا لمشروع أبحاث مخصص في مصر.' },
+              ].map((r) => (
+                <Link
+                  key={r.to}
+                  to={r.to}
+                  className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 hover:shadow-md transition-all"
+                >
+                  <h3 className="font-semibold text-foreground mb-1">{r.label}</h3>
+                  <p className="text-sm text-muted-foreground">{r.desc}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="section-padding py-16 bg-primary text-primary-foreground">
           <div className="container-wide max-w-5xl mx-auto text-center">

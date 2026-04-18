@@ -171,7 +171,7 @@ const EgyptPharmaCompanies = () => {
 
         <section className="section-padding py-16" id="bionixus-support"><div className="container-wide max-w-5xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">How BioNixus Supports Pharma Companies in Egypt</h2>
-          <p className="text-muted-foreground mb-10 max-w-3xl">BioNixus is a leading healthcare market research company with deep expertise in the Egyptian pharmaceutical market. We help pharma, biotech, and medtech companies with:</p>
+          <p className="text-muted-foreground mb-10 max-w-3xl">BioNixus is a leading healthcare market research company with deep expertise in the Egyptian pharmaceutical market. We help pharma, biotech, and medtech companies with the services below. See also our <Link to="/market-research-egypt" className="text-primary hover:underline">market research Egypt</Link> and <Link to="/healthcare-market-research/egypt" className="text-primary hover:underline">healthcare market research in Egypt</Link> pages.</p>
           <div className="grid md:grid-cols-2 gap-6 mb-10">{[
             { title: 'Physician Surveys & KOL Mapping', desc: 'Large-scale quantitative and qualitative research with Egyptian physicians across government and private hospitals. Arabic-English bilingual capabilities.' },
             { title: 'Market Access & EDA Strategy', desc: 'EDA formulary strategy, competitive pricing analysis, reimbursement landscape, and payer research to optimise commercial success in Egypt.' },
