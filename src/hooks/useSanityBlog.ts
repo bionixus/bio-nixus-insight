@@ -34,13 +34,15 @@ export function useSanityBlog(ssrPosts?: BlogPost[] | null) {
 }
 
 /** Optimized hook for homepage Latest Insights (returns latest 3 posts). */
-export function useSanityLatestInsights(limit = 3) {
+export function useSanityLatestInsights(limit = 3, ssrPosts?: BlogPost[] | null) {
   const { language } = useLanguage();
+  const hasSsr = Array.isArray(ssrPosts) && ssrPosts.length > 0;
 
   return useQuery({
     queryKey: ['sanity-latest-insights', language, limit],
     queryFn: () => fetchSanityLatestInsights(language, limit),
     enabled: isSanityConfigured(),
+    initialData: hasSsr ? ssrPosts! : undefined,
     staleTime: 2 * 60 * 1000,
     gcTime: 10 * 60 * 1000,
   });

@@ -4,10 +4,12 @@ import { fetchCaseStudies } from '@/lib/sanity-case-studies';
 import {
   fetchSanityPostBySlugWithClient,
   fetchSanityPostsWithClient,
+  fetchSanityLatestInsightsWithClient,
   fetchRelatedPostsWithClient,
   type RelatedPostsData,
 } from '@/lib/sanity-blog';
 import type { BlogPost } from '@/types/blog';
+import type { Language } from '@/lib/i18n';
 
 const THERAPY_AREAS = [
   'aesthetic-medicine',
@@ -27,6 +29,17 @@ const SERVICES = [
   'quantitative-research',
   'qualitative-research',
 ];
+
+function marketingHomeLanguage(path: string): Language | null {
+  const n = path.split('?')[0].replace(/\/$/, '') || '/';
+  if (n === '/') return 'en';
+  if (n === '/de') return 'de';
+  if (n === '/fr') return 'fr';
+  if (n === '/es') return 'es';
+  if (n === '/zh') return 'zh';
+  if (n === '/ar') return 'ar';
+  return null;
+}
 
 const HUB_QUERY = `*[_type == "hubResearchPage"][0]{
   _id,
@@ -179,6 +192,20 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
       blogSlug: slug,
       blogPost,
       relatedPosts,
+    };
+  }
+
+  const homeLang = marketingHomeLanguage(normalizedPath);
+  if (homeLang) {
+    let homeLatestInsights: BlogPost[] = [];
+    try {
+      homeLatestInsights = await fetchSanityLatestInsightsWithClient(sanityServer, homeLang, 3);
+    } catch {
+      homeLatestInsights = [];
+    }
+    return {
+      pageType: 'home',
+      homeLatestInsights,
     };
   }
 

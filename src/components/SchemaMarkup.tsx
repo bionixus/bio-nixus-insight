@@ -1,5 +1,7 @@
 import { Helmet } from 'react-helmet-async'
+import type { BlogPost } from '@/types/blog'
 import { HOME_FAQ_SECTION_ID } from '@/lib/homePageFaq'
+import { buildHomeArticleJsonLdNodes, buildHomeServiceJsonLdNodes } from '@/lib/homePageJsonLd'
 
 type LanguageCode = 'en' | 'ar' | 'de' | 'fr' | 'es' | 'zh'
 
@@ -18,6 +20,8 @@ type HomeSchemaProps = {
   pageUrl: string
   language: LanguageCode
   faqItems?: FaqItem[]
+  /** Latest insight posts shown on the home page (for Article JSON-LD). */
+  articlePosts?: BlogPost[]
 }
 
 type BlogSchemaProps = {
@@ -230,6 +234,10 @@ function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[] {
       const faqPage = new URL(toHttpsUrl(props.pageUrl))
       faqPage.hash = HOME_FAQ_SECTION_ID
       nodes.push(buildFaq(props.faqItems, inLanguage, faqPage.toString()))
+    }
+    nodes.push(...buildHomeServiceJsonLdNodes(props.language))
+    if (props.articlePosts && props.articlePosts.length > 0) {
+      nodes.push(...buildHomeArticleJsonLdNodes(props.articlePosts, props.language))
     }
     return nodes
   }

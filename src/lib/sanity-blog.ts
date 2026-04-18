@@ -49,7 +49,8 @@ const LATEST_INSIGHTS_QUERY = `*[
   "categories": categories[]->title,
   country,
   "countryTitle": country->title,
-  "coverImage": mainImage.asset->url
+  "coverImage": mainImage.asset->url,
+  "authorName": author->name
 }[0...$limit]`;
 
 const POST_BY_SLUG_QUERY = `*[_type == "blogPost" && slug.current == $slug][0] {
@@ -123,6 +124,11 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
     typeof p.country === 'string'
       ? p.country
       : (p as RawSanityPost & { countryTitle?: string }).countryTitle ?? '';
+  const authorFromQuery =
+    typeof (p as RawSanityPost & { authorName?: string }).authorName === 'string'
+      ? (p as RawSanityPost & { authorName: string }).authorName.trim()
+      : '';
+
   return {
     id: p._id,
     slug: p.slug ?? p._id,
@@ -135,6 +141,7 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
     coverImage: p.coverImage ?? undefined,
     publishedAtIso: p.publishedAtIso,
     updatedAtIso: p.updatedAtIso,
+    ...(authorFromQuery ? { authorName: authorFromQuery } : {}),
     ...(includeBody && (() => {
       const raw = p as RawSanityPost & { bodyHtml?: string };
       const out: Record<string, unknown> = {};
@@ -208,21 +215,22 @@ export async function fetchSanityPosts(): Promise<BlogPost[]> {
   return fetchSanityPostsWithClient(getSanityClient());
 }
 
-export async function fetchSanityLatestInsights(language: string, limit = 3): Promise<BlogPost[]> {
+export async function fetchSanityLatestInsightsWithClient(
+  client: SanityClient,
+  language: string,
+  limit = 3,
+): Promise<BlogPost[]> {
   try {
-    const client = getSanityClient();
     const raw = await client.fetch<RawSanityPost[]>(LATEST_INSIGHTS_QUERY, {
       language,
       limit: Math.max(1, Math.min(limit, 6)),
     });
     const sanityPosts = raw.map((p) => mapRawToPost(p)!).filter(Boolean);
 
-    // Fill up the rest with hardcoded posts
     const sanitySlugs = new Set(sanityPosts.map((p) => p.slug));
     const newHardcoded = hardcodedSeoPosts.filter((p) => !sanitySlugs.has(p.slug) && (!p.language || p.language === language));
 
     const combined = [...sanityPosts, ...newHardcoded];
-    // Sort by date mostly for the combined list
     combined.sort((a, b) => {
       const da = a.date ? new Date(a.date).getTime() : 0;
       const db = b.date ? new Date(b.date).getTime() : 0;
@@ -239,6 +247,10 @@ export async function fetchSanityLatestInsights(language: string, limit = 3): Pr
     });
     return hardcodedFiltered.slice(0, Math.max(1, Math.min(limit, 6)));
   }
+}
+
+export async function fetchSanityLatestInsights(language: string, limit = 3): Promise<BlogPost[]> {
+  return fetchSanityLatestInsightsWithClient(getSanityClient(), language, limit);
 }
 
 export async function fetchSanityPostBySlugWithClient(

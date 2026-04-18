@@ -14,6 +14,8 @@ import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import { useSanityLatestInsights } from '@/hooks/useSanityBlog';
 import SchemaMarkup from '@/components/SchemaMarkup';
+import { useInitialData } from '@/contexts/InitialDataContext';
+import type { BlogPost } from '@/types/blog';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { getHomePageFaq, HOME_FAQ_SECTION_ID } from '@/lib/homePageFaq';
 import { languagePaths, seoByLanguage } from '@/lib/seo';
@@ -22,7 +24,12 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const Index = () => {
   const { hash } = useLocation();
   const { language, t } = useLanguage();
-  const { data: sanityPosts, isLoading: blogLoading } = useSanityLatestInsights(3);
+  const { data: routeData } = useInitialData();
+  const ssrHomeInsights = Array.isArray(routeData.homeLatestInsights)
+    ? (routeData.homeLatestInsights as BlogPost[])
+    : undefined;
+  const { data: sanityPosts, isLoading: blogLoading } = useSanityLatestInsights(3, ssrHomeInsights);
+  const homeArticlePosts = sanityPosts ?? ssrHomeInsights;
   const homeFaq = getHomePageFaq(language);
   const homeCanonicalUrl = new URL(seoByLanguage[language].canonicalPath, 'https://www.bionixus.com').toString();
   const basePath = languagePaths[language] || '/';
@@ -117,6 +124,7 @@ const Index = () => {
         pageUrl={homeCanonicalUrl}
         language={language}
         faqItems={homeFaq.items}
+        articlePosts={homeArticlePosts}
       />
       <Navbar />
       <main>
@@ -160,7 +168,10 @@ const Index = () => {
           <StatsSection />
         </div>
         <div className="cv-auto">
-          <BlogSection posts={sanityPosts ?? undefined} isLoading={blogLoading} />
+          <BlogSection
+            posts={homeArticlePosts ?? undefined}
+            isLoading={blogLoading && !ssrHomeInsights?.length}
+          />
         </div>
         <div className="cv-auto">
           <TestimonialsSection />
