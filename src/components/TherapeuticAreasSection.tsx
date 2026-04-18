@@ -36,9 +36,9 @@ const TherapeuticAreasSection = () => {
               key={i}
               className="area rounded-xl bg-background p-6 shadow-sm border border-border sr sr-scale-up sr-spring hover-lift"
             >
-              <h4 className="font-display font-semibold text-foreground mb-2">
+              <h3 className="font-display font-semibold text-foreground mb-2">
                 {area.name}
-              </h4>
+              </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 {area.description}
               </p>

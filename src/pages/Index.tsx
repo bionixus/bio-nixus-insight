@@ -18,7 +18,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const Index = () => {
   const { hash } = useLocation();
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
   const { data: sanityPosts, isLoading: blogLoading } = useSanityLatestInsights(3);
   const featuredCards = [
     {
@@ -108,7 +108,18 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <section className="section-padding py-4 bg-background">
+        <section
+          className="section-padding py-4 bg-background"
+          aria-labelledby="home-emea-signals-heading"
+        >
+          <div className="container-wide max-w-6xl mx-auto">
+            <h2
+              id="home-emea-signals-heading"
+              className="text-center text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] text-muted-foreground mb-4"
+            >
+              {t.indexLanding.emeaSignalsH2}
+            </h2>
+          </div>
           <div className="container-wide max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {[
               'Europe and Middle East Coverage',
@@ -183,7 +194,7 @@ const Index = () => {
           </div>
         </section>
         <div className="cv-auto">
-          <MethodologySection />
+          <MethodologySection nestUnderParentH1 />
         </div>
         <div className="cv-auto">
           <ContactSection />

@@ -18,10 +18,15 @@ export const translations = {
       about: 'About',
       contact: 'Contact',
     },
+    indexLanding: {
+      emeaSignalsH2:
+        'Europe, Middle East, and Africa pharmaceutical and healthcare market research snapshot',
+    },
     hero: {
       tagline: 'Healthcare Market Research Across EMEA (Europe, Middle East and Africa)',
-      title: 'Turn healthcare insights into faster launch and market access decisions',
-      subtitle: 'Decision-ready physician, payer, and hospital intelligence for pharmaceutical teams operating across Europe, the UK, MENA, and GCC markets.',
+      title: 'BioNixus Healthcare Market Research Services',
+      subtitle:
+        'Turn healthcare insights into faster launch and market access decisions with physician, payer, and hospital intelligence for pharmaceutical teams operating across Europe, the UK, MENA, and GCC markets.',
       valueProposition: 'BioNixus delivers quantitative and qualitative evidence designed for real commercial decisions, from pre-launch planning to post-launch optimization.',
       serviceHighlights: [
         'Multi-country physician and payer research',
@@ -161,7 +166,7 @@ export const translations = {
       badges: ['24h proposal turnaround', 'EMEA-native fieldwork', 'NICE & HTA-ready insights'],
     },
     methodologyEn: {
-      title: 'Methodology & Compliance',
+      title: 'Healthcare market research methodology, data quality, and regulatory compliance',
       intro: 'Our research aligns with the highest standards of regulatory compliance and data security across UK, European, and MENA markets.',
       steps: [
         { title: 'Regulatory alignment', description: 'MHRA and EMA regulatory compliance. NHS Research Ethics Committee (REC) standards. GDPR-compliant data collection protocols. ICH-GCP guidelines for clinical research.' },
@@ -285,9 +290,12 @@ export const translations = {
       about: 'Über uns',
       contact: 'Kontakt',
     },
+    indexLanding: {
+      emeaSignalsH2: 'Kurzüberblick: Pharmazeutische Gesundheitsmarktforschung in Europa, Naher Osten und Afrika',
+    },
     hero: {
       tagline: 'EMEA Gesundheitsmarktforschung',
-      title: 'EMEA Gesundheitsmarktforschung für pharmazeutische Exzellenz',
+      title: 'BioNixus Gesundheitsmarktforschungsdienste für pharmazeutische Teams in EMEA',
       subtitle: 'Verwandeln Sie Ärzte- und Krankenhaus-Erkenntnisse in strategische Intelligenz in UK-, Europa- und MENA-Märkten',
       valueProposition: 'Wir liefern umfassende quantitative und qualitative Marktforschung, die klinische Daten in umsetzbare pharmazeutische Intelligence verwandelt. Unsere spezialisierte Methodik erfasst authentische Ärzteperspektiven aus NHS und privaten Gesundheitssystemen, Krankenhaustrends und Patienteneinblicken in UK, Europa und MENA.',
       serviceHighlights: ['UK NHS & Private Healthcare Research', 'Pan-europäische Ärztebefragungen', 'Qualitative Meinungsführer-Interviews (KOL)', 'Mehrländer-Datenanalyse', 'UK • Europa • MENA Abdeckung'],
@@ -335,7 +343,7 @@ export const translations = {
       ],
     },
     methodologyDe: {
-      title: 'Methodik & Compliance',
+      title: 'Gesundheitsmarktforschung: Methodik, Datenqualität und regulatorische Compliance',
       intro: 'Unsere Forschung entspricht den höchsten Standards der regulatorischen Compliance und Datensicherheit.',
       steps: [
         { title: 'Regulatorische Ausrichtung', description: 'MHRA- und EMA-Regulierungskonformität. NHS Research Ethics Committee (REC) Standards. DSGVO-konforme Datenerhebungsprotokolle. ICH-GCP-Richtlinien für klinische Forschung.' },
@@ -527,9 +535,13 @@ export const translations = {
       about: 'À propos',
       contact: 'Contact',
     },
+    indexLanding: {
+      emeaSignalsH2:
+        'Panorama des études de marché pharmaceutiques et santé en Europe, au Moyen-Orient et en Afrique',
+    },
     hero: {
       tagline: 'Études de Marché Santé EMEA',
-      title: 'Études de Marché Santé EMEA pour l\'Excellence Pharmaceutique',
+      title: "BioNixus — Services d'études de marché santé pour l'industrie pharmaceutique",
       subtitle: 'Transformez les insights médecins et hôpitaux en intelligence stratégique sur les marchés UK, Europe et MENA',
       valueProposition: 'Nous fournissons des études de marché quantitatives et qualitatives complètes qui transforment les données cliniques en intelligence pharmaceutique exploitable. Notre méthodologie spécialisée capture les perspectives authentiques des médecins du NHS et du privé, les tendances hospitalières et les insights patients en UK, Europe et MENA.',
       serviceHighlights: ['Recherche NHS & Privé UK', 'Enquêtes médecins pan-européennes', 'Interviews Leaders d\'Opinion Clés (KOL) qualitatives', 'Analyses multi-pays', 'Couverture UK • Europe • MENA'],
@@ -577,7 +589,7 @@ export const translations = {
       ],
     },
     methodologyFr: {
-      title: 'Méthodologie & Conformité',
+      title: 'Méthodologie des études de marché santé, qualité des données et conformité réglementaire',
       intro: 'Notre recherche respecte les plus hauts standards de conformité réglementaire et de sécurité des données.',
       steps: [
         { title: 'Alignement Réglementaire', description: 'Conformité MHRA et EMA. Normes NHS Research Ethics Committee (REC). Protocoles de collecte conformes RGPD. Lignes directrices ICH-GCP pour la recherche clinique.' },
@@ -769,9 +781,13 @@ export const translations = {
       about: 'Nosotros',
       contact: 'Contacto',
     },
+    indexLanding: {
+      emeaSignalsH2:
+        'Panorama de la investigación de mercado farmacéutico y sanitario en Europa, Oriente Medio y África',
+    },
     hero: {
       tagline: 'Investigación de Mercado Sanitario EMEA',
-      title: 'Investigación de Mercado Sanitario EMEA para la Excelencia Farmacéutica',
+      title: 'BioNixus — Servicios de investigación de mercado sanitario y farmacéutico en EMEA',
       subtitle: 'Transforme los insights de médicos y hospitales en inteligencia estratégica en mercados UK, Europa y MENA',
       valueProposition: 'Proporcionamos estudios de mercado cuantitativos y cualitativos que transforman datos clínicos en inteligencia farmacéutica accionable. Nuestra metodología especializada captura perspectivas auténticas de médicos del NHS y sector privado, tendencias hospitalarias e insights de pacientes en UK, Europa y MENA.',
       serviceHighlights: ['Investigación NHS y Privado UK', 'Encuestas médicas pan-europeas', 'Entrevistas Líderes de Opinión Clave (KOL) cualitativas', 'Análisis multi-país', 'Cobertura UK • Europa • MENA'],
@@ -819,7 +835,7 @@ export const translations = {
       ],
     },
     methodologyEs: {
-      title: 'Metodología y Cumplimiento',
+      title: 'Metodología de investigación de mercado sanitario, calidad de datos y cumplimiento normativo',
       intro: 'Nuestra investigación cumple los más altos estándares de cumplimiento regulatorio y seguridad de datos.',
       steps: [
         { title: 'Alineamiento Regulatorio', description: 'Cumplimiento MHRA y EMA. Estándares NHS Research Ethics Committee (REC). Protocolos de recopilación conforme RGPD. Directrices ICH-GCP para investigación clínica.' },
@@ -1011,9 +1027,12 @@ export const translations = {
       about: '关于我们',
       contact: '联系我们',
     },
+    indexLanding: {
+      emeaSignalsH2: '欧洲、中东与非洲医药及医疗健康市场研究概览',
+    },
     hero: {
       tagline: '欧洲、中东和非洲医疗市场研究',
-      title: '欧洲、中东和非洲医疗市场研究 - 制药卓越',
+      title: 'BioNixus医疗健康市场研究服务（欧洲、中东与非洲）',
       subtitle: '将医生和医院洞察转化为英国、欧洲及中东和非洲市场的战略智能',
       valueProposition: '我们提供全面的定量和定性市场研究服务，将临床数据转化为可执行的制药情报。我们的专业方法捕捉NHS和私立医疗系统中医生的真实观点、医院趋势和患者洞察，覆盖英国、欧洲和中东和非洲市场。',
       serviceHighlights: ['英国NHS和私立医疗研究', '泛欧医生调研', '定性关键意见领袖 (KOL) 访谈', '多国数据分析', '英国•欧洲•中东和非洲覆盖'],
@@ -1061,7 +1080,7 @@ export const translations = {
       ],
     },
     methodologyZh: {
-      title: '方法与合规',
+      title: '医疗健康市场研究方法论、数据质量与监管合规',
       intro: '我们的研究遵循最高标准的监管合规和数据安全。',
       steps: [
         { title: '监管对齐', description: 'MHRA和EMA监管合规。NHS研究伦理委员会（REC）标准。GDPR合规数据收集协议。ICH-GCP临床研究指南。' },
@@ -1248,9 +1267,12 @@ export const translations = {
       about: 'من نحن',
       contact: 'اتصل بنا',
     },
+    indexLanding: {
+      emeaSignalsH2: 'لمحة عن أبحاث السوق الصحية والدوائية في أوروبا والشرق الأوسط وإفريقيا',
+    },
     hero: {
       tagline: 'أبحاث السوق الصحية في الشرق الأوسط والخليج',
-      title: 'أبحاث السوق الصحية والدوائية في الشرق الأوسط ودول الخليج',
+      title: 'خدمات BioNixus لأبحاث السوق الصحية والدوائية',
       subtitle: 'حوّل رؤى الأطباء والمستشفيات إلى ذكاء استراتيجي عبر أسواق الخليج وشمال أفريقيا',
       valueProposition: 'نقدم خدمات أبحاث سوق كمية ونوعية شاملة تحول البيانات السريرية إلى معلومات دوائية قابلة للتنفيذ. منهجيتنا المتخصصة تلتقط وجهات نظر الأطباء الحقيقية من القطاعين الحكومي والخاص، اتجاهات المستشفيات، ورؤى المرضى عبر أسواق دول الخليج والشرق الأوسط لدعم استراتيجيات تطوير الأدوية، الوصول للسوق، والتسويق التجاري.',
       serviceHighlights: ['أبحاث المستشفيات الحكومية والخاصة', 'استبيانات الأطباء الكمية', 'مقابلات الخبراء النوعية', 'تحليل البيانات متعدد الدول', 'تغطية شاملة للخليج والشرق الأوسط'],
@@ -1555,7 +1577,7 @@ export const translations = {
       ],
     },
     methodologyAr: {
-      title: 'منهجية أبحاث السوق الصحية القائمة على الأدلة',
+      title: 'منهجية أبحاث السوق الصحية وجودة البيانات والامتثال التنظيمي',
       steps: [
         {
           title: 'المرحلة 1: تصميم البحث وتطوير البروتوكول',

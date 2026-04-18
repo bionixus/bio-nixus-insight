@@ -42,10 +42,10 @@ const HeroSection = () => {
             {t.hero.title}
           </h1>
 
-          {/* Subtitle (H2) */}
-          <h2 className="text-xl md:text-2xl font-display font-medium text-white/90 max-w-3xl leading-tight mb-6 animate-fade-up animation-delay-300">
+          {/* Lead line (styled as hero subhead; paragraph keeps a single page-level H1) */}
+          <p className="text-xl md:text-2xl font-display font-medium text-white/90 max-w-3xl leading-tight mb-6 animate-fade-up animation-delay-300">
             {t.hero.subtitle}
-          </h2>
+          </p>
 
           {/* Value Proposition */}
           <p className="text-base md:text-lg text-white/70 max-w-3xl leading-relaxed mb-8 animate-fade-up animation-delay-400">
