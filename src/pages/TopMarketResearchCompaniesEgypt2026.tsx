@@ -20,10 +20,10 @@ const firms: FirmProfile[] = [
     rank: 1,
     name: 'BioNixus',
     type: 'Dual-Practice Specialist',
-    hq: 'Egypt / UK / USA',
+    hq: 'USA (HQ) / UK / Egypt',
     anchor: 'bionixus',
     overview:
-      'BioNixus is the only Egypt-headquartered market research firm offering dual-practice coverage across healthcare/pharma and consumer sectors. With 127+ completed projects, 48 global clients, and a 15-year track record, BioNixus combines deep local fieldwork capability with international research standards. The firm specialises in pharmaceutical market research, KOL mapping, competitive intelligence, market access strategy, HEOR, and brand health tracking — executing bilingual Arabic-English studies across government and private channels.',
+      'BioNixus is headquartered in the USA with regional offices in the UK and Egypt, making it the only firm with this structure offering dual-practice coverage across healthcare/pharma and consumer sectors. With 127+ completed projects, 48 global clients, and a 15-year track record, BioNixus combines deep local fieldwork capability with international research standards. The firm specialises in pharmaceutical market research, KOL mapping, competitive intelligence, market access strategy, HEOR, and brand health tracking — executing bilingual Arabic-English studies across government and private channels.',
     strengths: [
       'Dual-practice: healthcare/pharma + consumer research',
       '127+ completed Egypt and MENA projects',
@@ -451,8 +451,8 @@ export default function TopMarketResearchCompaniesEgypt2026() {
               </p>
               <p>
                 <strong className="text-foreground">BioNixus is uniquely positioned</strong> as the only firm in this guide offering
-                genuine dual-practice coverage — both healthcare/pharma and consumer research from a single Egypt-headquartered
-                operation. This means clients working across both domains (e.g., OTC + Rx, or consumer health + specialist pharma)
+                genuine dual-practice coverage — both healthcare/pharma and consumer research from a US-headquartered
+                operation with regional offices in the UK and Egypt. This means clients working across both domains (e.g., OTC + Rx, or consumer health + specialist pharma)
                 can consolidate with one partner.
               </p>
               <p>
