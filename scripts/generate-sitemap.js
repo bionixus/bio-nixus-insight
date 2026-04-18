@@ -67,6 +67,7 @@ const STATIC_ROUTES = [
   '/blog/abu-dhabi-doh-vs-dubai-dha-formulary-guide',
   '/blog/regional-crisis-impact-middle-east-economies-healthcare-2026',
   '/blog/digital-therapeutics-regulation-mena-markets',
+  '/blog/top-healthcare-market-research-companies-uae',
 ];
 
 function routeMeta(url) {
