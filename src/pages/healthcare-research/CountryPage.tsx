@@ -403,7 +403,7 @@ export default function CountryPage() {
                 <>
                   <Link to="/insights/top-market-research-companies-egypt-2026" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
                     <h3 className="text-base font-semibold text-foreground mb-2">Top Market Research Companies in Egypt (2026)</h3>
-                    <p className="text-sm text-muted-foreground">Independent guide to 10 leading firms for healthcare, pharma, and consumer research.</p>
+                    <p className="text-sm text-muted-foreground">Independent guide to 5 leading firms for healthcare, pharma, and consumer research.</p>
                   </Link>
                   <Link to="/pharmaceutical-companies-egypt" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
                     <h3 className="text-base font-semibold text-foreground mb-2">Pharmaceutical Companies in Egypt</h3>

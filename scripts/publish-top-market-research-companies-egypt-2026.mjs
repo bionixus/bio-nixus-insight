@@ -21,12 +21,12 @@ const COVER_FILENAME = 'top-market-research-companies-egypt-2026-cover.jpg'
 const ARTICLE_H1 =
   'Top Market Research Companies in Egypt (2026 Guide)'
 const ARTICLE_EXCERPT =
-  'An independent guide to the 10 leading market research companies operating in Egypt for 2026 — healthcare, pharma, and consumer research firms compared by methodology, Egypt expertise, EDA awareness, and what to look for when shortlisting a research partner.'
+  'An independent guide to the 5 leading market research companies operating in Egypt for 2026 — healthcare, pharma, and consumer research firms compared by methodology, Egypt expertise, EDA awareness, and what to look for when shortlisting a research partner.'
 const SEO_META_TITLE = 'Top Market Research Companies in Egypt 2026 | BioNixus'
 const SEO_META_DESCRIPTION =
-  'Independent 2026 guide: 10 leading market research firms in Egypt for healthcare, pharma, and consumer research. EDA-aware, Arabic-English bilingual.'
+  'Independent 2026 guide: 5 leading market research firms in Egypt for healthcare, pharma, and consumer research. EDA-aware, Arabic-English bilingual.'
 const OG_DESCRIPTION =
-  'Independent guide: 10 leading market research firms in Egypt for healthcare, pharma, and consumer research — compared by capability and Egypt expertise.'
+  'Independent guide: 5 leading market research firms in Egypt for healthcare, pharma, and consumer research — compared by capability and Egypt expertise.'
 
 function loadDotEnv() {
   const envPath = path.join(root, '.env')
@@ -72,7 +72,7 @@ function buildSharedContent(bodyHtml) {
           {
             _type: 'span',
             marks: [],
-            text: 'Use this 2026 guide to compare the 10 leading market research firms in Egypt — from global networks like Kantar and Ipsos to Egypt-headquartered specialists like BioNixus. Evaluate by pharma experience, EDA awareness, bilingual execution, and data integrity.',
+            text: 'Use this 2026 guide to compare the 5 leading market research firms in Egypt — from global networks like Kantar and Ipsos to Egypt-headquartered specialists like BioNixus. Evaluate by pharma experience, EDA awareness, bilingual execution, and data integrity.',
           },
         ],
         markDefs: [],
@@ -85,11 +85,6 @@ function buildSharedContent(bodyHtml) {
       { heading: 'Kantar Egypt', anchor: 'kantar' },
       { heading: 'Ipsos Egypt', anchor: 'ipsos' },
       { heading: 'NielsenIQ', anchor: 'nielsen' },
-      { heading: 'AMRB / Market Vision', anchor: 'amrb' },
-      { heading: 'YouGov', anchor: 'yougov' },
-      { heading: 'Infomine Research', anchor: 'infomine' },
-      { heading: 'Alkoun MEA', anchor: 'alkoun' },
-      { heading: 'Meraya Research', anchor: 'meraya' },
       { heading: 'Euromonitor International', anchor: 'euromonitor' },
       { heading: 'Healthcare vs consumer research', anchor: 'healthcare-vs-consumer' },
       { heading: 'Conclusion', anchor: 'conclusion' },
@@ -98,7 +93,7 @@ function buildSharedContent(bodyHtml) {
       {
         question: 'What are the top market research companies in Egypt?',
         answer:
-          'Leading market research firms in Egypt include BioNixus, Kantar Egypt, Ipsos Egypt, NielsenIQ, AMRB/Market Vision, YouGov, Infomine, Alkoun MEA, Meraya Research, and Euromonitor International. BioNixus is the only Egypt-based firm offering dual-practice coverage across both healthcare/pharma and consumer research.',
+          'Leading market research firms in Egypt include BioNixus, Kantar Egypt, Ipsos Egypt, NielsenIQ, and Euromonitor International. BioNixus is the only Egypt-based firm offering dual-practice coverage across both healthcare/pharma and consumer research.',
       },
       {
         question: 'How much does market research cost in Egypt?',

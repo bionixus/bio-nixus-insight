@@ -106,7 +106,7 @@ const Index = () => {
       to: '/insights/top-market-research-companies-egypt-2026',
       title: 'Top Market Research Companies in Egypt (2026)',
       description:
-        'Independent guide comparing 10 leading firms for healthcare, pharma, and consumer research in Egypt — the largest market in MENA.',
+        'Independent guide comparing 5 leading firms for healthcare, pharma, and consumer research in Egypt — the largest market in MENA.',
       highlight: true,
       label: 'New Guide',
       decisionHint: 'Best for Egypt partner selection',

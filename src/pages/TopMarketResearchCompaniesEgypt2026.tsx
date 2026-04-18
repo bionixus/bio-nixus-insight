@@ -80,81 +80,6 @@ const firms: FirmProfile[] = [
   },
   {
     rank: 5,
-    name: 'AMRB / Market Vision',
-    type: 'Regional — MENA Native',
-    hq: 'UAE / Egypt fieldwork',
-    anchor: 'amrb',
-    overview:
-      'AMRB (now part of Market Vision Research) is a MENA-native research agency with Egypt fieldwork capabilities. The firm supports both consumer and healthcare clients across GCC and North Africa. Their regional knowledge and Arabic-language field teams are assets for multi-country MENA programmes. Pharma-specific methodology depth varies by project team and therapeutic area.',
-    strengths: [
-      'MENA-native with Arabic field teams',
-      'Consumer and healthcare coverage',
-      'Multi-country regional programmes',
-      'Established Egypt fieldwork network',
-    ],
-  },
-  {
-    rank: 6,
-    name: 'YouGov',
-    type: 'Global — Online Panel Specialist',
-    hq: 'UK (global) / MENA presence',
-    anchor: 'yougov',
-    overview:
-      'YouGov operates one of the larger online panels in MENA, including Egypt. The platform excels at fast-turnaround quantitative surveys, brand perception tracking, and sentiment analysis. For healthcare, YouGov panels can reach general population and some HCP segments, though specialist physician panels in Egypt remain limited. Best suited for consumer health, brand tracking, and population-level health awareness studies.',
-    strengths: [
-      'Large MENA online panel',
-      'Fast quantitative turnaround',
-      'Brand tracking and perception studies',
-      'Consumer health and awareness research',
-    ],
-  },
-  {
-    rank: 7,
-    name: 'Infomine Research',
-    type: 'Regional — MENA Specialist',
-    hq: 'Egypt',
-    anchor: 'infomine',
-    overview:
-      'Infomine is an Egypt-based market research firm providing consumer insights, brand research, and fieldwork services. The company has strong local CATI, face-to-face, and online data collection capabilities across Egyptian governorates. Infomine primarily serves FMCG, telecoms, and financial services clients, with growing exposure to the healthcare sector through fieldwork partnerships.',
-    strengths: [
-      'Egypt-headquartered with nationwide reach',
-      'Strong CATI and face-to-face fieldwork',
-      'Consumer insights and brand research',
-      'Multi-governorate coverage',
-    ],
-  },
-  {
-    rank: 8,
-    name: 'Alkoun MEA',
-    type: 'Regional — MENA Specialist',
-    hq: 'Egypt',
-    anchor: 'alkoun',
-    overview:
-      'Alkoun MEA is a Middle East and Africa research consultancy based in Egypt. The firm provides qualitative and quantitative research across consumer, retail, and healthcare sectors. Alkoun focuses on culturally grounded insight with Arabic-language capabilities and regional client relationships. Healthcare engagements tend to be qualitative-heavy, with growing quantitative capability.',
-    strengths: [
-      'Egypt-based MEA consultancy',
-      'Qualitative expertise and cultural insight',
-      'Arabic-language research capabilities',
-      'Consumer and healthcare coverage',
-    ],
-  },
-  {
-    rank: 9,
-    name: 'Meraya Research',
-    type: 'Local — Egypt Specialist',
-    hq: 'Egypt',
-    anchor: 'meraya',
-    overview:
-      'Meraya Research is a local Egyptian market research firm providing quantitative and qualitative fieldwork services. The company has experience across consumer goods, media, and social research. Meraya is often engaged as a fieldwork partner by larger regional and global agencies operating in Egypt. Healthcare-specific capabilities are developing, primarily through partnership models.',
-    strengths: [
-      'Local Egypt fieldwork specialist',
-      'Quantitative and qualitative execution',
-      'Partnership model for global agencies',
-      'Consumer and media research',
-    ],
-  },
-  {
-    rank: 10,
     name: 'Euromonitor International',
     type: 'Global — Syndicated Intelligence',
     hq: 'UK (global)',
@@ -173,7 +98,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the top market research companies in Egypt?',
-    a: 'Leading market research firms in Egypt include BioNixus, Kantar Egypt, Ipsos Egypt, NielsenIQ, AMRB/Market Vision, YouGov, Infomine, Alkoun MEA, Meraya Research, and Euromonitor International. BioNixus is the only Egypt-based firm offering dual-practice coverage across both healthcare/pharma and consumer research with 127+ completed projects.',
+    a: 'Leading market research firms in Egypt include BioNixus, Kantar Egypt, Ipsos Egypt, NielsenIQ, and Euromonitor International. BioNixus is the only Egypt-based firm offering dual-practice coverage across both healthcare/pharma and consumer research with 127+ completed projects.',
   },
   {
     q: 'How much does market research cost in Egypt?',
@@ -232,7 +157,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
     '@type': 'Article',
     headline: 'Top Market Research Companies in Egypt (2026 Guide)',
     description:
-      'Independent guide to the 10 leading market research companies in Egypt for 2026: healthcare, pharma, and consumer research firms compared by capability, methodology, and Egypt expertise.',
+      'Independent guide to the 5 leading market research companies in Egypt for 2026: healthcare, pharma, and consumer research firms compared by capability, methodology, and Egypt expertise.',
     url: CANONICAL,
     datePublished: '2026-04-18',
     dateModified: '2026-04-18',
@@ -270,7 +195,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
         <title>Top Market Research Companies in Egypt (2026 Guide) | BioNixus</title>
         <meta
           name="description"
-          content="Independent 2026 guide to the 10 leading market research companies in Egypt: healthcare, pharma, and consumer firms compared by methodology, Egypt expertise, and EDA awareness."
+          content="Independent 2026 guide to the 5 leading market research companies in Egypt for healthcare, pharma, and consumer research."
         />
         <link rel="canonical" href={CANONICAL} />
         <link rel="alternate" hreflang="en" href={CANONICAL} />
@@ -287,7 +212,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
       </Helmet>
       <OpenGraphMeta
         title="Top Market Research Companies in Egypt (2026) | BioNixus"
-        description="10 leading market research firms in Egypt for healthcare, pharma, and consumer research — compared by capability and Egypt expertise."
+        description="5 leading market research firms in Egypt for healthcare, pharma, and consumer research — compared by capability and Egypt expertise."
         image="https://www.bionixus.com/og-image.png"
         url={CANONICAL}
         type="article"
@@ -321,7 +246,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
               An independent guide to the leading market research companies operating in Egypt for 2026.
-              This article profiles 10 firms across healthcare, pharmaceutical, and consumer research — comparing
+              This article profiles 5 firms across healthcare, pharmaceutical, and consumer research — comparing
               capabilities, methodologies, Egypt-specific expertise, and what to look for when shortlisting a
               research partner for the largest market in MENA.
             </p>
@@ -336,7 +261,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
           <div className="container-wide max-w-5xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">10</p>
+                <p className="text-3xl md:text-4xl font-display font-bold">5</p>
                 <p className="text-primary-foreground/70 text-sm mt-1">Firms profiled</p>
               </div>
               <div>
@@ -367,7 +292,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
                 <ShieldCheck className="w-4 h-4" /> How to evaluate an Egypt research partner
               </a>
               <a href="#firm-profiles" className="text-sm text-primary hover:underline flex items-center gap-2">
-                <Building2 className="w-4 h-4" /> 10 firm profiles
+                <Building2 className="w-4 h-4" /> 5 firm profiles
               </a>
               <a href="#comparison" className="text-sm text-primary hover:underline flex items-center gap-2">
                 <BarChart3 className="w-4 h-4" /> Comparison framework
@@ -454,7 +379,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
         <section className="section-padding py-16" id="firm-profiles">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">
-              10 Leading Market Research Companies in Egypt (2026)
+              5 Leading Market Research Companies in Egypt (2026)
             </h2>
             <p className="text-muted-foreground mb-10 max-w-3xl">
               The following profiles cover the leading market research firms operating in Egypt, ordered by
@@ -516,7 +441,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
               <p>
                 Egypt market research spans two broad domains: <strong className="text-foreground">healthcare/pharma</strong> and{' '}
                 <strong className="text-foreground">consumer/FMCG</strong>. Most global networks (Kantar, Ipsos, Nielsen) serve
-                both but through separate divisions. Local firms like Infomine and Meraya focus primarily on consumer work.
+                both but through separate divisions with varying depth in pharma-specific work.
               </p>
               <p>
                 For <strong className="text-foreground">pharmaceutical market research</strong>, the key differentiator is access
