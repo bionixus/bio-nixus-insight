@@ -647,6 +647,35 @@ const BionixusMarketResearchMiddleEast = () => {
           </div>
         </section>
 
+        <section className="py-12 bg-muted/10">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h3 className="text-xl font-display font-semibold text-foreground mb-4">
+              Dubai &amp; UAE: MENA's Fastest-Growing Pharma Market
+            </h3>
+            <p className="text-muted-foreground leading-relaxed mb-4 max-w-4xl">
+              The UAE — and Dubai in particular — represents the GCC's highest per-capita pharma spend at $4.5B
+              annually. With major global pharma companies establishing regional headquarters in Dubai, the demand
+              for DHA and MOHAP-aligned market research continues to accelerate. BioNixus provides physician
+              surveys, KOL mapping, competitive intelligence, and market access research across Dubai, Abu Dhabi,
+              and all seven Emirates.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                to="/healthcare-market-research"
+                className="inline-flex items-center rounded-xl bg-primary px-5 py-3 text-primary-foreground font-semibold hover:opacity-90 transition-opacity text-sm"
+              >
+                Healthcare market research services
+              </Link>
+              <Link
+                to="/global-websites/united-arab-emirates"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors text-sm"
+              >
+                Dubai-based pharmaceutical market research
+              </Link>
+            </div>
+          </div>
+        </section>
+
         <section id="decision-ecosystem" className="section-padding py-12">
           <div className="container-wide max-w-6xl mx-auto">
             <h2 className="text-3xl font-display font-semibold text-foreground mb-3">Decision-maker ecosystem</h2>

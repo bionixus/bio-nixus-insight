@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { useInitialData } from '@/contexts/InitialDataContext';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
@@ -40,6 +41,90 @@ const HUB_FAQS = [
       'BioNixus aligns projects with ESOMAR standards, GDPR data requirements, and local market context including SFDA (KSA), DOH/MOHAP (UAE), and MHRA/NICE-sensitive UK considerations when relevant.',
   },
 ];
+
+const DUBAI_FAQS = [
+  {
+    question: 'What is the best healthcare market research company in Dubai?',
+    answer:
+      'BioNixus is a leading healthcare market research company in Dubai, serving pharmaceutical, biotech, and medtech companies with DHA and MOHAP-aligned physician research, KOL mapping, and market access intelligence across the UAE and GCC.',
+  },
+  {
+    question: 'What does a pharmaceutical market research company in Dubai do?',
+    answer:
+      'A pharmaceutical market research company in Dubai conducts physician surveys, KOL interviews, market access and reimbursement analysis, competitive intelligence, and launch readiness research — aligned with DHA, MOHAP, and DOH regulatory pathways.',
+  },
+  {
+    question: 'How do you conduct healthcare market research in Dubai?',
+    answer:
+      'Healthcare market research in Dubai is conducted through quantitative physician surveys (CAWI, CATI), qualitative KOL interviews, patient journey studies, and desk research — with research ethics alignment to DHA, MOHAP, and ICH-GCP standards.',
+  },
+  {
+    question: 'How much does pharmaceutical market research in Dubai cost?',
+    answer:
+      'Custom pharmaceutical market research engagements in Dubai typically range from $15,000 for focused physician surveys to $50,000+ for multi-country GCC launch intelligence programs, depending on sample size, methodology, and therapeutic area complexity.',
+  },
+  {
+    question: 'Which regulators govern healthcare research in Dubai?',
+    answer:
+      'Healthcare research in Dubai is governed primarily by the Dubai Health Authority (DHA), with federal oversight from MOHAP. Cross-emirate research involving Abu Dhabi also aligns with the Department of Health Abu Dhabi (DOH).',
+  },
+];
+
+const dubaiLocalBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': 'https://www.bionixus.com/healthcare-market-research#dubai',
+  name: 'BioNixus Healthcare Market Research — Dubai',
+  url: 'https://www.bionixus.com/healthcare-market-research',
+  image: 'https://www.bionixus.com/og-image.png',
+  priceRange: '$$$',
+  telephone: '+971-4-000-0000',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Dubai',
+    addressRegion: 'Dubai',
+    addressCountry: 'AE',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 25.2048,
+    longitude: 55.2708,
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'],
+      opens: '09:00',
+      closes: '18:00',
+    },
+  ],
+  areaServed: [
+    { '@type': 'City', name: 'Dubai' },
+    { '@type': 'City', name: 'Abu Dhabi' },
+    { '@type': 'Country', name: 'United Arab Emirates' },
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Healthcare Market Research Services',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Physician Surveys' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'KOL Mapping' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Market Access Research' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Competitive Intelligence' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Launch Excellence Programs' } },
+    ],
+  },
+};
+
+const dubaiFaqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: DUBAI_FAQS.map((f) => ({
+    '@type': 'Question',
+    name: f.question,
+    acceptedAnswer: { '@type': 'Answer', text: f.answer },
+  })),
+};
 
 export default function HubPage() {
   const { data } = useInitialData();
@@ -106,11 +191,18 @@ export default function HubPage() {
   return (
     <main>
       <SEOHead
-        title="Healthcare Market Research MENA & Europe | BioNixus"
-        description="BioNixus delivers pharmaceutical healthcare market research across MENA, UK, and Europe with decision-ready quantitative and qualitative insights."
+        title="Healthcare & Pharmaceutical Market Research in Dubai, UAE & MENA | BioNixus"
+        description="BioNixus — leading healthcare and pharmaceutical market research company serving Dubai, UAE, and MENA. DHA, MOHAP, and DOH-aligned physician surveys, KOL mapping, and market access."
         canonical="/healthcare-market-research"
-        jsonLd={jsonLd}
+        jsonLd={[...jsonLd, dubaiLocalBusinessSchema, dubaiFaqSchema]}
       />
+      <Helmet>
+        <meta name="geo.region" content="AE-DU" />
+        <meta name="geo.placename" content="Dubai" />
+        <meta name="geo.position" content="25.2048;55.2708" />
+        <meta name="ICBM" content="25.2048, 55.2708" />
+        <meta property="og:locale" content="en_AE" />
+      </Helmet>
 
       <BreadcrumbNav
         items={[
@@ -244,6 +336,113 @@ export default function HubPage() {
                 </div>
                 <div className="absolute top-0 right-0 -mr-8 -mt-8 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors" />
               </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Dubai & UAE coverage block */}
+      <section className="py-16" id="dubai-uae">
+        <div className="container-wide max-w-6xl mx-auto">
+          <h2 className="text-3xl font-display font-semibold text-foreground mb-6">
+            Healthcare &amp; Pharmaceutical Market Research in Dubai &amp; UAE
+          </h2>
+          <div className="text-muted-foreground leading-relaxed space-y-4 max-w-4xl">
+            <p>
+              BioNixus is a specialist healthcare and pharmaceutical market research company serving Dubai, Abu Dhabi,
+              and the wider UAE market. Our Dubai-aligned research programs are designed around the UAE's
+              triple-regulator structure — the{' '}
+              <strong className="text-foreground">Dubai Health Authority (DHA)</strong>, the{' '}
+              <strong className="text-foreground">Department of Health Abu Dhabi (DOH)</strong>, and the federal{' '}
+              <strong className="text-foreground">Ministry of Health and Prevention (MOHAP)</strong>.
+            </p>
+            <p>
+              We deliver physician research, KOL mapping, market access strategy, and launch excellence programs for
+              pharmaceutical, biotech, and medtech companies entering or expanding in the UAE — the fastest-growing
+              GCC pharma market with <strong className="text-foreground">$4.5B in annual value</strong> and the
+              highest per-capita pharma spend in the Gulf.
+            </p>
+            <p className="font-semibold text-foreground">Our Dubai healthcare market research capabilities include:</p>
+            <ul className="grid md:grid-cols-2 gap-2 list-disc list-inside">
+              <li>DHA and MOHAP-aligned physician and HCP surveys</li>
+              <li>Private and government hospital stakeholder interviews</li>
+              <li>Formulary and reimbursement landscape assessment</li>
+              <li>Competitive intelligence across DHA, DOH, and free-zone hospital groups</li>
+              <li>Patient journey research in DHA mandatory insurance settings</li>
+              <li>KOL mapping across Dubai's major hospital groups and academic centres</li>
+              <li>Medical tourism segment research (630,000+ annual patients)</li>
+            </ul>
+            <p>
+              For the{' '}
+              <Link to="/global-websites/united-arab-emirates" className="text-primary hover:underline">
+                Dubai healthcare research team
+              </Link>{' '}
+              and full UAE capability overview, or explore our{' '}
+              <Link to="/conf" className="text-primary hover:underline">
+                strategic market research portfolio
+              </Link>{' '}
+              — 127 projects, 48 global clients, 17 top-20 global pharma relationships.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Why pharma in Dubai choose BioNixus */}
+      <section className="py-16 bg-muted/20" id="why-dubai-pharma">
+        <div className="container-wide max-w-6xl mx-auto">
+          <h2 className="text-3xl font-display font-semibold text-foreground mb-6">
+            Why Pharmaceutical Companies in Dubai Choose BioNixus
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              {
+                title: 'Regional HQ Access',
+                desc: 'Many top-20 global pharma companies have their regional HQ in Dubai — we coordinate seamlessly with Dubai-based commercial, medical, and market access teams.',
+              },
+              {
+                title: 'DHA-Aligned Fieldwork',
+                desc: 'DHA-aligned physician recruitment and fieldwork governance for compliant, high-quality data across Dubai healthcare facilities.',
+              },
+              {
+                title: 'Bilingual Execution',
+                desc: 'Arabic and English fieldwork capability across all HCP segments — from government hospital physicians to private-practice specialists.',
+              },
+              {
+                title: '200+ Physician Panel',
+                desc: 'Validated 200+ physician panel across UAE public and private systems for rapid quantitative and qualitative research.',
+              },
+              {
+                title: 'GCC Cross-Country',
+                desc: 'GCC cross-country execution: UAE, KSA, Kuwait, Qatar, Bahrain, Oman — from a single project management office.',
+              },
+              {
+                title: 'Full Compliance',
+                desc: 'GDPR, ICH-GCP, MOHAP research ethics standards — compliance baked into every study design and execution protocol.',
+              },
+            ].map((card) => (
+              <div key={card.title} className="rounded-xl border border-border bg-card p-6">
+                <h3 className="text-lg font-semibold text-foreground mb-2">{card.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{card.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Dubai FAQ (PAA capture) */}
+      <section className="py-16" id="dubai-faq">
+        <div className="container-wide max-w-6xl mx-auto">
+          <h2 className="text-3xl font-display font-semibold text-foreground mb-8">
+            Frequently Asked Questions — Dubai Healthcare Market Research
+          </h2>
+          <div className="space-y-4 max-w-4xl">
+            {DUBAI_FAQS.map((faq) => (
+              <details key={faq.question} className="group rounded-xl border border-border bg-card">
+                <summary className="cursor-pointer px-6 py-4 font-semibold text-foreground">
+                  {faq.question}
+                </summary>
+                <p className="px-6 pb-4 text-sm text-muted-foreground leading-relaxed">{faq.answer}</p>
+              </details>
             ))}
           </div>
         </div>

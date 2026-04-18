@@ -69,6 +69,8 @@ function buildFallbackTitle(pathname) {
   if (path === '/insights/top-market-research-companies-egypt-2026') return 'Top Market Research Companies in Egypt (2026) | BioNixus';
   if (path === '/ar/insights/top-market-research-companies-egypt-2026') return 'أفضل شركات أبحاث السوق في مصر (دليل 2026) | BioNixus';
 
+  if (path === '/healthcare-market-research') return 'Healthcare & Pharmaceutical Market Research in Dubai, UAE & MENA | BioNixus';
+  if (path === '/global-websites/united-arab-emirates') return 'Pharmaceutical & Healthcare Market Research in Dubai, UAE | BioNixus';
   if (path === '/case-studies') return 'Healthcare & Pharmaceutical Case Studies | BioNixus';
   if (path.startsWith('/case-studies/')) {
     const slug = path.split('/').pop() || 'case-study';
@@ -126,6 +128,12 @@ function buildFallbackDescription(pathname) {
   }
   if (path === '/ar/conf') {
     return 'بيونيكسس — الشركة الرائدة في أبحاث السوق في مصر. أبحاث الرعاية الصحية والأدوية والمستهلكين عبر الشرق الأوسط. ١٢٧ مشروعًا، ٤٨ عميلًا عالميًا.';
+  }
+  if (path === '/healthcare-market-research') {
+    return 'BioNixus — leading healthcare and pharmaceutical market research company serving Dubai, UAE, and MENA. DHA, MOHAP, and DOH-aligned physician surveys, KOL mapping, and market access.';
+  }
+  if (path === '/global-websites/united-arab-emirates') {
+    return 'BioNixus — pharmaceutical and healthcare market research in Dubai and UAE. DHA, MOHAP, DOH-aligned physician surveys, KOL mapping, market access, and launch intelligence.';
   }
   if (path === '/case-studies') {
     return 'Explore BioNixus healthcare and pharmaceutical case studies across Europe, the Middle East, and Africa.';

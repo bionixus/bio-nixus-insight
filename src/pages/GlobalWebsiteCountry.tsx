@@ -1448,7 +1448,7 @@ const GlobalWebsiteCountry = () => {
       <Helmet>
         <title>
           {isUaePage
-            ? 'Leading Pharmaceutical Market Research Company in UAE | Dubai & Abu Dhabi | BioNixus'
+            ? 'Pharmaceutical & Healthcare Market Research in Dubai, UAE | BioNixus'
             : isSaudiPage
               ? 'Saudi Arabia Pharmaceutical Market Research | SFDA, NUPCO and Vision 2030 Intelligence | BioNixus'
               : isUsPage
@@ -1479,7 +1479,7 @@ const GlobalWebsiteCountry = () => {
           name="description"
           content={
             isUaePage
-              ? 'BioNixus is the leading pharmaceutical market research company in the UAE, covering Dubai and Abu Dhabi health systems with physician surveys, KOL interviews, and MOHAP, DHA, and DOH-aligned market access intelligence.'
+              ? 'BioNixus — pharmaceutical and healthcare market research in Dubai and UAE. DHA, MOHAP, DOH-aligned physician surveys, KOL mapping, market access, and launch intelligence.'
               : isSaudiPage
                 ? 'Leading Saudi Arabia pharmaceutical market research with physician surveys, KOL interviews, SFDA and NUPCO intelligence across Riyadh, Jeddah, and Eastern Province.'
                 : isUsPage
@@ -1512,6 +1512,15 @@ const GlobalWebsiteCountry = () => {
         <link rel="canonical" href={canonicalUrl} />
         <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
         <link rel="alternate" hrefLang="en" href={canonicalUrl} />
+        {isUaePage ? (
+          <>
+            <meta name="geo.region" content="AE-DU" />
+            <meta name="geo.placename" content="Dubai" />
+            <meta name="geo.position" content="25.2048;55.2708" />
+            <meta name="ICBM" content="25.2048, 55.2708" />
+            <meta property="og:locale" content="en_AE" />
+          </>
+        ) : null}
         <meta property="og:type" content="article" />
         <meta property="og:url" content={canonicalUrl} />
         <meta
@@ -1662,6 +1671,39 @@ const GlobalWebsiteCountry = () => {
                   name: item.question,
                   acceptedAnswer: { '@type': 'Answer', text: item.answer },
                 })),
+              })}
+            </script>
+            <script type="application/ld+json">
+              {JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'LocalBusiness',
+                '@id': 'https://www.bionixus.com/global-websites/united-arab-emirates#dubai',
+                name: 'BioNixus — Pharmaceutical & Healthcare Market Research (Dubai)',
+                url: 'https://www.bionixus.com/global-websites/united-arab-emirates',
+                image: 'https://www.bionixus.com/og-image.png',
+                priceRange: '$$$',
+                address: {
+                  '@type': 'PostalAddress',
+                  addressLocality: 'Dubai',
+                  addressRegion: 'Dubai',
+                  addressCountry: 'AE',
+                },
+                geo: {
+                  '@type': 'GeoCoordinates',
+                  latitude: 25.2048,
+                  longitude: 55.2708,
+                },
+                openingHoursSpecification: [{
+                  '@type': 'OpeningHoursSpecification',
+                  dayOfWeek: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'],
+                  opens: '09:00',
+                  closes: '18:00',
+                }],
+                areaServed: [
+                  { '@type': 'City', name: 'Dubai' },
+                  { '@type': 'City', name: 'Abu Dhabi' },
+                  { '@type': 'Country', name: 'United Arab Emirates' },
+                ],
               })}
             </script>
           </>
@@ -2064,7 +2106,7 @@ const GlobalWebsiteCountry = () => {
             </Link>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-4">
               {isUaePage
-                ? 'BioNixus — Leading Pharmaceutical Market Research Company in the UAE'
+                ? 'Pharmaceutical & Healthcare Market Research in Dubai & UAE'
                 : isSaudiPage
                   ? 'Leading Pharmaceutical Market Research in Saudi Arabia'
                   : isUsPage
@@ -2155,9 +2197,20 @@ const GlobalWebsiteCountry = () => {
                 : `A standardized long-form market blueprint for ${country.countryName} within our ${country.regionName} coverage. This page follows the same structure used across all global market pages for consistency in planning, execution, and leadership comparison.`}
             </p>
             {isUaePage ? (
-              <p className="text-sm text-muted-foreground mt-4">
-                Trusted by teams operating in Dubai Healthcare City, SEHA network, Abu Dhabi, Sharjah, and Northern Emirates.
-              </p>
+              <>
+                <p className="text-sm text-muted-foreground mt-4">
+                  Trusted by teams operating in Dubai Healthcare City, SEHA network, Abu Dhabi, Sharjah, and Northern Emirates.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mt-4 max-w-3xl">
+                  BioNixus is a specialist healthcare market research agency serving Dubai, Abu Dhabi, and the wider UAE. Our research programs are designed around the DHA, DOH, and MOHAP regulatory structure — delivering physician surveys, KOL mapping, competitive intelligence, and market access research for pharma, biotech, and medtech teams across the Emirates.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mt-2 max-w-3xl">
+                  For the full healthcare market research framework, see our{' '}
+                  <Link to="/healthcare-market-research" className="text-primary hover:underline">
+                    healthcare market research programs
+                  </Link>.
+                </p>
+              </>
             ) : isSaudiPage ? (
               <p className="text-sm text-muted-foreground mt-4">
                 Trusted by pharmaceutical teams across Riyadh, Jeddah, Eastern Province, and major Saudi medical networks.
@@ -2494,6 +2547,40 @@ const GlobalWebsiteCountry = () => {
                     ) : null}
                   </article>
                 ))}
+
+                {isUaePage ? (
+                  <article id="dubai-healthcare-agency" className="space-y-4">
+                    <h2 className="text-2xl font-display font-semibold text-foreground">
+                      Healthcare Market Research Agency in Dubai
+                    </h2>
+                    <p className="text-muted-foreground leading-relaxed">
+                      As a healthcare market research agency with deep Dubai expertise, BioNixus
+                      supports pharmaceutical companies with DHA and MOHAP-aligned research
+                      programs. Our Dubai capabilities span physician surveys across government
+                      and private hospital networks, KOL mapping across Dubai's major academic
+                      and clinical centres, formulary and reimbursement landscape assessment,
+                      competitive intelligence across DHA, DOH, and free-zone hospital groups,
+                      and patient journey research in DHA mandatory insurance settings.
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Dubai's $4.5B pharmaceutical market and 630,000+ annual medical tourism
+                      patients create unique research requirements. BioNixus delivers the
+                      local fieldwork capability, regulatory awareness, and bilingual
+                      Arabic-English execution that global pharma teams need for
+                      evidence-based decisions in the UAE.
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Explore our full{' '}
+                      <Link to="/healthcare-market-research" className="text-primary hover:underline">
+                        healthcare market research services
+                      </Link>{' '}
+                      or contact our{' '}
+                      <Link to="/contact" className="text-primary hover:underline">
+                        Dubai-based pharmaceutical market research team
+                      </Link>.
+                    </p>
+                  </article>
+                ) : null}
 
                 <article id="case-studies" className="bg-card border border-border rounded-xl p-6 md:p-8">
                   <h2 className="text-2xl font-display font-semibold text-foreground mb-4">

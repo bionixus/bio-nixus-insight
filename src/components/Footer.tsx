@@ -298,6 +298,14 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link
+                  to="/global-websites/united-arab-emirates"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  Dubai · UAE
+                </Link>
+              </li>
+              <li>
                 <a
                   href="https://careers.bionixus.com/"
                   target="_blank"

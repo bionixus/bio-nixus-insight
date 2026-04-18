@@ -178,7 +178,40 @@ const UaePharmaCompanies = () => {
             { title: 'Competitive Intelligence', desc: 'Real-time monitoring of competitor launches, tender outcomes, formulary changes, and market share across all therapeutic areas in the UAE and GCC.' },
             { title: 'Market Entry Strategy', desc: 'Comprehensive market assessment including regulatory pathway analysis (6–14 months fastest GCC), local partner identification, KOL engagement, and go-to-market planning for the UAE.' },
           ].map((s) => (<div key={s.title} className="bg-card border border-border rounded-xl p-6"><h3 className="text-lg font-display font-semibold text-foreground mb-3">{s.title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p></div>))}</div>
+          <p className="text-muted-foreground leading-relaxed mt-8 max-w-4xl">
+            For tailored healthcare research, explore our{' '}
+            <Link to="/healthcare-market-research" className="text-primary hover:underline">
+              healthcare market research services
+            </Link>{' '}
+            or contact our{' '}
+            <Link to="/global-websites/united-arab-emirates" className="text-primary hover:underline">
+              Dubai-based pharmaceutical market research team
+            </Link>.
+          </p>
         </div></section>
+
+        <section className="section-padding py-16" id="dubai-pharma-mr">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Pharmaceutical Market Research Companies in Dubai &amp; UAE
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4 max-w-4xl">
+              Pharmaceutical companies entering or expanding in Dubai and the UAE need market research partners
+              with DHA, MOHAP, and DOH regulatory awareness. BioNixus delivers physician surveys, KOL mapping,
+              competitive intelligence, and market access research aligned to the UAE's triple-regulator structure.
+            </p>
+            <p className="text-muted-foreground leading-relaxed max-w-4xl">
+              For the full framework, see our{' '}
+              <Link to="/healthcare-market-research" className="text-primary hover:underline">
+                healthcare market research services
+              </Link>{' '}
+              and our{' '}
+              <Link to="/global-websites/united-arab-emirates" className="text-primary hover:underline">
+                Dubai pharmaceutical market research team
+              </Link>.
+            </p>
+          </div>
+        </section>
 
         <section className="section-padding py-16 bg-muted/30" id="faq"><div className="container-wide max-w-5xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-10">Frequently Asked Questions</h2>
