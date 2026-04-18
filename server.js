@@ -64,7 +64,10 @@ function buildFallbackTitle(pathname) {
 
   if (path === '/sitemap') return 'Sitemap & Content Directory | BioNixus';
   if (path === '/privacy') return 'Privacy Policy & Terms for BioNixus Services';
-  if (path === '/conf') return 'BioNixus — Strategic Portfolio | Market Research & Consulting';
+  if (path === '/conf') return 'Top Market Research Companies in Egypt | Healthcare & Consumer | BioNixus';
+  if (path === '/ar/conf') return 'أفضل شركات أبحاث السوق في مصر | BioNixus';
+  if (path === '/insights/top-market-research-companies-egypt-2026') return 'Top Market Research Companies in Egypt (2026 Guide) | BioNixus';
+  if (path === '/ar/insights/top-market-research-companies-egypt-2026') return 'أفضل شركات أبحاث السوق في مصر (دليل 2026) | BioNixus';
 
   if (path === '/case-studies') return 'Healthcare & Pharmaceutical Case Studies | BioNixus';
   if (path.startsWith('/case-studies/')) {
@@ -119,7 +122,10 @@ function buildFallbackDescription(pathname) {
     return 'Healthcare and pharmaceutical market research across MENA, GCC, UK, and Europe with quantitative and qualitative insights by BioNixus.';
   }
   if (path === '/conf') {
-    return 'BioNixus strategic portfolio overview: healthcare and consumer market research, global pharma relationships, Egypt and MENA capabilities, and research-to-action methodology.';
+    return 'BioNixus — Egypt\'s leading market research and strategic consulting firm. Healthcare, pharma, consumer and corporate research across MENA. 127 projects, 48 global clients, 15-year track record.';
+  }
+  if (path === '/ar/conf') {
+    return 'بيونيكسس — الشركة الرائدة في أبحاث السوق والاستشارات الاستراتيجية في مصر. أبحاث الرعاية الصحية والأدوية والمستهلكين عبر منطقة الشرق الأوسط وشمال أفريقيا.';
   }
   if (path === '/case-studies') {
     return 'Explore BioNixus healthcare and pharmaceutical case studies across Europe, the Middle East, and Africa.';
@@ -270,6 +276,10 @@ async function startServer() {
     __dirname,
     isProduction ? path.join('dist/client', 'conf/strategic-portfolio.html') : path.join('public', 'conf/strategic-portfolio.html'),
   );
+  const strategicPortfolioArAbsolutePath = path.resolve(
+    __dirname,
+    isProduction ? path.join('dist/client', 'conf/strategic-portfolio-ar.html') : path.join('public', 'conf/strategic-portfolio-ar.html'),
+  );
 
   /** Full-page static deck (authoritative HTML, not the SPA shell). */
   app.get('/conf/', (_req, res) => {
@@ -280,6 +290,12 @@ async function startServer() {
   });
   app.get('/conf', (_req, res) => {
     res.type('html').sendFile(strategicPortfolioAbsolutePath);
+  });
+  app.get('/ar/conf/', (_req, res) => {
+    res.redirect(301, '/ar/conf');
+  });
+  app.get('/ar/conf', (_req, res) => {
+    res.type('html').sendFile(strategicPortfolioArAbsolutePath);
   });
 
   let vite;

@@ -29,6 +29,9 @@ export default function MarketResearchEgypt() {
       ]}
       relatedLinks={[
         { to: '/pharmaceutical-companies-egypt', label: 'Top pharmaceutical companies in Egypt' },
+        { to: '/insights/top-market-research-companies-egypt-2026', label: 'Top market research companies in Egypt (2026 guide)' },
+        { to: '/conf', label: 'BioNixus strategic portfolio' },
+        { to: '/healthcare-market-research/egypt', label: 'Healthcare market research in Egypt' },
         { to: '/market-research-uae', label: 'Market research UAE' },
         { to: '/market-research-ksa', label: 'Market research KSA' },
         { to: '/bionixus-market-research-middle-east', label: 'Middle East pharmaceutical market research pillar' },

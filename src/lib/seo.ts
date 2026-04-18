@@ -161,6 +161,14 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     zh: '/market-research-egypt',
     ar: '/ar/market-research-egypt',
   },
+  '/conf': {
+    en: '/conf',
+    ar: '/ar/conf',
+  },
+  '/insights/top-market-research-companies-egypt-2026': {
+    en: '/insights/top-market-research-companies-egypt-2026',
+    ar: '/ar/insights/top-market-research-companies-egypt-2026',
+  },
   '/market-research-saudi-arabia-pharmaceutical': {
     en: '/market-research-saudi-arabia-pharmaceutical',
     de: '/market-research-saudi-arabia-pharmaceutical',

@@ -251,6 +251,14 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  to="/conf"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  Strategic Portfolio
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/insights"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >

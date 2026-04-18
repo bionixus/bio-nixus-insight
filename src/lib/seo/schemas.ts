@@ -36,7 +36,7 @@ export function buildServiceSchema() {
     '@type': 'Service',
     serviceType: 'Healthcare Market Research',
     provider: { '@type': 'Organization', name: 'BioNixus Market Research' },
-    areaServed: ['Saudi Arabia', 'United Arab Emirates', 'Kuwait', 'United Kingdom', 'Europe'],
+    areaServed: ['Egypt', 'Saudi Arabia', 'United Arab Emirates', 'Kuwait', 'United Kingdom', 'Europe'],
     description:
       'Comprehensive pharmaceutical market research services including physician insights, KOL mapping, market access research, quantitative studies, and qualitative studies across MENA, UK, and Europe.',
   };
@@ -73,6 +73,7 @@ export function buildOrganizationSchema() {
     email: 'mosama@bionixus.com',
     sameAs: ['https://uk.linkedin.com/company/bionixus'],
     areaServed: [
+      { '@type': 'Country', name: 'Egypt' },
       { '@type': 'Country', name: 'Saudi Arabia' },
       { '@type': 'Country', name: 'United Arab Emirates' },
       { '@type': 'Country', name: 'Kuwait' },

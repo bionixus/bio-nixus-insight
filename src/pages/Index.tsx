@@ -94,6 +94,24 @@ const Index = () => {
       highlight: false,
     },
     {
+      to: '/conf',
+      title: 'Strategic Portfolio',
+      description:
+        'Full capability overview: 127+ projects, 48 global clients, dual-practice healthcare and consumer research across Egypt and MENA.',
+      highlight: true,
+      label: 'Egypt Focus',
+      decisionHint: 'See our market research portfolio',
+    },
+    {
+      to: '/insights/top-market-research-companies-egypt-2026',
+      title: 'Top Market Research Companies in Egypt (2026)',
+      description:
+        'Independent guide comparing 10 leading firms for healthcare, pharma, and consumer research in Egypt — the largest market in MENA.',
+      highlight: true,
+      label: 'New Guide',
+      decisionHint: 'Best for Egypt partner selection',
+    },
+    {
       to: '/global-websites/united-arab-emirates',
       title: 'UAE Pharmaceutical Market Research',
       description:

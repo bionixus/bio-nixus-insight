@@ -66,6 +66,8 @@ import ArMarketResearchKsa from '@/pages/ArMarketResearchKsa';
 import ArMarketResearchSaudi from '@/pages/ArMarketResearchSaudi';
 import ArMarketResearchKuwait from '@/pages/ArMarketResearchKuwait';
 import ArMarketResearchEgypt from '@/pages/ArMarketResearchEgypt';
+import TopMarketResearchCompaniesEgypt2026 from '@/pages/TopMarketResearchCompaniesEgypt2026';
+import ArTopMarketResearchCompaniesEgypt2026 from '@/pages/ArTopMarketResearchCompaniesEgypt2026';
 import CaseStudy from '@/pages/CaseStudy';
 import HubPage from '@/pages/healthcare-research/HubPage';
 import CountryPage from '@/pages/healthcare-research/CountryPage';
@@ -160,12 +162,15 @@ export const routes: RouteObject[] = [
   { path: '/kuwait', element: <CountryPage /> },
   { path: '/uk', element: <CountryPage /> },
   { path: '/europe', element: <CountryPage /> },
+  { path: '/egypt', element: <CountryPage /> },
   { path: '/healthcare-market-research/:country', element: <CountryPage /> },
   { path: '/healthcare-market-research/therapy/:area', element: <TherapyPage /> },
   { path: '/healthcare-market-research/services/:service', element: <ServicePage /> },
   { path: '/pharmaceutical-companies-kuwait', element: <KuwaitPharmaCompanies /> },
   { path: '/pharmaceutical-companies-saudi-arabia', element: <SaudiPharmaCompanies /> },
   { path: '/pharmaceutical-companies-uae', element: <UaePharmaCompanies /> },
+  { path: '/insights/top-market-research-companies-egypt-2026', element: <TopMarketResearchCompaniesEgypt2026 /> },
+  { path: '/ar/insights/top-market-research-companies-egypt-2026', element: <ArTopMarketResearchCompaniesEgypt2026 /> },
   { path: '/pharmaceutical-companies-egypt', element: <EgyptPharmaCompanies /> },
   { path: '/pharmaceutical-companies-qatar', element: <QatarPharmaCompanies /> },
   { path: '/pharmaceutical-companies-oman', element: <OmanPharmaCompanies /> },

@@ -76,7 +76,7 @@ const COUNTRY_QUERY = `*[_type == "countryResearchPage" && slug.current == $slug
 
 export async function fetchRouteData(url: string): Promise<Record<string, unknown>> {
   const path = url.split('?')[0];
-  const aliasCountryPath = path.match(/^\/(saudi-arabia|uae|kuwait|uk|europe)$/);
+  const aliasCountryPath = path.match(/^\/(saudi-arabia|uae|kuwait|uk|europe|egypt)$/);
   const normalizedPath = aliasCountryPath ? `/healthcare-market-research/${aliasCountryPath[1]}` : path;
 
   if (normalizedPath === '/healthcare-market-research' || normalizedPath === '/healthcare-market-research/') {

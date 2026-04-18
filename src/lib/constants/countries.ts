@@ -370,6 +370,60 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     ],
     isCity: true,
   },
+  egypt: {
+    name: 'Egypt',
+    slug: 'egypt',
+    region: 'mena',
+    metaSuffix: 'Egypt pharmaceutical and healthcare market research with EDA-aware execution and Arabic fieldwork.',
+    metaTitle: 'Healthcare Market Research in Egypt | Pharma & Consumer | BioNixus',
+    metaDescription:
+      'Healthcare and pharmaceutical market research in Egypt: EDA regulatory strategy, physician surveys, KOL mapping, competitive intelligence, and market access across Cairo, Giza, and Alexandria by BioNixus.',
+    ogDescription:
+      'BioNixus delivers pharmaceutical and consumer market research in Egypt with EDA-aware execution, bilingual Arabic-English fieldwork, and access to government and private hospital networks.',
+    h1: 'Healthcare Market Research in Egypt',
+    relatedCountries: ['saudi-arabia', 'uae', 'kuwait'],
+    relatedTherapies: ['diabetes', 'oncology', 'respiratory', 'cardiology'],
+    keyStats: [
+      { label: 'Population', value: '109M+ (largest in MENA)' },
+      { label: 'Pharma Market Size', value: '$5.8B+ annually' },
+      { label: 'Key Regulator', value: 'EDA (Egyptian Drug Authority)' },
+      { label: 'BioNixus Projects', value: '127+ completed Egypt studies' },
+      { label: 'Local Manufacturing', value: '90% domestic production' },
+      { label: 'Strategic Context', value: 'Universal Health Insurance expansion' },
+    ],
+    faqQuestions: [
+      {
+        question: 'What are the top market research companies in Egypt?',
+        answer:
+          'Leading market research firms in Egypt include BioNixus, Kantar Egypt, Ipsos Egypt, Nielsen, AMRB, YouGov, Infomine, and Alkoun MEA. BioNixus is the only Egypt-based firm offering dual-practice coverage across both healthcare/pharma and consumer research with a 15-year track record and 127+ completed projects.',
+      },
+      {
+        question: 'How does BioNixus run pharmaceutical market research in Egypt?',
+        answer:
+          'BioNixus structures Egypt pharmaceutical market research around local regulatory and institutional realities. We start each study by mapping the business decisions your team must make, then align respondent strategy, methodology, and analysis outputs. Our field teams execute compliant, culturally appropriate Arabic and English interviews with physicians, procurement stakeholders, and KOLs across government and private healthcare channels. Every project includes quality controls for sampling, recruitment verification, and data integrity.',
+      },
+      {
+        question: 'How much does market research cost in Egypt?',
+        answer:
+          'Custom market research engagements in Egypt typically range from $15,000 to $50,000 per project depending on scope, methodology, geography, and therapeutic or sector complexity. Multi-country MENA programs start higher. BioNixus provides transparent pricing with fixed-scope proposals.',
+      },
+      {
+        question: 'Which healthcare stakeholders should be included in Egypt pharma studies?',
+        answer:
+          'Effective Egypt studies include prescribing specialists, department heads, hospital pharmacy leaders, procurement stakeholders, and market access influencers. BioNixus segments by care setting because decision logic in government hospitals differs from private networks. We identify who drives adoption and who creates friction to give commercial and medical teams clearer engagement priorities.',
+      },
+      {
+        question: 'How does the EDA regulatory framework affect market research in Egypt?',
+        answer:
+          'The Egyptian Drug Authority (EDA), established in 2020, oversees drug registration, quality control, pricing, and pharmacovigilance. Registration takes 12–24 months. BioNixus structures research programs around EDA requirements so evidence outputs support regulatory submissions, market access decisions, and launch planning in Egypt.',
+      },
+      {
+        question: 'Why is Egypt important for MENA pharmaceutical strategy?',
+        answer:
+          'Egypt has the largest population in MENA (109M+), the strongest local manufacturing base (90% domestic production), and a growing pharmaceutical market valued at $5.8B+. Universal Health Insurance expansion and EDA modernisation are driving growth. Egypt serves as a generics powerhouse and African export hub, making it essential for any regional pharma strategy.',
+      },
+    ],
+  },
   'abu-dhabi': {
     name: 'Abu Dhabi',
     slug: 'abu-dhabi',

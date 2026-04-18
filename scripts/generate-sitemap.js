@@ -6,7 +6,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const BASE_URL = 'https://www.bionixus.com';
 const now = new Date().toISOString();
 
-const COUNTRIES = ['saudi-arabia', 'uae', 'kuwait', 'uk', 'europe'];
+const COUNTRIES = ['saudi-arabia', 'uae', 'kuwait', 'uk', 'europe', 'egypt'];
 const THERAPIES = ['oncology', 'diabetes', 'respiratory', 'immunology', 'biologics', 'vaccines'];
 const SERVICES = [
   'market-access',
@@ -71,11 +71,22 @@ const STATIC_ROUTES = [
   '/blog/top-healthcare-market-research-firms-saudi-arabia',
   '/ar/blog',
   '/ar/blog/saudi-healthcare-market-research-firms-ar',
+  '/blog/top-market-research-companies-egypt-2026',
+  '/insights/top-market-research-companies-egypt-2026',
+  '/ar/insights/top-market-research-companies-egypt-2026',
+  '/conf',
+  '/ar/conf',
+  '/market-research-egypt',
+  '/ar/market-research-egypt',
+  '/healthcare-market-research/egypt',
 ];
 
 function routeMeta(url) {
   if (url === '/') return { priority: '1.0', changefreq: 'weekly' };
+  if (url === '/conf' || url === '/ar/conf') return { priority: '0.95', changefreq: 'weekly' };
+  if (url.includes('top-market-research-companies-egypt')) return { priority: '0.9', changefreq: 'weekly' };
   if (url.startsWith('/blog') || url.startsWith('/ar/blog')) return { priority: '0.85', changefreq: 'daily' };
+  if (url.startsWith('/insights') || url.startsWith('/ar/insights')) return { priority: '0.9', changefreq: 'weekly' };
   if (url.startsWith('/healthcare-market-research')) return { priority: '0.9', changefreq: 'weekly' };
   if (url.startsWith('/services/')) return { priority: '0.8', changefreq: 'monthly' };
   if (url.startsWith('/pharmaceutical-companies-')) return { priority: '0.85', changefreq: 'monthly' };
