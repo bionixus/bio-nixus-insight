@@ -44,6 +44,14 @@ const STATIC_ROUTES = [
   '/mena-pharma-market-data',
   '/gcc-market-access-guide',
   '/quantitative-healthcare-market-research',
+  '/qualitative-market-research',
+  '/gcc-pharmaceutical-market-research',
+  '/uae-pharmaceutical-market-research',
+  '/gcc-hcp-recruitment-market-research',
+  '/healthcare-market-research-agency-gcc',
+  '/uae-market-access-research',
+  '/real-world-evidence',
+  '/real-world-evidence-gcc',
   '/pharmaceutical-companies-kuwait',
   '/pharmaceutical-companies-saudi-arabia',
   '/pharmaceutical-companies-uae',
@@ -53,6 +61,33 @@ const STATIC_ROUTES = [
   '/pharmaceutical-companies-bahrain',
   '/pharmaceutical-companies-iraq',
   '/pharmaceutical-companies-iran',
+  '/market-research-uae',
+  '/market-research-ksa',
+  '/market-research-saudi',
+  '/market-research-kuwait',
+  '/market-research-egypt',
+  '/market-research-healthcare',
+  '/market-research-saudi-arabia-pharmaceutical',
+  '/ar/market-research-uae',
+  '/ar/market-research-ksa',
+  '/ar/market-research-saudi',
+  '/ar/market-research-kuwait',
+  '/ar/market-research-egypt',
+  '/ar/market-research-healthcare',
+  '/global-websites',
+  '/global-websites/united-arab-emirates',
+  '/global-websites/saudi-arabia',
+  '/global-websites/united-kingdom',
+  '/global-websites/germany',
+  '/global-websites/france',
+  '/global-websites/spain',
+  '/global-websites/italy',
+  '/global-websites/kuwait',
+  '/global-websites/qatar',
+  '/global-websites/bahrain',
+  '/global-websites/oman',
+  '/global-websites/egypt',
+  '/global-websites/united-states',
   '/blog/sfda-drug-registration-guide',
   '/blog/healthcare-market-research-methodologies-gcc',
   '/blog/kol-mapping-pharma-middle-east',
@@ -63,33 +98,41 @@ const STATIC_ROUTES = [
   '/blog/nice-hta-evidence-requirements-guide',
   '/blog/patient-journey-mapping-saudi-arabia',
   '/blog/middle-east-healthcare-market-statistics-2025',
+  '/blog/middle-east-healthcare-market-statistics-2026',
   '/blog/nupco-saudi-arabia-tendering-guide',
   '/blog/abu-dhabi-doh-vs-dubai-dha-formulary-guide',
   '/blog/regional-crisis-impact-middle-east-economies-healthcare-2026',
   '/blog/digital-therapeutics-regulation-mena-markets',
   '/blog/top-healthcare-market-research-companies-uae',
   '/blog/top-healthcare-market-research-firms-saudi-arabia',
+  '/blog/top-market-research-companies-egypt-2026',
   '/ar/blog',
   '/ar/blog/saudi-healthcare-market-research-firms-ar',
-  '/blog/top-market-research-companies-egypt-2026',
+  '/ar/contacts',
   '/insights/top-market-research-companies-egypt-2026',
   '/ar/insights/top-market-research-companies-egypt-2026',
   '/conf',
   '/ar/conf',
-  '/market-research-egypt',
-  '/ar/market-research-egypt',
   '/healthcare-market-research/egypt',
 ];
 
 function routeMeta(url) {
   if (url === '/') return { priority: '1.0', changefreq: 'weekly' };
+  if (url === '/healthcare-market-research') return { priority: '0.95', changefreq: 'weekly' };
+  if (url === '/global-websites/united-arab-emirates') return { priority: '0.95', changefreq: 'weekly' };
   if (url === '/conf' || url === '/ar/conf') return { priority: '0.95', changefreq: 'weekly' };
+  if (url === '/bionixus-market-research-middle-east') return { priority: '0.9', changefreq: 'weekly' };
   if (url.includes('top-market-research-companies-egypt')) return { priority: '0.9', changefreq: 'weekly' };
   if (url.startsWith('/blog') || url.startsWith('/ar/blog')) return { priority: '0.85', changefreq: 'daily' };
   if (url.startsWith('/insights') || url.startsWith('/ar/insights')) return { priority: '0.9', changefreq: 'weekly' };
   if (url.startsWith('/healthcare-market-research')) return { priority: '0.9', changefreq: 'weekly' };
+  if (url.startsWith('/global-websites/')) return { priority: '0.85', changefreq: 'monthly' };
+  if (url.startsWith('/market-research-')) return { priority: '0.85', changefreq: 'weekly' };
+  if (url.startsWith('/ar/market-research-')) return { priority: '0.8', changefreq: 'weekly' };
   if (url.startsWith('/services/')) return { priority: '0.8', changefreq: 'monthly' };
   if (url.startsWith('/pharmaceutical-companies-')) return { priority: '0.85', changefreq: 'monthly' };
+  if (url.includes('pharmaceutical-market-research') || url.includes('market-access')) return { priority: '0.85', changefreq: 'weekly' };
+  if (url.includes('real-world-evidence')) return { priority: '0.8', changefreq: 'monthly' };
   return { priority: '0.7', changefreq: 'monthly' };
 }
 
