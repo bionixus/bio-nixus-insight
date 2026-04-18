@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async'
+import { HOME_FAQ_SECTION_ID } from '@/lib/homePageFaq'
 
 type LanguageCode = 'en' | 'ar' | 'de' | 'fr' | 'es' | 'zh'
 
@@ -16,6 +17,7 @@ type HomeSchemaProps = {
   pageType: 'home'
   pageUrl: string
   language: LanguageCode
+  faqItems?: FaqItem[]
 }
 
 type BlogSchemaProps = {
@@ -144,10 +146,11 @@ function buildBreadcrumb(
   }
 }
 
-function buildFaq(faqItems: FaqItem[], inLanguage: string) {
+function buildFaq(faqItems: FaqItem[], inLanguage: string, faqPageUrl?: string) {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    ...(faqPageUrl ? { url: faqPageUrl } : {}),
     mainEntity: faqItems.map((item) => ({
       '@type': 'Question',
       name: item.question,
@@ -198,6 +201,23 @@ function isValidSchemaNode(node: Record<string, unknown>): boolean {
     return isNonEmptyString(node.name)
   }
 
+  if (type === 'FAQPage') {
+    if (!Array.isArray(node.mainEntity) || node.mainEntity.length === 0) return false
+    return node.mainEntity.every((entry) => {
+      if (typeof entry !== 'object' || entry === null) return false
+      const q = entry as Record<string, unknown>
+      const accepted = q.acceptedAnswer
+      if (typeof accepted !== 'object' || accepted === null) return false
+      const ans = accepted as Record<string, unknown>
+      return (
+        q['@type'] === 'Question' &&
+        isNonEmptyString(q.name) &&
+        ans['@type'] === 'Answer' &&
+        isNonEmptyString(ans.text)
+      )
+    })
+  }
+
   return true
 }
 
@@ -205,7 +225,13 @@ function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[] {
   const inLanguage = props.language
 
   if (props.pageType === 'home') {
-    return [buildOrganization(inLanguage), buildWebsite(inLanguage)]
+    const nodes: Record<string, unknown>[] = [buildOrganization(inLanguage), buildWebsite(inLanguage)]
+    if (props.faqItems && props.faqItems.length > 0) {
+      const faqPage = new URL(toHttpsUrl(props.pageUrl))
+      faqPage.hash = HOME_FAQ_SECTION_ID
+      nodes.push(buildFaq(props.faqItems, inLanguage, faqPage.toString()))
+    }
+    return nodes
   }
 
   if (props.pageType === 'blog') {
@@ -242,7 +268,7 @@ function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[] {
     ]
 
     if (props.faqItems && props.faqItems.length > 0) {
-      nodes.push(buildFaq(props.faqItems, inLanguage))
+      nodes.push(buildFaq(props.faqItems, inLanguage, toHttpsUrl(props.pageUrl)))
     }
 
     return nodes
@@ -264,7 +290,7 @@ function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[] {
     ]
 
     if (props.faqItems && props.faqItems.length > 0) {
-      nodes.push(buildFaq(props.faqItems, inLanguage))
+      nodes.push(buildFaq(props.faqItems, inLanguage, toHttpsUrl(props.pageUrl)))
     }
 
     return nodes

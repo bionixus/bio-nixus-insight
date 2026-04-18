@@ -1,11 +1,21 @@
+import { cn } from '@/lib/utils';
+
 interface FAQItem {
   question: string;
   answer: string;
 }
 
-export function FAQSection({ items, title }: { items: FAQItem[]; title?: string }) {
+type FAQSectionProps = {
+  items: FAQItem[];
+  title?: string;
+  /** Section DOM id (must match FAQPage JSON-LD URL hash when used for schema). */
+  sectionId?: string;
+  className?: string;
+};
+
+export function FAQSection({ items, title, sectionId = 'faq', className }: FAQSectionProps) {
   return (
-    <section className="py-12" id="faq">
+    <section className={cn('py-12', className)} id={sectionId}>
       <div className="container-wide max-w-4xl mx-auto">
         <h2 className="text-3xl font-display font-semibold text-foreground mb-8">
           {title || 'Frequently Asked Questions'}

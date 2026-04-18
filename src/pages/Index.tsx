@@ -14,12 +14,20 @@ import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import { useSanityLatestInsights } from '@/hooks/useSanityBlog';
 import SchemaMarkup from '@/components/SchemaMarkup';
+import { FAQSection } from '@/components/healthcare-research/FAQSection';
+import { getHomePageFaq, HOME_FAQ_SECTION_ID } from '@/lib/homePageFaq';
+import { languagePaths, seoByLanguage } from '@/lib/seo';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Index = () => {
   const { hash } = useLocation();
   const { language, t } = useLanguage();
   const { data: sanityPosts, isLoading: blogLoading } = useSanityLatestInsights(3);
+  const homeFaq = getHomePageFaq(language);
+  const homeCanonicalUrl = new URL(seoByLanguage[language].canonicalPath, 'https://www.bionixus.com').toString();
+  const basePath = languagePaths[language] || '/';
+  const contactHref =
+    language === 'fr' ? '/fr/contacts' : language === 'ar' ? '/ar/contacts' : `${basePath === '/' ? '' : basePath}/contact`;
   const featuredCards = [
     {
       to: '/market-research',
@@ -104,7 +112,12 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SchemaMarkup pageType="home" pageUrl="https://www.bionixus.com/" language={language} />
+      <SchemaMarkup
+        pageType="home"
+        pageUrl={homeCanonicalUrl}
+        language={language}
+        faqItems={homeFaq.items}
+      />
       <Navbar />
       <main>
         <HeroSection />
@@ -195,6 +208,25 @@ const Index = () => {
         </section>
         <div className="cv-auto">
           <MethodologySection nestUnderParentH1 />
+        </div>
+        <div className="section-padding bg-cream border-t border-border">
+          <FAQSection
+            sectionId={HOME_FAQ_SECTION_ID}
+            title={homeFaq.sectionTitle}
+            items={homeFaq.items}
+            className="py-14 bg-transparent"
+          />
+          <div className="container-wide max-w-4xl mx-auto pb-12 text-center text-sm text-muted-foreground">
+            <Link to="/faq" className="text-primary font-medium hover:underline">
+              {homeFaq.ctaFullFaq}
+            </Link>
+            <span className="mx-2" aria-hidden="true">
+              ·
+            </span>
+            <Link to={contactHref} className="text-primary font-medium hover:underline">
+              {homeFaq.ctaProposal}
+            </Link>
+          </div>
         </div>
         <div className="cv-auto">
           <ContactSection />
