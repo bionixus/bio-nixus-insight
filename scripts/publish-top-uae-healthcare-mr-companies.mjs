@@ -1,9 +1,10 @@
 /**
- * Creates the Sanity blogPost "Top Healthcare Market Research Companies in the UAE"
+ * Creates or syncs the Sanity blogPost "Top Healthcare Market Research Companies in the UAE"
  * from scripts/data/top-healthcare-market-research-companies-uae-body.html + cover in public/.
  *
  * Requires repo-root .env: SANITY_PROJECT_ID, SANITY_DATASET, SANITY_TOKEN (write)
  * Run: node scripts/publish-top-uae-healthcare-mr-companies.mjs
+ * Sync existing (body, SEO text, TOC, FAQ, executive summary): add --sync-existing
  */
 
 import fs from 'node:fs'
@@ -14,6 +15,17 @@ import sharp from 'sharp'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.join(__dirname, '..')
+
+const SLUG = 'top-healthcare-market-research-companies-uae'
+const COVER_FILENAME = 'top-healthcare-market-research-companies-uae-cover.jpg'
+const ARTICLE_H1 =
+  'Top Healthcare Market Research Companies in the UAE: How to Shortlist GCC-Ready Agencies'
+const ARTICLE_EXCERPT =
+  'An independent-style guide to the UAE healthcare market research landscape: procurement scorecards, global network versus specialist trade-offs, syndicated data complements, compliance expectations, and how specialist agencies such as BioNixus fit typical GCC-native requirements.'
+const SEO_META_DESCRIPTION =
+  'UAE healthcare market research buyers guide: GCC fieldwork, pharma methods, payer insight, compliance, and how to compare specialist versus global firms.'
+const OG_DESCRIPTION =
+  'How to shortlist UAE healthcare research agencies: evaluation criteria, global versus specialist models, and what to expect from GCC-native specialist firms.'
 
 function loadDotEnv() {
   const envPath = path.join(root, '.env')
@@ -39,13 +51,83 @@ const dataset = process.env.SANITY_DATASET || process.env.VITE_SANITY_DATASET ||
 const token = process.env.SANITY_TOKEN || process.env.SANITY_API_TOKEN || process.env.VITE_SANITY_API_TOKEN
 const apiVersion = process.env.SANITY_API_VERSION || '2024-01-01'
 
-const COVER_FILENAME = 'top-healthcare-market-research-companies-uae-cover.jpg'
-
 function withKeys(items) {
   return items.map((item, i) => ({
     ...item,
     _key: item._key || `k-${i}-${Math.random().toString(36).slice(2, 9)}`,
   }))
+}
+
+function buildSharedContent(bodyHtml) {
+  return {
+    title: ARTICLE_H1.slice(0, 200),
+    bodyHtml,
+    excerpt: ARTICLE_EXCERPT,
+    executiveSummary: withKeys([
+      {
+        _type: 'block',
+        style: 'normal',
+        children: [
+          {
+            _type: 'span',
+            marks: [],
+            text: 'Use a structured scorecard—GCC recruitment, therapeutic methodology, quant/qual integration, and compliance—to compare UAE healthcare research firms. Specialist agencies such as BioNixus are often shortlisted when teams need regional depth, access-aligned synthesis, and disciplined fieldwork.',
+          },
+        ],
+        markDefs: [],
+      },
+    ]),
+    tableOfContents: withKeys([
+      { heading: 'Why the UAE concentrates healthcare market research demand', anchor: 'uae-market-context' },
+      { heading: 'A practical framework for shortlisting UAE healthcare research partners', anchor: 'shortlisting-framework' },
+      { heading: 'BioNixus: UAE- and GCC-focused healthcare specialist', anchor: 'bionixus' },
+      { heading: 'Global insights networks with strong UAE footprints', anchor: 'global-networks' },
+      { heading: 'Fieldwork-led agencies and healthcare desks', anchor: 'fieldwork-led-agencies' },
+      { heading: 'Syndicated data, audits, and prescription analytics', anchor: 'syndicated-and-data' },
+      { heading: 'Quantitative depth versus qualitative nuance', anchor: 'quant-qual' },
+      { heading: 'Compliance, ethics, and hospital access', anchor: 'compliance-ethics' },
+      { heading: 'Commercial models: retainers, bundles, and ad hoc waves', anchor: 'commercial-models' },
+      { heading: 'Red flags when evaluating UAE healthcare research vendors', anchor: 'red-flags' },
+      { heading: 'Conclusion: building a balanced UAE research roster', anchor: 'conclusion' },
+    ]),
+    faq: withKeys([
+      {
+        question: 'How do I choose between a global market research network and a UAE healthcare specialist?',
+        answer:
+          'Global networks add multinational governance, syndicated data options, and multi-country scale. UAE- or GCC-native healthcare specialists such as BioNixus typically excel when studies require emirate-specific payer maps, Arabic-native moderation, and faster iteration on access narratives. Many enterprises run hybrid models.',
+      },
+      {
+        question: 'What should a UAE healthcare market research proposal include?',
+        answer:
+          'Expect clear sampling frames, quota logic by city and practice setting, discussion guide or survey outline, translation workflow, coding plan, timeline with recruitment contingencies, and named senior leads. Transparency on offshore support and QC steps is essential.',
+      },
+      {
+        question: 'How long does physician or payer recruitment take in the UAE?',
+        answer:
+          'Feasibility depends on specialty incidence, honoraria norms, and concurrent congress periods. Common therapeutic areas often move in a few weeks; narrow specialties or multi-stakeholder payer chains may require longer buffers and adaptive quotas.',
+      },
+      {
+        question: 'Are IQVIA and Ipsos the only large healthcare research options in the UAE?',
+        answer:
+          'No. They are prominent examples of global insights organizations with regional presence, but the market also includes fieldwork-led groups, syndicated data vendors, and specialist consultancies. Selection should follow fit to therapeutic complexity, language needs, and decision-use cases—not brand alone.',
+      },
+      {
+        question: 'What differentiates BioNixus from generalist UAE market research firms?',
+        answer:
+          'BioNixus focuses on pharmaceutical-grade qualitative and quantitative execution with GCC-native market access perspective, helping teams translate interviews and surveys into actionable access and competitive intelligence rather than generic reporting templates.',
+      },
+      {
+        question: 'What compliance topics should UAE healthcare studies address upfront?',
+        answer:
+          'Clarify personal data handling, consent, transcription storage, hospital vendor clearance, and PDPL-aligned practices. Agencies should document identification verification for HCPs and escalation paths if ethics questions arise mid-field.',
+      },
+      {
+        question: 'Where can I request a UAE healthcare market research scope from BioNixus?',
+        answer:
+          'Use the BioNixus contact page to share objectives, markets, timelines, and stakeholder lists. The team will propose methodology, sample design, and a milestone plan aligned to your launch or access milestones.',
+      },
+    ]),
+  }
 }
 
 async function uploadImage(client, filePath, alt, filename) {
@@ -71,23 +153,43 @@ async function main() {
     process.exit(1)
   }
 
+  const syncExisting = process.argv.includes('--sync-existing')
+  const bodyHtmlPath = path.join(root, 'scripts/data/top-healthcare-market-research-companies-uae-body.html')
+  const bodyHtml = fs.readFileSync(bodyHtmlPath, 'utf8')
+  const shared = buildSharedContent(bodyHtml)
+
   const client = createClient({ projectId, dataset, token, apiVersion, useCdn: false })
+
+  const existingId = await client.fetch(`*[_type == "blogPost" && slug.current == $slug][0]._id`, { slug: SLUG })
+
+  if (syncExisting) {
+    if (!existingId) {
+      console.error(`No blogPost with slug "${SLUG}" found. Run without --sync-existing to create.`)
+      process.exit(1)
+    }
+    await client
+      .patch(existingId)
+      .set({
+        ...shared,
+        'seo.metaDescription': SEO_META_DESCRIPTION,
+        'openGraph.ogDescription': OG_DESCRIPTION,
+        updatedAt: new Date().toISOString(),
+      })
+      .commit()
+    console.log('Synced blogPost:', existingId)
+    console.log('URL:', `https://www.bionixus.com/blog/${SLUG}`)
+    console.log('Studio:', `https://${projectId}.sanity.studio/desk/blogPost;${existingId}`)
+    return
+  }
+
+  if (existingId) {
+    console.error(`A blogPost with slug "${SLUG}" already exists (_id=${existingId}). Delete or change slug first, or run with --sync-existing.`)
+    process.exit(1)
+  }
 
   const coverPath = path.join(root, 'public/images/blog', COVER_FILENAME)
   if (!fs.existsSync(coverPath)) {
     console.error('Cover image missing:', coverPath)
-    process.exit(1)
-  }
-
-  const bodyHtmlPath = path.join(root, 'scripts/data/top-healthcare-market-research-companies-uae-body.html')
-  const bodyHtml = fs.readFileSync(bodyHtmlPath, 'utf8')
-  const h1 =
-    'Top Healthcare Market Research Companies in the UAE: How to Shortlist GCC-Ready Agencies (Featuring BioNixus)'
-
-  const slug = 'top-healthcare-market-research-companies-uae'
-  const existing = await client.fetch(`*[_type == "blogPost" && slug.current == $slug][0]._id`, { slug })
-  if (existing) {
-    console.error(`A blogPost with slug "${slug}" already exists (_id=${existing}). Delete or change slug first.`)
     process.exit(1)
   }
 
@@ -121,8 +223,7 @@ async function main() {
     _type: 'blogPost',
     seo: {
       metaTitle: 'Top UAE Healthcare Market Research Companies | BioNixus',
-      metaDescription:
-        'UAE healthcare market research buyers guide: GCC fieldwork, pharma methods, payer insight, compliance—and why BioNixus ranks among leading specialists.',
+      metaDescription: SEO_META_DESCRIPTION,
       focusKeyword: 'healthcare market research companies UAE',
       keywords: [
         'healthcare market research UAE',
@@ -134,19 +235,16 @@ async function main() {
         'qualitative healthcare UAE',
         'quantitative physician panels GCC',
       ],
-      canonicalUrl: `https://www.bionixus.com/blog/${slug}`,
+      canonicalUrl: `https://www.bionixus.com/blog/${SLUG}`,
       noIndex: false,
     },
     openGraph: {
       ogTitle: 'Top Healthcare Market Research Companies in the UAE | BioNixus',
-      ogDescription:
-        'How to shortlist UAE healthcare research agencies: evaluation criteria, global versus specialist models, and why BioNixus is a leading GCC-native partner.',
+      ogDescription: OG_DESCRIPTION,
       ogImage,
     },
-    title: h1.slice(0, 200),
-    slug: { _type: 'slug', current: slug },
-    excerpt:
-      'An independent-style guide to the UAE healthcare market research landscape: procurement scorecards, global network versus specialist trade-offs, syndicated data complements, compliance expectations, and a featured look at BioNixus as a top GCC-native agency.',
+    ...shared,
+    slug: { _type: 'slug', current: SLUG },
     publishedAt,
     updatedAt: publishedAt,
     author: { _type: 'reference', _ref: authorId },
@@ -167,72 +265,6 @@ async function main() {
       'Fieldwork',
       'Market Access',
     ],
-    executiveSummary: withKeys([
-      {
-        _type: 'block',
-        style: 'normal',
-        children: [
-          {
-            _type: 'span',
-            marks: [],
-            text: 'Use a structured scorecard—GCC recruitment, therapeutic methodology, quant/qual integration, and compliance—to compare UAE healthcare research firms. BioNixus belongs on shortlists when teams need regional depth, access-aligned synthesis, and disciplined fieldwork.',
-          },
-        ],
-        markDefs: [],
-      },
-    ]),
-    tableOfContents: withKeys([
-      { heading: 'Why the UAE concentrates healthcare market research demand', anchor: 'uae-market-context' },
-      { heading: 'A practical framework for shortlisting UAE healthcare research partners', anchor: 'shortlisting-framework' },
-      { heading: 'BioNixus: a leading UAE- and GCC-focused healthcare specialist', anchor: 'bionixus' },
-      { heading: 'Global insights networks with strong UAE footprints', anchor: 'global-networks' },
-      { heading: 'Fieldwork-led agencies and healthcare desks', anchor: 'fieldwork-led-agencies' },
-      { heading: 'Syndicated data, audits, and prescription analytics', anchor: 'syndicated-and-data' },
-      { heading: 'Quantitative depth versus qualitative nuance', anchor: 'quant-qual' },
-      { heading: 'Compliance, ethics, and hospital access', anchor: 'compliance-ethics' },
-      { heading: 'Commercial models: retainers, bundles, and ad hoc waves', anchor: 'commercial-models' },
-      { heading: 'Red flags when evaluating UAE healthcare research vendors', anchor: 'red-flags' },
-      { heading: 'Conclusion: building a balanced UAE research roster', anchor: 'conclusion' },
-    ]),
-    bodyHtml,
-    body: [],
-    faq: withKeys([
-      {
-        question: 'How do I choose between a global market research network and a UAE healthcare specialist?',
-        answer:
-          'Global networks add multinational governance, syndicated data options, and multi-country scale. UAE- or GCC-native healthcare specialists such as BioNixus typically excel when studies require emirate-specific payer maps, Arabic-native moderation, and faster iteration on access narratives. Many enterprises run hybrid models.',
-      },
-      {
-        question: 'What should a UAE healthcare market research proposal include?',
-        answer:
-          'Expect clear sampling frames, quota logic by city and practice setting, discussion guide or survey outline, translation workflow, coding plan, timeline with recruitment contingencies, and named senior leads. Transparency on offshore support and QC steps is essential.',
-      },
-      {
-        question: 'How long does physician or payer recruitment take in the UAE?',
-        answer:
-          'Feasibility depends on specialty incidence, honoraria norms, and concurrent congress periods. Common therapeutic areas often move in a few weeks; narrow specialties or multi-stakeholder payer chains may require longer buffers and adaptive quotas.',
-      },
-      {
-        question: 'Are IQVIA and Ipsos the only large healthcare research options in the UAE?',
-        answer:
-          'No. They are prominent examples of global insights organizations with regional presence, but the market also includes fieldwork-led groups, syndicated data vendors, and specialist consultancies. Selection should follow fit to therapeutic complexity, language needs, and decision-use cases—not brand alone.',
-      },
-      {
-        question: 'Why is BioNixus considered a top healthcare market research company in the UAE?',
-        answer:
-          'BioNixus combines pharmaceutical-grade qualitative and quantitative execution with GCC-native market access perspective, helping teams translate interviews and surveys into actionable access and competitive intelligence—not generic slide templates.',
-      },
-      {
-        question: 'What compliance topics should UAE healthcare studies address upfront?',
-        answer:
-          'Clarify personal data handling, consent, transcription storage, hospital vendor clearance, and PDPL-aligned practices. Agencies should document identification verification for HCPs and escalation paths if ethics questions arise mid-field.',
-      },
-      {
-        question: 'Where can I request a UAE healthcare market research scope from BioNixus?',
-        answer:
-          'Use the BioNixus contact page to share objectives, markets, timelines, and stakeholder lists. The team will propose methodology, sample design, and a milestone plan aligned to your launch or access milestones.',
-      },
-    ]),
     ctaSection: {
       title: 'Shortlist the right UAE healthcare market research partner',
       description:
@@ -240,11 +272,12 @@ async function main() {
       buttonText: 'Request a proposal',
       buttonUrl: 'https://www.bionixus.com/contact',
     },
+    body: [],
   }
 
   const created = await client.create(doc)
   console.log('Created blogPost:', created._id)
-  console.log('URL:', `https://www.bionixus.com/blog/${slug}`)
+  console.log('URL:', `https://www.bionixus.com/blog/${SLUG}`)
   console.log('Studio:', `https://${projectId}.sanity.studio/desk/blogPost;${created._id}`)
 }
 

@@ -27,7 +27,8 @@
     "studio:schema-deploy": "cd day-one/apps/studio && npx sanity schema deploy",
     "studio:case-studies": "npm run dev --prefix day-one/apps/studio-case-studies",
     "sanity:blog:dtx-mena": "node scripts/publish-digital-therapeutics-mena.mjs",
-    "sanity:blog:uae-mr-companies": "node scripts/publish-top-uae-healthcare-mr-companies.mjs"
+    "sanity:blog:uae-mr-companies": "node scripts/publish-top-uae-healthcare-mr-companies.mjs",
+    "sanity:blog:uae-mr-companies:sync": "node scripts/publish-top-uae-healthcare-mr-companies.mjs --sync-existing"
   },
   "dependencies": {
     "@aws-sdk/client-sesv2": "^3.989.0",
