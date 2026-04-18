@@ -69,11 +69,13 @@ const STATIC_ROUTES = [
   '/blog/digital-therapeutics-regulation-mena-markets',
   '/blog/top-healthcare-market-research-companies-uae',
   '/blog/top-healthcare-market-research-firms-saudi-arabia',
+  '/ar/blog',
+  '/ar/blog/saudi-healthcare-market-research-firms-ar',
 ];
 
 function routeMeta(url) {
   if (url === '/') return { priority: '1.0', changefreq: 'weekly' };
-  if (url.startsWith('/blog')) return { priority: '0.85', changefreq: 'daily' };
+  if (url.startsWith('/blog') || url.startsWith('/ar/blog')) return { priority: '0.85', changefreq: 'daily' };
   if (url.startsWith('/healthcare-market-research')) return { priority: '0.9', changefreq: 'weekly' };
   if (url.startsWith('/services/')) return { priority: '0.8', changefreq: 'monthly' };
   if (url.startsWith('/pharmaceutical-companies-')) return { priority: '0.85', changefreq: 'monthly' };

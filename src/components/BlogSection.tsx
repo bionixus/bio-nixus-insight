@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import type { BlogPost } from '@/types/blog';
@@ -30,7 +30,9 @@ function getImageSrcSet(url: string | undefined): string | undefined {
 }
 
 const BlogSection = ({ posts, isLoading }: BlogSectionProps) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const { pathname } = useLocation();
+  const blogBasePath = language === 'ar' || pathname.startsWith('/ar/blog') ? '/ar/blog' : '/blog';
 
   const fallbackItems = t.blog.items.map((item, i) => ({
     id: `fallback-${i}`,
@@ -82,7 +84,7 @@ const BlogSection = ({ posts, isLoading }: BlogSectionProps) => {
           {filteredPosts.map((post, index) => (
             <Link
               key={post.id}
-              to={`/blog/${post.slug}`}
+              to={`${blogBasePath}/${post.slug}`}
               className="group block sr sr-scale-up sr-spring hover-lift"
             >
               <article className="cursor-pointer">

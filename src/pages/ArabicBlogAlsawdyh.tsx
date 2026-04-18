@@ -16,8 +16,8 @@ const jsonLd = [
   },
   buildBreadcrumbSchema([
     { name: 'الرئيسية', href: '/ar' },
-    { name: 'المدونة', href: '/blog' },
-    { name: 'المدونة العربية', href: '/ar/arabic-blog-alsawdyh' },
+    { name: 'المدونة العربية', href: '/ar/blog' },
+    { name: 'دليل أبحاث السوق', href: '/ar/arabic-blog-alsawdyh' },
   ]),
 ];
 
@@ -35,8 +35,8 @@ export default function ArabicBlogAlsawdyh() {
         <BreadcrumbNav
           items={[
             { name: 'الرئيسية', href: '/ar' },
-            { name: 'المدونة', href: '/blog' },
-            { name: 'المدونة العربية', href: '/ar/arabic-blog-alsawdyh' },
+            { name: 'المدونة العربية', href: '/ar/blog' },
+            { name: 'دليل أبحاث السوق', href: '/ar/arabic-blog-alsawdyh' },
           ]}
         />
 
@@ -53,12 +53,32 @@ export default function ArabicBlogAlsawdyh() {
               نركز على ثلاثة محاور رئيسية: فهم أصحاب المصلحة، تحليل متطلبات الوصول إلى السوق، وتحويل النتائج إلى خطط
               تنفيذية قابلة للتطبيق.
             </p>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed mb-8">
               للمزيد من الخدمات المرتبطة، تفضل بزيارة صفحة{' '}
               <Link to="/market-research-saudi-arabia-pharmaceutical" className="text-primary underline">
                 أبحاث السوق الدوائي في السعودية
               </Link>
               .
+            </p>
+
+            <h2 className="text-2xl font-display font-semibold text-foreground mb-4">مقالات عربية</h2>
+            <ul className="space-y-4 text-muted-foreground leading-relaxed list-disc pr-5 mb-6">
+              <li>
+                <Link
+                  to="/ar/blog/saudi-healthcare-market-research-firms-ar"
+                  className="text-primary font-medium hover:underline"
+                >
+                  أبرز شركات أبحاث السوق الصحي في المملكة العربية السعودية
+                </Link>
+                <span className="block text-sm mt-1">
+                  ملخص المشهد، معايير اختيار الشريك، ونماذج شركات عالمية وإقليمية مع BioNixus.
+                </span>
+              </li>
+            </ul>
+            <p className="text-muted-foreground leading-relaxed">
+              <Link to="/ar/blog" className="text-primary font-medium hover:underline">
+                تصفح جميع المقالات العربية
+              </Link>
             </p>
           </div>
         </section>

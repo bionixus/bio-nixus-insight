@@ -33,11 +33,15 @@ interface RelatedPostsProps {
   initialRelated?: RelatedPostsData;
 }
 
+function blogBaseForPost(post: BlogPost): string {
+  return post.language === 'ar' ? '/ar/blog' : '/blog';
+}
+
 /* ─── Single related-post card ─── */
 function PostCard({ post, index }: { post: BlogPost; index: number }) {
   return (
     <Link
-      to={`/blog/${post.slug}`}
+      to={`${blogBaseForPost(post)}/${post.slug}`}
       className="group block sr sr-scale-up sr-spring hover-lift rounded-xl overflow-hidden border border-border bg-card"
     >
       {/* Image */}
@@ -128,7 +132,7 @@ const RelatedPosts = ({
         >
           {prev ? (
             <Link
-              to={`/blog/${prev.slug}`}
+              to={`${prev.language === 'ar' ? '/ar/blog' : '/blog'}/${prev.slug}`}
               className="group flex items-center gap-3 px-5 py-4 rounded-xl border border-border bg-card hover:border-primary/40 hover:shadow-md transition-all max-w-[48%] sr sr-left"
             >
               <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
@@ -146,7 +150,7 @@ const RelatedPosts = ({
           )}
           {next ? (
             <Link
-              to={`/blog/${next.slug}`}
+              to={`${next.language === 'ar' ? '/ar/blog' : '/blog'}/${next.slug}`}
               className="group flex items-center gap-3 px-5 py-4 rounded-xl border border-border bg-card hover:border-primary/40 hover:shadow-md transition-all max-w-[48%] text-right sr sr-right"
             >
               <div className="min-w-0">

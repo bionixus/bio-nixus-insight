@@ -73,7 +73,12 @@ function buildFallbackTitle(pathname) {
   }
 
   if (path === '/blog') return 'Healthcare & Pharmaceutical Blog Insights | BioNixus';
+  if (path === '/ar/blog') return 'المدونة العربية: أبحاث السوق الصحي والدوائي | BioNixus';
   if (path.startsWith('/blog/')) {
+    const slug = path.split('/').pop() || 'insight';
+    return `${titleCaseFromSlug(slug)} | BioNixus Blog`;
+  }
+  if (path.startsWith('/ar/blog/')) {
     const slug = path.split('/').pop() || 'insight';
     return `${titleCaseFromSlug(slug)} | BioNixus Blog`;
   }

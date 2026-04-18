@@ -178,6 +178,8 @@ export const routes: RouteObject[] = [
   { path: '/es/market-access', element: <SpanishMarketAccess /> },
   { path: '/de/success-in-startups', element: <GermanSuccessInStartups /> },
   { path: '/ar/arabic-blog-alsawdyh', element: <ArabicBlogAlsawdyh /> },
+  { path: '/ar/blog', element: <Blog /> },
+  { path: '/ar/blog/:slug', element: <BlogPost /> },
   { path: '/pharmacies-saudi-arabia-marketing', element: <PharmaciesSaudiArabiaMarketing /> },
   { path: '/bionixus-ai-chatbots-increase-sales-and-lead-generation', element: <AiChatbotsLeadGeneration /> },
   { path: '/blog/:slug', element: <BlogPost /> },

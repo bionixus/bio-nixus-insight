@@ -153,6 +153,8 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
     '/de/blog/',
     '/fr/blog',
     '/fr/blog/',
+    '/ar/blog',
+    '/ar/blog/',
   ]);
   if (blogIndexPaths.has(path)) {
     let blogPosts: BlogPost[] = [];
@@ -161,9 +163,40 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
     } catch {
       blogPosts = [];
     }
+    if (path.startsWith('/ar/blog')) {
+      blogPosts = blogPosts.filter((p) => !p.language || p.language === 'ar');
+    }
     return {
       pageType: 'blog-index',
       blogPosts,
+    };
+  }
+
+  const blogPostMatchAr = path.match(/^\/ar\/blog\/([^/]+)\/?$/);
+  if (blogPostMatchAr) {
+    const slug = decodeURIComponent(blogPostMatchAr[1]);
+    let blogPost: BlogPost | null = null;
+    let relatedPosts: RelatedPostsData = { related: [], prev: null, next: null };
+    try {
+      blogPost = await fetchSanityPostBySlugWithClient(slug, sanityServer);
+      if (blogPost) {
+        relatedPosts = await fetchRelatedPostsWithClient(
+          slug,
+          blogPost.category,
+          blogPost.publishedAtIso || blogPost.date,
+          blogPost.country,
+          blogPost.tags ?? [],
+          sanityServer,
+        );
+      }
+    } catch {
+      blogPost = null;
+    }
+    return {
+      pageType: 'blog-post',
+      blogSlug: slug,
+      blogPost,
+      relatedPosts,
     };
   }
 

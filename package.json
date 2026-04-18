@@ -30,7 +30,9 @@
     "sanity:blog:uae-mr-companies": "node scripts/publish-top-uae-healthcare-mr-companies.mjs",
     "sanity:blog:uae-mr-companies:sync": "node scripts/publish-top-uae-healthcare-mr-companies.mjs --sync-existing",
     "sanity:blog:saudi-mr-firms": "node scripts/publish-saudi-healthcare-mr-firms.mjs",
-    "sanity:blog:saudi-mr-firms:sync": "node scripts/publish-saudi-healthcare-mr-firms.mjs --sync-existing"
+    "sanity:blog:saudi-mr-firms:sync": "node scripts/publish-saudi-healthcare-mr-firms.mjs --sync-existing",
+    "sanity:blog:saudi-mr-firms-ar": "node scripts/publish-saudi-healthcare-mr-firms-ar.mjs",
+    "sanity:blog:saudi-mr-firms-ar:sync": "node scripts/publish-saudi-healthcare-mr-firms-ar.mjs --sync-existing"
   },
   "dependencies": {
     "@aws-sdk/client-sesv2": "^3.989.0",

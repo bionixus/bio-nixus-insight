@@ -293,29 +293,29 @@ const RELATED_POSTS_QUERY = `{
     count((tags[])[@ in $tags]) > 0 &&
     count($tags) > 0
   ] | order(publishedAt desc, _createdAt desc)[0...8] {
-    _id, _type, title, "slug": slug.current, excerpt, "date": coalesce(publishedAt, _createdAt), category, country, "coverImage": mainImage.asset->url
+    _id, _type, title, "slug": slug.current, excerpt, language, "date": coalesce(publishedAt, _createdAt), category, country, "coverImage": mainImage.asset->url
   },
   "byCategory": *[_type == "blogPost" && defined(slug.current) && slug.current != $slug && category == $category && $category != ""] | order(publishedAt desc, _createdAt desc)[0...3] {
-    _id, _type, title, "slug": slug.current, excerpt, "date": coalesce(publishedAt, _createdAt), category, country, "coverImage": mainImage.asset->url
+    _id, _type, title, "slug": slug.current, excerpt, language, "date": coalesce(publishedAt, _createdAt), category, country, "coverImage": mainImage.asset->url
   },
   "byCountry": *[_type == "blogPost" && defined(slug.current) && slug.current != $slug && country == $country && $country != ""] | order(publishedAt desc, _createdAt desc)[0...6] {
-    _id, _type, title, "slug": slug.current, excerpt, "date": coalesce(publishedAt, _createdAt), category, country, "coverImage": mainImage.asset->url
+    _id, _type, title, "slug": slug.current, excerpt, language, "date": coalesce(publishedAt, _createdAt), category, country, "coverImage": mainImage.asset->url
   },
   "latest": *[_type == "blogPost" && defined(slug.current) && slug.current != $slug] | order(publishedAt desc, _createdAt desc)[0...6] {
-    _id, _type, title, "slug": slug.current, excerpt, "date": coalesce(publishedAt, _createdAt), category, country, "coverImage": mainImage.asset->url
+    _id, _type, title, "slug": slug.current, excerpt, language, "date": coalesce(publishedAt, _createdAt), category, country, "coverImage": mainImage.asset->url
   },
   "prev": *[_type == "blogPost" && defined(slug.current) && coalesce(publishedAt, _createdAt) < $date] | order(publishedAt desc, _createdAt desc)[0] {
-    _id, title, "slug": slug.current
+    _id, title, "slug": slug.current, language
   },
   "next": *[_type == "blogPost" && defined(slug.current) && coalesce(publishedAt, _createdAt) > $date] | order(publishedAt asc, _createdAt asc)[0] {
-    _id, title, "slug": slug.current
+    _id, title, "slug": slug.current, language
   }
 }`;
 
 export interface RelatedPostsData {
   related: BlogPost[];
-  prev: { slug: string; title: string } | null;
-  next: { slug: string; title: string } | null;
+  prev: { slug: string; title: string; language?: string } | null;
+  next: { slug: string; title: string; language?: string } | null;
 }
 
 export async function fetchRelatedPostsWithClient(
@@ -332,8 +332,8 @@ export async function fetchRelatedPostsWithClient(
       byCategory: RawSanityPost[];
       byCountry: RawSanityPost[];
       latest: RawSanityPost[];
-      prev: { _id: string; title: string; slug: string } | null;
-      next: { _id: string; title: string; slug: string } | null;
+      prev: { _id: string; title: string; slug: string; language?: string } | null;
+      next: { _id: string; title: string; slug: string; language?: string } | null;
     }>(RELATED_POSTS_QUERY, {
       slug,
       category: category || '',
@@ -357,8 +357,12 @@ export async function fetchRelatedPostsWithClient(
 
     return {
       related: merged,
-      prev: raw.prev ? { slug: raw.prev.slug, title: raw.prev.title } : null,
-      next: raw.next ? { slug: raw.next.slug, title: raw.next.title } : null,
+      prev: raw.prev
+        ? { slug: raw.prev.slug, title: raw.prev.title, language: raw.prev.language }
+        : null,
+      next: raw.next
+        ? { slug: raw.next.slug, title: raw.next.title, language: raw.next.language }
+        : null,
     };
   } catch {
     return { related: [], prev: null, next: null };

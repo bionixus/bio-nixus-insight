@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useLocation } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { sanitizeBodyHtml } from '@/lib/sanitize-body-html';
 import { PortableText } from '@portabletext/react';
@@ -55,7 +55,11 @@ function formatInsightTopicFromPath(path: string): string {
     us: 'US',
   };
 
-  const slug = path.startsWith('/blog/') ? path.slice('/blog/'.length) : path;
+  const slug = path.startsWith('/ar/blog/')
+    ? path.slice('/ar/blog/'.length)
+    : path.startsWith('/blog/')
+      ? path.slice('/blog/'.length)
+      : path;
   const decoded = decodeURIComponent(slug);
   const words = decoded
     .replace(/[-_]+/g, ' ')
@@ -424,6 +428,9 @@ function getExecutiveSummaryToRender(
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
+  const { pathname } = useLocation();
+  const isArBlog = pathname.startsWith('/ar/blog');
+  const blogIndexPath = isArBlog ? '/ar/blog' : '/blog';
   const { t, language } = useLanguage();
   const { data: routeData } = useInitialData();
   const isGccPharma2026 = slug === GCC_PHARMA_2026_SLUG;
@@ -474,7 +481,7 @@ const BlogPost = () => {
         <Navbar />
         <main className="section-padding container-wide">
           <p className="text-muted-foreground">Invalid article.</p>
-          <Link to="/blog" className="mt-4 inline-flex items-center gap-2 text-primary font-medium hover:underline">
+          <Link to={blogIndexPath} className="mt-4 inline-flex items-center gap-2 text-primary font-medium hover:underline">
             <ArrowLeft className="w-4 h-4" /> Back to articles
           </Link>
         </main>
@@ -501,7 +508,7 @@ const BlogPost = () => {
         <Navbar />
         <main className="section-padding container-wide">
           <p className="text-muted-foreground">Article not found.</p>
-          <Link to="/blog" className="mt-4 inline-flex items-center gap-2 text-primary font-medium hover:underline">
+          <Link to={blogIndexPath} className="mt-4 inline-flex items-center gap-2 text-primary font-medium hover:underline">
             <ArrowLeft className="w-4 h-4" /> Back to articles
           </Link>
         </main>
@@ -510,7 +517,10 @@ const BlogPost = () => {
     );
   }
 
-  const pageUrl = `https://www.bionixus.com/blog/${slug}`;
+  const pathClean = (pathname.split('?')[0] || '/blog').replace(/\/+$/, '') || '/blog';
+  const pageUrl =
+    (post.seoCanonicalUrl && String(post.seoCanonicalUrl).trim()) ||
+    `https://www.bionixus.com${pathClean.startsWith('/') ? pathClean : `/${pathClean}`}`;
   const bodySourceForMeta = typeof post.body === 'string' ? post.body : post.excerpt || post.title;
   const metaTitle = normalizeSeoTitle(post.seoMetaTitle || post.title, 'BioNixus');
   const metaDescription = buildSeoDescription({
@@ -546,11 +556,19 @@ const BlogPost = () => {
         authorName={post.authorName || 'BioNixus Research Team'}
         publishedAt={post.publishedAtIso}
         modifiedAt={post.updatedAtIso || post.publishedAtIso}
-        breadcrumb={[
-          { name: 'Home', item: 'https://www.bionixus.com/' },
-          { name: 'Blog', item: 'https://www.bionixus.com/blog' },
-          { name: post.title, item: pageUrl },
-        ]}
+        breadcrumb={
+          language === 'ar' && isArBlog
+            ? [
+                { name: 'الرئيسية', item: 'https://www.bionixus.com/ar' },
+                { name: 'المدونة العربية', item: 'https://www.bionixus.com/ar/blog' },
+                { name: post.title, item: pageUrl },
+              ]
+            : [
+                { name: 'Home', item: 'https://www.bionixus.com/' },
+                { name: 'Blog', item: 'https://www.bionixus.com/blog' },
+                { name: post.title, item: pageUrl },
+              ]
+        }
         faqItems={
           Array.isArray(post.faq)
             ? post.faq
@@ -590,14 +608,14 @@ const BlogPost = () => {
         {socialImage && <meta name="twitter:image" content={socialImage} />}
 
         {/* Canonical URL */}
-        <link rel="canonical" href={pageUrl} />
+        <link rel="canonical" href={post.seoCanonicalUrl || pageUrl} />
 
       </Helmet>
       <Navbar />
       <main className="section-padding">
         <div className="container-wide max-w-3xl mx-auto">
           <Link
-            to="/blog"
+            to={blogIndexPath}
             className="inline-flex items-center gap-2 text-primary font-medium hover:underline mb-8"
           >
             <ArrowLeft className="w-4 h-4" /> Back to articles

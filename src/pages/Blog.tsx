@@ -47,28 +47,56 @@ const Blog = () => {
       : undefined;
   const { data: posts, isLoading, isError, error } = useSanityBlog(ssrPosts);
   const { pathname } = useLocation();
+  const isArabicBlog = pathname.startsWith('/ar/blog');
   const isGerman = pathname.startsWith('/de/');
   const isFrench = pathname.startsWith('/fr/');
-  const canonical = isGerman ? 'https://www.bionixus.com/de/blog' : isFrench ? 'https://www.bionixus.com/fr/blog' : 'https://www.bionixus.com/blog';
-  const title = isGerman
-    ? 'Healthcare Markt-Insights Blog | BioNixus'
-    : isFrench
-      ? 'Blog Insights Marché Santé | BioNixus'
-      : 'Healthcare Market Research Blog | BioNixus';
-  const description = isGerman
-    ? 'Insights zu pharmazeutischer Marktforschung, Marktzugang und Gesundheitsstrategien für EMEA.'
-    : isFrench
-      ? 'Insights sur les études de marché santé, le market access et la stratégie pharmaceutique en EMEA.'
-      : 'Expert insights on pharmaceutical market research, market access, clinical trials, and healthcare intelligence across Europe, UAE, Saudi Arabia, and MENA.';
-  const introTitle = isGerman ? 'Regionale Insights für DACH und EMEA' : isFrench ? 'Insights régionaux pour la France et l’EMEA' : 'Regional healthcare intelligence updates';
-  const introText = isGerman
-    ? 'Diese Blog-Übersicht enthält praxisnahe Inhalte für pharmazeutische Teams in Deutschland, Europa und der MENA-Region.'
-    : isFrench
-      ? 'Cette page blog met en avant des analyses actionnables pour les équipes pharma en France, en Europe et en MENA.'
-      : 'This blog index highlights practical insights for healthcare and pharma teams across Europe and MENA.';
+  const canonical = isArabicBlog
+    ? 'https://www.bionixus.com/ar/blog'
+    : isGerman
+      ? 'https://www.bionixus.com/de/blog'
+      : isFrench
+        ? 'https://www.bionixus.com/fr/blog'
+        : 'https://www.bionixus.com/blog';
+  const title = isArabicBlog
+    ? 'المدونة العربية: أبحاث السوق الصحي والدوائي | BioNixus'
+    : isGerman
+      ? 'Healthcare Markt-Insights Blog | BioNixus'
+      : isFrench
+        ? 'Blog Insights Marché Santé | BioNixus'
+        : 'Healthcare Market Research Blog | BioNixus';
+  const description = isArabicBlog
+    ? 'مقالات عربية حول أبحاث السوق الدوائي والصحي في السعودية ودول الخليج، والوصول إلى السوق، والتنظيم.'
+    : isGerman
+      ? 'Insights zu pharmazeutischer Marktforschung, Marktzugang und Gesundheitsstrategien für EMEA.'
+      : isFrench
+        ? 'Insights sur les études de marché santé, le market access et la stratégie pharmaceutique en EMEA.'
+        : 'Expert insights on pharmaceutical market research, market access, clinical trials, and healthcare intelligence across Europe, UAE, Saudi Arabia, and MENA.';
+  const introTitle = isArabicBlog
+    ? 'تحديثات عربية لأبحاث الرعاية الصحية والدواء'
+    : isGerman
+      ? 'Regionale Insights für DACH und EMEA'
+      : isFrench
+        ? 'Insights régionaux pour la France et l’EMEA'
+        : 'Regional healthcare intelligence updates';
+  const introText = isArabicBlog
+    ? 'تضم هذه الصفحة مقالات عملية باللغة العربية لفرق الأدوية والأجهزة الطبية في المملكة ودول الخليج.'
+    : isGerman
+      ? 'Diese Blog-Übersicht enthält praxisnahe Inhalte für pharmazeutische Teams in Deutschland, Europa und der MENA-Region.'
+      : isFrench
+        ? 'Cette page blog met en avant des analyses actionnables pour les équipes pharma en France, en Europe et en MENA.'
+        : 'This blog index highlights practical insights for healthcare and pharma teams across Europe and MENA.';
 
   const collectionSchema = buildBlogCollectionSchema(canonical, title, description);
-  const breadcrumbSchema = buildBlogBreadcrumbSchema(canonical, 'Blog');
+  const breadcrumbSchema = isArabicBlog
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'الرئيسية', item: 'https://www.bionixus.com/ar' },
+          { '@type': 'ListItem', position: 2, name: 'المدونة العربية', item: canonical },
+        ],
+      }
+    : buildBlogBreadcrumbSchema(canonical, 'Blog');
 
   return (
     <div className="min-h-screen bg-background">
