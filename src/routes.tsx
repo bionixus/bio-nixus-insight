@@ -29,6 +29,7 @@ import UaePharmaceuticalMarketResearch from '@/pages/UaePharmaceuticalMarketRese
 import SaudiPayerMarketAccessResearch from '@/pages/SaudiPayerMarketAccessResearch';
 import GccHcpRecruitmentMarketResearch from '@/pages/GccHcpRecruitmentMarketResearch';
 import HealthcareMarketResearchAgencyGcc from '@/pages/HealthcareMarketResearchAgencyGcc';
+import PharmaceuticalTherapyAreas from '@/pages/PharmaceuticalTherapyAreas';
 import UaeMarketAccessResearch from '@/pages/UaeMarketAccessResearch';
 import KuwaitMarketAccessResearch from '@/pages/KuwaitMarketAccessResearch';
 import QatarMarketAccessResearch from '@/pages/QatarMarketAccessResearch';
@@ -139,6 +140,7 @@ export const routes: RouteObject[] = [
   { path: '/saudi-payer-market-access-research', element: <SaudiPayerMarketAccessResearch /> },
   { path: '/gcc-hcp-recruitment-market-research', element: <GccHcpRecruitmentMarketResearch /> },
   { path: '/healthcare-market-research-agency-gcc', element: <HealthcareMarketResearchAgencyGcc /> },
+  { path: '/pharmaceutical-therapy-areas', element: <PharmaceuticalTherapyAreas /> },
   { path: '/uae-market-access-research', element: <UaeMarketAccessResearch /> },
   { path: '/kuwait-market-access-research', element: <KuwaitMarketAccessResearch /> },
   { path: '/qatar-market-access-research', element: <QatarMarketAccessResearch /> },
