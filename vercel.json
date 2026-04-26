@@ -3,7 +3,7 @@
   "outputDirectory": "dist/client",
   "functions": {
     "api/indexnow-key.ts": {
-      "includeFiles": "{dist/**,seo-noise-query.mjs}"
+      "includeFiles": "{dist/**,seo-noise-query.mjs,lib/og-card-svg.mjs}"
     }
   },
   "headers": [
@@ -131,6 +131,10 @@
     }
   ],
   "rewrites": [
+    {
+      "source": "/api/og-card",
+      "destination": "/api/indexnow-key"
+    },
     {
       "source": "/conf",
       "destination": "/conf/strategic-portfolio.html"

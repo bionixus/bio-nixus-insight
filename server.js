@@ -5,6 +5,7 @@ import express from 'express';
 import compression from 'compression';
 import { canonicalRedirectTarget, isSsrNotFoundPage } from './seo-noise-query.mjs';
 import { BLOG_LEGACY_FULL_PATH_REDIRECTS } from './blog-legacy-redirects.mjs';
+import { normalizeOgCardPath, renderOgCardSvg } from './lib/og-card-svg.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === 'production';
@@ -488,6 +489,19 @@ async function startServer() {
     }
 
     next();
+  });
+
+  app.get('/api/og-card', (req, res) => {
+    const raw = typeof req.query.path === 'string' ? req.query.path : '';
+    const svg = renderOgCardSvg(normalizeOgCardPath(raw || undefined));
+    res
+      .status(200)
+      .set({
+        'Content-Type': 'image/svg+xml; charset=utf-8',
+        'Cache-Control': 'public, max-age=86400, s-maxage=31536000, immutable',
+        'X-Content-Type-Options': 'nosniff',
+      })
+      .send(svg);
   });
 
   app.use(async (req, res, next) => {

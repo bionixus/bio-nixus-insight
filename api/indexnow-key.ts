@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { canonicalRedirectTarget, isSsrNotFoundPage } from '../seo-noise-query.mjs';
 import { BLOG_LEGACY_FULL_PATH_REDIRECTS } from '../blog-legacy-redirects.mjs';
+import { normalizeOgCardPath, renderOgCardSvg } from '../lib/og-card-svg.mjs';
 
 type HelmetLike = {
   title?: { toString: () => string };
@@ -559,6 +560,16 @@ export default async function handler(
   try {
     if (getRequestParam(req, '__ssr') === '1') {
       await handleSsrRequest(req, res);
+      return;
+    }
+
+    const ogPathRaw = getRequestParam(req, 'path');
+    if (ogPathRaw !== undefined && ogPathRaw !== '') {
+      const svg = renderOgCardSvg(normalizeOgCardPath(ogPathRaw));
+      res.setHeader('Content-Type', 'image/svg+xml; charset=utf-8');
+      res.setHeader('Cache-Control', 'public, max-age=86400, s-maxage=31536000, immutable');
+      res.setHeader('X-Content-Type-Options', 'nosniff');
+      res.status(200).send(svg);
       return;
     }
 
