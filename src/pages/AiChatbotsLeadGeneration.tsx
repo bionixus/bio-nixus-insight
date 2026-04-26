@@ -63,6 +63,26 @@ export default function AiChatbotsLeadGeneration() {
               </Link>
               .
             </p>
+            <h2 className="text-2xl font-display font-semibold text-foreground mt-10 mb-3">
+              Responsible automation: where chatbots help—and where human researchers still lead
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Well-designed chat experiences can standardize first-line qualification, capture structured intent (therapy
+              area, geography, timeline), and route complex requests to the right director without losing context. That
+              reduces back-and-forth email chains and helps procurement teams compare vendors on comparable scoping
+              inputs.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Chatbots do not replace physician interviews, payer deep dives, or statistical analysis. They sit upstream:
+              improving data hygiene on inbound leads and surfacing recurring questions that should inform FAQ content,
+              sales enablement, and proposal templates. BioNixus treats any automation as governance-sensitive—privacy
+              notices, retention limits, and human review for clinical claims remain mandatory.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              If you are evaluating vendors for AI-augmented workflows, ask how transcripts feed CRM, how PII is
+              minimized, and how research ethics extend to bot-mediated interactions. Pair those answers with a classic
+              methodology review to ensure the underlying fieldwork still meets your evidence bar.
+            </p>
           </div>
         </section>
         <CTASection variant="research-proposal" />

@@ -90,6 +90,35 @@ const GlobalWebsites = () => {
           </div>
         </section>
 
+        <section className="section-padding py-10 border-y border-border bg-muted/20">
+          <div className="container-wide max-w-5xl mx-auto space-y-4 text-muted-foreground leading-relaxed">
+            <h2 className="text-2xl font-display font-semibold text-foreground">
+              Why country-first navigation matters for pharmaceutical market research
+            </h2>
+            <p>
+              Pharmaceutical teams rarely make decisions in a single abstract &quot;global&quot; market. Evidence needs
+              are shaped by regulators, payers, hospital formularies, and physician behavior that differ materially between
+              the United Kingdom, Germany, Saudi Arabia, and the United Arab Emirates. A country-first navigation model
+              helps you land on the right language route faster, compare adjacent markets, and build cross-country
+              programs without losing local nuance.
+            </p>
+            <p>
+              BioNixus maintains deep execution experience across GCC and MENA alongside EU5 and UK research programs.
+              That combination matters when you need comparable survey instruments with country-appropriate translations,
+              when you need payer interviews that respect confidentiality norms, and when you need market access
+              narratives that align to local HTA and pricing realities. This hub explains how we cluster regions, how we
+              highlight bilingual Arabic–English routes, and where to find therapy-specific and service-specific follow-on
+              pages.
+            </p>
+            <p>
+              Use the sections below to move from discovery to action: pick a priority market, open the corresponding
+              global website profile, then connect to healthcare market research services, blog insights, and case
+              studies that reinforce the same strategic storyline. If you are unsure which market to prioritize, start
+              with the top markets list and validate demand signals against your launch sequence and access milestones.
+            </p>
+          </div>
+        </section>
+
         <section className="section-padding py-8">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl font-display font-semibold text-foreground mb-5">Top markets</h2>

@@ -275,6 +275,14 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  to="/ar/arabic-blog-alsawdyh"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  Arabic guide: Saudi pharmaceutical market research
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/market-research-uae"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >

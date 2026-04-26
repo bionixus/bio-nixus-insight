@@ -298,9 +298,11 @@ const copyByLanguage: Record<Language, LocalizedCopy> = {
     heroBadge: 'Healthcare Market Research',
     heroTitle: '服务欧洲与中东制药决策的healthcare market research',
     heroSubtitle: '聚焦上市、market access与增长的healthcare market research。',
-    heroBody: 'BioNixus将医生、支付方和医院洞察转化为可执行的制药业务决策。',
+    heroBody:
+      'BioNixus将医生、支付方和医院洞察转化为可执行的制药业务决策。我们同时服务欧洲与中东团队：在欧洲侧对齐GDPR、NICE与欧盟HTA语境下的证据设计；在海湾与北非侧支持阿英双语调研与SFDA、MOHAP、DHA等监管语境下的现场执行。无论是上市前细分、支付方面谈，还是上市后采用追踪，页面所述模块均可按国家与适应症组合，避免“全球一套题”导致的信号失真。',
     scopeTitle: '本页解决的问题',
-    scopeBody: '面向需要高业务相关性的制药团队，提供可落地的healthcare market research框架。',
+    scopeBody:
+      '面向需要高业务相关性的制药团队，提供可落地的healthcare market research框架。您可以用本页快速对齐：研究问题是否匹配商业决策、样本与配额是否反映真实处方结构、交付物是否可直接进入医学与市场准入工作坊。对跨境项目，我们建议明确“可比维度”和“必须本地化维度”，并在方案阶段写清时间表、语言版本与质控节点，以便内部法务与医学团队一次审阅通过。',
     capabilitiesTitle: '核心能力',
     capabilities: [
       { title: 'Quantitative healthcare market research', description: '通过结构化调研测量需求、细分机会并优化账户优先级。' },
@@ -311,7 +313,8 @@ const copyByLanguage: Record<Language, LocalizedCopy> = {
     coverageTitle: '欧洲与中东覆盖',
     coverageBody: '覆盖英国、德国、法国、意大利、西班牙、沙特、阿联酋、埃及、科威特与卡塔尔。',
     methodologyTitle: '方法与合规',
-    methodologyBody: '采用GDPR、EMA、MOH、SFDA导向治理，保障数据质量与可审计交付。',
+    methodologyBody:
+      '采用GDPR、EMA、MOH、SFDA导向治理，保障数据质量与可审计交付。定量项目包含配额逻辑、实时质控与身份核验流程；定性项目包含指南迭代、利益冲突披露与纪要结构化输出。所有材料可中英德法西意阿多语交付，并在需要时提供匿名化案例片段，帮助采购与合规团队评估供应商能力。若您正在比较多家机构，可把本页作为能力清单，与具体国家的healthcare market research落地页交叉验证覆盖范围。',
     useCasesTitle: '典型应用结果',
     useCases: [
       { title: '上市准备', description: '优化细分与优先级，提升首轮市场激活质量。' },

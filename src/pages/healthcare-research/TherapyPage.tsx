@@ -18,6 +18,12 @@ const THERAPY_COPY: Record<string, string> = {
     'Biologics and biosimilar market research with physician, payer, and market access stakeholder insight models.',
   vaccines:
     'Vaccine market research for perception, adoption, and communication strategy across key healthcare markets.',
+  cardiology:
+    'Cardiology pharmaceutical market research covering acute and chronic pathways, interventional adoption, guideline-aligned prescribing, and payer-relevant outcomes.',
+  'rare-diseases':
+    'Rare disease market research for orphan and specialty therapies: patient-finding realism, KOL networks, access hurdles, and evidence needs across MENA, UK, and Europe.',
+  'aesthetic-medicine':
+    'Aesthetic medicine market research for injectables, devices, and consumer-medical positioning—demand signals, channel dynamics, and competitive differentiation.',
 };
 
 const THERAPY_SECTIONS: Record<string, { title: string; points: string[] }> = {

@@ -106,9 +106,25 @@ const Services = () => {
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">
               Comprehensive Healthcare Market Research Services for EMEA
             </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-16">
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-6">
               From large-scale physician surveys to strategic market access consulting, BioNixus delivers end-to-end pharmaceutical research across 17+ countries in Europe, the Middle East, and North Africa.
             </p>
+            <div className="space-y-4 text-muted-foreground leading-relaxed max-w-3xl mb-16 text-[15px]">
+              <p>
+                Each service card below links to a dedicated page with scope notes, typical deliverables, and geographic
+                nuance. Quantitative programs emphasize representative sampling, transparent quotas, and statistical
+                reporting that leadership teams can defend in governance reviews. Qualitative programs emphasize
+                discussion guides that elicit clinical behavior—not slogans—and synthesis that converts transcripts into
+                decisions.
+              </p>
+              <p>
+                Market access and HTA support connects primary research to dossier narratives, payer objections, and
+                price–volume scenarios. Competitive intelligence and KOL mapping modules feed launch readiness workshops,
+                while clinical trial support bridges investigator sentiment with recruitment realism. Together, these
+                services form a modular system: you can commission one module or a sequenced program aligned to your
+                launch calendar.
+              </p>
+            </div>
 
             <div className="grid md:grid-cols-2 gap-8">
               {services.map((svc) => (
@@ -153,6 +169,9 @@ const Services = () => {
                 </Link>
                 <Link to="/pharmaceutical-companies-uae" className="text-primary hover:underline">
                   UAE pharmaceutical companies guide
+                </Link>
+                <Link to="/ar/arabic-blog-alsawdyh" className="text-primary hover:underline">
+                  Arabic guide: pharmaceutical market research in Saudi Arabia
                 </Link>
               </div>
               <div className="grid md:grid-cols-2 gap-2 mt-4">

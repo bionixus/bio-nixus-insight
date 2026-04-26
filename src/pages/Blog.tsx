@@ -123,6 +123,75 @@ const Blog = () => {
           <div className="container-wide max-w-4xl mx-auto">
             <h1 className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-3">{introTitle}</h1>
             <p className="text-muted-foreground leading-relaxed">{introText}</p>
+            <div className="mt-8 space-y-4 text-muted-foreground leading-relaxed text-[15px] border-t border-border pt-8">
+              {isArabicBlog ? (
+                <>
+                  <p>
+                    تساعدك هذه الصفحة على ربط استراتيجية المنتج بأدلة السوق: من استطلاعات الأطباء الكمية إلى مقابلات
+                    الجهات الدافعة النوعية، ومن تحليل مسار المريض إلى سيناريوهات الوصول إلى السوق في السعودية والإمارات
+                    ومصر. اختر مقالاً يطابق مرحلة قرارك الحالية—ما قبل الإطلاق، التسعير، أو ما بعد الإطلاق—ثم انتقل إلى
+                    صفحات الخدمات والأسواق ذات الصلة لبناء خيط واحد من الأدلة.
+                  </p>
+                  <p>
+                    ننشر تحديثات منتظمة حول التنظيم الصحي، ديناميكيات المستشفيات، وسلوك وصف الأطباء في منطقة الشرق
+                    الأوسط وشمال أفريقيا، مع الحفاظ على لغة عملية تناسب فرق الأدوية والأجهزة الطبية. إذا كنت تخطط
+                    لبرنامج متعدد البلدان، راجع أيضاً صفحات أبحاث السوق حسب الدولة ودليل المواقع العالمية للتنقل بين
+                    المسارات اللغوية.
+                  </p>
+                  <p>
+                    <Link to="/ar/arabic-blog-alsawdyh" className="text-primary font-medium hover:underline">
+                      دليل أبحاث السوق الدوائي في السعودية
+                    </Link>
+                    — إطار عملي يربط التنظيم والوصول إلى السوق قبل تصفح المقالات أدناه.
+                  </p>
+                </>
+              ) : isGerman ? (
+                <>
+                  <p>
+                    Dieser Blog fungiert als Kuratierter Einstieg in pharmazeutische Marktforschung, Marktzugang und
+                    kommerzielle Umsetzung in DACH und EMEA. Artikel verbinden quantitative Ärztebefragungen mit
+                    qualitativen KOL-Perspektiven und erklären, wie Evidenz in Pricing-, Zugangs- und Launch-Entscheidungen
+                    übersetzt wird.
+                  </p>
+                  <p>
+                    Nutzen Sie die Übersicht, um Themen nach Entscheidungsphase zu clustern: frühe Marktvalidierung,
+                    Zulassungsnahe Evidenzplanung, payerseitige Narrative und Post-Launch-Optimierung. Für vertiefende
+                    Programme führen die Links am Seitenende zu priorisierten Insight-URLs und ergänzenden
+                    Servicelandings.
+                  </p>
+                </>
+              ) : isFrench ? (
+                <>
+                  <p>
+                    Ce blog regroupe des analyses actionnables sur la recherche de marché santé, le market access et
+                    l’exécution commerciale en France, en Europe et en MENA. Les articles relient enquêtes quantitatives
+                    auprès des médecins, entretiens qualitatifs avec les payeurs et lecture des parcours de soins pour
+                    soutenir pricing, accès et lancement.
+                  </p>
+                  <p>
+                    Parcourez les entrées selon votre question décisionnelle—preuve de valeur, segmentation, adoption
+                    hospitalière ou dynamiques retail—and reliez-les aux pages services et pays pour une chaîne d’indices
+                    cohérente. Les liens en bas de page renforcent la couverture crawl des URL longue traîne les plus
+                    demandées par les équipes pharma.
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p>
+                    Use this index to connect product strategy with market evidence: from quantitative physician surveys
+                    and payer interviews to patient journey work and GCC market access scenarios. Pick articles that
+                    match your decision stage—pre-launch, pricing, or post-launch optimization—then follow through to
+                    related service and country pages so your evidence thread stays coherent for leadership reviews.
+                  </p>
+                  <p>
+                    BioNixus publishes on regulation, hospital adoption, and prescription dynamics across Europe and
+                    MENA in language that commercial, medical, and market access teams can act on. If you are planning a
+                    multi-country program, pair these insights with the healthcare market research hub, methodology
+                    overview, and global websites directory for bilingual routing where Arabic–English fieldwork matters.
+                  </p>
+                </>
+              )}
+            </div>
           </div>
         </section>
         {isError ? (

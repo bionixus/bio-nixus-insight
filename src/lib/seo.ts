@@ -65,6 +65,14 @@ export const languagePaths: Record<Language, string> = {
   zh: '/zh',
 };
 
+/** Canonical localized path for the dedicated Contact page (matches `localizedRouteGroups['/contact']`). */
+export function localizedContactPath(language: Language): string {
+  if (language === 'fr') return '/fr/contacts';
+  if (language === 'ar') return '/ar/contacts';
+  const base = languagePaths[language] || '/';
+  return base === '/' ? '/contact' : `${base}/contact`;
+}
+
 function normalizePath(path: string): string {
   if (!path) return '/';
   const noQuery = path.split('?')[0].split('#')[0] || '/';

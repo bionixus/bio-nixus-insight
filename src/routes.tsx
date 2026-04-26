@@ -19,6 +19,7 @@ import MenaMarketData from '@/pages/MenaMarketData';
 import GccMarketAccessGuide from '@/pages/GccMarketAccessGuide';
 import NotFound from '@/pages/NotFound';
 import MarketResearch from '@/pages/MarketResearch';
+import MarketResearchHome from '@/pages/MarketResearchHome';
 import MarketResearchSaudiArabiaPharmaceutical from '@/pages/MarketResearchSaudiArabiaPharmaceutical';
 import MarketResearchHealthcare from '@/pages/MarketResearchHealthcare';
 import QualitativeMarketResearch from '@/pages/QualitativeMarketResearch';
@@ -120,6 +121,7 @@ export const routes: RouteObject[] = [
   { path: '/sitemap', element: <SiteMapPage /> },
   { path: '/mena-pharma-market-data', element: <MenaMarketData /> },
   { path: '/gcc-market-access-guide', element: <GccMarketAccessGuide /> },
+  { path: '/market-research-home', element: <MarketResearchHome /> },
   { path: '/market-research', element: <MarketResearch /> },
   { path: '/market-research-uae', element: <MarketResearchUae /> },
   { path: '/market-research-ksa', element: <MarketResearchKsa /> },
@@ -158,6 +160,7 @@ export const routes: RouteObject[] = [
   { path: '/global-websites/:countrySlug', element: <GlobalWebsiteCountry /> },
   { path: '/new-home', element: <PremiumHomePreview /> },
   { path: '/conf', element: <ConfPortfolio /> },
+  { path: '/ar/conf', element: <ConfPortfolio locale="ar" /> },
   { path: '/healthcare-market-research', element: <HubPage /> },
   { path: '/saudi-arabia', element: <CountryPage /> },
   { path: '/uae', element: <CountryPage /> },

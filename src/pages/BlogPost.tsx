@@ -6,7 +6,7 @@ import type { PortableTextBlock } from '@portabletext/types';
 import { Helmet } from 'react-helmet-async';
 import { fetchSanityPostBySlug, type RelatedPostsData } from '@/lib/sanity-blog';
 import { optimizeSanityImage } from '@/lib/image-utils';
-import { buildSeoDescription, normalizeSeoTitle } from '@/lib/seo-meta';
+import { buildSeoDescription, normalizeSeoTitle, formatSlugAsPageHeading } from '@/lib/seo-meta';
 import RelatedPosts from '@/components/RelatedPosts';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
@@ -181,6 +181,12 @@ const AI_VS_HUMAN_2026_SLUG = 'ai-vs-human-insight-validating-quantitative-data-
 const CHINA_HEALTHCARE_2026_SLUG = 'healthcare-overview-china-market-2026';
 const CHINA_HEALTHCARE_2026_META_DESCRIPTION =
   '深度解析中国医疗健康市场2026关键趋势：医保支付改革、创新药与生物药商业化、医院与基层诊疗结构变化、AI医疗与数字化转型落地路径，以及老龄化驱动的长期需求。为制药企业、投资机构与行业决策者提供可执行的市场洞察与战略参考。';
+
+/** Arabic blog URLs must not reuse the English Sanity meta description (duplicate meta audit). */
+const ARABIC_BLOG_META_DESCRIPTION_BY_SLUG: Record<string, string> = {
+  'quantitative-market-research-and-market-access':
+    'ملخص عربي: أبحاث السوق الكمية وتأثيرها على الوصول إلى السوق للدواء—رؤى للشركات في الشرق الأوسط ودول الخليج من BioNixus.',
+};
 const AI_VS_HUMAN_EXEC_SUMMARY_TEXT =
   'In 2026, winning pharmaceutical insight models combine AI speed with human judgment. AI should process scale, detect anomalies, and surface patterns; expert teams should validate context, challenge assumptions, and prioritize strategic action. The executive standard is simple: AI-first analysis with mandatory human decision checkpoints. This reduces risk, improves decision quality, and accelerates launch, market access, and growth execution.';
 
@@ -480,6 +486,7 @@ const BlogPost = () => {
       <div className="min-h-screen bg-background">
         <Navbar />
         <main className="section-padding container-wide">
+          <h1 className="text-2xl font-display font-semibold text-foreground mb-4">BioNixus blog article</h1>
           <p className="text-muted-foreground">Invalid article.</p>
           <Link to={blogIndexPath} className="mt-4 inline-flex items-center gap-2 text-primary font-medium hover:underline">
             <ArrowLeft className="w-4 h-4" /> Back to articles
@@ -495,6 +502,9 @@ const BlogPost = () => {
       <div className="min-h-screen bg-background">
         <Navbar />
         <main className="section-padding container-wide">
+          <h1 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3 text-balance">
+            {formatSlugAsPageHeading(slug!)} — BioNixus blog
+          </h1>
           <p className="text-muted-foreground">Loading article...</p>
         </main>
         <Footer />
@@ -507,6 +517,9 @@ const BlogPost = () => {
       <div className="min-h-screen bg-background">
         <Navbar />
         <main className="section-padding container-wide">
+          <h1 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3 text-balance">
+            {slug ? `${formatSlugAsPageHeading(slug)} — BioNixus blog` : 'BioNixus blog article'}
+          </h1>
           <p className="text-muted-foreground">Article not found.</p>
           <Link to={blogIndexPath} className="mt-4 inline-flex items-center gap-2 text-primary font-medium hover:underline">
             <ArrowLeft className="w-4 h-4" /> Back to articles
@@ -528,9 +541,17 @@ const BlogPost = () => {
     bodySource: bodySourceForMeta,
     fallback: post.excerpt || post.title,
   });
-  const finalMetaDescription = slug === CHINA_HEALTHCARE_2026_SLUG
-    ? CHINA_HEALTHCARE_2026_META_DESCRIPTION
-    : metaDescription;
+  const arBlogMetaOverride =
+    isArBlog && slug && ARABIC_BLOG_META_DESCRIPTION_BY_SLUG[slug]
+      ? buildSeoDescription({
+          preferred: ARABIC_BLOG_META_DESCRIPTION_BY_SLUG[slug],
+          fallback: metaDescription,
+        })
+      : null;
+  const finalMetaDescription =
+    slug === CHINA_HEALTHCARE_2026_SLUG
+      ? CHINA_HEALTHCARE_2026_META_DESCRIPTION
+      : arBlogMetaOverride ?? metaDescription;
   const socialTitle = post.ogTitle || metaTitle;
   const socialDescription = post.ogDescription || finalMetaDescription;
   const socialImage = post.ogImage || post.coverImage;

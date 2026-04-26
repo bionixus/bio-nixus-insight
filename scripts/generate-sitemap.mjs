@@ -77,6 +77,7 @@ const staticPages = [
   { path: '/de/success-in-startups', priority: '0.7', changefreq: 'monthly' },
   { path: '/ar/arabic-blog-alsawdyh', priority: '0.7', changefreq: 'monthly' },
   { path: '/conf', priority: '0.65', changefreq: 'monthly' },
+  { path: '/ar/conf', priority: '0.6', changefreq: 'monthly' },
   { path: '/case-studies', priority: '0.9', changefreq: 'weekly' },
   { path: '/services', priority: '0.9', changefreq: 'monthly' },
   { path: '/services/quantitative-research', priority: '0.8', changefreq: 'monthly' },
@@ -88,6 +89,7 @@ const staticPages = [
   { path: '/services/kol-stakeholder-mapping', priority: '0.8', changefreq: 'monthly' },
   { path: '/mena-pharma-market-data', priority: '0.9', changefreq: 'monthly' },
   { path: '/gcc-market-access-guide', priority: '0.9', changefreq: 'monthly' },
+  { path: '/market-research-home', priority: '0.88', changefreq: 'weekly' },
   { path: '/market-research', priority: '0.9', changefreq: 'monthly' },
   { path: '/market-research-uae', priority: '0.9', changefreq: 'weekly' },
   { path: '/market-research-ksa', priority: '0.9', changefreq: 'weekly' },
@@ -205,10 +207,14 @@ const globalWebsiteCountrySlugs = [
 
 /**
  * /healthcare-market-research/{slug} — Global Websites slugs plus hub aliases (uae, uk, europe, GCC cities).
+ *
+ * Note: `united-kingdom` is intentionally excluded — it 301-redirects to the
+ * shorter canonical slug `/healthcare-market-research/uk` (see vercel.json
+ * and api/indexnow-key.ts) to resolve a duplicate-title pair.
  */
 const healthcareMarketResearchCountrySlugs = [
   ...new Set([
-    ...globalWebsiteCountrySlugs,
+    ...globalWebsiteCountrySlugs.filter((slug) => slug !== 'united-kingdom'),
     'saudi-arabia',
     'uae',
     'kuwait',
@@ -524,6 +530,7 @@ const STATIC_PAGE_FILES = {
   '/faq': ['src/pages/FAQ.tsx'],
   '/resources': ['src/pages/Resources.tsx'],
   '/privacy': ['src/pages/Privacy.tsx'],
+  '/market-research-home': ['src/pages/MarketResearchHome.tsx'],
   '/market-research': ['src/pages/MarketResearch.tsx'],
   '/market-research-uae': ['src/pages/MarketResearchUae.tsx'],
   '/market-research-ksa': ['src/pages/MarketResearchKsa.tsx'],
@@ -576,6 +583,7 @@ const STATIC_PAGE_FILES = {
   '/pharmaceutical-companies-iran': ['src/pages/IranPharmaCompanies.tsx'],
   '/global-websites': ['src/pages/GlobalWebsites.tsx'],
   '/conf': ['public/conf/strategic-portfolio.html', 'server.js', 'src/pages/ConfPortfolio.tsx'],
+  '/ar/conf': ['public/conf/strategic-portfolio-ar.html', 'server.js'],
   '/sitemap': ['src/pages/SiteMapPage.tsx'],
   '/de/methodology': ['src/pages/Methodology.tsx'],
   '/fr/methodology': ['src/pages/Methodology.tsx'],

@@ -17,7 +17,7 @@ export function SEOHead({
   title,
   description,
   canonical: _canonical,
-  ogImage = 'https://www.bionixus.com/og-image.png',
+  ogImage,
   ogType = 'website',
   noindex = false,
   jsonLd = [],
@@ -33,6 +33,8 @@ export function SEOHead({
     return clean === '/' ? '/' : clean.replace(/\/+$/, '');
   })();
   const canonicalUrl = `https://www.bionixus.com${canonicalPath}`;
+  const resolvedOgImage =
+    ogImage ?? `https://www.bionixus.com/api/og-card?path=${encodeURIComponent(canonicalPath)}`;
   const hreflangLinks = getHreflangLinks(pathname);
 
   return (
@@ -51,13 +53,13 @@ export function SEOHead({
       <meta property="og:description" content={safeDescription} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:type" content={ogType} />
-      <meta property="og:image" content={ogImage} />
+      <meta property="og:image" content={resolvedOgImage} />
       <meta property="og:site_name" content="BioNixus" />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={safeTitle} />
       <meta name="twitter:description" content={safeDescription} />
-      <meta name="twitter:image" content={ogImage} />
+      <meta name="twitter:image" content={resolvedOgImage} />
 
       {jsonLd.map((schema, index) => (
         <script key={`json-ld-${index}`} type="application/ld+json">

@@ -2,6 +2,44 @@ const TITLE_MAX = 60
 const DESC_MIN = 70
 const DESC_MAX = 155
 
+/** Tokens to uppercase when building a readable heading from a URL slug (SSR loading states, etc.). */
+const SLUG_HEADING_ACRONYMS = new Set([
+  'gcc',
+  'uae',
+  'ksa',
+  'mena',
+  'emea',
+  'rwe',
+  'kol',
+  'hta',
+  'nice',
+  'cns',
+  'fda',
+  'sfda',
+  'moh',
+  'mohap',
+  'dha',
+  'doh',
+  'nhs',
+  'uk',
+  'us',
+  'eu',
+  'ai',
+])
+
+/** Turns `gcc-pharmacoeconomics` → `GCC Pharmacoeconomics` for visible <h1> fallbacks. */
+export function formatSlugAsPageHeading(slug: string): string {
+  return String(slug || '')
+    .split('-')
+    .filter(Boolean)
+    .map((part) =>
+      SLUG_HEADING_ACRONYMS.has(part.toLowerCase())
+        ? part.toUpperCase()
+        : part.charAt(0).toUpperCase() + part.slice(1),
+    )
+    .join(' ')
+}
+
 function stripTags(input: string): string {
   return String(input || '')
     .replace(/<[^>]*>/g, ' ')

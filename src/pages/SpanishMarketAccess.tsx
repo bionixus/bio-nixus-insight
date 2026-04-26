@@ -67,6 +67,27 @@ export default function SpanishMarketAccess() {
               </Link>
               .
             </p>
+            <h2 className="text-2xl font-display font-semibold text-foreground pt-2">
+              Evidencia, pagadores y narrativa de valor en mercados sanitarios
+            </h2>
+            <p>
+              El market access ya no es solo un dossier regulatorio: es una cadena de decisiones en comités hospitalarios,
+              entidades de evaluación de tecnologías sanitarias y acuerdos con pagadores que observan datos reales de uso,
+              coste-efectividad y comparadores dinámicos. Los programas de investigación deben anticipar qué preguntas
+              hará cada eslabón y cómo se traducirán las respuestas en mensajes comerciales y médicos coherentes.
+            </p>
+            <p>
+              En España y mercados vecinos, la coordinación entre evidencia clínica, modelo económico y negociación
+              comercial determina el ritmo de adopción. Por eso combinamos entrevistas cualitativas con pagadores y
+              farmacéuticos hospitalarios con encuestas cuantitativas que miden barreras de prescripción, percepción de
+              diferenciación y sensibilidad a incentivos. El objetivo no es acumular transcripciones, sino entregar
+              prioridades accionables para equipos de acceso y marketing.
+            </p>
+            <p>
+              Si opera en varios países, evite copiar el mismo guion de valor: adapte supuestos de precio, comparadores y
+              rutas de dispensación. BioNixus apoya esa localización con equipos acostumbrados a trabajar en inglés y
+              español y a conectar hallazgos con hubs europeos y escenarios MENA cuando el portafolio lo exige.
+            </p>
           </div>
         </section>
 

@@ -57,6 +57,11 @@
   ],
   "redirects": [
     {
+      "source": "/healthcare-market-research/united-kingdom",
+      "destination": "/healthcare-market-research/uk",
+      "statusCode": 301
+    },
+    {
       "source": "/conf/",
       "destination": "/conf",
       "statusCode": 301
@@ -64,6 +69,16 @@
     {
       "source": "/conf/strategic-portfolio.html",
       "destination": "/conf",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/conf/",
+      "destination": "/ar/conf",
+      "statusCode": 301
+    },
+    {
+      "source": "/conf/strategic-portfolio-ar.html",
+      "destination": "/ar/conf",
       "statusCode": 301
     },
     {
@@ -119,6 +134,10 @@
     {
       "source": "/conf",
       "destination": "/conf/strategic-portfolio.html"
+    },
+    {
+      "source": "/ar/conf",
+      "destination": "/conf/strategic-portfolio-ar.html"
     },
     {
       "source": "/blog/:slug",

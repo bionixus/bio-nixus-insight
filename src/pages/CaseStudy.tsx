@@ -6,8 +6,10 @@ import type { PortableTextBlock } from '@portabletext/types';
 import { Helmet } from 'react-helmet-async';
 import { fetchCaseStudyBySlug } from '@/lib/sanity-case-studies';
 import { isCaseStudiesConfigured } from '@/lib/sanity-case-studies';
-import { buildSeoDescription, normalizeSeoTitle } from '@/lib/seo-meta';
+import { buildSeoDescription, normalizeSeoTitle, formatSlugAsPageHeading } from '@/lib/seo-meta';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useInitialData } from '@/contexts/InitialDataContext';
+import type { CaseStudy as CaseStudyType } from '@/types/caseStudy';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { getOgLocale, getOgLocaleAlternates } from '@/lib/seo';
 import Navbar from '@/components/Navbar';
@@ -80,11 +82,17 @@ const CaseStudyPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const { t, language } = useLanguage();
   const cs = (t as { caseStudiesPage?: Record<string, string> }).caseStudiesPage ?? {};
+  const { data: routeData } = useInitialData();
+  const ssrCaseStudyBundle =
+    Boolean(slug) &&
+    routeData.pageType === 'case-study' &&
+    routeData.caseStudySlug === slug;
 
   const { data: caseStudy, isLoading, isError } = useQuery({
     queryKey: ['case-study', slug],
     queryFn: () => fetchCaseStudyBySlug(slug!),
     enabled: Boolean(slug) && isCaseStudiesConfigured(),
+    initialData: ssrCaseStudyBundle ? (routeData.caseStudy as CaseStudyType | null) : undefined,
   });
 
   if (!slug) {
@@ -92,6 +100,7 @@ const CaseStudyPage = () => {
       <div className="min-h-screen bg-background">
         <Navbar />
         <main className="section-padding container-wide">
+          <h1 className="text-2xl font-display font-semibold text-foreground mb-4">Case study</h1>
           <p className="text-muted-foreground">Invalid case study.</p>
           <Link to="/case-studies" className="mt-4 inline-flex items-center gap-2 text-primary font-medium hover:underline">
             <ArrowLeft className="w-4 h-4" /> {cs.backToHome ?? 'Back to case studies'}
@@ -102,11 +111,14 @@ const CaseStudyPage = () => {
     );
   }
 
-  if (isLoading) {
+  if (isLoading && caseStudy === undefined) {
     return (
       <div className="min-h-screen bg-background">
         <Navbar />
         <main className="section-padding container-wide">
+          <h1 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3 text-balance">
+            {formatSlugAsPageHeading(slug)} — BioNixus case study
+          </h1>
           <p className="text-muted-foreground">Loading case study…</p>
         </main>
         <Footer />
@@ -119,6 +131,9 @@ const CaseStudyPage = () => {
       <div className="min-h-screen bg-background">
         <Navbar />
         <main className="section-padding container-wide">
+          <h1 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3 text-balance">
+            {slug ? `${formatSlugAsPageHeading(slug)} — BioNixus case study` : 'Case study'}
+          </h1>
           <p className="text-muted-foreground">Case study not found.</p>
           <Link to="/case-studies" className="mt-4 inline-flex items-center gap-2 text-primary font-medium hover:underline">
             <ArrowLeft className="w-4 h-4" /> {cs.backToHome ?? 'Back to case studies'}

@@ -215,7 +215,13 @@ const CaseStudies = () => {
                   <article className="grid md:grid-cols-2 gap-8 bg-card rounded-2xl border border-border overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                     <div className="relative aspect-[16/10] md:aspect-auto md:min-h-[320px] bg-muted overflow-hidden">
                       {featured.coverImage ? (
-                        <img src={featured.coverImage} alt="" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <img
+                          src={featured.coverImage}
+                          alt={featured.title || 'Case study cover image'}
+                          loading="lazy"
+                          decoding="async"
+                          className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
                       ) : (
                         <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-primary/5" />
                       )}
@@ -253,7 +259,13 @@ const CaseStudies = () => {
                     <article className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-md transition-shadow h-full flex flex-col">
                       <div className="relative aspect-[16/10] bg-muted overflow-hidden">
                         {item.coverImage ? (
-                          <img src={item.coverImage} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                          <img
+                            src={item.coverImage}
+                            alt={item.title || 'Case study cover image'}
+                            loading="lazy"
+                            decoding="async"
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          />
                         ) : (
                           <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5" />
                         )}

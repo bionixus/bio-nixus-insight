@@ -98,7 +98,9 @@ export function CaseStudyDetailView({
               <div className="relative aspect-[16/10] rounded-xl overflow-hidden mb-6 bg-muted">
                 <img
                   src={caseStudy.coverImage}
-                  alt=""
+                  alt={caseStudy.title || 'Case study cover image'}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
               </div>

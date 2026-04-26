@@ -36,11 +36,24 @@ const Index = () => {
   const contactHref =
     language === 'fr' ? '/fr/contacts' : language === 'ar' ? '/ar/contacts' : `${basePath === '/' ? '' : basePath}/contact`;
   const featuredCards = [
+    ...(language === 'ar'
+      ? [
+          {
+            to: '/ar/arabic-blog-alsawdyh',
+            title: 'دليل أبحاث السوق الدوائي في السعودية',
+            description:
+              'دليل عربي عملي يربط التنظيم المحلي، ديناميكيات المستشفيات، وأسئلة الوصول إلى السوق بقرارات الأدوية في المملكة.',
+            highlight: true,
+            label: 'موارد عربية',
+            decisionHint: 'مقالات وروابط ذات صلة',
+          },
+        ]
+      : []),
     {
-      to: '/market-research',
-      title: 'Market Research Services Hub',
+      to: '/healthcare-market-research',
+      title: 'Healthcare Market Research',
       description:
-        'Compare healthcare market research methods and pharmaceutical use cases across Europe and the Middle East.',
+        'Decision-ready healthcare market research programs for pharmaceutical teams in Europe, the UK, MENA, and GCC markets.',
       highlight: false,
     },
     {
@@ -53,11 +66,13 @@ const Index = () => {
       decisionHint: 'Best for country-level execution',
     },
     {
-      to: '/healthcare-market-research',
-      title: 'Healthcare Market Research',
+      to: '/global-websites/united-arab-emirates',
+      title: 'UAE Pharmaceutical Market Research',
       description:
-        'Decision-ready healthcare market research programs for pharmaceutical teams in Europe, the UK, MENA, and GCC markets.',
-      highlight: false,
+        'Dubai and Abu Dhabi healthcare intelligence for drug development, market access, and quantitative and qualitative research across the Emirates.',
+      highlight: true,
+      label: 'UAE Priority',
+      decisionHint: 'Best for UAE launch and access execution',
     },
     {
       to: '/bionixus-market-research-middle-east',
@@ -67,31 +82,6 @@ const Index = () => {
       highlight: true,
       label: 'GCC Priority',
       decisionHint: 'Best for Middle East launch and access decisions',
-    },
-    {
-      to: '/quantitative-healthcare-market-research',
-      title: 'Quantitative Healthcare Market Research Guide',
-      description:
-        'Execution-ready 2026 guide for survey architecture, tracker governance, and AI-assisted validation in Saudi Arabia and UAE.',
-      highlight: true,
-      label: 'Featured Guide',
-      decisionHint: 'Best for quantitative design decisions',
-    },
-    {
-      to: '/global-websites',
-      title: 'Global Websites Directory',
-      description:
-        'Discover healthcare market research pages by country to support pharmaceutical strategy across Europe and the Middle East.',
-      highlight: true,
-      label: 'Country-Level Depth',
-      decisionHint: 'Best for multi-country planning',
-    },
-    {
-      to: '/qualitative-market-research',
-      title: 'Qualitative Market Research',
-      description:
-        'KOL interviews, advisory boards, and ethnographic insight for pharmaceutical positioning, access narratives, and stakeholder understanding.',
-      highlight: false,
     },
     {
       to: '/conf',
@@ -112,13 +102,22 @@ const Index = () => {
       decisionHint: 'Best for Egypt partner selection',
     },
     {
-      to: '/global-websites/united-arab-emirates',
-      title: 'UAE Pharmaceutical Market Research',
+      to: '/quantitative-healthcare-market-research',
+      title: 'Quantitative Healthcare Market Research Guide',
       description:
-        'Dubai and Abu Dhabi healthcare intelligence for drug development, market access, and quantitative and qualitative research across the Emirates.',
+        'Execution-ready 2026 guide for survey architecture, tracker governance, and AI-assisted validation in Saudi Arabia and UAE.',
       highlight: true,
-      label: 'UAE Priority',
-      decisionHint: 'Best for UAE launch and access execution',
+      label: 'Featured Guide',
+      decisionHint: 'Best for quantitative design decisions',
+    },
+    {
+      to: '/global-websites',
+      title: 'Global Websites Directory',
+      description:
+        'Discover healthcare market research pages by country to support pharmaceutical strategy across Europe and the Middle East.',
+      highlight: true,
+      label: 'Country-Level Depth',
+      decisionHint: 'Best for multi-country planning',
     },
   ];
 
@@ -258,7 +257,7 @@ const Index = () => {
           </div>
         </div>
         <div className="cv-auto">
-          <ContactSection />
+          <ContactSection embedOnHomePage />
         </div>
       </main>
       <Footer />

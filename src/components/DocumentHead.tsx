@@ -268,9 +268,24 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
     );
   }
 
-  if (path === '/ar/contacts' || path === '/fr/contacts' || path === '/contact' || path === '/de/contact') {
+  if (path === '/contact') {
     return clampDescription(
-      'Contact BioNixus for healthcare and pharmaceutical market research proposals across Saudi Arabia, GCC, UK, Europe, and global healthcare markets.'
+      'Request a BioNixus healthcare and pharmaceutical market research proposal: Saudi Arabia, GCC, UK, and Europe coverage with quantitative, qualitative, and market access programs.',
+    );
+  }
+  if (path === '/de/contact') {
+    return clampDescription(
+      'Kontakt zu BioNixus: Markt- und Gesundheitsforschung für Pharma in DACH, UK und MENA—Angebote, Feldforschung und evidenzbasierte Strategieberatung.',
+    );
+  }
+  if (path === '/fr/contacts') {
+    return clampDescription(
+      'Contactez BioNixus pour études de marché santé et pharma: couverture Europe, UK et MENA, méthodes quantitatives et qualitatives, et intelligence accès marché.',
+    );
+  }
+  if (path === '/ar/contacts') {
+    return clampDescription(
+      'تواصل مع BioNixus لطلبات أبحاث السوق الصحي والدوائي في السعودية والخليج والمملكة المتحدة وأوروبا—برامج كمية ونوعية ودعم استراتيجي للوصول إلى السوق.',
     );
   }
 

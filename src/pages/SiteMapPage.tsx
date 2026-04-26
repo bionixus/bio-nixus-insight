@@ -78,6 +78,8 @@ const localizedLinks = [
   { to: '/ar/market-research-saudi', label: 'AR: Market Research Saudi' },
   { to: '/ar/market-research-kuwait', label: 'AR: Market Research Kuwait' },
   { to: '/ar/market-research-egypt', label: 'AR: Market Research Egypt' },
+  { to: '/ar/arabic-blog-alsawdyh', label: 'AR: Arabic pharmaceutical market research guide (Saudi Arabia)' },
+  { to: '/ar/blog', label: 'AR: Arabic blog index' },
 ];
 
 function pathToLabel(path: string) {
@@ -164,6 +166,52 @@ export default function SiteMapPage() {
           <p className="text-muted-foreground mb-10">
             Browse all major BioNixus pages and content hubs.
           </p>
+
+          <section
+            className="mb-14 rounded-2xl border border-border bg-muted/25 p-6 md:p-10 max-w-4xl"
+            aria-labelledby="sitemap-guide-heading"
+          >
+            <h2 id="sitemap-guide-heading" className="text-2xl font-display font-semibold text-foreground mb-4">
+              How to use this BioNixus content directory
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed text-[15px]">
+              <p>
+                This sitemap is designed for healthcare and pharmaceutical teams that need a trustworthy map of
+                BioNixus market research services, regional hubs, and evidence-led insight articles. Instead of relying on
+                fragmented bookmarks, you can start here to jump directly to quantitative and qualitative research
+                programs, country-specific healthcare market research pages, and pharmaceutical company guides that
+                support launch, market access, and growth planning.
+              </p>
+              <p>
+                BioNixus operates across Europe, the United Kingdom, the Gulf Cooperation Council (GCC), and wider MENA
+                markets. The links below group services, blog insights, case studies, and recovery paths that reflect how
+                commercial, medical, and market access teams actually search for information: by decision type, by
+                geography, and by stakeholder evidence need. When you need a consolidated view of Saudi Arabia, UAE,
+                Kuwait, Egypt, or EU5 markets, use the healthcare country pages and pharmaceutical company directories
+                as complementary entry points.
+              </p>
+              <p>
+                Market research quality depends on transparent methodology, compliant fieldwork, and reporting that
+                connects data to decisions. As you navigate from this sitemap to deeper service pages, you will find
+                consistent guidance on physician surveys, payer interviews, KOL mapping, competitive intelligence, and
+                HTA-aligned narratives. If you are evaluating partners for a multi-country program, compare the market
+                research hub, qualitative and quantitative service pages, and the methodology overview to confirm scope,
+                timelines, and governance expectations.
+              </p>
+              <p>
+                The &quot;Additional content links&quot; section at the bottom mirrors internal routes we monitor for
+                crawl completeness. It is intentionally explicit so search engines and human readers can discover
+                long-tail healthcare market research URLs that support niche queries—rare diseases, oncology, diabetes,
+                respiratory pathways, and GCC market access scenarios—without losing site structure clarity.
+              </p>
+              <p>
+                When you are ready to move from reading to execution, use the contact page to request a tailored proposal.
+                Share your objective market, timeline, and evidence standard; BioNixus will align research modules to
+                your launch, access, or portfolio prioritization questions while keeping deliverables decision-ready for
+                leadership reviews.
+              </p>
+            </div>
+          </section>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             <section>

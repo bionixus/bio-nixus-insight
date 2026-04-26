@@ -137,9 +137,29 @@ const FAQ = () => {
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6">
               Frequently Asked Questions
             </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-12">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               Everything you need to know about BioNixus and our healthcare market research services.
             </p>
+            <div className="space-y-4 text-muted-foreground leading-relaxed mb-12 text-[15px] rounded-xl border border-border bg-muted/20 p-6 md:p-8">
+              <p>
+                BioNixus supports pharmaceutical, biotech, and medical device teams that need defensible evidence across
+                Europe, the United Kingdom, and MENA—especially where bilingual Arabic–English fieldwork and Gulf health
+                authority context matter. This FAQ complements our services hub, methodology page, and country-specific
+                healthcare market research guides: use it when you need fast answers on coverage, compliance, timelines,
+                and how we differ from generalist agencies.
+              </p>
+              <p>
+                Projects typically combine quantitative physician or pharmacist surveys with qualitative depth (KOL
+                interviews, payer conversations, hospital committee dynamics) and optional competitive intelligence modules.
+                We publish structured outputs—segment summaries, message testing, demand forecasts, and access narratives—so
+                commercial, medical, and market access stakeholders can align without re-interpreting raw tabs.
+              </p>
+              <p>
+                If your question is not listed, contact us with your objective market, sample constraints, and decision
+                deadline. We respond with a scoped proposal that names research design choices, risks, and quality controls
+                rather than generic marketing claims.
+              </p>
+            </div>
 
             <div className="divide-y divide-border border-t border-border">
               {faqs.map((faq, i) => (

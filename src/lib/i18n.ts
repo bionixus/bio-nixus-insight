@@ -216,6 +216,13 @@ export const translations = {
         error: 'Something went wrong. Please try again or contact us by email.',
       },
     },
+    contactHomeEmbed: {
+      title: 'Request a tailored research proposal',
+      body:
+        'The homepage summarizes services, regional coverage, and methodology. The dedicated contact page hosts the full intake form, privacy context, and structured fields so BioNixus can respond with a scoped plan—typically within one business day.',
+      cta: 'Open the full contact form',
+      emailLine: 'Prefer email? admin@bionixus.com',
+    },
     localePrompt: {
       title: 'You are opening from {region}.',
       question: 'Do you want to switch to {language}?',
@@ -460,6 +467,13 @@ export const translations = {
         success: 'Ihre Anfrage wurde erfolgreich übermittelt!',
         error: 'Etwas ist schief gelaufen. Bitte versuchen Sie es erneut oder kontaktieren Sie uns per E-Mail.',
       },
+    },
+    contactHomeEmbed: {
+      title: 'Angebot für Marktforschung anfragen',
+      body:
+        'Die Startseite fasst Leistungen, Regionen und Methodik zusammen. Das Kontaktformular mit allen Feldern, Datenschutzkontext und strukturiertem Briefing liegt auf der separaten Kontaktseite—für eine fokussierte Antwort meist innerhalb eines Werktags.',
+      cta: 'Zum vollständigen Kontaktformular',
+      emailLine: 'Lieber per E-Mail? admin@bionixus.com',
     },
     localePrompt: {
       title: 'Sie öffnen von {region}.',
@@ -707,6 +721,13 @@ export const translations = {
         error: 'Une erreur s\'est produite. Veuillez réessayer ou nous contacter par e-mail.',
       },
     },
+    contactHomeEmbed: {
+      title: 'Demander une proposition sur mesure',
+      body:
+        'L’accueil présente les services, la couverture géographique et la méthodologie. Le formulaire détaillé, le cadre confidentialité et les champs structurés se trouvent sur la page contact dédiée, pour une réponse cadrée—souvent sous un jour ouvré.',
+      cta: 'Ouvrir le formulaire complet',
+      emailLine: 'Par e-mail : admin@bionixus.com',
+    },
     localePrompt: {
       title: 'Vous ouvrez depuis {region}.',
       question: 'Voulez-vous passer à {language} ?',
@@ -953,6 +974,13 @@ export const translations = {
         error: 'Ha ocurrido un error. Por favor inténtelo de nuevo o contáctenos por correo.',
       },
     },
+    contactHomeEmbed: {
+      title: 'Solicitar una propuesta a medida',
+      body:
+        'La página principal resume servicios, cobertura y metodología. El formulario completo, el contexto de privacidad y los campos estructurados están en la página de contacto dedicada, para una respuesta alineada—normalmente en un día hábil.',
+      cta: 'Ir al formulario completo',
+      emailLine: '¿Por correo? admin@bionixus.com',
+    },
     localePrompt: {
       title: 'Está abriendo desde {region}.',
       question: '¿Desea cambiar a {language}?',
@@ -1197,6 +1225,13 @@ export const translations = {
         success: '您的咨询已成功提交！',
         error: '发生错误。请重试或直接通过电子邮件联系我们。',
       },
+    },
+    contactHomeEmbed: {
+      title: '提交定制化医疗市场研究需求',
+      body:
+        '首页概述服务能力、区域覆盖与方法论要点；完整的需求字段、隐私说明与结构化 briefing 请前往联系专页填写，便于我们在一个工作日内反馈可执行的范围与下一步建议。',
+      cta: '前往联系专页打开完整表单',
+      emailLine: '也可发送邮件至 admin@bionixus.com',
     },
     localePrompt: {
       title: '您正在从 {region} 打开。',
@@ -1447,6 +1482,13 @@ export const translations = {
         success: 'تم إرسال استفسارك بنجاح!',
         error: 'حدث خطأ. يرجى المحاولة مرة أخرى أو الاتصال بنا عبر البريد الإلكتروني.',
       },
+    },
+    contactHomeEmbed: {
+      title: 'اطلب عرضاً مخصصاً لأبحاث السوق',
+      body:
+        'الصفحة الرئيسية تلخص الخدمات والتغطية الجغرافية والمنهجية. أما النموذج التفصيلي مع حقول الإدخال وسياق الخصوصية فيوجد في صفحة الاتصال المخصصة لنرد بخطة واضحة—غالباً خلال يوم عمل واحد.',
+      cta: 'افتح نموذج الاتصال الكامل',
+      emailLine: 'البريد: admin@bionixus.com',
     },
     localePrompt: {
       title: 'أنت تفتح من {region}.',

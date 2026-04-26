@@ -1,6 +1,7 @@
 import { COUNTRY_CONFIGS } from '@/lib/constants/countries';
 import { sanityServer } from '@/lib/sanity-server';
-import { fetchCaseStudies } from '@/lib/sanity-case-studies';
+import { fetchCaseStudies, fetchCaseStudyBySlug } from '@/lib/sanity-case-studies';
+import type { CaseStudy } from '@/types/caseStudy';
 import {
   fetchSanityPostBySlugWithClient,
   fetchSanityPostsWithClient,
@@ -143,6 +144,22 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
     return {
       pageType: 'case-studies',
       caseStudies,
+    };
+  }
+
+  const caseStudyDetailMatch = normalizedPath.match(/^\/case-studies\/([^/]+)\/?$/);
+  if (caseStudyDetailMatch) {
+    const slug = decodeURIComponent(caseStudyDetailMatch[1]);
+    let caseStudy: CaseStudy | null = null;
+    try {
+      caseStudy = await fetchCaseStudyBySlug(slug);
+    } catch {
+      caseStudy = null;
+    }
+    return {
+      pageType: 'case-study',
+      caseStudySlug: slug,
+      caseStudy,
     };
   }
 

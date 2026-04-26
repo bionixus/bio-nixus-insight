@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Mail, MapPin, Phone } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { languagePaths } from '@/lib/seo';
+import { languagePaths, localizedContactPath } from '@/lib/seo';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 type ContactValidation = {
@@ -44,8 +44,13 @@ function sendErrorEmail(
   window.location.href = `mailto:${ERROR_EMAIL}?subject=${subject}&body=${body}`;
 }
 
-const ContactSection = () => {
-  const { t, language } = useLanguage();
+type ContactSectionProps = {
+  /** When true (homepage only), show a short CTA instead of the full proposal form to avoid near-duplicate HTML vs `/contact`. */
+  embedOnHomePage?: boolean;
+};
+
+const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
+  const { t, language, isRTL } = useLanguage();
   const sectionRef = useScrollReveal<HTMLElement>({ stagger: 80 });
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -148,6 +153,33 @@ const ContactSection = () => {
       setSubmitting(false);
     }
   };
+
+  if (embedOnHomePage) {
+    const ch = t.contactHomeEmbed;
+    const contactPageHref = localizedContactPath(language);
+    return (
+      <section id="contact" className="section-padding bg-background border-t border-border" ref={sectionRef}>
+        <div className={`container-wide max-w-3xl mx-auto ${isRTL ? 'text-right' : ''}`}>
+          <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-4">{ch.title}</h2>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-6">{ch.body}</p>
+          <p className="text-sm text-muted-foreground mb-8">
+            <a href="mailto:admin@bionixus.com" className="text-primary font-medium hover:underline">
+              {ch.emailLine}
+            </a>
+          </p>
+          <Link
+            to={contactPageHref}
+            className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-opacity group"
+          >
+            {ch.cta}
+            <ArrowRight
+              className={`w-5 h-5 transition-transform ${isRTL ? 'rtl:scale-x-[-1] group-hover:-translate-x-1' : 'group-hover:translate-x-1'}`}
+            />
+          </Link>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="contact" className="section-padding bg-background" ref={sectionRef}>

@@ -96,6 +96,16 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
           </div>
         </section>
 
+        <section className="border-b border-border bg-muted/30 py-4" aria-label="Arabic language resources">
+          <div className="container-wide max-w-5xl mx-auto text-sm text-muted-foreground leading-relaxed">
+            <span className="font-medium text-foreground">For Arabic readers:</span>{' '}
+            <Link to="/ar/arabic-blog-alsawdyh" className="text-primary font-medium hover:underline">
+              Practical Arabic guide to pharmaceutical market research in Saudi Arabia
+            </Link>{' '}
+            — methodology context, stakeholder focus, and links to related Arabic articles.
+          </div>
+        </section>
+
         <ExecutiveDecisionBlock
           heading="Saudi executive decision framework"
           points={[

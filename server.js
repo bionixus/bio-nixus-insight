@@ -24,13 +24,34 @@ function applyHtmlLang(template, pathname) {
   return template.replace(/<html[^>]*>/i, `<html lang="${lang}" dir="${dir}">`);
 }
 
+const TITLE_UPPERCASE_TOKENS = new Set([
+  'uae', 'ksa', 'gcc', 'mena', 'emea', 'heor', 'rwe', 'kol', 'hta', 'nice',
+  'ai', 'amnog', 'sfda', 'hcv', 'moh', 'mohap', 'kfda', 'fda', 'cns', 'usa',
+  'uk', 'eu', 'us', 'nhs', 'rwd', 'pico', 'icer', 'qaly',
+]);
+
 function titleCaseFromSlug(value) {
   return String(value || '')
     .split('-')
     .filter(Boolean)
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .map((part) =>
+      TITLE_UPPERCASE_TOKENS.has(part.toLowerCase())
+        ? part.toUpperCase()
+        : part.charAt(0).toUpperCase() + part.slice(1),
+    )
     .join(' ');
 }
+
+const ARABIC_BLOG_TITLE_OVERRIDES = {
+  'quantitative-market-research-and-market-access':
+    'أبحاث السوق الكمية وأثر الوصول إلى السوق | BioNixus',
+};
+
+const GENERIC_DEFAULT_TITLES = new Set([
+  'BioNixus | Healthcare & Pharmaceutical Market Research',
+  'BioNixus',
+  'Healthcare & Pharmaceutical Market Research | BioNixus',
+]);
 
 function buildFallbackTitle(pathname) {
   const cleanPath = (pathname || '/').split('?')[0].split('#')[0] || '/';
@@ -40,16 +61,14 @@ function buildFallbackTitle(pathname) {
   if (path === '/zh') return 'EMEA Healthcare Market Research (Chinese) | BioNixus';
   if (localeRoots.has(path)) return 'BioNixus | Healthcare & Pharmaceutical Market Research';
 
-  if (
-    path === '/contact'
-    || path === '/de/contact'
-    || path === '/fr/contacts'
-    || path === '/es/contact'
-    || path === '/zh/contact'
-    || path === '/ar/contacts'
-  ) {
-    return 'Contact BioNixus Healthcare Research Team | BioNixus';
-  }
+  if (path === '/market-research-home') return 'Market research data insights | BioNixus Consultancy';
+
+  if (path === '/contact') return 'Contact BioNixus Healthcare Research Team | BioNixus';
+  if (path === '/de/contact') return 'Kontakt BioNixus | Gesundheits- & Pharma-Marktforschung';
+  if (path === '/fr/contacts') return 'Contacter BioNixus | Études de marché santé & pharma';
+  if (path === '/es/contact') return 'Contacto BioNixus | Investigación de Mercado Sanitaria';
+  if (path === '/zh/contact') return '联系 BioNixus | 医疗与制药市场研究咨询';
+  if (path === '/ar/contacts') return 'تواصل مع BioNixus | أبحاث السوق الصحي والدوائي';
 
   if (
     path === '/methodology'
@@ -79,11 +98,12 @@ function buildFallbackTitle(pathname) {
 
   if (path === '/blog') return 'Healthcare & Pharmaceutical Blog Insights | BioNixus';
   if (path === '/ar/blog') return 'المدونة العربية: أبحاث السوق الصحي والدوائي | BioNixus';
-  if (path.startsWith('/blog/')) {
-    const slug = path.split('/').pop() || 'insight';
-    return `${titleCaseFromSlug(slug)} | BioNixus Blog`;
-  }
   if (path.startsWith('/ar/blog/')) {
+    const slug = path.split('/').pop() || 'insight';
+    if (ARABIC_BLOG_TITLE_OVERRIDES[slug]) return ARABIC_BLOG_TITLE_OVERRIDES[slug];
+    return `${titleCaseFromSlug(slug)} | مدونة BioNixus`;
+  }
+  if (path.startsWith('/blog/')) {
     const slug = path.split('/').pop() || 'insight';
     return `${titleCaseFromSlug(slug)} | BioNixus Blog`;
   }
@@ -101,19 +121,35 @@ function buildFallbackTitle(pathname) {
   return `${titleCaseFromSlug(segment)} | BioNixus`;
 }
 
+const KNOWN_TITLE_SUFFIXES = [
+  '| BioNixus Case Studies',
+  '| BioNixus Case Study',
+  '| BioNixus Blog',
+  '| مدونة BioNixus',
+  '| BioNixus Consultancy',
+  '| BioNixus',
+];
+
 function normalizeTitleLength(title, max = 60) {
   const clean = String(title || '').replace(/\s+/g, ' ').trim();
   if (!clean) return 'BioNixus';
   if (clean.length <= max) return clean;
 
-  const suffix = '| BioNixus';
-  if (clean.endsWith(suffix)) {
+  for (const suffix of KNOWN_TITLE_SUFFIXES) {
+    if (!clean.endsWith(suffix)) continue;
+    const prefix = clean.slice(0, clean.length - suffix.length).trim();
     const prefixMax = Math.max(12, max - suffix.length - 1);
-    const prefix = clean.slice(0, prefixMax).trim().replace(/[|,;:\-–—\s]+$/, '');
-    return `${prefix} ${suffix}`;
+    const truncated = prefix
+      .slice(0, prefixMax)
+      .trim()
+      .replace(/[|,;:\-–—\s]+$/, '');
+    return `${truncated} ${suffix}`;
   }
 
-  return clean.slice(0, Math.max(0, max - 1)).trim().replace(/[|,;:\-–—\s]+$/, '');
+  return clean
+    .slice(0, Math.max(0, max - 1))
+    .trim()
+    .replace(/[|,;:\-–—\s]+$/, '');
 }
 
 function buildFallbackDescription(pathname) {
@@ -122,6 +158,27 @@ function buildFallbackDescription(pathname) {
 
   if (path === '/' || path === '/de' || path === '/fr' || path === '/es' || path === '/ar' || path === '/zh') {
     return 'Healthcare and pharmaceutical market research across MENA, GCC, UK, and Europe with quantitative and qualitative insights by BioNixus.';
+  }
+  if (path === '/market-research-home') {
+    return 'Stay updated with the latest data insights and market research trends in the Middle East, focusing on Saudi Arabia and UAE, with proven expertise.';
+  }
+  if (path === '/contact') {
+    return 'Request a BioNixus healthcare and pharmaceutical market research proposal: Saudi Arabia, GCC, UK, and Europe coverage with quantitative, qualitative, and market access programs.';
+  }
+  if (path === '/de/contact') {
+    return 'Kontakt zu BioNixus: Markt- und Gesundheitsforschung für Pharma in DACH, UK und MENA—Angebote, Feldforschung und evidenzbasierte Strategieberatung.';
+  }
+  if (path === '/fr/contacts') {
+    return 'Contactez BioNixus pour études de marché santé et pharma: couverture Europe, UK et MENA, méthodes quantitatives et qualitatives, et intelligence accès marché.';
+  }
+  if (path === '/ar/contacts') {
+    return 'تواصل مع BioNixus لطلبات أبحاث السوق الصحي والدوائي في السعودية والخليج والمملكة المتحدة وأوروبا—برامج كمية ونوعية ودعم استراتيجي للوصول إلى السوق.';
+  }
+  if (path === '/es/contact') {
+    return 'Contacto BioNixus: investigación de mercado farmacéutico y sanitario en España, Europa y MENA—propuestas, campo cualitativo y cuantitativo, y acceso al mercado.';
+  }
+  if (path === '/zh/contact') {
+    return '联系 BioNixus：面向中国团队的医疗与制药市场研究咨询，覆盖欧洲、中东与海湾地区，提供定量定性研究与市场准入情报支持。';
   }
   if (path === '/conf') {
     return 'BioNixus — Egypt\'s leading market research firm. Healthcare, pharma, and consumer research across MENA. 127 projects, 48 global clients.';
@@ -149,6 +206,13 @@ function buildFallbackDescription(pathname) {
     const slug = path.split('/').pop() || 'insight';
     return `${titleCaseFromSlug(slug)} insight article from BioNixus covering healthcare and pharmaceutical market strategy.`;
   }
+  if (path.startsWith('/ar/blog/')) {
+    const slug = path.split('/').pop() || 'insight';
+    if (slug === 'quantitative-market-research-and-market-access') {
+      return 'ملخص عربي: أبحاث السوق الكمية وتأثيرها على الوصول إلى السوق للدواء—رؤى للشركات في الشرق الأوسط ودول الخليج من BioNixus.';
+    }
+    return `مقال عربي من BioNixus حول ${titleCaseFromSlug(slug)}: أبحاث السوق الصحي والدوائي وتوجيهات استراتيجية.`;
+  }
   if (path.startsWith('/healthcare-market-research/')) {
     const slug = path.split('/').pop() || 'market';
     return `Pharmaceutical market research in ${titleCaseFromSlug(slug)} with localized stakeholder insight and execution-focused strategy support from BioNixus.`;
@@ -170,6 +234,19 @@ function normalizeDescriptionLength(description, max = 155) {
   return `${(lastSpace > 90 ? cut.slice(0, lastSpace) : cut).trim().replace(/[|,;:\-–—\s]+$/, '')}.`;
 }
 
+function shouldForceLocaleFallback(pathname, chosen) {
+  if (!chosen) return false;
+  // For Arabic-prefixed pages, if the rendered title contains no Arabic
+  // characters at all, the React component is showing English content and we
+  // must force the Arabic fallback so the AR URL doesn't emit the same title
+  // as its EN counterpart (a duplicate-title audit hit).
+  if (pathname.startsWith('/ar/') || pathname === '/ar') {
+    const hasArabic = /[\u0590-\u08FF]/.test(chosen);
+    if (!hasArabic) return true;
+  }
+  return false;
+}
+
 function ensureTitleTag(html, pathname) {
   const fallbackTitle = normalizeTitleLength(buildFallbackTitle(pathname));
   const matches = Array.from(html.matchAll(/<title[^>]*>([\s\S]*?)<\/title>/ig));
@@ -178,13 +255,72 @@ function ensureTitleTag(html, pathname) {
     .filter(Boolean)
     .at(-1);
   const normalized = normalizeTitleLength(chosen || fallbackTitle);
-  const strengthened = normalized.length < 30 ? fallbackTitle : normalized;
+  // If the rendered title is a generic site default (the index.html fallback
+  // that React-Helmet didn't override at SSR time, typically because page
+  // data is fetched async from Sanity), replace it with the path-specific
+  // fallback so each URL ships a unique <title>.
+  const isGeneric = chosen ? GENERIC_DEFAULT_TITLES.has(chosen) : false;
+  const forceLocale = shouldForceLocaleFallback(pathname, chosen);
+  const strengthened =
+    isGeneric || forceLocale || normalized.length < 30 ? fallbackTitle : normalized;
 
   const withoutTitles = html.replace(/<title[^>]*>[\s\S]*?<\/title>/ig, '');
   return withoutTitles.replace(
     /<meta name="viewport"[^>]*>/i,
     `$&\n<title>${strengthened}</title>`,
   );
+}
+
+function ensureMainContentImage(html, pathname) {
+  const mainMatch = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i);
+  if (!mainMatch) return html;
+  const mainInner = mainMatch[1];
+  if (/<img\b/i.test(mainInner)) return html;
+  if (/data-page-share/i.test(mainInner)) return html;
+
+  const cleanPath = (pathname || '/').split('?')[0].split('#')[0] || '/';
+  const normalizedPath = cleanPath === '/' ? '/' : cleanPath.replace(/\/+$/, '');
+  const encodedPath = encodeURIComponent(normalizedPath);
+  const fullUrl = `https://www.bionixus.com${normalizedPath === '/' ? '' : normalizedPath}`;
+  const altText = `BioNixus share card for ${fullUrl}`;
+  const figureHtml = `<aside data-page-share class="my-12">
+  <figure class="mx-auto max-w-2xl rounded-xl overflow-hidden border border-border bg-card shadow-sm">
+    <a href="/api/og-card?path=${encodedPath}" target="_blank" rel="noopener" class="block" aria-label="Open the share card for this page in a new tab">
+      <img src="/api/og-card?path=${encodedPath}" alt="${altText}" title="${altText}" width="1200" height="630" loading="lazy" decoding="async" class="block w-full h-auto" />
+    </a>
+    <figcaption class="px-4 py-3 text-sm text-muted-foreground border-t border-border">Share this page — <strong class="text-foreground">BioNixus</strong></figcaption>
+  </figure>
+</aside>`;
+
+  const insertionPoint = html.lastIndexOf('</main>');
+  if (insertionPoint === -1) return html;
+  return `${html.slice(0, insertionPoint)}${figureHtml}${html.slice(insertionPoint)}`;
+}
+
+function ensureImageTitleAttributes(html) {
+  return html.replace(/<img\b[^>]*>/gi, (tag) => {
+    if (/\stitle\s*=/i.test(tag)) return tag;
+    const altMatch = tag.match(/\salt\s*=\s*(?:"([^"]*)"|'([^']*)')/i);
+    const altValue = altMatch ? (altMatch[1] ?? altMatch[2] ?? '') : '';
+    if (!altValue.trim()) return tag;
+    const safe = altValue.replace(/"/g, '&quot;');
+    return tag.replace(/(\salt\s*=\s*(?:"[^"]*"|'[^']*'))/i, `$1 title="${safe}"`);
+  });
+}
+
+function shouldForceArabicMetaDescription(pathname, chosen) {
+  if (!chosen) return false;
+  if (pathname.startsWith('/ar/') || pathname === '/ar') {
+    return !/[\u0590-\u08FF]/.test(chosen);
+  }
+  return false;
+}
+
+function escapeHtmlAttribute(value) {
+  return String(value || '')
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;');
 }
 
 function ensureMetaDescriptionTag(html, pathname) {
@@ -198,12 +334,15 @@ function ensureMetaDescriptionTag(html, pathname) {
     })
     .filter(Boolean)
     .at(-1);
-  const normalizedContent = normalizeDescriptionLength(chosen || fallbackDescription);
+  const forceArDescription = shouldForceArabicMetaDescription(pathname, chosen);
+  const base = forceArDescription ? fallbackDescription : (chosen || fallbackDescription);
+  const normalizedContent = normalizeDescriptionLength(base);
+  const safeContent = escapeHtmlAttribute(normalizedContent);
 
   const withoutDescriptions = html.replace(/<meta[^>]+name=(["'])description\1[^>]*>\s*/ig, '');
   return withoutDescriptions.replace(
     /<title[^>]*>[\s\S]*?<\/title>/i,
-    `$&\n<meta name="description" content="${normalizedContent}" />`,
+    `$&\n<meta name="description" content="${safeContent}" />`,
   );
 }
 
@@ -217,6 +356,7 @@ async function startServer() {
     '/healthcare-market-research-in-uae': '/healthcare-market-research/uae',
     '/healthcare-market-research-kuwait': '/healthcare-market-research/kuwait',
     '/healthcare-market-research-uk': '/healthcare-market-research/uk',
+    '/healthcare-market-research/united-kingdom': '/healthcare-market-research/uk',
     '/healthcare-market-research-europe': '/healthcare-market-research/europe',
     '/quantitative-market-research': '/services/quantitative-research',
     '/techniques-and-tools-in-quantitative-healthcare-market-research': '/services/quantitative-research',
@@ -248,7 +388,6 @@ async function startServer() {
     '/market-research-customer-insight': '/market-research',
     '/market-research-in-uae': '/market-research-uae',
     '/pharma-market-research-in-uae': '/uae-pharmaceutical-market-research',
-    '/market-research-home': '/market-research',
     '/market-research-methods-simplified-how-to-understand-your-customers-like-marvel': '/methodology',
     '/page': '/',
     '/privacy-policy': '/privacy',
@@ -409,9 +548,14 @@ async function startServer() {
           '<!--ssr-data-->',
           `<script>window.__INITIAL_DATA__ = ${JSON.stringify(initialData).replace(/</g, '\\u003c')}</script>`,
         );
-      const localizedPage = ensureMetaDescriptionTag(
-        ensureTitleTag(applyHtmlLang(page, req.path), req.path),
-        req.path,
+      const localizedPage = ensureImageTitleAttributes(
+        ensureMainContentImage(
+          ensureMetaDescriptionTag(
+            ensureTitleTag(applyHtmlLang(page, req.path), req.path),
+            req.path,
+          ),
+          req.path,
+        ),
       );
 
       res.status(statusCode).set({ 'Content-Type': 'text/html' }).end(localizedPage);
