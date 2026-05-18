@@ -121,6 +121,7 @@ const FAQ = () => {
     '@type': 'Organization',
     '@id': 'https://www.bionixus.com/#organization',
     name: 'BioNixus',
+    foundingDate: '2012',
     url: 'https://www.bionixus.com',
     logo: 'https://www.bionixus.com/bionixus-logo.webp',
     sameAs: [

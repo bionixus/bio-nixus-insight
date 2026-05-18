@@ -95,6 +95,7 @@ function buildOrganization(inLanguage: string) {
     '@type': 'Organization',
     '@id': ORG_ID,
     name: 'BioNixus',
+    foundingDate: '2012',
     url: BASE_URL,
     logo: `${BASE_URL}/bionixus-logo.webp`,
     image: [ORG_IMAGE],
