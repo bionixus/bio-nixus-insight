@@ -73,7 +73,7 @@ const About = () => {
               International Market Research Company with Deep EMEA Heritage
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mb-8 sr sr-up">
-              BioNixus is an international healthcare market research firm headquartered in the United States with offices in London, United Kingdom. We specialize in pharmaceutical and life sciences consulting across Europe, the Middle East, and North Africa.
+              BioNixus is an international healthcare market research firm founded in 2012, headquartered in the United States with offices in London, United Kingdom. We specialize in pharmaceutical and life sciences consulting across Europe, the Middle East, and North Africa.
             </p>
           </div>
         </section>
@@ -87,7 +87,7 @@ const About = () => {
             <div className="grid md:grid-cols-2 gap-12">
               <div className="space-y-5 text-muted-foreground leading-relaxed sr sr-left">
                 <p>
-                  BioNixus was founded on a simple premise: pharmaceutical companies deserve actionable, on-the-ground intelligence from the markets they serve — not repackaged secondary data from thousands of miles away.
+                  Founded in 2012, BioNixus was built on a simple premise: pharmaceutical companies deserve actionable, on-the-ground intelligence from the markets they serve — not repackaged secondary data from thousands of miles away.
                 </p>
                 <p>
                   We recognised that the MENA region — home to some of the world's fastest-growing pharmaceutical markets — was consistently underserved by traditional research firms. Physicians in Saudi Arabia, the UAE, Egypt, Kuwait, and Qatar had critical insights to share, but the existing research infrastructure wasn't built to reach them effectively.
