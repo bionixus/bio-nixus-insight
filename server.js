@@ -520,6 +520,18 @@ async function startServer() {
     res.type('html').sendFile(biosimilarAbsolutePath);
   });
 
+  /** Static IQVIA alternative page. */
+  const iqviaAltAbsolutePath = path.resolve(
+    __dirname,
+    isProduction ? path.join('dist/client', 'conf/iqvia-alternative.html') : path.join('public', 'conf/iqvia-alternative.html'),
+  );
+  app.get('/iqvia-alternative/', (_req, res) => {
+    res.redirect(301, '/iqvia-alternative');
+  });
+  app.get('/iqvia-alternative', (_req, res) => {
+    res.type('html').sendFile(iqviaAltAbsolutePath);
+  });
+
   let vite;
   if (!isProduction) {
     const { createServer } = await import('vite');

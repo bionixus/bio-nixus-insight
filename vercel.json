@@ -107,6 +107,11 @@
       "statusCode": 301
     },
     {
+      "source": "/iqvia-alternative/",
+      "destination": "/iqvia-alternative",
+      "statusCode": 301
+    },
+    {
       "source": "/assets/index-:hash.js",
       "destination": "/assets/index.js",
       "statusCode": 301
@@ -187,6 +192,10 @@
     {
       "source": "/biosimilar-market-entry-saudi-arabia",
       "destination": "/conf/biosimilar-market-entry-saudi-arabia.html"
+    },
+    {
+      "source": "/iqvia-alternative",
+      "destination": "/conf/iqvia-alternative.html"
     },
     {
       "source": "/blog/:slug",

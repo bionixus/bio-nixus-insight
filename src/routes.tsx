@@ -24,6 +24,7 @@ import KolMappingSaudiArabiaOncology from '@/pages/KolMappingSaudiArabiaOncology
 import PhysicianSurveySaudiArabia from '@/pages/PhysicianSurveySaudiArabia';
 import SfdaMarketAccessStrategySaudiArabia from '@/pages/SfdaMarketAccessStrategySaudiArabia';
 import BiosimilarMarketEntrySaudiArabia from '@/pages/BiosimilarMarketEntrySaudiArabia';
+import IqviaAlternative from '@/pages/IqviaAlternative';
 import NotFound from '@/pages/NotFound';
 import MarketResearch from '@/pages/MarketResearch';
 import MarketResearchHome from '@/pages/MarketResearchHome';
@@ -150,6 +151,7 @@ export const routes: RouteObject[] = [
   { path: '/physician-survey-saudi-arabia', element: <PhysicianSurveySaudiArabia /> },
   { path: '/sfda-market-access-strategy-saudi-arabia', element: <SfdaMarketAccessStrategySaudiArabia /> },
   { path: '/biosimilar-market-entry-saudi-arabia', element: <BiosimilarMarketEntrySaudiArabia /> },
+  { path: '/iqvia-alternative', element: <IqviaAlternative /> },
   { path: '/gcc-pharmaceutical-market-research', element: <GccPharmaceuticalMarketResearch /> },
   { path: '/uae-pharmaceutical-market-research', element: <UaePharmaceuticalMarketResearch /> },
   { path: '/saudi-payer-market-access-research', element: <SaudiPayerMarketAccessResearch /> },
