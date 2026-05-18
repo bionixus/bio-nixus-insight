@@ -18,6 +18,7 @@ import Methodology from '@/pages/Methodology';
 import VerifyEmail from '@/pages/VerifyEmail';
 import MenaMarketData from '@/pages/MenaMarketData';
 import GccMarketAccessGuide from '@/pages/GccMarketAccessGuide';
+import BionixusVsIqviaMena from '@/pages/BionixusVsIqviaMena';
 import NotFound from '@/pages/NotFound';
 import MarketResearch from '@/pages/MarketResearch';
 import MarketResearchHome from '@/pages/MarketResearchHome';
@@ -138,6 +139,7 @@ export const routes: RouteObject[] = [
   { path: '/ar/market-research-healthcare', element: <MarketResearchHealthcare /> },
   { path: '/qualitative-market-research', element: <QualitativeMarketResearch /> },
   { path: '/bionixus-market-research-middle-east', element: <BionixusMarketResearchMiddleEast /> },
+  { path: '/bionixus-vs-iqvia-mena', element: <BionixusVsIqviaMena /> },
   { path: '/gcc-pharmaceutical-market-research', element: <GccPharmaceuticalMarketResearch /> },
   { path: '/uae-pharmaceutical-market-research', element: <UaePharmaceuticalMarketResearch /> },
   { path: '/saudi-payer-market-access-research', element: <SaudiPayerMarketAccessResearch /> },
