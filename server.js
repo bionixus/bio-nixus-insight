@@ -532,6 +532,18 @@ async function startServer() {
     res.type('html').sendFile(iqviaAltAbsolutePath);
   });
 
+  /** Static Dubai pharma market research page. */
+  const dubaiPharmaAbsolutePath = path.resolve(
+    __dirname,
+    isProduction ? path.join('dist/client', 'conf/pharmaceutical-market-research-dubai.html') : path.join('public', 'conf/pharmaceutical-market-research-dubai.html'),
+  );
+  app.get('/pharmaceutical-market-research-dubai/', (_req, res) => {
+    res.redirect(301, '/pharmaceutical-market-research-dubai');
+  });
+  app.get('/pharmaceutical-market-research-dubai', (_req, res) => {
+    res.type('html').sendFile(dubaiPharmaAbsolutePath);
+  });
+
   let vite;
   if (!isProduction) {
     const { createServer } = await import('vite');

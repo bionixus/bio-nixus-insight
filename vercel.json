@@ -112,6 +112,11 @@
       "statusCode": 301
     },
     {
+      "source": "/pharmaceutical-market-research-dubai/",
+      "destination": "/pharmaceutical-market-research-dubai",
+      "statusCode": 301
+    },
+    {
       "source": "/assets/index-:hash.js",
       "destination": "/assets/index.js",
       "statusCode": 301
@@ -196,6 +201,10 @@
     {
       "source": "/iqvia-alternative",
       "destination": "/conf/iqvia-alternative.html"
+    },
+    {
+      "source": "/pharmaceutical-market-research-dubai",
+      "destination": "/conf/pharmaceutical-market-research-dubai.html"
     },
     {
       "source": "/blog/:slug",
