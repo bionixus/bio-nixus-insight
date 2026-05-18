@@ -169,9 +169,9 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     zh: '/market-research-egypt',
     ar: '/ar/market-research-egypt',
   },
-  '/conf': {
-    en: '/conf',
-    ar: '/ar/conf',
+  '/strategic-portfolio': {
+    en: '/strategic-portfolio',
+    ar: '/ar/strategic-portfolio',
   },
   '/insights/top-market-research-companies-egypt-2026': {
     en: '/insights/top-market-research-companies-egypt-2026',

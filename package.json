@@ -34,7 +34,10 @@
     "sanity:blog:saudi-mr-firms-ar": "node scripts/publish-saudi-healthcare-mr-firms-ar.mjs",
     "sanity:blog:saudi-mr-firms-ar:sync": "node scripts/publish-saudi-healthcare-mr-firms-ar.mjs --sync-existing",
     "sanity:blog:egypt-mr-companies-2026": "node scripts/publish-top-market-research-companies-egypt-2026.mjs",
-    "sanity:blog:egypt-mr-companies-2026:sync": "node scripts/publish-top-market-research-companies-egypt-2026.mjs --sync-existing"
+    "sanity:blog:egypt-mr-companies-2026:sync": "node scripts/publish-top-market-research-companies-egypt-2026.mjs --sync-existing",
+    "sanity:blog:pharmacies-sa-marketing": "node scripts/publish-pharmacies-saudi-arabia-marketing.mjs",
+    "sanity:blog:pharmacies-sa-marketing:sync": "node scripts/publish-pharmacies-saudi-arabia-marketing.mjs --sync-existing",
+    "firecrawl": "firecrawl"
   },
   "dependencies": {
     "@aws-sdk/client-sesv2": "^3.989.0",
@@ -121,6 +124,7 @@
     "eslint": "^9.32.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
+    "firecrawl-cli": "^1.16.2",
     "globals": "^15.15.0",
     "jsdom": "^20.0.3",
     "lovable-tagger": "^1.1.13",

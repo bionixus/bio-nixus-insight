@@ -15,7 +15,7 @@ interface FAQItem {
 const faqs: FAQItem[] = [
   {
     question: 'What is BioNixus?',
-    answer: 'BioNixus is an international healthcare market research firm headquartered in the USA with offices in London, UK. We specialise in pharmaceutical and life sciences consulting across Europe, the Middle East, and North Africa (EMEA), providing quantitative and qualitative research for pharmaceutical companies, biotech firms, and medical device manufacturers.',
+    answer: 'BioNixus is an international healthcare market research firm headquartered in the USA with offices in London, UK. We specialize in pharmaceutical and life sciences consulting across Europe, the Middle East, and North Africa (EMEA), providing quantitative and qualitative research for pharmaceutical companies, biotech firms, and medical device manufacturers.',
   },
   {
     question: 'What services does BioNixus offer?',
@@ -30,7 +30,7 @@ const faqs: FAQItem[] = [
     answer: 'Three core differentiators set BioNixus apart: (1) Deep MENA expertise — we have the most comprehensive physician panel in the GCC and bilingual Arabic–English research teams; (2) Cost-effectiveness — our senior-led, lean model delivers premium quality at competitive rates compared to large consultancies; (3) Our proprietary physician and HCP network enables rapid recruitment and authentic clinical perspectives across 17+ countries.',
   },
   {
-    question: 'What therapeutic areas does BioNixus specialise in?',
+    question: 'What therapeutic areas does BioNixus specialize in?',
     answer: 'BioNixus has deep experience across 14+ therapeutic areas including oncology, immunology, cardiology, neurology, rare diseases, respiratory, diabetes and endocrinology, infectious disease, ophthalmology, dermatology, gastroenterology, haematology, and more.',
   },
   {
@@ -95,6 +95,8 @@ const FAQ = () => {
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    name: 'BioNixus Healthcare Market Research FAQ',
+    url: 'https://www.bionixus.com/faq',
     mainEntity: faqs.map((faq) => ({
       '@type': 'Question',
       name: faq.question,
@@ -105,16 +107,41 @@ const FAQ = () => {
     })),
   };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' },
+      { '@type': 'ListItem', position: 2, name: 'FAQ', item: 'https://www.bionixus.com/faq' },
+    ],
+  };
+
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': 'https://www.bionixus.com/#organization',
+    name: 'BioNixus',
+    url: 'https://www.bionixus.com',
+    logo: 'https://www.bionixus.com/bionixus-logo.webp',
+    sameAs: [
+      'https://www.linkedin.com/company/bionixus/',
+      'https://www.facebook.com/Bionixus',
+      'https://www.instagram.com/bionixus_',
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>FAQ | BioNixus Healthcare Market Research — Frequently Asked Questions</title>
+        <title>FAQ | BioNixus Healthcare Market Research</title>
         <meta
           name="description"
           content="Frequently asked questions about BioNixus healthcare market research services: MENA coverage, therapeutic areas, physician surveys, HTA support, GDPR compliance, and more."
         />
         <link rel="canonical" href="https://www.bionixus.com/faq" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
       </Helmet>
       <Navbar />
       <main>

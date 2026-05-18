@@ -27,7 +27,7 @@ export default function ArMarketResearchSaudi() {
       ]}
       relatedLinks={[
         { to: '/market-research-saudi', label: 'Market Research Saudi (EN)' },
-        { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Pharma market research company in Saudi Arabia' },
+        { to: '/healthcare-market-research/saudi-arabia', label: 'Pharma market research company in Saudi Arabia' },
         { to: '/pharmaceutical-companies-saudi-arabia', label: 'Top pharmaceutical companies in Saudi Arabia' },
         { to: '/ar/market-research-egypt', label: 'أبحاث السوق في مصر' },
       ]}

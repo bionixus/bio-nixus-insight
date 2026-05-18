@@ -26,8 +26,8 @@ export default function ArMarketResearchUae() {
         },
       ]}
       relatedLinks={[
-        { to: '/market-research-uae', label: 'Market Research UAE (EN)' },
-        { to: '/uae-pharmaceutical-market-research', label: 'Pharma market research company in UAE' },
+        { to: '/healthcare-market-research/uae', label: 'Market Research UAE (EN)' },
+        { to: '/healthcare-market-research/uae', label: 'Pharma market research company in UAE' },
         { to: '/pharmaceutical-companies-uae', label: 'Top pharmaceutical companies in UAE' },
         { to: '/ar/market-research-ksa', label: 'أبحاث السوق في السعودية (KSA)' },
       ]}

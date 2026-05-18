@@ -12,7 +12,7 @@ export default function SaudiPayerMarketAccessResearch() {
       links={[
         { to: '/bionixus-market-research-middle-east', label: 'Open Middle East pillar', primary: true },
         { to: '/healthcare-market-research-agency-gcc', label: 'Healthcare market research agency GCC', primary: true },
-        { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Pharma market research company in Saudi Arabia' },
+        { to: '/healthcare-market-research/saudi-arabia', label: 'Pharma market research company in Saudi Arabia' },
         { to: '/contact', label: 'Scope market access research' },
       ]}
       bullets={[

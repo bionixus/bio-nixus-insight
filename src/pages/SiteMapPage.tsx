@@ -12,13 +12,14 @@ const staticLinks = [
   { to: '/about', label: 'About' },
   { to: '/services', label: 'Services' },
   { to: '/market-research', label: 'Market Research Hub' },
-  { to: '/market-research-uae', label: 'Market Research UAE' },
+  { to: '/healthcare-market-research/uae', label: 'Market Research UAE' },
   { to: '/market-research-ksa', label: 'Market Research KSA' },
   { to: '/market-research-saudi', label: 'Market Research Saudi' },
   { to: '/market-research-kuwait', label: 'Market Research Kuwait' },
   { to: '/market-research-egypt', label: 'Market Research Egypt' },
   { to: '/market-research-healthcare', label: 'Healthcare Market Research' },
-  { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Saudi Pharmaceutical Market Research' },
+  { to: '/healthcare-market-research/saudi-arabia', label: 'Saudi Pharmaceutical Market Research' },
+  { to: '/pharmacies-saudi-arabia-marketing', label: 'Pharmacy Market Research & Marketing Automation in Saudi Arabia' },
   { to: '/qualitative-market-research', label: 'Qualitative Market Research' },
   { to: '/quantitative-healthcare-market-research', label: 'Quantitative Healthcare Market Research' },
   { to: '/bionixus-market-research-middle-east', label: 'Middle East Market Research' },
@@ -33,8 +34,8 @@ const staticLinks = [
   { to: '/contact', label: 'Contact' },
   { to: '/privacy', label: 'Privacy' },
   { to: '/methodology', label: 'Methodology' },
-  { to: '/conf', label: 'Strategic Portfolio' },
-  { to: '/insights/top-market-research-companies-egypt-2026', label: 'Top Market Research Companies in Egypt (2026)' },
+  { to: '/strategic-portfolio', label: 'Strategic Portfolio' },
+  { to: '/blog/top-market-research-companies-egypt-2026', label: 'Top Market Research Companies in Egypt (2026)' },
 ];
 
 const serviceLinks = [

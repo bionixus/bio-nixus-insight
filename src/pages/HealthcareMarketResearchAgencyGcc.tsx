@@ -56,10 +56,6 @@ export default function HealthcareMarketResearchAgencyGcc() {
           name="description"
           content="Healthcare market research agency GCC for proposal-ready pharmaceutical decisions. BioNixus delivers launch, market access, and growth evidence across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman."
         />
-        <meta
-          name="keywords"
-          content="healthcare market research agency gcc, pharma market research company gcc, pharmaceutical market research middle east, gcc healthcare market research"
-        />
         <link rel="canonical" href={pageUrl} />
         {jsonLd.map((schema, index) => (
           <script key={`gcc-agency-schema-${index}`} type="application/ld+json">

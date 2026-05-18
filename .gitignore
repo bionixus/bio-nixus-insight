@@ -36,3 +36,6 @@ bio-nixus-insight-website-backup-*.zip
 # Local scratch / debug output (not for repo)
 tmp/
 .xlsx-venv/
+
+# Firecrawl CLI scrape/search outputs
+.firecrawl/

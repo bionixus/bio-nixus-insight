@@ -96,17 +96,46 @@ function buildOrganization(inLanguage: string) {
     '@id': ORG_ID,
     name: 'BioNixus',
     url: BASE_URL,
-    logo: {
-      '@type': 'ImageObject',
-      url: ORG_IMAGE,
-    },
+    logo: `${BASE_URL}/bionixus-logo.webp`,
     image: [ORG_IMAGE],
     sameAs: [
-      'https://www.linkedin.com/company/bionixus',
-      'https://www.bionixus.com',
+      'https://www.linkedin.com/company/bionixus/',
+      'https://www.facebook.com/Bionixus',
+      'https://www.instagram.com/bionixus_',
+    ],
+    address: [
+      {
+        '@type': 'PostalAddress',
+        streetAddress: '1309 Coffeen Ave',
+        addressLocality: 'Sheridan',
+        addressRegion: 'WY',
+        postalCode: '82801',
+        addressCountry: 'US',
+      },
+      {
+        '@type': 'PostalAddress',
+        streetAddress: '128 City Road',
+        addressLocality: 'London',
+        postalCode: 'EC1V 2NX',
+        addressCountry: 'GB',
+      },
+    ],
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        telephone: '+1-888-465-5557',
+        contactType: 'customer service',
+        areaServed: 'US',
+      },
+      {
+        '@type': 'ContactPoint',
+        telephone: '+44-7727-666682',
+        contactType: 'customer service',
+        areaServed: 'GB',
+      },
     ],
     inLanguage,
-  }
+  };
 }
 
 function buildWebsite(inLanguage: string) {

@@ -30,7 +30,7 @@ export default function MarketResearchKuwait() {
       relatedLinks={[
         { to: '/kuwait-market-access-research', label: 'Kuwait market access research' },
         { to: '/pharmaceutical-companies-kuwait', label: 'Top pharmaceutical companies in Kuwait' },
-        { to: '/market-research-uae', label: 'Market research UAE' },
+        { to: '/healthcare-market-research/uae', label: 'Market research UAE' },
         { to: '/market-research-egypt', label: 'Market research Egypt' },
       ]}
     />

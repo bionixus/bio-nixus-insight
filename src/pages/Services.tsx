@@ -46,6 +46,35 @@ const services = [
   },
 ];
 
+const recoveryLinkLabels: Record<string, string> = {
+  '/bionixus-market-research-middle-east': 'Middle East Pharmaceutical Market Research',
+  '/blog/healthcare-market-research-europe': 'Healthcare Market Research in Europe',
+  '/blog/healthcare-market-research-europe-2026': 'Healthcare Market Research in Europe (2026 Guide)',
+  '/blog/healthcare-market-research-methodologies-gcc': 'Healthcare Market Research Methodologies for the GCC',
+  '/blog/healthcare-market-research-uae-guide-2025': 'Healthcare Market Research in the UAE — 2025 Guide',
+  '/blog/hospital-market-research': 'Hospital Market Research for Pharma',
+  '/blog/market-research-pharmaceutical-market-access-uae': 'Pharmaceutical Market Access Research in the UAE',
+  '/blog/pharmaceutical-healthcare-market-research-gcc': 'Pharmaceutical Market Research in the GCC',
+  '/blog/pharmaceutical-market-research-uk': 'Pharmaceutical Market Research in the UK',
+  '/blog/pharmaceutical-market-research-uk-2026': 'Pharmaceutical Market Research in the UK (2026 Guide)',
+  '/blog/quantitative-market-research-and-market-access': 'Quantitative Market Research and Market Access',
+  '/blog/top-healthcare-market-research-companies-mena': 'Top Healthcare Market Research Companies in MENA',
+  '/healthcare-market-research/algeria': 'Healthcare Market Research in Algeria',
+  '/healthcare-market-research/bahrain': 'Healthcare Market Research in Bahrain',
+};
+
+function pathToLabel(path: string): string {
+  if (recoveryLinkLabels[path]) return recoveryLinkLabels[path];
+  const slug = path.split('/').filter(Boolean).pop() ?? path;
+  return slug
+    .replace(/-/g, ' ')
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+const recoveryLinksWithLabels = serviceRecoveryPaths
+  .slice(0, 14)
+  .map((path) => ({ path, label: pathToLabel(path) }));
+
 const servicesHubJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
@@ -77,13 +106,21 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Healthcare Market Research Services | BioNixus — Quantitative, Qualitative, Market Access</title>
+        <title>Healthcare Market Research Services in EMEA | BioNixus</title>
         <meta
           name="description"
-          content="BioNixus provides comprehensive healthcare market research services: quantitative physician surveys, qualitative KOL interviews, market access consulting, competitive intelligence, clinical trial support, and stakeholder mapping across 17+ EMEA countries."
+          content="Quantitative, qualitative, market access, KOL mapping, competitive intelligence, and clinical trial support across the UK, Europe, GCC, and MENA."
         />
         <link rel="canonical" href="https://www.bionixus.com/services" />
         <script type="application/ld+json">{JSON.stringify(servicesHubJsonLd)}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' },
+            { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.bionixus.com/services' },
+          ],
+        })}</script>
       </Helmet>
       <Navbar />
       <main>
@@ -158,7 +195,7 @@ const Services = () => {
                 <Link to="/market-research" className="text-primary hover:underline">
                   Market research services hub
                 </Link>
-                <Link to="/market-research-saudi-arabia-pharmaceutical" className="text-primary hover:underline">
+                <Link to="/healthcare-market-research/saudi-arabia" className="text-primary hover:underline">
                   Saudi Arabia pharmaceutical research page
                 </Link>
                 <Link to="/healthcare-market-research" className="text-primary hover:underline">
@@ -175,9 +212,9 @@ const Services = () => {
                 </Link>
               </div>
               <div className="grid md:grid-cols-2 gap-2 mt-4">
-                {serviceRecoveryPaths.slice(0, 14).map((path) => (
-                  <Link key={path} to={path} className="text-primary hover:underline break-all">
-                    {path}
+                {recoveryLinksWithLabels.map(({ path, label }) => (
+                  <Link key={path} to={path} className="text-primary hover:underline">
+                    {label}
                   </Link>
                 ))}
               </div>

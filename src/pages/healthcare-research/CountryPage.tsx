@@ -169,7 +169,7 @@ export default function CountryPage() {
                   healthcare market research hub
                 </Link>{' '}
                 and the dedicated{' '}
-                <Link to="/market-research-uae" className="underline font-semibold">
+                <Link to="/healthcare-market-research/uae" className="underline font-semibold">
                   market research in the UAE
                 </Link>{' '}
                 page before drilling into country-level execution priorities.
@@ -352,7 +352,7 @@ export default function CountryPage() {
               </p>
               <p>
                 For focused Saudi execution planning, visit our{' '}
-                <Link to="/market-research-saudi-arabia-pharmaceutical" className="text-primary underline">
+                <Link to="/healthcare-market-research/saudi-arabia" className="text-primary underline">
                   pharma market research company in Saudi Arabia page
                 </Link>{' '}
                 and connect country-level oncology evidence to field and access strategy.
@@ -401,7 +401,7 @@ export default function CountryPage() {
               )}
               {config.slug === 'egypt' && (
                 <>
-                  <Link to="/insights/top-market-research-companies-egypt-2026" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
+                  <Link to="/blog/top-market-research-companies-egypt-2026" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
                     <h3 className="text-base font-semibold text-foreground mb-2">Top Market Research Companies in Egypt (2026)</h3>
                     <p className="text-sm text-muted-foreground">Independent guide to 5 leading firms for healthcare, pharma, and consumer research.</p>
                   </Link>
@@ -409,7 +409,7 @@ export default function CountryPage() {
                     <h3 className="text-base font-semibold text-foreground mb-2">Pharmaceutical Companies in Egypt</h3>
                     <p className="text-sm text-muted-foreground">20+ pharma companies, $5.8B market data, and EDA regulatory landscape.</p>
                   </Link>
-                  <Link to="/conf" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
+                  <Link to="/strategic-portfolio" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
                     <h3 className="text-base font-semibold text-foreground mb-2">BioNixus Strategic Portfolio</h3>
                     <p className="text-sm text-muted-foreground">Full capability overview: 127+ projects across healthcare and consumer research.</p>
                   </Link>

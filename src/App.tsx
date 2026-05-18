@@ -12,6 +12,7 @@ import GoogleAnalytics from '@/components/GoogleAnalytics';
 import GA4EventTracker from '@/components/GA4EventTracker';
 import LocalePrompt from '@/components/LocalePrompt';
 import CookieConsent from '@/components/CookieConsent';
+import StickyCTA from '@/components/StickyCTA';
 import { routes } from '@/routes';
 import { InitialDataProvider } from '@/contexts/InitialDataContext';
 
@@ -65,6 +66,7 @@ function AppProviders({ children }: { children: ReactNode }) {
           <Toaster />
           <Sonner />
           {children}
+          <StickyCTA />
           <LocalePrompt />
           <CookieConsent />
           <DeferredAnalytics />

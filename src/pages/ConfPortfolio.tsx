@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 /**
- * Client-side navigations only: initial GET /conf (or /ar/conf) is served as a standalone
+ * Client-side navigations only: initial GET /strategic-portfolio (or /ar/strategic-portfolio) is served as a standalone
  * HTML deck from Express (see server.js) or via a Vercel rewrite to the static file.
  * If users reach this route inside the SPA, force a full navigation so they load the
  * same document.
@@ -12,7 +12,7 @@ type ConfPortfolioProps = {
 
 export default function ConfPortfolio({ locale = 'en' }: ConfPortfolioProps) {
   useEffect(() => {
-    const target = locale === 'ar' ? '/ar/conf' : '/conf';
+    const target = locale === 'ar' ? '/ar/strategic-portfolio' : '/strategic-portfolio';
     window.location.replace(target);
   }, [locale]);
 

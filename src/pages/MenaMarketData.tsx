@@ -126,10 +126,6 @@ const MenaMarketData = () => {
           name="description"
           content="Comprehensive MENA pharmaceutical market data for 2026: market size by country ($33.9B+ total), growth rates, per-capita spending, regulatory bodies, and therapeutic area trends across Saudi Arabia, UAE, Egypt, Kuwait, Qatar, Bahrain & Oman."
         />
-        <meta
-          name="keywords"
-          content="MENA pharmaceutical market size, GCC pharma market data, Saudi Arabia pharma market, UAE pharmaceutical market, MENA healthcare statistics, pharma market growth Middle East, pharmaceutical market research MENA"
-        />
         <link rel="canonical" href={citationUrl} />
         <meta property="og:title" content="MENA Pharmaceutical Market Data 2026 — Statistics & Growth by Country" />
         <meta property="og:description" content="Free data resource: MENA pharmaceutical market worth $33.9B+ as of Q3 2024 growing 12.2% YoY. Country-by-country breakdown of Saudi Arabia, UAE, Egypt, Kuwait, Qatar, Bahrain & Oman." />

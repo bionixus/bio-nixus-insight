@@ -55,7 +55,19 @@ function buildRouteTitle(pathname: string, language: Language, fallback: string)
     return makeTitle(fallback);
   }
 
-  if (path === '/conf') {
+  if (path === '/about') {
+    return makeTitle('About BioNixus | International Healthcare Market Research — EMEA Heritage');
+  }
+
+  if (path === '/services') {
+    return makeTitle('Healthcare Market Research Services in EMEA | BioNixus');
+  }
+
+  if (path === '/faq') {
+    return makeTitle('FAQ | BioNixus Healthcare Market Research');
+  }
+
+  if (path === '/strategic-portfolio') {
     return makeTitle('BioNixus — Strategic Portfolio | Market Research & Consulting');
   }
 
@@ -123,7 +135,25 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
     );
   }
 
-  if (path === '/conf') {
+  if (path === '/about') {
+    return clampDescription(
+      'BioNixus is an international healthcare market research firm with offices in the US and UK, specializing in pharma consulting across 17+ EMEA countries.'
+    );
+  }
+
+  if (path === '/services') {
+    return clampDescription(
+      'Quantitative, qualitative, market access, KOL mapping, competitive intelligence, and clinical trial support across the UK, Europe, GCC, and MENA.'
+    );
+  }
+
+  if (path === '/faq') {
+    return clampDescription(
+      'Frequently asked questions about BioNixus healthcare market research services: MENA coverage, therapeutic areas, physician surveys, HTA support, and GDPR compliance.'
+    );
+  }
+
+  if (path === '/strategic-portfolio') {
     return clampDescription(
       'BioNixus strategic portfolio: healthcare and consumer market research, global pharma relationships, MENA field capabilities, and board-ready consulting methodology across Egypt and the region.'
     );
@@ -258,7 +288,7 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
 
   if (path === '/pharmacies-saudi-arabia-marketing') {
     return clampDescription(
-      'Saudi pharmacy marketing research with retail and institutional channel insights to improve pharmaceutical activation, messaging, and growth strategy.'
+      'How pharmacies in Saudi Arabia use market research and marketing automation to boost retail sales by 40%. Covers Nahdi, Al-Dawaa, SFDA compliance, Vision 2030 opportunities. Expert pharmacy research from BioNixus.'
     );
   }
 
@@ -270,7 +300,7 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
 
   if (path === '/contact') {
     return clampDescription(
-      'Request a BioNixus healthcare and pharmaceutical market research proposal: Saudi Arabia, GCC, UK, and Europe coverage with quantitative, qualitative, and market access programs.',
+      'Get a tailored healthcare market research proposal from BioNixus within 24 hours. Pharma, biotech, and access teams across the UK, EU, GCC, and MENA.',
     );
   }
   if (path === '/de/contact') {
@@ -345,7 +375,7 @@ const DocumentHead = () => {
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
-        <meta name="keywords" content={seo.keywords} />
+
         <meta name="llm-access" content="allow" />
         <meta httpEquiv="content-language" content={contentLanguage} />
         {gscId ? <meta name="google-site-verification" content={gscId} /> : null}

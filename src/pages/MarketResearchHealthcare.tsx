@@ -502,7 +502,7 @@ export default function MarketResearchHealthcare() {
                 <h3 className="font-semibold text-foreground mb-2">Market research services</h3>
                 <p className="text-sm text-muted-foreground">Compare quantitative, qualitative, and pharmaceutical market research pathways.</p>
               </Link>
-              <Link to="/market-research-saudi-arabia-pharmaceutical" className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 transition-colors">
+              <Link to="/healthcare-market-research/saudi-arabia" className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 transition-colors">
                 <h3 className="font-semibold text-foreground mb-2">Saudi pharmaceutical market research</h3>
                 <p className="text-sm text-muted-foreground">Review country-level pharmaceutical strategy and access priorities for KSA.</p>
               </Link>

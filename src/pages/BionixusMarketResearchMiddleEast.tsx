@@ -283,10 +283,6 @@ const BionixusMarketResearchMiddleEast = () => {
           name="description"
           content="Middle East pharmaceutical market research for GCC launch, access, and growth decisions. BioNixus delivers country-specific evidence programs across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman."
         />
-        <meta
-          name="keywords"
-          content="middle east pharmaceutical market research, gcc pharmaceutical market research, middle east healthcare market research, saudi arabia pharmaceutical research, uae pharmaceutical market research"
-        />
         <link rel="canonical" href={pageUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={pageUrl} />
@@ -354,11 +350,11 @@ const BionixusMarketResearchMiddleEast = () => {
                 For teams comparing broader pharmaceutical market research and healthcare market research pathways, use this
                 page as the central pillar and route execution to the Saudi and UAE company-intent pages:
                 {' '}
-                <Link to="/market-research-saudi-arabia-pharmaceutical" className="text-primary underline">
+                <Link to="/healthcare-market-research/saudi-arabia" className="text-primary underline">
                   pharma market research company in Saudi Arabia
                 </Link>
                 {' '}and{' '}
-                <Link to="/uae-pharmaceutical-market-research" className="text-primary underline">
+                <Link to="/healthcare-market-research/uae" className="text-primary underline">
                   pharma market research company in UAE
                 </Link>.
               </p>
@@ -482,7 +478,7 @@ const BionixusMarketResearchMiddleEast = () => {
               <a href="#faq" className="text-primary hover:underline">FAQ</a>
             </div>
             <div className="mt-5 grid md:grid-cols-3 gap-3">
-              <Link to="/market-research-saudi-arabia-pharmaceutical" className="text-sm text-primary hover:underline">
+              <Link to="/healthcare-market-research/saudi-arabia" className="text-sm text-primary hover:underline">
                 Saudi pharmaceutical market research depth
               </Link>
               <Link to="/quantitative-healthcare-market-research" className="text-sm text-primary hover:underline">
@@ -496,7 +492,7 @@ const BionixusMarketResearchMiddleEast = () => {
               <Link to="/gcc-pharmaceutical-market-research" className="text-sm text-primary hover:underline">
                 GCC pharmaceutical market research
               </Link>
-              <Link to="/uae-pharmaceutical-market-research" className="text-sm text-primary hover:underline">
+              <Link to="/healthcare-market-research/uae" className="text-sm text-primary hover:underline">
                 UAE pharmaceutical market research
               </Link>
               <Link to="/saudi-payer-market-access-research" className="text-sm text-primary hover:underline">
@@ -667,7 +663,7 @@ const BionixusMarketResearchMiddleEast = () => {
                 Healthcare market research services
               </Link>
               <Link
-                to="/global-websites/united-arab-emirates"
+                to="/healthcare-market-research/uae"
                 className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors text-sm"
               >
                 Dubai-based pharmaceutical market research

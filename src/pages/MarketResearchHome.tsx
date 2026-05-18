@@ -183,7 +183,7 @@ export default function MarketResearchHome() {
                     Market research in Saudi Arabia
                   </Link>{' '}
                   and{' '}
-                  <Link to="/market-research-uae" className="text-primary font-medium hover:underline">
+                  <Link to="/healthcare-market-research/uae" className="text-primary font-medium hover:underline">
                     market research in the UAE
                   </Link>
                   .

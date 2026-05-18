@@ -77,7 +77,7 @@ export default function UaePharmaceuticalMarketResearch() {
             <h1 className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-4">Pharma Market Research Company in UAE</h1>
             <p className="text-muted-foreground leading-relaxed mb-5">
               UAE research execution requires emirate-aware design across DHA, DOH, and MOHAP pathways. For broader{' '}
-              <Link to="/market-research-uae" className="text-primary underline">
+              <Link to="/healthcare-market-research/uae" className="text-primary underline">
                 market research in the UAE
               </Link>{' '}
               and the{' '}
@@ -151,7 +151,7 @@ export default function UaePharmaceuticalMarketResearch() {
               <Link to="/uae-market-access-research" className="rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted">
                 UAE market access research page
               </Link>
-              <Link to="/market-research-saudi-arabia-pharmaceutical" className="rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted">
+              <Link to="/healthcare-market-research/saudi-arabia" className="rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted">
                 Compare with Saudi Arabia page
               </Link>
             </div>

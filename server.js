@@ -84,8 +84,8 @@ function buildFallbackTitle(pathname) {
 
   if (path === '/sitemap') return 'Sitemap & Content Directory | BioNixus';
   if (path === '/privacy') return 'Privacy Policy & Terms for BioNixus Services';
-  if (path === '/conf') return 'Top Market Research Companies in Egypt | BioNixus';
-  if (path === '/ar/conf') return 'أفضل شركات أبحاث السوق في مصر | BioNixus';
+  if (path === '/strategic-portfolio') return 'BioNixus Strategic Portfolio | Market Research & Consulting';
+  if (path === '/ar/strategic-portfolio') return 'محفظة BioNixus الاستراتيجية | أبحاث السوق والاستشارات';
   if (path === '/insights/top-market-research-companies-egypt-2026') return 'Top Market Research Companies in Egypt (2026) | BioNixus';
   if (path === '/ar/insights/top-market-research-companies-egypt-2026') return 'أفضل شركات أبحاث السوق في مصر (دليل 2026) | BioNixus';
 
@@ -112,6 +112,10 @@ function buildFallbackTitle(pathname) {
   if (path.startsWith('/healthcare-market-research/')) {
     const slug = path.split('/').pop() || 'market';
     return `Healthcare Market Research in ${titleCaseFromSlug(slug)} | BioNixus`;
+  }
+
+  if (path === '/pharmacies-saudi-arabia-marketing') {
+    return 'Pharmacy Market Research Saudi Arabia: Boost Retail Sales 40% | BioNixus';
   }
 
   if (path === '/real-world-evidence') {
@@ -181,11 +185,11 @@ function buildFallbackDescription(pathname) {
   if (path === '/zh/contact') {
     return '联系 BioNixus：面向中国团队的医疗与制药市场研究咨询，覆盖欧洲、中东与海湾地区，提供定量定性研究与市场准入情报支持。';
   }
-  if (path === '/conf') {
-    return 'BioNixus — Egypt\'s leading market research firm. Healthcare, pharma, and consumer research across MENA. 127 projects, 48 global clients.';
+  if (path === '/strategic-portfolio') {
+    return 'BioNixus strategic portfolio: healthcare, pharmaceutical, and consumer market research capabilities across EMEA and MENA.';
   }
-  if (path === '/ar/conf') {
-    return 'بيونيكسس — الشركة الرائدة في أبحاث السوق في مصر. أبحاث الرعاية الصحية والأدوية والمستهلكين عبر الشرق الأوسط. ١٢٧ مشروعًا، ٤٨ عميلًا عالميًا.';
+  if (path === '/ar/strategic-portfolio') {
+    return 'محفظة BioNixus الاستراتيجية: قدرات أبحاث السوق الصحي والدوائي والمستهلك عبر أوروبا والشرق الأوسط وأفريقيا.';
   }
   if (path === '/healthcare-market-research') {
     return 'BioNixus — leading healthcare and pharmaceutical market research company serving Dubai, UAE, and MENA. DHA, MOHAP, and DOH-aligned physician surveys, KOL mapping, and market access.';
@@ -353,12 +357,23 @@ async function startServer() {
   const CANONICAL_HOST = 'www.bionixus.com';
   const REDIRECTS = {
     '/healthcare-market-research-saudi-arabia': '/healthcare-market-research/saudi-arabia',
+    '/market-research-saudi': '/healthcare-market-research/saudi-arabia',
+    '/market-research-ksa': '/healthcare-market-research/saudi-arabia',
+    '/market-research-saudi-arabia-pharmaceutical': '/healthcare-market-research/saudi-arabia',
+    '/global-websites/saudi-arabia': '/healthcare-market-research/saudi-arabia',
     '/healthcare-market-research-uae': '/healthcare-market-research/uae',
     '/healthcare-market-research-in-uae': '/healthcare-market-research/uae',
+    '/market-research-uae': '/healthcare-market-research/uae',
+    '/uae-pharmaceutical-market-research': '/healthcare-market-research/uae',
+    '/healthcare-market-research/united-arab-emirates': '/healthcare-market-research/uae',
+    '/global-websites/united-arab-emirates': '/healthcare-market-research/uae',
     '/healthcare-market-research-kuwait': '/healthcare-market-research/kuwait',
     '/healthcare-market-research-uk': '/healthcare-market-research/uk',
     '/healthcare-market-research/united-kingdom': '/healthcare-market-research/uk',
     '/healthcare-market-research-europe': '/healthcare-market-research/europe',
+    '/insights/top-market-research-companies-egypt-2026': '/blog/top-market-research-companies-egypt-2026',
+    '/conf': '/strategic-portfolio',
+    '/ar/conf': '/ar/strategic-portfolio',
     '/quantitative-market-research': '/services/quantitative-research',
     '/techniques-and-tools-in-quantitative-healthcare-market-research': '/services/quantitative-research',
     '/fr/contact': '/fr/contacts',
@@ -368,7 +383,7 @@ async function startServer() {
     '/ar/healthcare-market-research-saudi-arabia-ksa': '/healthcare-market-research/saudi-arabia',
     '/ar/services': '/services',
     '/ar/sustainability-saudi-arabia-ksa': '/healthcare-market-research/saudi-arabia',
-    '/best-market-research-company-saudi-arabia': '/market-research-saudi-arabia-pharmaceutical',
+    '/best-market-research-company-saudi-arabia': '/healthcare-market-research/saudi-arabia',
     '/bionixus-ai-crm-tools': '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
     '/bionixus-market-research-customer-experience-blog': '/blog',
     '/career-portal': '/about',
@@ -387,8 +402,8 @@ async function startServer() {
     '/fr/qualitative-research': '/services/qualitative-research',
     '/fr/success-in-startups': '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
     '/market-research-customer-insight': '/market-research',
-    '/market-research-in-uae': '/market-research-uae',
-    '/pharma-market-research-in-uae': '/uae-pharmaceutical-market-research',
+    '/market-research-in-uae': '/healthcare-market-research/uae',
+    '/pharma-market-research-in-uae': '/healthcare-market-research/uae',
     '/market-research-methods-simplified-how-to-understand-your-customers-like-marvel': '/methodology',
     '/page': '/',
     '/privacy-policy': '/privacy',
@@ -396,7 +411,7 @@ async function startServer() {
     '/recruitment-services': '/services',
     '/sales-growth': '/services',
     '/startup-digital-marketing-package': '/services',
-    '/terms-and-conditions': '/privacy',
+    '/terms-and-conditions': '/terms',
     '/de/page-z6rdBM': '/de',
     '/de/page-z6rdbm': '/de',
     '/de/page-zJiHuV': '/de',
@@ -418,6 +433,8 @@ async function startServer() {
     '/fr/page-zzW-Z8': '/fr',
     '/fr/page-zzw-z8': '/fr',
     ...BLOG_LEGACY_FULL_PATH_REDIRECTS,
+    '/blog/\u0623\u0628\u062D\u0627\u062B-\u0627\u0644\u0633\u0648\u0642-\u0627\u0644\u062F\u0648\u0627\u0626\u064A\u0629-\u0641\u064A-\u0627\u0644\u0634\u0631\u0642-\u0627\u0644\u0623\u0648\u0633\u0637-\u0648-\u062F\u0648\u0644-\u0627\u0644\u062E\u0644\u064A\u062C-\u0627\u0644\u0639\u0631\u0628\u064A': '/ar/blog/pharmaceutical-market-research-middle-east-gcc',
+    '/blog/\u0633\u0648\u0642-\u0627\u0644\u062F\u0648\u0627\u0621-\u0627\u0644\u0633\u0639\u0648\u062F\u064A-2026': '/ar/blog/saudi-pharma-market-2026',
   };
 
   const strategicPortfolioAbsolutePath = path.resolve(
@@ -430,19 +447,16 @@ async function startServer() {
   );
 
   /** Full-page static deck (authoritative HTML, not the SPA shell). */
-  app.get('/conf/', (_req, res) => {
-    res.redirect(301, '/conf');
+  app.get('/strategic-portfolio/', (_req, res) => {
+    res.redirect(301, '/strategic-portfolio');
   });
-  app.get('/conf/strategic-portfolio.html', (_req, res) => {
-    res.redirect(301, '/conf');
-  });
-  app.get('/conf', (_req, res) => {
+  app.get('/strategic-portfolio', (_req, res) => {
     res.type('html').sendFile(strategicPortfolioAbsolutePath);
   });
-  app.get('/ar/conf/', (_req, res) => {
-    res.redirect(301, '/ar/conf');
+  app.get('/ar/strategic-portfolio/', (_req, res) => {
+    res.redirect(301, '/ar/strategic-portfolio');
   });
-  app.get('/ar/conf', (_req, res) => {
+  app.get('/ar/strategic-portfolio', (_req, res) => {
     res.type('html').sendFile(strategicPortfolioArAbsolutePath);
   });
 
@@ -551,7 +565,9 @@ async function startServer() {
         helmetData?.meta?.toString() || '',
         helmetData?.link?.toString() || '',
         helmetData?.script?.toString() || '',
-      ].join('\n');
+      ].join('\n')
+        .replace(/hrefLang=/g, 'hreflang=')
+        .replace(/crossOrigin=""/g, 'crossorigin="anonymous"');
 
       const statusCode = isSsrNotFoundPage(headTags, appHtml) ? 404 : 200;
 

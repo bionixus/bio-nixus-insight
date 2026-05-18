@@ -109,7 +109,7 @@ const staticPages = [
   { path: '/zh/market-research-healthcare', priority: '0.85', changefreq: 'weekly' },
   { path: '/ar/market-research-healthcare', priority: '0.85', changefreq: 'weekly' },
   { path: '/qualitative-market-research', priority: '0.9', changefreq: 'weekly' },
-  { path: '/pharmacies-saudi-arabia-marketing', priority: '0.8', changefreq: 'monthly' },
+  { path: '/pharmacies-saudi-arabia-marketing', priority: '0.9', changefreq: 'weekly' },
   { path: '/bionixus-ai-chatbots-increase-sales-and-lead-generation', priority: '0.7', changefreq: 'monthly' },
   { path: '/bionixus-market-research-middle-east', priority: '0.9', changefreq: 'monthly' },
   { path: '/gcc-pharmaceutical-market-research', priority: '0.8', changefreq: 'monthly' },

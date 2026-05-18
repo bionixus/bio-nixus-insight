@@ -194,10 +194,10 @@ function BenchmarkChart() {
                 opacity="0.88"
                 aria-label={`${d.country}: ${d.score}% qualified completion`}
               />
-              <text x={x + barWidth / 2} y={y - 8} textAnchor="middle" fontSize="12" fill="#111827" fontWeight="600">
+              <text x={x + barWidth / 2} y={y - 8} textAnchor="middle" fontSize="12" fill="#111827" fontWeight="600" aria-label={`${d.score} percent`}>
                 {d.score}%
               </text>
-              <text x={x + barWidth / 2} y={height - margin.bottom + 18} textAnchor="middle" fontSize="11" fill="#4b5563">
+              <text x={x + barWidth / 2} y={height - margin.bottom + 18} textAnchor="middle" fontSize="11" fill="#4b5563" aria-label={d.country}>
                 {d.code}
               </text>
             </g>
@@ -208,6 +208,18 @@ function BenchmarkChart() {
           Median qualified completion rate by market
         </text>
       </svg>
+      <p className="sr-only">
+        Median qualified completion rate by market in 2025: Saudi Arabia 31%, UAE 35%, Kuwait 28%, Qatar 30%, Oman 27%, Bahrain 26%.
+      </p>
+      <table className="sr-only" aria-label="Median qualified completion rate by GCC market">
+        <caption>Median qualified completion rate by market (2025)</caption>
+        <thead><tr><th>Market</th><th>Qualified Completion Rate</th></tr></thead>
+        <tbody>
+          {fieldworkBenchmark.map((d) => (
+            <tr key={d.code}><td>{d.country}</td><td>{d.score}%</td></tr>
+          ))}
+        </tbody>
+      </table>
       <p className="text-xs text-muted-foreground mt-3">
         BioNixus internal benchmark (2025): anonymized quantitative fieldwork diagnostics across 42 GCC healthcare studies.
       </p>
@@ -278,6 +290,21 @@ function TrackingTrendChart() {
           );
         })}
       </svg>
+      <p className="sr-only">
+        Tracker trajectory: weighted message relevance index across six quarterly waves — W1: 64, W2: 67, W3: 65, W4: 70, W5: 73, W6: 76.
+      </p>
+      <table className="sr-only" aria-label="Tracker trend data across quarterly waves">
+        <caption>Weighted message relevance index by wave</caption>
+        <thead><tr><th>Wave</th><th>Index</th></tr></thead>
+        <tbody>
+          <tr><td>W1</td><td>64</td></tr>
+          <tr><td>W2</td><td>67</td></tr>
+          <tr><td>W3</td><td>65</td></tr>
+          <tr><td>W4</td><td>70</td></tr>
+          <tr><td>W5</td><td>73</td></tr>
+          <tr><td>W6</td><td>76</td></tr>
+        </tbody>
+      </table>
       <p className="text-xs text-muted-foreground mt-3">
         Example tracker trend: weighted message relevance index across six quarterly waves in Saudi Arabia and UAE specialist cohorts.
       </p>
@@ -316,6 +343,20 @@ function QualityFunnelChart() {
           </div>
         ))}
       </div>
+      <p className="sr-only">
+        Quality funnel data: Invited 100%, Screened 72%, Qualified 41%, QC Passed 33%, Final Analytic Base 31%.
+      </p>
+      <table className="sr-only" aria-label="Field quality funnel data">
+        <caption>Sample erosion funnel for GCC quantitative healthcare studies</caption>
+        <thead><tr><th>Stage</th><th>Percentage</th></tr></thead>
+        <tbody>
+          <tr><td>Invited</td><td>100%</td></tr>
+          <tr><td>Screened</td><td>72%</td></tr>
+          <tr><td>Qualified</td><td>41%</td></tr>
+          <tr><td>QC Passed</td><td>33%</td></tr>
+          <tr><td>Final Analytic Base</td><td>31%</td></tr>
+        </tbody>
+      </table>
       <p className="text-xs text-muted-foreground mt-4">
         Field quality funnel view used for governance calls: shows where sample erosion occurs and where interventions are needed.
       </p>
@@ -376,14 +417,10 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Quantitative Healthcare Market Research Guide (2026) | BioNixus</title>
+        <title>Quantitative Healthcare Market Research Guide 2026 | BioNixus</title>
         <meta
           name="description"
-          content="An exhaustive 2026 guide to quantitative healthcare market research: survey design, tracking studies, verified HCP recruitment, and AI-era data validation for Saudi Arabia and UAE market intelligence."
-        />
-        <meta
-          name="keywords"
-          content="quantitative healthcare market research, healthcare survey methodology, HCP recruitment Saudi Arabia, physician surveys UAE, tracking studies healthcare, healthcare market research GCC"
+          content="A 2026 execution guide to quantitative healthcare market research: survey architecture, tracker governance, HCP verification, and AI-assisted data validation across Saudi Arabia, UAE, and the wider GCC."
         />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:type" content="article" />
@@ -394,18 +431,25 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
         <meta property="article:author" content={articleAuthor.name} />
         <meta
           property="og:title"
-          content="Quantitative Healthcare Market Research Guide (2026) | BioNixus"
+          content="Quantitative Healthcare Market Research Guide 2026 | BioNixus"
         />
         <meta
           property="og:description"
           content="Long-form guide for pharmaceutical and healthcare strategy teams: quantitative methods, specialized HCP recruitment, and AI-driven quality validation in Saudi Arabia and UAE."
         />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Quantitative Healthcare Market Research Guide 2026 | BioNixus" />
+        <meta
+          name="twitter:description"
+          content="A 2026 execution guide to quantitative healthcare market research: survey architecture, tracker governance, HCP verification, and AI-assisted data validation across Saudi Arabia, UAE, and the wider GCC."
+        />
+        <meta name="twitter:image" content="https://www.bionixus.com/images/quant-hcp-survey-executive.png" />
 
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Article',
-            headline: 'Quantitative Healthcare Market Research Guide (2026)',
+            headline: 'Quantitative Healthcare Market Research Guide 2026',
             description:
               'Long-form guide covering quantitative healthcare market research methodologies, HCP recruitment strategies, and AI-driven validation frameworks with GCC-specific execution guidance.',
             url: canonicalUrl,
@@ -433,10 +477,13 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
                 name: 'BioNixus',
               },
             },
+            image: 'https://www.bionixus.com/images/quant-hcp-survey-executive.png',
+            mainEntityOfPage: canonicalUrl,
             publisher: {
               '@type': 'Organization',
               '@id': 'https://www.bionixus.com/#organization',
               name: 'BioNixus',
+              logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
             },
           })}
         </script>
@@ -506,7 +553,7 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
                   </span>
                 </div>
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-5 sr sr-up sr-line">
-                  Quantitative Healthcare Market Research Guide (2026)
+                  Quantitative Healthcare Market Research Methodology Guide 2026
                 </h1>
                 <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl sr sr-up">
                   An execution-first guide for commercial, market access, and insight teams that need reliable quantitative evidence
@@ -737,10 +784,10 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
               In 2026, the strategic risk is not lacking data. It is making high-cost decisions from low-integrity data.
             </blockquote>
             <div className="grid md:grid-cols-2 gap-3">
-              <Link to="/market-research-saudi-arabia-pharmaceutical" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              <Link to="/healthcare-market-research/saudi-arabia" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 Pharma market research company in Saudi Arabia
               </Link>
-              <Link to="/uae-pharmaceutical-market-research" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              <Link to="/healthcare-market-research/uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 Pharma market research company in UAE
               </Link>
               <Link to="/bionixus-market-research-middle-east" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
@@ -762,7 +809,7 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
             <p className="text-muted-foreground leading-relaxed mb-5">
               Saudi Arabia and UAE studies fail when global templates are applied without local market architecture and role realism.
               This is especially visible in projects linked to
-              <Link to="/market-research-saudi-arabia-pharmaceutical" className="text-primary hover:underline">
+              <Link to="/healthcare-market-research/saudi-arabia" className="text-primary hover:underline">
                 {' '}pharmaceutical market research in Saudi Arabia
               </Link>.
             </p>
@@ -903,12 +950,12 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
               <QualityFunnelChart />
             </div>
             <div className="mt-6 rounded-xl border border-border bg-card p-4">
-              <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">Social Proof</p>
+              <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">Therapeutic Breadth</p>
               <p className="text-sm text-foreground">
-                Trusted by pharmaceutical teams at 6 of the top 20 global pharma companies.
+                BioNixus has delivered quantitative research programmes for pharmaceutical brands across oncology, immunology, vaccines, rare disease, cardiometabolic, and hospital-specialty portfolios.
               </p>
               <p className="text-xs text-muted-foreground mt-2">
-                Oncology, immunology, rare disease, vaccines, cardiometabolic, and hospital-specialty portfolios.
+                Spanning Saudi Arabia, UAE, wider GCC, UK, and Europe.
               </p>
             </div>
             <div className="mt-8 rounded-2xl border border-primary/25 bg-primary/5 p-6 md:p-7">
@@ -1229,16 +1276,16 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
           <div className="container-wide max-w-5xl mx-auto">
             <article className="rounded-2xl border border-border bg-card p-6 md:p-8">
               <h2 className="text-xl md:text-2xl font-display font-semibold text-foreground mb-2">
-                Download the Executive Summary (PDF)
+                Request the Executive Summary
               </h2>
               <p className="text-muted-foreground text-sm leading-relaxed mb-5">
-                Get the condensed briefing for leadership teams with methodology checklist, KPI scorecard, and GCC implementation timeline.
+                Get a condensed briefing for leadership teams with our methodology checklist, KPI scorecard, and GCC implementation timeline.
+                Enter your work email and our team will send the summary within one business day.
               </p>
               <form action="https://formspree.io/f/xgozewew" method="POST" className="grid sm:grid-cols-[1fr_auto] gap-3">
-                <input type="hidden" name="_subject" value="Report request: Quantitative Executive Summary PDF" />
-                <input type="hidden" name="requestType" value="Report Download Request" />
-                <input type="hidden" name="formVariant" value="quantitative_page_pdf_download" />
-                <input type="hidden" name="reportName" value="Quantitative Executive Summary PDF" />
+                <input type="hidden" name="_subject" value="Executive summary request: Quantitative Healthcare Market Research Guide" />
+                <input type="hidden" name="requestType" value="Executive Summary Request" />
+                <input type="hidden" name="formVariant" value="quantitative_page_exec_summary" />
                 <input type="hidden" name="sourcePage" value="/quantitative-healthcare-market-research" />
                 <input type="hidden" name="sourceUrl" value="https://www.bionixus.com/quantitative-healthcare-market-research" />
                 <input
@@ -1252,7 +1299,7 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
                   type="submit"
                   className="inline-flex items-center justify-center rounded-lg bg-primary px-5 h-11 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
                 >
-                  Send PDF
+                  Request Summary
                 </button>
               </form>
             </article>

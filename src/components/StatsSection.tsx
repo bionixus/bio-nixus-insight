@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 function parseStatValue(value: string): { number: number; suffix: string } {
@@ -17,12 +17,21 @@ const DURATION_MS = 1800;
 const StatsSection = () => {
   const { t } = useLanguage();
   const sectionRef = useRef<HTMLElement>(null);
+  const [hydrated, setHydrated] = useState(false);
   const [inView, setInView] = useState(false);
   const parsed = t.stats.items.map((s) => parseStatValue(s.value));
-  const [counts, setCounts] = useState<number[]>(() => parsed.map(() => 0));
-  const [done, setDone] = useState(false);
+  const targets = parsed.map((p) => p.number);
+  const [counts, setCounts] = useState<number[]>(() => targets);
+  const [done, setDone] = useState(true);
   const rafRef = useRef<number>(0);
   const startRef = useRef<number | null>(null);
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    setHydrated(true);
+    setCounts(targets.map(() => 0));
+    setDone(false);
+  }, []);
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -38,8 +47,8 @@ const StatsSection = () => {
   }, []);
 
   useEffect(() => {
-    if (!inView) return;
-    const targets = parsed.map((p) => p.number);
+    if (!inView || !hydrated || hasAnimated.current) return;
+    hasAnimated.current = true;
     startRef.current = null;
     setCounts(targets.map(() => 0));
     const step = (timestamp: number) => {
@@ -56,12 +65,12 @@ const StatsSection = () => {
     };
     rafRef.current = requestAnimationFrame(step);
     return () => cancelAnimationFrame(rafRef.current);
-  }, [inView, t.stats.items]);
+  }, [inView, hydrated]);
 
   return (
     <section ref={sectionRef} id="about" className="section-padding bg-primary overflow-hidden">
       <div className="container-wide">
-        <h2 className={`text-3xl md:text-4xl font-display font-semibold text-primary-foreground text-center mb-16 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+        <h2 className={`text-3xl md:text-4xl font-display font-semibold text-primary-foreground text-center mb-16 transition-all duration-700 ${hydrated && inView ? 'opacity-100 translate-y-0' : hydrated ? 'opacity-0 translate-y-6' : ''}`}>
           {t.stats.title}
         </h2>
 
@@ -69,11 +78,11 @@ const StatsSection = () => {
           {t.stats.items.map((stat, index) => (
             <div
               key={index}
-              className={`text-center transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-              style={{ transitionDelay: `${index * 150}ms` }}
+              className={`text-center transition-all duration-700 ${hydrated && inView ? 'opacity-100 translate-y-0' : hydrated ? 'opacity-0 translate-y-8' : ''}`}
+              style={{ transitionDelay: hydrated ? `${index * 150}ms` : undefined }}
             >
               <div className={`text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gold-warm mb-3 tabular-nums ${done ? 'glow-pop' : ''}`}>
-                {counts[index] ?? 0}
+                {counts[index] ?? parsed[index]?.number ?? 0}
                 {parsed[index]?.suffix ?? ''}
               </div>
               <div className={`text-primary-foreground/80 font-medium transition-all duration-500 ${done ? 'opacity-100' : 'opacity-60'}`}>

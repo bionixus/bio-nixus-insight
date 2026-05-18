@@ -86,10 +86,6 @@ const KuwaitPharmaCompanies = () => {
           name="description"
           content="Complete guide to pharmaceutical companies in Kuwait for 2026: top pharma companies list, market size ($1.2B), MOH drug registration, distribution channels, and industry outlook. Local manufacturers, MNC offices, and distributors."
         />
-        <meta
-          name="keywords"
-          content="pharmaceutical companies in Kuwait, Kuwait pharmaceutical companies, pharma companies in Kuwait, top pharmaceutical companies in Kuwait, list of pharmaceutical companies in Kuwait, Kuwait pharma market, drug registration Kuwait, Kuwait MOH pharmaceutical, Kuwait pharmaceutical industry 2026"
-        />
         <link rel="canonical" href={citationUrl} />
         <script type="application/ld+json">
           {JSON.stringify({
@@ -588,7 +584,7 @@ const KuwaitPharmaCompanies = () => {
                 },
                 {
                   title: 'Market Access & Pricing Strategy',
-                  desc: 'MOH formulary inclusion strategy, competitive pricing analysis, reimbursement landscape assessment, and payer research to optimise your product\'s commercial success in Kuwait.',
+                  desc: 'MOH formulary inclusion strategy, competitive pricing analysis, reimbursement landscape assessment, and payer research to optimize your product\'s commercial success in Kuwait.',
                 },
                 {
                   title: 'Competitive Intelligence',

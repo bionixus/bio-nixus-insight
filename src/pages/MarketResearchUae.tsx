@@ -40,8 +40,8 @@ export default function MarketResearchUae() {
       ]}
       relatedLinks={[
         { to: '/healthcare-market-research/uae', label: 'Healthcare market research — UAE country hub' },
-        { to: '/global-websites/united-arab-emirates', label: 'UAE pharmaceutical market research (global website)' },
-        { to: '/uae-pharmaceutical-market-research', label: 'Pharma market research company in UAE' },
+        { to: '/healthcare-market-research/uae', label: 'UAE pharmaceutical market research (global website)' },
+        { to: '/healthcare-market-research/uae', label: 'Pharma market research company in UAE' },
         { to: '/pharmaceutical-companies-uae', label: 'Top pharmaceutical companies in UAE' },
         { to: '/market-research-ksa', label: 'Market research KSA' },
         { to: '/market-research-kuwait', label: 'Market research Kuwait' },

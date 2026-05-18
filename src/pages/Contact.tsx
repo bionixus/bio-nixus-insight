@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ContactSection from '@/components/ContactSection';
 import { ArrowRight, Zap, Globe, FileCheck } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 type ContactPageCopy = {
   heroTitle?: string;
@@ -77,6 +78,16 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' },
+            { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://www.bionixus.com/contact' },
+          ],
+        })}</script>
+      </Helmet>
       <Navbar />
       <main>
         {/* Catchy hero for pharma – encourage get in touch */}

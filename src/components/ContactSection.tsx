@@ -13,32 +13,96 @@ type ContactValidation = {
   message?: string;
   privacy?: string;
   emailFormat?: string;
+  country?: string;
+  consent?: string;
   success?: string;
   error?: string;
 };
 
+const COUNTRY_OPTIONS = [
+  'United Kingdom',
+  'Germany',
+  'France',
+  'Spain',
+  'Italy',
+  'Saudi Arabia',
+  'UAE',
+  'Egypt',
+  'Kuwait',
+  'Qatar',
+  'Bahrain',
+  'Oman',
+  'Other',
+] as const;
+
+const RESEARCH_INTERESTS = [
+  'Quantitative',
+  'Qualitative',
+  'Market Access',
+  'KOL Mapping',
+  'Competitive Intelligence',
+  'Clinical Trial Support',
+] as const;
+
+const TIMELINE_OPTIONS = [
+  'Less than 1 month',
+  '1-3 months',
+  '3-6 months',
+  '6+ months',
+] as const;
+
+const BUDGET_OPTIONS = [
+  'Under £25k',
+  '£25k-75k',
+  '£75k-150k',
+  '£150k+',
+  'Not sure yet',
+] as const;
+
+const REFERRAL_OPTIONS = [
+  'Google Search',
+  'LinkedIn',
+  'Referral',
+  'Conference/Event',
+  'Industry Publication',
+  'Other',
+] as const;
+
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xgozewew';
 const ERROR_EMAIL = 'digital@bionixus.uk';
 
-function sendErrorEmail(
-  firstName: string,
-  lastName: string,
-  workEmail: string,
-  company: string,
-  phone: string,
-  message: string,
-  errorDetails: string
-) {
+type ErrorEmailFields = {
+  firstName: string;
+  lastName: string;
+  workEmail: string;
+  company: string;
+  phone: string;
+  country: string;
+  researchInterest: string;
+  therapyArea: string;
+  timeline: string;
+  budget: string;
+  referralSource: string;
+  message: string;
+};
+
+function sendErrorEmail(fields: ErrorEmailFields, errorDetails: string) {
   const subject = encodeURIComponent('Meeting With BioNixus Team');
   const body = encodeURIComponent(
     `I'd like to schedule a meeting with BioNixus team to discuss more about BioNixus Market Research Services.\n\n` +
     `--- FORM DATA ---\n` +
-    `First Name: ${firstName}\n` +
-    `Last Name: ${lastName}\n` +
-    `Email: ${workEmail}\n` +
-    `Company: ${company}\n` +
-    (phone ? `Phone: ${phone}\n` : '') +
-    `\nMessage:\n${message}\n\n` +
+    `First Name: ${fields.firstName}\n` +
+    `Last Name: ${fields.lastName}\n` +
+    `Email: ${fields.workEmail}\n` +
+    `Company: ${fields.company}\n` +
+    (fields.phone ? `Phone: ${fields.phone}\n` : '') +
+    (fields.country ? `Country: ${fields.country}\n` : '') +
+    (fields.researchInterest ? `Research Interest: ${fields.researchInterest}\n` : '') +
+    (fields.therapyArea ? `Therapy Area: ${fields.therapyArea}\n` : '') +
+    (fields.timeline ? `Timeline: ${fields.timeline}\n` : '') +
+    (fields.budget ? `Budget: ${fields.budget}\n` : '') +
+    (fields.referralSource ? `Referral Source: ${fields.referralSource}\n` : '') +
+    `\nMessage:\n${fields.message}\n\n` +
     `--- NOTE ---\nThe online form encountered an error (${errorDetails}). Please process this inquiry manually.`
   );
   window.location.href = `mailto:${ERROR_EMAIL}?subject=${subject}&body=${body}`;
@@ -61,28 +125,45 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
   const validation = (t.contact as { validation?: ContactValidation }).validation;
   const v = (key: keyof ContactValidation) => validation?.[key] ?? '';
   const place = (key: string, fallback: string) => c[key] ?? fallback;
-  const hasPhoneField = Boolean(c.phoneFieldLabel);
-  const hasPrivacyNote = Boolean(c.privacyNote);
+
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
     const next: Record<string, string> = {};
-    if (!(data.get('firstName') as string)?.trim()) next.firstName = v('firstName');
-    if (!(data.get('lastName') as string)?.trim()) next.lastName = v('lastName');
-    if (!(data.get('workEmail') as string)?.trim()) next.workEmail = v('workEmail');
-    if (!(data.get('company') as string)?.trim()) next.company = v('company');
-    if (!(data.get('message') as string)?.trim()) next.message = v('message');
+
+    if (!(data.get('firstName') as string)?.trim()) next.firstName = v('firstName') || 'First name is required';
+    if (!(data.get('lastName') as string)?.trim()) next.lastName = v('lastName') || 'Last name is required';
+
+    const rawEmail = (data.get('workEmail') as string)?.trim() || '';
+    if (!rawEmail) {
+      next.workEmail = v('workEmail') || 'Work email is required';
+    } else if (!EMAIL_RE.test(rawEmail)) {
+      next.workEmail = v('emailFormat') || 'Please enter a valid email address';
+    }
+
+    if (!(data.get('company') as string)?.trim()) next.company = v('company') || 'Company is required';
+    if (!(data.get('country') as string)?.trim()) next.country = v('country') || 'Please select a country';
+    if (!(data.get('message') as string)?.trim()) next.message = v('message') || 'Message is required';
+    if (!data.get('consent')) next.consent = v('consent') || 'You must agree to the privacy policy';
+
     setErrors(next);
     setSubmitError(null);
     if (Object.keys(next).length > 0) return;
 
     const firstName = (data.get('firstName') as string)?.trim() || '';
     const lastName = (data.get('lastName') as string)?.trim() || '';
-    const workEmail = (data.get('workEmail') as string)?.trim() || '';
+    const workEmail = rawEmail;
     const company = (data.get('company') as string)?.trim() || '';
     const phone = (data.get('phone') as string)?.trim() || '';
+    const country = (data.get('country') as string)?.trim() || '';
+    const researchInterest = data.getAll('researchInterest').join(', ');
+    const therapyArea = (data.get('therapyArea') as string)?.trim() || '';
+    const timeline = (data.get('timeline') as string)?.trim() || '';
+    const budget = (data.get('budget') as string)?.trim() || '';
+    const referralSource = (data.get('referralSource') as string)?.trim() || '';
     const message = (data.get('message') as string)?.trim() || '';
     const currentUrl = window.location.href;
     const currentPath = window.location.pathname;
@@ -99,11 +180,17 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
     data.set('sourcePage', currentPath);
     data.set('sourceUrl', currentUrl);
     data.set('reportName', '');
+    data.set('researchInterest', researchInterest);
     data.set('utmSource', utmSource);
     data.set('utmMedium', utmMedium);
     data.set('utmCampaign', utmCampaign);
     data.set('utmContent', utmContent);
     data.set('utmTerm', utmTerm);
+
+    const errorFields: ErrorEmailFields = {
+      firstName, lastName, workEmail, company, phone, country,
+      researchInterest, therapyArea, timeline, budget, referralSource, message,
+    };
 
     setSubmitting(true);
     try {
@@ -114,7 +201,6 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
       });
       if (res.ok) {
         setSubmitted(true);
-        // Also save to Sanity as a subscriber (fire-and-forget, don't block success)
         try {
           await fetch('/api/subscribe', {
             method: 'POST',
@@ -125,6 +211,12 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
               email: workEmail,
               mobile: phone || undefined,
               company: company || undefined,
+              country: country || undefined,
+              researchInterest: researchInterest || undefined,
+              therapyArea: therapyArea || undefined,
+              timeline: timeline || undefined,
+              budget: budget || undefined,
+              referralSource: referralSource || undefined,
               language,
               source: 'contact_form',
               sourcePage: currentPath,
@@ -143,12 +235,12 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
         const json = await res.json().catch(() => ({}));
         const errorMsg = json.error || v('error');
         setSubmitError(errorMsg);
-        sendErrorEmail(firstName, lastName, workEmail, company, phone, message, errorMsg);
+        sendErrorEmail(errorFields, errorMsg);
       }
     } catch (err) {
       const errorMsg = err instanceof Error ? err.message : v('error');
       setSubmitError(v('error'));
-      sendErrorEmail(firstName, lastName, workEmail, company, phone, message, `Network/client error: ${errorMsg}`);
+      sendErrorEmail(errorFields, `Network/client error: ${errorMsg}`);
     } finally {
       setSubmitting(false);
     }
@@ -303,11 +395,13 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
                   method="POST"
                   className="space-y-6"
                   onSubmit={handleSubmit}
+                  noValidate
                 >
+                  {/* Name */}
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-2">
-                        {t.contact.firstName}
+                        {t.contact.firstName} <span className="text-destructive">*</span>
                       </label>
                       <input
                         id="firstName"
@@ -322,7 +416,7 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
                     </div>
                     <div>
                       <label htmlFor="lastName" className="block text-sm font-medium text-foreground mb-2">
-                        {t.contact.lastName}
+                        {t.contact.lastName} <span className="text-destructive">*</span>
                       </label>
                       <input
                         id="lastName"
@@ -337,9 +431,10 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
                     </div>
                   </div>
 
+                  {/* Email & Company */}
                   <div>
                     <label htmlFor="workEmail" className="block text-sm font-medium text-foreground mb-2">
-                      {t.contact.workEmail}
+                      {t.contact.workEmail} <span className="text-destructive">*</span>
                     </label>
                     <input
                       id="workEmail"
@@ -355,7 +450,7 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
 
                   <div>
                     <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
-                      {t.contact.company}
+                      {t.contact.company} <span className="text-destructive">*</span>
                     </label>
                     <input
                       id="company"
@@ -369,24 +464,133 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
                     {errors.company && <p className="text-sm text-destructive mt-1">{errors.company}</p>}
                   </div>
 
-                  {hasPhoneField && (
+                  {/* Country & Phone */}
+                  <div className="grid sm:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="country" className="block text-sm font-medium text-foreground mb-2">
+                        Country / Region <span className="text-destructive">*</span>
+                      </label>
+                      <select
+                        id="country"
+                        name="country"
+                        required
+                        aria-invalid={Boolean(errors.country)}
+                        className={`w-full px-4 py-3 rounded-lg border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.country ? 'border-destructive' : 'border-input'}`}
+                        defaultValue=""
+                      >
+                        <option value="" disabled>Select country…</option>
+                        {COUNTRY_OPTIONS.map((c) => (
+                          <option key={c} value={c}>{c}</option>
+                        ))}
+                      </select>
+                      {errors.country && <p className="text-sm text-destructive mt-1">{errors.country}</p>}
+                    </div>
                     <div>
                       <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                        {c.phoneFieldLabel}
+                        Phone
                       </label>
                       <input
                         id="phone"
                         name="phone"
                         type="tel"
                         className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
-                        placeholder={place('phonePlaceholder', '')}
+                        placeholder="+44 7700 900000"
                       />
                     </div>
-                  )}
+                  </div>
 
+                  {/* Research Interest — multi-select checkboxes */}
+                  <fieldset>
+                    <legend className="block text-sm font-medium text-foreground mb-3">
+                      Research Interest
+                    </legend>
+                    <div className="grid sm:grid-cols-2 gap-x-6 gap-y-2">
+                      {RESEARCH_INTERESTS.map((interest) => (
+                        <label key={interest} className="flex items-center gap-2 text-sm text-foreground cursor-pointer">
+                          <input
+                            type="checkbox"
+                            name="researchInterest"
+                            value={interest}
+                            className="h-4 w-4 rounded border-input text-primary focus:ring-primary/20"
+                          />
+                          {interest}
+                        </label>
+                      ))}
+                    </div>
+                  </fieldset>
+
+                  {/* Therapy Area */}
+                  <div>
+                    <label htmlFor="therapyArea" className="block text-sm font-medium text-foreground mb-2">
+                      Therapy Area
+                    </label>
+                    <input
+                      id="therapyArea"
+                      name="therapyArea"
+                      type="text"
+                      className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+                      placeholder="e.g. Oncology, Rare Disease, Cardiovascular…"
+                    />
+                  </div>
+
+                  {/* Timeline & Budget */}
+                  <div className="grid sm:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="timeline" className="block text-sm font-medium text-foreground mb-2">
+                        Project Timeline
+                      </label>
+                      <select
+                        id="timeline"
+                        name="timeline"
+                        className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+                        defaultValue=""
+                      >
+                        <option value="">Select timeline…</option>
+                        {TIMELINE_OPTIONS.map((opt) => (
+                          <option key={opt} value={opt}>{opt}</option>
+                        ))}
+                      </select>
+                    </div>
+                    <div>
+                      <label htmlFor="budget" className="block text-sm font-medium text-foreground mb-2">
+                        Indicative Budget
+                      </label>
+                      <select
+                        id="budget"
+                        name="budget"
+                        className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+                        defaultValue=""
+                      >
+                        <option value="">Select budget…</option>
+                        {BUDGET_OPTIONS.map((opt) => (
+                          <option key={opt} value={opt}>{opt}</option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+
+                  {/* Referral Source */}
+                  <div>
+                    <label htmlFor="referralSource" className="block text-sm font-medium text-foreground mb-2">
+                      How did you hear about us?
+                    </label>
+                    <select
+                      id="referralSource"
+                      name="referralSource"
+                      className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+                      defaultValue=""
+                    >
+                      <option value="">Select…</option>
+                      {REFERRAL_OPTIONS.map((opt) => (
+                        <option key={opt} value={opt}>{opt}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  {/* Message */}
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                      {t.contact.message}
+                      {t.contact.message} <span className="text-destructive">*</span>
                     </label>
                     <textarea
                       id="message"
@@ -400,11 +604,26 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
                     {errors.message && <p className="text-sm text-destructive mt-1">{errors.message}</p>}
                   </div>
 
-                  {hasPrivacyNote && (
-                    <p className="text-sm text-muted-foreground">
-                      {c.privacyNote}
-                    </p>
-                  )}
+                  {/* Consent */}
+                  <div>
+                    <label className="flex items-start gap-3 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        name="consent"
+                        value="yes"
+                        aria-invalid={Boolean(errors.consent)}
+                        className="h-4 w-4 mt-0.5 rounded border-input text-primary focus:ring-primary/20 shrink-0"
+                      />
+                      <span className="text-sm text-muted-foreground leading-snug">
+                        I agree to BioNixus processing my information per the{' '}
+                        <Link to="/privacy" className="text-primary font-medium hover:underline">
+                          Privacy Policy
+                        </Link>
+                        . <span className="text-destructive">*</span>
+                      </span>
+                    </label>
+                    {errors.consent && <p className="text-sm text-destructive mt-1">{errors.consent}</p>}
+                  </div>
 
                   {submitError && (
                     <p className="text-sm text-destructive">{submitError}</p>

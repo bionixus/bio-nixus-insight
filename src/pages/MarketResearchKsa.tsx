@@ -29,9 +29,10 @@ export default function MarketResearchKsa() {
       ]}
       relatedLinks={[
         { to: '/market-research-saudi', label: 'Market research Saudi' },
-        { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Pharma market research company in Saudi Arabia' },
+        { to: '/healthcare-market-research/saudi-arabia', label: 'Pharma market research company in Saudi Arabia' },
         { to: '/pharmaceutical-companies-saudi-arabia', label: 'Top pharmaceutical companies in Saudi Arabia' },
-        { to: '/market-research-uae', label: 'Market research UAE' },
+        { to: '/pharmacies-saudi-arabia-marketing', label: 'Pharmacy marketing research and automation in Saudi Arabia' },
+        { to: '/healthcare-market-research/uae', label: 'Market research UAE' },
       ]}
     />
   );

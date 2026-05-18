@@ -288,10 +288,6 @@ export default function PharmaceuticalTherapyAreas() {
           name="description"
           content="Pharmaceutical therapy areas market research from BioNixus across oncology, rare diseases, immunology, neurology, cardiometabolic, respiratory, vaccines, and more. Country-aware evidence for MENA, UK, and Europe."
         />
-        <meta
-          name="keywords"
-          content="pharmaceutical therapy areas market research, pharma therapy area research, oncology market research, rare disease market research, immunology market research, vaccines market research, therapy area consulting pharma"
-        />
         <link rel="canonical" href={pageUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={pageUrl} />

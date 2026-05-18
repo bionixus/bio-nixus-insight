@@ -22,7 +22,7 @@ const serviceData: Record<string, ServiceData> = {
   'quantitative-research': {
     title: 'Quantitative Healthcare Research & Physician Surveys',
     metaTitle: 'Quantitative Healthcare Research | Physician Surveys EMEA — BioNixus',
-    metaDescription: 'Large-scale quantitative physician surveys across 17+ EMEA countries. Online and telephone surveys (n=50–500+), prescription tracking, market sizing, and statistical analysis for pharmaceutical companies.',
+    metaDescription: 'Statistically robust physician and payer surveys across 17+ EMEA markets. Sample sizes n=50-500+, market sizing, conjoint, MaxDiff, and DCE methodologies.',
     heroSubtitle: 'Large-scale statistical insights from physicians and healthcare professionals across UK, Europe, and MENA markets.',
     overview: 'BioNixus conducts rigorous quantitative healthcare market research designed to provide statistically robust evidence for pharmaceutical decision-making. Our physician surveys span multiple specialties and countries, delivering the data foundations your commercial, medical affairs, and market access teams need.',
     capabilities: [
@@ -247,6 +247,16 @@ const ServiceDetail = () => {
           <div className="container-wide max-w-4xl mx-auto">
             <h2 className="text-2xl font-display font-semibold text-foreground mb-4">Overview</h2>
             <p className="text-muted-foreground leading-relaxed text-lg">{svc.overview}</p>
+            {slug === 'quantitative-research' && (
+              <div className="mt-6">
+                <Link
+                  to="/quantitative-healthcare-market-research"
+                  className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
+                >
+                  Read the 2026 methodology guide <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            )}
           </div>
         </section>
 

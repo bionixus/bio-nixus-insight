@@ -29,8 +29,9 @@ export default function MarketResearchSaudi() {
       ]}
       relatedLinks={[
         { to: '/market-research-ksa', label: 'Market research KSA' },
-        { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Pharma market research company in Saudi Arabia' },
+        { to: '/healthcare-market-research/saudi-arabia', label: 'Pharma market research company in Saudi Arabia' },
         { to: '/pharmaceutical-companies-saudi-arabia', label: 'Top pharmaceutical companies in Saudi Arabia' },
+        { to: '/pharmacies-saudi-arabia-marketing', label: 'Pharmacy market research and marketing automation in Saudi Arabia' },
         { to: '/bionixus-market-research-middle-east', label: 'Middle East pharmaceutical market research pillar' },
       ]}
     />

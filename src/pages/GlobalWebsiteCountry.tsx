@@ -2798,7 +2798,7 @@ const GlobalWebsiteCountry = () => {
                   <h2 className="text-2xl font-display font-semibold text-foreground mb-4">Related Resources</h2>
                   <div className="grid md:grid-cols-2 gap-3">
                     <Link
-                      to={isUaePage ? '/market-research-saudi-arabia-pharmaceutical' : isSaudiPage ? '/global-websites/united-arab-emirates' : isUsPage ? '/global-websites/united-kingdom' : isUkPage ? '/global-websites/germany' : isGermanyPage ? '/global-websites/france' : isFrancePage ? '/global-websites/spain' : isSpainPage ? '/global-websites/italy' : isItalyPage ? '/global-websites/kuwait' : isKuwaitPage ? '/global-websites/qatar' : isQatarPage ? '/global-websites/bahrain' : isBahrainPage ? '/global-websites/oman' : '/global-websites/saudi-arabia'}
+                      to={isUaePage ? '/healthcare-market-research/saudi-arabia' : isSaudiPage ? '/healthcare-market-research/uae' : isUsPage ? '/global-websites/united-kingdom' : isUkPage ? '/global-websites/germany' : isGermanyPage ? '/global-websites/france' : isFrancePage ? '/global-websites/spain' : isSpainPage ? '/global-websites/italy' : isItalyPage ? '/global-websites/kuwait' : isKuwaitPage ? '/global-websites/qatar' : isQatarPage ? '/global-websites/bahrain' : isBahrainPage ? '/global-websites/oman' : '/healthcare-market-research/saudi-arabia'}
                       className="text-primary hover:underline"
                     >
                       {isUaePage
@@ -2830,16 +2830,16 @@ const GlobalWebsiteCountry = () => {
                         <Link to="/global-websites/qatar" className="text-primary hover:underline">
                           Qatar Pharmaceutical Market Research
                         </Link>
-                        <Link to="/global-websites/united-arab-emirates" className="text-primary hover:underline">
+                        <Link to="/healthcare-market-research/uae" className="text-primary hover:underline">
                           UAE Pharmaceutical Market Research
                         </Link>
-                        <Link to="/global-websites/saudi-arabia" className="text-primary hover:underline">
+                        <Link to="/healthcare-market-research/saudi-arabia" className="text-primary hover:underline">
                           Saudi Arabia Pharmaceutical Market Research
                         </Link>
                       </>
                     ) : isEgyptPage ? (
                       <>
-                        <Link to="/global-websites/united-arab-emirates" className="text-primary hover:underline">
+                        <Link to="/healthcare-market-research/uae" className="text-primary hover:underline">
                           UAE Pharmaceutical Market Research
                         </Link>
                         <Link to="/global-websites/qatar" className="text-primary hover:underline">

@@ -73,7 +73,7 @@ const MarketResearch = () => {
             </p>
             <p className="text-muted-foreground leading-relaxed max-w-4xl mt-4">
               If your immediate priority is Saudi execution, begin with our{' '}
-              <Link to="/market-research-saudi-arabia-pharmaceutical" className="text-primary underline">
+              <Link to="/healthcare-market-research/saudi-arabia" className="text-primary underline">
                 pharmaceutical market research in Saudi Arabia
               </Link>{' '}
               page. For broader healthcare-specific planning, use{' '}
@@ -87,7 +87,7 @@ const MarketResearch = () => {
               .
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 mt-6">
-              <Link to="/market-research-uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              <Link to="/healthcare-market-research/uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 Market Research UAE
               </Link>
               <Link to="/market-research-ksa" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
@@ -318,7 +318,7 @@ const MarketResearch = () => {
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl font-display font-semibold text-foreground mb-4">Service links by objective</h2>
             <div className="grid md:grid-cols-2 gap-4">
-              <Link to="/market-research-saudi-arabia-pharmaceutical" className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 transition-colors">
+              <Link to="/healthcare-market-research/saudi-arabia" className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 transition-colors">
                 <h3 className="font-semibold text-foreground mb-1">Saudi pharmaceutical market strategy</h3>
                 <p className="text-sm text-muted-foreground">SFDA, local access dynamics, and Vision 2030 execution priorities.</p>
               </Link>

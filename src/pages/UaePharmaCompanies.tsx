@@ -61,7 +61,6 @@ const UaePharmaCompanies = () => {
       <Helmet>
         <title>Pharmaceutical Companies in the UAE | Industry Guide 2026 | BioNixus</title>
         <meta name="description" content="Complete guide to pharmaceutical companies in the UAE for 2026: top pharma companies list, $4.5B market size, MOHAP/DHA/DOH registration (6-14 months fastest in GCC), medical tourism, and industry outlook." />
-        <meta name="keywords" content="pharmaceutical companies in UAE, UAE pharmaceutical companies, pharma companies in UAE, top pharmaceutical companies in UAE, list of pharmaceutical companies in UAE, MOHAP drug registration, DHA DOH UAE pharma, UAE pharma market" />
         <link rel="canonical" href={citationUrl} />
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: 'Pharmaceutical Companies in the UAE: Complete Industry Guide 2026', description: 'Comprehensive guide to pharmaceutical companies operating in the United Arab Emirates — local manufacturers, MNC offices, distributors, $4.5B market data, MOHAP/DHA/DOH regulatory landscape, and medical tourism outlook.', url: citationUrl, datePublished: '2026-02-15', dateModified: '2026-02-15', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' } })}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' }, { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.bionixus.com/resources' }, { '@type': 'ListItem', position: 3, name: 'Pharmaceutical Companies in the UAE' }] })}</script>
@@ -174,7 +173,7 @@ const UaePharmaCompanies = () => {
           <p className="text-muted-foreground mb-10 max-w-3xl">BioNixus is a leading healthcare market research company with deep expertise in the UAE and GCC pharmaceutical markets. We help pharma, biotech, and medtech companies with:</p>
           <div className="grid md:grid-cols-2 gap-6 mb-10">{[
             { title: 'Physician Surveys & KOL Mapping', desc: 'Large-scale quantitative and qualitative research with UAE physicians across DHA, DOH, MOHAP, and private hospitals. Arabic-English bilingual capabilities.' },
-            { title: 'Market Access & Regulatory Strategy', desc: 'MOHAP/DHA/DOH formulary strategy, competitive pricing analysis, reimbursement landscape, and payer research to optimise commercial success in the UAE.' },
+            { title: 'Market Access & Regulatory Strategy', desc: 'MOHAP/DHA/DOH formulary strategy, competitive pricing analysis, reimbursement landscape, and payer research to optimize commercial success in the UAE.' },
             { title: 'Competitive Intelligence', desc: 'Real-time monitoring of competitor launches, tender outcomes, formulary changes, and market share across all therapeutic areas in the UAE and GCC.' },
             { title: 'Market Entry Strategy', desc: 'Comprehensive market assessment including regulatory pathway analysis (6–14 months fastest GCC), local partner identification, KOL engagement, and go-to-market planning for the UAE.' },
           ].map((s) => (<div key={s.title} className="bg-card border border-border rounded-xl p-6"><h3 className="text-lg font-display font-semibold text-foreground mb-3">{s.title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p></div>))}</div>
@@ -184,7 +183,7 @@ const UaePharmaCompanies = () => {
               healthcare market research services
             </Link>{' '}
             or contact our{' '}
-            <Link to="/global-websites/united-arab-emirates" className="text-primary hover:underline">
+            <Link to="/healthcare-market-research/uae" className="text-primary hover:underline">
               Dubai-based pharmaceutical market research team
             </Link>.
           </p>
@@ -206,7 +205,7 @@ const UaePharmaCompanies = () => {
                 healthcare market research services
               </Link>{' '}
               and our{' '}
-              <Link to="/global-websites/united-arab-emirates" className="text-primary hover:underline">
+              <Link to="/healthcare-market-research/uae" className="text-primary hover:underline">
                 Dubai pharmaceutical market research team
               </Link>.
             </p>

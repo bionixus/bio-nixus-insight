@@ -678,21 +678,31 @@ const BlogPost = () => {
               {post.title}
             </h1>
 
-            {/* Author row */}
+            {/* Author byline */}
             {post.authorName && (
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-3 mb-4">
                 {post.authorImage && (
                   <img
                     src={optimizeSanityImage(post.authorImage, 64, 64)}
                     alt={post.authorName}
-                    className="w-8 h-8 rounded-full object-cover"
+                    className="w-10 h-10 rounded-full object-cover"
                     loading="lazy"
                     decoding="async"
-                    width={32}
-                    height={32}
+                    width={40}
+                    height={40}
                   />
                 )}
-                <span className="text-sm font-medium text-foreground">{post.authorName}</span>
+                <div>
+                  <span className="text-sm font-medium text-foreground">{post.authorName}</span>
+                  {post.authorTitle && (
+                    <span className="block text-xs text-muted-foreground">{post.authorTitle}</span>
+                  )}
+                </div>
+                {post.updatedAtIso && post.updatedAtIso !== post.publishedAtIso && (
+                  <span className="text-xs text-muted-foreground ml-auto">
+                    Updated {new Date(post.updatedAtIso).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
+                  </span>
+                )}
               </div>
             )}
 

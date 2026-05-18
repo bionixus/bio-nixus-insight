@@ -79,7 +79,7 @@ const Navbar = () => {
           <Link to={basePath} className="flex items-center gap-3" onClick={handleLogoClick}>
             <img
               src="/bionixus-logo.webp"
-              alt="BioNixus"
+              alt="BioNixus — Healthcare & Pharmaceutical Market Research"
               className="h-9 w-auto object-contain"
               width={126}
               height={36}
@@ -122,6 +122,11 @@ const Navbar = () => {
                     </Link>
                   </DropdownMenuItem>
                 ))}
+                <DropdownMenuItem asChild>
+                  <Link to="/quantitative-healthcare-market-research" className="cursor-pointer font-medium text-primary">
+                    Quantitative Research Guide 2026
+                  </Link>
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>

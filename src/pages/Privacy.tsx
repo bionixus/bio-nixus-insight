@@ -7,8 +7,8 @@ const Privacy = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Privacy Policy & Terms of Service | BioNixus</title>
-        <meta name="description" content="BioNixus privacy policy and terms of service. GDPR-compliant data protection, cookie policy, and your rights regarding personal data collected through our healthcare market research services." />
+        <title>Privacy Policy | BioNixus</title>
+        <meta name="description" content="BioNixus privacy policy. GDPR-compliant data protection, cookie policy, and your rights regarding personal data collected through our healthcare market research services." />
         <link rel="canonical" href="https://www.bionixus.com/privacy" />
       </Helmet>
       <Navbar />
@@ -80,22 +80,8 @@ const Privacy = () => {
             We may update this policy from time to time. The &quot;Last updated&quot; date at the top will change, and we encourage you to review this page periodically.
           </p>
 
-          <h2 id="terms" className="mt-12 text-xl font-semibold scroll-mt-20">Terms of Service</h2>
-          <p>
-            Use of this website and our services is subject to these terms. By using our site you agree to this Privacy Policy and our use of cookies as described.
-          </p>
-
-          <h3 className="mt-6 text-lg font-semibold">Our commitment to you</h3>
-          <p>
-            We respect our clients and value the trust you place in us. BioNixus is committed to acting with integrity, transparency, and professionalism in all our engagements. We will always support you throughout our partnership—from initial enquiry through delivery and beyond—and we aim to respond to your needs promptly and fairly. Our goal is to build long-term relationships founded on mutual respect and high-quality healthcare market research.
-          </p>
-
-          <h3 className="mt-6 text-lg font-semibold">Services and content</h3>
-          <p>
-            We provide healthcare market research services. Content on this site is for general information only and does not constitute professional advice. We reserve the right to update these terms; continued use after changes constitutes acceptance.
-          </p>
-
-          <p className="mt-10">
+          <p className="mt-10 flex gap-6">
+            <Link to="/terms" className="text-primary font-medium hover:underline">Terms of Service</Link>
             <Link to="/" className="text-primary font-medium hover:underline">Back to home</Link>
           </p>
         </div>

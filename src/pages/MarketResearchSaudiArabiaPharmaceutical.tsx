@@ -186,7 +186,11 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
               <Link to="/market-research" className="text-primary underline">
                 market research services hub
               </Link>{' '}
-              and then apply Saudi-specific evidence to prioritize launch and growth investments.
+              and then apply Saudi-specific evidence to prioritize launch and growth investments. For pharmacy channel
+              strategy and retail activation research, see{' '}
+              <Link to="/pharmacies-saudi-arabia-marketing" className="text-primary underline">
+                pharmacy market research and marketing automation in Saudi Arabia
+              </Link>.
             </p>
           </div>
         </section>

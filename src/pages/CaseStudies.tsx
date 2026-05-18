@@ -16,6 +16,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { STATS } from '@/lib/companyStats';
 
 // Research areas and capabilities we want to showcase
 const RESEARCH_AREAS = [
@@ -70,6 +71,7 @@ const CaseStudies = () => {
   const [loading, setLoading] = useState(ssrCaseStudies.length === 0);
   const [selectedCategory, setSelectedCategory] = useState<string>('');
   const [selectedCountry, setSelectedCountry] = useState<string>('');
+  const [selectedMethodology, setSelectedMethodology] = useState<string>('');
 
   useEffect(() => {
     if (ssrCaseStudies.length > 0) {
@@ -101,13 +103,19 @@ const CaseStudies = () => {
     return Array.from(set).sort();
   }, [caseStudies]);
 
+  const methodologies = useMemo(() => {
+    const set = new Set(caseStudies.map((c) => c.methodology).filter(Boolean));
+    return Array.from(set).sort();
+  }, [caseStudies]);
+
   const filteredList = useMemo(() => {
     return caseStudies.filter((c) => {
       if (selectedCategory && c.category !== selectedCategory) return false;
       if (selectedCountry && c.country !== selectedCountry) return false;
+      if (selectedMethodology && c.methodology !== selectedMethodology) return false;
       return true;
     });
-  }, [caseStudies, selectedCategory, selectedCountry]);
+  }, [caseStudies, selectedCategory, selectedCountry, selectedMethodology]);
 
   // Split: first is featured, rest are secondary
   const [featured, ...rest] = filteredList;
@@ -142,10 +150,10 @@ const CaseStudies = () => {
             {/* Authority stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto">
               {[
-                { icon: <TrendingUp className="w-5 h-5" />, value: '120+', label: 'Projects Delivered' },
-                { icon: <Globe className="w-5 h-5" />, value: '17+', label: 'Countries Covered' },
-                { icon: <FlaskConical className="w-5 h-5" />, value: '14+', label: 'Therapeutic Areas' },
-                { icon: <Users className="w-5 h-5" />, value: '25+', label: 'Clients Served' },
+                { icon: <TrendingUp className="w-5 h-5" />, value: STATS.projects, label: 'Projects Delivered' },
+                { icon: <Globe className="w-5 h-5" />, value: STATS.countries, label: 'Countries Covered' },
+                { icon: <FlaskConical className="w-5 h-5" />, value: STATS.therapyAreas, label: 'Therapeutic Areas' },
+                { icon: <Users className="w-5 h-5" />, value: STATS.clients, label: 'Clients Served' },
               ].map(({ icon, value, label }) => (
                 <div key={label} className="text-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-5">
                   <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-gold-warm/20 text-gold-warm mb-3">
@@ -163,7 +171,7 @@ const CaseStudies = () => {
           <div className="container-wide">
 
             {/* Filters */}
-            {!loading && caseStudies.length > 0 && (categories.length > 1 || countries.length > 1) && (
+            {!loading && caseStudies.length > 0 && (categories.length > 1 || countries.length > 1 || methodologies.length > 1) && (
               <div className="flex flex-wrap gap-4 mb-10">
                 {categories.length > 1 && (
                   <div className="flex items-center gap-2">
@@ -185,6 +193,18 @@ const CaseStudies = () => {
                       <SelectContent>
                         <SelectItem value="all">All countries</SelectItem>
                         {countries.map((c) => <SelectItem key={c} value={c}>{c}</SelectItem>)}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                )}
+                {methodologies.length > 1 && (
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm text-muted-foreground whitespace-nowrap">Methodology</span>
+                    <Select value={selectedMethodology || 'all'} onValueChange={(v) => setSelectedMethodology(v === 'all' ? '' : v)}>
+                      <SelectTrigger className="w-[180px]"><SelectValue placeholder="All methods" /></SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="all">All methods</SelectItem>
+                        {methodologies.map((m) => <SelectItem key={m} value={m}>{m}</SelectItem>)}
                       </SelectContent>
                     </Select>
                   </div>
@@ -277,12 +297,24 @@ const CaseStudies = () => {
                             <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full">{item.category}</span>
                           )}
                           {item.country && (
-                            <span className="text-xs text-muted-foreground">{item.country}</span>
+                            <span className="px-2 py-1 bg-muted text-muted-foreground text-xs font-medium rounded-full">{item.country}</span>
+                          )}
+                          {item.therapyArea && (
+                            <span className="px-2 py-1 bg-amber-100 text-amber-800 text-xs font-medium rounded-full">{item.therapyArea}</span>
+                          )}
+                          {item.methodology && (
+                            <span className="px-2 py-1 bg-sky-100 text-sky-800 text-xs font-medium rounded-full">{item.methodology}</span>
+                          )}
+                          {(item.year || item.date) && (
+                            <span className="text-xs text-muted-foreground">{item.year || new Date(item.date).getFullYear()}</span>
                           )}
                         </div>
                         <h2 className="text-lg font-display font-semibold text-foreground group-hover:text-primary transition-colors leading-tight">
                           {item.title}
                         </h2>
+                        {item.outcomeMetric && (
+                          <p className="text-sm font-semibold text-primary">{item.outcomeMetric}</p>
+                        )}
                         {item.excerpt && (
                           <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3 flex-1">{item.excerpt}</p>
                         )}

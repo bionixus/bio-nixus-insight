@@ -55,7 +55,7 @@ export default function ArabicBlogAlsawdyh() {
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
               للمزيد من الخدمات المرتبطة، تفضل بزيارة صفحة{' '}
-              <Link to="/market-research-saudi-arabia-pharmaceutical" className="text-primary underline">
+              <Link to="/healthcare-market-research/saudi-arabia" className="text-primary underline">
                 أبحاث السوق الدوائي في السعودية
               </Link>
               .

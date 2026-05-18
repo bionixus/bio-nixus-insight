@@ -12,13 +12,14 @@ const Footer = () => {
   const [portalOpen, setPortalOpen] = useState(false);
   const [nlName, setNlName] = useState('');
   const [nlEmail, setNlEmail] = useState('');
+  const [nlConsent, setNlConsent] = useState(false);
   const [nlLoading, setNlLoading] = useState(false);
   const [nlStatus, setNlStatus] = useState<'idle' | 'success' | 'already' | 'error'>('idle');
   const f = t.footer as Record<string, string>;
 
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!nlName.trim() || !nlEmail.trim()) return;
+    if (!nlName.trim() || !nlEmail.trim() || !nlConsent) return;
     setNlLoading(true);
     setNlStatus('idle');
     try {
@@ -78,7 +79,7 @@ const Footer = () => {
             <Link to={basePath} className="flex items-center gap-3 mb-6" onClick={handleLogoClick}>
               <img
                 src="/bionixus-logo-footer.webp"
-                alt="BioNixus"
+                alt="BioNixus — Healthcare Market Research Company"
                 className="h-10 w-auto object-contain [filter:brightness(0)_invert(1)]"
                 width={200}
                 height={80}
@@ -105,32 +106,49 @@ const Footer = () => {
                   ✓ {f.newsletterSuccess || 'Check your email to verify!'}
                 </p>
               ) : (
-                <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-2">
-                  <input
-                    type="text"
-                    value={nlName}
-                    onChange={(e) => setNlName(e.target.value)}
-                    placeholder={f.newsletterPlaceholder || 'Your name'}
-                    required
-                    className="flex-1 min-w-0 px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-primary-foreground placeholder:text-primary-foreground/40 text-sm focus:outline-none focus:border-white/40 transition-colors"
-                  />
-                  <input
-                    type="email"
-                    value={nlEmail}
-                    onChange={(e) => setNlEmail(e.target.value)}
-                    placeholder={f.newsletterEmailPlaceholder || 'Work email'}
-                    required
-                    className="flex-1 min-w-0 px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-primary-foreground placeholder:text-primary-foreground/40 text-sm focus:outline-none focus:border-white/40 transition-colors"
-                  />
-                  <button
-                    type="submit"
-                    disabled={nlLoading}
-                    className="px-4 py-2 rounded-lg bg-white text-primary font-semibold text-sm hover:bg-white/90 transition-colors disabled:opacity-60 disabled:cursor-not-allowed whitespace-nowrap"
-                  >
-                    {nlLoading
-                      ? (f.newsletterSubscribing || 'Subscribing...')
-                      : (f.newsletterButton || 'Subscribe')}
-                  </button>
+                <form onSubmit={handleNewsletterSubmit} className="space-y-2">
+                  <div className="flex flex-col sm:flex-row gap-2">
+                    <input
+                      type="text"
+                      value={nlName}
+                      onChange={(e) => setNlName(e.target.value)}
+                      placeholder={f.newsletterPlaceholder || 'Your name'}
+                      required
+                      className="flex-1 min-w-0 px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-primary-foreground placeholder:text-primary-foreground/40 text-sm focus:outline-none focus:border-white/40 transition-colors"
+                    />
+                    <input
+                      type="email"
+                      value={nlEmail}
+                      onChange={(e) => setNlEmail(e.target.value)}
+                      placeholder={f.newsletterEmailPlaceholder || 'Work email'}
+                      required
+                      className="flex-1 min-w-0 px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-primary-foreground placeholder:text-primary-foreground/40 text-sm focus:outline-none focus:border-white/40 transition-colors"
+                    />
+                    <button
+                      type="submit"
+                      disabled={nlLoading || !nlConsent}
+                      className="px-4 py-2 rounded-lg bg-white text-primary font-semibold text-sm hover:bg-white/90 transition-colors disabled:opacity-60 disabled:cursor-not-allowed whitespace-nowrap"
+                    >
+                      {nlLoading
+                        ? (f.newsletterSubscribing || 'Subscribing...')
+                        : (f.newsletterButton || 'Subscribe')}
+                    </button>
+                  </div>
+                  <label className="flex items-start gap-2 text-xs text-primary-foreground/60 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={nlConsent}
+                      onChange={(e) => setNlConsent(e.target.checked)}
+                      required
+                      className="mt-0.5 rounded border-white/30"
+                    />
+                    <span>
+                      I would like to receive monthly EMEA pharma research insights from BioNixus. I can unsubscribe anytime.{' '}
+                      <Link to="/privacy" className="text-primary-foreground/80 underline hover:no-underline">
+                        Privacy Policy
+                      </Link>
+                    </span>
+                  </label>
                 </form>
               )}
               {nlStatus === 'error' && (
@@ -195,7 +213,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/market-research-saudi-arabia-pharmaceutical"
+                  to="/healthcare-market-research/saudi-arabia"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
                   Saudi Pharma Market Research
@@ -251,7 +269,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/conf"
+                  to="/strategic-portfolio"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
                   Strategic Portfolio
@@ -283,7 +301,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/market-research-uae"
+                  to="/healthcare-market-research/uae"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
                   Market Research in UAE
@@ -291,7 +309,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/uae-pharmaceutical-market-research"
+                  to="/healthcare-market-research/uae"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
                   UAE Pharmaceutical Market Research
@@ -307,7 +325,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/global-websites/united-arab-emirates"
+                  to="/healthcare-market-research/uae"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
                   Dubai · UAE
@@ -411,7 +429,7 @@ const Footer = () => {
               {t.footer.privacy}
             </Link>
             <Link
-              to="/privacy#terms"
+              to="/terms"
               className="text-primary-foreground/60 hover:text-primary-foreground transition-colors"
             >
               {t.footer.terms}

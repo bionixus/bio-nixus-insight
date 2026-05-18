@@ -229,7 +229,7 @@ export default function ArTopMarketResearchCompaniesEgypt2026() {
               نُشر أبريل 2026 · فريق أبحاث بيونيكسس · 14 دقيقة قراءة
             </p>
             <p className="text-sm text-muted-foreground mt-2">
-              <Link to="/insights/top-market-research-companies-egypt-2026" className="text-primary hover:underline">
+              <Link to="/blog/top-market-research-companies-egypt-2026" className="text-primary hover:underline">
                 Read this article in English
               </Link>
             </p>
@@ -358,11 +358,11 @@ export default function ArTopMarketResearchCompaniesEgypt2026() {
             <h2 className="text-xl font-display font-semibold text-foreground mb-6">موارد ذات صلة</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
-                { to: '/ar/conf', label: 'الملف الاستراتيجي لبيونيكسس', desc: 'نظرة شاملة على قدرات أبحاث السوق والاستشارات.' },
+                { to: '/ar/strategic-portfolio', label: 'الملف الاستراتيجي لبيونيكسس', desc: 'نظرة شاملة على قدرات أبحاث السوق والاستشارات.' },
                 { to: '/pharmaceutical-companies-egypt', label: 'الشركات الدوائية في مصر', desc: 'أكثر من 20 شركة أدوية، بيانات سوق $5.8B، ودليل هيئة الدواء.' },
                 { to: '/healthcare-market-research/egypt', label: 'أبحاث سوق الرعاية الصحية في مصر', desc: 'محور الدولة مع الأسئلة الشائعة والإحصاءات والتركيز العلاجي.' },
                 { to: '/ar/market-research-egypt', label: 'أبحاث السوق في مصر', desc: 'صفحة استخبارات القطاع الصحي والدوائي.' },
-                { to: '/insights/top-market-research-companies-egypt-2026', label: 'English Version', desc: 'Read the full guide in English.' },
+                { to: '/blog/top-market-research-companies-egypt-2026', label: 'English Version', desc: 'Read the full guide in English.' },
                 { to: '/ar/contacts', label: 'طلب عرض سعر', desc: 'تواصل معنا لمشروع أبحاث مخصص في مصر.' },
               ].map((r) => (
                 <Link
@@ -396,7 +396,7 @@ export default function ArTopMarketResearchCompaniesEgypt2026() {
                 طلب عرض سعر <ArrowRight className="w-4 h-4 rotate-180" />
               </Link>
               <Link
-                to="/ar/conf"
+                to="/ar/strategic-portfolio"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-primary-foreground font-semibold hover:bg-white/20 transition-colors"
               >
                 عرض الملف الاستراتيجي

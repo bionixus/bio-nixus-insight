@@ -57,7 +57,7 @@ const Index = () => {
       highlight: false,
     },
     {
-      to: '/market-research-saudi-arabia-pharmaceutical',
+      to: '/healthcare-market-research/saudi-arabia',
       title: 'Saudi Arabia Pharmaceutical Research',
       description:
         'SFDA-aligned pharmaceutical and healthcare market research intelligence for launch, access, and growth in KSA.',
@@ -66,7 +66,7 @@ const Index = () => {
       decisionHint: 'Best for country-level execution',
     },
     {
-      to: '/global-websites/united-arab-emirates',
+      to: '/healthcare-market-research/uae',
       title: 'UAE Pharmaceutical Market Research',
       description:
         'Dubai and Abu Dhabi healthcare intelligence for drug development, market access, and quantitative and qualitative research across the Emirates.',
@@ -84,7 +84,7 @@ const Index = () => {
       decisionHint: 'Best for Middle East launch and access decisions',
     },
     {
-      to: '/conf',
+      to: '/strategic-portfolio',
       title: 'Strategic Portfolio',
       description:
         'Full capability overview: 127+ projects, 48 global clients, dual-practice healthcare and consumer research across Egypt and MENA.',
@@ -93,7 +93,7 @@ const Index = () => {
       decisionHint: 'See our market research portfolio',
     },
     {
-      to: '/insights/top-market-research-companies-egypt-2026',
+      to: '/blog/top-market-research-companies-egypt-2026',
       title: 'Top Market Research Companies in Egypt (2026)',
       description:
         'Independent guide comparing 5 leading firms for healthcare, pharma, and consumer research in Egypt — the largest market in MENA.',

@@ -32,6 +32,16 @@ const About = () => {
         ]}
       />
       <Helmet>
+        <script type="application/ld+json">{JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' },
+            { '@type': 'ListItem', position: 2, name: 'About', item: 'https://www.bionixus.com/about' },
+          ],
+        })}</script>
+      </Helmet>
+      <Helmet>
         <title>About BioNixus | International Healthcare Market Research — EMEA Heritage</title>
         <meta
           name="description"
@@ -63,7 +73,7 @@ const About = () => {
               International Market Research Company with Deep EMEA Heritage
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mb-8 sr sr-up">
-              BioNixus is an international healthcare market research firm headquartered in the United States with offices in London, United Kingdom. We specialise in pharmaceutical and life sciences consulting across Europe, the Middle East, and North Africa.
+              BioNixus is an international healthcare market research firm headquartered in the United States with offices in London, United Kingdom. We specialize in pharmaceutical and life sciences consulting across Europe, the Middle East, and North Africa.
             </p>
           </div>
         </section>

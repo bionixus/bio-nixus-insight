@@ -151,12 +151,12 @@ export const translations = {
       ],
     },
     testimonials: {
-      title: 'Client Perspectives',
-      subtitle: 'Trusted by leading pharmaceutical and biotech companies worldwide',
+      title: 'Featured Case Studies',
+      subtitle: 'Real outcomes from our work with pharmaceutical and biotech teams worldwide',
       items: [
-        { quote: 'BioNixus transformed our market access strategy with insights that were both rigorous and actionable. Their regional depth across MENA was unmatched.', author: 'Senior Director', role: 'VP Market Access', company: 'Top-5 Global Pharma Company' },
-        { quote: 'The depth of competitive intelligence and speed of delivery exceeded our expectations. A true strategic partner for our EMEA expansion.', author: 'Strategy Lead', role: 'Chief Strategy Officer', company: 'Mid-Cap Biotech Firm' },
-        { quote: 'Their KOL mapping and patient journey research directly influenced our launch success in three major European markets.', author: 'Commercial Lead', role: 'Commercial Director', company: 'Specialty Pharma Company' },
+        { quote: 'Read how BioNixus shaped a Top-10 pharma\u2019s GCC oncology launch strategy with quantitative physician surveys and competitive intelligence.', author: 'GCC Oncology Launch', role: 'Case Study', company: 'Multinational Pharmaceutical' },
+        { quote: 'See how BioNixus helped a mid-cap biotech accelerate EMEA expansion with multi-country KOL mapping and market access diagnostics.', author: 'EMEA Expansion', role: 'Case Study', company: 'Mid-Cap Biotech' },
+        { quote: 'Discover how BioNixus delivered launch-readiness evidence for a specialty pharma entering three European markets with payer and hospital research.', author: 'European Launch Readiness', role: 'Case Study', company: 'Specialty Pharmaceutical' },
       ],
     },
     contactPage: {
@@ -419,12 +419,12 @@ export const translations = {
       ],
     },
     testimonials: {
-      title: 'Kundenperspektiven',
-      subtitle: 'Vertraut von führenden Pharma- und Biotech-Unternehmen weltweit',
+      title: 'Ausgewählte Fallstudien',
+      subtitle: 'Konkrete Ergebnisse unserer Arbeit mit Pharma- und Biotech-Teams weltweit',
       items: [
-        { quote: 'BioNixus hat unsere Marktzugangsstrategie mit Erkenntnissen transformiert, die sowohl rigoros als auch umsetzbar waren. Ihre regionale Tiefe in MENA war unübertroffen.', author: 'Senior Director', role: 'VP Marktzugang', company: 'Top-5 Globales Pharmaunternehmen' },
-        { quote: 'Die Tiefe der Wettbewerbsintelligenz und die Liefergeschwindigkeit übertrafen unsere Erwartungen. Ein wahrer strategischer Partner für unsere EMEA-Expansion.', author: 'Strategieleiter', role: 'Chief Strategy Officer', company: 'Mittelständisches Biotech-Unternehmen' },
-        { quote: 'Ihr Meinungsführer-Mapping (KOL) und Patient-Journey-Forschung beeinflussten unseren Markteintrittserfolg in drei europäischen Kernmärkten direkt.', author: 'Commercial Lead', role: 'Commercial Director', company: 'Spezial-Pharmaunternehmen' },
+        { quote: 'Erfahren Sie, wie BioNixus die GCC-Onkologie-Einführungsstrategie eines Top-10-Pharmaunternehmens mit quantitativen Ärztebefragungen und Wettbewerbsanalysen gestaltete.', author: 'GCC-Onkologie-Launch', role: 'Fallstudie', company: 'Multinationales Pharmaunternehmen' },
+        { quote: 'Sehen Sie, wie BioNixus einem mittelständischen Biotech-Unternehmen half, die EMEA-Expansion mit länderübergreifendem KOL-Mapping und Marktzugangsdiagnostik zu beschleunigen.', author: 'EMEA-Expansion', role: 'Fallstudie', company: 'Mittelständisches Biotech' },
+        { quote: 'Entdecken Sie, wie BioNixus Launch-Readiness-Evidenz für ein Spezialpharma-Unternehmen lieferte, das mit Kostenträger- und Klinikforschung in drei europäische Märkte eintrat.', author: 'Europäische Markteinführung', role: 'Fallstudie', company: 'Spezial-Pharmaunternehmen' },
       ],
     },
     contact: {
@@ -672,12 +672,12 @@ export const translations = {
       ],
     },
     testimonials: {
-      title: 'Perspectives Clients',
-      subtitle: 'Approuvé par les principales entreprises pharmaceutiques et biotechnologiques mondiales',
+      title: 'Études de Cas',
+      subtitle: 'Résultats concrets de notre travail avec des équipes pharmaceutiques et biotechnologiques',
       items: [
-        { quote: 'BioNixus a transformé notre stratégie d\'accès au marché avec des insights à la fois rigoureux et exploitables. Leur profondeur régionale en MENA était inégalée.', author: 'Directeur Senior', role: 'VP Accès au Marché', company: 'Entreprise Pharma Top-5 Mondiale' },
-        { quote: 'La profondeur de l\'intelligence concurrentielle et la rapidité de livraison ont dépassé nos attentes. Un véritable partenaire stratégique pour notre expansion EMEA.', author: 'Responsable Stratégie', role: 'Chief Strategy Officer', company: 'Société Biotech Mid-Cap' },
-        { quote: 'Leur cartographie des Leaders d\'Opinion Clés (KOL) et la recherche du parcours patient ont directement influencé notre succès de lancement sur trois marchés européens majeurs.', author: 'Responsable Commercial', role: 'Directeur Commercial', company: 'Société Pharma Spécialisée' },
+        { quote: 'Découvrez comment BioNixus a façonné la stratégie de lancement en oncologie GCC d\u2019un laboratoire Top-10 grâce à des enquêtes quantitatives auprès de médecins et à la veille concurrentielle.', author: 'Lancement Oncologie GCC', role: 'Étude de Cas', company: 'Pharmaceutique Multinationale' },
+        { quote: 'Voyez comment BioNixus a aidé une biotech mid-cap à accélérer son expansion EMEA avec un mapping KOL multi-pays et un diagnostic d\u2019accès au marché.', author: 'Expansion EMEA', role: 'Étude de Cas', company: 'Biotech Mid-Cap' },
+        { quote: 'Apprenez comment BioNixus a fourni les preuves de préparation au lancement pour un laboratoire spécialisé entrant sur trois marchés européens avec des recherches payeurs et hospitalières.', author: 'Préparation Lancement Europe', role: 'Étude de Cas', company: 'Pharmaceutique Spécialisée' },
       ],
     },
     contact: {
@@ -925,12 +925,12 @@ export const translations = {
       ],
     },
     testimonials: {
-      title: 'Perspectivas de Clientes',
-      subtitle: 'Confiado por empresas farmacéuticas y biotecnológicas líderes en todo el mundo',
+      title: 'Casos de Estudio Destacados',
+      subtitle: 'Resultados reales de nuestro trabajo con equipos farmacéuticos y biotecnológicos en todo el mundo',
       items: [
-        { quote: 'BioNixus transformó nuestra estrategia de acceso al mercado con insights rigurosos y accionables. Su profundidad regional en MENA fue incomparable.', author: 'Director Senior', role: 'VP Acceso al Mercado', company: 'Empresa Pharma Top-5 Global' },
-        { quote: 'La profundidad de la inteligencia competitiva y la rapidez de entrega superaron nuestras expectativas. Un verdadero socio estratégico para nuestra expansión EMEA.', author: 'Líder de Estrategia', role: 'Chief Strategy Officer', company: 'Empresa Biotech Mid-Cap' },
-        { quote: 'Su mapeo de Líderes de Opinión Clave (KOL) y la investigación del recorrido del paciente influyeron directamente en nuestro éxito de lanzamiento en tres mercados europeos clave.', author: 'Líder Comercial', role: 'Director Comercial', company: 'Empresa Pharma Especializada' },
+        { quote: 'Lea cómo BioNixus diseñó la estrategia de lanzamiento oncológico en el GCC de una farmacéutica Top-10 con encuestas cuantitativas a médicos e inteligencia competitiva.', author: 'Lanzamiento Oncología GCC', role: 'Caso de Estudio', company: 'Farmacéutica Multinacional' },
+        { quote: 'Vea cómo BioNixus ayudó a una biotech mid-cap a acelerar su expansión EMEA con mapeo de KOL multi-país y diagnósticos de acceso al mercado.', author: 'Expansión EMEA', role: 'Caso de Estudio', company: 'Biotech Mid-Cap' },
+        { quote: 'Descubra cómo BioNixus proporcionó evidencia de preparación al lanzamiento para una farmacéutica especializada que ingresaba a tres mercados europeos con investigación de pagadores y hospitales.', author: 'Preparación Lanzamiento Europa', role: 'Caso de Estudio', company: 'Farmacéutica Especializada' },
       ],
     },
     contact: {
@@ -1177,12 +1177,12 @@ export const translations = {
       ],
     },
     testimonials: {
-      title: '客户观点',
-      subtitle: '受到全球领先制药和生物技术公司的信赖',
+      title: '精选案例研究',
+      subtitle: '我们与全球制药和生物技术团队合作的真实成果',
       items: [
-        { quote: 'BioNixus以严谨且可执行的洞察转变了我们的市场准入策略。他们在MENA地区的深度无与伦比。', author: '高级总监', role: '市场准入副总裁', company: '全球Top-5制药公司' },
-        { quote: '竞争情报的深度和交付速度均显著超出了我们的预期。是我们EMEA扩展中真正的战略合作伙伴。', author: '战略负责人', role: '首席战略官', company: '中型生物科技公司' },
-        { quote: '他们的关键意见领袖 (KOL) 映射和患者旅程研究直接影响了我们在三大欧洲市场的上市成功。', author: '商业负责人', role: '商业总监', company: '专科制药公司' },
+        { quote: '了解BioNixus如何通过定量医生调研和竞争情报，为一家Top-10跨国药企制定GCC肿瘤产品上市策略。', author: 'GCC肿瘤上市', role: '案例研究', company: '跨国制药企业' },
+        { quote: '看BioNixus如何帮助一家中型生物科技公司，通过多国KOL映射和市场准入诊断加速EMEA扩张。', author: 'EMEA扩张', role: '案例研究', company: '中型生物科技' },
+        { quote: '发现BioNixus如何为一家专科制药公司进入三个欧洲市场提供上市准备证据，涵盖支付方和医院研究。', author: '欧洲上市准备', role: '案例研究', company: '专科制药企业' },
       ],
     },
     contact: {
@@ -1434,12 +1434,12 @@ export const translations = {
       ],
     },
     testimonials: {
-      title: 'آراء العملاء',
-      subtitle: 'موثوق به من قبل شركات الأدوية والتكنولوجيا الحيوية الرائدة في جميع أنحاء العالم',
+      title: 'دراسات حالة مختارة',
+      subtitle: 'نتائج حقيقية من عملنا مع فرق الأدوية والتكنولوجيا الحيوية حول العالم',
       items: [
-        { quote: 'حوّلت BioNixus استراتيجية وصولنا إلى السوق برؤى دقيقة وقابلة للتطبيق. عمقهم الإقليمي في منطقة الشرق الأوسط وشمال أفريقيا لا مثيل له.', author: 'مدير أول', role: 'نائب رئيس الوصول للسوق', company: 'شركة أدوية عالمية من أكبر 5' },
-        { quote: 'لقد تجاوز عمق الذكاء التنافسي وسرعة التسليم توقعاتنا بشكل كبير. شريك استراتيجي حقيقي لتوسعنا في أوروبا والشرق الأوسط.', author: 'مسؤول الاستراتيجية', role: 'رئيس الاستراتيجية', company: 'شركة تكنولوجيا حيوية متوسطة' },
-        { quote: 'أثر رسم خرائط KOL وأبحاث رحلة المريض بشكل مباشر على نجاح إطلاقنا في ثلاثة أسواق أوروبية رئيسية.', author: 'المسؤول التجاري', role: 'المدير التجاري', company: 'شركة أدوية متخصصة' },
+        { quote: 'اقرأ كيف صاغت BioNixus استراتيجية إطلاق منتج أورام في دول الخليج لشركة أدوية عالمية من أكبر 10، من خلال استطلاعات كمية للأطباء والذكاء التنافسي.', author: 'إطلاق أورام الخليج', role: 'دراسة حالة', company: 'شركة أدوية متعددة الجنسيات' },
+        { quote: 'شاهد كيف ساعدت BioNixus شركة تكنولوجيا حيوية متوسطة في تسريع التوسع في أوروبا والشرق الأوسط عبر رسم خرائط KOL متعدد البلدان وتشخيصات الوصول للسوق.', author: 'التوسع في EMEA', role: 'دراسة حالة', company: 'شركة تكنولوجيا حيوية متوسطة' },
+        { quote: 'اكتشف كيف قدّمت BioNixus أدلة جاهزية الإطلاق لشركة أدوية متخصصة تدخل ثلاثة أسواق أوروبية من خلال أبحاث الجهات الدافعة والمستشفيات.', author: 'جاهزية الإطلاق الأوروبي', role: 'دراسة حالة', company: 'شركة أدوية متخصصة' },
       ],
     },
     contact: {

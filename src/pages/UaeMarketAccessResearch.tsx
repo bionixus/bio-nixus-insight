@@ -12,7 +12,7 @@ export default function UaeMarketAccessResearch() {
       links={[
         { to: '/healthcare-market-research-agency-gcc', label: 'Healthcare market research agency GCC', primary: true },
         { to: '/gcc-market-access-guide', label: 'GCC market access guide', primary: true },
-        { to: '/uae-pharmaceutical-market-research', label: 'Pharma market research company UAE' },
+        { to: '/healthcare-market-research/uae', label: 'Pharma market research company UAE' },
         { to: '/contact', label: 'Request UAE access scope' },
       ]}
       bullets={[

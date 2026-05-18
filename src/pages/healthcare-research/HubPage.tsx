@@ -233,7 +233,7 @@ export default function HubPage() {
             high-intent pages to move from broad strategy to proposal-ready execution.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-            <Link to="/market-research-uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+            <Link to="/healthcare-market-research/uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
               Market research in UAE — healthcare and pharmaceutical
             </Link>
             <Link
@@ -251,10 +251,10 @@ export default function HubPage() {
             <Link to="/healthcare-market-research-agency-gcc" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
               Healthcare market research agency GCC
             </Link>
-            <Link to="/market-research-saudi-arabia-pharmaceutical" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+            <Link to="/healthcare-market-research/saudi-arabia" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
               Pharma market research company in Saudi Arabia
             </Link>
-            <Link to="/uae-pharmaceutical-market-research" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+            <Link to="/healthcare-market-research/uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
               Pharma market research in UAE — company page
             </Link>
             <Link to="/bionixus-market-research-middle-east" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
@@ -374,11 +374,11 @@ export default function HubPage() {
             </ul>
             <p>
               For the{' '}
-              <Link to="/global-websites/united-arab-emirates" className="text-primary hover:underline">
+              <Link to="/healthcare-market-research/uae" className="text-primary hover:underline">
                 Dubai healthcare research team
               </Link>{' '}
               and full UAE capability overview, or explore our{' '}
-              <Link to="/conf" className="text-primary hover:underline">
+              <Link to="/strategic-portfolio" className="text-primary hover:underline">
                 strategic market research portfolio
               </Link>{' '}
               — 127 projects, 48 global clients, 17 top-20 global pharma relationships.
@@ -543,14 +543,14 @@ export default function HubPage() {
               <p className="text-sm text-muted-foreground">BOFU guide for selecting a GCC healthcare and pharma research partner.</p>
             </Link>
             <Link
-              to="/market-research-saudi-arabia-pharmaceutical"
+              to="/healthcare-market-research/saudi-arabia"
               className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors"
             >
               <h3 className="text-base font-semibold text-foreground mb-2">Pharma Market Research Company in Saudi Arabia</h3>
               <p className="text-sm text-muted-foreground">KSA-focused page for SFDA, launch, and market access execution planning.</p>
             </Link>
             <Link
-              to="/uae-pharmaceutical-market-research"
+              to="/healthcare-market-research/uae"
               className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors"
             >
               <h3 className="text-base font-semibold text-foreground mb-2">Pharma Market Research Company in UAE</h3>

@@ -160,10 +160,6 @@ const GccMarketAccessGuide = () => {
           name="description"
           content="Complete guide to pharmaceutical market access in the GCC: drug registration timelines, pricing mechanisms, reimbursement models, and regulatory requirements for Saudi Arabia (SFDA), UAE (MOHAP), Kuwait, Qatar, Bahrain & Oman."
         />
-        <meta
-          name="keywords"
-          content="GCC pharmaceutical registration, SFDA drug registration, MOHAP drug registration, pharmaceutical market access Saudi Arabia, UAE pharma registration, GCC pricing reimbursement, pharmaceutical regulatory affairs Middle East"
-        />
         <link rel="canonical" href={citationUrl} />
         <meta property="og:title" content="GCC Pharmaceutical Market Access Guide 2026 — Registration, Pricing & Reimbursement" />
         <meta property="og:description" content="Free guide: How to register pharmaceuticals in Saudi Arabia, UAE, Kuwait, Qatar, Bahrain & Oman. Registration timelines, pricing mechanisms, and regulatory requirements." />
@@ -442,10 +438,10 @@ const GccMarketAccessGuide = () => {
               <Link to="/mena-pharma-market-data" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 MENA pharmaceutical market data and growth outlook
               </Link>
-              <Link to="/market-research-saudi-arabia-pharmaceutical" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              <Link to="/healthcare-market-research/saudi-arabia" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 Saudi Arabia pharmaceutical market research and SFDA strategy
               </Link>
-              <Link to="/global-websites/united-arab-emirates" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              <Link to="/healthcare-market-research/uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 UAE pharmaceutical market research and access intelligence
               </Link>
               <Link to="/global-websites/kuwait" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
@@ -472,7 +468,7 @@ const GccMarketAccessGuide = () => {
               <Link to="/bionixus-market-research-middle-east" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 Pharmaceutical market research Middle East for launch planning
               </Link>
-              <Link to="/uae-pharmaceutical-market-research" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              <Link to="/healthcare-market-research/uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 Pharma market research company UAE for emirate evidence execution
               </Link>
               <Link to="/real-world-evidence-gcc" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">

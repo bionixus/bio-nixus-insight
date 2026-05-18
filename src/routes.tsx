@@ -12,6 +12,7 @@ import Insights from '@/pages/Insights';
 import SiteMapPage from '@/pages/SiteMapPage';
 import ServiceDetail from '@/pages/ServiceDetail';
 import Privacy from '@/pages/Privacy';
+const Terms = lazy(() => import('@/pages/Terms'));
 import Contact from '@/pages/Contact';
 import Methodology from '@/pages/Methodology';
 import VerifyEmail from '@/pages/VerifyEmail';
@@ -159,8 +160,8 @@ export const routes: RouteObject[] = [
   { path: '/global-websites', element: <GlobalWebsites /> },
   { path: '/global-websites/:countrySlug', element: <GlobalWebsiteCountry /> },
   { path: '/new-home', element: <PremiumHomePreview /> },
-  { path: '/conf', element: <ConfPortfolio /> },
-  { path: '/ar/conf', element: <ConfPortfolio locale="ar" /> },
+  { path: '/strategic-portfolio', element: <ConfPortfolio /> },
+  { path: '/ar/strategic-portfolio', element: <ConfPortfolio locale="ar" /> },
   { path: '/healthcare-market-research', element: <HubPage /> },
   { path: '/saudi-arabia', element: <CountryPage /> },
   { path: '/uae', element: <CountryPage /> },
@@ -196,6 +197,7 @@ export const routes: RouteObject[] = [
   { path: '/case-studies', element: <CaseStudies /> },
   { path: '/case-studies/:slug', element: suspensePage(<CaseStudy />) },
   { path: '/privacy', element: <Privacy /> },
+  { path: '/terms', element: suspensePage(<Terms />) },
   { path: '/contact', element: <Contact /> },
   { path: '/de/contact', element: <Contact /> },
   { path: '/fr/contacts', element: <Contact /> },

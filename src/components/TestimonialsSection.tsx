@@ -1,4 +1,5 @@
-import { Quote } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
@@ -46,33 +47,32 @@ const TestimonialsSection = () => {
           </p>
         </div>
 
-        {/* Testimonials Grid */}
+        {/* Case Study Teasers Grid */}
         <div className="grid lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div
+            <Link
               key={index}
-              className="bg-background p-8 rounded-xl shadow-sm border border-border sr sr-scale-up sr-spring hover-lift"
+              to="/case-studies"
+              className="group bg-background p-8 rounded-xl shadow-sm border border-border sr sr-scale-up sr-spring hover-lift block transition-colors hover:border-primary/30"
             >
-              <Quote className="w-10 h-10 text-gold-warm mb-6" />
-              <blockquote className="text-lg text-foreground leading-relaxed mb-8 font-display italic">
-                "{testimonial.quote}"
-              </blockquote>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <span className="text-lg font-semibold text-primary">
-                    {testimonial.author.charAt(0)}
-                  </span>
-                </div>
-                <div>
-                  <div className="font-semibold text-foreground">
-                    {testimonial.author}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    {testimonial.role}, {testimonial.company}
-                  </div>
-                </div>
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-xs font-semibold uppercase tracking-wider text-primary/80 bg-primary/10 px-3 py-1 rounded-full">
+                  {testimonial.role}
+                </span>
+                <span className="text-xs text-muted-foreground">
+                  {testimonial.company}
+                </span>
               </div>
-            </div>
+              <p className="text-lg text-foreground leading-relaxed mb-6 font-display">
+                {testimonial.quote}
+              </p>
+              <div className="flex items-center justify-between">
+                <span className="font-semibold text-foreground">
+                  {testimonial.author}
+                </span>
+                <ArrowRight className="w-5 h-5 text-primary/60 group-hover:text-primary group-hover:translate-x-1 transition-all" />
+              </div>
+            </Link>
           ))}
         </div>
 

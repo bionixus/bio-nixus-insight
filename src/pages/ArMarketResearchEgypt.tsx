@@ -29,7 +29,7 @@ export default function ArMarketResearchEgypt() {
         { to: '/market-research-egypt', label: 'Market Research Egypt (EN)' },
         { to: '/pharmaceutical-companies-egypt', label: 'Top pharmaceutical companies in Egypt' },
         { to: '/ar/insights/top-market-research-companies-egypt-2026', label: 'أفضل شركات أبحاث السوق في مصر (2026)' },
-        { to: '/ar/conf', label: 'الملف الاستراتيجي لبيونيكسس' },
+        { to: '/ar/strategic-portfolio', label: 'الملف الاستراتيجي لبيونيكسس' },
         { to: '/healthcare-market-research/egypt', label: 'أبحاث سوق الرعاية الصحية في مصر' },
         { to: '/ar/market-research-ksa', label: 'أبحاث السوق في السعودية KSA' },
         { to: '/bionixus-market-research-middle-east', label: 'Middle East pharmaceutical market research pillar' },

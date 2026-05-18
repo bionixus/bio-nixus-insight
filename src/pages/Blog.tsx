@@ -77,7 +77,7 @@ const Blog = () => {
       ? 'Regionale Insights für DACH und EMEA'
       : isFrench
         ? 'Insights régionaux pour la France et l’EMEA'
-        : 'Regional healthcare intelligence updates';
+        : 'Healthcare Market Research Insights & Pharmaceutical Industry Articles';
   const introText = isArabicBlog
     ? 'تضم هذه الصفحة مقالات عملية باللغة العربية لفرق الأدوية والأجهزة الطبية في المملكة ودول الخليج.'
     : isGerman
@@ -104,6 +104,10 @@ const Blog = () => {
         <title>{title}</title>
         <meta name="description" content={description} />
         <link rel="canonical" href={canonical} />
+        <link rel="alternate" hrefLang="x-default" href="https://www.bionixus.com/blog" />
+        <link rel="alternate" hrefLang="en" href="https://www.bionixus.com/blog" />
+        <link rel="alternate" hrefLang="de" href="https://www.bionixus.com/de/blog" />
+        <link rel="alternate" hrefLang="fr" href="https://www.bionixus.com/fr/blog" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="BioNixus" />
         <meta property="og:title" content={title} />
@@ -114,6 +118,7 @@ const Blog = () => {
         <meta name="twitter:site" content="@BioNixus" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content="https://www.bionixus.com/og-image.png" />
         <script type="application/ld+json">{JSON.stringify(collectionSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
@@ -237,11 +242,15 @@ const Blog = () => {
               Supplemental internal links to high-priority insight URLs from the latest crawl report.
             </p>
             <div className="grid md:grid-cols-2 gap-2">
-              {blogRecoveryPaths.map((path) => (
-                <Link key={path} to={path} className="text-primary hover:underline break-all">
-                  {path}
-                </Link>
-              ))}
+              {blogRecoveryPaths.map((path) => {
+                const slug = path.split('/').filter(Boolean).pop() ?? path;
+                const label = slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+                return (
+                  <Link key={path} to={path} className="text-primary hover:underline">
+                    {label}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>

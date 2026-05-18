@@ -11,7 +11,7 @@ export default function BudgetImpactModelSaudiArabia() {
       intro="BioNixus builds budget impact models for Saudi Arabia with local market assumptions, uptake scenarios, and payer-aligned evidence framing for practical access decisions."
       links={[
         { to: '/heor-consulting-saudi-arabia', label: 'HEOR consulting Saudi Arabia', primary: true },
-        { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Pharma market research company in Saudi Arabia', primary: true },
+        { to: '/healthcare-market-research/saudi-arabia', label: 'Pharma market research company in Saudi Arabia', primary: true },
         { to: '/saudi-payer-market-access-research', label: 'Saudi payer market access research' },
         { to: '/contact', label: 'Request budget-impact scope' },
       ]}

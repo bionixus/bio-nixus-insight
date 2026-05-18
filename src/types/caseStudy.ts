@@ -17,8 +17,12 @@ export interface CaseStudy {
   excerpt: string;
   body?: string;
   date: string;
+  year?: string;
   category: string;
   country: string;
+  therapyArea?: string;
+  methodology?: string;
+  outcomeMetric?: string;
   coverImage?: string;
   pdfUrl: string;
   language?: string;

@@ -342,7 +342,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
                   healthcare market research in Egypt
                 </Link>{' '}
                 hub. For the full strategic portfolio, visit the{' '}
-                <Link to="/conf" className="text-primary hover:underline">
+                <Link to="/strategic-portfolio" className="text-primary hover:underline">
                   BioNixus strategic portfolio
                 </Link>.
               </p>
@@ -510,7 +510,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
             <h2 className="text-xl font-display font-semibold text-foreground mb-6">Related Resources</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
-                { to: '/conf', label: 'BioNixus Strategic Portfolio', desc: 'Full portfolio of market research and consulting capabilities.' },
+                { to: '/strategic-portfolio', label: 'BioNixus Strategic Portfolio', desc: 'Full portfolio of market research and consulting capabilities.' },
                 { to: '/pharmaceutical-companies-egypt', label: 'Pharmaceutical Companies in Egypt', desc: '20+ pharma companies, $5.8B market data, EDA guide.' },
                 { to: '/healthcare-market-research/egypt', label: 'Healthcare Market Research in Egypt', desc: 'Country hub with FAQs, key stats, and therapy focus.' },
                 { to: '/market-research-egypt', label: 'Market Research Egypt', desc: 'Pharma and healthcare intelligence landing page.' },
@@ -548,7 +548,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
                 Request a Proposal <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                to="/conf"
+                to="/strategic-portfolio"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-primary-foreground font-semibold hover:bg-white/20 transition-colors"
               >
                 View Strategic Portfolio
