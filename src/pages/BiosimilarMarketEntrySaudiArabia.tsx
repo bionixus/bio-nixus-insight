@@ -1,14 +1,14 @@
 import { useEffect } from 'react';
 
 /**
- * Client-side navigations only: initial GET /bionixus-vs-iqvia-mena is served as a standalone
- * HTML page from Express (see server.js).
+ * Client-side navigations only: initial GET /biosimilar-market-entry-saudi-arabia is served
+ * as a standalone HTML page from Express (see server.js).
  * If users reach this route inside the SPA, force a full navigation so they load the
  * same static document.
  */
-export default function BionixusVsIqviaMena() {
+export default function BiosimilarMarketEntrySaudiArabia() {
   useEffect(() => {
-    window.location.replace('/bionixus-vs-iqvia-mena');
+    window.location.replace('/biosimilar-market-entry-saudi-arabia');
   }, []);
 
   return (
@@ -17,7 +17,7 @@ export default function BionixusVsIqviaMena() {
       role="status"
       aria-live="polite"
     >
-      Loading comparison…
+      Loading biosimilar strategy guide…
     </div>
   );
 }

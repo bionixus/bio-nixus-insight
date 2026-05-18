@@ -82,6 +82,31 @@
       "statusCode": 301
     },
     {
+      "source": "/bionixus-vs-iqvia-mena/",
+      "destination": "/bionixus-vs-iqvia-mena",
+      "statusCode": 301
+    },
+    {
+      "source": "/kol-mapping-saudi-arabia-oncology/",
+      "destination": "/kol-mapping-saudi-arabia-oncology",
+      "statusCode": 301
+    },
+    {
+      "source": "/physician-survey-saudi-arabia/",
+      "destination": "/physician-survey-saudi-arabia",
+      "statusCode": 301
+    },
+    {
+      "source": "/sfda-market-access-strategy-saudi-arabia/",
+      "destination": "/sfda-market-access-strategy-saudi-arabia",
+      "statusCode": 301
+    },
+    {
+      "source": "/biosimilar-market-entry-saudi-arabia/",
+      "destination": "/biosimilar-market-entry-saudi-arabia",
+      "statusCode": 301
+    },
+    {
       "source": "/assets/index-:hash.js",
       "destination": "/assets/index.js",
       "statusCode": 301
@@ -142,6 +167,26 @@
     {
       "source": "/ar/conf",
       "destination": "/conf/strategic-portfolio-ar.html"
+    },
+    {
+      "source": "/bionixus-vs-iqvia-mena",
+      "destination": "/conf/bionixus-vs-iqvia-mena.html"
+    },
+    {
+      "source": "/kol-mapping-saudi-arabia-oncology",
+      "destination": "/conf/kol-mapping-saudi-arabia-oncology.html"
+    },
+    {
+      "source": "/physician-survey-saudi-arabia",
+      "destination": "/conf/physician-survey-saudi-arabia.html"
+    },
+    {
+      "source": "/sfda-market-access-strategy-saudi-arabia",
+      "destination": "/conf/sfda-market-access-strategy-saudi-arabia.html"
+    },
+    {
+      "source": "/biosimilar-market-entry-saudi-arabia",
+      "destination": "/conf/biosimilar-market-entry-saudi-arabia.html"
     },
     {
       "source": "/blog/:slug",

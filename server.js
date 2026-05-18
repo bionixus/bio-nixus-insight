@@ -460,6 +460,66 @@ async function startServer() {
     res.type('html').sendFile(strategicPortfolioArAbsolutePath);
   });
 
+  /** Static comparison page — same pattern as strategic-portfolio. */
+  const vsIqviaAbsolutePath = path.resolve(
+    __dirname,
+    isProduction ? path.join('dist/client', 'conf/bionixus-vs-iqvia-mena.html') : path.join('public', 'conf/bionixus-vs-iqvia-mena.html'),
+  );
+  app.get('/bionixus-vs-iqvia-mena/', (_req, res) => {
+    res.redirect(301, '/bionixus-vs-iqvia-mena');
+  });
+  app.get('/bionixus-vs-iqvia-mena', (_req, res) => {
+    res.type('html').sendFile(vsIqviaAbsolutePath);
+  });
+
+  /** Static KOL mapping page. */
+  const kolMappingAbsolutePath = path.resolve(
+    __dirname,
+    isProduction ? path.join('dist/client', 'conf/kol-mapping-saudi-arabia-oncology.html') : path.join('public', 'conf/kol-mapping-saudi-arabia-oncology.html'),
+  );
+  app.get('/kol-mapping-saudi-arabia-oncology/', (_req, res) => {
+    res.redirect(301, '/kol-mapping-saudi-arabia-oncology');
+  });
+  app.get('/kol-mapping-saudi-arabia-oncology', (_req, res) => {
+    res.type('html').sendFile(kolMappingAbsolutePath);
+  });
+
+  /** Static physician survey page. */
+  const physicianSurveyAbsolutePath = path.resolve(
+    __dirname,
+    isProduction ? path.join('dist/client', 'conf/physician-survey-saudi-arabia.html') : path.join('public', 'conf/physician-survey-saudi-arabia.html'),
+  );
+  app.get('/physician-survey-saudi-arabia/', (_req, res) => {
+    res.redirect(301, '/physician-survey-saudi-arabia');
+  });
+  app.get('/physician-survey-saudi-arabia', (_req, res) => {
+    res.type('html').sendFile(physicianSurveyAbsolutePath);
+  });
+
+  /** Static SFDA market access page. */
+  const sfdaAccessAbsolutePath = path.resolve(
+    __dirname,
+    isProduction ? path.join('dist/client', 'conf/sfda-market-access-strategy-saudi-arabia.html') : path.join('public', 'conf/sfda-market-access-strategy-saudi-arabia.html'),
+  );
+  app.get('/sfda-market-access-strategy-saudi-arabia/', (_req, res) => {
+    res.redirect(301, '/sfda-market-access-strategy-saudi-arabia');
+  });
+  app.get('/sfda-market-access-strategy-saudi-arabia', (_req, res) => {
+    res.type('html').sendFile(sfdaAccessAbsolutePath);
+  });
+
+  /** Static biosimilar market entry page. */
+  const biosimilarAbsolutePath = path.resolve(
+    __dirname,
+    isProduction ? path.join('dist/client', 'conf/biosimilar-market-entry-saudi-arabia.html') : path.join('public', 'conf/biosimilar-market-entry-saudi-arabia.html'),
+  );
+  app.get('/biosimilar-market-entry-saudi-arabia/', (_req, res) => {
+    res.redirect(301, '/biosimilar-market-entry-saudi-arabia');
+  });
+  app.get('/biosimilar-market-entry-saudi-arabia', (_req, res) => {
+    res.type('html').sendFile(biosimilarAbsolutePath);
+  });
+
   let vite;
   if (!isProduction) {
     const { createServer } = await import('vite');

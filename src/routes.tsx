@@ -20,6 +20,10 @@ import MenaMarketData from '@/pages/MenaMarketData';
 import GccMarketAccessGuide from '@/pages/GccMarketAccessGuide';
 import BionixusVsIqviaMena from '@/pages/BionixusVsIqviaMena';
 import GccPharmaMarketReport2026 from '@/pages/GccPharmaMarketReport2026';
+import KolMappingSaudiArabiaOncology from '@/pages/KolMappingSaudiArabiaOncology';
+import PhysicianSurveySaudiArabia from '@/pages/PhysicianSurveySaudiArabia';
+import SfdaMarketAccessStrategySaudiArabia from '@/pages/SfdaMarketAccessStrategySaudiArabia';
+import BiosimilarMarketEntrySaudiArabia from '@/pages/BiosimilarMarketEntrySaudiArabia';
 import NotFound from '@/pages/NotFound';
 import MarketResearch from '@/pages/MarketResearch';
 import MarketResearchHome from '@/pages/MarketResearchHome';
@@ -142,6 +146,10 @@ export const routes: RouteObject[] = [
   { path: '/bionixus-market-research-middle-east', element: <BionixusMarketResearchMiddleEast /> },
   { path: '/bionixus-vs-iqvia-mena', element: <BionixusVsIqviaMena /> },
   { path: '/gcc-pharma-market-report-2026', element: <GccPharmaMarketReport2026 /> },
+  { path: '/kol-mapping-saudi-arabia-oncology', element: <KolMappingSaudiArabiaOncology /> },
+  { path: '/physician-survey-saudi-arabia', element: <PhysicianSurveySaudiArabia /> },
+  { path: '/sfda-market-access-strategy-saudi-arabia', element: <SfdaMarketAccessStrategySaudiArabia /> },
+  { path: '/biosimilar-market-entry-saudi-arabia', element: <BiosimilarMarketEntrySaudiArabia /> },
   { path: '/gcc-pharmaceutical-market-research', element: <GccPharmaceuticalMarketResearch /> },
   { path: '/uae-pharmaceutical-market-research', element: <UaePharmaceuticalMarketResearch /> },
   { path: '/saudi-payer-market-access-research', element: <SaudiPayerMarketAccessResearch /> },
