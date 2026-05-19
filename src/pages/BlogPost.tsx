@@ -1062,7 +1062,7 @@ const BlogPost = () => {
               >
                 <div className="absolute -top-8 -right-8 w-28 h-28 rounded-full opacity-[0.1] pointer-events-none" style={{ background: 'hsl(var(--accent))' }} />
                 <p className="text-[10px] font-extrabold tracking-[0.14em] uppercase mb-2" style={{ color: 'hsl(var(--accent))' }}>Expert Research</p>
-                <p className="font-display text-base font-bold text-white leading-snug mb-4">Need GCC pharma market research for your strategy team?</p>
+                <p className="font-display text-base font-bold text-white leading-snug mb-4">Need a pharma market research for your team?</p>
                 <Link
                   to="/contact"
                   className="flex items-center justify-center gap-1.5 py-2.5 text-[13px] font-bold rounded-md w-full transition-all hover:-translate-y-0.5"
