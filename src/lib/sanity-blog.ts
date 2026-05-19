@@ -34,7 +34,7 @@ const LATEST_INSIGHTS_QUERY = `*[
   _type == "blogPost" &&
   defined(slug.current) &&
   (!defined(language) || language == $language)
-] | order(publishedAt desc, _createdAt desc) {
+] | order(coalesce(publishedAt, _createdAt) desc) {
   _id,
   _type,
   title,

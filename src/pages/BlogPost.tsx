@@ -103,7 +103,9 @@ function portableTextToPlainString(blocks: PortableTextBlock[]): string {
 
 /** Render string body as HTML (sanitized). Plain text is escaped by the sanitizer. */
 function renderStringBody(body: string) {
-  const sanitized = sanitizeBodyHtml(body);
+  const sanitized = sanitizeBodyHtml(body)
+    .replace(/<table/g, '<div class="prose-table-wrap"><table')
+    .replace(/<\/table>/g, '</table></div>');
   return (
     <div
       className="prose-body text-foreground leading-relaxed"

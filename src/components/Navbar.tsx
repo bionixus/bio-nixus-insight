@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, ChevronDown, Globe2 } from 'lucide-react';
+import { Menu, X, Globe2, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languages } from '@/lib/i18n';
 import { getLocalizedPathForLanguage, languagePaths } from '@/lib/seo';
@@ -10,6 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,14 +64,6 @@ const Navbar = () => {
     { key: 'insights', href: insightsHref, label: t.nav.insights },
   ];
 
-  const healthcareMarketCountries = [
-    { label: 'Europe', href: '/healthcare-market-research/europe' },
-    { label: 'UK', href: '/healthcare-market-research/uk' },
-    { label: 'Saudi Arabia', href: '/healthcare-market-research/saudi-arabia' },
-    { label: 'UAE', href: '/healthcare-market-research/uae' },
-    { label: 'Kuwait', href: '/healthcare-market-research/kuwait' },
-  ];
-
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <div className="container-wide section-padding py-4">
@@ -100,35 +93,6 @@ const Navbar = () => {
                 {item.label}
               </Link>
             ))}
-            <DropdownMenu>
-              <DropdownMenuTrigger
-                type="button"
-                className="nav-link text-foreground/80 hover:text-foreground inline-flex items-center gap-1 rounded-md outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                aria-label="Healthcare market research regions and hub"
-              >
-                Healthcare Market Research
-                <ChevronDown className="w-4 h-4 text-muted-foreground shrink-0" aria-hidden />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="center" className="min-w-[240px]">
-                <DropdownMenuItem asChild>
-                  <Link to="/healthcare-market-research" className="cursor-pointer">
-                    EMEA Healthcare Research Hub
-                  </Link>
-                </DropdownMenuItem>
-                {healthcareMarketCountries.map((country) => (
-                  <DropdownMenuItem key={country.href} asChild>
-                    <Link to={country.href} className="cursor-pointer">
-                      {country.label}
-                    </Link>
-                  </DropdownMenuItem>
-                ))}
-                <DropdownMenuItem asChild>
-                  <Link to="/quantitative-healthcare-market-research" className="cursor-pointer font-medium text-primary">
-                    Quantitative Research Guide 2026
-                  </Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
           </div>
 
           {/* Language Selector & CTA */}
@@ -213,30 +177,6 @@ const Navbar = () => {
                   {item.label}
                 </Link>
               ))}
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-2">
-                  Healthcare market research
-                </p>
-                <Link
-                  to="/healthcare-market-research"
-                  className="text-foreground/80 hover:text-foreground font-medium block mb-3"
-                  onClick={() => setIsOpen(false)}
-                >
-                  EMEA Healthcare Research Hub
-                </Link>
-                <div className="pl-3 border-l border-border space-y-2">
-                  {healthcareMarketCountries.map((country) => (
-                    <Link
-                      key={country.href}
-                      to={country.href}
-                      className="block text-sm text-foreground/70 hover:text-foreground"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {country.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
               <Link
                 to="/global-websites"
                 className="text-foreground/80 hover:text-foreground font-medium"
