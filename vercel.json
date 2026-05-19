@@ -122,6 +122,11 @@
       "statusCode": 301
     },
     {
+      "source": "/gfk-alternative-egypt/",
+      "destination": "/gfk-alternative-egypt",
+      "statusCode": 301
+    },
+    {
       "source": "/assets/index-:hash.js",
       "destination": "/assets/index.js",
       "statusCode": 301
@@ -214,6 +219,10 @@
     {
       "source": "/kantar-health-alternative-gcc",
       "destination": "/conf/kantar-health-alternative-gcc.html"
+    },
+    {
+      "source": "/gfk-alternative-egypt",
+      "destination": "/conf/gfk-alternative-egypt.html"
     },
     {
       "source": "/blog/:slug",

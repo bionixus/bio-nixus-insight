@@ -556,6 +556,18 @@ async function startServer() {
     res.type('html').sendFile(kantarAltAbsolutePath);
   });
 
+  /** Static GfK Alternative Egypt page. */
+  const gfkAltEgyptAbsolutePath = path.resolve(
+    __dirname,
+    isProduction ? path.join('dist/client', 'conf/gfk-alternative-egypt.html') : path.join('public', 'conf/gfk-alternative-egypt.html'),
+  );
+  app.get('/gfk-alternative-egypt/', (_req, res) => {
+    res.redirect(301, '/gfk-alternative-egypt');
+  });
+  app.get('/gfk-alternative-egypt', (_req, res) => {
+    res.type('html').sendFile(gfkAltEgyptAbsolutePath);
+  });
+
   let vite;
   if (!isProduction) {
     const { createServer } = await import('vite');
