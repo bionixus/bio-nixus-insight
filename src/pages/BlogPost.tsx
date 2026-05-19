@@ -164,7 +164,8 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useInitialData } from '@/contexts/InitialDataContext';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { ArrowLeft, BarChart3, CheckCircle2, ShieldCheck, TrendingUp } from 'lucide-react';
+import { useEffect } from 'react';
+import { ArrowLeft, BarChart3, CheckCircle2, ShieldCheck, TrendingUp, Calendar, Clock, MapPin, AlignLeft, List, ArrowUpRight } from 'lucide-react';
 import {
   Accordion,
   AccordionContent,
@@ -172,7 +173,6 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import ShareButtons from '@/components/ShareButtons';
 import type { BlogPost as BlogPostType } from '@/types/blog';
 
@@ -327,60 +327,60 @@ function PremiumGcc2026Enhancement() {
   );
 }
 
-/** Portable text block renderers – match McKinsey prose-body styles */
+/** Portable text block renderers – premium editorial style */
 const portableTextComponents = {
   block: {
     h2: ({ children, value }: { children?: React.ReactNode, value?: any }) => (
-      <h2 id={slugifyHeading(value)} className="text-xl font-display font-semibold mt-10 mb-4 pb-0 border-l-4 border-primary pl-4 text-primary">
+      <h2 id={slugifyHeading(value)} className="blog-prose-h2 text-2xl font-display font-bold leading-snug tracking-tight text-primary mb-5">
         {children}
       </h2>
     ),
     h3: ({ children, value }: { children?: React.ReactNode, value?: any }) => (
-      <h3 id={slugifyHeading(value)} className="text-lg font-display font-semibold text-foreground mt-8 mb-3">
+      <h3 id={slugifyHeading(value)} className="text-xl font-display font-semibold text-foreground mt-8 mb-3 tracking-tight">
         {children}
       </h3>
     ),
     h4: ({ children, value }: { children?: React.ReactNode, value?: any }) => (
-      <h4 id={slugifyHeading(value)} className="text-base font-display font-semibold text-primary mt-0 mb-3">
+      <h4 id={slugifyHeading(value)} className="text-base font-display font-semibold text-primary mt-6 mb-2">
         {children}
       </h4>
     ),
     blockquote: ({ children }: { children?: React.ReactNode }) => (
-      <blockquote className="border-l-4 border-primary pl-4 my-4 text-muted-foreground italic">
-        {children}
+      <blockquote className="blog-pull-quote">
+        <p className="font-display text-xl italic leading-relaxed text-primary m-0">{children}</p>
       </blockquote>
     ),
     normal: ({ children }: { children?: React.ReactNode }) => (
-      <p className="mb-4 text-foreground">{children}</p>
+      <p className="mb-5 text-foreground text-[17px] leading-[1.82]">{children}</p>
     ),
   },
   list: {
     bullet: ({ children }: { children?: React.ReactNode }) => (
-      <ul className="list-disc pl-6 my-5 space-y-2">{children}</ul>
+      <ul className="my-5 space-y-2.5 pl-0 list-none">{children}</ul>
     ),
     number: ({ children }: { children?: React.ReactNode }) => (
-      <ol className="list-decimal pl-6 my-5 space-y-2">{children}</ol>
+      <ol className="list-decimal pl-6 my-5 space-y-2.5">{children}</ol>
     ),
   },
   listItem: {
     bullet: ({ children }: { children?: React.ReactNode }) => (
-      <li className="text-foreground">{children}</li>
+      <li className="text-[17px] text-foreground leading-[1.75] flex items-start gap-2.5 before:content-[''] before:mt-[10px] before:w-1.5 before:h-1.5 before:rounded-full before:bg-accent before:flex-shrink-0">{children}</li>
     ),
     number: ({ children }: { children?: React.ReactNode }) => (
-      <li className="text-foreground">{children}</li>
+      <li className="text-[17px] text-foreground leading-[1.75]">{children}</li>
     ),
   },
   marks: {
     strong: ({ children }: { children?: React.ReactNode }) => (
-      <strong className="font-semibold text-foreground">{children}</strong>
+      <strong className="font-semibold text-primary">{children}</strong>
     ),
     em: ({ children }: { children?: React.ReactNode }) => (
-      <em>{children}</em>
+      <em className="font-display italic">{children}</em>
     ),
     link: ({ children, value }: { children?: React.ReactNode; value?: { href?: string } }) => (
       <a
         href={value?.href}
-        className="text-primary underline hover:no-underline"
+        className="text-primary underline underline-offset-2 hover:no-underline font-medium"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -481,11 +481,24 @@ const BlogPost = () => {
   const post = sanityPost ?? fallbackPost;
   const executiveSummary = post ? getExecutiveSummaryToRender(post, slug) : null;
 
+  useEffect(() => {
+    const bar = document.getElementById('blog-rp');
+    if (!bar) return;
+    const update = () => {
+      const doc = document.documentElement;
+      const total = doc.scrollHeight - doc.clientHeight;
+      if (total <= 0) return;
+      bar.style.width = `${(window.scrollY / total) * 100}%`;
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    return () => window.removeEventListener('scroll', update);
+  }, [post]);
+
   if (!slug) {
     return (
       <div className="min-h-screen bg-background">
         <Navbar />
-        <main className="section-padding container-wide">
+        <main className="px-6 py-16 max-w-3xl mx-auto">
           <h1 className="text-2xl font-display font-semibold text-foreground mb-4">BioNixus blog article</h1>
           <p className="text-muted-foreground">Invalid article.</p>
           <Link to={blogIndexPath} className="mt-4 inline-flex items-center gap-2 text-primary font-medium hover:underline">
@@ -501,12 +514,25 @@ const BlogPost = () => {
     return (
       <div className="min-h-screen bg-background">
         <Navbar />
-        <main className="section-padding container-wide">
-          <h1 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3 text-balance">
-            {formatSlugAsPageHeading(slug!)} — BioNixus blog
-          </h1>
-          <p className="text-muted-foreground">Loading article...</p>
-        </main>
+        {/* Skeleton loader */}
+        <div className="animate-pulse">
+          <div className="w-full bg-primary/10" style={{ minHeight: '420px' }} />
+          <div className="max-w-screen-xl mx-auto px-6 pt-8 grid lg:grid-cols-[1fr_272px] gap-10">
+            <div className="space-y-4">
+              <div className="h-3 bg-muted rounded w-24" />
+              <div className="h-6 bg-muted rounded w-3/4" />
+              <div className="h-6 bg-muted rounded w-1/2" />
+              <div className="h-px bg-muted my-6" />
+              {[...Array(8)].map((_, i) => (
+                <div key={i} className={`h-4 bg-muted rounded ${i % 3 === 2 ? 'w-3/4' : 'w-full'}`} />
+              ))}
+            </div>
+            <div className="hidden lg:block space-y-3">
+              <div className="h-48 bg-muted rounded-xl" />
+              <div className="h-32 bg-muted rounded-xl" />
+            </div>
+          </div>
+        </div>
         <Footer />
       </div>
     );
@@ -516,14 +542,14 @@ const BlogPost = () => {
     return (
       <div className="min-h-screen bg-background">
         <Navbar />
-        <main className="section-padding container-wide">
-          <h1 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3 text-balance">
-            {slug ? `${formatSlugAsPageHeading(slug)} — BioNixus blog` : 'BioNixus blog article'}
-          </h1>
-          <p className="text-muted-foreground">Article not found.</p>
-          <Link to={blogIndexPath} className="mt-4 inline-flex items-center gap-2 text-primary font-medium hover:underline">
-            <ArrowLeft className="w-4 h-4" /> Back to articles
+        <main className="px-6 py-16 max-w-3xl mx-auto">
+          <Link to={blogIndexPath} className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary text-sm mb-8 transition-colors">
+            <ArrowLeft className="w-3.5 h-3.5" /> Back to insights
           </Link>
+          <h1 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3 text-balance">
+            {slug ? `${formatSlugAsPageHeading(slug)} — BioNixus` : 'BioNixus insight'}
+          </h1>
+          <p className="text-muted-foreground mb-4">Article not found.</p>
         </main>
         <Footer />
       </div>
@@ -632,270 +658,423 @@ const BlogPost = () => {
         <link rel="canonical" href={post.seoCanonicalUrl || pageUrl} />
 
       </Helmet>
+
+      {/* Reading progress */}
+      <div id="blog-rp" className="blog-reading-progress" style={{ width: '0%' }} />
+
       <Navbar />
-      <main className="section-padding">
-        <div className="container-wide max-w-3xl mx-auto">
-          <Link
-            to={blogIndexPath}
-            className="inline-flex items-center gap-2 text-primary font-medium hover:underline mb-8"
+
+      <main>
+        {/* ── HERO ─────────────────────────────────────────────────────── */}
+        {post.coverImage ? (
+          <div
+            className="relative w-full overflow-hidden bg-navy-deep group"
+            style={{ minHeight: '380px', maxHeight: '560px', aspectRatio: '21 / 9' }}
           >
-            <ArrowLeft className="w-4 h-4" /> Back to articles
-          </Link>
+            <img
+              src={optimizeSanityImage(post.coverImage, 1400, 600)}
+              alt={post.title || 'Article cover image'}
+              className="w-full h-full object-cover opacity-[0.55] transition-transform duration-[6000ms] ease-in-out group-hover:scale-[1.03]"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              width={1400}
+              height={600}
+            />
+            {/* Gradient overlays */}
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsl(220 47% 10% / 0.97) 0%, hsl(220 47% 10% / 0.65) 38%, transparent 72%)' }} />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, hsl(220 47% 10% / 0.45) 0%, transparent 55%)' }} />
+            {/* Gold top accent line */}
+            <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--gold-light)) 55%, transparent 100%)' }} />
 
-          <article>
-            <div className="flex flex-wrap items-center gap-3 mb-4">
+            <div className="absolute bottom-0 left-0 right-0 px-6 md:px-10 pb-8 md:pb-10 z-10">
+              <Link to={blogIndexPath} className="inline-flex items-center gap-1.5 text-white/50 hover:text-white/80 text-sm mb-5 transition-colors">
+                <ArrowLeft className="w-3.5 h-3.5" /> Back to insights
+              </Link>
+
               {post.category && (
-                <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full">
-                  {post.category}
-                </span>
-              )}
-              {post.country && (
-                <span className="text-sm text-muted-foreground">{post.country}</span>
-              )}
-              {post.date && (
-                <span className="text-sm text-muted-foreground">{post.date}</span>
-              )}
-              {post.readingTime != null && (
-                <span className="text-sm text-muted-foreground">
-                  {post.readingTime} min read
-                </span>
-              )}
-              {Array.isArray(post.tags) && post.tags.length > 0 && (
-                <div className="flex flex-wrap gap-1.5">
-                  {post.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2 py-0.5 bg-muted text-muted-foreground text-xs rounded"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            <h1 className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-4">
-              {post.title}
-            </h1>
-
-            {/* Author byline */}
-            {post.authorName && (
-              <div className="flex items-center gap-3 mb-4">
-                {post.authorImage && (
-                  <img
-                    src={optimizeSanityImage(post.authorImage, 64, 64)}
-                    alt={post.authorName}
-                    className="w-10 h-10 rounded-full object-cover"
-                    loading="lazy"
-                    decoding="async"
-                    width={40}
-                    height={40}
-                  />
-                )}
-                <div>
-                  <span className="text-sm font-medium text-foreground">{post.authorName}</span>
-                  {post.authorTitle && (
-                    <span className="block text-xs text-muted-foreground">{post.authorTitle}</span>
-                  )}
-                </div>
-                {post.updatedAtIso && post.updatedAtIso !== post.publishedAtIso && (
-                  <span className="text-xs text-muted-foreground ml-auto">
-                    Updated {new Date(post.updatedAtIso).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
+                <div className="mb-4">
+                  <span className="inline-flex items-center px-3 py-1 text-[10px] font-extrabold tracking-[0.12em] uppercase rounded-sm" style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--navy-deep))' }}>
+                    {post.category}
                   </span>
+                </div>
+              )}
+
+              <h1 className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-[1.18] tracking-[-0.02em] text-white max-w-4xl mb-5 text-balance">
+                {post.title}
+              </h1>
+
+              <div className="flex flex-wrap items-center">
+                {post.authorName && (
+                  <div className="flex items-center gap-2.5 pr-4 border-r border-white/20 mr-0">
+                    {post.authorImage ? (
+                      <img src={optimizeSanityImage(post.authorImage, 56, 56)} alt={post.authorName} className="w-7 h-7 rounded-full object-cover flex-shrink-0" width={28} height={28} loading="eager" />
+                    ) : (
+                      <div className="w-7 h-7 rounded-full flex items-center justify-center text-[10px] font-bold flex-shrink-0" style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--navy-deep))' }}>
+                        {post.authorName.charAt(0)}
+                      </div>
+                    )}
+                    <div>
+                      <span className="text-[13px] font-medium text-white/85 block">{post.authorName}</span>
+                      {post.authorTitle && <span className="text-[11px] text-white/45 block">{post.authorTitle}</span>}
+                    </div>
+                  </div>
+                )}
+                {post.date && (
+                  <div className="flex items-center gap-1.5 text-[13px] text-white/55 px-4 border-r border-white/20">
+                    <Calendar className="w-3 h-3 opacity-60" aria-hidden />
+                    <strong className="text-white/80 font-medium">{post.date}</strong>
+                  </div>
+                )}
+                {post.readingTime != null && (
+                  <div className="flex items-center gap-1.5 text-[13px] text-white/55 px-4 border-r border-white/20">
+                    <Clock className="w-3 h-3 opacity-60" aria-hidden />
+                    <strong className="text-white/80 font-medium">{post.readingTime} min</strong>
+                  </div>
+                )}
+                {post.country && (
+                  <div className="flex items-center gap-1.5 text-[13px] text-white/55 px-4">
+                    <MapPin className="w-3 h-3 opacity-60" aria-hidden />
+                    <strong className="text-white/80 font-medium">{post.country}</strong>
+                  </div>
                 )}
               </div>
-            )}
-
-            <div className="mb-6">
-              <ShareButtons
-                url={pageUrl}
-                title={post.title}
-                contentType="blog"
-                slug={slug!}
-              />
             </div>
-
-            {post.coverImage && (
-              <div className="aspect-[16/10] rounded-xl overflow-hidden mb-8 bg-muted">
-                <img
-                  src={optimizeSanityImage(post.coverImage, 768, 480)}
-                  alt={post.title || 'Article cover image'}
-                  className="w-full h-full object-cover"
-                  loading="eager"
-                  fetchPriority="high"
-                  decoding="async"
-                  width={768}
-                  height={480}
-                />
+          </div>
+        ) : (
+          /* Text-only hero — no cover image */
+          <div className="relative py-14 md:py-20 overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(var(--navy-deep)) 0%, hsl(var(--navy-medium)) 100%)' }}>
+            <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--gold-light)) 55%, transparent 100%)' }} />
+            <div className="absolute -top-32 -right-32 w-80 h-80 rounded-full opacity-[0.06]" style={{ background: 'hsl(var(--accent))' }} />
+            <div className="max-w-screen-xl mx-auto px-6 md:px-10">
+              <Link to={blogIndexPath} className="inline-flex items-center gap-1.5 text-white/50 hover:text-white/80 text-sm mb-6 transition-colors">
+                <ArrowLeft className="w-3.5 h-3.5" /> Back to insights
+              </Link>
+              {post.category && (
+                <div className="mb-4">
+                  <span className="inline-flex px-3 py-1 text-[10px] font-extrabold tracking-[0.12em] uppercase rounded-sm" style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--navy-deep))' }}>
+                    {post.category}
+                  </span>
+                </div>
+              )}
+              <h1 className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-white leading-[1.18] tracking-[-0.02em] max-w-4xl mb-5 text-balance">
+                {post.title}
+              </h1>
+              <div className="flex flex-wrap items-center">
+                {post.authorName && (
+                  <div className="flex items-center gap-2.5 pr-4 border-r border-white/20">
+                    {post.authorImage ? (
+                      <img src={optimizeSanityImage(post.authorImage, 56, 56)} alt={post.authorName} className="w-7 h-7 rounded-full object-cover" width={28} height={28} loading="eager" />
+                    ) : (
+                      <div className="w-7 h-7 rounded-full flex items-center justify-center text-[10px] font-bold" style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--navy-deep))' }}>
+                        {post.authorName.charAt(0)}
+                      </div>
+                    )}
+                    <span className="text-[13px] font-medium text-white/85">{post.authorName}</span>
+                  </div>
+                )}
+                {post.date && (
+                  <div className="flex items-center gap-1.5 text-[13px] text-white/55 px-4 border-r border-white/20">
+                    <Calendar className="w-3 h-3 opacity-60" aria-hidden />
+                    <strong className="text-white/80 font-medium">{post.date}</strong>
+                  </div>
+                )}
+                {post.readingTime != null && (
+                  <div className="flex items-center gap-1.5 text-[13px] text-white/55 px-4 border-r border-white/20">
+                    <Clock className="w-3 h-3 opacity-60" aria-hidden />
+                    <strong className="text-white/80 font-medium">{post.readingTime} min</strong>
+                  </div>
+                )}
+                {post.country && (
+                  <div className="flex items-center gap-1.5 text-[13px] text-white/55 px-4">
+                    <MapPin className="w-3 h-3 opacity-60" aria-hidden />
+                    <strong className="text-white/80 font-medium">{post.country}</strong>
+                  </div>
+                )}
               </div>
-            )}
+            </div>
+          </div>
+        )}
 
-            {isGccPharma2026 && <PremiumGcc2026Enhancement />}
+        {/* ── CONTENT GRID ──────────────────────────────────────────────── */}
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-[minmax(0,1fr)_272px] gap-10 lg:gap-14 pt-8 pb-20 items-start">
 
-            {Array.isArray(post.tableOfContents) && post.tableOfContents.length > 0 && (
-              <nav className="mb-8 p-4 rounded-lg bg-muted/50 border border-border">
-                <h2 className="text-sm font-semibold text-foreground mb-3">On this page</h2>
-                <ul className="space-y-1.5 text-sm">
-                  {post.tableOfContents.map((item, i) => (
-                    <li key={i}>
-                      <a
-                        href={item.anchor ? `#${item.anchor}` : undefined}
-                        className="text-primary hover:underline"
-                      >
-                        {item.heading ?? ''}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            )}
+            {/* ── ARTICLE MAIN ───────────────────────────────────────────── */}
+            <article>
 
-            {executiveSummary && (
-                <section className="mb-8 p-5 rounded-lg border border-primary/20 bg-primary/5">
-                  <h2 className="text-lg font-display font-semibold text-primary mb-3">
-                    Executive summary
-                  </h2>
-                  <div className="prose-body text-foreground leading-relaxed">
+              {/* Tags + Share toolbar */}
+              <div className="flex items-center justify-between flex-wrap gap-3 pb-5 mb-7 border-b border-border">
+                {Array.isArray(post.tags) && post.tags.length > 0 ? (
+                  <div className="flex flex-wrap gap-1.5">
+                    {post.tags.map((tag) => (
+                      <span key={tag} className="px-2.5 py-1 bg-muted text-muted-foreground text-[11px] font-medium tracking-[0.04em] uppercase rounded-full border border-border hover:bg-accent/10 hover:border-accent/30 hover:text-foreground transition-colors cursor-default">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                ) : <div />}
+                <ShareButtons url={pageUrl} title={post.title} contentType="blog" slug={slug!} />
+              </div>
+
+              {/* Executive summary */}
+              {executiveSummary && (
+                <aside
+                  className="relative mb-8 py-5 px-5 bg-primary/[0.025] border border-primary/[0.08] overflow-hidden"
+                  style={{ borderLeft: '4px solid hsl(var(--accent))', borderRadius: '0 12px 12px 0' }}
+                  aria-label="Executive summary"
+                >
+                  <div className="flex items-center gap-2.5 mb-3">
+                    <div className="w-7 h-7 rounded-md flex items-center justify-center flex-shrink-0" style={{ background: 'hsl(var(--accent))' }}>
+                      <AlignLeft className="w-3.5 h-3.5" style={{ color: 'hsl(var(--navy-deep))' }} aria-hidden />
+                    </div>
+                    <span className="text-[11px] font-extrabold tracking-[0.1em] uppercase text-primary">Executive Summary</span>
+                  </div>
+                  <div className="font-display text-[17px] italic leading-[1.72] text-foreground">
                     {typeof executiveSummary === 'string' ? (
                       <div dangerouslySetInnerHTML={{ __html: sanitizeBodyHtml(executiveSummary) }} />
                     ) : (
-                      <PortableText
-                        value={executiveSummary as PortableTextBlock[]}
-                        components={portableTextComponents}
-                      />
+                      <PortableText value={executiveSummary as PortableTextBlock[]} components={portableTextComponents} />
                     )}
                   </div>
+                </aside>
+              )}
+
+              {/* Table of contents — inline grid */}
+              {Array.isArray(post.tableOfContents) && post.tableOfContents.length > 0 && (
+                <nav className="mb-8 rounded-xl overflow-hidden border border-border" aria-label="Table of contents">
+                  <div className="flex items-center gap-2 px-5 py-3.5 bg-muted/70 border-b border-border">
+                    <List className="w-3.5 h-3.5 text-accent" aria-hidden />
+                    <span className="text-[11px] font-extrabold uppercase tracking-[0.08em] text-primary">Contents</span>
+                    <span className="ml-auto text-[11px] text-muted-foreground">{post.tableOfContents.length} sections</span>
+                  </div>
+                  <div className="p-5 grid sm:grid-cols-2 gap-x-6 gap-y-2.5 bg-background/60">
+                    {post.tableOfContents.map((item, i) => (
+                      <a
+                        key={i}
+                        href={item.anchor ? `#${item.anchor}` : undefined}
+                        className="flex items-start gap-2 text-[13px] text-primary hover:text-accent-foreground transition-colors group leading-snug"
+                      >
+                        <span className="blog-toc-num group-hover:bg-accent transition-colors">{i + 1}</span>
+                        {item.heading ?? ''}
+                      </a>
+                    ))}
+                  </div>
+                </nav>
+              )}
+
+              {/* GCC 2026 premium dashboard enhancement */}
+              {isGccPharma2026 && <PremiumGcc2026Enhancement />}
+
+              {/* Article body */}
+              <div className="blog-article-body blog-drop-cap">
+                {(() => {
+                  const body = getBodyToRender(post, slug);
+                  if (typeof body === 'string') return renderStringBody(body);
+                  if (Array.isArray(body)) {
+                    const blocks = body as PortableTextBlock[];
+                    const asText = portableTextToPlainString(blocks);
+                    if (asText.trim() && isHtmlString(asText)) return renderStringBody(asText);
+                    return (
+                      <div className="prose-body text-foreground">
+                        <PortableText value={blocks} components={portableTextComponents} />
+                      </div>
+                    );
+                  }
+                  return (
+                    <p className="text-[17px] text-muted-foreground leading-[1.82] whitespace-pre-line">
+                      {post.excerpt}
+                    </p>
+                  );
+                })()}
+              </div>
+
+              {/* Related research links */}
+              <section className="mt-10 rounded-2xl border border-border bg-muted/20 p-5 lg:p-6">
+                <h2 className="font-display text-lg font-bold text-foreground mb-1 flex items-center gap-2">
+                  <ArrowUpRight className="w-4 h-4 text-accent flex-shrink-0" aria-hidden />
+                  Explore related research
+                </h2>
+                <p className="text-sm text-muted-foreground mb-4">
+                  For deeper regional insight, explore our healthcare market research framework and country coverage.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { to: '/healthcare-market-research', label: 'EMEA healthcare market research hub' },
+                    { to: '/healthcare-market-research/saudi-arabia', label: 'Pharma market research in Saudi Arabia' },
+                    { to: '/healthcare-market-research/uae', label: 'Healthcare market research in the UAE' },
+                    { to: '/healthcare-market-research/therapy/oncology', label: 'Oncology market research in MENA' },
+                  ].map(({ to, label }) => (
+                    <Link
+                      key={to}
+                      to={to}
+                      className="inline-flex items-center gap-1 px-3 py-1.5 border border-border bg-background rounded-md text-sm font-medium text-foreground hover:border-accent/50 hover:bg-accent/5 hover:text-foreground transition-all"
+                    >
+                      {label}
+                    </Link>
+                  ))}
+                </div>
+              </section>
+
+              {/* More insights links */}
+              <section className="mt-6 rounded-2xl border border-border bg-card p-5 lg:p-6">
+                <h2 className="font-display text-base font-bold text-foreground mb-4">More healthcare insight pages</h2>
+                <div className="grid sm:grid-cols-2 gap-x-6 gap-y-2">
+                  {blogRecoveryPaths.slice(0, 12).map((path) => (
+                    <Link key={path} to={path} className="text-primary hover:text-accent-foreground hover:underline text-sm transition-colors truncate">
+                      {formatInsightTopicFromPath(path)}
+                    </Link>
+                  ))}
+                </div>
+              </section>
+
+              {/* FAQ */}
+              {Array.isArray(post.faq) && post.faq.length > 0 && (
+                <section className="mt-12" aria-label="Frequently asked questions">
+                  <h2 className="font-display text-2xl font-bold tracking-tight text-primary mb-6 flex items-center gap-3">
+                    <span className="inline-flex px-2 py-0.5 text-[10px] font-extrabold tracking-[0.1em] uppercase rounded-sm" style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--navy-deep))' }}>FAQ</span>
+                    Frequently asked questions
+                  </h2>
+                  <Accordion type="single" collapsible className="w-full">
+                    {post.faq.map((item, i) => (
+                      <AccordionItem key={i} value={`faq-${i}`} className="border-border">
+                        <AccordionTrigger className="text-left text-[15px] font-semibold text-primary hover:text-accent-foreground hover:no-underline py-5">
+                          {item.question || 'Question'}
+                        </AccordionTrigger>
+                        <AccordionContent className="text-[15px] text-muted-foreground leading-relaxed pb-5">
+                          {item.answer || ''}
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
                 </section>
               )}
 
-            <div className="prose prose-neutral dark:prose-invert max-w-none">
-              {(() => {
-                const body = getBodyToRender(post, slug)
-                if (typeof body === 'string') return renderStringBody(body)
-                if (Array.isArray(body)) {
-                  const blocks = body as PortableTextBlock[]
-                  const asText = portableTextToPlainString(blocks)
-                  if (asText.trim() && isHtmlString(asText)) return renderStringBody(asText)
-                  return (
-                    <div className="prose-body text-foreground leading-relaxed">
-                      <PortableText value={blocks} components={portableTextComponents} />
-                    </div>
-                  )
-                }
-                return (
-                  <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
-                    {post.excerpt}
-                  </p>
-                )
-              })()}
-            </div>
+              {/* CTA Card — premium gradient */}
+              {post.ctaSection &&
+                (post.ctaSection.title || post.ctaSection.description || post.ctaSection.buttonText || post.ctaSection.buttonUrl) && (
+                  <div
+                    className="mt-12 rounded-2xl p-7 md:p-9 relative overflow-hidden"
+                    style={{ background: 'linear-gradient(135deg, hsl(var(--navy-deep)) 0%, hsl(var(--navy-medium)) 100%)' }}
+                  >
+                    {/* Decorative orbs */}
+                    <div className="absolute -top-16 -right-16 w-56 h-56 rounded-full opacity-[0.07] pointer-events-none" style={{ background: 'hsl(var(--accent))' }} />
+                    <div className="absolute -bottom-20 -left-10 w-48 h-48 rounded-full opacity-[0.05] pointer-events-none" style={{ background: 'hsl(var(--accent))' }} />
 
-            <section className="mt-10 rounded-xl border border-border bg-muted/30 p-5">
-              <h2 className="text-xl font-display font-semibold text-foreground mb-3">
-                Explore related healthcare market research pages
-              </h2>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                For deeper regional insight, explore our healthcare market research framework and country coverage.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <Link
-                  to="/healthcare-market-research"
-                  className="px-3 py-2 rounded-md border border-border bg-background text-sm hover:border-primary/40 transition-colors"
-                >
-                  EMEA healthcare market research hub
-                </Link>
-                <Link
-                  to="/healthcare-market-research/saudi-arabia"
-                  className="px-3 py-2 rounded-md border border-border bg-background text-sm hover:border-primary/40 transition-colors"
-                >
-                  pharmaceutical market research in Saudi Arabia
-                </Link>
-                <Link
-                  to="/healthcare-market-research/uae"
-                  className="px-3 py-2 rounded-md border border-border bg-background text-sm hover:border-primary/40 transition-colors"
-                >
-                  healthcare market research in the UAE
-                </Link>
-                <Link
-                  to="/healthcare-market-research/therapy/oncology"
-                  className="px-3 py-2 rounded-md border border-border bg-background text-sm hover:border-primary/40 transition-colors"
-                >
-                  oncology market research in MENA and Europe
-                </Link>
-              </div>
-            </section>
-
-            <section className="mt-8 rounded-xl border border-border bg-card p-5">
-              <h2 className="text-xl font-display font-semibold text-foreground mb-3">
-                More healthcare insight pages
-              </h2>
-              <div className="grid md:grid-cols-2 gap-2">
-                {blogRecoveryPaths.slice(0, 12).map((path) => (
-                  <Link key={path} to={path} className="text-primary hover:underline break-all text-sm">
-                    {formatInsightTopicFromPath(path)}
-                  </Link>
-                ))}
-              </div>
-            </section>
-
-            {Array.isArray(post.faq) && post.faq.length > 0 && (
-              <section className="mt-12" aria-label="FAQ">
-                <h2 className="text-2xl font-display font-semibold text-foreground mb-4">
-                  Frequently asked questions
-                </h2>
-                <Accordion type="single" collapsible className="w-full">
-                  {post.faq.map((item, i) => (
-                    <AccordionItem key={i} value={`faq-${i}`}>
-                      <AccordionTrigger className="text-left">
-                        {item.question || 'Question'}
-                      </AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground">
-                        {item.answer || ''}
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              </section>
-            )}
-
-            {post.ctaSection &&
-              (post.ctaSection.title ||
-                post.ctaSection.description ||
-                post.ctaSection.buttonText ||
-                post.ctaSection.buttonUrl) && (
-                <Card className="mt-12 border-primary/20 bg-primary/5">
-                  <CardHeader>
                     {post.ctaSection.title && (
-                      <CardTitle className="text-xl">{post.ctaSection.title}</CardTitle>
+                      <>
+                        <p className="text-[10px] font-extrabold tracking-[0.16em] uppercase mb-3" style={{ color: 'hsl(var(--accent))' }}>
+                          Expert Consultation
+                        </p>
+                        <h2 className="font-display text-2xl md:text-3xl font-bold text-white leading-snug tracking-tight mb-3 max-w-lg">
+                          {post.ctaSection.title}
+                        </h2>
+                      </>
                     )}
                     {post.ctaSection.description && (
-                      <CardDescription className="text-base mt-1 text-muted-foreground">
+                      <p className="text-[15px] leading-relaxed text-white/60 mb-7 max-w-lg">
                         {post.ctaSection.description}
-                      </CardDescription>
+                      </p>
                     )}
-                  </CardHeader>
-                  {post.ctaSection.buttonText && post.ctaSection.buttonUrl && (
-                    <CardContent>
-                      <Button asChild>
-                        {(() => {
-                          const target = resolveCtaHref(post.ctaSection!.buttonUrl!);
-                          if (target.kind === 'internal') {
-                            return <Link to={target.to}>{post.ctaSection!.buttonText}</Link>;
-                          }
-                          return (
-                            <a href={target.href} target="_blank" rel="noopener noreferrer">
-                              {post.ctaSection!.buttonText}
-                            </a>
-                          );
-                        })()}
-                      </Button>
-                    </CardContent>
-                  )}
-                </Card>
-              )}
-          </article>
+                    {post.ctaSection.buttonText && post.ctaSection.buttonUrl && (
+                      (() => {
+                        const target = resolveCtaHref(post.ctaSection!.buttonUrl!);
+                        const btnClass = "inline-flex items-center gap-2 px-6 py-3 text-sm font-bold rounded-md transition-all hover:-translate-y-0.5 hover:shadow-lg";
+                        const btnStyle = { background: 'hsl(var(--accent))', color: 'hsl(var(--navy-deep))' };
+                        return target.kind === 'internal' ? (
+                          <Link to={target.to} className={btnClass} style={btnStyle}>
+                            {post.ctaSection!.buttonText}
+                            <ArrowUpRight className="w-4 h-4" aria-hidden />
+                          </Link>
+                        ) : (
+                          <a href={target.href} target="_blank" rel="noopener noreferrer" className={btnClass} style={btnStyle}>
+                            {post.ctaSection!.buttonText}
+                            <ArrowUpRight className="w-4 h-4" aria-hidden />
+                          </a>
+                        );
+                      })()
+                    )}
+                  </div>
+                )}
 
-          {/* Related posts + prev/next navigation */}
+              {/* Author card */}
+              {post.authorName && (
+                <div className="mt-10 p-5 flex gap-4 items-start bg-background border border-border rounded-2xl shadow-sm">
+                  {post.authorImage ? (
+                    <img
+                      src={optimizeSanityImage(post.authorImage, 96, 96)}
+                      alt={post.authorName}
+                      className="w-14 h-14 rounded-full object-cover flex-shrink-0 border-2 border-border"
+                      width={56} height={56} loading="lazy" decoding="async"
+                    />
+                  ) : (
+                    <div
+                      className="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 font-display text-xl font-bold border-2"
+                      style={{ background: 'linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--navy-medium)) 100%)', color: 'hsl(var(--accent))', borderColor: 'hsl(var(--accent) / 0.2)' }}
+                    >
+                      {post.authorName.charAt(0)}
+                    </div>
+                  )}
+                  <div className="flex-1 min-w-0">
+                    <p className="text-[10px] font-extrabold tracking-[0.1em] uppercase mb-0.5" style={{ color: 'hsl(var(--accent))' }}>Research Author</p>
+                    <p className="text-[15px] font-semibold text-primary">{post.authorName}</p>
+                    {post.authorTitle && <p className="text-sm text-muted-foreground mb-2">{post.authorTitle}</p>}
+                    {post.updatedAtIso && post.updatedAtIso !== post.publishedAtIso && (
+                      <p className="text-xs text-muted-foreground">
+                        Updated {new Date(post.updatedAtIso).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              )}
+            </article>
+
+            {/* ── STICKY SIDEBAR ─────────────────────────────────────────── */}
+            <aside className="hidden lg:block sticky top-20 space-y-4" aria-label="Article sidebar">
+
+              {/* Table of contents */}
+              {Array.isArray(post.tableOfContents) && post.tableOfContents.length > 0 && (
+                <nav className="rounded-xl overflow-hidden border border-border shadow-sm" aria-label="Article sections">
+                  <div className="flex items-center gap-2 px-4 py-3" style={{ background: 'hsl(var(--primary))' }}>
+                    <List className="w-3.5 h-3.5" style={{ color: 'hsl(var(--accent))' }} aria-hidden />
+                    <span className="text-[11px] font-extrabold uppercase tracking-[0.1em] text-white">On this page</span>
+                  </div>
+                  <div className="py-2 bg-background">
+                    {post.tableOfContents.map((item, i) => (
+                      <a
+                        key={i}
+                        href={item.anchor ? `#${item.anchor}` : undefined}
+                        className="block px-4 py-2 text-[13px] text-muted-foreground border-l-2 border-transparent hover:border-accent hover:bg-accent/5 hover:text-primary transition-all"
+                      >
+                        {item.heading ?? ''}
+                      </a>
+                    ))}
+                  </div>
+                </nav>
+              )}
+
+              {/* Sidebar CTA */}
+              <div
+                className="rounded-xl p-5 relative overflow-hidden"
+                style={{ background: 'linear-gradient(160deg, hsl(var(--navy-deep)) 0%, hsl(var(--navy-medium)) 100%)' }}
+              >
+                <div className="absolute -top-8 -right-8 w-28 h-28 rounded-full opacity-[0.1] pointer-events-none" style={{ background: 'hsl(var(--accent))' }} />
+                <p className="text-[10px] font-extrabold tracking-[0.14em] uppercase mb-2" style={{ color: 'hsl(var(--accent))' }}>Expert Research</p>
+                <p className="font-display text-base font-bold text-white leading-snug mb-4">Need GCC pharma market research for your strategy team?</p>
+                <Link
+                  to="/contact"
+                  className="flex items-center justify-center gap-1.5 py-2.5 text-[13px] font-bold rounded-md w-full transition-all hover:-translate-y-0.5"
+                  style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--navy-deep))' }}
+                >
+                  Request a briefing
+                  <ArrowUpRight className="w-3.5 h-3.5" aria-hidden />
+                </Link>
+              </div>
+            </aside>
+
+          </div>
+
+          {/* ── RELATED POSTS (full width below grid) ─────────────────── */}
           <RelatedPosts
             currentSlug={slug!}
             category={post.category}
@@ -906,6 +1085,7 @@ const BlogPost = () => {
           />
         </div>
       </main>
+
       <Footer />
     </div>
   );

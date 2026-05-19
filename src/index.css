@@ -274,6 +274,102 @@
   }
 }
 
+/* ── Premium Blog Components ────────────────────────────────────────────── */
+.blog-reading-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--gold-light)) 100%);
+  z-index: 1000;
+  pointer-events: none;
+  box-shadow: 0 0 8px hsl(var(--accent) / 0.4);
+  transition: width 0.12s linear;
+}
+
+/* Premium H2: top border + gold accent bar */
+.blog-prose-h2 {
+  position: relative !important;
+  padding-top: 2rem !important;
+  padding-left: 0 !important;
+  border-top: 1px solid hsl(var(--border)) !important;
+  border-left: none !important;
+  margin-top: 3rem !important;
+}
+.blog-prose-h2::after {
+  content: '';
+  position: absolute;
+  top: -1px; left: 0;
+  width: 48px; height: 3px;
+  background: linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--gold-light)) 100%);
+}
+
+/* Premium H2 inside HTML prose-body (renderStringBody) */
+.blog-article-body .prose-body h2 {
+  position: relative !important;
+  padding-top: 2rem !important;
+  padding-left: 0 !important;
+  border-left: none !important;
+  border-top: 1px solid hsl(var(--border)) !important;
+  margin-top: 3rem !important;
+}
+.blog-article-body .prose-body h2::after {
+  content: '';
+  position: absolute;
+  top: -1px; left: 0;
+  width: 48px; height: 3px;
+  background: linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--gold-light)) 100%);
+}
+
+/* Drop cap on first paragraph of article body */
+.blog-drop-cap > p:first-of-type::first-letter,
+.blog-drop-cap .prose-body > p:first-of-type::first-letter {
+  font-family: var(--font-display);
+  font-size: 4.25em;
+  font-weight: 700;
+  line-height: 0.82;
+  float: left;
+  margin: 0.06em 0.1em 0 0;
+  color: hsl(var(--primary));
+}
+
+/* TOC numbered badge */
+.blog-toc-num {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  font-size: 10px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+  transition: background 0.15s;
+}
+
+/* Pull quote */
+.blog-pull-quote {
+  position: relative;
+  padding: 1.75rem 1.75rem 1.75rem 3.5rem;
+  background: hsl(var(--primary) / 0.03);
+  border: 1px solid hsl(var(--primary) / 0.08);
+  border-radius: var(--radius);
+  margin: 2rem 0;
+}
+.blog-pull-quote::before {
+  content: '\201C';
+  font-family: var(--font-display);
+  font-size: 5rem;
+  line-height: 1;
+  position: absolute;
+  left: 0.875rem;
+  top: 0.375rem;
+  color: hsl(var(--accent));
+  opacity: 0.65;
+}
+
 @layer utilities {
   .cv-auto {
     content-visibility: auto;
