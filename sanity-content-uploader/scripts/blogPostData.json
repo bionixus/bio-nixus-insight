@@ -21,9 +21,18 @@
     ],
     "canonicalUrl": "https://bionixus.com/blog/uae-healthcare-market-overview-2026"
   },
+  "mainImage": {
+    "localPath": "/Users/selim/Documents/bio-nixus-insight/sanity-content-uploader/scripts/uae-healthcare-market-2026-cover.png",
+    "alt": "UAE Healthcare Market 2026 — Hospital Data, Pharmaceutical Sales and Market Access Overview",
+    "caption": "Comprehensive overview of the UAE pharmaceutical and healthcare market structure in 2026."
+  },
   "openGraph": {
     "ogTitle": "UAE Healthcare Market 2026: Hospital Data, Pharma Sales & Market Access",
-    "ogDescription": "Comprehensive overview of the UAE healthcare market in 2026 — hospital sales data, pharmaceutical market size, DHA and MOHAP regulatory landscape, private sector growth, and market access."
+    "ogDescription": "Comprehensive overview of the UAE healthcare market in 2026 — hospital sales data, pharmaceutical market size, DHA and MOHAP regulatory landscape, private sector growth, and market access.",
+    "ogImage": {
+      "localPath": "/Users/selim/Documents/bio-nixus-insight/sanity-content-uploader/scripts/uae-healthcare-market-2026-cover.png",
+      "alt": "UAE Healthcare Market 2026 — BioNixus Market Research"
+    }
   },
   "readingTime": 14,
   "country": "UAE",
