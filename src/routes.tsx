@@ -26,6 +26,7 @@ import SfdaMarketAccessStrategySaudiArabia from '@/pages/SfdaMarketAccessStrateg
 import BiosimilarMarketEntrySaudiArabia from '@/pages/BiosimilarMarketEntrySaudiArabia';
 import IqviaAlternative from '@/pages/IqviaAlternative';
 import PharmaceuticalMarketResearchDubai from '@/pages/PharmaceuticalMarketResearchDubai';
+import KantarHealthAlternativeGcc from '@/pages/KantarHealthAlternativeGcc';
 import NotFound from '@/pages/NotFound';
 import MarketResearch from '@/pages/MarketResearch';
 import MarketResearchHome from '@/pages/MarketResearchHome';
@@ -154,6 +155,7 @@ export const routes: RouteObject[] = [
   { path: '/biosimilar-market-entry-saudi-arabia', element: <BiosimilarMarketEntrySaudiArabia /> },
   { path: '/iqvia-alternative', element: <IqviaAlternative /> },
   { path: '/pharmaceutical-market-research-dubai', element: <PharmaceuticalMarketResearchDubai /> },
+  { path: '/kantar-health-alternative-gcc', element: <KantarHealthAlternativeGcc /> },
   { path: '/gcc-pharmaceutical-market-research', element: <GccPharmaceuticalMarketResearch /> },
   { path: '/uae-pharmaceutical-market-research', element: <UaePharmaceuticalMarketResearch /> },
   { path: '/saudi-payer-market-access-research', element: <SaudiPayerMarketAccessResearch /> },

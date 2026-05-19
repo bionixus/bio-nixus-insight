@@ -145,6 +145,7 @@ const staticPages = [
   { path: '/sfda-market-access-strategy-saudi-arabia', priority: '0.9', changefreq: 'monthly' },
   { path: '/biosimilar-market-entry-saudi-arabia', priority: '0.9', changefreq: 'monthly' },
   { path: '/iqvia-alternative', priority: '0.9', changefreq: 'monthly' },
+  { path: '/kantar-health-alternative-gcc', priority: '0.9', changefreq: 'monthly' },
   { path: '/faq', priority: '0.7', changefreq: 'monthly' },
   { path: '/resources', priority: '0.7', changefreq: 'monthly' },
   { path: '/fr/contacts', priority: '0.7', changefreq: 'monthly' },

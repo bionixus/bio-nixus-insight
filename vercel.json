@@ -117,6 +117,11 @@
       "statusCode": 301
     },
     {
+      "source": "/kantar-health-alternative-gcc/",
+      "destination": "/kantar-health-alternative-gcc",
+      "statusCode": 301
+    },
+    {
       "source": "/assets/index-:hash.js",
       "destination": "/assets/index.js",
       "statusCode": 301
@@ -205,6 +210,10 @@
     {
       "source": "/pharmaceutical-market-research-dubai",
       "destination": "/conf/pharmaceutical-market-research-dubai.html"
+    },
+    {
+      "source": "/kantar-health-alternative-gcc",
+      "destination": "/conf/kantar-health-alternative-gcc.html"
     },
     {
       "source": "/blog/:slug",

@@ -544,6 +544,18 @@ async function startServer() {
     res.type('html').sendFile(dubaiPharmaAbsolutePath);
   });
 
+  /** Static Kantar Health alternative GCC page. */
+  const kantarAltAbsolutePath = path.resolve(
+    __dirname,
+    isProduction ? path.join('dist/client', 'conf/kantar-health-alternative-gcc.html') : path.join('public', 'conf/kantar-health-alternative-gcc.html'),
+  );
+  app.get('/kantar-health-alternative-gcc/', (_req, res) => {
+    res.redirect(301, '/kantar-health-alternative-gcc');
+  });
+  app.get('/kantar-health-alternative-gcc', (_req, res) => {
+    res.type('html').sendFile(kantarAltAbsolutePath);
+  });
+
   let vite;
   if (!isProduction) {
     const { createServer } = await import('vite');
