@@ -1,44 +1,82 @@
-# BioNixus Healthcare Market Research
-# www.bionixus.com
+# robots.txt for https://www.bionixus.com
+# Goal: allow all major search engines AND AI/answer engines to crawl and cite the site.
 
+# ----------------------------------------------------------------------
+# Default: allow everything to all crawlers
+# ----------------------------------------------------------------------
 User-agent: *
 Allow: /
-Disallow: /api/
-Disallow: /_next/
-Disallow: /admin/
 
-# AI Crawlers — WELCOME (we want to be in LLM training data)
+# ----------------------------------------------------------------------
+# Search engines (explicit allow)
+# ----------------------------------------------------------------------
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# ----------------------------------------------------------------------
+# AI / answer-engine crawlers — ChatGPT, Gemini, Claude, Perplexity, etc.
+# (Allowing these maximizes your chance of being CITED in AI answers.)
+# ----------------------------------------------------------------------
+
+# OpenAI / ChatGPT
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
 User-agent: GPTBot
 Allow: /
 
-User-agent: ChatGPT-User
-Allow: /
-
+# Google AI (Gemini, AI Overviews grounding)
 User-agent: Google-Extended
 Allow: /
 
-User-agent: Anthropic-ai
-Allow: /
-
+# Anthropic / Claude
 User-agent: ClaudeBot
 Allow: /
-
 User-agent: Claude-Web
 Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: anthropic-ai
+Allow: /
 
+# Perplexity
 User-agent: PerplexityBot
 Allow: /
-
-User-agent: Cohere-ai
+User-agent: Perplexity-User
 Allow: /
 
-User-agent: Meta-ExternalAgent
+# Microsoft Copilot / Bing AI
+User-agent: Bingbot
 Allow: /
 
-User-agent: meta-externalfetcher
+# Apple Intelligence
+User-agent: Applebot-Extended
 Allow: /
 
-User-agent: Amazonbot
+# Common Crawl (feeds many AI training sets / tools)
+User-agent: CCBot
 Allow: /
 
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+User-agent: FacebookBot
+Allow: /
+
+# ----------------------------------------------------------------------
+# Sitemap
+# ----------------------------------------------------------------------
 Sitemap: https://www.bionixus.com/sitemap.xml
