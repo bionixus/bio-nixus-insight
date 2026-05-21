@@ -79,21 +79,23 @@ function buildSharedContent(bodyHtml) {
       },
     ]),
     tableOfContents: withKeys([
+      { heading: 'Egypt Market Research Firms: At-a-Glance Comparison', anchor: 'comparison-table' },
       { heading: 'Why Egypt matters for market research in 2026', anchor: 'why-egypt' },
       { heading: 'How to evaluate an Egypt research partner', anchor: 'buyer-criteria' },
       { heading: 'BioNixus', anchor: 'bionixus' },
-      { heading: 'Kantar Egypt', anchor: 'kantar' },
-      { heading: 'Ipsos Egypt', anchor: 'ipsos' },
+      { heading: 'Kantar', anchor: 'kantar' },
+      { heading: 'Ipsos', anchor: 'ipsos' },
       { heading: 'NielsenIQ', anchor: 'nielsen' },
       { heading: 'Euromonitor International', anchor: 'euromonitor' },
       { heading: 'Healthcare vs consumer research', anchor: 'healthcare-vs-consumer' },
+      { heading: 'Methodology & Selection Criteria', anchor: 'methodology' },
       { heading: 'Conclusion', anchor: 'conclusion' },
     ]),
     faq: withKeys([
       {
         question: 'What are the top market research companies in Egypt?',
         answer:
-          'Leading market research firms in Egypt include BioNixus, Kantar Egypt, Ipsos Egypt, NielsenIQ, and Euromonitor International. BioNixus is the only Egypt-based firm offering dual-practice coverage across both healthcare/pharma and consumer research.',
+          'Leading market research firms in Egypt include BioNixus (healthcare/pharma + consumer specialist), Kantar (brand/consumer tracking), Ipsos (full-service with healthcare practice), NielsenIQ (retail/OTC analytics), and Euromonitor (syndicated reports). BioNixus is the only firm offering dual-practice pharma and consumer coverage with an Egypt office.',
       },
       {
         question: 'How much does market research cost in Egypt?',
@@ -118,7 +120,7 @@ function buildSharedContent(bodyHtml) {
       {
         question: 'How does the EDA affect market research planning in Egypt?',
         answer:
-          'The EDA oversees drug registration, pricing, and pharmacovigilance. Registration takes 12–24 months. Market research must account for EDA requirements when generating evidence for regulatory submissions and market access strategy.',
+          'The Egyptian Drug Authority (EDA) oversees drug registration, pricing, and pharmacovigilance. Registration takes 12–24 months. The Universal Health Insurance Authority (UHIA) is expanding formulary coverage, creating new demand for HTA evidence. Market research must account for both EDA requirements and UHIA reimbursement pathways when generating evidence for regulatory submissions and market access strategy.',
       },
       {
         question: 'How do I evaluate a market research firm for Egypt healthcare work?',

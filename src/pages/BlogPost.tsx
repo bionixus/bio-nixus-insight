@@ -630,6 +630,15 @@ const BlogPost = () => {
             { name: 'M3 Global Research', description: 'Large verified physician panel for HCP recruitment and online quantitative fieldwork.' },
             { name: 'SixthFactor Consulting', description: 'Regional GCC custom research consultancy; validate healthcare-specific experience separately.' },
           ],
+        } : slug === 'top-market-research-companies-egypt-2026' ? {
+          name: 'Market research companies in Egypt',
+          items: [
+            { name: 'BioNixus', description: 'Healthcare/pharma and consumer research specialist with Egypt office; EDA-aware, bilingual Arabic-English fieldwork.' },
+            { name: 'Kantar', description: 'Global full-service network; brand health tracking and consumer insights with Egypt office.' },
+            { name: 'Ipsos', description: 'Global full-service research network with healthcare practice; 20+ years Egypt presence.' },
+            { name: 'NielsenIQ', description: 'Global retail measurement and shopper analytics; FMCG and OTC tracking in Egypt.' },
+            { name: 'Euromonitor International', description: 'Syndicated market reports and data; market sizing and competitive landscapes, no custom fieldwork.' },
+          ],
         } : undefined}
       />
       <Helmet>
