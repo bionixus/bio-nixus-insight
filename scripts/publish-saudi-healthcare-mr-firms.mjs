@@ -97,37 +97,37 @@ function buildSharedContent(bodyHtml) {
       {
         question: 'What services do healthcare market research firms offer in Saudi Arabia?',
         answer:
-          'Typical services include physician surveys, patient studies, market sizing, competitive intelligence, payer research, advisory boards, and strategic workshops. Deliverables should map to decisions such as segmentation, messaging, access sequencing, and launch readiness—not only data tables.',
+          'They typically offer quantitative physician and payer surveys, qualitative depth interviews and focus groups, market access and pricing/reimbursement research, KOL and stakeholder mapping, patient journey research, and advisory boards — designed around launch, access, and growth decisions for pharmaceutical and medical device teams.',
       },
       {
         question: 'How much does healthcare market research cost in Saudi Arabia?',
         answer:
-          'Investment scales with methodology, sample size, moderation depth, and hospital approval complexity. Qualitative programs and multi-stakeholder payer work are usually more resource-intensive than short online waves. Request itemized scopes from shortlisted firms and align milestones to decision dates.',
+          'Cost depends on methodology, audience incidence, sample size, number of markets, and recruitment difficulty in narrow specialties. Qualitative programs with payer or specialist physicians are typically more resource-intensive than online survey waves. Contact shortlisted firms for a scoped proposal aligned to your specific decision and timeline rather than relying on generic benchmarks.',
       },
       {
         question: 'How long does a typical market research project take in Saudi Arabia?',
         answer:
-          'Simple surveys may complete in several weeks, while multi-phase studies with narrow specialties or multiple cities can run for multiple months. Recruitment of rare specialists or sensitive payer roles often drives the critical path—build contingency into timelines.',
+          'Timelines depend on incidence and screening, ethics or institutional requirements, instrument length, and qualitative depth. Many studies run 4–12 weeks from kickoff to final deliverable, with recruitment risk buffers for rare specialties built into the plan. Multi-phase programs or studies involving hospital approvals may extend further.',
       },
       {
         question: 'How does BioNixus support pharmaceutical companies in Saudi Arabia?',
         answer:
-          'BioNixus delivers quantitative and qualitative healthcare research with GCC-native execution, including physician and payer interviews, advisory boards, and synthesis aligned to market access and competitive intelligence needs.',
+          'BioNixus runs Saudi-led physician, payer, hospital, and KOL research with SFDA-aware study design and Arabic-capable fieldwork, then synthesizes findings into recommendations for segmentation, messaging, pricing, and access sequencing — aligning medical affairs, market access, and brand teams.',
       },
       {
         question: 'Should we hire a local Saudi research firm or a global company?',
         answer:
-          'Global firms can add datasets and cross-market benchmarks; local and regional specialists often improve recruitment realism, Arabic nuance, and hospital navigation. Many organizations use hybrid models with clear ownership of field quality and analysis.',
+          'Many teams pair a global network for multinational benchmarks with a specialist regional partner for Saudi-led fieldwork, Arabic instruments, and local stakeholder access. The right choice depends on whether your priority is cross-market comparability or in-market execution depth.',
       },
       {
         question: 'What are the biggest challenges in conducting research in Saudi Arabia?',
         answer:
-          'Common challenges include physician availability, hospital approval cycles, cultural sensitivity in instruments, and language choices for patients versus HCPs. Partners with established Saudi field leadership and documented QC reduce execution risk.',
+          'Common challenges include recruiting hard-to-reach specialists, hospital and institutional access, Arabic-versus-English fielding, evolving SFDA and consent/privacy requirements, and ensuring samples reflect real city and sector mix rather than convenience samples.',
       },
       {
         question: 'Is it necessary to conduct research in Arabic in Saudi Arabia?',
         answer:
-          'Many physicians work comfortably in English, yet Arabic-first designs often improve patient insight and some HCP depth. The right language mix depends on audience, therapeutic area, and consent requirements—decide during study design, not after fieldwork starts.',
+          'Often yes. Even when healthcare professionals are comfortable in English, Arabic-first instruments tend to yield richer patient insight and reduce cultural and disclosure bias. Many studies use bilingual designs with Arabic patient materials and English or bilingual HCP fielding.',
       },
     ]),
   }

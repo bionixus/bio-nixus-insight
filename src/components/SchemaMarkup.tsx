@@ -24,6 +24,11 @@ type HomeSchemaProps = {
   articlePosts?: BlogPost[]
 }
 
+type ItemListEntry = {
+  name: string
+  description: string
+}
+
 type BlogSchemaProps = {
   pageType: 'blog'
   pageUrl: string
@@ -38,6 +43,7 @@ type BlogSchemaProps = {
   modifiedAt?: string
   breadcrumb: BreadcrumbItem[]
   faqItems?: FaqItem[]
+  itemList?: { name: string; items: ItemListEntry[] }
 }
 
 type ServiceSchemaProps = {
@@ -254,6 +260,10 @@ function isValidSchemaNode(node: Record<string, unknown>): boolean {
     })
   }
 
+  if (type === 'ItemList') {
+    return isNonEmptyString(node.name) && Array.isArray(node.itemListElement) && node.itemListElement.length > 0
+  }
+
   return true
 }
 
@@ -311,6 +321,21 @@ function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[] {
 
     if (props.faqItems && props.faqItems.length > 0) {
       nodes.push(buildFaq(props.faqItems, inLanguage, toHttpsUrl(props.pageUrl)))
+    }
+
+    if (props.itemList && props.itemList.items.length > 0) {
+      nodes.push({
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        name: props.itemList.name,
+        itemListOrder: 'https://schema.org/ItemListUnordered',
+        itemListElement: props.itemList.items.map((item, idx) => ({
+          '@type': 'ListItem',
+          position: idx + 1,
+          name: item.name,
+          description: item.description,
+        })),
+      })
     }
 
     return nodes

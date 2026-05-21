@@ -597,7 +597,7 @@ const BlogPost = () => {
         description={finalMetaDescription}
         imageUrl={socialImage}
         authorName={post.authorName || 'BioNixus Research Team'}
-        authorUrl={post.authorLinkedIn || 'https://www.linkedin.com/company/bionixus/'}
+        authorUrl={post.authorLinkedIn || 'https://www.linkedin.com/in/mohammad-alsaadany'}
         authorJobTitle={post.authorTitle || undefined}
         publishedAt={post.publishedAtIso}
         modifiedAt={post.updatedAtIso || post.publishedAtIso}
@@ -621,6 +621,16 @@ const BlogPost = () => {
               .map((item) => ({ question: item.question!, answer: item.answer! }))
             : []
         }
+        itemList={slug === 'top-healthcare-market-research-firms-saudi-arabia' ? {
+          name: 'Healthcare market research firms in Saudi Arabia',
+          items: [
+            { name: 'BioNixus', description: 'Regional healthcare and pharmaceutical market research specialist; Saudi fieldwork, SFDA-aware design, Arabic-first instruments.' },
+            { name: 'IQVIA', description: 'Global healthcare data, analytics, and research network; RWE and enterprise-scale delivery.' },
+            { name: 'Ipsos', description: 'Global full-service research network with a healthcare practice; large-scale quantitative and patient research.' },
+            { name: 'M3 Global Research', description: 'Large verified physician panel for HCP recruitment and online quantitative fieldwork.' },
+            { name: 'SixthFactor Consulting', description: 'Regional GCC custom research consultancy; validate healthcare-specific experience separately.' },
+          ],
+        } : undefined}
       />
       <Helmet>
         {/* Dynamic meta tags for this specific blog post */}
