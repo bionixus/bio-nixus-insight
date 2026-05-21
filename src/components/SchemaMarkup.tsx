@@ -32,6 +32,8 @@ type BlogSchemaProps = {
   description: string
   imageUrl?: string
   authorName: string
+  authorUrl?: string
+  authorJobTitle?: string
   publishedAt?: string
   modifiedAt?: string
   breadcrumb: BreadcrumbItem[]
@@ -288,6 +290,8 @@ function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[] {
         author: {
           '@type': 'Person',
           name: props.authorName,
+          ...(props.authorUrl ? { url: props.authorUrl, sameAs: [props.authorUrl] } : {}),
+          ...(props.authorJobTitle ? { jobTitle: props.authorJobTitle } : {}),
         },
         datePublished: published,
         dateModified: modified,

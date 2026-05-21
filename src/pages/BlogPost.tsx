@@ -168,12 +168,6 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { useEffect } from 'react';
 import { ArrowLeft, BarChart3, CheckCircle2, ShieldCheck, TrendingUp, Calendar, Clock, MapPin, AlignLeft, List, ArrowUpRight } from 'lucide-react';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import ShareButtons from '@/components/ShareButtons';
 import type { BlogPost as BlogPostType } from '@/types/blog';
@@ -603,6 +597,8 @@ const BlogPost = () => {
         description={finalMetaDescription}
         imageUrl={socialImage}
         authorName={post.authorName || 'BioNixus Research Team'}
+        authorUrl={post.authorLinkedIn || 'https://www.linkedin.com/company/bionixus/'}
+        authorJobTitle={post.authorTitle || undefined}
         publishedAt={post.publishedAtIso}
         modifiedAt={post.updatedAtIso || post.publishedAtIso}
         breadcrumb={
@@ -930,25 +926,26 @@ const BlogPost = () => {
                 </div>
               </section>
 
-              {/* FAQ */}
+              {/* FAQ — uses <details>/<summary> so answers are always in server-rendered HTML */}
               {Array.isArray(post.faq) && post.faq.length > 0 && (
                 <section className="mt-12" aria-label="Frequently asked questions">
                   <h2 className="font-display text-2xl font-bold tracking-tight text-primary mb-6 flex items-center gap-3">
                     <span className="inline-flex px-2 py-0.5 text-[10px] font-extrabold tracking-[0.1em] uppercase rounded-sm" style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--navy-deep))' }}>FAQ</span>
                     Frequently asked questions
                   </h2>
-                  <Accordion type="single" collapsible className="w-full">
+                  <div className="w-full divide-y divide-border border-t border-border">
                     {post.faq.map((item, i) => (
-                      <AccordionItem key={i} value={`faq-${i}`} className="border-border">
-                        <AccordionTrigger className="text-left text-[15px] font-semibold text-primary hover:text-accent-foreground hover:no-underline py-5">
-                          {item.question || 'Question'}
-                        </AccordionTrigger>
-                        <AccordionContent className="text-[15px] text-muted-foreground leading-relaxed pb-5">
+                      <details key={i} className="group">
+                        <summary className="flex items-center justify-between cursor-pointer text-left text-[15px] font-semibold text-primary hover:text-accent-foreground py-5 list-none [&::-webkit-details-marker]:hidden">
+                          <span>{item.question || 'Question'}</span>
+                          <svg className="w-4 h-4 shrink-0 ml-2 text-muted-foreground transition-transform group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </summary>
+                        <div className="text-[15px] text-muted-foreground leading-relaxed pb-5">
                           {item.answer || ''}
-                        </AccordionContent>
-                      </AccordionItem>
+                        </div>
+                      </details>
                     ))}
-                  </Accordion>
+                  </div>
                 </section>
               )}
 
@@ -1019,10 +1016,20 @@ const BlogPost = () => {
                   )}
                   <div className="flex-1 min-w-0">
                     <p className="text-[10px] font-extrabold tracking-[0.1em] uppercase mb-0.5" style={{ color: 'hsl(var(--accent))' }}>Research Author</p>
-                    <p className="text-[15px] font-semibold text-primary">{post.authorName}</p>
-                    {post.authorTitle && <p className="text-sm text-muted-foreground mb-2">{post.authorTitle}</p>}
+                    <p className="text-[15px] font-semibold text-primary">
+                      {post.authorLinkedIn ? (
+                        <a href={post.authorLinkedIn} target="_blank" rel="noopener noreferrer" className="hover:underline">{post.authorName}</a>
+                      ) : post.authorName}
+                    </p>
+                    {post.authorTitle && <p className="text-sm text-muted-foreground mb-1">{post.authorTitle}</p>}
+                    {post.authorLinkedIn && (
+                      <a href={post.authorLinkedIn} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-primary/70 hover:text-primary transition-colors">
+                        <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        LinkedIn Profile
+                      </a>
+                    )}
                     {post.updatedAtIso && post.updatedAtIso !== post.publishedAtIso && (
-                      <p className="text-xs text-muted-foreground">
+                      <p className="text-xs text-muted-foreground mt-1">
                         Updated {new Date(post.updatedAtIso).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
                       </p>
                     )}

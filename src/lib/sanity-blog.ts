@@ -81,7 +81,9 @@ const POST_BY_SLUG_QUERY = `*[_type == "blogPost" && slug.current == $slug][0] {
   openGraph,
   "ogImageUrl": openGraph.ogImage.asset->url,
   "authorName": author->name,
-  "authorImage": author->image.asset->url
+  "authorTitle": author->title,
+  "authorImage": author->image.asset->url,
+  "authorLinkedIn": author->linkedIn
 }`;
 
 /**
@@ -179,7 +181,9 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
       }
       if (raw.ogImageUrl) out.ogImage = raw.ogImageUrl;
       if (raw.authorName) out.authorName = raw.authorName;
+      if (raw.authorTitle) out.authorTitle = raw.authorTitle;
       if (raw.authorImage) out.authorImage = raw.authorImage;
+      if (raw.authorLinkedIn) out.authorLinkedIn = raw.authorLinkedIn;
       return out;
     })()),
     language: p.language ?? undefined,
@@ -428,5 +432,7 @@ interface RawSanityPost {
   };
   ogImageUrl?: string;
   authorName?: string;
+  authorTitle?: string;
   authorImage?: string;
+  authorLinkedIn?: string;
 }

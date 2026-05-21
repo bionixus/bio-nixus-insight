@@ -45,6 +45,7 @@ export interface BlogPost {
   authorName?: string;
   authorTitle?: string;
   authorImage?: string;
+  authorLinkedIn?: string;
   publishedAtIso?: string;
   updatedAtIso?: string;
 }
