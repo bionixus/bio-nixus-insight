@@ -1,0 +1,37 @@
+{
+  "ci": {
+    "collect": {
+      "url": [
+        "https://www.bionixus.com/",
+        "https://www.bionixus.com/healthcare-market-research",
+        "https://www.bionixus.com/healthcare-market-research/saudi-arabia",
+        "https://www.bionixus.com/healthcare-market-research/uae",
+        "https://www.bionixus.com/healthcare-market-research/egypt",
+        "https://www.bionixus.com/blog/top-healthcare-market-research-firms-saudi-arabia",
+        "https://www.bionixus.com/blog/top-healthcare-market-research-companies-uae",
+        "https://www.bionixus.com/blog/top-market-research-companies-egypt-2026",
+        "https://www.bionixus.com/services",
+        "https://www.bionixus.com/contact"
+      ],
+      "numberOfRuns": 1,
+      "settings": {
+        "preset": "desktop",
+        "throttlingMethod": "simulate"
+      }
+    },
+    "assert": {
+      "assertions": {
+        "categories:performance": ["warn", { "minScore": 0.85 }],
+        "categories:accessibility": ["error", { "minScore": 0.9 }],
+        "categories:best-practices": ["warn", { "minScore": 0.9 }],
+        "categories:seo": ["error", { "minScore": 0.95 }],
+        "largest-contentful-paint": ["warn", { "maxNumericValue": 2500 }],
+        "cumulative-layout-shift": ["error", { "maxNumericValue": 0.1 }],
+        "total-blocking-time": ["warn", { "maxNumericValue": 300 }]
+      }
+    },
+    "upload": {
+      "target": "temporary-public-storage"
+    }
+  }
+}

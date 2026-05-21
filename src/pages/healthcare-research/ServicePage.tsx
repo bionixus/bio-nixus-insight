@@ -3,7 +3,16 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { CTASection } from '@/components/shared/CTASection';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
+import { TopicalLinks } from '@/components/healthcare-research/TopicalLinks';
 import { buildFAQSchema, buildServicePageSchemas } from '@/lib/seo/schemas';
+
+const ALL_SERVICES = ['market-access', 'physician-insights', 'kol-mapping', 'quantitative-research', 'qualitative-research'];
+const SERVICE_COUNTRY_LINKS = [
+  { slug: 'saudi-arabia', name: 'Saudi Arabia', reason: 'SFDA-aware design, Arabic fieldwork, hospital stakeholder access' },
+  { slug: 'uae', name: 'UAE', reason: 'DHA/DOH/MOHAP regulatory awareness, bilingual execution' },
+  { slug: 'egypt', name: 'Egypt', reason: 'EDA-aware design, UHIA reimbursement landscape, large patient pool' },
+  { slug: 'kuwait', name: 'Kuwait', reason: 'KDFA regulatory context and high payer access' },
+];
 
 const SERVICE_COPY: Record<string, string> = {
   'market-access':
@@ -71,17 +80,37 @@ export default function ServicePage() {
     {
       question: `What outcomes does the ${titleService} service support?`,
       answer:
-        'This service supports practical decision outcomes such as launch readiness, stakeholder prioritization, evidence planning, and strategy refinement across country-specific healthcare markets.',
+        `BioNixus ${titleService} programs support practical decision outcomes including launch readiness, stakeholder prioritization, evidence planning, market access strategy, and post-launch optimization. Every engagement is scoped against specific business questions — segmentation, message testing, formulary access, or competitive positioning — rather than generic insight reporting.`,
     },
     {
       question: `How does BioNixus align ${titleService} research with local market context?`,
       answer:
-        'BioNixus tailors design, recruitment, and interpretation to local institutional realities so findings remain actionable rather than generic across MENA, UK, and Europe.',
+        `BioNixus tailors design, recruitment, fieldwork, and interpretation to local institutional realities. For MENA markets this means Arabic-English bilingual execution, regulator-aware methodology (SFDA in KSA, EDA in Egypt, DHA/DOH/MOHAP in UAE), and stakeholder lists built from real decision influence rather than directory pulls.`,
     },
     {
       question: `Can the ${titleService} service be integrated with quantitative and qualitative programs?`,
       answer:
-        'Yes. Service-specific programs are often integrated into broader quantitative and qualitative research plans to provide both measurable confidence and deeper decision rationale.',
+        `Yes. ${titleService} programs are often run as integrated modules within broader quant + qual research designs. This produces both measurable confidence (quantitative) and decision rationale (qualitative) within one program governance — reducing handoff risk and timeline.`,
+    },
+    {
+      question: `What is the typical cost and timeline for a ${titleService} engagement?`,
+      answer:
+        `Single-market ${titleService} programs typically range from $25,000 to $75,000 and complete in 6–10 weeks. Multi-country programs scale to $80,000–$200,000 with timelines of 10–14 weeks depending on the number of markets and stakeholders. We provide transparent milestone billing with named senior leads on every proposal.`,
+    },
+    {
+      question: `Which markets does BioNixus cover for ${titleService} research?`,
+      answer:
+        `BioNixus covers the full GCC (Saudi Arabia, UAE, Kuwait, Qatar, Oman, Bahrain), wider MENA (Egypt, Iraq, Iran, Jordan), the United Kingdom, and select European markets. We can also coordinate global studies via partner panels when programs require coverage beyond our direct fieldwork footprint.`,
+    },
+    {
+      question: `How does BioNixus ensure data integrity in ${titleService} programs?`,
+      answer:
+        `Every program includes documented recruitment verification (panel cross-checks, screener validation), real-time data quality monitoring (response consistency, completion patterns), cleaning rules, and senior-researcher synthesis review. We document the quality assurance steps in every proposal — the QA model is visible to you upfront.`,
+    },
+    {
+      question: `Can ${titleService} findings feed into HEOR or payer submissions?`,
+      answer:
+        `Yes. Where ${titleService} programs generate evidence relevant to health technology assessment, payer value dossiers, or formulary submissions, we structure outputs to align with HEOR and market access frameworks. This includes traceable methodology documentation, sample provenance, and confidence intervals appropriate for submission contexts.`,
     },
   ];
   const jsonLd = [...buildServicePageSchemas(service, copy), buildFAQSchema(serviceFaqs)];
@@ -199,7 +228,89 @@ export default function ServicePage() {
         </div>
       </section>
 
+      <section className="py-12">
+        <div className="container-wide max-w-5xl mx-auto">
+          <h2 className="text-3xl font-display font-semibold text-foreground mb-5">
+            How {titleService} translates to commercial outcomes
+          </h2>
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              Most market research engagements fail commercially not because the data is wrong, but because
+              findings stop short of decisions. BioNixus structures {titleService} programs so each insight
+              is tied to a specific action: a launch sequence change, a message refinement, a target list
+              update, or a payer evidence priority. We document the decision map at kickoff so synthesis
+              flows directly into the workstream that needs it.
+            </p>
+            <p>
+              For pharmaceutical and medtech teams operating across multiple markets, {titleService} programs
+              are designed to balance comparability with local specificity. Core indicators stay consistent
+              across countries; local modules capture regulatory and cultural nuances that matter for execution.
+              This makes the difference between an insight deck that sits in a shared drive and a program
+              that demonstrably moves brand performance.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 bg-muted/20">
+        <div className="container-wide max-w-5xl mx-auto">
+          <h2 className="text-3xl font-display font-semibold text-foreground mb-5">
+            Methods we deploy in {titleService} programs
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <article className="rounded-xl border border-border bg-card p-5">
+              <h3 className="text-base font-semibold text-foreground mb-2">Quantitative HCP surveys</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Statistically robust online and CATI surveys with verified healthcare professional samples;
+                segmentation, message testing, and competitive measurement at scale.
+              </p>
+            </article>
+            <article className="rounded-xl border border-border bg-card p-5">
+              <h3 className="text-base font-semibold text-foreground mb-2">Qualitative depth interviews</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                One-to-one IDIs with treating specialists, hospital pharmacy leads, and payer-adjacent
+                stakeholders; bilingual moderation across MENA and Europe.
+              </p>
+            </article>
+            <article className="rounded-xl border border-border bg-card p-5">
+              <h3 className="text-base font-semibold text-foreground mb-2">Advisory boards &amp; workshops</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Structured KOL advisory boards, hybrid format options, and integrated cross-functional
+                workshops that turn insight into committed action plans.
+              </p>
+            </article>
+            <article className="rounded-xl border border-border bg-card p-5">
+              <h3 className="text-base font-semibold text-foreground mb-2">Patient and caregiver research</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Ethnographic and qualitative patient journey work; integrated with HCP research to give
+                a full pathway view from diagnosis through adherence.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <FAQSection items={serviceFaqs} title={`${titleService} service FAQs`} />
+
+      <TopicalLinks
+        title={`Country markets where we deliver ${titleService}`}
+        links={SERVICE_COUNTRY_LINKS.map((c) => ({
+          to: `/healthcare-market-research/${c.slug}`,
+          title: `${c.name} healthcare market research`,
+          description: c.reason,
+        }))}
+      />
+
+      <TopicalLinks
+        title="Other healthcare research services"
+        variant="pill"
+        links={ALL_SERVICES.filter((s) => s !== service).map((s) => ({
+          to: `/healthcare-market-research/services/${s}`,
+          title: `${s.replace(/-/g, ' ')}`,
+          description: '',
+        }))}
+      />
+
       <CTASection variant="service" />
     </main>
   );

@@ -545,7 +545,24 @@ async function handleSsrRequest(
   const page = injectHtml(template, pathname, appHtml, helmetData, initialData);
 
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
-  res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=60, stale-while-revalidate=300');
+  // Tiered CDN caching: stable content pages cache longer, root/dynamic pages stay fresh.
+  // SWR keeps the cache warm even after stale, so users always get an instant response.
+  const isStableContent =
+    !notFound &&
+    (pathname.startsWith('/blog/') ||
+      pathname.startsWith('/ar/blog/') ||
+      pathname.startsWith('/case-studies/') ||
+      pathname.startsWith('/healthcare-market-research/') ||
+      pathname.startsWith('/pharmaceutical-companies-') ||
+      pathname.startsWith('/global-websites/') ||
+      pathname.startsWith('/insights/') ||
+      pathname.startsWith('/conf/'));
+  const cacheControl = notFound
+    ? 'public, max-age=0, s-maxage=60, stale-while-revalidate=300'
+    : isStableContent
+    ? 'public, max-age=0, s-maxage=600, stale-while-revalidate=86400'
+    : 'public, max-age=0, s-maxage=120, stale-while-revalidate=600';
+  res.setHeader('Cache-Control', cacheControl);
   res.status(notFound ? 404 : 200).send(page);
 }
 

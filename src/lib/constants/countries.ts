@@ -40,7 +40,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     relatedCountries: ['uae', 'kuwait'],
     relatedTherapies: ['diabetes', 'oncology', 'respiratory', 'immunology'],
     keyStats: [
-      { label: 'Pharma Market Size', value: '$10B+ annually' },
+      { label: 'Pharma Market Size', value: '~$10B annually (IQVIA/Fitch 2025)' },
       { label: 'Key Regulator', value: 'SFDA' },
       { label: 'BioNixus Projects', value: '50+ completed KSA studies' },
       { label: 'Strategic Context', value: 'Vision 2030 healthcare transformation' },
@@ -92,7 +92,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     relatedCountries: ['saudi-arabia', 'kuwait'],
     relatedTherapies: ['oncology', 'diabetes', 'respiratory', 'vaccines'],
     keyStats: [
-      { label: 'Pharma Market Size', value: '$5.2B+ annually' },
+      { label: 'Pharma Market Size', value: '~$5.5B annually (Fitch/BMI 2025)' },
       { label: 'Key Regulators', value: 'DOH / MOHAP' },
       { label: 'BioNixus Projects', value: '40+ completed UAE studies' },
       { label: 'Healthcare Context', value: 'Multilingual physician workforce' },
@@ -141,7 +141,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     relatedCountries: ['saudi-arabia', 'uae'],
     relatedTherapies: ['diabetes', 'oncology', 'immunology'],
     keyStats: [
-      { label: 'Pharma Market Size', value: '$1.2B+ annually' },
+      { label: 'Pharma Market Size', value: '~$1.5B annually (Fitch/BMI 2025)' },
       { label: 'Key Regulator', value: 'Kuwait MOH' },
       { label: 'BioNixus Projects', value: '20+ completed Kuwait studies' },
       { label: 'System Structure', value: 'Universal healthcare foundation' },
@@ -385,7 +385,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     relatedTherapies: ['diabetes', 'oncology', 'respiratory', 'cardiology'],
     keyStats: [
       { label: 'Population', value: '109M+ (largest in MENA)' },
-      { label: 'Pharma Market Size', value: '$5.8B+ annually' },
+      { label: 'Pharma Market Size', value: '~$5.8B annually (Fitch/BMI 2025)' },
       { label: 'Key Regulator', value: 'EDA (Egyptian Drug Authority)' },
       { label: 'BioNixus Projects', value: '127+ completed Egypt studies' },
       { label: 'Local Manufacturing', value: '90% domestic production' },
