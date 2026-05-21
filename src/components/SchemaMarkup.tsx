@@ -111,6 +111,7 @@ function buildOrganization(inLanguage: string) {
       'https://www.linkedin.com/company/bionixus/',
       'https://www.facebook.com/Bionixus',
       'https://www.instagram.com/bionixus_',
+      'https://www.wikidata.org/wiki/Q139888256',
     ],
     address: [
       {
