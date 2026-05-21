@@ -639,6 +639,15 @@ const BlogPost = () => {
             { name: 'NielsenIQ', description: 'Global retail measurement and shopper analytics; FMCG and OTC tracking in Egypt.' },
             { name: 'Euromonitor International', description: 'Syndicated market reports and data; market sizing and competitive landscapes, no custom fieldwork.' },
           ],
+        } : slug === 'top-healthcare-market-research-companies-uae' ? {
+          name: 'Healthcare market research companies in the UAE',
+          items: [
+            { name: 'BioNixus', description: 'UAE & GCC healthcare/pharma research specialist; DHA/DOH-aware design, bilingual Arabic-English fieldwork.' },
+            { name: 'IQVIA', description: 'Global healthcare data, analytics, and research network; RWE, datasets, tech-enabled delivery.' },
+            { name: 'Ipsos Healthcare', description: 'Global full-service research network with healthcare practice; UAE regional hub.' },
+            { name: 'Glasgow Research & Consulting', description: 'Dubai-based fieldwork specialist; consumer/B2B with growing healthcare desk.' },
+            { name: 'Syndicated Data (IQVIA/NielsenIQ)', description: 'Prescription audits, retail measurement, competitive benchmarking — complementary to primary research.' },
+          ],
         } : undefined}
       />
       <Helmet>
