@@ -91,6 +91,7 @@ const AdminDashboard = lazy(() => import('@/pages/AdminDashboard'));
 const AdminLogin = lazy(() => import('@/pages/AdminLogin'));
 const AdminImportSubscribers = lazy(() => import('@/pages/AdminImportSubscribers'));
 const AdminAnalytics = lazy(() => import('@/pages/AdminAnalytics'));
+const AdminGsc = lazy(() => import('@/pages/AdminGsc'));
 const AdminCalendar = lazy(() => import('@/pages/AdminCalendar'));
 const AdminCalendarNew = lazy(() => import('@/pages/AdminCalendarNew'));
 const AdminSendNewsletter = lazy(() => import('@/pages/AdminSendNewsletter'));
@@ -242,6 +243,7 @@ export const routes: RouteObject[] = [
   { path: '/admin/login', element: suspensePage(<AdminLogin />) },
   { path: '/admin/import-subscribers', element: suspensePage(<AdminImportSubscribers />) },
   { path: '/admin/analytics', element: suspensePage(<AdminAnalytics />) },
+  { path: '/admin/gsc', element: suspensePage(<AdminGsc />) },
   { path: '/admin/calendar', element: suspensePage(<AdminCalendar />) },
   { path: '/admin/calendar/new', element: suspensePage(<AdminCalendarNew />) },
   { path: '/admin/send-newsletter', element: suspensePage(<AdminSendNewsletter />) },

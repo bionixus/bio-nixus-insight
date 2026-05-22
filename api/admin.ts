@@ -111,6 +111,18 @@ export default async function handler(req: any, res: any) {
     return handleGscRankings(req, res)
   }
 
+  // ─── gsc-pages: GET ───
+  if (action === 'gsc-pages') {
+    if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' })
+    return handleGscPages(req, res)
+  }
+
+  // ─── gsc-breakdown: GET (device or country) ───
+  if (action === 'gsc-breakdown') {
+    if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' })
+    return handleGscBreakdown(req, res)
+  }
+
   // ─── import-subscribers: POST ───
   if (action === 'import-subscribers') {
     if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' })
@@ -1164,6 +1176,102 @@ async function handleGscRankings(req: any, res: any) {
     })
   } catch (error: any) {
     console.error('GSC rankings error:', error)
+    return res.status(500).json({ error: error.message })
+  }
+}
+
+// Shared GSC API query helper
+async function callGscApi(
+  dimensions: string[],
+  rowLimit: number,
+  days: number,
+  filters: any[] = []
+): Promise<{ rows: any[]; siteUrl: string; dateRange: { start: string; end: string } }> {
+  const endDate = new Date()
+  endDate.setDate(endDate.getDate() - 3)
+  const startDate = new Date(endDate)
+  startDate.setDate(startDate.getDate() - days)
+  const fmtDate = (d: Date) => d.toISOString().split('T')[0]
+
+  const auth = getGoogleAuth()
+  const client = await auth.getClient()
+  const accessToken = await client.getAccessToken()
+
+  const body: Record<string, any> = {
+    startDate: fmtDate(startDate),
+    endDate: fmtDate(endDate),
+    dimensions,
+    rowLimit: Math.min(rowLimit, 1000),
+    startRow: 0,
+  }
+  if (filters.length > 0) body.dimensionFilterGroups = [{ groupType: 'and', filters }]
+
+  for (const siteUrl of GSC_SITE_URLS) {
+    const encodedSite = encodeURIComponent(siteUrl)
+    const apiUrl = `https://www.googleapis.com/webmasters/v3/sites/${encodedSite}/searchAnalytics/query`
+    const attempt = await fetch(apiUrl, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${accessToken.token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    })
+    if (attempt.ok) {
+      const data = await attempt.json() as { rows?: any[] }
+      return { rows: data.rows || [], siteUrl, dateRange: { start: fmtDate(startDate), end: fmtDate(endDate) } }
+    }
+    if (attempt.status !== 403) {
+      const errText = await attempt.text()
+      throw new Error(`GSC API error ${attempt.status}: ${errText}`)
+    }
+  }
+  throw new Error(`No accessible GSC property found. Tried: ${GSC_SITE_URLS.join(', ')}`)
+}
+
+async function handleGscPages(req: any, res: any) {
+  try {
+    const { days = '28', limit = '50', query: searchQuery } = req.query
+    const filters: any[] = []
+    if (searchQuery) filters.push({ dimension: 'query', operator: 'contains', expression: searchQuery })
+
+    const { rows, siteUrl, dateRange } = await callGscApi(['page'], parseInt(limit), parseInt(days), filters)
+
+    const pages = rows.map((row) => ({
+      page: row.keys[0],
+      clicks: row.clicks,
+      impressions: row.impressions,
+      ctr: (row.ctr * 100).toFixed(1) + '%',
+      position: row.position.toFixed(1),
+    })).sort((a, b) => b.clicks - a.clicks)
+
+    return res.status(200).json({ site: siteUrl, dateRange, totalPages: pages.length, pages })
+  } catch (error: any) {
+    console.error('GSC pages error:', error)
+    return res.status(500).json({ error: error.message })
+  }
+}
+
+async function handleGscBreakdown(req: any, res: any) {
+  try {
+    const { days = '28', dimension = 'device' } = req.query
+    if (!['device', 'country'].includes(dimension)) {
+      return res.status(400).json({ error: 'dimension must be device or country' })
+    }
+
+    const { rows, siteUrl, dateRange } = await callGscApi([dimension], 100, parseInt(days))
+
+    const breakdown = rows.map((row) => ({
+      label: row.keys[0],
+      clicks: row.clicks,
+      impressions: row.impressions,
+      ctr: (row.ctr * 100).toFixed(1) + '%',
+      position: row.position.toFixed(1),
+    })).sort((a, b) => b.clicks - a.clicks)
+
+    const totalClicks = breakdown.reduce((s, r) => s + r.clicks, 0)
+    const totalImpressions = breakdown.reduce((s, r) => s + r.impressions, 0)
+
+    return res.status(200).json({ site: siteUrl, dateRange, dimension, totalClicks, totalImpressions, breakdown })
+  } catch (error: any) {
+    console.error('GSC breakdown error:', error)
     return res.status(500).json({ error: error.message })
   }
 }

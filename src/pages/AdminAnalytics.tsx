@@ -170,6 +170,7 @@ export default function AdminAnalytics() {
         <h1>📊 Email Analytics</h1>
         <div style={{ display: 'flex', gap: '10px' }}>
           <button onClick={() => navigate('/admin/dashboard')} style={btnStyle('#0066cc')}>← Dashboard</button>
+          <button onClick={() => navigate('/admin/gsc')} style={btnStyle('#1a73e8')}>🔍 GSC Dashboard</button>
           <button onClick={fetchAll} style={btnStyle('#28a745')}>🔄 Refresh</button>
         </div>
       </div>
