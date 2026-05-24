@@ -498,6 +498,46 @@
                 0 8px 16px -8px hsl(220 30% 15% / 0.06);
   }
 
+  /* --- Blog card image zoom + overlay --- */
+  .blog-card-image {
+    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .group:hover .blog-card-image,
+  .group:focus-visible .blog-card-image {
+    transform: scale(1.06);
+  }
+  .blog-card-overlay {
+    opacity: 0;
+    transition: opacity 0.45s ease;
+    background: linear-gradient(
+      to top,
+      hsl(220 35% 12% / 0.75) 0%,
+      hsl(220 35% 12% / 0.15) 45%,
+      transparent 100%
+    );
+  }
+  .group:hover .blog-card-overlay,
+  .group:focus-visible .blog-card-overlay {
+    opacity: 1;
+  }
+  .blog-skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+    background: hsl(var(--muted) / 0.45);
+  }
+  .blog-skeleton-shimmer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--background) / 0.55),
+      transparent
+    );
+    animation: shimmerSweep 1.8s infinite;
+  }
+
   /* --- Shimmer sweep on CTA buttons --- */
   .shimmer {
     position: relative;
@@ -603,8 +643,13 @@
       width: 60px !important;
       transition: none !important;
     }
-    .hover-lift:hover {
+    .hover-lift:hover,
+    .group:hover .blog-card-image,
+    .group:focus-visible .blog-card-image {
       transform: none;
+    }
+    .blog-skeleton-shimmer::after {
+      animation: none;
     }
     .shimmer::after,
     .float-gentle,

@@ -180,6 +180,7 @@ export const routes: RouteObject[] = [
   { path: '/global-websites', element: <GlobalWebsites /> },
   { path: '/global-websites/:countrySlug', element: <GlobalWebsiteCountry /> },
   { path: '/new-home', element: <PremiumHomePreview /> },
+  { path: '/premium-home-preview', element: <PremiumHomePreview /> },
   { path: '/strategic-portfolio', element: <ConfPortfolio /> },
   { path: '/ar/strategic-portfolio', element: <ConfPortfolio locale="ar" /> },
   { path: '/healthcare-market-research', element: <HubPage /> },

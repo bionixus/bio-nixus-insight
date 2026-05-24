@@ -1,12 +1,21 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Globe, Users, TrendingUp, Shield, Target, Microscope } from 'lucide-react';
+import { ArrowLeft, Globe, Users, TrendingUp, Shield, Target, Microscope, Award, Building2 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { Helmet } from 'react-helmet-async';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import SchemaMarkup from '@/components/SchemaMarkup';
+import { CTASection } from '@/components/shared/CTASection';
+
+const TRUST_METRICS = [
+  { value: '2012', label: 'Founded' },
+  { value: '120+', label: 'Projects delivered' },
+  { value: '17+', label: 'Countries covered' },
+] as const;
+
+const COMPLIANCE_BADGES = ['GDPR', 'BHBIA', 'EphMRA', 'ICC / ESOMAR'] as const;
 
 const About = () => {
   const { language } = useLanguage();
@@ -22,7 +31,7 @@ const About = () => {
       <SchemaMarkup
         pageType="about"
         pageUrl="https://www.bionixus.com/about"
-        language={language}
+        language="en"
         people={[
           {
             name: 'Mohammad Alsaadany',
@@ -50,31 +59,70 @@ const About = () => {
         <link rel="canonical" href="https://www.bionixus.com/about" />
       </Helmet>
       <Navbar />
-      <main>
-        {/* Back link */}
+      {/* English-only canonical page: force LTR so stored Arabic locale does not mirror English copy */}
+      <main dir="ltr" lang="en">
         <div className="section-padding pt-24 pb-4">
           <div className="container-wide">
             <Link
               to={basePath}
-              className="inline-flex items-center gap-2 text-primary font-medium hover:underline mb-6"
+              className="inline-flex items-center gap-2 text-primary font-medium hover:underline cursor-pointer"
             >
-              <ArrowLeft className="w-4 h-4" /> Back to home
+              <ArrowLeft className="w-4 h-4" aria-hidden /> Back to Home
             </Link>
           </div>
         </div>
 
-        {/* Hero */}
-        <section className="section-padding pt-4 pb-16" ref={heroRef}>
+        {/* Hero — Trust & Authority pattern */}
+        <section
+          className="section-padding pt-4 pb-12 bg-gradient-to-br from-navy-deep via-navy-medium to-primary text-primary-foreground"
+          ref={heroRef}
+        >
           <div className="container-wide max-w-5xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 sr sr-left sr-fast">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-primary-foreground text-sm font-medium mb-6 sr sr-left sr-fast revealed">
+              <Award className="w-4 h-4" aria-hidden />
               About BioNixus
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl sr sr-up sr-line">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold mb-6 max-w-4xl leading-tight sr sr-up sr-line revealed">
               International Market Research Company with Deep EMEA Heritage
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mb-8 sr sr-up">
+            <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed max-w-3xl mb-8 sr sr-up revealed">
               BioNixus is an international healthcare market research firm founded in 2012, headquartered in the United States with offices in London, United Kingdom. We specialize in pharmaceutical and life sciences consulting across Europe, the Middle East, and North Africa.
             </p>
+            <div className="flex flex-wrap gap-3 mb-10 sr sr-up revealed">
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors duration-200 cursor-pointer"
+              >
+                Request a proposal
+              </Link>
+              <Link
+                to="/healthcare-market-research"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/40 text-primary-foreground font-semibold hover:bg-white/10 transition-colors duration-200 cursor-pointer"
+              >
+                Explore market research
+              </Link>
+            </div>
+            <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 sr sr-up revealed" aria-label="Company credentials">
+              {TRUST_METRICS.map((metric) => (
+                <li
+                  key={metric.label}
+                  className="rounded-xl border border-white/20 bg-white/10 px-5 py-4 text-center"
+                >
+                  <p className="text-2xl md:text-3xl font-display font-semibold text-primary-foreground">{metric.value}</p>
+                  <p className="text-sm text-primary-foreground/80 mt-1">{metric.label}</p>
+                </li>
+              ))}
+            </ul>
+            <div className="flex flex-wrap gap-2 sr sr-up revealed" aria-label="Compliance standards">
+              {COMPLIANCE_BADGES.map((badge) => (
+                <span
+                  key={badge}
+                  className="px-3 py-1 rounded-md bg-white/10 text-xs font-medium text-primary-foreground/90 border border-white/15"
+                >
+                  {badge}
+                </span>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -115,9 +163,8 @@ const About = () => {
               Three core differentiators define the BioNixus approach to healthcare market research.
             </p>
             <div className="grid md:grid-cols-3 gap-8">
-              {/* Differentiator 1 */}
               <div className="bg-card border border-border rounded-xl p-8 sr sr-scale-up sr-spring hover-lift">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6" aria-hidden>
                   <Globe className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="text-xl font-display font-semibold text-foreground mb-3">
@@ -127,9 +174,8 @@ const About = () => {
                   We maintain the most comprehensive physician panel across the GCC and North Africa. Our bilingual research teams (Arabic–English) understand local regulatory frameworks — SFDA, DHA, MOHAP, EDA — and the cultural nuances that shape clinical decision-making in the region.
                 </p>
               </div>
-              {/* Differentiator 2 */}
               <div className="bg-card border border-border rounded-xl p-8 sr sr-scale-up sr-spring hover-lift">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6" aria-hidden>
                   <TrendingUp className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="text-xl font-display font-semibold text-foreground mb-3">
@@ -139,9 +185,8 @@ const About = () => {
                   We deliver premium-quality research at competitive rates. Unlike large consultancies that layer overhead and subcontract fieldwork, BioNixus operates a lean, senior-led model. You get direct access to experienced researchers — not project coordinators managing outsourced panels.
                 </p>
               </div>
-              {/* Differentiator 3 */}
               <div className="bg-card border border-border rounded-xl p-8 sr sr-scale-up sr-spring hover-lift">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6" aria-hidden>
                   <Users className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="text-xl font-display font-semibold text-foreground mb-3">
@@ -163,7 +208,7 @@ const About = () => {
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="flex gap-5 sr sr-left hover-lift">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-1">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-1" aria-hidden>
                   <Shield className="w-5 h-5 text-primary" />
                 </div>
                 <div>
@@ -174,7 +219,7 @@ const About = () => {
                 </div>
               </div>
               <div className="flex gap-5 sr sr-right hover-lift">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-1">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-1" aria-hidden>
                   <Target className="w-5 h-5 text-primary" />
                 </div>
                 <div>
@@ -185,7 +230,7 @@ const About = () => {
                 </div>
               </div>
               <div className="flex gap-5 sr sr-left hover-lift">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-1">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-1" aria-hidden>
                   <Microscope className="w-5 h-5 text-primary" />
                 </div>
                 <div>
@@ -196,7 +241,7 @@ const About = () => {
                 </div>
               </div>
               <div className="flex gap-5 sr sr-right hover-lift">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-1">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-1" aria-hidden>
                   <Globe className="w-5 h-5 text-primary" />
                 </div>
                 <div>
@@ -218,36 +263,36 @@ const About = () => {
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-card border border-border rounded-xl p-8 sr sr-left hover-lift">
-                <h3 className="text-lg font-display font-semibold text-foreground mb-3">
-                  United States — Headquarters
-                </h3>
+                <div className="flex items-center gap-3 mb-3">
+                  <Building2 className="w-5 h-5 text-primary" aria-hidden />
+                  <h3 className="text-lg font-display font-semibold text-foreground">
+                    United States — Headquarters
+                  </h3>
+                </div>
                 <p className="text-muted-foreground">
                   1309 Coffeen Ave<br />
                   Sheridan, Wyoming 82801<br />
-                  <a href="tel:+18884655557" className="text-primary hover:underline">+1 888 465 5557</a>
+                  <a href="tel:+18884655557" className="text-primary hover:underline cursor-pointer">+1 888 465 5557</a>
                 </p>
               </div>
               <div className="bg-card border border-border rounded-xl p-8 sr sr-right hover-lift">
-                <h3 className="text-lg font-display font-semibold text-foreground mb-3">
-                  United Kingdom — London Office
-                </h3>
+                <div className="flex items-center gap-3 mb-3">
+                  <Building2 className="w-5 h-5 text-primary" aria-hidden />
+                  <h3 className="text-lg font-display font-semibold text-foreground">
+                    United Kingdom — London Office
+                  </h3>
+                </div>
                 <p className="text-muted-foreground">
                   128 City Road<br />
                   London, EC1V 2NX<br />
-                  <a href="tel:+447727666682" className="text-primary hover:underline">+44 7727 666682</a>
+                  <a href="tel:+447727666682" className="text-primary hover:underline cursor-pointer">+44 7727 666682</a>
                 </p>
               </div>
             </div>
-            <div className="mt-12 text-center sr sr-up">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors shimmer"
-              >
-                Request a Proposal
-              </Link>
-            </div>
           </div>
         </section>
+
+        <CTASection variant="service" />
       </main>
       <Footer />
     </div>
