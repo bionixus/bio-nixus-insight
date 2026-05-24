@@ -585,10 +585,6 @@ async function startServer() {
     res.sendFile(path.resolve(__dirname, 'public/robots.txt'));
   });
 
-  app.get('/a9fd3da5b0834011f738f13c4bb99814.txt', (_req, res) => {
-    res.type('text/plain').sendFile(path.resolve(__dirname, 'public/a9fd3da5b0834011f738f13c4bb99814.txt'));
-  });
-
   app.get('/llms.txt', (_req, res) => {
     res.type('text/plain').sendFile(path.resolve(__dirname, 'public/llms.txt'));
   });

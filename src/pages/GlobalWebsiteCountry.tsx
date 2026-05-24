@@ -1313,7 +1313,7 @@ const EGYPT_SECTIONS: UaeSection[] = [
     id: 'market-overview',
     title: 'Egypt Pharmaceutical Market at a Glance',
     bullets: [
-      'Market value: ~$5.8 billion pharmaceutical market, largest in North Africa (Fitch Solutions/BMI, 2025)',
+      'Market value: EGP 75 billion (USD 2.5B) pharmaceutical market, largest in North Africa',
       'Growth rate: 12.3% CAGR (2024-2028) driven by UHI expansion and population growth',
       'Population: 105+ million with large, urbanizing care demand',
       'Healthcare infrastructure: 1,800+ MOH hospitals and units, 450+ university hospitals, 600+ private hospitals',
