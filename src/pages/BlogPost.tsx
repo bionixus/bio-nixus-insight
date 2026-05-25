@@ -178,6 +178,23 @@ const CHINA_HEALTHCARE_2026_SLUG = 'healthcare-overview-china-market-2026';
 const CHINA_HEALTHCARE_2026_META_DESCRIPTION =
   '深度解析中国医疗健康市场2026关键趋势：医保支付改革、创新药与生物药商业化、医院与基层诊疗结构变化、AI医疗与数字化转型落地路径，以及老龄化驱动的长期需求。为制药企业、投资机构与行业决策者提供可执行的市场洞察与战略参考。';
 
+/**
+ * SEO recovery overrides for the Egypt healthcare 2026 blog post.
+ * Targets the "cairo hospitals healthcare 2023-2026" query, which had
+ * 15,532 impressions @ 0% CTR in GSC because the CMS title/description
+ * did not match the search intent. These constants force a CTR-optimized
+ * `<title>`, meta description, og:title, og:description on every render —
+ * without requiring a Sanity CMS sync.
+ */
+const EGYPT_HEALTHCARE_2026_SLUG = 'healthcare-overview-egypt-market-2026';
+const EGYPT_HEALTHCARE_2026_TITLE = 'Cairo Hospitals & Egypt Healthcare Market 2026 | BioNixus';
+const EGYPT_HEALTHCARE_2026_META_DESCRIPTION =
+  'Egypt healthcare market 2026: Cairo hospital data, EDA pharmaceutical landscape, payer trends, and physician insights from BioNixus market research.';
+const EGYPT_HEALTHCARE_2026_OG_TITLE =
+  'Egypt Healthcare Market 2026 — Cairo Hospitals, Pharma & Physician Data';
+const EGYPT_HEALTHCARE_2026_OG_DESCRIPTION =
+  'Full Egypt healthcare overview for 2026 — Cairo hospital landscape, EDA regulation, pharmaceutical market size, and primary physician research from BioNixus.';
+
 /** Arabic blog URLs must not reuse the English Sanity meta description (duplicate meta audit). */
 const ARABIC_BLOG_META_DESCRIPTION_BY_SLUG: Record<string, string> = {
   'quantitative-market-research-and-market-access':
@@ -570,12 +587,21 @@ const BlogPost = () => {
           fallback: metaDescription,
         })
       : null;
-  const finalMetaDescription =
-    slug === CHINA_HEALTHCARE_2026_SLUG
+  const isEgyptHealthcare2026 = slug === EGYPT_HEALTHCARE_2026_SLUG;
+  const finalMetaDescription = isEgyptHealthcare2026
+    ? EGYPT_HEALTHCARE_2026_META_DESCRIPTION
+    : slug === CHINA_HEALTHCARE_2026_SLUG
       ? CHINA_HEALTHCARE_2026_META_DESCRIPTION
       : arBlogMetaOverride ?? metaDescription;
-  const socialTitle = post.ogTitle || metaTitle;
-  const socialDescription = post.ogDescription || finalMetaDescription;
+  const finalMetaTitle = isEgyptHealthcare2026
+    ? normalizeSeoTitle(EGYPT_HEALTHCARE_2026_TITLE, 'BioNixus')
+    : metaTitle;
+  const socialTitle = isEgyptHealthcare2026
+    ? EGYPT_HEALTHCARE_2026_OG_TITLE
+    : post.ogTitle || metaTitle;
+  const socialDescription = isEgyptHealthcare2026
+    ? EGYPT_HEALTHCARE_2026_OG_DESCRIPTION
+    : post.ogDescription || finalMetaDescription;
   const socialImage = post.ogImage || post.coverImage;
 
   return (
@@ -593,7 +619,7 @@ const BlogPost = () => {
         pageType="blog"
         pageUrl={pageUrl}
         language={language}
-        headline={post.title}
+        headline={isEgyptHealthcare2026 ? EGYPT_HEALTHCARE_2026_OG_TITLE : post.title}
         description={finalMetaDescription}
         imageUrl={socialImage}
         authorName={post.authorName || 'BioNixus Research Team'}
@@ -634,7 +660,7 @@ const BlogPost = () => {
       />
       <Helmet>
         {/* Dynamic meta tags for this specific blog post */}
-        <title>{normalizeSeoTitle(`${metaTitle} | BioNixus`, 'BioNixus')}</title>
+        <title>{isEgyptHealthcare2026 ? finalMetaTitle : normalizeSeoTitle(`${finalMetaTitle} | BioNixus`, 'BioNixus')}</title>
         <meta name="description" content={finalMetaDescription} />
         <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
 
@@ -873,6 +899,62 @@ const BlogPost = () => {
 
               {/* GCC 2026 premium dashboard enhancement */}
               {isGccPharma2026 && <PremiumGcc2026Enhancement />}
+
+              {/* Egypt 2026 topical intro — places key internal links in the first 200 words
+                  so Google sees the hub + service relationships immediately on this high-impression page. */}
+              {isEgyptHealthcare2026 && (
+                <aside
+                  className="mb-8 rounded-xl border border-primary/15 bg-primary/[0.025] p-5 lg:p-6"
+                  aria-label="Egypt healthcare market quick navigation"
+                >
+                  <p className="text-[11px] font-extrabold tracking-[0.12em] uppercase text-primary mb-3">
+                    Egypt healthcare 2026 — quick navigation
+                  </p>
+                  <p className="text-[15px] text-foreground leading-relaxed mb-3">
+                    This overview covers the Egyptian healthcare market in 2026 — Cairo hospital
+                    landscape, Egyptian Drug Authority (EDA) regulation, pharmaceutical market size,
+                    and physician research signals. Continue to the{' '}
+                    <Link to="/healthcare-market-research" className="text-primary font-semibold underline underline-offset-2 hover:no-underline">
+                      EMEA healthcare market research hub
+                    </Link>{' '}
+                    for the full research framework, or jump to a related Egypt resource below.
+                  </p>
+                  <ul className="grid sm:grid-cols-2 gap-2 mt-3 list-none p-0">
+                    <li>
+                      <Link
+                        to="/pharmaceutical-companies-egypt"
+                        className="inline-flex items-center gap-1 text-sm text-primary font-medium hover:underline"
+                      >
+                        <ArrowUpRight className="w-3.5 h-3.5" aria-hidden /> Pharmaceutical companies in Egypt
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/market-research-egypt"
+                        className="inline-flex items-center gap-1 text-sm text-primary font-medium hover:underline"
+                      >
+                        <ArrowUpRight className="w-3.5 h-3.5" aria-hidden /> Market research in Egypt
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/blog/top-market-research-companies-egypt-2026"
+                        className="inline-flex items-center gap-1 text-sm text-primary font-medium hover:underline"
+                      >
+                        <ArrowUpRight className="w-3.5 h-3.5" aria-hidden /> Top market research companies in Egypt (2026)
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/healthcare-market-research/egypt"
+                        className="inline-flex items-center gap-1 text-sm text-primary font-medium hover:underline"
+                      >
+                        <ArrowUpRight className="w-3.5 h-3.5" aria-hidden /> Egypt country research methodology
+                      </Link>
+                    </li>
+                  </ul>
+                </aside>
+              )}
 
               {/* Article body */}
               <div className="blog-article-body blog-drop-cap">

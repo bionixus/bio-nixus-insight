@@ -3,6 +3,7 @@ import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
+import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 
@@ -10,6 +11,45 @@ const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'GCC Pharma Market Report 2026', href: '/gcc-pharma-market-report-2026' },
 ];
+
+/**
+ * FAQs target stuck high-impression GSC queries: GCC biologics, generic injectables,
+ * drug repurposing, and Saudi Arabia precision medicine — pushing pages 5–7 toward page 1–2.
+ */
+const REPORT_FAQ_ITEMS = [
+  {
+    question: 'How big is the GCC pharmaceutical market in 2026?',
+    answer:
+      'The GCC pharmaceutical market is estimated at USD 38–40 billion in 2026, with Saudi Arabia (~42%) and the UAE (~24%) accounting for roughly two-thirds of regional spend. Annual growth is in the 7–10% range, driven by oncology, biologics, GLP-1s, and Vision 2030 localization.',
+  },
+  {
+    question: 'What is the GCC biologics market size?',
+    answer:
+      'The GCC biologics market is estimated at USD 4.8–5.4 billion in 2026, concentrated in Saudi Arabia and the UAE across oncology, autoimmune, and diabetes. Biosimilar penetration is accelerating after SFDA and MOHAP pathways matured in 2024–2025.',
+  },
+  {
+    question: 'How large is the GCC generic injectables market?',
+    answer:
+      'The GCC generic injectables market is approximately USD 1.6–1.9 billion in 2026. Hospital-administered demand is shaped by NUPCO tendering in Saudi Arabia, MOHAP listing in the UAE, and rising local-manufacturing incentives under Vision 2030 and Operation 300bn.',
+  },
+  {
+    question: 'What is the Saudi Arabia precision medicine market outlook?',
+    answer:
+      'Saudi Arabia precision medicine is the fastest-growing GCC subsegment, driven by the Saudi Genome Program, the Health Sector Transformation Program, and SFDA companion-diagnostic guidance. Oncology and rare disease account for most current launches, with pharmacogenomics expanding in academic medical centres.',
+  },
+  {
+    question: 'What is GCC drug repurposing and how big is the opportunity?',
+    answer:
+      'GCC drug repurposing — relaunching existing molecules for new indications — is an emerging opportunity in oncology, rare disease, and metabolic conditions. Saudi Arabia and the UAE fund repurposing through R&D grants and public–private partnerships; BioNixus tracks pipelines, payer appetite, and physician adoption signals.',
+  },
+  {
+    question: 'How does BioNixus collect GCC hospital consumption data?',
+    answer:
+      'BioNixus collects consumption data through hospital procurement partnerships, pharmacy dispensing records, and primary physician research across the six GCC countries. Data is reported at country, hospital, department, indication, and patient level — enabling commercial teams to size and prioritize the markets that matter.',
+  },
+];
+
+const FAQ_SECTION_ID = 'gcc-pharma-market-report-2026-faq';
 
 const jsonLd = [
   buildBreadcrumbSchema(breadcrumbItems),
@@ -24,8 +64,18 @@ const jsonLd = [
       logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
     },
     datePublished: '2026-05-01',
-    dateModified: '2026-05-19',
+    dateModified: '2026-05-25',
     mainEntityOfPage: 'https://www.bionixus.com/gcc-pharma-market-report-2026',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    url: `https://www.bionixus.com/gcc-pharma-market-report-2026#${FAQ_SECTION_ID}`,
+    mainEntity: REPORT_FAQ_ITEMS.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
   },
 ];
 
@@ -380,6 +430,13 @@ const GccPharmaMarketReport2026 = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection
+          sectionId={FAQ_SECTION_ID}
+          title="GCC pharma market 2026 — biologics, injectables, precision medicine & drug repurposing FAQ"
+          items={REPORT_FAQ_ITEMS}
+          className="bg-muted/30"
+        />
 
         {/* CTA */}
         <section className="section-padding bg-primary/5" id="contact-cta">

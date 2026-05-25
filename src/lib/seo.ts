@@ -19,8 +19,10 @@ export const seoByLanguage: Record<Language, {
   canonicalPath: string;
 }> = {
   en: {
-    title: 'BioNixus — #1 Healthcare Market Research Company in MENA | Pharma Insights Europe & Middle East',
-    description: 'BioNixus is the leading healthcare market research company in the MENA region. Headquartered in the USA with offices in London, UK — delivering quantitative & qualitative pharmaceutical insights from physicians across UAE, Saudi Arabia, Egypt, Kuwait, Qatar, and Europe.',
+    // Brand-first title (≤60 chars after normalizeSeoTitle) so search engines never see a
+    // truncated tail and the brand name "Bionixus" / "BioNixus" wins its own SERP at #1.
+    title: 'BioNixus | Healthcare Market Research — GCC & MENA',
+    description: 'BioNixus is the leading healthcare market research company for GCC and MENA. US-headquartered with London and Cairo offices — pharmaceutical insights across UAE, Saudi Arabia, Egypt, Kuwait, Qatar, and Europe.',
     keywords: 'healthcare market research, MENA market research, pharmaceutical consulting, competitive intelligence, market access, clinical trials, UAE healthcare research, Saudi Arabia pharma research, biotech, life sciences',
     canonicalPath: '/',
   },
