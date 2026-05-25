@@ -85,10 +85,12 @@ export default function GccPharmaceuticalMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>GCC Biologics, Injectables & Precision Medicine Research | BioNixus</title>
+        {/* Title <= 60 chars (post-decode) so the suffix-truncate logic in
+            api/indexnow-key.ts never clips the visible portion. */}
+        <title>GCC Biologics, Injectables & Precision Medicine | BioNixus</title>
         <meta
           name="description"
-          content="GCC pharmaceutical market research covering biologics, generic injectables, drug repurposing, and Saudi Arabia precision medicine — for launch, access, and growth decisions."
+          content="GCC pharmaceutical market research — biologics, generic injectables, drug repurposing, and Saudi Arabia precision medicine intelligence."
         />
         <link rel="canonical" href={pageUrl} />
         <meta property="og:title" content="GCC Pharmaceutical Market Research — Biologics, Injectables & Precision Medicine 2026" />

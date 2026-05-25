@@ -211,8 +211,22 @@ const KNOWN_TITLE_SUFFIXES = [
   '| BioNixus',
 ];
 
+/**
+ * Decode the common HTML entities so length measurement counts what users / Google
+ * actually see. Without this, "Cairo Hospitals &amp; Egypt..." is treated as 61 chars
+ * and the 60-char budget clips a real character off the end of the title.
+ */
+function decodeTitleEntities(s: string): string {
+  return s
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;|&apos;/g, "'");
+}
+
 function normalizeTitleLength(title: string, max = 60): string {
-  const clean = String(title || '').replace(/\s+/g, ' ').trim();
+  const clean = decodeTitleEntities(String(title || '').replace(/\s+/g, ' ').trim());
   if (!clean) return 'BioNixus';
   if (clean.length <= max) return clean;
 
