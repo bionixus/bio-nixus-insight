@@ -372,7 +372,7 @@ function buildFallbackDescription(pathname: string): string {
     return 'Pharmaceutical market research in Dubai from BioNixus: physician surveys, hospital utilization data, KOL mapping, and payer-aware market access programs aligned with UAE health authority expectations.';
   }
   if (path === '/iqvia-alternative') {
-    return 'IQVIA alternative for pharma: hospital sales data, consumption analytics, and agile global studies—US & UK offices, flexible scopes, and no mandatory enterprise floor with BioNixus.';
+    return 'Discover BioNixus, the leading IQVIA alternative providing hospital sales data, consumption analytics, and flexible global studies for the pharmaceutical industry.';
   }
   if (path === '/bionixus-vs-iqvia-mena') {
     return 'BioNixus vs IQVIA for MENA pharma research—hospital datasets, consumption analytics, quant/qual programs, and market access support compared for GCC, Egypt, and regional affiliates.';

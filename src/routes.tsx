@@ -79,6 +79,22 @@ import ArMarketResearchKsa from '@/pages/ArMarketResearchKsa';
 import ArMarketResearchSaudi from '@/pages/ArMarketResearchSaudi';
 import ArMarketResearchKuwait from '@/pages/ArMarketResearchKuwait';
 import ArMarketResearchEgypt from '@/pages/ArMarketResearchEgypt';
+import SaudiArabiaMedicalDevicesMarketReport from '@/pages/SaudiArabiaMedicalDevicesMarketReport';
+import SaudiArabiaHealthcareMarketReport from '@/pages/SaudiArabiaHealthcareMarketReport';
+import UaeHealthcareMarketReport from '@/pages/UaeHealthcareMarketReport';
+import UaeMedicalDevicesMarketReport from '@/pages/UaeMedicalDevicesMarketReport';
+import GccAnesthesiaSurgicalMarket from '@/pages/GccAnesthesiaSurgicalMarket';
+import GccMedicalDevicesMarketReport from '@/pages/GccMedicalDevicesMarketReport';
+import KuwaitMedicalDevicesMarketReport from '@/pages/KuwaitMedicalDevicesMarketReport';
+import KuwaitHealthcareMarketReport from '@/pages/KuwaitHealthcareMarketReport';
+import QatarMedicalDevicesMarketReport from '@/pages/QatarMedicalDevicesMarketReport';
+import QatarHealthcareMarketReport from '@/pages/QatarHealthcareMarketReport';
+import BahrainMedicalDevicesMarketReport from '@/pages/BahrainMedicalDevicesMarketReport';
+import BahrainHealthcareMarketReport from '@/pages/BahrainHealthcareMarketReport';
+import OmanMedicalDevicesMarketReport from '@/pages/OmanMedicalDevicesMarketReport';
+import OmanHealthcareMarketReport from '@/pages/OmanHealthcareMarketReport';
+import EgyptMedicalDevicesMarketReport from '@/pages/EgyptMedicalDevicesMarketReport';
+import EgyptHealthcareMarketReport from '@/pages/EgyptHealthcareMarketReport';
 import TopMarketResearchCompaniesEgypt2026 from '@/pages/TopMarketResearchCompaniesEgypt2026';
 import ArTopMarketResearchCompaniesEgypt2026 from '@/pages/ArTopMarketResearchCompaniesEgypt2026';
 import CaseStudy from '@/pages/CaseStudy';
@@ -204,6 +220,22 @@ export const routes: RouteObject[] = [
   { path: '/pharmaceutical-companies-bahrain', element: <BahrainPharmaCompanies /> },
   { path: '/pharmaceutical-companies-iraq', element: <IraqPharmaCompanies /> },
   { path: '/pharmaceutical-companies-iran', element: <IranPharmaCompanies /> },
+  { path: '/saudi-arabia-medical-devices-market-report', element: <SaudiArabiaMedicalDevicesMarketReport /> },
+  { path: '/saudi-arabia-healthcare-market-report', element: <SaudiArabiaHealthcareMarketReport /> },
+  { path: '/uae-healthcare-market-report', element: <UaeHealthcareMarketReport /> },
+  { path: '/uae-medical-devices-market-report', element: <UaeMedicalDevicesMarketReport /> },
+  { path: '/gcc-anesthesia-surgical-market-report', element: <GccAnesthesiaSurgicalMarket /> },
+  { path: '/gcc-medical-devices-market-report', element: <GccMedicalDevicesMarketReport /> },
+  { path: '/kuwait-medical-devices-market-report', element: <KuwaitMedicalDevicesMarketReport /> },
+  { path: '/kuwait-healthcare-market-report', element: <KuwaitHealthcareMarketReport /> },
+  { path: '/qatar-medical-devices-market-report', element: <QatarMedicalDevicesMarketReport /> },
+  { path: '/qatar-healthcare-market-report', element: <QatarHealthcareMarketReport /> },
+  { path: '/bahrain-medical-devices-market-report', element: <BahrainMedicalDevicesMarketReport /> },
+  { path: '/bahrain-healthcare-market-report', element: <BahrainHealthcareMarketReport /> },
+  { path: '/oman-medical-devices-market-report', element: <OmanMedicalDevicesMarketReport /> },
+  { path: '/oman-healthcare-market-report', element: <OmanHealthcareMarketReport /> },
+  { path: '/egypt-medical-devices-market-report', element: <EgyptMedicalDevicesMarketReport /> },
+  { path: '/egypt-healthcare-market-report', element: <EgyptHealthcareMarketReport /> },
   { path: '/blog', element: <Blog /> },
   { path: '/de/blog', element: <Blog /> },
   { path: '/fr/blog', element: <Blog /> },

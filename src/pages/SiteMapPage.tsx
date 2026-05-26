@@ -68,6 +68,26 @@ const healthcareCountryLinks = [
   { to: '/healthcare-market-research/egypt', label: 'Healthcare Market Research in Egypt' },
 ];
 
+const marketReportLinks = [
+  { to: '/gcc-pharma-market-report-2026', label: 'GCC Pharmaceutical Market Report 2026' },
+  { to: '/gcc-medical-devices-market-report', label: 'GCC Medical Devices Market Report 2026' },
+  { to: '/gcc-anesthesia-surgical-market-report', label: 'GCC Anesthesia & Surgical Market Report 2026' },
+  { to: '/saudi-arabia-healthcare-market-report', label: 'Saudi Arabia Healthcare Market Report 2026' },
+  { to: '/saudi-arabia-medical-devices-market-report', label: 'Saudi Arabia Medical Devices Market Report 2026' },
+  { to: '/uae-healthcare-market-report', label: 'UAE Healthcare Market Report 2026' },
+  { to: '/uae-medical-devices-market-report', label: 'UAE Medical Devices Market Report 2026' },
+  { to: '/kuwait-healthcare-market-report', label: 'Kuwait Healthcare Market Report 2026' },
+  { to: '/kuwait-medical-devices-market-report', label: 'Kuwait Medical Devices Market Report 2026' },
+  { to: '/qatar-healthcare-market-report', label: 'Qatar Healthcare Market Report 2026' },
+  { to: '/qatar-medical-devices-market-report', label: 'Qatar Medical Devices Market Report 2026' },
+  { to: '/bahrain-healthcare-market-report', label: 'Bahrain Healthcare Market Report 2026' },
+  { to: '/bahrain-medical-devices-market-report', label: 'Bahrain Medical Devices Market Report 2026' },
+  { to: '/oman-healthcare-market-report', label: 'Oman Healthcare Market Report 2026' },
+  { to: '/oman-medical-devices-market-report', label: 'Oman Medical Devices Market Report 2026' },
+  { to: '/egypt-healthcare-market-report', label: 'Egypt Healthcare Market Report 2026' },
+  { to: '/egypt-medical-devices-market-report', label: 'Egypt Medical Devices Market Report 2026' },
+];
+
 /** Canonical Arabic posts under /ar/blog/ (also listed in public/sitemap.xml). */
 const arabicBlogCanonicalLinks = [
   {
@@ -269,6 +289,21 @@ export default function SiteMapPage() {
               <h2 className="font-semibold text-foreground mb-4">Pharma Country Guides</h2>
               <ul className="space-y-2">
                 {pharmaCountryLinks.map((item) => (
+                  <li key={item.to}>
+                    <Link to={item.to} className="text-primary hover:underline">
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </div>
+
+          <div className="mt-12 mb-10">
+            <section>
+              <h2 className="font-semibold text-foreground mb-4">Market Research Reports</h2>
+              <ul className="grid sm:grid-cols-2 gap-2">
+                {marketReportLinks.map((item) => (
                   <li key={item.to}>
                     <Link to={item.to} className="text-primary hover:underline">
                       {item.label}
