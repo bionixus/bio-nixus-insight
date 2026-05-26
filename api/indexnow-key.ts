@@ -375,7 +375,7 @@ function buildFallbackDescription(pathname: string): string {
     return 'Discover BioNixus, the leading IQVIA alternative providing hospital sales data, consumption analytics, and flexible global studies for the pharmaceutical industry.';
   }
   if (path === '/bionixus-vs-iqvia-mena') {
-    return 'BioNixus vs IQVIA for MENA pharma research—hospital datasets, consumption analytics, quant/qual programs, and market access support compared for GCC, Egypt, and regional affiliates.';
+    return 'Compare BioNixus and IQVIA for MENA healthcare research, including hospital data, analytics, and market access support tailored for Saudi Arabia and the GCC.';
   }
   if (path === '/physician-survey-saudi-arabia') {
     return 'Physician surveys in Saudi Arabia for pharma: Arabic fieldwork, verified HCP samples, SFDA-aware designs, consumption data integration, and statistically defensible sizing from BioNixus.';
