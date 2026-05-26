@@ -299,7 +299,7 @@ function buildFallbackDescription(pathname) {
     return 'BioNixus delivers real world evidence (RWE) for pharma: principal-led design, EMEA and MENA field execution, HTA-ready narratives, and GCC programs—decision-ready outputs for medical, access, and commercial teams.';
   }
   if (path === '/gfk-alternative-egypt') {
-    return 'GfK was acquired by NIQ in 2023. BioNixus is an independent market research partner with a Cairo office for pharma, healthcare, devices, and consumer categories across Egypt and wider MENA.';
+    return 'GfK was acquired by NIQ in 2023. BioNixus is an independent market research partner with a Cairo office for pharma, healthcare, devices, and consumer categories across Egypt and GCC.';
   }
   if (path === '/kantar-health-alternative-gcc') {
     return 'Kantar Health has no dedicated GCC healthcare desk. BioNixus delivers pharmaceutical and healthcare research across KSA, UAE, Kuwait, Qatar, Bahrain, Oman, and Egypt.';
