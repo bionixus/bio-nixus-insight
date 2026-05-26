@@ -1,4 +1,5 @@
 import { getCountryDirectory } from './globalWebsitesData';
+import { LOW_INTERNAL_LINK_PATHS } from './lowInternalLinkTargets.generated';
 
 const rawReportZeroLinkPaths = [
   '/adobe-experience-cloud',
@@ -223,7 +224,9 @@ const redirectAliasPaths = new Set([
 ]);
 
 const globalWebsiteRecoveryPaths = getCountryDirectory().map((country) => `/global-websites/${country.slug}`);
-const combinedRecoveryPaths = Array.from(new Set([...rawReportZeroLinkPaths, ...globalWebsiteRecoveryPaths]));
+const combinedRecoveryPaths = Array.from(
+  new Set([...LOW_INTERNAL_LINK_PATHS, ...rawReportZeroLinkPaths, ...globalWebsiteRecoveryPaths]),
+);
 
 export const reportZeroLinkPaths = combinedRecoveryPaths.filter((path) => !redirectAliasPaths.has(path));
 

@@ -1,8 +1,11 @@
 /**
  * High-priority inbound targets from periodic internal-link gap reports (e.g. low or zero inbound links).
- * Use with sitewide components (Footer) and hubs so crawler-visible <Link>s reach orphaned URLs without spamming body copy.
+ * Priority entries keep editorial anchor text; extended entries are synced from CSV via code generation.
  */
-export const INTERNAL_LINK_AMPLIFICATION_TARGETS: ReadonlyArray<{ to: string; label: string }> = [
+import { LOW_INTERNAL_LINK_TARGETS } from '@/lib/lowInternalLinkTargets.generated';
+
+/** Curated sitewide links—always surfaced in the footer without hiding behind disclosure. */
+export const INTERNAL_LINK_PRIORITY_TARGETS: ReadonlyArray<{ to: string; label: string }> = [
   { to: '/conf', label: 'Strategic portfolio deck — conf hub' },
   { to: '/ar/conf', label: 'Strategic portfolio — Arabic conf hub' },
   { to: '/methodology', label: 'Healthcare market research methodology (EN)' },
@@ -43,4 +46,16 @@ export const INTERNAL_LINK_AMPLIFICATION_TARGETS: ReadonlyArray<{ to: string; la
     to: '/blog/سوق-الدواء-السعودي-2026',
     label: 'Saudi pharma market 2026 (legacy mirrored blog slug)',
   },
+];
+
+const priorityTo = new Set(INTERNAL_LINK_PRIORITY_TARGETS.map((t) => t.to));
+
+/** From internal-link-report.csv (fewer than 5 inbound)—deduped against priority anchors. */
+export const INTERNAL_LINK_EXTENDED_GAP_TARGETS: ReadonlyArray<{ to: string; label: string }> =
+  LOW_INTERNAL_LINK_TARGETS.filter((t) => !priorityTo.has(t.to));
+
+/** Full merger for hubs/components that intentionally surface every crawler recovery target once. */
+export const INTERNAL_LINK_AMPLIFICATION_TARGETS: ReadonlyArray<{ to: string; label: string }> = [
+  ...INTERNAL_LINK_PRIORITY_TARGETS,
+  ...INTERNAL_LINK_EXTENDED_GAP_TARGETS,
 ];

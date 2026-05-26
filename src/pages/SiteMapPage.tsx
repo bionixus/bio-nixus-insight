@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { useSanityBlog } from '@/hooks/useSanityBlog';
 import { fetchCaseStudies } from '@/lib/sanity-case-studies';
-import { reportZeroLinkPaths } from '@/lib/internalLinkRecovery';
+import { LOW_INTERNAL_LINK_PATHS } from '@/lib/lowInternalLinkTargets.generated';
 
 const staticLinks = [
   { to: '/', label: 'Home' },
@@ -168,7 +168,7 @@ export default function SiteMapPage() {
       { '@type': 'ListItem', position: 2, name: 'Sitemap', item: canonicalUrl },
     ],
   };
-  const groupedCoverageLinks = reportZeroLinkPaths.reduce<Record<string, string[]>>((acc, path) => {
+  const groupedCoverageLinks = LOW_INTERNAL_LINK_PATHS.reduce<Record<string, string[]>>((acc, path) => {
     const bucket = categorizePath(path);
     if (!acc[bucket]) acc[bucket] = [];
     acc[bucket].push(path);
