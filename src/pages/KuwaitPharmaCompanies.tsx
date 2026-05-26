@@ -9,7 +9,7 @@ import OpenGraphMeta from '@/components/OpenGraphMeta';
 
 /* ------------------------------------------------------------------ */
 /* Pharmaceutical companies operating in Kuwait — local & MNC offices  */
-/* Sources: MOH Kuwait, KSPICO, YIACO, Alghanim, company filings      */
+/* Sources: MOH Kuwait, KSPICO, Kuwait distributor disclosures, company sites */
 /* ------------------------------------------------------------------ */
 
 interface PharmaCompany {
@@ -20,15 +20,118 @@ interface PharmaCompany {
   notes: string;
 }
 
+/** Frequently searched ranking used in on-page numbered list & ItemList structured data — editorial snapshot, not endorsement. */
+const TOP_MEDICAL_DISTRIBUTORS_KUWAIT_RANKED_DISPLAY = [
+  'Cura Health (formerly Safwan)',
+  'Ali Abdelwahab (AAW)',
+  'Almojil',
+  'Alhajery',
+  'Alhomaizi',
+  'Bader Sultan',
+  'Mezzan Medical',
+  'Central Circle Co.',
+  'Boushahri',
+] as const;
+
+const topKuwaitMedicalDistributorsOrdered: PharmaCompany[] = [
+  {
+    name: 'Cura Health (formerly Safwan)',
+    hq: 'Kuwait',
+    type: 'Distributor',
+    therapeuticAreas: 'Multi-therapeutic, hospital & retail channels',
+    notes: 'Major Kuwait medical distributor; rebranded from Safwan',
+  },
+  {
+    name: 'Ali Abdelwahab (AAW)',
+    hq: 'Kuwait',
+    type: 'Distributor',
+    therapeuticAreas: 'Pharmaceuticals, medical supplies',
+    notes: 'Wholesale importer-distributor commonly referenced as AAW',
+  },
+  {
+    name: 'Almojil',
+    hq: 'Kuwait',
+    type: 'Distributor',
+    therapeuticAreas: 'Pharmaceuticals, healthcare products',
+    notes: 'Established pharma distribution footprint in Kuwait',
+  },
+  {
+    name: 'Alhajery',
+    hq: 'Kuwait',
+    type: 'Distributor',
+    therapeuticAreas: 'Multi-therapeutic',
+    notes: 'Medical supplies and pharma distribution channels',
+  },
+  {
+    name: 'Alhomaizi',
+    hq: 'Kuwait',
+    type: 'Distributor',
+    therapeuticAreas: 'Pharmaceuticals, consumer health',
+    notes: 'Importer-distributor for Kuwait market',
+  },
+  {
+    name: 'Bader Sultan',
+    hq: 'Kuwait',
+    type: 'Distributor',
+    therapeuticAreas: 'Pharmaceuticals, consumer health',
+    notes: 'Longstanding healthcare distributor',
+  },
+  {
+    name: 'Mezzan Medical',
+    hq: 'Kuwait',
+    type: 'Distributor',
+    therapeuticAreas: 'Medical supplies, OTC, pharma',
+    notes: 'Affiliated with Mezzan Holding group supply ecosystem',
+  },
+  {
+    name: 'Central Circle Co.',
+    hq: 'Kuwait',
+    type: 'Distributor',
+    therapeuticAreas: 'Pharmaceuticals, devices',
+    notes: 'Healthcare and pharmaceutical distribution in Kuwait',
+  },
+  {
+    name: 'Boushahri',
+    hq: 'Kuwait',
+    type: 'Distributor',
+    therapeuticAreas: 'Specialty and primary care lines',
+    notes: 'Regional importer-distributor with Kuwait operations',
+  },
+];
+
 const pharmaCompanies: PharmaCompany[] = [
-  { name: 'Kuwait Saudi Pharmaceutical Industries (KSPICO)', hq: 'Kuwait', type: 'Local Manufacturer', therapeuticAreas: 'Generics, IV solutions, oral solids & liquids, topicals', notes: 'Kuwait\'s only GMP-certified manufacturer; 120+ products; owned by Mezzan Holding' },
-  { name: 'YIACO Medical (Kuwait Drug Company)', hq: 'Kuwait', type: 'Distributor', therapeuticAreas: 'Oncology, haematology, immunology, rare diseases', notes: 'Largest pharma distributor; represents Roche, Octapharma; operates 22 retail pharmacies' },
-  { name: 'Alghanim Industries — Healthcare Division', hq: 'Kuwait', type: 'Distributor', therapeuticAreas: 'Multi-therapeutic, medical devices', notes: 'One of Kuwait\'s largest conglomerates; represents multiple MNC principals' },
-  { name: 'Warba Pharmaceutical Company', hq: 'Kuwait', type: 'Distributor', therapeuticAreas: 'Generics, OTC, consumer health', notes: 'Major local distributor serving retail pharmacy and hospital channels' },
-  { name: 'Al-Rashed International Shipping (Pharma Division)', hq: 'Kuwait', type: 'Distributor', therapeuticAreas: 'Cold-chain biologics, vaccines', notes: 'Specialised cold-chain pharmaceutical logistics across Kuwait' },
+  {
+    name: 'Kuwait Saudi Pharmaceutical Industries (KSPICO)',
+    hq: 'Kuwait',
+    type: 'Local Manufacturer',
+    therapeuticAreas: 'Generics, IV solutions, oral solids & liquids, topicals',
+    notes: 'Kuwait\'s only GMP-certified manufacturer; 120+ products; owned by Mezzan Holding',
+  },
+  ...topKuwaitMedicalDistributorsOrdered,
+  {
+    name: 'YIACO Medical (Kuwait Drug Company)',
+    hq: 'Kuwait',
+    type: 'Distributor',
+    therapeuticAreas: 'Hospital, speciality, OTC, wholesale',
+    notes: 'Established importer-distributor; hospital tenders and Kuwait Drug retail pharmacy presence',
+  },
+  {
+    name: 'Alghanim Industries — Healthcare Division',
+    hq: 'Kuwait',
+    type: 'Distributor',
+    therapeuticAreas: 'Multi-therapeutic, medical devices',
+    notes: 'Conglomerate healthcare division importing devices and pharma lines',
+  },
+  {
+    name: 'Warba Pharmaceutical Company',
+    hq: 'Kuwait',
+    type: 'Distributor',
+    therapeuticAreas: 'Generics, OTC, consumer health',
+    notes: 'Major local distributor serving retail pharmacy and hospital channels',
+  },
   { name: 'Pfizer', hq: 'USA', type: 'MNC Office', therapeuticAreas: 'Oncology, vaccines, inflammation, rare diseases', notes: 'Regional office covers Kuwait; significant MOH tender presence' },
   { name: 'Novartis', hq: 'Switzerland', type: 'MNC Office', therapeuticAreas: 'Oncology, immunology, ophthalmology, cardiovascular', notes: 'Top 3 MNC by value sales in Kuwait; strong hospital formulary presence' },
-  { name: 'Roche', hq: 'Switzerland', type: 'MNC Office', therapeuticAreas: 'Oncology, haematology, neuroscience, diagnostics', notes: 'Distributed via YIACO; leading oncology portfolio in Kuwait' },
+  { name: 'Roche', hq: 'Switzerland', type: 'MNC Office', therapeuticAreas: 'Oncology, haematology, neuroscience, diagnostics', notes: 'INN/biotech and diagnostics portfolio accessed via regional representation and tenders' },
   { name: 'Sanofi', hq: 'France', type: 'MNC Office', therapeuticAreas: 'Diabetes, vaccines, rare diseases, consumer health', notes: 'Strong insulin franchise; #1 diabetes brand in Kuwait' },
   { name: 'AstraZeneca', hq: 'UK / Sweden', type: 'MNC Office', therapeuticAreas: 'Oncology, respiratory, cardiovascular, rare diseases', notes: 'Growing oncology and respiratory presence; active in MOH tenders' },
   { name: 'GSK (GlaxoSmithKline)', hq: 'UK', type: 'MNC Office', therapeuticAreas: 'Vaccines, respiratory, HIV, consumer health', notes: 'Largest vaccine supplier in Kuwait; Ventolin market leader' },
@@ -46,7 +149,11 @@ const pharmaCompanies: PharmaCompany[] = [
 const faqItems = [
   {
     q: 'How many pharmaceutical companies operate in Kuwait?',
-    a: 'Approximately 148 pharmaceutical companies operate in Kuwait, including one local GMP-certified manufacturer (KSPICO), several major distributors (YIACO, Alghanim, Warba), and offices or representatives of over 100 multinational pharmaceutical companies. Kuwait imports approximately 95% of its pharmaceuticals.',
+    a: 'Approximately 148 pharmaceutical companies operate in Kuwait, including one local GMP-certified manufacturer (KSPICO), importer-distributors (see our ranked Kuwait medical distributors list), additional established wholesalers such as YIACO and Alghanim, and offices or representatives of over 100 multinational pharmaceutical companies. Kuwait imports approximately 95% of its pharmaceuticals.',
+  },
+  {
+    q: 'Who are the top medical distributors in Kuwait?',
+    a: 'Kuwait\'s import-led market relies on a concentrated set of medical and pharmaceutical distributors. This guide highlights a frequently searched ranking: (1) Cura Health (formerly Safwan), (2) Ali Abdelwahab (AAW), (3) Almojil, (4) Alhajery, (5) Alhomaizi, (6) Bader Sultan, (7) Mezzan Medical, (8) Central Circle Co., and (9) Boushahri — alongside other distributors in the table (e.g. YIACO, Alghanim, Warba). Rankings reflect market visibility and procurement channels, not a formal MOH league table.',
   },
   {
     q: 'What is the size of Kuwait\'s pharmaceutical market?',
@@ -75,27 +182,42 @@ const KuwaitPharmaCompanies = () => {
   const basePath = languagePaths[language] || '/';
   const citationUrl = 'https://www.bionixus.com/pharmaceutical-companies-kuwait';
 
-  const ogTitle = "Pharmaceutical Companies in Kuwait — Complete Industry Guide 2026";
-  const ogDescription = "Comprehensive guide: 20+ pharmaceutical companies in Kuwait, $1.2B market data, MOH registration process, distribution channels, and market outlook for pharma companies.";
+  const ogTitle = "Pharmaceutical Companies in Kuwait & Top Medical Distributors 2026 | BioNixus";
+  const ogDescription =
+    "Kuwait pharma companies guide: top medical distributors (Cura Health, AAW, Almojil, Central Circle Co., Mezzan Medical, and more), $1.2B market size, MOH registration, MNC offices, and drug distribution channels.";
+
+  const topMedicalDistributorsItemListLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Top medical distributors in Kuwait (editorial overview)',
+    description:
+      'Commonly referenced Kuwait pharmaceutical and medical distributor names for search and market mapping; not an official government ranking.',
+    itemListElement: TOP_MEDICAL_DISTRIBUTORS_KUWAIT_RANKED_DISPLAY.map((name, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name,
+    })),
+  };
 
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Pharmaceutical Companies in Kuwait | Industry Guide 2026 | BioNixus</title>
+        <title>Pharmaceutical Companies in Kuwait | Top Medical Distributors &amp; MNCs 2026 | BioNixus</title>
         <meta
           name="description"
-          content="Complete guide to pharmaceutical companies in Kuwait for 2026: top pharma companies list, market size ($1.2B), MOH drug registration, distribution channels, and industry outlook. Local manufacturers, MNC offices, and distributors."
+          content="Kuwait pharmaceutical companies and medical distributors in 2026: ranked distributor snapshot (Cura Health, AAW, Almojil, Central Circle Co., Mezzan Medical, Boushahri), $1.2B market, MOH drug registration, tenders, KSPICO manufacturing, MNC offices, and procurement channels."
         />
         <link rel="canonical" href={citationUrl} />
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Article',
-            headline: 'Pharmaceutical Companies in Kuwait: Complete Industry Guide 2026',
-            description: 'Comprehensive guide to pharmaceutical companies operating in Kuwait — including local manufacturers, multinational offices, distributors, market data, regulatory landscape, and industry outlook.',
+            headline: 'Pharmaceutical Companies in Kuwait: Top Medical Distributors, MNCs & Regulatory Guide 2026',
+            description:
+              'Guide to Kuwait pharmaceutical companies: ranked medical distributors (including Cura Health, AAW, Almojil, Central Circle Co.), local manufacturing (KSPICO), multinational offices, MOH registration, and distribution channels.',
             url: citationUrl,
             datePublished: '2026-02-15',
-            dateModified: '2026-02-15',
+            dateModified: '2026-05-26',
             author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
             publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
           })}
@@ -122,6 +244,7 @@ const KuwaitPharmaCompanies = () => {
             })),
           })}
         </script>
+        <script type="application/ld+json">{JSON.stringify(topMedicalDistributorsItemListLd)}</script>
       </Helmet>
       <OpenGraphMeta
         title={ogTitle}
@@ -158,10 +281,16 @@ const KuwaitPharmaCompanies = () => {
               Pharmaceutical Companies in Kuwait
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
-              A comprehensive guide to the pharmaceutical industry in Kuwait — covering major pharma companies, market size and growth, drug registration with the Ministry of Health, distribution channels, and strategic opportunities for pharmaceutical and life sciences companies entering the Kuwaiti market.
+              A comprehensive guide to the pharmaceutical industry in Kuwait — covering major pharma companies and{' '}
+              <strong className="text-foreground font-medium">Kuwait medical distributors</strong>, market size and growth,
+              drug registration with the Ministry of Health, importer–wholesale channels, tenders, and opportunities for pharma and life sciences entrants.
+              For regional benchmarking, explore our{' '}
+              <Link to="/healthcare-market-research" className="text-primary hover:underline">healthcare market research hub</Link>,{' '}
+              <Link to="/pharmaceutical-companies-saudi-arabia" className="text-primary hover:underline">Saudi pharmaceutical companies guide</Link>,{' '}
+              and <Link to="/gcc-market-access-guide" className="text-primary hover:underline">GCC pharmaceutical market access</Link>.
             </p>
             <p className="text-sm text-muted-foreground">
-              Last updated: February 2026 &middot; Sources: Kuwait MOH, BioNixus MEA, Ken Research, KSPICO, YIACO, company filings
+              Last updated: May 2026 &middot; Sources: Kuwait MOH, BioNixus MEA, Ken Research, KSPICO, distributor disclosures, company websites
             </p>
 
             {/* Citation box */}
@@ -171,7 +300,7 @@ const KuwaitPharmaCompanies = () => {
                 <div>
                   <p className="font-semibold text-foreground text-sm mb-1">Cite this guide</p>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    BioNixus. &quot;Pharmaceutical Companies in Kuwait: Complete Industry Guide 2026.&quot; BioNixus Healthcare Market Research, Feb. 2026,{' '}
+                    BioNixus. &quot;Pharmaceutical Companies in Kuwait: Top Medical Distributors, MNCs &amp; Regulatory Guide 2026.&quot; BioNixus Healthcare Market Research, May 2026,{' '}
                     <a href={citationUrl} className="text-primary hover:underline break-all">{citationUrl}</a>.
                     <br />
                     Licensed under{' '}
@@ -216,7 +345,8 @@ const KuwaitPharmaCompanies = () => {
             <h2 className="text-lg font-display font-semibold text-foreground mb-4">In this guide</h2>
             <div className="grid md:grid-cols-2 gap-2">
               <a href="#market-overview" className="text-sm text-primary hover:underline flex items-center gap-2"><BarChart3 className="w-4 h-4" /> Kuwait Pharmaceutical Market Overview</a>
-              <a href="#top-companies" className="text-sm text-primary hover:underline flex items-center gap-2"><Building2 className="w-4 h-4" /> Top Pharmaceutical Companies in Kuwait</a>
+              <a href="#top-medical-distributors" className="text-sm text-primary hover:underline flex items-center gap-2"><Truck className="w-4 h-4" /> Top medical distributors in Kuwait</a>
+              <a href="#top-companies" className="text-sm text-primary hover:underline flex items-center gap-2"><Building2 className="w-4 h-4" /> Full company table</a>
               <a href="#companies-by-category" className="text-sm text-primary hover:underline flex items-center gap-2"><Users className="w-4 h-4" /> Companies by Category</a>
               <a href="#regulatory-landscape" className="text-sm text-primary hover:underline flex items-center gap-2"><ShieldCheck className="w-4 h-4" /> Regulatory Landscape</a>
               <a href="#distribution-channels" className="text-sm text-primary hover:underline flex items-center gap-2"><Truck className="w-4 h-4" /> Distribution Channels</a>
@@ -256,9 +386,23 @@ const KuwaitPharmaCompanies = () => {
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">
               Top Pharmaceutical Companies in Kuwait
             </h2>
-            <p className="text-muted-foreground mb-8 max-w-3xl">
-              The following table lists the major pharmaceutical companies operating in Kuwait — including local manufacturers, multinational corporation offices, regional players, and specialist distributors. This is not an exhaustive list of all 148+ registered companies, but represents the most significant players by market share and therapeutic coverage.
+            <p className="text-muted-foreground mb-6 max-w-3xl">
+              The following table lists the major pharmaceutical companies operating in Kuwait — including local manufacturers (KSPICO),{' '}
+              <strong className="text-foreground font-medium">pharmaceutical wholesalers and Kuwait medical distributors</strong>, multinational offices, regional Arab manufacturers,
+              and key tender-facing importers. It is not an exhaustive list of all 148+ registered entities, but covers the organisations most referenced in tenders, hospital supply, and retail.
             </p>
+
+            <h3 id="top-medical-distributors" className="text-xl md:text-2xl font-display font-semibold text-foreground mb-3 scroll-mt-24">
+              Frequently searched: top medical distributors in Kuwait (1–9)
+            </h3>
+            <p className="text-sm text-muted-foreground mb-4 max-w-3xl">
+              Below is an editorial ranking often used in pharma market mapping and sourcing discussions (not an official Ministry of Health league table). Brand portfolios and entity names change with mergers and tenders — validate against your formulary pipeline.
+            </p>
+            <ol className="list-decimal pl-6 space-y-2 text-muted-foreground mb-10 max-w-3xl">
+              {TOP_MEDICAL_DISTRIBUTORS_KUWAIT_RANKED_DISPLAY.map((label) => (
+                <li key={label}>{label}</li>
+              ))}
+            </ol>
 
             {/* Responsive table */}
             <div className="overflow-x-auto rounded-xl border border-border">
@@ -376,7 +520,8 @@ const KuwaitPharmaCompanies = () => {
                   <h3 className="text-lg font-display font-semibold text-foreground">Distributors &amp; Importers</h3>
                 </div>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Given that 95% of pharmaceuticals are imported, distributors are the backbone of Kuwait&apos;s pharmaceutical supply chain. Leading distributors handle registration, marketing, sales, warehousing, and last-mile delivery on behalf of international principals. YIACO and Alghanim are the largest, each representing dozens of global pharmaceutical brands.
+                  Given that 95% of pharmaceuticals are imported, distributor–importers anchor Kuwait&apos;s supply chain — handling registration liaison, tender execution, warehousing, hospital call points, and pharmacy fulfillment for international principals. Teams evaluating{' '}
+                  <strong className="text-foreground font-medium">pharma distribution Kuwait</strong> tenders typically engage the ranked wholesalers above alongside legacy networks such as YIACO and Alghanim; specific brand mandates vary by product and sourcing cycle.
                 </p>
                 <ul className="space-y-1.5 text-sm text-foreground">
                   {pharmaCompanies.filter(c => c.type === 'Distributor').map(c => (
@@ -610,12 +755,14 @@ const KuwaitPharmaCompanies = () => {
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-10">
               Frequently Asked Questions
             </h2>
-            <div className="space-y-6">
+            <div className="space-y-4">
               {faqItems.map((faq) => (
-                <div key={faq.q} className="bg-card border border-border rounded-xl p-6">
-                  <h3 className="text-lg font-display font-semibold text-foreground mb-3">{faq.q}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{faq.a}</p>
-                </div>
+                <details key={faq.q} className="group bg-card border border-border rounded-xl p-6 open:shadow-sm">
+                  <summary className="cursor-pointer text-lg font-display font-semibold text-foreground list-none [&::-webkit-details-marker]:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md">
+                    {faq.q}
+                  </summary>
+                  <p className="mt-4 border-t border-border pt-4 text-sm text-muted-foreground leading-relaxed">{faq.a}</p>
+                </details>
               ))}
             </div>
           </div>
@@ -638,11 +785,11 @@ const KuwaitPharmaCompanies = () => {
                 <li>Grand View Research — Kuwait Pharmaceutical Market Report, 2025&ndash;2030</li>
                 <li>Kuwait Ministry of Health — Drug &amp; Food Control Administration publications</li>
                 <li>Ministerial Decree No. 302/2019 on Registration &amp; Pricing of Pharmaceutical Products</li>
-                <li>KSPICO, YIACO, and company annual reports and corporate websites</li>
+                <li>KSPICO, Kuwait pharmaceutical distributors&apos; disclosures, YIACO, Alghanim, and representative company websites</li>
                 <li>BioNixus proprietary research from physician surveys across Kuwait (2024&ndash;2025)</li>
               </ul>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Company data reflects publicly available information as of February 2026. Market valuations are estimated based on BioNixus and third-party research. For customised market intelligence on Kuwait, <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.
+                Company data reflects publicly available information as of May 2026. Market valuations are estimated based on BioNixus and third-party research. For customised market intelligence on Kuwait, <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.
               </p>
             </div>
           </div>
