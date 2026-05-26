@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { canonicalRedirectTarget, isSsrNotFoundPage } from '../seo-noise-query.mjs';
-import { BLOG_LEGACY_FULL_PATH_REDIRECTS } from '../blog-legacy-redirects.mjs';
+import { BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH, BLOG_LEGACY_FULL_PATH_REDIRECTS } from '../blog-legacy-redirects.mjs';
 import { normalizeOgCardPath, renderOgCardSvg } from '../lib/og-card-svg.mjs';
 
 type HelmetLike = {
@@ -95,6 +95,7 @@ const REDIRECTS: Record<string, string> = {
   '/fr/page-zzW-Z8': '/fr',
   '/fr/page-zzw-z8': '/fr',
   ...BLOG_LEGACY_FULL_PATH_REDIRECTS,
+  ...BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH,
 };
 
 function inferHtmlLang(pathname: string): { lang: string; dir: 'ltr' | 'rtl' } {
@@ -202,6 +203,14 @@ function buildFallbackTitle(pathname: string): string {
 
   if (path === '/real-world-evidence') {
     return 'Real World Evidence (RWE) for Pharma | BioNixus EMEA & MENA';
+  }
+
+  if (path === '/bionixus-vs-iqvia-mena') {
+    return 'BioNixus vs IQVIA for MENA Healthcare Research | Direct Comparison 2026';
+  }
+
+  if (path === '/biosimilar-market-entry-saudi-arabia') {
+    return 'Biosimilar Market Entry in Saudi Arabia: 2026 Strategy Guide | BioNixus';
   }
 
   const segment = path.split('/').filter(Boolean).pop() || 'home';
@@ -314,6 +323,12 @@ function buildFallbackDescription(pathname: string): string {
   }
   if (path === '/real-world-evidence') {
     return 'BioNixus delivers real world evidence (RWE) for pharma: principal-led design, EMEA and MENA field execution, HTA-ready narratives, and GCC programs—decision-ready outputs for medical, access, and commercial teams.';
+  }
+  if (path === '/bionixus-vs-iqvia-mena') {
+    return 'BioNixus vs IQVIA for pharmaceutical market research in MENA. Hospital sales data, consumption analytics, quantitative research and market access — direct comparison for GCC and Egypt.';
+  }
+  if (path === '/biosimilar-market-entry-saudi-arabia') {
+    return 'Complete biosimilar market entry strategy for Saudi Arabia 2026. SFDA registration, NUPCO tender, hospital consumption data, physician adoption research and competitive intelligence across GCC.';
   }
 
   const segment = path.split('/').filter(Boolean).pop() || 'home';
@@ -459,6 +474,24 @@ function ensureMetaDescriptionTag(html: string, pathname: string): string {
   );
 }
 
+/**
+ * Inject rel=canonical only when Helmet/link tags omitted it (SSR edge cases).
+ */
+function ensureCanonicalTag(html: string, pathname: string): string {
+  if (/<link\b[^>]*\brel\s*=\s*["']canonical["']/i.test(html)) return html;
+  const clean = String(pathname || '/').split('?')[0].split('#')[0] || '/';
+  const trimmed = clean === '/' ? '/' : clean.replace(/\/+$/, '');
+  const absolute =
+    trimmed === '/' ? 'https://www.bionixus.com/' : `https://www.bionixus.com${trimmed}`;
+  const escaped = escapeHtmlAttribute(absolute);
+  const linkTag = `<link rel="canonical" href="${escaped}" />`;
+  const headClose = /<\/head>/i;
+  if (headClose.test(html)) {
+    return html.replace(headClose, `  ${linkTag}\n</head>`);
+  }
+  return html.replace(/<meta name="viewport"[^>]*>/i, `$&\n${linkTag}`);
+}
+
 function getTemplate(): string {
   if (templateCache) return templateCache;
   const primary = path.join(process.cwd(), 'dist', 'client', '_ssr-template.html');
@@ -497,11 +530,14 @@ function injectHtml(
       '<!--ssr-data-->',
       `<script>window.__INITIAL_DATA__ = ${JSON.stringify(initialData).replace(/</g, '\\u003c')}</script>`,
     );
-  return ensureImageTitleAttributes(
-    ensureMainContentImage(
-      ensureMetaDescriptionTag(ensureTitleTag(applyHtmlLang(page, pathname), pathname), pathname),
-      pathname,
+  return ensureCanonicalTag(
+    ensureImageTitleAttributes(
+      ensureMainContentImage(
+        ensureMetaDescriptionTag(ensureTitleTag(applyHtmlLang(page, pathname), pathname), pathname),
+        pathname,
+      ),
     ),
+    pathname,
   );
 }
 

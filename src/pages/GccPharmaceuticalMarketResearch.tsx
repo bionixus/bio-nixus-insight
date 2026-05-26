@@ -122,7 +122,13 @@ export default function GccPharmaceuticalMarketResearch() {
             <div className="grid md:grid-cols-2 gap-4">
               <article className="rounded-xl border border-border bg-card p-5">
                 <h2 className="font-semibold text-foreground mb-2">GCC biologics &amp; generic injectables market</h2>
-                <p className="text-sm text-muted-foreground">Saudi Arabia and the UAE concentrate the majority of biologics and hospital injectables spend; tracker programmes follow biosimilar penetration, NUPCO tenders, and MOHAP listing.</p>
+                <p className="text-sm text-muted-foreground">
+                  Saudi Arabia and the UAE concentrate most biologics and hospital injectables spend; tracker programmes follow biosimilar penetration, NUPCO tenders, and MOHAP listing. For KSA specifics, combine this hub with the{' '}
+                  <Link to="/biosimilar-market-entry-saudi-arabia" className="text-primary font-semibold underline underline-offset-2 hover:no-underline">
+                    biosimilar market entry Saudi Arabia playbook
+                  </Link>
+                  .
+                </p>
               </article>
               <article className="rounded-xl border border-border bg-card p-5">
                 <h2 className="font-semibold text-foreground mb-2">Saudi Arabia precision medicine &amp; GCC drug repurposing</h2>

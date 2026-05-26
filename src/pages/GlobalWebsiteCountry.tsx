@@ -2212,9 +2212,18 @@ const GlobalWebsiteCountry = () => {
                 </p>
               </>
             ) : isSaudiPage ? (
-              <p className="text-sm text-muted-foreground mt-4">
-                Trusted by pharmaceutical teams across Riyadh, Jeddah, Eastern Province, and major Saudi medical networks.
-              </p>
+              <>
+                <p className="text-sm text-muted-foreground mt-4">
+                  Trusted by pharmaceutical teams across Riyadh, Jeddah, Eastern Province, and major Saudi medical networks.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mt-3 max-w-3xl">
+                  Planning a biosimilar or biologics launch under SFDA and NUPCO timelines? BioNixus maintains a standalone{' '}
+                  <Link to="/biosimilar-market-entry-saudi-arabia" className="text-primary hover:underline">
+                    biosimilar market entry in Saudi Arabia strategy guide
+                  </Link>{' '}
+                  covering registration pacing, tender economics, and physician adoption research.
+                </p>
+              </>
             ) : isUsPage ? (
               <p className="text-sm text-muted-foreground mt-4">
                 Serving teams across academic medical centers, integrated delivery networks, specialty groups, and payer-influenced channels in the US.

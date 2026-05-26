@@ -13,7 +13,7 @@ import SchemaMarkup from '@/components/SchemaMarkup';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { getOgLocale, getOgLocaleAlternates } from '@/lib/seo';
 import { blogRecoveryPaths } from '@/lib/internalLinkRecovery';
-import { resolveSanityBlogSlug } from '../../blog-legacy-redirects.mjs';
+import { resolveSanityBlogSlug, BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH } from '../../blog-legacy-redirects.mjs';
 import { isSanityConfigured } from '@/lib/sanity';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useInitialData } from '@/contexts/InitialDataContext';
@@ -247,7 +247,7 @@ const GCC_PHARMA_COMPARISON_BODY_HTML = `<p>Pharmaceutical strategists rarely ne
 
 <h2 id="saudi-angle">Saudi Arabia pharmaceutical pressures</h2>
 
-<p>Saudi Arabia’s scale dominates regional revenue pools, yet centralized procurement reforms and heightened SFDA vigilance reshape launch curves. Winning teams align medical narratives with payer evidence bundles before engaging retail networks. Extend analysis through <a href="/healthcare-market-research/saudi-arabia">pharmaceutical market research in Saudi Arabia</a> pages and quantify prescriber segments with statistically defensible GCC samples anchored in <a href="/quantitative-healthcare-market-research">quantitative healthcare market research methodology</a>.</p>
+<p>Saudi Arabia’s scale dominates regional revenue pools, yet centralized procurement reforms and heightened SFDA vigilance reshape launch curves. Winning teams align medical narratives with payer evidence bundles before engaging retail networks. Extend analysis through <a href="/healthcare-market-research/saudi-arabia">pharmaceutical market research in Saudi Arabia</a> and the <a href="/biosimilar-market-entry-saudi-arabia">biosimilar market entry in Saudi Arabia strategy guide</a>, and quantify prescriber segments with statistically defensible GCC samples anchored in <a href="/quantitative-healthcare-market-research">quantitative healthcare market research methodology</a>.</p>
 
 <h2 id="kuwait-angle">Kuwait market compact but access-sensitive</h2>
 
@@ -618,6 +618,48 @@ function getExecutiveSummaryToRender(
   return null;
 }
 
+const blogEnToArDuplicates = BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH as Record<string, string>;
+
+function normalizeBioNixusAbsoluteUrl(raw: string, fallbackAbsolute: string): string {
+  const fb = fallbackAbsolute.trim();
+  if (!raw.trim()) return fb;
+  let s = raw.trim().replace(/^http:\/\//i, 'https://');
+  s = s.replace(/^https:\/\/bionixus\.com(\/|$)/i, 'https://www.bionixus.com$1');
+  try {
+    const u = new URL(s);
+    if (u.hostname === 'bionixus.com') u.hostname = 'www.bionixus.com';
+    if (u.pathname !== '/' && u.pathname.endsWith('/')) {
+      u.pathname = u.pathname.replace(/\/+$/, '') || '/';
+    }
+    return `${u.origin}${u.pathname}${u.search}`;
+  } catch {
+    return fb;
+  }
+}
+
+/** Single preferred https://www URL for SSR blog Helmet canonical + OG url. */
+function blogCanonicalAbsoluteUrl(
+  pathname: string,
+  cmsCanonical: string | undefined,
+  isGccComparison: boolean,
+  comparisonUrl: string,
+): string {
+  if (isGccComparison) return comparisonUrl;
+  const pathClean = (pathname.split('?')[0] || '/blog').replace(/\/+$/, '') || '/blog';
+  const arDup = blogEnToArDuplicates[pathClean];
+  const defaultAbs = `https://www.bionixus.com${pathClean.startsWith('/') ? pathClean : `/${pathClean}`}`;
+  const preferredAbs = arDup ? `https://www.bionixus.com${arDup}` : defaultAbs;
+  const normalizedCms = normalizeBioNixusAbsoluteUrl(cmsCanonical ?? '', preferredAbs);
+  try {
+    const cmsUrl = new URL(normalizedCms);
+    const wantUrl = new URL(preferredAbs);
+    if (cmsUrl.pathname !== wantUrl.pathname) return preferredAbs;
+    return `${cmsUrl.origin}${cmsUrl.pathname}${cmsUrl.search}`;
+  } catch {
+    return preferredAbs;
+  }
+}
+
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const { pathname } = useLocation();
@@ -747,11 +789,7 @@ const BlogPost = () => {
 
   const pathClean = (pathname.split('?')[0] || '/blog').replace(/\/+$/, '') || '/blog';
   const comparisonPageUrl = `https://www.bionixus.com/blog/${GCC_PHARMA_COMPARISON_SLUG}`;
-  const pageUrl =
-    isGccComparisonEn
-      ? comparisonPageUrl
-      : (post.seoCanonicalUrl && String(post.seoCanonicalUrl).trim()) ||
-        `https://www.bionixus.com${pathClean.startsWith('/') ? pathClean : `/${pathClean}`}`;
+  const pageUrl = blogCanonicalAbsoluteUrl(pathname, post.seoCanonicalUrl, isGccComparisonEn, comparisonPageUrl);
   const articleDisplayTitle = isGccComparisonEn ? GCC_PHARMA_COMPARISON_DISPLAY_TITLE : post.title;
   const bodySourceForMeta = typeof post.body === 'string' ? post.body : post.excerpt || post.title;
   const metaTitle = normalizeSeoTitle(post.seoMetaTitle || post.title, 'BioNixus');
@@ -889,7 +927,7 @@ const BlogPost = () => {
         {socialImage && <meta name="twitter:image" content={socialImage} />}
 
         {/* Canonical URL */}
-        <link rel="canonical" href={isGccComparisonEn ? comparisonPageUrl : post.seoCanonicalUrl || pageUrl} />
+        <link rel="canonical" href={pageUrl} />
 
       </Helmet>
 

@@ -184,6 +184,9 @@ export default function HealthcareMarketResearchAgencyGcc() {
                 <Link to="/heor-consulting-saudi-arabia" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                   HEOR consulting Saudi Arabia
                 </Link>
+                <Link to="/biosimilar-market-entry-saudi-arabia" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                  Biosimilar market entry Saudi Arabia guides
+                </Link>
               </div>
             </section>
             <section className="mb-8">

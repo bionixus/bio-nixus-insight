@@ -127,6 +127,21 @@
       "statusCode": 301
     },
     {
+      "source": "/blog/saudi-healthcare-market-research-firms-ar",
+      "destination": "/ar/blog/saudi-healthcare-market-research-firms-ar",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/gcc-pharmaceuticals-market-arabic-2026",
+      "destination": "/ar/blog/gcc-pharmaceuticals-market-arabic-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/middle-east-healthcare-market-statistics-2025",
+      "destination": "/blog/middle-east-healthcare-market-statistics-2026",
+      "statusCode": 301
+    },
+    {
       "source": "/assets/index-:hash.js",
       "destination": "/assets/index.js",
       "statusCode": 301

@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import express from 'express';
 import compression from 'compression';
 import { canonicalRedirectTarget, isSsrNotFoundPage } from './seo-noise-query.mjs';
-import { BLOG_LEGACY_FULL_PATH_REDIRECTS } from './blog-legacy-redirects.mjs';
+import { BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH, BLOG_LEGACY_FULL_PATH_REDIRECTS } from './blog-legacy-redirects.mjs';
 import { normalizeOgCardPath, renderOgCardSvg } from './lib/og-card-svg.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -126,6 +126,14 @@ function buildFallbackTitle(pathname) {
 
   if (path === '/real-world-evidence') {
     return 'Real World Evidence (RWE) for Pharma | BioNixus EMEA & MENA';
+  }
+
+  if (path === '/bionixus-vs-iqvia-mena') {
+    return 'BioNixus vs IQVIA for MENA Healthcare Research | Direct Comparison 2026';
+  }
+
+  if (path === '/biosimilar-market-entry-saudi-arabia') {
+    return 'Biosimilar Market Entry in Saudi Arabia: 2026 Strategy Guide | BioNixus';
   }
 
   const segment = path.split('/').filter(Boolean).pop() || 'home';
@@ -250,6 +258,12 @@ function buildFallbackDescription(pathname) {
   }
   if (path === '/real-world-evidence') {
     return 'BioNixus delivers real world evidence (RWE) for pharma: principal-led design, EMEA and MENA field execution, HTA-ready narratives, and GCC programs—decision-ready outputs for medical, access, and commercial teams.';
+  }
+  if (path === '/bionixus-vs-iqvia-mena') {
+    return 'BioNixus vs IQVIA for pharmaceutical market research in MENA. Hospital sales data, consumption analytics, quantitative research and market access — direct comparison for GCC and Egypt.';
+  }
+  if (path === '/biosimilar-market-entry-saudi-arabia') {
+    return 'Complete biosimilar market entry strategy for Saudi Arabia 2026. SFDA registration, NUPCO tender, hospital consumption data, physician adoption research and competitive intelligence across GCC.';
   }
 
   const segment = path.split('/').filter(Boolean).pop() || 'home';
@@ -377,6 +391,25 @@ function ensureMetaDescriptionTag(html, pathname) {
   );
 }
 
+/**
+ * When Helmet omits rel=canonical on SSR, inject exactly one tag for the request path.
+ * If a canonical link is already present, leave it unchanged (BlogPost / routes set preferred URLs).
+ */
+function ensureCanonicalTag(html, pathname) {
+  if (/<link\b[^>]*\brel\s*=\s*["']canonical["']/i.test(html)) return html;
+  const clean = String(pathname || '/').split('?')[0].split('#')[0] || '/';
+  const trimmed = clean === '/' ? '/' : clean.replace(/\/+$/, '');
+  const absolute =
+    trimmed === '/' ? 'https://www.bionixus.com/' : `https://www.bionixus.com${trimmed}`;
+  const escaped = escapeHtmlAttribute(absolute);
+  const linkTag = `<link rel="canonical" href="${escaped}" />`;
+  const headClose = /<\/head>/i;
+  if (headClose.test(html)) {
+    return html.replace(headClose, `  ${linkTag}\n</head>`);
+  }
+  return html.replace(/<meta name="viewport"[^>]*>/i, `$&\n${linkTag}`);
+}
+
 async function startServer() {
   const app = express();
   app.use(compression());
@@ -459,6 +492,7 @@ async function startServer() {
     '/fr/page-zzW-Z8': '/fr',
     '/fr/page-zzw-z8': '/fr',
     ...BLOG_LEGACY_FULL_PATH_REDIRECTS,
+    ...BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH,
     '/blog/\u0623\u0628\u062D\u0627\u062B-\u0627\u0644\u0633\u0648\u0642-\u0627\u0644\u062F\u0648\u0627\u0626\u064A\u0629-\u0641\u064A-\u0627\u0644\u0634\u0631\u0642-\u0627\u0644\u0623\u0648\u0633\u0637-\u0648-\u062F\u0648\u0644-\u0627\u0644\u062E\u0644\u064A\u062C-\u0627\u0644\u0639\u0631\u0628\u064A': '/ar/blog/pharmaceutical-market-research-middle-east-gcc',
     '/blog/\u0633\u0648\u0642-\u0627\u0644\u062F\u0648\u0627\u0621-\u0627\u0644\u0633\u0639\u0648\u062F\u064A-2026': '/ar/blog/saudi-pharma-market-2026',
   };
@@ -714,8 +748,11 @@ async function startServer() {
         );
       const localizedPage = ensureImageTitleAttributes(
         ensureMainContentImage(
-          ensureMetaDescriptionTag(
-            ensureTitleTag(applyHtmlLang(page, req.path), req.path),
+          ensureCanonicalTag(
+            ensureMetaDescriptionTag(
+              ensureTitleTag(applyHtmlLang(page, req.path), req.path),
+              req.path,
+            ),
             req.path,
           ),
           req.path,

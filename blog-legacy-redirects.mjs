@@ -6,12 +6,22 @@ export const LEGACY_BLOG_SLUG_TO_CANONICAL = {
   'healthcare-market-research-europe': 'healthcare-market-research-europe-2026',
   'pharmaceutical-market-research-uk': 'pharmaceutical-market-research-uk-2026',
   'drug-registration-kuwait-pharma-guide': 'healthcare-overview-kuwait-market-2026',
+  'middle-east-healthcare-market-statistics-2025': 'middle-east-healthcare-market-statistics-2026',
 };
 
 /** Full-path redirects for Express + Vercel SSR (`/blog/old` → `/blog/new`). */
 export const BLOG_LEGACY_FULL_PATH_REDIRECTS = Object.fromEntries(
   Object.entries(LEGACY_BLOG_SLUG_TO_CANONICAL).map(([from, to]) => [`/blog/${from}`, `/blog/${to}`]),
 );
+
+/**
+ * Arabic-authored posts mistakenly exposed under /blog/{slug} — consolidate on /ar/blog/{slug}.
+ * Fixes canonical/hreflang and crawler 307 noise vs www apex.
+ */
+export const BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH = {
+  '/blog/saudi-healthcare-market-research-firms-ar': '/ar/blog/saudi-healthcare-market-research-firms-ar',
+  '/blog/gcc-pharmaceuticals-market-arabic-2026': '/ar/blog/gcc-pharmaceuticals-market-arabic-2026',
+};
 
 /**
  * Blog URL slug → Sanity `blogPost.slug.current` when the visible URL should differ from CMS slug

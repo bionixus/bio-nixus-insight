@@ -456,6 +456,9 @@ const GccMarketAccessGuide = () => {
               <Link to="/global-websites/oman" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 Oman pharmaceutical market research and regulatory pathway insights
               </Link>
+              <Link to="/biosimilar-market-entry-saudi-arabia" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                Biosimilar market entry in Saudi Arabia strategy guide (2026)
+              </Link>
               <Link to="/blog/nupco-saudi-arabia-tendering-guide" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 NUPCO tendering guide for Saudi market access teams
               </Link>

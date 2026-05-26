@@ -11,7 +11,7 @@ export default function HeorConsultingSaudiArabia() {
       intro="BioNixus supports HEOR consulting in Saudi Arabia with practical budget-impact modeling, localized value narratives, and evidence packages aligned to payer and procurement realities."
       links={[
         { to: '/healthcare-market-research-agency-gcc', label: 'Healthcare market research agency GCC', primary: true },
-        { to: '/budget-impact-model-saudi-arabia', label: 'Budget impact model Saudi Arabia', primary: true },
+        { to: '/biosimilar-market-entry-saudi-arabia', label: 'Biosimilar market entry Saudi Arabia', primary: true },
         { to: '/healthcare-market-research/saudi-arabia', label: 'Pharma market research company in Saudi Arabia' },
         { to: '/contact', label: 'Request HEOR scope' },
       ]}
