@@ -7,6 +7,7 @@ import {
   resolveSanityBlogSlug,
   BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH,
 } from '../../blog-legacy-redirects.mjs';
+import { demoteH1TagsToH2 } from '../../lib/demote-blog-body-h1.mjs';
 
 const sanityClient = createClient({
   projectId: process.env.VITE_SANITY_PROJECT_ID || 'h2whvvpo',
@@ -158,7 +159,8 @@ function portableTextToHTML(content) {
           _fallback: ({ children }) => `${children}`,
         },
         block: {
-          h1: ({ children }) => `<h1>${children}</h1>`,
+          // Article header is the only real <h1> on crawlers/OG HTML; CMS body headings start at h2
+          h1: ({ children }) => `<h2>${children}</h2>`,
           h2: ({ children }) => `<h2>${children}</h2>`,
           h3: ({ children }) => `<h3>${children}</h3>`,
           h4: ({ children }) => `<h4>${children}</h4>`,
@@ -256,6 +258,9 @@ export default async function handler(req, res) {
       if (Array.isArray(bodyBlocks) && bodyBlocks.length > 0) {
         articleBodyHtml = portableTextToHTML(bodyBlocks);
       }
+    }
+    if (articleBodyHtml) {
+      articleBodyHtml = demoteH1TagsToH2(articleBodyHtml);
     }
 
     // Executive summary

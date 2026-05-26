@@ -122,11 +122,11 @@ const Blog = () => {
         ? 'Blog Insights Marché Santé | BioNixus'
         : 'Healthcare Market Research Blog | BioNixus';
   const description = isArabicBlog
-    ? 'مقالات عربية حول أبحاث السوق الدوائي والصحي في السعودية ودول الخليج، والوصول إلى السوق، والتنظيم.'
+    ? 'أبحاث السوق الدوائي والصحي في السعودية والخليج والوصول إلى السوق والتنظيم—مقالات تنفيذية، استبيانات أطباء، وروابط لصفحات الخدمات والدليل الإقليمي.'
     : isGerman
-      ? 'Insights zu pharmazeutischer Marktforschung, Marktzugang und Gesundheitsstrategien für EMEA.'
+      ? 'Pharma- und Healthcare-Marktforschung, Market Access und Launch-Strategie für DACH & EMEA—Feldstudien, KOL-/Payer-Insights und praxisnahe Analysen von BioNixus.'
       : isFrench
-        ? 'Insights sur les études de marché santé, le market access et la stratégie pharmaceutique en EMEA.'
+        ? 'Études pharma & santé, accès marché et stratégie de lancement pour la France et l’EMEA—terrain, payeurs, KOL et analyses opérationnelles BioNixus.'
         : 'Expert insights on pharmaceutical market research, market access, clinical trials, and healthcare intelligence across Europe, UAE, Saudi Arabia, and MENA.';
   const heroTitle = isArabicBlog
     ? 'تحديثات عربية لأبحاث الرعاية الصحية والدواء'

@@ -176,7 +176,7 @@ export default function ArTopMarketResearchCompaniesEgypt2026() {
         <title>أفضل شركات أبحاث السوق في مصر (دليل 2026) | BioNixus</title>
         <meta
           name="description"
-          content="دليل مستقل لأفضل 5 شركات أبحاث سوق في مصر لعام 2026: رعاية صحية وأدوية وأبحاث مستهلكين."
+          content="دليل مستقل 2026 لأبرز شركات أبحاث السوق في مصر للرعاية الصحية والأدوية والمستهلكين—مقارنة القدرات، السياق التنظيمي، وسيناريوهات اختيار مزود أبحاث موثوق."
         />
         <link rel="canonical" href={CANONICAL} />
         <link rel="alternate" hreflang="ar" href={CANONICAL} />
@@ -188,7 +188,7 @@ export default function ArTopMarketResearchCompaniesEgypt2026() {
       </Helmet>
       <OpenGraphMeta
         title="أفضل شركات أبحاث السوق في مصر (دليل 2026) | BioNixus"
-        description="دليل مستقل: أفضل 5 شركات أبحاث سوق في مصر للرعاية الصحية والأدوية والمستهلكين."
+      description="دليل مستقل 2026 لأبرز شركات أبحاث السوق في مصر للرعاية الصحية والأدوية والمستهلكين—مع مقارنة القدرات الميدانية، بيانات السوق المصري، وأسئلة اختيار الشريك قبل توقيع العقد."
         image="https://www.bionixus.com/og-image.png"
         url={CANONICAL}
         type="article"

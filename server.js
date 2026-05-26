@@ -48,6 +48,21 @@ const ARABIC_BLOG_TITLE_OVERRIDES = {
     'أبحاث السوق الكمية وأثر الوصول إلى السوق | BioNixus',
 };
 
+/** `/blog/` article with Arabic slug (decoded path segment). Must match BlogPost.tsx SSR + Helmet. */
+const GCC_MEAST_PHARMA_HEALTH_AR_SLUG =
+  'أبحاث-السوق-الدوائية-في-الشرق-الأوسط-و-دول-الخليج-العربي';
+const GCC_MEAST_PHARMA_HEALTH_AR_PAGE_TITLE =
+  'أبحاث السوق في الشرق الأوسط والخليج 2026 | بيونكسس | BioNixus';
+const GCC_MEAST_PHARMA_HEALTH_AR_META_DESCRIPTION =
+  'تحليل معمق لسوق الرعاية الصحية في دول الخليج العربي لعام 2026. اكتشف فرص التوطين، التحول الرقمي، واستراتيجيات النجاح في السعودية والإمارات.';
+
+/** Saudi pharma market outlook; Arabic slug under `/blog/` (decoded segment). Matches BlogPost.tsx. */
+const SAUDI_PHARMA_MARKET_2026_AR_SLUG = 'سوق-الدواء-السعودي-2026';
+const SAUDI_PHARMA_MARKET_2026_AR_PAGE_TITLE =
+  'سوق الدواء السعودي 2026: رؤى واتجاهات النمو المستقبلية | BioNixus';
+const SAUDI_PHARMA_MARKET_2026_AR_META_DESCRIPTION =
+  'اكتشف أهم اتجاهات سوق الدواء السعودي لعام 2026. تعرف على فرص التوطين، نمو الأدوية الحيوية، وتأثير رؤية 2030 على الرعاية الصحية في المملكة.';
+
 const GENERIC_DEFAULT_TITLES = new Set([
   'BioNixus | Healthcare & Pharmaceutical Market Research',
   'BioNixus',
@@ -105,7 +120,18 @@ function buildFallbackTitle(pathname) {
     return `${titleCaseFromSlug(slug)} | مدونة BioNixus`;
   }
   if (path.startsWith('/blog/')) {
-    const slug = path.split('/').pop() || 'insight';
+    let slug = path.split('/').pop() || 'insight';
+    try {
+      slug = decodeURIComponent(slug);
+    } catch {
+      /* malformed percent-encoding — use raw segment */
+    }
+    if (slug === SAUDI_PHARMA_MARKET_2026_AR_SLUG) {
+      return SAUDI_PHARMA_MARKET_2026_AR_PAGE_TITLE;
+    }
+    if (slug === GCC_MEAST_PHARMA_HEALTH_AR_SLUG) {
+      return GCC_MEAST_PHARMA_HEALTH_AR_PAGE_TITLE;
+    }
     if (slug === 'quantitative-market-research-and-market-access') {
       return 'Quantitative Healthcare Market Research & Market Access 2026 | BioNixus';
     }
@@ -166,6 +192,8 @@ function decodeTitleEntities(s) {
 function normalizeTitleLength(title, max = 60) {
   const clean = decodeTitleEntities(String(title || '').replace(/\s+/g, ' ').trim());
   if (!clean) return 'BioNixus';
+  // Hebrew / Arabic scripts: truncate by UTF-16 code units mangles SSR titles vs visible text.
+  if (/[\u0590-\u08FF]/.test(clean)) return clean;
   if (clean.length <= max) return clean;
 
   for (const suffix of KNOWN_TITLE_SUFFIXES) {
@@ -236,7 +264,18 @@ function buildFallbackDescription(pathname) {
     return 'Read BioNixus healthcare and pharmaceutical market insights on market access, physician behavior, and regional growth strategy.';
   }
   if (path.startsWith('/blog/')) {
-    const slug = path.split('/').pop() || 'insight';
+    let slug = path.split('/').pop() || 'insight';
+    try {
+      slug = decodeURIComponent(slug);
+    } catch {
+      /* keep raw segment */
+    }
+    if (slug === SAUDI_PHARMA_MARKET_2026_AR_SLUG) {
+      return SAUDI_PHARMA_MARKET_2026_AR_META_DESCRIPTION;
+    }
+    if (slug === GCC_MEAST_PHARMA_HEALTH_AR_SLUG) {
+      return GCC_MEAST_PHARMA_HEALTH_AR_META_DESCRIPTION;
+    }
     if (slug === 'quantitative-market-research-and-market-access') {
       return 'Quantitative healthcare market research guide for pharma market access: KPI frameworks, payer evidence, and links to methodology at BioNixus.';
     }
@@ -259,11 +298,32 @@ function buildFallbackDescription(pathname) {
   if (path === '/real-world-evidence') {
     return 'BioNixus delivers real world evidence (RWE) for pharma: principal-led design, EMEA and MENA field execution, HTA-ready narratives, and GCC programs—decision-ready outputs for medical, access, and commercial teams.';
   }
+  if (path === '/gfk-alternative-egypt') {
+    return 'GfK was acquired by NIQ in 2023. BioNixus is an independent market research partner with a Cairo office for pharma, healthcare, devices, and consumer categories across Egypt and wider MENA.';
+  }
+  if (path === '/kantar-health-alternative-gcc') {
+    return 'Kantar Health has no dedicated GCC healthcare desk. BioNixus delivers pharmaceutical and healthcare research across KSA, UAE, Kuwait, Qatar, Bahrain, Oman, and Egypt—independent partner since 2012.';
+  }
+  if (path === '/pharmaceutical-market-research-dubai') {
+    return 'Pharmaceutical market research in Dubai from BioNixus: physician surveys, hospital utilization data, KOL mapping, and payer-aware market access programs aligned with UAE health authority expectations.';
+  }
+  if (path === '/iqvia-alternative') {
+    return 'IQVIA alternative for pharma: hospital sales data, consumption analytics, and agile global studies—US & UK offices, flexible scopes, and no mandatory enterprise floor with BioNixus.';
+  }
   if (path === '/bionixus-vs-iqvia-mena') {
-    return 'BioNixus vs IQVIA for pharmaceutical market research in MENA. Hospital sales data, consumption analytics, quantitative research and market access — direct comparison for GCC and Egypt.';
+    return 'BioNixus vs IQVIA for MENA pharma research—hospital datasets, consumption analytics, quant/qual programs, and market access support compared for GCC, Egypt, and regional affiliates.';
+  }
+  if (path === '/physician-survey-saudi-arabia') {
+    return 'Physician surveys in Saudi Arabia for pharma: Arabic fieldwork, verified HCP samples, SFDA-aware designs, consumption data integration, and statistically defensible sizing from BioNixus.';
+  }
+  if (path === '/sfda-market-access-strategy-saudi-arabia') {
+    return 'SFDA market access in Saudi Arabia (2026): NUPCO formulary context, HTA-ready evidence bundles, utilization insight, pricing signals, and payer research for launch and lifecycle teams.';
+  }
+  if (path === '/kol-mapping-saudi-arabia-oncology') {
+    return 'Oncology KOL mapping in Saudi Arabia—validated physician networks, influence scoring, utilization context, and engagement plans integrating hospital data for GCC medical and commercial teams.';
   }
   if (path === '/biosimilar-market-entry-saudi-arabia') {
-    return 'Complete biosimilar market entry strategy for Saudi Arabia 2026. SFDA registration, NUPCO tender, hospital consumption data, physician adoption research and competitive intelligence across GCC.';
+    return 'Biosimilar market entry for Saudi Arabia (2026): SFDA pathways, NUPCO dynamics, utilization research, physician adoption studies, and competitive intelligence spanning KSA and GCC affiliates.';
   }
 
   const segment = path.split('/').filter(Boolean).pop() || 'home';

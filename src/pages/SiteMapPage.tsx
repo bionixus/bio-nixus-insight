@@ -147,7 +147,7 @@ export default function SiteMapPage() {
         <title>Sitemap | BioNixus</title>
         <meta
           name="description"
-          content="Comprehensive BioNixus content index linking services, blog articles, case studies, and market intelligence pages."
+          content="Structured BioNixus directory of services, blog articles, case studies, country hubs, and pharmaceutical intelligence pages—organized for marketers, access leads, and research buyers."
         />
         <link rel="canonical" href={canonicalUrl} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>

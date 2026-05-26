@@ -13,11 +13,11 @@ const THERAPY_COPY: Record<string, string> = {
   respiratory:
     'Respiratory market research to support portfolio strategy, stakeholder targeting, and evidence-based engagement planning.',
   immunology:
-    'Immunology-focused healthcare research programs for adoption analysis, segmentation, and message optimization.',
+    'Immunology market research for biologics and advanced therapies: sequencing behavior, safety–efficacy trade-offs, access friction, and differentiated messaging for specialists and payers in MENA and Europe.',
   biologics:
-    'Biologics and biosimilar market research with physician, payer, and market access stakeholder insight models.',
+    'Biologics and biosimilars research—prescriber substitution, institutional procurement, confidence in switching, and payer evidence needs for differentiated positioning and access roadmaps.',
   vaccines:
-    'Vaccine market research for perception, adoption, and communication strategy across key healthcare markets.',
+    'Vaccines and immunization programs: HCP confidence, public uptake drivers, communication testing, and rollout strategy support for national and private channels in priority healthcare markets.',
   cardiology:
     'Cardiology pharmaceutical market research covering acute and chronic pathways, interventional adoption, guideline-aligned prescribing, and payer-relevant outcomes.',
   'rare-diseases':

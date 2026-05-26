@@ -43,6 +43,75 @@ function escapeXml(s) {
     .replace(/'/g, '&apos;');
 }
 
+/** Matches production / Ahrefs exports (lowercase hex) so sitemap URLs stay stable vs legacy exports. */
+function percentEncodeLower(segment) {
+  return encodeURIComponent(String(segment)).replace(/%[0-9A-F]{2}/g, (h) => h.toLowerCase());
+}
+
+/** Re-encode each path segment with lowercase `%hh` — live canonical resolution often returns uppercase hex. */
+function normalizeSitemapAbsoluteUrl(absUrlStr) {
+  try {
+    const u = new URL(absUrlStr);
+    const pathname = u.pathname
+      .split('/')
+      .map((segment) => {
+        if (!segment) return '';
+        try {
+          return percentEncodeLower(decodeURIComponent(segment));
+        } catch {
+          return segment;
+        }
+      })
+      .join('/');
+    u.pathname = pathname || '/';
+    return u.toString();
+  } catch {
+    return absUrlStr;
+  }
+}
+
+/** Arabic post slugs mirrored under `/ar/blog/` and `/blog/` (must stay aligned with BlogPost.tsx). */
+const GCC_MEAST_PHARMA_AR_BLOG_SLUG =
+  'أبحاث-السوق-الدوائية-في-الشرق-الأوسط-و-دول-الخليج-العربي';
+const SAUDI_PHARMA_MARKET_2026_AR_SLUG = 'سوق-الدواء-السعودي-2026';
+
+/** Blog slugs listed only as static `/blog/...` rows (301 to AR); do not merge Sanity row or it overwrites & strips this URL. */
+const BLOG_SLUG_SITEMAP_STATIC_ONLY = new Set(['gcc-pharmaceuticals-market-arabic-2026']);
+
+/**
+ * Canonical indexable URLs that Sanity / redirect resolution would otherwise omit
+ * — mirrors production sitemap completeness (Arabic blog index, standalone pages, duplicated AR URLs).
+ */
+const extraStaticSitemapPages = [
+  { path: '/ar/blog', priority: '0.85', changefreq: 'weekly' },
+  {
+    path: '/ar/blog/gcc-pharmaceuticals-market-arabic-2026',
+    priority: '0.7',
+    changefreq: 'monthly',
+  },
+  {
+    path: '/ar/blog/quantitative-market-research-and-market-access',
+    priority: '0.7',
+    changefreq: 'monthly',
+  },
+  {
+    path: `/ar/blog/${percentEncodeLower(GCC_MEAST_PHARMA_AR_BLOG_SLUG)}`,
+    priority: '0.75',
+    changefreq: 'monthly',
+  },
+  {
+    path: `/ar/blog/${percentEncodeLower(SAUDI_PHARMA_MARKET_2026_AR_SLUG)}`,
+    priority: '0.75',
+    changefreq: 'monthly',
+  },
+  /** Listed before 301 → /ar/blog/… so legacy /blog shortcuts stay discoverable (matches live sitemap). */
+  {
+    path: '/blog/gcc-pharmaceuticals-market-arabic-2026',
+    priority: '0.7',
+    changefreq: 'monthly',
+  },
+];
+
 function urlEntry(loc, lastmod = null, changefreq = 'weekly', priority = '0.8', alternates = []) {
   const lastmodTag = lastmod ? `\n    <lastmod>${escapeXml(lastmod)}</lastmod>` : '';
   const alternatesTags = alternates
@@ -152,7 +221,8 @@ const staticPages = [
   { path: '/blog/saudi-arabia-healthcare-market-2026', priority: '0.88', changefreq: 'monthly' },
   { path: '/blog/pharmaceutical-market-research-methods-mena', priority: '0.83', changefreq: 'monthly' },
   { path: '/blog/gcc-clinical-trials-market-2026', priority: '0.83', changefreq: 'monthly' },
-  { path: '/blog/gcc-pharmaceutical-market-comparison-uae-saudi-kuwait', priority: '0.86', changefreq: 'monthly' },
+  { path: '/blog/pharmacoeconomics-gcc-practical-guide', priority: '0.87', changefreq: 'monthly' },
+  { path: '/blog/gcc-pharmacoeconomics', priority: '0.88', changefreq: 'monthly' },
   { path: '/faq', priority: '0.7', changefreq: 'monthly' },
   { path: '/resources', priority: '0.7', changefreq: 'monthly' },
   { path: '/fr/contacts', priority: '0.7', changefreq: 'monthly' },
@@ -164,6 +234,11 @@ const staticPages = [
   { path: '/es/methodology', priority: '0.6', changefreq: 'monthly' },
   { path: '/zh/methodology', priority: '0.6', changefreq: 'monthly' },
   { path: '/ar/methodology', priority: '0.6', changefreq: 'monthly' },
+  // Egypt guide + Conf portfolio live as standalone URLs (see routes.tsx).
+  { path: '/insights/top-market-research-companies-egypt-2026', priority: '0.82', changefreq: 'monthly' },
+  { path: '/ar/insights/top-market-research-companies-egypt-2026', priority: '0.82', changefreq: 'monthly' },
+  { path: '/strategic-portfolio', priority: '0.72', changefreq: 'monthly' },
+  { path: '/terms', priority: '0.35', changefreq: 'yearly' },
 ];
 
 const healthcareTherapySlugs = [
@@ -248,6 +323,9 @@ function buildStaticRoutes() {
   for (const page of staticPages) {
     routes.push(page);
   }
+  for (const page of extraStaticSitemapPages) {
+    routes.push(page);
+  }
   // Country detail pages under Global Websites
   for (const slug of globalWebsiteCountrySlugs) {
     routes.push({
@@ -293,7 +371,7 @@ const hreflangGroups = [
   },
   { en: '/contact', de: '/de/contact', fr: '/fr/contacts', es: '/es/contact', ar: '/ar/contacts', 'zh-CN': '/zh/contact', 'x-default': '/contact' },
   // Only list languages that actually have distinct localized URLs.
-  { en: '/blog', de: '/de/blog', fr: '/fr/blog', 'x-default': '/blog' },
+  { en: '/blog', de: '/de/blog', fr: '/fr/blog', ar: '/ar/blog', 'x-default': '/blog' },
   { en: '/services/market-access', es: '/es/market-access', 'x-default': '/services/market-access' },
   { en: '/market-research-uae', ar: '/ar/market-research-uae', 'x-default': '/market-research-uae' },
   { en: '/market-research-ksa', ar: '/ar/market-research-ksa', 'x-default': '/market-research-ksa' },
@@ -608,6 +686,16 @@ const STATIC_PAGE_FILES = {
   '/ar/methodology': ['src/pages/Methodology.tsx'],
   '/fr/contacts': ['src/pages/Contact.tsx'],
   '/ar/contacts': ['src/pages/Contact.tsx'],
+  '/ar/blog': ['src/pages/Blog.tsx'],
+  '/ar/blog/gcc-pharmaceuticals-market-arabic-2026': ['src/pages/BlogPost.tsx'],
+  '/insights/top-market-research-companies-egypt-2026': ['src/pages/TopMarketResearchCompaniesEgypt2026.tsx'],
+  '/ar/insights/top-market-research-companies-egypt-2026': ['src/pages/ArTopMarketResearchCompaniesEgypt2026.tsx'],
+  '/strategic-portfolio': ['src/pages/ConfPortfolio.tsx'],
+  '/terms': ['src/pages/Terms.tsx'],
+  '/ar/blog/quantitative-market-research-and-market-access': ['src/pages/BlogPost.tsx'],
+  '/blog/gcc-pharmaceuticals-market-arabic-2026': ['src/pages/BlogPost.tsx'],
+  [`/ar/blog/${percentEncodeLower(GCC_MEAST_PHARMA_AR_BLOG_SLUG)}`]: ['src/pages/BlogPost.tsx'],
+  [`/ar/blog/${percentEncodeLower(SAUDI_PHARMA_MARKET_2026_AR_SLUG)}`]: ['src/pages/BlogPost.tsx'],
   '/blog/gcc-pharmaceutical-market-comparison-uae-saudi-kuwait': ['src/pages/BlogPost.tsx'],
 };
 
@@ -659,7 +747,8 @@ async function main() {
     });
   }
   for (const { slug, lastmod } of blogContent) {
-    const url = `${BASE}/blog/${encodeURIComponent(slug)}`;
+    if (BLOG_SLUG_SITEMAP_STATIC_ONLY.has(slug)) continue;
+    const url = `${BASE}/blog/${percentEncodeLower(slug)}`;
     candidates.set(url, {
       priority: '0.7',
       changefreq: 'monthly',
@@ -670,7 +759,7 @@ async function main() {
     });
   }
   for (const { slug, lastmod } of caseContent) {
-    const url = `${BASE}/case-studies/${encodeURIComponent(slug)}`;
+    const url = `${BASE}/case-studies/${percentEncodeLower(slug)}`;
     candidates.set(url, {
       priority: '0.7',
       changefreq: 'monthly',
@@ -732,16 +821,18 @@ async function main() {
       continue;
     }
 
-    if (result.include !== candidateUrl) {
-      redirectedOrResolved.push({ from: candidateUrl, to: result.include, reason: result.reason });
+    const normalizedFinal = normalizeSitemapAbsoluteUrl(result.include);
+
+    if (normalizedFinal !== candidateUrl) {
+      redirectedOrResolved.push({ from: candidateUrl, to: normalizedFinal, reason: result.reason });
     }
 
     const { skipLiveResolution: _s, fallbackOnFetchFailure: _f, ...rest } = meta;
-    const existing = finalUrls.get(result.include);
+    const existing = finalUrls.get(normalizedFinal);
     if (existing) {
-      finalUrls.set(result.include, mergeMeta(existing, rest));
+      finalUrls.set(normalizedFinal, mergeMeta(existing, rest));
     } else {
-      finalUrls.set(result.include, rest);
+      finalUrls.set(normalizedFinal, rest);
     }
   }
 

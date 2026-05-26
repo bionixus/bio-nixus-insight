@@ -22,6 +22,30 @@ import Footer from '@/components/Footer';
 import { ArrowLeft, BarChart3, CheckCircle2, ShieldCheck, TrendingUp, Calendar, Clock, MapPin, AlignLeft, List, ArrowUpRight } from 'lucide-react';
 import ShareButtons from '@/components/ShareButtons';
 import type { BlogPost as BlogPostType } from '@/types/blog';
+import {
+  PHARMACOECONOMICS_GCC_SLUG,
+  PHARMACOECONOMICS_GCC_BODY_HTML,
+  PHARMACOECONOMICS_GCC_EXECUTIVE_SUMMARY_HTML,
+  PHARMACOECONOMICS_GCC_META_DESCRIPTION,
+  PHARMACOECONOMICS_GCC_META_TITLE,
+  PHARMACOECONOMICS_GCC_OG_DESCRIPTION,
+  PHARMACOECONOMICS_GCC_SCHEMA_FAQ,
+  PHARMACOECONOMICS_GCC_TABLE_OF_CONTENTS,
+} from '@/data/blog-pharmacoeconomics-gcc';
+import {
+  GCC_PHARMACOECONOMICS_BODY_HTML,
+  GCC_PHARMACOECONOMICS_COVER_IMAGE,
+  GCC_PHARMACOECONOMICS_DISPLAY_TITLE,
+  GCC_PHARMACOECONOMICS_EXECUTIVE_SUMMARY_HTML,
+  GCC_PHARMACOECONOMICS_META_DESCRIPTION,
+  GCC_PHARMACOECONOMICS_META_TITLE,
+  GCC_PHARMACOECONOMICS_OG_DESCRIPTION,
+  GCC_PHARMACOECONOMICS_SCHEMA_FAQ,
+  GCC_PHARMACOECONOMICS_SCHEMA_ITEM_LIST,
+  GCC_PHARMACOECONOMICS_SLUG,
+  GCC_PHARMACOECONOMICS_TABLE_OF_CONTENTS,
+  GCC_PHARMACOECONOMICS_TAGS,
+} from '@/data/blog-gcc-pharmacoeconomics';
 
 /** Helper to convert PortableText block to a URL-friendly slug */
 function slugifyHeading(value: any): string {
@@ -270,7 +294,11 @@ const GCC_PHARMA_2026_SLUG = 'gcc-pharmaceuticals-market-2026';
 const AI_VS_HUMAN_2026_SLUG = 'ai-vs-human-insight-validating-quantitative-data-2026-pharma-research';
 const CHINA_HEALTHCARE_2026_SLUG = 'healthcare-overview-china-market-2026';
 const CHINA_HEALTHCARE_2026_META_DESCRIPTION =
-  '深度解析中国医疗健康市场2026关键趋势：医保支付改革、创新药与生物药商业化、医院与基层诊疗结构变化、AI医疗与数字化转型落地路径，以及老龄化驱动的长期需求。为制药企业、投资机构与行业决策者提供可执行的市场洞察与战略参考。';
+  '深度解析2026中国医疗健康市场：医保支付改革、创新与生物药商业化、医院及基层诊疗结构、AI与智慧医疗落地、老龄化驱动需求及竞争格局演变。BioNixus为药企、投资人与决策者提供可执行洞察。';
+
+const UAE_HEALTHCARE_TRENDS_2025_SLUG = 'uae-healthcare-market-trends-2025';
+const UAE_HEALTHCARE_TRENDS_2025_META_DESCRIPTION =
+  'UAE healthcare trends for 2025: pharmaceutical demand in Dubai & Abu Dhabi, MOHAP/DHA dynamics, private vs public uptake, payer signals, and growth angles for pharma and medtech—with BioNixus field context.';
 
 /**
  * SEO recovery overrides for the Egypt healthcare 2026 blog post.
@@ -360,6 +388,26 @@ const GCC_PHARMA_COMPARISON_SCHEMA_FAQ: { question: string; answer: string }[] =
       'Use the healthcare market research hubs for Saudi Arabia, UAE, and Kuwait, the GCC pharmaceutical market research overview, and the GCC market access guide—all linked from this article—for therapy-level and tender-level follow-up.',
   },
 ];
+
+/**
+ * Canonical UTF-8 slug for MENA/GCC pharma market article served under `/blog/:slug`.
+ * Also listed in URL-encoded form under internal link recovery (`%D8%A3%d8%a8%d8%ad%d8%a7%d8%ab-…`).
+ */
+const GCC_MEAST_PHARMA_HEALTH_AR_SLUG =
+  'أبحاث-السوق-الدوائية-في-الشرق-الأوسط-و-دول-الخليج-العربي';
+
+const GCC_MEAST_PHARMA_HEALTH_AR_META_DESCRIPTION =
+  'تحليل معمق لسوق الرعاية الصحية في دول الخليج العربي لعام 2026. اكتشف فرص التوطين، التحول الرقمي، واستراتيجيات النجاح في السعودية والإمارات.';
+
+const GCC_MEAST_PHARMA_HEALTH_AR_PAGE_TITLE =
+  'أبحاث السوق في الشرق الأوسط والخليج 2026 | بيونكسس | BioNixus';
+
+/** `/blog/` article — Saudi pharmaceutical market outlook (Arabic slug, not `/ar/blog/`). */
+const SAUDI_PHARMA_MARKET_2026_AR_SLUG = 'سوق-الدواء-السعودي-2026';
+const SAUDI_PHARMA_MARKET_2026_AR_META_DESCRIPTION =
+  'اكتشف أهم اتجاهات سوق الدواء السعودي لعام 2026. تعرف على فرص التوطين، نمو الأدوية الحيوية، وتأثير رؤية 2030 على الرعاية الصحية في المملكة.';
+const SAUDI_PHARMA_MARKET_2026_AR_PAGE_TITLE =
+  'سوق الدواء السعودي 2026: رؤى واتجاهات النمو المستقبلية | BioNixus';
 
 /** Arabic blog URLs must not reuse the English Sanity meta description (duplicate meta audit). */
 const ARABIC_BLOG_META_DESCRIPTION_BY_SLUG: Record<string, string> = {
@@ -509,6 +557,12 @@ function PremiumGcc2026Enhancement() {
 /** Portable text block renderers – premium editorial style */
 const portableTextComponents = {
   block: {
+    // CMS occasionally uses style "h1" in body — page hero owns the sole real <h1>
+    h1: ({ children, value }: { children?: React.ReactNode, value?: any }) => (
+      <h2 id={slugifyHeading(value)} className="blog-prose-h2 text-2xl font-display font-bold leading-snug tracking-tight text-primary mb-5">
+        {children}
+      </h2>
+    ),
     h2: ({ children, value }: { children?: React.ReactNode, value?: any }) => (
       <h2 id={slugifyHeading(value)} className="blog-prose-h2 text-2xl font-display font-bold leading-snug tracking-tight text-primary mb-5">
         {children}
@@ -598,6 +652,12 @@ function getBodyToRender(
   const isEnglishGccComparisonForced = slug === GCC_PHARMA_COMPARISON_SLUG && !options.isArBlog;
   if (isEnglishGccComparisonForced) return GCC_PHARMA_COMPARISON_BODY_HTML;
 
+  const isEnglishPharmacoeconomicsForced = slug === PHARMACOECONOMICS_GCC_SLUG && !options.isArBlog;
+  if (isEnglishPharmacoeconomicsForced) return PHARMACOECONOMICS_GCC_BODY_HTML;
+
+  const isEnglishGccPharmacoeconomicsForced = slug === GCC_PHARMACOECONOMICS_SLUG && !options.isArBlog;
+  if (isEnglishGccPharmacoeconomicsForced) return GCC_PHARMACOECONOMICS_BODY_HTML;
+
   const hasBody =
     post.body != null &&
     post.body !== '' &&
@@ -610,7 +670,12 @@ function getBodyToRender(
 function getExecutiveSummaryToRender(
   post: BlogPostType,
   slug: string | undefined,
+  options: { isArBlog?: boolean } = {},
 ): string | PortableTextBlock[] | null {
+  const isEnglishPharmacoeconomicsForced = slug === PHARMACOECONOMICS_GCC_SLUG && !options.isArBlog;
+  if (isEnglishPharmacoeconomicsForced) return PHARMACOECONOMICS_GCC_EXECUTIVE_SUMMARY_HTML;
+  const isEnglishGccPharmacoeconomicsForced = slug === GCC_PHARMACOECONOMICS_SLUG && !options.isArBlog;
+  if (isEnglishGccPharmacoeconomicsForced) return GCC_PHARMACOECONOMICS_EXECUTIVE_SUMMARY_HTML;
   if (slug === AI_VS_HUMAN_2026_SLUG) return AI_VS_HUMAN_EXEC_SUMMARY_TEXT;
   const summary = post.executiveSummary;
   if (Array.isArray(summary)) return summary.length > 0 ? summary : null;
@@ -667,6 +732,10 @@ const BlogPost = () => {
   const blogIndexPath = isArBlog ? '/ar/blog' : '/blog';
   const isQuantMrMaEn = slug === QUANT_MR_MA_SLUG && !isArBlog;
   const isGccComparisonEn = slug === GCC_PHARMA_COMPARISON_SLUG && !isArBlog;
+  const isPharmacoeconomicsGccEn = slug === PHARMACOECONOMICS_GCC_SLUG && !isArBlog;
+  const isGccPharmacoeconomicsEn = slug === GCC_PHARMACOECONOMICS_SLUG && !isArBlog;
+  const isGccMeastPharmaHealthArticleAr = slug === GCC_MEAST_PHARMA_HEALTH_AR_SLUG;
+  const isSaudiPharmaMarket2026ArArticle = slug === SAUDI_PHARMA_MARKET_2026_AR_SLUG;
   const { t, language } = useLanguage();
   const { data: routeData } = useInitialData();
   const isGccPharma2026 = slug === GCC_PHARMA_2026_SLUG || isGccComparisonEn;
@@ -710,7 +779,7 @@ const BlogPost = () => {
 
   const post = sanityPost ?? fallbackPost;
   const executiveSummary =
-    post && !isGccComparisonEn ? getExecutiveSummaryToRender(post, slug) : null;
+    post && !isGccComparisonEn ? getExecutiveSummaryToRender(post, slug, { isArBlog }) : null;
 
   useEffect(() => {
     const bar = document.getElementById('blog-rp');
@@ -790,7 +859,7 @@ const BlogPost = () => {
   const pathClean = (pathname.split('?')[0] || '/blog').replace(/\/+$/, '') || '/blog';
   const comparisonPageUrl = `https://www.bionixus.com/blog/${GCC_PHARMA_COMPARISON_SLUG}`;
   const pageUrl = blogCanonicalAbsoluteUrl(pathname, post.seoCanonicalUrl, isGccComparisonEn, comparisonPageUrl);
-  const articleDisplayTitle = isGccComparisonEn ? GCC_PHARMA_COMPARISON_DISPLAY_TITLE : post.title;
+  const articleDisplayTitle = isGccComparisonEn ? GCC_PHARMA_COMPARISON_DISPLAY_TITLE : isGccPharmacoeconomicsEn ? GCC_PHARMACOECONOMICS_DISPLAY_TITLE : post.title;
   const bodySourceForMeta = typeof post.body === 'string' ? post.body : post.excerpt || post.title;
   const metaTitle = normalizeSeoTitle(post.seoMetaTitle || post.title, 'BioNixus');
   const metaDescription = buildSeoDescription({
@@ -799,54 +868,115 @@ const BlogPost = () => {
     fallback: post.excerpt || post.title,
   });
   const arBlogMetaOverride =
-    isArBlog && slug && ARABIC_BLOG_META_DESCRIPTION_BY_SLUG[slug]
+    slug && ARABIC_BLOG_META_DESCRIPTION_BY_SLUG[slug] && isArBlog
       ? buildSeoDescription({
           preferred: ARABIC_BLOG_META_DESCRIPTION_BY_SLUG[slug],
           fallback: metaDescription,
         })
       : null;
+
+  /** Arabic articles routed under `/blog/:slugUtf8` (not `/ar/blog/…`). */
+  const arabicBlogOnEnPathMetaDescription = isSaudiPharmaMarket2026ArArticle
+    ? SAUDI_PHARMA_MARKET_2026_AR_META_DESCRIPTION
+    : isGccMeastPharmaHealthArticleAr
+      ? GCC_MEAST_PHARMA_HEALTH_AR_META_DESCRIPTION
+      : null;
   const isEgyptHealthcare2026 = slug === EGYPT_HEALTHCARE_2026_SLUG;
+  const isUaeHealthcareTrends2025En = slug === UAE_HEALTHCARE_TRENDS_2025_SLUG && !isArBlog;
   const finalMetaDescription = isEgyptHealthcare2026
     ? EGYPT_HEALTHCARE_2026_META_DESCRIPTION
-    : isQuantMrMaEn
+    : isUaeHealthcareTrends2025En
+      ? UAE_HEALTHCARE_TRENDS_2025_META_DESCRIPTION
+      : isQuantMrMaEn
       ? QUANT_MR_MA_META_DESCRIPTION
       : isGccComparisonEn
         ? GCC_PHARMA_COMPARISON_META_DESCRIPTION
-        : slug === CHINA_HEALTHCARE_2026_SLUG
-          ? CHINA_HEALTHCARE_2026_META_DESCRIPTION
-          : arBlogMetaOverride ?? metaDescription;
+        : isPharmacoeconomicsGccEn
+          ? PHARMACOECONOMICS_GCC_META_DESCRIPTION
+          : isGccPharmacoeconomicsEn
+            ? GCC_PHARMACOECONOMICS_META_DESCRIPTION
+            : slug === CHINA_HEALTHCARE_2026_SLUG
+            ? CHINA_HEALTHCARE_2026_META_DESCRIPTION
+            : arabicBlogOnEnPathMetaDescription ?? arBlogMetaOverride ?? metaDescription;
   const finalMetaTitle = isEgyptHealthcare2026
     ? normalizeSeoTitle(EGYPT_HEALTHCARE_2026_TITLE, 'BioNixus')
     : isQuantMrMaEn
       ? normalizeSeoTitle(QUANT_MR_MA_PAGE_TITLE, 'BioNixus')
       : isGccComparisonEn
         ? normalizeSeoTitle(GCC_PHARMA_COMPARISON_PAGE_TITLE, 'BioNixus')
-        : metaTitle;
+        : isPharmacoeconomicsGccEn
+          ? normalizeSeoTitle(PHARMACOECONOMICS_GCC_META_TITLE, 'BioNixus')
+          : isGccPharmacoeconomicsEn
+            ? normalizeSeoTitle(GCC_PHARMACOECONOMICS_META_TITLE, 'BioNixus')
+            : isSaudiPharmaMarket2026ArArticle
+              ? SAUDI_PHARMA_MARKET_2026_AR_PAGE_TITLE
+              : isGccMeastPharmaHealthArticleAr
+                ? GCC_MEAST_PHARMA_HEALTH_AR_PAGE_TITLE
+                : metaTitle;
   const socialTitle = isEgyptHealthcare2026
     ? EGYPT_HEALTHCARE_2026_OG_TITLE
     : isQuantMrMaEn
       ? QUANT_MR_MA_OG_TITLE
       : isGccComparisonEn
         ? GCC_PHARMA_COMPARISON_OG_TITLE
-        : post.ogTitle || metaTitle;
+        : isPharmacoeconomicsGccEn
+          ? PHARMACOECONOMICS_GCC_META_TITLE
+          : isGccPharmacoeconomicsEn
+            ? GCC_PHARMACOECONOMICS_META_TITLE
+            : isSaudiPharmaMarket2026ArArticle
+              ? SAUDI_PHARMA_MARKET_2026_AR_PAGE_TITLE
+              : isGccMeastPharmaHealthArticleAr
+                ? GCC_MEAST_PHARMA_HEALTH_AR_PAGE_TITLE
+                : post.ogTitle || metaTitle;
   const socialDescription = isEgyptHealthcare2026
     ? EGYPT_HEALTHCARE_2026_OG_DESCRIPTION
-    : isQuantMrMaEn
+    : isUaeHealthcareTrends2025En
+      ? UAE_HEALTHCARE_TRENDS_2025_META_DESCRIPTION
+      : isQuantMrMaEn
       ? QUANT_MR_MA_OG_DESCRIPTION
       : isGccComparisonEn
         ? GCC_PHARMA_COMPARISON_OG_DESCRIPTION
-        : post.ogDescription || finalMetaDescription;
-  const socialImage = post.ogImage || post.coverImage;
+        : isPharmacoeconomicsGccEn
+          ? PHARMACOECONOMICS_GCC_OG_DESCRIPTION
+          : isGccPharmacoeconomicsEn
+            ? GCC_PHARMACOECONOMICS_OG_DESCRIPTION
+            : isSaudiPharmaMarket2026ArArticle
+              ? SAUDI_PHARMA_MARKET_2026_AR_META_DESCRIPTION
+              : isGccMeastPharmaHealthArticleAr
+                ? GCC_MEAST_PHARMA_HEALTH_AR_META_DESCRIPTION
+                : post.ogDescription || finalMetaDescription;
+  const socialImage =
+    post.ogImage ||
+    post.coverImage ||
+    (isGccPharmacoeconomicsEn ? GCC_PHARMACOECONOMICS_COVER_IMAGE : undefined);
 
   const mergedBlogFaqItems = [
     ...(isQuantMrMaEn ? QUANT_MR_MA_SCHEMA_FAQ : []),
     ...(isGccComparisonEn ? GCC_PHARMA_COMPARISON_SCHEMA_FAQ : []),
-    ...(Array.isArray(post.faq)
+    ...(isPharmacoeconomicsGccEn ? PHARMACOECONOMICS_GCC_SCHEMA_FAQ : []),
+    ...(isGccPharmacoeconomicsEn ? GCC_PHARMACOECONOMICS_SCHEMA_FAQ : []),
+    ...(Array.isArray(post.faq) && !isPharmacoeconomicsGccEn && !isGccPharmacoeconomicsEn
       ? post.faq
         .filter((item) => Boolean(item.question && item.answer))
         .map((item) => ({ question: item.question!, answer: item.answer! }))
       : []),
   ];
+
+  const resolvedTableOfContents = isGccComparisonEn
+    ? null
+    : isPharmacoeconomicsGccEn
+      ? PHARMACOECONOMICS_GCC_TABLE_OF_CONTENTS
+      : isGccPharmacoeconomicsEn
+        ? GCC_PHARMACOECONOMICS_TABLE_OF_CONTENTS
+        : Array.isArray(post.tableOfContents) && post.tableOfContents.length > 0
+          ? post.tableOfContents
+          : null;
+
+  const heroCoverImage =
+    post.coverImage || (isGccPharmacoeconomicsEn ? GCC_PHARMACOECONOMICS_COVER_IMAGE : undefined);
+
+  const displayBlogTags =
+    isGccPharmacoeconomicsEn ? [...GCC_PHARMACOECONOMICS_TAGS] : Array.isArray(post.tags) ? post.tags : [];
 
   return (
     <div className="min-h-screen bg-background">
@@ -863,7 +993,7 @@ const BlogPost = () => {
         pageType="blog"
         pageUrl={pageUrl}
         language={language}
-        headline={isEgyptHealthcare2026 ? EGYPT_HEALTHCARE_2026_OG_TITLE : isQuantMrMaEn ? QUANT_MR_MA_OG_TITLE : isGccComparisonEn ? GCC_PHARMA_COMPARISON_OG_TITLE : post.title}
+        headline={isEgyptHealthcare2026 ? EGYPT_HEALTHCARE_2026_OG_TITLE : isQuantMrMaEn ? QUANT_MR_MA_OG_TITLE : isGccComparisonEn ? GCC_PHARMA_COMPARISON_OG_TITLE : isPharmacoeconomicsGccEn ? PHARMACOECONOMICS_GCC_META_TITLE : isGccPharmacoeconomicsEn ? GCC_PHARMACOECONOMICS_DISPLAY_TITLE : isSaudiPharmaMarket2026ArArticle ? SAUDI_PHARMA_MARKET_2026_AR_PAGE_TITLE : isGccMeastPharmaHealthArticleAr ? GCC_MEAST_PHARMA_HEALTH_AR_PAGE_TITLE : post.title}
         description={finalMetaDescription}
         imageUrl={socialImage}
         authorName={post.authorName || 'BioNixus Research Team'}
@@ -894,11 +1024,11 @@ const BlogPost = () => {
             { name: 'M3 Global Research', description: 'Large verified physician panel for HCP recruitment and online quantitative fieldwork.' },
             { name: 'SixthFactor Consulting', description: 'Regional GCC custom research consultancy; validate healthcare-specific experience separately.' },
           ],
-        } : undefined}
+        } : isGccPharmacoeconomicsEn ? GCC_PHARMACOECONOMICS_SCHEMA_ITEM_LIST : undefined}
       />
       <Helmet>
         {/* Dynamic meta tags for this specific blog post */}
-        <title>{isEgyptHealthcare2026 || isQuantMrMaEn || isGccComparisonEn ? finalMetaTitle : normalizeSeoTitle(`${finalMetaTitle} | BioNixus`, 'BioNixus')}</title>
+        <title>{isEgyptHealthcare2026 || isQuantMrMaEn || isGccComparisonEn || isPharmacoeconomicsGccEn || isGccPharmacoeconomicsEn || isSaudiPharmaMarket2026ArArticle || isGccMeastPharmaHealthArticleAr ? finalMetaTitle : normalizeSeoTitle(`${finalMetaTitle} | BioNixus`, 'BioNixus')}</title>
         <meta name="description" content={finalMetaDescription} />
         <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
 
@@ -915,7 +1045,7 @@ const BlogPost = () => {
         {post.date && <meta property="article:published_time" content={post.date} />}
         {post.category && <meta property="article:section" content={post.category} />}
         {post.authorName && <meta property="article:author" content={post.authorName} />}
-        {Array.isArray(post.tags) && post.tags.map((tag) => (
+        {displayBlogTags.length > 0 && displayBlogTags.map((tag) => (
           <meta key={tag} property="article:tag" content={tag} />
         ))}
 
@@ -938,13 +1068,13 @@ const BlogPost = () => {
 
       <main>
         {/* ── HERO ─────────────────────────────────────────────────────── */}
-        {post.coverImage ? (
+        {heroCoverImage ? (
           <div
             className="relative w-full overflow-hidden bg-navy-deep group"
             style={{ minHeight: '380px', maxHeight: '560px', aspectRatio: '21 / 9' }}
           >
             <img
-              src={optimizeSanityImage(post.coverImage, 1400, 600)}
+              src={optimizeSanityImage(heroCoverImage, 1400, 600)}
               alt={articleDisplayTitle || 'Article cover image'}
               className="w-full h-full object-cover opacity-[0.55] transition-transform duration-[6000ms] ease-in-out group-hover:scale-[1.03]"
               loading="eager"
@@ -1077,9 +1207,9 @@ const BlogPost = () => {
 
               {/* Tags + Share toolbar */}
               <div className="flex items-center justify-between flex-wrap gap-3 pb-5 mb-7 border-b border-border">
-                {Array.isArray(post.tags) && post.tags.length > 0 ? (
+                {displayBlogTags.length > 0 ? (
                   <div className="flex flex-wrap gap-1.5">
-                    {post.tags.map((tag) => (
+                    {displayBlogTags.map((tag) => (
                       <span key={tag} className="px-2.5 py-1 bg-muted text-muted-foreground text-[11px] font-medium tracking-[0.04em] uppercase rounded-full border border-border hover:bg-accent/10 hover:border-accent/30 hover:text-foreground transition-colors cursor-default">
                         {tag}
                       </span>
@@ -1113,15 +1243,15 @@ const BlogPost = () => {
               )}
 
               {/* Table of contents — inline grid */}
-              {Array.isArray(post.tableOfContents) && post.tableOfContents.length > 0 && !isGccComparisonEn && (
+              {resolvedTableOfContents && resolvedTableOfContents.length > 0 && (
                 <nav className="mb-8 rounded-xl overflow-hidden border border-border" aria-label="Table of contents">
                   <div className="flex items-center gap-2 px-5 py-3.5 bg-muted/70 border-b border-border">
                     <List className="w-3.5 h-3.5 text-accent" aria-hidden />
                     <span className="text-[11px] font-extrabold uppercase tracking-[0.08em] text-primary">Contents</span>
-                    <span className="ml-auto text-[11px] text-muted-foreground">{post.tableOfContents.length} sections</span>
+                    <span className="ml-auto text-[11px] text-muted-foreground">{resolvedTableOfContents.length} sections</span>
                   </div>
                   <div className="p-5 grid sm:grid-cols-2 gap-x-6 gap-y-2.5 bg-background/60">
-                    {post.tableOfContents.map((item, i) => (
+                    {resolvedTableOfContents.map((item, i) => (
                       <a
                         key={i}
                         href={item.anchor ? `#${item.anchor}` : undefined}
@@ -1483,14 +1613,14 @@ const BlogPost = () => {
             <aside className="hidden lg:block sticky top-20 space-y-4" aria-label="Article sidebar">
 
               {/* Table of contents */}
-              {Array.isArray(post.tableOfContents) && post.tableOfContents.length > 0 && !isGccComparisonEn && (
+              {resolvedTableOfContents && resolvedTableOfContents.length > 0 && (
                 <nav className="rounded-xl overflow-hidden border border-border shadow-sm" aria-label="Article sections">
                   <div className="flex items-center gap-2 px-4 py-3" style={{ background: 'hsl(var(--primary))' }}>
                     <List className="w-3.5 h-3.5" style={{ color: 'hsl(var(--accent))' }} aria-hidden />
                     <span className="text-[11px] font-extrabold uppercase tracking-[0.1em] text-white">On this page</span>
                   </div>
                   <div className="py-2 bg-background">
-                    {post.tableOfContents.map((item, i) => (
+                    {resolvedTableOfContents.map((item, i) => (
                       <a
                         key={i}
                         href={item.anchor ? `#${item.anchor}` : undefined}
@@ -1530,7 +1660,7 @@ const BlogPost = () => {
             category={post.category}
             date={post.publishedAtIso || post.date}
             country={post.country}
-            tags={post.tags}
+            tags={displayBlogTags}
             initialRelated={initialRelated}
           />
         </div>

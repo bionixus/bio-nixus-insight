@@ -1,4 +1,5 @@
 import { BlogPost } from '@/types/blog';
+import { GCC_PHARMACOECONOMICS_HARDCODED_POST } from '@/data/blog-gcc-pharmacoeconomics';
 
 /**
  * Array of all hardcoded blog posts designed for SEO strategy,
@@ -6,8 +7,7 @@ import { BlogPost } from '@/types/blog';
  * (Note: High-value MENA/KSA/UAE guides are now moved to Sanity)
  */
 export const hardcodedSeoPosts: BlogPost[] = [
-    // Legacy hardcoded posts can be added here if needed,
-    // though Sanity is now the primary content source.
+  GCC_PHARMACOECONOMICS_HARDCODED_POST,
 ];
 
 /** Helper to find a hardcoded post by slug */

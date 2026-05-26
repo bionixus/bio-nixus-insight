@@ -7,15 +7,15 @@ import { buildFAQSchema, buildServicePageSchemas } from '@/lib/seo/schemas';
 
 const SERVICE_COPY: Record<string, string> = {
   'market-access':
-    'Market access research for payer evidence planning, value communication, and practical adoption strategy development.',
+    'Market access research for pharma: payer evidence bundles, value narratives, pricing and policy signals, adoption barriers, and launch sequencing—actionable outputs for GCC, UK, and EU5 teams from BioNixus.',
   'physician-insights':
-    'Physician insight studies for treatment behavior, perception analysis, and stakeholder engagement refinement.',
+    'Physician insight studies for specialty and primary care pathways: treatment behavior, indication confidence, competitive switching, and messaging tests that refine field, medical, and access plans across MENA and Europe.',
   'kol-mapping':
-    'KOL mapping programs to identify influence networks and prioritize expert engagement strategies.',
+    'KOL mapping and influence intelligence for healthcare: network analysis, evidence champions, connectivity scoring, and advisory design so medical and commercial teams engage the right experts in each market.',
   'quantitative-research':
-    'Quantitative market research including segmentation, adoption measurement, and data-backed forecasting support.',
+    'Quantitative healthcare research with robust sampling, segmentation, MaxDiff/conjoint where needed, adoption metrics, and forecasting-grade analytics for portfolio, launch, and lifecycle decisions.',
   'qualitative-research':
-    'Qualitative healthcare research including IDIs and focus groups to uncover decision logic and barriers.',
+    'Qualitative pharma research through IDIs, expert panels, and focus groups—revealing payer and prescriber rationale, access friction, and behavioral barriers that quantitative trackers miss.',
 };
 
 const SERVICE_SECTIONS: Record<string, { title: string; bullets: string[] }> = {

@@ -4,7 +4,7 @@ export default function ArMarketResearchKsa() {
   return (
     <MarketResearchCountryLanding
       title="أبحاث السوق في السعودية KSA | BioNixus"
-      description="صفحة أبحاث السوق في السعودية KSA للقطاع الصحي والدوائي مع تركيز على الأدلة اللازمة للإطلاق والوصول."
+      description="أبحاث السوق الصحي والدوائي للمملكة (KSA) من BioNixus: جهوزية ما قبل الإطلاق، أدلة SFDA وممرات الشراء، ومزج كمّي ونوعي موجه لفرق الوصول للسوق والفرق الطبية والتجارية."
       canonical="/ar/market-research-ksa"
       h1="أبحاث السوق في السعودية KSA"
       intro="نوفر أبحاث السوق في السعودية KSA بآليات تنفيذ ثنائية اللغة لدعم القرارات التجارية وقرارات الوصول في السوق المحلي."

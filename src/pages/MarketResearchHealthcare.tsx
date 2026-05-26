@@ -337,7 +337,7 @@ const copyByLanguage: Record<Language, LocalizedCopy> = {
   ar: {
     seoTitle: 'Healthcare Market Research | ابحاث healthcare ودوائية لاوروبا والشرق الاوسط',
     seoDescription:
-      'Healthcare market research لفرق الادوية في اوروبا والشرق الاوسط. دراسات كمية ونوعية لدعم الاطلاق والدخول للسوق والنمو.',
+      'Healthcare market research لفرق الدوائي والأجهزة الطبية عبر اوروبا والشرق الاوسط والخليج من BioNixus: تصميمات كمية ونوعية، أدلة دافعة، وممرات الوصول التي ترتبط مباشرة بقرارات الإطلاق وتوسعة المحفظة.',
     breadcrumbHome: 'الرئيسية',
     breadcrumbCurrent: 'Healthcare Market Research',
     heroBadge: 'Healthcare Market Research',

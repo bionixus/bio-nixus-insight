@@ -17,9 +17,41 @@ function cleanPath(pathname: string): string {
  */
 function routeProvidesOwnDocumentHead(pathname: string): boolean {
   const path = cleanPath(pathname);
-  if (path === '/blog' || path === '/de/blog' || path === '/fr/blog') return true;
+  /** Blog index + locales (each page ships its own full Helmet stack). */
+  if (path === '/blog' || path === '/de/blog' || path === '/fr/blog' || path === '/ar/blog') return true;
   if (/^\/blog\/.+/.test(path)) return true;
+  if (/^\/ar\/blog\/.+/.test(path)) return true;
   if (/^\/case-studies\/.+/.test(path)) return true;
+
+  /** SEOHead-based healthcare hub + service / therapy detail pages. */
+  if (path === '/healthcare-market-research') return true;
+  if (path.startsWith('/healthcare-market-research/services/')) return true;
+  if (path.startsWith('/healthcare-market-research/therapy/')) return true;
+
+  /** Localized “market research healthcare” landings. */
+  if (
+    path === '/market-research-healthcare'
+    || path === '/de/market-research-healthcare'
+    || path === '/fr/market-research-healthcare'
+    || path === '/es/market-research-healthcare'
+    || path === '/zh/market-research-healthcare'
+    || path === '/ar/market-research-healthcare'
+  ) {
+    return true;
+  }
+
+  /** Country intent landings (SEOHead in MarketResearchCountryLanding). */
+  if (
+    /^\/market-research-(uae|ksa|saudi|kuwait|egypt)$/.test(path)
+    || /^\/ar\/market-research-(uae|ksa|saudi|kuwait|egypt)$/.test(path)
+  ) {
+    return true;
+  }
+
+  if (path === '/sitemap') return true;
+  if (path === '/insights/top-market-research-companies-egypt-2026') return true;
+  if (path === '/ar/insights/top-market-research-companies-egypt-2026') return true;
+
   return false;
 }
 
@@ -179,7 +211,13 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
 
   if (path === '/ar') {
     return clampDescription(
-      'ابحاث سوق صحية ودوائية في الخليج واوروبا مع رؤى كمية ونوعية تدعم قرارات الاطلاق والوصول الى السوق.'
+      'أبحاث سوق صحية ودوائية من BioNixus في الخليج وأوروبا: دراسات كمية ونوعية، خرائط أصحاب تأثير، ودعم الوصول للسوق والإطلاق الدوائي لمكاتب الأدوية الإقليمية والعالمية.'
+    );
+  }
+
+  if (path === '/ar/methodology') {
+    return clampDescription(
+      'منهجيات أبحاث السوق الصحي والدوائي لدى BioNixus: تصميم الدراسات، الميدان ثنائي اللغة، تحليل الجودة، والحوكمة لدعم فرق الأدوية والوصول للسوق في الخليج وأوروبا.'
     );
   }
 
@@ -190,12 +228,12 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
   }
   if (path === '/de/blog') {
     return clampDescription(
-      'BioNixus Markt-Insights: pharmazeutische Marktforschung, Marktzugang, Klinikstudien und Healthcare-Strategie für DACH und EMEA.'
+      'BioNixus Markt-Insights: pharmazeutische und Healthcare-Marktforschung, Market Access, Evidence-Planung, Feldstudien und Strategie für Pharma-Teams in DACH, Europa und MENA.'
     );
   }
   if (path === '/fr/blog') {
     return clampDescription(
-      'Insights BioNixus : études de marché pharma et santé, market access, essais cliniques et stratégie pour la France et l’EMEA.'
+      'Insights BioNixus — études de marché santé et pharma, accès marché, preuves payeurs, essais cliniques et stratégie pour les équipes en France, Europe et MENA.'
     );
   }
 
@@ -327,7 +365,7 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
 
   if (path === '/ar/arabic-blog-alsawdyh') {
     return clampDescription(
-      'مقال عربي متخصص في ابحاث السوق الدوائي في السعودية مع تركيز على التنظيم والتسعير وديناميكيات تبني المنتجات الصحية.'
+      'محتوى عربي من BioNixus لأبحاث السوق الدوائي في السعودية ودول الخليج—تنظيم، تسعير، ديناميكيات التبني، ومسارات داخلية تنفيذية لفرق الأدوية.'
     );
   }
 
