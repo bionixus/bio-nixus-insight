@@ -186,6 +186,9 @@ function buildFallbackTitle(pathname: string): string {
   }
   if (path.startsWith('/blog/')) {
     const slug = path.split('/').pop() || 'insight';
+    if (slug === 'quantitative-market-research-and-market-access') {
+      return 'Quantitative Healthcare Market Research & Market Access 2026 | BioNixus';
+    }
     return `${titleCaseFromSlug(slug)} | BioNixus Blog`;
   }
 
@@ -287,6 +290,9 @@ function buildFallbackDescription(pathname: string): string {
   }
   if (path.startsWith('/blog/')) {
     const slug = path.split('/').pop() || 'insight';
+    if (slug === 'quantitative-market-research-and-market-access') {
+      return 'Quantitative healthcare market research guide for pharma market access: KPI frameworks, payer evidence, and links to methodology at BioNixus.';
+    }
     return `${titleCaseFromSlug(slug)} insight article from BioNixus covering healthcare and pharmaceutical market strategy.`;
   }
   if (path.startsWith('/ar/blog/')) {

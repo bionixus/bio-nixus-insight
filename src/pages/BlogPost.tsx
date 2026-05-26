@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useParams, Link, useLocation } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { sanitizeBodyHtml } from '@/lib/sanitize-body-html';
@@ -12,6 +13,14 @@ import SchemaMarkup from '@/components/SchemaMarkup';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { getOgLocale, getOgLocaleAlternates } from '@/lib/seo';
 import { blogRecoveryPaths } from '@/lib/internalLinkRecovery';
+import { isSanityConfigured } from '@/lib/sanity';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { useInitialData } from '@/contexts/InitialDataContext';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import { ArrowLeft, BarChart3, CheckCircle2, ShieldCheck, TrendingUp, Calendar, Clock, MapPin, AlignLeft, List, ArrowUpRight } from 'lucide-react';
+import ShareButtons from '@/components/ShareButtons';
+import type { BlogPost as BlogPostType } from '@/types/blog';
 
 /** Helper to convert PortableText block to a URL-friendly slug */
 function slugifyHeading(value: any): string {
@@ -161,16 +170,60 @@ const UAE_GUIDE_BODY_HTML = `<p>The United Arab Emirates has emerged as the heal
 
 <p>BioNixus supports pharmaceutical and life sciences clients with end-to-end healthcare market research across UAE, Saudi Arabia, Egypt, and the wider MENA region—from study design and fieldwork to analysis and strategic recommendations.</p>`
 
-import { isSanityConfigured } from '@/lib/sanity';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { useInitialData } from '@/contexts/InitialDataContext';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { useEffect } from 'react';
-import { ArrowLeft, BarChart3, CheckCircle2, ShieldCheck, TrendingUp, Calendar, Clock, MapPin, AlignLeft, List, ArrowUpRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import ShareButtons from '@/components/ShareButtons';
-import type { BlogPost as BlogPostType } from '@/types/blog';
+/** Forced SEO body for EN blog only (Arabic URL keeps CMS / localized content). */
+const QUANT_MR_MA_SLUG = 'quantitative-market-research-and-market-access'
+const QUANT_MR_MA_BODY_HTML = `<p>Quantitative healthcare market research is the evidence engine behind modern pharmaceutical market access: it turns prescribing behaviour, payer rules, and patient pathways into defendable forecasts, price corridors, and launch sequencing decisions. When teams need the full sampling, instrument, and validation stack that sits underneath those outputs, BioNixus documents the methodology in the dedicated <a href="/quantitative-healthcare-market-research">quantitative healthcare market research</a> reference page—use it as the technical companion to this market-access narrative.</p>
+
+<h2 id="quantitative-research-and-market-access">How quantitative research powers market access outcomes</h2>
+
+<p>Market access is rarely a single negotiation; it is a chain of evidence requests across regulators, payers, clinical communities, and supply networks. Quantitative studies answer the questions each gatekeeper repeats: who benefits in our population, what is the incremental value versus current care, how will uptake unfold by segment, and what financial risk does the system accept? Strong programmes connect those questions to coherent KPIs rather than anecdotal anecdotes.</p>
+
+<p>The methodology reference explains how BioNixus structures those KPI trees—forecasting elasticity, analogue calibration, Bayesian shrinkage for sparse cells, conjoint for trade-offs, MaxDiff prioritisation across access barriers, Van Westendorp for price corridors, and share models that align with <a href="/quantitative-healthcare-market-research">quantitative healthcare market research</a> reporting standards. When MedTech and specialty pharma teams import global models into MENA or GCC markets, the same page shows how localisation keeps estimates honest.</p>
+
+<h2 id="bridging-evidence">Bridging clinical value stories with payer evidence</h2>
+
+<p>Medical teams often anchor on pivotal trials; payers anchor on budget impact, comparator choice, and rule compliance. Quantitative programmes should map both languages into one analytic spine: incidence and eligibility filters, adherence and drop-off, substitution with biosimilars or generics, and corridor tests for confidential net pricing. Without that spine, HEOR submissions and qualitative advisory outputs float without an anchor.</p>
+
+<p>Pair this article with the <a href="/quantitative-healthcare-market-research">quantitative healthcare market research methodology guide</a> when you need explicit detail on sample design for physicians, patients, and payers; weighting for multi-country GCC studies; and quality control for online fieldwork. The guide is written for procurement, insight, and access leads who must defend vendor scope in cross-functional reviews.</p>
+
+<h2 id="kpi-framework">A practical KPI framework for access-minded quant studies</h2>
+
+<p>Every quantitative healthcare market research programme should declare how it will inform at least one access decision. Examples include unmet need indices that shape indication sequencing, share-and-source models that inform tender strategy, price sensitivity bands that set guardrails for confidential agreements, and surveillance trackers that monitor formulary movement after launch. The <a href="/quantitative-healthcare-market-research">BioNixus quantitative healthcare research framework</a> shows how those modules connect to dashboards commercial and access teams already use.</p>
+
+<ul>
+<li><strong>Demand and epidemiology</strong> – translate population filters into addressable patients per channel (public, private, military, charity programmes).</li>
+<li><strong>Treatment pathways and switch points</strong> – quantify where guidelines, formularies, and physician habits diverge inside the same country.</li>
+<li><strong>Payer archetypes</strong> – cluster decision rules so price and value stories can be simulated rather than debated generically.</li>
+<li><strong>Competitive pressure</strong> – model how new entrants erode share by segment, not only at the national headline level.</li>
+</ul>
+
+<h2 id="mena-gcc-design">Designing quantitative research for MENA and GCC realities</h2>
+
+<p>Regional research is not “the same instruments, smaller sample.” Split public and private pathways, account for seasonal care-seeking patterns, reflect dual licensing and tender cadence, and respect language preferences for clinician nuance. Studies that collapse those dimensions into a single “MENA average” routinely misstate access risk for Saudi Arabia, UAE, Egypt, or smaller GCC markets.</p>
+
+<p>Teams who want the full stack of adjustments and ethics-aware field protocols should bookmark the <a href="/quantitative-healthcare-market-research">quantitative healthcare market research</a> guide alongside the broader <a href="/healthcare-market-research">healthcare market research hub</a>, which contextualises therapy and country hubs that quant studies ultimately feed.</p>
+
+<h2 id="linking-ma">Linking quantitative outputs to pricing, tenders, and HTA conversations</h2>
+
+<p>Pricing workshops and tender committees ask for scenarios, not point estimates. Build scenario libraries from quant modules: baseline uptake, optimistic guideline alignment, delayed formulary listing, and competitive entry. The <a href="/quantitative-healthcare-market-research">quantitative methodology reference</a> outlines how BioNixus packages those scenarios with transparency on assumptions so market access leaders can brief finance and alliance partners without re-running entire models.</p>
+
+<p>Where health technology assessment or external reference pricing matters, quant should pre-emptively align cohort definitions, comparator choices, and endpoint relevance before qual deep dives burn time with misaligned stakeholders. That sequencing keeps <a href="/quantitative-healthcare-market-research">quantitative healthcare market research</a> spend tied to reimbursable decisions rather than slide decks.</p>
+
+<h2 id="ops-governance">Operations, governance, and decision hygiene</h2>
+
+<p>High-trust quant programmes document sampling frames, cleaning rules, weighting targets, and validation steps the same way clinical operations document monitoring. They also schedule refresh waves for trackers so access teams can separate noise from true formulary movement. Governance should name an executive consumer for each core metric—otherwise studies drift toward interesting but non-actionable charts.</p>
+
+<p>For instrument examples, statistical guardrails, and reporting templates that stand up to medical, legal, and procurement review, continue to the central <a href="/quantitative-healthcare-market-research">quantitative healthcare market research</a> resource; it is maintained as the living specification for BioNixus pharma and MedTech work.</p>
+
+<h2 id="when-to-start">When to start quantitative work in the access timeline</h2>
+
+<p>Early quant clarifies addressable need, pricing headroom, and channel economics before teams lock brand promises. Late quant stress-tests tenders, co-pay designs, and patient-support economics when competitive sets have stabilised. The right sequence depends on volatility: fast-moving categories need rolling quant, while concentrated tender markets may emphasise deep scenario modelling ahead of narrow windows.</p>
+
+<p>If you are briefing agencies or building an RFP, include links to the <a href="/quantitative-healthcare-market-research">quantitative healthcare market research</a> methodology page so vendors align on validation standards, and add the <a href="/gcc-market-access-guide">GCC market access guide</a> when programmes span multiple Gulf markets with different tender authorities.</p>
+
+<h2 id="next-steps">Next steps for BioNixus clients</h2>
+
+<p>BioNixus delivers pharmaceutical and MedTech quantitative programmes that connect to access strategy: design, field, advanced analytics, and executive-ready narrative. Start with the <a href="/quantitative-healthcare-market-research">quantitative healthcare market research</a> guide to align stakeholders on methods, then <a href="/contact">contact the BioNixus team</a> for a scoped workshop on your asset, market, and evidence gaps.</p>`
 
 const GCC_PHARMA_2026_SLUG = 'gcc-pharmaceuticals-market-2026';
 const AI_VS_HUMAN_2026_SLUG = 'ai-vs-human-insight-validating-quantitative-data-2026-pharma-research';
@@ -194,6 +247,44 @@ const EGYPT_HEALTHCARE_2026_OG_TITLE =
   'Egypt Healthcare Market 2026 — Cairo Hospitals, Pharma & Physician Data';
 const EGYPT_HEALTHCARE_2026_OG_DESCRIPTION =
   'Full Egypt healthcare overview for 2026 — Cairo hospital landscape, EDA regulation, pharmaceutical market size, and primary physician research from BioNixus.';
+
+/** EN-only SEO overrides: rich blog narrative + internal equity to `/quantitative-healthcare-market-research`. */
+const QUANT_MR_MA_PAGE_TITLE =
+  'Quantitative Healthcare Market Research & Market Access 2026 | BioNixus';
+const QUANT_MR_MA_META_DESCRIPTION =
+  'Quantitative healthcare market research for pharma market access — KPIs, payer evidence, MENA/GCC study design, pricing scenarios. Links to the BioNixus quantitative methodology guide.';
+const QUANT_MR_MA_OG_TITLE =
+  'Quantitative Healthcare Market Research for Pharma Market Access | BioNixus';
+const QUANT_MR_MA_OG_DESCRIPTION =
+  'How quantitative healthcare evidence supports pricing, tenders, HTA, and formulary decisions — methodology companion for pharmaceutical teams in Europe, UK, GCC, and MENA.';
+
+const QUANT_MR_MA_SCHEMA_FAQ: { question: string; answer: string }[] = [
+  {
+    question: 'What is quantitative healthcare market research in pharmaceutical market access?',
+    answer:
+      'It is structured measurement of prescribers, payers, patients, and systems using surveys, conjoint, MaxDiff, pricing exercises, and statistical models so market access teams can forecast uptake, price corridors, and tender exposure. BioNixus documents the full methodology stack on the quantitative healthcare market research page at /quantitative-healthcare-market-research.',
+  },
+  {
+    question: 'How does quantitative research support pricing and tender strategy?',
+    answer:
+      'Quant modules produce scenario libraries (baseline uptake, delayed listing, competitive entry) and sensitivity bands instead of single-point guesses. Those outputs align finance, alliance, and access leads before confidential negotiations. The methodology reference explains how BioNixus validates assumptions and reports ranges for governance.',
+  },
+  {
+    question: 'Why split MENA or GCC markets instead of using one regional average?',
+    answer:
+      'Public versus private pathways, tender authorities, language preferences, and seasonal care-seeking differ by country and emirate; collapsing segments misstates addressable volume and net price risk. Programme design guidance on /quantitative-healthcare-market-research shows how BioNixus weights and stratifies GCC and MENA samples.',
+  },
+  {
+    question: 'How should qualitative and quantitative evidence be sequenced for HTA or payer dossiers?',
+    answer:
+      'Quant should lock cohort definitions, comparators, and outcome relevance early so qualitative depth interviews reinforce rather than redo foundation work. This sequencing lowers rework when medical, HEOR, and access stakeholders challenge evidence packages.',
+  },
+  {
+    question: 'What governance keeps quantitative healthcare trackers useful after launch?',
+    answer:
+      'Name an executive sponsor per KPI, publish cleaning rules and refresh cadence alongside sample frames, and separate true formulary shifts from sampling noise using control questions. Transparent documentation matches the BioNixus quantitative methodology specification linked from this article.',
+  },
+];
 
 /** Arabic blog URLs must not reuse the English Sanity meta description (duplicate meta audit). */
 const ARABIC_BLOG_META_DESCRIPTION_BY_SLUG: Record<string, string> = {
@@ -423,15 +514,19 @@ function resolveCtaHref(buttonUrl: string): { kind: 'internal'; to: string } | {
 
 function getBodyToRender(
   post: BlogPostType,
-  slug: string | undefined
+  slug: string | undefined,
+  options: { isArBlog?: boolean } = {},
 ): string | PortableTextBlock[] | null {
+  const isEnglishQuantForced = slug === QUANT_MR_MA_SLUG && !options.isArBlog;
+  if (isEnglishQuantForced) return QUANT_MR_MA_BODY_HTML;
+
   const hasBody =
     post.body != null &&
     post.body !== '' &&
-    !(Array.isArray(post.body) && post.body.length === 0)
-  if (hasBody) return post.body as string | PortableTextBlock[]
-  if (slug === UAE_GUIDE_SLUG) return UAE_GUIDE_BODY_HTML
-  return null
+    !(Array.isArray(post.body) && post.body.length === 0);
+  if (hasBody) return post.body as string | PortableTextBlock[];
+  if (slug === UAE_GUIDE_SLUG) return UAE_GUIDE_BODY_HTML;
+  return null;
 }
 
 function getExecutiveSummaryToRender(
@@ -450,6 +545,7 @@ const BlogPost = () => {
   const { pathname } = useLocation();
   const isArBlog = pathname.startsWith('/ar/blog');
   const blogIndexPath = isArBlog ? '/ar/blog' : '/blog';
+  const isQuantMrMaEn = slug === QUANT_MR_MA_SLUG && !isArBlog;
   const { t, language } = useLanguage();
   const { data: routeData } = useInitialData();
   const isGccPharma2026 = slug === GCC_PHARMA_2026_SLUG;
@@ -590,19 +686,36 @@ const BlogPost = () => {
   const isEgyptHealthcare2026 = slug === EGYPT_HEALTHCARE_2026_SLUG;
   const finalMetaDescription = isEgyptHealthcare2026
     ? EGYPT_HEALTHCARE_2026_META_DESCRIPTION
-    : slug === CHINA_HEALTHCARE_2026_SLUG
-      ? CHINA_HEALTHCARE_2026_META_DESCRIPTION
-      : arBlogMetaOverride ?? metaDescription;
+    : isQuantMrMaEn
+      ? QUANT_MR_MA_META_DESCRIPTION
+      : slug === CHINA_HEALTHCARE_2026_SLUG
+        ? CHINA_HEALTHCARE_2026_META_DESCRIPTION
+        : arBlogMetaOverride ?? metaDescription;
   const finalMetaTitle = isEgyptHealthcare2026
     ? normalizeSeoTitle(EGYPT_HEALTHCARE_2026_TITLE, 'BioNixus')
-    : metaTitle;
+    : isQuantMrMaEn
+      ? normalizeSeoTitle(QUANT_MR_MA_PAGE_TITLE, 'BioNixus')
+      : metaTitle;
   const socialTitle = isEgyptHealthcare2026
     ? EGYPT_HEALTHCARE_2026_OG_TITLE
-    : post.ogTitle || metaTitle;
+    : isQuantMrMaEn
+      ? QUANT_MR_MA_OG_TITLE
+      : post.ogTitle || metaTitle;
   const socialDescription = isEgyptHealthcare2026
     ? EGYPT_HEALTHCARE_2026_OG_DESCRIPTION
-    : post.ogDescription || finalMetaDescription;
+    : isQuantMrMaEn
+      ? QUANT_MR_MA_OG_DESCRIPTION
+      : post.ogDescription || finalMetaDescription;
   const socialImage = post.ogImage || post.coverImage;
+
+  const mergedBlogFaqItems = [
+    ...(isQuantMrMaEn ? QUANT_MR_MA_SCHEMA_FAQ : []),
+    ...(Array.isArray(post.faq)
+      ? post.faq
+        .filter((item) => Boolean(item.question && item.answer))
+        .map((item) => ({ question: item.question!, answer: item.answer! }))
+      : []),
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -619,7 +732,7 @@ const BlogPost = () => {
         pageType="blog"
         pageUrl={pageUrl}
         language={language}
-        headline={isEgyptHealthcare2026 ? EGYPT_HEALTHCARE_2026_OG_TITLE : post.title}
+        headline={isEgyptHealthcare2026 ? EGYPT_HEALTHCARE_2026_OG_TITLE : isQuantMrMaEn ? QUANT_MR_MA_OG_TITLE : post.title}
         description={finalMetaDescription}
         imageUrl={socialImage}
         authorName={post.authorName || 'BioNixus Research Team'}
@@ -640,13 +753,7 @@ const BlogPost = () => {
                 { name: post.title, item: pageUrl },
               ]
         }
-        faqItems={
-          Array.isArray(post.faq)
-            ? post.faq
-              .filter((item) => Boolean(item.question && item.answer))
-              .map((item) => ({ question: item.question!, answer: item.answer! }))
-            : []
-        }
+        faqItems={mergedBlogFaqItems}
         itemList={slug === 'top-healthcare-market-research-firms-saudi-arabia' ? {
           name: 'Healthcare market research firms in Saudi Arabia',
           items: [
@@ -660,7 +767,7 @@ const BlogPost = () => {
       />
       <Helmet>
         {/* Dynamic meta tags for this specific blog post */}
-        <title>{isEgyptHealthcare2026 ? finalMetaTitle : normalizeSeoTitle(`${finalMetaTitle} | BioNixus`, 'BioNixus')}</title>
+        <title>{isEgyptHealthcare2026 || isQuantMrMaEn ? finalMetaTitle : normalizeSeoTitle(`${finalMetaTitle} | BioNixus`, 'BioNixus')}</title>
         <meta name="description" content={finalMetaDescription} />
         <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
 
@@ -956,10 +1063,58 @@ const BlogPost = () => {
                 </aside>
               )}
 
+              {/* Quant MR + MA — methodological hub link in opening content for crawl + UX */}
+              {isQuantMrMaEn && (
+                <aside
+                  className="mb-8 rounded-xl border border-primary/15 bg-primary/[0.025] p-5 lg:p-6"
+                  aria-label="Quantitative healthcare market research methodology guide"
+                >
+                  <p className="text-[11px] font-extrabold tracking-[0.12em] uppercase text-primary mb-3">
+                    Quantitative methodology companion
+                  </p>
+                  <p className="text-[15px] text-foreground leading-relaxed mb-3">
+                    This article connects market-access decisions to statistically sound healthcare quant. For sampling
+                    frames, validation rules, dashboards, and report templates BioNixus uses with pharma and MedTech
+                    clients across Europe and MENA, open the{' '}
+                    <Link to="/quantitative-healthcare-market-research" className="text-primary font-semibold underline underline-offset-2 hover:no-underline">
+                      quantitative healthcare market research
+                    </Link>{' '}
+                    methodology reference — linked throughout the editorial below — then continue with the GCC and country
+                    resources if you operate across tenders.
+                  </p>
+                  <ul className="grid sm:grid-cols-2 gap-2 mt-3 list-none p-0">
+                    <li>
+                      <Link
+                        to="/gcc-market-access-guide"
+                        className="inline-flex items-center gap-1 text-sm text-primary font-medium hover:underline"
+                      >
+                        <ArrowUpRight className="w-3.5 h-3.5" aria-hidden /> GCC market access guide
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/healthcare-market-research"
+                        className="inline-flex items-center gap-1 text-sm text-primary font-medium hover:underline"
+                      >
+                        <ArrowUpRight className="w-3.5 h-3.5" aria-hidden /> EMEA healthcare research hub
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/methodology"
+                        className="inline-flex items-center gap-1 text-sm text-primary font-medium hover:underline"
+                      >
+                        <ArrowUpRight className="w-3.5 h-3.5" aria-hidden /> BioNixus research methodology overview
+                      </Link>
+                    </li>
+                  </ul>
+                </aside>
+              )}
+
               {/* Article body */}
               <div className="blog-article-body blog-drop-cap">
                 {(() => {
-                  const body = getBodyToRender(post, slug);
+                  const body = getBodyToRender(post, slug, { isArBlog });
                   if (typeof body === 'string') return renderStringBody(body);
                   if (Array.isArray(body)) {
                     const blocks = body as PortableTextBlock[];
@@ -990,6 +1145,9 @@ const BlogPost = () => {
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {[
+                    ...(isQuantMrMaEn
+                      ? [{ to: '/quantitative-healthcare-market-research', label: 'Quantitative healthcare market research methodology' }]
+                      : []),
                     { to: '/healthcare-market-research', label: 'EMEA healthcare market research hub' },
                     { to: '/healthcare-market-research/saudi-arabia', label: 'Pharma market research in Saudi Arabia' },
                     { to: '/healthcare-market-research/uae', label: 'Healthcare market research in the UAE' },
@@ -1019,14 +1177,14 @@ const BlogPost = () => {
               </section>
 
               {/* FAQ — uses <details>/<summary> so answers are always in server-rendered HTML */}
-              {Array.isArray(post.faq) && post.faq.length > 0 && (
+              {mergedBlogFaqItems.length > 0 && (
                 <section className="mt-12" aria-label="Frequently asked questions">
                   <h2 className="font-display text-2xl font-bold tracking-tight text-primary mb-6 flex items-center gap-3">
                     <span className="inline-flex px-2 py-0.5 text-[10px] font-extrabold tracking-[0.1em] uppercase rounded-sm" style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--navy-deep))' }}>FAQ</span>
                     Frequently asked questions
                   </h2>
                   <div className="w-full divide-y divide-border border-t border-border">
-                    {post.faq.map((item, i) => (
+                    {mergedBlogFaqItems.map((item, i) => (
                       <details key={i} className="group">
                         <summary className="flex items-center justify-between cursor-pointer text-left text-[15px] font-semibold text-primary hover:text-accent-foreground py-5 list-none [&::-webkit-details-marker]:hidden">
                           <span>{item.question || 'Question'}</span>
