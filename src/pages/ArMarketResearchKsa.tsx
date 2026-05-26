@@ -10,11 +10,6 @@ export default function ArMarketResearchKsa() {
       intro="نوفر أبحاث السوق في السعودية KSA بآليات تنفيذ ثنائية اللغة لدعم القرارات التجارية وقرارات الوصول في السوق المحلي."
       countryLabel="Saudi Arabia"
       primaryKeyword="Market Research KSA"
-      supportingKeywords={[
-        'Pharma market research KSA',
-        'Healthcare market research KSA',
-        'Market Research Saudi',
-      ]}
       faqItems={[
         {
           question: 'هل تغطي الصفحة احتياج KSA وSaudi معاً؟',

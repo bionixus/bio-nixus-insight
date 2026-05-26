@@ -57,6 +57,30 @@ export function normalizeSeoTitle(title?: string, fallback = 'BioNixus'): string
   return withEllipsis(title || fallback, TITLE_MAX)
 }
 
+/**
+ * Collapse repeated "| BioNixus" suffixes introduced by CMS + template concatenation.
+ */
+export function dedupePipeBioNixusTail(title: string): string {
+  let t = String(title || '').replace(/\s+/g, ' ').trim()
+  while (/\|\s*BioNixus\s*\|\s*BioNixus/i.test(t)) {
+    t = t.replace(/\s*\|\s*BioNixus\s*\|\s*BioNixus/gi, ' | BioNixus').trim()
+  }
+  return t
+}
+
+/** One trailing brand token; truncates primary + " | {brand}" to TITLE_MAX characters. */
+export function seoTitleWithBrandOnce(primary: string | undefined, brand = 'BioNixus'): string {
+  let core = dedupePipeBioNixusTail(String(primary || '').trim())
+  core = core.replace(/(\s*\|\s*BioNixus(?:\s+Case\s+Studies)?\s*)+$/i, '').trim()
+  const brandEsc = brand.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  const exactBrand = new RegExp(`\\s*\\|\\s*${brandEsc}\\s*$`, 'i')
+  while (exactBrand.test(core)) {
+    core = core.replace(exactBrand, '').trim()
+  }
+  if (!core) return normalizeSeoTitle(brand, brand)
+  return normalizeSeoTitle(`${core} | ${brand}`, brand)
+}
+
 export function buildSeoDescription(params: {
   preferred?: string
   bodySource?: string

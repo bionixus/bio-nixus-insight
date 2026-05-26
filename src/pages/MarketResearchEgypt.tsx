@@ -10,11 +10,6 @@ export default function MarketResearchEgypt() {
       intro="BioNixus executes market research Egypt engagements for organizations that need evidence-led decisions across public and private healthcare channels."
       countryLabel="Egypt"
       primaryKeyword="Market Research Egypt"
-      supportingKeywords={[
-        'Pharma market research Egypt',
-        'Healthcare market research Egypt',
-        'Top pharma companies in Egypt',
-      ]}
       faqItems={[
         {
           question: 'Why is Egypt important in MENA market research planning?',

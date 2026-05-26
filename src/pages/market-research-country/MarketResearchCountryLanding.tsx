@@ -19,9 +19,6 @@ type MarketResearchCountryLandingProps = {
   intro: string;
   countryLabel: string;
   primaryKeyword: string;
-  supportingKeywords: string[];
-  /** Natural-language keyword paragraph (preferred for E-E-A-T vs. a raw keyword list). */
-  keywordBlurb?: string;
   faqItems: FaqItem[];
   relatedLinks: Array<{ to: string; label: string }>;
 };
@@ -34,8 +31,6 @@ export default function MarketResearchCountryLanding({
   intro,
   countryLabel,
   primaryKeyword,
-  supportingKeywords,
-  keywordBlurb,
   faqItems,
   relatedLinks,
 }: MarketResearchCountryLandingProps) {
@@ -86,21 +81,6 @@ export default function MarketResearchCountryLanding({
               </Link>
               .
             </p>
-            <div className="rounded-xl border border-border bg-card p-5 mb-6">
-              <h2 className="text-lg font-semibold text-foreground mb-2">
-                {keywordBlurb ? 'What this page answers' : 'Keyword coverage on this page'}
-              </h2>
-              {keywordBlurb ? (
-                <p className="text-sm text-muted-foreground leading-relaxed">{keywordBlurb}</p>
-              ) : (
-                <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
-                  <li>{primaryKeyword}</li>
-                  {supportingKeywords.map((keyword) => (
-                    <li key={keyword}>{keyword}</li>
-                  ))}
-                </ul>
-              )}
-            </div>
             <div className="rounded-xl border border-border bg-muted/20 p-5 mb-6">
               <h2 className="text-lg font-semibold text-foreground mb-2">What BioNixus delivers in {countryLabel}</h2>
               <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">

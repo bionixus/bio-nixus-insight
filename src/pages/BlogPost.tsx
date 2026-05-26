@@ -7,7 +7,12 @@ import type { PortableTextBlock } from '@portabletext/types';
 import { Helmet } from 'react-helmet-async';
 import { fetchSanityPostBySlug, type RelatedPostsData } from '@/lib/sanity-blog';
 import { optimizeSanityImage } from '@/lib/image-utils';
-import { buildSeoDescription, normalizeSeoTitle, formatSlugAsPageHeading } from '@/lib/seo-meta';
+import {
+  buildSeoDescription,
+  formatSlugAsPageHeading,
+  seoTitleWithBrandOnce,
+  dedupePipeBioNixusTail,
+} from '@/lib/seo-meta';
 import RelatedPosts from '@/components/RelatedPosts';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
@@ -293,6 +298,7 @@ const GCC_PHARMA_COMPARISON_BODY_HTML = `<p>Pharmaceutical strategists rarely ne
 const GCC_PHARMA_2026_SLUG = 'gcc-pharmaceuticals-market-2026';
 const AI_VS_HUMAN_2026_SLUG = 'ai-vs-human-insight-validating-quantitative-data-2026-pharma-research';
 const CHINA_HEALTHCARE_2026_SLUG = 'healthcare-overview-china-market-2026';
+const CHINA_HEALTHCARE_2026_TITLE_CORE = 'China Healthcare Market Overview 2026';
 const CHINA_HEALTHCARE_2026_META_DESCRIPTION =
   '深度解析2026中国医疗健康市场：医保支付改革、创新与生物药商业化、医院及基层诊疗结构、AI与智慧医疗落地、老龄化驱动需求及竞争格局演变。BioNixus为药企、投资人与决策者提供可执行洞察。';
 
@@ -399,15 +405,24 @@ const GCC_MEAST_PHARMA_HEALTH_AR_SLUG =
 const GCC_MEAST_PHARMA_HEALTH_AR_META_DESCRIPTION =
   'تحليل معمق لسوق الرعاية الصحية في دول الخليج العربي لعام 2026. اكتشف فرص التوطين، التحول الرقمي، واستراتيجيات النجاح في السعودية والإمارات.';
 
-const GCC_MEAST_PHARMA_HEALTH_AR_PAGE_TITLE =
-  'أبحاث السوق في الشرق الأوسط والخليج 2026 | بيونكسس | BioNixus';
+/**
+ * Same Arabic UTF-8 slug is served on `/blog/…` and `/ar/blog/…` — titles must differ per URL.
+ * English-path blog uses an English SERP title; Arabic hub uses Arabic.
+ */
+const GCC_MEAST_PHARMA_HEALTH_AR_BLOG_EN_TITLE = 'GCC & MENA Pharma Market Research Outlook 2026';
+const GCC_MEAST_PHARMA_HEALTH_AR_BLOG_AR_TITLE =
+  'أبحاث السوق الصيدلانية الشرق الأوسط والخليج 2026';
 
 /** `/blog/` article — Saudi pharmaceutical market outlook (Arabic slug, not `/ar/blog/`). */
 const SAUDI_PHARMA_MARKET_2026_AR_SLUG = 'سوق-الدواء-السعودي-2026';
 const SAUDI_PHARMA_MARKET_2026_AR_META_DESCRIPTION =
   'اكتشف أهم اتجاهات سوق الدواء السعودي لعام 2026. تعرف على فرص التوطين، نمو الأدوية الحيوية، وتأثير رؤية 2030 على الرعاية الصحية في المملكة.';
-const SAUDI_PHARMA_MARKET_2026_AR_PAGE_TITLE =
-  'سوق الدواء السعودي 2026: رؤى واتجاهات النمو المستقبلية | BioNixus';
+const SAUDI_PHARMA_MARKET_2026_AR_BLOG_EN_TITLE = 'Saudi Arabia Pharmaceutical Market Outlook 2026';
+const SAUDI_PHARMA_MARKET_2026_AR_BLOG_AR_TITLE = 'سوق الدواء السعودي 2026: رؤى واتجاهات';
+
+/** Distinct Arabic-blog title for EN slug under `/ar/blog/` (duplicate-title audit). */
+const SAUDI_HCR_FIRMS_AR_SLUG = 'saudi-healthcare-market-research-firms-ar';
+const SAUDI_HCR_FIRMS_AR_TITLE_CORE = 'شركات أبحاث السوق الصحي السعودية 2026';
 
 /** Arabic blog URLs must not reuse the English Sanity meta description (duplicate meta audit). */
 const ARABIC_BLOG_META_DESCRIPTION_BY_SLUG: Record<string, string> = {
@@ -861,7 +876,27 @@ const BlogPost = () => {
   const pageUrl = blogCanonicalAbsoluteUrl(pathname, post.seoCanonicalUrl, isGccComparisonEn, comparisonPageUrl);
   const articleDisplayTitle = isGccComparisonEn ? GCC_PHARMA_COMPARISON_DISPLAY_TITLE : isGccPharmacoeconomicsEn ? GCC_PHARMACOECONOMICS_DISPLAY_TITLE : post.title;
   const bodySourceForMeta = typeof post.body === 'string' ? post.body : post.excerpt || post.title;
-  const metaTitle = normalizeSeoTitle(post.seoMetaTitle || post.title, 'BioNixus');
+  let titleCore = dedupePipeBioNixusTail(post.seoMetaTitle || post.title || 'BioNixus');
+  if (isEgyptHealthcare2026) {
+    titleCore = EGYPT_HEALTHCARE_2026_TITLE;
+  } else if (isQuantMrMaEn) {
+    titleCore = QUANT_MR_MA_PAGE_TITLE;
+  } else if (isGccComparisonEn) {
+    titleCore = GCC_PHARMA_COMPARISON_PAGE_TITLE;
+  } else if (isPharmacoeconomicsGccEn) {
+    titleCore = PHARMACOECONOMICS_GCC_META_TITLE;
+  } else if (isGccPharmacoeconomicsEn) {
+    titleCore = GCC_PHARMACOECONOMICS_META_TITLE;
+  } else if (isSaudiPharmaMarket2026ArArticle) {
+    titleCore = isArBlog ? SAUDI_PHARMA_MARKET_2026_AR_BLOG_AR_TITLE : SAUDI_PHARMA_MARKET_2026_AR_BLOG_EN_TITLE;
+  } else if (isGccMeastPharmaHealthArticleAr) {
+    titleCore = isArBlog ? GCC_MEAST_PHARMA_HEALTH_AR_BLOG_AR_TITLE : GCC_MEAST_PHARMA_HEALTH_AR_BLOG_EN_TITLE;
+  } else if (slug === CHINA_HEALTHCARE_2026_SLUG) {
+    titleCore = CHINA_HEALTHCARE_2026_TITLE_CORE;
+  } else if (slug === SAUDI_HCR_FIRMS_AR_SLUG && isArBlog) {
+    titleCore = SAUDI_HCR_FIRMS_AR_TITLE_CORE;
+  }
+  const documentTitle = seoTitleWithBrandOnce(titleCore);
   const metaDescription = buildSeoDescription({
     preferred: post.seoMetaDescription,
     bodySource: bodySourceForMeta,
@@ -898,21 +933,6 @@ const BlogPost = () => {
             : slug === CHINA_HEALTHCARE_2026_SLUG
             ? CHINA_HEALTHCARE_2026_META_DESCRIPTION
             : arabicBlogOnEnPathMetaDescription ?? arBlogMetaOverride ?? metaDescription;
-  const finalMetaTitle = isEgyptHealthcare2026
-    ? normalizeSeoTitle(EGYPT_HEALTHCARE_2026_TITLE, 'BioNixus')
-    : isQuantMrMaEn
-      ? normalizeSeoTitle(QUANT_MR_MA_PAGE_TITLE, 'BioNixus')
-      : isGccComparisonEn
-        ? normalizeSeoTitle(GCC_PHARMA_COMPARISON_PAGE_TITLE, 'BioNixus')
-        : isPharmacoeconomicsGccEn
-          ? normalizeSeoTitle(PHARMACOECONOMICS_GCC_META_TITLE, 'BioNixus')
-          : isGccPharmacoeconomicsEn
-            ? normalizeSeoTitle(GCC_PHARMACOECONOMICS_META_TITLE, 'BioNixus')
-            : isSaudiPharmaMarket2026ArArticle
-              ? SAUDI_PHARMA_MARKET_2026_AR_PAGE_TITLE
-              : isGccMeastPharmaHealthArticleAr
-                ? GCC_MEAST_PHARMA_HEALTH_AR_PAGE_TITLE
-                : metaTitle;
   const socialTitle = isEgyptHealthcare2026
     ? EGYPT_HEALTHCARE_2026_OG_TITLE
     : isQuantMrMaEn
@@ -923,11 +943,7 @@ const BlogPost = () => {
           ? PHARMACOECONOMICS_GCC_META_TITLE
           : isGccPharmacoeconomicsEn
             ? GCC_PHARMACOECONOMICS_META_TITLE
-            : isSaudiPharmaMarket2026ArArticle
-              ? SAUDI_PHARMA_MARKET_2026_AR_PAGE_TITLE
-              : isGccMeastPharmaHealthArticleAr
-                ? GCC_MEAST_PHARMA_HEALTH_AR_PAGE_TITLE
-                : post.ogTitle || metaTitle;
+            : dedupePipeBioNixusTail(post.ogTitle || documentTitle);
   const socialDescription = isEgyptHealthcare2026
     ? EGYPT_HEALTHCARE_2026_OG_DESCRIPTION
     : isUaeHealthcareTrends2025En
@@ -993,7 +1009,21 @@ const BlogPost = () => {
         pageType="blog"
         pageUrl={pageUrl}
         language={language}
-        headline={isEgyptHealthcare2026 ? EGYPT_HEALTHCARE_2026_OG_TITLE : isQuantMrMaEn ? QUANT_MR_MA_OG_TITLE : isGccComparisonEn ? GCC_PHARMA_COMPARISON_OG_TITLE : isPharmacoeconomicsGccEn ? PHARMACOECONOMICS_GCC_META_TITLE : isGccPharmacoeconomicsEn ? GCC_PHARMACOECONOMICS_DISPLAY_TITLE : isSaudiPharmaMarket2026ArArticle ? SAUDI_PHARMA_MARKET_2026_AR_PAGE_TITLE : isGccMeastPharmaHealthArticleAr ? GCC_MEAST_PHARMA_HEALTH_AR_PAGE_TITLE : post.title}
+        headline={
+          isEgyptHealthcare2026
+            ? EGYPT_HEALTHCARE_2026_OG_TITLE
+            : isQuantMrMaEn
+              ? QUANT_MR_MA_OG_TITLE
+              : isGccComparisonEn
+                ? GCC_PHARMA_COMPARISON_OG_TITLE
+                : isPharmacoeconomicsGccEn
+                  ? PHARMACOECONOMICS_GCC_META_TITLE
+                  : isGccPharmacoeconomicsEn
+                    ? GCC_PHARMACOECONOMICS_DISPLAY_TITLE
+                    : isSaudiPharmaMarket2026ArArticle || isGccMeastPharmaHealthArticleAr
+                      ? documentTitle
+                      : post.title
+        }
         description={finalMetaDescription}
         imageUrl={socialImage}
         authorName={post.authorName || 'BioNixus Research Team'}
@@ -1028,7 +1058,7 @@ const BlogPost = () => {
       />
       <Helmet>
         {/* Dynamic meta tags for this specific blog post */}
-        <title>{isEgyptHealthcare2026 || isQuantMrMaEn || isGccComparisonEn || isPharmacoeconomicsGccEn || isGccPharmacoeconomicsEn || isSaudiPharmaMarket2026ArArticle || isGccMeastPharmaHealthArticleAr ? finalMetaTitle : normalizeSeoTitle(`${finalMetaTitle} | BioNixus`, 'BioNixus')}</title>
+        <title>{documentTitle}</title>
         <meta name="description" content={finalMetaDescription} />
         <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
 

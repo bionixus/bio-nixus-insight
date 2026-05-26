@@ -10,12 +10,6 @@ export default function MarketResearchUae() {
       intro="BioNixus delivers market research in the UAE for teams that need launch, access, and pricing decisions backed by local evidence. That includes healthcare market research in the UAE across hospitals, payers, and physicians, and pharma market research in the UAE for specialty, primary care, and institutional pathways."
       countryLabel="United Arab Emirates"
       primaryKeyword="Market research in UAE"
-      supportingKeywords={[
-        'Healthcare market research in UAE',
-        'Pharma market research in UAE',
-        'Top pharma companies in UAE',
-      ]}
-      keywordBlurb="This page is built for teams searching market research in the UAE, healthcare market research in the UAE, or pharma market research in the UAE. BioNixus combines quantitative and qualitative programs with emirate-aware regulatory context (Dubai DHA, Abu Dhabi DOH, federal MOHAP) so outputs support real launch and access decisions—not generic regional summaries."
       faqItems={[
         {
           question: 'What is healthcare market research in the UAE?',

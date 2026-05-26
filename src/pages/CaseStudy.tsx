@@ -6,7 +6,7 @@ import type { PortableTextBlock } from '@portabletext/types';
 import { Helmet } from 'react-helmet-async';
 import { fetchCaseStudyBySlug } from '@/lib/sanity-case-studies';
 import { isCaseStudiesConfigured } from '@/lib/sanity-case-studies';
-import { buildSeoDescription, normalizeSeoTitle, formatSlugAsPageHeading } from '@/lib/seo-meta';
+import { buildSeoDescription, seoTitleWithBrandOnce, dedupePipeBioNixusTail, formatSlugAsPageHeading } from '@/lib/seo-meta';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useInitialData } from '@/contexts/InitialDataContext';
 import type { CaseStudy as CaseStudyType } from '@/types/caseStudy';
@@ -145,13 +145,14 @@ const CaseStudyPage = () => {
   }
 
   const pageUrl = `https://www.bionixus.com/case-studies/${slug}`;
-  const metaTitle = normalizeSeoTitle(caseStudy.seoMetaTitle || caseStudy.title, 'BioNixus Case Studies');
+  const csBrand = 'BioNixus Case Studies';
+  const metaTitle = seoTitleWithBrandOnce(caseStudy.seoMetaTitle || caseStudy.title, csBrand);
   const metaDescription = buildSeoDescription({
     preferred: caseStudy.seoMetaDescription,
     bodySource: caseStudy.body || caseStudy.excerpt || caseStudy.title,
     fallback: caseStudy.excerpt || caseStudy.title,
   });
-  const socialTitle = caseStudy.ogTitle || metaTitle;
+  const socialTitle = dedupePipeBioNixusTail(caseStudy.ogTitle || metaTitle);
   const socialDescription = caseStudy.ogDescription || metaDescription;
   const socialImage = caseStudy.ogImage || caseStudy.coverImage;
 
@@ -167,7 +168,7 @@ const CaseStudyPage = () => {
         alternateLocales={getOgLocaleAlternates(language)}
       />
       <Helmet>
-        <title>{normalizeSeoTitle(`${metaTitle} | BioNixus Case Studies`, 'BioNixus Case Studies')}</title>
+        <title>{metaTitle}</title>
         <meta name="description" content={metaDescription} />
         <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
 

@@ -10,11 +10,6 @@ export default function ArMarketResearchUae() {
       intro="نقدم برامج أبحاث السوق في الإمارات للشركات الدوائية وفرق الرعاية الصحية بهدف دعم قرارات الإطلاق والتوسع المبنية على الأدلة."
       countryLabel="United Arab Emirates"
       primaryKeyword="Market Research UAE"
-      supportingKeywords={[
-        'Pharma market research UAE',
-        'Healthcare market research UAE',
-        'Top pharma companies in UAE',
-      ]}
       faqItems={[
         {
           question: 'ما أهم مخرجات أبحاث السوق في الإمارات؟',

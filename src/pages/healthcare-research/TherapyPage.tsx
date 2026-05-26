@@ -6,11 +6,9 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { RelatedPages } from '@/components/healthcare-research/RelatedPages';
 import { buildFAQSchema, buildTherapyPageSchemas } from '@/lib/seo/schemas';
 
-const BIOLOGICS_SEO_TITLE =
-  'Biologics Market Research Guide: Biosimilars, Adoption & Pharma Access | BioNixus';
+const BIOLOGICS_SEO_TITLE = 'Biologics Research Guide: Biosimilars & Market Access | BioNixus';
 
-const IMMUNOLOGY_SEO_TITLE =
-  'Immunology Market Research Guide: Biologics, Sequencing & Immune-Mediated Disease | BioNixus';
+const IMMUNOLOGY_SEO_TITLE = 'Immunology Research Guide: Biologics & Patient Pathways | BioNixus';
 
 const THERAPY_COPY: Record<string, string> = {
   oncology:

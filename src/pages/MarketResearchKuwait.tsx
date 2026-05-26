@@ -10,11 +10,6 @@ export default function MarketResearchKuwait() {
       intro="BioNixus builds market research Kuwait studies for teams needing decision-ready intelligence in one of the GCC's high-value healthcare markets."
       countryLabel="Kuwait"
       primaryKeyword="Market Research Kuwait"
-      supportingKeywords={[
-        'Pharma market research Kuwait',
-        'Healthcare market research Kuwait',
-        'Top pharma companies in Kuwait',
-      ]}
       faqItems={[
         {
           question: 'What outcomes can market research Kuwait programs support?',

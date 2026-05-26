@@ -10,11 +10,6 @@ export default function ArMarketResearchEgypt() {
       intro="نوفر أبحاث السوق في مصر للشركات التي تحتاج إلى فهم دقيق للسوق الصحي والدوائي من أجل قرارات الإطلاق والتوسع."
       countryLabel="Egypt"
       primaryKeyword="Market Research Egypt"
-      supportingKeywords={[
-        'Pharma market research Egypt',
-        'Healthcare market research Egypt',
-        'Top pharma companies in Egypt',
-      ]}
       faqItems={[
         {
           question: 'هل الصفحة تربط بصفحات الشركات الدوائية في مصر؟',

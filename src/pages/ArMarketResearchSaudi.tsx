@@ -10,11 +10,6 @@ export default function ArMarketResearchSaudi() {
       intro="تساعد BioNixus فرق القطاع الصحي والدوائي عبر أبحاث سوق في السعودية مبنية على بيانات أصحاب المصلحة والواقع التشغيلي المحلي."
       countryLabel="Saudi Arabia"
       primaryKeyword="Market Research Saudi"
-      supportingKeywords={[
-        'Market Research KSA',
-        'Healthcare market research Saudi',
-        'Pharma market research Saudi',
-      ]}
       faqItems={[
         {
           question: 'ما الفرق بين صفحة Saudi وصفحة KSA؟',

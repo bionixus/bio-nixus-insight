@@ -10,11 +10,6 @@ export default function ArMarketResearchKuwait() {
       intro="نقدم أبحاث السوق في الكويت لدعم قرارات الشركات الدوائية والفرق الصحية من خلال رؤى قابلة للتنفيذ بسرعة."
       countryLabel="Kuwait"
       primaryKeyword="Market Research Kuwait"
-      supportingKeywords={[
-        'Pharma market research Kuwait',
-        'Healthcare market research Kuwait',
-        'Top pharma companies in Kuwait',
-      ]}
       faqItems={[
         {
           question: 'هل الصفحة موجهة للكلمات القصيرة والطويلة معاً؟',

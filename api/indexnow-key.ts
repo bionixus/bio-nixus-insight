@@ -138,15 +138,19 @@ const ARABIC_BLOG_TITLE_OVERRIDES: Record<string, string> = {
 /** `/blog/` article with Arabic slug (decoded path segment). Must match BlogPost.tsx + server.js. */
 const GCC_MEAST_PHARMA_HEALTH_AR_SLUG =
   'أبحاث-السوق-الدوائية-في-الشرق-الأوسط-و-دول-الخليج-العربي';
-const GCC_MEAST_PHARMA_HEALTH_AR_PAGE_TITLE =
-  'أبحاث السوق في الشرق الأوسط والخليج 2026 | بيونكسس | BioNixus';
+const GCC_MEAST_PHARMA_HEALTH_AR_BLOG_EN_TITLE =
+  'GCC & MENA Pharma Market Research Outlook 2026 | BioNixus';
+const GCC_MEAST_PHARMA_HEALTH_AR_BLOG_AR_TITLE =
+  'أبحاث السوق الصيدلانية الشرق الأوسط والخليج 2026 | BioNixus';
 const GCC_MEAST_PHARMA_HEALTH_AR_META_DESCRIPTION =
   'تحليل معمق لسوق الرعاية الصحية في دول الخليج العربي لعام 2026. اكتشف فرص التوطين، التحول الرقمي، واستراتيجيات النجاح في السعودية والإمارات.';
 
 /** Saudi pharma market outlook; Arabic slug under `/blog/` (decoded segment). Matches BlogPost.tsx + server.js. */
 const SAUDI_PHARMA_MARKET_2026_AR_SLUG = 'سوق-الدواء-السعودي-2026';
-const SAUDI_PHARMA_MARKET_2026_AR_PAGE_TITLE =
-  'سوق الدواء السعودي 2026: رؤى واتجاهات النمو المستقبلية | BioNixus';
+const SAUDI_PHARMA_MARKET_2026_AR_BLOG_EN_TITLE =
+  'Saudi Arabia Pharmaceutical Market Outlook 2026 | BioNixus';
+const SAUDI_PHARMA_MARKET_2026_AR_BLOG_AR_TITLE =
+  'سوق الدواء السعودي 2026: رؤى واتجاهات | BioNixus';
 const SAUDI_PHARMA_MARKET_2026_AR_META_DESCRIPTION =
   'اكتشف أهم اتجاهات سوق الدواء السعودي لعام 2026. تعرف على فرص التوطين، نمو الأدوية الحيوية، وتأثير رؤية 2030 على الرعاية الصحية في المملكة.';
 
@@ -196,8 +200,19 @@ function buildFallbackTitle(pathname: string): string {
   if (path === '/blog') return 'Healthcare & Pharmaceutical Blog Insights | BioNixus';
   if (path === '/ar/blog') return 'المدونة العربية: أبحاث السوق الصحي والدوائي | BioNixus';
   if (path.startsWith('/ar/blog/')) {
-    const slug = path.split('/').pop() || 'insight';
+    let slug = path.split('/').pop() || 'insight';
+    try {
+      slug = decodeURIComponent(slug);
+    } catch {
+      /* keep raw segment */
+    }
     if (ARABIC_BLOG_TITLE_OVERRIDES[slug]) return ARABIC_BLOG_TITLE_OVERRIDES[slug];
+    if (slug === SAUDI_PHARMA_MARKET_2026_AR_SLUG) {
+      return SAUDI_PHARMA_MARKET_2026_AR_BLOG_AR_TITLE;
+    }
+    if (slug === GCC_MEAST_PHARMA_HEALTH_AR_SLUG) {
+      return GCC_MEAST_PHARMA_HEALTH_AR_BLOG_AR_TITLE;
+    }
     return `${titleCaseFromSlug(slug)} | مدونة BioNixus`;
   }
   if (path.startsWith('/blog/')) {
@@ -208,10 +223,10 @@ function buildFallbackTitle(pathname: string): string {
       /* malformed percent-encoding — use raw segment */
     }
     if (slug === SAUDI_PHARMA_MARKET_2026_AR_SLUG) {
-      return SAUDI_PHARMA_MARKET_2026_AR_PAGE_TITLE;
+      return SAUDI_PHARMA_MARKET_2026_AR_BLOG_EN_TITLE;
     }
     if (slug === GCC_MEAST_PHARMA_HEALTH_AR_SLUG) {
-      return GCC_MEAST_PHARMA_HEALTH_AR_PAGE_TITLE;
+      return GCC_MEAST_PHARMA_HEALTH_AR_BLOG_EN_TITLE;
     }
     if (slug === 'quantitative-market-research-and-market-access') {
       return 'Quantitative Healthcare Market Research & Market Access 2026 | BioNixus';
@@ -232,11 +247,11 @@ function buildFallbackTitle(pathname: string): string {
   }
 
   if (path === '/bionixus-vs-iqvia-mena') {
-    return 'BioNixus vs IQVIA for MENA Healthcare Research | Direct Comparison 2026';
+    return 'BioNixus vs IQVIA MENA Research (2026) | BioNixus';
   }
 
   if (path === '/biosimilar-market-entry-saudi-arabia') {
-    return 'Biosimilar Market Entry in Saudi Arabia: 2026 Strategy Guide | BioNixus';
+    return 'Biosimilar Entry Saudi Arabia (2026) | BioNixus';
   }
 
   const segment = path.split('/').filter(Boolean).pop() || 'home';

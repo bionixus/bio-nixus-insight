@@ -10,11 +10,6 @@ export default function MarketResearchKsa() {
       intro="BioNixus delivers market research KSA studies built for practical deployment across public and private healthcare channels in Saudi Arabia."
       countryLabel="Saudi Arabia"
       primaryKeyword="Market Research KSA"
-      supportingKeywords={[
-        'Pharma market research KSA',
-        'Healthcare market research KSA',
-        'Saudi pharmaceutical market research',
-      ]}
       faqItems={[
         {
           question: 'How is KSA market research different from generic GCC programs?',

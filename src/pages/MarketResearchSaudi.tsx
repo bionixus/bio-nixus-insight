@@ -10,11 +10,6 @@ export default function MarketResearchSaudi() {
       intro="BioNixus provides market research Saudi support for teams that need clear evidence from physicians, payers, and institutional stakeholders."
       countryLabel="Saudi Arabia"
       primaryKeyword="Market Research Saudi"
-      supportingKeywords={[
-        'Healthcare market research Saudi',
-        'Pharma market research Saudi',
-        'Top pharma companies in Saudi Arabia',
-      ]}
       faqItems={[
         {
           question: 'Is this page different from market research KSA?',
