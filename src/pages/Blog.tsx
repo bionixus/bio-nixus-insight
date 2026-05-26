@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { useMemo } from 'react';
 import { ArrowLeft, BookOpen, Sparkles } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -8,6 +9,7 @@ import BlogSection from '@/components/BlogSection';
 import { CTASection } from '@/components/shared/CTASection';
 import { useSanityBlog } from '@/hooks/useSanityBlog';
 import { blogRecoveryPaths } from '@/lib/internalLinkRecovery';
+import { INTERNAL_LINK_AMPLIFICATION_TARGETS } from '@/lib/internalLinkAmplificationTargets';
 import { useInitialData } from '@/contexts/InitialDataContext';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
@@ -174,10 +176,18 @@ const Blog = () => {
       }
     : null;
 
-  const recoveryLinks = blogRecoveryPaths.map((path) => ({
-    path,
-    label: pathToLabel(path),
-  }));
+  const recoveryLinks = useMemo(() => {
+    const fromAmp = INTERNAL_LINK_AMPLIFICATION_TARGETS.map(({ to, label }) => ({ path: to, label }));
+    const fromBlog = blogRecoveryPaths.map((path) => ({ path, label: pathToLabel(path) }));
+    const seen = new Set<string>();
+    const out: { path: string; label: string }[] = [];
+    for (const row of [...fromAmp, ...fromBlog]) {
+      if (seen.has(row.path)) continue;
+      seen.add(row.path);
+      out.push(row);
+    }
+    return out;
+  }, []);
 
   const mainDir = isArabicBlog ? 'rtl' : 'ltr';
   const mainLang = isArabicBlog ? 'ar' : isGerman ? 'de' : isFrench ? 'fr' : 'en';

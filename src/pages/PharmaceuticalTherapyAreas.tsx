@@ -328,7 +328,15 @@ export default function PharmaceuticalTherapyAreas() {
               <Link to="/healthcare-market-research" className="text-primary underline">
                 healthcare market research hub
               </Link>{' '}
-              to explore country coverage and service depth.
+              to explore country coverage and service depth, or open the UAE-focused{' '}
+              <Link to="/market-research-uae" className="text-primary underline">
+                market research UAE pillar
+              </Link>{' '}
+              alongside the GCC-wide{' '}
+              <Link to="/gcc-pharma-market-report-2026" className="text-primary underline">
+                pharma market snapshot 2026
+              </Link>
+              .
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed mb-6">
               Last updated: {lastUpdated}. For regional strategy context, review the{' '}

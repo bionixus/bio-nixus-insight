@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { ClientPortalDialog } from '@/components/ClientPortalDialog';
+import { INTERNAL_LINK_AMPLIFICATION_TARGETS } from '@/lib/internalLinkAmplificationTargets';
 
 const Footer = () => {
   const { pathname } = useLocation();
@@ -73,9 +74,9 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-12 mb-12">
           {/* Brand + Newsletter */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-5">
             <Link to={basePath} className="flex items-center gap-3 mb-6" onClick={handleLogoClick}>
               <img
                 src="/bionixus-logo-footer.webp"
@@ -189,12 +190,13 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Company & Offerings */}
-          <div>
-            <h4 className="font-semibold text-primary-foreground mb-6 uppercase tracking-wide text-sm">
-              {t.footer.companyHeading || 'Company & Offerings'}
-            </h4>
-            <ul className="space-y-3">
+          {/* Company & Offerings — paired with amplification links for crawl completeness */}
+          <div className="lg:col-span-4 lg:grid lg:grid-cols-2 gap-10">
+            <div>
+              <h4 className="font-semibold text-primary-foreground mb-6 uppercase tracking-wide text-sm">
+                {t.footer.companyHeading || 'Company & Offerings'}
+              </h4>
+              <ul className="space-y-3">
               <li>
                 <Link
                   to="/about"
@@ -359,10 +361,29 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold text-primary-foreground mb-6 uppercase tracking-wide text-sm">
+                Regional hubs & methodology
+              </h4>
+              <ul className="space-y-3">
+                {INTERNAL_LINK_AMPLIFICATION_TARGETS.map((item) => (
+                  <li key={item.to}>
+                    <Link
+                      to={item.to}
+                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Contact */}
-          <div>
+          <div className="lg:col-span-3">
             <h4 className="font-semibold text-primary-foreground mb-6 uppercase tracking-wide text-sm">
               {t.footer.contactHeading}
             </h4>

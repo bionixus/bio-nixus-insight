@@ -269,6 +269,36 @@ export default function HubPage() {
             <Link to="/gcc-market-access-guide" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
               GCC market access guide
             </Link>
+            <Link to="/market-research-uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              Dedicated UAE market research landing page
+            </Link>
+            <Link to="/market-research-home" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              Market research data insights &amp; consultancy
+            </Link>
+            <Link to="/pharmaceutical-therapy-areas" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              Pharmaceutical therapy areas directory
+            </Link>
+            <Link to="/gcc-pharma-market-report-2026" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              GCC pharma market report 2026 (executive briefing)
+            </Link>
+            <Link to="/gfk-alternative-egypt" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              GfK alternative market research Egypt
+            </Link>
+            <Link to="/budget-impact-model-saudi-arabia" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              Budget-impact modeling Saudi Arabia
+            </Link>
+            <Link to="/conf" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              Strategic portfolio conf deck hub
+            </Link>
+            <Link to="/ar/conf" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              Arabic portfolio conf hub
+            </Link>
+            <Link to="/methodology" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              Healthcare market research methodology hub
+            </Link>
+            <Link to="/kantar-health-alternative-gcc" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              Kantar Health alternative — GCC pharma research desk
+            </Link>
           </div>
         </div>
       </section>

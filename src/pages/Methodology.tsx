@@ -44,6 +44,37 @@ const Methodology = () => {
               BioNixus designs, executes, and quality-assures every healthcare market research programme
               we deliver across EMEA and GCC markets.
             </p>
+            <p className="mt-6 text-sm text-muted-foreground leading-relaxed">
+              Localized methodology mirrors:&nbsp;
+              <Link to="/de/methodology" className="text-primary font-medium hover:underline">
+                Deutsch
+              </Link>
+              {' · '}
+              <Link to="/fr/methodology" className="text-primary font-medium hover:underline">
+                Français
+              </Link>
+              {' · '}
+              <Link to="/es/methodology" className="text-primary font-medium hover:underline">
+                Español
+              </Link>
+              {' · '}
+              <Link to="/zh/methodology" className="text-primary font-medium hover:underline">
+                中文
+              </Link>
+              {' · '}
+              <Link to="/ar/methodology" className="text-primary font-medium hover:underline">
+                العربية
+              </Link>
+              . Align evidence plans with{' '}
+              <Link to="/market-research-home" className="text-primary font-medium hover:underline">
+                market research data insights hub
+              </Link>{' '}
+              or compare{' '}
+              <Link to="/gfk-alternative-egypt" className="text-primary font-medium hover:underline">
+                GfK alternative coverage in Egypt
+              </Link>
+              .
+            </p>
           </div>
         </section>
 

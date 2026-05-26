@@ -200,6 +200,65 @@ export default function MarketResearchHome() {
                   </Link>{' '}
                   to discuss a scoped research program aligned to your decision timeline.
                 </li>
+                <li>
+                  <Link to="/market-research-uae" className="text-primary font-medium hover:underline">
+                    Market research UAE
+                  </Link>{' '}
+                  — emirate-aware pharmaceutical and healthcare field programs.
+                </li>
+                <li>
+                  <Link to="/pharmaceutical-therapy-areas" className="text-primary font-medium hover:underline">
+                    Pharmaceutical therapy areas directory
+                  </Link>{' '}
+                  spanning oncology through vaccines and transplant medicine.
+                </li>
+                <li>
+                  <Link to="/gcc-pharma-market-report-2026" className="text-primary font-medium hover:underline">
+                    GCC pharma market report 2026
+                  </Link>{' '}
+                  for executive-ready sizing and uptake context.
+                </li>
+                <li>
+                  <Link to="/gfk-alternative-egypt" className="text-primary font-medium hover:underline">
+                    GfK alternative market research in Egypt
+                  </Link>{' '}
+                  and{' '}
+                  <Link to="/budget-impact-model-saudi-arabia" className="text-primary font-medium hover:underline">
+                    Saudi Arabia budget-impact modeling
+                  </Link>
+                  .
+                </li>
+                <li>
+                  <Link to="/conf" className="text-primary font-medium hover:underline">
+                    Strategic portfolio conf hub
+                  </Link>
+                  {' & '}
+                  <Link to="/methodology" className="text-primary font-medium hover:underline">
+                    methodology playbook
+                  </Link>
+                  {' '}
+                  (also available{' '}
+                  <Link to="/de/methodology" className="text-primary font-medium hover:underline">
+                    DE
+                  </Link>
+                  ,{' '}
+                  <Link to="/fr/methodology" className="text-primary font-medium hover:underline">
+                    FR
+                  </Link>
+                  ,{' '}
+                  <Link to="/es/methodology" className="text-primary font-medium hover:underline">
+                    ES
+                  </Link>
+                  ,{' '}
+                  <Link to="/zh/methodology" className="text-primary font-medium hover:underline">
+                    ZH
+                  </Link>
+                  ,{' '}
+                  <Link to="/ar/methodology" className="text-primary font-medium hover:underline">
+                    AR
+                  </Link>
+                  ).
+                </li>
               </ul>
             </section>
           </div>
