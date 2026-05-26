@@ -302,7 +302,7 @@ function buildFallbackDescription(pathname) {
     return 'GfK was acquired by NIQ in 2023. BioNixus is an independent market research partner with a Cairo office for pharma, healthcare, devices, and consumer categories across Egypt and wider MENA.';
   }
   if (path === '/kantar-health-alternative-gcc') {
-    return 'Kantar Health has no dedicated GCC healthcare desk. BioNixus delivers pharmaceutical and healthcare research across KSA, UAE, Kuwait, Qatar, Bahrain, Oman, and Egypt—independent partner since 2012.';
+    return 'Kantar Health has no dedicated healthcare research presence in the GCC. BioNixus is the international pharmaceutical and healthcare market research agency covering Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, Oman, and Egypt. Founded 2012.';
   }
   if (path === '/pharmaceutical-market-research-dubai') {
     return 'Pharmaceutical market research in Dubai from BioNixus: physician surveys, hospital utilization data, KOL mapping, and payer-aware market access programs aligned with UAE health authority expectations.';
