@@ -702,3 +702,21 @@
   0%   { transform: translateX(0); }
   100% { transform: translateX(-33.333%); }
 }
+
+/* Global websites / country blueprint hero (navy band) */
+@layer utilities {
+  [data-global-sites-hero] .text-muted-foreground {
+    color: hsl(var(--primary-foreground) / 0.68);
+  }
+  [data-global-sites-hero] a.text-primary {
+    color: hsl(var(--gold-light));
+    text-underline-offset: 3px;
+  }
+  [data-global-sites-hero] a.text-primary:hover {
+    color: hsl(var(--gold-warm));
+  }
+  [data-global-sites-hero] strong.text-foreground {
+    color: hsl(var(--gold-light));
+    font-weight: 600;
+  }
+}

@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, CheckCircle } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SchemaMarkup from '@/components/SchemaMarkup';
+import { ServiceMarketReferenceGuide } from '@/components/seo/ServiceMarketReferenceGuide';
 
 interface ServiceData {
   title: string;
@@ -344,6 +345,8 @@ const ServiceDetail = () => {
             </div>
           </div>
         </section>
+
+        {slug ? <ServiceMarketReferenceGuide serviceSlug={slug} /> : null}
 
         {/* CTA */}
         <section className="section-padding py-16 bg-primary">

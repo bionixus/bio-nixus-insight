@@ -1,5 +1,12 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import {
+  GlobalSitesHero,
+  globalSitesArticleCard,
+  globalSitesHeroPrimaryCta,
+  globalSitesHeroSecondaryCta,
+  globalSitesTocLink,
+} from '@/components/global-websites/GlobalSitesHero';
 import { Link, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, ArrowRight, ExternalLink } from 'lucide-react';
@@ -2096,15 +2103,15 @@ const GlobalWebsiteCountry = () => {
       <Navbar />
 
       <main>
-        <section className="section-padding pt-24 pb-6">
-          <div className="container-wide max-w-5xl mx-auto">
-            <Link
-              to="/global-websites"
-              className="inline-flex items-center gap-2 text-primary font-medium hover:underline mb-6"
-            >
-              <ArrowLeft className="w-4 h-4" /> Back to Global Websites
-            </Link>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-4">
+        <GlobalSitesHero backTo={{ to: '/global-websites', label: 'Back to Global Websites' }}>
+            <div className="mb-6 inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-full border border-white/15 bg-white/6 px-4 py-2 text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-gold-light/95 shadow-inner shadow-black/10 md:text-xs">
+              <span className="normal-case tracking-normal text-primary-foreground/90">{country.regionName}</span>
+              <span className="text-white/35" aria-hidden>
+                /
+              </span>
+              <span className="normal-case tracking-normal text-primary-foreground/75">{country.countryName}</span>
+            </div>
+            <h1 className="mb-5 max-w-[min(100%,52rem)] text-balance text-4xl font-display font-semibold tracking-tight text-primary-foreground md:mb-6 md:text-5xl lg:text-[3.15rem]">
               {isUaePage
                 ? 'Pharmaceutical & Healthcare Market Research in Dubai & UAE'
                 : isSaudiPage
@@ -2134,31 +2141,31 @@ const GlobalWebsiteCountry = () => {
                   : `${country.countryName} Healthcare Market Strategy`}
             </h1>
             {isUaePage ? (
-              <h2 className="text-xl md:text-2xl font-display font-medium text-foreground/90 mb-4">
+              <h2 className="text-xl md:text-2xl font-display font-medium text-primary-foreground/88 mb-5">
                 Dubai and Abu Dhabi health systems, MOHAP, DHA, DOH, and Emirates-wide intelligence
               </h2>
             ) : isKuwaitPage ? (
-              <h2 className="text-xl md:text-2xl font-display font-medium text-foreground/90 mb-4">
+              <h2 className="text-xl md:text-2xl font-display font-medium text-primary-foreground/88 mb-5">
                 MOH Healthcare Intelligence, Private Sector Insights and GCC Market Access Strategy
               </h2>
             ) : isQatarPage ? (
-              <h2 className="text-xl md:text-2xl font-display font-medium text-foreground/90 mb-4">
+              <h2 className="text-xl md:text-2xl font-display font-medium text-primary-foreground/88 mb-5">
                 Public and Private Healthcare Intelligence with GCC Market Access Strategy
               </h2>
             ) : isBahrainPage ? (
-              <h2 className="text-xl md:text-2xl font-display font-medium text-foreground/90 mb-4">
+              <h2 className="text-xl md:text-2xl font-display font-medium text-primary-foreground/88 mb-5">
                 Public and Private Healthcare Intelligence with GCC Commercial Strategy Support
               </h2>
             ) : isOmanPage ? (
-              <h2 className="text-xl md:text-2xl font-display font-medium text-foreground/90 mb-4">
+              <h2 className="text-xl md:text-2xl font-display font-medium text-primary-foreground/88 mb-5">
                 Public and Private Healthcare Intelligence with GCC Launch and Access Strategy
               </h2>
             ) : isEgyptPage ? (
-              <h2 className="text-xl md:text-2xl font-display font-medium text-foreground/90 mb-4">
+              <h2 className="text-xl md:text-2xl font-display font-medium text-primary-foreground/88 mb-5">
                 MENA Regional Hub for MOH Healthcare Intelligence, HCV Expertise and Clinical Diagnostics
               </h2>
             ) : null}
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl">
+            <p className="max-w-3xl text-lg leading-relaxed text-primary-foreground/80 md:text-xl">
               {isUaePage ? (
                 <>
                   BioNixus is the leading pharmaceutical market research company in the United Arab Emirates, with programs built around{' '}
@@ -2285,14 +2292,14 @@ const GlobalWebsiteCountry = () => {
                 <div className="mt-5 grid sm:grid-cols-2 gap-3 max-w-2xl">
                   <Link
                     to="/contact"
-                    className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
+                    className={`${globalSitesHeroPrimaryCta} w-full justify-center sm:w-auto`}
                   >
                     Request Kuwait Market Proposal
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     to="/blog"
-                    className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-border bg-card text-foreground font-semibold hover:bg-muted transition-colors"
+                    className={`${globalSitesHeroSecondaryCta} w-full justify-center sm:w-auto`}
                   >
                     Download Kuwait Pharma Report 2025
                     <ArrowRight className="w-4 h-4" />
@@ -2311,14 +2318,14 @@ const GlobalWebsiteCountry = () => {
                 <div className="mt-5 grid sm:grid-cols-2 gap-3 max-w-2xl">
                   <Link
                     to="/contact"
-                    className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
+                    className={`${globalSitesHeroPrimaryCta} w-full justify-center sm:w-auto`}
                   >
                     Request Qatar Market Proposal
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     to="/blog"
-                    className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-border bg-card text-foreground font-semibold hover:bg-muted transition-colors"
+                    className={`${globalSitesHeroSecondaryCta} w-full justify-center sm:w-auto`}
                   >
                     Download Qatar Pharma Report 2025
                     <ArrowRight className="w-4 h-4" />
@@ -2337,14 +2344,14 @@ const GlobalWebsiteCountry = () => {
                 <div className="mt-5 grid sm:grid-cols-2 gap-3 max-w-2xl">
                   <Link
                     to="/contact"
-                    className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
+                    className={`${globalSitesHeroPrimaryCta} w-full justify-center sm:w-auto`}
                   >
                     Request Bahrain Market Proposal
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     to="/blog"
-                    className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-border bg-card text-foreground font-semibold hover:bg-muted transition-colors"
+                    className={`${globalSitesHeroSecondaryCta} w-full justify-center sm:w-auto`}
                   >
                     Download Bahrain Pharma Report 2025
                     <ArrowRight className="w-4 h-4" />
@@ -2363,14 +2370,14 @@ const GlobalWebsiteCountry = () => {
                 <div className="mt-5 grid sm:grid-cols-2 gap-3 max-w-2xl">
                   <Link
                     to="/contact"
-                    className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
+                    className={`${globalSitesHeroPrimaryCta} w-full justify-center sm:w-auto`}
                   >
                     Request Oman Market Proposal
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     to="/blog"
-                    className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-border bg-card text-foreground font-semibold hover:bg-muted transition-colors"
+                    className={`${globalSitesHeroSecondaryCta} w-full justify-center sm:w-auto`}
                   >
                     Download Oman Pharma Report 2025
                     <ArrowRight className="w-4 h-4" />
@@ -2389,14 +2396,14 @@ const GlobalWebsiteCountry = () => {
                 <div className="mt-5 grid sm:grid-cols-2 gap-3 max-w-2xl">
                   <Link
                     to="/contact"
-                    className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
+                    className={`${globalSitesHeroPrimaryCta} w-full justify-center sm:w-auto`}
                   >
                     Request Egypt Market Proposal
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     to="/blog"
-                    className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-border bg-card text-foreground font-semibold hover:bg-muted transition-colors"
+                    className={`${globalSitesHeroSecondaryCta} w-full justify-center sm:w-auto`}
                   >
                     Download Egypt Pharma Report 2025
                     <ArrowRight className="w-4 h-4" />
@@ -2404,12 +2411,11 @@ const GlobalWebsiteCountry = () => {
                 </div>
               </>
             ) : null}
-          </div>
-        </section>
+        </GlobalSitesHero>
 
         <section className="section-padding py-8">
           <div className="container-wide max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
-            <div className="bg-card border border-border rounded-xl p-6">
+            <div className={globalSitesArticleCard}>
               <h2 className="text-xl font-display font-semibold text-foreground mb-3">Country details</h2>
               <p className="text-muted-foreground mb-2">
                 <strong className="text-foreground">Country:</strong> {country.countryName}
@@ -2422,7 +2428,7 @@ const GlobalWebsiteCountry = () => {
               </p>
             </div>
 
-            <div className="bg-card border border-border rounded-xl p-6">
+            <div className={globalSitesArticleCard}>
               {isKuwaitPage || isQatarPage || isBahrainPage || isOmanPage ? (
                 <>
                   <h2 className="text-xl font-display font-semibold text-foreground mb-3">
@@ -2538,7 +2544,7 @@ const GlobalWebsiteCountry = () => {
             <section className="section-padding py-10">
               <div className="container-wide max-w-5xl mx-auto space-y-8">
                 {(isUaePage ? UAE_SECTIONS : isSaudiPage ? SAUDI_SECTIONS : isUsPage ? US_SECTIONS : isUkPage ? UK_SECTIONS : isGermanyPage ? GERMANY_SECTIONS : isFrancePage ? FRANCE_SECTIONS : isSpainPage ? SPAIN_SECTIONS : isItalyPage ? ITALY_SECTIONS : isKuwaitPage ? KUWAIT_SECTIONS : isQatarPage ? QATAR_SECTIONS : isBahrainPage ? BAHRAIN_SECTIONS : isOmanPage ? OMAN_SECTIONS : EGYPT_SECTIONS).map((section) => (
-                  <article key={section.id} id={section.id} className="bg-card border border-border rounded-xl p-6 md:p-8">
+                  <article key={section.id} id={section.id} className={globalSitesArticleCard}>
                     <h2 className="text-2xl font-display font-semibold text-foreground mb-4">{section.title}</h2>
                     {section.paragraphs ? (
                       <div className="space-y-3 text-muted-foreground leading-relaxed mb-4">
@@ -2591,7 +2597,7 @@ const GlobalWebsiteCountry = () => {
                   </article>
                 ) : null}
 
-                <article id="case-studies" className="bg-card border border-border rounded-xl p-6 md:p-8">
+                <article id="case-studies" className={globalSitesArticleCard}>
                   <h2 className="text-2xl font-display font-semibold text-foreground mb-4">
                     {isUaePage
                       ? 'UAE Market Research Success Stories'
@@ -2791,7 +2797,7 @@ const GlobalWebsiteCountry = () => {
                   </div>
                 </article>
 
-                <article id="uae-faq" className="bg-card border border-border rounded-xl p-6 md:p-8">
+                <article id="uae-faq" className={globalSitesArticleCard}>
                   <h2 className="text-2xl font-display font-semibold text-foreground mb-4">Frequently Asked Questions</h2>
                   <div className="space-y-3">
                     {(isUaePage ? UAE_FAQS : isSaudiPage ? SAUDI_FAQS : isUsPage ? US_FAQS : isUkPage ? UK_FAQS : isGermanyPage ? GERMANY_FAQS : isFrancePage ? FRANCE_FAQS : isSpainPage ? SPAIN_FAQS : isItalyPage ? ITALY_FAQS : isKuwaitPage ? KUWAIT_FAQS : isQatarPage ? QATAR_FAQS : isBahrainPage ? BAHRAIN_FAQS : isOmanPage ? OMAN_FAQS : EGYPT_FAQS).map((item) => (
@@ -2803,7 +2809,7 @@ const GlobalWebsiteCountry = () => {
                   </div>
                 </article>
 
-                <article id="related-resources" className="bg-card border border-border rounded-xl p-6 md:p-8">
+                <article id="related-resources" className={globalSitesArticleCard}>
                   <h2 className="text-2xl font-display font-semibold text-foreground mb-4">Related Resources</h2>
                   <div className="grid md:grid-cols-2 gap-3">
                     <Link
@@ -2881,10 +2887,10 @@ const GlobalWebsiteCountry = () => {
             <section className="section-padding py-8 bg-muted/30">
               <div className="container-wide max-w-5xl mx-auto">
                 <h2 className="text-2xl font-display font-semibold text-foreground mb-5">Market Table of Contents</h2>
-                <ol className="grid md:grid-cols-2 gap-3">
+                <ol className="grid gap-4 md:grid-cols-2">
                   {marketSections.map((section) => (
-                    <li key={section.id} className="bg-card border border-border rounded-lg px-4 py-3">
-                      <a href={`#${section.id}`} className="text-primary font-medium hover:underline">
+                    <li key={section.id}>
+                      <a href={`#${section.id}`} className={globalSitesTocLink}>
                         {section.title}
                       </a>
                     </li>
@@ -2896,7 +2902,7 @@ const GlobalWebsiteCountry = () => {
             <section className="section-padding py-10">
               <div className="container-wide max-w-5xl mx-auto space-y-8">
                 {marketSections.map((section) => (
-                  <article key={section.id} id={section.id} className="bg-card border border-border rounded-xl p-6 md:p-8">
+                  <article key={section.id} id={section.id} className={globalSitesArticleCard}>
                     <h2 className="text-2xl font-display font-semibold text-foreground mb-4">{section.title}</h2>
                     <div className="space-y-4 text-muted-foreground leading-relaxed">
                       {section.paragraphs.map((paragraph, idx) => (

@@ -4,6 +4,7 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { CTASection } from '@/components/shared/CTASection';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { RelatedPages } from '@/components/healthcare-research/RelatedPages';
+import { TherapyMarketReferenceGuide } from '@/components/seo/TherapyMarketReferenceGuide';
 import { buildFAQSchema, buildTherapyPageSchemas } from '@/lib/seo/schemas';
 
 const BIOLOGICS_SEO_TITLE = 'Biologics Research Guide: Biosimilars & Market Access | BioNixus';
@@ -619,6 +620,8 @@ export default function TherapyPage() {
           />
         </>
       ) : null}
+
+      <TherapyMarketReferenceGuide areaSlug={area} />
 
       <FAQSection
         items={therapyFaqs}

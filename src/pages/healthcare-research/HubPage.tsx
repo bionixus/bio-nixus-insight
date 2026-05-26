@@ -8,6 +8,7 @@ import { CTASection } from '@/components/shared/CTASection';
 import { buildHubPageSchemas } from '@/lib/seo/schemas';
 import { COUNTRY_CONFIGS } from '@/lib/constants/countries';
 import { healthcareCountryRecoveryPaths } from '@/lib/internalLinkRecovery';
+import { HubMarketReferenceGuide } from '@/components/seo/HubMarketReferenceGuide';
 
 const HUB_FAQS = [
   {
@@ -643,6 +644,8 @@ export default function HubPage() {
           </div>
         </div>
       </section>
+
+      <HubMarketReferenceGuide />
 
       <FAQSection items={hubFaqItems} />
       <CTASection variant="research-proposal" />

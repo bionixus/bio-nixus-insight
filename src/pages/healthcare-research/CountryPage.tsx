@@ -5,6 +5,7 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { RelatedPages } from '@/components/healthcare-research/RelatedPages';
 import { CTASection } from '@/components/shared/CTASection';
+import { CountryMarketReferenceGuide } from '@/components/seo/CountryMarketReferenceGuide';
 import { COUNTRY_CONFIGS, type CountryConfig, type CountryRegion } from '@/lib/constants/countries';
 import { buildCountryPageSchemas } from '@/lib/seo/schemas';
 
@@ -425,6 +426,8 @@ export default function CountryPage() {
           </div>
         </section>
       )}
+
+      <CountryMarketReferenceGuide countryName={config.name} countrySlug={config.slug} region={config.region} />
 
       <FAQSection
         items={faqItems}

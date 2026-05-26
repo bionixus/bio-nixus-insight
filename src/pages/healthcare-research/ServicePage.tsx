@@ -4,6 +4,7 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { CTASection } from '@/components/shared/CTASection';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildFAQSchema, buildServicePageSchemas } from '@/lib/seo/schemas';
+import { ServiceMarketReferenceGuide } from '@/components/seo/ServiceMarketReferenceGuide';
 
 const SERVICE_COPY: Record<string, string> = {
   'market-access':
@@ -198,6 +199,8 @@ export default function ServicePage() {
           )}
         </div>
       </section>
+
+      <ServiceMarketReferenceGuide serviceSlug={service} />
 
       <FAQSection items={serviceFaqs} title={`${titleService} service FAQs`} />
       <CTASection variant="service" />
