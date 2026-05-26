@@ -68,6 +68,30 @@ const healthcareCountryLinks = [
   { to: '/healthcare-market-research/egypt', label: 'Healthcare Market Research in Egypt' },
 ];
 
+/** Canonical Arabic posts under /ar/blog/ (also listed in public/sitemap.xml). */
+const arabicBlogCanonicalLinks = [
+  {
+    to: '/ar/blog/gcc-pharmaceuticals-market-arabic-2026',
+    label: 'GCC pharmaceuticals market outlook 2026 (Arabic)',
+  },
+  {
+    to: '/ar/blog/quantitative-market-research-and-market-access',
+    label: 'Quantitative market research and market access (Arabic)',
+  },
+  {
+    to: '/ar/blog/saudi-healthcare-market-research-firms-ar',
+    label: 'Leading Saudi healthcare market research firms (Arabic)',
+  },
+  {
+    to: '/ar/blog/أبحاث-السوق-الدوائية-في-الشرق-الأوسط-و-دول-الخليج-العربي',
+    label: 'GCC & Middle East pharma market research (Arabic slug)',
+  },
+  {
+    to: '/ar/blog/سوق-الدواء-السعودي-2026',
+    label: 'Saudi pharmaceutical market outlook 2026 (Arabic)',
+  },
+];
+
 const localizedLinks = [
   { to: '/de/market-research-healthcare', label: 'DE: Healthcare Market Research' },
   { to: '/fr/market-research-healthcare', label: 'FR: Healthcare Market Research' },
@@ -286,6 +310,10 @@ export default function SiteMapPage() {
           <div className="grid lg:grid-cols-2 gap-10 mt-12">
             <section>
               <h2 className="font-semibold text-foreground mb-4">Latest Blog Articles</h2>
+              <p className="text-sm text-muted-foreground mb-3">
+                English Sanity posts linked under <span className="font-mono">/blog/</span>. Canonical Arabic
+                equivalents live under <span className="font-mono">/ar/blog/</span> (see adjacent list).
+              </p>
               <ul className="space-y-2">
                 {blogPosts.map((post) => (
                   <li key={post.id}>
@@ -297,6 +325,28 @@ export default function SiteMapPage() {
               </ul>
             </section>
 
+            <section>
+              <h2 className="font-semibold text-foreground mb-4">Arabic blog articles</h2>
+              <p className="text-sm text-muted-foreground mb-3">
+                Indexed canonical URLs mirrored in{' '}
+                <a href="/sitemap.xml" className="text-primary underline underline-offset-2">
+                  sitemap.xml
+                </a>
+                .
+              </p>
+              <ul className="space-y-2">
+                {arabicBlogCanonicalLinks.map((item) => (
+                  <li key={item.to}>
+                    <Link to={item.to} className="text-primary hover:underline">
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </div>
+
+          <div className="grid lg:grid-cols-1 gap-10 mt-12 max-w-xl">
             <section>
               <h2 className="font-semibold text-foreground mb-4">Case Studies</h2>
               <ul className="space-y-2">
