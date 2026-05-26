@@ -67,8 +67,13 @@
       "statusCode": 301
     },
     {
+      "source": "/conf",
+      "destination": "/strategic-portfolio",
+      "statusCode": 301
+    },
+    {
       "source": "/conf/strategic-portfolio.html",
-      "destination": "/conf",
+      "destination": "/strategic-portfolio",
       "statusCode": 301
     },
     {
@@ -77,8 +82,13 @@
       "statusCode": 301
     },
     {
+      "source": "/ar/conf",
+      "destination": "/ar/strategic-portfolio",
+      "statusCode": 301
+    },
+    {
       "source": "/conf/strategic-portfolio-ar.html",
-      "destination": "/ar/conf",
+      "destination": "/ar/strategic-portfolio",
       "statusCode": 301
     },
     {
@@ -196,11 +206,11 @@
       "destination": "/api/indexnow-key"
     },
     {
-      "source": "/conf",
+      "source": "/strategic-portfolio",
       "destination": "/conf/strategic-portfolio.html"
     },
     {
-      "source": "/ar/conf",
+      "source": "/ar/strategic-portfolio",
       "destination": "/conf/strategic-portfolio-ar.html"
     },
     {
