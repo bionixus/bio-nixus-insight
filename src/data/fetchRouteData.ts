@@ -11,6 +11,7 @@ import {
 } from '@/lib/sanity-blog';
 import type { BlogPost } from '@/types/blog';
 import type { Language } from '@/lib/i18n';
+import { resolveSanityBlogSlug } from '../../blog-legacy-redirects.mjs';
 
 const THERAPY_AREAS = [
   'aesthetic-medicine',
@@ -192,13 +193,14 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
   const blogPostMatchAr = path.match(/^\/ar\/blog\/([^/]+)\/?$/);
   if (blogPostMatchAr) {
     const slug = decodeURIComponent(blogPostMatchAr[1]);
+    const sanitySlug = resolveSanityBlogSlug(slug);
     let blogPost: BlogPost | null = null;
     let relatedPosts: RelatedPostsData = { related: [], prev: null, next: null };
     try {
-      blogPost = await fetchSanityPostBySlugWithClient(slug, sanityServer);
+      blogPost = await fetchSanityPostBySlugWithClient(sanitySlug, sanityServer);
       if (blogPost) {
         relatedPosts = await fetchRelatedPostsWithClient(
-          slug,
+          sanitySlug,
           blogPost.category,
           blogPost.publishedAtIso || blogPost.date,
           blogPost.country,
@@ -220,13 +222,14 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
   const blogPostMatch = path.match(/^\/blog\/([^/]+)\/?$/);
   if (blogPostMatch) {
     const slug = decodeURIComponent(blogPostMatch[1]);
+    const sanitySlug = resolveSanityBlogSlug(slug);
     let blogPost: BlogPost | null = null;
     let relatedPosts: RelatedPostsData = { related: [], prev: null, next: null };
     try {
-      blogPost = await fetchSanityPostBySlugWithClient(slug, sanityServer);
+      blogPost = await fetchSanityPostBySlugWithClient(sanitySlug, sanityServer);
       if (blogPost) {
         relatedPosts = await fetchRelatedPostsWithClient(
-          slug,
+          sanitySlug,
           blogPost.category,
           blogPost.publishedAtIso || blogPost.date,
           blogPost.country,

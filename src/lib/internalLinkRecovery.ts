@@ -24,6 +24,7 @@ const rawReportZeroLinkPaths = [
   '/blog/emea-jca-market-access-update-2026',
   '/blog/fda-update-glp-1-obesity-market-crackdown-2026',
   '/blog/gcc-pharmaceuticals-market-2026',
+  '/blog/gcc-pharmaceutical-market-comparison-uae-saudi-kuwait',
   '/blog/gcc-pharmaceuticals-market-arabic-2026',
   '/blog/gesundheitsmarkt-deutschland-2026',
   '/blog/healthcare-market-research-europe',

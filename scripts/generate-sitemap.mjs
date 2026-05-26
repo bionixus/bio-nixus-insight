@@ -152,6 +152,7 @@ const staticPages = [
   { path: '/blog/saudi-arabia-healthcare-market-2026', priority: '0.88', changefreq: 'monthly' },
   { path: '/blog/pharmaceutical-market-research-methods-mena', priority: '0.83', changefreq: 'monthly' },
   { path: '/blog/gcc-clinical-trials-market-2026', priority: '0.83', changefreq: 'monthly' },
+  { path: '/blog/gcc-pharmaceutical-market-comparison-uae-saudi-kuwait', priority: '0.86', changefreq: 'monthly' },
   { path: '/faq', priority: '0.7', changefreq: 'monthly' },
   { path: '/resources', priority: '0.7', changefreq: 'monthly' },
   { path: '/fr/contacts', priority: '0.7', changefreq: 'monthly' },
@@ -607,6 +608,7 @@ const STATIC_PAGE_FILES = {
   '/ar/methodology': ['src/pages/Methodology.tsx'],
   '/fr/contacts': ['src/pages/Contact.tsx'],
   '/ar/contacts': ['src/pages/Contact.tsx'],
+  '/blog/gcc-pharmaceutical-market-comparison-uae-saudi-kuwait': ['src/pages/BlogPost.tsx'],
 };
 
 /** Git lastmod for dynamic healthcare paths (shared source files). */

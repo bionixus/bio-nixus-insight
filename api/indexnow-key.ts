@@ -189,6 +189,9 @@ function buildFallbackTitle(pathname: string): string {
     if (slug === 'quantitative-market-research-and-market-access') {
       return 'Quantitative Healthcare Market Research & Market Access 2026 | BioNixus';
     }
+    if (slug === 'gcc-pharmaceutical-market-comparison-uae-saudi-kuwait') {
+      return 'GCC Pharma Comparison UAE vs Saudi vs Kuwait 2026 | BioNixus';
+    }
     return `${titleCaseFromSlug(slug)} | BioNixus Blog`;
   }
 
@@ -292,6 +295,9 @@ function buildFallbackDescription(pathname: string): string {
     const slug = path.split('/').pop() || 'insight';
     if (slug === 'quantitative-market-research-and-market-access') {
       return 'Quantitative healthcare market research guide for pharma market access: KPI frameworks, payer evidence, and links to methodology at BioNixus.';
+    }
+    if (slug === 'gcc-pharmaceutical-market-comparison-uae-saudi-kuwait') {
+      return 'UAE vs Saudi Arabia vs Kuwait pharmaceutical market comparison: tenders, SFDA-scale regulation in KSA, UAE emirate payers, Kuwait access concentration—BioNixus GCC.';
     }
     return `${titleCaseFromSlug(slug)} insight article from BioNixus covering healthcare and pharmaceutical market strategy.`;
   }

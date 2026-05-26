@@ -3,7 +3,6 @@
  * Keys: slug segment only. Values: current canonical blog slug in Sanity / sitemap.
  */
 export const LEGACY_BLOG_SLUG_TO_CANONICAL = {
-  'gcc-pharmaceutical-market-comparison-uae-saudi-kuwait': 'gcc-pharmaceuticals-market-2026',
   'healthcare-market-research-europe': 'healthcare-market-research-europe-2026',
   'pharmaceutical-market-research-uk': 'pharmaceutical-market-research-uk-2026',
   'drug-registration-kuwait-pharma-guide': 'healthcare-overview-kuwait-market-2026',
@@ -13,3 +12,16 @@ export const LEGACY_BLOG_SLUG_TO_CANONICAL = {
 export const BLOG_LEGACY_FULL_PATH_REDIRECTS = Object.fromEntries(
   Object.entries(LEGACY_BLOG_SLUG_TO_CANONICAL).map(([from, to]) => [`/blog/${from}`, `/blog/${to}`]),
 );
+
+/**
+ * Blog URL slug → Sanity `blogPost.slug.current` when the visible URL should differ from CMS slug
+ * but reuse the same document (images, dates, structured fields).
+ */
+export const BLOG_SANITY_FETCH_SLUG_BY_URL_SLUG = {
+  'gcc-pharmaceutical-market-comparison-uae-saudi-kuwait': 'gcc-pharmaceuticals-market-2026',
+};
+
+export function resolveSanityBlogSlug(urlSlug) {
+  const key = typeof urlSlug === 'string' ? urlSlug : '';
+  return BLOG_SANITY_FETCH_SLUG_BY_URL_SLUG[key] ?? key;
+}

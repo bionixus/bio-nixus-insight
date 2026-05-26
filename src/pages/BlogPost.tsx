@@ -13,6 +13,7 @@ import SchemaMarkup from '@/components/SchemaMarkup';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { getOgLocale, getOgLocaleAlternates } from '@/lib/seo';
 import { blogRecoveryPaths } from '@/lib/internalLinkRecovery';
+import { resolveSanityBlogSlug } from '../../blog-legacy-redirects.mjs';
 import { isSanityConfigured } from '@/lib/sanity';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useInitialData } from '@/contexts/InitialDataContext';
@@ -225,6 +226,46 @@ const QUANT_MR_MA_BODY_HTML = `<p>Quantitative healthcare market research is the
 
 <p>BioNixus delivers pharmaceutical and MedTech quantitative programmes that connect to access strategy: design, field, advanced analytics, and executive-ready narrative. Start with the <a href="/quantitative-healthcare-market-research">quantitative healthcare market research</a> guide to align stakeholders on methods, then <a href="/contact">contact the BioNixus team</a> for a scoped workshop on your asset, market, and evidence gaps.</p>`
 
+/** EN-only comparative brief; Sanity document loads via slug alias → gcc-pharmaceuticals-market-2026. */
+const GCC_PHARMA_COMPARISON_SLUG = 'gcc-pharmaceutical-market-comparison-uae-saudi-kuwait';
+const GCC_PHARMA_COMPARISON_BODY_HTML = `<p>Pharmaceutical strategists rarely need another GCC infographic—they need disciplined comparison tables that isolate where <strong>Saudi Arabia</strong>, the <strong>United Arab Emirates</strong>, and <strong>Kuwait</strong> diverge on regulation, tenders, prescribing culture, private versus public uptake, and market access timelines. This article is the English editorial companion URL for side-by-side planning; combine it with the regional hub <a href="/gcc-pharmaceutical-market-research">GCC pharmaceutical market research</a>, the fuller <a href="/blog/gcc-pharmaceuticals-market-2026">GCC pharma market 2026 briefing</a>, and BioNixus quantitative capability on <a href="/quantitative-healthcare-market-research">quantitative healthcare market research</a>.</p>
+
+<h2 id="comparison-framework">Executive comparison framework UAE vs Saudi vs Kuwait</h2>
+
+<p>Sound GCC comparisons benchmark the same pillars in each country: demographic growth, oncology and chronic disease burdens, payer centralisation versus fragmentation, biosimilar pressure, speciality pharmacy dispersion, procurement cadence for hospitals versus retail, and pharmacist authority. Applying one template without rewriting weightings per market leads to phantom revenue forecasts—a pattern BioNixus corrects via local field teams and audited survey frames described in our <a href="/methodology">healthcare research methodology</a>.</p>
+
+<ul>
+<li><strong>Demand shape</strong> – separate inbound medical tourism corridors (especially UAE) from domestic-funded demand in Kuwait and pilgrimage-season stress in Saudi corridors.</li>
+<li><strong>Channel mix</strong> – quantify retail, hospital-only, insured, and Ministry routes; compare where e-prescribing and mail-order substitutions appear.</li>
+<li><strong>Access velocity</strong> – map average cycle days from dossier completeness to formulary uptake by sector.</li>
+<li><strong>Biosimilar and generic acceleration</strong> – stress-test price corridors where mandatory substitution regimes differ materially.</li>
+</ul>
+
+<h2 id="uae-angle">UAE pharmaceutical market nuances</h2>
+
+<p>The UAE concentrates advanced hospital infrastructure plus premium private payer willingness, but formulary fragmentation across emirates persists. Competitive intelligence must reconcile MOHAP, DHA, and DOH operating contexts when modelling peak share. Dive deeper via <a href="/healthcare-market-research/uae">healthcare market research in the UAE</a> and integrate tender visibility from the consolidated <a href="/gcc-market-access-guide">GCC market access guide</a>.</p>
+
+<h2 id="saudi-angle">Saudi Arabia pharmaceutical pressures</h2>
+
+<p>Saudi Arabia’s scale dominates regional revenue pools, yet centralized procurement reforms and heightened SFDA vigilance reshape launch curves. Winning teams align medical narratives with payer evidence bundles before engaging retail networks. Extend analysis through <a href="/healthcare-market-research/saudi-arabia">pharmaceutical market research in Saudi Arabia</a> pages and quantify prescriber segments with statistically defensible GCC samples anchored in <a href="/quantitative-healthcare-market-research">quantitative healthcare market research methodology</a>.</p>
+
+<h2 id="kuwait-angle">Kuwait market compact but access-sensitive</h2>
+
+<p>Kuwait’s smaller population concentrates decisions among fewer tenders and payer committees, intensifying lobbying windows and net price sensitivity. Sparse segments require Bayesian-style shrinkage and analogue markets—techniques referenced in the BioNixus quant guide. Follow the dedicated <a href="/healthcare-market-research/kuwait">Kuwait healthcare market research</a> hub for hospital procurement context and cross-link to <a href="/healthcare-market-research">EMEA healthcare market research</a> for portfolio governance.</p>
+
+<h2 id="research-playbook">Cross-market research playbook for leadership teams</h2>
+
+<ol>
+<li>Lock the revenue thesis by channel before commissioning separate country trackers.</li>
+<li>Run conjoint or MaxDiff modules that respect local language nuance (Arabic clinical idiom in Saudi and Kuwait, dual English–Arabic panels in UAE metro centres).</li>
+<li>Pair tracker waves with periodic qual boards so tender shocks are explained, not smoothed away.</li>
+<li>Export scenario packs for finance that echo the same assumptions embedded in the <a href="/blog/gcc-pharmaceuticals-market-2026">GCC pharma 2026 dashboard narrative</a>.</li>
+</ol>
+
+<h2 id="how-bionixus-helps">How BioNixus supports GCC pharmaceutical comparisons</h2>
+
+<p>BioNixus designs multi-country programmes with shared governance but country-specific sampling, delivers HTA-aware quant, and produces board-ready charts that defend share assumptions with transparent cleaning logs. When you need a workshop or data refresh, <a href="/contact">contact BioNixus</a> with this comparison brief and the three country links above so teams start from aligned scope.</p>`
+
 const GCC_PHARMA_2026_SLUG = 'gcc-pharmaceuticals-market-2026';
 const AI_VS_HUMAN_2026_SLUG = 'ai-vs-human-insight-validating-quantitative-data-2026-pharma-research';
 const CHINA_HEALTHCARE_2026_SLUG = 'healthcare-overview-china-market-2026';
@@ -283,6 +324,40 @@ const QUANT_MR_MA_SCHEMA_FAQ: { question: string; answer: string }[] = [
     question: 'What governance keeps quantitative healthcare trackers useful after launch?',
     answer:
       'Name an executive sponsor per KPI, publish cleaning rules and refresh cadence alongside sample frames, and separate true formulary shifts from sampling noise using control questions. Transparent documentation matches the BioNixus quantitative methodology specification linked from this article.',
+  },
+];
+
+const GCC_PHARMA_COMPARISON_DISPLAY_TITLE =
+  'GCC Pharmaceutical Market Comparison: UAE vs Saudi Arabia vs Kuwait';
+const GCC_PHARMA_COMPARISON_PAGE_TITLE =
+  'GCC Pharma Comparison UAE vs Saudi vs Kuwait 2026 | BioNixus';
+const GCC_PHARMA_COMPARISON_META_DESCRIPTION =
+  'Compare GCC pharmaceutical markets across UAE, Saudi Arabia, and Kuwait — regulation, tenders, access timing, channels, and research methods. BioNixus pharma market research.';
+const GCC_PHARMA_COMPARISON_OG_TITLE =
+  'GCC Pharmaceutical Market: UAE vs Saudi Arabia vs Kuwait';
+const GCC_PHARMA_COMPARISON_OG_DESCRIPTION =
+  'Structured Gulf pharma comparison for market access leaders — tender pressure, SFDA and GCC regulatory context, UAE emirate variation, and Kuwait centralization.';
+
+const GCC_PHARMA_COMPARISON_SCHEMA_FAQ: { question: string; answer: string }[] = [
+  {
+    question: 'How do UAE, Saudi Arabia, and Kuwait pharmaceutical markets differ at a high level?',
+    answer:
+      'Saudi Arabia concentrates the largest revenue pool and centrally steers procurement and SFDA regulation; the UAE blends premium private uptake with emirate-level payer variation; Kuwait is smaller yet highly concentrated, so fewer committees drive access outcomes. BioNixus models each country with separate channel weights rather than a single GCC average.',
+  },
+  {
+    question: 'Why compare GCC countries before launching a single regional brand plan?',
+    answer:
+      'Tender calendars, biosimilar substitution rules, hospital-only versus retail availability, and pilgrimage or medical-tourism demand spikes differ materially. A unified forecast without those splits misallocates sales, medical, and supply resources.',
+  },
+  {
+    question: 'What research methods work best for UAE vs Saudi vs Kuwait comparisons?',
+    answer:
+      'Pair harmonized quantitative physician and payer surveys with country-specific sample frames, add pricing or access conjoint where net price risk is high, and schedule refresher tracker waves after major tender cycles. Methodology detail lives on the quantitative healthcare market research page.',
+  },
+  {
+    question: 'Where can I read deeper country intelligence after this comparison?',
+    answer:
+      'Use the healthcare market research hubs for Saudi Arabia, UAE, and Kuwait, the GCC pharmaceutical market research overview, and the GCC market access guide—all linked from this article—for therapy-level and tender-level follow-up.',
   },
 ];
 
@@ -520,6 +595,9 @@ function getBodyToRender(
   const isEnglishQuantForced = slug === QUANT_MR_MA_SLUG && !options.isArBlog;
   if (isEnglishQuantForced) return QUANT_MR_MA_BODY_HTML;
 
+  const isEnglishGccComparisonForced = slug === GCC_PHARMA_COMPARISON_SLUG && !options.isArBlog;
+  if (isEnglishGccComparisonForced) return GCC_PHARMA_COMPARISON_BODY_HTML;
+
   const hasBody =
     post.body != null &&
     post.body !== '' &&
@@ -546,9 +624,10 @@ const BlogPost = () => {
   const isArBlog = pathname.startsWith('/ar/blog');
   const blogIndexPath = isArBlog ? '/ar/blog' : '/blog';
   const isQuantMrMaEn = slug === QUANT_MR_MA_SLUG && !isArBlog;
+  const isGccComparisonEn = slug === GCC_PHARMA_COMPARISON_SLUG && !isArBlog;
   const { t, language } = useLanguage();
   const { data: routeData } = useInitialData();
-  const isGccPharma2026 = slug === GCC_PHARMA_2026_SLUG;
+  const isGccPharma2026 = slug === GCC_PHARMA_2026_SLUG || isGccComparisonEn;
 
   const ssrBlogBundle =
     Boolean(slug) &&
@@ -557,7 +636,7 @@ const BlogPost = () => {
 
   const { data: sanityPost, isLoading, isError } = useQuery({
     queryKey: ['sanity-post', slug],
-    queryFn: () => fetchSanityPostBySlug(slug!),
+    queryFn: () => fetchSanityPostBySlug(resolveSanityBlogSlug(slug!)),
     enabled: Boolean(slug) && (isSanityConfigured() || ssrBlogBundle),
     initialData: ssrBlogBundle ? (routeData.blogPost as BlogPostType | null) : undefined,
   });
@@ -588,7 +667,8 @@ const BlogPost = () => {
       : null;
 
   const post = sanityPost ?? fallbackPost;
-  const executiveSummary = post ? getExecutiveSummaryToRender(post, slug) : null;
+  const executiveSummary =
+    post && !isGccComparisonEn ? getExecutiveSummaryToRender(post, slug) : null;
 
   useEffect(() => {
     const bar = document.getElementById('blog-rp');
@@ -666,9 +746,13 @@ const BlogPost = () => {
   }
 
   const pathClean = (pathname.split('?')[0] || '/blog').replace(/\/+$/, '') || '/blog';
+  const comparisonPageUrl = `https://www.bionixus.com/blog/${GCC_PHARMA_COMPARISON_SLUG}`;
   const pageUrl =
-    (post.seoCanonicalUrl && String(post.seoCanonicalUrl).trim()) ||
-    `https://www.bionixus.com${pathClean.startsWith('/') ? pathClean : `/${pathClean}`}`;
+    isGccComparisonEn
+      ? comparisonPageUrl
+      : (post.seoCanonicalUrl && String(post.seoCanonicalUrl).trim()) ||
+        `https://www.bionixus.com${pathClean.startsWith('/') ? pathClean : `/${pathClean}`}`;
+  const articleDisplayTitle = isGccComparisonEn ? GCC_PHARMA_COMPARISON_DISPLAY_TITLE : post.title;
   const bodySourceForMeta = typeof post.body === 'string' ? post.body : post.excerpt || post.title;
   const metaTitle = normalizeSeoTitle(post.seoMetaTitle || post.title, 'BioNixus');
   const metaDescription = buildSeoDescription({
@@ -688,28 +772,37 @@ const BlogPost = () => {
     ? EGYPT_HEALTHCARE_2026_META_DESCRIPTION
     : isQuantMrMaEn
       ? QUANT_MR_MA_META_DESCRIPTION
-      : slug === CHINA_HEALTHCARE_2026_SLUG
-        ? CHINA_HEALTHCARE_2026_META_DESCRIPTION
-        : arBlogMetaOverride ?? metaDescription;
+      : isGccComparisonEn
+        ? GCC_PHARMA_COMPARISON_META_DESCRIPTION
+        : slug === CHINA_HEALTHCARE_2026_SLUG
+          ? CHINA_HEALTHCARE_2026_META_DESCRIPTION
+          : arBlogMetaOverride ?? metaDescription;
   const finalMetaTitle = isEgyptHealthcare2026
     ? normalizeSeoTitle(EGYPT_HEALTHCARE_2026_TITLE, 'BioNixus')
     : isQuantMrMaEn
       ? normalizeSeoTitle(QUANT_MR_MA_PAGE_TITLE, 'BioNixus')
-      : metaTitle;
+      : isGccComparisonEn
+        ? normalizeSeoTitle(GCC_PHARMA_COMPARISON_PAGE_TITLE, 'BioNixus')
+        : metaTitle;
   const socialTitle = isEgyptHealthcare2026
     ? EGYPT_HEALTHCARE_2026_OG_TITLE
     : isQuantMrMaEn
       ? QUANT_MR_MA_OG_TITLE
-      : post.ogTitle || metaTitle;
+      : isGccComparisonEn
+        ? GCC_PHARMA_COMPARISON_OG_TITLE
+        : post.ogTitle || metaTitle;
   const socialDescription = isEgyptHealthcare2026
     ? EGYPT_HEALTHCARE_2026_OG_DESCRIPTION
     : isQuantMrMaEn
       ? QUANT_MR_MA_OG_DESCRIPTION
-      : post.ogDescription || finalMetaDescription;
+      : isGccComparisonEn
+        ? GCC_PHARMA_COMPARISON_OG_DESCRIPTION
+        : post.ogDescription || finalMetaDescription;
   const socialImage = post.ogImage || post.coverImage;
 
   const mergedBlogFaqItems = [
     ...(isQuantMrMaEn ? QUANT_MR_MA_SCHEMA_FAQ : []),
+    ...(isGccComparisonEn ? GCC_PHARMA_COMPARISON_SCHEMA_FAQ : []),
     ...(Array.isArray(post.faq)
       ? post.faq
         .filter((item) => Boolean(item.question && item.answer))
@@ -732,7 +825,7 @@ const BlogPost = () => {
         pageType="blog"
         pageUrl={pageUrl}
         language={language}
-        headline={isEgyptHealthcare2026 ? EGYPT_HEALTHCARE_2026_OG_TITLE : isQuantMrMaEn ? QUANT_MR_MA_OG_TITLE : post.title}
+        headline={isEgyptHealthcare2026 ? EGYPT_HEALTHCARE_2026_OG_TITLE : isQuantMrMaEn ? QUANT_MR_MA_OG_TITLE : isGccComparisonEn ? GCC_PHARMA_COMPARISON_OG_TITLE : post.title}
         description={finalMetaDescription}
         imageUrl={socialImage}
         authorName={post.authorName || 'BioNixus Research Team'}
@@ -745,12 +838,12 @@ const BlogPost = () => {
             ? [
                 { name: 'الرئيسية', item: 'https://www.bionixus.com/ar' },
                 { name: 'المدونة العربية', item: 'https://www.bionixus.com/ar/blog' },
-                { name: post.title, item: pageUrl },
+                { name: articleDisplayTitle, item: pageUrl },
               ]
             : [
                 { name: 'Home', item: 'https://www.bionixus.com/' },
                 { name: 'Blog', item: 'https://www.bionixus.com/blog' },
-                { name: post.title, item: pageUrl },
+                { name: articleDisplayTitle, item: pageUrl },
               ]
         }
         faqItems={mergedBlogFaqItems}
@@ -767,7 +860,7 @@ const BlogPost = () => {
       />
       <Helmet>
         {/* Dynamic meta tags for this specific blog post */}
-        <title>{isEgyptHealthcare2026 || isQuantMrMaEn ? finalMetaTitle : normalizeSeoTitle(`${finalMetaTitle} | BioNixus`, 'BioNixus')}</title>
+        <title>{isEgyptHealthcare2026 || isQuantMrMaEn || isGccComparisonEn ? finalMetaTitle : normalizeSeoTitle(`${finalMetaTitle} | BioNixus`, 'BioNixus')}</title>
         <meta name="description" content={finalMetaDescription} />
         <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
 
@@ -780,7 +873,7 @@ const BlogPost = () => {
         {socialImage && <meta property="og:image" content={socialImage} />}
         {socialImage && <meta property="og:image:width" content="1200" />}
         {socialImage && <meta property="og:image:height" content="630" />}
-        {socialImage && <meta property="og:image:alt" content={post.title} />}
+        {socialImage && <meta property="og:image:alt" content={articleDisplayTitle} />}
         {post.date && <meta property="article:published_time" content={post.date} />}
         {post.category && <meta property="article:section" content={post.category} />}
         {post.authorName && <meta property="article:author" content={post.authorName} />}
@@ -796,7 +889,7 @@ const BlogPost = () => {
         {socialImage && <meta name="twitter:image" content={socialImage} />}
 
         {/* Canonical URL */}
-        <link rel="canonical" href={post.seoCanonicalUrl || pageUrl} />
+        <link rel="canonical" href={isGccComparisonEn ? comparisonPageUrl : post.seoCanonicalUrl || pageUrl} />
 
       </Helmet>
 
@@ -814,7 +907,7 @@ const BlogPost = () => {
           >
             <img
               src={optimizeSanityImage(post.coverImage, 1400, 600)}
-              alt={post.title || 'Article cover image'}
+              alt={articleDisplayTitle || 'Article cover image'}
               className="w-full h-full object-cover opacity-[0.55] transition-transform duration-[6000ms] ease-in-out group-hover:scale-[1.03]"
               loading="eager"
               fetchPriority="high"
@@ -842,7 +935,7 @@ const BlogPost = () => {
               )}
 
               <h1 className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-[1.18] tracking-[-0.02em] text-white max-w-4xl mb-5 text-balance">
-                {post.title}
+                {articleDisplayTitle}
               </h1>
 
               <div className="flex flex-wrap items-center">
@@ -899,7 +992,7 @@ const BlogPost = () => {
                 </div>
               )}
               <h1 className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-white leading-[1.18] tracking-[-0.02em] max-w-4xl mb-5 text-balance">
-                {post.title}
+                {articleDisplayTitle}
               </h1>
               <div className="flex flex-wrap items-center">
                 {post.authorName && (
@@ -955,7 +1048,7 @@ const BlogPost = () => {
                     ))}
                   </div>
                 ) : <div />}
-                <ShareButtons url={pageUrl} title={post.title} contentType="blog" slug={slug!} />
+                <ShareButtons url={pageUrl} title={articleDisplayTitle} contentType="blog" slug={slug!} />
               </div>
 
               {/* Executive summary */}
@@ -982,7 +1075,7 @@ const BlogPost = () => {
               )}
 
               {/* Table of contents — inline grid */}
-              {Array.isArray(post.tableOfContents) && post.tableOfContents.length > 0 && (
+              {Array.isArray(post.tableOfContents) && post.tableOfContents.length > 0 && !isGccComparisonEn && (
                 <nav className="mb-8 rounded-xl overflow-hidden border border-border" aria-label="Table of contents">
                   <div className="flex items-center gap-2 px-5 py-3.5 bg-muted/70 border-b border-border">
                     <List className="w-3.5 h-3.5 text-accent" aria-hidden />
@@ -1111,6 +1204,59 @@ const BlogPost = () => {
                 </aside>
               )}
 
+              {/* GCC pharma UAE vs Saudi vs Kuwait — comparative navigation above long-form */}
+              {isGccComparisonEn && (
+                <aside
+                  className="mb-8 rounded-xl border border-primary/15 bg-primary/[0.025] p-5 lg:p-6"
+                  aria-label="GCC pharmaceutical market regional links"
+                >
+                  <p className="text-[11px] font-extrabold tracking-[0.12em] uppercase text-primary mb-3">
+                    GCC comparison map
+                  </p>
+                  <p className="text-[15px] text-foreground leading-relaxed mb-3">
+                    This URL is optimised for planners comparing&nbsp;
+                    <Link to="/healthcare-market-research/uae" className="text-primary font-semibold underline underline-offset-2 hover:no-underline">
+                      UAE
+                    </Link>
+                    ,{' '}
+                    <Link to="/healthcare-market-research/saudi-arabia" className="text-primary font-semibold underline underline-offset-2 hover:no-underline">
+                      Saudi Arabia
+                    </Link>
+                    , and{' '}
+                    <Link to="/healthcare-market-research/kuwait" className="text-primary font-semibold underline underline-offset-2 hover:no-underline">
+                      Kuwait
+                    </Link>{' '}
+                    on the same evidence dimensions. Anchor your portfolio view with the&nbsp;
+                    <Link to="/gcc-pharmaceutical-market-research" className="text-primary font-semibold underline underline-offset-2 hover:no-underline">
+                      GCC pharmaceutical market research
+                    </Link>{' '}
+                    overview and the extended{' '}
+                    <Link to="/blog/gcc-pharmaceuticals-market-2026" className="text-primary font-semibold underline underline-offset-2 hover:no-underline">
+                      GCC pharma 2026 blog brief
+                    </Link>
+                    .
+                  </p>
+                  <ul className="grid sm:grid-cols-2 gap-2 mt-3 list-none p-0">
+                    <li>
+                      <Link
+                        to="/gcc-market-access-guide"
+                        className="inline-flex items-center gap-1 text-sm text-primary font-medium hover:underline"
+                      >
+                        <ArrowUpRight className="w-3.5 h-3.5" aria-hidden /> GCC market access guide
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/quantitative-healthcare-market-research"
+                        className="inline-flex items-center gap-1 text-sm text-primary font-medium hover:underline"
+                      >
+                        <ArrowUpRight className="w-3.5 h-3.5" aria-hidden /> Quantitative healthcare methodology
+                      </Link>
+                    </li>
+                  </ul>
+                </aside>
+              )}
+
               {/* Article body */}
               <div className="blog-article-body blog-drop-cap">
                 {(() => {
@@ -1145,6 +1291,13 @@ const BlogPost = () => {
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {[
+                    ...(isGccComparisonEn
+                      ? [
+                          { to: '/gcc-pharmaceutical-market-research', label: 'GCC pharmaceutical market research' },
+                          { to: '/healthcare-market-research/kuwait', label: 'Healthcare market research in Kuwait' },
+                          { to: '/blog/gcc-pharmaceuticals-market-2026', label: 'GCC pharma market 2026 full insight' },
+                        ]
+                      : []),
                     ...(isQuantMrMaEn
                       ? [{ to: '/quantitative-healthcare-market-research', label: 'Quantitative healthcare market research methodology' }]
                       : []),
@@ -1292,7 +1445,7 @@ const BlogPost = () => {
             <aside className="hidden lg:block sticky top-20 space-y-4" aria-label="Article sidebar">
 
               {/* Table of contents */}
-              {Array.isArray(post.tableOfContents) && post.tableOfContents.length > 0 && (
+              {Array.isArray(post.tableOfContents) && post.tableOfContents.length > 0 && !isGccComparisonEn && (
                 <nav className="rounded-xl overflow-hidden border border-border shadow-sm" aria-label="Article sections">
                   <div className="flex items-center gap-2 px-4 py-3" style={{ background: 'hsl(var(--primary))' }}>
                     <List className="w-3.5 h-3.5" style={{ color: 'hsl(var(--accent))' }} aria-hidden />

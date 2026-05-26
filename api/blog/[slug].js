@@ -2,7 +2,7 @@ import { createClient } from '@sanity/client';
 import { toHTML } from '@portabletext/to-html';
 import { buildSeoDescription, normalizeSeoTitle } from '../../src/server/seo-meta.js';
 import { sendCompressedHtml } from '../../src/server/compression.js';
-import { LEGACY_BLOG_SLUG_TO_CANONICAL } from '../../blog-legacy-redirects.mjs';
+import { LEGACY_BLOG_SLUG_TO_CANONICAL, resolveSanityBlogSlug } from '../../blog-legacy-redirects.mjs';
 
 const sanityClient = createClient({
   projectId: process.env.VITE_SANITY_PROJECT_ID || 'h2whvvpo',
@@ -201,7 +201,8 @@ export default async function handler(req, res) {
   }
 
   try {
-    const post = await sanityClient.fetch(QUERY, { slug });
+    const sanitySlug = resolveSanityBlogSlug(slug);
+    const post = await sanityClient.fetch(QUERY, { slug: sanitySlug });
 
     if (!post) {
       return sendCompressedHtml(req, res, buildFallbackHtml(slug));
