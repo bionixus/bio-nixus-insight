@@ -1,8 +1,27 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
+import type { LucideIcon } from 'lucide-react';
+import {
+  ArrowUpRight,
+  BarChart3,
+  BookMarked,
+  BookOpen,
+  FileStack,
+  Globe2,
+  LayoutGrid,
+  Layers,
+  Map,
+  Newspaper,
+  Radar,
+  Shield,
+  Sparkles,
+  Building2,
+} from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
+import { CTASection } from '@/components/shared/CTASection';
 import { useSanityBlog } from '@/hooks/useSanityBlog';
 import { fetchCaseStudies } from '@/lib/sanity-case-studies';
 import { LOW_INTERNAL_LINK_PATHS } from '@/lib/lowInternalLinkTargets.generated';
@@ -182,6 +201,78 @@ function categorizePath(path: string) {
   return 'Core & Strategic Pages';
 }
 
+const tocNav = [
+  { id: 'section-guide', label: 'Directory guide' },
+  { id: 'section-core', label: 'Core navigation' },
+  { id: 'section-services', label: 'Services' },
+  { id: 'section-pharma', label: 'Pharma guides' },
+  { id: 'section-reports', label: 'Market reports' },
+  { id: 'section-healthcare', label: 'Healthcare geography' },
+  { id: 'section-locales', label: 'Languages' },
+  { id: 'section-blog', label: 'Blog & insights' },
+  { id: 'section-priority', label: 'Priority routes' },
+  { id: 'section-cases', label: 'Case studies' },
+  { id: 'section-extended', label: 'Extended coverage' },
+] as const;
+
+function PremiumInternalLink({ to, children }: { to: string; children: React.ReactNode }) {
+  return (
+    <Link
+      to={to}
+      className="group flex items-start gap-3 rounded-xl border border-border/70 bg-card/40 px-4 py-3 text-left text-sm text-foreground transition-all hover:border-primary/35 hover:bg-muted/50 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+    >
+      <span className="min-w-0 flex-1 leading-snug">{children}</span>
+      <ArrowUpRight
+        className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground opacity-50 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary group-hover:opacity-100"
+        aria-hidden
+      />
+    </Link>
+  );
+}
+
+function SectionShell({
+  id,
+  icon: Icon,
+  title,
+  description,
+  countLabel,
+  children,
+}: {
+  id: string;
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  countLabel: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section id={id} aria-labelledby={`${id}-heading`} className="scroll-mt-28">
+      <div className="overflow-hidden rounded-2xl border border-border/80 bg-gradient-to-b from-card to-card/95 shadow-sm">
+        <header className="flex flex-col gap-4 border-b border-border/60 bg-muted/25 px-6 py-6 md:flex-row md:items-center md:justify-between md:px-8">
+          <div className="flex items-start gap-4">
+            <span
+              className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary/12 text-primary ring-1 ring-primary/15"
+              aria-hidden
+            >
+              <Icon className="h-6 w-6" strokeWidth={1.75} />
+            </span>
+            <div>
+              <h2 id={`${id}-heading`} className="font-display text-xl font-semibold tracking-tight text-foreground md:text-2xl">
+                {title}
+              </h2>
+              <p className="mt-1 max-w-2xl text-sm leading-relaxed text-muted-foreground">{description}</p>
+            </div>
+          </div>
+          <span className="shrink-0 self-start rounded-full border border-border bg-background px-3 py-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground md:self-center">
+            {countLabel}
+          </span>
+        </header>
+        <div className="p-6 md:p-8">{children}</div>
+      </div>
+    </section>
+  );
+}
+
 export default function SiteMapPage() {
   const { data: blogPosts = [] } = useSanityBlog();
   const { data: caseStudies = [] } = useQuery({
@@ -191,6 +282,7 @@ export default function SiteMapPage() {
   });
 
   const canonicalUrl = 'https://www.bionixus.com/sitemap';
+
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -199,12 +291,29 @@ export default function SiteMapPage() {
       { '@type': 'ListItem', position: 2, name: 'Sitemap', item: canonicalUrl },
     ],
   };
+
+  const webPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Sitemap | BioNixus Healthcare & Pharmaceutical Intelligence Directory',
+    description:
+      'Structured directory of BioNixus healthcare market research services, regional hubs, market reports, pharmaceutical company guides, blog articles, case studies, and localized pages.',
+    url: canonicalUrl,
+    inLanguage: 'en',
+    isPartOf: {
+      '@type': 'WebSite',
+      url: 'https://www.bionixus.com',
+      name: 'BioNixus',
+    },
+  };
+
   const groupedCoverageLinks = LOW_INTERNAL_LINK_PATHS.reduce<Record<string, string[]>>((acc, path) => {
     const bucket = categorizePath(path);
     if (!acc[bucket]) acc[bucket] = [];
     acc[bucket].push(path);
     return acc;
   }, {});
+
   const coverageGroupOrder = [
     'Core & Strategic Pages',
     'Language & Localized Pages',
@@ -216,263 +325,452 @@ export default function SiteMapPage() {
     'Case Studies',
   ];
 
+  const approxExtendedCount = coverageGroupOrder.reduce((n, g) => n + (groupedCoverageLinks[g]?.length ?? 0), 0);
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Sitemap | BioNixus</title>
+        <title>Sitemap | BioNixus — Healthcare &amp; Pharmaceutical Intelligence Directory</title>
         <meta
           name="description"
-          content="Structured BioNixus directory of services, blog articles, case studies, country hubs, and pharmaceutical intelligence pages—organized for marketers, access leads, and research buyers."
+          content="Structured BioNixus directory of services, blog articles, case studies, country hubs, market reports, and pharmaceutical intelligence pages—organized for marketing, access, and research leaders."
         />
         <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Sitemap | BioNixus Healthcare Market Research Directory" />
+        <meta
+          property="og:description"
+          content="Explore every major BioNixus route: services, GCC and global reports, country intelligence, blog insights, and case studies."
+        />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>
       </Helmet>
 
       <Navbar />
-      <main className="section-padding">
-        <div className="container-wide max-w-6xl mx-auto">
-          <nav className="text-sm text-muted-foreground mb-8" aria-label="Breadcrumb">
-            <Link to="/" className="hover:text-primary">Home</Link> <span>/</span>{' '}
-            <span className="text-foreground">Sitemap</span>
-          </nav>
 
-          <h1 className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-4">
-            Sitemap
-          </h1>
-          <p className="text-muted-foreground mb-10">
-            Browse all major BioNixus pages and content hubs.
-          </p>
+      <main>
+        <section
+          className="relative overflow-hidden border-b border-white/10 bg-gradient-to-br from-navy-deep via-navy-medium to-primary text-primary-foreground"
+          aria-labelledby="sitemap-hero-heading"
+        >
+          <div className="pointer-events-none absolute -right-24 -top-24 h-[28rem] w-[28rem] rounded-full bg-white/10 blur-3xl" aria-hidden />
+          <div className="pointer-events-none absolute -bottom-32 -left-16 h-[22rem] w-[22rem] rounded-full bg-primary-foreground/5 blur-3xl" aria-hidden />
+          <div className="section-padding relative pt-24 pb-14 md:pb-16">
+            <div className="container-wide mx-auto max-w-6xl">
+              <BreadcrumbNav
+                items={[
+                  { name: 'Home', href: '/' },
+                  { name: 'Sitemap', href: '/sitemap' },
+                ]}
+                className="mb-8 px-0 text-primary-foreground/70 [&_a]:text-primary-foreground/85 [&_a:hover]:text-white [&_span.text-foreground]:text-white"
+              />
 
-          <section
-            className="mb-14 rounded-2xl border border-border bg-muted/25 p-6 md:p-10 max-w-4xl"
-            aria-labelledby="sitemap-guide-heading"
-          >
-            <h2 id="sitemap-guide-heading" className="text-2xl font-display font-semibold text-foreground mb-4">
-              How to use this BioNixus content directory
-            </h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed text-[15px]">
-              <p>
-                This sitemap is designed for healthcare and pharmaceutical teams that need a trustworthy map of
-                BioNixus market research services, regional hubs, and evidence-led insight articles. Instead of relying on
-                fragmented bookmarks, you can start here to jump directly to quantitative and qualitative research
-                programs, country-specific healthcare market research pages, and pharmaceutical company guides that
-                support launch, market access, and growth planning.
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-primary-foreground/95">
+                <Map className="h-3.5 w-3.5" aria-hidden />
+                Site directory
+              </div>
+
+              <h1
+                id="sitemap-hero-heading"
+                className="mt-5 max-w-4xl font-display text-3xl font-semibold leading-tight tracking-tight md:text-4xl lg:text-5xl"
+              >
+                Every BioNixus route—curated for precision navigation
+              </h1>
+              <p className="mt-5 max-w-3xl text-lg leading-relaxed text-primary-foreground/88 md:text-xl">
+                A human-organized index of healthcare market research capabilities, regional intelligence, reports, and
+                editorial evidence—mirroring how commercial, medical, and access teams actually search.
               </p>
-              <p>
-                BioNixus operates across Europe, the United Kingdom, the Gulf Cooperation Council (GCC), and wider MENA
-                markets. The links below group services, blog insights, case studies, and recovery paths that reflect how
-                commercial, medical, and market access teams actually search for information: by decision type, by
-                geography, and by stakeholder evidence need. When you need a consolidated view of Saudi Arabia, UAE,
-                Kuwait, Egypt, or EU5 markets, use the healthcare country pages and pharmaceutical company directories
-                as complementary entry points.
-              </p>
-              <p>
-                Market research quality depends on transparent methodology, compliant fieldwork, and reporting that
-                connects data to decisions. As you navigate from this sitemap to deeper service pages, you will find
-                consistent guidance on physician surveys, payer interviews, KOL mapping, competitive intelligence, and
-                HTA-aligned narratives. If you are evaluating partners for a multi-country program, compare the market
-                research hub, qualitative and quantitative service pages, and the methodology overview to confirm scope,
-                timelines, and governance expectations.
-              </p>
-              <p>
-                The curated &quot;Priority internal discovery&quot; section and the &quot;Additional content links&quot;
-                grids below consolidate routes we monitor for crawl completeness—including methodology entry points,
-                localized hubs, pillar reports, and long-tail pharma intelligence URLs—without overloading global
-                navigation or homepage modules.
-              </p>
-              <p>
-                When you are ready to move from reading to execution, use the contact page to request a tailored proposal.
-                Share your objective market, timeline, and evidence standard; BioNixus will align research modules to
-                your launch, access, or portfolio prioritization questions while keeping deliverables decision-ready for
-                leadership reviews.
-              </p>
-            </div>
-          </section>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <section>
-              <h2 className="font-semibold text-foreground mb-4">Core Pages</h2>
-              <ul className="space-y-2">
-                {staticLinks.map((item) => (
-                  <li key={item.to}>
-                    <Link to={item.to} className="text-primary hover:underline">
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="font-semibold text-foreground mb-4">Service Pages</h2>
-              <ul className="space-y-2">
-                {serviceLinks.map((item) => (
-                  <li key={item.to}>
-                    <Link to={item.to} className="text-primary hover:underline">
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="font-semibold text-foreground mb-4">Pharma Country Guides</h2>
-              <ul className="space-y-2">
-                {pharmaCountryLinks.map((item) => (
-                  <li key={item.to}>
-                    <Link to={item.to} className="text-primary hover:underline">
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          </div>
-
-          <div className="mt-12 mb-10">
-            <section>
-              <h2 className="font-semibold text-foreground mb-4">Market Research Reports</h2>
-              <ul className="grid sm:grid-cols-2 gap-2">
-                {marketReportLinks.map((item) => (
-                  <li key={item.to}>
-                    <Link to={item.to} className="text-primary hover:underline">
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-10 mt-12">
-            <section>
-              <h2 className="font-semibold text-foreground mb-4">Healthcare Country Pages</h2>
-              <ul className="space-y-2">
-                {healthcareCountryLinks.map((item) => (
-                  <li key={item.to}>
-                    <Link to={item.to} className="text-primary hover:underline">
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="font-semibold text-foreground mb-4">Localized Healthcare Pages</h2>
-              <ul className="space-y-2">
-                {localizedLinks.map((item) => (
-                  <li key={item.to}>
-                    <Link to={item.to} className="text-primary hover:underline">
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-10 mt-12">
-            <section>
-              <h2 className="font-semibold text-foreground mb-4">Latest Blog Articles</h2>
-              <p className="text-sm text-muted-foreground mb-3">
-                English Sanity posts linked under <span className="font-mono">/blog/</span>. Canonical Arabic
-                equivalents live under <span className="font-mono">/ar/blog/</span> (see adjacent list).
-              </p>
-              <ul className="space-y-2">
-                {blogPosts.map((post) => (
-                  <li key={post.id}>
-                    <Link to={`/blog/${post.slug}`} className="text-primary hover:underline">
-                      {post.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="font-semibold text-foreground mb-4">Arabic blog articles</h2>
-              <p className="text-sm text-muted-foreground mb-3">
-                Indexed canonical URLs mirrored in{' '}
-                <a href="/sitemap.xml" className="text-primary underline underline-offset-2">
-                  sitemap.xml
+              <div className="mt-10 flex flex-wrap gap-3">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-semibold text-primary shadow-sm transition hover:bg-white/90"
+                >
+                  Request a research proposal
+                  <ArrowUpRight className="h-4 w-4" aria-hidden />
+                </Link>
+                <a
+                  href="https://www.bionixus.com/sitemap.xml"
+                  className="inline-flex items-center gap-2 rounded-lg border border-white/35 px-6 py-3 text-sm font-semibold text-primary-foreground transition hover:bg-white/10"
+                >
+                  Machine-readable sitemap.xml
+                  <ArrowUpRight className="h-4 w-4" aria-hidden />
                 </a>
-                .
-              </p>
-              <ul className="space-y-2">
-                {arabicBlogCanonicalLinks.map((item) => (
-                  <li key={item.to}>
-                    <Link to={item.to} className="text-primary hover:underline">
-                      {item.label}
-                    </Link>
-                  </li>
+                <Link
+                  to="/blog"
+                  className="inline-flex items-center gap-2 rounded-lg border border-white/35 px-6 py-3 text-sm font-semibold text-primary-foreground transition hover:bg-white/10"
+                >
+                  Latest blog insights
+                </Link>
+              </div>
+
+              <dl className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
+                {[
+                  { label: 'Core routes', value: String(staticLinks.length) },
+                  { label: 'Report pages', value: String(marketReportLinks.length) },
+                  { label: 'Live articles', value: String(blogPosts.length) },
+                  { label: 'Case studies', value: String(caseStudies.length) },
+                ].map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="rounded-xl border border-white/15 bg-white/5 px-4 py-4 text-center backdrop-blur-sm"
+                  >
+                    <dt className="text-xs font-medium uppercase tracking-wider text-primary-foreground/75">{stat.label}</dt>
+                    <dd className="mt-1 font-display text-2xl font-semibold tabular-nums">{stat.value}</dd>
+                  </div>
                 ))}
-              </ul>
-            </section>
+              </dl>
+            </div>
           </div>
+        </section>
 
-          <section className="mt-14" aria-labelledby="priority-discovery-heading">
-            <h2 id="priority-discovery-heading" className="font-semibold text-foreground mb-4">
-              Priority internal discovery
-            </h2>
-            <p className="text-sm text-muted-foreground mb-4 leading-relaxed max-w-3xl">
-              Editorially-labelled destinations we keep discoverable via this directory (plus thematic rails on editorial
-              pages). Mirrors the curated list previously surfaced sitewide in the footer—centralised here so crawl paths
-              stay explicit while primary navigation stays lean.
-            </p>
-            <ul className="grid md:grid-cols-2 gap-x-10 gap-y-2">
-              {INTERNAL_LINK_PRIORITY_TARGETS.map((item) => (
-                <li key={item.to}>
-                  <Link to={item.to} className="text-primary hover:underline text-sm">
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
+        <div className="section-padding py-12 md:py-16">
+          <div className="container-wide mx-auto max-w-7xl">
+            <div className="lg:grid lg:grid-cols-[minmax(0,14rem)_minmax(0,1fr)] lg:gap-12 xl:grid-cols-[minmax(0,16rem)_minmax(0,1fr)] xl:gap-16">
+              <aside className="mb-10 lg:mb-0" aria-label="On this page">
+                <div className="lg:sticky lg:top-28">
+                  <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">On this page</p>
+                  <nav className="hidden max-h-[calc(100vh-8rem)] overflow-y-auto rounded-2xl border border-border/80 bg-muted/20 p-3 lg:block">
+                    <ol className="space-y-0.5 text-sm">
+                      {tocNav.map((item) => (
+                        <li key={item.id}>
+                          <a
+                            href={`#${item.id}`}
+                            className="block rounded-lg px-3 py-2 text-muted-foreground transition hover:bg-background hover:text-foreground"
+                          >
+                            {item.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ol>
+                  </nav>
+                  <div className="flex gap-2 overflow-x-auto pb-1 lg:hidden [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                    {tocNav.map((item) => (
+                      <a
+                        key={item.id}
+                        href={`#${item.id}`}
+                        className="shrink-0 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-foreground"
+                      >
+                        {item.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </aside>
 
-          <section className="mt-12 max-w-xl">
-            <h2 className="font-semibold text-foreground mb-4">Case Studies</h2>
-            <ul className="space-y-2">
-              {caseStudies.map((item) => (
-                <li key={item.id}>
-                  <Link to={`/case-studies/${item.slug}`} className="text-primary hover:underline">
-                    {item.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
+              <div className="min-w-0 space-y-12 md:space-y-16">
+                <section id="section-guide" className="scroll-mt-28">
+                  <div className="rounded-2xl border border-border/80 bg-card/30 p-6 shadow-sm md:p-10">
+                    <div className="mb-6 flex items-center gap-3">
+                      <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-500/15 text-amber-700 dark:text-amber-400">
+                        <Sparkles className="h-5 w-5" aria-hidden />
+                      </span>
+                      <div>
+                        <h2 className="font-display text-xl font-semibold text-foreground md:text-2xl">
+                          How to use this directory
+                        </h2>
+                        <p className="text-sm text-muted-foreground">
+                          Written for healthcare and pharmaceutical decision-makers who need a trustworthy map—not a raw link dump.
+                        </p>
+                      </div>
+                    </div>
 
-          <section className="mt-12">
-            <h2 className="font-semibold text-foreground mb-4">Additional Content Links</h2>
-            <p className="text-sm text-muted-foreground mb-4">
-              Supplemental links for extended content coverage across the site.
-            </p>
-            <div className="grid md:grid-cols-2 gap-6">
-              {coverageGroupOrder
-                .filter((group) => Array.isArray(groupedCoverageLinks[group]) && groupedCoverageLinks[group].length > 0)
-                .map((group) => (
-                  <article key={group} className="rounded-xl border border-border bg-card p-5">
-                    <h3 className="text-base font-semibold text-foreground mb-3">{group}</h3>
-                    <ul className="space-y-2">
-                      {groupedCoverageLinks[group].map((path) => (
-                        <li key={path}>
-                          <Link to={path} className="text-primary hover:underline break-all text-sm">
-                            {pathToLabel(path)}
-                          </Link>
+                    <p className="text-[15px] leading-relaxed text-muted-foreground">
+                      Start with <strong className="font-medium text-foreground">core navigation</strong> and{' '}
+                      <strong className="font-medium text-foreground">services</strong>, then move into{' '}
+                      <strong className="font-medium text-foreground">country intelligence</strong> and{' '}
+                      <strong className="font-medium text-foreground">market reports</strong> when you are scoping a launch,
+                      access dossier, or portfolio review. Blog and case study sections surface evidence-led narratives and
+                      programme patterns.
+                    </p>
+
+                    <details className="group mt-6 rounded-xl border border-border/70 bg-background/60 open:border-primary/25" open>
+                      <summary className="cursor-pointer list-none px-5 py-4 font-medium text-foreground outline-none ring-offset-background transition marker:content-none [&::-webkit-details-marker]:hidden">
+                        <span className="flex items-center justify-between gap-3">
+                          <span className="flex items-center gap-2">
+                            <BookOpen className="h-4 w-4 text-primary" aria-hidden />
+                            Full guidance for research and access teams
+                          </span>
+                          <span className="text-xs font-normal text-muted-foreground group-open:hidden">Expand</span>
+                          <span className="hidden text-xs font-normal text-muted-foreground group-open:inline">Collapse</span>
+                        </span>
+                      </summary>
+                      <div className="space-y-4 border-t border-border/60 px-5 py-5 text-[15px] leading-relaxed text-muted-foreground">
+                        <p>
+                          This sitemap is designed for healthcare and pharmaceutical teams that need a trustworthy map of
+                          BioNixus market research services, regional hubs, and evidence-led insight articles. Instead of relying
+                          on fragmented bookmarks, you can start here to jump directly to quantitative and qualitative research
+                          programs, country-specific healthcare market research pages, and pharmaceutical company guides that
+                          support launch, market access, and growth planning.
+                        </p>
+                        <p>
+                          BioNixus operates across Europe, the United Kingdom, the Gulf Cooperation Council (GCC), and wider
+                          MENA markets. The links below group services, blog insights, case studies, and recovery paths that
+                          reflect how commercial, medical, and market access teams actually search for information: by
+                          decision type, by geography, and by stakeholder evidence need.
+                        </p>
+                        <p>
+                          Market research quality depends on transparent methodology, compliant fieldwork, and reporting that
+                          connects data to decisions. As you navigate from this sitemap to deeper service pages, you will find
+                          consistent guidance on physician surveys, payer interviews, KOL mapping, competitive intelligence,
+                          and HTA-aligned narratives.
+                        </p>
+                        <p>
+                          The &quot;Priority internal discovery&quot; section and &quot;Extended coverage&quot; consolidate routes we monitor for
+                          crawl completeness—including methodology entry points, localized hubs, pillar reports, and long-tail
+                          pharma intelligence URLs—without overloading global navigation.
+                        </p>
+                        <p>
+                          Ready to brief a programme? Visit{' '}
+                          <Link to="/contact" className="font-medium text-primary underline-offset-4 hover:underline">
+                            the contact page
+                          </Link>{' '}
+                          with your objective market, timeline, and evidence standard—we align modules to leadership-ready
+                          deliverables.
+                        </p>
+                      </div>
+                    </details>
+                  </div>
+                </section>
+
+                <SectionShell
+                  id="section-core"
+                  icon={LayoutGrid}
+                  title="Core navigation"
+                  description="Primary entry points: hubs, methodology, commercial assets, and compliance pages."
+                  countLabel={`${staticLinks.length} links`}
+                >
+                  <ul className="grid gap-2 sm:grid-cols-2">
+                    {staticLinks.map((item) => (
+                      <li key={item.to}>
+                        <PremiumInternalLink to={item.to}>{item.label}</PremiumInternalLink>
+                      </li>
+                    ))}
+                  </ul>
+                </SectionShell>
+
+                <SectionShell
+                  id="section-services"
+                  icon={Layers}
+                  title="Service delivery"
+                  description="Specialist healthcare research modules—quant, qual, access, and competitive intelligence."
+                  countLabel={`${serviceLinks.length} links`}
+                >
+                  <ul className="grid gap-2 sm:grid-cols-2">
+                    {serviceLinks.map((item) => (
+                      <li key={item.to}>
+                        <PremiumInternalLink to={item.to}>{item.label}</PremiumInternalLink>
+                      </li>
+                    ))}
+                  </ul>
+                </SectionShell>
+
+                <div className="grid gap-12 lg:grid-cols-2 lg:gap-10">
+                  <SectionShell
+                    id="section-pharma"
+                    icon={Building2}
+                    title="Pharmaceutical company guides"
+                    description="Directories by market for manufacturer and portfolio intelligence."
+                    countLabel={`${pharmaCountryLinks.length} markets`}
+                  >
+                    <ul className="grid gap-2">
+                      {pharmaCountryLinks.map((item) => (
+                        <li key={item.to}>
+                          <PremiumInternalLink to={item.to}>{item.label}</PremiumInternalLink>
                         </li>
                       ))}
                     </ul>
-                  </article>
-                ))}
+                  </SectionShell>
+
+                  <SectionShell
+                    id="section-healthcare"
+                    icon={Globe2}
+                    title="Healthcare by geography"
+                    description="Regional healthcare market research corridors—European and GCC/MENA anchors."
+                    countLabel={`${healthcareCountryLinks.length} hubs`}
+                  >
+                    <ul className="grid gap-2">
+                      {healthcareCountryLinks.map((item) => (
+                        <li key={item.to}>
+                          <PremiumInternalLink to={item.to}>{item.label}</PremiumInternalLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </SectionShell>
+                </div>
+
+                <SectionShell
+                  id="section-reports"
+                  icon={BarChart3}
+                  title="Market intelligence reports"
+                  description="Healthcare and medical devices outlooks across GCC, key EU markets, Americas, and APAC corridors."
+                  countLabel={`${marketReportLinks.length} reports`}
+                >
+                  <ul className="grid gap-2 sm:grid-cols-2 xl:grid-cols-3">
+                    {marketReportLinks.map((item) => (
+                      <li key={item.to}>
+                        <PremiumInternalLink to={item.to}>{item.label}</PremiumInternalLink>
+                      </li>
+                    ))}
+                  </ul>
+                </SectionShell>
+
+                <SectionShell
+                  id="section-locales"
+                  icon={Globe2}
+                  title="Languages & localized hubs"
+                  description="Regional language routes mirroring flagship healthcare positioning pages."
+                  countLabel={`${localizedLinks.length} routes`}
+                >
+                  <ul className="grid gap-2 sm:grid-cols-2">
+                    {localizedLinks.map((item) => (
+                      <li key={item.to}>
+                        <PremiumInternalLink to={item.to}>{item.label}</PremiumInternalLink>
+                      </li>
+                    ))}
+                  </ul>
+                </SectionShell>
+
+                <div id="section-blog" className="scroll-mt-28 space-y-12 lg:space-y-10">
+                  <div className="grid gap-12 lg:grid-cols-2 lg:gap-10">
+                    <SectionShell
+                      id="section-blog-en"
+                      icon={Newspaper}
+                      title="Latest English blog articles"
+                      description="Sanity-backed posts served under /blog/. Pair with localized and Arabic equivalents where available."
+                      countLabel={`${blogPosts.length} articles`}
+                    >
+                      <ul className="grid gap-2">
+                        {blogPosts.map((post) => (
+                          <li key={post.id}>
+                            <PremiumInternalLink to={`/blog/${post.slug}`}>{post.title}</PremiumInternalLink>
+                          </li>
+                        ))}
+                      </ul>
+                    </SectionShell>
+
+                    <SectionShell
+                      id="section-blog-ar"
+                      icon={BookMarked}
+                      title="Arabic blog & canonical routes"
+                      description="Arabic-language insight articles indexed for bilingual programmes and regional fieldwork."
+                      countLabel={`${arabicBlogCanonicalLinks.length} articles`}
+                    >
+                      <p className="mb-4 text-sm text-muted-foreground">
+                        Canonical Arabic URLs mirrored in{' '}
+                        <a
+                          href="https://www.bionixus.com/sitemap.xml"
+                          className="font-medium text-primary underline-offset-4 hover:underline"
+                        >
+                          sitemap.xml
+                        </a>
+                        .
+                      </p>
+                      <ul className="grid gap-2">
+                        {arabicBlogCanonicalLinks.map((item) => (
+                          <li key={item.to}>
+                            <PremiumInternalLink to={item.to}>{item.label}</PremiumInternalLink>
+                          </li>
+                        ))}
+                      </ul>
+                    </SectionShell>
+                  </div>
+                </div>
+
+                <SectionShell
+                  id="section-priority"
+                  icon={Radar}
+                  title="Priority internal discovery"
+                  description="Curated corridors we keep prominent for thematic linking and crawler clarity—centralised without bloating primary navigation."
+                  countLabel={`${INTERNAL_LINK_PRIORITY_TARGETS.length} picks`}
+                >
+                  <ul className="grid gap-2 sm:grid-cols-2">
+                    {INTERNAL_LINK_PRIORITY_TARGETS.map((item) => (
+                      <li key={item.to}>
+                        <PremiumInternalLink to={item.to}>{item.label}</PremiumInternalLink>
+                      </li>
+                    ))}
+                  </ul>
+                </SectionShell>
+
+                <SectionShell
+                  id="section-cases"
+                  icon={Shield}
+                  title="Case studies"
+                  description="Programme snapshots spanning oncology, GCC markets, tender intelligence, and access storytelling."
+                  countLabel={`${caseStudies.length} studies`}
+                >
+                  <ul className="grid gap-2 sm:grid-cols-2">
+                    {caseStudies.map((item) => (
+                      <li key={item.id}>
+                        <PremiumInternalLink to={`/case-studies/${item.slug}`}>{item.title}</PremiumInternalLink>
+                      </li>
+                    ))}
+                  </ul>
+                </SectionShell>
+
+                <section id="section-extended" className="scroll-mt-28" aria-labelledby="section-extended-heading">
+                  <div className="overflow-hidden rounded-2xl border border-border/80 bg-muted/15 shadow-sm">
+                    <header className="flex flex-col gap-3 border-b border-border/60 px-6 py-6 md:flex-row md:items-center md:justify-between md:px-8">
+                      <div className="flex items-start gap-4">
+                        <span
+                          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary/12 text-primary ring-1 ring-primary/15"
+                          aria-hidden
+                        >
+                          <FileStack className="h-6 w-6" strokeWidth={1.75} />
+                        </span>
+                        <div>
+                          <h2 id="section-extended-heading" className="font-display text-xl font-semibold md:text-2xl">
+                            Extended coverage registry
+                          </h2>
+                          <p className="mt-1 max-w-2xl text-sm text-muted-foreground">
+                            Supplementary long-tail paths grouped by topical cluster—ideal for auditors, SEO stakeholders, and
+                            deep-link discovery.
+                          </p>
+                        </div>
+                      </div>
+                      <span className="rounded-full border border-border bg-background px-3 py-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                        ~{approxExtendedCount} paths
+                      </span>
+                    </header>
+                    <div className="grid gap-6 p-6 md:grid-cols-2 md:p-8">
+                      {coverageGroupOrder
+                        .filter((group) => Array.isArray(groupedCoverageLinks[group]) && groupedCoverageLinks[group].length > 0)
+                        .map((group) => (
+                          <article
+                            key={group}
+                            className="rounded-xl border border-border/70 bg-card/80 p-5 shadow-[inset_0_1px_0_0_hsl(var(--border)/0.5)]"
+                          >
+                            <h3 className="mb-4 border-b border-border/50 pb-2 font-display text-sm font-semibold uppercase tracking-wider text-foreground">
+                              {group}
+                            </h3>
+                            <ul className="max-h-[min(24rem,50vh)] space-y-1 overflow-y-auto pr-1 text-sm">
+                              {groupedCoverageLinks[group].map((path) => (
+                                <li key={path}>
+                                  <Link
+                                    to={path}
+                                    className="block rounded-md py-1.5 text-primary transition hover:bg-muted/80 hover:text-primary/90"
+                                  >
+                                    {pathToLabel(path)}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </article>
+                        ))}
+                    </div>
+                  </div>
+                </section>
+              </div>
             </div>
-          </section>
+          </div>
         </div>
       </main>
+
+      <CTASection variant="research-proposal" />
       <Footer />
     </div>
   );
 }
-
