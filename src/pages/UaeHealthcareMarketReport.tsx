@@ -180,7 +180,16 @@ const UaeHealthcareMarketReport = () => {
               {' '}and{' '}
               <Link to="/uae-pharmaceutical-market-research" className="text-primary hover:underline font-medium">
                 UAE Pharmaceutical Market Research
-              </Link>{' '}pages.
+              </Link>
+              . For therapy-focused briefings spanning DHA, DOH, and MOHAP dynamics, see{' '}
+              <Link to="/market-reports/uae-oncology-market-report" className="text-primary hover:underline font-medium">
+                UAE oncology market research report
+              </Link>
+              {' '}and{' '}
+              <Link to="/market-reports/uae-diabetes-market-report" className="text-primary hover:underline font-medium">
+                UAE diabetes market research report
+              </Link>
+              .
             </p>
           </div>
         </section>

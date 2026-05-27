@@ -129,6 +129,10 @@ import TurkeyHealthcareMarketReport from '@/pages/TurkeyHealthcareMarketReport';
 import TurkeyMedicalDevicesMarketReport from '@/pages/TurkeyMedicalDevicesMarketReport';
 import TopMarketResearchCompaniesEgypt2026 from '@/pages/TopMarketResearchCompaniesEgypt2026';
 import ArTopMarketResearchCompaniesEgypt2026 from '@/pages/ArTopMarketResearchCompaniesEgypt2026';
+import HealthcareReportPage from '@/pages/HealthcareReportPage';
+import HealthcareReportsHub from '@/pages/HealthcareReportsHub';
+import HealthcareReportsByTherapy from '@/pages/HealthcareReportsByTherapy';
+import HealthcareReportsByCountry from '@/pages/HealthcareReportsByCountry';
 import CaseStudy from '@/pages/CaseStudy';
 import HubPage from '@/pages/healthcare-research/HubPage';
 import CountryPage from '@/pages/healthcare-research/CountryPage';
@@ -300,6 +304,10 @@ export const routes: RouteObject[] = [
   { path: '/singapore-medical-devices-market-report', element: <SingaporeMedicalDevicesMarketReport /> },
   { path: '/turkey-healthcare-market-report', element: <TurkeyHealthcareMarketReport /> },
   { path: '/turkey-medical-devices-market-report', element: <TurkeyMedicalDevicesMarketReport /> },
+  { path: '/market-reports', element: <HealthcareReportsHub /> },
+  { path: '/market-reports/therapy/:therapyAreaSlug', element: <HealthcareReportsByTherapy /> },
+  { path: '/market-reports/country/:marketSlug', element: <HealthcareReportsByCountry /> },
+  { path: '/market-reports/:slug', element: <HealthcareReportPage /> },
   { path: '/blog', element: <Blog /> },
   { path: '/de/blog', element: <Blog /> },
   { path: '/fr/blog', element: <Blog /> },

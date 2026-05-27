@@ -187,11 +187,24 @@ const GccPharmaMarketReport2026 = () => {
               consumption trends, therapy area intelligence, regulatory environment, and commercial
               implications for pharma and biotech teams operating across GCC.
             </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Therapy-segmented programmatic coverage — including harmonized GCC oncology and diabetes
+              analogue intelligence — is available via the{' '}
+              <Link to="/market-reports/gcc-oncology-market-report" className="text-primary hover:underline font-medium">
+                GCC oncology market research report
+              </Link>
+              {' '}and{' '}
+              <Link to="/market-reports/gcc-diabetes-market-report" className="text-primary hover:underline font-medium">
+                GCC diabetes market research report
+              </Link>
+              .
+            </p>
             <p className="text-muted-foreground leading-relaxed">
               For Egypt market intelligence — the third-largest pharmaceutical market in MEA — see our{' '}
               <Link to="/healthcare-market-research/egypt" className="text-primary hover:underline font-medium">
                 Egypt Pharmaceutical Market Report
-              </Link>.
+              </Link>
+              .
             </p>
           </div>
         </section>

@@ -73,7 +73,7 @@ const NF1_BUNDLE: TherapyStaticBlogBundle = {
   tags: [...NF1_KOSELUGO_TAGS],
   itemListSchema: NF1_STATIC_BLOG_SCHEMA_ITEM_LIST,
   schemaMentions: [...NF1_KOSELUGO_SCHEMA_MENTIONS],
-  schemaOgImageDimensions: { width: 1600, height: 1067 },
+  schemaOgImageDimensions: { width: 1600, height: 900 },
 };
 
 const DESMOID_BUNDLE: TherapyStaticBlogBundle = {

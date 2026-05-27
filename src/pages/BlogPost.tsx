@@ -958,13 +958,19 @@ const BlogPost = () => {
               : isGccMeastPharmaHealthArticleAr
                 ? GCC_MEAST_PHARMA_HEALTH_AR_META_DESCRIPTION
                 : post.ogDescription || finalMetaDescription;
+  const therapyStaticBundledCover =
+    isTherapyStaticBlogEn ? therapyStaticBlogBundle!.coverImage : undefined;
+
   const socialImage =
+    therapyStaticBundledCover ||
     post.ogImage ||
     post.coverImage ||
-    (isTherapyStaticBlogEn ? therapyStaticBlogBundle!.coverImage : undefined) ||
     (isGccPharmacoeconomicsEn ? GCC_PHARMACOECONOMICS_COVER_IMAGE : undefined);
 
-  const resolvedOgImageUrl = socialImage || 'https://www.bionixus.com/og-image.png';
+  const resolvedOgImageRaw = socialImage || 'https://www.bionixus.com/og-image.png';
+  const resolvedOgImageUrl = resolvedOgImageRaw.startsWith('/')
+    ? `${BLOG_PUBLIC_ORIGIN}${resolvedOgImageRaw}`
+    : resolvedOgImageRaw;
   const ogTimes = blogOgArticleIsoTimestamps(post);
   const blogHreflangAlternates = blogEnArAlternateUrls(pathClean);
 
@@ -997,8 +1003,8 @@ const BlogPost = () => {
             : null;
 
   const heroCoverImage =
+    therapyStaticBundledCover ||
     post.coverImage ||
-    (isTherapyStaticBlogEn ? therapyStaticBlogBundle!.coverImage : undefined) ||
     (isGccPharmacoeconomicsEn ? GCC_PHARMACOECONOMICS_COVER_IMAGE : undefined);
 
   const displayBlogTags =

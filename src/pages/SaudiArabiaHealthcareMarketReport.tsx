@@ -142,7 +142,16 @@ const SaudiArabiaHealthcareMarketReport = () => {
               {', and '}
               <Link to="/saudi-arabia-medical-devices-market-report" className="text-primary hover:underline font-medium">
                 Saudi Arabia Medical Devices Market Report
-              </Link>.
+              </Link>
+              . For therapy-segmented oncology and diabetes market access briefings, see the{' '}
+              <Link to="/market-reports/saudi-arabia-oncology-market-report" className="text-primary hover:underline font-medium">
+                Saudi Arabia oncology market research report
+              </Link>
+              {' '}and{' '}
+              <Link to="/market-reports/saudi-arabia-diabetes-market-report" className="text-primary hover:underline font-medium">
+                Saudi Arabia diabetes market research report
+              </Link>
+              .
             </p>
           </div>
         </section>

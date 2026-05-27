@@ -139,7 +139,16 @@ const EgyptHealthcareMarketReport = () => {
               {' '}and{' '}
               <Link to="/gfk-alternative-egypt" className="text-primary hover:underline font-medium">
                 GfK Alternative Egypt
-              </Link>.
+              </Link>
+              . For therapy-focused pharmaceutical briefings, see the{' '}
+              <Link to="/market-reports/egypt-oncology-market-report" className="text-primary hover:underline font-medium">
+                Egypt oncology market research report
+              </Link>
+              {' '}and{' '}
+              <Link to="/market-reports/egypt-diabetes-market-report" className="text-primary hover:underline font-medium">
+                Egypt diabetes market research report
+              </Link>
+              .
             </p>
           </div>
         </section>

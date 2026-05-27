@@ -318,6 +318,47 @@ const healthcareMarketResearchCountrySlugs = [
   ]),
 ].sort((a, b) => a.localeCompare(b));
 
+const MARKET_REPORT_THERAPY_HUB_SLUGS = [
+  'oncology',
+  'diabetes-metabolic',
+  'cardiovascular',
+  'immunology-biologics',
+  'respiratory',
+  'rare-diseases',
+  'neurology-cns',
+  'biosimilars',
+  'digital-health',
+  'vaccines',
+  'dermatology',
+];
+
+const MARKET_REPORT_COUNTRY_HUB_SLUGS = [
+  'gcc',
+  'saudi-arabia',
+  'uae',
+  'kuwait',
+  'qatar',
+  'bahrain',
+  'oman',
+  'egypt',
+  'turkey',
+];
+
+function extractProgrammaticHealthcareReportSlugs() {
+  try {
+    const fp = join(root, 'src/data/healthcareReportData.ts');
+    const txt = readFileSync(fp, 'utf8');
+    /** @type {string[]} */
+    const slugs = [];
+    const re = /\brow\(\s*'([^']+)'\s*,/g;
+    let m;
+    while ((m = re.exec(txt))) slugs.push(m[1]);
+    return slugs;
+  } catch {
+    return [];
+  }
+}
+
 function buildStaticRoutes() {
   const routes = [];
   for (const page of staticPages) {
@@ -353,6 +394,28 @@ function buildStaticRoutes() {
       path: `/healthcare-market-research/services/${service}`,
       priority: '0.75',
       changefreq: 'monthly',
+    });
+  }
+  routes.push({ path: '/market-reports', priority: '0.9', changefreq: 'weekly' });
+  for (const slug of MARKET_REPORT_THERAPY_HUB_SLUGS) {
+    routes.push({
+      path: `/market-reports/therapy/${slug}`,
+      priority: '0.88',
+      changefreq: 'weekly',
+    });
+  }
+  for (const slug of MARKET_REPORT_COUNTRY_HUB_SLUGS) {
+    routes.push({
+      path: `/market-reports/country/${slug}`,
+      priority: '0.88',
+      changefreq: 'weekly',
+    });
+  }
+  for (const slug of extractProgrammaticHealthcareReportSlugs()) {
+    routes.push({
+      path: `/market-reports/${slug}`,
+      priority: '0.87',
+      changefreq: 'weekly',
     });
   }
   return routes;
@@ -699,6 +762,15 @@ const STATIC_PAGE_FILES = {
   '/blog/gcc-pharmaceutical-market-comparison-uae-saudi-kuwait': ['src/pages/BlogPost.tsx'],
 };
 
+const MARKET_REPORTS_GIT_FILES = [
+  'src/pages/HealthcareReportPage.tsx',
+  'src/pages/HealthcareReportsHub.tsx',
+  'src/pages/HealthcareReportsByTherapy.tsx',
+  'src/pages/HealthcareReportsByCountry.tsx',
+  'src/data/healthcareReportData.ts',
+  'src/data/healthcareReportFaqs.ts',
+];
+
 /** Git lastmod for dynamic healthcare paths (shared source files). */
 const HEALTHCARE_HUB_GIT_FILES = [
   'src/pages/healthcare-research/HubPage.tsx',
@@ -731,6 +803,9 @@ async function main() {
     let sourceFiles = STATIC_PAGE_FILES[path] || [];
     if (sourceFiles.length === 0 && path.startsWith('/healthcare-market-research/')) {
       sourceFiles = HEALTHCARE_HUB_GIT_FILES;
+    }
+    if (sourceFiles.length === 0 && path.startsWith('/market-reports')) {
+      sourceFiles = MARKET_REPORTS_GIT_FILES;
     }
     let lastmod = null;
     for (const relFile of sourceFiles) {

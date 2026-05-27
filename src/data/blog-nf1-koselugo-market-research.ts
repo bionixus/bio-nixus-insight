@@ -6,8 +6,7 @@ import type { BlogPost } from '@/types/blog';
 
 export const NF1_KOSELUGO_BLOG_SLUG = 'nf1-koselugo-selumetinib-pharma-market-research';
 
-export const NF1_KOSELUGO_COVER_IMAGE =
-  'https://images.unsplash.com/photo-1532187863486-abf9db7621e1?auto=format&fit=crop&w=1600&q=85';
+export const NF1_KOSELUGO_COVER_IMAGE = '/images/blog/nf1-koselugo-selumetinib-cover.jpg';
 
 export const NF1_KOSELUGO_META_TITLE = 'NF1 & Koselugo (Selumetinib): Pharma Research & MAP | BioNixus';
 

@@ -136,6 +136,17 @@ const marketReportLinks = [
   { to: '/singapore-medical-devices-market-report', label: 'Singapore Medical Devices Market Report 2026' },
   { to: '/turkey-healthcare-market-report', label: 'Turkey Healthcare Market Report 2026' },
   { to: '/turkey-medical-devices-market-report', label: 'Turkey Medical Devices Market Report 2026' },
+  { to: '/market-reports', label: 'Healthcare Market Research Reports Hub' },
+  { to: '/market-reports/therapy/oncology', label: 'Oncology Market Research Reports' },
+  { to: '/market-reports/therapy/diabetes-metabolic', label: 'Diabetes & Metabolic Market Research Reports' },
+  { to: '/market-reports/therapy/cardiovascular', label: 'Cardiovascular Market Research Reports' },
+  { to: '/market-reports/therapy/immunology-biologics', label: 'Immunology & Biologics Market Research Reports' },
+  { to: '/market-reports/therapy/respiratory', label: 'Respiratory Market Research Reports' },
+  { to: '/market-reports/therapy/rare-diseases', label: 'Rare Diseases Market Research Reports' },
+  { to: '/market-reports/country/saudi-arabia', label: 'Saudi Arabia Healthcare Reports' },
+  { to: '/market-reports/country/uae', label: 'UAE Healthcare Reports' },
+  { to: '/market-reports/country/gcc', label: 'GCC Healthcare Reports' },
+  { to: '/market-reports/country/egypt', label: 'Egypt Healthcare Reports' },
 ];
 
 /** Canonical Arabic posts under /ar/blog/ (also listed in public/sitemap.xml). */
