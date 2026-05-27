@@ -43,7 +43,7 @@ export function MethodologyLongFormEs({ lang }: Props): JSX.Element {
             2. Muestreos y tamaño muestral responsable
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            Calidad muestral marca credibilidad. BioNixus gestiona redes PRO salud (>17 mercados EMEA + Golfo) más partners ESOMAR/BHBIA. Recruiting siempre federado médico institucional, nunca sólo redes auto‑reportadas abiertas.
+            Calidad muestral marca credibilidad. BioNixus gestiona redes PRO salud (más de 17 mercados en EMEA y el Golfo) más partners ESOMAR/BHBIA. Recruiting siempre federado médico institucional, nunca sólo redes auto‑reportadas abiertas.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-4">
             Targets numéricos alineamos a potencias previas; orientativamente objetivo habitual ±5 % MR al 95 % dentro subsegmentación reportada. Coberturas raras → enfoques tipo censo muestral y estadística adaptativa.
