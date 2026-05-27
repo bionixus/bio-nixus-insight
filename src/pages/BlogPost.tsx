@@ -1054,6 +1054,19 @@ const BlogPost = () => {
         }
         description={finalMetaDescription}
         imageUrl={resolvedOgImageUrl}
+        {...(isTherapyStaticBlogEn && therapyStaticBlogBundle?.schemaOgImageDimensions
+          ? {
+              ogImageWidth: therapyStaticBlogBundle.schemaOgImageDimensions.width,
+              ogImageHeight: therapyStaticBlogBundle.schemaOgImageDimensions.height,
+            }
+          : {})}
+        articleSection={post.category?.trim() || undefined}
+        keywords={displayBlogTags.length > 0 ? [...displayBlogTags] : undefined}
+        schemaMentions={
+          isTherapyStaticBlogEn && therapyStaticBlogBundle?.schemaMentions?.length
+            ? [...therapyStaticBlogBundle.schemaMentions]
+            : undefined
+        }
         authorName={post.authorName || 'BioNixus Research Team'}
         authorUrl={post.authorLinkedIn || 'https://www.linkedin.com/in/mohammad-alsaadany'}
         authorJobTitle={post.authorTitle || undefined}

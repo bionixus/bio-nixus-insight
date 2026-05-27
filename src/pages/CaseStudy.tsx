@@ -318,6 +318,10 @@ const CaseStudyPage = () => {
         headline={caseStudy.title}
         description={metaDescription}
         imageUrl={resolvedOgImageUrl}
+        ogImageWidth={1600}
+        ogImageHeight={720}
+        articleSection={(caseStudy.category || 'Case studies').trim()}
+        keywords={displayTags.length > 0 ? [...displayTags] : undefined}
         authorName={caseStudy.authorName || 'BioNixus Research Team'}
         breadcrumb={[
           { name: 'Home', item: `${BIONIXUS_ORIGIN}/` },

@@ -28,6 +28,7 @@ import {
   NF1_KOSELUGO_TABLE_OF_CONTENTS,
   NF1_KOSELUGO_BLOG_SLUG,
   NF1_STATIC_BLOG_SCHEMA_ITEM_LIST,
+  NF1_KOSELUGO_SCHEMA_MENTIONS,
 } from '@/data/blog-nf1-koselugo-market-research';
 
 export type TherapyStaticBlogBundle = {
@@ -43,6 +44,10 @@ export type TherapyStaticBlogBundle = {
   schemaFaq: { question: string; answer: string }[];
   tags: string[];
   itemListSchema?: { name: string; items: { name: string; description: string }[] };
+  /** Optional JSON-LD `mentions` (e.g. MedicalCondition / Drug for therapy articles). */
+  schemaMentions?: ReadonlyArray<Record<string, unknown>>;
+  /** Hero/OG intrinsic dimensions used for structured `ImageObject` width & height */
+  schemaOgImageDimensions?: { width: number; height: number };
 };
 
 export const THERAPY_STATIC_BLOG_SLUG_SET = new Set<string>([
@@ -67,6 +72,8 @@ const NF1_BUNDLE: TherapyStaticBlogBundle = {
   schemaFaq: cloneFaq(NF1_KOSELUGO_SCHEMA_FAQ),
   tags: [...NF1_KOSELUGO_TAGS],
   itemListSchema: NF1_STATIC_BLOG_SCHEMA_ITEM_LIST,
+  schemaMentions: [...NF1_KOSELUGO_SCHEMA_MENTIONS],
+  schemaOgImageDimensions: { width: 1600, height: 1067 },
 };
 
 const DESMOID_BUNDLE: TherapyStaticBlogBundle = {
@@ -82,6 +89,7 @@ const DESMOID_BUNDLE: TherapyStaticBlogBundle = {
   schemaFaq: cloneFaq(DESMOID_BLOG_SCHEMA_FAQ),
   tags: [...DESMOID_BLOG_TAGS],
   itemListSchema: DESMOID_STATIC_BLOG_SCHEMA_ITEM_LIST,
+  schemaOgImageDimensions: { width: 1600, height: 1067 },
 };
 
 const BY_SLUG: Record<string, TherapyStaticBlogBundle> = {

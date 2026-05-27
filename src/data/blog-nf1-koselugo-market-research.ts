@@ -22,6 +22,21 @@ export const NF1_KOSELUGO_OG_DESCRIPTION = NF1_KOSELUGO_META_DESCRIPTION;
 export const NF1_KOSELUGO_PUBLISHED_ISO = '2026-05-26T09:00:00.000Z';
 export const NF1_KOSELUGO_UPDATED_ISO = NF1_KOSELUGO_PUBLISHED_ISO;
 
+/** Rich entities for NF1-focused Article / BlogPosting `mentions`. */
+export const NF1_KOSELUGO_SCHEMA_MENTIONS: ReadonlyArray<Record<string, unknown>> = [
+  {
+    '@type': 'MedicalCondition',
+    name: 'Neurofibromatosis type 1',
+    alternateName: ['NF1', 'von Recklinghausen disease'],
+    url: 'https://www.ncbi.nlm.nih.gov/books/NBK1109/',
+  },
+  {
+    '@type': 'Drug',
+    name: 'Selumetinib',
+    alternateName: ['Koselugo'],
+  },
+];
+
 export const NF1_KOSELUGO_TAGS = [
   'Neurofibromatosis type 1',
   'NF1',
