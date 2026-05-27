@@ -229,7 +229,7 @@ export const GCC_PHARMACOECONOMICS_HARDCODED_POST: BlogPost = {
   seoMetaDescription: GCC_PHARMACOECONOMICS_META_DESCRIPTION,
   seoCanonicalUrl: 'https://www.bionixus.com/blog/gcc-pharmacoeconomics',
   authorName: 'Mohammad Ashour',
-  authorTitle: 'Founder, BioNixus Healthcare Market Research',
+  authorTitle: 'Research Lead, BioNixus Healthcare Market Research',
   authorLinkedIn: 'https://www.linkedin.com/in/mohammad-alsaadany',
   publishedAtIso: GCC_PHARMACOECONOMICS_PUBLISHED_ISO,
   updatedAtIso: GCC_PHARMACOECONOMICS_UPDATED_ISO,

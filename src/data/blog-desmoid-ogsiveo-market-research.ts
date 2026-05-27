@@ -191,7 +191,7 @@ export const DESMOID_BLOG_HARDCODED_POST: BlogPost = {
   seoMetaDescription: DESMOID_BLOG_META_DESCRIPTION,
   seoCanonicalUrl: `https://www.bionixus.com/blog/${DESMOID_NIROGACESTAT_BLOG_SLUG}`,
   authorName: 'Mohammad Ashour',
-  authorTitle: 'Founder, BioNixus Healthcare Market Research',
+  authorTitle: 'Research Lead, BioNixus Healthcare Market Research',
   authorLinkedIn: 'https://www.linkedin.com/in/mohammad-alsaadany',
   publishedAtIso: DESMOID_BLOG_PUBLISHED_ISO,
   updatedAtIso: DESMOID_BLOG_UPDATED_ISO,

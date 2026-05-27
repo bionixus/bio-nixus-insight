@@ -345,7 +345,7 @@ export async function uploadBlogPost(
           children: [
             {
               _type: 'span',
-              text: 'Transform Care Digital Project Director at AstraZeneca with over 10 years of experience in pharmaceutical market research, AI-powered healthcare insights, and digital transformation. Founder of BioNixus Healthcare Market Research, specializing in pharmacoeconomics, HTA, and clinical trials consulting across UAE, Saudi Arabia, and GCC markets.',
+              text: 'Transform Care Digital Project Director at AstraZeneca with over 10 years of experience in pharmaceutical market research, AI-powered healthcare insights, and digital transformation. Research Lead at BioNixus Healthcare Market Research, specializing in pharmacoeconomics, HTA, and clinical trials consulting across UAE, Saudi Arabia, and GCC markets.',
             },
           ],
         },

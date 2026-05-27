@@ -219,7 +219,7 @@ export const NF1_KOSELUGO_HARDCODED_POST: BlogPost = {
   seoMetaDescription: NF1_KOSELUGO_META_DESCRIPTION,
   seoCanonicalUrl: `https://www.bionixus.com/blog/${NF1_KOSELUGO_BLOG_SLUG}`,
   authorName: 'Mohammad Ashour',
-  authorTitle: 'Founder, BioNixus Healthcare Market Research',
+  authorTitle: 'Research Lead, BioNixus Healthcare Market Research',
   authorLinkedIn: 'https://www.linkedin.com/in/mohammad-alsaadany',
   publishedAtIso: NF1_KOSELUGO_PUBLISHED_ISO,
   updatedAtIso: NF1_KOSELUGO_UPDATED_ISO,
