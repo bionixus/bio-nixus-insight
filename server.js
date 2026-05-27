@@ -485,6 +485,20 @@ function ensureCanonicalTag(html, pathname) {
   return html.replace(/<meta name="viewport"[^>]*>/i, `$&\n${linkTag}`);
 }
 
+/**
+ * JSON.stringify rejects BigInt and other exotic values → uncaught SSR 500 during HTML injection.
+ */
+function serializeInitialDataForInlineScript(initialData) {
+  const replacer = (_key, value) => (typeof value === 'bigint' ? value.toString() : value);
+  try {
+    return JSON.stringify(initialData ?? {}, replacer).replace(/</g, '\\u003c');
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('SSR: __INITIAL_DATA__ serialization failed:', error);
+    return JSON.stringify({ pageType: 'generic', hydrationPayload: 'unavailable' }).replace(/</g, '\\u003c');
+  }
+}
+
 async function startServer() {
   const app = express();
   app.use(compression());
@@ -800,7 +814,11 @@ async function startServer() {
         fetchRouteData = serverMod.fetchRouteData;
       }
 
-      const initialData = await fetchRouteData(url);
+      const initialData = await fetchRouteData(url).catch((routeErr) => {
+        // eslint-disable-next-line no-console
+        console.error('SSR fetchRouteData failed:', routeErr);
+        return { pageType: 'generic', routeFetchError: true };
+      });
       const { html: appHtml, helmetData } = render(url, initialData);
 
       const headTags = [
@@ -814,12 +832,14 @@ async function startServer() {
 
       const statusCode = isSsrNotFoundPage(headTags, appHtml) ? 404 : 200;
 
+      const initialDataSerialized = serializeInitialDataForInlineScript(initialData);
+
       const page = template
         .replace('<!--ssr-head-->', headTags)
         .replace('<!--ssr-outlet-->', appHtml)
         .replace(
           '<!--ssr-data-->',
-          `<script>window.__INITIAL_DATA__ = ${JSON.stringify(initialData).replace(/</g, '\\u003c')}</script>`,
+          `<script>window.__INITIAL_DATA__ = ${initialDataSerialized}</script>`,
         );
       const localizedPage = ensureImageTitleAttributes(
         ensureMainContentImage(

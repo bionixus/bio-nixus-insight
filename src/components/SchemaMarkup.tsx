@@ -30,7 +30,7 @@ type ItemListEntry = {
 }
 
 type BlogSchemaProps = {
-  pageType: 'blog'
+  pageType: 'blog' | 'case-study'
   pageUrl: string
   language: LanguageCode
   headline: string
@@ -284,7 +284,7 @@ function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[] {
     return nodes
   }
 
-  if (props.pageType === 'blog') {
+  if (props.pageType === 'blog' || props.pageType === 'case-study') {
     const published = toIsoDate(props.publishedAt) || new Date().toISOString()
     const modified = toIsoDate(props.modifiedAt) || published
     const image = toHttpsUrl(props.imageUrl || ORG_IMAGE)
@@ -323,7 +323,11 @@ function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[] {
       nodes.push(buildFaq(props.faqItems, inLanguage, toHttpsUrl(props.pageUrl)))
     }
 
-    if (props.itemList && props.itemList.items.length > 0) {
+    if (
+      props.pageType === 'blog' &&
+      props.itemList &&
+      props.itemList.items.length > 0
+    ) {
       nodes.push({
         '@context': 'https://schema.org',
         '@type': 'ItemList',

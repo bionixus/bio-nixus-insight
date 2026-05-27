@@ -65,6 +65,8 @@ const therapyAreas: TherapyArea[] = [
       'Hypophosphatasia (HPP)',
       'ADA-SCID and metachromatic leukodystrophy (MLD)',
       'Hidradenitis suppurativa',
+      'Neurofibromatosis type 1 (NF1)',
+      'Desmoid tumors (aggressive fibromatosis)',
     ],
   },
   {
@@ -490,6 +492,30 @@ export default function PharmaceuticalTherapyAreas() {
               Related Research Capabilities and Country Pages
             </h2>
             <div className="grid md:grid-cols-2 gap-3">
+              <Link
+                to="/nf1-pharma-market-research"
+                className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
+              >
+                NF1 pharma market research (Koselugo / MEK inhibition)
+              </Link>
+              <Link
+                to="/desmoid-tumor-pharma-market-research"
+                className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
+              >
+                Desmoid tumor pharma research (approved systemic therapy context)
+              </Link>
+              <Link
+                to="/blog/nf1-koselugo-selumetinib-pharma-market-research"
+                className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
+              >
+                Insight article: NF1, Koselugo (selumetinib), and market intelligence
+              </Link>
+              <Link
+                to="/blog/desmoid-tumors-nirogacestat-pharma-market-access"
+                className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
+              >
+                Insight article: Desmoid tumors, nirogacestat (Ogsiveo), and access signals
+              </Link>
               <Link
                 to="/healthcare-market-research"
                 className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"

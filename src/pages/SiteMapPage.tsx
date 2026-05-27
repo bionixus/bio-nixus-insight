@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import { useSanityBlog } from '@/hooks/useSanityBlog';
 import { fetchCaseStudies } from '@/lib/sanity-case-studies';
 import { LOW_INTERNAL_LINK_PATHS } from '@/lib/lowInternalLinkTargets.generated';
+import { INTERNAL_LINK_PRIORITY_TARGETS } from '@/lib/internalLinkAmplificationTargets';
 
 const staticLinks = [
   { to: '/', label: 'Home' },
@@ -244,10 +245,10 @@ export default function SiteMapPage() {
                 timelines, and governance expectations.
               </p>
               <p>
-                The &quot;Additional content links&quot; section at the bottom mirrors internal routes we monitor for
-                crawl completeness. It is intentionally explicit so search engines and human readers can discover
-                long-tail healthcare market research URLs that support niche queries—rare diseases, oncology, diabetes,
-                respiratory pathways, and GCC market access scenarios—without losing site structure clarity.
+                The curated &quot;Priority internal discovery&quot; section and the &quot;Additional content links&quot;
+                grids below consolidate routes we monitor for crawl completeness—including methodology entry points,
+                localized hubs, pillar reports, and long-tail pharma intelligence URLs—without overloading global
+                navigation or homepage modules.
               </p>
               <p>
                 When you are ready to move from reading to execution, use the contact page to request a tailored proposal.
@@ -381,20 +382,38 @@ export default function SiteMapPage() {
             </section>
           </div>
 
-          <div className="grid lg:grid-cols-1 gap-10 mt-12 max-w-xl">
-            <section>
-              <h2 className="font-semibold text-foreground mb-4">Case Studies</h2>
-              <ul className="space-y-2">
-                {caseStudies.map((item) => (
-                  <li key={item.id}>
-                    <Link to={`/case-studies/${item.slug}`} className="text-primary hover:underline">
-                      {item.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          </div>
+          <section className="mt-14" aria-labelledby="priority-discovery-heading">
+            <h2 id="priority-discovery-heading" className="font-semibold text-foreground mb-4">
+              Priority internal discovery
+            </h2>
+            <p className="text-sm text-muted-foreground mb-4 leading-relaxed max-w-3xl">
+              Editorially-labelled destinations we keep discoverable via this directory (plus thematic rails on editorial
+              pages). Mirrors the curated list previously surfaced sitewide in the footer—centralised here so crawl paths
+              stay explicit while primary navigation stays lean.
+            </p>
+            <ul className="grid md:grid-cols-2 gap-x-10 gap-y-2">
+              {INTERNAL_LINK_PRIORITY_TARGETS.map((item) => (
+                <li key={item.to}>
+                  <Link to={item.to} className="text-primary hover:underline text-sm">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section className="mt-12 max-w-xl">
+            <h2 className="font-semibold text-foreground mb-4">Case Studies</h2>
+            <ul className="space-y-2">
+              {caseStudies.map((item) => (
+                <li key={item.id}>
+                  <Link to={`/case-studies/${item.slug}`} className="text-primary hover:underline">
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
 
           <section className="mt-12">
             <h2 className="font-semibold text-foreground mb-4">Additional Content Links</h2>

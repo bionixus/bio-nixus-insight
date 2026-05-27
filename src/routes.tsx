@@ -74,6 +74,8 @@ import MarketResearchKsa from '@/pages/MarketResearchKsa';
 import MarketResearchSaudi from '@/pages/MarketResearchSaudi';
 import MarketResearchKuwait from '@/pages/MarketResearchKuwait';
 import MarketResearchEgypt from '@/pages/MarketResearchEgypt';
+import Nf1PharmaMarketResearch from '@/pages/Nf1PharmaMarketResearch';
+import DesmoidTumorPharmaMarketResearch from '@/pages/DesmoidTumorPharmaMarketResearch';
 import ArMarketResearchUae from '@/pages/ArMarketResearchUae';
 import ArMarketResearchKsa from '@/pages/ArMarketResearchKsa';
 import ArMarketResearchSaudi from '@/pages/ArMarketResearchSaudi';
@@ -95,6 +97,36 @@ import OmanMedicalDevicesMarketReport from '@/pages/OmanMedicalDevicesMarketRepo
 import OmanHealthcareMarketReport from '@/pages/OmanHealthcareMarketReport';
 import EgyptMedicalDevicesMarketReport from '@/pages/EgyptMedicalDevicesMarketReport';
 import EgyptHealthcareMarketReport from '@/pages/EgyptHealthcareMarketReport';
+import UkHealthcareMarketReport from '@/pages/UkHealthcareMarketReport';
+import UkMedicalDevicesMarketReport from '@/pages/UkMedicalDevicesMarketReport';
+import GermanyHealthcareMarketReport from '@/pages/GermanyHealthcareMarketReport';
+import GermanyMedicalDevicesMarketReport from '@/pages/GermanyMedicalDevicesMarketReport';
+import FranceHealthcareMarketReport from '@/pages/FranceHealthcareMarketReport';
+import FranceMedicalDevicesMarketReport from '@/pages/FranceMedicalDevicesMarketReport';
+import ItalyHealthcareMarketReport from '@/pages/ItalyHealthcareMarketReport';
+import ItalyMedicalDevicesMarketReport from '@/pages/ItalyMedicalDevicesMarketReport';
+import SpainHealthcareMarketReport from '@/pages/SpainHealthcareMarketReport';
+import SpainMedicalDevicesMarketReport from '@/pages/SpainMedicalDevicesMarketReport';
+import UsaHealthcareMarketReport from '@/pages/UsaHealthcareMarketReport';
+import UsaMedicalDevicesMarketReport from '@/pages/UsaMedicalDevicesMarketReport';
+import BrazilHealthcareMarketReport from '@/pages/BrazilHealthcareMarketReport';
+import BrazilMedicalDevicesMarketReport from '@/pages/BrazilMedicalDevicesMarketReport';
+import CanadaHealthcareMarketReport from '@/pages/CanadaHealthcareMarketReport';
+import CanadaMedicalDevicesMarketReport from '@/pages/CanadaMedicalDevicesMarketReport';
+import IndiaHealthcareMarketReport from '@/pages/IndiaHealthcareMarketReport';
+import IndiaMedicalDevicesMarketReport from '@/pages/IndiaMedicalDevicesMarketReport';
+import ChinaHealthcareMarketReport from '@/pages/ChinaHealthcareMarketReport';
+import ChinaMedicalDevicesMarketReport from '@/pages/ChinaMedicalDevicesMarketReport';
+import JapanHealthcareMarketReport from '@/pages/JapanHealthcareMarketReport';
+import JapanMedicalDevicesMarketReport from '@/pages/JapanMedicalDevicesMarketReport';
+import SouthKoreaHealthcareMarketReport from '@/pages/SouthKoreaHealthcareMarketReport';
+import SouthKoreaMedicalDevicesMarketReport from '@/pages/SouthKoreaMedicalDevicesMarketReport';
+import AustraliaHealthcareMarketReport from '@/pages/AustraliaHealthcareMarketReport';
+import AustraliaMedicalDevicesMarketReport from '@/pages/AustraliaMedicalDevicesMarketReport';
+import SingaporeHealthcareMarketReport from '@/pages/SingaporeHealthcareMarketReport';
+import SingaporeMedicalDevicesMarketReport from '@/pages/SingaporeMedicalDevicesMarketReport';
+import TurkeyHealthcareMarketReport from '@/pages/TurkeyHealthcareMarketReport';
+import TurkeyMedicalDevicesMarketReport from '@/pages/TurkeyMedicalDevicesMarketReport';
 import TopMarketResearchCompaniesEgypt2026 from '@/pages/TopMarketResearchCompaniesEgypt2026';
 import ArTopMarketResearchCompaniesEgypt2026 from '@/pages/ArTopMarketResearchCompaniesEgypt2026';
 import CaseStudy from '@/pages/CaseStudy';
@@ -166,6 +198,8 @@ export const routes: RouteObject[] = [
   { path: '/bionixus-market-research-middle-east', element: <BionixusMarketResearchMiddleEast /> },
   { path: '/bionixus-vs-iqvia-mena', element: <BionixusVsIqviaMena /> },
   { path: '/gcc-pharma-market-report-2026', element: <GccPharmaMarketReport2026 /> },
+  { path: '/nf1-pharma-market-research', element: <Nf1PharmaMarketResearch /> },
+  { path: '/desmoid-tumor-pharma-market-research', element: <DesmoidTumorPharmaMarketResearch /> },
   { path: '/kol-mapping-saudi-arabia-oncology', element: <KolMappingSaudiArabiaOncology /> },
   { path: '/physician-survey-saudi-arabia', element: <PhysicianSurveySaudiArabia /> },
   { path: '/sfda-market-access-strategy-saudi-arabia', element: <SfdaMarketAccessStrategySaudiArabia /> },

@@ -4,10 +4,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { ClientPortalDialog } from '@/components/ClientPortalDialog';
-import {
-  INTERNAL_LINK_EXTENDED_GAP_TARGETS,
-  INTERNAL_LINK_PRIORITY_TARGETS,
-} from '@/lib/internalLinkAmplificationTargets';
 
 const Footer = () => {
   const { pathname } = useLocation();
@@ -193,35 +189,26 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Company & Offerings — paired with amplification links for crawl completeness */}
-          <div className="lg:col-span-4 lg:grid lg:grid-cols-2 gap-10">
-            <div>
-              <h4 className="font-semibold text-primary-foreground mb-6 uppercase tracking-wide text-sm">
-                {t.footer.companyHeading || 'Company & Offerings'}
-              </h4>
-              <ul className="space-y-3">
+          {/* Core navigation only — fuller index at /sitemap */}
+          <div className="lg:col-span-4">
+            <h4 className="font-semibold text-primary-foreground mb-6 uppercase tracking-wide text-sm">
+              {f.quickLinksHeading ?? 'Quick links'}
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <Link
+                  to="/contact"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  {t.nav.contact}
+                </Link>
+              </li>
               <li>
                 <Link
                   to="/about"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
-                  {t.footer.about}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/market-research"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Market Research Hub
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/healthcare-market-research/saudi-arabia"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Saudi Pharma Market Research
+                  {f.about}
                 </Link>
               </li>
               <li>
@@ -229,7 +216,7 @@ const Footer = () => {
                   to="/services"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
-                  {t.footer.services}
+                  {f.services}
                 </Link>
               </li>
               <li>
@@ -237,55 +224,7 @@ const Footer = () => {
                   to="/healthcare-market-research"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
-                  Healthcare Market Research Hub
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/global-websites"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Global Websites
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/case-studies"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  {t.footer.caseStudies}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/case-studies/cns-case-study"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  CNS and brain health market research case study
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/real-world-evidence"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Real World Evidence (RWE) for pharma
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/strategic-portfolio"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Strategic Portfolio
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/insights"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  BioNixus Insights Hub
+                  {f.healthcareHub ?? 'Healthcare market research hub'}
                 </Link>
               </li>
               <li>
@@ -293,47 +232,15 @@ const Footer = () => {
                   to="/blog"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
-                  Insights & Blog
+                  {f.blogAndInsights ?? 'Blog & insights'}
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/ar/arabic-blog-alsawdyh"
+                  to="/sitemap"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
-                  Arabic guide: Saudi pharmaceutical market research
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/healthcare-market-research/uae"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Market Research in UAE
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/healthcare-market-research/uae"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  UAE Pharmaceutical Market Research
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/healthcare-market-research-agency-gcc"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Healthcare Market Research Agency GCC
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/healthcare-market-research/uae"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Dubai · UAE
+                  {f.sitemap ?? 'Site map'}
                 </Link>
               </li>
               <li>
@@ -343,71 +250,17 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
-                  {t.footer.careers}
+                  {f.careers}
                 </a>
               </li>
-              <li>
-                <button
-                  type="button"
-                  onClick={() => setPortalOpen(true)}
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem] text-left"
-                >
-                  {t.footer.clientsPortal}
-                </button>
-              </li>
-              <li>
-                <Link
-                  to="/sitemap"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Sitemap
-                </Link>
-              </li>
             </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold text-primary-foreground mb-6 uppercase tracking-wide text-sm">
-                Regional hubs & methodology
-              </h4>
-              <ul className="space-y-3">
-                {INTERNAL_LINK_PRIORITY_TARGETS.map((item) => (
-                  <li key={item.to}>
-                    <Link
-                      to={item.to}
-                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <details className="mt-5 group">
-                <summary className="cursor-pointer text-primary-foreground/85 text-[0.9rem] font-medium underline-offset-4 hover:underline list-none flex items-center gap-2 [&::-webkit-details-marker]:hidden">
-                  <span>
-                    Expanded index — {INTERNAL_LINK_EXTENDED_GAP_TARGETS.length} additional pages needing inbound links
-                  </span>
-                  <span className="text-primary-foreground/50 group-open:rotate-90 transition-transform">›</span>
-                </summary>
-                <p className="text-primary-foreground/55 text-[0.82rem] leading-snug mt-3 mb-3">
-                  These routes come from crawler gap reports (&lt;5 inbound internal links). Each appears sitewide in the
-                  footer so search engines consistently discover GCC healthcare research, pharma blog articles, localized
-                  entry points, and company directory URLs.
-                </p>
-                <ul className="mt-3 max-h-48 overflow-y-auto pr-1 md:columns-2 md:gap-6 md:column-fill-auto space-y-2">
-                  {INTERNAL_LINK_EXTENDED_GAP_TARGETS.map((item) => (
-                    <li key={item.to}>
-                      <Link
-                        to={item.to}
-                        className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.85rem] break-words inline-block py-0.5"
-                      >
-                        {item.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </details>
-            </div>
+            <button
+              type="button"
+              onClick={() => setPortalOpen(true)}
+              className="mt-6 text-primary-foreground/55 hover:text-primary-foreground transition-colors text-sm text-left underline-offset-2 hover:underline"
+            >
+              {f.clientsPortal}
+            </button>
           </div>
 
           {/* Contact */}

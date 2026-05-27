@@ -76,6 +76,15 @@ const COUNTRY_QUERY = `*[_type == "countryResearchPage" && slug.current == $slug
   relatedTherapies
 }`;
 
+/** Decode a single path segment; never throw — malformed `%` escapes break SSR with 500. */
+function decodePathSegment(encoded: string): string {
+  try {
+    return decodeURIComponent(encoded.replace(/\+/g, ' '));
+  } catch {
+    return encoded;
+  }
+}
+
 export async function fetchRouteData(url: string): Promise<Record<string, unknown>> {
   const path = url.split('?')[0];
   const aliasCountryPath = path.match(/^\/(saudi-arabia|uae|kuwait|uk|europe|egypt)$/);
@@ -150,7 +159,7 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
 
   const caseStudyDetailMatch = normalizedPath.match(/^\/case-studies\/([^/]+)\/?$/);
   if (caseStudyDetailMatch) {
-    const slug = decodeURIComponent(caseStudyDetailMatch[1]);
+    const slug = decodePathSegment(caseStudyDetailMatch[1]);
     let caseStudy: CaseStudy | null = null;
     try {
       caseStudy = await fetchCaseStudyBySlug(slug);
@@ -192,7 +201,7 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
 
   const blogPostMatchAr = path.match(/^\/ar\/blog\/([^/]+)\/?$/);
   if (blogPostMatchAr) {
-    const slug = decodeURIComponent(blogPostMatchAr[1]);
+    const slug = decodePathSegment(blogPostMatchAr[1]);
     const sanitySlug = resolveSanityBlogSlug(slug);
     let blogPost: BlogPost | null = null;
     let relatedPosts: RelatedPostsData = { related: [], prev: null, next: null };

@@ -29,6 +29,13 @@ export const BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH = {
  */
 export const BLOG_SANITY_FETCH_SLUG_BY_URL_SLUG = {
   'gcc-pharmaceutical-market-comparison-uae-saudi-kuwait': 'gcc-pharmaceuticals-market-2026',
+  /**
+   * Public URLs use Arabic slugs under `/ar/blog/…` while Sanity `slug.current`
+   * stays ASCII (matches Express redirects from legacy `/blog/{ar}` aliases).
+   */
+  'أبحاث-السوق-الدوائية-في-الشرق-الأوسط-و-دول-الخليج-العربي':
+    'pharmaceutical-market-research-middle-east-gcc',
+  'سوق-الدواء-السعودي-2026': 'saudi-pharma-market-2026',
 };
 
 export function resolveSanityBlogSlug(urlSlug) {

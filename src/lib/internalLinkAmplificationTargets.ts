@@ -4,7 +4,7 @@
  */
 import { LOW_INTERNAL_LINK_TARGETS } from '@/lib/lowInternalLinkTargets.generated';
 
-/** Curated sitewide links—always surfaced in the footer without hiding behind disclosure. */
+/** Curated crawl targets surfaced on `/sitemap` (priority section); also merged into Blog index amplification rails. */
 export const INTERNAL_LINK_PRIORITY_TARGETS: ReadonlyArray<{ to: string; label: string }> = [
   { to: '/conf', label: 'Strategic portfolio deck — conf hub' },
   { to: '/ar/conf', label: 'Strategic portfolio — Arabic conf hub' },
@@ -18,6 +18,16 @@ export const INTERNAL_LINK_PRIORITY_TARGETS: ReadonlyArray<{ to: string; label: 
   { to: '/market-research-uae', label: 'Market research UAE — pharmaceutical & healthcare' },
   { to: '/pharmaceutical-therapy-areas', label: 'Pharmaceutical therapy areas directory' },
   { to: '/gcc-pharma-market-report-2026', label: 'GCC pharmaceutical market report 2026' },
+  { to: '/nf1-pharma-market-research', label: 'NF1 pharma market research — Koselugo / selumetinib context' },
+  { to: '/desmoid-tumor-pharma-market-research', label: 'Desmoid tumors pharma research — systemic therapy context' },
+  {
+    to: '/blog/nf1-koselugo-selumetinib-pharma-market-research',
+    label: 'Blog — NF1, Koselugo (selumetinib), pharma research & MAP',
+  },
+  {
+    to: '/blog/desmoid-tumors-nirogacestat-pharma-market-access',
+    label: 'Blog — Desmoid tumors, nirogacestat (Ogsiveo), access & tenders',
+  },
   { to: '/gfk-alternative-egypt', label: 'GfK alternative market research Egypt' },
   { to: '/budget-impact-model-saudi-arabia', label: 'Budget impact modeling Saudi Arabia' },
   { to: '/kantar-health-alternative-gcc', label: 'Kantar Health alternative — GCC pharma research' },

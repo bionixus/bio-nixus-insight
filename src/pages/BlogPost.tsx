@@ -16,8 +16,8 @@ import {
 import RelatedPosts from '@/components/RelatedPosts';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import BlogSiteExplorer from '@/components/BlogSiteExplorer';
 import { getOgLocale, getOgLocaleAlternates } from '@/lib/seo';
-import { blogRecoveryPaths } from '@/lib/internalLinkRecovery';
 import { resolveSanityBlogSlug, BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH } from '../../blog-legacy-redirects.mjs';
 import { isSanityConfigured } from '@/lib/sanity';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -51,6 +51,7 @@ import {
   GCC_PHARMACOECONOMICS_TABLE_OF_CONTENTS,
   GCC_PHARMACOECONOMICS_TAGS,
 } from '@/data/blog-gcc-pharmacoeconomics';
+import { getTherapyStaticBlogBundle } from '@/data/therapy-static-blog-registry';
 
 /** Helper to convert PortableText block to a URL-friendly slug */
 function slugifyHeading(value: any): string {
@@ -61,63 +62,6 @@ function slugifyHeading(value: any): string {
     .trim()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/(^-|-$)/g, '');
-}
-
-function formatInsightTopicFromPath(path: string): string {
-  const acronymMap: Record<string, string> = {
-    ai: 'AI',
-    cms: 'CMS',
-    doh: 'DOH',
-    dha: 'DHA',
-    emea: 'EMEA',
-    fda: 'FDA',
-    gcc: 'GCC',
-    gdpr: 'GDPR',
-    gcp: 'GCP',
-    hcv: 'HCV',
-    hipaa: 'HIPAA',
-    hta: 'HTA',
-    ich: 'ICH',
-    kcc: 'KCC',
-    kfda: 'KFDA',
-    kims: 'KIMS',
-    kol: 'KOL',
-    ksa: 'KSA',
-    mena: 'MENA',
-    moh: 'MOH',
-    mohap: 'MOHAP',
-    nice: 'NICE',
-    nupco: 'NUPCO',
-    sfda: 'SFDA',
-    uae: 'UAE',
-    uk: 'UK',
-    us: 'US',
-  };
-
-  const slug = path.startsWith('/ar/blog/')
-    ? path.slice('/ar/blog/'.length)
-    : path.startsWith('/blog/')
-      ? path.slice('/blog/'.length)
-      : path;
-  const decoded = decodeURIComponent(slug);
-  const words = decoded
-    .replace(/[-_]+/g, ' ')
-    .trim()
-    .split(/\s+/)
-    .filter(Boolean);
-
-  if (words.length === 0) return path;
-
-  return words
-    .map((word) => {
-      // Keep non-latin words untouched (for Arabic and others)
-      if (!/[a-zA-Z]/.test(word)) return word;
-      const lower = word.toLowerCase();
-      if (acronymMap[lower]) return acronymMap[lower];
-      if (/^[A-Z0-9]+$/.test(word)) return word;
-      return word.charAt(0).toUpperCase() + word.slice(1);
-    })
-    .join(' ');
 }
 
 /** Detect if string looks like HTML (contains tags). */
@@ -673,6 +617,9 @@ function getBodyToRender(
   const isEnglishGccPharmacoeconomicsForced = slug === GCC_PHARMACOECONOMICS_SLUG && !options.isArBlog;
   if (isEnglishGccPharmacoeconomicsForced) return GCC_PHARMACOECONOMICS_BODY_HTML;
 
+  const therapyStaticBundleForced = slug ? getTherapyStaticBlogBundle(slug) : undefined;
+  if (therapyStaticBundleForced && !options.isArBlog) return therapyStaticBundleForced.bodyHtml;
+
   const hasBody =
     post.body != null &&
     post.body !== '' &&
@@ -691,6 +638,12 @@ function getExecutiveSummaryToRender(
   if (isEnglishPharmacoeconomicsForced) return PHARMACOECONOMICS_GCC_EXECUTIVE_SUMMARY_HTML;
   const isEnglishGccPharmacoeconomicsForced = slug === GCC_PHARMACOECONOMICS_SLUG && !options.isArBlog;
   if (isEnglishGccPharmacoeconomicsForced) return GCC_PHARMACOECONOMICS_EXECUTIVE_SUMMARY_HTML;
+
+  const therapyStaticBundleExecutive = slug ? getTherapyStaticBlogBundle(slug) : undefined;
+  if (therapyStaticBundleExecutive && !options.isArBlog && therapyStaticBundleExecutive.executiveSummaryHtml) {
+    return therapyStaticBundleExecutive.executiveSummaryHtml;
+  }
+
   if (slug === AI_VS_HUMAN_2026_SLUG) return AI_VS_HUMAN_EXEC_SUMMARY_TEXT;
   const summary = post.executiveSummary;
   if (Array.isArray(summary)) return summary.length > 0 ? summary : null;
@@ -699,6 +652,34 @@ function getExecutiveSummaryToRender(
 }
 
 const blogEnToArDuplicates = BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH as Record<string, string>;
+
+const BLOG_PUBLIC_ORIGIN = 'https://www.bionixus.com';
+
+function blogEnArAlternateUrls(pathClean: string): { enUrl: string; arUrl: string } | null {
+  const arPath = blogEnToArDuplicates[pathClean];
+  if (arPath) {
+    return { enUrl: `${BLOG_PUBLIC_ORIGIN}${pathClean}`, arUrl: `${BLOG_PUBLIC_ORIGIN}${arPath}` };
+  }
+  for (const [en, ar] of Object.entries(blogEnToArDuplicates)) {
+    if (ar === pathClean) {
+      return { enUrl: `${BLOG_PUBLIC_ORIGIN}${en}`, arUrl: `${BLOG_PUBLIC_ORIGIN}${pathClean}` };
+    }
+  }
+  return null;
+}
+
+/** Normalize to ISO-8601 for Open Graph article:* timestamps (omit if invalid). */
+function blogOgArticleIsoTimestamps(post: BlogPostType): { published?: string; modified?: string } {
+  const coerce = (s: string | undefined): string | undefined => {
+    if (!s?.trim()) return undefined;
+    const raw = s.trim();
+    const d = raw.includes('T') ? new Date(raw) : /^\d{4}-\d{2}-\d{2}$/.test(raw) ? new Date(`${raw}T12:00:00Z`) : new Date(raw);
+    return Number.isNaN(d.getTime()) ? undefined : d.toISOString();
+  };
+  const published = coerce(post.publishedAtIso) ?? coerce(post.date);
+  const modified = coerce(post.updatedAtIso) ?? published;
+  return { published, modified };
+}
 
 function normalizeBioNixusAbsoluteUrl(raw: string, fallbackAbsolute: string): string {
   const fb = fallbackAbsolute.trim();
@@ -749,6 +730,8 @@ const BlogPost = () => {
   const isGccComparisonEn = slug === GCC_PHARMA_COMPARISON_SLUG && !isArBlog;
   const isPharmacoeconomicsGccEn = slug === PHARMACOECONOMICS_GCC_SLUG && !isArBlog;
   const isGccPharmacoeconomicsEn = slug === GCC_PHARMACOECONOMICS_SLUG && !isArBlog;
+  const therapyStaticBlogBundle = getTherapyStaticBlogBundle(slug);
+  const isTherapyStaticBlogEn = Boolean(therapyStaticBlogBundle) && !isArBlog;
   const isGccMeastPharmaHealthArticleAr = slug === GCC_MEAST_PHARMA_HEALTH_AR_SLUG;
   const isSaudiPharmaMarket2026ArArticle = slug === SAUDI_PHARMA_MARKET_2026_AR_SLUG;
   const { t, language } = useLanguage();
@@ -872,9 +855,17 @@ const BlogPost = () => {
   }
 
   const pathClean = (pathname.split('?')[0] || '/blog').replace(/\/+$/, '') || '/blog';
+  const isEgyptHealthcare2026 = slug === EGYPT_HEALTHCARE_2026_SLUG;
+  const isUaeHealthcareTrends2025En = slug === UAE_HEALTHCARE_TRENDS_2025_SLUG && !isArBlog;
   const comparisonPageUrl = `https://www.bionixus.com/blog/${GCC_PHARMA_COMPARISON_SLUG}`;
   const pageUrl = blogCanonicalAbsoluteUrl(pathname, post.seoCanonicalUrl, isGccComparisonEn, comparisonPageUrl);
-  const articleDisplayTitle = isGccComparisonEn ? GCC_PHARMA_COMPARISON_DISPLAY_TITLE : isGccPharmacoeconomicsEn ? GCC_PHARMACOECONOMICS_DISPLAY_TITLE : post.title;
+  const articleDisplayTitle = isGccComparisonEn
+    ? GCC_PHARMA_COMPARISON_DISPLAY_TITLE
+    : isGccPharmacoeconomicsEn
+      ? GCC_PHARMACOECONOMICS_DISPLAY_TITLE
+      : isTherapyStaticBlogEn
+        ? therapyStaticBlogBundle!.displayTitle
+        : post.title;
   const bodySourceForMeta = typeof post.body === 'string' ? post.body : post.excerpt || post.title;
   let titleCore = dedupePipeBioNixusTail(post.seoMetaTitle || post.title || 'BioNixus');
   if (isEgyptHealthcare2026) {
@@ -887,6 +878,8 @@ const BlogPost = () => {
     titleCore = PHARMACOECONOMICS_GCC_META_TITLE;
   } else if (isGccPharmacoeconomicsEn) {
     titleCore = GCC_PHARMACOECONOMICS_META_TITLE;
+  } else if (isTherapyStaticBlogEn) {
+    titleCore = therapyStaticBlogBundle!.metaTitle;
   } else if (isSaudiPharmaMarket2026ArArticle) {
     titleCore = isArBlog ? SAUDI_PHARMA_MARKET_2026_AR_BLOG_AR_TITLE : SAUDI_PHARMA_MARKET_2026_AR_BLOG_EN_TITLE;
   } else if (isGccMeastPharmaHealthArticleAr) {
@@ -916,8 +909,6 @@ const BlogPost = () => {
     : isGccMeastPharmaHealthArticleAr
       ? GCC_MEAST_PHARMA_HEALTH_AR_META_DESCRIPTION
       : null;
-  const isEgyptHealthcare2026 = slug === EGYPT_HEALTHCARE_2026_SLUG;
-  const isUaeHealthcareTrends2025En = slug === UAE_HEALTHCARE_TRENDS_2025_SLUG && !isArBlog;
   const finalMetaDescription = isEgyptHealthcare2026
     ? EGYPT_HEALTHCARE_2026_META_DESCRIPTION
     : isUaeHealthcareTrends2025En
@@ -930,9 +921,11 @@ const BlogPost = () => {
           ? PHARMACOECONOMICS_GCC_META_DESCRIPTION
           : isGccPharmacoeconomicsEn
             ? GCC_PHARMACOECONOMICS_META_DESCRIPTION
-            : slug === CHINA_HEALTHCARE_2026_SLUG
-            ? CHINA_HEALTHCARE_2026_META_DESCRIPTION
-            : arabicBlogOnEnPathMetaDescription ?? arBlogMetaOverride ?? metaDescription;
+            : isTherapyStaticBlogEn
+              ? therapyStaticBlogBundle!.metaDescription
+              : slug === CHINA_HEALTHCARE_2026_SLUG
+              ? CHINA_HEALTHCARE_2026_META_DESCRIPTION
+              : arabicBlogOnEnPathMetaDescription ?? arBlogMetaOverride ?? metaDescription;
   const socialTitle = isEgyptHealthcare2026
     ? EGYPT_HEALTHCARE_2026_OG_TITLE
     : isQuantMrMaEn
@@ -943,7 +936,9 @@ const BlogPost = () => {
           ? PHARMACOECONOMICS_GCC_META_TITLE
           : isGccPharmacoeconomicsEn
             ? GCC_PHARMACOECONOMICS_META_TITLE
-            : dedupePipeBioNixusTail(post.ogTitle || documentTitle);
+            : isTherapyStaticBlogEn
+              ? therapyStaticBlogBundle!.metaTitle
+              : dedupePipeBioNixusTail(post.ogTitle || documentTitle);
   const socialDescription = isEgyptHealthcare2026
     ? EGYPT_HEALTHCARE_2026_OG_DESCRIPTION
     : isUaeHealthcareTrends2025En
@@ -956,7 +951,9 @@ const BlogPost = () => {
           ? PHARMACOECONOMICS_GCC_OG_DESCRIPTION
           : isGccPharmacoeconomicsEn
             ? GCC_PHARMACOECONOMICS_OG_DESCRIPTION
-            : isSaudiPharmaMarket2026ArArticle
+            : isTherapyStaticBlogEn
+              ? therapyStaticBlogBundle!.ogDescription
+              : isSaudiPharmaMarket2026ArArticle
               ? SAUDI_PHARMA_MARKET_2026_AR_META_DESCRIPTION
               : isGccMeastPharmaHealthArticleAr
                 ? GCC_MEAST_PHARMA_HEALTH_AR_META_DESCRIPTION
@@ -964,14 +961,23 @@ const BlogPost = () => {
   const socialImage =
     post.ogImage ||
     post.coverImage ||
+    (isTherapyStaticBlogEn ? therapyStaticBlogBundle!.coverImage : undefined) ||
     (isGccPharmacoeconomicsEn ? GCC_PHARMACOECONOMICS_COVER_IMAGE : undefined);
+
+  const resolvedOgImageUrl = socialImage || 'https://www.bionixus.com/og-image.png';
+  const ogTimes = blogOgArticleIsoTimestamps(post);
+  const blogHreflangAlternates = blogEnArAlternateUrls(pathClean);
 
   const mergedBlogFaqItems = [
     ...(isQuantMrMaEn ? QUANT_MR_MA_SCHEMA_FAQ : []),
     ...(isGccComparisonEn ? GCC_PHARMA_COMPARISON_SCHEMA_FAQ : []),
     ...(isPharmacoeconomicsGccEn ? PHARMACOECONOMICS_GCC_SCHEMA_FAQ : []),
     ...(isGccPharmacoeconomicsEn ? GCC_PHARMACOECONOMICS_SCHEMA_FAQ : []),
-    ...(Array.isArray(post.faq) && !isPharmacoeconomicsGccEn && !isGccPharmacoeconomicsEn
+    ...(isTherapyStaticBlogEn ? therapyStaticBlogBundle!.schemaFaq : []),
+    ...(Array.isArray(post.faq) &&
+    !isPharmacoeconomicsGccEn &&
+    !isGccPharmacoeconomicsEn &&
+    !isTherapyStaticBlogEn
       ? post.faq
         .filter((item) => Boolean(item.question && item.answer))
         .map((item) => ({ question: item.question!, answer: item.answer! }))
@@ -984,26 +990,46 @@ const BlogPost = () => {
       ? PHARMACOECONOMICS_GCC_TABLE_OF_CONTENTS
       : isGccPharmacoeconomicsEn
         ? GCC_PHARMACOECONOMICS_TABLE_OF_CONTENTS
-        : Array.isArray(post.tableOfContents) && post.tableOfContents.length > 0
-          ? post.tableOfContents
-          : null;
+        : isTherapyStaticBlogEn
+          ? therapyStaticBlogBundle!.tableOfContents
+          : Array.isArray(post.tableOfContents) && post.tableOfContents.length > 0
+            ? post.tableOfContents
+            : null;
 
   const heroCoverImage =
-    post.coverImage || (isGccPharmacoeconomicsEn ? GCC_PHARMACOECONOMICS_COVER_IMAGE : undefined);
+    post.coverImage ||
+    (isTherapyStaticBlogEn ? therapyStaticBlogBundle!.coverImage : undefined) ||
+    (isGccPharmacoeconomicsEn ? GCC_PHARMACOECONOMICS_COVER_IMAGE : undefined);
 
   const displayBlogTags =
-    isGccPharmacoeconomicsEn ? [...GCC_PHARMACOECONOMICS_TAGS] : Array.isArray(post.tags) ? post.tags : [];
+    isTherapyStaticBlogEn
+      ? [...therapyStaticBlogBundle!.tags]
+      : isGccPharmacoeconomicsEn
+        ? [...GCC_PHARMACOECONOMICS_TAGS]
+        : Array.isArray(post.tags)
+          ? post.tags
+          : [];
 
   return (
     <div className="min-h-screen bg-background">
       <OpenGraphMeta
         title={socialTitle}
         description={socialDescription}
-        image={socialImage || 'https://www.bionixus.com/og-image.png'}
+        image={resolvedOgImageUrl}
         url={pageUrl}
         type="article"
         locale={getOgLocale(language)}
         alternateLocales={getOgLocaleAlternates(language)}
+        siteName="BioNixus"
+        imageAlt={articleDisplayTitle}
+        twitterSite="@BioNixus"
+        article={{
+          publishedTime: ogTimes.published,
+          modifiedTime: ogTimes.modified,
+          author: post.authorName || 'BioNixus Research Team',
+          section: post.category || undefined,
+          tags: displayBlogTags.length > 0 ? displayBlogTags : post.tags,
+        }}
       />
       <SchemaMarkup
         pageType="blog"
@@ -1020,12 +1046,14 @@ const BlogPost = () => {
                   ? PHARMACOECONOMICS_GCC_META_TITLE
                   : isGccPharmacoeconomicsEn
                     ? GCC_PHARMACOECONOMICS_DISPLAY_TITLE
-                    : isSaudiPharmaMarket2026ArArticle || isGccMeastPharmaHealthArticleAr
+                    : isTherapyStaticBlogEn
+                      ? therapyStaticBlogBundle!.displayTitle
+                      : isSaudiPharmaMarket2026ArArticle || isGccMeastPharmaHealthArticleAr
                       ? documentTitle
                       : post.title
         }
         description={finalMetaDescription}
-        imageUrl={socialImage}
+        imageUrl={resolvedOgImageUrl}
         authorName={post.authorName || 'BioNixus Research Team'}
         authorUrl={post.authorLinkedIn || 'https://www.linkedin.com/in/mohammad-alsaadany'}
         authorJobTitle={post.authorTitle || undefined}
@@ -1054,41 +1082,32 @@ const BlogPost = () => {
             { name: 'M3 Global Research', description: 'Large verified physician panel for HCP recruitment and online quantitative fieldwork.' },
             { name: 'SixthFactor Consulting', description: 'Regional GCC custom research consultancy; validate healthcare-specific experience separately.' },
           ],
-        } : isGccPharmacoeconomicsEn ? GCC_PHARMACOECONOMICS_SCHEMA_ITEM_LIST : undefined}
+        }
+          : isGccPharmacoeconomicsEn
+            ? GCC_PHARMACOECONOMICS_SCHEMA_ITEM_LIST
+            : isTherapyStaticBlogEn && therapyStaticBlogBundle?.itemListSchema
+              ? therapyStaticBlogBundle.itemListSchema
+              : undefined}
       />
       <Helmet>
-        {/* Dynamic meta tags for this specific blog post */}
         <title>{documentTitle}</title>
         <meta name="description" content={finalMetaDescription} />
-        <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
-
-        {/* Open Graph / Facebook */}
-        <meta property="og:type" content="article" />
-        <meta property="og:site_name" content="BioNixus" />
-        <meta property="og:title" content={socialTitle} />
-        <meta property="og:description" content={socialDescription} />
-        <meta property="og:url" content={pageUrl} />
-        {socialImage && <meta property="og:image" content={socialImage} />}
-        {socialImage && <meta property="og:image:width" content="1200" />}
-        {socialImage && <meta property="og:image:height" content="630" />}
-        {socialImage && <meta property="og:image:alt" content={articleDisplayTitle} />}
-        {post.date && <meta property="article:published_time" content={post.date} />}
-        {post.category && <meta property="article:section" content={post.category} />}
-        {post.authorName && <meta property="article:author" content={post.authorName} />}
-        {displayBlogTags.length > 0 && displayBlogTags.map((tag) => (
-          <meta key={tag} property="article:tag" content={tag} />
-        ))}
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@BioNixus" />
-        <meta name="twitter:title" content={socialTitle} />
-        <meta name="twitter:description" content={socialDescription} />
-        {socialImage && <meta name="twitter:image" content={socialImage} />}
-
-        {/* Canonical URL */}
+        <meta
+          name="robots"
+          content={
+            post.seoNoIndex
+              ? 'noindex,nofollow'
+              : 'index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1'
+          }
+        />
         <link rel="canonical" href={pageUrl} />
-
+        {blogHreflangAlternates ? (
+          <>
+            <link rel="alternate" hrefLang="en" href={blogHreflangAlternates.enUrl} />
+            <link rel="alternate" hrefLang="ar" href={blogHreflangAlternates.arUrl} />
+            <link rel="alternate" hrefLang="x-default" href={blogHreflangAlternates.enUrl} />
+          </>
+        ) : null}
       </Helmet>
 
       {/* Reading progress */}
@@ -1233,7 +1252,7 @@ const BlogPost = () => {
           <div className="grid lg:grid-cols-[minmax(0,1fr)_272px] gap-10 lg:gap-14 pt-8 pb-20 items-start">
 
             {/* ── ARTICLE MAIN ───────────────────────────────────────────── */}
-            <article>
+            <article className="rounded-3xl border border-border/70 bg-card/35 shadow-[0_32px_90px_-40px_rgb(15_23_42/0.22)] ring-1 ring-border/60 backdrop-blur-sm px-4 py-8 sm:px-7 sm:py-10 md:px-10 md:py-11">
 
               {/* Tags + Share toolbar */}
               <div className="flex items-center justify-between flex-wrap gap-3 pb-5 mb-7 border-b border-border">
@@ -1515,17 +1534,8 @@ const BlogPost = () => {
                 </div>
               </section>
 
-              {/* More insights links */}
-              <section className="mt-6 rounded-2xl border border-border bg-card p-5 lg:p-6">
-                <h2 className="font-display text-base font-bold text-foreground mb-4">More healthcare insight pages</h2>
-                <div className="grid sm:grid-cols-2 gap-x-6 gap-y-2">
-                  {blogRecoveryPaths.slice(0, 12).map((path) => (
-                    <Link key={path} to={path} className="text-primary hover:text-accent-foreground hover:underline text-sm transition-colors truncate">
-                      {formatInsightTopicFromPath(path)}
-                    </Link>
-                  ))}
-                </div>
-              </section>
+              {/* Explore site */}
+              <BlogSiteExplorer />
 
               {/* FAQ — uses <details>/<summary> so answers are always in server-rendered HTML */}
               {mergedBlogFaqItems.length > 0 && (
