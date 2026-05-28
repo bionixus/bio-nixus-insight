@@ -19,7 +19,7 @@ Tracks delivery against [`CURSOR_PROMPT_HEALTHCARE_REPORTS.md`](./CURSOR_PROMPT_
 
 ### Core deliverables (prompt “What you are building”)
 
-- [x] **Data layer** — `src/data/healthcareReportTypes.ts`, `src/data/healthcareReportData.ts` (60 reports)
+- [x] **Data layer** — `src/data/healthcareReportTypes.ts`, `src/data/healthcareReportData.ts` (**89** reports)
 - [x] **Shared content** — `src/data/healthcareReportContent.ts` (11 therapy + 9 market blocks)
 - [x] **Report template** — `src/pages/HealthcareReportPage.tsx` (8 sections + schema)
 - [x] **Hub** — `src/pages/HealthcareReportsHub.tsx` → `/market-reports`
@@ -29,7 +29,7 @@ Tracks delivery against [`CURSOR_PROMPT_HEALTHCARE_REPORTS.md`](./CURSOR_PROMPT_
 ### Part 1 — Data (`healthcareReportData.ts`)
 
 - [x] `ReportEntry` / `ReportFAQ` types in `healthcareReportTypes.ts`
-- [x] Minimum **60** report rows (`SPECS` + `attachRelated`)
+- [x] **89** report rows (`SPECS` + `attachRelated`) including GCC/MENA specialty therapy × country matrix
 - [x] All slug tables from prompt (oncology, diabetes, CV, immunology, respiratory, rare, neurology, specialty × markets)
 - [x] Six extra reports beyond tables (still meets 60+ minimum)
 - [x] **6 FAQs** per report (`src/data/healthcareReportFaqs.ts` — `buildHealthcareFaqs`)

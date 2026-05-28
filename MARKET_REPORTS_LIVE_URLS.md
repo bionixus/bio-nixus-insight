@@ -1,7 +1,7 @@
 # Market reports — live URL inventory
 
 **Production hub:** https://www.bionixus.com/market-reports  
-**Sitemap:** 81 `/market-reports` URLs in `public/sitemap.xml` (1 hub + 11 therapy + 9 country + 60 reports)
+**Sitemap:** 110 `/market-reports` URLs in `public/sitemap.xml` (1 hub + 11 therapy + 9 country + **89** reports)
 
 ## Deploy status (checked 2026-05-28)
 
@@ -45,9 +45,22 @@ Production matches **pushed** `main`, not your current working tree if you have 
 
 ---
 
-## Report detail pages (60)
+## Report detail pages (89)
 
 Slug source: `src/data/healthcareReportData.ts` (`row(...)` entries).
+
+### May 2026 expansion (29 new country × therapy reports)
+
+| Therapy | New markets |
+|---------|-------------|
+| Rare diseases | Egypt |
+| Neurology & CNS | Kuwait, Qatar, Oman, Bahrain |
+| Biosimilars | UAE, Kuwait, Qatar, Oman, Bahrain |
+| Digital health | UAE, Kuwait, Qatar, Oman, Bahrain, Egypt |
+| Vaccines | Saudi Arabia, Egypt, Kuwait, Qatar, Oman, Bahrain |
+| Dermatology | UAE, Saudi Arabia, Egypt, Kuwait, Qatar, Oman, Bahrain |
+
+Regenerate full URL list: `npm run verify:market-reports` and the node one-liner in the footer of this file.
 
 ### Oncology (9)
 
