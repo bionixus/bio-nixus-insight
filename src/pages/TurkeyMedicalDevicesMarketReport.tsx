@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -68,6 +70,14 @@ const jsonLd = [
     url: `https://www.bionixus.com/turkey-medical-devices-market-report#${FAQ_SECTION_ID}`,
     mainEntity: REPORT_FAQ_ITEMS.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "Turkey Medical Devices Market Report 2026 | TİTCK CE Marking, SGK SUT & Medical Tourism | BioNixus",
+    pageMetaDescription: "Turkey medical devices market at USD 3.5B in 2026. TİTCK CE marking registration, ÜTS tracking, SGK SUT reimbursement, medical tourism device demand (hair transplants, aesthetics, robotics), and BioNixus GCC intelligence.",
+    countryName: "Turkey",
+    marketSlug: "turkey",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })
 ];
 
 const TurkeyMedicalDevicesMarketReport = () => (
@@ -77,7 +87,14 @@ const TurkeyMedicalDevicesMarketReport = () => (
       title="Turkey Medical Devices Market Report 2026 | TİTCK CE Marking, SGK SUT & Medical Tourism | BioNixus"
       description="Turkey medical devices market at USD 3.5B in 2026. TİTCK CE marking registration, ÜTS tracking, SGK SUT reimbursement, medical tourism device demand (hair transplants, aesthetics, robotics), and BioNixus GCC intelligence."
       canonical="https://www.bionixus.com/turkey-medical-devices-market-report"
-      jsonLd={jsonLd}
+      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "Turkey Medical Devices Market Report 2026 | TİTCK CE Marking, SGK SUT & Medical Tourism | BioNixus",
+    pageMetaDescription: "Turkey medical devices market at USD 3.5B in 2026. TİTCK CE marking registration, ÜTS tracking, SGK SUT reimbursement, medical tourism device demand (hair transplants, aesthetics, robotics), and BioNixus GCC intelligence.",
+    countryName: "Turkey",
+    marketSlug: "turkey",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })]}
     />
       <ReportReadingProgress progressId="report-rp-turkey-medical-devices-market-report" />
       <main>

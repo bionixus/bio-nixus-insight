@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -68,6 +70,14 @@ const jsonLd = [
     url: `https://www.bionixus.com/china-medical-devices-market-report#${FAQ_SECTION_ID}`,
     mainEntity: REPORT_FAQ_ITEMS.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "China Medical Devices Market Report 2026 | NMPA, VBP Procurement & Import Substitution | BioNixus",
+    pageMetaDescription: "China medical devices market at USD 80B in 2026 — world's second largest. NMPA Class I–III registration, VBP device procurement (coronary stents, joint implants), import substitution policy, and BioNixus GCC intelligence.",
+    countryName: "China",
+    marketSlug: "china",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })
 ];
 
 const ChinaMedicalDevicesMarketReport = () => (
@@ -77,7 +87,14 @@ const ChinaMedicalDevicesMarketReport = () => (
       title="China Medical Devices Market Report 2026 | NMPA, VBP Procurement & Import Substitution | BioNixus"
       description="China medical devices market at USD 80B in 2026 — world's second largest. NMPA Class I–III registration, VBP device procurement (coronary stents, joint implants), import substitution policy, and BioNixus GCC intelligence."
       canonical="https://www.bionixus.com/china-medical-devices-market-report"
-      jsonLd={jsonLd}
+      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "China Medical Devices Market Report 2026 | NMPA, VBP Procurement & Import Substitution | BioNixus",
+    pageMetaDescription: "China medical devices market at USD 80B in 2026 — world's second largest. NMPA Class I–III registration, VBP device procurement (coronary stents, joint implants), import substitution policy, and BioNixus GCC intelligence.",
+    countryName: "China",
+    marketSlug: "china",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })]}
     />
       <ReportReadingProgress progressId="report-rp-china-medical-devices-market-report" />
       <main>

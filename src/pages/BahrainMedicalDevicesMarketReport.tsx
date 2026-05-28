@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -82,6 +84,14 @@ const jsonLd = [
       acceptedAnswer: { '@type': 'Answer', text: item.answer },
     })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "Bahrain Medical Devices Market Report 2026 | NHRA Registration & GCC Entry Strategy | BioNixus",
+    pageMetaDescription: "Bahrain medical devices market at USD 130–160M in 2026. NHRA mutual recognition strategy, Salmaniya Medical Complex, private hospital channel, and BioNixus GCC sequential entry intelligence.",
+    countryName: "Bahrain",
+    marketSlug: "bahrain",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })
 ];
 
 const BahrainMedicalDevicesMarketReport = () => {
@@ -92,7 +102,14 @@ const BahrainMedicalDevicesMarketReport = () => {
         title="Bahrain Medical Devices Market Report 2026 | NHRA Registration & GCC Entry Strategy | BioNixus"
         description="Bahrain medical devices market at USD 130–160M in 2026. NHRA mutual recognition strategy, Salmaniya Medical Complex, private hospital channel, and BioNixus GCC sequential entry intelligence."
         canonical="https://www.bionixus.com/bahrain-medical-devices-market-report"
-        jsonLd={jsonLd}
+        jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "Bahrain Medical Devices Market Report 2026 | NHRA Registration & GCC Entry Strategy | BioNixus",
+    pageMetaDescription: "Bahrain medical devices market at USD 130–160M in 2026. NHRA mutual recognition strategy, Salmaniya Medical Complex, private hospital channel, and BioNixus GCC sequential entry intelligence.",
+    countryName: "Bahrain",
+    marketSlug: "bahrain",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })]}
       />
       <ReportReadingProgress progressId="report-rp-bahrain-medical-devices-market-report" />
       <main>
@@ -148,6 +165,8 @@ const BahrainMedicalDevicesMarketReport = () => {
           </div>
         </section>
 
+
+        <MarketIntelligenceSections marketSlug="bahrain" countryName="Bahrain" variant="medical-devices" />
         <section className="section-padding" id="market-structure">
           <div className="container-wide max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">

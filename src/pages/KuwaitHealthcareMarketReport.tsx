@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -82,6 +84,14 @@ const jsonLd = [
       acceptedAnswer: { '@type': 'Answer', text: item.answer },
     })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "Kuwait Healthcare Market Report 2026 | Pharma, Medical Devices & Market Access | BioNixus",
+    pageMetaDescription: "Kuwait healthcare market at USD 7.5–8.5B in 2026. Pharmaceutical market (USD 1B), CMS procurement intelligence, MOPH registration, therapy area analysis, and primary HCP research from BioNixus.",
+    countryName: "Kuwait",
+    marketSlug: "kuwait",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })
 ];
 
 const KuwaitHealthcareMarketReport = () => {
@@ -92,7 +102,14 @@ const KuwaitHealthcareMarketReport = () => {
         title="Kuwait Healthcare Market Report 2026 | Pharma, Medical Devices & Market Access | BioNixus"
         description="Kuwait healthcare market at USD 7.5–8.5B in 2026. Pharmaceutical market (USD 1B), CMS procurement intelligence, MOPH registration, therapy area analysis, and primary HCP research from BioNixus."
         canonical="https://www.bionixus.com/kuwait-healthcare-market-report"
-        jsonLd={jsonLd}
+        jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "Kuwait Healthcare Market Report 2026 | Pharma, Medical Devices & Market Access | BioNixus",
+    pageMetaDescription: "Kuwait healthcare market at USD 7.5–8.5B in 2026. Pharmaceutical market (USD 1B), CMS procurement intelligence, MOPH registration, therapy area analysis, and primary HCP research from BioNixus.",
+    countryName: "Kuwait",
+    marketSlug: "kuwait",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })]}
       />
       <ReportReadingProgress progressId="report-rp-kuwait-healthcare-market-report" />
       <main>
@@ -154,6 +171,8 @@ const KuwaitHealthcareMarketReport = () => {
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
           </div>
         </section>
+
+        <MarketIntelligenceSections marketSlug="kuwait" countryName="Kuwait" variant="healthcare" />
 
         <section className="section-padding" id="therapy-areas">
           <div className="container-wide max-w-4xl mx-auto">

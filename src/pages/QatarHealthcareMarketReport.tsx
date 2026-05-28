@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -82,6 +84,14 @@ const jsonLd = [
       acceptedAnswer: { '@type': 'Answer', text: item.answer },
     })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "Qatar Healthcare Market Report 2026 | Pharma, HTA & Market Access Intelligence | BioNixus",
+    pageMetaDescription: "Qatar healthcare market at USD 8.5–10B in 2026. Pharmaceutical market (USD 1B), HMC formulary access, Qatar HTA framework, therapy area analysis, and primary HCP research from BioNixus.",
+    countryName: "Qatar",
+    marketSlug: "qatar",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })
 ];
 
 const QatarHealthcareMarketReport = () => {
@@ -92,7 +102,14 @@ const QatarHealthcareMarketReport = () => {
         title="Qatar Healthcare Market Report 2026 | Pharma, HTA & Market Access Intelligence | BioNixus"
         description="Qatar healthcare market at USD 8.5–10B in 2026. Pharmaceutical market (USD 1B), HMC formulary access, Qatar HTA framework, therapy area analysis, and primary HCP research from BioNixus."
         canonical="https://www.bionixus.com/qatar-healthcare-market-report"
-        jsonLd={jsonLd}
+        jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "Qatar Healthcare Market Report 2026 | Pharma, HTA & Market Access Intelligence | BioNixus",
+    pageMetaDescription: "Qatar healthcare market at USD 8.5–10B in 2026. Pharmaceutical market (USD 1B), HMC formulary access, Qatar HTA framework, therapy area analysis, and primary HCP research from BioNixus.",
+    countryName: "Qatar",
+    marketSlug: "qatar",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })]}
       />
       <ReportReadingProgress progressId="report-rp-qatar-healthcare-market-report" />
       <main>
@@ -148,6 +165,8 @@ const QatarHealthcareMarketReport = () => {
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
           </div>
         </section>
+
+        <MarketIntelligenceSections marketSlug="qatar" countryName="Qatar" variant="healthcare" />
 
         <section className="section-padding" id="therapy-areas">
           <div className="container-wide max-w-4xl mx-auto">

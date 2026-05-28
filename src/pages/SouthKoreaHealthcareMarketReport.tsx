@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -68,6 +70,14 @@ const jsonLd = [
     url: `https://www.bionixus.com/south-korea-healthcare-market-report#${FAQ_SECTION_ID}`,
     mainEntity: REPORT_FAQ_ITEMS.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "South Korea Healthcare Market Report 2026 | HIRA, NHIS Reimbursement & Biosimilar Hub | BioNixus",
+    pageMetaDescription: "South Korea healthcare market at USD 115B in 2026. MFDS drug approval, HIRA clinical assessment, NHIS price negotiation, Samsung Biologics/Celltrion biosimilar manufacturing, and BioNixus GCC expansion intelligence.",
+    countryName: "South Korea",
+    marketSlug: "south-korea",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })
 ];
 
 const SouthKoreaHealthcareMarketReport = () => (
@@ -77,7 +87,14 @@ const SouthKoreaHealthcareMarketReport = () => (
       title="South Korea Healthcare Market Report 2026 | HIRA, NHIS Reimbursement & Biosimilar Hub | BioNixus"
       description="South Korea healthcare market at USD 115B in 2026. MFDS drug approval, HIRA clinical assessment, NHIS price negotiation, Samsung Biologics/Celltrion biosimilar manufacturing, and BioNixus GCC expansion intelligence."
       canonical="https://www.bionixus.com/south-korea-healthcare-market-report"
-      jsonLd={jsonLd}
+      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "South Korea Healthcare Market Report 2026 | HIRA, NHIS Reimbursement & Biosimilar Hub | BioNixus",
+    pageMetaDescription: "South Korea healthcare market at USD 115B in 2026. MFDS drug approval, HIRA clinical assessment, NHIS price negotiation, Samsung Biologics/Celltrion biosimilar manufacturing, and BioNixus GCC expansion intelligence.",
+    countryName: "South Korea",
+    marketSlug: "south-korea",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })]}
     />
       <ReportReadingProgress progressId="report-rp-south-korea-healthcare-market-report" />
       <main>

@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -68,6 +70,14 @@ const jsonLd = [
     url: `https://www.bionixus.com/brazil-medical-devices-market-report#${FAQ_SECTION_ID}`,
     mainEntity: REPORT_FAQ_ITEMS.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "Brazil Medical Devices Market Report 2026 | ANVISA Registration, SUS Procurement & Commercial Intelligence | BioNixus",
+    pageMetaDescription: "Brazil medical devices market at USD 12B in 2026 — largest in Latin America. ANVISA Class I–IV registration, SUS public procurement, ANS private sector, import tax dynamics, and BioNixus GCC expansion intelligence.",
+    countryName: "Brazil",
+    marketSlug: "brazil",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })
 ];
 
 const BrazilMedicalDevicesMarketReport = () => (
@@ -77,7 +87,14 @@ const BrazilMedicalDevicesMarketReport = () => (
       title="Brazil Medical Devices Market Report 2026 | ANVISA Registration, SUS Procurement & Commercial Intelligence | BioNixus"
       description="Brazil medical devices market at USD 12B in 2026 — largest in Latin America. ANVISA Class I–IV registration, SUS public procurement, ANS private sector, import tax dynamics, and BioNixus GCC expansion intelligence."
       canonical="https://www.bionixus.com/brazil-medical-devices-market-report"
-      jsonLd={jsonLd}
+      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "Brazil Medical Devices Market Report 2026 | ANVISA Registration, SUS Procurement & Commercial Intelligence | BioNixus",
+    pageMetaDescription: "Brazil medical devices market at USD 12B in 2026 — largest in Latin America. ANVISA Class I–IV registration, SUS public procurement, ANS private sector, import tax dynamics, and BioNixus GCC expansion intelligence.",
+    countryName: "Brazil",
+    marketSlug: "brazil",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })]}
     />
       <ReportReadingProgress progressId="report-rp-brazil-medical-devices-market-report" />
       <main>

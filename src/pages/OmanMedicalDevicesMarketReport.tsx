@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -82,6 +84,14 @@ const jsonLd = [
       acceptedAnswer: { '@type': 'Answer', text: item.answer },
     })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "Oman Medical Devices Market Report 2026 | MOH Procurement & Royal Hospital Intelligence | BioNixus",
+    pageMetaDescription: "Oman medical devices market at USD 240–280M in 2026. MOH Oman registration, Royal Hospital Muscat procurement intelligence, Vision 2040 healthcare privatization, and BioNixus primary HCP research.",
+    countryName: "Oman",
+    marketSlug: "oman",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })
 ];
 
 const OmanMedicalDevicesMarketReport = () => {
@@ -92,7 +102,14 @@ const OmanMedicalDevicesMarketReport = () => {
         title="Oman Medical Devices Market Report 2026 | MOH Procurement & Royal Hospital Intelligence | BioNixus"
         description="Oman medical devices market at USD 240–280M in 2026. MOH Oman registration, Royal Hospital Muscat procurement intelligence, Vision 2040 healthcare privatization, and BioNixus primary HCP research."
         canonical="https://www.bionixus.com/oman-medical-devices-market-report"
-        jsonLd={jsonLd}
+        jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "Oman Medical Devices Market Report 2026 | MOH Procurement & Royal Hospital Intelligence | BioNixus",
+    pageMetaDescription: "Oman medical devices market at USD 240–280M in 2026. MOH Oman registration, Royal Hospital Muscat procurement intelligence, Vision 2040 healthcare privatization, and BioNixus primary HCP research.",
+    countryName: "Oman",
+    marketSlug: "oman",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })]}
       />
       <ReportReadingProgress progressId="report-rp-oman-medical-devices-market-report" />
       <main>
@@ -146,6 +163,8 @@ const OmanMedicalDevicesMarketReport = () => {
           </div>
         </section>
 
+
+        <MarketIntelligenceSections marketSlug="oman" countryName="Oman" variant="medical-devices" />
         <section className="section-padding" id="key-accounts">
           <div className="container-wide max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Oman Key Hospital Accounts</h2>

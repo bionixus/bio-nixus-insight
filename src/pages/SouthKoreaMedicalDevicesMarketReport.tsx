@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -68,6 +70,14 @@ const jsonLd = [
     url: `https://www.bionixus.com/south-korea-medical-devices-market-report#${FAQ_SECTION_ID}`,
     mainEntity: REPORT_FAQ_ITEMS.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "South Korea Medical Devices Market Report 2026 | MFDS, NHIS Reimbursement & Dental/IVD Export | BioNixus",
+    pageMetaDescription: "South Korea medical devices market at USD 11B in 2026, growing 6% CAGR. MFDS Class I–IV regulation, NHIS HIRA coverage assessment, global dental implant and IVD export hub, and BioNixus GCC intelligence.",
+    countryName: "South Korea",
+    marketSlug: "south-korea",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })
 ];
 
 const SouthKoreaMedicalDevicesMarketReport = () => (
@@ -77,7 +87,14 @@ const SouthKoreaMedicalDevicesMarketReport = () => (
       title="South Korea Medical Devices Market Report 2026 | MFDS, NHIS Reimbursement & Dental/IVD Export | BioNixus"
       description="South Korea medical devices market at USD 11B in 2026, growing 6% CAGR. MFDS Class I–IV regulation, NHIS HIRA coverage assessment, global dental implant and IVD export hub, and BioNixus GCC intelligence."
       canonical="https://www.bionixus.com/south-korea-medical-devices-market-report"
-      jsonLd={jsonLd}
+      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "South Korea Medical Devices Market Report 2026 | MFDS, NHIS Reimbursement & Dental/IVD Export | BioNixus",
+    pageMetaDescription: "South Korea medical devices market at USD 11B in 2026, growing 6% CAGR. MFDS Class I–IV regulation, NHIS HIRA coverage assessment, global dental implant and IVD export hub, and BioNixus GCC intelligence.",
+    countryName: "South Korea",
+    marketSlug: "south-korea",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })]}
     />
       <ReportReadingProgress progressId="report-rp-south-korea-medical-devices-market-report" />
       <main>

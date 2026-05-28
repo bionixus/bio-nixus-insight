@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -86,6 +88,14 @@ const jsonLd = [
       acceptedAnswer: { '@type': 'Answer', text: item.answer },
     })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "GCC Pharmaceutical Market Report 2026 | Free Data & Consumption Intelligence | BioNixus",
+    pageMetaDescription: "Free GCC pharmaceutical market report 2026. Hospital sales data, consumption analytics, country-level market size, and therapy area trends across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain and Oman.",
+    countryName: "GCC",
+    marketSlug: "gcc",
+    publishedDate: "2026-05-01",
+    modifiedDate: "2026-05-25",
+  })
 ];
 
 function DataLevelRow({ level, shows }: { level: string; shows: string }) {
@@ -133,7 +143,14 @@ const GccPharmaMarketReport2026 = () => {
         title="GCC Pharmaceutical Market Report 2026 | Free Data & Consumption Intelligence | BioNixus"
         description="Free GCC pharmaceutical market report 2026. Hospital sales data, consumption analytics, country-level market size, and therapy area trends across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain and Oman."
         canonical="https://www.bionixus.com/gcc-pharma-market-report-2026"
-        jsonLd={jsonLd}
+        jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "GCC Pharmaceutical Market Report 2026 | Free Data & Consumption Intelligence | BioNixus",
+    pageMetaDescription: "Free GCC pharmaceutical market report 2026. Hospital sales data, consumption analytics, country-level market size, and therapy area trends across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain and Oman.",
+    countryName: "GCC",
+    marketSlug: "gcc",
+    publishedDate: "2026-05-01",
+    modifiedDate: "2026-05-25",
+  })]}
       />
       <ReportReadingProgress progressId="report-rp-gcc-pharma-market-report-2026" />
       <main>

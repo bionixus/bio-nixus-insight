@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -82,6 +84,14 @@ const jsonLd = [
       acceptedAnswer: { '@type': 'Answer', text: item.answer },
     })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "Saudi Arabia Medical Devices Market Report 2026 | Hospital Consumption Intelligence | BioNixus",
+    pageMetaDescription: "Saudi Arabia medical devices market valued at USD 2.8B in 2026. Hospital-level procurement data, SFDA registration intelligence, segment analysis by device type, and commercial strategy for Riyadh, Jeddah, and Dammam accounts.",
+    countryName: "Saudi Arabia",
+    marketSlug: "saudi-arabia",
+    publishedDate: "2026-05-01",
+    modifiedDate: "2026-05-27",
+  })
 ];
 
 function StatCard({ value, label }: { value: string; label: string }) {
@@ -112,7 +122,14 @@ const SaudiArabiaMedicalDevicesMarketReport = () => {
         title="Saudi Arabia Medical Devices Market Report 2026 | Hospital Consumption Intelligence | BioNixus"
         description="Saudi Arabia medical devices market valued at USD 2.8B in 2026. Hospital-level procurement data, SFDA registration intelligence, segment analysis by device type, and commercial strategy for Riyadh, Jeddah, and Dammam accounts."
         canonical="https://www.bionixus.com/saudi-arabia-medical-devices-market-report"
-        jsonLd={jsonLd}
+        jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "Saudi Arabia Medical Devices Market Report 2026 | Hospital Consumption Intelligence | BioNixus",
+    pageMetaDescription: "Saudi Arabia medical devices market valued at USD 2.8B in 2026. Hospital-level procurement data, SFDA registration intelligence, segment analysis by device type, and commercial strategy for Riyadh, Jeddah, and Dammam accounts.",
+    countryName: "Saudi Arabia",
+    marketSlug: "saudi-arabia",
+    publishedDate: "2026-05-01",
+    modifiedDate: "2026-05-27",
+  })]}
       />
       <ReportReadingProgress progressId="report-rp-saudi-arabia-medical-devices-market-report" />
       <main>

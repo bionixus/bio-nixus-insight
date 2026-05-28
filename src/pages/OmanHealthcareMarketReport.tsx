@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -82,6 +84,14 @@ const jsonLd = [
       acceptedAnswer: { '@type': 'Answer', text: item.answer },
     })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "Oman Healthcare Market Report 2026 | Pharma Market Size & MOH Access Intelligence | BioNixus",
+    pageMetaDescription: "Oman healthcare market at USD 5.5–6.5B in 2026. Pharmaceutical market (USD 550M), MOH registration, Vision 2040 healthcare privatization, therapy area analysis, and BioNixus primary HCP research.",
+    countryName: "Oman",
+    marketSlug: "oman",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })
 ];
 
 const OmanHealthcareMarketReport = () => {
@@ -92,7 +102,14 @@ const OmanHealthcareMarketReport = () => {
         title="Oman Healthcare Market Report 2026 | Pharma Market Size & MOH Access Intelligence | BioNixus"
         description="Oman healthcare market at USD 5.5–6.5B in 2026. Pharmaceutical market (USD 550M), MOH registration, Vision 2040 healthcare privatization, therapy area analysis, and BioNixus primary HCP research."
         canonical="https://www.bionixus.com/oman-healthcare-market-report"
-        jsonLd={jsonLd}
+        jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "Oman Healthcare Market Report 2026 | Pharma Market Size & MOH Access Intelligence | BioNixus",
+    pageMetaDescription: "Oman healthcare market at USD 5.5–6.5B in 2026. Pharmaceutical market (USD 550M), MOH registration, Vision 2040 healthcare privatization, therapy area analysis, and BioNixus primary HCP research.",
+    countryName: "Oman",
+    marketSlug: "oman",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })]}
       />
       <ReportReadingProgress progressId="report-rp-oman-healthcare-market-report" />
       <main>
@@ -148,6 +165,8 @@ const OmanHealthcareMarketReport = () => {
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
           </div>
         </section>
+
+        <MarketIntelligenceSections marketSlug="oman" countryName="Oman" variant="healthcare" />
 
         <section className="section-padding" id="therapy-areas">
           <div className="container-wide max-w-4xl mx-auto">

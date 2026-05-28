@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -82,6 +84,14 @@ const jsonLd = [
       acceptedAnswer: { '@type': 'Answer', text: item.answer },
     })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "Bahrain Healthcare Market Report 2026 | NHRA Registration & GCC Pharma Access | BioNixus",
+    pageMetaDescription: "Bahrain healthcare market at USD 2.5–3B in 2026. NHRA pharmaceutical registration (mutual recognition from SFDA/MOHAP), pharma market size, therapy areas, and BioNixus GCC market access intelligence.",
+    countryName: "Bahrain",
+    marketSlug: "bahrain",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })
 ];
 
 const BahrainHealthcareMarketReport = () => {
@@ -92,7 +102,14 @@ const BahrainHealthcareMarketReport = () => {
         title="Bahrain Healthcare Market Report 2026 | NHRA Registration & GCC Pharma Access | BioNixus"
         description="Bahrain healthcare market at USD 2.5–3B in 2026. NHRA pharmaceutical registration (mutual recognition from SFDA/MOHAP), pharma market size, therapy areas, and BioNixus GCC market access intelligence."
         canonical="https://www.bionixus.com/bahrain-healthcare-market-report"
-        jsonLd={jsonLd}
+        jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "Bahrain Healthcare Market Report 2026 | NHRA Registration & GCC Pharma Access | BioNixus",
+    pageMetaDescription: "Bahrain healthcare market at USD 2.5–3B in 2026. NHRA pharmaceutical registration (mutual recognition from SFDA/MOHAP), pharma market size, therapy areas, and BioNixus GCC market access intelligence.",
+    countryName: "Bahrain",
+    marketSlug: "bahrain",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })]}
       />
       <ReportReadingProgress progressId="report-rp-bahrain-healthcare-market-report" />
       <main>
@@ -149,6 +166,8 @@ const BahrainHealthcareMarketReport = () => {
           </div>
         </section>
 
+
+        <MarketIntelligenceSections marketSlug="bahrain" countryName="Bahrain" variant="healthcare" />
         <section className="section-padding" id="nhra-access">
           <div className="container-wide max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">

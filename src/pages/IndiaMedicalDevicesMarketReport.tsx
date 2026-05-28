@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -68,6 +70,14 @@ const jsonLd = [
     url: `https://www.bionixus.com/india-medical-devices-market-report#${FAQ_SECTION_ID}`,
     mainEntity: REPORT_FAQ_ITEMS.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "India Medical Devices Market Report 2026 | MDR 2017, PLI Scheme & CDSCO Registration | BioNixus",
+    pageMetaDescription: "India medical devices market at USD 12B in 2026, growing 8% CAGR. CDSCO MDR 2017 registration, PLI manufacturing scheme, NPPA price regulation, import dependency, and BioNixus GCC expansion intelligence for Indian medtech.",
+    countryName: "India",
+    marketSlug: "india",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })
 ];
 
 const IndiaMedicalDevicesMarketReport = () => (
@@ -77,7 +87,14 @@ const IndiaMedicalDevicesMarketReport = () => (
       title="India Medical Devices Market Report 2026 | MDR 2017, PLI Scheme & CDSCO Registration | BioNixus"
       description="India medical devices market at USD 12B in 2026, growing 8% CAGR. CDSCO MDR 2017 registration, PLI manufacturing scheme, NPPA price regulation, import dependency, and BioNixus GCC expansion intelligence for Indian medtech."
       canonical="https://www.bionixus.com/india-medical-devices-market-report"
-      jsonLd={jsonLd}
+      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "India Medical Devices Market Report 2026 | MDR 2017, PLI Scheme & CDSCO Registration | BioNixus",
+    pageMetaDescription: "India medical devices market at USD 12B in 2026, growing 8% CAGR. CDSCO MDR 2017 registration, PLI manufacturing scheme, NPPA price regulation, import dependency, and BioNixus GCC expansion intelligence for Indian medtech.",
+    countryName: "India",
+    marketSlug: "india",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })]}
     />
       <ReportReadingProgress progressId="report-rp-india-medical-devices-market-report" />
       <main>

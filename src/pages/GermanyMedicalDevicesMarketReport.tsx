@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -68,6 +70,14 @@ const jsonLd = [
     url: `https://www.bionixus.com/germany-medical-devices-market-report#${FAQ_SECTION_ID}`,
     mainEntity: REPORT_FAQ_ITEMS.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "Germany Medical Devices Market Report 2026 | EU MDR, NUB Reimbursement & Hospital Procurement | BioNixus",
+    pageMetaDescription: "Germany medical devices market at EUR 31B in 2026 — largest in EU. EU MDR compliance, NUB additional payments, DRG hospital reimbursement, and BioNixus intelligence for German medtech companies entering GCC and MENA.",
+    countryName: "Germany",
+    marketSlug: "germany",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })
 ];
 
 const GermanyMedicalDevicesMarketReport = () => (
@@ -77,7 +87,14 @@ const GermanyMedicalDevicesMarketReport = () => (
       title="Germany Medical Devices Market Report 2026 | EU MDR, NUB Reimbursement & Hospital Procurement | BioNixus"
       description="Germany medical devices market at EUR 31B in 2026 — largest in EU. EU MDR compliance, NUB additional payments, DRG hospital reimbursement, and BioNixus intelligence for German medtech companies entering GCC and MENA."
       canonical="https://www.bionixus.com/germany-medical-devices-market-report"
-      jsonLd={jsonLd}
+      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "Germany Medical Devices Market Report 2026 | EU MDR, NUB Reimbursement & Hospital Procurement | BioNixus",
+    pageMetaDescription: "Germany medical devices market at EUR 31B in 2026 — largest in EU. EU MDR compliance, NUB additional payments, DRG hospital reimbursement, and BioNixus intelligence for German medtech companies entering GCC and MENA.",
+    countryName: "Germany",
+    marketSlug: "germany",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })]}
     />
       <ReportReadingProgress progressId="report-rp-germany-medical-devices-market-report" />
       <main>
@@ -106,6 +123,8 @@ const GermanyMedicalDevicesMarketReport = () => (
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
         </div>
       </section>
+
+        <MarketIntelligenceSections marketSlug="germany" countryName="Germany" variant="medical-devices" />
       <section className="section-padding" id="regulatory">
         <div className="container-wide max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Germany Medical Device Regulatory and Reimbursement Landscape</h2>

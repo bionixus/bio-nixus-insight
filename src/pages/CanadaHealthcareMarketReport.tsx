@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -68,6 +70,14 @@ const jsonLd = [
     url: `https://www.bionixus.com/canada-healthcare-market-report#${FAQ_SECTION_ID}`,
     mainEntity: REPORT_FAQ_ITEMS.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "Canada Healthcare Market Report 2026 | CADTH, pCPA, Provincial Formularies & Pharma Intelligence | BioNixus",
+    pageMetaDescription: "Canada healthcare market at USD 295B in 2026. CADTH HTA, pCPA price negotiation, provincial formulary access, PMPRB price controls, and BioNixus intelligence for Canadian pharma companies expanding to GCC and MENA.",
+    countryName: "Canada",
+    marketSlug: "canada",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })
 ];
 
 const CanadaHealthcareMarketReport = () => (
@@ -77,7 +87,14 @@ const CanadaHealthcareMarketReport = () => (
       title="Canada Healthcare Market Report 2026 | CADTH, pCPA, Provincial Formularies & Pharma Intelligence | BioNixus"
       description="Canada healthcare market at USD 295B in 2026. CADTH HTA, pCPA price negotiation, provincial formulary access, PMPRB price controls, and BioNixus intelligence for Canadian pharma companies expanding to GCC and MENA."
       canonical="https://www.bionixus.com/canada-healthcare-market-report"
-      jsonLd={jsonLd}
+      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "Canada Healthcare Market Report 2026 | CADTH, pCPA, Provincial Formularies & Pharma Intelligence | BioNixus",
+    pageMetaDescription: "Canada healthcare market at USD 295B in 2026. CADTH HTA, pCPA price negotiation, provincial formulary access, PMPRB price controls, and BioNixus intelligence for Canadian pharma companies expanding to GCC and MENA.",
+    countryName: "Canada",
+    marketSlug: "canada",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })]}
     />
       <ReportReadingProgress progressId="report-rp-canada-healthcare-market-report" />
       <main>

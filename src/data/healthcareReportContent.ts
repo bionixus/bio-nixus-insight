@@ -1,9 +1,16 @@
+import type { TherapyDrugClass } from '@/data/marketIntelligence/types';
+
+import { THERAPY_AREA_ENRICHMENT } from '@/data/healthcareReportTherapyEnrichment';
+
 export interface TherapyAreaContent {
   name: string;
   slug: string;
   overviewParagraph: string;
   clinicalLandscape: string;
   menaMarketDynamics: string;
+  keyDrugClasses?: TherapyDrugClass[];
+  epidemiologyHighlights?: string;
+  accessChallenges?: string[];
 }
 
 export interface MarketContent {
@@ -127,7 +134,33 @@ export const THERAPY_AREA_CONTENT: Record<string, TherapyAreaContent> = {
     menaMarketDynamics:
       'Vitamin D supplementation cultural popularity intersects osteoporosis adjacency prescribing confounding psoriasis metabolic comorbidity models.',
   },
+  'hiv-arv': {
+    name: 'HIV / ARV',
+    slug: 'hiv-arv',
+    overviewParagraph:
+      'Sub-Saharan Africa carries 67% of the global HIV burden (25.6M of 39M PLHIV globally, UNAIDS 2023). South Africa (7.5M PLHIV), Nigeria (1.9M), and Tanzania (1.7M) are the three largest HIV-affected populations and anchor PEPFAR- and Global Fund–financed treatment programmes where tenofovir/lamivudine/dolutegravir (TLD) is the WHO-preferred first-line backbone. Integrase strand transfer inhibitors—including dolutegravir, bictegravir, and cabotegravir—have displaced efavirenz-based regimens in high-burden public sectors because of superior viral suppression, tolerability, and resistance profiles.\n\nGCC countries have <0.1% adult HIV prevalence — negligible commercial impact for originator ARV franchises relative to metabolic, oncology, or immunology portfolios. Commercial strategy therefore bifurcates sharply: sub-scale confidential treatment pathways in Saudi Arabia, UAE, and Qatar versus high-volume, donor-procured corridors in Nigeria, Kenya, and South Africa where Aspen Pharmacare, Cipla, and Indian generic manufacturers dominate supply at price points incompatible with premium branded positioning.',
+    clinicalLandscape:
+      'Contemporary HIV pharmacotherapy centres on once-daily fixed-dose combinations pairing nucleos(t)ide reverse transcriptase inhibitors with integrase inhibitors. Bictegravir/emtricitabine/tenofovir alafenamide (Biktarvy, Gilead) and dolutegravir-based dual or triple regimens anchor private and South African premium segments, while TLD remains the default public-sector standard across PEPFAR-supported countries. Integrase enzyme inhibition prevents HIV DNA integration into the host genome, delivering rapid viral load suppression with fewer neuropsychiatric adverse events than legacy efavirenz regimens.\n\nLong-acting injectable antiretrovirals—cabotegravir plus rilpivirine (Cabenuva, ViiV/J&J) and lenacapavir (Sunlenca, Gilead)—target adherence gaps in stably suppressed patients but require cold-chain-capable clinic infrastructure and pharmacist training that many district facilities still lack. Resistance testing and viral load monitoring cadence vary between South African NDOH guidelines, Nigerian NAFDAC-compliant reference labs, and fragmented East African networks, influencing when clinicians escalate from first-line TLD to boosted protease inhibitor salvage.',
+    menaMarketDynamics:
+      'Sub-Saharan Africa carries 67% of the global HIV burden (25.6M of 39M PLHIV globally, UNAIDS 2023). South Africa (7.5M PLHIV), Nigeria (1.9M), and Tanzania (1.7M) are the three largest HIV-affected populations. GCC countries have <0.1% adult HIV prevalence — negligible commercial impact. BioNixus intelligence prioritises PEPFAR/Global Fund procurement dynamics, KEMSA and MSD tender cycles, and South African EML/NDOH award patterns over Gulf SFDA or MOHAP listing trajectories. TLD generic availability from Indian manufacturers (Sun Pharma, Aurobindo) at <USD 50/year per patient limits innovative ARV commercial opportunity in public sector channels unless sponsors pursue differentiated long-acting formulations with explicit donor co-financing.',
+  },
 };
+
+export const THERAPY_AREA_CONTENT_MERGED: Record<string, TherapyAreaContent> = Object.fromEntries(
+  Object.entries(THERAPY_AREA_CONTENT).map(([slug, content]) => {
+    const enrichment = THERAPY_AREA_ENRICHMENT[slug];
+    if (!enrichment) return [slug, content];
+    return [
+      slug,
+      {
+        ...content,
+        keyDrugClasses: enrichment.keyDrugClasses,
+        epidemiologyHighlights: enrichment.epidemiologyHighlights,
+        accessChallenges: enrichment.accessChallenges,
+      },
+    ];
+  }),
+);
 
 export const MARKET_CONTENT: Record<string, MarketContent> = {
   gcc: {
@@ -237,5 +270,137 @@ export const MARKET_CONTENT: Record<string, MarketContent> = {
       'Social Security Institution (SGK) reimbursement listings dominate affordability but gap markets persist among private insurer supplemental riders covering innovator oncology when SGK stalls—analogous yet not identical bifurcation to Egyptian UHI duality narratives. Hospital pharmacy chains negotiate annual rebate ladders reminiscent of southern EU tender bundles.',
     marketContext:
       'Turkey anchors biopharma regional manufacturing hub ambition—export orientation plus domestically nurtured biosimilar champions (leading insulins, mAbs clones) interplay with clinician preference for branded originators in Istanbul elite wards—forecast must capture east‑west divergence inside single national boundary.',
+  },
+  uk: {
+    name: 'United Kingdom',
+    slug: 'uk',
+    region: 'Europe',
+    regulatoryBody: 'MHRA',
+    regulatoryOverview:
+      'Post‑Brexit MHRA operates autonomous licensing pathways including the Innovative Licensing and Access Pathway (ILAP) accelerating novel therapies with unmet need via Target Development Profile consultations enrolling sponsors early. MHRA now issues UK‑specific marketing authorisations independent of EMA decisions—compelling innovators to maintain parallel dossier variants. Reliance procedures on FDA, EMA, or Health Canada approvals through the International Recognition Procedure accelerate second‑wave submissions yet still require UK‑specific pharmacovigilance risk management plans and Yellow Card system integration.\n\nNICE technology appraisals (single technology, multiple technology) represent the reimbursement gateway for NHS England. Highly Specialised Technologies (HST) programme addresses ultra‑rare conditions. The Innovative Medicines Fund bridges access during NICE appraisal for promising therapies with plausible cost‑effectiveness trajectories—replacing the Cancer Drugs Fund model with broader therapy coverage.',
+    payerLandscape:
+      'NHS England represents a monopsony payer with commercial agreements negotiated through VPAS pricing scheme and confidential patient access schemes—net effective prices frequently 30–60% below list for oncology biologics. NICE cost‑effectiveness threshold operates nominally around £20,000–£30,000 per QALY with end‑of‑life weighting and severity modifier adjustments broadening acceptance ranges for oncology and rare disease indications.\n\nIntegrated Care Boards (ICBs) execute local formulary decisions post‑NICE approval—creating implementation lag variation across England regions that commercial teams must map for realistic volume ramp assumptions. Scotland (SMC), Wales (AWMSG), and Northern Ireland operate distinct reimbursement committees requiring parallel submissions extending timeline arithmetic.',
+    marketContext:
+      'UK pharmaceutical market at GBP 21 billion in 2026 underpins NHS aspirations toward genomic medicine leadership—100,000 Genomes Project sequelae, newborn genomes programme, and AI diagnostics partnerships at NHS Genomics Medicine Service position UK as leading precision oncology clinical trial ecosystem globally alongside top US academic centres.',
+  },
+  germany: {
+    name: 'Germany',
+    slug: 'germany',
+    region: 'Europe',
+    regulatoryBody: 'BfArM / G-BA / IQWiG',
+    regulatoryOverview:
+      'Germany operates one of Europe\'s most rigorous early benefit assessment frameworks under AMNOG (Arzneimittelmarktneuordnungsgesetz). Innovative pharmaceuticals receive automatic market access upon EMA or BfArM approval—immediate unrestricted reimbursement through statutory health insurance (GKV/SHI)—but are simultaneously subject to G-BA benefit assessment within 12 months. IQWiG conducts benefit assessment dossier evaluation examining comparative effectiveness versus appropriate comparator; G-BA determines benefit rating (major / considerable / minor / non-quantifiable / no proven benefit).\n\nBenefit rating directly determines price negotiation leverage: major or considerable benefit ratings support premium prices in GKV negotiations; non-quantifiable or no proven benefit forces statutory reference pricing at lowest generic price—commercially catastrophic. Orphan drug automatic benefit assumption applies below EUR 50 million annual GKV revenue, after which full AMNOG assessment triggers.',
+    payerLandscape:
+      'GKV (Gesetzliche Krankenversicherung) covers 90% of the German population across approximately 100 competing statutory health insurance funds (AOK, Barmer, TK, DAK prominent). Prices negotiated between GKV-Spitzenverband (national federation) and manufacturer following G-BA benefit assessment; deadlock triggers arbitration with legally binding outcome. PKV (private insurance, 10% of population) reimburses at list price—creating dual market premium dynamics.\n\nHospital DRG system bundles many device and oncology drug costs within case rates—creating hospital pharmacy rebate negotiation dynamics outside GKV ambulatory pricing framework. NUB additional payments (New Examination and Treatment Methods) provide temporary hospital reimbursement supplements for novel high-cost interventions pending DRG catalogue inclusion.',
+    marketContext:
+      'Germany\'s EUR 430 billion healthcare market and EUR 55 billion pharmaceutical market make it the largest pharmaceutical market in Europe by value. Aging population, high NCD burden, and strong private insurance sector underpin premium drug absorption. Germany hosts Bayer, Boehringer Ingelheim, Merck KGaA—with deep CRO and CMO infrastructure making it a pivotal clinical development ecosystem shaping EU launch sequencing decisions.',
+  },
+  india: {
+    name: 'India',
+    slug: 'india',
+    region: 'Asia-Pacific',
+    regulatoryBody: 'CDSCO',
+    regulatoryOverview:
+      'Central Drugs Standard Control Organisation (CDSCO) governs pharmaceutical registration under the New Drugs and Clinical Trials Rules 2019. Prior foreign approval from ICH member country reference regulators (FDA, EMA, PMDA, Health Canada, TGA) enables waiver of Phase III local clinical trials for new drug applications—dramatically accelerating timelines for globally approved products. CDSCO has introduced accelerated approval pathways for serious and life-threatening conditions with unmet medical need.\n\nDrug Price Control Order (DPCO) administered by NPPA (National Pharmaceutical Pricing Authority) caps prices of scheduled essential medicines—affecting commercial economics for a broad basket of cardiovascular, diabetes, and antibiotic molecules. Non-scheduled drugs are subject to a 10% annual price increase ceiling. Innovative biologics and oncology therapies outside DPCO scheduled list operate at negotiated market prices—creating a bifurcated pricing architecture requiring segment-specific commercial modelling.',
+    payerLandscape:
+      'Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (PM-JAY) provides secondary and tertiary hospital coverage for approximately 500 million low-income beneficiaries—creating massive hospital empanelment procurement dynamics for generics and biosimilars. CGHS (Central Government Health Scheme) covers government employees at negotiated rates. State government schemes (Aarogyasri in Telangana, Mahatma Phule in Maharashtra) overlay federal programmes.\n\nPrivate out-of-pocket expenditure remains approximately 47% of total health expenditure—a large premium private hospital sector (Apollo, Fortis, Max Healthcare, Manipal) operating at international price points drives innovator branded drug consumption among India\'s rapidly expanding middle and upper-income population segments.',
+    marketContext:
+      'India\'s USD 265 billion healthcare market is anchored by the world\'s largest generic pharmaceutical manufacturing base—producing approximately 20% of global generics by volume and supplying 60+ countries. Rapid biosimilar manufacturing scale-up (insulin, trastuzumab, adalimumab, rituximab produced locally) anchors India as the global biosimilar cost reference. BioNixus monitors India-GCC pharmaceutical export corridors and supports Indian exporters entering GCC markets.',
+  },
+  china: {
+    name: 'China',
+    slug: 'china',
+    region: 'Asia-Pacific',
+    regulatoryBody: 'NMPA',
+    regulatoryOverview:
+      'National Medical Products Administration (NMPA) has undergone landmark reform since 2015—implementing Priority Review Designation, Breakthrough Therapy Designation, and Conditional Approval pathways accelerating oncology and rare disease approvals. Clinical Trial Import Waiver (Annex 2.4 pathway) allows China-only trials or bridging studies rather than full replication of pivotal global trials—strategically reducing timelines by 2–3 years for molecules with strong foreign registration packages.\n\nNMPA now accepts overseas multicentre clinical trial data as primary evidence for registration—representing a structural shift enabling simultaneous global launch strategies. Post-marketing commitment requirements include Phase IV real-world evidence studies and annual benefit-risk reassessments tracked by NMPA pharmacovigilance centres across provinces.',
+    payerLandscape:
+      'National Healthcare Security Administration (NHSA) manages the National Reimbursement Drug List (NRDL) updated annually through price negotiation. Volume-Based Procurement (VBP) centralized tendering for off-patent generics and biosimilars has driven dramatic price reductions (60–90% cuts for insulin, adalimumab biosimilar, imatinib)—forcing multinational commercial model pivots toward differentiation outside VBP categories.\n\nProvincial supplemental insurance (Huimin insurance) and urban commercial insurance provide access to innovative therapies above NRDL—creating a parallel premium access channel for cutting-edge oncology and rare disease treatments. Hospital formulary committees (approximately 24,000 hospitals nationwide) represent critical access gatekeepers between NRDL listing and actual patient access.',
+    marketContext:
+      'China\'s USD 1.3 trillion healthcare market and USD 175 billion pharmaceutical market make it the world\'s second-largest pharmaceutical market. The government\'s Healthy China 2030 initiative targets cancer, cardiovascular disease, diabetes, and respiratory disease as priority chronic conditions—structurally elevating pharmaceutical budget allocations toward specialty care. Local champions (CSPC, Hengrui, BeiGene, Zymeworks partnerships) increasingly compete with multinationals on advanced oncology assets.',
+  },
+  japan: {
+    name: 'Japan',
+    slug: 'japan',
+    region: 'Asia-Pacific',
+    regulatoryBody: 'PMDA',
+    regulatoryOverview:
+      'Pharmaceuticals and Medical Devices Agency (PMDA) conducts scientific review of new drug applications with typical review timelines of 12 months for priority reviews (Sakigake designation for innovative therapies addressing unmet needs) and 12–24 months for standard reviews. Japan\'s Conditional Early Approval System (CEAS) enables approval based on small-scale trial data with post-marketing confirmation requirement—particularly relevant for regenerative medicine and cell therapy approvals.\n\nSakigake Designation provides priority consultation, rolling review, and target review timelines of 6 months for truly innovative medicines—Japan has significantly closed its historical "drug lag" gap. PMDA real-world data utilization framework increasingly integrates registry and claims data into post-marketing evaluation reducing confirmatory trial burden for extensions.',
+    payerLandscape:
+      'National Health Insurance (NHI) drug pricing lists all approved pharmaceuticals with MHLW-set prices—no separate reimbursement evaluation. Biannual price revisions (April and October) reduce listed prices based on market survey data showing actual transaction prices below listed prices—creating secular price erosion averaging 3–6% per revision cycle that commercial models must project. Premium pricing adjustments (innovation-linked) partially compensate for extraordinary utility drugs.\n\nJapan\'s universal NHI coverage (98% population) eliminates formulary access fragmentation but creates uniform price sensitivity to MHLW pricing decisions. Hospital pharmacy rebate negotiation dynamics operate below NHI listed prices in direct hospital procurement channels—actual net is often 85–95% of listed price.',
+    marketContext:
+      'Japan\'s USD 530 billion healthcare market and USD 90 billion pharmaceutical market serve a rapidly aging population—28% aged 65+ by 2026, the world\'s highest proportion. Geriatric medicine, dementia, cardiovascular disease, and oncology represent the largest therapy area expenditure categories. Japan anchors leading cell therapy regulatory infrastructure globally—CAR-T approvals, induced pluripotent stem cell therapies, and advanced regenerative medicine products receive world-first approvals through PMDA.',
+  },
+  usa: {
+    name: 'United States',
+    slug: 'usa',
+    region: 'Americas',
+    regulatoryBody: 'FDA',
+    regulatoryOverview:
+      'FDA Center for Drug Evaluation and Research (CDER) and Center for Biologics Evaluation and Research (CBER) regulate NDA, BLA, and ANDA submissions respectively. Expedited programs—Breakthrough Therapy Designation (BTD), Accelerated Approval, Priority Review, Fast Track—have become standard for oncology and rare disease development pipelines. Rolling review enables early data package submission for Priority Review candidates—compressing timelines for urgent unmet needs.\n\nInfection Diseases Society programs (QIDP, GAIN Act) provide additional exclusivity incentives for antimicrobials. FDA Real-World Evidence Framework increasingly accepts registry and electronic health record data for label expansions and post-marketing requirements. User fee commitments under PDUFA VII govern FDA review timelines—12-month standard, 6-month priority for accepted standard applications.',
+    payerLandscape:
+      'The US pharmaceutical market operates without national reference pricing—commercial payers (Blue Cross Blue Shield, UnitedHealth, CVS/Aetna, Cigna) negotiate net prices via PBM (Pharmacy Benefit Manager) rebate agreements with manufacturers. Gross-to-net discounts exceed 50% for many branded drugs—list price has minimal commercial relevance; net effective price after rebates drives true commercial economics.\n\nInflation Reduction Act (IRA) 2022 initiates Medicare drug price negotiation for 10 high-spend drugs in 2026, expanding to 15 in 2027 and 20 by 2029—structurally compressing US oncology and diabetes market revenue trajectories for affected products. Medicaid rebate system (23.1% base + inflation penalty) applies to all Medicaid reimbursed drugs. Medicare Part D redesign reduces catastrophic phase cost sharing—improving patient access but altering manufacturer rebate economics.',
+    marketContext:
+      'The US pharmaceutical market at USD 615 billion represents approximately 45% of global pharmaceutical revenues—making US launch the primary commercial value driver for most innovators. IRA drug negotiation, biosimilar competition growth (Humira LOE, insulin biosimilar market), and GLP-1 market explosion (Ozempic, Wegovy, Mounjaro) are the three macro forces reshaping US commercial strategy through 2030. BioNixus provides comparative US-GCC intelligence for multinational commercial teams managing cross-regional pricing architectures.',
+  },
+  brazil: {
+    name: 'Brazil',
+    slug: 'brazil',
+    region: 'Americas',
+    regulatoryBody: 'ANVISA',
+    regulatoryOverview:
+      'ANVISA (Agência Nacional de Vigilância Sanitária) governs pharmaceutical registration through RDC (Resolução da Diretoria Colegiada) frameworks with standard review timelines of 365 days for new drugs and 60 days for priority review (assessed via criteria including unmet medical need, orphan designation, and prior approval by stringent reference regulatory authorities—FDA, EMA, Health Canada, PMDA).\n\nCMED (Câmara de Regulação do Mercado de Medicamentos) sets maximum factory prices using a five-category adjustment factor system (ICMS tax, technology classification, competition level). International reference pricing compares to 7 reference countries (USA, Canada, Germany, France, Italy, UK, Japan, Australia, Spain, New Zealand)—taking the median as price anchor for category adjustments. Import taxes and local manufacturing incentives (Productive Development Partnerships—PDPs) create strategic pressure toward technology transfer agreements.',
+    payerLandscape:
+      'SUS (Sistema Único de Saúde) provides universal public healthcare—CONITEC (National Health Technology Assessment Commission) evaluates medicines and technologies for SUS incorporation. CONITEC PCDTs (Clinical Protocols and Therapeutic Guidelines) define SUS coverage criteria and preferred therapies—mandatory for all SUS facilities. High-cost drug component (Componente Especializado) covers approximately 130 complex chronic medicines at federal cost.\n\nANS (National Supplementary Health Agency) regulates private health plans covering 48 million Brazilians (23% of population)—mandatory benefit list requires private plans to cover therapies approved by ANVISA. Out-of-pocket pharmaceutical expenditure remains significant—retail pharmacy chains (Raia Drogasil, DPSP, Pague Menos) represent critical channel for branded and generic drug access among the insured private market.',
+    marketContext:
+      'Brazil\'s USD 165 billion healthcare market anchors Latin America—the world\'s fifth-largest country by population and the region\'s dominant pharmaceutical market at USD 28 billion. Tropical disease burden (dengue, Chagas, leishmaniasis) coexists with a growing cardiovascular, diabetes, and oncology epidemic in a rapidly urbanizing population. Generic drug penetration exceeds 65% by volume—biosimilar competition intensifying post-ANVISA pathway clarifications.',
+  },
+  'south-korea': {
+    name: 'South Korea',
+    slug: 'south-korea',
+    region: 'Asia-Pacific',
+    regulatoryBody: 'MFDS',
+    regulatoryOverview:
+      'Ministry of Food and Drug Safety (MFDS) operates one of Asia\'s most rigorous pharmaceutical review systems—with Korean-specific clinical trial requirements increasingly waivable for global pivotal studies including Korean patient subgroups or through bridging study frameworks. MFDS Expedited Review Programme targets cancer, rare diseases, and infectious diseases—reducing standard 12–18 month timelines to 6–9 months for qualifying applications.\n\nKorea has pioneered digital health device regulation—Software as a Medical Device (SaMD) guidelines issued 2023 provide clear AI-based diagnostic approval pathways. Post-marketing surveillance requirements for new drugs include 4-year domestic Re-examination requiring collection of Korean patient safety data—compliance tracking essential for sustaining reimbursement.',
+    payerLandscape:
+      'National Health Insurance Service (NHIS) provides universal single-payer coverage—HIRA (Health Insurance Review and Assessment Service) evaluates benefit listings using cost-effectiveness analysis with informal GDP per capita thresholds. Risk-sharing agreements (RSA)—outcome guarantees, expenditure caps, subscription payment models—are increasingly used for high-cost oncology and rare disease therapies where upfront cost-effectiveness is uncertain.\n\nKorea\'s pharmaceutical market is characterized by intense generic and biosimilar competition from domestic champions Samsung Biologics, Celltrion, and Yuhan—biosimilar market penetration among the highest globally. New Drug Committee deliberations and selective listing decisions create commercial vulnerability for single-indication approvals without breadth of therapeutic advantage claims.',
+    marketContext:
+      'South Korea\'s USD 115 billion healthcare market and USD 24 billion pharmaceutical market punch above their weight—Korea is the world\'s leading biosimilar manufacturing nation by value, with Samsung Biologics and Celltrion supplying global markets. MFDS regulatory decisions carry international signal value; Korean clinical trial data is broadly accepted in US, EU, and APAC registration packages.',
+  },
+  australia: {
+    name: 'Australia',
+    slug: 'australia',
+    region: 'Asia-Pacific',
+    regulatoryBody: 'TGA',
+    regulatoryOverview:
+      'Therapeutic Goods Administration (TGA) registers pharmaceuticals on the ARTG (Australian Register of Therapeutic Goods) following assessment of quality, safety, and efficacy. Australia participates in the Access Consortium work-sharing programme alongside MHRA, Health Canada, HSA Singapore, and Swissmedic—enabling parallel assessment reducing review workload duplication. TGA Provisional Approval pathway provides early access to therapies likely to provide major therapeutic advantage—with full approval conditional on post-market confirmatory data.\n\nTGA abridged evaluation pathway accepts prior approvals from comparable overseas regulators (FDA, EMA) as the basis for an expedited review—standard timelines for abridged submissions are 255 working days. Orphan drug designation provides waiver of application fees and TGA consultation support for small population disease therapies.',
+    payerLandscape:
+      'Pharmaceutical Benefits Scheme (PBS) reimburses listed medicines for Australian patients at subsidised co-payment levels—PBAC (Pharmaceutical Benefits Advisory Committee) evaluates cost-effectiveness for PBS listing recommendations. PBAC uses cost-effectiveness analysis with AUD 45,000–75,000 per QALY informal thresholds; oncology and rare disease therapies assessed under Life-saving Drugs Programme and distinct risk-sharing frameworks.\n\nPrivate health insurance (approximately 45% of population) funds procedures and hospital admissions—device reimbursement through Prostheses List and MSAC (Medical Services Advisory Committee) HTA assessments for new procedures. PBS price disclosure requires manufacturers to report actual dispensed prices—mandatory price reductions where market prices fall below listed price through regular disclosure cycles.',
+    marketContext:
+      'Australia\'s USD 220 billion healthcare market serves 26 million people with universal Medicare coverage. Cochlear Limited\'s global cochlear implant leadership, CSL Seqirus vaccine manufacturing, and Starpharma nanoparticle drug delivery platform exemplify Australia\'s medical innovation ecosystem. Access Consortium membership creates regulatory pathways with direct relevance to GCC SFDA and MOHAP registration—Australian TGA approval supporting GCC dossier compilation is an underutilised strategic opportunity BioNixus intelligence can help exploit.',
+  },
+  singapore: {
+    name: 'Singapore',
+    slug: 'singapore',
+    region: 'Asia-Pacific',
+    regulatoryBody: 'HSA',
+    regulatoryOverview:
+      'Health Sciences Authority (HSA) registers pharmaceuticals through Product Registration pathways including full and abridged evaluation routes. Abridged evaluation accepts prior approval from reference regulatory agencies (FDA, EMA, PMDA, TGA, Health Canada, MHRA, Swissmedic)—enabling compressed review timelines of 240–270 working days for established agencies. Singapore participates in the Access Consortium enabling work-sharing assessments across TGA, MHRA, Health Canada, and Swissmedic—further accelerating submission efficiency for consortium-eligible products.\n\nHSA Priority Review pathway targets products for serious or life-threatening conditions with no satisfactory alternative, reducing timeline to approximately 6 months. Singapore\'s proximity to ASEAN markets and Free Trade Agreement network position HSA approval as a regional regulatory gateway—many manufacturers use Singapore registration as the reference for ASEAN country submissions.',
+    payerLandscape:
+      'Singapore operates the "3Ms" healthcare financing framework: MediShield Life (universal catastrophic insurance), Medisave (mandatory individual health savings accounts—employees contribute 8–10.5% of salary), and Medifund (safety net for those unable to afford care). Ministry of Health Standard Drug List and Formulary lists govern subsidised access at restructured public hospitals (SingHealth, NHG cluster).\n\nAgency for Care Effectiveness (ACE) conducts HTA assessments informing MOH formulary decisions—using modified cost-effectiveness analysis with Singapore-specific GDP per capita thresholds. Private hospital sector (Mount Elizabeth, Gleneagles, Raffles) serves medical tourists at full international pricing—creating a premium parallel market tier for novel oncology, cardiology, and precision medicine therapies.',
+    marketContext:
+      'Singapore\'s USD 28–33 billion healthcare market anchors Southeast Asia\'s pharmaceutical and medical device regional headquarters ecosystem. With 5.9 million people, Singapore is disproportionately strategically important—hosting regional HQ for Pfizer, MSD, Roche, AstraZeneca, GSK, Abbott, Novartis. Biopolis research cluster and A*STAR institute attract pharma R&D investment. Access Consortium membership and gateway role to 670 million-person ASEAN market make Singapore a critical node for Asia-Pacific commercial strategy.',
+  },
+  canada: {
+    name: 'Canada',
+    slug: 'canada',
+    region: 'Americas',
+    regulatoryBody: 'Health Canada',
+    regulatoryOverview:
+      'Health Canada issues Notices of Compliance (NOC) for new drug submissions following Therapeutic Products Directorate review. Priority Review designation targets serious conditions with no acceptable alternative—compressing standard 300-day review to 180 days. Advance consideration framework allows rolling review of pivotal data for breakthrough innovations. Canada participates in the Access Consortium enabling parallel work-sharing reviews with TGA, MHRA, HSA, and Swissmedic.\n\nHealthcare of Canada Review Board (HPFBI) manages post-market surveillance with mandatory adverse event reporting within defined timeframes. Biologic and genetic therapy submissions reviewed by Biologics and Genetic Therapies Directorate—Canada has issued some of world\'s earliest gene therapy approvals reflecting scientific leadership in vectors and cell engineering at University of Toronto, McGill, and McMaster research ecosystems.',
+    payerLandscape:
+      'CADTH (Canadian Drug and Technology in Health) conducts health technology assessments—CDR (Common Drug Review) for drugs and Optimal Use Recommendations informing provincial formulary decisions. pCPA (pan-Canadian Pharmaceutical Alliance) negotiates on behalf of participating provincial and territorial drug plans—single national negotiation replacing fragmented provincial negotiations for most innovative therapies.\n\nProvincial formularies (Ontario ODB, Quebec RAMQ, BC PharmaCare, Alberta AHB) implement CADTH and pCPA outcomes with variable coverage criteria. Approximately 30% of Canadians have private drug insurance supplementing provincial plans. Quebec operates an independent drug pricing regime with mandatory private-public insurance duality—requiring separate commercial strategy within Canada.',
+    marketContext:
+      'Canada\'s USD 295 billion healthcare market and USD 36 billion pharmaceutical market benefit from Access Consortium regulatory reciprocity directly relevant to GCC and APAC dossier compilation. Canada ranks among the top biomedical research nations—Moderna\'s mRNA vaccine platform was co-developed with Canadian scientists; CAR-T immunotherapy foundations emerged from Canadian academic medicine. BioNixus provides comparative Canada-GCC intelligence for multinationals managing international pricing cascades.',
   },
 };

@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -68,6 +70,14 @@ const jsonLd = [
     url: `https://www.bionixus.com/italy-healthcare-market-report#${FAQ_SECTION_ID}`,
     mainEntity: REPORT_FAQ_ITEMS.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "Italy Healthcare Market Report 2026 | AIFA, SSN Reimbursement & Regional Market Access | BioNixus",
+    pageMetaDescription: "Italy healthcare market at EUR 170B in 2026. AIFA CTS/CPR market access, SSN reimbursement (Classe A/H), regional formulary variation, managed entry agreements, and BioNixus intelligence for Italian pharma expanding to GCC.",
+    countryName: "Italy",
+    marketSlug: "italy",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })
 ];
 
 const ItalyHealthcareMarketReport = () => (
@@ -77,7 +87,14 @@ const ItalyHealthcareMarketReport = () => (
       title="Italy Healthcare Market Report 2026 | AIFA, SSN Reimbursement & Regional Market Access | BioNixus"
       description="Italy healthcare market at EUR 170B in 2026. AIFA CTS/CPR market access, SSN reimbursement (Classe A/H), regional formulary variation, managed entry agreements, and BioNixus intelligence for Italian pharma expanding to GCC."
       canonical="https://www.bionixus.com/italy-healthcare-market-report"
-      jsonLd={jsonLd}
+      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "Italy Healthcare Market Report 2026 | AIFA, SSN Reimbursement & Regional Market Access | BioNixus",
+    pageMetaDescription: "Italy healthcare market at EUR 170B in 2026. AIFA CTS/CPR market access, SSN reimbursement (Classe A/H), regional formulary variation, managed entry agreements, and BioNixus intelligence for Italian pharma expanding to GCC.",
+    countryName: "Italy",
+    marketSlug: "italy",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })]}
     />
       <ReportReadingProgress progressId="report-rp-italy-healthcare-market-report" />
       <main>

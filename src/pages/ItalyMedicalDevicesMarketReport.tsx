@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -68,6 +70,14 @@ const jsonLd = [
     url: `https://www.bionixus.com/italy-medical-devices-market-report#${FAQ_SECTION_ID}`,
     mainEntity: REPORT_FAQ_ITEMS.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "Italy Medical Devices Market Report 2026 | EU MDR, BDNM Registration & Regional Procurement | BioNixus",
+    pageMetaDescription: "Italy medical devices market at EUR 12–14B in 2026. EU MDR compliance, BDNM registration, regional procurement (Intercent-ER, ARCA, ESTAR), and BioNixus GCC expansion intelligence for Italian medtech companies.",
+    countryName: "Italy",
+    marketSlug: "italy",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })
 ];
 
 const ItalyMedicalDevicesMarketReport = () => (
@@ -77,7 +87,14 @@ const ItalyMedicalDevicesMarketReport = () => (
       title="Italy Medical Devices Market Report 2026 | EU MDR, BDNM Registration & Regional Procurement | BioNixus"
       description="Italy medical devices market at EUR 12–14B in 2026. EU MDR compliance, BDNM registration, regional procurement (Intercent-ER, ARCA, ESTAR), and BioNixus GCC expansion intelligence for Italian medtech companies."
       canonical="https://www.bionixus.com/italy-medical-devices-market-report"
-      jsonLd={jsonLd}
+      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "Italy Medical Devices Market Report 2026 | EU MDR, BDNM Registration & Regional Procurement | BioNixus",
+    pageMetaDescription: "Italy medical devices market at EUR 12–14B in 2026. EU MDR compliance, BDNM registration, regional procurement (Intercent-ER, ARCA, ESTAR), and BioNixus GCC expansion intelligence for Italian medtech companies.",
+    countryName: "Italy",
+    marketSlug: "italy",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })]}
     />
       <ReportReadingProgress progressId="report-rp-italy-medical-devices-market-report" />
       <main>

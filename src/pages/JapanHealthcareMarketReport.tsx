@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -68,6 +70,14 @@ const jsonLd = [
     url: `https://www.bionixus.com/japan-healthcare-market-report#${FAQ_SECTION_ID}`,
     mainEntity: REPORT_FAQ_ITEMS.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "Japan Healthcare Market Report 2026 | PMDA, NHI Drug Pricing & Pharmaceutical Market Intelligence | BioNixus",
+    pageMetaDescription: "Japan healthcare market at USD 530B in 2026 — world's third largest. PMDA Sakigake approval, NHI biannual price revision, aging population dynamics, world's third-largest pharma market, and BioNixus GCC intelligence.",
+    countryName: "Japan",
+    marketSlug: "japan",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })
 ];
 
 const JapanHealthcareMarketReport = () => (
@@ -77,7 +87,14 @@ const JapanHealthcareMarketReport = () => (
       title="Japan Healthcare Market Report 2026 | PMDA, NHI Drug Pricing & Pharmaceutical Market Intelligence | BioNixus"
       description="Japan healthcare market at USD 530B in 2026 — world's third largest. PMDA Sakigake approval, NHI biannual price revision, aging population dynamics, world's third-largest pharma market, and BioNixus GCC intelligence."
       canonical="https://www.bionixus.com/japan-healthcare-market-report"
-      jsonLd={jsonLd}
+      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "Japan Healthcare Market Report 2026 | PMDA, NHI Drug Pricing & Pharmaceutical Market Intelligence | BioNixus",
+    pageMetaDescription: "Japan healthcare market at USD 530B in 2026 — world's third largest. PMDA Sakigake approval, NHI biannual price revision, aging population dynamics, world's third-largest pharma market, and BioNixus GCC intelligence.",
+    countryName: "Japan",
+    marketSlug: "japan",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })]}
     />
       <ReportReadingProgress progressId="report-rp-japan-healthcare-market-report" />
       <main>

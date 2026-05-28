@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -82,6 +84,14 @@ const jsonLd = [
       acceptedAnswer: { '@type': 'Answer', text: item.answer },
     })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "GCC Medical Devices Market Report 2026 | USD 5.8B Market Size, Segments & Intelligence | BioNixus",
+    pageMetaDescription: "GCC medical devices market at USD 5.8B in 2026, reaching $9B+ by 2030. Saudi Arabia, UAE, and Kuwait country-level data, regulatory requirements (SFDA, MOHAP, DHA), device segments, and hospital procurement intelligence from BioNixus.",
+    countryName: "GCC",
+    marketSlug: "gcc",
+    publishedDate: "2026-05-01",
+    modifiedDate: "2026-05-27",
+  })
 ];
 
 function StatCard({ value, label }: { value: string; label: string }) {
@@ -102,7 +112,14 @@ const GccMedicalDevicesMarketReport = () => {
         title="GCC Medical Devices Market Report 2026 | USD 5.8B Market Size, Segments & Intelligence | BioNixus"
         description="GCC medical devices market at USD 5.8B in 2026, reaching $9B+ by 2030. Saudi Arabia, UAE, and Kuwait country-level data, regulatory requirements (SFDA, MOHAP, DHA), device segments, and hospital procurement intelligence from BioNixus."
         canonical="https://www.bionixus.com/gcc-medical-devices-market-report"
-        jsonLd={jsonLd}
+        jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "GCC Medical Devices Market Report 2026 | USD 5.8B Market Size, Segments & Intelligence | BioNixus",
+    pageMetaDescription: "GCC medical devices market at USD 5.8B in 2026, reaching $9B+ by 2030. Saudi Arabia, UAE, and Kuwait country-level data, regulatory requirements (SFDA, MOHAP, DHA), device segments, and hospital procurement intelligence from BioNixus.",
+    countryName: "GCC",
+    marketSlug: "gcc",
+    publishedDate: "2026-05-01",
+    modifiedDate: "2026-05-27",
+  })]}
       />
       <ReportReadingProgress progressId="report-rp-gcc-medical-devices-market-report" />
       <main>

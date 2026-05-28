@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -68,6 +70,14 @@ const jsonLd = [
     url: `https://www.bionixus.com/australia-medical-devices-market-report#${FAQ_SECTION_ID}`,
     mainEntity: REPORT_FAQ_ITEMS.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "Australia Medical Devices Market Report 2026 | TGA ARTG, Prostheses List & MSAC | BioNixus",
+    pageMetaDescription: "Australia medical devices market at USD 10B in 2026. TGA ARTG registration, Prostheses List reimbursement reforms, MSAC health technology assessment, Access Consortium, and BioNixus GCC expansion intelligence.",
+    countryName: "Australia",
+    marketSlug: "australia",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })
 ];
 
 const AustraliaMedicalDevicesMarketReport = () => (
@@ -77,7 +87,14 @@ const AustraliaMedicalDevicesMarketReport = () => (
       title="Australia Medical Devices Market Report 2026 | TGA ARTG, Prostheses List & MSAC | BioNixus"
       description="Australia medical devices market at USD 10B in 2026. TGA ARTG registration, Prostheses List reimbursement reforms, MSAC health technology assessment, Access Consortium, and BioNixus GCC expansion intelligence."
       canonical="https://www.bionixus.com/australia-medical-devices-market-report"
-      jsonLd={jsonLd}
+      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "Australia Medical Devices Market Report 2026 | TGA ARTG, Prostheses List & MSAC | BioNixus",
+    pageMetaDescription: "Australia medical devices market at USD 10B in 2026. TGA ARTG registration, Prostheses List reimbursement reforms, MSAC health technology assessment, Access Consortium, and BioNixus GCC expansion intelligence.",
+    countryName: "Australia",
+    marketSlug: "australia",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })]}
     />
       <ReportReadingProgress progressId="report-rp-australia-medical-devices-market-report" />
       <main>

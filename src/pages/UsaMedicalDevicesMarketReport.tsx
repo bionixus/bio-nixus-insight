@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -68,6 +70,14 @@ const jsonLd = [
     url: `https://www.bionixus.com/usa-medical-devices-market-report#${FAQ_SECTION_ID}`,
     mainEntity: REPORT_FAQ_ITEMS.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "USA Medical Devices Market Report 2026 | FDA 510(k)/PMA, CMS NTAP & GPO Procurement | BioNixus",
+    pageMetaDescription: "USA medical devices market at USD 180B in 2026 — world's largest. FDA regulatory pathways, CMS DRG and NTAP reimbursement, GPO/IDN procurement, and BioNixus intelligence for US medtech companies expanding to GCC and MENA.",
+    countryName: "United States",
+    marketSlug: "usa",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })
 ];
 
 const UsaMedicalDevicesMarketReport = () => (
@@ -77,7 +87,14 @@ const UsaMedicalDevicesMarketReport = () => (
       title="USA Medical Devices Market Report 2026 | FDA 510(k)/PMA, CMS NTAP & GPO Procurement | BioNixus"
       description="USA medical devices market at USD 180B in 2026 — world's largest. FDA regulatory pathways, CMS DRG and NTAP reimbursement, GPO/IDN procurement, and BioNixus intelligence for US medtech companies expanding to GCC and MENA."
       canonical="https://www.bionixus.com/usa-medical-devices-market-report"
-      jsonLd={jsonLd}
+      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "USA Medical Devices Market Report 2026 | FDA 510(k)/PMA, CMS NTAP & GPO Procurement | BioNixus",
+    pageMetaDescription: "USA medical devices market at USD 180B in 2026 — world's largest. FDA regulatory pathways, CMS DRG and NTAP reimbursement, GPO/IDN procurement, and BioNixus intelligence for US medtech companies expanding to GCC and MENA.",
+    countryName: "United States",
+    marketSlug: "usa",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })]}
     />
       <ReportReadingProgress progressId="report-rp-usa-medical-devices-market-report" />
       <main>

@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -68,6 +70,14 @@ const jsonLd = [
     url: `https://www.bionixus.com/germany-healthcare-market-report#${FAQ_SECTION_ID}`,
     mainEntity: REPORT_FAQ_ITEMS.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "Germany Healthcare Market Report 2026 | AMNOG, GKV & Pharma Market Intelligence | BioNixus",
+    pageMetaDescription: "Germany healthcare market at EUR 430B in 2026. AMNOG benefit assessment, GKV pharmaceutical spend, IQWiG/G-BA market access, medical devices (EUR 31B), and BioNixus intelligence for European pharma companies expanding to GCC.",
+    countryName: "Germany",
+    marketSlug: "germany",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })
 ];
 
 const GermanyHealthcareMarketReport = () => (
@@ -77,7 +87,14 @@ const GermanyHealthcareMarketReport = () => (
       title="Germany Healthcare Market Report 2026 | AMNOG, GKV & Pharma Market Intelligence | BioNixus"
       description="Germany healthcare market at EUR 430B in 2026. AMNOG benefit assessment, GKV pharmaceutical spend, IQWiG/G-BA market access, medical devices (EUR 31B), and BioNixus intelligence for European pharma companies expanding to GCC."
       canonical="https://www.bionixus.com/germany-healthcare-market-report"
-      jsonLd={jsonLd}
+      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "Germany Healthcare Market Report 2026 | AMNOG, GKV & Pharma Market Intelligence | BioNixus",
+    pageMetaDescription: "Germany healthcare market at EUR 430B in 2026. AMNOG benefit assessment, GKV pharmaceutical spend, IQWiG/G-BA market access, medical devices (EUR 31B), and BioNixus intelligence for European pharma companies expanding to GCC.",
+    countryName: "Germany",
+    marketSlug: "germany",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })]}
     />
       <ReportReadingProgress progressId="report-rp-germany-healthcare-market-report" />
       <main>
@@ -106,6 +123,8 @@ const GermanyHealthcareMarketReport = () => (
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
         </div>
       </section>
+
+        <MarketIntelligenceSections marketSlug="germany" countryName="Germany" variant="healthcare" />
       <section className="section-padding" id="market-access">
         <div className="container-wide max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Germany Pharmaceutical Market Access Framework</h2>

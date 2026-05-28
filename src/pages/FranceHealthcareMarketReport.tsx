@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -68,6 +70,14 @@ const jsonLd = [
     url: `https://www.bionixus.com/france-healthcare-market-report#${FAQ_SECTION_ID}`,
     mainEntity: REPORT_FAQ_ITEMS.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "France Healthcare Market Report 2026 | HAS ASMR, Assurance Maladie & Pharma Intelligence | BioNixus",
+    pageMetaDescription: "France healthcare market at EUR 260B in 2026. HAS SMR/ASMR assessment, CEPS price negotiation, Assurance Maladie reimbursement, AAP early access, and BioNixus intelligence for French pharma companies expanding to GCC.",
+    countryName: "France",
+    marketSlug: "france",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })
 ];
 
 const FranceHealthcareMarketReport = () => (
@@ -77,7 +87,14 @@ const FranceHealthcareMarketReport = () => (
       title="France Healthcare Market Report 2026 | HAS ASMR, Assurance Maladie & Pharma Intelligence | BioNixus"
       description="France healthcare market at EUR 260B in 2026. HAS SMR/ASMR assessment, CEPS price negotiation, Assurance Maladie reimbursement, AAP early access, and BioNixus intelligence for French pharma companies expanding to GCC."
       canonical="https://www.bionixus.com/france-healthcare-market-report"
-      jsonLd={jsonLd}
+      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "France Healthcare Market Report 2026 | HAS ASMR, Assurance Maladie & Pharma Intelligence | BioNixus",
+    pageMetaDescription: "France healthcare market at EUR 260B in 2026. HAS SMR/ASMR assessment, CEPS price negotiation, Assurance Maladie reimbursement, AAP early access, and BioNixus intelligence for French pharma companies expanding to GCC.",
+    countryName: "France",
+    marketSlug: "france",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })]}
     />
       <ReportReadingProgress progressId="report-rp-france-healthcare-market-report" />
       <main>
@@ -106,6 +123,8 @@ const FranceHealthcareMarketReport = () => (
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
         </div>
       </section>
+
+        <MarketIntelligenceSections marketSlug="france" countryName="France" variant="healthcare" />
       <section className="section-padding" id="market-access">
         <div className="container-wide max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">France Pharmaceutical Market Access Framework</h2>

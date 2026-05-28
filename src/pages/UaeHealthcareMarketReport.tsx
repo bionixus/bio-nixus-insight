@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -82,6 +84,14 @@ const jsonLd = [
       acceptedAnswer: { '@type': 'Answer', text: item.answer },
     })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "UAE Healthcare Market Report 2026 | Market Size, Pharma & Medical Devices | BioNixus",
+    pageMetaDescription: "UAE healthcare market estimated at USD 30B+ in 2026, reaching $60B by 2030. Covers pharma (USD 3.5B), medical devices (USD 1.8B), DHA and DOH regulation, and primary HCP research across Dubai and Abu Dhabi.",
+    countryName: "United Arab Emirates",
+    marketSlug: "uae",
+    publishedDate: "2026-05-01",
+    modifiedDate: "2026-05-27",
+  })
 ];
 
 function StatCard({ value, label }: { value: string; label: string }) {
@@ -129,7 +139,14 @@ const UaeHealthcareMarketReport = () => {
         title="UAE Healthcare Market Report 2026 | Market Size, Pharma & Medical Devices | BioNixus"
         description="UAE healthcare market estimated at USD 30B+ in 2026, reaching $60B by 2030. Covers pharma (USD 3.5B), medical devices (USD 1.8B), DHA and DOH regulation, and primary HCP research across Dubai and Abu Dhabi."
         canonical="https://www.bionixus.com/uae-healthcare-market-report"
-        jsonLd={jsonLd}
+        jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "UAE Healthcare Market Report 2026 | Market Size, Pharma & Medical Devices | BioNixus",
+    pageMetaDescription: "UAE healthcare market estimated at USD 30B+ in 2026, reaching $60B by 2030. Covers pharma (USD 3.5B), medical devices (USD 1.8B), DHA and DOH regulation, and primary HCP research across Dubai and Abu Dhabi.",
+    countryName: "United Arab Emirates",
+    marketSlug: "uae",
+    publishedDate: "2026-05-01",
+    modifiedDate: "2026-05-27",
+  })]}
       />
       <ReportReadingProgress progressId="report-rp-uae-healthcare-market-report" />
       <main>

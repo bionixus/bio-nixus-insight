@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -82,6 +84,14 @@ const jsonLd = [
       acceptedAnswer: { '@type': 'Answer', text: item.answer },
     })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "UAE Medical Devices Market Report 2026 | MOHAP Registration, Dubai Hub & Hospital Intelligence | BioNixus",
+    pageMetaDescription: "UAE medical devices market at USD 1.5–1.8B in 2026, growing 9% CAGR. MOHAP, DHA, and DOH regulatory pathways, Dubai distribution hub strategy, and BioNixus hospital-level procurement intelligence.",
+    countryName: "United Arab Emirates",
+    marketSlug: "uae",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })
 ];
 
 const UaeMedicalDevicesMarketReport = () => {
@@ -92,7 +102,14 @@ const UaeMedicalDevicesMarketReport = () => {
         title="UAE Medical Devices Market Report 2026 | MOHAP Registration, Dubai Hub & Hospital Intelligence | BioNixus"
         description="UAE medical devices market at USD 1.5–1.8B in 2026, growing 9% CAGR. MOHAP, DHA, and DOH regulatory pathways, Dubai distribution hub strategy, and BioNixus hospital-level procurement intelligence."
         canonical="https://www.bionixus.com/uae-medical-devices-market-report"
-        jsonLd={jsonLd}
+        jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "UAE Medical Devices Market Report 2026 | MOHAP Registration, Dubai Hub & Hospital Intelligence | BioNixus",
+    pageMetaDescription: "UAE medical devices market at USD 1.5–1.8B in 2026, growing 9% CAGR. MOHAP, DHA, and DOH regulatory pathways, Dubai distribution hub strategy, and BioNixus hospital-level procurement intelligence.",
+    countryName: "United Arab Emirates",
+    marketSlug: "uae",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })]}
       />
       <ReportReadingProgress progressId="report-rp-uae-medical-devices-market-report" />
       <main>
@@ -148,6 +165,8 @@ const UaeMedicalDevicesMarketReport = () => {
           </div>
         </section>
 
+
+        <MarketIntelligenceSections marketSlug="uae" countryName="United Arab Emirates" variant="medical-devices" />
         <section className="section-padding" id="regulatory">
           <div className="container-wide max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">UAE Medical Device Regulatory Landscape</h2>

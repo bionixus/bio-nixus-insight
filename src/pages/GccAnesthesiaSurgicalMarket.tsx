@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -82,6 +84,14 @@ const jsonLd = [
       acceptedAnswer: { '@type': 'Answer', text: item.answer },
     })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "GCC Anesthesia & Surgical Market Report 2026 | Hospital Procedure Intelligence | BioNixus",
+    pageMetaDescription: "GCC anesthesia market estimated at USD 850M–1B in 2026. Hospital-level surgical procedure volumes, anesthesia drug consumption by account, NUPCO formulary intelligence, and primary HCP research across Saudi Arabia and UAE.",
+    countryName: "GCC",
+    marketSlug: "gcc",
+    publishedDate: "2026-05-01",
+    modifiedDate: "2026-05-27",
+  })
 ];
 
 function StatCard({ value, label }: { value: string; label: string }) {
@@ -102,7 +112,14 @@ const GccAnesthesiaSurgicalMarket = () => {
         title="GCC Anesthesia & Surgical Market Report 2026 | Hospital Procedure Intelligence | BioNixus"
         description="GCC anesthesia market estimated at USD 850M–1B in 2026. Hospital-level surgical procedure volumes, anesthesia drug consumption by account, NUPCO formulary intelligence, and primary HCP research across Saudi Arabia and UAE."
         canonical="https://www.bionixus.com/gcc-anesthesia-surgical-market-report"
-        jsonLd={jsonLd}
+        jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "GCC Anesthesia & Surgical Market Report 2026 | Hospital Procedure Intelligence | BioNixus",
+    pageMetaDescription: "GCC anesthesia market estimated at USD 850M–1B in 2026. Hospital-level surgical procedure volumes, anesthesia drug consumption by account, NUPCO formulary intelligence, and primary HCP research across Saudi Arabia and UAE.",
+    countryName: "GCC",
+    marketSlug: "gcc",
+    publishedDate: "2026-05-01",
+    modifiedDate: "2026-05-27",
+  })]}
       />
       <ReportReadingProgress progressId="report-rp-gcc-anesthesia-surgical-market-report" />
       <main>

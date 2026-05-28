@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -68,6 +70,14 @@ const jsonLd = [
     url: `https://www.bionixus.com/uk-healthcare-market-report#${FAQ_SECTION_ID}`,
     mainEntity: REPORT_FAQ_ITEMS.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "UK Healthcare Market Report 2026 | NHS, NICE & Pharma Intelligence | BioNixus",
+    pageMetaDescription: "UK healthcare market at GBP 260B in 2026. NHS pharmaceutical spend, NICE technology appraisals, MHRA post-Brexit regulation, medical devices, and BioNixus intelligence for UK pharma companies expanding to GCC and MENA.",
+    countryName: "United Kingdom",
+    marketSlug: "uk",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })
 ];
 
 const UkHealthcareMarketReport = () => (
@@ -77,7 +87,14 @@ const UkHealthcareMarketReport = () => (
       title="UK Healthcare Market Report 2026 | NHS, NICE & Pharma Intelligence | BioNixus"
       description="UK healthcare market at GBP 260B in 2026. NHS pharmaceutical spend, NICE technology appraisals, MHRA post-Brexit regulation, medical devices, and BioNixus intelligence for UK pharma companies expanding to GCC and MENA."
       canonical="https://www.bionixus.com/uk-healthcare-market-report"
-      jsonLd={jsonLd}
+      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "UK Healthcare Market Report 2026 | NHS, NICE & Pharma Intelligence | BioNixus",
+    pageMetaDescription: "UK healthcare market at GBP 260B in 2026. NHS pharmaceutical spend, NICE technology appraisals, MHRA post-Brexit regulation, medical devices, and BioNixus intelligence for UK pharma companies expanding to GCC and MENA.",
+    countryName: "United Kingdom",
+    marketSlug: "uk",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })]}
     />
       <ReportReadingProgress progressId="report-rp-uk-healthcare-market-report" />
       <main>
@@ -106,6 +123,8 @@ const UkHealthcareMarketReport = () => (
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
         </div>
       </section>
+
+        <MarketIntelligenceSections marketSlug="uk" countryName="United Kingdom" variant="healthcare" />
       <section className="section-padding" id="market-access">
         <div className="container-wide max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">UK Pharmaceutical Market Access Framework</h2>

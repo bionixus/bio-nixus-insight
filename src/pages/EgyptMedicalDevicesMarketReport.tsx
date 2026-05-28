@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -82,6 +84,14 @@ const jsonLd = [
       acceptedAnswer: { '@type': 'Answer', text: item.answer },
     })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "Egypt Medical Devices Market Report 2026 | USD 1.3B Market, UHI & Hospital Intelligence | BioNixus",
+    pageMetaDescription: "Egypt medical devices market at USD 1.2–1.5B in 2026. Universal Health Insurance program impact, EDA registration, Cairo and Alexandria hospital procurement intelligence, and BioNixus primary research.",
+    countryName: "Egypt",
+    marketSlug: "egypt",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })
 ];
 
 const EgyptMedicalDevicesMarketReport = () => {
@@ -92,7 +102,14 @@ const EgyptMedicalDevicesMarketReport = () => {
         title="Egypt Medical Devices Market Report 2026 | USD 1.3B Market, UHI & Hospital Intelligence | BioNixus"
         description="Egypt medical devices market at USD 1.2–1.5B in 2026. Universal Health Insurance program impact, EDA registration, Cairo and Alexandria hospital procurement intelligence, and BioNixus primary research."
         canonical="https://www.bionixus.com/egypt-medical-devices-market-report"
-        jsonLd={jsonLd}
+        jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "Egypt Medical Devices Market Report 2026 | USD 1.3B Market, UHI & Hospital Intelligence | BioNixus",
+    pageMetaDescription: "Egypt medical devices market at USD 1.2–1.5B in 2026. Universal Health Insurance program impact, EDA registration, Cairo and Alexandria hospital procurement intelligence, and BioNixus primary research.",
+    countryName: "Egypt",
+    marketSlug: "egypt",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })]}
       />
       <ReportReadingProgress progressId="report-rp-egypt-medical-devices-market-report" />
       <main>
@@ -155,6 +172,8 @@ const EgyptMedicalDevicesMarketReport = () => {
           </div>
         </section>
 
+
+        <MarketIntelligenceSections marketSlug="egypt" countryName="Egypt" variant="medical-devices" />
         <section className="section-padding" id="segments">
           <div className="container-wide max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Egypt Medical Device Market Segments</h2>

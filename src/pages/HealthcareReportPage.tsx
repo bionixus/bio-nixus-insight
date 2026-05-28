@@ -8,8 +8,10 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import {
   MARKET_CONTENT,
-  THERAPY_AREA_CONTENT,
+  THERAPY_AREA_CONTENT_MERGED,
 } from '@/data/healthcareReportContent';
+import { MarketIntelligenceSections, TherapyDrugClassSection } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import { getMarketHealthcarePath, getReportSafe } from '@/data/healthcareReportData';
 import { getAccessBullets } from '@/data/healthcareReportAccessBullets';
 import { CrossLinkSentence } from '@/lib/healthcareReportLinks';
@@ -38,7 +40,7 @@ export default function HealthcareReportPage() {
     { name: report.therapyArea, href: therapyHub },
     { name: report.title, href: `/market-reports/${report.slug}` },
   ];
-  const therapy = THERAPY_AREA_CONTENT[report.therapyAreaSlug];
+  const therapy = THERAPY_AREA_CONTENT_MERGED[report.therapyAreaSlug];
   const market = MARKET_CONTENT[report.marketSlug];
   const faqSectionId = `market-report-faq-${report.slug}`;
   const conversionConfig = buildConversionConfigFromReportEntry(report);
@@ -73,6 +75,14 @@ export default function HealthcareReportPage() {
         acceptedAnswer: { '@type': 'Answer', text: item.answer },
       })),
     },
+    ...buildReportEnrichmentSchemas({
+      pageTitle: report.title,
+      pageMetaDescription: report.metaDescription,
+      countryName: report.market,
+      marketSlug: report.marketSlug,
+      publishedDate: report.publishedDate,
+      modifiedDate: report.modifiedDate,
+    }),
   ];
 
   return (
@@ -192,6 +202,18 @@ export default function HealthcareReportPage() {
             </ul>
           </div>
         </section>
+
+        <TherapyDrugClassSection
+          therapy={therapy}
+          marketName={report.market}
+          therapyAreaName={report.therapyArea}
+        />
+
+        <MarketIntelligenceSections
+          marketSlug={report.marketSlug}
+          countryName={report.market}
+          variant="healthcare"
+        />
 
         <section className="py-12 bg-muted/20 rounded-xl px-4 md:px-6" id="field-intelligence">
           <div className="max-w-4xl">

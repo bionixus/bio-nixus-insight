@@ -7,6 +7,8 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
+import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -82,6 +84,14 @@ const jsonLd = [
       acceptedAnswer: { '@type': 'Answer', text: item.answer },
     })),
   },
+  ...buildReportEnrichmentSchemas({
+    pageTitle: "Kuwait Medical Devices Market Report 2026 | CMS Procurement & Hospital Intelligence | BioNixus",
+    pageMetaDescription: "Kuwait medical devices market at USD 480–540M in 2026. Central Medical Stores procurement intelligence, MOPH registration requirements, device segments, and primary HCP research across Kuwait government and private hospitals.",
+    countryName: "Kuwait",
+    marketSlug: "kuwait",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })
 ];
 
 const KuwaitMedicalDevicesMarketReport = () => {
@@ -92,7 +102,14 @@ const KuwaitMedicalDevicesMarketReport = () => {
         title="Kuwait Medical Devices Market Report 2026 | CMS Procurement & Hospital Intelligence | BioNixus"
         description="Kuwait medical devices market at USD 480–540M in 2026. Central Medical Stores procurement intelligence, MOPH registration requirements, device segments, and primary HCP research across Kuwait government and private hospitals."
         canonical="https://www.bionixus.com/kuwait-medical-devices-market-report"
-        jsonLd={jsonLd}
+        jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
+    pageTitle: "Kuwait Medical Devices Market Report 2026 | CMS Procurement & Hospital Intelligence | BioNixus",
+    pageMetaDescription: "Kuwait medical devices market at USD 480–540M in 2026. Central Medical Stores procurement intelligence, MOPH registration requirements, device segments, and primary HCP research across Kuwait government and private hospitals.",
+    countryName: "Kuwait",
+    marketSlug: "kuwait",
+    publishedDate: "2026-05-27",
+    modifiedDate: "2026-05-27",
+  })]}
       />
       <ReportReadingProgress progressId="report-rp-kuwait-medical-devices-market-report" />
       <main>
@@ -151,6 +168,8 @@ const KuwaitMedicalDevicesMarketReport = () => {
           </div>
         </section>
 
+
+        <MarketIntelligenceSections marketSlug="kuwait" countryName="Kuwait" variant="medical-devices" />
         <section className="section-padding" id="segments">
           <div className="container-wide max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
