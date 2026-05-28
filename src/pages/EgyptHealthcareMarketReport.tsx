@@ -16,6 +16,7 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { ReportPremiumHero } from '@/components/report-premium';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -117,22 +118,18 @@ const EgyptHealthcareMarketReport = () => {
           <div className="container-wide"><BreadcrumbNav items={breadcrumbItems} /></div>
         </div>
 
-        <section className="section-padding pb-10">
-          <div className="container-wide max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6">
-              Published by BioNixus · Updated May 2026 · Open access
-            </div>
-            <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">
-              Egypt Healthcare Market Report 2026: Pharmaceutical Intelligence, UHI Access, and EDA Registration
-            </h1>
-            <p className="text-muted-foreground leading-relaxed">
-              BioNixus delivers Egypt pharmaceutical consumption intelligence, UHI formulary access research,
-              and primary HCP surveys from our Cairo office — covering government hospitals, UHI-enrolled
-              facilities, and Egypt's expanding private hospital sector across all 27 governorates.
-            </p>
-            <ReportEarlyCtaBar config={REPORT_CONVERSION} className="mt-8" />
-          </div>
-        </section>
+                <ReportPremiumHero
+          title="Egypt Healthcare Market Report 2026: Pharmaceutical Intelligence, UHI Access, and EDA Registration"
+          description="BioNixus delivers Egypt pharmaceutical consumption intelligence, UHI formulary access research, and primary HCP surveys from our Cairo office — covering government hospitals, UHI-enrolled facilities, and Egypt's expanding private hospital sector across all 27 governorates."
+          config={REPORT_CONVERSION}
+          marketSlug="egypt"
+          countryName="Egypt"
+          stats={[
+            { value: '~$27B', label: 'Egypt healthcare market 2026' },
+            { value: '~$5B', label: 'Pharmaceutical market 2026' },
+            { value: '~9%', label: 'Pharma CAGR 2026–2030' },
+          ]}
+        />
 
         <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">
         <section className="section-padding bg-cream-dark" id="executive-summary">

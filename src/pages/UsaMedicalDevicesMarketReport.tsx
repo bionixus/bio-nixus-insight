@@ -16,6 +16,7 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { ReportPremiumHero } from '@/components/report-premium';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -99,14 +100,18 @@ const UsaMedicalDevicesMarketReport = () => (
       <ReportReadingProgress progressId="report-rp-usa-medical-devices-market-report" />
       <main>
       <div className="section-padding pt-24 pb-4"><div className="container-wide"><BreadcrumbNav items={breadcrumbItems} /></div></div>
-      <section className="section-padding pb-10">
-        <div className="container-wide max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6">Published by BioNixus · Updated May 2026 · Open access</div>
-          <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">USA Medical Devices Market Report 2026: FDA Approval, CMS Reimbursement, and GPO/IDN Procurement Intelligence</h1>
-          <p className="text-muted-foreground leading-relaxed">BioNixus serves US-headquartered medical device companies with GCC and MENA market entry intelligence — delivering the regional hospital-level data that American commercial teams need to execute international expansion with the same precision as domestic launch planning.</p>
-            <ReportEarlyCtaBar config={REPORT_CONVERSION} className="mt-8" />
-        </div>
-      </section>
+              <ReportPremiumHero
+          title="USA Medical Devices Market Report 2026: FDA Approval, CMS Reimbursement, and GPO/IDN Procurement Intelligence"
+          description="BioNixus serves US-headquartered medical device companies with GCC and MENA market entry intelligence — delivering the regional hospital-level data that American commercial teams need to execute international expansion with the same precision as domestic launch planning."
+          config={REPORT_CONVERSION}
+          marketSlug="usa"
+          countryName="USA"
+          stats={[
+            { value: '~$180B', label: 'USA medical devices market 2026' },
+            { value: '~$245B', label: 'Forecast 2030' },
+            { value: '6.0%', label: 'CAGR 2026–2030' },
+          ]}
+        />
       <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">
         <section className="section-padding bg-cream-dark" id="executive-summary">
         <div className="container-wide max-w-4xl mx-auto">

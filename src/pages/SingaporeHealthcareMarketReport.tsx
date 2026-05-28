@@ -16,6 +16,7 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { ReportPremiumHero } from '@/components/report-premium';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -99,14 +100,18 @@ const SingaporeHealthcareMarketReport = () => (
       <ReportReadingProgress progressId="report-rp-singapore-healthcare-market-report" />
       <main>
       <div className="section-padding pt-24 pb-4"><div className="container-wide"><BreadcrumbNav items={breadcrumbItems} /></div></div>
-      <section className="section-padding pb-10">
-        <div className="container-wide max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6">Published by BioNixus · Updated May 2026 · Open access</div>
-          <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">Singapore Healthcare Market Report 2026: HSA Registration, ACE HTA, and Southeast Asia Pharma Hub Intelligence</h1>
-          <p className="text-muted-foreground leading-relaxed">BioNixus serves Singapore-based and Asia-Pacific pharmaceutical and medical device companies with GCC and MENA market intelligence — connecting Singapore's world-class regulatory infrastructure with the commercial intelligence needed to grow in the Gulf and MENA.</p>
-            <ReportEarlyCtaBar config={REPORT_CONVERSION} className="mt-8" />
-        </div>
-      </section>
+              <ReportPremiumHero
+          title="Singapore Healthcare Market Report 2026: HSA Registration, ACE HTA, and Southeast Asia Pharma Hub Intelligence"
+          description="BioNixus serves Singapore-based and Asia-Pacific pharmaceutical and medical device companies with GCC and MENA market intelligence — connecting Singapore's world-class regulatory infrastructure with the commercial intelligence needed to grow in the Gulf and MENA."
+          config={REPORT_CONVERSION}
+          marketSlug="singapore"
+          countryName="Singapore"
+          stats={[
+            { value: '~$30B', label: 'Singapore healthcare market 2026' },
+            { value: '~$4.5B', label: 'Pharmaceutical market 2026' },
+            { value: '~$2.5B', label: 'Medical devices market 2026' },
+          ]}
+        />
       <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">
         <section className="section-padding bg-cream-dark" id="executive-summary">
         <div className="container-wide max-w-4xl mx-auto">

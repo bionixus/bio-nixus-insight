@@ -16,6 +16,7 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { ReportPremiumHero } from '@/components/report-premium';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -140,22 +141,18 @@ const SaudiArabiaMedicalDevicesMarketReport = () => {
         </div>
 
         {/* Hero */}
-        <section className="section-padding pb-10">
-          <div className="container-wide max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6">
-              Published by BioNixus · Updated May 2026 · Open access — no registration required
-            </div>
-            <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">
-              Saudi Arabia Medical Devices Market Report 2026: Hospital Consumption and Commercial Intelligence
-            </h1>
-            <p className="text-muted-foreground leading-relaxed">
-              BioNixus delivers hospital-level medical device consumption data, procurement intelligence, and
-              primary HCP research across Saudi Arabia — sourced directly from hospital procurement systems,
-              biomedical engineers, and clinical department leads across MOH, NGHA, and private hospital networks.
-            </p>
-            <ReportEarlyCtaBar config={REPORT_CONVERSION} className="mt-8" />
-          </div>
-        </section>
+                <ReportPremiumHero
+          title="Saudi Arabia Medical Devices Market Report 2026: Hospital Consumption and Commercial Intelligence"
+          description="BioNixus delivers hospital-level medical device consumption data, procurement intelligence, and primary HCP research across Saudi Arabia — sourced directly from hospital procurement systems, biomedical engineers, and clinical department leads across MOH, NGHA, and private hospital networks."
+          config={REPORT_CONVERSION}
+          marketSlug="saudi-arabia"
+          countryName="Saudi Arabia"
+          stats={[
+            { value: '$2.8B', label: 'Saudi medical devices market 2026 (est.)' },
+            { value: '$4.5B+', label: 'Forecast by 2030' },
+            { value: '8.3%', label: 'CAGR 2026–2030' },
+          ]}
+        />
 
         {/* Executive Summary */}
         <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">

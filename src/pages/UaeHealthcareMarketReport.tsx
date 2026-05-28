@@ -16,6 +16,7 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { ReportPremiumHero } from '@/components/report-premium';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -157,22 +158,18 @@ const UaeHealthcareMarketReport = () => {
         </div>
 
         {/* Hero */}
-        <section className="section-padding pb-10">
-          <div className="container-wide max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6">
-              Published by BioNixus · Updated May 2026 · Open access — no registration required
-            </div>
-            <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">
-              UAE Healthcare Market Report 2026: Market Size, Pharmaceutical Intelligence, and Commercial Strategy
-            </h1>
-            <p className="text-muted-foreground leading-relaxed">
-              BioNixus delivers UAE pharmaceutical consumption data, HCP research, and market access intelligence
-              across Dubai (DHA), Abu Dhabi (DOH), and federal MOHAP-regulated channels — covering hospital
-              formularies, retail pharmacy, and specialist prescribing across all major therapeutic areas.
-            </p>
-            <ReportEarlyCtaBar config={REPORT_CONVERSION} className="mt-8" />
-          </div>
-        </section>
+                <ReportPremiumHero
+          title="UAE Healthcare Market Report 2026: Market Size, Pharmaceutical Intelligence, and Commercial Strategy"
+          description="BioNixus delivers UAE pharmaceutical consumption data, HCP research, and market access intelligence across Dubai (DHA), Abu Dhabi (DOH), and federal MOHAP-regulated channels — covering hospital formularies, retail pharmacy, and specialist prescribing across all major therapeutic areas."
+          config={REPORT_CONVERSION}
+          marketSlug="uae"
+          countryName="UAE"
+          stats={[
+            { value: '$30–33B', label: 'UAE healthcare market 2026 (est.)' },
+            { value: '~$60B', label: 'Forecast by 2030' },
+            { value: '7.5%', label: 'CAGR 2025–2030' },
+          ]}
+        />
 
         {/* Executive Summary */}
         <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">

@@ -16,6 +16,7 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { ReportPremiumHero } from '@/components/report-premium';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -99,14 +100,18 @@ const IndiaHealthcareMarketReport = () => (
       <ReportReadingProgress progressId="report-rp-india-healthcare-market-report" />
       <main>
       <div className="section-padding pt-24 pb-4"><div className="container-wide"><BreadcrumbNav items={breadcrumbItems} /></div></div>
-      <section className="section-padding pb-10">
-        <div className="container-wide max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6">Published by BioNixus · Updated May 2026 · Open access</div>
-          <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">India Healthcare Market Report 2026: CDSCO, Ayushman Bharat, and Pharmaceutical Market Intelligence</h1>
-          <p className="text-muted-foreground leading-relaxed">BioNixus serves Indian pharmaceutical and medical device companies with GCC and MENA market intelligence — connecting India's world-class generic manufacturing capability with the commercial intelligence needed to grow in the Gulf and broader MENA region.</p>
-            <ReportEarlyCtaBar config={REPORT_CONVERSION} className="mt-8" />
-        </div>
-      </section>
+              <ReportPremiumHero
+          title="India Healthcare Market Report 2026: CDSCO, Ayushman Bharat, and Pharmaceutical Market Intelligence"
+          description="BioNixus serves Indian pharmaceutical and medical device companies with GCC and MENA market intelligence — connecting India's world-class generic manufacturing capability with the commercial intelligence needed to grow in the Gulf and broader MENA region."
+          config={REPORT_CONVERSION}
+          marketSlug="india"
+          countryName="India"
+          stats={[
+            { value: '~$265B', label: 'India healthcare market 2026' },
+            { value: '~$50B', label: 'Pharmaceutical market 2026' },
+            { value: '~$12B', label: 'Medical devices market 2026' },
+          ]}
+        />
       <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">
         <section className="section-padding bg-cream-dark" id="executive-summary">
         <div className="container-wide max-w-4xl mx-auto">

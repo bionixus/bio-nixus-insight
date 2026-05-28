@@ -16,6 +16,7 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { ReportPremiumHero } from '@/components/report-premium';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -99,14 +100,18 @@ const ChinaHealthcareMarketReport = () => (
       <ReportReadingProgress progressId="report-rp-china-healthcare-market-report" />
       <main>
       <div className="section-padding pt-24 pb-4"><div className="container-wide"><BreadcrumbNav items={breadcrumbItems} /></div></div>
-      <section className="section-padding pb-10">
-        <div className="container-wide max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6">Published by BioNixus · Updated May 2026 · Open access</div>
-          <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">China Healthcare Market Report 2026: NMPA Approval, NRDL Reimbursement, and VBP Commercial Intelligence</h1>
-          <p className="text-muted-foreground leading-relaxed">BioNixus provides China and GCC comparative market intelligence for global pharmaceutical and medical device companies — helping multi-market commercial teams prioritise between China's large but price-compressed market and the GCC's premium-priced, fast-growing healthcare opportunity.</p>
-            <ReportEarlyCtaBar config={REPORT_CONVERSION} className="mt-8" />
-        </div>
-      </section>
+              <ReportPremiumHero
+          title="China Healthcare Market Report 2026: NMPA Approval, NRDL Reimbursement, and VBP Commercial Intelligence"
+          description="BioNixus provides China and GCC comparative market intelligence for global pharmaceutical and medical device companies — helping multi-market commercial teams prioritise between China's large but price-compressed market and the GCC's premium-priced, fast-growing healthcare opportunity."
+          config={REPORT_CONVERSION}
+          marketSlug="china"
+          countryName="China"
+          stats={[
+            { value: '~$1.3T', label: 'China healthcare market 2026' },
+            { value: '~$175B', label: 'Pharmaceutical market 2026' },
+            { value: '~$80B', label: 'Medical devices market 2026' },
+          ]}
+        />
       <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">
         <section className="section-padding bg-cream-dark" id="executive-summary">
         <div className="container-wide max-w-4xl mx-auto">

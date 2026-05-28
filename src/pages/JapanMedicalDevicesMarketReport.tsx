@@ -16,6 +16,7 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { ReportPremiumHero } from '@/components/report-premium';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -99,14 +100,18 @@ const JapanMedicalDevicesMarketReport = () => (
       <ReportReadingProgress progressId="report-rp-japan-medical-devices-market-report" />
       <main>
       <div className="section-padding pt-24 pb-4"><div className="container-wide"><BreadcrumbNav items={breadcrumbItems} /></div></div>
-      <section className="section-padding pb-10">
-        <div className="container-wide max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6">Published by BioNixus · Updated May 2026 · Open access</div>
-          <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">Japan Medical Devices Market Report 2026: PMDA Regulation, NHI Reimbursement, and Commercial Intelligence</h1>
-          <p className="text-muted-foreground leading-relaxed">BioNixus delivers Japan medical device market intelligence — PMDA regulatory tracking, NHI pricing strategies, hospital procurement research, and GCC/MENA market entry intelligence for Japanese and international medtech companies.</p>
-            <ReportEarlyCtaBar config={REPORT_CONVERSION} className="mt-8" />
-        </div>
-      </section>
+              <ReportPremiumHero
+          title="Japan Medical Devices Market Report 2026: PMDA Regulation, NHI Reimbursement, and Commercial Intelligence"
+          description="BioNixus delivers Japan medical device market intelligence — PMDA regulatory tracking, NHI pricing strategies, hospital procurement research, and GCC/MENA market entry intelligence for Japanese and international medtech companies."
+          config={REPORT_CONVERSION}
+          marketSlug="japan"
+          countryName="Japan"
+          stats={[
+            { value: '~$40B', label: 'Japan medical devices market 2026' },
+            { value: '~$49B', label: 'Forecast 2030' },
+            { value: '4.5%', label: 'CAGR 2026–2030' },
+          ]}
+        />
       <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">
         <section className="section-padding bg-cream-dark" id="executive-summary">
         <div className="container-wide max-w-4xl mx-auto">

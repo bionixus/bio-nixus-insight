@@ -16,6 +16,7 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { ReportPremiumHero } from '@/components/report-premium';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -117,22 +118,18 @@ const OmanHealthcareMarketReport = () => {
           <div className="container-wide"><BreadcrumbNav items={breadcrumbItems} /></div>
         </div>
 
-        <section className="section-padding pb-10">
-          <div className="container-wide max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6">
-              Published by BioNixus · Updated May 2026 · Open access
-            </div>
-            <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">
-              Oman Healthcare Market Report 2026: Pharmaceutical Intelligence, MOH Access, and Vision 2040 Strategy
-            </h1>
-            <p className="text-muted-foreground leading-relaxed">
-              BioNixus delivers Oman pharmaceutical consumption intelligence, MOH registration tracking, and
-              primary HCP research across Royal Hospital, Sultan Qaboos University Hospital, and Oman's
-              growing private hospital sector.
-            </p>
-            <ReportEarlyCtaBar config={REPORT_CONVERSION} className="mt-8" />
-          </div>
-        </section>
+                <ReportPremiumHero
+          title="Oman Healthcare Market Report 2026: Pharmaceutical Intelligence, MOH Access, and Vision 2040 Strategy"
+          description="BioNixus delivers Oman pharmaceutical consumption intelligence, MOH registration tracking, and primary HCP research across Royal Hospital, Sultan Qaboos University Hospital, and Oman's growing private hospital sector."
+          config={REPORT_CONVERSION}
+          marketSlug="oman"
+          countryName="Oman"
+          stats={[
+            { value: '~$6B', label: 'Oman healthcare market 2026' },
+            { value: '~$550M', label: 'Pharmaceutical market 2026' },
+            { value: '6.2%', label: 'CAGR 2026–2030' },
+          ]}
+        />
 
         <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">
         <section className="section-padding bg-cream-dark" id="executive-summary">

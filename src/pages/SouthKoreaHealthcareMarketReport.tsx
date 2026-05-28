@@ -16,6 +16,7 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { ReportPremiumHero } from '@/components/report-premium';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -99,14 +100,18 @@ const SouthKoreaHealthcareMarketReport = () => (
       <ReportReadingProgress progressId="report-rp-south-korea-healthcare-market-report" />
       <main>
       <div className="section-padding pt-24 pb-4"><div className="container-wide"><BreadcrumbNav items={breadcrumbItems} /></div></div>
-      <section className="section-padding pb-10">
-        <div className="container-wide max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6">Published by BioNixus · Updated May 2026 · Open access</div>
-          <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">South Korea Healthcare Market Report 2026: HIRA, NHIS Reimbursement, and Biopharmaceutical Industry Intelligence</h1>
-          <p className="text-muted-foreground leading-relaxed">BioNixus serves Korean pharmaceutical and medical device companies — particularly biosimilar manufacturers with GCC market ambitions — with regional market intelligence from London and Cairo.</p>
-            <ReportEarlyCtaBar config={REPORT_CONVERSION} className="mt-8" />
-        </div>
-      </section>
+              <ReportPremiumHero
+          title="South Korea Healthcare Market Report 2026: HIRA, NHIS Reimbursement, and Biopharmaceutical Industry Intelligence"
+          description="BioNixus serves Korean pharmaceutical and medical device companies — particularly biosimilar manufacturers with GCC market ambitions — with regional market intelligence from London and Cairo."
+          config={REPORT_CONVERSION}
+          marketSlug="south-korea"
+          countryName="South Korea"
+          stats={[
+            { value: '~$115B', label: 'South Korea healthcare market 2026' },
+            { value: '~$24B', label: 'Pharmaceutical market 2026' },
+            { value: '~$11B', label: 'Medical devices market 2026' },
+          ]}
+        />
       <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">
         <section className="section-padding bg-cream-dark" id="executive-summary">
         <div className="container-wide max-w-4xl mx-auto">

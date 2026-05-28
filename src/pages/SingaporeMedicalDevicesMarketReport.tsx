@@ -16,6 +16,7 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { ReportPremiumHero } from '@/components/report-premium';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -99,14 +100,18 @@ const SingaporeMedicalDevicesMarketReport = () => (
       <ReportReadingProgress progressId="report-rp-singapore-medical-devices-market-report" />
       <main>
       <div className="section-padding pt-24 pb-4"><div className="container-wide"><BreadcrumbNav items={breadcrumbItems} /></div></div>
-      <section className="section-padding pb-10">
-        <div className="container-wide max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6">Published by BioNixus · Updated May 2026 · Open access</div>
-          <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">Singapore Medical Devices Market Report 2026: HSA Regulation, ASEAN Distribution Hub, and Medical Tourism Intelligence</h1>
-          <p className="text-muted-foreground leading-relaxed">BioNixus delivers Singapore and Southeast Asia medical device market intelligence — HSA regulatory tracking, ASEAN distribution strategy, hospital procurement research, and GCC/MENA market entry intelligence for Singapore-based and international medtech companies.</p>
-            <ReportEarlyCtaBar config={REPORT_CONVERSION} className="mt-8" />
-        </div>
-      </section>
+              <ReportPremiumHero
+          title="Singapore Medical Devices Market Report 2026: HSA Regulation, ASEAN Distribution Hub, and Medical Tourism Intelligence"
+          description="BioNixus delivers Singapore and Southeast Asia medical device market intelligence — HSA regulatory tracking, ASEAN distribution strategy, hospital procurement research, and GCC/MENA market entry intelligence for Singapore-based and international medtech companies."
+          config={REPORT_CONVERSION}
+          marketSlug="singapore"
+          countryName="Singapore"
+          stats={[
+            { value: '~$2.5B', label: 'Singapore medical devices market 2026' },
+            { value: '~$3.4B', label: 'Forecast 2030' },
+            { value: '7.0%', label: 'CAGR 2026–2030' },
+          ]}
+        />
       <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">
         <section className="section-padding bg-cream-dark" id="executive-summary">
         <div className="container-wide max-w-4xl mx-auto">

@@ -16,6 +16,7 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { ReportPremiumHero } from '@/components/report-premium';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -130,22 +131,18 @@ const GccMedicalDevicesMarketReport = () => {
         </div>
 
         {/* Hero */}
-        <section className="section-padding pb-10">
-          <div className="container-wide max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6">
-              Published by BioNixus · Updated May 2026 · Open access — no registration required
-            </div>
-            <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">
-              GCC Medical Devices Market Report 2026: Market Size, Segments, and Hospital Procurement Intelligence
-            </h1>
-            <p className="text-muted-foreground leading-relaxed">
-              BioNixus delivers account-level medical device procurement intelligence, clinical user research,
-              and regulatory access mapping across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman — enabling
-              medtech and device companies to size markets, prioritize accounts, and accelerate commercial entry.
-            </p>
-            <ReportEarlyCtaBar config={REPORT_CONVERSION} className="mt-8" />
-          </div>
-        </section>
+                <ReportPremiumHero
+          title="GCC Medical Devices Market Report 2026: Market Size, Segments, and Hospital Procurement Intelligence"
+          description="BioNixus delivers account-level medical device procurement intelligence, clinical user research, and regulatory access mapping across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman — enabling medtech and device companies to size markets, prioritize accounts, and accelerate commercial entry."
+          config={REPORT_CONVERSION}
+          marketSlug="gcc"
+          countryName="GCC"
+          stats={[
+            { value: '~$5.8B', label: 'GCC medical devices market 2026 (est.)' },
+            { value: '$9B+', label: 'Forecast by 2030' },
+            { value: '8.5%', label: 'CAGR 2026–2030' },
+          ]}
+        />
 
         {/* Executive Summary */}
         <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">

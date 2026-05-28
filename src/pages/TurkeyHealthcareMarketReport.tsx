@@ -16,6 +16,7 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { ReportPremiumHero } from '@/components/report-premium';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -99,14 +100,18 @@ const TurkeyHealthcareMarketReport = () => (
       <ReportReadingProgress progressId="report-rp-turkey-healthcare-market-report" />
       <main>
       <div className="section-padding pt-24 pb-4"><div className="container-wide"><BreadcrumbNav items={breadcrumbItems} /></div></div>
-      <section className="section-padding pb-10">
-        <div className="container-wide max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6">Published by BioNixus · Updated May 2026 · Open access</div>
-          <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">Turkey Healthcare Market Report 2026: TİTCK, SGK Reimbursement, and Europe-MENA Crossroads Market Intelligence</h1>
-          <p className="text-muted-foreground leading-relaxed">BioNixus serves Turkish pharmaceutical and medical device companies with GCC and MENA market intelligence — and provides Turkey market context for global commercial teams managing EU/MENA cross-regional portfolios.</p>
-            <ReportEarlyCtaBar config={REPORT_CONVERSION} className="mt-8" />
-        </div>
-      </section>
+              <ReportPremiumHero
+          title="Turkey Healthcare Market Report 2026: TİTCK, SGK Reimbursement, and Europe-MENA Crossroads Market Intelligence"
+          description="BioNixus serves Turkish pharmaceutical and medical device companies with GCC and MENA market intelligence — and provides Turkey market context for global commercial teams managing EU/MENA cross-regional portfolios."
+          config={REPORT_CONVERSION}
+          marketSlug="turkey"
+          countryName="Turkey"
+          stats={[
+            { value: '~$50B', label: 'Turkey healthcare market 2026' },
+            { value: '~$8B', label: 'Pharmaceutical market 2026' },
+            { value: '~$3.5B', label: 'Medical devices market 2026' },
+          ]}
+        />
       <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">
         <section className="section-padding bg-cream-dark" id="executive-summary">
         <div className="container-wide max-w-4xl mx-auto">

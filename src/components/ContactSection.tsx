@@ -79,7 +79,6 @@ type ErrorEmailFields = {
   phone: string;
   country: string;
   researchInterest: string;
-  therapyArea: string;
   timeline: string;
   budget: string;
   referralSource: string;
@@ -98,7 +97,6 @@ function sendErrorEmail(fields: ErrorEmailFields, errorDetails: string) {
     (fields.phone ? `Phone: ${fields.phone}\n` : '') +
     (fields.country ? `Country: ${fields.country}\n` : '') +
     (fields.researchInterest ? `Research Interest: ${fields.researchInterest}\n` : '') +
-    (fields.therapyArea ? `Therapy Area: ${fields.therapyArea}\n` : '') +
     (fields.timeline ? `Timeline: ${fields.timeline}\n` : '') +
     (fields.budget ? `Budget: ${fields.budget}\n` : '') +
     (fields.referralSource ? `Referral Source: ${fields.referralSource}\n` : '') +
@@ -160,7 +158,6 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
     const phone = (data.get('phone') as string)?.trim() || '';
     const country = (data.get('country') as string)?.trim() || '';
     const researchInterest = data.getAll('researchInterest').join(', ');
-    const therapyArea = (data.get('therapyArea') as string)?.trim() || '';
     const timeline = (data.get('timeline') as string)?.trim() || '';
     const budget = (data.get('budget') as string)?.trim() || '';
     const referralSource = (data.get('referralSource') as string)?.trim() || '';
@@ -189,7 +186,7 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
 
     const errorFields: ErrorEmailFields = {
       firstName, lastName, workEmail, company, phone, country,
-      researchInterest, therapyArea, timeline, budget, referralSource, message,
+      researchInterest, timeline, budget, referralSource, message,
     };
 
     setSubmitting(true);
@@ -213,7 +210,6 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
               company: company || undefined,
               country: country || undefined,
               researchInterest: researchInterest || undefined,
-              therapyArea: therapyArea || undefined,
               timeline: timeline || undefined,
               budget: budget || undefined,
               referralSource: referralSource || undefined,
@@ -521,20 +517,6 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
                       ))}
                     </div>
                   </fieldset>
-
-                  {/* Therapy Area */}
-                  <div>
-                    <label htmlFor="therapyArea" className="block text-sm font-medium text-foreground mb-2">
-                      Therapy Area
-                    </label>
-                    <input
-                      id="therapyArea"
-                      name="therapyArea"
-                      type="text"
-                      className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
-                      placeholder="e.g. Oncology, Rare Disease, Cardiovascular…"
-                    />
-                  </div>
 
                   {/* Timeline & Budget */}
                   <div className="grid sm:grid-cols-2 gap-6">

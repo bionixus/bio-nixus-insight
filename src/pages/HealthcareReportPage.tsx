@@ -19,10 +19,17 @@ import { buildConversionConfigFromReportEntry } from '@/data/reportConversionCon
 import {
   ReportConsultationBand,
   ReportContentWithAside,
-  ReportEarlyCtaBar,
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import {
+  ReportPremiumHero,
+  ReportHeroMetaLinks,
+  ReportExecutiveDashboard,
+  ReportPremiumSection,
+  ReportInsightGrid,
+  ReportRelatedCards,
+} from '@/components/report-premium';
 
 export default function HealthcareReportPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -45,6 +52,16 @@ export default function HealthcareReportPage() {
   const faqSectionId = `market-report-faq-${report.slug}`;
   const conversionConfig = buildConversionConfigFromReportEntry(report);
   const intro = `${report.market} concentrates ${report.therapyArea} demand inside one of BioNixus’ highest‑resolution hospital consumption analogue corridors: oncology infusion suites, payer prior‑authorization mining, genomic programme adjacency, centralized tender choreography, clinician adoption pacing, and multilingual patient adherence instrumentation are triangulated for regional general managers balancing franchise targets against FX and procurement volatility.`;
+
+  const relatedReports = report.relatedSlugs
+    .map((s) => getReportSafe(s))
+    .filter((rel): rel is NonNullable<typeof rel> => Boolean(rel))
+    .map((rel) => ({
+      slug: rel.slug,
+      title: rel.title,
+      market: rel.market,
+      therapyArea: rel.therapyArea,
+    }));
 
   const jsonLd = [
     buildBreadcrumbSchema(breadcrumbItems),
@@ -103,57 +120,47 @@ export default function HealthcareReportPage() {
           </div>
         </div>
 
-        <section className="section-padding pb-10">
-          <div className="container-wide max-w-4xl mx-auto">
-            <div className="inline-flex flex-wrap gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6">
-              Published by BioNixus · Updated May 2026 · Open access
-            </div>
-            <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">
-              {report.title}
-            </h1>
-            <p className="text-muted-foreground leading-relaxed mb-5">{intro}</p>
-            <p className="text-sm text-muted-foreground leading-relaxed mb-8">
-              Browse{' '}
-              <Link className="font-medium text-primary hover:underline" to={therapyHub}>
-                more {report.therapyArea} reports
-              </Link>{' '}
-              or{' '}
-              <Link className="font-medium text-primary hover:underline" to={countryHub}>
-                all {report.market} therapy reports
-              </Link>
-              .
-            </p>
-            <ReportEarlyCtaBar config={conversionConfig} />
-          </div>
-        </section>
+        <ReportPremiumHero
+          title={report.title}
+          description={intro}
+          config={conversionConfig}
+          marketSlug={report.marketSlug}
+          therapySlug={report.therapyAreaSlug}
+          therapyName={report.therapyArea}
+          countryName={report.market}
+          stats={[
+            { value: report.stat1Value, label: report.stat1Label },
+            { value: report.stat2Value, label: report.stat2Label },
+            { value: report.stat3Value, label: report.stat3Label },
+          ]}
+          metaLinks={
+            <ReportHeroMetaLinks
+              therapyLabel={`more ${report.therapyArea} reports`}
+              therapyHref={therapyHub}
+              countryLabel={`all ${report.market} therapy reports`}
+              countryHref={countryHub}
+            />
+          }
+        />
 
-        <ReportContentWithAside config={conversionConfig} containerClassName="container-wide max-w-6xl mx-auto section-padding pt-0">
-        <section className="pb-10 bg-cream-dark rounded-xl px-4 md:px-6 py-8" id="executive-summary">
-          <div className="max-w-4xl">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
-              Executive Summary
-            </h2>
-            <div className="bg-white rounded-xl border border-border p-6 shadow-sm mb-6">
-              <div className="grid sm:grid-cols-3 gap-6 text-center">
-                <div>
-                  <p className="text-3xl font-display font-bold text-primary">{report.stat1Value}</p>
-                  <p className="text-xs text-muted-foreground mt-1">{report.stat1Label}</p>
-                </div>
-                <div>
-                  <p className="text-3xl font-display font-bold text-primary">{report.stat2Value}</p>
-                  <p className="text-xs text-muted-foreground mt-1">{report.stat2Label}</p>
-                </div>
-                <div>
-                  <p className="text-3xl font-display font-bold text-primary">{report.stat3Value}</p>
-                  <p className="text-xs text-muted-foreground mt-1">{report.stat3Label}</p>
-                </div>
-              </div>
-            </div>
-            <p className="text-muted-foreground leading-relaxed mb-4">{report.summaryPara1}</p>
-            <p className="leading-relaxed">
+        <ReportContentWithAside
+          config={conversionConfig}
+          containerClassName="container-wide max-w-6xl mx-auto section-padding pt-0"
+        >
+          <ReportExecutiveDashboard
+            stats={[
+              { value: report.stat1Value, label: report.stat1Label },
+              { value: report.stat2Value, label: report.stat2Label },
+              { value: report.stat3Value, label: report.stat3Label },
+            ]}
+            cagrStatLabel={report.stat3Value}
+            midPageCta={<ReportMidPageCta config={conversionConfig} />}
+          >
+            <p>{report.summaryPara1}</p>
+            <p>
               <CrossLinkSentence markdown={report.summaryPara2} />
             </p>
-            <p className="mt-6 text-muted-foreground leading-relaxed">
+            <p>
               Country macro healthcare anchor:{' '}
               <Link className="font-medium text-primary hover:underline" to={marketStandalone}>
                 broader {report.market} healthcare briefing
@@ -164,108 +171,93 @@ export default function HealthcareReportPage() {
               </Link>{' '}
               calibrated with ministry tender intelligence.
             </p>
-            <ReportMidPageCta config={conversionConfig} className="mt-10" />
-          </div>
-        </section>
+          </ReportExecutiveDashboard>
 
-        <section className="py-12" id="therapy-context">
-          <div className="max-w-4xl">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
-              {report.therapyArea} Market Context in {report.market}
-            </h2>
+          <ReportPremiumSection
+            id="therapy-context"
+            title={`${report.therapyArea} Market Context in ${report.market}`}
+            subtitle="Clinical landscape, therapy dynamics, and MENA-specific demand drivers."
+            visualTheme="therapy"
+            marketSlug={report.marketSlug}
+            therapySlug={report.therapyAreaSlug}
+            countryName={report.market}
+            therapyName={report.therapyArea}
+            visualAlt={`${report.therapyArea} therapy area market context illustration for ${report.market}`}
+          >
             <p className="text-muted-foreground leading-relaxed mb-6">{therapy.overviewParagraph}</p>
             <p className="text-muted-foreground leading-relaxed mb-6">{therapy.clinicalLandscape}</p>
             <p className="text-muted-foreground leading-relaxed">{therapy.menaMarketDynamics}</p>
-          </div>
-        </section>
+          </ReportPremiumSection>
 
-        <section className="py-12 bg-cream-dark rounded-xl px-4 md:px-6" id="regulatory-reimbursement">
-          <div className="max-w-4xl">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
-              Regulatory &amp; Reimbursement Landscape
-            </h2>
+          <ReportPremiumSection
+            id="regulatory-reimbursement"
+            title="Regulatory & Reimbursement Landscape"
+            subtitle="Authority frameworks, payer mechanics, and procurement context."
+            visualTheme="regulatory"
+            variant="cream"
+            marketSlug={report.marketSlug}
+            therapySlug={report.therapyAreaSlug}
+            countryName={report.market}
+            visualAlt={`${report.market} pharmaceutical regulatory and reimbursement landscape illustration`}
+          >
             <p className="text-muted-foreground leading-relaxed mb-6">{market.regulatoryOverview}</p>
             <p className="text-muted-foreground leading-relaxed mb-6">{market.payerLandscape}</p>
             <p className="text-muted-foreground leading-relaxed">{market.marketContext}</p>
-          </div>
-        </section>
+          </ReportPremiumSection>
 
-        <section className="py-12" id="market-access-intelligence">
-          <div className="max-w-4xl">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
-              Key Market Access Intelligence
-            </h2>
-            <ul className="list-disc space-y-4 ps-6 text-muted-foreground leading-relaxed marker:text-primary">
-              {getAccessBullets(report).map((line, idx) => (
-                <li key={`access-${idx}`}>{line}</li>
-              ))}
-            </ul>
-          </div>
-        </section>
+          <ReportPremiumSection
+            id="market-access-intelligence"
+            title="Key Market Access Intelligence"
+            subtitle="Actionable access signals for launch sequencing and payer engagement."
+            visualTheme="access"
+            marketSlug={report.marketSlug}
+            therapySlug={report.therapyAreaSlug}
+            countryName={report.market}
+            visualAlt={`${report.market} ${report.therapyArea} market access intelligence pathway illustration`}
+          >
+            <ReportInsightGrid items={getAccessBullets(report)} title="Market access intelligence highlights" />
+          </ReportPremiumSection>
 
-        <TherapyDrugClassSection
-          therapy={therapy}
-          marketName={report.market}
-          therapyAreaName={report.therapyArea}
-        />
+          <TherapyDrugClassSection
+            therapy={therapy}
+            marketName={report.market}
+            therapyAreaName={report.therapyArea}
+            therapySlug={report.therapyAreaSlug}
+            marketSlug={report.marketSlug}
+          />
 
-        <MarketIntelligenceSections
-          marketSlug={report.marketSlug}
-          countryName={report.market}
-          variant="healthcare"
-        />
+          <MarketIntelligenceSections
+            marketSlug={report.marketSlug}
+            countryName={report.market}
+            variant="healthcare"
+            therapySlug={report.therapyAreaSlug}
+          />
 
-        <section className="py-12 bg-muted/20 rounded-xl px-4 md:px-6" id="field-intelligence">
-          <div className="max-w-4xl">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
-              Field Intelligence &amp; Methodology
-            </h2>
+          <ReportPremiumSection
+            id="field-intelligence"
+            title="Field Intelligence & Methodology"
+            subtitle="Primary research governance and commercial outlook calibration."
+            visualTheme="field"
+            variant="muted"
+            marketSlug={report.marketSlug}
+            therapySlug={report.therapyAreaSlug}
+            countryName={report.market}
+            visualAlt={`BioNixus ${report.market} field intelligence and healthcare market research methodology illustration`}
+          >
             <p className="text-muted-foreground leading-relaxed mb-6">{report.fieldIntelligenceParagraph}</p>
             <p className="text-muted-foreground leading-relaxed mb-6">{report.commercialOutlookParagraph}</p>
             <h3 className="text-xl font-display font-semibold text-foreground mb-4">Research governance</h3>
             <p className="text-muted-foreground leading-relaxed">{report.methodologyParagraph}</p>
-          </div>
-        </section>
+          </ReportPremiumSection>
 
-        <FAQSection
-          sectionId={faqSectionId}
-          title={`${report.market} ${report.therapyArea} market 2026 — regulatory, reimbursement, and commercial intelligence FAQ`}
-          items={report.faqs}
-          className="bg-muted/30"
-        />
+          <FAQSection
+            sectionId={faqSectionId}
+            title={`${report.market} ${report.therapyArea} market 2026 — regulatory, reimbursement, and commercial intelligence FAQ`}
+            items={report.faqs}
+            className="bg-muted/30 rounded-2xl border border-border/40"
+          />
 
-        <section className="py-12" id="related-reports">
-          <div className="max-w-5xl">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-8">
-              Related Healthcare Market Research Reports
-            </h2>
-            <div className="grid sm:grid-cols-2 gap-5">
-              {report.relatedSlugs.map((s) => {
-                const rel = getReportSafe(s);
-                if (!rel) return null;
-                return (
-                  <article
-                    key={s}
-                    className="bg-card rounded-xl border border-border p-5 hover:shadow-md transition-shadow"
-                  >
-                    <span className="inline-flex mb-3 flex-wrap gap-2">
-                      <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
-                        {rel.market}
-                      </span>
-                      <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-muted text-foreground">
-                        {rel.therapyArea}
-                      </span>
-                    </span>
-                    <h3 className="text-xl font-display font-semibold text-foreground mb-3">{rel.title}</h3>
-                    <Link className="font-medium text-primary hover:underline" to={`/market-reports/${rel.slug}`}>
-                      Read report →
-                    </Link>
-                  </article>
-                );
-              })}
-            </div>
-          </div>
-        </section>
+          <ReportRelatedCards reports={relatedReports} />
         </ReportContentWithAside>
 
         <ReportConsultationBand config={conversionConfig} />

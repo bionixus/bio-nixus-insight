@@ -16,6 +16,7 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { ReportPremiumHero } from '@/components/report-premium';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -99,14 +100,18 @@ const AustraliaMedicalDevicesMarketReport = () => (
       <ReportReadingProgress progressId="report-rp-australia-medical-devices-market-report" />
       <main>
       <div className="section-padding pt-24 pb-4"><div className="container-wide"><BreadcrumbNav items={breadcrumbItems} /></div></div>
-      <section className="section-padding pb-10">
-        <div className="container-wide max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6">Published by BioNixus · Updated May 2026 · Open access</div>
-          <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">Australia Medical Devices Market Report 2026: TGA Registration, Prostheses List, and MSAC Reimbursement Intelligence</h1>
-          <p className="text-muted-foreground leading-relaxed">BioNixus delivers Australia medical device market intelligence — TGA regulatory tracking, Prostheses List reimbursement strategy, MSAC assessment intelligence, and GCC/MENA market entry support for Australian and international medtech manufacturers.</p>
-            <ReportEarlyCtaBar config={REPORT_CONVERSION} className="mt-8" />
-        </div>
-      </section>
+              <ReportPremiumHero
+          title="Australia Medical Devices Market Report 2026: TGA Registration, Prostheses List, and MSAC Reimbursement Intelligence"
+          description="BioNixus delivers Australia medical device market intelligence — TGA regulatory tracking, Prostheses List reimbursement strategy, MSAC assessment intelligence, and GCC/MENA market entry support for Australian and international medtech manufacturers."
+          config={REPORT_CONVERSION}
+          marketSlug="australia"
+          countryName="Australia"
+          stats={[
+            { value: '~$10B', label: 'Australia medical devices market 2026' },
+            { value: '~$13B', label: 'Forecast 2030' },
+            { value: '5.5%', label: 'CAGR 2026–2030' },
+          ]}
+        />
       <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">
         <section className="section-padding bg-cream-dark" id="executive-summary">
         <div className="container-wide max-w-4xl mx-auto">

@@ -8,7 +8,9 @@ import { MARKET_CONTENT, THERAPY_AREA_CONTENT } from '@/data/healthcareReportCon
 import { REPORT_ENTRIES } from '@/data/healthcareReportData';
 import { standaloneMedicalDevicesTwin } from '@/lib/standaloneMedicalDevicesTwin';
 import { getMarketReportsHubConfig } from '@/data/reportConversionConfig';
-import { ReportConsultationBand, ReportEarlyCtaBar } from '@/components/report-conversion';
+import { ReportConsultationBand } from '@/components/report-conversion';
+import { ReportPremiumHero, ReportSectionVisual } from '@/components/report-premium';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const COUNTRY_NAV_ORDER = [
   'gcc',
@@ -54,6 +56,7 @@ const orderedCountrySlugs = COUNTRY_NAV_ORDER.filter((s) => MARKET_CONTENT[s]);
 
 export default function HealthcareReportsHub() {
   const hubConversion = getMarketReportsHubConfig();
+  const gridRef = useScrollReveal<HTMLDivElement>({ stagger: 80 });
   const primaryReports = REPORT_ENTRIES.filter((e) => e.marketSlug !== 'turkey');
   const bridgeReports = REPORT_ENTRIES.filter((e) => e.marketSlug === 'turkey');
 
@@ -73,34 +76,45 @@ export default function HealthcareReportsHub() {
           </div>
         </div>
 
-        <section className="section-padding pb-10">
+        <ReportPremiumHero
+          title="Healthcare Market Research Reports 2026 — GCC, MENA & Global Intelligence"
+          description="BioNixus synthesizes regulatory authority dossier expectations, payer and procurement mechanics, hospital consumption analogues, clinician adoption ladders, and multilingual patient adherence signals across Saudi Arabia, United Arab Emirates, Kuwait, Qatar, Bahrain, Oman, Egypt, aggregated GCC composites, plus Turkey as a bridging market—delivering general manager‑grade intelligence calibrated for pharmaceutical and medical device franchises."
+          config={hubConversion}
+          marketSlug="gcc"
+          countryName="GCC & MENA"
+          badges={['BioNixus Intelligence', 'Updated May 2026', '107+ market reports']}
+        />
+
+        <section className="section-padding pb-6">
           <div className="container-wide max-w-4xl mx-auto">
-            <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">
-              Healthcare Market Research Reports 2026 — GCC, MENA &amp; Global Intelligence
-            </h1>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              BioNixus synthesizes regulatory authority dossier expectations, payer and procurement mechanics, hospital
-              consumption analogues, clinician adoption ladders, and multilingual patient adherence signals across Saudi
-              Arabia, United Arab Emirates, Kuwait, Qatar, Bahrain, Oman, Egypt, aggregated GCC composites, plus Turkey
-              as a bridging market—delivering general manager‑grade intelligence calibrated for pharmaceutical and medical
-              device franchises competing in turbulent hydrocarbon‑linked economies.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed sr sr-up">
               Each downloadable narrative cross‑links authoritative ministry contexts, formulary adjudication artefacts,
               tender cyclicalities, academic cancer institute throughput constraints, philanthropic programme adjacencies,
               genomic initiative uplift priors where applicable—all stress‑tested with BioNixus proprietary analogue panels
               operating continuously since twenty twelve alongside GDPR‑aligned HCP instrumentation.
             </p>
-            <ReportEarlyCtaBar config={hubConversion} className="mt-8" />
           </div>
         </section>
 
-        <section className="section-padding bg-cream-dark">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
-              Explore Reports by Therapy Area
-            </h2>
-            <div className="flex flex-wrap gap-2 mb-10">
+        <section className="section-padding bg-cream-dark rounded-2xl mx-4 md:mx-auto max-w-6xl border border-border/50">
+          <div className="container-wide max-w-5xl mx-auto px-4 md:px-6 py-10">
+            <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(240px,280px)] gap-8 items-center mb-10">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-2 sr sr-up sr-line">
+                  Explore Reports by Therapy Area
+                </h2>
+                <p className="text-sm text-muted-foreground mb-6 sr sr-up">
+                  Oncology, cardiovascular, diabetes, immunology, rare diseases, and more.
+                </p>
+              </div>
+              <ReportSectionVisual
+                theme="therapy"
+                marketSlug="gcc"
+                alt="Healthcare market research therapy area segmentation dashboard illustration"
+                className="hidden lg:block sr sr-right"
+              />
+            </div>
+            <div className="flex flex-wrap gap-2 mb-10 sr sr-up">
               {therapySlugs.map((slug) => (
                 <Link
                   key={slug}
@@ -134,11 +148,11 @@ export default function HealthcareReportsHub() {
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-8">
               GCC &amp; MENA Programmatic Reports ({primaryReports.length})
             </h2>
-            <div className="grid sm:grid-cols-2 gap-5 mb-14">
+            <div ref={gridRef} className="grid sm:grid-cols-2 gap-5 mb-14">
               {primaryReports.map((r) => (
                 <article
                   key={r.slug}
-                  className="bg-card rounded-xl border border-border p-5 hover:shadow-md transition-shadow"
+                  className="bg-card rounded-xl border border-border/70 p-5 shadow-sm hover-lift sr sr-up"
                 >
                   <div className="flex flex-wrap gap-2 mb-3">
                     <span className="inline-flex px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
@@ -161,11 +175,11 @@ export default function HealthcareReportsHub() {
                 <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-8">
                   Turkey &mdash; Bridging Europe &amp; MENA ({bridgeReports.length})
                 </h2>
-                <div className="grid sm:grid-cols-2 gap-5">
+                <div ref={gridRef} className="grid sm:grid-cols-2 gap-5">
                   {bridgeReports.map((r) => (
                     <article
                       key={r.slug}
-                      className="bg-card rounded-xl border border-border p-5 hover:shadow-md transition-shadow"
+                      className="bg-card rounded-xl border border-border/70 p-5 shadow-sm hover-lift sr sr-up"
                     >
                       <div className="flex flex-wrap gap-2 mb-3">
                         <span className="inline-flex px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">

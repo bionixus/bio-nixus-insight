@@ -16,6 +16,7 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { ReportPremiumHero } from '@/components/report-premium';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -117,22 +118,18 @@ const BahrainHealthcareMarketReport = () => {
           <div className="container-wide"><BreadcrumbNav items={breadcrumbItems} /></div>
         </div>
 
-        <section className="section-padding pb-10">
-          <div className="container-wide max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6">
-              Published by BioNixus · Updated May 2026 · Open access
-            </div>
-            <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">
-              Bahrain Healthcare Market Report 2026: NHRA Registration, Pharmaceutical Intelligence, and GCC Market Access
-            </h1>
-            <p className="text-muted-foreground leading-relaxed">
-              BioNixus covers Bahrain pharmaceutical and healthcare markets as part of GCC-wide programs —
-              NHRA mutual recognition strategy, MOH Bahrain procurement intelligence, and primary HCP research
-              supporting GCC sequential market entry.
-            </p>
-            <ReportEarlyCtaBar config={REPORT_CONVERSION} className="mt-8" />
-          </div>
-        </section>
+                <ReportPremiumHero
+          title="Bahrain Healthcare Market Report 2026: NHRA Registration, Pharmaceutical Intelligence, and GCC Market Access"
+          description="BioNixus covers Bahrain pharmaceutical and healthcare markets as part of GCC-wide programs — NHRA mutual recognition strategy, MOH Bahrain procurement intelligence, and primary HCP research supporting GCC sequential market entry."
+          config={REPORT_CONVERSION}
+          marketSlug="bahrain"
+          countryName="Bahrain"
+          stats={[
+            { value: '~$2.7B', label: 'Bahrain healthcare market 2026' },
+            { value: '~$450M', label: 'Pharmaceutical market 2026' },
+            { value: '5.5%', label: 'CAGR 2026–2030' },
+          ]}
+        />
 
         <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">
         <section className="section-padding bg-cream-dark" id="executive-summary">

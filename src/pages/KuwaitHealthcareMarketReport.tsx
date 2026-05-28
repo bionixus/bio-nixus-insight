@@ -16,6 +16,7 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { ReportPremiumHero } from '@/components/report-premium';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -117,22 +118,18 @@ const KuwaitHealthcareMarketReport = () => {
           <div className="container-wide"><BreadcrumbNav items={breadcrumbItems} /></div>
         </div>
 
-        <section className="section-padding pb-10">
-          <div className="container-wide max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6">
-              Published by BioNixus · Updated May 2026 · Open access
-            </div>
-            <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">
-              Kuwait Healthcare Market Report 2026: Pharmaceutical Intelligence, Medical Devices, and Market Access
-            </h1>
-            <p className="text-muted-foreground leading-relaxed">
-              BioNixus delivers Kuwait pharmaceutical consumption data, CMS procurement intelligence, physician
-              panel research, and market access mapping — covering all major therapeutic areas and hospital
-              accounts across Kuwait's government and private healthcare systems.
-            </p>
-            <ReportEarlyCtaBar config={REPORT_CONVERSION} className="mt-8" />
-          </div>
-        </section>
+                <ReportPremiumHero
+          title="Kuwait Healthcare Market Report 2026: Pharmaceutical Intelligence, Medical Devices, and Market Access"
+          description="BioNixus delivers Kuwait pharmaceutical consumption data, CMS procurement intelligence, physician panel research, and market access mapping — covering all major therapeutic areas and hospital accounts across Kuwait's government and private healthcare systems."
+          config={REPORT_CONVERSION}
+          marketSlug="kuwait"
+          countryName="Kuwait"
+          stats={[
+            { value: '~$8B', label: 'Kuwait healthcare market 2026' },
+            { value: '~$1B', label: 'Pharmaceutical market 2026' },
+            { value: '5.2%', label: 'CAGR 2026–2030' },
+          ]}
+        />
 
         <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">
         <section className="section-padding bg-cream-dark" id="executive-summary">

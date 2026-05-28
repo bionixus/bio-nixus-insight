@@ -703,6 +703,39 @@
   100% { transform: translateX(-33.333%); }
 }
 
+@keyframes reportChartDraw {
+  from { stroke-dashoffset: 480; }
+  to   { stroke-dashoffset: 0; }
+}
+@keyframes reportBarGrow {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+
+@layer utilities {
+  .report-chart-line {
+    stroke-dasharray: 480;
+    stroke-dashoffset: 480;
+    animation: reportChartDraw 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .report-bar-grow {
+    transform: scaleY(0);
+    transform-origin: bottom center;
+    animation: reportBarGrow 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .prose-report p + p {
+    margin-top: 1rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .report-chart-line,
+    .report-bar-grow {
+      animation: none;
+      stroke-dashoffset: 0;
+      transform: none;
+    }
+  }
+}
+
 /* Global websites / country blueprint hero (navy band) */
 @layer utilities {
   [data-global-sites-hero] .text-muted-foreground {

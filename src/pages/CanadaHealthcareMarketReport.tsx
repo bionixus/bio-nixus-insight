@@ -16,6 +16,7 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { ReportPremiumHero } from '@/components/report-premium';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -99,14 +100,18 @@ const CanadaHealthcareMarketReport = () => (
       <ReportReadingProgress progressId="report-rp-canada-healthcare-market-report" />
       <main>
       <div className="section-padding pt-24 pb-4"><div className="container-wide"><BreadcrumbNav items={breadcrumbItems} /></div></div>
-      <section className="section-padding pb-10">
-        <div className="container-wide max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6">Published by BioNixus · Updated May 2026 · Open access</div>
-          <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">Canada Healthcare Market Report 2026: CADTH HTA, pCPA Negotiations, and Provincial Formulary Intelligence</h1>
-          <p className="text-muted-foreground leading-relaxed">BioNixus serves Canadian pharmaceutical and medical device companies with GCC and MENA market entry intelligence — and provides Canada market context for global commercial teams planning North American and multi-market strategy.</p>
-            <ReportEarlyCtaBar config={REPORT_CONVERSION} className="mt-8" />
-        </div>
-      </section>
+              <ReportPremiumHero
+          title="Canada Healthcare Market Report 2026: CADTH HTA, pCPA Negotiations, and Provincial Formulary Intelligence"
+          description="BioNixus serves Canadian pharmaceutical and medical device companies with GCC and MENA market entry intelligence — and provides Canada market context for global commercial teams planning North American and multi-market strategy."
+          config={REPORT_CONVERSION}
+          marketSlug="canada"
+          countryName="Canada"
+          stats={[
+            { value: '~$295B', label: 'Canada healthcare market 2026' },
+            { value: '~$36B', label: 'Pharmaceutical market 2026' },
+            { value: '~$14B', label: 'Medical devices market 2026' },
+          ]}
+        />
       <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">
         <section className="section-padding bg-cream-dark" id="executive-summary">
         <div className="container-wide max-w-4xl mx-auto">

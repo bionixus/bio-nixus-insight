@@ -16,6 +16,7 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { ReportPremiumHero } from '@/components/report-premium';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -99,14 +100,18 @@ const UkMedicalDevicesMarketReport = () => (
       <ReportReadingProgress progressId="report-rp-uk-medical-devices-market-report" />
       <main>
       <div className="section-padding pt-24 pb-4"><div className="container-wide"><BreadcrumbNav items={breadcrumbItems} /></div></div>
-      <section className="section-padding pb-10">
-        <div className="container-wide max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6">Published by BioNixus · Updated May 2026 · Open access</div>
-          <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">UK Medical Devices Market Report 2026: UKCA Marking, NHS Supply Chain, and MHRA Regulatory Intelligence</h1>
-          <p className="text-muted-foreground leading-relaxed">BioNixus delivers UK medical device market intelligence — MHRA regulatory tracking, NHS Supply Chain procurement strategy, and primary research with clinical specialists and procurement leads at NHS trusts and private hospital groups.</p>
-            <ReportEarlyCtaBar config={REPORT_CONVERSION} className="mt-8" />
-        </div>
-      </section>
+              <ReportPremiumHero
+          title="UK Medical Devices Market Report 2026: UKCA Marking, NHS Supply Chain, and MHRA Regulatory Intelligence"
+          description="BioNixus delivers UK medical device market intelligence — MHRA regulatory tracking, NHS Supply Chain procurement strategy, and primary research with clinical specialists and procurement leads at NHS trusts and private hospital groups."
+          config={REPORT_CONVERSION}
+          marketSlug="uk"
+          countryName="UK"
+          stats={[
+            { value: '~£12.5B', label: 'UK medical devices market 2026' },
+            { value: '~£17B', label: 'Forecast 2030' },
+            { value: '5.5%', label: 'CAGR 2026–2030' },
+          ]}
+        />
       <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">
         <section className="section-padding bg-cream-dark" id="executive-summary">
         <div className="container-wide max-w-4xl mx-auto">

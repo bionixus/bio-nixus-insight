@@ -16,6 +16,7 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { ReportPremiumHero } from '@/components/report-premium';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -117,22 +118,18 @@ const UaeMedicalDevicesMarketReport = () => {
           <div className="container-wide"><BreadcrumbNav items={breadcrumbItems} /></div>
         </div>
 
-        <section className="section-padding pb-10">
-          <div className="container-wide max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6">
-              Published by BioNixus · Updated May 2026 · Open access
-            </div>
-            <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">
-              UAE Medical Devices Market Report 2026: MOHAP Registration, Dubai Hub Strategy, and Hospital Procurement Intelligence
-            </h1>
-            <p className="text-muted-foreground leading-relaxed">
-              BioNixus delivers UAE medical device market intelligence — MOHAP, DHA, and DOH registration
-              tracking, hospital procurement data across Dubai and Abu Dhabi, and primary research with
-              clinical specialists and procurement leads at the UAE's leading public and private hospitals.
-            </p>
-            <ReportEarlyCtaBar config={REPORT_CONVERSION} className="mt-8" />
-          </div>
-        </section>
+                <ReportPremiumHero
+          title="UAE Medical Devices Market Report 2026: MOHAP Registration, Dubai Hub Strategy, and Hospital Procurement Intelligence"
+          description="BioNixus delivers UAE medical device market intelligence — MOHAP, DHA, and DOH registration tracking, hospital procurement data across Dubai and Abu Dhabi, and primary research with clinical specialists and procurement leads at the UAE's leading public and private hospitals."
+          config={REPORT_CONVERSION}
+          marketSlug="uae"
+          countryName="UAE"
+          stats={[
+            { value: '~$1.65B', label: 'UAE medical devices market 2026' },
+            { value: '~$2.5B', label: 'Forecast 2030' },
+            { value: '9%', label: 'CAGR 2026–2030' },
+          ]}
+        />
 
         <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">
         <section className="section-padding bg-cream-dark" id="executive-summary">

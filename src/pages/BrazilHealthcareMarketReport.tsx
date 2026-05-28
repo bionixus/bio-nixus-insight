@@ -16,6 +16,7 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { ReportPremiumHero } from '@/components/report-premium';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -99,14 +100,18 @@ const BrazilHealthcareMarketReport = () => (
       <ReportReadingProgress progressId="report-rp-brazil-healthcare-market-report" />
       <main>
       <div className="section-padding pt-24 pb-4"><div className="container-wide"><BreadcrumbNav items={breadcrumbItems} /></div></div>
-      <section className="section-padding pb-10">
-        <div className="container-wide max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6">Published by BioNixus · Updated May 2026 · Open access</div>
-          <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">Brazil Healthcare Market Report 2026: ANVISA, SUS, CONITEC, and Pharmaceutical Market Intelligence</h1>
-          <p className="text-muted-foreground leading-relaxed">BioNixus serves Brazilian and Latin American pharmaceutical and medical device companies with GCC and MENA market entry intelligence — and provides Brazil market context for global commercial teams planning multi-market strategy.</p>
-            <ReportEarlyCtaBar config={REPORT_CONVERSION} className="mt-8" />
-        </div>
-      </section>
+              <ReportPremiumHero
+          title="Brazil Healthcare Market Report 2026: ANVISA, SUS, CONITEC, and Pharmaceutical Market Intelligence"
+          description="BioNixus serves Brazilian and Latin American pharmaceutical and medical device companies with GCC and MENA market entry intelligence — and provides Brazil market context for global commercial teams planning multi-market strategy."
+          config={REPORT_CONVERSION}
+          marketSlug="brazil"
+          countryName="Brazil"
+          stats={[
+            { value: '~$165B', label: 'Brazil healthcare market 2026' },
+            { value: '~$28B', label: 'Pharmaceutical market 2026' },
+            { value: '~$12B', label: 'Medical devices market 2026' },
+          ]}
+        />
       <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">
         <section className="section-padding bg-cream-dark" id="executive-summary">
         <div className="container-wide max-w-4xl mx-auto">

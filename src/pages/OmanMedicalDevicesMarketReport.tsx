@@ -16,6 +16,7 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { ReportPremiumHero } from '@/components/report-premium';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -117,22 +118,18 @@ const OmanMedicalDevicesMarketReport = () => {
           <div className="container-wide"><BreadcrumbNav items={breadcrumbItems} /></div>
         </div>
 
-        <section className="section-padding pb-10">
-          <div className="container-wide max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6">
-              Published by BioNixus · Updated May 2026 · Open access
-            </div>
-            <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">
-              Oman Medical Devices Market Report 2026: MOH Registration, Royal Hospital, and Vision 2040 Commercial Intelligence
-            </h1>
-            <p className="text-muted-foreground leading-relaxed">
-              BioNixus delivers Oman medical device market intelligence — MOH registration tracking, Royal
-              Hospital Muscat procurement data, and primary clinical research across Oman's government
-              and growing private hospital network.
-            </p>
-            <ReportEarlyCtaBar config={REPORT_CONVERSION} className="mt-8" />
-          </div>
-        </section>
+                <ReportPremiumHero
+          title="Oman Medical Devices Market Report 2026: MOH Registration, Royal Hospital, and Vision 2040 Commercial Intelligence"
+          description="BioNixus delivers Oman medical device market intelligence — MOH registration tracking, Royal Hospital Muscat procurement data, and primary clinical research across Oman's government and growing private hospital network."
+          config={REPORT_CONVERSION}
+          marketSlug="oman"
+          countryName="Oman"
+          stats={[
+            { value: '~$260M', label: 'Oman medical devices market 2026' },
+            { value: '~$350M', label: 'Forecast 2030' },
+            { value: '6.0%', label: 'CAGR 2026–2030' },
+          ]}
+        />
 
         <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">
         <section className="section-padding bg-cream-dark" id="executive-summary">
