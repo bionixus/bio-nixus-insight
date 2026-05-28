@@ -132,7 +132,7 @@ Tracks delivery against [`CURSOR_PROMPT_HEALTHCARE_REPORTS.md`](./CURSOR_PROMPT_
 |------|------|
 | Spec | `CURSOR_PROMPT_HEALTHCARE_REPORTS.md` |
 | Types | `src/data/healthcareReportTypes.ts` |
-| 60 reports | `src/data/healthcareReportData.ts` |
+| 89 reports | `src/data/healthcareReportData.ts` |
 | Therapy/market copy | `src/data/healthcareReportContent.ts` |
 | FAQs | `src/data/healthcareReportFaqs.ts` |
 | Access bullets | `src/data/healthcareReportAccessBullets.ts` |

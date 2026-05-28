@@ -10,6 +10,8 @@ type ContactValidation = {
   lastName?: string;
   workEmail?: string;
   company?: string;
+  phone?: string;
+  referralSource?: string;
   message?: string;
   privacy?: string;
   emailFormat?: string;
@@ -144,6 +146,10 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
 
     if (!(data.get('company') as string)?.trim()) next.company = v('company') || 'Company is required';
     if (!(data.get('country') as string)?.trim()) next.country = v('country') || 'Please select a country';
+    if (!(data.get('phone') as string)?.trim()) next.phone = v('phone') || 'Phone number is required';
+    if (!(data.get('referralSource') as string)?.trim()) {
+      next.referralSource = v('referralSource') || 'Please tell us how you heard about us';
+    }
     if (!(data.get('message') as string)?.trim()) next.message = v('message') || 'Message is required';
     if (!data.get('consent')) next.consent = v('consent') || 'You must agree to the privacy policy';
 
@@ -486,15 +492,18 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
                     </div>
                     <div>
                       <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                        Phone
+                        Phone <span className="text-destructive">*</span>
                       </label>
                       <input
                         id="phone"
                         name="phone"
                         type="tel"
-                        className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+                        required
+                        aria-invalid={Boolean(errors.phone)}
+                        className={`w-full px-4 py-3 rounded-lg border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.phone ? 'border-destructive' : 'border-input'}`}
                         placeholder="+44 7700 900000"
                       />
+                      {errors.phone && <p className="text-sm text-destructive mt-1">{errors.phone}</p>}
                     </div>
                   </div>
 
@@ -557,19 +566,24 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
                   {/* Referral Source */}
                   <div>
                     <label htmlFor="referralSource" className="block text-sm font-medium text-foreground mb-2">
-                      How did you hear about us?
+                      How did you hear about us? <span className="text-destructive">*</span>
                     </label>
                     <select
                       id="referralSource"
                       name="referralSource"
-                      className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+                      required
+                      aria-invalid={Boolean(errors.referralSource)}
+                      className={`w-full px-4 py-3 rounded-lg border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.referralSource ? 'border-destructive' : 'border-input'}`}
                       defaultValue=""
                     >
-                      <option value="">Select…</option>
+                      <option value="" disabled>Select…</option>
                       {REFERRAL_OPTIONS.map((opt) => (
                         <option key={opt} value={opt}>{opt}</option>
                       ))}
                     </select>
+                    {errors.referralSource && (
+                      <p className="text-sm text-destructive mt-1">{errors.referralSource}</p>
+                    )}
                   </div>
 
                   {/* Message */}
