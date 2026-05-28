@@ -1,6 +1,7 @@
 import type { ReportEntry } from '@/data/healthcareReportTypes';
 import { MARKET_CONTENT, THERAPY_AREA_CONTENT } from '@/data/healthcareReportContent';
 import { buildHealthcareFaqs } from '@/data/healthcareReportFaqs';
+import { PHARMA_INSIGHTS_ENTRIES } from './pharmaInsightsData';
 
 export const MARKET_STANDALONE_HEALTH_REPORT: Record<string, string> = {
   gcc: '/gcc-pharma-market-report-2026',
@@ -563,7 +564,7 @@ function attachRelated(entries: ReportEntry[]): ReportEntry[] {
   });
 }
 
-export const REPORT_ENTRIES: ReportEntry[] = attachRelated(BASE_ENTRIES);
+export const REPORT_ENTRIES: ReportEntry[] = attachRelated([...BASE_ENTRIES, ...PHARMA_INSIGHTS_ENTRIES]);
 
 export const REPORT_BY_SLUG: Map<string, ReportEntry> = new Map(REPORT_ENTRIES.map((r) => [r.slug, r]));
 
