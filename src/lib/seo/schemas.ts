@@ -15,10 +15,21 @@ export function buildBreadcrumbSchema(items: { name: string; href: string }[]) {
   };
 }
 
-export function buildFAQSchema(items: { question: string; answer: string }[]) {
+export function buildFAQSchema(
+  items: { question: string; answer: string }[],
+  options?: { pageUrl?: string; sectionId?: string },
+) {
+  const sectionId = options?.sectionId ?? 'faq';
+  const pageUrl = options?.pageUrl?.replace(/\/$/, '');
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    ...(pageUrl
+      ? {
+          '@id': `${pageUrl}#${sectionId}`,
+          url: `${pageUrl}#${sectionId}`,
+        }
+      : {}),
     mainEntity: items.map((item) => ({
       '@type': 'Question',
       name: item.question,
@@ -87,7 +98,10 @@ export function buildHubPageSchemas(faqItems: { question: string; answer: string
   return [
     buildOrganizationSchema(),
     buildServiceSchema(),
-    buildFAQSchema(faqItems),
+    buildFAQSchema(faqItems, {
+      pageUrl: `${BASE_URL}/healthcare-market-research`,
+      sectionId: 'faq',
+    }),
     buildBreadcrumbSchema([
       { name: 'Home', href: '/' },
       { name: 'Healthcare Market Research', href: '/healthcare-market-research' },

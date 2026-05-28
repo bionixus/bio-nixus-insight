@@ -117,16 +117,6 @@ const dubaiLocalBusinessSchema = {
   },
 };
 
-const dubaiFaqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: DUBAI_FAQS.map((f) => ({
-    '@type': 'Question',
-    name: f.question,
-    acceptedAnswer: { '@type': 'Answer', text: f.answer },
-  })),
-};
-
 export default function HubPage() {
   const { data } = useInitialData();
   const hubContent =
@@ -147,7 +137,11 @@ export default function HubPage() {
     typeof hubContent?.metaDescription === 'string' && hubContent.metaDescription.length > 0
       ? hubContent.metaDescription
       : 'BioNixus delivers pharmaceutical market intelligence for commercial, medical, and access teams across priority healthcare markets.';
-  const jsonLd = buildHubPageSchemas(hubFaqItems);
+  const faqSchemaItems = [
+    ...hubFaqItems,
+    ...DUBAI_FAQS.filter((d) => !hubFaqItems.some((h) => h.question === d.question)),
+  ];
+  const jsonLd = buildHubPageSchemas(faqSchemaItems);
   const trustSignals =
     Array.isArray(hubContent?.trustSignals) && hubContent.trustSignals.length > 0
       ? (hubContent.trustSignals as { label: string; value: string }[])
@@ -195,7 +189,7 @@ export default function HubPage() {
         title="Healthcare & Pharmaceutical Market Research in Dubai, UAE & MENA | BioNixus"
         description="BioNixus — leading healthcare and pharmaceutical market research company serving Dubai, UAE, and MENA. DHA, MOHAP, and DOH-aligned physician surveys, KOL mapping, and market access."
         canonical="/healthcare-market-research"
-        jsonLd={[...jsonLd, dubaiLocalBusinessSchema, dubaiFaqSchema]}
+        jsonLd={[...jsonLd, dubaiLocalBusinessSchema]}
       />
       <Helmet>
         <meta name="geo.region" content="AE-DU" />
