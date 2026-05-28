@@ -35,9 +35,8 @@ export function ReportSectionVisual({
         viewBox="0 0 480 320"
         className="w-full h-auto block"
         role="img"
-        aria-hidden={false}
+        aria-label={alt}
       >
-        <title>{alt}</title>
         <defs>
           <linearGradient id={`rp-bg-${seed}`} x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="hsl(220 47% 12%)" stopOpacity="0.04" />

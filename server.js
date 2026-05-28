@@ -367,13 +367,18 @@ function shouldForceLocaleFallback(pathname, chosen) {
   return false;
 }
 
+function extractDocumentTitles(html) {
+  const headMatch = html.match(/<head[^>]*>([\s\S]*?)<\/head>/i);
+  if (!headMatch) return [];
+  return Array.from(headMatch[1].matchAll(/<title[^>]*>([\s\S]*?)<\/title>/ig))
+    .map((m) => (m[1] || '').trim())
+    .filter(Boolean);
+}
+
 function ensureTitleTag(html, pathname) {
   const fallbackTitle = normalizeTitleLength(buildFallbackTitle(pathname));
-  const matches = Array.from(html.matchAll(/<title[^>]*>([\s\S]*?)<\/title>/ig));
-  const chosen = matches
-    .map((m) => (m[1] || '').trim())
-    .filter(Boolean)
-    .at(-1);
+  const headTitles = extractDocumentTitles(html);
+  const chosen = headTitles.at(-1) ?? '';
   const normalized = normalizeTitleLength(chosen || fallbackTitle);
   // If the rendered title is a generic site default (the index.html fallback
   // that React-Helmet didn't override at SSR time, typically because page
