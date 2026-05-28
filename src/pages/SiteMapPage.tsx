@@ -143,10 +143,19 @@ const marketReportLinks = [
   { to: '/market-reports/therapy/immunology-biologics', label: 'Immunology & Biologics Market Research Reports' },
   { to: '/market-reports/therapy/respiratory', label: 'Respiratory Market Research Reports' },
   { to: '/market-reports/therapy/rare-diseases', label: 'Rare Diseases Market Research Reports' },
+  { to: '/market-reports/therapy/neurology-cns', label: 'Neurology & CNS Market Research Reports' },
+  { to: '/market-reports/therapy/biosimilars', label: 'Biosimilars Market Research Reports' },
+  { to: '/market-reports/therapy/digital-health', label: 'Digital Health Market Research Reports' },
+  { to: '/market-reports/therapy/vaccines', label: 'Vaccines Market Research Reports' },
+  { to: '/market-reports/therapy/dermatology', label: 'Dermatology Market Research Reports' },
   { to: '/market-reports/country/saudi-arabia', label: 'Saudi Arabia Healthcare Reports' },
   { to: '/market-reports/country/uae', label: 'UAE Healthcare Reports' },
   { to: '/market-reports/country/gcc', label: 'GCC Healthcare Reports' },
   { to: '/market-reports/country/egypt', label: 'Egypt Healthcare Reports' },
+  { to: '/market-reports/country/kuwait', label: 'Kuwait Healthcare Reports' },
+  { to: '/market-reports/country/qatar', label: 'Qatar Healthcare Reports' },
+  { to: '/market-reports/country/bahrain', label: 'Bahrain Healthcare Reports' },
+  { to: '/market-reports/country/oman', label: 'Oman Healthcare Reports' },
 ];
 
 /** Canonical Arabic posts under /ar/blog/ (also listed in public/sitemap.xml). */

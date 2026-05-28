@@ -16,16 +16,23 @@ function wc(t: string) {
   return t.trim().split(/\s+/).filter(Boolean).length;
 }
 
-function ensureWords(text: string, min = 100) {
-  const pad =
-    'These dynamics are amplified by tender cycle timing, prior authorization granularity, clinician advocacy concentration inside flagship tertiary complexes, distributor cold chain SLA variance, biometric registry capture depth, multilingual patient counselling throughput, payer medical policy refresh cadence juxtaposed IMF sensitivity macroscenario stress testing BioNixus layers into forecasting guardrails calibrated against hospital consumption analogue panels operating continuously since twenty twelve across Gulf and Cairo field offices anchoring methodological governance aligned with EphMRA, BHBIA, and GDPR aligned survey privacy protocols governing healthcare professional outreach instruments.';
-  let out = text.trim();
+const FAQ_PAD =
+  'BioNixus layers tender timing, prior-authorization granularity, and hospital consumption analogue panels (EphMRA / BHBIA governance, GDPR-aligned HCP outreach) into GCC and Cairo forecasting guardrails.';
+
+function clampWords(text: string, min = 100, max = 160) {
+  let words = text.trim().replace(/\s+/g, ' ').split(/\s+/).filter(Boolean);
   let guard = 0;
-  while (wc(out) < min && guard < 20) {
-    out = `${out} ${pad}`;
+  while (words.length < min && guard < 8) {
+    words = words.concat(FAQ_PAD.split(/\s+/));
     guard += 1;
   }
-  return out.replace(/\s+/g, ' ').trim();
+  if (words.length > max) {
+    words = words.slice(0, max);
+    const last = words[words.length - 1] ?? '';
+    if (last.endsWith(',') || last.endsWith(';')) words[words.length - 1] = last.slice(0, -1);
+    if (!words[words.length - 1]?.endsWith('.')) words[words.length - 1] += '.';
+  }
+  return words.join(' ');
 }
 
 function therapyDrugLeaders(slug: string): string {
@@ -60,7 +67,7 @@ export function buildHealthcareFaqs(args: FAQBuildArgs) {
   const { marketName, marketSlug, therapyName, therapySlug, statSummaryLine, therapy, market } = args;
 
   const q1 = `How big is the ${marketName} ${therapyName} market in 2026?`;
-  const a1 = ensureWords(
+  const a1 = clampWords(
     join(
       statSummaryLine,
       `Compared with broader GCC and MENA commercial analogues tracked by BioNixus hospital consumption analogue panels anchored at flagship centres including ${anchorsForMarket(marketSlug)}, the therapeutic intensity per diagnosed patient aligns with escalating noncommunicable disease burden forecasts yet remains sensitive to centralized tender award cyclicalities and multinational pricing governance ripple effects stemming from Turkish and Egyptian reference basket cross‑elasticities when FX indexed net prices oscillate.`,
@@ -68,7 +75,7 @@ export function buildHealthcareFaqs(args: FAQBuildArgs) {
   );
 
   const q2 = `How are ${therapyName.toLowerCase()} medicines registered and regulated in ${marketName}?`;
-  const a2 = ensureWords(
+  const a2 = clampWords(
     join(
       `Regulatory oversight is centred on ${market.regulatoryBody}.`,
       market.regulatoryOverview.split('\n\n')[0],
@@ -77,10 +84,10 @@ export function buildHealthcareFaqs(args: FAQBuildArgs) {
   );
 
   const q3 = `How does ${marketName} reimburse and procure ${therapyName.toLowerCase()} treatments?`;
-  const a3 = ensureWords(join(market.payerLandscape, therapy.menaMarketDynamics));
+  const a3 = clampWords(join(market.payerLandscape, therapy.menaMarketDynamics));
 
   const q4 = `What are the leading ${therapyName.toLowerCase()} treatment categories and molecules shaping ${marketName}?`;
-  const a4 = ensureWords(
+  const a4 = clampWords(
     join(
       therapyDrugLeaders(therapySlug),
       `Institution‑specific adoption pacing—Hamad versus HMC formulary adjudication parallelism, Kuwait Cancer Control multidisciplinary tumour board backlog intervals, Salmaniya rheumatology infusion chair bottleneck alleviation capex approvals, Oman interior hospital referral latency metrics, Cairo NCI‑CCHE adolescent oncology psychosocial subsidy overlays—helps explain why analogue forecasts purely indexed to EU analogue curves miscalibrate launches unless localized chart audit weights enter the Bayesian prior.`,
@@ -88,10 +95,10 @@ export function buildHealthcareFaqs(args: FAQBuildArgs) {
   );
 
   const q5 = `What are the structural growth drivers shaping ${therapyName.toLowerCase()} demand in ${marketName} through 2030?`;
-  const a5 = ensureWords(join(therapy.clinicalLandscape, market.marketContext));
+  const a5 = clampWords(join(therapy.clinicalLandscape, market.marketContext));
 
   const q6 = `How does BioNixus support pharmaceutical leadership teams sizing the ${marketName} ${therapyName.toLowerCase()} opportunity?`;
-  const a6 = ensureWords(
+  const a6 = clampWords(
     join(
       `BioNixus delivers longitudinal hospital consumption analogue analytics, payer and formulary committee qualitative simulation boards, bilingual HCP trackers, centralized tender radar modules (notably Saudi NUPCO, UAE insurance PA pattern mining, Qatar HMC global budget dossier rehearsals ), KOL behavioural archetyping, analogue adoption elasticities conditioned on pilgrimage seasonal care displacement, genomic programme adjacency uplift priors tied to newborn screening throughput, distributor shipment SLAs corroborating cold chain fidelity, Cairo and London coordinated project governance satisfying GDPR‑aligned privacy standards for multinational sponsors.`,
       `Teams receive decision‑ready dashboards cross‑validated against EphMRA / BHBIA methodological governance checklists.`,

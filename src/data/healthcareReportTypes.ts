@@ -21,6 +21,12 @@ export interface ReportEntry {
   stat3Label: string;
   summaryPara1: string;
   summaryPara2: string;
+  /** Spec-specific access signals (from sum1Tail). */
+  marketAccessNotes: string;
+  /** Additional visible copy for depth and SEO word count. */
+  fieldIntelligenceParagraph: string;
+  commercialOutlookParagraph: string;
+  methodologyParagraph: string;
   faqs: ReportFAQ[];
   relatedSlugs: string[];
   publishedDate: string;

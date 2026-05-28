@@ -220,6 +220,13 @@ export default function HubPage() {
           <p className="text-lg text-primary-foreground/90 max-w-3xl">
             {heroDescription}
           </p>
+          <p className="mt-4 text-sm text-primary-foreground/85 max-w-3xl">
+            For therapy- and country-segmented GCC/MENA intelligence (oncology, diabetes, rare disease, and more), see the{' '}
+            <Link className="font-semibold underline underline-offset-2 hover:text-primary-foreground" to="/market-reports">
+              healthcare market research reports hub
+            </Link>
+            . Country service pages on this hub remain the primary entry for bespoke quantitative and qualitative programmes.
+          </p>
         </div>
       </section>
 

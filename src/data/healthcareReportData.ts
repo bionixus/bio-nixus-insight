@@ -226,13 +226,78 @@ function metaTitleFor(title: string) {
   return t;
 }
 
+function fitWordRange(text: string, min: number, max: number): string {
+  const pad =
+    'BioNixus reconciles ministry tender gazettes, insurer prior-authorization rulebooks, and hospital consumption analogue panels before leadership sign-off.';
+  let words = text.trim().replace(/\s+/g, ' ').split(/\s+/).filter(Boolean);
+  let guard = 0;
+  while (words.length < min && guard < 6) {
+    words = words.concat(pad.split(/\s+/));
+    guard += 1;
+  }
+  if (words.length > max) {
+    words = words.slice(0, max);
+    const last = words[words.length - 1] ?? '';
+    if (last.endsWith(',') || last.endsWith(';')) words[words.length - 1] = last.slice(0, -1);
+    if (!words[words.length - 1]?.endsWith('.')) words[words.length - 1] += '.';
+  }
+  return words.join(' ');
+}
+
+function buildFieldIntelligenceParagraph(
+  spec: SpecRow,
+  therapy: (typeof THERAPY_AREA_CONTENT)[keyof typeof THERAPY_AREA_CONTENT],
+  market: (typeof MARKET_CONTENT)[keyof typeof MARKET_CONTENT],
+): string {
+  const reg = market.regulatoryBody.split('•')[0]?.trim() ?? market.regulatoryBody;
+  const raw = [
+    `BioNixus field intelligence for ${spec.market} ${therapy.name} maps ${spec.sum1Tail}`,
+    therapy.overviewParagraph.split('\n\n')[0] ?? therapy.overviewParagraph,
+    market.payerLandscape.split('\n\n')[0] ?? market.payerLandscape,
+    `Regulatory and procurement teams should align dossier sequencing with ${reg} pharmacovigilance, bilingual labelling, and tender award calendars before scaling medical affairs or access investments.`,
+    `Scenario planning bands incorporate FX-linked net price stress, pilgrimage seasonal inpatient displacement, and multinational pricing governance ripple effects—reconciled against EphMRA / BHBIA governance and GDPR-aligned HCP outreach.`,
+    spec.marketSlug === 'saudi-arabia'
+      ? 'Saudi Arabia–specific signals include NUPCO award cyclicality, Vision 2030 tertiary expansion, Saudi Genome tumour-board adoption, and insured-population prior-authorization intensity that can outpace EU analogue curves.'
+      : '',
+  ].join(' ');
+  return fitWordRange(raw, 280, 400);
+}
+
+function buildCommercialOutlookParagraph(
+  spec: SpecRow,
+  therapy: (typeof THERAPY_AREA_CONTENT)[keyof typeof THERAPY_AREA_CONTENT],
+  market: (typeof MARKET_CONTENT)[keyof typeof MARKET_CONTENT],
+): string {
+  const clinicalSecond = therapy.clinicalLandscape.split('\n\n')[1] ?? therapy.menaMarketDynamics;
+  const raw = [
+    `Commercial outlook — ${spec.market} ${therapy.name}: ${spec.sum1Tail}`,
+    clinicalSecond,
+    `Leadership teams should stress-test uptake against ${market.name} payer refresh cycles, distributor cold-chain SLAs, and tender award cadence before committing medical affairs or access headcount.`,
+  ].join(' ');
+  return fitWordRange(raw, 140, 175);
+}
+
+function buildMethodologyParagraph(
+  spec: SpecRow,
+  therapy: (typeof THERAPY_AREA_CONTENT)[keyof typeof THERAPY_AREA_CONTENT],
+  market: (typeof MARKET_CONTENT)[keyof typeof MARKET_CONTENT],
+): string {
+  const raw = [
+    therapy.overviewParagraph,
+    therapy.menaMarketDynamics,
+    market.regulatoryOverview,
+    `BioNixus documents ${spec.market} ${therapy.name} decisions with EphMRA-compliant qualitative boards, GDPR-aligned HCP outreach, bilingual survey instruments, tender monitoring, and hospital consumption analogue reconciliation before executive workshops.`,
+  ].join(' ');
+  return fitWordRange(raw, 230, 290);
+}
+
 function assembleEntry(spec: SpecRow): Omit<ReportEntry, 'relatedSlugs'> {
   const th = therapyMeta(spec.therapySlug);
   const title = titleFor(spec);
   const therapy = THERAPY_AREA_CONTENT[spec.therapySlug];
   const market = MARKET_CONTENT[spec.marketSlug];
-  const summaryPara1 =
-    `${spec.market}’s pharmaceutical landscape for ${th.name} in 2026 is shaped by centralized procurement pacing, clinician adoption ladders, payer prior‑authorization granularity, genome or precision medicine adjacency where relevant, pilgrimage seasonal inpatient displacement artefacts, migrant workforce insurance fragmentation, hydrocarbon‑linked fiscal collars, IMF macro‑sensitivity overlays, tertiary expansion cadence—all triangulated in BioNixus longitudinal analogue panels. Highlights include ${spec.sum1Tail}`;
+  const summaryPara1Raw = `${spec.market}’s pharmaceutical landscape for ${th.name} in 2026 is shaped by centralized procurement pacing, clinician adoption ladders, payer prior‑authorization granularity, genome or precision medicine adjacency where relevant, pilgrimage seasonal inpatient displacement artefacts, migrant workforce insurance fragmentation, hydrocarbon‑linked fiscal collars, IMF macro‑sensitivity overlays, tertiary expansion cadence—all triangulated in BioNixus longitudinal analogue panels. Highlights include ${spec.sum1Tail}`;
+  const summaryPara1 = fitWordRange(summaryPara1Raw, 80, 120);
   const statSummaryLine = `${title} benchmarks ${therapy.name.toLowerCase()} revenue potential near ${spec.stats[0]} (${spec.stats[1]}) in 2026, trending toward roughly ${spec.stats[2]} (${spec.stats[3]}) by 2030, implying compounded annual expansion near ${spec.stats[4]} (${spec.stats[5]}).`;
   const faqs = buildHealthcareFaqs({
     marketName: spec.market,
@@ -243,7 +308,10 @@ function assembleEntry(spec: SpecRow): Omit<ReportEntry, 'relatedSlugs'> {
     therapy,
     market,
   });
-  const summaryPara2 = `Cross‑programme linkage: ${spec.sum2Context}`;
+  const summaryPara2 = fitWordRange(`Cross‑programme linkage: ${spec.sum2Context}`, 60, 90);
+  const fieldIntelligenceParagraph = buildFieldIntelligenceParagraph(spec, therapy, market);
+  const commercialOutlookParagraph = buildCommercialOutlookParagraph(spec, therapy, market);
+  const methodologyParagraph = buildMethodologyParagraph(spec, therapy, market);
   const publishedDate = '2026-05-27';
   return {
     slug: spec.slug,
@@ -263,6 +331,10 @@ function assembleEntry(spec: SpecRow): Omit<ReportEntry, 'relatedSlugs'> {
     stat3Label: spec.stats[5],
     summaryPara1,
     summaryPara2,
+    marketAccessNotes: spec.sum1Tail,
+    fieldIntelligenceParagraph,
+    commercialOutlookParagraph,
+    methodologyParagraph,
     faqs,
     publishedDate,
     modifiedDate: publishedDate,

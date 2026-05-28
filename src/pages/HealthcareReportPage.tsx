@@ -11,6 +11,7 @@ import {
   THERAPY_AREA_CONTENT,
 } from '@/data/healthcareReportContent';
 import { getMarketHealthcarePath, getReportSafe } from '@/data/healthcareReportData';
+import { getAccessBullets } from '@/data/healthcareReportAccessBullets';
 import { CrossLinkSentence } from '@/lib/healthcareReportLinks';
 import { buildConversionConfigFromReportEntry } from '@/data/reportConversionConfig';
 import {
@@ -20,17 +21,6 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
-
-function accessBullets(entry: NonNullable<ReturnType<typeof getReportSafe>>) {
-  const m = MARKET_CONTENT[entry.marketSlug];
-  const regShort = m.regulatoryBody.split('•')[0]?.trim() ?? m.regulatoryBody;
-  return [
-    `${m.name}: ${entry.therapyArea} dossiers traverse ${regShort} technical modules where pharmacovigilance, bilingual labelling completeness, biosimilar interchangeability dossier appendices, companion diagnostic linkage, compassionate access bridging and cold chain SLA attestations must align simultaneously before hospital procurement committees authorize high‑cost biologic slots.`,
-    `Payer and procurement interplay concentrates around ${m.name} centralized awards, insurance prior‑authorization ladders, clinician advocacy dossiers, oncology global budget carve‑outs analogues hampering naive EU net‑to‑net comparisons unless BioNixus reconciles analogue tender discounting versus originator rebate defensive contracting.`,
-    `${entry.therapyArea} class‑level prescribing concentration pivots around immunogenicity vigilance cadences, inpatient versus ambulatory initiation ratios, genomic eligibility screening throughput, pharmacist substitution statutes, clinician confidence in interchangeability dossiers plus seasonal adherence counselling demands Ramadan pilgrimage stress tests tracked through BioNixus longitudinal analogue benchmarking notebooks.`,
-    `BioNixus operationalizes longitudinal consumption analogue trackers, multilingual HCP survey instruments aligned with EphMRA and BHBIA governance, formulary uplift qualitative simulation boards plus Saudi NUPCO and UAE insurer award radars tethered to primary procurement artefacts rather than desk extrapolation.`,
-  ];
-}
 
 export default function HealthcareReportPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -196,10 +186,22 @@ export default function HealthcareReportPage() {
               Key Market Access Intelligence
             </h2>
             <ul className="list-disc space-y-4 ps-6 text-muted-foreground leading-relaxed marker:text-primary">
-              {accessBullets(report).map((line, idx) => (
+              {getAccessBullets(report).map((line, idx) => (
                 <li key={`access-${idx}`}>{line}</li>
               ))}
             </ul>
+          </div>
+        </section>
+
+        <section className="py-12 bg-muted/20 rounded-xl px-4 md:px-6" id="field-intelligence">
+          <div className="max-w-4xl">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              Field Intelligence &amp; Methodology
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-6">{report.fieldIntelligenceParagraph}</p>
+            <p className="text-muted-foreground leading-relaxed mb-6">{report.commercialOutlookParagraph}</p>
+            <h3 className="text-xl font-display font-semibold text-foreground mb-4">Research governance</h3>
+            <p className="text-muted-foreground leading-relaxed">{report.methodologyParagraph}</p>
           </div>
         </section>
 
