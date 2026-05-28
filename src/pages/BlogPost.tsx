@@ -6,6 +6,7 @@ import { PortableText } from '@portabletext/react';
 import type { PortableTextBlock } from '@portabletext/types';
 import { Helmet } from 'react-helmet-async';
 import { fetchSanityPostBySlug, type RelatedPostsData } from '@/lib/sanity-blog';
+import { BLOG_INDEX_ROBOTS, BLOG_NOINDEX_ROBOTS, resolveBlogSeoNoIndex } from '@/lib/blog-robots';
 import { optimizeSanityImage } from '@/lib/image-utils';
 import {
   buildSeoDescription,
@@ -1114,9 +1115,9 @@ const BlogPost = () => {
         <meta
           name="robots"
           content={
-            post.seoNoIndex
-              ? 'noindex,nofollow'
-              : 'index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1'
+            resolveBlogSeoNoIndex(slug ?? '', post.seoNoIndex)
+              ? BLOG_NOINDEX_ROBOTS
+              : BLOG_INDEX_ROBOTS
           }
         />
         <link rel="canonical" href={pageUrl} />

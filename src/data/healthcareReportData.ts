@@ -12,6 +12,17 @@ export const MARKET_STANDALONE_HEALTH_REPORT: Record<string, string> = {
   oman: '/oman-healthcare-market-report',
   egypt: '/egypt-healthcare-market-report',
   turkey: '/turkey-healthcare-market-report',
+  uk: '/uk-healthcare-market-report',
+  germany: '/germany-healthcare-market-report',
+  india: '/india-healthcare-market-report',
+  china: '/china-healthcare-market-report',
+  japan: '/japan-healthcare-market-report',
+  usa: '/usa-healthcare-market-report',
+  brazil: '/brazil-healthcare-market-report',
+  'south-korea': '/south-korea-healthcare-market-report',
+  australia: '/australia-healthcare-market-report',
+  singapore: '/singapore-healthcare-market-report',
+  canada: '/canada-healthcare-market-report',
 };
 
 type TherapyKey =
@@ -155,6 +166,70 @@ const STAT_DR_BH: SpecRow['stats'] = ['~$7M', 'Market size 2026', '~$12M', 'Fore
 const STAT_DR_OM: SpecRow['stats'] = ['~$8M', 'Market size 2026', '~$14M', 'Forecast 2030', '17.1%', 'CAGR 2026–2030'];
 const STAT_DR_EG: SpecRow['stats'] = ['~$72M', 'Market size 2026', '~$126M', 'Forecast 2030', '17.8%', 'CAGR 2026–2030'];
 
+// Turkey expansion
+const STAT_CV_TR: SpecRow['stats'] = ['~$2.82B', 'Market size 2026', '~$4.24B', 'Forecast 2030', '10.6%', 'CAGR 2026–2030'];
+const STAT_IB_TR: SpecRow['stats'] = ['~$1.95B', 'Market size 2026', '~$3.12B', 'Forecast 2030', '12.7%', 'CAGR 2026–2030'];
+const STAT_RP_TR: SpecRow['stats'] = ['~$1.42B', 'Market size 2026', '~$2.28B', 'Forecast 2030', '12.5%', 'CAGR 2026–2030'];
+const STAT_RD_TR: SpecRow['stats'] = ['~$580M', 'Market size 2026', '~$1.02B', 'Forecast 2030', '15.2%', 'CAGR 2026–2030'];
+
+// UK
+const STAT_ONC_UK: SpecRow['stats'] = ['~£6.5B', 'Market size 2026', '~£9.8B', 'Forecast 2030', '8.6%', 'CAGR 2026–2030'];
+const STAT_DM_UK: SpecRow['stats'] = ['~£4.2B', 'Market size 2026', '~£7.1B', 'Forecast 2030', '14.1%', 'CAGR 2026–2030'];
+const STAT_CV_UK: SpecRow['stats'] = ['~£5.8B', 'Market size 2026', '~£8.6B', 'Forecast 2030', '10.3%', 'CAGR 2026–2030'];
+const STAT_IB_UK: SpecRow['stats'] = ['~£8.1B', 'Market size 2026', '~£12.4B', 'Forecast 2030', '11.2%', 'CAGR 2026–2030'];
+const STAT_RP_UK: SpecRow['stats'] = ['~£4.4B', 'Market size 2026', '~£6.8B', 'Forecast 2030', '11.1%', 'CAGR 2026–2030'];
+
+// Germany
+const STAT_ONC_DE: SpecRow['stats'] = ['~€9.2B', 'Market size 2026', '~€13.6B', 'Forecast 2030', '10.3%', 'CAGR 2026–2030'];
+const STAT_DM_DE: SpecRow['stats'] = ['~€5.8B', 'Market size 2026', '~€9.4B', 'Forecast 2030', '13.6%', 'CAGR 2026–2030'];
+const STAT_CV_DE: SpecRow['stats'] = ['~€7.4B', 'Market size 2026', '~€11.1B', 'Forecast 2030', '10.7%', 'CAGR 2026–2030'];
+const STAT_IB_DE: SpecRow['stats'] = ['~€10.5B', 'Market size 2026', '~€15.9B', 'Forecast 2030', '10.3%', 'CAGR 2026–2030'];
+const STAT_RP_DE: SpecRow['stats'] = ['~€5.2B', 'Market size 2026', '~€7.8B', 'Forecast 2030', '10.6%', 'CAGR 2026–2030'];
+
+// India
+const STAT_ONC_IN: SpecRow['stats'] = ['~$2.1B', 'Market size 2026', '~$4.2B', 'Forecast 2030', '18.1%', 'CAGR 2026–2030'];
+const STAT_DM_IN: SpecRow['stats'] = ['~$3.8B', 'Market size 2026', '~$7.6B', 'Forecast 2030', '18.9%', 'CAGR 2026–2030'];
+const STAT_CV_IN: SpecRow['stats'] = ['~$2.9B', 'Market size 2026', '~$5.8B', 'Forecast 2030', '18.9%', 'CAGR 2026–2030'];
+const STAT_IB_IN: SpecRow['stats'] = ['~$1.4B', 'Market size 2026', '~$2.8B', 'Forecast 2030', '18.9%', 'CAGR 2026–2030'];
+
+// China
+const STAT_ONC_CN: SpecRow['stats'] = ['~$22B', 'Market size 2026', '~$38B', 'Forecast 2030', '15.3%', 'CAGR 2026–2030'];
+const STAT_DM_CN: SpecRow['stats'] = ['~$18B', 'Market size 2026', '~$32B', 'Forecast 2030', '15.5%', 'CAGR 2026–2030'];
+const STAT_CV_CN: SpecRow['stats'] = ['~$28B', 'Market size 2026', '~$48B', 'Forecast 2030', '14.4%', 'CAGR 2026–2030'];
+const STAT_IB_CN: SpecRow['stats'] = ['~$12B', 'Market size 2026', '~$22B', 'Forecast 2030', '16.9%', 'CAGR 2026–2030'];
+
+// Japan
+const STAT_ONC_JP: SpecRow['stats'] = ['~$10.5B', 'Market size 2026', '~$15.8B', 'Forecast 2030', '10.8%', 'CAGR 2026–2030'];
+const STAT_DM_JP: SpecRow['stats'] = ['~$7.2B', 'Market size 2026', '~$11.6B', 'Forecast 2030', '12.0%', 'CAGR 2026–2030'];
+const STAT_CV_JP: SpecRow['stats'] = ['~$8.9B', 'Market size 2026', '~$13.2B', 'Forecast 2030', '10.4%', 'CAGR 2026–2030'];
+
+// USA
+const STAT_ONC_US: SpecRow['stats'] = ['~$65B', 'Market size 2026', '~$102B', 'Forecast 2030', '12.4%', 'CAGR 2026–2030'];
+const STAT_DM_US: SpecRow['stats'] = ['~$58B', 'Market size 2026', '~$96B', 'Forecast 2030', '13.6%', 'CAGR 2026–2030'];
+const STAT_CV_US: SpecRow['stats'] = ['~$52B', 'Market size 2026', '~$78B', 'Forecast 2030', '10.8%', 'CAGR 2026–2030'];
+const STAT_IB_US: SpecRow['stats'] = ['~$112B', 'Market size 2026', '~$168B', 'Forecast 2030', '10.9%', 'CAGR 2026–2030'];
+
+// Brazil
+const STAT_ONC_BR: SpecRow['stats'] = ['~$3.2B', 'Market size 2026', '~$5.8B', 'Forecast 2030', '16.2%', 'CAGR 2026–2030'];
+const STAT_DM_BR: SpecRow['stats'] = ['~$4.1B', 'Market size 2026', '~$7.4B', 'Forecast 2030', '16.0%', 'CAGR 2026–2030'];
+const STAT_CV_BR: SpecRow['stats'] = ['~$3.8B', 'Market size 2026', '~$6.8B', 'Forecast 2030', '15.6%', 'CAGR 2026–2030'];
+
+// South Korea
+const STAT_ONC_KR: SpecRow['stats'] = ['~$4.8B', 'Market size 2026', '~$7.6B', 'Forecast 2030', '12.0%', 'CAGR 2026–2030'];
+const STAT_DM_KR: SpecRow['stats'] = ['~$3.2B', 'Market size 2026', '~$5.4B', 'Forecast 2030', '13.9%', 'CAGR 2026–2030'];
+const STAT_CV_KR: SpecRow['stats'] = ['~$4.1B', 'Market size 2026', '~$6.4B', 'Forecast 2030', '12.4%', 'CAGR 2026–2030'];
+
+// Australia
+const STAT_ONC_AU: SpecRow['stats'] = ['~$3.1B', 'Market size 2026', '~$4.8B', 'Forecast 2030', '11.8%', 'CAGR 2026–2030'];
+const STAT_DM_AU: SpecRow['stats'] = ['~$2.1B', 'Market size 2026', '~$3.4B', 'Forecast 2030', '13.6%', 'CAGR 2026–2030'];
+
+// Singapore
+const STAT_ONC_SG: SpecRow['stats'] = ['~$680M', 'Market size 2026', '~$1.08B', 'Forecast 2030', '12.7%', 'CAGR 2026–2030'];
+const STAT_DM_SG: SpecRow['stats'] = ['~$420M', 'Market size 2026', '~$695M', 'Forecast 2030', '13.5%', 'CAGR 2026–2030'];
+
+// Canada
+const STAT_ONC_CA: SpecRow['stats'] = ['~$4.2B', 'Market size 2026', '~$6.8B', 'Forecast 2030', '12.9%', 'CAGR 2026–2030'];
+
 function row(
   slug: string,
   marketSlug: keyof typeof MARKET_CONTENT,
@@ -269,6 +344,70 @@ const SPECS: SpecRow[] = [
 
   row('turkey-oncology-market-report', 'turkey', 'Turkey', 'Europe / MENA', 'oncology', STAT_ONC_TR, 'TİTCK approval reciprocity interplay with SGK budgeting lag, Aegean trial investigator bandwidth elasticity, biosim export constraints episodically rewiring landed net parallels.', '[Turkey healthcare briefing](/turkey-healthcare-market-report) • [Healthcare hub](/healthcare-market-research).'),
   row('turkey-diabetes-market-report', 'turkey', 'Turkey', 'Europe / MENA', 'diabetes-metabolic', STAT_DM_TR, 'young adult metabolic syndrome clusters Istanbul versus Anatolia referral gravity plus SGK versus private supplemental GLP‑1 divergence.', '[Turkey healthcare briefing](/turkey-healthcare-market-report) • [Healthcare hub](/healthcare-market-research).'),
+
+  // Turkey expansion — 4 additional therapy areas
+  row('turkey-cardiovascular-market-report', 'turkey', 'Turkey', 'Europe / MENA', 'cardiovascular', STAT_CV_TR, 'SGK PCSK9 inhibitor PA criteria rigidity juxtaposed private hospital premium cardiology reimbursement supplement riders, medical tourism cardiac surgery margins influencing device and drug bundling decisions.', '[Turkey healthcare briefing](/turkey-healthcare-market-report) • [Turkey medical devices](/turkey-medical-devices-market-report) • [Healthcare hub](/healthcare-market-research).'),
+  row('turkey-immunology-biologics-market-report', 'turkey', 'Turkey', 'Europe / MENA', 'immunology-biologics', STAT_IB_TR, 'adalimumab biosimilar SGK substitution mandate interplay with rheumatologist brand loyalty panels, JAK inhibitor SGK step-therapy criteria oscillations, infusion chair Friday prayer scheduling friction.', '[Turkey healthcare briefing](/turkey-healthcare-market-report) • [GCC biosimilars analogue](/gcc-biosimilars-market-report) • [Healthcare hub](/healthcare-market-research).'),
+  row('turkey-respiratory-market-report', 'turkey', 'Turkey', 'Europe / MENA', 'respiratory', STAT_RP_TR, 'Istanbul air quality exacerbation clusters driving COPD triple therapy SGK criteria reforms, severe asthma biologic SGK PA stack complexity versus private insurer supplemental bridge.', '[Turkey healthcare briefing](/turkey-healthcare-market-report) • [GCC respiratory analogue](/gcc-respiratory-market-report) • [Healthcare hub](/healthcare-market-research).'),
+  row('turkey-rare-diseases-market-report', 'turkey', 'Turkey', 'Europe / MENA', 'rare-diseases', STAT_RD_TR, 'SGK ultra-orphan compassionate access adjudication windows, gene therapy cold chain Istanbul hub ambitions, academic medical centre rare disease centre excellence designations driving patient identification acceleration.', '[Turkey healthcare briefing](/turkey-healthcare-market-report) • [GCC rare diseases analogue](/gcc-rare-diseases-market-report) • [Healthcare hub](/healthcare-market-research).'),
+
+  // UK — 5 therapy areas
+  row('uk-oncology-market-report', 'uk', 'United Kingdom', 'Europe', 'oncology', STAT_ONC_UK, 'NHS England Cancer Drugs Fund real-world evidence collection obligations, NICE HST accelerated oncology pathways, Innovative Medicines Fund bridging access dynamics, ICB formulary implementation lag variation.', '[UK healthcare briefing](/uk-healthcare-market-report) • [UK medical devices report](/uk-medical-devices-market-report) • [Healthcare hub](/healthcare-market-research).'),
+  row('uk-diabetes-market-report', 'uk', 'United Kingdom', 'Europe', 'diabetes-metabolic', STAT_DM_UK, 'NHS England GLP-1 prescribing guidance post-NICE TA, tirzepatide vs semaglutide head-to-head formulary positioning, ICB budget impact carve-outs, NHS England obesity management programme device and drug bundling.', '[UK healthcare briefing](/uk-healthcare-market-report) • [Healthcare hub](/healthcare-market-research).'),
+  row('uk-cardiovascular-market-report', 'uk', 'United Kingdom', 'Europe', 'cardiovascular', STAT_CV_UK, 'NICE heart failure guideline SGLT2 expansion, PCSK9 inhibitor primary prevention NICE threshold deliberations, ICS-level integrated care cardiovascular network formulary synchronisation.', '[UK healthcare briefing](/uk-healthcare-market-report) • [Healthcare hub](/healthcare-market-research).'),
+  row('uk-immunology-biologics-market-report', 'uk', 'United Kingdom', 'Europe', 'immunology-biologics', STAT_IB_UK, 'NHS commercial framework biosimilar mandatory switch programmes for adalimumab and etanercept, NICE TA technology appraisal outcomes for IL-17/23 inhibitors, JAK inhibitor MHRA safety review prescribing restrictions.', '[UK healthcare briefing](/uk-healthcare-market-report) • [GCC immunology analogue](/gcc-immunology-biologics-market-report) • [Healthcare hub](/healthcare-market-research).'),
+  row('uk-respiratory-market-report', 'uk', 'United Kingdom', 'Europe', 'respiratory', STAT_RP_UK, 'NHS England severe asthma biologic ICS-level prescribing hub network structure, NICE dupilumab and mepolizumab TA outcomes, COPD triple therapy formulary uptake variation across ICBs.', '[UK healthcare briefing](/uk-healthcare-market-report) • [Healthcare hub](/healthcare-market-research).'),
+
+  // Germany — 5 therapy areas
+  row('germany-oncology-market-report', 'germany', 'Germany', 'Europe', 'oncology', STAT_ONC_DE, 'AMNOG early benefit assessment G-BA oncology dossier major vs considerable benefit stratification, hospital NUB payment applications for novel CAR-T and ADC therapies, IQWiG comparative effectiveness overlay.', '[Germany healthcare briefing](/germany-healthcare-market-report) • [Germany medical devices report](/germany-medical-devices-market-report) • [Healthcare hub](/healthcare-market-research).'),
+  row('germany-diabetes-market-report', 'germany', 'Germany', 'Europe', 'diabetes-metabolic', STAT_DM_DE, 'GKV GLP-1 prescribing guideline cascade interplay with PKV premium tier tirzepatide uptake, AMNOG cardiovascular outcome benefit assessment leverage for SGLT2 extension indications, AOK/TK rebate contract positioning.', '[Germany healthcare briefing](/germany-healthcare-market-report) • [Healthcare hub](/healthcare-market-research).'),
+  row('germany-cardiovascular-market-report', 'germany', 'Germany', 'Europe', 'cardiovascular', STAT_CV_DE, 'G-BA heart failure guideline alignment SGLT2/MRA combination benefit assessment, PCSK9 inhibitor GKV rebate contract dynamics, structural heart disease hospital DRG NUB supplement negotiations for TAVI/MitraClip.', '[Germany healthcare briefing](/germany-healthcare-market-report) • [Germany medical devices report](/germany-medical-devices-market-report) • [Healthcare hub](/healthcare-market-research).'),
+  row('germany-immunology-biologics-market-report', 'germany', 'Germany', 'Europe', 'immunology-biologics', STAT_IB_DE, 'GKV biosimilar mandatory substitution framework for adalimumab, AMNOG benefit assessment for IL-17/23 and JAK inhibitors, rebate contract (Rabattvertrag) bidding dynamics among SHI funds for biologic tenders.', '[Germany healthcare briefing](/germany-healthcare-market-report) • [GCC immunology analogue](/gcc-immunology-biologics-market-report) • [Healthcare hub](/healthcare-market-research).'),
+  row('germany-respiratory-market-report', 'germany', 'Germany', 'Europe', 'respiratory', STAT_RP_DE, 'AMNOG COPD triple therapy fixed-dose combination benefit assessment, dupilumab and mepolizumab G-BA considerable benefit decisions, GKV respiratory rebate contract bundling dynamics with generics substitution competition.', '[Germany healthcare briefing](/germany-healthcare-market-report) • [Healthcare hub](/healthcare-market-research).'),
+
+  // India — 4 therapy areas
+  row('india-oncology-market-report', 'india', 'India', 'Asia-Pacific', 'oncology', STAT_ONC_IN, 'CDSCO priority review oncology pathway, NPPA DPCO scheduled medicine pricing impact on branded generic oncology economics, PM-JAY hospital empanelment oncology package rates, Apollo/Fortis/Tata Cancer Centre private premium tier.', '[India healthcare briefing](/india-healthcare-market-report) • [India medical devices report](/india-medical-devices-market-report) • [Healthcare hub](/healthcare-market-research).'),
+  row('india-diabetes-market-report', 'india', 'India', 'Asia-Pacific', 'diabetes-metabolic', STAT_DM_IN, 'PM-JAY insulin subsidy dynamics, NPPA insulin pricing regulatory oversight, GLP-1 premium tier private hospital bifurcation, Jan Aushadhi generic store biosimilar insulin penetration anchoring net pricing floors.', '[India healthcare briefing](/india-healthcare-market-report) • [GCC diabetes analogue](/gcc-diabetes-market-report) • [Healthcare hub](/healthcare-market-research).'),
+  row('india-cardiovascular-market-report', 'india', 'India', 'Asia-Pacific', 'cardiovascular', STAT_CV_IN, 'DPCO statin and antihypertensive price ceiling compliance requirements, NPPA PCSK9 pricing watch, cardiac surgery PM-JAY package rate negotiation dynamics, private cardiac centre (Narayana Health, Fortis Heart) premium drug formulary.', '[India healthcare briefing](/india-healthcare-market-report) • [Healthcare hub](/healthcare-market-research).'),
+  row('india-immunology-biologics-market-report', 'india', 'India', 'Asia-Pacific', 'immunology-biologics', STAT_IB_IN, 'Local biosimilar champion competition (Biocon, Dr Reddy\'s, Intas) versus originator premium ward positioning, CDSCO biologic registration bridging study requirements, PM-JAY rheumatology indication coverage criteria gaps.', '[India healthcare briefing](/india-healthcare-market-report) • [GCC biosimilars analogue](/gcc-biosimilars-market-report) • [Healthcare hub](/healthcare-market-research).'),
+
+  // China — 4 therapy areas
+  row('china-oncology-market-report', 'china', 'China', 'Asia-Pacific', 'oncology', STAT_ONC_CN, 'NMPA Breakthrough Therapy Designation oncology pipeline acceleration, NHSA NRDL annual oncology negotiation price cut magnitudes, VBP biosimilar trastuzumab/bevacizumab impact, provincial supplemental Huimin insurance premium oncology tier.', '[China healthcare briefing](/china-healthcare-market-report) • [China medical devices report](/china-medical-devices-market-report) • [Healthcare hub](/healthcare-market-research).'),
+  row('china-diabetes-market-report', 'china', 'China', 'Asia-Pacific', 'diabetes-metabolic', STAT_DM_CN, 'VBP insulin centralized procurement 70–80% price reduction aftermath, GLP-1 agonist NRDL negotiation rounds, SGLT2 heart failure extension NRDL inclusion, digital diabetes management platform integration with hospital prescription workflows.', '[China healthcare briefing](/china-healthcare-market-report) • [GCC diabetes analogue](/gcc-diabetes-market-report) • [Healthcare hub](/healthcare-market-research).'),
+  row('china-cardiovascular-market-report', 'china', 'China', 'Asia-Pacific', 'cardiovascular', STAT_CV_CN, 'NHSA NRDL cardiovascular drug negotiation outcomes, VBP coronary stent centralized tender price collapse impact on device and adjunct drug economics, NMPA PCSK9 inhibitor domestic competitor regulatory pipeline.', '[China healthcare briefing](/china-healthcare-market-report) • [China medical devices report](/china-medical-devices-market-report) • [Healthcare hub](/healthcare-market-research).'),
+  row('china-immunology-biologics-market-report', 'china', 'China', 'Asia-Pacific', 'immunology-biologics', STAT_IB_CN, 'NRDL adalimumab originator versus biosimilar negotiation dynamics post-VBP signal, IL-17/23 inhibitor NRDL inclusion cycles, JAK inhibitor NMPA post-marketing safety commitment requirements, domestic biologic champion (Hengrui, CSPC, 3SBio) competition.', '[China healthcare briefing](/china-healthcare-market-report) • [GCC immunology analogue](/gcc-immunology-biologics-market-report) • [Healthcare hub](/healthcare-market-research).'),
+
+  // Japan — 3 therapy areas
+  row('japan-oncology-market-report', 'japan', 'Japan', 'Asia-Pacific', 'oncology', STAT_ONC_JP, 'PMDA Sakigake designation oncology fast-track dynamics, NHI biannual price revision oncology category price erosion modelling, MHLW conditional early approval post-market confirmatory study obligations, CAR-T and ADC world-first approval positioning.', '[Japan healthcare briefing](/japan-healthcare-market-report) • [Japan medical devices report](/japan-medical-devices-market-report) • [Healthcare hub](/healthcare-market-research).'),
+  row('japan-diabetes-market-report', 'japan', 'Japan', 'Asia-Pacific', 'diabetes-metabolic', STAT_DM_JP, 'NHI price revision SGLT2/GLP-1 biannual cut projection modelling, tirzepatide MHLW approval timeline, elderly population polypharmacy interaction surveillance PMDA post-market commitments, Japanese-specific DPP-4 prescribing dominance transition curve.', '[Japan healthcare briefing](/japan-healthcare-market-report) • [GCC diabetes analogue](/gcc-diabetes-market-report) • [Healthcare hub](/healthcare-market-research).'),
+  row('japan-cardiovascular-market-report', 'japan', 'Japan', 'Asia-Pacific', 'cardiovascular', STAT_CV_JP, 'MHLW PCSK9 inhibitor NHI listing and price revision trajectory, heart failure SGLT2/ARNi combination NHI formulary inclusion, Japan-specific hypertension prescribing patterns calcium channel blocker dominance transition dynamics.', '[Japan healthcare briefing](/japan-healthcare-market-report) • [Japan medical devices report](/japan-medical-devices-market-report) • [Healthcare hub](/healthcare-market-research).'),
+
+  // USA — 4 therapy areas
+  row('usa-oncology-market-report', 'usa', 'United States', 'Americas', 'oncology', STAT_ONC_US, 'IRA Medicare drug negotiation oncology candidate selection impact, FDA Breakthrough Therapy/Accelerated Approval oncology pipeline velocity, GPO/IDN formulary pull-through dynamics, PBM rebate contract biosimilar oncology trastuzumab/bevacizumab tier positioning.', '[USA healthcare briefing](/usa-healthcare-market-report) • [USA medical devices report](/usa-medical-devices-market-report) • [Healthcare hub](/healthcare-market-research).'),
+  row('usa-diabetes-market-report', 'usa', 'United States', 'Americas', 'diabetes-metabolic', STAT_DM_US, 'GLP-1/GIP agonist market Ozempic/Wegovy/Mounjaro/Zepbound tier war, IRA insulin price cap Medicare $35 implementation impact, PBM formulary exclusion list GLP-1 rebate leverage, obesity indication CMS Medicare coverage expansion deliberations.', '[USA healthcare briefing](/usa-healthcare-market-report) • [GCC diabetes analogue](/gcc-diabetes-market-report) • [Healthcare hub](/healthcare-market-research).'),
+  row('usa-cardiovascular-market-report', 'usa', 'United States', 'Americas', 'cardiovascular', STAT_CV_US, 'IRA PCSK9 inhibitor Medicare negotiation list inclusion probability, FDA SGLT2 heart failure label expansion competitive dynamics, GPO Vizient/Premier cardiovascular device and drug bundled contract evolution, ACC/AHA guideline update formulary pull-through velocity.', '[USA healthcare briefing](/usa-healthcare-market-report) • [USA medical devices report](/usa-medical-devices-market-report) • [Healthcare hub](/healthcare-market-research).'),
+  row('usa-immunology-biologics-market-report', 'usa', 'United States', 'Americas', 'immunology-biologics', STAT_IB_US, 'Humira biosimilar wave commercial impact (Hadlima, Hyrimoz, Cyltezo, Yusimry) net price erosion modelling, IRA biologic negotiation 13-year exclusivity threshold implications, JAK inhibitor FDA safety label black box prescribing cascade, IL-17/23 market share dynamics psoriasis/IBD.', '[USA healthcare briefing](/usa-healthcare-market-report) • [GCC biosimilars analogue](/gcc-biosimilars-market-report) • [Healthcare hub](/healthcare-market-research).'),
+
+  // Brazil — 3 therapy areas
+  row('brazil-oncology-market-report', 'brazil', 'Brazil', 'Americas', 'oncology', STAT_ONC_BR, 'CONITEC HTA oncology PCDT protocol incorporation timelines, ANVISA priority review oncology pathways, SUS high-cost drug component oncology coverage expansion pressures, Sírio-Libanês/Albert Einstein private tier premium oncology drug access.', '[Brazil healthcare briefing](/brazil-healthcare-market-report) • [Brazil medical devices report](/brazil-medical-devices-market-report) • [Healthcare hub](/healthcare-market-research).'),
+  row('brazil-diabetes-market-report', 'brazil', 'Brazil', 'Americas', 'diabetes-metabolic', STAT_DM_BR, 'CONITEC GLP-1 agonist SUS incorporation deliberation timeline, CMED GLP-1 maximum price adjustment category, ANVISA regulatory fast track for combination products, Raia Drogasil pharmacy chain generic/biosimilar insulin substitution dynamics.', '[Brazil healthcare briefing](/brazil-healthcare-market-report) • [GCC diabetes analogue](/gcc-diabetes-market-report) • [Healthcare hub](/healthcare-market-research).'),
+  row('brazil-cardiovascular-market-report', 'brazil', 'Brazil', 'Americas', 'cardiovascular', STAT_CV_BR, 'CONITEC PCSK9 SUS incorporation economic analysis threshold constraints, DPVAT accident insurance cardiovascular procedure coverage, InCor/UNIFESP/UERJ academic cardiovascular centre clinical trial investigator bandwidth.', '[Brazil healthcare briefing](/brazil-healthcare-market-report) • [Healthcare hub](/healthcare-market-research).'),
+
+  // South Korea — 3 therapy areas
+  row('south-korea-oncology-market-report', 'south-korea', 'South Korea', 'Asia-Pacific', 'oncology', STAT_ONC_KR, 'HIRA risk-sharing agreement outcome-based payment model negotiations for CAR-T and ADC therapies, MFDS conditional approval post-market confirmatory study obligations, Samsung Medical Centre/Asan Medical Centre KOL investigator panel dynamics.', '[South Korea healthcare briefing](/south-korea-healthcare-market-report) • [South Korea medical devices report](/south-korea-medical-devices-market-report) • [Healthcare hub](/healthcare-market-research).'),
+  row('south-korea-diabetes-market-report', 'south-korea', 'South Korea', 'Asia-Pacific', 'diabetes-metabolic', STAT_DM_KR, 'NHIS GLP-1/SGLT2 formulary criteria step-therapy requirement stringency, HIRA real-world evidence data linkage for diabetes drug outcome monitoring, Celltrion/Hanmi biosimilar insulin competition dynamics in NHIS procurement.', '[South Korea healthcare briefing](/south-korea-healthcare-market-report) • [GCC diabetes analogue](/gcc-diabetes-market-report) • [Healthcare hub](/healthcare-market-research).'),
+  row('south-korea-cardiovascular-market-report', 'south-korea', 'South Korea', 'Asia-Pacific', 'cardiovascular', STAT_CV_KR, 'NHIS PCSK9 inhibitor selective listing criteria scope, HIRA biannual drug utilization review cardiovascular outcome monitoring obligations, Samsung Biologics biosimilar cardiovascular monoclonal pipeline GKV/NHIS parallel filing.', '[South Korea healthcare briefing](/south-korea-healthcare-market-report) • [South Korea medical devices report](/south-korea-medical-devices-market-report) • [Healthcare hub](/healthcare-market-research).'),
+
+  // Australia — 2 therapy areas
+  row('australia-oncology-market-report', 'australia', 'Australia', 'Asia-Pacific', 'oncology', STAT_ONC_AU, 'PBAC cost-effectiveness threshold end-of-life weighting oncology modelling, MBS MSAC genomic testing new service assessment, Life-Saving Drugs Programme gene therapy inclusion deliberations, Peter MacCallum/Royal Adelaide/Chris O\'Brien Lifehouse KOL oncology ecosystem.', '[Australia healthcare briefing](/australia-healthcare-market-report) • [Australia medical devices report](/australia-medical-devices-market-report) • [Healthcare hub](/healthcare-market-research).'),
+  row('australia-diabetes-market-report', 'australia', 'Australia', 'Asia-Pacific', 'diabetes-metabolic', STAT_DM_AU, 'PBS tirzepatide/semaglutide PBAC cost-effectiveness submission modelling, CGM MBS item number inclusion for Type 2 diabetes PBAC deliberations, Diabetes Australia real-world outcomes data integration into PBAC resubmission dossiers.', '[Australia healthcare briefing](/australia-healthcare-market-report) • [GCC diabetes analogue](/gcc-diabetes-market-report) • [Healthcare hub](/healthcare-market-research).'),
+
+  // Singapore — 2 therapy areas
+  row('singapore-oncology-market-report', 'singapore', 'Singapore', 'Asia-Pacific', 'oncology', STAT_ONC_SG, 'ACE HTA cost-effectiveness NCCS/SGH formulary oncology deliberations, MOH Medifund exceptional assistance oncology subsidy for lower-income patients, medical tourism premium oncology private hospital (Gleneagles, Mount Elizabeth) international patient pricing.', '[Singapore healthcare briefing](/singapore-healthcare-market-report) • [Singapore medical devices report](/singapore-medical-devices-market-report) • [Healthcare hub](/healthcare-market-research).'),
+  row('singapore-diabetes-market-report', 'singapore', 'Singapore', 'Asia-Pacific', 'diabetes-metabolic', STAT_DM_SG, 'MOH Chronic Disease Management Programme (CDMP) Medisave withdrawal eligibility for GLP-1/SGLT2, ACE HTA tirzepatide cost-effectiveness evaluation, SingHealth cluster standardised formulary versus private hospital premium tier dynamics.', '[Singapore healthcare briefing](/singapore-healthcare-market-report) • [GCC diabetes analogue](/gcc-diabetes-market-report) • [Healthcare hub](/healthcare-market-research).'),
+
+  // Canada — 1 therapy area
+  row('canada-oncology-market-report', 'canada', 'Canada', 'Americas', 'oncology', STAT_ONC_CA, 'CADTH pan-Canadian Oncology Drug Review (pCODR) recommendation timelines, pCPA negotiation confidential net price outcomes, provincial formulary implementation lag variation (Ontario ODAC vs BC Cancer), provincial catastrophic drug programme coverage gaps for high-cost cell therapies.', '[Canada healthcare briefing](/canada-healthcare-market-report) • [Canada medical devices report](/canada-medical-devices-market-report) • [Healthcare hub](/healthcare-market-research).'),
 ];
 
 function titleFor(spec: SpecRow) {
