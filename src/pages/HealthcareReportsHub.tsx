@@ -7,6 +7,8 @@ import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { MARKET_CONTENT, THERAPY_AREA_CONTENT } from '@/data/healthcareReportContent';
 import { REPORT_ENTRIES } from '@/data/healthcareReportData';
 import { standaloneMedicalDevicesTwin } from '@/lib/standaloneMedicalDevicesTwin';
+import { getMarketReportsHubConfig } from '@/data/reportConversionConfig';
+import { ReportConsultationBand, ReportEarlyCtaBar } from '@/components/report-conversion';
 
 const COUNTRY_NAV_ORDER = [
   'gcc',
@@ -51,6 +53,7 @@ const therapySlugs = Object.keys(THERAPY_AREA_CONTENT).sort((a, b) =>
 const orderedCountrySlugs = COUNTRY_NAV_ORDER.filter((s) => MARKET_CONTENT[s]);
 
 export default function HealthcareReportsHub() {
+  const hubConversion = getMarketReportsHubConfig();
   const primaryReports = REPORT_ENTRIES.filter((e) => e.marketSlug !== 'turkey');
   const bridgeReports = REPORT_ENTRIES.filter((e) => e.marketSlug === 'turkey');
 
@@ -88,6 +91,7 @@ export default function HealthcareReportsHub() {
               genomic initiative uplift priors where applicable—all stress‑tested with BioNixus proprietary analogue panels
               operating continuously since twenty twelve alongside GDPR‑aligned HCP instrumentation.
             </p>
+            <ReportEarlyCtaBar config={hubConversion} className="mt-8" />
           </div>
         </section>
 
@@ -182,6 +186,8 @@ export default function HealthcareReportsHub() {
             ) : null}
           </div>
         </section>
+
+        <ReportConsultationBand config={hubConversion} />
       </main>
       <Footer />
     </div>

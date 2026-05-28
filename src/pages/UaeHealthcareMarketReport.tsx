@@ -6,6 +6,14 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
+import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import {
+  ReportConsultationBand,
+  ReportContentWithAside,
+  ReportEarlyCtaBar,
+  ReportMidPageCta,
+  ReportReadingProgress,
+} from '@/components/report-conversion';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -45,6 +53,7 @@ const REPORT_FAQ_ITEMS = [
   },
 ];
 
+const REPORT_CONVERSION = getStandaloneReportConfig('/uae-healthcare-market-report');
 const FAQ_SECTION_ID = 'uae-healthcare-market-faq';
 
 const jsonLd = [
@@ -122,7 +131,7 @@ const UaeHealthcareMarketReport = () => {
         canonical="https://www.bionixus.com/uae-healthcare-market-report"
         jsonLd={jsonLd}
       />
-
+      <ReportReadingProgress progressId="report-rp-uae-healthcare-market-report" />
       <main>
         <div className="section-padding pt-24 pb-4">
           <div className="container-wide">
@@ -144,10 +153,12 @@ const UaeHealthcareMarketReport = () => {
               across Dubai (DHA), Abu Dhabi (DOH), and federal MOHAP-regulated channels — covering hospital
               formularies, retail pharmacy, and specialist prescribing across all major therapeutic areas.
             </p>
+            <ReportEarlyCtaBar config={REPORT_CONVERSION} className="mt-8" />
           </div>
         </section>
 
         {/* Executive Summary */}
+        <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">
         <section className="section-padding bg-cream-dark" id="executive-summary">
           <div className="container-wide max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
@@ -305,6 +316,8 @@ const UaeHealthcareMarketReport = () => {
           </div>
         </section>
 
+        </ReportContentWithAside>
+
         <FAQSection
           sectionId={FAQ_SECTION_ID}
           title="UAE healthcare market 2026 — pharma, medical devices, DHA, DOH, and market access FAQ"
@@ -313,24 +326,8 @@ const UaeHealthcareMarketReport = () => {
         />
 
         {/* CTA */}
-        <section className="section-padding bg-primary/5" id="contact-cta">
-          <div className="container-wide max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
-              Request the BioNixus UAE Healthcare Market Intelligence Briefing
-            </h2>
-            <p className="text-muted-foreground leading-relaxed mb-8 max-w-2xl mx-auto">
-              Pharmaceutical consumption data, HCP panel research, and payer access mapping across DHA,
-              DOH, and MOHAP-regulated channels. Available to pharmaceutical, medtech, and biotech teams.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-3 text-base font-semibold text-primary-foreground shadow-sm hover:bg-primary/90 transition-colors"
-            >
-              Request a briefing <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </section>
-      </main>
+        <ReportConsultationBand config={REPORT_CONVERSION} />
+        </main>
 
       <Footer />
     </div>

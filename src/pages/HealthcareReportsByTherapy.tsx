@@ -7,6 +7,8 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { THERAPY_AREA_CONTENT } from '@/data/healthcareReportContent';
 import { REPORT_ENTRIES } from '@/data/healthcareReportData';
+import { getTherapyHubConfig } from '@/data/reportConversionConfig';
+import { ReportConsultationBand, ReportEarlyCtaBar } from '@/components/report-conversion';
 
 export default function HealthcareReportsByTherapy() {
   const { therapyAreaSlug = '' } = useParams<{ therapyAreaSlug: string }>();
@@ -15,6 +17,7 @@ export default function HealthcareReportsByTherapy() {
   if (!therapy) return <NotFound />;
 
   const reports = REPORT_ENTRIES.filter((r) => r.therapyAreaSlug === therapyAreaSlug);
+  const conversionConfig = getTherapyHubConfig(therapy.name, therapyAreaSlug);
   const canonical = `https://www.bionixus.com/market-reports/therapy/${therapyAreaSlug}`;
   const breadcrumbItems = [
     { name: 'Home', href: '/' },
@@ -66,6 +69,7 @@ export default function HealthcareReportsByTherapy() {
               {therapy.name} Market Research Reports 2026 &mdash; GCC &amp; MENA Intelligence
             </h1>
             <p className="text-muted-foreground leading-relaxed mb-8">{therapy.overviewParagraph}</p>
+            <ReportEarlyCtaBar config={conversionConfig} />
           </div>
         </section>
 
@@ -94,6 +98,8 @@ export default function HealthcareReportsByTherapy() {
             </div>
           </div>
         </section>
+
+        <ReportConsultationBand config={conversionConfig} />
       </main>
       <Footer />
     </div>

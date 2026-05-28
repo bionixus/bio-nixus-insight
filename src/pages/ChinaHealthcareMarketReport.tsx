@@ -6,6 +6,14 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
+import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import {
+  ReportConsultationBand,
+  ReportContentWithAside,
+  ReportEarlyCtaBar,
+  ReportMidPageCta,
+  ReportReadingProgress,
+} from '@/components/report-conversion';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -39,6 +47,7 @@ const REPORT_FAQ_ITEMS = [
   },
 ];
 
+const REPORT_CONVERSION = getStandaloneReportConfig('/china-healthcare-market-report');
 const FAQ_SECTION_ID = 'china-healthcare-market-faq';
 
 const jsonLd = [
@@ -70,16 +79,19 @@ const ChinaHealthcareMarketReport = () => (
       canonical="https://www.bionixus.com/china-healthcare-market-report"
       jsonLd={jsonLd}
     />
-    <main>
+      <ReportReadingProgress progressId="report-rp-china-healthcare-market-report" />
+      <main>
       <div className="section-padding pt-24 pb-4"><div className="container-wide"><BreadcrumbNav items={breadcrumbItems} /></div></div>
       <section className="section-padding pb-10">
         <div className="container-wide max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6">Published by BioNixus · Updated May 2026 · Open access</div>
           <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">China Healthcare Market Report 2026: NMPA Approval, NRDL Reimbursement, and VBP Commercial Intelligence</h1>
           <p className="text-muted-foreground leading-relaxed">BioNixus provides China and GCC comparative market intelligence for global pharmaceutical and medical device companies — helping multi-market commercial teams prioritise between China's large but price-compressed market and the GCC's premium-priced, fast-growing healthcare opportunity.</p>
+            <ReportEarlyCtaBar config={REPORT_CONVERSION} className="mt-8" />
         </div>
       </section>
-      <section className="section-padding bg-cream-dark" id="executive-summary">
+      <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">
+        <section className="section-padding bg-cream-dark" id="executive-summary">
         <div className="container-wide max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Executive Summary</h2>
           <div className="bg-white rounded-xl border border-border p-6 shadow-sm mb-6">
@@ -91,17 +103,12 @@ const ChinaHealthcareMarketReport = () => (
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">China is the world's second-largest healthcare market and its most complex commercial environment. NMPA approval reforms have accelerated global launches, but VBP and NRDL pricing pressures compress margins significantly. For innovative products, China remains a high-priority market; for off-patent generics and biosimilars, VBP makes the commercial equation very different from other major markets.</p>
           <p className="text-muted-foreground leading-relaxed">For GCC/MENA intelligence, see our <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC Pharmaceutical Market Report 2026</Link>.</p>
+            <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
         </div>
       </section>
-      <FAQSection sectionId={FAQ_SECTION_ID} title="China healthcare market 2026 — NMPA, NRDL, VBP, NHSA, and pharma commercial strategy FAQ" items={REPORT_FAQ_ITEMS} className="bg-muted/30" />
-      <section className="section-padding bg-primary/5" id="contact-cta">
-        <div className="container-wide max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">BioNixus: GCC & MENA Intelligence for Global Pharma Teams</h2>
-          <p className="text-muted-foreground leading-relaxed mb-8 max-w-2xl mx-auto">Global pharmaceutical companies managing China alongside GCC and MENA portfolios. BioNixus delivers Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, Oman, and Egypt market intelligence from London and Cairo.</p>
-          <Link to="/contact" className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-3 text-base font-semibold text-primary-foreground shadow-sm hover:bg-primary/90 transition-colors">Request a briefing <ArrowRight className="w-4 h-4" /></Link>
-        </div>
-      </section>
-    </main>
+      <FAQSection sectionId={FAQ_SECTION_ID} title="China healthcare market 2026 — NMPA, NRDL, VBP, NHSA, and pharma commercial strategy FAQ" items={REPORT_FAQ_ITEMS} className="bg-muted/30" />        </ReportContentWithAside>
+      <ReportConsultationBand config={REPORT_CONVERSION} />
+        </main>
     <Footer />
   </div>
 );

@@ -6,6 +6,14 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
+import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import {
+  ReportConsultationBand,
+  ReportContentWithAside,
+  ReportEarlyCtaBar,
+  ReportMidPageCta,
+  ReportReadingProgress,
+} from '@/components/report-conversion';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -49,6 +57,7 @@ const REPORT_FAQ_ITEMS = [
   },
 ];
 
+const REPORT_CONVERSION = getStandaloneReportConfig('/gcc-pharma-market-report-2026');
 const FAQ_SECTION_ID = 'gcc-pharma-market-report-2026-faq';
 
 const jsonLd = [
@@ -126,7 +135,7 @@ const GccPharmaMarketReport2026 = () => {
         canonical="https://www.bionixus.com/gcc-pharma-market-report-2026"
         jsonLd={jsonLd}
       />
-
+      <ReportReadingProgress progressId="report-rp-gcc-pharma-market-report-2026" />
       <main>
         <div className="section-padding pt-24 pb-4">
           <div className="container-wide">
@@ -147,10 +156,12 @@ const GccPharmaMarketReport2026 = () => {
               BioNixus operates offices in the United States, London, and Cairo, delivering hospital sales
               data, consumption analytics, and primary research across GCC and Egypt since 2012.
             </p>
+            <ReportEarlyCtaBar config={REPORT_CONVERSION} className="mt-8" />
           </div>
         </section>
 
         {/* Executive Summary */}
+        <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">
         <section className="section-padding bg-cream-dark" id="executive-summary">
           <div className="container-wide max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
@@ -448,6 +459,8 @@ const GccPharmaMarketReport2026 = () => {
           </div>
         </section>
 
+        </ReportContentWithAside>
+
         <FAQSection
           sectionId={FAQ_SECTION_ID}
           title="GCC pharma market 2026 — biologics, injectables, precision medicine & drug repurposing FAQ"
@@ -456,24 +469,8 @@ const GccPharmaMarketReport2026 = () => {
         />
 
         {/* CTA */}
-        <section className="section-padding bg-primary/5" id="contact-cta">
-          <div className="container-wide max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
-              Request the Full BioNixus GCC Consumption Intelligence Briefing
-            </h2>
-            <p className="text-muted-foreground leading-relaxed mb-8 max-w-2xl mx-auto">
-              Covering all six GCC states at hospital, department, indication, and patient level.
-              Available to pharmaceutical and biotech teams. Delivered from our London and Cairo offices.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-3 text-base font-semibold text-primary-foreground shadow-sm hover:bg-primary/90 transition-colors"
-            >
-              Request a briefing <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </section>
-      </main>
+        <ReportConsultationBand config={REPORT_CONVERSION} />
+        </main>
 
       <Footer />
     </div>

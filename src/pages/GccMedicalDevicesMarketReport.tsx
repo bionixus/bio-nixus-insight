@@ -6,6 +6,14 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
+import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import {
+  ReportConsultationBand,
+  ReportContentWithAside,
+  ReportEarlyCtaBar,
+  ReportMidPageCta,
+  ReportReadingProgress,
+} from '@/components/report-conversion';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -45,6 +53,7 @@ const REPORT_FAQ_ITEMS = [
   },
 ];
 
+const REPORT_CONVERSION = getStandaloneReportConfig('/gcc-medical-devices-market-report');
 const FAQ_SECTION_ID = 'gcc-medical-devices-faq';
 
 const jsonLd = [
@@ -95,7 +104,7 @@ const GccMedicalDevicesMarketReport = () => {
         canonical="https://www.bionixus.com/gcc-medical-devices-market-report"
         jsonLd={jsonLd}
       />
-
+      <ReportReadingProgress progressId="report-rp-gcc-medical-devices-market-report" />
       <main>
         <div className="section-padding pt-24 pb-4">
           <div className="container-wide">
@@ -117,10 +126,12 @@ const GccMedicalDevicesMarketReport = () => {
               and regulatory access mapping across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman — enabling
               medtech and device companies to size markets, prioritize accounts, and accelerate commercial entry.
             </p>
+            <ReportEarlyCtaBar config={REPORT_CONVERSION} className="mt-8" />
           </div>
         </section>
 
         {/* Executive Summary */}
+        <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">
         <section className="section-padding bg-cream-dark" id="executive-summary">
           <div className="container-wide max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
@@ -314,6 +325,8 @@ const GccMedicalDevicesMarketReport = () => {
           </div>
         </section>
 
+        </ReportContentWithAside>
+
         <FAQSection
           sectionId={FAQ_SECTION_ID}
           title="GCC medical devices market 2026 — size, segments, regulation, and commercial strategy FAQ"
@@ -322,24 +335,8 @@ const GccMedicalDevicesMarketReport = () => {
         />
 
         {/* CTA */}
-        <section className="section-padding bg-primary/5" id="contact-cta">
-          <div className="container-wide max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
-              Request the BioNixus GCC Medical Devices Market Intelligence Briefing
-            </h2>
-            <p className="text-muted-foreground leading-relaxed mb-8 max-w-2xl mx-auto">
-              Account-level procurement intelligence, clinical user research, and regulatory access mapping
-              across all six GCC states. Available to medical device, diagnostics, and medtech commercial teams.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-3 text-base font-semibold text-primary-foreground shadow-sm hover:bg-primary/90 transition-colors"
-            >
-              Request a briefing <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </section>
-      </main>
+        <ReportConsultationBand config={REPORT_CONVERSION} />
+        </main>
 
       <Footer />
     </div>

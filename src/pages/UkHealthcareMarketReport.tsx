@@ -6,6 +6,14 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
+import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import {
+  ReportConsultationBand,
+  ReportContentWithAside,
+  ReportEarlyCtaBar,
+  ReportMidPageCta,
+  ReportReadingProgress,
+} from '@/components/report-conversion';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -39,6 +47,7 @@ const REPORT_FAQ_ITEMS = [
   },
 ];
 
+const REPORT_CONVERSION = getStandaloneReportConfig('/uk-healthcare-market-report');
 const FAQ_SECTION_ID = 'uk-healthcare-market-faq';
 
 const jsonLd = [
@@ -70,16 +79,19 @@ const UkHealthcareMarketReport = () => (
       canonical="https://www.bionixus.com/uk-healthcare-market-report"
       jsonLd={jsonLd}
     />
-    <main>
+      <ReportReadingProgress progressId="report-rp-uk-healthcare-market-report" />
+      <main>
       <div className="section-padding pt-24 pb-4"><div className="container-wide"><BreadcrumbNav items={breadcrumbItems} /></div></div>
       <section className="section-padding pb-10">
         <div className="container-wide max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6">Published by BioNixus · Updated May 2026 · Open access</div>
           <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">UK Healthcare Market Report 2026: NHS Pharmaceutical Market, NICE Access, and Commercial Intelligence</h1>
           <p className="text-muted-foreground leading-relaxed">BioNixus operates from London, serving UK-headquartered pharmaceutical and medical device companies with GCC and MENA market entry intelligence — and providing UK market context for global commercial teams planning multi-market strategy.</p>
+            <ReportEarlyCtaBar config={REPORT_CONVERSION} className="mt-8" />
         </div>
       </section>
-      <section className="section-padding bg-cream-dark" id="executive-summary">
+      <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">
+        <section className="section-padding bg-cream-dark" id="executive-summary">
         <div className="container-wide max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Executive Summary</h2>
           <div className="bg-white rounded-xl border border-border p-6 shadow-sm mb-6">
@@ -91,6 +103,7 @@ const UkHealthcareMarketReport = () => (
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">The UK is Europe's second-largest pharmaceutical market and the world's fifth-largest by value. Post-Brexit regulatory independence has given MHRA flexibility to accelerate approvals outside EU timelines — the Innovative Licensing and Access Pathway (ILAP) and International Recognition Procedure (IRP) enable faster UK launches for products with prior EMA, FDA, or TGA approval. NICE's value-based assessment framework remains the dominant market access gate for NHS reimbursement.</p>
           <p className="text-muted-foreground leading-relaxed">BioNixus's London office serves UK and European pharma companies as their GCC/MENA intelligence partner. See our <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC Pharmaceutical Market Report 2026</Link> for the primary BioNixus market coverage.</p>
+            <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
         </div>
       </section>
       <section className="section-padding" id="market-access">
@@ -111,15 +124,9 @@ const UkHealthcareMarketReport = () => (
           </div>
         </div>
       </section>
-      <FAQSection sectionId={FAQ_SECTION_ID} title="UK healthcare market 2026 — NHS, NICE, MHRA, and pharma market access FAQ" items={REPORT_FAQ_ITEMS} className="bg-muted/30" />
-      <section className="section-padding bg-primary/5" id="contact-cta">
-        <div className="container-wide max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">BioNixus London: GCC & MENA Intelligence for UK-Based Pharma Teams</h2>
-          <p className="text-muted-foreground leading-relaxed mb-8 max-w-2xl mx-auto">UK and European pharmaceutical companies expanding into GCC and MENA markets. BioNixus delivers Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, Oman, and Egypt market intelligence from London and Cairo.</p>
-          <Link to="/contact" className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-3 text-base font-semibold text-primary-foreground shadow-sm hover:bg-primary/90 transition-colors">Request a briefing <ArrowRight className="w-4 h-4" /></Link>
-        </div>
-      </section>
-    </main>
+      <FAQSection sectionId={FAQ_SECTION_ID} title="UK healthcare market 2026 — NHS, NICE, MHRA, and pharma market access FAQ" items={REPORT_FAQ_ITEMS} className="bg-muted/30" />        </ReportContentWithAside>
+      <ReportConsultationBand config={REPORT_CONVERSION} />
+        </main>
     <Footer />
   </div>
 );

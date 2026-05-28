@@ -22,12 +22,21 @@ import {
   Phone,
   ChevronDown,
 } from 'lucide-react';
-import { useEffect } from 'react';
 import ShareButtons from '@/components/ShareButtons';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { getPharmaGuideConfig } from '@/data/reportConversionConfig';
+import {
+  ReportConsultationBand,
+  ReportContentWithAside,
+  ReportEarlyCtaBar,
+  ReportMidPageCta,
+  ReportReadingProgress,
+} from '@/components/report-conversion';
+
+const PHARMA_CONVERSION = getPharmaGuideConfig('kuwait');
 
 /* ------------------------------------------------------------------ */
 /* Pharmaceutical companies operating in Kuwait — local & MNC offices  */
@@ -235,22 +244,7 @@ const KuwaitPharmaCompanies = () => {
       name,
     })),
   };
-
-  useEffect(() => {
-    const bar = document.getElementById('kuwait-pharma-guide-rp');
-    if (!bar) return;
-    const update = () => {
-      const doc = document.documentElement;
-      const total = doc.scrollHeight - doc.clientHeight;
-      if (total <= 0) return;
-      (bar as HTMLElement).style.width = `${(window.scrollY / total) * 100}%`;
-    };
-    window.addEventListener('scroll', update, { passive: true });
-    update();
-    return () => window.removeEventListener('scroll', update);
-  }, []);
-
-  return (
+return (
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Pharmaceutical Companies in Kuwait | Top Medical Distributors &amp; MNCs 2026 | BioNixus</title>
@@ -306,7 +300,7 @@ const KuwaitPharmaCompanies = () => {
         locale={language === 'ar' ? 'ar_SA' : 'en_US'}
         alternateLocales={language === 'ar' ? ['en_US'] : ['ar_SA']}
       />
-      <div id="kuwait-pharma-guide-rp" className="blog-reading-progress" style={{ width: '0%' }} />
+      <ReportReadingProgress progressId="kuwait-pharma-guide-rp" />
       <Navbar />
       <main className="bg-background">
         <header
@@ -409,29 +403,7 @@ const KuwaitPharmaCompanies = () => {
                 </p>
               </aside>
 
-              <div className="mb-10 flex flex-col sm:flex-row flex-wrap gap-3">
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-bold rounded-md transition-all hover:-translate-y-0.5 shadow-md"
-                  style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--navy-deep))' }}
-                >
-                  Schedule a Kuwait research briefing
-                  <ArrowUpRight className="w-4 h-4 shrink-0" aria-hidden />
-                </Link>
-                <a
-                  href="mailto:admin@bionixus.com?subject=Kuwait%20pharma%20market%20research%20%E2%80%94%20BioNixus"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold rounded-md border-2 border-primary text-primary hover:bg-primary/5 transition-colors"
-                >
-                  Email BioNixus market research
-                  <ArrowUpRight className="w-4 h-4 shrink-0" aria-hidden />
-                </a>
-                <Link
-                  to="/services"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold rounded-md border border-border text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
-                >
-                  Explore services catalogue
-                </Link>
-              </div>
+<ReportEarlyCtaBar config={PHARMA_CONVERSION} className="mb-10" />
 
               <div className="mb-10 rounded-2xl border border-border bg-gradient-to-br from-primary/[0.04] via-background to-muted/40 p-6 md:p-8 shadow-sm">
                 <p className="text-[11px] font-extrabold uppercase tracking-[0.1em] text-primary mb-4">Kuwait pharmaceutical snapshot</p>

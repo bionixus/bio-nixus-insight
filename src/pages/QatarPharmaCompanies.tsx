@@ -6,6 +6,16 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { getPharmaGuideConfig } from '@/data/reportConversionConfig';
+import {
+  ReportConsultationBand,
+  ReportContentWithAside,
+  ReportEarlyCtaBar,
+  ReportMidPageCta,
+  ReportReadingProgress,
+} from '@/components/report-conversion';
+
+const PHARMA_CONVERSION = getPharmaGuideConfig('qatar');
 
 interface PharmaCompany {
   name: string;
@@ -73,6 +83,7 @@ const QatarPharmaCompanies = () => {
         alternateLocales={language === 'ar' ? ['en_US'] : ['ar_SA']}
       />
       <Navbar />
+      <ReportReadingProgress progressId="pharma-guide-rp-qatar" />
       <main>
         <div className="section-padding pt-24 pb-4"><div className="container-wide"><div className="flex items-center gap-2 text-sm text-muted-foreground mb-6"><Link to={basePath} className="hover:text-primary transition-colors">Home</Link><span>/</span><Link to="/resources" className="hover:text-primary transition-colors">Resources</Link><span>/</span><span className="text-foreground">Pharmaceutical Companies in Qatar</span></div></div></div>
 
@@ -82,8 +93,9 @@ const QatarPharmaCompanies = () => {
           <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">A comprehensive guide to the pharmaceutical industry in Qatar — the highest healthcare spending per capita in MENA. Covering major pharma companies, MOPH regulatory framework, Qatar National Vision 2030, market data, distribution channels (Hamad Medical Corp, Sidra Medicine), and strategic opportunities.</p>
           <p className="text-sm text-muted-foreground">Last updated: February 2026 &middot; Sources: MOPH, BioNixus MEA, QPI, Sidra Medicine, company filings</p>
           <div className="mt-8 p-5 bg-muted/50 border border-border rounded-xl"><div className="flex items-start gap-3"><Share2 className="w-5 h-5 text-primary mt-0.5 shrink-0" /><div><p className="font-semibold text-foreground text-sm mb-1">Cite this guide</p><p className="text-sm text-muted-foreground leading-relaxed">BioNixus. &quot;Pharmaceutical Companies in Qatar: Complete Industry Guide 2026.&quot; BioNixus Healthcare Market Research, Feb. 2026, <a href={citationUrl} className="text-primary hover:underline break-all">{citationUrl}</a>.<br />Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">CC BY 4.0</a> — free to share and adapt with attribution.</p></div></div></div>
-        </div></section>
+          <ReportEarlyCtaBar config={PHARMA_CONVERSION} className="mt-8" /></div></section>
 
+        <ReportContentWithAside config={PHARMA_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto">
         <section className="section-padding py-12 bg-primary text-primary-foreground"><div className="container-wide max-w-5xl mx-auto"><div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div><p className="text-3xl md:text-4xl font-display font-bold">$0.9B</p><p className="text-primary-foreground/70 text-sm mt-1">Pharmaceutical market value</p></div>
           <div><p className="text-3xl md:text-4xl font-display font-bold">12.3%</p><p className="text-primary-foreground/70 text-sm mt-1">Year-over-year growth</p></div>
@@ -121,6 +133,8 @@ const QatarPharmaCompanies = () => {
             {pharmaCompanies.map((c, i) => (<tr key={c.name} className={`border-b border-border ${i % 2 === 0 ? 'bg-card' : 'bg-muted/20'}`}><td className="px-4 py-3 font-medium text-foreground">{c.name}</td><td className="px-4 py-3 text-muted-foreground">{c.hq}</td><td className="px-4 py-3 hidden md:table-cell"><span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${c.type === 'Local Manufacturer' ? 'bg-green-50 text-green-700' : c.type === 'MNC Office' ? 'bg-blue-50 text-blue-700' : c.type === 'Regional' ? 'bg-amber-50 text-amber-700' : 'bg-purple-50 text-purple-700'}`}>{c.type}</span></td><td className="px-4 py-3 text-muted-foreground hidden lg:table-cell">{c.therapeuticAreas}</td><td className="px-4 py-3 text-muted-foreground text-xs hidden xl:table-cell">{c.notes}</td></tr>))}
           </tbody></table></div>
         </div></section>
+
+        <ReportMidPageCta config={PHARMA_CONVERSION} />
 
         <section className="section-padding py-16" id="companies-by-category"><div className="container-wide max-w-5xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">List of Pharmaceutical Companies in Qatar by Category</h2>
@@ -182,13 +196,10 @@ const QatarPharmaCompanies = () => {
         </div></section>
 
         <section className="section-padding py-12" id="methodology"><div className="container-wide max-w-5xl mx-auto"><div className="bg-card border border-border rounded-xl p-8"><h2 className="text-xl font-display font-semibold text-foreground mb-4 flex items-center gap-2"><BookOpen className="w-5 h-5 text-primary" />Data Sources &amp; Methodology</h2><p className="text-sm text-muted-foreground leading-relaxed mb-4">This guide aggregates publicly available information from:</p><ul className="text-sm text-muted-foreground space-y-2 mb-6"><li>BioNixus Middle East &amp; Africa Pharmaceutical Market Report</li><li>MOPH — Pharmacy &amp; Drug Control</li><li>Qatar Pharmaceutical Industries (QPI), QLife Pharma</li><li>Sidra Medicine, Hamad Medical Corporation</li><li>BioNixus proprietary research (2024–2025)</li></ul><p className="text-sm text-muted-foreground leading-relaxed">For customised market intelligence on Qatar, <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.</p></div></div></section>
+        </ReportContentWithAside>
 
-        <section className="section-padding py-16 bg-primary text-primary-foreground"><div className="container-wide max-w-5xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold mb-4">Need Market Intelligence on Qatar?</h2>
-          <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">BioNixus delivers custom pharmaceutical market research across Qatar and the GCC — physician surveys, competitive intelligence, market access strategy, and KOL mapping.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center"><Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors">Request a Proposal <ArrowRight className="w-4 h-4" /></Link><Link to="/services" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-primary-foreground font-semibold hover:bg-white/20 transition-colors">View Our Services</Link></div>
-        </div></section>
-      </main>
+        <ReportConsultationBand config={PHARMA_CONVERSION} />
+        </main>
       <Footer />
     </div>
   );

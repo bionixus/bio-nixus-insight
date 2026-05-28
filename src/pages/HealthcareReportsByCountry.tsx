@@ -8,6 +8,8 @@ import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { MARKET_CONTENT } from '@/data/healthcareReportContent';
 import { getMarketHealthcarePath, REPORT_ENTRIES } from '@/data/healthcareReportData';
 import { standaloneMedicalDevicesTwin } from '@/lib/standaloneMedicalDevicesTwin';
+import { getCountryHubConfig } from '@/data/reportConversionConfig';
+import { ReportConsultationBand, ReportEarlyCtaBar } from '@/components/report-conversion';
 
 export default function HealthcareReportsByCountry() {
   const { marketSlug = '' } = useParams<{ marketSlug: string }>();
@@ -16,6 +18,7 @@ export default function HealthcareReportsByCountry() {
   if (!market) return <NotFound />;
 
   const reports = REPORT_ENTRIES.filter((r) => r.marketSlug === marketSlug);
+  const conversionConfig = getCountryHubConfig(market.name, marketSlug);
   const canonical = `https://www.bionixus.com/market-reports/country/${marketSlug}`;
   const breadcrumbItems = [
     { name: 'Home', href: '/' },
@@ -86,6 +89,7 @@ export default function HealthcareReportsByCountry() {
                 </Link>
               ) : null}
             </div>
+            <ReportEarlyCtaBar config={conversionConfig} className="mt-8" />
           </div>
         </section>
 
@@ -112,6 +116,8 @@ export default function HealthcareReportsByCountry() {
             </div>
           </div>
         </section>
+
+        <ReportConsultationBand config={conversionConfig} />
       </main>
       <Footer />
     </div>

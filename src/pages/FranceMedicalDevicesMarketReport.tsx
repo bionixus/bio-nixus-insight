@@ -6,6 +6,14 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
+import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import {
+  ReportConsultationBand,
+  ReportContentWithAside,
+  ReportEarlyCtaBar,
+  ReportMidPageCta,
+  ReportReadingProgress,
+} from '@/components/report-conversion';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -39,6 +47,7 @@ const REPORT_FAQ_ITEMS = [
   },
 ];
 
+const REPORT_CONVERSION = getStandaloneReportConfig('/france-medical-devices-market-report');
 const FAQ_SECTION_ID = 'france-medical-devices-faq';
 
 const jsonLd = [
@@ -70,16 +79,19 @@ const FranceMedicalDevicesMarketReport = () => (
       canonical="https://www.bionixus.com/france-medical-devices-market-report"
       jsonLd={jsonLd}
     />
-    <main>
+      <ReportReadingProgress progressId="report-rp-france-medical-devices-market-report" />
+      <main>
       <div className="section-padding pt-24 pb-4"><div className="container-wide"><BreadcrumbNav items={breadcrumbItems} /></div></div>
       <section className="section-padding pb-10">
         <div className="container-wide max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6">Published by BioNixus · Updated May 2026 · Open access</div>
           <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">France Medical Devices Market Report 2026: LPP Listing, ANSM Regulation, and Hospital Procurement Intelligence</h1>
           <p className="text-muted-foreground leading-relaxed">BioNixus delivers France and EU medical device market intelligence — ANSM regulatory tracking, LPP reimbursement strategy, GHT group procurement research, and GCC/MENA market entry intelligence for French and European medtech manufacturers.</p>
+            <ReportEarlyCtaBar config={REPORT_CONVERSION} className="mt-8" />
         </div>
       </section>
-      <section className="section-padding bg-cream-dark" id="executive-summary">
+      <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">
+        <section className="section-padding bg-cream-dark" id="executive-summary">
         <div className="container-wide max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Executive Summary</h2>
           <div className="bg-white rounded-xl border border-border p-6 shadow-sm mb-6">
@@ -93,15 +105,9 @@ const FranceMedicalDevicesMarketReport = () => (
           <p className="text-muted-foreground leading-relaxed">See also: <Link to="/france-healthcare-market-report" className="text-primary hover:underline font-medium">France Healthcare Market Report</Link> and <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC Medical Devices Market Report</Link>.</p>
         </div>
       </section>
-      <FAQSection sectionId={FAQ_SECTION_ID} title="France medical devices market 2026 — ANSM, LPP, Forfait Innovation, GHT procurement FAQ" items={REPORT_FAQ_ITEMS} className="bg-muted/30" />
-      <section className="section-padding bg-primary/5" id="contact-cta">
-        <div className="container-wide max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">BioNixus: GCC & MENA Intelligence for French and European Medtech</h2>
-          <p className="text-muted-foreground leading-relaxed mb-8 max-w-2xl mx-auto">French and European medical device companies expanding into GCC and MENA markets. BioNixus delivers regulatory intelligence, hospital procurement data, and distributor mapping across Saudi Arabia, UAE, and the wider region.</p>
-          <Link to="/contact" className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-3 text-base font-semibold text-primary-foreground shadow-sm hover:bg-primary/90 transition-colors">Request a briefing <ArrowRight className="w-4 h-4" /></Link>
-        </div>
-      </section>
-    </main>
+      <FAQSection sectionId={FAQ_SECTION_ID} title="France medical devices market 2026 — ANSM, LPP, Forfait Innovation, GHT procurement FAQ" items={REPORT_FAQ_ITEMS} className="bg-muted/30" />        </ReportContentWithAside>
+      <ReportConsultationBand config={REPORT_CONVERSION} />
+        </main>
     <Footer />
   </div>
 );

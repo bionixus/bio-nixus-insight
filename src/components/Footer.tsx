@@ -292,7 +292,7 @@ const Footer = () => {
                   href="tel:+18884655557"
                   className="hover:text-primary-foreground transition-colors"
                 >
-                  +1 888 465 5557
+                  US No. +1 888 465 5557
                 </a>
               </li>
               <li>
@@ -311,7 +311,15 @@ const Footer = () => {
                   href="tel:+447727666682"
                   className="hover:text-primary-foreground transition-colors"
                 >
-                  +44 7727 666682
+                  Europe No. +44 7727 666682
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+201206882323"
+                  className="hover:text-primary-foreground transition-colors"
+                >
+                  Middle East, Africa and Asia No. +20 120 688 2323
                 </a>
               </li>
             </ul>

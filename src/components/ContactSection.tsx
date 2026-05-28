@@ -332,10 +332,13 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
                   <div className="text-sm text-muted-foreground">{t.contact.phoneLabel}</div>
                   <div className="flex flex-col gap-1">
                     <a href="tel:+18884655557" className="text-foreground font-medium hover:text-primary transition-colors">
-                      +1 888 465 5557 <span className="text-muted-foreground text-sm font-normal">(US)</span>
+                      US No. +1 888 465 5557
                     </a>
                     <a href="tel:+447727666682" className="text-foreground font-medium hover:text-primary transition-colors">
-                      +44 7727 666682 <span className="text-muted-foreground text-sm font-normal">(UK)</span>
+                      Europe No. +44 7727 666682
+                    </a>
+                    <a href="tel:+201206882323" className="text-foreground font-medium hover:text-primary transition-colors">
+                      Middle East, Africa and Asia No. +20 120 688 2323
                     </a>
                   </div>
                 </div>

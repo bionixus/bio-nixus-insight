@@ -12,7 +12,14 @@ import {
 } from '@/data/healthcareReportContent';
 import { getMarketHealthcarePath, getReportSafe } from '@/data/healthcareReportData';
 import { CrossLinkSentence } from '@/lib/healthcareReportLinks';
-import { ArrowRight } from 'lucide-react';
+import { buildConversionConfigFromReportEntry } from '@/data/reportConversionConfig';
+import {
+  ReportConsultationBand,
+  ReportContentWithAside,
+  ReportEarlyCtaBar,
+  ReportMidPageCta,
+  ReportReadingProgress,
+} from '@/components/report-conversion';
 
 function accessBullets(entry: NonNullable<ReturnType<typeof getReportSafe>>) {
   const m = MARKET_CONTENT[entry.marketSlug];
@@ -44,6 +51,7 @@ export default function HealthcareReportPage() {
   const therapy = THERAPY_AREA_CONTENT[report.therapyAreaSlug];
   const market = MARKET_CONTENT[report.marketSlug];
   const faqSectionId = `market-report-faq-${report.slug}`;
+  const conversionConfig = buildConversionConfigFromReportEntry(report);
   const intro = `${report.market} concentrates ${report.therapyArea} demand inside one of BioNixus’ highest‑resolution hospital consumption analogue corridors: oncology infusion suites, payer prior‑authorization mining, genomic programme adjacency, centralized tender choreography, clinician adoption pacing, and multilingual patient adherence instrumentation are triangulated for regional general managers balancing franchise targets against FX and procurement volatility.`;
 
   const jsonLd = [
@@ -79,6 +87,7 @@ export default function HealthcareReportPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <ReportReadingProgress progressId={`market-report-rp-${report.slug}`} />
       <Navbar />
       <SEOHead
         title={report.metaTitle}
@@ -103,7 +112,7 @@ export default function HealthcareReportPage() {
               {report.title}
             </h1>
             <p className="text-muted-foreground leading-relaxed mb-5">{intro}</p>
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed mb-8">
               Browse{' '}
               <Link className="font-medium text-primary hover:underline" to={therapyHub}>
                 more {report.therapyArea} reports
@@ -114,11 +123,13 @@ export default function HealthcareReportPage() {
               </Link>
               .
             </p>
+            <ReportEarlyCtaBar config={conversionConfig} />
           </div>
         </section>
 
-        <section className="section-padding bg-cream-dark" id="executive-summary">
-          <div className="container-wide max-w-4xl mx-auto">
+        <ReportContentWithAside config={conversionConfig} containerClassName="container-wide max-w-6xl mx-auto section-padding pt-0">
+        <section className="pb-10 bg-cream-dark rounded-xl px-4 md:px-6 py-8" id="executive-summary">
+          <div className="max-w-4xl">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
               Executive Summary
             </h2>
@@ -153,11 +164,12 @@ export default function HealthcareReportPage() {
               </Link>{' '}
               calibrated with ministry tender intelligence.
             </p>
+            <ReportMidPageCta config={conversionConfig} className="mt-10" />
           </div>
         </section>
 
-        <section className="section-padding" id="therapy-context">
-          <div className="container-wide max-w-4xl mx-auto">
+        <section className="py-12" id="therapy-context">
+          <div className="max-w-4xl">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
               {report.therapyArea} Market Context in {report.market}
             </h2>
@@ -167,8 +179,8 @@ export default function HealthcareReportPage() {
           </div>
         </section>
 
-        <section className="section-padding bg-cream-dark" id="regulatory-reimbursement">
-          <div className="container-wide max-w-4xl mx-auto">
+        <section className="py-12 bg-cream-dark rounded-xl px-4 md:px-6" id="regulatory-reimbursement">
+          <div className="max-w-4xl">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
               Regulatory &amp; Reimbursement Landscape
             </h2>
@@ -178,8 +190,8 @@ export default function HealthcareReportPage() {
           </div>
         </section>
 
-        <section className="section-padding" id="market-access-intelligence">
-          <div className="container-wide max-w-4xl mx-auto">
+        <section className="py-12" id="market-access-intelligence">
+          <div className="max-w-4xl">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
               Key Market Access Intelligence
             </h2>
@@ -198,8 +210,8 @@ export default function HealthcareReportPage() {
           className="bg-muted/30"
         />
 
-        <section className="section-padding bg-background" id="related-reports">
-          <div className="container-wide max-w-5xl mx-auto">
+        <section className="py-12" id="related-reports">
+          <div className="max-w-5xl">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-8">
               Related Healthcare Market Research Reports
             </h2>
@@ -230,25 +242,9 @@ export default function HealthcareReportPage() {
             </div>
           </div>
         </section>
+        </ReportContentWithAside>
 
-        <section className="section-padding bg-primary/5" id="contact-cta">
-          <div className="container-wide max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
-              Commission {report.market} {report.therapyArea} Intelligence
-            </h2>
-            <p className="text-muted-foreground leading-relaxed mb-8 max-w-2xl mx-auto">
-              BioNixus pairs hospital consumption analogue analytics with bilingual clinician trackers, formulary uplift
-              simulation boards and tender vigilance calibrated for GCC, Egypt, and bridging European markets — delivering
-              leadership‑ready dashboards without spreadsheet tourism or anecdotal folklore.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-3 text-base font-semibold text-primary-foreground shadow-sm hover:bg-primary/90 transition-colors"
-            >
-              Request a briefing <ArrowRight className="w-4 h-4" aria-hidden />
-            </Link>
-          </div>
-        </section>
+        <ReportConsultationBand config={conversionConfig} />
       </main>
       <Footer />
     </div>

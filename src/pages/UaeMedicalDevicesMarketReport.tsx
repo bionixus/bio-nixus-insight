@@ -6,6 +6,14 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ArrowRight } from 'lucide-react';
+import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
+import {
+  ReportConsultationBand,
+  ReportContentWithAside,
+  ReportEarlyCtaBar,
+  ReportMidPageCta,
+  ReportReadingProgress,
+} from '@/components/report-conversion';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -45,6 +53,7 @@ const REPORT_FAQ_ITEMS = [
   },
 ];
 
+const REPORT_CONVERSION = getStandaloneReportConfig('/uae-medical-devices-market-report');
 const FAQ_SECTION_ID = 'uae-medical-devices-faq';
 
 const jsonLd = [
@@ -85,6 +94,7 @@ const UaeMedicalDevicesMarketReport = () => {
         canonical="https://www.bionixus.com/uae-medical-devices-market-report"
         jsonLd={jsonLd}
       />
+      <ReportReadingProgress progressId="report-rp-uae-medical-devices-market-report" />
       <main>
         <div className="section-padding pt-24 pb-4">
           <div className="container-wide"><BreadcrumbNav items={breadcrumbItems} /></div>
@@ -103,9 +113,11 @@ const UaeMedicalDevicesMarketReport = () => {
               tracking, hospital procurement data across Dubai and Abu Dhabi, and primary research with
               clinical specialists and procurement leads at the UAE's leading public and private hospitals.
             </p>
+            <ReportEarlyCtaBar config={REPORT_CONVERSION} className="mt-8" />
           </div>
         </section>
 
+        <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">
         <section className="section-padding bg-cream-dark" id="executive-summary">
           <div className="container-wide max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Executive Summary</h2>
@@ -132,6 +144,7 @@ const UaeMedicalDevicesMarketReport = () => {
                 GCC Medical Devices Market Report
               </Link>.
             </p>
+            <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
           </div>
         </section>
 
@@ -158,21 +171,9 @@ const UaeMedicalDevicesMarketReport = () => {
         </section>
 
         <FAQSection sectionId={FAQ_SECTION_ID} title="UAE medical devices market 2026 — MOHAP, DHA, DOH registration and commercial strategy FAQ" items={REPORT_FAQ_ITEMS} className="bg-muted/30" />
-
-        <section className="section-padding bg-primary/5" id="contact-cta">
-          <div className="container-wide max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
-              Request the BioNixus UAE Medical Devices Intelligence Briefing
-            </h2>
-            <p className="text-muted-foreground leading-relaxed mb-8 max-w-2xl mx-auto">
-              MOHAP, DHA, and DOH registration tracking, hospital procurement intelligence across Dubai and Abu Dhabi, and primary HCP research for UAE medical device commercial strategy.
-            </p>
-            <Link to="/contact" className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-3 text-base font-semibold text-primary-foreground shadow-sm hover:bg-primary/90 transition-colors">
-              Request a briefing <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </section>
-      </main>
+        </ReportContentWithAside>
+        <ReportConsultationBand config={REPORT_CONVERSION} />
+        </main>
       <Footer />
     </div>
   );
