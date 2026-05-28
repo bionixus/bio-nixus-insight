@@ -71,7 +71,7 @@ export default function HealthcareReportsHub() {
       <Navbar />
       <SEOHead
         title="Healthcare Market Research Reports 2026 | GCC, MENA, Global | BioNixus"
-        description="BioNixus healthcare market research reports covering GCC, MENA, Europe, and Asia-Pacific. Oncology, cardiovascular, diabetes, immunology, rare diseases — regulatory, reimbursement, and commercial intelligence."
+        description="BioNixus healthcare market research reports covering GCC, MENA, Europe, and selected comparator markets. Therapy-specific pages combine regulatory, reimbursement, and commercial planning signals."
         canonical={canonical}
         jsonLd={jsonLd}
       />
@@ -84,11 +84,11 @@ export default function HealthcareReportsHub() {
 
         <ReportPremiumHero
           title="Healthcare Market Research Reports 2026 — GCC, MENA & Global Intelligence"
-          description="BioNixus synthesizes regulatory authority dossier expectations, payer and procurement mechanics, hospital consumption analogues, clinician adoption ladders, and multilingual patient adherence signals across Saudi Arabia, United Arab Emirates, Kuwait, Qatar, Bahrain, Oman, Egypt, aggregated GCC composites, plus Turkey as a bridging market—delivering general manager‑grade intelligence calibrated for pharmaceutical and medical device franchises."
+          description="This report hub organizes country and therapy-specific intelligence for healthcare and pharmaceutical planning teams. Each page focuses on regulatory context, access dynamics, and adoption signals that can be converted into practical launch and lifecycle decisions."
           config={hubConversion}
           marketSlug="gcc"
           countryName="GCC & MENA"
-          badges={['BioNixus Intelligence', 'Updated May 2026', '107+ market reports']}
+          badges={['BioNixus Intelligence', 'Updated May 2026', `${allReports.length} market reports`]}
         />
 
         <section className="section-padding pb-6">

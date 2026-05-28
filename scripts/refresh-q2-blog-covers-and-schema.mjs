@@ -112,17 +112,21 @@ async function main() {
   let updated = 0;
   for (const topic of topics) {
     const coverPath = path.join(coverDir, `${topic.slug}-cover.jpg`);
-    await generateBlogCover({
-      title: topic.brand,
-      subtitle: `${topic.generic} · ${topic.actionType}`,
-      sponsor: topic.sponsor,
-      therapeuticArea: topic.therapeuticArea,
-      actionType: topic.actionType,
-      layoutIndex: topic.id,
-      slug: topic.slug,
-      outPath: coverPath,
-    });
-    console.log(`Cover: ${coverPath}`);
+    if (!fs.existsSync(coverPath) || process.argv.includes('--regenerate-svg-fallback')) {
+      await generateBlogCover({
+        title: topic.brand,
+        subtitle: `${topic.generic} · ${topic.actionType}`,
+        sponsor: topic.sponsor,
+        therapeuticArea: topic.therapeuticArea,
+        actionType: topic.actionType,
+        layoutIndex: topic.id,
+        slug: topic.slug,
+        outPath: coverPath,
+      });
+      console.log(`Cover (SVG fallback): ${coverPath}`);
+    } else {
+      console.log(`Cover (existing photoreal): ${coverPath}`);
+    }
 
     if (skipUpload) continue;
 

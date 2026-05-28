@@ -450,12 +450,35 @@ function pickVariant(seed: string, options: [string, string, string]) {
   return options[score % options.length];
 }
 
+function normalizeSignalPhrase(phrase: string): string {
+  return phrase
+    .replace(/[‐‑‒–—]/g, '-')
+    .replace(/\s+/g, ' ')
+    .replace(/\bwarfare\b/gi, 'competition')
+    .replace(/\bnoise\b/gi, 'variability')
+    .replace(/\bartefacts?\b/gi, 'effects')
+    .replace(/\bspeculation\b/gi, 'uncertainty')
+    .replace(/\bshock collars?\b/gi, 'cost containment pressure')
+    .replace(/[^\p{L}\p{N}\s,;:()\-\/+.%&']/gu, '')
+    .trim();
+}
+
+function normalizeSignalTail(tail: string): string {
+  const parts = tail
+    .split(',')
+    .map((p) => normalizeSignalPhrase(p))
+    .filter(Boolean)
+    .slice(0, 5);
+  return parts.join('; ');
+}
+
 function buildFieldIntelligenceParagraph(
   spec: SpecRow,
   therapy: (typeof THERAPY_AREA_CONTENT)[keyof typeof THERAPY_AREA_CONTENT],
   market: (typeof MARKET_CONTENT)[keyof typeof MARKET_CONTENT],
 ): string {
   const reg = market.regulatoryBody.split('•')[0]?.trim() || market.regulatoryBody;
+  const normalizedSignals = normalizeSignalTail(spec.sum1Tail);
   const opener = pickVariant(spec.slug, [
     `${spec.market} ${therapy.name} field intelligence in this report focuses on decision points that affect launch timing, reimbursement feasibility, and institutional uptake.`,
     `This ${spec.market} ${therapy.name} report prioritizes field-level evidence on provider behavior, access constraints, and account-level adoption barriers.`,
@@ -463,7 +486,7 @@ function buildFieldIntelligenceParagraph(
   ]);
   const raw = [
     opener,
-    `Observed market signals include ${spec.sum1Tail}`,
+    `Observed market signals include ${normalizedSignals}`,
     `Teams should align access and medical planning to ${reg} pathway expectations, payer review cadence, and provider implementation capacity in ${spec.market}.`,
     `Where uncertainty remains, scenario planning should be validated through local stakeholder interviews and current institutional policy checks.`,
   ].join(' ');
@@ -476,6 +499,7 @@ function buildCommercialOutlookParagraph(
   _market: (typeof MARKET_CONTENT)[keyof typeof MARKET_CONTENT],
 ): string {
   const clinicalSecond = therapy.clinicalLandscape.split('\n\n')[0] ?? therapy.menaMarketDynamics;
+  const normalizedSignals = normalizeSignalTail(spec.sum1Tail);
   const outlookLead = pickVariant(spec.slug, [
     `Commercial outlook for ${spec.market} ${therapy.name} remains positive where access sequencing and account prioritization are executed with discipline.`,
     `The ${spec.market} ${therapy.name} outlook depends on how quickly evidence narratives convert into formulary and protocol-level activation.`,
@@ -483,7 +507,7 @@ function buildCommercialOutlookParagraph(
   ]);
   const raw = [
     outlookLead,
-    `Current opportunity signals include ${spec.sum1Tail}`,
+    `Current opportunity signals include ${normalizedSignals}`,
     clinicalSecond,
     `Leadership teams should stress-test uptake assumptions by scenario before committing full-scale investment.`,
   ].join(' ');
@@ -519,7 +543,8 @@ function assembleEntry(spec: SpecRow): Omit<ReportEntry, 'relatedSlugs'> {
     `In ${spec.market}, ${th.name} growth opportunities depend on how regulatory timing, reimbursement pathways, and care delivery realities interact in practice.`,
     `${spec.market} ${th.name} market performance in 2026 is shaped by adoption readiness, access mechanics, and institution-level implementation capacity.`,
   ]);
-  const summaryPara1Raw = `${summaryLead} Key observed signals include ${spec.sum1Tail}`;
+  const normalizedSignals = normalizeSignalTail(spec.sum1Tail);
+  const summaryPara1Raw = `${summaryLead} Key observed signals include ${normalizedSignals}`;
   const summaryPara1 = fitWordRange(summaryPara1Raw, 80, 120);
   const statSummaryLine = `${title} benchmarks ${therapy.name.toLowerCase()} revenue potential near ${spec.stats[0]} (${spec.stats[1]}) in 2026, trending toward roughly ${spec.stats[2]} (${spec.stats[3]}) by 2030, implying compounded annual expansion near ${spec.stats[4]} (${spec.stats[5]}).`;
   const faqs = buildHealthcareFaqs({
@@ -554,7 +579,7 @@ function assembleEntry(spec: SpecRow): Omit<ReportEntry, 'relatedSlugs'> {
     stat3Label: spec.stats[5],
     summaryPara1,
     summaryPara2,
-    marketAccessNotes: spec.sum1Tail,
+    marketAccessNotes: normalizedSignals,
     fieldIntelligenceParagraph,
     commercialOutlookParagraph,
     methodologyParagraph,

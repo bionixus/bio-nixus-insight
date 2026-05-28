@@ -440,7 +440,7 @@ const EGYPT_FAQS = [
   {
     question: 'Do you provide diagnostics and laboratory network research in Egypt?',
     answer:
-      'Yes. We run diagnostics-focused studies across leading laboratory chains and provider networks to support prevalence, pathway, and testing-behavior analysis.',
+      'Yes. We run diagnostics-focused studies across major laboratory chains and provider networks to support prevalence, pathway, and testing-behavior analysis.',
   },
   {
     question: 'How does Egypt support broader MENA pharmaceutical strategy?',
@@ -479,14 +479,14 @@ const UAE_SECTIONS: UaeSection[] = [
     id: 'market-overview',
     title: 'UAE Pharmaceutical Market at a Glance',
     bullets: [
-      'Market value: AED 17.8 billion (USD 4.8B) pharmaceutical market (2024)',
-      'Growth rate: 8.2% CAGR (2024-2028), above global average',
-      'Hospital infrastructure: 160+ public and private hospitals; 3,800+ pharmacies',
-      'Medical tourism: 500,000+ international patients annually driving specialty demand',
+      'Strong pharmaceutical demand across public and private healthcare channels',
+      'Sustained growth momentum driven by insurance and specialist-care expansion',
+      'Dense hospital and pharmacy infrastructure across major emirates',
+      'Medical tourism and cross-border patient flow influence specialty demand',
       'Regulatory bodies: DHA (Dubai), MOHAP (federal), DOH (Abu Dhabi)',
     ],
     paragraphs: [
-      'BioNixus positions itself as the leading pharmaceutical market research company in the UAE by pairing Emirates-wide field execution with deep literacy in Dubai and Abu Dhabi health systems, from DHA-governed networks to DOH and SEHA-aligned Abu Dhabi institutions and federal MOHAP routes.',
+      'BioNixus supports pharmaceutical market research in the UAE through Emirates-wide field execution and practical understanding of Dubai and Abu Dhabi health systems, from DHA-governed networks to DOH and SEHA-aligned institutions and federal MOHAP routes.',
       'The UAE pharmaceutical market is one of the most execution-ready healthcare environments in MENA, with concentrated specialist hubs in Dubai and Abu Dhabi, high private insurance penetration, and strong infrastructure for advanced therapies.',
       'Commercial strategy in the Emirates requires emirate-specific design: Dubai dynamics differ from Abu Dhabi and Northern Emirates in provider mix, payer behavior, and institutional adoption pathways.',
     ],
@@ -502,7 +502,7 @@ const UAE_SECTIONS: UaeSection[] = [
       'Pharmacy channel studies across chain and independent networks',
     ],
     paragraphs: [
-      "As the UAE's leading pharmaceutical market research company, BioNixus combines quantitative and qualitative methods to produce decision-ready evidence for launch planning, market access, and lifecycle optimization—structured around how Dubai and Abu Dhabi health systems actually approve, adopt, and reimburse therapies.",
+      "BioNixus combines quantitative and qualitative methods to produce decision-ready evidence for launch planning, market access, and lifecycle optimization—structured around how Dubai and Abu Dhabi health systems actually approve, adopt, and reimburse therapies.",
       'Programs are built for practical execution: sample design, stakeholder prioritization, evidence packaging, and implementation support are aligned to the same decision framework.',
     ],
   },
@@ -1488,29 +1488,29 @@ const GlobalWebsiteCountry = () => {
             isUaePage
               ? 'BioNixus — pharmaceutical and healthcare market research in Dubai and UAE. DHA, MOHAP, DOH-aligned physician surveys, KOL mapping, market access, and launch intelligence.'
               : isSaudiPage
-                ? 'Leading Saudi Arabia pharmaceutical market research with physician surveys, KOL interviews, SFDA and NUPCO intelligence across Riyadh, Jeddah, and Eastern Province.'
+                ? 'Saudi Arabia pharmaceutical market research with physician surveys, KOL interviews, SFDA and NUPCO intelligence across major healthcare regions.'
                 : isUsPage
-                  ? 'Premium US pharmaceutical market research with physician surveys, KOL interviews, payer intelligence, and launch analytics across high-priority therapeutic areas.'
+                  ? 'US pharmaceutical market research with physician surveys, KOL interviews, payer intelligence, and launch analytics across high-priority therapeutic areas.'
                   : isUkPage
-                    ? 'Leading UK pharmaceutical market research with NHS physician surveys, KOL interviews, NICE submission support, and market access intelligence.'
+                    ? 'UK pharmaceutical market research with NHS physician surveys, KOL interviews, NICE submission support, and market access intelligence.'
                     : isGermanyPage
-                      ? 'Leading Germany pharmaceutical market research with physician studies, KOL intelligence, and AMNOG-aware market access strategy.'
+                      ? 'Germany pharmaceutical market research with physician studies, KOL intelligence, and AMNOG-aware market access strategy.'
                       : isFrancePage
-                        ? 'Leading France pharmaceutical market research with physician studies, KOL intelligence, and HAS-aware market access strategy.'
+                        ? 'France pharmaceutical market research with physician studies, KOL intelligence, and HAS-aware market access strategy.'
                         : isSpainPage
-                          ? 'Leading Spain pharmaceutical market research with physician studies, KOL intelligence, and HTA-aware market access strategy.'
+                          ? 'Spain pharmaceutical market research with physician studies, KOL intelligence, and HTA-aware market access strategy.'
                           : isItalyPage
-                            ? 'Leading Italy pharmaceutical market research with physician studies, KOL intelligence, and AIFA-aware market access strategy.'
+                            ? 'Italy pharmaceutical market research with physician studies, KOL intelligence, and AIFA-aware market access strategy.'
                           : isKuwaitPage
-                            ? 'Leading Kuwait pharmaceutical market research with physician surveys, KOL interviews, KFDA registration support, and MOH tender intelligence.'
+                            ? 'Kuwait pharmaceutical market research with physician surveys, KOL interviews, KFDA registration context, and MOH tender intelligence.'
                           : isQatarPage
-                            ? 'Leading Qatar pharmaceutical market research with physician surveys, KOL interviews, and public-private market access intelligence.'
+                            ? 'Qatar pharmaceutical market research with physician surveys, KOL interviews, and public-private market access intelligence.'
                           : isBahrainPage
-                            ? 'Leading Bahrain pharmaceutical market research with physician surveys, KOL interviews, and public-private market access intelligence.'
+                            ? 'Bahrain pharmaceutical market research with physician surveys, KOL interviews, and public-private market access intelligence.'
                           : isOmanPage
-                            ? 'Leading Oman pharmaceutical market research with physician surveys, KOL interviews, and public-private market access intelligence.'
+                            ? 'Oman pharmaceutical market research with physician surveys, KOL interviews, and public-private market access intelligence.'
                           : isEgyptPage
-                            ? 'Leading Egypt pharmaceutical market research with MOH physician surveys, diagnostics intelligence, and Universal Health Insurance insight from Cairo.'
+                            ? 'Egypt pharmaceutical market research with MOH physician surveys, diagnostics intelligence, and Universal Health Insurance context.'
               : `Pharmaceutical market research in ${country.countryName} with stakeholder mapping, access intelligence, and execution-ready healthcare strategy guidance from BioNixus.`
           }
         />
@@ -1534,31 +1534,31 @@ const GlobalWebsiteCountry = () => {
           property="og:title"
           content={
             isUaePage
-              ? 'BioNixus | Leading Pharmaceutical Market Research Company in the UAE'
+              ? 'BioNixus | Pharmaceutical Market Research in the UAE'
               : isSaudiPage
-                ? 'Leading Pharmaceutical Market Research in Saudi Arabia | BioNixus'
+                ? 'Pharmaceutical Market Research in Saudi Arabia | BioNixus'
                 : isUsPage
-                  ? 'Premium Pharmaceutical Market Research in the United States | BioNixus'
+                  ? 'Pharmaceutical Market Research in the United States | BioNixus'
                   : isUkPage
-                    ? 'Leading Pharmaceutical Market Research in the United Kingdom | BioNixus'
+                    ? 'Pharmaceutical Market Research in the United Kingdom | BioNixus'
                     : isGermanyPage
-                      ? 'Leading Pharmaceutical Market Research in Germany | BioNixus'
+                      ? 'Pharmaceutical Market Research in Germany | BioNixus'
                     : isFrancePage
-                      ? 'Leading Pharmaceutical Market Research in France | BioNixus'
+                      ? 'Pharmaceutical Market Research in France | BioNixus'
                       : isSpainPage
-                        ? 'Leading Pharmaceutical Market Research in Spain | BioNixus'
+                        ? 'Pharmaceutical Market Research in Spain | BioNixus'
                         : isItalyPage
-                          ? 'Leading Pharmaceutical Market Research in Italy | BioNixus'
+                          ? 'Pharmaceutical Market Research in Italy | BioNixus'
                         : isKuwaitPage
-                          ? 'Leading Pharmaceutical Market Research in Kuwait | BioNixus'
+                          ? 'Pharmaceutical Market Research in Kuwait | BioNixus'
                         : isQatarPage
-                          ? 'Leading Pharmaceutical Market Research in Qatar | BioNixus'
+                          ? 'Pharmaceutical Market Research in Qatar | BioNixus'
                         : isBahrainPage
-                          ? 'Leading Pharmaceutical Market Research in Bahrain | BioNixus'
+                          ? 'Pharmaceutical Market Research in Bahrain | BioNixus'
                         : isOmanPage
-                          ? 'Leading Pharmaceutical Market Research in Oman | BioNixus'
+                          ? 'Pharmaceutical Market Research in Oman | BioNixus'
                         : isEgyptPage
-                          ? 'Leading Pharmaceutical Market Research in Egypt | BioNixus'
+                          ? 'Pharmaceutical Market Research in Egypt | BioNixus'
               : `${country.countryName} Pharmaceutical Market Research | BioNixus`
           }
         />
@@ -1566,7 +1566,7 @@ const GlobalWebsiteCountry = () => {
           property="og:description"
           content={
             isUaePage
-              ? "The UAE's leading pharmaceutical market research partner for Dubai and Abu Dhabi health systems, drug development, market access, and commercialization across the Emirates."
+              ? "Pharmaceutical market research coverage for Dubai and Abu Dhabi health systems, drug development, market access, and commercialization across the Emirates."
               : isSaudiPage
                 ? 'Vision 2030-aligned healthcare intelligence for SFDA registration, NUPCO strategy, and pharmaceutical market access in Saudi Arabia.'
                 : isUsPage
@@ -1599,11 +1599,11 @@ const GlobalWebsiteCountry = () => {
             '@context': 'https://schema.org',
             '@type': 'WebPage',
             name: isUaePage
-              ? 'BioNixus — Leading Pharmaceutical Market Research Company in the UAE'
+              ? 'BioNixus — Pharmaceutical Market Research Company in the UAE'
               : `${country.countryName} Pharmaceutical Market Research`,
             url: canonicalUrl,
             description: isUaePage
-              ? 'BioNixus is the leading pharmaceutical market research company in the United Arab Emirates, with Dubai and Abu Dhabi health system coverage and MOHAP, DHA, and DOH-aligned programs.'
+              ? 'BioNixus provides pharmaceutical market research in the United Arab Emirates with Dubai and Abu Dhabi health system coverage and MOHAP, DHA, and DOH-aligned programs.'
               : `Country-specific healthcare market strategy and pharmaceutical intelligence for ${country.countryName}.`,
             inLanguage: 'en',
             isPartOf: {
@@ -1649,9 +1649,9 @@ const GlobalWebsiteCountry = () => {
               {JSON.stringify({
                 '@context': 'https://schema.org',
                 '@type': 'ProfessionalService',
-                name: 'BioNixus — Leading Pharmaceutical Market Research Company in the UAE',
+                name: 'BioNixus — Pharmaceutical Market Research Company in the UAE',
                 description:
-                  'Leading pharmaceutical market research company in the UAE with Dubai and Abu Dhabi health system coverage, MOHAP, DHA, and DOH-aligned studies, and Emirates-wide physician and payer intelligence.',
+                  'Pharmaceutical market research in the UAE with Dubai and Abu Dhabi health system coverage, MOHAP, DHA, and DOH-aligned studies, and Emirates-wide physician and payer intelligence.',
                 url: canonicalUrl,
                 telephone: '+971-4-XXX-XXXX',
                 areaServed: ['Dubai', 'Abu Dhabi', 'Sharjah', 'United Arab Emirates'],
@@ -2115,29 +2115,29 @@ const GlobalWebsiteCountry = () => {
               {isUaePage
                 ? 'Pharmaceutical & Healthcare Market Research in Dubai & UAE'
                 : isSaudiPage
-                  ? 'Leading Pharmaceutical Market Research in Saudi Arabia'
+                  ? 'Pharmaceutical Market Research in Saudi Arabia'
                   : isUsPage
-                    ? 'Premium Pharmaceutical Market Research in the United States'
+                    ? 'Pharmaceutical Market Research in the United States'
                     : isUkPage
-                      ? 'Leading Pharmaceutical Market Research in the United Kingdom'
+                      ? 'Pharmaceutical Market Research in the United Kingdom'
                       : isGermanyPage
-                        ? 'Leading Pharmaceutical Market Research in Germany'
+                        ? 'Pharmaceutical Market Research in Germany'
                         : isFrancePage
-                          ? 'Leading Pharmaceutical Market Research in France'
+                          ? 'Pharmaceutical Market Research in France'
                           : isSpainPage
-                            ? 'Leading Pharmaceutical Market Research in Spain'
+                            ? 'Pharmaceutical Market Research in Spain'
                             : isItalyPage
-                              ? 'Leading Pharmaceutical Market Research in Italy'
+                              ? 'Pharmaceutical Market Research in Italy'
                             : isKuwaitPage
-                              ? 'Leading Pharmaceutical Market Research in Kuwait'
+                              ? 'Pharmaceutical Market Research in Kuwait'
                             : isQatarPage
-                              ? 'Leading Pharmaceutical Market Research in Qatar'
+                              ? 'Pharmaceutical Market Research in Qatar'
                             : isBahrainPage
-                              ? 'Leading Pharmaceutical Market Research in Bahrain'
+                              ? 'Pharmaceutical Market Research in Bahrain'
                             : isOmanPage
-                              ? 'Leading Pharmaceutical Market Research in Oman'
+                              ? 'Pharmaceutical Market Research in Oman'
                             : isEgyptPage
-                              ? 'Leading Pharmaceutical Market Research in Egypt'
+                              ? 'Pharmaceutical Market Research in Egypt'
                   : `${country.countryName} Healthcare Market Strategy`}
             </h1>
             {isUaePage ? (
@@ -2168,7 +2168,7 @@ const GlobalWebsiteCountry = () => {
             <p className="max-w-3xl text-lg leading-relaxed text-primary-foreground/80 md:text-xl">
               {isUaePage ? (
                 <>
-                  BioNixus is the leading pharmaceutical market research company in the United Arab Emirates, with programs built around{' '}
+                  BioNixus delivers pharmaceutical market research in the United Arab Emirates, with programs built around{' '}
                   <strong className="text-foreground font-medium">Dubai and Abu Dhabi health systems</strong>
                   {' '}
                   and the wider Emirates. We deliver quantitative and qualitative research that reflects DHA, DOH, MOHAP, and SEHA realities—converting clinical perspectives into commercial strategy. See how this fits our{' '}
@@ -2206,7 +2206,7 @@ const GlobalWebsiteCountry = () => {
             {isUaePage ? (
               <>
                 <p className="text-sm text-muted-foreground mt-4">
-                  Trusted by teams operating in Dubai Healthcare City, SEHA network, Abu Dhabi, Sharjah, and Northern Emirates.
+                  Designed for teams operating across Dubai Healthcare City, SEHA-linked networks, Abu Dhabi, Sharjah, and the Northern Emirates.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mt-4 max-w-3xl">
                   BioNixus is a specialist healthcare market research agency serving Dubai, Abu Dhabi, and the wider UAE. Our research programs are designed around the DHA, DOH, and MOHAP regulatory structure — delivering physician surveys, KOL mapping, competitive intelligence, and market access research for pharma, biotech, and medtech teams across the Emirates.
@@ -2221,7 +2221,7 @@ const GlobalWebsiteCountry = () => {
             ) : isSaudiPage ? (
               <>
                 <p className="text-sm text-muted-foreground mt-4">
-                  Trusted by pharmaceutical teams across Riyadh, Jeddah, Eastern Province, and major Saudi medical networks.
+                  Built for pharmaceutical teams working across Riyadh, Jeddah, Eastern Province, and major Saudi medical networks.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mt-3 max-w-3xl">
                   Planning a biosimilar or biologics launch under SFDA and NUPCO timelines? BioNixus maintains a standalone{' '}
@@ -2237,43 +2237,43 @@ const GlobalWebsiteCountry = () => {
               </p>
             ) : isUkPage ? (
               <p className="text-sm text-muted-foreground mt-4">
-                Trusted by teams working across NHS systems, private hospital groups, and UK academic medical centres.
+                Built for teams working across NHS systems, private hospital groups, and UK academic medical centres.
               </p>
             ) : isGermanyPage ? (
               <p className="text-sm text-muted-foreground mt-4">
-                Trusted by teams working across German university hospitals, ambulatory specialist networks, and high-priority therapeutic markets.
+                Built for teams working across German university hospitals, ambulatory specialist networks, and high-priority therapeutic markets.
               </p>
             ) : isFrancePage ? (
               <p className="text-sm text-muted-foreground mt-4">
-                Trusted by teams working across French university hospitals, regional systems, and priority specialty markets.
+                Built for teams working across French university hospitals, regional systems, and priority specialty markets.
               </p>
             ) : isSpainPage ? (
               <p className="text-sm text-muted-foreground mt-4">
-                Trusted by teams working across Spanish hospital systems, regional networks, and high-priority therapeutic markets.
+                Built for teams working across Spanish hospital systems, regional networks, and high-priority therapeutic markets.
               </p>
             ) : isItalyPage ? (
               <p className="text-sm text-muted-foreground mt-4">
-                Trusted by teams working across Italian regional health systems, university hospitals, and priority specialty markets.
+                Built for teams working across Italian regional health systems, university hospitals, and priority specialty markets.
               </p>
             ) : isKuwaitPage ? (
               <p className="text-sm text-muted-foreground mt-4">
-                Trusted by pharmaceutical companies operating in Jaber Al-Ahmad Hospital, Mubarak Al-Kabeer Hospital, Hadi Clinic, Al-Salam Hospital, Dar Al Shifa Hospital, Taiba Hospital, and Kuwait Cancer Control Center.
+                Built for pharmaceutical teams operating across Kuwait public hospitals, private providers, and oncology-focused institutions.
               </p>
             ) : isQatarPage ? (
               <p className="text-sm text-muted-foreground mt-4">
-                Trusted by teams working across Qatar public hospitals, private provider networks, and high-priority specialty programs.
+                Built for teams working across Qatar public hospitals, private provider networks, and high-priority specialty programs.
               </p>
             ) : isBahrainPage ? (
               <p className="text-sm text-muted-foreground mt-4">
-                Trusted by teams working across Bahrain government hospitals, private healthcare groups, and specialty-focused therapeutic markets.
+                Built for teams working across Bahrain government hospitals, private healthcare groups, and specialty-focused therapeutic markets.
               </p>
             ) : isOmanPage ? (
               <p className="text-sm text-muted-foreground mt-4">
-                Trusted by teams working across Oman public hospitals, private providers, and strategic specialty-care pathways.
+                Built for teams working across Oman public hospitals, private providers, and strategic specialty-care pathways.
               </p>
             ) : isEgyptPage ? (
               <p className="text-sm text-muted-foreground mt-4">
-                Trusted by pharmaceutical companies operating in Cairo University Hospitals, Ain Shams University Hospitals, MOH Central Hospitals, National Cancer Institute, Liver Institute Menoufia, Alborg Labs, Almokhtabar, and Alfa Lab.
+                Built for pharmaceutical teams operating across Egypt government hospitals, university networks, and diagnostic ecosystems.
               </p>
             ) : (
               <p className="text-sm text-muted-foreground mt-4">
@@ -2301,7 +2301,7 @@ const GlobalWebsiteCountry = () => {
                     to="/blog"
                     className={`${globalSitesHeroSecondaryCta} w-full justify-center sm:w-auto`}
                   >
-                    Download Kuwait Pharma Report 2025
+                    Explore Kuwait market briefing
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -2327,7 +2327,7 @@ const GlobalWebsiteCountry = () => {
                     to="/blog"
                     className={`${globalSitesHeroSecondaryCta} w-full justify-center sm:w-auto`}
                   >
-                    Download Qatar Pharma Report 2025
+                    Explore Qatar market briefing
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -2353,7 +2353,7 @@ const GlobalWebsiteCountry = () => {
                     to="/blog"
                     className={`${globalSitesHeroSecondaryCta} w-full justify-center sm:w-auto`}
                   >
-                    Download Bahrain Pharma Report 2025
+                    Explore Bahrain market briefing
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -2379,7 +2379,7 @@ const GlobalWebsiteCountry = () => {
                     to="/blog"
                     className={`${globalSitesHeroSecondaryCta} w-full justify-center sm:w-auto`}
                   >
-                    Download Oman Pharma Report 2025
+                    Explore Oman market briefing
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -2405,7 +2405,7 @@ const GlobalWebsiteCountry = () => {
                     to="/blog"
                     className={`${globalSitesHeroSecondaryCta} w-full justify-center sm:w-auto`}
                   >
-                    Download Egypt Pharma Report 2025
+                    Explore Egypt market briefing
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -2578,8 +2578,8 @@ const GlobalWebsiteCountry = () => {
                       and patient journey research in DHA mandatory insurance settings.
                     </p>
                     <p className="text-muted-foreground leading-relaxed">
-                      Dubai's $4.5B pharmaceutical market and 630,000+ annual medical tourism
-                      patients create unique research requirements. BioNixus delivers the
+                      Dubai and the wider UAE create unique research requirements across public and private care channels.
+                      BioNixus delivers the
                       local fieldwork capability, regulatory awareness, and bilingual
                       Arabic-English execution that global pharma teams need for
                       evidence-based decisions in the UAE.

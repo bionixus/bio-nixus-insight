@@ -41,6 +41,7 @@
     "sanity:blog:pharmacies-sa-marketing": "node scripts/publish-pharmacies-saudi-arabia-marketing.mjs",
     "sanity:blog:pharmacies-sa-marketing:sync": "node scripts/publish-pharmacies-saudi-arabia-marketing.mjs --sync-existing",
     "publish:q2-pharma": "node scripts/publish-q2-2026-pharma-batch.mjs --all",
+    "generate:q2-covers": "node scripts/generate-q2-pharma-photoreal-covers.mjs --all",
     "refresh:q2-covers": "node scripts/refresh-q2-blog-covers-and-schema.mjs --all",
     "audit:legacy-blog": "node scripts/audit-rewrite-legacy-blog.mjs --dry-run --all",
     "audit:legacy-blog:sync": "node scripts/audit-rewrite-legacy-blog.mjs --all --sync-existing",

@@ -26,6 +26,11 @@ import {
   ReportRelatedCards,
 } from '@/components/report-premium';
 
+function pickVariant(seed: string, options: [string, string, string]) {
+  const score = seed.split('').reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
+  return options[score % options.length];
+}
+
 export default function HealthcareReportPage() {
   const { slug } = useParams<{ slug: string }>();
   const report = slug ? getReportSafe(slug) : undefined;
@@ -44,7 +49,22 @@ export default function HealthcareReportPage() {
   ];
   const faqSectionId = `market-report-faq-${report.slug}`;
   const conversionConfig = buildConversionConfigFromReportEntry(report);
-  const intro = `${report.market} ${report.therapyArea} market demand is shaped by provider pathway constraints, payer authorization dynamics, tender sequencing, and treatment adoption behavior. This report synthesizes those commercial and access signals into an evidence-oriented briefing for regional leadership teams planning launch, expansion, and lifecycle decisions.`;
+  const introLead = pickVariant(report.slug, [
+    `${report.market} ${report.therapyArea} demand is influenced by provider pathway constraints, access sequencing, and institution-level implementation capacity.`,
+    `In ${report.market}, ${report.therapyArea} performance depends on how policy timing, reimbursement workflow, and care delivery realities interact in practice.`,
+    `${report.market} ${report.therapyArea} strategy requires evidence that reflects local adoption behavior, access mechanics, and operational constraints.`,
+  ]);
+  const intro = `${introLead} This report compiles those signals into a decision-oriented briefing for launch, expansion, and lifecycle planning teams.`;
+  const contextPara1 = pickVariant(report.slug, [
+    `This report focuses on ${report.therapyArea} decision behavior in ${report.market}, including adoption barriers that can delay practical uptake despite positive intent signals.`,
+    `Scope is intentionally constrained to ${report.market} and ${report.therapyArea} so recommendations remain tied to actionable evidence rather than cross-market assumptions.`,
+    `The analysis isolates market-therapy signals specific to ${report.market} ${report.therapyArea} planning, reducing noise from unrelated regional patterns.`,
+  ]);
+  const accessPara1 = pickVariant(report.slug, [
+    `Regulatory and reimbursement interpretation is aligned to current ${report.market} access pathways and should be validated against live policy updates before final implementation.`,
+    `Policy and reimbursement signals are presented as planning inputs for ${report.market}, with clear boundaries where local verification is still required.`,
+    `This section translates ${report.market} policy and payer context into phased planning implications without overstating certainty in fast-moving areas.`,
+  ]);
 
   const relatedReports = report.relatedSlugs
     .map((s) => getReportSafe(s))
@@ -175,13 +195,11 @@ export default function HealthcareReportPage() {
             visualAlt={`${report.market} ${report.therapyArea} market operating context illustration`}
           >
             <p className="text-muted-foreground leading-relaxed mb-6">
-              This report centers on {report.therapyArea} decision patterns in {report.market}, including practical
-              adoption constraints, institutional workflow impact, and access pathway friction relevant to launch and
-              lifecycle planning.
+              {contextPara1}
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Scope is intentionally constrained to this market-therapy pair to reduce overgeneralization and keep
-              recommendations tied to actionable evidence signals.
+              Teams can use this evidence layer to separate high-confidence priorities from assumptions that still need
+              country-level stakeholder validation.
             </p>
             <p className="text-muted-foreground leading-relaxed">{report.marketAccessNotes}</p>
           </ReportPremiumSection>
@@ -198,8 +216,7 @@ export default function HealthcareReportPage() {
             visualAlt={`${report.market} pharmaceutical regulatory and reimbursement landscape illustration`}
           >
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Regulatory and reimbursement interpretation in this report is aligned to currently visible market signals
-              for {report.market} and should be used with local policy verification before final decision submission.
+              {accessPara1}
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
               Evidence priorities are presented to support phased planning: initial access feasibility, implementation

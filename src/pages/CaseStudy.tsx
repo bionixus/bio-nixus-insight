@@ -52,7 +52,9 @@ function sanitizeBodyHtml(html: string): string {
     .replace(/<iframe[\s\S]*?>[\s\S]*?<\/iframe>/gi, '')
     .replace(/\s(on\w+)=["'][^"']*["']/gi, '')
     .replace(/\s(on\w+)=\{[^}]*\}/gi, '')
-    .replace(/\s(href|src)=["']\s*javascript:[^"']*["']/gi, '');
+    .replace(/\s(href|src)=["']\s*javascript:[^"']*["']/gi, '')
+    .replace(/<h1(\s|>)/gi, '<h2$1')
+    .replace(/<\/h1>/gi, '</h2>');
 }
 
 function normalizeCaseStudyAbsoluteUrl(raw: string | undefined, fallbackAbsolute: string): string {

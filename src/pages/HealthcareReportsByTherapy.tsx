@@ -10,6 +10,11 @@ import { REPORT_ENTRIES } from '@/data/healthcareReportData';
 import { getTherapyHubConfig } from '@/data/reportConversionConfig';
 import { ReportConsultationBand, ReportEarlyCtaBar } from '@/components/report-conversion';
 
+function pickVariant(seed: string, options: [string, string, string]) {
+  const score = seed.split('').reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
+  return options[score % options.length];
+}
+
 export default function HealthcareReportsByTherapy() {
   const { therapyAreaSlug = '' } = useParams<{ therapyAreaSlug: string }>();
   const therapy = THERAPY_AREA_CONTENT[therapyAreaSlug];
@@ -20,10 +25,19 @@ export default function HealthcareReportsByTherapy() {
   const conversionConfig = getTherapyHubConfig(therapy.name, therapyAreaSlug);
   const canonical = `https://www.bionixus.com/market-reports/therapy/${therapyAreaSlug}`;
   const coveredMarkets = [...new Set(reports.map((r) => r.market))];
+  const coverageLabelLong =
+    coveredMarkets.length <= 4
+      ? coveredMarkets.join(', ')
+      : `${coveredMarkets.slice(0, 4).join(', ')}, and ${coveredMarkets.length - 4} other markets`;
   const coverageLabel =
     coveredMarkets.length <= 3
       ? coveredMarkets.join(', ')
       : `${coveredMarkets.slice(0, 3).join(', ')}, and ${coveredMarkets.length - 3} other markets`;
+  const introLead = pickVariant(therapyAreaSlug, [
+    `${therapy.name} planning depends on how market access timing, pathway complexity, and institution-level execution interact across countries.`,
+    `${therapy.name} strategy requires evidence that connects regulatory context with practical adoption behavior in each market.`,
+    `${therapy.name} growth opportunities become clearer when country-level access constraints and treatment workflow realities are reviewed together.`,
+  ]);
   const breadcrumbItems = [
     { name: 'Home', href: '/' },
     { name: 'Market Reports', href: '/market-reports' },
@@ -59,8 +73,8 @@ export default function HealthcareReportsByTherapy() {
     <div className="min-h-screen bg-background">
       <Navbar />
       <SEOHead
-        title={`${therapy.name} Market Research Reports 2026 | GCC & MENA | BioNixus`}
-        description={`BioNixus ${therapy.name} market research reports across ${coverageLabel}: regulatory pathways, reimbursement dynamics, and hospital adoption intelligence for launch and lifecycle planning.`}
+        title={`${therapy.name} Market Research Reports 2026 | BioNixus`}
+        description={`BioNixus ${therapy.name} market research reports across ${coverageLabel}: regulatory pathways, reimbursement dynamics, and adoption intelligence for launch and lifecycle planning.`}
         canonical={canonical}
         jsonLd={jsonLd}
       />
@@ -79,8 +93,9 @@ export default function HealthcareReportsByTherapy() {
               </Link>
             </p>
             <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">
-              {therapy.name} Market Research Reports 2026 &mdash; GCC &amp; MENA Intelligence
+              {therapy.name} Market Research Reports 2026
             </h1>
+            <p className="text-muted-foreground leading-relaxed mb-5">{introLead}</p>
             <p className="text-muted-foreground leading-relaxed mb-5">{therapy.overviewParagraph}</p>
             <p className="text-muted-foreground leading-relaxed mb-8">
               Explore all{' '}
@@ -91,7 +106,7 @@ export default function HealthcareReportsByTherapy() {
               <Link className="font-medium text-primary hover:underline" to="/market-reports/country/gcc">
                 GCC country report hub
               </Link>
-              .
+              . Current coverage includes {coverageLabelLong}.
             </p>
             <ReportEarlyCtaBar config={conversionConfig} />
           </div>

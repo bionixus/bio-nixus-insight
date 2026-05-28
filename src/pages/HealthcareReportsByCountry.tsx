@@ -11,6 +11,11 @@ import { standaloneMedicalDevicesTwin } from '@/lib/standaloneMedicalDevicesTwin
 import { getCountryHubConfig } from '@/data/reportConversionConfig';
 import { ReportConsultationBand, ReportEarlyCtaBar } from '@/components/report-conversion';
 
+function pickVariant(seed: string, options: [string, string, string]) {
+  const score = seed.split('').reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
+  return options[score % options.length];
+}
+
 export default function HealthcareReportsByCountry() {
   const { marketSlug = '' } = useParams<{ marketSlug: string }>();
   const market = MARKET_CONTENT[marketSlug];
@@ -22,6 +27,11 @@ export default function HealthcareReportsByCountry() {
   const canonical = `https://www.bionixus.com/market-reports/country/${marketSlug}`;
   const regulatorySummary = market.regulatoryBody.replace(/\s*•\s*/g, ', ').replace(/\s+/g, ' ').trim();
   const therapyCoverage = [...new Set(reports.map((r) => r.therapyArea))];
+  const introLead = pickVariant(marketSlug, [
+    `${market.name} report coverage is structured to connect therapy-level demand signals with local access and implementation realities.`,
+    `In ${market.name}, strategy quality improves when regulatory context, reimbursement pathing, and institutional adoption behavior are reviewed together.`,
+    `${market.name} decision planning benefits from country-specific evidence on payer dynamics, treatment workflow constraints, and execution risk.`,
+  ]);
   const breadcrumbItems = [
     { name: 'Home', href: '/' },
     { name: 'Market Reports', href: '/market-reports' },
@@ -64,7 +74,7 @@ export default function HealthcareReportsByCountry() {
       <Navbar />
       <SEOHead
         title={`${market.name} Healthcare Market Research Reports 2026 | BioNixus`}
-        description={`BioNixus ${market.name} healthcare market research reports covering ${therapyCoverage.length} therapy areas with regulatory, reimbursement, tender, and commercialization intelligence. Regulatory context: ${regulatorySummary}.`}
+        description={`BioNixus ${market.name} healthcare market research reports covering ${therapyCoverage.length} therapy areas with regulatory, reimbursement, tender, and commercialization planning signals. Regulatory context: ${regulatorySummary}.`}
         canonical={canonical}
         jsonLd={jsonLd}
       />
@@ -88,6 +98,7 @@ export default function HealthcareReportsByCountry() {
             <p className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mb-6">
               Regulatory focus: {market.regulatoryBody}
             </p>
+            <p className="text-muted-foreground leading-relaxed mb-6">{introLead}</p>
             <p className="text-muted-foreground leading-relaxed mb-6">{market.marketContext}</p>
             <p className="text-muted-foreground leading-relaxed mb-6">
               For cross-country benchmarking, use the{' '}

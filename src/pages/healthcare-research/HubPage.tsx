@@ -43,80 +43,6 @@ const HUB_FAQS = [
   },
 ];
 
-const DUBAI_FAQS = [
-  {
-    question: 'What is the best healthcare market research company in Dubai?',
-    answer:
-      'BioNixus is a leading healthcare market research company in Dubai, serving pharmaceutical, biotech, and medtech companies with DHA and MOHAP-aligned physician research, KOL mapping, and market access intelligence across the UAE and GCC.',
-  },
-  {
-    question: 'What does a pharmaceutical market research company in Dubai do?',
-    answer:
-      'A pharmaceutical market research company in Dubai conducts physician surveys, KOL interviews, market access and reimbursement analysis, competitive intelligence, and launch readiness research — aligned with DHA, MOHAP, and DOH regulatory pathways.',
-  },
-  {
-    question: 'How do you conduct healthcare market research in Dubai?',
-    answer:
-      'Healthcare market research in Dubai is conducted through quantitative physician surveys (CAWI, CATI), qualitative KOL interviews, patient journey studies, and desk research — with research ethics alignment to DHA, MOHAP, and ICH-GCP standards.',
-  },
-  {
-    question: 'How much does pharmaceutical market research in Dubai cost?',
-    answer:
-      'Program cost depends on scope, respondent profile, geography, methodology, and reporting depth. BioNixus provides proposal options after aligning objectives, sample design, and delivery timeline.',
-  },
-  {
-    question: 'Which regulators govern healthcare research in Dubai?',
-    answer:
-      'Healthcare research in Dubai is governed primarily by the Dubai Health Authority (DHA), with federal oversight from MOHAP. Cross-emirate research involving Abu Dhabi also aligns with the Department of Health Abu Dhabi (DOH).',
-  },
-];
-
-const dubaiLocalBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  '@id': 'https://www.bionixus.com/healthcare-market-research#dubai',
-  name: 'BioNixus Healthcare Market Research — Dubai',
-  url: 'https://www.bionixus.com/healthcare-market-research',
-  image: 'https://www.bionixus.com/og-image.png',
-  priceRange: '$$$',
-  telephone: '+971-4-000-0000',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Dubai',
-    addressRegion: 'Dubai',
-    addressCountry: 'AE',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: 25.2048,
-    longitude: 55.2708,
-  },
-  openingHoursSpecification: [
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'],
-      opens: '09:00',
-      closes: '18:00',
-    },
-  ],
-  areaServed: [
-    { '@type': 'City', name: 'Dubai' },
-    { '@type': 'City', name: 'Abu Dhabi' },
-    { '@type': 'Country', name: 'United Arab Emirates' },
-  ],
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Healthcare Market Research Services',
-    itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Physician Surveys' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'KOL Mapping' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Market Access Research' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Competitive Intelligence' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Launch Excellence Programs' } },
-    ],
-  },
-};
-
 export default function HubPage() {
   const { data } = useInitialData();
   const hubContent =
@@ -137,11 +63,7 @@ export default function HubPage() {
     typeof hubContent?.metaDescription === 'string' && hubContent.metaDescription.length > 0
       ? hubContent.metaDescription
       : 'BioNixus delivers pharmaceutical market intelligence for commercial, medical, and access teams across priority healthcare markets.';
-  const faqSchemaItems = [
-    ...hubFaqItems,
-    ...DUBAI_FAQS.filter((d) => !hubFaqItems.some((h) => h.question === d.question)),
-  ];
-  const jsonLd = buildHubPageSchemas(faqSchemaItems);
+  const jsonLd = buildHubPageSchemas(hubFaqItems);
   const trustSignals =
     Array.isArray(hubContent?.trustSignals) && hubContent.trustSignals.length > 0
       ? (hubContent.trustSignals as { label: string; value: string }[])
@@ -186,10 +108,10 @@ export default function HubPage() {
   return (
     <main>
       <SEOHead
-        title="Healthcare & Pharmaceutical Market Research in Dubai, UAE & MENA | BioNixus"
-        description="BioNixus — leading healthcare and pharmaceutical market research company serving Dubai, UAE, and MENA. DHA, MOHAP, and DOH-aligned physician surveys, KOL mapping, and market access."
+        title="Healthcare & Pharmaceutical Market Research Across MENA, UK, and Europe | BioNixus"
+        description="BioNixus provides healthcare and pharmaceutical market research across MENA, the UK, and Europe with localized execution and decision-ready outputs for commercial, medical, and access teams."
         canonical="/healthcare-market-research"
-        jsonLd={[...jsonLd, dubaiLocalBusinessSchema]}
+        jsonLd={jsonLd}
       />
       <Helmet>
         <meta name="geo.region" content="AE-DU" />
@@ -230,70 +152,30 @@ export default function HubPage() {
             Global healthcare and pharmaceutical market research priorities
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-4 max-w-4xl">
-            Teams searching for pharmaceutical market research, healthcare market research, and market research in the UAE
-            need one framework that connects country evidence, market access planning, and commercial activation. Use these
-            high-intent pages to move from broad strategy to proposal-ready execution.
+            Use this hub to move from high-level regional strategy to country, therapy, and service-level execution
+            planning with evidence-safe guidance.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
             <Link to="/healthcare-market-research/uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              Market research in UAE — healthcare and pharmaceutical
-            </Link>
-            <Link to="/market-research-ksa" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              Market research KSA for launch and access planning
-            </Link>
-            <Link to="/market-research-egypt" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              Market research Egypt for MENA expansion
-            </Link>
-            <Link to="/healthcare-market-research-agency-gcc" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              Healthcare market research agency GCC
+              UAE healthcare market research
             </Link>
             <Link to="/healthcare-market-research/saudi-arabia" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              Pharma market research company in Saudi Arabia
+              Saudi Arabia pharmaceutical market research
             </Link>
-            <Link to="/healthcare-market-research/uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              Pharma market research in UAE — company page
+            <Link to="/healthcare-market-research/egypt" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              Egypt healthcare market research
             </Link>
-            <Link to="/bionixus-market-research-middle-east" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              Pharmaceutical market research in Middle East
+            <Link to="/healthcare-market-research/therapy/oncology" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              Oncology therapy research
             </Link>
-            <Link to="/real-world-evidence" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              Real world evidence (RWE) for pharmaceutical teams
-            </Link>
-            <Link to="/real-world-evidence-gcc" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              Real world evidence GCC programs
-            </Link>
-            <Link to="/gcc-market-access-guide" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              GCC market access guide
-            </Link>
-            <Link to="/market-research-uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              Dedicated UAE market research landing page
-            </Link>
-            <Link to="/market-research-home" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              Market research data insights &amp; consultancy
-            </Link>
-            <Link to="/pharmaceutical-therapy-areas" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              Pharmaceutical therapy areas directory
+            <Link to="/healthcare-market-research/therapy/immunology" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              Immunology therapy research
             </Link>
             <Link to="/gcc-pharma-market-report-2026" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              GCC pharma market report 2026 (executive briefing)
+              GCC pharmaceutical market report
             </Link>
-            <Link to="/gfk-alternative-egypt" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              GfK alternative market research Egypt
-            </Link>
-            <Link to="/budget-impact-model-saudi-arabia" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              Budget-impact modeling Saudi Arabia
-            </Link>
-            <Link to="/conf" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              Strategic portfolio conf deck hub
-            </Link>
-            <Link to="/ar/conf" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              Arabic portfolio conf hub
-            </Link>
-            <Link to="/methodology" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              Healthcare market research methodology hub
-            </Link>
-            <Link to="/kantar-health-alternative-gcc" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              Kantar Health alternative — GCC pharma research desk
+            <Link to="/market-reports" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              Market reports hub
             </Link>
           </div>
         </div>
@@ -395,7 +277,7 @@ export default function HubPage() {
               <li>Competitive intelligence across DHA, DOH, and free-zone hospital groups</li>
               <li>Patient journey research in DHA mandatory insurance settings</li>
               <li>KOL mapping across Dubai's major hospital groups and academic centres</li>
-              <li>Medical tourism segment research (630,000+ annual patients)</li>
+              <li>Medical tourism and private-channel demand pathway research</li>
             </ul>
             <p>
               For the{' '}
@@ -449,25 +331,6 @@ export default function HubPage() {
                 <h3 className="text-lg font-semibold text-foreground mb-2">{card.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{card.desc}</p>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Dubai FAQ (PAA capture) */}
-      <section className="py-16" id="dubai-faq">
-        <div className="container-wide max-w-6xl mx-auto">
-          <h2 className="text-3xl font-display font-semibold text-foreground mb-8">
-            Frequently Asked Questions — Dubai Healthcare Market Research
-          </h2>
-          <div className="space-y-4 max-w-4xl">
-            {DUBAI_FAQS.map((faq) => (
-              <details key={faq.question} className="group rounded-xl border border-border bg-card">
-                <summary className="cursor-pointer px-6 py-4 font-semibold text-foreground">
-                  {faq.question}
-                </summary>
-                <p className="px-6 pb-4 text-sm text-muted-foreground leading-relaxed">{faq.answer}</p>
-              </details>
             ))}
           </div>
         </div>

@@ -86,6 +86,46 @@ function buildFallbackCountryConfig(slug: string): CountryConfig {
   };
 }
 
+function buildCountryFaqFallback(config: CountryConfig): { question: string; answer: string }[] {
+  const regionLabel =
+    config.region === 'uk' ? 'the United Kingdom' : config.region === 'europe' ? 'European markets' : 'MENA markets';
+  return [
+    {
+      question: `How does BioNixus approach healthcare market research in ${config.name}?`,
+      answer: `Programs in ${config.name} are designed around decision-critical questions first, then matched to the right qualitative and quantitative methods so recommendations are practical for commercial, medical, and market-access teams.`,
+    },
+    {
+      question: `Which stakeholders are usually prioritized in ${config.name} studies?`,
+      answer: `Sampling typically includes prescribing specialists, institutional decision influencers, and access-relevant stakeholders based on therapy objectives and care-setting dynamics in ${config.name}.`,
+    },
+    {
+      question: `How is ${config.name} research aligned with cross-country strategy?`,
+      answer: `Each ${config.name} study is built with comparable core metrics and localized modules so leadership can benchmark against ${regionLabel} without losing local execution realism.`,
+    },
+    {
+      question: `What outputs are delivered from ${config.name} market research engagements?`,
+      answer: `Deliverables usually include stakeholder maps, adoption barriers and accelerators, segment-level opportunity framing, and action-oriented recommendations tied to launch or lifecycle decisions.`,
+    },
+  ];
+}
+
+function buildEvidenceSafeStats(config: CountryConfig): { label: string; value: string }[] {
+  return [
+    { label: 'Market Focus', value: `${config.name} healthcare and pharmaceutical decision environment` },
+    { label: 'Stakeholder Scope', value: 'Physician, institutional, and access-relevant audiences' },
+    {
+      label: 'Execution Model',
+      value:
+        config.region === 'mena'
+          ? 'Localized MENA fieldwork and interpretation'
+          : config.region === 'uk'
+            ? 'UK-context qualitative and quantitative delivery'
+            : 'Multi-country European coordination with local adaptation',
+    },
+    { label: 'Primary Output', value: 'Decision-ready evidence for strategy and execution planning' },
+  ];
+}
+
 export default function CountryPage() {
   const { country } = useParams<{ country: string }>();
   const location = useLocation();
@@ -113,7 +153,8 @@ export default function CountryPage() {
   const faqItems =
     Array.isArray(countryContent?.faq) && countryContent.faq.length > 0
       ? (countryContent.faq as { question: string; answer: string }[])
-      : config.faqQuestions;
+      : buildCountryFaqFallback(config);
+  const evidenceSafeStats = buildEvidenceSafeStats(config);
   const heroHeading =
     typeof countryContent?.title === 'string' && countryContent.title.length > 0
       ? countryContent.title
@@ -161,30 +202,12 @@ export default function CountryPage() {
         <div className="container-wide max-w-5xl mx-auto">
           <h1 className="text-4xl font-display font-semibold mb-4">{heroHeading}</h1>
           <p className="text-lg text-primary-foreground/90 leading-relaxed max-w-4xl">
-            {config.slug === 'uae' ? (
-              <>
-                BioNixus supports healthcare market research in the UAE and pharma market research in the UAE through
-                localized research design, stakeholder mapping, and actionable insight synthesis. Explore the full regional
-                framework in our{' '}
-                <Link to="/healthcare-market-research" className="underline font-semibold">
-                  healthcare market research hub
-                </Link>{' '}
-                and the dedicated{' '}
-                <Link to="/healthcare-market-research/uae" className="underline font-semibold">
-                  market research in the UAE
-                </Link>{' '}
-                page before drilling into country-level execution priorities.
-              </>
-            ) : (
-              <>
-                BioNixus supports evidence-led market decisions in {config.name} through localized research design,
-                stakeholder mapping, and actionable insight synthesis. Explore the full regional framework in our{' '}
-                <Link to="/healthcare-market-research" className="underline font-semibold">
-                  healthcare market research hub
-                </Link>{' '}
-                before drilling into country-level execution priorities.
-              </>
-            )}
+            BioNixus supports evidence-led decisions in {config.name} through localized study design, stakeholder mapping,
+            and implementation-focused interpretation. Start from the{' '}
+            <Link to="/healthcare-market-research" className="underline font-semibold">
+              healthcare market research hub
+            </Link>{' '}
+            to align country priorities with therapy and service planning.
           </p>
         </div>
       </section>
@@ -195,7 +218,7 @@ export default function CountryPage() {
             Key Pharmaceutical Market Indicators
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {config.keyStats.map((stat) => (
+            {evidenceSafeStats.map((stat) => (
               <article key={stat.label} className="rounded-xl border border-border bg-card p-5">
                 <h3 className="text-sm uppercase tracking-wide text-muted-foreground mb-2">{stat.label}</h3>
                 <p className="text-lg font-semibold text-foreground">{stat.value}</p>
@@ -354,7 +377,9 @@ export default function CountryPage() {
               </p>
               <h3 className="text-xl font-semibold text-foreground mt-4 mb-2">Omnichannel Strategy and KOL Engagement</h3>
               <p>
-                Saudi healthcare professionals (HCPs) are among the most digitally literate in the region, yet traditional field force models are increasingly facing access fatigue. BioNixus provides deep omnichannel intelligence, evaluating channel preferences, content consumption habits, and peer-to-peer influence networks among Saudi Key Opinion Leaders (KOLs). We identify the "true influencers"—who drive clinical consensus in specialized therapy areas like oncology, immunology, and rare diseases—allowing your medical and commercial teams to deploy resource-efficient, high-impact engagement strategies.
+                Omnichannel planning works best when channel assumptions are tested against actual specialist behavior,
+                institutional constraints, and peer influence patterns. BioNixus uses structured research to identify where
+                in-person, digital, and hybrid engagement can improve consistency without adding communication noise.
               </p>
               <h3 className="text-xl font-semibold text-foreground mt-4 mb-2">Oncology market research in Saudi Arabia</h3>
               <p>
@@ -391,8 +416,8 @@ export default function CountryPage() {
                     <p className="text-sm text-muted-foreground">Navigating pathways, CTD formatting, and timelines.</p>
                   </Link>
                   <Link to="/blog/top-therapy-areas-pharma-growth-saudi-arabia" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
-                    <h3 className="text-base font-semibold text-foreground mb-2">Top 10 Growth Therapy Areas</h3>
-                    <p className="text-sm text-muted-foreground">The most lucrative segments driven by Vision 2030.</p>
+                    <h3 className="text-base font-semibold text-foreground mb-2">Priority Therapy Area Signals</h3>
+                    <p className="text-sm text-muted-foreground">Country-specific demand and access signals for portfolio planning.</p>
                   </Link>
                 </>
               )}
@@ -420,11 +445,11 @@ export default function CountryPage() {
                   </Link>
                   <Link to="/pharmaceutical-companies-egypt" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
                     <h3 className="text-base font-semibold text-foreground mb-2">Pharmaceutical Companies in Egypt</h3>
-                    <p className="text-sm text-muted-foreground">20+ pharma companies, $5.8B market data, and EDA regulatory landscape.</p>
+                    <p className="text-sm text-muted-foreground">Industry landscape, regulatory context, and market structure orientation.</p>
                   </Link>
                   <Link to="/strategic-portfolio" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
                     <h3 className="text-base font-semibold text-foreground mb-2">BioNixus Strategic Portfolio</h3>
-                    <p className="text-sm text-muted-foreground">Full capability overview: 127+ projects across healthcare and consumer research.</p>
+                    <p className="text-sm text-muted-foreground">Capability overview and representative project archetypes.</p>
                   </Link>
                 </>
               )}

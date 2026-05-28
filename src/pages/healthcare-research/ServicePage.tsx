@@ -62,6 +62,19 @@ const SERVICE_SECTIONS: Record<string, { title: string; bullets: string[] }> = {
   },
 };
 
+const SERVICE_HERO_COPY: Record<string, string> = {
+  'market-access':
+    'Market access programs are structured to test evidence expectations, payer objections, and institutional pathway constraints before launch-critical commitments.',
+  'physician-insights':
+    'Physician insight studies are designed to distinguish stated preferences from real prescribing behavior across specialties, settings, and account types.',
+  'kol-mapping':
+    'KOL mapping programs identify who shapes clinical consensus in practice, where influence is concentrated, and how evidence travels across peer networks.',
+  'quantitative-research':
+    'Quantitative studies provide measurable confidence on segmentation, demand signals, and adoption risk, with analysis built for decision use rather than reporting volume.',
+  'qualitative-research':
+    'Qualitative programs surface the rationale behind behavior, helping teams interpret barriers, language sensitivity, and stakeholder decision logic with context.',
+};
+
 export default function ServicePage() {
   const { service = '' } = useParams<{ service: string }>();
   const titleService = service.replace(/-/g, ' ');
@@ -94,6 +107,9 @@ export default function ServicePage() {
       'Integrate findings into wider cross-market strategy programs.',
     ],
   };
+  const heroCopy =
+    SERVICE_HERO_COPY[service] ||
+    'BioNixus provides service-specific healthcare research programs that connect evidence generation to practical execution decisions.';
 
   return (
     <main>
@@ -117,8 +133,7 @@ export default function ServicePage() {
             {titleService} Research Service
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            BioNixus offers specialized healthcare research services aligned to strategic pharmaceutical decisions.
-            Explore the broader{' '}
+            {heroCopy} Explore the broader{' '}
             <Link to="/healthcare-market-research" className="text-primary underline">
               healthcare market research hub
             </Link>{' '}
@@ -136,13 +151,12 @@ export default function ServicePage() {
           <h2 className="text-3xl font-display font-semibold text-foreground mb-5">{content.title}</h2>
           <div className="space-y-4 mb-6 text-muted-foreground leading-relaxed">
             <p>
-              BioNixus services are built to improve decision quality and execution speed across healthcare markets.
-              We combine local context, rigorous methods, and cross-functional interpretation to convert insight into
-              practical actions.
+              Each service module is mapped to a concrete decision stage: opportunity framing, segment prioritization,
+              execution planning, and post-launch optimization.
             </p>
             <p>
-              Service programs can run as standalone initiatives or as modules inside broader country and therapy
-              strategies, enabling teams to scale evidence and keep planning aligned.
+              Programs can run independently or within broader country and therapy workstreams so evidence remains
+              aligned across commercial, medical, and market-access stakeholders.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
