@@ -326,19 +326,31 @@ export default function CountryPage() {
             </h2>
             <div className="space-y-6 text-base leading-relaxed text-muted-foreground">
               <p>
-                The Saudi Arabian pharmaceutical market is undergoing a structural revolution driven by Vision 2030. The traditional model of relying on imported branded portfolios and generic distributorships is being rapidly replaced by aggressive localization mandates. For pharmaceutical executives targeting the Kingdom, success now hinges on deep alignment with the Ministry of Investment's (MISA) and Ministry of Health's (MOH) push for local manufacturing, clinical trial expansion, and value-based procurement.
+                Saudi pharmaceutical market strategy is increasingly shaped by Vision 2030 priorities, including
+                localization, health-system transformation, and stronger evidence expectations in institutional decision
+                processes. For teams entering or expanding in the Kingdom, planning should align with evolving policy,
+                procurement, and access requirements.
               </p>
               <h3 className="text-xl font-semibold text-foreground mt-4 mb-2">Navigating NUPCO and the Shift to Value</h3>
               <p>
-                As the National Unified Procurement Company (NUPCO) consolidates its monopsony power across government healthcare sectors, navigating institutional access requires unprecedented sophistication. NUPCO is moving beyond simple unit-price tendering toward comprehensive supply chain integration and preference for localized fill-and-finish partnerships. BioNixus conducts targeted market access feasibility studies to help global pharma teams map tender influence, evaluate competitive pricing intelligence, and align value dossiers with NUPCO’s evolving pharmacoeconomic expectations.
+                With National Unified Procurement Company (NUPCO) involvement across government channels, institutional
+                access planning often requires clear tender mapping, value communication, and account-level execution
+                sequencing. BioNixus supports market-access feasibility work to map tender influence, pricing dynamics,
+                and evidence expectations.
               </p>
               <h3 className="text-xl font-semibold text-foreground mt-4 mb-2">The Impact of the Health Holding Company (HHC)</h3>
               <p>
-                The corporatization of the MOH into the Health Holding Company (HHC) and the creation of regional health clusters represent a massive shift from central decision-making to regional accountability. Commercial teams can no longer rely on a single central strategy. Our qualitative research maps the specific decision dynamics within tier-1 clusters across Riyadh, Jeddah, and the Eastern Province. We help key account managers (KAMs) understand precisely who controls protocol adoption, formulary inclusion, and therapeutic switching at the cluster level.
+                The shift toward regional health-cluster accountability means commercial and medical teams often need
+                cluster-specific plans rather than a single centralized approach. Our qualitative work maps decision
+                dynamics across major clusters and clarifies who influences protocol adoption, formulary inclusion, and
+                therapeutic switching.
               </p>
               <h3 className="text-xl font-semibold text-foreground mt-4 mb-2">SFDA Regulatory Agility and Patient Pathways</h3>
               <p>
-                The Saudi Food and Drug Authority (SFDA) is positioning itself as a top-tier global regulator, offering accelerated pathways for breakthrough therapies and orphan drugs. However, securing regulatory approval is only the first step. BioNixus maps complex patient pathways—from diagnosis at primary care centers to specialized tertiary interventions at institutions like KFSH&RC and NGHA. By analyzing patient drop-off rates, biomarker testing bottlenecks, and physician prescribing behavior, we enable commercial teams to build highly effective patient support programs (PSPs) and targeted medical education initiatives.
+                Regulatory approval alone is not sufficient for adoption. BioNixus maps patient pathways from diagnosis
+                through specialist treatment and identifies operational bottlenecks such as referral delays, testing
+                constraints, and prescribing variability, helping teams shape practical patient-support and medical
+                education programs.
               </p>
               <h3 className="text-xl font-semibold text-foreground mt-4 mb-2">Omnichannel Strategy and KOL Engagement</h3>
               <p>

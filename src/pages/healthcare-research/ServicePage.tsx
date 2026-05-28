@@ -122,7 +122,11 @@ export default function ServicePage() {
             <Link to="/healthcare-market-research" className="text-primary underline">
               healthcare market research hub
             </Link>{' '}
-            for regional and therapy-specific context.
+            for regional and therapy-specific context, and review structured therapy outputs in the{' '}
+            <Link to="/market-reports" className="text-primary underline">
+              market reports hub
+            </Link>
+            .
           </p>
         </div>
       </section>

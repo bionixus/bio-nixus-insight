@@ -6,11 +6,9 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { MARKET_CONTENT, THERAPY_AREA_CONTENT } from '@/data/healthcareReportContent';
 import { REPORT_ENTRIES } from '@/data/healthcareReportData';
-import { standaloneMedicalDevicesTwin } from '@/lib/standaloneMedicalDevicesTwin';
 import { getMarketReportsHubConfig } from '@/data/reportConversionConfig';
 import { ReportConsultationBand } from '@/components/report-conversion';
 import { ReportPremiumHero, ReportSectionVisual } from '@/components/report-premium';
-import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const COUNTRY_NAV_ORDER = [
   'gcc',
@@ -30,24 +28,6 @@ const breadcrumbItems = [
   { name: 'Market Reports', href: '/market-reports' },
 ];
 
-const jsonLd = [
-  buildBreadcrumbSchema(breadcrumbItems),
-  {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: 'Healthcare Market Research Reports 2026 — GCC, MENA & Global Intelligence',
-    author: { '@type': 'Organization', name: 'BioNixus' },
-    publisher: {
-      '@type': 'Organization',
-      name: 'BioNixus',
-      logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
-    },
-    datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
-    mainEntityOfPage: canonical,
-  },
-];
-
 const therapySlugs = Object.keys(THERAPY_AREA_CONTENT).sort((a, b) =>
   THERAPY_AREA_CONTENT[a].name.localeCompare(THERAPY_AREA_CONTENT[b].name),
 );
@@ -56,9 +36,35 @@ const orderedCountrySlugs = COUNTRY_NAV_ORDER.filter((s) => MARKET_CONTENT[s]);
 
 export default function HealthcareReportsHub() {
   const hubConversion = getMarketReportsHubConfig();
-  const gridRef = useScrollReveal<HTMLDivElement>({ stagger: 80 });
   const primaryReports = REPORT_ENTRIES.filter((e) => e.marketSlug !== 'turkey');
   const bridgeReports = REPORT_ENTRIES.filter((e) => e.marketSlug === 'turkey');
+  const allReports = [...primaryReports, ...bridgeReports];
+  const jsonLd = [
+    buildBreadcrumbSchema(breadcrumbItems),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: 'Healthcare Market Research Reports 2026 — GCC, MENA & Global Intelligence',
+      description:
+        'BioNixus healthcare market research report hub covering therapy-specific intelligence across GCC, MENA, and selected global comparator markets.',
+      url: canonical,
+      isPartOf: {
+        '@type': 'WebSite',
+        url: 'https://www.bionixus.com',
+        name: 'BioNixus',
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      itemListElement: allReports.map((r, idx) => ({
+        '@type': 'ListItem',
+        position: idx + 1,
+        url: `https://www.bionixus.com/market-reports/${r.slug}`,
+        name: r.title,
+      })),
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -87,11 +93,17 @@ export default function HealthcareReportsHub() {
 
         <section className="section-padding pb-6">
           <div className="container-wide max-w-4xl mx-auto">
-            <p className="text-muted-foreground leading-relaxed sr sr-up">
-              Each downloadable narrative cross‑links authoritative ministry contexts, formulary adjudication artefacts,
-              tender cyclicalities, academic cancer institute throughput constraints, philanthropic programme adjacencies,
-              genomic initiative uplift priors where applicable—all stress‑tested with BioNixus proprietary analogue panels
-              operating continuously since twenty twelve alongside GDPR‑aligned HCP instrumentation.
+            <p className="text-muted-foreground leading-relaxed" data-hub-intro>
+              Each report combines regulatory context, payer dynamics, provider adoption signals, and market-access risk
+              indicators into a single decision-ready brief. Start by exploring the{' '}
+              <Link className="font-medium text-primary hover:underline" to="/market-reports/therapy/oncology">
+                oncology therapy cluster
+              </Link>{' '}
+              or navigate by geography through the{' '}
+              <Link className="font-medium text-primary hover:underline" to="/market-reports/country/gcc">
+                GCC country report collection
+              </Link>
+              .
             </p>
           </div>
         </section>
@@ -100,10 +112,10 @@ export default function HealthcareReportsHub() {
           <div className="container-wide max-w-5xl mx-auto px-4 md:px-6 py-10">
             <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(240px,280px)] gap-8 items-center mb-10">
               <div>
-                <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-2 sr sr-up sr-line">
+                <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-2">
                   Explore Reports by Therapy Area
                 </h2>
-                <p className="text-sm text-muted-foreground mb-6 sr sr-up">
+                <p className="text-sm text-muted-foreground mb-6">
                   Oncology, cardiovascular, diabetes, immunology, rare diseases, and more.
                 </p>
               </div>
@@ -111,10 +123,10 @@ export default function HealthcareReportsHub() {
                 theme="therapy"
                 marketSlug="gcc"
                 alt="Healthcare market research therapy area segmentation dashboard illustration"
-                className="hidden lg:block sr sr-right"
+                className="hidden lg:block"
               />
             </div>
-            <div className="flex flex-wrap gap-2 mb-10 sr sr-up">
+            <div className="flex flex-wrap gap-2 mb-10">
               {therapySlugs.map((slug) => (
                 <Link
                   key={slug}
@@ -148,11 +160,11 @@ export default function HealthcareReportsHub() {
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-8">
               GCC &amp; MENA Programmatic Reports ({primaryReports.length})
             </h2>
-            <div ref={gridRef} className="grid sm:grid-cols-2 gap-5 mb-14">
+            <div data-hub-primary-grid className="grid sm:grid-cols-2 gap-5 mb-14">
               {primaryReports.map((r) => (
                 <article
                   key={r.slug}
-                  className="bg-card rounded-xl border border-border/70 p-5 shadow-sm hover-lift sr sr-up"
+                  className="bg-card rounded-xl border border-border/70 p-5 shadow-sm hover-lift"
                 >
                   <div className="flex flex-wrap gap-2 mb-3">
                     <span className="inline-flex px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
@@ -175,11 +187,11 @@ export default function HealthcareReportsHub() {
                 <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-8">
                   Turkey &mdash; Bridging Europe &amp; MENA ({bridgeReports.length})
                 </h2>
-                <div ref={gridRef} className="grid sm:grid-cols-2 gap-5">
+                <div data-hub-bridge-grid className="grid sm:grid-cols-2 gap-5">
                   {bridgeReports.map((r) => (
                     <article
                       key={r.slug}
-                      className="bg-card rounded-xl border border-border/70 p-5 shadow-sm hover-lift sr sr-up"
+                      className="bg-card rounded-xl border border-border/70 p-5 shadow-sm hover-lift"
                     >
                       <div className="flex flex-wrap gap-2 mb-3">
                         <span className="inline-flex px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">

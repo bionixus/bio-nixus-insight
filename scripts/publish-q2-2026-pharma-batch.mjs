@@ -12,8 +12,17 @@ import { fileURLToPath } from 'node:url';
 import { createClient } from '@sanity/client';
 import sharp from 'sharp';
 import { Q2_2026_TOPICS } from './data/q2-2026-pharma-insights-topics.mjs';
-import { buildQ2ArticleHtml, buildArticleMeta, buildToc, buildFaq, inferCategory } from './lib/q2-2026-article-html.mjs';
+import {
+  buildQ2ArticleHtml,
+  buildArticleMeta,
+  buildToc,
+  buildFaq,
+  inferCategory,
+  countWords,
+  countInternalLinks,
+} from './lib/q2-2026-article-html.mjs';
 import { generateBlogCover } from './lib/generate-blog-cover.mjs';
+import { inferArticleSection } from './lib/q2-schema-mentions.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
@@ -83,7 +92,7 @@ async function uploadImage(client, filePath, filename, alt) {
 
 function buildDoc(topic, bodyHtml, meta, mainImage, ogImage, authorId, categoryRef) {
   const publishedAt = new Date(topic.actionDate).toISOString();
-  const category = inferCategory(topic.therapeuticArea);
+  const category = inferArticleSection(topic) || inferCategory(topic.therapeuticArea);
   const readingTime = Math.max(12, Math.min(22, Math.round(bodyHtml.length / 900)));
 
   return {
@@ -202,22 +211,34 @@ async function main() {
   let created = 0;
   let updated = 0;
   let skipped = 0;
+  const auditRows = [];
 
   for (const topic of topics) {
     const bodyHtml = buildQ2ArticleHtml(topic);
     const meta = buildArticleMeta(topic);
     const coverPath = path.join(coverDir, `${topic.slug}-cover.jpg`);
 
-    if (!fs.existsSync(coverPath)) {
-      await generateBlogCover({
-        title: topic.brand,
-        subtitle: `${topic.actionType} · ${topic.therapeuticArea}`,
-        outPath: coverPath,
-      });
-    }
+    await generateBlogCover({
+      title: topic.brand,
+      subtitle: `${topic.generic} · ${topic.actionType}`,
+      sponsor: topic.sponsor,
+      therapeuticArea: topic.therapeuticArea,
+      actionType: topic.actionType,
+      layoutIndex: topic.id,
+      slug: topic.slug,
+      outPath: coverPath,
+    });
 
-    const wordEstimate = bodyHtml.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
-    console.log(`\n[${topic.id}] ${topic.slug} (~${wordEstimate} words)`);
+    const wordEstimate = countWords(bodyHtml);
+    const linkCount = countInternalLinks(bodyHtml);
+    const auditOk = wordEstimate >= 1500 && linkCount >= 5;
+    auditRows.push({ slug: topic.slug, words: wordEstimate, links: linkCount, ok: auditOk });
+    console.log(
+      `\n[${topic.id}] ${topic.slug} (~${wordEstimate} words, ${linkCount} internal links${auditOk ? '' : ' ⚠ AUDIT FAIL'})`,
+    );
+    if (!auditOk) {
+      console.warn(`  ⚠ Expected ≥1500 words and ≥5 links; got ${wordEstimate} words, ${linkCount} links`);
+    }
 
     if (dryRun) {
       const outHtml = path.join(root, 'scripts/data/q2-2026-articles', `${topic.slug}.html`);
@@ -262,7 +283,15 @@ async function main() {
     }
   }
 
-  console.log(`\nDone. created=${created} updated=${updated} skipped=${skipped}`);
+  const failed = auditRows.filter((r) => !r.ok);
+  const wordMin = Math.min(...auditRows.map((r) => r.words));
+  const wordMax = Math.max(...auditRows.map((r) => r.words));
+  console.log(`\nAudit: ${auditRows.length} articles, words ${wordMin}–${wordMax}, links min ${Math.min(...auditRows.map((r) => r.links))}`);
+  if (failed.length) {
+    console.warn(`⚠ ${failed.length} article(s) failed audit: ${failed.map((r) => r.slug).join(', ')}`);
+    if (dryRun) process.exitCode = 1;
+  }
+  console.log(`Done. created=${created} updated=${updated} skipped=${skipped}`);
 }
 
 main().catch((e) => {

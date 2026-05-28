@@ -53,6 +53,7 @@ import {
   GCC_PHARMACOECONOMICS_TAGS,
 } from '@/data/blog-gcc-pharmacoeconomics';
 import { getTherapyStaticBlogBundle } from '@/data/therapy-static-blog-registry';
+import { getQ2PharmaSchemaBundle } from '@/data/q2-pharma-blog-schema';
 
 /** Helper to convert PortableText block to a URL-friendly slug */
 function slugifyHeading(value: any): string {
@@ -733,6 +734,8 @@ const BlogPost = () => {
   const isGccPharmacoeconomicsEn = slug === GCC_PHARMACOECONOMICS_SLUG && !isArBlog;
   const therapyStaticBlogBundle = getTherapyStaticBlogBundle(slug);
   const isTherapyStaticBlogEn = Boolean(therapyStaticBlogBundle) && !isArBlog;
+  const q2PharmaSchemaBundle = slug ? getQ2PharmaSchemaBundle(slug) : undefined;
+  const isQ2PharmaBlogEn = Boolean(q2PharmaSchemaBundle) && !isArBlog;
   const isGccMeastPharmaHealthArticleAr = slug === GCC_MEAST_PHARMA_HEALTH_AR_SLUG;
   const isSaudiPharmaMarket2026ArArticle = slug === SAUDI_PHARMA_MARKET_2026_AR_SLUG;
   const { t, language } = useLanguage();
@@ -1059,24 +1062,41 @@ const BlogPost = () => {
                       ? documentTitle
                       : post.title
         }
-        description={finalMetaDescription}
+        description={
+          finalMetaDescription?.trim() ||
+          post.excerpt?.trim() ||
+          buildSeoDescription({ fallback: articleDisplayTitle })
+        }
         imageUrl={resolvedOgImageUrl}
         {...(isTherapyStaticBlogEn && therapyStaticBlogBundle?.schemaOgImageDimensions
           ? {
               ogImageWidth: therapyStaticBlogBundle.schemaOgImageDimensions.width,
               ogImageHeight: therapyStaticBlogBundle.schemaOgImageDimensions.height,
             }
-          : {})}
-        articleSection={post.category?.trim() || undefined}
+          : isQ2PharmaBlogEn && q2PharmaSchemaBundle
+            ? {
+                ogImageWidth: q2PharmaSchemaBundle.ogImageWidth,
+                ogImageHeight: q2PharmaSchemaBundle.ogImageHeight,
+              }
+            : resolvedOgImageUrl && !resolvedOgImageUrl.endsWith('/og-image.png')
+              ? { ogImageWidth: 1200, ogImageHeight: 630 }
+              : {})}
+        articleSection={
+          post.category?.trim() ||
+          (isQ2PharmaBlogEn ? q2PharmaSchemaBundle?.articleSection : undefined) ||
+          undefined
+        }
         keywords={displayBlogTags.length > 0 ? [...displayBlogTags] : undefined}
         schemaMentions={
           isTherapyStaticBlogEn && therapyStaticBlogBundle?.schemaMentions?.length
             ? [...therapyStaticBlogBundle.schemaMentions]
-            : undefined
+            : isQ2PharmaBlogEn && q2PharmaSchemaBundle?.mentions?.length
+              ? [...q2PharmaSchemaBundle.mentions]
+              : undefined
         }
-        authorName={post.authorName || 'BioNixus Research Team'}
+        authorName={post.authorName?.trim() || 'BioNixus Research Team'}
         authorUrl={post.authorLinkedIn || 'https://www.linkedin.com/in/mohammad-alsaadany'}
-        authorJobTitle={post.authorTitle || undefined}
+        authorJobTitle={post.authorTitle?.trim() || 'Healthcare Market Research Lead'}
         publishedAt={post.publishedAtIso}
         modifiedAt={post.updatedAtIso || post.publishedAtIso}
         breadcrumb={

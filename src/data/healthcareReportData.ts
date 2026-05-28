@@ -429,7 +429,7 @@ function metaTitleFor(title: string) {
 
 function fitWordRange(text: string, min: number, max: number): string {
   const pad =
-    'BioNixus reconciles ministry tender gazettes, insurer prior-authorization rulebooks, and hospital consumption analogue panels before leadership sign-off.';
+    'This report should be interpreted alongside local policy, payer, and hospital-level evidence before final market decisions.';
   let words = text.trim().replace(/\s+/g, ' ').split(/\s+/).filter(Boolean);
   let guard = 0;
   while (words.length < min && guard < 6) {
@@ -445,21 +445,27 @@ function fitWordRange(text: string, min: number, max: number): string {
   return words.join(' ');
 }
 
+function pickVariant(seed: string, options: [string, string, string]) {
+  const score = seed.split('').reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
+  return options[score % options.length];
+}
+
 function buildFieldIntelligenceParagraph(
   spec: SpecRow,
   therapy: (typeof THERAPY_AREA_CONTENT)[keyof typeof THERAPY_AREA_CONTENT],
   market: (typeof MARKET_CONTENT)[keyof typeof MARKET_CONTENT],
 ): string {
-  const reg = market.regulatoryBody.split('•')[0]?.trim() ?? market.regulatoryBody;
+  const reg = market.regulatoryBody.split('•')[0]?.trim() || market.regulatoryBody;
+  const opener = pickVariant(spec.slug, [
+    `${spec.market} ${therapy.name} field intelligence in this report focuses on decision points that affect launch timing, reimbursement feasibility, and institutional uptake.`,
+    `This ${spec.market} ${therapy.name} report prioritizes field-level evidence on provider behavior, access constraints, and account-level adoption barriers.`,
+    `For ${spec.market} ${therapy.name}, field intelligence is structured around practical execution signals rather than generalized regional assumptions.`,
+  ]);
   const raw = [
-    `BioNixus field intelligence for ${spec.market} ${therapy.name} maps ${spec.sum1Tail}`,
-    therapy.overviewParagraph.split('\n\n')[0] ?? therapy.overviewParagraph,
-    market.payerLandscape.split('\n\n')[0] ?? market.payerLandscape,
-    `Regulatory and procurement teams should align dossier sequencing with ${reg} pharmacovigilance, bilingual labelling, and tender award calendars before scaling medical affairs or access investments.`,
-    `Scenario planning bands incorporate FX-linked net price stress, pilgrimage seasonal inpatient displacement, and multinational pricing governance ripple effects—reconciled against EphMRA / BHBIA governance and GDPR-aligned HCP outreach.`,
-    spec.marketSlug === 'saudi-arabia'
-      ? 'Saudi Arabia–specific signals include NUPCO award cyclicality, Vision 2030 tertiary expansion, Saudi Genome tumour-board adoption, and insured-population prior-authorization intensity that can outpace EU analogue curves.'
-      : '',
+    opener,
+    `Observed market signals include ${spec.sum1Tail}`,
+    `Teams should align access and medical planning to ${reg} pathway expectations, payer review cadence, and provider implementation capacity in ${spec.market}.`,
+    `Where uncertainty remains, scenario planning should be validated through local stakeholder interviews and current institutional policy checks.`,
   ].join(' ');
   return fitWordRange(raw, 280, 400);
 }
@@ -467,13 +473,19 @@ function buildFieldIntelligenceParagraph(
 function buildCommercialOutlookParagraph(
   spec: SpecRow,
   therapy: (typeof THERAPY_AREA_CONTENT)[keyof typeof THERAPY_AREA_CONTENT],
-  market: (typeof MARKET_CONTENT)[keyof typeof MARKET_CONTENT],
+  _market: (typeof MARKET_CONTENT)[keyof typeof MARKET_CONTENT],
 ): string {
-  const clinicalSecond = therapy.clinicalLandscape.split('\n\n')[1] ?? therapy.menaMarketDynamics;
+  const clinicalSecond = therapy.clinicalLandscape.split('\n\n')[0] ?? therapy.menaMarketDynamics;
+  const outlookLead = pickVariant(spec.slug, [
+    `Commercial outlook for ${spec.market} ${therapy.name} remains positive where access sequencing and account prioritization are executed with discipline.`,
+    `The ${spec.market} ${therapy.name} outlook depends on how quickly evidence narratives convert into formulary and protocol-level activation.`,
+    `${spec.market} ${therapy.name} commercial performance is most sensitive to execution quality in payer-facing and institution-facing channels.`,
+  ]);
   const raw = [
-    `Commercial outlook — ${spec.market} ${therapy.name}: ${spec.sum1Tail}`,
+    outlookLead,
+    `Current opportunity signals include ${spec.sum1Tail}`,
     clinicalSecond,
-    `Leadership teams should stress-test uptake against ${market.name} payer refresh cycles, distributor cold-chain SLAs, and tender award cadence before committing medical affairs or access headcount.`,
+    `Leadership teams should stress-test uptake assumptions by scenario before committing full-scale investment.`,
   ].join(' ');
   return fitWordRange(raw, 140, 175);
 }
@@ -483,11 +495,16 @@ function buildMethodologyParagraph(
   therapy: (typeof THERAPY_AREA_CONTENT)[keyof typeof THERAPY_AREA_CONTENT],
   market: (typeof MARKET_CONTENT)[keyof typeof MARKET_CONTENT],
 ): string {
+  const methodologyLead = pickVariant(spec.slug, [
+    `Methodology for this ${spec.market} ${therapy.name} report combines structured desk research, stakeholder context mapping, and comparative market interpretation.`,
+    `This ${spec.market} ${therapy.name} methodology blends secondary intelligence with framework-based market validation to support decision-ready outputs.`,
+    `The ${spec.market} ${therapy.name} methodology is designed for repeatable commercial planning: evidence synthesis, access interpretation, and operational signal review.`,
+  ]);
   const raw = [
-    therapy.overviewParagraph,
-    therapy.menaMarketDynamics,
-    market.regulatoryOverview,
-    `BioNixus documents ${spec.market} ${therapy.name} decisions with EphMRA-compliant qualitative boards, GDPR-aligned HCP outreach, bilingual survey instruments, tender monitoring, and hospital consumption analogue reconciliation before executive workshops.`,
+    methodologyLead,
+    therapy.overviewParagraph.split('\n\n')[0] ?? therapy.overviewParagraph,
+    market.regulatoryOverview.split('\n\n')[0] ?? market.regulatoryOverview,
+    `Outputs are intended to guide market-access, medical, and commercial teams using evidence that should be revalidated against live policy and institutional updates.`,
   ].join(' ');
   return fitWordRange(raw, 230, 290);
 }
@@ -497,7 +514,12 @@ function assembleEntry(spec: SpecRow): Omit<ReportEntry, 'relatedSlugs'> {
   const title = titleFor(spec);
   const therapy = THERAPY_AREA_CONTENT[spec.therapySlug];
   const market = MARKET_CONTENT[spec.marketSlug];
-  const summaryPara1Raw = `${spec.market}’s pharmaceutical landscape for ${th.name} in 2026 is shaped by centralized procurement pacing, clinician adoption ladders, payer prior‑authorization granularity, genome or precision medicine adjacency where relevant, pilgrimage seasonal inpatient displacement artefacts, migrant workforce insurance fragmentation, hydrocarbon‑linked fiscal collars, IMF macro‑sensitivity overlays, tertiary expansion cadence—all triangulated in BioNixus longitudinal analogue panels. Highlights include ${spec.sum1Tail}`;
+  const summaryLead = pickVariant(spec.slug, [
+    `${spec.market} ${th.name} demand in 2026 reflects a mix of policy, payer, and provider-level factors that directly affect launch and uptake planning.`,
+    `In ${spec.market}, ${th.name} growth opportunities depend on how regulatory timing, reimbursement pathways, and care delivery realities interact in practice.`,
+    `${spec.market} ${th.name} market performance in 2026 is shaped by adoption readiness, access mechanics, and institution-level implementation capacity.`,
+  ]);
+  const summaryPara1Raw = `${summaryLead} Key observed signals include ${spec.sum1Tail}`;
   const summaryPara1 = fitWordRange(summaryPara1Raw, 80, 120);
   const statSummaryLine = `${title} benchmarks ${therapy.name.toLowerCase()} revenue potential near ${spec.stats[0]} (${spec.stats[1]}) in 2026, trending toward roughly ${spec.stats[2]} (${spec.stats[3]}) by 2030, implying compounded annual expansion near ${spec.stats[4]} (${spec.stats[5]}).`;
   const faqs = buildHealthcareFaqs({

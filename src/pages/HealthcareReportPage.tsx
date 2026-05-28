@@ -6,11 +6,6 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
-import {
-  MARKET_CONTENT,
-  THERAPY_AREA_CONTENT_MERGED,
-} from '@/data/healthcareReportContent';
-import { MarketIntelligenceSections, TherapyDrugClassSection } from '@/components/market-intelligence';
 import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import { getMarketHealthcarePath, getReportSafe } from '@/data/healthcareReportData';
 import { getAccessBullets } from '@/data/healthcareReportAccessBullets';
@@ -47,11 +42,9 @@ export default function HealthcareReportPage() {
     { name: report.therapyArea, href: therapyHub },
     { name: report.title, href: `/market-reports/${report.slug}` },
   ];
-  const therapy = THERAPY_AREA_CONTENT_MERGED[report.therapyAreaSlug];
-  const market = MARKET_CONTENT[report.marketSlug];
   const faqSectionId = `market-report-faq-${report.slug}`;
   const conversionConfig = buildConversionConfigFromReportEntry(report);
-  const intro = `${report.market} concentrates ${report.therapyArea} demand inside one of BioNixus’ highest‑resolution hospital consumption analogue corridors: oncology infusion suites, payer prior‑authorization mining, genomic programme adjacency, centralized tender choreography, clinician adoption pacing, and multilingual patient adherence instrumentation are triangulated for regional general managers balancing franchise targets against FX and procurement volatility.`;
+  const intro = `${report.market} ${report.therapyArea} market demand is shaped by provider pathway constraints, payer authorization dynamics, tender sequencing, and treatment adoption behavior. This report synthesizes those commercial and access signals into an evidence-oriented briefing for regional leadership teams planning launch, expansion, and lifecycle decisions.`;
 
   const relatedReports = report.relatedSlugs
     .map((s) => getReportSafe(s))
@@ -158,38 +151,45 @@ export default function HealthcareReportPage() {
               <CrossLinkSentence markdown={report.summaryPara2} />
             </p>
             <p>
-              Country macro healthcare anchor:{' '}
+              For broader country context, review the{' '}
               <Link className="font-medium text-primary hover:underline" to={marketStandalone}>
-                broader {report.market} healthcare briefing
+                {report.market} healthcare market briefing
               </Link>{' '}
-              complements this {report.therapyArea} segmentation. Benchmark GCC pharmaceutical totals via{' '}
+              alongside this {report.therapyArea} report. For regional benchmarking, refer to{' '}
               <Link className="font-medium text-primary hover:underline" to="/gcc-pharma-market-report-2026">
                 GCC Pharmaceutical Market Report 2026
-              </Link>{' '}
-              calibrated with ministry tender intelligence.
+              </Link>
+              .
             </p>
           </ReportExecutiveDashboard>
 
           <ReportPremiumSection
-            id="therapy-context"
-            title={`${report.therapyArea} Market Context in ${report.market}`}
-            subtitle="Clinical landscape, therapy dynamics, and MENA-specific demand drivers."
-            visualTheme="therapy"
+            id="country-therapy-context"
+            title={`${report.market} ${report.therapyArea} Operating Context`}
+            subtitle="Focused context tied to this specific report scope."
+            visualTheme="market"
             marketSlug={report.marketSlug}
             therapySlug={report.therapyAreaSlug}
             countryName={report.market}
             therapyName={report.therapyArea}
-            visualAlt={`${report.therapyArea} therapy area market context illustration for ${report.market}`}
+            visualAlt={`${report.market} ${report.therapyArea} market operating context illustration`}
           >
-            <p className="text-muted-foreground leading-relaxed mb-6">{therapy.overviewParagraph}</p>
-            <p className="text-muted-foreground leading-relaxed mb-6">{therapy.clinicalLandscape}</p>
-            <p className="text-muted-foreground leading-relaxed">{therapy.menaMarketDynamics}</p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              This report centers on {report.therapyArea} decision patterns in {report.market}, including practical
+              adoption constraints, institutional workflow impact, and access pathway friction relevant to launch and
+              lifecycle planning.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Scope is intentionally constrained to this market-therapy pair to reduce overgeneralization and keep
+              recommendations tied to actionable evidence signals.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">{report.marketAccessNotes}</p>
           </ReportPremiumSection>
 
           <ReportPremiumSection
             id="regulatory-reimbursement"
             title="Regulatory & Reimbursement Landscape"
-            subtitle="Authority frameworks, payer mechanics, and procurement context."
+            subtitle={`Policy and access interpretation specific to ${report.market}.`}
             visualTheme="regulatory"
             variant="cream"
             marketSlug={report.marketSlug}
@@ -197,9 +197,18 @@ export default function HealthcareReportPage() {
             countryName={report.market}
             visualAlt={`${report.market} pharmaceutical regulatory and reimbursement landscape illustration`}
           >
-            <p className="text-muted-foreground leading-relaxed mb-6">{market.regulatoryOverview}</p>
-            <p className="text-muted-foreground leading-relaxed mb-6">{market.payerLandscape}</p>
-            <p className="text-muted-foreground leading-relaxed">{market.marketContext}</p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Regulatory and reimbursement interpretation in this report is aligned to currently visible market signals
+              for {report.market} and should be used with local policy verification before final decision submission.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Evidence priorities are presented to support phased planning: initial access feasibility, implementation
+              readiness, and post-launch optimization under evolving institutional constraints.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              Where uncertainty remains, this report flags directional implications rather than asserting unsupported
+              certainty.
+            </p>
           </ReportPremiumSection>
 
           <ReportPremiumSection
@@ -214,21 +223,6 @@ export default function HealthcareReportPage() {
           >
             <ReportInsightGrid items={getAccessBullets(report)} title="Market access intelligence highlights" />
           </ReportPremiumSection>
-
-          <TherapyDrugClassSection
-            therapy={therapy}
-            marketName={report.market}
-            therapyAreaName={report.therapyArea}
-            therapySlug={report.therapyAreaSlug}
-            marketSlug={report.marketSlug}
-          />
-
-          <MarketIntelligenceSections
-            marketSlug={report.marketSlug}
-            countryName={report.market}
-            variant="healthcare"
-            therapySlug={report.therapyAreaSlug}
-          />
 
           <ReportPremiumSection
             id="field-intelligence"

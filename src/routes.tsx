@@ -12,7 +12,7 @@ import Insights from '@/pages/Insights';
 import SiteMapPage from '@/pages/SiteMapPage';
 import ServiceDetail from '@/pages/ServiceDetail';
 import Privacy from '@/pages/Privacy';
-const Terms = lazy(() => import('@/pages/Terms'));
+import Terms from '@/pages/Terms';
 import Contact from '@/pages/Contact';
 import Methodology from '@/pages/Methodology';
 import VerifyEmail from '@/pages/VerifyEmail';

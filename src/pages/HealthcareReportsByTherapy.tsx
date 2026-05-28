@@ -19,6 +19,11 @@ export default function HealthcareReportsByTherapy() {
   const reports = REPORT_ENTRIES.filter((r) => r.therapyAreaSlug === therapyAreaSlug);
   const conversionConfig = getTherapyHubConfig(therapy.name, therapyAreaSlug);
   const canonical = `https://www.bionixus.com/market-reports/therapy/${therapyAreaSlug}`;
+  const coveredMarkets = [...new Set(reports.map((r) => r.market))];
+  const coverageLabel =
+    coveredMarkets.length <= 3
+      ? coveredMarkets.join(', ')
+      : `${coveredMarkets.slice(0, 3).join(', ')}, and ${coveredMarkets.length - 3} other markets`;
   const breadcrumbItems = [
     { name: 'Home', href: '/' },
     { name: 'Market Reports', href: '/market-reports' },
@@ -28,17 +33,25 @@ export default function HealthcareReportsByTherapy() {
     buildBreadcrumbSchema(breadcrumbItems),
     {
       '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: `${therapy.name} Market Research Reports 2026 — GCC & MENA Intelligence`,
-      author: { '@type': 'Organization', name: 'BioNixus' },
-      publisher: {
-        '@type': 'Organization',
+      '@type': 'CollectionPage',
+      name: `${therapy.name} Market Research Reports 2026`,
+      description: `Collection page for BioNixus ${therapy.name} market reports across ${coverageLabel}.`,
+      url: canonical,
+      isPartOf: {
+        '@type': 'WebSite',
+        url: 'https://www.bionixus.com',
         name: 'BioNixus',
-        logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
       },
-      datePublished: '2026-05-27',
-      dateModified: '2026-05-27',
-      mainEntityOfPage: canonical,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      itemListElement: reports.map((r, idx) => ({
+        '@type': 'ListItem',
+        position: idx + 1,
+        url: `https://www.bionixus.com/market-reports/${r.slug}`,
+        name: r.title,
+      })),
     },
   ];
 
@@ -47,7 +60,7 @@ export default function HealthcareReportsByTherapy() {
       <Navbar />
       <SEOHead
         title={`${therapy.name} Market Research Reports 2026 | GCC & MENA | BioNixus`}
-        description={`BioNixus ${therapy.name} market research reports for GCC, Egypt, and Turkey: regulatory, reimbursement, hospital consumption analogues, and leadership-ready intelligence.`}
+        description={`BioNixus ${therapy.name} market research reports across ${coverageLabel}: regulatory pathways, reimbursement dynamics, and hospital adoption intelligence for launch and lifecycle planning.`}
         canonical={canonical}
         jsonLd={jsonLd}
       />
@@ -68,7 +81,18 @@ export default function HealthcareReportsByTherapy() {
             <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">
               {therapy.name} Market Research Reports 2026 &mdash; GCC &amp; MENA Intelligence
             </h1>
-            <p className="text-muted-foreground leading-relaxed mb-8">{therapy.overviewParagraph}</p>
+            <p className="text-muted-foreground leading-relaxed mb-5">{therapy.overviewParagraph}</p>
+            <p className="text-muted-foreground leading-relaxed mb-8">
+              Explore all{' '}
+              <Link className="font-medium text-primary hover:underline" to="/market-reports">
+                market reports
+              </Link>{' '}
+              or compare market-level rollout constraints in the{' '}
+              <Link className="font-medium text-primary hover:underline" to="/market-reports/country/gcc">
+                GCC country report hub
+              </Link>
+              .
+            </p>
             <ReportEarlyCtaBar config={conversionConfig} />
           </div>
         </section>

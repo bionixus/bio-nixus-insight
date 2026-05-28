@@ -62,7 +62,7 @@ const DUBAI_FAQS = [
   {
     question: 'How much does pharmaceutical market research in Dubai cost?',
     answer:
-      'Custom pharmaceutical market research engagements in Dubai typically range from $15,000 for focused physician surveys to $50,000+ for multi-country GCC launch intelligence programs, depending on sample size, methodology, and therapeutic area complexity.',
+      'Program cost depends on scope, respondent profile, geography, methodology, and reporting depth. BioNixus provides proposal options after aligning objectives, sample design, and delivery timeline.',
   },
   {
     question: 'Which regulators govern healthcare research in Dubai?',
@@ -238,12 +238,6 @@ export default function HubPage() {
             <Link to="/healthcare-market-research/uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
               Market research in UAE — healthcare and pharmaceutical
             </Link>
-            <Link
-              to="/healthcare-market-research/uae"
-              className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
-            >
-              Healthcare market research in UAE (country hub)
-            </Link>
             <Link to="/market-research-ksa" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
               Market research KSA for launch and access planning
             </Link>
@@ -390,9 +384,8 @@ export default function HubPage() {
             </p>
             <p>
               We deliver physician research, KOL mapping, market access strategy, and launch excellence programs for
-              pharmaceutical, biotech, and medtech companies entering or expanding in the UAE — the fastest-growing
-              GCC pharma market with <strong className="text-foreground">$4.5B in annual value</strong> and the
-              highest per-capita pharma spend in the Gulf.
+              pharmaceutical, biotech, and medtech companies entering or expanding in the UAE, with execution calibrated
+              to public and private provider dynamics, payer behavior, and institutional decision pathways.
             </p>
             <p className="font-semibold text-foreground">Our Dubai healthcare market research capabilities include:</p>
             <ul className="grid md:grid-cols-2 gap-2 list-disc list-inside">
@@ -413,7 +406,7 @@ export default function HubPage() {
               <Link to="/strategic-portfolio" className="text-primary hover:underline">
                 strategic market research portfolio
               </Link>{' '}
-              — 127 projects, 48 global clients, 17 top-20 global pharma relationships.
+              for representative healthcare and pharmaceutical programs.
             </p>
           </div>
         </div>
@@ -440,8 +433,8 @@ export default function HubPage() {
                 desc: 'Arabic and English fieldwork capability across all HCP segments — from government hospital physicians to private-practice specialists.',
               },
               {
-                title: '200+ Physician Panel',
-                desc: 'Validated 200+ physician panel across UAE public and private systems for rapid quantitative and qualitative research.',
+                title: 'Physician and HCP Coverage',
+                desc: 'Validated physician and HCP coverage across UAE public and private settings for quantitative and qualitative execution.',
               },
               {
                 title: 'GCC Cross-Country',

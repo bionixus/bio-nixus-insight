@@ -242,16 +242,15 @@ export default function TherapyPage() {
           {isBiologics ? (
             <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
               <p>
-                Biologics and biosimilars sit at the intersection of clinical sophistication, institutional workflow,
-                and budget impact. Competitive advantage rarely comes from a slide deck alone—it comes from a precise
-                map of{' '}
+                Biologics and biosimilars require strategy grounded in clinical practice, institutional workflow, and
+                access realities. Strong planning starts with a precise map of{' '}
                 <strong className="font-medium text-foreground">who influences initiation, continuation, substitution</strong>{' '}
                 and{' '}
                 <strong className="font-medium text-foreground">
-                  which procurement, formulary, and operational constraints govern speed.
+                  which procurement, formulary, and operational constraints shape uptake.
                 </strong>{' '}
-                BioNixus builds mixed-method programs that answer those decision realities for biotech, specialty pharma,
-                and biosimilar developers operating across GCC, broader MENA, the United Kingdom, and Europe. Explore the{' '}
+                BioNixus builds mixed-method programs to map those decision dynamics across GCC, broader MENA, the
+                United Kingdom, and Europe. Explore the{' '}
                 <Link to="/healthcare-market-research" className="text-primary underline">
                   healthcare market research hub
                 </Link>{' '}
@@ -276,14 +275,13 @@ export default function TherapyPage() {
           ) : isImmunology ? (
             <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
               <p>
-                Immunology is a portfolio of long-horizon decisions: who escalates, who stalls, who switches after loss of
-                response, and which operational frictions quietly cap share even when trial data look compelling. BioNixus
-                designs studies that connect{' '}
+                Immunology strategy depends on long-horizon treatment decisions: who escalates, who delays, who
+                switches after loss of response, and which operational frictions slow adoption in routine care.
+                BioNixus designs studies that connect{' '}
                 <strong className="font-medium text-foreground">
                   specialist judgment, nursing execution, safety rituals, and access guardrails
                 </strong>{' '}
-                so brand, medical, and market access teams invest where behavior actually changes—not where slide templates
-                assume it should. Start from the{' '}
+                so brand, medical, and market access teams can prioritize high-impact interventions. Start from the{' '}
                 <Link to="/healthcare-market-research" className="text-primary underline">
                   healthcare market research hub
                 </Link>{' '}
@@ -513,14 +511,13 @@ export default function TherapyPage() {
                 What “biologics” means for pharmaceutical market research
               </h2>
               <p>
-                In market research terms, a biologic is any complex therapy whose commercial performance depends on{' '}
+                In market research terms, biologic performance depends on{' '}
                 <strong className="font-medium text-foreground">manufacturing quality perception</strong>,{' '}
                 <strong className="font-medium text-foreground">administration logistics</strong>,{' '}
                 <strong className="font-medium text-foreground">longitudinal safety monitoring</strong>, and{' '}
                 <strong className="font-medium text-foreground">institutional governance</strong> as much as on
-                pivotal trial efficacy endpoints. Oncology monoclonals, fusion proteins, monoclonal antibodies in
-                immunology, novel biologic platforms in rare disease, and long-acting hormonal or enzyme therapies each
-                carry different stakeholder anxieties; the common thread is that confidence is granular and brittle.
+                trial efficacy endpoints. Different classes and indications trigger different stakeholder concerns, but
+                the common pattern is that confidence is context-specific and can shift across settings.
               </p>
               <div className="space-y-4">
                 <h3 className="text-xl font-display font-semibold text-foreground">

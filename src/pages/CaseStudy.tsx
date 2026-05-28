@@ -103,6 +103,11 @@ function caseStudyOgIsoTimestamps(caseStudy: CaseStudyType): { published?: strin
 
 const portableTextComponents = {
   block: {
+    h1: ({ children }: { children?: React.ReactNode }) => (
+      <h2 className="mt-12 mb-5 border-l-[3px] border-accent pl-4 font-display text-xl font-semibold tracking-tight text-primary first:mt-0">
+        {children}
+      </h2>
+    ),
     h2: ({ children }: { children?: React.ReactNode }) => (
       <h2 className="mt-12 mb-5 border-l-[3px] border-accent pl-4 font-display text-xl font-semibold tracking-tight text-primary first:mt-0">
         {children}

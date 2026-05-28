@@ -20,6 +20,8 @@ export default function HealthcareReportsByCountry() {
   const reports = REPORT_ENTRIES.filter((r) => r.marketSlug === marketSlug);
   const conversionConfig = getCountryHubConfig(market.name, marketSlug);
   const canonical = `https://www.bionixus.com/market-reports/country/${marketSlug}`;
+  const regulatorySummary = market.regulatoryBody.replace(/\s*•\s*/g, ', ').replace(/\s+/g, ' ').trim();
+  const therapyCoverage = [...new Set(reports.map((r) => r.therapyArea))];
   const breadcrumbItems = [
     { name: 'Home', href: '/' },
     { name: 'Market Reports', href: '/market-reports' },
@@ -29,17 +31,25 @@ export default function HealthcareReportsByCountry() {
     buildBreadcrumbSchema(breadcrumbItems),
     {
       '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: `${market.name} Healthcare Market Research Reports 2026`,
-      author: { '@type': 'Organization', name: 'BioNixus' },
-      publisher: {
-        '@type': 'Organization',
+      '@type': 'CollectionPage',
+      name: `${market.name} Healthcare Market Research Reports 2026`,
+      description: `Collection page for ${market.name} healthcare market research reports across ${therapyCoverage.length} therapy areas.`,
+      url: canonical,
+      isPartOf: {
+        '@type': 'WebSite',
+        url: 'https://www.bionixus.com',
         name: 'BioNixus',
-        logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
       },
-      datePublished: '2026-05-27',
-      dateModified: '2026-05-27',
-      mainEntityOfPage: canonical,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      itemListElement: reports.map((r, idx) => ({
+        '@type': 'ListItem',
+        position: idx + 1,
+        url: `https://www.bionixus.com/market-reports/${r.slug}`,
+        name: r.title,
+      })),
     },
   ];
 
@@ -54,7 +64,7 @@ export default function HealthcareReportsByCountry() {
       <Navbar />
       <SEOHead
         title={`${market.name} Healthcare Market Research Reports 2026 | BioNixus`}
-        description={`BioNixus ${market.name} healthcare market research reports: ${market.regulatoryBody.split('•')[0]?.trim() ?? market.regulatoryBody} registration, reimbursement, tenders, and therapy-level intelligence.`}
+        description={`BioNixus ${market.name} healthcare market research reports covering ${therapyCoverage.length} therapy areas with regulatory, reimbursement, tender, and commercialization intelligence. Regulatory context: ${regulatorySummary}.`}
         canonical={canonical}
         jsonLd={jsonLd}
       />
@@ -79,6 +89,17 @@ export default function HealthcareReportsByCountry() {
               Regulatory focus: {market.regulatoryBody}
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">{market.marketContext}</p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              For cross-country benchmarking, use the{' '}
+              <Link className="font-medium text-primary hover:underline" to="/market-reports">
+                market reports hub
+              </Link>{' '}
+              and compare therapy-specific dynamics through the{' '}
+              <Link className="font-medium text-primary hover:underline" to="/market-reports/therapy/oncology">
+                oncology therapy hub
+              </Link>
+              .
+            </p>
             <div className="flex flex-wrap gap-3 text-sm">
               <Link className="font-medium text-primary hover:underline" to={hcPath}>
                 {market.name} macro healthcare market report

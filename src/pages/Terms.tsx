@@ -16,6 +16,18 @@ const Terms = () => {
         <div className="container-wide max-w-3xl prose prose-slate dark:prose-invert">
           <h1 className="text-3xl font-display font-semibold mb-2">Terms of Service</h1>
           <p className="text-muted-foreground text-sm">Last updated: February 2026</p>
+          <p className="text-muted-foreground text-sm">
+            Related pages:{' '}
+            <Link to="/privacy" className="text-primary underline hover:no-underline">Privacy Policy</Link>{' '}
+            ·{' '}
+            <Link to="/contact" className="text-primary underline hover:no-underline">Contact</Link>{' '}
+            ·{' '}
+            <Link to="/services" className="text-primary underline hover:no-underline">Services</Link>{' '}
+            ·{' '}
+            <Link to="/faq" className="text-primary underline hover:no-underline">FAQ</Link>{' '}
+            ·{' '}
+            <Link to="/methodology" className="text-primary underline hover:no-underline">Methodology</Link>
+          </p>
 
           <h2 className="mt-8 text-xl font-semibold">1. Acceptance of terms</h2>
           <p>
@@ -35,6 +47,7 @@ const Terms = () => {
 
           <p className="mt-10 flex gap-6">
             <Link to="/privacy" className="text-primary font-medium hover:underline">Privacy Policy</Link>
+            <Link to="/contact" className="text-primary font-medium hover:underline">Contact</Link>
             <Link to="/" className="text-primary font-medium hover:underline">Back to home</Link>
           </p>
         </div>
