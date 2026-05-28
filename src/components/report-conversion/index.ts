@@ -5,6 +5,7 @@ export { ReportMidPageCta } from '@/components/report-conversion/ReportMidPageCt
 export { ReportConsultationBand } from '@/components/report-conversion/ReportConsultationBand';
 export { ReportContentWithAside } from '@/components/report-conversion/ReportContentWithAside';
 export { ReportPhoneLinks } from '@/components/report-conversion/ReportPhoneLinks';
+export { REPORT_ARTICLE_CONTAINER } from '@/components/report-conversion/constants';
 export {
   BIONIXUS_PHONE_LINES,
   getReportPhoneLines,

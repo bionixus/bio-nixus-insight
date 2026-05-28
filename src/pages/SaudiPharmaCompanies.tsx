@@ -98,7 +98,7 @@ const SaudiPharmaCompanies = () => {
           <ReportEarlyCtaBar config={PHARMA_CONVERSION} className="mt-8" />
         </div></section>
 
-        <ReportContentWithAside config={PHARMA_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto">
+        <ReportContentWithAside config={PHARMA_CONVERSION}>
         <section className="section-padding py-12 bg-primary text-primary-foreground"><div className="container-wide max-w-5xl mx-auto"><div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div><p className="text-3xl md:text-4xl font-display font-bold">$12.4B</p><p className="text-primary-foreground/70 text-sm mt-1">Pharmaceutical market value</p></div>
           <div><p className="text-3xl md:text-4xl font-display font-bold">11.1%</p><p className="text-primary-foreground/70 text-sm mt-1">Year-over-year growth</p></div>

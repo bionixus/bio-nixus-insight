@@ -37,7 +37,7 @@ export function ReportPremiumSection({
   countryName,
   therapyName,
   variant = 'default',
-  showVisual = true,
+  showVisual = false,
   className = '',
 }: ReportPremiumSectionProps) {
   const sectionRef = useScrollReveal<HTMLElement>({ stagger: 80 });
@@ -47,7 +47,7 @@ export function ReportPremiumSection({
 
   return (
     <section ref={sectionRef} className={`${variantClasses[variant]} ${className}`.trim()} id={id}>
-      <div className="max-w-5xl mx-auto">
+      <div className="w-full">
         <div className={showVisual ? 'grid lg:grid-cols-[minmax(0,1fr)_minmax(220px,280px)] gap-8 lg:gap-10 items-start' : ''}>
           <div className="min-w-0">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-2 sr sr-up sr-line">

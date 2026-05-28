@@ -57,7 +57,7 @@ export function ReportPremiumHero({
       />
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-gold-light to-transparent opacity-80" aria-hidden />
 
-      <div className="container-wide max-w-6xl mx-auto section-padding pb-12 md:pb-16 relative">
+      <div className="container-wide section-padding pb-12 md:pb-16 relative">
         <div className="grid lg:grid-cols-[minmax(0,1.05fr)_minmax(280px,0.95fr)] gap-10 lg:gap-14 items-center">
           <div className="min-w-0">
             <div className="flex flex-wrap gap-2 mb-6 sr sr-up sr-fast">

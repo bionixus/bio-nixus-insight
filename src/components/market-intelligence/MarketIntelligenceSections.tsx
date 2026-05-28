@@ -40,7 +40,7 @@ export function MarketIntelligenceSections({
   return (
     <>
       <section className="py-10 md:py-12" id="key-indicators">
-        <div className="max-w-5xl mx-auto">
+        <div className="w-full">
           <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(240px,300px)] gap-8 items-start mb-8">
             <div>
               <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-2 sr sr-up sr-line">
@@ -113,7 +113,7 @@ export function MarketIntelligenceSections({
         className="py-10 md:py-12 rounded-2xl bg-gradient-to-br from-cream to-cream-dark/40 border border-border/50 px-4 md:px-8"
         id="registration-process"
       >
-        <div className="max-w-5xl mx-auto">
+        <div className="w-full">
           <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(220px,260px)] gap-8 items-start">
             <div>
               <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-2 sr sr-up sr-line">
@@ -168,7 +168,7 @@ export function MarketIntelligenceSections({
 
       {showTherapySegments ? (
         <section className="py-10 md:py-12" id="therapy-segments">
-          <div className="max-w-5xl mx-auto">
+          <div className="w-full">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-2 sr sr-up sr-line">
               {countryName} Pharmaceutical Market — Top Therapy Areas by Spend 2026
             </h2>
@@ -231,7 +231,7 @@ export function MarketIntelligenceSections({
         className="py-10 md:py-12 rounded-2xl bg-muted/20 border border-border/40 px-4 md:px-8"
         id="hospital-infrastructure"
       >
-        <div className="max-w-5xl mx-auto">
+        <div className="w-full">
           <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(220px,260px)] gap-8 items-start mb-8">
             <div>
               <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-2 sr sr-up sr-line">
@@ -304,7 +304,7 @@ export function MarketIntelligenceSections({
       </section>
 
       <section ref={timelineRef} className="py-10 md:py-12" id="access-timeline">
-        <div className="max-w-5xl mx-auto">
+        <div className="w-full">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-2 sr sr-up sr-line">
             Pharmaceutical Market Access Timeline — {countryName} 2026
           </h2>
@@ -336,7 +336,7 @@ export function MarketIntelligenceSections({
         className="py-10 md:py-12 rounded-2xl bg-gradient-to-br from-cream to-background border border-border/50 px-4 md:px-8"
         id="disease-burden"
       >
-        <div className="max-w-5xl mx-auto">
+        <div className="w-full">
           <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(220px,260px)] gap-8 items-start">
             <div>
               <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-2 sr sr-up sr-line">

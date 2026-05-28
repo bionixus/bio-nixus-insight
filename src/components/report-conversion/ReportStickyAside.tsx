@@ -10,80 +10,75 @@ type ReportStickyAsideProps = {
 };
 
 export function ReportStickyAside({ config, tocItems }: ReportStickyAsideProps) {
-  const deskLabel = config.asideDeskLabel ?? `${config.marketName} market desk`;
+  const deskLabel = config.asideDeskLabel ?? `${config.marketName} desk`;
 
   return (
     <aside
-      className="hidden lg:flex flex-col lg:sticky lg:top-24 space-y-4 self-start shrink-0 w-[272px]"
+      className="hidden xl:flex flex-col xl:sticky xl:top-24 gap-3 self-start shrink-0 w-full max-w-[220px]"
       aria-label={`${config.marketName} research concierge`}
     >
-      {tocItems && tocItems.length > 0 && (
+      {tocItems && tocItems.length > 0 ? (
         <nav
-          className="rounded-xl overflow-hidden border border-border shadow-sm max-h-[min(52vh,380px)] flex flex-col"
+          className="rounded-lg overflow-hidden border border-border shadow-sm max-h-[min(40vh,280px)] flex flex-col"
           aria-label="On this page"
         >
-          <div className="flex items-center gap-2 px-4 py-3 shrink-0 bg-primary">
-            <span className="text-[11px] font-extrabold uppercase tracking-[0.1em] text-white leading-tight">
+          <div className="flex items-center gap-2 px-3 py-2 shrink-0 bg-primary">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-white leading-tight">
               On this page
             </span>
           </div>
-          <div className="py-2 bg-background overflow-y-auto min-h-0">
+          <div className="py-1 bg-background overflow-y-auto min-h-0">
             {tocItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="block px-4 py-2 text-[13px] text-muted-foreground border-l-2 border-transparent hover:border-accent hover:bg-accent/5 hover:text-primary transition-all leading-snug"
+                className="block px-3 py-1.5 text-xs text-muted-foreground border-l-2 border-transparent hover:border-accent hover:bg-accent/5 hover:text-primary transition-colors leading-snug"
               >
                 {item.label}
               </a>
             ))}
           </div>
         </nav>
-      )}
+      ) : null}
 
       <div
-        className="rounded-xl p-5 relative overflow-hidden border border-accent/25"
+        className="rounded-lg p-4 relative overflow-hidden border border-accent/20"
         style={{ background: 'linear-gradient(160deg, hsl(var(--navy-deep)) 0%, hsl(var(--navy-medium)) 100%)' }}
       >
-        <div
-          className="absolute -top-8 -right-8 w-28 h-28 rounded-full opacity-[0.12] pointer-events-none"
-          style={{ background: 'hsl(var(--accent))' }}
-          aria-hidden
-        />
         <p
-          className="text-[10px] font-extrabold tracking-[0.14em] uppercase mb-2 relative z-10"
+          className="text-[9px] font-bold tracking-widest uppercase mb-1.5 relative z-10"
           style={{ color: 'hsl(var(--accent))' }}
         >
           {deskLabel}
         </p>
-        <p className="font-display text-base font-bold text-white leading-snug mb-4 relative z-10">
-          Speak with BioNixus healthcare market researchers
+        <p className="font-display text-sm font-semibold text-white leading-snug mb-3 relative z-10">
+          Book a market briefing
         </p>
         <Link
           to="/contact"
-          className="relative z-10 flex items-center justify-center gap-1.5 py-2.5 text-[13px] font-bold rounded-md w-full transition-all hover:-translate-y-0.5 mb-3"
+          className="relative z-10 flex items-center justify-center gap-1 py-2 text-xs font-bold rounded-md w-full transition-colors hover:opacity-95 mb-2"
           style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--navy-deep))' }}
         >
-          Book a briefing
-          <ArrowUpRight className="w-3.5 h-3.5 shrink-0" aria-hidden />
+          Contact BioNixus
+          <ArrowUpRight className="w-3 h-3 shrink-0" aria-hidden />
         </Link>
-        <p className="text-[10px] uppercase tracking-[0.12em] text-white/45 mb-2 relative z-10">Call the team</p>
         <ReportPhoneLinks config={config} variant="aside" />
         <a
           href={mailtoHref(config.emailSubject)}
-          className="relative z-10 mt-4 block text-center text-[11px] font-semibold hover:underline"
+          className="relative z-10 mt-2 block text-center text-[10px] font-medium hover:underline truncate"
           style={{ color: 'hsl(var(--accent))' }}
+          title={BIONIXUS_EMAIL}
         >
           {BIONIXUS_EMAIL}
         </a>
       </div>
 
-      <div className="rounded-xl border border-border bg-card p-4 text-center shadow-sm">
-        <p className="text-[11px] text-muted-foreground mb-3 leading-snug">{config.routingHint}</p>
-        <Link to="/services" className="text-[13px] font-semibold text-primary hover:underline">
-          Overview of BioNixus services
+      <p className="text-[10px] text-muted-foreground leading-snug px-1">
+        <Link to="/services" className="font-medium text-primary hover:underline">
+          Services overview
         </Link>
-      </div>
+        {config.routingHint ? ` — ${config.routingHint}` : null}
+      </p>
     </aside>
   );
 }

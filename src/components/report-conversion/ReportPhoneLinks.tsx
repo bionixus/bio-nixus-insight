@@ -18,7 +18,7 @@ export function ReportPhoneLinks({ config, variant }: ReportPhoneLinksProps) {
           <a
             key={line.tel}
             href={`tel:${line.tel}`}
-            className="flex items-center gap-2 text-[13px] text-white/90 hover:text-white"
+            className="flex items-center gap-1.5 text-[11px] text-white/85 hover:text-white leading-tight"
           >
             <Phone className="w-3.5 h-3.5 shrink-0 text-accent" aria-hidden /> {line.label}
           </a>

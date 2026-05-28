@@ -21,7 +21,7 @@ export function ReportRelatedCards({ reports, className = '' }: ReportRelatedCar
 
   return (
     <section className={`py-12 ${className}`.trim()} id="related-reports">
-      <div className="max-w-5xl mx-auto">
+      <div className="w-full">
         <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-2 sr sr-up sr-line">
           Related Healthcare Market Research Reports
         </h2>

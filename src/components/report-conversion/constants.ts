@@ -1,3 +1,7 @@
+/** Full-width article shell for report pages (7xl container, no nested max-width). */
+export const REPORT_ARTICLE_CONTAINER =
+  'container-wide px-6 md:px-10 lg:px-12 xl:px-16 pb-16 pt-2';
+
 export const BIONIXUS_EMAIL = 'admin@bionixus.com';
 export const BIONIXUS_PHONE_US = '+18884655557';
 export const BIONIXUS_PHONE_US_DISPLAY = '+1 888 465 5557';

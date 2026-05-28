@@ -35,7 +35,7 @@ export function ReportExecutiveDashboard({
       className={`pb-10 rounded-2xl bg-gradient-to-br from-cream via-cream-dark/40 to-background border border-border/50 px-4 md:px-8 py-8 md:py-10 ${className}`.trim()}
       id="executive-summary"
     >
-      <div className="max-w-5xl mx-auto">
+      <div className="w-full">
         <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-2 sr sr-up sr-line">
           Executive Summary
         </h2>

@@ -143,10 +143,7 @@ export default function HealthcareReportPage() {
           }
         />
 
-        <ReportContentWithAside
-          config={conversionConfig}
-          containerClassName="container-wide max-w-6xl mx-auto section-padding pt-0"
-        >
+        <ReportContentWithAside config={conversionConfig}>
           <ReportExecutiveDashboard
             stats={[
               { value: report.stat1Value, label: report.stat1Label },

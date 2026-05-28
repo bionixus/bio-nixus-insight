@@ -27,7 +27,7 @@ export function TherapyDrugClassSection({
       className="py-12 rounded-2xl bg-gradient-to-br from-cream-dark to-cream border border-border/50 px-4 md:px-8"
       id="drug-classes"
     >
-      <div className="max-w-5xl mx-auto">
+      <div className="w-full">
         <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(200px,240px)] gap-8 items-start mb-6">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground sr sr-up sr-line">
             Key {therapyAreaName} Drug Classes in {marketName}

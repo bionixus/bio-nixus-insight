@@ -726,6 +726,16 @@
   .prose-report p + p {
     margin-top: 1rem;
   }
+
+  /* Report pages: article uses full column width; aside is xl+ only */
+  .report-article-shell article {
+    max-width: none;
+  }
+  .report-article-shell article .max-w-4xl,
+  .report-article-shell article .max-w-5xl,
+  .report-article-shell article .max-w-6xl {
+    max-width: none;
+  }
   @media (prefers-reduced-motion: reduce) {
     .report-chart-line,
     .report-bar-grow {

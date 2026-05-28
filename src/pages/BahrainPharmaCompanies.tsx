@@ -93,7 +93,7 @@ const BahrainPharmaCompanies = () => {
           <div className="mt-8 p-5 bg-muted/50 border border-border rounded-xl"><div className="flex items-start gap-3"><Share2 className="w-5 h-5 text-primary mt-0.5 shrink-0" /><div><p className="font-semibold text-foreground text-sm mb-1">Cite this guide</p><p className="text-sm text-muted-foreground leading-relaxed">BioNixus. &quot;Pharmaceutical Companies in Bahrain: Complete Industry Guide 2026.&quot; BioNixus Healthcare Market Research, Feb. 2026, <a href={citationUrl} className="text-primary hover:underline break-all">{citationUrl}</a>.<br />Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">CC BY 4.0</a> — free to share and adapt with attribution.</p></div></div></div>
           <ReportEarlyCtaBar config={PHARMA_CONVERSION} className="mt-8" /></div></section>
 
-        <ReportContentWithAside config={PHARMA_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto">
+        <ReportContentWithAside config={PHARMA_CONVERSION}>
         <section className="section-padding py-12 bg-primary text-primary-foreground"><div className="container-wide max-w-5xl mx-auto"><div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div><p className="text-3xl md:text-4xl font-display font-bold">$0.3B</p><p className="text-primary-foreground/70 text-sm mt-1">Pharmaceutical market value</p></div>
           <div><p className="text-3xl md:text-4xl font-display font-bold">5.8%</p><p className="text-primary-foreground/70 text-sm mt-1">Year-over-year growth</p></div>

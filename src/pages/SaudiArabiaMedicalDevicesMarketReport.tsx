@@ -155,7 +155,7 @@ const SaudiArabiaMedicalDevicesMarketReport = () => {
         />
 
         {/* Executive Summary */}
-        <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">
+        <ReportContentWithAside config={REPORT_CONVERSION}>
         <section className="section-padding bg-cream-dark" id="executive-summary">
           <div className="container-wide max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
