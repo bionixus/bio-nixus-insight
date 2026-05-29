@@ -1,4 +1,5 @@
 import type { MarketContent, TherapyAreaContent } from '@/data/healthcareReportContent';
+import { expandToWordRange, FAQ_EXTRAS } from '@/data/contentAccuracy/expandProse';
 import { getTherapyMarketDynamics } from '@/data/marketTherapyOverlays';
 import {
   bioNixusServicesParagraph,
@@ -18,23 +19,8 @@ export type FAQBuildArgs = {
 
 const join = (...s: string[]) => s.filter(Boolean).join(' ');
 
-const FAQ_PAD =
-  'BioNixus applies EphMRA and BHBIA methodological governance, GDPR-aligned HCP outreach, and hospital consumption analogue validation before leadership teams act on forecast scenarios.';
-
 function clampWords(text: string, min = 100, max = 160) {
-  let words = text.trim().replace(/\s+/g, ' ').split(/\s+/).filter(Boolean);
-  let guard = 0;
-  while (words.length < min && guard < 8) {
-    words = words.concat(FAQ_PAD.split(/\s+/));
-    guard += 1;
-  }
-  if (words.length > max) {
-    words = words.slice(0, max);
-    const last = words[words.length - 1] ?? '';
-    if (last.endsWith(',') || last.endsWith(';')) words[words.length - 1] = last.slice(0, -1);
-    if (!words[words.length - 1]?.endsWith('.')) words[words.length - 1] += '.';
-  }
-  return words.join(' ');
+  return expandToWordRange(text, min, max, FAQ_EXTRAS);
 }
 
 /** Therapy-level molecule landscape without foreign institution names. */
@@ -99,7 +85,13 @@ export function buildHealthcareFaqs(args: FAQBuildArgs) {
   );
 
   const q5 = `What are the structural growth drivers shaping ${therapyName.toLowerCase()} demand in ${marketName} through 2030?`;
-  const a5 = clampWords(join(therapy.clinicalLandscape.split('\n\n')[0], market.marketContext.split('\n\n')[0]));
+  const a5 = clampWords(
+    join(
+      therapy.clinicalLandscape.split('\n\n')[0],
+      market.marketContext.split('\n\n')[0],
+      `In ${marketName}, structural demand also reflects channel mix, referral concentration, and how ${therapyName.toLowerCase()} protocols are activated at major centres—not a single regional average.`,
+    ),
+  );
 
   const q6 = `How does BioNixus support pharmaceutical leadership teams sizing the ${marketName} ${therapyName.toLowerCase()} opportunity?`;
   const a6 = clampWords(bioNixusServicesParagraph(marketSlug, marketName, therapyName));

@@ -31,13 +31,13 @@ function bioNixusStandaloneLocalAnswer(marketSlug: string, vertical: 'healthcare
   if (isGccMarket(marketSlug)) {
     return bioNixusServicesParagraph(marketSlug, name, 'Healthcare and life sciences');
   }
-  return `BioNixus delivers ${focus} market research in ${name}: regulator-aware access intelligence, hospital consumption analogues, physician and payer qualitative programmes, and launch evidence under EphMRA and BHBIA governance with GDPR-aligned fieldwork for multinational sponsors.`;
+  return `BioNixus delivers ${focus} market research in ${name}: regulator-aware access intelligence, hospital consumption analogues, physician and payer qualitative programmes, and launch evidence under EphMRA and BHBIA governance with GDPR-aligned fieldwork for multinational sponsors. Teams receive decision-ready outputs validated against national policy and institution-level adoption—not desk extrapolation from unrelated regions.`;
 }
 
 function bioNixusGccExpansionAnswer(marketSlug: string, vertical: 'healthcare' | 'medical-devices'): string {
   const name = marketName(marketSlug);
   const focus = vertical === 'healthcare' ? 'pharmaceutical' : 'medical device';
-  return `BioNixus supports ${name}-based ${focus} companies expanding into GCC and MENA markets with SFDA and MOHAP regulatory intelligence, NUPCO and hospital procurement tracking in Saudi Arabia, UAE insurer and formulary research, physician panels across GCC countries, and comparative ${name} versus GCC market intelligence. GCC expansion is a distinct service line—see our GCC pharmaceutical market report for regional context.`;
+  return `BioNixus supports ${name}-based ${focus} companies expanding into GCC and MENA markets with SFDA and MOHAP regulatory intelligence, NUPCO and hospital procurement tracking in Saudi Arabia, UAE insurer and formulary research, physician panels across GCC countries, and comparative ${name} versus GCC market intelligence. GCC expansion is a distinct service line with its own tender and access calendars—see our GCC pharmaceutical market report for regional context. Launch assumptions should be validated market by market rather than from a single Gulf average.`;
 }
 
 /** Remove duplicate BioNixus / GCC-expansion FAQs and append market-accurate replacements. */

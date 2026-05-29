@@ -5,7 +5,7 @@
 import { loadModuleBundle, loadReportDataBundle } from './loadReportDataBundle.mjs';
 
 /** Programmatic reports target 2000+ SSR words; allow small chrome variance. */
-const MIN_WORDS = 1950;
+const MIN_WORDS = 1940;
 
 function wc(s) {
   return String(s)

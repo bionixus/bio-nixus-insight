@@ -1,6 +1,7 @@
 import type { ReportEntry } from '@/data/healthcareReportTypes';
 import { MARKET_CONTENT, THERAPY_AREA_CONTENT } from '@/data/healthcareReportContent';
 import { buildHealthcareFaqs } from '@/data/healthcareReportFaqs';
+import { BODY_EXTRAS, expandToWordRange } from '@/data/contentAccuracy/expandProse';
 import {
   executiveStatsFromFact,
   getTherapyMarketFactOrThrow,
@@ -304,21 +305,7 @@ function metaTitleFor(title: string) {
 }
 
 function fitWordRange(text: string, min: number, max: number): string {
-  const pad =
-    'This report should be interpreted alongside local policy, payer, and hospital-level evidence before final market decisions.';
-  let words = text.trim().replace(/\s+/g, ' ').split(/\s+/).filter(Boolean);
-  let guard = 0;
-  while (words.length < min && guard < 6) {
-    words = words.concat(pad.split(/\s+/));
-    guard += 1;
-  }
-  if (words.length > max) {
-    words = words.slice(0, max);
-    const last = words[words.length - 1] ?? '';
-    if (last.endsWith(',') || last.endsWith(';')) words[words.length - 1] = last.slice(0, -1);
-    if (!words[words.length - 1]?.endsWith('.')) words[words.length - 1] += '.';
-  }
-  return words.join(' ');
+  return expandToWordRange(text, min, max, BODY_EXTRAS);
 }
 
 function pickVariant(seed: string, options: [string, string, string]) {
@@ -434,7 +421,11 @@ function assembleEntry(spec: SpecRow): Omit<ReportEntry, 'relatedSlugs'> {
     therapy,
     market,
   });
-  const summaryPara2 = fitWordRange(`Cross‑programme linkage: ${spec.sum2Context}`, 60, 90);
+  const summaryPara2 = fitWordRange(
+    `For cross-programme context, teams can use related briefings: ${spec.sum2Context} These links support benchmarking and access planning without replacing country-specific validation.`,
+    60,
+    90,
+  );
   const fieldIntelligenceParagraph = buildFieldIntelligenceParagraph(spec, therapy, market);
   const commercialOutlookParagraph = buildCommercialOutlookParagraph(spec, therapy, market);
   const methodologyParagraph = buildMethodologyParagraph(spec, therapy, market);
