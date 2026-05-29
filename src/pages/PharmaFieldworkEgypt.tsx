@@ -1,0 +1,62 @@
+import StrategicServicePage from '@/pages/templates/StrategicServicePage';
+
+export default function PharmaFieldworkEgypt() {
+  return (
+    <StrategicServicePage
+      title="Pharma Fieldwork Egypt | Physician & Pharmacy Research | BioNixus"
+      description="Pharma fieldwork in Egypt: bilingual HCP and pharmacy recruitment, public/private channel coverage, EDA-sensitive therapy areas, and Cairo-based data collection."
+      canonicalUrl="https://www.bionixus.com/pharma-fieldwork-egypt"
+      breadcrumbLabel="Pharma Fieldwork Egypt"
+      h1="Pharma Fieldwork Egypt"
+      intro="BioNixus delivers pharma fieldwork in Egypt with verified physician, pharmacist, and payer recruitment, Arabic–English moderation, and governance aligned to EDA and public/private access realities—not consumer panel shortcuts."
+      links={[
+        {
+          to: '/egypt-pharmaceutical-market-research',
+          label: 'Healthcare market research company in Egypt',
+          primary: true,
+        },
+        { to: '/market-research-egypt', label: 'Market research Egypt', primary: true },
+        { to: '/healthcare-fieldwork-middle-east', label: 'Healthcare fieldwork Middle East' },
+        { to: '/blog/healthcare-overview-egypt-market-2026', label: 'Egypt healthcare market overview' },
+        { to: '/contact', label: 'Request Egypt fieldwork scope' },
+      ]}
+      bullets={[
+        'Physician and pharmacist recruitment across public MOH and private hospital networks.',
+        'Bilingual screeners, moderation, and transcription with medical terminology QA.',
+        'Channel-aware sampling for tender-led versus out-of-pocket categories.',
+        'Daily QC dashboards for global sponsors running MENA multi-country programs.',
+      ]}
+      decisionPoints={[
+        {
+          title: 'Why it matters',
+          body: 'Egypt fieldwork quality determines whether sizing and access decisions reflect real prescriber and pharmacy behavior.',
+        },
+        {
+          title: 'What the evidence says',
+          body: 'Early feasibility across Cairo and regional centers reduces failed recruitment and thin payer coverage.',
+        },
+        {
+          title: 'What to do next',
+          body: 'Scope one therapy and one channel decision, then run a four-week Egypt fieldwork pilot before regional scale-up.',
+        },
+      ]}
+      metrics={[
+        {
+          label: 'Feasibility',
+          value: '5–10 days',
+          detail: 'Typical timeline to confirm Egypt sample frames and access paths.',
+        },
+        {
+          label: 'Languages',
+          value: 'AR + EN',
+          detail: 'Arabic and English instruments, moderation, and sponsor readouts.',
+        },
+        {
+          label: 'Coverage',
+          value: 'Multi-channel',
+          detail: 'Public, private, pharmacy, and payer stakeholders where therapy model requires.',
+        },
+      ]}
+    />
+  );
+}

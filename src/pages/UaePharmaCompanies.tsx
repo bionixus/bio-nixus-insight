@@ -184,7 +184,14 @@ const UaePharmaCompanies = () => {
 
         <section className="section-padding py-16" id="bionixus-support"><div className="container-wide max-w-5xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">How BioNixus Supports Pharma Companies in the UAE</h2>
-          <p className="text-muted-foreground mb-10 max-w-3xl">BioNixus is a leading healthcare market research company with deep expertise in the UAE and GCC pharmaceutical markets. We help pharma, biotech, and medtech companies with:</p>
+          <p className="text-muted-foreground mb-10 max-w-3xl">
+            BioNixus is a leading healthcare market research company with deep expertise in the UAE and GCC pharmaceutical markets.
+            For company-level UAE programmes, see our{' '}
+            <Link to="/uae-pharmaceutical-market-research" className="text-primary hover:underline font-medium">
+              market research company for UAE pharma
+            </Link>
+            . We help pharma, biotech, and medtech companies with:
+          </p>
           <div className="grid md:grid-cols-2 gap-6 mb-10">{[
             { title: 'Physician Surveys & KOL Mapping', desc: 'Large-scale quantitative and qualitative research with UAE physicians across DHA, DOH, MOHAP, and private hospitals. Arabic-English bilingual capabilities.' },
             { title: 'Market Access & Regulatory Strategy', desc: 'MOHAP/DHA/DOH formulary strategy, competitive pricing analysis, reimbursement landscape, and payer research to optimize commercial success in the UAE.' },

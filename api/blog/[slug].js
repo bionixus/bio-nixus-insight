@@ -79,6 +79,14 @@ function pickLocalizedString(field) {
 function buildRelatedInternalLinksNav(slug) {
   const links = [
     ['Healthcare market research hub for EMEA', `${BASE}/healthcare-market-research`],
+    ['Healthcare market research company in Saudi Arabia', `${BASE}/market-research-saudi-arabia-pharmaceutical`],
+    ['Healthcare market research company in UAE', `${BASE}/uae-pharmaceutical-market-research`],
+    ['Healthcare market research company in Egypt', `${BASE}/egypt-pharmaceutical-market-research`],
+    ['MedTech market research company in Saudi Arabia', `${BASE}/saudi-arabia-medtech-market-research`],
+    ['MedTech market research company in UAE', `${BASE}/uae-medtech-market-research`],
+    ['MedTech market research company in Egypt', `${BASE}/egypt-medtech-market-research`],
+    ['Market research by industry in KSA, UAE, and Egypt', `${BASE}/market-research-by-industry`],
+    ['GCC and MENA market report', `${BASE}/gcc-pharma-market-report-2026`],
     ['More pharmaceutical and healthcare insights on our blog', `${BASE}/blog`],
     ['Contact BioNixus about a market research project', `${BASE}/contact`],
   ];

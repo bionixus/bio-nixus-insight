@@ -12,7 +12,7 @@ export default function HeorConsultingSaudiArabia() {
       links={[
         { to: '/healthcare-market-research-agency-gcc', label: 'Healthcare market research agency GCC', primary: true },
         { to: '/biosimilar-market-entry-saudi-arabia', label: 'Biosimilar market entry Saudi Arabia', primary: true },
-        { to: '/healthcare-market-research/saudi-arabia', label: 'Pharma market research company in Saudi Arabia' },
+        { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Healthcare market research company in Saudi Arabia' },
         { to: '/contact', label: 'Request HEOR scope' },
       ]}
       bullets={[

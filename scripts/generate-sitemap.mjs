@@ -18,6 +18,7 @@ import {
   BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH,
   BLOG_LEGACY_FULL_PATH_REDIRECTS,
 } from '../blog-legacy-redirects.mjs';
+import { getIndustryMatrixSitemapPages } from './data/industry-matrix-sitemap.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
@@ -177,6 +178,7 @@ const staticPages = [
   { path: '/gcc-market-access-guide', priority: '0.9', changefreq: 'monthly' },
   { path: '/market-research-home', priority: '0.88', changefreq: 'weekly' },
   { path: '/market-research', priority: '0.9', changefreq: 'monthly' },
+  { path: '/market-research-by-industry', priority: '0.85', changefreq: 'weekly' },
   { path: '/market-research-uae', priority: '0.9', changefreq: 'weekly' },
   { path: '/market-research-ksa', priority: '0.9', changefreq: 'weekly' },
   { path: '/market-research-saudi', priority: '0.9', changefreq: 'weekly' },
@@ -200,6 +202,7 @@ const staticPages = [
   { path: '/bionixus-market-research-middle-east', priority: '0.9', changefreq: 'monthly' },
   { path: '/gcc-pharmaceutical-market-research', priority: '0.8', changefreq: 'monthly' },
   { path: '/uae-pharmaceutical-market-research', priority: '0.8', changefreq: 'monthly' },
+  { path: '/egypt-pharmaceutical-market-research', priority: '0.9', changefreq: 'weekly' },
   { path: '/saudi-payer-market-access-research', priority: '0.8', changefreq: 'monthly' },
   { path: '/gcc-hcp-recruitment-market-research', priority: '0.8', changefreq: 'monthly' },
   { path: '/healthcare-market-research-agency-gcc', priority: '0.8', changefreq: 'monthly' },
@@ -211,6 +214,9 @@ const staticPages = [
   { path: '/real-world-evidence', priority: '0.9', changefreq: 'weekly' },
   { path: '/real-world-evidence-gcc', priority: '0.8', changefreq: 'monthly' },
   { path: '/heor-consulting-saudi-arabia', priority: '0.8', changefreq: 'monthly' },
+  { path: '/pharma-fieldwork-saudi-arabia', priority: '0.85', changefreq: 'monthly' },
+  { path: '/pharma-fieldwork-uae', priority: '0.85', changefreq: 'monthly' },
+  { path: '/pharma-fieldwork-egypt', priority: '0.85', changefreq: 'monthly' },
   { path: '/patient-support-program-research-gcc', priority: '0.8', changefreq: 'monthly' },
   { path: '/budget-impact-model-saudi-arabia', priority: '0.8', changefreq: 'monthly' },
   { path: '/quantitative-healthcare-market-research', priority: '0.9', changefreq: 'monthly' },
@@ -383,6 +389,9 @@ function buildStaticRoutes() {
     if (!isSitemapRedirectSourcePath(page.path)) routes.push(page);
   }
   for (const page of extraStaticSitemapPages) {
+    if (!isSitemapRedirectSourcePath(page.path)) routes.push(page);
+  }
+  for (const page of getIndustryMatrixSitemapPages()) {
     if (!isSitemapRedirectSourcePath(page.path)) routes.push(page);
   }
   // Country detail pages under Global Websites
@@ -732,6 +741,7 @@ const STATIC_PAGE_FILES = {
   '/bionixus-market-research-middle-east': ['src/pages/BionixusMarketResearchMiddleEast.tsx'],
   '/gcc-pharmaceutical-market-research': ['src/pages/GccPharmaceuticalMarketResearch.tsx'],
   '/uae-pharmaceutical-market-research': ['src/pages/UaePharmaceuticalMarketResearch.tsx'],
+  '/egypt-pharmaceutical-market-research': ['src/pages/EgyptPharmaceuticalMarketResearch.tsx'],
   '/saudi-payer-market-access-research': ['src/pages/SaudiPayerMarketAccessResearch.tsx'],
   '/gcc-hcp-recruitment-market-research': ['src/pages/GccHcpRecruitmentMarketResearch.tsx'],
   '/healthcare-market-research-agency-gcc': ['src/pages/HealthcareMarketResearchAgencyGcc.tsx'],
@@ -743,6 +753,9 @@ const STATIC_PAGE_FILES = {
   '/real-world-evidence': ['src/pages/RealWorldEvidence.tsx'],
   '/real-world-evidence-gcc': ['src/pages/RealWorldEvidenceGcc.tsx'],
   '/heor-consulting-saudi-arabia': ['src/pages/HeorConsultingSaudiArabia.tsx'],
+  '/pharma-fieldwork-saudi-arabia': ['src/pages/PharmaFieldworkSaudiArabia.tsx'],
+  '/pharma-fieldwork-uae': ['src/pages/PharmaFieldworkUae.tsx'],
+  '/pharma-fieldwork-egypt': ['src/pages/PharmaFieldworkEgypt.tsx'],
   '/patient-support-program-research-gcc': ['src/pages/PatientSupportProgramResearchGcc.tsx'],
   '/budget-impact-model-saudi-arabia': ['src/pages/BudgetImpactModelSaudiArabia.tsx'],
   '/bionixus-ai-chatbots-increase-sales-and-lead-generation': ['src/pages/AiChatbotsLeadGeneration.tsx'],

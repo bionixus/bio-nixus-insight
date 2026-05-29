@@ -157,6 +157,17 @@ const EgyptHealthcareMarketReport = () => {
               since 2012, maintaining the specialist HCP panels, payer relationships, and institutional
               procurement contacts that power accurate Egypt healthcare intelligence.
             </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              For execution support, see our{' '}
+              <Link to="/egypt-pharmaceutical-market-research" className="text-primary hover:underline font-medium">
+                healthcare market research company in Egypt
+              </Link>{' '}
+              page and{' '}
+              <Link to="/market-research-egypt" className="text-primary hover:underline font-medium">
+                market research Egypt
+              </Link>{' '}
+              landing.
+            </p>
             <p className="text-muted-foreground leading-relaxed">
               See also:{' '}
               <Link to="/egypt-medical-devices-market-report" className="text-primary hover:underline font-medium">

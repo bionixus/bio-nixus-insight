@@ -8,6 +8,10 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import { getMarketHealthcarePath, getReportSafe } from '@/data/healthcareReportData';
+import {
+  getGccTherapyEnrichment,
+  gccTherapyReportPath,
+} from '@/data/gccTherapyReportEnrichment';
 import { getAccessBullets } from '@/data/healthcareReportAccessBullets';
 import { CrossLinkSentence } from '@/lib/healthcareReportLinks';
 import { buildConversionConfigFromReportEntry } from '@/data/reportConversionConfig';
@@ -49,6 +53,8 @@ export default function HealthcareReportPage() {
   ];
   const faqSectionId = `market-report-faq-${report.slug}`;
   const conversionConfig = buildConversionConfigFromReportEntry(report);
+  const gccEnrichment = getGccTherapyEnrichment(report.slug);
+  const gccTherapyComparator = gccTherapyReportPath(report.therapyAreaSlug);
   const introLead = pickVariant(report.slug, [
     `${report.market} ${report.therapyArea} demand is influenced by provider pathway constraints, access sequencing, and institution-level implementation capacity.`,
     `In ${report.market}, ${report.therapyArea} performance depends on how policy timing, reimbursement workflow, and care delivery realities interact in practice.`,
@@ -175,13 +181,97 @@ export default function HealthcareReportPage() {
               <Link className="font-medium text-primary hover:underline" to={marketStandalone}>
                 {report.market} healthcare market briefing
               </Link>{' '}
-              alongside this {report.therapyArea} report. For regional benchmarking, refer to{' '}
-              <Link className="font-medium text-primary hover:underline" to="/gcc-pharma-market-report-2026">
-                GCC Pharmaceutical Market Report 2026
-              </Link>
-              .
+              alongside this {report.therapyArea} report.
+              {report.marketSlug !== 'gcc' && gccTherapyComparator ? (
+                <>
+                  {' '}
+                  For Gulf-wide {report.therapyArea} benchmarking, see the{' '}
+                  <Link className="font-medium text-primary hover:underline" to={gccTherapyComparator}>
+                    GCC {report.therapyArea} market report
+                  </Link>
+                  .
+                </>
+              ) : (
+                <>
+                  {' '}
+                  For regional benchmarking, refer to{' '}
+                  <Link className="font-medium text-primary hover:underline" to="/gcc-pharma-market-report-2026">
+                    GCC Pharmaceutical Market Report 2026
+                  </Link>
+                  .
+                </>
+              )}
             </p>
           </ReportExecutiveDashboard>
+
+          {gccEnrichment ? (
+            <>
+              <ReportPremiumSection
+                id="gcc-therapy-executive-depth"
+                title={gccEnrichment.executiveHeading}
+                subtitle="Expanded Gulf therapy intelligence for launch and access teams."
+                visualTheme="market"
+                marketSlug={report.marketSlug}
+                therapySlug={report.therapyAreaSlug}
+                countryName={report.market}
+                therapyName={report.therapyArea}
+                visualAlt={`${report.market} ${report.therapyArea} executive market intelligence illustration`}
+              >
+                {gccEnrichment.executiveParagraphs.map((para) => (
+                  <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed mb-6">
+                    {para}
+                  </p>
+                ))}
+              </ReportPremiumSection>
+
+              <ReportPremiumSection
+                id="gcc-therapy-tender-access"
+                title={gccEnrichment.tenderHeading}
+                subtitle="Tender cycles, payer mechanics, and channel segmentation."
+                visualTheme="access"
+                variant="cream"
+                marketSlug={report.marketSlug}
+                therapySlug={report.therapyAreaSlug}
+                countryName={report.market}
+                visualAlt={`${report.market} ${report.therapyArea} tender and access dynamics illustration`}
+              >
+                {gccEnrichment.tenderParagraphs.map((para) => (
+                  <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed mb-6">
+                    {para}
+                  </p>
+                ))}
+              </ReportPremiumSection>
+
+              <ReportPremiumSection
+                id="gcc-therapy-research-modules"
+                title={gccEnrichment.researchHeading}
+                subtitle="BioNixus primary research modules aligned to this therapy pillar."
+                visualTheme="field"
+                variant="muted"
+                marketSlug={report.marketSlug}
+                therapySlug={report.therapyAreaSlug}
+                countryName={report.market}
+                visualAlt={`BioNixus ${report.market} ${report.therapyArea} research methodology illustration`}
+              >
+                <ul className="list-disc pl-6 space-y-3 text-muted-foreground leading-relaxed">
+                  {gccEnrichment.researchBullets.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+                <p className="text-muted-foreground leading-relaxed mt-6">
+                  Explore the{' '}
+                  <Link className="font-medium text-primary hover:underline" to="/healthcare-market-research">
+                    healthcare market research hub
+                  </Link>{' '}
+                  or{' '}
+                  <Link className="font-medium text-primary hover:underline" to="/contact">
+                    contact BioNixus
+                  </Link>{' '}
+                  to scope a GCC {report.therapyArea} programme.
+                </p>
+              </ReportPremiumSection>
+            </>
+          ) : null}
 
           <ReportPremiumSection
             id="country-therapy-context"

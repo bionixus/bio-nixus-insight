@@ -110,12 +110,14 @@ const CLUSTER_PATHS = {
     report: '/saudi-arabia-healthcare-market-report',
     countryHub: '/healthcare-market-research/saudi-arabia',
     blogPillar: '/blog/saudi-arabia-healthcare-market-2026',
+    companyBofu: '/market-research-saudi-arabia-pharmaceutical',
   },
   uae: {
     hub: '/healthcare-market-research/uae',
     report: '/uae-healthcare-market-report',
     countryHub: '/healthcare-market-research/uae',
     blogPillar: '/blog/uae-healthcare-market-overview-2026',
+    companyBofu: '/uae-pharmaceutical-market-research',
   },
   kuwait: {
     hub: '/healthcare-market-research/kuwait',
@@ -128,6 +130,7 @@ const CLUSTER_PATHS = {
     report: '/egypt-healthcare-market-report',
     countryHub: '/healthcare-market-research/egypt',
     blogPillar: '/blog/healthcare-overview-egypt-market-2026',
+    companyBofu: '/egypt-pharmaceutical-market-research',
   },
   qatar: {
     hub: '/healthcare-market-research/qatar',
@@ -284,6 +287,9 @@ export function getInternalLinksForSlug(slug) {
   const links = [
     { href: '/healthcare-market-research', anchor: 'healthcare market research hub' },
     { href: paths.hub, anchor: `${cluster.replace(/-/g, ' ')} research programmes` },
+    ...(paths.companyBofu
+      ? [{ href: paths.companyBofu, anchor: 'healthcare market research company in Saudi Arabia' }]
+      : []),
     { href: paths.report, anchor: 'GCC and MENA market report' },
     { href: '/gcc-market-access-guide', anchor: 'GCC market access guide' },
     { href: '/sfda-market-access-strategy-saudi-arabia', anchor: 'SFDA registration strategy' },

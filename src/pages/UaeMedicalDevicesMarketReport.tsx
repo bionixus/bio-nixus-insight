@@ -150,13 +150,18 @@ const UaeMedicalDevicesMarketReport = () => {
             </p>
             <p className="text-muted-foreground leading-relaxed">
               See also:{' '}
+              <Link to="/uae-medtech-market-research" className="text-primary hover:underline font-medium">
+                MedTech market research company in UAE
+              </Link>
+              ,{' '}
               <Link to="/uae-healthcare-market-report" className="text-primary hover:underline font-medium">
                 UAE Healthcare Market Report
               </Link>
-              {' '}and{' '}
+              , and{' '}
               <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">
                 GCC Medical Devices Market Report
-              </Link>.
+              </Link>
+              .
             </p>
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
           </div>

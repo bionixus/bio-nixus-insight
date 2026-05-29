@@ -30,6 +30,8 @@ import KantarHealthAlternativeGcc from '@/pages/KantarHealthAlternativeGcc';
 import GfkAlternativeEgypt from '@/pages/GfkAlternativeEgypt';
 import NotFound from '@/pages/NotFound';
 import MarketResearch from '@/pages/MarketResearch';
+import MarketResearchByIndustry from '@/pages/MarketResearchByIndustry';
+import { buildIndustryMatrixRoutes } from '@/data/industryMatrixRoutes';
 import MarketResearchHome from '@/pages/MarketResearchHome';
 import MarketResearchSaudiArabiaPharmaceutical from '@/pages/MarketResearchSaudiArabiaPharmaceutical';
 import MarketResearchHealthcare from '@/pages/MarketResearchHealthcare';
@@ -38,6 +40,7 @@ import BionixusMarketResearchMiddleEast from '@/pages/BionixusMarketResearchMidd
 import QuantitativeHealthcareMarketResearchGuide from '@/pages/QuantitativeHealthcareMarketResearchGuide';
 import GccPharmaceuticalMarketResearch from '@/pages/GccPharmaceuticalMarketResearch';
 import UaePharmaceuticalMarketResearch from '@/pages/UaePharmaceuticalMarketResearch';
+import EgyptPharmaceuticalMarketResearch from '@/pages/EgyptPharmaceuticalMarketResearch';
 import SaudiPayerMarketAccessResearch from '@/pages/SaudiPayerMarketAccessResearch';
 import GccHcpRecruitmentMarketResearch from '@/pages/GccHcpRecruitmentMarketResearch';
 import HealthcareMarketResearchAgencyGcc from '@/pages/HealthcareMarketResearchAgencyGcc';
@@ -49,6 +52,9 @@ import HealthcareFieldworkMiddleEast from '@/pages/HealthcareFieldworkMiddleEast
 import RealWorldEvidence from '@/pages/RealWorldEvidence';
 import RealWorldEvidenceGcc from '@/pages/RealWorldEvidenceGcc';
 import HeorConsultingSaudiArabia from '@/pages/HeorConsultingSaudiArabia';
+import PharmaFieldworkSaudiArabia from '@/pages/PharmaFieldworkSaudiArabia';
+import PharmaFieldworkUae from '@/pages/PharmaFieldworkUae';
+import PharmaFieldworkEgypt from '@/pages/PharmaFieldworkEgypt';
 import PatientSupportProgramResearchGcc from '@/pages/PatientSupportProgramResearchGcc';
 import BudgetImpactModelSaudiArabia from '@/pages/BudgetImpactModelSaudiArabia';
 import SpanishMarketAccess from '@/pages/SpanishMarketAccess';
@@ -214,6 +220,7 @@ export const routes: RouteObject[] = [
   { path: '/gfk-alternative-egypt', element: <GfkAlternativeEgypt /> },
   { path: '/gcc-pharmaceutical-market-research', element: <GccPharmaceuticalMarketResearch /> },
   { path: '/uae-pharmaceutical-market-research', element: <UaePharmaceuticalMarketResearch /> },
+  { path: '/egypt-pharmaceutical-market-research', element: <EgyptPharmaceuticalMarketResearch /> },
   { path: '/saudi-payer-market-access-research', element: <SaudiPayerMarketAccessResearch /> },
   { path: '/gcc-hcp-recruitment-market-research', element: <GccHcpRecruitmentMarketResearch /> },
   { path: '/healthcare-market-research-agency-gcc', element: <HealthcareMarketResearchAgencyGcc /> },
@@ -225,6 +232,9 @@ export const routes: RouteObject[] = [
   { path: '/real-world-evidence', element: <RealWorldEvidence /> },
   { path: '/real-world-evidence-gcc', element: <RealWorldEvidenceGcc /> },
   { path: '/heor-consulting-saudi-arabia', element: <HeorConsultingSaudiArabia /> },
+  { path: '/pharma-fieldwork-saudi-arabia', element: <PharmaFieldworkSaudiArabia /> },
+  { path: '/pharma-fieldwork-uae', element: <PharmaFieldworkUae /> },
+  { path: '/pharma-fieldwork-egypt', element: <PharmaFieldworkEgypt /> },
   { path: '/patient-support-program-research-gcc', element: <PatientSupportProgramResearchGcc /> },
   { path: '/budget-impact-model-saudi-arabia', element: <BudgetImpactModelSaudiArabia /> },
   {
@@ -343,6 +353,8 @@ export const routes: RouteObject[] = [
   { path: '/ar/market-research-kuwait', element: <ArMarketResearchKuwait /> },
   { path: '/ar/market-research-egypt', element: <ArMarketResearchEgypt /> },
   { path: '/verify-email', element: <VerifyEmail /> },
+  { path: '/market-research-by-industry', element: <MarketResearchByIndustry /> },
+  ...buildIndustryMatrixRoutes(),
   { path: '/admin/dashboard', element: suspensePage(<AdminDashboard />) },
   { path: '/admin/login', element: suspensePage(<AdminLogin />) },
   { path: '/admin/import-subscribers', element: suspensePage(<AdminImportSubscribers />) },

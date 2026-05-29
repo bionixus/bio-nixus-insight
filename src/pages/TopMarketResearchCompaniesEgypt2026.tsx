@@ -510,6 +510,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
             <h2 className="text-xl font-display font-semibold text-foreground mb-6">Related Resources</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
+                { to: '/egypt-pharmaceutical-market-research', label: 'Healthcare Market Research Company in Egypt', desc: 'BioNixus BOFU page for EDA-aligned pharma and healthcare research.' },
                 { to: '/strategic-portfolio', label: 'BioNixus Strategic Portfolio', desc: 'Full portfolio of market research and consulting capabilities.' },
                 { to: '/pharmaceutical-companies-egypt', label: 'Pharmaceutical Companies in Egypt', desc: '20+ pharma companies, $5.8B market data, EDA guide.' },
                 { to: '/healthcare-market-research/egypt', label: 'Healthcare Market Research in Egypt', desc: 'Country hub with FAQs, key stats, and therapy focus.' },

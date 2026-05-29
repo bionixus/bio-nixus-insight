@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, BarChart3, MessageSquareQuote, Trophy, ShieldCheck, FlaskConical, Stethoscope } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
+import { CTASection } from '@/components/shared/CTASection';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ExecutiveDecisionBlock, ProofMetricGrid } from '@/components/page/PremiumPageSections';
+import { MARKET_RESEARCH_HUB_SECTIONS } from '@/data/marketResearchCountryContent';
 
 const pageUrl = 'https://www.bionixus.com/market-research';
 const faqItems = [
@@ -17,6 +20,21 @@ const faqItems = [
     question: 'Can BioNixus combine Saudi, GCC, and Europe evidence in one program?',
     answer:
       'Yes. We design unified programs with local modules so leadership gets cross-market comparability without losing country-specific insight quality.',
+  },
+  {
+    question: 'How is pharmaceutical market research different from consumer research?',
+    answer:
+      'Pharmaceutical market research must reflect clinical pathways, payer and committee logic, regulatory milestones, and scarce specialist populations—requirements consumer panels rarely satisfy.',
+  },
+  {
+    question: 'What countries does BioNixus cover from this hub?',
+    answer:
+      'Country landing pages include Saudi Arabia (KSA and Saudi keyword routes), UAE, Kuwait, and Egypt, plus links to the healthcare market research hub for UK, EU5, and additional MENA markets.',
+  },
+  {
+    question: 'How fast can a market research program start?',
+    answer:
+      'After a short objective workshop and feasibility check, many modules move to field within one to two weeks; complex multi-country programs take longer due to ethics and hospital access steps.',
   },
 ];
 
@@ -60,7 +78,13 @@ const MarketResearch = () => {
       <Navbar />
 
       <main>
-        <section className="section-padding pt-24 pb-12">
+        <BreadcrumbNav
+          items={[
+            { name: 'Home', href: '/' },
+            { name: 'Market Research', href: '/market-research' },
+          ]}
+        />
+        <section className="section-padding pt-16 pb-12">
           <div className="container-wide max-w-5xl mx-auto">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-4">
               Complete Guide to Market Research Services
@@ -72,9 +96,12 @@ const MarketResearch = () => {
               geography.
             </p>
             <p className="text-muted-foreground leading-relaxed max-w-4xl mt-4">
+              {MARKET_RESEARCH_HUB_SECTIONS.introExtra}
+            </p>
+            <p className="text-muted-foreground leading-relaxed max-w-4xl mt-4">
               If your immediate priority is Saudi execution, begin with our{' '}
-              <Link to="/healthcare-market-research/saudi-arabia" className="text-primary underline">
-                pharmaceutical market research in Saudi Arabia
+              <Link to="/market-research-saudi-arabia-pharmaceutical" className="text-primary underline">
+                healthcare market research company in Saudi Arabia
               </Link>{' '}
               page. For broader healthcare-specific planning, use{' '}
               <Link to="/market-research-healthcare" className="text-primary underline">
@@ -96,6 +123,12 @@ const MarketResearch = () => {
               <Link to="/market-research-saudi" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 Market Research Saudi
               </Link>
+              <Link
+                to="/market-research-saudi-arabia-pharmaceutical"
+                className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
+              >
+                Pharma market research company Saudi Arabia
+              </Link>
               <Link to="/market-research-kuwait" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 Market Research Kuwait
               </Link>
@@ -104,6 +137,24 @@ const MarketResearch = () => {
               </Link>
               <Link to="/pharmaceutical-companies-uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 Pharma market research top companies in UAE
+              </Link>
+              <Link
+                to="/uae-pharmaceutical-market-research"
+                className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
+              >
+                Healthcare market research company UAE
+              </Link>
+              <Link
+                to="/egypt-pharmaceutical-market-research"
+                className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
+              >
+                Healthcare market research company Egypt
+              </Link>
+              <Link
+                to="/market-research-by-industry"
+                className="rounded-lg border border-border bg-card p-4 text-primary hover:underline md:col-span-2 lg:col-span-3"
+              >
+                Market research by industry — Saudi Arabia, UAE &amp; Egypt (MedTech, FMCG, telecom, and more)
               </Link>
             </div>
           </div>
@@ -245,6 +296,53 @@ const MarketResearch = () => {
           </div>
         </section>
 
+        <section className="section-padding py-10">
+          <div className="container-wide max-w-5xl mx-auto space-y-4">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground">
+              {MARKET_RESEARCH_HUB_SECTIONS.whyHeading}
+            </h2>
+            {MARKET_RESEARCH_HUB_SECTIONS.whyParagraphs.map((paragraph) => (
+              <p key={paragraph.slice(0, 40)} className="text-muted-foreground leading-relaxed">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </section>
+
+        <section className="section-padding py-10 bg-muted/20">
+          <div className="container-wide max-w-6xl mx-auto">
+            <h2 className="text-2xl font-display font-semibold text-foreground mb-4">
+              {MARKET_RESEARCH_HUB_SECTIONS.methodHeading}
+            </h2>
+            <div className="overflow-x-auto rounded-xl border border-border bg-card">
+              <table className="min-w-full text-sm">
+                <thead className="bg-muted/40">
+                  <tr>
+                    <th className="text-left p-4 font-semibold text-foreground">Method</th>
+                    <th className="text-left p-4 font-semibold text-foreground">Best when</th>
+                    <th className="text-left p-4 font-semibold text-foreground">Primary output</th>
+                    <th className="text-left p-4 font-semibold text-foreground">Deep dive</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {MARKET_RESEARCH_HUB_SECTIONS.methodRows.map((row) => (
+                    <tr key={row.method} className="border-t border-border">
+                      <td className="p-4 text-foreground font-medium">{row.method}</td>
+                      <td className="p-4 text-muted-foreground">{row.when}</td>
+                      <td className="p-4 text-muted-foreground">{row.output}</td>
+                      <td className="p-4">
+                        <Link to={row.link} className="text-primary underline">
+                          Open guide
+                        </Link>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
         <section className="section-padding py-8">
           <div className="container-wide max-w-6xl mx-auto">
             <h2 className="text-2xl font-display font-semibold text-foreground mb-4">Compare market research service types</h2>
@@ -355,6 +453,8 @@ const MarketResearch = () => {
             </div>
           </div>
         </section>
+
+        <CTASection variant="research-proposal" />
       </main>
 
       <Footer />

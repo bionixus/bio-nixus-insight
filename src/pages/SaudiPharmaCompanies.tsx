@@ -185,7 +185,14 @@ const SaudiPharmaCompanies = () => {
 
         <section className="section-padding py-16" id="bionixus-support"><div className="container-wide max-w-5xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">How BioNixus Supports Pharma Companies in Saudi Arabia</h2>
-          <p className="text-muted-foreground mb-10 max-w-3xl">BioNixus is a leading healthcare market research company with deep expertise in the Saudi pharmaceutical market. We help pharma, biotech, and medtech companies with:</p>
+          <p className="text-muted-foreground mb-10 max-w-3xl">
+            BioNixus is a leading healthcare market research company with deep expertise in the Saudi pharmaceutical market.
+            For company-level KSA programmes, see our{' '}
+            <Link to="/market-research-saudi-arabia-pharmaceutical" className="text-primary hover:underline font-medium">
+              market research company for Saudi pharma
+            </Link>
+            . We help pharma, biotech, and medtech companies with:
+          </p>
           <div className="grid md:grid-cols-2 gap-6 mb-10">{[
             { title: 'Physician Surveys & KOL Mapping', desc: 'Large-scale quantitative and qualitative research with Saudi physicians across MOH, military, National Guard, and private hospitals. Arabic-English bilingual capabilities.' },
             { title: 'Market Access & SFDA Strategy', desc: 'SFDA formulary strategy, competitive pricing analysis, reimbursement landscape, and payer research to optimize commercial success in the Kingdom.' },

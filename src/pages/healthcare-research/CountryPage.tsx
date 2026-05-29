@@ -347,6 +347,21 @@ export default function CountryPage() {
             <h2 className="text-3xl font-display font-semibold">
               Deep Dive: The 2026 Saudi Pharmaceutical Landscape
             </h2>
+            <p className="text-base leading-relaxed text-muted-foreground">
+              For BOFU company-intent searches, use our{' '}
+              <Link to="/market-research-saudi-arabia-pharmaceutical" className="text-primary underline font-medium">
+                healthcare market research company in Saudi Arabia
+              </Link>{' '}
+              page; for KSA keyword variants see{' '}
+              <Link to="/market-research-ksa" className="text-primary underline font-medium">
+                market research KSA
+              </Link>{' '}
+              and{' '}
+              <Link to="/market-research-saudi" className="text-primary underline font-medium">
+                market research Saudi
+              </Link>
+              .
+            </p>
             <div className="space-y-6 text-base leading-relaxed text-muted-foreground">
               <p>
                 Saudi pharmaceutical market strategy is increasingly shaped by Vision 2030 priorities, including
@@ -390,12 +405,54 @@ export default function CountryPage() {
               </p>
               <p>
                 For focused Saudi execution planning, visit our{' '}
-                <Link to="/healthcare-market-research/saudi-arabia" className="text-primary underline">
-                  pharma market research company in Saudi Arabia page
+                <Link to="/market-research-saudi-arabia-pharmaceutical" className="text-primary underline">
+                  healthcare market research company in Saudi Arabia
                 </Link>{' '}
                 and connect country-level oncology evidence to field and access strategy.
               </p>
             </div>
+          </div>
+        </section>
+      )}
+
+      {config.slug === 'uae' && (
+        <section className="py-12 bg-card border-y border-border">
+          <div className="container-wide max-w-5xl mx-auto space-y-4">
+            <h2 className="text-3xl font-display font-semibold text-foreground">
+              UAE pharmaceutical market research — company intent
+            </h2>
+            <p className="text-base leading-relaxed text-muted-foreground">
+              For BOFU company-intent searches, use our{' '}
+              <Link to="/uae-pharmaceutical-market-research" className="text-primary underline font-medium">
+                healthcare market research company in UAE
+              </Link>{' '}
+              page; for mid-funnel planning see{' '}
+              <Link to="/market-research-uae" className="text-primary underline font-medium">
+                market research in the UAE
+              </Link>
+              .
+            </p>
+          </div>
+        </section>
+      )}
+
+      {config.slug === 'egypt' && (
+        <section className="py-12 bg-card border-y border-border">
+          <div className="container-wide max-w-5xl mx-auto space-y-4">
+            <h2 className="text-3xl font-display font-semibold text-foreground">
+              Egypt pharmaceutical market research — company intent
+            </h2>
+            <p className="text-base leading-relaxed text-muted-foreground">
+              For BOFU company-intent searches, use our{' '}
+              <Link to="/egypt-pharmaceutical-market-research" className="text-primary underline font-medium">
+                healthcare market research company in Egypt
+              </Link>{' '}
+              page; for mid-funnel planning see{' '}
+              <Link to="/market-research-egypt" className="text-primary underline font-medium">
+                market research in Egypt
+              </Link>
+              .
+            </p>
           </div>
         </section>
       )}
@@ -423,6 +480,10 @@ export default function CountryPage() {
               )}
               {config.slug === 'uae' && (
                 <>
+                  <Link to="/uae-pharmaceutical-market-research" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
+                    <h3 className="text-base font-semibold text-foreground mb-2">Healthcare Market Research Company in UAE</h3>
+                    <p className="text-sm text-muted-foreground">BOFU page for DHA, DOH, MOHAP, and emirate-aware launch evidence.</p>
+                  </Link>
                   <Link to="/blog/market-access-strategy-uae" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
                     <h3 className="text-base font-semibold text-foreground mb-2">UAE Market Access Strategy</h3>
                     <p className="text-sm text-muted-foreground">DOH, DHA, and MOHAP formulary inclusion tactics.</p>
@@ -439,6 +500,10 @@ export default function CountryPage() {
               )}
               {config.slug === 'egypt' && (
                 <>
+                  <Link to="/egypt-pharmaceutical-market-research" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
+                    <h3 className="text-base font-semibold text-foreground mb-2">Healthcare Market Research Company in Egypt</h3>
+                    <p className="text-sm text-muted-foreground">BOFU page for EDA, UHI, bilingual fieldwork, and Egypt launch evidence.</p>
+                  </Link>
                   <Link to="/blog/top-market-research-companies-egypt-2026" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
                     <h3 className="text-base font-semibold text-foreground mb-2">Top Market Research Companies in Egypt (2026)</h3>
                     <p className="text-sm text-muted-foreground">Independent guide to 5 leading firms for healthcare, pharma, and consumer research.</p>

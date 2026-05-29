@@ -350,13 +350,22 @@ const BionixusMarketResearchMiddleEast = () => {
                 For teams comparing broader pharmaceutical market research and healthcare market research pathways, use this
                 page as the central pillar and route execution to the Saudi and UAE company-intent pages:
                 {' '}
-                <Link to="/healthcare-market-research/saudi-arabia" className="text-primary underline">
+                <Link to="/market-research-saudi-arabia-pharmaceutical" className="text-primary underline">
                   pharma market research company in Saudi Arabia
                 </Link>
                 {' '}and{' '}
-                <Link to="/healthcare-market-research/uae" className="text-primary underline">
+                <Link to="/uae-pharmaceutical-market-research" className="text-primary underline">
                   pharma market research company in UAE
-                </Link>.
+                </Link>
+                , and{' '}
+                <Link to="/egypt-pharmaceutical-market-research" className="text-primary underline">
+                  pharma market research company in Egypt
+                </Link>
+                . For other industries (MedTech, FMCG, telecom, and more), see{' '}
+                <Link to="/market-research-by-industry" className="text-primary underline">
+                  market research by industry
+                </Link>
+                .
               </p>
               <ul className="space-y-2 mb-7">
                 <li className="flex items-start gap-2 text-sm text-muted-foreground">

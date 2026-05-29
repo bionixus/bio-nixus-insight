@@ -159,17 +159,38 @@ export default function HubPage() {
             <Link to="/healthcare-market-research/uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
               UAE healthcare market research
             </Link>
+            <Link to="/uae-pharmaceutical-market-research" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              Healthcare market research company in UAE
+            </Link>
+            <Link to="/market-research-uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              Market research in the UAE
+            </Link>
             <Link to="/healthcare-market-research/saudi-arabia" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
               Saudi Arabia pharmaceutical market research
             </Link>
+            <Link to="/market-research-saudi-arabia-pharmaceutical" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              Healthcare market research company in Saudi Arabia
+            </Link>
+            <Link to="/market-research-ksa" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              Market research KSA
+            </Link>
             <Link to="/healthcare-market-research/egypt" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
               Egypt healthcare market research
+            </Link>
+            <Link to="/egypt-pharmaceutical-market-research" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              Healthcare market research company in Egypt
+            </Link>
+            <Link to="/market-research-egypt" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              Market research in Egypt
             </Link>
             <Link to="/healthcare-market-research/therapy/oncology" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
               Oncology therapy research
             </Link>
             <Link to="/healthcare-market-research/therapy/immunology" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
               Immunology therapy research
+            </Link>
+            <Link to="/market-research-by-industry" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              Market research by industry (KSA, UAE, Egypt)
             </Link>
             <Link to="/gcc-pharma-market-report-2026" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
               GCC pharmaceutical market report
@@ -431,18 +452,25 @@ export default function HubPage() {
               <p className="text-sm text-muted-foreground">BOFU guide for selecting a GCC healthcare and pharma research partner.</p>
             </Link>
             <Link
-              to="/healthcare-market-research/saudi-arabia"
+              to="/market-research-saudi-arabia-pharmaceutical"
               className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors"
             >
-              <h3 className="text-base font-semibold text-foreground mb-2">Pharma Market Research Company in Saudi Arabia</h3>
-              <p className="text-sm text-muted-foreground">KSA-focused page for SFDA, launch, and market access execution planning.</p>
+              <h3 className="text-base font-semibold text-foreground mb-2">Healthcare Market Research Company in Saudi Arabia</h3>
+              <p className="text-sm text-muted-foreground">BOFU page for SFDA, NUPCO, bilingual fieldwork, and KSA launch evidence.</p>
             </Link>
             <Link
-              to="/healthcare-market-research/uae"
+              to="/uae-pharmaceutical-market-research"
               className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors"
             >
-              <h3 className="text-base font-semibold text-foreground mb-2">Pharma Market Research Company in UAE</h3>
-              <p className="text-sm text-muted-foreground">UAE-focused page for emirate-specific evidence and access planning.</p>
+              <h3 className="text-base font-semibold text-foreground mb-2">Healthcare Market Research Company in UAE</h3>
+              <p className="text-sm text-muted-foreground">BOFU page for DHA, DOH, MOHAP, bilingual fieldwork, and UAE launch evidence.</p>
+            </Link>
+            <Link
+              to="/egypt-pharmaceutical-market-research"
+              className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors"
+            >
+              <h3 className="text-base font-semibold text-foreground mb-2">Healthcare Market Research Company in Egypt</h3>
+              <p className="text-sm text-muted-foreground">BOFU page for EDA, UHI, bilingual fieldwork, and Egypt launch evidence.</p>
             </Link>
           </div>
         </div>

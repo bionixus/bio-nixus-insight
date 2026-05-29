@@ -471,8 +471,8 @@ const GccMarketAccessGuide = () => {
               <Link to="/bionixus-market-research-middle-east" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 Pharmaceutical market research Middle East for launch planning
               </Link>
-              <Link to="/healthcare-market-research/uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-                Pharma market research company UAE for emirate evidence execution
+              <Link to="/uae-pharmaceutical-market-research" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                Healthcare market research company in UAE for emirate evidence execution
               </Link>
               <Link to="/real-world-evidence-gcc" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 Real world evidence GCC to support payer and access decisions

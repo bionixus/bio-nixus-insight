@@ -157,13 +157,18 @@ const EgyptMedicalDevicesMarketReport = () => {
             </p>
             <p className="text-muted-foreground leading-relaxed">
               See also:{' '}
+              <Link to="/egypt-medtech-market-research" className="text-primary hover:underline font-medium">
+                MedTech market research company in Egypt
+              </Link>
+              ,{' '}
               <Link to="/egypt-healthcare-market-report" className="text-primary hover:underline font-medium">
                 Egypt Healthcare Market Report
               </Link>
-              {' '}and{' '}
+              , and{' '}
               <Link to="/market-research-egypt" className="text-primary hover:underline font-medium">
                 Egypt Market Research
-              </Link>.
+              </Link>
+              .
             </p>
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
           </div>

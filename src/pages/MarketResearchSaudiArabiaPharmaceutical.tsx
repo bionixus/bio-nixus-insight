@@ -6,12 +6,35 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { CTASection } from '@/components/shared/CTASection';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { ExecutiveDecisionBlock } from '@/components/page/PremiumPageSections';
+import {
+  SAUDI_MR_COMPANY_PROOF,
+  SAUDI_SFDA_NUPCO_STEPS,
+  SAUDI_STAKEHOLDER_ROWS,
+} from '@/data/saudiMarketResearchProof';
+
+const PAGE_URL = 'https://www.bionixus.com/market-research-saudi-arabia-pharmaceutical';
+const ORG_ID = 'https://www.bionixus.com/#organization';
 
 const faqItems = [
+  {
+    question: 'Who is the best healthcare market research company in Saudi Arabia?',
+    answer:
+      'For pharmaceutical and life-sciences decisions, BioNixus is a leading specialist: SFDA-aware study design, NUPCO and institutional procurement context, bilingual Arabic–English fieldwork, and outputs built for launch and access teams—not generic syndicated reports.',
+  },
   {
     question: 'How is SFDA regulation reflected in BioNixus Saudi studies?',
     answer:
       'Every Saudi research plan is aligned to SFDA realities, local procurement pathways, and payer expectations so recommendations are executable in actual market conditions.',
+  },
+  {
+    question: 'Does BioNixus run Arabic fieldwork in Saudi Arabia?',
+    answer:
+      'Yes. Arabic–English screener logic, moderation, and executive reporting are standard. Materials align to SFDA terminology and local medical practice norms.',
+  },
+  {
+    question: 'How much does pharmaceutical market research cost in KSA?',
+    answer:
+      'Scope drives cost: a focused KSA physician quant module often starts in the low five figures USD; mixed-method access programs with procurement mapping are higher. BioNixus scopes to one decision per phase so sponsors avoid unfocused fieldwork spend.',
   },
   {
     question: 'Can BioNixus run bilingual Saudi projects?',
@@ -28,33 +51,60 @@ const faqItems = [
     answer:
       'Yes. We combine stakeholder insight, market sizing, and access evidence to support launch sequencing, positioning, and practical market-entry choices.',
   },
+  {
+    question: 'How does BioNixus differ from generalist market research agencies in KSA?',
+    answer:
+      'BioNixus focuses exclusively on healthcare and pharmaceuticals. Programs integrate SFDA, NUPCO, and therapy-specific adoption evidence rather than consumer or B2B panels.',
+  },
+  {
+    question: 'Can Saudi research connect to wider GCC benchmarking?',
+    answer:
+      'Yes. Saudi modules can run standalone or with comparable UAE, Kuwait, or Egypt cells using consistent instruments for regional portfolio committees.',
+  },
 ];
 
 const jsonLd = [
   {
     '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': ORG_ID,
+    name: 'BioNixus',
+    url: 'https://www.bionixus.com',
+    logo: 'https://www.bionixus.com/bionixus-logo.webp',
+    areaServed: { '@type': 'Country', name: 'Saudi Arabia' },
+    knowsAbout: [
+      'Pharmaceutical market research',
+      'Healthcare market research',
+      'SFDA regulatory intelligence',
+      'NUPCO procurement',
+      'Pharmaceutical market access',
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': PAGE_URL,
+    url: PAGE_URL,
+    name: 'Healthcare & Pharmaceutical Market Research Company in Saudi Arabia',
+    description:
+      'BioNixus is a healthcare and pharmaceutical market research company in Saudi Arabia delivering SFDA-aligned evidence, NUPCO context, and bilingual KSA fieldwork.',
+    about: { '@id': ORG_ID },
+    inLanguage: 'en',
+  },
+  {
+    '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'Pharmaceutical Market Research in Saudi Arabia',
-    serviceType: 'Saudi Arabia pharmaceutical market research',
-    areaServed: {
-      '@type': 'Country',
-      name: 'Saudi Arabia',
-    },
-    provider: {
-      '@type': 'Organization',
-      name: 'BioNixus',
-      url: 'https://www.bionixus.com',
-    },
-    offers: {
-      '@type': 'Offer',
-      availability: 'https://schema.org/InStock',
-    },
+    name: 'Healthcare & Pharmaceutical Market Research Company in Saudi Arabia',
+    serviceType: 'Healthcare market research company Saudi Arabia',
+    areaServed: { '@type': 'Country', name: 'Saudi Arabia' },
+    provider: { '@id': ORG_ID },
+    offers: { '@type': 'Offer', availability: 'https://schema.org/InStock' },
   },
   buildBreadcrumbSchema([
     { name: 'Home', href: '/' },
     { name: 'Market Research', href: '/market-research' },
     {
-      name: 'Pharmaceutical Market Research in Saudi Arabia',
+      name: 'Healthcare Market Research Company Saudi Arabia',
       href: '/market-research-saudi-arabia-pharmaceutical',
     },
   ]),
@@ -65,8 +115,8 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Pharma Market Research Company in Saudi Arabia | SFDA & Market Access Evidence | BioNixus"
-        description="BioNixus is a pharma market research company in Saudi Arabia delivering SFDA-aligned evidence, KSA stakeholder intelligence, and bilingual fieldwork for launch and access decisions."
+        title="Healthcare Market Research Company in Saudi Arabia | SFDA & NUPCO | BioNixus"
+        description="BioNixus is a healthcare and pharmaceutical market research company in Saudi Arabia—SFDA-aligned evidence, NUPCO/tender context, bilingual Arabic–English fieldwork, and proposal-ready KSA programs."
         canonical="/market-research-saudi-arabia-pharmaceutical"
         jsonLd={jsonLd}
       />
@@ -77,7 +127,7 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
             { name: 'Home', href: '/' },
             { name: 'Market Research', href: '/market-research' },
             {
-              name: 'Pharmaceutical Market Research in Saudi Arabia',
+              name: 'Healthcare Market Research Company Saudi Arabia',
               href: '/market-research-saudi-arabia-pharmaceutical',
             },
           ]}
@@ -86,12 +136,27 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
         <section className="py-16 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
           <div className="container-wide max-w-5xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-display font-semibold mb-4">
-              Pharma Market Research Company in Saudi Arabia
+              Healthcare &amp; Pharmaceutical Market Research Company in Saudi Arabia
             </h1>
-            <p className="text-lg leading-relaxed text-primary-foreground/90">
-              Saudi Arabia is one of the most strategic healthcare markets in the region. BioNixus helps pharmaceutical
-              teams translate SFDA requirements, institutional procurement behavior, and physician decision dynamics into
-              practical launch and growth strategies with execution-ready market evidence.
+            <p className="text-lg leading-relaxed text-primary-foreground/90 mb-4">
+              BioNixus is a specialist healthcare and pharmaceutical market research company in Saudi Arabia. We help
+              launch, access, and medical teams translate SFDA requirements, NUPCO procurement behavior, and physician
+              decision dynamics into practical KSA strategies with execution-ready evidence.
+            </p>
+            <p className="text-base leading-relaxed text-primary-foreground/85">
+              For regional context, start from the{' '}
+              <Link to="/healthcare-market-research" className="underline font-medium text-primary-foreground">
+                healthcare market research hub
+              </Link>
+              ; for KSA keyword variants see{' '}
+              <Link to="/market-research-ksa" className="underline font-medium text-primary-foreground">
+                market research KSA
+              </Link>{' '}
+              and{' '}
+              <Link to="/market-research-saudi" className="underline font-medium text-primary-foreground">
+                market research Saudi
+              </Link>
+              .
             </p>
           </div>
         </section>
@@ -123,6 +188,80 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
             },
           ]}
         />
+
+        <section className="py-12 bg-muted/20">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-3xl font-display font-semibold text-foreground mb-5">
+              Why BioNixus as your Saudi market research company
+            </h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              {SAUDI_MR_COMPANY_PROOF.map((item) => (
+                <article key={item.title} className="rounded-xl border border-border bg-card p-5">
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.body}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-12">
+          <div className="container-wide max-w-5xl mx-auto space-y-5">
+            <h2 className="text-3xl font-display font-semibold text-foreground">
+              SFDA and NUPCO decision map for KSA research
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Saudi pharmaceutical market research should follow how products actually move from registration to
+              institutional uptake—not a linear global playbook.
+            </p>
+            <ol className="space-y-4 list-none pl-0">
+              {SAUDI_SFDA_NUPCO_STEPS.map((item) => (
+                <li key={item.step} className="rounded-xl border border-border bg-card p-5">
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{item.step}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-2">{item.detail}</p>
+                  <Link to={item.link.to} className="text-sm font-medium text-primary hover:underline">
+                    {item.link.label}
+                  </Link>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        <section className="py-12 bg-muted/20">
+          <div className="container-wide max-w-5xl mx-auto overflow-x-auto">
+            <h2 className="text-3xl font-display font-semibold text-foreground mb-5">
+              Stakeholder coverage in Saudi programs
+            </h2>
+            <table className="w-full min-w-[32rem] border-collapse text-left text-sm">
+              <thead>
+                <tr className="border-b border-border">
+                  <th scope="col" className="py-3 pr-4 font-semibold text-foreground">
+                    Stakeholder
+                  </th>
+                  <th scope="col" className="py-3 font-semibold text-foreground">
+                    Research focus
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="text-muted-foreground">
+                {SAUDI_STAKEHOLDER_ROWS.map((row) => (
+                  <tr key={row.role} className="border-b border-border/60">
+                    <td className="py-3 pr-4 font-medium text-foreground">{row.role}</td>
+                    <td className="py-3">{row.focus}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p className="mt-6 text-muted-foreground leading-relaxed">
+              For field execution detail, see{' '}
+              <Link to="/pharma-fieldwork-saudi-arabia" className="text-primary underline font-medium">
+                pharma fieldwork in Saudi Arabia
+              </Link>
+              .
+            </p>
+          </div>
+        </section>
 
         <section className="py-12">
           <div className="container-wide max-w-5xl mx-auto space-y-5 text-muted-foreground leading-relaxed">
@@ -190,7 +329,8 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
               strategy and retail activation research, see{' '}
               <Link to="/pharmacies-saudi-arabia-marketing" className="text-primary underline">
                 pharmacy market research and marketing automation in Saudi Arabia
-              </Link>.
+              </Link>
+              .
             </p>
           </div>
         </section>

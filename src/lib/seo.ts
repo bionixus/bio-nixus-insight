@@ -23,7 +23,7 @@ export const seoByLanguage: Record<Language, {
     // truncated tail and the brand name "Bionixus" / "BioNixus" wins its own SERP at #1.
     title: 'BioNixus | Healthcare Market Research — GCC & MENA',
     description: 'BioNixus is the leading healthcare market research company for GCC and MENA. US-headquartered with London and Cairo offices — pharmaceutical insights across UAE, Saudi Arabia, Egypt, Kuwait, Qatar, and Europe.',
-    keywords: 'healthcare market research, MENA market research, pharmaceutical consulting, competitive intelligence, market access, clinical trials, UAE healthcare research, Saudi Arabia pharma research, biotech, life sciences',
+    keywords: 'healthcare market research, MENA market research, pharmaceutical consulting, competitive intelligence, market access, clinical trials, UAE healthcare research, healthcare market research company UAE, pharma market research company UAE, Saudi Arabia pharma research, healthcare market research company Saudi Arabia, pharma market research company KSA, healthcare market research company Egypt, pharma market research company Egypt, market research company Egypt, market research Egypt, medtech market research Saudi Arabia, medtech market research UAE, medtech market research Egypt, FMCG market research Middle East, financial services market research GCC, biotech, life sciences',
     canonicalPath: '/',
   },
   de: {
