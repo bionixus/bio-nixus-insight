@@ -28,6 +28,38 @@ import { useSanityBlog } from '@/hooks/useSanityBlog';
 import { fetchCaseStudies } from '@/lib/sanity-case-studies';
 import { LOW_INTERNAL_LINK_PATHS } from '@/lib/lowInternalLinkTargets.generated';
 import { INTERNAL_LINK_PRIORITY_TARGETS } from '@/lib/internalLinkAmplificationTargets';
+import {
+  MATRIX_COUNTRIES,
+  MATRIX_INDUSTRIES,
+  MATRIX_INDUSTRY_SLUGS_ORDERED,
+  getIndustryBofuPath,
+  getIndustryListiclePath,
+  type MatrixCountrySlug,
+} from '@/data/industryMarketResearchMatrix';
+
+const MATRIX_COUNTRY_ORDER: MatrixCountrySlug[] = ['saudi-arabia', 'uae', 'egypt'];
+
+const industryMatrixGroups = MATRIX_INDUSTRY_SLUGS_ORDERED.filter(
+  (slug) => MATRIX_INDUSTRIES[slug].published,
+).map((industrySlug) => {
+  const industry = MATRIX_INDUSTRIES[industrySlug];
+  const links = MATRIX_COUNTRY_ORDER.flatMap((countrySlug) => {
+    const country = MATRIX_COUNTRIES[countrySlug];
+    return [
+      {
+        to: getIndustryBofuPath(countrySlug, industrySlug),
+        label: `${industry.displayName} market research company — ${country.label}`,
+      },
+      {
+        to: getIndustryListiclePath(countrySlug, industrySlug),
+        label: `Top ${industry.displayNameShort} market research firms — ${country.label} (2026)`,
+      },
+    ];
+  });
+  return { industrySlug, title: industry.displayName, links };
+});
+
+const industryMatrixLinkCount = industryMatrixGroups.reduce((n, g) => n + g.links.length, 0);
 
 const staticLinks = [
   { to: '/', label: 'Home' },
@@ -225,6 +257,15 @@ function categorizePath(path: string) {
   if (path.startsWith('/global-websites/')) return 'Global Websites';
   if (path.startsWith('/healthcare-market-research/')) return 'Healthcare Country Pages';
   if (path.startsWith('/pharmaceutical-companies-')) return 'Pharmaceutical Company Guides';
+  if (path.startsWith('/insights/top-') && path.includes('-market-research-companies-')) {
+    return 'Industry Market Research';
+  }
+  if (
+    /^\/(saudi-arabia|uae|egypt)-[a-z0-9-]+-market-research$/.test(path) &&
+    path !== '/market-research-by-industry'
+  ) {
+    return 'Industry Market Research';
+  }
   if (/^\/(ar|de|fr|es|zh)(\/|$)/.test(path)) return 'Language & Localized Pages';
   if (path.startsWith('/services/')) return 'Service Pages';
   return 'Core & Strategic Pages';
@@ -236,6 +277,7 @@ const tocNav = [
   { id: 'section-services', label: 'Services' },
   { id: 'section-pharma', label: 'Pharma guides' },
   { id: 'section-reports', label: 'Market reports' },
+  { id: 'section-industry', label: 'Industry matrix' },
   { id: 'section-healthcare', label: 'Healthcare geography' },
   { id: 'section-locales', label: 'Languages' },
   { id: 'section-blog', label: 'Blog & insights' },
@@ -353,6 +395,7 @@ export default function SiteMapPage() {
     'Global Websites',
     'Healthcare Country Pages',
     'Pharmaceutical Company Guides',
+    'Industry Market Research',
     'Blog Insights',
     'Case Studies',
   ];
@@ -365,7 +408,7 @@ export default function SiteMapPage() {
         <title>Sitemap | BioNixus — Healthcare &amp; Pharmaceutical Intelligence Directory</title>
         <meta
           name="description"
-          content="Structured BioNixus directory of services, blog articles, case studies, country hubs, market reports, and pharmaceutical intelligence pages—organized for marketing, access, and research leaders."
+          content="Structured BioNixus directory of services, industry market research (KSA, UAE, Egypt), blog articles, case studies, country hubs, market reports, and pharmaceutical intelligence—organized for marketing, access, and research leaders."
         />
         <link rel="canonical" href={canonicalUrl} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
@@ -442,12 +485,13 @@ export default function SiteMapPage() {
                 </Link>
               </div>
 
-              <dl className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
+              <dl className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
                 {[
+                  { label: 'XML index', value: '539' },
                   { label: 'Core routes', value: String(staticLinks.length) },
+                  { label: 'Industry matrix', value: String(industryMatrixLinkCount) },
                   { label: 'Report pages', value: String(marketReportLinks.length) },
                   { label: 'Live articles', value: String(blogPosts.length) },
-                  { label: 'Case studies', value: String(caseStudies.length) },
                 ].map((stat) => (
                   <div
                     key={stat.label}
@@ -651,6 +695,41 @@ export default function SiteMapPage() {
                       </li>
                     ))}
                   </ul>
+                </SectionShell>
+
+                <SectionShell
+                  id="section-industry"
+                  icon={LayoutGrid}
+                  title="Market research by industry (KSA, UAE, Egypt)"
+                  description="Sixteen industries × three countries: BOFU company-intent pages and 2026 top-firms listicles—indexed in sitemap.xml alongside the industry hub."
+                  countLabel={`${industryMatrixLinkCount} routes`}
+                >
+                  <p className="mb-6 text-sm text-muted-foreground">
+                    Start at{' '}
+                    <Link to="/market-research-by-industry" className="font-medium text-primary underline-offset-4 hover:underline">
+                      Market research by industry
+                    </Link>{' '}
+                    for the full matrix. Pharmaceutical company BOFU pages remain on separate legacy URLs listed under core navigation.
+                  </p>
+                  <div className="grid gap-8 lg:grid-cols-2">
+                    {industryMatrixGroups.map((group) => (
+                      <article
+                        key={group.industrySlug}
+                        className="rounded-xl border border-border/70 bg-card/50 p-5"
+                      >
+                        <h3 className="mb-4 border-b border-border/50 pb-2 font-display text-sm font-semibold uppercase tracking-wider text-foreground">
+                          {group.title}
+                        </h3>
+                        <ul className="grid gap-2">
+                          {group.links.map((item) => (
+                            <li key={item.to}>
+                              <PremiumInternalLink to={item.to}>{item.label}</PremiumInternalLink>
+                            </li>
+                          ))}
+                        </ul>
+                      </article>
+                    ))}
+                  </div>
                 </SectionShell>
 
                 <SectionShell
