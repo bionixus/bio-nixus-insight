@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'USA Medical Devices Market Report', href: '/usa-medical-devices-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
   {
     question: 'How big is the USA medical devices market in 2026?',
     answer: 'The US medical devices market is estimated at USD 175–190 billion in 2026 — the world\'s largest, accounting for approximately 40% of global medical device revenues. The market is characterised by rapid innovation adoption, premium device pricing enabled by private insurance coverage, and GPO (Group Purchasing Organization) and IDN (Integrated Delivery Network) consolidated procurement. Major device companies headquartered in the US include Medtronic, Abbott, Johnson & Johnson MedTech, Stryker, Boston Scientific, Becton Dickinson, Zimmer Biomet, Intuitive Surgical, and Edwards Lifesciences.',
@@ -48,7 +49,7 @@ const REPORT_FAQ_ITEMS = [
     question: 'How does BioNixus serve US-based medical device companies expanding to MENA?',
     answer: 'BioNixus supports US-headquartered medical device manufacturers in entering GCC and MENA markets. Our services include SFDA (Saudi Arabia), MOHAP/DHA/DOH (UAE), HMC (Qatar), and GCC-wide regulatory pathway mapping; hospital procurement intelligence at Saudi Arabia\'s MOH, NGHA, and private hospital networks; distributor network mapping; primary research with biomedical engineers and clinical specialists; and comparative US vs. GCC commercial strategy. BioNixus delivers the account-level intelligence that US commercial teams need to prioritise and execute GCC market access with the same rigour applied to US launch planning.',
   },
-];
+], 'usa');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/usa-medical-devices-market-report');
 const FAQ_SECTION_ID = 'usa-medical-devices-faq';

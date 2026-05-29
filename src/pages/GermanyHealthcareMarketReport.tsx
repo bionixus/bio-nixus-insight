@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Germany Healthcare Market Report', href: '/germany-healthcare-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
   {
     question: 'How big is the Germany healthcare market in 2026?',
     answer: 'The Germany healthcare market is estimated at EUR 420–440 billion in 2026, making it the largest healthcare market in the European Union and the fourth-largest globally. Germany\'s healthcare expenditure represents approximately 12.7% of GDP — among the highest in the EU. The system combines statutory health insurance (GKV, gesetzliche Krankenversicherung) covering approximately 90% of the population and private health insurance (PKV, private Krankenversicherung) for the remaining 10%. Germany\'s 1,900+ acute hospitals, 120,000+ physicians, and 21,000+ pharmacies create a large and complex commercial environment.',
@@ -48,7 +49,7 @@ const REPORT_FAQ_ITEMS = [
     question: 'How does BioNixus serve Germany-based pharmaceutical companies expanding to MENA?',
     answer: 'BioNixus supports German and wider European pharmaceutical and medical device companies expanding into GCC and MENA markets. From our London office, we provide SFDA (Saudi Arabia), MOHAP (UAE), and GCC-wide regulatory pathway intelligence; NUPCO tender intelligence; hospital-level pharmaceutical consumption data; physician panel surveys across all major specialties in Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, Oman, and Egypt; and comparative EU vs. GCC market intelligence. BioNixus connects the evidence standards of European market access with the commercial intelligence needs of GCC launch and growth programs.',
   },
-];
+], 'germany');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/germany-healthcare-market-report');
 const FAQ_SECTION_ID = 'germany-healthcare-market-faq';

@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Qatar Medical Devices Market Report', href: '/qatar-medical-devices-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
   {
     question: 'How big is the Qatar medical devices market in 2026?',
     answer:
@@ -54,7 +55,7 @@ const REPORT_FAQ_ITEMS = [
     answer:
       'BioNixus tracks Qatar medical device consumption through HMC procurement intelligence, biomedical engineering research at major hospital accounts, and primary surveys with clinical specialists across Hamad Medical Corporation, Sidra Medicine, and private facilities including Aster, Al Ahli, and The View Hospital. Our Qatar data covers device category consumption, specialist preference drivers, switching barriers, and competitive positioning at institutional and department level.',
   },
-];
+], 'qatar');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/qatar-medical-devices-market-report');
 const FAQ_SECTION_ID = 'qatar-medical-devices-faq';

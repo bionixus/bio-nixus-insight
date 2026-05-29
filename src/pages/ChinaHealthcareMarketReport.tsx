@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'China Healthcare Market Report', href: '/china-healthcare-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
   {
     question: 'How big is the China healthcare market in 2026?',
     answer: 'The Chinese healthcare market is estimated at USD 1.2–1.4 trillion in 2026 — the world\'s second-largest, behind only the United States. China\'s healthcare expenditure represents approximately 7.5% of GDP, with the government committed to expanding coverage under the Healthy China 2030 Action Plan. Three public insurance schemes cover the majority of China\'s 1.4 billion population: Urban Employee Basic Medical Insurance (UEBMI), Urban and Rural Resident Basic Medical Insurance (URRBMI), and the rural New Cooperative Medical Scheme (NCMS, now merged with URRBMI). The NHSA (National Healthcare Security Administration), established in 2018, manages all three schemes and conducts centralized drug price negotiations.',
@@ -48,7 +49,7 @@ const REPORT_FAQ_ITEMS = [
     question: 'How does BioNixus serve pharmaceutical companies with China and MENA strategy?',
     answer: 'BioNixus supports pharmaceutical and medical device companies with China-to-MENA or MENA-to-China comparative intelligence. For companies operating in China\'s complex VBP and NRDL environment, the GCC presents an alternative growth market with premium pricing, fewer price controls, and rapidly expanding healthcare investment. BioNixus provides SFDA (Saudi Arabia), MOHAP (UAE), and GCC-wide regulatory pathway intelligence; NUPCO tender and hospital formulary data; physician panel surveys; and comparative China vs. GCC market intelligence to inform global portfolio and market prioritization decisions.',
   },
-];
+], 'china');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/china-healthcare-market-report');
 const FAQ_SECTION_ID = 'china-healthcare-market-faq';

@@ -6,6 +6,7 @@ export { ReportPremiumSection } from '@/components/report-premium/ReportPremiumS
 export { ReportSectionVisual } from '@/components/report-premium/ReportSectionVisual';
 export { ReportGrowthChart } from '@/components/report-premium/ReportGrowthChart';
 export { ReportTherapySpendChart } from '@/components/report-premium/ReportTherapySpendChart';
+export { ReportSourcesBlock } from '@/components/report-premium/ReportSourcesBlock';
 export { ReportInsightGrid } from '@/components/report-premium/ReportInsightGrid';
 export { ReportRelatedCards } from '@/components/report-premium/ReportRelatedCards';
 export {

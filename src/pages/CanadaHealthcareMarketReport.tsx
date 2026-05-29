@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Canada Healthcare Market Report', href: '/canada-healthcare-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
   {
     question: 'How big is the Canada healthcare market in 2026?',
     answer: 'The Canadian healthcare market is estimated at USD 280–310 billion in 2026, representing approximately 12.5% of GDP. Canada operates a publicly funded universal healthcare system under the Canada Health Act, with each of the 10 provinces and 3 territories managing their own provincial health insurance plans (funded jointly by federal and provincial governments). Unlike many other universal systems, Canada\'s Medicare covers physician services and hospital care but does not include a national pharmaceutical benefits program — drug coverage is managed through a patchwork of provincial formularies, private employer insurance, and federal coverage for specific populations (First Nations, veterans, armed forces).',
@@ -48,7 +49,7 @@ const REPORT_FAQ_ITEMS = [
     question: 'How does BioNixus serve Canada-based pharmaceutical companies expanding to MENA?',
     answer: 'BioNixus supports Canadian pharmaceutical and medical device companies in expanding into GCC and MENA markets. From our London office, we provide SFDA (Saudi Arabia), MOHAP (UAE), and GCC-wide regulatory pathway intelligence; NUPCO tender intelligence; hospital-level pharmaceutical consumption data; physician panel surveys across all major therapeutic areas in Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, Oman, and Egypt; and comparative Canadian vs. GCC market intelligence. Canada\'s CADTH HTA evidence standards are closely aligned with GCC regulatory requirements — BioNixus helps Canadian companies leverage their existing evidence packages for GCC market access.',
   },
-];
+], 'canada');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/canada-healthcare-market-report');
 const FAQ_SECTION_ID = 'canada-healthcare-market-faq';

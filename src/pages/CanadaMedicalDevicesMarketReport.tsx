@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Canada Medical Devices Market Report', href: '/canada-medical-devices-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
   {
     question: 'How big is the Canada medical devices market in 2026?',
     answer: 'The Canadian medical devices market is estimated at USD 13–16 billion in 2026, making it among the top 10 globally by value. Canada has a well-developed medtech industry with over 1,500 domestic medical device companies, predominantly SMEs. The market is shaped by provincial healthcare budgets, which fund device procurement for public hospitals and clinics, alongside private insurance-covered devices for outpatient use. Canada participates in the Access Consortium (with TGA, MHRA, Swissmedic, and HSA Singapore) for international recognition of regulatory submissions.',
@@ -48,7 +49,7 @@ const REPORT_FAQ_ITEMS = [
     question: 'How does BioNixus support Canadian medtech companies entering the GCC and MENA market?',
     answer: 'BioNixus supports Canadian medical device manufacturers in entering GCC and MENA markets. Our services include regulatory pathway mapping for SFDA (Saudi Arabia), MOHAP/DHA/DOH (UAE), HMC (Qatar), and all GCC competent authorities; hospital procurement intelligence at key GCC accounts; distributor network evaluation; primary research with biomedical engineers and clinical specialists; and comparative Canada vs. GCC commercial strategy. Canada\'s Access Consortium membership (shared with Australia, Singapore, and the UK) creates natural alignment with GCC regulatory pathways that reference TGA and MHRA decisions.',
   },
-];
+], 'canada');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/canada-medical-devices-market-report');
 const FAQ_SECTION_ID = 'canada-medical-devices-faq';

@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Italy Healthcare Market Report', href: '/italy-healthcare-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
   {
     question: 'How big is the Italy healthcare market in 2026?',
     answer: 'The Italian healthcare market is estimated at EUR 165–175 billion in 2026, representing approximately 9.4% of GDP. Italy operates a universal healthcare system — the SSN (Servizio Sanitario Nazionale), established in 1978 — funded primarily through general taxation. Regional health authorities (ASL and AO) manage service delivery across Italy\'s 20 regions, with significant variation in healthcare quality and budget management between northern regions (Lombardy, Emilia-Romagna, Veneto) and southern regions. Italy has approximately 1,100 public hospitals and 550 private accredited hospitals, with a total of approximately 210,000 hospital beds.',
@@ -48,7 +49,7 @@ const REPORT_FAQ_ITEMS = [
     question: 'How does BioNixus serve Italy-based pharmaceutical companies expanding to MENA?',
     answer: 'BioNixus supports Italian and European pharmaceutical and medical device companies in expanding into GCC and MENA markets. From our London office, we provide SFDA (Saudi Arabia), MOHAP (UAE), and GCC-wide regulatory pathway intelligence; NUPCO tender intelligence; hospital-level pharmaceutical consumption data; physician panel surveys across all major therapeutic areas in Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, Oman, and Egypt; and comparative EU vs. GCC market intelligence for global commercial strategy.',
   },
-];
+], 'italy');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/italy-healthcare-market-report');
 const FAQ_SECTION_ID = 'italy-healthcare-market-faq';

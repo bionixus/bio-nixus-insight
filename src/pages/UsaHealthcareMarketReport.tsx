@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'USA Healthcare Market Report', href: '/usa-healthcare-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
   {
     question: 'How big is the USA healthcare market in 2026?',
     answer: 'The United States healthcare market is the world\'s largest, estimated at USD 4.4–4.6 trillion in 2026, representing approximately 17.6% of GDP. The US healthcare system combines public payers (Medicare for adults 65+, Medicaid for low-income populations, managed by CMS — Centers for Medicare & Medicaid Services) and private insurance (employer-sponsored insurance, ACA marketplace plans, and commercial managed care plans). CMS administers approximately USD 1.8 trillion in annual expenditure. Approximately 92% of the population has some form of health insurance coverage.',
@@ -48,7 +49,7 @@ const REPORT_FAQ_ITEMS = [
     question: 'How does BioNixus serve US-based pharmaceutical companies expanding to MENA?',
     answer: 'BioNixus supports US-headquartered pharmaceutical and medical device companies expanding into GCC and MENA markets. From our London office, we provide SFDA (Saudi Arabia), MOHAP (UAE), and GCC-wide regulatory pathway intelligence; NUPCO tender intelligence and hospital formulary data; physician panel surveys across all major therapeutic areas in Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, Oman, and Egypt; and comparative US vs. GCC market intelligence for global commercial and market access strategy. BioNixus delivers the regional granularity that US commercial teams need to prioritise, plan, and execute GCC market entry.',
   },
-];
+], 'usa');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/usa-healthcare-market-report');
 const FAQ_SECTION_ID = 'usa-healthcare-market-faq';

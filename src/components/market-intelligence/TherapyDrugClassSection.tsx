@@ -54,7 +54,7 @@ export function TherapyDrugClassSection({
                   Mechanism
                 </th>
                 <th className="text-left px-4 py-3 font-semibold text-foreground">
-                  GCC/MENA Access Status
+                  Access status (planning)
                 </th>
               </tr>
             </thead>
@@ -72,6 +72,10 @@ export function TherapyDrugClassSection({
             </tbody>
           </table>
         </div>
+        <p className="text-[11px] text-muted-foreground leading-relaxed mb-6 sr sr-up">
+          Access status reflects BioNixus desk research as of May 2026. Confirm SFDA, MOHAP, MOH, and payer
+          rules with live regulatory and formulary sources before launch decisions.
+        </p>
         {therapy.epidemiologyHighlights ? (
           <p className="text-muted-foreground leading-relaxed mb-6">
             <strong className="text-foreground">Epidemiology context: </strong>

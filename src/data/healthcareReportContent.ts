@@ -7,7 +7,10 @@ export interface TherapyAreaContent {
   slug: string;
   overviewParagraph: string;
   clinicalLandscape: string;
+  /** GCC/MENA-specific dynamics; used only when report marketSlug is in the GCC set. */
   menaMarketDynamics: string;
+  /** Optional therapy facts without regional institution names; used for non-GCC report markets. */
+  globalTherapyDynamics?: string;
   keyDrugClasses?: TherapyDrugClass[];
   epidemiologyHighlights?: string;
   accessChallenges?: string[];
@@ -377,7 +380,7 @@ export const MARKET_CONTENT: Record<string, MarketContent> = {
     payerLandscape:
       'Pharmaceutical Benefits Scheme (PBS) reimburses listed medicines for Australian patients at subsidised co-payment levels—PBAC (Pharmaceutical Benefits Advisory Committee) evaluates cost-effectiveness for PBS listing recommendations. PBAC uses cost-effectiveness analysis with AUD 45,000–75,000 per QALY informal thresholds; oncology and rare disease therapies assessed under Life-saving Drugs Programme and distinct risk-sharing frameworks.\n\nPrivate health insurance (approximately 45% of population) funds procedures and hospital admissions—device reimbursement through Prostheses List and MSAC (Medical Services Advisory Committee) HTA assessments for new procedures. PBS price disclosure requires manufacturers to report actual dispensed prices—mandatory price reductions where market prices fall below listed price through regular disclosure cycles.',
     marketContext:
-      'Australia\'s USD 220 billion healthcare market serves 26 million people with universal Medicare coverage. Cochlear Limited\'s global cochlear implant leadership, CSL Seqirus vaccine manufacturing, and Starpharma nanoparticle drug delivery platform exemplify Australia\'s medical innovation ecosystem. Access Consortium membership creates regulatory pathways with direct relevance to GCC SFDA and MOHAP registration—Australian TGA approval supporting GCC dossier compilation is an underutilised strategic opportunity BioNixus intelligence can help exploit.',
+      'Australia\'s USD 220 billion healthcare market serves 26 million people with universal Medicare coverage. Cochlear Limited\'s global cochlear implant leadership, CSL Seqirus vaccine manufacturing, and Starpharma nanoparticle drug delivery platform exemplify Australia\'s medical innovation ecosystem. TGA registration and PBAC listing cadence anchor domestic access; Access Consortium work-sharing with MHRA and Health Canada supports efficient evidence reuse for multinational dossiers.',
   },
   singapore: {
     name: 'Singapore',
@@ -401,6 +404,6 @@ export const MARKET_CONTENT: Record<string, MarketContent> = {
     payerLandscape:
       'CADTH (Canadian Drug and Technology in Health) conducts health technology assessments—CDR (Common Drug Review) for drugs and Optimal Use Recommendations informing provincial formulary decisions. pCPA (pan-Canadian Pharmaceutical Alliance) negotiates on behalf of participating provincial and territorial drug plans—single national negotiation replacing fragmented provincial negotiations for most innovative therapies.\n\nProvincial formularies (Ontario ODB, Quebec RAMQ, BC PharmaCare, Alberta AHB) implement CADTH and pCPA outcomes with variable coverage criteria. Approximately 30% of Canadians have private drug insurance supplementing provincial plans. Quebec operates an independent drug pricing regime with mandatory private-public insurance duality—requiring separate commercial strategy within Canada.',
     marketContext:
-      'Canada\'s USD 295 billion healthcare market and USD 36 billion pharmaceutical market benefit from Access Consortium regulatory reciprocity directly relevant to GCC and APAC dossier compilation. Canada ranks among the top biomedical research nations—Moderna\'s mRNA vaccine platform was co-developed with Canadian scientists; CAR-T immunotherapy foundations emerged from Canadian academic medicine. BioNixus provides comparative Canada-GCC intelligence for multinationals managing international pricing cascades.',
+      'Canada\'s USD 295 billion healthcare market and USD 36 billion pharmaceutical market benefit from Access Consortium regulatory reciprocity with TGA, MHRA, and HSA. Canada ranks among the top biomedical research nations—Moderna\'s mRNA vaccine platform was co-developed with Canadian scientists; CAR-T immunotherapy foundations emerged from Canadian academic medicine. CADTH, pCPA, and provincial formulary implementation shape launch sequencing for innovative therapies.',
   },
 };

@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Oman Medical Devices Market Report', href: '/oman-medical-devices-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
   {
     question: 'How big is the Oman medical devices market in 2026?',
     answer:
@@ -54,7 +55,7 @@ const REPORT_FAQ_ITEMS = [
     answer:
       'BioNixus covers Oman as part of GCC-wide market research programs. Primary HCP research engages specialists at Royal Hospital, Sultan Qaboos University Hospital, and major private facilities. Programs include quantitative physician surveys, procurement intelligence research, MOH registration tracking, and competitive landscape analysis. Oman-specific standalone programs are available, particularly for clients entering the GCC market with an Oman-first strategy due to lower competitive intensity versus Saudi Arabia or UAE.',
   },
-];
+], 'oman');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/oman-medical-devices-market-report');
 const FAQ_SECTION_ID = 'oman-medical-devices-faq';

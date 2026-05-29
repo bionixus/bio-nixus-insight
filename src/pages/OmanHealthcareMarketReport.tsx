@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Oman Healthcare Market Report', href: '/oman-healthcare-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
   {
     question: 'How big is the Oman healthcare market in 2026?',
     answer:
@@ -54,7 +55,7 @@ const REPORT_FAQ_ITEMS = [
     answer:
       'BioNixus conducts Oman pharmaceutical market research through primary physician surveys across specialist panels at Royal Hospital, Sultan Qaboos University Hospital, and private hospital groups. Programs include quantitative HCP surveys (oncology, endocrinology, cardiology, rheumatology), qualitative KOL interviews, MOH registration and formulary tracking, and competitive consumption intelligence. Oman is covered both as part of GCC-wide programs and as standalone country engagements.',
   },
-];
+], 'oman');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/oman-healthcare-market-report');
 const FAQ_SECTION_ID = 'oman-healthcare-market-faq';

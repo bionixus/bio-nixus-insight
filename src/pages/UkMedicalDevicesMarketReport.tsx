@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'UK Medical Devices Market Report', href: '/uk-medical-devices-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
   {
     question: 'How big is the UK medical devices market in 2026?',
     answer: 'The UK medical devices market is estimated at GBP 12–13 billion (approximately USD 15–16 billion) in 2026, growing at approximately 5.5% CAGR through 2030. The UK is home to over 3,500 medtech companies and is a significant R&D and manufacturing base. NHS Supply Chain manages procurement for the majority of NHS acute trust purchasing across England, while private hospital groups (HCA Healthcare UK, Spire Healthcare, Nuffield Health, Ramsay Health Care) manage independent procurement.',
@@ -48,7 +49,7 @@ const REPORT_FAQ_ITEMS = [
     question: 'How does BioNixus serve UK-based medical device companies expanding to MENA?',
     answer: 'BioNixus\'s London office serves as the commercial intelligence hub for UK and European medical device companies expanding into GCC and MENA markets. We provide MOHAP (UAE), SFDA (Saudi Arabia), HMC (Qatar), and GCC-wide regulatory pathway intelligence; hospital procurement research at major GCC accounts; distributor network mapping; and primary research with biomedical engineers, procurement managers, and clinical specialists across the region. BioNixus connects UK medtech expertise with the GCC\'s rapidly growing hospital and medtech demand.',
   },
-];
+], 'uk');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/uk-medical-devices-market-report');
 const FAQ_SECTION_ID = 'uk-medical-devices-faq';

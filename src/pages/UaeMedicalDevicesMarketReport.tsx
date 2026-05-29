@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'UAE Medical Devices Market Report', href: '/uae-medical-devices-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
   {
     question: 'How big is the UAE medical devices market in 2026?',
     answer:
@@ -54,7 +55,7 @@ const REPORT_FAQ_ITEMS = [
     answer:
       'BioNixus tracks UAE medical device consumption through DHA-licensed and DOH-licensed hospital procurement intelligence, biomedical engineering research at key accounts, and primary surveys with clinical specialists and procurement managers across Cleveland Clinic Abu Dhabi, Mediclinic City Hospital, American Hospital Dubai, Aster DM Healthcare, and government hospital networks. Programs include device category consumption sizing, competitive brand positioning, procurement cycle mapping, and regulatory access timeline tracking across MOHAP, DHA, and DOH.',
   },
-];
+], 'uae');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/uae-medical-devices-market-report');
 const FAQ_SECTION_ID = 'uae-medical-devices-faq';

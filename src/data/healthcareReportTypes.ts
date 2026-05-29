@@ -15,10 +15,17 @@ export interface ReportEntry {
   therapyAreaSlug: string;
   stat1Value: string;
   stat1Label: string;
+  stat1Source: string;
   stat2Value: string;
   stat2Label: string;
+  stat2Source: string;
   stat3Value: string;
   stat3Label: string;
+  stat3Source: string;
+  /** Distinct sources for footnotes (market size, CAGR, epidemiology). */
+  sourceNotes: string[];
+  /** Country therapy segments for spend chart when available. */
+  therapySegments?: import('@/data/marketIntelligence/types').TherapySegment[];
   summaryPara1: string;
   summaryPara2: string;
   /** Spec-specific access signals (from sum1Tail). */

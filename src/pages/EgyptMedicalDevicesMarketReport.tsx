@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Egypt Medical Devices Market Report', href: '/egypt-medical-devices-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
   {
     question: 'How big is the Egypt medical devices market in 2026?',
     answer:
@@ -54,7 +55,7 @@ const REPORT_FAQ_ITEMS = [
     answer:
       'BioNixus tracks Egypt medical device consumption through hospital procurement research at key accounts — Cairo University Hospital, Ain Shams University hospitals, National Cancer Institute, private hospital groups (Cleopatra, As-Salam, Dar Al Fouad) — primary surveys with biomedical engineers and clinical department heads, and competitive intelligence programs across diagnostic, surgical, and therapeutic device categories. Our Cairo-based operations team provides in-country fieldwork capability with national geographic reach.',
   },
-];
+], 'egypt');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/egypt-medical-devices-market-report');
 const FAQ_SECTION_ID = 'egypt-medical-devices-faq';

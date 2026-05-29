@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Japan Medical Devices Market Report', href: '/japan-medical-devices-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
   {
     question: 'How big is the Japan medical devices market in 2026?',
     answer: 'The Japanese medical devices market is estimated at USD 38–43 billion in 2026 — the world\'s third-largest, after the United States and China. Japan combines a massive hospital infrastructure (8,300+ hospitals, 1.6 million hospital beds — the highest bed density per capita of any major economy), with NHI reimbursement covering virtually all approved medical procedures and devices. Japan is also a major medical device manufacturer, home to global companies including Olympus (endoscopy, surgical), Terumo (cardiovascular, blood management), Hoya (optics, surgical), Omron (blood pressure, diabetes monitoring), and Sysmex (haematology IVD).',
@@ -48,7 +49,7 @@ const REPORT_FAQ_ITEMS = [
     question: 'How does BioNixus support Japanese medtech companies entering the GCC and MENA market?',
     answer: 'BioNixus supports Japanese medical device manufacturers — including Olympus, Terumo, and emerging Japanese medtech companies — in entering GCC and MENA markets. Japanese devices (particularly Olympus endoscopy, Terumo cardiovascular, Sysmex IVD) have significant installed bases in GCC hospitals. BioNixus provides SFDA, MOHAP/DHA/DOH, HMC, and GCC-wide regulatory pathway intelligence; hospital procurement and installed base intelligence; distributor network mapping; and primary research with biomedical engineers and clinical specialists. BioNixus operates from London with in-country research teams across the GCC and Egypt.',
   },
-];
+], 'japan');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/japan-medical-devices-market-report');
 const FAQ_SECTION_ID = 'japan-medical-devices-faq';

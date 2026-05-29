@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Brazil Healthcare Market Report', href: '/brazil-healthcare-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
   {
     question: 'How big is the Brazil healthcare market in 2026?',
     answer: 'The Brazilian healthcare market is estimated at USD 155–175 billion in 2026, making it the largest healthcare market in Latin America and among the top 10 globally. Brazil operates a universal public healthcare system — SUS (Sistema Único de Saúde) — which provides constitutionally guaranteed healthcare to all 215+ million citizens, funded by federal, state, and municipal governments. Supplementary private health insurance (saúde suplementar), regulated by ANS (Agência Nacional de Saúde Suplementar), covers approximately 50 million Brazilians and accounts for approximately 35% of total healthcare spend. Brazil\'s pharmaceutical and device market is heavily influenced by both SUS procurement policies and the high-value private supplementary sector.',
@@ -48,7 +49,7 @@ const REPORT_FAQ_ITEMS = [
     question: 'How does BioNixus support Brazil-based pharmaceutical companies expanding to MENA?',
     answer: 'BioNixus supports Brazilian and Latin American pharmaceutical and medical device companies in entering GCC and MENA markets. From our London office, we provide SFDA (Saudi Arabia), MOHAP (UAE), and GCC-wide regulatory pathway intelligence; NUPCO tender and hospital formulary data; physician panel surveys across all major therapeutic areas; and comparative Brazil vs. GCC market intelligence. Brazil and the GCC share several commercial parallels — large generic medicine markets, centralized public procurement, and premium private hospital sectors — that make BioNixus\'s cross-regional intelligence particularly relevant for Brazilian pharma companies planning MENA expansion.',
   },
-];
+], 'brazil');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/brazil-healthcare-market-report');
 const FAQ_SECTION_ID = 'brazil-healthcare-market-faq';

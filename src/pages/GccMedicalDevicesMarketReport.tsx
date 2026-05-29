@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'GCC Medical Devices Market Report', href: '/gcc-medical-devices-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
   {
     question: 'How big is the GCC medical devices market in 2026?',
     answer:
@@ -54,7 +55,7 @@ const REPORT_FAQ_ITEMS = [
     answer:
       'BioNixus supports GCC medical device commercial strategy through three primary intelligence products: (1) Account-level procurement intelligence — hospital-specific budget cycles, procurement head contacts, and device replacement schedules sourced from biomedical engineering and procurement department primary research; (2) Clinical user research — quantitative and qualitative surveys with surgeons, intensivists, radiologists, and clinical engineers mapping device preference, switching barriers, and competitive positioning; and (3) Regulatory and access tracking — systematic monitoring of SFDA, MOHAP, DHA, and DOH device registration timelines, approval outcomes, and formulary listing status.',
   },
-];
+], 'gcc');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/gcc-medical-devices-market-report');
 const FAQ_SECTION_ID = 'gcc-medical-devices-faq';

@@ -409,6 +409,20 @@ export const blogPost = defineType({
         { name: 'buttonUrl', type: 'url', title: 'Button URL' },
       ],
     }),
+    defineField({
+      name: 'sources',
+      title: 'Data sources',
+      type: 'array',
+      of: [{ type: 'string' }],
+      description:
+        'Named sources for statistics cited in this post (e.g. IDF Diabetes Atlas 2023, company disclosure).',
+    }),
+    defineField({
+      name: 'factCheckedAt',
+      title: 'Fact checked at',
+      type: 'datetime',
+      description: 'When numeric and regulatory claims were last reviewed by editorial.',
+    }),
   ],
   preview: {
     select: {

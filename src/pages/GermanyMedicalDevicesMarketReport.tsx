@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Germany Medical Devices Market Report', href: '/germany-medical-devices-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
   {
     question: 'How big is the Germany medical devices market in 2026?',
     answer: 'The German medical devices market is estimated at EUR 30–32 billion in 2026 — the largest medical devices market in the European Union. Germany accounts for approximately 30% of the total EU medical device market. The market is driven by a dense hospital network (1,900+ acute hospitals), high GKV reimbursement rates for approved devices, and a large installed base of diagnostic imaging and surgical equipment in both public and private hospitals. Germany is also one of the world\'s leading medtech manufacturing countries, home to Siemens Healthineers, B. Braun, Karl Storz, Dräger, Fresenius Medical Care, and hundreds of specialist SME manufacturers.',
@@ -48,7 +49,7 @@ const REPORT_FAQ_ITEMS = [
     question: 'How does BioNixus support German medtech companies entering the GCC and MENA market?',
     answer: 'BioNixus supports German and European medical device manufacturers in entering and growing in GCC and MENA markets. Our services include: regulatory pathway mapping for SFDA (Saudi Arabia), MOHAP/DHA/DOH (UAE), HMC (Qatar), and all GCC competent authorities; hospital procurement intelligence at Saudi Arabia\'s MOH, NGHA, and private hospital networks; distributor network mapping and evaluation across all six GCC countries plus Egypt; primary research with biomedical engineers and clinical specialists; and comparative Germany vs. GCC commercial strategy analysis. BioNixus operates from London with in-country research teams across the GCC and Egypt.',
   },
-];
+], 'germany');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/germany-medical-devices-market-report');
 const FAQ_SECTION_ID = 'germany-medical-devices-faq';

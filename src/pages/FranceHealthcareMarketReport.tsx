@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'France Healthcare Market Report', href: '/france-healthcare-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
   {
     question: 'How big is the France healthcare market in 2026?',
     answer: 'The French healthcare market is estimated at EUR 255–270 billion in 2026, representing approximately 12.1% of GDP. France operates a universal healthcare system (Assurance Maladie, colloquially called "la Sécu") funded through payroll contributions and general taxation. Approximately 77% of healthcare costs are covered by the Assurance Maladie (CNAM), with complementary insurance (mutuelles and assurances complémentaires) covering an additional 13% on average, leaving approximately 10% as out-of-pocket expenditure. France has approximately 3,000 hospitals (public and private), 74,000 community pharmacies, and 220,000+ physicians.',
@@ -48,7 +49,7 @@ const REPORT_FAQ_ITEMS = [
     question: 'How does BioNixus serve France-based pharmaceutical companies expanding to MENA?',
     answer: 'BioNixus supports French and wider European pharmaceutical and medical device companies in expanding into GCC and MENA markets. From our London office, we provide SFDA (Saudi Arabia), MOHAP (UAE), and GCC-wide regulatory pathway intelligence; NUPCO tender intelligence and hospital formulary data; physician panel surveys across all major therapeutic areas in Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, Oman, and Egypt; and comparative EU vs. GCC market intelligence for global commercial and market access strategy. BioNixus bridges European evidence standards with GCC commercial realities.',
   },
-];
+], 'france');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/france-healthcare-market-report');
 const FAQ_SECTION_ID = 'france-healthcare-market-faq';

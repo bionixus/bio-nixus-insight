@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'UK Healthcare Market Report', href: '/uk-healthcare-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
   {
     question: 'How big is the UK healthcare market in 2026?',
     answer: 'The UK healthcare market is estimated at GBP 250–270 billion (approximately USD 315–340 billion) in 2026. The NHS accounts for roughly 78% of total healthcare expenditure, with private healthcare accounting for the remainder. UK healthcare spending represents approximately 11.4% of GDP — among the higher shares in Western Europe. The Integrated Care Systems (ICS) framework, introduced in 2022, is reshaping commissioning and procurement across England\'s 42 ICS regions.',
@@ -48,7 +49,7 @@ const REPORT_FAQ_ITEMS = [
     question: 'How does BioNixus serve UK-based pharmaceutical companies expanding to MENA?',
     answer: 'BioNixus\'s London office serves as the commercial hub for UK and European pharmaceutical companies expanding into GCC and MENA markets. We provide UK-headquartered clients with GCC market entry intelligence, SFDA/MOHAP/HMC regulatory pathway mapping, physician panel research across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman, and comparative UK vs. GCC market intelligence that supports global commercial strategy and resource allocation decisions.',
   },
-];
+], 'uk');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/uk-healthcare-market-report');
 const FAQ_SECTION_ID = 'uk-healthcare-market-faq';

@@ -3,6 +3,7 @@ import { MARKET_INTELLIGENCE } from '@/data/marketIntelligenceData';
 import type { HospitalEntry } from '@/data/marketIntelligence/types';
 import {
   ReportSectionVisual,
+  ReportSourcesBlock,
   ReportTherapySpendChart,
 } from '@/components/report-premium';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
@@ -36,6 +37,15 @@ export function MarketIntelligenceSections({
   if (!data) return null;
 
   const showTherapySegments = variant === 'healthcare' && (data.therapySegments?.length ?? 0) > 0;
+  const sourceNotes = [
+    ...new Set(
+      [
+        ...data.kpis.map((k) => k.note).filter(Boolean),
+        ...data.epidemiology.map((e) => e.source).filter(Boolean),
+        'BioNixus estimate (therapy spend ranges where noted)',
+      ].filter(Boolean) as string[],
+    ),
+  ];
 
   return (
     <>
@@ -372,6 +382,10 @@ export function MarketIntelligenceSections({
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="pb-10 md:pb-12" id="data-sources">
+        <ReportSourcesBlock sources={sourceNotes} />
       </section>
     </>
   );

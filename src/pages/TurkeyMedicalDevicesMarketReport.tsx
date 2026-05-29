@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Turkey Medical Devices Market Report', href: '/turkey-medical-devices-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
   {
     question: 'How big is the Turkey medical devices market in 2026?',
     answer: 'The Turkish medical devices market is estimated at USD 3.0–4.0 billion in 2026, making it the largest medical device market in the MENA extended region outside the GCC and Egypt, and one of the fastest-growing in Europe-MENA. Turkey has approximately 1,500 hospitals — over 500 of which are private — serving both a domestic population of 87 million and approximately 1.5 million medical tourists annually. The private hospital sector (Medical Park, Medicana, Florence Nightingale, Anadolu Medical) is among the most dynamic device procurement channels in the region, adopting novel technologies at competitive price points.',
@@ -48,7 +49,7 @@ const REPORT_FAQ_ITEMS = [
     question: 'How does BioNixus support Turkish medtech companies entering the GCC and MENA market?',
     answer: 'BioNixus supports Turkish medical device manufacturers in entering GCC and MENA markets. Turkish medtech companies — particularly in dental devices, ophthalmology, and aesthetic medicine — have growing GCC market presence. Turkey\'s CE marking adoption creates regulatory evidence directly usable for GCC registrations (SFDA accepts CE; MOHAP accepts CE). BioNixus provides SFDA, MOHAP/DHA/DOH, HMC, and GCC-wide regulatory pathway intelligence; hospital and clinic procurement data; distributor network mapping; and primary research with clinical specialists across the GCC. The Turkey-GCC commercial corridor is strategically significant — Turkey and the GCC share strong trade and cultural relationships that support medical device commercial development.',
   },
-];
+], 'turkey');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/turkey-medical-devices-market-report');
 const FAQ_SECTION_ID = 'turkey-medical-devices-faq';

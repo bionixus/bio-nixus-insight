@@ -126,7 +126,7 @@ export const menaMarketIntelligence: Record<string, MarketIntelligence> = {
     epidemiology: [
       { condition: "Type 2 Diabetes", stat: "~17.5% adult prevalence — one of highest in Middle East", source: "IDF Diabetes Atlas 2023" },
       { condition: "Cardiovascular disease", stat: "~38% of all-cause mortality — #1 killer", source: "WHO Iraq Country Profile 2023" },
-      { condition: "Cancer", stat: "Elevated incidence in Basra governorate — haematological malignancies 2–3× national average attributed to depleted uranium legacy (Basra Cancer Registry 2022)", source: undefined },
+      { condition: "Cancer", stat: "Elevated incidence in Basra governorate — haematological malignancies 2–3× national average attributed to depleted uranium legacy (Basra Cancer Registry 2022)", source: "Basra Cancer Registry 2022" },
     ],
     bionixusCapabilities: [
       "Baghdad federal vs. KRG Erbil procurement channel intelligence — two parallel systems requiring separate commercial strategies",

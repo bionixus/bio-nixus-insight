@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'UAE Healthcare Market Report', href: '/uae-healthcare-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
   {
     question: 'How big is the UAE healthcare market in 2026?',
     answer:
@@ -54,7 +55,7 @@ const REPORT_FAQ_ITEMS = [
     answer:
       'BioNixus tracks UAE pharmaceutical and medical device consumption through hospital procurement partnerships, pharmacy dispensing records, and primary HCP research across DHA-licensed, DOH-licensed, and MOHAP-registered facilities. Our UAE panel covers specialist physicians across oncology, cardiology, endocrinology, immunology, and general medicine — delivering prescribing behavior, formulary access barriers, and competitive intelligence at market, institution, and department level.',
   },
-];
+], 'uae');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/uae-healthcare-market-report');
 const FAQ_SECTION_ID = 'uae-healthcare-market-faq';

@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'China Medical Devices Market Report', href: '/china-medical-devices-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
   {
     question: 'How big is the China medical devices market in 2026?',
     answer: 'The Chinese medical devices market is estimated at USD 75–90 billion in 2026 — the world\'s second-largest, after the United States. China\'s device market is growing at approximately 8% CAGR, driven by rapid hospital infrastructure expansion (China\'s hospital bed count has grown from 4M in 2010 to over 8M), aging population dynamics, and government healthcare investment under Healthy China 2030. China has both a large import market (predominantly premium innovative devices) and a rapidly expanding domestic manufacturing sector across all device categories.',
@@ -48,7 +49,7 @@ const REPORT_FAQ_ITEMS = [
     question: 'How does BioNixus support medical device companies with China and GCC strategy?',
     answer: 'BioNixus provides comparative China and GCC market intelligence for global medical device manufacturers. For international manufacturers facing VBP pricing pressure and import substitution risk in China\'s public hospital market, the GCC\'s premium hospital market (no VBP, government-funded premium procurement, high per-device value) represents a strategically important counterbalance. BioNixus delivers SFDA, MOHAP/DHA/DOH, HMC, and GCC-wide regulatory and procurement intelligence — supporting portfolio prioritization decisions between China and GCC market investments.',
   },
-];
+], 'china');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/china-medical-devices-market-report');
 const FAQ_SECTION_ID = 'china-medical-devices-faq';

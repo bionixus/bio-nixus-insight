@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'India Medical Devices Market Report', href: '/india-medical-devices-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
   {
     question: 'How big is the India medical devices market in 2026?',
     answer: 'The Indian medical devices market is estimated at USD 11–14 billion in 2026, growing at approximately 8% CAGR — among the fastest rates globally. India\'s medical device market is the fourth-largest in Asia, driven by expanding hospital infrastructure, Ayushman Bharat insurance coverage, and government-led healthcare investment. Approximately 75–80% of India\'s advanced medical device demand is met by imports (predominantly from the US, Germany, Japan, and China), creating significant opportunity for both international manufacturers and India\'s growing domestic medtech industry. The government\'s Production Linked Incentive (PLI) scheme for medical devices is stimulating domestic manufacturing of priority device categories.',
@@ -48,7 +49,7 @@ const REPORT_FAQ_ITEMS = [
     question: 'How does BioNixus support Indian medtech companies entering the GCC and MENA market?',
     answer: 'BioNixus supports Indian medical device manufacturers in entering GCC and MENA markets. India\'s growing medtech manufacturing base — particularly in diagnostics, consumables, and commodity medical supplies — has strong natural markets in GCC countries where Indian-manufactured products have established procurement histories. BioNixus provides SFDA (Saudi Arabia), MOHAP/DHA/DOH (UAE), HMC (Qatar), and GCC-wide regulatory pathway intelligence; NUPCO and hospital procurement data; distributor network mapping; and primary research with biomedical engineers and procurement managers. BioNixus operates from London with in-country research teams across the GCC and Egypt.',
   },
-];
+], 'india');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/india-medical-devices-market-report');
 const FAQ_SECTION_ID = 'india-medical-devices-faq';

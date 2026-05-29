@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Singapore Medical Devices Market Report', href: '/singapore-medical-devices-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
   {
     question: 'How big is the Singapore medical devices market in 2026?',
     answer: 'The Singapore medical devices market is estimated at USD 2.3–2.8 billion in 2026, growing at approximately 7% CAGR — driven by rapid expansion of the private hospital sector, medical tourism demand, and Singapore\'s role as the regional distribution hub for Southeast Asia. Despite its small domestic population of 5.9 million, Singapore imports and distributes medical devices for the broader ASEAN region through its JAFZA-equivalent free trade zones. Most global medical device companies maintain Singapore as their Southeast Asia regional headquarters and often as the APAC distribution centre.',
@@ -48,7 +49,7 @@ const REPORT_FAQ_ITEMS = [
     question: 'How does BioNixus support Singapore medtech companies entering the GCC and MENA market?',
     answer: 'BioNixus supports Singapore-based and Asia-Pacific medical device manufacturers and distributors in entering GCC and MENA markets. Singapore and the GCC share striking commercial parallels — both are premium healthcare markets with high per-capita spending, significant medical tourism, and rapid adoption of novel technologies. BioNixus provides SFDA, MOHAP/DHA/DOH, HMC, and GCC-wide regulatory intelligence; hospital procurement intelligence; distributor network mapping; and primary research with biomedical engineers and clinical specialists. The Singapore-GCC connection is particularly strong given the large Singapore-based regional headquarters networks of companies that also seek GCC market access.',
   },
-];
+], 'singapore');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/singapore-medical-devices-market-report');
 const FAQ_SECTION_ID = 'singapore-medical-devices-faq';

@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Qatar Healthcare Market Report', href: '/qatar-healthcare-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
   {
     question: 'How big is the Qatar healthcare market in 2026?',
     answer:
@@ -54,7 +55,7 @@ const REPORT_FAQ_ITEMS = [
     answer:
       'BioNixus conducts Qatar pharmaceutical market research through quantitative HCP surveys (oncologists, endocrinologists, cardiologists, rheumatologists), HMC formulary committee research, MOPH registration tracking, and hospital consumption intelligence across HMC hospitals, Sidra Medicine, and private facilities. Our Qatar research capability spans qualitative depth interviews with KOLs, payer advisory board support, and competitive intelligence programs that have served global pharmaceutical launch teams across oncology, diabetes, and immunology.',
   },
-];
+], 'qatar');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/qatar-healthcare-market-report');
 const FAQ_SECTION_ID = 'qatar-healthcare-market-faq';

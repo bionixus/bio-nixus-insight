@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Kuwait Healthcare Market Report', href: '/kuwait-healthcare-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
   {
     question: 'How big is the Kuwait healthcare market in 2026?',
     answer:
@@ -54,7 +55,7 @@ const REPORT_FAQ_ITEMS = [
     answer:
       'BioNixus conducts Kuwait healthcare market research through quantitative physician surveys across specialist panels (oncology, endocrinology, cardiology, rheumatology, neurology), CMS tender and formulary tracking, qualitative interviews with MOPH payer contacts, and hospital procurement intelligence from key accounts including Mubarak Al-Kabeer Hospital, Amiri Hospital, Jaber Hospital, and leading private facilities. Our Kuwait research team has operated in-country since 2015, maintaining specialist physician panels used by global pharmaceutical companies for launch readiness and competitive intelligence studies.',
   },
-];
+], 'kuwait');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/kuwait-healthcare-market-report');
 const FAQ_SECTION_ID = 'kuwait-healthcare-market-faq';

@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'France Medical Devices Market Report', href: '/france-medical-devices-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
   {
     question: 'How big is the France medical devices market in 2026?',
     answer: 'The French medical devices market is estimated at EUR 14–16 billion in 2026, making it the third-largest medical device market in the EU after Germany and the UK. France has approximately 3,000 hospitals and clinics, 74,000 pharmacies, and a strong tradition of medical device innovation through companies including Laboratoires Urgo, Vygon, and Coloplast France. The market is segmented between hospital procurement (approximately 60%) and outpatient/community care (40%). Private clinic groups (Elsan, Ramsay Santé, Almaviva Santé) represent a growing procurement channel alongside the public AP-HP (Assistance Publique-Hôpitaux de Paris) and regional CHU (Centre Hospitalier Universitaire) networks.',
@@ -48,7 +49,7 @@ const REPORT_FAQ_ITEMS = [
     question: 'How does BioNixus support French medtech companies entering the GCC and MENA market?',
     answer: 'BioNixus supports French and European medical device manufacturers in entering GCC and MENA markets. Our services include SFDA (Saudi Arabia), MOHAP/DHA/DOH (UAE), HMC (Qatar), and GCC-wide regulatory pathway mapping; hospital procurement intelligence at key GCC accounts; distributor network evaluation; primary research with biomedical engineers and clinical procurement specialists; and comparative France vs. GCC commercial strategy. BioNixus operates from London with in-country field teams across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, Oman, and Egypt.',
   },
-];
+], 'france');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/france-medical-devices-market-report');
 const FAQ_SECTION_ID = 'france-medical-devices-faq';

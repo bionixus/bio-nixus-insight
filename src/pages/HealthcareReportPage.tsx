@@ -28,6 +28,8 @@ import {
   ReportPremiumSection,
   ReportInsightGrid,
   ReportRelatedCards,
+  ReportSourcesBlock,
+  ReportTherapySpendChart,
 } from '@/components/report-premium';
 
 function pickVariant(seed: string, options: [string, string, string]) {
@@ -148,9 +150,9 @@ export default function HealthcareReportPage() {
           therapyName={report.therapyArea}
           countryName={report.market}
           stats={[
-            { value: report.stat1Value, label: report.stat1Label },
-            { value: report.stat2Value, label: report.stat2Label },
-            { value: report.stat3Value, label: report.stat3Label },
+            { value: report.stat1Value, label: report.stat1Label, source: report.stat1Source },
+            { value: report.stat2Value, label: report.stat2Label, source: report.stat2Source },
+            { value: report.stat3Value, label: report.stat3Label, source: report.stat3Source },
           ]}
           metaLinks={
             <ReportHeroMetaLinks
@@ -165,11 +167,26 @@ export default function HealthcareReportPage() {
         <ReportContentWithAside config={conversionConfig}>
           <ReportExecutiveDashboard
             stats={[
-              { value: report.stat1Value, label: report.stat1Label },
-              { value: report.stat2Value, label: report.stat2Label },
-              { value: report.stat3Value, label: report.stat3Label },
+              { value: report.stat1Value, label: report.stat1Label, source: report.stat1Source },
+              { value: report.stat2Value, label: report.stat2Label, source: report.stat2Source },
+              { value: report.stat3Value, label: report.stat3Label, source: report.stat3Source },
             ]}
             cagrStatLabel={report.stat3Value}
+            chartMode="modelled"
+            sourcesBlock={<ReportSourcesBlock sources={report.sourceNotes} />}
+            therapySpendChart={
+              report.therapySegments?.length ? (
+                <>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+                    Therapy spend mix
+                  </p>
+                  <ReportTherapySpendChart
+                    segments={report.therapySegments}
+                    countryName={report.market}
+                  />
+                </>
+              ) : undefined
+            }
             midPageCta={<ReportMidPageCta config={conversionConfig} />}
           >
             <p>{report.summaryPara1}</p>

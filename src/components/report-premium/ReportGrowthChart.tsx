@@ -5,6 +5,8 @@ import { buildGrowthSeries, parseCagrPercent } from '@/components/report-premium
 type ReportGrowthChartProps = {
   cagrLabel?: string;
   title?: string;
+  /** modelled = CAGR band from cited stats; illustrative = index only */
+  mode?: 'modelled' | 'illustrative';
   className?: string;
 };
 
@@ -15,9 +17,18 @@ const chartConfig = {
   },
 };
 
-export function ReportGrowthChart({ cagrLabel, title, className = '' }: ReportGrowthChartProps) {
+export function ReportGrowthChart({
+  cagrLabel,
+  title,
+  mode = 'modelled',
+  className = '',
+}: ReportGrowthChartProps) {
   const cagr = cagrLabel ? parseCagrPercent(cagrLabel) : null;
   const data = buildGrowthSeries(cagr);
+  const footnote =
+    mode === 'illustrative'
+      ? 'Illustrative indexed trajectory (2022 = 100). Not audited revenue.'
+      : `Indexed growth curve (2022 = 100)${cagrLabel ? ` aligned to ${cagrLabel} CAGR band.` : '.'} Planning estimate — see sources below.`;
 
   return (
     <div className={className}>
@@ -48,9 +59,7 @@ export function ReportGrowthChart({ cagrLabel, title, className = '' }: ReportGr
           />
         </AreaChart>
       </ChartContainer>
-      <p className="mt-2 text-[11px] text-muted-foreground leading-relaxed">
-        Illustrative indexed growth curve (2022 = 100){cagrLabel ? ` aligned to ${cagrLabel} CAGR band.` : '.'}
-      </p>
+      <p className="mt-2 text-[11px] text-muted-foreground leading-relaxed">{footnote}</p>
     </div>
   );
 }

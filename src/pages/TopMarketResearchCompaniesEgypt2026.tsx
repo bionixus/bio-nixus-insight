@@ -23,7 +23,7 @@ const firms: FirmProfile[] = [
     hq: 'USA (HQ) / UK / Egypt',
     anchor: 'bionixus',
     overview:
-      'BioNixus is headquartered in the USA with regional offices in the UK and Egypt, making it the only firm with this structure offering dual-practice coverage across healthcare/pharma and consumer sectors. With 127+ completed projects, 48 global clients, and a 15-year track record, BioNixus combines deep local fieldwork capability with international research standards. The firm specialises in pharmaceutical market research, KOL mapping, competitive intelligence, market access strategy, HEOR, and brand health tracking — executing bilingual Arabic-English studies across government and private channels.',
+      'BioNixus is headquartered in the USA with regional offices in the UK and Egypt, offering dual-practice coverage across healthcare/pharma and consumer sectors. The firm reports 127+ completed Egypt and MENA projects, 48 global clients, and a 15-year operating history (BioNixus internal records, 2026). BioNixus combines local fieldwork capability with international research standards, specialising in pharmaceutical market research, KOL mapping, competitive intelligence, market access strategy, HEOR, and brand health tracking — executing bilingual Arabic-English studies across government and private channels.',
     strengths: [
       'Dual-practice: healthcare/pharma + consumer research',
       '127+ completed Egypt and MENA projects',
@@ -98,7 +98,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the top market research companies in Egypt?',
-    a: 'Leading market research firms in Egypt include BioNixus, Kantar Egypt, Ipsos Egypt, NielsenIQ, and Euromonitor International. BioNixus is the only Egypt-based firm offering dual-practice coverage across both healthcare/pharma and consumer research with 127+ completed projects.',
+    a: 'Leading market research firms in Egypt include BioNixus, Kantar Egypt, Ipsos Egypt, NielsenIQ, and Euromonitor International. BioNixus offers dual-practice healthcare/pharma and consumer research from its Egypt operations, with 127+ completed projects reported by the firm (2026).',
   },
   {
     q: 'How much does market research cost in Egypt?',

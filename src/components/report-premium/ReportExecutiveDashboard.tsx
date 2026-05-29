@@ -5,12 +5,16 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 export type ExecutiveStat = {
   value: string;
   label: string;
+  source?: string;
 };
 
 type ReportExecutiveDashboardProps = {
   stats: ExecutiveStat[];
   children: ReactNode;
   cagrStatLabel?: string;
+  chartMode?: 'modelled' | 'illustrative';
+  sourcesBlock?: ReactNode;
+  therapySpendChart?: ReactNode;
   midPageCta?: ReactNode;
   className?: string;
 };
@@ -19,6 +23,9 @@ export function ReportExecutiveDashboard({
   stats,
   children,
   cagrStatLabel,
+  chartMode = 'modelled',
+  sourcesBlock,
+  therapySpendChart,
   midPageCta,
   className = '',
 }: ReportExecutiveDashboardProps) {
@@ -58,14 +65,30 @@ export function ReportExecutiveDashboard({
                   {stat.value}
                 </p>
                 <p className="text-xs text-muted-foreground mt-2 leading-snug">{stat.label}</p>
+                {stat.source ? (
+                  <p className="text-[10px] text-muted-foreground/80 mt-1 leading-tight">Source: {stat.source}</p>
+                ) : null}
               </article>
             ))}
           </div>
 
-          <div className="rounded-xl border border-border/70 bg-card p-4 shadow-sm sr sr-right">
-            <ReportGrowthChart cagrLabel={cagrSource} title="Growth trajectory" />
+          <div className="space-y-4">
+            <div className="rounded-xl border border-border/70 bg-card p-4 shadow-sm sr sr-right">
+              <ReportGrowthChart
+                cagrLabel={cagrSource}
+                title="Growth trajectory"
+                mode={chartMode}
+              />
+            </div>
+            {therapySpendChart ? (
+              <div className="rounded-xl border border-border/70 bg-card p-4 shadow-sm sr sr-right">
+                {therapySpendChart}
+              </div>
+            ) : null}
           </div>
         </div>
+
+        {sourcesBlock ? <div className="mb-6 sr sr-up">{sourcesBlock}</div> : null}
 
         <div className="prose-report space-y-4 text-muted-foreground leading-relaxed sr sr-up">{children}</div>
 

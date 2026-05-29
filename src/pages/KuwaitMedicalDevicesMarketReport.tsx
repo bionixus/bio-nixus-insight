@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Kuwait Medical Devices Market Report', href: '/kuwait-medical-devices-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
   {
     question: 'How big is the Kuwait medical devices market in 2026?',
     answer:
@@ -54,7 +55,7 @@ const REPORT_FAQ_ITEMS = [
     answer:
       'BioNixus tracks Kuwait medical device procurement through CMS tender records, hospital biomedical engineering research, and primary surveys with clinical department heads and procurement managers across MOH and private facilities. Our Kuwait hospital panel covers specialists across major government hospital sites — enabling commercial teams to size account-level device budgets, identify replacement cycles, and assess competitive position before and after CMS tender cycles.',
   },
-];
+], 'kuwait');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/kuwait-medical-devices-market-report');
 const FAQ_SECTION_ID = 'kuwait-medical-devices-faq';

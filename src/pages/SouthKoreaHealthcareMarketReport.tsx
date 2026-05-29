@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'South Korea Healthcare Market Report', href: '/south-korea-healthcare-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
   {
     question: 'How big is the South Korea healthcare market in 2026?',
     answer: 'The South Korean healthcare market is estimated at USD 110–125 billion in 2026, representing approximately 9.7% of GDP. South Korea operates the NHIS (National Health Insurance Service), a single-payer universal insurance scheme covering the entire population, with copayments varying by care type. HIRA (Health Insurance Review and Assessment Service) reviews insurance claims and evaluates health technologies for coverage. South Korea has one of the world\'s highest medical utilisation rates — Koreans average approximately 16 outpatient visits per year — creating exceptional prescription drug and diagnostic device demand per capita.',
@@ -48,7 +49,7 @@ const REPORT_FAQ_ITEMS = [
     question: 'How does BioNixus serve South Korea-based pharmaceutical companies expanding to MENA?',
     answer: 'BioNixus supports Korean pharmaceutical companies — particularly biosimilar manufacturers (Celltrion, Samsung Bioepis, Daewoong) and innovative pharma (Boryung, HanAll Biopharma) — in expanding into GCC and MENA markets. Korean biosimilars have established significant GCC market positions; BioNixus provides SFDA tender intelligence, NUPCO formulary tracking, competitive biosimilar positioning research, and physician panel surveys across all major specialties to support Korean companies\' commercial strategies in Saudi Arabia, UAE, and the wider GCC.',
   },
-];
+], 'south-korea');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/south-korea-healthcare-market-report');
 const FAQ_SECTION_ID = 'south-korea-healthcare-market-faq';

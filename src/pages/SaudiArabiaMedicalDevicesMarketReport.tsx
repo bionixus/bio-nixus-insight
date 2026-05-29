@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Saudi Arabia Medical Devices Market Report', href: '/saudi-arabia-medical-devices-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
   {
     question: 'How big is the Saudi Arabia medical devices market in 2026?',
     answer:
@@ -54,7 +55,7 @@ const REPORT_FAQ_ITEMS = [
     answer:
       'BioNixus tracks Saudi Arabia medical device consumption through hospital procurement records, surgery volume data, and primary research with biomedical engineers, procurement heads, and clinical department leads across MOH, NGHA, private hospital networks, and specialty centers. Our account-level data enables commercial teams to size hospital-specific device budgets, identify procurement cycles, and quantify competitive position at the account level — intelligence that aggregate market reports cannot provide.',
   },
-];
+], 'saudi-arabia');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/saudi-arabia-medical-devices-market-report');
 const FAQ_SECTION_ID = 'saudi-arabia-medical-devices-faq';

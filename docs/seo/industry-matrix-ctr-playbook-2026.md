@@ -1,28 +1,30 @@
 # Industry matrix CTR & LLM tracking (Saudi, UAE, Egypt) — 2026
 
-**Hub:** https://www.bionixus.com/market-research-by-industry  
+**Hub:** [https://www.bionixus.com/market-research-by-industry](https://www.bionixus.com/market-research-by-industry)  
 **Pattern:** BOFU `/{country}-{industry}-market-research` · Listicle `/insights/top-{industry}-market-research-companies-{country}-2026`
 
 ## Industries (waves 1–16, all published)
 
-| Industry slug | Wave |
-|---------------|------|
-| medtech | 1 |
-| healthcare | 2 |
-| biotech | 3 |
-| consumer-health | 4 |
-| fmcg | 5 |
-| retail | 6 |
-| financial-services | 7 |
-| telecom | 8 |
-| technology | 9 |
-| energy | 10 |
-| real-estate | 11 |
-| automotive | 12 |
-| hospitality | 13 |
-| public-sector | 14 |
-| education | 15 |
-| media | 16 |
+
+| Industry slug      | Wave |
+| ------------------ | ---- |
+| medtech            | 1    |
+| healthcare         | 2    |
+| biotech            | 3    |
+| consumer-health    | 4    |
+| fmcg               | 5    |
+| retail             | 6    |
+| financial-services | 7    |
+| telecom            | 8    |
+| technology         | 9    |
+| energy             | 10   |
+| real-estate        | 11   |
+| automotive         | 12   |
+| hospitality        | 13   |
+| public-sector      | 14   |
+| education          | 15   |
+| media              | 16   |
+
 
 ## Per-industry GSC workflow
 
@@ -42,7 +44,7 @@ Submit 6 URLs (3 BOFU + 3 listicles) + hub + 3 country mid-funnel paths.
 
 ## Cannibalization checks
 
-- Pharma BOFU URLs unchanged (`/market-research-saudi-arabia-pharmaceutical`, `/uae-pharmaceutical-market-research`, `/egypt-pharmaceutical-market-research`).
+- Pharma BOFU URLs unchanged (`/upharmaceutical`, `/uae-pharmaceutical-market-research`, `/egypt-pharmaceutical-market-research`).
 - Industry BOFU must not use pharmaceutical H1s.
 - Listicles are informational only; BOFU owns BioNixus company intent.
 

@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'South Korea Medical Devices Market Report', href: '/south-korea-medical-devices-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
   {
     question: 'How big is the South Korea medical devices market in 2026?',
     answer: 'The South Korean medical devices market is estimated at USD 10–12 billion in 2026, growing at approximately 6% CAGR — among the fastest in the Asia-Pacific region. South Korea has a well-developed domestic medtech industry with companies including Samsung Medison (ultrasound), Osstem Implant (dental implants, globally the world\'s largest dental implant manufacturer by unit volume), Hugel (aesthetics/botulinum toxin), and ViON (diagnostics). Korea\'s high medical utilisation rate (16 outpatient visits per capita per year) and high hospital density create exceptional device consumption per capita.',
@@ -48,7 +49,7 @@ const REPORT_FAQ_ITEMS = [
     question: 'How does BioNixus support Korean medtech companies entering the GCC and MENA market?',
     answer: 'BioNixus supports Korean medical device manufacturers — including dental implant companies (Osstem, Dentium), IVD companies, and aesthetic device manufacturers — in entering and growing in GCC and MENA markets. Korean dental implants and IVD systems have significant GCC market penetration; BioNixus provides SFDA, MOHAP/DHA/DOH, and GCC-wide regulatory pathway intelligence; hospital and dental clinic procurement intelligence; competitive positioning research; distributor network evaluation; and primary research with biomedical engineers and clinical specialists across the GCC.',
   },
-];
+], 'south-korea');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/south-korea-medical-devices-market-report');
 const FAQ_SECTION_ID = 'south-korea-medical-devices-faq';

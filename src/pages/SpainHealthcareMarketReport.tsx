@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Spain Healthcare Market Report', href: '/spain-healthcare-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
   {
     question: 'How big is the Spain healthcare market in 2026?',
     answer: 'The Spanish healthcare market is estimated at EUR 110–120 billion in 2026, representing approximately 9.1% of GDP. Spain operates the SNS (Sistema Nacional de Salud), a decentralised universal healthcare system where 17 autonomous communities (comunidades autónomas) have full responsibility for healthcare management and funding within their territories. The autonomous community system creates significant variation in formulary access, prescribing guidelines, and commercial conditions across Catalonia, Madrid, Andalucía, Valencia, and other regions. Spain has approximately 790 hospitals, 2,500 primary care centres, and 22,000 pharmacies.',
@@ -48,7 +49,7 @@ const REPORT_FAQ_ITEMS = [
     question: 'How does BioNixus serve Spain-based pharmaceutical companies expanding to MENA?',
     answer: 'BioNixus supports Spanish and European pharmaceutical and medical device companies in expanding into GCC and MENA markets. From our London office, we provide SFDA (Saudi Arabia), MOHAP (UAE), and GCC-wide regulatory pathway intelligence; NUPCO tender intelligence; hospital-level pharmaceutical consumption data; physician panel surveys across all major therapeutic areas in Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, Oman, and Egypt; and comparative EU vs. GCC market intelligence. Spain\'s large Arab-speaking diaspora community and historical trade connections with MENA create a natural expansion bridge — BioNixus provides the market intelligence to execute it.',
   },
-];
+], 'spain');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/spain-healthcare-market-report');
 const FAQ_SECTION_ID = 'spain-healthcare-market-faq';

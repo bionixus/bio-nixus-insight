@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Brazil Medical Devices Market Report', href: '/brazil-medical-devices-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
   {
     question: 'How big is the Brazil medical devices market in 2026?',
     answer: 'The Brazilian medical devices market is estimated at USD 11–13 billion in 2026, making it the largest medical device market in Latin America. Brazil has the world\'s seventh-largest installed base of medical imaging equipment and a significant domestic manufacturing capability in segments including wound care, dental equipment, disposables, and hospital furniture. The market is split between SUS (public hospital procurement through state and municipal health secretariats, approximately 45%) and the private supplementary sector (hospital groups like Rede D\'Or, UnitedHealth/Amil, and premium hospitals Einstein, Sírio-Libanês, accounting for 55%).',
@@ -48,7 +49,7 @@ const REPORT_FAQ_ITEMS = [
     question: 'How does BioNixus support Brazilian medtech companies entering the GCC and MENA market?',
     answer: 'BioNixus supports Brazilian and Latin American medical device manufacturers in entering GCC and MENA markets. Our services include regulatory pathway mapping for SFDA (Saudi Arabia), MOHAP/DHA/DOH (UAE), HMC (Qatar), and all GCC competent authorities; hospital procurement intelligence at key GCC accounts; distributor network evaluation; primary research with biomedical engineers and clinical specialists; and comparative Brazil vs. GCC commercial strategy. BioNixus operates from London with in-country field teams across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, Oman, and Egypt.',
   },
-];
+], 'brazil');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/brazil-medical-devices-market-report');
 const FAQ_SECTION_ID = 'brazil-medical-devices-faq';

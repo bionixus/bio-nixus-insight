@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Australia Healthcare Market Report', href: '/australia-healthcare-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
   {
     question: 'How big is the Australia healthcare market in 2026?',
     answer: 'The Australian healthcare market is estimated at USD 210–235 billion in 2026, representing approximately 10.5% of GDP. Australia operates Medicare — a universal public health insurance program funded through a Medicare Levy (2% of taxable income) and general taxation, administered by Services Australia. Medicare covers GP visits, specialist consultations, public hospital care, and subsidised medicines through the PBS (Pharmaceutical Benefits Scheme). Approximately 45% of Australians hold private health insurance (PHI), covering private hospital access, dental, and ancillary services. Australia has approximately 1,340 public hospitals and 630 private hospitals.',
@@ -48,7 +49,7 @@ const REPORT_FAQ_ITEMS = [
     question: 'How does BioNixus serve Australia-based pharmaceutical companies expanding to MENA?',
     answer: 'BioNixus supports Australian pharmaceutical and medical device companies in expanding into GCC and MENA markets. Australia\'s TGA participates in the Access Consortium alongside MHRA — creating regulatory evidence packages with direct relevance to SFDA, MOHAP, and HMC registration pathways. BioNixus provides GCC-wide regulatory intelligence, NUPCO tender and hospital formulary data, physician panel surveys, and comparative Australian vs. GCC market intelligence for global commercial strategy. Australia\'s significant Middle Eastern diaspora community also creates cultural and commercial connections that BioNixus helps pharma clients leverage.',
   },
-];
+], 'australia');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/australia-healthcare-market-report');
 const FAQ_SECTION_ID = 'australia-healthcare-market-faq';

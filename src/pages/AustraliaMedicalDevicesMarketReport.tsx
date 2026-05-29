@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Australia Medical Devices Market Report', href: '/australia-medical-devices-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
   {
     question: 'How big is the Australia medical devices market in 2026?',
     answer: 'The Australian medical devices market is estimated at USD 9–11 billion in 2026, growing at approximately 5.5% CAGR. Australia is a significant medical device market driven by its Medicare-funded universal healthcare system, high private health insurance coverage (45% of population), and a premium private hospital sector. The Therapeutic Goods Administration (TGA) regulates device registration through the ARTG (Australian Register of Therapeutic Goods), and Australia participates in the Access Consortium enabling recognition of regulatory decisions from MHRA, Health Canada, HSA Singapore, and Swissmedic.',
@@ -48,7 +49,7 @@ const REPORT_FAQ_ITEMS = [
     question: 'How does BioNixus support Australian medtech companies entering the GCC and MENA market?',
     answer: 'BioNixus supports Australian medical device manufacturers in entering GCC and MENA markets. Australia\'s Access Consortium membership (alongside MHRA, Health Canada, HSA Singapore, and Swissmedic) creates regulatory evidence packages with direct relevance to GCC registration pathways. Australian medtech companies (including Cochlear, Resmed, and Nanosonics) have established GCC market positions. BioNixus provides SFDA, MOHAP/DHA/DOH, HMC, and GCC-wide regulatory intelligence; hospital procurement data; distributor network mapping; and primary research with clinical specialists across the GCC. BioNixus operates from London with in-country research teams across the GCC and Egypt.',
   },
-];
+], 'australia');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/australia-medical-devices-market-report');
 const FAQ_SECTION_ID = 'australia-medical-devices-faq';

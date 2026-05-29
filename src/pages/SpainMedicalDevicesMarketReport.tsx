@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Spain Medical Devices Market Report', href: '/spain-medical-devices-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
   {
     question: 'How big is the Spain medical devices market in 2026?',
     answer: 'The Spanish medical devices market is estimated at EUR 10–12 billion in 2026, making it the fifth-largest medical device market in the EU. Spain has approximately 2,000 medtech companies, predominantly SMEs focused on wound care, orthopaedics, diagnostics, and surgical instruments. Hospital procurement accounts for approximately 65% of total device spend, with the remaining 35% in the outpatient, pharmacy, and home care channels. The autonomous community decentralisation of healthcare management means that regional hospital procurement agencies and individual hospital tender processes are the dominant commercial access points for device manufacturers.',
@@ -48,7 +49,7 @@ const REPORT_FAQ_ITEMS = [
     question: 'How does BioNixus support Spanish medtech companies entering the GCC and MENA market?',
     answer: 'BioNixus supports Spanish and European medical device manufacturers in entering GCC and MENA markets. Our services include regulatory pathway mapping for SFDA (Saudi Arabia), MOHAP/DHA/DOH (UAE), HMC (Qatar), and all GCC competent authorities; hospital procurement intelligence at major GCC accounts; distributor network evaluation across all six GCC countries plus Egypt; primary research with biomedical engineers and clinical specialists; and comparative Spain vs. GCC commercial strategy. BioNixus operates from London with in-country research teams across the GCC and Egypt.',
   },
-];
+], 'spain');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/spain-medical-devices-market-report');
 const FAQ_SECTION_ID = 'spain-medical-devices-faq';

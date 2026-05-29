@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Italy Medical Devices Market Report', href: '/italy-medical-devices-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
   {
     question: 'How big is the Italy medical devices market in 2026?',
     answer: 'The Italian medical devices market is estimated at EUR 12–14 billion in 2026, making it the fourth-largest medical device market in the EU. Italy is both a significant consumer and manufacturer of medical devices — hosting over 4,500 medtech companies, predominantly SMEs concentrated in Lombardy, Emilia-Romagna, and Veneto. Italy is particularly strong in orthopaedics, dental devices, cardiology, and diagnostics manufacturing. The market is split approximately 60% hospital/clinical (ASL and AO procurement channels) and 40% outpatient/retail (reimbursed through regional SSN budgets).',
@@ -48,7 +49,7 @@ const REPORT_FAQ_ITEMS = [
     question: 'How does BioNixus support Italian medtech companies entering the GCC and MENA market?',
     answer: 'BioNixus supports Italian and European medical device manufacturers in entering GCC and MENA markets. Our services include regulatory pathway mapping for SFDA (Saudi Arabia), MOHAP/DHA/DOH (UAE), HMC (Qatar), and all GCC competent authorities; hospital procurement intelligence at Saudi Arabia\'s MOH, NGHA, and private hospital networks; distributor network mapping and evaluation; primary research with biomedical engineers and clinical specialists; and comparative Italy vs. GCC commercial strategy analysis. BioNixus operates from London with in-country research teams across the GCC and Egypt.',
   },
-];
+], 'italy');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/italy-medical-devices-market-report');
 const FAQ_SECTION_ID = 'italy-medical-devices-faq';

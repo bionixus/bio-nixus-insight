@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Singapore Healthcare Market Report', href: '/singapore-healthcare-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
   {
     question: 'How big is the Singapore healthcare market in 2026?',
     answer: 'The Singapore healthcare market is estimated at USD 28–33 billion in 2026, representing approximately 5.2% of GDP. Despite its small population of 5.9 million, Singapore\'s healthcare market punches far above its weight due to its role as Southeast Asia\'s premier healthcare hub — attracting medical tourists from Indonesia, Malaysia, Vietnam, Thailand, and the wider Asia-Pacific region. Singapore operates the "3Ms" framework: MediShield Life (universal public health insurance), MedisaveS (mandatory individual health savings accounts), and Medifund (safety net for those unable to afford care). The Ministry of Health (MOH) and the Health Sciences Authority (HSA) are the primary regulatory and policy authorities.',
@@ -48,7 +49,7 @@ const REPORT_FAQ_ITEMS = [
     question: 'How does BioNixus serve Singapore-based pharmaceutical companies expanding to MENA?',
     answer: 'BioNixus supports Singapore-headquartered and Asia-Pacific regional pharmaceutical and medical device companies in expanding into GCC and MENA markets. Singapore pharma companies have significant natural connections to the GCC — both are high-income, innovation-adopting markets with premium healthcare aspirations. BioNixus provides SFDA (Saudi Arabia), MOHAP (UAE), and GCC-wide regulatory pathway intelligence; NUPCO tender intelligence; physician panel surveys; and comparative Singapore vs. GCC market intelligence. BioNixus bridges two of the world\'s most dynamic healthcare markets for global commercial teams.',
   },
-];
+], 'singapore');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/singapore-healthcare-market-report');
 const FAQ_SECTION_ID = 'singapore-healthcare-market-faq';

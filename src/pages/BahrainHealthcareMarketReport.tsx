@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Bahrain Healthcare Market Report', href: '/bahrain-healthcare-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
   {
     question: 'How big is the Bahrain healthcare market in 2026?',
     answer:
@@ -54,7 +55,7 @@ const REPORT_FAQ_ITEMS = [
     answer:
       'BioNixus covers Bahrain as part of GCC-wide research programs, typically paired with Saudi Arabia given geographic and patient population overlap. Primary HCP research is conducted with Bahraini specialists across MOH hospitals, Bahrain Defense Force Hospital, and private facilities. Programs include physician surveys, KOL interviews, NHRA registration tracking, and payer access research. Bahrain-specific programs are available for clients with country-specific requirements.',
   },
-];
+], 'bahrain');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/bahrain-healthcare-market-report');
 const FAQ_SECTION_ID = 'bahrain-healthcare-market-faq';

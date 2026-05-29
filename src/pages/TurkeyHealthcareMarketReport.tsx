@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Turkey Healthcare Market Report', href: '/turkey-healthcare-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
   {
     question: 'How big is the Turkey healthcare market in 2026?',
     answer: 'The Turkish healthcare market is estimated at USD 45–58 billion in 2026 — the largest in the MENA extended region outside the GCC and Egypt, and among the top 20 globally. Turkey\'s universal healthcare system, the SGK (Sosyal Güvenlik Kurumu, Social Security Institution), covers approximately 98% of the population through its General Health Insurance (GSS) framework. Turkey\'s Health Transformation Program (2003–2013) fundamentally rebuilt the healthcare system — increasing hospital infrastructure, quality metrics, and universal coverage to among the highest levels in the region. Turkey has over 1,500 hospitals, including more than 500 JCI-accredited or internationally recognised private facilities, and is a major medical tourism destination.',
@@ -48,7 +49,7 @@ const REPORT_FAQ_ITEMS = [
     question: 'How does BioNixus serve Turkey-based pharmaceutical companies expanding to MENA?',
     answer: 'BioNixus supports Turkish pharmaceutical and medical device companies in expanding into GCC and MENA markets. Turkey\'s pharma industry (including major exporters such as Abdi İbrahim, Eczacıbaşı, Zentiva Turkey) has natural market connections to MENA. BioNixus provides SFDA (Saudi Arabia), MOHAP (UAE), and GCC-wide regulatory pathway intelligence; NUPCO tender intelligence; physician panel surveys; and comparative Turkey vs. GCC market intelligence. Turkey\'s medical device and pharmaceutical manufacturers — particularly generic and biosimilar producers — have significant commercial opportunities in GCC markets where BioNixus provides the access intelligence needed.',
   },
-];
+], 'turkey');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/turkey-healthcare-market-report');
 const FAQ_SECTION_ID = 'turkey-healthcare-market-faq';

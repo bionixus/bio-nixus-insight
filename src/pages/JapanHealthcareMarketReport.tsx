@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Japan Healthcare Market Report', href: '/japan-healthcare-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
   {
     question: 'How big is the Japan healthcare market in 2026?',
     answer: 'The Japanese healthcare market is estimated at USD 500–560 billion in 2026, making it the third-largest globally after the United States and China. Japan\'s healthcare system is a universal National Health Insurance (NHI) scheme covering all residents, administered through employer-based insurance societies (Kenpo Kumiai), national health insurance (Kokumin Kenko Hoken), and the Late-Stage Medical Care System for those 75+. Japan has the world\'s oldest population — approximately 29% of the population is 65 or older — creating the highest per-capita healthcare demand of any major economy. Healthcare expenditure represents approximately 11.3% of GDP.',
@@ -48,7 +49,7 @@ const REPORT_FAQ_ITEMS = [
     question: 'How does BioNixus serve Japan-based pharmaceutical companies expanding to MENA?',
     answer: 'BioNixus supports Japanese pharmaceutical and medical device companies in expanding into GCC and MENA markets. Japanese pharma companies (particularly Takeda, Otsuka, Eisai, and Daiichi Sankyo) have significant MENA expansion programs. BioNixus provides SFDA (Saudi Arabia), MOHAP (UAE), and GCC-wide regulatory pathway intelligence; NUPCO tender intelligence; hospital-level consumption data; physician panel surveys across all major therapeutic areas; and comparative Japan vs. GCC market intelligence for global commercial planning.',
   },
-];
+], 'japan');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/japan-healthcare-market-report');
 const FAQ_SECTION_ID = 'japan-healthcare-market-faq';

@@ -17,13 +17,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
   { name: 'Bahrain Medical Devices Market Report', href: '/bahrain-medical-devices-market-report' },
 ];
 
-const REPORT_FAQ_ITEMS = [
+const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
   {
     question: 'How big is the Bahrain medical devices market in 2026?',
     answer:
@@ -54,7 +55,7 @@ const REPORT_FAQ_ITEMS = [
     answer:
       'BioNixus includes Bahrain coverage as part of GCC-wide pharmaceutical and medical device research programs, typically alongside Saudi Arabia — given the King Fahd Causeway proximity and shared patient population. Standalone Bahrain programs cover MOH Bahrain procurement research, NHRA registration tracking, and primary surveys with hospital-based specialists and procurement managers. Bahrain is particularly relevant as a sequential entry market for products launched in Saudi Arabia or UAE.',
   },
-];
+], 'bahrain');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/bahrain-medical-devices-market-report');
 const FAQ_SECTION_ID = 'bahrain-medical-devices-faq';
