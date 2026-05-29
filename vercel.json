@@ -152,6 +152,126 @@
       "statusCode": 301
     },
     {
+      "source": "/market-reports/gcc-pharma-market-report-2026",
+      "destination": "/gcc-pharma-market-report-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/market-reports/saudi-arabia-pharma-market-report-2026",
+      "destination": "/saudi-arabia-healthcare-market-report",
+      "statusCode": 301
+    },
+    {
+      "source": "/market-reports/uae-pharma-market-report-2026",
+      "destination": "/uae-healthcare-market-report",
+      "statusCode": 301
+    },
+    {
+      "source": "/market-reports/kuwait-pharma-market-report-2026",
+      "destination": "/kuwait-healthcare-market-report",
+      "statusCode": 301
+    },
+    {
+      "source": "/market-reports/egypt-pharma-market-report-2026",
+      "destination": "/egypt-healthcare-market-report",
+      "statusCode": 301
+    },
+    {
+      "source": "/market-reports/qatar-pharma-market-report-2026",
+      "destination": "/qatar-healthcare-market-report",
+      "statusCode": 301
+    },
+    {
+      "source": "/market-reports/china-pharma-market-report-2026",
+      "destination": "/healthcare-market-research/china",
+      "statusCode": 301
+    },
+    {
+      "source": "/market-reports/europe-pharma-market-report-2026",
+      "destination": "/healthcare-market-research/europe",
+      "statusCode": 301
+    },
+    {
+      "source": "/market-reports/germany-pharma-market-report-2026",
+      "destination": "/germany-healthcare-market-report",
+      "statusCode": 301
+    },
+    {
+      "source": "/gcc-diabetes-market-report",
+      "destination": "/market-reports/gcc-diabetes-market-report",
+      "statusCode": 301
+    },
+    {
+      "source": "/gcc-biosimilars-market-report",
+      "destination": "/market-reports/gcc-biosimilars-market-report",
+      "statusCode": 301
+    },
+    {
+      "source": "/gcc-digital-health-market-report",
+      "destination": "/market-reports/gcc-digital-health-market-report",
+      "statusCode": 301
+    },
+    {
+      "source": "/gcc-vaccines-market-report",
+      "destination": "/market-reports/gcc-vaccines-market-report",
+      "statusCode": 301
+    },
+    {
+      "source": "/gcc-neurology-cns-market-report",
+      "destination": "/market-reports/gcc-neurology-cns-market-report",
+      "statusCode": 301
+    },
+    {
+      "source": "/gcc-rare-diseases-market-report",
+      "destination": "/market-reports/gcc-rare-diseases-market-report",
+      "statusCode": 301
+    },
+    {
+      "source": "/gcc-immunology-biologics-market-report",
+      "destination": "/market-reports/gcc-immunology-biologics-market-report",
+      "statusCode": 301
+    },
+    {
+      "source": "/gcc-respiratory-market-report",
+      "destination": "/market-reports/gcc-respiratory-market-report",
+      "statusCode": 301
+    },
+    {
+      "source": "/gcc-oncology-market-report",
+      "destination": "/market-reports/gcc-oncology-market-report",
+      "statusCode": 301
+    },
+    {
+      "source": "/gcc-cardiovascular-market-report",
+      "destination": "/market-reports/gcc-cardiovascular-market-report",
+      "statusCode": 301
+    },
+    {
+      "source": "/gcc-dermatology-market-report",
+      "destination": "/market-reports/gcc-dermatology-market-report",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/pharmaceutical-market-research-dubai",
+      "destination": "/pharmaceutical-market-research-dubai",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/gfk-alternative-egypt",
+      "destination": "/gfk-alternative-egypt",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/kantar-health-alternative-gcc",
+      "destination": "/kantar-health-alternative-gcc",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/fallback-:n",
+      "destination": "/de/blog",
+      "statusCode": 301
+    },
+    {
       "source": "/assets/index-:hash.js",
       "destination": "/assets/index.js",
       "statusCode": 301

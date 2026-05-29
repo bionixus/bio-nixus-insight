@@ -102,52 +102,52 @@ export const LEGACY_SLUG_TITLES = {
 const CLUSTER_PATHS = {
   'gcc-pillar': {
     hub: '/healthcare-market-research',
-    report: '/market-reports/gcc-pharma-market-report-2026',
+    report: '/gcc-pharma-market-report-2026',
     blogPillar: '/blog/gcc-pharmaceuticals-market-2026',
   },
   saudi: {
     hub: '/healthcare-market-research/saudi-arabia',
-    report: '/market-reports/saudi-arabia-pharma-market-report-2026',
+    report: '/saudi-arabia-healthcare-market-report',
     countryHub: '/healthcare-market-research/saudi-arabia',
     blogPillar: '/blog/saudi-arabia-healthcare-market-2026',
   },
   uae: {
     hub: '/healthcare-market-research/uae',
-    report: '/market-reports/uae-pharma-market-report-2026',
+    report: '/uae-healthcare-market-report',
     countryHub: '/healthcare-market-research/uae',
     blogPillar: '/blog/uae-healthcare-market-overview-2026',
   },
   kuwait: {
     hub: '/healthcare-market-research/kuwait',
-    report: '/market-reports/kuwait-pharma-market-report-2026',
+    report: '/kuwait-healthcare-market-report',
     countryHub: '/healthcare-market-research/kuwait',
     blogPillar: '/blog/healthcare-overview-kuwait-market-2026',
   },
   egypt: {
     hub: '/healthcare-market-research/egypt',
-    report: '/market-reports/egypt-pharma-market-report-2026',
+    report: '/egypt-healthcare-market-report',
     countryHub: '/healthcare-market-research/egypt',
     blogPillar: '/blog/healthcare-overview-egypt-market-2026',
   },
   qatar: {
     hub: '/healthcare-market-research/qatar',
-    report: '/market-reports/qatar-pharma-market-report-2026',
+    report: '/qatar-healthcare-market-report',
     countryHub: '/healthcare-market-research/qatar',
     blogPillar: '/blog/healthcare-overview-qatar-market-2026',
   },
   china: {
     hub: '/healthcare-market-research/china',
-    report: '/market-reports/china-pharma-market-report-2026',
+    report: '/healthcare-market-research/china',
     blogPillar: '/blog/healthcare-overview-china-market-2026',
   },
   europe: {
     hub: '/healthcare-market-research/europe',
-    report: '/market-reports/europe-pharma-market-report-2026',
+    report: '/healthcare-market-research/europe',
     blogPillar: '/blog/healthcare-market-research-europe-2026',
   },
   germany: {
     hub: '/healthcare-market-research/germany',
-    report: '/market-reports/germany-pharma-market-report-2026',
+    report: '/germany-healthcare-market-report',
     blogPillar: '/blog/gesundheitsmarkt-deutschland-2026',
   },
   access: {
@@ -157,12 +157,12 @@ const CLUSTER_PATHS = {
   },
   methodology: {
     hub: '/healthcare-market-research',
-    report: '/market-reports/gcc-pharma-market-report-2026',
+    report: '/gcc-pharma-market-report-2026',
     blogPillar: '/blog/pharmaceutical-market-research-methods-mena',
   },
   commercial: {
     hub: '/healthcare-market-research',
-    report: '/market-reports/gcc-pharma-market-report-2026',
+    report: '/gcc-pharma-market-report-2026',
     blogPillar: '/blog/competitive-intelligence-pharma-gcc',
   },
   oncology: {
@@ -177,7 +177,7 @@ const CLUSTER_PATHS = {
   },
   'firm-guide': {
     hub: '/healthcare-market-research',
-    report: '/market-reports/gcc-pharma-market-report-2026',
+    report: '/gcc-pharma-market-report-2026',
     blogPillar: '/blog/top-healthcare-market-research-companies-mena',
   },
 };
@@ -206,7 +206,7 @@ export const CLUSTER_RELATED_SLUGS = {
     'oncology-uae-2026-cancer-care-outlook',
     'baxfendy-baxdrostat-hypertension-fda-2026',
   ],
-  kuwait: ['kuwait-healthcare-market-trends-2026', 'healthcare-overview-kuwait-market-2026', 'drug-registration-kuwait-pharma-guide'],
+  kuwait: ['kuwait-healthcare-market-trends-2026', 'healthcare-overview-kuwait-market-2026'],
   egypt: ['healthcare-overview-egypt-market-2026', 'top-market-research-companies-egypt-2026'],
   access: [
     'pharmacoeconomics-gcc-practical-guide',

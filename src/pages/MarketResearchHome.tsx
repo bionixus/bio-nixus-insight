@@ -229,8 +229,8 @@ export default function MarketResearchHome() {
                   .
                 </li>
                 <li>
-                  <Link to="/conf" className="text-primary font-medium hover:underline">
-                    Strategic portfolio conf hub
+                  <Link to="/strategic-portfolio" className="text-primary font-medium hover:underline">
+                    Strategic portfolio hub
                   </Link>
                   {' & '}
                   <Link to="/methodology" className="text-primary font-medium hover:underline">

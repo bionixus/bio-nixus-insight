@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import { fixBrokenInternalHref } from '@/lib/fixBrokenInternalHrefs';
 
 const LINK_CHUNK = /^\[([^\]]+)\]\(([^)]+)\)$/;
 
@@ -29,7 +30,7 @@ export function CrossLinkSentence({ markdown }: { markdown: string }) {
                   {lm[1]}
                 </a>
               ) : (
-                <Link to={lm[2]} className="font-medium text-primary hover:underline">
+                <Link to={fixBrokenInternalHref(lm[2])} className="font-medium text-primary hover:underline">
                   {lm[1]}
                 </Link>
               )

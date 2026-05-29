@@ -12,6 +12,14 @@ import {
 import type { BlogPost } from '@/types/blog';
 import type { Language } from '@/lib/i18n';
 import { resolveSanityBlogSlug } from '../../blog-legacy-redirects.mjs';
+import { getHardcodedPostBySlug } from '@/data/blog-posts-index';
+import { isHardcodedSeoBlogSlug } from '@/lib/blog-robots';
+
+function resolveBlogPostForRoute(slug: string, sanityPost: BlogPost | null): BlogPost | null {
+  const hardcoded = getHardcodedPostBySlug(slug);
+  if (hardcoded && isHardcodedSeoBlogSlug(slug)) return hardcoded;
+  return sanityPost ?? hardcoded ?? null;
+}
 
 const THERAPY_AREAS = [
   'aesthetic-medicine',
@@ -220,6 +228,7 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
     } catch {
       blogPost = null;
     }
+    blogPost = resolveBlogPostForRoute(slug, blogPost);
     return {
       pageType: 'blog-post',
       blogSlug: slug,
@@ -249,6 +258,7 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
     } catch {
       blogPost = null;
     }
+    blogPost = resolveBlogPostForRoute(slug, blogPost);
     return {
       pageType: 'blog-post',
       blogSlug: slug,

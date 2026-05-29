@@ -5,8 +5,22 @@
 export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'healthcare-overview-china-market-2026',
   'pharmacoeconomics-gcc-practical-guide',
+  'gcc-pharmacoeconomics',
   'uae-healthcare-market-trends-2025',
+  'desmoid-tumors-nirogacestat-pharma-market-access',
+  'nf1-koselugo-selumetinib-pharma-market-research',
 ]);
+
+export const BLOG_HARDCODED_SEO_SLUGS = new Set([
+  'gcc-pharmacoeconomics',
+  'nf1-koselugo-selumetinib-pharma-market-research',
+  'desmoid-tumors-nirogacestat-pharma-market-access',
+]);
+
+export function isHardcodedSeoBlogSlug(slug: string | undefined): boolean {
+  if (!slug) return false;
+  return BLOG_HARDCODED_SEO_SLUGS.has(slug.trim().toLowerCase());
+}
 
 function cmsRequestsNoIndex(value: unknown): boolean {
   return value === true || value === 'true' || value === 1;

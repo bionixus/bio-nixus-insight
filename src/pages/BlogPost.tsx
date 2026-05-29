@@ -6,7 +6,13 @@ import { PortableText } from '@portabletext/react';
 import type { PortableTextBlock } from '@portabletext/types';
 import { Helmet } from 'react-helmet-async';
 import { fetchSanityPostBySlug, type RelatedPostsData } from '@/lib/sanity-blog';
-import { BLOG_INDEX_ROBOTS, BLOG_NOINDEX_ROBOTS, resolveBlogSeoNoIndex } from '@/lib/blog-robots';
+import { getHardcodedPostBySlug } from '@/data/blog-posts-index';
+import {
+  BLOG_INDEX_ROBOTS,
+  BLOG_NOINDEX_ROBOTS,
+  isHardcodedSeoBlogSlug,
+  resolveBlogSeoNoIndex,
+} from '@/lib/blog-robots';
 import { optimizeSanityImage } from '@/lib/image-utils';
 import {
   buildSeoDescription,
@@ -243,10 +249,13 @@ const GCC_PHARMA_COMPARISON_BODY_HTML = `<p>Pharmaceutical strategists rarely ne
 
 const GCC_PHARMA_2026_SLUG = 'gcc-pharmaceuticals-market-2026';
 const AI_VS_HUMAN_2026_SLUG = 'ai-vs-human-insight-validating-quantitative-data-2026-pharma-research';
+const SAUDI_PHARMA_ENTRY_2026_GUIDE_SLUG = 'pharmaceutical-market-entry-saudi-arabia-2026-guide';
+const SAUDI_PHARMA_ENTRY_2026_TITLE_CORE = 'Saudi Pharma Market Entry 2026';
+
 const CHINA_HEALTHCARE_2026_SLUG = 'healthcare-overview-china-market-2026';
 const CHINA_HEALTHCARE_2026_TITLE_CORE = 'China Healthcare Market Overview 2026';
 const CHINA_HEALTHCARE_2026_META_DESCRIPTION =
-  '深度解析2026中国医疗健康市场：医保支付改革、创新与生物药商业化、医院及基层诊疗结构、AI与智慧医疗落地、老龄化驱动需求及竞争格局演变。BioNixus为药企、投资人与决策者提供可执行洞察。';
+  '深度解析2026年中国医疗健康市场全景：医保支付改革、创新药出海与生物药增长、AI智慧医疗落地、老龄化诊疗需求变化、医院与基层竞争格局，及跨国药企本地化策略。BioNixus为中国药企、投资人与决策者提供可执行洞察。涵盖器械、数字医疗与支付改革路径。';
 
 const UAE_HEALTHCARE_TRENDS_2025_SLUG = 'uae-healthcare-market-trends-2025';
 const UAE_HEALTHCARE_TRENDS_2025_META_DESCRIPTION =
@@ -362,7 +371,7 @@ const GCC_MEAST_PHARMA_HEALTH_AR_BLOG_AR_TITLE =
 /** `/blog/` article — Saudi pharmaceutical market outlook (Arabic slug, not `/ar/blog/`). */
 const SAUDI_PHARMA_MARKET_2026_AR_SLUG = 'سوق-الدواء-السعودي-2026';
 const SAUDI_PHARMA_MARKET_2026_AR_META_DESCRIPTION =
-  'اكتشف أهم اتجاهات سوق الدواء السعودي لعام 2026. تعرف على فرص التوطين، نمو الأدوية الحيوية، وتأثير رؤية 2030 على الرعاية الصحية في المملكة.';
+  'سوق الدواء السعودي 2026: توطين التصنيع، نمو الأدوية الحيوية، توسع التأمين ومشتريات NUPCO—تحليل BioNixus للوصول والتجاري في المملكة';
 const SAUDI_PHARMA_MARKET_2026_AR_BLOG_EN_TITLE = 'Saudi Arabia Pharmaceutical Market Outlook 2026';
 const SAUDI_PHARMA_MARKET_2026_AR_BLOG_AR_TITLE = 'سوق الدواء السعودي 2026: رؤى واتجاهات';
 
@@ -374,6 +383,7 @@ const SAUDI_HCR_FIRMS_AR_TITLE_CORE = 'شركات أبحاث السوق الصح
 const ARABIC_BLOG_META_DESCRIPTION_BY_SLUG: Record<string, string> = {
   'quantitative-market-research-and-market-access':
     'ملخص عربي: أبحاث السوق الكمية وتأثيرها على الوصول إلى السوق للدواء—رؤى للشركات في الشرق الأوسط ودول الخليج من BioNixus.',
+  [SAUDI_PHARMA_MARKET_2026_AR_SLUG]: SAUDI_PHARMA_MARKET_2026_AR_META_DESCRIPTION,
 };
 const AI_VS_HUMAN_EXEC_SUMMARY_TEXT =
   'In 2026, winning pharmaceutical insight models combine AI speed with human judgment. AI should process scale, detect anomalies, and surface patterns; expert teams should validate context, challenge assumptions, and prioritize strategic action. The executive standard is simple: AI-first analysis with mandatory human decision checkpoints. This reduces risk, improves decision quality, and accelerates launch, market access, and growth execution.';
@@ -779,11 +789,21 @@ const BlogPost = () => {
       })()
       : null;
 
-  const post = sanityPost ?? fallbackPost;
+  const hardcodedPillar = slug ? getHardcodedPostBySlug(slug) : undefined;
+  const preferHardcodedPillar =
+    Boolean(hardcodedPillar) && (isGccPharmacoeconomicsEn || isHardcodedSeoBlogSlug(slug));
+  const post = preferHardcodedPillar
+    ? hardcodedPillar
+    : sanityPost ?? hardcodedPillar ?? fallbackPost;
   const executiveSummary =
     post && !isGccComparisonEn ? getExecutiveSummaryToRender(post, slug, { isArBlog }) : null;
 
   useEffect(() => {
+    if (slug?.startsWith('fallback-')) {
+      const target = pathname.startsWith('/de/') ? '/de/blog' : '/blog';
+      window.location.replace(target);
+      return;
+    }
     const bar = document.getElementById('blog-rp');
     if (!bar) return;
     const update = () => {
@@ -890,6 +910,8 @@ const BlogPost = () => {
     titleCore = isArBlog ? GCC_MEAST_PHARMA_HEALTH_AR_BLOG_AR_TITLE : GCC_MEAST_PHARMA_HEALTH_AR_BLOG_EN_TITLE;
   } else if (slug === CHINA_HEALTHCARE_2026_SLUG) {
     titleCore = CHINA_HEALTHCARE_2026_TITLE_CORE;
+  } else if (slug === SAUDI_PHARMA_ENTRY_2026_GUIDE_SLUG) {
+    titleCore = SAUDI_PHARMA_ENTRY_2026_TITLE_CORE;
   } else if (slug === SAUDI_HCR_FIRMS_AR_SLUG && isArBlog) {
     titleCore = SAUDI_HCR_FIRMS_AR_TITLE_CORE;
   }
@@ -1135,7 +1157,9 @@ const BlogPost = () => {
         <meta
           name="robots"
           content={
-            resolveBlogSeoNoIndex(slug ?? '', post.seoNoIndex)
+            resolveBlogSeoNoIndex(slug ?? '', post.seoNoIndex) &&
+            !isGccPharmacoeconomicsEn &&
+            !isHardcodedSeoBlogSlug(slug ?? '')
               ? BLOG_NOINDEX_ROBOTS
               : BLOG_INDEX_ROBOTS
           }

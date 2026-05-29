@@ -1,5 +1,12 @@
 /** Shared HTML helpers for blog audit / rewrite scripts. */
 
+import {
+  fixBrokenInternalHref,
+  fixBrokenInternalHrefsInHtml,
+} from '../../lib/fix-broken-internal-hrefs.mjs';
+
+export { fixBrokenInternalHref, fixBrokenInternalHrefsInHtml };
+
 /**
  * @param {string} html
  */
@@ -17,14 +24,12 @@ export function countInternalLinks(html) {
   return rel.length + abs.length;
 }
 
-/**
- * @param {string} html
- */
 export function normalizeInternalLinks(html) {
   if (!html) return '';
-  return html
+  const relative = html
     .replace(/href="https:\/\/www\.bionixus\.com(\/[^"]*)"/g, 'href="$1"')
     .replace(/href="http:\/\/www\.bionixus\.com(\/[^"]*)"/g, 'href="$1"');
+  return fixBrokenInternalHrefsInHtml(relative);
 }
 
 const AI_FLUFF_PATTERNS = [

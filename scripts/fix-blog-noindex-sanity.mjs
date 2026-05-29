@@ -34,7 +34,10 @@ loadDotEnv();
 const SLUGS = [
   'healthcare-overview-china-market-2026',
   'pharmacoeconomics-gcc-practical-guide',
+  'gcc-pharmacoeconomics',
   'uae-healthcare-market-trends-2025',
+  'desmoid-tumors-nirogacestat-pharma-market-access',
+  'nf1-koselugo-selumetinib-pharma-market-research',
 ];
 
 const projectId =

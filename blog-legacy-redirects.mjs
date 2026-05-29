@@ -21,6 +21,22 @@ export const BLOG_LEGACY_FULL_PATH_REDIRECTS = Object.fromEntries(
 export const BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH = {
   '/blog/saudi-healthcare-market-research-firms-ar': '/ar/blog/saudi-healthcare-market-research-firms-ar',
   '/blog/gcc-pharmaceuticals-market-arabic-2026': '/ar/blog/gcc-pharmaceuticals-market-arabic-2026',
+  '/blog/أبحاث-السوق-الدوائية-في-الشرق-الأوسط-و-دول-الخليج-العربي':
+    '/ar/blog/أبحاث-السوق-الدوائية-في-الشرق-الأوسط-و-دول-الخليج-العربي',
+  '/blog/سوق-الدواء-السعودي-2026': '/ar/blog/سوق-الدواء-السعودي-2026',
+};
+
+/**
+ * Internal href rewrites for URLs that 301 elsewhere (Ahrefs page-has-links-to-redirect).
+ * Applied at render time and by scripts/fix-redirect-internal-links.mjs.
+ */
+export const REDIRECT_HREF_REWRITES = {
+  '/conf': '/strategic-portfolio',
+  '/ar/conf': '/ar/strategic-portfolio',
+  '/healthcare-market-research/united-kingdom': '/healthcare-market-research/uk',
+  '/ar/': '/ar',
+  ...BLOG_LEGACY_FULL_PATH_REDIRECTS,
+  ...BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH,
 };
 
 /**

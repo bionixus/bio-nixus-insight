@@ -111,64 +111,33 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     en: '/blog',
     de: '/de/blog',
     fr: '/fr/blog',
-    es: '/blog',
-    zh: '/blog',
-    ar: '/blog',
+    ar: '/ar/blog',
   },
   '/market-access': {
     en: '/services/market-access',
-    de: '/services/market-access',
-    fr: '/services/market-access',
     es: '/es/market-access',
-    zh: '/services/market-access',
-    ar: '/services/market-access',
   },
   '/market-research': {
     en: '/market-research',
-    de: '/market-research',
-    fr: '/market-research',
-    es: '/market-research',
-    zh: '/market-research',
-    ar: '/market-research',
   },
   '/market-research-uae': {
     en: '/market-research-uae',
-    de: '/market-research-uae',
-    fr: '/market-research-uae',
-    es: '/market-research-uae',
-    zh: '/market-research-uae',
     ar: '/ar/market-research-uae',
   },
   '/market-research-ksa': {
     en: '/market-research-ksa',
-    de: '/market-research-ksa',
-    fr: '/market-research-ksa',
-    es: '/market-research-ksa',
-    zh: '/market-research-ksa',
     ar: '/ar/market-research-ksa',
   },
   '/market-research-saudi': {
     en: '/market-research-saudi',
-    de: '/market-research-saudi',
-    fr: '/market-research-saudi',
-    es: '/market-research-saudi',
-    zh: '/market-research-saudi',
     ar: '/ar/market-research-saudi',
   },
   '/market-research-kuwait': {
     en: '/market-research-kuwait',
-    de: '/market-research-kuwait',
-    fr: '/market-research-kuwait',
-    es: '/market-research-kuwait',
-    zh: '/market-research-kuwait',
     ar: '/ar/market-research-kuwait',
   },
   '/market-research-egypt': {
     en: '/market-research-egypt',
-    de: '/market-research-egypt',
-    fr: '/market-research-egypt',
-    es: '/market-research-egypt',
-    zh: '/market-research-egypt',
     ar: '/ar/market-research-egypt',
   },
   '/strategic-portfolio': {
@@ -181,11 +150,6 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
   },
   '/market-research-saudi-arabia-pharmaceutical': {
     en: '/market-research-saudi-arabia-pharmaceutical',
-    de: '/market-research-saudi-arabia-pharmaceutical',
-    fr: '/market-research-saudi-arabia-pharmaceutical',
-    es: '/market-research-saudi-arabia-pharmaceutical',
-    zh: '/market-research-saudi-arabia-pharmaceutical',
-    ar: '/market-research-saudi-arabia-pharmaceutical',
   },
   '/market-research-healthcare': {
     en: '/market-research-healthcare',
@@ -197,19 +161,9 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
   },
   '/qualitative-market-research': {
     en: '/qualitative-market-research',
-    de: '/qualitative-market-research',
-    fr: '/qualitative-market-research',
-    es: '/qualitative-market-research',
-    zh: '/qualitative-market-research',
-    ar: '/qualitative-market-research',
   },
   '/pharmacies-saudi-arabia-marketing': {
     en: '/pharmacies-saudi-arabia-marketing',
-    de: '/pharmacies-saudi-arabia-marketing',
-    fr: '/pharmacies-saudi-arabia-marketing',
-    es: '/pharmacies-saudi-arabia-marketing',
-    zh: '/pharmacies-saudi-arabia-marketing',
-    ar: '/pharmacies-saudi-arabia-marketing',
   },
   '/bionixus-ai-chatbots-increase-sales-and-lead-generation': {
     en: '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
@@ -238,13 +192,20 @@ export function getCanonicalPath(pathname: string = '/') {
   return Object.values(routes).includes(normalized) ? normalized : routes.en;
 }
 
+const HREFLANG_LANG_KEYS = ['en', 'de', 'fr', 'es', 'zh', 'ar'] as const;
+
+function hreflangLangCode(key: (typeof HREFLANG_LANG_KEYS)[number]): string {
+  return key === 'zh' ? 'zh-CN' : key;
+}
+
 export function getHreflangLinks(pathname: string = '/') {
   const base = getBaseUrl();
   const normalized = normalizePath(pathname);
   const group = findRouteGroup(normalized);
-  const canonicalHrefForPath = (path: string) => `${base}${getCanonicalPath(path)}`;
+  const absoluteHref = (path: string) => `${base}${normalizePath(path)}`;
+
   if (!group) {
-    const fallbackHref = canonicalHrefForPath(normalized);
+    const fallbackHref = absoluteHref(normalized);
     return [
       { lang: 'x-default', href: fallbackHref },
       { lang: 'en', href: fallbackHref },
@@ -252,23 +213,31 @@ export function getHreflangLinks(pathname: string = '/') {
   }
 
   const routes = localizedRouteGroups[group];
-  const routeFor = (lang: 'en' | 'de' | 'fr' | 'es' | 'zh' | 'ar') => routes[lang] || routes.en;
-  const rawLinks = [
-    { lang: 'x-default', href: canonicalHrefForPath(routeFor('en')) },
-    { lang: 'en', href: canonicalHrefForPath(routeFor('en')) },
-    { lang: 'de', href: canonicalHrefForPath(routeFor('de')) },
-    { lang: 'fr', href: canonicalHrefForPath(routeFor('fr')) },
-    { lang: 'es', href: canonicalHrefForPath(routeFor('es')) },
-    { lang: 'zh-CN', href: canonicalHrefForPath(routeFor('zh')) },
-    { lang: 'ar', href: canonicalHrefForPath(routeFor('ar')) },
+  const enPath = routes.en ?? normalized;
+  const enHref = absoluteHref(enPath);
+
+  /** One representative language per distinct URL (first declared key wins). */
+  const hrefToLang = new Map<string, (typeof HREFLANG_LANG_KEYS)[number]>();
+  for (const key of HREFLANG_LANG_KEYS) {
+    const path = routes[key];
+    if (!path) continue;
+    const href = absoluteHref(path);
+    if (!hrefToLang.has(href)) {
+      hrefToLang.set(href, key);
+    }
+  }
+
+  const links: Array<{ lang: string; href: string }> = [
+    { lang: 'x-default', href: enHref },
+    { lang: 'en', href: enHref },
   ];
-  // Avoid duplicate href targets being assigned to multiple languages.
-  const seenHrefs = new Set<string>();
-  return rawLinks.filter(({ href }) => {
-    if (seenHrefs.has(href)) return false;
-    seenHrefs.add(href);
-    return true;
-  });
+
+  for (const [href, key] of hrefToLang) {
+    if (href === enHref) continue;
+    links.push({ lang: hreflangLangCode(key), href });
+  }
+
+  return links;
 }
 
 /**

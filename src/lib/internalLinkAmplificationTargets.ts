@@ -6,8 +6,8 @@ import { LOW_INTERNAL_LINK_TARGETS } from '@/lib/lowInternalLinkTargets.generate
 
 /** Curated crawl targets surfaced on `/sitemap` (priority section); also merged into Blog index amplification rails. */
 export const INTERNAL_LINK_PRIORITY_TARGETS: ReadonlyArray<{ to: string; label: string }> = [
-  { to: '/conf', label: 'Strategic portfolio deck — conf hub' },
-  { to: '/ar/conf', label: 'Strategic portfolio — Arabic conf hub' },
+  { to: '/strategic-portfolio', label: 'Strategic portfolio deck' },
+  { to: '/ar/strategic-portfolio', label: 'Strategic portfolio — Arabic' },
   { to: '/methodology', label: 'Healthcare market research methodology (EN)' },
   { to: '/de/methodology', label: 'Methodology overview — Deutsch' },
   { to: '/fr/methodology', label: 'Methodology overview — Français' },
@@ -47,14 +47,6 @@ export const INTERNAL_LINK_PRIORITY_TARGETS: ReadonlyArray<{ to: string; label: 
   {
     to: '/ar/blog/سوق-الدواء-السعودي-2026',
     label: 'Saudi Arabian pharmaceutical market 2026 (Arabic canonical)',
-  },
-  {
-    to: '/blog/أبحاث-السوق-الدوائية-في-الشرق-الأوسط-و-دول-الخليج-العربي',
-    label: 'Middle East pharma research (legacy mirrored blog slug)',
-  },
-  {
-    to: '/blog/سوق-الدواء-السعودي-2026',
-    label: 'Saudi pharma market 2026 (legacy mirrored blog slug)',
   },
 ];
 

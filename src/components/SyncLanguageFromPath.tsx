@@ -7,16 +7,16 @@ const SyncLanguageFromPath = () => {
   const { setLanguage, language } = useLanguage();
 
   useEffect(() => {
-    // Only sync language when on a language-specific path (home or its sub-paths)
-    if (pathname.startsWith('/de')) {
+    // Only sync language when on a locale prefix path (/de, /de/..., etc.)
+    if (pathname === '/de' || pathname.startsWith('/de/')) {
       if (language !== 'de') setLanguage('de');
-    } else if (pathname.startsWith('/fr')) {
+    } else if (pathname === '/fr' || pathname.startsWith('/fr/')) {
       if (language !== 'fr') setLanguage('fr');
-    } else if (pathname.startsWith('/es')) {
+    } else if (pathname === '/es' || pathname.startsWith('/es/')) {
       if (language !== 'es') setLanguage('es');
-    } else if (pathname.startsWith('/zh')) {
+    } else if (pathname === '/zh' || pathname.startsWith('/zh/')) {
       if (language !== 'zh') setLanguage('zh');
-    } else if (pathname.startsWith('/ar')) {
+    } else if (pathname === '/ar' || pathname.startsWith('/ar/')) {
       if (language !== 'ar') setLanguage('ar');
     } else if (pathname === '/') {
       if (language !== 'en') setLanguage('en');

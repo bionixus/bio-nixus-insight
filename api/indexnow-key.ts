@@ -99,11 +99,11 @@ const REDIRECTS: Record<string, string> = {
 };
 
 function inferHtmlLang(pathname: string): { lang: string; dir: 'ltr' | 'rtl' } {
-  if (pathname.startsWith('/de')) return { lang: 'de', dir: 'ltr' };
-  if (pathname.startsWith('/fr')) return { lang: 'fr', dir: 'ltr' };
-  if (pathname.startsWith('/es')) return { lang: 'es', dir: 'ltr' };
-  if (pathname.startsWith('/ar')) return { lang: 'ar', dir: 'rtl' };
-  if (pathname.startsWith('/zh')) return { lang: 'zh-CN', dir: 'ltr' };
+  if (pathname === '/de' || pathname.startsWith('/de/')) return { lang: 'de', dir: 'ltr' };
+  if (pathname === '/fr' || pathname.startsWith('/fr/')) return { lang: 'fr', dir: 'ltr' };
+  if (pathname === '/es' || pathname.startsWith('/es/')) return { lang: 'es', dir: 'ltr' };
+  if (pathname === '/ar' || pathname.startsWith('/ar/')) return { lang: 'ar', dir: 'rtl' };
+  if (pathname === '/zh' || pathname.startsWith('/zh/')) return { lang: 'zh-CN', dir: 'ltr' };
   return { lang: 'en', dir: 'ltr' };
 }
 
@@ -152,7 +152,7 @@ const SAUDI_PHARMA_MARKET_2026_AR_BLOG_EN_TITLE =
 const SAUDI_PHARMA_MARKET_2026_AR_BLOG_AR_TITLE =
   'سوق الدواء السعودي 2026: رؤى واتجاهات | BioNixus';
 const SAUDI_PHARMA_MARKET_2026_AR_META_DESCRIPTION =
-  'اكتشف أهم اتجاهات سوق الدواء السعودي لعام 2026. تعرف على فرص التوطين، نمو الأدوية الحيوية، وتأثير رؤية 2030 على الرعاية الصحية في المملكة.';
+  'سوق الدواء السعودي 2026: توطين التصنيع، نمو الأدوية الحيوية، توسع التأمين ومشتريات NUPCO—تحليل BioNixus للوصول والتجاري في المملكة';
 
 const GENERIC_DEFAULT_TITLES = new Set<string>([
   'BioNixus | Healthcare & Pharmaceutical Market Research',
@@ -364,7 +364,15 @@ function buildFallbackDescription(pathname: string): string {
     return `${titleCaseFromSlug(slug)} insight article from BioNixus covering healthcare and pharmaceutical market strategy.`;
   }
   if (path.startsWith('/ar/blog/')) {
-    const slug = path.split('/').pop() || 'insight';
+    let slug = path.split('/').pop() || 'insight';
+    try {
+      slug = decodeURIComponent(slug);
+    } catch {
+      /* keep raw segment */
+    }
+    if (slug === SAUDI_PHARMA_MARKET_2026_AR_SLUG) {
+      return SAUDI_PHARMA_MARKET_2026_AR_META_DESCRIPTION;
+    }
     if (slug === 'quantitative-market-research-and-market-access') {
       return 'ملخص عربي: أبحاث السوق الكمية وتأثيرها على الوصول إلى السوق للدواء—رؤى للشركات في الشرق الأوسط ودول الخليج من BioNixus.';
     }
@@ -378,31 +386,31 @@ function buildFallbackDescription(pathname: string): string {
     return 'BioNixus delivers real world evidence (RWE) for pharma: principal-led design, EMEA and MENA field execution, HTA-ready narratives, and GCC programs—decision-ready outputs for medical, access, and commercial teams.';
   }
   if (path === '/gfk-alternative-egypt') {
-    return 'GfK was acquired by NIQ in 2023. BioNixus is an independent market research partner with a Cairo office for pharma, healthcare, devices, and consumer categories across Egypt and GCC.';
+    return 'GfK joined NIQ in 2023. BioNixus is a Cairo partner for pharma, healthcare, and consumer research across Egypt and the GCC.';
   }
   if (path === '/kantar-health-alternative-gcc') {
-    return 'Kantar Health has no dedicated GCC healthcare desk. BioNixus delivers pharmaceutical and healthcare research across KSA, UAE, Kuwait, Qatar, Bahrain, Oman, and Egypt.';
+    return 'Kantar Health has no GCC healthcare desk. BioNixus pharma research across KSA, UAE, Kuwait, Qatar, Bahrain, Oman, and Egypt.';
   }
   if (path === '/pharmaceutical-market-research-dubai') {
-    return 'Pharmaceutical market research in Dubai from BioNixus: physician surveys, hospital utilization data, KOL mapping, and payer-aware market access programs aligned with UAE health authority expectations.';
+    return 'Pharma market research in Dubai: physician surveys, hospital data, KOL mapping, and UAE payer-aware market access—BioNixus.';
   }
   if (path === '/iqvia-alternative') {
-    return 'Discover BioNixus, the leading IQVIA alternative providing hospital sales data, consumption analytics, and flexible global studies for the pharmaceutical industry.';
+    return 'BioNixus IQVIA alternative: hospital sales data, consumption analytics, and flexible global studies for pharmaceutical teams.';
   }
   if (path === '/bionixus-vs-iqvia-mena') {
     return 'Compare BioNixus and IQVIA for MENA healthcare research, including hospital data, analytics, and market access support tailored for Saudi Arabia and the GCC.';
   }
   if (path === '/physician-survey-saudi-arabia') {
-    return 'Physician surveys in Saudi Arabia for pharma: Arabic fieldwork, verified HCP samples, SFDA-aware designs, consumption data integration, and statistically defensible sizing from BioNixus.';
+    return 'Saudi physician surveys for pharma: Arabic fieldwork, verified HCP samples, SFDA-aware design, and consumption data from BioNixus.';
   }
   if (path === '/sfda-market-access-strategy-saudi-arabia') {
-    return 'SFDA market access in Saudi Arabia (2026): NUPCO formulary context, HTA-ready evidence bundles, utilization insight, pricing signals, and payer research for launch and lifecycle teams.';
+    return 'SFDA market access in Saudi Arabia 2026: NUPCO formulary, HTA evidence, utilization and payer research for pharma teams—BioNixus.';
   }
   if (path === '/kol-mapping-saudi-arabia-oncology') {
-    return 'Oncology KOL mapping in Saudi Arabia—validated physician networks, influence scoring, utilization context, and engagement plans integrating hospital data for GCC medical and commercial teams.';
+    return 'Oncology KOL mapping in Saudi Arabia: physician networks, influence scoring, utilization context, and GCC engagement—BioNixus.';
   }
   if (path === '/biosimilar-market-entry-saudi-arabia') {
-    return 'Biosimilar market entry for Saudi Arabia (2026): SFDA pathways, NUPCO dynamics, utilization research, physician adoption studies, and competitive intelligence spanning KSA and GCC affiliates.';
+    return 'Biosimilar entry in Saudi Arabia 2026: SFDA pathways, NUPCO dynamics, utilization research, and physician adoption—BioNixus.';
   }
 
   const segment = path.split('/').filter(Boolean).pop() || 'home';

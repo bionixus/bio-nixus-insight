@@ -12,7 +12,7 @@ import { blogRecoveryPaths } from '@/lib/internalLinkRecovery';
 import { INTERNAL_LINK_AMPLIFICATION_TARGETS } from '@/lib/internalLinkAmplificationTargets';
 import { useInitialData } from '@/contexts/InitialDataContext';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { languagePaths } from '@/lib/seo';
+import { getHreflangLinks, languagePaths } from '@/lib/seo';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import type { BlogPost } from '@/types/blog';
 
@@ -63,7 +63,7 @@ function buildBlogBreadcrumbSchema(canonical: string, blogLabel: string) {
 const recoveryLinkLabels: Record<string, string> = {
   '/blog/pharma-market-entry-saudi-arabia-playbook': 'Pharma Market Entry Saudi Arabia Playbook',
   '/blog/competitive-intelligence-pharma-gcc': 'Competitive Intelligence Pharma GCC',
-  '/blog/healthcare-market-research-europe': 'Healthcare Market Research in Europe',
+  '/blog/healthcare-market-research-europe-2026': 'Healthcare Market Research in Europe (2026 Guide)',
 };
 
 function pathToLabel(path: string): string {
@@ -191,6 +191,7 @@ const Blog = () => {
 
   const mainDir = isArabicBlog ? 'rtl' : 'ltr';
   const mainLang = isArabicBlog ? 'ar' : isGerman ? 'de' : isFrench ? 'fr' : 'en';
+  const hreflangLinks = getHreflangLinks(pathname);
 
   return (
     <div className="min-h-screen bg-background">
@@ -198,10 +199,9 @@ const Blog = () => {
         <title>{title}</title>
         <meta name="description" content={description} />
         <link rel="canonical" href={canonical} />
-        <link rel="alternate" hrefLang="x-default" href="https://www.bionixus.com/blog" />
-        <link rel="alternate" hrefLang="en" href="https://www.bionixus.com/blog" />
-        <link rel="alternate" hrefLang="de" href="https://www.bionixus.com/de/blog" />
-        <link rel="alternate" hrefLang="fr" href="https://www.bionixus.com/fr/blog" />
+        {hreflangLinks.map(({ lang, href }) => (
+          <link key={`${lang}-${href}`} rel="alternate" hrefLang={lang} href={href} />
+        ))}
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="BioNixus" />
         <meta property="og:title" content={title} />

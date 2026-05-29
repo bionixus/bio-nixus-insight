@@ -222,12 +222,12 @@ const CLUSTER_REPORT_LINKS = {
   },
   'infectious-liver': {
     therapyHub: '/healthcare-market-research',
-    gccReport: '/market-reports/gcc-pharma-market-report-2026',
+    gccReport: '/gcc-pharma-market-report-2026',
     blogPillar: '/blog/gcc-pharmaceuticals-market-2026',
   },
   'infectious-hiv': {
     therapyHub: '/healthcare-market-research',
-    gccReport: '/market-reports/gcc-pharma-market-report-2026',
+    gccReport: '/gcc-pharma-market-report-2026',
     blogPillar: '/blog/market-access-strategy-uae',
   },
   vaccines: {

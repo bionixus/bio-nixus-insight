@@ -5,6 +5,8 @@ import express from 'express';
 import compression from 'compression';
 import { canonicalRedirectTarget, isSsrNotFoundPage } from './seo-noise-query.mjs';
 import { BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH, BLOG_LEGACY_FULL_PATH_REDIRECTS } from './blog-legacy-redirects.mjs';
+import { getBlogMetaDescriptionOverride } from './blog-crawler-stubs.mjs';
+import { formatMetaDescriptionInRange } from './src/server/seo-meta.js';
 import { normalizeOgCardPath, renderOgCardSvg } from './lib/og-card-svg.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -12,11 +14,11 @@ const isProduction = process.env.NODE_ENV === 'production';
 const port = Number(process.env.PORT || 5173);
 
 function inferHtmlLang(pathname) {
-  if (pathname.startsWith('/de')) return { lang: 'de', dir: 'ltr' };
-  if (pathname.startsWith('/fr')) return { lang: 'fr', dir: 'ltr' };
-  if (pathname.startsWith('/es')) return { lang: 'es', dir: 'ltr' };
-  if (pathname.startsWith('/ar')) return { lang: 'ar', dir: 'rtl' };
-  if (pathname.startsWith('/zh')) return { lang: 'zh-CN', dir: 'ltr' };
+  if (pathname === '/de' || pathname.startsWith('/de/')) return { lang: 'de', dir: 'ltr' };
+  if (pathname === '/fr' || pathname.startsWith('/fr/')) return { lang: 'fr', dir: 'ltr' };
+  if (pathname === '/es' || pathname.startsWith('/es/')) return { lang: 'es', dir: 'ltr' };
+  if (pathname === '/ar' || pathname.startsWith('/ar/')) return { lang: 'ar', dir: 'rtl' };
+  if (pathname === '/zh' || pathname.startsWith('/zh/')) return { lang: 'zh-CN', dir: 'ltr' };
   return { lang: 'en', dir: 'ltr' };
 }
 
@@ -65,7 +67,7 @@ const SAUDI_PHARMA_MARKET_2026_AR_BLOG_EN_TITLE =
 const SAUDI_PHARMA_MARKET_2026_AR_BLOG_AR_TITLE =
   'سوق الدواء السعودي 2026: رؤى واتجاهات | BioNixus';
 const SAUDI_PHARMA_MARKET_2026_AR_META_DESCRIPTION =
-  'اكتشف أهم اتجاهات سوق الدواء السعودي لعام 2026. تعرف على فرص التوطين، نمو الأدوية الحيوية، وتأثير رؤية 2030 على الرعاية الصحية في المملكة.';
+  'سوق الدواء السعودي 2026: توطين التصنيع، نمو الأدوية الحيوية، توسع التأمين ومشتريات NUPCO—تحليل BioNixus للوصول والتجاري في المملكة';
 
 const GENERIC_DEFAULT_TITLES = new Set([
   'BioNixus | Healthcare & Pharmaceutical Market Research',
@@ -238,6 +240,9 @@ function buildFallbackDescription(pathname) {
   if (path === '/market-research-home') {
     return 'Stay updated with the latest data insights and market research trends in the Middle East, focusing on Saudi Arabia and UAE, with proven expertise.';
   }
+  if (path === '/terms') {
+    return 'BioNixus terms of service for our website and healthcare market research: acceptable use, confidentiality, and client policies.';
+  }
   if (path === '/contact') {
     return 'Request a BioNixus healthcare and pharmaceutical market research proposal: Saudi Arabia, GCC, UK, and Europe coverage with quantitative, qualitative, and market access programs.';
   }
@@ -285,6 +290,8 @@ function buildFallbackDescription(pathname) {
     } catch {
       /* keep raw segment */
     }
+    const blogMetaOverride = getBlogMetaDescriptionOverride(slug);
+    if (blogMetaOverride) return blogMetaOverride;
     if (slug === SAUDI_PHARMA_MARKET_2026_AR_SLUG) {
       return SAUDI_PHARMA_MARKET_2026_AR_META_DESCRIPTION;
     }
@@ -300,7 +307,15 @@ function buildFallbackDescription(pathname) {
     return `${titleCaseFromSlug(slug)} insight article from BioNixus covering healthcare and pharmaceutical market strategy.`;
   }
   if (path.startsWith('/ar/blog/')) {
-    const slug = path.split('/').pop() || 'insight';
+    let slug = path.split('/').pop() || 'insight';
+    try {
+      slug = decodeURIComponent(slug);
+    } catch {
+      /* keep raw segment */
+    }
+    if (slug === SAUDI_PHARMA_MARKET_2026_AR_SLUG) {
+      return SAUDI_PHARMA_MARKET_2026_AR_META_DESCRIPTION;
+    }
     if (slug === 'quantitative-market-research-and-market-access') {
       return 'ملخص عربي: أبحاث السوق الكمية وتأثيرها على الوصول إلى السوق للدواء—رؤى للشركات في الشرق الأوسط ودول الخليج من BioNixus.';
     }
@@ -314,44 +329,39 @@ function buildFallbackDescription(pathname) {
     return 'BioNixus delivers real world evidence (RWE) for pharma: principal-led design, EMEA and MENA field execution, HTA-ready narratives, and GCC programs—decision-ready outputs for medical, access, and commercial teams.';
   }
   if (path === '/gfk-alternative-egypt') {
-    return 'GfK was acquired by NIQ in 2023. BioNixus is an independent market research partner with a Cairo office for pharma, healthcare, devices, and consumer categories across Egypt and GCC.';
+    return 'GfK joined NIQ in 2023. BioNixus is a Cairo partner for pharma, healthcare, and consumer research across Egypt and the GCC.';
   }
   if (path === '/kantar-health-alternative-gcc') {
-    return 'Kantar Health has no dedicated GCC healthcare desk. BioNixus delivers pharmaceutical and healthcare research across KSA, UAE, Kuwait, Qatar, Bahrain, Oman, and Egypt.';
+    return 'Kantar Health has no GCC healthcare desk. BioNixus pharma research across KSA, UAE, Kuwait, Qatar, Bahrain, Oman, and Egypt.';
   }
   if (path === '/pharmaceutical-market-research-dubai') {
-    return 'Pharmaceutical market research in Dubai from BioNixus: physician surveys, hospital utilization data, KOL mapping, and payer-aware market access programs aligned with UAE health authority expectations.';
+    return 'Pharma market research in Dubai: physician surveys, hospital data, KOL mapping, and UAE payer-aware market access—BioNixus.';
   }
   if (path === '/iqvia-alternative') {
-    return 'Discover BioNixus, the leading IQVIA alternative providing hospital sales data, consumption analytics, and flexible global studies for the pharmaceutical industry.';
+    return 'BioNixus IQVIA alternative: hospital sales data, consumption analytics, and flexible global studies for pharmaceutical teams.';
   }
   if (path === '/bionixus-vs-iqvia-mena') {
     return 'Compare BioNixus and IQVIA for MENA healthcare research, including hospital data, analytics, and market access support tailored for Saudi Arabia and the GCC.';
   }
   if (path === '/physician-survey-saudi-arabia') {
-    return 'Physician surveys in Saudi Arabia for pharma: Arabic fieldwork, verified HCP samples, SFDA-aware designs, consumption data integration, and statistically defensible sizing from BioNixus.';
+    return 'Saudi physician surveys for pharma: Arabic fieldwork, verified HCP samples, SFDA-aware design, and consumption data from BioNixus.';
   }
   if (path === '/sfda-market-access-strategy-saudi-arabia') {
-    return 'SFDA market access in Saudi Arabia (2026): NUPCO formulary context, HTA-ready evidence bundles, utilization insight, pricing signals, and payer research for launch and lifecycle teams.';
+    return 'SFDA market access in Saudi Arabia 2026: NUPCO formulary, HTA evidence, utilization and payer research for pharma teams—BioNixus.';
   }
   if (path === '/kol-mapping-saudi-arabia-oncology') {
-    return 'Oncology KOL mapping in Saudi Arabia—validated physician networks, influence scoring, utilization context, and engagement plans integrating hospital data for GCC medical and commercial teams.';
+    return 'Oncology KOL mapping in Saudi Arabia: physician networks, influence scoring, utilization context, and GCC engagement—BioNixus.';
   }
   if (path === '/biosimilar-market-entry-saudi-arabia') {
-    return 'Biosimilar market entry for Saudi Arabia (2026): SFDA pathways, NUPCO dynamics, utilization research, physician adoption studies, and competitive intelligence spanning KSA and GCC affiliates.';
+    return 'Biosimilar entry in Saudi Arabia 2026: SFDA pathways, NUPCO dynamics, utilization research, and physician adoption—BioNixus.';
   }
 
   const segment = path.split('/').filter(Boolean).pop() || 'home';
   return `${titleCaseFromSlug(segment)} page from BioNixus with healthcare and pharmaceutical market research insights and services context.`;
 }
 
-function normalizeDescriptionLength(description, max = 155) {
-  const clean = String(description || '').replace(/\s+/g, ' ').trim();
-  if (!clean) return 'BioNixus healthcare and pharmaceutical market research insights.';
-  if (clean.length <= max) return clean;
-  const cut = clean.slice(0, max - 1);
-  const lastSpace = cut.lastIndexOf(' ');
-  return `${(lastSpace > 90 ? cut.slice(0, lastSpace) : cut).trim().replace(/[|,;:\-–—\s]+$/, '')}.`;
+function normalizeDescriptionLength(description) {
+  return formatMetaDescriptionInRange(description);
 }
 
 function shouldForceLocaleFallback(pathname, chosen) {
@@ -589,6 +599,29 @@ async function startServer() {
     ...BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH,
     '/blog/\u0623\u0628\u062D\u0627\u062B-\u0627\u0644\u0633\u0648\u0642-\u0627\u0644\u062F\u0648\u0627\u0626\u064A\u0629-\u0641\u064A-\u0627\u0644\u0634\u0631\u0642-\u0627\u0644\u0623\u0648\u0633\u0637-\u0648-\u062F\u0648\u0644-\u0627\u0644\u062E\u0644\u064A\u062C-\u0627\u0644\u0639\u0631\u0628\u064A': '/ar/blog/pharmaceutical-market-research-middle-east-gcc',
     '/blog/\u0633\u0648\u0642-\u0627\u0644\u062F\u0648\u0627\u0621-\u0627\u0644\u0633\u0639\u0648\u062F\u064A-2026': '/ar/blog/saudi-pharma-market-2026',
+    '/market-reports/gcc-pharma-market-report-2026': '/gcc-pharma-market-report-2026',
+    '/market-reports/saudi-arabia-pharma-market-report-2026': '/saudi-arabia-healthcare-market-report',
+    '/market-reports/uae-pharma-market-report-2026': '/uae-healthcare-market-report',
+    '/market-reports/kuwait-pharma-market-report-2026': '/kuwait-healthcare-market-report',
+    '/market-reports/egypt-pharma-market-report-2026': '/egypt-healthcare-market-report',
+    '/market-reports/qatar-pharma-market-report-2026': '/qatar-healthcare-market-report',
+    '/market-reports/china-pharma-market-report-2026': '/healthcare-market-research/china',
+    '/market-reports/europe-pharma-market-report-2026': '/healthcare-market-research/europe',
+    '/market-reports/germany-pharma-market-report-2026': '/germany-healthcare-market-report',
+    '/gcc-diabetes-market-report': '/market-reports/gcc-diabetes-market-report',
+    '/gcc-biosimilars-market-report': '/market-reports/gcc-biosimilars-market-report',
+    '/gcc-digital-health-market-report': '/market-reports/gcc-digital-health-market-report',
+    '/gcc-vaccines-market-report': '/market-reports/gcc-vaccines-market-report',
+    '/gcc-neurology-cns-market-report': '/market-reports/gcc-neurology-cns-market-report',
+    '/gcc-rare-diseases-market-report': '/market-reports/gcc-rare-diseases-market-report',
+    '/gcc-immunology-biologics-market-report': '/market-reports/gcc-immunology-biologics-market-report',
+    '/gcc-respiratory-market-report': '/market-reports/gcc-respiratory-market-report',
+    '/gcc-oncology-market-report': '/market-reports/gcc-oncology-market-report',
+    '/gcc-cardiovascular-market-report': '/market-reports/gcc-cardiovascular-market-report',
+    '/gcc-dermatology-market-report': '/market-reports/gcc-dermatology-market-report',
+    '/ar/pharmaceutical-market-research-dubai': '/pharmaceutical-market-research-dubai',
+    '/ar/gfk-alternative-egypt': '/gfk-alternative-egypt',
+    '/ar/kantar-health-alternative-gcc': '/kantar-health-alternative-gcc',
   };
 
   const strategicPortfolioAbsolutePath = path.resolve(

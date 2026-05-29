@@ -20,7 +20,9 @@ import {
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
+import { defaultOgImageUrl } from '@/lib/seo';
 import { CTASection } from '@/components/shared/CTASection';
 import { useSanityBlog } from '@/hooks/useSanityBlog';
 import { fetchCaseStudies } from '@/lib/sanity-case-studies';
@@ -302,6 +304,9 @@ export default function SiteMapPage() {
   });
 
   const canonicalUrl = 'https://www.bionixus.com/sitemap';
+  const ogTitle = 'Sitemap | BioNixus Healthcare Market Research Directory';
+  const ogDescription =
+    'Explore every major BioNixus route: services, GCC and global reports, country intelligence, blog insights, and case studies.';
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -356,17 +361,21 @@ export default function SiteMapPage() {
           content="Structured BioNixus directory of services, blog articles, case studies, country hubs, market reports, and pharmaceutical intelligence pages—organized for marketing, access, and research leaders."
         />
         <link rel="canonical" href={canonicalUrl} />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Sitemap | BioNixus Healthcare Market Research Directory" />
-        <meta
-          property="og:description"
-          content="Explore every major BioNixus route: services, GCC and global reports, country intelligence, blog insights, and case studies."
-        />
-        <meta property="og:url" content={canonicalUrl} />
-        <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>
       </Helmet>
+      <OpenGraphMeta
+        title={ogTitle}
+        description={ogDescription}
+        image={defaultOgImageUrl}
+        url={canonicalUrl}
+        type="website"
+        locale="en_US"
+        alternateLocales={['ar_SA']}
+        siteName="BioNixus Healthcare Market Research"
+        imageAlt="BioNixus healthcare and pharmaceutical market research sitemap directory"
+        twitterSite="@BioNixus"
+      />
 
       <Navbar />
 

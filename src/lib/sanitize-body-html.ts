@@ -3,7 +3,8 @@
  * Replaces isomorphic-dompurify/jsdom, which can fail or bloat SSR bundles.
  */
 import sanitizeHtml from 'sanitize-html';
-import { demoteH1TagsToH2 } from '../../lib/demote-blog-body-h1.mjs';
+import { prepareBlogBodyHtml } from '../../lib/demote-blog-body-h1.mjs';
+import { fixBrokenInternalHrefsInHtml } from '@/lib/fixBrokenInternalHrefs';
 
 const BODY_SANITIZE_OPTIONS: sanitizeHtml.IOptions = {
   allowedTags: [
@@ -21,6 +22,7 @@ const BODY_SANITIZE_OPTIONS: sanitizeHtml.IOptions = {
 };
 
 export function sanitizeBodyHtml(html: string): string {
-  const demoted = demoteH1TagsToH2(html);
-  return sanitizeHtml(demoted, BODY_SANITIZE_OPTIONS);
+  const demoted = prepareBlogBodyHtml(html);
+  const linksFixed = fixBrokenInternalHrefsInHtml(demoted);
+  return sanitizeHtml(linksFixed, BODY_SANITIZE_OPTIONS);
 }

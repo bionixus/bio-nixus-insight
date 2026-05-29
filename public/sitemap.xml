@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/ar</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr" />
@@ -35,7 +35,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/ar/arabic-blog-alsawdyh</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/bionixus-ai-chatbots-increase-sales-and-lead-generation" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/success-in-startups" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.bionixus.com/ar/arabic-blog-alsawdyh" />
@@ -80,15 +80,9 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/ar/blog/saudi-healthcare-market-research-firms-ar</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.bionixus.com/ar/conf</loc>
-    <lastmod>2026-05-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/ar/contacts</loc>
@@ -174,6 +168,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.bionixus.com/ar/strategic-portfolio</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.bionixus.com/bionixus-ai-chatbots-increase-sales-and-lead-generation</loc>
     <lastmod>2026-04-26</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/bionixus-ai-chatbots-increase-sales-and-lead-generation" />
@@ -191,13 +191,13 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/bionixus-vs-iqvia-mena</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/biosimilar-market-entry-saudi-arabia</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -214,7 +214,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/abu-dhabi-doh-vs-dubai-dha-formulary-guide</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -226,7 +226,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/ai-vs-human-insight-validating-quantitative-data-2026-pharma-research</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -262,13 +262,13 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/competitive-intelligence-pharma-gcc</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/data-privacy-beyond-hipaa-global-quantitative-research-compliance-2026</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -286,13 +286,13 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/deutsche-pharmaunternehmen-2026-pipeline-updates</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/digital-therapeutics-regulation-mena-markets</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -304,13 +304,13 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/emea-jca-market-access-update-2026</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/fda-update-glp-1-obesity-market-crackdown-2026</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -328,91 +328,85 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/gcc-clinical-trials-market-2026</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/gcc-pharmaceuticals-market-2026</loc>
-    <lastmod>2026-05-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.bionixus.com/blog/gcc-pharmaceuticals-market-arabic-2026</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/gcc-pharmacoeconomics</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/gcc-pharmacy-market-2026</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/gesundheitsmarkt-deutschland-2026</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/healthcare-market-research-europe-2026</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/healthcare-market-research-methodologies-gcc</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/healthcare-market-research-uae-guide-2025</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/healthcare-overview-china-market-2026</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/healthcare-overview-egypt-market-2026</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/healthcare-overview-kuwait-market-2026</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/healthcare-overview-qatar-market-2026</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/hepcludex-bulevirtide-hdv-fda-approval-2026</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/hospital-market-research</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -424,7 +418,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/idvynso-doravirine-islatravir-hiv-fda-2026</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -454,7 +448,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/kol-mapping-pharma-middle-east</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -466,7 +460,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/kuwait-healthcare-market-trends-2026</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -490,37 +484,37 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/market-access-strategy-uae</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/market-research-pharmaceutical-market-access-uae</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/maxdiff-vs-conjoint-analysis-medtech-pricing</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/middle-east-healthcare-market-statistics-2026</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/nice-hta-evidence-requirements-guide</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/nupco-saudi-arabia-tendering-guide</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -532,97 +526,97 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/oncology-uae-2026-cancer-care-outlook</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/patient-journey-mapping-saudi-arabia</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/pharma-market-entry-saudi-arabia-playbook</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/pharmaceutical-healthcare-market-research-gcc</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/pharmaceutical-market-entry-saudi-arabia-2026-guide</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/pharmaceutical-market-research-methods-mena</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/pharmaceutical-market-research-uk-2026</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/pharmacies-saudi-arabia-market-research-marketing-automation</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/pharmacoeconomics-gcc-practical-guide</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/physician-surveys-healthcare</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/physician-surveys-healthcare-digital-health-2026</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/quantitative-healthcare-market-research-ksa</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/quantitative-healthcare-market-research-uae</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/quantitative-market-research-and-market-access</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/rare-disease-orphan-drug-saudi-arabia-sfda-2026</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/recruiting-high-scarcity-specialists-oncology-quantitative-studies</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -634,7 +628,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/regional-crisis-impact-middle-east-economies-healthcare-2026</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -646,25 +640,25 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/saudi-arabia-healthcare-market-2026</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/sfda-approval-qfitlia-saudi-arabia-pharmaceutical-market</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/sfda-drug-registration-guide</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/shift-to-always-on-quantitative-tracking-why-periodic-studies-are-dying</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -676,43 +670,43 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/top-healthcare-market-research-companies-mena</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/top-healthcare-market-research-companies-uae</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/top-healthcare-market-research-firms-saudi-arabia</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/top-market-research-companies-egypt-2026</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/top-therapy-areas-pharma-growth-saudi-arabia</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/uae-healthcare-market-overview-2026</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/uae-healthcare-market-trends-2025</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -777,12 +771,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.bionixus.com/conf</loc>
-    <lastmod>2026-05-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
-  </url>
-  <url>
     <loc>https://www.bionixus.com/contact</loc>
     <lastmod>2026-05-18</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/contact" />
@@ -797,7 +785,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/de</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr" />
@@ -810,7 +798,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/de/blog</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/blog" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/blog" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr/blog" />
@@ -821,7 +809,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/de/contact</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/contact" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/contact" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr/contacts" />
@@ -853,7 +841,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/de/success-in-startups</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/bionixus-ai-chatbots-increase-sales-and-lead-generation" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/success-in-startups" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.bionixus.com/ar/arabic-blog-alsawdyh" />
@@ -863,7 +851,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/es</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr" />
@@ -876,7 +864,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/es/contact</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/contact" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/contact" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr/contacts" />
@@ -889,7 +877,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/es/market-access</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/services/market-access" />
     <xhtml:link rel="alternate" hreflang="es" href="https://www.bionixus.com/es/market-access" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bionixus.com/services/market-access" />
@@ -923,7 +911,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/fr</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr" />
@@ -936,7 +924,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/fr/blog</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/blog" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/blog" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr/blog" />
@@ -991,7 +979,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/gcc-pharma-market-report-2026</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -1003,7 +991,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/gfk-alternative-egypt</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.87</priority>
   </url>
@@ -1015,193 +1003,193 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/algeria</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/bahrain</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/canada</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/china</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/denmark</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/egypt</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/france</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/germany</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/iraq</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/italy</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/japan</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/jordan</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/kenya</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/kuwait</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/lebanon</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/libya</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/mexico</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/morocco</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/nigeria</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/oman</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/qatar</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/saudi-arabia</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/singapore</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/south-africa</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/spain</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/sweden</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/switzerland</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/tunisia</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/turkey</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/united-arab-emirates</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/united-kingdom</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/global-websites/united-states</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1543,7 +1531,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/insights</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1555,19 +1543,19 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/iqvia-alternative</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/kantar-health-alternative-gcc</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/kol-mapping-saudi-arabia-oncology</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -2627,7 +2615,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/pharmaceutical-market-research-dubai</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -2645,7 +2633,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/physician-survey-saudi-arabia</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -2744,7 +2732,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/sfda-market-access-strategy-saudi-arabia</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -2756,7 +2744,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/strategic-portfolio</loc>
-    <lastmod>2026-05-18</lastmod>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.72</priority>
   </url>
@@ -2780,7 +2768,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/zh</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr" />
@@ -2793,7 +2781,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/zh/contact</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/contact" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/contact" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr/contacts" />

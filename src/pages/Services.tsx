@@ -106,14 +106,12 @@ const SERVICE_FAQ = [
 
 const recoveryLinkLabels: Record<string, string> = {
   '/bionixus-market-research-middle-east': 'Middle East Pharmaceutical Market Research',
-  '/blog/healthcare-market-research-europe': 'Healthcare Market Research in Europe',
   '/blog/healthcare-market-research-europe-2026': 'Healthcare Market Research in Europe (2026 Guide)',
   '/blog/healthcare-market-research-methodologies-gcc': 'Healthcare Market Research Methodologies for the GCC',
   '/blog/healthcare-market-research-uae-guide-2025': 'Healthcare Market Research in the UAE — 2025 Guide',
   '/blog/hospital-market-research': 'Hospital Market Research for Pharma',
   '/blog/market-research-pharmaceutical-market-access-uae': 'Pharmaceutical Market Access Research in the UAE',
   '/blog/pharmaceutical-healthcare-market-research-gcc': 'Pharmaceutical Market Research in the GCC',
-  '/blog/pharmaceutical-market-research-uk': 'Pharmaceutical Market Research in the UK',
   '/blog/pharmaceutical-market-research-uk-2026': 'Pharmaceutical Market Research in the UK (2026 Guide)',
   '/blog/quantitative-market-research-and-market-access': 'Quantitative Market Research and Market Access',
   '/blog/top-healthcare-market-research-companies-mena': 'Top Healthcare Market Research Companies in MENA',

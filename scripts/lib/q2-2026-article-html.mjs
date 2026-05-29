@@ -1,6 +1,7 @@
 /** Builds publication-ready HTML for Q2 2026 pharma insight articles. */
 
 import { getInternalLinksForSlug, getRelatedQ2Articles } from '../data/q2-2026-internal-links.mjs';
+import { formatMetaDescriptionInRange } from '../../src/server/seo-meta.js';
 
 function link(href, text) {
   return `<a href="${href}">${text}</a>`;
@@ -289,7 +290,11 @@ ${p(
  * @param {ReturnType<typeof getInternalLinksForSlug>} links
  */
 function buildClinicalProfile(t, links) {
-  const reportLink = l(links, links.find((x) => x.href.startsWith('/market-reports/'))?.href ?? '/gcc-pharma-market-report-2026', 'GCC therapy market report');
+  const reportHref =
+    links.find((x) => x.href.startsWith('/market-reports/'))?.href ??
+    links.find((x) => x.href === '/gcc-pharma-market-report-2026')?.href ??
+    '/gcc-pharma-market-report-2026';
+  const reportLink = l(links, reportHref, 'GCC therapy market report');
   const hcpLink = l(links, '/blog/kol-mapping-pharma-middle-east', 'KOL mapping for Middle East launches');
 
   return `${h2('clinical-profile', 'Clinical profile and evidence interpretation')}
@@ -521,9 +526,9 @@ export function buildArticleMeta(t) {
   const actionShort = t.actionType.replace(/FDA |EMA /g, '').slice(0, 24);
   const h1 = `${t.brand}: ${formatActionType(t.actionType)} — ${therapy} & GCC Access`;
   const metaTitle = `${t.brand} ${actionShort} 2026 | ${therapy} | BioNixus`.slice(0, 60);
-  const metaDescription = (
-    `${t.sponsor} ${t.actionType} for ${t.brand} (${t.generic}): ${t.headline.slice(0, 72)}. SFDA, NUPCO, MOHAP strategy.`
-  ).slice(0, 155);
+  const metaDescription = formatMetaDescriptionInRange(
+    `${t.sponsor} ${t.actionType} for ${t.brand} (${t.generic}): ${t.headline} Gulf SFDA, MOHAP, and NUPCO access implications for commercial teams.`,
+  );
   return {
     h1,
     metaTitle,

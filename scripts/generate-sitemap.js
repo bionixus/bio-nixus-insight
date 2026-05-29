@@ -1,3 +1,7 @@
+/**
+ * Legacy sitemap generator — prefer `scripts/generate-sitemap.mjs` (npm run generate-sitemap).
+ * Redirect sources (/conf, /ar/conf, legacy blog slugs) are excluded there via blog-legacy-redirects.mjs.
+ */
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -115,8 +119,8 @@ const STATIC_ROUTES = [
   '/ar/contacts',
   '/insights/top-market-research-companies-egypt-2026',
   '/ar/insights/top-market-research-companies-egypt-2026',
-  '/conf',
-  '/ar/conf',
+  '/strategic-portfolio',
+  '/ar/strategic-portfolio',
   '/healthcare-market-research/egypt',
 ];
 
@@ -124,7 +128,9 @@ function routeMeta(url) {
   if (url === '/') return { priority: '1.0', changefreq: 'weekly' };
   if (url === '/healthcare-market-research') return { priority: '0.95', changefreq: 'weekly' };
   if (url === '/global-websites/united-arab-emirates') return { priority: '0.95', changefreq: 'weekly' };
-  if (url === '/conf' || url === '/ar/conf') return { priority: '0.95', changefreq: 'weekly' };
+  if (url === '/strategic-portfolio' || url === '/ar/strategic-portfolio') {
+    return { priority: '0.72', changefreq: 'monthly' };
+  }
   if (url === '/bionixus-market-research-middle-east') return { priority: '0.9', changefreq: 'weekly' };
   if (url.includes('top-market-research-companies-egypt')) return { priority: '0.9', changefreq: 'weekly' };
   if (url.startsWith('/blog') || url.startsWith('/ar/blog')) return { priority: '0.85', changefreq: 'daily' };

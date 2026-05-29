@@ -1,13 +1,21 @@
 import { createClient } from '@sanity/client';
 import { toHTML } from '@portabletext/to-html';
-import { buildSeoDescription, normalizeSeoTitle } from '../../src/server/seo-meta.js';
+import { buildSeoDescription, normalizeSeoTitle, seoTitleWithBrandOnce } from '../../src/server/seo-meta.js';
 import { sendCompressedHtml } from '../../src/server/compression.js';
 import {
   LEGACY_BLOG_SLUG_TO_CANONICAL,
   resolveSanityBlogSlug,
   BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH,
 } from '../../blog-legacy-redirects.mjs';
-import { demoteH1TagsToH2 } from '../../lib/demote-blog-body-h1.mjs';
+import {
+  getBlogMetaDescriptionOverride,
+  getBlogTitleOverride,
+  getCrawlerStubForSlug,
+  isFallbackBlogSlug,
+  shouldCrawlerIndexBlogSlug,
+} from '../../blog-crawler-stubs.mjs';
+import { prepareBlogBodyHtml } from '../../lib/demote-blog-body-h1.mjs';
+import { fixBrokenInternalHref, fixBrokenInternalHrefsInHtml } from '../../lib/fix-broken-internal-hrefs.mjs';
 
 const sanityClient = createClient({
   projectId: process.env.VITE_SANITY_PROJECT_ID || 'h2whvvpo',
@@ -22,6 +30,8 @@ const BASE = 'https://www.bionixus.com';
 const QUERY = `*[_type == "blogPost" && slug.current == $slug][0]{
   title,
   excerpt,
+  "seoMetaDescription": seo.metaDescription,
+  "seoMetaTitle": seo.metaTitle,
   "body": coalesce(body, content),
   bodyHtml,
   htmlContent,
@@ -150,7 +160,7 @@ function portableTextToHTML(content) {
         },
         marks: {
           link: ({ value, children }) =>
-            `<a href="${esc(value?.href || '')}">${children}</a>`,
+            `<a href="${esc(fixBrokenInternalHref(value?.href || ''))}">${children}</a>`,
           strong: ({ children }) => `<strong>${children}</strong>`,
           em: ({ children }) => `<em>${children}</em>`,
           underline: ({ children }) => `<u>${children}</u>`,
@@ -211,24 +221,41 @@ export default async function handler(req, res) {
     return res.redirect(301, `${BASE}${arabicDupTarget}`);
   }
 
+  if (isFallbackBlogSlug(slug)) {
+    return res.redirect(301, `${BASE}/de/blog`);
+  }
+
   try {
     const sanitySlug = resolveSanityBlogSlug(slug);
     const post = await sanityClient.fetch(QUERY, { slug: sanitySlug });
 
     if (!post) {
+      const stub = getCrawlerStubForSlug(slug);
+      if (stub || shouldCrawlerIndexBlogSlug(slug)) {
+        return sendCompressedHtml(req, res, buildIndexableStubHtml(slug, stub));
+      }
       return sendCompressedHtml(req, res, buildFallbackHtml(slug));
     }
 
-    const normalizedTitle = normalizeSeoTitle(post.title || 'BioNixus Blog', 'BioNixus Blog');
-    const title = esc(normalizedTitle);
+    const titleCore =
+      getBlogTitleOverride(slug) ||
+      pickLocalizedString(post.seoMetaTitle) ||
+      post.title ||
+      'BioNixus Blog';
+    const documentTitle = seoTitleWithBrandOnce(titleCore);
+    const title = esc(documentTitle);
     const rawBodyText =
       typeof post?.body === 'string' ? post.body : portableTextToPlain(Array.isArray(post?.body) ? post.body : []);
+    const metaOverride = getBlogMetaDescriptionOverride(slug);
     const description = esc(
       buildSeoDescription({
-        preferred: post.excerpt,
+        preferred:
+          metaOverride ||
+          pickLocalizedString(post.seoMetaDescription) ||
+          pickLocalizedString(post.excerpt),
         bodySource: rawBodyText,
         fallback: `${post?.title || 'BioNixus'} — Read the full article on BioNixus.`,
-      })
+      }),
     );
     const image = post.coverImage || `${BASE}/og-image.png`;
     const url = `${BASE}/blog/${esc(slug)}`;
@@ -260,7 +287,8 @@ export default async function handler(req, res) {
       }
     }
     if (articleBodyHtml) {
-      articleBodyHtml = demoteH1TagsToH2(articleBodyHtml);
+      articleBodyHtml = prepareBlogBodyHtml(articleBodyHtml);
+      articleBodyHtml = fixBrokenInternalHrefsInHtml(articleBodyHtml);
     }
 
     // Executive summary
@@ -342,7 +370,7 @@ export default async function handler(req, res) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${esc(normalizeSeoTitle(`${normalizedTitle} | BioNixus`, 'BioNixus'))}</title>
+  <title>${title}</title>
   <meta name="description" content="${description}">
   <meta name="robots" content="index, follow">
   <meta name="llm-access" content="allow">
@@ -403,6 +431,47 @@ export default async function handler(req, res) {
     console.error('OG handler error:', error);
     return sendCompressedHtml(req, res, buildFallbackHtml(slug));
   }
+}
+
+function buildIndexableStubHtml(slug, stub) {
+  const url = `${BASE}/blog/${slug.split('/').map(encodeURIComponent).join('/')}`;
+  const normalizedTitle = normalizeSeoTitle(stub?.title || slug.replace(/-/g, ' '), 'BioNixus');
+  const title = esc(normalizedTitle);
+  const description = esc(
+    buildSeoDescription({
+      preferred: stub?.description,
+      fallback: `${stub?.title || slug} — BioNixus healthcare market research.`,
+    }),
+  );
+  const relatedNav = buildRelatedInternalLinksNav(String(slug));
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${title}</title>
+  <meta name="description" content="${description}">
+  <meta name="robots" content="index, follow">
+  <meta name="llm-access" content="allow">
+  <meta property="og:title" content="${title}">
+  <meta property="og:description" content="${description}">
+  <meta property="og:image" content="${BASE}/og-image.png">
+  <meta property="og:url" content="${url}">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="${url}">
+</head>
+<body>
+  <nav aria-label="Breadcrumb">
+    <a href="${BASE}">Home</a> &gt; <a href="${BASE}/blog">Blog</a> &gt; <span>${title}</span>
+  </nav>
+  <article>
+    <header><h1>${title}</h1></header>
+    <p>${description}</p>
+    <p>Read the full article on <a href="${url}">BioNixus</a>.</p>
+    ${relatedNav}
+  </article>
+</body>
+</html>`;
 }
 
 function buildFallbackHtml(slug) {

@@ -133,7 +133,15 @@ const BlogSection = ({
 }: BlogSectionProps) => {
   const { t, language } = useLanguage();
   const { pathname } = useLocation();
-  const blogBasePath = language === 'ar' || pathname.startsWith('/ar/blog') ? '/ar/blog' : '/blog';
+  const blogBasePath = pathname.startsWith('/ar/blog')
+    ? '/ar/blog'
+    : pathname.startsWith('/de/')
+      ? '/de/blog'
+      : pathname.startsWith('/fr/')
+        ? '/fr/blog'
+        : '/blog';
+
+  const isPlaceholderSlug = (slug: string) => slug.startsWith('fallback-');
   const isMagazineLayout = variant === 'index' || variant === 'home';
   const isHomeLayout = variant === 'home';
 
@@ -212,6 +220,24 @@ const BlogSection = ({
         ) : (
           <>
         {isMagazineLayout && featuredPost ? (
+          isPlaceholderSlug(featuredPost.slug) ? (
+            <div className="group block mb-10 sr sr-scale-up sr-spring rounded-2xl border border-border bg-card overflow-hidden">
+              <article className="grid md:grid-cols-2 gap-0">
+                <BlogCardImage
+                  post={featuredPost}
+                  index={0}
+                  featured
+                  readMoreLabel={t.blog.readMore}
+                />
+                <div className="p-8 md:p-10 flex flex-col justify-center">
+                  <span className="inline-flex w-fit px-3 py-1 mb-4 rounded-full bg-accent/15 text-accent-foreground text-xs font-semibold uppercase tracking-wide">
+                    {isHomeLayout ? 'Featured insight' : 'Latest insight'}
+                  </span>
+                  <BlogCardMeta post={featuredPost} featured />
+                </div>
+              </article>
+            </div>
+          ) : (
           <Link
             to={`${blogBasePath}/${featuredPost.slug}`}
             className="group block mb-10 sr sr-scale-up sr-spring hover-lift rounded-2xl border border-border bg-card overflow-hidden cursor-pointer"
@@ -235,6 +261,7 @@ const BlogSection = ({
               </div>
             </article>
           </Link>
+          )
         ) : null}
 
         <div
@@ -246,28 +273,46 @@ const BlogSection = ({
               : 'grid lg:grid-cols-3 gap-8'
           }
         >
-          {gridOnlyPosts.map((post, index) => (
-            <Link
-              key={post.id}
-              to={`${blogBasePath}/${post.slug}`}
-              className={`group block sr sr-scale-up sr-spring hover-lift cursor-pointer ${
-                isMagazineLayout ? 'rounded-xl border border-border bg-card p-6' : ''
-              }`}
-            >
-              <article>
-                <BlogCardImage
-                  post={post}
-                  index={isMagazineLayout ? index + 1 : index}
-                  readMoreLabel={t.blog.readMore}
-                />
-                <BlogCardMeta post={post} />
-                <div className="flex items-center gap-2 text-primary font-medium pt-2 group-hover:gap-3 transition-all duration-200">
-                  {t.blog.readMore}
-                  <ArrowUpRight className="w-4 h-4" aria-hidden />
-                </div>
-              </article>
-            </Link>
-          ))}
+          {gridOnlyPosts.map((post, index) =>
+            isPlaceholderSlug(post.slug) ? (
+              <div
+                key={post.id}
+                className={`group block sr sr-scale-up sr-spring ${
+                  isMagazineLayout ? 'rounded-xl border border-border bg-card p-6' : ''
+                }`}
+              >
+                <article>
+                  <BlogCardImage
+                    post={post}
+                    index={isMagazineLayout ? index + 1 : index}
+                    readMoreLabel={t.blog.readMore}
+                  />
+                  <BlogCardMeta post={post} />
+                </article>
+              </div>
+            ) : (
+              <Link
+                key={post.id}
+                to={`${blogBasePath}/${post.slug}`}
+                className={`group block sr sr-scale-up sr-spring hover-lift cursor-pointer ${
+                  isMagazineLayout ? 'rounded-xl border border-border bg-card p-6' : ''
+                }`}
+              >
+                <article>
+                  <BlogCardImage
+                    post={post}
+                    index={isMagazineLayout ? index + 1 : index}
+                    readMoreLabel={t.blog.readMore}
+                  />
+                  <BlogCardMeta post={post} />
+                  <div className="flex items-center gap-2 text-primary font-medium pt-2 group-hover:gap-3 transition-all duration-200">
+                    {t.blog.readMore}
+                    <ArrowUpRight className="w-4 h-4" aria-hidden />
+                  </div>
+                </article>
+              </Link>
+            ),
+          )}
         </div>
           </>
         )}

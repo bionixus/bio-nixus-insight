@@ -8,7 +8,10 @@ const Terms = () => {
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Terms of Service | BioNixus</title>
-        <meta name="description" content="BioNixus terms of service governing use of our website and healthcare market research services." />
+        <meta
+          name="description"
+          content="BioNixus terms of service for our website and healthcare market research: acceptable use, confidentiality, and client policies."
+        />
         <link rel="canonical" href="https://www.bionixus.com/terms" />
       </Helmet>
       <Navbar />
