@@ -32,3 +32,9 @@ export function optimizeSanityImage(
 
   return `${base}?${params.toString()}`;
 }
+
+/** SSR/LCP preload URL for blog hero covers (matches BlogPost hero dimensions). */
+export function getBlogHeroPreloadUrl(coverImage: string | undefined): string | undefined {
+  const url = optimizeSanityImage(coverImage, 1400, 600);
+  return url || undefined;
+}

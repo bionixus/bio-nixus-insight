@@ -14,6 +14,7 @@ import type { Language } from '@/lib/i18n';
 import { resolveSanityBlogSlug } from '../../blog-legacy-redirects.mjs';
 import { getHardcodedPostBySlug } from '@/data/blog-posts-index';
 import { isHardcodedSeoBlogSlug } from '@/lib/blog-robots';
+import { getBlogHeroPreloadUrl } from '@/lib/image-utils';
 
 function resolveBlogPostForRoute(slug: string, sanityPost: BlogPost | null): BlogPost | null {
   const hardcoded = getHardcodedPostBySlug(slug);
@@ -234,6 +235,7 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
       blogSlug: slug,
       blogPost,
       relatedPosts,
+      lcpPreloadImageUrl: getBlogHeroPreloadUrl(blogPost?.coverImage),
     };
   }
 
@@ -264,6 +266,7 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
       blogSlug: slug,
       blogPost,
       relatedPosts,
+      lcpPreloadImageUrl: getBlogHeroPreloadUrl(blogPost?.coverImage),
     };
   }
 

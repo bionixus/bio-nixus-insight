@@ -2,7 +2,6 @@ import { lazy, Suspense, type ReactNode } from 'react';
 import type { RouteObject } from 'react-router-dom';
 import Index from '@/pages/Index';
 import Blog from '@/pages/Blog';
-import BlogPost from '@/pages/BlogPost';
 import CaseStudies from '@/pages/CaseStudies';
 import About from '@/pages/About';
 import Services from '@/pages/Services';
@@ -87,58 +86,61 @@ import ArMarketResearchKsa from '@/pages/ArMarketResearchKsa';
 import ArMarketResearchSaudi from '@/pages/ArMarketResearchSaudi';
 import ArMarketResearchKuwait from '@/pages/ArMarketResearchKuwait';
 import ArMarketResearchEgypt from '@/pages/ArMarketResearchEgypt';
-import SaudiArabiaMedicalDevicesMarketReport from '@/pages/SaudiArabiaMedicalDevicesMarketReport';
-import SaudiArabiaHealthcareMarketReport from '@/pages/SaudiArabiaHealthcareMarketReport';
-import UaeHealthcareMarketReport from '@/pages/UaeHealthcareMarketReport';
-import UaeMedicalDevicesMarketReport from '@/pages/UaeMedicalDevicesMarketReport';
-import GccAnesthesiaSurgicalMarket from '@/pages/GccAnesthesiaSurgicalMarket';
-import GccMedicalDevicesMarketReport from '@/pages/GccMedicalDevicesMarketReport';
-import KuwaitMedicalDevicesMarketReport from '@/pages/KuwaitMedicalDevicesMarketReport';
-import KuwaitHealthcareMarketReport from '@/pages/KuwaitHealthcareMarketReport';
-import QatarMedicalDevicesMarketReport from '@/pages/QatarMedicalDevicesMarketReport';
-import QatarHealthcareMarketReport from '@/pages/QatarHealthcareMarketReport';
-import BahrainMedicalDevicesMarketReport from '@/pages/BahrainMedicalDevicesMarketReport';
-import BahrainHealthcareMarketReport from '@/pages/BahrainHealthcareMarketReport';
-import OmanMedicalDevicesMarketReport from '@/pages/OmanMedicalDevicesMarketReport';
-import OmanHealthcareMarketReport from '@/pages/OmanHealthcareMarketReport';
-import EgyptMedicalDevicesMarketReport from '@/pages/EgyptMedicalDevicesMarketReport';
-import EgyptHealthcareMarketReport from '@/pages/EgyptHealthcareMarketReport';
-import UkHealthcareMarketReport from '@/pages/UkHealthcareMarketReport';
-import UkMedicalDevicesMarketReport from '@/pages/UkMedicalDevicesMarketReport';
-import GermanyHealthcareMarketReport from '@/pages/GermanyHealthcareMarketReport';
-import GermanyMedicalDevicesMarketReport from '@/pages/GermanyMedicalDevicesMarketReport';
-import FranceHealthcareMarketReport from '@/pages/FranceHealthcareMarketReport';
-import FranceMedicalDevicesMarketReport from '@/pages/FranceMedicalDevicesMarketReport';
-import ItalyHealthcareMarketReport from '@/pages/ItalyHealthcareMarketReport';
-import ItalyMedicalDevicesMarketReport from '@/pages/ItalyMedicalDevicesMarketReport';
-import SpainHealthcareMarketReport from '@/pages/SpainHealthcareMarketReport';
-import SpainMedicalDevicesMarketReport from '@/pages/SpainMedicalDevicesMarketReport';
-import UsaHealthcareMarketReport from '@/pages/UsaHealthcareMarketReport';
-import UsaMedicalDevicesMarketReport from '@/pages/UsaMedicalDevicesMarketReport';
-import BrazilHealthcareMarketReport from '@/pages/BrazilHealthcareMarketReport';
-import BrazilMedicalDevicesMarketReport from '@/pages/BrazilMedicalDevicesMarketReport';
-import CanadaHealthcareMarketReport from '@/pages/CanadaHealthcareMarketReport';
-import CanadaMedicalDevicesMarketReport from '@/pages/CanadaMedicalDevicesMarketReport';
-import IndiaHealthcareMarketReport from '@/pages/IndiaHealthcareMarketReport';
-import IndiaMedicalDevicesMarketReport from '@/pages/IndiaMedicalDevicesMarketReport';
-import ChinaHealthcareMarketReport from '@/pages/ChinaHealthcareMarketReport';
-import ChinaMedicalDevicesMarketReport from '@/pages/ChinaMedicalDevicesMarketReport';
-import JapanHealthcareMarketReport from '@/pages/JapanHealthcareMarketReport';
-import JapanMedicalDevicesMarketReport from '@/pages/JapanMedicalDevicesMarketReport';
-import SouthKoreaHealthcareMarketReport from '@/pages/SouthKoreaHealthcareMarketReport';
-import SouthKoreaMedicalDevicesMarketReport from '@/pages/SouthKoreaMedicalDevicesMarketReport';
-import AustraliaHealthcareMarketReport from '@/pages/AustraliaHealthcareMarketReport';
-import AustraliaMedicalDevicesMarketReport from '@/pages/AustraliaMedicalDevicesMarketReport';
-import SingaporeHealthcareMarketReport from '@/pages/SingaporeHealthcareMarketReport';
-import SingaporeMedicalDevicesMarketReport from '@/pages/SingaporeMedicalDevicesMarketReport';
-import TurkeyHealthcareMarketReport from '@/pages/TurkeyHealthcareMarketReport';
-import TurkeyMedicalDevicesMarketReport from '@/pages/TurkeyMedicalDevicesMarketReport';
 import TopMarketResearchCompaniesEgypt2026 from '@/pages/TopMarketResearchCompaniesEgypt2026';
 import ArTopMarketResearchCompaniesEgypt2026 from '@/pages/ArTopMarketResearchCompaniesEgypt2026';
-import HealthcareReportPage from '@/pages/HealthcareReportPage';
-import HealthcareReportsHub from '@/pages/HealthcareReportsHub';
-import HealthcareReportsByTherapy from '@/pages/HealthcareReportsByTherapy';
-import HealthcareReportsByCountry from '@/pages/HealthcareReportsByCountry';
+import {
+  SaudiArabiaMedicalDevicesMarketReport,
+  SaudiArabiaHealthcareMarketReport,
+  UaeHealthcareMarketReport,
+  UaeMedicalDevicesMarketReport,
+  GccAnesthesiaSurgicalMarket,
+  GccMedicalDevicesMarketReport,
+  KuwaitMedicalDevicesMarketReport,
+  KuwaitHealthcareMarketReport,
+  QatarMedicalDevicesMarketReport,
+  QatarHealthcareMarketReport,
+  BahrainMedicalDevicesMarketReport,
+  BahrainHealthcareMarketReport,
+  OmanMedicalDevicesMarketReport,
+  OmanHealthcareMarketReport,
+  EgyptMedicalDevicesMarketReport,
+  EgyptHealthcareMarketReport,
+  UkHealthcareMarketReport,
+  UkMedicalDevicesMarketReport,
+  GermanyHealthcareMarketReport,
+  GermanyMedicalDevicesMarketReport,
+  FranceHealthcareMarketReport,
+  FranceMedicalDevicesMarketReport,
+  ItalyHealthcareMarketReport,
+  ItalyMedicalDevicesMarketReport,
+  SpainHealthcareMarketReport,
+  SpainMedicalDevicesMarketReport,
+  UsaHealthcareMarketReport,
+  UsaMedicalDevicesMarketReport,
+  BrazilHealthcareMarketReport,
+  BrazilMedicalDevicesMarketReport,
+  CanadaHealthcareMarketReport,
+  CanadaMedicalDevicesMarketReport,
+  IndiaHealthcareMarketReport,
+  IndiaMedicalDevicesMarketReport,
+  ChinaHealthcareMarketReport,
+  ChinaMedicalDevicesMarketReport,
+  JapanHealthcareMarketReport,
+  JapanMedicalDevicesMarketReport,
+  SouthKoreaHealthcareMarketReport,
+  SouthKoreaMedicalDevicesMarketReport,
+  AustraliaHealthcareMarketReport,
+  AustraliaMedicalDevicesMarketReport,
+  SingaporeHealthcareMarketReport,
+  SingaporeMedicalDevicesMarketReport,
+  TurkeyHealthcareMarketReport,
+  TurkeyMedicalDevicesMarketReport,
+  HealthcareReportPage,
+  HealthcareReportsHub,
+  HealthcareReportsByTherapy,
+  HealthcareReportsByCountry,
+  BlogPost,
+} from '@/routes/lazyReportPages';
 import CaseStudy from '@/pages/CaseStudy';
 import HubPage from '@/pages/healthcare-research/HubPage';
 import CountryPage from '@/pages/healthcare-research/CountryPage';
@@ -268,56 +270,56 @@ export const routes: RouteObject[] = [
   { path: '/pharmaceutical-companies-bahrain', element: <BahrainPharmaCompanies /> },
   { path: '/pharmaceutical-companies-iraq', element: <IraqPharmaCompanies /> },
   { path: '/pharmaceutical-companies-iran', element: <IranPharmaCompanies /> },
-  { path: '/saudi-arabia-medical-devices-market-report', element: <SaudiArabiaMedicalDevicesMarketReport /> },
-  { path: '/saudi-arabia-healthcare-market-report', element: <SaudiArabiaHealthcareMarketReport /> },
-  { path: '/uae-healthcare-market-report', element: <UaeHealthcareMarketReport /> },
-  { path: '/uae-medical-devices-market-report', element: <UaeMedicalDevicesMarketReport /> },
-  { path: '/gcc-anesthesia-surgical-market-report', element: <GccAnesthesiaSurgicalMarket /> },
-  { path: '/gcc-medical-devices-market-report', element: <GccMedicalDevicesMarketReport /> },
-  { path: '/kuwait-medical-devices-market-report', element: <KuwaitMedicalDevicesMarketReport /> },
-  { path: '/kuwait-healthcare-market-report', element: <KuwaitHealthcareMarketReport /> },
-  { path: '/qatar-medical-devices-market-report', element: <QatarMedicalDevicesMarketReport /> },
-  { path: '/qatar-healthcare-market-report', element: <QatarHealthcareMarketReport /> },
-  { path: '/bahrain-medical-devices-market-report', element: <BahrainMedicalDevicesMarketReport /> },
-  { path: '/bahrain-healthcare-market-report', element: <BahrainHealthcareMarketReport /> },
-  { path: '/oman-medical-devices-market-report', element: <OmanMedicalDevicesMarketReport /> },
-  { path: '/oman-healthcare-market-report', element: <OmanHealthcareMarketReport /> },
-  { path: '/egypt-medical-devices-market-report', element: <EgyptMedicalDevicesMarketReport /> },
-  { path: '/egypt-healthcare-market-report', element: <EgyptHealthcareMarketReport /> },
-  { path: '/uk-healthcare-market-report', element: <UkHealthcareMarketReport /> },
-  { path: '/uk-medical-devices-market-report', element: <UkMedicalDevicesMarketReport /> },
-  { path: '/germany-healthcare-market-report', element: <GermanyHealthcareMarketReport /> },
-  { path: '/germany-medical-devices-market-report', element: <GermanyMedicalDevicesMarketReport /> },
-  { path: '/france-healthcare-market-report', element: <FranceHealthcareMarketReport /> },
-  { path: '/france-medical-devices-market-report', element: <FranceMedicalDevicesMarketReport /> },
-  { path: '/italy-healthcare-market-report', element: <ItalyHealthcareMarketReport /> },
-  { path: '/italy-medical-devices-market-report', element: <ItalyMedicalDevicesMarketReport /> },
-  { path: '/spain-healthcare-market-report', element: <SpainHealthcareMarketReport /> },
-  { path: '/spain-medical-devices-market-report', element: <SpainMedicalDevicesMarketReport /> },
-  { path: '/usa-healthcare-market-report', element: <UsaHealthcareMarketReport /> },
-  { path: '/usa-medical-devices-market-report', element: <UsaMedicalDevicesMarketReport /> },
-  { path: '/brazil-healthcare-market-report', element: <BrazilHealthcareMarketReport /> },
-  { path: '/brazil-medical-devices-market-report', element: <BrazilMedicalDevicesMarketReport /> },
-  { path: '/canada-healthcare-market-report', element: <CanadaHealthcareMarketReport /> },
-  { path: '/canada-medical-devices-market-report', element: <CanadaMedicalDevicesMarketReport /> },
-  { path: '/india-healthcare-market-report', element: <IndiaHealthcareMarketReport /> },
-  { path: '/india-medical-devices-market-report', element: <IndiaMedicalDevicesMarketReport /> },
-  { path: '/china-healthcare-market-report', element: <ChinaHealthcareMarketReport /> },
-  { path: '/china-medical-devices-market-report', element: <ChinaMedicalDevicesMarketReport /> },
-  { path: '/japan-healthcare-market-report', element: <JapanHealthcareMarketReport /> },
-  { path: '/japan-medical-devices-market-report', element: <JapanMedicalDevicesMarketReport /> },
-  { path: '/south-korea-healthcare-market-report', element: <SouthKoreaHealthcareMarketReport /> },
-  { path: '/south-korea-medical-devices-market-report', element: <SouthKoreaMedicalDevicesMarketReport /> },
-  { path: '/australia-healthcare-market-report', element: <AustraliaHealthcareMarketReport /> },
-  { path: '/australia-medical-devices-market-report', element: <AustraliaMedicalDevicesMarketReport /> },
-  { path: '/singapore-healthcare-market-report', element: <SingaporeHealthcareMarketReport /> },
-  { path: '/singapore-medical-devices-market-report', element: <SingaporeMedicalDevicesMarketReport /> },
-  { path: '/turkey-healthcare-market-report', element: <TurkeyHealthcareMarketReport /> },
-  { path: '/turkey-medical-devices-market-report', element: <TurkeyMedicalDevicesMarketReport /> },
-  { path: '/market-reports', element: <HealthcareReportsHub /> },
-  { path: '/market-reports/therapy/:therapyAreaSlug', element: <HealthcareReportsByTherapy /> },
-  { path: '/market-reports/country/:marketSlug', element: <HealthcareReportsByCountry /> },
-  { path: '/market-reports/:slug', element: <HealthcareReportPage /> },
+  { path: '/saudi-arabia-medical-devices-market-report', element: suspensePage(<SaudiArabiaMedicalDevicesMarketReport />) },
+  { path: '/saudi-arabia-healthcare-market-report', element: suspensePage(<SaudiArabiaHealthcareMarketReport />) },
+  { path: '/uae-healthcare-market-report', element: suspensePage(<UaeHealthcareMarketReport />) },
+  { path: '/uae-medical-devices-market-report', element: suspensePage(<UaeMedicalDevicesMarketReport />) },
+  { path: '/gcc-anesthesia-surgical-market-report', element: suspensePage(<GccAnesthesiaSurgicalMarket />) },
+  { path: '/gcc-medical-devices-market-report', element: suspensePage(<GccMedicalDevicesMarketReport />) },
+  { path: '/kuwait-medical-devices-market-report', element: suspensePage(<KuwaitMedicalDevicesMarketReport />) },
+  { path: '/kuwait-healthcare-market-report', element: suspensePage(<KuwaitHealthcareMarketReport />) },
+  { path: '/qatar-medical-devices-market-report', element: suspensePage(<QatarMedicalDevicesMarketReport />) },
+  { path: '/qatar-healthcare-market-report', element: suspensePage(<QatarHealthcareMarketReport />) },
+  { path: '/bahrain-medical-devices-market-report', element: suspensePage(<BahrainMedicalDevicesMarketReport />) },
+  { path: '/bahrain-healthcare-market-report', element: suspensePage(<BahrainHealthcareMarketReport />) },
+  { path: '/oman-medical-devices-market-report', element: suspensePage(<OmanMedicalDevicesMarketReport />) },
+  { path: '/oman-healthcare-market-report', element: suspensePage(<OmanHealthcareMarketReport />) },
+  { path: '/egypt-medical-devices-market-report', element: suspensePage(<EgyptMedicalDevicesMarketReport />) },
+  { path: '/egypt-healthcare-market-report', element: suspensePage(<EgyptHealthcareMarketReport />) },
+  { path: '/uk-healthcare-market-report', element: suspensePage(<UkHealthcareMarketReport />) },
+  { path: '/uk-medical-devices-market-report', element: suspensePage(<UkMedicalDevicesMarketReport />) },
+  { path: '/germany-healthcare-market-report', element: suspensePage(<GermanyHealthcareMarketReport />) },
+  { path: '/germany-medical-devices-market-report', element: suspensePage(<GermanyMedicalDevicesMarketReport />) },
+  { path: '/france-healthcare-market-report', element: suspensePage(<FranceHealthcareMarketReport />) },
+  { path: '/france-medical-devices-market-report', element: suspensePage(<FranceMedicalDevicesMarketReport />) },
+  { path: '/italy-healthcare-market-report', element: suspensePage(<ItalyHealthcareMarketReport />) },
+  { path: '/italy-medical-devices-market-report', element: suspensePage(<ItalyMedicalDevicesMarketReport />) },
+  { path: '/spain-healthcare-market-report', element: suspensePage(<SpainHealthcareMarketReport />) },
+  { path: '/spain-medical-devices-market-report', element: suspensePage(<SpainMedicalDevicesMarketReport />) },
+  { path: '/usa-healthcare-market-report', element: suspensePage(<UsaHealthcareMarketReport />) },
+  { path: '/usa-medical-devices-market-report', element: suspensePage(<UsaMedicalDevicesMarketReport />) },
+  { path: '/brazil-healthcare-market-report', element: suspensePage(<BrazilHealthcareMarketReport />) },
+  { path: '/brazil-medical-devices-market-report', element: suspensePage(<BrazilMedicalDevicesMarketReport />) },
+  { path: '/canada-healthcare-market-report', element: suspensePage(<CanadaHealthcareMarketReport />) },
+  { path: '/canada-medical-devices-market-report', element: suspensePage(<CanadaMedicalDevicesMarketReport />) },
+  { path: '/india-healthcare-market-report', element: suspensePage(<IndiaHealthcareMarketReport />) },
+  { path: '/india-medical-devices-market-report', element: suspensePage(<IndiaMedicalDevicesMarketReport />) },
+  { path: '/china-healthcare-market-report', element: suspensePage(<ChinaHealthcareMarketReport />) },
+  { path: '/china-medical-devices-market-report', element: suspensePage(<ChinaMedicalDevicesMarketReport />) },
+  { path: '/japan-healthcare-market-report', element: suspensePage(<JapanHealthcareMarketReport />) },
+  { path: '/japan-medical-devices-market-report', element: suspensePage(<JapanMedicalDevicesMarketReport />) },
+  { path: '/south-korea-healthcare-market-report', element: suspensePage(<SouthKoreaHealthcareMarketReport />) },
+  { path: '/south-korea-medical-devices-market-report', element: suspensePage(<SouthKoreaMedicalDevicesMarketReport />) },
+  { path: '/australia-healthcare-market-report', element: suspensePage(<AustraliaHealthcareMarketReport />) },
+  { path: '/australia-medical-devices-market-report', element: suspensePage(<AustraliaMedicalDevicesMarketReport />) },
+  { path: '/singapore-healthcare-market-report', element: suspensePage(<SingaporeHealthcareMarketReport />) },
+  { path: '/singapore-medical-devices-market-report', element: suspensePage(<SingaporeMedicalDevicesMarketReport />) },
+  { path: '/turkey-healthcare-market-report', element: suspensePage(<TurkeyHealthcareMarketReport />) },
+  { path: '/turkey-medical-devices-market-report', element: suspensePage(<TurkeyMedicalDevicesMarketReport />) },
+  { path: '/market-reports', element: suspensePage(<HealthcareReportsHub />) },
+  { path: '/market-reports/therapy/:therapyAreaSlug', element: suspensePage(<HealthcareReportsByTherapy />) },
+  { path: '/market-reports/country/:marketSlug', element: suspensePage(<HealthcareReportsByCountry />) },
+  { path: '/market-reports/:slug', element: suspensePage(<HealthcareReportPage />) },
   { path: '/blog', element: <Blog /> },
   { path: '/de/blog', element: <Blog /> },
   { path: '/fr/blog', element: <Blog /> },
@@ -325,10 +327,10 @@ export const routes: RouteObject[] = [
   { path: '/de/success-in-startups', element: <GermanSuccessInStartups /> },
   { path: '/ar/arabic-blog-alsawdyh', element: <ArabicBlogAlsawdyh /> },
   { path: '/ar/blog', element: <Blog /> },
-  { path: '/ar/blog/:slug', element: <BlogPost /> },
+  { path: '/ar/blog/:slug', element: suspensePage(<BlogPost />) },
   { path: '/pharmacies-saudi-arabia-marketing', element: <PharmaciesSaudiArabiaMarketing /> },
   { path: '/bionixus-ai-chatbots-increase-sales-and-lead-generation', element: <AiChatbotsLeadGeneration /> },
-  { path: '/blog/:slug', element: <BlogPost /> },
+  { path: '/blog/:slug', element: suspensePage(<BlogPost />) },
   { path: '/case-studies', element: <CaseStudies /> },
   { path: '/case-studies/:slug', element: suspensePage(<CaseStudy />) },
   { path: '/privacy', element: <Privacy /> },

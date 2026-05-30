@@ -28,6 +28,47 @@ type RequestLike = {
 
 let templateCache = '';
 let serverEntryCache: ServerEntryModule | null = null;
+let clientAssetHintsCache = '';
+
+function getClientAssetHints(): string {
+  if (clientAssetHintsCache) return clientAssetHintsCache;
+  const assetsDir = path.join(process.cwd(), 'dist', 'client', 'assets');
+  if (!fs.existsSync(assetsDir)) {
+    clientAssetHintsCache = '<link rel="modulepreload" href="/assets/index.js" crossorigin>';
+    return clientAssetHintsCache;
+  }
+  const files = fs.readdirSync(assetsDir);
+  const cssFile = files.find((f) => /^index-.*\.css$/.test(f));
+  const hints = ['<link rel="modulepreload" href="/assets/index.js" crossorigin>'];
+  if (cssFile) {
+    hints.push(`<link rel="stylesheet" href="/assets/${cssFile}">`);
+  }
+  clientAssetHintsCache = hints.join('\n');
+  return clientAssetHintsCache;
+}
+
+function buildLcpPreloadTag(initialData: Record<string, unknown>): string {
+  const url = initialData.lcpPreloadImageUrl;
+  if (typeof url !== 'string' || !url.trim()) return '';
+  return `<link rel="preload" as="image" href="${escapeHtmlAttribute(url)}" fetchpriority="high">`;
+}
+
+function insertShareFigureAfterHero(mainInner: string, figureHtml: string): string {
+  const h1Idx = mainInner.search(/<h1\b/i);
+  if (h1Idx === -1) return `${mainInner}${figureHtml}`;
+  const afterH1 = mainInner.slice(h1Idx);
+  const sectionEnd = afterH1.search(/<\/section>/i);
+  if (sectionEnd !== -1) {
+    const insertAt = h1Idx + sectionEnd + '</section>'.length;
+    return `${mainInner.slice(0, insertAt)}${figureHtml}${mainInner.slice(insertAt)}`;
+  }
+  const h1End = afterH1.search(/<\/h1>/i);
+  if (h1End !== -1) {
+    const insertAt = h1Idx + h1End + '</h1>'.length;
+    return `${mainInner.slice(0, insertAt)}${figureHtml}${mainInner.slice(insertAt)}`;
+  }
+  return `${mainInner}${figureHtml}`;
+}
 const REDIRECTS: Record<string, string> = {
   '/healthcare-market-research-saudi-arabia': '/healthcare-market-research/saudi-arabia',
   '/healthcare-market-research-uae': '/healthcare-market-research/uae',
@@ -492,18 +533,23 @@ function ensureMainContentImage(html: string, pathname: string): string {
   const encodedPath = encodeURIComponent(normalizedPath);
   const fullUrl = `https://www.bionixus.com${normalizedPath === '/' ? '' : normalizedPath}`;
   const altText = `BioNixus share card for ${fullUrl}`;
-  const figureHtml = `<aside data-page-share class="my-12">
-  <figure class="mx-auto max-w-2xl rounded-xl overflow-hidden border border-border bg-card shadow-sm">
+  const figureHtml = `<aside data-page-share class="mt-10 mb-8">
+  <figure class="mx-auto max-w-sm rounded-lg overflow-hidden border border-border bg-card shadow-sm">
     <a href="/api/og-card?path=${encodedPath}" target="_blank" rel="noopener" class="block" aria-label="Open the share card for this page in a new tab">
-      <img src="/api/og-card?path=${encodedPath}" alt="${altText}" title="${altText}" width="1200" height="630" loading="lazy" decoding="async" class="block w-full h-auto" />
+      <img src="/api/og-card?path=${encodedPath}" alt="${altText}" title="${altText}" width="400" height="210" loading="lazy" decoding="async" fetchpriority="low" class="block w-full h-auto max-w-sm" />
     </a>
-    <figcaption class="px-4 py-3 text-sm text-muted-foreground border-t border-border">Share this page — <strong class="text-foreground">BioNixus</strong></figcaption>
+    <figcaption class="px-3 py-2 text-xs text-muted-foreground border-t border-border">Share this page — <strong class="text-foreground">BioNixus</strong></figcaption>
   </figure>
 </aside>`;
 
-  const insertionPoint = html.lastIndexOf('</main>');
-  if (insertionPoint === -1) return html;
-  return `${html.slice(0, insertionPoint)}${figureHtml}${html.slice(insertionPoint)}`;
+  const mainOpen = html.match(/<main\b[^>]*>/i);
+  if (!mainOpen) return html;
+  const mainStart = html.indexOf(mainOpen[0]) + mainOpen[0].length;
+  const mainClose = html.lastIndexOf('</main>');
+  if (mainClose === -1 || mainClose <= mainStart) return html;
+  const mainInner = html.slice(mainStart, mainClose);
+  const updatedInner = insertShareFigureAfterHero(mainInner, figureHtml);
+  return `${html.slice(0, mainStart)}${updatedInner}${html.slice(mainClose)}`;
 }
 
 /**
@@ -610,8 +656,11 @@ function injectHtml(
     helmetData?.script?.toString() || '',
   ].join('\n');
 
+  const perfHints = [getClientAssetHints(), buildLcpPreloadTag(initialData)].filter(Boolean).join('\n');
+  const combinedHead = perfHints ? `${perfHints}\n${headTags}` : headTags;
+
   const page = template
-    .replace('<!--ssr-head-->', headTags)
+    .replace('<!--ssr-head-->', combinedHead)
     .replace('<!--ssr-outlet-->', appHtml)
     .replace(
       '<!--ssr-data-->',

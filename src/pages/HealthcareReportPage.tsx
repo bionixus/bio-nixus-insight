@@ -29,8 +29,8 @@ import {
   ReportInsightGrid,
   ReportRelatedCards,
   ReportSourcesBlock,
-  ReportTherapySpendChart,
 } from '@/components/report-premium';
+import { ReportTherapySpendChartLazy } from '@/components/report-premium/ReportTherapySpendChartLazy';
 
 function pickVariant(seed: string, options: [string, string, string]) {
   const score = seed.split('').reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
@@ -180,7 +180,7 @@ export default function HealthcareReportPage() {
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
                     Therapy spend mix
                   </p>
-                  <ReportTherapySpendChart
+                  <ReportTherapySpendChartLazy
                     segments={report.therapySegments}
                     countryName={report.market}
                   />

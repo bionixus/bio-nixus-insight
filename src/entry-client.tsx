@@ -1,5 +1,5 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import { createRoot, hydrateRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
@@ -68,16 +68,22 @@ function installChunkLoadRecovery() {
 const root = document.getElementById('root');
 const initialData = window.__INITIAL_DATA__ || {};
 
+const app = (
+  <HelmetProvider>
+    <BrowserRouter>
+      <ErrorBoundary>
+        <App initialData={initialData} />
+      </ErrorBoundary>
+    </BrowserRouter>
+  </HelmetProvider>
+);
+
 if (root) {
   installChunkLoadRecovery();
-  root.innerHTML = '';
-  createRoot(root).render(
-    <HelmetProvider>
-      <BrowserRouter>
-        <ErrorBoundary>
-          <App initialData={initialData} />
-        </ErrorBoundary>
-      </BrowserRouter>
-    </HelmetProvider>,
-  );
+  const hasSsrMarkup = root.childNodes.length > 0;
+  if (hasSsrMarkup) {
+    hydrateRoot(root, app);
+  } else {
+    createRoot(root).render(app);
+  }
 }

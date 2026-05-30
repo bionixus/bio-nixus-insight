@@ -406,6 +406,42 @@ function ensureTitleTag(html, pathname) {
   );
 }
 
+function insertShareFigureAfterHero(mainInner, figureHtml) {
+  const h1Idx = mainInner.search(/<h1\b/i);
+  if (h1Idx === -1) return `${mainInner}${figureHtml}`;
+  const afterH1 = mainInner.slice(h1Idx);
+  const sectionEnd = afterH1.search(/<\/section>/i);
+  if (sectionEnd !== -1) {
+    const insertAt = h1Idx + sectionEnd + '</section>'.length;
+    return `${mainInner.slice(0, insertAt)}${figureHtml}${mainInner.slice(insertAt)}`;
+  }
+  const h1End = afterH1.search(/<\/h1>/i);
+  if (h1End !== -1) {
+    const insertAt = h1Idx + h1End + '</h1>'.length;
+    return `${mainInner.slice(0, insertAt)}${figureHtml}${mainInner.slice(insertAt)}`;
+  }
+  return `${mainInner}${figureHtml}`;
+}
+
+function getClientAssetHints() {
+  const assetsDir = path.resolve(__dirname, 'dist/client/assets');
+  if (!fs.existsSync(assetsDir)) {
+    return '<link rel="modulepreload" href="/assets/index.js" crossorigin>';
+  }
+  const files = fs.readdirSync(assetsDir);
+  const cssFile = files.find((f) => /^index-.*\.css$/.test(f));
+  const hints = ['<link rel="modulepreload" href="/assets/index.js" crossorigin>'];
+  if (cssFile) hints.push(`<link rel="stylesheet" href="/assets/${cssFile}">`);
+  return hints.join('\n');
+}
+
+function buildLcpPreloadTag(initialData) {
+  const url = initialData?.lcpPreloadImageUrl;
+  if (typeof url !== 'string' || !url.trim()) return '';
+  const safe = String(url).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+  return `<link rel="preload" as="image" href="${safe}" fetchpriority="high">`;
+}
+
 function ensureMainContentImage(html, pathname) {
   const mainMatch = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i);
   if (!mainMatch) return html;
@@ -418,18 +454,23 @@ function ensureMainContentImage(html, pathname) {
   const encodedPath = encodeURIComponent(normalizedPath);
   const fullUrl = `https://www.bionixus.com${normalizedPath === '/' ? '' : normalizedPath}`;
   const altText = `BioNixus share card for ${fullUrl}`;
-  const figureHtml = `<aside data-page-share class="my-12">
-  <figure class="mx-auto max-w-2xl rounded-xl overflow-hidden border border-border bg-card shadow-sm">
+  const figureHtml = `<aside data-page-share class="mt-10 mb-8">
+  <figure class="mx-auto max-w-sm rounded-lg overflow-hidden border border-border bg-card shadow-sm">
     <a href="/api/og-card?path=${encodedPath}" target="_blank" rel="noopener" class="block" aria-label="Open the share card for this page in a new tab">
-      <img src="/api/og-card?path=${encodedPath}" alt="${altText}" title="${altText}" width="1200" height="630" loading="lazy" decoding="async" class="block w-full h-auto" />
+      <img src="/api/og-card?path=${encodedPath}" alt="${altText}" title="${altText}" width="400" height="210" loading="lazy" decoding="async" fetchpriority="low" class="block w-full h-auto max-w-sm" />
     </a>
-    <figcaption class="px-4 py-3 text-sm text-muted-foreground border-t border-border">Share this page — <strong class="text-foreground">BioNixus</strong></figcaption>
+    <figcaption class="px-3 py-2 text-xs text-muted-foreground border-t border-border">Share this page — <strong class="text-foreground">BioNixus</strong></figcaption>
   </figure>
 </aside>`;
 
-  const insertionPoint = html.lastIndexOf('</main>');
-  if (insertionPoint === -1) return html;
-  return `${html.slice(0, insertionPoint)}${figureHtml}${html.slice(insertionPoint)}`;
+  const mainOpen = html.match(/<main\b[^>]*>/i);
+  if (!mainOpen) return html;
+  const mainStart = html.indexOf(mainOpen[0]) + mainOpen[0].length;
+  const mainClose = html.lastIndexOf('</main>');
+  if (mainClose === -1 || mainClose <= mainStart) return html;
+  const inner = html.slice(mainStart, mainClose);
+  const updatedInner = insertShareFigureAfterHero(inner, figureHtml);
+  return `${html.slice(0, mainStart)}${updatedInner}${html.slice(mainClose)}`;
 }
 
 function ensureImageTitleAttributes(html) {
@@ -872,8 +913,13 @@ async function startServer() {
 
       const initialDataSerialized = serializeInitialDataForInlineScript(initialData);
 
+      const perfHints = isProduction
+        ? [getClientAssetHints(), buildLcpPreloadTag(initialData)].filter(Boolean).join('\n')
+        : buildLcpPreloadTag(initialData);
+      const combinedHead = perfHints ? `${perfHints}\n${headTags}` : headTags;
+
       const page = template
-        .replace('<!--ssr-head-->', headTags)
+        .replace('<!--ssr-head-->', combinedHead)
         .replace('<!--ssr-outlet-->', appHtml)
         .replace(
           '<!--ssr-data-->',
