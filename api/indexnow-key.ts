@@ -547,8 +547,8 @@ function ensureMainContentImage(html: string, pathname: string): string {
   const mainStart = html.indexOf(mainOpen[0]) + mainOpen[0].length;
   const mainClose = html.lastIndexOf('</main>');
   if (mainClose === -1 || mainClose <= mainStart) return html;
-  const mainInner = html.slice(mainStart, mainClose);
-  const updatedInner = insertShareFigureAfterHero(mainInner, figureHtml);
+  const mainBody = html.slice(mainStart, mainClose);
+  const updatedInner = insertShareFigureAfterHero(mainBody, figureHtml);
   return `${html.slice(0, mainStart)}${updatedInner}${html.slice(mainClose)}`;
 }
 
