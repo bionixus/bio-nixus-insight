@@ -397,7 +397,7 @@ export default function BionixusIndustries() {
                 <span className="bx-line" /> Market research across industries
               </div>
               <h1>
-                One research firm, <em>every industry that briefs us</em>
+                One research firm <em>guiding every industry we serve</em>
               </h1>
               <p className="bx-hero-sub">
                 BioNixus began in <strong>pharmaceutical and healthcare research in 2012</strong> and still leads there.
