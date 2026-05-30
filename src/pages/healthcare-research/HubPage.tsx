@@ -12,34 +12,34 @@ import { HubMarketReferenceGuide } from '@/components/seo/HubMarketReferenceGuid
 
 const HUB_FAQS = [
   {
-    question: 'What is pharmaceutical market research in MENA, UK, and Europe?',
+    question: 'What does pharmaceutical market research across MENA, the UK, and Europe actually involve?',
     answer:
-      'Pharmaceutical market research is the structured process of gathering and analyzing evidence on healthcare stakeholders, treatment behavior, and market dynamics. BioNixus applies this process across MENA, UK, and Europe to help teams make evidence-based decisions for launch, growth, and access planning.',
+      'It means turning fragmented evidence — physician behaviour, payer logic, patient pathways, and competitor moves — into a decision you can defend. The work itself is consistent across regions; what changes is the context. A pricing question in Saudi Arabia runs through NUPCO and SFDA, the same question in the UK runs through NICE and the NHS, and in Germany it runs through AMNOG. We design each study around the regulator, the buyer, and the language that govern that specific market, then deliver findings your commercial, medical, and access teams can act on.',
   },
   {
-    question: 'Which methods does BioNixus use for healthcare market intelligence?',
+    question: 'Which research methods does BioNixus use, and how do you choose between them?',
     answer:
-      'BioNixus combines quantitative and qualitative methods, including CATI, CAPI, online surveys, in-depth interviews, focus groups, and KOL mapping. Method selection is aligned to the decision question, timeline, and target stakeholder group.',
+      'We run the full quantitative and qualitative toolkit — CATI and CAPI interviewing, online HCP and patient surveys, in-depth interviews, advisory boards, focus groups, and KOL influence mapping. The method follows the question, not the other way around. If you need to size adoption or validate a forecast, we lead with structured quant; if you need to understand why a prescriber hesitates, we lead with qualitative depth. Most launch and access programmes blend both.',
   },
   {
-    question: 'Does BioNixus support multilingual and cross-country research programs?',
+    question: 'Can you run a single study across several countries and languages at once?',
     answer:
-      'Yes. BioNixus supports multilingual and multi-market execution with quality controls for translation, recruitment, and analysis consistency so teams can compare results across countries while preserving local relevance.',
+      'Yes — multi-country, multilingual fieldwork is core to how we work. One project office coordinates recruitment, translation, and analysis across markets so your numbers stay comparable from Riyadh to London, while local moderators and bilingual interviewers keep the nuance intact. Across our operating history we have delivered work in 17+ countries and 14+ therapeutic areas, which is what makes side-by-side regional reads dependable rather than approximate.',
   },
   {
-    question: 'How quickly can BioNixus deliver a proposal?',
+    question: 'How fast can you turn around a proposal once we share a brief?',
     answer:
-      'Most proposals are delivered quickly after scope alignment, including objective framing, target respondents, method recommendation, and realistic timeline options aligned to your commercial or access decision window.',
+      'Quickly. After a short scoping conversation to lock the decision you are trying to make, we return a proposal covering objectives, target respondents, recommended method, sample, and realistic timeline options mapped to your commercial or access window. Where feasibility is the open question — for example a low-incidence specialist sample — we flag it up front rather than after contracting.',
   },
   {
-    question: 'Which therapy areas are covered by BioNixus healthcare research?',
+    question: 'Which therapy areas does your healthcare research cover?',
     answer:
-      'BioNixus supports major therapy areas including oncology, diabetes, respiratory disease, immunology, biologics, and vaccines, with study designs customized to local stakeholder dynamics and evidence expectations.',
+      'We work across oncology, diabetes and cardiometabolic disease, respiratory, immunology, biologics and biosimilars, vaccines, and rare disease, among others — 14+ therapeutic areas in total. Study design shifts with the area: a rare-disease programme leans on a small, hard-to-reach expert panel, while a primary-care diabetes study can support large, statistically robust quantitative samples.',
   },
   {
-    question: 'What compliance standards are followed in BioNixus projects?',
+    question: 'What compliance and data-protection standards do your projects follow?',
     answer:
-      'BioNixus aligns projects with ESOMAR standards, GDPR data requirements, and local market context including SFDA (KSA), DOH/MOHAP (UAE), and MHRA/NICE-sensitive UK considerations when relevant.',
+      'Every project is built to ESOMAR research standards and GDPR data-protection requirements, with adverse-event handling and pharmacovigilance reporting designed into HCP and patient fieldwork. We then layer the local framework that applies — SFDA in Saudi Arabia, DOH and MOHAP in the UAE, EDA in Egypt, and MHRA/NICE-sensitive handling in the UK — so the evidence stands up to both internal governance and external scrutiny.',
   },
 ];
 
@@ -58,11 +58,11 @@ export default function HubPage() {
   const heroTitle =
     typeof hubContent?.title === 'string' && hubContent.title.length > 0
       ? hubContent.title
-      : 'Healthcare Market Research Across MENA, UK & Europe';
+      : 'Healthcare and pharmaceutical market research across MENA, the UK, and Europe';
   const heroDescription =
     typeof hubContent?.metaDescription === 'string' && hubContent.metaDescription.length > 0
       ? hubContent.metaDescription
-      : 'BioNixus delivers pharmaceutical market intelligence for commercial, medical, and access teams across priority healthcare markets.';
+      : 'BioNixus turns physician, payer, and patient evidence into launch, growth, and access decisions for pharma, biotech, and medtech teams — with fieldwork run locally in each market and findings that read consistently across borders.';
   const jsonLd = buildHubPageSchemas(hubFaqItems);
   const trustSignals =
     Array.isArray(hubContent?.trustSignals) && hubContent.trustSignals.length > 0
@@ -80,27 +80,27 @@ export default function HubPage() {
       : [
         {
           title: 'Quantitative Research',
-          description: 'Decision-ready survey programs for segmentation, adoption, and forecast confidence.',
+          description: 'Survey programmes sized to give you defensible numbers — for segmentation, adoption tracking, and forecasts you can put in front of a board.',
           slug: 'quantitative-research',
         },
         {
           title: 'Qualitative Research',
-          description: 'IDIs and moderated interviews to uncover stakeholder rationale and barriers.',
+          description: 'In-depth interviews and moderated discussions that surface why a prescriber switches, hesitates, or stays — the rationale a survey alone never captures.',
           slug: 'qualitative-research',
         },
         {
           title: 'KOL Mapping',
-          description: 'Influence network mapping for expert engagement and evidence dissemination planning.',
+          description: 'Influence networks mapped so you know which experts move opinion in a market, and how to sequence engagement and evidence around them.',
           slug: 'kol-mapping',
         },
         {
           title: 'Physician Insights',
-          description: 'Structured physician intelligence to support launch planning and brand optimization.',
+          description: 'Structured physician intelligence to pressure-test launch plans, positioning, and message before you commit the budget behind them.',
           slug: 'physician-insights',
         },
         {
           title: 'Market Access',
-          description: 'Access-focused evidence programs aligned to payer and institutional expectations.',
+          description: 'Evidence built to the questions payers and hospital committees actually ask, so pricing and reimbursement cases survive the review.',
           slug: 'market-access',
         },
       ];
@@ -108,8 +108,8 @@ export default function HubPage() {
   return (
     <main>
       <SEOHead
-        title="Healthcare & Pharmaceutical Market Research Across MENA, UK, and Europe | BioNixus"
-        description="BioNixus provides healthcare and pharmaceutical market research across MENA, the UK, and Europe with localized execution and decision-ready outputs for commercial, medical, and access teams."
+        title="Healthcare & Pharmaceutical Market Research Across MENA, UK & Europe | BioNixus"
+        description="BioNixus runs physician, payer, and patient research across MENA, the UK, and Europe — fieldwork executed locally in each market, findings that compare across borders, and outputs your commercial, medical, and access teams can act on."
         canonical="/healthcare-market-research"
         jsonLd={jsonLd}
       />
@@ -149,11 +149,14 @@ export default function HubPage() {
       <section className="py-10">
         <div className="container-wide max-w-6xl mx-auto">
           <h2 className="text-2xl font-display font-semibold text-foreground mb-3">
-            Global healthcare and pharmaceutical market research priorities
+            Where to start: country, therapy, and service-level entry points
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-4 max-w-4xl">
-            Use this hub to move from high-level regional strategy to country, therapy, and service-level execution
-            planning with evidence-safe guidance.
+            The Gulf is where most of the regional growth is concentrated — the GCC pharmaceutical market was worth
+            roughly $23.7 billion in 2024 and is projected to reach about $49 billion by 2033, a 7.6% CAGR
+            (IMARC Group, 2024). The links below take you straight from that regional picture down to the country,
+            therapy area, or service you actually need to plan, so you skip the generic overview and land on the
+            evidence that informs your next decision.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
             <Link to="/healthcare-market-research/uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
@@ -237,7 +240,7 @@ export default function HubPage() {
       <section className="py-12 bg-muted/5">
         <div className="container-wide max-w-6xl mx-auto">
           <h2 className="text-3xl font-display font-semibold text-foreground mb-6">Primary Research Hubs</h2>
-          <p className="text-muted-foreground mb-8 max-w-3xl">Deep-dive city-level intelligence for the Middle East's most complex healthcare clusters.</p>
+          <p className="text-muted-foreground mb-8 max-w-3xl">City-level depth for the Middle East's densest healthcare clusters, where regulator, payer mix, and hospital ownership differ enough that a country-level read alone misses the decision.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {countries.filter(c => c.isCity).map((city) => (
               <Link
@@ -278,17 +281,21 @@ export default function HubPage() {
           </h2>
           <div className="text-muted-foreground leading-relaxed space-y-4 max-w-4xl">
             <p>
-              BioNixus is a specialist healthcare and pharmaceutical market research company serving Dubai, Abu Dhabi,
-              and the wider UAE market. Our Dubai-aligned research programs are designed around the UAE's
-              triple-regulator structure — the{' '}
+              BioNixus runs healthcare and pharmaceutical market research across Dubai, Abu Dhabi, and the wider UAE —
+              a market valued at roughly $4.15 billion in 2024 and forecast to reach about $8.02 billion by 2033,
+              a 7.3% CAGR (IMARC Group, 2024). What makes the UAE distinct is not its size but its structure: three
+              regulators govern the same federation. The{' '}
               <strong className="text-foreground">Dubai Health Authority (DHA)</strong>, the{' '}
               <strong className="text-foreground">Department of Health Abu Dhabi (DOH)</strong>, and the federal{' '}
-              <strong className="text-foreground">Ministry of Health and Prevention (MOHAP)</strong>.
+              <strong className="text-foreground">Ministry of Health and Prevention (MOHAP)</strong> each set their
+              own formulary, insurance, and access rules, so a study that treats the UAE as a single market quietly
+              averages away the very differences that decide a launch.
             </p>
             <p>
-              We deliver physician research, KOL mapping, market access strategy, and launch excellence programs for
-              pharmaceutical, biotech, and medtech companies entering or expanding in the UAE, with execution calibrated
-              to public and private provider dynamics, payer behavior, and institutional decision pathways.
+              We design around that reality. Physician research, KOL mapping, market access strategy, and
+              launch-readiness programmes are calibrated emirate by emirate — public versus private provider mix,
+              mandatory-insurance payer behaviour, and the institutional pathways that move a product onto a formulary —
+              for pharma, biotech, and medtech teams entering or scaling in the country.
             </p>
             <p className="font-semibold text-foreground">Our Dubai healthcare market research capabilities include:</p>
             <ul className="grid md:grid-cols-2 gap-2 list-disc list-inside">
@@ -324,28 +331,28 @@ export default function HubPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
               {
-                title: 'Regional HQ Access',
-                desc: 'Many top-20 global pharma companies have their regional HQ in Dubai — we coordinate seamlessly with Dubai-based commercial, medical, and market access teams.',
+                title: 'You work where your teams already sit',
+                desc: 'Dubai is the regional headquarters for much of the global pharma industry. We work in the same time zone as your commercial, medical, and market access leads, so reviews happen live rather than over a 10-hour lag.',
               },
               {
-                title: 'DHA-Aligned Fieldwork',
-                desc: 'DHA-aligned physician recruitment and fieldwork governance for compliant, high-quality data across Dubai healthcare facilities.',
+                title: 'Fieldwork that holds up to a DHA audit',
+                desc: 'Physician recruitment and fieldwork governance are built to DHA standards, so the data you present internally is defensible and the sourcing behind every interview is documented.',
               },
               {
-                title: 'Bilingual Execution',
-                desc: 'Arabic and English fieldwork capability across all HCP segments — from government hospital physicians to private-practice specialists.',
+                title: 'Arabic and English, by the same team',
+                desc: 'Bilingual moderators and interviewers cover every HCP segment — government-hospital physicians, private-practice specialists, and pharmacists — without losing meaning in translation.',
               },
               {
-                title: 'Physician and HCP Coverage',
-                desc: 'Validated physician and HCP coverage across UAE public and private settings for quantitative and qualitative execution.',
+                title: 'A respondent base we have already validated',
+                desc: 'Physician and HCP coverage spans UAE public and private settings and is screened before fieldwork, so quantitative samples hit quota and qualitative panels reach the right specialists.',
               },
               {
-                title: 'GCC Cross-Country',
-                desc: 'GCC cross-country execution: UAE, KSA, Kuwait, Qatar, Bahrain, Oman — from a single project management office.',
+                title: 'One office for the whole Gulf',
+                desc: 'When a UAE study needs to extend to Saudi Arabia, Kuwait, Qatar, Bahrain, or Oman, a single project office runs it — keeping method, timeline, and reporting consistent across all six markets.',
               },
               {
-                title: 'Full Compliance',
-                desc: 'GDPR, ICH-GCP, MOHAP research ethics standards — compliance baked into every study design and execution protocol.',
+                title: 'Compliance designed in, not bolted on',
+                desc: 'GDPR, ICH-GCP, and MOHAP research-ethics requirements — including adverse-event handling — sit inside the study design from the first draft, not as a checklist at the end.',
               },
             ].map((card) => (
               <div key={card.title} className="rounded-xl border border-border bg-card p-6">
@@ -504,7 +511,7 @@ export default function HubPage() {
         <div className="container-wide max-w-6xl mx-auto">
           <h2 className="text-2xl font-display font-semibold text-foreground mb-4">Global and regional navigation</h2>
           <p className="text-muted-foreground mb-4 max-w-3xl">
-            Use the global directory for corporate market coverage and country routing, or stay in this hub for service-led healthcare market research planning.
+            Looking beyond healthcare or routing to a specific country? The global directory maps our full market coverage. Staying in pharma and devices? Keep to this hub and pick the service or market you need to plan.
           </p>
           <div className="grid md:grid-cols-2 gap-3">
             <Link

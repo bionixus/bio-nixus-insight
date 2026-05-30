@@ -70,8 +70,8 @@ const HeroSection = () => {
             aria-label="Company credentials"
           >
             {[
-              { value: '2012', label: 'Founded' },
-              { value: '120+', label: 'Projects delivered' },
+              { value: '127+', label: 'Projects delivered' },
+              { value: '48', label: 'Global clients' },
               { value: '17+', label: 'Countries covered' },
             ].map((metric) => (
               <li

@@ -10,9 +10,10 @@ import SchemaMarkup from '@/components/SchemaMarkup';
 import { CTASection } from '@/components/shared/CTASection';
 
 const TRUST_METRICS = [
-  { value: '2012', label: 'Founded' },
-  { value: '120+', label: 'Projects delivered' },
+  { value: '127+', label: 'Projects delivered' },
+  { value: '48', label: 'Global clients' },
   { value: '17+', label: 'Countries covered' },
+  { value: '14+', label: 'Therapeutic areas' },
 ] as const;
 
 const COMPLIANCE_BADGES = ['GDPR', 'BHBIA', 'EphMRA', 'ICC / ESOMAR'] as const;
@@ -51,10 +52,10 @@ const About = () => {
         })}</script>
       </Helmet>
       <Helmet>
-        <title>About BioNixus | International Healthcare Market Research — EMEA Heritage</title>
+        <title>About BioNixus | Pharmaceutical & Healthcare Market Research</title>
         <meta
           name="description"
-          content="BioNixus is an international healthcare market research company headquartered in the USA with offices in London, UK. Deep MENA expertise, cost-effective solutions, and an extensive physician/HCP network across 17+ countries."
+          content="BioNixus is a specialist pharmaceutical and healthcare market research company operating since 2012 — US-headquartered with London and Cairo operations, delivering physician, payer, and hospital insight across 17+ countries and 14+ therapeutic areas."
         />
         <link rel="canonical" href="https://www.bionixus.com/about" />
       </Helmet>
@@ -83,20 +84,20 @@ const About = () => {
               About BioNixus
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold mb-6 max-w-4xl leading-tight sr sr-up sr-line revealed">
-              International Market Research Company with Deep EMEA Heritage
+              A specialist pharmaceutical and healthcare market research company with deep EMEA roots
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed max-w-3xl mb-8 sr sr-up revealed">
-              BioNixus is an international healthcare market research firm founded in 2012, headquartered in the United States with offices in London, United Kingdom. We specialize in pharmaceutical and life sciences consulting across Europe, the Middle East, and North Africa—including as a{' '}
+              BioNixus has been running pharmaceutical and healthcare market research since 2012, headquartered in the United States with a London office and a Cairo fieldwork base. We design quantitative and qualitative studies for pharmaceutical, biotech, and medtech teams across Europe, the Middle East, and North Africa — including dedicated coverage as a{' '}
               <Link to="/market-research-saudi-arabia-pharmaceutical" className="underline font-medium text-primary-foreground">
                 healthcare market research company in Saudi Arabia
-              </Link>{' '}
-              and a{' '}
-              <Link to="/uae-pharmaceutical-market-research" className="underline font-medium text-primary-foreground">
-                healthcare market research company in the UAE
               </Link>
-              , and a{' '}
+              , the{' '}
+              <Link to="/uae-pharmaceutical-market-research" className="underline font-medium text-primary-foreground">
+                UAE
+              </Link>
+              , and{' '}
               <Link to="/egypt-pharmaceutical-market-research" className="underline font-medium text-primary-foreground">
-                healthcare market research company in Egypt
+                Egypt
               </Link>
               .
             </p>
@@ -114,7 +115,7 @@ const About = () => {
                 Explore market research
               </Link>
             </div>
-            <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 sr sr-up revealed" aria-label="Company credentials">
+            <ul className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8 sr sr-up revealed" aria-label="Company credentials">
               {TRUST_METRICS.map((metric) => (
                 <li
                   key={metric.label}
@@ -147,18 +148,22 @@ const About = () => {
             <div className="grid md:grid-cols-2 gap-12">
               <div className="space-y-5 text-muted-foreground leading-relaxed sr sr-left">
                 <p>
-                  Founded in 2012, BioNixus was built on a simple premise: pharmaceutical companies deserve actionable, on-the-ground intelligence from the markets they serve — not repackaged secondary data from thousands of miles away.
+                  BioNixus began in 2012 with a straightforward conviction: pharmaceutical decision-makers deserve first-hand evidence from the markets they actually serve — not secondary data repackaged from thousands of miles away. That conviction still shapes every study we run.
                 </p>
                 <p>
-                  We recognised that the MENA region — home to some of the world's fastest-growing pharmaceutical markets — was consistently underserved by traditional research firms. Physicians in Saudi Arabia, the UAE, Egypt, Kuwait, and Qatar had critical insights to share, but the existing research infrastructure wasn't built to reach them effectively.
+                  We saw the gap most clearly across the Middle East and North Africa — home to some of the world's fastest-growing pharmaceutical markets, yet routinely underserved by conventional research models. Physicians in Saudi Arabia, the UAE, Egypt, Kuwait, and Qatar held insight that mattered for launch and access, but the fieldwork infrastructure to reach them, in their language and within their regulatory reality, largely did not exist. So we built it.
                 </p>
               </div>
               <div className="space-y-5 text-muted-foreground leading-relaxed sr sr-right">
                 <p>
-                  Today, BioNixus operates across 17+ countries, delivering quantitative and qualitative research in English, Arabic, French, German, Spanish, and Chinese. Our dual presence in the USA and UK positions us as a bridge between Western pharmaceutical innovation and EMEA market realities.
+                  Today, BioNixus runs research across 17+ countries and 14+ therapeutic areas, fielding in English, Arabic, French, German, Spanish, and Chinese. Our footprint across the United States, the United Kingdom, and Egypt lets us connect Western pharmaceutical innovation to the on-the-ground realities of EMEA markets — and increasingly to wider Asian and global studies.
                 </p>
                 <p>
-                  With 120+ projects delivered and 15+ years of combined team experience across healthcare market research, we bring the rigour of a global consultancy with the agility and cost-effectiveness of a specialist firm.
+                  With 127+ projects delivered for 48 global clients, we pair the methodological rigour of a large consultancy with the speed, seniority, and cost discipline of a specialist firm. The team that scopes your study is the same team that delivers it — and you can see exactly how we work in our{' '}
+                  <Link to="/methodology" className="text-primary font-medium hover:underline">
+                    research methodology
+                  </Link>
+                  .
                 </p>
               </div>
             </div>
@@ -172,7 +177,7 @@ const About = () => {
               What Sets Us Apart
             </h2>
             <p className="text-muted-foreground mb-12 max-w-2xl sr sr-up">
-              Three core differentiators define the BioNixus approach to healthcare market research.
+              Three things consistently separate a BioNixus engagement from commissioning research elsewhere.
             </p>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-card border border-border rounded-xl p-8 sr sr-scale-up sr-spring hover-lift">
@@ -183,7 +188,7 @@ const About = () => {
                   Deep MENA Expertise
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  We maintain the most comprehensive physician panel across the GCC and North Africa. Our bilingual research teams (Arabic–English) understand local regulatory frameworks — SFDA, DHA, MOHAP, EDA — and the cultural nuances that shape clinical decision-making in the region.
+                  We maintain a deep, continuously refreshed physician and stakeholder panel across the GCC and North Africa. Our bilingual Arabic–English teams know the regulators that govern healthcare decisions — SFDA, DHA, MOHAP, and the EDA — and the clinical and cultural nuances that shape how treatments are prescribed in each market.
                 </p>
               </div>
               <div className="bg-card border border-border rounded-xl p-8 sr sr-scale-up sr-spring hover-lift">
@@ -194,7 +199,7 @@ const About = () => {
                   Cost-Effective Excellence
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  We deliver premium-quality research at competitive rates. Unlike large consultancies that layer overhead and subcontract fieldwork, BioNixus operates a lean, senior-led model. You get direct access to experienced researchers — not project coordinators managing outsourced panels.
+                  You get premium research without the premium overhead. Instead of layering account managers over subcontracted fieldwork, BioNixus runs a lean, senior-led model — so you work directly with experienced researchers who own your project end to end, not coordinators managing an outsourced panel.
                 </p>
               </div>
               <div className="bg-card border border-border rounded-xl p-8 sr sr-scale-up sr-spring hover-lift">
@@ -205,7 +210,7 @@ const About = () => {
                   Physician & HCP Network
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Our proprietary network spans physicians, hospital decision-makers, payers, and KOLs across 17+ countries. This unique access enables rapid recruitment, high response rates, and authentic clinical perspectives that secondary data simply cannot provide.
+                  Our network reaches physicians, hospital decision-makers, payers, and key opinion leaders across 17+ countries. That direct access translates into faster recruitment, stronger response rates, and authentic clinical perspective — the kind of evidence secondary databases can describe but never capture.
                 </p>
               </div>
             </div>
@@ -226,7 +231,7 @@ const About = () => {
                 <div>
                   <h3 className="text-lg font-display font-semibold text-foreground mb-2">Rigour & Integrity</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Every data point we deliver is verified, every methodology is transparent, and every recommendation is backed by evidence. We adhere to GDPR, BHBIA, EphMRA, and ICC/ESOMAR standards without exception.
+                    Every figure we report is traceable, every method is documented, and every recommendation is anchored in evidence you can audit. We work to GDPR, BHBIA, EphMRA, and ICC/ESOMAR standards as a baseline, not an afterthought.
                   </p>
                 </div>
               </div>
@@ -237,7 +242,11 @@ const About = () => {
                 <div>
                   <h3 className="text-lg font-display font-semibold text-foreground mb-2">Actionable Intelligence</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    We don't produce reports that gather dust. Every deliverable is designed to directly inform commercial decisions, launch strategies, and market access submissions.
+                    We don't deliver reports that sit on a shelf. Each study is engineered to feed a real decision — a launch sequence, a pricing position, or a{' '}
+                    <Link to="/gcc-market-access-guide" className="text-primary font-medium hover:underline">
+                      market access submission
+                    </Link>{' '}
+                    — with findings framed for the people who have to act on them.
                   </p>
                 </div>
               </div>
@@ -248,7 +257,7 @@ const About = () => {
                 <div>
                   <h3 className="text-lg font-display font-semibold text-foreground mb-2">Scientific Depth</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Our team understands clinical landscapes at a therapeutic-area level. From oncology treatment pathways to rare disease patient journeys, we speak the language of the physicians we interview.
+                    We work at therapeutic-area depth, from oncology treatment pathways to rare-disease patient journeys. Because we understand the clinical landscape, we ask physicians sharper questions and interpret their answers in the context that matters.
                   </p>
                 </div>
               </div>
@@ -259,7 +268,7 @@ const About = () => {
                 <div>
                   <h3 className="text-lg font-display font-semibold text-foreground mb-2">Cultural Competence</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Research across EMEA requires more than translation — it requires cultural understanding. Our researchers have firsthand experience in GCC, North African, and European healthcare systems.
+                    Research across EMEA takes more than translation. Our teams have first-hand experience of GCC, North African, and European health systems, so study design, recruitment, and interpretation reflect how care is really delivered in each market.
                   </p>
                 </div>
               </div>
@@ -270,9 +279,12 @@ const About = () => {
         {/* Global Presence */}
         <section className="section-padding py-16" ref={presenceRef}>
           <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-8 sr sr-up sr-line">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4 sr sr-up sr-line">
               Global Presence
             </h2>
+            <p className="text-muted-foreground mb-8 max-w-2xl sr sr-up">
+              Our registered offices anchor a research footprint that reaches well beyond them — including a Cairo fieldwork base and active coverage across the GCC, North Africa, and Europe.
+            </p>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-card border border-border rounded-xl p-8 sr sr-left hover-lift">
                 <div className="flex items-center gap-3 mb-3">

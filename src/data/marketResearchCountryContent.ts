@@ -805,11 +805,11 @@ export function getMarketResearchCountryContent(
 
 export const MARKET_RESEARCH_HUB_SECTIONS = {
   introExtra:
-    'Use this hub to choose quantitative, qualitative, or healthcare-specific research—and to open country pages for Saudi Arabia, the UAE, Kuwait, Egypt, and broader Europe–MENA programs.',
-  whyHeading: 'Why pharmaceutical teams invest in market research now',
+    'Think of this page as a switchboard, not a brochure. Pick the method that fits the decision in front of you — quantitative for sizing and confidence, qualitative for behaviour and context, healthcare-specific programmes for regulated execution — then jump straight to the country page you need: Saudi Arabia, the UAE, Kuwait, Egypt, or a wider Europe–MENA programme.',
+  whyHeading: 'Why pharmaceutical teams are commissioning research now',
   whyParagraphs: [
-    'Launch cycles are shorter, access evidence expectations are higher, and GCC markets diverge faster than regional averages suggest. Market research that connects physician behavior, payer logic, and procurement reality reduces expensive rework before SFDA, MOH, or EU HTA milestones.',
-    'BioNixus designs programs for pharmaceutical commercial, medical, and market access leaders—not generic consumer panels. That means therapy-appropriate recruitment, bilingual fieldwork where required, and outputs mapped to 30/60/90 decisions.',
+    'The money is moving faster than the averages suggest. The GCC pharmaceutical market was worth roughly $23.7 billion in 2024 and is projected to reach about $49 billion by 2033 — a 7.6% CAGR (IMARC Group, 2024) — but that headline hides sharp country-level divergence: Saudi Arabia alone accounts for around $9.4 billion of 2024 spend (IMARC Group, 2024), with its own SFDA and NUPCO logic. Launch windows are shorter and access bars are higher, so research that ties physician behaviour to payer and procurement reality is what stops expensive rework before SFDA, MOH, or EU HTA milestones.',
+    'We build for pharmaceutical commercial, medical, and market access leaders — not generic consumer panels. In practice that means therapy-appropriate recruitment, bilingual fieldwork where the market demands it, and findings mapped to the 30/60/90 decisions you actually have to make, rather than a slide deck that ends at insight.',
   ],
   methodHeading: 'How to choose the right research method',
   methodRows: [

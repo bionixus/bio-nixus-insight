@@ -14,27 +14,27 @@ const faqItems = [
   {
     question: 'Which market research service should we start with?',
     answer:
-      'Start with the decision you need to make. Use quantitative research for sizing and confidence, qualitative research for behavior and context, and healthcare-specific programs for execution in regulated care environments.',
+      'Start from the decision, not the method. If you need to size an opportunity or validate a forecast, lead with quantitative research. If you need to understand why a prescriber hesitates or a committee stalls, lead with qualitative. If the work runs inside a regulated care environment with payer and procurement gates, use a healthcare-specific program. Most launch and access projects end up blending the first two.',
   },
   {
     question: 'Can BioNixus combine Saudi, GCC, and Europe evidence in one program?',
     answer:
-      'Yes. We design unified programs with local modules so leadership gets cross-market comparability without losing country-specific insight quality.',
+      'Yes — and it is one of the most common briefs we run. A single program office coordinates fieldwork across markets so leadership gets numbers that compare like-for-like, while local modules preserve the SFDA, payer, and pathway nuance that a regional average would flatten. You get the roll-up and the country detail in one evidence base.',
   },
   {
     question: 'How is pharmaceutical market research different from consumer research?',
     answer:
-      'Pharmaceutical market research must reflect clinical pathways, payer and committee logic, regulatory milestones, and scarce specialist populations—requirements consumer panels rarely satisfy.',
+      'The respondent and the logic are different. Pharma research has to reflect clinical pathways, payer and committee economics, regulatory milestones, and specialist populations that are often small and hard to reach — conditions a general consumer panel is not built for. Screening, sample design, and adverse-event handling all change as a result.',
   },
   {
     question: 'What countries does BioNixus cover from this hub?',
     answer:
-      'Country landing pages include Saudi Arabia (KSA and Saudi keyword routes), UAE, Kuwait, and Egypt, plus links to the healthcare market research hub for UK, EU5, and additional MENA markets.',
+      'Dedicated country pages cover Saudi Arabia (both KSA and Saudi keyword routes), the UAE, Kuwait, and Egypt, with the healthcare market research hub extending coverage to the UK, EU5, and further MENA markets. Across our operating history we have run work in 17+ countries, so a market not listed here is usually still in reach.',
   },
   {
     question: 'How fast can a market research program start?',
     answer:
-      'After a short objective workshop and feasibility check, many modules move to field within one to two weeks; complex multi-country programs take longer due to ethics and hospital access steps.',
+      'After a short objective workshop and a feasibility check, focused modules can move to field within one to two weeks. Multi-country programs take longer — ethics approvals and hospital access add real calendar time — and where a specialist sample is genuinely scarce, we tell you up front rather than after the contract is signed.',
   },
 ];
 
@@ -45,7 +45,7 @@ const MarketResearch = () => {
         <title>Market Research Services Hub | Healthcare & Pharma Strategy | BioNixus</title>
         <meta
           name="description"
-          content="Comprehensive market research services for healthcare and pharmaceutical teams, including Saudi-focused programs, healthcare strategy studies, qualitative insight, and market access intelligence."
+          content="The BioNixus market research hub for healthcare and pharma teams: choose quantitative, qualitative, or healthcare-specific programs, then route to Saudi, UAE, Kuwait, and Egypt evidence built for launch, access, and pricing decisions."
         />
         <link rel="canonical" href={pageUrl} />
         <script type="application/ld+json">
@@ -87,31 +87,33 @@ const MarketResearch = () => {
         <section className="section-padding pt-16 pb-12">
           <div className="container-wide max-w-5xl mx-auto">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-4">
-              Complete Guide to Market Research Services
+              Market research services for healthcare and pharma
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-4xl">
-              BioNixus supports healthcare and pharmaceutical teams with decision-ready market research for launch
-              planning, market access, product optimization, and country expansion. This page is your service hub: start
-              with the right research approach, compare service types, and navigate to specialized pages by objective and
-              geography.
+              Global medicine spending is forecast to reach roughly $2.3 trillion by 2028, growing 5–8% a year (BioNixus market
+              analysis, 2024) — and most of that spend is decided one launch, one formulary, and one prescriber at a
+              time. BioNixus gives healthcare and pharmaceutical teams the evidence to make those calls: launch
+              planning, market access, product optimization, and country expansion. Treat this page as your starting
+              point — choose the research approach that fits your decision, compare the service types, and route to the
+              country or method page you need.
             </p>
             <p className="text-muted-foreground leading-relaxed max-w-4xl mt-4">
               {MARKET_RESEARCH_HUB_SECTIONS.introExtra}
             </p>
             <p className="text-muted-foreground leading-relaxed max-w-4xl mt-4">
-              If your immediate priority is Saudi execution, begin with our{' '}
+              If Saudi Arabia is your immediate priority, start with the{' '}
               <Link to="/market-research-saudi-arabia-pharmaceutical" className="text-primary underline">
                 healthcare market research company in Saudi Arabia
               </Link>{' '}
-              page. For broader healthcare-specific planning, use{' '}
+              page, where SFDA and NUPCO logic shapes every study. For healthcare-specific planning across markets, use the{' '}
               <Link to="/market-research-healthcare" className="text-primary underline">
                 healthcare market research
-              </Link>
-              . For method-focused programs, review{' '}
+              </Link>{' '}
+              hub. And if the method is what you're weighing, compare{' '}
               <Link to="/qualitative-market-research" className="text-primary underline">
                 qualitative market research
-              </Link>
-              .
+              </Link>{' '}
+              against the quantitative track below.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 mt-6">
               <Link to="/healthcare-market-research/uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
@@ -165,15 +167,15 @@ const MarketResearch = () => {
           points={[
             {
               title: 'Why it matters',
-              body: 'Market research only creates value when evidence is mapped directly to launch, access, and growth decisions.',
+              body: 'Research earns its keep only when it answers a specific decision — which account to prioritize, which message to lead with, whether the price will clear the committee. Insight with no decision attached is cost, not value.',
             },
             {
               title: 'What the evidence says',
-              body: 'Teams that combine quant and qual methods reduce planning blind spots and align faster across functions.',
+              body: 'The strongest programs pair a number with a reason: quant tells you how big and how fast, qual tells you why. Run them together and the cross-functional argument is usually settled before the readout ends.',
             },
             {
               title: 'What to do next',
-              body: 'Pick one decision priority, choose the fit-for-purpose method, and run a 30/60/90 implementation cadence.',
+              body: 'Name one decision and its deadline, pick the method that answers it, and hold the findings to a 30/60/90 plan with owners — so the work moves into action instead of a shared drive.',
             },
           ]}
         />
@@ -205,9 +207,9 @@ const MarketResearch = () => {
               <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-3">
                 <Trophy className="w-5 h-5" />
               </div>
-              <h2 className="font-display font-semibold text-foreground mb-2">Proven success model</h2>
+              <h2 className="font-display font-semibold text-foreground mb-2">Built around your decision</h2>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Structured research programs aligned to commercial, medical, and access priorities.
+                Every program starts from a commercial, medical, or access decision and is designed backward from it — never a template applied to your brand.
               </p>
             </article>
             <article className="bg-card border border-border rounded-xl p-5">
@@ -216,7 +218,7 @@ const MarketResearch = () => {
               </div>
               <h2 className="font-display font-semibold text-foreground mb-2">Quantitative precision</h2>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Robust sample design, advanced analytics, and measurable outputs for confident decisions.
+                Sample frames sized for real statistical confidence, with analytics and forecast inputs you can defend in front of a board.
               </p>
             </article>
             <article className="bg-card border border-border rounded-xl p-5">
@@ -225,7 +227,7 @@ const MarketResearch = () => {
               </div>
               <h2 className="font-display font-semibold text-foreground mb-2">Qualitative depth</h2>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Deep stakeholder insight from physicians, payers, patients, and healthcare decision makers.
+                The rationale behind the number — drawn from physicians, payers, patients, and the committee members who actually gate access.
               </p>
             </article>
             <article className="bg-card border border-border rounded-xl p-5">
@@ -234,7 +236,7 @@ const MarketResearch = () => {
               </div>
               <h2 className="font-display font-semibold text-foreground mb-2">Access-ready evidence</h2>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Practical outputs for payer engagement, access planning, and institutional activation.
+                Findings shaped to the questions payers and hospital committees ask — so your access case survives the review, not just the internal sign-off.
               </p>
             </article>
           </div>
@@ -259,8 +261,9 @@ const MarketResearch = () => {
 
                 <TabsContent value="quantitative" className="pt-4">
                   <p className="text-muted-foreground leading-relaxed mb-4">
-                    Quantitative research services for healthcare and pharma teams, including market sizing,
-                    segmentation, physician surveys, pricing research, and advanced statistical modeling.
+                    Reach for quantitative when the question is how big, how fast, or how many. Market sizing,
+                    segmentation, physician surveys, pricing research, and statistical modeling — sized so the answer
+                    holds up when finance and leadership press on it.
                   </p>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                     For implementation standards, benchmarks, and execution workflow, review the{' '}
@@ -280,8 +283,9 @@ const MarketResearch = () => {
 
                 <TabsContent value="qualitative" className="pt-4">
                   <p className="text-muted-foreground leading-relaxed mb-4">
-                    Qualitative research services including in-depth interviews, advisory boards, pathway mapping, and
-                    insight synthesis to uncover decision drivers and adoption barriers.
+                    Reach for qualitative when the question is why. In-depth interviews, advisory boards, patient-pathway
+                    mapping, and synthesis that surfaces the decision drivers and adoption barriers a survey can measure
+                    but never explain.
                   </p>
                   <Link
                     to="/services/qualitative-research"
@@ -390,22 +394,21 @@ const MarketResearch = () => {
                 <FlaskConical className="w-5 h-5 text-primary mb-2" />
                 <h3 className="font-semibold text-foreground mb-2">Faster launch prioritization</h3>
                 <p className="text-sm text-muted-foreground">
-                  Research-led account sequencing helped teams concentrate effort where early conversion probability was
-                  highest.
+                  Sequencing accounts by evidence rather than instinct let teams put early effort where conversion was most likely — and stop spreading a small field force thin.
                 </p>
               </article>
               <article className="rounded-xl border border-border bg-card p-5">
                 <Stethoscope className="w-5 h-5 text-primary mb-2" />
                 <h3 className="font-semibold text-foreground mb-2">Sharper physician engagement</h3>
                 <p className="text-sm text-muted-foreground">
-                  Stakeholder insights improved message relevance and reduced friction in scientific communication.
+                  Knowing what physicians actually weigh let teams lead with the message that mattered, cutting friction out of scientific exchange.
                 </p>
               </article>
               <article className="rounded-xl border border-border bg-card p-5">
                 <ShieldCheck className="w-5 h-5 text-primary mb-2" />
                 <h3 className="font-semibold text-foreground mb-2">Stronger market access planning</h3>
                 <p className="text-sm text-muted-foreground">
-                  Evidence mapping aligned payer narratives with practical implementation constraints.
+                  Mapping the evidence payers ask for against real implementation constraints kept access narratives honest — and defensible at committee.
                 </p>
               </article>
             </div>
@@ -418,23 +421,23 @@ const MarketResearch = () => {
             <div className="grid md:grid-cols-2 gap-4">
               <Link to="/healthcare-market-research/saudi-arabia" className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 transition-colors">
                 <h3 className="font-semibold text-foreground mb-1">Saudi pharmaceutical market strategy</h3>
-                <p className="text-sm text-muted-foreground">SFDA, local access dynamics, and Vision 2030 execution priorities.</p>
+                <p className="text-sm text-muted-foreground">How SFDA registration, NUPCO procurement, and Vision 2030 priorities reshape a launch in the Kingdom.</p>
               </Link>
               <Link to="/market-research-healthcare" className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 transition-colors">
                 <h3 className="font-semibold text-foreground mb-1">Healthcare market research programs</h3>
-                <p className="text-sm text-muted-foreground">Healthcare-specific evidence for commercial, medical, and access teams.</p>
+                <p className="text-sm text-muted-foreground">Physician, payer, and patient evidence built for commercial, medical, and access teams across regulated markets.</p>
               </Link>
               <Link to="/bionixus-market-research-middle-east" className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 transition-colors">
                 <h3 className="font-semibold text-foreground mb-1">Middle East pharmaceutical market research</h3>
-                <p className="text-sm text-muted-foreground">GCC evidence playbooks for launch readiness, access strategy, and 90-day activation planning.</p>
+                <p className="text-sm text-muted-foreground">The GCC evidence playbook — launch readiness, access strategy, and the first 90 days of activation across six markets.</p>
               </Link>
               <Link to="/qualitative-market-research" className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 transition-colors">
                 <h3 className="font-semibold text-foreground mb-1">Qualitative market research</h3>
-                <p className="text-sm text-muted-foreground">Understand decision logic with IDIs, focus groups, and stakeholder interviews.</p>
+                <p className="text-sm text-muted-foreground">Get to the why behind the data — through in-depth interviews, focus groups, and stakeholder conversations.</p>
               </Link>
               <Link to="/pharmacies-saudi-arabia-marketing" className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 transition-colors">
                 <h3 className="font-semibold text-foreground mb-1">Pharmacy channel strategy in Saudi Arabia</h3>
-                <p className="text-sm text-muted-foreground">Retail and institutional pharmacy evidence for activation planning.</p>
+                <p className="text-sm text-muted-foreground">Retail and institutional pharmacy evidence for the activation decisions that move volume on the ground.</p>
               </Link>
             </div>
           </div>

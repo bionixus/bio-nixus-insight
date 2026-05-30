@@ -15,9 +15,10 @@ export function MethodologyLongFormEn({ lang }: Props): JSX.Element {
             1. Research Design Principles
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            Every programme begins with a structured design phase that translates commercial questions into a testable research
-            framework. We work with brand teams, medical affairs, and market access stakeholders to define objectives that are specific
-            enough to drive action yet flexible enough to accommodate mid-study course corrections.
+            Every programme starts by turning a business question into something a study can actually answer. We sit down with brand
+            teams, medical affairs, and market access stakeholders to pin objectives that are specific enough to drive a decision, yet
+            flexible enough to course-correct mid-study when the early data points somewhere unexpected. A study designed around the wrong
+            question is fast, cheap, and useless — so we spend the time here.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-4">
             <strong className="text-foreground">Quantitative research</strong> programmes use structured questionnaires designed around validated

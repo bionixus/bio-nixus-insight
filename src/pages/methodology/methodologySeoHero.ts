@@ -21,10 +21,10 @@ export const METHODOLOGY_SEO_AND_HERO: Record<
   en: {
     seoTitle: 'Healthcare Market Research Methodology | BioNixus',
     seoDescription:
-      'BioNixus methodology for healthcare market research: research design, sampling, fieldwork governance, data validation, ethics, and reporting standards across EMEA and GCC markets.',
+      'How BioNixus designs, runs, and quality-assures healthcare market research: research design, sampling and sample-size governance, fieldwork controls, data validation, ethics and GDPR, and decision-first reporting across EMEA and GCC markets.',
     h1: 'Healthcare Market Research Methodology',
     intro:
-      'Pharmaceutical decisions depend on evidence that is methodologically sound, operationally transparent, and aligned with the regulatory realities of each market. This page explains how BioNixus designs, executes, and quality-assures every healthcare market research programme we deliver across EMEA and GCC markets.',
+      'A pharmaceutical decision is only as good as the evidence under it — and evidence is only trustworthy if you can see how it was made. This page is that look behind the curtain: how BioNixus designs each study, recruits and verifies the right respondents, governs fieldwork, validates the data, meets the ethics and regulatory bar in every market, and reports findings you can act on. No black boxes.',
     langMirrorLead: 'Localized methodology mirrors:',
     langMirrorMid:
       '. Align evidence plans with the market research insights hub at',
@@ -33,7 +33,7 @@ export const METHODOLOGY_SEO_AND_HERO: Record<
     gfkAlternativeLabel: 'GfK alternative coverage in Egypt',
     ctaTitle: 'Discuss Your Research Requirements',
     ctaBody:
-      'Whether you are planning a multi-market launch study, a single-country payer landscape assessment, or an ongoing competitive intelligence programme, our methodology adapts to the complexity and regulatory context of your project. Contact us to discuss how we can design a research programme that meets your evidence standards.',
+      'A multi-market launch study, a single-country payer landscape, or an always-on competitive intelligence programme — the method flexes to the complexity and the regulatory context in front of it. Tell us the decision you need to make and we will design the research that meets your evidence bar.',
     ctaButton: 'Get in touch',
   },
   de: {

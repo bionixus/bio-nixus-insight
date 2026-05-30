@@ -40,90 +40,90 @@ type LocalizedCopy = {
 const copyByLanguage: Record<Language, LocalizedCopy> = {
   en: {
     seoTitle:
-      'Healthcare Market Research | Pharmaceutical Healthcare Market Research Services in Europe and Middle East',
+      'Healthcare Market Research in Europe & the Middle East | BioNixus',
     seoDescription:
-      'Healthcare market research for pharmaceutical teams across Europe and the Middle East. Quantitative and qualitative healthcare market research for launch, market access, and growth decisions.',
+      'Specialist healthcare and pharmaceutical market research across Europe, the UK, and the Middle East. Quantitative and qualitative physician, payer, and hospital evidence for launch, market access, and growth decisions.',
     breadcrumbHome: 'Home',
     breadcrumbCurrent: 'Healthcare Market Research',
     heroBadge: 'Healthcare Market Research',
     heroTitle: 'Healthcare market research for pharmaceutical decisions in Europe and the Middle East',
-    heroSubtitle: 'Keyword-focused healthcare market research built for launch, market access, and growth.',
+    heroSubtitle: 'Quantitative and qualitative evidence built for launch, market access, and growth — designed around the decision, the country, and the regulatory reality you operate in.',
     heroBody:
-      'BioNixus delivers healthcare market research programs that help pharmaceutical teams convert physician, payer, and hospital evidence into practical commercial actions.',
-    scopeTitle: 'What this healthcare market research page solves',
+      'BioNixus designs healthcare market research programmes that turn physician, payer, and hospital evidence into commercial actions pharmaceutical teams can defend — from pre-launch sizing through post-launch optimisation, across European and Middle Eastern markets.',
+    scopeTitle: 'Research scoped to a commercial decision, not a generic market summary',
     scopeBody:
-      'This page is built for pharmaceutical teams that need healthcare market research with clear business relevance. It focuses on evidence quality, execution speed, and market-specific decision support rather than generic market summaries.',
+      'This page is for pharmaceutical, biotech, and medtech teams that need evidence with a clear commercial job to do. Global medicine spending is forecast to reach roughly $2.3 trillion by 2028, growing 5–8% a year (BioNixus market analysis, 2024) — and the teams that win in that market are the ones whose launch, pricing, and access decisions rest on defensible primary evidence. That is exactly what we focus on: evidence quality, execution speed, and country-specific decision support rather than recycled secondary summaries.',
     capabilitiesTitle: 'Core healthcare market research capabilities',
     capabilities: [
       {
         title: 'Quantitative healthcare market research',
         description:
-          'Use structured surveys to size demand, segment opportunity, and prioritize accounts with measurable confidence.',
+          'Structured surveys and trackers that size demand, segment the opportunity, and prioritise accounts with measurable, base-sized confidence — not headline percentages.',
       },
       {
         title: 'Qualitative pharmaceutical research',
         description:
-          'Understand why adoption barriers happen through physician, payer, and hospital interviews across priority markets.',
+          'Interviews and advisory discussions with physicians, payers, and hospital decision-makers that explain why adoption and access barriers occur in each priority market.',
       },
       {
         title: 'Market access and value evidence',
         description:
-          'Align evidence strategy with payer expectations to improve pharmaceutical pricing and reimbursement planning.',
+          'Evidence strategy aligned to real payer expectations, so pricing, reimbursement, and value narratives hold up in front of HTA bodies and formulary committees.',
       },
       {
         title: 'Stakeholder mapping and influence analysis',
         description:
-          'Map decision influence from KOLs to procurement and committee pathways to improve engagement strategy quality.',
+          'Influence mapping from KOLs to procurement and committee pathways, so engagement effort lands where decisions are actually made.',
       },
     ],
     coverageTitle: 'Europe and Middle East coverage',
     coverageBody:
-      'Healthcare market research across the UK, Germany, France, Italy, Spain, Saudi Arabia, UAE, Egypt, Kuwait, and Qatar with country-level execution depth and regional comparability.',
+      'We run country-level fieldwork across the UK, Germany, France, Italy, Spain, Saudi Arabia, the UAE, Egypt, Kuwait, and Qatar, with comparable design for regional roll-ups. The opportunity is real on both sides of the map: spending across the five major European markets is expected to rise by about $70 billion through 2028 (BioNixus market analysis, 2024), while the GCC pharmaceutical market — worth roughly $23.7 billion in 2024 — is projected to reach about $49 billion by 2033 at a 7.6% CAGR (IMARC Group, 2024), with Saudi Arabia holding the largest share of regional spend.',
     methodologyTitle: 'Methodology and compliance',
     methodologyBody:
-      'Programs are designed with GDPR, EMA, MOH, and SFDA-aware governance. This supports healthcare market research quality, respondent integrity, and audit-ready delivery for pharmaceutical stakeholders.',
+      'Every programme is designed with GDPR, EMA, MOH, and SFDA-aware governance, with respondent verification and audit-ready documentation at each step. That protects data quality and respondent integrity — and it means the evidence holds up when your medical, legal, and market-access teams review it.',
     useCasesTitle: 'Healthcare market research use-case outcomes',
     useCases: [
       {
         title: 'Launch readiness',
         description:
-          'Prioritize segments, pressure-test assumptions, and improve early market activation decisions.',
+          'Prioritise segments, pressure-test assumptions, and sharpen the decisions that shape early market activation.',
       },
       {
         title: 'Market access strategy',
         description:
-          'Identify payer evidence gaps and sharpen value narratives for pharmaceutical market access pathways.',
+          'Surface payer evidence gaps and strengthen the value narrative behind your pharmaceutical access pathway.',
       },
       {
-        title: 'Growth optimization',
+        title: 'Growth optimisation',
         description:
-          'Track adoption friction and refine physician and account-level strategy for sustained growth.',
+          'Track adoption friction and refine physician- and account-level strategy for durable, sustained growth.',
       },
     ],
     linksTitle: 'Priority healthcare market research pathways',
     linksLead:
-      'Use these internal pathways to deepen strategy planning and connect healthcare market research with pharmaceutical execution.',
+      'Use these pathways to connect healthcare market research evidence to pharmaceutical execution across our hubs and country pages.',
     faqTitle: 'Healthcare market research FAQs',
     faq: [
       {
         question: 'How is healthcare market research different from general market research?',
         answer:
-          'Healthcare market research must reflect clinical workflow, payer logic, and institutional decision structures. Pharmaceutical decisions require this additional depth.',
+          'General market research measures attitudes and demand. Healthcare market research has to reflect clinical workflow, payer logic, and institutional decision-making — the structures that actually determine whether a medicine is prescribed, funded, and stocked. Pharmaceutical decisions need that added depth.',
       },
       {
         question: 'Can one healthcare market research framework work across all markets?',
         answer:
-          'A shared backbone can be used, but country-level modules are required for Europe and Middle East markets because access pathways and stakeholder influence differ.',
+          'A shared backbone keeps results comparable, but Europe and the Middle East need country-level modules: regulators, access pathways, and stakeholder influence differ enough that a single questionnaire for every market quietly distorts the signal.',
       },
       {
         question: 'How quickly can healthcare market research start?',
         answer:
-          'Most projects can begin after objective alignment and scope confirmation, then move into fieldwork with clear quality controls.',
+          'Most projects begin once objectives and scope are aligned, then move into fieldwork with quality controls agreed up front. We typically return a tailored methodology outline within one business day of an initial brief.',
       },
     ],
     ctaTitle: 'Need a tailored healthcare market research roadmap?',
     ctaBody:
-      'Talk with BioNixus about pharmaceutical priorities and receive a practical scope for launch, market access, or growth decisions.',
+      'Tell BioNixus about your pharmaceutical priorities and we will come back with a practical scope for your launch, market access, or growth decision.',
     ctaPrimary: 'Request a proposal',
     ctaSecondary: 'Explore market research hub',
   },

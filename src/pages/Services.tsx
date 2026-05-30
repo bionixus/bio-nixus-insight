@@ -32,42 +32,42 @@ const services: ServiceItem[] = [
     slug: 'quantitative-research',
     title: 'Quantitative Healthcare Research & Physician Surveys',
     summary:
-      'Large-scale statistical insights from physicians and healthcare professionals across 17+ EMEA countries. Online and telephone surveys with defined sample sizes (n=50–500+) across multiple specialties.',
+      'Statistically powered surveys with physicians and healthcare professionals across 17+ EMEA markets. Online and telephone fieldwork at defined sample sizes (n=50 to 500+), reported with the base sizes, quotas, and significance testing decision-makers expect.',
     icon: BarChart3,
   },
   {
     slug: 'qualitative-research',
     title: 'Qualitative Pharmaceutical Research & Expert Insights',
     summary:
-      'In-depth interviews, focus groups, and advisory boards with KOLs, treating physicians, payers, and hospital decision-makers across UK, Europe, and MENA.',
+      'In-depth interviews, focus groups, and advisory boards with KOLs, treating physicians, payers, and hospital decision-makers across the UK, Europe, and MENA — designed to explain the why behind adoption and access, not just the what.',
     icon: Users,
   },
   {
     slug: 'market-access',
     title: 'Market Access & HTA Strategy',
     summary:
-      'Evidence-based pricing and payer engagement for UK, EU5, and GCC markets. HTA submission support for NICE, G-BA, HAS, and Gulf health authorities.',
+      'Evidence-led pricing, payer engagement, and value-story testing for UK, EU5, and GCC markets, with HTA submission support mapped to NICE, G-BA, HAS, and Gulf health authority expectations.',
     icon: Landmark,
   },
   {
     slug: 'competitive-intelligence',
     title: 'Competitive Intelligence',
     summary:
-      'Real-time competitor monitoring, pipeline analysis, landscape assessments, launch readiness evaluations, and biosimilar impact studies.',
+      'Competitor monitoring, pipeline and landscape assessments, launch-readiness reviews, and biosimilar impact studies — turned into a clear read on where your brand can realistically win.',
     icon: Search,
   },
   {
     slug: 'clinical-trial-support',
     title: 'Clinical Trial Support',
     summary:
-      'Site identification, investigator profiling, patient recruitment feasibility, protocol feedback from treating physicians, and post-launch real-world evidence.',
+      'Site identification, investigator profiling, patient-recruitment feasibility, protocol feedback from treating physicians, and post-launch real-world evidence to support trials across the region.',
     icon: Microscope,
   },
   {
     slug: 'kol-stakeholder-mapping',
     title: 'KOL & Stakeholder Mapping',
     summary:
-      'Key Opinion Leader identification and engagement across UK, Europe, and MENA. Ethnographic research, patient journey mapping, and treatment pathway analysis.',
+      'Identification and engagement of the key opinion leaders, committees, and procurement voices that actually shape decisions — with ethnographic research, patient-journey mapping, and treatment-pathway analysis across the UK, Europe, and MENA.',
     icon: Map,
   },
 ];
@@ -175,10 +175,10 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Healthcare Market Research Services in EMEA | BioNixus</title>
+        <title>Pharmaceutical & Healthcare Market Research Services | BioNixus</title>
         <meta
           name="description"
-          content="Quantitative, qualitative, market access, KOL mapping, competitive intelligence, and clinical trial support across the UK, Europe, GCC, and MENA."
+          content="Quantitative physician surveys, qualitative KOL research, market access and HTA strategy, competitive intelligence, and clinical trial support across the UK, Europe, the GCC, and MENA — scoped to your launch decision."
         />
         <link rel="canonical" href="https://www.bionixus.com/services" />
         <script type="application/ld+json">{JSON.stringify(servicesHubJsonLd)}</script>
@@ -217,10 +217,10 @@ const Services = () => {
               Our Services
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold mb-6 max-w-4xl leading-tight sr sr-up sr-line revealed">
-              Comprehensive Healthcare Market Research Services for EMEA
+              Pharmaceutical and healthcare market research services across EMEA
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed max-w-3xl mb-8 sr sr-up revealed">
-              From large-scale physician surveys to strategic market access consulting, BioNixus delivers end-to-end pharmaceutical research across 17+ countries in Europe, the Middle East, and North Africa.
+              From statistically powered physician surveys to payer and HTA strategy, BioNixus runs the full arc of pharmaceutical and healthcare market research across 17+ countries in Europe, the Middle East, and North Africa — every engagement scoped to a real commercial decision, not a template.
             </p>
             <div className="flex flex-wrap gap-3 sr sr-up revealed">
               <Link
@@ -246,10 +246,10 @@ const Services = () => {
             </h2>
             <div className="grid md:grid-cols-2 gap-8 text-muted-foreground leading-relaxed">
               <p className="sr sr-left">
-                Each service below links to a dedicated page with scope notes, typical deliverables, and geographic nuance. Quantitative programs emphasize representative sampling, transparent quotas, and statistical reporting that leadership teams can defend in governance reviews.
+                Every service below opens a dedicated page with scope notes, typical deliverables, and country-level nuance. Our quantitative work is built on representative sampling, transparent quotas, and statistical reporting your leadership team can defend in a governance review — not headline percentages with no visible base sizes.
               </p>
               <p className="sr sr-right">
-                Qualitative programs emphasize discussion guides that elicit clinical behavior—not slogans—and synthesis that converts transcripts into decisions. Market access, competitive intelligence, and KOL modules can be sequenced to your launch calendar.
+                Our qualitative work is built on discussion guides that surface real clinical behaviour rather than rehearsed slogans, and synthesis that turns transcripts into decisions. Market access, competitive intelligence, and KOL modules slot into the same program and sequence to your launch calendar.
               </p>
             </div>
           </div>
