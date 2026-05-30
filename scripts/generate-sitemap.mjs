@@ -10,7 +10,7 @@
  * Run before build: npm run generate-sitemap && npm run build
  * Or use prebuild so it runs automatically.
  */
-import { writeFileSync, readFileSync, existsSync } from 'fs';
+import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'fs';
 import { execSync } from 'child_process';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
@@ -523,6 +523,27 @@ function getGitLastModified(filePath) {
 /**
  * Public press releases only (respects embargo and noIndex).
  */
+async function writePressRssFeed(projectId, dataset) {
+  try {
+    const { createClient } = await import('@sanity/client');
+    const { buildPressRssXml, fetchPublicPressReleasesForRss } = await import('../lib/news-rss.mjs');
+    const client = createClient({
+      projectId,
+      dataset,
+      apiVersion: '2024-01-01',
+      useCdn: true,
+    });
+    const items = await fetchPublicPressReleasesForRss(client, 50);
+    const feedXml = buildPressRssXml(items);
+    const feedDir = join(publicDir, 'news');
+    mkdirSync(feedDir, { recursive: true });
+    writeFileSync(join(feedDir, 'feed.xml'), feedXml, 'utf8');
+    console.log(`RSS written to public/news/feed.xml (${items.length} items).`);
+  } catch (err) {
+    console.warn('RSS: could not write press feed:', err.message);
+  }
+}
+
 async function fetchPressReleaseContent(projectId, dataset) {
   try {
     const { createClient } = await import('@sanity/client');
@@ -1025,6 +1046,7 @@ ${urls.join('\n')}
 `;
 
   writeFileSync(outPath, xml, 'utf8');
+  await writePressRssFeed(blogProjectId, blogDataset);
   console.log(
     `Sitemap written to public/sitemap.xml (${urls.length} canonical URLs from ${candidates.size} candidates).`
   );

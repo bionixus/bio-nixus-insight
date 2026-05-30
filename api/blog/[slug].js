@@ -16,6 +16,7 @@ import {
 } from '../../blog-crawler-stubs.mjs';
 import { prepareBlogBodyHtml } from '../../lib/demote-blog-body-h1.mjs';
 import { fixBrokenInternalHref, fixBrokenInternalHrefsInHtml } from '../../lib/fix-broken-internal-hrefs.mjs';
+import { handlePressReleaseCrawler } from '../../lib/press-crawler-html.mjs';
 
 const sanityClient = createClient({
   projectId: process.env.VITE_SANITY_PROJECT_ID || 'h2whvvpo',
@@ -217,6 +218,11 @@ export default async function handler(req, res) {
 
   if (!slug) {
     return res.status(400).json({ error: 'Missing slug' });
+  }
+
+  const pressFlag = req.query.pressRelease;
+  if (pressFlag === '1' || pressFlag === 'true') {
+    return handlePressReleaseCrawler(req, res, sanityClient, slug);
   }
 
   const legacyTarget = LEGACY_BLOG_SLUG_TO_CANONICAL[slug];

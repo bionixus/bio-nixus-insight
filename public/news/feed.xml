@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BioNixus News</title>
+    <link>https://www.bionixus.com/news</link>
+    <description>Official BioNixus press releases on healthcare and pharmaceutical market research.</description>
+    <language>en-gb</language>
+    <lastBuildDate>Sat, 30 May 2026 21:22:16 GMT</lastBuildDate>
+    <atom:link href="https://www.bionixus.com/news/feed.xml" rel="self" type="application/rss+xml" />
+    
+  </channel>
+</rss>

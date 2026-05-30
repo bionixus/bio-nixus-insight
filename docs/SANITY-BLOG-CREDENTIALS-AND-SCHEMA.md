@@ -105,7 +105,7 @@ Schema source in repo: `day-one/apps/studio/schemaTypes/` (`blogPost.ts`, `press
 
 ## 5. `pressRelease` (document)
 
-Press releases power `/news` (hub), `/news/{slug}` (detail), RSS at `/news/feed.xml`, and optional `/media` kit links.
+Press releases power `/news` (hub), `/news/{slug}` (detail), RSS at `/news/feed.xml` (generated at build into `public/news/feed.xml`), and optional `/media` kit links.
 
 | Field | Type | Required | Notes |
 |-------|------|----------|--------|
