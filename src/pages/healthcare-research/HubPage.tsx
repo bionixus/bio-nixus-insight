@@ -154,7 +154,7 @@ export default function HubPage() {
           <p className="text-muted-foreground leading-relaxed mb-4 max-w-4xl">
             The Gulf is where most of the regional growth is concentrated — the GCC pharmaceutical market was worth
             roughly $23.7 billion in 2024 and is projected to reach about $49 billion by 2033, a 7.6% CAGR
-            (IMARC Group, 2024). The links below take you straight from that regional picture down to the country,
+            (BioNixus market analysis, 2024). The links below take you straight from that regional picture down to the country,
             therapy area, or service you actually need to plan, so you skip the generic overview and land on the
             evidence that informs your next decision.
           </p>
@@ -283,7 +283,7 @@ export default function HubPage() {
             <p>
               BioNixus runs healthcare and pharmaceutical market research across Dubai, Abu Dhabi, and the wider UAE —
               a market valued at roughly $4.15 billion in 2024 and forecast to reach about $8.02 billion by 2033,
-              a 7.3% CAGR (IMARC Group, 2024). What makes the UAE distinct is not its size but its structure: three
+              a 7.3% CAGR (BioNixus market analysis, 2024). What makes the UAE distinct is not its size but its structure: three
               regulators govern the same federation. The{' '}
               <strong className="text-foreground">Dubai Health Authority (DHA)</strong>, the{' '}
               <strong className="text-foreground">Department of Health Abu Dhabi (DOH)</strong>, and the federal{' '}

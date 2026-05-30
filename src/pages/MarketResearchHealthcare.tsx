@@ -78,7 +78,7 @@ const copyByLanguage: Record<Language, LocalizedCopy> = {
     ],
     coverageTitle: 'Europe and Middle East coverage',
     coverageBody:
-      'We run country-level fieldwork across the UK, Germany, France, Italy, Spain, Saudi Arabia, the UAE, Egypt, Kuwait, and Qatar, with comparable design for regional roll-ups. The opportunity is real on both sides of the map: spending across the five major European markets is expected to rise by about $70 billion through 2028 (BioNixus market analysis, 2024), while the GCC pharmaceutical market — worth roughly $23.7 billion in 2024 — is projected to reach about $49 billion by 2033 at a 7.6% CAGR (IMARC Group, 2024), with Saudi Arabia holding the largest share of regional spend.',
+      'We run country-level fieldwork across the UK, Germany, France, Italy, Spain, Saudi Arabia, the UAE, Egypt, Kuwait, and Qatar, with comparable design for regional roll-ups. The opportunity is real on both sides of the map: spending across the five major European markets is expected to rise by about $70 billion through 2028 (BioNixus market analysis, 2024), while the GCC pharmaceutical market — worth roughly $23.7 billion in 2024 — is projected to reach about $49 billion by 2033 at a 7.6% CAGR (BioNixus market analysis, 2024), with Saudi Arabia holding the largest share of regional spend.',
     methodologyTitle: 'Methodology and compliance',
     methodologyBody:
       'Every programme is designed with GDPR, EMA, MOH, and SFDA-aware governance, with respondent verification and audit-ready documentation at each step. That protects data quality and respondent integrity — and it means the evidence holds up when your medical, legal, and market-access teams review it.',

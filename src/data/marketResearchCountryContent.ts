@@ -85,13 +85,13 @@ const en: Record<string, MarketResearchCountryContent> = {
       paragraphs: [
         'UAE market research must reflect a multi-emirate health system: Dubai Health Authority (DHA), Department of Health – Abu Dhabi (DOH), and federal MOHAP requirements can all influence how products are registered, listed, and adopted. BioNixus scopes studies around the regulators and approval pathways that matter for your brand—not a single “UAE average” assumption.',
         'Private insurance, mandatory benefits, and hospital group procurement create parallel access routes. Research programs therefore map both public-sector referral patterns and private hospital formulary behavior, including where mandatory lists, prior authorization, and medical policy committees slow or accelerate uptake.',
-        'For international portfolios, UAE evidence often feeds GCC roll-ups — a regional market IMARC Group sizes at about $23.7 billion in 2024 and projects to reach roughly $49 billion by 2033 (a 7.6% CAGR). We design modules so Dubai and Abu Dhabi insights remain comparable while still capturing the Northern Emirates and cross-border patient flows where clinically relevant.',
+        'For international portfolios, UAE evidence often feeds GCC roll-ups — a regional market BioNixus sizes at about $23.7 billion in 2024 and projects to reach roughly $49 billion by 2033 (a 7.6% CAGR). We design modules so Dubai and Abu Dhabi insights remain comparable while still capturing the Northern Emirates and cross-border patient flows where clinically relevant.',
       ],
     },
     marketStructure: {
       heading: 'How the UAE pharmaceutical market is structured',
       paragraphs: [
-        'The UAE pharmaceutical market was worth roughly $4.15 billion in 2024 and is projected to reach about $8.02 billion by 2033 — a 7.3% CAGR (IMARC Group, 2024), among the faster growth rates in the GCC. That national figure hides where the money actually moves: specialty care concentrates in flagship hospitals and medical cities, while primary and chronic care spreads across clinics, polyclinics, and retail pharmacy networks. Market research in the UAE should segment by care setting, because prescribing authority, budget holders, and adoption speed differ materially between them.',
+        'The UAE pharmaceutical market was worth roughly $4.15 billion in 2024 and is projected to reach about $8.02 billion by 2033 — a 7.3% CAGR (BioNixus market analysis, 2024), among the faster growth rates in the GCC. That national figure hides where the money actually moves: specialty care concentrates in flagship hospitals and medical cities, while primary and chronic care spreads across clinics, polyclinics, and retail pharmacy networks. Market research in the UAE should segment by care setting, because prescribing authority, budget holders, and adoption speed differ materially between them.',
         'Multinational manufacturers, regional distributors, and local marketing authorization holders compete across overlapping portfolios. BioNixus maps account archetypes—key opinion leaders, committee chairs, pharmacists, and procurement—to show where influence actually sits for your therapy area.',
         'Digital health adoption, medical tourism, and expatriate population dynamics add volatility to demand forecasts. We pressure-test sizing models with facility-level analogues and physician-validated assumptions rather than importing EU or US denominators unchanged.',
       ],
@@ -223,13 +223,13 @@ const en: Record<string, MarketResearchCountryContent> = {
       paragraphs: [
         'Saudi pharmaceutical market research must align with SFDA registration and post-marketing expectations, including how local evidence supports labeling, pharmacovigilance, and access conversations. BioNixus integrates regulatory milestones into research design so commercial teams do not optimize messages that access teams cannot defend.',
         'NUPCO and institutional procurement shape uptake speed for many molecules. KSA programs therefore include procurement stakeholders, tender calendars, and account readiness where the brand depends on hospital or centralized buying—not only retail or clinic dynamics.',
-        'Vision 2030 investments in care quality, localization, and digital health keep competitive intensity high — Saudi Arabia accounts for roughly $9.4 billion of the GCC’s approximately $23.7 billion in 2024 pharmaceutical spend (IMARC Group, 2024), close to two-fifths of the region. We connect policy direction to facility-level behavior so strategies reflect implementation reality, not headline statistics alone.',
+        'Vision 2030 investments in care quality, localization, and digital health keep competitive intensity high — Saudi Arabia accounts for roughly $9.4 billion of the GCC’s approximately $23.7 billion in 2024 pharmaceutical spend (BioNixus market analysis, 2024), close to two-fifths of the region. We connect policy direction to facility-level behavior so strategies reflect implementation reality, not headline statistics alone.',
       ],
     },
     marketStructure: {
       heading: 'KSA healthcare market structure for research design',
       paragraphs: [
-        'Saudi Arabia is the Gulf’s largest pharmaceutical market — worth around $9.4 billion in 2024, with IMARC Group projecting roughly $11.7 billion by 2033 (IMARC Group, 2024). Scale alone, though, does not tell you where to recruit: the Kingdom mixes large MOH networks, private hospital groups, and specialty centers with uneven geographic density, so sample plans must reflect where your therapy is actually treated — tertiary oncology hubs versus primary care networks, for example.',
+        'Saudi Arabia is the Gulf’s largest pharmaceutical market — worth around $9.4 billion in 2024 and projected to reach roughly $11.7 billion by 2033 (BioNixus market analysis, 2024). Scale alone, though, does not tell you where to recruit: the Kingdom mixes large MOH networks, private hospital groups, and specialty centers with uneven geographic density, so sample plans must reflect where your therapy is actually treated — tertiary oncology hubs versus primary care networks, for example.',
         'Local manufacturing and partnership strategies influence channel conflict and pricing pressure. Market research KSA modules can compare multinational versus local partner routes when portfolio teams evaluate sequencing.',
         'Pharmacy automation, e-prescribing, and benefit design are evolving. We track how these shifts change adherence, switch risk, and message relevance for chronic therapies.',
       ],
@@ -346,9 +346,9 @@ const en: Record<string, MarketResearchCountryContent> = {
     marketStructure: {
       heading: 'Saudi market structure insights',
       paragraphs: [
-        'At roughly $9.4 billion in 2024 and a projected $11.7 billion by 2033 (IMARC Group, 2024), Saudi Arabia is the single largest pharmaceutical market in the Gulf. Care is delivered through a mix of public referral networks and fast-growing private capacity, so market research Saudi samples should mirror where your patients and prescribers actually interact with the category — not a national average.',
+        'At roughly $9.4 billion in 2024 and a projected $11.7 billion by 2033 (BioNixus market analysis, 2024), Saudi Arabia is the single largest pharmaceutical market in the Gulf. Care is delivered through a mix of public referral networks and fast-growing private capacity, so market research Saudi samples should mirror where your patients and prescribers actually interact with the category — not a national average.',
         'Specialty therapies often depend on a small set of expert centers; mass-market brands may rely on primary care and pharmacy volume. Segmentation logic must match the model.',
-        'Competitive sets in Saudi Arabia can differ from UAE or Egypt even for the same molecule — and Saudi alone makes up close to two-fifths of the roughly $23.7 billion GCC pharmaceutical market (IMARC Group, 2024). We benchmark switch risk and messaging using Saudi-validated analogues rather than importing Gulf-wide assumptions.',
+        'Competitive sets in Saudi Arabia can differ from UAE or Egypt even for the same molecule — and Saudi alone makes up close to two-fifths of the roughly $23.7 billion GCC pharmaceutical market (BioNixus market analysis, 2024). We benchmark switch risk and messaging using Saudi-validated analogues rather than importing Gulf-wide assumptions.',
       ],
     },
     services: {
@@ -458,13 +458,13 @@ const en: Record<string, MarketResearchCountryContent> = {
       paragraphs: [
         'Kuwait market research should reflect Ministry of Health formulary processes, hospital drug committees, and private insurance rules that can diverge from UAE or Saudi pathways even within the GCC.',
         'Distributor and marketing authorization holder structures affect who owns access conversations. Studies map commercial versus medical touchpoints accordingly.',
-        'Pricing and reimbursement sensitivity is high relative to market size; research modules often include willingness-to-pay proxies and analogues from comparable Gulf markets — useful when benchmarking Kuwait against the roughly $23.7 billion GCC pharmaceutical market (IMARC Group, 2024).',
+        'Pricing and reimbursement sensitivity is high relative to market size; research modules often include willingness-to-pay proxies and analogues from comparable Gulf markets — useful when benchmarking Kuwait against the roughly $23.7 billion GCC pharmaceutical market (BioNixus market analysis, 2024).',
       ],
     },
     marketStructure: {
       heading: 'Kuwait market structure for pharmaceutical teams',
       paragraphs: [
-        'Kuwait is a smaller but high-value Gulf market: Fitch Solutions (BMI) forecasts the pharmaceutical sector to reach about $2.9 billion by 2027, growing around 3.5% a year. Healthcare delivery is concentrated in a small number of hospital groups and specialist networks, which simplifies geography but sharpens competition for respondent time.',
+        'Kuwait is a smaller but high-value Gulf market: the pharmaceutical sector is forecast to reach about $2.9 billion by 2027, growing around 3.5% a year (BioNixus market analysis, 2024). Healthcare delivery is concentrated in a small number of hospital groups and specialist networks, which simplifies geography but sharpens competition for respondent time.',
         'Chronic disease management and specialty care drive much of the innovative portfolio volume; recruitment plans prioritize the facilities where those patients are managed.',
         'Cross-border care seeking exists but is less dominant than in UAE; Kuwait-validated denominators matter for sizing.',
       ],
@@ -563,7 +563,7 @@ const en: Record<string, MarketResearchCountryContent> = {
     marketStructure: {
       heading: 'Egypt pharmaceutical market structure',
       paragraphs: [
-        'Egypt is North Africa’s largest pharmaceutical market — about $6.5 billion in 2024, with IMARC Group projecting it to roughly double to $13.8 billion by 2033 (an 8.74% CAGR). Volume often sits in primary care, retail pharmacy, and chronic disease management, while innovative brands concentrate in urban centers and private hospitals — which is why a single national story can mask very different access realities by channel.',
+        'Egypt is North Africa’s largest pharmaceutical market — about $6.5 billion in 2024 and projected to roughly double to $13.8 billion by 2033 — an 8.74% CAGR (BioNixus market analysis, 2024). Volume often sits in primary care, retail pharmacy, and chronic disease management, while innovative brands concentrate in urban centers and private hospitals — which is why a single national story can mask very different access realities by channel.',
         'Distributor networks and local partners remain influential; stakeholder maps include commercial operators as well as clinicians.',
         'Regional HQ teams use Egypt as a scale market for forecasting; fieldwork validates assumptions that desk research alone cannot.',
       ],
@@ -808,7 +808,7 @@ export const MARKET_RESEARCH_HUB_SECTIONS = {
     'Think of this page as a switchboard, not a brochure. Pick the method that fits the decision in front of you — quantitative for sizing and confidence, qualitative for behaviour and context, healthcare-specific programmes for regulated execution — then jump straight to the country page you need: Saudi Arabia, the UAE, Kuwait, Egypt, or a wider Europe–MENA programme.',
   whyHeading: 'Why pharmaceutical teams are commissioning research now',
   whyParagraphs: [
-    'The money is moving faster than the averages suggest. The GCC pharmaceutical market was worth roughly $23.7 billion in 2024 and is projected to reach about $49 billion by 2033 — a 7.6% CAGR (IMARC Group, 2024) — but that headline hides sharp country-level divergence: Saudi Arabia alone accounts for around $9.4 billion of 2024 spend (IMARC Group, 2024), with its own SFDA and NUPCO logic. Launch windows are shorter and access bars are higher, so research that ties physician behaviour to payer and procurement reality is what stops expensive rework before SFDA, MOH, or EU HTA milestones.',
+    'The money is moving faster than the averages suggest. The GCC pharmaceutical market was worth roughly $23.7 billion in 2024 and is projected to reach about $49 billion by 2033 — a 7.6% CAGR (BioNixus market analysis, 2024) — but that headline hides sharp country-level divergence: Saudi Arabia alone accounts for around $9.4 billion of 2024 spend (BioNixus market analysis, 2024), with its own SFDA and NUPCO logic. Launch windows are shorter and access bars are higher, so research that ties physician behaviour to payer and procurement reality is what stops expensive rework before SFDA, MOH, or EU HTA milestones.',
     'We build for pharmaceutical commercial, medical, and market access leaders — not generic consumer panels. In practice that means therapy-appropriate recruitment, bilingual fieldwork where the market demands it, and findings mapped to the 30/60/90 decisions you actually have to make, rather than a slide deck that ends at insight.',
   ],
   methodHeading: 'How to choose the right research method',

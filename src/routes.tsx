@@ -31,6 +31,8 @@ import NotFound from '@/pages/NotFound';
 import MarketResearch from '@/pages/MarketResearch';
 import MarketResearchByIndustry from '@/pages/MarketResearchByIndustry';
 import { buildIndustryMatrixRoutes } from '@/data/industryMatrixRoutes';
+import BionixusIndustries from '@/pages/industries/BionixusIndustries';
+import IndustrySegmentPage from '@/pages/industries/IndustrySegmentPage';
 import MarketResearchHome from '@/pages/MarketResearchHome';
 import MarketResearchSaudiArabiaPharmaceutical from '@/pages/MarketResearchSaudiArabiaPharmaceutical';
 import MarketResearchHealthcare from '@/pages/MarketResearchHealthcare';
@@ -356,6 +358,10 @@ export const routes: RouteObject[] = [
   { path: '/ar/market-research-egypt', element: <ArMarketResearchEgypt /> },
   { path: '/verify-email', element: <VerifyEmail /> },
   { path: '/market-research-by-industry', element: <MarketResearchByIndustry /> },
+  { path: '/bionixus-industries', element: <BionixusIndustries /> },
+  { path: '/pharma-healthcare-industries', element: <IndustrySegmentPage slug="pharma-healthcare" /> },
+  { path: '/b2b-industries', element: <IndustrySegmentPage slug="b2b" /> },
+  { path: '/b2c-industries', element: <IndustrySegmentPage slug="b2c" /> },
   ...buildIndustryMatrixRoutes(),
   { path: '/admin/dashboard', element: suspensePage(<AdminDashboard />) },
   { path: '/admin/login', element: suspensePage(<AdminLogin />) },

@@ -473,17 +473,6 @@ function ensureMainContentImage(html, pathname) {
   return `${html.slice(0, mainStart)}${updatedInner}${html.slice(mainClose)}`;
 }
 
-function ensureImageTitleAttributes(html) {
-  return html.replace(/<img\b[^>]*>/gi, (tag) => {
-    if (/\stitle\s*=/i.test(tag)) return tag;
-    const altMatch = tag.match(/\salt\s*=\s*(?:"([^"]*)"|'([^']*)')/i);
-    const altValue = altMatch ? (altMatch[1] ?? altMatch[2] ?? '') : '';
-    if (!altValue.trim()) return tag;
-    const safe = altValue.replace(/"/g, '&quot;');
-    return tag.replace(/(\salt\s*=\s*(?:"[^"]*"|'[^']*'))/i, `$1 title="${safe}"`);
-  });
-}
-
 function shouldForceArabicMetaDescription(pathname, chosen) {
   if (!chosen) return false;
   if (pathname.startsWith('/ar/') || pathname === '/ar') {
@@ -561,14 +550,9 @@ async function startServer() {
   const CANONICAL_HOST = 'www.bionixus.com';
   const REDIRECTS = {
     '/healthcare-market-research-saudi-arabia': '/healthcare-market-research/saudi-arabia',
-    '/market-research-saudi': '/healthcare-market-research/saudi-arabia',
-    '/market-research-ksa': '/healthcare-market-research/saudi-arabia',
-    '/market-research-saudi-arabia-pharmaceutical': '/healthcare-market-research/saudi-arabia',
     '/global-websites/saudi-arabia': '/healthcare-market-research/saudi-arabia',
     '/healthcare-market-research-uae': '/healthcare-market-research/uae',
     '/healthcare-market-research-in-uae': '/healthcare-market-research/uae',
-    '/market-research-uae': '/healthcare-market-research/uae',
-    '/uae-pharmaceutical-market-research': '/healthcare-market-research/uae',
     '/healthcare-market-research/united-arab-emirates': '/healthcare-market-research/uae',
     '/global-websites/united-arab-emirates': '/healthcare-market-research/uae',
     '/healthcare-market-research-kuwait': '/healthcare-market-research/kuwait',
@@ -925,17 +909,15 @@ async function startServer() {
           '<!--ssr-data-->',
           `<script>window.__INITIAL_DATA__ = ${initialDataSerialized}</script>`,
         );
-      const localizedPage = ensureImageTitleAttributes(
-        ensureMainContentImage(
-          ensureCanonicalTag(
-            ensureMetaDescriptionTag(
-              ensureTitleTag(applyHtmlLang(page, req.path), req.path),
-              req.path,
-            ),
+      const localizedPage = ensureMainContentImage(
+        ensureCanonicalTag(
+          ensureMetaDescriptionTag(
+            ensureTitleTag(applyHtmlLang(page, req.path), req.path),
             req.path,
           ),
           req.path,
         ),
+        req.path,
       );
 
       res.status(statusCode).set({ 'Content-Type': 'text/html' }).end(localizedPage);
