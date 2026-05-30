@@ -801,6 +801,29 @@ async function startServer() {
     res.type('text/plain').sendFile(path.resolve(__dirname, 'public/llms.txt'));
   });
 
+  app.get('/news/feed.xml', async (_req, res) => {
+    try {
+      const { createClient } = await import('@sanity/client');
+      const { buildPressRssXml, fetchPublicPressReleasesForRss } = await import('./lib/news-rss.mjs');
+      const client = createClient({
+        projectId: process.env.VITE_SANITY_PROJECT_ID || 'h2whvvpo',
+        dataset: process.env.VITE_SANITY_DATASET || 'production',
+        useCdn: true,
+        apiVersion: '2024-01-01',
+      });
+      const items = await fetchPublicPressReleasesForRss(client, 50);
+      const xml = buildPressRssXml(items);
+      res
+        .status(200)
+        .set('Content-Type', 'application/rss+xml; charset=utf-8')
+        .set('Cache-Control', 'public, max-age=3600')
+        .send(xml);
+    } catch (err) {
+      console.error('news/feed.xml error', err);
+      res.status(500).send('Unable to generate feed');
+    }
+  });
+
   // Fallback canonicalization for non-edge environments.
   app.use((req, res, next) => {
     const forwardedHost = String(req.headers['x-forwarded-host'] || req.headers.host || '')

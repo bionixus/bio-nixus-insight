@@ -99,4 +99,27 @@ The blog uses three document types: **blogPost**, **author**, **category**.
 - **Dataset:** `production`
 - **Token:** Create at https://sanity.io/manage → project → API → Tokens (Editor permission for write access).
 
-Schema source in repo: `day-one/apps/studio/schemaTypes/` (`blogPost.ts`, `author.ts`, `category.ts`).
+Schema source in repo: `day-one/apps/studio/schemaTypes/` (`blogPost.ts`, `pressRelease.ts`, `author.ts`, `category.ts`).
+
+---
+
+## 5. `pressRelease` (document)
+
+Press releases power `/news` (hub), `/news/{slug}` (detail), RSS at `/news/feed.xml`, and optional `/media` kit links.
+
+| Field | Type | Required | Notes |
+|-------|------|----------|--------|
+| **seo** | object | no | metaTitle, metaDescription, noIndex |
+| **openGraph** | object | no | ogTitle, ogDescription, ogImage |
+| **headline** | string | yes | Page H1 |
+| **slug** | slug | yes | URL: `/news/{slug}` |
+| **subheadline** | text | no | Dek under headline |
+| **dateline** | string | yes | AP-style, e.g. `LONDON — 30 May 2026` |
+| **embargo** | datetime | no | Before this time: 404 on site, excluded from hub/RSS/sitemap |
+| **publishedAt** / **updatedAt** | datetime | publishedAt required for public visibility |
+| **heroImage** | image | yes | alt required |
+| **body** | portable text blocks | yes | |
+| **relatedReportSlug** | string | no | Links to `/market-reports/{slug}` or recognised standalone report path |
+| **boilerplate** | text | no | Default company paragraph used when empty |
+
+Deploy schema: `npm run studio:schema-deploy`.

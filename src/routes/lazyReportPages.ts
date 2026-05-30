@@ -66,3 +66,4 @@ export const HealthcareReportsByTherapy = lazy(() => import('@/pages/HealthcareR
 export const HealthcareReportsByCountry = lazy(() => import('@/pages/HealthcareReportsByCountry'));
 
 export const BlogPost = lazy(() => import('@/pages/BlogPost'));
+export const PressReleasePage = lazy(() => import('@/pages/PressReleasePage'));

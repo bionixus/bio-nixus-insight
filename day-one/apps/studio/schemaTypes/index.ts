@@ -1,6 +1,7 @@
 import { localeString, localeText, localeBlock } from './locale'
 import { author } from './author'
 import { blogPost } from './blogPost'
+import { pressRelease } from './pressRelease'
 import { category } from './category'
 import subscriber from './subscriber'
 import newsletter from './newsletter'
@@ -18,6 +19,7 @@ export const schemaTypes = [
   author,
   category,
   blogPost,
+  pressRelease,
   subscriber,
   newsletter,
   contentCalendar,

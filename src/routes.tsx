@@ -8,6 +8,8 @@ import Services from '@/pages/Services';
 import FAQ from '@/pages/FAQ';
 import Resources from '@/pages/Resources';
 import Insights from '@/pages/Insights';
+import NewsHub from '@/pages/NewsHub';
+import Media from '@/pages/Media';
 import SiteMapPage from '@/pages/SiteMapPage';
 import ServiceDetail from '@/pages/ServiceDetail';
 import Privacy from '@/pages/Privacy';
@@ -142,6 +144,7 @@ import {
   HealthcareReportsByTherapy,
   HealthcareReportsByCountry,
   BlogPost,
+  PressReleasePage,
 } from '@/routes/lazyReportPages';
 import CaseStudy from '@/pages/CaseStudy';
 import HubPage from '@/pages/healthcare-research/HubPage';
@@ -322,6 +325,9 @@ export const routes: RouteObject[] = [
   { path: '/market-reports/therapy/:therapyAreaSlug', element: suspensePage(<HealthcareReportsByTherapy />) },
   { path: '/market-reports/country/:marketSlug', element: suspensePage(<HealthcareReportsByCountry />) },
   { path: '/market-reports/:slug', element: suspensePage(<HealthcareReportPage />) },
+  { path: '/news', element: <NewsHub /> },
+  { path: '/news/:slug', element: suspensePage(<PressReleasePage />) },
+  { path: '/media', element: <Media /> },
   { path: '/blog', element: <Blog /> },
   { path: '/de/blog', element: <Blog /> },
   { path: '/fr/blog', element: <Blog /> },

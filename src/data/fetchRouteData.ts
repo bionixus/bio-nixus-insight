@@ -10,6 +10,12 @@ import {
   type RelatedPostsData,
 } from '@/lib/sanity-blog';
 import type { BlogPost } from '@/types/blog';
+import type { PressRelease, PressReleaseListItem } from '@/types/pressRelease';
+import {
+  fetchSanityPressReleaseBySlugWithClient,
+  fetchSanityPressReleasesWithClient,
+} from '@/lib/sanity-press';
+import { getPressHeroPreloadUrl } from '@/lib/image-utils';
 import type { Language } from '@/lib/i18n';
 import { resolveSanityBlogSlug } from '../../blog-legacy-redirects.mjs';
 import { getHardcodedPostBySlug } from '@/data/blog-posts-index';
@@ -268,6 +274,43 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
       relatedPosts,
       lcpPreloadImageUrl: getBlogHeroPreloadUrl(blogPost?.coverImage),
     };
+  }
+
+  if (path === '/news' || path === '/news/') {
+    let pressReleases: PressReleaseListItem[] = [];
+    try {
+      pressReleases = await fetchSanityPressReleasesWithClient(sanityServer);
+    } catch {
+      pressReleases = [];
+    }
+    return {
+      pageType: 'press-index',
+      pressReleases,
+    };
+  }
+
+  const pressPostMatch = path.match(/^\/news\/([^/]+)\/?$/);
+  if (pressPostMatch) {
+    const slug = decodePathSegment(pressPostMatch[1]);
+    if (slug === 'feed.xml') {
+      return { pageType: 'generic' };
+    }
+    let pressRelease: PressRelease | null = null;
+    try {
+      pressRelease = await fetchSanityPressReleaseBySlugWithClient(slug, sanityServer);
+    } catch {
+      pressRelease = null;
+    }
+    return {
+      pageType: 'press-post',
+      pressSlug: slug,
+      pressRelease,
+      lcpPreloadImageUrl: getPressHeroPreloadUrl(pressRelease?.heroImage),
+    };
+  }
+
+  if (path === '/media' || path === '/media/') {
+    return { pageType: 'media-kit' };
   }
 
   const homeLang = marketingHomeLanguage(normalizedPath);

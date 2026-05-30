@@ -160,6 +160,8 @@ const staticPages = [
   { path: '/global-websites', priority: '0.9', changefreq: 'weekly' },
   { path: '/healthcare-market-research', priority: '0.9', changefreq: 'weekly' },
   { path: '/blog', priority: '0.9', changefreq: 'daily' },
+  { path: '/news', priority: '0.85', changefreq: 'weekly' },
+  { path: '/media', priority: '0.6', changefreq: 'monthly' },
   { path: '/insights', priority: '0.8', changefreq: 'weekly' },
   { path: '/de/blog', priority: '0.8', changefreq: 'weekly' },
   { path: '/fr/blog', priority: '0.8', changefreq: 'weekly' },
@@ -518,6 +520,47 @@ function getGitLastModified(filePath) {
  * Fetch slugs AND their _updatedAt timestamps from Sanity.
  * Returns array of { slug, lastmod } objects.
  */
+/**
+ * Public press releases only (respects embargo and noIndex).
+ */
+async function fetchPressReleaseContent(projectId, dataset) {
+  try {
+    const { createClient } = await import('@sanity/client');
+    const client = createClient({
+      projectId,
+      dataset,
+      apiVersion: '2024-01-01',
+      useCdn: true,
+    });
+    const now = new Date().toISOString();
+    const query = `*[
+      _type == "pressRelease" &&
+      defined(slug.current) &&
+      defined(publishedAt) &&
+      publishedAt <= $now &&
+      (!defined(embargo) || embargo <= $now) &&
+      !(seo.noIndex == true)
+    ]{ "slug": slug.current, "lastmod": coalesce(updatedAt, publishedAt, _updatedAt) }`;
+    const list = await Promise.race([
+      client.fetch(query, { now }),
+      new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 15000)),
+    ]);
+    const map = new Map();
+    for (const item of list || []) {
+      if (!item.slug) continue;
+      const updatedAt = item.lastmod ? String(item.lastmod).slice(0, 10) : null;
+      const existing = map.get(item.slug);
+      if (!existing || (updatedAt && updatedAt > existing.lastmod)) {
+        map.set(item.slug, { slug: item.slug, lastmod: updatedAt });
+      }
+    }
+    return [...map.values()];
+  } catch (err) {
+    console.warn('Sitemap: could not fetch press releases:', err.message);
+    return [];
+  }
+}
+
 async function fetchSanityContent(projectId, dataset, types) {
   try {
     const { createClient } = await import('@sanity/client');
@@ -708,6 +751,8 @@ const STATIC_PAGE_FILES = {
   '/services/clinical-trial-support': ['src/pages/ServiceDetail.tsx'],
   '/services/kol-stakeholder-mapping': ['src/pages/ServiceDetail.tsx'],
   '/blog': ['src/pages/Blog.tsx'],
+  '/news': ['src/pages/NewsHub.tsx', 'src/lib/sanity-press.ts'],
+  '/media': ['src/pages/Media.tsx'],
   '/case-studies': ['src/pages/CaseStudies.tsx'],
   '/contact': ['src/pages/Contact.tsx'],
   '/methodology': ['src/pages/Methodology.tsx'],
@@ -816,9 +861,10 @@ async function main() {
   const caseProjectId = process.env.VITE_SANITY_CASE_STUDIES_PROJECT_ID || 'gj6cv27f';
   const caseDataset = process.env.VITE_SANITY_CASE_STUDIES_DATASET || 'production';
 
-  const [blogContent, caseContent] = await Promise.all([
+  const [blogContent, caseContent, pressContent] = await Promise.all([
     fetchSanityContent(blogProjectId, blogDataset, ['post', 'blogPost']),
     fetchSanityContent(caseProjectId, caseDataset, 'caseStudy'),
+    fetchPressReleaseContent(blogProjectId, blogDataset),
   ]);
 
   const today = new Date().toISOString().slice(0, 10);
@@ -866,6 +912,17 @@ async function main() {
     const url = `${BASE}/case-studies/${percentEncodeLower(slug)}`;
     candidates.set(url, {
       priority: '0.7',
+      changefreq: 'monthly',
+      lastmod: lastmod || today,
+      enforceCanonical: true,
+      skipLiveResolution: false,
+      fallbackOnFetchFailure: true,
+    });
+  }
+  for (const { slug, lastmod } of pressContent) {
+    const url = `${BASE}/news/${percentEncodeLower(slug)}`;
+    candidates.set(url, {
+      priority: '0.75',
       changefreq: 'monthly',
       lastmod: lastmod || today,
       enforceCanonical: true,

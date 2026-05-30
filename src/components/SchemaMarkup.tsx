@@ -77,9 +77,24 @@ type AboutSchemaProps = {
   }>
 }
 
+type PressReleaseSchemaProps = {
+  pageType: 'press-release'
+  pageUrl: string
+  language: LanguageCode
+  headline: string
+  description: string
+  imageUrl?: string
+  publishedAt?: string
+  modifiedAt?: string
+  dateline?: string
+  relatedReportUrl?: string
+  breadcrumb: BreadcrumbItem[]
+}
+
 type SchemaMarkupProps =
   | HomeSchemaProps
   | BlogSchemaProps
+  | PressReleaseSchemaProps
   | ServiceSchemaProps
   | AboutSchemaProps
 
@@ -401,6 +416,65 @@ function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[] {
     }
 
     return nodes
+  }
+
+  if (props.pageType === 'press-release') {
+    const published = toIsoDate(props.publishedAt) || new Date().toISOString()
+    const modified = toIsoDate(props.modifiedAt) || published
+    const pageUrlHttps = toHttpsUrl(props.pageUrl)
+    const imageUrlHttps = toHttpsUrl(props.imageUrl || ORG_IMAGE)
+
+    const newsArticle: Record<string, unknown> = {
+      '@context': 'https://schema.org',
+      '@type': 'NewsArticle',
+      '@id': `${pageUrlHttps}#newsarticle`,
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': `${pageUrlHttps}#webpage`,
+        url: pageUrlHttps,
+      },
+      url: pageUrlHttps,
+      headline: props.headline,
+      description: props.description,
+      image: {
+        '@type': 'ImageObject',
+        url: imageUrlHttps,
+        width: 1200,
+        height: 630,
+        caption: props.headline,
+      },
+      datePublished: published,
+      dateModified: modified,
+      author: {
+        '@type': 'Organization',
+        '@id': ORG_ID,
+        name: 'BioNixus',
+      },
+      publisher: {
+        '@type': 'Organization',
+        '@id': ORG_ID,
+        name: 'BioNixus',
+        logo: {
+          '@type': 'ImageObject',
+          url: PUBLISHER_LOGO_IMAGE,
+          width: 512,
+          height: 512,
+        },
+      },
+      inLanguage,
+      isAccessibleForFree: true,
+      ...(props.dateline?.trim() ? { articleSection: 'Press release' } : {}),
+      ...(props.relatedReportUrl
+        ? {
+            about: {
+              '@type': 'Report',
+              url: toHttpsUrl(props.relatedReportUrl),
+            },
+          }
+        : {}),
+    }
+
+    return [newsArticle, buildBreadcrumb(props.breadcrumb, inLanguage)]
   }
 
   if (props.pageType === 'service') {

@@ -22,6 +22,8 @@ function routeProvidesOwnDocumentHead(pathname: string): boolean {
   if (/^\/blog\/.+/.test(path)) return true;
   if (/^\/ar\/blog\/.+/.test(path)) return true;
   if (/^\/case-studies\/.+/.test(path)) return true;
+  if (path === '/news' || path === '/media') return true;
+  if (/^\/news\/.+/.test(path) && path !== '/news/feed.xml') return true;
 
   /** SEOHead-based healthcare hub + service / therapy detail pages. */
   if (path === '/healthcare-market-research') return true;
