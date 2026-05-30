@@ -29,6 +29,7 @@ type RawPressRelease = {
   relatedReportSlug?: string
   boilerplate?: string
   seo?: PressRelease['seo']
+  ogImageUrl?: string
   openGraph?: {
     ogTitle?: string
     ogDescription?: string
@@ -90,7 +91,15 @@ function mapRawToPressRelease(raw: RawPressRelease | null): PressRelease | null 
     relatedReportSlug: raw.relatedReportSlug,
     boilerplate: raw.boilerplate,
     seo: raw.seo,
-    openGraph: raw.openGraph,
+    openGraph: raw.openGraph
+      ? {
+          ogTitle: raw.openGraph.ogTitle,
+          ogDescription: raw.openGraph.ogDescription,
+          ogImageUrl: raw.ogImageUrl ?? raw.openGraph.ogImageUrl,
+        }
+      : raw.ogImageUrl
+        ? { ogImageUrl: raw.ogImageUrl }
+        : undefined,
   }
 }
 

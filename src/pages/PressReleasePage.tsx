@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { useParams } from 'react-router-dom'
+import { useQuery } from '@tanstack/react-query'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav'
@@ -12,6 +12,8 @@ import { RelatedReportCallout } from '@/components/press-release/RelatedReportCa
 import { PressBoilerplate } from '@/components/press-release/PressBoilerplate'
 import { CTASection } from '@/components/shared/CTASection'
 import { useInitialData } from '@/contexts/InitialDataContext'
+import { fetchSanityPressReleaseBySlug } from '@/lib/sanity-press'
+import { isSanityConfigured } from '@/lib/sanity'
 import type { PressRelease } from '@/types/pressRelease'
 import { buildSeoDescription, normalizeSeoTitle, seoTitleWithBrandOnce } from '@/lib/seo-meta'
 import { resolveRelatedReportPath } from '@/lib/resolveRelatedReportPath'
@@ -33,13 +35,40 @@ function pressOgImage(release: PressRelease): string {
 }
 
 export default function PressReleasePage() {
-  const { slug } = useParams<{ slug: string }>()
+  const { slug: slugParam } = useParams<{ slug: string }>()
   const { data: routeData } = useInitialData()
 
-  const release: PressRelease | null =
-    routeData.pageType === 'press-post' && routeData.pressRelease
-      ? (routeData.pressRelease as PressRelease)
-      : null
+  const slug = slugParam ? decodeURIComponent(slugParam) : ''
+
+  const ssrPressBundle =
+    Boolean(slug) &&
+    routeData.pageType === 'press-post' &&
+    routeData.pressSlug === slug &&
+    routeData.pressRelease != null
+
+  const { data: fetchedRelease, isLoading, isError } = useQuery({
+    queryKey: ['sanity-press-release', slug],
+    queryFn: () => fetchSanityPressReleaseBySlug(slug),
+    enabled: Boolean(slug) && (isSanityConfigured() || ssrPressBundle),
+    initialData: ssrPressBundle ? (routeData.pressRelease as PressRelease | undefined) : undefined,
+    staleTime: 60_000,
+  })
+
+  const release: PressRelease | null = fetchedRelease ?? null
+
+  if (isLoading && !release) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Navbar />
+        <main className="container-wide section-padding max-w-2xl">
+          <p className="text-muted-foreground" role="status" aria-live="polite">
+            Loading press release…
+          </p>
+        </main>
+        <Footer />
+      </div>
+    )
+  }
 
   if (!release || !slug) {
     return (
@@ -52,7 +81,9 @@ export default function PressReleasePage() {
         <main className="container-wide section-padding max-w-2xl">
           <h1 className="font-display text-2xl font-semibold text-primary mb-4">Press release not found</h1>
           <p className="text-muted-foreground mb-6">
-            This release may be under embargo, unpublished, or the URL may be incorrect.
+            {isError
+              ? 'We could not load this release. Please refresh the page or try again shortly.'
+              : 'This release may be under embargo, unpublished, or the URL may be incorrect.'}
           </p>
           <Link to="/news" className="text-primary font-medium hover:underline inline-flex items-center gap-2">
             <ArrowLeft className="h-4 w-4" aria-hidden />
