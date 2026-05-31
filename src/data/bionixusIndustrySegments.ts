@@ -76,6 +76,10 @@ export const SEGMENTS: Record<SegmentSlug, SegmentConfig> = {
     buyerContext:
       'Who briefs us here: medical affairs, commercial and brand teams, market access and HEOR leads, MedTech and diagnostics marketers, biotech founders preparing for launch, and consumer-health teams sizing OTC and pharmacy demand.',
     featuredLinks: [
+      {
+        to: '/clinical-diagnostics-market-research',
+        label: 'Clinical diagnostics — QC & immunohematology (main offering)',
+      },
       { to: '/healthcare-market-research', label: 'Healthcare market research hub' },
       { to: '/market-research-healthcare', label: 'Healthcare market research services' },
       { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Saudi Arabia pharmaceutical market research' },

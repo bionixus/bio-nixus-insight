@@ -137,7 +137,13 @@ export const MATRIX_INDUSTRIES: Record<MatrixIndustrySlug, MatrixIndustryConfig>
     displayNameShort: 'Biotech',
     wave: 3,
     published: true,
-    knowsAbout: ['Biotech market research', 'Life sciences', 'Clinical development'],
+    knowsAbout: [
+      'Biotech market research',
+      'Life sciences',
+      'In vitro diagnostics',
+      'Laboratory instruments',
+      'Clinical development',
+    ],
     isHealthcareAdjacent: true,
   },
   'consumer-health': {

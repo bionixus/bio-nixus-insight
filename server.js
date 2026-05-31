@@ -672,6 +672,10 @@ async function startServer() {
     res.type('html').sendFile(strategicPortfolioArAbsolutePath);
   });
 
+  app.get('/life-sciences-diagnostics-market-research', (_req, res) => {
+    res.redirect(301, '/clinical-diagnostics-market-research');
+  });
+
   /** Static comparison page — same pattern as strategic-portfolio. */
   const vsIqviaAbsolutePath = path.resolve(
     __dirname,

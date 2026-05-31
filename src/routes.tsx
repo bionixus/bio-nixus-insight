@@ -58,6 +58,7 @@ import HeorConsultingSaudiArabia from '@/pages/HeorConsultingSaudiArabia';
 import PharmaFieldworkSaudiArabia from '@/pages/PharmaFieldworkSaudiArabia';
 import PharmaFieldworkUae from '@/pages/PharmaFieldworkUae';
 import PharmaFieldworkEgypt from '@/pages/PharmaFieldworkEgypt';
+import ClinicalDiagnosticsMarketResearch from '@/pages/ClinicalDiagnosticsMarketResearch';
 import PatientSupportProgramResearchGcc from '@/pages/PatientSupportProgramResearchGcc';
 import BudgetImpactModelSaudiArabia from '@/pages/BudgetImpactModelSaudiArabia';
 import SpanishMarketAccess from '@/pages/SpanishMarketAccess';
@@ -253,7 +254,9 @@ export const routes: RouteObject[] = [
   { path: '/new-home', element: <PremiumHomePreview /> },
   { path: '/premium-home-preview', element: <PremiumHomePreview /> },
   { path: '/strategic-portfolio', element: <ConfPortfolio /> },
+  { path: '/strategic-portfolios', element: <ConfPortfolio /> },
   { path: '/ar/strategic-portfolio', element: <ConfPortfolio locale="ar" /> },
+  { path: '/ar/strategic-portfolios', element: <ConfPortfolio locale="ar" /> },
   { path: '/healthcare-market-research', element: <HubPage /> },
   { path: '/saudi-arabia', element: <CountryPage /> },
   { path: '/uae', element: <CountryPage /> },
@@ -366,6 +369,10 @@ export const routes: RouteObject[] = [
   { path: '/market-research-by-industry', element: <MarketResearchByIndustry /> },
   { path: '/bionixus-industries', element: <BionixusIndustries /> },
   { path: '/pharma-healthcare-industries', element: <IndustrySegmentPage slug="pharma-healthcare" /> },
+  {
+    path: '/clinical-diagnostics-market-research',
+    element: <ClinicalDiagnosticsMarketResearch />,
+  },
   { path: '/b2b-industries', element: <IndustrySegmentPage slug="b2b" /> },
   { path: '/b2c-industries', element: <IndustrySegmentPage slug="b2c" /> },
   ...buildIndustryMatrixRoutes(),

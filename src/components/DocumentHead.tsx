@@ -101,7 +101,7 @@ function buildRouteTitle(pathname: string, language: Language, fallback: string)
     return makeTitle('FAQ | BioNixus Healthcare Market Research');
   }
 
-  if (path === '/strategic-portfolio') {
+  if (path === '/strategic-portfolio' || path === '/strategic-portfolios') {
     return makeTitle('BioNixus — Strategic Portfolio | Market Research & Consulting');
   }
 
@@ -187,7 +187,7 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
     );
   }
 
-  if (path === '/strategic-portfolio') {
+  if (path === '/strategic-portfolio' || path === '/strategic-portfolios') {
     return clampDescription(
       'BioNixus strategic portfolio: healthcare and consumer market research, global pharma relationships, MENA field capabilities, and board-ready consulting methodology across Egypt and the region.'
     );
