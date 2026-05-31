@@ -44,9 +44,9 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
       'GCC pharmacoeconomics playbook: Saudi & UAE payer cues, tender dossiers, BIA vs CEA sequencing, comparator localization—BioNixus HEOR.',
   },
   'nf1-koselugo-selumetinib-pharma-market-research': {
-    title: 'NF1 & Koselugo (Selumetinib): Pharma Research & MAP | BioNixus',
+    title: 'NF1 & Koselugo: Pharma Research & MAP | BioNixus',
     description:
-      'Neurofibromatosis type 1 (NF1) landscape, MEK inhibition with Koselugo (selumetinib), and how pharma teams localize evidence for payers & specialists.',
+      'Neurofibromatosis type 1 (NF1) landscape, MEK inhibition with Koselugo, and how pharma teams localize evidence for payers & specialists.',
   },
   'desmoid-tumors-nirogacestat-pharma-market-access': {
     title: 'Desmoid Tumours & OGSIVEO (Nirogacestat): Market Access Intelligence | BioNixus',

@@ -508,7 +508,7 @@ export default function PharmaceuticalTherapyAreas() {
                 to="/blog/nf1-koselugo-selumetinib-pharma-market-research"
                 className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
               >
-                Insight article: NF1, Koselugo (selumetinib), and market intelligence
+                Insight article: NF1, Koselugo, and market intelligence
               </Link>
               <Link
                 to="/blog/desmoid-tumors-nirogacestat-pharma-market-access"

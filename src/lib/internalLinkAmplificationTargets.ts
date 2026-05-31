@@ -18,11 +18,11 @@ export const INTERNAL_LINK_PRIORITY_TARGETS: ReadonlyArray<{ to: string; label: 
   { to: '/market-research-uae', label: 'Market research UAE — pharmaceutical & healthcare' },
   { to: '/pharmaceutical-therapy-areas', label: 'Pharmaceutical therapy areas directory' },
   { to: '/gcc-pharma-market-report-2026', label: 'GCC pharmaceutical market report 2026' },
-  { to: '/nf1-pharma-market-research', label: 'NF1 pharma market research — Koselugo / selumetinib context' },
+  { to: '/nf1-pharma-market-research', label: 'NF1 pharma market research — Koselugo / MEK inhibition context' },
   { to: '/desmoid-tumor-pharma-market-research', label: 'Desmoid tumors pharma research — systemic therapy context' },
   {
     to: '/blog/nf1-koselugo-selumetinib-pharma-market-research',
-    label: 'Blog — NF1, Koselugo (selumetinib), pharma research & MAP',
+    label: 'Blog — NF1, Koselugo, pharma research & MAP',
   },
   {
     to: '/blog/desmoid-tumors-nirogacestat-pharma-market-access',
