@@ -122,6 +122,11 @@
       "statusCode": 301
     },
     {
+      "source": "/clinical-diagnostics-market-assessment-proposal/",
+      "destination": "/clinical-diagnostics-market-assessment-proposal",
+      "statusCode": 301
+    },
+    {
       "source": "/pharmaceutical-market-research-dubai/",
       "destination": "/pharmaceutical-market-research-dubai",
       "statusCode": 301
@@ -356,6 +361,10 @@
     {
       "source": "/iqvia-alternative",
       "destination": "/conf/iqvia-alternative.html"
+    },
+    {
+      "source": "/clinical-diagnostics-market-assessment-proposal",
+      "destination": "/conf/clinical-diagnostics-market-assessment-proposal.html"
     },
     {
       "source": "/pharmaceutical-market-research-dubai",

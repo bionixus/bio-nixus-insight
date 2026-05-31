@@ -227,7 +227,7 @@ export default function ClinicalDiagnosticsProposalRequest() {
                   may follow up to confirm use-case and alignment.
                 </p>
                 <a
-                  href={CLINICAL_DIAGNOSTICS_PROPOSAL_DECK_PATH}
+                  href={`https://www.bionixus.com${CLINICAL_DIAGNOSTICS_PROPOSAL_DECK_PATH}`}
                   className="cd-btn-gold"
                   target="_blank"
                   rel="noopener noreferrer"

@@ -117,7 +117,8 @@ export default function ClinicalDiagnosticsMarketResearch() {
               <span className="cd-page-rule-text">04 · Methodology</span>
             </div>
             <h2 className="cd-section-title">
-              {programmeSpine.heading.split(',')[0]},<em>{programmeSpine.heading.split(',')[1]}</em>
+              Two country engines,
+              <em> one programme spine</em>
             </h2>
             <p className="cd-section-lede">{programmeSpine.lede}</p>
             <div className="cd-geo-grid">

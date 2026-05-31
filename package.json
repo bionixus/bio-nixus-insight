@@ -14,7 +14,7 @@
     "verify:content-accuracy": "node scripts/verify-market-report-geography.mjs && node scripts/verify-sourced-claims.mjs && node scripts/verify-market-report-word-count.mjs",
     "audit:blog-numeric-claims": "node scripts/audit-blog-numeric-claims.mjs",
     "audit:sitewide:phase2": "node scripts/sitewide-audit-runbook-phase2.mjs",
-    "prebuild": "npm run generate-internal-link-targets && npm run generate-sitemap",
+    "prebuild": "npm run generate-internal-link-targets && npm run generate-sitemap && npm run build:clinical-proposal",
     "generate-internal-link-targets": "node scripts/generate-internal-link-targets.mjs",
     "build": "npm run build:client && npm run build:server && npm run build:sitemap && npm run build:move-template",
     "build:move-template": "node -e \"const fs=require('fs');const s='dist/client/index.html',d='dist/client/_ssr-template.html';fs.copyFileSync(s,d);fs.unlinkSync(s);\"",

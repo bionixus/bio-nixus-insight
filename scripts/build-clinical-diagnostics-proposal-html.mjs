@@ -23,8 +23,6 @@ const DEFAULT_SOURCE = path.join(
   process.env.HOME || '',
   'Documents/01_BioNixus/BioNixus New Documents/bionixus-biorad-qc-ih-market-assessment-proposal-2026.html',
 );
-
-const SOURCE = process.env.SOURCE || DEFAULT_SOURCE;
 const SOURCE_COPY_OUT = path.join(
   root,
   'scripts/data/proposals/clinical-diagnostics-proposal-2026-source-copy.html',
@@ -33,11 +31,18 @@ const PUBLIC_OUT = path.join(root, 'public/conf/clinical-diagnostics-market-asse
 const REGISTER_URL = 'https://www.bionixus.com/clinical-diagnostics-proposal-request';
 const OFFERING_URL = 'https://www.bionixus.com/clinical-diagnostics-market-research';
 
-function writeSourceCopy() {
-  fs.mkdirSync(path.dirname(SOURCE_COPY_OUT), { recursive: true });
-  fs.copyFileSync(SOURCE, SOURCE_COPY_OUT);
-  const stat = fs.statSync(SOURCE_COPY_OUT);
-  console.log(`Wrote source mirror ${SOURCE_COPY_OUT} (${(stat.size / 1024).toFixed(1)} KB, verbatim)`);
+function resolveSourcePath() {
+  if (process.env.SOURCE && fs.existsSync(process.env.SOURCE)) {
+    return process.env.SOURCE;
+  }
+  if (fs.existsSync(DEFAULT_SOURCE)) {
+    return DEFAULT_SOURCE;
+  }
+  if (fs.existsSync(SOURCE_COPY_OUT)) {
+    console.warn(`Using repo source copy (external master not found): ${SOURCE_COPY_OUT}`);
+    return SOURCE_COPY_OUT;
+  }
+  return DEFAULT_SOURCE;
 }
 
 function stripPricingSection(html) {
@@ -123,24 +128,29 @@ function injectStickyCta(html) {
   );
 }
 
-function writePublicDeck() {
-  let html = fs.readFileSync(SOURCE, 'utf8');
+function main() {
+  const sourcePath = resolveSourcePath();
+  if (!fs.existsSync(sourcePath)) {
+    console.error(`Source not found: ${sourcePath}`);
+    console.error('Set SOURCE= to your proposal HTML path or commit scripts/data/proposals/*.html');
+    process.exit(1);
+  }
+  if (sourcePath !== SOURCE_COPY_OUT) {
+    fs.mkdirSync(path.dirname(SOURCE_COPY_OUT), { recursive: true });
+    fs.copyFileSync(sourcePath, SOURCE_COPY_OUT);
+    console.log(`Wrote source mirror ${SOURCE_COPY_OUT} (verbatim)`);
+  }
+  writePublicDeckFrom(sourcePath);
+}
+
+function writePublicDeckFrom(sourcePath) {
+  let html = fs.readFileSync(sourcePath, 'utf8');
   html = redactClientNames(html);
   html = stripPricingSection(html);
   html = injectStickyCta(html);
   fs.mkdirSync(path.dirname(PUBLIC_OUT), { recursive: true });
   fs.writeFileSync(PUBLIC_OUT, html, 'utf8');
   console.log(`Wrote public deck ${PUBLIC_OUT} (${(html.length / 1024).toFixed(1)} KB, redacted)`);
-}
-
-function main() {
-  if (!fs.existsSync(SOURCE)) {
-    console.error(`Source not found: ${SOURCE}`);
-    console.error('Set SOURCE= to your proposal HTML path.');
-    process.exit(1);
-  }
-  writeSourceCopy();
-  writePublicDeck();
 }
 
 main();
