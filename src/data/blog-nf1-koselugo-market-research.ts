@@ -1,20 +1,20 @@
 /**
- * Static SEO article: NF1 pharmacology pipeline, Koselugo regulatory milestones,
+ * Static SEO article: neurofibromatosis type 1 (NF1), MEK-inhibition access signals,
  * and commercial/access research instrumentation — pairs with pillar `/nf1-pharma-market-research`.
  */
 import type { BlogPost } from '@/types/blog';
 
-export const NF1_KOSELUGO_BLOG_SLUG = 'nf1-koselugo-selumetinib-pharma-market-research';
+export const NF1_KOSELUGO_BLOG_SLUG = 'neurofibromatosis';
 
 export const NF1_KOSELUGO_COVER_IMAGE = '/images/blog/nf1-koselugo-selumetinib-cover.jpg';
 
-export const NF1_KOSELUGO_META_TITLE = 'NF1 & Koselugo: Pharma Research & MAP | BioNixus';
+export const NF1_KOSELUGO_META_TITLE = 'Neurofibromatosis: NF1 Pharma Research & MAP | BioNixus';
 
 export const NF1_KOSELUGO_DISPLAY_TITLE =
-  'NF1 & Koselugo: Market Access Signals, Competitive Intelligence, and HCP Insight Design';
+  'Neurofibromatosis: NF1 Market Access, MEK Inhibition & HCP Intelligence';
 
 export const NF1_KOSELUGO_META_DESCRIPTION =
-  'Neurofibromatosis type 1 (NF1) landscape, MEK inhibition with Koselugo—approved by FDA (Apr 2020 pediatrics ≥2 y; label expanded to pediatric ≥1 y Sept 2025; adults Nov 2025)—and how pharma teams localize evidence for payers & specialists. Links to BioNixus NF1 pharma research pillar.';
+  'Neurofibromatosis type 1 (NF1) landscape, oral MEK inhibition for symptomatic plexiform neurofibromas—FDA paediatric approvals from Apr 2020 with adult label expansion Nov 2025—and how pharma teams localize evidence for payers & specialists. Links to BioNixus NF1 pharma research pillar.';
 
 export const NF1_KOSELUGO_OG_DESCRIPTION = NF1_KOSELUGO_META_DESCRIPTION;
 
@@ -29,17 +29,12 @@ export const NF1_KOSELUGO_SCHEMA_MENTIONS: ReadonlyArray<Record<string, unknown>
     alternateName: ['NF1', 'von Recklinghausen disease'],
     url: 'https://www.ncbi.nlm.nih.gov/books/NBK1109/',
   },
-  {
-    '@type': 'Drug',
-    name: 'Koselugo',
-    description: 'Oral selective MEK1/MEK2 inhibitor for NF1-associated plexiform neurofibromas',
-  },
 ];
 
 export const NF1_KOSELUGO_TAGS = [
+  'Neurofibromatosis',
   'Neurofibromatosis type 1',
   'NF1',
-  'Koselugo',
   'MEK inhibitor',
   'Rare disease pharma research',
   'Healthcare market research',
@@ -53,14 +48,14 @@ export const NF1_KOSELUGO_SCHEMA_FAQ: { question: string; answer: string }[] = [
       'NF1 is an autosomal dominant tumour‑predisposition syndrome caused by heterozygous pathogenic NF1 mutations. Clinical hallmarks include café‑au‑lait macules, axillary inguinal freckling, Lisch iris nodules, skeletal dysplasia risks, optic pathway gliomas, cognitive/school‑age learning differences for some families, and plexiform neurofibromas (PNs)—diffuse peripheral nerve sheath tumours that cause disfigurement, pain, airway compromise, and functional deficits when untreated.',
   },
   {
-    question: 'What is Koselugo?',
+    question: 'How does oral MEK inhibition work in NF1?',
     answer:
-      'Koselugo is an oral selective MEK1/MEK2 inhibitor that targets hyperactive signalling downstream of neurofibromin loss in NF1-associated tumours; it reduces proliferation of tumour cells reliant on aberrant RAS/MAPK activity. Regulatory labelling evolves—always consult current FDA/EMA SmPC prescribing information for dosing, formulations (capsules, oral suspension granules where applicable), and monitoring (e.g., cardiac echocardiography, dermatologic toxicity, ophthalmology). Development has been pursued under an AstraZeneca–MSD (Merck & Co.) collaboration.',
+      'Oral selective MEK1/MEK2 inhibitors target hyperactive signalling downstream of neurofibromin loss in NF1-associated tumours; they reduce proliferation of tumour cells reliant on aberrant RAS/MAPK activity. Regulatory labelling evolves—always consult current FDA/EMA SmPC prescribing information for dosing, formulations (capsules, oral suspension granules where applicable), and monitoring (e.g., cardiac echocardiography, dermatologic toxicity, ophthalmology).',
   },
   {
-    question: 'What major FDA approvals exist for Koselugo in NF1?',
+    question: 'What major FDA approvals exist for oral MEK inhibitors in NF1?',
     answer:
-      'FDA approved Koselugo on 10 April 2020 for pediatric patients ≥2 years with symptomatic, inoperable PNs attributable to NF1 (first FDA‑approved systemic therapy targeting this phenotype). Subsequent US label updates expanded pediatric eligibility downward and, on 19 November 2025, added adult patients ≥18 years with symptomatic inoperable PNs—underscoring a multigenerational treatable cohort and new launch economics for rare‑disease oncology franchises.',
+      'FDA approved the first oral MEK inhibitor for NF1 on 10 April 2020 for pediatric patients ≥2 years with symptomatic, inoperable PNs attributable to NF1 (first FDA‑approved systemic therapy targeting this phenotype). Subsequent US label updates expanded pediatric eligibility downward and, on 19 November 2025, added adult patients ≥18 years with symptomatic inoperable PNs—underscoring a multigenerational treatable cohort and new launch economics for rare‑disease oncology franchises.',
   },
   {
     question: 'Which other therapeutic options do NF1 patients still use?',
@@ -70,7 +65,7 @@ export const NF1_KOSELUGO_SCHEMA_FAQ: { question: string; answer: string }[] = [
   {
     question: 'What European regulatory context applies?',
     answer:
-      'The European Medicines Agency maintains a centrally authorised dossier for Koselugo covering paediatric cohorts beginning at preschool ages (see EPAR dosing tables). Adults with symptomatic inoperable PNs received broader Commission marketing authorisations in autumn 2025, harmonising continental access with renewed pharmacovigilance obligations and national pricing dossiers.',
+      'The European Medicines Agency maintains a centrally authorised dossier for oral MEK inhibition in NF1 covering paediatric cohorts beginning at preschool ages (see EPAR dosing tables). Adults with symptomatic inoperable PNs received broader Commission marketing authorisations in autumn 2025, harmonising continental access with renewed pharmacovigilance obligations and national pricing dossiers.',
   },
   {
     question: 'How should pharmaceutical teams localize NF1 forecasting?',
@@ -101,14 +96,14 @@ export const NF1_KOSELUGO_TABLE_OF_CONTENTS = [
   { heading: 'Executive snapshot & cross-links', anchor: 'snapshot' },
   { heading: 'Disease fundamentals', anchor: 'disease-context' },
   { heading: 'Pharmacologic rationale — MEK inhibition', anchor: 'mek-story' },
-  { heading: 'Koselugo regulatory chronology', anchor: 'regulatory-milestones' },
+  { heading: 'MEK inhibitor regulatory chronology', anchor: 'regulatory-milestones' },
   { heading: 'Competitive positioning & analogue analogies', anchor: 'commercialization' },
   { heading: 'BioNixus research architecture for NF1 franchises', anchor: 'bionixus' },
 ];
 
-export const NF1_KOSELUGO_BODY_HTML = `<p>This brief is informational market research commentary—not medical guidance. NF1 franchises now operate under a bifurcated evidence ecosystem: longstanding supportive/surgical workflows versus targeted MEK inhibition that materially shrinks tumour volume for many paediatric and now adult plexiform neurofibroma patients carrying symptomatic lesions. Regulatory milestones for <strong>Koselugo<sup>®</sup></strong> underpin both US reimbursement dossiers and ex‑US HTA dossiers—but cross‑national labelling deltas, dosing formats, ophthalmology/cardiac monitoring nuances, centre capacity, caregiver adherence, advocacy expectations, tender analogues from other oral kinase inhibitors, and pipeline MEK combination assets all shape analogue forecast confidence.</p>
+export const NF1_KOSELUGO_BODY_HTML = `<p>This brief is informational market research commentary—not medical guidance. NF1 franchises now operate under a bifurcated evidence ecosystem: longstanding supportive/surgical workflows versus targeted MEK inhibition that materially shrinks tumour volume for many paediatric and now adult plexiform neurofibroma patients carrying symptomatic lesions. Regulatory milestones for <strong>oral MEK inhibition in neurofibromatosis type&nbsp;1</strong> underpin both US reimbursement dossiers and ex‑US HTA dossiers—but cross‑national labelling deltas, dosing formats, ophthalmology/cardiac monitoring nuances, centre capacity, caregiver adherence, advocacy expectations, tender analogues from other oral kinase inhibitors, and pipeline MEK combination assets all shape analogue forecast confidence.</p>
 
-<p>For the structured numerical tables, formulary analogue analogues, BioNixus capability matrix (quant/qual payer workshops, tumour board analogue boards), and FAQs, see our dedicated pillar <a href="/nf1-pharma-market-research">NF1 pharma market research &amp; Koselugo competitive intelligence landing page</a>. Also cross‑read the oncology therapy hub <a href="/healthcare-market-research/therapy/oncology">healthcare oncology market research</a>, rare‑disease‑adjacent indications on <a href="/pharmaceutical-therapy-areas">pharmaceutical therapy areas directory</a>, and analogous rare‑tumor coverage on <a href="/desmoid-tumor-pharma-market-research">desmoid tumour pharma intelligence</a> with its commentary article <a href="/blog/desmoid-tumors-nirogacestat-pharma-market-access">desmoid tumours — Ogsiveo (nirogacestat) pharma market intelligence</a>.</p>
+<p>For the structured numerical tables, formulary analogue analogues, BioNixus capability matrix (quant/qual payer workshops, tumour board analogue boards), and FAQs, see our dedicated pillar <a href="/nf1-pharma-market-research">NF1 pharma market research &amp; competitive intelligence landing page</a>. Also cross‑read the oncology therapy hub <a href="/healthcare-market-research/therapy/oncology">healthcare oncology market research</a>, rare‑disease‑adjacent indications on <a href="/pharmaceutical-therapy-areas">pharmaceutical therapy areas directory</a>, and analogous rare‑tumor coverage on <a href="/desmoid-tumor-pharma-market-research">desmoid tumour pharma intelligence</a> with its commentary article <a href="/blog/desmoid-tumors-nirogacestat-pharma-market-access">desmoid tumours — Ogsiveo (nirogacestat) pharma market intelligence</a>.</p>
 
 <h2 id="snapshot">Executive snapshot</h2>
 <ul>
@@ -124,7 +119,7 @@ export const NF1_KOSELUGO_BODY_HTML = `<p>This brief is informational market res
 <h2 id="mek-story">Pharmacologic rationale</h2>
 <p>Functional loss of neurofibromin disinhibits RAS→RAF→MEK→ERK signalling; MEK inhibition places a pharmacodynamic gate downstream blocking excessive ERK phosphorylation cascades operative in tumour cells driving PN proliferation. Combination strategies (pipeline or investigator‑initiated trials) revisit resistance mechanisms and adaptive MAPK signalling feedback—forecast models should embed hypothetical future share‑erosion deltas.</p>
 
-<h2 id="regulatory-milestones">Koselugo regulatory milestones (selected)</h2>
+<h2 id="regulatory-milestones">MEK inhibitor regulatory milestones (selected)</h2>
 <table>
   <thead>
     <tr><th>Jurisdiction</th><th>Milestone emphasis</th><th>Commercial implication</th></tr>
@@ -200,11 +195,11 @@ export const NF1_STATIC_BLOG_SCHEMA_ITEM_LIST = {
 
 /** Skeleton enabling SSR + Sanity absence fallback. */
 export const NF1_KOSELUGO_HARDCODED_POST: BlogPost = {
-  id: 'hardcoded-blog-nf1-koselugo',
+  id: 'hardcoded-blog-neurofibromatosis',
   slug: NF1_KOSELUGO_BLOG_SLUG,
   title: NF1_KOSELUGO_DISPLAY_TITLE,
   excerpt:
-    'Rare NF1 tumour burden, MEK inhibitor Koselugo—FDA approvals for paediatrics (Apr 2020; expanded ≥1 y Sept 2025) and adults (Nov 2025)—EU adult expansion Autumn 2025. Commercial research design for specialists, carers, tenders, analogue analogies.',
+    'Neurofibromatosis type 1 tumour burden, oral MEK inhibition—FDA approvals for paediatrics (Apr 2020; expanded ≥1 y Sept 2025) and adults (Nov 2025)—EU adult expansion Autumn 2025. Commercial research design for specialists, carers, tenders, analogue analogies.',
   date: '26 May 2026',
   category: 'Rare Disease',
   country: 'Global',

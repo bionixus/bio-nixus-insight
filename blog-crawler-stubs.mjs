@@ -10,7 +10,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'gcc-pharmacoeconomics',
   'uae-healthcare-market-trends-2025',
   'desmoid-tumors-nirogacestat-pharma-market-access',
-  'nf1-koselugo-selumetinib-pharma-market-research',
+  'neurofibromatosis',
 ]);
 
 /** Slugs served primarily from React hardcoded modules (full HTML in SPA). */
@@ -43,10 +43,10 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     description:
       'GCC pharmacoeconomics playbook: Saudi & UAE payer cues, tender dossiers, BIA vs CEA sequencing, comparator localization—BioNixus HEOR.',
   },
-  'nf1-koselugo-selumetinib-pharma-market-research': {
-    title: 'NF1 & Koselugo: Pharma Research & MAP | BioNixus',
+  neurofibromatosis: {
+    title: 'Neurofibromatosis: NF1 Pharma Research & MAP | BioNixus',
     description:
-      'Neurofibromatosis type 1 (NF1) landscape, MEK inhibition with Koselugo, and how pharma teams localize evidence for payers & specialists.',
+      'Neurofibromatosis type 1 (NF1) landscape, oral MEK inhibition for plexiform neurofibromas, and how pharma teams localize evidence for payers & specialists.',
   },
   'desmoid-tumors-nirogacestat-pharma-market-access': {
     title: 'Desmoid Tumours & OGSIVEO (Nirogacestat): Market Access Intelligence | BioNixus',

@@ -8,12 +8,12 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'gcc-pharmacoeconomics',
   'uae-healthcare-market-trends-2025',
   'desmoid-tumors-nirogacestat-pharma-market-access',
-  'nf1-koselugo-selumetinib-pharma-market-research',
+  'neurofibromatosis',
 ]);
 
 export const BLOG_HARDCODED_SEO_SLUGS = new Set([
   'gcc-pharmacoeconomics',
-  'nf1-koselugo-selumetinib-pharma-market-research',
+  'neurofibromatosis',
   'desmoid-tumors-nirogacestat-pharma-market-access',
 ]);
 

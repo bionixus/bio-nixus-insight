@@ -10,7 +10,7 @@ const canonicalPath = '/desmoid-tumor-pharma-market-research';
 const pageUrl = `https://www.bionixus.com${canonicalPath}`;
 const desmoidBlogHref = '/blog/desmoid-tumors-nirogacestat-pharma-market-access';
 const nfPillarHref = '/nf1-pharma-market-research';
-const nfBlogHref = '/blog/nf1-koselugo-selumetinib-pharma-market-research';
+const nfBlogHref = '/blog/neurofibromatosis';
 const FAQ_SECTION_ID = 'desmoid-pharma-market-research-faq';
 
 const breadcrumbItems = [

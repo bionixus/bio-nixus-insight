@@ -505,10 +505,10 @@ export default function PharmaceuticalTherapyAreas() {
                 Desmoid tumor pharma research (approved systemic therapy context)
               </Link>
               <Link
-                to="/blog/nf1-koselugo-selumetinib-pharma-market-research"
+                to="/blog/neurofibromatosis"
                 className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
               >
-                Insight article: NF1, Koselugo, and market intelligence
+                Insight article: neurofibromatosis and NF1 market intelligence
               </Link>
               <Link
                 to="/blog/desmoid-tumors-nirogacestat-pharma-market-access"

@@ -37,7 +37,7 @@ const SLUGS = [
   'gcc-pharmacoeconomics',
   'uae-healthcare-market-trends-2025',
   'desmoid-tumors-nirogacestat-pharma-market-access',
-  'nf1-koselugo-selumetinib-pharma-market-research',
+  'neurofibromatosis',
 ];
 
 const projectId =

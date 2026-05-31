@@ -8,7 +8,7 @@ import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 
 const canonicalPath = '/nf1-pharma-market-research';
 const pageUrl = `https://www.bionixus.com${canonicalPath}`;
-const nf1BlogHref = '/blog/nf1-koselugo-selumetinib-pharma-market-research';
+const nf1BlogHref = '/blog/neurofibromatosis';
 const desmoidPillar = '/desmoid-tumor-pharma-market-research';
 const FAQ_SECTION_ID = 'nf1-pharma-market-research-faq';
 
@@ -125,7 +125,7 @@ export default function Nf1PharmaMarketResearch() {
               </Link>
               . Analytics companion{' '}
               <Link to={nf1BlogHref} className="text-primary font-medium hover:underline">
-                NF1 Koselugo (selumetinib) strategic blog article
+                Neurofibromatosis (NF1) strategic blog article
               </Link>{' '}
               cross-links tumour board adoption analogues, pipeline MEK signalling crowding sentinel modules, oncology hub alignment, reciprocal{' '}
               <Link to={desmoidPillar} className="text-primary font-medium hover:underline">
@@ -336,7 +336,7 @@ export default function Nf1PharmaMarketResearch() {
                 to={nf1BlogHref}
                 className="inline-flex items-center rounded-lg border border-primary px-8 py-3 font-semibold text-primary hover:bg-primary/10 transition-colors"
               >
-                Read the NF1 Koselugo blog briefing
+                Read the neurofibromatosis market research briefing
               </Link>
               <Link to={desmoidPillar} className="inline-flex items-center rounded-lg border border-border px-8 py-3 font-semibold text-foreground hover:bg-muted transition-colors">
                 Compare desmoid tumour analogue pillar page

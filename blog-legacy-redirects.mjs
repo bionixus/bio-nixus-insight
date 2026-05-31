@@ -3,6 +3,7 @@
  * Keys: slug segment only. Values: current canonical blog slug in Sanity / sitemap.
  */
 export const LEGACY_BLOG_SLUG_TO_CANONICAL = {
+  'nf1-koselugo-selumetinib-pharma-market-research': 'neurofibromatosis',
   'healthcare-market-research-europe': 'healthcare-market-research-europe-2026',
   'pharmaceutical-market-research-uk': 'pharmaceutical-market-research-uk-2026',
   'drug-registration-kuwait-pharma-guide': 'healthcare-overview-kuwait-market-2026',

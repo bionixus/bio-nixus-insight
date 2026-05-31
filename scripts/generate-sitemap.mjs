@@ -250,6 +250,8 @@ const staticPages = [
   { path: '/blog/gcc-clinical-trials-market-2026', priority: '0.83', changefreq: 'monthly' },
   { path: '/blog/pharmacoeconomics-gcc-practical-guide', priority: '0.87', changefreq: 'monthly' },
   { path: '/blog/gcc-pharmacoeconomics', priority: '0.88', changefreq: 'monthly' },
+  { path: '/blog/neurofibromatosis', priority: '0.87', changefreq: 'monthly' },
+  { path: '/blog/desmoid-tumors-nirogacestat-pharma-market-access', priority: '0.87', changefreq: 'monthly' },
   { path: '/faq', priority: '0.7', changefreq: 'monthly' },
   { path: '/resources', priority: '0.7', changefreq: 'monthly' },
   { path: '/fr/contacts', priority: '0.7', changefreq: 'monthly' },

@@ -21,8 +21,8 @@ export const INTERNAL_LINK_PRIORITY_TARGETS: ReadonlyArray<{ to: string; label: 
   { to: '/nf1-pharma-market-research', label: 'NF1 pharma market research — Koselugo / MEK inhibition context' },
   { to: '/desmoid-tumor-pharma-market-research', label: 'Desmoid tumors pharma research — systemic therapy context' },
   {
-    to: '/blog/nf1-koselugo-selumetinib-pharma-market-research',
-    label: 'Blog — NF1, Koselugo, pharma research & MAP',
+    to: '/blog/neurofibromatosis',
+    label: 'Blog — neurofibromatosis, NF1 pharma research & MAP',
   },
   {
     to: '/blog/desmoid-tumors-nirogacestat-pharma-market-access',

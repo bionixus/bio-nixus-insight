@@ -110,7 +110,7 @@ const STATIC_ROUTES = [
   '/blog/middle-east-healthcare-market-statistics-2026',
   '/blog/nupco-saudi-arabia-tendering-guide',
   '/blog/abu-dhabi-doh-vs-dubai-dha-formulary-guide',
-  '/blog/nf1-koselugo-selumetinib-pharma-market-research',
+  '/blog/neurofibromatosis',
   '/blog/desmoid-tumors-nirogacestat-pharma-market-access',
   '/blog/regional-crisis-impact-middle-east-economies-healthcare-2026',
   '/blog/digital-therapeutics-regulation-mena-markets',
