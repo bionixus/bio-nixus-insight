@@ -89,14 +89,7 @@ const SouthKoreaHealthcareMarketReport = () => (
       title="South Korea Healthcare Market Report 2026 | HIRA, NHIS Reimbursement & Biosimilar Hub | BioNixus"
       description="South Korea healthcare market at USD 115B in 2026. MFDS drug approval, HIRA clinical assessment, NHIS price negotiation, Samsung Biologics/Celltrion biosimilar manufacturing, and BioNixus GCC expansion intelligence."
       canonical="https://www.bionixus.com/south-korea-healthcare-market-report"
-      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "South Korea Healthcare Market Report 2026 | HIRA, NHIS Reimbursement & Biosimilar Hub | BioNixus",
-    pageMetaDescription: "South Korea healthcare market at USD 115B in 2026. MFDS drug approval, HIRA clinical assessment, NHIS price negotiation, Samsung Biologics/Celltrion biosimilar manufacturing, and BioNixus GCC expansion intelligence.",
-    countryName: "South Korea",
-    marketSlug: "south-korea",
-    publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
-  })]}
+      jsonLd={jsonLd}
     />
       <ReportReadingProgress progressId="report-rp-south-korea-healthcare-market-report" />
       <main>

@@ -89,14 +89,7 @@ const IndiaHealthcareMarketReport = () => (
       title="India Healthcare Market Report 2026 | CDSCO, Ayushman Bharat & Pharmaceutical Market Intelligence | BioNixus"
       description="India healthcare market at USD 265B in 2026. CDSCO drug registration, Ayushman Bharat PMJAY coverage, NLEM pricing, world's largest generic medicine supplier, and BioNixus intelligence for Indian pharma expanding to GCC and MENA."
       canonical="https://www.bionixus.com/india-healthcare-market-report"
-      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "India Healthcare Market Report 2026 | CDSCO, Ayushman Bharat & Pharmaceutical Market Intelligence | BioNixus",
-    pageMetaDescription: "India healthcare market at USD 265B in 2026. CDSCO drug registration, Ayushman Bharat PMJAY coverage, NLEM pricing, world's largest generic medicine supplier, and BioNixus intelligence for Indian pharma expanding to GCC and MENA.",
-    countryName: "India",
-    marketSlug: "india",
-    publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
-  })]}
+      jsonLd={jsonLd}
     />
       <ReportReadingProgress progressId="report-rp-india-healthcare-market-report" />
       <main>

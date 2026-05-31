@@ -104,14 +104,7 @@ const OmanHealthcareMarketReport = () => {
         title="Oman Healthcare Market Report 2026 | Pharma Market Size & MOH Access Intelligence | BioNixus"
         description="Oman healthcare market at USD 5.5–6.5B in 2026. Pharmaceutical market (USD 550M), MOH registration, Vision 2040 healthcare privatization, therapy area analysis, and BioNixus primary HCP research."
         canonical="https://www.bionixus.com/oman-healthcare-market-report"
-        jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "Oman Healthcare Market Report 2026 | Pharma Market Size & MOH Access Intelligence | BioNixus",
-    pageMetaDescription: "Oman healthcare market at USD 5.5–6.5B in 2026. Pharmaceutical market (USD 550M), MOH registration, Vision 2040 healthcare privatization, therapy area analysis, and BioNixus primary HCP research.",
-    countryName: "Oman",
-    marketSlug: "oman",
-    publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
-  })]}
+        jsonLd={jsonLd}
       />
       <ReportReadingProgress progressId="report-rp-oman-healthcare-market-report" />
       <main>

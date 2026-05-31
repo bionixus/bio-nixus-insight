@@ -104,14 +104,7 @@ const EgyptHealthcareMarketReport = () => {
         title="Egypt Healthcare Market Report 2026 | USD 25B+ Pharma & UHI Intelligence | BioNixus"
         description="Egypt healthcare market at USD 25–30B in 2026. Pharmaceutical market (USD 5B), UHI formulary access, EDA registration, therapy area analysis, and BioNixus Cairo-based primary HCP research."
         canonical="https://www.bionixus.com/egypt-healthcare-market-report"
-        jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "Egypt Healthcare Market Report 2026 | USD 25B+ Pharma & UHI Intelligence | BioNixus",
-    pageMetaDescription: "Egypt healthcare market at USD 25–30B in 2026. Pharmaceutical market (USD 5B), UHI formulary access, EDA registration, therapy area analysis, and BioNixus Cairo-based primary HCP research.",
-    countryName: "Egypt",
-    marketSlug: "egypt",
-    publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
-  })]}
+        jsonLd={jsonLd}
       />
       <ReportReadingProgress progressId="report-rp-egypt-healthcare-market-report" />
       <main>

@@ -141,14 +141,7 @@ const UaeHealthcareMarketReport = () => {
         title="UAE Healthcare Market Report 2026 | Market Size, Pharma & Medical Devices | BioNixus"
         description="UAE healthcare market estimated at USD 30B+ in 2026, reaching $60B by 2030. Covers pharma (USD 3.5B), medical devices (USD 1.8B), DHA and DOH regulation, and primary HCP research across Dubai and Abu Dhabi."
         canonical="https://www.bionixus.com/uae-healthcare-market-report"
-        jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "UAE Healthcare Market Report 2026 | Market Size, Pharma & Medical Devices | BioNixus",
-    pageMetaDescription: "UAE healthcare market estimated at USD 30B+ in 2026, reaching $60B by 2030. Covers pharma (USD 3.5B), medical devices (USD 1.8B), DHA and DOH regulation, and primary HCP research across Dubai and Abu Dhabi.",
-    countryName: "United Arab Emirates",
-    marketSlug: "uae",
-    publishedDate: "2026-05-01",
-    modifiedDate: "2026-05-27",
-  })]}
+        jsonLd={jsonLd}
       />
       <ReportReadingProgress progressId="report-rp-uae-healthcare-market-report" />
       <main>

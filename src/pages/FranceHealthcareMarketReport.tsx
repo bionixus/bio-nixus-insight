@@ -89,14 +89,7 @@ const FranceHealthcareMarketReport = () => (
       title="France Healthcare Market Report 2026 | HAS ASMR, Assurance Maladie & Pharma Intelligence | BioNixus"
       description="France healthcare market at EUR 260B in 2026. HAS SMR/ASMR assessment, CEPS price negotiation, Assurance Maladie reimbursement, AAP early access, and BioNixus intelligence for French pharma companies expanding to GCC."
       canonical="https://www.bionixus.com/france-healthcare-market-report"
-      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "France Healthcare Market Report 2026 | HAS ASMR, Assurance Maladie & Pharma Intelligence | BioNixus",
-    pageMetaDescription: "France healthcare market at EUR 260B in 2026. HAS SMR/ASMR assessment, CEPS price negotiation, Assurance Maladie reimbursement, AAP early access, and BioNixus intelligence for French pharma companies expanding to GCC.",
-    countryName: "France",
-    marketSlug: "france",
-    publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
-  })]}
+      jsonLd={jsonLd}
     />
       <ReportReadingProgress progressId="report-rp-france-healthcare-market-report" />
       <main>

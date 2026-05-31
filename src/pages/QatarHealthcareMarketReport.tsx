@@ -104,14 +104,7 @@ const QatarHealthcareMarketReport = () => {
         title="Qatar Healthcare Market Report 2026 | Pharma, HTA & Market Access Intelligence | BioNixus"
         description="Qatar healthcare market at USD 8.5–10B in 2026. Pharmaceutical market (USD 1B), HMC formulary access, Qatar HTA framework, therapy area analysis, and primary HCP research from BioNixus."
         canonical="https://www.bionixus.com/qatar-healthcare-market-report"
-        jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "Qatar Healthcare Market Report 2026 | Pharma, HTA & Market Access Intelligence | BioNixus",
-    pageMetaDescription: "Qatar healthcare market at USD 8.5–10B in 2026. Pharmaceutical market (USD 1B), HMC formulary access, Qatar HTA framework, therapy area analysis, and primary HCP research from BioNixus.",
-    countryName: "Qatar",
-    marketSlug: "qatar",
-    publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
-  })]}
+        jsonLd={jsonLd}
       />
       <ReportReadingProgress progressId="report-rp-qatar-healthcare-market-report" />
       <main>

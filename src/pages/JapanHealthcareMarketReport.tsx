@@ -89,14 +89,7 @@ const JapanHealthcareMarketReport = () => (
       title="Japan Healthcare Market Report 2026 | PMDA, NHI Drug Pricing & Pharmaceutical Market Intelligence | BioNixus"
       description="Japan healthcare market at USD 530B in 2026 — world's third largest. PMDA Sakigake approval, NHI biannual price revision, aging population dynamics, world's third-largest pharma market, and BioNixus GCC intelligence."
       canonical="https://www.bionixus.com/japan-healthcare-market-report"
-      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "Japan Healthcare Market Report 2026 | PMDA, NHI Drug Pricing & Pharmaceutical Market Intelligence | BioNixus",
-    pageMetaDescription: "Japan healthcare market at USD 530B in 2026 — world's third largest. PMDA Sakigake approval, NHI biannual price revision, aging population dynamics, world's third-largest pharma market, and BioNixus GCC intelligence.",
-    countryName: "Japan",
-    marketSlug: "japan",
-    publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
-  })]}
+      jsonLd={jsonLd}
     />
       <ReportReadingProgress progressId="report-rp-japan-healthcare-market-report" />
       <main>

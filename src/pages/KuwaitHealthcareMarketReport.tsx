@@ -104,14 +104,7 @@ const KuwaitHealthcareMarketReport = () => {
         title="Kuwait Healthcare Market Report 2026 | Pharma, Medical Devices & Market Access | BioNixus"
         description="Kuwait healthcare market at USD 7.5–8.5B in 2026. Pharmaceutical market (USD 1B), CMS procurement intelligence, MOPH registration, therapy area analysis, and primary HCP research from BioNixus."
         canonical="https://www.bionixus.com/kuwait-healthcare-market-report"
-        jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "Kuwait Healthcare Market Report 2026 | Pharma, Medical Devices & Market Access | BioNixus",
-    pageMetaDescription: "Kuwait healthcare market at USD 7.5–8.5B in 2026. Pharmaceutical market (USD 1B), CMS procurement intelligence, MOPH registration, therapy area analysis, and primary HCP research from BioNixus.",
-    countryName: "Kuwait",
-    marketSlug: "kuwait",
-    publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
-  })]}
+        jsonLd={jsonLd}
       />
       <ReportReadingProgress progressId="report-rp-kuwait-healthcare-market-report" />
       <main>

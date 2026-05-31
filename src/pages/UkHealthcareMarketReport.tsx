@@ -89,14 +89,7 @@ const UkHealthcareMarketReport = () => (
       title="UK Healthcare Market Report 2026 | NHS, NICE & Pharma Intelligence | BioNixus"
       description="UK healthcare market at GBP 260B in 2026. NHS pharmaceutical spend, NICE technology appraisals, MHRA post-Brexit regulation, medical devices, and BioNixus intelligence for UK pharma companies expanding to GCC and MENA."
       canonical="https://www.bionixus.com/uk-healthcare-market-report"
-      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "UK Healthcare Market Report 2026 | NHS, NICE & Pharma Intelligence | BioNixus",
-    pageMetaDescription: "UK healthcare market at GBP 260B in 2026. NHS pharmaceutical spend, NICE technology appraisals, MHRA post-Brexit regulation, medical devices, and BioNixus intelligence for UK pharma companies expanding to GCC and MENA.",
-    countryName: "United Kingdom",
-    marketSlug: "uk",
-    publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
-  })]}
+      jsonLd={jsonLd}
     />
       <ReportReadingProgress progressId="report-rp-uk-healthcare-market-report" />
       <main>

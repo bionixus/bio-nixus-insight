@@ -89,14 +89,7 @@ const BrazilHealthcareMarketReport = () => (
       title="Brazil Healthcare Market Report 2026 | ANVISA, SUS, CONITEC & Pharma Market Intelligence | BioNixus"
       description="Brazil healthcare market at USD 165B in 2026 — largest in Latin America. ANVISA registration, SUS/CONITEC incorporation, ANS private sector, USD 28B pharmaceutical market, and BioNixus intelligence for expanding to GCC and MENA."
       canonical="https://www.bionixus.com/brazil-healthcare-market-report"
-      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "Brazil Healthcare Market Report 2026 | ANVISA, SUS, CONITEC & Pharma Market Intelligence | BioNixus",
-    pageMetaDescription: "Brazil healthcare market at USD 165B in 2026 — largest in Latin America. ANVISA registration, SUS/CONITEC incorporation, ANS private sector, USD 28B pharmaceutical market, and BioNixus intelligence for expanding to GCC and MENA.",
-    countryName: "Brazil",
-    marketSlug: "brazil",
-    publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
-  })]}
+      jsonLd={jsonLd}
     />
       <ReportReadingProgress progressId="report-rp-brazil-healthcare-market-report" />
       <main>

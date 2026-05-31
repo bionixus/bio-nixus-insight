@@ -104,14 +104,7 @@ const BahrainHealthcareMarketReport = () => {
         title="Bahrain Healthcare Market Report 2026 | NHRA Registration & GCC Pharma Access | BioNixus"
         description="Bahrain healthcare market at USD 2.5–3B in 2026. NHRA pharmaceutical registration (mutual recognition from SFDA/MOHAP), pharma market size, therapy areas, and BioNixus GCC market access intelligence."
         canonical="https://www.bionixus.com/bahrain-healthcare-market-report"
-        jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "Bahrain Healthcare Market Report 2026 | NHRA Registration & GCC Pharma Access | BioNixus",
-    pageMetaDescription: "Bahrain healthcare market at USD 2.5–3B in 2026. NHRA pharmaceutical registration (mutual recognition from SFDA/MOHAP), pharma market size, therapy areas, and BioNixus GCC market access intelligence.",
-    countryName: "Bahrain",
-    marketSlug: "bahrain",
-    publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
-  })]}
+        jsonLd={jsonLd}
       />
       <ReportReadingProgress progressId="report-rp-bahrain-healthcare-market-report" />
       <main>

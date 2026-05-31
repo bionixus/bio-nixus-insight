@@ -89,14 +89,7 @@ const AustraliaHealthcareMarketReport = () => (
       title="Australia Healthcare Market Report 2026 | TGA, PBS, PBAC & Pharmaceutical Market Intelligence | BioNixus"
       description="Australia healthcare market at USD 220B in 2026. TGA drug registration, PBAC cost-effectiveness assessment, PBS reimbursement, R&D tax incentive for clinical trials, Access Consortium, and BioNixus GCC expansion intelligence."
       canonical="https://www.bionixus.com/australia-healthcare-market-report"
-      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "Australia Healthcare Market Report 2026 | TGA, PBS, PBAC & Pharmaceutical Market Intelligence | BioNixus",
-    pageMetaDescription: "Australia healthcare market at USD 220B in 2026. TGA drug registration, PBAC cost-effectiveness assessment, PBS reimbursement, R&D tax incentive for clinical trials, Access Consortium, and BioNixus GCC expansion intelligence.",
-    countryName: "Australia",
-    marketSlug: "australia",
-    publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
-  })]}
+      jsonLd={jsonLd}
     />
       <ReportReadingProgress progressId="report-rp-australia-healthcare-market-report" />
       <main>

@@ -89,14 +89,7 @@ const ChinaHealthcareMarketReport = () => (
       title="China Healthcare Market Report 2026 | NMPA, NRDL Reimbursement & VBP Procurement | BioNixus"
       description="China healthcare market at USD 1.3 trillion in 2026 — world's second largest. NMPA drug approval, NRDL reimbursement negotiations, VBP centralized procurement, Healthy China 2030, and BioNixus GCC intelligence."
       canonical="https://www.bionixus.com/china-healthcare-market-report"
-      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "China Healthcare Market Report 2026 | NMPA, NRDL Reimbursement & VBP Procurement | BioNixus",
-    pageMetaDescription: "China healthcare market at USD 1.3 trillion in 2026 — world's second largest. NMPA drug approval, NRDL reimbursement negotiations, VBP centralized procurement, Healthy China 2030, and BioNixus GCC intelligence.",
-    countryName: "China",
-    marketSlug: "china",
-    publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
-  })]}
+      jsonLd={jsonLd}
     />
       <ReportReadingProgress progressId="report-rp-china-healthcare-market-report" />
       <main>

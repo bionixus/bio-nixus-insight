@@ -5,14 +5,12 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
-import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
 import { MarketIntelligenceSections } from '@/components/market-intelligence';
 import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
-  ReportEarlyCtaBar,
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
@@ -104,14 +102,7 @@ const SaudiArabiaHealthcareMarketReport = () => {
         title="Saudi Arabia Healthcare Market Report 2026 | USD 60B Market, Pharma & Vision 2030 | BioNixus"
         description="Saudi Arabia healthcare market at USD 55–65B in 2026. Pharmaceutical market (USD 9B), SFDA registration, NUPCO procurement, Vision 2030 investment pipeline, and BioNixus hospital-level consumption intelligence."
         canonical="https://www.bionixus.com/saudi-arabia-healthcare-market-report"
-        jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "Saudi Arabia Healthcare Market Report 2026 | USD 60B Market, Pharma & Vision 2030 | BioNixus",
-    pageMetaDescription: "Saudi Arabia healthcare market at USD 55–65B in 2026. Pharmaceutical market (USD 9B), SFDA registration, NUPCO procurement, Vision 2030 investment pipeline, and BioNixus hospital-level consumption intelligence.",
-    countryName: "Saudi Arabia",
-    marketSlug: "saudi-arabia",
-    publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
-  })]}
+        jsonLd={jsonLd}
       />
       <ReportReadingProgress progressId="report-rp-saudi-arabia-healthcare-market-report" />
       <main>

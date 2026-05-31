@@ -89,14 +89,7 @@ const UsaHealthcareMarketReport = () => (
       title="USA Healthcare Market Report 2026 | FDA, CMS, PBMs & Pharmaceutical Market Intelligence | BioNixus"
       description="USA healthcare market at USD 4.5 trillion in 2026 — world's largest. FDA approval pathways, Medicare IRA drug negotiations, PBM formulary access, USD 600B pharmaceutical market, and BioNixus GCC expansion intelligence."
       canonical="https://www.bionixus.com/usa-healthcare-market-report"
-      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "USA Healthcare Market Report 2026 | FDA, CMS, PBMs & Pharmaceutical Market Intelligence | BioNixus",
-    pageMetaDescription: "USA healthcare market at USD 4.5 trillion in 2026 — world's largest. FDA approval pathways, Medicare IRA drug negotiations, PBM formulary access, USD 600B pharmaceutical market, and BioNixus GCC expansion intelligence.",
-    countryName: "United States",
-    marketSlug: "usa",
-    publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
-  })]}
+      jsonLd={jsonLd}
     />
       <ReportReadingProgress progressId="report-rp-usa-healthcare-market-report" />
       <main>

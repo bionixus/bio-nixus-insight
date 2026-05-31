@@ -89,14 +89,7 @@ const SpainHealthcareMarketReport = () => (
       title="Spain Healthcare Market Report 2026 | AEMPS, SNS Reimbursement & Regional Market Access | BioNixus"
       description="Spain healthcare market at EUR 115B in 2026. AEMPS pricing, CIPM reimbursement, IPT assessment, autonomous community access variation, and BioNixus intelligence for Spanish pharma companies expanding to GCC and MENA."
       canonical="https://www.bionixus.com/spain-healthcare-market-report"
-      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "Spain Healthcare Market Report 2026 | AEMPS, SNS Reimbursement & Regional Market Access | BioNixus",
-    pageMetaDescription: "Spain healthcare market at EUR 115B in 2026. AEMPS pricing, CIPM reimbursement, IPT assessment, autonomous community access variation, and BioNixus intelligence for Spanish pharma companies expanding to GCC and MENA.",
-    countryName: "Spain",
-    marketSlug: "spain",
-    publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
-  })]}
+      jsonLd={jsonLd}
     />
       <ReportReadingProgress progressId="report-rp-spain-healthcare-market-report" />
       <main>

@@ -89,14 +89,7 @@ const SingaporeHealthcareMarketReport = () => (
       title="Singapore Healthcare Market Report 2026 | HSA, ACE, 3Ms & Southeast Asia Pharma Hub | BioNixus"
       description="Singapore healthcare market at USD 30B in 2026 — Southeast Asia's premier healthcare hub. HSA abridged registration, ACE cost-effectiveness assessment, MediShield Life, Biopolis life sciences cluster, and BioNixus GCC intelligence."
       canonical="https://www.bionixus.com/singapore-healthcare-market-report"
-      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "Singapore Healthcare Market Report 2026 | HSA, ACE, 3Ms & Southeast Asia Pharma Hub | BioNixus",
-    pageMetaDescription: "Singapore healthcare market at USD 30B in 2026 — Southeast Asia's premier healthcare hub. HSA abridged registration, ACE cost-effectiveness assessment, MediShield Life, Biopolis life sciences cluster, and BioNixus GCC intelligence.",
-    countryName: "Singapore",
-    marketSlug: "singapore",
-    publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
-  })]}
+      jsonLd={jsonLd}
     />
       <ReportReadingProgress progressId="report-rp-singapore-healthcare-market-report" />
       <main>
