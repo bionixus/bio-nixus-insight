@@ -1,10 +1,16 @@
 /**
- * Build public/conf clinical diagnostics proposal HTML from source deck.
- * Strips client names, pricing, and payment sections; adds register CTA.
+ * Build clinical diagnostics proposal HTML outputs from the external source deck.
+ * The source file is never modified — only read.
+ *
+ * Outputs:
+ *   1. scripts/data/proposals/clinical-diagnostics-proposal-2026-source-copy.html
+ *      Verbatim mirror for repo archive / rebuild (not served on the website).
+ *   2. public/conf/clinical-diagnostics-market-assessment-proposal.html
+ *      Public deck: client names redacted, pricing removed, register CTA.
  *
  * Usage:
- *   node scripts/build-clinical-diagnostics-proposal-html.mjs
- *   SOURCE=/path/to/proposal.html node scripts/build-clinical-diagnostics-proposal-html.mjs
+ *   npm run build:clinical-proposal
+ *   SOURCE=/path/to/proposal.html npm run build:clinical-proposal
  */
 import fs from 'fs';
 import path from 'path';
@@ -19,9 +25,20 @@ const DEFAULT_SOURCE = path.join(
 );
 
 const SOURCE = process.env.SOURCE || DEFAULT_SOURCE;
-const OUT = path.join(root, 'public/conf/clinical-diagnostics-market-assessment-proposal.html');
+const SOURCE_COPY_OUT = path.join(
+  root,
+  'scripts/data/proposals/clinical-diagnostics-proposal-2026-source-copy.html',
+);
+const PUBLIC_OUT = path.join(root, 'public/conf/clinical-diagnostics-market-assessment-proposal.html');
 const REGISTER_URL = 'https://www.bionixus.com/clinical-diagnostics-proposal-request';
 const OFFERING_URL = 'https://www.bionixus.com/clinical-diagnostics-market-research';
+
+function writeSourceCopy() {
+  fs.mkdirSync(path.dirname(SOURCE_COPY_OUT), { recursive: true });
+  fs.copyFileSync(SOURCE, SOURCE_COPY_OUT);
+  const stat = fs.statSync(SOURCE_COPY_OUT);
+  console.log(`Wrote source mirror ${SOURCE_COPY_OUT} (${(stat.size / 1024).toFixed(1)} KB, verbatim)`);
+}
 
 function stripPricingSection(html) {
   const start = html.indexOf('<div class="section-num">06 — Fees, assumptions &amp; governance</div>');
@@ -106,19 +123,24 @@ function injectStickyCta(html) {
   );
 }
 
+function writePublicDeck() {
+  let html = fs.readFileSync(SOURCE, 'utf8');
+  html = redactClientNames(html);
+  html = stripPricingSection(html);
+  html = injectStickyCta(html);
+  fs.mkdirSync(path.dirname(PUBLIC_OUT), { recursive: true });
+  fs.writeFileSync(PUBLIC_OUT, html, 'utf8');
+  console.log(`Wrote public deck ${PUBLIC_OUT} (${(html.length / 1024).toFixed(1)} KB, redacted)`);
+}
+
 function main() {
   if (!fs.existsSync(SOURCE)) {
     console.error(`Source not found: ${SOURCE}`);
     console.error('Set SOURCE= to your proposal HTML path.');
     process.exit(1);
   }
-  let html = fs.readFileSync(SOURCE, 'utf8');
-  html = redactClientNames(html);
-  html = stripPricingSection(html);
-  html = injectStickyCta(html);
-  fs.mkdirSync(path.dirname(OUT), { recursive: true });
-  fs.writeFileSync(OUT, html, 'utf8');
-  console.log(`Wrote ${OUT} (${(html.length / 1024).toFixed(1)} KB)`);
+  writeSourceCopy();
+  writePublicDeck();
 }
 
 main();
