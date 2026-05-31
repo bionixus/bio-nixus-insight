@@ -3151,6 +3151,230 @@ p.body strong { color: var(--navy); font-weight: 600; }
   .page--team-premium .team-premium-cols { gap: 0 10pt !important; }
 }
 </style>
+<style id="bnx-screen-responsive">
+/* Screen layout — appended to public proposal deck (does not affect print). */
+@media screen {
+  html {
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    overflow-x: hidden;
+    margin: 0;
+    min-height: 100vh;
+  }
+
+  .document {
+    width: 100%;
+    max-width: min(920px, 100vw);
+    margin: clamp(8px, 2vw, 32px) auto clamp(64px, 12vw, 88px);
+    box-sizing: border-box;
+  }
+
+  .page {
+    min-height: auto !important;
+    padding: clamp(20px, 4.5vw, 48px) clamp(14px, 3.5vw, 56px) !important;
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .cover {
+    min-height: auto !important;
+    min-height: min(85vh, 920px) !important;
+    padding: clamp(28px, 5vw, 44px) clamp(18px, 4vw, 52px) !important;
+  }
+
+  .cover-title {
+    font-size: clamp(1.75rem, 6.5vw, 54px) !important;
+    color: #fff !important;
+  }
+
+  .cover-subtitle {
+    max-width: 100%;
+    font-size: clamp(14px, 2.5vw, 16px);
+  }
+
+  .cover-meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+
+  @media (min-width: 640px) {
+    .cover-meta {
+      grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    }
+  }
+
+  .page-footer {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin-top: 28px;
+    padding-top: 12px;
+  }
+
+  .section-title {
+    font-size: clamp(1.35rem, 4.5vw, 32px) !important;
+    text-wrap: balance;
+  }
+
+  .section-lede {
+    max-width: 100%;
+    padding-left: 0;
+  }
+
+  table.matrix,
+  .matrix {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .geo-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .phases-dual,
+  .phases {
+    grid-template-columns: 1fr !important;
+  }
+
+  .team-premium-cols {
+    grid-template-columns: 1fr !important;
+  }
+
+  .field-volume-stats {
+    grid-template-columns: 1fr !important;
+  }
+
+  .p1-toc-charts,
+  .p1-toc-charts {
+    grid-template-columns: 1fr !important;
+  }
+
+  .timeline-header,
+  .timeline-row {
+    font-size: 10px;
+    overflow-x: auto;
+  }
+
+  .p2-opt-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .cover-tag {
+    display: none;
+  }
+
+  #bnx-proposal-cta {
+    padding: 10px 12px !important;
+    font-size: 12px !important;
+  }
+
+  /* Register CTA closing page — white headline on navy */
+  #request-proposal.page--register-cta {
+    background: linear-gradient(145deg, #000510 0%, #002244 55%, #063558 100%) !important;
+    color: #fff;
+  }
+
+  #request-proposal.page--register-cta .page-rule-text {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  #request-proposal.page--register-cta .section-num {
+    color: rgba(212, 168, 75, 0.95);
+  }
+
+  #request-proposal.page--register-cta .section-title,
+  #request-proposal.page--register-cta .section-title em {
+    color: #fff !important;
+  }
+
+  #request-proposal.page--register-cta .section-title em {
+    color: #d4a84b !important;
+  }
+
+  #request-proposal.page--register-cta .section-lede {
+    color: rgba(255, 255, 255, 0.88) !important;
+    border-left-color: rgba(212, 168, 75, 0.5);
+  }
+
+  #request-proposal.page--register-cta .body,
+  #request-proposal.page--register-cta p {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  #request-proposal.page--register-cta .page-footer {
+    border-top-color: rgba(255, 255, 255, 0.15);
+  }
+
+  #request-proposal.page--register-cta .page-footer,
+  #request-proposal.page--register-cta .page-footer .brand {
+    color: rgba(255, 255, 255, 0.55);
+  }
+
+  #request-proposal.page--register-cta .page-footer .brand {
+    color: #fff;
+  }
+
+  #request-proposal.page--register-cta a.cover-cta[style*='border:1px solid var(--navy)'] {
+    border-color: rgba(255, 255, 255, 0.45) !important;
+    color: #fff !important;
+  }
+
+  /* Phase 2 · 20 directors — premium field-volume cell */
+  .field-volume-stats .fv-cell--phase2-premium {
+    background: linear-gradient(145deg, #000510 0%, #002244 52%, #063558 100%) !important;
+    border-right-color: rgba(212, 168, 75, 0.25) !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    position: relative;
+  }
+
+  .field-volume-stats .fv-cell--phase2-premium::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(212, 168, 75, 0.16) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .field-volume-stats .fv-cell--phase2-premium .fv-num {
+    color: #fff !important;
+    font-size: 44px !important;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+  }
+
+  .field-volume-stats .fv-cell--phase2-premium .fv-label {
+    color: rgba(255, 255, 255, 0.9) !important;
+    position: relative;
+    z-index: 1;
+  }
+
+  .field-volume-stats .fv-cell--phase2-premium .fv-label strong {
+    color: #d4a84b !important;
+  }
+
+  /* Standalone Phase 2 diagram (methodology page) */
+  .p2-method-illu-wrap {
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin: 0 0 18px;
+    box-shadow: 0 20px 48px -16px rgba(0, 34, 68, 0.16);
+  }
+
+  .p2-method-illu-wrap .p2-proc-illu {
+    min-height: 260px;
+  }
+}
+
+</style>
 </head>
 
 <body>
@@ -3574,7 +3798,7 @@ p.body strong { color: var(--navy); font-weight: 600; }
       <div class="fv-num">50</div>
       <div class="fv-label">Phase 1 · Quantitative branches (core)<br><strong>30</strong> KSA · <strong>20</strong> TR</div>
     </div>
-    <div class="fv-cell">
+    <div class="fv-cell fv-cell--phase2-premium">
       <div class="fv-num">20</div>
       <div class="fv-label">Phase 2 · Qualitative procurement<br><strong>10</strong> + <strong>10</strong> · public + private</div>
     </div>
@@ -3583,6 +3807,66 @@ p.body strong { color: var(--navy); font-weight: 600; }
       <div class="fv-label">Phase 1 tiers<br>+20 / +30 / +50 branches · scope options</div>
     </div>
   </div>
+
+<div class="p2-method-illu-wrap" role="group" aria-label="Phase 2 qualitative procurement: 20 director interviews">
+  <div class="p2-proc-illu" aria-hidden="true">
+    <svg viewBox="0 0 440 252" xmlns="http://www.w3.org/2000/svg" focusable="false" role="presentation">
+      <defs>
+        <linearGradient id="p2MethGold" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#B8862D"/>
+          <stop offset="100%" stop-color="#D4A84B"/>
+        </linearGradient>
+        <linearGradient id="p2MethNavy" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#000510"/>
+          <stop offset="55%" stop-color="#002244"/>
+          <stop offset="100%" stop-color="#0069A3"/>
+        </linearGradient>
+        <linearGradient id="p2MethCard" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#ffffff"/>
+          <stop offset="100%" stop-color="#f7f9fc"/>
+        </linearGradient>
+        <filter id="p2MethShad" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#002244" flood-opacity="0.1"/>
+        </filter>
+        <marker id="p2MethArr" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth">
+          <path d="M0 0 L7 3.5 L0 7 Z" fill="#C8963E" fill-opacity="0.78"/>
+        </marker>
+      </defs>
+      <rect x="96" y="14" width="248" height="26" rx="4" fill="url(#p2MethNavy)"/>
+      <text x="220" y="31" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="8.5" letter-spacing="3.2" fill="#ffffff" fill-opacity="0.92">QUALITATIVE PROCUREMENT · PHASE 2</text>
+      <g filter="url(#p2MethShad)">
+        <rect x="18" y="54" width="122" height="108" rx="7" fill="url(#p2MethCard)" stroke="#002244" stroke-opacity="0.13" stroke-width="1"/>
+        <rect x="18" y="54" width="122" height="28" rx="7" fill="rgba(0,34,68,0.04)"/>
+        <path d="M18 75 h122" stroke="#002244" stroke-opacity="0.06"/>
+      </g>
+      <text x="79" y="74" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="600" fill="#002244" letter-spacing="2">KSA</text>
+      <text x="79" y="94" text-anchor="middle" font-family="'Barlow', sans-serif" font-size="7.5" fill="#0069A3" fill-opacity="0.85">NUPCO-facing · public + private</text>
+      <rect x="32" y="102" width="94" height="26" rx="3" fill="rgba(200,150,62,0.12)" stroke="rgba(184,134,45,0.35)" stroke-width="0.75"/>
+      <text x="79" y="119" text-anchor="middle" font-family="'Barlow', sans-serif" font-size="8.5" font-weight="600" fill="#002244">10 director IDIs</text>
+      <text x="79" y="144" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="6.5" fill="#002244" fill-opacity="0.38">SCREENED ROLES</text>
+      <g filter="url(#p2MethShad)">
+        <rect x="300" y="54" width="122" height="108" rx="7" fill="url(#p2MethCard)" stroke="#002244" stroke-opacity="0.13" stroke-width="1"/>
+        <rect x="300" y="54" width="122" height="28" rx="7" fill="rgba(0,34,68,0.04)"/>
+        <path d="M300 75 h122" stroke="#002244" stroke-opacity="0.06"/>
+      </g>
+      <text x="361" y="74" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="600" fill="#002244" letter-spacing="2">TR</text>
+      <text x="361" y="94" text-anchor="middle" font-family="'Barlow', sans-serif" font-size="7.5" fill="#0069A3" fill-opacity="0.85">EKAP · hospital &amp; chain buyers</text>
+      <rect x="314" y="102" width="94" height="26" rx="3" fill="rgba(200,150,62,0.12)" stroke="rgba(184,134,45,0.35)" stroke-width="0.75"/>
+      <text x="361" y="119" text-anchor="middle" font-family="'Barlow', sans-serif" font-size="8.5" font-weight="600" fill="#002244">10 director IDIs</text>
+      <text x="361" y="144" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="6.5" fill="#002244" fill-opacity="0.38">SCREENED ROLES</text>
+      <path d="M132 112 C 154 94 162 100 172 122" fill="none" stroke="url(#p2MethGold)" stroke-width="1.65" stroke-opacity="0.68" marker-end="url(#p2MethArr)"/>
+      <path d="M308 112 C 286 94 278 100 268 122" fill="none" stroke="url(#p2MethGold)" stroke-width="1.65" stroke-opacity="0.68" marker-end="url(#p2MethArr)"/>
+      <circle cx="220" cy="122" r="48" fill="#fff" stroke="url(#p2MethGold)" stroke-width="2" stroke-opacity="0.58"/>
+      <circle cx="220" cy="122" r="38" fill="none" stroke="#002244" stroke-opacity="0.05"/>
+      <text x="220" y="118" text-anchor="middle" font-family="Georgia, 'EB Garamond', serif" font-size="26" font-style="italic" font-weight="500" fill="#002244" fill-opacity="0.42">20</text>
+      <text x="220" y="138" text-anchor="middle" font-family="'Barlow', sans-serif" font-size="7.5" letter-spacing="2.8" fill="#0069A3" fill-opacity="0.62">PROCUREMENT DIRECTORS</text>
+      <rect x="118" y="186" width="204" height="36" rx="4" fill="rgba(0,34,68,0.03)" stroke="rgba(0,34,68,0.1)" stroke-width="0.75"/>
+      <text x="220" y="204" text-anchor="middle" font-family="'Barlow', sans-serif" font-size="7.5" letter-spacing="1.8" fill="#002244" fill-opacity="0.48">ADDENDUM · EXEC / STAKEHOLDER DECK REFRESH</text>
+      <text x="220" y="216" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="6.5" letter-spacing="1.5" fill="#0069A3" fill-opacity="0.55">TRIANGULATES PHASE 1 FIELD · OPTIONAL STREAM</text>
+    </svg>
+    <span class="p2-proc-illu-cap">KSA 10 + TR 10 procurement directors · convergent synthesis with Phase 1</span>
+  </div>
+</div>
 
   <div class="sub-subhead">Phase 1A — Hospital &amp; lab branches (core quantitative sample: 50 total)</div>
   <table class="matrix">
@@ -3867,14 +4151,14 @@ p.body strong { color: var(--navy); font-weight: 600; }
   </div>
 
   
-<section class="page page--closing" id="request-proposal">
+<section class="page page--closing page--register-cta" id="request-proposal">
 
   <div class="page-rule">
     <div class="page-rule-text">08 · Full proposal</div>
   </div>
 
   <div class="section-num">06 — Request the complete programme document</div>
-  <h2 class="section-title">Register for the<br><em>full market assessment proposal.</em></h2>
+  <h2 class="section-title" style="color:#fff;">Register for the<br><em>full market assessment proposal.</em></h2>
   <p class="section-lede">
     The complete McKinsey-style deck — methodology, field matrices, timeline, team roster, deliverable architecture, and indicative analytics — is available to qualified clinical diagnostics sponsors. <strong>Pricing and commercial terms are not published online</strong>; they are shared after registration and a short alignment call.
   </p>

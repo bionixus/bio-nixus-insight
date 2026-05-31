@@ -113,7 +113,7 @@ export default function ClinicalDiagnosticsProposalRequest() {
         <div className="cd-document mx-4 md:mx-auto my-8">
           <section className="cd-cover">
             <p className="cd-cover-eyebrow">Confidential · Registration</p>
-            <h1 className="cd-cover-title text-white">Receive the full market assessment proposal</h1>
+            <h1 className="cd-cover-title">Receive the full market assessment proposal</h1>
             <p className="cd-cover-sub">
               Complete programme deck: methodology, KSA and Türkiye field matrices, timeline, team roster, deliverable
               architecture, and indicative analytics. Commercial terms are shared after registration — not published on

@@ -1,0 +1,221 @@
+/* Screen layout — appended to public proposal deck (does not affect print). */
+@media screen {
+  html {
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    overflow-x: hidden;
+    margin: 0;
+    min-height: 100vh;
+  }
+
+  .document {
+    width: 100%;
+    max-width: min(920px, 100vw);
+    margin: clamp(8px, 2vw, 32px) auto clamp(64px, 12vw, 88px);
+    box-sizing: border-box;
+  }
+
+  .page {
+    min-height: auto !important;
+    padding: clamp(20px, 4.5vw, 48px) clamp(14px, 3.5vw, 56px) !important;
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .cover {
+    min-height: auto !important;
+    min-height: min(85vh, 920px) !important;
+    padding: clamp(28px, 5vw, 44px) clamp(18px, 4vw, 52px) !important;
+  }
+
+  .cover-title {
+    font-size: clamp(1.75rem, 6.5vw, 54px) !important;
+    color: #fff !important;
+  }
+
+  .cover-subtitle {
+    max-width: 100%;
+    font-size: clamp(14px, 2.5vw, 16px);
+  }
+
+  .cover-meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+
+  @media (min-width: 640px) {
+    .cover-meta {
+      grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    }
+  }
+
+  .page-footer {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin-top: 28px;
+    padding-top: 12px;
+  }
+
+  .section-title {
+    font-size: clamp(1.35rem, 4.5vw, 32px) !important;
+    text-wrap: balance;
+  }
+
+  .section-lede {
+    max-width: 100%;
+    padding-left: 0;
+  }
+
+  table.matrix,
+  .matrix {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .geo-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .phases-dual,
+  .phases {
+    grid-template-columns: 1fr !important;
+  }
+
+  .team-premium-cols {
+    grid-template-columns: 1fr !important;
+  }
+
+  .field-volume-stats {
+    grid-template-columns: 1fr !important;
+  }
+
+  .p1-toc-charts,
+  .p1-toc-charts {
+    grid-template-columns: 1fr !important;
+  }
+
+  .timeline-header,
+  .timeline-row {
+    font-size: 10px;
+    overflow-x: auto;
+  }
+
+  .p2-opt-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .cover-tag {
+    display: none;
+  }
+
+  #bnx-proposal-cta {
+    padding: 10px 12px !important;
+    font-size: 12px !important;
+  }
+
+  /* Register CTA closing page — white headline on navy */
+  #request-proposal.page--register-cta {
+    background: linear-gradient(145deg, #000510 0%, #002244 55%, #063558 100%) !important;
+    color: #fff;
+  }
+
+  #request-proposal.page--register-cta .page-rule-text {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  #request-proposal.page--register-cta .section-num {
+    color: rgba(212, 168, 75, 0.95);
+  }
+
+  #request-proposal.page--register-cta .section-title,
+  #request-proposal.page--register-cta .section-title em {
+    color: #fff !important;
+  }
+
+  #request-proposal.page--register-cta .section-title em {
+    color: #d4a84b !important;
+  }
+
+  #request-proposal.page--register-cta .section-lede {
+    color: rgba(255, 255, 255, 0.88) !important;
+    border-left-color: rgba(212, 168, 75, 0.5);
+  }
+
+  #request-proposal.page--register-cta .body,
+  #request-proposal.page--register-cta p {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  #request-proposal.page--register-cta .page-footer {
+    border-top-color: rgba(255, 255, 255, 0.15);
+  }
+
+  #request-proposal.page--register-cta .page-footer,
+  #request-proposal.page--register-cta .page-footer .brand {
+    color: rgba(255, 255, 255, 0.55);
+  }
+
+  #request-proposal.page--register-cta .page-footer .brand {
+    color: #fff;
+  }
+
+  #request-proposal.page--register-cta a.cover-cta[style*='border:1px solid var(--navy)'] {
+    border-color: rgba(255, 255, 255, 0.45) !important;
+    color: #fff !important;
+  }
+
+  /* Phase 2 · 20 directors — premium field-volume cell */
+  .field-volume-stats .fv-cell--phase2-premium {
+    background: linear-gradient(145deg, #000510 0%, #002244 52%, #063558 100%) !important;
+    border-right-color: rgba(212, 168, 75, 0.25) !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    position: relative;
+  }
+
+  .field-volume-stats .fv-cell--phase2-premium::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(212, 168, 75, 0.16) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .field-volume-stats .fv-cell--phase2-premium .fv-num {
+    color: #fff !important;
+    font-size: 44px !important;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+  }
+
+  .field-volume-stats .fv-cell--phase2-premium .fv-label {
+    color: rgba(255, 255, 255, 0.9) !important;
+    position: relative;
+    z-index: 1;
+  }
+
+  .field-volume-stats .fv-cell--phase2-premium .fv-label strong {
+    color: #d4a84b !important;
+  }
+
+  /* Standalone Phase 2 diagram (methodology page) */
+  .p2-method-illu-wrap {
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin: 0 0 18px;
+    box-shadow: 0 20px 48px -16px rgba(0, 34, 68, 0.16);
+  }
+
+  .p2-method-illu-wrap .p2-proc-illu {
+    min-height: 260px;
+  }
+}

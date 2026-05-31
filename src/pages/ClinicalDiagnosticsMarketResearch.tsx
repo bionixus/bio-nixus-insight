@@ -146,7 +146,10 @@ export default function ClinicalDiagnosticsMarketResearch() {
             </div>
             <div className="cd-phases mb-8">
               {phaseOverview.map((p) => (
-                <div key={p.id} className="cd-phase">
+                <div
+                  key={p.id}
+                  className={p.id === 'phase-2' ? 'cd-phase cd-phase--qual' : 'cd-phase'}
+                >
                   <div className="cd-phase-num">{p.label}</div>
                   <h3 className="text-lg font-[family-name:var(--cd-serif)]">{p.title}</h3>
                   <p className="text-xs text-[#6B7684] my-2">{p.duration}</p>
@@ -160,16 +163,17 @@ export default function ClinicalDiagnosticsMarketResearch() {
             </div>
             <div className="cd-fv-grid">
               {fieldVolumeStats.map((s) => (
-                <div key={s.label} className="cd-fv-cell">
+                <div
+                  key={s.label}
+                  className={'premium' in s && s.premium ? 'cd-fv-cell cd-fv-cell--phase2' : 'cd-fv-cell'}
+                >
                   <div className="cd-fv-num">{s.value}</div>
-                  <div className="text-xs font-semibold uppercase mt-2">{s.label}</div>
-                  <div className="text-[11px] text-[#6B7684] mt-1">{s.detail}</div>
+                  <div className="cd-fv-label">{s.label}</div>
+                  <div className="cd-fv-detail">{s.detail}</div>
                 </div>
               ))}
             </div>
-            <div className="mt-10">
-              <ProcurementFlowDiagram />
-            </div>
+            <ProcurementFlowDiagram />
           </section>
 
           <section className="cd-page cd-page--break">

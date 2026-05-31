@@ -30,6 +30,8 @@ const SOURCE_COPY_OUT = path.join(
 const PUBLIC_OUT = path.join(root, 'public/conf/clinical-diagnostics-market-assessment-proposal.html');
 const REGISTER_URL = 'https://www.bionixus.com/clinical-diagnostics-proposal-request';
 const OFFERING_URL = 'https://www.bionixus.com/clinical-diagnostics-market-research';
+const SCREEN_CSS_PATH = path.join(__dirname, 'clinical-diagnostics-proposal-screen.css');
+const PHASE2_ILLU_PATH = path.join(__dirname, 'data/proposals/phase2-procurement-illustration.html');
 
 function resolveSourcePath() {
   if (process.env.SOURCE && fs.existsSync(process.env.SOURCE)) {
@@ -54,14 +56,14 @@ function stripPricingSection(html) {
     return html;
   }
   const ctaPage = `
-<section class="page page--closing" id="request-proposal">
+<section class="page page--closing page--register-cta" id="request-proposal">
 
   <div class="page-rule">
     <div class="page-rule-text">08 · Full proposal</div>
   </div>
 
   <div class="section-num">06 — Request the complete programme document</div>
-  <h2 class="section-title">Register for the<br><em>full market assessment proposal.</em></h2>
+  <h2 class="section-title" style="color:#fff;">Register for the<br><em>full market assessment proposal.</em></h2>
   <p class="section-lede">
     The complete McKinsey-style deck — methodology, field matrices, timeline, team roster, deliverable architecture, and indicative analytics — is available to qualified clinical diagnostics sponsors. <strong>Pricing and commercial terms are not published online</strong>; they are shared after registration and a short alignment call.
   </p>
@@ -113,6 +115,40 @@ function redactClientNames(html) {
     .replace(/tiers <strong>Section 8<\/strong>/gi, 'tiers in the statement of work');
 }
 
+function injectScreenStyles(html) {
+  if (!fs.existsSync(SCREEN_CSS_PATH)) return html;
+  const screenCss = fs.readFileSync(SCREEN_CSS_PATH, 'utf8');
+  const tag = `<style id="bnx-screen-responsive">\n${screenCss}\n</style>`;
+  if (html.includes('id="bnx-screen-responsive"')) return html;
+  if (html.includes('</head>')) {
+    return html.replace('</head>', `${tag}\n</head>`);
+  }
+  return `${tag}\n${html}`;
+}
+
+function enhancePhase2Presentation(html) {
+  html = html.replace(
+    /<div class="fv-cell">\s*<div class="fv-num">20<\/div>\s*<div class="fv-label">Phase 2 · Qualitative procurement<br><strong>10<\/strong> \+ <strong>10<\/strong> · public \+ private<\/div>\s*<\/div>/,
+    `<div class="fv-cell fv-cell--phase2-premium">
+      <div class="fv-num">20</div>
+      <div class="fv-label">Phase 2 · Qualitative procurement<br><strong>10</strong> + <strong>10</strong> · public + private</div>
+    </div>`,
+  );
+
+  if (html.includes('class="p2-method-illu-wrap"') || !fs.existsSync(PHASE2_ILLU_PATH)) {
+    return html;
+  }
+
+  const snippet = fs.readFileSync(PHASE2_ILLU_PATH, 'utf8').trim();
+  const anchor =
+    '</div>\n\n  <div class="sub-subhead">Phase 1A — Hospital &amp; lab branches (core quantitative sample: 50 total)</div>';
+  if (!html.includes(anchor)) {
+    console.warn('Phase 2 illustration anchor not found; skipping diagram injection.');
+    return html;
+  }
+  return html.replace(anchor, `</div>\n\n${snippet}\n\n  <div class="sub-subhead">Phase 1A — Hospital &amp; lab branches (core quantitative sample: 50 total)</div>`);
+}
+
 function injectStickyCta(html) {
   const bar = `
 <div id="bnx-proposal-cta" style="position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#002244;color:#fff;padding:12px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;font-family:Barlow,sans-serif;font-size:13px;box-shadow:0 -4px 24px rgba(0,34,68,.2);">
@@ -147,6 +183,8 @@ function writePublicDeckFrom(sourcePath) {
   let html = fs.readFileSync(sourcePath, 'utf8');
   html = redactClientNames(html);
   html = stripPricingSection(html);
+  html = injectScreenStyles(html);
+  html = enhancePhase2Presentation(html);
   html = injectStickyCta(html);
   fs.mkdirSync(path.dirname(PUBLIC_OUT), { recursive: true });
   fs.writeFileSync(PUBLIC_OUT, html, 'utf8');

@@ -162,41 +162,143 @@ export function EvidenceMixDiagram() {
 
 export function ProcurementFlowDiagram() {
   return (
-    <div className="cd-diagram-wrap" aria-hidden>
-      <svg viewBox="0 0 440 252" xmlns="http://www.w3.org/2000/svg" className="cd-diagram-svg">
-        <defs>
-          <linearGradient id="cdP2Gold" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#B8862D" />
-            <stop offset="100%" stopColor="#D4A84B" />
-          </linearGradient>
-        </defs>
-        <rect x="96" y="14" width="248" height="26" rx="4" fill="rgba(0,105,163,0.07)" stroke="rgba(0,105,163,0.18)" />
-        <text x="220" y="31" textAnchor="middle" fontSize="8.5" letterSpacing="3" fill="#002244" fillOpacity="0.52">
-          QUALITATIVE PROCUREMENT · PHASE 2
-        </text>
-        <rect x="18" y="54" width="122" height="108" rx="7" fill="#fff" stroke="#002244" strokeOpacity="0.13" />
-        <text x="79" y="74" textAnchor="middle" fontSize="11" fontWeight="600" fill="#002244">
-          KSA
-        </text>
-        <text x="79" y="119" textAnchor="middle" fontSize="8.5" fontWeight="600" fill="#002244">
-          10 director IDIs
-        </text>
-        <rect x="300" y="54" width="122" height="108" rx="7" fill="#fff" stroke="#002244" strokeOpacity="0.13" />
-        <text x="361" y="74" textAnchor="middle" fontSize="11" fontWeight="600" fill="#002244">
-          TR
-        </text>
-        <text x="361" y="119" textAnchor="middle" fontSize="8.5" fontWeight="600" fill="#002244">
-          10 director IDIs
-        </text>
-        <circle cx="220" cy="122" r="48" fill="#fff" stroke="url(#cdP2Gold)" strokeWidth="2" />
-        <text x="220" y="118" textAnchor="middle" fontSize="26" fontStyle="italic" fill="#002244" fillOpacity="0.42">
-          20
-        </text>
-        <text x="220" y="138" textAnchor="middle" fontSize="7.5" letterSpacing="2" fill="#0069A3" fillOpacity="0.62">
-          PROCUREMENT DIRECTORS
-        </text>
-      </svg>
-      <p className="cd-diagram-cap">KSA 10 + TR 10 · convergent synthesis with Phase 1</p>
-    </div>
+    <figure
+      className="cd-p2-proc-premium"
+      aria-label="Phase 2 qualitative procurement: 20 director interviews across KSA and Türkiye"
+    >
+      <div className="cd-p2-proc-premium__canvas" aria-hidden>
+        <svg viewBox="0 0 440 252" xmlns="http://www.w3.org/2000/svg" className="cd-p2-proc-premium__svg">
+          <defs>
+            <linearGradient id="cdP2Gold" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#B8862D" />
+              <stop offset="100%" stopColor="#D4A84B" />
+            </linearGradient>
+            <linearGradient id="cdP2Navy" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#000510" />
+              <stop offset="55%" stopColor="#002244" />
+              <stop offset="100%" stopColor="#0069A3" />
+            </linearGradient>
+            <linearGradient id="cdP2Card" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#ffffff" />
+              <stop offset="100%" stopColor="#f7f9fc" />
+            </linearGradient>
+            <filter id="cdP2Shad" x="-30%" y="-30%" width="160%" height="160%">
+              <feDropShadow dx="0" dy="5" stdDeviation="6" floodColor="#002244" floodOpacity="0.1" />
+            </filter>
+            <marker id="cdP2Arr" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth">
+              <path d="M0 0 L7 3.5 L0 7 Z" fill="#C8963E" fillOpacity="0.78" />
+            </marker>
+          </defs>
+
+          <rect x="96" y="14" width="248" height="26" rx="4" fill="url(#cdP2Navy)" />
+          <text
+            x="220"
+            y="31"
+            textAnchor="middle"
+            fontFamily="var(--cd-mono, 'IBM Plex Mono', monospace)"
+            fontSize="8.5"
+            letterSpacing="3.2"
+            fill="#ffffff"
+            fillOpacity="0.92"
+          >
+            QUALITATIVE PROCUREMENT · PHASE 2
+          </text>
+
+          <g filter="url(#cdP2Shad)">
+            <rect x="18" y="54" width="122" height="108" rx="7" fill="url(#cdP2Card)" stroke="#002244" strokeOpacity="0.13" strokeWidth="1" />
+            <rect x="18" y="54" width="122" height="28" rx="7" fill="rgba(0,34,68,0.04)" />
+            <path d="M18 75 h122" stroke="#002244" strokeOpacity="0.06" />
+          </g>
+          <text x="79" y="74" textAnchor="middle" fontFamily="var(--cd-mono, monospace)" fontSize="11" fontWeight="600" fill="#002244" letterSpacing="2">
+            KSA
+          </text>
+          <text x="79" y="94" textAnchor="middle" fontSize="7.5" fill="#0069A3" fillOpacity="0.85">
+            NUPCO-facing · public + private
+          </text>
+          <rect x="32" y="102" width="94" height="26" rx="3" fill="rgba(200,150,62,0.12)" stroke="rgba(184,134,45,0.35)" strokeWidth="0.75" />
+          <text x="79" y="119" textAnchor="middle" fontSize="8.5" fontWeight="600" fill="#002244">
+            10 director IDIs
+          </text>
+          <text x="79" y="144" textAnchor="middle" fontFamily="var(--cd-mono, monospace)" fontSize="6.5" fill="#002244" fillOpacity="0.38">
+            SCREENED ROLES
+          </text>
+
+          <g filter="url(#cdP2Shad)">
+            <rect x="300" y="54" width="122" height="108" rx="7" fill="url(#cdP2Card)" stroke="#002244" strokeOpacity="0.13" strokeWidth="1" />
+            <rect x="300" y="54" width="122" height="28" rx="7" fill="rgba(0,34,68,0.04)" />
+            <path d="M300 75 h122" stroke="#002244" strokeOpacity="0.06" />
+          </g>
+          <text x="361" y="74" textAnchor="middle" fontFamily="var(--cd-mono, monospace)" fontSize="11" fontWeight="600" fill="#002244" letterSpacing="2">
+            TR
+          </text>
+          <text x="361" y="94" textAnchor="middle" fontSize="7.5" fill="#0069A3" fillOpacity="0.85">
+            EKAP · hospital &amp; chain buyers
+          </text>
+          <rect x="314" y="102" width="94" height="26" rx="3" fill="rgba(200,150,62,0.12)" stroke="rgba(184,134,45,0.35)" strokeWidth="0.75" />
+          <text x="361" y="119" textAnchor="middle" fontSize="8.5" fontWeight="600" fill="#002244">
+            10 director IDIs
+          </text>
+          <text x="361" y="144" textAnchor="middle" fontFamily="var(--cd-mono, monospace)" fontSize="6.5" fill="#002244" fillOpacity="0.38">
+            SCREENED ROLES
+          </text>
+
+          <path
+            d="M132 112 C 154 94 162 100 172 122"
+            fill="none"
+            stroke="url(#cdP2Gold)"
+            strokeWidth="1.65"
+            strokeOpacity="0.68"
+            markerEnd="url(#cdP2Arr)"
+          />
+          <path
+            d="M308 112 C 286 94 278 100 268 122"
+            fill="none"
+            stroke="url(#cdP2Gold)"
+            strokeWidth="1.65"
+            strokeOpacity="0.68"
+            markerEnd="url(#cdP2Arr)"
+          />
+
+          <circle cx="220" cy="122" r="48" fill="#fff" stroke="url(#cdP2Gold)" strokeWidth="2" strokeOpacity="0.58" />
+          <circle cx="220" cy="122" r="38" fill="none" stroke="#002244" strokeOpacity="0.05" />
+          <text
+            x="220"
+            y="118"
+            textAnchor="middle"
+            fontFamily="var(--cd-serif, Georgia, serif)"
+            fontSize="26"
+            fontStyle="italic"
+            fontWeight="500"
+            fill="#002244"
+            fillOpacity="0.42"
+          >
+            20
+          </text>
+          <text x="220" y="138" textAnchor="middle" fontSize="7.5" letterSpacing="2.8" fill="#0069A3" fillOpacity="0.62">
+            PROCUREMENT DIRECTORS
+          </text>
+
+          <rect x="118" y="186" width="204" height="36" rx="4" fill="rgba(0,34,68,0.03)" stroke="rgba(0,34,68,0.1)" strokeWidth="0.75" />
+          <text x="220" y="204" textAnchor="middle" fontSize="7.5" letterSpacing="1.8" fill="#002244" fillOpacity="0.48">
+            ADDENDUM · EXEC / STAKEHOLDER DECK REFRESH
+          </text>
+          <text
+            x="220"
+            y="216"
+            textAnchor="middle"
+            fontFamily="var(--cd-mono, monospace)"
+            fontSize="6.5"
+            letterSpacing="1.5"
+            fill="#0069A3"
+            fillOpacity="0.55"
+          >
+            TRIANGULATES PHASE 1 FIELD · OPTIONAL STREAM
+          </text>
+        </svg>
+      </div>
+      <figcaption className="cd-p2-proc-premium__cap">
+        KSA 10 + TR 10 procurement directors · convergent synthesis with Phase 1 quantitative branches
+      </figcaption>
+    </figure>
   );
 }

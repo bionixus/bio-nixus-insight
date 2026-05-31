@@ -75,7 +75,12 @@ export const phaseOverview = [
 
 export const fieldVolumeStats = [
   { value: '50', label: 'Phase 1 · Core quantitative branches', detail: 'Illustrative core split: 30 KSA · 20 Türkiye' },
-  { value: '20', label: 'Phase 2 · Procurement directors', detail: '10 KSA · 10 Türkiye · public + private' },
+  {
+    value: '20',
+    label: 'Phase 2 · Procurement directors',
+    detail: '10 KSA · 10 Türkiye · public + private',
+    premium: true,
+  },
   { value: '14', label: 'Weeks · Phase 1', detail: 'Kickoff through final report and model handoff' },
 ];
 
