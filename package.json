@@ -7,6 +7,7 @@
     "dev": "node server.js",
     "seo:check": "node scripts/seo-hard-check.mjs",
     "generate-sitemap": "node scripts/generate-sitemap.mjs",
+    "build:clinical-proposal": "node scripts/build-clinical-diagnostics-proposal-html.mjs",
     "verify:market-reports": "node scripts/verify-market-report-word-count.mjs && node scripts/verify-market-report-geography.mjs",
     "verify:market-reports:geography": "node scripts/verify-market-report-geography.mjs",
     "verify:sourced-claims": "node scripts/verify-sourced-claims.mjs",

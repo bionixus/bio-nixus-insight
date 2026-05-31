@@ -4,6 +4,8 @@
  */
 
 export const CLINICAL_DIAGNOSTICS_PATH = '/clinical-diagnostics-market-research';
+export const CLINICAL_DIAGNOSTICS_PROPOSAL_REQUEST_PATH = '/clinical-diagnostics-proposal-request';
+export const CLINICAL_DIAGNOSTICS_PROPOSAL_DECK_PATH = '/clinical-diagnostics-market-assessment-proposal';
 
 export const clinicalDiagnosticsMeta = {
   title: 'Clinical Diagnostics Market Research | QC & Immunohematology | BioNixus',
@@ -233,6 +235,10 @@ export const teamRoster = {
 };
 
 export const relatedLinks = [
+  {
+    to: CLINICAL_DIAGNOSTICS_PROPOSAL_REQUEST_PATH,
+    label: 'Register for the full proposal (no pricing online)',
+  },
   { to: '/healthcare-market-research', label: 'Healthcare market research hub' },
   { to: '/saudi-arabia-medtech-market-research', label: 'MedTech market research — Saudi Arabia' },
   { to: '/uae-medtech-market-research', label: 'MedTech market research — UAE' },

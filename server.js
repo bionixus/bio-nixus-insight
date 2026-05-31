@@ -676,6 +676,19 @@ async function startServer() {
     res.redirect(301, '/clinical-diagnostics-market-research');
   });
 
+  const clinicalDiagnosticsProposalPath = path.resolve(
+    __dirname,
+    isProduction
+      ? path.join('dist/client', 'conf/clinical-diagnostics-market-assessment-proposal.html')
+      : path.join('public', 'conf/clinical-diagnostics-market-assessment-proposal.html'),
+  );
+  app.get('/clinical-diagnostics-market-assessment-proposal/', (_req, res) => {
+    res.redirect(301, '/clinical-diagnostics-market-assessment-proposal');
+  });
+  app.get('/clinical-diagnostics-market-assessment-proposal', (_req, res) => {
+    res.type('html').sendFile(clinicalDiagnosticsProposalPath);
+  });
+
   /** Static comparison page — same pattern as strategic-portfolio. */
   const vsIqviaAbsolutePath = path.resolve(
     __dirname,

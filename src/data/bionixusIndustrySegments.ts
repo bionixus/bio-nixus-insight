@@ -78,7 +78,7 @@ export const SEGMENTS: Record<SegmentSlug, SegmentConfig> = {
     featuredLinks: [
       {
         to: '/clinical-diagnostics-market-research',
-        label: 'Clinical diagnostics — QC & immunohematology (main offering)',
+        label: 'Clinical diagnostics — register for full QC/IH proposal',
       },
       { to: '/healthcare-market-research', label: 'Healthcare market research hub' },
       { to: '/market-research-healthcare', label: 'Healthcare market research services' },

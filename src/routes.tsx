@@ -59,6 +59,8 @@ import PharmaFieldworkSaudiArabia from '@/pages/PharmaFieldworkSaudiArabia';
 import PharmaFieldworkUae from '@/pages/PharmaFieldworkUae';
 import PharmaFieldworkEgypt from '@/pages/PharmaFieldworkEgypt';
 import ClinicalDiagnosticsMarketResearch from '@/pages/ClinicalDiagnosticsMarketResearch';
+import ClinicalDiagnosticsProposalRequest from '@/pages/ClinicalDiagnosticsProposalRequest';
+import ClinicalDiagnosticsProposalDeck from '@/pages/ClinicalDiagnosticsProposalDeck';
 import PatientSupportProgramResearchGcc from '@/pages/PatientSupportProgramResearchGcc';
 import BudgetImpactModelSaudiArabia from '@/pages/BudgetImpactModelSaudiArabia';
 import SpanishMarketAccess from '@/pages/SpanishMarketAccess';
@@ -372,6 +374,14 @@ export const routes: RouteObject[] = [
   {
     path: '/clinical-diagnostics-market-research',
     element: <ClinicalDiagnosticsMarketResearch />,
+  },
+  {
+    path: '/clinical-diagnostics-proposal-request',
+    element: <ClinicalDiagnosticsProposalRequest />,
+  },
+  {
+    path: '/clinical-diagnostics-market-assessment-proposal',
+    element: <ClinicalDiagnosticsProposalDeck />,
   },
   { path: '/b2b-industries', element: <IndustrySegmentPage slug="b2b" /> },
   { path: '/b2c-industries', element: <IndustrySegmentPage slug="b2c" /> },
