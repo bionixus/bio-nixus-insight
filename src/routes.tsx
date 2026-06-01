@@ -46,11 +46,19 @@ import UaeMarketAccessResearch from '@/pages/UaeMarketAccessResearch';
 import KuwaitMarketAccessResearch from '@/pages/KuwaitMarketAccessResearch';
 import QatarMarketAccessResearch from '@/pages/QatarMarketAccessResearch';
 import HealthcareFieldworkMiddleEast from '@/pages/HealthcareFieldworkMiddleEast';
+import HealthcareFieldworkGcc from '@/pages/HealthcareFieldworkGcc';
+import PharmaFieldworkSaudiArabia from '@/pages/PharmaFieldworkSaudiArabia';
+import PharmaFieldworkUae from '@/pages/PharmaFieldworkUae';
 import RealWorldEvidence from '@/pages/RealWorldEvidence';
 import RealWorldEvidenceGcc from '@/pages/RealWorldEvidenceGcc';
 import HeorConsultingSaudiArabia from '@/pages/HeorConsultingSaudiArabia';
 import PatientSupportProgramResearchGcc from '@/pages/PatientSupportProgramResearchGcc';
+import PatientJourneyResearchGcc from '@/pages/PatientJourneyResearchGcc';
+import PatientAdherenceResearchMiddleEast from '@/pages/PatientAdherenceResearchMiddleEast';
 import BudgetImpactModelSaudiArabia from '@/pages/BudgetImpactModelSaudiArabia';
+import UaePricingReimbursementStrategy from '@/pages/UaePricingReimbursementStrategy';
+import SpecialistPhysicianPanelUae from '@/pages/SpecialistPhysicianPanelUae';
+import BrandTrackingPharmaGcc from '@/pages/BrandTrackingPharmaGcc';
 import SpanishMarketAccess from '@/pages/SpanishMarketAccess';
 import GermanSuccessInStartups from '@/pages/GermanSuccessInStartups';
 import ArabicBlogAlsawdyh from '@/pages/ArabicBlogAlsawdyh';
@@ -169,11 +177,19 @@ export const routes: RouteObject[] = [
   { path: '/kuwait-market-access-research', element: <KuwaitMarketAccessResearch /> },
   { path: '/qatar-market-access-research', element: <QatarMarketAccessResearch /> },
   { path: '/healthcare-fieldwork-middle-east', element: <HealthcareFieldworkMiddleEast /> },
+  { path: '/healthcare-fieldwork-gcc', element: <HealthcareFieldworkGcc /> },
+  { path: '/pharma-fieldwork-saudi-arabia', element: <PharmaFieldworkSaudiArabia /> },
+  { path: '/pharma-fieldwork-uae', element: <PharmaFieldworkUae /> },
   { path: '/real-world-evidence', element: <RealWorldEvidence /> },
   { path: '/real-world-evidence-gcc', element: <RealWorldEvidenceGcc /> },
   { path: '/heor-consulting-saudi-arabia', element: <HeorConsultingSaudiArabia /> },
   { path: '/patient-support-program-research-gcc', element: <PatientSupportProgramResearchGcc /> },
+  { path: '/patient-journey-research-gcc', element: <PatientJourneyResearchGcc /> },
+  { path: '/patient-adherence-research-middle-east', element: <PatientAdherenceResearchMiddleEast /> },
   { path: '/budget-impact-model-saudi-arabia', element: <BudgetImpactModelSaudiArabia /> },
+  { path: '/uae-pricing-reimbursement-strategy', element: <UaePricingReimbursementStrategy /> },
+  { path: '/specialist-physician-panel-uae', element: <SpecialistPhysicianPanelUae /> },
+  { path: '/brand-tracking-pharma-gcc', element: <BrandTrackingPharmaGcc /> },
   {
     path: '/quantitative-healthcare-market-research',
     element: <QuantitativeHealthcareMarketResearchGuide />,
