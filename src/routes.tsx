@@ -59,6 +59,9 @@ import BudgetImpactModelSaudiArabia from '@/pages/BudgetImpactModelSaudiArabia';
 import UaePricingReimbursementStrategy from '@/pages/UaePricingReimbursementStrategy';
 import SpecialistPhysicianPanelUae from '@/pages/SpecialistPhysicianPanelUae';
 import BrandTrackingPharmaGcc from '@/pages/BrandTrackingPharmaGcc';
+import CommercialEffectivenessPharmaMiddleEast from '@/pages/CommercialEffectivenessPharmaMiddleEast';
+import DiabetesMarketResearchUae from '@/pages/DiabetesMarketResearchUae';
+import RespiratoryMarketAccessGcc from '@/pages/RespiratoryMarketAccessGcc';
 import SpanishMarketAccess from '@/pages/SpanishMarketAccess';
 import GermanSuccessInStartups from '@/pages/GermanSuccessInStartups';
 import ArabicBlogAlsawdyh from '@/pages/ArabicBlogAlsawdyh';
@@ -190,6 +193,9 @@ export const routes: RouteObject[] = [
   { path: '/uae-pricing-reimbursement-strategy', element: <UaePricingReimbursementStrategy /> },
   { path: '/specialist-physician-panel-uae', element: <SpecialistPhysicianPanelUae /> },
   { path: '/brand-tracking-pharma-gcc', element: <BrandTrackingPharmaGcc /> },
+  { path: '/commercial-effectiveness-pharma-middle-east', element: <CommercialEffectivenessPharmaMiddleEast /> },
+  { path: '/diabetes-market-research-uae', element: <DiabetesMarketResearchUae /> },
+  { path: '/respiratory-market-access-gcc', element: <RespiratoryMarketAccessGcc /> },
   {
     path: '/quantitative-healthcare-market-research',
     element: <QuantitativeHealthcareMarketResearchGuide />,
