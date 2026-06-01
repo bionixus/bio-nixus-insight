@@ -77,6 +77,14 @@ User-agent: FacebookBot
 Allow: /
 
 # ----------------------------------------------------------------------
+# Block internal API endpoints from indexing
+# /api/og-card generates SVG images — not indexable web pages.
+# Blocking prevents these from accumulating in GSC coverage reports.
+# ----------------------------------------------------------------------
+User-agent: *
+Disallow: /api/
+
+# ----------------------------------------------------------------------
 # Sitemap
 # ----------------------------------------------------------------------
 Sitemap: https://www.bionixus.com/sitemap.xml
