@@ -752,6 +752,33 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
                       Real world evidence GCC for launch and access strategy
                     </h3>
                   </Link>
+                  <Link
+                    to="/healthcare-fieldwork-gcc"
+                    className="rounded-xl border border-border bg-card p-4 hover:border-primary/40 hover:shadow-sm transition-all"
+                  >
+                    <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Execution Resource</p>
+                    <h3 className="text-sm font-semibold text-foreground">
+                      Healthcare fieldwork GCC for specialist recruitment
+                    </h3>
+                  </Link>
+                  <Link
+                    to="/pharma-fieldwork-saudi-arabia"
+                    className="rounded-xl border border-border bg-card p-4 hover:border-primary/40 hover:shadow-sm transition-all"
+                  >
+                    <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Country Resource</p>
+                    <h3 className="text-sm font-semibold text-foreground">
+                      Pharma fieldwork Saudi Arabia for HCP studies
+                    </h3>
+                  </Link>
+                  <Link
+                    to="/pharma-fieldwork-uae"
+                    className="rounded-xl border border-border bg-card p-4 hover:border-primary/40 hover:shadow-sm transition-all"
+                  >
+                    <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Country Resource</p>
+                    <h3 className="text-sm font-semibold text-foreground">
+                      Pharma fieldwork UAE for quantitative healthcare studies
+                    </h3>
+                  </Link>
                 </div>
               </div>
             </div>

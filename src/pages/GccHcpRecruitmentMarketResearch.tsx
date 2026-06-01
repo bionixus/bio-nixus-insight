@@ -13,6 +13,9 @@ export default function GccHcpRecruitmentMarketResearch() {
         { to: '/bionixus-market-research-middle-east', label: 'Back to Middle East pillar', primary: true },
         { to: '/healthcare-fieldwork-middle-east', label: 'Healthcare fieldwork Middle East', primary: true },
         { to: '/quantitative-healthcare-market-research', label: 'See quantitative guide' },
+        { to: '/specialist-physician-panel-uae', label: 'Specialist physician panel UAE' },
+        { to: '/pharma-fieldwork-saudi-arabia', label: 'Pharma fieldwork Saudi Arabia' },
+        { to: '/pharma-fieldwork-uae', label: 'Pharma fieldwork UAE' },
         { to: '/contact', label: 'Request HCP recruitment scope' },
       ]}
       bullets={[

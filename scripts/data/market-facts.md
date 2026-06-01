@@ -58,9 +58,11 @@ Last reviewed: 2025-05-22
 | Fact | Figure | Source | Year |
 |------|--------|--------|------|
 | Pharma market value | ~$1.5 billion | Fitch Solutions / BMI | 2025 |
-| Growth rate | 5–6% CAGR | Fitch Solutions / BMI | 2025 |
-| Population | 4.9M+ | PACI | 2024 |
-| Key regulator | KDFA (Kuwait Drug & Food Authority) | — | — |
+| Growth rate (CAGR) | ~6–7% CAGR (2024-2028) | Fitch Solutions / BMI | 2025 |
+| Population | 4.9M | PACI | 2024 |
+| Key regulator | MOPH (Ministry of Public Health Kuwait) | — | — |
+| Payer context | Government-funded universal healthcare; formulary managed by MOPH Central Medical Stores (CMS) | — | — |
+| Expatriate share | ~70%+ of residents are non-nationals | PACI | 2024 |
 
 ---
 

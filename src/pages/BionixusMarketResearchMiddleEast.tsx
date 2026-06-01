@@ -504,6 +504,15 @@ const BionixusMarketResearchMiddleEast = () => {
               <Link to="/patient-support-program-research-gcc" className="text-sm text-primary hover:underline">
                 Patient support program research GCC
               </Link>
+              <Link to="/brand-tracking-pharma-gcc" className="text-sm text-primary hover:underline">
+                Brand tracking pharma GCC
+              </Link>
+              <Link to="/commercial-effectiveness-pharma-middle-east" className="text-sm text-primary hover:underline">
+                Commercial effectiveness pharma Middle East
+              </Link>
+              <Link to="/patient-journey-research-gcc" className="text-sm text-primary hover:underline">
+                Patient journey research GCC
+              </Link>
             </div>
           </div>
         </section>
