@@ -19,6 +19,7 @@ import { inferLegacyCluster } from './legacy-blog-internal-links.mjs';
 /** Slugs with curated local HTML in scripts/data/*. */
 export const LOCAL_BODY_FILES = {
   'top-healthcare-market-research-companies-uae': 'top-healthcare-market-research-companies-uae-body.html',
+  'top-healthcare-market-research-companies-kuwait': 'top-healthcare-market-research-companies-kuwait-body.html',
   'top-healthcare-market-research-firms-saudi-arabia': 'top-healthcare-market-research-firms-saudi-arabia-body.html',
   'top-market-research-companies-egypt-2026': 'top-market-research-companies-egypt-2026-body.html',
   'digital-therapeutics-regulation-mena-markets': 'digital-therapeutics-mena-body.html',

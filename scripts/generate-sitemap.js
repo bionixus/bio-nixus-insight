@@ -115,6 +115,7 @@ const STATIC_ROUTES = [
   '/blog/regional-crisis-impact-middle-east-economies-healthcare-2026',
   '/blog/digital-therapeutics-regulation-mena-markets',
   '/blog/top-healthcare-market-research-companies-uae',
+  '/blog/top-healthcare-market-research-companies-kuwait',
   '/blog/top-healthcare-market-research-firms-saudi-arabia',
   '/blog/top-market-research-companies-egypt-2026',
   '/ar/blog',

@@ -43,6 +43,7 @@ export const LEGACY_SLUG_CLUSTERS = {
   'oncology-uae-2026-cancer-care-outlook': 'uae',
   'quantitative-healthcare-market-research-uae': 'uae',
   'top-healthcare-market-research-companies-uae': 'uae',
+  'top-healthcare-market-research-companies-kuwait': 'kuwait',
   'kuwait-healthcare-market-trends-2026': 'kuwait',
   'healthcare-overview-kuwait-market-2026': 'kuwait',
   'drug-registration-kuwait-pharma-guide': 'kuwait',
@@ -91,6 +92,7 @@ export const LEGACY_SLUG_TITLES = {
   'emea-jca-market-access-update-2026': 'EMEA joint HTA (JCA) update 2026',
   'digital-therapeutics-regulation-mena-markets': 'digital therapeutics regulation in MENA',
   'top-healthcare-market-research-companies-uae': 'top UAE healthcare market research companies',
+  'top-healthcare-market-research-companies-kuwait': 'top Kuwait healthcare market research companies',
   'top-healthcare-market-research-firms-saudi-arabia': 'top Saudi healthcare research firms',
   'quantitative-healthcare-market-research-uae': 'quantitative healthcare research in the UAE',
   'pharmaceutical-market-entry-saudi-arabia-2026-guide': 'Saudi Arabia pharma market entry guide',
@@ -209,7 +211,11 @@ export const CLUSTER_RELATED_SLUGS = {
     'oncology-uae-2026-cancer-care-outlook',
     'baxfendy-baxdrostat-hypertension-fda-2026',
   ],
-  kuwait: ['kuwait-healthcare-market-trends-2026', 'healthcare-overview-kuwait-market-2026'],
+  kuwait: [
+    'kuwait-healthcare-market-trends-2026',
+    'healthcare-overview-kuwait-market-2026',
+    'top-healthcare-market-research-companies-kuwait',
+  ],
   egypt: ['healthcare-overview-egypt-market-2026', 'top-market-research-companies-egypt-2026'],
   access: [
     'pharmacoeconomics-gcc-practical-guide',
