@@ -1256,6 +1256,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.bionixus.com/real-world-data-healthcare-middle-east</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/cost-effectiveness-analysis-gcc</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.bionixus.com/resources</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>

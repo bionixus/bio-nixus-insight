@@ -98,6 +98,9 @@ import CountryPage from '@/pages/healthcare-research/CountryPage';
 import TherapyPage from '@/pages/healthcare-research/TherapyPage';
 import ServicePage from '@/pages/healthcare-research/ServicePage';
 
+const RealWorldDataHealthcareMiddleEast = lazy(() => import('@/pages/RealWorldDataHealthcareMiddleEast'));
+const CostEffectivenessAnalysisGcc = lazy(() => import('@/pages/CostEffectivenessAnalysisGcc'));
+
 const AdminDashboard = lazy(() => import('@/pages/AdminDashboard'));
 const AdminLogin = lazy(() => import('@/pages/AdminLogin'));
 const AdminImportSubscribers = lazy(() => import('@/pages/AdminImportSubscribers'));
@@ -185,6 +188,8 @@ export const routes: RouteObject[] = [
   { path: '/pharma-fieldwork-uae', element: <PharmaFieldworkUae /> },
   { path: '/real-world-evidence', element: <RealWorldEvidence /> },
   { path: '/real-world-evidence-gcc', element: <RealWorldEvidenceGcc /> },
+  { path: '/real-world-data-healthcare-middle-east', element: suspensePage(<RealWorldDataHealthcareMiddleEast />) },
+  { path: '/cost-effectiveness-analysis-gcc', element: suspensePage(<CostEffectivenessAnalysisGcc />) },
   { path: '/heor-consulting-saudi-arabia', element: <HeorConsultingSaudiArabia /> },
   { path: '/patient-support-program-research-gcc', element: <PatientSupportProgramResearchGcc /> },
   { path: '/patient-journey-research-gcc', element: <PatientJourneyResearchGcc /> },
