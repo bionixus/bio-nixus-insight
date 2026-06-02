@@ -22,6 +22,8 @@ type ReportPremiumHeroProps = {
   badges?: string[];
   metaLinks?: ReactNode;
   stats?: ReportHeroStat[];
+  /** Caption shown under the stat chips. Pass '' to hide (e.g. on service pages where the chips are operational, not market sizing). */
+  statsCaption?: string;
 };
 
 export function ReportPremiumHero({
@@ -35,6 +37,7 @@ export function ReportPremiumHero({
   badges = ['Published by BioNixus', 'Updated May 2026', 'Open access'],
   metaLinks,
   stats,
+  statsCaption = 'Market sizing: BioNixus market analysis, 2026.',
 }: ReportPremiumHeroProps) {
   const heroRef = useScrollReveal<HTMLElement>({ stagger: 90, threshold: 0.08 });
 
@@ -99,17 +102,24 @@ export function ReportPremiumHero({
               className="shadow-xl"
             />
             {stats && stats.length > 0 ? (
-              <div className="grid grid-cols-3 gap-3 mt-4">
-                {stats.map((stat) => (
-                  <div
-                    key={stat.label}
-                    className="rounded-xl border border-border/70 bg-card/90 backdrop-blur-sm px-3 py-3 text-center hover-lift"
-                  >
-                    <p className="text-lg md:text-xl font-display font-bold text-primary tabular-nums">{stat.value}</p>
-                    <p className="text-[10px] md:text-xs text-muted-foreground mt-1 leading-snug">{stat.label}</p>
-                  </div>
-                ))}
-              </div>
+              <>
+                <div className="grid grid-cols-3 gap-3 mt-4">
+                  {stats.map((stat) => (
+                    <div
+                      key={stat.label}
+                      className="rounded-xl border border-border/70 bg-card/90 backdrop-blur-sm px-3 py-3 text-center hover-lift"
+                    >
+                      <p className="text-lg md:text-xl font-display font-bold text-primary tabular-nums">{stat.value}</p>
+                      <p className="text-[10px] md:text-xs text-muted-foreground mt-1 leading-snug">{stat.label}</p>
+                    </div>
+                  ))}
+                </div>
+                {statsCaption ? (
+                  <p className="text-[10px] md:text-xs text-muted-foreground/75 mt-2.5 text-center italic">
+                    {statsCaption}
+                  </p>
+                ) : null}
+              </>
             ) : null}
           </div>
         </div>

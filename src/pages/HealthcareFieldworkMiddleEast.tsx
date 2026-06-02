@@ -1,102 +1,60 @@
-import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
-import { ExecutiveDecisionBlock, PremiumHero, ProofMetricGrid } from '@/components/page/PremiumPageSections';
-
-const pageUrl = 'https://www.bionixus.com/healthcare-fieldwork-middle-east';
+import StrategicServicePage from '@/pages/templates/StrategicServicePage';
 
 export default function HealthcareFieldworkMiddleEast() {
   return (
-    <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>Healthcare Fieldwork Middle East | BioNixus</title>
-        <meta
-          name="description"
-          content="Healthcare fieldwork in the Middle East with specialist recruitment, quality controls, and compliant execution for pharmaceutical market research."
-        />
-        <link rel="canonical" href={pageUrl} />
-      </Helmet>
-      <Navbar />
-      <main>
-        <BreadcrumbNav items={[{ name: 'Home', href: '/' }, { name: 'Healthcare Fieldwork Middle East', href: '/healthcare-fieldwork-middle-east' }]} />
-        <PremiumHero
-          h1="Healthcare Fieldwork Middle East"
-          intro="BioNixus runs healthcare fieldwork across GCC and wider Middle East markets with role validation, incidence-aware sampling, and audit-ready governance from screener to final dataset."
-          links={[
-            { to: '/gcc-hcp-recruitment-market-research', label: 'GCC HCP recruitment standards' },
-            { to: '/real-world-evidence-gcc', label: 'Real world evidence GCC' },
-            { to: '/quantitative-healthcare-market-research', label: 'Quantitative guide framework' },
-            { to: '/contact', label: 'Request fieldwork scope' },
-          ]}
-        />
-        <ExecutiveDecisionBlock
-          heading="Fieldwork decision framework"
-          points={[
-            {
-              title: 'Why it matters',
-              body: 'Weak field operations undermine strategic confidence even when analytical models are strong.',
-            },
-            {
-              title: 'What the evidence says',
-              body: 'Role verification and quota telemetry are the strongest predictors of downstream data quality.',
-            },
-            {
-              title: 'What to do next',
-              body: 'Lock respondent architecture first, then run daily quality funnel governance during active fieldwork.',
-            },
-          ]}
-        />
-        <ProofMetricGrid
-          heading="Field quality performance snapshot"
-          metrics={[
-            {
-              label: 'Qualified completion',
-              value: '26-35%',
-              detail: 'Observed benchmark range by GCC market for high-integrity specialist cohorts.',
-            },
-            {
-              label: 'QC readiness',
-              value: 'Audit-ready',
-              detail: 'Validation and exclusion logic remain transparent from screener to final base.',
-            },
-            {
-              label: 'Operational cadence',
-              value: 'Daily controls',
-              detail: 'Quota and quality checkpoints support active correction before endline risk appears.',
-            },
-          ]}
-        />
-        <section className="section-padding py-6">
-          <div className="container-wide max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-4 mb-8">
-              <article className="rounded-xl border border-border bg-card p-5">
-                <h2 className="font-semibold text-foreground mb-2">Fieldwork quality controls</h2>
-                <p className="text-sm text-muted-foreground">
-                  Duplicate checks, eligibility verification, and quality-funnel governance across quant and qual projects.
-                </p>
-              </article>
-              <article className="rounded-xl border border-border bg-card p-5">
-                <h2 className="font-semibold text-foreground mb-2">Specialist recruitment depth</h2>
-                <p className="text-sm text-muted-foreground">
-                  Access to physicians, pharmacists, payer-facing stakeholders, and institutional decision contributors.
-                </p>
-              </article>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              <Link to="/gcc-hcp-recruitment-market-research" className="rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground">
-                GCC HCP recruitment standards
-              </Link>
-              <Link to="/contact" className="rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted">
-                Request fieldwork scope
-              </Link>
-            </div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </div>
+    <StrategicServicePage
+      title="Healthcare Fieldwork Middle East | BioNixus"
+      description="Healthcare fieldwork in the Middle East with specialist recruitment, quality controls, and compliant execution for pharmaceutical market research."
+      canonicalUrl="https://www.bionixus.com/healthcare-fieldwork-middle-east"
+      breadcrumbLabel="Healthcare Fieldwork Middle East"
+      h1="Healthcare Fieldwork Middle East"
+      serviceType="Healthcare market research fieldwork"
+      areaServed={['Saudi Arabia', 'United Arab Emirates', 'Egypt', 'Kuwait', 'Qatar', 'GCC']}
+      intro="BioNixus runs healthcare fieldwork across GCC and wider Middle East markets with role validation, incidence-aware sampling, and audit-ready governance from screener to final dataset."
+      links={[
+        { to: '/gcc-hcp-recruitment-market-research', label: 'GCC HCP recruitment standards', primary: true },
+        { to: '/real-world-evidence-gcc', label: 'Real-world evidence in the GCC', primary: true },
+        { to: '/quantitative-healthcare-market-research', label: 'Quantitative research framework' },
+        { to: '/qualitative-market-research', label: 'Qualitative market research' },
+        { to: '/market-research-healthcare', label: 'Healthcare market research services' },
+        { to: '/contact', label: 'Request fieldwork scope' },
+      ]}
+      bullets={[
+        'Specialist recruitment depth — physicians, pharmacists, payer-facing stakeholders, and institutional decision contributors.',
+        'Fieldwork quality controls — duplicate checks, eligibility verification, and quality-funnel governance across quant and qual.',
+        'Audit-ready validation and exclusion logic kept transparent from screener to final base.',
+      ]}
+      decisionPoints={[
+        {
+          title: 'Field quality is strategic risk',
+          body: 'Weak field operations quietly undermine strategic confidence even when the analytical model is strong. The dataset can only be as good as the fieldwork that produced it.',
+        },
+        {
+          title: 'Verification predicts data quality',
+          body: 'Role verification and quota telemetry are the strongest leading indicators of downstream data quality — far more reliable than completion counts alone.',
+        },
+        {
+          title: 'Govern live, not at the end',
+          body: 'Lock the respondent architecture first, then run daily quality-funnel governance during active fieldwork so issues are corrected before endline rather than discovered after it.',
+        },
+      ]}
+      metrics={[
+        {
+          label: 'Qualified completion',
+          value: '26-35%',
+          detail: 'Observed benchmark range by GCC market for high-integrity specialist cohorts.',
+        },
+        {
+          label: 'QC readiness',
+          value: 'Audit-ready',
+          detail: 'Validation and exclusion logic remain transparent from screener to final base.',
+        },
+        {
+          label: 'Operational cadence',
+          value: 'Daily controls',
+          detail: 'Quota and quality checkpoints support active correction before endline risk appears.',
+        },
+      ]}
+    />
   );
 }
-

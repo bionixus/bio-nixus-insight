@@ -8,30 +8,32 @@ export default function SaudiPayerMarketAccessResearch() {
       canonicalUrl="https://www.bionixus.com/saudi-payer-market-access-research"
       breadcrumbLabel="Saudi Payer Market Access Research"
       h1="Saudi Payer Market Access Research"
-      intro="Saudi access decisions depend on payer expectations, procurement pathways, and stakeholder sequencing. This page links tactical access research to the Middle East commercial pillar."
+      intro="In Saudi Arabia, reimbursement runs through centralised NUPCO procurement and institutional formularies at MOH and NGHA, with SFDA pricing in the background. The value evidence that wins is the evidence those committees actually weigh — not a global dossier ported in. BioNixus diagnoses what each payer segment expects, maps the procurement pathway, and prioritises the objections worth answering first."
       links={[
         { to: '/bionixus-market-research-middle-east', label: 'Open Middle East pillar', primary: true },
         { to: '/healthcare-market-research-agency-gcc', label: 'Healthcare market research agency GCC', primary: true },
         { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Healthcare market research company in Saudi Arabia' },
         { to: '/contact', label: 'Scope market access research' },
+        { to: '/market-research-healthcare', label: 'Healthcare market research services' },
+        { to: '/methodology', label: 'Our research methodology' },
       ]}
       bullets={[
-        'Value evidence threshold diagnostics by payer segment.',
-        'Institutional procurement pathway mapping.',
-        'Access barrier prioritization and mitigation planning.',
+        'Evidence-threshold diagnostics by payer segment, so the dossier answers the questions each committee asks.',
+        'NUPCO and institutional procurement pathway mapping, including tender timing and supply expectations.',
+        'Access-barrier prioritisation with a mitigation plan tied to MOH, NGHA, and private leading groups.',
       ]}
       decisionPoints={[
         {
-          title: 'Why it matters',
-          body: 'Payer and procurement alignment determines reimbursement velocity and launch efficiency in KSA.',
+          title: 'NUPCO is the gate',
+          body: 'Centralised tendering sets price and access for much of the market. Your dossier evidence, supply security, and local-content position decide tender outcomes as much as the clinical story does.',
         },
         {
-          title: 'What the evidence says',
-          body: 'Programs with explicit threshold diagnostics reduce late-stage evidence rework.',
+          title: 'Match evidence to the committee',
+          body: 'Threshold expectations differ across MOH, NGHA, and private payers. Building to the segment that matters for your launch beats submitting one generic value pack everywhere.',
         },
         {
-          title: 'What to do next',
-          body: 'Map payer objections first, align evidence pack, and run role-specific sequencing by institution type.',
+          title: 'Sequence by institution type',
+          body: 'The same product earns access faster when the value narrative is tuned to who is deciding — start where evidence fit and demand are strongest, then expand on the back of a reference win.',
         },
       ]}
       metrics={[

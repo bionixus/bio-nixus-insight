@@ -5,14 +5,12 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
-import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
 import { MarketIntelligenceSections } from '@/components/market-intelligence';
 import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
-  ReportEarlyCtaBar,
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
@@ -121,7 +119,24 @@ const SingaporeHealthcareMarketReport = () => (
           <p className="text-muted-foreground leading-relaxed">For GCC/MENA intelligence, see our <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC Pharmaceutical Market Report 2026</Link>.</p>
         </div>
       </section>
-      <FAQSection sectionId={FAQ_SECTION_ID} title="Singapore healthcare market 2026 — HSA, ACE, 3Ms, medical tourism, and GCC expansion FAQ" items={REPORT_FAQ_ITEMS} className="bg-muted/30" />        </ReportContentWithAside>
+              <MarketIntelligenceSections marketSlug="singapore" countryName="Singapore" variant="healthcare" />
+
+        <section className="section-padding" id="related-intelligence">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Related BioNixus market intelligence</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              BioNixus runs healthcare and pharmaceutical market research across Asia-Pacific. Benchmark Singapore against our{' '}
+              <Link to="/japan-healthcare-market-report" className="text-primary hover:underline font-medium">Japan healthcare market report</Link>{' '}and{' '}
+              <Link to="/australia-healthcare-market-report" className="text-primary hover:underline font-medium">Australia healthcare market report</Link>, or start from the{' '}
+              <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}
+              <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>. For therapy-segmented demand and access analysis, see our{' '}
+              <Link to="/pharmaceutical-therapy-areas" className="text-primary hover:underline font-medium">pharmaceutical therapy-area coverage</Link>.
+            </p>
+            <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
+          </div>
+        </section>
+
+        <FAQSection sectionId={FAQ_SECTION_ID} title="Singapore healthcare market 2026 — HSA, ACE, 3Ms, medical tourism, and GCC expansion FAQ" items={REPORT_FAQ_ITEMS} className="bg-muted/30" />        </ReportContentWithAside>
       <ReportConsultationBand config={REPORT_CONVERSION} />
         </main>
     <Footer />

@@ -5,14 +5,12 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
-import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
 import { MarketIntelligenceSections } from '@/components/market-intelligence';
 import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
-  ReportEarlyCtaBar,
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
@@ -89,14 +87,7 @@ const UkMedicalDevicesMarketReport = () => (
       title="UK Medical Devices Market Report 2026 | UKCA, MHRA & NHS Supply Chain | BioNixus"
       description="UK medical devices market at GBP 12–13B in 2026. UKCA marking post-Brexit, MHRA registration, NHS Supply Chain procurement, and BioNixus intelligence for UK medtech companies expanding to GCC and MENA."
       canonical="https://www.bionixus.com/uk-medical-devices-market-report"
-      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "UK Medical Devices Market Report 2026 | UKCA, MHRA & NHS Supply Chain | BioNixus",
-    pageMetaDescription: "UK medical devices market at GBP 12–13B in 2026. UKCA marking post-Brexit, MHRA registration, NHS Supply Chain procurement, and BioNixus intelligence for UK medtech companies expanding to GCC and MENA.",
-    countryName: "United Kingdom",
-    marketSlug: "uk",
-    publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
-  })]}
+      jsonLd={jsonLd}
     />
       <ReportReadingProgress progressId="report-rp-uk-medical-devices-market-report" />
       <main>
@@ -149,7 +140,22 @@ const UkMedicalDevicesMarketReport = () => (
           </div>
         </div>
       </section>
-      <FAQSection sectionId={FAQ_SECTION_ID} title="UK medical devices market 2026 — UKCA, MHRA, NHS Supply Chain, and procurement FAQ" items={REPORT_FAQ_ITEMS} className="bg-muted/30" />        </ReportContentWithAside>
+              <section className="section-padding" id="related-intelligence">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Related BioNixus market intelligence</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              BioNixus runs medical device and MedTech market research across Europe. Compare the UK device market with our{' '}
+              <Link to="/germany-medical-devices-market-report" className="text-primary hover:underline font-medium">Germany medical devices market report</Link>{' '}and{' '}
+              <Link to="/france-medical-devices-market-report" className="text-primary hover:underline font-medium">France medical devices market report</Link>, set it against the{' '}
+              <Link to="/uk-healthcare-market-report" className="text-primary hover:underline font-medium">UK healthcare market report</Link>, or widen the lens with the{' '}
+              <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC medical devices market report</Link>. For methods and global coverage, see the{' '}
+              <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}
+              <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>.
+            </p>
+          </div>
+        </section>
+
+        <FAQSection sectionId={FAQ_SECTION_ID} title="UK medical devices market 2026 — UKCA, MHRA, NHS Supply Chain, and procurement FAQ" items={REPORT_FAQ_ITEMS} className="bg-muted/30" />        </ReportContentWithAside>
       <ReportConsultationBand config={REPORT_CONVERSION} />
         </main>
     <Footer />

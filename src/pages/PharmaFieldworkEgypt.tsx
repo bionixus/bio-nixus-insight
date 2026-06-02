@@ -19,6 +19,8 @@ export default function PharmaFieldworkEgypt() {
         { to: '/healthcare-fieldwork-middle-east', label: 'Healthcare fieldwork Middle East' },
         { to: '/blog/healthcare-overview-egypt-market-2026', label: 'Egypt healthcare market overview' },
         { to: '/contact', label: 'Request Egypt fieldwork scope' },
+        { to: '/market-research-healthcare', label: 'Healthcare market research services' },
+        { to: '/methodology', label: 'Our research methodology' },
       ]}
       bullets={[
         'Physician and pharmacist recruitment across public MOH and private hospital networks.',
@@ -28,16 +30,16 @@ export default function PharmaFieldworkEgypt() {
       ]}
       decisionPoints={[
         {
-          title: 'Why it matters',
-          body: 'Egypt fieldwork quality determines whether sizing and access decisions reflect real prescriber and pharmacy behavior.',
+          title: 'Fieldwork decides the decision',
+          body: 'Egypt fieldwork quality determines whether sizing and access decisions reflect real prescriber and pharmacy behavior across public and private channels.',
         },
         {
-          title: 'What the evidence says',
-          body: 'Early feasibility across Cairo and regional centers reduces failed recruitment and thin payer coverage.',
+          title: 'Cover the channels before you recruit',
+          body: 'Early feasibility across Cairo and regional centers — and across tender-led versus out-of-pocket channels — reduces failed recruitment and thin payer coverage.',
         },
         {
-          title: 'What to do next',
-          body: 'Scope one therapy and one channel decision, then run a four-week Egypt fieldwork pilot before regional scale-up.',
+          title: 'Pilot one channel, then scale',
+          body: 'Scope one therapy and one channel decision, then run a four-week Egypt fieldwork pilot before committing to regional scale-up.',
         },
       ]}
       metrics={[

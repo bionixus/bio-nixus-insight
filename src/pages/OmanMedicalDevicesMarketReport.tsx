@@ -5,14 +5,12 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
-import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
 import { MarketIntelligenceSections } from '@/components/market-intelligence';
 import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
-  ReportEarlyCtaBar,
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
@@ -104,14 +102,7 @@ const OmanMedicalDevicesMarketReport = () => {
         title="Oman Medical Devices Market Report 2026 | MOH Procurement & Royal Hospital Intelligence | BioNixus"
         description="Oman medical devices market at USD 240–280M in 2026. MOH Oman registration, Royal Hospital Muscat procurement intelligence, Vision 2040 healthcare privatization, and BioNixus primary HCP research."
         canonical="https://www.bionixus.com/oman-medical-devices-market-report"
-        jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "Oman Medical Devices Market Report 2026 | MOH Procurement & Royal Hospital Intelligence | BioNixus",
-    pageMetaDescription: "Oman medical devices market at USD 240–280M in 2026. MOH Oman registration, Royal Hospital Muscat procurement intelligence, Vision 2040 healthcare privatization, and BioNixus primary HCP research.",
-    countryName: "Oman",
-    marketSlug: "oman",
-    publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
-  })]}
+        jsonLd={jsonLd}
       />
       <ReportReadingProgress progressId="report-rp-oman-medical-devices-market-report" />
       <main>
@@ -181,6 +172,21 @@ const OmanMedicalDevicesMarketReport = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+                <section className="section-padding" id="related-intelligence">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Related BioNixus market intelligence</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              BioNixus runs medical device and MedTech market research across the GCC. Compare the Oman device market with our{' '}
+              <Link to="/uae-medical-devices-market-report" className="text-primary hover:underline font-medium">UAE medical devices market report</Link>{' '}and{' '}
+              <Link to="/saudi-arabia-medical-devices-market-report" className="text-primary hover:underline font-medium">Saudi Arabia medical devices market report</Link>, set it against the{' '}
+              <Link to="/oman-healthcare-market-report" className="text-primary hover:underline font-medium">Oman healthcare market report</Link>, or widen the lens with the{' '}
+              <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC medical devices market report</Link>. For methods and global coverage, see the{' '}
+              <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}
+              <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>.
+            </p>
           </div>
         </section>
 

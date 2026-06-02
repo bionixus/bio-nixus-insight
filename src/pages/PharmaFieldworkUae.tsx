@@ -19,6 +19,8 @@ export default function PharmaFieldworkUae() {
         { to: '/healthcare-fieldwork-middle-east', label: 'Healthcare fieldwork Middle East' },
         { to: '/blog/abu-dhabi-doh-vs-dubai-dha-formulary-guide', label: 'DOH vs DHA formulary guide' },
         { to: '/contact', label: 'Request UAE fieldwork scope' },
+        { to: '/market-research-healthcare', label: 'Healthcare market research services' },
+        { to: '/methodology', label: 'Our research methodology' },
       ]}
       bullets={[
         'Specialist recruitment across Dubai, Abu Dhabi, and Northern Emirates networks.',
@@ -28,16 +30,16 @@ export default function PharmaFieldworkUae() {
       ]}
       decisionPoints={[
         {
-          title: 'Why it matters',
-          body: 'UAE fieldwork quality determines whether launch and access decisions reflect real emirate-level prescriber and payer behavior.',
+          title: 'Fieldwork decides the decision',
+          body: 'UAE fieldwork quality determines whether launch and access decisions reflect real emirate-level prescriber and payer behavior — or a convenience sample skewed to one city.',
         },
         {
-          title: 'What the evidence says',
-          body: 'Early DHA/DOH feasibility mapping reduces failed recruitment and incomplete insurer coverage.',
+          title: 'Map DHA/DOH access first',
+          body: 'Early DHA and DOH feasibility mapping reduces failed recruitment and incomplete insurer coverage across the emirates that matter for your product.',
         },
         {
-          title: 'What to do next',
-          body: 'Scope one therapy and one emirate decision gate, then run a four-week UAE fieldwork pilot before regional scale-up.',
+          title: 'Pilot one emirate, then scale',
+          body: 'Scope one therapy and one emirate decision gate, then run a four-week UAE fieldwork pilot before committing to regional scale-up.',
         },
       ]}
       metrics={[

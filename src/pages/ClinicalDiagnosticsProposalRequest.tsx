@@ -110,7 +110,7 @@ export default function ClinicalDiagnosticsProposalRequest() {
           ]}
         />
 
-        <div className="cd-document mx-4 md:mx-auto my-8">
+        <div className="cd-document w-full max-w-full mx-auto my-6 sm:my-8">
           <section className="cd-cover">
             <p className="cd-cover-eyebrow">Confidential · Registration</p>
             <h1 className="cd-cover-title">Receive the full market assessment proposal</h1>
@@ -195,7 +195,7 @@ export default function ClinicalDiagnosticsProposalRequest() {
                     <textarea
                       name="message"
                       rows={3}
-                      placeholder="e.g. QC vs IH priority, timeline, competitor focus"
+                      placeholder="e.g. QC vs IH priority, timeline, market focus"
                       className="mt-1 w-full border border-[#D0D6DE] rounded-sm px-3 py-2 text-sm"
                     />
                   </label>

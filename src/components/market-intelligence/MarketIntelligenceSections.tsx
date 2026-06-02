@@ -31,11 +31,16 @@ export function MarketIntelligenceSections({
   const data = MARKET_INTELLIGENCE[marketSlug];
   const kpiRef = useScrollReveal<HTMLElement>({ stagger: 60 });
   const regRef = useScrollReveal<HTMLElement>({ stagger: 80 });
+  const therapyRef = useScrollReveal<HTMLElement>({ stagger: 70 });
   const hospitalRef = useScrollReveal<HTMLElement>({ stagger: 70 });
   const timelineRef = useScrollReveal<HTMLElement>({ stagger: 90 });
+  const diseaseRef = useScrollReveal<HTMLElement>({ stagger: 80 });
 
   if (!data) return null;
 
+  const isDevices = variant === 'medical-devices';
+  // On device reports, drop the pharma-only KPI so the indicator set stays accurate to the device market.
+  const kpis = isDevices ? data.kpis.filter((k) => !/pharmac/i.test(k.label)) : data.kpis;
   const showTherapySegments = variant === 'healthcare' && (data.therapySegments?.length ?? 0) > 0;
   const sourceNotes = [
     ...new Set(
@@ -49,12 +54,12 @@ export function MarketIntelligenceSections({
 
   return (
     <>
-      <section className="py-10 md:py-12" id="key-indicators">
+      <section ref={kpiRef} className="py-10 md:py-12" id="key-indicators">
         <div className="w-full">
           <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(240px,300px)] gap-8 items-start mb-8">
             <div>
               <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-2 sr sr-up sr-line">
-                {countryName} Healthcare Market — Key Indicators 2026
+                {countryName} {isDevices ? 'Medical Devices' : 'Healthcare'} Market — Key Indicators 2026
               </h2>
               <p className="text-sm text-muted-foreground sr sr-up">
                 Macro sizing, payer mix, and procurement signals for commercial and market access teams.
@@ -71,8 +76,8 @@ export function MarketIntelligenceSections({
             </div>
           </div>
 
-          <div ref={kpiRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-            {data.kpis.map((kpi) => (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+            {kpis.map((kpi) => (
               <article
                 key={kpi.label}
                 className="rounded-xl border border-border/70 bg-card p-4 shadow-sm hover-lift sr sr-up"
@@ -105,7 +110,7 @@ export function MarketIntelligenceSections({
                 </tr>
               </thead>
               <tbody>
-                {data.kpis.map((kpi, i) => (
+                {kpis.map((kpi, i) => (
                   <tr key={kpi.label} className={i % 2 === 0 ? 'bg-background' : 'bg-muted/20'}>
                     <td className="px-4 py-3 text-muted-foreground">{kpi.label}</td>
                     <td className="px-4 py-3 font-semibold text-foreground tabular-nums">{kpi.value}</td>
@@ -118,6 +123,7 @@ export function MarketIntelligenceSections({
         </div>
       </section>
 
+      {!isDevices && (
       <section
         ref={regRef}
         className="py-10 md:py-12 rounded-2xl bg-gradient-to-br from-cream to-cream-dark/40 border border-border/50 px-4 md:px-8"
@@ -175,9 +181,10 @@ export function MarketIntelligenceSections({
           </div>
         </div>
       </section>
+      )}
 
       {showTherapySegments ? (
-        <section className="py-10 md:py-12" id="therapy-segments">
+        <section ref={therapyRef} className="py-10 md:py-12" id="therapy-segments">
           <div className="w-full">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-2 sr sr-up sr-line">
               {countryName} Pharmaceutical Market — Top Therapy Areas by Spend 2026
@@ -313,6 +320,7 @@ export function MarketIntelligenceSections({
         </div>
       </section>
 
+      {!isDevices && (
       <section ref={timelineRef} className="py-10 md:py-12" id="access-timeline">
         <div className="w-full">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-2 sr sr-up sr-line">
@@ -341,8 +349,10 @@ export function MarketIntelligenceSections({
           </div>
         </div>
       </section>
+      )}
 
       <section
+        ref={diseaseRef}
         className="py-10 md:py-12 rounded-2xl bg-gradient-to-br from-cream to-background border border-border/50 px-4 md:px-8"
         id="disease-burden"
       >

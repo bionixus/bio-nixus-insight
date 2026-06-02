@@ -8,12 +8,14 @@ export default function GccHcpRecruitmentMarketResearch() {
       canonicalUrl="https://www.bionixus.com/gcc-hcp-recruitment-market-research"
       breadcrumbLabel="GCC HCP Recruitment Market Research"
       h1="Physician Recruitment in Saudi Arabia and GCC"
-      intro="High-quality pharmaceutical evidence in GCC depends on specialist HCP recruitment quality, role validation, and auditable sample governance."
+      intro="A GCC physician study is only as credible as the people who actually answered it. In markets where some specialties number in the dozens, sample quality is the study — not a logistics detail. BioNixus recruits verified specialists across Saudi Arabia and the wider Gulf with role and licence validation, incidence-aware quotas, and a quality funnel that is governed while fieldwork is live, not audited after the fact."
       links={[
         { to: '/bionixus-market-research-middle-east', label: 'Back to Middle East pillar', primary: true },
         { to: '/healthcare-fieldwork-middle-east', label: 'Healthcare fieldwork Middle East', primary: true },
         { to: '/quantitative-healthcare-market-research', label: 'See quantitative guide' },
         { to: '/contact', label: 'Request HCP recruitment scope' },
+        { to: '/market-research-healthcare', label: 'Healthcare market research services' },
+        { to: '/methodology', label: 'Our research methodology' },
       ]}
       bullets={[
         'Role-based screener architecture with incidence-aware planning.',
@@ -22,16 +24,16 @@ export default function GccHcpRecruitmentMarketResearch() {
       ]}
       decisionPoints={[
         {
-          title: 'Why it matters',
-          body: 'Sample integrity determines whether strategic conclusions are defensible in high-stakes launch decisions.',
+          title: 'Sample integrity is the study',
+          body: 'When a launch decision rests on 40 oncologists, who those 40 are matters more than the headline n. Defensible conclusions start with defensible respondents.',
         },
         {
-          title: 'What the evidence says',
-          body: 'Programs with specialty-tier validation outperform panel-volume-only approaches in data confidence.',
+          title: 'Verify the role before you count it',
+          body: 'Licence, practice setting, and specialty checks separate genuine decision-makers from panel filler. Specialty-tier validation beats raw panel volume on every measure of data confidence.',
         },
         {
-          title: 'What to do next',
-          body: 'Lock specialty quotas early and run eligibility checks as an active fieldwork workflow, not an end-stage filter.',
+          title: 'Govern the funnel daily',
+          body: 'Eligibility is an active fieldwork workflow, not an end-stage filter. Quota health, completion, and exclusion logic are monitored live so problems are corrected before they reach the dataset.',
         },
       ]}
       metrics={[

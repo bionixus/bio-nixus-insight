@@ -8,12 +8,14 @@ export default function QatarMarketAccessResearch() {
       canonicalUrl="https://www.bionixus.com/qatar-market-access-research"
       breadcrumbLabel="Market Access Research Qatar"
       h1="Market Access Research Qatar"
-      intro="Qatar market access decisions are shaped by concentrated institutional demand and high evidence standards. BioNixus helps teams prioritize value story, sequencing, and access actions with lower execution risk."
+      intro="Qatar is a small, affluent market where demand concentrates in a handful of institutions and the evidence bar is high. That concentration cuts both ways: access can move quickly when the value story fits, and one weak evidence point is immediately visible. BioNixus maps institutional influence, pressure-tests the value narrative, and sequences engagement so launch teams carry less execution risk into the room."
       links={[
         { to: '/healthcare-market-research-agency-gcc', label: 'Healthcare market research agency GCC', primary: true },
         { to: '/gcc-market-access-guide', label: 'GCC market access guide', primary: true },
         { to: '/market-research-kuwait', label: 'Compare with Kuwait pathway' },
         { to: '/contact', label: 'Request Qatar access scope' },
+        { to: '/market-research-healthcare', label: 'Healthcare market research services' },
+        { to: '/methodology', label: 'Our research methodology' },
       ]}
       bullets={[
         'Institutional stakeholder mapping for launch and access pathways.',
@@ -22,16 +24,16 @@ export default function QatarMarketAccessResearch() {
       ]}
       decisionPoints={[
         {
-          title: 'Why it matters',
-          body: 'Qatar requires precision in evidence quality and institutional sequencing for faster acceptance.',
+          title: 'A concentrated market rewards precision',
+          body: 'With few institutions and a high evidence standard, there is little room for a generic submission. Getting the value story and the data quality right the first time is what moves access.',
         },
         {
-          title: 'What the evidence says',
-          body: 'High-readiness programs combine pathway diagnostics and role-specific value communication.',
+          title: 'Map institutional influence first',
+          body: 'Formulary outcomes in Qatar are shaped by a small set of leading public and private institutions. Knowing who decides — and what they weigh — comes before building the pack.',
         },
         {
-          title: 'What to do next',
-          body: 'Align one decision objective, map institutional influence, and execute with short review loops.',
+          title: 'Short loops beat big decks',
+          body: 'Align on one decision objective, map the influence path, and execute against a 30/60/90 sequence with tight review loops rather than a single oversized evidence push.',
         },
       ]}
       metrics={[

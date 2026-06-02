@@ -5,14 +5,12 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
-import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
 import { MarketIntelligenceSections } from '@/components/market-intelligence';
 import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
-  ReportEarlyCtaBar,
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
@@ -89,14 +87,7 @@ const BrazilMedicalDevicesMarketReport = () => (
       title="Brazil Medical Devices Market Report 2026 | ANVISA Registration, SUS Procurement & Commercial Intelligence | BioNixus"
       description="Brazil medical devices market at USD 12B in 2026 — largest in Latin America. ANVISA Class I–IV registration, SUS public procurement, ANS private sector, import tax dynamics, and BioNixus GCC expansion intelligence."
       canonical="https://www.bionixus.com/brazil-medical-devices-market-report"
-      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "Brazil Medical Devices Market Report 2026 | ANVISA Registration, SUS Procurement & Commercial Intelligence | BioNixus",
-    pageMetaDescription: "Brazil medical devices market at USD 12B in 2026 — largest in Latin America. ANVISA Class I–IV registration, SUS public procurement, ANS private sector, import tax dynamics, and BioNixus GCC expansion intelligence.",
-    countryName: "Brazil",
-    marketSlug: "brazil",
-    publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
-  })]}
+      jsonLd={jsonLd}
     />
       <ReportReadingProgress progressId="report-rp-brazil-medical-devices-market-report" />
       <main>
@@ -128,7 +119,25 @@ const BrazilMedicalDevicesMarketReport = () => (
           <p className="text-muted-foreground leading-relaxed">See also: <Link to="/brazil-healthcare-market-report" className="text-primary hover:underline font-medium">Brazil Healthcare Market Report</Link> and <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC Medical Devices Market Report</Link>.</p>
         </div>
       </section>
-      <FAQSection sectionId={FAQ_SECTION_ID} title="Brazil medical devices market 2026 — ANVISA, SUS procurement, import taxes, and commercial strategy FAQ" items={REPORT_FAQ_ITEMS} className="bg-muted/30" />        </ReportContentWithAside>
+              <MarketIntelligenceSections marketSlug="brazil" countryName="Brazil" variant="medical-devices" />
+
+        <section className="section-padding" id="related-intelligence">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Related BioNixus market intelligence</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              BioNixus runs medical device and MedTech market research across the Americas. Compare the Brazil device market with our{' '}
+              <Link to="/usa-medical-devices-market-report" className="text-primary hover:underline font-medium">USA medical devices market report</Link>{' '}and{' '}
+              <Link to="/canada-medical-devices-market-report" className="text-primary hover:underline font-medium">Canada medical devices market report</Link>, set it against the{' '}
+              <Link to="/brazil-healthcare-market-report" className="text-primary hover:underline font-medium">Brazil healthcare market report</Link>, or widen the lens with the{' '}
+              <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC medical devices market report</Link>. For methods and global coverage, see the{' '}
+              <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}
+              <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>.
+            </p>
+            <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
+          </div>
+        </section>
+
+        <FAQSection sectionId={FAQ_SECTION_ID} title="Brazil medical devices market 2026 — ANVISA, SUS procurement, import taxes, and commercial strategy FAQ" items={REPORT_FAQ_ITEMS} className="bg-muted/30" />        </ReportContentWithAside>
       <ReportConsultationBand config={REPORT_CONVERSION} />
         </main>
     <Footer />

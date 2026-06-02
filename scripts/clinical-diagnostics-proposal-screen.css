@@ -1,4 +1,4 @@
-/* Screen layout — appended to public proposal deck (does not affect print). */
+/* Screen layout — public proposal deck (does not affect print). */
 @media screen {
   html {
     overflow-x: hidden;
@@ -9,48 +9,114 @@
     overflow-x: hidden;
     margin: 0;
     min-height: 100vh;
+    width: 100%;
   }
 
+  /* Full-width document shell */
   .document {
     width: 100%;
-    max-width: min(920px, 100vw);
-    margin: clamp(8px, 2vw, 32px) auto clamp(64px, 12vw, 88px);
+    max-width: 100%;
+    margin: 0 auto calc(56px + env(safe-area-inset-bottom, 0px));
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
     box-sizing: border-box;
+  }
+
+  @media (min-width: 900px) {
+    .document {
+      max-width: min(1180px, 100vw);
+      margin-top: clamp(8px, 1.5vw, 20px);
+      margin-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+      border-radius: 4px;
+      box-shadow: 0 24px 64px -16px rgba(0, 34, 68, 0.14);
+    }
+  }
+
+  /* Drop fixed A4 page heights on screen */
+  .page,
+  .cover,
+  .cover-inner,
+  .page--team-premium,
+  .page--closing,
+  .letter {
+    min-height: auto !important;
+    height: auto !important;
+    max-height: none !important;
   }
 
   .page {
-    min-height: auto !important;
-    padding: clamp(20px, 4.5vw, 48px) clamp(14px, 3.5vw, 56px) !important;
-    box-sizing: border-box;
+    padding: clamp(18px, 4vw, 48px) clamp(12px, 3.5vw, 56px) !important;
     width: 100%;
     overflow-x: hidden;
+    box-sizing: border-box;
   }
 
   .cover {
-    min-height: auto !important;
-    min-height: min(85vh, 920px) !important;
-    padding: clamp(28px, 5vw, 44px) clamp(18px, 4vw, 52px) !important;
+    padding: clamp(24px, 5vw, 48px) clamp(14px, 4vw, 52px) !important;
+    min-height: min(92vh, 900px) !important;
+  }
+
+  .cover-top {
+    flex-wrap: wrap;
+    gap: 12px 16px;
+  }
+
+  .cover-body {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 24px !important;
+  }
+
+  .cover-hero {
+    flex: 1 1 auto !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding-left: clamp(12px, 3vw, 24px) !important;
+  }
+
+  .cover-seal {
+    width: min(148px, 42vw) !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    align-self: center;
   }
 
   .cover-title {
-    font-size: clamp(1.75rem, 6.5vw, 54px) !important;
+    font-size: clamp(1.65rem, 7vw, 54px) !important;
     color: #fff !important;
+    letter-spacing: -0.02em;
   }
 
   .cover-subtitle {
-    max-width: 100%;
-    font-size: clamp(14px, 2.5vw, 16px);
+    max-width: 100% !important;
+    font-size: clamp(13px, 2.8vw, 16px) !important;
   }
 
   .cover-meta {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 10px !important;
+    width: 100%;
   }
 
   @media (min-width: 640px) {
     .cover-meta {
       grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
     }
+  }
+
+  @media (min-width: 900px) {
+    .cover-body {
+      flex-direction: row !important;
+      align-items: center !important;
+    }
+    .cover-seal {
+      margin: 0 !important;
+    }
+  }
+
+  .cover-tag {
+    display: none;
   }
 
   .page-footer {
@@ -60,71 +126,202 @@
     bottom: auto !important;
     margin-top: 28px;
     padding-top: 12px;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   .section-title {
-    font-size: clamp(1.35rem, 4.5vw, 32px) !important;
+    font-size: clamp(1.3rem, 4.8vw, 32px) !important;
     text-wrap: balance;
-  }
-
-  .section-lede {
     max-width: 100%;
-    padding-left: 0;
   }
 
+  .section-lede,
+  .section-lede--blue-grade,
+  .letter-body,
+  .letter-body p,
+  .body,
+  .subhead,
+  .sub-subhead {
+    max-width: 100% !important;
+  }
+
+  .letter-head {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* Grids → single column on narrow screens */
+  .geo-grid,
+  .phases-dual,
+  .phases,
+  .team-premium-cols,
+  .field-volume-stats,
+  .comp-grid,
+  .deliv-grid,
+  .why-item,
+  .credentials-stats,
+  .p1-toc-charts,
+  .p2-opt-grid,
+  .page--closing .signoff .contact {
+    grid-template-columns: 1fr !important;
+  }
+
+  @media (min-width: 720px) {
+    .geo-grid,
+    .phases-dual,
+    .phases {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+    .field-volume-stats {
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+    .comp-grid,
+    .deliv-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+    .team-premium-cols {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+  }
+
+  @media (min-width: 960px) {
+    .p1-report-artifacts {
+      grid-template-columns: 1.14fr 0.86fr !important;
+    }
+    .p1-toc-charts {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+  }
+
+  .p1-report-artifacts {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    width: 100%;
+  }
+
+  .p1-artifacts-header,
+  .p1-artifacts-chart,
+  .p1-artifacts-map {
+    min-width: 0;
+    width: 100%;
+  }
+
+  /* Tables */
+  .matrix-wrap,
   table.matrix,
-  .matrix {
+  .matrix,
+  .fee-table {
     display: block;
     width: 100%;
+    max-width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
 
-  .geo-grid {
-    grid-template-columns: 1fr !important;
+  table.matrix,
+  .fee-table {
+    display: table;
+    min-width: min(100%, 520px);
   }
 
-  .phases-dual,
-  .phases {
-    grid-template-columns: 1fr !important;
-  }
-
-  .team-premium-cols {
-    grid-template-columns: 1fr !important;
-  }
-
-  .field-volume-stats {
-    grid-template-columns: 1fr !important;
-  }
-
-  .p1-toc-charts,
-  .p1-toc-charts {
-    grid-template-columns: 1fr !important;
+  /* Timeline — horizontal scroll preserves week columns */
+  .timeline {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
   }
 
   .timeline-header,
   .timeline-row {
-    font-size: 10px;
-    overflow-x: auto;
+    min-width: 560px;
   }
 
-  .p2-opt-grid {
+  /* Illustrations & diagrams */
+  .p2-method-illu-wrap,
+  .p2-proc-wrap,
+  .p2-proc-illu {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .p2-proc-illu {
+    min-height: auto !important;
+    padding: clamp(16px, 4vw, 28px) clamp(12px, 3vw, 20px) !important;
+  }
+
+  .p2-proc-illu svg,
+  .p1-report-artifacts svg,
+  .p1-artifacts-map svg,
+  .p1-artifacts-chart svg,
+  .document svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .p2-proc-illu-cap {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    max-width: 100% !important;
+    padding: 10px 12px 0;
+    margin-top: 8px;
+  }
+
+  @media (max-width: 760px) {
+    .p2-proc-wrap {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+  .team-premium-card,
+  .geo-card,
+  .deliv-card,
+  .phase-card,
+  .force-row {
+    min-width: 0;
+  }
+
+  .page--closing .force-row {
+    grid-template-columns: 40px 1fr !important;
+  }
+
+  .page--closing .force-signal {
+    grid-column: 1 / -1;
+  }
+
+  .forces-field .force-row {
     grid-template-columns: 1fr !important;
   }
 
-  .cover-tag {
-    display: none;
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
   }
 
   #bnx-proposal-cta {
-    padding: 10px 12px !important;
-    font-size: 12px !important;
+    padding: 10px clamp(12px, 3vw, 20px) !important;
+    font-size: clamp(11px, 2.8vw, 13px) !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px)) !important;
   }
 
-  /* Register CTA closing page — white headline on navy */
+  #bnx-proposal-cta a {
+    flex-shrink: 0;
+  }
+
+  /* Register CTA closing page */
   #request-proposal.page--register-cta {
     background: linear-gradient(145deg, #000510 0%, #002244 55%, #063558 100%) !important;
     color: #fff;
+    min-height: auto !important;
   }
 
   #request-proposal.page--register-cta .page-rule-text {
@@ -144,9 +341,26 @@
     color: #d4a84b !important;
   }
 
-  #request-proposal.page--register-cta .section-lede {
-    color: rgba(255, 255, 255, 0.88) !important;
-    border-left-color: rgba(212, 168, 75, 0.5);
+  #request-proposal.page--register-cta .section-lede--blue-grade {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 105, 163, 0.42) 0%,
+      rgba(0, 34, 68, 0.55) 55%,
+      rgba(6, 53, 88, 0.48) 100%
+    ) !important;
+    border-left: 3px solid #0069a3 !important;
+    border-radius: 4px;
+    padding: 16px 18px 16px 20px !important;
+    color: #e8f4fc !important;
+    max-width: 100%;
+    line-height: 1.62;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.12),
+      0 8px 24px -8px rgba(0, 34, 68, 0.35);
+  }
+
+  #request-proposal.page--register-cta .section-lede--blue-grade strong {
+    color: #fff !important;
   }
 
   #request-proposal.page--register-cta .body,
@@ -167,12 +381,61 @@
     color: #fff;
   }
 
-  #request-proposal.page--register-cta a.cover-cta[style*='border:1px solid var(--navy)'] {
-    border-color: rgba(255, 255, 255, 0.45) !important;
-    color: #fff !important;
+  #request-proposal.page--register-cta .forces--register-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: stretch;
+    width: 100%;
   }
 
-  /* Phase 2 · 20 directors — premium field-volume cell */
+  #request-proposal.page--register-cta .cover-cta--primary,
+  #request-proposal.page--register-cta .cover-cta--secondary {
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Barlow', system-ui, sans-serif;
+    font-size: clamp(12px, 2.8vw, 13px);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    border-radius: 4px;
+    padding: 12px clamp(16px, 4vw, 22px);
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+    text-align: center;
+    flex: 1 1 auto;
+    min-width: min(100%, 220px);
+  }
+
+  #request-proposal.page--register-cta .cover-cta--primary {
+    color: #fff !important;
+    background: linear-gradient(135deg, #0069a3 0%, #002244 100%);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow:
+      0 8px 24px rgba(0, 34, 68, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+
+  #request-proposal.page--register-cta .cover-cta--primary:hover {
+    background: linear-gradient(135deg, #0080c8 0%, #003366 100%);
+    box-shadow: 0 10px 28px rgba(0, 34, 68, 0.48);
+  }
+
+  #request-proposal.page--register-cta .cover-cta--secondary {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(212, 168, 75, 0.55);
+    font-weight: 600;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  #request-proposal.page--register-cta .cover-cta--secondary:hover {
+    background: rgba(212, 168, 75, 0.14);
+    border-color: rgba(212, 168, 75, 0.85);
+  }
+
+  /* Phase 2 · 20 directors */
   .field-volume-stats .fv-cell--phase2-premium {
     background: linear-gradient(145deg, #000510 0%, #002244 52%, #063558 100%) !important;
     border-right-color: rgba(212, 168, 75, 0.25) !important;
@@ -190,7 +453,7 @@
 
   .field-volume-stats .fv-cell--phase2-premium .fv-num {
     color: #fff !important;
-    font-size: 44px !important;
+    font-size: clamp(2rem, 10vw, 44px) !important;
     text-shadow: 0 2px 18px rgba(0, 0, 0, 0.3);
     position: relative;
     z-index: 1;
@@ -206,16 +469,16 @@
     color: #d4a84b !important;
   }
 
-  /* Standalone Phase 2 diagram (methodology page) */
   .p2-method-illu-wrap {
     border: 1px solid var(--rule);
     border-radius: var(--radius);
     overflow: hidden;
     margin: 0 0 18px;
+    width: 100%;
     box-shadow: 0 20px 48px -16px rgba(0, 34, 68, 0.16);
   }
 
   .p2-method-illu-wrap .p2-proc-illu {
-    min-height: 260px;
+    min-height: auto;
   }
 }

@@ -5,14 +5,12 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
-import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
 import { MarketIntelligenceSections } from '@/components/market-intelligence';
 import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
-  ReportEarlyCtaBar,
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
@@ -114,14 +112,7 @@ const GccMedicalDevicesMarketReport = () => {
         title="GCC Medical Devices Market Report 2026 | USD 5.8B Market Size, Segments & Intelligence | BioNixus"
         description="GCC medical devices market at USD 5.8B in 2026, reaching $9B+ by 2030. Saudi Arabia, UAE, and Kuwait country-level data, regulatory requirements (SFDA, MOHAP, DHA), device segments, and hospital procurement intelligence from BioNixus."
         canonical="https://www.bionixus.com/gcc-medical-devices-market-report"
-        jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "GCC Medical Devices Market Report 2026 | USD 5.8B Market Size, Segments & Intelligence | BioNixus",
-    pageMetaDescription: "GCC medical devices market at USD 5.8B in 2026, reaching $9B+ by 2030. Saudi Arabia, UAE, and Kuwait country-level data, regulatory requirements (SFDA, MOHAP, DHA), device segments, and hospital procurement intelligence from BioNixus.",
-    countryName: "GCC",
-    marketSlug: "gcc",
-    publishedDate: "2026-05-01",
-    modifiedDate: "2026-05-27",
-  })]}
+        jsonLd={jsonLd}
       />
       <ReportReadingProgress progressId="report-rp-gcc-medical-devices-market-report" />
       <main>
@@ -341,6 +332,22 @@ const GccMedicalDevicesMarketReport = () => {
         </section>
 
         </ReportContentWithAside>
+
+                <section className="section-padding" id="related-intelligence">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Related BioNixus market intelligence</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              BioNixus runs medical device and MedTech market research across the GCC. Compare the GCC device market with our{' '}
+              <Link to="/saudi-arabia-medical-devices-market-report" className="text-primary hover:underline font-medium">Saudi Arabia medical devices market report</Link>{' '}and{' '}
+              <Link to="/uae-medical-devices-market-report" className="text-primary hover:underline font-medium">UAE medical devices market report</Link>, set it against the{' '}
+              <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC pharmaceutical market report</Link>, or widen the lens with the{' '}
+              <Link to="/qatar-medical-devices-market-report" className="text-primary hover:underline font-medium">Qatar medical devices market report</Link>. For methods and global coverage, see the{' '}
+              <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}
+              <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>.
+            </p>
+            <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
+          </div>
+        </section>
 
         <FAQSection
           sectionId={FAQ_SECTION_ID}

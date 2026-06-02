@@ -16,7 +16,7 @@ export const clinicalDiagnosticsMeta = {
   h1Accent: 'Quality Control & Immunohematology',
   tagline: 'Intelligence for business growth',
   heroIntro:
-    'BioNixus delivers market sizing, competitor structure, and procurement maps for clinical diagnostics leaders — with segmented QC and immunohematology chapters, verified hospital and laboratory respondents, and tender-aligned qualitative depth where public and private buying committees shape outcomes.',
+    'BioNixus delivers market sizing, market structure analysis, and procurement maps for clinical diagnostics leaders — with segmented QC and immunohematology chapters, verified hospital and laboratory respondents, and tender-aligned qualitative depth where public and private buying committees shape outcomes.',
 };
 
 export const programmeSpine = {
@@ -29,7 +29,7 @@ export const programmeSpine = {
       title: 'Saudi Arabia',
       execution:
         'BioNixus Riyadh and Jeddah: principals (QC, IH), programme management, recruiters, Arabic field, and desk analysts under one PMO line.',
-      desk: 'SFDA, MOH, CBAHI; NUPCO and public tenders; private and national labs; QC and IH sizing; competitor tiers; Vision 2030 demand; PDPL field standards.',
+      desk: 'SFDA, MOH, CBAHI; NUPCO and public tenders; private and national labs; QC and IH sizing; market tiers; Vision 2030 demand; PDPL field standards.',
       phase1: 'Quantitative branch touchpoints with BioNixus protocols and Arabic instruments — hospital laboratory leadership, QC managers, and transfusion medicine leads.',
       phase2:
         'Qualitative procurement director sessions — NUPCO-adjacent and hospital-system buyers where accessible; tender-aligned discussion guides.',
@@ -142,7 +142,7 @@ export const phase2ProcurementMatrix = {
 
 export const timelineMilestones = [
   { week: '1', milestone: 'Kickoff; scoping note; source plan; product-boundary sign-off with sponsor' },
-  { week: '2–4', milestone: 'Secondary harvest; sizing v0; competitor long-list; NUPCO / EKAP capture' },
+  { week: '2–4', milestone: 'Secondary harvest; sizing v0; market long-list; NUPCO / EKAP capture' },
   { week: '5–7', milestone: 'Country deep-dives; procurement maps v1; public vs private envelope logic' },
   {
     week: '8–10',
@@ -207,7 +207,7 @@ export const reportTableOfContents = [
   'Türkiye — immunohematology — national vs hospital banks, technology mix, competition',
   'Türkiye — procurement & commercial — bundles, reagent-rental, reimbursement pressure',
   'Cross-country synthesis — strategic implications for the sponsor',
-  'Appendix — data tables, competitor profiles, source bibliography',
+  'Appendix — data tables, market profiles, source bibliography',
 ];
 
 export const teamRoster = {
@@ -272,7 +272,7 @@ export const faqItems = [
   {
     question: 'Does BioNixus publish fees on this page?',
     answer:
-      'No. Sample size, branch tiers, and Phase 2 activation are set in a statement of work after alignment on use-case, competition focus, and timeline. Proposals include methodology and deliverables — not public rate cards.',
+      'No. Sample size, branch tiers, and Phase 2 activation are set in a statement of work after alignment on use-case, market focus, and timeline. Proposals include methodology and deliverables — not public rate cards.',
   },
   {
     question: 'What deliverables should sponsors expect?',
@@ -282,7 +282,7 @@ export const faqItems = [
   {
     question: 'How do we start?',
     answer:
-      'Book an alignment call on use-case, sample grid, competition focus, and timeline. BioNixus issues a definitive statement of work, then kickoff with scoping note and source plan in week one.',
+      'Book an alignment call on use-case, sample grid, market focus, and timeline. BioNixus issues a definitive statement of work, then kickoff with scoping note and source plan in week one.',
   },
 ];
 

@@ -5,14 +5,12 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
-import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
 import { MarketIntelligenceSections } from '@/components/market-intelligence';
 import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
-  ReportEarlyCtaBar,
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
@@ -89,14 +87,7 @@ const TurkeyMedicalDevicesMarketReport = () => (
       title="Turkey Medical Devices Market Report 2026 | TİTCK CE Marking, SGK SUT & Medical Tourism | BioNixus"
       description="Turkey medical devices market at USD 3.5B in 2026. TİTCK CE marking registration, ÜTS tracking, SGK SUT reimbursement, medical tourism device demand (hair transplants, aesthetics, robotics), and BioNixus GCC intelligence."
       canonical="https://www.bionixus.com/turkey-medical-devices-market-report"
-      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "Turkey Medical Devices Market Report 2026 | TİTCK CE Marking, SGK SUT & Medical Tourism | BioNixus",
-    pageMetaDescription: "Turkey medical devices market at USD 3.5B in 2026. TİTCK CE marking registration, ÜTS tracking, SGK SUT reimbursement, medical tourism device demand (hair transplants, aesthetics, robotics), and BioNixus GCC intelligence.",
-    countryName: "Turkey",
-    marketSlug: "turkey",
-    publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
-  })]}
+      jsonLd={jsonLd}
     />
       <ReportReadingProgress progressId="report-rp-turkey-medical-devices-market-report" />
       <main>
@@ -128,7 +119,25 @@ const TurkeyMedicalDevicesMarketReport = () => (
           <p className="text-muted-foreground leading-relaxed">See also: <Link to="/turkey-healthcare-market-report" className="text-primary hover:underline font-medium">Turkey Healthcare Market Report</Link> and <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC Medical Devices Market Report</Link>.</p>
         </div>
       </section>
-      <FAQSection sectionId={FAQ_SECTION_ID} title="Turkey medical devices market 2026 — TİTCK, SGK SUT, ÜTS tracking, medical tourism, and GCC expansion FAQ" items={REPORT_FAQ_ITEMS} className="bg-muted/30" />        </ReportContentWithAside>
+              <MarketIntelligenceSections marketSlug="turkey" countryName="Turkey" variant="medical-devices" />
+
+        <section className="section-padding" id="related-intelligence">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Related BioNixus market intelligence</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              BioNixus runs medical device and MedTech market research across the EMEA region. Compare the Turkey device market with our{' '}
+              <Link to="/egypt-medical-devices-market-report" className="text-primary hover:underline font-medium">Egypt medical devices market report</Link>{' '}and{' '}
+              <Link to="/uae-medical-devices-market-report" className="text-primary hover:underline font-medium">UAE medical devices market report</Link>, set it against the{' '}
+              <Link to="/turkey-healthcare-market-report" className="text-primary hover:underline font-medium">Turkey healthcare market report</Link>, or widen the lens with the{' '}
+              <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC medical devices market report</Link>. For methods and global coverage, see the{' '}
+              <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}
+              <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>.
+            </p>
+            <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
+          </div>
+        </section>
+
+        <FAQSection sectionId={FAQ_SECTION_ID} title="Turkey medical devices market 2026 — TİTCK, SGK SUT, ÜTS tracking, medical tourism, and GCC expansion FAQ" items={REPORT_FAQ_ITEMS} className="bg-muted/30" />        </ReportContentWithAside>
       <ReportConsultationBand config={REPORT_CONVERSION} />
         </main>
     <Footer />

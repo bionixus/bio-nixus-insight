@@ -659,14 +659,16 @@ async function startServer() {
   );
 
   /** Full-page static deck (authoritative HTML, not the SPA shell). */
-  app.get('/strategic-portfolio/', (_req, res) => {
-    res.redirect(301, '/strategic-portfolio');
+  app.get('/strategic-portfolio/', (req, res, next) => {
+    if (req.path.endsWith('/')) return res.redirect(301, '/strategic-portfolio');
+    return next();
   });
   app.get('/strategic-portfolio', (_req, res) => {
     res.type('html').sendFile(strategicPortfolioAbsolutePath);
   });
-  app.get('/ar/strategic-portfolio/', (_req, res) => {
-    res.redirect(301, '/ar/strategic-portfolio');
+  app.get('/ar/strategic-portfolio/', (req, res, next) => {
+    if (req.path.endsWith('/')) return res.redirect(301, '/ar/strategic-portfolio');
+    return next();
   });
   app.get('/ar/strategic-portfolio', (_req, res) => {
     res.type('html').sendFile(strategicPortfolioArAbsolutePath);
@@ -682,8 +684,9 @@ async function startServer() {
       ? path.join('dist/client', 'conf/clinical-diagnostics-market-assessment-proposal.html')
       : path.join('public', 'conf/clinical-diagnostics-market-assessment-proposal.html'),
   );
-  app.get('/clinical-diagnostics-market-assessment-proposal/', (_req, res) => {
-    res.redirect(301, '/clinical-diagnostics-market-assessment-proposal');
+  app.get('/clinical-diagnostics-market-assessment-proposal/', (req, res, next) => {
+    if (req.path.endsWith('/')) return res.redirect(301, '/clinical-diagnostics-market-assessment-proposal');
+    return next();
   });
   app.get('/clinical-diagnostics-market-assessment-proposal', (_req, res) => {
     res.type('html').sendFile(clinicalDiagnosticsProposalPath);
@@ -694,8 +697,9 @@ async function startServer() {
     __dirname,
     isProduction ? path.join('dist/client', 'conf/bionixus-vs-iqvia-mena.html') : path.join('public', 'conf/bionixus-vs-iqvia-mena.html'),
   );
-  app.get('/bionixus-vs-iqvia-mena/', (_req, res) => {
-    res.redirect(301, '/bionixus-vs-iqvia-mena');
+  app.get('/bionixus-vs-iqvia-mena/', (req, res, next) => {
+    if (req.path.endsWith('/')) return res.redirect(301, '/bionixus-vs-iqvia-mena');
+    return next();
   });
   app.get('/bionixus-vs-iqvia-mena', (_req, res) => {
     res.type('html').sendFile(vsIqviaAbsolutePath);
@@ -706,8 +710,9 @@ async function startServer() {
     __dirname,
     isProduction ? path.join('dist/client', 'conf/kol-mapping-saudi-arabia-oncology.html') : path.join('public', 'conf/kol-mapping-saudi-arabia-oncology.html'),
   );
-  app.get('/kol-mapping-saudi-arabia-oncology/', (_req, res) => {
-    res.redirect(301, '/kol-mapping-saudi-arabia-oncology');
+  app.get('/kol-mapping-saudi-arabia-oncology/', (req, res, next) => {
+    if (req.path.endsWith('/')) return res.redirect(301, '/kol-mapping-saudi-arabia-oncology');
+    return next();
   });
   app.get('/kol-mapping-saudi-arabia-oncology', (_req, res) => {
     res.type('html').sendFile(kolMappingAbsolutePath);
@@ -718,8 +723,9 @@ async function startServer() {
     __dirname,
     isProduction ? path.join('dist/client', 'conf/physician-survey-saudi-arabia.html') : path.join('public', 'conf/physician-survey-saudi-arabia.html'),
   );
-  app.get('/physician-survey-saudi-arabia/', (_req, res) => {
-    res.redirect(301, '/physician-survey-saudi-arabia');
+  app.get('/physician-survey-saudi-arabia/', (req, res, next) => {
+    if (req.path.endsWith('/')) return res.redirect(301, '/physician-survey-saudi-arabia');
+    return next();
   });
   app.get('/physician-survey-saudi-arabia', (_req, res) => {
     res.type('html').sendFile(physicianSurveyAbsolutePath);
@@ -730,8 +736,9 @@ async function startServer() {
     __dirname,
     isProduction ? path.join('dist/client', 'conf/sfda-market-access-strategy-saudi-arabia.html') : path.join('public', 'conf/sfda-market-access-strategy-saudi-arabia.html'),
   );
-  app.get('/sfda-market-access-strategy-saudi-arabia/', (_req, res) => {
-    res.redirect(301, '/sfda-market-access-strategy-saudi-arabia');
+  app.get('/sfda-market-access-strategy-saudi-arabia/', (req, res, next) => {
+    if (req.path.endsWith('/')) return res.redirect(301, '/sfda-market-access-strategy-saudi-arabia');
+    return next();
   });
   app.get('/sfda-market-access-strategy-saudi-arabia', (_req, res) => {
     res.type('html').sendFile(sfdaAccessAbsolutePath);
@@ -742,8 +749,9 @@ async function startServer() {
     __dirname,
     isProduction ? path.join('dist/client', 'conf/biosimilar-market-entry-saudi-arabia.html') : path.join('public', 'conf/biosimilar-market-entry-saudi-arabia.html'),
   );
-  app.get('/biosimilar-market-entry-saudi-arabia/', (_req, res) => {
-    res.redirect(301, '/biosimilar-market-entry-saudi-arabia');
+  app.get('/biosimilar-market-entry-saudi-arabia/', (req, res, next) => {
+    if (req.path.endsWith('/')) return res.redirect(301, '/biosimilar-market-entry-saudi-arabia');
+    return next();
   });
   app.get('/biosimilar-market-entry-saudi-arabia', (_req, res) => {
     res.type('html').sendFile(biosimilarAbsolutePath);
@@ -754,8 +762,9 @@ async function startServer() {
     __dirname,
     isProduction ? path.join('dist/client', 'conf/iqvia-alternative.html') : path.join('public', 'conf/iqvia-alternative.html'),
   );
-  app.get('/iqvia-alternative/', (_req, res) => {
-    res.redirect(301, '/iqvia-alternative');
+  app.get('/iqvia-alternative/', (req, res, next) => {
+    if (req.path.endsWith('/')) return res.redirect(301, '/iqvia-alternative');
+    return next();
   });
   app.get('/iqvia-alternative', (_req, res) => {
     res.type('html').sendFile(iqviaAltAbsolutePath);
@@ -766,8 +775,9 @@ async function startServer() {
     __dirname,
     isProduction ? path.join('dist/client', 'conf/pharmaceutical-market-research-dubai.html') : path.join('public', 'conf/pharmaceutical-market-research-dubai.html'),
   );
-  app.get('/pharmaceutical-market-research-dubai/', (_req, res) => {
-    res.redirect(301, '/pharmaceutical-market-research-dubai');
+  app.get('/pharmaceutical-market-research-dubai/', (req, res, next) => {
+    if (req.path.endsWith('/')) return res.redirect(301, '/pharmaceutical-market-research-dubai');
+    return next();
   });
   app.get('/pharmaceutical-market-research-dubai', (_req, res) => {
     res.type('html').sendFile(dubaiPharmaAbsolutePath);
@@ -778,8 +788,9 @@ async function startServer() {
     __dirname,
     isProduction ? path.join('dist/client', 'conf/kantar-health-alternative-gcc.html') : path.join('public', 'conf/kantar-health-alternative-gcc.html'),
   );
-  app.get('/kantar-health-alternative-gcc/', (_req, res) => {
-    res.redirect(301, '/kantar-health-alternative-gcc');
+  app.get('/kantar-health-alternative-gcc/', (req, res, next) => {
+    if (req.path.endsWith('/')) return res.redirect(301, '/kantar-health-alternative-gcc');
+    return next();
   });
   app.get('/kantar-health-alternative-gcc', (_req, res) => {
     res.type('html').sendFile(kantarAltAbsolutePath);
@@ -790,8 +801,9 @@ async function startServer() {
     __dirname,
     isProduction ? path.join('dist/client', 'conf/gfk-alternative-egypt.html') : path.join('public', 'conf/gfk-alternative-egypt.html'),
   );
-  app.get('/gfk-alternative-egypt/', (_req, res) => {
-    res.redirect(301, '/gfk-alternative-egypt');
+  app.get('/gfk-alternative-egypt/', (req, res, next) => {
+    if (req.path.endsWith('/')) return res.redirect(301, '/gfk-alternative-egypt');
+    return next();
   });
   app.get('/gfk-alternative-egypt', (_req, res) => {
     res.type('html').sendFile(gfkAltEgyptAbsolutePath);

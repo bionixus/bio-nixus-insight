@@ -87,7 +87,7 @@ export default function ClinicalDiagnosticsMarketResearch() {
           ]}
         />
 
-        <article className="cd-document mx-4 md:mx-auto my-6">
+        <article className="cd-document w-full max-w-full mx-auto my-4 sm:my-6 px-0 sm:px-0">
           <section className="cd-cover">
             <p className="cd-cover-eyebrow">{clinicalDiagnosticsMeta.tagline}</p>
             <h1 className="cd-cover-title text-white">{clinicalDiagnosticsMeta.h1}</h1>
@@ -356,9 +356,10 @@ export default function ClinicalDiagnosticsMarketResearch() {
             </div>
             <div className="cd-request-panel mt-10">
               <h3 className="cd-section-title mb-2">Request the complete proposal document</h3>
-              <p className="text-[#3D4A5C] mb-4 max-w-lg mx-auto">
-                The full McKinsey-style HTML deck mirrors this programme with additional letter, team detail, and field
-                matrices. Pricing is not included in the public document.
+              <p className="cd-section-lede cd-section-lede--blue-grade mb-4 max-w-lg mx-auto">
+                The full proposal document mirrors this programme with additional letter, team detail, and field matrices.
+                Pricing and commercial terms are not published online; they are shared after registration and a short
+                alignment call.
               </p>
               <Link to={CLINICAL_DIAGNOSTICS_PROPOSAL_REQUEST_PATH} className="cd-btn-gold">
                 Register for the full proposal

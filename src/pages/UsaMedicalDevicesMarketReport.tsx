@@ -5,14 +5,12 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
-import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
 import { MarketIntelligenceSections } from '@/components/market-intelligence';
 import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
-  ReportEarlyCtaBar,
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
@@ -89,14 +87,7 @@ const UsaMedicalDevicesMarketReport = () => (
       title="USA Medical Devices Market Report 2026 | FDA 510(k)/PMA, CMS NTAP & GPO Procurement | BioNixus"
       description="USA medical devices market at USD 180B in 2026 — world's largest. FDA regulatory pathways, CMS DRG and NTAP reimbursement, GPO/IDN procurement, and BioNixus intelligence for US medtech companies expanding to GCC and MENA."
       canonical="https://www.bionixus.com/usa-medical-devices-market-report"
-      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "USA Medical Devices Market Report 2026 | FDA 510(k)/PMA, CMS NTAP & GPO Procurement | BioNixus",
-    pageMetaDescription: "USA medical devices market at USD 180B in 2026 — world's largest. FDA regulatory pathways, CMS DRG and NTAP reimbursement, GPO/IDN procurement, and BioNixus intelligence for US medtech companies expanding to GCC and MENA.",
-    countryName: "United States",
-    marketSlug: "usa",
-    publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
-  })]}
+      jsonLd={jsonLd}
     />
       <ReportReadingProgress progressId="report-rp-usa-medical-devices-market-report" />
       <main>
@@ -128,7 +119,25 @@ const UsaMedicalDevicesMarketReport = () => (
           <p className="text-muted-foreground leading-relaxed">See also: <Link to="/usa-healthcare-market-report" className="text-primary hover:underline font-medium">USA Healthcare Market Report</Link> and <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC Medical Devices Market Report</Link>.</p>
         </div>
       </section>
-      <FAQSection sectionId={FAQ_SECTION_ID} title="USA medical devices market 2026 — FDA pathways, CMS reimbursement, GPO/IDN procurement FAQ" items={REPORT_FAQ_ITEMS} className="bg-muted/30" />        </ReportContentWithAside>
+              <MarketIntelligenceSections marketSlug="usa" countryName="USA" variant="medical-devices" />
+
+        <section className="section-padding" id="related-intelligence">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Related BioNixus market intelligence</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              BioNixus runs medical device and MedTech market research across the Americas. Compare the USA device market with our{' '}
+              <Link to="/canada-medical-devices-market-report" className="text-primary hover:underline font-medium">Canada medical devices market report</Link>{' '}and{' '}
+              <Link to="/brazil-medical-devices-market-report" className="text-primary hover:underline font-medium">Brazil medical devices market report</Link>, set it against the{' '}
+              <Link to="/usa-healthcare-market-report" className="text-primary hover:underline font-medium">USA healthcare market report</Link>, or widen the lens with the{' '}
+              <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC medical devices market report</Link>. For methods and global coverage, see the{' '}
+              <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}
+              <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>.
+            </p>
+            <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
+          </div>
+        </section>
+
+        <FAQSection sectionId={FAQ_SECTION_ID} title="USA medical devices market 2026 — FDA pathways, CMS reimbursement, GPO/IDN procurement FAQ" items={REPORT_FAQ_ITEMS} className="bg-muted/30" />        </ReportContentWithAside>
       <ReportConsultationBand config={REPORT_CONVERSION} />
         </main>
     <Footer />

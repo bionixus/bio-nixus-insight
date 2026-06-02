@@ -5,14 +5,12 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
-import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
 import { MarketIntelligenceSections } from '@/components/market-intelligence';
 import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
-  ReportEarlyCtaBar,
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
@@ -89,14 +87,7 @@ const IndiaMedicalDevicesMarketReport = () => (
       title="India Medical Devices Market Report 2026 | MDR 2017, PLI Scheme & CDSCO Registration | BioNixus"
       description="India medical devices market at USD 12B in 2026, growing 8% CAGR. CDSCO MDR 2017 registration, PLI manufacturing scheme, NPPA price regulation, import dependency, and BioNixus GCC expansion intelligence for Indian medtech."
       canonical="https://www.bionixus.com/india-medical-devices-market-report"
-      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "India Medical Devices Market Report 2026 | MDR 2017, PLI Scheme & CDSCO Registration | BioNixus",
-    pageMetaDescription: "India medical devices market at USD 12B in 2026, growing 8% CAGR. CDSCO MDR 2017 registration, PLI manufacturing scheme, NPPA price regulation, import dependency, and BioNixus GCC expansion intelligence for Indian medtech.",
-    countryName: "India",
-    marketSlug: "india",
-    publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
-  })]}
+      jsonLd={jsonLd}
     />
       <ReportReadingProgress progressId="report-rp-india-medical-devices-market-report" />
       <main>
@@ -128,7 +119,25 @@ const IndiaMedicalDevicesMarketReport = () => (
           <p className="text-muted-foreground leading-relaxed">See also: <Link to="/india-healthcare-market-report" className="text-primary hover:underline font-medium">India Healthcare Market Report</Link> and <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC Medical Devices Market Report</Link>.</p>
         </div>
       </section>
-      <FAQSection sectionId={FAQ_SECTION_ID} title="India medical devices market 2026 — CDSCO MDR 2017, PLI scheme, NPPA pricing, and GCC expansion FAQ" items={REPORT_FAQ_ITEMS} className="bg-muted/30" />        </ReportContentWithAside>
+              <MarketIntelligenceSections marketSlug="india" countryName="India" variant="medical-devices" />
+
+        <section className="section-padding" id="related-intelligence">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Related BioNixus market intelligence</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              BioNixus runs medical device and MedTech market research across Asia-Pacific. Compare the India device market with our{' '}
+              <Link to="/china-medical-devices-market-report" className="text-primary hover:underline font-medium">China medical devices market report</Link>{' '}and{' '}
+              <Link to="/singapore-medical-devices-market-report" className="text-primary hover:underline font-medium">Singapore medical devices market report</Link>, set it against the{' '}
+              <Link to="/india-healthcare-market-report" className="text-primary hover:underline font-medium">India healthcare market report</Link>, or widen the lens with the{' '}
+              <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC medical devices market report</Link>. For methods and global coverage, see the{' '}
+              <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}
+              <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>.
+            </p>
+            <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
+          </div>
+        </section>
+
+        <FAQSection sectionId={FAQ_SECTION_ID} title="India medical devices market 2026 — CDSCO MDR 2017, PLI scheme, NPPA pricing, and GCC expansion FAQ" items={REPORT_FAQ_ITEMS} className="bg-muted/30" />        </ReportContentWithAside>
       <ReportConsultationBand config={REPORT_CONVERSION} />
         </main>
     <Footer />

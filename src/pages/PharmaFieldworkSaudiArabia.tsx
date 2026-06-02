@@ -19,6 +19,8 @@ export default function PharmaFieldworkSaudiArabia() {
         { to: '/healthcare-fieldwork-middle-east', label: 'Healthcare fieldwork Middle East' },
         { to: '/blog/nupco-saudi-arabia-tendering-guide', label: 'NUPCO tendering guide' },
         { to: '/contact', label: 'Request KSA fieldwork scope' },
+        { to: '/market-research-healthcare', label: 'Healthcare market research services' },
+        { to: '/methodology', label: 'Our research methodology' },
       ]}
       bullets={[
         'Specialist and scarce-HCP recruitment across MOH, NGHA, and private networks.',
@@ -28,16 +30,16 @@ export default function PharmaFieldworkSaudiArabia() {
       ]}
       decisionPoints={[
         {
-          title: 'Why it matters',
-          body: 'KSA fieldwork quality determines whether launch and access decisions reflect real prescriber and committee behavior.',
+          title: 'Fieldwork decides the decision',
+          body: 'KSA fieldwork quality determines whether launch and access decisions reflect real prescriber and committee behavior — or just whoever was easiest to reach.',
         },
         {
-          title: 'What the evidence says',
-          body: 'Early feasibility and access mapping reduce failed recruitment and incomplete payer coverage.',
+          title: 'Map access before you recruit',
+          body: 'Early feasibility and hospital-access mapping reduce failed recruitment and incomplete payer coverage once fieldwork is live.',
         },
         {
-          title: 'What to do next',
-          body: 'Scope one therapy and one decision gate, then run a four-week Saudi fieldwork pilot before regional scale-up.',
+          title: 'Pilot one therapy, then scale',
+          body: 'Scope one therapy and one decision gate, then run a four-week Saudi fieldwork pilot before committing to regional scale-up.',
         },
       ]}
       metrics={[

@@ -5,14 +5,12 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
-import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
 import { MarketIntelligenceSections } from '@/components/market-intelligence';
 import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
-  ReportEarlyCtaBar,
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
@@ -104,14 +102,7 @@ const BahrainMedicalDevicesMarketReport = () => {
         title="Bahrain Medical Devices Market Report 2026 | NHRA Registration & GCC Entry Strategy | BioNixus"
         description="Bahrain medical devices market at USD 130–160M in 2026. NHRA mutual recognition strategy, Salmaniya Medical Complex, private hospital channel, and BioNixus GCC sequential entry intelligence."
         canonical="https://www.bionixus.com/bahrain-medical-devices-market-report"
-        jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "Bahrain Medical Devices Market Report 2026 | NHRA Registration & GCC Entry Strategy | BioNixus",
-    pageMetaDescription: "Bahrain medical devices market at USD 130–160M in 2026. NHRA mutual recognition strategy, Salmaniya Medical Complex, private hospital channel, and BioNixus GCC sequential entry intelligence.",
-    countryName: "Bahrain",
-    marketSlug: "bahrain",
-    publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
-  })]}
+        jsonLd={jsonLd}
       />
       <ReportReadingProgress progressId="report-rp-bahrain-medical-devices-market-report" />
       <main>
@@ -185,6 +176,21 @@ const BahrainMedicalDevicesMarketReport = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+                <section className="section-padding" id="related-intelligence">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Related BioNixus market intelligence</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              BioNixus runs medical device and MedTech market research across the GCC. Compare the Bahrain device market with our{' '}
+              <Link to="/saudi-arabia-medical-devices-market-report" className="text-primary hover:underline font-medium">Saudi Arabia medical devices market report</Link>{' '}and{' '}
+              <Link to="/uae-medical-devices-market-report" className="text-primary hover:underline font-medium">UAE medical devices market report</Link>, set it against the{' '}
+              <Link to="/bahrain-healthcare-market-report" className="text-primary hover:underline font-medium">Bahrain healthcare market report</Link>, or widen the lens with the{' '}
+              <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC medical devices market report</Link>. For methods and global coverage, see the{' '}
+              <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}
+              <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>.
+            </p>
           </div>
         </section>
 

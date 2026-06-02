@@ -5,14 +5,12 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
-import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
 import { MarketIntelligenceSections } from '@/components/market-intelligence';
 import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
-  ReportEarlyCtaBar,
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
@@ -104,14 +102,7 @@ const KuwaitMedicalDevicesMarketReport = () => {
         title="Kuwait Medical Devices Market Report 2026 | CMS Procurement & Hospital Intelligence | BioNixus"
         description="Kuwait medical devices market at USD 480–540M in 2026. Central Medical Stores procurement intelligence, MOPH registration requirements, device segments, and primary HCP research across Kuwait government and private hospitals."
         canonical="https://www.bionixus.com/kuwait-medical-devices-market-report"
-        jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "Kuwait Medical Devices Market Report 2026 | CMS Procurement & Hospital Intelligence | BioNixus",
-    pageMetaDescription: "Kuwait medical devices market at USD 480–540M in 2026. Central Medical Stores procurement intelligence, MOPH registration requirements, device segments, and primary HCP research across Kuwait government and private hospitals.",
-    countryName: "Kuwait",
-    marketSlug: "kuwait",
-    publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
-  })]}
+        jsonLd={jsonLd}
       />
       <ReportReadingProgress progressId="report-rp-kuwait-medical-devices-market-report" />
       <main>
@@ -208,6 +199,21 @@ const KuwaitMedicalDevicesMarketReport = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+                <section className="section-padding" id="related-intelligence">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Related BioNixus market intelligence</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              BioNixus runs medical device and MedTech market research across the GCC. Compare the Kuwait device market with our{' '}
+              <Link to="/saudi-arabia-medical-devices-market-report" className="text-primary hover:underline font-medium">Saudi Arabia medical devices market report</Link>{' '}and{' '}
+              <Link to="/qatar-medical-devices-market-report" className="text-primary hover:underline font-medium">Qatar medical devices market report</Link>, set it against the{' '}
+              <Link to="/kuwait-healthcare-market-report" className="text-primary hover:underline font-medium">Kuwait healthcare market report</Link>, or widen the lens with the{' '}
+              <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC medical devices market report</Link>. For methods and global coverage, see the{' '}
+              <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}
+              <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>.
+            </p>
           </div>
         </section>
 

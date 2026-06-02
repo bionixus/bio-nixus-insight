@@ -5,14 +5,12 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
-import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
 import { MarketIntelligenceSections } from '@/components/market-intelligence';
 import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
-  ReportEarlyCtaBar,
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
@@ -89,14 +87,7 @@ const GermanyMedicalDevicesMarketReport = () => (
       title="Germany Medical Devices Market Report 2026 | EU MDR, NUB Reimbursement & Hospital Procurement | BioNixus"
       description="Germany medical devices market at EUR 31B in 2026 — largest in EU. EU MDR compliance, NUB additional payments, DRG hospital reimbursement, and BioNixus intelligence for German medtech companies entering GCC and MENA."
       canonical="https://www.bionixus.com/germany-medical-devices-market-report"
-      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "Germany Medical Devices Market Report 2026 | EU MDR, NUB Reimbursement & Hospital Procurement | BioNixus",
-    pageMetaDescription: "Germany medical devices market at EUR 31B in 2026 — largest in EU. EU MDR compliance, NUB additional payments, DRG hospital reimbursement, and BioNixus intelligence for German medtech companies entering GCC and MENA.",
-    countryName: "Germany",
-    marketSlug: "germany",
-    publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
-  })]}
+      jsonLd={jsonLd}
     />
       <ReportReadingProgress progressId="report-rp-germany-medical-devices-market-report" />
       <main>
@@ -152,7 +143,22 @@ const GermanyMedicalDevicesMarketReport = () => (
           </div>
         </div>
       </section>
-      <FAQSection sectionId={FAQ_SECTION_ID} title="Germany medical devices market 2026 — EU MDR, NUB, DRG, and hospital procurement FAQ" items={REPORT_FAQ_ITEMS} className="bg-muted/30" />        </ReportContentWithAside>
+              <section className="section-padding" id="related-intelligence">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Related BioNixus market intelligence</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              BioNixus runs medical device and MedTech market research across Europe. Compare the Germany device market with our{' '}
+              <Link to="/france-medical-devices-market-report" className="text-primary hover:underline font-medium">France medical devices market report</Link>{' '}and{' '}
+              <Link to="/italy-medical-devices-market-report" className="text-primary hover:underline font-medium">Italy medical devices market report</Link>, set it against the{' '}
+              <Link to="/germany-healthcare-market-report" className="text-primary hover:underline font-medium">Germany healthcare market report</Link>, or widen the lens with the{' '}
+              <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC medical devices market report</Link>. For methods and global coverage, see the{' '}
+              <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}
+              <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>.
+            </p>
+          </div>
+        </section>
+
+        <FAQSection sectionId={FAQ_SECTION_ID} title="Germany medical devices market 2026 — EU MDR, NUB, DRG, and hospital procurement FAQ" items={REPORT_FAQ_ITEMS} className="bg-muted/30" />        </ReportContentWithAside>
       <ReportConsultationBand config={REPORT_CONVERSION} />
         </main>
     <Footer />

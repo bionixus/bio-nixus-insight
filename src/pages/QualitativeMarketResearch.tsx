@@ -139,6 +139,20 @@ export default function QualitativeMarketResearch() {
 
         <section className="py-12">
           <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-3xl font-display font-semibold text-foreground mb-6">Related research capabilities</h2>
+            <div className="grid sm:grid-cols-2 gap-3 text-sm">
+              <Link to="/quantitative-healthcare-market-research" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline font-medium">Quantitative healthcare market research</Link>
+              <Link to="/market-research-healthcare" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline font-medium">Healthcare market research services</Link>
+              <Link to="/healthcare-fieldwork-middle-east" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline font-medium">Healthcare fieldwork in the Middle East</Link>
+              <Link to="/gcc-hcp-recruitment-market-research" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline font-medium">GCC HCP recruitment standards</Link>
+              <Link to="/real-world-evidence" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline font-medium">Real-world evidence programmes</Link>
+              <Link to="/methodology" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline font-medium">Our research methodology</Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-12">
+          <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-3xl font-display font-semibold text-foreground mb-6">Frequently asked questions</h2>
             <div className="space-y-3">
               {qualFaq.map((item) => (

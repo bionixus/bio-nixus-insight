@@ -64,13 +64,13 @@ function stripPricingSection(html) {
 
   <div class="section-num">06 — Request the complete programme document</div>
   <h2 class="section-title" style="color:#fff;">Register for the<br><em>full market assessment proposal.</em></h2>
-  <p class="section-lede">
-    The complete McKinsey-style deck — methodology, field matrices, timeline, team roster, deliverable architecture, and indicative analytics — is available to qualified clinical diagnostics sponsors. <strong>Pricing and commercial terms are not published online</strong>; they are shared after registration and a short alignment call.
+  <p class="section-lede section-lede--blue-grade">
+    The complete programme document — methodology, field matrices, timeline, team roster, deliverable architecture, and indicative analytics — is available to qualified clinical diagnostics sponsors. <strong>Pricing and commercial terms are not published online</strong>; they are shared after registration and a short alignment call.
   </p>
 
-  <div class="forces" style="margin-top:24px;">
-    <a href="${REGISTER_URL}" class="cover-cta" style="display:inline-block;text-decoration:none;margin-right:12px;">Register &amp; receive the full proposal</a>
-    <a href="${OFFERING_URL}" class="cover-cta" style="display:inline-block;text-decoration:none;background:transparent;border:1px solid var(--navy);color:var(--navy);">View programme overview</a>
+  <div class="forces forces--register-cta" style="margin-top:24px;">
+    <a href="${REGISTER_URL}" class="cover-cta cover-cta--primary">Register &amp; receive the full proposal</a>
+    <a href="${OFFERING_URL}" class="cover-cta cover-cta--secondary">View programme overview</a>
   </div>
 
   <p class="body" style="margin-top:20px;font-size:12px;color:var(--text-muted);">
@@ -80,11 +80,35 @@ function stripPricingSection(html) {
   <div class="page-footer">
     <span class="brand">BioNixus</span>
     <span>08 — Full Proposal Access</span>
-    <span>BNX-BIO-IVD-2026-047</span>
   </div>
 </section>
 `;
   return html.slice(0, start) + ctaPage + html.slice(end);
+}
+
+function stripDocumentMetadata(html) {
+  return html
+    .replace(
+      /\s*<div class="cover-ref">\s*<strong>DOCUMENT<\/strong><br>\s*BNX-BIO-IVD-2026-047<br>\s*Revision 2\.0<br>\s*3 May 2026\s*<\/div>/g,
+      '',
+    )
+    .replace(/\s*<div class="date">[^<]*<\/div>/g, '')
+    .replace(/\s*<span>BNX-BIO-IVD-2026-047<\/span>/g, '');
+}
+
+function redactPublicProposalCopy(html) {
+  return html
+    .replace(/McKinsey-style design system/gi, 'BioNixus proposal design system')
+    .replace(/McKinsey Blue/gi, 'Brand blue')
+    .replace(/COMPETITOR INTELLIGENCE GRID/g, 'MARKET INTELLIGENCE GRID')
+    .replace(/<strong>competitor tiers \/ ranking<\/strong>/gi, '<strong>market tiers / ranking</strong>')
+    .replace(/competitor long-list/gi, 'market long-list')
+    .replace(/competitor profiles/gi, 'market profiles')
+    .replace(/QC\+IH sizing; competitors;/g, 'QC+IH sizing; market structure;')
+    .replace(
+      /Context is moving fast: CDG growth slowdown, <em>IH-500 NEXT<\/em> ramp, <em>NUPCO<\/em> local-content and envelope consolidation, <em>IVDR<\/em> \/ SGK pressure in Türkiye, and IH consolidation \(<em>Werfen–Immucor<\/em>, <em>Grifols–Kızılay<\/em>\)\./,
+      'Context is moving fast: <em>NUPCO</em> local-content and envelope consolidation, <em>IVDR</em> / SGK pressure in Türkiye, and ongoing IH market consolidation across KSA and Türkiye.',
+    );
 }
 
 function redactClientNames(html) {
@@ -182,6 +206,8 @@ function main() {
 function writePublicDeckFrom(sourcePath) {
   let html = fs.readFileSync(sourcePath, 'utf8');
   html = redactClientNames(html);
+  html = redactPublicProposalCopy(html);
+  html = stripDocumentMetadata(html);
   html = stripPricingSection(html);
   html = injectScreenStyles(html);
   html = enhancePhase2Presentation(html);

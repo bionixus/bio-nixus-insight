@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { ExecutiveDecisionBlock, PremiumHero, ProofMetricGrid } from '@/components/page/PremiumPageSections';
+import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 
 type LinkItem = {
   to: string;
@@ -22,6 +23,12 @@ type StrategicServicePageProps = {
   bullets: string[];
   decisionPoints: Array<{ title: string; body: string }>;
   metrics: Array<{ label: string; value: string; detail: string }>;
+  /** Optional service category for Service schema (defaults to the breadcrumb label). */
+  serviceType?: string;
+  /** Optional regions the service covers, for Service.areaServed. */
+  areaServed?: string[];
+  /** Optional FAQ entries; when provided, a FAQPage schema is emitted. */
+  faqs?: Array<{ question: string; answer: string }>;
 };
 
 export default function StrategicServicePage({
@@ -35,7 +42,32 @@ export default function StrategicServicePage({
   bullets,
   decisionPoints,
   metrics,
+  serviceType,
+  areaServed,
+  faqs,
 }: StrategicServicePageProps) {
+  const pagePath = canonicalUrl.replace('https://www.bionixus.com', '') || '/';
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: h1,
+      description,
+      serviceType: serviceType ?? breadcrumbLabel,
+      provider: {
+        '@type': 'Organization',
+        name: 'BioNixus',
+        url: 'https://www.bionixus.com',
+      },
+      ...(areaServed && areaServed.length ? { areaServed } : {}),
+      url: canonicalUrl,
+    },
+    buildBreadcrumbSchema([
+      { name: 'Home', href: '/' },
+      { name: breadcrumbLabel, href: pagePath },
+    ]),
+    ...(faqs && faqs.length ? [buildFAQSchema(faqs, { pageUrl: canonicalUrl })] : []),
+  ];
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
@@ -43,6 +75,7 @@ export default function StrategicServicePage({
         <meta name="description" content={description} />
         <link rel="canonical" href={canonicalUrl} />
       </Helmet>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Navbar />
       <main>
         <BreadcrumbNav items={[{ name: 'Home', href: '/' }, { name: breadcrumbLabel, href: canonicalUrl.replace('https://www.bionixus.com', '') }]} />

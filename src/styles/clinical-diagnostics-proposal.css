@@ -1,4 +1,4 @@
-/* McKinsey-style clinical diagnostics proposal — web offering page */
+/* Clinical diagnostics proposal — web offering page */
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
 
 .cd-proposal-site {
@@ -38,17 +38,28 @@
 
 .cd-proposal-site main {
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 .cd-document {
   width: 100%;
-  max-width: min(920px, 100%);
+  max-width: 100%;
   margin: 0 auto 48px;
   background: #fff;
   border: 1px solid rgba(0, 34, 68, 0.07);
-  border-radius: 3px;
-  box-shadow: 0 24px 64px -12px rgba(0, 34, 68, 0.14);
+  border-radius: 0;
+  box-shadow: none;
   box-sizing: border-box;
+}
+
+@media screen and (min-width: 900px) {
+  .cd-document {
+    max-width: min(1180px, calc(100vw - 32px));
+    border-radius: 4px;
+    box-shadow: 0 24px 64px -12px rgba(0, 34, 68, 0.14);
+  }
 }
 
 .cd-page {
@@ -64,33 +75,98 @@
   border-bottom: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen {
   .cd-page {
     min-height: auto;
   }
 
   .cd-cover {
-    min-height: auto;
-    padding: 32px 20px;
+    min-height: min(88vh, 720px);
+    padding: clamp(28px, 5vw, 44px) clamp(16px, 4vw, 52px);
+  }
+
+  .cd-section-title {
+    font-size: clamp(1.35rem, 4.5vw, 2rem);
+    text-wrap: balance;
+  }
+
+  .cd-section-lede,
+  .cd-section-lede--blue-grade {
+    max-width: 100%;
   }
 
   .cd-register-bar {
     top: auto;
     position: sticky;
     bottom: 0;
+    padding-bottom: calc(14px + env(safe-area-inset-bottom, 0px));
   }
 
   .cd-matrix {
     display: block;
+    width: 100%;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .cd-matrix table {
+    min-width: min(100%, 480px);
+  }
+
+  .cd-fv-grid {
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 520px) {
+    .cd-fv-grid {
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
+  }
+
+  .cd-diagram-wrap {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .cd-diagram-svg,
+  .cd-p2-proc-premium__svg {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .cd-p2-proc-premium__canvas {
+    padding: clamp(16px, 4vw, 28px) clamp(12px, 3vw, 20px);
+  }
+
+  .cd-p2-proc-premium__svg {
+    max-width: 100%;
+  }
+
+  .cd-request-panel {
+    padding: clamp(20px, 4vw, 28px);
+    text-align: left;
+  }
+
+  .cd-request-panel .cd-section-title {
+    text-align: center;
+  }
+
+  .cd-why-item {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cd-btn-gold,
+  .cd-btn-outline {
+    display: inline-block;
+    text-align: center;
+    max-width: 100%;
   }
 }
 
 @media screen and (min-width: 900px) {
-  .cd-page {
-    break-inside: avoid;
-    min-height: 640px;
-  }
   .cd-page--break {
     break-before: page;
     page-break-before: always;
@@ -153,6 +229,20 @@
   color: var(--cd-text-soft);
   max-width: 42rem;
   margin-bottom: 20px;
+}
+
+.cd-section-lede--blue-grade {
+  background: linear-gradient(135deg, #e8f2fa 0%, #d4e6f4 45%, #c5dcef 100%);
+  border-left: 3px solid var(--cd-blue);
+  border-radius: 4px;
+  padding: 16px 18px 16px 20px;
+  color: #0a3d5c;
+  line-height: 1.65;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.cd-section-lede--blue-grade strong {
+  color: var(--cd-navy);
 }
 
 .cd-cover {
@@ -515,4 +605,10 @@
   padding: 28px;
   border-radius: 3px;
   text-align: center;
+}
+
+.cd-request-panel .cd-section-lede--blue-grade {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
 }

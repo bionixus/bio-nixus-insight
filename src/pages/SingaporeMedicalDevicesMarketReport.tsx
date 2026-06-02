@@ -5,14 +5,12 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
-import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
 import { MarketIntelligenceSections } from '@/components/market-intelligence';
 import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
-  ReportEarlyCtaBar,
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
@@ -89,14 +87,7 @@ const SingaporeMedicalDevicesMarketReport = () => (
       title="Singapore Medical Devices Market Report 2026 | HSA Registration, ASEAN Distribution Hub & Medical Tourism | BioNixus"
       description="Singapore medical devices market at USD 2.5B in 2026, growing 7% CAGR. HSA Class A–D registration, Access Consortium, ASEAN regional distribution hub, medical tourism device demand, and BioNixus GCC intelligence."
       canonical="https://www.bionixus.com/singapore-medical-devices-market-report"
-      jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "Singapore Medical Devices Market Report 2026 | HSA Registration, ASEAN Distribution Hub & Medical Tourism | BioNixus",
-    pageMetaDescription: "Singapore medical devices market at USD 2.5B in 2026, growing 7% CAGR. HSA Class A–D registration, Access Consortium, ASEAN regional distribution hub, medical tourism device demand, and BioNixus GCC intelligence.",
-    countryName: "Singapore",
-    marketSlug: "singapore",
-    publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
-  })]}
+      jsonLd={jsonLd}
     />
       <ReportReadingProgress progressId="report-rp-singapore-medical-devices-market-report" />
       <main>
@@ -128,7 +119,25 @@ const SingaporeMedicalDevicesMarketReport = () => (
           <p className="text-muted-foreground leading-relaxed">See also: <Link to="/singapore-healthcare-market-report" className="text-primary hover:underline font-medium">Singapore Healthcare Market Report</Link> and <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC Medical Devices Market Report</Link>.</p>
         </div>
       </section>
-      <FAQSection sectionId={FAQ_SECTION_ID} title="Singapore medical devices market 2026 — HSA, Access Consortium, ASEAN hub, medical tourism, and GCC FAQ" items={REPORT_FAQ_ITEMS} className="bg-muted/30" />        </ReportContentWithAside>
+              <MarketIntelligenceSections marketSlug="singapore" countryName="Singapore" variant="medical-devices" />
+
+        <section className="section-padding" id="related-intelligence">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Related BioNixus market intelligence</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              BioNixus runs medical device and MedTech market research across Asia-Pacific. Compare the Singapore device market with our{' '}
+              <Link to="/japan-medical-devices-market-report" className="text-primary hover:underline font-medium">Japan medical devices market report</Link>{' '}and{' '}
+              <Link to="/australia-medical-devices-market-report" className="text-primary hover:underline font-medium">Australia medical devices market report</Link>, set it against the{' '}
+              <Link to="/singapore-healthcare-market-report" className="text-primary hover:underline font-medium">Singapore healthcare market report</Link>, or widen the lens with the{' '}
+              <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC medical devices market report</Link>. For methods and global coverage, see the{' '}
+              <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}
+              <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>.
+            </p>
+            <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
+          </div>
+        </section>
+
+        <FAQSection sectionId={FAQ_SECTION_ID} title="Singapore medical devices market 2026 — HSA, Access Consortium, ASEAN hub, medical tourism, and GCC FAQ" items={REPORT_FAQ_ITEMS} className="bg-muted/30" />        </ReportContentWithAside>
       <ReportConsultationBand config={REPORT_CONVERSION} />
         </main>
     <Footer />
