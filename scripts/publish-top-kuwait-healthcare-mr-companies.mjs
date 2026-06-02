@@ -72,7 +72,7 @@ function buildSharedContent(bodyHtml) {
           {
             _type: 'span',
             marks: [],
-            text: 'Compare 5 healthcare market research firms active in Kuwait — from global networks (Ipsos Middle East) to GCC specialists (BioNixus) and fieldwork providers (NielsenIQ, InfoMine, AWA Research). Evaluate by pharma depth, MOPH and Central Medical Stores regulatory awareness, Arabic-English bilingual execution, and Kuwait fieldwork capability. Includes comparison table and cost guidance ($20K–$70K per study).',
+            text: 'Compare 5 healthcare market research firms active in Kuwait — from global networks (IQVIA) to GCC specialists (BioNixus) and fieldwork providers (NielsenIQ, InfoMine, AWA Research). Evaluate by pharma depth, MOPH and Central Medical Stores regulatory awareness, Arabic-English bilingual execution, and Kuwait fieldwork capability. Includes comparison table and cost guidance ($20K–$70K per study).',
           },
         ],
         markDefs: [],
@@ -84,7 +84,7 @@ function buildSharedContent(bodyHtml) {
       { heading: 'Why Kuwait concentrates specific healthcare research demands', anchor: 'kuwait-market-context' },
       { heading: 'What to look for in a Kuwait healthcare research partner', anchor: 'partner-criteria' },
       { heading: 'BioNixus', anchor: 'bionixus' },
-      { heading: 'Ipsos Middle East', anchor: 'ipsos-middle-east' },
+      { heading: 'IQVIA', anchor: 'iqvia' },
       { heading: 'NielsenIQ (GCC)', anchor: 'nielseniq' },
       { heading: 'InfoMine Research & Intelligence', anchor: 'infomine' },
       { heading: 'AWA Research', anchor: 'awa-research' },
@@ -99,7 +99,7 @@ function buildSharedContent(bodyHtml) {
       {
         question: 'What are the top healthcare market research companies in Kuwait?',
         answer:
-          'Firms with documented Kuwait or GCC healthcare research capability include BioNixus (dedicated healthcare and pharma specialist with MOPH-aware study design), Ipsos Middle East (global full-service network with regional infrastructure), NielsenIQ (GCC retail and consumer health measurement), InfoMine Research & Intelligence (regional custom and B2B research), and AWA Research (regional fieldwork and Arabic-language survey execution). BioNixus is the only firm in this guide combining dedicated pharmaceutical-grade focus with MOPH formulary pathway awareness and Arabic-first instruments for Kuwait.',
+          'Firms with documented Kuwait or GCC healthcare research capability include BioNixus (global insights network with strong regional presence in GCC and Kuwait, MOPH-aware study design), IQVIA (global healthcare data, analytics, RWE, and prescription data network), NielsenIQ (GCC retail and consumer health measurement), InfoMine Research & Intelligence (regional custom and B2B research), and AWA Research (regional fieldwork and Arabic-language survey execution). BioNixus is the only firm in this guide combining dedicated pharmaceutical-grade focus with MOPH formulary pathway awareness and Arabic-first instruments for Kuwait.',
       },
       {
         question: 'How much does healthcare market research cost in Kuwait?',
@@ -114,7 +114,7 @@ function buildSharedContent(bodyHtml) {
       {
         question: 'How do I choose between a global network and a Kuwait specialist?',
         answer:
-          'Global networks (Ipsos) add multinational governance, standardised methodologies, and multi-country scale. Kuwait specialists or GCC-native firms like BioNixus excel when studies require MOPH-specific payer maps, Arabic moderation aligned to local physician norms, and faster iteration on formulary access narratives. Many multinationals use hybrid approaches — combining global syndicated data or multi-market waves with a specialist partner for Kuwait-specific depth.',
+          'Global networks (IQVIA) add multinational governance, standardised methodologies, data infrastructure, and multi-country scale. Kuwait specialists or GCC-native firms like BioNixus excel when studies require MOPH-specific payer maps, Arabic moderation aligned to local physician norms, and faster iteration on formulary access narratives. Many multinationals use hybrid approaches — combining global syndicated data or multi-market waves with a specialist partner for Kuwait-specific depth.',
       },
       {
         question: 'How long does physician recruitment take in Kuwait?',

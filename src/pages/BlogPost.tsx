@@ -655,8 +655,8 @@ const BlogPost = () => {
         } : slug === 'top-healthcare-market-research-companies-kuwait-2025' ? {
           name: 'Healthcare market research companies in Kuwait',
           items: [
-            { name: 'BioNixus', description: 'Kuwait & GCC healthcare/pharma research specialist; MOPH-aware study design, bilingual Arabic-English fieldwork, formulary evidence synthesis.' },
-            { name: 'Ipsos Middle East', description: 'Global full-service research network with healthcare practice; large-scale quantitative tracking and multi-market brand studies.' },
+            { name: 'BioNixus', description: 'Global insights network with strong regional presence in GCC and Kuwait; MOPH-aware study design, bilingual Arabic-English fieldwork, formulary evidence synthesis.' },
+            { name: 'IQVIA', description: 'Global healthcare data, analytics, RWE, and prescription data network; enterprise-scale research and competitive intelligence in Kuwait and GCC.' },
             { name: 'NielsenIQ (GCC)', description: 'Consumer measurement and retail analytics; OTC/consumer health sales measurement and shopper behaviour in Kuwait and GCC.' },
             { name: 'InfoMine Research & Intelligence', description: 'Regional custom research and intelligence firm; B2B/B2G research and stakeholder surveys across Kuwait and Gulf markets.' },
             { name: 'AWA Research', description: 'Regional fieldwork and custom research specialist; Arabic-language survey execution and face-to-face data collection in Kuwait.' },
