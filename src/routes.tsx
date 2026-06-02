@@ -100,6 +100,8 @@ import ServicePage from '@/pages/healthcare-research/ServicePage';
 
 const RealWorldDataHealthcareMiddleEast = lazy(() => import('@/pages/RealWorldDataHealthcareMiddleEast'));
 const CostEffectivenessAnalysisGcc = lazy(() => import('@/pages/CostEffectivenessAnalysisGcc'));
+const MedicalAffairsInsightResearchGcc = lazy(() => import('@/pages/MedicalAffairsInsightResearchGcc'));
+const MslInsightResearchMiddleEast = lazy(() => import('@/pages/MslInsightResearchMiddleEast'));
 
 const AdminDashboard = lazy(() => import('@/pages/AdminDashboard'));
 const AdminLogin = lazy(() => import('@/pages/AdminLogin'));
@@ -199,6 +201,8 @@ export const routes: RouteObject[] = [
   { path: '/specialist-physician-panel-uae', element: <SpecialistPhysicianPanelUae /> },
   { path: '/brand-tracking-pharma-gcc', element: <BrandTrackingPharmaGcc /> },
   { path: '/commercial-effectiveness-pharma-middle-east', element: <CommercialEffectivenessPharmaMiddleEast /> },
+  { path: '/medical-affairs-insight-research-gcc', element: suspensePage(<MedicalAffairsInsightResearchGcc />) },
+  { path: '/msl-insight-research-middle-east', element: suspensePage(<MslInsightResearchMiddleEast />) },
   { path: '/diabetes-market-research-uae', element: <DiabetesMarketResearchUae /> },
   { path: '/respiratory-market-access-gcc', element: <RespiratoryMarketAccessGcc /> },
   {
