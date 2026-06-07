@@ -270,13 +270,22 @@ const UAE_HEALTHCARE_TRENDS_2025_META_DESCRIPTION =
  * without requiring a Sanity CMS sync.
  */
 const EGYPT_HEALTHCARE_2026_SLUG = 'healthcare-overview-egypt-market-2026';
-const EGYPT_HEALTHCARE_2026_TITLE = 'Cairo Hospitals & Egypt Healthcare Market 2026 | BioNixus';
+const EGYPT_HEALTHCARE_2026_TITLE = 'Cairo Hospitals Healthcare 2023–2026 | Egypt Market Overview | BioNixus';
 const EGYPT_HEALTHCARE_2026_META_DESCRIPTION =
-  'Egypt healthcare market 2026: Cairo hospital data, EDA pharmaceutical landscape, payer trends, and physician insights from BioNixus market research.';
+  'Cairo hospitals & Egypt healthcare 2023–2026: hospital footprint, EDA pharma landscape, payer trends, and physician insights from BioNixus market research.';
 const EGYPT_HEALTHCARE_2026_OG_TITLE =
   'Egypt Healthcare Market 2026 — Cairo Hospitals, Pharma & Physician Data';
 const EGYPT_HEALTHCARE_2026_OG_DESCRIPTION =
   'Full Egypt healthcare overview for 2026 — Cairo hospital landscape, EDA regulation, pharmaceutical market size, and primary physician research from BioNixus.';
+
+const KUWAIT_HEALTHCARE_2026_SLUG = 'healthcare-overview-kuwait-market-2026';
+const KUWAIT_HEALTHCARE_2026_TITLE = 'Kuwait Healthcare Market 2026 | Hospitals, Distributors & April Healthcare | BioNixus';
+const KUWAIT_HEALTHCARE_2026_META_DESCRIPTION =
+  'Kuwait healthcare market 2026 snapshot: public hospital footprint, pharmaceutical distributors (including April Healthcare Kuwait), MOH policy trends, and physician insights from BioNixus.';
+const KUWAIT_HEALTHCARE_2026_OG_TITLE =
+  'Kuwait Healthcare Overview 2026 — Hospitals, Pharma Distributors & Market Data';
+const KUWAIT_HEALTHCARE_2026_OG_DESCRIPTION =
+  'Kuwait healthcare overview for 2026 — hospital and distributor landscape, April Healthcare and peer importers, MOH regulation, and BioNixus market research context.';
 
 /** EN-only SEO overrides: rich blog narrative + internal equity to `/quantitative-healthcare-market-research`. */
 const QUANT_MR_MA_PAGE_TITLE =
@@ -880,6 +889,7 @@ const BlogPost = () => {
 
   const pathClean = (pathname.split('?')[0] || '/blog').replace(/\/+$/, '') || '/blog';
   const isEgyptHealthcare2026 = slug === EGYPT_HEALTHCARE_2026_SLUG;
+  const isKuwaitHealthcare2026 = slug === KUWAIT_HEALTHCARE_2026_SLUG;
   const isUaeHealthcareTrends2025En = slug === UAE_HEALTHCARE_TRENDS_2025_SLUG && !isArBlog;
   const comparisonPageUrl = `https://www.bionixus.com/blog/${GCC_PHARMA_COMPARISON_SLUG}`;
   const pageUrl = blogCanonicalAbsoluteUrl(pathname, post.seoCanonicalUrl, isGccComparisonEn, comparisonPageUrl);
@@ -894,6 +904,8 @@ const BlogPost = () => {
   let titleCore = dedupePipeBioNixusTail(post.seoMetaTitle || post.title || 'BioNixus');
   if (isEgyptHealthcare2026) {
     titleCore = EGYPT_HEALTHCARE_2026_TITLE;
+  } else if (isKuwaitHealthcare2026) {
+    titleCore = KUWAIT_HEALTHCARE_2026_TITLE;
   } else if (isQuantMrMaEn) {
     titleCore = QUANT_MR_MA_PAGE_TITLE;
   } else if (isGccComparisonEn) {
@@ -937,6 +949,8 @@ const BlogPost = () => {
       : null;
   const finalMetaDescription = isEgyptHealthcare2026
     ? EGYPT_HEALTHCARE_2026_META_DESCRIPTION
+    : isKuwaitHealthcare2026
+      ? KUWAIT_HEALTHCARE_2026_META_DESCRIPTION
     : isUaeHealthcareTrends2025En
       ? UAE_HEALTHCARE_TRENDS_2025_META_DESCRIPTION
       : isQuantMrMaEn
@@ -954,6 +968,8 @@ const BlogPost = () => {
               : arabicBlogOnEnPathMetaDescription ?? arBlogMetaOverride ?? metaDescription;
   const socialTitle = isEgyptHealthcare2026
     ? EGYPT_HEALTHCARE_2026_OG_TITLE
+    : isKuwaitHealthcare2026
+      ? KUWAIT_HEALTHCARE_2026_OG_TITLE
     : isQuantMrMaEn
       ? QUANT_MR_MA_OG_TITLE
       : isGccComparisonEn
@@ -967,6 +983,8 @@ const BlogPost = () => {
               : dedupePipeBioNixusTail(post.ogTitle || documentTitle);
   const socialDescription = isEgyptHealthcare2026
     ? EGYPT_HEALTHCARE_2026_OG_DESCRIPTION
+    : isKuwaitHealthcare2026
+      ? KUWAIT_HEALTHCARE_2026_OG_DESCRIPTION
     : isUaeHealthcareTrends2025En
       ? UAE_HEALTHCARE_TRENDS_2025_META_DESCRIPTION
       : isQuantMrMaEn
@@ -1070,6 +1088,8 @@ const BlogPost = () => {
         headline={
           isEgyptHealthcare2026
             ? EGYPT_HEALTHCARE_2026_OG_TITLE
+            : isKuwaitHealthcare2026
+              ? KUWAIT_HEALTHCARE_2026_OG_TITLE
             : isQuantMrMaEn
               ? QUANT_MR_MA_OG_TITLE
               : isGccComparisonEn
@@ -1431,6 +1451,60 @@ const BlogPost = () => {
                         className="inline-flex items-center gap-1 text-sm text-primary font-medium hover:underline"
                       >
                         <ArrowUpRight className="w-3.5 h-3.5" aria-hidden /> Egypt country research methodology
+                      </Link>
+                    </li>
+                  </ul>
+                </aside>
+              )}
+
+              {isKuwaitHealthcare2026 && (
+                <aside
+                  className="mb-8 rounded-xl border border-primary/15 bg-primary/[0.025] p-5 lg:p-6"
+                  aria-label="Kuwait healthcare market quick navigation"
+                >
+                  <p className="text-[11px] font-extrabold tracking-[0.12em] uppercase text-primary mb-3">
+                    Kuwait healthcare 2026 — quick navigation
+                  </p>
+                  <p className="text-[15px] text-foreground leading-relaxed mb-3">
+                    This overview maps the Kuwait healthcare market in 2026 — public hospital footprint,
+                    pharmaceutical distributors (including April Healthcare Kuwait), MOH policy trends, and physician
+                    research signals. Continue to the{' '}
+                    <Link to="/healthcare-market-research" className="text-primary font-semibold underline underline-offset-2 hover:no-underline">
+                      healthcare market research hub
+                    </Link>{' '}
+                    or use the related Kuwait resources below.
+                  </p>
+                  <ul className="grid sm:grid-cols-2 gap-2 mt-3 list-none p-0">
+                    <li>
+                      <Link
+                        to="/pharmaceutical-companies-kuwait"
+                        className="inline-flex items-center gap-1 text-sm text-primary font-medium hover:underline"
+                      >
+                        <ArrowUpRight className="w-3.5 h-3.5" aria-hidden /> Pharmaceutical companies in Kuwait
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/healthcare-market-research/kuwait"
+                        className="inline-flex items-center gap-1 text-sm text-primary font-medium hover:underline"
+                      >
+                        <ArrowUpRight className="w-3.5 h-3.5" aria-hidden /> Kuwait healthcare market research
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/gcc-pharma-market-report-2026"
+                        className="inline-flex items-center gap-1 text-sm text-primary font-medium hover:underline"
+                      >
+                        <ArrowUpRight className="w-3.5 h-3.5" aria-hidden /> GCC pharma market report 2026
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/kuwait-market-access-research"
+                        className="inline-flex items-center gap-1 text-sm text-primary font-medium hover:underline"
+                      >
+                        <ArrowUpRight className="w-3.5 h-3.5" aria-hidden /> Kuwait market access research
                       </Link>
                     </li>
                   </ul>

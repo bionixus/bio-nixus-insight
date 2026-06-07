@@ -143,7 +143,7 @@ export default function HealthcareReportPage() {
 
         <ReportPremiumHero
           title={report.title}
-          description={intro}
+          description={report.heroLead ?? intro}
           config={conversionConfig}
           marketSlug={report.marketSlug}
           therapySlug={report.therapyAreaSlug}
@@ -308,7 +308,12 @@ export default function HealthcareReportPage() {
               Teams can use this evidence layer to separate high-confidence priorities from assumptions that still need
               country-level stakeholder validation.
             </p>
-            <p className="text-muted-foreground leading-relaxed">{report.marketAccessNotes}</p>
+            <p className="text-muted-foreground leading-relaxed">
+              <span className="font-medium text-foreground">
+                Market-specific signals we track for {report.market} {report.therapyArea} in 2026:
+              </span>{' '}
+              {report.marketAccessNotes.replace(/[.;\s]+$/, '')}.
+            </p>
           </ReportPremiumSection>
 
           <ReportPremiumSection

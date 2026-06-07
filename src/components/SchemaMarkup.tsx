@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async'
 import type { BlogPost } from '@/types/blog'
 import { HOME_FAQ_SECTION_ID } from '@/lib/homePageFaq'
 import { buildHomeArticleJsonLdNodes, buildHomeServiceJsonLdNodes } from '@/lib/homePageJsonLd'
+import { buildCanonicalOrganization } from '@/lib/seo/organization'
 
 type LanguageCode = 'en' | 'ar' | 'de' | 'fr' | 'es' | 'zh'
 
@@ -123,53 +124,7 @@ function toIsoDate(value?: string): string | undefined {
 }
 
 function buildOrganization(inLanguage: string) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    '@id': ORG_ID,
-    name: 'BioNixus',
-    foundingDate: '2012',
-    url: BASE_URL,
-    logo: `${BASE_URL}/bionixus-logo.webp`,
-    image: [ORG_IMAGE],
-    sameAs: [
-      'https://www.linkedin.com/company/bionixus/',
-      'https://www.facebook.com/Bionixus',
-      'https://www.instagram.com/bionixus_',
-    ],
-    address: [
-      {
-        '@type': 'PostalAddress',
-        streetAddress: '1309 Coffeen Ave',
-        addressLocality: 'Sheridan',
-        addressRegion: 'WY',
-        postalCode: '82801',
-        addressCountry: 'US',
-      },
-      {
-        '@type': 'PostalAddress',
-        streetAddress: '128 City Road',
-        addressLocality: 'London',
-        postalCode: 'EC1V 2NX',
-        addressCountry: 'GB',
-      },
-    ],
-    contactPoint: [
-      {
-        '@type': 'ContactPoint',
-        telephone: '+1-888-465-5557',
-        contactType: 'customer service',
-        areaServed: 'US',
-      },
-      {
-        '@type': 'ContactPoint',
-        telephone: '+44-7727-666682',
-        contactType: 'customer service',
-        areaServed: 'GB',
-      },
-    ],
-    inLanguage,
-  };
+  return buildCanonicalOrganization(inLanguage);
 }
 
 function buildWebsite(inLanguage: string) {

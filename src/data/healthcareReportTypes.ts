@@ -26,6 +26,8 @@ export interface ReportEntry {
   sourceNotes: string[];
   /** Country therapy segments for spend chart when available. */
   therapySegments?: import('@/data/marketIntelligence/types').TherapySegment[];
+  /** Optional hero lead; when set, replaces the generic intro on the report page. */
+  heroLead?: string;
   summaryPara1: string;
   summaryPara2: string;
   /** Spec-specific access signals (from sum1Tail). */

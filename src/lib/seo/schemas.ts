@@ -1,4 +1,5 @@
 import type { CountryConfig } from '@/lib/constants/countries';
+import { ORG_AREA_SERVED, buildCanonicalOrganization } from '@/lib/seo/organization';
 
 const BASE_URL = 'https://www.bionixus.com';
 
@@ -46,51 +47,17 @@ export function buildServiceSchema() {
     '@context': 'https://schema.org',
     '@type': 'Service',
     serviceType: 'Healthcare Market Research',
-    provider: { '@type': 'Organization', name: 'BioNixus Market Research' },
-    areaServed: ['Egypt', 'Saudi Arabia', 'United Arab Emirates', 'Kuwait', 'United Kingdom', 'Europe'],
+    provider: { '@type': 'Organization', name: 'BioNixus' },
+    areaServed: ORG_AREA_SERVED,
     description:
-      'Comprehensive pharmaceutical market research services including physician insights, KOL mapping, market access research, quantitative studies, and qualitative studies across MENA, UK, and Europe.',
+      'Comprehensive pharmaceutical and healthcare market research — physician insights, KOL mapping, market access research, and quantitative and qualitative studies — with deep regional expertise across MENA, Latin America, Eastern Europe, the UK, and the wider EMEA region.',
   };
 }
 
 export function buildOrganizationSchema() {
   return {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'BioNixus Market Research',
-    url: BASE_URL,
-    logo: `${BASE_URL}/bionixus-logo.webp`,
-    description:
-      'BioNixus is a pharmaceutical market research partner delivering healthcare insights across MENA, UK, and Europe.',
-    address: [
-      {
-        '@type': 'PostalAddress',
-        streetAddress: '128 City Road',
-        addressLocality: 'London',
-        addressRegion: 'England',
-        postalCode: 'EC1V 2NX',
-        addressCountry: 'GB',
-      },
-      {
-        '@type': 'PostalAddress',
-        streetAddress: '1309 Coffeen Avenue STE 1200',
-        addressLocality: 'Sheridan',
-        addressRegion: 'Wyoming',
-        postalCode: '82801',
-        addressCountry: 'US',
-      },
-    ],
-    telephone: ['+447727666682', '+18884655557'],
+    ...buildCanonicalOrganization(),
     email: 'mosama@bionixus.com',
-    sameAs: ['https://uk.linkedin.com/company/bionixus'],
-    areaServed: [
-      { '@type': 'Country', name: 'Egypt' },
-      { '@type': 'Country', name: 'Saudi Arabia' },
-      { '@type': 'Country', name: 'United Arab Emirates' },
-      { '@type': 'Country', name: 'Kuwait' },
-      { '@type': 'Country', name: 'United Kingdom' },
-      { '@type': 'Place', name: 'Europe' },
-    ],
   };
 }
 

@@ -166,15 +166,15 @@ export default function EgyptPharmaceuticalMarketResearch() {
           heading="Egypt executive decision framework"
           points={[
             {
-              title: 'Why it matters',
+              title: 'Separate tender volume from out-of-pocket',
               body: 'Egypt launch outcomes depend on separating public tender volume from private and out-of-pocket adoption.',
             },
             {
-              title: 'What the evidence says',
+              title: 'Map EDA, UHI, and pharmacy channels early',
               body: 'Programs that map EDA, UHI, and pharmacy channels early reduce rework before national roll-out.',
             },
             {
-              title: 'What to do next',
+              title: 'Anchor on one Egypt decision',
               body: 'Anchor on one Egypt decision—access, sizing, or competitive defense—and run one aligned field module.',
             },
           ]}

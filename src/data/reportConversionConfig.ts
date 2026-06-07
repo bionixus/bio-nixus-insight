@@ -329,6 +329,15 @@ const STANDALONE_REPORT_CONFIG: Record<string, ReportConversionConfig> = {
     ),
     showEgyptPhone: true,
   },
+  '/gcc-pharmaceutical-market-research': {
+    ...standaloneBase(
+      'GCC',
+      'pharmaceutical market research',
+      '/gcc-pharmaceutical-market-research',
+      'Mention biologics, generic injectables, or precision medicine priorities for faster routing.',
+    ),
+    showEgyptPhone: true,
+  },
   '/gcc-medical-devices-market-report': {
     ...standaloneBase(
       'GCC',
@@ -423,5 +432,92 @@ export function getStandaloneReportConfig(canonicalPath: string): ReportConversi
     canonicalPath: path,
     reportLabel: 'Healthcare market report',
     emailSubject: 'Healthcare market research briefing — BioNixus',
+  };
+}
+
+const HEALTHCARE_MR_HUB_BASE: ReportConversionConfig = {
+  showEgyptPhone: true,
+  marketName: 'MENA, UK & Europe',
+  reportLabel: 'Healthcare market research',
+  canonicalPath: '/healthcare-market-research',
+  emailSubject: 'Healthcare & pharmaceutical market research — BioNixus',
+  routingHint:
+    'Mention target countries, therapy areas, and whether you need quant, qual, or market access modules so we route you to the right practice lead.',
+  primaryCtaLabel: 'Book a healthcare research briefing',
+  consultationHeadline: 'Ready to commission pharmaceutical market intelligence?',
+  consultationBody:
+    'BioNixus designs Arabic–English instruments, recruits MOH-aligned stakeholders, monitors tender cycles, and packages board-ready narratives for pharma, biotech, and medtech teams.',
+  asideDeskLabel: 'Healthcare research desk',
+  midPageHeadline: 'Commission custom healthcare market research',
+  midPageBody:
+    'Book a 30-minute briefing to align methodology, sample design, and delivery timelines with your launch or access milestones.',
+};
+
+/** Conversion config for `/healthcare-market-research` hub. */
+export function getHealthcareMarketResearchHubConfig(): ReportConversionConfig {
+  return { ...HEALTHCARE_MR_HUB_BASE };
+}
+
+/** Conversion config for `/healthcare-market-research/:country`. */
+export function getHealthcareMarketResearchCountryConfig(
+  countryName: string,
+  countrySlug: string,
+): ReportConversionConfig {
+  const regulator = regShort(countrySlug);
+  return {
+    ...HEALTHCARE_MR_HUB_BASE,
+    showEgyptPhone: countrySlug === 'egypt' || countrySlug === 'saudi-arabia' || countrySlug === 'uae',
+    marketName: countryName,
+    reportLabel: `${countryName} pharmaceutical market research`,
+    canonicalPath: `/healthcare-market-research/${countrySlug}`,
+    emailSubject: `${countryName} healthcare market research — BioNixus`,
+    routingHint: `Mention ${regulator} formulary or tender priorities and your therapy area for faster routing.`,
+    primaryCtaLabel: `Schedule a ${countryName} research briefing`,
+    consultationHeadline: `Ready for ${countryName} pharmaceutical market intelligence?`,
+    asideDeskLabel: `${countryName} research desk`,
+    midPageHeadline: `Commission ${countryName} physician, payer, or hospital intelligence`,
+    midPageBody: `Book a briefing to align stakeholder mapping, evidence plans, and fieldwork timelines for ${countryName}.`,
+  };
+}
+
+/** Conversion config for `/healthcare-market-research/therapy/:area`. */
+export function getHealthcareMarketResearchTherapyConfig(
+  therapyName: string,
+  therapySlug: string,
+): ReportConversionConfig {
+  const label = therapyName.charAt(0).toUpperCase() + therapyName.slice(1);
+  return {
+    ...HEALTHCARE_MR_HUB_BASE,
+    marketName: label,
+    reportLabel: `${label} therapy market research`,
+    canonicalPath: `/healthcare-market-research/therapy/${therapySlug}`,
+    emailSubject: `${label} pharmaceutical market research — BioNixus`,
+    routingHint: `Mention ${label.toLowerCase()} and priority markets (Saudi Arabia, UAE, UK, etc.) for faster routing.`,
+    primaryCtaLabel: `Schedule a ${label} research briefing`,
+    consultationHeadline: `Commission ${label} market intelligence across MENA, UK & Europe`,
+    asideDeskLabel: `${label} therapy desk`,
+    midPageHeadline: `Design a ${label.toLowerCase()} insight program`,
+    midPageBody: `Align quant/qual modules, stakeholder lists, and timelines for your ${label.toLowerCase()} portfolio decisions.`,
+  };
+}
+
+/** Conversion config for `/healthcare-market-research/services/:service`. */
+export function getHealthcareMarketResearchServiceConfig(
+  serviceName: string,
+  serviceSlug: string,
+): ReportConversionConfig {
+  const label = serviceName.charAt(0).toUpperCase() + serviceName.slice(1);
+  return {
+    ...HEALTHCARE_MR_HUB_BASE,
+    marketName: 'Multi-market',
+    reportLabel: `${label} healthcare research service`,
+    canonicalPath: `/healthcare-market-research/services/${serviceSlug}`,
+    emailSubject: `${label} healthcare research service — BioNixus`,
+    routingHint: `Mention the ${label.toLowerCase()} module and target countries so we scope the right methodology mix.`,
+    primaryCtaLabel: `Request a ${label.toLowerCase()} proposal`,
+    consultationHeadline: `Ready to scope ${label.toLowerCase()} healthcare research?`,
+    asideDeskLabel: `${label} service desk`,
+    midPageHeadline: `Integrate ${label.toLowerCase()} with country and therapy workstreams`,
+    midPageBody: `Book a scoping call to connect this service module with your wider launch or access program.`,
   };
 }

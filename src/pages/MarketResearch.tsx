@@ -166,15 +166,15 @@ const MarketResearch = () => {
           heading="Executive decision layer"
           points={[
             {
-              title: 'Why it matters',
+              title: 'Insight only pays when it answers a decision',
               body: 'Research earns its keep only when it answers a specific decision — which account to prioritize, which message to lead with, whether the price will clear the committee. Insight with no decision attached is cost, not value.',
             },
             {
-              title: 'What the evidence says',
+              title: 'Pair every number with a reason',
               body: 'The strongest programs pair a number with a reason: quant tells you how big and how fast, qual tells you why. Run them together and the cross-functional argument is usually settled before the readout ends.',
             },
             {
-              title: 'What to do next',
+              title: 'Name the decision, set the deadline',
               body: 'Name one decision and its deadline, pick the method that answers it, and hold the findings to a 30/60/90 plan with owners — so the work moves into action instead of a shared drive.',
             },
           ]}

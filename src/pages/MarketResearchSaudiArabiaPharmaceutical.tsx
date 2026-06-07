@@ -175,15 +175,15 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
           heading="Saudi executive decision framework"
           points={[
             {
-              title: 'Why it matters',
+              title: 'Institutions decide KSA access',
               body: 'KSA launch and access outcomes are highly sensitive to institutional behavior and evidence fit.',
             },
             {
-              title: 'What the evidence says',
+              title: 'Map procurement and payers early',
               body: 'Programs with early procurement and payer mapping reduce downstream timeline and adoption risk.',
             },
             {
-              title: 'What to do next',
+              title: 'Anchor on SFDA-aware evidence',
               body: 'Anchor decisions on SFDA-aware evidence and run one aligned commercial-medical-access action plan.',
             },
           ]}

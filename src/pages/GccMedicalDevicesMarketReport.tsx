@@ -109,8 +109,8 @@ const GccMedicalDevicesMarketReport = () => {
       <Navbar />
 
       <SEOHead
-        title="GCC Medical Devices Market Report 2026 | USD 5.8B Market Size, Segments & Intelligence | BioNixus"
-        description="GCC medical devices market at USD 5.8B in 2026, reaching $9B+ by 2030. Saudi Arabia, UAE, and Kuwait country-level data, regulatory requirements (SFDA, MOHAP, DHA), device segments, and hospital procurement intelligence from BioNixus."
+        title="GCC Medical Devices Market Report 2026 | IVD, Prefilled Syringes & $5.8B Size | BioNixus"
+        description="GCC medical devices & in vitro diagnostic (IVD) market ~USD 5.8B in 2026, $9B+ by 2030. Saudi Arabia, UAE, Kuwait data—SFDA, MOHAP, DHA regulation, prefilled syringes, hospital procurement intelligence from BioNixus."
         canonical="https://www.bionixus.com/gcc-medical-devices-market-report"
         jsonLd={jsonLd}
       />
@@ -171,7 +171,11 @@ const GccMedicalDevicesMarketReport = () => {
               and the{' '}
               <Link to="/saudi-arabia-medical-devices-market-report" className="text-primary hover:underline font-medium">
                 Saudi Arabia Medical Devices Market Report
-              </Link>.
+              </Link>. For a deep dive into the diagnostics segment, read our analysis of the{' '}
+              <Link to="/blog/saudi-arabia-in-vitro-diagnostics-market" className="text-primary hover:underline font-medium">
+                in vitro diagnostics (IVD) market in Saudi Arabia
+              </Link>{' '}
+              — SFDA registration, molecular diagnostics, and NUPCO procurement.
             </p>
           </div>
         </section>

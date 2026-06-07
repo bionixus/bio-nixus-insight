@@ -26,7 +26,7 @@ export const translations = {
       tagline: 'Specialist pharmaceutical & healthcare market research',
       title: 'Pharmaceutical and healthcare market research for confident launch, access, and growth',
       subtitle:
-        'BioNixus helps pharmaceutical, biotech, and medtech teams turn physician, payer, and hospital evidence into decisions that move launches forward — with country-level depth across the GCC, MENA, Europe, and the UK.',
+        'BioNixus is a global pharmaceutical and healthcare market research company. We help pharma, biotech, and medtech teams turn physician, payer, and hospital evidence into decisions that move launches forward — with country-level depth across MENA, Latin America, Eastern Europe, and the wider EMEA region.',
       valueProposition: 'Every engagement starts from a real commercial question, not a generic data dump. You get defensible quantitative and qualitative evidence — scoped to the decision, the market, and the regulatory reality you actually operate in — from pre-launch sizing through post-launch optimization.',
       serviceHighlights: [
         'Multi-country physician & payer research',
@@ -36,7 +36,7 @@ export const translations = {
       cta: 'Request a proposal',
       ctaSecondary: 'View case studies',
       trustBar: 'Decision-ready evidence for pharmaceutical, biotech, and medtech teams since 2012, across',
-      trustCountries: 'Europe, the UK, the GCC, and North Africa.',
+      trustCountries: 'MENA, Latin America, Eastern Europe, the UK, and the wider EMEA region.',
       complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'SFDA Compliant', 'ICH-GCP'],
     },
     services: {
@@ -230,7 +230,7 @@ export const translations = {
       no: 'No',
     },
     footer: {
-      tagline: 'Healthcare Market Research | Pharma Insights Europe & MENA. Delivering evidence-based insights to pharmaceutical and biotech leaders worldwide.',
+      tagline: 'Global Pharmaceutical & Healthcare Market Research with deep regional expertise across MENA, Latin America, and Eastern Europe. Delivering evidence-based insights to pharmaceutical and biotech leaders worldwide.',
       quickLinksHeading: 'Quick links',
       companyHeading: 'Company',
       healthcareHub: 'Healthcare market research hub',
@@ -418,7 +418,7 @@ export const translations = {
       items: [
         { value: '17+', label: 'Abgedeckte Länder' },
         { value: '14+', label: 'Therapiegebiete' },
-        { value: '120+', label: 'Gelieferte Projekte' },
+        { value: '127+', label: 'Gelieferte Projekte' },
         { value: '15+', label: 'Jahre Erfahrung' },
       ],
     },
@@ -675,7 +675,7 @@ export const translations = {
       items: [
         { value: '17+', label: 'Pays Couverts' },
         { value: '14+', label: 'Aires Thérapeutiques' },
-        { value: '120+', label: 'Projets Livrés' },
+        { value: '127+', label: 'Projets Livrés' },
         { value: '15+', label: 'Années d\'Expérience' },
       ],
     },
@@ -932,7 +932,7 @@ export const translations = {
       items: [
         { value: '17+', label: 'Países Cubiertos' },
         { value: '14+', label: 'Áreas Terapéuticas' },
-        { value: '120+', label: 'Proyectos Entregados' },
+        { value: '127+', label: 'Proyectos Entregados' },
         { value: '15+', label: 'Años de Experiencia' },
       ],
     },
@@ -1188,7 +1188,7 @@ export const translations = {
       items: [
         { value: '17+', label: '覆盖国家' },
         { value: '14+', label: '治疗领域' },
-        { value: '120+', label: '交付项目' },
+        { value: '127+', label: '交付项目' },
         { value: '15+', label: '年经验' },
       ],
     },

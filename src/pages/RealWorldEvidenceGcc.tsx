@@ -87,15 +87,15 @@ export default function RealWorldEvidenceGcc() {
           heading="RWE decision framework"
           points={[
             {
-              title: 'Why it matters',
+              title: 'RWE bridges clinical reality and payer expectations',
               body: 'RWE bridges clinical reality and payer expectations when market-access choices carry high financial risk.',
             },
             {
-              title: 'What the evidence says',
+              title: 'Protocol quality drives trusted outputs',
               body: 'Protocol quality and transparent assumptions are the strongest drivers of trusted RWE outputs.',
             },
             {
-              title: 'What to do next',
+              title: 'One objective, mapped to action',
               body: 'Prioritize one decision objective, align protocol scope, and map outputs to commercial/access actions.',
             },
           ]}

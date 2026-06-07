@@ -406,23 +406,6 @@ function ensureTitleTag(html, pathname) {
   );
 }
 
-function insertShareFigureAfterHero(mainInner, figureHtml) {
-  const h1Idx = mainInner.search(/<h1\b/i);
-  if (h1Idx === -1) return `${mainInner}${figureHtml}`;
-  const afterH1 = mainInner.slice(h1Idx);
-  const sectionEnd = afterH1.search(/<\/section>/i);
-  if (sectionEnd !== -1) {
-    const insertAt = h1Idx + sectionEnd + '</section>'.length;
-    return `${mainInner.slice(0, insertAt)}${figureHtml}${mainInner.slice(insertAt)}`;
-  }
-  const h1End = afterH1.search(/<\/h1>/i);
-  if (h1End !== -1) {
-    const insertAt = h1Idx + h1End + '</h1>'.length;
-    return `${mainInner.slice(0, insertAt)}${figureHtml}${mainInner.slice(insertAt)}`;
-  }
-  return `${mainInner}${figureHtml}`;
-}
-
 function getClientAssetHints() {
   const assetsDir = path.resolve(__dirname, 'dist/client/assets');
   if (!fs.existsSync(assetsDir)) {
@@ -440,37 +423,6 @@ function buildLcpPreloadTag(initialData) {
   if (typeof url !== 'string' || !url.trim()) return '';
   const safe = String(url).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
   return `<link rel="preload" as="image" href="${safe}" fetchpriority="high">`;
-}
-
-function ensureMainContentImage(html, pathname) {
-  const mainMatch = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i);
-  if (!mainMatch) return html;
-  const mainInner = mainMatch[1];
-  if (/<img\b/i.test(mainInner)) return html;
-  if (/data-page-share/i.test(mainInner)) return html;
-
-  const cleanPath = (pathname || '/').split('?')[0].split('#')[0] || '/';
-  const normalizedPath = cleanPath === '/' ? '/' : cleanPath.replace(/\/+$/, '');
-  const encodedPath = encodeURIComponent(normalizedPath);
-  const fullUrl = `https://www.bionixus.com${normalizedPath === '/' ? '' : normalizedPath}`;
-  const altText = `BioNixus share card for ${fullUrl}`;
-  const figureHtml = `<aside data-page-share class="mt-10 mb-8">
-  <figure class="mx-auto max-w-sm rounded-lg overflow-hidden border border-border bg-card shadow-sm">
-    <a href="/api/og-card?path=${encodedPath}" target="_blank" rel="noopener" class="block" aria-label="Open the share card for this page in a new tab">
-      <img src="/api/og-card?path=${encodedPath}" alt="${altText}" title="${altText}" width="400" height="210" loading="lazy" decoding="async" fetchpriority="low" class="block w-full h-auto max-w-sm" />
-    </a>
-    <figcaption class="px-3 py-2 text-xs text-muted-foreground border-t border-border">Share this page — <strong class="text-foreground">BioNixus</strong></figcaption>
-  </figure>
-</aside>`;
-
-  const mainOpen = html.match(/<main\b[^>]*>/i);
-  if (!mainOpen) return html;
-  const mainStart = html.indexOf(mainOpen[0]) + mainOpen[0].length;
-  const mainClose = html.lastIndexOf('</main>');
-  if (mainClose === -1 || mainClose <= mainStart) return html;
-  const inner = html.slice(mainStart, mainClose);
-  const updatedInner = insertShareFigureAfterHero(inner, figureHtml);
-  return `${html.slice(0, mainStart)}${updatedInner}${html.slice(mainClose)}`;
 }
 
 function shouldForceArabicMetaDescription(pathname, chosen) {
@@ -938,12 +890,16 @@ async function startServer() {
           '<!--ssr-data-->',
           `<script>window.__INITIAL_DATA__ = ${initialDataSerialized}</script>`,
         );
-      const localizedPage = ensureMainContentImage(
-        ensureCanonicalTag(
-          ensureMetaDescriptionTag(
-            ensureTitleTag(applyHtmlLang(page, req.path), req.path),
-            req.path,
-          ),
+      // NOTE: We intentionally do NOT inject a synthetic in-<main> share-card image here.
+      // Anything inserted into the React-rendered #root markup (e.g. the old
+      // ensureMainContentImage share <aside>) is treated as an unexpected node during
+      // hydrateRoot() and discarded by React on the client — which both removes the node
+      // for real users and corrupts hydration of the surrounding subtree (the
+      // "Expected server HTML to contain a matching <div> in <main>" warning). Page-level
+      // imagery/social cards are handled inside the React tree and via OpenGraph meta tags.
+      const localizedPage = ensureCanonicalTag(
+        ensureMetaDescriptionTag(
+          ensureTitleTag(applyHtmlLang(page, req.path), req.path),
           req.path,
         ),
         req.path,

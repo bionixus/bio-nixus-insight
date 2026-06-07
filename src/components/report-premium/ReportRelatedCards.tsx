@@ -21,14 +21,14 @@ export function ReportRelatedCards({ reports, className = '' }: ReportRelatedCar
 
   return (
     <section className={`py-12 ${className}`.trim()} id="related-reports">
-      <div className="w-full">
+      <div ref={gridRef} className="w-full">
         <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-2 sr sr-up sr-line">
           Related Healthcare Market Research Reports
         </h2>
         <p className="text-sm text-muted-foreground mb-8 sr sr-up">
           Continue exploring adjacent therapy and geography intelligence briefings.
         </p>
-        <div ref={gridRef} className="grid sm:grid-cols-2 gap-5">
+        <div className="grid sm:grid-cols-2 gap-5">
           {reports.map((rel) => (
             <article
               key={rel.slug}

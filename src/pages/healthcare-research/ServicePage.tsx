@@ -1,8 +1,11 @@
 import { Link, useParams } from 'react-router-dom';
 import { SEOHead } from '@/components/seo/SEOHead';
-import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
-import { CTASection } from '@/components/shared/CTASection';
-import { FAQSection } from '@/components/healthcare-research/FAQSection';
+import { HealthcareResearchPageShell } from '@/components/healthcare-research/HealthcareResearchPageShell';
+import { HealthcareNavCard } from '@/components/healthcare-research/healthcareResearchUi';
+import { getHealthcareMarketResearchServiceConfig } from '@/data/reportConversionConfig';
+import { ReportMidPageCta } from '@/components/report-conversion';
+import { ReportInsightGrid } from '@/components/report-premium';
+import { ReportPremiumSection } from '@/components/report-premium';
 import { buildFAQSchema, buildServicePageSchemas } from '@/lib/seo/schemas';
 import { ServiceMarketReferenceGuide } from '@/components/seo/ServiceMarketReferenceGuide';
 
@@ -111,44 +114,62 @@ export default function ServicePage() {
     SERVICE_HERO_COPY[service] ||
     'BioNixus provides service-specific healthcare research programs that connect evidence generation to practical execution decisions.';
 
+  const conversionConfig = getHealthcareMarketResearchServiceConfig(titleService, service);
+  const faqSectionId = `healthcare-mr-service-${service}-faq`;
+  const displayTitle = `${titleService.charAt(0).toUpperCase() + titleService.slice(1)} research service`;
+
   return (
-    <main>
+    <>
       <SEOHead
         title={`${titleService} Healthcare Research Service | BioNixus`}
         description={copy}
         canonical={`/healthcare-market-research/services/${service}`}
         jsonLd={jsonLd}
       />
-      <BreadcrumbNav
-        items={[
+
+      <HealthcareResearchPageShell
+        progressId={`healthcare-mr-service-${service}`}
+        config={conversionConfig}
+        breadcrumbs={[
           { name: 'Home', href: '/' },
           { name: 'Healthcare Market Research', href: '/healthcare-market-research' },
           { name: `${titleService} Service`, href: `/healthcare-market-research/services/${service}` },
         ]}
-      />
-
-      <section className="py-16">
-        <div className="container-wide max-w-5xl mx-auto">
-          <h1 className="text-4xl font-display font-semibold text-foreground mb-4 capitalize">
-            {titleService} Research Service
-          </h1>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            {heroCopy} Explore the broader{' '}
-            <Link to="/healthcare-market-research" className="text-primary underline">
-              healthcare market research hub
-            </Link>{' '}
-            for regional and therapy-specific context, and review structured therapy outputs in the{' '}
-            <Link to="/market-reports" className="text-primary underline">
-              market reports hub
-            </Link>
-            .
-          </p>
-        </div>
-      </section>
-
-      <section className="py-12 bg-muted/20">
-        <div className="container-wide max-w-5xl mx-auto">
-          <h2 className="text-3xl font-display font-semibold text-foreground mb-5">{content.title}</h2>
+        hero={{
+          title: displayTitle,
+          therapySlug: service,
+          statsCaption: '',
+          stats: [
+            { value: 'Quant + qual', label: 'Integrated methods' },
+            { value: '17+', label: 'Markets covered' },
+            { value: 'ESOMAR', label: 'Governance standard' },
+          ],
+          description: (
+            <p>
+              {heroCopy} Explore the broader{' '}
+              <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">
+                healthcare market research hub
+              </Link>{' '}
+              for regional and therapy-specific context, and review structured therapy outputs in the{' '}
+              <Link to="/market-reports" className="text-primary font-medium hover:underline">
+                market reports hub
+              </Link>
+              .
+            </p>
+          ),
+        }}
+        tocItems={[
+          { href: '#delivery-model', label: 'Delivery model' },
+          { href: '#deep-dives', label: 'Related guides' },
+          { href: `#${faqSectionId}`, label: 'FAQ' },
+        ]}
+        faq={{
+          sectionId: faqSectionId,
+          title: `${titleService} service FAQs`,
+          items: serviceFaqs,
+        }}
+      >
+        <ReportPremiumSection id="delivery-model" title={content.title} variant="cream">
           <div className="space-y-4 mb-6 text-muted-foreground leading-relaxed">
             <p>
               Each service module is mapped to a concrete decision stage: opportunity framing, segment prioritization,
@@ -159,70 +180,72 @@ export default function ServicePage() {
               aligned across commercial, medical, and market-access stakeholders.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {content.bullets.map((bullet) => (
-              <article key={bullet} className="rounded-xl border border-border bg-card p-4">
-                <h3 className="text-sm font-semibold text-foreground">{bullet}</h3>
-              </article>
-            ))}
-          </div>
+          <ReportInsightGrid items={content.bullets} />
+        </ReportPremiumSection>
 
-          {/* Targeted Internal Linking based on Service */}
-          {service === 'market-access' && (
-            <div className="mt-10 p-6 bg-card border border-border rounded-xl">
-              <h3 className="text-xl font-display font-semibold text-foreground mb-4">Deep Dive: Market Access Guides</h3>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/blog/market-access-strategy-uae" className="group flex-1 p-4 rounded-lg bg-muted/50 hover:bg-muted border border-transparent hover:border-primary/20 transition-all">
-                  <h4 className="font-semibold text-primary group-hover:underline mb-1">UAE Market Access Strategy</h4>
-                  <p className="text-sm text-muted-foreground">Navigate DOH, DHA, and MOHAP formulary inclusion.</p>
-                </Link>
-                <Link to="/blog/nice-hta-evidence-requirements-guide" className="group flex-1 p-4 rounded-lg bg-muted/50 hover:bg-muted border border-transparent hover:border-primary/20 transition-all">
-                  <h4 className="font-semibold text-primary group-hover:underline mb-1">NICE HTA Evidence Guide</h4>
-                  <p className="text-sm text-muted-foreground">Navigating UK cost-effectiveness and QALY thresholds.</p>
-                </Link>
-              </div>
+        {(service === 'market-access' || service === 'kol-mapping' || service === 'qualitative-research') && (
+          <ReportPremiumSection
+            id="deep-dives"
+            title={
+              service === 'market-access'
+                ? 'Deep dive: market access guides'
+                : service === 'kol-mapping'
+                  ? 'Deep dive: KOL intelligence'
+                  : 'Deep dive: qualitative methods'
+            }
+            variant="muted"
+          >
+            <div className="grid sm:grid-cols-2 gap-4">
+              {service === 'market-access' && (
+                <>
+                  <HealthcareNavCard
+                    to="/blog/market-access-strategy-uae"
+                    title="UAE market access strategy"
+                    description="Navigate DOH, DHA, and MOHAP formulary inclusion."
+                  />
+                  <HealthcareNavCard
+                    to="/blog/nice-hta-evidence-requirements-guide"
+                    title="NICE HTA evidence guide"
+                    description="Navigating UK cost-effectiveness and QALY thresholds."
+                  />
+                </>
+              )}
+              {service === 'kol-mapping' && (
+                <>
+                  <HealthcareNavCard
+                    to="/blog/kol-mapping-pharma-middle-east"
+                    title="GCC KOL mapping guide"
+                    description="Identifying true clinical influencers in the Middle East."
+                  />
+                  <HealthcareNavCard
+                    to="/blog/competitive-intelligence-pharma-gcc"
+                    title="Pharma competitive intelligence"
+                    description="Tracking competitor formularies and Medical Affairs activities."
+                  />
+                </>
+              )}
+              {service === 'qualitative-research' && (
+                <>
+                  <HealthcareNavCard
+                    to="/blog/patient-journey-mapping-saudi-arabia"
+                    title="Saudi patient journey mapping"
+                    description="Understanding culturally nuanced treatment pathways."
+                  />
+                  <HealthcareNavCard
+                    to="/blog/healthcare-market-research-methodologies-gcc"
+                    title="GCC research methodologies"
+                    description="Best practices for IDIs and focus groups in the region."
+                  />
+                </>
+              )}
             </div>
-          )}
+          </ReportPremiumSection>
+        )}
 
-          {service === 'kol-mapping' && (
-            <div className="mt-10 p-6 bg-card border border-border rounded-xl">
-              <h3 className="text-xl font-display font-semibold text-foreground mb-4">Deep Dive: KOL Intelligence</h3>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/blog/kol-mapping-pharma-middle-east" className="group flex-1 p-4 rounded-lg bg-muted/50 hover:bg-muted border border-transparent hover:border-primary/20 transition-all">
-                  <h4 className="font-semibold text-primary group-hover:underline mb-1">GCC KOL Mapping Guide</h4>
-                  <p className="text-sm text-muted-foreground">Identifying true clinical influencers in the Middle East.</p>
-                </Link>
-                <Link to="/blog/competitive-intelligence-pharma-gcc" className="group flex-1 p-4 rounded-lg bg-muted/50 hover:bg-muted border border-transparent hover:border-primary/20 transition-all">
-                  <h4 className="font-semibold text-primary group-hover:underline mb-1">Pharma Competitive Intelligence</h4>
-                  <p className="text-sm text-muted-foreground">Tracking competitor formularies and Medical Affairs activities.</p>
-                </Link>
-              </div>
-            </div>
-          )}
-
-          {service === 'qualitative-research' && (
-            <div className="mt-10 p-6 bg-card border border-border rounded-xl">
-              <h3 className="text-xl font-display font-semibold text-foreground mb-4">Deep Dive: Qualitative Methods</h3>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/blog/patient-journey-mapping-saudi-arabia" className="group flex-1 p-4 rounded-lg bg-muted/50 hover:bg-muted border border-transparent hover:border-primary/20 transition-all">
-                  <h4 className="font-semibold text-primary group-hover:underline mb-1">Saudi Patient Journey Mapping</h4>
-                  <p className="text-sm text-muted-foreground">Understanding culturally nuanced treatment pathways.</p>
-                </Link>
-                <Link to="/blog/healthcare-market-research-methodologies-gcc" className="group flex-1 p-4 rounded-lg bg-muted/50 hover:bg-muted border border-transparent hover:border-primary/20 transition-all">
-                  <h4 className="font-semibold text-primary group-hover:underline mb-1">GCC Research Methodologies</h4>
-                  <p className="text-sm text-muted-foreground">Best practices for IDIs and focus groups in the region.</p>
-                </Link>
-              </div>
-            </div>
-          )}
-        </div>
-      </section>
-
-      <ServiceMarketReferenceGuide serviceSlug={service} />
-
-      <FAQSection items={serviceFaqs} title={`${titleService} service FAQs`} />
-      <CTASection variant="service" />
-    </main>
+        <ServiceMarketReferenceGuide serviceSlug={service} />
+        <ReportMidPageCta config={conversionConfig} className="my-4" />
+      </HealthcareResearchPageShell>
+    </>
   );
 }
 

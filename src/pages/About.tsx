@@ -84,10 +84,10 @@ const About = () => {
               About BioNixus
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold mb-6 max-w-4xl leading-tight sr sr-up sr-line revealed">
-              A specialist pharmaceutical and healthcare market research company with deep EMEA roots
+              A global pharmaceutical and healthcare market research company with deep regional roots
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed max-w-3xl mb-8 sr sr-up revealed">
-              BioNixus has been running pharmaceutical and healthcare market research since 2012, headquartered in the United States with a London office and a Cairo fieldwork base. We design quantitative and qualitative studies for pharmaceutical, biotech, and medtech teams across Europe, the Middle East, and North Africa — including dedicated coverage as a{' '}
+              BioNixus has been running pharmaceutical and healthcare market research since 2012, headquartered in the United States with a London office and a Cairo fieldwork base. We design quantitative and qualitative studies for pharmaceutical, biotech, and medtech teams worldwide — with deep regional expertise across MENA, Latin America, and Eastern Europe alongside the wider EMEA region — including dedicated coverage as a{' '}
               <Link to="/market-research-saudi-arabia-pharmaceutical" className="underline font-medium text-primary-foreground">
                 healthcare market research company in Saudi Arabia
               </Link>

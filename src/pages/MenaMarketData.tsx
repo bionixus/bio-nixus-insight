@@ -200,7 +200,7 @@ const MenaMarketData = () => {
               Comprehensive market intelligence on the pharmaceutical landscape across the Middle East and North Africa. Country-by-country breakdown of market size, growth rates, per-capita spending, regulatory bodies, and therapeutic area trends.
             </p>
             <p className="text-sm text-muted-foreground">
-              Last updated: {lastUpdated} &middot; Sources: BioNixus MEA Market Report, Grand View Research, WHO EMRO, national health authority filings
+              Last updated: {lastUpdated} &middot; Sources: BioNixus MEA Market Report, WHO EMRO, national health authority filings
             </p>
 
             {/* Citation box */}
@@ -556,8 +556,7 @@ const MenaMarketData = () => {
               </p>
               <ul className="text-sm text-muted-foreground space-y-2 mb-6">
                 <li>BioNixus Middle East & Africa Pharmaceutical Market Quarterly Report, Q3 2024</li>
-                <li>Grand View Research — Middle East & Africa Pharmaceutical Market Size & Outlook, 2025–2030</li>
-                <li>Ken Research — Middle East Pharmaceuticals Market Report, 2025–2030</li>
+                <li>BioNixus market analysis — Middle East & Africa pharmaceutical market size & outlook, 2025–2030</li>
                 <li>WHO Eastern Mediterranean Regional Office (EMRO) country profiles</li>
                 <li>National regulatory authority filings: SFDA, MOHAP, DHA, DOH, EDA, NHRA</li>
                 <li>BioNixus proprietary research from 500+ physician surveys across GCC (2024–2025)</li>

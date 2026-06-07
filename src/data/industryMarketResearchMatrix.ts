@@ -3,6 +3,9 @@
  * Pharmaceutical BOFU uses separate legacy URLs — not in this matrix.
  */
 
+import { BIONIXUS_MARKETING_CLAIMS } from '@/data/marketingClaims';
+import { getIndustryBofuExecutivePoints } from '@/data/industryBofuExecutivePoints';
+
 export type MatrixCountrySlug = 'saudi-arabia' | 'uae' | 'egypt';
 export type MatrixIndustrySlug =
   | 'medtech'
@@ -387,28 +390,15 @@ export function buildIndustryCountryPageConfig(
     h1: `${full} Market Research Company in ${country.label}`,
     heroIntro: `BioNixus delivers ${full.toLowerCase()} market research in ${country.label} for teams that need credible local evidence—not desk syndication. Programs combine quantitative and qualitative design, Arabic–English execution where required, and outputs mapped to launch, access, or growth decisions.`,
     executiveHeading: `${country.label} ${name} executive decision framework`,
-    executivePoints: [
-      {
-        title: 'Why it matters',
-        body: `${country.label} ${name.toLowerCase()} decisions fail when models ignore local channel and stakeholder reality.`,
-      },
-      {
-        title: 'What the evidence says',
-        body: 'Early feasibility and segment clarity reduce costly rework before national roll-out.',
-      },
-      {
-        title: 'What to do next',
-        body: `Scope one ${country.label} decision, then run one aligned research module with measurable KPIs.`,
-      },
-    ],
+    executivePoints: getIndustryBofuExecutivePoints(industrySlug, countrySlug),
     proofBullets: [
       {
         title: `17+ countries, ${country.label} fieldwork`,
         body: `BioNixus executes ${industry.displayNameShort.toLowerCase()} studies from regional offices with MENA-scale reach.`,
       },
       {
-        title: '120+ research programs delivered',
-        body: 'Cross-industry experience with healthcare-grade governance for sensitive categories.',
+        title: `${BIONIXUS_MARKETING_CLAIMS.completedProjectsMena.value} projects delivered`,
+        body: `Cross-industry programs (${BIONIXUS_MARKETING_CLAIMS.completedProjectsMena.source}) with healthcare-grade governance for sensitive categories.`,
       },
       {
         title: `${country.regulatorShort} and sector context`,

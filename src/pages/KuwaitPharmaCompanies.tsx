@@ -35,6 +35,7 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { PharmaCompaniesQuickAnswer } from '@/components/seo/PharmaCompaniesQuickAnswer';
 
 const PHARMA_CONVERSION = getPharmaGuideConfig('kuwait');
 
@@ -250,7 +251,7 @@ return (
         <title>Pharmaceutical Companies in Kuwait | Top Medical Distributors &amp; MNCs 2026 | BioNixus</title>
         <meta
           name="description"
-          content="Kuwait pharmaceutical companies and medical distributors in 2026: ranked distributor snapshot (Cura Health, AAW, Almojil, Central Circle Co., Mezzan Medical, Boushahri), $1.2B market, MOH drug registration, tenders, KSPICO manufacturing, MNC offices, and procurement channels."
+          content="Pharmaceutical companies in Kuwait: ranked distributors (Cura Health, AAW, Almojil, Central Circle Co.), $1.2B market, MOH registration, KSPICO manufacturing, MNC offices (2026)."
         />
         <link rel="canonical" href={citationUrl} />
         <script type="application/ld+json">
@@ -332,12 +333,15 @@ return (
                 Healthcare market intelligence
               </span>
             </div>
-            <h1 className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-[1.18] tracking-[-0.02em] text-white max-w-4xl mb-6 text-balance">
-              Pharmaceutical companies in Kuwait: industry guide &amp; top medical distributors (2026)
+            <h1 className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-[1.18] tracking-[-0.02em] text-white max-w-4xl mb-3 text-balance">
+              Pharmaceutical companies in Kuwait
             </h1>
+            <p className="text-lg text-white/80 max-w-3xl mb-6">
+              Industry guide &amp; top medical distributors (2026)
+            </p>
             <p className="text-[17px] text-white/70 leading-relaxed max-w-3xl mb-8">
               A premium reference for pharmaceutical and life sciences leaders mapping the Kuwait market — importer–wholesaler footprint, pharmaceutical registration pathways with Kuwait MOH, tender-centric government demand, distributor dynamics, and how BioNixus delivers Kuwait-specific physician, payer, and market access{' '}
-              <Link to="/services" className="text-accent underline underline-offset-2 hover:no-underline">
+              <Link to="/healthcare-market-research" className="text-accent underline underline-offset-2 hover:no-underline">
                 healthcare market research
               </Link>
               .
@@ -358,6 +362,15 @@ return (
             </div>
           </div>
         </header>
+
+        <PharmaCompaniesQuickAnswer
+          country="kuwait"
+          marketSize="approximately USD 1.2 billion"
+          growthRate="tender-led government and private channels"
+          regulatorLabel="Kuwait Ministry of Health (MOH) pharmaceutical affairs"
+          topCompanyNames={[...TOP_MEDICAL_DISTRIBUTORS_KUWAIT_RANKED_DISPLAY]}
+          extraSentence="See the ranked medical distributors section below for importer–wholesaler detail and tender context."
+        />
 
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-[minmax(0,1fr)_272px] gap-10 lg:gap-14 pb-16 items-start">
@@ -930,6 +943,21 @@ return (
         </section>
 
         {/* FAQ */}
+        <section className="section-padding py-16" id="gcc-directories"><div className="container-wide max-w-5xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">Pharmaceutical companies across the GCC</h2>
+          <p className="text-muted-foreground mb-8 max-w-3xl">Compare the Kuwait pharmaceutical industry with BioNixus company directories for the other Gulf and MENA markets.</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            <Link to="/pharmaceutical-companies-saudi-arabia" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in Saudi Arabia <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
+            <Link to="/pharmaceutical-companies-uae" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in UAE <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
+            <Link to="/pharmaceutical-companies-egypt" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in Egypt <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
+            <Link to="/pharmaceutical-companies-qatar" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in Qatar <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
+            <Link to="/pharmaceutical-companies-oman" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in Oman <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
+            <Link to="/pharmaceutical-companies-bahrain" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in Bahrain <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
+            <Link to="/gcc-pharma-market-report-2026" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">GCC pharma market report 2026 <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
+            <Link to="/market-reports/gcc-biosimilars-market-report" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">GCC biosimilars &amp; generic injectables market report <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
+          </div>
+        </div></section>
+
         <section className="scroll-mt-28 py-12 md:py-14 bg-muted/40 border-y border-border/70" id="faq">
           <div>
             <h2 className="font-display text-2xl font-bold tracking-tight text-primary mb-8 flex flex-wrap items-center gap-3">
@@ -965,8 +993,7 @@ return (
               </p>
               <ul className="text-sm text-muted-foreground space-y-2 mb-6">
                 <li>BioNixus Middle East &amp; Africa Pharmaceutical Market Quarterly Report, Q3 2024</li>
-                <li>Ken Research — Kuwait Pharmaceutical Market Size &amp; Outlook, 2025&ndash;2030</li>
-                <li>Grand View Research — Kuwait Pharmaceutical Market Report, 2025&ndash;2030</li>
+                <li>BioNixus market analysis — Kuwait pharmaceutical market size &amp; outlook, 2025&ndash;2030</li>
                 <li>Kuwait Ministry of Health — Drug &amp; Food Control Administration publications</li>
                 <li>Ministerial Decree No. 302/2019 on Registration &amp; Pricing of Pharmaceutical Products</li>
                 <li>KSPICO, Kuwait pharmaceutical distributors&apos; disclosures, YIACO, Alghanim, and representative company websites</li>

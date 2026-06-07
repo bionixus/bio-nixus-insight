@@ -51,10 +51,10 @@ export default function HealthcareMarketResearchAgencyGcc() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Healthcare Market Research Agency GCC | Proposal-Ready Pharma Evidence | BioNixus</title>
+        <title>Healthcare Market Research Companies GCC | Agency for Pharma Evidence | BioNixus</title>
         <meta
           name="description"
-          content="Healthcare market research agency GCC for proposal-ready pharmaceutical decisions. BioNixus delivers launch, market access, and growth evidence across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman."
+          content="Healthcare market research companies in GCC: BioNixus delivers proposal-ready pharmaceutical launch, market access, and growth evidence across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman."
         />
         <link rel="canonical" href={pageUrl} />
         {jsonLd.map((schema, index) => (
@@ -74,7 +74,7 @@ export default function HealthcareMarketResearchAgencyGcc() {
         <section className="section-padding py-14">
           <div className="container-wide max-w-5xl mx-auto">
             <h1 className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-4">
-              Healthcare Market Research Agency GCC for Pharmaceutical Launch and Access Decisions
+              Healthcare Market Research Companies in GCC for Pharmaceutical Launch and Access Decisions
             </h1>
             <p className="text-muted-foreground leading-relaxed mb-5">
               BioNixus is a pharma market research company in GCC supporting teams across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman with evidence programs built for practical decisions.
@@ -90,15 +90,15 @@ export default function HealthcareMarketResearchAgencyGcc() {
               heading="GCC agency selection framework"
               points={[
                 {
-                  title: 'Why it matters',
+                  title: 'Agency choice shapes speed, trust, and risk',
                   body: 'Agency choice affects decision speed, evidence trust, and launch risk across multiple GCC markets.',
                 },
                 {
-                  title: 'What the evidence says',
+                  title: 'One partner, one evidence framework',
                   body: 'Teams perform better when one partner aligns commercial, medical, and access outputs in one framework.',
                 },
                 {
-                  title: 'What to do next',
+                  title: 'Prioritise depth and governance before you select',
                   body: 'Prioritize country depth, quality governance, and proposal-to-action translation before vendor selection.',
                 },
               ]}

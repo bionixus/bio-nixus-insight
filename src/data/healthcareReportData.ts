@@ -8,6 +8,7 @@ import {
   statSummaryLineFromFact,
 } from '@/data/contentAccuracy/factRegistry';
 import { PHARMA_INSIGHTS_ENTRIES } from './pharmaInsightsData';
+import { applyReportCopyOverrides } from '@/data/reportCopyOverrides';
 
 export const MARKET_STANDALONE_HEALTH_REPORT: Record<string, string> = {
   gcc: '/gcc-pharma-market-report-2026',
@@ -147,7 +148,15 @@ const SPECS: SpecRow[] = [
   row('oman-cardiovascular-market-report', 'oman', 'Oman', 'GCC', 'cardiovascular', 'mountain corridor STEMI cath lab arrival drag influencing secondary prevention antidepressant laden polypharmacy adherence counselling throughput.', '[Oman healthcare briefing](/oman-healthcare-market-report) • [GCC pharma outlook](/gcc-pharma-market-report-2026).'),
   row('egypt-cardiovascular-market-report', 'egypt', 'Egypt', 'MENA', 'cardiovascular', 'Cairo pollution respiratory overlap confounding CHF readmission analytics unless chart harmonization applied, UHI expansion steering statin intensity.', '[Egypt healthcare outlook](/egypt-healthcare-market-report) • [GCC analogue comparator](/gcc-pharma-market-report-2026).'),
 
-  row('gcc-immunology-biologics-market-report', 'gcc', 'GCC', 'GCC', 'immunology-biologics', 'adalimumab biosimilar award waves, JAK thromboembolism insurer medical policy overlays, Ramadan fasting counselling friction on oral switch programmes.', '[GCC pharma outlook](/gcc-pharma-market-report-2026) • [Healthcare hub](/healthcare-market-research) • [Saudi access strategy](/sfda-market-access-strategy-saudi-arabia).'),
+  row(
+    'gcc-immunology-biologics-market-report',
+    'gcc',
+    'GCC',
+    'GCC',
+    'immunology-biologics',
+    'NUPCO adalimumab biosimilar tender cycles; UAE emirate-level IL-17 and IL-23 prior authorization; JAK inhibitor specialist-only rules after global boxed-warning updates; dupilumab uptake in atopic dermatitis and asthma; infusion-chair and TB-screening bottlenecks outside capital clusters',
+    '[GCC pharma market report 2026](/gcc-pharma-market-report-2026) • [GCC biosimilars report](/market-reports/gcc-biosimilars-market-report) • [Immunology therapy hub](/healthcare-market-research/therapy/immunology) • [Biologics therapy hub](/healthcare-market-research/therapy/biologics) • [SFDA market access — Saudi Arabia](/sfda-market-access-strategy-saudi-arabia) • [Healthcare market research hub](/healthcare-market-research).',
+  ),
   row('saudi-arabia-immunology-biologics-market-report', 'saudi-arabia', 'Saudi Arabia', 'GCC', 'immunology-biologics', 'SFDA biosimilar substitution nuance interplay with clinician confidence surveys, infusion chair Friday prayer scheduling ergonomics influencing IV biologic pacing.', '[Saudi briefing](/saudi-arabia-healthcare-market-report) • [GCC pharma outlook](/gcc-pharma-market-report-2026).'),
   row('uae-immunology-biologics-market-report', 'uae', 'United Arab Emirates', 'GCC', 'immunology-biologics', 'premium ward biologic carve-outs versus mandatory insurance step therapy ladders across emirates.', '[UAE healthcare report](/uae-healthcare-market-report) • [GCC pharma outlook](/gcc-pharma-market-report-2026).'),
   row('kuwait-immunology-biologics-market-report', 'kuwait', 'Kuwait', 'GCC', 'immunology-biologics', 'dual channel affluent versus public rheumatology fragmentation biasing analogue persistence extrapolations.', '[Kuwait healthcare report](/kuwait-healthcare-market-report) • [GCC pharma outlook](/gcc-pharma-market-report-2026).'),
@@ -485,7 +494,9 @@ function attachRelated(entries: ReportEntry[]): ReportEntry[] {
   });
 }
 
-export const REPORT_ENTRIES: ReportEntry[] = attachRelated([...BASE_ENTRIES, ...PHARMA_INSIGHTS_ENTRIES]);
+export const REPORT_ENTRIES: ReportEntry[] = applyReportCopyOverrides(
+  attachRelated([...BASE_ENTRIES, ...PHARMA_INSIGHTS_ENTRIES]),
+);
 
 export const REPORT_BY_SLUG: Map<string, ReportEntry> = new Map(REPORT_ENTRIES.map((r) => [r.slug, r]));
 

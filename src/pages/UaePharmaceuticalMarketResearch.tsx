@@ -166,15 +166,15 @@ export default function UaePharmaceuticalMarketResearch() {
           heading="UAE executive decision framework"
           points={[
             {
-              title: 'Why it matters',
+              title: 'Emirate payers drive UAE outcomes',
               body: 'UAE launch and access outcomes are highly sensitive to emirate-level payer and formulary behavior.',
             },
             {
-              title: 'What the evidence says',
+              title: 'Model DHA, DOH, and MOHAP separately',
               body: 'Programs that model DHA, DOH, and MOHAP contexts separately make more reliable sequencing decisions.',
             },
             {
-              title: 'What to do next',
+              title: 'One backbone, emirate-specific modules',
               body: 'Build one UAE backbone with emirate-specific modules, then align output to commercial and access owners.',
             },
           ]}

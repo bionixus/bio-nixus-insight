@@ -5,17 +5,15 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
-import { ArrowRight } from 'lucide-react';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
-import { MarketIntelligenceSections } from '@/components/market-intelligence';
 import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
-  ReportEarlyCtaBar,
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { ReportPremiumHero } from '@/components/report-premium';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -112,14 +110,7 @@ const GccAnesthesiaSurgicalMarket = () => {
         title="GCC Anesthesia & Surgical Market Report 2026 | Hospital Procedure Intelligence | BioNixus"
         description="GCC anesthesia market estimated at USD 850M–1B in 2026. Hospital-level surgical procedure volumes, anesthesia drug consumption by account, NUPCO formulary intelligence, and primary HCP research across Saudi Arabia and UAE."
         canonical="https://www.bionixus.com/gcc-anesthesia-surgical-market-report"
-        jsonLd={[...jsonLd, ...buildReportEnrichmentSchemas({
-    pageTitle: "GCC Anesthesia & Surgical Market Report 2026 | Hospital Procedure Intelligence | BioNixus",
-    pageMetaDescription: "GCC anesthesia market estimated at USD 850M–1B in 2026. Hospital-level surgical procedure volumes, anesthesia drug consumption by account, NUPCO formulary intelligence, and primary HCP research across Saudi Arabia and UAE.",
-    countryName: "GCC",
-    marketSlug: "gcc",
-    publishedDate: "2026-05-01",
-    modifiedDate: "2026-05-27",
-  })]}
+        jsonLd={jsonLd}
       />
       <ReportReadingProgress progressId="report-rp-gcc-anesthesia-surgical-market-report" />
       <main>
@@ -129,26 +120,29 @@ const GccAnesthesiaSurgicalMarket = () => {
           </div>
         </div>
 
-        {/* Hero */}
-        <section className="section-padding pb-10">
-          <div className="container-wide max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium mb-6">
-              Published by BioNixus · Updated May 2026 · Open access — no registration required
-            </div>
-            <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">
-              GCC Anesthesia and Surgical Market Report 2026: Hospital Procedure Volumes and Drug Consumption Intelligence
-            </h1>
-            <p className="text-muted-foreground leading-relaxed">
-              BioNixus tracks operating theater utilization, anesthesia drug dispensing, and surgical procedure
-              volumes at hospital account level across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman —
-              delivering consumption intelligence that aggregate market reports cannot provide.
-            </p>
-            <ReportEarlyCtaBar config={REPORT_CONVERSION} className="mt-8" />
-          </div>
-        </section>
+        <ReportPremiumHero
+          title="GCC Anesthesia and Surgical Market Report 2026: Hospital Procedure Volumes and Drug Consumption Intelligence"
+          description="BioNixus tracks operating theater utilization, anesthesia drug dispensing, and surgical procedure volumes at hospital account level across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman — delivering consumption intelligence that aggregate market reports cannot provide."
+          config={REPORT_CONVERSION}
+          marketSlug="gcc"
+          countryName="GCC"
+          stats={[
+            { value: '~$950M', label: 'GCC anesthesia market 2026 (est.)' },
+            { value: '2M+', label: 'Annual GCC surgical procedures' },
+            { value: '6.8%', label: 'CAGR 2026–2030' },
+          ]}
+        />
 
-        {/* Executive Summary */}
-        <ReportContentWithAside config={REPORT_CONVERSION} containerClassName="container-wide max-w-6xl mx-auto section-padding">
+        <ReportContentWithAside
+          config={REPORT_CONVERSION}
+          tocItems={[
+            { href: '#executive-summary', label: 'Executive summary' },
+            { href: '#segmentation', label: 'Segmentation' },
+            { href: '#country-overview', label: 'Country overview' },
+            { href: '#commercial-intelligence', label: 'Commercial intelligence' },
+            { href: `#${FAQ_SECTION_ID}`, label: 'FAQ' },
+          ]}
+        >
         <section className="section-padding bg-cream-dark" id="executive-summary">
           <div className="container-wide max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
@@ -321,19 +315,18 @@ const GccAnesthesiaSurgicalMarket = () => {
                 </div>
               ))}
             </div>
+            <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
           </div>
         </section>
-
-        </ReportContentWithAside>
 
         <FAQSection
           sectionId={FAQ_SECTION_ID}
           title="GCC anesthesia market — surgical volumes, NUPCO, and hospital procurement FAQ"
           items={REPORT_FAQ_ITEMS}
-          className="bg-muted/30"
+          className="bg-muted/30 rounded-2xl px-4 md:px-6"
         />
+        </ReportContentWithAside>
 
-        {/* CTA */}
         <ReportConsultationBand config={REPORT_CONVERSION} />
         </main>
 

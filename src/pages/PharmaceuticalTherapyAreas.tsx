@@ -284,7 +284,7 @@ export default function PharmaceuticalTherapyAreas() {
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>
-          Pharmaceutical Therapy Areas Market Research | 12 Areas, 300+ Engagements | BioNixus
+          Pharmaceutical Therapy Areas Market Research | 12 Areas, 127+ Projects | BioNixus
         </title>
         <meta
           name="description"
@@ -299,7 +299,7 @@ export default function PharmaceuticalTherapyAreas() {
         />
         <meta
           property="og:description"
-          content="Therapy-area pharmaceutical market research across 12 areas and 300+ engagements. BioNixus delivers launch, access, and growth evidence for MENA, UK, and Europe."
+          content="Therapy-area pharmaceutical market research across 12 areas and 127+ completed projects since 2012. BioNixus delivers launch, access, and growth evidence for MENA, UK, and Europe."
         />
         {jsonLd.map((schema, index) => (
           <script key={`therapy-areas-schema-${index}`} type="application/ld+json">
@@ -373,11 +373,11 @@ export default function PharmaceuticalTherapyAreas() {
               </article>
               <article className="rounded-xl border border-border bg-card p-5">
                 <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">
-                  Engagements delivered
+                  Projects delivered
                 </p>
-                <p className="text-3xl font-semibold text-foreground">300+</p>
+                <p className="text-3xl font-semibold text-foreground">127+</p>
                 <p className="text-sm text-muted-foreground mt-1">
-                  Across MENA, UK, and Europe with global and regional pharma clients.
+                  Completed pharmaceutical market research projects since 2012 for global and regional clients.
                 </p>
               </article>
             </div>
