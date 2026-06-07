@@ -42,6 +42,20 @@ export function buildFAQSchema(
   };
 }
 
+export function buildItemListSchema(items: { name: string; description?: string; url?: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      ...(item.description ? { description: item.description } : {}),
+      ...(item.url ? { url: item.url } : {}),
+    })),
+  };
+}
+
 export function buildServiceSchema() {
   return {
     '@context': 'https://schema.org',
