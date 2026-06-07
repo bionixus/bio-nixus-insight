@@ -365,6 +365,81 @@ section { padding: 72px 24px; }
   border-top: 1px solid var(--line-soft);
 }
 .footer-note a { color: var(--blue-accent); text-decoration: none; }
+
+/* ===== Agility comparison block ===== */
+.agility-wrap { margin-top: 40px; }
+.agility-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin-bottom: 32px;
+}
+.agility-metric { background: var(--white); padding: 28px 20px; text-align: center; }
+.agility-metric .amt {
+  font-family: 'Source Serif 4', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1;
+  letter-spacing: -.03em;
+}
+.agility-metric .amtlabel {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 8px;
+}
+.agility-metric .amtsub { font-size: .78rem; color: var(--muted); margin-top: 4px; line-height: 1.4; }
+@media (max-width: 600px) { .agility-metrics { grid-template-columns: 1fr; } }
+.agility-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--line);
+}
+@media (max-width: 680px) { .agility-split { grid-template-columns: 1fr; } }
+.agility-side { padding: 32px 28px; }
+.agility-side.side-bn { background: var(--navy); }
+.agility-side.side-iq { background: var(--paper-warm); border-left: 1px solid var(--line); }
+.agility-side-hd {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+}
+.side-bn .agility-side-hd { color: rgba(255,255,255,.45); border-bottom: 1px solid rgba(255,255,255,.12); }
+.side-iq .agility-side-hd { color: var(--muted); border-bottom: 1px solid var(--line); }
+.agility-rows { list-style: none; }
+.agility-rows li {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+  align-items: start;
+  font-size: .84rem;
+  line-height: 1.55;
+}
+.agility-rows li:last-child { margin-bottom: 0; }
+.side-bn .agility-rows li { color: rgba(255,255,255,.78); }
+.side-bn .agility-rows li strong { color: var(--white); display: block; font-weight: 600; }
+.side-iq .agility-rows li { color: var(--slate); }
+.side-iq .agility-rows li strong { color: var(--navy); display: block; font-weight: 600; }
+.agility-pullout {
+  margin-top: 28px;
+  background: var(--paper-warm);
+  border-left: 3px solid var(--blue-accent);
+  padding: 20px 24px;
+  font-size: .88rem;
+  color: var(--slate);
+  line-height: 1.7;
+}
+.agility-pullout strong { color: var(--navy); }
 </style>
 </head>
 <body>
@@ -485,6 +560,67 @@ section { padding: 72px 24px; }
     </div>
     <p style="font-size:.92rem;color:var(--slate);line-height:1.7;margin-bottom:16px">BioNixus's quantitative research capability — large-scale physician surveys, patient surveys, pharmacy surveys, and payer surveys — operates as an integrated part of the data offering, not a separate service. Quantitative primary research validates, explains, and enriches sales and consumption data within a single project framework.</p>
     <p style="font-size:.92rem;color:var(--slate);line-height:1.7">Where IQVIA's quantitative research and data analytics operate as distinct service lines with different teams, BioNixus integrates them: consumption data from a hospital account is analysed alongside physician survey data from that account's prescribers, producing a combined picture of what is being consumed, by whom, for which patients, and why.</p>
+  </div>
+</section>
+
+<!-- Agility & Regional Depth -->
+<section id="agility">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">Speed &amp; Agility</div>
+      <div class="section-title">Turnaround, Flexibility, and Regional Depth</div>
+      <p class="section-sub">Data methodology is only part of the comparison. How quickly a vendor moves from brief to fieldwork — and how it responds when mandates shift mid-study — shapes the commercial value of the research as much as the data source itself.</p>
+    </div>
+    <div class="agility-wrap">
+
+      <div class="agility-metrics">
+        <div class="agility-metric">
+          <div class="amt">48h</div>
+          <div class="amtlabel">Proposal turnaround</div>
+          <div class="amtsub">Scoped and costed—typically within one working day of your brief</div>
+        </div>
+        <div class="agility-metric">
+          <div class="amt">No&nbsp;floor</div>
+          <div class="amtlabel">Minimum project size</div>
+          <div class="amtsub">Engage on a single study — no enterprise spend threshold to clear first</div>
+        </div>
+        <div class="agility-metric">
+          <div class="amt">13+&nbsp;yrs</div>
+          <div class="amtlabel">In-region since 2012</div>
+          <div class="amtsub">Cairo office, GCC fieldwork networks, and MENA payer intelligence built over a decade</div>
+        </div>
+      </div>
+
+      <div class="agility-split">
+        <div class="agility-side side-bn">
+          <div class="agility-side-hd">BioNixus — Agile model</div>
+          <ul class="agility-rows">
+            <li><span>✓</span><div><strong>Proposal within 48 hours</strong>Scoped, costed, and ready to refine — no extended enterprise RFP cycle before discussing the specifics of your MENA mandate.</div></li>
+            <li><span>✓</span><div><strong>No enterprise contract threshold</strong>Engage on a single country study. Scale when the evidence justifies it — no minimum spend required to get started.</div></li>
+            <li><span>✓</span><div><strong>Mid-study adaptation without change orders</strong>When the fieldwork reveals a new angle — a different indication, an additional market, an adjusted sample frame — BioNixus pivots without triggering a formal change-order approval chain.</div></li>
+            <li><span>✓</span><div><strong>Cairo regional office — not a remote relay</strong>On-the-ground data sourcing and fieldwork execution across GCC and Egypt from a local office, with established relationships at KFSH&amp;RC, NGHA, HMC, and CMS Kuwait.</div></li>
+            <li><span>✓</span><div><strong>Integrated qual + quant from one team</strong>Physician surveys, depth interviews, and consumption data reviewed by the same analysts — no handoff lag between service lines.</div></li>
+            <li><span>✓</span><div><strong>Verified HCP networks ready to field</strong>Pre-screened physician, pharmacist, and payer panels across GCC and Egypt — fieldwork begins within days of project start.</div></li>
+          </ul>
+        </div>
+        <div class="agility-side side-iq">
+          <div class="agility-side-hd">IQVIA — Enterprise model</div>
+          <ul class="agility-rows">
+            <li><span style="color:var(--amber)">⚠</span><div><strong>Multi-stage enterprise procurement</strong>RFP, legal review, MSA negotiation, and vendor onboarding — typical timelines of weeks to months before MENA fieldwork can begin.</div></li>
+            <li><span style="color:var(--amber)">⚠</span><div><strong>Enterprise subscription or multi-year MSA</strong>Minimum spend thresholds and long-term commitment structures designed for large multinational pharmaceutical companies.</div></li>
+            <li><span style="color:var(--amber)">⚠</span><div><strong>Formal change-control governance</strong>Mid-study scope adjustments require documented change requests, internal approval workflows, and client sign-off — extending turnaround time on pivots.</div></li>
+            <li><span style="color:var(--amber)">⚠</span><div><strong>MEA as one consolidated region</strong>MENA often managed from a regional hub — country-level granularity in specific GCC markets varies by panel depth and local affiliate capacity.</div></li>
+            <li><span style="color:var(--amber)">⚠</span><div><strong>Research and analytics as separate service lines</strong>Quantitative research and commercial data analytics typically operate through distinct teams, timelines, and contracting paths.</div></li>
+            <li><span style="color:var(--amber)">⚠</span><div><strong>Panel-modelled intelligence vs direct-sourced data</strong>Sales and consumption data modelled from audit panels — not pulled directly from hospital procurement systems or pharmacy dispensing records.</div></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="agility-pullout">
+        <strong>Why this matters in MENA specifically:</strong> Formulary committee windows, NUPCO tender submission deadlines, SFDA advisory opinions, and HMC procurement cycles do not wait for enterprise change-order approvals. When a commercial team realises mid-study that their Saudi Arabia brief needs to extend into Kuwait and Egypt — or that the KOL focus should shift to the oncology pharmacist rather than the prescriber — BioNixus responds within the same project. For teams where insight timing determines whether it lands before or after the decision, that agility is a material commercial advantage.
+      </div>
+
+    </div>
   </div>
 </section>
 

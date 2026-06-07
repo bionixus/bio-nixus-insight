@@ -40,6 +40,7 @@
   --paper-warm: #f4f6f8;
   --white: #ffffff;
   --green: #1a7a4c;
+  --amber: #b45309;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -444,6 +445,81 @@ section { padding: 72px 24px; }
   border-top: 1px solid var(--line-soft);
 }
 .footer-note a { color: var(--blue-accent); text-decoration: none; }
+
+/* ===== Agility comparison block ===== */
+.agility-wrap { margin-top: 40px; }
+.agility-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin-bottom: 32px;
+}
+.agility-metric { background: var(--white); padding: 28px 20px; text-align: center; }
+.agility-metric .amt {
+  font-family: 'Source Serif 4', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1;
+  letter-spacing: -.03em;
+}
+.agility-metric .amtlabel {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 8px;
+}
+.agility-metric .amtsub { font-size: .78rem; color: var(--muted); margin-top: 4px; line-height: 1.4; }
+@media (max-width: 600px) { .agility-metrics { grid-template-columns: 1fr; } }
+.agility-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--line);
+}
+@media (max-width: 680px) { .agility-split { grid-template-columns: 1fr; } }
+.agility-side { padding: 32px 28px; }
+.agility-side.side-bn { background: var(--navy); }
+.agility-side.side-iq { background: var(--paper-warm); border-left: 1px solid var(--line); }
+.agility-side-hd {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+}
+.side-bn .agility-side-hd { color: rgba(255,255,255,.45); border-bottom: 1px solid rgba(255,255,255,.12); }
+.side-iq .agility-side-hd { color: var(--muted); border-bottom: 1px solid var(--line); }
+.agility-rows { list-style: none; }
+.agility-rows li {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+  align-items: start;
+  font-size: .84rem;
+  line-height: 1.55;
+}
+.agility-rows li:last-child { margin-bottom: 0; }
+.side-bn .agility-rows li { color: rgba(255,255,255,.78); }
+.side-bn .agility-rows li strong { color: var(--white); display: block; font-weight: 600; }
+.side-iq .agility-rows li { color: var(--slate); }
+.side-iq .agility-rows li strong { color: var(--navy); display: block; font-weight: 600; }
+.agility-pullout {
+  margin-top: 28px;
+  background: var(--paper-warm);
+  border-left: 3px solid var(--blue-accent);
+  padding: 20px 24px;
+  font-size: .88rem;
+  color: var(--slate);
+  line-height: 1.7;
+}
+.agility-pullout strong { color: var(--navy); }
 </style>
 </head>
 <body>
@@ -566,6 +642,67 @@ section { padding: 72px 24px; }
     <div class="reason-block">
       <h3>5. US and UK Project Leadership</h3>
       <p>BioNixus is headquartered in Sheridan, Wyoming and has a UK presence in London — meaning North American and European pharmaceutical teams work with project leads in their time zones, with contracts governed by familiar jurisdictions. All BioNixus research is conducted under GDPR, ICH-GCP, and MHRA-aligned protocols.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Agility & Regional Depth -->
+<section id="agility" class="alt-bg">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">Speed &amp; Agility</div>
+      <div class="section-title">Faster, Leaner, and Built for the Region</div>
+      <p class="section-sub">Enterprise scale creates enterprise friction. BioNixus is structured to move at the pace of commercial decisions—not procurement calendars. Here is what that looks like in practice.</p>
+    </div>
+    <div class="agility-wrap">
+
+      <div class="agility-metrics">
+        <div class="agility-metric">
+          <div class="amt">48h</div>
+          <div class="amtlabel">Proposal turnaround</div>
+          <div class="amtsub">Scoped and costed—typically within one working day of your brief</div>
+        </div>
+        <div class="agility-metric">
+          <div class="amt">No&nbsp;floor</div>
+          <div class="amtlabel">Minimum project size</div>
+          <div class="amtsub">Project-based from single studies upward—no enterprise spend threshold</div>
+        </div>
+        <div class="agility-metric">
+          <div class="amt">13+&nbsp;yrs</div>
+          <div class="amtlabel">MENA operating history</div>
+          <div class="amtsub">On-the-ground since 2012—longer than most regional specialists</div>
+        </div>
+      </div>
+
+      <div class="agility-split">
+        <div class="agility-side side-bn">
+          <div class="agility-side-hd">BioNixus — Agile model</div>
+          <ul class="agility-rows">
+            <li><span>✓</span><div><strong>Proposal within 48 hours</strong>Scoped, costed, and ready to refine — no extended RFP cycle before we can discuss your specific mandate.</div></li>
+            <li><span>✓</span><div><strong>No enterprise contract threshold</strong>Engage on a single study. Scale the relationship only when the evidence justifies it — no minimum spend required to start.</div></li>
+            <li><span>✓</span><div><strong>Mid-study adaptation without change orders</strong>Methodology evolves as fieldwork surfaces new questions — no formal governance process required to pivot scope, market, or sample frame mid-project.</div></li>
+            <li><span>✓</span><div><strong>In-country MENA execution</strong>Cairo regional office with on-the-ground data sourcing and fieldwork management across GCC and Egypt — not coordinated remotely from a global hub.</div></li>
+            <li><span>✓</span><div><strong>Integrated qual + quant from one team</strong>Survey data, depth interviews, and consumption analytics reviewed by the same analysts — no handoff between separate service lines or project teams.</div></li>
+            <li><span>✓</span><div><strong>Verified HCP networks, ready to field</strong>Pre-screened physician, pharmacist, and payer panels across Saudi Arabia, UAE, Kuwait, Egypt, and GCC — fieldwork begins within days of project start, not weeks.</div></li>
+          </ul>
+        </div>
+        <div class="agility-side side-iq">
+          <div class="agility-side-hd">IQVIA — Enterprise model</div>
+          <ul class="agility-rows">
+            <li><span style="color:var(--amber)">⚠</span><div><strong>Multi-stage enterprise procurement</strong>RFP submission, legal review, MSA negotiation, and vendor onboarding — typical timeline of weeks to months before fieldwork can begin.</div></li>
+            <li><span style="color:var(--amber)">⚠</span><div><strong>Enterprise subscription or multi-year MSA</strong>Minimum spend thresholds and long-term commitment structures designed primarily for large global pharmaceutical companies.</div></li>
+            <li><span style="color:var(--amber)">⚠</span><div><strong>Formal change-control governance</strong>Mid-study scope adjustments require documented change requests reviewed through internal approval workflows and client sign-off layers.</div></li>
+            <li><span style="color:var(--amber)">⚠</span><div><strong>MEA managed as a consolidated hub region</strong>MENA execution often coordinated from a regional hub — country-level granularity dependent on local panel coverage and affiliate depth.</div></li>
+            <li><span style="color:var(--amber)">⚠</span><div><strong>Research and analytics as separate service lines</strong>Quantitative research and commercial data analytics operate through distinct teams and often require separate contracting and project management paths.</div></li>
+            <li><span style="color:var(--amber)">⚠</span><div><strong>Panel-modelled data vs primary-source pull</strong>Sales and consumption intelligence modelled from audit panels — not sourced directly from hospital procurement systems or pharmacy dispensing records.</div></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="agility-pullout">
+        <strong>The practical difference:</strong> When a commercial team needs to redirect a study mid-fieldwork — change the indication focus, add a market, or replace a discontinued physician panel — BioNixus adapts without triggering a formal change-order review. For teams operating in fast-moving GCC markets where formulary decisions, NUPCO tender windows, and SFDA approvals shift on short notice, that flexibility is the difference between insight that lands before the decision and insight that arrives after it.
+      </div>
+
     </div>
   </div>
 </section>
