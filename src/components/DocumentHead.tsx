@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
-import { seoByLanguage, getCanonicalPath, getCanonicalUrl, getHreflangLinks, defaultOgImageUrl, getOgLocale, getOgLocaleAlternates } from '@/lib/seo';
+import { seoByLanguage, getCanonicalPath, getCanonicalUrl, getHreflangLinks, getGeoMeta, defaultOgImageUrl, getOgLocale, getOgLocaleAlternates } from '@/lib/seo';
 import { normalizeSeoTitle } from '@/lib/seo-meta';
 import type { Language } from '@/lib/i18n';
 
@@ -165,7 +165,7 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
 
   if (path === '/') {
     return clampDescription(
-      'Healthcare and pharmaceutical market research across MENA, GCC, UK, and Europe with quantitative, qualitative, and market access insight programs.'
+      'Pharmaceutical & healthcare market research for MENA, Europe, and GCC — physician surveys, KOL mapping, payer insight, and market access strategy.'
     );
   }
 
@@ -396,6 +396,7 @@ const DocumentHead = () => {
   const contentLanguage = language === 'zh' ? 'zh-CN' : language;
   const gscId = import.meta.env.VITE_GSC_VERIFICATION;
   const hreflangLinks = getHreflangLinks(pathname);
+  const geoMeta = getGeoMeta(pathname);
 
   if (routeProvidesOwnDocumentHead(pathname || '/')) {
     return (
@@ -419,7 +420,8 @@ const DocumentHead = () => {
         <meta name="llm-access" content="allow" />
         <meta httpEquiv="content-language" content={contentLanguage} />
         {gscId ? <meta name="google-site-verification" content={gscId} /> : null}
-        {language === 'de' ? <meta name="geo.region" content="DE;GB;FR;ES;IT;AE;SA;EG" /> : null}
+        {geoMeta ? <meta name="geo.region" content={geoMeta.region} /> : null}
+        {geoMeta ? <meta name="geo.placename" content={geoMeta.placename} /> : null}
         <link rel="dns-prefetch" href="https://cdn.sanity.io" />
         <link rel="preconnect" href="https://cdn.sanity.io" crossOrigin="" />
         <link rel="canonical" href={canonicalUrl} />

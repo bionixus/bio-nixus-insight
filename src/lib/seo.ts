@@ -22,7 +22,7 @@ export const seoByLanguage: Record<Language, {
     // Brand-first title (≤60 chars after normalizeSeoTitle) so search engines never see a
     // truncated tail and the brand name "Bionixus" / "BioNixus" wins its own SERP at #1.
     title: 'BioNixus | Pharmaceutical & Healthcare Market Research',
-    description: 'Global pharmaceutical and healthcare market research with deep regional expertise across MENA, Latin America, and Eastern Europe — plus the UK and wider EMEA. US-headquartered with London and Cairo operations, delivering physician, payer, and hospital insight for launch and market access.',
+    description: 'Global pharmaceutical & healthcare market research for MENA, Europe, and GCC — physician surveys, KOL mapping, payer insight, and market access strategy. US-headquartered with London and Cairo offices, serving 48 global clients across 127+ projects since 2012.',
     keywords: 'pharmaceutical market research company, healthcare market research company, healthcare market research, MENA market research, pharmaceutical consulting, competitive intelligence, market access, clinical trials, UAE healthcare research, healthcare market research company UAE, pharma market research company UAE, Saudi Arabia pharma research, healthcare market research company Saudi Arabia, pharma market research company KSA, healthcare market research company Egypt, pharma market research company Egypt, market research company Egypt, market research Egypt, medtech market research Saudi Arabia, medtech market research UAE, medtech market research Egypt, FMCG market research Middle East, financial services market research GCC, biotech, life sciences',
     canonicalPath: '/',
   },
@@ -148,6 +148,10 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     en: '/insights/top-market-research-companies-egypt-2026',
     ar: '/ar/insights/top-market-research-companies-egypt-2026',
   },
+  '/blog/top-market-research-companies-egypt-2026': {
+    en: '/blog/top-market-research-companies-egypt-2026',
+    ar: '/ar/insights/top-market-research-companies-egypt-2026',
+  },
   '/market-research-saudi-arabia-pharmaceutical': {
     en: '/market-research-saudi-arabia-pharmaceutical',
   },
@@ -264,4 +268,47 @@ export function getOgLocale(language: Language): string {
 
 export function getOgLocaleAlternates(language: Language): string[] {
   return language === 'ar' ? ['en_US'] : ['ar_SA'];
+}
+
+/**
+ * Infer a single ISO 3166-1 alpha-2 geo.region + display name from a URL path.
+ * Only returns a value when the page is explicitly about one country.
+ * Multi-country pages (MENA, GCC, EMEA) return null — a broad geo.region
+ * mis-signals search intent.
+ */
+export function getGeoMeta(pathname: string): { region: string; placename: string } | null {
+  const path = normalizePath(pathname).toLowerCase();
+  if (path === '/' || path === '') return null;
+
+  // Ordered from most-specific to least to avoid false positives
+  const PATTERNS: Array<[RegExp, string, string]> = [
+    [/egypt/,                               'EG', 'Egypt'],
+    [/saudi|[/-]ksa($|\/)/,                 'SA', 'Saudi Arabia'],
+    [/\buae\b|-uae($|\/)|united-arab/,      'AE', 'United Arab Emirates'],
+    [/kuwait/,                              'KW', 'Kuwait'],
+    [/qatar/,                              'QA', 'Qatar'],
+    [/bahrain/,                             'BH', 'Bahrain'],
+    [/\boman\b/,                            'OM', 'Oman'],
+    [/jordan/,                              'JO', 'Jordan'],
+    [/morocco/,                             'MA', 'Morocco'],
+    [/turkey|türkiye/,                      'TR', 'Turkey'],
+    [/brazil/,                              'BR', 'Brazil'],
+    [/germany/,                             'DE', 'Germany'],
+    [/france/,                              'FR', 'France'],
+    [/\bitaly\b/,                           'IT', 'Italy'],
+    [/\bspain\b/,                           'ES', 'Spain'],
+    [/\bjapan\b/,                           'JP', 'Japan'],
+    [/\bchina\b/,                           'CN', 'China'],
+    [/\bindia\b/,                           'IN', 'India'],
+    [/south.korea|southkorea/,              'KR', 'South Korea'],
+    [/singapore/,                           'SG', 'Singapore'],
+    [/australia/,                           'AU', 'Australia'],
+    [/canada/,                              'CA', 'Canada'],
+    [/united.kingdom/,                      'GB', 'United Kingdom'],
+  ];
+
+  for (const [re, region, placename] of PATTERNS) {
+    if (re.test(path)) return { region, placename };
+  }
+  return null;
 }

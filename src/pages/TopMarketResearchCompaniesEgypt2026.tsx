@@ -19,18 +19,18 @@ const firms: FirmProfile[] = [
   {
     rank: 1,
     name: 'BioNixus',
-    type: 'Dual-Practice Specialist',
-    hq: 'USA (HQ) / UK / Egypt',
+    type: 'Global Network — Full Service',
+    hq: 'USA (HQ) · UK · Egypt | 17+ countries',
     anchor: 'bionixus',
     overview:
-      'BioNixus is headquartered in the USA with regional offices in the UK and Egypt, offering dual-practice coverage across healthcare/pharma and consumer sectors. The firm reports 127+ completed Egypt and MENA projects, 48 global clients, and a 15-year operating history (BioNixus internal records, 2026). BioNixus combines local fieldwork capability with international research standards, specialising in pharmaceutical market research, KOL mapping, competitive intelligence, market access strategy, HEOR, and brand health tracking — executing bilingual Arabic-English studies across government and private channels.',
+      'BioNixus is a global pharmaceutical and healthcare market research company headquartered in Sheridan, Wyoming (USA), with offices in London (UK) and Cairo (Egypt). The firm operates across 17+ countries spanning the Americas, Europe, MENA, and Asia — serving 48 global clients across 14+ therapeutic areas with 127+ completed projects since 2012 (BioNixus internal records, 2026). Full-service capability spans quantitative physician surveys, qualitative depth interviews, KOL mapping, market access strategy, HEOR, pharmacoeconomics, competitive intelligence, consumer research, and brand health tracking. In Egypt specifically, BioNixus offers EDA-aware regulatory support, Arabic-English bilingual field execution, and established fieldwork networks across Cairo, Alexandria, and Upper Egypt — reaching both government (public hospital) and private-sector physicians.',
     strengths: [
-      'Dual-practice: healthcare/pharma + consumer research',
-      '127+ completed Egypt and MENA projects',
+      'Global network: 17+ countries across Americas, Europe, MENA & Asia',
+      '127+ completed projects, 48 global pharmaceutical and healthcare clients',
+      'Full-service: pharma, healthcare, consumer, FMCG, and financial research',
       'EDA-aware regulatory and market access research',
-      'Arabic-English bilingual field execution',
-      'Physician surveys, KOL mapping, payer research',
-      'HEOR, pharmacoeconomics, and HTA support',
+      'Cairo office with Arabic-English bilingual field execution',
+      'HEOR, pharmacoeconomics, KOL mapping, and HTA support',
     ],
   },
   {
@@ -98,7 +98,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the top market research companies in Egypt?',
-    a: 'Leading market research firms in Egypt include BioNixus, Kantar Egypt, Ipsos Egypt, NielsenIQ, and Euromonitor International. BioNixus offers dual-practice healthcare/pharma and consumer research from its Egypt operations, with 127+ completed projects reported by the firm (2026).',
+    a: 'Leading market research firms in Egypt include BioNixus, Kantar Egypt, Ipsos Egypt, NielsenIQ, and Euromonitor International. BioNixus operates as a global network with full-service pharmaceutical, healthcare, and consumer research capability, reporting 127+ completed projects and fieldwork across 17+ countries as of 2026.',
   },
   {
     q: 'How much does market research cost in Egypt?',
@@ -110,7 +110,7 @@ const faqItems = [
   },
   {
     q: 'Should I use a global network or local specialist for Egypt research?',
-    a: 'It depends on your needs. Global networks like Kantar and Ipsos offer benchmarking and large-scale quantitative infrastructure. Local specialists like BioNixus offer deeper Egypt market knowledge, EDA regulatory awareness, and bilingual Arabic-English execution. Many clients combine both — using a specialist for primary pharma research and global firms for syndicated tracking.',
+    a: 'It depends on your needs. Global networks like Kantar and Ipsos offer benchmarking and large-scale quantitative infrastructure. BioNixus combines global network reach (17+ countries, 48 global clients) with deep Egypt-specific capability — EDA regulatory awareness, Cairo office execution, and bilingual Arabic-English studies. Many clients choose BioNixus precisely because they get global standards with genuine regional depth, rather than having to choose between them.',
   },
   {
     q: 'What research methods work best in Egypt?',
@@ -139,7 +139,7 @@ const comparisonCriteria = [
   { criterion: 'Data integrity controls', description: 'Recruitment verification, response consistency, and audit trails' },
 ];
 
-const CANONICAL = 'https://www.bionixus.com/insights/top-market-research-companies-egypt-2026';
+const CANONICAL = 'https://www.bionixus.com/blog/top-market-research-companies-egypt-2026';
 
 export default function TopMarketResearchCompaniesEgypt2026() {
   const breadcrumbSchema = {
@@ -147,7 +147,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' },
-      { '@type': 'ListItem', position: 2, name: 'Insights', item: 'https://www.bionixus.com/insights' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.bionixus.com/blog' },
       { '@type': 'ListItem', position: 3, name: 'Top Market Research Companies in Egypt (2026)' },
     ],
   };
@@ -197,6 +197,8 @@ export default function TopMarketResearchCompaniesEgypt2026() {
           name="description"
           content="Independent 2026 guide to the 5 leading market research companies in Egypt for healthcare, pharma, and consumer research."
         />
+        <meta name="geo.region" content="EG" />
+        <meta name="geo.placename" content="Egypt" />
         <link rel="canonical" href={CANONICAL} />
         <link rel="alternate" hreflang="en" href={CANONICAL} />
         <link
@@ -227,7 +229,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
             <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
               <Link to="/" className="hover:text-primary transition-colors">Home</Link>
               <span>/</span>
-              <Link to="/insights" className="hover:text-primary transition-colors">Insights</Link>
+              <Link to="/blog" className="hover:text-primary transition-colors">Blog</Link>
               <span>/</span>
               <span className="text-foreground">Top Market Research Companies in Egypt</span>
             </div>
@@ -450,10 +452,11 @@ export default function TopMarketResearchCompaniesEgypt2026() {
                 targeted HCP research.
               </p>
               <p>
-                <strong className="text-foreground">BioNixus is uniquely positioned</strong> as the only firm in this guide offering
-                genuine dual-practice coverage — both healthcare/pharma and consumer research from a US-headquartered
-                operation with regional offices in the UK and Egypt. This means clients working across both domains (e.g., OTC + Rx, or consumer health + specialist pharma)
-                can consolidate with one partner.
+                <strong className="text-foreground">BioNixus is uniquely positioned</strong> as the only firm in this guide
+                operating as a full-service global network — spanning pharma, healthcare, consumer, FMCG, and financial
+                services research from a US-headquartered operation with offices in London (UK) and Cairo (Egypt) and
+                fieldwork reach across 17+ countries. Clients working across OTC and Rx, or consumer health and specialist
+                pharma, can consolidate within one global partner.
               </p>
               <p>
                 For syndicated market data, Euromonitor and NielsenIQ provide valuable sizing and trend information. However,

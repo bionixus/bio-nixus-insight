@@ -40,10 +40,13 @@ export const ORG_KNOWS_ABOUT = [
 
 /** Global reach with explicit deep-fingerprint regions and countries. */
 export const ORG_AREA_SERVED: Array<Record<string, string>> = [
+  // Macro-regions
   { '@type': 'Place', name: 'MENA' },
+  { '@type': 'Place', name: 'EMEA' },
   { '@type': 'Place', name: 'Latin America' },
   { '@type': 'Place', name: 'Eastern Europe' },
-  { '@type': 'Place', name: 'EMEA' },
+  { '@type': 'Place', name: 'Asia-Pacific' },
+  // MENA
   { '@type': 'Country', name: 'Saudi Arabia' },
   { '@type': 'Country', name: 'United Arab Emirates' },
   { '@type': 'Country', name: 'Egypt' },
@@ -51,9 +54,26 @@ export const ORG_AREA_SERVED: Array<Record<string, string>> = [
   { '@type': 'Country', name: 'Qatar' },
   { '@type': 'Country', name: 'Bahrain' },
   { '@type': 'Country', name: 'Oman' },
-  { '@type': 'Country', name: 'Brazil' },
-  { '@type': 'Country', name: 'Turkey' },
+  { '@type': 'Country', name: 'Jordan' },
+  { '@type': 'Country', name: 'Morocco' },
+  // Europe & UK
   { '@type': 'Country', name: 'United Kingdom' },
+  { '@type': 'Country', name: 'Germany' },
+  { '@type': 'Country', name: 'France' },
+  { '@type': 'Country', name: 'Italy' },
+  { '@type': 'Country', name: 'Spain' },
+  { '@type': 'Country', name: 'Turkey' },
+  // Americas
+  { '@type': 'Country', name: 'United States' },
+  { '@type': 'Country', name: 'Canada' },
+  { '@type': 'Country', name: 'Brazil' },
+  // Asia-Pacific
+  { '@type': 'Country', name: 'Japan' },
+  { '@type': 'Country', name: 'China' },
+  { '@type': 'Country', name: 'India' },
+  { '@type': 'Country', name: 'South Korea' },
+  { '@type': 'Country', name: 'Singapore' },
+  { '@type': 'Country', name: 'Australia' },
 ];
 
 export const ORG_ADDRESS = [
