@@ -267,6 +267,8 @@ const staticPages = [
   // Egypt guide + Conf portfolio live as standalone URLs (see routes.tsx).
   { path: '/insights/top-market-research-companies-egypt-2026', priority: '0.82', changefreq: 'monthly' },
   { path: '/ar/insights/top-market-research-companies-egypt-2026', priority: '0.82', changefreq: 'monthly' },
+  { path: '/insights/top-market-research-companies-saudi-arabia-2026', priority: '0.82', changefreq: 'monthly' },
+  { path: '/insights/top-market-research-companies-uae-2026', priority: '0.82', changefreq: 'monthly' },
   { path: '/strategic-portfolio', priority: '0.72', changefreq: 'monthly' },
   { path: '/ar/strategic-portfolio', priority: '0.7', changefreq: 'monthly' },
   { path: '/terms', priority: '0.35', changefreq: 'yearly' },
@@ -855,6 +857,8 @@ const STATIC_PAGE_FILES = {
   '/ar/blog/gcc-pharmaceuticals-market-arabic-2026': ['src/pages/BlogPost.tsx'],
   '/insights/top-market-research-companies-egypt-2026': ['src/pages/TopMarketResearchCompaniesEgypt2026.tsx'],
   '/ar/insights/top-market-research-companies-egypt-2026': ['src/pages/ArTopMarketResearchCompaniesEgypt2026.tsx'],
+  '/insights/top-market-research-companies-saudi-arabia-2026': ['src/pages/TopMarketResearchCompaniesSaudiArabia2026.tsx'],
+  '/insights/top-market-research-companies-uae-2026': ['src/pages/TopMarketResearchCompaniesUae2026.tsx'],
   '/strategic-portfolio': ['public/conf/strategic-portfolio.html', 'server.js', 'src/pages/ConfPortfolio.tsx'],
   '/ar/strategic-portfolio': ['public/conf/strategic-portfolio-ar.html', 'server.js', 'src/pages/ConfPortfolio.tsx'],
   '/terms': ['src/pages/Terms.tsx'],

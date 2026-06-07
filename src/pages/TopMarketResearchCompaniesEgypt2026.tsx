@@ -518,6 +518,8 @@ export default function TopMarketResearchCompaniesEgypt2026() {
                 { to: '/pharmaceutical-companies-egypt', label: 'Pharmaceutical Companies in Egypt', desc: '20+ pharma companies, $5.8B market data, EDA guide.' },
                 { to: '/healthcare-market-research/egypt', label: 'Healthcare Market Research in Egypt', desc: 'Country hub with FAQs, key stats, and therapy focus.' },
                 { to: '/market-research-egypt', label: 'Market Research Egypt', desc: 'Pharma and healthcare intelligence landing page.' },
+                { to: '/insights/top-market-research-companies-saudi-arabia-2026', label: 'Top Market Research Companies in Saudi Arabia', desc: 'Sister guide to the leading research firms in Saudi Arabia.' },
+                { to: '/insights/top-market-research-companies-uae-2026', label: 'Top Market Research Companies in the UAE', desc: 'Sister guide to the leading research firms in the UAE.' },
                 { to: '/blog/top-market-research-companies-egypt-2026', label: 'Blog Version of This Guide', desc: 'Read the blog post version with related articles.' },
                 { to: '/contact', label: 'Request a Proposal', desc: 'Get in touch for a custom Egypt research engagement.' },
               ].map((r) => (

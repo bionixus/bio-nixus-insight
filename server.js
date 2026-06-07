@@ -109,6 +109,8 @@ function buildFallbackTitle(pathname) {
   if (path === '/ar/strategic-portfolio') return 'محفظة BioNixus الاستراتيجية | أبحاث السوق والاستشارات';
   if (path === '/insights/top-market-research-companies-egypt-2026') return 'Top Market Research Companies in Egypt (2026) | BioNixus';
   if (path === '/ar/insights/top-market-research-companies-egypt-2026') return 'أفضل شركات أبحاث السوق في مصر (دليل 2026) | BioNixus';
+  if (path === '/insights/top-market-research-companies-saudi-arabia-2026') return 'Top Market Research Companies in Saudi Arabia (2026) | BioNixus';
+  if (path === '/insights/top-market-research-companies-uae-2026') return 'Top Market Research Companies in the UAE (2026) | BioNixus';
 
   if (path === '/healthcare-market-research') return 'Healthcare & Pharmaceutical Market Research in Dubai, UAE & MENA | BioNixus';
   if (path === '/global-websites/united-arab-emirates') return 'Pharmaceutical & Healthcare Market Research in Dubai, UAE | BioNixus';

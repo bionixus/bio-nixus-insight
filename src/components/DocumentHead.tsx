@@ -53,6 +53,8 @@ function routeProvidesOwnDocumentHead(pathname: string): boolean {
   if (path === '/sitemap') return true;
   if (path === '/insights/top-market-research-companies-egypt-2026') return true;
   if (path === '/ar/insights/top-market-research-companies-egypt-2026') return true;
+  if (path === '/insights/top-market-research-companies-saudi-arabia-2026') return true;
+  if (path === '/insights/top-market-research-companies-uae-2026') return true;
 
   return false;
 }
