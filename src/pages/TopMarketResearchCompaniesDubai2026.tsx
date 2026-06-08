@@ -176,7 +176,11 @@ export default function TopMarketResearchCompaniesDubai2026() {
     url: CANONICAL,
     datePublished: '2026-06-09',
     dateModified: '2026-06-09',
-    author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+    author: {
+      '@type': 'Person',
+      name: 'Haidy Yahia',
+      affiliation: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+    },
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
     inLanguage: 'en',
   };
@@ -214,6 +218,7 @@ export default function TopMarketResearchCompaniesDubai2026() {
         />
         <meta name="geo.region" content="AE-DU" />
         <meta name="geo.placename" content="Dubai" />
+        <meta name="author" content="Haidy Yahia" />
         <link rel="canonical" href={CANONICAL} />
         <link rel="alternate" hreflang="en" href={CANONICAL} />
         <link rel="alternate" hreflang="x-default" href={CANONICAL} />
@@ -265,7 +270,7 @@ export default function TopMarketResearchCompaniesDubai2026() {
               partner for Dubai as a GCC pharmaceutical launch hub.
             </p>
             <p className="text-sm text-muted-foreground">
-              Published June 2026 · By BioNixus Research Team · 14 min read
+              Published June 2026 · By Haidy Yahia · 14 min read
             </p>
           </div>
         </section>
@@ -491,7 +496,7 @@ export default function TopMarketResearchCompaniesDubai2026() {
                 identifiable client engagements. Firms are ordered by Dubai-specific healthcare and pharma capability.
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                This guide is maintained by the BioNixus research team. BioNixus is profiled in this guide and is
+                This guide is maintained by Haidy Yahia. BioNixus is profiled in this guide and is
                 transparent about its inclusion. For corrections or updates,{' '}
                 <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.
               </p>

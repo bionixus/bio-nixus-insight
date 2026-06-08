@@ -153,6 +153,12 @@ export default function Insights() {
                 Top Market Research Companies in Riyadh (2026)
               </Link>
               <Link
+                to="/insights/top-healthcare-market-research-companies-riyadh-2026"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Top Healthcare Market Research Companies in Riyadh (2026)
+              </Link>
+              <Link
                 to="/strategic-portfolio"
                 className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
               >

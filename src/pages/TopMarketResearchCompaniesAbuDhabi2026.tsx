@@ -176,7 +176,11 @@ export default function TopMarketResearchCompaniesAbuDhabi2026() {
     url: CANONICAL,
     datePublished: '2026-06-09',
     dateModified: '2026-06-09',
-    author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+    author: {
+      '@type': 'Person',
+      name: 'Haidy Yahia',
+      affiliation: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+    },
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
     inLanguage: 'en',
   };
@@ -214,6 +218,7 @@ export default function TopMarketResearchCompaniesAbuDhabi2026() {
         />
         <meta name="geo.region" content="AE-AZ" />
         <meta name="geo.placename" content="Abu Dhabi" />
+        <meta name="author" content="Haidy Yahia" />
         <link rel="canonical" href={CANONICAL} />
         <link rel="alternate" hreflang="en" href={CANONICAL} />
         <link rel="alternate" hreflang="x-default" href={CANONICAL} />
@@ -265,7 +270,7 @@ export default function TopMarketResearchCompaniesAbuDhabi2026() {
               partner for the UAE capital.
             </p>
             <p className="text-sm text-muted-foreground">
-              Published June 2026 · By BioNixus Research Team · 14 min read
+              Published June 2026 · By Haidy Yahia · 14 min read
             </p>
           </div>
         </section>

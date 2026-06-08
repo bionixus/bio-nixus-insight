@@ -99,6 +99,7 @@ import TopMarketResearchCompaniesUae2026 from '@/pages/TopMarketResearchCompanie
 import TopMarketResearchCompaniesDubai2026 from '@/pages/TopMarketResearchCompaniesDubai2026';
 import TopMarketResearchCompaniesAbuDhabi2026 from '@/pages/TopMarketResearchCompaniesAbuDhabi2026';
 import TopMarketResearchCompaniesRiyadh2026 from '@/pages/TopMarketResearchCompaniesRiyadh2026';
+import TopHealthcareMarketResearchCompaniesRiyadh2026 from '@/pages/TopHealthcareMarketResearchCompaniesRiyadh2026';
 import {
   SaudiArabiaMedicalDevicesMarketReport,
   SaudiArabiaHealthcareMarketReport,
@@ -285,6 +286,7 @@ export const routes: RouteObject[] = [
   { path: '/insights/top-market-research-companies-abudhabi-2026', element: <Navigate to="/insights/top-market-research-companies-abu-dhabi-2026" replace /> },
   { path: '/insights/top-market-research-companies-abu-dhabi-2026', element: <TopMarketResearchCompaniesAbuDhabi2026 /> },
   { path: '/insights/top-market-research-companies-riyadh-2026', element: <TopMarketResearchCompaniesRiyadh2026 /> },
+  { path: '/insights/top-healthcare-market-research-companies-riyadh-2026', element: <TopHealthcareMarketResearchCompaniesRiyadh2026 /> },
   { path: '/pharmaceutical-companies-egypt', element: <EgyptPharmaCompanies /> },
   { path: '/pharmaceutical-companies-qatar', element: <QatarPharmaCompanies /> },
   { path: '/pharmaceutical-companies-oman', element: <OmanPharmaCompanies /> },

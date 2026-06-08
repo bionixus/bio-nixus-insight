@@ -114,6 +114,7 @@ function buildFallbackTitle(pathname) {
   if (path === '/insights/top-market-research-companies-dubai-2026') return 'Top Market Research Companies in Dubai (2026) | BioNixus';
   if (path === '/insights/top-market-research-companies-abu-dhabi-2026') return 'Top Market Research Companies in Abu Dhabi (2026) | BioNixus';
   if (path === '/insights/top-market-research-companies-riyadh-2026') return 'Top Market Research Companies in Riyadh (2026) | BioNixus';
+  if (path === '/insights/top-healthcare-market-research-companies-riyadh-2026') return 'Top Market Research Companies in Riyadh (2026) | BioNixus';
 
   if (path === '/healthcare-market-research') return 'Healthcare & Pharmaceutical Market Research in Dubai, UAE & MENA | BioNixus';
   if (path === '/global-websites/united-arab-emirates') return 'Pharmaceutical & Healthcare Market Research in Dubai, UAE | BioNixus';

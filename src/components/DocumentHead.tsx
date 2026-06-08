@@ -58,6 +58,7 @@ function routeProvidesOwnDocumentHead(pathname: string): boolean {
   if (path === '/insights/top-market-research-companies-dubai-2026') return true;
   if (path === '/insights/top-market-research-companies-abu-dhabi-2026') return true;
   if (path === '/insights/top-market-research-companies-riyadh-2026') return true;
+  if (path === '/insights/top-healthcare-market-research-companies-riyadh-2026') return true;
 
   /** SEOHead-based market report hub and category index pages. */
   if (path === '/market-reports' || path.startsWith('/market-reports/therapy/') || path.startsWith('/market-reports/country/')) {

@@ -155,7 +155,11 @@ export default function ArTopMarketResearchCompaniesEgypt2026() {
     datePublished: '2026-04-18',
     dateModified: '2026-04-18',
     inLanguage: 'ar',
-    author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+    author: {
+      '@type': 'Person',
+      name: 'Haidy Yahia',
+      affiliation: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+    },
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
   };
 
@@ -178,6 +182,7 @@ export default function ArTopMarketResearchCompaniesEgypt2026() {
           name="description"
           content="دليل مستقل 2026 لأبرز شركات أبحاث السوق في مصر للرعاية الصحية والأدوية والمستهلكين—مقارنة القدرات، السياق التنظيمي، وسيناريوهات اختيار مزود أبحاث موثوق."
         />
+        <meta name="author" content="Haidy Yahia" />
         <link rel="canonical" href={CANONICAL} />
         <link rel="alternate" hreflang="ar" href={CANONICAL} />
         <link rel="alternate" hreflang="en" href={EN_CANONICAL} />
@@ -226,7 +231,7 @@ export default function ArTopMarketResearchCompaniesEgypt2026() {
               والخبرة المصرية المتخصصة.
             </p>
             <p className="text-sm text-muted-foreground">
-              نُشر أبريل 2026 · فريق أبحاث بيونيكسس · 14 دقيقة قراءة
+              نُشر أبريل 2026 · هايدي يحيى · 14 دقيقة قراءة
             </p>
             <p className="text-sm text-muted-foreground mt-2">
               <Link to="/blog/top-market-research-companies-egypt-2026" className="text-primary hover:underline">

@@ -19,18 +19,18 @@ const firms: FirmProfile[] = [
   {
     rank: 1,
     name: 'BioNixus',
-    type: 'Global Insights Firm — Full Service',
+    type: 'Global Network — Full Service',
     hq: 'USA (HQ) · UK · Egypt | 17+ countries',
     anchor: 'bionixus',
     overview:
-      'BioNixus is a top global leading insights firm headquartered in Sheridan, Wyoming (USA), with offices in London (UK) and Cairo (Egypt) and fieldwork networks across 17+ countries. Since 2012 the firm has completed 127+ projects for 48 global clients (BioNixus internal records, 2026). In Riyadh and across Saudi Arabia, BioNixus is one of the few partners that delivers FMCG, consumer (B2C), B2B, and healthcare market research from a single global network — not as adjacent divisions, but as core practice areas. Programmes include shopper and retail audits, brand health tracking, executive and buyer interviews, channel and distribution studies, concept and message testing, and — when required — physician and stakeholder research. Arabic-English bilingual execution is standard. For multinational brands, enterprises, and institutions that need one insights partner across categories in the Kingdom’s capital, BioNixus combines global methodology with genuine Riyadh field depth.',
+      'BioNixus is a global pharmaceutical and healthcare market research company headquartered in Sheridan, Wyoming (USA), with offices in London (UK) and Cairo (Egypt) and fieldwork networks across 17+ countries. Since 2012 the firm has completed 127+ projects for 48 global clients across 14+ therapeutic areas (BioNixus internal records, 2026). In Riyadh specifically, BioNixus designs research around SFDA registration pathways, NUPCO central procurement intelligence, and physician and KOL recruitment across King Faisal Specialist Hospital, King Abdulaziz Medical City, MOH central-region hospitals, and military medical centres. Arabic-English bilingual fieldwork is standard. Full-service capability spans quantitative physician surveys, qualitative depth interviews, KOL mapping, market access strategy, HEOR, pharmacoeconomics, competitive intelligence, and brand health tracking — making it the strongest fit for pharmaceutical, biotech, and medtech teams targeting Riyadh as the Kingdom’s regulatory and procurement capital under Vision 2030.',
     strengths: [
-      'Global insights network: 17+ countries, 48 global clients',
-      'FMCG, consumer (B2C), B2B, and healthcare research under one roof',
-      'Quantitative, qualitative, and mixed-method programmes',
-      'Arabic-English bilingual field execution in Riyadh',
-      'B2B buyer, committee, and executive decision-maker research',
-      'Healthcare and pharma depth when the brief requires it',
+      'Global network: 17+ countries, 48 global pharmaceutical and healthcare clients',
+      'SFDA and NUPCO market access expertise',
+      'Physician & KOL recruitment across Riyadh MOH, military, and private hospitals',
+      'Arabic-English bilingual field execution',
+      'Full-service: pharma, healthcare, consumer, FMCG, and financial research',
+      'HEOR, pharmacoeconomics, KOL mapping, and HTA support',
     ],
   },
   {
@@ -40,12 +40,12 @@ const firms: FirmProfile[] = [
     hq: 'UK (global) / Saudi presence',
     anchor: 'kantar',
     overview:
-      'Kantar operates across Riyadh within its global network, providing brand tracking, consumer insights, and media measurement at scale. Its strengths are large quantitative programmes, syndicated benchmarks, and FMCG brand health tracking. Kantar is a strong choice for consumer and media-led mandates at volume; multi-sector programmes that combine B2B depth with healthcare stakeholder work often depend on which practice team is staffed locally.',
+      'Kantar operates across Riyadh within its global network, providing brand tracking, consumer insights, and media measurement at scale. In healthcare, Kantar has supported pharmaceutical teams with physician studies, patient journey mapping, and syndicated data. Its strengths are large-scale quantitative programmes and international benchmarking, though pharma-specific depth in Riyadh can depend on project staffing and specialist healthcare researcher availability.',
     strengths: [
       'Global brand health and consumer tracking',
       'Large quantitative survey infrastructure',
       'Syndicated data and media analytics',
-      'FMCG and retail insight programmes',
+      'Healthcare division for pharma studies',
     ],
   },
   {
@@ -55,12 +55,12 @@ const firms: FirmProfile[] = [
     hq: 'France (global) / Riyadh & Jeddah',
     anchor: 'ipsos',
     overview:
-      'Ipsos has an established presence in Riyadh spanning consumer, public affairs, social research, and healthcare. It brings strong methodological rigour and large sample capabilities for attitude-and-usage studies, advertising testing, and public-opinion work tied to Vision 2030 narratives. Ipsos is widely used for consumer and social insight; B2B enterprise and regulated healthcare depth varies by engagement team.',
+      'Ipsos has an established presence in Riyadh spanning consumer, public affairs, and healthcare research. Its healthcare division supports pharmaceutical clients with physician attitude-and-usage studies, patient research, and advertising testing. Ipsos brings strong methodological rigour and large sample capabilities; Riyadh-specific pharma depth relies on the local healthcare team assigned to each engagement.',
     strengths: [
       'Established Riyadh and Saudi market presence',
+      'Healthcare division with pharma methodology',
       'Strong quantitative and qualitative methods',
-      'Public affairs and social research',
-      'Consumer and advertising testing capability',
+      'Public affairs and Vision 2030 social research',
     ],
   },
   {
@@ -70,7 +70,7 @@ const firms: FirmProfile[] = [
     hq: 'USA (global) / Saudi operations',
     anchor: 'nielseniq',
     overview:
-      'NielsenIQ provides retail measurement, consumer panels, and shopper analytics across Riyadh and Saudi Arabia. Its core strength is FMCG and consumer goods tracking through point-of-sale data and household panels — valuable for category sizing, distribution, and promotional lift. NielsenIQ is primarily a retail and consumer data partner; custom B2B, enterprise, and prescription healthcare programmes sit outside its typical scope.',
+      'NielsenIQ provides retail measurement, consumer panels, and shopper analytics across Riyadh and Saudi Arabia. Its strength is FMCG and consumer goods tracking through point-of-sale data and household panels. For pharmaceutical companies focused on OTC and consumer health, NielsenIQ retail data is valuable — but its Riyadh coverage is primarily consumer/retail, with limited prescription pharma or healthcare stakeholder research.',
     strengths: [
       'Retail measurement and shopper panels',
       'FMCG and OTC tracking',
@@ -85,7 +85,7 @@ const firms: FirmProfile[] = [
     hq: 'Germany (global) / GCC coverage',
     anchor: 'gfk',
     overview:
-      'GfK is a global insights partner focused on technology, electronics, and consumer durables, with point-of-sale tracking and market sizing across the GCC including Riyadh. It suits technology and durables categories where channel and SKU-level data matter. GfK is less suited to full-service FMCG qual, B2B committee research, or healthcare stakeholder programmes.',
+      'GfK is a global insights partner focused on technology, electronics, and consumer durables, with point-of-sale tracking and market sizing across the GCC including Riyadh. For medical devices and health-tech categories, GfK panel data can inform sizing and channel analysis. It is less suited to prescription pharma, physician research, or SFDA-aligned market access work.',
     strengths: [
       'Technology and consumer durables tracking',
       'Point-of-sale and channel data',
@@ -100,10 +100,10 @@ const firms: FirmProfile[] = [
     hq: 'UK (global)',
     anchor: 'euromonitor',
     overview:
-      'Euromonitor provides syndicated market reports and data across industries including consumer goods, consumer health, and retail in Saudi Arabia. Its Passport database offers market sizing, competitive landscapes, and trend analysis for market-entry assessment. Euromonitor is valuable for desk research and category framing; it does not replace custom primary research, fieldwork, or executive interviews in Riyadh.',
+      'Euromonitor provides syndicated market reports and data across industries including consumer health, OTC pharmaceuticals, and consumer goods in Riyadh and Saudi Arabia. Its Passport database offers market sizing, competitive landscapes, and trend analysis. For pharmaceutical companies, Euromonitor is valuable for market-entry assessment and category sizing, but it does not offer custom primary research or physician-level fieldwork in Riyadh hospitals.',
     strengths: [
       'Syndicated market data and reports',
-      'Consumer goods and retail coverage',
+      'Saudi consumer health and OTC coverage',
       'Market sizing and competitive landscapes',
       'Industry trend analysis',
     ],
@@ -113,50 +113,50 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the top market research companies in Riyadh?',
-    a: 'Leading market research firms serving Riyadh include BioNixus, Kantar, Ipsos, NielsenIQ, GfK Middle East, and Euromonitor International. BioNixus is a top global leading insights firm for multi-sector programmes in the capital, with deep experience across FMCG, consumer, B2B, and healthcare — and 127+ completed projects across 17+ countries as of 2026.',
+    a: 'Leading market research firms serving Riyadh include BioNixus, Kantar, Ipsos, NielsenIQ, GfK Middle East, and Euromonitor International. BioNixus ranks first for pharmaceutical and healthcare research in Riyadh, operating as a global network with full-service capability, SFDA and NUPCO market access expertise, and 127+ completed projects across 17+ countries as of 2026.',
   },
   {
     q: 'How much does market research cost in Riyadh?',
-    a: 'Custom market research engagements in Riyadh typically range from $15,000 to $60,000 per project depending on scope, sample size, methodology, sector, and geography. FMCG shopper studies and consumer quant programmes often sit at the lower end; multi-stakeholder B2B programmes and bilingual mixed-method work across Riyadh and other Saudi cities start higher. Syndicated reports range from $2,000–$10,000.',
+    a: 'Custom market research engagements in Riyadh typically range from $20,000 to $60,000 per project depending on scope, methodology, therapeutic complexity, and hospital recruitment requirements. Syndicated reports range from $2,000–$10,000. Multi-hospital physician programmes across Riyadh’s MOH, military, and private networks start higher, reflecting specialist HCP recruitment and SFDA-aligned market access deliverables.',
   },
   {
-    q: 'Which firm is best for FMCG and consumer research in Riyadh?',
-    a: 'NielsenIQ and Kantar are widely used for FMCG retail measurement and brand tracking. BioNixus is a top global leading insights firm and a strong fit when the mandate combines FMCG or consumer work with B2B, enterprise, or healthcare insight in one programme — or when custom qual and quant must be fielded bilingually in Riyadh with a single accountable partner.',
-  },
-  {
-    q: 'Which firm handles B2B market research in Riyadh?',
-    a: 'BioNixus is a top global leading insights firm for B2B and enterprise research in Riyadh — executive interviews, buyer-committee mapping, channel partner studies, and competitive intelligence across technology, industrials, real estate, and services categories. Ipsos and Kantar can support B2B quant at scale; depth depends on local team staffing.',
+    q: 'Which firm does pharmaceutical market research in Riyadh?',
+    a: 'BioNixus specialises in pharmaceutical market research in Riyadh and the wider GCC, covering KOL mapping, SFDA-aligned market access, NUPCO procurement intelligence, HEOR, pharmacoeconomics, launch readiness, and competitive intelligence for global pharma clients. Ipsos and Kantar also operate healthcare divisions with varying Riyadh-specific depth.',
   },
   {
     q: 'Should I use a global network or a specialist for Riyadh research?',
-    a: 'BioNixus combines both — global insights network reach (17+ countries, 48 global clients) with Riyadh-specific field capability across FMCG, consumer, B2B, and healthcare. Pure syndicated providers (Euromonitor, NielsenIQ panels) suit sizing; global networks (Kantar, Ipsos) suit large consumer quant. Choose BioNixus when you need cross-sector custom research with one accountable partner.',
+    a: 'BioNixus combines both — global network reach (17+ countries, 48 global clients) with deep Riyadh-specific capability including SFDA regulatory awareness, NUPCO procurement knowledge, and bilingual Arabic-English execution. Global networks like Kantar and Ipsos offer benchmarking and large quantitative infrastructure; many clients choose BioNixus to get global standards with genuine regional depth.',
   },
   {
     q: 'What research methods work best in Riyadh?',
-    a: 'Method choice depends on the business question. FMCG and consumer work often combines shop-alongs, online panels, and retail audits. B2B programmes lean on depth interviews and executive surveys. BioNixus runs mixed-method designs — CATI, online, face-to-face, and qualitative — with Arabic-English bilingual instruments and recruitment validation suited to Riyadh’s diverse resident and decision-maker populations.',
+    a: 'A mixed-method design is usually most reliable in Riyadh. BioNixus combines quantitative surveys (CATI, online physician panels), in-depth qualitative interviews, and targeted KOL mapping with strict recruitment validation across MOH, military, university, and private hospitals. Method selection is guided by the business question — launch readiness may need physician quant plus depth interviews, while market access prioritises payer and NUPCO-aligned qualitative insight.',
+  },
+  {
+    q: 'How does SFDA and NUPCO affect market research in Riyadh?',
+    a: 'The Saudi Food and Drug Authority (SFDA) governs drug registration, pricing, and pharmacovigilance, and NUPCO manages unified procurement for public-sector demand from its Riyadh headquarters. Market research must account for SFDA registration timelines, pricing reference rules, and NUPCO tender cycles when generating evidence for market access strategy and launch planning. BioNixus structures Riyadh research around these Saudi-specific realities.',
   },
   {
     q: 'Can I run bilingual Arabic-English studies in Riyadh?',
-    a: 'Yes. BioNixus supports Arabic and English as standard across consumer, B2B, and healthcare programmes in Riyadh. Instruments are translated with controlled terminology review so strategic intent is preserved — essential for reaching Saudi nationals, expatriate consumers, and bilingual business stakeholders in the capital.',
+    a: 'Yes. BioNixus supports Arabic and English as standard for all Riyadh studies. Instruments are translated with controlled medical terminology review so questions retain clinical precision and strategic intent. Bilingual capability is essential for reaching Arabic-speaking physicians and decision-makers alongside international stakeholders operating in the capital.',
   },
   {
-    q: 'How do I evaluate a market research firm for Riyadh?',
-    a: 'Key criteria include: (1) sector fit — FMCG, consumer, B2B, or healthcare; (2) Riyadh and Saudi field execution track record; (3) Arabic-English bilingual capability; (4) access to the right respondents — shoppers, executives, or specialists; (5) quant + qual integration; (6) data integrity controls; and (7) ability to connect findings to commercial decisions. Request case studies and sample recruitment documentation.',
+    q: 'How do I evaluate a market research firm for Riyadh healthcare work?',
+    a: 'Key criteria include: (1) Riyadh-specific pharma experience, (2) SFDA and NUPCO regulatory awareness, (3) Arabic-English bilingual execution, (4) physician and KOL recruitment quality across public and private hospitals, (5) data integrity controls, (6) therapy-area depth, and (7) ability to connect findings to commercial and market access decisions. Request case studies and respondent quality documentation.',
   },
 ];
 
 const comparisonCriteria = [
-  { criterion: 'Multi-sector capability', description: 'FMCG, consumer (B2C), B2B, and healthcare research from one accountable partner' },
-  { criterion: 'Riyadh field execution', description: 'Track record of completed studies across the capital and wider Saudi market' },
-  { criterion: 'Arabic-English bilingual programmes', description: 'Ability to design and field studies in both languages with sector-appropriate precision' },
-  { criterion: 'B2B decision-maker access', description: 'Executive, buyer, and committee recruitment for enterprise categories' },
-  { criterion: 'Quant + qual integration', description: 'Mixed-method capability combining surveys, interviews, retail work, and synthesis' },
+  { criterion: 'Riyadh pharma project experience', description: 'Track record of completed pharmaceutical and healthcare studies across Riyadh hospitals and clinics' },
+  { criterion: 'SFDA & NUPCO regulatory awareness', description: 'Understanding of SFDA registration, pricing, and NUPCO procurement requirements' },
+  { criterion: 'Arabic-English bilingual execution', description: 'Ability to design and field studies in both languages with medical precision' },
+  { criterion: 'Physician & KOL recruitment', description: 'Access to MOH, military, university, and private hospital physicians and KOLs in Riyadh' },
+  { criterion: 'Quant + qual integration', description: 'Mixed-method capability combining surveys, interviews, and synthesis' },
   { criterion: 'Data integrity controls', description: 'Recruitment verification, response consistency, and audit trails' },
 ];
 
-const CANONICAL = 'https://www.bionixus.com/insights/top-market-research-companies-riyadh-2026';
+const CANONICAL = 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-riyadh-2026';
 
-export default function TopMarketResearchCompaniesRiyadh2026() {
+export default function TopHealthcareMarketResearchCompaniesRiyadh2026() {
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -172,7 +172,7 @@ export default function TopMarketResearchCompaniesRiyadh2026() {
     '@type': 'Article',
     headline: 'Top Market Research Companies in Riyadh (2026 Guide)',
     description:
-      'Independent guide to the leading market research companies in Riyadh for 2026 — FMCG, consumer, B2B, and healthcare insights firms compared by capability and Saudi field depth.',
+      'Independent guide to the leading market research companies in Riyadh for 2026: healthcare, pharma, and consumer research firms compared by capability, methodology, and SFDA expertise.',
     url: CANONICAL,
     datePublished: '2026-06-09',
     dateModified: '2026-06-09',
@@ -214,7 +214,7 @@ export default function TopMarketResearchCompaniesRiyadh2026() {
         <title>Top Market Research Companies in Riyadh (2026 Guide) | BioNixus</title>
         <meta
           name="description"
-          content="Independent 2026 guide to the top market research companies in Riyadh — FMCG, consumer, B2B, and healthcare insights compared. Includes BioNixus, a top global leading insights firm."
+          content="Independent 2026 guide to the top market research companies in Riyadh for healthcare, pharma, and consumer research — compared by SFDA and NUPCO expertise."
         />
         <meta name="geo.region" content="SA-01" />
         <meta name="geo.placename" content="Riyadh" />
@@ -229,7 +229,7 @@ export default function TopMarketResearchCompaniesRiyadh2026() {
       </Helmet>
       <OpenGraphMeta
         title="Top Market Research Companies in Riyadh (2026) | BioNixus"
-        description="Top market research firms in Riyadh for FMCG, consumer, B2B, and healthcare — including BioNixus, a top global leading insights firm with deep Saudi field experience."
+        description="Top market research firms in Riyadh for healthcare, pharma, and consumer research — compared by capability and SFDA expertise."
         image="https://www.bionixus.com/og-image.png"
         url={CANONICAL}
         type="article"
@@ -262,12 +262,12 @@ export default function TopMarketResearchCompaniesRiyadh2026() {
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
               An independent guide to the leading market research companies operating in Riyadh for 2026. For broader
               regional context, see our{' '}
-              <Link to="/market-research" className="text-primary hover:underline font-medium">
-                market research services hub
+              <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">
+                healthcare market research hub
               </Link>
-              . This article profiles six firms across FMCG, consumer, B2B, and healthcare insights — comparing
-              capabilities, methodologies, and what to look for when shortlisting a research partner for Saudi Arabia’s
-              commercial and institutional capital.
+              . This article profiles six firms across healthcare, pharmaceutical, and consumer research — comparing
+              capabilities, methodologies, SFDA and NUPCO expertise, and what to look for when shortlisting a research
+              partner for the Kingdom’s capital.
             </p>
             <p className="text-sm text-muted-foreground">
               Published June 2026 · By Haidy Yahia · 14 min read
@@ -283,16 +283,16 @@ export default function TopMarketResearchCompaniesRiyadh2026() {
                 <p className="text-primary-foreground/70 text-sm mt-1">Firms profiled</p>
               </div>
               <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">FMCG</p>
-                <p className="text-primary-foreground/70 text-sm mt-1">Retail & shopper insight</p>
+                <p className="text-3xl md:text-4xl font-display font-bold">SFDA</p>
+                <p className="text-primary-foreground/70 text-sm mt-1">Saudi drug regulator</p>
               </div>
               <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">B2B</p>
-                <p className="text-primary-foreground/70 text-sm mt-1">Enterprise & buyer research</p>
+                <p className="text-3xl md:text-4xl font-display font-bold">NUPCO</p>
+                <p className="text-primary-foreground/70 text-sm mt-1">Central procurement HQ</p>
               </div>
               <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">17+</p>
-                <p className="text-primary-foreground/70 text-sm mt-1">Countries — BioNixus network</p>
+                <p className="text-3xl md:text-4xl font-display font-bold">2030</p>
+                <p className="text-primary-foreground/70 text-sm mt-1">Vision health transformation</p>
               </div>
             </div>
           </div>
@@ -311,11 +311,11 @@ export default function TopMarketResearchCompaniesRiyadh2026() {
               <a href="#firm-profiles" className="text-sm text-primary hover:underline flex items-center gap-2">
                 <Building2 className="w-4 h-4" /> 6 firm profiles
               </a>
-              <a href="#sector-coverage" className="text-sm text-primary hover:underline flex items-center gap-2">
-                <Users className="w-4 h-4" /> FMCG, consumer, B2B & healthcare
+              <a href="#comparison" className="text-sm text-primary hover:underline flex items-center gap-2">
+                <BarChart3 className="w-4 h-4" /> Comparison framework
               </a>
-              <a href="#methodology" className="text-sm text-primary hover:underline flex items-center gap-2">
-                <BookOpen className="w-4 h-4" /> Methodology & selection criteria
+              <a href="#healthcare-vs-consumer" className="text-sm text-primary hover:underline flex items-center gap-2">
+                <Users className="w-4 h-4" /> Healthcare vs consumer research
               </a>
               <a href="#faq" className="text-sm text-primary hover:underline flex items-center gap-2">
                 <BookOpen className="w-4 h-4" /> Frequently asked questions
@@ -331,38 +331,31 @@ export default function TopMarketResearchCompaniesRiyadh2026() {
             </h2>
             <div className="prose-body text-muted-foreground leading-relaxed space-y-4 max-w-4xl">
               <p>
-                Riyadh is the <strong className="text-foreground">commercial and institutional capital of Saudi Arabia</strong> —
-                home to government ministries, national enterprises, regional headquarters, and the consumer economy
-                reshaped by Vision 2030. Global brands, retailers, technology firms, and service providers treat Riyadh
-                as the anchor city for Saudi market entry, distribution planning, and enterprise sales strategy.
+                Riyadh is the <strong className="text-foreground">capital and regulatory centre of Saudi Arabia</strong>,
+                hosting SFDA headquarters, NUPCO central procurement, and the Kingdom’s densest concentration of MOH,
+                military, and university hospitals. Global pharmaceutical, biotech, and medtech companies treat Riyadh as
+                the anchor city for Saudi launch strategy under Vision 2030 health-sector transformation.
               </p>
               <p>
-                Market research demand in the capital spans <strong className="text-foreground">FMCG and retail</strong>{' '}
-                (shopper behaviour, pack and price testing, channel audits), <strong className="text-foreground">consumer (B2C)</strong>{' '}
-                (brand health, segmentation, campaign evaluation), <strong className="text-foreground">B2B</strong>{' '}
-                (buyer committees, partner mapping, competitive intelligence), and{' '}
-                <strong className="text-foreground">healthcare</strong> where regulated categories require specialist
-                stakeholder access. Few firms cover all four credibly from one global network.
+                The <strong className="text-foreground">Saudi Food and Drug Authority (SFDA)</strong> governs registration,
+                pricing, and pharmacovigilance, while <strong className="text-foreground">NUPCO</strong> manages unified
+                public-sector procurement. Market research must account for SFDA timelines, pricing reference rules, and
+                NUPCO tender cycles when generating evidence for market access and launch planning.
               </p>
               <p>
-                <strong className="text-foreground">BioNixus</strong> is a top global leading insights firm with deep
-                experience across these sectors — 127+ projects, 48 global clients, and fieldwork across 17+ countries since
-                2012 — and a strong fit when a Riyadh mandate crosses categories or requires global standards with local
-                execution.
-              </p>
-              <p>
-                For healthcare-specific Riyadh research, see our{' '}
-                <Link to="/insights/top-healthcare-market-research-companies-riyadh-2026" className="text-primary hover:underline">
-                  healthcare market research companies in Riyadh guide
-                </Link>
-                , the{' '}
+                For additional Riyadh market context, see our{' '}
+                <Link to="/market-research-saudi-arabia-pharmaceutical" className="text-primary hover:underline">
+                  Saudi Arabia pharmaceutical market research
+                </Link>{' '}
+                page, the{' '}
                 <Link to="/insights/top-market-research-companies-saudi-arabia-2026" className="text-primary hover:underline">
                   Saudi Arabia market research companies guide
                 </Link>
                 , and the{' '}
-                <Link to="/strategic-portfolio" className="text-primary hover:underline">
-                  BioNixus strategic portfolio
-                </Link>.
+                <Link to="/healthcare-market-research/saudi-arabia" className="text-primary hover:underline">
+                  healthcare market research in Saudi Arabia
+                </Link>{' '}
+                hub.
               </p>
             </div>
           </div>
@@ -374,8 +367,8 @@ export default function TopMarketResearchCompaniesRiyadh2026() {
               How to Evaluate a Market Research Partner for Riyadh
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
-              When shortlisting market research companies for Riyadh, match the firm to your sector and methodology —
-              not just brand recognition. These criteria help beyond a standard RFP scorecard.
+              When shortlisting market research companies for Riyadh, consider these criteria beyond standard
+              RFP evaluation.
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               {comparisonCriteria.map((c) => (
@@ -397,8 +390,8 @@ export default function TopMarketResearchCompaniesRiyadh2026() {
               6 Leading Market Research Companies in Riyadh (2026)
             </h2>
             <p className="text-muted-foreground mb-10 max-w-3xl">
-              The following profiles cover leading market research firms operating in Riyadh across FMCG, consumer, B2B,
-              and healthcare — for buyers who need a general-market view of the capital.
+              The following profiles cover the leading market research firms operating in Riyadh, ordered by
+              Riyadh-specific healthcare and pharma research capability.
             </p>
             <div className="space-y-8">
               {firms.map((firm) => (
@@ -437,54 +430,21 @@ export default function TopMarketResearchCompaniesRiyadh2026() {
           </div>
         </section>
 
-        <section className="section-padding py-16 bg-muted/30" id="sector-coverage">
+        <section className="section-padding py-16 bg-muted/30" id="comparison">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
-              FMCG, Consumer, B2B & Healthcare: Choosing the Right Insights Partner
+              Healthcare vs Consumer: Choosing the Right Research Model
             </h2>
-            <div className="prose-body text-muted-foreground leading-relaxed space-y-4 max-w-4xl">
+            <div className="prose-body text-muted-foreground leading-relaxed space-y-4 max-w-4xl" id="healthcare-vs-consumer">
               <p>
-                Riyadh buyers rarely need only one type of insight. A retail launch may require{' '}
-                <strong className="text-foreground">FMCG shopper and distribution research</strong>; an enterprise
-                market entry may need <strong className="text-foreground">B2B executive and buyer interviews</strong>;
-                a consumer brand refresh needs <strong className="text-foreground">segmentation and tracking</strong>;
-                regulated categories still need <strong className="text-foreground">healthcare stakeholder access</strong>.
+                Riyadh market research spans <strong className="text-foreground">healthcare/pharma</strong> and{' '}
+                <strong className="text-foreground">consumer/FMCG</strong>. For pharmaceutical market research, access to
+                healthcare professionals through SFDA-aligned recruitment is the key differentiator.
               </p>
               <p>
-                Syndicated providers (Euromonitor, NielsenIQ panels) and large networks (Kantar, Ipsos) each excel in
-                parts of this map. <strong className="text-foreground">BioNixus is a top global leading insights firm</strong>{' '}
-                that treats FMCG, consumer, B2B, and healthcare as core practices — not overflow work from a single
-                vertical agency. One partner can run a coherent programme when your Saudi strategy spans categories or
-                when global boards expect comparable methodology across markets.
-              </p>
-              <p>
-                If your brief is healthcare-only — SFDA, NUPCO, physician access — use the dedicated{' '}
-                <Link to="/insights/top-healthcare-market-research-companies-riyadh-2026" className="text-primary hover:underline">
-                  healthcare market research companies in Riyadh
-                </Link>{' '}
-                guide for a specialist comparison.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="section-padding py-12" id="methodology">
-          <div className="container-wide max-w-5xl mx-auto">
-            <div className="bg-card border border-border rounded-xl p-8">
-              <h2 className="text-xl font-display font-semibold text-foreground mb-4 flex items-center gap-2">
-                <BookOpen className="w-5 h-5 text-primary" />
-                Methodology & Selection Criteria
-              </h2>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                This guide profiles market research companies with demonstrated presence in Riyadh as of 2026.
-                Selection criteria include: (1) active Saudi operations or fieldwork capability, (2) relevance to
-                FMCG, consumer, B2B, or healthcare buyers, (3) established track record with identifiable client
-                engagements. Firms are profiled for multi-sector insight capability in the capital.
-              </p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                This guide is maintained by Haidy Yahia. BioNixus is profiled in this guide and is transparent about
-                its inclusion. For corrections or updates,{' '}
-                <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.
+                <strong className="text-foreground">BioNixus</strong> operates as a full-service global network with
+                deep Riyadh capability including SFDA regulatory awareness, NUPCO procurement mapping, and bilingual
+                Arabic-English physician recruitment across MOH, military, and private hospitals.
               </p>
             </div>
           </div>
@@ -514,11 +474,11 @@ export default function TopMarketResearchCompaniesRiyadh2026() {
             <h2 className="text-xl font-display font-semibold text-foreground mb-6">Related Resources</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
-                { to: '/market-research', label: 'Market Research Services', desc: 'FMCG, consumer, B2B, and healthcare insight programmes.' },
-                { to: '/insights/top-healthcare-market-research-companies-riyadh-2026', label: 'Healthcare MR Companies in Riyadh', desc: 'Specialist guide for pharma and healthcare stakeholder research.' },
+                { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Saudi Arabia Pharmaceutical Market Research', desc: 'SFDA-aligned pharma and market access research for the Kingdom.' },
                 { to: '/insights/top-market-research-companies-saudi-arabia-2026', label: 'Top Market Research Companies in Saudi Arabia', desc: 'Full Kingdom comparison guide.' },
-                { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Saudi Arabia Pharmaceutical Market Research', desc: 'Regulated healthcare and market access research.' },
-                { to: '/strategic-portfolio', label: 'BioNixus Strategic Portfolio', desc: 'Global insights capabilities across sectors and markets.' },
+                { to: '/sfda-market-access-strategy-saudi-arabia', label: 'SFDA Market Access Strategy', desc: 'Registration, pricing, and NUPCO listing intelligence.' },
+                { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare Market Research in Saudi Arabia', desc: 'Country hub with FAQs, key stats, and therapy focus.' },
+                { to: '/saudi-arabia-healthcare-market-report', label: 'Saudi Arabia Healthcare Market Report', desc: 'Market sizing, growth drivers, and regulatory outlook.' },
                 { to: '/contact', label: 'Request a Proposal', desc: 'Get in touch for a custom Riyadh research engagement.' },
               ].map((r) => (
                 <Link key={r.to} to={r.to} className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 hover:shadow-md transition-all">
@@ -533,11 +493,11 @@ export default function TopMarketResearchCompaniesRiyadh2026() {
         <section className="section-padding py-16 bg-primary text-primary-foreground">
           <div className="container-wide max-w-5xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-display font-semibold mb-4">
-              Scope Market Research for Riyadh
+              Scope Healthcare Market Research for Riyadh
             </h2>
             <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-              BioNixus is a top global leading insights firm delivering FMCG, consumer, B2B, and healthcare market
-              research across Riyadh and the GCC — one network, bilingual execution, decision-grade evidence.
+              BioNixus delivers custom pharmaceutical and consumer market research across Riyadh and the GCC —
+              physician surveys, KOL mapping, SFDA-aligned market access strategy, and HEOR.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors">
