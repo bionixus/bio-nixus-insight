@@ -104,6 +104,7 @@ const MedicalAffairsInsightResearchGcc = lazy(() => import('@/pages/MedicalAffai
 const MslInsightResearchMiddleEast = lazy(() => import('@/pages/MslInsightResearchMiddleEast'));
 const PressReleases = lazy(() => import('@/pages/PressReleases'));
 const PressRelease = lazy(() => import('@/pages/PressRelease'));
+const WhatIsMarketStudy = lazy(() => import('@/pages/WhatIsMarketStudy'));
 
 const AdminDashboard = lazy(() => import('@/pages/AdminDashboard'));
 const AdminLogin = lazy(() => import('@/pages/AdminLogin'));
@@ -153,6 +154,7 @@ export const routes: RouteObject[] = [
   { path: '/gcc-market-access-guide', element: <GccMarketAccessGuide /> },
   { path: '/market-research-home', element: <MarketResearchHome /> },
   { path: '/market-research', element: <MarketResearch /> },
+  { path: '/market-study', element: suspensePage(<WhatIsMarketStudy />) },
   { path: '/market-research-uae', element: <MarketResearchUae /> },
   { path: '/market-research-ksa', element: <MarketResearchKsa /> },
   { path: '/market-research-saudi', element: <MarketResearchSaudi /> },
