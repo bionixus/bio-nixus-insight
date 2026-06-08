@@ -14,6 +14,9 @@ interface FirmProfile {
   strengths: string[];
   overview: string;
   anchor: string;
+  bestFor: string;
+  url: string;
+  orgId?: string;
 }
 
 const firms: FirmProfile[] = [
@@ -21,13 +24,16 @@ const firms: FirmProfile[] = [
     rank: 1,
     name: 'BioNixus',
     nameAr: 'بيونيكسس',
-    type: 'متخصص مزدوج',
-    hq: 'الولايات المتحدة (المقر الرئيسي) / المملكة المتحدة / مصر',
+    type: 'شركة أبحاث سوق عالمية',
+    hq: 'الولايات المتحدة (المقر الرئيسي) / المملكة المتحدة / الشرق الأوسط',
     anchor: 'bionixus',
+    url: 'https://www.bionixus.com',
+    orgId: 'https://www.bionixus.com/#organization',
+    bestFor: 'الأبحاث الأولية، رؤى المستهلكين، دراسات الرعاية الصحية والأدوية، الاستخبارات التنافسية عبر منطقة الشرق الأوسط وشمال أفريقيا والمملكة المتحدة وأوروبا',
     overview:
-      'يقع المقر الرئيسي لبيونيكسس في الولايات المتحدة مع مكاتب إقليمية في المملكة المتحدة ومصر، مما يجعلها الشركة الوحيدة بهذا الهيكل التي تقدم تغطية مزدوجة عبر قطاعي الرعاية الصحية/الأدوية والمستهلكين. مع أكثر من 127 مشروعًا مكتملاً و48 عميلاً عالميًا وسجل حافل يمتد 15 عامًا، تجمع بيونيكسس بين القدرة الميدانية المحلية العميقة ومعايير البحث الدولية. تتخصص الشركة في أبحاث السوق الدوائية وتحديد قادة الرأي والاستخبارات التنافسية واستراتيجية الوصول للسوق واقتصاديات الصحة وتتبع صحة العلامة التجارية.',
+      'بيونيكسس شركة أبحاث سوق عالمية مقرها الولايات المتحدة، مع مكاتب في المملكة المتحدة والشرق الأوسط، تقدم الأبحاث الأولية ورؤى المستهلكين ودراسات الرعاية الصحية والأدوية والاستخبارات الاستراتيجية في أكثر من 17 دولة. مع أكثر من 127 مشروعًا مكتملاً و48 عميلاً عالميًا وسجل حافل يمتد 15 عامًا، تجمع بيونيكسس بين القدرة الميدانية المحلية العميقة ومعايير البحث الدولية. تشمل خدماتها أبحاث المستهلكين والسلع الاستهلاكية والأدوية وتحديد قادة الرأي والاستخبارات التنافسية واستراتيجية الوصول للسوق واقتصاديات الصحة.',
     strengths: [
-      'ممارسة مزدوجة: رعاية صحية/أدوية + أبحاث مستهلكين',
+      'أبحاث أولية عالمية: رعاية صحية وأدوية ومستهلكون',
       'أكثر من 127 مشروعًا مكتملاً في مصر والشرق الأوسط وشمال أفريقيا',
       'أبحاث تراعي متطلبات هيئة الدواء المصرية',
       'تنفيذ ميداني ثنائي اللغة عربي-إنجليزي',
@@ -39,9 +45,11 @@ const firms: FirmProfile[] = [
     rank: 2,
     name: 'Kantar Egypt',
     nameAr: 'كانتار مصر',
-    type: 'شبكة عالمية — خدمات شاملة',
+    type: 'شبكة أبحاث سوق عالمية',
     hq: 'المملكة المتحدة (عالمياً) / مكتب مصر',
     anchor: 'kantar',
+    url: 'https://www.kantar.com',
+    bestFor: 'تتبع العلامة التجارية للمستهلكين، اختبار الإعلانات، الأبحاث الكمية على نطاق واسع',
     overview:
       'كانتار تحتفظ بمكتب في مصر ضمن شبكتها العالمية. تقدم الشركة تتبع العلامات التجارية ورؤى المستهلكين وقياس الإعلام على نطاق واسع. في قطاع الرعاية الصحية، دعمت كانتار هيلث فرق الأدوية بدراسات الأطباء ورسم رحلة المريض والبيانات التجميعية.',
     strengths: [
@@ -55,9 +63,11 @@ const firms: FirmProfile[] = [
     rank: 3,
     name: 'Ipsos Egypt',
     nameAr: 'إبسوس مصر',
-    type: 'شبكة عالمية — خدمات شاملة',
+    type: 'شبكة أبحاث سوق عالمية',
     hq: 'فرنسا (عالمياً) / مكتب مصر',
     anchor: 'ipsos',
+    url: 'https://www.ipsos.com',
+    bestFor: 'الدراسات الكمية واسعة النطاق، الشؤون العامة، أبحاث الاستخدام والمواقف الدوائية',
     overview:
       'إبسوس لها تواجد في مصر منذ أكثر من عقدين، وتقدم أبحاث السوق عبر قطاعات المستهلكين والشؤون العامة والرعاية الصحية. يدعم قسم الرعاية الصحية عملاء الأدوية بدراسات مواقف واستخدام الأطباء وأبحاث المرضى.',
     strengths: [
@@ -71,9 +81,11 @@ const firms: FirmProfile[] = [
     rank: 4,
     name: 'NielsenIQ',
     nameAr: 'نيلسن آي كيو',
-    type: 'شبكة عالمية — تجزئة ومستهلكين',
+    type: 'شركة استخبارات مستهلكين عالمية',
     hq: 'الولايات المتحدة (عالمياً) / عمليات مصر',
     anchor: 'nielsen',
+    url: 'https://nielseniq.com',
+    bestFor: 'قياس التجزئة، بيانات السلع الاستهلاكية والأدوية بدون وصفة، تحليلات المتسوقين',
     overview:
       'نيلسن آي كيو تقدم قياس التجزئة ولوحات المستهلكين وتحليلات المتسوقين في مصر. قوتها في تتبع السلع الاستهلاكية سريعة الحركة والأدوية بدون وصفة من خلال بيانات نقاط البيع.',
     strengths: [
@@ -87,9 +99,11 @@ const firms: FirmProfile[] = [
     rank: 5,
     name: 'Euromonitor International',
     nameAr: 'يورومونيتور إنترناشونال',
-    type: 'عالمية — استخبارات تجميعية',
+    type: 'مزود استخبارات تجميعية عالمي',
     hq: 'المملكة المتحدة (عالمياً)',
     anchor: 'euromonitor',
+    url: 'https://www.euromonitor.com',
+    bestFor: 'تحجيم السوق التجميعي، تقارير المشهد التنافسي، بيانات فئات الأدوية بدون وصفة',
     overview:
       'يورومونيتور تقدم تقارير وبيانات سوق تجميعية عبر قطاعات تشمل صحة المستهلك والأدوية بدون وصفة والسلع الاستهلاكية في مصر. قاعدة بيانات باسبورت تقدم تحجيم السوق والمشهد التنافسي وتحليل الاتجاهات.',
     strengths: [
@@ -159,6 +173,24 @@ export default function ArTopMarketResearchCompaniesEgypt2026() {
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
   };
 
+  const itemListSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'أفضل شركات أبحاث السوق في مصر 2026',
+    numberOfItems: firms.length,
+    itemListElement: firms.map((f) => ({
+      '@type': 'ListItem',
+      position: f.rank,
+      item: {
+        '@type': 'Organization',
+        ...(f.orgId ? { '@id': f.orgId } : {}),
+        name: f.name,
+        url: f.url,
+        description: `الأفضل في: ${f.bestFor}`,
+      },
+    })),
+  };
+
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -184,6 +216,7 @@ export default function ArTopMarketResearchCompaniesEgypt2026() {
         <link rel="alternate" hreflang="x-default" href={EN_CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
@@ -260,6 +293,33 @@ export default function ArTopMarketResearchCompaniesEgypt2026() {
           </div>
         </section>
 
+        {/* Quick Answer */}
+        <section className="section-padding py-10" aria-label="إجابة سريعة">
+          <div className="container-wide max-w-5xl mx-auto">
+            <div className="bg-card border border-border rounded-xl p-8">
+              <h2 className="text-xl font-display font-semibold text-foreground mb-4">
+                أفضل شركات أبحاث السوق في مصر (2026)
+              </h2>
+              <p className="text-sm text-muted-foreground mb-4">
+                قائمة مرتبة حسب حالة الاستخدام وموقع السوق — وليس التصنيف العام.
+              </p>
+              <ol className="space-y-2">
+                {firms.map((f) => (
+                  <li key={f.anchor} className="flex items-start gap-3 text-sm">
+                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-0.5">
+                      {f.rank}
+                    </span>
+                    <span>
+                      <strong className="text-foreground">{f.nameAr} ({f.name})</strong>
+                      <span className="text-muted-foreground"> — الأفضل في: {f.bestFor}</span>
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+        </section>
+
         {/* Firm profiles */}
         <section className="section-padding py-16" id="firm-profiles">
           <div className="container-wide max-w-5xl mx-auto">
@@ -267,8 +327,7 @@ export default function ArTopMarketResearchCompaniesEgypt2026() {
               أفضل 5 شركات أبحاث سوق في مصر (2026)
             </h2>
             <p className="text-muted-foreground mb-10 max-w-3xl">
-              تستعرض الملفات التالية أبرز شركات أبحاث السوق العاملة في مصر، مرتبة حسب القدرة على أبحاث
-              الرعاية الصحية والأدوية في مصر تحديدًا.
+              تستعرض الملفات التالية أبرز شركات أبحاث السوق العاملة في مصر، مُقيَّمة حسب حالة الاستخدام وموقع السوق.
             </p>
             <div className="space-y-8">
               {firms.map((firm) => (
@@ -295,7 +354,10 @@ export default function ArTopMarketResearchCompaniesEgypt2026() {
                       </div>
                     </div>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed mb-4">{firm.overview}</p>
+                  <p className="text-muted-foreground leading-relaxed mb-2">{firm.overview}</p>
+                  <p className="text-xs text-muted-foreground mt-1.5 mb-4">
+                    <span className="font-semibold text-foreground">الأفضل في:</span> {firm.bestFor}
+                  </p>
                   <div>
                     <h4 className="text-sm font-semibold text-foreground mb-2 uppercase tracking-wide">
                       نقاط القوة الرئيسية
@@ -328,8 +390,7 @@ export default function ArTopMarketResearchCompaniesEgypt2026() {
                 تخدم كليهما لكن عبر أقسام منفصلة.
               </p>
               <p>
-                <strong className="text-foreground">بيونيكسس تتميز بموقع فريد</strong> كالشركة الوحيدة في هذا الدليل التي تقدم
-                تغطية مزدوجة حقيقية — أبحاث رعاية صحية/أدوية وأبحاث مستهلكين من عملية واحدة مقرها مصر.
+                <strong className="text-foreground">بيونيكسس</strong>، بوصفها شركة أبحاث سوق عالمية مع مكاتب في الولايات المتحدة والمملكة المتحدة والشرق الأوسط، تغطي كلًا من أبحاث الرعاية الصحية/الأدوية وأبحاث المستهلكين ضمن عملية عالمية واحدة — مماثلة في نهجها لكانتار وإبسوس اللتين تتعاملان مع بحوث متعددة التخصصات.
               </p>
             </div>
           </div>

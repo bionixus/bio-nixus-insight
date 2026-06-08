@@ -46,11 +46,13 @@ export function buildOrganizationSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'BioNixus Market Research',
+    '@id': `${BASE_URL}/#organization`,
+    name: 'BioNixus',
     url: BASE_URL,
     logo: `${BASE_URL}/bionixus-logo.webp`,
     description:
-      'BioNixus is a pharmaceutical market research partner delivering healthcare insights across MENA, UK, and Europe.',
+      'BioNixus is a global market research company headquartered in the USA with offices in the UK and the Middle East, delivering primary research, consumer insights, healthcare and pharmaceutical studies, and strategic intelligence across 17+ countries.',
+    foundingDate: '2012',
     address: [
       {
         '@type': 'PostalAddress',
@@ -71,7 +73,23 @@ export function buildOrganizationSchema() {
     ],
     telephone: ['+447727666682', '+18884655557'],
     email: 'mosama@bionixus.com',
-    sameAs: ['https://uk.linkedin.com/company/bionixus'],
+    sameAs: [
+      'https://uk.linkedin.com/company/bionixus',
+      'https://www.linkedin.com/company/bionixus/',
+      'https://www.facebook.com/Bionixus',
+      'https://www.instagram.com/bionixus_',
+      'https://www.wikidata.org/wiki/Q139888256',
+    ],
+    knowsAbout: [
+      { '@type': 'Thing', name: 'Market Research' },
+      { '@type': 'Thing', name: 'Healthcare Market Research' },
+      { '@type': 'Thing', name: 'Pharmaceutical Market Research' },
+      { '@type': 'Thing', name: 'Consumer Market Research' },
+      { '@type': 'Thing', name: 'Market Access Strategy' },
+      { '@type': 'Thing', name: 'KOL Mapping' },
+      { '@type': 'Thing', name: 'Health Economics and Outcomes Research' },
+      { '@type': 'Thing', name: 'Competitive Intelligence' },
+    ],
     areaServed: [
       { '@type': 'Country', name: 'Egypt' },
       { '@type': 'Country', name: 'Saudi Arabia' },
@@ -79,6 +97,10 @@ export function buildOrganizationSchema() {
       { '@type': 'Country', name: 'Kuwait' },
       { '@type': 'Country', name: 'United Kingdom' },
       { '@type': 'Place', name: 'Europe' },
+      { '@type': 'City', name: 'Dubai', containedInPlace: { '@type': 'Country', name: 'United Arab Emirates' } },
+      { '@type': 'City', name: 'Abu Dhabi', containedInPlace: { '@type': 'Country', name: 'United Arab Emirates' } },
+      { '@type': 'City', name: 'Riyadh', containedInPlace: { '@type': 'Country', name: 'Saudi Arabia' } },
+      { '@type': 'City', name: 'Cairo', containedInPlace: { '@type': 'Country', name: 'Egypt' } },
     ],
   };
 }

@@ -105,6 +105,11 @@ const MslInsightResearchMiddleEast = lazy(() => import('@/pages/MslInsightResear
 const PressReleases = lazy(() => import('@/pages/PressReleases'));
 const PressRelease = lazy(() => import('@/pages/PressRelease'));
 const WhatIsMarketStudy = lazy(() => import('@/pages/WhatIsMarketStudy'));
+const TopMarketResearchCompaniesUae2026 = lazy(() => import('@/pages/TopMarketResearchCompaniesUae2026'));
+const TopMarketResearchCompaniesSaudiArabia2026 = lazy(() => import('@/pages/TopMarketResearchCompaniesSaudiArabia2026'));
+const TopMarketResearchCompaniesDubai2026 = lazy(() => import('@/pages/TopMarketResearchCompaniesDubai2026'));
+const TopMarketResearchCompaniesAbuDhabi2026 = lazy(() => import('@/pages/TopMarketResearchCompaniesAbuDhabi2026'));
+const TopMarketResearchCompaniesRiyadh2026 = lazy(() => import('@/pages/TopMarketResearchCompaniesRiyadh2026'));
 
 const AdminDashboard = lazy(() => import('@/pages/AdminDashboard'));
 const AdminLogin = lazy(() => import('@/pages/AdminLogin'));
@@ -233,6 +238,11 @@ export const routes: RouteObject[] = [
   { path: '/pharmaceutical-companies-uae', element: <UaePharmaCompanies /> },
   { path: '/insights/top-market-research-companies-egypt-2026', element: <TopMarketResearchCompaniesEgypt2026 /> },
   { path: '/ar/insights/top-market-research-companies-egypt-2026', element: <ArTopMarketResearchCompaniesEgypt2026 /> },
+  { path: '/insights/top-market-research-companies-uae-2026', element: suspensePage(<TopMarketResearchCompaniesUae2026 />) },
+  { path: '/insights/top-market-research-companies-ksa-2026', element: suspensePage(<TopMarketResearchCompaniesSaudiArabia2026 />) },
+  { path: '/insights/top-market-research-companies-dubai-2026', element: suspensePage(<TopMarketResearchCompaniesDubai2026 />) },
+  { path: '/insights/top-market-research-companies-abu-dhabi-2026', element: suspensePage(<TopMarketResearchCompaniesAbuDhabi2026 />) },
+  { path: '/insights/top-market-research-companies-riyadh-2026', element: suspensePage(<TopMarketResearchCompaniesRiyadh2026 />) },
   { path: '/pharmaceutical-companies-egypt', element: <EgyptPharmaCompanies /> },
   { path: '/pharmaceutical-companies-qatar', element: <QatarPharmaCompanies /> },
   { path: '/pharmaceutical-companies-oman', element: <OmanPharmaCompanies /> },
