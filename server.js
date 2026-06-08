@@ -518,6 +518,7 @@ async function startServer() {
     '/healthcare-market-research-europe': '/healthcare-market-research/europe',
     '/insights/top-market-research-companies-egypt-2026': '/blog/top-market-research-companies-egypt-2026',
     '/insights/top-market-research-companies-ksa-2026': '/insights/top-market-research-companies-saudi-arabia-2026',
+    '/insights/top-market-research-companies-abudhabi-2026': '/insights/top-market-research-companies-abu-dhabi-2026',
     '/conf': '/strategic-portfolio',
     '/ar/conf': '/ar/strategic-portfolio',
     '/quantitative-market-research': '/services/quantitative-research',

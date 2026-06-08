@@ -282,6 +282,7 @@ export const routes: RouteObject[] = [
   { path: '/insights/top-market-research-companies-saudi-arabia-2026', element: <TopMarketResearchCompaniesSaudiArabia2026 /> },
   { path: '/insights/top-market-research-companies-uae-2026', element: <TopMarketResearchCompaniesUae2026 /> },
   { path: '/insights/top-market-research-companies-dubai-2026', element: <TopMarketResearchCompaniesDubai2026 /> },
+  { path: '/insights/top-market-research-companies-abudhabi-2026', element: <Navigate to="/insights/top-market-research-companies-abu-dhabi-2026" replace /> },
   { path: '/insights/top-market-research-companies-abu-dhabi-2026', element: <TopMarketResearchCompaniesAbuDhabi2026 /> },
   { path: '/insights/top-market-research-companies-riyadh-2026', element: <TopMarketResearchCompaniesRiyadh2026 /> },
   { path: '/pharmaceutical-companies-egypt', element: <EgyptPharmaCompanies /> },
