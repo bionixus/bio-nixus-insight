@@ -68,11 +68,26 @@ type AboutSchemaProps = {
   }>
 }
 
+type PressReleaseSchemaProps = {
+  pageType: 'pressRelease'
+  pageUrl: string
+  language: LanguageCode
+  headline: string
+  description: string
+  imageUrl?: string
+  publishedAt?: string
+  modifiedAt?: string
+  breadcrumb: BreadcrumbItem[]
+  keywords?: string[]
+  releaseType?: string
+}
+
 type SchemaMarkupProps =
   | HomeSchemaProps
   | BlogSchemaProps
   | ServiceSchemaProps
   | AboutSchemaProps
+  | PressReleaseSchemaProps
 
 const BASE_URL = 'https://www.bionixus.com'
 const ORG_ID = `${BASE_URL}/#organization`
@@ -215,14 +230,12 @@ function isValidSchemaNode(node: Record<string, unknown>): boolean {
   if (!isNonEmptyString(node['@type'])) return false
 
   const type = node['@type']
-  if (type === 'Article') {
+  if (type === 'Article' || type === 'NewsArticle') {
     return (
       isNonEmptyString(node.headline) &&
       isNonEmptyString(node.description) &&
       isNonEmptyString(node.datePublished) &&
       isNonEmptyString(node.dateModified) &&
-      typeof node.author === 'object' &&
-      node.author !== null &&
       typeof node.publisher === 'object' &&
       node.publisher !== null
     )
@@ -342,6 +355,36 @@ function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[] {
     return nodes
   }
 
+  if (props.pageType === 'pressRelease') {
+    const published = toIsoDate(props.publishedAt) || new Date().toISOString()
+    const modified = toIsoDate(props.modifiedAt) || published
+    const image = toHttpsUrl(props.imageUrl || ORG_IMAGE)
+
+    return [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'NewsArticle',
+        mainEntityOfPage: { '@type': 'WebPage', '@id': toHttpsUrl(props.pageUrl) },
+        headline: props.headline,
+        description: props.description,
+        image: [image],
+        datePublished: published,
+        dateModified: modified,
+        articleSection: 'Press Release',
+        ...(props.releaseType ? { genre: props.releaseType } : {}),
+        ...(props.keywords && props.keywords.length > 0 ? { keywords: props.keywords.join(', ') } : {}),
+        publisher: {
+          '@type': 'Organization',
+          '@id': ORG_ID,
+          name: 'BioNixus',
+          logo: { '@type': 'ImageObject', url: ORG_IMAGE },
+        },
+        inLanguage,
+      },
+      buildBreadcrumb(props.breadcrumb, inLanguage),
+    ]
+  }
+
   if (props.pageType === 'service') {
     const nodes: Record<string, unknown>[] = [
       {
@@ -388,7 +431,7 @@ export default function SchemaMarkup(props: SchemaMarkupProps) {
   return (
     <Helmet>
       {schemaNodes.map((node, index) => (
-        <script key={`${props.pageType}-schema-${index}`} type="application/ld+json">
+        <script key={`schema-${props.pageType}-${index}`} type="application/ld+json">
           {JSON.stringify(node)}
         </script>
       ))}

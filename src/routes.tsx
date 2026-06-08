@@ -102,6 +102,8 @@ const RealWorldDataHealthcareMiddleEast = lazy(() => import('@/pages/RealWorldDa
 const CostEffectivenessAnalysisGcc = lazy(() => import('@/pages/CostEffectivenessAnalysisGcc'));
 const MedicalAffairsInsightResearchGcc = lazy(() => import('@/pages/MedicalAffairsInsightResearchGcc'));
 const MslInsightResearchMiddleEast = lazy(() => import('@/pages/MslInsightResearchMiddleEast'));
+const PressReleases = lazy(() => import('@/pages/PressReleases'));
+const PressRelease = lazy(() => import('@/pages/PressRelease'));
 
 const AdminDashboard = lazy(() => import('@/pages/AdminDashboard'));
 const AdminLogin = lazy(() => import('@/pages/AdminLogin'));
@@ -246,6 +248,8 @@ export const routes: RouteObject[] = [
   { path: '/pharmacies-saudi-arabia-marketing', element: <PharmaciesSaudiArabiaMarketing /> },
   { path: '/bionixus-ai-chatbots-increase-sales-and-lead-generation', element: <AiChatbotsLeadGeneration /> },
   { path: '/blog/:slug', element: <BlogPost /> },
+  { path: '/press-releases', element: suspensePage(<PressReleases />) },
+  { path: '/press-releases/:slug', element: suspensePage(<PressRelease />) },
   { path: '/case-studies', element: <CaseStudies /> },
   { path: '/case-studies/:slug', element: suspensePage(<CaseStudy />) },
   { path: '/privacy', element: <Privacy /> },
