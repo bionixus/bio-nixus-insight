@@ -54,7 +54,7 @@ export default function PressRelease() {
   })
 
   const { data: allReleases = [] } = useQuery({
-    queryKey: ['press-releases'],
+    queryKey: ['news'],
     queryFn: fetchPressReleases,
     staleTime: 10 * 60 * 1000,
   })
@@ -78,7 +78,7 @@ export default function PressRelease() {
           <h1 className="font-display text-2xl font-bold text-foreground mb-3">Press release not found</h1>
           <p className="text-muted-foreground mb-8">This press release may have been removed or the URL is incorrect.</p>
           <Link
-            to="/press-releases"
+            to="/news"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold border border-border hover:border-primary/40 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" /> Back to newsroom
@@ -108,7 +108,7 @@ export default function PressRelease() {
     )
   }
 
-  const pageUrl = `${BASE_URL}/press-releases/${release.slug}`
+  const pageUrl = `${BASE_URL}/news/${release.slug}`
   const metaTitle = release.seoMetaTitle || `${release.title} | BioNixus`
   const metaDescription =
     release.seoMetaDescription || release.excerpt || 'Press release from BioNixus — global healthcare market research network.'
@@ -130,7 +130,7 @@ export default function PressRelease() {
         keywords={release.tags}
         breadcrumb={[
           { name: 'Home', item: BASE_URL },
-          { name: 'Press Releases', item: `${BASE_URL}/press-releases` },
+          { name: 'Press Releases', item: `${BASE_URL}/news` },
           { name: release.title, item: pageUrl },
         ]}
       />
@@ -171,7 +171,7 @@ export default function PressRelease() {
             <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--gold-light)) 55%, transparent 100%)' }} />
 
             <div className="absolute bottom-0 left-0 right-0 px-6 md:px-12 lg:px-20 pb-10 md:pb-14 z-10 max-w-5xl">
-              <Link to="/press-releases" className="inline-flex items-center gap-1.5 text-white/50 hover:text-white/80 text-sm mb-6 transition-colors">
+              <Link to="/news" className="inline-flex items-center gap-1.5 text-white/50 hover:text-white/80 text-sm mb-6 transition-colors">
                 <ArrowLeft className="w-3.5 h-3.5" /> Back to newsroom
               </Link>
               <HeroBadges release={release} colors={colors} />
@@ -189,7 +189,7 @@ export default function PressRelease() {
             <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--gold-light)) 55%, transparent 100%)' }} />
             <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full opacity-[0.05]" style={{ background: 'hsl(var(--accent))' }} />
             <div className="max-w-5xl mx-auto px-6 md:px-12 lg:px-20">
-              <Link to="/press-releases" className="inline-flex items-center gap-1.5 text-white/50 hover:text-white/80 text-sm mb-6 transition-colors">
+              <Link to="/news" className="inline-flex items-center gap-1.5 text-white/50 hover:text-white/80 text-sm mb-6 transition-colors">
                 <ArrowLeft className="w-3.5 h-3.5" /> Back to newsroom
               </Link>
               <HeroBadges release={release} colors={colors} />
@@ -325,7 +325,7 @@ export default function PressRelease() {
                   return (
                     <Link
                       key={r.id}
-                      to={`/press-releases/${r.slug}`}
+                      to={`/news/${r.slug}`}
                       className="group block rounded-xl border border-border bg-card hover:border-primary/30 hover:shadow-sm transition-all p-5"
                     >
                       {r.releaseType && (
@@ -351,7 +351,7 @@ export default function PressRelease() {
               </div>
               <div className="mt-6 text-center">
                 <Link
-                  to="/press-releases"
+                  to="/news"
                   className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-accent-foreground transition-colors"
                 >
                   View all press releases <ArrowUpRight className="w-3.5 h-3.5" aria-hidden />

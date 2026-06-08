@@ -9,7 +9,7 @@ import Footer from '@/components/Footer'
 import SchemaMarkup from '@/components/SchemaMarkup'
 
 const BASE_URL = 'https://www.bionixus.com'
-const PAGE_URL = `${BASE_URL}/press-releases`
+const PAGE_URL = `${BASE_URL}/news`
 
 const RELEASE_TYPE_COLORS: Record<string, { bg: string; text: string }> = {
   'Company News':       { bg: 'hsl(var(--navy-medium) / 0.12)', text: 'hsl(var(--primary))' },
@@ -28,7 +28,7 @@ function typeStyle(type?: string) {
 
 export default function PressReleases() {
   const { data: releases = [], isLoading } = useQuery({
-    queryKey: ['press-releases'],
+    queryKey: ['news'],
     queryFn: fetchPressReleases,
     staleTime: 5 * 60 * 1000,
   })
@@ -177,7 +177,7 @@ export default function PressReleases() {
                 return (
                   <Link
                     key={release.id}
-                    to={`/press-releases/${release.slug}`}
+                    to={`/news/${release.slug}`}
                     className="group block rounded-2xl border border-border bg-card hover:border-primary/30 hover:shadow-md transition-all duration-200 overflow-hidden"
                   >
                     {release.coverImage && (
