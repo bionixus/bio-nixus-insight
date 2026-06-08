@@ -92,6 +92,11 @@ import ArMarketResearchKuwait from '@/pages/ArMarketResearchKuwait';
 import ArMarketResearchEgypt from '@/pages/ArMarketResearchEgypt';
 import TopMarketResearchCompaniesEgypt2026 from '@/pages/TopMarketResearchCompaniesEgypt2026';
 import ArTopMarketResearchCompaniesEgypt2026 from '@/pages/ArTopMarketResearchCompaniesEgypt2026';
+import TopMarketResearchCompaniesUae2026 from '@/pages/TopMarketResearchCompaniesUae2026';
+import TopMarketResearchCompaniesSaudiArabia2026 from '@/pages/TopMarketResearchCompaniesSaudiArabia2026';
+import TopMarketResearchCompaniesDubai2026 from '@/pages/TopMarketResearchCompaniesDubai2026';
+import TopMarketResearchCompaniesAbuDhabi2026 from '@/pages/TopMarketResearchCompaniesAbuDhabi2026';
+import TopMarketResearchCompaniesRiyadh2026 from '@/pages/TopMarketResearchCompaniesRiyadh2026';
 import CaseStudy from '@/pages/CaseStudy';
 import HubPage from '@/pages/healthcare-research/HubPage';
 import CountryPage from '@/pages/healthcare-research/CountryPage';
@@ -105,11 +110,6 @@ const MslInsightResearchMiddleEast = lazy(() => import('@/pages/MslInsightResear
 const PressReleases = lazy(() => import('@/pages/PressReleases'));
 const PressRelease = lazy(() => import('@/pages/PressRelease'));
 const WhatIsMarketStudy = lazy(() => import('@/pages/WhatIsMarketStudy'));
-const TopMarketResearchCompaniesUae2026 = lazy(() => import('@/pages/TopMarketResearchCompaniesUae2026'));
-const TopMarketResearchCompaniesSaudiArabia2026 = lazy(() => import('@/pages/TopMarketResearchCompaniesSaudiArabia2026'));
-const TopMarketResearchCompaniesDubai2026 = lazy(() => import('@/pages/TopMarketResearchCompaniesDubai2026'));
-const TopMarketResearchCompaniesAbuDhabi2026 = lazy(() => import('@/pages/TopMarketResearchCompaniesAbuDhabi2026'));
-const TopMarketResearchCompaniesRiyadh2026 = lazy(() => import('@/pages/TopMarketResearchCompaniesRiyadh2026'));
 
 const AdminDashboard = lazy(() => import('@/pages/AdminDashboard'));
 const AdminLogin = lazy(() => import('@/pages/AdminLogin'));
@@ -238,11 +238,11 @@ export const routes: RouteObject[] = [
   { path: '/pharmaceutical-companies-uae', element: <UaePharmaCompanies /> },
   { path: '/insights/top-market-research-companies-egypt-2026', element: <TopMarketResearchCompaniesEgypt2026 /> },
   { path: '/ar/insights/top-market-research-companies-egypt-2026', element: <ArTopMarketResearchCompaniesEgypt2026 /> },
-  { path: '/insights/top-market-research-companies-uae-2026', element: suspensePage(<TopMarketResearchCompaniesUae2026 />) },
-  { path: '/insights/top-market-research-companies-ksa-2026', element: suspensePage(<TopMarketResearchCompaniesSaudiArabia2026 />) },
-  { path: '/insights/top-market-research-companies-dubai-2026', element: suspensePage(<TopMarketResearchCompaniesDubai2026 />) },
-  { path: '/insights/top-market-research-companies-abu-dhabi-2026', element: suspensePage(<TopMarketResearchCompaniesAbuDhabi2026 />) },
-  { path: '/insights/top-market-research-companies-riyadh-2026', element: suspensePage(<TopMarketResearchCompaniesRiyadh2026 />) },
+  { path: '/insights/top-market-research-companies-uae-2026', element: <TopMarketResearchCompaniesUae2026 /> },
+  { path: '/insights/top-market-research-companies-ksa-2026', element: <TopMarketResearchCompaniesSaudiArabia2026 /> },
+  { path: '/insights/top-market-research-companies-dubai-2026', element: <TopMarketResearchCompaniesDubai2026 /> },
+  { path: '/insights/top-market-research-companies-abu-dhabi-2026', element: <TopMarketResearchCompaniesAbuDhabi2026 /> },
+  { path: '/insights/top-market-research-companies-riyadh-2026', element: <TopMarketResearchCompaniesRiyadh2026 /> },
   { path: '/pharmaceutical-companies-egypt', element: <EgyptPharmaCompanies /> },
   { path: '/pharmaceutical-companies-qatar', element: <QatarPharmaCompanies /> },
   { path: '/pharmaceutical-companies-oman', element: <OmanPharmaCompanies /> },
