@@ -1,5 +1,5 @@
 import { lazy, Suspense, type ReactNode } from 'react';
-import type { RouteObject } from 'react-router-dom';
+import { Navigate, type RouteObject } from 'react-router-dom';
 import Index from '@/pages/Index';
 import Blog from '@/pages/Blog';
 import CaseStudies from '@/pages/CaseStudies';
@@ -96,6 +96,9 @@ import TopMarketResearchCompaniesEgypt2026 from '@/pages/TopMarketResearchCompan
 import ArTopMarketResearchCompaniesEgypt2026 from '@/pages/ArTopMarketResearchCompaniesEgypt2026';
 import TopMarketResearchCompaniesSaudiArabia2026 from '@/pages/TopMarketResearchCompaniesSaudiArabia2026';
 import TopMarketResearchCompaniesUae2026 from '@/pages/TopMarketResearchCompaniesUae2026';
+import TopMarketResearchCompaniesDubai2026 from '@/pages/TopMarketResearchCompaniesDubai2026';
+import TopMarketResearchCompaniesAbuDhabi2026 from '@/pages/TopMarketResearchCompaniesAbuDhabi2026';
+import TopMarketResearchCompaniesRiyadh2026 from '@/pages/TopMarketResearchCompaniesRiyadh2026';
 import {
   SaudiArabiaMedicalDevicesMarketReport,
   SaudiArabiaHealthcareMarketReport,
@@ -144,12 +147,12 @@ import {
   TurkeyHealthcareMarketReport,
   TurkeyMedicalDevicesMarketReport,
   HealthcareReportPage,
-  HealthcareReportsHub,
-  HealthcareReportsByTherapy,
-  HealthcareReportsByCountry,
   BlogPost,
   PressReleasePage,
 } from '@/routes/lazyReportPages';
+import HealthcareReportsHub from '@/pages/HealthcareReportsHub';
+import HealthcareReportsByTherapy from '@/pages/HealthcareReportsByTherapy';
+import HealthcareReportsByCountry from '@/pages/HealthcareReportsByCountry';
 import CaseStudy from '@/pages/CaseStudy';
 import HubPage from '@/pages/healthcare-research/HubPage';
 import CountryPage from '@/pages/healthcare-research/CountryPage';
@@ -275,8 +278,12 @@ export const routes: RouteObject[] = [
   { path: '/pharmaceutical-companies-uae', element: <UaePharmaCompanies /> },
   { path: '/insights/top-market-research-companies-egypt-2026', element: <TopMarketResearchCompaniesEgypt2026 /> },
   { path: '/ar/insights/top-market-research-companies-egypt-2026', element: <ArTopMarketResearchCompaniesEgypt2026 /> },
+  { path: '/insights/top-market-research-companies-ksa-2026', element: <Navigate to="/insights/top-market-research-companies-saudi-arabia-2026" replace /> },
   { path: '/insights/top-market-research-companies-saudi-arabia-2026', element: <TopMarketResearchCompaniesSaudiArabia2026 /> },
   { path: '/insights/top-market-research-companies-uae-2026', element: <TopMarketResearchCompaniesUae2026 /> },
+  { path: '/insights/top-market-research-companies-dubai-2026', element: <TopMarketResearchCompaniesDubai2026 /> },
+  { path: '/insights/top-market-research-companies-abu-dhabi-2026', element: <TopMarketResearchCompaniesAbuDhabi2026 /> },
+  { path: '/insights/top-market-research-companies-riyadh-2026', element: <TopMarketResearchCompaniesRiyadh2026 /> },
   { path: '/pharmaceutical-companies-egypt', element: <EgyptPharmaCompanies /> },
   { path: '/pharmaceutical-companies-qatar', element: <QatarPharmaCompanies /> },
   { path: '/pharmaceutical-companies-oman', element: <OmanPharmaCompanies /> },

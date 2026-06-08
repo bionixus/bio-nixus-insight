@@ -532,6 +532,7 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
                 { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare Market Research in Saudi Arabia', desc: 'Country hub with FAQs, key stats, and therapy focus.' },
                 { to: '/saudi-arabia-healthcare-market-report', label: 'Saudi Arabia Healthcare Market Report', desc: 'Market sizing, growth drivers, and Vision 2030 outlook.' },
                 { to: '/market-research-ksa', label: 'Market Research KSA', desc: 'Pharma and healthcare intelligence landing page.' },
+                { to: '/insights/top-market-research-companies-riyadh-2026', label: 'Top Market Research Companies in Riyadh', desc: 'Sister guide focused on SFDA, NUPCO, and the Saudi capital.' },
                 { to: '/insights/top-market-research-companies-egypt-2026', label: 'Top Market Research Companies in Egypt', desc: 'Sister guide to the leading research firms in Egypt.' },
                 { to: '/strategic-portfolio', label: 'BioNixus Strategic Portfolio', desc: 'Full portfolio of market research and consulting capabilities.' },
                 { to: '/contact', label: 'Request a Proposal', desc: 'Get in touch for a custom Saudi research engagement.' },

@@ -111,6 +111,9 @@ function buildFallbackTitle(pathname) {
   if (path === '/ar/insights/top-market-research-companies-egypt-2026') return 'أفضل شركات أبحاث السوق في مصر (دليل 2026) | BioNixus';
   if (path === '/insights/top-market-research-companies-saudi-arabia-2026') return 'Top Market Research Companies in Saudi Arabia (2026) | BioNixus';
   if (path === '/insights/top-market-research-companies-uae-2026') return 'Top Market Research Companies in the UAE (2026) | BioNixus';
+  if (path === '/insights/top-market-research-companies-dubai-2026') return 'Top Market Research Companies in Dubai (2026) | BioNixus';
+  if (path === '/insights/top-market-research-companies-abu-dhabi-2026') return 'Top Market Research Companies in Abu Dhabi (2026) | BioNixus';
+  if (path === '/insights/top-market-research-companies-riyadh-2026') return 'Top Market Research Companies in Riyadh (2026) | BioNixus';
 
   if (path === '/healthcare-market-research') return 'Healthcare & Pharmaceutical Market Research in Dubai, UAE & MENA | BioNixus';
   if (path === '/global-websites/united-arab-emirates') return 'Pharmaceutical & Healthcare Market Research in Dubai, UAE | BioNixus';
@@ -514,6 +517,7 @@ async function startServer() {
     '/healthcare-market-research/united-kingdom': '/healthcare-market-research/uk',
     '/healthcare-market-research-europe': '/healthcare-market-research/europe',
     '/insights/top-market-research-companies-egypt-2026': '/blog/top-market-research-companies-egypt-2026',
+    '/insights/top-market-research-companies-ksa-2026': '/insights/top-market-research-companies-saudi-arabia-2026',
     '/conf': '/strategic-portfolio',
     '/ar/conf': '/ar/strategic-portfolio',
     '/quantitative-market-research': '/services/quantitative-research',
