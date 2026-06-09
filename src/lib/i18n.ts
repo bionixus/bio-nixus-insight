@@ -5,9 +5,9 @@ export const languages: { code: Language; name: string; flag: string; rtl?: bool
   { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
   { code: 'fr', name: 'Français', flag: '🇫🇷' },
   { code: 'es', name: 'Español', flag: '🇪🇸' },
-  { code: 'pt', name: 'Português', flag: '🇧🇷' },
+  { code: 'pt', name: 'Português', flag: '🇵🇹' },
   { code: 'zh', name: 'Chinese', flag: '🇨🇳' },
-  { code: 'ar', name: 'Arabic', flag: '🇸🇦', rtl: true },
+  { code: 'ar', name: 'Arabic', flag: '🇪🇬', rtl: true },
 ];
 
 export const translations = {
