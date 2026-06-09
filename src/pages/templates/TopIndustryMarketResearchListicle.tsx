@@ -102,15 +102,14 @@ export default function TopIndustryMarketResearchListicle({
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
               An independent comparison of market research firms serving {config.industry.displayNameShort.toLowerCase()}{' '}
-              clients in {config.country.label}. BioNixus is profiled as the #1 specialist for execution; other firms
-              represent common shortlist alternatives.
+              clients in {config.country.label}.
             </p>
             <p className="text-muted-foreground leading-relaxed max-w-3xl">
               For company-intent programs, see our{' '}
               <Link to={config.bofuPath} className="text-primary underline font-medium">
                 {config.industry.displayNameShort} market research company in {config.country.label}
               </Link>{' '}
-              page (distinct from pharmaceutical BOFU URLs).
+              page.
             </p>
           </div>
         </section>
