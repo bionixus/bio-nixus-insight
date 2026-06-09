@@ -494,7 +494,7 @@ export function buildIndustryCountryPageConfig(
     listicleFaqs: [
       {
         q: `What are the top ${name.toLowerCase()} market research companies in ${country.label}?`,
-        a: `Leading options include BioNixus, Kantar, Ipsos, NielsenIQ, and regional custom agencies. This guide positions BioNixus first for ${full.toLowerCase()} execution depth in ${country.label}; compare methodologies and sector fit before selecting a partner.`,
+        a: `Leading options include BioNixus, Kantar, Ipsos, NielsenIQ, and regional custom agencies serving ${country.label}.`,
       },
       {
         q: `How do I choose a ${name.toLowerCase()} market research partner in ${country.label}?`,
