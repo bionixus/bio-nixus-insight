@@ -232,6 +232,48 @@ const byLanguage: Record<Language, HomeFaqBlock> = {
       },
     ],
   },
+  pt: {
+    sectionTitle: 'Perguntas frequentes — pesquisa de mercado farmacêutica e de saúde',
+    ctaFullFaq: 'Ver biblioteca completa de perguntas frequentes',
+    ctaProposal: 'Solicitar proposta personalizada',
+    items: [
+      {
+        question: 'Quais regiões a BioNixus cobre em pesquisa de mercado farmacêutica e de saúde?',
+        answer:
+          'A BioNixus executa pesquisas de mercado em saúde no Brasil, América Latina, Europa, Reino Unido, Oriente Médio e Norte da África (MENA) e países do CCG, incluindo mercados como Arábia Saudita, EAU, Egito, Kuwait e Catar. Os programas podem ser de país único, regionais ou multirregionais com design comparável quando forem necessários insights farmacêuticos entre fronteiras.',
+      },
+      {
+        question: 'Que tipos de pesquisa de mercado em saúde e insights farmacêuticos a BioNixus oferece?',
+        answer:
+          'A BioNixus oferece pesquisas quantitativas, profundidade qualitativa (entrevistas em profundidade e formatos de advisory board), diagnósticos de pagadores e acesso ao mercado, inteligência hospitalar e de jornada, mapeamento de KOL e stakeholders, e análises orientadas por evidências para equipes comerciais, médicas e de acesso. O escopo é construído em torno das suas decisões — de posicionamento e demanda a barreiras de acesso e monitoramento de lançamento.',
+      },
+      {
+        question: 'Como a BioNixus apoia necessidades de acesso ao mercado, pagadores e avaliação de tecnologias em saúde (ATS/CONITEC)?',
+        answer:
+          'As pesquisas de pagadores são projetadas para esclarecer expectativas de evidências, narrativas de precificação e reembolso e requisitos de comunicação de valor no Brasil (CONITEC/SUS), Europa e Oriente Médio. Os resultados são estruturados para apoiar estratégia de acesso, dossiês regulatórios e alinhamento interfuncional — não apresentações genéricas sem decisão.',
+      },
+      {
+        question: 'Como a BioNixus se alinha à LGPD, ANVISA e requisitos regulatórios do Brasil?',
+        answer:
+          'Os projetos aplicam governança de dados com privacidade em conformidade com a LGPD, padrões de qualidade e ética adequados à pesquisa em saúde (com considerações de BPC-ICH quando aplicável) e controles operacionais alinhados aos requisitos da ANVISA e às expectativas das autoridades de saúde brasileiras. A conformidade é discutida no escopo do projeto de acordo com as necessidades de risco e auditoria.',
+      },
+      {
+        question: 'A BioNixus pode executar estudos multirregionais com médicos, pagadores e hospitais entre Brasil, América Latina e Europa?',
+        answer:
+          'Sim. Os programas multirregionais suportam ferramentas consistentes quando necessário, com recrutamento e gestão locais. O objetivo é comparabilidade defensável sem modelos rígidos que ignorem o contexto terapêutico, de acesso ou regulatório local.',
+      },
+      {
+        question: 'Qual a rapidez para obter uma proposta e quais fatores influenciam os prazos?',
+        answer:
+          'Após um breve alinhamento de objetivos, público, mercados e métodos, a BioNixus entrega propostas em ritmo rápido. Os cronogramas dependem de dispersão e triagem de amostra, requisitos éticos quando aplicável, extensão do questionário, profundidade qualitativa e sazonalidade de campo — os marcos são apresentados antecipadamente.',
+      },
+      {
+        question: 'Onde as equipes farmacêuticas podem aprender mais sobre metodologia, casos de estudo e insights?',
+        answer:
+          'Consulte a seção de metodologia desta página e os casos de estudo para comprovação de execução, e a seção de insights para comentário de mercado. Para perguntas mais amplas ou escopo personalizado, visite a página de perguntas frequentes ou entre em contato pela seção de contato para solicitar uma proposta.',
+      },
+    ],
+  },
   ar: {
     sectionTitle: 'الأسئلة الشائعة — أبحاث السوق الصحية والدوائية',
     ctaFullFaq: 'عرض مكتبة الأسئلة الشائعة كاملة',
