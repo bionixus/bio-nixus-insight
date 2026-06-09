@@ -10,7 +10,7 @@ export const defaultOgImageWidth = 1200;
 export const defaultOgImageHeight = 630;
 
 /** Alt text for the default OG image. */
-export const defaultOgImageAlt = 'BioNixus – EMEA Healthcare Market Research';
+export const defaultOgImageAlt = 'BioNixus — pharmaceutical and healthcare market research';
 
 export const seoByLanguage: Record<Language, {
   title: string;
@@ -19,9 +19,11 @@ export const seoByLanguage: Record<Language, {
   canonicalPath: string;
 }> = {
   en: {
-    title: 'BioNixus — #1 Healthcare Market Research Company in MENA | Pharma Insights Europe & Middle East',
-    description: 'BioNixus is the leading healthcare market research company in the MENA region. Headquartered in the USA with offices in London, UK — delivering quantitative & qualitative pharmaceutical insights from physicians across UAE, Saudi Arabia, Egypt, Kuwait, Qatar, and Europe.',
-    keywords: 'healthcare market research, MENA market research, pharmaceutical consulting, competitive intelligence, market access, clinical trials, UAE healthcare research, Saudi Arabia pharma research, biotech, life sciences',
+    // Brand-first title (≤60 chars after normalizeSeoTitle) so search engines never see a
+    // truncated tail and the brand name "Bionixus" / "BioNixus" wins its own SERP at #1.
+    title: 'BioNixus | Pharmaceutical & Healthcare Market Research',
+    description: 'Global pharmaceutical & healthcare market research for MENA, Europe, and GCC — physician surveys, KOL mapping, payer insight, and market access strategy. US-headquartered with London and Cairo offices, serving 48 global clients across 127+ projects since 2012.',
+    keywords: 'pharmaceutical market research company, healthcare market research company, healthcare market research, MENA market research, pharmaceutical consulting, competitive intelligence, market access, clinical trials, UAE healthcare research, healthcare market research company UAE, pharma market research company UAE, Saudi Arabia pharma research, healthcare market research company Saudi Arabia, pharma market research company KSA, healthcare market research company Egypt, pharma market research company Egypt, market research company Egypt, market research Egypt, medtech market research Saudi Arabia, medtech market research UAE, medtech market research Egypt, FMCG market research Middle East, financial services market research GCC, biotech, life sciences',
     canonicalPath: '/',
   },
   de: {
@@ -119,65 +121,34 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     en: '/blog',
     de: '/de/blog',
     fr: '/fr/blog',
-    es: '/blog',
-    zh: '/blog',
-    ar: '/blog',
+    ar: '/ar/blog',
     pt: '/pt/blog',
   },
   '/market-access': {
     en: '/services/market-access',
-    de: '/services/market-access',
-    fr: '/services/market-access',
     es: '/es/market-access',
-    zh: '/services/market-access',
-    ar: '/services/market-access',
   },
   '/market-research': {
     en: '/market-research',
-    de: '/market-research',
-    fr: '/market-research',
-    es: '/market-research',
-    zh: '/market-research',
-    ar: '/market-research',
   },
   '/market-research-uae': {
     en: '/market-research-uae',
-    de: '/market-research-uae',
-    fr: '/market-research-uae',
-    es: '/market-research-uae',
-    zh: '/market-research-uae',
     ar: '/ar/market-research-uae',
   },
   '/market-research-ksa': {
     en: '/market-research-ksa',
-    de: '/market-research-ksa',
-    fr: '/market-research-ksa',
-    es: '/market-research-ksa',
-    zh: '/market-research-ksa',
     ar: '/ar/market-research-ksa',
   },
   '/market-research-saudi': {
     en: '/market-research-saudi',
-    de: '/market-research-saudi',
-    fr: '/market-research-saudi',
-    es: '/market-research-saudi',
-    zh: '/market-research-saudi',
     ar: '/ar/market-research-saudi',
   },
   '/market-research-kuwait': {
     en: '/market-research-kuwait',
-    de: '/market-research-kuwait',
-    fr: '/market-research-kuwait',
-    es: '/market-research-kuwait',
-    zh: '/market-research-kuwait',
     ar: '/ar/market-research-kuwait',
   },
   '/market-research-egypt': {
     en: '/market-research-egypt',
-    de: '/market-research-egypt',
-    fr: '/market-research-egypt',
-    es: '/market-research-egypt',
-    zh: '/market-research-egypt',
     ar: '/ar/market-research-egypt',
   },
   '/strategic-portfolio': {
@@ -186,6 +157,10 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
   },
   '/insights/top-market-research-companies-egypt-2026': {
     en: '/insights/top-market-research-companies-egypt-2026',
+    ar: '/ar/insights/top-market-research-companies-egypt-2026',
+  },
+  '/blog/top-market-research-companies-egypt-2026': {
+    en: '/blog/top-market-research-companies-egypt-2026',
     ar: '/ar/insights/top-market-research-companies-egypt-2026',
   },
   '/insights/top-market-research-companies-brazil-2026': {
@@ -206,11 +181,6 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
   },
   '/market-research-saudi-arabia-pharmaceutical': {
     en: '/market-research-saudi-arabia-pharmaceutical',
-    de: '/market-research-saudi-arabia-pharmaceutical',
-    fr: '/market-research-saudi-arabia-pharmaceutical',
-    es: '/market-research-saudi-arabia-pharmaceutical',
-    zh: '/market-research-saudi-arabia-pharmaceutical',
-    ar: '/market-research-saudi-arabia-pharmaceutical',
   },
   '/market-research-healthcare': {
     en: '/market-research-healthcare',
@@ -223,19 +193,9 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
   },
   '/qualitative-market-research': {
     en: '/qualitative-market-research',
-    de: '/qualitative-market-research',
-    fr: '/qualitative-market-research',
-    es: '/qualitative-market-research',
-    zh: '/qualitative-market-research',
-    ar: '/qualitative-market-research',
   },
   '/pharmacies-saudi-arabia-marketing': {
     en: '/pharmacies-saudi-arabia-marketing',
-    de: '/pharmacies-saudi-arabia-marketing',
-    fr: '/pharmacies-saudi-arabia-marketing',
-    es: '/pharmacies-saudi-arabia-marketing',
-    zh: '/pharmacies-saudi-arabia-marketing',
-    ar: '/pharmacies-saudi-arabia-marketing',
   },
   '/bionixus-ai-chatbots-increase-sales-and-lead-generation': {
     en: '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
@@ -264,13 +224,20 @@ export function getCanonicalPath(pathname: string = '/') {
   return Object.values(routes).includes(normalized) ? normalized : routes.en;
 }
 
+const HREFLANG_LANG_KEYS = ['en', 'de', 'fr', 'es', 'zh', 'ar'] as const;
+
+function hreflangLangCode(key: (typeof HREFLANG_LANG_KEYS)[number]): string {
+  return key === 'zh' ? 'zh-CN' : key;
+}
+
 export function getHreflangLinks(pathname: string = '/') {
   const base = getBaseUrl();
   const normalized = normalizePath(pathname);
   const group = findRouteGroup(normalized);
-  const canonicalHrefForPath = (path: string) => `${base}${getCanonicalPath(path)}`;
+  const absoluteHref = (path: string) => `${base}${normalizePath(path)}`;
+
   if (!group) {
-    const fallbackHref = canonicalHrefForPath(normalized);
+    const fallbackHref = absoluteHref(normalized);
     return [
       { lang: 'x-default', href: fallbackHref },
       { lang: 'en', href: fallbackHref },
@@ -278,23 +245,31 @@ export function getHreflangLinks(pathname: string = '/') {
   }
 
   const routes = localizedRouteGroups[group];
-  const routeFor = (lang: 'en' | 'de' | 'fr' | 'es' | 'zh' | 'ar') => routes[lang] || routes.en;
-  const rawLinks = [
-    { lang: 'x-default', href: canonicalHrefForPath(routeFor('en')) },
-    { lang: 'en', href: canonicalHrefForPath(routeFor('en')) },
-    { lang: 'de', href: canonicalHrefForPath(routeFor('de')) },
-    { lang: 'fr', href: canonicalHrefForPath(routeFor('fr')) },
-    { lang: 'es', href: canonicalHrefForPath(routeFor('es')) },
-    { lang: 'zh-CN', href: canonicalHrefForPath(routeFor('zh')) },
-    { lang: 'ar', href: canonicalHrefForPath(routeFor('ar')) },
+  const enPath = routes.en ?? normalized;
+  const enHref = absoluteHref(enPath);
+
+  /** One representative language per distinct URL (first declared key wins). */
+  const hrefToLang = new Map<string, (typeof HREFLANG_LANG_KEYS)[number]>();
+  for (const key of HREFLANG_LANG_KEYS) {
+    const path = routes[key];
+    if (!path) continue;
+    const href = absoluteHref(path);
+    if (!hrefToLang.has(href)) {
+      hrefToLang.set(href, key);
+    }
+  }
+
+  const links: Array<{ lang: string; href: string }> = [
+    { lang: 'x-default', href: enHref },
+    { lang: 'en', href: enHref },
   ];
-  // Avoid duplicate href targets being assigned to multiple languages.
-  const seenHrefs = new Set<string>();
-  return rawLinks.filter(({ href }) => {
-    if (seenHrefs.has(href)) return false;
-    seenHrefs.add(href);
-    return true;
-  });
+
+  for (const [href, key] of hrefToLang) {
+    if (href === enHref) continue;
+    links.push({ lang: hreflangLangCode(key), href });
+  }
+
+  return links;
 }
 
 /**
@@ -321,4 +296,47 @@ export function getOgLocale(language: Language): string {
 
 export function getOgLocaleAlternates(language: Language): string[] {
   return language === 'ar' ? ['en_US'] : ['ar_SA'];
+}
+
+/**
+ * Infer a single ISO 3166-1 alpha-2 geo.region + display name from a URL path.
+ * Only returns a value when the page is explicitly about one country.
+ * Multi-country pages (MENA, GCC, EMEA) return null — a broad geo.region
+ * mis-signals search intent.
+ */
+export function getGeoMeta(pathname: string): { region: string; placename: string } | null {
+  const path = normalizePath(pathname).toLowerCase();
+  if (path === '/' || path === '') return null;
+
+  // Ordered from most-specific to least to avoid false positives
+  const PATTERNS: Array<[RegExp, string, string]> = [
+    [/egypt/,                               'EG', 'Egypt'],
+    [/saudi|[/-]ksa($|\/)/,                 'SA', 'Saudi Arabia'],
+    [/\buae\b|-uae($|\/)|united-arab/,      'AE', 'United Arab Emirates'],
+    [/kuwait/,                              'KW', 'Kuwait'],
+    [/qatar/,                              'QA', 'Qatar'],
+    [/bahrain/,                             'BH', 'Bahrain'],
+    [/\boman\b/,                            'OM', 'Oman'],
+    [/jordan/,                              'JO', 'Jordan'],
+    [/morocco/,                             'MA', 'Morocco'],
+    [/turkey|türkiye/,                      'TR', 'Turkey'],
+    [/brazil/,                              'BR', 'Brazil'],
+    [/germany/,                             'DE', 'Germany'],
+    [/france/,                              'FR', 'France'],
+    [/\bitaly\b/,                           'IT', 'Italy'],
+    [/\bspain\b/,                           'ES', 'Spain'],
+    [/\bjapan\b/,                           'JP', 'Japan'],
+    [/\bchina\b/,                           'CN', 'China'],
+    [/\bindia\b/,                           'IN', 'India'],
+    [/south.korea|southkorea/,              'KR', 'South Korea'],
+    [/singapore/,                           'SG', 'Singapore'],
+    [/australia/,                           'AU', 'Australia'],
+    [/canada/,                              'CA', 'Canada'],
+    [/united.kingdom/,                      'GB', 'United Kingdom'],
+  ];
+
+  for (const [re, region, placename] of PATTERNS) {
+    if (re.test(path)) return { region, placename };
+  }
+  return null;
 }

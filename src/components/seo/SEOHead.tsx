@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
-import { getHreflangLinks } from '@/lib/seo';
+import { getHreflangLinks, getGeoMeta } from '@/lib/seo';
 import { buildSeoDescription, normalizeSeoTitle } from '@/lib/seo-meta';
 
 interface SEOHeadProps {
@@ -36,11 +36,14 @@ export function SEOHead({
   const resolvedOgImage =
     ogImage ?? `https://www.bionixus.com/api/og-card?path=${encodeURIComponent(canonicalPath)}`;
   const hreflangLinks = getHreflangLinks(pathname);
+  const geoMeta = getGeoMeta(pathname);
 
   return (
     <Helmet>
       <title>{safeTitle}</title>
       <meta name="description" content={safeDescription} />
+      {geoMeta ? <meta name="geo.region" content={geoMeta.region} /> : null}
+      {geoMeta ? <meta name="geo.placename" content={geoMeta.placename} /> : null}
       <link rel="canonical" href={canonicalUrl} />
       {hreflangLinks.map(({ lang, href }) => (
         <link key={`${lang}-${href}`} rel="alternate" hrefLang={lang} href={href} />

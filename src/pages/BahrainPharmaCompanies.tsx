@@ -1,11 +1,24 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Share2, BookOpen, Building2, Globe, ShieldCheck, Pill, TrendingUp, BarChart3, Truck, Users } from 'lucide-react';
+import { Share2, BookOpen, Building2, Globe, ShieldCheck, Pill, TrendingUp, BarChart3, Truck, Users } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { getPharmaGuideConfig } from '@/data/reportConversionConfig';
+import { PharmaCompaniesGccHubLinks } from '@/components/seo/PharmaCompaniesGccHubLinks';
+import { PharmaCompaniesQuickAnswer } from '@/components/seo/PharmaCompaniesQuickAnswer';
+import { buildPharmaCompaniesItemListLd } from '@/components/seo/pharmaCompaniesSeo';
+import {
+  ReportConsultationBand,
+  ReportContentWithAside,
+  ReportEarlyCtaBar,
+  ReportMidPageCta,
+  ReportReadingProgress,
+} from '@/components/report-conversion';
+
+const PHARMA_CONVERSION = getPharmaGuideConfig('bahrain');
 
 interface PharmaCompany {
   name: string;
@@ -55,8 +68,9 @@ const BahrainPharmaCompanies = () => {
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Pharmaceutical Companies in Bahrain | Industry Guide 2026 | BioNixus</title>
-        <meta name="description" content="Complete guide to pharmaceutical companies in Bahrain for 2026: top pharma companies list, $0.3B market size, NHRA drug registration, Vision 2030 healthcare pillar, and industry outlook." />
+        <meta name="description" content="Pharmaceutical companies in Bahrain: NHRA-regulated $0.3B market, local manufacturers, MNC offices, distributors — complete 2026 company directory." />
         <link rel="canonical" href={citationUrl} />
+        <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesItemListLd(citationUrl, pharmaCompanies.map((c) => c.name)))}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: 'Pharmaceutical Companies in Bahrain: Complete Industry Guide 2026', description: 'Comprehensive guide to pharmaceutical companies operating in Bahrain — local manufacturers, MNC offices, distributors, $0.3B market data, NHRA regulatory landscape, and Vision 2030 outlook.', url: citationUrl, datePublished: '2026-02-15', dateModified: '2026-02-15', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' } })}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' }, { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.bionixus.com/resources' }, { '@type': 'ListItem', position: 3, name: 'Pharmaceutical Companies in Bahrain' }] })}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqItems.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) })}</script>
@@ -71,17 +85,28 @@ const BahrainPharmaCompanies = () => {
         alternateLocales={language === 'ar' ? ['en_US'] : ['ar_SA']}
       />
       <Navbar />
+      <ReportReadingProgress progressId="pharma-guide-rp-bahrain" />
       <main>
         <div className="section-padding pt-24 pb-4"><div className="container-wide"><div className="flex items-center gap-2 text-sm text-muted-foreground mb-6"><Link to={basePath} className="hover:text-primary transition-colors">Home</Link><span>/</span><Link to="/resources" className="hover:text-primary transition-colors">Resources</Link><span>/</span><span className="text-foreground">Pharmaceutical Companies in Bahrain</span></div></div></div>
 
         <section className="section-padding pt-0 pb-12"><div className="container-wide max-w-5xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6"><Building2 className="w-4 h-4" />Industry Guide 2026</div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">Pharmaceutical Companies in Bahrain</h1>
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">A comprehensive guide to the pharmaceutical industry in Bahrain — the smallest GCC market but well-regulated, with a $0.3B market growing at 5.8%. Covering major pharma companies, NHRA regulatory framework, Vision 2030 healthcare pillar, market data, distribution channels, and strategic advantages including proximity to Saudi Arabia.</p>
+          <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">Pharmaceutical companies in Bahrain operate in a compact, NHRA-regulated GCC market — see <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">healthcare market research</Link> for Gulf-wide context. This guide covers major pharma companies, a $0.3B market growing at 5.8%, distribution channels, and strategic advantages including proximity to Saudi Arabia.</p>
           <p className="text-sm text-muted-foreground">Last updated: February 2026 &middot; Sources: NHRA, BioNixus MEA, company filings, BioNixus research</p>
           <div className="mt-8 p-5 bg-muted/50 border border-border rounded-xl"><div className="flex items-start gap-3"><Share2 className="w-5 h-5 text-primary mt-0.5 shrink-0" /><div><p className="font-semibold text-foreground text-sm mb-1">Cite this guide</p><p className="text-sm text-muted-foreground leading-relaxed">BioNixus. &quot;Pharmaceutical Companies in Bahrain: Complete Industry Guide 2026.&quot; BioNixus Healthcare Market Research, Feb. 2026, <a href={citationUrl} className="text-primary hover:underline break-all">{citationUrl}</a>.<br />Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">CC BY 4.0</a> — free to share and adapt with attribution.</p></div></div></div>
-        </div></section>
+          <ReportEarlyCtaBar config={PHARMA_CONVERSION} className="mt-8" /></div></section>
 
+        <PharmaCompaniesQuickAnswer
+          country="bahrain"
+          marketSize="approximately USD 0.3 billion"
+          growthRate="5.8% YoY"
+          regulatorLabel="National Health Regulatory Authority (NHRA)"
+          topCompanyNames={pharmaCompanies.map((c) => c.name)}
+          extraSentence="Proximity to Saudi Arabia makes Bahrain a useful GCC access planning market despite its smaller population."
+        />
+
+        <ReportContentWithAside config={PHARMA_CONVERSION}>
         <section className="section-padding py-12 bg-primary text-primary-foreground"><div className="container-wide max-w-5xl mx-auto"><div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div><p className="text-3xl md:text-4xl font-display font-bold">$0.3B</p><p className="text-primary-foreground/70 text-sm mt-1">Pharmaceutical market value</p></div>
           <div><p className="text-3xl md:text-4xl font-display font-bold">5.8%</p><p className="text-primary-foreground/70 text-sm mt-1">Year-over-year growth</p></div>
@@ -119,6 +144,8 @@ const BahrainPharmaCompanies = () => {
             {pharmaCompanies.map((c, i) => (<tr key={c.name} className={`border-b border-border ${i % 2 === 0 ? 'bg-card' : 'bg-muted/20'}`}><td className="px-4 py-3 font-medium text-foreground">{c.name}</td><td className="px-4 py-3 text-muted-foreground">{c.hq}</td><td className="px-4 py-3 hidden md:table-cell"><span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${c.type === 'Local Manufacturer' ? 'bg-green-50 text-green-700' : c.type === 'MNC Office' ? 'bg-blue-50 text-blue-700' : c.type === 'Regional' ? 'bg-amber-50 text-amber-700' : 'bg-purple-50 text-purple-700'}`}>{c.type}</span></td><td className="px-4 py-3 text-muted-foreground hidden lg:table-cell">{c.therapeuticAreas}</td><td className="px-4 py-3 text-muted-foreground text-xs hidden xl:table-cell">{c.notes}</td></tr>))}
           </tbody></table></div>
         </div></section>
+
+        <ReportMidPageCta config={PHARMA_CONVERSION} />
 
         <section className="section-padding py-16" id="companies-by-category"><div className="container-wide max-w-5xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">List of Pharmaceutical Companies in Bahrain by Category</h2>
@@ -174,19 +201,30 @@ const BahrainPharmaCompanies = () => {
           ].map((s) => (<div key={s.title} className="bg-card border border-border rounded-xl p-6"><h3 className="text-lg font-display font-semibold text-foreground mb-3">{s.title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p></div>))}</div>
         </div></section>
 
+        <section className="section-padding py-16" id="gcc-directories"><div className="container-wide max-w-5xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">Pharmaceutical companies across the GCC</h2>
+          <p className="text-muted-foreground mb-8 max-w-3xl">Compare the Bahrain pharmaceutical industry with BioNixus company directories for the other Gulf and MENA markets.</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            <Link to="/pharmaceutical-companies-saudi-arabia" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in Saudi Arabia <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
+            <Link to="/pharmaceutical-companies-uae" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in UAE <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
+            <Link to="/pharmaceutical-companies-egypt" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in Egypt <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
+            <Link to="/pharmaceutical-companies-kuwait" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in Kuwait <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
+            <Link to="/pharmaceutical-companies-qatar" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in Qatar <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
+            <Link to="/pharmaceutical-companies-oman" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in Oman <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
+          </div>
+        </div></section>
+
         <section className="section-padding py-16 bg-muted/30" id="faq"><div className="container-wide max-w-5xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-10">Frequently Asked Questions</h2>
           <div className="space-y-6">{faqItems.map((faq) => (<div key={faq.q} className="bg-card border border-border rounded-xl p-6"><h3 className="text-lg font-display font-semibold text-foreground mb-3">{faq.q}</h3><p className="text-sm text-muted-foreground leading-relaxed">{faq.a}</p></div>))}</div>
         </div></section>
 
+        <PharmaCompaniesGccHubLinks country="bahrain" />
         <section className="section-padding py-12" id="methodology"><div className="container-wide max-w-5xl mx-auto"><div className="bg-card border border-border rounded-xl p-8"><h2 className="text-xl font-display font-semibold text-foreground mb-4 flex items-center gap-2"><BookOpen className="w-5 h-5 text-primary" />Data Sources &amp; Methodology</h2><p className="text-sm text-muted-foreground leading-relaxed mb-4">This guide aggregates publicly available information from:</p><ul className="text-sm text-muted-foreground space-y-2 mb-6"><li>BioNixus Middle East &amp; Africa Pharmaceutical Market Report</li><li>NHRA — National Health Regulatory Authority (Bahrain)</li><li>Bahrain Economic Vision 2030 documentation</li><li>Company and distributor sources</li><li>BioNixus proprietary research (Bahrain &amp; GCC, 2024–2025)</li></ul><p className="text-sm text-muted-foreground leading-relaxed">For customised market intelligence on Bahrain, <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.</p></div></div></section>
+        </ReportContentWithAside>
 
-        <section className="section-padding py-16 bg-primary text-primary-foreground"><div className="container-wide max-w-5xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold mb-4">Need Market Intelligence on Bahrain?</h2>
-          <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">BioNixus delivers custom pharmaceutical market research across Bahrain and the GCC — physician surveys, competitive intelligence, market access strategy, and KOL mapping.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center"><Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors">Request a Proposal <ArrowRight className="w-4 h-4" /></Link><Link to="/services" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-primary-foreground font-semibold hover:bg-white/20 transition-colors">View Our Services</Link></div>
-        </div></section>
-      </main>
+        <ReportConsultationBand config={PHARMA_CONVERSION} />
+        </main>
       <Footer />
     </div>
   );

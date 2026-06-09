@@ -1,15 +1,47 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Share2, BookOpen, Building2, Globe, ShieldCheck, Pill, TrendingUp, BarChart3, Truck, Users } from 'lucide-react';
+import {
+  ArrowRight,
+  Share2,
+  BookOpen,
+  Building2,
+  Globe,
+  ShieldCheck,
+  Pill,
+  TrendingUp,
+  Truck,
+  Users,
+  ArrowLeft,
+  Calendar,
+  MapPin,
+  Clock,
+  AlignLeft,
+  List,
+  ArrowUpRight,
+  Phone,
+  ChevronDown,
+} from 'lucide-react';
+import ShareButtons from '@/components/ShareButtons';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { getPharmaGuideConfig } from '@/data/reportConversionConfig';
+import {
+  ReportConsultationBand,
+  ReportContentWithAside,
+  ReportEarlyCtaBar,
+  ReportMidPageCta,
+  ReportReadingProgress,
+} from '@/components/report-conversion';
+import { PharmaCompaniesQuickAnswer } from '@/components/seo/PharmaCompaniesQuickAnswer';
+
+const PHARMA_CONVERSION = getPharmaGuideConfig('kuwait');
 
 /* ------------------------------------------------------------------ */
 /* Pharmaceutical companies operating in Kuwait — local & MNC offices  */
-/* Sources: MOH Kuwait, KSPICO, YIACO, Alghanim, company filings      */
+/* Sources: MOH Kuwait, KSPICO, Kuwait distributor disclosures, company sites */
 /* ------------------------------------------------------------------ */
 
 interface PharmaCompany {
@@ -20,15 +52,118 @@ interface PharmaCompany {
   notes: string;
 }
 
+/** Frequently searched ranking used in on-page numbered list & ItemList structured data — editorial snapshot, not endorsement. */
+const TOP_MEDICAL_DISTRIBUTORS_KUWAIT_RANKED_DISPLAY = [
+  'Cura Health (formerly Safwan)',
+  'Ali Abdelwahab (AAW)',
+  'Almojil',
+  'Alhajery',
+  'Alhomaizi',
+  'Bader Sultan',
+  'Mezzan Medical',
+  'Central Circle Co.',
+  'Boushahri',
+] as const;
+
+const topKuwaitMedicalDistributorsOrdered: PharmaCompany[] = [
+  {
+    name: 'Cura Health (formerly Safwan)',
+    hq: 'Kuwait',
+    type: 'Distributor',
+    therapeuticAreas: 'Multi-therapeutic, hospital & retail channels',
+    notes: 'Major Kuwait medical distributor; rebranded from Safwan',
+  },
+  {
+    name: 'Ali Abdelwahab (AAW)',
+    hq: 'Kuwait',
+    type: 'Distributor',
+    therapeuticAreas: 'Pharmaceuticals, medical supplies',
+    notes: 'Wholesale importer-distributor commonly referenced as AAW',
+  },
+  {
+    name: 'Almojil',
+    hq: 'Kuwait',
+    type: 'Distributor',
+    therapeuticAreas: 'Pharmaceuticals, healthcare products',
+    notes: 'Established pharma distribution footprint in Kuwait',
+  },
+  {
+    name: 'Alhajery',
+    hq: 'Kuwait',
+    type: 'Distributor',
+    therapeuticAreas: 'Multi-therapeutic',
+    notes: 'Medical supplies and pharma distribution channels',
+  },
+  {
+    name: 'Alhomaizi',
+    hq: 'Kuwait',
+    type: 'Distributor',
+    therapeuticAreas: 'Pharmaceuticals, consumer health',
+    notes: 'Importer-distributor for Kuwait market',
+  },
+  {
+    name: 'Bader Sultan',
+    hq: 'Kuwait',
+    type: 'Distributor',
+    therapeuticAreas: 'Pharmaceuticals, consumer health',
+    notes: 'Longstanding healthcare distributor',
+  },
+  {
+    name: 'Mezzan Medical',
+    hq: 'Kuwait',
+    type: 'Distributor',
+    therapeuticAreas: 'Medical supplies, OTC, pharma',
+    notes: 'Affiliated with Mezzan Holding group supply ecosystem',
+  },
+  {
+    name: 'Central Circle Co.',
+    hq: 'Kuwait',
+    type: 'Distributor',
+    therapeuticAreas: 'Pharmaceuticals, devices',
+    notes: 'Healthcare and pharmaceutical distribution in Kuwait',
+  },
+  {
+    name: 'Boushahri',
+    hq: 'Kuwait',
+    type: 'Distributor',
+    therapeuticAreas: 'Specialty and primary care lines',
+    notes: 'Regional importer-distributor with Kuwait operations',
+  },
+];
+
 const pharmaCompanies: PharmaCompany[] = [
-  { name: 'Kuwait Saudi Pharmaceutical Industries (KSPICO)', hq: 'Kuwait', type: 'Local Manufacturer', therapeuticAreas: 'Generics, IV solutions, oral solids & liquids, topicals', notes: 'Kuwait\'s only GMP-certified manufacturer; 120+ products; owned by Mezzan Holding' },
-  { name: 'YIACO Medical (Kuwait Drug Company)', hq: 'Kuwait', type: 'Distributor', therapeuticAreas: 'Oncology, haematology, immunology, rare diseases', notes: 'Largest pharma distributor; represents Roche, Octapharma; operates 22 retail pharmacies' },
-  { name: 'Alghanim Industries — Healthcare Division', hq: 'Kuwait', type: 'Distributor', therapeuticAreas: 'Multi-therapeutic, medical devices', notes: 'One of Kuwait\'s largest conglomerates; represents multiple MNC principals' },
-  { name: 'Warba Pharmaceutical Company', hq: 'Kuwait', type: 'Distributor', therapeuticAreas: 'Generics, OTC, consumer health', notes: 'Major local distributor serving retail pharmacy and hospital channels' },
-  { name: 'Al-Rashed International Shipping (Pharma Division)', hq: 'Kuwait', type: 'Distributor', therapeuticAreas: 'Cold-chain biologics, vaccines', notes: 'Specialised cold-chain pharmaceutical logistics across Kuwait' },
+  {
+    name: 'Kuwait Saudi Pharmaceutical Industries (KSPICO)',
+    hq: 'Kuwait',
+    type: 'Local Manufacturer',
+    therapeuticAreas: 'Generics, IV solutions, oral solids & liquids, topicals',
+    notes: 'Kuwait\'s only GMP-certified manufacturer; 120+ products; owned by Mezzan Holding',
+  },
+  ...topKuwaitMedicalDistributorsOrdered,
+  {
+    name: 'YIACO Medical (Kuwait Drug Company)',
+    hq: 'Kuwait',
+    type: 'Distributor',
+    therapeuticAreas: 'Hospital, speciality, OTC, wholesale',
+    notes: 'Established importer-distributor; hospital tenders and Kuwait Drug retail pharmacy presence',
+  },
+  {
+    name: 'Alghanim Industries — Healthcare Division',
+    hq: 'Kuwait',
+    type: 'Distributor',
+    therapeuticAreas: 'Multi-therapeutic, medical devices',
+    notes: 'Conglomerate healthcare division importing devices and pharma lines',
+  },
+  {
+    name: 'Warba Pharmaceutical Company',
+    hq: 'Kuwait',
+    type: 'Distributor',
+    therapeuticAreas: 'Generics, OTC, consumer health',
+    notes: 'Major local distributor serving retail pharmacy and hospital channels',
+  },
   { name: 'Pfizer', hq: 'USA', type: 'MNC Office', therapeuticAreas: 'Oncology, vaccines, inflammation, rare diseases', notes: 'Regional office covers Kuwait; significant MOH tender presence' },
   { name: 'Novartis', hq: 'Switzerland', type: 'MNC Office', therapeuticAreas: 'Oncology, immunology, ophthalmology, cardiovascular', notes: 'Top 3 MNC by value sales in Kuwait; strong hospital formulary presence' },
-  { name: 'Roche', hq: 'Switzerland', type: 'MNC Office', therapeuticAreas: 'Oncology, haematology, neuroscience, diagnostics', notes: 'Distributed via YIACO; leading oncology portfolio in Kuwait' },
+  { name: 'Roche', hq: 'Switzerland', type: 'MNC Office', therapeuticAreas: 'Oncology, haematology, neuroscience, diagnostics', notes: 'INN/biotech and diagnostics portfolio accessed via regional representation and tenders' },
   { name: 'Sanofi', hq: 'France', type: 'MNC Office', therapeuticAreas: 'Diabetes, vaccines, rare diseases, consumer health', notes: 'Strong insulin franchise; #1 diabetes brand in Kuwait' },
   { name: 'AstraZeneca', hq: 'UK / Sweden', type: 'MNC Office', therapeuticAreas: 'Oncology, respiratory, cardiovascular, rare diseases', notes: 'Growing oncology and respiratory presence; active in MOH tenders' },
   { name: 'GSK (GlaxoSmithKline)', hq: 'UK', type: 'MNC Office', therapeuticAreas: 'Vaccines, respiratory, HIV, consumer health', notes: 'Largest vaccine supplier in Kuwait; Ventolin market leader' },
@@ -43,10 +178,28 @@ const pharmaCompanies: PharmaCompany[] = [
   { name: 'Bayer', hq: 'Germany', type: 'MNC Office', therapeuticAreas: 'Cardiovascular, oncology, consumer health, crop science', notes: 'Xarelto anticoagulant leader; consumer health (Aspirin, Bepanthen) strong in retail' },
 ];
 
+/** Table of contents + sticky sidebar anchors (premium guide layout). */
+const KUWAIT_PHARMA_GUIDE_TOC: { href: string; label: string }[] = [
+  { href: '#market-overview', label: 'Kuwait pharmaceutical market overview' },
+  { href: '#top-medical-distributors', label: 'Top medical distributors' },
+  { href: '#top-companies', label: 'Company table & full list' },
+  { href: '#companies-by-category', label: 'Companies by category' },
+  { href: '#regulatory-landscape', label: 'Regulatory landscape' },
+  { href: '#distribution-channels', label: 'Distribution channels' },
+  { href: '#growth-drivers', label: 'Market growth drivers' },
+  { href: '#bionixus-support', label: 'BioNixus Kuwait research services' },
+  { href: '#faq', label: 'Frequently asked questions' },
+  { href: '#methodology', label: 'Sources & methodology' },
+];
+
 const faqItems = [
   {
     q: 'How many pharmaceutical companies operate in Kuwait?',
-    a: 'Approximately 148 pharmaceutical companies operate in Kuwait, including one local GMP-certified manufacturer (KSPICO), several major distributors (YIACO, Alghanim, Warba), and offices or representatives of over 100 multinational pharmaceutical companies. Kuwait imports approximately 95% of its pharmaceuticals.',
+    a: 'Approximately 148 pharmaceutical companies operate in Kuwait, including one local GMP-certified manufacturer (KSPICO), importer-distributors (see our ranked Kuwait medical distributors list), additional established wholesalers such as YIACO and Alghanim, and offices or representatives of over 100 multinational pharmaceutical companies. Kuwait imports approximately 95% of its pharmaceuticals.',
+  },
+  {
+    q: 'Who are the top medical distributors in Kuwait?',
+    a: 'Kuwait\'s import-led market relies on a concentrated set of medical and pharmaceutical distributors. This guide highlights a frequently searched ranking: (1) Cura Health (formerly Safwan), (2) Ali Abdelwahab (AAW), (3) Almojil, (4) Alhajery, (5) Alhomaizi, (6) Bader Sultan, (7) Mezzan Medical, (8) Central Circle Co., and (9) Boushahri — alongside other distributors in the table (e.g. YIACO, Alghanim, Warba). Rankings reflect market visibility and procurement channels, not a formal MOH league table.',
   },
   {
     q: 'What is the size of Kuwait\'s pharmaceutical market?',
@@ -74,28 +227,43 @@ const KuwaitPharmaCompanies = () => {
   const { language } = useLanguage();
   const basePath = languagePaths[language] || '/';
   const citationUrl = 'https://www.bionixus.com/pharmaceutical-companies-kuwait';
+  const guideShareSlug = 'pharmaceutical-companies-kuwait';
 
-  const ogTitle = "Pharmaceutical Companies in Kuwait — Complete Industry Guide 2026";
-  const ogDescription = "Comprehensive guide: 20+ pharmaceutical companies in Kuwait, $1.2B market data, MOH registration process, distribution channels, and market outlook for pharma companies.";
+  const ogTitle = "Pharmaceutical Companies in Kuwait & Top Medical Distributors 2026 | BioNixus";
+  const ogDescription =
+    "Kuwait pharma companies guide: top medical distributors (Cura Health, AAW, Almojil, Central Circle Co., Mezzan Medical, and more), $1.2B market size, MOH registration, MNC offices, and drug distribution channels.";
 
-  return (
+  const topMedicalDistributorsItemListLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Top medical distributors in Kuwait (editorial overview)',
+    description:
+      'Commonly referenced Kuwait pharmaceutical and medical distributor names for search and market mapping; not an official government ranking.',
+    itemListElement: TOP_MEDICAL_DISTRIBUTORS_KUWAIT_RANKED_DISPLAY.map((name, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name,
+    })),
+  };
+return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Pharmaceutical Companies in Kuwait | Industry Guide 2026 | BioNixus</title>
+        <title>Pharmaceutical Companies in Kuwait | Top Medical Distributors &amp; MNCs 2026 | BioNixus</title>
         <meta
           name="description"
-          content="Complete guide to pharmaceutical companies in Kuwait for 2026: top pharma companies list, market size ($1.2B), MOH drug registration, distribution channels, and industry outlook. Local manufacturers, MNC offices, and distributors."
+          content="Pharmaceutical companies in Kuwait: ranked distributors (Cura Health, AAW, Almojil, Central Circle Co.), $1.2B market, MOH registration, KSPICO manufacturing, MNC offices (2026)."
         />
         <link rel="canonical" href={citationUrl} />
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Article',
-            headline: 'Pharmaceutical Companies in Kuwait: Complete Industry Guide 2026',
-            description: 'Comprehensive guide to pharmaceutical companies operating in Kuwait — including local manufacturers, multinational offices, distributors, market data, regulatory landscape, and industry outlook.',
+            headline: 'Pharmaceutical Companies in Kuwait: Top Medical Distributors, MNCs & Regulatory Guide 2026',
+            description:
+              'Guide to Kuwait pharmaceutical companies: ranked medical distributors (including Cura Health, AAW, Almojil, Central Circle Co.), local manufacturing (KSPICO), multinational offices, MOH registration, and distribution channels.',
             url: citationUrl,
             datePublished: '2026-02-15',
-            dateModified: '2026-02-15',
+            dateModified: '2026-05-26',
             author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
             publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
           })}
@@ -122,6 +290,7 @@ const KuwaitPharmaCompanies = () => {
             })),
           })}
         </script>
+        <script type="application/ld+json">{JSON.stringify(topMedicalDistributorsItemListLd)}</script>
       </Helmet>
       <OpenGraphMeta
         title={ogTitle}
@@ -132,108 +301,176 @@ const KuwaitPharmaCompanies = () => {
         locale={language === 'ar' ? 'ar_SA' : 'en_US'}
         alternateLocales={language === 'ar' ? ['en_US'] : ['ar_SA']}
       />
+      <ReportReadingProgress progressId="kuwait-pharma-guide-rp" />
       <Navbar />
-      <main>
-        {/* Breadcrumb */}
-        <div className="section-padding pt-24 pb-4">
-          <div className="container-wide">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
-              <Link to={basePath} className="hover:text-primary transition-colors">Home</Link>
-              <span>/</span>
-              <Link to="/resources" className="hover:text-primary transition-colors">Resources</Link>
-              <span>/</span>
-              <span className="text-foreground">Pharmaceutical Companies in Kuwait</span>
+      <main className="bg-background">
+        <header
+          className="relative pt-28 md:pt-36 pb-16 md:pb-20 overflow-hidden scroll-mt-0"
+          style={{ background: 'linear-gradient(135deg, hsl(var(--navy-deep)) 0%, hsl(var(--navy-medium)) 100%)' }}
+        >
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--gold-light)) 55%, transparent 100%)' }} aria-hidden />
+          <div className="absolute -top-32 -right-32 w-80 h-80 rounded-full opacity-[0.06] pointer-events-none" style={{ background: 'hsl(var(--accent))' }} aria-hidden />
+          <div className="max-w-screen-xl mx-auto px-6 md:px-10 relative z-10">
+            <nav className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[13px] text-white/50 mb-6" aria-label="Breadcrumb">
+              <Link to={basePath} className="hover:text-white/80 transition-colors">
+                Home
+              </Link>
+              <span className="text-white/25" aria-hidden>/</span>
+              <Link to="/resources" className="hover:text-white/80 transition-colors">
+                Resources
+              </Link>
+              <span className="text-white/25" aria-hidden>/</span>
+              <span className="text-white/70">Pharmaceutical companies in Kuwait</span>
+            </nav>
+            <Link to="/resources" className="inline-flex items-center gap-1.5 text-white/55 hover:text-white/85 text-sm mb-7 transition-colors">
+              <ArrowLeft className="w-3.5 h-3.5" aria-hidden /> Back to resources
+            </Link>
+            <div className="mb-4">
+              <span
+                className="inline-flex px-3 py-1 text-[10px] font-extrabold tracking-[0.12em] uppercase rounded-sm"
+                style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--navy-deep))' }}
+              >
+                Healthcare market intelligence
+              </span>
+            </div>
+            <h1 className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-[1.18] tracking-[-0.02em] text-white max-w-4xl mb-3 text-balance">
+              Pharmaceutical companies in Kuwait
+            </h1>
+            <p className="text-lg text-white/80 max-w-3xl mb-6">
+              Industry guide &amp; top medical distributors (2026)
+            </p>
+            <p className="text-[17px] text-white/70 leading-relaxed max-w-3xl mb-8">
+              A premium reference for pharmaceutical and life sciences leaders mapping the Kuwait market — importer–wholesaler footprint, pharmaceutical registration pathways with Kuwait MOH, tender-centric government demand, distributor dynamics, and how BioNixus delivers Kuwait-specific physician, payer, and market access{' '}
+              <Link to="/healthcare-market-research" className="text-accent underline underline-offset-2 hover:no-underline">
+                healthcare market research
+              </Link>
+              .
+            </p>
+            <div className="flex flex-wrap items-center text-[13px] text-white/55">
+              <div className="flex items-center gap-1.5 pr-4 border-r border-white/20">
+                <Calendar className="w-3 h-3 opacity-60 shrink-0" aria-hidden />
+                <strong className="text-white/85 font-medium">Updated May 2026</strong>
+              </div>
+              <div className="flex items-center gap-1.5 px-4 border-r border-white/20">
+                <MapPin className="w-3 h-3 opacity-60 shrink-0" aria-hidden />
+                <strong className="text-white/85 font-medium">Kuwait</strong>
+              </div>
+              <div className="flex items-center gap-1.5 pl-4">
+                <Clock className="w-3 h-3 opacity-60 shrink-0" aria-hidden />
+                <strong className="text-white/85 font-medium">~14 min read</strong>
+              </div>
             </div>
           </div>
-        </div>
+        </header>
 
-        {/* Hero */}
-        <section className="section-padding pt-0 pb-12">
-          <div className="container-wide max-w-5xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-              <Building2 className="w-4 h-4" />
-              Industry Guide 2026
-            </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">
-              Pharmaceutical Companies in Kuwait
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
-              A comprehensive guide to the pharmaceutical industry in Kuwait — covering major pharma companies, market size and growth, drug registration with the Ministry of Health, distribution channels, and strategic opportunities for pharmaceutical and life sciences companies entering the Kuwaiti market.
-            </p>
-            <p className="text-sm text-muted-foreground">
-              Last updated: February 2026 &middot; Sources: Kuwait MOH, BioNixus MEA, Ken Research, KSPICO, YIACO, company filings
-            </p>
+        <PharmaCompaniesQuickAnswer
+          country="kuwait"
+          marketSize="approximately USD 1.2 billion"
+          growthRate="tender-led government and private channels"
+          regulatorLabel="Kuwait Ministry of Health (MOH) pharmaceutical affairs"
+          topCompanyNames={[...TOP_MEDICAL_DISTRIBUTORS_KUWAIT_RANKED_DISPLAY]}
+          extraSentence="See the ranked medical distributors section below for importer–wholesaler detail and tender context."
+        />
 
-            {/* Citation box */}
-            <div className="mt-8 p-5 bg-muted/50 border border-border rounded-xl">
-              <div className="flex items-start gap-3">
-                <Share2 className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                <div>
-                  <p className="font-semibold text-foreground text-sm mb-1">Cite this guide</p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    BioNixus. &quot;Pharmaceutical Companies in Kuwait: Complete Industry Guide 2026.&quot; BioNixus Healthcare Market Research, Feb. 2026,{' '}
-                    <a href={citationUrl} className="text-primary hover:underline break-all">{citationUrl}</a>.
-                    <br />
-                    Licensed under{' '}
-                    <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                      CC BY 4.0
-                    </a>{' '}
-                    — free to share and adapt with attribution.
-                  </p>
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-[minmax(0,1fr)_272px] gap-10 lg:gap-14 pb-16 items-start">
+            <article>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-5 mb-8 border-b border-border">
+                <div className="flex flex-wrap gap-1.5">
+                  {(['Pharmaceuticals', 'Kuwait', 'Market access', 'Distributors'] as const).map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2.5 py-1 bg-muted text-muted-foreground text-[11px] font-medium tracking-[0.04em] uppercase rounded-full border border-border"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <ShareButtons
+                  url={citationUrl}
+                  title="Pharmaceutical companies in Kuwait — BioNixus"
+                  contentType="guide"
+                  slug={guideShareSlug}
+                />
+              </div>
+
+              <aside
+                className="relative mb-8 py-5 px-5 bg-primary/[0.025] border border-primary/[0.08] overflow-hidden"
+                style={{ borderLeft: '4px solid hsl(var(--accent))', borderRadius: '0 12px 12px 0' }}
+                aria-label="Executive summary"
+              >
+                <div className="flex items-center gap-2.5 mb-3">
+                  <div className="w-7 h-7 rounded-md flex items-center justify-center shrink-0" style={{ background: 'hsl(var(--accent))' }}>
+                    <AlignLeft className="w-3.5 h-3.5" style={{ color: 'hsl(var(--navy-deep))' }} aria-hidden />
+                  </div>
+                  <span className="text-[11px] font-extrabold tracking-[0.1em] uppercase text-primary">Executive summary</span>
+                </div>
+                <p className="font-display text-[17px] italic leading-[1.72] text-foreground max-w-3xl m-0">
+                  Kuwait is an import-led pharmaceutical market (~95% consumption) anchored by Ministry of Health tenders, Central Medical Stores, and a networked private hospital and pharmacy channel.
+                  This briefing maps Kuwait Saudi Pharmaceutical Industries (KSPICO), leading medical distributors, multinational offices, and regulatory expectations so pricing, access, and field research plans stay aligned with payer reality.
+                  Use it to brief executives, then{' '}
+                  <Link to="/contact" className="text-primary font-semibold not-italic underline underline-offset-2 hover:no-underline">
+                    book a BioNixus market research call
+                  </Link>{' '}
+                  when you require proprietary surveys or competitive intelligence.
+                </p>
+              </aside>
+
+<ReportEarlyCtaBar config={PHARMA_CONVERSION} className="mb-10" />
+
+              <div className="mb-10 rounded-2xl border border-border bg-gradient-to-br from-primary/[0.04] via-background to-muted/40 p-6 md:p-8 shadow-sm">
+                <p className="text-[11px] font-extrabold uppercase tracking-[0.1em] text-primary mb-4">Kuwait pharmaceutical snapshot</p>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
+                  <div>
+                    <p className="font-display text-2xl md:text-3xl font-bold text-primary">$1.2B</p>
+                    <p className="text-muted-foreground text-xs mt-1">Pharmaceutical market value</p>
+                  </div>
+                  <div>
+                    <p className="font-display text-2xl md:text-3xl font-bold text-primary">8.4%</p>
+                    <p className="text-muted-foreground text-xs mt-1">YoY growth</p>
+                  </div>
+                  <div>
+                    <p className="font-display text-2xl md:text-3xl font-bold text-primary">4.9M</p>
+                    <p className="text-muted-foreground text-xs mt-1">Population</p>
+                  </div>
+                  <div>
+                    <p className="font-display text-2xl md:text-3xl font-bold text-primary">$245</p>
+                    <p className="text-muted-foreground text-xs mt-1">Pharma spending per capita</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
 
-        {/* Key Stats Bar */}
-        <section className="section-padding py-12 bg-primary text-primary-foreground">
-          <div className="container-wide max-w-5xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">$1.2B</p>
-                <p className="text-primary-foreground/70 text-sm mt-1">Pharmaceutical market value</p>
-              </div>
-              <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">8.4%</p>
-                <p className="text-primary-foreground/70 text-sm mt-1">Year-over-year growth</p>
-              </div>
-              <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">4.9M</p>
-                <p className="text-primary-foreground/70 text-sm mt-1">Population</p>
-              </div>
-              <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">$245</p>
-                <p className="text-primary-foreground/70 text-sm mt-1">Pharma spending per capita</p>
-              </div>
-            </div>
-          </div>
-        </section>
+              <blockquote className="blog-pull-quote mb-12">
+                <p className="font-display text-xl italic leading-relaxed text-primary m-0">
+                  Because nearly all medicines are imported, importer–distributors sit at the centre of Kuwait tenders, hospital formulary access, and retail coverage — where specialist healthcare market research accelerates partner and launch decisions.
+                </p>
+              </blockquote>
 
-        {/* Table of Contents */}
-        <section className="section-padding py-8 bg-muted/30">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-lg font-display font-semibold text-foreground mb-4">In this guide</h2>
-            <div className="grid md:grid-cols-2 gap-2">
-              <a href="#market-overview" className="text-sm text-primary hover:underline flex items-center gap-2"><BarChart3 className="w-4 h-4" /> Kuwait Pharmaceutical Market Overview</a>
-              <a href="#top-companies" className="text-sm text-primary hover:underline flex items-center gap-2"><Building2 className="w-4 h-4" /> Top Pharmaceutical Companies in Kuwait</a>
-              <a href="#companies-by-category" className="text-sm text-primary hover:underline flex items-center gap-2"><Users className="w-4 h-4" /> Companies by Category</a>
-              <a href="#regulatory-landscape" className="text-sm text-primary hover:underline flex items-center gap-2"><ShieldCheck className="w-4 h-4" /> Regulatory Landscape</a>
-              <a href="#distribution-channels" className="text-sm text-primary hover:underline flex items-center gap-2"><Truck className="w-4 h-4" /> Distribution Channels</a>
-              <a href="#growth-drivers" className="text-sm text-primary hover:underline flex items-center gap-2"><TrendingUp className="w-4 h-4" /> Market Growth Drivers</a>
-              <a href="#bionixus-support" className="text-sm text-primary hover:underline flex items-center gap-2"><Globe className="w-4 h-4" /> How BioNixus Supports Pharma in Kuwait</a>
-              <a href="#faq" className="text-sm text-primary hover:underline flex items-center gap-2"><BookOpen className="w-4 h-4" /> Frequently Asked Questions</a>
-            </div>
-          </div>
-        </section>
+              <nav className="mb-14 rounded-xl overflow-hidden border border-border shadow-sm" aria-label="Table of contents">
+                <div className="flex items-center gap-2 px-5 py-3.5 bg-muted/70 border-b border-border">
+                  <List className="w-3.5 h-3.5 text-primary" aria-hidden />
+                  <span className="text-[11px] font-extrabold uppercase tracking-[0.08em] text-primary">In this guide</span>
+                  <span className="ml-auto text-[11px] text-muted-foreground">{KUWAIT_PHARMA_GUIDE_TOC.length} sections</span>
+                </div>
+                <div className="p-5 grid sm:grid-cols-2 gap-x-6 gap-y-2.5 bg-background/80">
+                  {KUWAIT_PHARMA_GUIDE_TOC.map((item, i) => (
+                    <a key={item.href} href={item.href} className="flex items-start gap-2 text-[13px] text-primary hover:text-accent transition-colors group leading-snug scroll-mt-28">
+                      <span className="blog-toc-num group-hover:bg-accent transition-colors">{i + 1}</span>
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
+              </nav>
+
+              <div className="blog-article-body">
 
         {/* Market Overview */}
-        <section className="section-padding py-16" id="market-overview">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">
+        <section className="scroll-mt-28 py-12 md:py-14" id="market-overview">
+          <div>
+            <h2 className="text-2xl font-display font-bold tracking-tight text-primary mb-6 mt-14 border-t border-border pt-10 scroll-mt-28">
               Kuwait Pharmaceutical Market Overview
             </h2>
-            <div className="prose-body text-muted-foreground leading-relaxed space-y-4 max-w-4xl">
+            <div className="prose-body text-muted-foreground text-[17px] leading-[1.82] space-y-5 max-w-none">
               <p>
                 Kuwait&apos;s pharmaceutical market is valued at approximately <strong className="text-foreground">US$1.2 billion</strong> and is projected to grow at a 5.1&ndash;5.7% compound annual growth rate (CAGR) through 2030. Despite being one of the smaller GCC markets by population (4.9 million), Kuwait boasts the third-highest pharmaceutical spending per capita in the Gulf region at <strong className="text-foreground">$245 per person</strong>, reflecting the country&apos;s generous government-funded healthcare system.
               </p>
@@ -251,14 +488,28 @@ const KuwaitPharmaCompanies = () => {
         </section>
 
         {/* Top Pharmaceutical Companies Table */}
-        <section className="section-padding py-16 bg-muted/30" id="top-companies">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">
+        <section className="scroll-mt-28 py-12 md:py-14 bg-muted/30" id="top-companies">
+          <div>
+            <h2 className="blog-prose-h2 text-2xl md:text-[1.625rem] font-display font-bold leading-snug tracking-tight text-primary mb-5">
               Top Pharmaceutical Companies in Kuwait
             </h2>
-            <p className="text-muted-foreground mb-8 max-w-3xl">
-              The following table lists the major pharmaceutical companies operating in Kuwait — including local manufacturers, multinational corporation offices, regional players, and specialist distributors. This is not an exhaustive list of all 148+ registered companies, but represents the most significant players by market share and therapeutic coverage.
+            <p className="text-muted-foreground mb-6 max-w-3xl">
+              The following table lists the major pharmaceutical companies operating in Kuwait — including local manufacturers (KSPICO),{' '}
+              <strong className="text-foreground font-medium">pharmaceutical wholesalers and Kuwait medical distributors</strong>, multinational offices, regional Arab manufacturers,
+              and key tender-facing importers. It is not an exhaustive list of all 148+ registered entities, but covers the organisations most referenced in tenders, hospital supply, and retail.
             </p>
+
+            <h3 id="top-medical-distributors" className="text-xl md:text-2xl font-display font-semibold text-foreground mb-3 scroll-mt-24">
+              Frequently searched: top medical distributors in Kuwait (1–9)
+            </h3>
+            <p className="text-sm text-muted-foreground mb-4 max-w-3xl">
+              Below is an editorial ranking often used in pharma market mapping and sourcing discussions (not an official Ministry of Health league table). Brand portfolios and entity names change with mergers and tenders — validate against your formulary pipeline.
+            </p>
+            <ol className="list-decimal pl-6 space-y-2 text-muted-foreground mb-10 max-w-3xl">
+              {TOP_MEDICAL_DISTRIBUTORS_KUWAIT_RANKED_DISPLAY.map((label) => (
+                <li key={label}>{label}</li>
+              ))}
+            </ol>
 
             {/* Responsive table */}
             <div className="overflow-x-auto rounded-xl border border-border">
@@ -303,9 +554,9 @@ const KuwaitPharmaCompanies = () => {
         </section>
 
         {/* Companies by Category */}
-        <section className="section-padding py-16" id="companies-by-category">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">
+        <section className="scroll-mt-28 py-12 md:py-14" id="companies-by-category">
+          <div>
+            <h2 className="blog-prose-h2 text-2xl md:text-[1.625rem] font-display font-bold leading-snug tracking-tight text-primary mb-5">
               List of Pharmaceutical Companies in Kuwait by Category
             </h2>
             <p className="text-muted-foreground mb-10 max-w-3xl">
@@ -376,7 +627,8 @@ const KuwaitPharmaCompanies = () => {
                   <h3 className="text-lg font-display font-semibold text-foreground">Distributors &amp; Importers</h3>
                 </div>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Given that 95% of pharmaceuticals are imported, distributors are the backbone of Kuwait&apos;s pharmaceutical supply chain. Leading distributors handle registration, marketing, sales, warehousing, and last-mile delivery on behalf of international principals. YIACO and Alghanim are the largest, each representing dozens of global pharmaceutical brands.
+                  Given that 95% of pharmaceuticals are imported, distributor–importers anchor Kuwait&apos;s supply chain — handling registration liaison, tender execution, warehousing, hospital call points, and pharmacy fulfillment for international principals. Teams evaluating{' '}
+                  <strong className="text-foreground font-medium">pharma distribution Kuwait</strong> tenders typically engage the ranked wholesalers above alongside legacy networks such as YIACO and Alghanim; specific brand mandates vary by product and sourcing cycle.
                 </p>
                 <ul className="space-y-1.5 text-sm text-foreground">
                   {pharmaCompanies.filter(c => c.type === 'Distributor').map(c => (
@@ -389,9 +641,9 @@ const KuwaitPharmaCompanies = () => {
         </section>
 
         {/* Regulatory Landscape */}
-        <section className="section-padding py-16 bg-muted/30" id="regulatory-landscape">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">
+        <section className="scroll-mt-28 py-12 md:py-14 bg-muted/30" id="regulatory-landscape">
+          <div>
+            <h2 className="blog-prose-h2 text-2xl md:text-[1.625rem] font-display font-bold leading-snug tracking-tight text-primary mb-5">
               Pharma Companies in Kuwait: Regulatory Landscape
             </h2>
             <p className="text-muted-foreground mb-10 max-w-3xl">
@@ -471,9 +723,9 @@ const KuwaitPharmaCompanies = () => {
         </section>
 
         {/* Distribution Channels */}
-        <section className="section-padding py-16" id="distribution-channels">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">
+        <section className="scroll-mt-28 py-12 md:py-14" id="distribution-channels">
+          <div>
+            <h2 className="blog-prose-h2 text-2xl md:text-[1.625rem] font-display font-bold leading-snug tracking-tight text-primary mb-5">
               Drug Distribution Channels in Kuwait
             </h2>
             <p className="text-muted-foreground mb-10 max-w-3xl">
@@ -520,10 +772,50 @@ const KuwaitPharmaCompanies = () => {
           </div>
         </section>
 
+        <div
+          className="my-14 rounded-2xl p-7 md:p-9 relative overflow-hidden border border-accent/20 shadow-lg"
+          style={{ background: 'linear-gradient(135deg, hsl(var(--navy-deep)) 0%, hsl(var(--navy-medium)) 100%)' }}
+        >
+          <div className="absolute -top-16 -right-16 w-56 h-56 rounded-full opacity-[0.07] pointer-events-none" style={{ background: 'hsl(var(--accent))' }} aria-hidden />
+          <p className="text-[10px] font-extrabold tracking-[0.16em] uppercase mb-3" style={{ color: 'hsl(var(--accent))' }}>
+            BioNixus market research
+          </p>
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-white leading-snug tracking-tight mb-3 max-w-2xl">
+            Need proprietary Kuwait physician, payer, or tender intelligence?
+          </h2>
+          <p className="text-[15px] leading-relaxed text-white/65 mb-8 max-w-2xl">
+            Book a 30-minute briefing with BioNixus to align on formulary hypotheses, stakeholder mapping across MOH CMS and leading distributors, bilingual survey design,
+            or competitive intelligence timelines for Kuwait.
+          </p>
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3">
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-bold rounded-md transition-all hover:-translate-y-0.5 shadow-lg"
+              style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--navy-deep))' }}
+            >
+              Book a briefing call
+              <ArrowUpRight className="w-4 h-4 shrink-0" aria-hidden />
+            </Link>
+            <a
+              href="mailto:admin@bionixus.com?subject=Kuwait%20healthcare%20market%20research%20-%20discovery%20call"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold rounded-md border border-white/25 text-white hover:bg-white/10 transition-colors"
+            >
+              Email to schedule discovery
+              <ArrowUpRight className="w-4 h-4 shrink-0" aria-hidden />
+            </a>
+            <Link
+              to="/healthcare-market-research"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-white/85 hover:text-white transition-colors underline-offset-4 hover:underline"
+            >
+              View international research playbook
+            </Link>
+          </div>
+        </div>
+
         {/* Growth Drivers */}
-        <section className="section-padding py-16 bg-muted/30" id="growth-drivers">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">
+        <section className="scroll-mt-28 py-12 md:py-14 bg-muted/30" id="growth-drivers">
+          <div>
+            <h2 className="blog-prose-h2 text-2xl md:text-[1.625rem] font-display font-bold leading-snug tracking-tight text-primary mb-5">
               Kuwait Pharmaceutical Market Growth Drivers
             </h2>
             <p className="text-muted-foreground mb-10 max-w-3xl">
@@ -567,13 +859,21 @@ const KuwaitPharmaCompanies = () => {
         </section>
 
         {/* BioNixus Support */}
-        <section className="section-padding py-16" id="bionixus-support">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">
+        <section className="scroll-mt-28 py-12 md:py-14" id="bionixus-support">
+          <div>
+            <h2 className="blog-prose-h2 text-2xl md:text-[1.625rem] font-display font-bold leading-snug tracking-tight text-primary mb-5">
               How BioNixus Supports Pharma Companies in Kuwait
             </h2>
-            <p className="text-muted-foreground mb-10 max-w-3xl">
-              BioNixus is a leading healthcare market research company with deep expertise in the Kuwaiti and wider GCC pharmaceutical market. We help pharma, biotech, and medtech companies make evidence-based strategic decisions through:
+            <p className="text-[17px] text-muted-foreground mb-6 max-w-3xl leading-[1.82]">
+              BioNixus is a healthcare market research firm supporting pharmaceutical, biotech, and medtech teams that need evidence-based decisions in Kuwait and the wider GCC.
+              Our consultants scope{' '}
+              <Link to="/contact" className="text-primary font-semibold underline underline-offset-2 hover:no-underline">
+                executive-grade market research engagements
+              </Link>{' '}
+              — from rapid landscape reads to multi-country physician studies.
+            </p>
+            <p className="text-sm text-muted-foreground mb-10 max-w-3xl">
+              Planning a launch, tender refresh, or distribution strategy review? Start with a guided walkthrough of this guide, then invite our market access leads to support your next board readout.
             </p>
 
             <div className="grid md:grid-cols-2 gap-6 mb-10">
@@ -595,38 +895,97 @@ const KuwaitPharmaCompanies = () => {
                   desc: 'Comprehensive market assessment for pharma companies entering Kuwait — including regulatory pathway analysis, partner identification, KOL engagement, and go-to-market planning.',
                 },
               ].map((s) => (
-                <div key={s.title} className="bg-card border border-border rounded-xl p-6">
+                <div key={s.title} className="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md hover:border-primary/15 transition-shadow">
                   <h3 className="text-lg font-display font-semibold text-foreground mb-3">{s.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
                 </div>
               ))}
             </div>
+
+            <div className="rounded-2xl border border-primary/25 bg-gradient-to-br from-primary/[0.06] to-muted/40 p-6 md:p-8 shadow-inner">
+              <p className="text-[11px] font-extrabold tracking-[0.12em] uppercase text-primary mb-2">Prefer a conversation?</p>
+              <h3 className="font-display text-lg font-bold text-foreground mb-3">Book a Kuwait pharmaceutical market research advisory session</h3>
+              <p className="text-sm text-muted-foreground mb-6 max-w-xl leading-relaxed">
+                Tell us about your molecule, lifecycle stage, and meeting date. BioNixus maps the right stakeholder mix across MOH, hospitals, wholesalers, and retail so your board materials reflect Kuwait-specific evidence.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md text-sm font-bold bg-primary text-primary-foreground hover:bg-primary/90 transition-colors shadow-sm"
+                >
+                  Open the contact form
+                  <ArrowUpRight className="w-4 h-4 shrink-0" aria-hidden />
+                </Link>
+                <a
+                  href="tel:+18884655557"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md text-sm font-semibold border border-border bg-background hover:bg-muted/60 transition-colors"
+                >
+                  <Phone className="w-4 h-4 shrink-0 text-primary" aria-hidden />
+                  Call US +1 888 465 5557
+                </a>
+                <a
+                  href="tel:+447727666682"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md text-sm font-semibold border border-border bg-background hover:bg-muted/60 transition-colors"
+                >
+                  <Phone className="w-4 h-4 shrink-0 text-primary" aria-hidden />
+                  Call UK +44 7727 666682
+                </a>
+                <a
+                  href="mailto:admin@bionixus.com?subject=Kuwait%20pharma%20market%20research%20advisory"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md text-sm font-semibold border border-border bg-background hover:bg-muted/60 transition-colors"
+                >
+                  Email admin@bionixus.com
+                  <ArrowUpRight className="w-4 h-4 shrink-0 opacity-70" aria-hidden />
+                </a>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="section-padding py-16 bg-muted/30" id="faq">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-10">
-              Frequently Asked Questions
+        <section className="section-padding py-16" id="gcc-directories"><div className="container-wide max-w-5xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">Pharmaceutical companies across the GCC</h2>
+          <p className="text-muted-foreground mb-8 max-w-3xl">Compare the Kuwait pharmaceutical industry with BioNixus company directories for the other Gulf and MENA markets.</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            <Link to="/pharmaceutical-companies-saudi-arabia" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in Saudi Arabia <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
+            <Link to="/pharmaceutical-companies-uae" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in UAE <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
+            <Link to="/pharmaceutical-companies-egypt" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in Egypt <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
+            <Link to="/pharmaceutical-companies-qatar" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in Qatar <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
+            <Link to="/pharmaceutical-companies-oman" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in Oman <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
+            <Link to="/pharmaceutical-companies-bahrain" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in Bahrain <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
+            <Link to="/gcc-pharma-market-report-2026" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">GCC pharma market report 2026 <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
+            <Link to="/market-reports/gcc-biosimilars-market-report" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">GCC biosimilars &amp; generic injectables market report <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
+          </div>
+        </div></section>
+
+        <section className="scroll-mt-28 py-12 md:py-14 bg-muted/40 border-y border-border/70" id="faq">
+          <div>
+            <h2 className="font-display text-2xl font-bold tracking-tight text-primary mb-8 flex flex-wrap items-center gap-3">
+              <span className="inline-flex px-2 py-0.5 text-[10px] font-extrabold tracking-[0.1em] uppercase rounded-sm" style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--navy-deep))' }}>
+                FAQ
+              </span>
+              Frequently asked questions
             </h2>
-            <div className="space-y-6">
+            <div className="rounded-xl overflow-hidden border border-border bg-background shadow-sm">
               {faqItems.map((faq) => (
-                <div key={faq.q} className="bg-card border border-border rounded-xl p-6">
-                  <h3 className="text-lg font-display font-semibold text-foreground mb-3">{faq.q}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{faq.a}</p>
-                </div>
+                <details key={faq.q} className="group border-b border-border last:border-b-0 bg-card px-5 md:px-6">
+                  <summary className="flex items-center justify-between cursor-pointer gap-4 text-left text-[15px] font-semibold text-primary hover:text-accent-foreground py-5 list-none [&::-webkit-details-marker]:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+                    <span>{faq.q}</span>
+                    <ChevronDown className="w-4 h-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" aria-hidden />
+                  </summary>
+                  <p className="text-[15px] text-muted-foreground leading-relaxed pb-5 border-t border-border/70 pt-4">{faq.a}</p>
+                </details>
               ))}
             </div>
           </div>
         </section>
 
         {/* Data Sources */}
-        <section className="section-padding py-12" id="methodology">
-          <div className="container-wide max-w-5xl mx-auto">
-            <div className="bg-card border border-border rounded-xl p-8">
-              <h2 className="text-xl font-display font-semibold text-foreground mb-4 flex items-center gap-2">
-                <BookOpen className="w-5 h-5 text-primary" />
+        <section className="scroll-mt-28 py-10 md:py-14" id="methodology">
+          <div>
+            <div className="bg-card border border-border rounded-2xl p-6 md:p-8 shadow-sm">
+              <h2 className="text-xl md:text-[1.35rem] font-display font-bold text-foreground mb-5 flex flex-wrap items-center gap-3">
+                <BookOpen className="w-5 h-5 text-primary shrink-0" aria-hidden />
                 Data Sources &amp; Methodology
               </h2>
               <p className="text-sm text-muted-foreground leading-relaxed mb-4">
@@ -634,42 +993,165 @@ const KuwaitPharmaCompanies = () => {
               </p>
               <ul className="text-sm text-muted-foreground space-y-2 mb-6">
                 <li>BioNixus Middle East &amp; Africa Pharmaceutical Market Quarterly Report, Q3 2024</li>
-                <li>Ken Research — Kuwait Pharmaceutical Market Size &amp; Outlook, 2025&ndash;2030</li>
-                <li>Grand View Research — Kuwait Pharmaceutical Market Report, 2025&ndash;2030</li>
+                <li>BioNixus market analysis — Kuwait pharmaceutical market size &amp; outlook, 2025&ndash;2030</li>
                 <li>Kuwait Ministry of Health — Drug &amp; Food Control Administration publications</li>
                 <li>Ministerial Decree No. 302/2019 on Registration &amp; Pricing of Pharmaceutical Products</li>
-                <li>KSPICO, YIACO, and company annual reports and corporate websites</li>
+                <li>KSPICO, Kuwait pharmaceutical distributors&apos; disclosures, YIACO, Alghanim, and representative company websites</li>
                 <li>BioNixus proprietary research from physician surveys across Kuwait (2024&ndash;2025)</li>
               </ul>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Company data reflects publicly available information as of February 2026. Market valuations are estimated based on BioNixus and third-party research. For customised market intelligence on Kuwait, <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.
+              <p className="text-sm text-muted-foreground leading-relaxed mb-8">
+                Company data reflects publicly available information as of May 2026. Market valuations are estimates from BioNixus and cited third-party research. When you require proprietary sizing, analogue benchmarking, or HCP verbatim feedback,{' '}
+                <Link to="/contact" className="text-primary font-semibold underline underline-offset-2 hover:no-underline">
+                  book a market research briefing
+                </Link>
+                {' '}with our consultants.
               </p>
+              <details className="rounded-lg border border-dashed border-border bg-muted/20 px-4 py-3 text-sm">
+                <summary className="cursor-pointer font-semibold text-foreground flex items-center gap-2 list-none [&::-webkit-details-marker]:hidden">
+                  <Share2 className="w-4 h-4 text-primary shrink-0" aria-hidden /> Citation &amp; CC BY licence
+                </summary>
+                <p className="mt-3 pt-3 border-t border-border/70 text-xs text-muted-foreground leading-relaxed">
+                  BioNixus. &quot;Pharmaceutical Companies in Kuwait: Top Medical Distributors, MNCs &amp; Regulatory Guide 2026.&quot; BioNixus Healthcare Market Research, May 2026,&nbsp;
+                  <a href={citationUrl} className="text-primary hover:underline break-all">{citationUrl}</a>. Licensed under{' '}
+                  <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">CC&nbsp;BY&nbsp;4.0</a>.
+                </p>
+              </details>
             </div>
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="section-padding py-16 bg-primary text-primary-foreground">
-          <div className="container-wide max-w-5xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold mb-4">
-              Need Market Intelligence on Kuwait?
-            </h2>
-            <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-              BioNixus delivers custom pharmaceutical market research across Kuwait and the GCC — physician surveys, competitive intelligence, market access strategy, and KOL mapping for pharma, biotech, and medtech companies.
+              <section className="mt-14 rounded-2xl border border-border bg-muted/25 p-5 lg:p-7" aria-label="Explore related BioNixus research">
+                <h2 className="font-display text-lg font-bold text-foreground mb-1 flex flex-wrap items-center gap-2">
+                  <ArrowUpRight className="w-4 h-4 text-accent shrink-0" aria-hidden />
+                  Explore related research guides
+                </h2>
+                <p className="text-sm text-muted-foreground mb-4 leading-relaxed max-w-2xl">
+                  Continue building your GCC dossier stack or escalate to BioNixus for custom Kuwait market sizing, payer panels, distributor diligence, or tender intelligence.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { to: '/healthcare-market-research', label: 'Healthcare market research hub' },
+                    { to: '/healthcare-market-research/uae', label: 'UAE healthcare market research' },
+                    { to: '/pharmaceutical-companies-uae', label: 'Pharmaceutical companies in the UAE' },
+                    { to: '/pharmaceutical-companies-saudi-arabia', label: 'Pharma companies in Saudi Arabia' },
+                    { to: '/gcc-market-access-guide', label: 'GCC pharmaceutical market access' },
+                  ].map(({ to, label }) => (
+                    <Link
+                      key={to}
+                      to={to}
+                      className="inline-flex items-center gap-1 px-3 py-1.5 border border-border bg-background rounded-md text-sm font-medium text-foreground hover:border-accent/50 hover:bg-accent/5 transition-colors"
+                    >
+                      {label}
+                    </Link>
+                  ))}
+                </div>
+              </section>
+
+            </div>
+
+            </article>
+
+            <aside className="hidden lg:flex flex-col lg:sticky lg:top-24 space-y-4 self-start shrink-0 w-[272px]" aria-label="Kuwait pharma research concierge">
+              <nav className="rounded-xl overflow-hidden border border-border shadow-sm max-h-[min(52vh,380px)] flex flex-col" aria-label="On this page">
+                <div className="flex items-center gap-2 px-4 py-3 shrink-0" style={{ background: 'hsl(var(--primary))' }}>
+                  <List className="w-3.5 h-3.5 shrink-0" style={{ color: 'hsl(var(--accent))' }} aria-hidden />
+                  <span className="text-[11px] font-extrabold uppercase tracking-[0.1em] text-white leading-tight">On this page</span>
+                </div>
+                <div className="py-2 bg-background overflow-y-auto min-h-0">
+                  {KUWAIT_PHARMA_GUIDE_TOC.map((item) => (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      className="block px-4 py-2 text-[13px] text-muted-foreground border-l-2 border-transparent hover:border-accent hover:bg-accent/5 hover:text-primary transition-all leading-snug"
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
+              </nav>
+
+              <div className="rounded-xl p-5 relative overflow-hidden border border-accent/25" style={{ background: 'linear-gradient(160deg, hsl(var(--navy-deep)) 0%, hsl(var(--navy-medium)) 100%)' }}>
+                <div className="absolute -top-8 -right-8 w-28 h-28 rounded-full opacity-[0.12] pointer-events-none" style={{ background: 'hsl(var(--accent))' }} aria-hidden />
+                <p className="text-[10px] font-extrabold tracking-[0.14em] uppercase mb-2 relative z-10" style={{ color: 'hsl(var(--accent))' }}>
+                  Kuwait market desk
+                </p>
+                <p className="font-display text-base font-bold text-white leading-snug mb-4 relative z-10">
+                  Speak with BioNixus healthcare market researchers
+                </p>
+                <Link
+                  to="/contact"
+                  className="relative z-10 flex items-center justify-center gap-1.5 py-2.5 text-[13px] font-bold rounded-md w-full transition-all hover:-translate-y-0.5 mb-3"
+                  style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--navy-deep))' }}
+                >
+                  Book a briefing
+                  <ArrowUpRight className="w-3.5 h-3.5 shrink-0" aria-hidden />
+                </Link>
+                <p className="text-[10px] uppercase tracking-[0.12em] text-white/45 mb-2 relative z-10">Call the team</p>
+                <div className="space-y-2 relative z-10">
+                  <a href="tel:+18884655557" className="flex items-center gap-2 text-[13px] text-white/90 hover:text-white">
+                    <Phone className="w-3.5 h-3.5 shrink-0 text-accent" aria-hidden /> US +1 888 465 5557
+                  </a>
+                  <a href="tel:+447727666682" className="flex items-center gap-2 text-[13px] text-white/90 hover:text-white">
+                    <Phone className="w-3.5 h-3.5 shrink-0 text-accent" aria-hidden /> UK +44 7727 666682
+                  </a>
+                </div>
+                <a href="mailto:admin@bionixus.com?subject=Kuwait%20healthcare%20market%20research%20-%20BioNixus" className="relative z-10 mt-4 block text-center text-[11px] font-semibold hover:underline" style={{ color: 'hsl(var(--accent))' }}>
+                  admin@bionixus.com
+                </a>
+              </div>
+
+              <div className="rounded-xl border border-border bg-card p-4 text-center shadow-sm">
+                <p className="text-[11px] text-muted-foreground mb-3 leading-snug">
+                  Mention &quot;Kuwait distributor ranking&quot; in your note for a faster routed response from our GCC practice lead.
+                </p>
+                <Link to="/services" className="text-[13px] font-semibold text-primary hover:underline">
+                  Overview of BioNixus services
+                </Link>
+              </div>
+            </aside>
+
+          </div>
+        </div>
+
+        <section className="py-16 md:py-20 px-6 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(var(--navy-deep)) 0%, hsl(var(--navy-medium)) 100%)' }}>
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--gold-light)) 55%, transparent 100%)' }} aria-hidden />
+          <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full opacity-[0.08] pointer-events-none" style={{ background: 'hsl(var(--accent))' }} aria-hidden />
+          <div className="max-w-screen-lg mx-auto text-center px-4 relative z-10">
+            <p className="text-[10px] font-extrabold tracking-[0.16em] uppercase mb-3" style={{ color: 'hsl(var(--accent))' }}>
+              Expert consultation
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-white leading-tight mb-4 text-balance">
+              Ready for a Kuwait pharma market intelligence engagement?
+            </h2>
+            <p className="text-[16px] text-white/65 leading-relaxed max-w-2xl mx-auto mb-10">
+              BioNixus designs Arabic–English instruments, recruits MOH-aligned stakeholders, monitors tender cycles, and packages board-ready narratives for pharma, biotech, and medtech teams across the GCC.
+            </p>
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 justify-center">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-md text-sm font-bold transition-all hover:-translate-y-0.5 shadow-xl"
+                style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--navy-deep))' }}
               >
-                Request a Proposal <ArrowRight className="w-4 h-4" />
+                Start your proposal
+                <ArrowUpRight className="w-4 h-4 shrink-0" aria-hidden />
               </Link>
               <Link
                 to="/services"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-primary-foreground font-semibold hover:bg-white/20 transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-md text-sm font-bold border border-white/30 text-white hover:bg-white/10 transition-colors"
               >
-                View Our Services
+                View services catalogue <ArrowRight className="w-4 h-4 shrink-0" aria-hidden />
               </Link>
+            </div>
+            <div className="mt-8 flex flex-col sm:flex-row flex-wrap gap-6 justify-center text-sm text-white/70">
+              <a href="tel:+18884655557" className="hover:text-white inline-flex items-center justify-center gap-2">
+                <Phone className="w-4 h-4 shrink-0 text-accent" aria-hidden /> US +1 888 465 5557
+              </a>
+              <a href="tel:+447727666682" className="hover:text-white inline-flex items-center justify-center gap-2">
+                <Phone className="w-4 h-4 shrink-0 text-accent" aria-hidden /> UK +44 7727 666682
+              </a>
+              <a href="mailto:admin@bionixus.com?subject=Kuwait%20market%20research%20proposal" className="hover:text-white underline-offset-4 hover:underline">
+                Email proposal requests: admin@bionixus.com
+              </a>
             </div>
           </div>
         </section>

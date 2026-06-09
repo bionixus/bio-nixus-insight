@@ -1,3 +1,7 @@
+/**
+ * Legacy sitemap generator — prefer `scripts/generate-sitemap.mjs` (npm run generate-sitemap).
+ * Redirect sources (/conf, /ar/conf, legacy blog slugs) are excluded there via blog-legacy-redirects.mjs.
+ */
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -46,7 +50,12 @@ const STATIC_ROUTES = [
   '/quantitative-healthcare-market-research',
   '/qualitative-market-research',
   '/gcc-pharmaceutical-market-research',
+  '/nf1-pharma-market-research',
+  '/desmoid-tumor-pharma-market-research',
   '/uae-pharmaceutical-market-research',
+  '/egypt-pharmaceutical-market-research',
+  '/pharma-fieldwork-egypt',
+  '/market-research-by-industry',
   '/gcc-hcp-recruitment-market-research',
   '/healthcare-market-research-agency-gcc',
   '/uae-market-access-research',
@@ -101,9 +110,12 @@ const STATIC_ROUTES = [
   '/blog/middle-east-healthcare-market-statistics-2026',
   '/blog/nupco-saudi-arabia-tendering-guide',
   '/blog/abu-dhabi-doh-vs-dubai-dha-formulary-guide',
+  '/blog/neurofibromatosis',
+  '/blog/desmoid-tumors-nirogacestat-pharma-market-access',
   '/blog/regional-crisis-impact-middle-east-economies-healthcare-2026',
   '/blog/digital-therapeutics-regulation-mena-markets',
   '/blog/top-healthcare-market-research-companies-uae',
+  '/blog/top-healthcare-market-research-companies-kuwait',
   '/blog/top-healthcare-market-research-firms-saudi-arabia',
   '/blog/top-market-research-companies-egypt-2026',
   '/ar/blog',
@@ -111,8 +123,8 @@ const STATIC_ROUTES = [
   '/ar/contacts',
   '/insights/top-market-research-companies-egypt-2026',
   '/ar/insights/top-market-research-companies-egypt-2026',
-  '/conf',
-  '/ar/conf',
+  '/strategic-portfolio',
+  '/ar/strategic-portfolio',
   '/healthcare-market-research/egypt',
 ];
 
@@ -120,7 +132,9 @@ function routeMeta(url) {
   if (url === '/') return { priority: '1.0', changefreq: 'weekly' };
   if (url === '/healthcare-market-research') return { priority: '0.95', changefreq: 'weekly' };
   if (url === '/global-websites/united-arab-emirates') return { priority: '0.95', changefreq: 'weekly' };
-  if (url === '/conf' || url === '/ar/conf') return { priority: '0.95', changefreq: 'weekly' };
+  if (url === '/strategic-portfolio' || url === '/ar/strategic-portfolio') {
+    return { priority: '0.72', changefreq: 'monthly' };
+  }
   if (url === '/bionixus-market-research-middle-east') return { priority: '0.9', changefreq: 'weekly' };
   if (url.includes('top-market-research-companies-egypt')) return { priority: '0.9', changefreq: 'weekly' };
   if (url.startsWith('/blog') || url.startsWith('/ar/blog')) return { priority: '0.85', changefreq: 'daily' };
@@ -132,6 +146,9 @@ function routeMeta(url) {
   if (url.startsWith('/services/')) return { priority: '0.8', changefreq: 'monthly' };
   if (url.startsWith('/pharmaceutical-companies-')) return { priority: '0.85', changefreq: 'monthly' };
   if (url.includes('pharmaceutical-market-research') || url.includes('market-access')) return { priority: '0.85', changefreq: 'weekly' };
+  if (url === '/nf1-pharma-market-research' || url === '/desmoid-tumor-pharma-market-research') {
+    return { priority: '0.92', changefreq: 'weekly' };
+  }
   if (url.includes('real-world-evidence')) return { priority: '0.8', changefreq: 'monthly' };
   return { priority: '0.7', changefreq: 'monthly' };
 }

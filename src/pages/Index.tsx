@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
+import EmeaSignalsSection from '@/components/home/EmeaSignalsSection';
 import ServicesSection from '@/components/ServicesSection';
 import GeographicCoverageSection from '@/components/GeographicCoverageSection';
 import MethodologySection from '@/components/MethodologySection';
@@ -10,8 +11,10 @@ import TherapeuticAreasSection from '@/components/TherapeuticAreasSection';
 import StatsSection from '@/components/StatsSection';
 import BlogSection from '@/components/BlogSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
+import HomePathwaysSection, { type PathwayCard } from '@/components/home/HomePathwaysSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import { CTASection } from '@/components/shared/CTASection';
 import { useSanityLatestInsights } from '@/hooks/useSanityBlog';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { useInitialData } from '@/contexts/InitialDataContext';
@@ -23,7 +26,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const Index = () => {
   const { hash } = useLocation();
-  const { language, t } = useLanguage();
+  const { language } = useLanguage();
   const { data: routeData } = useInitialData();
   const ssrHomeInsights = Array.isArray(routeData.homeLatestInsights)
     ? (routeData.homeLatestInsights as BlogPost[])
@@ -35,7 +38,8 @@ const Index = () => {
   const basePath = languagePaths[language] || '/';
   const contactHref =
     language === 'fr' ? '/fr/contacts' : language === 'ar' ? '/ar/contacts' : `${basePath === '/' ? '' : basePath}/contact`;
-  const featuredCards = [
+
+  const featuredCards: PathwayCard[] = [
     ...(language === 'ar'
       ? [
           {
@@ -129,7 +133,6 @@ const Index = () => {
         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     } else {
-      // No hash: open at hero section (top of page)
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [hash]);
@@ -146,35 +149,16 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <section
-          className="section-padding py-4 bg-background"
-          aria-labelledby="home-emea-signals-heading"
-        >
-          <div className="container-wide max-w-6xl mx-auto">
-            <h2
-              id="home-emea-signals-heading"
-              className="text-center text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] text-muted-foreground mb-4"
-            >
-              {t.indexLanding.emeaSignalsH2}
-            </h2>
-          </div>
-          <div className="container-wide max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
-            {[
-              'Europe and Middle East Coverage',
-              'Healthcare market research for pharmaceutical decisions',
-              'Physician, payer, and hospital intelligence',
-              'GDPR / EMA / MOH / SFDA aligned',
-            ].map((item) => (
-              <div
-                key={item}
-                className="rounded-lg border border-border bg-card p-3 text-sm text-foreground text-center"
-              >
-                {item}
-              </div>
-            ))}
-          </div>
-        </section>
+        <EmeaSignalsSection />
         <ServicesSection />
+        <StatsSection />
+        <div className="cv-auto">
+          <BlogSection
+            posts={homeArticlePosts ?? undefined}
+            isLoading={blogLoading && !ssrHomeInsights?.length}
+          />
+        </div>
+        <TestimonialsSection />
         <div className="cv-auto">
           <GeographicCoverageSection />
         </div>
@@ -182,58 +166,8 @@ const Index = () => {
           <TherapeuticAreasSection />
         </div>
         <div className="cv-auto">
-          <StatsSection />
+          <HomePathwaysSection cards={featuredCards} />
         </div>
-        <div className="cv-auto">
-          <BlogSection
-            posts={homeArticlePosts ?? undefined}
-            isLoading={blogLoading && !ssrHomeInsights?.length}
-          />
-        </div>
-        <div className="cv-auto">
-          <TestimonialsSection />
-        </div>
-        <section className="section-padding py-10 bg-muted/20">
-          <div className="container-wide max-w-6xl mx-auto">
-            <h2 className="text-2xl font-display font-semibold text-foreground mb-4">
-              Priority Healthcare Market Research Pathways for Europe and the Middle East
-            </h2>
-            <p className="text-muted-foreground mb-6">
-              Use these{' '}
-              <Link to="/healthcare-market-research" className="text-primary underline">
-                healthcare market research
-              </Link>{' '}
-              pathways to support pharmaceutical launch, market access, and growth decisions across Europe and the
-              Middle East. Compare methods in our{' '}
-              <Link to="/market-research" className="text-primary underline">
-                market research
-              </Link>{' '}
-              hub.
-            </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {featuredCards.map((card) => (
-                <Link
-                  key={card.to}
-                  to={card.to}
-                  className={`rounded-xl border p-5 transition-all hover:shadow-md ${
-                    card.highlight
-                      ? 'border-primary/40 bg-gradient-to-br from-primary/10 via-card to-card hover:border-primary/60'
-                      : 'border-border bg-card hover:border-primary/40'
-                  }`}
-                >
-                  {card.label ? (
-                    <span className="inline-flex mb-3 rounded-full bg-primary/15 px-2.5 py-1 text-[11px] font-semibold text-primary">
-                      {card.label}
-                    </span>
-                  ) : null}
-                  <h3 className="font-semibold text-foreground mb-1">{card.title}</h3>
-                  <p className="text-sm text-muted-foreground">{card.description}</p>
-                  {card.decisionHint ? <p className="mt-3 text-xs font-medium text-primary">{card.decisionHint}</p> : null}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
         <div className="cv-auto">
           <MethodologySection nestUnderParentH1 />
         </div>
@@ -245,17 +179,18 @@ const Index = () => {
             className="py-14 bg-transparent"
           />
           <div className="container-wide max-w-4xl mx-auto pb-12 text-center text-sm text-muted-foreground">
-            <Link to="/faq" className="text-primary font-medium hover:underline">
+            <Link to="/faq" className="text-primary font-medium hover:underline cursor-pointer">
               {homeFaq.ctaFullFaq}
             </Link>
             <span className="mx-2" aria-hidden="true">
               ·
             </span>
-            <Link to={contactHref} className="text-primary font-medium hover:underline">
+            <Link to={contactHref} className="text-primary font-medium hover:underline cursor-pointer">
               {homeFaq.ctaProposal}
             </Link>
           </div>
         </div>
+        <CTASection variant="research-proposal" />
         <div className="cv-auto">
           <ContactSection embedOnHomePage />
         </div>

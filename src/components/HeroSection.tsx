@@ -64,6 +64,26 @@ const HeroSection = () => {
             ))}
           </div>
 
+          {/* Trust metrics */}
+          <ul
+            className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10 animate-fade-up animation-delay-600"
+            aria-label="Company credentials"
+          >
+            {[
+              { value: '127+', label: 'Projects delivered' },
+              { value: '48', label: 'Global clients' },
+              { value: '17+', label: 'Countries covered' },
+            ].map((metric) => (
+              <li
+                key={metric.label}
+                className="rounded-xl border border-white/20 bg-white/10 px-5 py-4 text-center"
+              >
+                <p className="text-2xl md:text-3xl font-display font-semibold text-white">{metric.value}</p>
+                <p className="text-sm text-white/75 mt-1">{metric.label}</p>
+              </li>
+            ))}
+          </ul>
+
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-up animation-delay-600">
             <Link

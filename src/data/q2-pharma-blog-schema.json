@@ -1,0 +1,991 @@
+{
+  "obesity-pbm-coverage-lilly-portfolio-q2-2026": {
+    "articleSection": "Clinical Development",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "Eli Lilly"
+      },
+      {
+        "@type": "Drug",
+        "name": "Lilly obesity portfolio",
+        "alternateName": [
+          "orforglipron",
+          "tirzepatide"
+        ]
+      },
+      {
+        "@type": "MedicalSpecialty",
+        "name": "Endocrinology"
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  },
+  "decnupaz-pivekimab-bpdcn-fda-approval-2026": {
+    "articleSection": "Oncology",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "ImmunoGen / AbbVie"
+      },
+      {
+        "@type": "Drug",
+        "name": "Decnupaz",
+        "alternateName": [
+          "pivekimab sunirine"
+        ]
+      },
+      {
+        "@type": "MedicalSpecialty",
+        "name": "Oncology"
+      },
+      {
+        "@type": "Organization",
+        "name": "U.S. Food and Drug Administration",
+        "alternateName": [
+          "FDA"
+        ]
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  },
+  "camizestrant-pdufa-extension-astrazeneca-2026": {
+    "articleSection": "Oncology",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "AstraZeneca"
+      },
+      {
+        "@type": "Drug",
+        "name": "Camizestrant",
+        "alternateName": [
+          "camizestrant"
+        ]
+      },
+      {
+        "@type": "MedicalSpecialty",
+        "name": "Oncology"
+      },
+      {
+        "@type": "Organization",
+        "name": "U.S. Food and Drug Administration",
+        "alternateName": [
+          "FDA"
+        ]
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  },
+  "eli-lilly-vaccine-acquisitions-curevo-limmatech-2026": {
+    "articleSection": "Regulatory & Policy",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "Eli Lilly"
+      },
+      {
+        "@type": "Drug",
+        "name": "Lilly vaccine platform",
+        "alternateName": [
+          "multi-asset vaccine portfolio"
+        ]
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  },
+  "datroway-datopotamab-tnbc-fda-approval-2026": {
+    "articleSection": "Oncology",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "AstraZeneca / Daiichi Sankyo"
+      },
+      {
+        "@type": "Drug",
+        "name": "Datroway",
+        "alternateName": [
+          "datopotamab deruxtecan"
+        ]
+      },
+      {
+        "@type": "MedicalSpecialty",
+        "name": "Oncology"
+      },
+      {
+        "@type": "Organization",
+        "name": "U.S. Food and Drug Administration",
+        "alternateName": [
+          "FDA"
+        ]
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  },
+  "hepcludex-bulevirtide-hdv-fda-approval-2026": {
+    "articleSection": "Regulatory & Policy",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "Gilead Sciences"
+      },
+      {
+        "@type": "Drug",
+        "name": "Hepcludex",
+        "alternateName": [
+          "bulevirtide"
+        ]
+      },
+      {
+        "@type": "Organization",
+        "name": "U.S. Food and Drug Administration",
+        "alternateName": [
+          "FDA"
+        ]
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  },
+  "jascayd-nerandomilast-ema-chmp-ipf-2026": {
+    "articleSection": "Regulatory & Policy",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "Boehringer Ingelheim"
+      },
+      {
+        "@type": "Drug",
+        "name": "Jascayd",
+        "alternateName": [
+          "nerandomilast"
+        ]
+      },
+      {
+        "@type": "MedicalSpecialty",
+        "name": "Rare diseases"
+      },
+      {
+        "@type": "Organization",
+        "name": "European Medicines Agency",
+        "alternateName": [
+          "EMA"
+        ]
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  },
+  "vijoice-alpelisib-pros-ema-chmp-2026": {
+    "articleSection": "Regulatory & Policy",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "Novartis"
+      },
+      {
+        "@type": "Drug",
+        "name": "Vijoice",
+        "alternateName": [
+          "alpelisib"
+        ]
+      },
+      {
+        "@type": "MedicalSpecialty",
+        "name": "Rare diseases"
+      },
+      {
+        "@type": "Organization",
+        "name": "European Medicines Agency",
+        "alternateName": [
+          "EMA"
+        ]
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  },
+  "baxfendy-baxdrostat-hypertension-fda-2026": {
+    "articleSection": "Market Access",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "AstraZeneca"
+      },
+      {
+        "@type": "Drug",
+        "name": "Baxfendy",
+        "alternateName": [
+          "baxdrostat"
+        ]
+      },
+      {
+        "@type": "Organization",
+        "name": "U.S. Food and Drug Administration",
+        "alternateName": [
+          "FDA"
+        ]
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  },
+  "beqalzi-sonrotoclax-mcl-fda-2026": {
+    "articleSection": "Oncology",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "BeiGene"
+      },
+      {
+        "@type": "Drug",
+        "name": "Beqalzi",
+        "alternateName": [
+          "sonrotoclax"
+        ]
+      },
+      {
+        "@type": "MedicalSpecialty",
+        "name": "Oncology"
+      },
+      {
+        "@type": "Organization",
+        "name": "U.S. Food and Drug Administration",
+        "alternateName": [
+          "FDA"
+        ]
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  },
+  "langlara-insulin-glargine-biosimilar-fda-2026": {
+    "articleSection": "Market Access",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "Lannett"
+      },
+      {
+        "@type": "Drug",
+        "name": "Langlara",
+        "alternateName": [
+          "insulin glargine-aldy"
+        ]
+      },
+      {
+        "@type": "MedicalSpecialty",
+        "name": "Endocrinology"
+      },
+      {
+        "@type": "Organization",
+        "name": "U.S. Food and Drug Administration",
+        "alternateName": [
+          "FDA"
+        ]
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  },
+  "cenrifki-tolebrutinib-nrspms-ema-chmp-2026": {
+    "articleSection": "Industry Insights",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "Sanofi"
+      },
+      {
+        "@type": "Drug",
+        "name": "Cenrifki",
+        "alternateName": [
+          "tolebrutinib"
+        ]
+      },
+      {
+        "@type": "Organization",
+        "name": "European Medicines Agency",
+        "alternateName": [
+          "EMA"
+        ]
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  },
+  "itvisma-onasemnogene-sma-ema-chmp-2026": {
+    "articleSection": "Regulatory & Policy",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "Novartis"
+      },
+      {
+        "@type": "Drug",
+        "name": "Itvisma",
+        "alternateName": [
+          "onasemnogene abeparvovec"
+        ]
+      },
+      {
+        "@type": "MedicalSpecialty",
+        "name": "Rare diseases"
+      },
+      {
+        "@type": "Organization",
+        "name": "European Medicines Agency",
+        "alternateName": [
+          "EMA"
+        ]
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  },
+  "redemplo-plozasiran-fcs-ema-chmp-2026": {
+    "articleSection": "Clinical Development",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "Arrowhead Pharmaceuticals"
+      },
+      {
+        "@type": "Drug",
+        "name": "Redemplo",
+        "alternateName": [
+          "plozasiran"
+        ]
+      },
+      {
+        "@type": "MedicalSpecialty",
+        "name": "Endocrinology"
+      },
+      {
+        "@type": "MedicalSpecialty",
+        "name": "Rare diseases"
+      },
+      {
+        "@type": "Organization",
+        "name": "European Medicines Agency",
+        "alternateName": [
+          "EMA"
+        ]
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  },
+  "idvynso-doravirine-islatravir-hiv-fda-2026": {
+    "articleSection": "Regulatory & Policy",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "Merck"
+      },
+      {
+        "@type": "Drug",
+        "name": "Idvynso",
+        "alternateName": [
+          "doravirine + islatravir"
+        ]
+      },
+      {
+        "@type": "Organization",
+        "name": "U.S. Food and Drug Administration",
+        "alternateName": [
+          "FDA"
+        ]
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  },
+  "tecartus-brexucabtagene-mcl-full-approval-2026": {
+    "articleSection": "Oncology",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "Kite / Gilead"
+      },
+      {
+        "@type": "Drug",
+        "name": "Tecartus",
+        "alternateName": [
+          "brexucabtagene autoleucel"
+        ]
+      },
+      {
+        "@type": "MedicalSpecialty",
+        "name": "Oncology"
+      },
+      {
+        "@type": "Organization",
+        "name": "U.S. Food and Drug Administration",
+        "alternateName": [
+          "FDA"
+        ]
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  },
+  "vasa-lilly-tunelab-camkii-cardiovascular-ai-2026": {
+    "articleSection": "Market Access",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "Vasa Therapeutics / Eli Lilly"
+      },
+      {
+        "@type": "Drug",
+        "name": "Vasa CAMKII platform",
+        "alternateName": [
+          "AI",
+          "ML cardiovascular candidates"
+        ]
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  },
+  "roche-pathai-acquisition-digital-pathology-2026": {
+    "articleSection": "Digital Health",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "Roche"
+      },
+      {
+        "@type": "Drug",
+        "name": "PathAI platform",
+        "alternateName": [
+          "digital pathology AI"
+        ]
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  },
+  "zepbound-kwikpen-goodrx-self-pay-2026": {
+    "articleSection": "Clinical Development",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "Eli Lilly / GoodRx"
+      },
+      {
+        "@type": "Drug",
+        "name": "Zepbound KwikPen",
+        "alternateName": [
+          "tirzepatide"
+        ]
+      },
+      {
+        "@type": "MedicalSpecialty",
+        "name": "Endocrinology"
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  },
+  "foundayo-orforglipron-fda-approval-2026": {
+    "articleSection": "Clinical Development",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "Eli Lilly"
+      },
+      {
+        "@type": "Drug",
+        "name": "Foundayo",
+        "alternateName": [
+          "orforglipron"
+        ]
+      },
+      {
+        "@type": "MedicalSpecialty",
+        "name": "Endocrinology"
+      },
+      {
+        "@type": "Organization",
+        "name": "U.S. Food and Drug Administration",
+        "alternateName": [
+          "FDA"
+        ]
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  },
+  "kresladi-marnetegragene-lad1-fda-2026": {
+    "articleSection": "Regulatory & Policy",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "Rocket Pharmaceuticals"
+      },
+      {
+        "@type": "Drug",
+        "name": "Kresladi",
+        "alternateName": [
+          "marnetegragene autotemcel"
+        ]
+      },
+      {
+        "@type": "MedicalSpecialty",
+        "name": "Rare diseases"
+      },
+      {
+        "@type": "Organization",
+        "name": "U.S. Food and Drug Administration",
+        "alternateName": [
+          "FDA"
+        ]
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  },
+  "awiqli-insulin-icodec-weekly-fda-2026": {
+    "articleSection": "Clinical Development",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "Novo Nordisk"
+      },
+      {
+        "@type": "Drug",
+        "name": "Awiqli",
+        "alternateName": [
+          "insulin icodec"
+        ]
+      },
+      {
+        "@type": "MedicalSpecialty",
+        "name": "Endocrinology"
+      },
+      {
+        "@type": "Organization",
+        "name": "U.S. Food and Drug Administration",
+        "alternateName": [
+          "FDA"
+        ]
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  },
+  "adstiladrin-nadofaragene-nmibc-ema-chmp-2026": {
+    "articleSection": "Oncology",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "Ferring"
+      },
+      {
+        "@type": "Drug",
+        "name": "Adstiladrin",
+        "alternateName": [
+          "nadofaragene firadenovec"
+        ]
+      },
+      {
+        "@type": "MedicalSpecialty",
+        "name": "Oncology"
+      },
+      {
+        "@type": "MedicalSpecialty",
+        "name": "Rare diseases"
+      },
+      {
+        "@type": "Organization",
+        "name": "European Medicines Agency",
+        "alternateName": [
+          "EMA"
+        ]
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  },
+  "imdylltra-tarlatamab-sclc-ema-chmp-2026": {
+    "articleSection": "Oncology",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "Amgen"
+      },
+      {
+        "@type": "Drug",
+        "name": "Imdylltra",
+        "alternateName": [
+          "tarlatamab"
+        ]
+      },
+      {
+        "@type": "MedicalSpecialty",
+        "name": "Oncology"
+      },
+      {
+        "@type": "Organization",
+        "name": "European Medicines Agency",
+        "alternateName": [
+          "EMA"
+        ]
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  },
+  "zepzelca-lurbinectedin-sclc-ema-chmp-2026": {
+    "articleSection": "Oncology",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "Jazz / PharmaMar"
+      },
+      {
+        "@type": "Drug",
+        "name": "Zepzelca",
+        "alternateName": [
+          "lurbinectedin"
+        ]
+      },
+      {
+        "@type": "MedicalSpecialty",
+        "name": "Oncology"
+      },
+      {
+        "@type": "Organization",
+        "name": "European Medicines Agency",
+        "alternateName": [
+          "EMA"
+        ]
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  },
+  "joenja-leniolisib-apds-ema-chmp-2026": {
+    "articleSection": "Regulatory & Policy",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "Pharming Group"
+      },
+      {
+        "@type": "Drug",
+        "name": "Joenja",
+        "alternateName": [
+          "leniolisib"
+        ]
+      },
+      {
+        "@type": "MedicalSpecialty",
+        "name": "Rare diseases"
+      },
+      {
+        "@type": "Organization",
+        "name": "European Medicines Agency",
+        "alternateName": [
+          "EMA"
+        ]
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  },
+  "lifyorli-relacorilant-ovarian-cancer-fda-2026": {
+    "articleSection": "Oncology",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "Corcept Therapeutics"
+      },
+      {
+        "@type": "Drug",
+        "name": "Lifyorli",
+        "alternateName": [
+          "relacorilant"
+        ]
+      },
+      {
+        "@type": "MedicalSpecialty",
+        "name": "Oncology"
+      },
+      {
+        "@type": "Organization",
+        "name": "U.S. Food and Drug Administration",
+        "alternateName": [
+          "FDA"
+        ]
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  },
+  "lynarvo-linerixibat-pbc-fda-2026": {
+    "articleSection": "Regulatory & Policy",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "GSK"
+      },
+      {
+        "@type": "Drug",
+        "name": "Lynavoy",
+        "alternateName": [
+          "linerixibat"
+        ]
+      },
+      {
+        "@type": "MedicalSpecialty",
+        "name": "Rare diseases"
+      },
+      {
+        "@type": "Organization",
+        "name": "U.S. Food and Drug Administration",
+        "alternateName": [
+          "FDA"
+        ]
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  },
+  "icotyde-icotrokinra-psoriasis-fda-2026": {
+    "articleSection": "Industry Insights",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "Johnson & Johnson"
+      },
+      {
+        "@type": "Drug",
+        "name": "Icotyde",
+        "alternateName": [
+          "icotrokinra"
+        ]
+      },
+      {
+        "@type": "Organization",
+        "name": "U.S. Food and Drug Administration",
+        "alternateName": [
+          "FDA"
+        ]
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  },
+  "flovent-hfa-fluticasone-generic-fda-2026": {
+    "articleSection": "Market Access",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "Prasco / Sandoz"
+      },
+      {
+        "@type": "Drug",
+        "name": "Flovent HFA generic",
+        "alternateName": [
+          "fluticasone propionate MDI"
+        ]
+      },
+      {
+        "@type": "Organization",
+        "name": "U.S. Food and Drug Administration",
+        "alternateName": [
+          "FDA"
+        ]
+      },
+      {
+        "@type": "Place",
+        "name": "Gulf Cooperation Council",
+        "alternateName": [
+          "GCC",
+          "MENA"
+        ]
+      }
+    ]
+  }
+}

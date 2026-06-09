@@ -3,10 +3,13 @@
  * Replaces isomorphic-dompurify/jsdom, which can fail or bloat SSR bundles.
  */
 import sanitizeHtml from 'sanitize-html';
+import { prepareBlogBodyHtml } from '../../lib/demote-blog-body-h1.mjs';
+import { fixBrokenInternalHrefsInHtml } from '@/lib/fixBrokenInternalHrefs';
 
 const BODY_SANITIZE_OPTIONS: sanitizeHtml.IOptions = {
   allowedTags: [
-    'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'div', 'span', 'br', 'hr',
+    /* h1 stripped after demotion: hero owns the sole page h1 */
+    'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'div', 'span', 'br', 'hr',
     'ul', 'ol', 'li', 'strong', 'em', 'b', 'i', 'a', 'blockquote',
     'table', 'thead', 'tbody', 'tr', 'th', 'td', 'sub', 'sup',
   ],
@@ -19,5 +22,7 @@ const BODY_SANITIZE_OPTIONS: sanitizeHtml.IOptions = {
 };
 
 export function sanitizeBodyHtml(html: string): string {
-  return sanitizeHtml(html, BODY_SANITIZE_OPTIONS);
+  const demoted = prepareBlogBodyHtml(html);
+  const linksFixed = fixBrokenInternalHrefsInHtml(demoted);
+  return sanitizeHtml(linksFixed, BODY_SANITIZE_OPTIONS);
 }

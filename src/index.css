@@ -498,6 +498,46 @@
                 0 8px 16px -8px hsl(220 30% 15% / 0.06);
   }
 
+  /* --- Blog card image zoom + overlay --- */
+  .blog-card-image {
+    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .group:hover .blog-card-image,
+  .group:focus-visible .blog-card-image {
+    transform: scale(1.06);
+  }
+  .blog-card-overlay {
+    opacity: 0;
+    transition: opacity 0.45s ease;
+    background: linear-gradient(
+      to top,
+      hsl(220 35% 12% / 0.75) 0%,
+      hsl(220 35% 12% / 0.15) 45%,
+      transparent 100%
+    );
+  }
+  .group:hover .blog-card-overlay,
+  .group:focus-visible .blog-card-overlay {
+    opacity: 1;
+  }
+  .blog-skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+    background: hsl(var(--muted) / 0.45);
+  }
+  .blog-skeleton-shimmer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--background) / 0.55),
+      transparent
+    );
+    animation: shimmerSweep 1.8s infinite;
+  }
+
   /* --- Shimmer sweep on CTA buttons --- */
   .shimmer {
     position: relative;
@@ -603,8 +643,13 @@
       width: 60px !important;
       transition: none !important;
     }
-    .hover-lift:hover {
+    .hover-lift:hover,
+    .group:hover .blog-card-image,
+    .group:focus-visible .blog-card-image {
       transform: none;
+    }
+    .blog-skeleton-shimmer::after {
+      animation: none;
     }
     .shimmer::after,
     .float-gentle,
@@ -656,4 +701,65 @@
 @keyframes marquee {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-33.333%); }
+}
+
+@keyframes reportChartDraw {
+  from { stroke-dashoffset: 480; }
+  to   { stroke-dashoffset: 0; }
+}
+@keyframes reportBarGrow {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+
+@layer utilities {
+  .report-chart-line {
+    stroke-dasharray: 480;
+    stroke-dashoffset: 480;
+    animation: reportChartDraw 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .report-bar-grow {
+    transform: scaleY(0);
+    transform-origin: bottom center;
+    animation: reportBarGrow 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .prose-report p + p {
+    margin-top: 1rem;
+  }
+
+  /* Report pages: article uses full column width; aside is xl+ only */
+  .report-article-shell article {
+    max-width: none;
+  }
+  .report-article-shell article .max-w-4xl,
+  .report-article-shell article .max-w-5xl,
+  .report-article-shell article .max-w-6xl {
+    max-width: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .report-chart-line,
+    .report-bar-grow {
+      animation: none;
+      stroke-dashoffset: 0;
+      transform: none;
+    }
+  }
+}
+
+/* Global websites / country blueprint hero (navy band) */
+@layer utilities {
+  [data-global-sites-hero] .text-muted-foreground {
+    color: hsl(var(--primary-foreground) / 0.68);
+  }
+  [data-global-sites-hero] a.text-primary {
+    color: hsl(var(--gold-light));
+    text-underline-offset: 3px;
+  }
+  [data-global-sites-hero] a.text-primary:hover {
+    color: hsl(var(--gold-warm));
+  }
+  [data-global-sites-hero] strong.text-foreground {
+    color: hsl(var(--gold-light));
+    font-weight: 600;
+  }
 }

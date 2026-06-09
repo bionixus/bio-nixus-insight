@@ -24,29 +24,29 @@ export const translations = {
         'Europe, Middle East, and Africa pharmaceutical and healthcare market research snapshot',
     },
     hero: {
-      tagline: 'Healthcare Market Research Across EMEA (Europe, Middle East and Africa)',
-      title: 'BioNixus Healthcare Market Research Services',
+      tagline: 'Specialist pharmaceutical & healthcare market research',
+      title: 'Pharmaceutical and healthcare market research for confident launch, access, and growth',
       subtitle:
-        'Turn healthcare insights into faster launch and market access decisions with physician, payer, and hospital intelligence for pharmaceutical teams operating across Europe, the UK, MENA, and GCC markets.',
-      valueProposition: 'BioNixus delivers quantitative and qualitative evidence designed for real commercial decisions, from pre-launch planning to post-launch optimization.',
+        'BioNixus is a global pharmaceutical and healthcare market research company. We help pharma, biotech, and medtech teams turn physician, payer, and hospital evidence into decisions that move launches forward — with country-level depth across MENA, Latin America, Eastern Europe, and the wider EMEA region.',
+      valueProposition: 'Every engagement starts from a real commercial question, not a generic data dump. You get defensible quantitative and qualitative evidence — scoped to the decision, the market, and the regulatory reality you actually operate in — from pre-launch sizing through post-launch optimization.',
       serviceHighlights: [
-        'Multi-country physician and payer research',
-        'Launch, access, and growth evidence',
-        'Compliance-aware execution',
+        'Multi-country physician & payer research',
+        'Launch, access & growth evidence',
+        'Compliance-aware fieldwork',
       ],
       cta: 'Request a proposal',
       ctaSecondary: 'View case studies',
-      trustBar: 'Trusted by pharmaceutical teams across EMEA',
-      trustCountries: '(Europe, Middle East and Africa markets).',
+      trustBar: 'Decision-ready evidence for pharmaceutical, biotech, and medtech teams since 2012, across',
+      trustCountries: 'MENA, Latin America, Eastern Europe, the UK, and the wider EMEA region.',
       complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'SFDA Compliant', 'ICH-GCP'],
     },
     services: {
-      title: 'Healthcare Market Research Services for Europe and the Middle East',
-      subtitle: 'Clear, decision-ready evidence for pharmaceutical launch, market access, and growth.',
+      title: 'Pharmaceutical and healthcare market research services',
+      subtitle: 'Decision-ready quantitative and qualitative evidence for launch, market access, and growth — across the GCC, MENA, Europe, and the UK.',
       items: [
         {
           title: 'Quantitative Healthcare Market Research',
-          description: 'Measure demand, segment opportunity, and stakeholder behavior with robust surveys across Europe and the Middle East.',
+          description: 'Size demand, segment the opportunity, and quantify physician and payer behavior with statistically robust surveys and trackers built around real prescribing structures.',
           bullets: [
             'Demand and segmentation analysis',
             'Physician and payer survey programs',
@@ -55,7 +55,7 @@ export const translations = {
         },
         {
           title: 'Qualitative Pharmaceutical Research',
-          description: 'Uncover why decisions happen through physician, payer, and hospital interviews built for pharmaceutical strategy teams.',
+          description: 'Understand the why behind adoption and access through in-depth interviews and advisory-style discussions with physicians, payers, and hospital decision-makers.',
           bullets: [
             'In-depth interviews and focus groups',
             'Treatment pathway and barrier analysis',
@@ -64,7 +64,7 @@ export const translations = {
         },
         {
           title: 'Market Access and Value Evidence',
-          description: 'Strengthen pricing and reimbursement planning with payer-focused healthcare market research.',
+          description: 'Map payer evidence expectations and pressure-test your pricing, reimbursement, and value story before you face an HTA body or formulary committee.',
           bullets: [
             'Payer evidence expectation mapping',
             'Access barrier diagnostics',
@@ -73,7 +73,7 @@ export const translations = {
         },
         {
           title: 'KOL and Stakeholder Mapping',
-          description: 'Identify real decision influencers by market and improve engagement planning.',
+          description: 'Pinpoint the clinicians, committees, and procurement voices that genuinely shape decisions in each market, and where to focus engagement first.',
           bullets: [
             'KOL influence mapping by country',
             'Stakeholder priority architecture',
@@ -82,7 +82,7 @@ export const translations = {
         },
         {
           title: 'Europe and Middle East Coverage',
-          description: 'Healthcare market research across the UK, Germany, France, Italy, Spain, Saudi Arabia, UAE, Egypt, Kuwait, and Qatar.',
+          description: 'Country-level execution across the UK, Germany, France, Italy, Spain, Saudi Arabia, the UAE, Egypt, Kuwait, and Qatar, with comparable design for regional roll-ups.',
           bullets: [
             'Country-level execution with regional comparability',
             'Cross-market insight for portfolio planning',
@@ -90,7 +90,7 @@ export const translations = {
         },
         {
           title: 'Methodology and Compliance',
-          description: 'Execute with confidence under GDPR, EMA, MOH, and SFDA-aligned standards.',
+          description: 'Fieldwork governed by GDPR, EMA, MOH, and SFDA-aligned standards, with respondent verification and audit-ready documentation at every step.',
           bullets: [
             'Compliance-aware fieldwork governance',
             'Quality controls and data integrity protocols',
@@ -145,10 +145,10 @@ export const translations = {
     stats: {
       title: 'Global Impact',
       items: [
+        { value: '127+', label: 'Projects Delivered' },
+        { value: '48', label: 'Global Clients' },
         { value: '17+', label: 'Countries Covered' },
         { value: '14+', label: 'Therapeutic Areas' },
-        { value: '120+', label: 'Projects Delivered' },
-        { value: '15+', label: 'Years Experience' },
       ],
     },
     testimonials: {
@@ -231,8 +231,12 @@ export const translations = {
       no: 'No',
     },
     footer: {
-      tagline: 'Healthcare Market Research | Pharma Insights Europe & MENA. Delivering evidence-based insights to pharmaceutical and biotech leaders worldwide.',
+      tagline: 'Global Pharmaceutical & Healthcare Market Research with deep regional expertise across MENA, Latin America, and Eastern Europe. Delivering evidence-based insights to pharmaceutical and biotech leaders worldwide.',
+      quickLinksHeading: 'Quick links',
       companyHeading: 'Company',
+      healthcareHub: 'Healthcare market research hub',
+      blogAndInsights: 'Blog & insights',
+      sitemap: 'Full site directory',
       about: 'About',
       services: 'Services',
       insights: 'Insights',
@@ -415,7 +419,7 @@ export const translations = {
       items: [
         { value: '17+', label: 'Abgedeckte Länder' },
         { value: '14+', label: 'Therapiegebiete' },
-        { value: '120+', label: 'Gelieferte Projekte' },
+        { value: '127+', label: 'Gelieferte Projekte' },
         { value: '15+', label: 'Jahre Erfahrung' },
       ],
     },
@@ -484,7 +488,11 @@ export const translations = {
     },
     footer: {
       tagline: 'Gesundheitsmarktforschung | Pharma-Insights Europa & MENA. Evidenzbasierte Erkenntnisse für Pharma- und Biotech-Führungskräfte weltweit.',
+      quickLinksHeading: 'Schnellzugriffe',
       companyHeading: 'Unternehmen',
+      healthcareHub: 'Healthcare-Marktforschungs-Hub',
+      blogAndInsights: 'Blog & Insights',
+      sitemap: 'Vollständige Seitenübersicht',
       about: 'Über uns',
       services: 'Dienstleistungen',
       insights: 'Insights',
@@ -668,7 +676,7 @@ export const translations = {
       items: [
         { value: '17+', label: 'Pays Couverts' },
         { value: '14+', label: 'Aires Thérapeutiques' },
-        { value: '120+', label: 'Projets Livrés' },
+        { value: '127+', label: 'Projets Livrés' },
         { value: '15+', label: 'Années d\'Expérience' },
       ],
     },
@@ -737,7 +745,11 @@ export const translations = {
     },
     footer: {
       tagline: 'Études de Marché Santé | Insights Pharma Europe & MENA. Des insights fondés sur des preuves pour les leaders pharmaceutiques et biotech du monde entier.',
+      quickLinksHeading: 'Liens rapides',
       companyHeading: 'Entreprise',
+      healthcareHub: 'Hub recherche de marché en santé',
+      blogAndInsights: 'Blog & insights',
+      sitemap: 'Annuaire complet du site',
       about: 'À propos',
       services: 'Services',
       insights: 'Insights',
@@ -921,7 +933,7 @@ export const translations = {
       items: [
         { value: '17+', label: 'Países Cubiertos' },
         { value: '14+', label: 'Áreas Terapéuticas' },
-        { value: '120+', label: 'Proyectos Entregados' },
+        { value: '127+', label: 'Proyectos Entregados' },
         { value: '15+', label: 'Años de Experiencia' },
       ],
     },
@@ -990,7 +1002,11 @@ export const translations = {
     },
     footer: {
       tagline: 'Investigación de Mercado Sanitario | Insights Farmacéuticos Europa & MENA. Proporcionando insights basados en evidencia a líderes farmacéuticos y biotech en todo el mundo.',
+      quickLinksHeading: 'Enlaces rápidos',
       companyHeading: 'Empresa',
+      healthcareHub: 'Centro de investigación de mercado sanitario',
+      blogAndInsights: 'Blog y análisis',
+      sitemap: 'Directorio completo del sitio',
       about: 'Sobre nosotros',
       services: 'Servicios',
       insights: 'Insights',
@@ -1173,7 +1189,7 @@ export const translations = {
       items: [
         { value: '17+', label: '覆盖国家' },
         { value: '14+', label: '治疗领域' },
-        { value: '120+', label: '交付项目' },
+        { value: '127+', label: '交付项目' },
         { value: '15+', label: '年经验' },
       ],
     },
@@ -1242,7 +1258,11 @@ export const translations = {
     },
     footer: {
       tagline: '医疗市场研究 | 欧洲及中东和非洲制药洞察。为全球制药和生物技术领导者提供基于证据的洞察。',
+      quickLinksHeading: '快速链接',
       companyHeading: '公司',
+      healthcareHub: '医疗市场研究中心',
+      blogAndInsights: '博客与洞察',
+      sitemap: '全站索引',
       about: '关于我们',
       services: '服务',
       insights: '洞察',
@@ -1499,7 +1519,11 @@ export const translations = {
     },
     footer: {
       tagline: 'أبحاث السوق الصحية | رؤى دوائية أوروبا والشرق الأوسط وشمال أفريقيا. تقديم رؤى قائمة على الأدلة لقادة الصناعة الدوائية والتكنولوجيا الحيوية في جميع أنحاء العالم.',
+      quickLinksHeading: 'روابط سريعة',
       companyHeading: 'الشركة',
+      healthcareHub: 'مركز أبحاث السوق الصحية',
+      blogAndInsights: 'المدونة والرؤى',
+      sitemap: 'خريطة الموقع الكاملة',
       about: 'من نحن',
       services: 'الخدمات',
       insights: 'الرؤى',

@@ -1,4 +1,4 @@
-import { defineType, defineField } from 'sanity'
+import { defineArrayMember, defineField, defineType } from 'sanity'
 
 export const pressRelease = defineType({
   name: 'pressRelease',
@@ -6,134 +6,189 @@ export const pressRelease = defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'title',
+      name: 'seo',
+      title: 'SEO Settings',
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'metaTitle',
+          title: 'Meta Title',
+          type: 'string',
+          validation: (Rule) =>
+            Rule.custom((value) => {
+              const len = (value || '').length
+              if (len > 60) return `Meta title is too long (${len}/60).`
+              return true
+            }),
+        }),
+        defineField({
+          name: 'metaDescription',
+          title: 'Meta Description',
+          type: 'text',
+          rows: 3,
+          validation: (Rule) =>
+            Rule.custom((value) => {
+              const len = (value || '').length
+              if (len > 0 && len < 70) return `Meta description is too short (${len}/70 minimum).`
+              if (len > 155) return `Meta description is too long (${len}/155 maximum).`
+              return true
+            }),
+        }),
+        defineField({
+          name: 'noIndex',
+          title: 'No Index',
+          type: 'boolean',
+          description: 'Prevent search engines from indexing this release',
+        }),
+      ],
+    }),
+    defineField({
+      name: 'openGraph',
+      title: 'Open Graph / Social Media',
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'ogTitle',
+          title: 'OG Title',
+          type: 'string',
+        }),
+        defineField({
+          name: 'ogDescription',
+          title: 'OG Description',
+          type: 'text',
+          rows: 2,
+        }),
+        defineField({
+          name: 'ogImage',
+          title: 'OG Image',
+          type: 'image',
+          options: { hotspot: true },
+          fields: [
+            defineField({
+              name: 'alt',
+              title: 'Alt Text',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            }),
+          ],
+        }),
+      ],
+    }),
+    defineField({
+      name: 'headline',
       title: 'Headline',
       type: 'string',
-      validation: (Rule) => Rule.required().min(10).max(200),
+      validation: (Rule) => Rule.required().min(5),
     }),
     defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      options: { source: 'title', maxLength: 96 },
+      options: { source: 'headline', maxLength: 96 },
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'releaseType',
-      title: 'Release Type',
-      type: 'string',
-      options: {
-        list: [
-          { title: 'Company News', value: 'Company News' },
-          { title: 'Partnership', value: 'Partnership' },
-          { title: 'Product Launch', value: 'Product Launch' },
-          { title: 'Award & Recognition', value: 'Award & Recognition' },
-          { title: 'Research Publication', value: 'Research Publication' },
-          { title: 'Industry Analysis', value: 'Industry Analysis' },
-          { title: 'Expansion', value: 'Expansion' },
-        ],
-      },
-    }),
-    defineField({
-      name: 'coverImage',
-      title: 'Cover Image',
-      type: 'image',
-      options: { hotspot: true },
-      fields: [{ name: 'alt', title: 'Alt Text', type: 'string' }],
-    }),
-    defineField({
-      name: 'excerpt',
-      title: 'Lead / Excerpt',
+      name: 'subheadline',
+      title: 'Subheadline',
       type: 'text',
       rows: 3,
-      description: 'Short summary for SEO and card listings (150–250 chars)',
-      validation: (Rule) => Rule.max(350),
+      description: 'Optional dek displayed under the headline',
     }),
     defineField({
-      name: 'body',
-      title: 'Body (Portable Text)',
-      type: 'array',
-      of: [
-        { type: 'block' },
-        {
-          type: 'image',
-          options: { hotspot: true },
-          fields: [{ name: 'alt', title: 'Alt text', type: 'string' }],
-        },
-      ],
+      name: 'dateline',
+      title: 'Dateline',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+      description: 'AP-style location and date, e.g. LONDON — 30 May 2026',
     }),
     defineField({
-      name: 'bodyHtml',
-      title: 'Body (Raw HTML)',
-      type: 'text',
-      description: 'Used when body is authored as HTML',
+      name: 'embargo',
+      title: 'Embargo until',
+      type: 'datetime',
+      description:
+        'Before this time the release is hidden from the site, RSS, and sitemap (404 on the public URL).',
     }),
     defineField({
       name: 'publishedAt',
       title: 'Published At',
       type: 'datetime',
-      options: { dateFormat: 'YYYY-MM-DD', timeFormat: 'HH:mm' },
     }),
     defineField({
       name: 'updatedAt',
-      title: 'Updated At',
+      title: 'Last Updated',
       type: 'datetime',
     }),
     defineField({
-      name: 'contact',
-      title: 'Press Contact',
-      type: 'object',
+      name: 'heroImage',
+      title: 'Hero Image',
+      type: 'image',
+      options: { hotspot: true },
+      validation: (Rule) => Rule.required(),
       fields: [
-        { name: 'name', title: 'Contact Name', type: 'string' },
-        { name: 'jobTitle', title: 'Job Title', type: 'string' },
-        { name: 'email', title: 'Email', type: 'string' },
-        { name: 'phone', title: 'Phone', type: 'string' },
+        defineField({
+          name: 'alt',
+          title: 'Alt Text',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        }),
+        defineField({
+          name: 'caption',
+          title: 'Caption',
+          type: 'string',
+        }),
       ],
     }),
     defineField({
-      name: 'tags',
-      title: 'Tags',
+      name: 'body',
+      title: 'Body',
       type: 'array',
-      of: [{ type: 'string' }],
-      options: { layout: 'tags' },
-    }),
-    defineField({
-      name: 'readingTime',
-      title: 'Reading Time (minutes)',
-      type: 'number',
-    }),
-    defineField({
-      name: 'seo',
-      title: 'SEO',
-      type: 'object',
-      fields: [
-        { name: 'metaTitle', title: 'Meta Title', type: 'string' },
-        { name: 'metaDescription', title: 'Meta Description', type: 'text', rows: 2 },
-        { name: 'canonicalUrl', title: 'Canonical URL', type: 'url' },
-        { name: 'noIndex', title: 'No Index', type: 'boolean' },
+      of: [
+        defineArrayMember({
+          type: 'block',
+          styles: [
+            { title: 'Normal', value: 'normal' },
+            { title: 'H2', value: 'h2' },
+            { title: 'H3', value: 'h3' },
+            { title: 'Quote', value: 'blockquote' },
+          ],
+          marks: {
+            decorators: [
+              { title: 'Strong', value: 'strong' },
+              { title: 'Emphasis', value: 'em' },
+            ],
+            annotations: [
+              {
+                name: 'link',
+                type: 'object',
+                title: 'Link',
+                fields: [{ name: 'href', type: 'url', title: 'URL' }],
+              },
+            ],
+          },
+        }),
       ],
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'openGraph',
-      title: 'Open Graph',
-      type: 'object',
-      fields: [
-        { name: 'ogTitle', title: 'OG Title', type: 'string' },
-        { name: 'ogDescription', title: 'OG Description', type: 'text', rows: 2 },
-        {
-          name: 'ogImage',
-          title: 'OG Image',
-          type: 'image',
-          options: { hotspot: true },
-        },
-      ],
+      name: 'relatedReportSlug',
+      title: 'Related report slug',
+      type: 'string',
+      description:
+        'Programmatic slug (e.g. gcc-oncology-market-report) or standalone path segment (e.g. saudi-arabia-healthcare-market-report). Links to /market-reports/{slug} or /{slug}-healthcare-market-report when recognised.',
+    }),
+    defineField({
+      name: 'boilerplate',
+      title: 'Boilerplate',
+      type: 'text',
+      rows: 4,
+      description: 'Optional company paragraph; site default used when empty.',
     }),
   ],
   preview: {
     select: {
-      title: 'title',
-      subtitle: 'releaseType',
-      media: 'coverImage',
+      title: 'headline',
+      subtitle: 'dateline',
+      media: 'heroImage',
     },
   },
 })

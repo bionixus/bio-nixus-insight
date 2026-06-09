@@ -33,6 +33,7 @@ function resolvePathFromPayload(payload: any): string | null {
   if (!slug) return null
   if (type === 'caseStudy') return `/case-studies/${slug}`
   if (type === 'post' || type === 'blogPost') return `/blog/${slug}`
+  if (type === 'pressRelease') return `/news/${slug}`
   return null
 }
 
@@ -91,7 +92,7 @@ export default async function handler(req: any, res: any) {
       return res.status(200).json({
         success: true,
         skipped: true,
-        reason: 'No indexable blog/case-study path in payload',
+        reason: 'No indexable blog/case-study/press-release path in payload',
       })
     }
 

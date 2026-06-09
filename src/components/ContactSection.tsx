@@ -10,6 +10,8 @@ type ContactValidation = {
   lastName?: string;
   workEmail?: string;
   company?: string;
+  phone?: string;
+  referralSource?: string;
   message?: string;
   privacy?: string;
   emailFormat?: string;
@@ -79,7 +81,6 @@ type ErrorEmailFields = {
   phone: string;
   country: string;
   researchInterest: string;
-  therapyArea: string;
   timeline: string;
   budget: string;
   referralSource: string;
@@ -98,7 +99,6 @@ function sendErrorEmail(fields: ErrorEmailFields, errorDetails: string) {
     (fields.phone ? `Phone: ${fields.phone}\n` : '') +
     (fields.country ? `Country: ${fields.country}\n` : '') +
     (fields.researchInterest ? `Research Interest: ${fields.researchInterest}\n` : '') +
-    (fields.therapyArea ? `Therapy Area: ${fields.therapyArea}\n` : '') +
     (fields.timeline ? `Timeline: ${fields.timeline}\n` : '') +
     (fields.budget ? `Budget: ${fields.budget}\n` : '') +
     (fields.referralSource ? `Referral Source: ${fields.referralSource}\n` : '') +
@@ -146,6 +146,10 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
 
     if (!(data.get('company') as string)?.trim()) next.company = v('company') || 'Company is required';
     if (!(data.get('country') as string)?.trim()) next.country = v('country') || 'Please select a country';
+    if (!(data.get('phone') as string)?.trim()) next.phone = v('phone') || 'Phone number is required';
+    if (!(data.get('referralSource') as string)?.trim()) {
+      next.referralSource = v('referralSource') || 'Please tell us how you heard about us';
+    }
     if (!(data.get('message') as string)?.trim()) next.message = v('message') || 'Message is required';
     if (!data.get('consent')) next.consent = v('consent') || 'You must agree to the privacy policy';
 
@@ -160,7 +164,6 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
     const phone = (data.get('phone') as string)?.trim() || '';
     const country = (data.get('country') as string)?.trim() || '';
     const researchInterest = data.getAll('researchInterest').join(', ');
-    const therapyArea = (data.get('therapyArea') as string)?.trim() || '';
     const timeline = (data.get('timeline') as string)?.trim() || '';
     const budget = (data.get('budget') as string)?.trim() || '';
     const referralSource = (data.get('referralSource') as string)?.trim() || '';
@@ -189,7 +192,7 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
 
     const errorFields: ErrorEmailFields = {
       firstName, lastName, workEmail, company, phone, country,
-      researchInterest, therapyArea, timeline, budget, referralSource, message,
+      researchInterest, timeline, budget, referralSource, message,
     };
 
     setSubmitting(true);
@@ -213,7 +216,6 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
               company: company || undefined,
               country: country || undefined,
               researchInterest: researchInterest || undefined,
-              therapyArea: therapyArea || undefined,
               timeline: timeline || undefined,
               budget: budget || undefined,
               referralSource: referralSource || undefined,
@@ -332,10 +334,13 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
                   <div className="text-sm text-muted-foreground">{t.contact.phoneLabel}</div>
                   <div className="flex flex-col gap-1">
                     <a href="tel:+18884655557" className="text-foreground font-medium hover:text-primary transition-colors">
-                      +1 888 465 5557 <span className="text-muted-foreground text-sm font-normal">(US)</span>
+                      US No. +1 888 465 5557
                     </a>
                     <a href="tel:+447727666682" className="text-foreground font-medium hover:text-primary transition-colors">
-                      +44 7727 666682 <span className="text-muted-foreground text-sm font-normal">(UK)</span>
+                      Europe No. +44 7727 666682
+                    </a>
+                    <a href="tel:+201206882323" className="text-foreground font-medium hover:text-primary transition-colors">
+                      Middle East, Africa and Asia No. +20 120 688 2323
                     </a>
                   </div>
                 </div>
@@ -487,15 +492,18 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
                     </div>
                     <div>
                       <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                        Phone
+                        Phone <span className="text-destructive">*</span>
                       </label>
                       <input
                         id="phone"
                         name="phone"
                         type="tel"
-                        className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+                        required
+                        aria-invalid={Boolean(errors.phone)}
+                        className={`w-full px-4 py-3 rounded-lg border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.phone ? 'border-destructive' : 'border-input'}`}
                         placeholder="+44 7700 900000"
                       />
+                      {errors.phone && <p className="text-sm text-destructive mt-1">{errors.phone}</p>}
                     </div>
                   </div>
 
@@ -518,20 +526,6 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
                       ))}
                     </div>
                   </fieldset>
-
-                  {/* Therapy Area */}
-                  <div>
-                    <label htmlFor="therapyArea" className="block text-sm font-medium text-foreground mb-2">
-                      Therapy Area
-                    </label>
-                    <input
-                      id="therapyArea"
-                      name="therapyArea"
-                      type="text"
-                      className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
-                      placeholder="e.g. Oncology, Rare Disease, Cardiovascular…"
-                    />
-                  </div>
 
                   {/* Timeline & Budget */}
                   <div className="grid sm:grid-cols-2 gap-6">
@@ -572,19 +566,24 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
                   {/* Referral Source */}
                   <div>
                     <label htmlFor="referralSource" className="block text-sm font-medium text-foreground mb-2">
-                      How did you hear about us?
+                      How did you hear about us? <span className="text-destructive">*</span>
                     </label>
                     <select
                       id="referralSource"
                       name="referralSource"
-                      className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+                      required
+                      aria-invalid={Boolean(errors.referralSource)}
+                      className={`w-full px-4 py-3 rounded-lg border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.referralSource ? 'border-destructive' : 'border-input'}`}
                       defaultValue=""
                     >
-                      <option value="">Select…</option>
+                      <option value="" disabled>Select…</option>
                       {REFERRAL_OPTIONS.map((opt) => (
                         <option key={opt} value={opt}>{opt}</option>
                       ))}
                     </select>
+                    {errors.referralSource && (
+                      <p className="text-sm text-destructive mt-1">{errors.referralSource}</p>
+                    )}
                   </div>
 
                   {/* Message */}

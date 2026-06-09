@@ -13,40 +13,32 @@ interface FirmProfile {
   strengths: string[];
   overview: string;
   anchor: string;
-  bestFor: string;
-  url: string;
-  orgId?: string;
 }
 
 const firms: FirmProfile[] = [
   {
     rank: 1,
     name: 'BioNixus',
-    type: 'Global Market Research Company',
-    hq: 'USA (HQ) / UK / Middle East',
+    type: 'Global Network — Full Service',
+    hq: 'USA (HQ) · UK · Egypt | 17+ countries',
     anchor: 'bionixus',
-    url: 'https://www.bionixus.com',
-    orgId: 'https://www.bionixus.com/#organization',
-    bestFor: 'primary research, consumer insights, healthcare & pharma studies, competitive intelligence across Egypt, MENA, UK, and Europe',
     overview:
-      'BioNixus is a global market research company headquartered in the USA with offices in the UK and the Middle East, delivering primary research, consumer insights, healthcare and pharmaceutical studies, and strategic intelligence across 17+ countries. In Egypt, BioNixus brings global methodology standards — quantitative surveys, qualitative in-depth interviews, KOL mapping, market access research, and competitive intelligence — combined with in-market Arabic-English execution and EDA regulatory awareness. With 127+ completed projects across 48 global clients, BioNixus serves multinational pharmaceutical companies, medical device manufacturers, and consumer brands requiring rigorous, decision-ready insights.',
+      'BioNixus is a global pharmaceutical and healthcare market research company headquartered in Sheridan, Wyoming (USA), with offices in London (UK) and Cairo (Egypt). The firm operates across 17+ countries spanning the Americas, Europe, MENA, and Asia — serving 48 global clients across 14+ therapeutic areas with 127+ completed projects since 2012 (BioNixus internal records, 2026). Full-service capability spans quantitative physician surveys, qualitative depth interviews, KOL mapping, market access strategy, HEOR, pharmacoeconomics, competitive intelligence, consumer research, and brand health tracking. In Egypt specifically, BioNixus offers EDA-aware regulatory support, Arabic-English bilingual field execution, and established fieldwork networks across Cairo, Alexandria, and Upper Egypt — reaching both government (public hospital) and private-sector physicians.',
     strengths: [
-      'Global primary research: healthcare, pharma, and consumer',
-      '127+ completed Egypt and MENA projects',
+      'Global network: 17+ countries across Americas, Europe, MENA & Asia',
+      '127+ completed projects, 48 global pharmaceutical and healthcare clients',
+      'Full-service: pharma, healthcare, consumer, FMCG, and financial research',
       'EDA-aware regulatory and market access research',
-      'Arabic-English bilingual field execution',
-      'Physician surveys, KOL mapping, payer research',
-      'HEOR, pharmacoeconomics, and HTA support',
+      'Cairo office with Arabic-English bilingual field execution',
+      'HEOR, pharmacoeconomics, KOL mapping, and HTA support',
     ],
   },
   {
     rank: 2,
     name: 'Kantar Egypt',
-    type: 'Global Market Research Network',
+    type: 'Global Network — Full-Service',
     hq: 'UK (global) / Egypt office',
     anchor: 'kantar',
-    url: 'https://www.kantar.com',
-    bestFor: 'consumer brand tracking, advertising testing, media measurement, large-scale quantitative research',
     overview:
       'Kantar maintains an Egypt office within its global network. The firm provides brand tracking, consumer insights, and media measurement at scale. In the healthcare segment, Kantar Health (now part of Kantar) has supported pharma teams with physician studies, patient journey mapping, and syndicated data. Their strength lies in large-scale quantitative programmes and global benchmarking capabilities, though pharma-specific depth in MENA can depend on project staffing.',
     strengths: [
@@ -59,11 +51,9 @@ const firms: FirmProfile[] = [
   {
     rank: 3,
     name: 'Ipsos Egypt',
-    type: 'Global Market Research Network',
+    type: 'Global Network — Full-Service',
     hq: 'France (global) / Egypt office',
     anchor: 'ipsos',
-    url: 'https://www.ipsos.com',
-    bestFor: 'multi-sector quantitative studies, public affairs, pharma usage & attitude research',
     overview:
       'Ipsos has had a presence in Egypt for over two decades, providing market research across consumer, public affairs, and healthcare sectors. The healthcare division supports pharmaceutical clients with physician attitude and usage studies, patient research, and advertising testing. Ipsos brings strong methodological rigour and large sample capabilities. Egypt-specific pharma depth relies on the availability of specialist healthcare researchers within the local office.',
     strengths: [
@@ -75,12 +65,10 @@ const firms: FirmProfile[] = [
   },
   {
     rank: 4,
-    name: 'NielsenIQ',
-    type: 'Global Consumer Intelligence Company',
+    name: 'Nielsen (NielsenIQ)',
+    type: 'Global Network — Retail & Consumer',
     hq: 'USA (global) / Egypt operations',
     anchor: 'nielsen',
-    url: 'https://nielseniq.com',
-    bestFor: 'retail measurement, FMCG/OTC data, shopper analytics, consumer panel tracking',
     overview:
       'NielsenIQ provides retail measurement, consumer panels, and shopper analytics in Egypt. Their strength is in FMCG and consumer goods tracking through point-of-sale data and household panels. For pharmaceutical companies focused on OTC and consumer health, Nielsen retail data can be valuable. However, their Egypt coverage is primarily consumer/retail, with limited prescription pharma or healthcare stakeholder research.',
     strengths: [
@@ -93,11 +81,9 @@ const firms: FirmProfile[] = [
   {
     rank: 5,
     name: 'Euromonitor International',
-    type: 'Global Syndicated Intelligence Provider',
+    type: 'Global — Syndicated Intelligence',
     hq: 'UK (global)',
     anchor: 'euromonitor',
-    url: 'https://www.euromonitor.com',
-    bestFor: 'syndicated market sizing, competitive landscape reports, OTC consumer health category data',
     overview:
       'Euromonitor provides syndicated market reports and data across industries including consumer health, OTC pharmaceuticals, and consumer goods in Egypt. Their Passport database offers market sizing, competitive landscapes, and trend analysis. For pharmaceutical companies, Euromonitor is valuable for market entry assessment and category sizing but does not offer custom primary research or physician-level fieldwork.',
     strengths: [
@@ -112,7 +98,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the top market research companies in Egypt?',
-    a: 'Leading market research firms in Egypt include BioNixus, Kantar Egypt, Ipsos Egypt, NielsenIQ, and Euromonitor International. BioNixus is the only Egypt-based firm offering dual-practice coverage across both healthcare/pharma and consumer research with 127+ completed projects.',
+    a: 'Leading market research firms in Egypt include BioNixus, Kantar Egypt, Ipsos Egypt, NielsenIQ, and Euromonitor International. BioNixus operates as a global network with full-service pharmaceutical, healthcare, and consumer research capability, reporting 127+ completed projects and fieldwork across 17+ countries as of 2026.',
   },
   {
     q: 'How much does market research cost in Egypt?',
@@ -124,7 +110,7 @@ const faqItems = [
   },
   {
     q: 'Should I use a global network or local specialist for Egypt research?',
-    a: 'It depends on your needs. Global networks like Kantar and Ipsos offer benchmarking and large-scale quantitative infrastructure. Local specialists like BioNixus offer deeper Egypt market knowledge, EDA regulatory awareness, and bilingual Arabic-English execution. Many clients combine both — using a specialist for primary pharma research and global firms for syndicated tracking.',
+    a: 'It depends on your needs. Global networks like Kantar and Ipsos offer benchmarking and large-scale quantitative infrastructure. BioNixus combines global network reach (17+ countries, 48 global clients) with deep Egypt-specific capability — EDA regulatory awareness, Cairo office execution, and bilingual Arabic-English studies. Many clients choose BioNixus precisely because they get global standards with genuine regional depth, rather than having to choose between them.',
   },
   {
     q: 'What research methods work best in Egypt?',
@@ -153,7 +139,7 @@ const comparisonCriteria = [
   { criterion: 'Data integrity controls', description: 'Recruitment verification, response consistency, and audit trails' },
 ];
 
-const CANONICAL = 'https://www.bionixus.com/insights/top-market-research-companies-egypt-2026';
+const CANONICAL = 'https://www.bionixus.com/blog/top-market-research-companies-egypt-2026';
 
 export default function TopMarketResearchCompaniesEgypt2026() {
   const breadcrumbSchema = {
@@ -161,7 +147,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' },
-      { '@type': 'ListItem', position: 2, name: 'Insights', item: 'https://www.bionixus.com/insights' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.bionixus.com/blog' },
       { '@type': 'ListItem', position: 3, name: 'Top Market Research Companies in Egypt (2026)' },
     ],
   };
@@ -175,7 +161,11 @@ export default function TopMarketResearchCompaniesEgypt2026() {
     url: CANONICAL,
     datePublished: '2026-04-18',
     dateModified: '2026-04-18',
-    author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+    author: {
+      '@type': 'Person',
+      name: 'Haidy Yahia',
+      affiliation: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+    },
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
     inLanguage: 'en',
   };
@@ -183,18 +173,13 @@ export default function TopMarketResearchCompaniesEgypt2026() {
   const itemListSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'Best Market Research Companies in Egypt 2026',
+    name: 'Top Market Research Companies in Egypt 2026',
     numberOfItems: firms.length,
     itemListElement: firms.map((f) => ({
       '@type': 'ListItem',
       position: f.rank,
-      item: {
-        '@type': 'Organization',
-        ...(f.orgId ? { '@id': f.orgId } : {}),
-        name: f.name,
-        url: f.url,
-        description: `Best for: ${f.bestFor}`,
-      },
+      name: f.name,
+      description: f.overview.slice(0, 200),
     })),
   };
 
@@ -216,6 +201,9 @@ export default function TopMarketResearchCompaniesEgypt2026() {
           name="description"
           content="Independent 2026 guide to the 5 leading market research companies in Egypt for healthcare, pharma, and consumer research."
         />
+        <meta name="geo.region" content="EG" />
+        <meta name="geo.placename" content="Egypt" />
+        <meta name="author" content="Haidy Yahia" />
         <link rel="canonical" href={CANONICAL} />
         <link rel="alternate" hreflang="en" href={CANONICAL} />
         <link
@@ -246,7 +234,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
             <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
               <Link to="/" className="hover:text-primary transition-colors">Home</Link>
               <span>/</span>
-              <Link to="/insights" className="hover:text-primary transition-colors">Insights</Link>
+              <Link to="/blog" className="hover:text-primary transition-colors">Blog</Link>
               <span>/</span>
               <span className="text-foreground">Top Market Research Companies in Egypt</span>
             </div>
@@ -270,7 +258,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
               research partner for the largest market in MENA.
             </p>
             <p className="text-sm text-muted-foreground">
-              Published April 2026 · By BioNixus Research Team · 14 min read
+              Published April 2026 · By Haidy Yahia · 14 min read
             </p>
           </div>
         </section>
@@ -295,35 +283,6 @@ export default function TopMarketResearchCompaniesEgypt2026() {
                 <p className="text-3xl md:text-4xl font-display font-bold">8</p>
                 <p className="text-primary-foreground/70 text-sm mt-1">FAQs answered</p>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Quick Answer — direct-answer block for AI extraction */}
-        <section className="section-padding py-10" aria-label="Quick Answer">
-          <div className="container-wide max-w-5xl mx-auto">
-            <div className="bg-card border border-border rounded-xl p-8">
-              <h2 className="text-xl font-display font-semibold text-foreground mb-4">
-                Best Market Research Companies in Egypt (2026)
-              </h2>
-              <p className="text-sm text-muted-foreground mb-4">
-                The following market research companies have demonstrated operations, fieldwork capability, or
-                established project delivery in Egypt as of 2026, covering healthcare, pharmaceutical, consumer,
-                and strategic research disciplines:
-              </p>
-              <ol className="space-y-2">
-                {firms.map((f) => (
-                  <li key={f.anchor} className="flex items-start gap-3 text-sm">
-                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-0.5">
-                      {f.rank}
-                    </span>
-                    <span>
-                      <strong className="text-foreground">{f.name}</strong>
-                      <span className="text-muted-foreground"> — Best for: {f.bestFor}</span>
-                    </span>
-                  </li>
-                ))}
-              </ol>
             </div>
           </div>
         </section>
@@ -430,10 +389,9 @@ export default function TopMarketResearchCompaniesEgypt2026() {
               5 Leading Market Research Companies in Egypt (2026)
             </h2>
             <p className="text-muted-foreground mb-10 max-w-3xl">
-              The following profiles cover leading market research companies operating in Egypt. Firms are assessed
-              by use case and market positioning — each brings distinct strengths across primary research, consumer
-              intelligence, healthcare, and syndicated data. Select based on your research type, budget, and Egypt
-              engagement requirements.
+              The following profiles cover the leading market research firms operating in Egypt, ordered by
+              Egypt-specific healthcare and pharma research capability. Each profile assesses scope, methodology,
+              and practical relevance for pharmaceutical and consumer research buyers.
             </p>
             <div className="space-y-8">
               {firms.map((firm) => (
@@ -452,15 +410,12 @@ export default function TopMarketResearchCompaniesEgypt2026() {
                           {firm.name}
                         </h3>
                       </div>
-                      <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+                      <div className="flex items-center gap-4 text-sm text-muted-foreground">
                         <span className="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-primary/10 text-primary">
                           {firm.type}
                         </span>
                         <span>HQ: {firm.hq}</span>
                       </div>
-                      <p className="text-xs text-muted-foreground mt-1.5">
-                        <span className="font-semibold text-foreground">Best for:</span> {firm.bestFor}
-                      </p>
                     </div>
                   </div>
                   <p className="text-muted-foreground leading-relaxed mb-4">{firm.overview}</p>
@@ -502,11 +457,11 @@ export default function TopMarketResearchCompaniesEgypt2026() {
                 targeted HCP research.
               </p>
               <p>
-                <strong className="text-foreground">BioNixus</strong>, as a global market research company with offices in the
-                USA, UK, and the Middle East, covers both healthcare/pharma and consumer research within a single global
-                operation — comparable to how Kantar or Ipsos approach multi-discipline research. Clients working across
-                both domains (e.g., OTC + Rx, or consumer health + specialist pharma) can consolidate with one globally
-                structured partner with in-market Egypt execution.
+                <strong className="text-foreground">BioNixus is uniquely positioned</strong> as the only firm in this guide
+                operating as a full-service global network — spanning pharma, healthcare, consumer, FMCG, and financial
+                services research from a US-headquartered operation with offices in London (UK) and Cairo (Egypt) and
+                fieldwork reach across 17+ countries. Clients working across OTC and Rx, or consumer health and specialist
+                pharma, can consolidate within one global partner.
               </p>
               <p>
                 For syndicated market data, Euromonitor and NielsenIQ provide valuable sizing and trend information. However,
@@ -532,7 +487,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
                 identifiable client engagements. Firms are ordered by Egypt-specific healthcare and pharma capability.
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                This guide is maintained by the BioNixus research team. BioNixus is profiled in this guide and is
+                This guide is maintained by Haidy Yahia. BioNixus is profiled in this guide and is
                 transparent about its inclusion. For corrections or updates,{' '}
                 <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.
               </p>
@@ -563,10 +518,13 @@ export default function TopMarketResearchCompaniesEgypt2026() {
             <h2 className="text-xl font-display font-semibold text-foreground mb-6">Related Resources</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
+                { to: '/egypt-pharmaceutical-market-research', label: 'Healthcare Market Research Company in Egypt', desc: 'BioNixus BOFU page for EDA-aligned pharma and healthcare research.' },
                 { to: '/strategic-portfolio', label: 'BioNixus Strategic Portfolio', desc: 'Full portfolio of market research and consulting capabilities.' },
                 { to: '/pharmaceutical-companies-egypt', label: 'Pharmaceutical Companies in Egypt', desc: '20+ pharma companies, $5.8B market data, EDA guide.' },
                 { to: '/healthcare-market-research/egypt', label: 'Healthcare Market Research in Egypt', desc: 'Country hub with FAQs, key stats, and therapy focus.' },
                 { to: '/market-research-egypt', label: 'Market Research Egypt', desc: 'Pharma and healthcare intelligence landing page.' },
+                { to: '/insights/top-market-research-companies-saudi-arabia-2026', label: 'Top Market Research Companies in Saudi Arabia', desc: 'Sister guide to the leading research firms in Saudi Arabia.' },
+                { to: '/insights/top-market-research-companies-uae-2026', label: 'Top Market Research Companies in the UAE', desc: 'Sister guide to the leading research firms in the UAE.' },
                 { to: '/blog/top-market-research-companies-egypt-2026', label: 'Blog Version of This Guide', desc: 'Read the blog post version with related articles.' },
                 { to: '/contact', label: 'Request a Proposal', desc: 'Get in touch for a custom Egypt research engagement.' },
               ].map((r) => (
