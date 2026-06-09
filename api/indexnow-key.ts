@@ -767,6 +767,7 @@ export default async function handler(
       res.setHeader('Content-Type', 'image/svg+xml; charset=utf-8');
       res.setHeader('Cache-Control', 'public, max-age=86400, s-maxage=31536000, immutable');
       res.setHeader('X-Content-Type-Options', 'nosniff');
+      res.setHeader('X-Robots-Tag', 'noindex, nofollow');
       res.status(200).send(svg);
       return;
     }

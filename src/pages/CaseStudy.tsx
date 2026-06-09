@@ -251,6 +251,10 @@ const CaseStudyPage = () => {
   if (!caseStudy || isError) {
     return (
       <div className="min-h-screen bg-background">
+        <Helmet>
+          <meta name="prerender-status" content="404" />
+          <meta name="robots" content="noindex" />
+        </Helmet>
         <Navbar />
         <main className="section-padding container-wide">
           <h1 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3 text-balance">

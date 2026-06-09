@@ -351,6 +351,20 @@ export default function AdminDashboard() {
             📈 Analytics
           </button>
           <button
+            onClick={() => navigate('/admin/gsc')}
+            style={{
+              padding: '10px 20px',
+              background: 'white',
+              color: '#1a73e8',
+              border: 'none',
+              borderRadius: '6px',
+              cursor: 'pointer',
+              fontWeight: 'bold',
+            }}
+          >
+            🔍 GSC
+          </button>
+          <button
             onClick={() => navigate('/admin/import-subscribers')}
             style={{
               padding: '10px 20px',

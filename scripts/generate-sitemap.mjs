@@ -151,6 +151,7 @@ const staticPages = [
   { path: '/es', priority: '0.9', changefreq: 'weekly' },
   { path: '/zh', priority: '0.9', changefreq: 'weekly' },
   { path: '/ar', priority: '0.9', changefreq: 'weekly' },
+  { path: '/pt', priority: '0.9', changefreq: 'weekly' },
   { path: '/about', priority: '0.9' },
   { path: '/contact', priority: '0.9' },
   { path: '/de/contact', priority: '0.7', changefreq: 'monthly' },
@@ -198,6 +199,7 @@ const staticPages = [
   { path: '/es/market-research-healthcare', priority: '0.85', changefreq: 'weekly' },
   { path: '/zh/market-research-healthcare', priority: '0.85', changefreq: 'weekly' },
   { path: '/ar/market-research-healthcare', priority: '0.85', changefreq: 'weekly' },
+  { path: '/pt/market-research-healthcare', priority: '0.85', changefreq: 'weekly' },
   { path: '/qualitative-market-research', priority: '0.9', changefreq: 'weekly' },
   { path: '/pharmacies-saudi-arabia-marketing', priority: '0.9', changefreq: 'weekly' },
   { path: '/bionixus-ai-chatbots-increase-sales-and-lead-generation', priority: '0.7', changefreq: 'monthly' },
@@ -213,6 +215,9 @@ const staticPages = [
   { path: '/kuwait-market-access-research', priority: '0.8', changefreq: 'monthly' },
   { path: '/qatar-market-access-research', priority: '0.8', changefreq: 'monthly' },
   { path: '/healthcare-fieldwork-middle-east', priority: '0.8', changefreq: 'monthly' },
+  { path: '/healthcare-fieldwork-gcc', priority: '0.8', changefreq: 'monthly' },
+  { path: '/pharma-fieldwork-saudi-arabia', priority: '0.8', changefreq: 'monthly' },
+  { path: '/pharma-fieldwork-uae', priority: '0.8', changefreq: 'monthly' },
   { path: '/real-world-evidence', priority: '0.9', changefreq: 'weekly' },
   { path: '/real-world-evidence-gcc', priority: '0.8', changefreq: 'monthly' },
   { path: '/heor-consulting-saudi-arabia', priority: '0.8', changefreq: 'monthly' },
@@ -220,7 +225,15 @@ const staticPages = [
   { path: '/pharma-fieldwork-uae', priority: '0.85', changefreq: 'monthly' },
   { path: '/pharma-fieldwork-egypt', priority: '0.85', changefreq: 'monthly' },
   { path: '/patient-support-program-research-gcc', priority: '0.8', changefreq: 'monthly' },
+  { path: '/patient-journey-research-gcc', priority: '0.8', changefreq: 'monthly' },
+  { path: '/patient-adherence-research-middle-east', priority: '0.8', changefreq: 'monthly' },
   { path: '/budget-impact-model-saudi-arabia', priority: '0.8', changefreq: 'monthly' },
+  { path: '/uae-pricing-reimbursement-strategy', priority: '0.8', changefreq: 'monthly' },
+  { path: '/specialist-physician-panel-uae', priority: '0.8', changefreq: 'monthly' },
+  { path: '/brand-tracking-pharma-gcc', priority: '0.8', changefreq: 'monthly' },
+  { path: '/commercial-effectiveness-pharma-middle-east', priority: '0.8', changefreq: 'monthly' },
+  { path: '/diabetes-market-research-uae', priority: '0.8', changefreq: 'monthly' },
+  { path: '/respiratory-market-access-gcc', priority: '0.8', changefreq: 'monthly' },
   { path: '/quantitative-healthcare-market-research', priority: '0.9', changefreq: 'monthly' },
   { path: '/clinical-diagnostics-market-research', priority: '0.92', changefreq: 'weekly' },
   { path: '/clinical-diagnostics-proposal-request', priority: '0.88', changefreq: 'monthly' },
@@ -243,6 +256,31 @@ const staticPages = [
   { path: '/iqvia-alternative', priority: '0.9', changefreq: 'monthly' },
   { path: '/kantar-health-alternative-gcc', priority: '0.9', changefreq: 'monthly' },
   { path: '/gfk-alternative-egypt', priority: '0.87', changefreq: 'monthly' },
+  { path: '/insights/top-market-research-companies-egypt-2026', priority: '0.85', changefreq: 'monthly' },
+  { path: '/ar/insights/top-market-research-companies-egypt-2026', priority: '0.80', changefreq: 'monthly' },
+  { path: '/insights/top-market-research-companies-uae-2026', priority: '0.85', changefreq: 'monthly' },
+  { path: '/insights/top-market-research-companies-ksa-2026', priority: '0.85', changefreq: 'monthly' },
+  { path: '/insights/top-market-research-companies-dubai-2026', priority: '0.85', changefreq: 'monthly' },
+  { path: '/insights/top-market-research-companies-abu-dhabi-2026', priority: '0.85', changefreq: 'monthly' },
+  { path: '/insights/top-market-research-companies-riyadh-2026', priority: '0.85', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-saudi-arabia-2026', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-dubai-2026', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-abu-dhabi-2026', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-kuwait-2026', priority: '0.88', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-riyadh-2026', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-market-research-companies-brazil-2026', priority: '0.88', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-brazil-2026', priority: '0.88', changefreq: 'monthly' },
+  { path: '/insights/top-market-research-companies-argentina-2026', priority: '0.88', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-argentina-2026', priority: '0.88', changefreq: 'monthly' },
+  { path: '/pt', priority: '0.9', changefreq: 'weekly' },
+  { path: '/pt/market-research-healthcare', priority: '0.85', changefreq: 'weekly' },
+  { path: '/pt/blog', priority: '0.8', changefreq: 'weekly' },
+  { path: '/pt/contact', priority: '0.7', changefreq: 'monthly' },
+  { path: '/pt/methodology', priority: '0.6', changefreq: 'monthly' },
+  { path: '/pt/insights/top-market-research-companies-brasil-2026', priority: '0.85', changefreq: 'monthly' },
+  { path: '/pt/insights/top-empresas-pesquisa-mercado-saude-brasil-2026', priority: '0.85', changefreq: 'monthly' },
+  { path: '/es/insights/top-empresas-investigacion-mercado-argentina-2026', priority: '0.85', changefreq: 'monthly' },
+  { path: '/es/insights/top-empresas-investigacion-mercado-salud-argentina-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/blog/uae-healthcare-market-overview-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/blog/gcc-pharmacy-market-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/blog/saudi-arabia-healthcare-market-2026', priority: '0.88', changefreq: 'monthly' },
@@ -462,19 +500,21 @@ function buildStaticRoutes() {
 }
 
 const hreflangGroups = [
-  { en: '/', de: '/de', fr: '/fr', es: '/es', ar: '/ar', 'zh-CN': '/zh', 'x-default': '/' },
+  { en: '/', pt: '/pt', de: '/de', fr: '/fr', es: '/es', ar: '/ar', 'zh-CN': '/zh', 'x-default': '/' },
   {
     en: '/market-research-healthcare',
+    pt: '/pt/market-research-healthcare',
     de: '/de/market-research-healthcare',
     fr: '/fr/market-research-healthcare',
     es: '/es/market-research-healthcare',
     ar: '/ar/market-research-healthcare',
     'zh-CN': '/zh/market-research-healthcare',
+    pt: '/pt/market-research-healthcare',
     'x-default': '/market-research-healthcare',
   },
-  { en: '/contact', de: '/de/contact', fr: '/fr/contacts', es: '/es/contact', ar: '/ar/contacts', 'zh-CN': '/zh/contact', 'x-default': '/contact' },
+  { en: '/contact', pt: '/pt/contact', de: '/de/contact', fr: '/fr/contacts', es: '/es/contact', ar: '/ar/contacts', 'zh-CN': '/zh/contact', 'x-default': '/contact' },
   // Only list languages that actually have distinct localized URLs.
-  { en: '/blog', de: '/de/blog', fr: '/fr/blog', ar: '/ar/blog', 'x-default': '/blog' },
+  { en: '/blog', pt: '/pt/blog', de: '/de/blog', fr: '/fr/blog', ar: '/ar/blog', 'x-default': '/blog' },
   { en: '/services/market-access', es: '/es/market-access', 'x-default': '/services/market-access' },
   { en: '/market-research-uae', ar: '/ar/market-research-uae', 'x-default': '/market-research-uae' },
   { en: '/market-research-ksa', ar: '/ar/market-research-ksa', 'x-default': '/market-research-ksa' },
@@ -482,10 +522,55 @@ const hreflangGroups = [
   { en: '/market-research-kuwait', ar: '/ar/market-research-kuwait', 'x-default': '/market-research-kuwait' },
   { en: '/market-research-egypt', ar: '/ar/market-research-egypt', 'x-default': '/market-research-egypt' },
   {
+    en: '/insights/top-market-research-companies-egypt-2026',
+    ar: '/ar/insights/top-market-research-companies-egypt-2026',
+    'x-default': '/insights/top-market-research-companies-egypt-2026',
+  },
+  {
+    en: '/insights/top-market-research-companies-brazil-2026',
+    pt: '/pt/insights/top-market-research-companies-brasil-2026',
+    'x-default': '/insights/top-market-research-companies-brazil-2026',
+  },
+  {
+    en: '/insights/top-healthcare-market-research-companies-brazil-2026',
+    pt: '/pt/insights/top-empresas-pesquisa-mercado-saude-brasil-2026',
+    'x-default': '/insights/top-healthcare-market-research-companies-brazil-2026',
+  },
+  {
+    en: '/insights/top-market-research-companies-argentina-2026',
+    es: '/es/insights/top-empresas-investigacion-mercado-argentina-2026',
+    'x-default': '/insights/top-market-research-companies-argentina-2026',
+  },
+  {
+    en: '/insights/top-healthcare-market-research-companies-argentina-2026',
+    es: '/es/insights/top-empresas-investigacion-mercado-salud-argentina-2026',
+    'x-default': '/insights/top-healthcare-market-research-companies-argentina-2026',
+  },
+  {
     en: '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
     de: '/de/success-in-startups',
     ar: '/ar/arabic-blog-alsawdyh',
     'x-default': '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
+  },
+  {
+    en: '/insights/top-market-research-companies-brazil-2026',
+    pt: '/pt/insights/top-market-research-companies-brasil-2026',
+    'x-default': '/insights/top-market-research-companies-brazil-2026',
+  },
+  {
+    en: '/insights/top-healthcare-market-research-companies-brazil-2026',
+    pt: '/pt/insights/top-empresas-pesquisa-mercado-saude-brasil-2026',
+    'x-default': '/insights/top-healthcare-market-research-companies-brazil-2026',
+  },
+  {
+    en: '/insights/top-market-research-companies-argentina-2026',
+    es: '/es/insights/top-empresas-investigacion-mercado-argentina-2026',
+    'x-default': '/insights/top-market-research-companies-argentina-2026',
+  },
+  {
+    en: '/insights/top-healthcare-market-research-companies-argentina-2026',
+    es: '/es/insights/top-empresas-investigacion-mercado-salud-argentina-2026',
+    'x-default': '/insights/top-healthcare-market-research-companies-argentina-2026',
   },
 ];
 
@@ -593,14 +678,15 @@ async function fetchPressReleaseContent(projectId, dataset) {
   }
 }
 
-async function fetchSanityContent(projectId, dataset, types) {
+async function fetchSanityContent(projectId, dataset, types, token = null) {
   try {
     const { createClient } = await import('@sanity/client');
     const client = createClient({
       projectId,
       dataset,
       apiVersion: '2024-01-01',
-      useCdn: true,
+      useCdn: false,
+      ...(token ? { token } : {}),
     });
     const typeArray = Array.isArray(types) ? types : [types];
     const query = `*[_type in $types && defined(slug.current)]{ "slug": slug.current, _updatedAt }`;
@@ -829,6 +915,9 @@ const STATIC_PAGE_FILES = {
   '/kuwait-market-access-research': ['src/pages/KuwaitMarketAccessResearch.tsx'],
   '/qatar-market-access-research': ['src/pages/QatarMarketAccessResearch.tsx'],
   '/healthcare-fieldwork-middle-east': ['src/pages/HealthcareFieldworkMiddleEast.tsx'],
+  '/healthcare-fieldwork-gcc': ['src/pages/HealthcareFieldworkGcc.tsx'],
+  '/pharma-fieldwork-saudi-arabia': ['src/pages/PharmaFieldworkSaudiArabia.tsx'],
+  '/pharma-fieldwork-uae': ['src/pages/PharmaFieldworkUae.tsx'],
   '/real-world-evidence': ['src/pages/RealWorldEvidence.tsx'],
   '/real-world-evidence-gcc': ['src/pages/RealWorldEvidenceGcc.tsx'],
   '/heor-consulting-saudi-arabia': ['src/pages/HeorConsultingSaudiArabia.tsx'],
@@ -836,9 +925,42 @@ const STATIC_PAGE_FILES = {
   '/pharma-fieldwork-uae': ['src/pages/PharmaFieldworkUae.tsx'],
   '/pharma-fieldwork-egypt': ['src/pages/PharmaFieldworkEgypt.tsx'],
   '/patient-support-program-research-gcc': ['src/pages/PatientSupportProgramResearchGcc.tsx'],
+  '/patient-journey-research-gcc': ['src/pages/PatientJourneyResearchGcc.tsx'],
+  '/patient-adherence-research-middle-east': ['src/pages/PatientAdherenceResearchMiddleEast.tsx'],
   '/budget-impact-model-saudi-arabia': ['src/pages/BudgetImpactModelSaudiArabia.tsx'],
+  '/uae-pricing-reimbursement-strategy': ['src/pages/UaePricingReimbursementStrategy.tsx'],
+  '/specialist-physician-panel-uae': ['src/pages/SpecialistPhysicianPanelUae.tsx'],
+  '/brand-tracking-pharma-gcc': ['src/pages/BrandTrackingPharmaGcc.tsx'],
+  '/commercial-effectiveness-pharma-middle-east': ['src/pages/CommercialEffectivenessPharmaMiddleEast.tsx'],
+  '/diabetes-market-research-uae': ['src/pages/DiabetesMarketResearchUae.tsx'],
+  '/respiratory-market-access-gcc': ['src/pages/RespiratoryMarketAccessGcc.tsx'],
   '/bionixus-ai-chatbots-increase-sales-and-lead-generation': ['src/pages/AiChatbotsLeadGeneration.tsx'],
   '/pharmacies-saudi-arabia-marketing': ['src/pages/PharmaciesSaudiArabiaMarketing.tsx'],
+  '/insights/top-market-research-companies-egypt-2026': ['src/pages/TopMarketResearchCompaniesEgypt2026.tsx'],
+  '/ar/insights/top-market-research-companies-egypt-2026': ['src/pages/ArTopMarketResearchCompaniesEgypt2026.tsx'],
+  '/insights/top-market-research-companies-uae-2026': ['src/pages/TopMarketResearchCompaniesUae2026.tsx'],
+  '/insights/top-market-research-companies-ksa-2026': ['src/pages/TopMarketResearchCompaniesSaudiArabia2026.tsx'],
+  '/insights/top-market-research-companies-dubai-2026': ['src/pages/TopMarketResearchCompaniesDubai2026.tsx'],
+  '/insights/top-market-research-companies-abu-dhabi-2026': ['src/pages/TopMarketResearchCompaniesAbuDhabi2026.tsx'],
+  '/insights/top-market-research-companies-riyadh-2026': ['src/pages/TopMarketResearchCompaniesRiyadh2026.tsx'],
+  '/insights/top-healthcare-market-research-companies-saudi-arabia-2026': ['src/pages/TopHealthcareMarketResearchCompaniesSaudiArabia2026.tsx'],
+  '/insights/top-healthcare-market-research-companies-dubai-2026': ['src/pages/TopHealthcareMarketResearchCompaniesDubai2026.tsx'],
+  '/insights/top-healthcare-market-research-companies-abu-dhabi-2026': ['src/pages/TopHealthcareMarketResearchCompaniesAbuDhabi2026.tsx'],
+  '/insights/top-healthcare-market-research-companies-kuwait-2026': ['src/pages/TopHealthcareMarketResearchCompaniesKuwait2026.tsx'],
+  '/insights/top-healthcare-market-research-companies-riyadh-2026': ['src/pages/TopHealthcareMarketResearchCompaniesRiyadh2026.tsx'],
+  '/insights/top-market-research-companies-brazil-2026': ['src/pages/TopMarketResearchCompaniesBrazil2026.tsx'],
+  '/insights/top-healthcare-market-research-companies-brazil-2026': ['src/pages/TopHealthcareMarketResearchCompaniesBrazil2026.tsx'],
+  '/insights/top-market-research-companies-argentina-2026': ['src/pages/TopMarketResearchCompaniesArgentina2026.tsx'],
+  '/insights/top-healthcare-market-research-companies-argentina-2026': ['src/pages/TopHealthcareMarketResearchCompaniesArgentina2026.tsx'],
+  '/pt/insights/top-market-research-companies-brasil-2026': ['src/pages/PtTopMarketResearchCompaniesBrazil2026.tsx'],
+  '/pt/insights/top-empresas-pesquisa-mercado-saude-brasil-2026': ['src/pages/PtTopHealthcareMarketResearchCompaniesBrazil2026.tsx'],
+  '/es/insights/top-empresas-investigacion-mercado-argentina-2026': ['src/pages/EsTopMarketResearchCompaniesArgentina2026.tsx'],
+  '/es/insights/top-empresas-investigacion-mercado-salud-argentina-2026': ['src/pages/EsTopHealthcareMarketResearchCompaniesArgentina2026.tsx'],
+  '/pt': ['src/pages/Index.tsx'],
+  '/pt/market-research-healthcare': ['src/pages/MarketResearchHealthcare.tsx'],
+  '/pt/blog': ['src/pages/Blog.tsx'],
+  '/pt/contact': ['src/pages/Contact.tsx'],
+  '/pt/methodology': ['src/pages/Methodology.tsx'],
   '/pharmaceutical-companies-kuwait': ['src/pages/KuwaitPharmaCompanies.tsx'],
   '/pharmaceutical-companies-saudi-arabia': ['src/pages/SaudiPharmaCompanies.tsx'],
   '/pharmaceutical-companies-uae': ['src/pages/UaePharmaCompanies.tsx'],
@@ -900,10 +1022,12 @@ async function main() {
   const blogDataset = process.env.VITE_SANITY_DATASET || 'production';
   const caseProjectId = process.env.VITE_SANITY_CASE_STUDIES_PROJECT_ID || 'gj6cv27f';
   const caseDataset = process.env.VITE_SANITY_CASE_STUDIES_DATASET || 'production';
+  const blogToken = process.env.VITE_SANITY_API_TOKEN || process.env.SANITY_API_TOKEN || null;
+  const caseToken = process.env.VITE_SANITY_CASE_STUDIES_API_TOKEN || blogToken;
 
   const [blogContent, caseContent, pressContent] = await Promise.all([
-    fetchSanityContent(blogProjectId, blogDataset, ['post', 'blogPost']),
-    fetchSanityContent(caseProjectId, caseDataset, 'caseStudy'),
+    fetchSanityContent(blogProjectId, blogDataset, ['post', 'blogPost'], blogToken),
+    fetchSanityContent(caseProjectId, caseDataset, 'caseStudy', caseToken),
     fetchPressReleaseContent(blogProjectId, blogDataset),
   ]);
 
