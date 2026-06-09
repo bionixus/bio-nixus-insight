@@ -54,6 +54,12 @@ export const seoByLanguage: Record<Language, {
     keywords: 'healthcare market research, pharmaceutical consulting, competitive intelligence, market access, clinical trials, biotech, life sciences',
     canonicalPath: '/ar',
   },
+  pt: {
+    title: 'BioNixus — Pesquisa de Mercado em Saúde | Brasil, América Latina, Europa & MENA',
+    description: 'Empresa global de pesquisa de mercado em saúde com sede nos EUA e escritórios no Reino Unido e Oriente Médio. Entregamos insights quantitativos e qualitativos farmacêuticos para o Brasil, América Latina, Europa e MENA.',
+    keywords: 'pesquisa de mercado saúde Brasil, pesquisa farmacêutica Brasil, ANVISA pesquisa de mercado, acesso ao mercado Brasil, pesquisa de mercado América Latina, BioNixus Brasil, KOL mapeamento Brasil, CONITEC pesquisa',
+    canonicalPath: '/pt',
+  },
 };
 
 export const languagePaths: Record<Language, string> = {
@@ -63,6 +69,7 @@ export const languagePaths: Record<Language, string> = {
   fr: '/fr',
   es: '/es',
   zh: '/zh',
+  pt: '/pt',
 };
 
 /** Canonical localized path for the dedicated Contact page (matches `localizedRouteGroups['/contact']`). */
@@ -88,6 +95,7 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     es: '/es',
     zh: '/zh',
     ar: '/ar',
+    pt: '/pt',
   },
   '/contact': {
     en: '/contact',
@@ -96,6 +104,7 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     es: '/es/contact',
     zh: '/zh/contact',
     ar: '/ar/contacts',
+    pt: '/pt/contact',
   },
   '/methodology': {
     en: '/methodology',
@@ -104,6 +113,7 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     es: '/es/methodology',
     zh: '/zh/methodology',
     ar: '/ar/methodology',
+    pt: '/pt/methodology',
   },
   '/blog': {
     en: '/blog',
@@ -112,6 +122,7 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     es: '/blog',
     zh: '/blog',
     ar: '/blog',
+    pt: '/pt/blog',
   },
   '/market-access': {
     en: '/services/market-access',
@@ -177,6 +188,22 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     en: '/insights/top-market-research-companies-egypt-2026',
     ar: '/ar/insights/top-market-research-companies-egypt-2026',
   },
+  '/insights/top-market-research-companies-brazil-2026': {
+    en: '/insights/top-market-research-companies-brazil-2026',
+    pt: '/pt/insights/top-market-research-companies-brasil-2026',
+  },
+  '/insights/top-healthcare-market-research-companies-brazil-2026': {
+    en: '/insights/top-healthcare-market-research-companies-brazil-2026',
+    pt: '/pt/insights/top-empresas-pesquisa-mercado-saude-brasil-2026',
+  },
+  '/insights/top-market-research-companies-argentina-2026': {
+    en: '/insights/top-market-research-companies-argentina-2026',
+    es: '/es/insights/top-empresas-investigacion-mercado-argentina-2026',
+  },
+  '/insights/top-healthcare-market-research-companies-argentina-2026': {
+    en: '/insights/top-healthcare-market-research-companies-argentina-2026',
+    es: '/es/insights/top-empresas-investigacion-mercado-salud-argentina-2026',
+  },
   '/market-research-saudi-arabia-pharmaceutical': {
     en: '/market-research-saudi-arabia-pharmaceutical',
     de: '/market-research-saudi-arabia-pharmaceutical',
@@ -192,6 +219,7 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     es: '/es/market-research-healthcare',
     zh: '/zh/market-research-healthcare',
     ar: '/ar/market-research-healthcare',
+    pt: '/pt/market-research-healthcare',
   },
   '/qualitative-market-research': {
     en: '/qualitative-market-research',

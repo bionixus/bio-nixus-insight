@@ -26,6 +26,7 @@ function getLanguageFromPath(pathname: string): Language | null {
   if (pathname === '/es' || pathname.startsWith('/es/')) return 'es';
   if (pathname === '/zh' || pathname.startsWith('/zh/')) return 'zh';
   if (pathname === '/ar' || pathname.startsWith('/ar/')) return 'ar';
+  if (pathname === '/pt' || pathname.startsWith('/pt/')) return 'pt';
   if (pathname === '/' || pathname === '') return 'en';
   return null;
 }
