@@ -1,4 +1,4 @@
-export type Language = 'en' | 'de' | 'fr' | 'es' | 'zh' | 'ar' | 'pt';
+export type Language = 'en' | 'de' | 'fr' | 'es' | 'zh' | 'ar' | 'pt' | 'ru';
 
 export const languages: { code: Language; name: string; flag: string; rtl?: boolean }[] = [
   { code: 'en', name: 'English', flag: '🇬🇧' },
@@ -6,6 +6,7 @@ export const languages: { code: Language; name: string; flag: string; rtl?: bool
   { code: 'fr', name: 'Français', flag: '🇫🇷' },
   { code: 'es', name: 'Español', flag: '🇪🇸' },
   { code: 'pt', name: 'Português', flag: '🇵🇹' },
+  { code: 'ru', name: 'Русский', flag: '🇷🇺' },
   { code: 'zh', name: 'Chinese', flag: '🇨🇳' },
   { code: 'ar', name: 'Arabic', flag: '🇪🇬', rtl: true },
 ];
