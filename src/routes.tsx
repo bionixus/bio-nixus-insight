@@ -102,6 +102,14 @@ import TopHealthcareMarketResearchCompaniesDubai2026 from '@/pages/TopHealthcare
 import TopHealthcareMarketResearchCompaniesAbuDhabi2026 from '@/pages/TopHealthcareMarketResearchCompaniesAbuDhabi2026';
 import TopHealthcareMarketResearchCompaniesKuwait2026 from '@/pages/TopHealthcareMarketResearchCompaniesKuwait2026';
 import TopHealthcareMarketResearchCompaniesRiyadh2026 from '@/pages/TopHealthcareMarketResearchCompaniesRiyadh2026';
+import TopMarketResearchCompaniesBrazil2026 from '@/pages/TopMarketResearchCompaniesBrazil2026';
+import TopHealthcareMarketResearchCompaniesBrazil2026 from '@/pages/TopHealthcareMarketResearchCompaniesBrazil2026';
+import TopMarketResearchCompaniesArgentina2026 from '@/pages/TopMarketResearchCompaniesArgentina2026';
+import TopHealthcareMarketResearchCompaniesArgentina2026 from '@/pages/TopHealthcareMarketResearchCompaniesArgentina2026';
+import PtTopMarketResearchCompaniesBrazil2026 from '@/pages/PtTopMarketResearchCompaniesBrazil2026';
+import PtTopHealthcareMarketResearchCompaniesBrazil2026 from '@/pages/PtTopHealthcareMarketResearchCompaniesBrazil2026';
+import EsTopMarketResearchCompaniesArgentina2026 from '@/pages/EsTopMarketResearchCompaniesArgentina2026';
+import EsTopHealthcareMarketResearchCompaniesArgentina2026 from '@/pages/EsTopHealthcareMarketResearchCompaniesArgentina2026';
 import CaseStudy from '@/pages/CaseStudy';
 import HubPage from '@/pages/healthcare-research/HubPage';
 import CountryPage from '@/pages/healthcare-research/CountryPage';
@@ -146,6 +154,7 @@ export const routes: RouteObject[] = [
   { path: '/es', element: <Index /> },
   { path: '/zh', element: <Index /> },
   { path: '/ar', element: <Index /> },
+  { path: '/pt', element: <Index /> },
   { path: '/zh/about', element: <Index /> },
   { path: '/zh/healthcare-market-research', element: <Index /> },
   { path: '/zh/quantitative-research', element: <Index /> },
@@ -177,6 +186,7 @@ export const routes: RouteObject[] = [
   { path: '/es/market-research-healthcare', element: <MarketResearchHealthcare /> },
   { path: '/zh/market-research-healthcare', element: <MarketResearchHealthcare /> },
   { path: '/ar/market-research-healthcare', element: <MarketResearchHealthcare /> },
+  { path: '/pt/market-research-healthcare', element: <MarketResearchHealthcare /> },
   { path: '/qualitative-market-research', element: <QualitativeMarketResearch /> },
   { path: '/bionixus-market-research-middle-east', element: <BionixusMarketResearchMiddleEast /> },
   { path: '/bionixus-vs-iqvia-mena', element: <BionixusVsIqviaMena /> },
@@ -253,6 +263,14 @@ export const routes: RouteObject[] = [
   { path: '/insights/top-healthcare-market-research-companies-abu-dhabi-2026', element: <TopHealthcareMarketResearchCompaniesAbuDhabi2026 /> },
   { path: '/insights/top-healthcare-market-research-companies-kuwait-2026', element: <TopHealthcareMarketResearchCompaniesKuwait2026 /> },
   { path: '/insights/top-healthcare-market-research-companies-riyadh-2026', element: <TopHealthcareMarketResearchCompaniesRiyadh2026 /> },
+  { path: '/insights/top-market-research-companies-brazil-2026', element: <TopMarketResearchCompaniesBrazil2026 /> },
+  { path: '/insights/top-healthcare-market-research-companies-brazil-2026', element: <TopHealthcareMarketResearchCompaniesBrazil2026 /> },
+  { path: '/insights/top-market-research-companies-argentina-2026', element: <TopMarketResearchCompaniesArgentina2026 /> },
+  { path: '/insights/top-healthcare-market-research-companies-argentina-2026', element: <TopHealthcareMarketResearchCompaniesArgentina2026 /> },
+  { path: '/pt/insights/top-market-research-companies-brasil-2026', element: <PtTopMarketResearchCompaniesBrazil2026 /> },
+  { path: '/pt/insights/top-empresas-pesquisa-mercado-saude-brasil-2026', element: <PtTopHealthcareMarketResearchCompaniesBrazil2026 /> },
+  { path: '/es/insights/top-empresas-investigacion-mercado-argentina-2026', element: <EsTopMarketResearchCompaniesArgentina2026 /> },
+  { path: '/es/insights/top-empresas-investigacion-mercado-salud-argentina-2026', element: <EsTopHealthcareMarketResearchCompaniesArgentina2026 /> },
   { path: '/pharmaceutical-companies-egypt', element: <EgyptPharmaCompanies /> },
   { path: '/pharmaceutical-companies-qatar', element: <QatarPharmaCompanies /> },
   { path: '/pharmaceutical-companies-oman', element: <OmanPharmaCompanies /> },
@@ -262,6 +280,8 @@ export const routes: RouteObject[] = [
   { path: '/blog', element: <Blog /> },
   { path: '/de/blog', element: <Blog /> },
   { path: '/fr/blog', element: <Blog /> },
+  { path: '/pt/blog', element: <Blog /> },
+  { path: '/pt/blog/:slug', element: <BlogPost /> },
   { path: '/es/market-access', element: <SpanishMarketAccess /> },
   { path: '/de/success-in-startups', element: <GermanSuccessInStartups /> },
   { path: '/ar/arabic-blog-alsawdyh', element: <ArabicBlogAlsawdyh /> },
@@ -284,12 +304,14 @@ export const routes: RouteObject[] = [
   { path: '/es/contact', element: <Contact /> },
   { path: '/zh/contact', element: <Contact /> },
   { path: '/ar/contact', element: <Contact /> },
+  { path: '/pt/contact', element: <Contact /> },
   { path: '/methodology', element: <Methodology /> },
   { path: '/de/methodology', element: <Methodology /> },
   { path: '/fr/methodology', element: <Methodology /> },
   { path: '/es/methodology', element: <Methodology /> },
   { path: '/zh/methodology', element: <Methodology /> },
   { path: '/ar/methodology', element: <Methodology /> },
+  { path: '/pt/methodology', element: <Methodology /> },
   { path: '/ar/market-research-uae', element: <ArMarketResearchUae /> },
   { path: '/ar/market-research-ksa', element: <ArMarketResearchKsa /> },
   { path: '/ar/market-research-saudi', element: <ArMarketResearchSaudi /> },
