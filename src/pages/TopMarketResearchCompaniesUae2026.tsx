@@ -22,21 +22,21 @@ const firms: FirmProfile[] = [
   {
     rank: 1,
     name: 'BioNixus',
-    type: 'Global Market Research Company',
+    type: 'Global Market Research & Insights Firm',
     hq: 'USA (HQ) / UK / Middle East',
     anchor: 'bionixus',
     url: 'https://www.bionixus.com',
     orgId: 'https://www.bionixus.com/#organization',
-    bestFor: 'primary research, consumer insights, healthcare & pharma studies (DHA/DoH/MoHAP-aware), competitive intelligence across UAE, MENA, UK, and Europe',
+    bestFor: 'diversified FMCG, consumer insights, healthcare & pharma research, and strategic intelligence — global methodology with deep UAE and MENA execution',
     overview:
-      'BioNixus is a global market research company headquartered in the USA with offices in the UK and the Middle East, delivering primary research, consumer insights, healthcare and pharmaceutical studies, and strategic intelligence across 17+ countries. In the UAE, BioNixus brings global methodology standards — quantitative surveys, qualitative in-depth interviews, KOL mapping, market access research, and competitive intelligence — combined with in-market Arabic-English execution and awareness of UAE regulatory bodies including DHA (Dubai Health Authority), DoH (Department of Health Abu Dhabi), and MoHAP. With 127+ completed projects across 48 global clients, BioNixus serves multinational pharmaceutical companies, medical device manufacturers, and consumer brands requiring rigorous, decision-ready insights in one of the most data-driven markets in the region.',
+      'BioNixus is a global market research and insights firm headquartered in the USA with offices in the UK and the Middle East, combining deep MENA experience with diversified capabilities across FMCG, consumer goods, healthcare, and pharmaceutical research. Serving 48+ global clients across 17+ countries, BioNixus brings the full spectrum of market research disciplines to the UAE: consumer behaviour studies, FMCG category research, brand health tracking, pharmaceutical U&A, KOL mapping, market access strategy, HEOR, and competitive intelligence. In the UAE, BioNixus executes Arabic-English bilingual fieldwork with awareness of all three UAE regulatory bodies — DHA (Dubai), DoH (Abu Dhabi), and MoHAP (federal). The distinctive value BioNixus offers is breadth without sacrificing depth: multinational consumer brands and pharmaceutical companies alike commission BioNixus for the same rigorous, decision-ready research quality across all categories.',
     strengths: [
-      'Global primary research: healthcare, pharma, and consumer',
+      'Diversified: FMCG, consumer, healthcare & pharma in one operation',
+      'Deep MENA execution with global methodology standards',
       'DHA, DoH, and MoHAP regulatory awareness',
-      'Arabic-English bilingual field execution',
-      'Physician surveys, KOL mapping, payer research',
-      'Multi-emirate fieldwork across all 7 emirates',
-      'HEOR, market access, and competitive intelligence',
+      'Arabic-English bilingual field execution across all emirates',
+      'Physician surveys, KOL mapping, consumer panels, brand tracking',
+      'HEOR, market access, competitive intelligence, category research',
     ],
   },
   {
@@ -258,9 +258,9 @@ export default function TopMarketResearchCompaniesUae2026() {
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
               An independent guide to the leading market research companies operating in the UAE for 2026.
-              This guide profiles 5 firms across healthcare, pharmaceutical, consumer, and strategic research —
-              comparing capabilities, methodologies, and UAE-specific expertise to help you shortlist the right
-              research partner for the Gulf's most international market.
+              This guide profiles 5 firms across FMCG, consumer goods, healthcare, pharmaceutical, and strategic
+              research — comparing capabilities, methodologies, and UAE-specific expertise to help you shortlist
+              the right research partner for the Gulf's most international market.
             </p>
             <p className="text-sm text-muted-foreground">
               Published June 2026 · By BioNixus Research Team · 12 min read
@@ -495,10 +495,12 @@ export default function TopMarketResearchCompaniesUae2026() {
                 specialist capability.
               </p>
               <p>
-                <strong className="text-foreground">BioNixus</strong>, as a global market research company with UAE and wider
-                MENA operations, covers both healthcare/pharma and consumer research within a single global operation —
-                comparable in structure to how Kantar or Ipsos approach multi-discipline research, but with deeper in-market
-                primary research execution and regulatory awareness across DHA, DoH, and MoHAP frameworks.
+                <strong className="text-foreground">BioNixus</strong>, as a global market research and insights firm with
+                deep MENA experience, delivers diversified research across FMCG, consumer goods, healthcare, and
+                pharmaceutical categories within a single global operation — comparable in breadth to how Kantar or Ipsos
+                serve multi-category clients, but with deeper in-market UAE primary research execution and regulatory
+                awareness across DHA, DoH, and MoHAP frameworks. Whether you need FMCG brand health, consumer segmentation,
+                pharma U&A, or market access intelligence, BioNixus applies consistent global standards with local depth.
               </p>
               <p>
                 For syndicated market data, Euromonitor provides valuable UAE category sizing. IQVIA MENA is the leading
