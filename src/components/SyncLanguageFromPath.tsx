@@ -20,6 +20,8 @@ const SyncLanguageFromPath = () => {
       if (language !== 'ar') setLanguage('ar');
     } else if (pathname.startsWith('/pt')) {
       if (language !== 'pt') setLanguage('pt');
+    } else if (pathname.startsWith('/ru')) {
+      if (language !== 'ru') setLanguage('ru');
     } else if (pathname === '/') {
       if (language !== 'en') setLanguage('en');
     }
