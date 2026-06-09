@@ -170,6 +170,19 @@ const staticPages = [
   { path: '/insights/top-healthcare-market-research-companies-abu-dhabi-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-kuwait-2026', priority: '0.88', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-riyadh-2026', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-market-research-companies-brazil-2026', priority: '0.88', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-brazil-2026', priority: '0.88', changefreq: 'monthly' },
+  { path: '/insights/top-market-research-companies-argentina-2026', priority: '0.88', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-argentina-2026', priority: '0.88', changefreq: 'monthly' },
+  { path: '/pt', priority: '0.9', changefreq: 'weekly' },
+  { path: '/pt/market-research-healthcare', priority: '0.85', changefreq: 'weekly' },
+  { path: '/pt/blog', priority: '0.8', changefreq: 'weekly' },
+  { path: '/pt/contact', priority: '0.7', changefreq: 'monthly' },
+  { path: '/pt/methodology', priority: '0.6', changefreq: 'monthly' },
+  { path: '/pt/insights/top-market-research-companies-brasil-2026', priority: '0.85', changefreq: 'monthly' },
+  { path: '/pt/insights/top-empresas-pesquisa-mercado-saude-brasil-2026', priority: '0.85', changefreq: 'monthly' },
+  { path: '/es/insights/top-empresas-investigacion-mercado-argentina-2026', priority: '0.85', changefreq: 'monthly' },
+  { path: '/es/insights/top-empresas-investigacion-mercado-salud-argentina-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/blog/uae-healthcare-market-overview-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/blog/gcc-pharmacy-market-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/blog/saudi-arabia-healthcare-market-2026', priority: '0.88', changefreq: 'monthly' },
@@ -303,9 +316,10 @@ function buildStaticRoutes() {
 }
 
 const hreflangGroups = [
-  { en: '/', de: '/de', fr: '/fr', es: '/es', ar: '/ar', 'zh-CN': '/zh', 'x-default': '/' },
+  { en: '/', pt: '/pt', de: '/de', fr: '/fr', es: '/es', ar: '/ar', 'zh-CN': '/zh', 'x-default': '/' },
   {
     en: '/market-research-healthcare',
+    pt: '/pt/market-research-healthcare',
     de: '/de/market-research-healthcare',
     fr: '/fr/market-research-healthcare',
     es: '/es/market-research-healthcare',
@@ -313,9 +327,9 @@ const hreflangGroups = [
     'zh-CN': '/zh/market-research-healthcare',
     'x-default': '/market-research-healthcare',
   },
-  { en: '/contact', de: '/de/contact', fr: '/fr/contacts', es: '/es/contact', ar: '/ar/contacts', 'zh-CN': '/zh/contact', 'x-default': '/contact' },
+  { en: '/contact', pt: '/pt/contact', de: '/de/contact', fr: '/fr/contacts', es: '/es/contact', ar: '/ar/contacts', 'zh-CN': '/zh/contact', 'x-default': '/contact' },
   // Only list languages that actually have distinct localized URLs.
-  { en: '/blog', de: '/de/blog', fr: '/fr/blog', 'x-default': '/blog' },
+  { en: '/blog', pt: '/pt/blog', de: '/de/blog', fr: '/fr/blog', 'x-default': '/blog' },
   { en: '/services/market-access', es: '/es/market-access', 'x-default': '/services/market-access' },
   { en: '/market-research-uae', ar: '/ar/market-research-uae', 'x-default': '/market-research-uae' },
   { en: '/market-research-ksa', ar: '/ar/market-research-ksa', 'x-default': '/market-research-ksa' },
@@ -332,6 +346,26 @@ const hreflangGroups = [
     de: '/de/success-in-startups',
     ar: '/ar/arabic-blog-alsawdyh',
     'x-default': '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
+  },
+  {
+    en: '/insights/top-market-research-companies-brazil-2026',
+    pt: '/pt/insights/top-market-research-companies-brasil-2026',
+    'x-default': '/insights/top-market-research-companies-brazil-2026',
+  },
+  {
+    en: '/insights/top-healthcare-market-research-companies-brazil-2026',
+    pt: '/pt/insights/top-empresas-pesquisa-mercado-saude-brasil-2026',
+    'x-default': '/insights/top-healthcare-market-research-companies-brazil-2026',
+  },
+  {
+    en: '/insights/top-market-research-companies-argentina-2026',
+    es: '/es/insights/top-empresas-investigacion-mercado-argentina-2026',
+    'x-default': '/insights/top-market-research-companies-argentina-2026',
+  },
+  {
+    en: '/insights/top-healthcare-market-research-companies-argentina-2026',
+    es: '/es/insights/top-empresas-investigacion-mercado-salud-argentina-2026',
+    'x-default': '/insights/top-healthcare-market-research-companies-argentina-2026',
   },
 ];
 
@@ -377,14 +411,15 @@ function getGitLastModified(filePath) {
  * Fetch slugs AND their _updatedAt timestamps from Sanity.
  * Returns array of { slug, lastmod } objects.
  */
-async function fetchSanityContent(projectId, dataset, types) {
+async function fetchSanityContent(projectId, dataset, types, token = null) {
   try {
     const { createClient } = await import('@sanity/client');
     const client = createClient({
       projectId,
       dataset,
       apiVersion: '2024-01-01',
-      useCdn: true,
+      useCdn: false,
+      ...(token ? { token } : {}),
     });
     const typeArray = Array.isArray(types) ? types : [types];
     const query = `*[_type in $types && defined(slug.current)]{ "slug": slug.current, _updatedAt }`;
@@ -638,6 +673,19 @@ const STATIC_PAGE_FILES = {
   '/insights/top-healthcare-market-research-companies-abu-dhabi-2026': ['src/pages/TopHealthcareMarketResearchCompaniesAbuDhabi2026.tsx'],
   '/insights/top-healthcare-market-research-companies-kuwait-2026': ['src/pages/TopHealthcareMarketResearchCompaniesKuwait2026.tsx'],
   '/insights/top-healthcare-market-research-companies-riyadh-2026': ['src/pages/TopHealthcareMarketResearchCompaniesRiyadh2026.tsx'],
+  '/insights/top-market-research-companies-brazil-2026': ['src/pages/TopMarketResearchCompaniesBrazil2026.tsx'],
+  '/insights/top-healthcare-market-research-companies-brazil-2026': ['src/pages/TopHealthcareMarketResearchCompaniesBrazil2026.tsx'],
+  '/insights/top-market-research-companies-argentina-2026': ['src/pages/TopMarketResearchCompaniesArgentina2026.tsx'],
+  '/insights/top-healthcare-market-research-companies-argentina-2026': ['src/pages/TopHealthcareMarketResearchCompaniesArgentina2026.tsx'],
+  '/pt/insights/top-market-research-companies-brasil-2026': ['src/pages/PtTopMarketResearchCompaniesBrazil2026.tsx'],
+  '/pt/insights/top-empresas-pesquisa-mercado-saude-brasil-2026': ['src/pages/PtTopHealthcareMarketResearchCompaniesBrazil2026.tsx'],
+  '/es/insights/top-empresas-investigacion-mercado-argentina-2026': ['src/pages/EsTopMarketResearchCompaniesArgentina2026.tsx'],
+  '/es/insights/top-empresas-investigacion-mercado-salud-argentina-2026': ['src/pages/EsTopHealthcareMarketResearchCompaniesArgentina2026.tsx'],
+  '/pt': ['src/pages/Index.tsx'],
+  '/pt/market-research-healthcare': ['src/pages/MarketResearchHealthcare.tsx'],
+  '/pt/blog': ['src/pages/Blog.tsx'],
+  '/pt/contact': ['src/pages/Contact.tsx'],
+  '/pt/methodology': ['src/pages/Methodology.tsx'],
   '/pharmaceutical-companies-kuwait': ['src/pages/KuwaitPharmaCompanies.tsx'],
   '/pharmaceutical-companies-saudi-arabia': ['src/pages/SaudiPharmaCompanies.tsx'],
   '/pharmaceutical-companies-uae': ['src/pages/UaePharmaCompanies.tsx'],
@@ -675,10 +723,12 @@ async function main() {
   const blogDataset = process.env.VITE_SANITY_DATASET || 'production';
   const caseProjectId = process.env.VITE_SANITY_CASE_STUDIES_PROJECT_ID || 'gj6cv27f';
   const caseDataset = process.env.VITE_SANITY_CASE_STUDIES_DATASET || 'production';
+  const blogToken = process.env.VITE_SANITY_API_TOKEN || process.env.SANITY_API_TOKEN || null;
+  const caseToken = process.env.VITE_SANITY_CASE_STUDIES_API_TOKEN || blogToken;
 
   const [blogContent, caseContent] = await Promise.all([
-    fetchSanityContent(blogProjectId, blogDataset, ['post', 'blogPost']),
-    fetchSanityContent(caseProjectId, caseDataset, 'caseStudy'),
+    fetchSanityContent(blogProjectId, blogDataset, ['post', 'blogPost'], blogToken),
+    fetchSanityContent(caseProjectId, caseDataset, 'caseStudy', caseToken),
   ]);
 
   const today = new Date().toISOString().slice(0, 10);
