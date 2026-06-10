@@ -62,6 +62,12 @@ export const seoByLanguage: Record<Language, {
     keywords: 'pesquisa de mercado saúde Brasil, pesquisa farmacêutica Brasil, ANVISA pesquisa de mercado, acesso ao mercado Brasil, pesquisa de mercado América Latina, BioNixus Brasil, KOL mapeamento Brasil, CONITEC pesquisa',
     canonicalPath: '/pt',
   },
+  ru: {
+    title: 'BioNixus — Маркетинговые исследования | Россия, Европа, MENA',
+    description: 'Глобальная компания по маркетинговым исследованиям в сфере здравоохранения. Количественные и качественные исследования для фармацевтических компаний в России, Европе и MENA.',
+    keywords: 'маркетинговые исследования здравоохранение Россия, фармацевтические исследования, исследования рынка фармацевтика, BioNixus Россия',
+    canonicalPath: '/ru',
+  },
 };
 
 export const languagePaths: Record<Language, string> = {
@@ -72,6 +78,7 @@ export const languagePaths: Record<Language, string> = {
   es: '/es',
   zh: '/zh',
   pt: '/pt',
+  ru: '/ru',
 };
 
 /** Canonical localized path for the dedicated Contact page (matches `localizedRouteGroups['/contact']`). */
@@ -98,6 +105,7 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     zh: '/zh',
     ar: '/ar',
     pt: '/pt',
+    ru: '/ru',
   },
   '/contact': {
     en: '/contact',
@@ -107,6 +115,7 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     zh: '/zh/contact',
     ar: '/ar/contacts',
     pt: '/pt/contact',
+    ru: '/ru/contact',
   },
   '/methodology': {
     en: '/methodology',
@@ -123,6 +132,7 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     fr: '/fr/blog',
     ar: '/ar/blog',
     pt: '/pt/blog',
+    ru: '/ru/blog',
   },
   '/market-access': {
     en: '/services/market-access',
@@ -190,6 +200,7 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     zh: '/zh/market-research-healthcare',
     ar: '/ar/market-research-healthcare',
     pt: '/pt/market-research-healthcare',
+    ru: '/ru/market-research-healthcare',
   },
   '/qualitative-market-research': {
     en: '/qualitative-market-research',

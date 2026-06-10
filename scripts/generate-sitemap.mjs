@@ -277,6 +277,11 @@ const staticPages = [
   { path: '/pt/blog', priority: '0.8', changefreq: 'weekly' },
   { path: '/pt/contact', priority: '0.7', changefreq: 'monthly' },
   { path: '/pt/methodology', priority: '0.6', changefreq: 'monthly' },
+  { path: '/ru', priority: '0.9', changefreq: 'weekly' },
+  { path: '/ru/market-research-healthcare', priority: '0.85', changefreq: 'weekly' },
+  { path: '/ru/blog', priority: '0.8', changefreq: 'weekly' },
+  { path: '/ru/contact', priority: '0.7', changefreq: 'monthly' },
+  { path: '/ru/methodology', priority: '0.6', changefreq: 'monthly' },
   { path: '/pt/insights/top-market-research-companies-brasil-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/pt/insights/top-empresas-pesquisa-mercado-saude-brasil-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/es/insights/top-empresas-investigacion-mercado-argentina-2026', priority: '0.85', changefreq: 'monthly' },
@@ -500,7 +505,7 @@ function buildStaticRoutes() {
 }
 
 const hreflangGroups = [
-  { en: '/', pt: '/pt', de: '/de', fr: '/fr', es: '/es', ar: '/ar', 'zh-CN': '/zh', 'x-default': '/' },
+  { en: '/', pt: '/pt', de: '/de', fr: '/fr', es: '/es', ar: '/ar', 'zh-CN': '/zh', ru: '/ru', 'x-default': '/' },
   {
     en: '/market-research-healthcare',
     pt: '/pt/market-research-healthcare',
@@ -509,12 +514,12 @@ const hreflangGroups = [
     es: '/es/market-research-healthcare',
     ar: '/ar/market-research-healthcare',
     'zh-CN': '/zh/market-research-healthcare',
-    pt: '/pt/market-research-healthcare',
+    ru: '/ru/market-research-healthcare',
     'x-default': '/market-research-healthcare',
   },
-  { en: '/contact', pt: '/pt/contact', de: '/de/contact', fr: '/fr/contacts', es: '/es/contact', ar: '/ar/contacts', 'zh-CN': '/zh/contact', 'x-default': '/contact' },
+  { en: '/contact', pt: '/pt/contact', de: '/de/contact', fr: '/fr/contacts', es: '/es/contact', ar: '/ar/contacts', 'zh-CN': '/zh/contact', ru: '/ru/contact', 'x-default': '/contact' },
   // Only list languages that actually have distinct localized URLs.
-  { en: '/blog', pt: '/pt/blog', de: '/de/blog', fr: '/fr/blog', ar: '/ar/blog', 'x-default': '/blog' },
+  { en: '/blog', pt: '/pt/blog', de: '/de/blog', fr: '/fr/blog', ar: '/ar/blog', ru: '/ru/blog', 'x-default': '/blog' },
   { en: '/services/market-access', es: '/es/market-access', 'x-default': '/services/market-access' },
   { en: '/market-research-uae', ar: '/ar/market-research-uae', 'x-default': '/market-research-uae' },
   { en: '/market-research-ksa', ar: '/ar/market-research-ksa', 'x-default': '/market-research-ksa' },
