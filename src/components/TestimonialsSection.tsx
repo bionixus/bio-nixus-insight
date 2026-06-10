@@ -9,7 +9,7 @@ const TestimonialsSection = () => {
   const sectionRef = useScrollReveal<HTMLElement>({ stagger: 120 });
 
   return (
-    <section className="section-padding bg-cream-dark" ref={sectionRef}>
+    <section id="testimonials" className="section-padding bg-cream-dark" ref={sectionRef}>
       <div className="container-wide">
         {/* Trusted by Industry Leaders – continuous marquee ticker */}
         <div className="mb-16 pb-12 border-b border-border">

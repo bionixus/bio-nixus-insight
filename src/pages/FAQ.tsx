@@ -15,39 +15,39 @@ interface FAQItem {
 const faqs: FAQItem[] = [
   {
     question: 'What is BioNixus?',
-    answer: 'BioNixus is an international healthcare market research firm headquartered in the USA with offices in London, UK. We specialize in pharmaceutical and life sciences consulting across Europe, the Middle East, and North Africa (EMEA), providing quantitative and qualitative research for pharmaceutical companies, biotech firms, and medical device manufacturers.',
+    answer: 'BioNixus is a specialist pharmaceutical and healthcare market research company, US-headquartered with operations in London and Cairo. We have been operating since 2012 and run quantitative and qualitative research for pharmaceutical, biotech, and medical device teams across Europe, the Middle East, and North Africa (EMEA). To date that adds up to 127+ delivered projects for 48 clients, across 17+ countries and 14+ therapeutic areas.',
   },
   {
     question: 'What services does BioNixus offer?',
-    answer: 'BioNixus provides comprehensive healthcare market research services including quantitative physician surveys, qualitative KOL interviews and focus groups, market access and HTA consulting, competitive intelligence, clinical trial support, and KOL/stakeholder mapping. Our services span 17+ countries across EMEA.',
+    answer: 'The core is healthcare market research: quantitative physician and HCP surveys, qualitative KOL interviews and focus groups, market access and HTA consulting, competitive intelligence, clinical trial support, and KOL and stakeholder mapping. The mix is built around your decision rather than sold as a fixed package, and it runs across 17+ countries in EMEA.',
   },
   {
     question: 'Which countries does BioNixus cover?',
-    answer: 'BioNixus operates across 17+ countries spanning the EU5 (UK, Germany, France, Spain, Italy), the GCC (UAE, Saudi Arabia, Kuwait, Qatar, Bahrain, Oman), and North Africa (Egypt, Morocco, Tunisia, Algeria). We have particular depth in the MENA region, maintaining the most comprehensive physician panel in the GCC.',
+    answer: 'We work across 17+ countries: the EU5 (UK, Germany, France, Spain, Italy), the GCC (UAE, Saudi Arabia, Kuwait, Qatar, Bahrain, Oman), and North Africa (Egypt, Morocco, Tunisia, Algeria). Our depth is strongest in MENA, where a proprietary physician and HCP panel and bilingual Arabic–English teams let us recruit specialists that generalist agencies struggle to reach.',
   },
   {
     question: 'What makes BioNixus different from larger market research firms?',
-    answer: 'Three core differentiators set BioNixus apart: (1) Deep MENA expertise — we have the most comprehensive physician panel in the GCC and bilingual Arabic–English research teams; (2) Cost-effectiveness — our senior-led, lean model delivers premium quality at competitive rates compared to large consultancies; (3) Our proprietary physician and HCP network enables rapid recruitment and authentic clinical perspectives across 17+ countries.',
+    answer: 'Three things. First, genuine MENA depth — a proprietary GCC physician and HCP panel and Arabic–English research teams, not a regional desk bolted onto a Western agency. Second, a senior-led, lean model: the people who scope your study are the people who run it, which keeps quality high and cost competitive against the large consultancies. Third, that proprietary network means we can recruit scarce specialists quickly and bring back authentic clinical perspective across 17+ countries.',
   },
   {
     question: 'What therapeutic areas does BioNixus specialize in?',
-    answer: 'BioNixus has deep experience across 14+ therapeutic areas including oncology, immunology, cardiology, neurology, rare diseases, respiratory, diabetes and endocrinology, infectious disease, ophthalmology, dermatology, gastroenterology, haematology, and more.',
+    answer: 'We have run work across 14+ therapeutic areas — oncology, immunology, cardiology, neurology, rare disease, respiratory, diabetes and endocrinology, infectious disease, ophthalmology, dermatology, gastroenterology, and haematology among them. Study design shifts with the area: a rare-disease programme leans on a small expert panel, while primary-care categories support large, statistically robust samples.',
   },
   {
     question: 'How does BioNixus conduct physician surveys in the MENA region?',
-    answer: 'Our MENA physician surveys leverage our proprietary panel of healthcare professionals across the GCC and North Africa. All research materials are available in both Arabic and English. Our bilingual research teams have firsthand experience with local regulatory frameworks (SFDA, DHA, MOHAP, EDA) and understand the cultural nuances of clinical decision-making in the region.',
+    answer: 'MENA physician surveys draw on our proprietary HCP panel across the GCC and North Africa, with every instrument available in Arabic and English. Our bilingual teams work first-hand with the regulators that shape clinical and access behaviour — SFDA, DHA, MOHAP, and EDA — and design around the cultural realities of how decisions actually get made in the region, rather than importing a Western template unchanged.',
   },
   {
     question: 'What is the typical timeline for a BioNixus project?',
-    answer: 'Timelines vary by project scope: a focused single-country quantitative survey typically takes 4–6 weeks from kick-off to final report, while a multi-country qualitative study may take 8–12 weeks. We provide tailored proposals with detailed timelines within 24 hours of your initial enquiry.',
+    answer: 'It depends on scope. A focused single-country quantitative survey usually runs 4–6 weeks from kick-off to final report; a multi-country qualitative study is more often 8–12 weeks once ethics and hospital-access steps are factored in. You will have a tailored proposal with a realistic timeline within 24 hours of your first enquiry — and if a specialist sample is genuinely scarce, we flag it before you commit.',
   },
   {
     question: 'Does BioNixus support HTA submissions?',
-    answer: 'Yes. BioNixus provides market access consulting and HTA submission support for NICE (UK), G-BA/IQWiG (Germany), HAS/CEPS (France), and Gulf health authorities including SFDA (Saudi Arabia) and DHA (Dubai). Our research feeds directly into value dossiers, economic models, and payer engagement strategies.',
+    answer: 'Yes. We provide market access consulting and HTA submission support for NICE (UK), G-BA/IQWiG (Germany), HAS/CEPS (France), and Gulf authorities including SFDA (Saudi Arabia) and DHA (Dubai). The research is designed to feed straight into value dossiers, economic models, and payer engagement — so the evidence you gather is the evidence the submission actually needs, not a separate exercise.',
   },
   {
     question: 'Is BioNixus GDPR compliant?',
-    answer: 'Yes. BioNixus adheres to GDPR, BHBIA (British Healthcare Business Intelligence Association), EphMRA (European Pharmaceutical Market Research Association), and ICC/ESOMAR standards. We maintain full data protection compliance across all research activities.',
+    answer: 'Yes. We work to GDPR alongside the relevant industry codes — BHBIA (British Healthcare Business Intelligence Association), EphMRA (European Pharmaceutical Market Research Association), and ICC/ESOMAR — with adverse-event handling and pharmacovigilance reporting designed into HCP and patient fieldwork. Data protection is part of the study design from the first draft, not a compliance check at the end.',
   },
   {
     question: 'How can I contact BioNixus?',
@@ -55,11 +55,11 @@ const faqs: FAQItem[] = [
   },
   {
     question: 'Where is BioNixus located?',
-    answer: 'BioNixus is headquartered at 1309 Coffeen Ave, Sheridan, Wyoming 82801, USA, with a UK office at 128 City Road, London, EC1V 2NX, GB. Our dual US–UK presence positions us as a bridge between Western pharmaceutical innovation and EMEA market realities.',
+    answer: 'BioNixus is headquartered at 1309 Coffeen Ave, Sheridan, Wyoming 82801, USA, with a UK office at 128 City Road, London, EC1V 2NX, GB, and an operational base in Cairo for MENA fieldwork. That spread is deliberate: it lets us sit between Western pharmaceutical innovation and the on-the-ground realities of EMEA markets, rather than viewing the region from a distance.',
   },
   {
     question: 'Can BioNixus conduct research in Arabic?',
-    answer: 'Yes. BioNixus has bilingual Arabic–English research capabilities. All survey instruments, interview guides, and research deliverables can be produced in Arabic. Approximately 62% of Gulf physicians prefer Arabic-language clinical discussions, and our teams are equipped to conduct research in the respondent\'s preferred language.',
+    answer: 'Yes. Bilingual Arabic–English capability is built in, not outsourced: survey instruments, interview guides, moderation, and final deliverables can all be produced in Arabic. We interview each respondent in the language they are most comfortable working in, which protects clinical nuance and keeps response quality high across mixed Arabic- and English-speaking HCP samples.',
   },
 ];
 
@@ -137,7 +137,7 @@ const FAQ = () => {
         <title>FAQ | BioNixus Healthcare Market Research</title>
         <meta
           name="description"
-          content="Frequently asked questions about BioNixus healthcare market research services: MENA coverage, therapeutic areas, physician surveys, HTA support, GDPR compliance, and more."
+          content="Straight answers on BioNixus healthcare market research: where we cover, the therapy areas and methods we run, HTA and access support, Arabic–English fieldwork, GDPR and ESOMAR compliance, timelines, and how to reach us."
         />
         <link rel="canonical" href="https://www.bionixus.com/faq" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -166,26 +166,46 @@ const FAQ = () => {
               Frequently Asked Questions
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Everything you need to know about BioNixus and our healthcare market research services.
+              The questions buyers actually ask before they brief us — answered plainly, with no marketing varnish.
             </p>
             <div className="space-y-4 text-muted-foreground leading-relaxed mb-12 text-[15px] rounded-xl border border-border bg-muted/20 p-6 md:p-8">
               <p>
-                BioNixus supports pharmaceutical, biotech, and medical device teams that need defensible evidence across
-                Europe, the United Kingdom, and MENA—especially where bilingual Arabic–English fieldwork and Gulf health
-                authority context matter. This FAQ complements our services hub, methodology page, and country-specific
-                healthcare market research guides: use it when you need fast answers on coverage, compliance, timelines,
-                and how we differ from generalist agencies.
+                BioNixus works with pharmaceutical, biotech, and medical device teams that need evidence they can defend
+                across Europe, the United Kingdom, and MENA — particularly where bilingual Arabic–English fieldwork and
+                Gulf health-authority context decide whether a study holds up. Use this page for fast answers on coverage,
+                compliance, and timelines; when you want the detail, the{' '}
+                <Link to="/services" className="text-primary underline">
+                  pharmaceutical market research services
+                </Link>{' '}
+                hub and the{' '}
+                <Link to="/methodology" className="text-primary underline">
+                  research methodology
+                </Link>{' '}
+                page go deeper.
               </p>
               <p>
-                Projects typically combine quantitative physician or pharmacist surveys with qualitative depth (KOL
-                interviews, payer conversations, hospital committee dynamics) and optional competitive intelligence modules.
-                We publish structured outputs—segment summaries, message testing, demand forecasts, and access narratives—so
-                commercial, medical, and market access stakeholders can align without re-interpreting raw tabs.
+                Most projects pair quantitative physician or pharmacist surveys with qualitative depth — KOL interviews,
+                payer conversations, hospital-committee dynamics — and a competitive-intelligence module where it earns
+                its place. You receive structured outputs (segment summaries, message testing, demand forecasts, access
+                narratives) that commercial, medical, and access stakeholders can act on without re-reading raw tabs. For
+                country-level specifics, start with{' '}
+                <Link to="/market-research-saudi-arabia-pharmaceutical" className="text-primary underline">
+                  market research in Saudi Arabia
+                </Link>{' '}
+                or the{' '}
+                <Link to="/healthcare-market-research" className="text-primary underline">
+                  healthcare market research
+                </Link>{' '}
+                hub.
               </p>
               <p>
-                If your question is not listed, contact us with your objective market, sample constraints, and decision
-                deadline. We respond with a scoped proposal that names research design choices, risks, and quality controls
-                rather than generic marketing claims.
+                If your question is not here, send us your target market, sample constraints, and decision deadline. We
+                reply with a scoped proposal that names the design choices, risks, and quality controls behind the work —
+                you can reach the{' '}
+                <Link to="/contact" className="text-primary underline">
+                  BioNixus team
+                </Link>{' '}
+                directly.
               </p>
             </div>
 

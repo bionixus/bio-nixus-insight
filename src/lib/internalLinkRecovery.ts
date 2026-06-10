@@ -1,10 +1,16 @@
 import { getCountryDirectory } from './globalWebsitesData';
+import { LOW_INTERNAL_LINK_PATHS } from './lowInternalLinkTargets.generated';
 
 const rawReportZeroLinkPaths = [
   '/adobe-experience-cloud',
   '/ar',
   '/ar/about',
   '/ar/arabic-blog-alsawdyh',
+  '/ar/blog/gcc-pharmaceuticals-market-arabic-2026',
+  '/ar/blog/quantitative-market-research-and-market-access',
+  '/ar/blog/saudi-healthcare-market-research-firms-ar',
+  '/ar/blog/أبحاث-السوق-الدوائية-في-الشرق-الأوسط-و-دول-الخليج-العربي',
+  '/ar/blog/سوق-الدواء-السعودي-2026',
   '/ar/contacts',
   '/ar/healthcare-market-research-saudi-arabia-ksa',
   '/ar/services',
@@ -14,8 +20,6 @@ const rawReportZeroLinkPaths = [
   '/bionixus-ai-crm-tools',
   '/bionixus-market-research-customer-experience-blog',
   '/bionixus-market-research-middle-east',
-  '/blog/أبحاث-السوق-الدوائية-في-الشرق-الأوسط-و-دول-الخليج-العربي',
-  '/blog/سوق-الدواء-السعودي-2026',
   '/blog/abu-dhabi-doh-vs-dubai-dha-formulary-guide',
   '/blog/ai-vs-human-insight-validating-quantitative-data-2026-pharma-research',
   '/blog/competitive-intelligence-pharma-gcc',
@@ -23,10 +27,10 @@ const rawReportZeroLinkPaths = [
   '/blog/deutsche-pharmaunternehmen-2026-pipeline-updates',
   '/blog/emea-jca-market-access-update-2026',
   '/blog/fda-update-glp-1-obesity-market-crackdown-2026',
+  '/blog/gcc-pharmacoeconomics',
   '/blog/gcc-pharmaceuticals-market-2026',
-  '/blog/gcc-pharmaceuticals-market-arabic-2026',
+  '/blog/gcc-pharmaceutical-market-comparison-uae-saudi-kuwait',
   '/blog/gesundheitsmarkt-deutschland-2026',
-  '/blog/healthcare-market-research-europe',
   '/blog/healthcare-market-research-europe-2026',
   '/blog/healthcare-market-research-methodologies-gcc',
   '/blog/healthcare-market-research-uae-guide-2025',
@@ -48,7 +52,6 @@ const rawReportZeroLinkPaths = [
   '/blog/pharma-market-entry-saudi-arabia-playbook',
   '/blog/pharmaceutical-healthcare-market-research-gcc',
   '/blog/pharmaceutical-market-entry-saudi-arabia-2026-guide',
-  '/blog/pharmaceutical-market-research-uk',
   '/blog/pharmaceutical-market-research-uk-2026',
   '/blog/pharmacoeconomics-gcc-practical-guide',
   '/blog/physician-surveys-healthcare',
@@ -130,7 +133,7 @@ const rawReportZeroLinkPaths = [
   '/healthcare-market-research/tunisia',
   '/healthcare-market-research/turkey',
   '/healthcare-market-research/united-arab-emirates',
-  '/healthcare-market-research/united-kingdom',
+  '/healthcare-market-research/uk',
   '/healthcare-market-research/united-states',
   '/market-research-customer-insight',
   '/market-research-home',
@@ -163,6 +166,17 @@ const rawReportZeroLinkPaths = [
 ];
 
 const redirectAliasPaths = new Set([
+  '/conf',
+  '/ar/conf',
+  '/ar/',
+  '/blog/gcc-pharmaceuticals-market-arabic-2026',
+  '/blog/healthcare-market-research-europe',
+  '/blog/pharmaceutical-market-research-uk',
+  '/blog/middle-east-healthcare-market-statistics-2025',
+  '/blog/drug-registration-kuwait-pharma-guide',
+  '/blog/أبحاث-السوق-الدوائية-في-الشرق-الأوسط-و-دول-الخليج-العربي',
+  '/blog/سوق-الدواء-السعودي-2026',
+  '/healthcare-market-research/united-kingdom',
   '/healthcare-market-research-saudi-arabia',
   '/healthcare-market-research-uae',
   '/healthcare-market-research-kuwait',
@@ -216,7 +230,9 @@ const redirectAliasPaths = new Set([
 ]);
 
 const globalWebsiteRecoveryPaths = getCountryDirectory().map((country) => `/global-websites/${country.slug}`);
-const combinedRecoveryPaths = Array.from(new Set([...rawReportZeroLinkPaths, ...globalWebsiteRecoveryPaths]));
+const combinedRecoveryPaths = Array.from(
+  new Set([...LOW_INTERNAL_LINK_PATHS, ...rawReportZeroLinkPaths, ...globalWebsiteRecoveryPaths]),
+);
 
 export const reportZeroLinkPaths = combinedRecoveryPaths.filter((path) => !redirectAliasPaths.has(path));
 

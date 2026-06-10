@@ -8,12 +8,14 @@ export default function BudgetImpactModelSaudiArabia() {
       canonicalUrl="https://www.bionixus.com/budget-impact-model-saudi-arabia"
       breadcrumbLabel="Budget Impact Model Saudi Arabia"
       h1="Budget Impact Model Saudi Arabia"
-      intro="BioNixus builds budget impact models for Saudi Arabia with local market assumptions, uptake scenarios, and payer-aligned evidence framing for practical access decisions."
+      intro="A budget impact model in Saudi Arabia is a negotiation tool, not a spreadsheet exercise — it has to survive a payer committee, not just compute a number. BioNixus builds models on Kingdom-specific uptake, mix, and pricing assumptions, stress-tests them with sensitivity bands, and frames the output so it stands up in the reimbursement and procurement conversations that actually decide access."
       links={[
         { to: '/heor-consulting-saudi-arabia', label: 'HEOR consulting Saudi Arabia', primary: true },
-        { to: '/healthcare-market-research/saudi-arabia', label: 'Pharma market research company in Saudi Arabia', primary: true },
+        { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Healthcare market research company in Saudi Arabia', primary: true },
         { to: '/saudi-payer-market-access-research', label: 'Saudi payer market access research' },
         { to: '/contact', label: 'Request budget-impact scope' },
+        { to: '/market-research-healthcare', label: 'Healthcare market research services' },
+        { to: '/methodology', label: 'Our research methodology' },
       ]}
       bullets={[
         'Scenario design with market-specific uptake and budget assumptions.',
@@ -22,16 +24,16 @@ export default function BudgetImpactModelSaudiArabia() {
       ]}
       decisionPoints={[
         {
-          title: 'Why it matters',
-          body: 'Budget models shape payer confidence and determine how quickly access decisions move forward.',
+          title: 'The model is a negotiation tool',
+          body: 'Its job is to hold up under committee scrutiny and frame the conversation, not just to produce a headline figure. Build it for the room it will be argued in.',
         },
         {
-          title: 'What the evidence says',
-          body: 'Localized assumptions produce stronger committee confidence than imported global averages.',
+          title: 'Calibrate to the Kingdom',
+          body: 'Local uptake curves, treatment mix, and pricing assumptions carry far more weight in review than imported global averages. The closer the inputs sit to Saudi reality, the harder the output is to dismiss.',
         },
         {
-          title: 'What to do next',
-          body: 'Define target scenario ranges, test sensitivity bands, and align outputs to payer decision windows.',
+          title: 'Stress-test before you submit',
+          body: 'A base case plus sensitivity bands frames risk honestly and pre-empts the "what if uptake is higher" challenge. Align the scenarios to the payer’s decision window so the model lands when it matters.',
         },
       ]}
       metrics={[

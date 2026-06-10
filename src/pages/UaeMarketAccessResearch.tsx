@@ -8,30 +8,33 @@ export default function UaeMarketAccessResearch() {
       canonicalUrl="https://www.bionixus.com/uae-market-access-research"
       breadcrumbLabel="Market Access Research UAE"
       h1="Market Access Research UAE"
-      intro="BioNixus helps teams plan UAE market access with emirate-specific evidence, payer objection mapping, and pricing strategy guidance aligned to real institutional decision pathways."
+      intro="In the UAE, the same product can face three different access timelines. Federal MOHAP registration is only the entry point — Dubai (DHA) and Abu Dhabi (DOH) run their own formulary and procurement processes, and most volume sits in an insurance-funded private sector. BioNixus maps those pathways, tests your value story against the objections payers actually raise, and tells you which emirate to enter first."
       links={[
         { to: '/healthcare-market-research-agency-gcc', label: 'Healthcare market research agency GCC', primary: true },
         { to: '/gcc-market-access-guide', label: 'GCC market access guide', primary: true },
-        { to: '/healthcare-market-research/uae', label: 'Pharma market research company UAE' },
+        { to: '/uae-pharmaceutical-market-research', label: 'Healthcare market research company in UAE' },
         { to: '/contact', label: 'Request UAE access scope' },
+        { to: '/market-research-healthcare', label: 'Healthcare market research services' },
+        { to: '/methodology', label: 'Our research methodology' },
       ]}
       bullets={[
-        'DOH vs DHA vs MOHAP pathway implications for launch planning.',
-        'Evidence testing for pricing and reimbursement narratives.',
-        'Hospital and committee-level access friction diagnostics.',
+        'DHA, DOH, and MOHAP pathway implications mapped to your specific product class and launch timeline.',
+        'Payer-objection mapping with insurers and formulary committees before the value dossier is locked.',
+        'Pricing and reimbursement narrative testing against the evidence thresholds decision-makers apply.',
+        'Hospital and committee-level friction diagnostics that show where access actually stalls.',
       ]}
       decisionPoints={[
         {
-          title: 'Why it matters',
-          body: 'Emirate variation changes pathway timelines and access feasibility for the same product.',
+          title: 'Three regulators, one launch',
+          body: 'MOHAP registration opens the door, but DHA and DOH each add a separate listing and procurement step. The order you tackle them in is often the single biggest lever on time-to-access.',
         },
         {
-          title: 'What the evidence says',
-          body: 'Early payer-objection mapping shortens revision cycles and improves evidence fit.',
+          title: 'Where access actually stalls',
+          body: 'In the UAE, objections cluster at the insurer and formulary-committee level rather than at registration. Surfacing them early is cheaper than reworking the evidence pack after a rejection.',
         },
         {
-          title: 'What to do next',
-          body: 'Prioritize one target pathway, pressure-test value narrative, then sequence institutional engagement.',
+          title: 'Sequence by emirate, not by calendar',
+          body: 'Enter the emirate whose pathway, payer mix, and institutional demand best fit your product first — then use that reference to accelerate the rest of the country.',
         },
       ]}
       metrics={[

@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async'
 import type { BlogPost } from '@/types/blog'
 import { HOME_FAQ_SECTION_ID } from '@/lib/homePageFaq'
 import { buildHomeArticleJsonLdNodes, buildHomeServiceJsonLdNodes } from '@/lib/homePageJsonLd'
+import { buildCanonicalOrganization } from '@/lib/seo/organization'
 
 type LanguageCode = 'en' | 'ar' | 'de' | 'fr' | 'es' | 'zh'
 
@@ -30,17 +31,26 @@ type ItemListEntry = {
 }
 
 type BlogSchemaProps = {
-  pageType: 'blog'
+  pageType: 'blog' | 'case-study'
   pageUrl: string
   language: LanguageCode
   headline: string
   description: string
   imageUrl?: string
+  /** Primary OG / hero dimensions for structured `image` ImageObject */
+  ogImageWidth?: number
+  ogImageHeight?: number
   authorName: string
   authorUrl?: string
   authorJobTitle?: string
   publishedAt?: string
   modifiedAt?: string
+  /** Category / pillar name for Article `articleSection` */
+  articleSection?: string
+  /** Comma-joined keywords in JSON-LD (from blog tags etc.) */
+  keywords?: string[]
+  /** Entities linked to this article (therapy area, branded drug facts, etc.). */
+  schemaMentions?: ReadonlyArray<Record<string, unknown>>
   breadcrumb: BreadcrumbItem[]
   faqItems?: FaqItem[]
   itemList?: { name: string; items: ItemListEntry[] }
@@ -69,7 +79,7 @@ type AboutSchemaProps = {
 }
 
 type PressReleaseSchemaProps = {
-  pageType: 'pressRelease'
+  pageType: 'press-release'
   pageUrl: string
   language: LanguageCode
   headline: string
@@ -77,22 +87,23 @@ type PressReleaseSchemaProps = {
   imageUrl?: string
   publishedAt?: string
   modifiedAt?: string
+  dateline?: string
+  relatedReportUrl?: string
   breadcrumb: BreadcrumbItem[]
-  keywords?: string[]
-  releaseType?: string
 }
 
 type SchemaMarkupProps =
   | HomeSchemaProps
   | BlogSchemaProps
+  | PressReleaseSchemaProps
   | ServiceSchemaProps
   | AboutSchemaProps
-  | PressReleaseSchemaProps
 
 const BASE_URL = 'https://www.bionixus.com'
 const ORG_ID = `${BASE_URL}/#organization`
 const WEBSITE_ID = `${BASE_URL}/#website`
 const ORG_IMAGE = `${BASE_URL}/og-image.png`
+const PUBLISHER_LOGO_IMAGE = `${BASE_URL}/bionixus-logo.webp`
 
 function toHttpsUrl(url: string): string {
   if (!url) return BASE_URL
@@ -113,54 +124,7 @@ function toIsoDate(value?: string): string | undefined {
 }
 
 function buildOrganization(inLanguage: string) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    '@id': ORG_ID,
-    name: 'BioNixus',
-    foundingDate: '2012',
-    url: BASE_URL,
-    logo: `${BASE_URL}/bionixus-logo.webp`,
-    image: [ORG_IMAGE],
-    sameAs: [
-      'https://www.linkedin.com/company/bionixus/',
-      'https://www.facebook.com/Bionixus',
-      'https://www.instagram.com/bionixus_',
-      'https://www.wikidata.org/wiki/Q139888256',
-    ],
-    address: [
-      {
-        '@type': 'PostalAddress',
-        streetAddress: '1309 Coffeen Ave',
-        addressLocality: 'Sheridan',
-        addressRegion: 'WY',
-        postalCode: '82801',
-        addressCountry: 'US',
-      },
-      {
-        '@type': 'PostalAddress',
-        streetAddress: '128 City Road',
-        addressLocality: 'London',
-        postalCode: 'EC1V 2NX',
-        addressCountry: 'GB',
-      },
-    ],
-    contactPoint: [
-      {
-        '@type': 'ContactPoint',
-        telephone: '+1-888-465-5557',
-        contactType: 'customer service',
-        areaServed: 'US',
-      },
-      {
-        '@type': 'ContactPoint',
-        telephone: '+44-7727-666682',
-        contactType: 'customer service',
-        areaServed: 'GB',
-      },
-    ],
-    inLanguage,
-  };
+  return buildCanonicalOrganization(inLanguage);
 }
 
 function buildWebsite(inLanguage: string) {
@@ -230,12 +194,37 @@ function isValidSchemaNode(node: Record<string, unknown>): boolean {
   if (!isNonEmptyString(node['@type'])) return false
 
   const type = node['@type']
-  if (type === 'Article' || type === 'NewsArticle') {
+  if (type === 'Article' || type === 'BlogPosting') {
+    const img = node.image
+    let imageOk = false
+    if (
+      img !== null &&
+      typeof img === 'object' &&
+      !Array.isArray(img) &&
+      (img as Record<string, unknown>)['@type'] === 'ImageObject' &&
+      isNonEmptyString(String((img as Record<string, unknown>).url))
+    ) {
+      imageOk = true
+    }
+    if (!imageOk && Array.isArray(img) && img.length > 0) {
+      imageOk = img.every((e) => isNonEmptyString(String(e)))
+    }
+    const mainEntityOk =
+      node.mainEntityOfPage === undefined ||
+      (typeof node.mainEntityOfPage === 'object' &&
+        node.mainEntityOfPage !== null &&
+        (node.mainEntityOfPage as Record<string, unknown>)['@type'] === 'WebPage')
+    const urlOk = typeof node.url === 'string' ? node.url.trim().startsWith('http') : Boolean(node.url)
     return (
       isNonEmptyString(node.headline) &&
       isNonEmptyString(node.description) &&
       isNonEmptyString(node.datePublished) &&
       isNonEmptyString(node.dateModified) &&
+      urlOk &&
+      imageOk &&
+      mainEntityOk &&
+      typeof node.author === 'object' &&
+      node.author !== null &&
       typeof node.publisher === 'object' &&
       node.publisher !== null
     )
@@ -298,46 +287,75 @@ function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[] {
     return nodes
   }
 
-  if (props.pageType === 'blog') {
+  if (props.pageType === 'blog' || props.pageType === 'case-study') {
     const published = toIsoDate(props.publishedAt) || new Date().toISOString()
     const modified = toIsoDate(props.modifiedAt) || published
-    const image = toHttpsUrl(props.imageUrl || ORG_IMAGE)
+    const pageUrlHttps = toHttpsUrl(props.pageUrl)
+    const imageUrlHttps = toHttpsUrl(props.imageUrl || ORG_IMAGE)
+    const imgWidth = props.ogImageWidth ?? 1200
+    const imgHeight = props.ogImageHeight ?? 630
+    const schemaType = props.pageType === 'blog' ? 'BlogPosting' : 'Article'
 
-    const nodes: Record<string, unknown>[] = [
-      {
-        '@context': 'https://schema.org',
-        '@type': 'Article',
-        mainEntityOfPage: toHttpsUrl(props.pageUrl),
-        headline: props.headline,
-        description: props.description,
-        image: [image],
-        author: {
-          '@type': 'Person',
-          name: props.authorName,
-          ...(props.authorUrl ? { url: props.authorUrl, sameAs: [props.authorUrl] } : {}),
-          ...(props.authorJobTitle ? { jobTitle: props.authorJobTitle } : {}),
-        },
-        datePublished: published,
-        dateModified: modified,
-        publisher: {
-          '@type': 'Organization',
-          '@id': ORG_ID,
-          name: 'BioNixus',
-          logo: {
-            '@type': 'ImageObject',
-            url: ORG_IMAGE,
-          },
-        },
-        inLanguage,
-      },
-      buildBreadcrumb(props.breadcrumb, inLanguage),
-    ]
-
-    if (props.faqItems && props.faqItems.length > 0) {
-      nodes.push(buildFaq(props.faqItems, inLanguage, toHttpsUrl(props.pageUrl)))
+    const primaryImageObject = {
+      '@type': 'ImageObject',
+      url: imageUrlHttps,
+      width: imgWidth,
+      height: imgHeight,
+      caption: props.headline,
     }
 
-    if (props.itemList && props.itemList.items.length > 0) {
+    const articleNode: Record<string, unknown> = {
+      '@context': 'https://schema.org',
+      '@type': schemaType,
+      '@id': `${pageUrlHttps}#${props.pageType === 'blog' ? 'blogPosting' : 'article'}`,
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': `${pageUrlHttps}#webpage`,
+        url: pageUrlHttps,
+      },
+      url: pageUrlHttps,
+      headline: props.headline,
+      description: props.description,
+      image: primaryImageObject,
+      ...(props.articleSection?.trim()
+        ? { articleSection: props.articleSection.trim() }
+        : {}),
+      ...(props.keywords && props.keywords.length > 0
+        ? { keywords: props.keywords.join(', ') }
+        : {}),
+      ...(props.schemaMentions && props.schemaMentions.length > 0
+        ? { mentions: props.schemaMentions.map((m) => ({ ...m })) }
+        : {}),
+      author: {
+        '@type': 'Person',
+        name: props.authorName,
+        ...(props.authorUrl ? { url: props.authorUrl, sameAs: [props.authorUrl] } : {}),
+        ...(props.authorJobTitle ? { jobTitle: props.authorJobTitle } : {}),
+      },
+      datePublished: published,
+      dateModified: modified,
+      publisher: {
+        '@type': 'Organization',
+        '@id': ORG_ID,
+        name: 'BioNixus',
+        logo: {
+          '@type': 'ImageObject',
+          url: PUBLISHER_LOGO_IMAGE,
+          width: 512,
+          height: 512,
+        },
+      },
+      inLanguage,
+      isAccessibleForFree: true,
+    }
+
+    const nodes: Record<string, unknown>[] = [articleNode, buildBreadcrumb(props.breadcrumb, inLanguage)]
+
+    if (props.faqItems && props.faqItems.length > 0) {
+      nodes.push(buildFaq(props.faqItems, inLanguage, pageUrlHttps))
+    }
+
+    if (props.pageType === 'blog' && props.itemList && props.itemList.items.length > 0) {
       nodes.push({
         '@context': 'https://schema.org',
         '@type': 'ItemList',
@@ -355,34 +373,63 @@ function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[] {
     return nodes
   }
 
-  if (props.pageType === 'pressRelease') {
+  if (props.pageType === 'press-release') {
     const published = toIsoDate(props.publishedAt) || new Date().toISOString()
     const modified = toIsoDate(props.modifiedAt) || published
-    const image = toHttpsUrl(props.imageUrl || ORG_IMAGE)
+    const pageUrlHttps = toHttpsUrl(props.pageUrl)
+    const imageUrlHttps = toHttpsUrl(props.imageUrl || ORG_IMAGE)
 
-    return [
-      {
-        '@context': 'https://schema.org',
-        '@type': 'NewsArticle',
-        mainEntityOfPage: { '@type': 'WebPage', '@id': toHttpsUrl(props.pageUrl) },
-        headline: props.headline,
-        description: props.description,
-        image: [image],
-        datePublished: published,
-        dateModified: modified,
-        articleSection: 'Press Release',
-        ...(props.releaseType ? { genre: props.releaseType } : {}),
-        ...(props.keywords && props.keywords.length > 0 ? { keywords: props.keywords.join(', ') } : {}),
-        publisher: {
-          '@type': 'Organization',
-          '@id': ORG_ID,
-          name: 'BioNixus',
-          logo: { '@type': 'ImageObject', url: ORG_IMAGE },
-        },
-        inLanguage,
+    const newsArticle: Record<string, unknown> = {
+      '@context': 'https://schema.org',
+      '@type': 'NewsArticle',
+      '@id': `${pageUrlHttps}#newsarticle`,
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': `${pageUrlHttps}#webpage`,
+        url: pageUrlHttps,
       },
-      buildBreadcrumb(props.breadcrumb, inLanguage),
-    ]
+      url: pageUrlHttps,
+      headline: props.headline,
+      description: props.description,
+      image: {
+        '@type': 'ImageObject',
+        url: imageUrlHttps,
+        width: 1200,
+        height: 630,
+        caption: props.headline,
+      },
+      datePublished: published,
+      dateModified: modified,
+      author: {
+        '@type': 'Organization',
+        '@id': ORG_ID,
+        name: 'BioNixus',
+      },
+      publisher: {
+        '@type': 'Organization',
+        '@id': ORG_ID,
+        name: 'BioNixus',
+        logo: {
+          '@type': 'ImageObject',
+          url: PUBLISHER_LOGO_IMAGE,
+          width: 512,
+          height: 512,
+        },
+      },
+      inLanguage,
+      isAccessibleForFree: true,
+      ...(props.dateline?.trim() ? { articleSection: 'Press release' } : {}),
+      ...(props.relatedReportUrl
+        ? {
+            about: {
+              '@type': 'Report',
+              url: toHttpsUrl(props.relatedReportUrl),
+            },
+          }
+        : {}),
+    }
+
+    return [newsArticle, buildBreadcrumb(props.breadcrumb, inLanguage)]
   }
 
   if (props.pageType === 'service') {
@@ -431,7 +478,7 @@ export default function SchemaMarkup(props: SchemaMarkupProps) {
   return (
     <Helmet>
       {schemaNodes.map((node, index) => (
-        <script key={`schema-${props.pageType}-${index}`} type="application/ld+json">
+        <script key={`${props.pageType}-schema-${index}`} type="application/ld+json">
           {JSON.stringify(node)}
         </script>
       ))}

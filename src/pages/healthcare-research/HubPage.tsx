@@ -2,129 +2,116 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useInitialData } from '@/contexts/InitialDataContext';
 import { SEOHead } from '@/components/seo/SEOHead';
-import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
-import { FAQSection } from '@/components/healthcare-research/FAQSection';
-import { CTASection } from '@/components/shared/CTASection';
+import { HealthcareResearchPageShell } from '@/components/healthcare-research/HealthcareResearchPageShell';
+import { HealthcareNavCard, HealthcareStatPanel } from '@/components/healthcare-research/healthcareResearchUi';
+import { getHealthcareMarketResearchHubConfig } from '@/data/reportConversionConfig';
+import { ReportMidPageCta } from '@/components/report-conversion';
+import { ReportPremiumSection } from '@/components/report-premium';
 import { buildHubPageSchemas } from '@/lib/seo/schemas';
 import { COUNTRY_CONFIGS } from '@/lib/constants/countries';
 import { healthcareCountryRecoveryPaths } from '@/lib/internalLinkRecovery';
+import { HubMarketReferenceGuide } from '@/components/seo/HubMarketReferenceGuide';
 
 const HUB_FAQS = [
   {
-    question: 'What is pharmaceutical market research in MENA, UK, and Europe?',
+    question: 'What does global pharmaceutical market research across the USA, Europe, MENA, and Asia actually involve?',
     answer:
-      'Pharmaceutical market research is the structured process of gathering and analyzing evidence on healthcare stakeholders, treatment behavior, and market dynamics. BioNixus applies this process across MENA, UK, and Europe to help teams make evidence-based decisions for launch, growth, and access planning.',
+      'It means turning fragmented evidence — physician behaviour, payer logic, patient pathways, and competitor moves — into a decision you can defend in any market. The method is consistent worldwide; what changes is the context. A pricing question in the United States runs through commercial payers and PBMs, in the UK through NICE and the NHS, in Germany through AMNOG, in Saudi Arabia through SFDA and NUPCO, and in Japan through PMDA and the national fee schedule. We design each study around the regulator, the buyer, and the language that govern that specific market, then deliver findings your commercial, medical, and access teams can act on across regions.',
   },
   {
-    question: 'Which methods does BioNixus use for healthcare market intelligence?',
+    question: 'Which research methods does BioNixus use, and how do you choose between them?',
     answer:
-      'BioNixus combines quantitative and qualitative methods, including CATI, CAPI, online surveys, in-depth interviews, focus groups, and KOL mapping. Method selection is aligned to the decision question, timeline, and target stakeholder group.',
+      'We run the full quantitative and qualitative toolkit — CATI and CAPI interviewing, online HCP and patient surveys, in-depth interviews, advisory boards, focus groups, and KOL influence mapping. The method follows the question, not the other way around. If you need to size adoption or validate a forecast, we lead with structured quant; if you need to understand why a prescriber hesitates, we lead with qualitative depth. Most launch and access programmes blend both.',
   },
   {
-    question: 'Does BioNixus support multilingual and cross-country research programs?',
+    question: 'Can you run a single study across several countries and languages at once?',
     answer:
-      'Yes. BioNixus supports multilingual and multi-market execution with quality controls for translation, recruitment, and analysis consistency so teams can compare results across countries while preserving local relevance.',
+      'Yes — multi-country, multilingual fieldwork is core to how we work. One project office coordinates recruitment, translation, and analysis across markets so your numbers stay comparable from New York to London to Riyadh to Tokyo, while local moderators and native-language interviewers keep the nuance intact. Across our operating history we have delivered work in 17+ countries and 14+ therapeutic areas, which is what makes side-by-side regional reads dependable rather than approximate.',
   },
   {
-    question: 'How quickly can BioNixus deliver a proposal?',
+    question: 'How fast can you turn around a proposal once we share a brief?',
     answer:
-      'Most proposals are delivered quickly after scope alignment, including objective framing, target respondents, method recommendation, and realistic timeline options aligned to your commercial or access decision window.',
+      'Quickly. After a short scoping conversation to lock the decision you are trying to make, we return a proposal covering objectives, target respondents, recommended method, sample, and realistic timeline options mapped to your commercial or access window. Where feasibility is the open question — for example a low-incidence specialist sample — we flag it up front rather than after contracting.',
   },
   {
-    question: 'Which therapy areas are covered by BioNixus healthcare research?',
+    question: 'Which therapy areas does your healthcare research cover?',
     answer:
-      'BioNixus supports major therapy areas including oncology, diabetes, respiratory disease, immunology, biologics, and vaccines, with study designs customized to local stakeholder dynamics and evidence expectations.',
+      'We work across oncology, diabetes and cardiometabolic disease, respiratory, immunology, biologics and biosimilars, vaccines, and rare disease, among others — 14+ therapeutic areas in total. Study design shifts with the area: a rare-disease programme leans on a small, hard-to-reach expert panel, while a primary-care diabetes study can support large, statistically robust quantitative samples.',
   },
   {
-    question: 'What compliance standards are followed in BioNixus projects?',
+    question: 'What compliance and data-protection standards do your projects follow?',
     answer:
-      'BioNixus aligns projects with ESOMAR standards, GDPR data requirements, and local market context including SFDA (KSA), DOH/MOHAP (UAE), and MHRA/NICE-sensitive UK considerations when relevant.',
+      'Every project is built to ESOMAR research standards and GDPR data-protection requirements, with adverse-event handling and pharmacovigilance reporting designed into HCP and patient fieldwork. We then layer the local framework that applies — FDA and HIPAA-aware handling in the United States, MHRA/NICE-sensitive handling in the UK, EMA-aligned standards across Europe, SFDA in Saudi Arabia, MOHAP and DHA/DOH in the UAE, EDA in Egypt, and PMDA-aware conduct in Japan — so the evidence stands up to both internal governance and external scrutiny.',
+  },
+  {
+    question: 'Which countries and regions can BioNixus cover for a global launch or access study?',
+    answer:
+      'We deliver healthcare and pharmaceutical research across four regions: the Americas (United States, Canada, Brazil), Europe (United Kingdom, Germany, France, Italy, Spain), MENA and the GCC (Saudi Arabia, UAE, Egypt, Qatar, Kuwait, Oman, Bahrain, Turkey), and Asia-Pacific (Japan, China, India, South Korea, Singapore, Australia) — 17+ countries in total. A single project office harmonises method and reporting so a global programme reads consistently, while local teams preserve in-market nuance. Each country report linked on this page summarises the regulator, payer, and access realities for that market.',
   },
 ];
 
-const DUBAI_FAQS = [
+// Global market coverage grouped by region. Every link targets a live country
+// report route (`/{country}-healthcare-market-report`), so this section doubles
+// as the page's global navigation spine and its richest internal-link cluster.
+const GLOBAL_MARKETS: {
+  region: string;
+  blurb: string;
+  regulators: string;
+  markets: { name: string; to: string }[];
+}[] = [
   {
-    question: 'What is the best healthcare market research company in Dubai?',
-    answer:
-      'BioNixus is a leading healthcare market research company in Dubai, serving pharmaceutical, biotech, and medtech companies with DHA and MOHAP-aligned physician research, KOL mapping, and market access intelligence across the UAE and GCC.',
-  },
-  {
-    question: 'What does a pharmaceutical market research company in Dubai do?',
-    answer:
-      'A pharmaceutical market research company in Dubai conducts physician surveys, KOL interviews, market access and reimbursement analysis, competitive intelligence, and launch readiness research — aligned with DHA, MOHAP, and DOH regulatory pathways.',
-  },
-  {
-    question: 'How do you conduct healthcare market research in Dubai?',
-    answer:
-      'Healthcare market research in Dubai is conducted through quantitative physician surveys (CAWI, CATI), qualitative KOL interviews, patient journey studies, and desk research — with research ethics alignment to DHA, MOHAP, and ICH-GCP standards.',
-  },
-  {
-    question: 'How much does pharmaceutical market research in Dubai cost?',
-    answer:
-      'Custom pharmaceutical market research engagements in Dubai typically range from $15,000 for focused physician surveys to $50,000+ for multi-country GCC launch intelligence programs, depending on sample size, methodology, and therapeutic area complexity.',
-  },
-  {
-    question: 'Which regulators govern healthcare research in Dubai?',
-    answer:
-      'Healthcare research in Dubai is governed primarily by the Dubai Health Authority (DHA), with federal oversight from MOHAP. Cross-emirate research involving Abu Dhabi also aligns with the Department of Health Abu Dhabi (DOH).',
-  },
-];
-
-const dubaiLocalBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  '@id': 'https://www.bionixus.com/healthcare-market-research#dubai',
-  name: 'BioNixus Healthcare Market Research — Dubai',
-  url: 'https://www.bionixus.com/healthcare-market-research',
-  image: 'https://www.bionixus.com/og-image.png',
-  priceRange: '$$$',
-  telephone: '+971-4-000-0000',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Dubai',
-    addressRegion: 'Dubai',
-    addressCountry: 'AE',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: 25.2048,
-    longitude: 55.2708,
-  },
-  openingHoursSpecification: [
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'],
-      opens: '09:00',
-      closes: '18:00',
-    },
-  ],
-  areaServed: [
-    { '@type': 'City', name: 'Dubai' },
-    { '@type': 'City', name: 'Abu Dhabi' },
-    { '@type': 'Country', name: 'United Arab Emirates' },
-  ],
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Healthcare Market Research Services',
-    itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Physician Surveys' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'KOL Mapping' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Market Access Research' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Competitive Intelligence' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Launch Excellence Programs' } },
+    region: 'Americas',
+    blurb:
+      'The world’s largest pharmaceutical market plus high-growth Latin American demand—commercial scale governed by payer access and pricing scrutiny.',
+    regulators: 'FDA · Health Canada · ANVISA',
+    markets: [
+      { name: 'United States', to: '/usa-healthcare-market-report' },
+      { name: 'Canada', to: '/canada-healthcare-market-report' },
+      { name: 'Brazil', to: '/brazil-healthcare-market-report' },
     ],
   },
-};
-
-const dubaiFaqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: DUBAI_FAQS.map((f) => ({
-    '@type': 'Question',
-    name: f.question,
-    acceptedAnswer: { '@type': 'Answer', text: f.answer },
-  })),
-};
+  {
+    region: 'Europe',
+    blurb:
+      'Centralised EMA approval but national HTA gatekeeping—where evidence has to satisfy NICE, G-BA/AMNOG, HAS, AIFA, and AEMPS market by market.',
+    regulators: 'EMA · NICE · AMNOG · HAS',
+    markets: [
+      { name: 'United Kingdom', to: '/uk-healthcare-market-report' },
+      { name: 'Germany', to: '/germany-healthcare-market-report' },
+      { name: 'France', to: '/france-healthcare-market-report' },
+      { name: 'Italy', to: '/italy-healthcare-market-report' },
+      { name: 'Spain', to: '/spain-healthcare-market-report' },
+    ],
+  },
+  {
+    region: 'MENA & GCC',
+    blurb:
+      'Vision-2030-era investment and tender-led procurement—fast growth governed by SFDA, MOHAP/DHA/DOH, EDA, and GCC centralised registration.',
+    regulators: 'SFDA · MOHAP/DHA/DOH · EDA',
+    markets: [
+      { name: 'Saudi Arabia', to: '/saudi-arabia-healthcare-market-report' },
+      { name: 'United Arab Emirates', to: '/uae-healthcare-market-report' },
+      { name: 'Egypt', to: '/egypt-healthcare-market-report' },
+      { name: 'Qatar', to: '/qatar-healthcare-market-report' },
+      { name: 'Kuwait', to: '/kuwait-healthcare-market-report' },
+      { name: 'Turkey', to: '/turkey-healthcare-market-report' },
+    ],
+  },
+  {
+    region: 'Asia-Pacific',
+    blurb:
+      'From mature reimbursement systems to the fastest-growing emerging demand—access shaped by PMDA, NMPA, CDSCO, MFDS, HSA, and TGA.',
+    regulators: 'PMDA · NMPA · CDSCO · TGA',
+    markets: [
+      { name: 'Japan', to: '/japan-healthcare-market-report' },
+      { name: 'China', to: '/china-healthcare-market-report' },
+      { name: 'India', to: '/india-healthcare-market-report' },
+      { name: 'South Korea', to: '/south-korea-healthcare-market-report' },
+      { name: 'Singapore', to: '/singapore-healthcare-market-report' },
+      { name: 'Australia', to: '/australia-healthcare-market-report' },
+    ],
+  },
+];
 
 export default function HubPage() {
   const { data } = useInitialData();
@@ -141,21 +128,44 @@ export default function HubPage() {
   const heroTitle =
     typeof hubContent?.title === 'string' && hubContent.title.length > 0
       ? hubContent.title
-      : 'Healthcare Market Research Across MENA, UK & Europe';
+      : 'Global healthcare and pharmaceutical market research across the USA, Europe, MENA & Asia';
   const heroDescription =
     typeof hubContent?.metaDescription === 'string' && hubContent.metaDescription.length > 0
       ? hubContent.metaDescription
-      : 'BioNixus delivers pharmaceutical market intelligence for commercial, medical, and access teams across priority healthcare markets.';
-  const jsonLd = buildHubPageSchemas(hubFaqItems);
+      : 'BioNixus turns physician, payer, and patient evidence into launch, growth, and access decisions for pharma, biotech, and medtech teams — with fieldwork run locally in each market and findings that read consistently across borders.';
+  const jsonLd = [
+    ...buildHubPageSchemas(hubFaqItems),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: 'Global Healthcare & Pharmaceutical Market Research',
+      description:
+        'BioNixus healthcare and pharmaceutical market research across the Americas, Europe, MENA & GCC, and Asia-Pacific.',
+      url: 'https://www.bionixus.com/healthcare-market-research',
+      isPartOf: { '@type': 'WebSite', url: 'https://www.bionixus.com', name: 'BioNixus' },
+      about: GLOBAL_MARKETS.map((r) => r.region),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'Country healthcare market reports',
+      itemListElement: GLOBAL_MARKETS.flatMap((r) => r.markets).map((m, idx) => ({
+        '@type': 'ListItem',
+        position: idx + 1,
+        name: `${m.name} healthcare market report`,
+        url: `https://www.bionixus.com${m.to}`,
+      })),
+    },
+  ];
   const trustSignals =
     Array.isArray(hubContent?.trustSignals) && hubContent.trustSignals.length > 0
       ? (hubContent.trustSignals as { label: string; value: string }[])
       : [
         { label: 'UK Registration', value: '14408704' },
-        { label: 'Core Markets', value: 'MENA, UK, Europe' },
+        { label: 'Core Markets', value: 'Americas, Europe, MENA, Asia' },
         { label: 'Methods', value: 'CATI, CAPI, IDIs, Quant' },
         { label: 'Compliance', value: 'ESOMAR / GDPR' },
-        { label: 'Coverage Model', value: 'Hub-and-spoke regional execution' },
+        { label: 'Coverage Model', value: 'One project office, local execution' },
       ];
   const services =
     Array.isArray(hubContent?.servicesOverview) && hubContent.servicesOverview.length > 0
@@ -163,153 +173,258 @@ export default function HubPage() {
       : [
         {
           title: 'Quantitative Research',
-          description: 'Decision-ready survey programs for segmentation, adoption, and forecast confidence.',
+          description: 'Survey programmes sized to give you defensible numbers — for segmentation, adoption tracking, and forecasts you can put in front of a board.',
           slug: 'quantitative-research',
         },
         {
           title: 'Qualitative Research',
-          description: 'IDIs and moderated interviews to uncover stakeholder rationale and barriers.',
+          description: 'In-depth interviews and moderated discussions that surface why a prescriber switches, hesitates, or stays — the rationale a survey alone never captures.',
           slug: 'qualitative-research',
         },
         {
           title: 'KOL Mapping',
-          description: 'Influence network mapping for expert engagement and evidence dissemination planning.',
+          description: 'Influence networks mapped so you know which experts move opinion in a market, and how to sequence engagement and evidence around them.',
           slug: 'kol-mapping',
         },
         {
           title: 'Physician Insights',
-          description: 'Structured physician intelligence to support launch planning and brand optimization.',
+          description: 'Structured physician intelligence to pressure-test launch plans, positioning, and message before you commit the budget behind them.',
           slug: 'physician-insights',
         },
         {
           title: 'Market Access',
-          description: 'Access-focused evidence programs aligned to payer and institutional expectations.',
+          description: 'Evidence built to the questions payers and hospital committees actually ask, so pricing and reimbursement cases survive the review.',
           slug: 'market-access',
         },
       ];
 
+  const hubConfig = getHealthcareMarketResearchHubConfig();
+  const hubFaqSectionId = 'healthcare-mr-hub-faq';
+
   return (
-    <main>
+    <>
       <SEOHead
-        title="Healthcare & Pharmaceutical Market Research in Dubai, UAE & MENA | BioNixus"
-        description="BioNixus — leading healthcare and pharmaceutical market research company serving Dubai, UAE, and MENA. DHA, MOHAP, and DOH-aligned physician surveys, KOL mapping, and market access."
+        title="Global Healthcare & Pharmaceutical Market Research | USA, Europe, MENA & Asia | BioNixus"
+        description="BioNixus runs physician, payer, and patient research across the USA, Europe, MENA, and Asia — fieldwork executed locally in each market, findings that compare across borders, and outputs your commercial, medical, and access teams can act on worldwide."
         canonical="/healthcare-market-research"
-        jsonLd={[...jsonLd, dubaiLocalBusinessSchema, dubaiFaqSchema]}
+        jsonLd={jsonLd}
       />
       <Helmet>
-        <meta name="geo.region" content="AE-DU" />
-        <meta name="geo.placename" content="Dubai" />
-        <meta name="geo.position" content="25.2048;55.2708" />
-        <meta name="ICBM" content="25.2048, 55.2708" />
-        <meta property="og:locale" content="en_AE" />
+        <meta property="og:locale" content="en" />
       </Helmet>
 
-      <BreadcrumbNav
-        items={[
+      <HealthcareResearchPageShell
+        progressId="healthcare-mr-hub"
+        config={hubConfig}
+        breadcrumbs={[
           { name: 'Home', href: '/' },
           { name: 'Healthcare Market Research', href: '/healthcare-market-research' },
         ]}
-      />
-
-      <section className="py-16 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
-        <div className="container-wide max-w-6xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-display font-semibold mb-4">
-            {heroTitle}
-          </h1>
-          <p className="text-lg text-primary-foreground/90 max-w-3xl">
-            {heroDescription}
-          </p>
-        </div>
-      </section>
-
-      <section className="py-10">
-        <div className="container-wide max-w-6xl mx-auto">
-          <h2 className="text-2xl font-display font-semibold text-foreground mb-3">
-            Global healthcare and pharmaceutical market research priorities
-          </h2>
+        hero={{
+          title: heroTitle,
+          statsCaption: '',
+          stats: [
+            { value: '17+', label: 'Countries covered' },
+            { value: '14+', label: 'Therapeutic areas' },
+            { value: '4 regions', label: 'Americas · Europe · MENA · Asia' },
+          ],
+          description: (
+            <>
+              <p>{heroDescription}</p>
+              <p className="mt-4 text-sm text-muted-foreground max-w-3xl">
+                Jump straight to a region in the{' '}
+                <Link className="font-medium text-primary hover:underline" to="#global-coverage">
+                  global market coverage
+                </Link>{' '}
+                map below, browse every country and therapy report in the{' '}
+                <Link className="font-medium text-primary hover:underline" to="/market-reports">
+                  healthcare market research reports hub
+                </Link>
+                , or use the country service pages on this hub for bespoke quantitative and qualitative programmes.
+              </p>
+            </>
+          ),
+        }}
+        tocItems={[
+          { href: '#entry-points', label: 'Entry points' },
+          { href: '#global-coverage', label: 'Global coverage' },
+          { href: '#gcc-report-cluster', label: 'GCC reports' },
+          { href: '#regional-expertise', label: 'Countries' },
+          { href: '#city-hubs', label: 'City hubs' },
+          { href: '#dubai-uae', label: 'UAE focus' },
+          { href: '#services', label: 'Services' },
+          { href: '#therapy-areas', label: 'Therapy areas' },
+          { href: `#${hubFaqSectionId}`, label: 'FAQ' },
+        ]}
+        faq={{
+          sectionId: hubFaqSectionId,
+          title: 'Healthcare market research FAQs',
+          items: hubFaqItems,
+        }}
+      >
+      <ReportPremiumSection
+        id="entry-points"
+        title="Where to start: country, therapy, and service-level entry points"
+        variant="cream"
+      >
           <p className="text-muted-foreground leading-relaxed mb-4 max-w-4xl">
-            Teams searching for pharmaceutical market research, healthcare market research, and market research in the UAE
-            need one framework that connects country evidence, market access planning, and commercial activation. Use these
-            high-intent pages to move from broad strategy to proposal-ready execution.
+            BioNixus runs healthcare and pharmaceutical market research in 17+ countries across four regions — the
+            Americas, Europe, MENA &amp; the GCC, and Asia-Pacific — with fieldwork executed locally and findings that
+            compare across borders. The Gulf is one of the fastest-growing pieces of that map: the GCC pharmaceutical
+            market was worth roughly $23.7 billion in 2024 and is projected to reach about $49 billion by 2033, a 7.6%
+            CAGR (BioNixus market analysis, 2024). The links below take you straight from that picture down to the
+            country, therapy area, or service you need to plan, so you skip the generic overview and land on the
+            evidence that informs your next decision.
           </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-            <Link to="/healthcare-market-research/uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              Market research in UAE — healthcare and pharmaceutical
-            </Link>
-            <Link
-              to="/healthcare-market-research/uae"
-              className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
-            >
-              Healthcare market research in UAE (country hub)
-            </Link>
-            <Link to="/market-research-ksa" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              Market research KSA for launch and access planning
-            </Link>
-            <Link to="/market-research-egypt" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              Market research Egypt for MENA expansion
-            </Link>
-            <Link to="/healthcare-market-research-agency-gcc" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              Healthcare market research agency GCC
-            </Link>
-            <Link to="/healthcare-market-research/saudi-arabia" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              Pharma market research company in Saudi Arabia
-            </Link>
-            <Link to="/healthcare-market-research/uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              Pharma market research in UAE — company page
-            </Link>
-            <Link to="/bionixus-market-research-middle-east" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              Pharmaceutical market research in Middle East
-            </Link>
-            <Link to="/real-world-evidence" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              Real world evidence (RWE) for pharmaceutical teams
-            </Link>
-            <Link to="/real-world-evidence-gcc" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              Real world evidence GCC programs
-            </Link>
-            <Link to="/gcc-market-access-guide" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-              GCC market access guide
-            </Link>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <HealthcareNavCard to="/healthcare-market-research/uae" title="UAE healthcare market research" />
+            <HealthcareNavCard
+              to="/uae-pharmaceutical-market-research"
+              title="Healthcare market research company in UAE"
+            />
+            <HealthcareNavCard to="/market-research-uae" title="Market research in the UAE" />
+            <HealthcareNavCard
+              to="/healthcare-market-research/saudi-arabia"
+              title="Saudi Arabia pharmaceutical market research"
+            />
+            <HealthcareNavCard
+              to="/market-research-saudi-arabia-pharmaceutical"
+              title="Healthcare market research company in Saudi Arabia"
+            />
+            <HealthcareNavCard to="/market-research-ksa" title="Market research KSA" />
+            <HealthcareNavCard to="/healthcare-market-research/egypt" title="Egypt healthcare market research" />
+            <HealthcareNavCard
+              to="/egypt-pharmaceutical-market-research"
+              title="Healthcare market research company in Egypt"
+            />
+            <HealthcareNavCard to="/market-research-egypt" title="Market research in Egypt" />
+            <HealthcareNavCard
+              to="/healthcare-market-research/therapy/oncology"
+              title="Oncology therapy research"
+            />
+            <HealthcareNavCard
+              to="/healthcare-market-research/therapy/immunology"
+              title="Immunology therapy research"
+            />
+            <HealthcareNavCard
+              to="/market-research-by-industry"
+              title="Market research by industry (KSA, UAE, Egypt)"
+            />
+            <HealthcareNavCard
+              to="/gcc-pharma-market-report-2026"
+              title="GCC pharmaceutical market report"
+              featured
+            />
+            <HealthcareNavCard to="/market-reports" title="Market reports hub" featured />
           </div>
-        </div>
-      </section>
+        <HealthcareStatPanel
+          className="mt-8"
+          stats={trustSignals.map((item) => ({ label: item.label, value: item.value }))}
+        />
+      </ReportPremiumSection>
 
-      <section className="py-10 bg-muted/20">
-        <div className="container-wide max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
-          {trustSignals.map((item) => (
-            <article key={`${item.label}-${item.value}`} className="rounded-xl border border-border bg-card p-4">
-              <h2 className="text-xs uppercase tracking-wide text-muted-foreground mb-2">{item.label}</h2>
-              <p className="text-base font-semibold text-foreground">{item.value}</p>
-            </article>
+      <ReportPremiumSection
+        id="global-coverage"
+        title="Global market coverage: USA, Europe, MENA &amp; Asia"
+        subtitle="One partner across four regions — each country report maps the regulator, payer, and access realities that decide a launch."
+        variant="default"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {GLOBAL_MARKETS.map((region) => (
+            <div key={region.region} className="rounded-2xl border border-border bg-card p-6">
+              <div className="flex items-center justify-between gap-3 mb-2">
+                <h3 className="text-xl font-bold text-foreground">{region.region}</h3>
+                <span className="text-[11px] font-medium uppercase tracking-wide text-primary bg-primary/5 border border-primary/20 rounded-full px-3 py-1 whitespace-nowrap">
+                  {region.regulators}
+                </span>
+              </div>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4">{region.blurb}</p>
+              <ul className="flex flex-wrap gap-2">
+                {region.markets.map((market) => (
+                  <li key={market.to}>
+                    <Link
+                      to={market.to}
+                      className="inline-flex items-center rounded-lg border border-border bg-background px-3 py-1.5 text-sm text-foreground hover:border-primary/40 hover:text-primary transition-colors"
+                    >
+                      {market.name} healthcare market report
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
         </div>
-      </section>
+        <p className="text-sm text-muted-foreground mt-6 max-w-4xl">
+          Planning a device or diagnostics launch? Every market above also has a dedicated{' '}
+          <Link to="/market-reports" className="text-primary hover:underline">
+            medical devices and IVD report
+          </Link>{' '}
+          in the reports hub. For a multi-country programme, start from{' '}
+          <Link to="/healthcare-market-research/services/market-access" className="text-primary hover:underline">
+            market access research
+          </Link>{' '}
+          or tell us your target markets on the{' '}
+          <Link to="/contact" className="text-primary hover:underline">
+            contact page
+          </Link>
+          .
+        </p>
+      </ReportPremiumSection>
 
-      <section className="py-12">
-        <div className="container-wide max-w-6xl mx-auto">
-          <h2 className="text-3xl font-display font-semibold text-foreground mb-6">Regional Expertise</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-5">
-            {countries.filter(c => !c.isCity).map((country) => (
-              <Link
+      <ReportPremiumSection
+        id="gcc-report-cluster"
+        title="GCC pharmaceutical &amp; medtech market reports (2026)"
+        variant="default"
+      >
+        <p className="text-muted-foreground leading-relaxed mb-6 max-w-4xl">
+          High-impression Gulf segment queries—biologics, generic injectables, medical devices, and precision
+          medicine—map to the flagship reports below. Country pharma company directories link here to pass authority
+          from page-one BOFU URLs into the report cluster.
+        </p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <HealthcareNavCard to="/gcc-pharma-market-report-2026" title="GCC pharma market report 2026" featured />
+          <HealthcareNavCard to="/gcc-pharmaceutical-market-research" title="GCC biologics &amp; injectables research" />
+          <HealthcareNavCard to="/gcc-medical-devices-market-report" title="GCC medical devices &amp; IVD report" />
+          <HealthcareNavCard
+            to="/market-reports/gcc-immunology-biologics-market-report"
+            title="GCC immunology &amp; biologics market report"
+          />
+          <HealthcareNavCard
+            to="/market-reports/gcc-biosimilars-market-report"
+            title="GCC biosimilars &amp; generic injectables report"
+          />
+          <HealthcareNavCard
+            to="/healthcare-market-research/saudi-arabia"
+            title="Saudi Arabia healthcare market research"
+          />
+          <HealthcareNavCard
+            to="/pharmaceutical-companies-saudi-arabia"
+            title="Pharmaceutical companies in Saudi Arabia"
+          />
+          <HealthcareNavCard to="/pharmaceutical-companies-uae" title="Pharmaceutical companies in UAE" />
+          <HealthcareNavCard to="/pharmaceutical-companies-kuwait" title="Pharmaceutical companies in Kuwait" />
+        </div>
+      </ReportPremiumSection>
+
+      <ReportPremiumSection id="regional-expertise" title="Regional expertise" variant="muted">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {countries.filter((c) => !c.isCity).map((country) => (
+              <HealthcareNavCard
                 key={country.slug}
                 to={`/healthcare-market-research/${country.slug}`}
-                className="block rounded-xl border border-border bg-card p-5 hover:border-primary/40 transition-colors"
-              >
-                <h3 className="text-lg font-semibold text-foreground mb-2">{country.name}</h3>
-                <p className="text-sm text-muted-foreground mb-3">{country.metaSuffix}</p>
-                <span className="text-primary text-sm font-medium">
-                  Market research in {country.name}
-                </span>
-              </Link>
+                title={country.name}
+                description={country.metaSuffix}
+              />
             ))}
           </div>
-        </div>
-      </section>
+      </ReportPremiumSection>
 
-      <section className="py-12 bg-muted/5">
-        <div className="container-wide max-w-6xl mx-auto">
-          <h2 className="text-3xl font-display font-semibold text-foreground mb-6">Primary Research Hubs</h2>
-          <p className="text-muted-foreground mb-8 max-w-3xl">Deep-dive city-level intelligence for the Middle East's most complex healthcare clusters.</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <ReportPremiumSection
+        id="city-hubs"
+        title="Primary research hubs"
+        subtitle="City-level depth for the Middle East's densest healthcare clusters."
+      >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {countries.filter(c => c.isCity).map((city) => (
               <Link
                 key={city.slug}
@@ -338,29 +453,30 @@ export default function HubPage() {
               </Link>
             ))}
           </div>
-        </div>
-      </section>
+      </ReportPremiumSection>
 
-      {/* Dubai & UAE coverage block */}
-      <section className="py-16" id="dubai-uae">
-        <div className="container-wide max-w-6xl mx-auto">
-          <h2 className="text-3xl font-display font-semibold text-foreground mb-6">
-            Healthcare &amp; Pharmaceutical Market Research in Dubai &amp; UAE
-          </h2>
+      <ReportPremiumSection
+        id="dubai-uae"
+        title="Healthcare & pharmaceutical market research in Dubai & UAE"
+        variant="cream"
+      >
           <div className="text-muted-foreground leading-relaxed space-y-4 max-w-4xl">
             <p>
-              BioNixus is a specialist healthcare and pharmaceutical market research company serving Dubai, Abu Dhabi,
-              and the wider UAE market. Our Dubai-aligned research programs are designed around the UAE's
-              triple-regulator structure — the{' '}
+              BioNixus runs healthcare and pharmaceutical market research across Dubai, Abu Dhabi, and the wider UAE —
+              a market valued at roughly $4.15 billion in 2024 and forecast to reach about $8.02 billion by 2033,
+              a 7.3% CAGR (BioNixus market analysis, 2024). What makes the UAE distinct is not its size but its structure: three
+              regulators govern the same federation. The{' '}
               <strong className="text-foreground">Dubai Health Authority (DHA)</strong>, the{' '}
               <strong className="text-foreground">Department of Health Abu Dhabi (DOH)</strong>, and the federal{' '}
-              <strong className="text-foreground">Ministry of Health and Prevention (MOHAP)</strong>.
+              <strong className="text-foreground">Ministry of Health and Prevention (MOHAP)</strong> each set their
+              own formulary, insurance, and access rules, so a study that treats the UAE as a single market quietly
+              averages away the very differences that decide a launch.
             </p>
             <p>
-              We deliver physician research, KOL mapping, market access strategy, and launch excellence programs for
-              pharmaceutical, biotech, and medtech companies entering or expanding in the UAE — the fastest-growing
-              GCC pharma market with <strong className="text-foreground">$4.5B in annual value</strong> and the
-              highest per-capita pharma spend in the Gulf.
+              We design around that reality. Physician research, KOL mapping, market access strategy, and
+              launch-readiness programmes are calibrated emirate by emirate — public versus private provider mix,
+              mandatory-insurance payer behaviour, and the institutional pathways that move a product onto a formulary —
+              for pharma, biotech, and medtech teams entering or scaling in the country.
             </p>
             <p className="font-semibold text-foreground">Our Dubai healthcare market research capabilities include:</p>
             <ul className="grid md:grid-cols-2 gap-2 list-disc list-inside">
@@ -370,7 +486,7 @@ export default function HubPage() {
               <li>Competitive intelligence across DHA, DOH, and free-zone hospital groups</li>
               <li>Patient journey research in DHA mandatory insurance settings</li>
               <li>KOL mapping across Dubai's major hospital groups and academic centres</li>
-              <li>Medical tourism segment research (630,000+ annual patients)</li>
+              <li>Medical tourism and private-channel demand pathway research</li>
             </ul>
             <p>
               For the{' '}
@@ -381,43 +497,37 @@ export default function HubPage() {
               <Link to="/strategic-portfolio" className="text-primary hover:underline">
                 strategic market research portfolio
               </Link>{' '}
-              — 127 projects, 48 global clients, 17 top-20 global pharma relationships.
+              for representative healthcare and pharmaceutical programs.
             </p>
           </div>
-        </div>
-      </section>
+      </ReportPremiumSection>
 
-      {/* Why pharma in Dubai choose BioNixus */}
-      <section className="py-16 bg-muted/20" id="why-dubai-pharma">
-        <div className="container-wide max-w-6xl mx-auto">
-          <h2 className="text-3xl font-display font-semibold text-foreground mb-6">
-            Why Pharmaceutical Companies in Dubai Choose BioNixus
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <ReportPremiumSection id="why-dubai-pharma" title="Why pharmaceutical companies in Dubai choose BioNixus" variant="muted">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               {
-                title: 'Regional HQ Access',
-                desc: 'Many top-20 global pharma companies have their regional HQ in Dubai — we coordinate seamlessly with Dubai-based commercial, medical, and market access teams.',
+                title: 'You work where your teams already sit',
+                desc: 'Dubai is the regional headquarters for much of the global pharma industry. We work in the same time zone as your commercial, medical, and market access leads, so reviews happen live rather than over a 10-hour lag.',
               },
               {
-                title: 'DHA-Aligned Fieldwork',
-                desc: 'DHA-aligned physician recruitment and fieldwork governance for compliant, high-quality data across Dubai healthcare facilities.',
+                title: 'Fieldwork that holds up to a DHA audit',
+                desc: 'Physician recruitment and fieldwork governance are built to DHA standards, so the data you present internally is defensible and the sourcing behind every interview is documented.',
               },
               {
-                title: 'Bilingual Execution',
-                desc: 'Arabic and English fieldwork capability across all HCP segments — from government hospital physicians to private-practice specialists.',
+                title: 'Arabic and English, by the same team',
+                desc: 'Bilingual moderators and interviewers cover every HCP segment — government-hospital physicians, private-practice specialists, and pharmacists — without losing meaning in translation.',
               },
               {
-                title: '200+ Physician Panel',
-                desc: 'Validated 200+ physician panel across UAE public and private systems for rapid quantitative and qualitative research.',
+                title: 'A respondent base we have already validated',
+                desc: 'Physician and HCP coverage spans UAE public and private settings and is screened before fieldwork, so quantitative samples hit quota and qualitative panels reach the right specialists.',
               },
               {
-                title: 'GCC Cross-Country',
-                desc: 'GCC cross-country execution: UAE, KSA, Kuwait, Qatar, Bahrain, Oman — from a single project management office.',
+                title: 'One office for the whole Gulf',
+                desc: 'When a UAE study needs to extend to Saudi Arabia, Kuwait, Qatar, Bahrain, or Oman, a single project office runs it — keeping method, timeline, and reporting consistent across all six markets.',
               },
               {
-                title: 'Full Compliance',
-                desc: 'GDPR, ICH-GCP, MOHAP research ethics standards — compliance baked into every study design and execution protocol.',
+                title: 'Compliance designed in, not bolted on',
+                desc: 'GDPR, ICH-GCP, and MOHAP research-ethics requirements — including adverse-event handling — sit inside the study design from the first draft, not as a checklist at the end.',
               },
             ].map((card) => (
               <div key={card.title} className="rounded-xl border border-border bg-card p-6">
@@ -426,55 +536,29 @@ export default function HubPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
+      </ReportPremiumSection>
 
-      {/* Dubai FAQ (PAA capture) */}
-      <section className="py-16" id="dubai-faq">
-        <div className="container-wide max-w-6xl mx-auto">
-          <h2 className="text-3xl font-display font-semibold text-foreground mb-8">
-            Frequently Asked Questions — Dubai Healthcare Market Research
-          </h2>
-          <div className="space-y-4 max-w-4xl">
-            {DUBAI_FAQS.map((faq) => (
-              <details key={faq.question} className="group rounded-xl border border-border bg-card">
-                <summary className="cursor-pointer px-6 py-4 font-semibold text-foreground">
-                  {faq.question}
-                </summary>
-                <p className="px-6 pb-4 text-sm text-muted-foreground leading-relaxed">{faq.answer}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-12">
-        <div className="container-wide max-w-6xl mx-auto">
-          <h2 className="text-3xl font-display font-semibold text-foreground mb-6">Healthcare Research Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+      <ReportPremiumSection id="services" title="Healthcare research services">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
             {services.map((service) => (
-              <Link
+              <HealthcareNavCard
                 key={`${service.slug || service.title}`}
                 to={
                   service.slug
                     ? `/healthcare-market-research/services/${service.slug}`
                     : '/healthcare-market-research/services/market-access'
                 }
-                className="block rounded-xl border border-border bg-card p-5 hover:border-primary/40 transition-colors"
-              >
-                <h3 className="text-lg font-semibold text-foreground mb-2">{service.title || 'Research service'}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {service.description || 'Specialized pharmaceutical market research support for strategic decisions.'}
-                </p>
-              </Link>
+                title={service.title || 'Research service'}
+                description={
+                  service.description ||
+                  'Specialized pharmaceutical market research support for strategic decisions.'
+                }
+              />
             ))}
           </div>
-        </div>
-      </section>
+      </ReportPremiumSection>
 
-      <section className="py-12 bg-muted/30">
-        <div className="container-wide max-w-6xl mx-auto">
-          <h2 className="text-3xl font-display font-semibold text-foreground mb-6">Therapy Area Expertise</h2>
+      <ReportPremiumSection id="therapy-areas" title="Therapy area expertise" variant="muted">
           <div className="flex flex-wrap gap-2">
             {['oncology', 'diabetes', 'respiratory', 'immunology', 'biologics', 'vaccines'].map((area) => (
               <Link
@@ -486,12 +570,9 @@ export default function HubPage() {
               </Link>
             ))}
           </div>
-        </div>
-      </section>
+      </ReportPremiumSection>
 
-      <section className="py-12 bg-muted/10">
-        <div className="container-wide max-w-6xl mx-auto">
-          <h2 className="text-3xl font-display font-semibold text-foreground mb-6">Featured Guides & Market Insights</h2>
+      <ReportPremiumSection id="featured-guides" title="Featured guides & market insights">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             <Link
               to="/bionixus-market-research-middle-east"
@@ -543,26 +624,30 @@ export default function HubPage() {
               <p className="text-sm text-muted-foreground">BOFU guide for selecting a GCC healthcare and pharma research partner.</p>
             </Link>
             <Link
-              to="/healthcare-market-research/saudi-arabia"
+              to="/market-research-saudi-arabia-pharmaceutical"
               className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors"
             >
-              <h3 className="text-base font-semibold text-foreground mb-2">Pharma Market Research Company in Saudi Arabia</h3>
-              <p className="text-sm text-muted-foreground">KSA-focused page for SFDA, launch, and market access execution planning.</p>
+              <h3 className="text-base font-semibold text-foreground mb-2">Healthcare Market Research Company in Saudi Arabia</h3>
+              <p className="text-sm text-muted-foreground">BOFU page for SFDA, NUPCO, bilingual fieldwork, and KSA launch evidence.</p>
             </Link>
             <Link
-              to="/healthcare-market-research/uae"
+              to="/uae-pharmaceutical-market-research"
               className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors"
             >
-              <h3 className="text-base font-semibold text-foreground mb-2">Pharma Market Research Company in UAE</h3>
-              <p className="text-sm text-muted-foreground">UAE-focused page for emirate-specific evidence and access planning.</p>
+              <h3 className="text-base font-semibold text-foreground mb-2">Healthcare Market Research Company in UAE</h3>
+              <p className="text-sm text-muted-foreground">BOFU page for DHA, DOH, MOHAP, bilingual fieldwork, and UAE launch evidence.</p>
+            </Link>
+            <Link
+              to="/egypt-pharmaceutical-market-research"
+              className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors"
+            >
+              <h3 className="text-base font-semibold text-foreground mb-2">Healthcare Market Research Company in Egypt</h3>
+              <p className="text-sm text-muted-foreground">BOFU page for EDA, UHI, bilingual fieldwork, and Egypt launch evidence.</p>
             </Link>
           </div>
-        </div>
-      </section>
+      </ReportPremiumSection>
 
-      <section className="py-10">
-        <div className="container-wide max-w-6xl mx-auto">
-          <h2 className="text-2xl font-display font-semibold text-foreground mb-4">Country industry guide shortcuts</h2>
+      <ReportPremiumSection id="country-shortcuts" title="Country industry guide shortcuts" variant="muted">
           <div className="flex flex-wrap gap-2">
             {[
               '/pharmaceutical-companies-saudi-arabia',
@@ -581,28 +666,15 @@ export default function HubPage() {
               </Link>
             ))}
           </div>
-        </div>
-      </section>
+      </ReportPremiumSection>
 
-      <section className="py-10 bg-muted/20">
-        <div className="container-wide max-w-6xl mx-auto">
-          <h2 className="text-2xl font-display font-semibold text-foreground mb-4">Global and regional navigation</h2>
+      <ReportPremiumSection id="global-nav" title="Global and regional navigation">
           <p className="text-muted-foreground mb-4 max-w-3xl">
-            Use the global directory for corporate market coverage and country routing, or stay in this hub for service-led healthcare market research planning.
+            Looking beyond healthcare or routing to a specific country? The global directory maps our full market coverage. Staying in pharma and devices? Keep to this hub and pick the service or market you need to plan.
           </p>
           <div className="grid md:grid-cols-2 gap-3">
-            <Link
-              to="/global-websites"
-              className="rounded-lg border border-border bg-card p-4 text-primary hover:border-primary/40 transition-colors"
-            >
-              Open global websites directory
-            </Link>
-            <Link
-              to="/services"
-              className="rounded-lg border border-border bg-card p-4 text-primary hover:border-primary/40 transition-colors"
-            >
-              Compare healthcare research services
-            </Link>
+            <HealthcareNavCard to="/global-websites" title="Open global websites directory" />
+            <HealthcareNavCard to="/services" title="Compare healthcare research services" />
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-2 mt-4">
             {healthcareCountryRecoveryPaths.slice(0, 24).map((path) => (
@@ -611,12 +683,12 @@ export default function HubPage() {
               </Link>
             ))}
           </div>
-        </div>
-      </section>
+      </ReportPremiumSection>
 
-      <FAQSection items={hubFaqItems} />
-      <CTASection variant="research-proposal" />
-    </main>
+      <HubMarketReferenceGuide />
+      <ReportMidPageCta config={hubConfig} className="my-4" />
+      </HealthcareResearchPageShell>
+    </>
   );
 }
 

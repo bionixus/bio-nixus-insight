@@ -5,6 +5,7 @@
 
 import type { SanityClient } from '@sanity/client';
 import { getSanityClient } from './sanity';
+import { resolveBlogSeoNoIndex } from '@/lib/blog-robots';
 import type { BlogPost } from '@/types/blog';
 import { hardcodedSeoPosts, getHardcodedPostBySlug } from '@/data/blog-posts-index';
 
@@ -173,7 +174,7 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
         out.seoMetaTitle = raw.seo.metaTitle;
         out.seoMetaDescription = raw.seo.metaDescription;
         out.seoCanonicalUrl = raw.seo.canonicalUrl;
-        out.seoNoIndex = raw.seo.noIndex;
+        out.seoNoIndex = resolveBlogSeoNoIndex(p.slug ?? p._id, raw.seo.noIndex);
       }
       if (raw.openGraph) {
         out.ogTitle = raw.openGraph.ogTitle;

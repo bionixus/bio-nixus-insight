@@ -73,9 +73,9 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-12 mb-12">
           {/* Brand + Newsletter */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-5">
             <Link to={basePath} className="flex items-center gap-3 mb-6" onClick={handleLogoClick}>
               <img
                 src="/bionixus-logo-footer.webp"
@@ -189,34 +189,26 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Company & Offerings */}
-          <div>
+          {/* Core navigation only — fuller index at /sitemap */}
+          <div className="lg:col-span-4">
             <h4 className="font-semibold text-primary-foreground mb-6 uppercase tracking-wide text-sm">
-              {t.footer.companyHeading || 'Company & Offerings'}
+              {f.quickLinksHeading ?? 'Quick links'}
             </h4>
             <ul className="space-y-3">
+              <li>
+                <Link
+                  to="/contact"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  {t.nav.contact}
+                </Link>
+              </li>
               <li>
                 <Link
                   to="/about"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
-                  {t.footer.about}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/market-research"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Market Research Hub
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/healthcare-market-research/saudi-arabia"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Saudi Pharma Market Research
+                  {f.about}
                 </Link>
               </li>
               <li>
@@ -224,7 +216,7 @@ const Footer = () => {
                   to="/services"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
-                  {t.footer.services}
+                  {f.services}
                 </Link>
               </li>
               <li>
@@ -232,55 +224,15 @@ const Footer = () => {
                   to="/healthcare-market-research"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
-                  Healthcare Market Research Hub
+                  {f.healthcareHub ?? 'Healthcare market research hub'}
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/global-websites"
+                  to="/news"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
-                  Global Websites
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/case-studies"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  {t.footer.caseStudies}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/case-studies/cns-case-study"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  CNS and brain health market research case study
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/real-world-evidence"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Real World Evidence (RWE) for pharma
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/strategic-portfolio"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Strategic Portfolio
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/insights"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  BioNixus Insights Hub
+                  News &amp; press
                 </Link>
               </li>
               <li>
@@ -288,47 +240,15 @@ const Footer = () => {
                   to="/blog"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
-                  Insights & Blog
+                  {f.blogAndInsights ?? 'Blog & insights'}
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/ar/arabic-blog-alsawdyh"
+                  to="/sitemap"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
-                  Arabic guide: Saudi pharmaceutical market research
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/healthcare-market-research/uae"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Market Research in UAE
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/healthcare-market-research/uae"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  UAE Pharmaceutical Market Research
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/healthcare-market-research-agency-gcc"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Healthcare Market Research Agency GCC
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/healthcare-market-research/uae"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Dubai · UAE
+                  {f.sitemap ?? 'Site map'}
                 </Link>
               </li>
               <li>
@@ -338,31 +258,21 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
-                  {t.footer.careers}
+                  {f.careers}
                 </a>
               </li>
-              <li>
-                <button
-                  type="button"
-                  onClick={() => setPortalOpen(true)}
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem] text-left"
-                >
-                  {t.footer.clientsPortal}
-                </button>
-              </li>
-              <li>
-                <Link
-                  to="/sitemap"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
-                >
-                  Sitemap
-                </Link>
-              </li>
             </ul>
+            <button
+              type="button"
+              onClick={() => setPortalOpen(true)}
+              className="mt-6 text-primary-foreground/55 hover:text-primary-foreground transition-colors text-sm text-left underline-offset-2 hover:underline"
+            >
+              {f.clientsPortal}
+            </button>
           </div>
 
           {/* Contact */}
-          <div>
+          <div className="lg:col-span-3">
             <h4 className="font-semibold text-primary-foreground mb-6 uppercase tracking-wide text-sm">
               {t.footer.contactHeading}
             </h4>
@@ -390,7 +300,7 @@ const Footer = () => {
                   href="tel:+18884655557"
                   className="hover:text-primary-foreground transition-colors"
                 >
-                  +1 888 465 5557
+                  US No. +1 888 465 5557
                 </a>
               </li>
               <li>
@@ -409,7 +319,15 @@ const Footer = () => {
                   href="tel:+447727666682"
                   className="hover:text-primary-foreground transition-colors"
                 >
-                  +44 7727 666682
+                  Europe No. +44 7727 666682
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+201206882323"
+                  className="hover:text-primary-foreground transition-colors"
+                >
+                  Middle East, Africa and Asia No. +20 120 688 2323
                 </a>
               </li>
             </ul>

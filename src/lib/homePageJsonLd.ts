@@ -1,6 +1,7 @@
 import type { BlogPost } from '@/types/blog';
 import type { Language } from '@/lib/i18n';
 import { translations } from '@/lib/i18n';
+import { ORG_AREA_SERVED } from '@/lib/seo/organization';
 
 const SITE_ORIGIN = 'https://www.bionixus.com';
 const ORG_ID = `${SITE_ORIGIN}/#organization`;
@@ -65,7 +66,7 @@ export function buildHomeServiceJsonLdNodes(language: Language): Record<string, 
       url: toHttpsUrl(path),
       provider: { '@id': ORG_ID },
       serviceType: 'Healthcare market research',
-      areaServed: 'EMEA',
+      areaServed: ORG_AREA_SERVED,
       inLanguage,
     };
   });

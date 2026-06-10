@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { canonicalRedirectTarget, isSsrNotFoundPage } from '../seo-noise-query.mjs';
-import { BLOG_LEGACY_FULL_PATH_REDIRECTS } from '../blog-legacy-redirects.mjs';
+import { BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH, BLOG_LEGACY_FULL_PATH_REDIRECTS } from '../blog-legacy-redirects.mjs';
 import { normalizeOgCardPath, renderOgCardSvg } from '../lib/og-card-svg.mjs';
 
 type HelmetLike = {
@@ -28,6 +28,47 @@ type RequestLike = {
 
 let templateCache = '';
 let serverEntryCache: ServerEntryModule | null = null;
+let clientAssetHintsCache = '';
+
+function getClientAssetHints(): string {
+  if (clientAssetHintsCache) return clientAssetHintsCache;
+  const assetsDir = path.join(process.cwd(), 'dist', 'client', 'assets');
+  if (!fs.existsSync(assetsDir)) {
+    clientAssetHintsCache = '<link rel="modulepreload" href="/assets/index.js" crossorigin>';
+    return clientAssetHintsCache;
+  }
+  const files = fs.readdirSync(assetsDir);
+  const cssFile = files.find((f) => /^index-.*\.css$/.test(f));
+  const hints = ['<link rel="modulepreload" href="/assets/index.js" crossorigin>'];
+  if (cssFile) {
+    hints.push(`<link rel="stylesheet" href="/assets/${cssFile}">`);
+  }
+  clientAssetHintsCache = hints.join('\n');
+  return clientAssetHintsCache;
+}
+
+function buildLcpPreloadTag(initialData: Record<string, unknown>): string {
+  const url = initialData.lcpPreloadImageUrl;
+  if (typeof url !== 'string' || !url.trim()) return '';
+  return `<link rel="preload" as="image" href="${escapeHtmlAttribute(url)}" fetchpriority="high">`;
+}
+
+function insertShareFigureAfterHero(mainInner: string, figureHtml: string): string {
+  const h1Idx = mainInner.search(/<h1\b/i);
+  if (h1Idx === -1) return `${mainInner}${figureHtml}`;
+  const afterH1 = mainInner.slice(h1Idx);
+  const sectionEnd = afterH1.search(/<\/section>/i);
+  if (sectionEnd !== -1) {
+    const insertAt = h1Idx + sectionEnd + '</section>'.length;
+    return `${mainInner.slice(0, insertAt)}${figureHtml}${mainInner.slice(insertAt)}`;
+  }
+  const h1End = afterH1.search(/<\/h1>/i);
+  if (h1End !== -1) {
+    const insertAt = h1Idx + h1End + '</h1>'.length;
+    return `${mainInner.slice(0, insertAt)}${figureHtml}${mainInner.slice(insertAt)}`;
+  }
+  return `${mainInner}${figureHtml}`;
+}
 const REDIRECTS: Record<string, string> = {
   '/healthcare-market-research-saudi-arabia': '/healthcare-market-research/saudi-arabia',
   '/healthcare-market-research-uae': '/healthcare-market-research/uae',
@@ -95,14 +136,15 @@ const REDIRECTS: Record<string, string> = {
   '/fr/page-zzW-Z8': '/fr',
   '/fr/page-zzw-z8': '/fr',
   ...BLOG_LEGACY_FULL_PATH_REDIRECTS,
+  ...BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH,
 };
 
 function inferHtmlLang(pathname: string): { lang: string; dir: 'ltr' | 'rtl' } {
-  if (pathname.startsWith('/de')) return { lang: 'de', dir: 'ltr' };
-  if (pathname.startsWith('/fr')) return { lang: 'fr', dir: 'ltr' };
-  if (pathname.startsWith('/es')) return { lang: 'es', dir: 'ltr' };
-  if (pathname.startsWith('/ar')) return { lang: 'ar', dir: 'rtl' };
-  if (pathname.startsWith('/zh')) return { lang: 'zh-CN', dir: 'ltr' };
+  if (pathname === '/de' || pathname.startsWith('/de/')) return { lang: 'de', dir: 'ltr' };
+  if (pathname === '/fr' || pathname.startsWith('/fr/')) return { lang: 'fr', dir: 'ltr' };
+  if (pathname === '/es' || pathname.startsWith('/es/')) return { lang: 'es', dir: 'ltr' };
+  if (pathname === '/ar' || pathname.startsWith('/ar/')) return { lang: 'ar', dir: 'rtl' };
+  if (pathname === '/zh' || pathname.startsWith('/zh/')) return { lang: 'zh-CN', dir: 'ltr' };
   return { lang: 'en', dir: 'ltr' };
 }
 
@@ -133,6 +175,25 @@ const ARABIC_BLOG_TITLE_OVERRIDES: Record<string, string> = {
   'quantitative-market-research-and-market-access':
     'أبحاث السوق الكمية وأثر الوصول إلى السوق | BioNixus',
 };
+
+/** `/blog/` article with Arabic slug (decoded path segment). Must match BlogPost.tsx + server.js. */
+const GCC_MEAST_PHARMA_HEALTH_AR_SLUG =
+  'أبحاث-السوق-الدوائية-في-الشرق-الأوسط-و-دول-الخليج-العربي';
+const GCC_MEAST_PHARMA_HEALTH_AR_BLOG_EN_TITLE =
+  'GCC & MENA Pharma Market Research Outlook 2026 | BioNixus';
+const GCC_MEAST_PHARMA_HEALTH_AR_BLOG_AR_TITLE =
+  'أبحاث السوق الصيدلانية الشرق الأوسط والخليج 2026 | BioNixus';
+const GCC_MEAST_PHARMA_HEALTH_AR_META_DESCRIPTION =
+  'تحليل معمق لسوق الرعاية الصحية في دول الخليج العربي لعام 2026. اكتشف فرص التوطين، التحول الرقمي، واستراتيجيات النجاح في السعودية والإمارات.';
+
+/** Saudi pharma market outlook; Arabic slug under `/blog/` (decoded segment). Matches BlogPost.tsx + server.js. */
+const SAUDI_PHARMA_MARKET_2026_AR_SLUG = 'سوق-الدواء-السعودي-2026';
+const SAUDI_PHARMA_MARKET_2026_AR_BLOG_EN_TITLE =
+  'Saudi Arabia Pharmaceutical Market Outlook 2026 | BioNixus';
+const SAUDI_PHARMA_MARKET_2026_AR_BLOG_AR_TITLE =
+  'سوق الدواء السعودي 2026: رؤى واتجاهات | BioNixus';
+const SAUDI_PHARMA_MARKET_2026_AR_META_DESCRIPTION =
+  'سوق الدواء السعودي 2026: توطين التصنيع، نمو الأدوية الحيوية، توسع التأمين ومشتريات NUPCO—تحليل BioNixus للوصول والتجاري في المملكة';
 
 const GENERIC_DEFAULT_TITLES = new Set<string>([
   'BioNixus | Healthcare & Pharmaceutical Market Research',
@@ -180,12 +241,40 @@ function buildFallbackTitle(pathname: string): string {
   if (path === '/blog') return 'Healthcare & Pharmaceutical Blog Insights | BioNixus';
   if (path === '/ar/blog') return 'المدونة العربية: أبحاث السوق الصحي والدوائي | BioNixus';
   if (path.startsWith('/ar/blog/')) {
-    const slug = path.split('/').pop() || 'insight';
+    let slug = path.split('/').pop() || 'insight';
+    try {
+      slug = decodeURIComponent(slug);
+    } catch {
+      /* keep raw segment */
+    }
     if (ARABIC_BLOG_TITLE_OVERRIDES[slug]) return ARABIC_BLOG_TITLE_OVERRIDES[slug];
+    if (slug === SAUDI_PHARMA_MARKET_2026_AR_SLUG) {
+      return SAUDI_PHARMA_MARKET_2026_AR_BLOG_AR_TITLE;
+    }
+    if (slug === GCC_MEAST_PHARMA_HEALTH_AR_SLUG) {
+      return GCC_MEAST_PHARMA_HEALTH_AR_BLOG_AR_TITLE;
+    }
     return `${titleCaseFromSlug(slug)} | مدونة BioNixus`;
   }
   if (path.startsWith('/blog/')) {
-    const slug = path.split('/').pop() || 'insight';
+    let slug = path.split('/').pop() || 'insight';
+    try {
+      slug = decodeURIComponent(slug);
+    } catch {
+      /* malformed percent-encoding — use raw segment */
+    }
+    if (slug === SAUDI_PHARMA_MARKET_2026_AR_SLUG) {
+      return SAUDI_PHARMA_MARKET_2026_AR_BLOG_EN_TITLE;
+    }
+    if (slug === GCC_MEAST_PHARMA_HEALTH_AR_SLUG) {
+      return GCC_MEAST_PHARMA_HEALTH_AR_BLOG_EN_TITLE;
+    }
+    if (slug === 'quantitative-market-research-and-market-access') {
+      return 'Quantitative Healthcare Market Research & Market Access 2026 | BioNixus';
+    }
+    if (slug === 'gcc-pharmaceutical-market-comparison-uae-saudi-kuwait') {
+      return 'GCC Pharma Comparison UAE vs Saudi vs Kuwait 2026 | BioNixus';
+    }
     return `${titleCaseFromSlug(slug)} | BioNixus Blog`;
   }
 
@@ -196,6 +285,14 @@ function buildFallbackTitle(pathname: string): string {
 
   if (path === '/real-world-evidence') {
     return 'Real World Evidence (RWE) for Pharma | BioNixus EMEA & MENA';
+  }
+
+  if (path === '/bionixus-vs-iqvia-mena') {
+    return 'BioNixus vs IQVIA MENA Research (2026) | BioNixus';
+  }
+
+  if (path === '/biosimilar-market-entry-saudi-arabia') {
+    return 'Biosimilar Entry Saudi Arabia (2026) | BioNixus';
   }
 
   const segment = path.split('/').filter(Boolean).pop() || 'home';
@@ -211,9 +308,24 @@ const KNOWN_TITLE_SUFFIXES = [
   '| BioNixus',
 ];
 
+/**
+ * Decode the common HTML entities so length measurement counts what users / Google
+ * actually see. Without this, "Cairo Hospitals &amp; Egypt..." is treated as 61 chars
+ * and the 60-char budget clips a real character off the end of the title.
+ */
+function decodeTitleEntities(s: string): string {
+  return s
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;|&apos;/g, "'");
+}
+
 function normalizeTitleLength(title: string, max = 60): string {
-  const clean = String(title || '').replace(/\s+/g, ' ').trim();
+  const clean = decodeTitleEntities(String(title || '').replace(/\s+/g, ' ').trim());
   if (!clean) return 'BioNixus';
+  if (/[\u0590-\u08FF]/.test(clean)) return clean;
   if (clean.length <= max) return clean;
 
   for (const suffix of KNOWN_TITLE_SUFFIXES) {
@@ -272,11 +384,36 @@ function buildFallbackDescription(pathname: string): string {
     return 'Read BioNixus healthcare and pharmaceutical market insights on market access, physician behavior, and regional growth strategy.';
   }
   if (path.startsWith('/blog/')) {
-    const slug = path.split('/').pop() || 'insight';
+    let slug = path.split('/').pop() || 'insight';
+    try {
+      slug = decodeURIComponent(slug);
+    } catch {
+      /* keep raw segment */
+    }
+    if (slug === SAUDI_PHARMA_MARKET_2026_AR_SLUG) {
+      return SAUDI_PHARMA_MARKET_2026_AR_META_DESCRIPTION;
+    }
+    if (slug === GCC_MEAST_PHARMA_HEALTH_AR_SLUG) {
+      return GCC_MEAST_PHARMA_HEALTH_AR_META_DESCRIPTION;
+    }
+    if (slug === 'quantitative-market-research-and-market-access') {
+      return 'Quantitative healthcare market research guide for pharma market access: KPI frameworks, payer evidence, and links to methodology at BioNixus.';
+    }
+    if (slug === 'gcc-pharmaceutical-market-comparison-uae-saudi-kuwait') {
+      return 'UAE vs Saudi Arabia vs Kuwait pharmaceutical market comparison: tenders, SFDA-scale regulation in KSA, UAE emirate payers, Kuwait access concentration—BioNixus GCC.';
+    }
     return `${titleCaseFromSlug(slug)} insight article from BioNixus covering healthcare and pharmaceutical market strategy.`;
   }
   if (path.startsWith('/ar/blog/')) {
-    const slug = path.split('/').pop() || 'insight';
+    let slug = path.split('/').pop() || 'insight';
+    try {
+      slug = decodeURIComponent(slug);
+    } catch {
+      /* keep raw segment */
+    }
+    if (slug === SAUDI_PHARMA_MARKET_2026_AR_SLUG) {
+      return SAUDI_PHARMA_MARKET_2026_AR_META_DESCRIPTION;
+    }
     if (slug === 'quantitative-market-research-and-market-access') {
       return 'ملخص عربي: أبحاث السوق الكمية وتأثيرها على الوصول إلى السوق للدواء—رؤى للشركات في الشرق الأوسط ودول الخليج من BioNixus.';
     }
@@ -288,6 +425,33 @@ function buildFallbackDescription(pathname: string): string {
   }
   if (path === '/real-world-evidence') {
     return 'BioNixus delivers real world evidence (RWE) for pharma: principal-led design, EMEA and MENA field execution, HTA-ready narratives, and GCC programs—decision-ready outputs for medical, access, and commercial teams.';
+  }
+  if (path === '/gfk-alternative-egypt') {
+    return 'GfK joined NIQ in 2023. BioNixus is a Cairo partner for pharma, healthcare, and consumer research across Egypt and the GCC.';
+  }
+  if (path === '/kantar-health-alternative-gcc') {
+    return 'Kantar Health has no GCC healthcare desk. BioNixus pharma research across KSA, UAE, Kuwait, Qatar, Bahrain, Oman, and Egypt.';
+  }
+  if (path === '/pharmaceutical-market-research-dubai') {
+    return 'Pharma market research in Dubai: physician surveys, hospital data, KOL mapping, and UAE payer-aware market access—BioNixus.';
+  }
+  if (path === '/iqvia-alternative') {
+    return 'BioNixus IQVIA alternative: hospital sales data, consumption analytics, and flexible global studies for pharmaceutical teams.';
+  }
+  if (path === '/bionixus-vs-iqvia-mena') {
+    return 'Compare BioNixus and IQVIA for MENA healthcare research, including hospital data, analytics, and market access support tailored for Saudi Arabia and the GCC.';
+  }
+  if (path === '/physician-survey-saudi-arabia') {
+    return 'Saudi physician surveys for pharma: Arabic fieldwork, verified HCP samples, SFDA-aware design, and consumption data from BioNixus.';
+  }
+  if (path === '/sfda-market-access-strategy-saudi-arabia') {
+    return 'SFDA market access in Saudi Arabia 2026: NUPCO formulary, HTA evidence, utilization and payer research for pharma teams—BioNixus.';
+  }
+  if (path === '/kol-mapping-saudi-arabia-oncology') {
+    return 'Oncology KOL mapping in Saudi Arabia: physician networks, influence scoring, utilization context, and GCC engagement—BioNixus.';
+  }
+  if (path === '/biosimilar-market-entry-saudi-arabia') {
+    return 'Biosimilar entry in Saudi Arabia 2026: SFDA pathways, NUPCO dynamics, utilization research, and physician adoption—BioNixus.';
   }
 
   const segment = path.split('/').filter(Boolean).pop() || 'home';
@@ -316,13 +480,18 @@ function shouldForceLocaleFallback(pathname: string, chosen: string | undefined)
   return false;
 }
 
+function extractDocumentTitles(html: string): string[] {
+  const headMatch = html.match(/<head[^>]*>([\s\S]*?)<\/head>/i);
+  if (!headMatch) return [];
+  return Array.from(headMatch[1].matchAll(/<title[^>]*>([\s\S]*?)<\/title>/ig))
+    .map((m) => (m[1] || '').trim())
+    .filter(Boolean);
+}
+
 function ensureTitleTag(html: string, pathname: string): string {
   const fallbackTitle = normalizeTitleLength(buildFallbackTitle(pathname));
-  const matches = Array.from(html.matchAll(/<title[^>]*>([\s\S]*?)<\/title>/ig));
-  const chosen = matches
-    .map((m) => (m[1] || '').trim())
-    .filter(Boolean)
-    .at(-1);
+  const headTitles = extractDocumentTitles(html);
+  const chosen = headTitles.at(-1) ?? '';
   const normalized = normalizeTitleLength(chosen || fallbackTitle);
   // If the rendered title is a generic site default (the index.html fallback
   // that React-Helmet didn't override at SSR time, typically because page
@@ -364,18 +533,23 @@ function ensureMainContentImage(html: string, pathname: string): string {
   const encodedPath = encodeURIComponent(normalizedPath);
   const fullUrl = `https://www.bionixus.com${normalizedPath === '/' ? '' : normalizedPath}`;
   const altText = `BioNixus share card for ${fullUrl}`;
-  const figureHtml = `<aside data-page-share class="my-12">
-  <figure class="mx-auto max-w-2xl rounded-xl overflow-hidden border border-border bg-card shadow-sm">
+  const figureHtml = `<aside data-page-share class="mt-10 mb-8">
+  <figure class="mx-auto max-w-sm rounded-lg overflow-hidden border border-border bg-card shadow-sm">
     <a href="/api/og-card?path=${encodedPath}" target="_blank" rel="noopener" class="block" aria-label="Open the share card for this page in a new tab">
-      <img src="/api/og-card?path=${encodedPath}" alt="${altText}" title="${altText}" width="1200" height="630" loading="lazy" decoding="async" class="block w-full h-auto" />
+      <img src="/api/og-card?path=${encodedPath}" alt="${altText}" title="${altText}" width="400" height="210" loading="lazy" decoding="async" fetchpriority="low" class="block w-full h-auto max-w-sm" />
     </a>
-    <figcaption class="px-4 py-3 text-sm text-muted-foreground border-t border-border">Share this page — <strong class="text-foreground">BioNixus</strong></figcaption>
+    <figcaption class="px-3 py-2 text-xs text-muted-foreground border-t border-border">Share this page — <strong class="text-foreground">BioNixus</strong></figcaption>
   </figure>
 </aside>`;
 
-  const insertionPoint = html.lastIndexOf('</main>');
-  if (insertionPoint === -1) return html;
-  return `${html.slice(0, insertionPoint)}${figureHtml}${html.slice(insertionPoint)}`;
+  const mainOpen = html.match(/<main\b[^>]*>/i);
+  if (!mainOpen) return html;
+  const mainStart = html.indexOf(mainOpen[0]) + mainOpen[0].length;
+  const mainClose = html.lastIndexOf('</main>');
+  if (mainClose === -1 || mainClose <= mainStart) return html;
+  const mainBody = html.slice(mainStart, mainClose);
+  const updatedInner = insertShareFigureAfterHero(mainBody, figureHtml);
+  return `${html.slice(0, mainStart)}${updatedInner}${html.slice(mainClose)}`;
 }
 
 /**
@@ -433,6 +607,24 @@ function ensureMetaDescriptionTag(html: string, pathname: string): string {
   );
 }
 
+/**
+ * Inject rel=canonical only when Helmet/link tags omitted it (SSR edge cases).
+ */
+function ensureCanonicalTag(html: string, pathname: string): string {
+  if (/<link\b[^>]*\brel\s*=\s*["']canonical["']/i.test(html)) return html;
+  const clean = String(pathname || '/').split('?')[0].split('#')[0] || '/';
+  const trimmed = clean === '/' ? '/' : clean.replace(/\/+$/, '');
+  const absolute =
+    trimmed === '/' ? 'https://www.bionixus.com/' : `https://www.bionixus.com${trimmed}`;
+  const escaped = escapeHtmlAttribute(absolute);
+  const linkTag = `<link rel="canonical" href="${escaped}" />`;
+  const headClose = /<\/head>/i;
+  if (headClose.test(html)) {
+    return html.replace(headClose, `  ${linkTag}\n</head>`);
+  }
+  return html.replace(/<meta name="viewport"[^>]*>/i, `$&\n${linkTag}`);
+}
+
 function getTemplate(): string {
   if (templateCache) return templateCache;
   const primary = path.join(process.cwd(), 'dist', 'client', '_ssr-template.html');
@@ -464,18 +656,24 @@ function injectHtml(
     helmetData?.script?.toString() || '',
   ].join('\n');
 
+  const perfHints = [getClientAssetHints(), buildLcpPreloadTag(initialData)].filter(Boolean).join('\n');
+  const combinedHead = perfHints ? `${perfHints}\n${headTags}` : headTags;
+
   const page = template
-    .replace('<!--ssr-head-->', headTags)
+    .replace('<!--ssr-head-->', combinedHead)
     .replace('<!--ssr-outlet-->', appHtml)
     .replace(
       '<!--ssr-data-->',
       `<script>window.__INITIAL_DATA__ = ${JSON.stringify(initialData).replace(/</g, '\\u003c')}</script>`,
     );
-  return ensureImageTitleAttributes(
-    ensureMainContentImage(
-      ensureMetaDescriptionTag(ensureTitleTag(applyHtmlLang(page, pathname), pathname), pathname),
-      pathname,
+  return ensureCanonicalTag(
+    ensureImageTitleAttributes(
+      ensureMainContentImage(
+        ensureMetaDescriptionTag(ensureTitleTag(applyHtmlLang(page, pathname), pathname), pathname),
+        pathname,
+      ),
     ),
+    pathname,
   );
 }
 
@@ -545,24 +743,7 @@ async function handleSsrRequest(
   const page = injectHtml(template, pathname, appHtml, helmetData, initialData);
 
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
-  // Tiered CDN caching: stable content pages cache longer, root/dynamic pages stay fresh.
-  // SWR keeps the cache warm even after stale, so users always get an instant response.
-  const isStableContent =
-    !notFound &&
-    (pathname.startsWith('/blog/') ||
-      pathname.startsWith('/ar/blog/') ||
-      pathname.startsWith('/case-studies/') ||
-      pathname.startsWith('/healthcare-market-research/') ||
-      pathname.startsWith('/pharmaceutical-companies-') ||
-      pathname.startsWith('/global-websites/') ||
-      pathname.startsWith('/insights/') ||
-      pathname.startsWith('/conf/'));
-  const cacheControl = notFound
-    ? 'public, max-age=0, s-maxage=60, stale-while-revalidate=300'
-    : isStableContent
-    ? 'public, max-age=0, s-maxage=600, stale-while-revalidate=86400'
-    : 'public, max-age=0, s-maxage=120, stale-while-revalidate=600';
-  res.setHeader('Cache-Control', cacheControl);
+  res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=60, stale-while-revalidate=300');
   res.status(notFound ? 404 : 200).send(page);
 }
 

@@ -1,6 +1,7 @@
 import { localeString, localeText, localeBlock } from './locale'
 import { author } from './author'
 import { blogPost } from './blogPost'
+import { pressRelease } from './pressRelease'
 import { category } from './category'
 import { pressRelease } from './pressRelease'
 import subscriber from './subscriber'

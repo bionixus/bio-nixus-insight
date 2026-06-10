@@ -10,7 +10,23 @@ import {
   type RelatedPostsData,
 } from '@/lib/sanity-blog';
 import type { BlogPost } from '@/types/blog';
+import type { PressRelease, PressReleaseListItem } from '@/types/pressRelease';
+import {
+  fetchSanityPressReleaseBySlugWithClient,
+  fetchSanityPressReleasesWithClient,
+} from '@/lib/sanity-press';
+import { getPressHeroPreloadUrl } from '@/lib/image-utils';
 import type { Language } from '@/lib/i18n';
+import { resolveSanityBlogSlug } from '../../blog-legacy-redirects.mjs';
+import { getHardcodedPostBySlug } from '@/data/blog-posts-index';
+import { isHardcodedSeoBlogSlug } from '@/lib/blog-robots';
+import { getBlogHeroPreloadUrl } from '@/lib/image-utils';
+
+function resolveBlogPostForRoute(slug: string, sanityPost: BlogPost | null): BlogPost | null {
+  const hardcoded = getHardcodedPostBySlug(slug);
+  if (hardcoded && isHardcodedSeoBlogSlug(slug)) return hardcoded;
+  return sanityPost ?? hardcoded ?? null;
+}
 
 const THERAPY_AREAS = [
   'aesthetic-medicine',
@@ -74,6 +90,15 @@ const COUNTRY_QUERY = `*[_type == "countryResearchPage" && slug.current == $slug
   relatedCountries,
   relatedTherapies
 }`;
+
+/** Decode a single path segment; never throw — malformed `%` escapes break SSR with 500. */
+function decodePathSegment(encoded: string): string {
+  try {
+    return decodeURIComponent(encoded.replace(/\+/g, ' '));
+  } catch {
+    return encoded;
+  }
+}
 
 export async function fetchRouteData(url: string): Promise<Record<string, unknown>> {
   const path = url.split('?')[0];
@@ -149,7 +174,7 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
 
   const caseStudyDetailMatch = normalizedPath.match(/^\/case-studies\/([^/]+)\/?$/);
   if (caseStudyDetailMatch) {
-    const slug = decodeURIComponent(caseStudyDetailMatch[1]);
+    const slug = decodePathSegment(caseStudyDetailMatch[1]);
     let caseStudy: CaseStudy | null = null;
     try {
       caseStudy = await fetchCaseStudyBySlug(slug);
@@ -191,14 +216,15 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
 
   const blogPostMatchAr = path.match(/^\/ar\/blog\/([^/]+)\/?$/);
   if (blogPostMatchAr) {
-    const slug = decodeURIComponent(blogPostMatchAr[1]);
+    const slug = decodePathSegment(blogPostMatchAr[1]);
+    const sanitySlug = resolveSanityBlogSlug(slug);
     let blogPost: BlogPost | null = null;
     let relatedPosts: RelatedPostsData = { related: [], prev: null, next: null };
     try {
-      blogPost = await fetchSanityPostBySlugWithClient(slug, sanityServer);
+      blogPost = await fetchSanityPostBySlugWithClient(sanitySlug, sanityServer);
       if (blogPost) {
         relatedPosts = await fetchRelatedPostsWithClient(
-          slug,
+          sanitySlug,
           blogPost.category,
           blogPost.publishedAtIso || blogPost.date,
           blogPost.country,
@@ -209,24 +235,27 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
     } catch {
       blogPost = null;
     }
+    blogPost = resolveBlogPostForRoute(slug, blogPost);
     return {
       pageType: 'blog-post',
       blogSlug: slug,
       blogPost,
       relatedPosts,
+      lcpPreloadImageUrl: getBlogHeroPreloadUrl(blogPost?.coverImage),
     };
   }
 
   const blogPostMatch = path.match(/^\/blog\/([^/]+)\/?$/);
   if (blogPostMatch) {
     const slug = decodeURIComponent(blogPostMatch[1]);
+    const sanitySlug = resolveSanityBlogSlug(slug);
     let blogPost: BlogPost | null = null;
     let relatedPosts: RelatedPostsData = { related: [], prev: null, next: null };
     try {
-      blogPost = await fetchSanityPostBySlugWithClient(slug, sanityServer);
+      blogPost = await fetchSanityPostBySlugWithClient(sanitySlug, sanityServer);
       if (blogPost) {
         relatedPosts = await fetchRelatedPostsWithClient(
-          slug,
+          sanitySlug,
           blogPost.category,
           blogPost.publishedAtIso || blogPost.date,
           blogPost.country,
@@ -237,12 +266,51 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
     } catch {
       blogPost = null;
     }
+    blogPost = resolveBlogPostForRoute(slug, blogPost);
     return {
       pageType: 'blog-post',
       blogSlug: slug,
       blogPost,
       relatedPosts,
+      lcpPreloadImageUrl: getBlogHeroPreloadUrl(blogPost?.coverImage),
     };
+  }
+
+  if (path === '/news' || path === '/news/') {
+    let pressReleases: PressReleaseListItem[] = [];
+    try {
+      pressReleases = await fetchSanityPressReleasesWithClient(sanityServer);
+    } catch {
+      pressReleases = [];
+    }
+    return {
+      pageType: 'press-index',
+      pressReleases,
+    };
+  }
+
+  const pressPostMatch = path.match(/^\/news\/([^/]+)\/?$/);
+  if (pressPostMatch) {
+    const slug = decodePathSegment(pressPostMatch[1]);
+    if (slug === 'feed.xml') {
+      return { pageType: 'generic' };
+    }
+    let pressRelease: PressRelease | null = null;
+    try {
+      pressRelease = await fetchSanityPressReleaseBySlugWithClient(slug, sanityServer);
+    } catch {
+      pressRelease = null;
+    }
+    return {
+      pageType: 'press-post',
+      pressSlug: slug,
+      pressRelease,
+      lcpPreloadImageUrl: getPressHeroPreloadUrl(pressRelease?.heroImage),
+    };
+  }
+
+  if (path === '/media' || path === '/media/') {
+    return { pageType: 'media-kit' };
   }
 
   const homeLang = marketingHomeLanguage(normalizedPath);

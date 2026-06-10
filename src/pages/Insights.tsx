@@ -123,6 +123,42 @@ export default function Insights() {
                 Top Market Research Companies in Egypt (2026)
               </Link>
               <Link
+                to="/insights/top-market-research-companies-saudi-arabia-2026"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Top Market Research Companies in Saudi Arabia (2026)
+              </Link>
+              <Link
+                to="/insights/top-market-research-companies-uae-2026"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Top Market Research Companies in the UAE (2026)
+              </Link>
+              <Link
+                to="/insights/top-market-research-companies-dubai-2026"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Top Market Research Companies in Dubai (2026)
+              </Link>
+              <Link
+                to="/insights/top-market-research-companies-abu-dhabi-2026"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Top Market Research Companies in Abu Dhabi (2026)
+              </Link>
+              <Link
+                to="/insights/top-market-research-companies-riyadh-2026"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Top Market Research Companies in Riyadh (2026)
+              </Link>
+              <Link
+                to="/insights/top-healthcare-market-research-companies-riyadh-2026"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Top Healthcare Market Research Companies in Riyadh (2026)
+              </Link>
+              <Link
                 to="/strategic-portfolio"
                 className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
               >
