@@ -265,10 +265,24 @@ const healthcareMarketResearchCountrySlugs = [
   ]),
 ].sort((a, b) => a.localeCompare(b));
 
+// Data-driven country listicle pages (src/data/topCompanies), emitted by
+// scripts/emit-topcompanies-manifest.mjs which runs earlier in the build.
+let topCompaniesManifest = [];
+try {
+  topCompaniesManifest = JSON.parse(
+    readFileSync(join(__dirname, 'data', 'topcompanies-manifest.json'), 'utf8'),
+  );
+} catch {
+  console.warn('Sitemap: topcompanies-manifest.json missing — run scripts/emit-topcompanies-manifest.mjs first.');
+}
+
 function buildStaticRoutes() {
   const routes = [];
   for (const page of staticPages) {
     routes.push(page);
+  }
+  for (const page of topCompaniesManifest) {
+    routes.push({ path: page.path, priority: page.priority, changefreq: page.changefreq });
   }
   // Country detail pages under Global Websites
   for (const slug of globalWebsiteCountrySlugs) {
@@ -334,6 +348,28 @@ const hreflangGroups = [
     'x-default': '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
   },
 ];
+
+// hreflang groups for data-driven listicle pages. Multiple manifest entries can
+// share one group (the EN page and its translations each list the same pair),
+// so dedupe by the group's own canonical signature.
+{
+  const seen = new Set();
+  for (const page of topCompaniesManifest) {
+    const group = {};
+    for (const alt of page.hreflang || []) {
+      try {
+        group[alt.lang] = new URL(alt.href).pathname;
+      } catch {
+        /* skip malformed */
+      }
+    }
+    const signature = JSON.stringify(group);
+    if (Object.keys(group).length > 1 && !seen.has(signature)) {
+      seen.add(signature);
+      hreflangGroups.push(group);
+    }
+  }
+}
 
 function pathFromAbsoluteUrl(url) {
   try {

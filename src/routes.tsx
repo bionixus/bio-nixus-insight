@@ -107,6 +107,8 @@ import HubPage from '@/pages/healthcare-research/HubPage';
 import CountryPage from '@/pages/healthcare-research/CountryPage';
 import TherapyPage from '@/pages/healthcare-research/TherapyPage';
 import ServicePage from '@/pages/healthcare-research/ServicePage';
+import TopCompaniesCountryPage from '@/pages/insights/TopCompaniesCountryPage';
+import { allListicleConfigs } from '@/data/topCompanies';
 
 const RealWorldDataHealthcareMiddleEast = lazy(() => import('@/pages/RealWorldDataHealthcareMiddleEast'));
 const CostEffectivenessAnalysisGcc = lazy(() => import('@/pages/CostEffectivenessAnalysisGcc'));
@@ -304,6 +306,11 @@ export const routes: RouteObject[] = [
   { path: '/admin/calendar', element: suspensePage(<AdminCalendar />) },
   { path: '/admin/calendar/new', element: suspensePage(<AdminCalendarNew />) },
   { path: '/admin/send-newsletter', element: suspensePage(<AdminSendNewsletter />) },
+  // Data-driven country listicle pages (direct imports — SSR-safe)
+  ...allListicleConfigs.map((config) => ({
+    path: config.slug,
+    element: <TopCompaniesCountryPage config={config} />,
+  })),
   { path: '*', element: suspensePage(<NotFound />) },
 ];
 
