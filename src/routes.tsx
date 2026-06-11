@@ -102,6 +102,8 @@ import TopHealthcareMarketResearchCompaniesDubai2026 from '@/pages/TopHealthcare
 import TopHealthcareMarketResearchCompaniesAbuDhabi2026 from '@/pages/TopHealthcareMarketResearchCompaniesAbuDhabi2026';
 import TopHealthcareMarketResearchCompaniesKuwait2026 from '@/pages/TopHealthcareMarketResearchCompaniesKuwait2026';
 import TopHealthcareMarketResearchCompaniesRiyadh2026 from '@/pages/TopHealthcareMarketResearchCompaniesRiyadh2026';
+import TopCompaniesCountryPage from '@/pages/insights/TopCompaniesCountryPage';
+import { allListicleConfigs } from '@/data/topCompanies';
 import CaseStudy from '@/pages/CaseStudy';
 import HubPage from '@/pages/healthcare-research/HubPage';
 import CountryPage from '@/pages/healthcare-research/CountryPage';
@@ -253,6 +255,10 @@ export const routes: RouteObject[] = [
   { path: '/insights/top-healthcare-market-research-companies-abu-dhabi-2026', element: <TopHealthcareMarketResearchCompaniesAbuDhabi2026 /> },
   { path: '/insights/top-healthcare-market-research-companies-kuwait-2026', element: <TopHealthcareMarketResearchCompaniesKuwait2026 /> },
   { path: '/insights/top-healthcare-market-research-companies-riyadh-2026', element: <TopHealthcareMarketResearchCompaniesRiyadh2026 /> },
+  ...allListicleConfigs.map((config) => ({
+    path: config.slug,
+    element: <TopCompaniesCountryPage config={config} />,
+  })),
   { path: '/pharmaceutical-companies-egypt', element: <EgyptPharmaCompanies /> },
   { path: '/pharmaceutical-companies-qatar', element: <QatarPharmaCompanies /> },
   { path: '/pharmaceutical-companies-oman', element: <OmanPharmaCompanies /> },

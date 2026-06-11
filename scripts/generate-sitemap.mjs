@@ -170,6 +170,7 @@ const staticPages = [
   { path: '/insights/top-healthcare-market-research-companies-abu-dhabi-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-kuwait-2026', priority: '0.88', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-riyadh-2026', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-market-research-companies-qatar-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/blog/uae-healthcare-market-overview-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/blog/gcc-pharmacy-market-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/blog/saudi-arabia-healthcare-market-2026', priority: '0.88', changefreq: 'monthly' },
@@ -326,6 +327,11 @@ const hreflangGroups = [
     en: '/insights/top-market-research-companies-egypt-2026',
     ar: '/ar/insights/top-market-research-companies-egypt-2026',
     'x-default': '/insights/top-market-research-companies-egypt-2026',
+  },
+  {
+    en: '/insights/top-market-research-companies-qatar-2026',
+    ar: '/ar/insights/top-market-research-companies-qatar-2026',
+    'x-default': '/insights/top-market-research-companies-qatar-2026',
   },
   {
     en: '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
