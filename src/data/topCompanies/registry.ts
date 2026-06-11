@@ -41,6 +41,8 @@ import { franceHealthcareEn } from './europe/france.healthcare.en';
 import { spainHealthcareEn } from './europe/spain.healthcare.en';
 import { italyHealthcareEn } from './europe/italy.healthcare.en';
 import { netherlandsHealthcareEn } from './europe/netherlands.healthcare.en';
+import { turkeyHealthcareEn } from './europe/turkey.healthcare.en';
+import { polandHealthcareEn } from './europe/poland.healthcare.en';
 
 // LATAM (healthcare)
 import { mexicoHealthcareEn } from './latam/mexico.healthcare.en';
@@ -79,6 +81,8 @@ export const allListicleConfigs: CountryListicleConfig[] = [
   spainHealthcareEn,
   italyHealthcareEn,
   netherlandsHealthcareEn,
+  turkeyHealthcareEn,
+  polandHealthcareEn,
   // LATAM healthcare
   mexicoHealthcareEn,
   colombiaHealthcareEn,

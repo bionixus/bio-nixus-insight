@@ -291,6 +291,8 @@ const staticPages = [
   { path: '/insights/top-healthcare-market-research-companies-spain-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-italy-2026', priority: '0.88', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-netherlands-2026', priority: '0.88', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-turkey-2026', priority: '0.88', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-poland-2026', priority: '0.88', changefreq: 'monthly' },
   { path: '/insights/top-market-research-companies-kenya-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/insights/top-market-research-companies-ethiopia-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/insights/top-market-research-companies-tanzania-2026', priority: '0.85', changefreq: 'monthly' },
