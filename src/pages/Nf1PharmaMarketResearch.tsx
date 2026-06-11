@@ -27,7 +27,7 @@ const faqItems = [
   {
     question: 'What therapies target symptomatic NF1-associated plexiform neurofibromas?',
     answer:
-      'Historical management emphasised multidisciplinary observation, decompressive staged surgery where feasible (often partial), pain and rehabilitation modalities, malignant transformation surveillance, advocacy coordination, and tumour board imaging cadence refinement. Molecularly targeted inhibition of aberrant RAS/MAPK signalling—through MEK inhibition—entered regulatory practice with Koselugo® (selumetinib) co-developed by AstraZeneca and MSD/Merck, enabling meaningful tumour volumetric shrinking for responders with favourable risk management under specialist supervision.',
+      'Historical management emphasised multidisciplinary observation, decompressive staged surgery where feasible (often partial), pain and rehabilitation modalities, malignant transformation surveillance, advocacy coordination, and tumour board imaging cadence refinement. Molecularly targeted inhibition of aberrant RAS/MAPK signalling—through MEK inhibition—entered regulatory practice with Koselugo® (selumetinib) co-developed by AstraZeneca and MSD/Merck, enabling meaningful tumour volumetric shrinking for responders with favourable risk management under specialist supervision. A second oral MEK inhibitor, mirdametinib—marketed as EZMEKLY® in the EU and GOMEKLI® in the US (SpringWorks Therapeutics, a healthcare company of Merck KGaA)—has since broadened the targeted-therapy field for symptomatic inoperable PNs in both adults and children aged ≥2 years.',
   },
   {
     question: 'Which FDA approvals matter for Koselugo (selumetinib)?',
@@ -37,7 +37,7 @@ const faqItems = [
   {
     question: 'What about European authorisation timelines?',
     answer:
-      'EMA centrally authorised Koselugo for PN patients from paediatric minimum ages enumerated in EPAR dossiers; adult symptomatic PN expansion mirrored US momentum with European Commission uptake in Autumn 2025—triggering heterogeneous national reimbursement negotiations while pharmacovigilance obligations remain pooled through PRAC surveillance.',
+      'EMA centrally authorised Koselugo (selumetinib) for paediatric PN patients from minimum ages enumerated in EPAR dossiers. The EU\u2019s adult-and-paediatric milestone, however, arrived via a different molecule: mirdametinib (EZMEKLY) received a European Commission conditional marketing authorisation on 17 July 2025 for symptomatic, inoperable plexiform neurofibromas in patients aged ≥2 years—the first EU therapy approved for both adults and children with NF1-PN. Its approval rests on the single-arm Phase 2b ReNeu study (n=114; confirmed objective response rate 41% in adults, 52% in children) and carries conditional-approval evidence commitments reviewed at least annually, alongside heterogeneous national reimbursement negotiations and pooled PRAC pharmacovigilance surveillance.',
   },
   {
     question: 'How many patients approximate NF1 worldwide?',
@@ -57,7 +57,7 @@ const faqItems = [
   {
     question: 'Does this pillar replace clinician prescribing judgement?',
     answer:
-      'No—pillar content is pharma market intelligence, not individualized medical counsel. Regulatory facts reflect May 2026 review of FDA announcements and EMA EPAR dossier headlines; dossier teams must always rely on prescribing information and multidisciplinary specialists locally.',
+      'No—pillar content is pharma market intelligence, not individualized medical counsel. Regulatory facts reflect a June 2026 review of FDA announcements and EMA EPAR dossier headlines (including the EZMEKLY/mirdametinib EC conditional approval of 17 July 2025); dossier teams must always rely on prescribing information and multidisciplinary specialists locally.',
   },
 ];
 
@@ -74,7 +74,7 @@ const jsonLd = [
       logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
     },
     datePublished: '2026-05-26',
-    dateModified: '2026-05-26',
+    dateModified: '2026-06-11',
     mainEntityOfPage: pageUrl,
   },
   {
@@ -96,7 +96,7 @@ export default function Nf1PharmaMarketResearch() {
 
       <SEOHead
         title="Neurofibromatosis Type 1 (NF1) Pharma Landscape | Koselugo (Selumetinib) | BioNixus"
-        description="Deep pharmaceutical intelligence on NF1 plexiform neurofibromas, MEK inhibition with Koselugo (selumetinib)—Merck(MSD)-AstraZeneca collaboration—with FDA timelines (Apr 2020; paediatrics ≥12 mo Sept 2025; adults Nov 2025)—EU expansions Autumn 2025, tender analogue analogues, BioNixus rare oncology research toolkit."
+        description="Deep pharmaceutical intelligence on NF1 plexiform neurofibromas and oral MEK inhibition—Koselugo (selumetinib) and EZMEKLY/mirdametinib—with FDA timelines (Apr 2020; paediatrics ≥12 mo Sept 2025; adults Nov 2025) and the EU's first adult+paediatric therapy EZMEKLY (mirdametinib), conditionally approved 17 Jul 2025. Tender analogue analogues plus the BioNixus rare oncology research toolkit."
         canonical={pageUrl}
         jsonLd={jsonLd}
       />
@@ -110,7 +110,7 @@ export default function Nf1PharmaMarketResearch() {
 
         <section className="section-padding pb-10">
           <div className="container-wide max-w-4xl mx-auto space-y-4">
-            <p className="text-xs font-semibold uppercase tracking-widest text-primary">Rare disease tumour intelligence • Updated May&nbsp;2026</p>
+            <p className="text-xs font-semibold uppercase tracking-widest text-primary">Rare disease tumour intelligence • Updated June&nbsp;2026</p>
             <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground leading-tight">
               Neurofibromatosis Type&nbsp;1 (NF1) — Pharmaceutical Landscape, Plexiform Tumour Dynamics &amp; Koselugo® Intelligence
             </h1>
@@ -179,9 +179,9 @@ export default function Nf1PharmaMarketResearch() {
                   <tr className="border-b border-border">
                     <td className="p-4 font-medium text-primary">EMA / EC (EU)</td>
                     <td className="p-4">
-                      Central pediatric marketing authorisations from 2021 + adult PN extension decisions clustering Autumn&nbsp;2025 (post CHMP favourable opinions).
+                      Selumetinib (Koselugo) central paediatric marketing authorisation from 2021. Mirdametinib (EZMEKLY) granted EC conditional marketing authorisation on 17&nbsp;July&nbsp;2025 for symptomatic inoperable PNs in adults and children ≥2&nbsp;y—first EU therapy covering both cohorts (Phase&nbsp;2b ReNeu, n=114; confirmed ORR 41% adults / 52% children).
                     </td>
-                    <td className="p-4">Parallel EU tenders &amp; national pricing dossiers—with pharmacovigilance pooling via EU-wide PRAC signalling.</td>
+                    <td className="p-4">Two EU-authorised MEK inhibitors now drive head-to-head positioning, parallel EU tenders &amp; national pricing dossiers—with pharmacovigilance pooling via EU-wide PRAC signalling and conditional-approval evidence commitments.</td>
                   </tr>
                   <tr>
                     <td className="p-4 font-medium text-primary">Collaboration backbone</td>
