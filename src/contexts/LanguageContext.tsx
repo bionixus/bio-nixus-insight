@@ -1,8 +1,11 @@
-import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
+import React, { createContext, useContext, useState, ReactNode, useEffect, useLayoutEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Language, translations, languages } from '@/lib/i18n'; // stats: 10+, 120, 15+
 
 const LANGUAGE_STORAGE_KEY = 'bionixus-language';
+
+/** useLayoutEffect on the client, useEffect on the server (avoids SSR warning). */
+const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
 interface LanguageContextType {
   language: Language;
@@ -56,7 +59,9 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const currentLang = languages.find(l => l.code === language);
   const isRTL = currentLang?.rtl || false;
 
-  useEffect(() => {
+  // Layout effect so the correct language is applied before paint, avoiding a
+  // visible English-to-stored-language flash on SSR pages without a lang prefix.
+  useIsomorphicLayoutEffect(() => {
     const pathLanguage = getLanguageFromPath(pathname);
     if (pathLanguage && pathLanguage !== language) {
       setLanguageState(pathLanguage);

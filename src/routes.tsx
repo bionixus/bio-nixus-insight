@@ -177,17 +177,10 @@ const AdminCalendarNew = lazy(() => import('@/pages/AdminCalendarNew'));
 const AdminSendNewsletter = lazy(() => import('@/pages/AdminSendNewsletter'));
 
 function suspensePage(node: ReactNode) {
-  return (
-    <Suspense
-      fallback={
-        <div className="py-10 text-center text-muted-foreground" role="status" aria-live="polite">
-          Loading page...
-        </div>
-      }
-    >
-      {node}
-    </Suspense>
-  );
+  // Null fallback keeps server-rendered HTML stable during hydration instead of
+  // flashing a loading state. The current route's chunk is preloaded before
+  // hydrateRoot (see src/lib/preloadRouteChunk.ts), so this rarely shows at all.
+  return <Suspense fallback={null}>{node}</Suspense>;
 }
 
 export const routes: RouteObject[] = [

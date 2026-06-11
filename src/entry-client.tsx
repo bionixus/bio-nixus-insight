@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import App from './App';
+import { preloadRouteChunk } from '@/lib/preloadRouteChunk';
 import './index.css';
 
 declare global {
@@ -78,12 +79,18 @@ const app = (
   </HelmetProvider>
 );
 
-if (root) {
+async function bootstrap() {
+  if (!root) return;
   installChunkLoadRecovery();
   const hasSsrMarkup = root.childNodes.length > 0;
   if (hasSsrMarkup) {
+    // Resolve the current route's lazy chunk first so hydration doesn't suspend
+    // and flash a loading state over the server-rendered HTML.
+    await preloadRouteChunk(window.location.pathname);
     hydrateRoot(root, app);
   } else {
     createRoot(root).render(app);
   }
 }
+
+void bootstrap();

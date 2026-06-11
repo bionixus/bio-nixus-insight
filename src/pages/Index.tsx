@@ -126,14 +126,11 @@ const Index = () => {
   ];
 
   useEffect(() => {
-    if (hash) {
-      const id = hash.replace('#', '');
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (!hash) return;
+    const id = hash.replace('#', '');
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }, [hash]);
 
