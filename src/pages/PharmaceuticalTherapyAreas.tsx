@@ -65,6 +65,8 @@ const therapyAreas: TherapyArea[] = [
       'Hypophosphatasia (HPP)',
       'ADA-SCID and metachromatic leukodystrophy (MLD)',
       'Hidradenitis suppurativa',
+      'Neurofibromatosis type 1 (NF1)',
+      'Desmoid tumors (aggressive fibromatosis)',
     ],
   },
   {
@@ -282,7 +284,7 @@ export default function PharmaceuticalTherapyAreas() {
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>
-          Pharmaceutical Therapy Areas Market Research | 12 Areas, 300+ Engagements | BioNixus
+          Pharmaceutical Therapy Areas Market Research | 12 Areas, 127+ Projects | BioNixus
         </title>
         <meta
           name="description"
@@ -297,7 +299,7 @@ export default function PharmaceuticalTherapyAreas() {
         />
         <meta
           property="og:description"
-          content="Therapy-area pharmaceutical market research across 12 areas and 300+ engagements. BioNixus delivers launch, access, and growth evidence for MENA, UK, and Europe."
+          content="Therapy-area pharmaceutical market research across 12 areas and 127+ completed projects since 2012. BioNixus delivers launch, access, and growth evidence for MENA, UK, and Europe."
         />
         {jsonLd.map((schema, index) => (
           <script key={`therapy-areas-schema-${index}`} type="application/ld+json">
@@ -328,7 +330,15 @@ export default function PharmaceuticalTherapyAreas() {
               <Link to="/healthcare-market-research" className="text-primary underline">
                 healthcare market research hub
               </Link>{' '}
-              to explore country coverage and service depth.
+              to explore country coverage and service depth, or open the UAE-focused{' '}
+              <Link to="/market-research-uae" className="text-primary underline">
+                market research UAE pillar
+              </Link>{' '}
+              alongside the GCC-wide{' '}
+              <Link to="/gcc-pharma-market-report-2026" className="text-primary underline">
+                pharma market snapshot 2026
+              </Link>
+              .
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed mb-6">
               Last updated: {lastUpdated}. For regional strategy context, review the{' '}
@@ -363,11 +373,11 @@ export default function PharmaceuticalTherapyAreas() {
               </article>
               <article className="rounded-xl border border-border bg-card p-5">
                 <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">
-                  Engagements delivered
+                  Projects delivered
                 </p>
-                <p className="text-3xl font-semibold text-foreground">300+</p>
+                <p className="text-3xl font-semibold text-foreground">127+</p>
                 <p className="text-sm text-muted-foreground mt-1">
-                  Across MENA, UK, and Europe with global and regional pharma clients.
+                  Completed pharmaceutical market research projects since 2012 for global and regional clients.
                 </p>
               </article>
             </div>
@@ -482,6 +492,30 @@ export default function PharmaceuticalTherapyAreas() {
               Related Research Capabilities and Country Pages
             </h2>
             <div className="grid md:grid-cols-2 gap-3">
+              <Link
+                to="/nf1-pharma-market-research"
+                className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
+              >
+                NF1 pharma market research (Koselugo / MEK inhibition)
+              </Link>
+              <Link
+                to="/desmoid-tumor-pharma-market-research"
+                className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
+              >
+                Desmoid tumor pharma research (approved systemic therapy context)
+              </Link>
+              <Link
+                to="/blog/neurofibromatosis"
+                className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
+              >
+                Insight article: neurofibromatosis and NF1 market intelligence
+              </Link>
+              <Link
+                to="/blog/desmoid-tumors-nirogacestat-pharma-market-access"
+                className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
+              >
+                Insight article: Desmoid tumors, nirogacestat (Ogsiveo), and access signals
+              </Link>
               <Link
                 to="/healthcare-market-research"
                 className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"

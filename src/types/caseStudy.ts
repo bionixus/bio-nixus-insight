@@ -17,6 +17,9 @@ export interface CaseStudy {
   excerpt: string;
   body?: string;
   date: string;
+  /** Raw ISO from CMS for Open Graph / JSON-LD (preferred over display `date`). */
+  publishedAtIso?: string;
+  updatedAtIso?: string;
   year?: string;
   category: string;
   country: string;

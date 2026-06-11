@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
 
-const csvPath = '/Users/selim/Downloads/Internal link report forwww.bionixus.com (1).csv';
+const csvPath = path.join(root, 'scripts', 'data', 'internal-link-report.csv');
 const routesPath = path.join(root, 'src', 'routes.tsx');
 const serverPath = path.join(root, 'server.js');
 const apiPath = path.join(root, 'api', 'indexnow-key.ts');

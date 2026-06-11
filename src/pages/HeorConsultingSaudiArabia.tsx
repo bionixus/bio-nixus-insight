@@ -8,12 +8,14 @@ export default function HeorConsultingSaudiArabia() {
       canonicalUrl="https://www.bionixus.com/heor-consulting-saudi-arabia"
       breadcrumbLabel="HEOR Consulting Saudi Arabia"
       h1="HEOR Consulting Saudi Arabia"
-      intro="BioNixus supports HEOR consulting in Saudi Arabia with practical budget-impact modeling, localized value narratives, and evidence packages aligned to payer and procurement realities."
+      intro="HEOR only earns reimbursement in Saudi Arabia when the assumptions survive committee scrutiny. Imported global models lose credibility fast when local epidemiology, treatment patterns, and pricing don't match. BioNixus builds budget-impact models and value narratives calibrated to the Kingdom, then translates them into evidence packages that access, medical, and finance teams can all defend."
       links={[
         { to: '/healthcare-market-research-agency-gcc', label: 'Healthcare market research agency GCC', primary: true },
-        { to: '/budget-impact-model-saudi-arabia', label: 'Budget impact model Saudi Arabia', primary: true },
-        { to: '/healthcare-market-research/saudi-arabia', label: 'Pharma market research company in Saudi Arabia' },
+        { to: '/biosimilar-market-entry-saudi-arabia', label: 'Biosimilar market entry Saudi Arabia', primary: true },
+        { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Healthcare market research company in Saudi Arabia' },
         { to: '/contact', label: 'Request HEOR scope' },
+        { to: '/market-research-healthcare', label: 'Healthcare market research services' },
+        { to: '/methodology', label: 'Our research methodology' },
       ]}
       bullets={[
         'Budget impact model design with KSA market assumptions.',
@@ -22,16 +24,16 @@ export default function HeorConsultingSaudiArabia() {
       ]}
       decisionPoints={[
         {
-          title: 'Why it matters',
-          body: 'HEOR quality directly affects reimbursement confidence and budget approval speed.',
+          title: 'Local assumptions win committees',
+          body: 'A model built on Saudi epidemiology, mix, and pricing is far harder to dismiss than a global average dropped into a local template. Credibility in review is where reimbursement speed is won or lost.',
         },
         {
-          title: 'What the evidence says',
-          body: 'Locally calibrated assumptions outperform imported models in committee-level review.',
+          title: 'One indication, built to defend',
+          body: 'Start narrow with a high-impact indication and an auditable value-and-budget path. A defensible single case builds more momentum than a broad model nobody fully trusts.',
         },
         {
-          title: 'What to do next',
-          body: 'Start with one high-impact indication and build an auditable value and budget evidence path.',
+          title: 'Translate for the room',
+          body: 'The same evidence has to speak to market access, medical affairs, and finance at once. Outputs are framed for cross-functional decisions, not just for a health-economist audience.',
         },
       ]}
       metrics={[

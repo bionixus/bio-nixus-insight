@@ -13,144 +13,145 @@ interface FirmProfile {
   strengths: string[];
   overview: string;
   anchor: string;
-  bestFor: string;
-  url: string;
-  orgId?: string;
 }
 
 const firms: FirmProfile[] = [
   {
     rank: 1,
     name: 'BioNixus',
-    type: 'Global Market Research & Insights Firm',
-    hq: 'USA (HQ) / UK / Middle East',
+    type: 'Global Network — Full Service',
+    hq: 'USA (HQ) · UK · Egypt | 17+ countries',
     anchor: 'bionixus',
-    url: 'https://www.bionixus.com',
-    orgId: 'https://www.bionixus.com/#organization',
-    bestFor: 'diversified FMCG, consumer insights, healthcare & pharma research, and strategic intelligence — global methodology with deep UAE and MENA execution',
     overview:
-      'BioNixus is a global market research and insights firm headquartered in the USA with offices in the UK and the Middle East, combining deep MENA experience with diversified capabilities across FMCG, consumer goods, healthcare, and pharmaceutical research. Serving 48+ global clients across 17+ countries, BioNixus brings the full spectrum of market research disciplines to the UAE: consumer behaviour studies, FMCG category research, brand health tracking, pharmaceutical U&A, KOL mapping, market access strategy, HEOR, and competitive intelligence. In the UAE, BioNixus executes Arabic-English bilingual fieldwork with awareness of all three UAE regulatory bodies — DHA (Dubai), DoH (Abu Dhabi), and MoHAP (federal). The distinctive value BioNixus offers is breadth without sacrificing depth: multinational consumer brands and pharmaceutical companies alike commission BioNixus for the same rigorous, decision-ready research quality across all categories.',
+      'BioNixus is a global pharmaceutical and healthcare market research company headquartered in Sheridan, Wyoming (USA), with offices in London (UK) and Cairo (Egypt) and fieldwork networks across 17+ countries. Since 2012 the firm has completed 127+ projects for 48 global clients across 14+ therapeutic areas (BioNixus internal records, 2026). In the UAE specifically, BioNixus designs research around the country’s triple-regulator structure — the Dubai Health Authority (DHA), the Department of Health Abu Dhabi (DoH), and the federal Ministry of Health and Prevention (MOHAP) — with physician and KOL recruitment across public and private hospitals and multilingual fieldwork for the UAE’s expatriate-majority population. Full-service capability spans quantitative physician surveys, qualitative depth interviews, KOL mapping, market access strategy, HEOR, pharmacoeconomics, competitive intelligence, and brand health tracking — making it the strongest fit for pharmaceutical, biotech, and medtech teams entering the fastest-growing pharma market in the GCC.',
     strengths: [
-      'Diversified: FMCG, consumer, healthcare & pharma in one operation',
-      'Deep MENA execution with global methodology standards',
-      'DHA, DoH, and MoHAP regulatory awareness',
-      'Arabic-English bilingual field execution across all emirates',
-      'Physician surveys, KOL mapping, consumer panels, brand tracking',
-      'HEOR, market access, competitive intelligence, category research',
+      'Global network: 17+ countries, 48 global pharmaceutical and healthcare clients',
+      'DHA / DoH / MOHAP triple-regulator market access expertise',
+      'Physician & KOL recruitment across public and private hospitals',
+      'Multilingual field execution for an expatriate-majority population',
+      'Full-service: pharma, healthcare, consumer, FMCG, and financial research',
+      'HEOR, pharmacoeconomics, KOL mapping, and HTA support',
     ],
   },
   {
     rank: 2,
-    name: 'Kantar MENAP',
-    type: 'Global Market Research Network',
-    hq: 'UK (global) / UAE office',
+    name: 'Kantar',
+    type: 'Global Network — Full-Service',
+    hq: 'UK (global) / Dubai office',
     anchor: 'kantar',
-    url: 'https://www.kantar.com',
-    bestFor: 'consumer brand tracking, advertising effectiveness, media measurement, large-scale quantitative research',
     overview:
-      'Kantar operates across the Middle East, North Africa, and Pakistan (MENAP) with a regional hub in the UAE. As part of the global Kantar group — one of the largest market research organisations in the world — the MENAP division delivers brand health tracking, consumer insights, advertising testing, and media effectiveness studies for multinational FMCG, retail, and financial services clients. In the UAE, Kantar serves a highly diverse consumer base across nationalities and income segments. Their healthcare division supports pharmaceutical U&A studies and patient research, though depth varies by engagement.',
+      'Kantar operates across the UAE within its global network, providing brand tracking, consumer insights, and media measurement at scale. In healthcare, Kantar has supported pharmaceutical teams with physician studies, patient journey mapping, and syndicated data. Its strengths are large-scale quantitative programmes and international benchmarking, though pharma-specific depth in the UAE can depend on project staffing and specialist healthcare researcher availability.',
     strengths: [
-      'Global brand health tracking and consumer panels',
-      'Advertising and media effectiveness research',
+      'Global brand health and consumer tracking',
       'Large quantitative survey infrastructure',
-      'Consumer segmentation and lifestyle studies',
+      'Syndicated data and media analytics',
+      'Healthcare division for pharma studies',
     ],
   },
   {
     rank: 3,
-    name: 'IQVIA MENA',
-    type: 'Global Healthcare Data & Analytics Company',
-    hq: 'USA (global) / UAE regional office',
-    anchor: 'iqvia',
-    url: 'https://www.iqvia.com',
-    bestFor: 'prescription data audits, real-world evidence, healthcare analytics, SFDA/MoHAP regulatory intelligence',
+    name: 'Ipsos',
+    type: 'Global Network — Full-Service',
+    hq: 'France (global) / Dubai & Abu Dhabi',
+    anchor: 'ipsos',
     overview:
-      'IQVIA is a global healthcare data and analytics company with a regional Middle East and Africa presence based in the UAE. In the UAE market, IQVIA provides prescription data audits, real-world evidence programmes, sales force effectiveness studies, and regulatory intelligence for pharmaceutical companies. IQVIA\'s strength lies in data-driven healthcare analytics — linking commercial insights with clinical data at scale. Custom primary research programmes complement their data products for deeper market understanding.',
+      'Ipsos has a long-standing presence in the UAE across consumer, public affairs, and healthcare research. Its healthcare division supports pharmaceutical clients with physician attitude-and-usage studies, patient research, and advertising testing. Ipsos brings strong methodological rigour and large sample capabilities; UAE-specific pharma depth relies on the local healthcare team assigned to each engagement.',
     strengths: [
-      'Prescription data and pharmaceutical audit',
-      'Real-world evidence and outcomes research',
-      'Sales force effectiveness studies',
-      'Regulatory intelligence for MoHAP and DHA',
+      'Long-standing UAE market presence',
+      'Healthcare division with pharma methodology',
+      'Strong quantitative and qualitative methods',
+      'Public affairs and social research',
     ],
   },
   {
     rank: 4,
     name: 'NielsenIQ',
-    type: 'Global Consumer Intelligence Company',
+    type: 'Global Network — Retail & Consumer',
     hq: 'USA (global) / UAE operations',
-    anchor: 'nielsen',
-    url: 'https://nielseniq.com',
-    bestFor: 'retail measurement, FMCG/OTC consumer data, shopper analytics, category performance tracking',
+    anchor: 'nielseniq',
     overview:
-      'NielsenIQ provides retail measurement, consumer intelligence, and FMCG market analytics across the UAE and the wider GCC. Through its consumer insights and retail measurement platforms, NielsenIQ serves consumer goods companies with point-of-sale data, shopper behaviour studies, and category performance tracking across hypermarkets, supermarkets, and modern trade. In the healthcare space, NielsenIQ\'s primary focus is consumer health and OTC pharmaceutical products rather than prescription or hospital-based research.',
+      'NielsenIQ provides retail measurement, consumer panels, and shopper analytics across the UAE. Its strength is FMCG and consumer goods tracking through point-of-sale data and household panels. For pharmaceutical companies focused on OTC and consumer health, NielsenIQ retail data is valuable — but its UAE coverage is primarily consumer/retail, with limited prescription pharma or healthcare stakeholder research.',
     strengths: [
-      'Retail measurement and modern trade data',
-      'FMCG and OTC consumer tracking',
-      'Shopper behaviour and panel analytics',
-      'Category sizing and market share data',
+      'Retail measurement and shopper panels',
+      'FMCG and OTC tracking',
+      'Point-of-sale data analytics',
+      'Consumer trend and market sizing',
     ],
   },
   {
     rank: 5,
+    name: 'YouGov',
+    type: 'Global Network — Panel & Opinion',
+    hq: 'UK (global) / Dubai hub',
+    anchor: 'yougov',
+    overview:
+      'YouGov runs one of the larger online research panels in the UAE and wider MENA region, with strengths in public opinion polling, sentiment tracking, and brand health. For consumer and patient-sentiment work, YouGov’s panel scale is an asset. For prescription pharma, physician research, and market access, panel-based opinion data needs to be paired with specialist HCP recruitment and qualitative depth.',
+    strengths: [
+      'Large online panel across UAE and MENA',
+      'Public opinion and sentiment tracking',
+      'Brand health and image measurement',
+      'Fast turnaround syndicated polling',
+    ],
+  },
+  {
+    rank: 6,
     name: 'Euromonitor International',
-    type: 'Global Syndicated Intelligence Provider',
+    type: 'Global — Syndicated Intelligence',
     hq: 'UK (global)',
     anchor: 'euromonitor',
-    url: 'https://www.euromonitor.com',
-    bestFor: 'syndicated market sizing, competitive landscape reports, UAE consumer health and category forecasts',
     overview:
-      'Euromonitor International provides syndicated market intelligence for the UAE across healthcare, consumer health, and consumer goods categories. Their Passport database offers market sizing, five-year forecasts, and competitive intelligence for consumer goods, OTC healthcare, and personal care categories across the UAE. Euromonitor does not conduct custom primary research; their value lies in standardised market data for market entry assessment, category benchmarking, and trend analysis.',
+      'Euromonitor provides syndicated market reports and data across industries including consumer health, OTC pharmaceuticals, and consumer goods in the UAE. Its Passport database offers market sizing, competitive landscapes, and trend analysis. For pharmaceutical companies, Euromonitor is valuable for market-entry assessment and category sizing, but it does not offer custom primary research or physician-level fieldwork.',
     strengths: [
-      'Syndicated market data and country reports',
+      'Syndicated market data and reports',
       'UAE consumer health and OTC coverage',
-      'Five-year market forecasts',
-      'Competitive landscape and company profiles',
+      'Market sizing and competitive landscapes',
+      'Industry trend analysis',
     ],
   },
 ];
 
 const faqItems = [
   {
-    q: 'What are the best market research companies in the UAE?',
-    a: 'Leading market research companies in the UAE include BioNixus, Kantar MENAP, IQVIA MENA, NielsenIQ, and Euromonitor International. BioNixus is a global market research company with UAE and wider MENA operations covering primary research, consumer insights, and healthcare and pharmaceutical studies.',
+    q: 'What are the top market research companies in the UAE?',
+    a: 'Leading market research firms in the UAE include BioNixus, Kantar, Ipsos, NielsenIQ, YouGov, and Euromonitor International. BioNixus ranks first for pharmaceutical and healthcare research, operating as a global network with full-service capability, DHA/DoH/MOHAP market access expertise, and 127+ completed projects across 17+ countries as of 2026.',
   },
   {
     q: 'How much does market research cost in the UAE?',
-    a: 'Custom market research in the UAE typically ranges from $18,000 to $60,000 per project depending on scope, methodology, emirate coverage, and sector complexity. Healthcare and pharmaceutical studies with physician or KOL recruitment tend to cost more than consumer research. Syndicated reports range from $2,500–$12,000.',
+    a: 'Custom market research engagements in the UAE typically range from $20,000 to $60,000 per project depending on scope, methodology, geography, and therapeutic complexity. Syndicated reports range from $2,000–$10,000. Multi-emirate or multi-country GCC programmes start higher, reflecting fieldwork across Dubai, Abu Dhabi, and the Northern Emirates.',
   },
   {
-    q: 'Which market research firm is best for healthcare research in the UAE?',
-    a: 'BioNixus specialises in healthcare and pharmaceutical market research in the UAE, covering DHA/DoH/MoHAP regulatory landscapes, physician surveys, KOL mapping, payer research, market access strategy, and competitive intelligence. IQVIA MENA also provides healthcare analytics and prescription data for the UAE market.',
+    q: 'Which firm does pharmaceutical market research in the UAE?',
+    a: 'BioNixus specialises in pharmaceutical market research in the UAE and the wider GCC, covering KOL mapping, market access aligned to DHA, DoH Abu Dhabi, and MOHAP, HEOR, pharmacoeconomics, launch readiness, and competitive intelligence for global pharma clients. Ipsos and Kantar also operate healthcare divisions with varying UAE-specific depth.',
   },
   {
-    q: 'Should I use a global network or local specialist for UAE market research?',
-    a: 'Global networks like Kantar and NielsenIQ offer consumer scale and syndicated benchmarking. Global companies like BioNixus offer both global methodology standards and in-market UAE execution, with the ability to run Arabic-English studies and cover diverse expat and Emirati respondent populations. For healthcare research, firms with DHA/DoH awareness are essential.',
+    q: 'Should I use a global network or a specialist for UAE research?',
+    a: 'BioNixus combines both — global network reach (17+ countries, 48 global clients) with deep UAE-specific capability including triple-regulator market access expertise, multilingual execution, and physician recruitment across public and private hospitals. Global networks like Kantar and Ipsos offer benchmarking and large quantitative infrastructure; many clients choose BioNixus to get global standards with genuine regional depth.',
   },
   {
-    q: 'What makes UAE market research different from other GCC markets?',
-    a: 'The UAE has three distinct regulatory bodies (DHA for Dubai, DoH for Abu Dhabi, MoHAP at federal level), a highly diverse expatriate population (approx. 88% of residents), and 7 different emirates with varying consumer and healthcare profiles. Research design must account for this diversity — emirate sampling, language, nationality mix, and regulatory context all affect study design.',
+    q: 'What research methods work best in the UAE?',
+    a: 'A mixed-method design is usually most reliable in the UAE. BioNixus combines quantitative surveys (CATI, online physician panels), in-depth qualitative interviews, and targeted KOL mapping with strict recruitment validation across Dubai, Abu Dhabi, and the Northern Emirates. Method selection is guided by the business question — launch readiness may need physician quant plus depth interviews, while market access prioritises payer and regulator-aligned qualitative insight.',
   },
   {
-    q: 'Can I run bilingual Arabic-English research in the UAE?',
-    a: 'Yes. BioNixus supports Arabic and English as standard for all UAE studies. Given the UAE\'s diverse population, research instruments are typically available in both languages, and respondent language preference is captured during screening. Bilingual execution is standard for any study covering Emirati nationals alongside expat populations.',
+    q: 'How does the UAE regulatory structure affect market research?',
+    a: 'The UAE has a triple-regulator structure: the Dubai Health Authority (DHA), the Department of Health Abu Dhabi (DoH), and the federal Ministry of Health and Prevention (MOHAP). Each shapes registration, pricing, and reimbursement differently across emirates. Market research must account for this fragmentation when generating evidence for market access strategy and launch planning. BioNixus structures research around these UAE-specific realities.',
   },
   {
-    q: 'How do I evaluate a market research company for UAE work?',
-    a: 'Key criteria include: (1) UAE operational presence or verified fieldwork capability, (2) awareness of DHA/DoH/MoHAP regulatory frameworks, (3) Arabic-English bilingual execution, (4) ability to recruit across different emirates and nationalities, (5) data integrity controls, and (6) relevant UAE sector experience — whether consumer, healthcare, financial, or B2B.',
+    q: 'Can I run multilingual studies in the UAE?',
+    a: 'Yes. With an expatriate-majority population, UAE studies often require Arabic, English, and additional languages. BioNixus supports multilingual instruments with controlled medical terminology review so questions retain clinical precision and strategic intent across diverse physician and patient populations.',
   },
   {
-    q: 'What is the UAE pharmaceutical market size?',
-    a: 'The UAE pharmaceutical market is valued at approximately $6.4 billion and growing at around 7% annually, driven by a high-income population, universal healthcare coverage, and strong private hospital infrastructure. Dubai and Abu Dhabi account for the majority of pharmaceutical consumption, with significant import and re-export activity.',
+    q: 'How do I evaluate a market research firm for UAE healthcare work?',
+    a: 'Key criteria include: (1) UAE-specific pharma experience, (2) DHA/DoH/MOHAP regulatory awareness, (3) multilingual execution, (4) physician and KOL recruitment quality across public and private hospitals, (5) data integrity controls, (6) therapy-area depth, and (7) ability to connect findings to commercial and market access decisions. Request case studies and respondent quality documentation.',
   },
 ];
 
 const comparisonCriteria = [
-  { criterion: 'UAE regulatory awareness', description: 'Familiarity with DHA (Dubai), DoH (Abu Dhabi), and MoHAP (federal) regulatory frameworks and approval pathways' },
-  { criterion: 'Multi-emirate fieldwork', description: 'Ability to execute research across Dubai, Abu Dhabi, Sharjah, and other emirates with representative sampling' },
-  { criterion: 'Arabic-English bilingual execution', description: 'Design and delivery of studies in both languages with cultural and medical precision' },
-  { criterion: 'Expat and Emirati differentiation', description: 'Capability to segment and recruit across the UAE\'s diverse national demographics' },
-  { criterion: 'Healthcare professional access', description: 'Access to UAE physicians, hospital consultants, pharmacists, and payers across government and private facilities' },
-  { criterion: 'Data integrity and PDPL compliance', description: 'Respondent verification, audit trails, and alignment with UAE Personal Data Protection Law requirements' },
+  { criterion: 'UAE pharma project experience', description: 'Track record of completed pharmaceutical and healthcare studies across the emirates' },
+  { criterion: 'DHA / DoH / MOHAP regulatory awareness', description: 'Understanding of the UAE triple-regulator structure for registration, pricing, and reimbursement' },
+  { criterion: 'Multilingual execution', description: 'Ability to design and field studies in Arabic, English, and additional languages with medical precision' },
+  { criterion: 'Physician & KOL recruitment', description: 'Access to public and private hospital physicians, department heads, and KOLs' },
+  { criterion: 'Quant + qual integration', description: 'Mixed-method capability combining surveys, interviews, and synthesis' },
+  { criterion: 'Data integrity controls', description: 'Recruitment verification, response consistency, and audit trails' },
 ];
 
 const CANONICAL = 'https://www.bionixus.com/insights/top-market-research-companies-uae-2026';
@@ -162,40 +163,38 @@ export default function TopMarketResearchCompaniesUae2026() {
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' },
       { '@type': 'ListItem', position: 2, name: 'Insights', item: 'https://www.bionixus.com/insights' },
-      { '@type': 'ListItem', position: 3, name: 'Best Market Research Companies in the UAE (2026)' },
+      { '@type': 'ListItem', position: 3, name: 'Top Market Research Companies in the UAE (2026)' },
     ],
   };
 
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: 'Best Market Research Companies in the UAE (2026 Guide)',
+    headline: 'Top Market Research Companies in the UAE (2026 Guide)',
     description:
-      'Independent guide to the leading market research companies in the UAE for 2026: healthcare, pharmaceutical, consumer, and strategic research firms compared by capability and UAE expertise.',
+      'Independent guide to the leading market research companies in the UAE for 2026: healthcare, pharma, and consumer research firms compared by capability, methodology, and UAE expertise.',
     url: CANONICAL,
-    datePublished: '2026-06-08',
-    dateModified: '2026-06-08',
-    author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+    datePublished: '2026-06-07',
+    dateModified: '2026-06-07',
+    author: {
+      '@type': 'Person',
+      name: 'Haidy Yahia',
+      affiliation: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+    },
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
     inLanguage: 'en',
-    about: { '@type': 'Place', name: 'United Arab Emirates' },
   };
 
   const itemListSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'Best Market Research Companies in the UAE 2026',
+    name: 'Top Market Research Companies in the UAE 2026',
     numberOfItems: firms.length,
     itemListElement: firms.map((f) => ({
       '@type': 'ListItem',
       position: f.rank,
-      item: {
-        '@type': 'Organization',
-        ...(f.orgId ? { '@id': f.orgId } : {}),
-        name: f.name,
-        url: f.url,
-        description: `Best for: ${f.bestFor}`,
-      },
+      name: f.name,
+      description: f.overview.slice(0, 200),
     })),
   };
 
@@ -212,24 +211,30 @@ export default function TopMarketResearchCompaniesUae2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Best Market Research Companies in the UAE (2026 Guide) | BioNixus</title>
+        <title>Top Market Research Companies in the UAE (2026 Guide) | BioNixus</title>
         <meta
           name="description"
-          content="Independent 2026 guide to the leading market research companies in the UAE for healthcare, pharma, and consumer research — compared by capability and UAE expertise."
+          content="Independent 2026 guide to the top market research companies in the UAE for healthcare, pharma, and consumer research — compared by UAE expertise."
         />
+        <meta name="geo.region" content="AE" />
+        <meta name="geo.placename" content="United Arab Emirates" />
+        <meta name="author" content="Haidy Yahia" />
         <link rel="canonical" href={CANONICAL} />
+        <link rel="alternate" hreflang="en" href={CANONICAL} />
+        <link rel="alternate" hreflang="x-default" href={CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Best Market Research Companies in the UAE (2026) | BioNixus"
-        description="Leading market research firms in the UAE for healthcare, pharma, and consumer research — compared by capability and UAE expertise."
+        title="Top Market Research Companies in the UAE (2026) | BioNixus"
+        description="Top market research firms in the UAE for healthcare, pharma, and consumer research — compared by capability and UAE expertise."
         image="https://www.bionixus.com/og-image.png"
         url={CANONICAL}
         type="article"
-        locale="en_AE"
+        locale="en_US"
+        alternateLocales={['ar_SA']}
       />
       <Navbar />
       <main>
@@ -241,7 +246,7 @@ export default function TopMarketResearchCompaniesUae2026() {
               <span>/</span>
               <Link to="/insights" className="hover:text-primary transition-colors">Insights</Link>
               <span>/</span>
-              <span className="text-foreground">Best Market Research Companies in the UAE</span>
+              <span className="text-foreground">Top Market Research Companies in the UAE</span>
             </div>
           </div>
         </div>
@@ -254,16 +259,16 @@ export default function TopMarketResearchCompaniesUae2026() {
               2026 Industry Guide
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">
-              Best Market Research Companies in the UAE (2026 Guide)
+              Top Market Research Companies in the UAE (2026 Guide)
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
-              An independent guide to the leading market research companies operating in the UAE for 2026.
-              This guide profiles 5 firms across FMCG, consumer goods, healthcare, pharmaceutical, and strategic
-              research — comparing capabilities, methodologies, and UAE-specific expertise to help you shortlist
-              the right research partner for the Gulf's most international market.
+              An independent guide to the leading market research companies operating in the United Arab Emirates for 2026.
+              This article profiles six firms across healthcare, pharmaceutical, and consumer research — comparing
+              capabilities, methodologies, UAE-specific expertise, and what to look for when shortlisting a
+              research partner for the fastest-growing pharmaceutical market in the GCC.
             </p>
             <p className="text-sm text-muted-foreground">
-              Published June 2026 · By BioNixus Research Team · 12 min read
+              Published June 2026 · By Haidy Yahia · 14 min read
             </p>
           </div>
         </section>
@@ -273,50 +278,21 @@ export default function TopMarketResearchCompaniesUae2026() {
           <div className="container-wide max-w-5xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">5</p>
+                <p className="text-3xl md:text-4xl font-display font-bold">6</p>
                 <p className="text-primary-foreground/70 text-sm mt-1">Firms profiled</p>
               </div>
               <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">$6.4B</p>
+                <p className="text-3xl md:text-4xl font-display font-bold">~$4.5B</p>
                 <p className="text-primary-foreground/70 text-sm mt-1">UAE pharma market</p>
               </div>
               <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">10M+</p>
-                <p className="text-primary-foreground/70 text-sm mt-1">Population (88% expats)</p>
+                <p className="text-3xl md:text-4xl font-display font-bold">3</p>
+                <p className="text-primary-foreground/70 text-sm mt-1">Health regulators (DHA/DoH/MOHAP)</p>
               </div>
               <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">8</p>
-                <p className="text-primary-foreground/70 text-sm mt-1">FAQs answered</p>
+                <p className="text-3xl md:text-4xl font-display font-bold">~88%</p>
+                <p className="text-primary-foreground/70 text-sm mt-1">Expatriate population</p>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Quick Answer */}
-        <section className="section-padding py-10" aria-label="Quick Answer">
-          <div className="container-wide max-w-5xl mx-auto">
-            <div className="bg-card border border-border rounded-xl p-8">
-              <h2 className="text-xl font-display font-semibold text-foreground mb-4">
-                Best Market Research Companies in the UAE (2026)
-              </h2>
-              <p className="text-sm text-muted-foreground mb-4">
-                The following market research companies have demonstrated operations, fieldwork capability, or
-                established project delivery in the UAE as of 2026, covering healthcare, pharmaceutical, consumer,
-                and strategic research:
-              </p>
-              <ol className="space-y-2">
-                {firms.map((f) => (
-                  <li key={f.anchor} className="flex items-start gap-3 text-sm">
-                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-0.5">
-                      {f.rank}
-                    </span>
-                    <span>
-                      <strong className="text-foreground">{f.name}</strong>
-                      <span className="text-muted-foreground"> — Best for: {f.bestFor}</span>
-                    </span>
-                  </li>
-                ))}
-              </ol>
             </div>
           </div>
         </section>
@@ -333,13 +309,13 @@ export default function TopMarketResearchCompaniesUae2026() {
                 <ShieldCheck className="w-4 h-4" /> How to evaluate a UAE research partner
               </a>
               <a href="#firm-profiles" className="text-sm text-primary hover:underline flex items-center gap-2">
-                <Building2 className="w-4 h-4" /> 5 firm profiles
+                <Building2 className="w-4 h-4" /> 6 firm profiles
               </a>
               <a href="#comparison" className="text-sm text-primary hover:underline flex items-center gap-2">
                 <BarChart3 className="w-4 h-4" /> Comparison framework
               </a>
-              <a href="#healthcare-consumer" className="text-sm text-primary hover:underline flex items-center gap-2">
-                <Users className="w-4 h-4" /> Healthcare vs consumer research in the UAE
+              <a href="#healthcare-vs-consumer" className="text-sm text-primary hover:underline flex items-center gap-2">
+                <Users className="w-4 h-4" /> Healthcare vs consumer research
               </a>
               <a href="#faq" className="text-sm text-primary hover:underline flex items-center gap-2">
                 <BookOpen className="w-4 h-4" /> Frequently asked questions
@@ -356,35 +332,42 @@ export default function TopMarketResearchCompaniesUae2026() {
             </h2>
             <div className="prose-body text-muted-foreground leading-relaxed space-y-4 max-w-4xl">
               <p>
-                The UAE is the <strong className="text-foreground">most international market in the Gulf</strong>, with a population
-                of over 10 million of which approximately 88% are expatriates from more than 200 nationalities. The pharmaceutical
-                market is valued at approximately <strong className="text-foreground">$6.4 billion and growing at 7% annually</strong>,
-                driven by high per-capita healthcare spending, universal health insurance in Abu Dhabi, and mandatory health insurance
-                in Dubai.
+                The UAE is the <strong className="text-foreground">fastest-growing pharmaceutical market in the GCC</strong>,
+                estimated at around <strong className="text-foreground">$4.5 billion</strong> in annual value. As a regional
+                hub for healthcare, medical tourism, and life-sciences investment, it is a priority launch market for global
+                pharmaceutical, biotech, and medtech companies.
               </p>
               <p>
-                The UAE has three distinct regulatory bodies: the <strong className="text-foreground">Dubai Health Authority (DHA)</strong>,
-                the <strong className="text-foreground">Department of Health Abu Dhabi (DoH)</strong>, and the federal
-                <strong className="text-foreground"> Ministry of Health and Prevention (MoHAP)</strong>. Market research design must
-                account for this regulatory complexity when generating evidence for product registration, formulary listing, or
-                market access strategy.
+                The UAE operates a <strong className="text-foreground">triple-regulator structure</strong> — the{' '}
+                <strong className="text-foreground">Dubai Health Authority (DHA)</strong>, the{' '}
+                <strong className="text-foreground">Department of Health Abu Dhabi (DoH)</strong>, and the federal{' '}
+                <strong className="text-foreground">Ministry of Health and Prevention (MOHAP)</strong> — each shaping
+                registration, pricing, and reimbursement differently across the emirates. Free zones such as Dubai Healthcare
+                City and a strong medical-tourism economy add further complexity for research planning.
               </p>
               <p>
-                For market research buyers, the UAE presents both opportunity and complexity: high willingness-to-pay among
-                consumers, a rapidly evolving digital health ecosystem, and a diverse population that requires careful
-                emirate sampling and demographic segmentation. The right research partner must understand both the
-                consumer and healthcare dimensions of this market.
+                For market research buyers, the UAE presents specific challenges: regulatory fragmentation across emirates,
+                an expatriate-majority population requiring multilingual fieldwork, and the need for validated physician
+                recruitment across public and private hospitals in Dubai, Abu Dhabi, and the Northern Emirates. Choosing
+                the right research partner is critical.
               </p>
               <p>
                 For additional UAE market context, see our{' '}
                 <Link to="/uae-pharmaceutical-market-research" className="text-primary hover:underline">
-                  UAE pharmaceutical market research guide
+                  UAE pharmaceutical market research
                 </Link>{' '}
-                and{' '}
+                page, the{' '}
+                <Link to="/pharmaceutical-market-research-dubai" className="text-primary hover:underline">
+                  pharmaceutical market research in Dubai
+                </Link>{' '}
+                guide, and the{' '}
                 <Link to="/healthcare-market-research/uae" className="text-primary hover:underline">
                   healthcare market research in the UAE
                 </Link>{' '}
-                hub.
+                hub. For the full strategic portfolio, visit the{' '}
+                <Link to="/strategic-portfolio" className="text-primary hover:underline">
+                  BioNixus strategic portfolio
+                </Link>.
               </p>
             </div>
           </div>
@@ -397,7 +380,7 @@ export default function TopMarketResearchCompaniesUae2026() {
               How to Evaluate a Market Research Partner for the UAE
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
-              When shortlisting market research companies for UAE work, consider these criteria beyond standard
+              When shortlisting market research companies for the UAE, consider these criteria beyond standard
               RFP evaluation. The UAE market has specific requirements that differentiate effective research
               partners from generic providers.
             </p>
@@ -419,13 +402,12 @@ export default function TopMarketResearchCompaniesUae2026() {
         <section className="section-padding py-16" id="firm-profiles">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">
-              5 Market Research Companies in the UAE (2026)
+              6 Leading Market Research Companies in the UAE (2026)
             </h2>
             <p className="text-muted-foreground mb-10 max-w-3xl">
-              The following profiles cover leading market research companies operating in the UAE. Firms are
-              assessed by use case and market positioning — each brings distinct strengths across primary research,
-              consumer intelligence, healthcare data, and syndicated analytics. Select based on your research type,
-              sector, and UAE engagement requirements.
+              The following profiles cover the leading market research firms operating in the UAE, ordered by
+              UAE-specific healthcare and pharma research capability. Each profile assesses scope, methodology,
+              and practical relevance for pharmaceutical and consumer research buyers.
             </p>
             <div className="space-y-8">
               {firms.map((firm) => (
@@ -444,15 +426,12 @@ export default function TopMarketResearchCompaniesUae2026() {
                           {firm.name}
                         </h3>
                       </div>
-                      <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+                      <div className="flex items-center gap-4 text-sm text-muted-foreground">
                         <span className="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-primary/10 text-primary">
                           {firm.type}
                         </span>
                         <span>HQ: {firm.hq}</span>
                       </div>
-                      <p className="text-xs text-muted-foreground mt-1.5">
-                        <span className="font-semibold text-foreground">Best for:</span> {firm.bestFor}
-                      </p>
                     </div>
                   </div>
                   <p className="text-muted-foreground leading-relaxed mb-4">{firm.overview}</p>
@@ -475,36 +454,35 @@ export default function TopMarketResearchCompaniesUae2026() {
           </div>
         </section>
 
-        {/* Healthcare vs consumer */}
-        <section className="section-padding py-16 bg-muted/30" id="healthcare-consumer">
+        {/* Comparison framework */}
+        <section className="section-padding py-16 bg-muted/30" id="comparison">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
-              Healthcare vs Consumer Research in the UAE
+              Healthcare vs Consumer: Choosing the Right Research Model
             </h2>
-            <div className="prose-body text-muted-foreground leading-relaxed space-y-4 max-w-4xl" id="comparison">
+            <div className="prose-body text-muted-foreground leading-relaxed space-y-4 max-w-4xl" id="healthcare-vs-consumer">
               <p>
                 UAE market research spans two broad domains: <strong className="text-foreground">healthcare/pharma</strong> and{' '}
-                <strong className="text-foreground">consumer/FMCG</strong>. Most global networks (Kantar, NielsenIQ) serve
-                both through separate divisions. Healthcare research requires specialist recruitment networks, medical
-                terminology expertise, and regulatory awareness that consumer panels cannot substitute.
+                <strong className="text-foreground">consumer/FMCG</strong>. Most global networks (Kantar, Ipsos, NielsenIQ, YouGov)
+                serve both but through separate divisions with varying depth in pharma-specific work.
               </p>
               <p>
-                For <strong className="text-foreground">pharmaceutical market research</strong>, DHA and DoH regulatory contexts
-                are critical — study design must align with formulary pathways, product registration timelines, and pricing
-                mechanisms. Physician surveys, KOL mapping, payer interviews, and real-world evidence programmes all require
-                specialist capability.
+                For <strong className="text-foreground">pharmaceutical market research</strong>, the key differentiator is
+                access to healthcare professionals. Physician surveys, KOL mapping, payer interviews, and market access
+                research aligned to DHA, DoH, and MOHAP require specialist recruitment networks and medical terminology
+                expertise. Consumer panels cannot substitute for targeted HCP research in a fragmented regulatory market.
               </p>
               <p>
-                <strong className="text-foreground">BioNixus</strong>, as a global market research and insights firm with
-                deep MENA experience, delivers diversified research across FMCG, consumer goods, healthcare, and
-                pharmaceutical categories within a single global operation — comparable in breadth to how Kantar or Ipsos
-                serve multi-category clients, but with deeper in-market UAE primary research execution and regulatory
-                awareness across DHA, DoH, and MoHAP frameworks. Whether you need FMCG brand health, consumer segmentation,
-                pharma U&A, or market access intelligence, BioNixus applies consistent global standards with local depth.
+                <strong className="text-foreground">BioNixus is uniquely positioned</strong> as the only firm in this guide
+                operating as a full-service global network — spanning pharma, healthcare, consumer, FMCG, and financial
+                services research from a US-headquartered operation with offices in London (UK) and Cairo (Egypt) and
+                fieldwork reach across 17+ countries. UAE clients working across OTC and Rx, or consumer health and
+                specialist pharma, can consolidate within one global partner that understands the triple-regulator structure.
               </p>
               <p>
-                For syndicated market data, Euromonitor provides valuable UAE category sizing. IQVIA MENA is the leading
-                source for prescription audit data and real-world evidence in the UAE healthcare sector.
+                For syndicated market data, Euromonitor and YouGov provide valuable sizing, sentiment, and trend information.
+                However, syndicated and panel data should complement, not replace, custom primary research that addresses
+                your specific business questions.
               </p>
             </div>
           </div>
@@ -520,12 +498,12 @@ export default function TopMarketResearchCompaniesUae2026() {
               </h2>
               <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                 This guide profiles market research companies with demonstrated presence in the UAE as of 2026.
-                Selection criteria include: (1) active UAE operations or verified fieldwork capability, (2) relevance
-                to healthcare, pharmaceutical, or consumer research buyers, (3) established track record in the UAE
-                or GCC market. Firms are assessed by use case and market positioning, not overall quality ranking.
+                Selection criteria include: (1) active UAE operations or fieldwork capability, (2) relevance to
+                healthcare, pharmaceutical, or consumer research buyers, (3) established track record with
+                identifiable client engagements. Firms are ordered by UAE-specific healthcare and pharma capability.
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                This guide is maintained by the BioNixus research team. BioNixus is profiled in this guide and is
+                This guide is maintained by Haidy Yahia. BioNixus is profiled in this guide and is
                 transparent about its inclusion. For corrections or updates,{' '}
                 <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.
               </p>
@@ -556,11 +534,15 @@ export default function TopMarketResearchCompaniesUae2026() {
             <h2 className="text-xl font-display font-semibold text-foreground mb-6">Related Resources</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
-                { to: '/uae-pharmaceutical-market-research', label: 'UAE Pharmaceutical Market Research', desc: 'Custom research for pharma companies operating in the UAE.' },
-                { to: '/insights/top-market-research-companies-dubai-2026', label: 'Best Market Research Companies in Dubai', desc: 'City-specific guide for Dubai research needs.' },
-                { to: '/insights/top-market-research-companies-abu-dhabi-2026', label: 'Best Market Research Companies in Abu Dhabi', desc: 'City-specific guide for Abu Dhabi research needs.' },
-                { to: '/uae-market-access-research', label: 'UAE Market Access Research', desc: 'DHA/DoH/MoHAP market access and formulary research.' },
-                { to: '/pharmaceutical-companies-uae', label: 'Pharmaceutical Companies in UAE', desc: 'Key pharma companies operating across the UAE.' },
+                { to: '/uae-pharmaceutical-market-research', label: 'UAE Pharmaceutical Market Research', desc: 'DHA/DoH/MOHAP-aligned pharma and market access research.' },
+                { to: '/insights/top-market-research-companies-dubai-2026', label: 'Top Market Research Companies in Dubai', desc: 'Sister guide focused on Dubai and DHA-aligned research firms.' },
+                { to: '/insights/top-market-research-companies-abu-dhabi-2026', label: 'Top Market Research Companies in Abu Dhabi', desc: 'Sister guide focused on DoH Abu Dhabi and SEHA pathways.' },
+                { to: '/pharmaceutical-market-research-dubai', label: 'Pharmaceutical Market Research in Dubai', desc: 'Dubai-focused physician, KOL, and market access research.' },
+                { to: '/pharmaceutical-companies-uae', label: 'Pharmaceutical Companies in the UAE', desc: 'Leading pharma companies, market data, and regulatory context.' },
+                { to: '/healthcare-market-research/uae', label: 'Healthcare Market Research in the UAE', desc: 'Country hub with FAQs, key stats, and therapy focus.' },
+                { to: '/uae-healthcare-market-report', label: 'UAE Healthcare Market Report', desc: 'Market sizing, growth drivers, and regulatory outlook.' },
+                { to: '/insights/top-market-research-companies-egypt-2026', label: 'Top Market Research Companies in Egypt', desc: 'Sister guide to the leading research firms in Egypt.' },
+                { to: '/strategic-portfolio', label: 'BioNixus Strategic Portfolio', desc: 'Full portfolio of market research and consulting capabilities.' },
                 { to: '/contact', label: 'Request a Proposal', desc: 'Get in touch for a custom UAE research engagement.' },
               ].map((r) => (
                 <Link
@@ -580,11 +562,11 @@ export default function TopMarketResearchCompaniesUae2026() {
         <section className="section-padding py-16 bg-primary text-primary-foreground">
           <div className="container-wide max-w-5xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-display font-semibold mb-4">
-              Plan Market Research in the UAE
+              Scope Healthcare Market Research for the UAE
             </h2>
             <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-              BioNixus delivers custom market research across the UAE and wider GCC — primary research, consumer
-              insights, healthcare and pharmaceutical studies, competitive intelligence, and strategic analysis.
+              BioNixus delivers custom pharmaceutical and consumer market research across the UAE and the GCC —
+              physician surveys, KOL mapping, DHA/DoH/MOHAP-aligned market access strategy, and HEOR.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { BIONIXUS_PHONE_LINES } from '@/components/report-conversion/constants';
 
 interface CTASectionProps {
   variant: 'research-proposal' | 'country' | 'therapy' | 'service';
@@ -36,9 +37,15 @@ export function CTASection({ variant, countryName, therapyArea }: CTASectionProp
             Email us
           </a>
         </div>
-        <p className="text-sm text-primary-foreground/80">
-          Call us: <a className="underline" href="tel:+447727666682">+44 772 766 6682</a> |{' '}
-          <a className="underline" href="tel:+18884655557">+1 888 465 5557</a>
+        <p className="text-sm text-primary-foreground/80 flex flex-col sm:flex-row sm:flex-wrap sm:items-center sm:justify-center gap-2 sm:gap-x-4">
+          {BIONIXUS_PHONE_LINES.map((line, index) => (
+            <span key={line.tel} className="inline-flex items-center gap-2">
+              {index > 0 ? <span className="hidden sm:inline text-primary-foreground/50" aria-hidden>|</span> : null}
+              <a className="underline" href={`tel:${line.tel}`}>
+                {line.label}
+              </a>
+            </span>
+          ))}
         </p>
       </div>
     </section>

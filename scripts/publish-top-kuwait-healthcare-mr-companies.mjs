@@ -1,10 +1,11 @@
 /**
- * Creates or syncs the Sanity blogPost "Top Healthcare Market Research Companies in Kuwait 2025"
+ * Creates or syncs the Sanity blogPost "Top Healthcare Market Research Companies in Kuwait"
  * from scripts/data/top-healthcare-market-research-companies-kuwait-body.html + cover in public/.
  *
+ * Cover: node scripts/generate-kuwait-hcmr-cover.mjs
  * Requires repo-root .env: SANITY_PROJECT_ID, SANITY_DATASET, SANITY_TOKEN (write)
  * Run: node scripts/publish-top-kuwait-healthcare-mr-companies.mjs
- * Sync existing (body, SEO text, TOC, FAQ, executive summary): add --sync-existing
+ * Sync existing: node scripts/publish-top-kuwait-healthcare-mr-companies.mjs --sync-existing
  */
 
 import fs from 'node:fs'
@@ -16,17 +17,16 @@ import sharp from 'sharp'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.join(__dirname, '..')
 
-const SLUG = 'top-healthcare-market-research-companies-kuwait-2025'
+const SLUG = 'top-healthcare-market-research-companies-kuwait'
 const COVER_FILENAME = 'top-healthcare-market-research-companies-kuwait-cover.jpg'
 const ARTICLE_H1 =
-  'Top Healthcare Market Research Companies in Kuwait 2025'
+  'Top Healthcare Market Research Companies in Kuwait: How to Shortlist MOPH- and CMS-Aware Agencies'
 const ARTICLE_EXCERPT =
-  'Independent 2025 guide: 5 leading healthcare market research firms in Kuwait compared by pharma depth, MOPH awareness, Arabic fieldwork, and methodology. Includes comparison table, selection criteria, and cost guidance.'
-const SEO_TITLE = 'Top Healthcare Market Research Companies in Kuwait | BioNixus 2025'
+  'A procurement-style guide to Kuwait healthcare market research: CMS tender context, MOPH registration realities, global versus specialist trade-offs, syndicated data complements, compliance expectations, and how GCC-native agencies such as BioNixus fit typical Kuwait programmes.'
 const SEO_META_DESCRIPTION =
-  'Independent review of the top healthcare market research companies in Kuwait for 2025. Compare pharma research depth, Arabic capability, MOPH access, and Kuwait fieldwork for pharmaceutical teams.'
+  'Kuwait healthcare market research buyers guide: MOPH and CMS context, pharma fieldwork, payer insight, compliance, and how to compare specialist versus global firms.'
 const OG_DESCRIPTION =
-  'Independent 2025 guide: 5 healthcare market research firms in Kuwait compared by pharma depth, MOPH regulatory awareness, and fieldwork capability.'
+  'How to shortlist Kuwait healthcare research agencies: evaluation criteria, global versus specialist models, and what to expect from CMS-aware GCC specialists.'
 
 function loadDotEnv() {
   const envPath = path.join(root, '.env')
@@ -72,64 +72,60 @@ function buildSharedContent(bodyHtml) {
           {
             _type: 'span',
             marks: [],
-            text: 'Compare 5 healthcare market research firms active in Kuwait — from global networks (IQVIA) to GCC specialists (BioNixus) and fieldwork providers (NielsenIQ, InfoMine, AWA Research). Evaluate by pharma depth, MOPH and Central Medical Stores regulatory awareness, Arabic-English bilingual execution, and Kuwait fieldwork capability. Includes comparison table and cost guidance ($20K–$70K per study).',
+            text: 'Use a structured scorecard—CMS and MOPH literacy, therapeutic methodology, quant/qual integration, and compliance—to compare Kuwait healthcare research firms. Specialist agencies such as BioNixus are often shortlisted when teams need GCC-native depth, tender-aligned synthesis, and disciplined fieldwork beyond Dubai-only execution.',
           },
         ],
         markDefs: [],
       },
     ]),
     tableOfContents: withKeys([
-      { heading: 'Kuwait Healthcare Research Firms: At-a-Glance Comparison', anchor: 'comparison-table' },
-      { heading: 'Methodology & Selection Criteria', anchor: 'authorship-method' },
-      { heading: 'Why Kuwait concentrates specific healthcare research demands', anchor: 'kuwait-market-context' },
-      { heading: 'What to look for in a Kuwait healthcare research partner', anchor: 'partner-criteria' },
-      { heading: 'BioNixus', anchor: 'bionixus' },
-      { heading: 'IQVIA', anchor: 'iqvia' },
-      { heading: 'NielsenIQ (GCC)', anchor: 'nielseniq' },
-      { heading: 'InfoMine Research & Intelligence', anchor: 'infomine' },
-      { heading: 'AWA Research', anchor: 'awa-research' },
-      { heading: 'Key trends shaping healthcare research in Kuwait', anchor: 'trends-kuwait' },
-      { heading: 'Questions to ask before hiring', anchor: 'questions-before-hiring' },
-      { heading: 'How to maximise ROI', anchor: 'maximize-roi' },
-      { heading: 'Why local expertise matters in Kuwait', anchor: 'local-expertise' },
-      { heading: 'Conclusion', anchor: 'conclusion' },
-      { heading: 'Frequently Asked Questions', anchor: 'faq' },
+      { heading: 'Why Kuwait concentrates healthcare market research demand', anchor: 'kuwait-market-context' },
+      { heading: 'A practical framework for shortlisting Kuwait healthcare research partners', anchor: 'shortlisting-framework' },
+      { heading: 'BioNixus: Kuwait- and GCC-focused healthcare specialist', anchor: 'bionixus' },
+      { heading: 'Global insights networks with Kuwait or GCC footprints', anchor: 'global-networks' },
+      { heading: 'Fieldwork-led agencies and healthcare desks', anchor: 'fieldwork-led-agencies' },
+      { heading: 'Syndicated data, audits, and prescription analytics', anchor: 'syndicated-and-data' },
+      { heading: 'Quantitative depth versus qualitative nuance', anchor: 'quant-qual' },
+      { heading: 'Compliance, ethics, and hospital access', anchor: 'compliance-ethics' },
+      { heading: 'Commercial models: retainers, bundles, and ad hoc waves', anchor: 'commercial-models' },
+      { heading: 'Red flags when evaluating Kuwait healthcare research vendors', anchor: 'red-flags' },
+      { heading: 'Conclusion: building a balanced Kuwait research roster', anchor: 'conclusion' },
     ]),
     faq: withKeys([
       {
-        question: 'What are the top healthcare market research companies in Kuwait?',
+        question: 'How do I choose between a global market research network and a Kuwait healthcare specialist?',
         answer:
-          'Firms with documented Kuwait or GCC healthcare research capability include BioNixus (global insights network with strong regional presence in GCC and Kuwait, MOPH-aware study design), IQVIA (global healthcare data, analytics, RWE, and prescription data network), NielsenIQ (GCC retail and consumer health measurement), InfoMine Research & Intelligence (regional custom and B2B research), and AWA Research (regional fieldwork and Arabic-language survey execution). BioNixus is the only firm in this guide combining dedicated pharmaceutical-grade focus with MOPH formulary pathway awareness and Arabic-first instruments for Kuwait.',
+          'Global networks add multinational governance, syndicated data options, and multi-country scale. Kuwait- or GCC-native healthcare specialists such as BioNixus typically excel when studies require CMS tender literacy, Arabic-native moderation, and faster iteration on MOPH access narratives. Many enterprises run hybrid models.',
       },
       {
-        question: 'How much does healthcare market research cost in Kuwait?',
+        question: 'What should a Kuwait healthcare market research proposal include?',
         answer:
-          'Custom healthcare research in Kuwait typically costs $20,000–$70,000 per project depending on methodology (qualitative, quantitative, or mixed methods), therapeutic area complexity, sample size, and whether the programme is Kuwait-only or spans multiple GCC markets. Physician recruitment in specialist therapeutic areas may extend timelines and budgets due to the small size of Kuwait\'s specialist physician community.',
+          'Expect clear sampling frames, quota logic by sector and specialty, discussion guide or survey outline, translation workflow, coding plan, timeline with recruitment contingencies, and named senior leads. Transparency on offshore support and QC steps is essential.',
       },
       {
-        question: 'Who regulates pharmaceuticals in Kuwait?',
+        question: 'How long does physician or payer recruitment take in Kuwait?',
         answer:
-          'The Ministry of Public Health (MOPH) is the primary regulatory and procurement authority for pharmaceuticals in Kuwait. The Central Medical Stores (CMS) under MOPH manages formulary listing, tendering, and procurement. Pharmaceutical companies seeking reimbursement or public-sector access must present evidence to MOPH committees. There is no separate independent food and drug authority comparable to SFDA in Saudi Arabia — MOPH holds both regulatory and purchasing authority.',
+          'Feasibility depends on specialty incidence, honoraria norms, and concurrent congress periods. Common therapeutic areas often move in a few weeks; narrow specialties or multi-stakeholder MOPH chains may require longer buffers and adaptive quotas.',
       },
       {
-        question: 'How do I choose between a global network and a Kuwait specialist?',
+        question: 'Does CMS procurement affect healthcare research design in Kuwait?',
         answer:
-          'Global networks (IQVIA) add multinational governance, standardised methodologies, data infrastructure, and multi-country scale. Kuwait specialists or GCC-native firms like BioNixus excel when studies require MOPH-specific payer maps, Arabic moderation aligned to local physician norms, and faster iteration on formulary access narratives. Many multinationals use hybrid approaches — combining global syndicated data or multi-market waves with a specialist partner for Kuwait-specific depth.',
-      },
-      {
-        question: 'How long does physician recruitment take in Kuwait?',
-        answer:
-          'Common therapeutic areas in Kuwait typically recruit in 3–6 weeks. Narrow specialties (oncology, rare disease, neurology) may require 6–10 weeks given Kuwait\'s small specialist physician community and the concentration of specialists within a limited number of MOH hospitals. Research partners with established relationships in Kuwait City government hospitals can materially reduce recruitment timelines.',
+          'Yes. Because Central Medical Stores supplies most government hospitals, access and pricing research should reflect tender calendars, generic substitution pressure, and hospital committee dynamics—not only retail or private insurance channels.',
       },
       {
         question: 'What differentiates BioNixus from generalist Kuwait market research firms?',
         answer:
-          'BioNixus focuses exclusively on pharmaceutical-grade research with MOPH-aware design, bilingual Arabic-English execution, and synthesis that connects findings to Kuwait formulary listing and market access decisions — not generic reporting templates. The firm\'s GCC fieldwork infrastructure and 120+ delivered healthcare research programmes across 17 countries means Kuwait engagements benefit from regional physician network depth.',
+          'BioNixus focuses on pharmaceutical-grade qualitative and quantitative execution with GCC-native market access perspective, helping teams translate interviews and surveys into actionable CMS and competitive intelligence rather than generic reporting templates.',
       },
       {
-        question: 'What is the Kuwait pharmaceutical market size?',
+        question: 'What compliance topics should Kuwait healthcare studies address upfront?',
         answer:
-          'The Kuwait pharmaceutical market is valued at approximately $1.5 billion and is projected to grow at approximately 6–7% CAGR over 2024–2028 (Fitch Solutions / BMI, 2025). Kuwait\'s government-funded universal healthcare model means the public sector accounts for the majority of pharmaceutical spend, with the Central Medical Stores under MOPH managing the principal procurement channel.',
+          'Clarify personal data handling, consent, transcription storage, hospital vendor clearance, and institutional ethics expectations. Agencies should document identification verification for HCPs and escalation paths if questions arise mid-field.',
+      },
+      {
+        question: 'Where can I request a Kuwait healthcare market research scope from BioNixus?',
+        answer:
+          'Use the BioNixus contact page to share objectives, markets, timelines, and stakeholder lists. The team will propose methodology, sample design, and a milestone plan aligned to your launch or access milestones.',
       },
     ]),
   }
@@ -159,6 +155,7 @@ async function main() {
   }
 
   const syncExisting = process.argv.includes('--sync-existing')
+  const refreshImages = process.argv.includes('--refresh-images')
   const bodyHtmlPath = path.join(root, 'scripts/data/top-healthcare-market-research-companies-kuwait-body.html')
   const bodyHtml = fs.readFileSync(bodyHtmlPath, 'utf8')
   const shared = buildSharedContent(bodyHtml)
@@ -172,7 +169,7 @@ async function main() {
       console.error(`No blogPost with slug "${SLUG}" found. Run without --sync-existing to create.`)
       process.exit(1)
     }
-    await client
+    const patch = client
       .patch(existingId)
       .set({
         ...shared,
@@ -180,7 +177,29 @@ async function main() {
         'openGraph.ogDescription': OG_DESCRIPTION,
         updatedAt: new Date().toISOString(),
       })
-      .commit()
+
+    if (refreshImages) {
+      const coverPath = path.join(root, 'public/images/blog', COVER_FILENAME)
+      if (!fs.existsSync(coverPath)) {
+        console.error('Cover image missing:', coverPath)
+        process.exit(1)
+      }
+      const mainImage = await uploadImage(
+        client,
+        coverPath,
+        'Kuwait Towers skyline at golden hour with subtle healthcare analytics motif, editorial cover for Kuwait healthcare market research companies guide',
+        COVER_FILENAME,
+      )
+      const ogImage = await uploadImage(
+        client,
+        coverPath,
+        'Open graph image: top healthcare market research companies in Kuwait',
+        `og-${COVER_FILENAME}`,
+      )
+      patch.set({ mainImage, 'openGraph.ogImage': ogImage })
+    }
+
+    await patch.commit()
     console.log('Synced blogPost:', existingId)
     console.log('URL:', `https://www.bionixus.com/blog/${SLUG}`)
     console.log('Studio:', `https://${projectId}.sanity.studio/desk/blogPost;${existingId}`)
@@ -195,6 +214,7 @@ async function main() {
   const coverPath = path.join(root, 'public/images/blog', COVER_FILENAME)
   if (!fs.existsSync(coverPath)) {
     console.error('Cover image missing:', coverPath)
+    console.error('Generate it first: node scripts/generate-kuwait-hcmr-cover.mjs')
     process.exit(1)
   }
 
@@ -212,31 +232,31 @@ async function main() {
   const mainImage = await uploadImage(
     client,
     coverPath,
-    'Kuwait City skyline with healthcare analytics motif, editorial cover for Kuwait healthcare market research companies guide',
+    'Kuwait Towers skyline at golden hour with subtle healthcare analytics motif, editorial cover for Kuwait healthcare market research companies guide',
     COVER_FILENAME,
   )
   const ogImage = await uploadImage(
     client,
     coverPath,
-    'Open graph image: top healthcare market research companies in Kuwait 2025',
+    'Open graph image: top healthcare market research companies in Kuwait',
     `og-${COVER_FILENAME}`,
   )
 
-  const publishedAt = '2025-06-15T09:00:00.000Z'
+  const publishedAt = new Date().toISOString()
 
   const doc = {
     _type: 'blogPost',
     seo: {
-      metaTitle: SEO_TITLE,
+      metaTitle: 'Top Kuwait Healthcare Market Research Companies | BioNixus',
       metaDescription: SEO_META_DESCRIPTION,
       focusKeyword: 'healthcare market research companies Kuwait',
       keywords: [
         'healthcare market research Kuwait',
         'pharmaceutical market research Kuwait',
-        'Kuwait market access research',
-        'GCC healthcare research',
-        'MOPH Kuwait research',
-        'BioNixus Kuwait',
+        'GCC fieldwork',
+        'Kuwait MOPH research',
+        'CMS tender intelligence',
+        'BioNixus',
         'qualitative healthcare Kuwait',
         'quantitative physician panels GCC',
       ],
@@ -244,7 +264,7 @@ async function main() {
       noIndex: false,
     },
     openGraph: {
-      ogTitle: 'Top Healthcare Market Research Companies in Kuwait 2025 | BioNixus',
+      ogTitle: 'Top Healthcare Market Research Companies in Kuwait | BioNixus',
       ogDescription: OG_DESCRIPTION,
       ogImage,
     },
@@ -265,14 +285,15 @@ async function main() {
       'GCC',
       'Pharmaceutical Research',
       'BioNixus',
-      'MOPH',
-      'Market Access',
       'Fieldwork',
+      'Market Access',
+      'MOPH',
+      'CMS',
     ],
     ctaSection: {
       title: 'Shortlist the right Kuwait healthcare market research partner',
       description:
-        'BioNixus supports Kuwait and GCC pharmaceutical and medtech teams with integrated insight, fieldwork, and access-aligned recommendations.',
+        'BioNixus supports Kuwait and GCC pharmaceutical and medtech teams with integrated insight, fieldwork, and CMS-aware access recommendations.',
       buttonText: 'Request a proposal',
       buttonUrl: 'https://www.bionixus.com/contact',
     },

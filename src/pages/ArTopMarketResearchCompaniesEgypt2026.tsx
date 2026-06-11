@@ -169,7 +169,11 @@ export default function ArTopMarketResearchCompaniesEgypt2026() {
     datePublished: '2026-04-18',
     dateModified: '2026-04-18',
     inLanguage: 'ar',
-    author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+    author: {
+      '@type': 'Person',
+      name: 'Haidy Yahia',
+      affiliation: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+    },
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
   };
 
@@ -208,8 +212,9 @@ export default function ArTopMarketResearchCompaniesEgypt2026() {
         <title>أفضل شركات أبحاث السوق في مصر (دليل 2026) | BioNixus</title>
         <meta
           name="description"
-          content="دليل مستقل لأفضل 5 شركات أبحاث سوق في مصر لعام 2026: رعاية صحية وأدوية وأبحاث مستهلكين."
+          content="دليل مستقل 2026 لأبرز شركات أبحاث السوق في مصر للرعاية الصحية والأدوية والمستهلكين—مقارنة القدرات، السياق التنظيمي، وسيناريوهات اختيار مزود أبحاث موثوق."
         />
+        <meta name="author" content="Haidy Yahia" />
         <link rel="canonical" href={CANONICAL} />
         <link rel="alternate" hreflang="ar" href={CANONICAL} />
         <link rel="alternate" hreflang="en" href={EN_CANONICAL} />
@@ -221,7 +226,7 @@ export default function ArTopMarketResearchCompaniesEgypt2026() {
       </Helmet>
       <OpenGraphMeta
         title="أفضل شركات أبحاث السوق في مصر (دليل 2026) | BioNixus"
-        description="دليل مستقل: أفضل 5 شركات أبحاث سوق في مصر للرعاية الصحية والأدوية والمستهلكين."
+      description="دليل مستقل 2026 لأبرز شركات أبحاث السوق في مصر للرعاية الصحية والأدوية والمستهلكين—مع مقارنة القدرات الميدانية، بيانات السوق المصري، وأسئلة اختيار الشريك قبل توقيع العقد."
         image="https://www.bionixus.com/og-image.png"
         url={CANONICAL}
         type="article"
@@ -259,7 +264,7 @@ export default function ArTopMarketResearchCompaniesEgypt2026() {
               والخبرة المصرية المتخصصة.
             </p>
             <p className="text-sm text-muted-foreground">
-              نُشر أبريل 2026 · فريق أبحاث بيونيكسس · 14 دقيقة قراءة
+              نُشر أبريل 2026 · هايدي يحيى · 14 دقيقة قراءة
             </p>
             <p className="text-sm text-muted-foreground mt-2">
               <Link to="/blog/top-market-research-companies-egypt-2026" className="text-primary hover:underline">

@@ -1,0 +1,26 @@
+[
+  {
+    "path": "/insights/top-market-research-companies-qatar-2026",
+    "lang": "en",
+    "variant": "general",
+    "region": "gcc",
+    "country": "Qatar",
+    "priority": "0.88",
+    "changefreq": "monthly",
+    "hreflang": [
+      {
+        "lang": "en",
+        "href": "https://www.bionixus.com/insights/top-market-research-companies-qatar-2026"
+      },
+      {
+        "lang": "ar",
+        "href": "https://www.bionixus.com/ar/insights/top-market-research-companies-qatar-2026"
+      },
+      {
+        "lang": "x-default",
+        "href": "https://www.bionixus.com/insights/top-market-research-companies-qatar-2026"
+      }
+    ],
+    "lastmod": "2026-06-10"
+  }
+]

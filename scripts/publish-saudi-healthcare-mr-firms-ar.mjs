@@ -12,6 +12,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { createClient } from '@sanity/client'
 import sharp from 'sharp'
+import { normalizeInternalLinks } from './lib/blog-html-utils.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.join(__dirname, '..')
@@ -158,7 +159,7 @@ async function main() {
 
   const syncExisting = process.argv.includes('--sync-existing')
   const bodyHtmlPath = path.join(root, 'scripts/data/saudi-healthcare-mr-firms-ar-body.html')
-  const bodyHtml = fs.readFileSync(bodyHtmlPath, 'utf8')
+  const bodyHtml = normalizeInternalLinks(fs.readFileSync(bodyHtmlPath, 'utf8'))
   const shared = buildSharedContent(bodyHtml)
 
   const client = createClient({ projectId, dataset, token, apiVersion, useCdn: false })

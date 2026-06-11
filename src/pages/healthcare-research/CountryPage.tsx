@@ -1,11 +1,14 @@
 import { Link, Navigate, useLocation, useParams } from 'react-router-dom';
 import { useInitialData } from '@/contexts/InitialDataContext';
 import { SEOHead } from '@/components/seo/SEOHead';
-import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
-import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { RelatedPages } from '@/components/healthcare-research/RelatedPages';
-import { CTASection } from '@/components/shared/CTASection';
+import { HealthcareResearchPageShell } from '@/components/healthcare-research/HealthcareResearchPageShell';
+import { HealthcareNavCard, HealthcareStatPanel } from '@/components/healthcare-research/healthcareResearchUi';
+import { CountryMarketReferenceGuide } from '@/components/seo/CountryMarketReferenceGuide';
 import { COUNTRY_CONFIGS, type CountryConfig, type CountryRegion } from '@/lib/constants/countries';
+import { getHealthcareMarketResearchCountryConfig } from '@/data/reportConversionConfig';
+import { ReportMidPageCta } from '@/components/report-conversion';
+import { ReportPremiumSection } from '@/components/report-premium';
 import { buildCountryPageSchemas } from '@/lib/seo/schemas';
 
 function portableTextToParagraphs(value: unknown): string[] {
@@ -85,6 +88,46 @@ function buildFallbackCountryConfig(slug: string): CountryConfig {
   };
 }
 
+function buildCountryFaqFallback(config: CountryConfig): { question: string; answer: string }[] {
+  const regionLabel =
+    config.region === 'uk' ? 'the United Kingdom' : config.region === 'europe' ? 'European markets' : 'MENA markets';
+  return [
+    {
+      question: `How does BioNixus approach healthcare market research in ${config.name}?`,
+      answer: `Programs in ${config.name} are designed around decision-critical questions first, then matched to the right qualitative and quantitative methods so recommendations are practical for commercial, medical, and market-access teams.`,
+    },
+    {
+      question: `Which stakeholders are usually prioritized in ${config.name} studies?`,
+      answer: `Sampling typically includes prescribing specialists, institutional decision influencers, and access-relevant stakeholders based on therapy objectives and care-setting dynamics in ${config.name}.`,
+    },
+    {
+      question: `How is ${config.name} research aligned with cross-country strategy?`,
+      answer: `Each ${config.name} study is built with comparable core metrics and localized modules so leadership can benchmark against ${regionLabel} without losing local execution realism.`,
+    },
+    {
+      question: `What outputs are delivered from ${config.name} market research engagements?`,
+      answer: `Deliverables usually include stakeholder maps, adoption barriers and accelerators, segment-level opportunity framing, and action-oriented recommendations tied to launch or lifecycle decisions.`,
+    },
+  ];
+}
+
+function buildEvidenceSafeStats(config: CountryConfig): { label: string; value: string }[] {
+  return [
+    { label: 'Market Focus', value: `${config.name} healthcare and pharmaceutical decision environment` },
+    { label: 'Stakeholder Scope', value: 'Physician, institutional, and access-relevant audiences' },
+    {
+      label: 'Execution Model',
+      value:
+        config.region === 'mena'
+          ? 'Localized MENA fieldwork and interpretation'
+          : config.region === 'uk'
+            ? 'UK-context qualitative and quantitative delivery'
+            : 'Multi-country European coordination with local adaptation',
+    },
+    { label: 'Primary Output', value: 'Decision-ready evidence for strategy and execution planning' },
+  ];
+}
+
 export default function CountryPage() {
   const { country } = useParams<{ country: string }>();
   const location = useLocation();
@@ -112,7 +155,8 @@ export default function CountryPage() {
   const faqItems =
     Array.isArray(countryContent?.faq) && countryContent.faq.length > 0
       ? (countryContent.faq as { question: string; answer: string }[])
-      : config.faqQuestions;
+      : buildCountryFaqFallback(config);
+  const evidenceSafeStats = buildEvidenceSafeStats(config);
   const heroHeading =
     typeof countryContent?.title === 'string' && countryContent.title.length > 0
       ? countryContent.title
@@ -139,8 +183,15 @@ export default function CountryPage() {
     ? (capabilities.bulletPoints as string[]).filter(Boolean)
     : [];
 
+  const conversionConfig = getHealthcareMarketResearchCountryConfig(config.name, config.slug);
+  const heroStats =
+    config.keyStats.length >= 3
+      ? config.keyStats.slice(0, 3).map((stat) => ({ value: stat.value, label: stat.label }))
+      : evidenceSafeStats.slice(0, 3).map((stat) => ({ value: stat.value, label: stat.label }));
+  const faqSectionId = `healthcare-mr-country-${config.slug}-faq`;
+
   return (
-    <main>
+    <>
       <SEOHead
         title={config.metaTitle ?? `Pharmaceutical Market Research in ${config.name} | BioNixus`}
         description={config.metaDescription ?? config.ogDescription}
@@ -148,69 +199,65 @@ export default function CountryPage() {
         jsonLd={buildCountryPageSchemas(config)}
       />
 
-      <BreadcrumbNav
-        items={[
+      <HealthcareResearchPageShell
+        progressId={`healthcare-mr-country-${config.slug}`}
+        config={conversionConfig}
+        breadcrumbs={[
           { name: 'Home', href: '/' },
           { name: 'Healthcare Market Research', href: '/healthcare-market-research' },
           { name: config.name, href: `/healthcare-market-research/${config.slug}` },
         ]}
-      />
+        hero={{
+          title: heroHeading,
+          countryName: config.name,
+          marketSlug: config.slug,
+          stats: heroStats,
+          statsCaption: '',
+          description: (
+            <p>
+              BioNixus supports evidence-led decisions in {config.name} through localized study design, stakeholder
+              mapping, and implementation-focused interpretation. Start from the{' '}
+              <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">
+                healthcare market research hub
+              </Link>{' '}
+              to align country priorities with therapy and service planning.
+            </p>
+          ),
+        }}
+        tocItems={[
+          { href: '#key-indicators', label: 'Market indicators' },
+          { href: '#market-overview', label: 'Market overview' },
+          { href: '#capabilities', label: 'Capabilities' },
+          { href: '#therapy-priorities', label: 'Therapy priorities' },
+          { href: '#regulatory-context', label: 'Regulatory context' },
+          { href: `#${faqSectionId}`, label: 'FAQ' },
+        ]}
+        faq={{
+          sectionId: faqSectionId,
+          title: `Frequently Asked Questions About Pharmaceutical Research in ${config.name}`,
+          items: faqItems,
+        }}
+      >
+        <ReportPremiumSection
+          id="key-indicators"
+          title="Key pharmaceutical market indicators"
+          variant="cream"
+          countryName={config.name}
+          marketSlug={config.slug}
+        >
+          <HealthcareStatPanel stats={config.keyStats.length > 0 ? config.keyStats : evidenceSafeStats} />
+        </ReportPremiumSection>
 
-      <section className="py-16 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
-        <div className="container-wide max-w-5xl mx-auto">
-          <h1 className="text-4xl font-display font-semibold mb-4">{heroHeading}</h1>
-          <p className="text-lg text-primary-foreground/90 leading-relaxed max-w-4xl">
-            {config.slug === 'uae' ? (
-              <>
-                BioNixus supports healthcare market research in the UAE and pharma market research in the UAE through
-                localized research design, stakeholder mapping, and actionable insight synthesis. Explore the full regional
-                framework in our{' '}
-                <Link to="/healthcare-market-research" className="underline font-semibold">
-                  healthcare market research hub
-                </Link>{' '}
-                and the dedicated{' '}
-                <Link to="/healthcare-market-research/uae" className="underline font-semibold">
-                  market research in the UAE
-                </Link>{' '}
-                page before drilling into country-level execution priorities.
-              </>
-            ) : (
-              <>
-                BioNixus supports evidence-led market decisions in {config.name} through localized research design,
-                stakeholder mapping, and actionable insight synthesis. Explore the full regional framework in our{' '}
-                <Link to="/healthcare-market-research" className="underline font-semibold">
-                  healthcare market research hub
-                </Link>{' '}
-                before drilling into country-level execution priorities.
-              </>
-            )}
-          </p>
-        </div>
-      </section>
-
-      <section className="py-12">
-        <div className="container-wide max-w-6xl mx-auto">
-          <h2 className="text-3xl font-display font-semibold text-foreground mb-6">
-            Key Pharmaceutical Market Indicators
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {config.keyStats.map((stat) => (
-              <article key={stat.label} className="rounded-xl border border-border bg-card p-5">
-                <h3 className="text-sm uppercase tracking-wide text-muted-foreground mb-2">{stat.label}</h3>
-                <p className="text-lg font-semibold text-foreground">{stat.value}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-12">
-        <div className="container-wide max-w-5xl mx-auto">
-          <h2 className="text-3xl font-display font-semibold text-foreground mb-5">
-            {typeof marketOverview?.heading === 'string'
+        <ReportPremiumSection
+          id="market-overview"
+          title={
+            typeof marketOverview?.heading === 'string'
               ? marketOverview.heading
-              : `${config.name} Pharmaceutical Market Overview`}
-          </h2>
+              : `${config.name} pharmaceutical market overview`
+          }
+          countryName={config.name}
+          marketSlug={config.slug}
+        >
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             {overviewParagraphs.length > 0 ? (
               overviewParagraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)
@@ -227,16 +274,19 @@ export default function CountryPage() {
               </>
             )}
           </div>
-        </div>
-      </section>
+        </ReportPremiumSection>
 
-      <section className="py-12 bg-muted/20">
-        <div className="container-wide max-w-5xl mx-auto">
-          <h2 className="text-3xl font-display font-semibold text-foreground mb-5">
-            {typeof capabilities?.heading === 'string'
+        <ReportPremiumSection
+          id="capabilities"
+          title={
+            typeof capabilities?.heading === 'string'
               ? capabilities.heading
-              : `BioNixus Capabilities in ${config.name}`}
-          </h2>
+              : `BioNixus capabilities in ${config.name}`
+          }
+          variant="muted"
+          countryName={config.name}
+          marketSlug={config.slug}
+        >
           <div className="space-y-4 text-muted-foreground leading-relaxed mb-5">
             {capabilityParagraphs.length > 0 ? (
               capabilityParagraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)
@@ -256,14 +306,14 @@ export default function CountryPage() {
               ))}
             </ul>
           ) : null}
-        </div>
-      </section>
+        </ReportPremiumSection>
 
-      <section className="py-12 bg-muted/30">
-        <div className="container-wide max-w-5xl mx-auto">
-          <h2 className="text-3xl font-display font-semibold text-foreground mb-5">
-            Therapy Priorities in {config.name}
-          </h2>
+        <ReportPremiumSection
+          id="therapy-priorities"
+          title={`Therapy priorities in ${config.name}`}
+          countryName={config.name}
+          marketSlug={config.slug}
+        >
           <div className="flex flex-wrap gap-2">
             {config.relatedTherapies.map((therapy) => (
               <Link
@@ -275,16 +325,19 @@ export default function CountryPage() {
               </Link>
             ))}
           </div>
-        </div>
-      </section>
+        </ReportPremiumSection>
 
-      <section className="py-12">
-        <div className="container-wide max-w-5xl mx-auto">
-          <h2 className="text-3xl font-display font-semibold text-foreground mb-5">
-            {typeof regulatoryContext?.heading === 'string'
+        <ReportPremiumSection
+          id="regulatory-context"
+          title={
+            typeof regulatoryContext?.heading === 'string'
               ? regulatoryContext.heading
-              : `Regulatory and Market Context in ${config.name}`}
-          </h2>
+              : `Regulatory and market context in ${config.name}`
+          }
+          variant="cream"
+          countryName={config.name}
+          marketSlug={config.slug}
+        >
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             {regulatoryParagraphs.length > 0 ? (
               regulatoryParagraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)
@@ -295,13 +348,16 @@ export default function CountryPage() {
               </p>
             )}
           </div>
-        </div>
-      </section>
+        </ReportPremiumSection>
 
       {caseStudies.length > 0 ? (
-        <section className="py-12 bg-muted/20">
-          <div className="container-wide max-w-6xl mx-auto">
-            <h2 className="text-3xl font-display font-semibold text-foreground mb-6">Case Studies in {config.name}</h2>
+        <ReportPremiumSection
+          id="case-studies"
+          title={`Case studies in ${config.name}`}
+          variant="muted"
+          countryName={config.name}
+          marketSlug={config.slug}
+        >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {caseStudies.map((study, idx) => (
                 <article key={`${study.title || 'case'}-${idx}`} className="rounded-xl border border-border bg-card p-5">
@@ -312,36 +368,67 @@ export default function CountryPage() {
                 </article>
               ))}
             </div>
-          </div>
-        </section>
+        </ReportPremiumSection>
       ) : null}
 
       {/* Targeted Intelligence & Insight Guides */}
       {config.slug === 'saudi-arabia' && (
-        <section className="py-12 bg-card border-y border-border">
-          <div className="container-wide max-w-5xl mx-auto space-y-8 text-foreground">
-            <h2 className="text-3xl font-display font-semibold">
-              Deep Dive: The 2026 Saudi Pharmaceutical Landscape
-            </h2>
+        <ReportPremiumSection
+          id="saudi-deep-dive"
+          title="Deep dive: the 2026 Saudi pharmaceutical landscape"
+          variant="default"
+          countryName={config.name}
+          marketSlug={config.slug}
+        >
+          <div className="space-y-8 text-foreground">
+            <p className="text-base leading-relaxed text-muted-foreground">
+              For BOFU company-intent searches, use our{' '}
+              <Link to="/market-research-saudi-arabia-pharmaceutical" className="text-primary underline font-medium">
+                healthcare market research company in Saudi Arabia
+              </Link>{' '}
+              page; for KSA keyword variants see{' '}
+              <Link to="/market-research-ksa" className="text-primary underline font-medium">
+                market research KSA
+              </Link>{' '}
+              and{' '}
+              <Link to="/market-research-saudi" className="text-primary underline font-medium">
+                market research Saudi
+              </Link>
+              .
+            </p>
             <div className="space-y-6 text-base leading-relaxed text-muted-foreground">
               <p>
-                The Saudi Arabian pharmaceutical market is undergoing a structural revolution driven by Vision 2030. The traditional model of relying on imported branded portfolios and generic distributorships is being rapidly replaced by aggressive localization mandates. For pharmaceutical executives targeting the Kingdom, success now hinges on deep alignment with the Ministry of Investment's (MISA) and Ministry of Health's (MOH) push for local manufacturing, clinical trial expansion, and value-based procurement.
+                Saudi pharmaceutical market strategy is increasingly shaped by Vision 2030 priorities, including
+                localization, health-system transformation, and stronger evidence expectations in institutional decision
+                processes. For teams entering or expanding in the Kingdom, planning should align with evolving policy,
+                procurement, and access requirements.
               </p>
               <h3 className="text-xl font-semibold text-foreground mt-4 mb-2">Navigating NUPCO and the Shift to Value</h3>
               <p>
-                As the National Unified Procurement Company (NUPCO) consolidates its monopsony power across government healthcare sectors, navigating institutional access requires unprecedented sophistication. NUPCO is moving beyond simple unit-price tendering toward comprehensive supply chain integration and preference for localized fill-and-finish partnerships. BioNixus conducts targeted market access feasibility studies to help global pharma teams map tender influence, evaluate competitive pricing intelligence, and align value dossiers with NUPCO’s evolving pharmacoeconomic expectations.
+                With National Unified Procurement Company (NUPCO) involvement across government channels, institutional
+                access planning often requires clear tender mapping, value communication, and account-level execution
+                sequencing. BioNixus supports market-access feasibility work to map tender influence, pricing dynamics,
+                and evidence expectations.
               </p>
               <h3 className="text-xl font-semibold text-foreground mt-4 mb-2">The Impact of the Health Holding Company (HHC)</h3>
               <p>
-                The corporatization of the MOH into the Health Holding Company (HHC) and the creation of regional health clusters represent a massive shift from central decision-making to regional accountability. Commercial teams can no longer rely on a single central strategy. Our qualitative research maps the specific decision dynamics within tier-1 clusters across Riyadh, Jeddah, and the Eastern Province. We help key account managers (KAMs) understand precisely who controls protocol adoption, formulary inclusion, and therapeutic switching at the cluster level.
+                The shift toward regional health-cluster accountability means commercial and medical teams often need
+                cluster-specific plans rather than a single centralized approach. Our qualitative work maps decision
+                dynamics across major clusters and clarifies who influences protocol adoption, formulary inclusion, and
+                therapeutic switching.
               </p>
               <h3 className="text-xl font-semibold text-foreground mt-4 mb-2">SFDA Regulatory Agility and Patient Pathways</h3>
               <p>
-                The Saudi Food and Drug Authority (SFDA) is positioning itself as a top-tier global regulator, offering accelerated pathways for breakthrough therapies and orphan drugs. However, securing regulatory approval is only the first step. BioNixus maps complex patient pathways—from diagnosis at primary care centers to specialized tertiary interventions at institutions like KFSH&RC and NGHA. By analyzing patient drop-off rates, biomarker testing bottlenecks, and physician prescribing behavior, we enable commercial teams to build highly effective patient support programs (PSPs) and targeted medical education initiatives.
+                Regulatory approval alone is not sufficient for adoption. BioNixus maps patient pathways from diagnosis
+                through specialist treatment and identifies operational bottlenecks such as referral delays, testing
+                constraints, and prescribing variability, helping teams shape practical patient-support and medical
+                education programs.
               </p>
               <h3 className="text-xl font-semibold text-foreground mt-4 mb-2">Omnichannel Strategy and KOL Engagement</h3>
               <p>
-                Saudi healthcare professionals (HCPs) are among the most digitally literate in the region, yet traditional field force models are increasingly facing access fatigue. BioNixus provides deep omnichannel intelligence, evaluating channel preferences, content consumption habits, and peer-to-peer influence networks among Saudi Key Opinion Leaders (KOLs). We identify the "true influencers"—who drive clinical consensus in specialized therapy areas like oncology, immunology, and rare diseases—allowing your medical and commercial teams to deploy resource-efficient, high-impact engagement strategies.
+                Omnichannel planning works best when channel assumptions are tested against actual specialist behavior,
+                institutional constraints, and peer influence patterns. BioNixus uses structured research to identify where
+                in-person, digital, and hybrid engagement can improve consistency without adding communication noise.
               </p>
               <h3 className="text-xl font-semibold text-foreground mt-4 mb-2">Oncology market research in Saudi Arabia</h3>
               <p>
@@ -350,95 +437,178 @@ export default function CountryPage() {
                 account-level mapping, and quantitative validation to help teams prioritize oncology launch and access actions
                 with stronger confidence.
               </p>
+              <h3 className="text-xl font-semibold text-foreground mt-4 mb-2">Saudi Arabia precision medicine &amp; biologics segments</h3>
+              <p>
+                For segment-specific sizing aligned to high-impression search demand, use the{' '}
+                <Link to="/market-reports/saudi-arabia-rare-diseases-market-report" className="text-primary underline font-medium">
+                  Saudi Arabia precision medicine &amp; rare diseases market report
+                </Link>
+                , the{' '}
+                <Link to="/market-reports/saudi-arabia-immunology-biologics-market-report" className="text-primary underline font-medium">
+                  Saudi immunology &amp; biologics market report
+                </Link>
+                , the{' '}
+                <Link to="/market-reports/saudi-arabia-biosimilars-market-report" className="text-primary underline font-medium">
+                  Saudi biosimilars market report
+                </Link>
+                , and the{' '}
+                <Link to="/gcc-pharma-market-report-2026" className="text-primary underline font-medium">
+                  GCC pharma market report 2026
+                </Link>{' '}
+                for Gulf-wide context.
+              </p>
               <p>
                 For focused Saudi execution planning, visit our{' '}
-                <Link to="/healthcare-market-research/saudi-arabia" className="text-primary underline">
-                  pharma market research company in Saudi Arabia page
+                <Link to="/market-research-saudi-arabia-pharmaceutical" className="text-primary underline">
+                  healthcare market research company in Saudi Arabia
                 </Link>{' '}
                 and connect country-level oncology evidence to field and access strategy.
               </p>
             </div>
           </div>
-        </section>
+        </ReportPremiumSection>
+      )}
+
+      {config.slug === 'uae' && (
+        <ReportPremiumSection
+          id="uae-company-intent"
+          title="UAE pharmaceutical market research — company intent"
+          countryName={config.name}
+          marketSlug={config.slug}
+        >
+            <p className="text-base leading-relaxed text-muted-foreground">
+              For BOFU company-intent searches, use our{' '}
+              <Link to="/uae-pharmaceutical-market-research" className="text-primary underline font-medium">
+                healthcare market research company in UAE
+              </Link>{' '}
+              page; for mid-funnel planning see{' '}
+              <Link to="/market-research-uae" className="text-primary underline font-medium">
+                market research in the UAE
+              </Link>
+              .
+            </p>
+        </ReportPremiumSection>
+      )}
+
+      {config.slug === 'egypt' && (
+        <ReportPremiumSection
+          id="egypt-company-intent"
+          title="Egypt pharmaceutical market research — company intent"
+          countryName={config.name}
+          marketSlug={config.slug}
+        >
+            <p className="text-base leading-relaxed text-muted-foreground">
+              For BOFU company-intent searches, use our{' '}
+              <Link to="/egypt-pharmaceutical-market-research" className="text-primary underline font-medium">
+                healthcare market research company in Egypt
+              </Link>{' '}
+              page; for mid-funnel planning see{' '}
+              <Link to="/market-research-egypt" className="text-primary underline font-medium">
+                market research in Egypt
+              </Link>
+              .
+            </p>
+        </ReportPremiumSection>
       )}
 
       {(config.slug === 'saudi-arabia' || config.slug === 'uae' || config.slug === 'uk' || config.slug === 'europe' || config.slug === 'egypt') && (
-        <section className="py-12 bg-primary/5 border-y border-primary/10">
-          <div className="container-wide max-w-6xl mx-auto">
-            <h2 className="text-3xl font-display font-semibold text-foreground mb-6">Deep Dive: {config.name} Market Intelligence</h2>
+        <ReportPremiumSection
+          id="market-intelligence-guides"
+          title={`Deep dive: ${config.name} market intelligence`}
+          variant="muted"
+          countryName={config.name}
+          marketSlug={config.slug}
+        >
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {config.slug === 'saudi-arabia' && (
                 <>
-                  <Link to="/blog/pharma-market-entry-saudi-arabia-playbook" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
-                    <h3 className="text-base font-semibold text-foreground mb-2">Saudi Market Entry Playbook</h3>
-                    <p className="text-sm text-muted-foreground">Master NUPCO, localized manufacturing, and distributor strategy.</p>
-                  </Link>
-                  <Link to="/blog/sfda-drug-registration-guide" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
-                    <h3 className="text-base font-semibold text-foreground mb-2">SFDA Registration Guide</h3>
-                    <p className="text-sm text-muted-foreground">Navigating pathways, CTD formatting, and timelines.</p>
-                  </Link>
-                  <Link to="/blog/top-therapy-areas-pharma-growth-saudi-arabia" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
-                    <h3 className="text-base font-semibold text-foreground mb-2">Top 10 Growth Therapy Areas</h3>
-                    <p className="text-sm text-muted-foreground">The most lucrative segments driven by Vision 2030.</p>
-                  </Link>
+                  <HealthcareNavCard
+                    to="/blog/pharma-market-entry-saudi-arabia-playbook"
+                    title="Saudi market entry playbook"
+                    description="Master NUPCO, localized manufacturing, and distributor strategy."
+                  />
+                  <HealthcareNavCard
+                    to="/blog/sfda-drug-registration-guide"
+                    title="SFDA registration guide"
+                    description="Navigating pathways, CTD formatting, and timelines."
+                  />
+                  <HealthcareNavCard
+                    to="/blog/top-therapy-areas-pharma-growth-saudi-arabia"
+                    title="Priority therapy area signals"
+                    description="Country-specific demand and access signals for portfolio planning."
+                  />
                 </>
               )}
               {config.slug === 'uae' && (
                 <>
-                  <Link to="/blog/market-access-strategy-uae" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
-                    <h3 className="text-base font-semibold text-foreground mb-2">UAE Market Access Strategy</h3>
-                    <p className="text-sm text-muted-foreground">DOH, DHA, and MOHAP formulary inclusion tactics.</p>
-                  </Link>
-                  <Link to="/blog/kol-mapping-pharma-middle-east" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
-                    <h3 className="text-base font-semibold text-foreground mb-2">GCC KOL Mapping</h3>
-                    <p className="text-sm text-muted-foreground">Identifying true clinical influencers across the Emirates.</p>
-                  </Link>
-                  <Link to="/blog/competitive-intelligence-pharma-gcc" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
-                    <h3 className="text-base font-semibold text-foreground mb-2">GCC Competitive Intelligence</h3>
-                    <p className="text-sm text-muted-foreground">Tracking rival formularies and medical affairs engagement.</p>
-                  </Link>
+                  <HealthcareNavCard
+                    to="/uae-pharmaceutical-market-research"
+                    title="Healthcare market research company in UAE"
+                    description="BOFU page for DHA, DOH, MOHAP, and emirate-aware launch evidence."
+                  />
+                  <HealthcareNavCard
+                    to="/blog/market-access-strategy-uae"
+                    title="UAE market access strategy"
+                    description="DOH, DHA, and MOHAP formulary inclusion tactics."
+                  />
+                  <HealthcareNavCard
+                    to="/blog/kol-mapping-pharma-middle-east"
+                    title="GCC KOL mapping"
+                    description="Identifying true clinical influencers across the Emirates."
+                  />
+                  <HealthcareNavCard
+                    to="/blog/competitive-intelligence-pharma-gcc"
+                    title="GCC competitive intelligence"
+                    description="Tracking rival formularies and medical affairs engagement."
+                  />
                 </>
               )}
               {config.slug === 'egypt' && (
                 <>
-                  <Link to="/blog/top-market-research-companies-egypt-2026" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
-                    <h3 className="text-base font-semibold text-foreground mb-2">Top Market Research Companies in Egypt (2026)</h3>
-                    <p className="text-sm text-muted-foreground">Independent guide to 5 leading firms for healthcare, pharma, and consumer research.</p>
-                  </Link>
-                  <Link to="/pharmaceutical-companies-egypt" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
-                    <h3 className="text-base font-semibold text-foreground mb-2">Pharmaceutical Companies in Egypt</h3>
-                    <p className="text-sm text-muted-foreground">20+ pharma companies, $5.8B market data, and EDA regulatory landscape.</p>
-                  </Link>
-                  <Link to="/strategic-portfolio" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
-                    <h3 className="text-base font-semibold text-foreground mb-2">BioNixus Strategic Portfolio</h3>
-                    <p className="text-sm text-muted-foreground">Full capability overview: 127+ projects across healthcare and consumer research.</p>
-                  </Link>
+                  <HealthcareNavCard
+                    to="/egypt-pharmaceutical-market-research"
+                    title="Healthcare market research company in Egypt"
+                    description="BOFU page for EDA, UHI, bilingual fieldwork, and Egypt launch evidence."
+                  />
+                  <HealthcareNavCard
+                    to="/blog/top-market-research-companies-egypt-2026"
+                    title="Top market research companies in Egypt (2026)"
+                    description="Independent guide to leading firms for healthcare, pharma, and consumer research."
+                  />
+                  <HealthcareNavCard
+                    to="/pharmaceutical-companies-egypt"
+                    title="Pharmaceutical companies in Egypt"
+                    description="Industry landscape, regulatory context, and market structure orientation."
+                  />
+                  <HealthcareNavCard
+                    to="/strategic-portfolio"
+                    title="BioNixus strategic portfolio"
+                    description="Capability overview and representative project archetypes."
+                  />
                 </>
               )}
               {(config.slug === 'uk' || config.slug === 'europe') && (
-                <Link to="/blog/nice-hta-evidence-requirements-guide" className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors">
-                  <h3 className="text-base font-semibold text-foreground mb-2">NICE HTA Evidence Guide</h3>
-                  <p className="text-sm text-muted-foreground">Securing NHS commissioning and managing cost-effectiveness.</p>
-                </Link>
+                <HealthcareNavCard
+                  to="/blog/nice-hta-evidence-requirements-guide"
+                  title="NICE HTA evidence guide"
+                  description="Securing NHS commissioning and managing cost-effectiveness."
+                />
               )}
             </div>
-          </div>
-        </section>
+        </ReportPremiumSection>
       )}
 
-      <FAQSection
-        items={faqItems}
-        title={`Frequently Asked Questions About Pharmaceutical Research in ${config.name}`}
-      />
+      <CountryMarketReferenceGuide countryName={config.name} countrySlug={config.slug} region={config.region} />
+
+      <ReportMidPageCta config={conversionConfig} className="my-4" />
 
       <RelatedPages
         currentSlug={config.slug}
         relatedCountries={config.relatedCountries}
         relatedTherapies={config.relatedTherapies}
       />
-
-      <CTASection variant="country" countryName={config.name} />
-    </main>
+      </HealthcareResearchPageShell>
+    </>
   );
 }
 

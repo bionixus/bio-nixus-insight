@@ -1,4 +1,16 @@
+# GSC URL Inspection priority recrawl list — bionixus.com SEO recovery
+# Updated 2026-05-25 after SEO recovery (title/meta/FAQ/schema fixes).
+# Submit the URLs below via Google Search Console -> URL Inspection -> "Request Indexing".
+# Order = priority. Top 4 are the SEO-recovery pages — request indexing on these FIRST.
+
+# --- Recovery priority (request immediately) ---
 https://www.bionixus.com/
+https://www.bionixus.com/blog/healthcare-overview-egypt-market-2026
+https://www.bionixus.com/gcc-pharmaceutical-market-research
+https://www.bionixus.com/gcc-pharma-market-report-2026
+
+# --- Secondary (request after the top 4) ---
+https://www.bionixus.com/sitemap.xml
 https://www.bionixus.com/market-research
 https://www.bionixus.com/market-research-saudi-arabia-pharmaceutical
 https://www.bionixus.com/market-research-healthcare
@@ -23,4 +35,3 @@ https://www.bionixus.com/de/blog
 https://www.bionixus.com/fr/blog
 https://www.bionixus.com/ar/contacts
 https://www.bionixus.com/fr/contacts
-https://www.bionixus.com/sitemap

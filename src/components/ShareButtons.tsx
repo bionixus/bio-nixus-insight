@@ -5,7 +5,7 @@ import { toast } from 'sonner';
 interface ShareButtonsProps {
   url: string;
   title: string;
-  contentType: 'blog' | 'case-study';
+  contentType: 'blog' | 'case-study' | 'guide';
   slug: string;
 }
 

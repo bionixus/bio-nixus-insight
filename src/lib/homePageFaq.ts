@@ -232,6 +232,90 @@ const byLanguage: Record<Language, HomeFaqBlock> = {
       },
     ],
   },
+  pt: {
+    sectionTitle: 'Perguntas frequentes — pesquisa de mercado farmacêutica e de saúde',
+    ctaFullFaq: 'Ver biblioteca completa de perguntas frequentes',
+    ctaProposal: 'Solicitar proposta personalizada',
+    items: [
+      {
+        question: 'Quais regiões a BioNixus cobre em pesquisa de mercado farmacêutica e de saúde?',
+        answer:
+          'A BioNixus executa pesquisas de mercado em saúde no Brasil, América Latina, Europa, Reino Unido, Oriente Médio e Norte da África (MENA) e países do CCG, incluindo mercados como Arábia Saudita, EAU, Egito, Kuwait e Catar. Os programas podem ser de país único, regionais ou multirregionais com design comparável quando forem necessários insights farmacêuticos entre fronteiras.',
+      },
+      {
+        question: 'Que tipos de pesquisa de mercado em saúde e insights farmacêuticos a BioNixus oferece?',
+        answer:
+          'A BioNixus oferece pesquisas quantitativas, profundidade qualitativa (entrevistas em profundidade e formatos de advisory board), diagnósticos de pagadores e acesso ao mercado, inteligência hospitalar e de jornada, mapeamento de KOL e stakeholders, e análises orientadas por evidências para equipes comerciais, médicas e de acesso. O escopo é construído em torno das suas decisões — de posicionamento e demanda a barreiras de acesso e monitoramento de lançamento.',
+      },
+      {
+        question: 'Como a BioNixus apoia necessidades de acesso ao mercado, pagadores e avaliação de tecnologias em saúde (ATS/CONITEC)?',
+        answer:
+          'As pesquisas de pagadores são projetadas para esclarecer expectativas de evidências, narrativas de precificação e reembolso e requisitos de comunicação de valor no Brasil (CONITEC/SUS), Europa e Oriente Médio. Os resultados são estruturados para apoiar estratégia de acesso, dossiês regulatórios e alinhamento interfuncional — não apresentações genéricas sem decisão.',
+      },
+      {
+        question: 'Como a BioNixus se alinha à LGPD, ANVISA e requisitos regulatórios do Brasil?',
+        answer:
+          'Os projetos aplicam governança de dados com privacidade em conformidade com a LGPD, padrões de qualidade e ética adequados à pesquisa em saúde (com considerações de BPC-ICH quando aplicável) e controles operacionais alinhados aos requisitos da ANVISA e às expectativas das autoridades de saúde brasileiras. A conformidade é discutida no escopo do projeto de acordo com as necessidades de risco e auditoria.',
+      },
+      {
+        question: 'A BioNixus pode executar estudos multirregionais com médicos, pagadores e hospitais entre Brasil, América Latina e Europa?',
+        answer:
+          'Sim. Os programas multirregionais suportam ferramentas consistentes quando necessário, com recrutamento e gestão locais. O objetivo é comparabilidade defensável sem modelos rígidos que ignorem o contexto terapêutico, de acesso ou regulatório local.',
+      },
+      {
+        question: 'Qual a rapidez para obter uma proposta e quais fatores influenciam os prazos?',
+        answer:
+          'Após um breve alinhamento de objetivos, público, mercados e métodos, a BioNixus entrega propostas em ritmo rápido. Os cronogramas dependem de dispersão e triagem de amostra, requisitos éticos quando aplicável, extensão do questionário, profundidade qualitativa e sazonalidade de campo — os marcos são apresentados antecipadamente.',
+      },
+      {
+        question: 'Onde as equipes farmacêuticas podem aprender mais sobre metodologia, casos de estudo e insights?',
+        answer:
+          'Consulte a seção de metodologia desta página e os casos de estudo para comprovação de execução, e a seção de insights para comentário de mercado. Para perguntas mais amplas ou escopo personalizado, visite a página de perguntas frequentes ou entre em contato pela seção de contato para solicitar uma proposta.',
+      },
+    ],
+  },
+  ru: {
+    sectionTitle: 'Часто задаваемые вопросы — маркетинговые исследования в фармацевтике и здравоохранении',
+    ctaFullFaq: 'Просмотреть полную библиотеку FAQ',
+    ctaProposal: 'Запросить индивидуальное предложение',
+    items: [
+      {
+        question: 'Какие регионы охватывает BioNixus для фармацевтических и медицинских маркетинговых исследований?',
+        answer:
+          'BioNixus проводит маркетинговые исследования в здравоохранении в России, Восточной Европе, странах MENA и GCC, включая приоритетные рынки: Саудовскую Аравию, ОАЭ, Египет, Кувейт и Катар. Программы могут быть однострановыми, региональными или многострановыми с сопоставимым дизайном для кросс-рыночных фармацевтических инсайтов.',
+      },
+      {
+        question: 'Какие виды маркетинговых исследований в здравоохранении предлагает BioNixus?',
+        answer:
+          'BioNixus предоставляет количественные опросы, качественные глубинные интервью и дискуссии в формате advisory board, диагностику плательщиков и доступа на рынок, аналитику по больницам и путям лечения, картирование KOL и стейкхолдеров, а также доказательно-ориентированную аналитику для коммерческих, медицинских и access-команд.',
+      },
+      {
+        question: 'Как BioNixus поддерживает потребности в доступе на рынок, плательщиков и доказательной базе HTA в России?',
+        answer:
+          'BioNixus разрабатывает исследования, ориентированные на плательщиков, для прояснения ожиданий к доказательной базе, нарративов ценообразования и возмещения, а также коммуникации ценности в контексте российской системы ГРЛС/Минздрава и европейских систем HTA. Результаты структурированы так, чтобы команды могли преобразовать их в стратегию доступа, вклад в досье и кросс-функциональное согласование.',
+      },
+      {
+        question: 'Как BioNixus обеспечивает соответствие полевых работ GOST, GCP и требованиям по защите персональных данных в России?',
+        answer:
+          'Проекты применяют принцип конфиденциальности при проектировании для соответствия российскому законодательству о персональных данных, следуют стандартам качества и этики, применимым к медицинским исследованиям (включая ICH-GCP там, где это актуально), и согласовывают операционные контролы с локальными требованиями ГРЛС, Минздрава РФ и других регуляторных органов. Соответствие нормативным требованиям обсуждается на этапе определения объёма работ.',
+      },
+      {
+        question: 'Может ли BioNixus проводить многострановые исследования с участием врачей, плательщиков и больниц в России, Восточной Европе и странах GCC?',
+        answer:
+          'Да. BioNixus поддерживает многострановые программы с согласованными инструментами там, где это уместно, плюс адаптированный к каждой стране рекрутинг и модерацию. Цель — обоснованная сопоставимость между рынками без навязывания единого шаблона, игнорирующего местный контекст лечения, доступа или регуляторики.',
+      },
+      {
+        question: 'Как быстро мы получим предложение и что влияет на сроки маркетинговых исследований в здравоохранении?',
+        answer:
+          'После краткого согласования объёма по целям, аудиториям, рынкам и методам BioNixus обычно предоставляет предложение в сжатые сроки. Временные рамки зависят от частоты встречаемости и скрининга, этических или институциональных требований где применимо, длины опроса, глубины качественного исследования и сезонности полевых работ.',
+      },
+      {
+        question: 'Где фармацевтические команды могут узнать больше о методологии BioNixus, кейсах и рыночной аналитике?',
+        answer:
+          'Используйте раздел методологии на этой странице для получения информации о стандартах управления и качества, изучите кейсы для получения доказательств исполнения, а раздел аналитики — для актуальных комментариев по фармацевтическому и медицинскому рынку. Для более широкого FAQ или разговора об индивидуальном объёме работ посетите специальную страницу FAQ или запросите предложение через раздел контактов.',
+      },
+    ],
+  },
   ar: {
     sectionTitle: 'الأسئلة الشائعة — أبحاث السوق الصحية والدوائية',
     ctaFullFaq: 'عرض مكتبة الأسئلة الشائعة كاملة',

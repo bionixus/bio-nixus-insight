@@ -52,6 +52,8 @@ const CASE_STUDIES_QUERY = `*[_type == "caseStudy" && defined(slug.current)] | o
   body,
   language,
   "date": coalesce(publishedAt, _createdAt),
+  "publishedAtIso": select(defined(publishedAt) => publishedAt, _createdAt),
+  "updatedAtIso": _updatedAt,
   category,
   country,
   mainImage,
@@ -70,6 +72,8 @@ const CASE_STUDY_BY_SLUG_QUERY = `*[_type == "caseStudy" && slug.current == $slu
   body,
   language,
   "date": coalesce(publishedAt, _createdAt),
+  "publishedAtIso": select(defined(publishedAt) => publishedAt, _createdAt),
+  "updatedAtIso": _updatedAt,
   category,
   country,
   mainImage,
@@ -95,6 +99,8 @@ interface RawCaseStudy {
   body?: string;
   language?: string;
   date?: string;
+  publishedAtIso?: string;
+  updatedAtIso?: string;
   category?: string;
   country?: string;
   mainImage?: { _type?: string; asset?: { _ref: string } };
@@ -140,7 +146,9 @@ function mapToCaseStudy(r: RawCaseStudy, imageSize: 'cover' | 'thumb' = 'cover')
     title: r.title ?? 'Untitled',
     excerpt: r.excerpt ?? '',
     body: r.body,
-    date: formatDate(r.date),
+    date: formatDate(r.publishedAtIso || r.date),
+    publishedAtIso: typeof r.publishedAtIso === 'string' ? r.publishedAtIso : undefined,
+    updatedAtIso: typeof r.updatedAtIso === 'string' ? r.updatedAtIso : undefined,
     category: r.category ?? '',
     country: r.country ?? '',
     coverImage: getCoverImageUrl(r.mainImage, imageSize),
