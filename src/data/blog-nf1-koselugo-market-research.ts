@@ -14,12 +14,12 @@ export const NF1_KOSELUGO_DISPLAY_TITLE =
   'Neurofibromatosis: NF1 Market Access, MEK Inhibition & HCP Intelligence';
 
 export const NF1_KOSELUGO_META_DESCRIPTION =
-  'Neurofibromatosis type 1 (NF1) landscape, oral MEK inhibition for symptomatic plexiform neurofibromas—FDA paediatric approvals from Apr 2020 with adult label expansion Nov 2025—and how pharma teams localize evidence for payers & specialists. Links to BioNixus NF1 pharma research pillar.';
+  'Neurofibromatosis type 1 (NF1) landscape, oral MEK inhibition for symptomatic plexiform neurofibromas—FDA paediatric approvals from Apr 2020 plus the EU\u2019s first adult+paediatric therapy EZMEKLY (mirdametinib), conditionally approved 17 Jul 2025—and how pharma teams localize evidence for payers & specialists. Links to BioNixus NF1 pharma research pillar.';
 
 export const NF1_KOSELUGO_OG_DESCRIPTION = NF1_KOSELUGO_META_DESCRIPTION;
 
 export const NF1_KOSELUGO_PUBLISHED_ISO = '2026-05-26T09:00:00.000Z';
-export const NF1_KOSELUGO_UPDATED_ISO = '2026-05-30T12:00:00.000Z';
+export const NF1_KOSELUGO_UPDATED_ISO = '2026-06-11T12:00:00.000Z';
 
 /** Rich entities for NF1-focused Article / BlogPosting `mentions`. */
 export const NF1_KOSELUGO_SCHEMA_MENTIONS: ReadonlyArray<Record<string, unknown>> = [
@@ -28,6 +28,14 @@ export const NF1_KOSELUGO_SCHEMA_MENTIONS: ReadonlyArray<Record<string, unknown>
     name: 'Neurofibromatosis type 1',
     alternateName: ['NF1', 'von Recklinghausen disease'],
     url: 'https://www.ncbi.nlm.nih.gov/books/NBK1109/',
+  },
+  {
+    '@type': 'Drug',
+    name: 'Mirdametinib',
+    alternateName: ['EZMEKLY', 'GOMEKLI'],
+    description:
+      'Oral small-molecule MEK1/MEK2 inhibitor. Marketed as EZMEKLY in the EU (European Commission conditional marketing authorisation, 17 July 2025) and as GOMEKLI in the US for symptomatic, inoperable NF1-associated plexiform neurofibromas in adults and children aged 2 years and above.',
+    url: 'https://www.ema.europa.eu/en/medicines/human/EPAR/ezmekly',
   },
 ];
 
@@ -65,7 +73,7 @@ export const NF1_KOSELUGO_SCHEMA_FAQ: { question: string; answer: string }[] = [
   {
     question: 'What European regulatory context applies?',
     answer:
-      'The European Medicines Agency maintains a centrally authorised dossier for oral MEK inhibition in NF1 covering paediatric cohorts beginning at preschool ages (see EPAR dosing tables). Adults with symptomatic inoperable PNs received broader Commission marketing authorisations in autumn 2025, harmonising continental access with renewed pharmacovigilance obligations and national pricing dossiers.',
+      'The EU now hosts two centrally authorised oral MEK inhibitors for NF1: selumetinib (paediatric, ≥3 years) and mirdametinib, marketed as EZMEKLY, which received a conditional marketing authorisation from the European Commission on 17 July 2025 for symptomatic, inoperable plexiform neurofibromas in paediatric and adult patients aged ≥2 years. EZMEKLY (developed by SpringWorks Therapeutics, a healthcare company of Merck KGaA) is the first EU therapy covering both adults and children with NF1‑PN; its approval rests on the single‑arm Phase 2b ReNeu study (n=114; confirmed objective response rate 41% in adults, 52% in children) and carries conditional‑approval evidence commitments reviewed at least annually, alongside national pricing dossiers and renewed pharmacovigilance obligations. The same molecule is marketed as GOMEKLI in the US. ',
   },
   {
     question: 'How should pharmaceutical teams localize NF1 forecasting?',
@@ -87,7 +95,7 @@ export const NF1_KOSELUGO_SCHEMA_FAQ: { question: string; answer: string }[] = [
 export const NF1_KOSELUGO_EXECUTIVE_SUMMARY_HTML = `<p><strong>Three commercial signals pharma strategists weigh for NF1 in 2026</strong></p>
 <ul>
 <li><strong>Expanded treatable adulthood</strong> — US approval (Nov 2025) stretches addressable PN patients beyond pediatric centres into adult neurologist/oncologist clinics; forecast models must refactor centre mix and persistence assumptions.</li>
-<li><strong>Parallel EU harmonisation</strong> — Autumn 2025 European Commission uptake for adults creates near‑simultaneous transatlantic brand planning—localized pharmacovigilance and SmPC divergence still matter.</li>
+<li><strong>EU dual‑cohort approval</strong> — On 17 July 2025 the European Commission granted EZMEKLY (mirdametinib) a conditional marketing authorisation — the first EU therapy for both adults and children (≥2 y) with symptomatic inoperable NF1‑PN — creating near‑simultaneous transatlantic brand planning where localized pharmacovigilance, conditional‑approval evidence commitments, and SmPC divergence still matter.</li>
 <li><strong>Portfolio crowding readiness</strong> — Additional MEK / combination entrants in oncology pipelines raise future share erosion scenarios; competitive intelligence trackers should embed neurology tumour board analogues—not only sarcoma comps.</li>
 <li><strong>Operational note</strong> — Pair qualitative depth with reproducible incidence‑aware quantitative cores using the methodologies on our <a href="/methodology">healthcare research methodology hub</a> and comparative tender intelligence on the <a href="/gcc-pharma-market-report-2026">GCC pharmaceutical market snapshot 2026</a>.</li>
 </ul>`;
@@ -126,7 +134,7 @@ export const NF1_KOSELUGO_BODY_HTML = `<p>This brief is informational market res
   </thead>
   <tbody>
     <tr><td>United States FDA</td><td>First approval Apr 2020 paediatrics ≥2 y symptomatic inoperable PNs; iterative label expansions through 2025 including paediatrics ≥1 y and adults with symptomatic inoperable PNs (Nov 2025).</td><td>Widened prescriber base &amp; multi‑lifecycle pricing analogues akin other chronic oral rare tumour therapies.</td></tr>
-    <tr><td>EU / European Commission</td><td>Centralised paediatric authorisation preceded adult extension (Commission decision Oct 2025 cluster).</td><td>Parallel EU–US tenders &amp; early access dossier harmonisation feasibility—still subject national pricing corridors.</td></tr>
+    <tr><td>EU / European Commission</td><td>Two oral MEK inhibitors now authorised: selumetinib (paediatric ≥3 y) and mirdametinib — EZMEKLY — granted conditional marketing authorisation on 17 July 2025 for symptomatic inoperable PNs in adults and children ≥2 y — the first EU therapy covering both cohorts (Phase 2b ReNeu, n=114; confirmed ORR 41% adults / 52% children).</td><td>Adult EU access is now concrete, not deferred; brand planning shifts to head‑to‑head positioning versus the incumbent paediatric therapy, conditional‑approval evidence commitments, and national pricing corridors. Same molecule = GOMEKLI in the US.</td></tr>
     <tr><td>Other geography analogues</td><td>SFDA NHIC alignment in Gulf states &amp; UK NHS ICS frameworks—localized tender intelligence required.</td><td>Use BioNixus Saudi/UAE dossier rehearsals &amp; tender analytics cross‑linked below.</td></tr>
   </tbody>
 </table>
@@ -199,7 +207,7 @@ export const NF1_KOSELUGO_HARDCODED_POST: BlogPost = {
   slug: NF1_KOSELUGO_BLOG_SLUG,
   title: NF1_KOSELUGO_DISPLAY_TITLE,
   excerpt:
-    'Neurofibromatosis type 1 tumour burden, oral MEK inhibition—FDA approvals for paediatrics (Apr 2020; expanded ≥1 y Sept 2025) and adults (Nov 2025)—EU adult expansion Autumn 2025. Commercial research design for specialists, carers, tenders, analogue analogies.',
+    'Neurofibromatosis type 1 tumour burden, oral MEK inhibition—FDA approvals for paediatrics (Apr 2020; expanded ≥1 y Sept 2025) and adults (Nov 2025)—EU EZMEKLY (mirdametinib) conditional approval 17 Jul 2025. Commercial research design for specialists, carers, tenders, analogue analogies.',
   date: '26 May 2026',
   category: 'Rare Disease',
   country: 'Global',

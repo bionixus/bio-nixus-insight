@@ -108,7 +108,7 @@ const HeroSection = () => {
               {t.hero.trustBar} <strong className="text-white/90">{t.hero.trustCountries}</strong>
             </p>
             <div className="flex flex-wrap gap-3">
-              {t.hero.complianceBadges.map((badge, i) => (
+              {(t.hero.complianceBadges ?? []).map((badge, i) => (
                 <span
                   key={i}
                   className="px-3 py-1.5 rounded-md bg-white/10 text-white/90 text-xs font-medium"

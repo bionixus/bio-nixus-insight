@@ -1697,7 +1697,9 @@ export const translations = {
       serviceHighlights: ['Pesquisa farmacêutica com conformidade ANVISA', 'Evidências HEOR para CONITEC', 'Mapeamento de KOLs no Brasil e América Latina', 'Pesquisa FMCG e saúde do consumidor', 'Cobertura Brasil • América Latina • Europa • MENA'],
       cta: 'Solicitar Proposta',
       ctaSecondary: 'Ver Casos de Estudo da BioNixus',
-      trustBar: 'Confiado por empresas farmacêuticas em',
+      trustBar: 'Evidências prontas para decisão para equipes farmacêuticas, biotech e medtech, em',
+      trustCountries: 'Brasil • América Latina • Europa • Reino Unido • MENA',
+      complianceBadges: ['Conformidade ANVISA', 'LGPD', 'EMA Aligned', 'GDPR Compliant', 'ICH-GCP'],
     },
     services: {
       title: 'Serviços de Pesquisa de Mercado',
