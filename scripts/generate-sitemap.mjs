@@ -307,6 +307,7 @@ const staticPages = [
   { path: '/insights/top-healthcare-market-research-companies-jordan-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-lebanon-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-belgium-2026', priority: '0.88', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-egypt-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-market-research-companies-iraq-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/insights/top-market-research-companies-jordan-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/insights/top-market-research-companies-lebanon-2026', priority: '0.85', changefreq: 'monthly' },

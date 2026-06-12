@@ -9,6 +9,12 @@
 import type { CountryListicleConfig } from './types';
 
 // GCC (general)
+import { uaeGeneralEn } from './gcc/uae.general.en';
+import { dubaiGeneralEn } from './gcc/dubai.general.en';
+import { abuDhabiGeneralEn } from './gcc/abu-dhabi.general.en';
+import { ksaGeneralEn } from './gcc/ksa.general.en';
+import { ksaHealthcareEn } from './gcc/ksa.healthcare.en';
+import { riyadhGeneralEn } from './gcc/riyadh.general.en';
 import { qatarGeneralEn } from './gcc/qatar.general.en';
 import { qatarGeneralAr } from './gcc/qatar.general.ar';
 import { qatarHealthcareEn } from './gcc/qatar.healthcare.en';
@@ -18,6 +24,7 @@ import { bahrainGeneralEn } from './gcc/bahrain.general.en';
 import { bahrainHealthcareEn } from './gcc/bahrain.healthcare.en';
 import { kuwaitGeneralEn } from './gcc/kuwait.general.en';
 import { kuwaitGeneralAr } from './gcc/kuwait.general.ar';
+import { kuwaitHealthcareEn } from './gcc/kuwait.healthcare.en';
 
 // MENA / Levant / North Africa
 import { jordanGeneralEn } from './mena/jordan.general.en';
@@ -28,6 +35,7 @@ import { iraqGeneralEn } from './mena/iraq.general.en';
 import { moroccoGeneralEn } from './mena/morocco.general.en';
 import { algeriaGeneralEn } from './mena/algeria.general.en';
 import { tunisiaGeneralEn } from './mena/tunisia.general.en';
+import { egyptHealthcareEn } from './mena/egypt.healthcare.en';
 
 // Africa
 import { southAfricaGeneralEn } from './africa/south-africa.general.en';
@@ -60,6 +68,12 @@ import { peruHealthcareEn } from './latam/peru.healthcare.en';
 
 export const allListicleConfigs: CountryListicleConfig[] = [
   // GCC general
+  uaeGeneralEn,
+  dubaiGeneralEn,
+  abuDhabiGeneralEn,
+  ksaGeneralEn,
+  ksaHealthcareEn,
+  riyadhGeneralEn,
   qatarGeneralEn,
   qatarGeneralAr,
   qatarHealthcareEn,
@@ -69,6 +83,7 @@ export const allListicleConfigs: CountryListicleConfig[] = [
   bahrainHealthcareEn,
   kuwaitGeneralEn,
   kuwaitGeneralAr,
+  kuwaitHealthcareEn,
   // MENA
   jordanGeneralEn,
   jordanHealthcareEn,
@@ -78,6 +93,7 @@ export const allListicleConfigs: CountryListicleConfig[] = [
   moroccoGeneralEn,
   algeriaGeneralEn,
   tunisiaGeneralEn,
+  egyptHealthcareEn,
   // Africa
   southAfricaGeneralEn,
   nigeriaGeneralEn,
