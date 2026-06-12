@@ -36,6 +36,7 @@ import {
   getIndustryListiclePath,
   type MatrixCountrySlug,
 } from '@/data/industryMarketResearchMatrix';
+import { allListicleConfigs } from '@/data/topCompanies';
 
 const MATRIX_COUNTRY_ORDER: MatrixCountrySlug[] = ['saudi-arabia', 'uae', 'egypt'];
 
@@ -277,6 +278,7 @@ const tocNav = [
   { id: 'section-services', label: 'Services' },
   { id: 'section-pharma', label: 'Pharma guides' },
   { id: 'section-reports', label: 'Market reports' },
+  { id: 'section-listicles', label: 'Company guides' },
   { id: 'section-industry', label: 'Industry matrix' },
   { id: 'section-healthcare', label: 'Healthcare geography' },
   { id: 'section-locales', label: 'Languages' },
@@ -695,6 +697,36 @@ export default function SiteMapPage() {
                       </li>
                     ))}
                   </ul>
+                </SectionShell>
+
+                <SectionShell
+                  id="section-listicles"
+                  icon={Radar}
+                  title="Top market research company guides (2026)"
+                  description="Independent, data-driven listicles ranking the best market research and healthcare research companies by country — GCC, MENA, Africa, Europe, and LATAM."
+                  countLabel={`${allListicleConfigs.length} guides`}
+                >
+                  {(['gcc', 'mena', 'africa', 'europe', 'latam'] as const).map((region) => {
+                    const regionConfigs = allListicleConfigs.filter((c) => c.region === region);
+                    if (!regionConfigs.length) return null;
+                    const regionLabels: Record<string, string> = {
+                      gcc: 'GCC', mena: 'MENA', africa: 'Africa', europe: 'Europe', latam: 'LATAM',
+                    };
+                    return (
+                      <div key={region} className="mb-6 last:mb-0">
+                        <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                          {regionLabels[region]}
+                        </h3>
+                        <ul className="grid gap-2 sm:grid-cols-2">
+                          {regionConfigs.map((config) => (
+                            <li key={config.slug}>
+                              <PremiumInternalLink to={config.slug}>{config.breadcrumb.current}</PremiumInternalLink>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    );
+                  })}
                 </SectionShell>
 
                 <SectionShell
