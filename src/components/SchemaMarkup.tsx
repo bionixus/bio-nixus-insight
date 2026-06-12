@@ -51,6 +51,8 @@ type BlogSchemaProps = {
   keywords?: string[]
   /** Entities linked to this article (therapy area, branded drug facts, etc.). */
   schemaMentions?: ReadonlyArray<Record<string, unknown>>
+  /** Schema.org `about` — primary topic(s) of the article (e.g. therapy area, disease). */
+  about?: ReadonlyArray<Record<string, unknown>>
   breadcrumb: BreadcrumbItem[]
   faqItems?: FaqItem[]
   itemList?: { name: string; items: ItemListEntry[] }
@@ -238,7 +240,7 @@ function isValidSchemaNode(node: Record<string, unknown>): boolean {
     return isNonEmptyString(node.url) && isNonEmptyString(node.name)
   }
 
-  if (type === 'Service') {
+  if (type === 'Service' || type === 'ProfessionalService') {
     return isNonEmptyString(node.name) && isNonEmptyString(node.description)
   }
 
@@ -325,6 +327,9 @@ function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[] {
         : {}),
       ...(props.schemaMentions && props.schemaMentions.length > 0
         ? { mentions: props.schemaMentions.map((m) => ({ ...m })) }
+        : {}),
+      ...(props.about && props.about.length > 0
+        ? { about: props.about.length === 1 ? { ...props.about[0] } : props.about.map((a) => ({ ...a })) }
         : {}),
       author: {
         '@type': 'Person',
@@ -436,12 +441,13 @@ function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[] {
     const nodes: Record<string, unknown>[] = [
       {
         '@context': 'https://schema.org',
-        '@type': 'Service',
+        '@type': 'ProfessionalService',
         name: props.serviceName,
         description: props.serviceDescription,
         url: toHttpsUrl(props.pageUrl),
         provider: { '@id': ORG_ID },
         areaServed: props.providerAreaServed || 'EMEA',
+        serviceType: props.serviceName,
         inLanguage,
       },
       buildBreadcrumb(props.breadcrumb, inLanguage),

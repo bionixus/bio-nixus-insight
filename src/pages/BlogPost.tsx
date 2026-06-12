@@ -1136,6 +1136,10 @@ const BlogPost = () => {
               ? [...q2PharmaSchemaBundle.mentions]
               : undefined
         }
+        about={[{
+          '@type': 'Thing',
+          name: post.category?.trim() || 'Healthcare market research',
+        }]}
         authorName={post.authorName?.trim() || 'BioNixus Research Team'}
         authorUrl={post.authorLinkedIn || 'https://www.linkedin.com/in/mohammad-alsaadany'}
         authorJobTitle={post.authorTitle?.trim() || 'Healthcare Market Research Lead'}

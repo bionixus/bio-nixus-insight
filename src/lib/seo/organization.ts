@@ -76,6 +76,12 @@ export const ORG_AREA_SERVED: Array<Record<string, string>> = [
   { '@type': 'Country', name: 'Australia' },
 ];
 
+export const ORG_NUMBER_OF_EMPLOYEES = {
+  '@type': 'QuantitativeValue',
+  minValue: 50,
+  maxValue: 100,
+};
+
 export const ORG_ADDRESS = [
   {
     '@type': 'PostalAddress',
@@ -91,6 +97,31 @@ export const ORG_ADDRESS = [
     addressLocality: 'London',
     postalCode: 'EC1V 2NX',
     addressCountry: 'GB',
+  },
+  {
+    '@type': 'PostalAddress',
+    addressLocality: 'Cairo',
+    addressCountry: 'EG',
+  },
+  {
+    '@type': 'PostalAddress',
+    addressLocality: 'Riyadh',
+    addressCountry: 'SA',
+  },
+  {
+    '@type': 'PostalAddress',
+    addressLocality: 'Dubai',
+    addressCountry: 'AE',
+  },
+  {
+    '@type': 'PostalAddress',
+    addressLocality: 'Kuwait City',
+    addressCountry: 'KW',
+  },
+  {
+    '@type': 'PostalAddress',
+    addressLocality: 'São Paulo',
+    addressCountry: 'BR',
   },
 ];
 
@@ -117,6 +148,7 @@ export function buildCanonicalOrganization(inLanguage?: string): Record<string, 
     '@id': ORG_ID,
     name: ORG_NAME,
     foundingDate: ORG_FOUNDING_DATE,
+    numberOfEmployees: ORG_NUMBER_OF_EMPLOYEES,
     url: BASE_URL,
     logo: ORG_LOGO,
     image: [ORG_IMAGE],
@@ -124,6 +156,10 @@ export function buildCanonicalOrganization(inLanguage?: string): Record<string, 
     knowsAbout: ORG_KNOWS_ABOUT,
     sameAs: ORG_SAME_AS,
     address: ORG_ADDRESS,
+    location: ORG_ADDRESS.map((addr) => ({
+      '@type': 'Place',
+      address: addr,
+    })),
     contactPoint: ORG_CONTACT_POINT,
     areaServed: ORG_AREA_SERVED,
     ...(inLanguage ? { inLanguage } : {}),

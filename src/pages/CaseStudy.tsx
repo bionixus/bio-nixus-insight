@@ -333,6 +333,10 @@ const CaseStudyPage = () => {
         ogImageHeight={720}
         articleSection={(caseStudy.category || 'Case studies').trim()}
         keywords={displayTags.length > 0 ? [...displayTags] : undefined}
+        about={[{
+          '@type': 'Thing',
+          name: (caseStudy.category || 'Healthcare market research').trim(),
+        }]}
         authorName={caseStudy.authorName || 'BioNixus Research Team'}
         breadcrumb={[
           { name: 'Home', item: `${BIONIXUS_ORIGIN}/` },

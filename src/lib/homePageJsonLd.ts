@@ -60,7 +60,7 @@ export function buildHomeServiceJsonLdNodes(language: Language): Record<string, 
     const description = buildServiceDescription(item).slice(0, 8000);
     return {
       '@context': 'https://schema.org',
-      '@type': 'Service',
+      '@type': 'ProfessionalService',
       name,
       description,
       url: toHttpsUrl(path),
@@ -104,6 +104,10 @@ export function buildHomeArticleJsonLdNodes(
       headline: post.title.trim(),
       description: (post.excerpt || post.title).trim().slice(0, 5000),
       image: [image],
+      about: {
+        '@type': 'Thing',
+        name: 'Healthcare market research',
+      },
       author: {
         '@type': 'Person',
         name: post.authorName?.trim() || 'BioNixus Editorial',

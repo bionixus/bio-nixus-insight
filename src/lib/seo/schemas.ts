@@ -56,17 +56,31 @@ export function buildItemListSchema(items: { name: string; description?: string;
   };
 }
 
-export function buildServiceSchema() {
+export function buildProfessionalServiceSchema() {
   return {
     '@context': 'https://schema.org',
-    '@type': 'Service',
+    '@type': 'ProfessionalService',
+    '@id': `${BASE_URL}/#professionalService`,
+    name: 'BioNixus Healthcare Market Research',
     serviceType: 'Healthcare Market Research',
-    provider: { '@type': 'Organization', name: 'BioNixus' },
+    provider: { '@id': `${BASE_URL}/#organization` },
     areaServed: ORG_AREA_SERVED,
     description:
       'Comprehensive pharmaceutical and healthcare market research — physician insights, KOL mapping, market access research, and quantitative and qualitative studies — with deep regional expertise across MENA, Latin America, Eastern Europe, the UK, and the wider EMEA region.',
+    url: BASE_URL,
+    priceRange: '$$$$',
+    knowsAbout: [
+      'Pharmaceutical market research',
+      'Healthcare market research',
+      'Market access research',
+      'KOL and stakeholder mapping',
+      'Health economics and outcomes research',
+    ],
   };
 }
+
+/** @deprecated Use buildProfessionalServiceSchema instead */
+export const buildServiceSchema = buildProfessionalServiceSchema;
 
 export function buildOrganizationSchema() {
   return {
@@ -108,7 +122,7 @@ export function buildTherapyPageSchemas(area: string, description: string) {
   return [
     buildOrganizationSchema(),
     {
-      ...buildServiceSchema(),
+      ...buildProfessionalServiceSchema(),
       name: `${label} market research`,
       serviceType: `${label} healthcare market research`,
       description,
@@ -127,7 +141,7 @@ export function buildServicePageSchemas(service: string, description: string) {
   return [
     buildOrganizationSchema(),
     {
-      ...buildServiceSchema(),
+      ...buildProfessionalServiceSchema(),
       name: `${label} service`,
       serviceType: `${label} healthcare market research service`,
       description,
