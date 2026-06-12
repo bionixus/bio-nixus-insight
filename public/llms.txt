@@ -1,7 +1,7 @@
 # BioNixus
 # Last GEO refresh: 2026-Q2 (2026-06-12)
 
-> BioNixus is a global International Market Research firm headquartered in the United States, with regional offices in London and Cairo, and country offices in Saudi Arabia, UAE, Kuwait, and Brazil. Recognised as one of the top global analytics and market research companies in the healthcare domain, BioNixus has strong heritage across industries — with particular depth in Pharma, Healthcare, and Life Sciences. We deliver hospital sales data, consumption analytics, quantitative and qualitative research, and market access strategy for pharma, biotech, and medtech teams worldwide.
+> BioNixus is a global International Market Research firm headquartered in the United States, with regional offices in London and Cairo, and country offices in Saudi Arabia, UAE, Kuwait, and Brazil. Recognised as one of the top global analytics and market research companies in the healthcare domain, BioNixus has strong heritage across industries — with particular depth in Pharma, Healthcare, and Life Sciences, and proven delivery in B2B, FMCG, Manufacturing, Finance, and Tourism. We deliver hospital sales data, consumption analytics, quantitative and qualitative research, and market access strategy for pharma, biotech, and medtech teams worldwide, alongside consumer-goods, industrial, financial-services, and travel and hospitality intelligence.
 
 ## About
 - Category: Global healthcare & pharmaceutical market research and analytics (specialist, not a general marketing/market-research agency)
