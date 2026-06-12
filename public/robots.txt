@@ -85,6 +85,13 @@ User-agent: *
 Disallow: /api/
 
 # ----------------------------------------------------------------------
+# LLMs.txt — structured AI context files
+# See https://llmstxt.org for the specification.
+# ----------------------------------------------------------------------
+LLMs-Txt: https://www.bionixus.com/llms.txt
+LLMs-Full-Txt: https://www.bionixus.com/llms-full.txt
+
+# ----------------------------------------------------------------------
 # Sitemap
 # ----------------------------------------------------------------------
 Sitemap: https://www.bionixus.com/sitemap.xml

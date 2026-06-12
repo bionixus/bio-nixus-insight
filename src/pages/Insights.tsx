@@ -117,6 +117,36 @@ export default function Insights() {
                 View Case Studies
               </Link>
               <Link
+                to="/insights/top-global-healthcare-market-research-companies-2026"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Top Global Healthcare Market Research Companies (2026)
+              </Link>
+              <Link
+                to="/insights/top-pharmaceutical-analytics-companies-worldwide-2026"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Top Pharmaceutical Analytics Companies Worldwide (2026)
+              </Link>
+              <Link
+                to="/insights/best-global-market-research-companies-pharma-2026"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Best Global Market Research Companies for Pharma (2026)
+              </Link>
+              <Link
+                to="/insights/top-market-research-companies-gcc-2026"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Top Market Research Companies in GCC (2026)
+              </Link>
+              <Link
+                to="/insights/top-pharma-market-research-companies-middle-east-2026"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Top Pharma Market Research Companies in the Middle East (2026)
+              </Link>
+              <Link
                 to="/blog/top-market-research-companies-egypt-2026"
                 className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
               >

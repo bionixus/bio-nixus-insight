@@ -92,6 +92,11 @@ import ArMarketResearchKsa from '@/pages/ArMarketResearchKsa';
 import ArMarketResearchSaudi from '@/pages/ArMarketResearchSaudi';
 import ArMarketResearchKuwait from '@/pages/ArMarketResearchKuwait';
 import ArMarketResearchEgypt from '@/pages/ArMarketResearchEgypt';
+import TopGlobalHealthcareMarketResearchCompanies2026 from '@/pages/TopGlobalHealthcareMarketResearchCompanies2026';
+import TopPharmaceuticalAnalyticsCompaniesWorldwide2026 from '@/pages/TopPharmaceuticalAnalyticsCompaniesWorldwide2026';
+import BestGlobalMarketResearchCompaniesPharma2026 from '@/pages/BestGlobalMarketResearchCompaniesPharma2026';
+import TopMarketResearchCompaniesGcc2026 from '@/pages/TopMarketResearchCompaniesGcc2026';
+import TopPharmaMarketResearchCompaniesMiddleEast2026 from '@/pages/TopPharmaMarketResearchCompaniesMiddleEast2026';
 import TopMarketResearchCompaniesEgypt2026 from '@/pages/TopMarketResearchCompaniesEgypt2026';
 import ArTopMarketResearchCompaniesEgypt2026 from '@/pages/ArTopMarketResearchCompaniesEgypt2026';
 import TopMarketResearchCompaniesSaudiArabia2026 from '@/pages/TopMarketResearchCompaniesSaudiArabia2026';
@@ -167,6 +172,12 @@ import PtTopMarketResearchCompaniesBrazil2026 from '@/pages/PtTopMarketResearchC
 import PtTopHealthcareMarketResearchCompaniesBrazil2026 from '@/pages/PtTopHealthcareMarketResearchCompaniesBrazil2026';
 import EsTopMarketResearchCompaniesArgentina2026 from '@/pages/EsTopMarketResearchCompaniesArgentina2026';
 import EsTopHealthcareMarketResearchCompaniesArgentina2026 from '@/pages/EsTopHealthcareMarketResearchCompaniesArgentina2026';
+import TopOncologyMarketResearchCompanies2026 from '@/pages/TopOncologyMarketResearchCompanies2026';
+import TopObesityMarketResearchCompanies2026 from '@/pages/TopObesityMarketResearchCompanies2026';
+import BestObesityWeightManagementMarketResearchFirms2026 from '@/pages/BestObesityWeightManagementMarketResearchFirms2026';
+import LeadingBiologicsBiosimilarsMarketResearchCompanies2026 from '@/pages/LeadingBiologicsBiosimilarsMarketResearchCompanies2026';
+import BestRareDiseaseMarketResearchCompanies2026 from '@/pages/BestRareDiseaseMarketResearchCompanies2026';
+import TopConsumerHealthcareMarketResearchFirms2026 from '@/pages/TopConsumerHealthcareMarketResearchFirms2026';
 
 const AdminDashboard = lazy(() => import('@/pages/AdminDashboard'));
 const AdminLogin = lazy(() => import('@/pages/AdminLogin'));
@@ -282,6 +293,11 @@ export const routes: RouteObject[] = [
   { path: '/pharmaceutical-companies-kuwait', element: <KuwaitPharmaCompanies /> },
   { path: '/pharmaceutical-companies-saudi-arabia', element: <SaudiPharmaCompanies /> },
   { path: '/pharmaceutical-companies-uae', element: <UaePharmaCompanies /> },
+  { path: '/insights/top-global-healthcare-market-research-companies-2026', element: <TopGlobalHealthcareMarketResearchCompanies2026 /> },
+  { path: '/insights/top-pharmaceutical-analytics-companies-worldwide-2026', element: <TopPharmaceuticalAnalyticsCompaniesWorldwide2026 /> },
+  { path: '/insights/best-global-market-research-companies-pharma-2026', element: <BestGlobalMarketResearchCompaniesPharma2026 /> },
+  { path: '/insights/top-market-research-companies-gcc-2026', element: <TopMarketResearchCompaniesGcc2026 /> },
+  { path: '/insights/top-pharma-market-research-companies-middle-east-2026', element: <TopPharmaMarketResearchCompaniesMiddleEast2026 /> },
   { path: '/insights/top-market-research-companies-egypt-2026', element: <TopMarketResearchCompaniesEgypt2026 /> },
   { path: '/ar/insights/top-market-research-companies-egypt-2026', element: <ArTopMarketResearchCompaniesEgypt2026 /> },
   { path: '/insights/top-market-research-companies-ksa-2026', element: <Navigate to="/insights/top-market-research-companies-saudi-arabia-2026" replace /> },
@@ -300,6 +316,12 @@ export const routes: RouteObject[] = [
   { path: '/pt/insights/top-empresas-pesquisa-mercado-saude-brasil-2026', element: <PtTopHealthcareMarketResearchCompaniesBrazil2026 /> },
   { path: '/es/insights/top-empresas-investigacion-mercado-argentina-2026', element: <EsTopMarketResearchCompaniesArgentina2026 /> },
   { path: '/es/insights/top-empresas-investigacion-mercado-salud-argentina-2026', element: <EsTopHealthcareMarketResearchCompaniesArgentina2026 /> },
+  { path: '/insights/top-oncology-market-research-companies-2026', element: <TopOncologyMarketResearchCompanies2026 /> },
+  { path: '/insights/top-obesity-market-research-companies-2026', element: <TopObesityMarketResearchCompanies2026 /> },
+  { path: '/insights/best-obesity-weight-management-market-research-firms-2026', element: <BestObesityWeightManagementMarketResearchFirms2026 /> },
+  { path: '/insights/leading-biologics-biosimilars-market-research-companies-2026', element: <LeadingBiologicsBiosimilarsMarketResearchCompanies2026 /> },
+  { path: '/insights/best-rare-disease-market-research-companies-2026', element: <BestRareDiseaseMarketResearchCompanies2026 /> },
+  { path: '/insights/top-consumer-healthcare-market-research-firms-2026', element: <TopConsumerHealthcareMarketResearchFirms2026 /> },
   { path: '/pharmaceutical-companies-egypt', element: <EgyptPharmaCompanies /> },
   { path: '/pharmaceutical-companies-qatar', element: <QatarPharmaCompanies /> },
   { path: '/pharmaceutical-companies-oman', element: <OmanPharmaCompanies /> },

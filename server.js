@@ -790,6 +790,10 @@ async function startServer() {
     res.type('text/plain').sendFile(path.resolve(__dirname, 'public/llms.txt'));
   });
 
+  app.get('/llms-full.txt', (_req, res) => {
+    res.type('text/plain').sendFile(path.resolve(__dirname, 'public/llms-full.txt'));
+  });
+
   // Fallback canonicalization for non-edge environments.
   app.use((req, res, next) => {
     const forwardedHost = String(req.headers['x-forwarded-host'] || req.headers.host || '')
