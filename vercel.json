@@ -66,6 +66,51 @@
   ],
   "redirects": [
     {
+      "source": "/market-research/uae",
+      "destination": "/market-research-in-uae",
+      "statusCode": 301
+    },
+    {
+      "source": "/market-research/uae/",
+      "destination": "/market-research-in-uae",
+      "statusCode": 301
+    },
+    {
+      "source": "/market-research/saudi-arabia",
+      "destination": "/market-research-in-saudi-arabia",
+      "statusCode": 301
+    },
+    {
+      "source": "/market-research/saudi-arabia/",
+      "destination": "/market-research-in-saudi-arabia",
+      "statusCode": 301
+    },
+    {
+      "source": "/market-research/ksa",
+      "destination": "/market-research-in-saudi-arabia",
+      "statusCode": 301
+    },
+    {
+      "source": "/market-research/egypt",
+      "destination": "/market-research-in-egypt",
+      "statusCode": 301
+    },
+    {
+      "source": "/market-research/egypt/",
+      "destination": "/market-research-in-egypt",
+      "statusCode": 301
+    },
+    {
+      "source": "/market-research/kuwait",
+      "destination": "/market-research-kuwait",
+      "statusCode": 301
+    },
+    {
+      "source": "/market-research/qatar",
+      "destination": "/healthcare-market-research/qatar",
+      "statusCode": 301
+    },
+    {
       "source": "/healthcare-market-research/united-kingdom",
       "destination": "/healthcare-market-research/uk",
       "statusCode": 301
