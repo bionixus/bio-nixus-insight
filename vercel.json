@@ -107,7 +107,12 @@
     },
     {
       "source": "/market-research/qatar",
-      "destination": "/healthcare-market-research/qatar",
+      "destination": "/insights/top-market-research-companies-qatar-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/market-research/qatar/",
+      "destination": "/insights/top-market-research-companies-qatar-2026",
       "statusCode": 301
     },
     {
