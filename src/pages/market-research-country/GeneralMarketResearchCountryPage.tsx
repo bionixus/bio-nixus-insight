@@ -15,21 +15,23 @@ export type GeneralMRPageContent = {
   countryLabel: string;
   healthcarePageLink: string;
   healthcarePageLabel: string;
-  industries: Array<{
-    name: string;
-    description: string;
-    isHealthcare?: boolean;
-  }>;
-  services: Array<{ title: string; description: string }>;
+  industries: Array<{ name: string; detail: string; isHealthcare?: boolean }>;
+  audiences: Array<{ type: string; description: string }>;
   methodology: string[];
+  marketContext: { heading: string; paragraphs: string[] };
+  topCompanies: Array<{
+    name: string;
+    type: string;
+    specialty: string;
+    countryPresence: string;
+    isBionixus?: boolean;
+  }>;
   whyBionixus: { heading: string; points: string[] };
   faqs: Array<{ question: string; answer: string }>;
   relatedLinks: Array<{ to: string; label: string }>;
 };
 
-type Props = {
-  content: GeneralMRPageContent;
-};
+type Props = { content: GeneralMRPageContent };
 
 export default function GeneralMarketResearchCountryPage({ content }: Props) {
   const {
@@ -42,8 +44,10 @@ export default function GeneralMarketResearchCountryPage({ content }: Props) {
     healthcarePageLink,
     healthcarePageLabel,
     industries,
-    services,
+    audiences,
     methodology,
+    marketContext,
+    topCompanies,
     whyBionixus,
     faqs,
     relatedLinks,
@@ -55,10 +59,7 @@ export default function GeneralMarketResearchCountryPage({ content }: Props) {
       '@type': 'Service',
       name: h1,
       serviceType: 'Market Research',
-      areaServed: {
-        '@type': 'Country',
-        name: countryLabel,
-      },
+      areaServed: { '@type': 'Country', name: countryLabel },
       provider: {
         '@type': 'Organization',
         '@id': 'https://www.bionixus.com/#organization',
@@ -95,82 +96,137 @@ export default function GeneralMarketResearchCountryPage({ content }: Props) {
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed mb-4">{intro}</p>
             <p className="text-muted-foreground leading-relaxed">
-              For healthcare and pharmaceutical research, see our{' '}
+              Looking specifically for healthcare &amp; pharmaceutical research?{' '}
               <Link to={healthcarePageLink} className="text-primary underline font-medium">
                 {healthcarePageLabel}
-              </Link>
-              .
+              </Link>{' '}
+              covers HCP, KOL, patient, and payer studies for pharma teams.
             </p>
           </div>
         </section>
 
-        {/* Industries */}
+        {/* Industries — 3-col grid matching HC page */}
         <section className="section-padding py-10">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
               Industries we cover in {countryLabel}
             </h2>
-            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
-              {industries.map((industry) => (
-                <article key={industry.name} className="rounded-xl border border-border bg-card p-5">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {industries.map((ind) => (
+                <article key={ind.name} className="rounded-xl border border-border bg-card p-5">
                   <h3 className="text-base font-semibold text-foreground mb-2">
-                    {industry.isHealthcare ? (
+                    {ind.isHealthcare ? (
                       <Link to={healthcarePageLink} className="text-primary hover:underline">
-                        {industry.name}
+                        {ind.name}
                       </Link>
                     ) : (
-                      industry.name
+                      ind.name
                     )}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{industry.description}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{ind.detail}</p>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Services */}
+        {/* Audiences — 2-col grid matching HC page */}
         <section className="section-padding py-10 bg-muted/20">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
-              Market research services in {countryLabel}
+              Who commissions market research in {countryLabel}
             </h2>
             <div className="grid md:grid-cols-2 gap-4">
-              {services.map((service) => (
-                <article key={service.title} className="rounded-xl border border-border bg-card p-5">
-                  <h3 className="text-lg font-semibold text-foreground mb-2">{service.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+              {audiences.map((a) => (
+                <article key={a.type} className="rounded-xl border border-border bg-card p-5">
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{a.type}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{a.description}</p>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Methodology */}
+        {/* Methodology — matching HC page prose style */}
         <section className="section-padding py-10">
           <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
               Research methodology and local panels
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
-              {methodology.map((paragraph) => (
-                <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+              {methodology.map((p) => (
+                <p key={p.slice(0, 48)}>{p}</p>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Why BioNixus */}
+        {/* Market context — matching HC "regulatory depth" prose style */}
         <section className="section-padding py-10 bg-muted/20">
           <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              {marketContext.heading}
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              {marketContext.paragraphs.map((p) => (
+                <p key={p.slice(0, 48)}>{p}</p>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Top companies — unique 2-col cards section */}
+        <section className="section-padding py-10">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-2">
+              Top market research companies in {countryLabel}
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              The {countryLabel} market research landscape includes both global networks and specialist firms. Here is an
+              overview of the leading companies, including BioNixus&rsquo;s position as a global research company
+              operating in the country.
+            </p>
+            <div className="grid md:grid-cols-2 gap-4">
+              {topCompanies.map((co) => (
+                <article
+                  key={co.name}
+                  className={`rounded-xl border p-5 ${
+                    co.isBionixus
+                      ? 'border-primary/40 bg-primary/5'
+                      : 'border-border bg-card'
+                  }`}
+                >
+                  <div className="flex items-start justify-between gap-3 mb-2">
+                    <h3 className="text-base font-semibold text-foreground">{co.name}</h3>
+                    <span className="text-xs text-muted-foreground border border-border rounded-full px-2 py-0.5 shrink-0">
+                      {co.type}
+                    </span>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-1">
+                    <span className="font-medium text-foreground/80">Specialty: </span>
+                    {co.specialty}
+                  </p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    <span className="font-medium text-foreground/80">In {countryLabel}: </span>
+                    {co.countryPresence}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Why BioNixus — matching HC checklist style */}
+        <section className="section-padding py-10 bg-muted/20">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
               {whyBionixus.heading}
             </h2>
             <ul className="grid sm:grid-cols-2 gap-3">
-              {whyBionixus.points.map((point) => (
-                <li key={point.slice(0, 48)} className="flex gap-2 text-muted-foreground leading-relaxed">
+              {whyBionixus.points.map((pt) => (
+                <li key={pt.slice(0, 48)} className="flex gap-2 text-muted-foreground leading-relaxed">
                   <span className="text-primary flex-shrink-0">✓</span>
-                  <span>{point}</span>
+                  <span>{pt}</span>
                 </li>
               ))}
             </ul>
@@ -180,7 +236,9 @@ export default function GeneralMarketResearchCountryPage({ content }: Props) {
         {/* Related links */}
         <section className="section-padding py-8">
           <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-xl font-semibold text-foreground mb-3">Related pages</h2>
+            <h2 className="text-xl font-semibold text-foreground mb-3">
+              Related market research resources
+            </h2>
             <div className="grid md:grid-cols-2 gap-3">
               {relatedLinks.map((link) => (
                 <Link
@@ -195,7 +253,7 @@ export default function GeneralMarketResearchCountryPage({ content }: Props) {
           </div>
         </section>
 
-        {/* FAQs */}
+        {/* FAQ */}
         <section className="section-padding py-8 bg-muted/20">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl font-semibold text-foreground mb-3">FAQs</h2>
