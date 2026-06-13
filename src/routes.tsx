@@ -85,6 +85,11 @@ import MarketResearchKsa from '@/pages/MarketResearchKsa';
 import MarketResearchSaudi from '@/pages/MarketResearchSaudi';
 import MarketResearchKuwait from '@/pages/MarketResearchKuwait';
 import MarketResearchEgypt from '@/pages/MarketResearchEgypt';
+import MarketResearchInUae from '@/pages/MarketResearchInUae';
+import MarketResearchInSaudiArabia from '@/pages/MarketResearchInSaudiArabia';
+import MarketResearchInEgypt from '@/pages/MarketResearchInEgypt';
+import HealthcareMarketResearchInUae from '@/pages/HealthcareMarketResearchInUae';
+import HealthcareMarketResearchInSaudiArabia from '@/pages/HealthcareMarketResearchInSaudiArabia';
 import Nf1PharmaMarketResearch from '@/pages/Nf1PharmaMarketResearch';
 import DesmoidTumorPharmaMarketResearch from '@/pages/DesmoidTumorPharmaMarketResearch';
 import ArMarketResearchUae from '@/pages/ArMarketResearchUae';
@@ -226,6 +231,11 @@ export const routes: RouteObject[] = [
   { path: '/market-research-saudi', element: <MarketResearchSaudi /> },
   { path: '/market-research-kuwait', element: <MarketResearchKuwait /> },
   { path: '/market-research-egypt', element: <MarketResearchEgypt /> },
+  { path: '/market-research-in-uae', element: <MarketResearchInUae /> },
+  { path: '/market-research-in-saudi-arabia', element: <MarketResearchInSaudiArabia /> },
+  { path: '/market-research-in-egypt', element: <MarketResearchInEgypt /> },
+  { path: '/healthcare-market-research-in-uae', element: <HealthcareMarketResearchInUae /> },
+  { path: '/healthcare-market-research-in-saudi-arabia', element: <HealthcareMarketResearchInSaudiArabia /> },
   { path: '/market-research-saudi-arabia-pharmaceutical', element: <MarketResearchSaudiArabiaPharmaceutical /> },
   { path: '/market-research-healthcare', element: <MarketResearchHealthcare /> },
   { path: '/de/market-research-healthcare', element: <MarketResearchHealthcare /> },
