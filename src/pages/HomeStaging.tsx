@@ -20,8 +20,8 @@ import HeroV2 from '@/components/home-v2/HeroV2';
 import AudienceSection from '@/components/home-v2/AudienceSection';
 import MarketAnalyticsSection from '@/components/home-v2/MarketAnalyticsSection';
 import ExitIntentDialog from '@/components/ExitIntentDialog';
+import EmeaSignalsV2 from '@/components/home-v2/EmeaSignalsV2';
 // Existing live sections reused on staging until each receives its v2 redesign.
-import EmeaSignalsSection from '@/components/home/EmeaSignalsSection';
 import ServicesSection from '@/components/ServicesSection';
 import StatsSection from '@/components/StatsSection';
 import BlogSection from '@/components/BlogSection';
@@ -115,7 +115,7 @@ const HomeStaging = () => {
       <Navbar />
       <main>
         <HeroV2 />
-        <EmeaSignalsSection />
+        <EmeaSignalsV2 />
         <ServicesSection />
         <AudienceSection />
         <StatsSection />
