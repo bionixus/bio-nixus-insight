@@ -70,6 +70,7 @@ import AiChatbotsLeadGeneration from '@/pages/AiChatbotsLeadGeneration';
 import GlobalWebsites from '@/pages/GlobalWebsites';
 import GlobalWebsiteCountry from '@/pages/GlobalWebsiteCountry';
 import PremiumHomePreview from '@/pages/PremiumHomePreview';
+import HomeStaging from '@/pages/HomeStaging';
 import ConfPortfolio from '@/pages/ConfPortfolio';
 import KuwaitPharmaCompanies from '@/pages/KuwaitPharmaCompanies';
 import SaudiPharmaCompanies from '@/pages/SaudiPharmaCompanies';
@@ -286,6 +287,7 @@ export const routes: RouteObject[] = [
   { path: '/global-websites/:countrySlug', element: <GlobalWebsiteCountry /> },
   { path: '/new-home', element: <PremiumHomePreview /> },
   { path: '/premium-home-preview', element: <PremiumHomePreview /> },
+  { path: '/home-staging', element: <HomeStaging /> },
   { path: '/strategic-portfolio', element: <ConfPortfolio /> },
   { path: '/strategic-portfolios', element: <ConfPortfolio /> },
   { path: '/ar/strategic-portfolio', element: <ConfPortfolio locale="ar" /> },

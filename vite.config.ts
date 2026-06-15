@@ -41,6 +41,10 @@ export default defineConfig(({ mode, isSsrBuild }) => ({
               ],
               sanity: ['@sanity/client', '@sanity/image-url', '@portabletext/react'],
               charts: ['recharts'],
+              // NOTE: three.js is intentionally NOT a manualChunk. It is only
+              // reached via the dynamic import in ClientOnly3D, so leaving it as
+              // an async-only chunk keeps it out of the entry's modulepreload set
+              // — visitors who get the static hero poster never download it.
               query: ['@tanstack/react-query'],
               'sanitize-html': ['sanitize-html'],
               icons: ['lucide-react'],
