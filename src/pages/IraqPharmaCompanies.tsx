@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { MarketResearchEquityLinks } from '@/components/seo/MarketResearchEquityLinks';
 import { Link } from 'react-router-dom';
 import { Share2, BookOpen, Building2, Globe, ShieldCheck, Pill, TrendingUp, BarChart3, Truck, Users } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -199,6 +200,7 @@ const IraqPharmaCompanies = () => {
         <section className="section-padding py-12" id="methodology"><div className="container-wide max-w-5xl mx-auto"><div className="bg-card border border-border rounded-xl p-8"><h2 className="text-xl font-display font-semibold text-foreground mb-4 flex items-center gap-2"><BookOpen className="w-5 h-5 text-primary" />Data Sources &amp; Methodology</h2><p className="text-sm text-muted-foreground leading-relaxed mb-4">This guide aggregates publicly available information from:</p><ul className="text-sm text-muted-foreground space-y-2 mb-6"><li>MOH and KIMADIA public information</li><li>BioNixus Middle East &amp; Africa market reports</li><li>Company and industry reports</li><li>BioNixus proprietary research</li></ul><p className="text-sm text-muted-foreground leading-relaxed">For customised market intelligence on Iraq, <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.</p></div></div></section>
         </ReportContentWithAside>
 
+        <MarketResearchEquityLinks country="iraq" />
         <ReportConsultationBand config={PHARMA_CONVERSION} />
         </main>
       <Footer />

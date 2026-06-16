@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { MarketResearchEquityLinks } from '@/components/seo/MarketResearchEquityLinks';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight,
@@ -957,6 +958,8 @@ return (
             <Link to="/market-reports/gcc-biosimilars-market-report" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">GCC biosimilars &amp; generic injectables market report <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
           </div>
         </div></section>
+
+        <MarketResearchEquityLinks country="kuwait" />
 
         <section className="scroll-mt-28 py-12 md:py-14 bg-muted/40 border-y border-border/70" id="faq">
           <div>

@@ -79,6 +79,9 @@ const staticLinks = [
   { to: '/pharma-fieldwork-egypt', label: 'Pharma Fieldwork Egypt' },
   { to: '/market-research-kuwait', label: 'Market Research Kuwait' },
   { to: '/market-research-egypt', label: 'Market Research Egypt' },
+  { to: '/market-research-in-uae', label: 'Market Research in the UAE (all industries)' },
+  { to: '/market-research-in-saudi-arabia', label: 'Market Research in Saudi Arabia (all industries)' },
+  { to: '/market-research-in-egypt', label: 'Market Research in Egypt (all industries)' },
   { to: '/market-research-healthcare', label: 'Healthcare Market Research' },
   { to: '/healthcare-market-research/saudi-arabia', label: 'Saudi Pharmaceutical Market Research' },
   { to: '/pharmacies-saudi-arabia-marketing', label: 'Pharmacy Market Research & Marketing Automation in Saudi Arabia' },
@@ -128,12 +131,22 @@ const healthcareCountryLinks = [
   { to: '/healthcare-market-research/uae', label: 'Healthcare Market Research in UAE' },
   { to: '/healthcare-market-research/kuwait', label: 'Healthcare Market Research in Kuwait' },
   { to: '/healthcare-market-research/egypt', label: 'Healthcare Market Research in Egypt' },
+  { to: '/healthcare-market-research-in-uae', label: 'Healthcare Market Research in Dubai & the UAE' },
+  {
+    to: '/healthcare-market-research-in-saudi-arabia',
+    label: 'Healthcare Market Research in Saudi Arabia (Riyadh, Jeddah, Eastern Province)',
+  },
 ];
 
 const marketReportLinks = [
   { to: '/gcc-pharma-market-report-2026', label: 'GCC Pharmaceutical Market Report 2026' },
   { to: '/gcc-medical-devices-market-report', label: 'GCC Medical Devices Market Report 2026' },
   { to: '/gcc-anesthesia-surgical-market-report', label: 'GCC Anesthesia & Surgical Market Report 2026' },
+  { to: '/gcc-generic-injectables-market', label: 'GCC Generic Injectables Market' },
+  { to: '/gcc-pharmacy-market', label: 'GCC Pharmacy Market' },
+  { to: '/gcc-clinical-trials-market', label: 'GCC Clinical Trials Market' },
+  { to: '/gcc-personalized-medicine-market', label: 'GCC Personalized Medicine Market' },
+  { to: '/gcc-biopharmaceuticals-market', label: 'GCC Biopharmaceuticals Market' },
   { to: '/saudi-arabia-healthcare-market-report', label: 'Saudi Arabia Healthcare Market Report 2026' },
   { to: '/saudi-arabia-medical-devices-market-report', label: 'Saudi Arabia Medical Devices Market Report 2026' },
   { to: '/uae-healthcare-market-report', label: 'UAE Healthcare Market Report 2026' },

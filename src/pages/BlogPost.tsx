@@ -270,9 +270,9 @@ const UAE_HEALTHCARE_TRENDS_2025_META_DESCRIPTION =
  * without requiring a Sanity CMS sync.
  */
 const EGYPT_HEALTHCARE_2026_SLUG = 'healthcare-overview-egypt-market-2026';
-const EGYPT_HEALTHCARE_2026_TITLE = 'Cairo Hospitals Healthcare 2023–2026 | Egypt Market Overview | BioNixus';
+const EGYPT_HEALTHCARE_2026_TITLE = 'Cairo Hospitals & Egypt Healthcare Market 2026 | BioNixus';
 const EGYPT_HEALTHCARE_2026_META_DESCRIPTION =
-  'Cairo hospitals & Egypt healthcare 2023–2026: hospital footprint, EDA pharma landscape, payer trends, and physician insights from BioNixus market research.';
+  "Egypt healthcare market 2026: Cairo's hospital landscape, EDA pharma regulation, payer shifts & primary physician data — the analyst-grade overview from BioNixus.";
 const EGYPT_HEALTHCARE_2026_OG_TITLE =
   'Egypt Healthcare Market 2026 — Cairo Hospitals, Pharma & Physician Data';
 const EGYPT_HEALTHCARE_2026_OG_DESCRIPTION =

@@ -91,6 +91,11 @@ import MarketResearchInSaudiArabia from '@/pages/MarketResearchInSaudiArabia';
 import MarketResearchInEgypt from '@/pages/MarketResearchInEgypt';
 import HealthcareMarketResearchInUae from '@/pages/HealthcareMarketResearchInUae';
 import HealthcareMarketResearchInSaudiArabia from '@/pages/HealthcareMarketResearchInSaudiArabia';
+import GccGenericInjectablesMarket from '@/pages/market-research-gcc/GccGenericInjectablesMarket';
+import GccPharmacyMarket from '@/pages/market-research-gcc/GccPharmacyMarket';
+import GccClinicalTrialsMarket from '@/pages/market-research-gcc/GccClinicalTrialsMarket';
+import GccPersonalizedMedicineMarket from '@/pages/market-research-gcc/GccPersonalizedMedicineMarket';
+import GccBiopharmaceuticalsMarket from '@/pages/market-research-gcc/GccBiopharmaceuticalsMarket';
 import Nf1PharmaMarketResearch from '@/pages/Nf1PharmaMarketResearch';
 import DesmoidTumorPharmaMarketResearch from '@/pages/DesmoidTumorPharmaMarketResearch';
 import ArMarketResearchUae from '@/pages/ArMarketResearchUae';
@@ -237,6 +242,11 @@ export const routes: RouteObject[] = [
   { path: '/market-research-in-egypt', element: <MarketResearchInEgypt /> },
   { path: '/healthcare-market-research-in-uae', element: <HealthcareMarketResearchInUae /> },
   { path: '/healthcare-market-research-in-saudi-arabia', element: <HealthcareMarketResearchInSaudiArabia /> },
+  { path: '/gcc-generic-injectables-market', element: <GccGenericInjectablesMarket /> },
+  { path: '/gcc-pharmacy-market', element: <GccPharmacyMarket /> },
+  { path: '/gcc-clinical-trials-market', element: <GccClinicalTrialsMarket /> },
+  { path: '/gcc-personalized-medicine-market', element: <GccPersonalizedMedicineMarket /> },
+  { path: '/gcc-biopharmaceuticals-market', element: <GccBiopharmaceuticalsMarket /> },
   { path: '/market-research-saudi-arabia-pharmaceutical', element: <MarketResearchSaudiArabiaPharmaceutical /> },
   { path: '/market-research-healthcare', element: <MarketResearchHealthcare /> },
   { path: '/de/market-research-healthcare', element: <MarketResearchHealthcare /> },

@@ -479,7 +479,11 @@ const GccPharmaMarketReport2026 = () => {
                   <Link to="/market-reports/gcc-biosimilars-market-report" className="text-primary font-medium hover:underline">
                     GCC biosimilars &amp; generic injectables report
                   </Link>
-                  .
+                  . See also the dedicated{' '}
+                  <Link to="/gcc-generic-injectables-market" className="text-primary font-medium hover:underline">
+                    GCC generic injectables market
+                  </Link>{' '}
+                  research page.
                 </p>
               </div>
               <div>
@@ -490,8 +494,12 @@ const GccPharmaMarketReport2026 = () => {
                   qualitative work — see{' '}
                   <Link to="/gcc-pharmaceutical-market-research" className="text-primary font-medium hover:underline">
                     GCC pharmaceutical market research
-                  </Link>
-                  .
+                  </Link>{' '}
+                  and the dedicated{' '}
+                  <Link to="/gcc-pharmacy-market" className="text-primary font-medium hover:underline">
+                    GCC pharmacy market
+                  </Link>{' '}
+                  page.
                 </p>
               </div>
               <div>
@@ -508,8 +516,12 @@ const GccPharmaMarketReport2026 = () => {
                   Biologics spend is concentrated in Saudi Arabia and the UAE (~USD 4.8–5.4B GCC total). Deep dive:{' '}
                   <Link to="/market-reports/gcc-immunology-biologics-market-report" className="text-primary font-medium hover:underline">
                     GCC immunology &amp; biologics market report
-                  </Link>
-                  .
+                  </Link>{' '}
+                  and the{' '}
+                  <Link to="/gcc-biopharmaceuticals-market" className="text-primary font-medium hover:underline">
+                    GCC biopharmaceuticals market
+                  </Link>{' '}
+                  overview.
                 </p>
               </div>
               <div>
@@ -529,8 +541,12 @@ const GccPharmaMarketReport2026 = () => {
                   rules. Orphan and genomics-heavy launches:{' '}
                   <Link to="/market-reports/saudi-arabia-rare-diseases-market-report" className="text-primary font-medium hover:underline">
                     Saudi Arabia precision medicine &amp; rare diseases report
-                  </Link>
-                  ; country context:{' '}
+                  </Link>{' '}
+                  and the{' '}
+                  <Link to="/gcc-personalized-medicine-market" className="text-primary font-medium hover:underline">
+                    GCC personalized medicine market
+                  </Link>{' '}
+                  page; country context:{' '}
                   <Link to="/healthcare-market-research/saudi-arabia" className="text-primary font-medium hover:underline">
                     healthcare market research in Saudi Arabia
                   </Link>

@@ -27,7 +27,7 @@ const SLUG = 'healthcare-overview-egypt-market-2026'
 /** Kept in sync with EGYPT_HEALTHCARE_2026_* constants in src/pages/BlogPost.tsx */
 const SEO_META_TITLE = 'Cairo Hospitals & Egypt Healthcare Market 2026 | BioNixus'
 const SEO_META_DESCRIPTION =
-  'Egypt healthcare market 2026: Cairo hospital data, EDA pharmaceutical landscape, payer trends, and physician insights from BioNixus market research.'
+  "Egypt healthcare market 2026: Cairo's hospital landscape, EDA pharma regulation, payer shifts & primary physician data — the analyst-grade overview from BioNixus."
 const OG_TITLE = 'Egypt Healthcare Market 2026 — Cairo Hospitals, Pharma & Physician Data'
 const OG_DESCRIPTION =
   'Full Egypt healthcare overview for 2026 — Cairo hospital landscape, EDA regulation, pharmaceutical market size, and primary physician research from BioNixus.'
