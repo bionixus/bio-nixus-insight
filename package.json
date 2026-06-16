@@ -13,6 +13,7 @@
     "verify:market-reports:geography": "node scripts/verify-market-report-geography.mjs",
     "verify:sourced-claims": "node scripts/verify-sourced-claims.mjs",
     "verify:content-accuracy": "node scripts/verify-market-report-geography.mjs && node scripts/verify-sourced-claims.mjs && node scripts/verify-market-report-word-count.mjs",
+    "verify:pharma-bofu-seo": "node scripts/verify-pharma-bofu-seo.mjs",
     "audit:blog-numeric-claims": "node scripts/audit-blog-numeric-claims.mjs",
     "audit:sitewide:phase2": "node scripts/sitewide-audit-runbook-phase2.mjs",
     "prebuild": "npm run generate-internal-link-targets && npm run generate-sitemap && npm run build:clinical-proposal",

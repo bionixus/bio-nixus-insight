@@ -5,6 +5,7 @@ import { ArrowRight, Share2, BookOpen, Clock, FileCheck, Building2, Globe, Shiel
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { Helmet } from 'react-helmet-async';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 
 /* ------------------------------------------------------------------ */
 /* Regulatory & market access data for GCC countries                  */
@@ -155,10 +156,10 @@ const GccMarketAccessGuide = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>GCC Pharmaceutical Market Access Guide 2026 | Registration, Pricing & Reimbursement | BioNixus</title>
+        <title>GCC Pharmaceutical Market Access Guide 2026 | SFDA, MOHAP Registration & Pricing | BioNixus</title>
         <meta
           name="description"
-          content="Complete guide to pharmaceutical market access in the GCC: drug registration timelines, pricing mechanisms, reimbursement models, and regulatory requirements for Saudi Arabia (SFDA), UAE (MOHAP), Kuwait, Qatar, Bahrain & Oman."
+          content="GCC pharmaceutical market access guide 2026: SFDA, MOHAP, DHA, and MOH drug registration timelines, pricing mechanisms, reimbursement models, and regulatory requirements for Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman."
         />
         <link rel="canonical" href={citationUrl} />
         <meta property="og:title" content="GCC Pharmaceutical Market Access Guide 2026 — Registration, Pricing & Reimbursement" />
@@ -173,7 +174,7 @@ const GccMarketAccessGuide = () => {
             description: 'Complete guide to pharmaceutical drug registration, pricing, and reimbursement across the 6 GCC countries: Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman.',
             url: citationUrl,
             datePublished: '2026-01-15',
-            dateModified: '2026-02-14',
+            dateModified: '2026-06-16',
             author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
             publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
           })}
@@ -241,7 +242,7 @@ const GccMarketAccessGuide = () => {
               Free Guide
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">
-              GCC Pharmaceutical Market Access Guide 2026
+              GCC pharmaceutical market access guide 2026 — registration, pricing, and reimbursement
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
               Everything pharmaceutical companies need to know about drug registration, pricing, and reimbursement across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman. Regulatory authority requirements, timelines, and practical guidance from BioNixus.
@@ -269,6 +270,38 @@ const GccMarketAccessGuide = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="section-padding pt-0 pb-8 bg-muted/20">
+          <div className="container-wide max-w-5xl mx-auto">
+            <GeoLLMAnswerBlock
+              question="How does pharmaceutical market access work in the GCC?"
+              answer="GCC market access requires national marketing authorisation (SFDA in Saudi Arabia, MOHAP/DHA/DOH in the UAE, and peer authorities in Kuwait, Qatar, Bahrain, and Oman), external-reference or cost-plus pricing approval, and formulary or tender listing before hospital uptake — typically 12–24 months end-to-end with a local authorised representative."
+              points={[
+                {
+                  title: 'Registration dossier (CTD)',
+                  description:
+                    'GMP certificates, stability for Zone IVB, Arabic labelling, and CPP/free-sale documentation submitted via national portals.',
+                },
+                {
+                  title: 'Pricing and reimbursement',
+                  description:
+                    'ERP baskets in KSA and UAE; government formulary and tender routes dominate hospital demand in Kuwait and Qatar.',
+                },
+                {
+                  title: 'Local partner requirement',
+                  description:
+                    'Authorised representative or distributor mandatory in every GCC state — ownership of import licences and pharmacovigilance.',
+                },
+                {
+                  title: 'Evidence for committees',
+                  description:
+                    'Payer-facing economic and clinical narratives aligned to hospital committee questions BioNixus tests in access research.',
+                },
+              ]}
+              summary="Use the country regulatory tables below for authority-specific timelines, then contact BioNixus for GCC payer and hospital access research."
+            />
           </div>
         </section>
 

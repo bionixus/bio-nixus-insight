@@ -21,6 +21,8 @@ import {
   dedupePipeBioNixusTail,
 } from '@/lib/seo-meta';
 import RelatedPosts from '@/components/RelatedPosts';
+import { EgyptHealthcare2026CairoBlock } from '@/components/blog/EgyptHealthcare2026CairoBlock';
+import { EGYPT_HEALTHCARE_2026_CAIRO_FAQ } from '@/data/egyptHealthcare2026CairoSeo';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import BlogSiteExplorer from '@/components/BlogSiteExplorer';
@@ -272,7 +274,7 @@ const UAE_HEALTHCARE_TRENDS_2025_META_DESCRIPTION =
 const EGYPT_HEALTHCARE_2026_SLUG = 'healthcare-overview-egypt-market-2026';
 const EGYPT_HEALTHCARE_2026_TITLE = 'Cairo Hospitals Healthcare 2023–2026 | Egypt Market Overview | BioNixus';
 const EGYPT_HEALTHCARE_2026_META_DESCRIPTION =
-  'Cairo hospitals & Egypt healthcare 2023–2026: hospital footprint, EDA pharma landscape, payer trends, and physician insights from BioNixus market research.';
+  'Cairo hospitals and Egypt healthcare 2023–2026: hospital footprint, EDA pharma landscape, payer trends, and physician insights from BioNixus market research.';
 const EGYPT_HEALTHCARE_2026_OG_TITLE =
   'Egypt Healthcare Market 2026 — Cairo Hospitals, Pharma & Physician Data';
 const EGYPT_HEALTHCARE_2026_OG_DESCRIPTION =
@@ -1019,6 +1021,7 @@ const BlogPost = () => {
   const blogHreflangAlternates = blogEnArAlternateUrls(pathClean);
 
   const mergedBlogFaqItems = [
+    ...(isEgyptHealthcare2026 ? EGYPT_HEALTHCARE_2026_CAIRO_FAQ : []),
     ...(isQuantMrMaEn ? QUANT_MR_MA_SCHEMA_FAQ : []),
     ...(isGccComparisonEn ? GCC_PHARMA_COMPARISON_SCHEMA_FAQ : []),
     ...(isPharmacoeconomicsGccEn ? PHARMACOECONOMICS_GCC_SCHEMA_FAQ : []),
@@ -1027,7 +1030,8 @@ const BlogPost = () => {
     ...(Array.isArray(post.faq) &&
     !isPharmacoeconomicsGccEn &&
     !isGccPharmacoeconomicsEn &&
-    !isTherapyStaticBlogEn
+    !isTherapyStaticBlogEn &&
+    !isEgyptHealthcare2026
       ? post.faq
         .filter((item) => Boolean(item.question && item.answer))
         .map((item) => ({ question: item.question!, answer: item.answer! }))
@@ -1405,61 +1409,7 @@ const BlogPost = () => {
               {/* GCC 2026 premium dashboard enhancement */}
               {isGccPharma2026 && <PremiumGcc2026Enhancement />}
 
-              {/* Egypt 2026 topical intro — places key internal links in the first 200 words
-                  so Google sees the hub + service relationships immediately on this high-impression page. */}
-              {isEgyptHealthcare2026 && (
-                <aside
-                  className="mb-8 rounded-xl border border-primary/15 bg-primary/[0.025] p-5 lg:p-6"
-                  aria-label="Egypt healthcare market quick navigation"
-                >
-                  <p className="text-[11px] font-extrabold tracking-[0.12em] uppercase text-primary mb-3">
-                    Egypt healthcare 2026 — quick navigation
-                  </p>
-                  <p className="text-[15px] text-foreground leading-relaxed mb-3">
-                    This overview covers the Egyptian healthcare market in 2026 — Cairo hospital
-                    landscape, Egyptian Drug Authority (EDA) regulation, pharmaceutical market size,
-                    and physician research signals. Continue to the{' '}
-                    <Link to="/healthcare-market-research" className="text-primary font-semibold underline underline-offset-2 hover:no-underline">
-                      EMEA healthcare market research hub
-                    </Link>{' '}
-                    for the full research framework, or jump to a related Egypt resource below.
-                  </p>
-                  <ul className="grid sm:grid-cols-2 gap-2 mt-3 list-none p-0">
-                    <li>
-                      <Link
-                        to="/pharmaceutical-companies-egypt"
-                        className="inline-flex items-center gap-1 text-sm text-primary font-medium hover:underline"
-                      >
-                        <ArrowUpRight className="w-3.5 h-3.5" aria-hidden /> Pharmaceutical companies in Egypt
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/market-research-egypt"
-                        className="inline-flex items-center gap-1 text-sm text-primary font-medium hover:underline"
-                      >
-                        <ArrowUpRight className="w-3.5 h-3.5" aria-hidden /> Market research in Egypt
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/blog/top-market-research-companies-egypt-2026"
-                        className="inline-flex items-center gap-1 text-sm text-primary font-medium hover:underline"
-                      >
-                        <ArrowUpRight className="w-3.5 h-3.5" aria-hidden /> Top market research companies in Egypt (2026)
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/healthcare-market-research/egypt"
-                        className="inline-flex items-center gap-1 text-sm text-primary font-medium hover:underline"
-                      >
-                        <ArrowUpRight className="w-3.5 h-3.5" aria-hidden /> Egypt country research methodology
-                      </Link>
-                    </li>
-                  </ul>
-                </aside>
-              )}
+              {isEgyptHealthcare2026 && <EgyptHealthcare2026CairoBlock />}
 
               {isKuwaitHealthcare2026 && (
                 <aside
