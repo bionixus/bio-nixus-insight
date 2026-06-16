@@ -39,3 +39,6 @@ tmp/
 
 # Firecrawl CLI scrape/search outputs
 .firecrawl/
+
+# Google Search Console local CSV exports
+.gsc-tmp/
