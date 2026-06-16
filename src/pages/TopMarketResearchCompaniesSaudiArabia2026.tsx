@@ -208,6 +208,26 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
     })),
   };
 
+  // HowTo mirrors the visible "How to Evaluate a Market Research Partner for
+  // Saudi Arabia" section (schema/content parity) so answer engines can extract
+  // the selection framework as discrete, ordered steps.
+  const howToSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'How to Choose a Market Research Company in Saudi Arabia',
+    description:
+      'A step-by-step framework for evaluating and selecting a pharmaceutical or healthcare market research partner in Saudi Arabia in 2026 — covering Saudi project experience, SFDA and NUPCO regulatory awareness, Arabic-English execution, physician and KOL recruitment, mixed-method capability, and data integrity.',
+    inLanguage: 'en',
+    totalTime: 'P2W',
+    step: comparisonCriteria.map((c, i) => ({
+      '@type': 'HowToStep',
+      position: i + 1,
+      name: c.criterion,
+      text: c.description,
+      url: `${CANONICAL}#buyer-criteria`,
+    })),
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
@@ -226,6 +246,7 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(howToSchema)}</script>
       </Helmet>
       <OpenGraphMeta
         title="Top Market Research Companies in Saudi Arabia (2026) | BioNixus"
