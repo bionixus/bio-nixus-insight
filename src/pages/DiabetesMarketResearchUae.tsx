@@ -1,16 +1,13 @@
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
+import { SEOHead } from '@/components/seo/SEOHead';
+import { HealthcareResearchPageShell } from '@/components/healthcare-research/HealthcareResearchPageShell';
+import { HealthcareNavCard, HealthcareStatPanel } from '@/components/healthcare-research/healthcareResearchUi';
+import { ReportMidPageCta } from '@/components/report-conversion';
+import { ReportPremiumSection } from '@/components/report-premium';
+import { getHealthcareMarketResearchLandingConfig } from '@/data/reportConversionConfig';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
-import {
-  ExecutiveDecisionBlock,
-  PremiumHero,
-  ProofMetricGrid,
-} from '@/components/page/PremiumPageSections';
 
-const pageUrl = 'https://www.bionixus.com/diabetes-market-research-uae';
+const canonicalPath = '/diabetes-market-research-uae';
 
 const faqItems = [
   {
@@ -62,231 +59,347 @@ const jsonLd = [
   },
   buildBreadcrumbSchema([
     { name: 'Home', href: '/' },
+    { name: 'Healthcare Market Research', href: '/healthcare-market-research' },
     { name: 'UAE Pharmaceutical Market Research', href: '/uae-pharmaceutical-market-research' },
-    { name: 'Diabetes Market Research UAE', href: '/diabetes-market-research-uae' },
+    { name: 'Diabetes Market Research UAE', href: canonicalPath },
   ]),
   buildFAQSchema(faqItems),
 ];
 
+const conversionConfig = getHealthcareMarketResearchLandingConfig(
+  'Diabetes market research UAE',
+  canonicalPath,
+  'United Arab Emirates',
+  { showEgyptPhone: false, therapyArea: 'Diabetes' },
+);
+
+const faqSectionId = 'diabetes-market-research-uae-faq';
+
 export default function DiabetesMarketResearchUae() {
   return (
-    <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>Diabetes Market Research UAE | BioNixus</title>
-        <meta
-          name="description"
-          content="Diabetes market research UAE: HCP prescribing behaviour, patient journey research, payer landscape analysis, and competitive intelligence across insulin, GLP-1 agonists, and SGLT2 inhibitors. UAE has 19% adult diabetes prevalence — the 4th highest globally."
-        />
-        <link rel="canonical" href={pageUrl} />
-        {jsonLd.map((schema, index) => (
-          <script key={`dm-uae-schema-${index}`} type="application/ld+json">
-            {JSON.stringify(schema)}
-          </script>
-        ))}
-      </Helmet>
-      <Navbar />
-      <main>
-        <BreadcrumbNav
-          items={[
-            { name: 'Home', href: '/' },
-            { name: 'UAE Pharmaceutical Market Research', href: '/uae-pharmaceutical-market-research' },
-            { name: 'Diabetes Market Research UAE', href: '/diabetes-market-research-uae' },
-          ]}
-        />
-        <PremiumHero
-          h1="Diabetes Market Research UAE"
-          intro="The UAE has one of the world's highest diabetes burdens — approximately 19% adult prevalence (IDF Diabetes Atlas 2023) — and a rapidly evolving pharmaceutical market spanning insulin, GLP-1 agonists, SGLT2 inhibitors, and DPP-4 inhibitors. BioNixus delivers the HCP, patient, and payer research that pharmaceutical teams need to navigate UAE diabetes prescribing dynamics, formulary access, and competitive positioning."
-          links={[
-            { to: '/uae-pharmaceutical-market-research', label: 'UAE pharmaceutical market research' },
-            { to: '/patient-journey-research-gcc', label: 'Patient journey research GCC' },
-            { to: '/uae-market-access-research', label: 'UAE market access research' },
-            { to: '/uae-pricing-reimbursement-strategy', label: 'UAE pricing and reimbursement strategy' },
-            { to: '/contact', label: 'Request diabetes research scope' },
-          ]}
-        />
+    <>
+      <SEOHead
+        title="Diabetes Market Research UAE | BioNixus"
+        description="Diabetes market research UAE: HCP prescribing behaviour, patient journey research, payer landscape analysis, and competitive intelligence across insulin, GLP-1 agonists, and SGLT2 inhibitors. UAE has 19% adult diabetes prevalence — the 4th highest globally."
+        canonical={canonicalPath}
+        jsonLd={jsonLd}
+      />
 
-        <ExecutiveDecisionBlock
-          heading="UAE diabetes market: decision framework"
-          points={[
-            {
-              title: 'Why it matters',
-              body: 'UAE diabetes prevalence at 19% of adults (IDF 2023) — 4th highest globally — creates a large, commercially significant patient population. Rapid entry of GLP-1 agonists, biosimilar insulins, and SGLT2 inhibitors is reshaping the treatment landscape faster than most commercial intelligence systems can track.',
-            },
-            {
-              title: 'What the evidence says',
-              body: 'BioNixus UAE diabetes market research identifies that treatment intensification decisions, GLP-1 adoption, and formulary access are the three commercial dynamics with the most decision-relevant information gaps for most pharma teams operating in UAE diabetes.',
-            },
-            {
-              title: 'What to do next',
-              body: 'Commission an integrated UAE diabetes market study combining HCP prescribing behaviour research, patient journey IDIs, and payer landscape mapping. Expect 10–14 weeks and $75,000–$200,000 for a multi-method programme providing comprehensive commercial intelligence.',
-            },
-          ]}
-        />
-
-        <section className="section-padding py-10">
-          <div className="container-wide max-w-5xl mx-auto space-y-10">
-
-            <div>
-              <h2 className="text-2xl font-display font-semibold text-foreground mb-4">
-                UAE diabetes burden and commercial context
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                The United Arab Emirates faces one of the most severe diabetes burdens of any country globally. According to the International Diabetes Federation Diabetes Atlas 2023, approximately 19% of UAE adults have diabetes — equivalent to approximately 1.1 million people out of a total adult population of 6.5 million. The UAE's ranking as 4th highest in the world by age-adjusted adult diabetes prevalence (after Kuwait, Mauritius, and Kiribati) reflects the confluence of genetic predisposition among the South Asian expatriate workforce, sedentary lifestyle patterns, high caloric dietary habits, and the demographic skew toward working-age adults who have been exposed to risk factors for a decade or more. The obesity rate in the UAE — approximately 31% of adults by BMI criteria — is a key driver of both type 2 diabetes incidence and the recently expanded commercial opportunity in GLP-1 receptor agonists, which are approved for both glycaemic control and weight management.
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                The prediabetes burden is equally significant: an estimated additional 17–19% of UAE adults have impaired glucose tolerance or impaired fasting glucose, representing a large population at high conversion risk. This prediabetes segment is commercially relevant for pharmaceutical companies developing prevention-focused pharmacological interventions, as UAE health authorities — particularly DHA's Wellbeing and Community Health division — have launched national diabetes prevention programmes that create a policy environment supportive of early pharmacological intervention research.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-display font-semibold text-foreground mb-4">
-                Key players in the UAE diabetes pharmaceutical market
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                The UAE diabetes pharmaceutical market is commercially competitive across multiple product segments. Understanding the competitive position of each major player is a prerequisite for meaningful market research design.
-              </p>
-              <ul className="list-disc pl-6 space-y-3 text-muted-foreground leading-relaxed">
-                <li>
-                  <strong>Novo Nordisk</strong> holds the dominant position in both the insulin market (Levemir, Tresiba, NovoLog/NovoRapid, NovoMix) and the GLP-1 agonist class (Victoza/liraglutide, Ozempic/semaglutide injectable, Rybelsus/semaglutide oral). The semaglutide portfolio has experienced exceptional uptake in UAE driven by dual diabetes and obesity indications, and Novo Nordisk's UAE market presence is significant. Their sales force and medical affairs investment in endocrinology is the largest of any diabetes company in the market.
-                </li>
-                <li>
-                  <strong>Sanofi</strong> competes primarily through the basal insulin segment (Lantus/glargine, Toujeo/glargine U300) and the fixed-ratio combination Soliqua (insulin glargine/lixisenatide). Sanofi faces increasing biosimilar pressure on Lantus, with Biosimilar glargines from Biocon/Mylan and Sandoz gaining formulary listings in the UAE public sector.
-                </li>
-                <li>
-                  <strong>Eli Lilly</strong> participates in the GLP-1 class (Trulicity/dulaglutide), the insulin market (Humalog/lispro, Basaglar biosimilar glargine), and has launched tirzepatide (Mounjaro) as a GLP-1/GIP dual agonist — the highest-efficacy glucose-lowering agent available in the UAE as of 2024, with significant positioning opportunity but premium pricing requiring robust payer dossier support.
-                </li>
-                <li>
-                  <strong>AstraZeneca</strong> is the leading SGLT2 inhibitor player through Farxiga/dapagliflozin, which has achieved DHA and DOH formulary listing with specific cardiorenal benefit indications. The DAPA-HF and DAPA-CKD trial data are well-recognised among UAE cardiologists and nephrologists and have expanded the relevant prescriber base beyond endocrinology.
-                </li>
-                <li>
-                  <strong>Merck/MSD</strong> holds the dominant DPP-4 inhibitor position through Januvia/sitagliptin and its fixed-dose combinations, which are broadly listed across DHA, DOH, and MOHAP formularies and represent the most widely prescribed branded oral antidiabetic class in the UAE.
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-display font-semibold text-foreground mb-4">
-                Treatment pathway research: GP to specialist referral dynamics
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Understanding UAE diabetes treatment pathway dynamics is essential for any commercial team seeking to optimise prescribing behaviour interventions. The UAE operates a two-tier diabetes management system: general practitioners and family medicine physicians in polyclinic settings manage the majority of newly diagnosed and stable type 2 diabetes patients, while endocrinologists and diabetologists in hospital-based outpatient departments handle complex, uncontrolled, or complication-heavy cases.
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                First-line therapy — metformin initiation and early oral combination therapy — is predominantly driven by GP prescribing. Treatment intensification decisions, representing the highest commercial value inflection point, typically occur at specialist level. BioNixus treatment pathway research consistently identifies that the following clinical triggers drive GP-to-specialist referral in UAE: HbA1c above 8.5% despite 3–6 months of dual oral therapy; initiation of injectable therapy (insulin or GLP-1 agonist); the presence of documented cardiovascular disease, heart failure, or chronic kidney disease (activating SGLT2 inhibitor or GLP-1 agonist use under the 2024 ADA/EASD guidelines); and patient preference for specialist care when injectable therapy is initiated. The referral pathway research also identifies a significant gap: many UAE GPs report discomfort with initiating GLP-1 agonists due to lack of training and experience, defaulting to DPP-4 inhibitor or SGLT2 inhibitor additions instead. This GP comfort gap is a commercially relevant finding: it suggests that GP-directed education and support programmes for GLP-1 initiation could meaningfully expand prescribing beyond specialist-only audiences.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-display font-semibold text-foreground mb-4">
-                HCP prescribing behaviour research: GLP-1 adoption and SGLT2 positioning
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Two product class questions dominate UAE diabetes HCP research in the current competitive period: GLP-1 agonist adoption barriers among endocrinologists and GPs, and the positioning of SGLT2 inhibitors across diabetes, cardiovascular, and renal disease indications.
-              </p>
-              <h3 className="text-xl font-semibold text-foreground mb-3">GLP-1 adoption barriers</h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Despite strong clinical evidence for HbA1c reduction, weight loss, and cardiovascular outcomes, GLP-1 agonist adoption in UAE faces several adoption barriers that quantitative and qualitative HCP research consistently identifies. Injection anxiety among patients — particularly in the South Asian patient population where self-injection is culturally stigmatised — leads to high rates of patient refusal when GLP-1 injectable therapy is proposed, creating a prescribing reluctance loop among GPs who have experienced repeated refusals. Cost and reimbursement barriers: GLP-1 agonists are listed on DHA and DOH formularies but often require endocrinologist specialist prescribing, limiting GP access in the primary care setting. Side effect concerns: nausea and gastrointestinal intolerance with GLP-1 agonists is well documented in clinical trials and is perceived by UAE GPs as a significant real-world tolerability barrier. HCP research exploring these barriers — through both quantitative physician surveys and qualitative IDIs with high-prescribing and low-prescribing endocrinologists — produces the commercial insights needed to design targeted intervention programmes.
-              </p>
-              <h3 className="text-xl font-semibold text-foreground mb-3">SGLT2 inhibitor cross-specialty positioning</h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                SGLT2 inhibitors have undergone a significant positioning shift in UAE clinical practice following the publication of the DAPA-HF (heart failure), DAPA-CKD (chronic kidney disease), EMPA-REG OUTCOME, and CANVAS cardiovascular outcomes trial data. Cardiologists and nephrologists — not endocrinologists — are increasingly the primary prescribers of SGLT2 inhibitors for their cardiorenal protective indications, independent of glycaemic control. BioNixus HCP research in UAE cardiologist and nephrologist panels maps this cross-specialty prescribing dynamic, identifying the proportion of cardiologists who prescribe SGLT2 inhibitors as cardioprotective agents in non-diabetic patients, the level of awareness of SGLT2 inhibitor cardiorenal data among nephrologists, and the barriers to SGLT2 inhibitor initiation by non-endocrinologist specialists.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-display font-semibold text-foreground mb-4">
-                Patient journey research: adherence barriers and patient experience
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Patient journey research in UAE diabetes investigates the patient experience from initial diagnosis through disease progression, focusing on the adherence barriers, unmet needs, and patient decision-making processes that shape treatment outcomes and healthcare utilisation.
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Key adherence barriers identified in BioNixus UAE diabetes patient research include: injection anxiety among South Asian and Arab patients who are newly initiated on insulin or GLP-1 agonists; Ramadan fasting disruption of medication regimens, which affects Muslim patients — approximately 70–80% of the UAE diabetes patient population — for a defined annual period with significant clinical risk; cost sensitivity for self-pay patients in the private healthcare system who find GLP-1 agonist out-of-pocket costs (AED 500–900 per month) burdensome; language barriers affecting health literacy and understanding of treatment instructions among patients with limited English or formal education; and cultural concerns about disease disclosure to family or employer, which can delay help-seeking and impede medication adherence through concealment.
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Patient journey research for UAE diabetes is typically conducted through in-depth interviews (IDIs) — 45–60 minutes per patient — in Arabic (for Arab and UAE national patients), Hindi or Urdu (for South Asian patients), or English (for other nationalities). A target of 20–30 patient IDIs per study provides sufficient thematic saturation for most patient journey research questions. Recruitment through DHA or DOH polyclinic networks, endocrinology outpatient departments at major hospitals, and diabetes support group referrals typically achieves recruitment targets within 3–5 weeks.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-display font-semibold text-foreground mb-4">
-                Payer research and health technology assessment context
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                UAE payer research for diabetes products must account for the different evidence requirements and formulary committee priorities of DHA, DOH/Daman, and MOHAP. The payer landscape is evolving: DOH Abu Dhabi has begun incorporating outcomes-based access discussions for high-cost diabetes agents, and Daman medical directors have expressed interest in managed-entry agreements for premium GLP-1 agonists and GLP-1/GIP dual agonists such as tirzepatide (Mounjaro). BioNixus payer research for UAE diabetes studies typically includes 8–12 qualitative interviews with formulary committee members, Daman medical directors, DHA formulary committee members, and MOHAP pricing committee representatives, producing a current map of evidence requirements, price sensitivity thresholds, and payer openness to managed-entry or outcomes-based access arrangements.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-display font-semibold text-foreground mb-4">
-                Research design, cost, and timeline
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                A comprehensive UAE diabetes market study combining quantitative HCP surveys, qualitative patient IDIs, and payer interviews runs over <strong>10–14 weeks</strong> and costs between <strong>$75,000 and $200,000</strong> depending on scope.
-              </p>
-              <ul className="list-disc pl-6 space-y-2 text-muted-foreground leading-relaxed">
-                <li><strong>Quantitative HCP survey (n=50–100 GPs and endocrinologists):</strong> $20,000–$40,000 / 4–6 weeks</li>
-                <li><strong>Qualitative patient IDIs (n=20–30 across 3–4 sub-groups):</strong> $20,000–$35,000 / 4–5 weeks</li>
-                <li><strong>Payer landscape interviews (n=8–12):</strong> $15,000–$25,000 / 4–5 weeks</li>
-                <li><strong>Competitive intelligence synthesis:</strong> $10,000–$20,000 / 2–3 weeks</li>
-                <li><strong>Integrated commercial insights report:</strong> $10,000–$20,000 / 2–3 weeks</li>
-              </ul>
-            </div>
-
-            <div className="mt-6 rounded-xl border border-border bg-muted/20 p-5">
-              <h2 className="text-lg font-semibold text-foreground mb-3">UAE diabetes market research proof points</h2>
-              <div className="grid md:grid-cols-3 gap-3">
-                <article className="rounded-lg border border-border bg-card p-3">
-                  <p className="text-xs uppercase tracking-wide text-muted-foreground">UAE adult diabetes prevalence</p>
-                  <p className="text-xl font-semibold text-foreground">~19%</p>
-                  <p className="text-xs text-muted-foreground mt-1">IDF Diabetes Atlas 2023. 4th highest globally by age-adjusted adult prevalence.</p>
-                </article>
-                <article className="rounded-lg border border-border bg-card p-3">
-                  <p className="text-xs uppercase tracking-wide text-muted-foreground">Programme timeline</p>
-                  <p className="text-xl font-semibold text-foreground">10–14 weeks</p>
-                  <p className="text-xs text-muted-foreground mt-1">Multi-method diabetes study: HCP surveys, patient IDIs, and payer interviews from brief to final report.</p>
-                </article>
-                <article className="rounded-lg border border-border bg-card p-3">
-                  <p className="text-xs uppercase tracking-wide text-muted-foreground">Programme cost range</p>
-                  <p className="text-xl font-semibold text-foreground">$75K–$200K</p>
-                  <p className="text-xs text-muted-foreground mt-1">Comprehensive UAE diabetes market study. Individual research modules available from $15,000.</p>
-                </article>
-              </div>
-            </div>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/uae-pharmaceutical-market-research" className="rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground">
+      <HealthcareResearchPageShell
+        progressId="diabetes-market-research-uae"
+        config={conversionConfig}
+        breadcrumbs={[
+          { name: 'Home', href: '/' },
+          { name: 'Healthcare Market Research', href: '/healthcare-market-research' },
+          { name: 'UAE Pharmaceutical Market Research', href: '/uae-pharmaceutical-market-research' },
+          { name: 'Diabetes Market Research UAE', href: canonicalPath },
+        ]}
+        hero={{
+          title: 'Diabetes Market Research UAE',
+          countryName: 'United Arab Emirates',
+          marketSlug: 'uae',
+          therapyName: 'Diabetes',
+          therapySlug: 'diabetes',
+          badges: ['DHA · DOH · MOHAP', 'Diabetes & cardiometabolic'],
+          stats: [
+            { value: '~19%', label: 'UAE adult diabetes prevalence (IDF 2023)' },
+            { value: '10–14 wks', label: 'Typical multi-method programme timeline' },
+            { value: '$75K–$200K', label: 'Comprehensive study cost range' },
+          ],
+          description: (
+            <p>
+              The UAE has one of the world&apos;s highest diabetes burdens — approximately 19% adult prevalence — and a
+              rapidly evolving pharmaceutical market spanning insulin, GLP-1 agonists, SGLT2 inhibitors, and DPP-4
+              inhibitors. BioNixus delivers HCP, patient, and payer research that pharmaceutical teams need to navigate
+              UAE diabetes prescribing dynamics, formulary access, and competitive positioning. Start from the{' '}
+              <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">
+                healthcare market research hub
+              </Link>{' '}
+              or the{' '}
+              <Link to="/healthcare-market-research/therapy/diabetes" className="text-primary font-medium hover:underline">
+                diabetes therapy guide
+              </Link>{' '}
+              for regional context.
+            </p>
+          ),
+          metaLinks: (
+            <div className="flex flex-wrap gap-2 text-sm">
+              <Link to="/uae-pharmaceutical-market-research" className="text-primary hover:underline">
                 UAE pharmaceutical market research
               </Link>
-              <Link to="/patient-journey-research-gcc" className="rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted">
+              <span className="text-muted-foreground">·</span>
+              <Link to="/patient-journey-research-gcc" className="text-primary hover:underline">
                 Patient journey research GCC
               </Link>
-              <Link to="/uae-market-access-research" className="rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted">
+              <span className="text-muted-foreground">·</span>
+              <Link to="/uae-market-access-research" className="text-primary hover:underline">
                 UAE market access research
               </Link>
-              <Link to="/uae-pricing-reimbursement-strategy" className="rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted">
-                UAE pricing and reimbursement strategy
-              </Link>
-              <Link to="/contact" className="rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground">
-                Request diabetes research scope
-              </Link>
             </div>
+          ),
+        }}
+        tocItems={[
+          { href: '#key-indicators', label: 'Market indicators' },
+          { href: '#market-context', label: 'Commercial context' },
+          { href: '#key-players', label: 'Key players' },
+          { href: '#treatment-pathways', label: 'Treatment pathways' },
+          { href: '#hcp-prescribing', label: 'HCP prescribing' },
+          { href: '#patient-journey', label: 'Patient journey' },
+          { href: '#payer-research', label: 'Payer research' },
+          { href: '#research-design', label: 'Research design' },
+          { href: `#${faqSectionId}`, label: 'FAQ' },
+        ]}
+        faq={{
+          sectionId: faqSectionId,
+          title: 'Diabetes market research UAE FAQs',
+          items: faqItems,
+        }}
+      >
+        <ReportPremiumSection
+          id="key-indicators"
+          title="UAE diabetes market indicators"
+          variant="cream"
+          countryName="United Arab Emirates"
+          marketSlug="uae"
+          therapyName="Diabetes"
+          therapySlug="diabetes"
+        >
+          <HealthcareStatPanel
+            stats={[
+              { label: 'UAE adult diabetes prevalence', value: '~19%' },
+              { label: 'Global rank (age-adjusted adult prevalence)', value: '4th' },
+              { label: 'Programme timeline', value: '10–14 weeks' },
+              { label: 'Programme cost range', value: '$75K–$200K' },
+            ]}
+            caption="IDF Diabetes Atlas 2023. Programme ranges reflect typical multi-method HCP, patient, and payer modules."
+          />
+        </ReportPremiumSection>
 
-            <section className="mt-8">
-              <h2 className="text-lg font-semibold text-foreground mb-3">Diabetes market research UAE FAQs</h2>
-              <div className="space-y-3">
-                {faqItems.map((item) => (
-                  <details key={item.question} className="rounded-xl border border-border bg-card p-4">
-                    <summary className="cursor-pointer font-semibold text-foreground">{item.question}</summary>
-                    <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{item.answer}</p>
-                  </details>
-                ))}
-              </div>
-            </section>
+        <ReportPremiumSection
+          id="market-context"
+          title="UAE diabetes burden and commercial context"
+          countryName="United Arab Emirates"
+          marketSlug="uae"
+          therapyName="Diabetes"
+          therapySlug="diabetes"
+        >
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              The United Arab Emirates faces one of the most severe diabetes burdens of any country globally. According
+              to the International Diabetes Federation Diabetes Atlas 2023, approximately 19% of UAE adults have
+              diabetes — equivalent to approximately 1.1 million people out of a total adult population of 6.5 million.
+              The UAE&apos;s ranking as 4th highest in the world by age-adjusted adult diabetes prevalence reflects the
+              confluence of genetic predisposition among the South Asian expatriate workforce, sedentary lifestyle patterns,
+              high caloric dietary habits, and the demographic skew toward working-age adults who have been exposed to
+              risk factors for a decade or more.
+            </p>
+            <p>
+              The prediabetes burden is equally significant: an estimated additional 17–19% of UAE adults have impaired
+              glucose tolerance or impaired fasting glucose, representing a large population at high conversion risk. This
+              prediabetes segment is commercially relevant for pharmaceutical companies developing prevention-focused
+              pharmacological interventions, as UAE health authorities have launched national diabetes prevention
+              programmes that create a policy environment supportive of early pharmacological intervention research.
+            </p>
           </div>
-        </section>
-      </main>
-      <Footer />
-    </div>
+        </ReportPremiumSection>
+
+        <ReportPremiumSection
+          id="key-players"
+          title="Key players in the UAE diabetes pharmaceutical market"
+          variant="muted"
+          countryName="United Arab Emirates"
+          marketSlug="uae"
+          therapyName="Diabetes"
+          therapySlug="diabetes"
+        >
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              The UAE diabetes pharmaceutical market is commercially competitive across multiple product segments.
+              Understanding the competitive position of each major player is a prerequisite for meaningful market
+              research design.
+            </p>
+            <ul className="list-disc pl-6 space-y-3">
+              <li>
+                <strong>Novo Nordisk</strong> holds the dominant position in both the insulin market and the GLP-1 agonist
+                class (Victoza, Ozempic, Rybelsus). Semaglutide uptake in UAE is driven by dual diabetes and obesity
+                indications.
+              </li>
+              <li>
+                <strong>Sanofi</strong> competes through basal insulin (Lantus, Toujeo) and Soliqua, facing increasing
+                biosimilar pressure on Lantus in UAE public sector formularies.
+              </li>
+              <li>
+                <strong>Eli Lilly</strong> participates in GLP-1 (Trulicity), insulin (Humalog, Basaglar), and tirzepatide
+                (Mounjaro) — the highest-efficacy glucose-lowering agent in UAE as of 2024.
+              </li>
+              <li>
+                <strong>AstraZeneca</strong> leads SGLT2 inhibitors through Farxiga/dapagliflozin with cardiorenal
+                benefit indications expanding the prescriber base beyond endocrinology.
+              </li>
+              <li>
+                <strong>Merck/MSD</strong> holds the dominant DPP-4 inhibitor position through Januvia/sitagliptin,
+                broadly listed across DHA, DOH, and MOHAP formularies.
+              </li>
+            </ul>
+          </div>
+        </ReportPremiumSection>
+
+        <ReportMidPageCta config={conversionConfig} className="my-4" />
+
+        <ReportPremiumSection
+          id="treatment-pathways"
+          title="Treatment pathway research: GP to specialist referral dynamics"
+          countryName="United Arab Emirates"
+          marketSlug="uae"
+          therapyName="Diabetes"
+          therapySlug="diabetes"
+        >
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              The UAE operates a two-tier diabetes management system: GPs and family medicine physicians manage most
+              newly diagnosed and stable type 2 diabetes patients, while endocrinologists handle complex, uncontrolled,
+              or complication-heavy cases.
+            </p>
+            <p>
+              Treatment intensification — injectable therapy, GLP-1 or SGLT2 initiation for cardioprotective indications,
+              or poorly controlled patients — typically occurs at specialist level. Referral triggers include HbA1c above
+              8.5% despite dual oral therapy, cardiovascular or renal comorbidities, or patient preference when injectable
+              therapy begins. Many UAE GPs report discomfort initiating GLP-1 agonists, defaulting to DPP-4 or SGLT2
+              additions — a commercially relevant GP education gap.
+            </p>
+          </div>
+        </ReportPremiumSection>
+
+        <ReportPremiumSection
+          id="hcp-prescribing"
+          title="HCP prescribing behaviour: GLP-1 adoption and SGLT2 positioning"
+          variant="muted"
+          countryName="United Arab Emirates"
+          marketSlug="uae"
+          therapyName="Diabetes"
+          therapySlug="diabetes"
+        >
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <h3 className="text-lg font-semibold text-foreground">GLP-1 adoption barriers</h3>
+            <p>
+              Despite strong clinical evidence, GLP-1 adoption in UAE faces injection anxiety (especially among South
+              Asian patients), cost and reimbursement barriers, specialist-only prescribing restrictions, and
+              gastrointestinal tolerability concerns among GPs who have experienced repeated patient refusals.
+            </p>
+            <h3 className="text-lg font-semibold text-foreground">SGLT2 inhibitor cross-specialty positioning</h3>
+            <p>
+              SGLT2 inhibitors are increasingly prescribed by cardiologists and nephrologists for cardiorenal
+              protective indications independent of glycaemic control. BioNixus HCP research maps this cross-specialty
+              dynamic and barriers to SGLT2 initiation by non-endocrinologist specialists.
+            </p>
+          </div>
+        </ReportPremiumSection>
+
+        <ReportPremiumSection
+          id="patient-journey"
+          title="Patient journey research: adherence barriers and patient experience"
+          countryName="United Arab Emirates"
+          marketSlug="uae"
+          therapyName="Diabetes"
+          therapySlug="diabetes"
+        >
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              Key adherence barriers in UAE diabetes patient research include injection anxiety, Ramadan fasting
+              disruption (affecting 70–80% of Muslim patients annually), cost sensitivity for self-pay GLP-1 therapy
+              (AED 500–900/month), language and health literacy barriers, and cultural concerns about disease
+              disclosure.
+            </p>
+            <p>
+              Patient journey research is typically conducted through 45–60 minute IDIs in Arabic, Hindi/Urdu, or English.
+              A target of 20–30 patient IDIs achieves thematic saturation; clinic network recruitment through DHA/DOH
+              polyclinics and hospital endocrinology departments typically meets targets within 3–5 weeks.
+            </p>
+          </div>
+        </ReportPremiumSection>
+
+        <ReportPremiumSection
+          id="payer-research"
+          title="Payer research and health technology assessment context"
+          variant="cream"
+          countryName="United Arab Emirates"
+          marketSlug="uae"
+          therapyName="Diabetes"
+          therapySlug="diabetes"
+        >
+          <p className="text-muted-foreground leading-relaxed">
+            UAE payer research for diabetes products must account for DHA, DOH/Daman, and MOHAP evidence requirements.
+            DOH Abu Dhabi has begun incorporating outcomes-based access discussions for high-cost diabetes agents. BioNixus
+            payer research typically includes 8–12 qualitative interviews with formulary committee members, Daman medical
+            directors, DHA formulary committee members, and MOHAP pricing committee representatives.
+          </p>
+        </ReportPremiumSection>
+
+        <ReportPremiumSection
+          id="research-design"
+          title="Research design, cost, and timeline"
+          countryName="United Arab Emirates"
+          marketSlug="uae"
+          therapyName="Diabetes"
+          therapySlug="diabetes"
+        >
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              A comprehensive UAE diabetes market study combining quantitative HCP surveys, qualitative patient IDIs,
+              and payer interviews runs over <strong>10–14 weeks</strong> and costs between{' '}
+              <strong>$75,000 and $200,000</strong> depending on scope.
+            </p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>
+                <strong>Quantitative HCP survey (n=50–100):</strong> $20,000–$40,000 / 4–6 weeks
+              </li>
+              <li>
+                <strong>Qualitative patient IDIs (n=20–30):</strong> $20,000–$35,000 / 4–5 weeks
+              </li>
+              <li>
+                <strong>Payer landscape interviews (n=8–12):</strong> $15,000–$25,000 / 4–5 weeks
+              </li>
+              <li>
+                <strong>Competitive intelligence synthesis:</strong> $10,000–$20,000 / 2–3 weeks
+              </li>
+              <li>
+                <strong>Integrated commercial insights report:</strong> $10,000–$20,000 / 2–3 weeks
+              </li>
+            </ul>
+          </div>
+        </ReportPremiumSection>
+
+        <ReportPremiumSection
+          id="related-programmes"
+          title="Related UAE and GCC research programmes"
+          variant="muted"
+          countryName="United Arab Emirates"
+          marketSlug="uae"
+        >
+          <div className="grid sm:grid-cols-2 gap-4">
+            <HealthcareNavCard
+              to="/uae-pharmaceutical-market-research"
+              title="UAE pharmaceutical market research"
+              description="Emirate-specific DHA, DOH, and MOHAP-aware programmes for launch and access teams."
+            />
+            <HealthcareNavCard
+              to="/patient-journey-research-gcc"
+              title="Patient journey research GCC"
+              description="Pathway mapping across KSA, UAE, Kuwait, and Qatar for chronic disease programmes."
+            />
+            <HealthcareNavCard
+              to="/uae-market-access-research"
+              title="UAE market access research"
+              description="Formulary, payer, and pricing intelligence for UAE access decisions."
+            />
+            <HealthcareNavCard
+              to="/uae-pricing-reimbursement-strategy"
+              title="UAE pricing and reimbursement strategy"
+              description="Pricing and reimbursement modelling aligned to UAE payer realities."
+            />
+          </div>
+        </ReportPremiumSection>
+      </HealthcareResearchPageShell>
+    </>
   );
 }

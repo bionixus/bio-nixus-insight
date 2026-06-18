@@ -501,6 +501,30 @@ export function getHealthcareMarketResearchTherapyConfig(
   };
 }
 
+/** Conversion config for standalone therapy/country SEO landing pages aligned to the hub shell. */
+export function getHealthcareMarketResearchLandingConfig(
+  reportLabel: string,
+  canonicalPath: string,
+  marketName: string,
+  options?: { showEgyptPhone?: boolean; therapyArea?: string },
+): ReportConversionConfig {
+  const therapyHint = options?.therapyArea ? ` Mention ${options.therapyArea.toLowerCase()} and` : '';
+  return {
+    ...HEALTHCARE_MR_HUB_BASE,
+    showEgyptPhone: options?.showEgyptPhone ?? marketName.toLowerCase().includes('egypt'),
+    marketName,
+    reportLabel,
+    canonicalPath: ensureStandalonePath(canonicalPath),
+    emailSubject: `${reportLabel} — BioNixus`,
+    routingHint: `${therapyHint} UAE payer and formulary priorities for faster routing.`.trim(),
+    primaryCtaLabel: `Schedule a ${marketName} research briefing`,
+    consultationHeadline: `Ready for ${reportLabel.toLowerCase()}?`,
+    asideDeskLabel: `${marketName} research desk`,
+    midPageHeadline: `Commission ${reportLabel.toLowerCase()}`,
+    midPageBody: `Book a 30-minute briefing to align methodology, sample design, and delivery timelines for ${marketName}.`,
+  };
+}
+
 /** Conversion config for `/healthcare-market-research/services/:service`. */
 export function getHealthcareMarketResearchServiceConfig(
   serviceName: string,
