@@ -81,6 +81,7 @@ import BahrainPharmaCompanies from '@/pages/BahrainPharmaCompanies';
 import IraqPharmaCompanies from '@/pages/IraqPharmaCompanies';
 import IranPharmaCompanies from '@/pages/IranPharmaCompanies';
 import MarketResearchUae from '@/pages/MarketResearchUae';
+import DiabetesMarketResearchUae from '@/pages/DiabetesMarketResearchUae';
 import MarketResearchKsa from '@/pages/MarketResearchKsa';
 import MarketResearchSaudi from '@/pages/MarketResearchSaudi';
 import MarketResearchKuwait from '@/pages/MarketResearchKuwait';
@@ -222,6 +223,7 @@ export const routes: RouteObject[] = [
   { path: '/market-research-home', element: <MarketResearchHome /> },
   { path: '/market-research', element: <MarketResearch /> },
   { path: '/market-research-uae', element: <MarketResearchUae /> },
+  { path: '/diabetes-market-research-uae', element: <DiabetesMarketResearchUae /> },
   { path: '/market-research-ksa', element: <MarketResearchKsa /> },
   { path: '/market-research-saudi', element: <MarketResearchSaudi /> },
   { path: '/market-research-kuwait', element: <MarketResearchKuwait /> },
