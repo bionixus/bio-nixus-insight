@@ -8,6 +8,7 @@ export interface ReportEnrichmentSchemaInput {
   marketSlug?: string;
   publishedDate: string;
   modifiedDate: string;
+  pageUrl?: string;
 }
 
 export function buildDatasetSchema(input: ReportEnrichmentSchemaInput): object {
@@ -16,6 +17,14 @@ export function buildDatasetSchema(input: ReportEnrichmentSchemaInput): object {
     '@type': 'Dataset',
     name: `${input.pageTitle} — Market Data 2026`,
     description: input.pageMetaDescription,
+    ...(input.pageUrl ? { url: input.pageUrl } : {}),
+    keywords: [
+      `${input.countryName} pharmaceutical market`,
+      `${input.countryName} healthcare market research`,
+      'market access',
+      'healthcare market data',
+      'pharmaceutical market size',
+    ],
     creator: {
       '@type': 'Organization',
       name: 'BioNixus',
@@ -38,17 +47,21 @@ export function buildMedicalWebPageSchema(input: ReportEnrichmentSchemaInput): o
   return {
     '@context': 'https://schema.org',
     '@type': 'MedicalWebPage',
+    name: input.pageTitle,
+    headline: input.pageTitle,
+    description: input.pageMetaDescription,
+    ...(input.pageUrl ? { url: input.pageUrl } : {}),
     about: {
-      '@type': 'MedicalBusiness',
-      name: `${input.countryName} healthcare system`,
+      '@type': 'MedicalCondition',
+      name: `${input.countryName} pharmaceutical and healthcare market`,
     },
     audience: {
-      '@type': 'Audience',
+      '@type': 'MedicalAudience',
       audienceType:
         'Pharmaceutical commercial professionals, market access directors, healthcare investors, regional business development managers',
     },
     lastReviewed: input.modifiedDate,
-    reviewedBy: { '@type': 'Organization', name: 'BioNixus' },
+    reviewedBy: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
   };
 }
 

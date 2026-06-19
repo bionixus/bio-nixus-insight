@@ -246,7 +246,15 @@ const pageJsonLd = [
     name: 'BioNixus Middle East Pharmaceutical Market Research',
     description:
       'Middle East healthcare and pharmaceutical market research programs for launch, market access, and growth decisions across GCC and North Africa.',
-    areaServed: ['Saudi Arabia', 'United Arab Emirates', 'Kuwait', 'Egypt', 'Qatar', 'Bahrain', 'Oman'],
+    areaServed: [
+      { '@type': 'Country', name: 'Saudi Arabia' },
+      { '@type': 'Country', name: 'United Arab Emirates' },
+      { '@type': 'Country', name: 'Kuwait' },
+      { '@type': 'Country', name: 'Egypt' },
+      { '@type': 'Country', name: 'Qatar' },
+      { '@type': 'Country', name: 'Bahrain' },
+      { '@type': 'Country', name: 'Oman' },
+    ],
     provider: {
       '@type': 'Organization',
       name: 'BioNixus',

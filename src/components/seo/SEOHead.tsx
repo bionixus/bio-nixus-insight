@@ -13,6 +13,21 @@ interface SEOHeadProps {
   jsonLd?: object[];
 }
 
+function normalizeArticleSchema(
+  schema: Record<string, unknown>,
+  fallbackImage: string,
+): Record<string, unknown> {
+  if (schema['@type'] !== 'Article' && schema['@type'] !== 'BlogPosting') return schema;
+  const out = { ...schema };
+  if (!out.image) {
+    out.image = { '@type': 'ImageObject', url: fallbackImage, width: 1200, height: 630 };
+  }
+  if (typeof out.mainEntityOfPage === 'string') {
+    out.mainEntityOfPage = { '@type': 'WebPage', '@id': out.mainEntityOfPage };
+  }
+  return out;
+}
+
 export function SEOHead({
   title,
   description,
@@ -35,6 +50,9 @@ export function SEOHead({
   const canonicalUrl = `https://www.bionixus.com${canonicalPath}`;
   const resolvedOgImage =
     ogImage ?? `https://www.bionixus.com/api/og-card?path=${encodeURIComponent(canonicalPath)}`;
+  const normalizedJsonLd = jsonLd.map((s) =>
+    normalizeArticleSchema(s as Record<string, unknown>, resolvedOgImage),
+  );
   const hreflangLinks = getHreflangLinks(pathname);
   const geoMeta = getGeoMeta(pathname);
 
@@ -64,7 +82,7 @@ export function SEOHead({
       <meta name="twitter:description" content={safeDescription} />
       <meta name="twitter:image" content={resolvedOgImage} />
 
-      {jsonLd.map((schema, index) => (
+      {normalizedJsonLd.map((schema, index) => (
         <script key={`json-ld-${index}`} type="application/ld+json">
           {JSON.stringify(schema)}
         </script>

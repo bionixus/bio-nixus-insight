@@ -90,18 +90,28 @@ export default function HealthcareReportPage() {
       '@context': 'https://schema.org',
       '@type': 'Article',
       headline: report.title,
-      author: { '@type': 'Organization', name: 'BioNixus' },
+      description: report.metaDescription,
+      image: {
+        '@type': 'ImageObject',
+        url: 'https://www.bionixus.com/og-image.png',
+        width: 1200,
+        height: 630,
+      },
+      author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
       publisher: {
         '@type': 'Organization',
         name: 'BioNixus',
         logo: {
           '@type': 'ImageObject',
           url: 'https://www.bionixus.com/bionixus-logo.webp',
+          width: 512,
+          height: 512,
         },
       },
       datePublished: report.publishedDate,
       dateModified: report.modifiedDate,
-      mainEntityOfPage: canonical,
+      url: canonical,
+      mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
     },
     {
       '@context': 'https://schema.org',
@@ -120,6 +130,7 @@ export default function HealthcareReportPage() {
       marketSlug: report.marketSlug,
       publishedDate: report.publishedDate,
       modifiedDate: report.modifiedDate,
+      pageUrl: canonical,
     }),
   ];
 
