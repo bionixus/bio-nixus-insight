@@ -180,8 +180,18 @@ import PtTopMarketResearchCompaniesBrazil2026 from '@/pages/PtTopMarketResearchC
 import PtTopHealthcareMarketResearchCompaniesBrazil2026 from '@/pages/PtTopHealthcareMarketResearchCompaniesBrazil2026';
 import EsTopMarketResearchCompaniesArgentina2026 from '@/pages/EsTopMarketResearchCompaniesArgentina2026';
 import EsTopHealthcareMarketResearchCompaniesArgentina2026 from '@/pages/EsTopHealthcareMarketResearchCompaniesArgentina2026';
-import TopCompaniesCountryPage from '@/pages/insights/TopCompaniesCountryPage';
-import { allListicleConfigs } from '@/data/topCompanies';
+import HeorConsulting from '@/pages/HeorConsulting';
+import UaePricingReimbursementStrategy from '@/pages/UaePricingReimbursementStrategy';
+import BrandTrackingPharmaGcc from '@/pages/BrandTrackingPharmaGcc';
+import PatientJourneyResearchGcc from '@/pages/PatientJourneyResearchGcc';
+import HealthcareFieldworkGcc from '@/pages/HealthcareFieldworkGcc';
+import SpecialistPhysicianPanelUae from '@/pages/SpecialistPhysicianPanelUae';
+import CommercialEffectivenessPharmaMiddleEast from '@/pages/CommercialEffectivenessPharmaMiddleEast';
+import PatientAdherenceResearchMiddleEast from '@/pages/PatientAdherenceResearchMiddleEast';
+import RespiratoryMarketAccessGcc from '@/pages/RespiratoryMarketAccessGcc';
+import FrHealthcareMarketResearchFrance from '@/pages/FrHealthcareMarketResearchFrance';
+import DeHealthcareMarketResearchGermany from '@/pages/DeHealthcareMarketResearchGermany';
+import EsHealthcareMarketResearchSpain from '@/pages/EsHealthcareMarketResearchSpain';
 
 const AdminDashboard = lazy(() => import('@/pages/AdminDashboard'));
 const AdminLogin = lazy(() => import('@/pages/AdminLogin'));
@@ -256,6 +266,7 @@ export const routes: RouteObject[] = [
   { path: '/ar/market-research-healthcare', element: <MarketResearchHealthcare /> },
   { path: '/pt/market-research-healthcare', element: <MarketResearchHealthcare /> },
   { path: '/ru/market-research-healthcare', element: <MarketResearchHealthcare /> },
+  { path: '/ru/healthcare-market-research', element: <HubPage /> },
   { path: '/qualitative-market-research', element: <QualitativeMarketResearch /> },
   { path: '/bionixus-market-research-middle-east', element: <BionixusMarketResearchMiddleEast /> },
   { path: '/bionixus-vs-iqvia-mena', element: <BionixusVsIqviaMena /> },
@@ -284,6 +295,15 @@ export const routes: RouteObject[] = [
   { path: '/real-world-evidence', element: <RealWorldEvidence /> },
   { path: '/real-world-evidence-gcc', element: <RealWorldEvidenceGcc /> },
   { path: '/heor-consulting-saudi-arabia', element: <HeorConsultingSaudiArabia /> },
+  { path: '/heor-consulting', element: <HeorConsulting /> },
+  { path: '/uae-pricing-reimbursement-strategy', element: <UaePricingReimbursementStrategy /> },
+  { path: '/brand-tracking-pharma-gcc', element: <BrandTrackingPharmaGcc /> },
+  { path: '/patient-journey-research-gcc', element: <PatientJourneyResearchGcc /> },
+  { path: '/healthcare-fieldwork-gcc', element: <HealthcareFieldworkGcc /> },
+  { path: '/specialist-physician-panel-uae', element: <SpecialistPhysicianPanelUae /> },
+  { path: '/commercial-effectiveness-pharma-middle-east', element: <CommercialEffectivenessPharmaMiddleEast /> },
+  { path: '/patient-adherence-research-middle-east', element: <PatientAdherenceResearchMiddleEast /> },
+  { path: '/respiratory-market-access-gcc', element: <RespiratoryMarketAccessGcc /> },
   { path: '/pharma-fieldwork-saudi-arabia', element: <PharmaFieldworkSaudiArabia /> },
   { path: '/pharma-fieldwork-uae', element: <PharmaFieldworkUae /> },
   { path: '/pharma-fieldwork-egypt', element: <PharmaFieldworkEgypt /> },
@@ -311,6 +331,14 @@ export const routes: RouteObject[] = [
   { path: '/egypt', element: <CountryPage /> },
   { path: '/healthcare-market-research/:country', element: <CountryPage /> },
   { path: '/healthcare-market-research/therapy/:area', element: <TherapyPage /> },
+  { path: '/ar/healthcare-market-research', element: <HubPage /> },
+  { path: '/ar/healthcare-market-research/:country', element: <CountryPage /> },
+  { path: '/fr/healthcare-market-research/france', element: <FrHealthcareMarketResearchFrance /> },
+  { path: '/fr/healthcare-market-research/:country', element: <CountryPage /> },
+  { path: '/de/healthcare-market-research/germany', element: <DeHealthcareMarketResearchGermany /> },
+  { path: '/de/healthcare-market-research/:country', element: <CountryPage /> },
+  { path: '/es/healthcare-market-research/spain', element: <EsHealthcareMarketResearchSpain /> },
+  { path: '/es/healthcare-market-research/:country', element: <CountryPage /> },
   { path: '/healthcare-market-research/services/:service', element: <ServicePage /> },
   { path: '/pharmaceutical-companies-kuwait', element: <KuwaitPharmaCompanies /> },
   { path: '/pharmaceutical-companies-saudi-arabia', element: <SaudiPharmaCompanies /> },
@@ -337,6 +365,7 @@ export const routes: RouteObject[] = [
   { path: '/pt/insights/top-empresas-pesquisa-mercado-saude-brasil-2026', element: <PtTopHealthcareMarketResearchCompaniesBrazil2026 /> },
   { path: '/es/insights/top-empresas-investigacion-mercado-argentina-2026', element: <EsTopMarketResearchCompaniesArgentina2026 /> },
   { path: '/es/insights/top-empresas-investigacion-mercado-salud-argentina-2026', element: <EsTopHealthcareMarketResearchCompaniesArgentina2026 /> },
+  { path: '/top-market-research-companies-brazil-2026', element: <Navigate to="/insights/top-market-research-companies-brazil-2026" replace /> },
   { path: '/pharmaceutical-companies-egypt', element: <EgyptPharmaCompanies /> },
   { path: '/pharmaceutical-companies-qatar', element: <QatarPharmaCompanies /> },
   { path: '/pharmaceutical-companies-oman', element: <OmanPharmaCompanies /> },
@@ -392,6 +421,7 @@ export const routes: RouteObject[] = [
   { path: '/market-reports', element: suspensePage(<HealthcareReportsHub />) },
   { path: '/market-reports/therapy/:therapyAreaSlug', element: suspensePage(<HealthcareReportsByTherapy />) },
   { path: '/market-reports/country/:marketSlug', element: suspensePage(<HealthcareReportsByCountry />) },
+  { path: '/market-reports/uae-medical-devices-market-report', element: <Navigate to="/uae-medical-devices-market-report" replace /> },
   { path: '/market-reports/:slug', element: suspensePage(<HealthcareReportPage />) },
   { path: '/news', element: <NewsHub /> },
   { path: '/news/:slug', element: suspensePage(<PressReleasePage />) },
@@ -408,6 +438,8 @@ export const routes: RouteObject[] = [
   { path: '/ar/arabic-blog-alsawdyh', element: <ArabicBlogAlsawdyh /> },
   { path: '/ar/blog', element: <Blog /> },
   { path: '/ar/blog/:slug', element: suspensePage(<BlogPost />) },
+  { path: '/es/blog', element: <Blog /> },
+  { path: '/es/blog/:slug', element: suspensePage(<BlogPost />) },
   { path: '/pharmacies-saudi-arabia-marketing', element: <PharmaciesSaudiArabiaMarketing /> },
   { path: '/bionixus-ai-chatbots-increase-sales-and-lead-generation', element: <AiChatbotsLeadGeneration /> },
   { path: '/blog/:slug', element: suspensePage(<BlogPost />) },
@@ -460,11 +492,6 @@ export const routes: RouteObject[] = [
   { path: '/admin/calendar', element: suspensePage(<AdminCalendar />) },
   { path: '/admin/calendar/new', element: suspensePage(<AdminCalendarNew />) },
   { path: '/admin/send-newsletter', element: suspensePage(<AdminSendNewsletter />) },
-  // Data-driven country listicle pages (direct imports — SSR-safe)
-  ...allListicleConfigs.map((config) => ({
-    path: config.slug,
-    element: <TopCompaniesCountryPage config={config} />,
-  })),
   { path: '*', element: suspensePage(<NotFound />) },
 ];
 

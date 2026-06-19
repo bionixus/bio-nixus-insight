@@ -25,6 +25,8 @@ import { bahrainHealthcareEn } from './gcc/bahrain.healthcare.en';
 import { kuwaitGeneralEn } from './gcc/kuwait.general.en';
 import { kuwaitGeneralAr } from './gcc/kuwait.general.ar';
 import { kuwaitHealthcareEn } from './gcc/kuwait.healthcare.en';
+import { abuDhabiHealthcareEn } from './gcc/abu-dhabi.healthcare.en';
+import { dubaiHealthcareEn } from './gcc/dubai.healthcare.en';
 
 // MENA / Levant / North Africa
 import { jordanGeneralEn } from './mena/jordan.general.en';
@@ -84,6 +86,8 @@ export const allListicleConfigs: CountryListicleConfig[] = [
   kuwaitGeneralEn,
   kuwaitGeneralAr,
   kuwaitHealthcareEn,
+  abuDhabiHealthcareEn,
+  dubaiHealthcareEn,
   // MENA
   jordanGeneralEn,
   jordanHealthcareEn,
