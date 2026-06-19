@@ -82,6 +82,15 @@ import IraqPharmaCompanies from '@/pages/IraqPharmaCompanies';
 import IranPharmaCompanies from '@/pages/IranPharmaCompanies';
 import MarketResearchUae from '@/pages/MarketResearchUae';
 import DiabetesMarketResearchUae from '@/pages/DiabetesMarketResearchUae';
+import SpecialistPhysicianPanelUae from '@/pages/SpecialistPhysicianPanelUae';
+import MslInsightResearchMiddleEast from '@/pages/MslInsightResearchMiddleEast';
+import BrandTrackingPharmaGcc from '@/pages/BrandTrackingPharmaGcc';
+import CommercialEffectivenessPharmaMiddleEast from '@/pages/CommercialEffectivenessPharmaMiddleEast';
+import HealthcareFieldworkGcc from '@/pages/HealthcareFieldworkGcc';
+import PatientJourneyResearchGcc from '@/pages/PatientJourneyResearchGcc';
+import PatientAdherenceResearchMiddleEast from '@/pages/PatientAdherenceResearchMiddleEast';
+import RespiratoryMarketAccessGcc from '@/pages/RespiratoryMarketAccessGcc';
+import UaePricingReimbursementStrategy from '@/pages/UaePricingReimbursementStrategy';
 import MarketResearchKsa from '@/pages/MarketResearchKsa';
 import MarketResearchSaudi from '@/pages/MarketResearchSaudi';
 import MarketResearchKuwait from '@/pages/MarketResearchKuwait';
@@ -224,6 +233,15 @@ export const routes: RouteObject[] = [
   { path: '/market-research', element: <MarketResearch /> },
   { path: '/market-research-uae', element: <MarketResearchUae /> },
   { path: '/diabetes-market-research-uae', element: <DiabetesMarketResearchUae /> },
+  { path: '/specialist-physician-panel-uae', element: <SpecialistPhysicianPanelUae /> },
+  { path: '/msl-insight-research-middle-east', element: <MslInsightResearchMiddleEast /> },
+  { path: '/brand-tracking-pharma-gcc', element: <BrandTrackingPharmaGcc /> },
+  { path: '/commercial-effectiveness-pharma-middle-east', element: <CommercialEffectivenessPharmaMiddleEast /> },
+  { path: '/healthcare-fieldwork-gcc', element: <HealthcareFieldworkGcc /> },
+  { path: '/patient-journey-research-gcc', element: <PatientJourneyResearchGcc /> },
+  { path: '/patient-adherence-research-middle-east', element: <PatientAdherenceResearchMiddleEast /> },
+  { path: '/respiratory-market-access-gcc', element: <RespiratoryMarketAccessGcc /> },
+  { path: '/uae-pricing-reimbursement-strategy', element: <UaePricingReimbursementStrategy /> },
   { path: '/market-research-ksa', element: <MarketResearchKsa /> },
   { path: '/market-research-saudi', element: <MarketResearchSaudi /> },
   { path: '/market-research-kuwait', element: <MarketResearchKuwait /> },
