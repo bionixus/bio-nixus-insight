@@ -394,6 +394,13 @@ export default function PtTopHealthcareMarketResearchCompaniesBrazil2026() {
                   <div className="text-sm text-gray-500">Read this guide in English</div>
                 </div>
               </Link>
+              <Link to="/blog/avaliacao-tecnologias-conitec-brasil-2026" className="flex items-center gap-3 p-4 border border-gray-200 rounded-lg hover:border-teal-400 hover:bg-teal-50 transition-colors">
+                <BookOpen className="w-5 h-5 text-teal-700 flex-shrink-0" />
+                <div>
+                  <div className="font-medium text-gray-900">Avaliação de Tecnologias de Saúde — CONITEC Brasil 2026</div>
+                  <div className="text-sm text-gray-500">Guia completo sobre o processo de incorporação no SUS</div>
+                </div>
+              </Link>
             </div>
           </section>
 

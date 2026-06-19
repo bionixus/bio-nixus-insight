@@ -644,6 +644,13 @@ export default function HubPage() {
               <h3 className="text-base font-semibold text-foreground mb-2">Healthcare Market Research Company in Egypt</h3>
               <p className="text-sm text-muted-foreground">BOFU page for EDA, UHI, bilingual fieldwork, and Egypt launch evidence.</p>
             </Link>
+            <Link
+              to="/blog/eaeu-farmacevticheskiy-dostup-2026"
+              className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors"
+            >
+              <h3 className="text-base font-semibold text-foreground mb-2">EAEU Pharmaceutical Market Access Guide</h3>
+              <p className="text-sm text-muted-foreground">Regulatory pathways, registration requirements, and market access strategy across the Eurasian Economic Union.</p>
+            </Link>
           </div>
       </ReportPremiumSection>
 

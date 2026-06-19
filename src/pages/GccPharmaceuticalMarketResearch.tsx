@@ -230,6 +230,36 @@ export default function GccPharmaceuticalMarketResearch() {
           </ReportPremiumSection>
 
           <ReportPremiumSection id="related-resources" title="Related BioNixus resources" variant="muted">
+            <div className="mb-6">
+              <h3 className="text-sm font-semibold text-foreground mb-3">Recent GCC regulatory intelligence</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>
+                  <Link to="/blog/adstiladrin-nadofaragene-nmibc-ema-chmp-2026" className="text-primary hover:underline">
+                    Adstiladrin (nadofaragene firadenovec) EMA CHMP positive opinion 2026 — oncology market access implications
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/blog/cenrifki-tolebrutinib-nrspms-ema-chmp-2026" className="text-primary hover:underline">
+                    Cenrifki (tolebrutinib) EMA CHMP opinion 2026 — neurology (MS) GCC market access
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/blog/redemplo-plozasiran-fcs-ema-chmp-2026" className="text-primary hover:underline">
+                    Redemplo (plozasiran) EMA CHMP positive opinion 2026 — metabolic rare disease strategy
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/blog/lynarvo-lineriixibat-pbc-fda-2026" className="text-primary hover:underline">
+                    Lynarvo (linerixibat) FDA approval 2026 — gastroenterology GCC launch planning
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/blog/icotyde-icotrokinra-psoriasis-fda-2026" className="text-primary hover:underline">
+                    Icotyde (icotrokinra) FDA approval 2026 — immunology/psoriasis market access
+                  </Link>
+                </li>
+              </ul>
+            </div>
             <div className="flex flex-wrap gap-3">
               <Link
                 to="/bionixus-market-research-middle-east"

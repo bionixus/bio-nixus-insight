@@ -68,6 +68,13 @@ import { colombiaHealthcareEn } from './latam/colombia.healthcare.en';
 import { chileHealthcareEn } from './latam/chile.healthcare.en';
 import { peruHealthcareEn } from './latam/peru.healthcare.en';
 
+// Therapy area listicles (global)
+import { consumerHealthcareGlobalEn } from './therapy/consumer-healthcare.en';
+import { biologicsBiosimilarsGlobalEn } from './therapy/biologics-biosimilars.en';
+import { obesityWeightGlobalEn } from './therapy/obesity-weight.en';
+import { oncologyGlobalEn } from './therapy/oncology.en';
+import { rareDiseaseGlobalEn } from './therapy/rare-disease.en';
+
 export const allListicleConfigs: CountryListicleConfig[] = [
   // GCC general
   uaeGeneralEn,
@@ -124,4 +131,10 @@ export const allListicleConfigs: CountryListicleConfig[] = [
   colombiaHealthcareEn,
   chileHealthcareEn,
   peruHealthcareEn,
+  // Therapy area listicles (global)
+  consumerHealthcareGlobalEn,
+  biologicsBiosimilarsGlobalEn,
+  obesityWeightGlobalEn,
+  oncologyGlobalEn,
+  rareDiseaseGlobalEn,
 ];

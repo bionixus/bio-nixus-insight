@@ -354,12 +354,36 @@ export default function UaePharmaceuticalMarketResearch() {
               <Link to="/uae-market-access-research" className="text-primary underline">
                 UAE market access research
               </Link>
+              ,{' '}
+              <Link to="/diabetes-market-research-uae" className="text-primary underline">
+                diabetes market research UAE
+              </Link>
               , and{' '}
               <Link to="/pharmaceutical-companies-uae" className="text-primary underline">
                 pharmaceutical companies in the UAE
               </Link>
               .
             </p>
+            <div className="mt-6">
+              <h3 className="text-sm font-semibold text-foreground mb-3">Recent UAE regulatory intelligence</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>
+                  <Link to="/blog/icotyde-icotrokinra-psoriasis-fda-2026" className="text-primary hover:underline">
+                    Icotyde (icotrokinra) FDA approval 2026 — immunology/psoriasis implications for UAE market
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/blog/lynarvo-lineriixibat-pbc-fda-2026" className="text-primary hover:underline">
+                    Lynarvo (linerixibat) FDA approval 2026 — gastroenterology access strategy UAE
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/blog/adstiladrin-nadofaragene-nmibc-ema-chmp-2026" className="text-primary hover:underline">
+                    Adstiladrin EMA CHMP positive opinion 2026 — bladder cancer GCC commercial strategy
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
 
