@@ -192,6 +192,8 @@ import RespiratoryMarketAccessGcc from '@/pages/RespiratoryMarketAccessGcc';
 import FrHealthcareMarketResearchFrance from '@/pages/FrHealthcareMarketResearchFrance';
 import DeHealthcareMarketResearchGermany from '@/pages/DeHealthcareMarketResearchGermany';
 import EsHealthcareMarketResearchSpain from '@/pages/EsHealthcareMarketResearchSpain';
+import ArHealthcareMarketResearch from '@/pages/ArHealthcareMarketResearch';
+import ArHealthcareMarketResearchSaudiArabia from '@/pages/ArHealthcareMarketResearchSaudiArabia';
 
 const AdminDashboard = lazy(() => import('@/pages/AdminDashboard'));
 const AdminLogin = lazy(() => import('@/pages/AdminLogin'));
@@ -331,7 +333,8 @@ export const routes: RouteObject[] = [
   { path: '/egypt', element: <CountryPage /> },
   { path: '/healthcare-market-research/:country', element: <CountryPage /> },
   { path: '/healthcare-market-research/therapy/:area', element: <TherapyPage /> },
-  { path: '/ar/healthcare-market-research', element: <HubPage /> },
+  { path: '/ar/healthcare-market-research', element: <ArHealthcareMarketResearch /> },
+  { path: '/ar/healthcare-market-research/saudi-arabia', element: <ArHealthcareMarketResearchSaudiArabia /> },
   { path: '/ar/healthcare-market-research/:country', element: <CountryPage /> },
   { path: '/fr/healthcare-market-research/france', element: <FrHealthcareMarketResearchFrance /> },
   { path: '/fr/healthcare-market-research/:country', element: <CountryPage /> },
