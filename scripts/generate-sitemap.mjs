@@ -688,7 +688,7 @@ async function fetchPressReleaseContent(projectId, dataset) {
   }
 }
 
-async function fetchSanityContent(projectId, dataset, types, token = null) {
+async function fetchSanityContent(projectId, dataset, types, token = null, label = 'Sanity') {
   try {
     const { createClient } = await import('@sanity/client');
     const client = createClient({
@@ -718,7 +718,7 @@ async function fetchSanityContent(projectId, dataset, types, token = null) {
     }
     return [...map.values()];
   } catch (err) {
-    console.warn(`Sitemap: could not fetch Sanity content:`, err.message);
+    console.warn(`Sitemap: could not fetch ${label} content:`, err.message);
     return [];
   }
 }
@@ -1037,12 +1037,20 @@ async function main() {
   const blogDataset = process.env.VITE_SANITY_DATASET || 'production';
   const caseProjectId = process.env.VITE_SANITY_CASE_STUDIES_PROJECT_ID || 'gj6cv27f';
   const caseDataset = process.env.VITE_SANITY_CASE_STUDIES_DATASET || 'production';
-  const blogToken = process.env.VITE_SANITY_API_TOKEN || process.env.SANITY_API_TOKEN || null;
-  const caseToken = process.env.VITE_SANITY_CASE_STUDIES_API_TOKEN || blogToken;
+  const blogToken =
+    process.env.SANITY_API_TOKEN ||
+    process.env.SANITY_TOKEN ||
+    process.env.VITE_SANITY_API_TOKEN ||
+    null;
+  const caseToken =
+    process.env.VITE_SANITY_CASE_STUDIES_API_TOKEN ||
+    process.env.SANITY_API_TOKEN ||
+    process.env.SANITY_TOKEN ||
+    blogToken;
 
   const [blogContent, caseContent, pressContent] = await Promise.all([
-    fetchSanityContent(blogProjectId, blogDataset, ['post', 'blogPost'], blogToken),
-    fetchSanityContent(caseProjectId, caseDataset, 'caseStudy', caseToken),
+    fetchSanityContent(blogProjectId, blogDataset, ['post', 'blogPost'], blogToken, 'blog'),
+    fetchSanityContent(caseProjectId, caseDataset, 'caseStudy', caseToken, 'case study'),
     fetchPressReleaseContent(blogProjectId, blogDataset),
   ]);
 
