@@ -5,6 +5,8 @@ import { RelatedPages } from '@/components/healthcare-research/RelatedPages';
 import { HealthcareResearchPageShell } from '@/components/healthcare-research/HealthcareResearchPageShell';
 import { HealthcareNavCard, HealthcareStatPanel } from '@/components/healthcare-research/healthcareResearchUi';
 import { CountryMarketReferenceGuide } from '@/components/seo/CountryMarketReferenceGuide';
+import { GeoMarketClusterCallout } from '@/components/seo/GeoMarketClusterCallout';
+import { getGeoMarketClusterForSlug } from '@/data/geo-market-page-clusters';
 import { COUNTRY_CONFIGS, type CountryConfig, type CountryRegion } from '@/lib/constants/countries';
 import { getHealthcareMarketResearchCountryConfig } from '@/data/reportConversionConfig';
 import { ReportMidPageCta } from '@/components/report-conversion';
@@ -184,6 +186,9 @@ export default function CountryPage() {
     : [];
 
   const conversionConfig = getHealthcareMarketResearchCountryConfig(config.name, config.slug);
+  const geoCluster = getGeoMarketClusterForSlug(config.slug);
+  const geoClusterVariant =
+    config.slug === 'united-arab-emirates' ? ('healthcare-mr-full-name' as const) : ('healthcare-mr' as const);
   const heroStats =
     config.keyStats.length >= 3
       ? config.keyStats.slice(0, 3).map((stat) => ({ value: stat.value, label: stat.label }))
@@ -215,12 +220,54 @@ export default function CountryPage() {
           statsCaption: '',
           description: (
             <p>
-              BioNixus supports evidence-led decisions in {config.name} through localized study design, stakeholder
-              mapping, and implementation-focused interpretation. Start from the{' '}
-              <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">
-                healthcare market research hub
-              </Link>{' '}
-              to align country priorities with therapy and service planning.
+              {config.slug === 'united-arab-emirates' ? (
+                <>
+                  BioNixus designs federated United Arab Emirates studies across MOHAP, DHA, and DOH jurisdictions —
+                  with UAE-wide stakeholder sampling and emirate-level execution detail. Compare with{' '}
+                  <Link to="/healthcare-market-research/uae" className="text-primary font-medium hover:underline">
+                    UAE emirate-focused market research
+                  </Link>{' '}
+                  or the{' '}
+                  <Link to="/global-websites/united-arab-emirates" className="text-primary font-medium hover:underline">
+                    UAE go-to-market blueprint
+                  </Link>
+                  .
+                </>
+              ) : config.slug === 'saudi-arabia' ? (
+                <>
+                  BioNixus delivers SFDA-aware physician surveys, Arabic fieldwork, and hospital stakeholder evidence
+                  across KSA. For launch sequencing and NUPCO context, see the{' '}
+                  <Link to="/global-websites/saudi-arabia" className="text-primary font-medium hover:underline">
+                    Saudi Arabia market entry blueprint
+                  </Link>
+                  .
+                </>
+              ) : config.slug === 'uae' ? (
+                <>
+                  BioNixus runs DHA and DOH-aligned fieldwork in Dubai and Abu Dhabi with MOHAP-aware payer evidence.
+                  For federated UAE planning, see{' '}
+                  <Link
+                    to="/healthcare-market-research/united-arab-emirates"
+                    className="text-primary font-medium hover:underline"
+                  >
+                    United Arab Emirates healthcare market research
+                  </Link>{' '}
+                  or the{' '}
+                  <Link to="/global-websites/united-arab-emirates" className="text-primary font-medium hover:underline">
+                    UAE go-to-market blueprint
+                  </Link>
+                  .
+                </>
+              ) : (
+                <>
+                  BioNixus supports evidence-led decisions in {config.name} through localized study design, stakeholder
+                  mapping, and implementation-focused interpretation. Start from the{' '}
+                  <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">
+                    healthcare market research hub
+                  </Link>{' '}
+                  to align country priorities with therapy and service planning.
+                </>
+              )}
             </p>
           ),
         }}
@@ -238,6 +285,11 @@ export default function CountryPage() {
           items: faqItems,
         }}
       >
+        {geoCluster ? (
+          <div className="mb-8">
+            <GeoMarketClusterCallout cluster={geoCluster} variant={geoClusterVariant} />
+          </div>
+        ) : null}
         <ReportPremiumSection
           id="key-indicators"
           title="Key pharmaceutical market indicators"
@@ -571,7 +623,7 @@ export default function CountryPage() {
                     description="BOFU page for EDA, UHI, bilingual fieldwork, and Egypt launch evidence."
                   />
                   <HealthcareNavCard
-                    to="/blog/top-market-research-companies-egypt-2026"
+                    to="/insights/top-market-research-companies-egypt-2026"
                     title="Top market research companies in Egypt (2026)"
                     description="Independent guide to leading firms for healthcare, pharma, and consumer research."
                   />

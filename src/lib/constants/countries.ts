@@ -34,6 +34,9 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     slug: 'saudi-arabia',
     region: 'mena',
     metaSuffix: 'KSA pharma market research with Vision 2030 healthcare expertise.',
+    metaTitle: 'Pharma Market Research Saudi Arabia | SFDA Fieldwork & KOL Studies | BioNixus',
+    metaDescription:
+      'Pharmaceutical market research in Saudi Arabia: SFDA-aware physician surveys, Arabic fieldwork, NUPCO-context hospital studies, and KOL mapping across Riyadh, Jeddah, and Dammam.',
     ogDescription:
       'BioNixus delivers pharmaceutical market research in Saudi Arabia with SFDA-aware execution, Arabic fieldwork, and hospital stakeholder access across Riyadh, Jeddah, and Dammam.',
     h1: 'Pharmaceutical Market Research in Saudi Arabia',
@@ -83,9 +86,9 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     slug: 'uae',
     region: 'mena',
     metaSuffix: 'UAE pharmaceutical insights across Abu Dhabi, Dubai, and Sharjah healthcare systems.',
-    metaTitle: 'Healthcare Market Research in UAE | Pharma & Pharmaceutical | BioNixus',
+    metaTitle: 'Pharma Market Research UAE | Dubai & Abu Dhabi Fieldwork | BioNixus',
     metaDescription:
-      'Healthcare market research in the UAE and pharma market research for Dubai, Abu Dhabi, and Northern Emirates: DHA, DOH, and MOHAP-aware physician, payer, and hospital evidence by BioNixus.',
+      'Pharma market research in the UAE: DHA and DOH-aligned physician surveys, hospital fieldwork in Dubai and Abu Dhabi, and MOHAP-context payer evidence for launch teams.',
     ogDescription:
       'BioNixus provides UAE pharmaceutical market research with DOH and MOHAP context, multilingual field execution, and access to major hospital networks.',
     h1: 'Pharmaceutical Market Research in the UAE',
@@ -127,6 +130,46 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
           'How does market research reduce launch risk for pharmaceutical brands in the UAE?',
         answer:
           'Launch risk often comes from misaligned assumptions about stakeholder behavior, access timing, and channel readiness. BioNixus reduces this risk by generating decision-linked evidence before and during launch phases. We test demand assumptions, assess message resonance, identify adoption barriers, and prioritize segments using both quantitative and qualitative approaches. This gives teams a clearer baseline for resource allocation and execution planning. We also highlight differences between stakeholder groups that may require differentiated engagement tactics. In UAE markets where healthcare ecosystems are sophisticated but heterogeneous, this level of clarity prevents costly strategy drift. The result is faster decision cycles, stronger cross-functional alignment, and launch plans that are grounded in local evidence instead of imported benchmarks.',
+      },
+    ],
+  },
+  'united-arab-emirates': {
+    name: 'United Arab Emirates',
+    slug: 'united-arab-emirates',
+    region: 'mena',
+    metaSuffix: 'Federated UAE healthcare market research across MOHAP, DHA, and DOH jurisdictions.',
+    metaTitle: 'United Arab Emirates Healthcare Market Research | MOHAP, DHA & DOH | BioNixus',
+    metaDescription:
+      'Healthcare market research across the United Arab Emirates: MOHAP federal context, Dubai DHA, Abu Dhabi DOH, and multi-emirate physician and payer evidence for pharmaceutical portfolios.',
+    ogDescription:
+      'BioNixus delivers United Arab Emirates healthcare market research with federated regulator context, multilingual field execution, and hospital network access across Dubai, Abu Dhabi, and Northern Emirates.',
+    h1: 'Healthcare Market Research Across the United Arab Emirates',
+    relatedCountries: ['uae', 'dubai', 'abu-dhabi', 'saudi-arabia'],
+    relatedTherapies: ['oncology', 'diabetes', 'respiratory', 'vaccines'],
+    keyStats: [
+      { label: 'Regulatory Scope', value: 'MOHAP, DHA, DOH' },
+      { label: 'Market Coverage', value: 'All seven emirates' },
+      { label: 'BioNixus Projects', value: '40+ completed UAE studies' },
+      { label: 'Execution Edge', value: 'Multilingual HCP and payer access' },
+    ],
+    faqQuestions: [
+      {
+        question:
+          'How does BioNixus handle multi-emirate pharmaceutical research across the United Arab Emirates?',
+        answer:
+          'United Arab Emirates studies require explicit jurisdiction design because MOHAP, Dubai DHA, and Abu Dhabi DOH can shape adoption, access, and evidence expectations differently. BioNixus maps the emirates and care settings relevant to your portfolio before fieldwork begins, then aligns sampling, interview guides, and analysis to those institutional realities. This federated approach helps teams avoid conclusions that only reflect one emirate or one hospital network. Outputs are structured for UAE-wide strategy while preserving emirate-level nuance for medical, commercial, and access teams.',
+      },
+      {
+        question:
+          'When should teams use the UAE short slug page versus the United Arab Emirates healthcare hub?',
+        answer:
+          'Use the UAE page when your program is emirate-execution focused — for example Dubai DHA fieldwork or Abu Dhabi DOH hospital access. Use the United Arab Emirates hub when you need federated regulator framing, multi-emirate portfolio planning, or stakeholder architecture that spans MOHAP and emirate-level health authorities. Both pages are indexable and cross-linked so search engines and buyers can choose the intent that matches their query.',
+      },
+      {
+        question:
+          'Which stakeholder groups are prioritized in United Arab Emirates pharmaceutical studies?',
+        answer:
+          'Typical UAE programs include prescribing specialists, hospital pharmacy and formulary influencers, payer-adjacent decision contributors, and institutional leaders across public and private networks. BioNixus segments by care setting and emirate because treatment and access logic can differ materially between Dubai Healthcare City networks, Abu Dhabi SEHA facilities, and Northern Emirates providers.',
       },
     ],
   },

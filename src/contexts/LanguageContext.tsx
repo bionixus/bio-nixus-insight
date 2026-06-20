@@ -2,8 +2,6 @@ import React, { createContext, useContext, useState, ReactNode, useEffect, useLa
 import { useLocation } from 'react-router-dom';
 import { Language, translations, languages } from '@/lib/i18n'; // stats: 10+, 120, 15+
 
-const LANGUAGE_STORAGE_KEY = 'bionixus-language';
-
 /** useLayoutEffect on the client, useEffect on the server (avoids SSR warning). */
 const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
@@ -23,7 +21,7 @@ const fallbackLanguageContext: LanguageContextType = {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(fallbackLanguageContext);
 
-function getLanguageFromPath(pathname: string): Language | null {
+function getLanguageFromPath(pathname: string): Language {
   if (pathname === '/de' || pathname.startsWith('/de/')) return 'de';
   if (pathname === '/fr' || pathname.startsWith('/fr/')) return 'fr';
   if (pathname === '/es' || pathname.startsWith('/es/')) return 'es';
@@ -31,47 +29,29 @@ function getLanguageFromPath(pathname: string): Language | null {
   if (pathname === '/ar' || pathname.startsWith('/ar/')) return 'ar';
   if (pathname === '/pt' || pathname.startsWith('/pt/')) return 'pt';
   if (pathname === '/ru' || pathname.startsWith('/ru/')) return 'ru';
-  if (pathname === '/' || pathname === '') return 'en';
-  return null;
+  return 'en';
 }
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const { pathname } = useLocation();
-  const [language, setLanguageState] = useState<Language>(() => {
-    const pathLanguage = getLanguageFromPath(pathname);
-    if (pathLanguage) return pathLanguage;
-    if (typeof window !== 'undefined') {
-      const stored = window.localStorage.getItem(LANGUAGE_STORAGE_KEY) as Language | null;
-      if (stored && languages.some((item) => item.code === stored)) {
-        return stored;
-      }
-    }
-    return 'en';
-  });
+  const [language, setLanguageState] = useState<Language>(() => getLanguageFromPath(pathname));
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
     if (typeof window !== 'undefined') {
-      window.localStorage.setItem(LANGUAGE_STORAGE_KEY, lang);
+      window.localStorage.setItem('bionixus-language', lang);
     }
   };
 
   const currentLang = languages.find(l => l.code === language);
   const isRTL = currentLang?.rtl || false;
 
-  // Layout effect so the correct language is applied before paint, avoiding a
-  // visible English-to-stored-language flash on SSR pages without a lang prefix.
+  // Language always follows the URL prefix — never localStorage alone — so nav links
+  // match the page the user is actually on (prevents wrong /ar/contact on English URLs).
   useIsomorphicLayoutEffect(() => {
     const pathLanguage = getLanguageFromPath(pathname);
-    if (pathLanguage && pathLanguage !== language) {
+    if (pathLanguage !== language) {
       setLanguageState(pathLanguage);
-      return;
-    }
-    if (!pathLanguage && typeof window !== 'undefined') {
-      const stored = window.localStorage.getItem(LANGUAGE_STORAGE_KEY) as Language | null;
-      if (stored && stored !== language && languages.some((item) => item.code === stored)) {
-        setLanguageState(stored);
-      }
     }
   }, [pathname, language]);
 

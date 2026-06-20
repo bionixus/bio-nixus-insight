@@ -13,6 +13,8 @@ import {
   isHardcodedSeoBlogSlug,
   resolveBlogSeoNoIndex,
 } from '@/lib/blog-robots';
+import { getRareTumorClusterByBlogSlug } from '@/data/rare-tumor-seo-cluster';
+import { RareTumorClusterCallout } from '@/components/seo/RareTumorClusterCallout';
 import { optimizeSanityImage } from '@/lib/image-utils';
 import {
   buildSeoDescription,
@@ -755,6 +757,7 @@ const BlogPost = () => {
   const isGccPharmacoeconomicsEn = slug === GCC_PHARMACOECONOMICS_SLUG && !isArBlog;
   const therapyStaticBlogBundle = getTherapyStaticBlogBundle(slug);
   const isTherapyStaticBlogEn = Boolean(therapyStaticBlogBundle) && !isArBlog;
+  const rareTumorCluster = getRareTumorClusterByBlogSlug(slug);
   const q2PharmaSchemaBundle = slug ? getQ2PharmaSchemaBundle(slug) : undefined;
   const isQ2PharmaBlogEn = Boolean(q2PharmaSchemaBundle) && !isArBlog;
   const isGccMeastPharmaHealthArticleAr = slug === GCC_MEAST_PHARMA_HEALTH_AR_SLUG;
@@ -1567,6 +1570,15 @@ const BlogPost = () => {
               )}
 
               {/* Article body */}
+              {rareTumorCluster && !isArBlog ? (
+                <div className="mb-8">
+                  <RareTumorClusterCallout
+                    cluster={rareTumorCluster}
+                    variant="blog"
+                    activeBlogSlug={slug}
+                  />
+                </div>
+              ) : null}
               <div className="blog-article-body blog-drop-cap">
                 {(() => {
                   const body = getBodyToRender(post, slug, { isArBlog });

@@ -7,6 +7,7 @@ import { Toaster as Sonner } from '@/components/ui/sonner';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import DocumentHead from '@/components/DocumentHead';
 import ScrollToTop from '@/components/ScrollToTop';
+import RouteNavigationPreloader from '@/components/RouteNavigationPreloader';
 import GoogleTagManager from '@/components/GoogleTagManager';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import GA4EventTracker from '@/components/GA4EventTracker';
@@ -57,6 +58,7 @@ function AppProviders({ children }: { children: ReactNode }) {
   return (
     <QueryClientProvider client={queryClient}>
       <ScrollToTop />
+      <RouteNavigationPreloader />
       <LanguageProvider>
         <GoogleTagManager />
         <DocumentHead />

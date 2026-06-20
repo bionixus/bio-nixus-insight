@@ -13,6 +13,8 @@ import { ArrowLeft, ArrowRight, ExternalLink } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { formatLanguages, getCountryBySlug, getCountryDirectory } from '@/lib/globalWebsitesData';
+import { GeoMarketClusterCallout } from '@/components/seo/GeoMarketClusterCallout';
+import { GEO_MARKET_PAGE_CLUSTERS } from '@/data/geo-market-page-clusters';
 import { useMemo } from 'react';
 
 type MarketSection = {
@@ -1388,6 +1390,23 @@ const EGYPT_SECTIONS: UaeSection[] = [
   },
 ];
 
+function resolveGlobalCountryPrimaryPath(slug: string, languages: string[]): string {
+  const healthcareBySlug: Record<string, string> = {
+    'saudi-arabia': '/healthcare-market-research/saudi-arabia',
+    'united-arab-emirates': '/healthcare-market-research/uae',
+    'egypt': '/healthcare-market-research/egypt',
+    'kuwait': '/healthcare-market-research/kuwait',
+    'united-kingdom': '/healthcare-market-research/uk',
+  };
+  if (healthcareBySlug[slug]) return healthcareBySlug[slug];
+  if (languages.includes('DE')) return '/de/market-research-healthcare';
+  if (languages.includes('FR')) return '/fr/market-research-healthcare';
+  if (languages.includes('ES')) return '/es/market-research-healthcare';
+  if (languages.includes('ZH')) return '/zh/market-research-healthcare';
+  if (languages.includes('AR')) return '/ar/market-research-healthcare';
+  return '/healthcare-market-research';
+}
+
 const GlobalWebsiteCountry = () => {
   const { countrySlug } = useParams<{ countrySlug: string }>();
   const { language } = useLanguage();
@@ -1455,9 +1474,9 @@ const GlobalWebsiteCountry = () => {
       <Helmet>
         <title>
           {isUaePage
-            ? 'Pharmaceutical & Healthcare Market Research in Dubai, UAE | BioNixus'
+            ? 'UAE Pharmaceutical Go-to-Market Blueprint | Dubai DHA & Abu Dhabi DOH | BioNixus'
             : isSaudiPage
-              ? 'Saudi Arabia Pharmaceutical Market Research | SFDA, NUPCO and Vision 2030 Intelligence | BioNixus'
+              ? 'Saudi Arabia Pharma Market Entry Blueprint | SFDA, NUPCO & Vision 2030 | BioNixus'
               : isUsPage
                 ? 'US Pharmaceutical Market Research | Physician Surveys, KOL Insights and Payer Intelligence | BioNixus'
                 : isUkPage
@@ -2113,9 +2132,9 @@ const GlobalWebsiteCountry = () => {
             </div>
             <h1 className="mb-5 max-w-[min(100%,52rem)] text-balance text-4xl font-display font-semibold tracking-tight text-primary-foreground md:mb-6 md:text-5xl lg:text-[3.15rem]">
               {isUaePage
-                ? 'Pharmaceutical & Healthcare Market Research in Dubai & UAE'
+                ? 'UAE Pharmaceutical Go-to-Market Blueprint'
                 : isSaudiPage
-                  ? 'Pharmaceutical Market Research in Saudi Arabia'
+                  ? 'Saudi Arabia Pharmaceutical Market Entry Blueprint'
                   : isUsPage
                     ? 'Pharmaceutical Market Research in the United States'
                     : isUkPage
@@ -2462,19 +2481,30 @@ const GlobalWebsiteCountry = () => {
                 </>
               ) : (
                 <>
-                  <h2 className="text-xl font-display font-semibold text-foreground mb-3">Market website</h2>
-                  <a
-                    href={country.url}
+                  <h2 className="text-xl font-display font-semibold text-foreground mb-3">Related market intelligence</h2>
+                  <Link
+                    to={resolveGlobalCountryPrimaryPath(country.slug, country.languages)}
                     className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
                   >
-                    Visit primary route for {country.countryName}
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
+                    Healthcare market research services for {country.countryName}
+                    <ArrowRight className="w-4 h-4" aria-hidden />
+                  </Link>
                 </>
               )}
             </div>
           </div>
         </section>
+
+        {isUaePage || isSaudiPage ? (
+          <section className="section-padding py-6">
+            <div className="container-wide max-w-5xl mx-auto">
+              <GeoMarketClusterCallout
+                cluster={GEO_MARKET_PAGE_CLUSTERS[isSaudiPage ? 'saudi-arabia' : 'uae']}
+                variant="global-websites"
+              />
+            </div>
+          </section>
+        ) : null}
 
         {isUaePage || isSaudiPage || isUsPage || isUkPage || isGermanyPage || isFrancePage || isSpainPage || isItalyPage || isKuwaitPage || isQatarPage || isBahrainPage || isOmanPage || isEgyptPage ? (
           <>
@@ -2817,28 +2847,28 @@ const GlobalWebsiteCountry = () => {
                       className="text-primary hover:underline"
                     >
                       {isUaePage
-                        ? 'Saudi Arabia Pharmaceutical Market Research'
+                        ? 'Saudi Arabia pharma market research services'
                         : isSaudiPage
-                          ? 'UAE Pharmaceutical Market Research'
+                          ? 'UAE pharma market research services'
                           : isUsPage
-                            ? 'Saudi Arabia Pharmaceutical Market Research'
+                            ? 'United Kingdom pharmaceutical market entry blueprint'
                             : isUkPage
-                              ? 'United States Pharmaceutical Market Research'
+                              ? 'Germany pharmaceutical market entry blueprint'
                               : isGermanyPage
-                                ? 'France Pharmaceutical Market Research'
+                                ? 'France pharmaceutical market entry blueprint'
                                 : isFrancePage
-                                  ? 'Spain Pharmaceutical Market Research'
+                                  ? 'Spain pharmaceutical market entry blueprint'
                                   : isSpainPage
-                                    ? 'Italy Pharmaceutical Market Research'
+                                    ? 'Italy pharmaceutical market entry blueprint'
                                     : isItalyPage
-                                      ? 'Kuwait Pharmaceutical Market Research'
+                                      ? 'Kuwait pharmaceutical market entry blueprint'
                                     : isKuwaitPage
-                                      ? 'Qatar Pharmaceutical Market Research'
+                                      ? 'Qatar pharmaceutical market entry blueprint'
                                     : isQatarPage
-                                      ? 'Bahrain Pharmaceutical Market Research'
+                                      ? 'Bahrain pharmaceutical market entry blueprint'
                                     : isBahrainPage
-                                      ? 'Oman Pharmaceutical Market Research'
-                                    : 'Saudi Arabia Pharmaceutical Market Research'}
+                                      ? 'Oman pharmaceutical market entry blueprint'
+                                    : 'Saudi Arabia pharma market research services'}
                     </Link>
                     {isKuwaitPage || isQatarPage || isBahrainPage || isOmanPage ? (
                       <>

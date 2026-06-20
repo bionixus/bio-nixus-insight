@@ -66,7 +66,7 @@ export function EgyptHealthcare2026CairoBlock() {
           </li>
           <li>
             <Link
-              to="/blog/top-market-research-companies-egypt-2026"
+              to="/insights/top-market-research-companies-egypt-2026"
               className="inline-flex items-center gap-1 text-sm text-primary font-medium hover:underline"
             >
               <ArrowUpRight className="w-3.5 h-3.5" aria-hidden />

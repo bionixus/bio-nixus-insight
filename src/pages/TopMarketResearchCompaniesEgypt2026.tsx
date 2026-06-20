@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { GeoListicleClusterCallout } from '@/components/seo/GeoListicleClusterCallout';
+import { GEO_LISTICLE_CLUSTERS } from '@/data/geo-listicle-clusters';
 
 interface FirmProfile {
   rank: number;
@@ -139,7 +141,7 @@ const comparisonCriteria = [
   { criterion: 'Data integrity controls', description: 'Recruitment verification, response consistency, and audit trails' },
 ];
 
-const CANONICAL = 'https://www.bionixus.com/blog/top-market-research-companies-egypt-2026';
+const CANONICAL = 'https://www.bionixus.com/insights/top-market-research-companies-egypt-2026';
 
 export default function TopMarketResearchCompaniesEgypt2026() {
   const breadcrumbSchema = {
@@ -147,7 +149,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' },
-      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.bionixus.com/blog' },
+      { '@type': 'ListItem', position: 2, name: 'Insights', item: 'https://www.bionixus.com/insights' },
       { '@type': 'ListItem', position: 3, name: 'Top Market Research Companies in Egypt (2026)' },
     ],
   };
@@ -216,10 +218,10 @@ export default function TopMarketResearchCompaniesEgypt2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Market Research Companies in Egypt (2026 Guide) | BioNixus</title>
+        <title>5 Best Market Research Companies in Egypt (2026) | Ranked Buyer Guide | BioNixus</title>
         <meta
           name="description"
-          content="Independent 2026 guide to the 5 leading market research companies in Egypt for healthcare, pharma, and consumer research."
+          content="Ranked 2026 buyer guide to the 5 best market research companies in Egypt for pharma, healthcare, and consumer programs — EDA-aware, bilingual fieldwork, and firm-by-firm comparison."
         />
         <meta name="geo.region" content="EG" />
         <meta name="geo.placename" content="Egypt" />
@@ -239,8 +241,8 @@ export default function TopMarketResearchCompaniesEgypt2026() {
         <script type="application/ld+json">{JSON.stringify(howToSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Market Research Companies in Egypt (2026) | BioNixus"
-        description="5 leading market research firms in Egypt for healthcare, pharma, and consumer research — compared by capability and Egypt expertise."
+        title="5 Best Market Research Companies in Egypt (2026) | BioNixus"
+        description="Ranked shortlist of Egypt market research firms for pharma and healthcare buyers — compared by EDA context, bilingual execution, and KOL access."
         image="https://www.bionixus.com/og-image.png"
         url={CANONICAL}
         type="article"
@@ -255,7 +257,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
             <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
               <Link to="/" className="hover:text-primary transition-colors">Home</Link>
               <span>/</span>
-              <Link to="/blog" className="hover:text-primary transition-colors">Blog</Link>
+              <Link to="/insights" className="hover:text-primary transition-colors">Insights</Link>
               <span>/</span>
               <span className="text-foreground">Top Market Research Companies in Egypt</span>
             </div>
@@ -270,17 +272,18 @@ export default function TopMarketResearchCompaniesEgypt2026() {
               2026 Industry Guide
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">
-              Top Market Research Companies in Egypt (2026 Guide)
+              5 Best Market Research Companies in Egypt (2026 Rankings)
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
-              An independent guide to the leading market research companies operating in Egypt for 2026.
-              This article profiles 5 firms across healthcare, pharmaceutical, and consumer research — comparing
+              A ranked buyer guide to the best market research companies operating in Egypt for 2026.
+              This insights page profiles five firms across healthcare, pharmaceutical, and consumer research — comparing
               capabilities, methodologies, Egypt-specific expertise, and what to look for when shortlisting a
               research partner for the largest market in MENA.
             </p>
             <p className="text-sm text-muted-foreground">
               Published April 2026 · By Haidy Yahia · 14 min read
             </p>
+            <GeoListicleClusterCallout cluster={GEO_LISTICLE_CLUSTERS.egypt} variant="general" />
           </div>
         </section>
 
@@ -546,7 +549,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
                 { to: '/market-research-egypt', label: 'Market Research Egypt', desc: 'Pharma and healthcare intelligence landing page.' },
                 { to: '/insights/top-market-research-companies-saudi-arabia-2026', label: 'Top Market Research Companies in Saudi Arabia', desc: 'Sister guide to the leading research firms in Saudi Arabia.' },
                 { to: '/insights/top-market-research-companies-uae-2026', label: 'Top Market Research Companies in the UAE', desc: 'Sister guide to the leading research firms in the UAE.' },
-                { to: '/blog/top-market-research-companies-egypt-2026', label: 'Blog Version of This Guide', desc: 'Read the blog post version with related articles.' },
+                { to: '/blog/top-market-research-companies-egypt-2026', label: 'Egypt market research editorial article', desc: 'Long-form blog companion with related Cairo and pharma coverage.' },
                 { to: '/contact', label: 'Request a Proposal', desc: 'Get in touch for a custom Egypt research engagement.' },
               ].map((r) => (
                 <Link

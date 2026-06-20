@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { useLocation, useSearchParams } from 'react-router-dom';
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { translations } from '@/lib/i18n';
 import type { Language } from '@/lib/i18n';
+import { languagePaths } from '@/lib/seo';
 import { getRegionSuggestionAsync, getTestSuggestion } from '@/lib/region-locale';
 import type { RegionSuggestion } from '@/lib/region-locale';
 
@@ -22,6 +23,7 @@ const SESSION_KEY = 'bionixus-locale-prompt-session';
 
 export default function LocalePrompt() {
   const { pathname } = useLocation();
+  const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const forceShow = searchParams.get('showLocalePrompt') === '1';
   const { language, setLanguage, t } = useLanguage();
@@ -80,6 +82,7 @@ export default function LocalePrompt() {
     sessionStorage.setItem(SESSION_KEY, '1');
     setOpen(false);
     setLanguage(suggestion.language);
+    navigate(languagePaths[suggestion.language] || '/');
   };
 
   const handleNo = () => {

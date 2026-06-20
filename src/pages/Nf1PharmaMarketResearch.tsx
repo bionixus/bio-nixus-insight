@@ -5,10 +5,12 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
+import { NF1_RARE_TUMOR_CLUSTER } from '@/data/rare-tumor-seo-cluster';
+import { RareTumorClusterCallout } from '@/components/seo/RareTumorClusterCallout';
 
-const canonicalPath = '/nf1-pharma-market-research';
+const canonicalPath = NF1_RARE_TUMOR_CLUSTER.pillarPath;
 const pageUrl = `https://www.bionixus.com${canonicalPath}`;
-const nf1BlogHref = '/blog/neurofibromatosis';
+const nf1BlogHref = NF1_RARE_TUMOR_CLUSTER.blogPath;
 const desmoidPillar = '/desmoid-tumor-pharma-market-research';
 const FAQ_SECTION_ID = 'nf1-pharma-market-research-faq';
 
@@ -65,17 +67,22 @@ const jsonLd = [
   buildBreadcrumbSchema(breadcrumbItems),
   {
     '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: 'Neurofibromatosis Type 1 — Pharma Landscape & Koselugo (Selumetinib) Intelligence',
-    author: { '@type': 'Organization', name: 'BioNixus' },
-    publisher: {
+    '@type': 'Service',
+    name: 'NF1 Pharma Market Research & Competitive Intelligence',
+    serviceType: 'Pharmaceutical market research',
+    provider: {
       '@type': 'Organization',
       name: 'BioNixus',
-      logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
+      url: 'https://www.bionixus.com',
     },
-    datePublished: '2026-05-26',
-    dateModified: '2026-06-11',
-    mainEntityOfPage: pageUrl,
+    description:
+      'Commercial NF1 pharma market research: tumour board analogue boards, MEK inhibitor competitive intelligence, payer simulation, and GCC tender analytics.',
+    url: pageUrl,
+    isRelatedTo: {
+      '@type': 'Article',
+      name: 'NF1 Market Access Briefing',
+      url: `https://www.bionixus.com${nf1BlogHref}`,
+    },
   },
   {
     '@context': 'https://schema.org',
@@ -95,8 +102,8 @@ export default function Nf1PharmaMarketResearch() {
       <Navbar />
 
       <SEOHead
-        title="Neurofibromatosis Type 1 (NF1) Pharma Landscape | Koselugo (Selumetinib) | BioNixus"
-        description="Deep pharmaceutical intelligence on NF1 plexiform neurofibromas and oral MEK inhibition—Koselugo (selumetinib) and EZMEKLY/mirdametinib—with FDA timelines (Apr 2020; paediatrics ≥12 mo Sept 2025; adults Nov 2025) and the EU's first adult+paediatric therapy EZMEKLY (mirdametinib), conditionally approved 17 Jul 2025. Tender analogue analogues plus the BioNixus rare oncology research toolkit."
+        title="NF1 Pharma Market Research Services | Competitive Intelligence | BioNixus"
+        description="NF1 pharma market research services: tumour board analogue boards, Koselugo and EZMEKLY competitive intelligence, payer workshops, and GCC tender analytics. Companion editorial briefing on market access and MEK inhibition."
         canonical={pageUrl}
         jsonLd={jsonLd}
       />
@@ -110,10 +117,11 @@ export default function Nf1PharmaMarketResearch() {
 
         <section className="section-padding pb-10">
           <div className="container-wide max-w-4xl mx-auto space-y-4">
-            <p className="text-xs font-semibold uppercase tracking-widest text-primary">Rare disease tumour intelligence • Updated June&nbsp;2026</p>
+            <p className="text-xs font-semibold uppercase tracking-widest text-primary">Rare oncology research services • Updated June&nbsp;2026</p>
             <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground leading-tight">
-              Neurofibromatosis Type&nbsp;1 (NF1) — Pharmaceutical Landscape, Plexiform Tumour Dynamics &amp; Koselugo® Intelligence
+              NF1 Pharma Market Research &amp; Competitive Intelligence Services
             </h1>
+            <RareTumorClusterCallout cluster={NF1_RARE_TUMOR_CLUSTER} variant="pillar" />
             <p className="text-lg text-muted-foreground leading-relaxed">
               Operational due diligence—not patient care—for global and regional pharma strategists aligning NF1 tumour programmes with tumour board realism, oncology tender economics, clinician advocacy behaviour, analogue analogies leveraging MEK innovation history, longitudinal MEK inhibition safety communications, payer analytics, analogue tender corridors across GCC, UK &amp;
               broader EMEA footprints served by BioNixus multinational research fabric.

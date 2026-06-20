@@ -267,7 +267,7 @@ export default function ArTopMarketResearchCompaniesEgypt2026() {
               نُشر أبريل 2026 · هايدي يحيى · 14 دقيقة قراءة
             </p>
             <p className="text-sm text-muted-foreground mt-2">
-              <Link to="/blog/top-market-research-companies-egypt-2026" className="text-primary hover:underline">
+              <Link to="/insights/top-market-research-companies-egypt-2026" className="text-primary hover:underline">
                 Read this article in English
               </Link>
             </p>
@@ -428,7 +428,7 @@ export default function ArTopMarketResearchCompaniesEgypt2026() {
                 { to: '/pharmaceutical-companies-egypt', label: 'الشركات الدوائية في مصر', desc: 'أكثر من 20 شركة أدوية، بيانات سوق $5.8B، ودليل هيئة الدواء.' },
                 { to: '/healthcare-market-research/egypt', label: 'أبحاث سوق الرعاية الصحية في مصر', desc: 'محور الدولة مع الأسئلة الشائعة والإحصاءات والتركيز العلاجي.' },
                 { to: '/ar/market-research-egypt', label: 'أبحاث السوق في مصر', desc: 'صفحة استخبارات القطاع الصحي والدوائي.' },
-                { to: '/blog/top-market-research-companies-egypt-2026', label: 'English Version', desc: 'Read the full guide in English.' },
+                { to: '/insights/top-market-research-companies-egypt-2026', label: 'English rankings guide', desc: 'Read the ranked buyer guide in English.' },
                 { to: '/ar/contacts', label: 'طلب عرض سعر', desc: 'تواصل معنا لمشروع أبحاث مخصص في مصر.' },
               ].map((r) => (
                 <Link

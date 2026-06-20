@@ -176,6 +176,11 @@
       "statusCode": 301
     },
     {
+      "source": "/insights/top-obesity-market-research-companies-2026",
+      "destination": "/insights/best-obesity-weight-management-market-research-firms-2026",
+      "statusCode": 301
+    },
+    {
       "source": "/market-reports/gcc-pharma-market-report-2026",
       "destination": "/gcc-pharma-market-report-2026",
       "statusCode": 301

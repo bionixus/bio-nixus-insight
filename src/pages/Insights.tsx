@@ -147,7 +147,7 @@ export default function Insights() {
                 Top Pharma Market Research Companies in the Middle East (2026)
               </Link>
               <Link
-                to="/blog/top-market-research-companies-egypt-2026"
+                to="/insights/top-market-research-companies-egypt-2026"
                 className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
               >
                 Top Market Research Companies in Egypt (2026)

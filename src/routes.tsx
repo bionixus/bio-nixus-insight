@@ -1,5 +1,6 @@
 import { lazy, Suspense, type ReactNode } from 'react';
 import { Navigate, type RouteObject } from 'react-router-dom';
+import { RouteLoadingFallback } from '@/components/RouteLoadingFallback';
 import Index from '@/pages/Index';
 import Blog from '@/pages/Blog';
 import CaseStudies from '@/pages/CaseStudies';
@@ -183,7 +184,6 @@ import PtTopHealthcareMarketResearchCompaniesBrazil2026 from '@/pages/PtTopHealt
 import EsTopMarketResearchCompaniesArgentina2026 from '@/pages/EsTopMarketResearchCompaniesArgentina2026';
 import EsTopHealthcareMarketResearchCompaniesArgentina2026 from '@/pages/EsTopHealthcareMarketResearchCompaniesArgentina2026';
 import TopOncologyMarketResearchCompanies2026 from '@/pages/TopOncologyMarketResearchCompanies2026';
-import TopObesityMarketResearchCompanies2026 from '@/pages/TopObesityMarketResearchCompanies2026';
 import BestObesityWeightManagementMarketResearchFirms2026 from '@/pages/BestObesityWeightManagementMarketResearchFirms2026';
 import LeadingBiologicsBiosimilarsMarketResearchCompanies2026 from '@/pages/LeadingBiologicsBiosimilarsMarketResearchCompanies2026';
 import BestRareDiseaseMarketResearchCompanies2026 from '@/pages/BestRareDiseaseMarketResearchCompanies2026';
@@ -198,10 +198,7 @@ const AdminCalendarNew = lazy(() => import('@/pages/AdminCalendarNew'));
 const AdminSendNewsletter = lazy(() => import('@/pages/AdminSendNewsletter'));
 
 function suspensePage(node: ReactNode) {
-  // Null fallback keeps server-rendered HTML stable during hydration instead of
-  // flashing a loading state. The current route's chunk is preloaded before
-  // hydrateRoot (see src/lib/preloadRouteChunk.ts), so this rarely shows at all.
-  return <Suspense fallback={null}>{node}</Suspense>;
+  return <Suspense fallback={<RouteLoadingFallback />}>{node}</Suspense>;
 }
 
 export const routes: RouteObject[] = [
@@ -301,15 +298,15 @@ export const routes: RouteObject[] = [
   { path: '/ar/strategic-portfolio', element: <ConfPortfolio locale="ar" /> },
   { path: '/ar/strategic-portfolios', element: <ConfPortfolio locale="ar" /> },
   { path: '/healthcare-market-research', element: <HubPage /> },
+  { path: '/healthcare-market-research/therapy/:area', element: <TherapyPage /> },
+  { path: '/healthcare-market-research/services/:service', element: <ServicePage /> },
+  { path: '/healthcare-market-research/:country', element: <CountryPage /> },
   { path: '/saudi-arabia', element: <CountryPage /> },
   { path: '/uae', element: <CountryPage /> },
   { path: '/kuwait', element: <CountryPage /> },
   { path: '/uk', element: <CountryPage /> },
   { path: '/europe', element: <CountryPage /> },
   { path: '/egypt', element: <CountryPage /> },
-  { path: '/healthcare-market-research/:country', element: <CountryPage /> },
-  { path: '/healthcare-market-research/therapy/:area', element: <TherapyPage /> },
-  { path: '/healthcare-market-research/services/:service', element: <ServicePage /> },
   { path: '/pharmaceutical-companies-kuwait', element: <KuwaitPharmaCompanies /> },
   { path: '/pharmaceutical-companies-saudi-arabia', element: <SaudiPharmaCompanies /> },
   { path: '/pharmaceutical-companies-uae', element: <UaePharmaCompanies /> },
@@ -337,7 +334,7 @@ export const routes: RouteObject[] = [
   { path: '/es/insights/top-empresas-investigacion-mercado-argentina-2026', element: <EsTopMarketResearchCompaniesArgentina2026 /> },
   { path: '/es/insights/top-empresas-investigacion-mercado-salud-argentina-2026', element: <EsTopHealthcareMarketResearchCompaniesArgentina2026 /> },
   { path: '/insights/top-oncology-market-research-companies-2026', element: <TopOncologyMarketResearchCompanies2026 /> },
-  { path: '/insights/top-obesity-market-research-companies-2026', element: <TopObesityMarketResearchCompanies2026 /> },
+  { path: '/insights/top-obesity-market-research-companies-2026', element: <Navigate to="/insights/best-obesity-weight-management-market-research-firms-2026" replace /> },
   { path: '/insights/best-obesity-weight-management-market-research-firms-2026', element: <BestObesityWeightManagementMarketResearchFirms2026 /> },
   { path: '/insights/leading-biologics-biosimilars-market-research-companies-2026', element: <LeadingBiologicsBiosimilarsMarketResearchCompanies2026 /> },
   { path: '/insights/best-rare-disease-market-research-companies-2026', element: <BestRareDiseaseMarketResearchCompanies2026 /> },

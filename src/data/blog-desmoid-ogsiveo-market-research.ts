@@ -9,10 +9,10 @@ export const DESMOID_NIROGACESTAT_BLOG_SLUG = 'desmoid-tumors-nirogacestat-pharm
 export const DESMOID_BLOG_COVER_IMAGE =
   'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=1600&q=85';
 
-export const DESMOID_BLOG_META_TITLE = 'Desmoid Tumors & Ogsiveo (Nirogacestat): Pharma INT | BioNixus';
+export const DESMOID_BLOG_META_TITLE = 'Desmoid Market Access Briefing | Ogsiveo (Nirogacestat) | BioNixus';
 
 export const DESMOID_BLOG_DISPLAY_TITLE =
-  'Progressing Desmoid Tumours & Ogsiveo (nirogacestat): Competitive, Access, and Oncology Research Signals';
+  'Desmoid Market Access Briefing: Ogsiveo (nirogacestat), FDA Approval & Access Signals';
 
 export const DESMOID_BLOG_META_DESCRIPTION =
   'Desmoid tumour (fibromatosis) overview, first FDA‑approved systemic therapy Ogsiveo (nirogacestat)—gamma secretase inhibitor—27 Nov 2023 progressing adult patients needing systemic Rx. Commercial intelligence, analogues vs NF1 MEK inhibition, tumour board adoption, Gulf tender analogues—and BioNixus methodological stack. Links to pillar + NF1 counterpart.';

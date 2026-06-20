@@ -1,6 +1,6 @@
 import { BlogPost } from '@/types/blog';
 import { GCC_PHARMACOECONOMICS_HARDCODED_POST } from '@/data/blog-gcc-pharmacoeconomics';
-import { NF1_KOSELUGO_HARDCODED_POST } from '@/data/blog-nf1-koselugo-market-research';
+import { NF1_KOSELUGO_HARDCODED_POST, NF1_KOSELUGO_DRUG_HARDCODED_POST } from '@/data/blog-nf1-koselugo-market-research';
 import { DESMOID_BLOG_HARDCODED_POST } from '@/data/blog-desmoid-ogsiveo-market-research';
 
 /**
@@ -11,6 +11,7 @@ import { DESMOID_BLOG_HARDCODED_POST } from '@/data/blog-desmoid-ogsiveo-market-
 export const hardcodedSeoPosts: BlogPost[] = [
   GCC_PHARMACOECONOMICS_HARDCODED_POST,
   NF1_KOSELUGO_HARDCODED_POST,
+  NF1_KOSELUGO_DRUG_HARDCODED_POST,
   DESMOID_BLOG_HARDCODED_POST,
 ];
 

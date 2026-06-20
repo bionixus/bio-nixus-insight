@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Globe2, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languages } from '@/lib/i18n';
-import { getLocalizedPathForLanguage, languagePaths } from '@/lib/seo';
+import { getLocalizedPathForLanguage, languagePaths, resolveLanguageSwitchPath } from '@/lib/seo';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -48,8 +48,7 @@ const Navbar = () => {
 
   const handleLanguageChange = (code: typeof language) => {
     setLanguage(code);
-    const path = languagePaths[code] || '/';
-    navigate(path);
+    navigate(resolveLanguageSwitchPath(pathname, code));
     setIsOpen(false);
   };
 

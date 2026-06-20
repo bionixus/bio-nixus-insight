@@ -107,7 +107,7 @@ function buildFallbackTitle(pathname) {
   if (path === '/privacy') return 'Privacy Policy & Terms for BioNixus Services';
   if (path === '/strategic-portfolio') return 'BioNixus Strategic Portfolio | Market Research & Consulting';
   if (path === '/ar/strategic-portfolio') return 'محفظة BioNixus الاستراتيجية | أبحاث السوق والاستشارات';
-  if (path === '/insights/top-market-research-companies-egypt-2026') return 'Top Market Research Companies in Egypt (2026) | BioNixus';
+  if (path === '/insights/top-market-research-companies-egypt-2026') return '5 Best Market Research Companies in Egypt (2026) | Ranked Buyer Guide | BioNixus';
   if (path === '/ar/insights/top-market-research-companies-egypt-2026') return 'أفضل شركات أبحاث السوق في مصر (دليل 2026) | BioNixus';
   if (path === '/insights/top-market-research-companies-saudi-arabia-2026') return 'Top Market Research Companies in Saudi Arabia (2026) | BioNixus';
   if (path === '/insights/top-market-research-companies-uae-2026') return 'Top Market Research Companies in the UAE (2026) | BioNixus';
@@ -117,7 +117,9 @@ function buildFallbackTitle(pathname) {
   if (path === '/insights/top-healthcare-market-research-companies-riyadh-2026') return 'Top Market Research Companies in Riyadh (2026) | BioNixus';
 
   if (path === '/healthcare-market-research') return 'Healthcare & Pharmaceutical Market Research in Dubai, UAE & MENA | BioNixus';
-  if (path === '/global-websites/united-arab-emirates') return 'Pharmaceutical & Healthcare Market Research in Dubai, UAE | BioNixus';
+  if (path === '/global-websites/united-arab-emirates') return 'UAE Pharmaceutical Go-to-Market Blueprint | Dubai DHA & Abu Dhabi DOH | BioNixus';
+  if (path === '/global-websites/saudi-arabia') return 'Saudi Arabia Pharma Market Entry Blueprint | SFDA, NUPCO & Vision 2030 | BioNixus';
+  if (path === '/healthcare-market-research/united-arab-emirates') return 'United Arab Emirates Healthcare Market Research | MOHAP, DHA & DOH | BioNixus';
   if (path === '/case-studies') return 'Healthcare & Pharmaceutical Case Studies | BioNixus';
   if (path.startsWith('/case-studies/')) {
     const slug = path.split('/').pop() || 'case-study';
@@ -277,7 +279,13 @@ function buildFallbackDescription(pathname) {
     return 'BioNixus — leading healthcare and pharmaceutical market research company serving Dubai, UAE, and MENA. DHA, MOHAP, and DOH-aligned physician surveys, KOL mapping, and market access.';
   }
   if (path === '/global-websites/united-arab-emirates') {
-    return 'BioNixus — pharmaceutical and healthcare market research in Dubai and UAE. DHA, MOHAP, DOH-aligned physician surveys, KOL mapping, market access, and launch intelligence.';
+    return 'UAE pharmaceutical go-to-market blueprint: DHA, DOH, and MOHAP launch sequencing, payer mapping, and commercialization intelligence for Dubai and Abu Dhabi.';
+  }
+  if (path === '/global-websites/saudi-arabia') {
+    return 'Saudi Arabia pharma market entry blueprint with SFDA, NUPCO, and Vision 2030 context — registration sequencing, procurement logic, and KSA commercialization planning.';
+  }
+  if (path === '/healthcare-market-research/united-arab-emirates') {
+    return 'United Arab Emirates healthcare market research across MOHAP, DHA, and DOH jurisdictions — physician surveys, payer evidence, and hospital fieldwork for UAE-wide pharma programs.';
   }
   if (path === '/case-studies') {
     return 'Explore BioNixus healthcare and pharmaceutical case studies across Europe, the Middle East, and Africa.';
@@ -508,18 +516,16 @@ async function startServer() {
   const CANONICAL_HOST = 'www.bionixus.com';
   const REDIRECTS = {
     '/healthcare-market-research-saudi-arabia': '/healthcare-market-research/saudi-arabia',
-    '/global-websites/saudi-arabia': '/healthcare-market-research/saudi-arabia',
     '/healthcare-market-research-uae': '/healthcare-market-research/uae',
     '/healthcare-market-research-in-uae': '/healthcare-market-research/uae',
-    '/healthcare-market-research/united-arab-emirates': '/healthcare-market-research/uae',
-    '/global-websites/united-arab-emirates': '/healthcare-market-research/uae',
     '/healthcare-market-research-kuwait': '/healthcare-market-research/kuwait',
     '/healthcare-market-research-uk': '/healthcare-market-research/uk',
     '/healthcare-market-research/united-kingdom': '/healthcare-market-research/uk',
     '/healthcare-market-research-europe': '/healthcare-market-research/europe',
-    '/insights/top-market-research-companies-egypt-2026': '/blog/top-market-research-companies-egypt-2026',
     '/insights/top-market-research-companies-ksa-2026': '/insights/top-market-research-companies-saudi-arabia-2026',
     '/insights/top-market-research-companies-abudhabi-2026': '/insights/top-market-research-companies-abu-dhabi-2026',
+    '/insights/top-obesity-market-research-companies-2026':
+      '/insights/best-obesity-weight-management-market-research-firms-2026',
     '/conf': '/strategic-portfolio',
     '/ar/conf': '/ar/strategic-portfolio',
     '/quantitative-market-research': '/services/quantitative-research',

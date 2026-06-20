@@ -24,7 +24,7 @@ const CookieConsent = () => {
 
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/90 shadow-lg"
+      className="fixed bottom-0 left-0 right-0 z-40 border-t border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/90 shadow-lg md:bottom-0"
       role="dialog"
       aria-label="Cookie consent"
     >

@@ -5,10 +5,12 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
+import { DESMOID_RARE_TUMOR_CLUSTER } from '@/data/rare-tumor-seo-cluster';
+import { RareTumorClusterCallout } from '@/components/seo/RareTumorClusterCallout';
 
-const canonicalPath = '/desmoid-tumor-pharma-market-research';
+const canonicalPath = DESMOID_RARE_TUMOR_CLUSTER.pillarPath;
 const pageUrl = `https://www.bionixus.com${canonicalPath}`;
-const desmoidBlogHref = '/blog/desmoid-tumors-nirogacestat-pharma-market-access';
+const desmoidBlogHref = DESMOID_RARE_TUMOR_CLUSTER.blogPath;
 const nfPillarHref = '/nf1-pharma-market-research';
 const nfBlogHref = '/blog/neurofibromatosis';
 const FAQ_SECTION_ID = 'desmoid-pharma-market-research-faq';
@@ -61,17 +63,22 @@ const jsonLd = [
   buildBreadcrumbSchema(breadcrumbItems),
   {
     '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: 'Desmoid tumour pharmaceutical landscape & nirogacestat (OGSIVEO) intelligence pillar',
-    author: { '@type': 'Organization', name: 'BioNixus' },
-    publisher: {
+    '@type': 'Service',
+    name: 'Desmoid Tumour Pharma Market Research & Competitive Intelligence',
+    serviceType: 'Pharmaceutical market research',
+    provider: {
       '@type': 'Organization',
       name: 'BioNixus',
-      logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
+      url: 'https://www.bionixus.com',
     },
-    datePublished: '2026-05-26',
-    dateModified: '2026-05-26',
-    mainEntityOfPage: pageUrl,
+    description:
+      'Commercial desmoid tumour pharma market research: sarcoma tumour board intelligence, Ogsiveo competitive signalling, and GCC tender analytics.',
+    url: pageUrl,
+    isRelatedTo: {
+      '@type': 'Article',
+      name: 'Desmoid Ogsiveo Market Access Briefing',
+      url: `https://www.bionixus.com${desmoidBlogHref}`,
+    },
   },
   {
     '@context': 'https://schema.org',
@@ -91,8 +98,8 @@ export default function DesmoidTumorPharmaMarketResearch() {
       <Navbar />
 
       <SEOHead
-        title="Desmoid Tumour Pharma Landscape | Ogsiveo (Nirogacestat) Intelligence | BioNixus"
-        description="Rare soft-tissue desmoid tumour (fibromatosis) pharma landscape; FDA-approved Ogsiveo (nirogacestat) gamma secretase inhibitor (27 Nov 2023)—SpringWorks—with tender analogues GCC/EMEA; sarcoma tumour board anthropology; reciprocal NF1 Koselugo pillar cross-links."
+        title="Desmoid Tumour Pharma Market Research Services | Ogsiveo Intelligence | BioNixus"
+        description="Desmoid tumour pharma market research services: sarcoma tumour board analogue boards, Ogsiveo (nirogacestat) competitive intelligence, and GCC tender analytics. Companion editorial briefing on market access and regulatory milestones."
         canonical={pageUrl}
         jsonLd={jsonLd}
       />
@@ -106,10 +113,11 @@ export default function DesmoidTumorPharmaMarketResearch() {
 
         <section className="section-padding pb-10">
           <div className="container-wide max-w-4xl mx-auto space-y-4">
-            <p className="text-xs font-semibold uppercase tracking-widest text-primary">Rare sarcoma-aligned tumour economics • Updated May&nbsp;2026</p>
+            <p className="text-xs font-semibold uppercase tracking-widest text-primary">Rare sarcoma research services • Updated May&nbsp;2026</p>
             <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground leading-tight">
-              Desmoid Tumour (Aggressive Fibromatosis) — Pharmaceutical Intelligence &amp; OGSIVEO® (nirogacestat) Competitive Framework
+              Desmoid Tumour Pharma Market Research &amp; Competitive Intelligence Services
             </h1>
+            <RareTumorClusterCallout cluster={DESMOID_RARE_TUMOR_CLUSTER} variant="pillar" />
             <p className="text-lg text-muted-foreground leading-relaxed">
               Commercial strategists confronting progressing desmoid assets must marry sarcoma-aligned tumour board realism, systemic therapy persistence analogues resembling oral targeted oncology tenders, speciality pharmacy distribution footprints, multilingual AE perceptual anthropology (notably ovarian risk communications strata), analogue tender corridors bridging Gulf MOH choreography with EU ICS deliberations—all orchestrated reproducibly under GDPR governance transparently enumerated on methodology hub—not aspirational infographic theatre.
             </p>

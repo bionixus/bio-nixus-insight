@@ -8,10 +8,10 @@ export const NF1_KOSELUGO_BLOG_SLUG = 'neurofibromatosis';
 
 export const NF1_KOSELUGO_COVER_IMAGE = '/images/blog/nf1-koselugo-selumetinib-cover.jpg';
 
-export const NF1_KOSELUGO_META_TITLE = 'Neurofibromatosis: NF1 Pharma Research & MAP | BioNixus';
+export const NF1_KOSELUGO_META_TITLE = 'NF1 Market Access Briefing | Neurofibromatosis & MEK Inhibition | BioNixus';
 
 export const NF1_KOSELUGO_DISPLAY_TITLE =
-  'Neurofibromatosis: NF1 Market Access, MEK Inhibition & HCP Intelligence';
+  'NF1 Market Access Briefing: Neurofibromatosis, MEK Inhibition & HCP Evidence Signals';
 
 export const NF1_KOSELUGO_META_DESCRIPTION =
   'Neurofibromatosis type 1 (NF1) landscape, oral MEK inhibition for symptomatic plexiform neurofibromas—FDA paediatric approvals from Apr 2020 plus the EU\u2019s first adult+paediatric therapy EZMEKLY (mirdametinib), conditionally approved 17 Jul 2025—and how pharma teams localize evidence for payers & specialists. Links to BioNixus NF1 pharma research pillar.';
@@ -28,6 +28,14 @@ export const NF1_KOSELUGO_SCHEMA_MENTIONS: ReadonlyArray<Record<string, unknown>
     name: 'Neurofibromatosis type 1',
     alternateName: ['NF1', 'von Recklinghausen disease'],
     url: 'https://www.ncbi.nlm.nih.gov/books/NBK1109/',
+  },
+  {
+    '@type': 'Drug',
+    name: 'Selumetinib',
+    alternateName: ['Koselugo', 'KOSELUGO'],
+    description:
+      'Oral MEK1/MEK2 inhibitor (AstraZeneca / MSD). FDA-approved for symptomatic inoperable NF1-associated plexiform neurofibromas (paediatric Apr 2020; adult label Nov 2025).',
+    url: 'https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-selumetinib-neurofibromatosis-type-1',
   },
   {
     '@type': 'Drug',
@@ -111,7 +119,7 @@ export const NF1_KOSELUGO_TABLE_OF_CONTENTS = [
 
 export const NF1_KOSELUGO_BODY_HTML = `<p>This brief is informational market research commentary—not medical guidance. NF1 franchises now operate under a bifurcated evidence ecosystem: longstanding supportive/surgical workflows versus targeted MEK inhibition that materially shrinks tumour volume for many paediatric and now adult plexiform neurofibroma patients carrying symptomatic lesions. Regulatory milestones for <strong>oral MEK inhibition in neurofibromatosis type&nbsp;1</strong> underpin both US reimbursement dossiers and ex‑US HTA dossiers—but cross‑national labelling deltas, dosing formats, ophthalmology/cardiac monitoring nuances, centre capacity, caregiver adherence, advocacy expectations, tender analogues from other oral kinase inhibitors, and pipeline MEK combination assets all shape analogue forecast confidence.</p>
 
-<p>For the structured numerical tables, formulary analogue analogues, BioNixus capability matrix (quant/qual payer workshops, tumour board analogue boards), and FAQs, see our dedicated pillar <a href="/nf1-pharma-market-research">NF1 pharma market research &amp; competitive intelligence landing page</a>. Also cross‑read the oncology therapy hub <a href="/healthcare-market-research/therapy/oncology">healthcare oncology market research</a>, rare‑disease‑adjacent indications on <a href="/pharmaceutical-therapy-areas">pharmaceutical therapy areas directory</a>, and analogous rare‑tumor coverage on <a href="/desmoid-tumor-pharma-market-research">desmoid tumour pharma intelligence</a> with its commentary article <a href="/blog/desmoid-tumors-nirogacestat-pharma-market-access">desmoid tumours — Ogsiveo (nirogacestat) pharma market intelligence</a>.</p>
+<p>For the structured numerical tables, formulary analogue analogues, BioNixus capability matrix (quant/qual payer workshops, tumour board analogue boards), and FAQs, see our dedicated pillar <a href="/nf1-pharma-market-research">NF1 pharma market research &amp; competitive intelligence landing page</a>. For <strong>Koselugo (selumetinib)</strong> brand-specific launch and access commentary, see the companion article <a href="/blog/nf1-koselugo-selumetinib-pharma-market-research">Koselugo (selumetinib) market research briefing</a>. Also cross‑read the oncology therapy hub <a href="/healthcare-market-research/therapy/oncology">healthcare oncology market research</a>, rare‑disease‑adjacent indications on <a href="/pharmaceutical-therapy-areas">pharmaceutical therapy areas directory</a>, and analogous rare‑tumor coverage on <a href="/desmoid-tumor-pharma-market-research">desmoid tumour pharma intelligence</a> with its commentary article <a href="/blog/desmoid-tumors-nirogacestat-pharma-market-access">desmoid tumours — Ogsiveo (nirogacestat) pharma market intelligence</a>.</p>
 
 <h2 id="snapshot">Executive snapshot</h2>
 <ul>
@@ -233,6 +241,183 @@ export const NF1_KOSELUGO_HARDCODED_POST: BlogPost = {
     description:
       'Blend MEK analogue analogies, tumour board behavioural modules, multilingual caregiver depth, payer simulation boards — orchestrated by GDPR-aligned field governance.',
     buttonText: 'Book an NF1 research consult',
+    buttonUrl: '/contact',
+  },
+  body: '.',
+};
+
+/** Drug-brand editorial spoke — Koselugo (selumetinib); distinct from disease briefing at `/blog/neurofibromatosis`. */
+export const NF1_KOSELUGO_DRUG_BLOG_SLUG = 'nf1-koselugo-selumetinib-pharma-market-research';
+
+export const NF1_KOSELUGO_DRUG_META_TITLE =
+  'Koselugo (Selumetinib) Market Research | NF1 MEK Inhibitor Access | BioNixus';
+
+export const NF1_KOSELUGO_DRUG_DISPLAY_TITLE =
+  'Koselugo (Selumetinib) Market Research: NF1 Plexiform Neurofibroma Access & Launch Signals';
+
+export const NF1_KOSELUGO_DRUG_META_DESCRIPTION =
+  'Koselugo (selumetinib) market research for NF1-associated plexiform neurofibromas—FDA approval chronology (Apr 2020 paediatrics; adult label Nov 2025), EU positioning versus EZMEKLY (mirdametinib), launch economics, and specialist adoption intelligence. Pairs with NF1 disease briefing and BioNixus research services.';
+
+export const NF1_KOSELUGO_DRUG_OG_DESCRIPTION = NF1_KOSELUGO_DRUG_META_DESCRIPTION;
+
+export const NF1_KOSELUGO_DRUG_SCHEMA_MENTIONS: ReadonlyArray<Record<string, unknown>> = [
+  {
+    '@type': 'MedicalCondition',
+    name: 'Neurofibromatosis type 1',
+    alternateName: ['NF1'],
+    url: 'https://www.ncbi.nlm.nih.gov/books/NBK1109/',
+  },
+  {
+    '@type': 'Drug',
+    name: 'Selumetinib',
+    alternateName: ['Koselugo', 'KOSELUGO'],
+    description:
+      'Oral MEK1/MEK2 inhibitor co-developed by AstraZeneca and MSD. FDA-approved for symptomatic inoperable NF1-associated plexiform neurofibromas (paediatric approval Apr 2020; adult cohort Nov 2025).',
+    url: 'https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-selumetinib-neurofibromatosis-type-1',
+  },
+];
+
+export const NF1_KOSELUGO_DRUG_TAGS = [
+  'Koselugo',
+  'Selumetinib',
+  'NF1',
+  'Plexiform neurofibroma',
+  'MEK inhibitor',
+  'Rare disease pharma research',
+  'Pharmaceutical market research',
+] as const;
+
+export const NF1_KOSELUGO_DRUG_SCHEMA_FAQ: { question: string; answer: string }[] = [
+  {
+    question: 'What is Koselugo (selumetinib)?',
+    answer:
+      'Koselugo is the brand name for selumetinib, an oral selective MEK1/MEK2 inhibitor developed by AstraZeneca and MSD (Merck). It targets hyperactive RAS/MAPK signalling downstream of neurofibromin loss in NF1-associated plexiform neurofibromas.',
+  },
+  {
+    question: 'When did FDA approve Koselugo for NF1?',
+    answer:
+      'FDA approved selumetinib (Koselugo) on 10 April 2020 for paediatric patients ≥2 years with symptomatic, inoperable plexiform neurofibromas attributable to NF1—the first systemic therapy for this phenotype. Label expansions through 2025 broadened paediatric age bands and added adults ≥18 years with symptomatic inoperable PNs (November 2025).',
+  },
+  {
+    question: 'How does Koselugo compare with EZMEKLY (mirdametinib) in the EU?',
+    answer:
+      'Both are oral MEK inhibitors for NF1-PN. Koselugo (selumetinib) has a longer US/EU track record in paediatric cohorts. EZMEKLY (mirdametinib) received EU conditional marketing authorisation on 17 July 2025 as the first therapy covering adults and children ≥2 years in a single label. Forecast and access teams must model head-to-head positioning, not interchangeable uptake curves.',
+  },
+  {
+    question: 'What market research questions matter for Koselugo launch teams?',
+    answer:
+      'Centre readiness for MEK monitoring (cardiac echo, dermatology, ophthalmology), tumour board adoption sequencing versus surgery, caregiver dosing adherence, speciality pharmacy tender analogues, payer budget impact in Gulf centralized systems, and neurologist/oncologist/paediatric prescriber overlap as adult eligibility expands.',
+  },
+  {
+    question: 'Where is the NF1 disease overview briefing?',
+    answer:
+      'See the companion NF1 market access briefing at /blog/neurofibromatosis for disease fundamentals, multi-MEK regulatory context, and cross-therapy links. Commercial research deliverables are on /nf1-pharma-market-research.',
+  },
+];
+
+export const NF1_KOSELUGO_DRUG_EXECUTIVE_SUMMARY_HTML = `<p><strong>Koselugo (selumetinib) commercial signals — 2026</strong></p>
+<ul>
+<li><strong>First-mover MEK anchor</strong> — Koselugo established the systemic therapy category for symptomatic NF1-PN in the US (Apr 2020) and informs analogue tender narratives for oral kinase inhibitors in rare oncology.</li>
+<li><strong>Adult cohort unlock</strong> — US adult label (Nov 2025) expands prescriber base beyond paediatric centres into adult neurology/oncology clinics—forecast models must refactor centre mix.</li>
+<li><strong>EU competitive layering</strong> — EZMEKLY (mirdametinib) adult+paediatric EU approval (Jul 2025) introduces direct MEK class competition; Koselugo teams need head-to-head access and share-of-therapy intelligence.</li>
+</ul>`;
+
+export const NF1_KOSELUGO_DRUG_TABLE_OF_CONTENTS = [
+  { heading: 'Koselugo positioning snapshot', anchor: 'koselugo-snapshot' },
+  { heading: 'Selumetinib regulatory chronology', anchor: 'selumetinib-milestones' },
+  { heading: 'Launch & access research priorities', anchor: 'launch-research' },
+  { heading: 'Related NF1 resources', anchor: 'related' },
+];
+
+export const NF1_KOSELUGO_DRUG_BODY_HTML = `<p>This article is pharmaceutical market research commentary on <strong>Koselugo® (selumetinib)</strong>—not medical advice. It complements the broader <a href="/blog/neurofibromatosis">NF1 market access briefing</a> (disease and multi-MEK context) and the <a href="/nf1-pharma-market-research">NF1 pharma market research services</a> pillar (BioNixus capability matrix, tumour board modules, payer workshops).</p>
+
+<h2 id="koselugo-snapshot">Koselugo positioning snapshot</h2>
+<p>Koselugo anchors the MEK inhibitor class for symptomatic, inoperable NF1-associated plexiform neurofibromas. Brand teams must separate <em>selumetinib-specific</em> launch economics—speciality pharmacy distribution, monitoring cadence, tumour volume response adjudication—from general NF1 epidemiology narratives covered in the disease briefing.</p>
+<ul>
+<li><strong>Prescriber overlap</strong> — Paediatric oncologists, neurologists, and (post-2025) adult neurologist/oncologist clinics; sampling frames must reflect tertiary NF referral density.</li>
+<li><strong>Monitoring burden</strong> — Cardiac echocardiography, dermatologic toxicity, and ophthalmology workflows shape centre capacity and persistence assumptions.</li>
+<li><strong>Tender analogues</strong> — Chronic oral targeted rare-tumour therapies in Gulf centralized procurement—see <a href="/saudi-payer-market-access-research">Saudi payer market access research</a>.</li>
+</ul>
+
+<h2 id="selumetinib-milestones">Selumetinib regulatory chronology (selected)</h2>
+<table>
+  <thead>
+    <tr><th>Date</th><th>Milestone</th><th>Research implication</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>10 Apr 2020</td><td>FDA approval — paediatrics ≥2 y, symptomatic inoperable NF1-PN</td><td>First systemic therapy category; baseline for analogue analogies.</td></tr>
+    <tr><td>2025 (US)</td><td>Label expansions — younger paediatrics and adults ≥18 y</td><td>Adult cohort forecasting; adolescent-to-adult transition modules.</td></tr>
+    <tr><td>EU (selumetinib)</td><td>Paediatric-focused EU authorisation track</td><td>Contrast with EZMEKLY adult+paediatric conditional approval (17 Jul 2025).</td></tr>
+  </tbody>
+</table>
+
+<h2 id="launch-research">Launch &amp; access research priorities for Koselugo teams</h2>
+<ul>
+<li><strong>Tumour board analogue boards</strong> — Ethically governed vignettes testing MEK vs surgery sequencing (<a href="/services/qualitative-research">qualitative research</a>).</li>
+<li><strong>Incidence-aware HCP sampling</strong> — Neurologist/oncologist quotas aligned to NF referral centres (<a href="/services/quantitative-research">quantitative research</a>).</li>
+<li><strong>Payer simulation</strong> — Budget impact and tender choreography for oral kinase inhibitors (<a href="/services/market-access">market access</a>).</li>
+<li><strong>Competitive sentinel</strong> — EZMEKLY/GOMEKLI (mirdametinib) and pipeline MEK combinations (<a href="/services/competitive-intelligence">competitive intelligence</a>).</li>
+</ul>
+
+<h2 id="related">Related NF1 cluster pages</h2>
+<ul>
+<li><a href="/blog/neurofibromatosis">NF1 market access briefing</a> — disease fundamentals and multi-MEK regulatory overview.</li>
+<li><a href="/nf1-pharma-market-research">NF1 pharma market research services</a> — BioNixus deliverables and FAQs.</li>
+<li><a href="/healthcare-market-research/therapy/oncology">Oncology healthcare market research hub</a>.</li>
+<li><a href="/desmoid-tumor-pharma-market-research">Desmoid tumour pharma intelligence</a> — analogous rare soft-tissue tumour research patterns.</li>
+</ul>
+
+<p class="text-sm opacity-70">Regulatory facts reviewed June 2026; verify FDA and EMA EPAR sources before dossier filings.</p>`;
+
+export const NF1_KOSELUGO_DRUG_SCHEMA_ITEM_LIST = {
+  name: 'Koselugo launch intelligence modules',
+  items: [
+    {
+      name: 'Selumetinib prescriber segmentation',
+      description: 'Paediatric vs adult neurologist/oncologist overlap post Nov 2025 US adult label.',
+    },
+    {
+      name: 'MEK monitoring throughput',
+      description: 'Echo and dermatology capacity constraints on adoption ceilings.',
+    },
+    {
+      name: 'EZMEKLY competitive scenarios',
+      description: 'Head-to-head EU access positioning versus mirdametinib conditional approval.',
+    },
+  ],
+};
+
+export const NF1_KOSELUGO_DRUG_HARDCODED_POST: BlogPost = {
+  id: 'hardcoded-blog-nf1-koselugo-selumetinib',
+  slug: NF1_KOSELUGO_DRUG_BLOG_SLUG,
+  title: NF1_KOSELUGO_DRUG_DISPLAY_TITLE,
+  excerpt:
+    'Koselugo (selumetinib) market research for NF1 plexiform neurofibromas—FDA milestones, EU MEK competition, launch economics, and specialist adoption intelligence.',
+  date: '26 May 2026',
+  category: 'Rare Disease',
+  country: 'Global',
+  language: 'en',
+  readingTime: 14,
+  tags: [...NF1_KOSELUGO_DRUG_TAGS],
+  coverImage: NF1_KOSELUGO_COVER_IMAGE,
+  ogImage: NF1_KOSELUGO_COVER_IMAGE,
+  ogTitle: NF1_KOSELUGO_DRUG_META_TITLE,
+  ogDescription: NF1_KOSELUGO_DRUG_OG_DESCRIPTION,
+  seoMetaTitle: NF1_KOSELUGO_DRUG_META_TITLE,
+  seoMetaDescription: NF1_KOSELUGO_DRUG_META_DESCRIPTION,
+  seoCanonicalUrl: `https://www.bionixus.com/blog/${NF1_KOSELUGO_DRUG_BLOG_SLUG}`,
+  authorName: 'Mohammad Ashour',
+  authorTitle: 'Research Lead, BioNixus Healthcare Market Research',
+  authorLinkedIn: 'https://www.linkedin.com/in/mohammad-alsaadany',
+  publishedAtIso: NF1_KOSELUGO_PUBLISHED_ISO,
+  updatedAtIso: NF1_KOSELUGO_UPDATED_ISO,
+  tableOfContents: NF1_KOSELUGO_DRUG_TABLE_OF_CONTENTS.map(({ heading, anchor }) => ({ heading, anchor })),
+  faq: NF1_KOSELUGO_DRUG_SCHEMA_FAQ,
+  ctaSection: {
+    title: 'Design Koselugo-focused NF1 market intelligence',
+    description:
+      'Selumetinib launch analogues, MEK class competitive radar, tumour board modules, and payer workshops—GDPR-aligned field governance.',
+    buttonText: 'Book a Koselugo research consult',
     buttonUrl: '/contact',
   },
   body: '.',

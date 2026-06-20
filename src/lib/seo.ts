@@ -170,7 +170,7 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     ar: '/ar/insights/top-market-research-companies-egypt-2026',
   },
   '/blog/top-market-research-companies-egypt-2026': {
-    en: '/blog/top-market-research-companies-egypt-2026',
+    en: '/insights/top-market-research-companies-egypt-2026',
     ar: '/ar/insights/top-market-research-companies-egypt-2026',
   },
   '/insights/top-market-research-companies-brazil-2026': {
@@ -225,6 +225,43 @@ function findRouteGroup(pathname: string) {
     if (variants.includes(normalized)) return groupKey;
   }
   return null;
+}
+
+function stripLanguagePrefix(pathname: string): string {
+  const normalized = normalizePath(pathname);
+  const prefixes = ['de', 'fr', 'es', 'zh', 'ar', 'pt', 'ru'] as const;
+  for (const lang of prefixes) {
+    const prefix = languagePaths[lang];
+    if (!prefix || prefix === '/') continue;
+    if (normalized === prefix) return '/';
+    if (normalized.startsWith(`${prefix}/`)) {
+      return normalized.slice(prefix.length) || '/';
+    }
+  }
+  return normalized;
+}
+
+/**
+ * Resolve the URL to navigate to when switching UI language from the current path.
+ * Uses localized route groups when available; otherwise strips/adds language prefixes.
+ */
+export function resolveLanguageSwitchPath(pathname: string, targetLang: Language): string {
+  const normalized = normalizePath(pathname);
+  const groupKey = findRouteGroup(normalized);
+  if (groupKey) {
+    const group = localizedRouteGroups[groupKey];
+    const target = group[targetLang];
+    if (typeof target === 'string') return target;
+    if (typeof group.en === 'string') {
+      return targetLang === 'en' ? group.en : languagePaths[targetLang] || '/';
+    }
+  }
+
+  const stripped = stripLanguagePrefix(normalized);
+  if (targetLang === 'en') return stripped;
+  const base = languagePaths[targetLang] || '/';
+  if (stripped === '/') return base;
+  return base;
 }
 
 export function getCanonicalPath(pathname: string = '/') {

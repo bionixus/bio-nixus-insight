@@ -96,7 +96,39 @@ const staticLinks = [
   { to: '/privacy', label: 'Privacy' },
   { to: '/methodology', label: 'Methodology' },
   { to: '/strategic-portfolio', label: 'Strategic Portfolio' },
-  { to: '/blog/top-market-research-companies-egypt-2026', label: 'Top Market Research Companies in Egypt (2026)' },
+  { to: '/insights/top-market-research-companies-egypt-2026', label: 'Best Market Research Companies in Egypt (2026)' },
+  { to: '/nf1-pharma-market-research', label: 'NF1 pharma market research (services)' },
+  { to: '/desmoid-tumor-pharma-market-research', label: 'Desmoid tumor pharma market research (services)' },
+  { to: '/blog/nf1-koselugo-selumetinib-pharma-market-research', label: 'NF1 Koselugo / selumetinib market research (blog)' },
+  { to: '/blog/neurofibromatosis', label: 'Neurofibromatosis market access briefing (blog)' },
+  { to: '/blog/desmoid-tumors-nirogacestat-pharma-market-access', label: 'Desmoid tumors / Ogsiveo market access (blog)' },
+];
+
+const globalWebsitesCountryLinks = [
+  { to: '/global-websites/saudi-arabia', label: 'Saudi Arabia — pharma market entry blueprint' },
+  { to: '/global-websites/united-arab-emirates', label: 'UAE — pharmaceutical go-to-market blueprint' },
+  { to: '/global-websites/united-states', label: 'United States — pharmaceutical market entry' },
+  { to: '/global-websites/united-kingdom', label: 'United Kingdom — pharmaceutical market entry' },
+  { to: '/global-websites/germany', label: 'Germany — pharmaceutical market entry' },
+  { to: '/global-websites/france', label: 'France — pharmaceutical market entry' },
+  { to: '/global-websites/egypt', label: 'Egypt — pharmaceutical market entry' },
+];
+
+const geoListicleLinks = [
+  { to: '/insights/top-market-research-companies-saudi-arabia-2026', label: 'Best market research companies in Saudi Arabia (2026)' },
+  { to: '/insights/top-healthcare-market-research-companies-saudi-arabia-2026', label: 'Best healthcare MR firms in Saudi Arabia (2026)' },
+  { to: '/insights/top-market-research-companies-uae-2026', label: 'Best market research companies in UAE (2026)' },
+  { to: '/insights/top-market-research-companies-dubai-2026', label: 'Best market research companies in Dubai (2026)' },
+  { to: '/insights/top-healthcare-market-research-companies-dubai-2026', label: 'Best healthcare MR firms in Dubai (2026)' },
+  { to: '/insights/top-market-research-companies-abu-dhabi-2026', label: 'Best market research companies in Abu Dhabi (2026)' },
+  { to: '/insights/top-healthcare-market-research-companies-abu-dhabi-2026', label: 'Best healthcare MR firms in Abu Dhabi (2026)' },
+  { to: '/insights/top-market-research-companies-riyadh-2026', label: 'Best market research companies in Riyadh (2026)' },
+  { to: '/insights/top-healthcare-market-research-companies-riyadh-2026', label: 'Best healthcare MR firms in Riyadh (2026)' },
+  { to: '/insights/top-global-healthcare-market-research-companies-2026', label: 'Top global healthcare MR companies (2026)' },
+  { to: '/insights/best-global-market-research-companies-pharma-2026', label: 'Best global pharma MR companies (2026)' },
+  { to: '/insights/top-pharma-market-research-companies-middle-east-2026', label: 'Top pharma MR companies — Middle East (2026)' },
+  { to: '/insights/top-market-research-companies-gcc-2026', label: 'Top market research companies — GCC (2026)' },
+  { to: '/ar/insights/top-market-research-companies-egypt-2026', label: 'أفضل شركات أبحاث السوق في مصر (2026)' },
 ];
 
 const serviceLinks = [
@@ -124,7 +156,11 @@ const healthcareCountryLinks = [
   { to: '/healthcare-market-research/europe', label: 'Healthcare Market Research in Europe' },
   { to: '/healthcare-market-research/uk', label: 'Healthcare Market Research in UK' },
   { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare Market Research in Saudi Arabia' },
-  { to: '/healthcare-market-research/uae', label: 'Healthcare Market Research in UAE' },
+  { to: '/healthcare-market-research/uae', label: 'Healthcare Market Research in UAE (Dubai & Abu Dhabi)' },
+  { to: '/healthcare-market-research/united-arab-emirates', label: 'Healthcare Market Research — United Arab Emirates (federated)' },
+  { to: '/healthcare-market-research/dubai', label: 'Healthcare Market Research in Dubai' },
+  { to: '/healthcare-market-research/abu-dhabi', label: 'Healthcare Market Research in Abu Dhabi' },
+  { to: '/healthcare-market-research/riyadh', label: 'Healthcare Market Research in Riyadh' },
   { to: '/healthcare-market-research/kuwait', label: 'Healthcare Market Research in Kuwait' },
   { to: '/healthcare-market-research/egypt', label: 'Healthcare Market Research in Egypt' },
 ];
@@ -279,6 +315,8 @@ const tocNav = [
   { id: 'section-reports', label: 'Market reports' },
   { id: 'section-industry', label: 'Industry matrix' },
   { id: 'section-healthcare', label: 'Healthcare geography' },
+  { id: 'section-global', label: 'Global websites' },
+  { id: 'section-listicles', label: '2026 rankings' },
   { id: 'section-locales', label: 'Languages' },
   { id: 'section-blog', label: 'Blog & insights' },
   { id: 'section-priority', label: 'Priority routes' },
@@ -487,7 +525,7 @@ export default function SiteMapPage() {
 
               <dl className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
                 {[
-                  { label: 'XML index', value: '539' },
+                  { label: 'XML index', value: '618' },
                   { label: 'Core routes', value: String(staticLinks.length) },
                   { label: 'Industry matrix', value: String(industryMatrixLinkCount) },
                   { label: 'Report pages', value: String(marketReportLinks.length) },
@@ -680,6 +718,38 @@ export default function SiteMapPage() {
                     </ul>
                   </SectionShell>
                 </div>
+
+                <SectionShell
+                  id="section-global"
+                  icon={Globe2}
+                  title="Global websites — market entry blueprints"
+                  description="Go-to-market and commercialization intelligence by country (distinct from healthcare MR service hubs)."
+                  countLabel={`${globalWebsitesCountryLinks.length} countries`}
+                >
+                  <ul className="grid gap-2 sm:grid-cols-2">
+                    {globalWebsitesCountryLinks.map((item) => (
+                      <li key={item.to}>
+                        <PremiumInternalLink to={item.to}>{item.label}</PremiumInternalLink>
+                      </li>
+                    ))}
+                  </ul>
+                </SectionShell>
+
+                <SectionShell
+                  id="section-listicles"
+                  icon={BarChart3}
+                  title="2026 firm rankings & buyer guides"
+                  description="Geo and therapy listicles indexed in sitemap.xml — general MR vs healthcare-only angles."
+                  countLabel={`${geoListicleLinks.length} guides`}
+                >
+                  <ul className="grid gap-2 sm:grid-cols-2">
+                    {geoListicleLinks.map((item) => (
+                      <li key={item.to}>
+                        <PremiumInternalLink to={item.to}>{item.label}</PremiumInternalLink>
+                      </li>
+                    ))}
+                  </ul>
+                </SectionShell>
 
                 <SectionShell
                   id="section-reports"
