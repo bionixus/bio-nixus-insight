@@ -75,6 +75,13 @@ const DIABETES_TAIL: ReferenceSection[] = [
       'Segment definitions should separate patients truly eligible under realistic monitoring capacity from denominators inflated by untreated populations rarely converting into treated share without structural intervention.',
     ],
   },
+  {
+    title: 'Operationalizing diabetes insight for launch, expansion, and lifecycle defence',
+    paragraphs: [
+      'Deliverables may include GP versus specialist handoff maps, formulary step-therapy friction registers, switch-intent segmentation, Ramadan or cultural adherence modules where relevant, and access-risk overlays tied to observable payer behaviour—all aligned so affiliates synchronize rather than reinterpret.',
+      'Teams ready to escalate should route into country diabetes reports, market access research services, and the healthcare hub for coherent multi-market expansion across MENA, the UK, and Europe.',
+    ],
+  },
 ];
 
 const RESPIRATORY_TAIL: ReferenceSection[] = [
@@ -95,6 +102,13 @@ const VACCINES_TAIL: ReferenceSection[] = [
       'Programmes anchored in behavioural realism support rollout planning, payer discussions where relevant, segmentation for targeted education, simulation of stigma or polarization effects where they distort uptake.',
     ],
   },
+  {
+    title: 'Translating immunization insight into rollout and lifecycle action',
+    paragraphs: [
+      'Effective vaccine engagements produce channel-readiness maps, stakeholder-weighted sampling plans, message hierarchies validated against recommendation behaviour, and competitive-entry scenarios when schedule changes or new products alter uptake curves.',
+      'BioNixus links findings to the healthcare market research hub and GCC pharmaceutical context so public-health, medical, and commercial teams share one behavioural evidence base.',
+    ],
+  },
 ];
 
 const CARDIO_TAIL: ReferenceSection[] = [
@@ -102,7 +116,16 @@ const CARDIO_TAIL: ReferenceSection[] = [
     title: 'Cardiovascular markets: procedural intersections and chronic inertia',
     paragraphs: [
       'Cardiovascular categories often entail interactions between inpatient intervention culture, lipid or hypertension inertia in outpatient stewardship, pharmacist-led substitution corridors, wearable adoption differences, guideline update cadence shocks, residual risk narratives competing for clinician attention budgets.',
-      'Research bridging acute and chronic corridors prevents exaggerated adoption curves that assume instantaneous cascade after guideline publication.',
+      'Research bridging acute and chronic corridors prevents exaggerated adoption curves that assume instantaneous cascade after guideline publication or hospital discharge.',
+      'Post-event prescribing rituals—statin intensification after MI, anticoagulation bridging after AF diagnosis, GDMT uptitration after heart-failure admission—often determine long-term share more than acute intervention enthusiasm alone. Studies should map who owns titration after the index event and where persistence decays.',
+    ],
+  },
+  {
+    title: 'Operationalizing cardiology insight for launch, expansion, and lifecycle defence',
+    paragraphs: [
+      'Deliverables may include specialist versus primary-care handoff maps, undertreatment and inertia registers, lipid or anticoagulation switch-intent segmentation, residual-risk narrative tests, and access-risk overlays tied to formulary step therapy or pharmacist substitution—aligned so affiliates synchronize rather than reinterpret.',
+      'Cardiometabolic overlap with diabetes and obesity pharmacotherapy reshapes clinician attention budgets; combined modules reduce duplicate fieldwork and clarify where messaging, access, and medical education should coordinate across specialty boundaries.',
+      'Teams ready to escalate should route into country cardiovascular reports, market access research services, and the healthcare hub for coherent multi-market expansion across MENA, the UK, and Europe.',
     ],
   },
 ];
@@ -123,6 +146,13 @@ const AESTHETIC_TAIL: ReferenceSection[] = [
     paragraphs: [
       'Aesthetic demand responds to discretionary spend cycles, channel trust, injector training heterogeneity, device versus toxin bundling incentives, reputational backlash risk, multilingual marketing regulations, influencer dynamics where compliant research design must avoid promotional contamination.',
       'Segment forecasts should stratify elective sensitivity and privacy preferences—particularly across Gulf private corridors versus mass-market aspirations.',
+    ],
+  },
+  {
+    title: 'From aesthetic insight to channel prioritisation and competitive positioning',
+    paragraphs: [
+      'Deliverables emphasise provider-channel maps, price-architecture sensitivity, training and loyalty hypotheses, and message testing under regulatory constraints—so commercial teams know where to invest field effort versus education versus experience design.',
+      'Pair aesthetic modules with dermatology research and GCC pharmaceutical context when immune-mediated and medical-aesthetic portfolios overlap in the same affiliate.',
     ],
   },
 ];

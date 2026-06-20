@@ -1,4 +1,7 @@
 import StrategicServicePage from '@/pages/templates/StrategicServicePage';
+import { getServiceLandingContent } from '@/data/serviceLandingContent';
+
+const expandedContent = getServiceLandingContent('heor-consulting-saudi-arabia');
 
 export default function HeorConsultingSaudiArabia() {
   return (
@@ -8,7 +11,7 @@ export default function HeorConsultingSaudiArabia() {
       canonicalUrl="https://www.bionixus.com/heor-consulting-saudi-arabia"
       breadcrumbLabel="HEOR Consulting Saudi Arabia"
       h1="HEOR Consulting Saudi Arabia"
-      intro="HEOR only earns reimbursement in Saudi Arabia when the assumptions survive committee scrutiny. Imported global models lose credibility fast when local epidemiology, treatment patterns, and pricing don't match. BioNixus builds budget-impact models and value narratives calibrated to the Kingdom, then translates them into evidence packages that access, medical, and finance teams can all defend."
+      intro="HEOR only earns reimbursement in Saudi Arabia when the assumptions survive committee scrutiny. Start from our healthcare market research hub for regional context, then build budget-impact models and value narratives calibrated to the Kingdom—translated into evidence packages access, medical, and finance teams can defend together."
       links={[
         { to: '/healthcare-market-research-agency-gcc', label: 'Healthcare market research agency GCC', primary: true },
         { to: '/biosimilar-market-entry-saudi-arabia', label: 'Biosimilar market entry Saudi Arabia', primary: true },
@@ -53,6 +56,7 @@ export default function HeorConsultingSaudiArabia() {
           detail: 'Outputs include explicit next-step choices for access and commercial leadership.',
         },
       ]}
+      expandedContent={expandedContent}
     />
   );
 }

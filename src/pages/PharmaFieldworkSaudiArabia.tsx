@@ -1,4 +1,7 @@
 import StrategicServicePage from '@/pages/templates/StrategicServicePage';
+import { getServiceLandingContent } from '@/data/serviceLandingContent';
+
+const expandedContent = getServiceLandingContent('pharma-fieldwork-saudi-arabia');
 
 export default function PharmaFieldworkSaudiArabia() {
   return (
@@ -8,7 +11,7 @@ export default function PharmaFieldworkSaudiArabia() {
       canonicalUrl="https://www.bionixus.com/pharma-fieldwork-saudi-arabia"
       breadcrumbLabel="Pharma Fieldwork Saudi Arabia"
       h1="Pharma Fieldwork Saudi Arabia"
-      intro="BioNixus delivers pharma fieldwork in Saudi Arabia with verified physician and payer recruitment, Arabic–English moderation, and governance aligned to SFDA and institutional access realities—not consumer panel shortcuts."
+      intro="BioNixus delivers pharma fieldwork in Saudi Arabia with verified physician and payer recruitment, Arabic–English moderation, and governance aligned to SFDA and institutional access realities—not consumer panel shortcuts. Start from our healthcare market research hub for regional context, then scope one KSA fieldwork objective aligned to your launch or access milestone."
       links={[
         {
           to: '/market-research-saudi-arabia-pharmaceutical',
@@ -59,6 +62,7 @@ export default function PharmaFieldworkSaudiArabia() {
           detail: 'Public, private, and procurement stakeholders where therapy model requires.',
         },
       ]}
+      expandedContent={expandedContent}
     />
   );
 }

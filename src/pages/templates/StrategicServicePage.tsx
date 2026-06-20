@@ -13,6 +13,8 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { ExpandedServiceLandingContent } from '@/components/page/ExpandedServiceLandingContent';
+import type { ServiceLandingExpandedContent } from '@/data/serviceLandingContent';
 
 type LinkItem = {
   to: string;
@@ -37,6 +39,8 @@ type StrategicServicePageProps = {
   areaServed?: string[];
   /** Optional FAQ entries; when provided, a FAQPage schema + on-page FAQ render. */
   faqs?: Array<{ question: string; answer: string }>;
+  /** Optional long-form sections from serviceLandingContent ([BIO-451]). */
+  expandedContent?: ServiceLandingExpandedContent;
 };
 
 export default function StrategicServicePage({
@@ -53,7 +57,9 @@ export default function StrategicServicePage({
   serviceType,
   areaServed,
   faqs,
+  expandedContent,
 }: StrategicServicePageProps) {
+  const resolvedFaqs = expandedContent?.faqs ?? faqs;
   const pagePath = canonicalUrl.replace('https://www.bionixus.com', '') || '/';
   const slugKey = pagePath.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '') || 'service';
   const faqSectionId = `service-faq-${slugKey}`;
@@ -98,7 +104,7 @@ export default function StrategicServicePage({
       url: canonicalUrl,
     },
     buildBreadcrumbSchema(breadcrumbItems),
-    ...(faqs && faqs.length ? [buildFAQSchema(faqs, { pageUrl: canonicalUrl })] : []),
+    ...(resolvedFaqs && resolvedFaqs.length ? [buildFAQSchema(resolvedFaqs, { pageUrl: canonicalUrl })] : []),
   ];
 
   return (
@@ -124,6 +130,8 @@ export default function StrategicServicePage({
         />
 
         <ReportContentWithAside config={config}>
+          {expandedContent ? <ExpandedServiceLandingContent content={expandedContent} /> : null}
+
           {/* Decision framework */}
           <section className="section-padding bg-cream-dark rounded-2xl border border-border/40" id="decision-framework">
             <div className="container-wide max-w-4xl mx-auto">
@@ -197,11 +205,11 @@ export default function StrategicServicePage({
             </div>
           </section>
 
-          {faqs && faqs.length ? (
+          {resolvedFaqs && resolvedFaqs.length ? (
             <FAQSection
               sectionId={faqSectionId}
               title={`${breadcrumbLabel} — frequently asked questions`}
-              items={faqs}
+              items={resolvedFaqs}
               className="bg-muted/30 rounded-2xl border border-border/40"
             />
           ) : null}

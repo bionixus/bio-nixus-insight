@@ -7,6 +7,21 @@ import { getHealthcareMarketResearchTherapyConfig } from '@/data/reportConversio
 import { ReportMidPageCta } from '@/components/report-conversion';
 import { ReportPremiumSection } from '@/components/report-premium';
 import { buildFAQSchema, buildTherapyPageSchemas } from '@/lib/seo/schemas';
+import {
+  THIN_THERAPY_EXPANDED_FAQS,
+  type ThinTherapySlug,
+} from '@/data/seo/therapyExpandedPageContent';
+
+function mergeThinTherapyFaqs(
+  area: string,
+  base: { question: string; answer: string }[],
+): { question: string; answer: string }[] {
+  const extra = THIN_THERAPY_EXPANDED_FAQS[area as ThinTherapySlug];
+  if (!extra?.length) return base;
+  const seen = new Set(base.map((item) => item.question.toLowerCase()));
+  const appended = extra.filter((item) => !seen.has(item.question.toLowerCase()));
+  return [...base, ...appended];
+}
 
 const BIOLOGICS_SEO_TITLE = 'Biologics Research Guide: Biosimilars & Market Access | BioNixus';
 
@@ -90,6 +105,14 @@ const THERAPY_SECTIONS: Record<string, { title: string; points: string[] }> = {
       'Assess vaccine confidence drivers and adoption constraints in prioritized populations.',
       'Map healthcare provider communication needs for stronger uptake programs.',
       'Support rollout strategy with targeted evidence on channel and stakeholder differences.',
+    ],
+  },
+  cardiology: {
+    title: 'Cardiology market research priorities',
+    points: [
+      'Separate acute, secondary-prevention, and chronic pathways, and measure where guideline-aligned prescribing breaks down in routine practice.',
+      'Map the cardiology–primary-care interface and who owns initiation, titration, and long-term adherence for lipid, anticoagulation, and heart-failure therapy.',
+      'Test value and outcome narratives against payer and formulary realities in high-burden MENA populations and structured UK/EU systems.',
     ],
   },
   'rare-diseases': {
@@ -349,6 +372,28 @@ const THERAPY_FAQS: Record<string, { question: string; answer: string }[]> = {
         'We run prescriber confidence and switching studies, insurer and hospital-formulary interviews, substitution-incentive mapping, and KOL mapping tied to real formulary influence, with bilingual fieldwork across MENA. Outputs include molecule-wave models, payer and switching maps, and objection libraries that connect to the biologics guide and country biosimilar reports.',
     },
   ],
+  cardiology: [
+    {
+      question: 'What does cardiology market research focus on for pharmaceutical teams?',
+      answer:
+        'It examines acute, secondary-prevention, and chronic pathways—lipid management, anticoagulation, heart failure, hypertension—where guideline-aligned care breaks down in routine practice. BioNixus measures initiation, titration, persistence, and the payer or formulary realities that shape access in high-burden populations across MENA, the UK, and Europe.',
+    },
+    {
+      question: 'Why is the cardiology–primary-care interface so important?',
+      answer:
+        'Many cardiovascular therapies are started by specialists but maintained in primary care for years. Persistence and titration depend on who owns the patient over time; studies that ignore this handoff misread adherence and undertreatment. BioNixus maps ownership across the pathway to find where intervention changes outcomes.',
+    },
+    {
+      question: 'How do procedural and device intersections affect cardiology research?',
+      answer:
+        'Interventional culture, cath-lab throughput, and post-event prescribing rituals influence pharmaceutical uptake alongside outpatient chronic management. Research should reconcile acute and chronic corridors so forecasts do not assume instantaneous cascade after guideline publication or hospital discharge.',
+    },
+    {
+      question: 'How does cardiology research vary across markets?',
+      answer:
+        'MENA carries early cardiometabolic burden with mixed public–private access; UK and European systems apply structured guideline and HTA frameworks with different rebate and substitution norms. BioNixus combines comparable cores with local access and channel modules.',
+    },
+  ],
   cardiovascular: [
     {
       question: 'What does cardiovascular market research focus on?',
@@ -415,6 +460,102 @@ const THERAPY_FAQS: Record<string, { question: string; answer: string }[]> = {
         'We deliver adoption and workflow-fit studies, payer and procurement-readiness analysis, evidence-requirement mapping, and stakeholder segmentation across clinicians, administrators, and patients. Findings connect to the healthcare market research hub so product, clinical, and commercial teams align on a realistic route to scale.',
     },
   ],
+  diabetes: [
+    {
+      question: 'What does diabetes market research cover for pharmaceutical teams?',
+      answer:
+        'It maps how type 2, obesity-related metabolic, and insulin-dependent pathways behave in real practice: initiation and titration habits, inertia after partial response, CGM and device adoption, compounded pharmacy substitution, and the access rules that filter eligible patients. BioNixus connects prescriber, pharmacist, and payer-adjacent behaviour to segmentation, messaging, and launch sequencing across MENA, the UK, and Europe.',
+    },
+    {
+      question: 'Why is prescribing inertia a central diabetes research question?',
+      answer:
+        'Many patients remain on suboptimal regimens because of monitoring burden, cost surprises, formulary step edits, or primary-care bandwidth—not because clinicians reject newer options on clinical grounds. Research must measure where inertia sits in the pathway so medical and access teams target the right lever rather than repeating efficacy claims that do not move behaviour.',
+    },
+    {
+      question: 'How do GLP-1 and obesity pharmacotherapy trends affect diabetes research design?',
+      answer:
+        'Rising obesity pharmacotherapy reshapes clinician attention, referral patterns, and payer budgets. Studies should capture cross-category competition, patient expectations shaped by consumer messaging, and institutional protocols that may accelerate or delay advanced therapy use. Ignoring this crosswind produces forecasts that treat diabetes corridors as isolated from broader metabolic prescribing.',
+    },
+    {
+      question: 'How does diabetes research differ across GCC, UK, and European markets?',
+      answer:
+        'MENA carries high cardiometabolic prevalence with mixed public–private routing; the UK applies NICE-aligned cost-effectiveness gates; EU5 systems vary in regional autonomy and rebate structures. BioNixus keeps comparable core metrics for regional roll-ups while embedding local modules on access, channel mix, and prescribing culture.',
+    },
+    {
+      question: 'How does BioNixus support diabetes launch and lifecycle decisions?',
+      answer:
+        'We deliver segment dossiers, adherence and switch-intent analysis, value-narrative testing, and access-risk maps tied to observable formulary and procurement behaviour. Outputs connect to the healthcare market research hub and country reports such as our UAE diabetes market research perspective so brand, medical, and access teams plan from one evidence base.',
+    },
+    {
+      question: 'Should diabetes research in MENA include cultural adherence modules?',
+      answer:
+        'Yes where fasting, migration, or multilingual patient education shapes persistence. Modules capture how clinicians advise on regimen adjustment, how patients self-manage during cultural events, and where current standard of care leaves adherence gaps—without treating MENA as a homogeneous market.',
+    },
+  ],
+  vaccines: [
+    {
+      question: 'What does vaccines market research cover beyond stated intent surveys?',
+      answer:
+        'It distinguishes recommendation confidence from realised uptake by measuring logistical friction, caregiver decision dynamics, pharmacist administration scope, occupational mandates, institutional batch procurement, and communication constraints in multilingual populations. BioNixus builds behavioural models that support rollout, segmentation, and education planning—not generic awareness tracking.',
+    },
+    {
+      question: 'Why is the intent–behaviour gap critical in immunization research?',
+      answer:
+        'Clinicians may support a vaccine in principle while operational barriers—stockouts, scheduling, documentation, reimbursement coding, or patient hesitancy shaped by misinformation—suppress delivery. Research must locate where the pathway breaks so public-health and commercial teams invest in fixes that change doses administered, not attitudes alone.',
+    },
+    {
+      question: 'How do national and private channels differ in vaccine research design?',
+      answer:
+        'National programmes, employer mandates, private clinic channels, and pharmacy-led administration follow different decision chains and procurement calendars. GCC markets often blend public campaigns with private acceleration; European systems vary by regional autonomy. Studies mirror the channel that will carry your rollout rather than assuming a single national model.',
+    },
+    {
+      question: 'Which stakeholders matter most in vaccine studies?',
+      answer:
+        'Primary-care recommenders, paediatricians, occupational health leads, pharmacists with administration authority, institutional procurement teams, and—where relevant—patient advocacy groups shape uptake. Sampling plans should reflect who actually delivers or blocks the dose in each target population.',
+    },
+    {
+      question: 'How does BioNixus support vaccine launch and lifecycle planning?',
+      answer:
+        'We deliver segment prioritisation, message and objection testing, channel-readiness maps, and uptake scenarios grounded in surveyed behaviour. Findings connect to the healthcare market research hub and GCC pharmaceutical context where Gulf rollout concentrates.',
+    },
+    {
+      question: 'How does BioNixus test vaccine messaging without promotional bias?',
+      answer:
+        'Instruments use neutral, guideline-aligned vignettes and moderated qualitative modules so clinicians respond to realistic rollout constraints—not branded claims. Message hierarchies are validated quantitatively against recommendation and administration behaviour rather than attitude scales alone.',
+    },
+  ],
+  'aesthetic-medicine': [
+    {
+      question: 'What does aesthetic medicine market research cover?',
+      answer:
+        'It spans injectables, energy-based devices, and consumer-medical skincare—measuring discretionary demand, provider channel mix, training and brand loyalty, price sensitivity, and regulatory constraints on promotion. BioNixus designs research that respects the referral-light, reputation-driven dynamics where patients choose actively rather than following specialist pathways alone.',
+    },
+    {
+      question: 'How is aesthetic demand different from traditional pharma research?',
+      answer:
+        'Demand responds to discretionary spend cycles, influencer and social proof, privacy preferences, and experiential outcomes—not only clinical endpoints. Segment forecasts should stratify elective sensitivity and channel trust, particularly across Gulf private corridors versus mass-market aspirations.',
+    },
+    {
+      question: 'Which provider channels should aesthetic studies include?',
+      answer:
+        'Dermatology, plastic surgery, dentistry crossover, and medi-spa channels follow different training ecosystems, bundling incentives, and patient acquisition models. Research maps where your product category actually competes rather than assuming hospital-centric specialty norms.',
+    },
+    {
+      question: 'How do regulatory and promotional rules affect aesthetic research design?',
+      answer:
+        'Multilingual marketing regulations, before-and-after disclosure norms, and platform advertising restrictions shape what providers and consumers discuss openly. Instruments must elicit behaviour without contaminating results through non-compliant stimulus—BioNixus applies neutral, compliance-aware vignettes and moderation guides.',
+    },
+    {
+      question: 'How does BioNixus support aesthetic medicine commercial strategy?',
+      answer:
+        'Deliverables include segment and channel prioritisation, message and objection testing, competitive positioning maps, and training or loyalty hypotheses validated with providers—outputs medical affairs and commercial teams can execute without reinterpretation.',
+    },
+    {
+      question: 'How should injectables research differ from energy-based device studies?',
+      answer:
+        'Injectables compete on training ecosystems, toxin versus filler loyalty, and bundling with skincare; devices compete on capital expenditure, maintenance contracts, and operator certification. BioNixus separates these channel economics so forecasts and messaging reflect where your category actually competes.',
+    },
+  ],
   dermatology: [
     {
       question: 'What does dermatology market research cover?',
@@ -447,27 +588,30 @@ export default function TherapyPage() {
   const copy =
     THERAPY_COPY[area] ||
     'Therapy-focused pharmaceutical market research with actionable evidence for stakeholder engagement and growth planning.';
-  const therapyFaqs = isBiologics
-    ? BIOLOGICS_FAQS
-    : isImmunology
-      ? IMMUNOLOGY_FAQS
-      : THERAPY_FAQS[area] ?? [
-        {
-          question: `How does BioNixus approach ${titleArea} pharmaceutical market research?`,
-          answer:
-            'BioNixus combines quantitative and qualitative methods to identify adoption drivers, evidence expectations, and stakeholder barriers specific to this therapy area across MENA, UK, and Europe.',
-        },
-        {
-          question: `Which stakeholder groups are prioritized in ${titleArea} therapy studies?`,
-          answer:
-            'Stakeholders are selected by real decision influence and pathway relevance, including treating specialists, institutional influencers, and where needed market access and payer-adjacent participants.',
-        },
-        {
-          question: `Can ${titleArea} market research support launch and post-launch optimization?`,
-          answer:
-            'Yes. Therapy-focused research can inform launch planning, segment prioritization, communication strategy, and post-launch optimization by revealing where adoption friction appears and how to reduce it.',
-        },
-      ];
+  const therapyFaqs = mergeThinTherapyFaqs(
+    area,
+    isBiologics
+      ? BIOLOGICS_FAQS
+      : isImmunology
+        ? IMMUNOLOGY_FAQS
+        : THERAPY_FAQS[area] ?? [
+            {
+              question: `How does BioNixus approach ${titleArea} pharmaceutical market research?`,
+              answer:
+                'BioNixus combines quantitative and qualitative methods to identify adoption drivers, evidence expectations, and stakeholder barriers specific to this therapy area across MENA, UK, and Europe.',
+            },
+            {
+              question: `Which stakeholder groups are prioritized in ${titleArea} therapy studies?`,
+              answer:
+                'Stakeholders are selected by real decision influence and pathway relevance, including treating specialists, institutional influencers, and where needed market access and payer-adjacent participants.',
+            },
+            {
+              question: `Can ${titleArea} market research support launch and post-launch optimization?`,
+              answer:
+                'Yes. Therapy-focused research can inform launch planning, segment prioritization, communication strategy, and post-launch optimization by revealing where adoption friction appears and how to reduce it.',
+            },
+          ],
+  );
   const jsonLd = [...buildTherapyPageSchemas(area, copy), buildFAQSchema(therapyFaqs)];
   const content = THERAPY_SECTIONS[area] || {
     title: `${titleArea} Research Priorities`,
@@ -480,6 +624,43 @@ export default function TherapyPage() {
 
   const conversionConfig = getHealthcareMarketResearchTherapyConfig(titleArea, area);
   const faqSectionId = `healthcare-mr-therapy-${area}-faq`;
+  const thinTherapyExtraToc: { href: string; label: string }[] =
+    area === 'oncology'
+      ? [
+          { href: '#oncology-pathway', label: 'Pathway research' },
+          { href: '#oncology-modules', label: 'Research modules' },
+        ]
+      : area === 'rare-diseases'
+        ? [
+            { href: '#rare-disease-finding', label: 'Patient-finding' },
+            { href: '#rare-disease-networks', label: 'KOL networks' },
+          ]
+        : area === 'diabetes'
+          ? [
+              { href: '#diabetes-pathway', label: 'Pathway research' },
+              { href: '#diabetes-modules', label: 'Research modules' },
+            ]
+          : area === 'vaccines'
+            ? [
+                { href: '#vaccines-pathway', label: 'Immunization research' },
+                { href: '#vaccines-modules', label: 'Research modules' },
+              ]
+            : area === 'aesthetic-medicine'
+              ? [
+                  { href: '#aesthetic-pathway', label: 'Demand dynamics' },
+                  { href: '#aesthetic-modules', label: 'Research modules' },
+                ]
+              : area === 'cardiology'
+                ? [
+                    { href: '#cardiology-pathway', label: 'Pathway research' },
+                    { href: '#cardiology-modules', label: 'Research modules' },
+                  ]
+                : area === 'respiratory'
+                  ? [
+                      { href: '#respiratory-pathway', label: 'Pathway research' },
+                      { href: '#respiratory-modules', label: 'Research modules' },
+                    ]
+                  : [];
   const heroTitle = isBiologics
     ? 'Biologics market research guide'
     : isImmunology
@@ -629,6 +810,7 @@ export default function TherapyPage() {
         }}
         tocItems={[
           { href: '#therapy-priorities', label: 'Research priorities' },
+          ...thinTherapyExtraToc,
           { href: `#${faqSectionId}`, label: 'FAQ' },
         ]}
         faq={{
@@ -678,6 +860,89 @@ export default function TherapyPage() {
                   , and <strong className="font-medium text-foreground">access pathways that filter real eligible patients</strong>.
                 </p>
               </>
+            ) : area === 'diabetes' ? (
+              <>
+                <p>
+                  Diabetes strategy depends on chronic pathway decisions: who initiates, who intensifies after partial
+                  response, and which formulary or operational frictions block escalation despite guideline alignment.
+                  BioNixus designs studies that connect{' '}
+                  <strong className="font-medium text-foreground">prescriber judgment, nursing execution, pharmacist
+                  substitution, and payer step therapy</strong> so brand, medical, and access teams prioritise
+                  high-impact interventions—not generic awareness metrics.
+                </p>
+                <p>
+                  GLP-1 and obesity pharmacotherapy crosswinds, CGM adoption, and compounded pharmacy substitution reshape
+                  competitive dynamics. Research must capture cross-category competition and institutional protocols that
+                  accelerate or delay advanced therapy use across MENA, the UK, and Europe.
+                </p>
+              </>
+            ) : area === 'vaccines' ? (
+              <>
+                <p>
+                  Vaccine rollout succeeds when research distinguishes{' '}
+                  <strong className="font-medium text-foreground">recommendation confidence</strong> from{' '}
+                  <strong className="font-medium text-foreground">doses administered</strong>. BioNixus maps logistical
+                  friction, caregiver dynamics, pharmacist administration scope, occupational mandates, and institutional
+                  procurement rhythms—the operational gates that determine whether education investments change uptake.
+                </p>
+                <p>
+                  National programmes, private clinic channels, and pharmacy-led administration follow different decision
+                  chains. GCC markets often blend public campaigns with private acceleration; UK and European systems vary
+                  by regional autonomy. Comparable cores enable regional governance while local modules preserve channel
+                  realism.
+                </p>
+              </>
+            ) : area === 'aesthetic-medicine' ? (
+              <>
+                <p>
+                  Aesthetic categories reward research that respects{' '}
+                  <strong className="font-medium text-foreground">discretionary spend cycles</strong>,{' '}
+                  <strong className="font-medium text-foreground">provider channel trust</strong>, and{' '}
+                  <strong className="font-medium text-foreground">reputation-driven patient choice</strong>. BioNixus
+                  maps demand across dermatology, plastic surgery, dentistry crossover, and medi-spa channels—not
+                  hospital-centric specialty norms alone.
+                </p>
+                <p>
+                  Influencer dynamics, privacy preferences, price sensitivity, and multilingual marketing regulations shape
+                  what providers and consumers discuss openly. Instruments use neutral, compliance-aware vignettes so
+                  findings reflect behaviour—not promotional contamination—across Gulf private corridors and European
+                  markets.
+                </p>
+              </>
+            ) : area === 'cardiology' ? (
+              <>
+                <p>
+                  Cardiovascular portfolios depend on{' '}
+                  <strong className="font-medium text-foreground">acute-to-chronic handoffs</strong>,{' '}
+                  <strong className="font-medium text-foreground">titration and persistence inertia</strong>, and{' '}
+                  <strong className="font-medium text-foreground">formulary substitution corridors</strong> as much as
+                  on trial efficacy. BioNixus maps lipid, anticoagulation, heart-failure, and hypertension pathways so
+                  forecasts treat guideline intent and treated-in-practice populations as distinct.
+                </p>
+                <p>
+                  Interventional culture, cath-lab throughput, and post-event prescribing rituals influence uptake
+                  alongside outpatient chronic management. MENA cardiometabolic burden, UK NICE-aligned frameworks, and
+                  EU5 rebate and substitution norms each require local modules while preserving comparable cores for
+                  regional governance.
+                </p>
+              </>
+            ) : area === 'respiratory' ? (
+              <>
+                <p>
+                  Respiratory portfolios depend on{' '}
+                  <strong className="font-medium text-foreground">device familiarity</strong>,{' '}
+                  <strong className="font-medium text-foreground">formulary substitution</strong>, and{' '}
+                  <strong className="font-medium text-foreground">exacerbation-driven escalation</strong> as much as on
+                  trial efficacy. BioNixus maps COPD, asthma, and related pathways so forecasts treat guideline intent
+                  and treated-in-practice populations as distinct across MENA, the UK, and Europe.
+                </p>
+                <p>
+                  Seasonal demand spikes, pollution events, and vaccination interactions in older populations distort
+                  analogue calibration when treated as steady-state. Pharmacist-led substitution and tender scoring can
+                  shift share independently of pulmonologist preference—especially in GCC institutions with consolidated
+                  procurement.
+                </p>
+              </>
             ) : (
               <>
                 <p>
@@ -700,6 +965,540 @@ export default function TherapyPage() {
             ))}
           </div>
       </ReportPremiumSection>
+
+      {area === 'oncology' ? (
+        <>
+          <ReportPremiumSection
+            id="oncology-pathway"
+            title="Oncology pathway research: where labelled eligibility stops converting to treated patients"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Modern oncology portfolios depend on{' '}
+                <strong className="font-medium text-foreground">operational testing behaviour</strong>,{' '}
+                <strong className="font-medium text-foreground">tumour-board sequencing culture</strong>, and{' '}
+                <strong className="font-medium text-foreground">funding gates</strong> as much as on trial efficacy.
+                BioNixus decomposes the pathway from referral through biomarker order, result turnaround, board review,
+                line-of-therapy etiquette, and institutional procurement overlays—so forecasts treat “eligible on label” and
+                “treated in practice” as distinct populations.
+              </p>
+              <p>
+                In GCC markets, concentrated centres of excellence and tender-led procurement can compress choice even
+                when clinical enthusiasm is high. UK and EU5 programmes add HTA sequencing, subgroup acceptability, and
+                regional reimbursement variation. Comparable survey cores enable regional governance; local modules preserve
+                the access realism that determines whether launch sequencing matches committee calendars.
+              </p>
+              <p>
+                Pair this guide with{' '}
+                <Link to="/kol-mapping-saudi-arabia-oncology" className="text-primary underline">
+                  KOL mapping for oncology in Saudi Arabia
+                </Link>
+                ,{' '}
+                <Link to="/healthcare-market-research/services/market-access" className="text-primary underline">
+                  market access research
+                </Link>
+                , and GCC oncology market reports when tender and funding overlays dominate the decision.
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection
+            id="oncology-modules"
+            title="Modules BioNixus integrates for oncology engagements"
+            variant="muted"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <ul className="list-disc pl-6 space-y-3 marker:text-primary">
+                <li>
+                  <strong className="text-foreground">Testing and lab pathway forensics:</strong> order rates, turnaround
+                  anxiety, reflex testing habits, and how pathologists interpret ambiguous or borderline results.
+                </li>
+                <li>
+                  <strong className="text-foreground">Line-of-therapy and board dynamics:</strong> escalation triggers,
+                  combination etiquette, maintenance persistence, and relapse handling in realistic vignettes.
+                </li>
+                <li>
+                  <strong className="text-foreground">Access and procurement overlay:</strong> budget-holder objections,
+                  scoring dimensions in tender-led institutions, and private-channel acceleration pockets.
+                </li>
+                <li>
+                  <strong className="text-foreground">Message and evidence testing:</strong> pairwise comparisons among
+                  plausible next-line options—not placebo superlatives—with objection coding tied to decision stage.
+                </li>
+              </ul>
+              <p>
+                Deliverables emphasise prioritised centre archetypes, uptake scenarios grounded in surveyed behaviour, and
+                executive summaries linking evidence gaps to medical affairs and access owners—outputs leadership teams can
+                execute without weeks of reinterpretation.
+              </p>
+            </div>
+          </ReportPremiumSection>
+        </>
+      ) : null}
+
+      {area === 'rare-diseases' ? (
+        <>
+          <ReportPremiumSection
+            id="rare-disease-finding"
+            title="Rare disease research: patient-finding realism and funding gates"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Orphan and ultra-rare programmes fail forecasts when epidemiology is mistaken for a treatment-ready
+                cohort. BioNixus builds{' '}
+                <strong className="font-medium text-foreground">bottom-up diagnosed-patient models</strong> that trace
+                genetic-testing access, referral cascades, diagnostic odyssey duration, and the specialist centres that
+                actually initiate therapy—rather than assuming prevalence converts linearly to revenue.
+              </p>
+              <p>
+                Funding committees for high-cost therapies weigh budget impact, natural history, caregiver burden, and
+                comparator acceptability heavily. Research isolates the narratives and data formats each gate expects so
+                HEOR and medical teams refine dossiers before submission—not after deferral. Named-patient and
+                compassionate-use pathways add parallel access routes that must be mapped explicitly in launch sequencing.
+              </p>
+              <p>
+                For Gulf context, link to{' '}
+                <Link to="/heor-consulting-saudi-arabia" className="text-primary underline">
+                  HEOR consulting in Saudi Arabia
+                </Link>{' '}
+                when SFDA Economic Evaluation System requirements intersect orphan evidence planning, and to{' '}
+                <Link to="/healthcare-market-research/therapy/biologics" className="text-primary underline">
+                  biologics market research
+                </Link>{' '}
+                when enzyme-replacement or biologic delivery shapes centre operations.
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection
+            id="rare-disease-networks"
+            title="Mapping concentrated KOL and treatment networks"
+            variant="muted"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Influence in rare disease concentrates in genetics clinics, paediatric and specialist centres, and patient
+                organisations that accelerate diagnosis and advocacy. Broad physician panels with minimal patient flow
+                distort segment logic; BioNixus maps the small networks that initiate and sustain therapy, then aligns
+                field, medical, and access plans to those nodes.
+              </p>
+              <p>
+                Bilingual Arabic–English fieldwork preserves nuance in family counselling, consent, and funding conversations
+                across MENA while maintaining comparable analytics for regional portfolio committees. Outputs include
+                centre and KOL maps, funding-pathway risk registers, and 30/60/90 action plans tied to registration and
+                reimbursement milestones.
+              </p>
+            </div>
+          </ReportPremiumSection>
+        </>
+      ) : null}
+
+      {area === 'diabetes' ? (
+        <>
+          <ReportPremiumSection
+            id="diabetes-pathway"
+            title="Diabetes pathway research: where guideline intent stops converting to treated patients"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Diabetes portfolios depend on{' '}
+                <strong className="font-medium text-foreground">prescribing inertia</strong>,{' '}
+                <strong className="font-medium text-foreground">primary-care versus specialist handoffs</strong>, and{' '}
+                <strong className="font-medium text-foreground">formulary step therapy</strong> as much as on trial
+                efficacy. BioNixus decomposes initiation, titration, persistence, and switch behaviour across insulin,
+                oral agents, GLP-1 agonists, and SGLT2 inhibitors—so forecasts treat “eligible on label” and “treated in
+                practice” as distinct populations.
+              </p>
+              <p>
+                Rising obesity pharmacotherapy reshapes clinician attention, referral patterns, and payer budgets across
+                MENA, the UK, and Europe. Comparable survey cores enable regional governance; local modules preserve the
+                access realism that determines whether launch sequencing matches committee calendars and primary-care
+                bandwidth.
+              </p>
+              <p>
+                Pair this guide with{' '}
+                <Link to="/diabetes-market-research-uae" className="text-primary underline">
+                  diabetes market research in the UAE
+                </Link>
+                ,{' '}
+                <Link to="/healthcare-market-research/services/market-access" className="text-primary underline">
+                  market access research
+                </Link>
+                , and{' '}
+                <Link to="/gcc-pharmaceutical-market-research" className="text-primary underline">
+                  GCC pharmaceutical market research
+                </Link>{' '}
+                when Gulf formulary and payer overlays dominate the decision.
+              </p>
+              <p>
+                Workshop deliverables optionally stress-test segment prioritisation with cross-functional regional
+                leaders—closing the last-mile gap between insight decks and affiliate execution plans for insulin, GLP-1,
+                and SGLT2 portfolios.
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection
+            id="diabetes-modules"
+            title="Modules BioNixus integrates for diabetes engagements"
+            variant="muted"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <ul className="list-disc pl-6 space-y-3 marker:text-primary">
+                <li>
+                  <strong className="text-foreground">Prescribing inertia and switch forensics:</strong> where
+                  suboptimal regimens persist after partial response, and which operational levers—monitoring burden, cost
+                  surprises, step edits—block escalation.
+                </li>
+                <li>
+                  <strong className="text-foreground">Channel and stewardship mapping:</strong> GP initiation versus
+                  specialist intensification, diabetes nurse roles, pharmacist substitution authority, and CGM or device
+                  adoption effects on adherence.
+                </li>
+                <li>
+                  <strong className="text-foreground">Cross-category competition:</strong> GLP-1 and obesity
+                  pharmacotherapy crosswinds, compounded pharmacy substitution, and institutional protocols that
+                  accelerate or delay advanced therapy use.
+                </li>
+                <li>
+                  <strong className="text-foreground">Access and payer overlay:</strong> formulary step therapy, prior
+                  authorisation friction, outcomes-based access discussions, and private–public routing differences in
+                  high-burden MENA populations.
+                </li>
+              </ul>
+              <p>
+                Deliverables emphasise segment dossiers, switch-intent analysis, value-narrative testing, and access-risk
+                maps tied to observable behaviour—outputs leadership teams can execute without weeks of reinterpretation.
+              </p>
+            </div>
+          </ReportPremiumSection>
+        </>
+      ) : null}
+
+      {area === 'vaccines' ? (
+        <>
+          <ReportPremiumSection
+            id="vaccines-pathway"
+            title="Immunization research: intent–behaviour gaps that distort rollout forecasts"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Vaccine programmes fail forecasts when stated clinician intent is mistaken for doses administered.
+                BioNixus measures{' '}
+                <strong className="font-medium text-foreground">recommendation confidence</strong>,{' '}
+                <strong className="font-medium text-foreground">logistical friction</strong>, and{' '}
+                <strong className="font-medium text-foreground">channel-specific procurement rhythms</strong>—stockouts,
+                scheduling, documentation, reimbursement coding, caregiver decision dynamics, and multilingual
+                communication constraints that suppress delivery.
+              </p>
+              <p>
+                National programmes, employer mandates, private clinic channels, and pharmacy-led administration follow
+                different decision chains. GCC markets often blend public campaigns with private acceleration; UK and
+                European systems vary by regional autonomy. Research mirrors the channel that will carry your rollout
+                rather than assuming a single national model.
+              </p>
+              <p>
+                Link to{' '}
+                <Link to="/healthcare-market-research/services/market-access" className="text-primary underline">
+                  market access research
+                </Link>
+                ,{' '}
+                <Link to="/gcc-pharmaceutical-market-research" className="text-primary underline">
+                  GCC pharmaceutical market research
+                </Link>
+                , and the{' '}
+                <Link to="/methodology" className="text-primary underline">
+                  BioNixus methodology
+                </Link>{' '}
+                when institutional procurement or payer-adjacent channels shape uptake.
+              </p>
+              <p>
+                Lifecycle modules stress-test competitive entry when schedule changes, combination products, or policy
+                shifts alter recommendation habits—so erosion scenarios reflect operational reality rather than
+                spreadsheet extrapolation alone.
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection
+            id="vaccines-modules"
+            title="Modules BioNixus integrates for vaccine engagements"
+            variant="muted"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <ul className="list-disc pl-6 space-y-3 marker:text-primary">
+                <li>
+                  <strong className="text-foreground">Intent–behaviour gap analysis:</strong> where recommendation
+                  confidence diverges from realised uptake, and which operational fixes change doses administered.
+                </li>
+                <li>
+                  <strong className="text-foreground">Channel and stakeholder mapping:</strong> primary-care recommenders,
+                  paediatricians, occupational health, pharmacists with administration scope, and institutional batch
+                  procurement teams.
+                </li>
+                <li>
+                  <strong className="text-foreground">Communication and hesitancy forensics:</strong> multilingual
+                  messaging constraints, caregiver decision dynamics, and stigma or polarization effects where they distort
+                  uptake.
+                </li>
+                <li>
+                  <strong className="text-foreground">Launch and lifecycle simulation:</strong> segment prioritisation,
+                  competitive entry scenarios, schedule changes, and erosion when new products or policies alter
+                  recommendation habits.
+                </li>
+              </ul>
+              <p>
+                Outputs include channel-readiness maps, message and objection testing, and uptake scenarios grounded in
+                surveyed behaviour—supporting rollout, segmentation, and education planning with measurable outcomes
+                across national, occupational, and private channels.
+              </p>
+            </div>
+          </ReportPremiumSection>
+        </>
+      ) : null}
+
+      {area === 'aesthetic-medicine' ? (
+        <>
+          <ReportPremiumSection
+            id="aesthetic-pathway"
+            title="Aesthetic medicine research: discretionary demand and channel trust dynamics"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Aesthetic categories reward research that respects{' '}
+                <strong className="font-medium text-foreground">discretionary spend cycles</strong>,{' '}
+                <strong className="font-medium text-foreground">provider channel mix</strong>, and{' '}
+                <strong className="font-medium text-foreground">reputation-driven patient choice</strong>—not hospital-centric
+                specialty norms alone. BioNixus maps injectables, energy-based devices, and consumer-medical skincare
+                demand across dermatology, plastic surgery, dentistry crossover, and medi-spa channels.
+              </p>
+              <p>
+                Demand responds to influencer and social proof, privacy preferences, price sensitivity, and experiential
+                outcomes. Segment forecasts stratify elective sensitivity and channel trust—particularly across Gulf
+                private corridors versus mass-market aspirations—while maintaining comparable analytics for regional
+                portfolio committees.
+              </p>
+              <p>
+                Connect with{' '}
+                <Link to="/healthcare-market-research/therapy/dermatology" className="text-primary underline">
+                  dermatology market research
+                </Link>
+                ,{' '}
+                <Link to="/gcc-pharmaceutical-market-research" className="text-primary underline">
+                  GCC pharmaceutical market research
+                </Link>
+                , and{' '}
+                <Link to="/bionixus-market-research-middle-east" className="text-primary underline">
+                  Middle East market research
+                </Link>{' '}
+                when medical-aesthetic overlap or Gulf private-sector growth shapes rollout sequencing.
+              </p>
+              <p>
+                Competitive modules contrast injectables, energy-based devices, and skincare adjacencies—clarifying where
+                training investment, price architecture, or experience design will move share in discretionary categories
+                that punish generic positioning.
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection
+            id="aesthetic-modules"
+            title="Modules BioNixus integrates for aesthetic medicine engagements"
+            variant="muted"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <ul className="list-disc pl-6 space-y-3 marker:text-primary">
+                <li>
+                  <strong className="text-foreground">Channel and provider mapping:</strong> dermatology, plastic surgery,
+                  dentistry crossover, and medi-spa training ecosystems, bundling incentives, and patient acquisition
+                  models.
+                </li>
+                <li>
+                  <strong className="text-foreground">Discretionary demand segmentation:</strong> price sensitivity,
+                  privacy preferences, elective spend cycles, and brand or training loyalty that drive product selection.
+                </li>
+                <li>
+                  <strong className="text-foreground">Regulatory-aware message testing:</strong> neutral, compliance-aware
+                  vignettes that elicit behaviour without promotional contamination across multilingual marketing rules.
+                </li>
+                <li>
+                  <strong className="text-foreground">Competitive positioning:</strong> differentiation on outcomes, safety,
+                  and experience in a referral-light category where patients choose actively.
+                </li>
+              </ul>
+              <p>
+                Deliverables include segment and channel prioritisation, message and objection testing, competitive
+                positioning maps, and training or loyalty hypotheses validated with providers—outputs commercial and
+                medical affairs teams can execute without reinterpretation in Gulf and European rollouts alike.
+              </p>
+              <p>
+                For portfolio committees comparing injectables versus device-led categories, workshop options translate
+                segment hypotheses into channel investment priorities and medical education focal points—so Gulf private
+                acceleration and European discretionary cycles receive distinct rollout playbooks rather than one generic
+                aesthetic template.
+              </p>
+            </div>
+          </ReportPremiumSection>
+        </>
+      ) : null}
+
+      {area === 'cardiology' ? (
+        <>
+          <ReportPremiumSection
+            id="cardiology-pathway"
+            title="Cardiology pathway research: where guideline-aligned care stops converting to treated patients"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Cardiovascular programmes fail forecasts when acute enthusiasm is mistaken for chronic persistence.
+                BioNixus decomposes{' '}
+                <strong className="font-medium text-foreground">specialist initiation</strong>,{' '}
+                <strong className="font-medium text-foreground">primary-care maintenance</strong>, and{' '}
+                <strong className="font-medium text-foreground">pharmacist substitution authority</strong>—so lipid,
+                anticoagulation, heart-failure, and hypertension corridors reflect who owns titration after the index
+                event and where undertreatment persists despite guideline publication.
+              </p>
+              <p>
+                Post-MI statin intensification, anticoagulation bridging after AF diagnosis, and GDMT uptitration after
+                heart-failure admission often determine long-term share more than interventional enthusiasm alone. GCC
+                markets carry early cardiometabolic burden with mixed public–private access; UK and EU5 systems apply
+                structured HTA and rebate frameworks with different substitution norms.
+              </p>
+              <p>
+                Pair this guide with{' '}
+                <Link to="/diabetes-market-research-uae" className="text-primary underline">
+                  diabetes market research in the UAE
+                </Link>
+                ,{' '}
+                <Link to="/healthcare-market-research/services/market-access" className="text-primary underline">
+                  market access research
+                </Link>
+                , and{' '}
+                <Link to="/gcc-pharmaceutical-market-research" className="text-primary underline">
+                  GCC pharmaceutical market research
+                </Link>{' '}
+                when cardiometabolic overlap or formulary overlays dominate the decision.
+              </p>
+              <p>
+                Workshop deliverables optionally stress-test undertreatment registers and residual-risk narrative emphasis
+                with cross-functional regional leaders—closing the gap between insight decks and affiliate execution for
+                lipid, anticoagulation, and heart-failure portfolios.
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection
+            id="cardiology-modules"
+            title="Modules BioNixus integrates for cardiology engagements"
+            variant="muted"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <ul className="list-disc pl-6 space-y-3 marker:text-primary">
+                <li>
+                  <strong className="text-foreground">Acute-to-chronic handoff forensics:</strong> post-event prescribing
+                  rituals, specialist versus GP ownership of titration, and where persistence decays after hospital
+                  discharge or guideline updates.
+                </li>
+                <li>
+                  <strong className="text-foreground">Inertia and undertreatment mapping:</strong> lipid and hypertension
+                  inertia, anticoagulation hesitation, heart-failure GDMT gaps, and operational levers—monitoring burden,
+                  cost surprises, step edits—that block escalation.
+                </li>
+                <li>
+                  <strong className="text-foreground">Procedural and device intersections:</strong> cath-lab culture,
+                  interventional adoption, wearable penetration, and how acute corridors influence chronic pharmaceutical
+                  uptake.
+                </li>
+                <li>
+                  <strong className="text-foreground">Access and payer overlay:</strong> formulary step therapy,
+                  pharmacist substitution, residual-risk narrative tests, and private–public routing in high-burden MENA
+                  populations.
+                </li>
+              </ul>
+              <p>
+                Deliverables emphasise stakeholder segmentation, value-narrative testing, undertreatment analysis, and
+                access-risk maps tied to observable behaviour—outputs brand, medical, and access teams can execute without
+                weeks of reinterpretation across MENA, the UK, and Europe.
+              </p>
+            </div>
+          </ReportPremiumSection>
+        </>
+      ) : null}
+
+      {area === 'respiratory' ? (
+        <>
+          <ReportPremiumSection
+            id="respiratory-pathway"
+            title="Respiratory pathway research: where device economics and substitution reshape share"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Respiratory programmes fail forecasts when pulmonologist enthusiasm is mistaken for chronic persistence.
+                BioNixus decomposes{' '}
+                <strong className="font-medium text-foreground">inhaler technique confidence</strong>,{' '}
+                <strong className="font-medium text-foreground">pharmacist substitution authority</strong>, and{' '}
+                <strong className="font-medium text-foreground">exacerbation-triggered escalation</strong>—so COPD,
+                asthma, and biologic-adjacent corridors reflect who initiates, who maintains, and who authorises device
+                or molecule switches in routine practice.
+              </p>
+              <p>
+                Seasonal viral load, pollution events, and occupational exposure reshape demand curves affiliates must
+                plan around. GCC tender-led institutions and European rebate-sensitive systems each apply different
+                substitution and scoring rules; comparable survey cores enable regional governance while local modules
+                preserve channel realism.
+              </p>
+              <p>
+                Pair this guide with{' '}
+                <Link to="/respiratory-market-access-gcc" className="text-primary underline">
+                  respiratory market access in the GCC
+                </Link>
+                ,{' '}
+                <Link to="/healthcare-market-research/services/market-access" className="text-primary underline">
+                  market access research
+                </Link>
+                , and{' '}
+                <Link to="/healthcare-market-research/therapy/biologics" className="text-primary underline">
+                  biologics market research
+                </Link>{' '}
+                when severe asthma or biologic delivery intersect procurement and centre operations.
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection
+            id="respiratory-modules"
+            title="Modules BioNixus integrates for respiratory engagements"
+            variant="muted"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <ul className="list-disc pl-6 space-y-3 marker:text-primary">
+                <li>
+                  <strong className="text-foreground">Device and substitution forensics:</strong> pharmacist-led switches,
+                  tender scoring for device class, training gaps, and economic signals that accelerate substitution.
+                </li>
+                <li>
+                  <strong className="text-foreground">Exacerbation and seasonality mapping:</strong> triggers that change
+                  prescribing habits, medical education cadence, and launch timing assumptions.
+                </li>
+                <li>
+                  <strong className="text-foreground">Stakeholder segmentation:</strong> pulmonologists, primary-care
+                  gateways, respiratory nurses, pharmacists, and paediatric multidisciplinary teams weighted by pathway
+                  influence.
+                </li>
+                <li>
+                  <strong className="text-foreground">Message and access overlay:</strong> value-narrative tests,
+                  formulary step therapy, and private–public routing differences in high-burden MENA populations.
+                </li>
+              </ul>
+              <p>
+                Deliverables emphasise stakeholder segmentation, uptake scenarios grounded in surveyed behaviour, and
+                access-risk maps tied to observable formulary and procurement behaviour—outputs brand, medical, and access
+                teams can execute without weeks of reinterpretation.
+              </p>
+            </div>
+          </ReportPremiumSection>
+        </>
+      ) : null}
 
       {isImmunology ? (
         <>

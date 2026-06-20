@@ -1,4 +1,7 @@
 import StrategicServicePage from '@/pages/templates/StrategicServicePage';
+import { getServiceLandingContent } from '@/data/serviceLandingContent';
+
+const expandedContent = getServiceLandingContent('pharma-fieldwork-uae');
 
 export default function PharmaFieldworkUae() {
   return (
@@ -8,7 +11,7 @@ export default function PharmaFieldworkUae() {
       canonicalUrl="https://www.bionixus.com/pharma-fieldwork-uae"
       breadcrumbLabel="Pharma Fieldwork UAE"
       h1="Pharma Fieldwork UAE"
-      intro="BioNixus delivers pharma fieldwork in the UAE with verified physician and payer recruitment, Arabic–English moderation, and governance aligned to DHA, DOH, and MOHAP realities—not consumer panel shortcuts."
+      intro="BioNixus delivers pharma fieldwork in the UAE with verified physician and payer recruitment, Arabic–English moderation, and governance aligned to DHA, DOH, and MOHAP realities—not consumer panel shortcuts. Start from our healthcare market research hub for regional context, then scope one UAE fieldwork objective aligned to your launch or access milestone."
       links={[
         {
           to: '/uae-pharmaceutical-market-research',
@@ -59,6 +62,7 @@ export default function PharmaFieldworkUae() {
           detail: 'DHA, DOH, and MOHAP-relevant stakeholders where therapy model requires.',
         },
       ]}
+      expandedContent={expandedContent}
     />
   );
 }

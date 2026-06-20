@@ -1,4 +1,7 @@
 import StrategicServicePage from '@/pages/templates/StrategicServicePage';
+import { getServiceLandingContent } from '@/data/serviceLandingContent';
+
+const expandedContent = getServiceLandingContent('healthcare-fieldwork-middle-east');
 
 export default function HealthcareFieldworkMiddleEast() {
   return (
@@ -10,8 +13,9 @@ export default function HealthcareFieldworkMiddleEast() {
       h1="Healthcare Fieldwork Middle East"
       serviceType="Healthcare market research fieldwork"
       areaServed={['Saudi Arabia', 'United Arab Emirates', 'Egypt', 'Kuwait', 'Qatar', 'GCC']}
-      intro="BioNixus runs healthcare fieldwork across GCC and wider Middle East markets with role validation, incidence-aware sampling, and audit-ready governance from screener to final dataset."
+      intro="BioNixus runs healthcare fieldwork across GCC and wider Middle East markets with role validation, incidence-aware sampling, and audit-ready governance from screener to final dataset. For regional context and related services, start from our healthcare market research hub before scoping fieldwork."
       links={[
+        { to: '/healthcare-market-research', label: 'Healthcare market research hub', primary: true },
         { to: '/gcc-hcp-recruitment-market-research', label: 'GCC HCP recruitment standards', primary: true },
         { to: '/real-world-evidence-gcc', label: 'Real-world evidence in the GCC', primary: true },
         { to: '/quantitative-healthcare-market-research', label: 'Quantitative research framework' },
@@ -55,6 +59,7 @@ export default function HealthcareFieldworkMiddleEast() {
           detail: 'Quota and quality checkpoints support active correction before endline risk appears.',
         },
       ]}
+      expandedContent={expandedContent}
     />
   );
 }

@@ -1,4 +1,7 @@
 import StrategicServicePage from '@/pages/templates/StrategicServicePage';
+import { getServiceLandingContent } from '@/data/serviceLandingContent';
+
+const expandedContent = getServiceLandingContent('pharma-fieldwork-egypt');
 
 export default function PharmaFieldworkEgypt() {
   return (
@@ -8,7 +11,7 @@ export default function PharmaFieldworkEgypt() {
       canonicalUrl="https://www.bionixus.com/pharma-fieldwork-egypt"
       breadcrumbLabel="Pharma Fieldwork Egypt"
       h1="Pharma Fieldwork Egypt"
-      intro="BioNixus delivers pharma fieldwork in Egypt with verified physician, pharmacist, and payer recruitment, Arabic–English moderation, and governance aligned to EDA and public/private access realities—not consumer panel shortcuts."
+      intro="BioNixus delivers pharma fieldwork in Egypt with verified physician, pharmacist, and payer recruitment, Arabic–English moderation, and governance aligned to EDA and public/private access realities—not consumer panel shortcuts. Start from our healthcare market research hub for regional context, then scope one Egypt fieldwork objective aligned to your launch or tender milestone."
       links={[
         {
           to: '/egypt-pharmaceutical-market-research',
@@ -59,6 +62,7 @@ export default function PharmaFieldworkEgypt() {
           detail: 'Public, private, pharmacy, and payer stakeholders where therapy model requires.',
         },
       ]}
+      expandedContent={expandedContent}
     />
   );
 }

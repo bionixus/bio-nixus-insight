@@ -414,7 +414,85 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
 
         <section className="py-12 bg-muted/20">
           <div className="container-wide max-w-5xl mx-auto space-y-5 text-muted-foreground leading-relaxed">
-            <h2 className="text-3xl font-display font-semibold text-foreground">Regulatory and policy context: SFDA and Vision 2030</h2>
+            <h2 className="text-3xl font-display font-semibold text-foreground">
+              Institutional procurement and account-level adoption
+            </h2>
+            <p>
+              Saudi pharmaceutical research must reconcile NUPCO centralized procurement with hospital formulary
+              committees, private network preferences, and pharmacist substitution behaviour that can shift share
+              independently of specialist enthusiasm. BioNixus maps these institutional layers alongside prescriber
+              sequencing so launch and access plans reflect where decisions actually bind—not where org charts suggest
+              they should.
+            </p>
+            <p>
+              Account archetyping separates tertiary oncology hubs from high-volume primary-care gateways, tender-led
+              institutions from out-of-pocket corridors, and early-adopter centres from risk-averse sites that defer
+              switching until procurement rescoring. This segmentation keeps field investment aligned with revenue
+              concentration and access realism across the Kingdom.
+            </p>
+            <p>
+              Connect Saudi modules with{' '}
+              <Link to="/pharma-fieldwork-saudi-arabia" className="text-primary underline font-medium">
+                pharma fieldwork in Saudi Arabia
+              </Link>{' '}
+              and{' '}
+              <Link to="/market-research-saudi" className="text-primary underline font-medium">
+                Saudi market research
+              </Link>{' '}
+              when primary field and desk synthesis must roll up for regional portfolio committees on the{' '}
+              <Link to="/healthcare-market-research" className="text-primary underline font-medium">
+                healthcare market research hub
+              </Link>
+              .
+            </p>
+          </div>
+        </section>
+
+        <section className="py-12">
+          <div className="container-wide max-w-5xl mx-auto space-y-5 text-muted-foreground leading-relaxed">
+            <h2 className="text-3xl font-display font-semibold text-foreground">
+              SFDA Economic Evaluation System and evidence planning
+            </h2>
+            <p>
+              From 1 July 2025, SFDA&apos;s Economic Evaluation System (EES) raises the bar for pharmacoeconomic and
+              budget-impact evidence at registration. Saudi market research should therefore connect prescriber and
+              institutional behaviour to the economic narratives committees will scrutinize—not treat access as a
+              post-launch afterthought. BioNixus scopes KSA programs so primary field outputs, HEOR assumptions, and
+              access objection themes feed one evidence architecture affiliates can defend in SFDA and NUPCO conversations.
+            </p>
+            <p>
+              Teams that map procurement scoring, formulary influence, and physician sequencing before dossier build
+              reduce the expensive rework cycle where global models are localized late and rejected for unrealistic
+              epidemiology or pricing. Pair Saudi research with{' '}
+              <Link to="/heor-consulting-saudi-arabia" className="text-primary underline font-medium">
+                HEOR consulting in Saudi Arabia
+              </Link>{' '}
+              and{' '}
+              <Link to="/sfda-market-access-strategy-saudi-arabia" className="text-primary underline font-medium">
+                SFDA market access strategy
+              </Link>{' '}
+              when registration and listing milestones sit on the same critical path.
+            </p>
+            <p>
+              Vision 2030 continues to reshape healthcare infrastructure, local manufacturing ambition, and digital
+              health adoption—creating both opportunity and operational complexity. Winning KSA strategies connect policy
+              direction to account-level behaviour: which hospitals adopt first, how NUPCO tender windows align with
+              medical education cadence, and where bilingual fieldwork reveals objections that slide decks miss.
+              Benchmark against the broader{' '}
+              <Link to="/gcc-pharmaceutical-market-research" className="text-primary underline font-medium">
+                GCC pharmaceutical market research
+              </Link>{' '}
+              hub when Saudi programs must roll into regional portfolio committees without losing Kingdom-specific
+              procurement logic.
+            </p>
+          </div>
+        </section>
+
+        <section className="py-12 bg-muted/20">
+          <div className="container-wide max-w-5xl mx-auto space-y-5 text-muted-foreground leading-relaxed">
+            <h2 className="text-3xl font-display font-semibold text-foreground">
+              Regulatory and policy context: SFDA and Vision 2030
+            </h2>
             <p>
               Saudi execution quality depends on how well teams align with local regulatory and policy context. SFDA
               pathway decisions, evidence structuring, and timeline assumptions should be integrated with market-access and
@@ -431,6 +509,16 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
               BioNixus research outputs are designed for this reality: decision-ready and execution-ready. We combine
               stakeholder evidence with market structure analysis so Saudi plans are grounded in what can actually be
               implemented, not just what looks good in a strategy deck.
+            </p>
+            <p>
+              Affiliate governance benefits when Saudi readouts use harmonized coding frameworks that roll up to GCC
+              portfolio reviews without averaging away Kingdom-specific procurement logic—especially where NUPCO tender
+              windows and SFDA EES milestones sit on the same critical path.
+            </p>
+            <p>
+              Early alignment between medical education, field medical, and access narratives prevents the common failure
+              mode where clinicians advocate benefits committees cannot fund under current scoring—deferring listing even
+              when clinical evidence is strong.
             </p>
           </div>
         </section>

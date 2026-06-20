@@ -1,4 +1,7 @@
 import StrategicServicePage from '@/pages/templates/StrategicServicePage';
+import { getServiceLandingContent } from '@/data/serviceLandingContent';
+
+const expandedContent = getServiceLandingContent('kuwait-market-access-research');
 
 export default function KuwaitMarketAccessResearch() {
   return (
@@ -10,7 +13,7 @@ export default function KuwaitMarketAccessResearch() {
       h1="Market Access Research Kuwait"
       serviceType="Pharmaceutical market access research"
       areaServed={['Kuwait', 'GCC']}
-      intro="Kuwait access strategy needs institution-level evidence and realistic stakeholder sequencing. BioNixus translates market signals into practical payer and formulary actions across the Kuwait public and private channels."
+      intro="Kuwait access strategy needs institution-level evidence and realistic stakeholder sequencing. Start from our healthcare market research hub for regional context, then translate market signals into practical payer and formulary actions across Kuwait public and private channels."
       links={[
         { to: '/gcc-market-access-guide', label: 'GCC market access guide', primary: true },
         { to: '/healthcare-market-research-agency-gcc', label: 'Healthcare market research agency GCC', primary: true },
@@ -55,6 +58,7 @@ export default function KuwaitMarketAccessResearch() {
           detail: 'Action roadmap linked to launch and access timelines.',
         },
       ]}
+      expandedContent={expandedContent}
     />
   );
 }
