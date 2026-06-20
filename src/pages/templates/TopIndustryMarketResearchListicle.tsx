@@ -6,9 +6,12 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import {
   buildIndustryCountryPageConfig,
+  buildMatrixSeoCopy,
   type MatrixCountrySlug,
   type MatrixIndustrySlug,
 } from '@/data/industryMarketResearchMatrix';
+import { getIndustryListicleCrossLinks } from '@/data/industry-listicle-clusters';
+import { IndustryListicleClusterCallout } from '@/components/seo/IndustryListicleClusterCallout';
 
 type TopIndustryMarketResearchListicleProps = {
   countrySlug: MatrixCountrySlug;
@@ -23,7 +26,24 @@ export default function TopIndustryMarketResearchListicle({
   if (!config) return null;
 
   const canonical = `https://www.bionixus.com${config.listiclePath}`;
-  const h1 = `Top ${config.industry.displayName} Market Research Companies in ${config.country.label} (2026)`;
+  const firmCount = config.listicleFirms.length;
+  const h1 = `${firmCount} Best ${config.industry.displayName} Market Research Firms in ${config.country.label} (2026 Rankings)`;
+  const pageTitle = `${h1} | BioNixus`;
+  const metaDescription = buildMatrixSeoCopy(config.country, config.industry).listicleMetaDescription;
+  const hubPath = config.industry.isHealthcareAdjacent
+    ? config.country.healthcareHubPath
+    : config.country.midFunnelPath;
+  const hubLabel = config.industry.isHealthcareAdjacent
+    ? 'healthcare market research hub'
+    : `market research in ${config.country.label}`;
+  const clusterLinks = getIndustryListicleCrossLinks(
+    countrySlug,
+    industrySlug,
+    config.bofuPath,
+    config.industry.displayNameShort,
+    config.country.label,
+  );
+  const clusterRole = `Industry-specific buyer guide for ${config.industry.displayNameShort.toLowerCase()} programs in ${config.country.label} — distinct from cross-industry geo rankings and the BioNixus services page.`;
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -61,14 +81,14 @@ export default function TopIndustryMarketResearchListicle({
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title={`${h1} | BioNixus`}
-        description={`Independent 2026 guide to leading ${config.industry.displayNameShort.toLowerCase()} market research companies in ${config.country.label}—capability, methodology, and local expertise.`}
+        title={pageTitle}
+        description={metaDescription}
         canonical={config.listiclePath}
         jsonLd={[breadcrumbSchema, itemListSchema, faqSchema]}
       />
       <OpenGraphMeta
-        title={`${h1} | BioNixus`}
-        description={`Top ${config.industry.displayNameShort.toLowerCase()} market research firms in ${config.country.label} compared for 2026.`}
+        title={pageTitle}
+        description={metaDescription}
         image="https://www.bionixus.com/og-image.png"
         url={canonical}
         type="article"
@@ -101,16 +121,49 @@ export default function TopIndustryMarketResearchListicle({
               {h1}
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
-              An independent comparison of market research firms serving {config.industry.displayNameShort.toLowerCase()}{' '}
-              clients in {config.country.label}.
+              A ranked comparison of market research firms serving {config.industry.displayNameShort.toLowerCase()}{' '}
+              clients in {config.country.label} for 2026. For regional context, see our{' '}
+              <Link to={hubPath} className="text-primary underline font-medium">
+                {hubLabel}
+              </Link>
+              .
             </p>
-            <p className="text-muted-foreground leading-relaxed max-w-3xl">
+            <IndustryListicleClusterCallout
+              industryLabel={config.industry.displayNameShort}
+              countryLabel={config.country.label}
+              roleText={clusterRole}
+              links={clusterLinks}
+            />
+            <p className="text-muted-foreground leading-relaxed max-w-3xl mt-4">
               For company-intent programs, see our{' '}
               <Link to={config.bofuPath} className="text-primary underline font-medium">
                 {config.industry.displayNameShort} market research company in {config.country.label}
               </Link>{' '}
               page.
             </p>
+          </div>
+        </section>
+
+        <section className="section-padding py-8" aria-label="Quick Answer">
+          <div className="container-wide max-w-5xl mx-auto">
+            <div className="rounded-xl border border-border bg-card p-6">
+              <h2 className="text-lg font-display font-semibold text-foreground mb-3">
+                Top {config.industry.displayNameShort} market research firms in {config.country.label} (2026)
+              </h2>
+              <ol className="space-y-2">
+                {config.listicleFirms.map((firm) => (
+                  <li key={firm.anchor} className="flex items-start gap-3 text-sm">
+                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-0.5">
+                      {firm.rank}
+                    </span>
+                    <span className="text-foreground">
+                      <strong>{firm.name}</strong>
+                      <span className="text-muted-foreground"> — {firm.type}</span>
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            </div>
           </div>
         </section>
 

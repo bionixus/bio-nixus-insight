@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2, Stethoscope } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { GeoListicleClusterCallout } from '@/components/seo/GeoListicleClusterCallout';
+import { GEO_LISTICLE_CLUSTERS } from '@/data/geo-listicle-clusters';
 
 interface FirmProfile {
   rank: number;
@@ -239,7 +241,7 @@ export default function TopHealthcareMarketResearchCompaniesAbuDhabi2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Healthcare Market Research Companies in Abu Dhabi (2026 Guide) | BioNixus</title>
+        <title>5 Best Healthcare Market Research Firms in Abu Dhabi (2026) | DoH Specialists | BioNixus</title>
         <meta
           name="description"
           content="Expert 2026 guide: top healthcare & pharmaceutical market research companies in Abu Dhabi. DoH-aware firms, SEHA hospital access, KOL mapping, Daman payer research — ranked by capability."
@@ -281,7 +283,7 @@ export default function TopHealthcareMarketResearchCompaniesAbuDhabi2026() {
               Healthcare & Pharma Research — 2026 Expert Guide
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">
-              Top Healthcare Market Research Companies in Abu Dhabi (2026 Guide)
+              5 Best Healthcare Market Research Firms in Abu Dhabi (2026)
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
               An expert guide to the leading healthcare and pharmaceutical market research companies operating in Abu Dhabi
@@ -293,6 +295,7 @@ export default function TopHealthcareMarketResearchCompaniesAbuDhabi2026() {
             <p className="text-sm text-muted-foreground">
               Published June 2026 · By BioNixus Research Team · 15 min read
             </p>
+            <GeoListicleClusterCallout cluster={GEO_LISTICLE_CLUSTERS['abu-dhabi']} variant="healthcare" />
           </div>
         </section>
 

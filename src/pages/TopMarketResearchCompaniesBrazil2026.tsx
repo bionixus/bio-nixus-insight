@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { GeoListicleClusterCallout } from '@/components/seo/GeoListicleClusterCallout';
+import { GEO_LISTICLE_CLUSTERS } from '@/data/geo-listicle-clusters';
 
 interface FirmProfile {
   rank: number;
@@ -211,7 +213,7 @@ export default function TopMarketResearchCompaniesBrazil2026() {
   return (
     <>
       <Helmet>
-        <title>Best Market Research Companies in Brazil (2026 Guide) | BioNixus Insights</title>
+        <title>5 Best Market Research Companies in Brazil (2026) | LATAM Agency Rankings | BioNixus</title>
         <meta name="description" content="Independent guide to the top 5 market research companies in Brazil — BioNixus, Kantar, Ipsos, NielsenIQ, Euromonitor. FMCG, consumer, and healthcare research capabilities compared." />
         <link rel="canonical" href={CANONICAL} />
         <link rel="alternate" hrefLang="en" href={CANONICAL} />
@@ -224,7 +226,7 @@ export default function TopMarketResearchCompaniesBrazil2026() {
       </Helmet>
 
       <OpenGraphMeta
-        title="Best Market Research Companies in Brazil (2026 Guide)"
+        title="5 Best Market Research Companies in Brazil (2026) | BioNixus"
         description="Top 5 market research firms in Brazil: BioNixus, Kantar, Ipsos, NielsenIQ, Euromonitor. FMCG, consumer, and healthcare capabilities compared."
         url={CANONICAL}
         locale="pt_BR"
@@ -254,7 +256,7 @@ export default function TopMarketResearchCompaniesBrazil2026() {
               <span className="text-green-300 text-sm font-medium uppercase tracking-wide">Brazil Market Research Guide 2026</span>
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-              Best Market Research Companies in Brazil (2026 Guide)
+              5 Best Market Research Companies in Brazil (2026)
             </h1>
             <p className="text-lg text-green-100 max-w-3xl mb-8">
               Brazil is Latin America's largest economy and one of the world's top 10 market research markets. This independent guide profiles the leading research firms serving multinational clients across FMCG, consumer, and healthcare sectors — with detailed capability comparisons and best-fit use cases.
@@ -265,6 +267,12 @@ export default function TopMarketResearchCompaniesBrazil2026() {
               <span className="bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-sm">$40B+ Pharma Market</span>
               <span className="bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-sm">5 Firms Profiled</span>
             </div>
+          </div>
+        </section>
+
+        <section className="px-4 py-6 bg-white border-b border-gray-200">
+          <div className="max-w-5xl mx-auto">
+            <GeoListicleClusterCallout cluster={GEO_LISTICLE_CLUSTERS.brazil} variant="general" />
           </div>
         </section>
 

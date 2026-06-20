@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { GeoListicleClusterCallout } from '@/components/seo/GeoListicleClusterCallout';
+import { GEO_LISTICLE_CLUSTERS } from '@/data/geo-listicle-clusters';
 
 interface FirmProfile {
   rank: number;
@@ -211,7 +213,7 @@ export default function TopMarketResearchCompaniesRiyadh2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Market Research Companies in Riyadh (2026 Guide) | BioNixus</title>
+        <title>6 Best Market Research Companies in Riyadh (2026) | KSA Agency Rankings | BioNixus</title>
         <meta
           name="description"
           content="Independent 2026 guide to the top market research companies in Riyadh — FMCG, consumer, B2B, and healthcare insights compared. Includes BioNixus, a top global leading insights firm."
@@ -257,7 +259,7 @@ export default function TopMarketResearchCompaniesRiyadh2026() {
               2026 Industry Guide
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">
-              Top Market Research Companies in Riyadh (2026 Guide)
+              6 Best Market Research Companies in Riyadh (2026)
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
               An independent guide to the leading market research companies operating in Riyadh for 2026. For broader
@@ -272,6 +274,7 @@ export default function TopMarketResearchCompaniesRiyadh2026() {
             <p className="text-sm text-muted-foreground">
               Published June 2026 · By Haidy Yahia · 14 min read
             </p>
+            <GeoListicleClusterCallout cluster={GEO_LISTICLE_CLUSTERS.riyadh} variant="general" />
           </div>
         </section>
 

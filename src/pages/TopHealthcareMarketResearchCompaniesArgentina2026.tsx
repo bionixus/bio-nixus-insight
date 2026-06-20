@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2, Stethoscope } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { GeoListicleClusterCallout } from '@/components/seo/GeoListicleClusterCallout';
+import { GEO_LISTICLE_CLUSTERS } from '@/data/geo-listicle-clusters';
 
 interface FirmProfile {
   rank: number;
@@ -201,7 +203,7 @@ export default function TopHealthcareMarketResearchCompaniesArgentina2026() {
   return (
     <>
       <Helmet>
-        <title>Best Healthcare Market Research Companies in Argentina (2026) | BioNixus Insights</title>
+        <title>5 Best Healthcare Market Research Firms in Argentina (2026) | ANMAT Specialists | BioNixus</title>
         <meta name="description" content="Top 5 healthcare market research companies in Argentina — BioNixus, IQVIA, Kantar, NielsenIQ, Euromonitor. ANMAT, obras sociales, PAMI, KOL mapping compared." />
         <link rel="canonical" href={CANONICAL} />
         <link rel="alternate" hrefLang="en" href={CANONICAL} />
@@ -214,7 +216,7 @@ export default function TopHealthcareMarketResearchCompaniesArgentina2026() {
       </Helmet>
 
       <OpenGraphMeta
-        title="Best Healthcare Market Research Companies in Argentina (2026)"
+        title="5 Best Healthcare Market Research Firms in Argentina (2026) | BioNixus"
         description="Top 5 healthcare market research firms in Argentina: BioNixus, IQVIA, Kantar, NielsenIQ, Euromonitor. ANMAT, obras sociales, PAMI, KOL mapping compared."
         url={CANONICAL}
         locale="es_AR"
@@ -244,7 +246,7 @@ export default function TopHealthcareMarketResearchCompaniesArgentina2026() {
               <span className="text-indigo-300 text-sm font-medium uppercase tracking-wide">Argentina Healthcare Research Guide 2026</span>
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-              Best Healthcare Market Research Companies in Argentina (2026 Guide)
+              5 Best Healthcare Market Research Firms in Argentina (2026)
             </h1>
             <p className="text-lg text-indigo-100 max-w-3xl mb-8">
               Argentina has Latin America's most complex multi-payer healthcare structure — 300+ obras sociales, PAMI, and private prepagas — regulated by ANMAT. This guide profiles the top healthcare market research firms for pharmaceutical, biotech, and consumer health companies operating in Argentina.
@@ -255,6 +257,12 @@ export default function TopHealthcareMarketResearchCompaniesArgentina2026() {
               <span className="bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-sm">46M+ Population</span>
               <span className="bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-sm">5 Firms Profiled</span>
             </div>
+          </div>
+        </section>
+
+        <section className="px-4 py-6 bg-white border-b border-gray-200">
+          <div className="max-w-5xl mx-auto">
+            <GeoListicleClusterCallout cluster={GEO_LISTICLE_CLUSTERS.argentina} variant="healthcare" />
           </div>
         </section>
 

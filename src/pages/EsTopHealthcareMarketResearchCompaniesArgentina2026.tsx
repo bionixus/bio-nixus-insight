@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2, Stethoscope } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { GeoListicleClusterCallout } from '@/components/seo/GeoListicleClusterCallout';
+import { GEO_LISTICLE_CLUSTERS } from '@/data/geo-listicle-clusters';
 
 interface FirmProfile {
   rank: number;
@@ -201,7 +203,7 @@ export default function EsTopHealthcareMarketResearchCompaniesArgentina2026() {
   return (
     <>
       <Helmet>
-        <title>Top Empresas de Investigación de Mercado en Salud en Argentina (Guía 2026) | BioNixus</title>
+        <title>5 Mejores Empresas de Investigación de Mercado en Salud en Argentina (2026) | ANMAT | BioNixus</title>
         <meta name="description" content="Top 5 empresas de investigación en salud en Argentina — BioNixus, IQVIA, Kantar, NielsenIQ, Euromonitor. ANMAT, obras sociales, PAMI, mapeo de KOLs comparados." />
         <link rel="canonical" href={CANONICAL} />
         <link rel="alternate" hrefLang="es" href={CANONICAL} />
@@ -214,7 +216,7 @@ export default function EsTopHealthcareMarketResearchCompaniesArgentina2026() {
       </Helmet>
 
       <OpenGraphMeta
-        title="Top Empresas de Investigación de Mercado en Salud en Argentina (Guía 2026)"
+        title="5 Mejores Empresas de Investigación de Mercado en Salud en Argentina (2026) | BioNixus"
         description="Top 5 empresas de investigación en salud en Argentina: BioNixus, IQVIA, Kantar, NielsenIQ, Euromonitor. ANMAT, obras sociales, PAMI, KOLs comparados."
         url={CANONICAL}
         locale="es_AR"
@@ -244,7 +246,7 @@ export default function EsTopHealthcareMarketResearchCompaniesArgentina2026() {
               <span className="text-indigo-300 text-sm font-medium uppercase tracking-wide">Guía de Investigación en Salud en Argentina 2026</span>
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-              Top Empresas de Investigación de Mercado en Salud en Argentina (Guía 2026)
+              5 Mejores Empresas de Investigación de Mercado en Salud en Argentina (2026)
             </h1>
             <p className="text-lg text-indigo-100 max-w-3xl mb-8">
               Argentina tiene la estructura de pagadores de salud más compleja de América Latina — más de 300 obras sociales, PAMI y prepagas privadas — regulada por ANMAT. Esta guía presenta las principales empresas de investigación en salud para compañías farmacéuticas, biotecnológicas y de salud del consumidor que operan en Argentina.
@@ -255,6 +257,12 @@ export default function EsTopHealthcareMarketResearchCompaniesArgentina2026() {
               <span className="bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-sm">46M+ habitantes</span>
               <span className="bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-sm">5 Empresas Perfiladas</span>
             </div>
+          </div>
+        </section>
+
+        <section className="px-4 py-6 bg-white border-b border-gray-200">
+          <div className="max-w-5xl mx-auto">
+            <GeoListicleClusterCallout cluster={GEO_LISTICLE_CLUSTERS.argentina} variant="healthcare" locale="es" />
           </div>
         </section>
 

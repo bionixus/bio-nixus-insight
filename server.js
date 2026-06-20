@@ -108,13 +108,47 @@ function buildFallbackTitle(pathname) {
   if (path === '/strategic-portfolio') return 'BioNixus Strategic Portfolio | Market Research & Consulting';
   if (path === '/ar/strategic-portfolio') return 'محفظة BioNixus الاستراتيجية | أبحاث السوق والاستشارات';
   if (path === '/insights/top-market-research-companies-egypt-2026') return '5 Best Market Research Companies in Egypt (2026) | Ranked Buyer Guide | BioNixus';
-  if (path === '/ar/insights/top-market-research-companies-egypt-2026') return 'أفضل شركات أبحاث السوق في مصر (دليل 2026) | BioNixus';
-  if (path === '/insights/top-market-research-companies-saudi-arabia-2026') return 'Top Market Research Companies in Saudi Arabia (2026) | BioNixus';
-  if (path === '/insights/top-market-research-companies-uae-2026') return 'Top Market Research Companies in the UAE (2026) | BioNixus';
-  if (path === '/insights/top-market-research-companies-dubai-2026') return 'Top Market Research Companies in Dubai (2026) | BioNixus';
-  if (path === '/insights/top-market-research-companies-abu-dhabi-2026') return 'Top Market Research Companies in Abu Dhabi (2026) | BioNixus';
-  if (path === '/insights/top-market-research-companies-riyadh-2026') return 'Top Market Research Companies in Riyadh (2026) | BioNixus';
-  if (path === '/insights/top-healthcare-market-research-companies-riyadh-2026') return 'Top Market Research Companies in Riyadh (2026) | BioNixus';
+  if (path === '/ar/insights/top-market-research-companies-egypt-2026') return '5 أفضل شركات أبحاث السوق في مصر (2026) | دليل المشترين | BioNixus';
+  if (path === '/insights/top-market-research-companies-brazil-2026') return '5 Best Market Research Companies in Brazil (2026) | LATAM Agency Rankings | BioNixus';
+  if (path === '/insights/top-healthcare-market-research-companies-brazil-2026') return '5 Best Healthcare Market Research Firms in Brazil (2026) | ANVISA Specialists | BioNixus';
+  if (path === '/insights/top-market-research-companies-argentina-2026') return '5 Best Market Research Companies in Argentina (2026) | LATAM Agency Rankings | BioNixus';
+  if (path === '/insights/top-healthcare-market-research-companies-argentina-2026') return '5 Best Healthcare Market Research Firms in Argentina (2026) | ANMAT Specialists | BioNixus';
+  if (path === '/pt/insights/top-market-research-companies-brasil-2026') return '5 Melhores Empresas de Pesquisa de Mercado no Brasil (2026) | Rankings | BioNixus';
+  if (path === '/pt/insights/top-empresas-pesquisa-mercado-saude-brasil-2026') return '5 Melhores Empresas de Pesquisa de Mercado em Saúde no Brasil (2026) | ANVISA | BioNixus';
+  if (path === '/es/insights/top-empresas-investigacion-mercado-argentina-2026') return '5 Mejores Empresas de Investigación de Mercado en Argentina (2026) | Rankings | BioNixus';
+  if (path === '/es/insights/top-empresas-investigacion-mercado-salud-argentina-2026') return '5 Mejores Empresas de Investigación de Mercado en Salud en Argentina (2026) | ANMAT | BioNixus';
+  if (path === '/insights/top-market-research-companies-saudi-arabia-2026') return '6 Best Market Research Companies in Saudi Arabia (2026) | KSA Agency Rankings | BioNixus';
+  if (path === '/insights/top-market-research-companies-uae-2026') return '6 Best Market Research Companies in the UAE (2026) | Agency Rankings | BioNixus';
+  if (path === '/insights/top-market-research-companies-dubai-2026') return '6 Best Market Research Companies in Dubai (2026) | UAE Agency Rankings | BioNixus';
+  if (path === '/insights/top-market-research-companies-abu-dhabi-2026') return '6 Best Market Research Companies in Abu Dhabi (2026) | UAE Agency Rankings | BioNixus';
+  if (path === '/insights/top-market-research-companies-riyadh-2026') return '6 Best Market Research Companies in Riyadh (2026) | KSA Agency Rankings | BioNixus';
+  if (path === '/insights/top-healthcare-market-research-companies-saudi-arabia-2026') return '5 Best Healthcare Market Research Firms in Saudi Arabia (2026) | SFDA Specialists | BioNixus';
+  if (path === '/insights/top-healthcare-market-research-companies-dubai-2026') return '5 Best Healthcare Market Research Firms in Dubai (2026) | DHA Specialists | BioNixus';
+  if (path === '/insights/top-healthcare-market-research-companies-abu-dhabi-2026') return '5 Best Healthcare Market Research Firms in Abu Dhabi (2026) | DoH Specialists | BioNixus';
+  if (path === '/insights/top-healthcare-market-research-companies-kuwait-2026') return '5 Best Healthcare Market Research Firms in Kuwait (2026) | MOH Specialists | BioNixus';
+  if (path === '/insights/top-healthcare-market-research-companies-riyadh-2026') return '5 Best Healthcare Market Research Firms in Riyadh (2026) | SFDA Specialists | BioNixus';
+
+  const matrixListicle = path.match(/^\/insights\/top-([\w-]+)-market-research-companies-(saudi-arabia|uae|egypt)-2026$/);
+  if (matrixListicle) {
+    const [, industrySlug, countrySlug] = matrixListicle;
+    const countryLabel = countrySlug === 'saudi-arabia' ? 'Saudi Arabia' : countrySlug === 'uae' ? 'UAE' : 'Egypt';
+    const industryLabel = titleCaseFromSlug(industrySlug);
+    return `5 Best ${industryLabel} Market Research Firms in ${countryLabel} (2026 Rankings) | BioNixus`;
+  }
+
+  const matrixBofu = path.match(/^\/(saudi-arabia|uae|egypt)-([\w-]+)-market-research$/);
+  if (matrixBofu) {
+    const [, countrySlug, industrySlug] = matrixBofu;
+    const countryLabel = countrySlug === 'saudi-arabia' ? 'Saudi Arabia' : countrySlug === 'uae' ? 'UAE' : 'Egypt';
+    const industryLabel = titleCaseFromSlug(industrySlug);
+    const healthcareAdjacent = new Set([
+      'medtech', 'healthcare', 'biotech', 'consumer-health',
+    ]);
+    const suffix = healthcareAdjacent.has(industrySlug) ? 'Context' : 'Fieldwork & Insights';
+    const regulator = countrySlug === 'saudi-arabia' ? 'SFDA' : countrySlug === 'uae' ? 'MOHAP' : 'EDA';
+    const titleSuffix = healthcareAdjacent.has(industrySlug) ? `${regulator} ${suffix}` : suffix;
+    return `${industryLabel} Market Research Company in ${countryLabel} (2026) | ${titleSuffix} | BioNixus`;
+  }
 
   if (path === '/healthcare-market-research') return 'Healthcare & Pharmaceutical Market Research in Dubai, UAE & MENA | BioNixus';
   if (path === '/global-websites/united-arab-emirates') return 'UAE Pharmaceutical Go-to-Market Blueprint | Dubai DHA & Abu Dhabi DOH | BioNixus';

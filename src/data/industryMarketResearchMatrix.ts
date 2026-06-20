@@ -276,6 +276,27 @@ export function getIndustryListiclePath(country: MatrixCountrySlug, industry: Ma
   return `/insights/top-${industry}-market-research-companies-${country}-2026`;
 }
 
+/** CTR-optimized BOFU + listicle copy for industry × country matrix pages. */
+export function buildMatrixSeoCopy(
+  country: MatrixCountryConfig,
+  industry: MatrixIndustryConfig,
+): { title: string; metaDescription: string; h1: string; listicleMetaDescription: string } {
+  const name = industry.displayNameShort;
+  const full = industry.displayName;
+  const h1 = `${full} Market Research Company in ${country.label}`;
+  const titleSuffix = industry.isHealthcareAdjacent
+    ? `${country.regulatorShort} Context`
+    : 'Fieldwork & Insights';
+  const title = `${name} Market Research Company in ${country.label} (2026) | ${titleSuffix} | BioNixus`;
+  const metaDescription = industry.isHealthcareAdjacent
+    ? `Hire a ${full.toLowerCase()} market research company in ${country.label} — ${country.regulatorShort}-aware fieldwork, bilingual Arabic–English studies, and decision-ready evidence from BioNixus.`
+    : `${name} market research company in ${country.label} for 2026 — quantitative surveys, qualitative depth, and buyer intelligence with local field teams.`;
+  const listicleMetaDescription = industry.isHealthcareAdjacent
+    ? `Ranked 5 best ${name.toLowerCase()} market research firms in ${country.label} for 2026 — compared by local fieldwork, methodology, and ${country.regulatorShort} context.`
+    : `Ranked 5 best ${name.toLowerCase()} market research firms in ${country.label} for 2026 — compared by local fieldwork, sample design, and ${name.toLowerCase()} buyer benchmarks.`;
+  return { title, metaDescription, h1, listicleMetaDescription };
+}
+
 function defaultStakeholders(industry: MatrixIndustryConfig): Array<{ role: string; focus: string }> {
   if (industry.isHealthcareAdjacent) {
     return [
@@ -377,6 +398,8 @@ export function buildIndustryCountryPageConfig(
     ? { to: country.healthcareHubPath, label: `${country.label} healthcare market research hub` }
     : { to: '/bionixus-market-research-middle-east', label: 'Middle East market research pillar' };
 
+  const seo = buildMatrixSeoCopy(country, industry);
+
   return {
     countrySlug,
     industrySlug,
@@ -384,10 +407,10 @@ export function buildIndustryCountryPageConfig(
     listiclePath,
     country,
     industry,
-    title: `${name} Market Research Company in ${country.label} | ${country.regulatorShort} Context | BioNixus`,
+    title: seo.title,
     titleVariantB: `${name} Market Research ${country.label} | Fieldwork & Evidence | BioNixus`,
-    metaDescription: `BioNixus is a ${full.toLowerCase()} market research company in ${country.label}—bilingual fieldwork, decision-ready evidence, and proposal-ready programs.`,
-    h1: `${full} Market Research Company in ${country.label}`,
+    metaDescription: seo.metaDescription,
+    h1: seo.h1,
     heroIntro: `BioNixus delivers ${full.toLowerCase()} market research in ${country.label} for teams that need credible local evidence—not desk syndication. Programs combine quantitative and qualitative design, Arabic–English execution where required, and outputs mapped to launch, access, or growth decisions.`,
     executiveHeading: `${country.label} ${name} executive decision framework`,
     executivePoints: getIndustryBofuExecutivePoints(industrySlug, countrySlug),

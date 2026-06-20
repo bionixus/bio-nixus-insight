@@ -344,6 +344,10 @@ return (
               <Link to="/healthcare-market-research" className="text-accent underline underline-offset-2 hover:no-underline">
                 healthcare market research
               </Link>
+              . For firm rankings, see{' '}
+              <Link to="/insights/top-healthcare-market-research-companies-kuwait-2026" className="text-accent underline underline-offset-2 hover:no-underline">
+                top healthcare market research companies in Kuwait (2026)
+              </Link>
               .
             </p>
             <div className="flex flex-wrap items-center text-[13px] text-white/55">

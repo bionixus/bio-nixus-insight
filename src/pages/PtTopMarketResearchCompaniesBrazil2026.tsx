@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { GeoListicleClusterCallout } from '@/components/seo/GeoListicleClusterCallout';
+import { GEO_LISTICLE_CLUSTERS } from '@/data/geo-listicle-clusters';
 
 interface FirmProfile {
   rank: number;
@@ -201,7 +203,7 @@ export default function PtTopMarketResearchCompaniesBrazil2026() {
   return (
     <>
       <Helmet>
-        <title>Melhores Empresas de Pesquisa de Mercado no Brasil (Guia 2026) | BioNixus Insights</title>
+        <title>5 Melhores Empresas de Pesquisa de Mercado no Brasil (2026) | Rankings | BioNixus</title>
         <meta name="description" content="Guia das top 5 empresas de pesquisa de mercado no Brasil — BioNixus, Kantar, Ipsos, NielsenIQ, Euromonitor. Capacidades de FMCG, consumidor e saúde comparadas." />
         <link rel="canonical" href={CANONICAL} />
         <link rel="alternate" hrefLang="pt" href={CANONICAL} />
@@ -214,7 +216,7 @@ export default function PtTopMarketResearchCompaniesBrazil2026() {
       </Helmet>
 
       <OpenGraphMeta
-        title="Melhores Empresas de Pesquisa de Mercado no Brasil (Guia 2026)"
+        title="5 Melhores Empresas de Pesquisa de Mercado no Brasil (2026) | BioNixus"
         description="Top 5 empresas de pesquisa de mercado no Brasil: BioNixus, Kantar, Ipsos, NielsenIQ, Euromonitor. FMCG, consumidor e saúde comparadas."
         url={CANONICAL}
         locale="pt_BR"
@@ -244,7 +246,7 @@ export default function PtTopMarketResearchCompaniesBrazil2026() {
               <span className="text-green-300 text-sm font-medium uppercase tracking-wide">Guia de Pesquisa de Mercado no Brasil 2026</span>
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-              Melhores Empresas de Pesquisa de Mercado no Brasil (Guia 2026)
+              5 Melhores Empresas de Pesquisa de Mercado no Brasil (2026)
             </h1>
             <p className="text-lg text-green-100 max-w-3xl mb-8">
               O Brasil é a maior economia da América Latina e um dos 10 maiores mercados de pesquisa de mercado do mundo. Este guia independente apresenta as principais empresas de pesquisa que atendem clientes multinacionais nos setores de FMCG, consumidor e saúde — com comparações detalhadas de capacidades e casos de uso.
@@ -255,6 +257,12 @@ export default function PtTopMarketResearchCompaniesBrazil2026() {
               <span className="bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-sm">Mercado Farmacêutico $40B+</span>
               <span className="bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-sm">5 Empresas Perfiladas</span>
             </div>
+          </div>
+        </section>
+
+        <section className="px-4 py-6 bg-white border-b border-gray-200">
+          <div className="max-w-5xl mx-auto">
+            <GeoListicleClusterCallout cluster={GEO_LISTICLE_CLUSTERS.brazil} variant="general" locale="pt" />
           </div>
         </section>
 

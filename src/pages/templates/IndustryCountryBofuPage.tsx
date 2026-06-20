@@ -11,6 +11,8 @@ import {
   type MatrixCountrySlug,
   type MatrixIndustrySlug,
 } from '@/data/industryMarketResearchMatrix';
+import { getIndustryListicleCrossLinks } from '@/data/industry-listicle-clusters';
+import { IndustryListicleClusterCallout } from '@/components/seo/IndustryListicleClusterCallout';
 
 type IndustryCountryBofuPageProps = {
   countrySlug: MatrixCountrySlug;
@@ -23,6 +25,20 @@ export default function IndustryCountryBofuPage({ countrySlug, industrySlug }: I
 
   const pageUrl = `https://www.bionixus.com${config.bofuPath}`;
   const orgId = 'https://www.bionixus.com/#organization';
+  const clusterLinks = getIndustryListicleCrossLinks(
+    countrySlug,
+    industrySlug,
+    config.bofuPath,
+    config.industry.displayNameShort,
+    config.country.label,
+  );
+  const clusterRole = `Company-intent page for ${config.industry.displayNameShort.toLowerCase()} programs in ${config.country.label} — paired with the 2026 firm rankings listicle and cross-industry geo guides.`;
+  const primaryHubPath = config.industry.isHealthcareAdjacent
+    ? '/healthcare-market-research'
+    : '/market-research';
+  const primaryHubLabel = config.industry.isHealthcareAdjacent
+    ? 'healthcare market research hub'
+    : 'market research services hub';
 
   const jsonLd = [
     {
@@ -86,8 +102,8 @@ export default function IndustryCountryBofuPage({ countrySlug, industrySlug }: I
             <p className="text-lg leading-relaxed text-primary-foreground/90 mb-4">{config.heroIntro}</p>
             <p className="text-base leading-relaxed text-primary-foreground/85">
               For regional context, start from the{' '}
-              <Link to="/healthcare-market-research" className="underline font-medium text-primary-foreground">
-                healthcare market research hub
+              <Link to={primaryHubPath} className="underline font-medium text-primary-foreground">
+                {primaryHubLabel}
               </Link>
               ; for {config.country.label} see{' '}
               <Link to={config.country.midFunnelPath} className="underline font-medium text-primary-foreground">
@@ -100,6 +116,17 @@ export default function IndustryCountryBofuPage({ countrySlug, industrySlug }: I
               </Link>
               .
             </p>
+          </div>
+        </section>
+
+        <section className="py-6">
+          <div className="container-wide max-w-5xl mx-auto">
+            <IndustryListicleClusterCallout
+              industryLabel={config.industry.displayNameShort}
+              countryLabel={config.country.label}
+              roleText={clusterRole}
+              links={clusterLinks}
+            />
           </div>
         </section>
 

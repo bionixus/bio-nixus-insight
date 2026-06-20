@@ -1,20 +1,63 @@
 import { Link } from 'react-router-dom';
-import type { GeoListicleCluster, GeoListicleVariant } from '@/data/geo-listicle-clusters';
+import type {
+  GeoListicleCalloutLocale,
+  GeoListicleCluster,
+  GeoListicleVariant,
+} from '@/data/geo-listicle-clusters';
 
 interface GeoListicleClusterCalloutProps {
   readonly cluster: GeoListicleCluster;
   readonly variant: GeoListicleVariant;
+  readonly locale?: GeoListicleCalloutLocale;
 }
 
-export function GeoListicleClusterCallout({ cluster, variant }: GeoListicleClusterCalloutProps) {
+const DEFAULT_HEADINGS: Record<GeoListicleCalloutLocale, { general: string; healthcare: string }> = {
+  en: {
+    general: 'Cross-industry agency rankings',
+    healthcare: 'Healthcare-only firm rankings',
+  },
+  pt: {
+    general: 'Rankings de agências (todos os setores)',
+    healthcare: 'Rankings só de saúde e farmacêutica',
+  },
+  es: {
+    general: 'Rankings de agencias (todos los sectores)',
+    healthcare: 'Rankings solo de salud y farmacéutica',
+  },
+  ar: {
+    general: 'تصنيفات وكالات أبحاث السوق العامة',
+    healthcare: 'تصنيفات شركات أبحاث الرعاية الصحية فقط',
+  },
+};
+
+function resolveClusterCopy(cluster: GeoListicleCluster, locale: GeoListicleCalloutLocale) {
+  const localized = cluster.locales?.[locale];
+  return {
+    generalPath: localized?.generalPath ?? cluster.generalPath,
+    generalLabel: localized?.generalLabel ?? cluster.generalLabel,
+    generalRole: localized?.generalRole ?? cluster.generalRole,
+    healthcarePath: localized?.healthcarePath ?? cluster.healthcarePath,
+    healthcareLabel: localized?.healthcareLabel ?? cluster.healthcareLabel,
+    healthcareRole: localized?.healthcareRole ?? cluster.healthcareRole,
+    headingGeneral: localized?.headingGeneral ?? DEFAULT_HEADINGS[locale].general,
+    headingHealthcare: localized?.headingHealthcare ?? DEFAULT_HEADINGS[locale].healthcare,
+  };
+}
+
+export function GeoListicleClusterCallout({
+  cluster,
+  variant,
+  locale = 'en',
+}: GeoListicleClusterCalloutProps) {
+  const copy = resolveClusterCopy(cluster, locale);
   const isGeneral = variant === 'general';
-  const roleText = isGeneral ? cluster.generalRole : cluster.healthcareRole ?? cluster.generalRole;
+  const roleText = isGeneral ? copy.generalRole : copy.healthcareRole ?? copy.generalRole;
 
   const siblingLinks =
-    isGeneral && cluster.healthcarePath && cluster.healthcareLabel
-      ? [{ to: cluster.healthcarePath, label: cluster.healthcareLabel }]
-      : !isGeneral && cluster.generalPath && cluster.generalLabel
-        ? [{ to: cluster.generalPath, label: cluster.generalLabel }]
+    isGeneral && copy.healthcarePath && copy.healthcareLabel
+      ? [{ to: copy.healthcarePath, label: copy.healthcareLabel }]
+      : !isGeneral && copy.generalPath && copy.generalLabel
+        ? [{ to: copy.generalPath, label: copy.generalLabel }]
         : [];
 
   if (siblingLinks.length === 0) return null;
@@ -25,7 +68,7 @@ export function GeoListicleClusterCallout({ cluster, variant }: GeoListicleClust
       aria-label="Related rankings guide"
     >
       <p className="font-semibold text-foreground mb-1">
-        {isGeneral ? 'Cross-industry agency rankings' : 'Healthcare-only firm rankings'}
+        {isGeneral ? copy.headingGeneral : copy.headingHealthcare}
       </p>
       <p className="mb-2">{roleText}.</p>
       {siblingLinks.map((link) => (

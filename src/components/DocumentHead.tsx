@@ -53,12 +53,28 @@ function routeProvidesOwnDocumentHead(pathname: string): boolean {
   if (path === '/sitemap') return true;
   if (path === '/insights/top-market-research-companies-egypt-2026') return true;
   if (path === '/ar/insights/top-market-research-companies-egypt-2026') return true;
+  if (path === '/insights/top-market-research-companies-brazil-2026') return true;
+  if (path === '/insights/top-healthcare-market-research-companies-brazil-2026') return true;
+  if (path === '/insights/top-market-research-companies-argentina-2026') return true;
+  if (path === '/insights/top-healthcare-market-research-companies-argentina-2026') return true;
+  if (path === '/pt/insights/top-market-research-companies-brasil-2026') return true;
+  if (path === '/pt/insights/top-empresas-pesquisa-mercado-saude-brasil-2026') return true;
+  if (path === '/es/insights/top-empresas-investigacion-mercado-argentina-2026') return true;
+  if (path === '/es/insights/top-empresas-investigacion-mercado-salud-argentina-2026') return true;
   if (path === '/insights/top-market-research-companies-saudi-arabia-2026') return true;
   if (path === '/insights/top-market-research-companies-uae-2026') return true;
   if (path === '/insights/top-market-research-companies-dubai-2026') return true;
   if (path === '/insights/top-market-research-companies-abu-dhabi-2026') return true;
   if (path === '/insights/top-market-research-companies-riyadh-2026') return true;
+  if (path === '/insights/top-healthcare-market-research-companies-saudi-arabia-2026') return true;
+  if (path === '/insights/top-healthcare-market-research-companies-dubai-2026') return true;
+  if (path === '/insights/top-healthcare-market-research-companies-abu-dhabi-2026') return true;
+  if (path === '/insights/top-healthcare-market-research-companies-kuwait-2026') return true;
   if (path === '/insights/top-healthcare-market-research-companies-riyadh-2026') return true;
+
+  /** Industry × country matrix listicles and BOFU pages (SEOHead / Helmet on route). */
+  if (/^\/insights\/top-[\w-]+-market-research-companies-(saudi-arabia|uae|egypt)-2026$/.test(path)) return true;
+  if (/^\/(saudi-arabia|uae|egypt)-[\w-]+-market-research$/.test(path)) return true;
 
   /** SEOHead-based market report hub and category index pages. */
   if (path === '/market-reports' || path.startsWith('/market-reports/therapy/') || path.startsWith('/market-reports/country/')) {

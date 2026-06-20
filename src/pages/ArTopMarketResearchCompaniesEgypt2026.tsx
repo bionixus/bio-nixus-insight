@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { GeoListicleClusterCallout } from '@/components/seo/GeoListicleClusterCallout';
+import { GEO_LISTICLE_CLUSTERS } from '@/data/geo-listicle-clusters';
 
 interface FirmProfile {
   rank: number;
@@ -209,10 +211,10 @@ export default function ArTopMarketResearchCompaniesEgypt2026() {
     <div className="min-h-screen bg-background" dir="rtl">
       <Helmet>
         <html lang="ar" dir="rtl" />
-        <title>أفضل شركات أبحاث السوق في مصر (دليل 2026) | BioNixus</title>
+        <title>5 أفضل شركات أبحاث السوق في مصر (2026) | دليل المشترين | BioNixus</title>
         <meta
           name="description"
-          content="دليل مستقل 2026 لأبرز شركات أبحاث السوق في مصر للرعاية الصحية والأدوية والمستهلكين—مقارنة القدرات، السياق التنظيمي، وسيناريوهات اختيار مزود أبحاث موثوق."
+          content="دليل 2026 لأفضل 5 شركات أبحاث سوق في مصر — رعاية صحية وأدوية ومستهلكين. مقارنة القدرات، سياق هيئة الدواء المصرية، واختيار الشريك المناسب."
         />
         <meta name="author" content="Haidy Yahia" />
         <link rel="canonical" href={CANONICAL} />
@@ -225,8 +227,8 @@ export default function ArTopMarketResearchCompaniesEgypt2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="أفضل شركات أبحاث السوق في مصر (دليل 2026) | BioNixus"
-      description="دليل مستقل 2026 لأبرز شركات أبحاث السوق في مصر للرعاية الصحية والأدوية والمستهلكين—مع مقارنة القدرات الميدانية، بيانات السوق المصري، وأسئلة اختيار الشريك قبل توقيع العقد."
+        title="5 أفضل شركات أبحاث السوق في مصر (2026) | دليل المشترين | BioNixus"
+      description="دليل 2026 لأفضل 5 شركات أبحاث سوق في مصر — رعاية صحية وأدوية ومستهلكين مع سياق هيئة الدواء المصرية ومعايير اختيار الشريك."
         image="https://www.bionixus.com/og-image.png"
         url={CANONICAL}
         type="article"
@@ -256,16 +258,21 @@ export default function ArTopMarketResearchCompaniesEgypt2026() {
               دليل القطاع 2026
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">
-              أفضل شركات أبحاث السوق في مصر (دليل 2026)
+              5 أفضل شركات أبحاث السوق في مصر (2026)
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
-              دليل مستقل لأبرز شركات أبحاث السوق العاملة في مصر لعام 2026. يستعرض هذا المقال 5 شركات
+              دليل مستقل لأفضل شركات أبحاث السوق العاملة في مصر لعام 2026. يستعرض هذا المقال 5 شركات
               في مجالات الرعاية الصحية والأدوية وأبحاث المستهلكين — مع مقارنة القدرات والمنهجيات
-              والخبرة المصرية المتخصصة.
+              والخبرة المصرية المتخصصة. للسياق الإقليمي، راجع{' '}
+              <Link to="/healthcare-market-research/egypt" className="text-primary hover:underline font-medium">
+                أبحاث سوق الرعاية الصحية في مصر
+              </Link>
+              .
             </p>
             <p className="text-sm text-muted-foreground">
               نُشر أبريل 2026 · هايدي يحيى · 14 دقيقة قراءة
             </p>
+            <GeoListicleClusterCallout cluster={GEO_LISTICLE_CLUSTERS.egypt} variant="general" locale="ar" />
             <p className="text-sm text-muted-foreground mt-2">
               <Link to="/insights/top-market-research-companies-egypt-2026" className="text-primary hover:underline">
                 Read this article in English
