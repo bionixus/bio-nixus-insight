@@ -130,6 +130,13 @@ export default function StrategicServicePage({
         />
 
         <ReportContentWithAside config={config}>
+          <p className="text-sm text-muted-foreground leading-relaxed mb-8">
+            For regional context and related services, start from our{' '}
+            <Link to="/healthcare-market-research" className="text-primary underline font-medium">
+              healthcare market research hub
+            </Link>{' '}
+            before scoping this engagement.
+          </p>
           {expandedContent ? <ExpandedServiceLandingContent content={expandedContent} /> : null}
 
           {/* Decision framework */}

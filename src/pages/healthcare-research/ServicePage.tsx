@@ -102,21 +102,25 @@ function getServiceExtraToc(service: string): { href: string; label: string }[] 
       return [
         { href: '#physician-insights-pathway', label: 'Prescribing pathways' },
         { href: '#physician-insights-modules', label: 'Research modules' },
+        { href: '#physician-insights-execution', label: 'Field alignment' },
       ];
     case 'kol-mapping':
       return [
         { href: '#kol-mapping-pathway', label: 'Influence mapping' },
         { href: '#kol-mapping-modules', label: 'Research modules' },
+        { href: '#kol-mapping-execution', label: 'Engagement planning' },
       ];
     case 'quantitative-research':
       return [
         { href: '#quantitative-research-pathway', label: 'Sampling design' },
         { href: '#quantitative-research-modules', label: 'Research modules' },
+        { href: '#quantitative-research-execution', label: 'Governance handoff' },
       ];
     case 'qualitative-research':
       return [
         { href: '#qualitative-research-pathway', label: 'Decision forensics' },
         { href: '#qualitative-research-modules', label: 'Research modules' },
+        { href: '#qualitative-research-execution', label: 'Workshop translation' },
       ];
     default:
       return [];
@@ -461,6 +465,47 @@ export default function ServicePage() {
                 </p>
               </div>
             </ReportPremiumSection>
+
+            <ReportPremiumSection
+              id="physician-insights-execution"
+              title="From physician insight to field and medical alignment: closing the execution gap"
+            >
+              <div className="space-y-6 text-muted-foreground leading-relaxed">
+                <p>
+                  Physician insight research earns its budget when it changes{' '}
+                  <strong className="font-medium text-foreground">call prioritisation</strong>,{' '}
+                  <strong className="font-medium text-foreground">medical education sequencing</strong>, and{' '}
+                  <strong className="font-medium text-foreground">access narrative tests</strong>—not when it produces
+                  another segmentation deck affiliates reinterpret for weeks. BioNixus workshops optionally translate
+                  segment dossiers into explicit field gates: which corridors warrant MSL depth now, which require
+                  infusion-capacity or monitoring-burden messaging first, and which should wait until formulary or
+                  procurement calendars align.
+                </p>
+                <p>
+                  In Gulf markets, public–private routing and pharmacist substitution overlays mean physician confidence
+                  must connect to tender defence and step-therapy narratives before brand teams scale messaging. UK and
+                  EU5 affiliates benefit from inertia registers and objection hierarchies that tell medical affairs
+                  exactly which operational frictions to address in the next advisory cycle—not generic “increase
+                  awareness” guidance disconnected from who initiates versus who maintains therapy in practice.
+                </p>
+                <p>
+                  Pair execution planning with{' '}
+                  <Link to="/specialist-physician-panel-uae" className="text-primary underline">
+                    specialist physician panels in the UAE
+                  </Link>
+                  ,{' '}
+                  <Link to="/healthcare-market-research/services/kol-mapping" className="text-primary underline">
+                    KOL mapping
+                  </Link>
+                  , and country reports on the{' '}
+                  <Link to="/healthcare-market-research" className="text-primary underline">
+                    healthcare market research hub
+                  </Link>{' '}
+                  so field, medical, and access teams share one behavioural evidence base rather than three incompatible
+                  storylines.
+                </p>
+              </div>
+            </ReportPremiumSection>
           </>
         ) : null}
 
@@ -532,6 +577,47 @@ export default function ServicePage() {
                   Deliverables include influence maps annotated by decision relevance, advisory roster recommendations,
                   and workshop options to translate maps into medical and commercial action plans across GCC and
                   European affiliates.
+                </p>
+              </div>
+            </ReportPremiumSection>
+
+            <ReportPremiumSection
+              id="kol-mapping-execution"
+              title="From influence maps to congress and advisory execution: prioritising engagement spend"
+            >
+              <div className="space-y-6 text-muted-foreground leading-relaxed">
+                <p>
+                  KOL mapping earns its budget when it changes{' '}
+                  <strong className="font-medium text-foreground">advisory roster composition</strong>,{' '}
+                  <strong className="font-medium text-foreground">MSL territory design</strong>, and{' '}
+                  <strong className="font-medium text-foreground">congress engagement priorities</strong>—not when it
+                  produces connectivity visuals that compliance teams cannot action. BioNixus links tiered experts to
+                  specific decision types—initiation, switching, protocol adoption—so medical affairs and commercial
+                  teams align on who must move consensus in the next planning cycle versus who amplifies messages
+                  already settled.
+                </p>
+                <p>
+                  GCC referral gravity and European centre-of-excellence clustering diverge materially; harmonised
+                  taxonomies enable portfolio governance while local modules preserve the institution types where
+                  influence actually binds uptake. Investigator strategy and trial-site selection intersect commercial
+                  arcs when launch and evidence generation overlap—maps that ignore that intersection misallocate
+                  engagement spend toward ceremonial prominence.
+                </p>
+                <p>
+                  Connect execution planning with{' '}
+                  <Link to="/msl-insight-research-middle-east" className="text-primary underline">
+                    MSL insight research in the Middle East
+                  </Link>
+                  ,{' '}
+                  <Link to="/healthcare-market-research/services/physician-insights" className="text-primary underline">
+                    physician insight studies
+                  </Link>
+                  , and the{' '}
+                  <Link to="/healthcare-market-research" className="text-primary underline">
+                    healthcare market research hub
+                  </Link>{' '}
+                  when influence intelligence must explain why consensus shifts—or stalls—in specific hospital and
+                  procurement contexts.
                 </p>
               </div>
             </ReportPremiumSection>
@@ -608,6 +694,46 @@ export default function ServicePage() {
                 </p>
               </div>
             </ReportPremiumSection>
+
+            <ReportPremiumSection
+              id="quantitative-research-execution"
+              title="From quant outputs to governance-ready decisions: reproducibility affiliates can defend"
+            >
+              <div className="space-y-6 text-muted-foreground leading-relaxed">
+                <p>
+                  Quantitative research earns its budget when leadership can defend{' '}
+                  <strong className="font-medium text-foreground">segment prioritisation</strong>,{' '}
+                  <strong className="font-medium text-foreground">forecast assumptions</strong>, and{' '}
+                  <strong className="font-medium text-foreground">message trade-off rankings</strong> in governance
+                  reviews—not when dashboards accumulate metrics no affiliate acts on. BioNixus pairs concise executive
+                  synthesis with reproducible appendix layers—questionnaire versioning, quota logs, dashboard codebooks—
+                  so analytics teams and alliance partners can audit inference without weeks of reconstruction.
+                </p>
+                <p>
+                  Adaptive quota choreography and forecast bridges stress-test elasticity of intent versus operational
+                  ceilings—infusion capacity, monitoring burden, prior authorisation fatigue—preventing exaggerated
+                  adoption ramps that access and field teams cannot execute. When subgroup decisions remain unresolved,
+                  sequential qual modules rescue inference before costly quant reruns amplify spend without changing
+                  the commercial question.
+                </p>
+                <p>
+                  Align handoff with{' '}
+                  <Link to="/quantitative-healthcare-market-research" className="text-primary underline">
+                    quantitative methodology standards
+                  </Link>
+                  ,{' '}
+                  <Link to="/brand-tracking-pharma-gcc" className="text-primary underline">
+                    brand tracking in the GCC
+                  </Link>
+                  , and the{' '}
+                  <Link to="/healthcare-market-research" className="text-primary underline">
+                    healthcare market research hub
+                  </Link>{' '}
+                  when longitudinal tracking must connect to the same variable dictionaries used in launch-readiness
+                  waves.
+                </p>
+              </div>
+            </ReportPremiumSection>
           </>
         ) : null}
 
@@ -677,6 +803,45 @@ export default function ServicePage() {
                 <p>
                   Deliverables connect qualitative findings to medical, brand, and access owners with explicit linkage
                   tables—so depth converts to action rather than anecdote archives.
+                </p>
+              </div>
+            </ReportPremiumSection>
+
+            <ReportPremiumSection
+              id="qualitative-research-execution"
+              title="From qual depth to workshop-ready action: translating themes without losing nuance"
+            >
+              <div className="space-y-6 text-muted-foreground leading-relaxed">
+                <p>
+                  Qualitative research earns its budget when themes change{' '}
+                  <strong className="font-medium text-foreground">HEOR refinement priorities</strong>,{' '}
+                  <strong className="font-medium text-foreground">medical education arcs</strong>, and{' '}
+                  <strong className="font-medium text-foreground">pricing narrative tests</strong>—not when quote decks
+                  accumulate without KPI owners. BioNixus optional workshops translate objection hierarchies and pathway
+                  walkthroughs into explicit next steps: which access objections require dossier sequencing changes, which
+                  operational frictions medical affairs should address in advisory design, and which message tests quant
+                  should validate before field scale-up.
+                </p>
+                <p>
+                  Multi-country programmes harmonise thematic codes for regional roll-ups while tagging irreducible
+                  cultural divergences affiliates must respect—avoiding false universal narratives that erode local
+                  credibility. Payer-adjacent depth interviews isolate skepticism patterns that masquerade as clinical
+                  caution, informing tender defence and subgroup acceptability tests before submission cycles close.
+                </p>
+                <p>
+                  Pair workshop translation with{' '}
+                  <Link to="/patient-journey-research-gcc" className="text-primary underline">
+                    patient journey research in the GCC
+                  </Link>
+                  ,{' '}
+                  <Link to="/healthcare-market-research/services/market-access" className="text-primary underline">
+                    market access research
+                  </Link>
+                  , and the{' '}
+                  <Link to="/healthcare-market-research" className="text-primary underline">
+                    healthcare market research hub
+                  </Link>{' '}
+                  when qual depth must inform access, medical, and brand planning in the same governance cycle.
                 </p>
               </div>
             </ReportPremiumSection>

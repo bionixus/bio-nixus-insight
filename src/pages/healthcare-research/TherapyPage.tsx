@@ -659,6 +659,7 @@ export default function TherapyPage() {
                   ? [
                       { href: '#respiratory-pathway', label: 'Pathway research' },
                       { href: '#respiratory-modules', label: 'Research modules' },
+                      { href: '#respiratory-execution', label: 'Launch alignment' },
                     ]
                   : [];
   const heroTitle = isBiologics
@@ -1494,6 +1495,40 @@ export default function TherapyPage() {
                 Deliverables emphasise stakeholder segmentation, uptake scenarios grounded in surveyed behaviour, and
                 access-risk maps tied to observable formulary and procurement behaviour—outputs brand, medical, and access
                 teams can execute without weeks of reinterpretation.
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection
+            id="respiratory-execution"
+            title="From respiratory insight to launch and access alignment: device and seasonality gates"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Respiratory research earns its budget when it changes{' '}
+                <strong className="font-medium text-foreground">launch timing</strong>,{' '}
+                <strong className="font-medium text-foreground">device-training investment</strong>, and{' '}
+                <strong className="font-medium text-foreground">pharmacist substitution narratives</strong>—not when
+                pulmonologist enthusiasm is mistaken for chronic persistence. BioNixus links uptake scenarios to explicit
+                gates: which markets can absorb field spend before tender calendars close, which require technique and
+                training messaging first, and which should wait until exacerbation-season medical education aligns with
+                procurement scoring rituals.
+              </p>
+              <p>
+                Pair execution planning with{' '}
+                <Link to="/patient-adherence-research-middle-east" className="text-primary underline">
+                  patient adherence research in the Middle East
+                </Link>
+                ,{' '}
+                <Link to="/healthcare-market-research/services/physician-insights" className="text-primary underline">
+                  physician insight studies
+                </Link>
+                , and the{' '}
+                <Link to="/healthcare-market-research" className="text-primary underline">
+                  healthcare market research hub
+                </Link>{' '}
+                so brand, medical, and access teams synchronise on device economics and substitution behaviour before
+                scale-up.
               </p>
             </div>
           </ReportPremiumSection>
