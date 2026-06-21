@@ -476,13 +476,23 @@ export function buildIndustryCountryPageConfig(
         body: 'Single evidence framework for leadership and functional teams.',
       },
     ],
-    uniquenessParagraphs: [
-      `${country.label} combines scale, regulatory nuance, and channel diversity. ${full} research must reflect how buyers actually decide—not imported averages from other markets.`,
-      industry.isHealthcareAdjacent
-        ? `BioNixus links ${name.toLowerCase()} evidence to ${country.regulatorShort} and access context where therapy or device models require it.`
-        : `BioNixus applies international research standards with local field teams in Cairo, Dubai, and Riyadh corridors.`,
-      `For pharmaceutical context in the same market, see our separate ${country.label} pharma company page—this URL owns ${name.toLowerCase()} industry intent only.`,
-    ],
+    uniquenessParagraphs: industrySlug === 'healthcare'
+      ? [
+          `${country.label} combines scale, regulatory nuance, and channel diversity. ${full} research must reflect how hospital administrators, payers, and clinical leaders actually decide—not imported averages from other markets.`,
+          industry.isHealthcareAdjacent
+            ? `BioNixus links ${name.toLowerCase()} evidence to ${country.regulatorShort} and access context where therapy or device models require it, with bilingual Arabic–English execution standard across MENA programs.`
+            : `BioNixus applies international research standards with local field teams in Cairo, Dubai, and Riyadh corridors.`,
+          `For pharmaceutical context in the same market, see our separate ${country.label} pharma company page—this URL owns ${name.toLowerCase()} industry intent only.`,
+          `Hospital group consolidation, service-line expansion, and payer mix shifts can reorder influence quickly; provider research should refresh institutional maps on cadences that match your launch or access timeline—not once per global brand tracker cycle.`,
+          `BioNixus pairs ${name.toLowerCase()} provider modules with quantitative tracking and qualitative depth so leadership receives one evidence framework rather than disconnected physician and administrator readouts.`,
+        ]
+      : [
+          `${country.label} combines scale, regulatory nuance, and channel diversity. ${full} research must reflect how buyers actually decide—not imported averages from other markets.`,
+          industry.isHealthcareAdjacent
+            ? `BioNixus links ${name.toLowerCase()} evidence to ${country.regulatorShort} and access context where therapy or device models require it.`
+            : `BioNixus applies international research standards with local field teams in Cairo, Dubai, and Riyadh corridors.`,
+          `For pharmaceutical context in the same market, see our separate ${country.label} pharma company page—this URL owns ${name.toLowerCase()} industry intent only.`,
+        ],
     faqItems: [
       {
         question: `Who is the best ${name.toLowerCase()} market research company in ${country.label}?`,

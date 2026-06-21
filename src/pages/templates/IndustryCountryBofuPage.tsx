@@ -13,6 +13,8 @@ import {
 } from '@/data/industryMarketResearchMatrix';
 import { getIndustryListicleCrossLinks } from '@/data/industry-listicle-clusters';
 import { IndustryListicleClusterCallout } from '@/components/seo/IndustryListicleClusterCallout';
+import { ExpandedServiceLandingContent } from '@/components/page/ExpandedServiceLandingContent';
+import { getHealthcareIndustryExpandedContent } from '@/data/industryHealthcareExpandedContent';
 
 type IndustryCountryBofuPageProps = {
   countrySlug: MatrixCountrySlug;
@@ -33,6 +35,11 @@ export default function IndustryCountryBofuPage({ countrySlug, industrySlug }: I
     config.country.label,
   );
   const clusterRole = `Company-intent page for ${config.industry.displayNameShort.toLowerCase()} programs in ${config.country.label} — paired with the 2026 firm rankings listicle and cross-industry geo guides.`;
+  const expandedHealthcare =
+    industrySlug === 'healthcare' ? getHealthcareIndustryExpandedContent(countrySlug) : null;
+  const faqItems = expandedHealthcare
+    ? [...config.faqItems, ...expandedHealthcare.faqs]
+    : config.faqItems;
   const primaryHubPath = config.industry.isHealthcareAdjacent
     ? '/healthcare-market-research'
     : '/market-research';
@@ -75,7 +82,7 @@ export default function IndustryCountryBofuPage({ countrySlug, industrySlug }: I
       { name: 'Market Research', href: '/market-research' },
       { name: config.h1, href: config.bofuPath },
     ]),
-    buildFAQSchema(config.faqItems),
+    buildFAQSchema(faqItems),
   ];
 
   return (
@@ -233,11 +240,32 @@ export default function IndustryCountryBofuPage({ countrySlug, industrySlug }: I
           </div>
         </section>
 
+        {expandedHealthcare ? (
+          <section className="py-12">
+            <div className="container-wide max-w-5xl mx-auto">
+              <ExpandedServiceLandingContent content={expandedHealthcare} />
+            </div>
+          </section>
+        ) : null}
+
+        {expandedHealthcare ? (
+          <section className="py-12 bg-muted/20">
+            <div className="container-wide max-w-5xl mx-auto space-y-4 text-muted-foreground leading-relaxed">
+              <h2 className="text-3xl font-display font-semibold text-foreground">
+                {expandedHealthcare.execution.heading}
+              </h2>
+              {expandedHealthcare.execution.paragraphs.map((paragraph) => (
+                <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+              ))}
+            </div>
+          </section>
+        ) : null}
+
         <section className="py-12 bg-muted/20">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-3xl font-display font-semibold text-foreground mb-6">FAQs</h2>
             <div className="space-y-3">
-              {config.faqItems.map((item) => (
+              {faqItems.map((item) => (
                 <details key={item.question} className="rounded-xl border border-border bg-card p-4">
                   <summary className="cursor-pointer font-semibold text-foreground">{item.question}</summary>
                   <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{item.answer}</p>

@@ -634,6 +634,7 @@ export default function TherapyPage() {
         ? [
             { href: '#rare-disease-finding', label: 'Patient-finding' },
             { href: '#rare-disease-networks', label: 'KOL networks' },
+            { href: '#rare-disease-execution', label: 'Launch alignment' },
           ]
         : area === 'diabetes'
           ? [
@@ -1056,6 +1057,8 @@ export default function TherapyPage() {
                 comparator acceptability heavily. Research isolates the narratives and data formats each gate expects so
                 HEOR and medical teams refine dossiers before submission—not after deferral. Named-patient and
                 compassionate-use pathways add parallel access routes that must be mapped explicitly in launch sequencing.
+                Where genetic testing backlogs delay diagnosis, medical education and centre readiness investments should
+                precede field scale-up so uptake forecasts reflect treatable cohorts rather than theoretical prevalence.
               </p>
               <p>
                 For Gulf context, link to{' '}
@@ -1088,6 +1091,41 @@ export default function TherapyPage() {
                 across MENA while maintaining comparable analytics for regional portfolio committees. Outputs include
                 centre and KOL maps, funding-pathway risk registers, and 30/60/90 action plans tied to registration and
                 reimbursement milestones.
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection
+            id="rare-disease-execution"
+            title="From orphan insight to launch sequencing: funding and centre gates"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Rare disease research earns its budget when it changes{' '}
+                <strong className="font-medium text-foreground">centre prioritisation</strong>,{' '}
+                <strong className="font-medium text-foreground">funding-committee narratives</strong>, and{' '}
+                <strong className="font-medium text-foreground">named-patient pathway timing</strong>—not when
+                prevalence slides substitute for treatment-ready cohorts. BioNixus links uptake scenarios to explicit
+                gates: which markets can absorb medical education before genetic-testing backlogs clear, which require
+                caregiver and payer messaging first, and which should wait until committee calendars align with dossier
+                submission windows.
+              </p>
+              <p>
+                Pair execution planning with{' '}
+                <Link to="/heor-consulting-saudi-arabia" className="text-primary underline">
+                  HEOR consulting in Saudi Arabia
+                </Link>
+                ,{' '}
+                <Link to="/healthcare-market-research/services/market-access" className="text-primary underline">
+                  market access research
+                </Link>
+                , and the{' '}
+                <Link to="/healthcare-market-research" className="text-primary underline">
+                  healthcare market research hub
+                </Link>{' '}
+                so medical, access, and field teams synchronise on centre maps and funding paths before scale-up.
+                Rare disease portfolios that span multiple GCC markets should harmonize centre maps while preserving
+                country-specific funding committee language in readouts.
               </p>
             </div>
           </ReportPremiumSection>

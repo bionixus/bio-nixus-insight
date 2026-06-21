@@ -73,6 +73,17 @@ Local audit command: `npm run build:client && npm run build:server && npm run bu
 
 Local verify: `npm run build:server && NODE_ENV=production node server.js` then audit against `http://127.0.0.1:5173`.
 
+## Completed pages (batch 7 — healthcare BOFU + rare-diseases, 2026-06-21)
+
+| Path | Prior wc | Local SSR verify | Notes |
+|---|---:|---:|---|
+| `/healthcare-market-research/therapy/rare-diseases` | 1997 | **2003w** | Rare-disease execution section + expanded finding paragraph |
+| `/egypt-healthcare-market-research` | 712 | **2036w** | `industryHealthcareExpandedContent.ts` + `IndustryCountryBofuPage` expanded block |
+| `/uae-healthcare-market-research` | 712 | **2033w** | Emirate/payer expanded copy + execution + supplemental FAQs |
+| `/saudi-arabia-healthcare-market-research` | 753 | **2018w** | Cluster/formulary expanded copy + execution + supplemental FAQs |
+
+Infrastructure: `src/data/industryHealthcareExpandedContent.ts`, `IndustryCountryBofuPage.tsx` renders `ExpandedServiceLandingContent` for `healthcare` industry BOFU routes.
+
 ## Next batch
 
 Re-run production audit after deploy; any remaining thin hub therapy/service pages from `docs/seo/bio-448-thin-page-inventory.csv` become the next P0 queue.
