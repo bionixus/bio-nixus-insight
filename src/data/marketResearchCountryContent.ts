@@ -9,7 +9,22 @@ export type MarketResearchCountryContent = {
   countryLabel: string;
   primaryKeyword: string;
   faqItems: MarketResearchFaq[];
-  relatedLinks: Array<{ to: string; label: string }>;    regulatory: {
+  relatedLinks: Array<{ to: string; label: string }>;
+};
+
+/** English market-research country pages. */
+const en: Record<string, MarketResearchCountryContent> = {
+  egypt: {
+    title: 'Egypt Healthcare Market Research | BioNixus',
+    description: 'Egypt pharmaceutical market research: EDA/UHIA pathways, channel-weighted physician and payer programs, and actionable launch plans.',
+    canonical: '/egypt-healthcare-market-research',
+    h1: 'Egypt Healthcare Market Research',
+    intro: 'We deliver Egypt market research programs for pharmaceutical and healthcare teams that require launch and access decisions grounded in local evidence—not generic MENA summaries. Studies cover hospital, payer, and physician behavior across Cairo, Alexandria, and regional governorates.',
+    countryLabel: 'Egypt',
+    primaryKeyword: 'Egypt market research',
+    faqItems: [],
+    relatedLinks: [],
+    regulatory: {
       heading: 'Egypt regulatory and market access context',
       paragraphs: [
         'Egypt market research must account for Egyptian Drug Authority (EDA) requirements, pricing committees, and tender-oriented public procurement alongside private hospital and clinic channels that operate under different economic and competitive logics. EDA registration timelines, bioequivalence expectations for generics, and local manufacturing incentives shape which products can enter Egypt and at what cost structure. Market research Egypt modules validate how physicians perceive imported versus locally manufactured brands, and whether EDA-driven quality or pricing policies affect prescribing or substitution behavior.',
