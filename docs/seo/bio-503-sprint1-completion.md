@@ -9,7 +9,7 @@
 | ≥5 P0 pages at ≥2,000 words | ✅ 14 pages (see table) |
 | Word count verified | ✅ Local SSR `<main>` word audit |
 | Hub cross-link within first 200 words | ✅ All pages pass |
-| Deployed URLs | ✅ 14 pages live on production; batch 6 service pages pending deploy |
+| Deployed URLs | ✅ All 19 pages live on production (verified 2026-06-21) |
 
 ## Sprint 1 batch (19 pages)
 
@@ -56,12 +56,12 @@
 - https://www.bionixus.com/healthcare-market-research/services/market-access (2100w)
 - https://www.bionixus.com/healthcare-market-research/therapy/respiratory (2025w)
 
-## Pending deploy (batch 6 hub services — local SSR verified)
+## Production URLs (batch 6 hub services — verified 2026-06-21 post-deploy)
 
-- https://www.bionixus.com/healthcare-market-research/services/quantitative-research (2012w local; prod 1781w pre-deploy)
-- https://www.bionixus.com/healthcare-market-research/services/qualitative-research (2002w local)
-- https://www.bionixus.com/healthcare-market-research/services/physician-insights (2031w local)
-- https://www.bionixus.com/healthcare-market-research/services/kol-mapping (2008w local)
+- https://www.bionixus.com/healthcare-market-research/services/quantitative-research (2017w)
+- https://www.bionixus.com/healthcare-market-research/services/qualitative-research (2007w)
+- https://www.bionixus.com/healthcare-market-research/services/physician-insights (2036w)
+- https://www.bionixus.com/healthcare-market-research/services/kol-mapping (2013w)
 
 ## Implementation notes
 
