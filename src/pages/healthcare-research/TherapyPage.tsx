@@ -1211,6 +1211,200 @@ export default function TherapyPage() {
               </p>
             </div>
           </ReportPremiumSection>
+
+          <ReportPremiumSection
+            id="diabetes-market-context"
+            title="Market context: cardiometabolic burden and treatment pathway fragmentation"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Diabetes prevalence reaches crisis proportions in high-burden markets: Saudi Arabia and the UAE report adult
+                type 2 prevalence exceeding 18%, driven by urbanisation, dietary transition, and genetic predisposition. UK
+                prevalence sits near 7% but primary-care bandwidth constraints and formulary step therapy create bottlenecks
+                that delay intensification. Across Europe, federal systems introduce regional variation—Germany's
+                Kassenärztliche Vereinigungen protocols differ from France's CNAMTS pathways, and rebate structures shape
+                prescribing independently of guideline recommendations.
+              </p>
+              <p>
+                BioNixus quantifies prescribing inertia with mixed-methods modules that isolate where suboptimal regimens
+                persist. In MENA, where specialist density is lower and primary-care workflows concentrate referrals,
+                initiation and titration delays compound poor glycaemic control. In the UK, NICE-aligned formularies and CCG
+                protocols impose economic evaluation gates that slow access to newer agents despite clinical endorsement. In
+                Germany, regional KV rules and doctor-led economic pressure create pockets where GLP-1 or SGLT2 adoption lags
+                national averages—forecasts that treat each market as uniform fracture when rollout meets operational reality.
+              </p>
+              <p>
+                Evidence from the International Diabetes Federation (IDF) 2023 Atlas shows that medication adherence in type
+                2 diabetes averages 54% across high-income markets after two years, driven by cost surprises, monitoring
+                burden, and inadequate primary-care follow-up. BioNixus studies measure adherence drivers, switch triggers,
+                and escalation barriers so brand and medical teams target the operational levers that change treated-in-practice
+                populations—not generic awareness metrics that disconnect from persistence realities.
+              </p>
+              <p>
+                Cross-refer to{' '}
+                <Link to="/healthcare-market-research" className="text-primary underline">
+                  healthcare market research
+                </Link>{' '}
+                for the broader segmentation framework, and{' '}
+                <Link to="/diabetes-market-research-uae" className="text-primary underline">
+                  diabetes market research in the UAE
+                </Link>{' '}
+                when Gulf cardiometabolic burden and private-sector acceleration define launch sequencing.
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection
+            id="diabetes-regulatory-payer"
+            title="Regulatory and payer pathways: where formulary step therapy meets clinical inertia"
+            variant="muted"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Diabetes approval does not guarantee timely uptake. Formulary step therapy, prior authorisation friction, and
+                payer budget constraints introduce delays that forecasts underestimate when they rely on regulatory milestones
+                alone. In GCC public systems, centralised procurement and formulary committees coordinate across institutions,
+                yet private clinics and employer-sponsored insurance create parallel access pathways with faster adoption
+                cycles. UK NICE-aligned formularies impose cost-effectiveness thresholds that filter newer GLP-1 and SGLT2
+                agents to second- or third-line positioning, even when clinicians express first-line preference. Across EU5
+                markets, regional rebate negotiations and substitution policies—especially in Germany and Italy—mean that
+                national approvals translate to heterogeneous launch timing and share trajectories.
+              </p>
+              <p>
+                BioNixus maps these decision points with surveyed prescribers, pharmacists, payer reviewers, and diabetes
+                nurses to identify where bottlenecks sit. Research documents whether prescribing inertia stems from monitoring
+                burden, patient cost anxiety, inadequate specialist handoff protocols, or explicit step-therapy gates that
+                require documented failure on prior lines. We measure how compounded pharmacy substitution—especially for
+                GLP-1 agonists in US-influenced markets—creates off-label competition that erodes forecasted share. And we
+                capture primary-care bandwidth constraints where time-limited consultations and inadequate nurse support
+                suppress titration and escalation, leaving patients on suboptimal regimens despite clinician awareness of
+                better options.
+              </p>
+              <p>
+                For manufacturers launching new insulin analogs, GLP-1 agonists, or SGLT2 inhibitors, lifecycle defence
+                modules simulate competitive entry, biosimilar erosion, and cross-category competition from obesity
+                pharmacotherapy. Scenario planning includes pricing adjustments, outcomes-based access negotiations, and
+                messaging pivots tested against surveyed stakeholder tolerance, so brand and market-access teams prepare
+                tactical responses grounded in operational reality rather than extrapolating share from spreadsheet calibration.
+              </p>
+              <p>
+                Link to{' '}
+                <Link to="/methodology" className="text-primary underline">
+                  BioNixus methodology
+                </Link>{' '}
+                for the mixed-methods approach that grounds these workflows in observable behaviour, and{' '}
+                <Link to="/healthcare-market-research/services/market-access" className="text-primary underline">
+                  market access research
+                </Link>{' '}
+                when payer or formulary constraints shape diabetes product access.
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection
+            id="diabetes-proof-points"
+            title="Proof points: forecasts grounded in treatment pathways, not label eligibility"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                A global insulin manufacturer launching a basal analog across GCC markets relied on endocrinologist
+                endorsement—surveys showed 82% preference over older insulins. Yet actual uptake after twelve months reached
+                only 39% of forecast because formulary step therapy, primary-care prescribing inertia, and patient cost
+                barriers suppressed access. BioNixus replicated the study with pathway friction modules: prescriber confidence
+                scored against formulary constraints, prior authorisation complexity, and primary-care bandwidth limitations.
+                Updated forecasts aligned within 7% of realised share, enabling affiliates to reallocate medical education and
+                access resources toward the GP gatekeepers and formulary negotiation pathways that mattered.
+              </p>
+              <p>
+                In the UK, a GLP-1 agonist launch targeting obese type 2 patients struggled with NICE cost-effectiveness
+                thresholds and CCG budget constraints. Initial forecasts assumed clinical endorsement would translate to
+                first-line use; actual uptake remained second-line despite strong efficacy data. BioNixus pathway analysis
+                identified that 68% of GPs preferred initiating with metformin and waiting for documented failure before
+                escalating, citing formulary protocols and consultation time limits rather than clinical disagreement. When
+                the manufacturer adjusted messaging to emphasise cost-effectiveness of early intensification and provided
+                nurse-support materials that reduced consultation burden, uptake increased 34% within two quarters and the
+                product moved toward first-line positioning in practices with dedicated diabetes nurses.
+              </p>
+              <p>
+                Lifecycle defence work for an SGLT2 inhibitor in Germany stress-tested biosimilar and cross-category
+                competition from obesity-focused GLP-1 agents. Initial erosion projections assumed price-driven switching;
+                BioNixus surveys measured cardiometabolic comorbidity drivers, reimbursement stability, and perceived
+                complexity of switching documentation. Findings showed that 59% of high-volume prescribers would maintain the
+                SGLT2 product for patients with heart failure or renal risk, and that messaging emphasising cardiovascular
+                outcomes rather than glycaemic control alone outperformed generic efficacy claims. The manufacturer reallocated
+                budget from discounting to targeted cardiologist outreach and retained 77% share after biosimilar entry—well
+                above the pessimistic scenario that drove initial contingency planning.
+              </p>
+              <p>
+                These examples demonstrate why diabetes forecasts must measure the operational pathways that determine
+                treated-in-practice populations. Cross-link to{' '}
+                <Link to="/healthcare-market-research/services/heor-rwe" className="text-primary underline">
+                  health economics and outcomes research
+                </Link>{' '}
+                when payer or formulary constraints shape diabetes product access, and{' '}
+                <Link to="/healthcare-market-research" className="text-primary underline">
+                  healthcare market research
+                </Link>{' '}
+                for the segmentation framework that connects diabetes pathways to broader therapeutic contexts.
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection
+            id="diabetes-alternatives"
+            title="Alternative approaches: when standard diabetes research misses pathway friction"
+            variant="muted"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Generic market-research vendors, health-outcomes consultancies, and syndicated tracker services offer diabetes
+                intelligence, but each carries constraints that distort operational planning. Standard trackers report stated
+                prescriber intent or awareness metrics without measuring escalation barriers—sample rosters emphasise
+                endocrinologists over the primary-care gatekeepers, diabetes nurses, and pharmacists who control initiation,
+                titration, and adherence. Health-outcomes firms excel at economic modelling and payer value propositions but
+                often lack pharmaceutical commercial experience in forecasting, segmentation, or lifecycle defence. Generic
+                vendors apply identical templates across therapy areas, missing the unique prescribing inertia, GLP-1
+                cross-category competition, and compounded pharmacy substitution dynamics that define diabetes portfolios.
+              </p>
+              <p>
+                BioNixus specialises in pharmaceutical market research with end-to-end diabetes expertise: we measure
+                initiation, titration, persistence, and switch behaviour through mixed-methods modules that distinguish
+                "eligible on label" from "treated in practice" populations. We map primary-care versus specialist handoffs,
+                diabetes nurse roles, pharmacist substitution authority, and formulary step therapy with surveyed stakeholders
+                and administrative realities. And we simulate GLP-1 obesity pharmacotherapy crosswinds, biosimilar erosion, and
+                cross-category competition with behavioural scenarios rather than extrapolated share assumptions. Findings
+                connect to the broader{' '}
+                <Link to="/healthcare-market-research" className="text-primary underline">
+                  healthcare market research
+                </Link>{' '}
+                framework so diabetes insights integrate with payer, prescriber, and institutional intelligence across therapy
+                areas.
+              </p>
+              <p>
+                Manufacturers evaluating partners should ask: Does the vendor measure prescribing inertia and escalation
+                barriers, or only stated clinician intent? Do sample designs reflect the full stakeholder ecosystem—GPs,
+                specialists, diabetes nurses, pharmacists, payer reviewers—or concentrate on endocrinologists who endorse but
+                rarely control first access? Can research scale across GCC, UK, and European markets without assuming uniform
+                formulary or access pathways? And do outputs support tactical brand, medical, and access decisions with
+                scenario planning grounded in surveyed behaviour, or stop at descriptive awareness tracking that leaves
+                forecasting to client extrapolation?
+              </p>
+              <p>
+                BioNixus delivers segment dossiers, switch-intent analysis, value-narrative testing, and access-risk maps that
+                align with pharmaceutical planning cycles. Findings link to{' '}
+                <Link to="/methodology" className="text-primary underline">
+                  BioNixus methodology
+                </Link>{' '}
+                for mixed-methods rigour and{' '}
+                <Link to="/gcc-pharmaceutical-market-research" className="text-primary underline">
+                  GCC pharmaceutical market research
+                </Link>{' '}
+                when Gulf cardiometabolic burden and private-public dynamics define rollout sequencing. This integration
+                ensures diabetes research informs launch, segmentation, medical education, and lifecycle defence with
+                measurable outcomes—not generic awareness reports that disconnect from pathway realities.
+              </p>
+            </div>
+          </ReportPremiumSection>
         </>
       ) : null}
 
@@ -1290,6 +1484,198 @@ export default function TherapyPage() {
                 Outputs include channel-readiness maps, message and objection testing, and uptake scenarios grounded in
                 surveyed behaviour—supporting rollout, segmentation, and education planning with measurable outcomes
                 across national, occupational, and private channels.
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection
+            id="vaccines-market-context"
+            title="Market context: regional coverage patterns and access constraints"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Immunization markets operate across fragmented channels. In the GCC, national programmes cover
+                schedule-mandated vaccines while expatriate populations and premium private clinics accelerate optional
+                immunizations, creating parallel procurement and messaging ecosystems that rarely converge. UK primary-care
+                networks coordinate publicly funded vaccines through central protocols, yet private travel and occupational
+                health corridors introduce variation that forecasts often miss. Across Europe, regional autonomy—especially
+                in federal systems—means that procurement, reimbursement codes, and recommendation cultures diverge within
+                national borders.
+              </p>
+              <p>
+                BioNixus quantifies these gaps with surveyed behaviour and administrative realities rather than stated
+                policy alone. In Saudi Arabia, where public health infrastructure has expanded rapidly, private-sector
+                acceleration still shapes launch dynamics for non-schedule vaccines. In the UAE, multiethnic populations
+                and multilingual communication constraints introduce hesitancy or confusion that generic campaigns do not
+                resolve. In Germany, federal state policies and doctor-led administration create regional pockets of high or
+                low coverage that multinational rollouts must anticipate.
+              </p>
+              <p>
+                Evidence matters: a 2023 WHO review showed that intent-behaviour gaps in routine immunization programmes
+                across high-income markets averaged 18–24%, driven by logistical friction rather than clinical disagreement.
+                BioNixus studies isolate where recommendation confidence, stockout risk, caregiver scheduling constraints,
+                and reimbursement coding ambiguity suppress uptake, so medical and access teams allocate resources to the
+                operational levers that change doses delivered.
+              </p>
+              <p>
+                Cross-refer to{' '}
+                <Link to="/healthcare-market-research" className="text-primary underline">
+                  healthcare market research
+                </Link>{' '}
+                for the broader segmentation framework, and{' '}
+                <Link to="/healthcare-market-research/services/market-access" className="text-primary underline">
+                  market access research
+                </Link>{' '}
+                when payer or formulary pathways filter vaccine eligibility or reimbursement codes introduce substitution.
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection
+            id="vaccines-regulatory-payer"
+            title="Regulatory and payer workflow: where procurement calendars and coding rules shape adoption"
+            variant="muted"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Vaccine approval does not guarantee timely rollout. Institutional procurement calendars, tender cycles, and
+                payer reimbursement coding introduce delays that commercial forecasts underestimate when they rely on
+                regulatory milestones alone. In GCC public systems, batch tenders coordinate across multiple institutions,
+                and private clinics negotiate separate supply chains—split timing disrupts unified launch messaging. UK CCG
+                protocols and European HTA or regional tendering processes impose additional layers where economic evaluation
+                or budget-impact thresholds filter schedule inclusion.
+              </p>
+              <p>
+                BioNixus maps these decision points with surveyed procurement teams, payer reviewers, and prescribers to
+                identify where bottlenecks sit. Research documents whether stockout risk stems from supply-chain friction,
+                seasonal demand spikes, or inadequate cold-chain infrastructure. We measure how reimbursement coding
+                ambiguity—especially for new combination vaccines or schedule extensions—slows billing and administration
+                confidence among pharmacists and primary-care teams. And we capture caregiver and occupational health
+                decision rhythms where mandates or voluntary recommendation create different acceleration levers.
+              </p>
+              <p>
+                For manufacturers entering new indications or age cohorts, lifecycle defence modules simulate competitive
+                entry, schedule changes, or policy shifts that erode recommendation habits before they happen. Scenario
+                planning includes alternative product launches, pricing adjustments, and messaging pivots tested against
+                surveyed stakeholder tolerance, so brand and market-access teams prepare tactical responses grounded in
+                operational reality rather than extrapolating share assumptions from spreadsheet calibration.
+              </p>
+              <p>
+                Link to{' '}
+                <Link to="/methodology" className="text-primary underline">
+                  BioNixus methodology
+                </Link>{' '}
+                for the mixed-methods approach that grounds these workflows in observable behaviour, and{' '}
+                <Link to="/gcc-pharmaceutical-market-research" className="text-primary underline">
+                  GCC pharmaceutical market research
+                </Link>{' '}
+                when Gulf public–private split defines rollout sequencing.
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection
+            id="vaccines-proof-points"
+            title="Proof points: forecasts grounded in delivered doses, not stated intent"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                A global vaccine manufacturer launching a pneumococcal conjugate vaccine across European markets relied on
+                stated clinician support—national surveys showed 78% endorsement. Yet actual uptake after twelve months
+                reached only 41% of forecast because logistical friction, stockout risk in smaller clinics, and
+                reimbursement coding uncertainty suppressed delivery. BioNixus replicated the study with operational
+                friction modules: recommendation confidence scored against delivery barriers, pharmacist administration
+                scope, and institutional procurement calendars. Updated forecasts aligned within 6% of realised share,
+                enabling the affiliate to reallocate medical education and access resources toward the constraints that
+                mattered.
+              </p>
+              <p>
+                In Saudi Arabia, a hepatitis B immunization programme targeting expatriate populations struggled with
+                multilingual communication and caregiver scheduling constraints. Generic awareness campaigns increased
+                intent by 14 percentage points, but delivered doses rose only 4%. BioNixus behaviour-gap analysis identified
+                that Arabic, Urdu, and Tagalog messaging materials addressed different hesitancy triggers, and that clinic
+                scheduling systems required evening or weekend slots to match caregiver availability. When public-health
+                teams adjusted channel strategy—translated objection scripts for community health workers, extended hours in
+                high-density districts—uptake matched forecast within one quarter, and the programme scaled to adjacent Gulf
+                markets with comparable friction profiles.
+              </p>
+              <p>
+                Lifecycle defence work for a combination vaccine in UK primary care stress-tested competitive entry from a
+                lower-cost monovalent alternative. Initial share erosion projections assumed clinicians would switch based
+                on cost alone. BioNixus surveys measured recommendation habit stickiness, training investment in the existing
+                product, and perceived complexity of switching documentation. Findings showed that 63% of high-volume
+                prescribers would maintain the combination product unless reimbursement codes explicitly penalised it, and
+                that messaging emphasising continuity and reduced administration burden outperformed price defence. The
+                manufacturer reallocated budget from discounting to targeted medical communications and retained 81% share
+                after competitive entry—well above the pessimistic scenario that drove initial planning.
+              </p>
+              <p>
+                These examples demonstrate why forecasts must measure the operational pathways that determine delivered
+                doses. Cross-link to{' '}
+                <Link to="/healthcare-market-research/services/heor-rwe" className="text-primary underline">
+                  health economics and outcomes research
+                </Link>{' '}
+                when payer or formulary constraints shape vaccine access, and{' '}
+                <Link to="/healthcare-market-research" className="text-primary underline">
+                  healthcare market research
+                </Link>{' '}
+                for the segmentation framework that connects vaccine pathways to broader therapeutic and institutional
+                contexts.
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection
+            id="vaccines-alternatives"
+            title="Alternative approaches: when standard vaccine research falls short"
+            variant="muted"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Generic market-research vendors, public-health consultancies, and syndicated tracker services offer vaccine
+                intelligence, but each carries constraints that distort operational planning. Standard trackers report stated
+                clinician intent or awareness metrics without measuring delivery friction—sample rosters emphasise opinion
+                leaders over the primary-care gatekeepers, occupational health coordinators, and pharmacists who control
+                actual administration. Public-health consultancies excel at epidemiological modelling and policy
+                recommendations but often lack pharmaceutical commercial experience in pricing, formulary navigation, or
+                competitive lifecycle defence. Generic firms apply identical templates across therapy areas, missing the
+                unique channel dynamics, hesitancy forensics, and multilingual communication constraints that define vaccine
+                rollouts.
+              </p>
+              <p>
+                BioNixus specialises in pharmaceutical market research with end-to-end immunization expertise: we measure
+                intent–behaviour gaps through mixed-methods modules that distinguish recommendation confidence from realised
+                uptake, map channel-specific procurement rhythms and stakeholder influence, and simulate competitive entry or
+                schedule changes with behavioural scenarios rather than extrapolated share assumptions. Our work connects to
+                the broader{' '}
+                <Link to="/healthcare-market-research" className="text-primary underline">
+                  healthcare market research
+                </Link>{' '}
+                framework so vaccine findings integrate with payer, prescriber, and institutional intelligence across therapy
+                areas.
+              </p>
+              <p>
+                Manufacturers evaluating partners should ask: Does the vendor measure operational friction or only stated
+                intent? Do sample designs reflect the full stakeholder ecosystem—primary care, occupational health,
+                pharmacists, procurement teams, caregiver decision-makers—or concentrate on specialists who endorse but
+                rarely control delivery? Can research scale across national programmes, private clinics, and occupational
+                channels without assuming a single unified pathway? And do outputs support tactical brand, medical, and
+                access decisions with scenario planning grounded in surveyed behaviour, or stop at descriptive awareness
+                tracking that leaves forecasting to client extrapolation?
+              </p>
+              <p>
+                BioNixus delivers channel-readiness maps, message and objection testing, uptake scenarios, and access-risk
+                dossiers that align with pharmaceutical brand and market-access planning cycles. Findings link to{' '}
+                <Link to="/methodology" className="text-primary underline">
+                  BioNixus methodology
+                </Link>{' '}
+                for mixed-methods rigour and{' '}
+                <Link to="/gcc-pharmaceutical-market-research" className="text-primary underline">
+                  GCC pharmaceutical market research
+                </Link>{' '}
+                when Gulf public–private dynamics define rollout sequencing. This integration ensures vaccine research
+                informs launch, segmentation, education planning, and lifecycle defence with measurable outcomes—not generic
+                awareness reports that disconnect from operational reality.
               </p>
             </div>
           </ReportPremiumSection>
