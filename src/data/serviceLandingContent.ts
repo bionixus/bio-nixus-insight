@@ -46,6 +46,10 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
       paragraphs: [
         ...GCC_REGULATORY_PARAS,
         'Real-world evidence in the GCC is increasingly used to supplement clinical trial data for payer negotiations, label extensions, and treatment-pathway optimization. Studies must document data provenance, cohort definitions, and analytical assumptions clearly enough for medical affairs and access teams to defend outputs in committee settings.',
+        'The regulatory landscape for RWE acceptance varies significantly across GCC markets. While SFDA\'s EES framework explicitly integrates pharmacoeconomic and RWE inputs, other Gulf regulators maintain more flexible guidance. This creates both opportunity and complexity: manufacturers must anticipate how RWE will be weighted in formulary decisions even when formal HTA pathways remain under development.',
+        'Hospital-based retrospective studies face data-governance hurdles that clinical teams often underestimate. MOH research permits, institutional review board approvals, and data-use agreements stack sequentially — not in parallel — meaning feasibility timelines extend by weeks when site access is not pre-mapped. BioNixus maintains relationships with major public and private networks across the GCC, reducing the lead time to ethics and data approvals.',
+        'Cross-border RWE programs require harmonized protocols that preserve comparability while respecting country-level ethics and regulatory nuances. A chart-review template validated in Saudi Arabia may need modification for UAE emirate authorities or Kuwait hospital committees. Retrofitting protocols mid-program introduces bias risk and delays; BioNixus architects harmonized frameworks before fieldwork begins, not after datasets arrive incomplete.',
+        'RWE credibility in payer settings depends on transparent limitations and sensitivity analyses. Committees expect to see what assumptions changed when missing data or eligibility deviations occurred. Programs that present only best-case scenarios rarely survive second-round scrutiny, especially when budget impact is material. BioNixus documents every protocol deviation and analytical choice so sponsors can defend outputs under challenge.',
       ],
     },
     marketContext: {
@@ -55,6 +59,11 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
         'Post-marketing surveillance expectations and pharmacovigilance integration vary by country but are tightening across the Gulf. RWE programs that capture treatment patterns, switching behaviour, and safety signals in local populations help medical teams stay ahead of regulator and payer questions.',
         'Many manufacturers run parallel GCC cells within global RWE mandates. BioNixus aligns protocol design, quality governance, and readout formats so Saudi, UAE, and smaller Gulf markets roll up cleanly for regional leadership without losing local execution realism.',
         'Against global syndicated vendors, BioNixus differentiates on GCC-native fieldwork, bilingual execution, access and HEOR depth, and proposal speed — scoped to the decision in front of you rather than a subscription dashboard that averages away country nuance.',
+        'The commercial case for RWE strengthens when therapeutic areas face crowded competition or payer skepticism. Oncology and immunology launches in Saudi Arabia increasingly require post-approval observational modules to demonstrate durability and real-world utilization patterns that trials cannot replicate. Without local RWE, market-access teams negotiate with trial endpoints alone — a weaker position when NUPCO or large hospital groups seek budget-impact reassurance tailored to GCC epidemiology and treatment protocols.',
+        'Patient recruitment complexity in GCC markets elevates the value of fit-for-purpose RWE design. Rare diseases, specialist-managed chronic conditions, and hospital-based biologics often concentrate in a small number of facilities across each country. BioNixus maps therapy-specific patient flow before committing to cohort targets, ensuring feasibility reflects actual Gulf prescribing networks rather than idealized panel assumptions borrowed from European or North American programs.',
+        'Integration between RWE and health economics is increasingly expected rather than optional. SFDA EES submissions benefit when budget-impact models draw from locally observed treatment sequences and resource use rather than extrapolated global assumptions. BioNixus structures RWE outputs — line items, pathway durations, switching rates — so HEOR teams can populate economic models without re-fielding primary data. This dual-use design reduces cost and accelerates payer-ready evidence production.',
+        'Gulf regulators and payers are moving away from passive acceptance of global RWE toward active validation of local applicability. When an RWE dataset claims GCC relevance but recruitment occurred entirely in the Levant or North Africa, access teams face objection that the cohort does not reflect Saudi or Emirati healthcare infrastructure. BioNixus executes all fieldwork within the GCC countries where results will be used, maintaining protocol integrity across Kuwait, Qatar, Bahrain, and Oman alongside Saudi Arabia and the UAE.',
+        'For manufacturers with both innovator and biosimilar portfolios, GCC RWE provides a competitive differentiator beyond pricing alone. Switching studies, persistence analyses, and comparative effectiveness modules built on local patient cohorts allow medical and access teams to document safety and treatment outcomes in settings that matter to Gulf prescribers and formulary committees. These outputs support both initial uptake and lifecycle defense when next-generation therapies or biosimilar entrants shift market dynamics.',
       ],
     },
     services: {
@@ -63,32 +72,42 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
         {
           title: 'Fit-for-purpose RWE study design',
           description:
-            'Protocol scoping aligned to one decision objective — payer dossier support, pathway optimization, or lifecycle extension — with explicit cohort and endpoint definitions.',
+            'Protocol scoping aligned to one decision objective — payer dossier support, pathway optimization, or lifecycle extension — with explicit cohort and endpoint definitions. Design frameworks integrate learnings from comparable healthcare market research programs across GCC markets to anticipate feasibility constraints and regulatory requirements before fieldwork begins.',
         },
         {
           title: 'Retrospective chart review and EMR-linked modules',
           description:
-            'Facility-level data extraction where governance permits, with transparent inclusion criteria and missing-data handling documented for audit.',
+            'Facility-level data extraction where governance permits, with transparent inclusion criteria and missing-data handling documented for audit. BioNixus maintains relationships with major public and private hospital networks across the GCC, reducing lead time to ethics approvals and data-use agreements.',
         },
         {
           title: 'Prospective observational cohorts',
           description:
-            'Specialist-recruited cohorts with incidence-aware sampling and daily QC when primary data collection is required.',
+            'Specialist-recruited cohorts with incidence-aware sampling and daily QC when primary data collection is required. Fieldwork architecture mirrors GCC pharmaceutical market research quality standards with role verification, duplicate checks, and eligibility validation throughout active field.',
         },
         {
           title: 'RWE-to-HEOR bridge modules',
           description:
-            'Outputs structured to feed budget-impact models, cost-effectiveness narratives, and SFDA EES submissions where applicable.',
+            'Outputs structured to feed budget-impact models, cost-effectiveness narratives, and SFDA EES submissions where applicable. BioNixus designs data collection and analysis frameworks so utilization metrics, treatment durations, and resource-use patterns populate economic models without re-fielding primary data.',
         },
         {
           title: 'Patient-reported and clinician-reported outcomes',
           description:
-            'Validated instruments adapted for Arabic–English fieldwork with cognitive debriefing before launch.',
+            'Validated instruments adapted for Arabic–English fieldwork with cognitive debriefing before launch. Patient journey modules capture adherence barriers, switching behaviour, and treatment satisfaction in Gulf contexts where cultural and access factors differ from global trial populations.',
         },
         {
           title: 'Cross-GCC harmonization and roll-up',
           description:
-            'Comparable metrics across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman with country-specific appendices.',
+            'Comparable metrics across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman with country-specific appendices. Protocol architecture preserves analytical comparability while respecting regulatory and institutional differences, enabling regional evidence summaries without compromising local validity.',
+        },
+        {
+          title: 'Switching and comparative effectiveness modules',
+          description:
+            'Retrospective and prospective studies documenting treatment-sequence patterns, switching triggers, and persistence rates for biologics, biosimilars, and specialty therapeutics. Essential for lifecycle defense when next-generation therapies or biosimilar entrants shift market dynamics.',
+        },
+        {
+          title: 'Safety signal and pharmacovigilance context',
+          description:
+            'RWE programs that capture adverse events, treatment interruptions, and safety outcomes in local populations help medical teams stay ahead of regulator and payer questions beyond formal PMS requirements. Integration with Middle East market research infrastructure enables rapid fielding when safety concerns emerge.',
         },
       ],
     },
@@ -100,6 +119,11 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
         'Every engagement includes an audit-ready methodology appendix: data sources, cohort flow, statistical methods, and limitation statements written for medical, access, and compliance reviewers.',
         'When RWE feeds payer dossiers or SFDA EES submissions, analytical documentation is structured so health economics and medical affairs teams can reuse exhibits without rebuilding the narrative from scratch.',
         'Cross-functional readouts include commercial, medical, and access stakeholders in one session — reducing the risk that each function receives incompatible versions of the same evidence base.',
+        'Data-source triangulation becomes essential when hospital EMR access is partial or delayed. BioNixus maintains retrospective cohort protocols flexible enough to layer chart review with physician-reported outcomes and patient follow-up modules, ensuring the final dataset captures what payers and committees require for budget-impact validation.',
+        'GCC ethics and institutional review processes vary by facility ownership and country-level health authority. BioNixus pre-maps IRB timelines and data-use agreement requirements into feasibility so sponsors receive realistic launch windows before committing to hospital access-dependent programs.',
+        'Missing data is the rule rather than the exception in real-world cohorts. BioNixus documents every imputation, exclusion, or sensitivity assumption so medical affairs and access teams can defend the robustness of findings when formulary committees question cohort representativeness or dropout bias.',
+        'Integration between RWE and market access is increasingly non-negotiable. For SFDA EES-relevant therapeutics, BioNixus structures observational outputs so cost-effectiveness and budget-impact models can ingest local utilization, duration, and resource-use data without re-fielding primary research. This alignment reduces cycle time and evidence production cost.',
+        'Cross-border GCC studies require protocol harmonization that preserves country-level validity. A Saudi retrospective module may need adjustment for Kuwait institutional protocols or Qatar MOH ethics pathways. BioNixus architects frameworks that maintain analytical comparability while respecting regulatory and cultural nuance across Gulf markets.',
       ],
     },
     useCases: {
@@ -122,19 +146,23 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
       steps: [
         {
           title: 'Scope and feasibility',
-          body: 'Align on one decision objective, map data sources and recruitment feasibility, and lock protocol skeleton within two to three weeks.',
+          body: 'Align on one decision objective, map data sources and recruitment feasibility, and lock protocol skeleton within two to three weeks. Feasibility includes IRB timeline estimation, hospital access assessment, and incidence validation for rare or specialist cohorts. For programs requiring SFDA EES alignment, initial scoping confirms which RWE outputs will integrate with budget-impact or cost-effectiveness models downstream.',
+        },
+        {
+          title: 'Ethics and institutional approvals',
+          body: 'Secure MOH research permits, institutional review board approvals, and data-use agreements where hospital-based retrospective or prospective modules are scoped. BioNixus pre-maps facility-level ethics pathways and submits coordinated applications to reduce sequential approval delays. Cross-GCC programs handle country-level requirements in parallel while preserving protocol comparability.',
         },
         {
           title: 'Field and extraction',
-          body: 'Execute chart review, survey, or cohort modules with daily QC checkpoints and sponsor visibility.',
+          body: 'Execute chart review, survey, or cohort modules with daily QC checkpoints and sponsor visibility. Retrospective chart abstraction includes documented inclusion/exclusion logs, missing-data flagging, and role verification for clinician inputs. Prospective modules run with the same quality-funnel governance applied to primary pharmaceutical fieldwork — duplicate checks, speeder flags, and eligibility verification throughout active field.',
         },
         {
           title: 'Analysis and synthesis',
-          body: 'Run pre-specified analyses, document deviations, and draft stakeholder-ready summaries.',
+          body: 'Run pre-specified analyses, document deviations, and draft stakeholder-ready summaries. Every analytical decision — from imputation methods to cohort exclusions — is captured in the methodology appendix so medical affairs and access teams can defend outputs under committee challenge. Sensitivity analyses demonstrate robustness when missing data or protocol deviations occurred.',
         },
         {
           title: 'Activation readout',
-          body: 'Deliver insight deck, 30/60/90 action plan, and HEOR-ready exhibits where scoped.',
+          body: 'Deliver insight deck, 30/60/90 action plan, and HEOR-ready exhibits where scoped. Cross-functional presentations align commercial, medical, and access stakeholders on evidence interpretation so each function receives compatible messaging. For SFDA EES-relevant programs, outputs include structured data tables and limitation statements formatted for regulatory appendices.',
         },
       ],
     },
@@ -152,32 +180,42 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
       {
         question: 'What decisions can GCC RWE studies support?',
         answer:
-          'RWE programs support payer negotiations, launch sequencing, treatment pathway optimization, pharmacovigilance signal context, and lifecycle strategy decisions across GCC institutional settings.',
+          'RWE programs support payer negotiations, launch sequencing, treatment pathway optimization, pharmacovigilance signal context, and lifecycle strategy decisions across GCC institutional settings. Post-marketing observational modules help medical and access teams document durability, switching patterns, and real-world utilization in Gulf populations when trial endpoints alone cannot satisfy formulary committee requirements. For SFDA EES-aligned therapeutics, RWE outputs feed budget-impact models and cost-effectiveness narratives with locally observed resource use and treatment sequences.',
       },
       {
         question: 'How does BioNixus handle RWE quality governance?',
         answer:
-          'BioNixus applies protocol-level quality controls, transparent assumptions, pre-specified analysis plans, and clear analytical documentation so outputs can be trusted in high-stakes decisions.',
+          'BioNixus applies protocol-level quality controls, transparent assumptions, pre-specified analysis plans, and clear analytical documentation so outputs can be trusted in high-stakes decisions. Daily quality-funnel dashboards during active field catch eligibility issues, duplicate records, and cohort imbalances before datasets lock. Every analytical deviation — imputation, exclusion, sensitivity adjustment — is documented in audit-ready methodology appendices written for medical affairs, access, and compliance reviewers. This governance framework ensures RWE outputs survive committee scrutiny when budget impact is material.',
       },
       {
         question: 'Can GCC RWE outputs connect to HEOR and budget impact work?',
         answer:
-          'Yes. GCC RWE outputs are structured to feed HEOR narratives, budget-impact models, and market-access evidence packages — including SFDA EES-aligned modules where required.',
+          'Yes. GCC RWE outputs are structured to feed HEOR narratives, budget-impact models, and market-access evidence packages — including SFDA EES-aligned modules where required. BioNixus designs data collection frameworks so utilization metrics, treatment durations, switching rates, and resource-use patterns populate economic models without re-fielding primary data. This dual-use design reduces evidence production cost and accelerates payer-ready deliverables by eliminating rework between RWE and HEOR teams.',
       },
       {
         question: 'How long does a typical GCC RWE program take?',
         answer:
-          'Feasibility and protocol alignment often complete within two to three weeks. Full retrospective or prospective programs run on multi-week to multi-month cadences depending on cohort size, data access, and therapy scarcity.',
+          'Feasibility and protocol alignment often complete within two to three weeks. Full retrospective or prospective programs run on multi-week to multi-month cadences depending on cohort size, data access, and therapy scarcity. Hospital ethics approvals and institutional data-use agreements stack sequentially in many GCC settings, extending timelines when site access is not pre-mapped. BioNixus maintains relationships with major public and private networks across the Gulf to reduce lead time to approvals and active field. Rare disease or specialist cohorts may require longer recruitment windows; feasibility scoping provides realistic calendar estimates before protocol lock.',
       },
       {
         question: 'Does BioNixus run bilingual GCC fieldwork for RWE?',
         answer:
-          'Yes. Arabic–English screeners, instruments, moderation, and sponsor readouts are standard so local nuance is preserved while global teams receive harmonized insight packs.',
+          'Yes. Arabic–English screeners, instruments, moderation, and sponsor readouts are standard so local nuance is preserved while global teams receive harmonized insight packs. Cognitive debriefing on Arabic instruments ensures patient-reported outcome measures capture cultural and linguistic subtleties that affect adherence and treatment satisfaction. Clinician-facing modules account for language dominance variations across Gulf markets — English-first in many expatriate HCP settings, with Gulf Arabic capability maintained for Saudi and Emirati physician cohorts.',
       },
       {
         question: 'Which GCC countries does BioNixus cover for RWE?',
         answer:
-          'BioNixus executes RWE and observational modules across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman — as standalone country studies or harmonized multi-market programs.',
+          'BioNixus executes RWE and observational modules across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman — as standalone country studies or harmonized multi-market programs. Cross-border protocols preserve analytical comparability while respecting country-level ethics, regulatory, and institutional differences. Regional evidence summaries roll up cleanly for Gulf leadership without compromising local validity for country-specific payer negotiations or formulary submissions.',
+      },
+      {
+        question: 'How does BioNixus handle missing data in real-world cohorts?',
+        answer:
+          'Missing data is the rule rather than the exception in retrospective and prospective RWE. BioNixus documents every imputation, exclusion, or sensitivity assumption so medical affairs and access teams can defend robustness when formulary committees question cohort representativeness or dropout bias. Sensitivity analyses demonstrate how conclusions change under different missing-data scenarios, providing transparent evidence of analytical rigor. This approach is essential when budget-impact decisions carry high financial risk and payer scrutiny is expected.',
+      },
+      {
+        question: 'Can RWE programs integrate with primary market research fieldwork?',
+        answer:
+          'Yes. BioNixus fieldwork infrastructure supports layered evidence architectures where RWE cohorts, physician surveys, and qualitative depth interviews feed one integrated insight narrative. For example, a retrospective chart review can be supplemented with clinician-reported outcome modules and patient journey interviews to provide richer context than EMR data alone. This integration is especially valuable when hospital access is partial or when payer committees require triangulated evidence from multiple data sources.',
       },
     ],
   },
