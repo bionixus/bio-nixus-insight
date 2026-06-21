@@ -1,0 +1,105 @@
+{
+  "date": "2026-06-18",
+  "coverDir": "public/images/blog/bio435-day1",
+  "articles": [
+    {
+      "slug": "ema-hta-evidence-requirements-europe-2026",
+      "language": "en",
+      "country": "Europe",
+      "category": "Market Access",
+      "readingTime": 16,
+      "coverAlt": "EMA HTA evidence requirements for pharmaceutical market access in Europe 2026",
+      "coverTheme": "Market Access / Regulatory",
+      "coverTitle": "EMA HTA Evidence Guide 2026",
+      "coverSubtitle": "European pharmaceutical market access"
+    },
+    {
+      "slug": "fda-real-world-evidence-market-access-usa-2026",
+      "language": "en",
+      "country": "United States",
+      "category": "Real-World Evidence",
+      "readingTime": 16,
+      "coverAlt": "FDA real-world evidence for pharmaceutical market access in the United States 2026",
+      "coverTheme": "Real-World Evidence",
+      "coverTitle": "FDA RWE Market Access 2026",
+      "coverSubtitle": "United States pharmaceutical evidence"
+    },
+    {
+      "slug": "saudi-healthcare-market-research-guide-ar-2026",
+      "language": "ar",
+      "country": "Saudi Arabia",
+      "category": "Healthcare Market Research",
+      "readingTime": 16,
+      "coverAlt": "دليل أبحاث السوق الصحي في المملكة العربية السعودية 2026",
+      "coverTheme": "Healthcare Market Research",
+      "coverTitle": "أبحاث السوق الصحي السعودية",
+      "coverSubtitle": "SFDA و NUPCO 2026"
+    },
+    {
+      "slug": "pharmamarktforschung-deutschland-2026",
+      "language": "de",
+      "country": "Germany",
+      "category": "Pharmamarktforschung",
+      "readingTime": 16,
+      "coverAlt": "Pharmamarktforschung Deutschland AMNOG G-BA Evidenzanforderungen 2026",
+      "coverTheme": "Market Access / Regulatory",
+      "coverTitle": "Pharmamarktforschung DE 2026",
+      "coverSubtitle": "AMNOG und G-BA Evidenz"
+    },
+    {
+      "slug": "etudes-marche-pharmaceutique-france-2026",
+      "language": "fr",
+      "country": "France",
+      "category": "Études de marché",
+      "readingTime": 16,
+      "coverAlt": "Études de marché pharmaceutique en France HAS accès marché 2026",
+      "coverTheme": "Market Access / Regulatory",
+      "coverTitle": "Études de marché France",
+      "coverSubtitle": "HAS et accès au marché 2026"
+    },
+    {
+      "slug": "investigacion-mercado-farmaceutico-espana-2026",
+      "language": "es",
+      "country": "Spain",
+      "category": "Investigación de mercado",
+      "readingTime": 16,
+      "coverAlt": "Investigación de mercado farmacéutico en España guía acceso mercado 2026",
+      "coverTheme": "Market Access / Regulatory",
+      "coverTitle": "Investigación mercado España",
+      "coverSubtitle": "Acceso farmacéutico 2026"
+    },
+    {
+      "slug": "pesquisa-mercado-farmaceutico-brasil-anvisa-2026",
+      "language": "pt",
+      "country": "Brazil",
+      "category": "Pesquisa de mercado",
+      "readingTime": 18,
+      "coverAlt": "Pesquisa de mercado farmacêutico no Brasil ANVISA CONITEC 2026",
+      "coverTheme": "Market Access / Regulatory",
+      "coverTitle": "Pesquisa mercado Brasil",
+      "coverSubtitle": "ANVISA e CONITEC 2026"
+    },
+    {
+      "slug": "pharmaceutical-market-research-china-2026",
+      "language": "zh",
+      "country": "China",
+      "category": "Market Research",
+      "readingTime": 16,
+      "coverAlt": "2026年医药市场研究指南全球药企亚太证据策略",
+      "coverTheme": "Healthcare Market Research",
+      "coverTitle": "医药市场研究 2026",
+      "coverSubtitle": "亚太证据策略"
+    },
+    {
+      "slug": "farmacevticheskie-issledovaniya-rynka-2026",
+      "language": "ru",
+      "country": "Russia",
+      "category": "Market Research",
+      "readingTime": 16,
+      "coverAlt": "Фармацевтические исследования рынка методология доступ 2026",
+      "coverTheme": "Healthcare Market Research",
+      "coverTitle": "Исследования рынка 2026",
+      "coverSubtitle": "Фарма и доступ на рынок"
+    }
+  ]
+}

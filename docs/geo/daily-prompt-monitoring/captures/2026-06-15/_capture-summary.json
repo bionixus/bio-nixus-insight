@@ -1,0 +1,22 @@
+{
+  "captured": 0,
+  "blocked": 3,
+  "errors": 0,
+  "items": [
+    {
+      "key": "BIO222-01|chatgpt",
+      "blocked": true,
+      "score": ""
+    },
+    {
+      "key": "BIO222-01|gemini",
+      "blocked": true,
+      "score": ""
+    },
+    {
+      "key": "BIO222-01|claude",
+      "blocked": true,
+      "score": ""
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-06-14T16:53:41.743Z",
+  "loginAttempted": true,
+  "loginSucceeded": false,
+  "aboutUrl": "https://www.linkedin.com/company/bionixus/about/",
+  "openingLineMatch": false,
+  "specialtiesMatch": false,
+  "specialtiesFound": [],
+  "specialtiesMissing": [],
+  "screenshotPath": "/Users/selim/.paperclip/instances/default/projects/d5ad71d4-38e1-4c76-9fe6-035bf40b13a1/3a6c5a72-49ca-4dca-b2e9-e27ce5bb469a/_default/state/linkedin-verify/linkedin-login-failed.png",
+  "error": "Login failed — still on login page",
+  "pageTitle": null,
+  "finalUrl": "https://www.linkedin.com/login/"
+}

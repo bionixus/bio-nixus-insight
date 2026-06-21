@@ -1,0 +1,4523 @@
+<!DOCTYPE html>
+<!-- GOLD-STANDARD TEMPLATE · proposal · pharma/diagnostics MR · BIO-239
+     Clone for new proposals. Replace client/topic copy. Route terms to GC before send.
+     Spec: deliverables/html/DESIGN-SPEC.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BioNixus — {{TOPIC}} | {{CLIENT}} {{YEAR}}</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════
+   BioNixus proposal design system
+   Navy #002244 · Brand blue #0069A3 · Steel #4A6FA5
+   Warm Off-White #FAFAF8 · Cool White #F5F6F8
+   Accent Gold #C8963E · Black #0A0A0A
+═══════════════════════════════════════════════ */
+:root {
+  --navy:        #002244;
+  --navy-deep:   #001833;
+  --blue:        #0069A3;
+  --blue-light:  #3A8BC0;
+  --steel:       #4A6FA5;
+  --gold:        #B8862D;
+  --gold-light:  #D4A84B;
+  --off-white:   #FAFAF8;
+  --cool-white:  #F3F5F7;
+  --light-blue:  #E4EEF7;
+  --rule:        #D0D6DE;
+  --text:        #152232;
+  --text-soft:   #3D4A5C;
+  --text-muted:  #6B7684;
+  --black:       #0A0A0A;
+  --paper:       #FDFCFA;
+  --paper-screen:#FFFFFF;
+  --shadow-sm:   0 1px 2px rgba(0, 34, 68, 0.04);
+  --shadow-md:   0 8px 32px -4px rgba(0, 34, 68, 0.1), 0 2px 8px rgba(0, 34, 68, 0.04);
+  --shadow-lg:   0 24px 64px -12px rgba(0, 34, 68, 0.14), 0 12px 24px rgba(0, 34, 68, 0.06);
+  --radius:      3px;
+
+  --serif:       'EB Garamond', Georgia, serif;
+  --sans:        'Barlow', -apple-system, sans-serif;
+  --cond:        'Barlow Condensed', sans-serif;
+  --mono:        'IBM Plex Mono', 'Courier New', monospace;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+::selection {
+  background: rgba(0, 105, 163, 0.18);
+  color: var(--navy);
+}
+
+body {
+  background:
+    radial-gradient(ellipse 120% 80% at 50% -20%, rgba(0, 105, 163, 0.06) 0%, transparent 55%),
+    linear-gradient(165deg, #dce3eb 0%, #e8ecf0 45%, #e2e6ec 100%);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 13.5px;
+  line-height: 1.65;
+  font-feature-settings: "kern" 1, "liga" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.document { margin-bottom: 56px;
+  max-width: 920px;
+  margin: 32px auto 40px;
+  background: var(--paper-screen);
+  border: 1px solid rgba(0, 34, 68, 0.07);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm), var(--shadow-lg);
+}
+.document > :first-child {
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+}
+.document > :last-child {
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+}
+
+/* Shared page layout — compact for screen + PDF */
+.page {
+  padding: 48px 56px;
+  position: relative;
+  page-break-after: always;
+  min-height: 920px;
+  background: var(--paper);
+  border-bottom: 1px solid rgba(0, 34, 68, 0.04);
+}
+.page:last-child {
+  border-bottom: none;
+  page-break-after: auto;
+}
+
+.page-rule {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+  gap: 12px;
+}
+.page-rule::before {
+  content: '';
+  width: 48px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 70%, rgba(212, 168, 75, 0.35) 100%);
+}
+.page-rule-text {
+  font-family: var(--cond);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.page-footer {
+  position: absolute;
+  bottom: 22px;
+  left: 56px;
+  right: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 8px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--cond);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.page-footer .brand { color: var(--navy); font-weight: 600; }
+
+h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; color: var(--navy); }
+
+/* ═══════════════════════════════════════════════
+   COVER — single surface, premium print fit
+═══════════════════════════════════════════════ */
+.cover {
+  background:
+    radial-gradient(ellipse 100% 80% at 50% -8%, rgba(255, 255, 255, 0.04) 0%, transparent 45%),
+    linear-gradient(168deg, rgba(212, 168, 75, 0.08) 0%, transparent 38%),
+    linear-gradient(145deg, #000510 0%, #001a2e 22%, #002244 46%, #063558 72%, #071f3a 100%);
+  color: #fff;
+  min-height: 920px;
+  padding: 44px 52px 48px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow:
+    inset 0 0 0 1px rgba(212, 168, 75, 0.18),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+    inset 0 0 100px rgba(0, 6, 14, 0.42);
+}
+
+.cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 58% at 90% 10%, rgba(212, 168, 75, 0.2) 0%, transparent 52%),
+    radial-gradient(ellipse 70% 52% at 6% 92%, rgba(0, 105, 163, 0.22) 0%, transparent 48%),
+    radial-gradient(ellipse 55% 40% at 48% 72%, rgba(0, 105, 163, 0.06) 0%, transparent 58%),
+    repeating-linear-gradient(
+      -18deg,
+      transparent,
+      transparent 31px,
+      rgba(255, 255, 255, 0.022) 31px,
+      rgba(255, 255, 255, 0.022) 32px
+    );
+  pointer-events: none;
+}
+
+.cover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 52%;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 4, 12, 0.78) 100%);
+  pointer-events: none;
+}
+
+.cover-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.cover-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 42px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.16);
+  background: linear-gradient(180deg, rgba(255,255,255,0.045) 0%, transparent 100%);
+}
+
+/* Cover header lockup (aligned with nilewood-mdf-proposal.html) */
+.cover .clogorow { display: flex; align-items: center; gap: 16px; }
+.cover .clogosvg { width: 50px; height: 50px; flex-shrink: 0; filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.35)); }
+.clogorow { display: flex; align-items: center; gap: 14px; }
+.clogosvg { width: 46px; height: 46px; flex-shrink: 0; }
+.clogoname-wrap { display: flex; flex-direction: column; }
+.cover .clogoname {
+  font-size: 23px;
+  letter-spacing: 0.22em;
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(90deg, rgba(212, 168, 75, 0.95) 0%, rgba(212, 168, 75, 0.25) 70%, transparent 100%) 1;
+  padding-bottom: 4px;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+}
+.clogoname {
+  font-family: var(--cond);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #fff;
+  display: inline-block;
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgba(212, 168, 75, 0.45);
+}
+.clogosub {
+  font-size: 8px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 5px;
+  font-weight: 300;
+}
+
+.cover-ref {
+  flex-shrink: 0;
+  text-align: right;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: rgba(255,255,255,0.58);
+  letter-spacing: 0.35px;
+  line-height: 1.75;
+  padding: 12px 16px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  background: rgba(0, 8, 22, 0.42);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+.cover-ref strong { color: rgba(255,255,255,0.92); font-weight: 600; letter-spacing: 2px; }
+
+.cover-body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px 36px;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.cover-hero {
+  flex: 1 1 280px;
+  max-width: min(720px, 100%);
+  min-width: 0;
+  position: relative;
+  padding-left: 24px;
+}
+.cover-hero::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  bottom: 0.15em;
+  width: 4px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, var(--gold-light) 0%, rgba(0, 105, 163, 0.65) 42%, var(--gold) 100%);
+  box-shadow: 0 0 24px rgba(212, 168, 75, 0.28);
+  opacity: 0.95;
+}
+.cover-seal {
+  flex: 0 0 auto;
+  width: 168px;
+  max-width: 36vw;
+  opacity: 0.97;
+  filter: drop-shadow(0 18px 38px rgba(0, 0, 0, 0.42));
+}
+.cover-seal svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.cover-eyebrow {
+  font-family: var(--cond);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: rgba(240, 200, 105, 0.95);
+  margin-bottom: 20px;
+}
+
+.cover-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold) 0%, rgba(212, 168, 75, 0.15) 100%);
+  border-radius: 1px;
+  vertical-align: middle;
+  margin-right: 14px;
+  margin-bottom: 4px;
+}
+
+.cover-title {
+  font-family: var(--serif);
+  font-size: 54px;
+  font-weight: 500;
+  line-height: 1.05;
+  color: #fff;
+  margin: 0 0 22px;
+  letter-spacing: -1.15px;
+  text-wrap: balance;
+  text-shadow:
+    0 2px 32px rgba(0, 0, 0, 0.45),
+    0 1px 0 rgba(0, 0, 0, 0.15);
+}
+.cover-title em { color: var(--gold-light); font-style: italic; font-weight: 400; text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35); }
+
+.cover-subtitle {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.62;
+  color: rgba(255,255,255,0.82);
+  max-width: 520px;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.cover-meta {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px 16px;
+  padding-top: 28px;
+  margin-top: auto;
+  align-items: stretch;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, transparent 100%);
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding-bottom: 4px;
+}
+.cover-meta-item {
+  padding: 16px 18px 18px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 10px 36px rgba(0, 0, 0, 0.15);
+}
+.cover-meta-item .label {
+  font-family: var(--cond);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 10px;
+}
+.cover-meta-item .value {
+  font-family: var(--serif);
+  font-size: 15.5px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.38;
+}
+.cover-meta-item .value .accent { color: var(--gold-light); }
+
+@media (max-width: 720px) {
+  .cover-meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .cover-title {
+    font-size: 40px;
+  }
+}
+
+.cover-tag {
+  position: absolute;
+  right: 52px;
+  bottom: 19%;
+  top: auto;
+  font-family: var(--cond);
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.42);
+  z-index: 2;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* ═══════════════════════════════════════════════
+   INTRO LETTER — premium stationery surface
+═══════════════════════════════════════════════ */
+.letter {
+  background:
+    radial-gradient(ellipse 75% 50% at 100% 0%, rgba(0, 105, 163, 0.055) 0%, transparent 52%),
+    radial-gradient(ellipse 55% 42% at 0% 100%, rgba(212, 168, 75, 0.045) 0%, transparent 48%),
+    linear-gradient(175deg, rgba(0, 34, 68, 0.04) 0%, transparent 42%),
+    linear-gradient(180deg, #fefdfb 0%, var(--paper) 44%, #f6f7f9 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 34, 68, 0.07),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.65),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+  position: relative;
+}
+.letter::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  border-radius: 0 4px 4px 0;
+  background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold) 18%, rgba(0, 105, 163, 0.58) 52%, var(--navy-deep) 100%);
+  opacity: 0.94;
+  box-shadow: 3px 0 28px rgba(212, 168, 75, 0.14);
+  pointer-events: none;
+}
+.letter-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  border-bottom: none;
+  padding-bottom: 20px;
+  margin-bottom: 32px;
+  position: relative;
+}
+.letter-head::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 1px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 22%, rgba(0, 105, 163, 0.45) 55%, transparent 100%);
+  box-shadow: 0 1px 8px rgba(212, 168, 75, 0.12);
+}
+.letter-head .brand {
+  font-family: var(--cond);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--navy);
+  line-height: 1.2;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+.letter-head .date {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-align: right;
+  line-height: 1.55;
+  max-width: 62%;
+  padding: 11px 16px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.92) 0%, var(--cool-white) 100%);
+  border: 1px solid rgba(0, 34, 68, 0.09);
+  border-radius: 4px;
+  box-shadow: 0 6px 22px rgba(0, 34, 68, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.letter-recipient {
+  margin-bottom: 28px;
+  padding: 18px 22px 20px;
+  font-size: 13.5px;
+  line-height: 1.74;
+  color: var(--text);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, var(--cool-white) 55%, #eef2f6 100%);
+  border: 1px solid rgba(0, 34, 68, 0.09);
+  border-radius: 5px;
+  box-shadow: 0 8px 28px rgba(0, 34, 68, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.98);
+}
+.letter-recipient strong { color: var(--navy); font-weight: 600; }
+
+.letter-subject {
+  background: linear-gradient(145deg, #ffffff 0%, var(--cool-white) 48%, #f0f3f7 100%);
+  border: 1px solid rgba(0, 34, 68, 0.08);
+  border-left: 4px solid var(--gold);
+  padding: 18px 24px 20px;
+  margin-bottom: 28px;
+  font-family: var(--serif);
+  font-size: 15.25px;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--navy);
+  line-height: 1.48;
+  box-shadow:
+    0 10px 36px rgba(0, 34, 68, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 0 40px rgba(0, 105, 163, 0.03);
+  border-radius: 0 5px 5px 0;
+}
+
+.letter-body {
+  padding-left: 3px;
+  max-width: 100%;
+}
+.letter-body p {
+  font-size: 13.35px;
+  line-height: 1.74;
+  color: var(--text-soft);
+  margin-bottom: 15px;
+  text-align: justify;
+  text-wrap: pretty;
+  hyphens: auto;
+}
+.letter-body p strong { color: var(--navy); font-weight: 600; }
+.letter-body p em { color: var(--navy); font-style: italic; font-weight: 500; }
+
+.letter-sig {
+  margin-top: 42px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(0, 34, 68, 0.1);
+  background: linear-gradient(180deg, rgba(0, 34, 68, 0.028) 0%, transparent 36%);
+  position: relative;
+  border-radius: 0 0 2px 2px;
+}
+.letter-sig::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 104px;
+  height: 2px;
+  border-radius: 1px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 45%, rgba(212, 168, 75, 0.2) 100%);
+  box-shadow: 0 1px 6px rgba(212, 168, 75, 0.2);
+}
+.letter-sig .name {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 7px;
+  letter-spacing: -0.2px;
+}
+.letter-sig .title {
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 3px;
+}
+.letter-sig .contact-line {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: var(--text-soft);
+  margin-bottom: 0;
+  line-height: 1.65;
+}
+.letter-sig .contact-line a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 34, 68, 0.12);
+  transition: border-color 0.15s ease;
+}
+.letter-sig .contact-line a:hover {
+  border-bottom-color: rgba(0, 105, 163, 0.45);
+}
+.letter-sig-note {
+  margin-top: 12px;
+  max-width: 38em;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+.letter-sig .firm {
+  font-family: var(--cond);
+  font-size: 11px;
+  letter-spacing: 3.2px;
+  text-transform: uppercase;
+  color: var(--navy);
+  font-weight: 600;
+  margin-top: 10px;
+  opacity: 0.92;
+}
+
+/* Page 3 — People & team: single premium print surface */
+.page--team-premium {
+  min-height: 920px;
+  padding-bottom: 72px;
+  background:
+    radial-gradient(ellipse 95% 55% at 50% -8%, rgba(0, 105, 163, 0.065) 0%, transparent 48%),
+    radial-gradient(ellipse 50% 70% at 0% 40%, rgba(212, 168, 75, 0.05) 0%, transparent 45%),
+    linear-gradient(180deg, #fdfcfa 0%, var(--paper) 38%, #f7f8fa 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 34, 68, 0.06),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.55);
+}
+.page--team-premium .page-rule { margin-bottom: 22px; }
+.page--team-premium .page-rule::before {
+  width: 56px;
+  height: 3px;
+  box-shadow: 0 1px 10px rgba(212, 168, 75, 0.22);
+}
+.team-premium-band {
+  position: relative;
+  padding: 22px 24px 24px;
+  margin-bottom: 18px;
+  border-bottom: none;
+  border-radius: 6px;
+  overflow: hidden;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.85) 0%, rgba(243, 245, 247, 0.75) 55%, rgba(228, 238, 247, 0.35) 100%);
+  border: 1px solid rgba(0, 34, 68, 0.09);
+  box-shadow:
+    0 14px 44px rgba(0, 34, 68, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+.team-premium-band::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 6px 6px 0 0;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 38%, rgba(0, 105, 163, 0.45) 72%, rgba(212, 168, 75, 0.15) 100%);
+  box-shadow: 0 1px 8px rgba(212, 168, 75, 0.15);
+}
+.team-premium-eyebrow {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 4px 0 10px;
+}
+.team-premium-title {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.65px;
+  color: var(--navy);
+  margin: 0 0 12px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+.team-premium-title .amp { color: var(--steel); font-weight: 400; }
+.team-premium-title em { font-style: italic; color: var(--steel); font-weight: 400; }
+.team-premium-dek {
+  font-size: 13px;
+  line-height: 1.58;
+  color: var(--text-soft);
+  max-width: 100%;
+  margin: 0;
+  padding: 14px 0 0;
+  border: none;
+  border-top: 1px solid rgba(0, 34, 68, 0.08);
+  background: none;
+}
+.team-premium-dek strong { color: var(--navy); font-weight: 600; }
+
+.team-premium-lead {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.team-premium-lc {
+  position: relative;
+  padding: 18px 18px 20px;
+  overflow: hidden;
+  background: linear-gradient(155deg, #fff 0%, var(--cool-white) 100%);
+  border: 1px solid rgba(0, 34, 68, 0.1);
+  border-radius: 6px;
+  box-shadow:
+    0 14px 42px rgba(0, 34, 68, 0.08),
+    var(--shadow-sm),
+    inset 0 1px 0 rgba(255, 255, 255, 0.98);
+  display: grid;
+  grid-template-columns: 40px 1fr minmax(0, 120px);
+  gap: 12px 14px;
+  align-items: start;
+}
+.team-premium-lc::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 6px 6px 0 0;
+  background: linear-gradient(90deg, var(--gold-light) 0%, var(--blue) 55%, rgba(0, 105, 163, 0.15) 100%);
+  opacity: 0.95;
+}
+.team-premium-lc-rom {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--gold);
+  padding-top: 2px;
+}
+.team-premium-lc h3 {
+  font-family: var(--serif);
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--navy);
+  margin: 0 0 6px;
+  letter-spacing: -0.15px;
+  line-height: 1.25;
+}
+.team-premium-lc p {
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--text-soft);
+  margin: 0;
+}
+.team-premium-lc-pill {
+  font-family: var(--cond);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-align: right;
+  color: var(--navy);
+  align-self: start;
+  padding: 8px 0 0;
+  border-top: 2px solid var(--gold);
+  line-height: 1.45;
+}
+
+.team-premium-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 22px;
+  position: relative;
+  align-items: start;
+}
+.team-premium-cols::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  margin-left: -0.5px;
+  background: linear-gradient(180deg, rgba(212, 168, 75, 0.55) 0%, var(--rule) 10%, var(--rule) 90%, rgba(0, 105, 163, 0.22) 100%);
+  pointer-events: none;
+  opacity: 0.95;
+}
+.team-premium-panel {
+  min-width: 0;
+  padding: 18px 18px 16px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.35) 100%);
+  border: 1px solid rgba(0, 34, 68, 0.08);
+  border-radius: 6px;
+  box-shadow: 0 10px 36px rgba(0, 34, 68, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.team-premium-ph {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 12px;
+  margin-bottom: 6px;
+  padding-bottom: 12px;
+}
+.team-premium-ph::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 1px;
+  background: linear-gradient(90deg, var(--navy) 0%, rgba(0, 34, 68, 0.35) 55%, rgba(0, 105, 163, 0.28) 100%);
+}
+.team-premium-ph strong {
+  font-family: var(--cond);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+.team-premium-ph span {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.team-premium-pnote {
+  font-size: 10.5px;
+  line-height: 1.45;
+  color: var(--text-muted);
+  margin: 0 0 10px;
+}
+.team-premium-pnote strong { color: var(--navy); }
+
+.team-premium-row {
+  display: grid;
+  grid-template-columns: 30px 1fr 78px;
+  gap: 8px 10px;
+  padding: 10px 0 11px;
+  border-bottom: 1px solid rgba(0, 34, 68, 0.08);
+  align-items: start;
+}
+.team-premium-row:last-child { border-bottom: none; }
+.team-premium-rom {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--gold);
+  line-height: 1.15;
+  padding-top: 1px;
+}
+.team-premium-role {
+  font-family: var(--serif);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.15px;
+  color: var(--navy);
+  margin: 0 0 3px;
+  line-height: 1.25;
+}
+.team-premium-desc {
+  font-size: 10.5px;
+  line-height: 1.42;
+  color: var(--text-soft);
+  margin: 0;
+}
+.team-premium-desc strong { color: var(--navy); font-weight: 600; }
+.team-premium-cap {
+  font-family: var(--cond);
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: right;
+  color: var(--navy);
+  border-top: 2px solid var(--gold);
+  padding-top: 6px;
+  margin-top: 1px;
+  line-height: 1.35;
+  align-self: start;
+}
+.team-premium-cap strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.4px;
+  text-transform: none;
+  margin-bottom: 2px;
+  line-height: 1.05;
+}
+.team-cap-lbl { display: block; font-size: 8.5px; letter-spacing: 0.1em; }
+.team-cap-sub {
+  display: block;
+  font-family: var(--sans);
+  font-size: 8.5px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--navy);
+  margin-top: 3px;
+  line-height: 1.3;
+}
+
+@media screen and (max-width: 780px) {
+  .team-premium-lead,
+  .team-premium-cols { grid-template-columns: 1fr; }
+  .team-premium-cols::before { display: none; }
+}
+
+/* ═══════════════════════════════════════════════
+   SECTION HEADING SYSTEM
+═══════════════════════════════════════════════ */
+.section-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 3px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.1;
+  letter-spacing: -0.85px;
+  margin-bottom: 8px;
+  font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
+}
+.section-title em { font-style: italic; color: var(--steel); font-weight: 400; }
+.section-lede {
+  font-size: 14px;
+  line-height: 1.58;
+  color: var(--text-soft);
+  max-width: 700px;
+  margin-bottom: 22px;
+  padding: 0 0 14px 14px;
+  border-left: 3px solid var(--gold);
+  border-bottom: 1px solid var(--rule);
+  background: linear-gradient(90deg, rgba(200, 150, 62, 0.04) 0%, transparent 100%);
+}
+
+.subhead {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--navy);
+  margin: 20px 0 10px;
+  letter-spacing: -0.3px;
+}
+
+.sub-subhead {
+  font-family: var(--cond);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--steel);
+  margin: 14px 0 8px;
+}
+
+p.body {
+  font-size: 13px;
+  line-height: 1.62;
+  color: var(--text-soft);
+  margin-bottom: 10px;
+}
+p.body strong { color: var(--navy); font-weight: 600; }
+
+/* ═══════════════════════════════════════════════
+   UNDERSTANDING / CONTEXT PAGE
+═══════════════════════════════════════════════ */
+.context-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: var(--rule);
+  margin: 20px 0 32px;
+  border: 1px solid var(--rule);
+}
+.context-card {
+  background: var(--paper-screen);
+  padding: 22px 24px 24px;
+  position: relative;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+.context-card .num {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--gold);
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+.context-card h4 {
+  font-family: var(--serif);
+  font-size: 16.5px;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.3;
+  margin-bottom: 10px;
+  letter-spacing: -0.2px;
+}
+.context-card p {
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: var(--text-soft);
+}
+.context-card p strong { color: var(--navy); font-weight: 600; }
+
+/* ═══════════════════════════════════════════════
+   FIVE FORCES / STRATEGIC PRESSURE
+═══════════════════════════════════════════════ */
+.forces {
+  margin: 14px 0 18px;
+}
+.force-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 180px;
+  gap: 18px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: start;
+}
+.force-row:last-child { border-bottom: none; }
+.force-num {
+  font-family: var(--serif);
+  font-size: 34px;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--gold);
+  line-height: 1;
+  letter-spacing: -1px;
+}
+.force-body h4 {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 6px;
+  letter-spacing: -0.2px;
+}
+.force-body p {
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: var(--text-soft);
+}
+.force-signal {
+  font-family: var(--cond);
+  font-size: 10.5px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--navy);
+  font-weight: 600;
+  padding: 8px 12px;
+  background: var(--light-blue);
+  border-left: 3px solid var(--blue);
+  line-height: 1.5;
+}
+
+/* Field roster — same visual language as leadership, tighter rhythm */
+.forces-field {
+  margin: 12px 0 24px;
+}
+.forces-field .force-row {
+  grid-template-columns: 56px 1fr 168px;
+  gap: 18px 20px;
+  padding: 16px 0;
+  align-items: center;
+}
+.forces-field .force-num {
+  font-size: 30px;
+  text-align: center;
+}
+.forces-field .force-body h4 {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+.forces-field .force-body p {
+  font-size: 12px;
+  line-height: 1.6;
+}
+.forces-field .force-signal {
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  text-align: center;
+  border-left: none;
+  border-top: 3px solid var(--gold);
+  padding: 10px 10px;
+  background: var(--cool-white);
+}
+.forces-field .force-signal strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--navy);
+  letter-spacing: -0.5px;
+  margin-bottom: 2px;
+  line-height: 1.1;
+}
+.forces-field .force-signal .signal-label {
+  display: block;
+  font-family: var(--cond);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  line-height: 1.35;
+  margin-top: 2px;
+}
+
+/* ═══════════════════════════════════════════════
+   SCOPE / DELIVERABLES BLOCKS
+═══════════════════════════════════════════════ */
+.scope-block {
+  border-left: 3px solid var(--navy);
+  padding: 4px 0 4px 18px;
+  margin-bottom: 16px;
+}
+.scope-block .tag {
+  font-family: var(--cond);
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.scope-block h3 {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 6px;
+  letter-spacing: -0.3px;
+}
+.scope-block p {
+  font-size: 12.5px;
+  line-height: 1.58;
+  color: var(--text-soft);
+  margin-bottom: 8px;
+}
+.scope-block ul {
+  list-style: none;
+  padding: 0;
+}
+.scope-block li {
+  font-size: 12.5px;
+  line-height: 1.52;
+  color: var(--text-soft);
+  padding: 2px 0 2px 22px;
+  position: relative;
+}
+.scope-block li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 600;
+}
+.scope-block li strong { color: var(--navy); font-weight: 600; }
+
+/* ═══════════════════════════════════════════════
+   METHODOLOGY PHASES
+═══════════════════════════════════════════════ */
+.phases {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin: 14px 0;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm), 0 12px 36px -16px rgba(0, 34, 68, 0.08);
+}
+.phases.phases-dual {
+  grid-template-columns: 1fr 1fr;
+}
+.phase {
+  padding: 16px 16px;
+  border-right: 1px solid var(--rule);
+  background: linear-gradient(180deg, var(--paper-screen) 0%, var(--paper) 100%);
+  position: relative;
+}
+.phase:last-child { border-right: none; }
+.phase::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--navy);
+}
+.phase.p2::before { background: var(--blue); }
+.phase.p3::before { background: var(--steel); }
+.phase.p4::before { background: var(--gold); }
+.phase .num {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.phase h4 {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 4px;
+  line-height: 1.3;
+  letter-spacing: -0.2px;
+}
+.phase .weeks {
+  font-family: var(--cond);
+  font-size: 10.5px;
+  letter-spacing: 1.5px;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.phase ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.phase li {
+  font-size: 11.5px;
+  line-height: 1.55;
+  color: var(--text-soft);
+  padding: 3px 0 3px 12px;
+  position: relative;
+}
+.phase li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* ═══════════════════════════════════════════════
+   INTERVIEW MATRIX TABLE
+═══════════════════════════════════════════════ */
+.matrix {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0 18px;
+  font-size: 12px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.matrix thead th {
+  background: linear-gradient(180deg, #003058 0%, var(--navy) 100%);
+  color: #fff;
+  padding: 13px 14px;
+  text-align: left;
+  font-family: var(--cond);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.matrix thead th:last-child { text-align: center; }
+.matrix tbody tr {
+  border-bottom: 1px solid var(--rule);
+}
+.matrix tbody tr:nth-child(even) { background: var(--cool-white); }
+.matrix tbody td {
+  padding: 11px 14px;
+  color: var(--text-soft);
+  vertical-align: middle;
+}
+.matrix tbody td:first-child {
+  color: var(--navy);
+  font-weight: 600;
+  font-family: var(--serif);
+  font-size: 13.5px;
+}
+.matrix tbody td:last-child {
+  text-align: center;
+  font-family: var(--mono);
+  color: var(--navy);
+  font-weight: 500;
+}
+.matrix tfoot td {
+  background: var(--light-blue);
+  padding: 12px 14px;
+  font-family: var(--cond);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--navy);
+  font-weight: 700;
+}
+.matrix tfoot td:last-child { text-align: center; font-family: var(--mono); }
+
+/* ═══════════════════════════════════════════════
+   GEOGRAPHY / COUNTRY BREAKDOWN
+═══════════════════════════════════════════════ */
+.geo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 14px 0;
+}
+.geo-card {
+  background: var(--paper-screen);
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--navy);
+  padding: 16px 16px 14px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+.geo-card.turkey { border-top-color: var(--gold); }
+.geo-card .flag {
+  font-family: var(--cond);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.geo-card h3 {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+}
+.geo-card p {
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--text-soft);
+  margin-bottom: 8px;
+}
+.geo-card .coverage-label {
+  font-family: var(--cond);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--steel);
+  font-weight: 600;
+  margin: 8px 0 4px;
+  padding-top: 8px;
+  border-top: 1px solid var(--rule);
+}
+.geo-card .coverage-list {
+  font-size: 11.5px;
+  line-height: 1.55;
+  color: var(--text-soft);
+}
+.geo-card .coverage-list strong { color: var(--navy); font-weight: 600; }
+
+/* ═══════════════════════════════════════════════
+   MARKET INTELLIGENCE GRID
+═══════════════════════════════════════════════ */
+.comp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--rule);
+  margin: 12px 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.comp-col {
+  padding: 14px 16px;
+  background: linear-gradient(180deg, var(--paper-screen) 0%, var(--paper) 100%);
+}
+.comp-col:first-child { border-right: 1px solid var(--rule); }
+.comp-col h4 {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 4px;
+  letter-spacing: -0.2px;
+}
+.comp-col .tag {
+  font-family: var(--cond);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.comp-col ul {
+  list-style: none;
+  padding: 0;
+}
+.comp-col li {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-soft);
+  padding: 5px 0;
+  border-bottom: 1px dashed rgba(216,220,227,0.6);
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.comp-col li:last-child { border-bottom: none; }
+.comp-col li strong { color: var(--navy); font-weight: 600; }
+.comp-col li .role {
+  font-family: var(--cond);
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* ═══════════════════════════════════════════════
+   DELIVERABLES
+═══════════════════════════════════════════════ */
+.deliverables {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 12px 0;
+}
+.deliv-card {
+  background: var(--cool-white);
+  border: 1px solid var(--rule);
+  padding: 14px 14px 12px;
+  position: relative;
+}
+.deliv-card .icon {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.deliv-card h4 {
+  font-family: var(--serif);
+  font-size: 15.5px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 6px;
+  letter-spacing: -0.2px;
+}
+.deliv-card p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-soft);
+}
+.deliv-card p strong { color: var(--navy); font-weight: 600; }
+
+/* ═══════════════════════════════════════════════
+   TIMELINE GANTT
+═══════════════════════════════════════════════ */
+.timeline {
+  margin: 14px 0;
+}
+.timeline-header {
+  display: grid;
+  grid-template-columns: 180px repeat(14, 1fr);
+  gap: 2px;
+  margin-bottom: 4px;
+}
+.timeline-header .tl-label {
+  background: var(--navy);
+  color: #fff;
+  padding: 10px 14px;
+  font-family: var(--cond);
+  font-size: 10.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.timeline-header .tl-week {
+  background: var(--cool-white);
+  text-align: center;
+  padding: 10px 0;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+.timeline-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 2px;
+  margin-bottom: 2px;
+  background: var(--cool-white);
+}
+.timeline-row .tl-phase {
+  padding: 10px 14px;
+  font-family: var(--serif);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--navy);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+}
+.timeline-row .tl-bar-wrap {
+  position: relative;
+  background: var(--cool-white);
+  border: 1px solid var(--rule);
+  height: 38px;
+}
+.tl-bar {
+  position: absolute;
+  top: 8px;
+  height: 22px;
+  background: var(--blue);
+  border-radius: 2px;
+  font-family: var(--cond);
+  font-size: 10px;
+  color: #fff;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+.tl-bar.p1 { background: var(--navy); }
+.tl-bar.p2 { background: var(--blue); }
+.tl-bar.p3 { background: var(--steel); }
+.tl-bar.p4 { background: var(--gold); color: var(--navy-deep); }
+
+/* ═══════════════════════════════════════════════
+   CREDENTIALS / CLIENTS
+═══════════════════════════════════════════════ */
+/* Primary field volume strip (mirrors credentials stats) */
+.field-volume-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid var(--rule);
+  margin: 12px 0 16px;
+  background: var(--cool-white);
+}
+.field-volume-stats .fv-cell {
+  padding: 12px 10px;
+  text-align: center;
+  border-right: 1px solid var(--rule);
+  background: var(--paper);
+}
+.field-volume-stats .fv-cell:last-child { border-right: none; }
+.field-volume-stats .fv-num {
+  font-family: var(--serif);
+  font-size: 40px;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1;
+  letter-spacing: -2px;
+  margin-bottom: 6px;
+}
+.field-volume-stats .fv-num em {
+  color: var(--gold);
+  font-style: italic;
+  font-size: 28px;
+  vertical-align: super;
+}
+.field-volume-stats .fv-label {
+  font-family: var(--cond);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.creds-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--rule);
+  margin: 14px 0 18px;
+}
+.cred-stat {
+  padding: 16px 12px;
+  text-align: center;
+  border-right: 1px solid var(--rule);
+  background: var(--paper);
+}
+.cred-stat:last-child { border-right: none; }
+.cred-stat .num {
+  font-family: var(--serif);
+  font-size: 48px;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1;
+  letter-spacing: -2px;
+  margin-bottom: 6px;
+}
+.cred-stat .num em { color: var(--gold); font-style: italic; font-size: 30px; vertical-align: top; }
+.cred-stat .label {
+  font-family: var(--cond);
+  font-size: 10.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.creds-stats--tail {
+  margin: 28px 0 10px;
+  padding-top: 22px;
+  border-top: 1px solid var(--rule);
+}
+
+.client-tier {
+  font-family: var(--cond);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin: 24px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--rule);
+}
+.client-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.chip {
+  background: var(--cool-white);
+  border: 1px solid var(--rule);
+  padding: 6px 12px;
+  font-size: 11.5px;
+  color: var(--navy);
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  border-radius: 2px;
+}
+.chip.gold { background: var(--navy); color: var(--gold-light); border-color: var(--navy); }
+
+/* Case studies */
+.case {
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--gold);
+  padding: 22px 24px;
+  margin-bottom: 14px;
+  background: var(--paper-screen);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+.case-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+}
+.case-client {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: -0.2px;
+}
+.case-tag {
+  font-family: var(--cond);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+}
+.case h5 {
+  font-family: var(--serif);
+  font-size: 13.5px;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--steel);
+  margin: 4px 0 8px;
+}
+.case p {
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: var(--text-soft);
+}
+
+/* ═══════════════════════════════════════════════
+   DIFFERENTIATORS / WHY
+═══════════════════════════════════════════════ */
+.why {
+  margin: 12px 0;
+}
+.why-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 0;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.why-item:first-child { border-top: 1px solid var(--rule); }
+.why-num {
+  font-family: var(--serif);
+  font-size: 42px;
+  font-weight: 500;
+  color: var(--gold);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -1px;
+}
+.why-body h4 {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 6px;
+  letter-spacing: -0.3px;
+}
+.why-body p {
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--text-soft);
+}
+.why-body p strong { color: var(--navy); font-weight: 600; }
+
+/* ═══════════════════════════════════════════════
+   SIGNATURE BLOCK
+═══════════════════════════════════════════════ */
+.signoff {
+  margin-top: 24px;
+  padding: 22px 24px;
+  background: var(--navy);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.signoff::before {
+  content: '';
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 180px; height: 180px;
+  background: radial-gradient(circle, rgba(200,150,62,0.15) 0%, transparent 70%);
+}
+.signoff h3 {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 12px;
+  letter-spacing: -0.4px;
+}
+.signoff p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 18px;
+  max-width: 640px;
+}
+.signoff .contact {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  margin-top: 24px;
+}
+.signoff .contact-item .label {
+  font-family: var(--cond);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 4px;
+}
+.signoff .contact-item .value {
+  font-family: var(--serif);
+  font-size: 14px;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+}
+.signoff .contact-item .value.mono { font-family: var(--mono); font-size: 11.5px; font-weight: 400; letter-spacing: 0.3px; }
+
+/* ═══════════════════════════════════════════════
+   LAST PAGE — premium closing (Next steps + sign-off)
+═══════════════════════════════════════════════ */
+.page--closing {
+  background:
+    radial-gradient(ellipse 90% 55% at 50% -10%, rgba(0, 105, 163, 0.07) 0%, transparent 50%),
+    radial-gradient(ellipse 45% 50% at 100% 80%, rgba(212, 168, 75, 0.06) 0%, transparent 42%),
+    linear-gradient(180deg, #fdfcfa 0%, var(--paper) 42%, #f4f6f9 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 34, 68, 0.06),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.55);
+  padding-bottom: 56px;
+}
+.page--closing .page-rule::before {
+  width: 56px;
+  box-shadow: 0 1px 10px rgba(212, 168, 75, 0.22);
+}
+.page--closing .section-num {
+  letter-spacing: 3.2px;
+  margin-bottom: 8px;
+}
+.page--closing .section-title {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+.page--closing .section-lede {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, var(--cool-white) 100%);
+  border: 1px solid rgba(0, 34, 68, 0.08);
+  border-left: 4px solid var(--gold);
+  border-bottom: none;
+  border-radius: 0 5px 5px 0;
+  padding: 14px 18px 16px;
+  box-shadow: 0 8px 28px rgba(0, 34, 68, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  max-width: 100%;
+}
+
+.page--closing .forces {
+  margin: 22px 0 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.page--closing .force-row {
+  position: relative;
+  grid-template-columns: 48px 1fr 168px;
+  gap: 16px 22px;
+  padding: 17px 20px 17px 22px;
+  border-bottom: none;
+  background: linear-gradient(148deg, rgba(255, 255, 255, 0.98) 0%, var(--cool-white) 55%, #e8eef6 100%);
+  border: 1px solid rgba(0, 34, 68, 0.1);
+  border-radius: 7px;
+  box-shadow:
+    0 12px 36px rgba(0, 34, 68, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  overflow: hidden;
+  align-items: center;
+}
+.page--closing .force-row::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold) 35%, rgba(0, 105, 163, 0.65) 100%);
+  border-radius: 7px 0 0 7px;
+  opacity: 0.95;
+}
+.page--closing .force-num {
+  font-size: 32px;
+  filter: drop-shadow(0 2px 6px rgba(0, 34, 68, 0.06));
+}
+.page--closing .force-body h4 {
+  font-size: 17.5px;
+  letter-spacing: -0.25px;
+}
+.page--closing .force-signal {
+  font-size: 10px;
+  letter-spacing: 1.6px;
+  padding: 12px 14px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, var(--light-blue) 100%);
+  border-left: 3px solid var(--blue);
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 4px 14px rgba(0, 105, 163, 0.08);
+  line-height: 1.45;
+}
+
+.page--closing .signoff {
+  margin-top: 8px;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  overflow: visible;
+}
+.page--closing .signoff::before {
+  display: none;
+}
+
+.page--closing-sign {
+  position: relative;
+  margin-top: 28px;
+  padding: 28px 28px 26px;
+  border-radius: 8px;
+  background:
+    radial-gradient(ellipse 70% 55% at 95% 15%, rgba(212, 168, 75, 0.18) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 45% at 5% 85%, rgba(0, 105, 163, 0.15) 0%, transparent 48%),
+    linear-gradient(158deg, #000d18 0%, #001a2e 28%, #002244 55%, #063558 92%, #052238 100%);
+  color: #fff;
+  border: 1px solid rgba(212, 168, 75, 0.35);
+  box-shadow:
+    0 24px 56px rgba(0, 8, 24, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+.page--closing-sign::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 8%;
+  right: 8%;
+  height: 2px;
+  border-radius: 0 0 3px 3px;
+  background: linear-gradient(90deg, transparent, rgba(212, 168, 75, 0.85), rgba(0, 105, 163, 0.5), transparent);
+  pointer-events: none;
+}
+.page--closing-sign::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  right: -30px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(212, 168, 75, 0.12) 0%, transparent 68%);
+  pointer-events: none;
+}
+.page--closing-sign h3 {
+  position: relative;
+  z-index: 1;
+  font-size: 28px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 14px;
+  letter-spacing: -0.35px;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+}
+.page--closing-sign h3 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold-light);
+}
+.page--closing-sign > p {
+  position: relative;
+  z-index: 1;
+  font-size: 13.5px;
+  line-height: 1.72;
+  color: rgba(255, 255, 255, 0.86);
+  margin-bottom: 0;
+  max-width: 38em;
+  letter-spacing: 0.01em;
+}
+
+.page--closing .signoff .contact {
+  position: relative;
+  z-index: 1;
+  margin-top: 26px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  gap: 14px;
+}
+.page--closing .signoff .contact-item {
+  padding: 14px 16px 16px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 6px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+.page--closing .signoff .contact-item .label {
+  font-size: 9px;
+  letter-spacing: 2.4px;
+  color: rgba(255, 255, 255, 0.48);
+  margin-bottom: 6px;
+}
+.page--closing .signoff .contact-item .value {
+  font-size: 14.5px;
+  font-weight: 500;
+}
+.page--closing .signoff .contact-item .value.mono {
+  font-size: 11.75px;
+  letter-spacing: 0.35px;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.page--closing .page-footer {
+  border-top: 1px solid rgba(0, 34, 68, 0.1);
+  box-shadow: 0 -1px 0 rgba(212, 168, 75, 0.15);
+  padding-top: 10px;
+  color: var(--text-muted);
+}
+.page--closing .page-footer .brand {
+  color: var(--navy);
+  letter-spacing: 0.22em;
+}
+
+@media screen and (max-width: 780px) {
+  .page--closing .force-row {
+    grid-template-columns: 40px 1fr;
+    grid-template-rows: auto auto;
+  }
+  .page--closing .force-signal {
+    grid-column: 1 / -1;
+  }
+  .page--closing .signoff .contact {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .page--closing .signoff .contact {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Appendix */
+.appendix-item {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.appendix-item:last-child { border-bottom: none; }
+.appendix-item h5 {
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 6px;
+  letter-spacing: -0.2px;
+}
+.appendix-item p {
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: var(--text-soft);
+}
+
+/* Fee & pricing table */
+.fee-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0 28px;
+  font-size: 12.5px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.fee-table thead th {
+  background: linear-gradient(180deg, #003058 0%, var(--navy) 100%);
+  color: #fff;
+  padding: 13px 14px;
+  text-align: left;
+  font-family: var(--cond);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+.fee-table thead th:last-child,
+.fee-table tbody td:last-child {
+  text-align: right;
+  font-family: var(--mono);
+  white-space: nowrap;
+}
+.fee-table tbody tr { border-bottom: 1px solid var(--rule); }
+.fee-table tbody tr:nth-child(even) { background: var(--cool-white); }
+.fee-table tbody td {
+  padding: 11px 14px;
+  color: var(--text-soft);
+  vertical-align: top;
+}
+.fee-table tbody td:first-child {
+  color: var(--navy);
+  font-weight: 600;
+  font-family: var(--serif);
+  font-size: 13px;
+}
+.fee-table tbody tr.sub td {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-soft);
+  padding-left: 28px;
+}
+.fee-table tfoot td {
+  background: var(--light-blue);
+  padding: 14px;
+  font-family: var(--cond);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--navy);
+  font-weight: 700;
+}
+.fee-table tfoot td:last-child {
+  font-family: var(--mono);
+  font-size: 14px;
+}
+
+/* Phase 1 / Phase 2 packages — MDF-style option cards (three columns) */
+.p2-opt-grid,
+.p1-opt-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  border: 1px solid var(--rule);
+  overflow: hidden;
+  margin: 12px 0 10px;
+  background: var(--rule);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm), 0 16px 40px -20px rgba(0, 34, 68, 0.1);
+}
+.p2-opt-card,
+.p1-opt-card {
+  padding: 18px 14px 20px;
+  position: relative;
+  background: var(--paper);
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.p2-opt-card.p2-opt-rec,
+.p1-opt-card.p1-opt-rec {
+  background: var(--light-blue);
+  box-shadow: inset 0 0 0 1px rgba(0, 105, 163, 0.1);
+}
+.p2-opt-topbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+.p2-opt-topbar.n { background: var(--navy); }
+.p2-opt-topbar.g { background: var(--gold); }
+.p2-opt-topbar.b { background: var(--blue); }
+.p2-opt-step {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin: 5px 0 8px;
+}
+.p2-opt-card.p2-opt-rec .p2-opt-step,
+.p1-opt-card.p1-opt-rec .p2-opt-step { color: var(--navy); }
+.p2-opt-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 10px;
+  margin-bottom: 8px;
+}
+.p2-opt-name {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.2;
+}
+.p2-opt-rec-badge {
+  font-family: var(--cond);
+  font-size: 8.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--navy);
+  border: 1px solid var(--navy);
+  padding: 2px 7px;
+  font-weight: 600;
+}
+.p2-opt-body {
+  font-size: 11px;
+  color: var(--text-soft);
+  line-height: 1.55;
+  margin-bottom: 12px;
+  flex: 1;
+}
+.p2-opt-body strong { color: var(--navy); font-weight: 600; }
+.p2-opt-lines {
+  border-top: 1px solid var(--rule);
+  padding-top: 10px;
+  margin-bottom: 12px;
+  font-size: 10px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  font-family: var(--mono);
+}
+.p2-opt-lines .p2-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 3px;
+}
+.p2-opt-lines .p2-line span:first-child { font-family: var(--sans); color: var(--text-muted); }
+.p2-opt-lines .p2-line span:last-child {
+  color: var(--navy);
+  font-weight: 500;
+  white-space: nowrap;
+}
+.p2-opt-price {
+  font-family: var(--mono);
+  font-size: 21px;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.p2-opt-price .p2-opt-curr {
+  display: block;
+  font-family: var(--cond);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+/* Phase 2 procurement row: card + premium illustration (replaces empty 3-col grid cells) */
+.p2-proc-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.85fr);
+  gap: 0;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 0 0 14px;
+  background: var(--rule);
+  box-shadow: var(--shadow-sm), 0 16px 40px -20px rgba(0, 34, 68, 0.1);
+}
+.p2-proc-wrap .p2-opt-card {
+  margin: 0;
+  border-radius: 0;
+  border-right: 1px solid var(--rule);
+  min-height: 100%;
+}
+.p2-proc-illu {
+  position: relative;
+  background:
+    radial-gradient(ellipse 85% 65% at 50% 18%, rgba(212, 168, 75, 0.09) 0%, transparent 52%),
+    linear-gradient(175deg, rgba(0, 34, 68, 0.045) 0%, rgba(0, 105, 163, 0.07) 42%, rgba(212, 168, 75, 0.06) 100%),
+    linear-gradient(188deg, #f5f7fb 0%, #e8ecf4 55%, #e2e7ef 100%);
+  min-height: 248px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px 16px 30px;
+}
+.p2-proc-illu::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(0, 34, 68, 0.075) 1px, transparent 0);
+  background-size: 20px 20px;
+  opacity: 0.45;
+  pointer-events: none;
+}
+.p2-proc-illu::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 12%;
+  right: 12%;
+  height: 2px;
+  border-radius: 0 0 2px 2px;
+  background: linear-gradient(90deg, transparent, rgba(200, 150, 62, 0.55), rgba(0, 105, 163, 0.35), transparent);
+  opacity: 0.85;
+  pointer-events: none;
+}
+.p2-proc-illu svg {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 448px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 10px 28px rgba(0, 34, 68, 0.07));
+}
+.p2-proc-illu-cap {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--mono);
+  font-size: 7px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(0, 34, 68, 0.48);
+  text-align: center;
+  max-width: 92%;
+  line-height: 1.45;
+  z-index: 2;
+}
+
+@media screen and (max-width: 760px) {
+  .p2-proc-wrap {
+    grid-template-columns: 1fr;
+  }
+  .p2-proc-wrap .p2-opt-card {
+    border-right: none;
+    border-bottom: 1px solid var(--rule);
+  }
+  .p2-proc-illu {
+    min-height: 200px;
+  }
+}
+
+.toc-list {
+  margin: 12px 0 0 22px;
+  padding: 0;
+  font-size: 12.5px;
+  line-height: 1.75;
+  color: var(--text-soft);
+}
+.toc-list li {
+  margin-bottom: 8px;
+  padding-left: 4px;
+}
+.toc-list li::marker {
+  color: var(--gold);
+  font-weight: 600;
+  font-family: var(--mono);
+  font-size: 11px;
+}
+
+/* Phase 1 TOC — top-tier illustration + charts (after sample contents list) */
+.p1-report-artifacts {
+  display: grid;
+  grid-template-columns: 1.14fr 0.86fr;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 18px 26px;
+  margin-top: 28px;
+  align-items: stretch;
+}
+.p1-artifacts-header {
+  grid-column: 1 / -1;
+  position: relative;
+  padding: 18px 22px 20px;
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(0, 34, 68, 0.97) 0%, #002244 38%, #063558 72%, #071f33 100%);
+  border: 1px solid rgba(212, 168, 75, 0.35);
+  box-shadow:
+    0 20px 48px rgba(0, 8, 22, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+.p1-artifacts-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold-light) 0%, var(--gold) 28%, rgba(0, 105, 163, 0.65) 62%, transparent 100%);
+  opacity: 0.95;
+  pointer-events: none;
+}
+.p1-artifacts-header::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  right: -8%;
+  width: 45%;
+  height: 120%;
+  background: radial-gradient(ellipse at center, rgba(212, 168, 75, 0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+.p1-artifacts-eyebrow {
+  display: block;
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: rgba(212, 168, 75, 0.95);
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+.p1-artifacts-heading {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: -0.4px;
+  margin: 0 0 6px;
+  line-height: 1.15;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+}
+.p1-artifacts-heading em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold-light);
+}
+.p1-artifacts-sub {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.58);
+  margin: 0;
+  max-width: 46em;
+  line-height: 1.5;
+  position: relative;
+  z-index: 1;
+}
+
+.p1-toc-illu {
+  position: relative;
+  background:
+    radial-gradient(ellipse 95% 70% at 50% -5%, rgba(0, 105, 163, 0.09) 0%, transparent 52%),
+    radial-gradient(ellipse 55% 45% at 100% 100%, rgba(212, 168, 75, 0.08) 0%, transparent 48%),
+    linear-gradient(175deg, #feffff 0%, #f1f5fb 42%, #e4eaf4 100%);
+  border: 1px solid rgba(0, 34, 68, 0.11);
+  border-radius: 8px;
+  min-height: 272px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px 16px 42px;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.85),
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    0 22px 48px -16px rgba(0, 34, 68, 0.14);
+  overflow: hidden;
+}
+.p1-toc-illu::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(0, 34, 68, 0.055) 1px, transparent 0);
+  background-size: 22px 22px;
+  opacity: 0.55;
+  pointer-events: none;
+}
+.p1-toc-illu::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 8%;
+  right: 8%;
+  height: 2px;
+  border-radius: 0 0 4px 4px;
+  background: linear-gradient(90deg, transparent 5%, rgba(212, 168, 75, 0.75) 38%, rgba(0, 105, 163, 0.55) 62%, transparent 95%);
+  pointer-events: none;
+  box-shadow: 0 2px 12px rgba(212, 168, 75, 0.15);
+}
+.p1-toc-illu svg {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 12px 28px rgba(0, 34, 68, 0.08));
+}
+.p1-toc-illu-cap {
+  position: absolute;
+  bottom: 13px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--mono);
+  font-size: 7.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(0, 34, 68, 0.42);
+  text-align: center;
+  max-width: 94%;
+  line-height: 1.5;
+  z-index: 2;
+}
+
+.p1-toc-charts {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+.p1-toc-chart {
+  margin: 0;
+  position: relative;
+  padding: 0;
+  background: linear-gradient(165deg, #ffffff 0%, #f5f7fb 55%, #e8eef7 100%);
+  border: 1px solid rgba(0, 34, 68, 0.11);
+  border-radius: 8px;
+  box-shadow:
+    0 14px 36px rgba(0, 34, 68, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  overflow: hidden;
+}
+.p1-toc-chart-bar {
+  padding: 14px 16px 16px;
+}
+.p1-toc-chart-kpi {
+  padding: 12px 14px 14px;
+}
+.p1-toc-chart-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px 10px;
+  background: linear-gradient(180deg, rgba(0, 34, 68, 0.04) 0%, transparent 100%);
+  border-bottom: 1px solid rgba(0, 34, 68, 0.07);
+}
+.p1-toc-chart-top strong {
+  display: block;
+  font-family: var(--cond);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--navy);
+  line-height: 1.35;
+}
+.p1-toc-chart-top span {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  white-space: nowrap;
+  padding-top: 2px;
+}
+.p1-toc-chart svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.p1-toc-chart-note {
+  margin: 0;
+  padding: 10px 14px 12px;
+  font-family: var(--mono);
+  font-size: 7.5px;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  line-height: 1.45;
+  border-top: 1px solid rgba(0, 34, 68, 0.06);
+  background: rgba(255, 255, 255, 0.45);
+}
+.p1-toc-chart-donut-wrap {
+  padding: 6px 12px 4px;
+}
+
+@media screen and (max-width: 900px) {
+  .p1-report-artifacts {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Print — compact A4 PDF: tight margins, smaller type, allow splits on large blocks (no blank islands) */
+@page {
+  size: A4;
+  margin: 10mm 10mm 11mm 10mm;
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html, body {
+    background: #fff !important;
+    height: auto !important;
+    font-family: 'Barlow', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  }
+
+  /* Single clear pairing for PDF: Garamond headings / titles, Barlow body */
+  h1, h2, h3, h4,
+  .section-title,
+  .subhead,
+  .cover-title,
+  .cover-eyebrow,
+  .letter-subject,
+  .p2-opt-name,
+  .geo-card h3,
+  .deliv-card h4,
+  .why-body h4 {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif !important;
+  }
+
+  .document {
+    box-shadow: none !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    border: none !important;
+    border-radius: 0 !important;
+  }
+  .document > :first-child,
+  .document > :last-child {
+    border-radius: 0 !important;
+  }
+  .page {
+    border-bottom: none !important;
+  }
+
+  .page,
+  .cover-inner {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  .page {
+    page-break-after: always;
+    break-after: page;
+    padding: 7mm 9mm 8mm 9mm !important;
+    position: relative !important;
+  }
+
+  /* Cover = exactly one A4 surface (respects @page margins) */
+  .cover {
+    page-break-after: always;
+    break-after: page;
+    padding: 8mm 9mm 9mm 9mm !important;
+    position: relative !important;
+    min-height: calc(297mm - 21mm) !important;
+    height: calc(297mm - 21mm) !important;
+    max-height: calc(297mm - 21mm) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    overflow: hidden !important;
+    box-shadow:
+      inset 0 0 0 0.75pt rgba(212, 168, 75, 0.24),
+      inset 0 0 0 0.5pt rgba(255, 255, 255, 0.05),
+      inset 0 0 60px rgba(0, 8, 18, 0.3) !important;
+  }
+
+  .cover-inner {
+    flex: 1 1 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 0 !important;
+    height: 100% !important;
+  }
+
+  .page:last-of-type {
+    page-break-after: auto;
+    break-after: auto;
+  }
+
+  .page-footer {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin-top: 10pt !important;
+    padding-top: 6pt !important;
+    border-top: 1px solid var(--rule);
+    font-size: 8.5pt !important;
+  }
+
+  .cover .cover-meta {
+    margin-top: auto !important;
+    padding-top: 14pt !important;
+    padding-bottom: 0 !important;
+    gap: 10pt 12pt !important;
+    border-top: 0.75pt solid rgba(255,255,255,0.2) !important;
+  }
+
+  .cover .cover-meta-item .label {
+    font-size: 7.5pt !important;
+    letter-spacing: 2.5px !important;
+  }
+
+  .cover .cover-meta-item .value {
+    font-size: 11.5pt !important;
+    line-height: 1.32 !important;
+  }
+
+  .cover-tag {
+    right: 8mm !important;
+    bottom: 38mm !important;
+    top: auto !important;
+    font-size: 8pt !important;
+    letter-spacing: 4px !important;
+    color: rgba(255,255,255,0.38) !important;
+    transform: rotate(180deg) !important;
+  }
+
+  body {
+    font-size: 9.75pt !important;
+    line-height: 1.38 !important;
+  }
+
+  p.body,
+  .letter-body p,
+  .section-lede {
+    margin-bottom: 8pt !important;
+  }
+
+  .section-num {
+    margin-bottom: 3pt !important;
+    font-size: 9pt !important;
+  }
+
+  .section-title {
+    font-size: 18pt !important;
+    line-height: 1.1 !important;
+    margin-bottom: 8pt !important;
+  }
+
+  .section-lede {
+    padding: 0 0 12pt 14px !important;
+    margin-bottom: 14pt !important;
+    font-size: 10pt !important;
+    line-height: 1.42 !important;
+  }
+
+  .subhead {
+    font-size: 13pt !important;
+    margin: 12pt 0 8pt !important;
+  }
+
+  .sub-subhead {
+    font-size: 9.5pt !important;
+    margin: 10pt 0 6pt !important;
+  }
+
+  .page-rule {
+    margin-bottom: 10pt !important;
+    gap: 10px !important;
+  }
+
+  .page > .page-rule:first-child {
+    margin-bottom: 8pt !important;
+  }
+
+  .letter-body p,
+  .section-lede,
+  p.body {
+    orphans: 2;
+    widows: 2;
+  }
+
+  /* Headings: avoid orphan title at page bottom only */
+  h2, h3, h4,
+  .section-title,
+  .subhead,
+  .sub-subhead {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* Large blocks MAY split — prevents huge blank gaps when a card/grid is taller than one page */
+  .matrix,
+  table.matrix {
+    page-break-inside: auto;
+    break-inside: auto;
+  }
+
+  .scope-block,
+  .geo-card,
+  .phase,
+  .deliv-card,
+  .why-item,
+  .appendix-item,
+  .field-volume-stats,
+  .timeline-row,
+  .cred-stat,
+  .forces:not(.forces-field) .force-row {
+    page-break-inside: auto;
+    break-inside: auto;
+  }
+
+  .creds-stats {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .fv-cell {
+    page-break-inside: auto;
+    break-inside: auto;
+  }
+
+  .p2-opt-grid,
+  .p1-opt-grid {
+    page-break-inside: auto;
+    break-inside: auto;
+    margin: 12pt 0 10pt !important;
+  }
+
+  .p2-proc-wrap {
+    page-break-inside: auto;
+    break-inside: auto;
+    margin-bottom: 10pt !important;
+  }
+
+  .p2-opt-card,
+  .p1-opt-card {
+    page-break-inside: auto;
+    break-inside: auto;
+    padding: 10px 8px 12px !important;
+  }
+
+  .p2-proc-illu {
+    min-height: 0 !important;
+    padding: 8px 10px 18px !important;
+  }
+  .p2-proc-illu svg {
+    max-height: 142px !important;
+    width: auto !important;
+    margin: 0 auto !important;
+    filter: none !important;
+  }
+  .p2-proc-illu-cap {
+    bottom: 5px !important;
+    font-size: 6.25pt !important;
+    letter-spacing: 0.18em !important;
+    max-width: 95% !important;
+  }
+
+  .p2-opt-name { font-size: 12.5pt !important; }
+  .p2-opt-price { font-size: 16pt !important; }
+
+  .cover-body,
+  .cover-seal {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .cover-top {
+    margin-bottom: 22pt !important;
+    padding-bottom: 14pt !important;
+  }
+  .cover-eyebrow {
+    font-size: 9pt !important;
+    letter-spacing: 5px !important;
+    margin-bottom: 14pt !important;
+  }
+  .cover-title {
+    font-size: 26pt !important;
+    line-height: 1.08 !important;
+    margin-bottom: 12pt !important;
+  }
+  .cover-subtitle {
+    font-size: 10.25pt !important;
+    line-height: 1.45 !important;
+    max-width: 95% !important;
+  }
+  .cover-seal {
+    width: 28mm !important;
+    max-width: 28mm !important;
+    filter: drop-shadow(0 3.5mm 7mm rgba(0, 0, 0, 0.35)) !important;
+  }
+
+  .clogosvg { width: 40px !important; height: 40px !important; }
+  .cover .clogosvg {
+    width: 11mm !important;
+    height: 11mm !important;
+    filter: drop-shadow(0 1mm 2.5mm rgba(0, 0, 0, 0.32)) !important;
+  }
+  .clogoname { font-size: 18pt !important; }
+  .clogosub { font-size: 6.5pt !important; }
+
+  .cover-ref {
+    font-size: 8.5pt !important;
+    line-height: 1.65 !important;
+    padding: 8pt 10pt 9pt !important;
+    border: 0.5pt solid rgba(255, 255, 255, 0.14) !important;
+    border-radius: 2pt !important;
+    background: rgba(0, 8, 22, 0.52) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: inset 0 0.5pt 0 rgba(255, 255, 255, 0.07) !important;
+  }
+
+  .cover-hero {
+    padding-left: 16pt !important;
+  }
+  .cover-hero::before {
+    width: 2.5pt !important;
+    box-shadow: none !important;
+  }
+
+  .cover-meta-item {
+    padding: 10pt 11pt 11pt !important;
+    border-radius: 2pt !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 0.5pt solid rgba(255, 255, 255, 0.12) !important;
+    box-shadow: inset 0 0.5pt 0 rgba(255, 255, 255, 0.06) !important;
+  }
+
+  .cover .clogoname {
+    border-image: none !important;
+    border-bottom: 1.5pt solid rgba(212, 168, 75, 0.55) !important;
+    padding-bottom: 3pt !important;
+  }
+
+  .letter {
+    padding-top: 5mm !important;
+    padding-bottom: 5mm !important;
+    box-shadow:
+      inset 0 0 0 0.5pt rgba(0, 34, 68, 0.08),
+      inset 0 0 0 0.5pt rgba(255, 255, 255, 0.5) !important;
+  }
+
+  .letter::before {
+    width: 4.5pt !important;
+    opacity: 0.95 !important;
+    box-shadow: 2pt 0 12pt rgba(212, 168, 75, 0.12) !important;
+  }
+
+  .letter-head::after {
+    height: 1.25pt !important;
+  }
+
+  .letter-head .date {
+    padding: 7pt 9pt !important;
+    border: 0.5pt solid rgba(0, 34, 68, 0.09) !important;
+    border-radius: 2pt !important;
+    box-shadow: 0 2pt 8pt rgba(0, 34, 68, 0.05) !important;
+  }
+
+  .letter-subject {
+    padding: 11pt 14pt 12pt !important;
+    font-size: 10.75pt !important;
+    border: 0.5pt solid rgba(0, 34, 68, 0.08) !important;
+    border-left: 3pt solid var(--gold) !important;
+    border-radius: 0 2.5pt 2.5pt 0 !important;
+    box-shadow: 0 2pt 12pt rgba(0, 34, 68, 0.07) !important;
+  }
+
+  .letter-recipient {
+    padding: 9pt 11pt 10pt !important;
+    border: 0.5pt solid rgba(0, 34, 68, 0.1) !important;
+    border-radius: 2pt !important;
+    box-shadow: 0 2pt 10pt rgba(0, 34, 68, 0.05) !important;
+  }
+
+  .letter-body p {
+    font-size: 10pt !important;
+    line-height: 1.48 !important;
+    text-wrap: unset !important;
+  }
+
+  .letter-sig::before {
+    width: 64pt !important;
+    height: 1.25pt !important;
+  }
+
+  .letter-sig .name {
+    font-size: 13pt !important;
+  }
+
+  .letter-sig .contact-line a {
+    border-bottom: none !important;
+  }
+
+  .letter-sig-note {
+    font-size: 7.25pt !important;
+    letter-spacing: 0.05em !important;
+    margin-top: 8pt !important;
+  }
+
+  .signoff {
+    padding: 0 !important;
+  }
+  .page--closing-sign {
+    padding: 16pt 14pt 14pt !important;
+    border: 0.75pt solid rgba(212, 168, 75, 0.35) !important;
+    border-radius: 3pt !important;
+    box-shadow: 0 6pt 18pt rgba(0, 8, 20, 0.25) !important;
+  }
+  .page--closing-sign h3 {
+    font-size: 17pt !important;
+  }
+  .page--closing-sign > p {
+    font-size: 9.75pt !important;
+    line-height: 1.5 !important;
+  }
+  .page--closing .signoff .contact {
+    gap: 8pt !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    margin-top: 14pt !important;
+    padding-top: 12pt !important;
+  }
+  .page--closing .signoff .contact-item {
+    padding: 8pt 9pt 9pt !important;
+    border-radius: 2pt !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(255, 255, 255, 0.09) !important;
+  }
+  .page--closing .forces {
+    gap: 8pt !important;
+  }
+  .page--closing .force-row {
+    padding: 10pt 11pt !important;
+    border-radius: 3pt !important;
+    box-shadow: 0 2pt 8pt rgba(0, 34, 68, 0.06) !important;
+  }
+  .page--closing .section-lede {
+    padding: 9pt 11pt 10pt !important;
+    border-radius: 0 2.5pt 2.5pt 0 !important;
+    box-shadow: 0 2pt 8pt rgba(0, 34, 68, 0.05) !important;
+  }
+  .page--closing .page-footer {
+    box-shadow: none !important;
+  }
+
+  .geo-grid {
+    gap: 10px !important;
+  }
+  .geo-card {
+    padding: 12pt !important;
+  }
+
+  .forces-field .force-row {
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+    padding: 8pt 0 !important;
+  }
+
+  .timeline-header {
+    grid-template-columns: 140px repeat(14, 1fr) !important;
+    font-size: 8pt !important;
+  }
+  .timeline-row .tl-phase {
+    font-size: 9.5pt !important;
+    padding: 6pt 8pt !important;
+  }
+
+  .toc-list {
+    font-size: 9.5pt !important;
+    line-height: 1.45 !important;
+    margin-left: 18px !important;
+  }
+  .toc-list li {
+    margin-bottom: 4pt !important;
+  }
+
+  .p1-report-artifacts {
+    margin-top: 12pt !important;
+    gap: 10pt 12pt !important;
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .p1-artifacts-header {
+    padding: 10pt 11pt 11pt !important;
+    border-radius: 3pt !important;
+    border: 0.5pt solid rgba(212, 168, 75, 0.35) !important;
+    box-shadow: 0 4pt 14pt rgba(0, 8, 18, 0.22) !important;
+  }
+  .p1-artifacts-eyebrow {
+    font-size: 6.5pt !important;
+    letter-spacing: 0.28em !important;
+    margin-bottom: 5pt !important;
+  }
+  .p1-artifacts-heading {
+    font-size: 13pt !important;
+    margin-bottom: 4pt !important;
+  }
+  .p1-artifacts-sub {
+    font-size: 8pt !important;
+    line-height: 1.38 !important;
+  }
+  .p1-toc-illu {
+    min-height: 0 !important;
+    padding: 12pt 10pt 26pt !important;
+    border-radius: 3pt !important;
+    box-shadow: inset 0 0 0 0.5pt rgba(0, 34, 68, 0.08) !important;
+  }
+  .p1-toc-illu svg {
+    max-height: 118px !important;
+  }
+  .p1-toc-illu-cap {
+    font-size: 5.5pt !important;
+    letter-spacing: 0.14em !important;
+    bottom: 7pt !important;
+  }
+  .p1-toc-chart {
+    border-radius: 2.5pt !important;
+  }
+  .p1-toc-chart-top {
+    padding: 7pt 9pt 6pt !important;
+  }
+  .p1-toc-chart-top strong {
+    font-size: 6.5pt !important;
+    letter-spacing: 0.14em !important;
+  }
+  .p1-toc-chart-top span {
+    font-size: 6pt !important;
+  }
+  .p1-toc-chart-bar,
+  .p1-toc-chart-donut-wrap {
+    padding: 6pt 8pt 7pt !important;
+  }
+  .p1-toc-chart-kpi .p1-toc-chart-donut-wrap {
+    padding-bottom: 4pt !important;
+  }
+  .p1-toc-chart svg {
+    max-height: 76px !important;
+  }
+  .p1-toc-chart-kpi svg {
+    max-height: 88px !important;
+  }
+  .p1-toc-chart-note {
+    font-size: 5.75pt !important;
+    padding: 6pt 9pt 7pt !important;
+  }
+
+  /* Team page: allow natural pagination if needed */
+  .page--team-premium {
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+    padding: 6mm 8mm 10mm 8mm !important;
+    box-shadow:
+      inset 0 0 0 0.5pt rgba(0, 34, 68, 0.06),
+      inset 0 0 0 0.5pt rgba(255, 255, 255, 0.4) !important;
+  }
+  .page--team-premium .team-premium-band {
+    margin-bottom: 10pt !important;
+    padding: 12pt 12pt 12pt !important;
+    border: 0.5pt solid rgba(0, 34, 68, 0.09) !important;
+    border-radius: 2.5pt !important;
+    box-shadow: 0 3pt 12pt rgba(0, 34, 68, 0.06) !important;
+  }
+  .page--team-premium .team-premium-ph::after {
+    height: 1.25pt !important;
+    background: var(--navy) !important;
+  }
+  .page--team-premium .team-premium-panel {
+    padding: 9pt 9pt 8pt !important;
+    border: 0.5pt solid rgba(0, 34, 68, 0.08) !important;
+    border-radius: 2.5pt !important;
+    box-shadow: 0 2pt 8pt rgba(0, 34, 68, 0.05) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  .page--team-premium .team-premium-title {
+    font-size: 15pt !important;
+    line-height: 1.1 !important;
+  }
+  .page--team-premium .team-premium-dek { font-size: 8pt !important; line-height: 1.32 !important; }
+  .page--team-premium .team-premium-lc p,
+  .page--team-premium .team-premium-desc { font-size: 7pt !important; line-height: 1.3 !important; }
+  .page--team-premium .team-premium-lc h3 { font-size: 8.5pt !important; }
+  .page--team-premium .team-premium-role { font-size: 8pt !important; }
+  .page--team-premium .team-premium-ph strong { font-size: 7.5pt !important; }
+  .page--team-premium .team-premium-pnote { font-size: 7pt !important; }
+  .page--team-premium .team-premium-cap,
+  .page--team-premium .team-cap-lbl,
+  .page--team-premium .team-cap-sub { font-size: 6.5pt !important; }
+  .page--team-premium .team-premium-cap strong { font-size: 10pt !important; }
+  .page--team-premium .team-premium-row {
+    padding: 4pt 0 4.5pt !important;
+    grid-template-columns: 20pt 1fr 52pt !important;
+    gap: 4pt 5pt !important;
+  }
+  .page--team-premium .team-premium-rom { font-size: 10pt !important; }
+  .page--team-premium .team-premium-lead { gap: 8pt !important; margin-bottom: 8pt !important; }
+  .page--team-premium .team-premium-lc {
+    padding: 8pt 9pt 9pt !important;
+    grid-template-columns: 22pt 1fr 58pt !important;
+  }
+  .page--team-premium .team-premium-cols { gap: 0 10pt !important; }
+}
+</style>
+<style id="bnx-screen-responsive">
+/* Screen layout — public proposal deck (does not affect print). */
+@media screen {
+  html {
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    overflow-x: hidden;
+    margin: 0;
+    min-height: 100vh;
+    width: 100%;
+  }
+
+  /* Full-width document shell */
+  .document {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto calc(56px + env(safe-area-inset-bottom, 0px));
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 900px) {
+    .document {
+      max-width: min(1180px, 100vw);
+      margin-top: clamp(8px, 1.5vw, 20px);
+      margin-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+      border-radius: 4px;
+      box-shadow: 0 24px 64px -16px rgba(0, 34, 68, 0.14);
+    }
+  }
+
+  /* Drop fixed A4 page heights on screen */
+  .page,
+  .cover,
+  .cover-inner,
+  .page--team-premium,
+  .page--closing,
+  .letter {
+    min-height: auto !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  .page {
+    padding: clamp(18px, 4vw, 48px) clamp(12px, 3.5vw, 56px) !important;
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  .cover {
+    padding: clamp(24px, 5vw, 48px) clamp(14px, 4vw, 52px) !important;
+    min-height: min(92vh, 900px) !important;
+  }
+
+  .cover-top {
+    flex-wrap: wrap;
+    gap: 12px 16px;
+  }
+
+  .cover-body {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 24px !important;
+  }
+
+  .cover-hero {
+    flex: 1 1 auto !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding-left: clamp(12px, 3vw, 24px) !important;
+  }
+
+  .cover-seal {
+    width: min(148px, 42vw) !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    align-self: center;
+  }
+
+  .cover-title {
+    font-size: clamp(1.65rem, 7vw, 54px) !important;
+    color: #fff !important;
+    letter-spacing: -0.02em;
+  }
+
+  .cover-subtitle {
+    max-width: 100% !important;
+    font-size: clamp(13px, 2.8vw, 16px) !important;
+  }
+
+  .cover-meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .cover-meta {
+      grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .cover-body {
+      flex-direction: row !important;
+      align-items: center !important;
+    }
+    .cover-seal {
+      margin: 0 !important;
+    }
+  }
+
+  .cover-tag {
+    display: none;
+  }
+
+  .page-footer {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin-top: 28px;
+    padding-top: 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .section-title {
+    font-size: clamp(1.3rem, 4.8vw, 32px) !important;
+    text-wrap: balance;
+    max-width: 100%;
+  }
+
+  .section-lede,
+  .section-lede--blue-grade,
+  .letter-body,
+  .letter-body p,
+  .body,
+  .subhead,
+  .sub-subhead {
+    max-width: 100% !important;
+  }
+
+  .letter-head {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* Grids → single column on narrow screens */
+  .geo-grid,
+  .phases-dual,
+  .phases,
+  .team-premium-cols,
+  .field-volume-stats,
+  .comp-grid,
+  .deliv-grid,
+  .why-item,
+  .credentials-stats,
+  .p1-toc-charts,
+  .p2-opt-grid,
+  .page--closing .signoff .contact {
+    grid-template-columns: 1fr !important;
+  }
+
+  @media (min-width: 720px) {
+    .geo-grid,
+    .phases-dual,
+    .phases {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+    .field-volume-stats {
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+    .comp-grid,
+    .deliv-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+    .team-premium-cols {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+  }
+
+  @media (min-width: 960px) {
+    .p1-report-artifacts {
+      grid-template-columns: 1.14fr 0.86fr !important;
+    }
+    .p1-toc-charts {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+  }
+
+  .p1-report-artifacts {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    width: 100%;
+  }
+
+  .p1-artifacts-header,
+  .p1-artifacts-chart,
+  .p1-artifacts-map {
+    min-width: 0;
+    width: 100%;
+  }
+
+  /* Tables */
+  .matrix-wrap,
+  table.matrix,
+  .matrix,
+  .fee-table {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table.matrix,
+  .fee-table {
+    display: table;
+    min-width: min(100%, 520px);
+  }
+
+  /* Timeline — horizontal scroll preserves week columns */
+  .timeline {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+  }
+
+  .timeline-header,
+  .timeline-row {
+    min-width: 560px;
+  }
+
+  /* Illustrations & diagrams */
+  .p2-method-illu-wrap,
+  .p2-proc-wrap,
+  .p2-proc-illu {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .p2-proc-illu {
+    min-height: auto !important;
+    padding: clamp(16px, 4vw, 28px) clamp(12px, 3vw, 20px) !important;
+  }
+
+  .p2-proc-illu svg,
+  .p1-report-artifacts svg,
+  .p1-artifacts-map svg,
+  .p1-artifacts-chart svg,
+  .document svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .p2-proc-illu-cap {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    max-width: 100% !important;
+    padding: 10px 12px 0;
+    margin-top: 8px;
+  }
+
+  @media (max-width: 760px) {
+    .p2-proc-wrap {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+  .team-premium-card,
+  .geo-card,
+  .deliv-card,
+  .phase-card,
+  .force-row {
+    min-width: 0;
+  }
+
+  .page--closing .force-row {
+    grid-template-columns: 40px 1fr !important;
+  }
+
+  .page--closing .force-signal {
+    grid-column: 1 / -1;
+  }
+
+  .forces-field .force-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  #bnx-proposal-cta {
+    padding: 10px clamp(12px, 3vw, 20px) !important;
+    font-size: clamp(11px, 2.8vw, 13px) !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+
+  #bnx-proposal-cta a {
+    flex-shrink: 0;
+  }
+
+  /* Register CTA closing page */
+  #request-proposal.page--register-cta {
+    background: linear-gradient(145deg, #000510 0%, #002244 55%, #063558 100%) !important;
+    color: #fff;
+    min-height: auto !important;
+  }
+
+  #request-proposal.page--register-cta .page-rule-text {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  #request-proposal.page--register-cta .section-num {
+    color: rgba(212, 168, 75, 0.95);
+  }
+
+  #request-proposal.page--register-cta .section-title,
+  #request-proposal.page--register-cta .section-title em {
+    color: #fff !important;
+  }
+
+  #request-proposal.page--register-cta .section-title em {
+    color: #d4a84b !important;
+  }
+
+  #request-proposal.page--register-cta .section-lede--blue-grade {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 105, 163, 0.42) 0%,
+      rgba(0, 34, 68, 0.55) 55%,
+      rgba(6, 53, 88, 0.48) 100%
+    ) !important;
+    border-left: 3px solid #0069a3 !important;
+    border-radius: 4px;
+    padding: 16px 18px 16px 20px !important;
+    color: #e8f4fc !important;
+    max-width: 100%;
+    line-height: 1.62;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.12),
+      0 8px 24px -8px rgba(0, 34, 68, 0.35);
+  }
+
+  #request-proposal.page--register-cta .section-lede--blue-grade strong {
+    color: #fff !important;
+  }
+
+  #request-proposal.page--register-cta .body,
+  #request-proposal.page--register-cta p {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  #request-proposal.page--register-cta .page-footer {
+    border-top-color: rgba(255, 255, 255, 0.15);
+  }
+
+  #request-proposal.page--register-cta .page-footer,
+  #request-proposal.page--register-cta .page-footer .brand {
+    color: rgba(255, 255, 255, 0.55);
+  }
+
+  #request-proposal.page--register-cta .page-footer .brand {
+    color: #fff;
+  }
+
+  #request-proposal.page--register-cta .forces--register-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  #request-proposal.page--register-cta .cover-cta--primary,
+  #request-proposal.page--register-cta .cover-cta--secondary {
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Barlow', system-ui, sans-serif;
+    font-size: clamp(12px, 2.8vw, 13px);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    border-radius: 4px;
+    padding: 12px clamp(16px, 4vw, 22px);
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+    text-align: center;
+    flex: 1 1 auto;
+    min-width: min(100%, 220px);
+  }
+
+  #request-proposal.page--register-cta .cover-cta--primary {
+    color: #fff !important;
+    background: linear-gradient(135deg, #0069a3 0%, #002244 100%);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow:
+      0 8px 24px rgba(0, 34, 68, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+
+  #request-proposal.page--register-cta .cover-cta--primary:hover {
+    background: linear-gradient(135deg, #0080c8 0%, #003366 100%);
+    box-shadow: 0 10px 28px rgba(0, 34, 68, 0.48);
+  }
+
+  #request-proposal.page--register-cta .cover-cta--secondary {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(212, 168, 75, 0.55);
+    font-weight: 600;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  #request-proposal.page--register-cta .cover-cta--secondary:hover {
+    background: rgba(212, 168, 75, 0.14);
+    border-color: rgba(212, 168, 75, 0.85);
+  }
+
+  /* Phase 2 · 20 directors */
+  .field-volume-stats .fv-cell--phase2-premium {
+    background: linear-gradient(145deg, #000510 0%, #002244 52%, #063558 100%) !important;
+    border-right-color: rgba(212, 168, 75, 0.25) !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    position: relative;
+  }
+
+  .field-volume-stats .fv-cell--phase2-premium::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(212, 168, 75, 0.16) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .field-volume-stats .fv-cell--phase2-premium .fv-num {
+    color: #fff !important;
+    font-size: clamp(2rem, 10vw, 44px) !important;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+  }
+
+  .field-volume-stats .fv-cell--phase2-premium .fv-label {
+    color: rgba(255, 255, 255, 0.9) !important;
+    position: relative;
+    z-index: 1;
+  }
+
+  .field-volume-stats .fv-cell--phase2-premium .fv-label strong {
+    color: #d4a84b !important;
+  }
+
+  .p2-method-illu-wrap {
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin: 0 0 18px;
+    width: 100%;
+    box-shadow: 0 20px 48px -16px rgba(0, 34, 68, 0.16);
+  }
+
+  .p2-method-illu-wrap .p2-proc-illu {
+    min-height: auto;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="document">
+
+<!-- ═══════════════════════════════════════════════
+     PAGE 1 — COVER
+═══════════════════════════════════════════════ -->
+<section class="cover">
+  <div class="cover-inner">
+
+    <div class="cover-top">
+      <div class="clogorow">
+        <svg class="clogosvg" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="bnxCoverHg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#F07090"/>
+              <stop offset="55%" stop-color="#D41848"/>
+              <stop offset="100%" stop-color="#8B0A2A"/>
+            </linearGradient>
+          </defs>
+          <path d="M25 43C25 43 5 29 5 17c0-6.5 5.5-11.5 11-11.5 3.8 0 7.2 2.3 9 5.7 1.8-3.4 5.2-5.7 9-5.7C39.5 5.5 45 10.5 45 17c0 12-20 26-20 26z" fill="url(#bnxCoverHg)"/>
+          <polyline points="9,25 14,25 17.5,19 21,30 23.5,22 25.5,27 29,25 41,25" fill="none" stroke="#C8E8F4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="clogoname-wrap">
+          <div class="clogoname">BIONIXUS</div>
+          <div class="clogosub">Intelligence For Business Growth</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cover-body">
+      <div class="cover-hero">
+        <div class="cover-eyebrow">Confidential Research Proposal</div>
+        <h1 class="cover-title">
+          Clinical Diagnostics<br>
+          Market Assessment<br>
+          <em>Saudi Arabia &amp; Türkiye</em>
+        </h1>
+        <p class="cover-subtitle">
+          QC &amp; immunohematology — KSA &amp; Türkiye: size, share structure, regulation, tenders. sponsor Clinical Diagnostics Group.
+        </p>
+      </div>
+      <div class="cover-seal cover-seal--bnx-original" aria-hidden="true">
+        <!-- Original BioNixus circular stamp (same artwork as Nilewood MDF V2 cover) -->
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="brBnxOrigSealBg" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#D4A84B" stop-opacity="0.22"/><stop offset="70%" stop-color="#D4A84B" stop-opacity="0.07"/><stop offset="100%" stop-color="#D4A84B" stop-opacity="0"/></radialGradient>
+            <path id="brBnxOrigSealArc" d="M 50 50 m -42 0 a 42 42 0 1 1 84 0 a 42 42 0 1 1 -84 0"/>
+          </defs>
+          <circle cx="50" cy="50" r="48" fill="url(#brBnxOrigSealBg)"/>
+          <circle cx="50" cy="50" r="47" fill="none" stroke="#D4A84B" stroke-width="1.1" opacity="1"/>
+          <circle cx="50" cy="50" r="36.8" fill="none" stroke="#D4A84B" stroke-width="1.1" opacity="1"/>
+          <circle cx="50" cy="50" r="34.3" fill="none" stroke="#D4A84B" stroke-width="0.3" opacity="0.4" stroke-dasharray="0.7,1.1"/>
+          <circle cx="50" cy="50" r="32.8" fill="none" stroke="#D4A84B" stroke-width="0.7" opacity="0.75"/>
+          <circle cx="50" cy="50" r="31.3" fill="none" stroke="#D4A84B" stroke-width="0.28" opacity="0.4"/>
+          <text font-family="Barlow Condensed, sans-serif" font-size="4.2" fill="#F0C869" letter-spacing="2.2" font-weight="700" opacity="1">
+            <textPath href="#brBnxOrigSealArc" startOffset="0">GLOBALLY TRUSTED &#9830; UK FOUNDED &#9830; US HQ &#9830; PRIVATE INTELLIGENCE &#9830;</textPath>
+          </text>
+          <text x="50" y="49" text-anchor="middle" font-family="EB Garamond, Georgia, serif" font-size="9.2" fill="#D4A84B" font-weight="600" letter-spacing="1.5">BIONIXUS</text>
+          <line x1="26" y1="55" x2="44.5" y2="55" stroke="#D4A84B" stroke-width="0.45" opacity="0.7"/>
+          <line x1="55.5" y1="55" x2="74" y2="55" stroke="#D4A84B" stroke-width="0.45" opacity="0.7"/>
+          <path d="M 50 53 l 2 2 l -2 2 l -2 -2 z" fill="#D4A84B" opacity="0.85"/>
+          <text x="50" y="62" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-size="3.6" fill="#D4A84B" letter-spacing="1.4" font-weight="600" opacity="0.9">MARKET INTELLIGENCE</text>
+          <text x="50" y="67.5" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="2.8" fill="#D4A84B" letter-spacing="0.8" opacity="0.65">WY, USA</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <div class="label">Prepared For</div>
+        <div class="value">Qualified <span class="accent">sponsor</span></div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="label">Scope</div>
+        <div class="value">QC &amp; Immunohematology <span class="accent">/</span> KSA &amp; TR</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="label">Prepared By</div>
+        <div class="value">BioNixus Intelligence</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="label">Validity</div>
+        <div class="value">Subject to <span class="accent">final brief</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cover-tag">Intelligence · MENA · EU</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     PAGE 2 — LETTER FROM THE RESEARCH DIRECTOR
+═══════════════════════════════════════════════ -->
+<section class="page letter">
+
+  <div class="letter-head">
+    <div class="brand">BioNixus</div>
+  </div>
+
+  <div class="letter-recipient">
+    <strong>Clinical diagnostics sponsor (confidential)</strong><br>
+    Regional Marketing, Clinical Diagnostics, EEMEA-CIS
+  </div>
+
+  <div class="letter-subject">
+    Re: Proposal to support sponsor clinical diagnostics market assessment across the Saudi Arabia and Türkiye Quality Control and Immunohematology segments.
+  </div>
+
+  <div class="letter-body">
+    <p>
+      Thank you for the invitation. This proposal matches your brief: <strong>market sizing</strong> (segmented where data allow), <strong>market tiers / ranking</strong> (not false-precision shares), and <strong>procurement maps</strong>. <strong>Phase 1</strong> quantitative branches (core + optional tiers) and optional <strong>Phase 2</strong> procurement-director interviews — design in <strong>Section 5</strong>, scope in your statement of work.
+    </p>
+    <p>
+      Context is moving fast: <em>NUPCO</em> local-content and envelope consolidation, <em>IVDR</em> / SGK pressure in Türkiye, and ongoing IH market consolidation across KSA and Türkiye. <strong>Phase 1</strong> field in KSA (direct) and TR (vetted partner); <strong>Phase 2</strong> senior moderators. GCC, Türkiye, Egypt, wider MENA track record.
+    </p>
+    <p>
+      Document structure: methodology and supporting detail below; your statement of work (Phase 1 tiers + Phase 2); timeline <strong>Section 6</strong>. Desk/deliverables in executed SoW. We would welcome the assignment.
+    </p>
+  </div>
+
+  <div class="letter-sig">
+    <div class="name">Mohammad Alsaadany</div>
+    <div class="title">MEA Research Director · BioNixus</div>
+    <div class="contact-line">
+      <a href="mailto:mohammad.alsaadany@bionixus.com">mohammad.alsaadany@bionixus.com</a>
+      <span aria-hidden="true"> · </span>
+      <a href="https://www.bionixus.com">bionixus.com</a>
+      <span aria-hidden="true"> · </span>
+      +44 7727 666682
+    </div>
+    <div class="letter-sig-note">US headquarters · MEA programme · reporting to UK office</div>
+    <div class="firm">BioNixus Intelligence</div>
+  </div>
+
+  <div class="page-footer">
+    <span class="brand">BioNixus</span>
+    <span>02 — Letter of Intent</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     PAGE 3 — PEOPLE & TEAM (single premium print surface)
+═══════════════════════════════════════════════ -->
+<section class="page page--team-premium">
+
+  <div class="page-rule">
+    <div class="page-rule-text">03 · Team</div>
+  </div>
+
+  <div class="team-premium-band">
+    <div class="team-premium-eyebrow">People · Programme roster</div>
+    <h2 class="team-premium-title">Project team <span class="amp">&amp;</span> <em>local country resources</em></h2>
+    <p class="team-premium-dek">
+      Senior-led programme. <strong>KSA:</strong> BioNixus field. <strong>Türkiye:</strong> Istanbul / Ankara partner under BioNixus protocols. Central desk, model, and report QA.
+    </p>
+  </div>
+
+  <div class="team-premium-lead">
+    <div class="team-premium-lc">
+      <div class="team-premium-lc-rom" aria-hidden="true">I</div>
+      <div>
+        <h3>Research Director — engagement lead</h3>
+        <p>Scope, methodology, client sign-off, synthesis. Clinical diagnostics and <strong>KSA hospital / lab network</strong> depth. Leads <strong>QC &amp; IH</strong>, NUPCO / tender logic, cross-market alignment.</p>
+      </div>
+      <div class="team-premium-lc-pill">English · Arabic</div>
+    </div>
+    <div class="team-premium-lc">
+      <div class="team-premium-lc-rom" aria-hidden="true">II</div>
+      <div>
+        <h3>Senior Operations Director</h3>
+        <p>Milestones, calendars, <strong>TR</strong> partner oversight, <strong>KSA</strong> execution, resourcing, sponsor escalation.</p>
+      </div>
+      <div class="team-premium-lc-pill">Ops · PMO</div>
+    </div>
+  </div>
+
+  <div class="team-premium-cols">
+    <div class="team-premium-panel">
+      <div class="team-premium-ph">
+        <strong>Saudi Arabia</strong>
+        <span>Riyadh · Jeddah · BioNixus direct</span>
+      </div>
+      <div class="team-premium-row">
+        <div class="team-premium-rom">III</div>
+        <div>
+          <div class="team-premium-role">Principal Analyst — QC diagnostics</div>
+          <p class="team-premium-desc">QC/IH segmentation, OEM vs independent, middleware / software lens; <strong>KSA QC</strong> chapters and model.</p>
+        </div>
+        <div class="team-premium-cap"><strong>1</strong><span class="team-cap-lbl">lead analyst</span></div>
+      </div>
+      <div class="team-premium-row">
+        <div class="team-premium-rom">IV</div>
+        <div>
+          <div class="team-premium-role">Principal Analyst — immunohematology</div>
+          <p class="team-premium-desc">Blood-bank structure; gel / tube / automation; donor vs patient; <strong>KSA IH</strong> chapters and economics.</p>
+        </div>
+        <div class="team-premium-cap"><strong>1</strong><span class="team-cap-lbl">lead analyst</span></div>
+      </div>
+      <div class="team-premium-row">
+        <div class="team-premium-rom">V</div>
+        <div>
+          <div class="team-premium-role">Senior Project Manager</div>
+          <p class="team-premium-desc">Sponsor contact; source register; data room; milestones; outputs — single <strong>PMO line</strong> to sponsor.</p>
+        </div>
+        <div class="team-premium-cap"><strong>1</strong><span class="team-cap-lbl">FTE · PMO</span></div>
+      </div>
+      <div class="team-premium-row">
+        <div class="team-premium-rom">VI</div>
+        <div>
+          <div class="team-premium-role">KOL recruiters (KSA)</div>
+          <p class="team-premium-desc">Screener-led recruitment: <strong>Phase 1</strong> branch contacts; <strong>Phase 2</strong> procurement directors; snowball / no-show cover.</p>
+        </div>
+        <div class="team-premium-cap">
+          <strong>2</strong><span class="team-cap-lbl">FTE recruiters</span>
+          <span class="team-cap-sub">Surveys · expanded packages</span>
+        </div>
+      </div>
+      <div class="team-premium-row">
+        <div class="team-premium-rom">VII</div>
+        <div>
+          <div class="team-premium-role">Arabic field leads &amp; interviewers</div>
+          <p class="team-premium-desc"><strong>Phase 1:</strong> quantitative branch protocol. <strong>Phase 2:</strong> 60–90 min. procurement director interviews; translation as needed; NUPCO-adjacent / national-lab access.</p>
+        </div>
+        <div class="team-premium-cap">
+          <strong>3</strong><span class="team-cap-lbl">moderators</span>
+          <span class="team-cap-sub">Core 10 + expansions</span>
+        </div>
+      </div>
+      <div class="team-premium-row">
+        <div class="team-premium-rom">VIII</div>
+        <div>
+          <div class="team-premium-role">Desk analysts</div>
+          <p class="team-premium-desc">Tenders, accreditation, tabulation, model support; surge at draft / QA.</p>
+        </div>
+        <div class="team-premium-cap"><strong>2</strong><span class="team-cap-lbl">FTE analysts</span></div>
+      </div>
+    </div>
+
+    <div class="team-premium-panel">
+      <div class="team-premium-ph">
+        <strong>Türkiye</strong>
+        <span>Istanbul · Ankara · Partner field</span>
+      </div>
+      <p class="team-premium-pnote"><strong>Partner</strong> field; BioNixus instruments, screeners, QA.</p>
+
+      <div class="team-premium-row">
+        <div class="team-premium-rom">IX</div>
+        <div>
+          <div class="team-premium-role">Partner Field Operations Lead</div>
+          <p class="team-premium-desc">Accountable partner lead: <strong>TR</strong> field staff, calendars, escalation, daily reporting.</p>
+        </div>
+        <div class="team-premium-cap"><strong>1</strong><span class="team-cap-lbl">field lead</span></div>
+      </div>
+      <div class="team-premium-row">
+        <div class="team-premium-rom">X</div>
+        <div>
+          <div class="team-premium-role">Turkish field leads &amp; qualitative moderators</div>
+          <p class="team-premium-desc"><strong>Phase 1</strong> quant supervision; <strong>Phase 2</strong> qual moderators; guides English → Turkish per protocol.</p>
+        </div>
+        <div class="team-premium-cap">
+          <strong>2</strong><span class="team-cap-lbl">field / qual leads</span>
+          <span class="team-cap-sub">Quant P1 · Qual P2 · tiers</span>
+        </div>
+      </div>
+      <div class="team-premium-row">
+        <div class="team-premium-rom">XI</div>
+        <div>
+          <div class="team-premium-role">Local recruiters (Türkiye)</div>
+          <p class="team-premium-desc"><strong>Phase 1</strong> branch sampling; quotas; incentives (partner finance).</p>
+        </div>
+        <div class="team-premium-cap">
+          <strong>2</strong><span class="team-cap-lbl">recruiters</span>
+          <span class="team-cap-sub">Phase 1 tiers</span>
+        </div>
+      </div>
+      <div class="team-premium-row">
+        <div class="team-premium-rom">XII</div>
+        <div>
+          <div class="team-premium-role">Field QC &amp; secure data handoff (local)</div>
+          <p class="team-premium-desc"><strong>Phase 2</strong> recordings; transcript QA; encrypted handoff to BioNixus.</p>
+        </div>
+        <div class="team-premium-cap"><strong>2</strong><span class="team-cap-lbl">FTE tech</span></div>
+      </div>
+      <div class="team-premium-row">
+        <div class="team-premium-rom">XIII</div>
+        <div>
+          <div class="team-premium-role">BioNixus country liaison (analyst)</div>
+          <p class="team-premium-desc">Desk–field bridge; debriefs; first-pass synthesis to principals.</p>
+        </div>
+        <div class="team-premium-cap"><strong>1</strong><span class="team-cap-lbl">liaison</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="brand">BioNixus</span>
+    <span>03 — Project Team</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     PAGE 4 — RESEARCH FRAMEWORK / METHODOLOGY
+═══════════════════════════════════════════════ -->
+<section class="page">
+
+  <div class="page-rule">
+    <div class="page-rule-text">04 · Methodology</div>
+  </div>
+
+  <div class="section-num">02 — Research framework</div>
+  <h2 class="section-title">Two country engines,<br><em>one programme spine.</em></h2>
+  <p class="section-lede">
+    Per-country methodology and fees; one <strong>programme spine</strong> (model, exec summary, governance). Fees your statement of work. <strong>Week 10</strong> locks branch tiers (if any) and Phase 2 dates — <strong>Section 6</strong>.
+  </p>
+
+  <div class="geo-grid" style="margin-top:8px;">
+
+    <div class="geo-card">
+      <div class="flag">KSA · Saudi Arabia</div>
+      <h3>Team &amp; execution</h3>
+      <p style="font-size:12px;line-height:1.55;color:var(--text-soft);margin-bottom:8px;">
+        <strong>BioNixus</strong> Riyadh / Jeddah: principals (QC, IH), PM, <strong>recruiters</strong>, Arabic field, desk.
+      </p>
+      <div class="coverage-label">Phase 1 — desk + landscape (KSA)</div>
+      <div class="coverage-list" style="margin-bottom:8px;">
+        SFDA, MOH, CBAHI; <strong>NUPCO</strong> / public tenders; private / national labs; QC+IH sizing; market structure; Vision 2030; PDPL.
+      </div>
+      <div class="coverage-label">Phase 1 — quantitative branch coverage (KSA)</div>
+      <div class="coverage-list" style="margin-bottom:8px;">
+        <strong>30</strong> <strong>quantitative</strong> branch touchpoints (core); optional tiers your statement of work. BioNixus protocols; Arabic instruments.
+      </div>
+      <div class="coverage-label">Phase 2 — qualitative procurement (KSA)</div>
+      <div class="coverage-list">
+        <strong>10</strong> <strong>qualitative</strong> <strong>procurement director</strong> sessions — NUPCO-adjacent / hospital systems where accessible; tender-aligned guides.
+      </div>
+    </div>
+
+    <div class="geo-card turkey">
+      <div class="flag">TR · Türkiye</div>
+      <h3>Team &amp; execution</h3>
+      <p style="font-size:12px;line-height:1.55;color:var(--text-soft);margin-bottom:8px;">
+        <strong>Partner</strong> Istanbul / Ankara: field lead, moderators, recruiters, field QC; <strong>BioNixus liaison</strong>.
+      </p>
+      <div class="coverage-label">Phase 1 — desk + landscape (Türkiye)</div>
+      <div class="coverage-list" style="margin-bottom:8px;">
+        TİTCK / IVDR; <strong>EKAP</strong>; <strong>SGK</strong>; Kızılay vs hospital banks; TRY / CPI / logistics; bundles &amp; reagent-rental; KVKK.
+      </div>
+      <div class="coverage-label">Phase 1 — quantitative branch coverage (Türkiye)</div>
+      <div class="coverage-list" style="margin-bottom:8px;">
+        <strong>20</strong> <strong>quantitative</strong> branches (core); tiers your statement of work. Partner field; BioNixus screeners / QA; Turkish instruments.
+      </div>
+      <div class="coverage-label">Phase 2 — qualitative procurement (Türkiye)</div>
+      <div class="coverage-list">
+        <strong>10</strong> <strong>qualitative</strong> <strong>procurement director</strong> interviews — <strong>EKAP</strong> and private chains; screener-grade roles.
+      </div>
+    </div>
+
+  </div>
+
+  <div class="subhead">Phases Overview</div>
+
+  <div class="phases phases-dual" style="margin-top:12px;">
+
+    <div class="phase p1">
+      <div class="num">PHASE 1 — QUANTITATIVE</div>
+      <h4>Desk + branch insights (14 weeks)</h4>
+      <div class="weeks">KSA + TR in parallel</div>
+      <ul>
+        <li>Desk + integrated Excel; report + appendix</li>
+        <li><strong>50</strong> branches (<strong>30</strong> KSA · <strong>20</strong> TR) — sizing / competition</li>
+        <li>Optional +20 / +30 / +50 — your statement of work</li>
+      </ul>
+    </div>
+
+    <div class="phase p2">
+      <div class="num">PHASE 2 — QUALITATIVE</div>
+      <h4>Procurement directors (+~8 weeks)</h4>
+      <div class="weeks">20 qualitative depth interviews</div>
+      <ul>
+        <li><strong>20</strong> director interviews (<strong>10</strong> / <strong>10</strong>) · public + private</li>
+        <li>Triangulate with Phase 1; tender / access logic</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span class="brand">BioNixus</span>
+    <span>04 — Research Framework</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     PAGE 5 — PRIMARY RESEARCH MATRIX
+═══════════════════════════════════════════════ -->
+<section class="page">
+
+  <div class="page-rule">
+    <div class="page-rule-text">05 · Fieldwork</div>
+  </div>
+
+  <div class="section-num">03 — Primary fieldwork</div>
+  <h2 class="section-title">Branch insights &amp; procurement programmes,<br><em>Phase 1 quantitative · Phase 2 qualitative · Phase 1 tiers.</em></h2>
+
+  <div class="field-volume-stats">
+    <div class="fv-cell" style="background:var(--light-blue);">
+      <div class="fv-num">50</div>
+      <div class="fv-label">Phase 1 · Quantitative branches (core)<br><strong>30</strong> KSA · <strong>20</strong> TR</div>
+    </div>
+    <div class="fv-cell fv-cell--phase2-premium">
+      <div class="fv-num">20</div>
+      <div class="fv-label">Phase 2 · Qualitative procurement<br><strong>10</strong> + <strong>10</strong> · public + private</div>
+    </div>
+    <div class="fv-cell">
+      <div class="fv-num">20–50</div>
+      <div class="fv-label">Phase 1 tiers<br>+20 / +30 / +50 branches · scope options</div>
+    </div>
+  </div>
+
+<div class="p2-method-illu-wrap" role="group" aria-label="Phase 2 qualitative procurement: 20 director interviews">
+  <div class="p2-proc-illu" aria-hidden="true">
+    <svg viewBox="0 0 440 252" xmlns="http://www.w3.org/2000/svg" focusable="false" role="presentation">
+      <defs>
+        <linearGradient id="p2MethGold" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#B8862D"/>
+          <stop offset="100%" stop-color="#D4A84B"/>
+        </linearGradient>
+        <linearGradient id="p2MethNavy" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#000510"/>
+          <stop offset="55%" stop-color="#002244"/>
+          <stop offset="100%" stop-color="#0069A3"/>
+        </linearGradient>
+        <linearGradient id="p2MethCard" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#ffffff"/>
+          <stop offset="100%" stop-color="#f7f9fc"/>
+        </linearGradient>
+        <filter id="p2MethShad" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#002244" flood-opacity="0.1"/>
+        </filter>
+        <marker id="p2MethArr" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth">
+          <path d="M0 0 L7 3.5 L0 7 Z" fill="#C8963E" fill-opacity="0.78"/>
+        </marker>
+      </defs>
+      <rect x="96" y="14" width="248" height="26" rx="4" fill="url(#p2MethNavy)"/>
+      <text x="220" y="31" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="8.5" letter-spacing="3.2" fill="#ffffff" fill-opacity="0.92">QUALITATIVE PROCUREMENT · PHASE 2</text>
+      <g filter="url(#p2MethShad)">
+        <rect x="18" y="54" width="122" height="108" rx="7" fill="url(#p2MethCard)" stroke="#002244" stroke-opacity="0.13" stroke-width="1"/>
+        <rect x="18" y="54" width="122" height="28" rx="7" fill="rgba(0,34,68,0.04)"/>
+        <path d="M18 75 h122" stroke="#002244" stroke-opacity="0.06"/>
+      </g>
+      <text x="79" y="74" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="600" fill="#002244" letter-spacing="2">KSA</text>
+      <text x="79" y="94" text-anchor="middle" font-family="'Barlow', sans-serif" font-size="7.5" fill="#0069A3" fill-opacity="0.85">NUPCO-facing · public + private</text>
+      <rect x="32" y="102" width="94" height="26" rx="3" fill="rgba(200,150,62,0.12)" stroke="rgba(184,134,45,0.35)" stroke-width="0.75"/>
+      <text x="79" y="119" text-anchor="middle" font-family="'Barlow', sans-serif" font-size="8.5" font-weight="600" fill="#002244">10 director IDIs</text>
+      <text x="79" y="144" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="6.5" fill="#002244" fill-opacity="0.38">SCREENED ROLES</text>
+      <g filter="url(#p2MethShad)">
+        <rect x="300" y="54" width="122" height="108" rx="7" fill="url(#p2MethCard)" stroke="#002244" stroke-opacity="0.13" stroke-width="1"/>
+        <rect x="300" y="54" width="122" height="28" rx="7" fill="rgba(0,34,68,0.04)"/>
+        <path d="M300 75 h122" stroke="#002244" stroke-opacity="0.06"/>
+      </g>
+      <text x="361" y="74" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="600" fill="#002244" letter-spacing="2">TR</text>
+      <text x="361" y="94" text-anchor="middle" font-family="'Barlow', sans-serif" font-size="7.5" fill="#0069A3" fill-opacity="0.85">EKAP · hospital &amp; chain buyers</text>
+      <rect x="314" y="102" width="94" height="26" rx="3" fill="rgba(200,150,62,0.12)" stroke="rgba(184,134,45,0.35)" stroke-width="0.75"/>
+      <text x="361" y="119" text-anchor="middle" font-family="'Barlow', sans-serif" font-size="8.5" font-weight="600" fill="#002244">10 director IDIs</text>
+      <text x="361" y="144" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="6.5" fill="#002244" fill-opacity="0.38">SCREENED ROLES</text>
+      <path d="M132 112 C 154 94 162 100 172 122" fill="none" stroke="url(#p2MethGold)" stroke-width="1.65" stroke-opacity="0.68" marker-end="url(#p2MethArr)"/>
+      <path d="M308 112 C 286 94 278 100 268 122" fill="none" stroke="url(#p2MethGold)" stroke-width="1.65" stroke-opacity="0.68" marker-end="url(#p2MethArr)"/>
+      <circle cx="220" cy="122" r="48" fill="#fff" stroke="url(#p2MethGold)" stroke-width="2" stroke-opacity="0.58"/>
+      <circle cx="220" cy="122" r="38" fill="none" stroke="#002244" stroke-opacity="0.05"/>
+      <text x="220" y="118" text-anchor="middle" font-family="Georgia, 'EB Garamond', serif" font-size="26" font-style="italic" font-weight="500" fill="#002244" fill-opacity="0.42">20</text>
+      <text x="220" y="138" text-anchor="middle" font-family="'Barlow', sans-serif" font-size="7.5" letter-spacing="2.8" fill="#0069A3" fill-opacity="0.62">PROCUREMENT DIRECTORS</text>
+      <rect x="118" y="186" width="204" height="36" rx="4" fill="rgba(0,34,68,0.03)" stroke="rgba(0,34,68,0.1)" stroke-width="0.75"/>
+      <text x="220" y="204" text-anchor="middle" font-family="'Barlow', sans-serif" font-size="7.5" letter-spacing="1.8" fill="#002244" fill-opacity="0.48">ADDENDUM · EXEC / STAKEHOLDER DECK REFRESH</text>
+      <text x="220" y="216" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="6.5" letter-spacing="1.5" fill="#0069A3" fill-opacity="0.55">TRIANGULATES PHASE 1 FIELD · OPTIONAL STREAM</text>
+    </svg>
+    <span class="p2-proc-illu-cap">KSA 10 + TR 10 procurement directors · convergent synthesis with Phase 1</span>
+  </div>
+</div>
+
+  <div class="sub-subhead">Phase 1A — Hospital &amp; lab branches (core quantitative sample: 50 total)</div>
+  <table class="matrix">
+    <thead>
+      <tr>
+        <th>Branch / site segment</th>
+        <th>Insight stream</th>
+        <th>KSA (n)</th>
+        <th>TR (n)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Hospital laboratory director / VP laboratory medicine</td>
+        <td>QC intensity, middleware, brand switching, accreditation pressure</td>
+        <td>14</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <td>Laboratory manager / QC manager (clinical lab)</td>
+        <td>Internal QC vs EQA split, third-party vs OEM controls, Unity / peer programmes</td>
+        <td>10</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>Transfusion medicine lead / blood bank director (clinical leadership)</td>
+        <td>IH automation, gel vs tube, donor vs patient testing, competitive positioning</td>
+        <td>6</td>
+        <td>4</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="2">Total branch touchpoints — Phase 1 core quantitative sample</td>
+        <td>30</td>
+        <td>20</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <div class="sub-subhead">Phase 2A — Qualitative procurement director interviews (core: 20 total · 60–90 min.)</div>
+  <table class="matrix">
+    <thead>
+      <tr>
+        <th>Role / procurement segment</th>
+        <th>Insight stream</th>
+        <th>KSA (n)</th>
+        <th>TR (n)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Director of procurement — NUPCO-adjacent / public hospital system</td>
+        <td>National tender participation, bundle logic, local-content scoring, award patterns</td>
+        <td>3</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>Director of purchasing — private hospital or network</td>
+        <td>Reagent-rental vs buy, distributor selection, budget holders</td>
+        <td>3</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>Director / head — supply chain &amp; materials (buying authority)</td>
+        <td>SKU economics, contract cadence, substitution rules</td>
+        <td>2</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>Director-grade procurement — MoH / holding (KSA) · EKAP / state hospital (TR)</td>
+        <td>Central vs hospital-level authority, tender portals, evaluation committees</td>
+        <td>2</td>
+        <td>2</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="2">Total procurement director qualitative interviews — Phase 2 core (separate fee)</td>
+        <td>10</td>
+        <td>10</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <div class="page-footer">
+    <span class="brand">BioNixus</span>
+    <span>05 — Primary Fieldwork</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     PAGE 6 — TIMELINE
+═══════════════════════════════════════════════ -->
+<section class="page">
+
+  <div class="page-rule">
+    <div class="page-rule-text">06 · Timeline</div>
+  </div>
+
+  <div class="section-num">04 — Indicative timeline</div>
+  <h2 class="section-title">Fourteen-week Phase 1,<br><em>optional +~8 weeks for Phase 2 procurement.</em></h2>
+
+  <div class="timeline">
+
+    <div class="timeline-header">
+      <div class="tl-label">Workstream</div>
+      <div class="tl-week">W1</div>
+      <div class="tl-week">W2</div>
+      <div class="tl-week">W3</div>
+      <div class="tl-week">W4</div>
+      <div class="tl-week">W5</div>
+      <div class="tl-week">W6</div>
+      <div class="tl-week">W7</div>
+      <div class="tl-week">W8</div>
+      <div class="tl-week">W9</div>
+      <div class="tl-week">W10</div>
+      <div class="tl-week">W11</div>
+      <div class="tl-week">W12</div>
+      <div class="tl-week">W13</div>
+      <div class="tl-week">W14</div>
+    </div>
+
+    <div class="timeline-row">
+      <div class="tl-phase">Kickoff &amp; harvest</div>
+      <div class="tl-bar-wrap">
+        <div class="tl-bar p1" style="left:0.5%; width:21%;">Scope, sources, gap register</div>
+      </div>
+    </div>
+
+    <div class="timeline-row">
+      <div class="tl-phase">Country &amp; segment depth</div>
+      <div class="tl-bar-wrap">
+        <div class="tl-bar p2" style="left:14%; width:50%;">KSA / TR modules · tenders · competition</div>
+      </div>
+    </div>
+
+    <div class="timeline-row">
+      <div class="tl-phase">Model &amp; draft</div>
+      <div class="tl-bar-wrap">
+        <div class="tl-bar p3" style="left:42%; width:36%;">Sizing v1 → report draft</div>
+      </div>
+    </div>
+
+    <div class="timeline-row">
+      <div class="tl-phase">QA &amp; final</div>
+      <div class="tl-bar-wrap">
+        <div class="tl-bar p4" style="left:71%; width:28%;">Client review · finals</div>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="body" style="margin-top:10px;">
+    <strong>Phase 2</strong> optional: early overlap with late Phase 1 via <strong>change order</strong>.
+  </p>
+
+  <div class="subhead">Governance cadence</div>
+  <p class="body">
+    <strong>Weekly</strong> 45-min sponsor call. <strong>W4:</strong> sources + sizing v0. <strong>W10:</strong> draft + checkpoint — branch tiers (if any), Phase 2 dates / calendars (not a hard stop on running field). <strong>W14</strong> for P1 and <strong>W22</strong> for P2: finals + 90-min readout. Secure workspace for files, model, redacted transcripts.
+  </p>
+
+  <div class="sub-subhead">Phase 1 milestone calendar (illustrative)</div>
+  <table class="matrix" style="font-size:11.5px;">
+    <thead>
+      <tr>
+        <th>Week</th>
+        <th>Milestone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>Kickoff; detailed scoping note; source plan; product-boundary sign-off with sponsor</td></tr>
+      <tr><td>2–4</td><td>Secondary harvest; sizing v0; market long-list; NUPCO / EKAP capture</td></tr>
+      <tr><td>5–7</td><td>Country deep-dives (NUPCO vs private; SGK / bundles / reagent-rental); procurement maps v1</td></tr>
+      <tr><td>8–10</td><td>Model refinement; draft sections; internal QA; <strong>interim readout</strong> (optional call); <strong>scope checkpoint</strong> — Phase 1 branch tier + Phase 2 procurement dates</td></tr>
+      <tr><td>11–12</td><td>Client review cycle; revisions; exhibit lock</td></tr>
+      <tr><td>13–14</td><td>Final main report, executive summary, appendix; Excel handoff; optional deck</td></tr>
+    </tbody>
+  </table>
+  <p class="body" style="font-size:12px;margin-top:8px;"><strong>Phase 2</strong> duration aligns to the ~<strong>8-week</strong> procurement stream in the governance cadence above (with finals / readout at <strong>W22</strong>).</p>
+
+  <div class="page-footer">
+    <span class="brand">BioNixus</span>
+    <span>06 — Timeline</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     PAGE 7 — WHY BIONIXUS
+═══════════════════════════════════════════════ -->
+<section class="page">
+
+  <div class="page-rule">
+    <div class="page-rule-text">07 · Differentiation</div>
+  </div>
+
+  <div class="section-num">05 — Why BioNixus</div>
+  <h2 class="section-title">What you get with us<br><em>you do not get elsewhere.</em></h2>
+  <p class="section-lede">
+    Not “same, cheaper” — the mix that fits <em>this</em> mandate.
+  </p>
+
+  <div class="why">
+
+    <div class="why-item">
+      <div class="why-num">01</div>
+      <div class="why-body">
+        <h4>Pharmaceutical commercial intelligence DNA, applied to diagnostics</h4>
+        <p>Rooted in <strong>pharma commercial intelligence</strong> (tenders, payers, PE, adoption) — not device-only shops. NUPCO, SGK, value procurement, CBAHI demand: pharma-shaped problems in an IVD wrapper.</p>
+      </div>
+    </div>
+
+    <div class="why-item">
+      <div class="why-num">02</div>
+      <div class="why-body">
+        <h4>MENA-native primary research, in-language, in-house</h4>
+        <p><strong>KSA:</strong> BioNixus Arabic field — hospital / branch / procurement access. <strong>TR:</strong> vetted Istanbul / Ankara partner; BioNixus protocols, instruments, QA. Synthesis and client deck: BioNixus-owned.</p>
+      </div>
+    </div>
+
+    <div class="why-item">
+      <div class="why-num">03</div>
+      <div class="why-body">
+        <h4>Senior-led delivery — no project coordinators managing subcontractors</h4>
+        <p>Signing Research Director runs senior IDs, owns synthesis, presents readout — no pitch-senior / deliver-junior model. Flat team; sponsor talks to the lead throughout.</p>
+      </div>
+    </div>
+
+    <div class="why-item">
+      <div class="why-num">04</div>
+      <div class="why-body">
+        <h4>Regulatory &amp; compliance fluency across MENA and EU</h4>
+        <p><strong>SFDA, EDA, DHA/MOHAP, TİTCK, MHRA, EMA, MDR/IVDR</strong>; <strong>EphMRA / ICH-GCP</strong>; <strong>GDPR / PDPL / KVKK</strong> field standards — same stack you operate in daily.</p>
+      </div>
+    </div>
+
+    <div class="why-item">
+      <div class="why-num">05</div>
+      <div class="why-body">
+        <h4>UK Standards, MENA Delivery — the right cost-quality balance</h4>
+        <p>UK contracting / data / invoicing; MENA execution footprint — senior bench without Tier-1 London overhead.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="creds-stats creds-stats--tail" aria-label="BioNixus track record">
+    <div class="cred-stat">
+      <div class="num">127<em>+</em></div>
+      <div class="label">Projects Delivered</div>
+    </div>
+    <div class="cred-stat">
+      <div class="num">48</div>
+      <div class="label">Clients Served</div>
+    </div>
+    <div class="cred-stat">
+      <div class="num">18</div>
+      <div class="label">Countries Covered</div>
+    </div>
+    <div class="cred-stat">
+      <div class="num">15<em>yr</em></div>
+      <div class="label">Sector Experience</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="brand">BioNixus</span>
+    <span>07 — Why BioNixus</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     PAGE 8 — APPENDIX / ASSUMPTIONS
+═══════════════════════════════════════════════ -->
+<section class="page">
+
+  <div class="page-rule">
+    <div class="page-rule-text">08 · Fees &amp; governance</div>
+  </div>
+
+  
+<section class="page page--closing page--register-cta" id="request-proposal">
+
+  <div class="page-rule">
+    <div class="page-rule-text">08 · Full proposal</div>
+  </div>
+
+  <div class="section-num">06 — Request the complete programme document</div>
+  <h2 class="section-title" style="color:#fff;">Register for the<br><em>full market assessment proposal.</em></h2>
+  <p class="section-lede section-lede--blue-grade">
+    The complete programme document — methodology, field matrices, timeline, team roster, deliverable architecture, and indicative analytics — is available to qualified clinical diagnostics sponsors. <strong>Pricing and commercial terms are not published online</strong>; they are shared after registration and a short alignment call.
+  </p>
+
+  <div class="forces forces--register-cta" style="margin-top:24px;">
+    <a href="https://www.bionixus.com/clinical-diagnostics-proposal-request" class="cover-cta cover-cta--primary">Register &amp; receive the full proposal</a>
+    <a href="https://www.bionixus.com/clinical-diagnostics-market-research" class="cover-cta cover-cta--secondary">View programme overview</a>
+  </div>
+
+  <p class="body" style="margin-top:20px;font-size:12px;color:var(--text-muted);">
+    BioNixus Intelligence · US headquarters · MEA programme · UK contracting entity
+  </p>
+
+  <div class="page-footer">
+    <span class="brand">BioNixus</span>
+    <span>08 — Full Proposal Access</span>
+  </div>
+</section>
+<!-- ═══════════════════════════════════════════════
+     PAGE 9 — NEXT STEPS / CONTACT
+═══════════════════════════════════════════════ -->
+<section class="page page--closing">
+
+  <div class="page-rule">
+    <div class="page-rule-text">09 · Next Steps</div>
+  </div>
+
+  <div class="section-num">07 — Next steps</div>
+  <h2 class="section-title">What happens<br><em>from here.</em></h2>
+  <p class="section-lede">
+    Next: alignment call on use-case, sample grid, competition focus, timeline → definitive SoW → start.
+  </p>
+
+  <div class="forces">
+
+    <div class="force-row">
+      <div class="force-num">1</div>
+      <div class="force-body">
+        <h4>Briefing &amp; alignment session</h4>
+        <p>60–90 min. sponsor call — use-case, scope, sample, competitive set, outputs, timeline. Agenda circulated upfront.</p>
+      </div>
+      <div class="force-signal">Week 0 — T &minus; 5 days</div>
+    </div>
+
+    <div class="force-row">
+      <div class="force-num">2</div>
+      <div class="force-body">
+        <h4>Statement of work &amp; commercial terms</h4>
+        <p>Executable SoW within <strong>five business days</strong> — fees, <strong>50/50</strong> invoices per block, deliverables, expenses, change orders, exit. + MNDA / DPA.</p>
+      </div>
+      <div class="force-signal">Week 0 — T + 5 days</div>
+    </div>
+
+    <div class="force-row">
+      <div class="force-num">3</div>
+      <div class="force-body">
+        <h4>Kick-off &amp; programme launch</h4>
+        <p>Execute contract; open workspace; weekly cadence; Phase 1 starts. First checkpoint <strong>week 4</strong> (sources + sizing v0).</p>
+      </div>
+      <div class="force-signal">Week 1 — Programme Start</div>
+    </div>
+
+  </div>
+
+  <div class="signoff">
+    <div class="page--closing-sign">
+      <h3>We would be <em>privileged</em> to support this assignment.</h3>
+      <p>
+        If this fits your intent, let’s schedule the briefing; if not, we still want the call — tightening scope to your real decision context is how we work.
+      </p>
+
+      <div class="contact">
+        <div class="contact-item">
+          <div class="label">Research Director</div>
+          <div class="value">Mohammad Alsaadany</div>
+        </div>
+        <div class="contact-item">
+          <div class="label">Email</div>
+          <div class="value mono">mohammad.alsaadany@bionixus.com</div>
+        </div>
+        <div class="contact-item">
+          <div class="label">Phone</div>
+          <div class="value mono">+44 7727 666682</div>
+        </div>
+        <div class="contact-item">
+          <div class="label">Firm</div>
+          <div class="value">BioNixus - MEA Team</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="brand">BioNixus</span>
+    <span>09 — Next Steps &amp; Contact</span>
+  </div>
+</section>
+
+</div>
+
+
+<div id="bnx-proposal-cta" style="position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#002244;color:#fff;padding:12px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;font-family:Barlow,sans-serif;font-size:13px;box-shadow:0 -4px 24px rgba(0,34,68,.2);">
+  <span>Full QC &amp; IH proposal (methodology &amp; deliverables — <strong>no pricing online</strong>)</span>
+  <a href="https://www.bionixus.com/clinical-diagnostics-proposal-request" style="background:#D4A84B;color:#002244;font-weight:700;padding:8px 18px;border-radius:3px;text-decoration:none;">Register for the full proposal</a>
+</div>
+<style>@media print{#bnx-proposal-cta{display:none!important}.document{margin-bottom:0!important}}</style>
+
+</body>
+</html>

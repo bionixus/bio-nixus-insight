@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<!-- BIO-345 · Bionorica EG HCP Price Elasticity · Proposal v3 (design upgrade) -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BioNixus — HCP Price Elasticity Study | Bionorica Egypt 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared/bionixus-premium-base.css">
+<style>
+/* ── Page chrome (was missing in v2) ── */
+.page-rule {
+  display: flex; align-items: center; margin-bottom: 18px; gap: 12px;
+}
+.page-rule::before {
+  content: ''; width: 48px; height: 3px; border-radius: 2px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 70%, rgba(212,168,75,0.35) 100%);
+}
+.page-rule-text {
+  font-family: var(--cond); font-size: 11px; font-weight: 600;
+  letter-spacing: 3px; text-transform: uppercase; color: var(--navy);
+}
+.page-footer {
+  position: absolute; bottom: 22px; left: 56px; right: 56px;
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 8px; border-top: 1px solid var(--rule);
+  font-family: var(--cond); font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--text-muted);
+}
+.page-footer .brand { color: var(--navy); font-weight: 600; }
+
+/* ── Cover ── */
+.cover {
+  background:
+    radial-gradient(ellipse 100% 80% at 50% -8%, rgba(255,255,255,0.04) 0%, transparent 45%),
+    linear-gradient(168deg, rgba(212,168,75,0.08) 0%, transparent 38%),
+    linear-gradient(145deg, #000510 0%, #001a2e 22%, #002244 46%, #063558 72%, #071f3a 100%);
+  color: #fff; min-height: 920px; padding: 44px 52px 48px;
+  position: relative; overflow: hidden; display: flex; flex-direction: column;
+  box-shadow: inset 0 0 0 1px rgba(212,168,75,0.18), inset 0 0 100px rgba(0,6,14,0.42);
+}
+.cover::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 80% 58% at 90% 10%, rgba(212,168,75,0.2) 0%, transparent 52%),
+    radial-gradient(ellipse 70% 52% at 6% 92%, rgba(0,105,163,0.22) 0%, transparent 48%),
+    repeating-linear-gradient(-18deg, transparent, transparent 31px, rgba(255,255,255,0.022) 31px, rgba(255,255,255,0.022) 32px);
+}
+.cover::after {
+  content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 52%;
+  background: linear-gradient(180deg, transparent 0%, rgba(0,4,12,0.78) 100%); pointer-events: none;
+}
+.cover-inner { position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; }
+.cover-top {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 36px; padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.16);
+}
+.clogorow { display: flex; align-items: center; gap: 14px; }
+.cover .clogosvg { width: 48px; height: 48px; filter: drop-shadow(0 8px 20px rgba(0,0,0,0.35)); }
+.clogoname { font-family: var(--cond); font-size: 22px; font-weight: 700; letter-spacing: 6px; }
+.clogosub { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; opacity: 0.75; margin-top: 4px; }
+.cover-body { flex: 1; display: flex; flex-direction: column; justify-content: center; max-width: 68ch; }
+.cover-eyebrow {
+  font-family: var(--cond); font-size: 11px; letter-spacing: 4px;
+  text-transform: uppercase; color: var(--gold-light); margin-bottom: 16px;
+}
+.cover-title { font-family: var(--serif); font-size: 42px; font-weight: 500; line-height: 1.12; margin-bottom: 16px; }
+.cover-title em { font-style: italic; color: #c8e4f4; }
+.cover-subtitle { font-size: 14px; line-height: 1.65; opacity: 0.88; }
+.cover-kpi-strip {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  margin-top: 28px; background: rgba(255,255,255,0.12); border-radius: var(--radius);
+  overflow: hidden;
+}
+.cover-kpi {
+  background: rgba(0,20,40,0.55); padding: 14px 12px; text-align: center;
+}
+.cover-kpi .kpi-val {
+  font-family: var(--mono); font-size: 20px; font-weight: 500; color: var(--gold-light);
+}
+.cover-kpi .kpi-lbl {
+  font-family: var(--cond); font-size: 8px; letter-spacing: 2px;
+  text-transform: uppercase; opacity: 0.65; margin-top: 4px;
+}
+.cover-meta {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+  margin-top: auto; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.15);
+}
+.cover-meta .label { font-family: var(--cond); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.6; }
+.cover-meta .value { font-size: 13px; margin-top: 4px; font-weight: 500; }
+.cover-meta .accent { color: var(--gold-light); }
+.cover-tag {
+  position: absolute; bottom: 16px; right: 52px; z-index: 3;
+  font-family: var(--cond); font-size: 9px; letter-spacing: 3px; text-transform: uppercase; opacity: 0.5;
+}
+
+/* ── Letter ── */
+.letter-recipient { margin: 20px 0 14px; font-size: 13px; line-height: 1.6; }
+.letter-subject {
+  font-family: var(--serif); font-size: 16px; color: var(--navy);
+  margin-bottom: 20px; padding-left: 14px; border-left: 3px solid var(--gold); line-height: 1.45;
+}
+.letter-body p { margin-bottom: 14px; max-width: var(--max-line-ch); font-size: 13px; }
+.letter-sig { margin-top: 28px; }
+.letter-sig .name { font-family: var(--serif); font-size: 20px; color: var(--navy); }
+.letter-sig .title { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Sections ── */
+.subhead {
+  font-family: var(--cond); font-size: 12px; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--navy);
+  margin: 22px 0 10px;
+}
+
+/* Brand portfolio chips */
+.brand-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 14px 0 18px;
+}
+.brand-card {
+  border: 1px solid var(--rule); border-radius: var(--radius);
+  padding: 12px 10px; background: var(--paper); position: relative; overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.brand-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+}
+.brand-card.ent::before { background: var(--navy); }
+.brand-card.ped::before { background: var(--gold); }
+.brand-card.uro::before { background: var(--steel); }
+.brand-card .spec {
+  font-family: var(--cond); font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px;
+}
+.brand-card h4 { font-family: var(--serif); font-size: 14px; color: var(--navy); margin-bottom: 6px; line-height: 1.2; }
+.brand-card .stat { font-size: 10px; color: var(--text-soft); line-height: 1.45; }
+.brand-card .tag {
+  display: inline-block; margin-top: 6px; font-family: var(--cond);
+  font-size: 8px; letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 2px 6px; border-radius: 2px;
+}
+.brand-card.ped .tag { background: rgba(184,134,45,0.15); color: var(--gold); }
+.brand-card.ent .tag { background: var(--light-blue); color: var(--navy); }
+.brand-card.uro .tag { background: rgba(74,111,165,0.12); color: var(--steel); }
+
+/* Tables */
+.matrix, .fee-table {
+  width: 100%; border-collapse: collapse; margin: 12px 0 18px; font-size: 12px;
+  border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm);
+}
+.matrix thead th, .fee-table thead th {
+  background: linear-gradient(180deg, #003058 0%, var(--navy) 100%);
+  color: #fff; padding: 11px 12px; text-align: left;
+  font-family: var(--cond); font-size: 10px; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+.matrix td, .fee-table tbody td {
+  padding: 9px 12px; border-bottom: 1px solid var(--rule);
+  vertical-align: top; color: var(--text-soft);
+}
+.matrix tr:nth-child(even) td, .fee-table tbody tr:nth-child(even) td { background: var(--cool-white); }
+.matrix tfoot td, .fee-table tfoot td {
+  background: var(--light-blue); font-weight: 700; color: var(--navy);
+  font-family: var(--cond); font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
+}
+.fee-table thead th:last-child, .fee-table tbody td:last-child,
+.fee-table tfoot td:last-child { text-align: right; font-family: var(--mono); }
+.fee-table tbody td:first-child { color: var(--navy); font-weight: 600; font-family: var(--serif); font-size: 13px; }
+
+/* Session architecture */
+.phases {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin: 16px 0;
+  border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden;
+  box-shadow: var(--shadow-sm), 0 12px 36px -16px rgba(0,34,68,0.08);
+}
+.phase {
+  padding: 16px; border-right: 1px solid var(--rule); position: relative;
+  background: linear-gradient(180deg, var(--paper-screen) 0%, var(--paper) 100%);
+}
+.phase:last-child { border-right: none; }
+.phase::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--navy); }
+.phase.ped::before { background: var(--gold); }
+.phase.uro::before { background: var(--steel); }
+.phase .num {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 2px;
+  color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase;
+}
+.phase h4 { font-family: var(--serif); font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 8px; line-height: 1.3; }
+.phase ul { list-style: none; padding: 0; margin: 0; }
+.phase li {
+  font-size: 11.5px; line-height: 1.55; color: var(--text-soft);
+  padding: 3px 0 3px 12px; position: relative;
+}
+.phase li::before { content: '›'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+
+/* PED session flow diagram */
+.session-flow {
+  margin: 16px 0; padding: 16px; background: var(--cool-white);
+  border: 1px solid var(--rule); border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+.session-flow-title {
+  font-family: var(--cond); font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--navy); margin-bottom: 12px; font-weight: 600;
+}
+.flow-steps {
+  display: flex; align-items: stretch; gap: 0; flex-wrap: wrap;
+}
+.flow-step {
+  flex: 1; min-width: 100px; text-align: center; position: relative; padding: 10px 8px;
+  background: var(--paper); border: 1px solid var(--rule);
+}
+.flow-step:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+.flow-step:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
+.flow-step.highlight { background: rgba(184,134,45,0.08); border-color: rgba(184,134,45,0.35); }
+.flow-step .step-num { font-family: var(--mono); font-size: 9px; color: var(--text-muted); }
+.flow-step .step-name { font-family: var(--serif); font-size: 12px; color: var(--navy); font-weight: 600; margin-top: 4px; }
+.flow-step .step-time { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+.flow-arrow {
+  display: flex; align-items: center; color: var(--gold); font-size: 16px; font-weight: 700;
+  padding: 0 2px; flex-shrink: 0;
+}
+
+/* Tier option cards */
+.p1-opt-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  border: 1px solid var(--rule); overflow: hidden; margin: 14px 0;
+  background: var(--rule); border-radius: var(--radius);
+  box-shadow: var(--shadow-sm), 0 16px 40px -20px rgba(0,34,68,0.1);
+}
+.p1-opt-card {
+  padding: 18px 14px 20px; position: relative; background: var(--paper);
+  display: flex; flex-direction: column; min-width: 0;
+}
+.p1-opt-card.p1-opt-rec { background: var(--light-blue); box-shadow: inset 0 0 0 1px rgba(0,105,163,0.1); }
+.p2-opt-topbar { position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+.p2-opt-topbar.n { background: var(--navy); }
+.p2-opt-topbar.g { background: var(--gold); }
+.p2-opt-topbar.b { background: var(--blue); }
+.p2-opt-step { font-family: var(--mono); font-size: 8px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); margin: 5px 0 8px; }
+.p1-opt-card.p1-opt-rec .p2-opt-step { color: var(--navy); }
+.p2-opt-name { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+.p2-opt-rec-badge {
+  display: inline-block; font-family: var(--cond); font-size: 8.5px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--navy); border: 1px solid var(--navy);
+  padding: 2px 7px; font-weight: 600; margin-bottom: 8px;
+}
+.p2-opt-body { font-size: 11px; color: var(--text-soft); line-height: 1.55; margin-bottom: 12px; flex: 1; }
+.p2-opt-price { font-family: var(--mono); font-size: 22px; font-weight: 500; color: var(--navy); line-height: 1.1; }
+.p2-opt-price .p2-opt-curr {
+  display: block; font-family: var(--cond); font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--text-muted); font-weight: 600; margin-top: 6px;
+}
+
+/* Timeline */
+.timeline {
+  display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px; margin: 16px 0;
+}
+.tl-week {
+  text-align: center; padding: 10px 4px; border: 1px solid var(--rule);
+  border-radius: var(--radius); background: var(--paper); font-size: 10px;
+}
+.tl-week.active { background: var(--light-blue); border-color: var(--blue); }
+.tl-week .wk { font-family: var(--cond); font-size: 9px; letter-spacing: 1px; color: var(--text-muted); }
+.tl-week .act { font-size: 9.5px; color: var(--navy); margin-top: 4px; line-height: 1.35; font-weight: 500; }
+
+/* Why / callout / sig */
+.why-item { display: grid; grid-template-columns: 40px 1fr; gap: 12px; margin-bottom: 16px; }
+.why-num { font-family: var(--cond); font-size: 20px; font-weight: 700; color: var(--gold); line-height: 1; }
+.why-body h4 { font-family: var(--serif); font-size: 15px; margin-bottom: 4px; color: var(--navy); }
+.why-body p { font-size: 12.5px; color: var(--text-soft); }
+.callout {
+  background: var(--light-blue); border-left: 3px solid var(--blue);
+  padding: 12px 14px; font-size: 12.5px; margin: 16px 0; line-height: 1.55; color: var(--text-soft);
+}
+.callout strong { color: var(--navy); }
+.draft-banner {
+  background: #fff3cd; border-bottom: 1px solid #e6c200; color: #664d00;
+  padding: 10px 14px; font-size: 12px; text-align: center;
+}
+.sigg { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 32px; }
+.sig { padding-top: 12px; }
+.siglbl { font-size: 8px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-muted); }
+.signame { font-family: var(--serif); font-size: 19px; font-weight: 600; color: var(--navy); margin-top: 7px; }
+.sigtitle { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+.sigline { margin-top: 48px; border-bottom: 1px solid var(--navy); width: 80%; }
+
+@page { size: A4; margin: 0; }
+@media print {
+  body { background: #fff; }
+  .document { box-shadow: none; border: none; margin: 0; max-width: none; }
+  .draft-banner { display: none; }
+}
+</style>
+</head>
+<body>
+
+<p class="draft-banner"><strong>INTERNAL DRAFT</strong> — Not for external distribution. Pending GeneralCounsel, CFO, and CEO approval gates.</p>
+
+<div class="document">
+
+<!-- COVER -->
+<section class="cover page">
+  <div class="cover-inner">
+    <div class="cover-top">
+      <div class="clogorow">
+        <svg class="clogosvg" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="bnxHg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#F07090"/><stop offset="55%" stop-color="#D41848"/><stop offset="100%" stop-color="#8B0A2A"/>
+            </linearGradient>
+          </defs>
+          <path d="M25 43C25 43 5 29 5 17c0-6.5 5.5-11.5 11-11.5 3.8 0 7.2 2.3 9 5.7 1.8-3.4 5.2-5.7 9-5.7C39.5 5.5 45 10.5 45 17c0 12-20 26-20 26z" fill="url(#bnxHg)"/>
+          <polyline points="9,25 14,25 17.5,19 21,30 23.5,22 25.5,27 29,25 41,25" fill="none" stroke="#C8E8F4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <div class="clogoname">BIONIXUS</div>
+          <div class="clogosub">Intelligence For Business Growth</div>
+        </div>
+      </div>
+    </div>
+    <div class="cover-body">
+      <div class="cover-eyebrow">Confidential Research Proposal · v3</div>
+      <h1 class="cover-title">HCP Price Elasticity<br><em>Four-Brand Programme</em><br>Egypt</h1>
+      <p class="cover-subtitle">Mixed-methods physician research across Sinupret Forte, Sinupret Syrup, Bronchipret, and Canephron — three sample tiers per brand; pediatric brands fielded in one combined session per your direction.</p>
+      <div class="cover-kpi-strip">
+        <div class="cover-kpi"><div class="kpi-val">4</div><div class="kpi-lbl">Brands</div></div>
+        <div class="cover-kpi"><div class="kpi-val">3×n</div><div class="kpi-lbl">Session types</div></div>
+        <div class="cover-kpi"><div class="kpi-val">$250</div><div class="kpi-lbl">Per session all-in</div></div>
+        <div class="cover-kpi"><div class="kpi-val">8 wks</div><div class="kpi-lbl">Core field</div></div>
+      </div>
+    </div>
+    <div class="cover-meta">
+      <div><div class="label">Prepared For</div><div class="value">Bionorica <span class="accent">Egypt</span></div></div>
+      <div><div class="label">Addressee</div><div class="value">Dr. Hossam <span class="accent">ElFaramawy</span></div></div>
+      <div><div class="label">Prepared By</div><div class="value">BioNixus Intelligence</div></div>
+      <div><div class="label">Reference</div><div class="value">BIO-PR-2026-<span class="accent">0345</span></div></div>
+    </div>
+  </div>
+  <div class="cover-tag">Pharma · Egypt · HCP Research</div>
+</section>
+
+<!-- LETTER -->
+<section class="page letter">
+  <div class="page-rule"><div class="page-rule-text">01 · Letter</div></div>
+  <div class="letter-recipient">
+    <strong>Dr. Hossam ElFaramawy</strong><br>
+    Head of Marketing · Bionorica Egypt
+  </div>
+  <div class="letter-subject">
+    Re: Proposal to support HCP price elasticity research across Sinupret Forte, Sinupret Syrup, Bronchipret, and Canephron ahead of your planned pricing adjustments.
+  </div>
+  <div class="letter-body">
+    <p>Dear Dr. ElFaramawy,</p>
+    <p>Thank you for sharing your brand coverage matrix and the request for <strong>three quotation levels per brand</strong> — 100, 200, and 300 physicians — at <strong>USD 250 all-in per completed physician session</strong>. This proposal responds with a <strong>mixed-methods programme</strong> that pairs qualitative depth (prescribing narratives, substitution logic, channel friction) with quantitative price instruments (Gabor-Granger / PSM / discrete choice).</p>
+    <p>Bionorica’s portfolio spans mature ENT, pediatric, and urology franchises plus a <strong>pre-launch Bronchipret</strong> module. Per your direction, <strong>Sinupret Syrup and Bronchipret are conducted in one combined pediatric session</strong> with the same PED specialists (~65–75 minutes), while Sinupret Forte (ENT) and Canephron (URO) remain separate specialty sessions. Our design respects Egypt’s dual MOH–private channel reality and moderator neutrality — client target prices are not disclosed during qualitative warm-up.</p>
+    <p>Below you will find programme objectives, the four-brand matrix, methodology summary, <strong>three investment tiers ($75k / $150k / $225k programme totals)</strong>, an eight-week indicative timeline, and next steps. We recommend <strong>Tier B (200 physicians per brand)</strong> for stable specialty-level themes and robust subgroup cuts unless budget requires Tier A.</p>
+    <p>We would welcome the assignment and stand ready to align field calendars with your commercial timeline.</p>
+  </div>
+  <div class="letter-sig">
+    <div class="name">Mohammad Alsaadany</div>
+    <div class="title">MEA Research Director · BioNixus</div>
+    <div class="title" style="margin-top:8px;"><a href="mailto:mohammad.alsaadany@bionixus.com">mohammad.alsaadany@bionixus.com</a> · <a href="https://www.bionixus.com">bionixus.com</a></div>
+  </div>
+  <div class="page-footer"><span class="brand">BioNixus</span><span>01 — Letter</span></div>
+</section>
+
+<!-- OBJECTIVES -->
+<section class="page">
+  <div class="page-rule"><div class="page-rule-text">02 · Objectives</div></div>
+  <div class="section-num">01 — Business context</div>
+  <h2 class="section-title">Price decisions need<br><em>elasticity evidence, not intuition.</em></h2>
+  <p class="section-lede">Bionorica EG is preparing price increases across four herbal Rx brands. HCP prescribing and substitution behaviour will determine revenue risk. This programme delivers elasticity curves, qualitative “why” narratives, and an interactive dashboard for commercial planning.</p>
+
+  <div class="subhead">Portfolio at a glance</div>
+  <div class="brand-grid">
+    <div class="brand-card ent">
+      <div class="spec">ENT · Mature</div>
+      <h4>Sinupret Forte</h4>
+      <div class="stat">Pop. 5,100 · Cov. 1,200<br>Launch Oct-23</div>
+      <span class="tag">Separate session</span>
+    </div>
+    <div class="brand-card ped">
+      <div class="spec">PED · Syrup</div>
+      <h4>Sinupret Syrup</h4>
+      <div class="stat">Pop. 16,000 · Cov. 1,200<br>Launch Oct-24</div>
+      <span class="tag">Combined PED</span>
+    </div>
+    <div class="brand-card ped">
+      <div class="spec">PED · Pre-launch</div>
+      <h4>Bronchipret</h4>
+      <div class="stat">Pop. 16,000 · Cov. 1,200<br>Launch Nov-2026</div>
+      <span class="tag">Combined PED</span>
+    </div>
+    <div class="brand-card uro">
+      <div class="spec">URO · Mature</div>
+      <h4>Canephron</h4>
+      <div class="stat">Pop. 4,600 · Cov. 1,000<br>Launch Oct-24</div>
+      <span class="tag">Separate session</span>
+    </div>
+  </div>
+
+  <div class="subhead">Research objectives</div>
+  <table class="matrix">
+    <thead><tr><th>#</th><th>Client decision</th><th>Research output</th></tr></thead>
+    <tbody>
+      <tr><td>RQ1</td><td>How far can each brand move before HCPs reduce new starts?</td><td>Psychological price thresholds by specialty; Gabor-Granger / PSM curves</td></tr>
+      <tr><td>RQ2</td><td>Which substitutes absorb volume at higher price?</td><td>Switching logic map (clinical + economic); competitive vignettes</td></tr>
+      <tr><td>RQ3</td><td>Does MOH vs private channel change elasticity?</td><td>Setting-stratified elasticity and qual themes</td></tr>
+      <tr><td>RQ4</td><td>What patient objections will reps face post-increase?</td><td>Anticipated pushback catalogue for field enablement</td></tr>
+      <tr><td>RQ5</td><td>How do KOL vs high-volume prescribers differ?</td><td>Segment contrasts (boosted at Tier C)</td></tr>
+    </tbody>
+  </table>
+  <div class="page-footer"><span class="brand">BioNixus</span><span>02 — Objectives</span></div>
+</section>
+
+<!-- METHODOLOGY -->
+<section class="page">
+  <div class="page-rule"><div class="page-rule-text">03 · Methodology</div></div>
+  <div class="section-num">02 — Mixed-methods design</div>
+  <h2 class="section-title">One session,<br><em>qual depth + quant elasticity.</em></h2>
+  <p class="section-lede">Each physician session combines qualitative depth and standardized quantitative price modules. <strong>Pediatric sessions cover Sinupret Syrup and Bronchipret together</strong> with the same specialist; ENT and URO sessions are brand-specific. Moderators are blinded to Bionorica target prices during qual warm-up.</p>
+
+  <div class="phases">
+    <div class="phase">
+      <div class="num">Session type 01</div>
+      <h4>Sinupret Forte · ENT</h4>
+      <ul>
+        <li>~50–60 min total</li>
+        <li>Qual 20–25 min → Quant 20–25 min</li>
+        <li>ENT supplement probes</li>
+      </ul>
+    </div>
+    <div class="phase ped">
+      <div class="num">Session type 02 · Combined</div>
+      <h4>Sinupret Syrup + Bronchipret · PED</h4>
+      <ul>
+        <li>~65–75 min total</li>
+        <li>Shared PED context → dual brand blocks</li>
+        <li>Brand-segmented transcripts; cross-brand probe</li>
+      </ul>
+    </div>
+    <div class="phase uro">
+      <div class="num">Session type 03</div>
+      <h4>Canephron · URO</h4>
+      <ul>
+        <li>~50–60 min total</li>
+        <li>Qual 20–25 min → Quant 20–25 min</li>
+        <li>URO supplement probes</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="session-flow">
+    <div class="session-flow-title">Combined pediatric session flow (same specialist)</div>
+    <div class="flow-steps">
+      <div class="flow-step"><div class="step-num">01</div><div class="step-name">Warm-up</div><div class="step-time">5 min</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div class="step-num">02</div><div class="step-name">PED context</div><div class="step-time">10 min</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step highlight"><div class="step-num">03</div><div class="step-name">Sinupret Syrup</div><div class="step-time">Qual + quant</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step highlight"><div class="step-num">04</div><div class="step-name">Bronchipret</div><div class="step-time">Qual + quant</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div class="step-num">05</div><div class="step-name">Cross-brand</div><div class="step-time">5 min</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><strong>Field efficiency:</strong> n=100/200/300 physicians <em>per brand</em> is preserved, but unique field sessions per tier = <strong>3×n</strong> (ENT + PED + URO), not 4×n — both PED brands draw from the same pediatrician cohort.</div>
+
+  <div class="subhead">Quota framework (all tiers)</div>
+  <table class="matrix">
+    <thead><tr><th>Dimension</th><th>Levels</th><th>Rationale</th></tr></thead>
+    <tbody>
+      <tr><td>Geography</td><td>Cairo 40% · Alexandria 25% · Other urban 35%</td><td>Rx concentration; avoids Cairo-only bias</td></tr>
+      <tr><td>Practice setting</td><td>MOH hospital 25% · Private hospital 25% · Clinic/retail 50%</td><td>Dual-channel price sensitivity</td></tr>
+      <tr><td>Prescribing volume</td><td>Low / mid / high tercile</td><td>Tail vs median elasticity differs</td></tr>
+      <tr><td>Brand experience</td><td>Current prescriber 70% · Lapsed/challenger 30%</td><td>Churn vs win-back risk</td></tr>
+    </tbody>
+  </table>
+  <div class="page-footer"><span class="brand">BioNixus</span><span>03 — Methodology</span></div>
+</section>
+
+<!-- INVESTMENT -->
+<section class="page">
+  <div class="page-rule"><div class="page-rule-text">04 · Investment</div></div>
+  <div class="section-num">03 — Quotation tiers</div>
+  <h2 class="section-title">Three options per your brief<br><em>100 · 200 · 300 physicians per brand.</em></h2>
+  <p class="section-lede">All tiers priced at <strong>USD 250 per completed physician session, all-inclusive</strong> — physician honorarium, project management, transportation, research design, analytics &amp; dashboard, and quality control.</p>
+
+  <div class="p1-opt-grid">
+    <div class="p1-opt-card">
+      <div class="p2-opt-topbar n"></div>
+      <div class="p2-opt-step">Tier A · Explorer</div>
+      <div class="p2-opt-name">100 / brand</div>
+      <div class="p2-opt-body"><strong>300 unique sessions</strong> (100 ENT + 100 PED + 100 URO). PED session covers Syrup + Bronchipret. Minimum viable national quant + core qual themes.</div>
+      <div class="p2-opt-price">$75,000<span class="p2-opt-curr">Programme total · USD</span></div>
+    </div>
+    <div class="p1-opt-card p1-opt-rec">
+      <div class="p2-opt-topbar g"></div>
+      <div class="p2-opt-step">Tier B · Recommended</div>
+      <span class="p2-opt-rec-badge">Recommended</span>
+      <div class="p2-opt-name">200 / brand</div>
+      <div class="p2-opt-body"><strong>600 unique sessions</strong>. Stable themes per specialty; robust subgroup cuts (channel, volume). Best balance of cost and inference confidence.</div>
+      <div class="p2-opt-price">$150,000<span class="p2-opt-curr">Programme total · USD</span></div>
+    </div>
+    <div class="p1-opt-card">
+      <div class="p2-opt-topbar b"></div>
+      <div class="p2-opt-step">Tier C · Precision</div>
+      <div class="p2-opt-name">300 / brand</div>
+      <div class="p2-opt-body"><strong>900 unique sessions</strong>. Maximum precision; KOL booster; governorate rare-cell coverage for national representativeness.</div>
+      <div class="p2-opt-price">$225,000<span class="p2-opt-curr">Programme total · USD</span></div>
+    </div>
+  </div>
+
+  <div class="subhead">Pricing matrix</div>
+  <table class="fee-table">
+    <thead><tr><th>Session line</th><th>Tier A</th><th>Tier B</th><th>Tier C</th></tr></thead>
+    <tbody>
+      <tr><td>Sinupret Forte (ENT)</td><td>$25,000</td><td>$50,000</td><td>$75,000</td></tr>
+      <tr><td>PED combined (Syrup + Bronchipret)</td><td>$25,000</td><td>$50,000</td><td>$75,000</td></tr>
+      <tr><td>Canephron (URO)</td><td>$25,000</td><td>$50,000</td><td>$75,000</td></tr>
+    </tbody>
+    <tfoot>
+      <tr><td>Programme total</td><td>$75,000</td><td>$150,000</td><td>$225,000</td></tr>
+    </tfoot>
+  </table>
+
+  <div class="subhead">Included · Excluded</div>
+  <table class="matrix">
+    <thead><tr><th>Included (per client brief)</th><th>Excluded — confirm with CFO</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Physician fees · PM · transport · design · analytics · dashboard · QC</td>
+        <td>VAT / withholding · venue costs if focus groups added · incremental waves · translation beyond standard bilingual workflow</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="page-footer"><span class="brand">BioNixus</span><span>04 — Investment</span></div>
+</section>
+
+<!-- TIMELINE & TEAM -->
+<section class="page">
+  <div class="page-rule"><div class="page-rule-text">05 · Delivery</div></div>
+  <div class="section-num">04 — Timeline &amp; team</div>
+  <h2 class="section-title">Eight-week core field,<br><em>tier-dependent volume.</em></h2>
+
+  <div class="timeline">
+    <div class="tl-week"><div class="wk">W1</div><div class="act">Guide localization</div></div>
+    <div class="tl-week"><div class="wk">W2</div><div class="act">Pilot n=4</div></div>
+    <div class="tl-week active"><div class="wk">W3</div><div class="act">Field start</div></div>
+    <div class="tl-week active"><div class="wk">W4</div><div class="act">Field</div></div>
+    <div class="tl-week active"><div class="wk">W5</div><div class="act">Field</div></div>
+    <div class="tl-week active"><div class="wk">W6</div><div class="act">Field end</div></div>
+    <div class="tl-week"><div class="wk">W7</div><div class="act">Codebook lock</div></div>
+    <div class="tl-week"><div class="wk">W8</div><div class="act">Readout</div></div>
+  </div>
+
+  <div class="subhead">Programme team</div>
+  <table class="matrix">
+    <thead><tr><th>Role</th><th>Responsibility</th></tr></thead>
+    <tbody>
+      <tr><td>MEA Research Director</td><td>Engagement lead; methodology sign-off; client readout</td></tr>
+      <tr><td>Qualitative Research Specialist</td><td>Discussion guides; coding; theme synthesis</td></tr>
+      <tr><td>Data Analyst</td><td>Quant instruments; elasticity modelling; dashboard</td></tr>
+      <tr><td>Senior Project Manager</td><td>Field calendar; recruiter oversight; milestone reporting</td></tr>
+      <tr><td>Field Operations (Egypt)</td><td>Recruitment; scheduling; transport; QC back-checks</td></tr>
+      <tr><td>Research Compliance</td><td>Egypt HCP engagement rules; data handling gate</td></tr>
+    </tbody>
+  </table>
+  <div class="page-footer"><span class="brand">BioNixus</span><span>05 — Delivery</span></div>
+</section>
+
+<!-- WHY BIONIXUS -->
+<section class="page">
+  <div class="page-rule"><div class="page-rule-text">06 · Why BioNixus</div></div>
+  <div class="section-num">05 — Differentiation</div>
+  <h2 class="section-title">Egypt-native execution,<br><em>pharma-grade governance.</em></h2>
+
+  <div class="why-item"><div class="why-num">01</div><div class="why-body"><h4>MENA primary research in-language</h4><p>Cairo and Alexandria field bench; Arabic moderation; MOH and private channel access — not a desk-only syndicated report.</p></div></div>
+  <div class="why-item"><div class="why-num">02</div><div class="why-body"><h4>Mixed-methods under one roof</h4><p>Qualitative depth and quantitative elasticity in a single session architecture — triangulated synthesis, not siloed vendors.</p></div></div>
+  <div class="why-item"><div class="why-num">03</div><div class="why-body"><h4>Compliance-first HCP engagement</h4><p>EphMRA-aligned moderation; neutrality audits; anonymization rules for client-facing quotes; Research Compliance gate before external release.</p></div></div>
+  <div class="why-item"><div class="why-num">04</div><div class="why-body"><h4>Herbal / Rx portfolio experience</h4><p>Track record in physician prescribing studies across respiratory, urology, and OTC-adjacent categories in Egypt and wider MENA.</p></div></div>
+
+  <div class="page-footer"><span class="brand">BioNixus</span><span>06 — Why BioNixus</span></div>
+</section>
+
+<!-- NEXT STEPS -->
+<section class="page">
+  <div class="page-rule"><div class="page-rule-text">07 · Next steps</div></div>
+  <div class="section-num">06 — Acceptance path</div>
+  <h2 class="section-title">Ready to proceed<br><em>upon tier selection.</em></h2>
+
+  <ol style="font-size:13px;line-height:1.8;padding-left:20px;max-width:var(--max-line-ch);">
+    <li><strong>Tier confirmation</strong> — Bionorica selects Tier A, B, or C.</li>
+    <li><strong>Executed SOW</strong> — GeneralCounsel reviews terms; CFO confirms commercial schedule.</li>
+    <li><strong>Kickoff (Week 1)</strong> — Brand price scenarios, competitive sets, and coverage list handoff.</li>
+    <li><strong>Field launch (Week 3)</strong> — Recruitment against Bionorica HCP coverage universes.</li>
+    <li><strong>Readout (Week 8)</strong> — Dashboard walkthrough + executive memo with elasticity recommendations.</li>
+  </ol>
+
+  <div class="callout"><strong>Validity:</strong> This proposal is valid for <strong>60 days</strong> from 15 June 2026. Pricing assumes USD settlement; payment schedule subject to CFO confirmation.</div>
+
+  <div class="subhead">Formal authorisation</div>
+  <div class="sigg">
+    <div class="sig">
+      <div class="siglbl">For &amp; On Behalf of — BioNixus Egypt</div>
+      <div class="sigline"></div>
+      <div class="signame">Mohammad Alsaadany</div>
+      <div class="sigtitle">Market Research Director · BioNixus Egypt<br>Date: 15 June 2026</div>
+    </div>
+    <div class="sig">
+      <div class="siglbl">For &amp; On Behalf of — Bionorica Egypt</div>
+      <div class="sigline"></div>
+      <div class="signame">Dr. Hossam ElFaramawy</div>
+      <div class="sigtitle">Head of Marketing · Bionorica Egypt<br>Date: _______________</div>
+    </div>
+  </div>
+
+  <p style="font-size:11px;color:var(--text-muted);margin-top:24px;">Contact: <a href="mailto:info@bionixus.com">info@bionixus.com</a> · <a href="https://www.bionixus.com">www.bionixus.com</a></p>
+  <div class="page-footer"><span class="brand">BioNixus</span><span>07 — Next Steps</span></div>
+</section>
+
+</div>
+</body>
+</html>

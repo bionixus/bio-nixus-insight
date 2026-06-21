@@ -1,0 +1,6 @@
+run_id,query,platform,run_no,mention_yn,position,bionixus_cited,cited_url,sentiment,competitors_mentioned,captured_at
+BASELINE-PENDING-2026-06-12,see BIO-35 plan Pillar 5,claude,1,N/A,N/A,N/A,N/A,N/A,N/A,PENDING
+BASELINE-PENDING-2026-06-12,see BIO-35 plan Pillar 5,gemini,1,N/A,N/A,N/A,N/A,N/A,N/A,PENDING
+BASELINE-PENDING-2026-06-12,see BIO-35 plan Pillar 5,chatgpt,1,N/A,N/A,N/A,N/A,N/A,N/A,PENDING
+BASELINE-PENDING-2026-06-12,see BIO-35 plan Pillar 5,grok,1,N/A,N/A,N/A,N/A,N/A,N/A,PENDING
+BASELINE-PENDING-2026-06-12,see BIO-35 plan Pillar 5,perplexity,1,N/A,N/A,N/A,N/A,N/A,N/A,PENDING

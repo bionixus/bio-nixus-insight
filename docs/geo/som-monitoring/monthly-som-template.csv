@@ -1,0 +1,2 @@
+report_id,report_month,period_start,period_end,run_counts_per_query,total_queries,platforms,bionixus_mention_rate_pct,bionixus_first_mention_rate_pct,avg_position_when_mentioned,sentiment_breakdown_positive,competitors_present_rate_pct,best_categories,weakest_categories,notable_model_behaviors,action_items,owner,status
+bio48-2026-06,2026-06,2026-06-01,2026-06-30,3,60,claude,gemini,chatgpt,grok,perplexity,,,,,,,TBD,,

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BioNixus — Content Production SOP | Marketing 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #002244;
+  --blue: #0069A3;
+  --gold: #B8862D;
+  --gold-light: #D4A84B;
+  --off-white: #FAFAF8;
+  --paper: #FDFCFA;
+  --text: #152232;
+  --text-muted: #6B7684;
+  --rule: #D0D6DE;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 20px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --radius: 3px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page {
+  size: A4;
+  margin: 0;
+}
+body {
+  font-family: var(--font-sans);
+  color: var(--text);
+  background: #fff;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+@media print {
+  body { background: #fff; padding: 0; }
+  .document { margin: 0; border: none; box-shadow: none; max-width: none; }
+  .page { margin: 0 !important; box-shadow: none; border-radius: 0; }
+}
+
+/* Typography */
+:root {
+  --font-serif: 'EB Garamond', Georgia, serif;
+  --font-sans: 'Barlow', system-ui, sans-serif;
+  --font-cond: 'Barlow Condensed', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+/* Document shell */
+.document {
+  max-width: 920px;
+  margin: 0 auto;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--text);
+}
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  background: var(--paper);
+  margin: 20px auto;
+  padding: 48px 56px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  page-break-after: always;
+  break-after: page;
+  position: relative;
+}
+.page:last-child {
+  page-break-after: auto;
+  break-after: auto;
+}
+
+/* Cover */
+.cover {
+  background: linear-gradient(160deg, #001833 0%, #002244 50%, #003057 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cover-kicker {
+  font-family: var(--font-cond);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: var(--space-sm);
+}
+.cover h1 {
+  font-family: var(--font-serif);
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: 0.2px;
+  max-width: 640px;
+}
+.cover h1 em {
+  font-style: italic;
+  color: #fff;
+}
+.meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  font-size: 12px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.5;
+  margin-top: var(--space-xl);
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: var(--space-md);
+}
+.meta strong {
+  display: block;
+  color: rgba(255,255,255,0.95);
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+/* Section rules and titles */
+.page-rule {
+  height: 2px;
+  background: var(--gold);
+  border: none;
+  margin: 0 0 var(--space-sm) 0;
+}
+.page-rule-text {
+  font-family: var(--font-cond);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: var(--space-xs);
+}
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--navy);
+  margin-bottom: var(--space-sm);
+}
+.section-title em {
+  font-style: italic;
+}
+.section-num {
+  font-family: var(--font-cond);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue);
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+.section-lede {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 640px;
+  margin-bottom: var(--space-md);
+}
+
+/* Lists and text */
+ul, ol {
+  padding-left: 18px;
+  margin: 0 0 var(--space-md) 0;
+}
+li {
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+p {
+  margin-bottom: var(--space-md);
+  max-width: 75ch;
+}
+strong {
+  font-weight: 600;
+  color: var(--navy);
+}
+
+/* Blocks */
+.note {
+  border-left: 3px solid var(--gold);
+  background: var(--off-white);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius);
+  margin: var(--space-md) 0;
+}
+.note p { margin-bottom: 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-sm) 0 var(--space-md) 0;
+  font-size: 13px;
+}
+th, td {
+  text-align: left;
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+thead th {
+  font-family: var(--font-cond);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--blue);
+  background: #fff;
+}
+
+/* Checklist */
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-sm) 0 var(--space-md) 0;
+}
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.checklist li::before {
+  content: "☐";
+  color: var(--blue);
+  font-size: 14px;
+  line-height: 1.4;
+  margin-top: 1px;
+}
+
+/* Flow */
+.flow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin: var(--space-md) 0;
+}
+.flow-item {
+  background: var(--off-white);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: var(--space-sm) var(--space-md);
+}
+.flow-item strong {
+  font-family: var(--font-cond);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blue);
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Signature */
+.sigg {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+  page-break-inside: avoid;
+}
+.sig-block p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.sig-line {
+  height: 1px;
+  background: var(--rule);
+  margin: var(--space-md) 0 var(--space-sm) 0;
+}
+</style>
+</head>
+<body>
+<div class="document">
+
+  <!-- COVER -->
+  <section class="page cover">
+    <div>
+      <div class="cover-kicker">Standard Operating Procedure · SOP-001</div>
+      <h1>Content Production<br><em>Premium HTML</em><br>Delivery</h1>
+    </div>
+    <div class="meta">
+      <div>
+        <strong>Client / Owner</strong>
+        BioNixus Market Research
+      </div>
+      <div>
+        <strong>Effective</strong>
+        June 2026
+      </div>
+      <div>
+        <strong>Classification</strong>
+        Internal — Marketing
+      </div>
+    </div>
+  </section>
+
+  <!-- PURPOSE -->
+  <section class="page">
+    <span class="section-num">01 — Purpose &amp; Scope</span>
+    <hr class="page-rule">
+    <h2 class="section-title">Why every document needs a <em>premium HTML version</em></h2>
+    <p class="section-lede">Client expectations, brand consistency, and review speed all improve when external deliverables ship in a print-ready, premium HTML format.</p>
+
+    <p><strong>This SOP applies to:</strong></p>
+    <ul>
+      <li>Client proposals and credentials decks</li>
+      <li>Case studies and portfolio appendices</li>
+      <li>Briefing decks and one-pagers</li>
+      <li>External newsletters and announcements</li>
+    </ul>
+
+    <div class="note">
+      <p><strong>Design system:</strong> Print-first A4 documents use the BioNixus premium HTML conventions (EB Garamond + Barlow, navy/blue/gold palette). Do not mix website tokens into print deliverables without CMO approval.</p>
+    </div>
+  </section>
+
+  <!-- CHECKLIST -->
+  <section class="page">
+    <span class="section-num">02 — Document Checklist</span>
+    <hr class="page-rule">
+    <h2 class="section-title">Quality gate before <em>HTML review</em></h2>
+    <p class="section-lede">Use this checklist for proposals, credentials, case studies, newsletters, and briefing decks.</p>
+
+    <p><strong>A. Draft content (owner / subject matter expert)</strong></p>
+    <ul class="checklist">
+      <li>Core message, value proposition, and key claims finalized</li>
+      <li>Facts, figures, and product names verified against source documents</li>
+      <li>Sensitive pricing marked <code>[TBD — CFO input]</code> until confirmed</li>
+      <li>No fabricated client logos or testimonials</li>
+    </ul>
+
+    <p><strong>B. HTML conversion (creative / production)</strong></p>
+    <ul class="checklist">
+      <li>Clone nearest approved template from the premium HTML template library</li>
+      <li>Apply brand tokens: navy <code>#002244</code>, blue <code>#0069A3</code>, gold <code>#B8862D</code></li>
+      <li>Use exactly one <code>&lt;h1&gt;</code> on the cover; interior sections use <code>&lt;h2 class="section-title"&gt;</code></li>
+      <li>Replace all <code>{{PLACEHOLDER}}</code> tokens with real copy or mark as <code>[TBD]</code></li>
+      <li>Relative asset paths for logos, stamps, and signatures</li>
+      <li>Descriptive alt text on every image</li>
+      <li>Naming follows: <code>bionixus-{client-slug}-{topic-slug}-{type}-{year}.html</code></li>
+    </ul>
+
+    <p><strong>C. Quality &amp; compliance review</strong></p>
+    <ul class="checklist">
+      <li>Fonts load in preview (Google Fonts import present)</li>
+      <li>Print CSS intact: backgrounds print, page breaks avoid tables and signatures</li>
+      <li>WCAG AA contrast verified on text/background combinations</li>
+      <li>No invented pricing or confidential client data exposed</li>
+      <li>Legal / CEO approval recorded on parent issue before external send</li>
+    </ul>
+  </section>
+
+  <!-- HANDOFF FLOW -->
+  <section class="page">
+    <span class="section-num">03 — Workflow &amp; Handoff</span>
+    <hr class="page-rule">
+    <h2 class="section-title">From draft to <em>client delivery</em></h2>
+    <p class="section-lede">A clear ownership chain keeps quality high and turnaround fast.</p>
+
+    <div class="flow">
+      <div class="flow-item">
+        <strong>01 Draft</strong>
+        Subject matter expert writes final content; validates facts and claims.
+      </div>
+      <div class="flow-item">
+        <strong>02 HTML Conversion</strong>
+        Creative converts to branded premium HTML using the approved template and design tokens.
+      </div>
+      <div class="flow-item">
+        <strong>03 Review</strong>
+        Legal / CEO approves content before any external distribution.
+      </div>
+    </div>
+
+    <div class="note">
+      <p><strong>Handoff artifacts:</strong> Folder with HTML file + referenced brand assets + template diff summary. Post both on the task issue and move status to <code>in_review</code>.</p>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Handoff Point</th>
+          <th>Inputs</th>
+          <th>Owner</th>
+          <th>Outputs</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Draft → HTML</td>
+          <td>Finalized copy + approved assets + template file</td>
+          <td>Creative Art Director</td>
+          <td>Premium HTML file in deliverables/html/</td>
+        </tr>
+        <tr>
+          <td>HTML → Legal / CEO</td>
+          <td>HTML preview + asset bundle + checklist</td>
+          <td>CMO / CEO Assistant</td>
+          <td>Approval record on task issue</td>
+        </tr>
+        <tr>
+          <td>Approved → Client</td>
+          <td>Signed-off HTML + PDF export</td>
+          <td>Client Partner / CEO</td>
+          <td>Delivery confirmation</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- STANDARDS -->
+  <section class="page">
+    <span class="section-num">04 — Brand &amp; Production Standards</span>
+    <hr class="page-rule">
+    <h2 class="section-title">Non-negotiable <em>rules of the road</em></h2>
+
+    <p><strong>Filename:</strong> <code>bionixus-{client-slug}-{topic-slug}-{type}-{year}.html</code> — lowercase, hyphenated, no spaces or underscores.</p>
+
+    <p><strong>Types:</strong></p>
+    <ul>
+      <li><code>proposal</code> — client pitch / research proposal</li>
+      <li><code>credentials</code> — company/partner capabilities</li>
+      <li><code>portfolio</code> — selected case-study visual summary</li>
+      <li><code>briefing</code> — executive one-pager or short deck</li>
+    </ul>
+
+    <p><strong>Title tag:</strong> <code>BioNixus — {Topic} | {Client} {Year}</code></p>
+
+    <p><strong>Print export:</strong> Chrome or Edge → Print → Save as PDF with "Background graphics" enabled. Use high-res stamps from brand assets when required.</p>
+
+    <p><strong>Escalation:</strong> If a deliverable blocks on non-standard content or missing assets, raise to CEO and note the exception on the task issue.</p>
+  </section>
+
+  <!-- CLOSING / SIGNATURES -->
+  <section class="page page--closing">
+    <span class="section-num">05 — Approvals</span>
+    <hr class="page-rule">
+    <h2 class="section-title">Sign-Off <em>for this SOP</em></h2>
+    <p class="section-lede">Confirm acceptance before this standard is applied to new campaigns.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Role</th>
+          <th>Name</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CMO</td>
+          <td>[Name]</td>
+          <td>[Date]</td>
+        </tr>
+        <tr>
+          <td>Creative Art Director</td>
+          <td>[Name]</td>
+          <td>[Date]</td>
+        </tr>
+        <tr>
+          <td>General Counsel</td>
+          <td>[Name]</td>
+          <td>[Date]</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="sigg">
+      <div class="sig-block">
+        <div class="sig-line"></div>
+        <p>Authorized Signature</p>
+      </div>
+      <div class="sig-block">
+        <div class="sig-line"></div>
+        <p>Witness</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

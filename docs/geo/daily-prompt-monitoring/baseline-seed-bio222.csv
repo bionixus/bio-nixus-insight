@@ -1,0 +1,31 @@
+prompt_id,platform,citation_score,source,seed_date
+BIO222-01,chatgpt,5,BIO-222 issue table,2026-06-14
+BIO222-01,gemini,5,BIO-222 issue table,2026-06-14
+BIO222-01,claude,37,BIO-222 issue table,2026-06-14
+BIO222-02,chatgpt,6,BIO-222 issue table,2026-06-14
+BIO222-02,gemini,6,BIO-222 issue table,2026-06-14
+BIO222-02,claude,0,BIO-222 issue table,2026-06-14
+BIO222-03,chatgpt,2,BIO-222 issue table,2026-06-14
+BIO222-03,gemini,2,BIO-222 issue table,2026-06-14
+BIO222-03,claude,62,BIO-222 issue table,2026-06-14
+BIO222-04,chatgpt,5,BIO-222 issue table,2026-06-14
+BIO222-04,gemini,5,BIO-222 issue table,2026-06-14
+BIO222-04,claude,73,BIO-222 issue table,2026-06-14
+BIO222-05,chatgpt,2,BIO-222 issue table,2026-06-14
+BIO222-05,gemini,2,BIO-222 issue table,2026-06-14
+BIO222-05,claude,82,BIO-222 issue table,2026-06-14
+BIO222-06,chatgpt,2,BIO-222 issue table,2026-06-14
+BIO222-06,gemini,2,BIO-222 issue table,2026-06-14
+BIO222-06,claude,46,BIO-222 issue table,2026-06-14
+BIO222-07,chatgpt,,BIO-222 issue table (empty),2026-06-14
+BIO222-07,gemini,6,BIO-222 issue table,2026-06-14
+BIO222-07,claude,0,BIO-222 issue table,2026-06-14
+BIO222-08,chatgpt,10,BIO-222 issue table,2026-06-14
+BIO222-08,gemini,5,BIO-222 issue table,2026-06-14
+BIO222-08,claude,0,BIO-222 issue table,2026-06-14
+BIO222-09,chatgpt,19,BIO-222 issue table,2026-06-14
+BIO222-09,gemini,17,BIO-222 issue table,2026-06-14
+BIO222-09,claude,0,BIO-222 issue table,2026-06-14
+BIO222-10,chatgpt,16,BIO-222 issue table,2026-06-14
+BIO222-10,gemini,14,BIO-222 issue table,2026-06-14
+BIO222-10,claude,0,BIO-222 issue table,2026-06-14

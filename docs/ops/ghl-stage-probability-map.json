@@ -1,0 +1,41 @@
+{
+  "$schema": "BioNixus GHL stage → weighted-pipeline probability map for BIO-338 / BIO-196",
+  "defaultProbability": 0.2,
+  "stages": [
+    {
+      "match": ["unqualified", "prospect", "new lead"],
+      "label": "Unqualified New Lead / Prospect",
+      "probability": 0.05
+    },
+    {
+      "match": ["qualified", "opportunity"],
+      "label": "Qualified Opportunity",
+      "probability": 0.2
+    },
+    {
+      "match": ["booked", "meeting", "demo"],
+      "label": "Booked Meeting / Demo",
+      "probability": 0.4
+    },
+    {
+      "match": ["proposal"],
+      "label": "Proposal Sent",
+      "probability": 0.6
+    },
+    {
+      "match": ["negotiation", "review"],
+      "label": "Negotiation / Review",
+      "probability": 0.75
+    },
+    {
+      "match": ["closed won", "won", "kpi"],
+      "label": "Closed Won / KPI credit",
+      "probability": 1.0
+    },
+    {
+      "match": ["closed lost", "lost"],
+      "label": "Closed Lost",
+      "probability": 0.0
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+<!--
+  BioNixus signature block — copy into proposal templates.
+  Full spec: deliverables/html/templates/shared/signature-block.html
+  Assets: bionixus-stamp-us.png, bionixus-stamp-egypt-web.png, signature-alsaadany.png
+-->
+<style>
+  .sigg { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: auto; }
+  .sig { position: relative; padding-top: 12px; border-top: 1.5px solid var(--navy); margin-top: 50px; }
+  .siglbl { font-size: 8px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-muted); }
+  .signame { font-family: var(--serif); font-size: 19px; font-weight: 600; color: var(--navy); margin-top: 7px; }
+  .sigtitle { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+  .sigmark { position: absolute; left: 6px; bottom: calc(100% + 2px); height: 52px; width: auto; z-index: 2; }
+  .sigstamps .st-eg { position: absolute; left: 10px; bottom: calc(100% + 85px); height: 130px; z-index: 1; }
+  .sigstamps .st-us { position: absolute; left: 10px; bottom: calc(100% + 250px); height: 265px; z-index: 1; }
+</style>
+
+<div class="sigg">
+  <div class="sig">
+    <div class="sigstamps">
+      <img class="st-us" src="bionixus-stamp-us.png" alt="BioNixus US headquarters seal">
+      <img class="st-eg" src="bionixus-stamp-egypt-web.png" alt="BioNixus Egypt office stamp">
+    </div>
+    <img class="sigmark" src="signature-alsaadany.png" alt="Mohammad Alsaadany signature">
+    <div class="siglbl">For &amp; On Behalf of &mdash; BioNixus Egypt</div>
+    <div class="signame">Mohammad Alsaadany</div>
+    <div class="sigtitle">Market Research Director &middot; BioNixus Egypt<br>{{ISSUE_DATE}}</div>
+  </div>
+  <div class="sig">
+    <div class="siglbl">For &amp; On Behalf of &mdash; {{CLIENT_LEGAL_NAME}}</div>
+    <div class="signame">{{CLIENT_SIGNATORY_NAME}}</div>
+    <div class="sigtitle">{{CLIENT_SIGNATORY_TITLE}}<br>Date: _______________</div>
+  </div>
+</div>

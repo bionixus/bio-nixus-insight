@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>BioNixus — {{TOPIC}} | {{CLIENT}} {{YEAR}}</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+/* Inline from deliverables/html/templates/shared/tokens.css — pharma MR fork */
+:root{--navy:#002244;--navy-deep:#001833;--blue:#0069A3;--gold:#B8862D;--gold-light:#D4A84B;--off-white:#FAFAF8;--cool-white:#F3F5F7;--rule:#D0D6DE;--text:#152232;--text-muted:#6B7684;--paper:#FDFCFA;--paper-screen:#FFF;--serif:'EB Garamond',Georgia,serif;--sans:'Barlow',sans-serif;--cond:'Barlow Condensed',sans-serif;--mono:'IBM Plex Mono',monospace}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);font-size:13.5px;line-height:1.65;color:var(--text);background:linear-gradient(165deg,#dce3eb,#e8ecf0);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.document{max-width:920px;margin:32px auto 40px;background:var(--paper-screen);border:1px solid rgba(0,34,68,.07);box-shadow:0 24px 64px -12px rgba(0,34,68,.14)}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;padding:48px 56px;background:var(--paper);page-break-after:always;position:relative}
+.page:last-child{page-break-after:auto}
+@media print{body{background:#fff}.document{margin:0;border:none;box-shadow:none;max-width:none}.page{margin:0!important}}
+.cover{background:linear-gradient(145deg,var(--navy-deep),var(--navy) 55%,#003366);color:#fff;padding:48px 56px 40px;min-height:297mm}
+.cover-kicker{font-family:var(--cond);font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-light);margin-bottom:16px}
+.cover h1{font-family:var(--serif);font-size:42px;font-weight:500;line-height:1.05;margin-bottom:12px}
+.cover h1 em{font-style:italic;color:var(--gold-light)}
+.cover-sub{font-size:14px;color:rgba(255,255,255,.72);max-width:520px;margin-bottom:28px}
+.meta{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.15)}
+.meta div{padding:14px 16px;background:rgba(0,0,0,.15)}
+.meta span{display:block;font-family:var(--cond);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:4px}
+.meta strong{font-size:12px;color:#fff}
+.section-num{font-family:var(--cond);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+.section-title{font-family:var(--serif);font-size:28px;color:var(--navy);margin-bottom:12px;line-height:1.15;font-weight:500}
+.section-title em{font-style:italic;color:var(--blue)}
+.section-lede{color:var(--text-muted);max-width:640px;margin-bottom:20px}
+.body{margin-bottom:14px;max-width:680px}
+.page-rule{display:flex;align-items:center;margin-bottom:18px;gap:12px}
+.page-rule::before{content:'';width:48px;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light))}
+.page-rule-text{font-family:var(--cond);font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--navy)}
+.note{font-size:11px;color:var(--text-muted);border-left:3px solid var(--gold);padding:10px 14px;background:var(--off-white);margin-top:24px}
+.fee-table{width:100%;border-collapse:collapse;margin-top:20px;font-size:12px}
+.fee-table th{text-align:left;font-family:var(--cond);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--text-muted);padding:10px 12px;border-bottom:2px solid var(--navy)}
+.fee-table td{padding:10px 12px;border-bottom:1px solid var(--rule)}
+.fee-table .num{text-align:right;font-family:var(--mono)}
+.letter-to{font-family:var(--serif);font-size:18px;color:var(--navy);margin-bottom:16px}
+.timeline{margin-top:24px;border-left:2px solid var(--rule);padding-left:20px}
+.timeline-item{margin-bottom:16px}
+.timeline-item strong{display:block;font-family:var(--cond);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+.rh{position:absolute;top:24px;left:56px;right:56px;display:flex;justify-content:space-between;font-family:var(--cond);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--text-muted)}
+.rf{position:absolute;bottom:24px;left:56px;right:56px;display:flex;justify-content:space-between;font-size:9px;color:var(--text-muted)}
+.page--closing{background:linear-gradient(145deg,var(--navy-deep),var(--navy));color:#fff}
+.page--closing .section-title{color:#fff}.page--closing .section-title em{color:var(--gold-light)}.page--closing .section-lede{color:rgba(255,255,255,.72)}
+.sigg{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:auto;padding-top:40px}
+.sig{position:relative;padding-top:12px;border-top:1.5px solid var(--navy);margin-top:50px}
+.siglbl{font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--text-muted)}
+.signame{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--navy);margin-top:7px}
+.sigtitle{font-size:11px;color:var(--text-muted);margin-top:2px}
+</style>
+</head>
+<body>
+<div class="document">
+
+  <!-- COVER -->
+  <section class="cover page">
+    <!-- <img src="bionixus-logo.png" alt="BioNixus logo" style="height:32px;margin-bottom:24px"/> -->
+    <div class="cover-kicker">BioNixus × {{CLIENT}} · {{REFERENCE_CODE}}</div>
+    <h1>{{COVER_HEADLINE}}<br><em>{{COVER_EMPHASIS}}.</em></h1>
+    <p class="cover-sub">{{COVER_SUBHEAD}}</p>
+    <div class="meta">
+      <div><span>Client</span><strong>{{CLIENT}}</strong></div>
+      <div><span>Year</span><strong>{{YEAR}}</strong></div>
+      <div><span>Reference</span><strong>{{REFERENCE_CODE}}</strong></div>
+    </div>
+  </section>
+
+  <!-- LETTER -->
+  <section class="page">
+    <div class="page-rule"><div class="page-rule-text">Introduction</div></div>
+    <div class="letter-to">{{ADDRESSEE_NAME}}<br>{{ADDRESSEE_TITLE}} · {{CLIENT}}</div>
+    <p class="body">{{LETTER_PARAGRAPH_1}}</p>
+    <p class="body">{{LETTER_PARAGRAPH_2}}</p>
+    <p class="note">Template token: replace all {{PLACEHOLDER}} values. Route to GeneralCounsel before external send.</p>
+  </section>
+
+  <!-- 01 OBJECTIVES -->
+  <section class="page">
+    <div class="rh"><span>BioNixus · {{CLIENT}}</span><span>{{REFERENCE_CODE}}</span></div>
+    <div class="section-num">01 — Objectives &amp; context</div>
+    <h2 class="section-title">{{SECTION_01_TITLE}}<br><em>{{SECTION_01_EMPHASIS}}.</em></h2>
+    <p class="section-lede">{{SECTION_01_LEDE}}</p>
+    <p class="body">{{SECTION_01_BODY}}</p>
+    <div class="rf"><span>Confidential · {{CLIENT}}</span><span>Page 3</span></div>
+  </section>
+
+  <!-- 02 RESEARCH DESIGN -->
+  <section class="page">
+    <div class="rh"><span>BioNixus · {{CLIENT}}</span><span>{{REFERENCE_CODE}}</span></div>
+    <div class="section-num">02 — Research design</div>
+    <h2 class="section-title">{{SECTION_02_TITLE}}<br><em>{{SECTION_02_EMPHASIS}}.</em></h2>
+    <p class="section-lede">{{SECTION_02_LEDE}}</p>
+    <p class="body"><strong>Phase 1:</strong> {{PHASE_1_DESCRIPTION}}</p>
+    <p class="body"><strong>Phase 2:</strong> {{PHASE_2_DESCRIPTION}}</p>
+    <div class="rf"><span>Confidential · {{CLIENT}}</span><span>Page 4</span></div>
+  </section>
+
+  <!-- 04 TIMELINE -->
+  <section class="page">
+    <div class="section-num">04 — Indicative timeline</div>
+    <h2 class="section-title">Programme milestones<br><em>and delivery cadence.</em></h2>
+    <div class="timeline">
+      <div class="timeline-item"><strong>Weeks 1–2</strong> Kick-off, instrument finalisation, ethics alignment</div>
+      <div class="timeline-item"><strong>Weeks 3–6</strong> Fieldwork execution across {{FIELDWORK_MARKETS}}</div>
+      <div class="timeline-item"><strong>Weeks 7–8</strong> Analysis, executive readout, final deliverable</div>
+    </div>
+  </section>
+
+  <!-- 05 WHY BIONIXUS -->
+  <section class="page">
+    <div class="section-num">05 — Why BioNixus</div>
+    <h2 class="section-title">Local depth,<br><em>global rigour.</em></h2>
+    <p class="section-lede">127+ projects · 17+ countries · 14+ therapeutic areas. MENA field infrastructure with US/UK governance.</p>
+    <p class="body">See companion credentials deck: <em>Volume II — Pharma &amp; Healthcare Credentials.</em></p>
+  </section>
+
+  <!-- 06 INVESTMENT -->
+  <section class="page">
+    <div class="section-num">06 — Investment &amp; terms</div>
+    <h2 class="section-title">Programme<br><em>investment.</em></h2>
+    <table class="fee-table">
+      <thead><tr><th>Line item</th><th>Description</th><th class="num">Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Phase 1 — Discovery</td><td>Desk research, stakeholder mapping</td><td class="num">[TBD — CFO input]</td></tr>
+        <tr><td>Phase 2 — Primary fieldwork</td><td>Qual/quant execution</td><td class="num">[TBD — CFO input]</td></tr>
+        <tr><td>Analysis &amp; reporting</td><td>Executive deck + data tables</td><td class="num">[TBD — CFO input]</td></tr>
+        <tr><td><strong>Total</strong></td><td>Excludes VAT / withholding</td><td class="num"><strong>[TBD — CFO input]</strong></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 08 NEXT STEPS -->
+  <section class="page page--closing">
+    <div class="section-num">08 — Next steps</div>
+    <h2 class="section-title">Ready to<br><em>begin.</em></h2>
+    <p class="section-lede">Acceptance via signed proposal · Valid 30 days from issue date · Contact admin@bionixus.com</p>
+    <p class="body" style="color:rgba(255,255,255,.85)">{{NEXT_STEPS_BODY}}</p>
+  </section>
+
+  <!-- SIGNATURES (optional — remove if not required) -->
+  <section class="page" style="display:flex;flex-direction:column;">
+    <div class="section-num">Formal authorisation</div>
+    <div class="sigg" style="margin-top:auto">
+      <div class="sig">
+        <div class="siglbl">For &amp; On Behalf of — BioNixus Egypt</div>
+        <div class="signame">Mohammad Alsaadany</div>
+        <div class="sigtitle">Market Research Director · BioNixus Egypt<br>{{ISSUE_DATE}}</div>
+      </div>
+      <div class="sig">
+        <div class="siglbl">For &amp; On Behalf of — {{CLIENT_LEGAL_NAME}}</div>
+        <div class="signame">{{CLIENT_SIGNATORY_NAME}}</div>
+        <div class="sigtitle">{{CLIENT_SIGNATORY_TITLE}}<br>Date: _______________</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

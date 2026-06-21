@@ -1,0 +1,20 @@
+CREATE
+LAST	Len	"BioNixus"
+LAST	Den	"global market research company specializing in healthcare and pharmaceutical research"
+LAST	P31	Q4830453
+LAST	P101	Q188860
+LAST	P101	Q1130618
+LAST	P101	Q870895
+LAST	P17	Q30
+LAST	P17	Q145
+LAST	P17	Q79
+LAST	P17	Q878
+LAST	P17	Q851
+LAST	P131	Q84
+LAST	P131	Q667475
+LAST	P856	"https://www.bionixus.com"
+LAST	P18	"https://www.bionixus.com/bionixus-logo.webp"
+LAST	P1454	Q2912172
+LAST	P452	Q188860
+LAST	P571	+2012-01-01T00:00:00Z/9
+LAST	P159	Q667475

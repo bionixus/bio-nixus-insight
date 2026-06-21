@@ -1,0 +1,34 @@
+bio378_closure:
+  verdict: ready_for_execution_routing
+  deliverable_verified: true
+  no_further_bio378_work_required: true
+
+verified_deliverables:
+  - issue_document: directory-research
+  - csv_attachment: directory-research.csv
+  - row_count: 70
+  - country_count: 7
+
+coverage:
+  UAE: 10
+  Saudi Arabia: 10
+  Egypt: 10
+  United States: 10
+  United Kingdom: 10
+  Germany: 10
+  India: 10
+
+disposition:
+  - status: accepted
+  - routed_to: BIO-379
+  - note: No BIO-378 further work required unless submission paths change
+
+verification_checklist:
+  - acceptance_board_comments_present: true
+  - top5_p0_verified: true
+  - submission_paths_confirmed:
+      - Greenbook: https://www.greenbook.org/create-company-listing
+      - GoodFirms: https://www.goodfirms.co/get-listed
+      - BusinessNetwork: https://businessnetwork.co.uk/register
+      - CitedX: https://citedx.co.uk/add
+      - Gelbe Seiten: https://www.gelbeseiten.de/starteintrag

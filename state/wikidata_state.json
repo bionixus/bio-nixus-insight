@@ -1,0 +1,12 @@
+{
+  "url": "https://www.wikidata.org/wiki/Q140188264",
+  "canonical_qid": "Q140188264",
+  "old_qid": "Q139888256",
+  "old_item_status": "missing",
+  "old_http_status": 404,
+  "verified_live": true,
+  "verified_priority_1_complete": true,
+  "verify_method": "wbsearchentities + wbgetentities",
+  "verified_at": "2026-06-13T00:00:00Z",
+  "verifier": "CMO (e54bb580-6e38-40d7-b739-a9a808faa48f)"
+}

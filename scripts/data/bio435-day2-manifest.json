@@ -1,0 +1,116 @@
+{
+  "date": "2026-06-19",
+  "coverDir": "public/images/blog/q2-2026-pharma",
+  "articles": [
+    {
+      "slug": "market-access-research-uae-2026",
+      "language": "en",
+      "country": "United Arab Emirates",
+      "category": "Market Access",
+      "readingTime": 18,
+      "coverAlt": "Market access research in the UAE pharmaceutical launch readiness 2026",
+      "coverTheme": "Market Access / GCC",
+      "coverTitle": "UAE Market Access 2026",
+      "coverSubtitle": "EDE pricing and payer research"
+    },
+    {
+      "slug": "pharmacoeconomics-consulting-europe-2026",
+      "language": "en",
+      "country": "Europe",
+      "category": "HEOR",
+      "readingTime": 18,
+      "coverAlt": "Pharmacoeconomics consulting in Europe HEOR payer negotiations 2026",
+      "coverTheme": "HEOR / Pharmacoeconomics",
+      "coverTitle": "Pharmacoeconomics Europe",
+      "coverSubtitle": "HEOR for payer negotiations"
+    },
+    {
+      "slug": "oncology-market-research-usa-2026",
+      "language": "en",
+      "country": "United States",
+      "category": "Oncology",
+      "readingTime": 18,
+      "coverAlt": "Oncology market research USA payer clinical insights 2026",
+      "coverTheme": "Oncology Market Research",
+      "coverTitle": "Oncology MR USA 2026",
+      "coverSubtitle": "Payer and clinical insights"
+    },
+    {
+      "slug": "heor-consulting-saudi-arabia-ar-2026",
+      "language": "ar",
+      "country": "Saudi Arabia",
+      "category": "HEOR",
+      "readingTime": 18,
+      "coverAlt": "استشارات HEOR في السعودية أبحاث الصحة الاقتصادية 2026",
+      "coverTheme": "HEOR / SFDA",
+      "coverTitle": "HEOR السعودية 2026",
+      "coverSubtitle": "SFDA EES و NUPCO"
+    },
+    {
+      "slug": "amnog-frueher-nutzen-marktzugang-2026",
+      "language": "de",
+      "country": "Germany",
+      "category": "Market Access",
+      "readingTime": 18,
+      "coverAlt": "AMNOG frühe Nutzenbewertung Marktzugang Deutschland 2026",
+      "coverTheme": "AMNOG / G-BA",
+      "coverTitle": "AMNOG 2026",
+      "coverSubtitle": "Frühe Nutzenbewertung"
+    },
+    {
+      "slug": "evaluation-economique-has-france-2026",
+      "language": "fr",
+      "country": "France",
+      "category": "HEOR",
+      "readingTime": 18,
+      "coverAlt": "Évaluation économique HAS CEESP France accès marché 2026",
+      "coverTheme": "HAS / CEESP",
+      "coverTitle": "CEESP France 2026",
+      "coverSubtitle": "Évaluation économique HAS"
+    },
+    {
+      "slug": "farmacoeconomia-acceso-mercado-espana-2026",
+      "language": "es",
+      "country": "Spain",
+      "category": "HEOR",
+      "readingTime": 18,
+      "coverAlt": "Farmacoeconomía acceso mercado España RD 415 2026",
+      "coverTheme": "AEMPS / HTA",
+      "coverTitle": "Farmacoeconomía España",
+      "coverSubtitle": "RD 415/2026 acceso"
+    },
+    {
+      "slug": "avaliacao-tecnologias-conitec-brasil-2026",
+      "language": "pt",
+      "country": "Brazil",
+      "category": "Market Access",
+      "readingTime": 18,
+      "coverAlt": "Avaliação tecnologias CONITEC Brasil SUS 2026",
+      "coverTheme": "CONITEC / ANVISA",
+      "coverTitle": "CONITEC Brasil 2026",
+      "coverSubtitle": "Acesso SUS e HTA"
+    },
+    {
+      "slug": "nmpa-pharmaceutical-market-research-china-2026",
+      "language": "zh",
+      "country": "China",
+      "category": "Market Access",
+      "readingTime": 18,
+      "coverAlt": "NMPA NRDL医药市场研究中国注册准入2026",
+      "coverTheme": "NMPA / NRDL",
+      "coverTitle": "NMPA NRDL 2026",
+      "coverSubtitle": "注册与准入证据"
+    },
+    {
+      "slug": "eaeu-farmacevticheskiy-dostup-2026",
+      "language": "ru",
+      "country": "Russia",
+      "category": "Market Access",
+      "readingTime": 18,
+      "coverAlt": "Доступ на рынок ЕАЭС фарма регистрация 2026",
+      "coverTheme": "EAEU / Market Access",
+      "coverTitle": "Доступ ЕАЭС 2026",
+      "coverSubtitle": "Регистрация и локализация"
+    }
+  ]
+}

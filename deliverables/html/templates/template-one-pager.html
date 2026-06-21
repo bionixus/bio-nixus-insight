@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>BioNixus — {{TOPIC}} One-Pager | {{CLIENT}} {{YEAR}}</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--navy:#002244;--blue:#0069A3;--gold:#B8862D;--off-white:#FAFAF8;--text:#152232;--text-muted:#6B7684;--rule:#D0D6DE;--serif:'EB Garamond',Georgia,serif;--sans:'Barlow',sans-serif;--cond:'Barlow Condensed',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);font-size:12px;line-height:1.55;color:var(--text);background:#e8ecf0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+@page{size:A4;margin:0}
+.sheet{width:210mm;height:297mm;background:#fff;display:grid;grid-template-rows:auto 1fr auto;overflow:hidden}
+@media print{body{background:#fff;padding:0}}
+.header{background:linear-gradient(135deg,#001833,var(--navy));color:#fff;padding:28px 40px 24px}
+.header-kicker{font-family:var(--cond);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:#D4A84B;margin-bottom:8px}
+.header h1{font-family:var(--serif);font-size:32px;font-weight:500;line-height:1.1}
+.header h1 em{font-style:italic;color:#D4A84B}
+.header-meta{display:flex;gap:24px;margin-top:12px;font-size:10px;color:rgba(255,255,255,.65)}
+.header-meta strong{color:#fff}
+.main{padding:24px 40px;display:grid;grid-template-columns:1fr 1fr;gap:24px 32px}
+.col-full{grid-column:1/-1}
+.block-label{font-family:var(--cond);font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
+.block-title{font-family:var(--serif);font-size:16px;color:var(--navy);margin-bottom:8px;font-weight:500}
+.block-body{font-size:11px;color:var(--text);margin-bottom:4px}
+.block-body--muted{color:var(--text-muted)}
+.divider{grid-column:1/-1;height:1px;background:var(--rule);margin:4px 0}
+.stat-inline{display:flex;gap:16px;margin-top:8px}
+.stat-inline div{text-align:center;padding:8px 12px;background:var(--off-white);flex:1;border-top:2px solid var(--blue)}
+.stat-inline .n{font-family:var(--serif);font-size:20px;color:var(--navy)}
+.stat-inline .l{font-size:8px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em}
+.footer{background:var(--off-white);padding:16px 40px;display:flex;justify-content:space-between;align-items:center;border-top:3px solid var(--gold);font-size:10px;color:var(--text-muted)}
+.footer strong{color:var(--navy)}
+.cta{font-family:var(--cond);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);text-decoration:none;font-weight:600}
+</style>
+</head>
+<body>
+<article class="sheet">
+
+  <header class="header">
+    <div class="header-kicker">BioNixus × {{CLIENT}} · One-pager</div>
+    <h1>{{ONEPAGER_HEADLINE}}<br><em>{{ONEPAGER_EMPHASIS}}.</em></h1>
+    <div class="header-meta">
+      <span>Client: <strong>{{CLIENT}}</strong></span>
+      <span>Date: <strong>{{ISSUE_DATE}}</strong></span>
+      <span>Ref: <strong>{{REFERENCE_CODE}}</strong></span>
+    </div>
+  </header>
+
+  <main class="main">
+    <div>
+      <div class="block-label">Challenge</div>
+      <div class="block-title">{{CHALLENGE_TITLE}}</div>
+      <p class="block-body">{{CHALLENGE_BODY — 2–3 sentences on the commercial question and decision context.}}</p>
+    </div>
+    <div>
+      <div class="block-label">Objective</div>
+      <div class="block-title">{{OBJECTIVE_TITLE}}</div>
+      <p class="block-body">{{OBJECTIVE_BODY — What success looks like for the sponsor.}}</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div>
+      <div class="block-label">Approach</div>
+      <p class="block-body"><strong>Phase 1:</strong> {{PHASE_1}}</p>
+      <p class="block-body"><strong>Phase 2:</strong> {{PHASE_2}}</p>
+      <p class="block-body block-body--muted">Markets: {{MARKETS}}</p>
+    </div>
+    <div>
+      <div class="block-label">Deliverables</div>
+      <p class="block-body">• {{DELIVERABLE_1}}</p>
+      <p class="block-body">• {{DELIVERABLE_2}}</p>
+      <p class="block-body">• {{DELIVERABLE_3}}</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="col-full">
+      <div class="block-label">Why BioNixus</div>
+      <div class="stat-inline">
+        <div><div class="n">127+</div><div class="l">Projects</div></div>
+        <div><div class="n">17+</div><div class="l">Countries</div></div>
+        <div><div class="n">14+</div><div class="l">Therapy areas</div></div>
+        <div><div class="n">48</div><div class="l">Global clients</div></div>
+      </div>
+      <p class="block-body block-body--muted" style="margin-top:10px">{{WHY_BIONIXUS — MENA field depth · US/UK governance · ICH-GCP aligned}}</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div>
+      <div class="block-label">Timeline</div>
+      <p class="block-body"><strong>{{TIMELINE_WEEKS}} weeks</strong> from kick-off to final readout</p>
+      <p class="block-body block-body--muted">Kick-off → Fieldwork → Analysis → Executive deck</p>
+    </div>
+    <div>
+      <div class="block-label">Investment</div>
+      <p class="block-body"><strong>[TBD — CFO input]</strong></p>
+      <p class="block-body block-body--muted">Full fee schedule in attached proposal. Valid 30 days.</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <span><strong>BioNixus</strong> · Medical Intelligence for Healthcare Growth · admin@bionixus.com</span>
+    <a class="cta" href="mailto:admin@bionixus.com">Request full proposal →</a>
+  </footer>
+
+</article>
+</body>
+</html>

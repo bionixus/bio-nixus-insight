@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>BioNixus Portfolio — Selected Engagements</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--navy:#002244;--blue:#0069A3;--gold:#B8862D;--off-white:#FAFAF8;--text:#152232;--text-muted:#6B7684;--paper:#FDFCFA;--serif:'EB Garamond',Georgia,serif;--sans:'Barlow',sans-serif;--cond:'Barlow Condensed',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);font-size:13px;line-height:1.65;color:var(--text);background:#e8ecf0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.document{max-width:920px;margin:32px auto;background:#fff;box-shadow:0 24px 64px -12px rgba(0,34,68,.14)}
+@page{size:A4;margin:0}
+.page{width:210mm;min-height:297mm;padding:48px 56px;background:var(--paper);page-break-after:always}
+.page:last-child{page-break-after:auto}
+@media print{body{background:#fff}.document{margin:0;box-shadow:none;max-width:none}}
+.cover{background:linear-gradient(145deg,#001833,var(--navy));color:#fff;min-height:297mm;padding:48px 56px;display:flex;flex-direction:column;justify-content:flex-end}
+.cover-kicker{font-family:var(--cond);font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#D4A84B;margin-bottom:16px}
+.cover h1{font-family:var(--serif);font-size:44px;font-weight:500;line-height:1.05}
+.cover h1 em{font-style:italic;color:#D4A84B}
+.section-num{font-family:var(--cond);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+.section-title{font-family:var(--serif);font-size:28px;color:var(--navy);margin-bottom:16px;font-weight:500;line-height:1.15}
+.section-title em{font-style:italic;color:var(--blue)}
+.body{margin-bottom:14px;max-width:680px}
+.case-card{border:1px solid #D0D6DE;padding:20px;margin-bottom:16px;page-break-inside:avoid}
+.case-card h3{font-family:var(--serif);font-size:18px;color:var(--navy);margin-bottom:8px}
+.case-meta{font-family:var(--cond);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+.case-outcome{font-size:12px;color:var(--text-muted);border-left:3px solid var(--gold);padding-left:12px;margin-top:8px}
+.cap-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px}
+.cap{padding:16px;background:var(--off-white);border-top:2px solid var(--navy)}
+.cap h4{font-size:12px;font-weight:600;color:var(--navy);margin-bottom:6px}
+.cap p{font-size:11px;color:var(--text-muted)}
+.geo-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.geo-tag{padding:6px 12px;background:var(--off-white);font-size:11px;color:var(--text-muted)}
+</style>
+</head>
+<body>
+<div class="document">
+
+  <section class="cover page">
+    <div class="cover-kicker">BioNixus · Portfolio Appendix</div>
+    <h1>Selected<br><em>engagements.</em></h1>
+    <p style="font-size:14px;color:rgba(255,255,255,.7);margin-top:16px;max-width:480px">Synthetic case summaries for template demonstration. Replace with approved, redacted client stories.</p>
+  </section>
+
+  <section class="page">
+    <div class="section-num">01 — Portfolio snapshot</div>
+    <h2 class="section-title">Scope of<br><em>recent work.</em></h2>
+    <p class="body">BioNixus delivers market research and analytics across pharma, diagnostics, medtech, and consumer health — with MENA field depth and global governance standards.</p>
+    <p class="body"><strong>Engagement types:</strong> Market sizing · ATU tracking · Launch readiness · Payer access · KOL mapping · Competitive intelligence</p>
+  </section>
+
+  <section class="page">
+    <div class="section-num">02 — Capabilities</div>
+    <h2 class="section-title">Core<br><em>capabilities.</em></h2>
+    <div class="cap-grid">
+      <div class="cap"><h4>Quantitative MR</h4><p>Physician/payer surveys, segmentation, demand modelling</p></div>
+      <div class="cap"><h4>Qualitative MR</h4><p>IDIs, focus groups, pathway &amp; barrier analysis</p></div>
+      <div class="cap"><h4>Market Access</h4><p>HTA inputs, reimbursement landscaping, value dossiers</p></div>
+      <div class="cap"><h4>Competitive Intel</h4><p>Pipeline tracking, launch monitoring, landscape reports</p></div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="section-num">03 — Case studies</div>
+    <h2 class="section-title">Representative<br><em>programmes.</em></h2>
+
+    <div class="case-card">
+      <div class="case-meta">Oncology · GCC · Market sizing</div>
+      <h3>{{CASE_1_TITLE — e.g. Rare disease launch sizing — KSA &amp; UAE}}</h3>
+      <p class="body">{{CASE_1_DESCRIPTION — Synthetic: Triangulated epidemiology, treated-patient modelling, and payer pathway mapping for pre-launch planning.}}</p>
+      <p class="case-outcome"><strong>Outcome:</strong> {{CASE_1_OUTCOME — Board-ready sizing range with scenario bands for access strategy.}}</p>
+    </div>
+
+    <div class="case-card">
+      <div class="case-meta">Diagnostics · MENA · ATU study</div>
+      <h3>{{CASE_2_TITLE — e.g. QC/immunohematology market assessment}}</h3>
+      <p class="body">{{CASE_2_DESCRIPTION — Synthetic: Hospital lab mapping, procurement pathway interviews, competitive share modelling.}}</p>
+      <p class="case-outcome"><strong>Outcome:</strong> {{CASE_2_OUTCOME — Prioritised country entry sequence with channel strategy.}}</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="section-num">04 — Geography &amp; roster</div>
+    <h2 class="section-title">Where we<br><em>operate.</em></h2>
+    <div class="geo-list">
+      <span class="geo-tag">Saudi Arabia</span><span class="geo-tag">UAE</span><span class="geo-tag">Egypt</span>
+      <span class="geo-tag">Kuwait</span><span class="geo-tag">Qatar</span><span class="geo-tag">UK</span>
+      <span class="geo-tag">Germany</span><span class="geo-tag">Brazil</span><span class="geo-tag">United States</span>
+    </div>
+    <p class="body" style="margin-top:24px;font-size:11px;color:var(--text-muted)">Client roster available on request. Redact confidential names in shared portfolio versions.</p>
+  </section>
+
+  <section class="page" style="display:flex;flex-direction:column;justify-content:center;text-align:center">
+    <div class="section-num">05 — Contact</div>
+    <h2 class="section-title">Start a<br><em>conversation.</em></h2>
+    <p class="body" style="margin:0 auto">admin@bionixus.com · www.bionixus.com</p>
+    <p class="body" style="margin:12px auto 0;font-size:11px;color:var(--text-muted)">Medical Intelligence for Healthcare Growth</p>
+  </section>
+
+</div>
+</body>
+</html>

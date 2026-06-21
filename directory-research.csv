@@ -1,0 +1,71 @@
+Country,Directory name,URL,Category,Free tier?,DA/authority signal,Submission URL,NAP required fields,Listing copy angle,Priority,Status
+UAE,GetListedUAE,https://www.getlisteduae.com/,Local business / SEO,Yes,~45 (niche UAE),https://www.getlisteduae.com/list-your-business/,"Name, address, phone, category, description, website",GCC healthcare MR firm with Dubai office,P1,Not started
+UAE,PublikPages,https://www.publikpages.com/,UAE business directory,Yes,~35,https://www.publikpages.com/add-business,"Name, emirate, category, contact, description",Verified UAE company profile for pharma buyers,P1,Not started
+UAE,UAEThrive,https://uaethrive.com/,UAE local directory,Yes,~30,https://uaethrive.com/add-listing/,"Business name, location, services, contact",Dubai/UAE hub for international healthcare research,P2,Not started
+UAE,AEsell,https://aesell.com/,UAE B2B directory,Yes,~28,https://aesell.com/add-business,"Company, category, location, website",B2B services — market research & analytics,P2,Not started
+UAE,FreeListingUAE,https://www.freelistinguae.com/,Local listings,Yes,~25,https://www.freelistinguae.com/submit,"NAP, category, description",Local SEO citation for UAE office,P2,Not started
+UAE,YallaPages,https://yallapages.ae/,UAE business directory,Yes,~22,https://yallapages.ae/add-business,"Name, emirate, category, phone, website",Trusted UAE business — healthcare intelligence,P2,Not started
+UAE,LaunchDub Directory,https://www.launchdub.ai/directory,Startup/company directory,Yes,~20,https://www.launchdub.ai/directory/submit,"Company, license info, location, description",UAE-registered entity in health analytics,P2,Not started
+UAE,Aiwa.ae,https://aiwa.ae/,UAE smart directory,Yes,~30,https://aiwa.ae/add-your-business,"Business details, category, contact",Dubai business listing — pharma market research,P2,Not started
+UAE,Middle East Yellow Pages,https://middleeastyellowpages.com/,GCC B2B/B2C,Yes,~40,https://middleeastyellowpages.com/add-your-company,"Company, country, category, contact",GCC-wide MR provider with UAE presence,P1,Not started
+UAE,Kompass UAE,https://ae.kompass.com/,B2B industrial,Freemium,~55,https://ae.kompass.com/register/,"Company, activity, address, contact",International healthcare market research supplier,P1,Not started
+Saudi Arabia,SaudiBizness,https://www.saudibizness.com/,KSA business directory,Yes,~25,https://www.saudibizness.com/add-business,"Name, city, category, phone, website",Riyadh-based healthcare market research,P1,Not started
+Saudi Arabia,SaudiaYP,https://www.saudiayp.com/,KSA yellow pages,Yes,~35,https://www.saudiayp.com/add-business,"NAP, category, description",Saudi pharma & hospital data analytics,P1,Not started
+Saudi Arabia,Listaaj,https://www.listaaj.com/,KSA business listings,Yes,~30,https://www.listaaj.com/en/add-business,"Business name, city, sector, contact",KSA market access & consumption research,P1,Not started
+Saudi Arabia,FindSaudi.com,https://www.findsaudi.com/,KSA commercial directory,Yes,~28,https://www.findsaudi.com/addcompany,"Company, industry, location, website",Leading MR firm for Saudi pharma market,P2,Not started
+Saudi Arabia,Saudi Yellow Pages Online,https://saudiyellowpagesonline.com/,B2B marketplace,Freemium,~32,https://saudiyellowpagesonline.com/post-free-ads/,"Company, products/services, contact",Hospital sales data & MR — KSA,P2,Not started
+Saudi Arabia,eArabic Market (KSA),https://www.earabicmarket.com/,Arab B2B,Yes,~38,https://www.earabicmarket.com/en/register,"Company profile, country, sector",Arabic-market healthcare research leader,P1,Not started
+Saudi Arabia,Middle East Yellow Pages,https://middleeastyellowpages.com/,GCC directory,Yes,~40,https://middleeastyellowpages.com/add-your-company,"Company, country SA, category",GCC pharma intelligence — Riyadh office,P1,Not started
+Saudi Arabia,Kompass Saudi Arabia,https://sa.kompass.com/,B2B,Freemium,~55,https://sa.kompass.com/register/,"Company, activity, address",Healthcare analytics — Saudi Arabia,P1,Not started
+Saudi Arabia,Enests Saudi,https://enests.co/,Business listings,Yes,~22,https://enests.co/add-business,"Name, location, category, website",KSA life sciences market research,P2,Not started
+Saudi Arabia,TradeBoss Saudi,https://www.tradeboss.com/,Global B2B,Yes,~45,https://www.tradeboss.com/default.cgi/action/postoffer,"Company registration, country, products",Pharmaceutical market research services — KSA,P2,Not started
+Egypt,Egypt Directory (InfoEG),https://en.infoeg.com/,Egypt business directory,Yes,~42,https://en.infoeg.com/page/create,"Name, category, description, contact, social",Cairo HQ — healthcare MR across MENA,P0,Not started
+Egypt,Buy Egypt Directory,https://buy.com.eg/,Egypt largest directory,Yes,~48,https://buy.com.eg/en/register?type=business,"Account, business info, category, photos",Egypt regional hub for pharma analytics,P0,Not started
+Egypt,Yenino Egypt,https://www.yenino.com/eg-en,Local business directory,Yes,~30,https://www.yenino.com/eg-en/add-business,"Name, city, category, contact",Cairo office — international healthcare MR,P1,Not started
+Egypt,Acompio Egypt,https://egypt.acompio.com/,Business directory,Yes,~35,https://egypt.acompio.com/claim-or-add/,"Company, industry, address, website",AI-readable business profile — pharma research,P1,Not started
+Egypt,EgyptYP,https://www.egyptyponline.com/,Yellow pages Egypt,Yes,~38,https://www.egyptyponline.com/add-business,"NAP, category, description",Egypt pharmaceutical market intelligence,P1,Not started
+Egypt,Kompass Egypt,https://eg.kompass.com/,B2B,Freemium,~55,https://eg.kompass.com/register/,"Company, activity, address",Healthcare market research — Egypt,P1,Not started
+Egypt,Infoisinfo Egypt,https://egypt.infoisinfo.com/,Local directory,Yes,~40,https://egypt.infoisinfo.com/en/create-business,"Business name, address, phone, category",Cairo MR firm — hospital consumption data,P2,Not started
+Egypt,Hotfrog Egypt,https://www.hotfrog.com.eg/,Business directory,Yes,~35,https://www.hotfrog.com.eg/add,"Company, location, description, website",Pharma & healthcare analytics Egypt,P2,Not started
+Egypt,Cylex Egypt,https://egypt.cylex.company/,Local listings,Yes,~32,https://egypt.cylex.company/company/add,"NAP, category, opening hours",Local citation — BioNixus Cairo,P2,Not started
+Egypt,MadeInEgypt,https://madeinegypt.com/,Supplier directory,Yes (sector-limited),~28,https://madeinegypt.com/list-your-business,"Egypt registration, products, contact",Only if positioning pharma manufacturing supply chain,P2,Not started
+US,Clutch (Market Research),https://clutch.co/us/agencies/market-research,MR agency rankings,Yes (Basic),~85,https://clutch.co/get-listed,"Company, services, locations, website, overview",**BIO-52 overlap** — top global healthcare MR,P0,Delegated → BIO-52
+US,GoodFirms,https://www.goodfirms.co/,B2B reviews / MR,Yes,~80,https://www.goodfirms.co/get-listed,"Company, services, portfolio, contact",AI-structured MR profile — healthcare focus,P0,Not started
+US,Greenbook Directory,https://www.greenbook.org/directory,MR buyer directory,Yes (Starter),~70,https://www.greenbook.org/create-company-listing,"Website, service types, company profile",**Highest GEO value** — MR buyer citations,P0,Not started
+US,DesignRush,https://www.designrush.com/agency/market-research/us,Agency directory,Yes,~75,https://www.designrush.com/submit/agency,"Agency details, services, portfolio",US healthcare market research agency,P1,Not started
+US,The Manifest,https://themanifest.com/,Clutch sister site,Yes (via Clutch),~70,https://clutch.co/get-listed,Auto with Clutch profile,Sister listing — BIO-52 with Clutch,P1,Delegated → BIO-52
+US,Bing Places,https://www.bingplaces.com/,Local / AI search,Yes,~90 (Microsoft),https://www.bingplaces.com/Dashboard/Home,"NAP, category, hours, website",HQ Sheridan WY — ChatGPT/Copilot citation,P1,Not started
+US,Better Business Bureau,https://www.bbb.org/,Trust directory,Yes,~91,https://www.bbb.org/get-listed,"Business name, address, contact",US trust signal for enterprise buyers,P2,Not started
+US,Manta,https://www.manta.com/,SMB directory,Yes,~78,https://www.manta.com/add-your-business,"NAP, industry, description",US healthcare analytics company,P2,Not started
+US,Kompass USA,https://us.kompass.com/,B2B,Freemium,~65,https://us.kompass.com/register/,"Company, activity, address",Global MR firm — US headquarters,P2,Not started
+US,PAIR (Insights Association),https://pair.insightsassociation.org/,MR industry directory,No (membership),~55,https://pair.insightsassociation.org/,IA membership required,Industry ethics trust — evaluate ROI vs ESOMAR,P2,Evaluate
+UK,BusinessNetwork,https://businessnetwork.co.uk/,UK B2B / AI search,Yes,"~25 (new, GEO-focused)",https://businessnetwork.co.uk/register,"Company, CH number, services",**GEO P0** — built for AI search citations,P0,Not started
+UK,CitedX,https://citedx.co.uk/,UK AEO directory,Yes,"~20 (new, GEO-focused)",https://citedx.co.uk/add,"Business name, services, FAQs",**GEO P0** — schema for LLM answers,P0,Not started
+UK,Yell.com,https://www.yell.com/,UK yellow pages,Freemium,~79,https://www.yell.com/business,"NAP, category, description",London office — healthcare market research,P1,Not started
+UK,FreeIndex,https://www.freeindex.co.uk/,UK reviews,Yes,~61,https://www.freeindex.co.uk/addlisting.htm,"Business details, category, location",UK pharma MR with client reviews,P1,Not started
+UK,Agency Index,https://www.agencyindex.co.uk/,UK agency directory,Yes,~45,https://www.agencyindex.co.uk/add-agency,"Agency name, services, location",Independent healthcare insights agency,P1,Not started
+UK,Scoot,https://www.scoot.co.uk/,UK business,Yes,~68,https://www.scoot.co.uk/add-business,"NAP, category",London healthcare analytics citation,P2,Not started
+UK,Thomson Local,https://www.thomsonlocal.com/,UK directory,Freemium,~66,https://www.thomsonlocal.com/add-business,"NAP, services",UK life sciences market research,P2,Not started
+UK,192.com,https://www.192.com/business/,UK business,Freemium,~73,https://www.192.com/business/registration/,"Company, address, contact",UK registered presence — BioNixus London,P2,Not started
+UK,Kompass UK,https://gb.kompass.com/,B2B,Freemium,~60,https://gb.kompass.com/register/,"Company, activity, address",International healthcare MR — UK office,P1,Not started
+UK,Bing Places UK,https://www.bingplaces.com/,Local / AI,Yes,~90,https://www.bingplaces.com/Dashboard/Home,"London NAP, category",Copilot/AI local citation — London,P1,Not started
+Germany,Gelbe Seiten,https://www.gelbeseiten.de/,DE yellow pages,Yes (Grundeintrag),~82,https://www.gelbeseiten.de/starteintrag,"Address, phone, hours, category",**EU P0** — priority market DE,P0,Not started
+Germany,Wer liefert was (WLW),https://www.wlw.de/,B2B industrial,Freemium,~70,https://www.wlw.de/firmeneintrag-anlegen,"Company, products, contact",B2B healthcare analytics supplier — DACH,P1,Not started
+Germany,Das Örtliche,https://www.dasoertliche.de/,DE directory,Yes,~75,https://www.dasoertliche.de/Starteintrag,"NAP, category",German-market pharma research partner,P1,Not started
+Germany,11880.com,https://www.11880.com/,DE telephony/directory,Yes,~68,https://www.11880.com/eintragen,"NAP, industry",Citation for Germany/EU buyers,P2,Not started
+Germany,GoYellow,https://www.goyellow.de/,DE business,Yes,~55,https://www.goyellow.de/eintragen,"Company, address, contact",Healthcare market intelligence — EU,P2,Not started
+Germany,Europages,https://www.europages.co.uk/,Pan-EU B2B,Freemium,~72,https://www.europages.co.uk/en/company/register,"Company, sector, country",Pan-European pharma MR provider,P1,Not started
+Germany,Kompass Germany,https://de.kompass.com/,B2B,Freemium,~60,https://de.kompass.com/register/,"Company, activity, address",Healthcare analytics — Germany/EU,P1,Not started
+Germany,Cylex Germany,https://www.cylex.de/,Local directory,Yes,~50,https://www.cylex.de/firma-eintragen.html,"NAP, category, website",German local SEO citation,P2,Not started
+Germany,Hotfrog Germany,https://www.hotfrog.de/,Business directory,Yes,~48,https://www.hotfrog.de/add,"Company, location, description",EU healthcare market research,P2,Not started
+Germany,Bing Places (DE),https://www.bingplaces.com/,Local / AI,Yes,~90,https://www.bingplaces.com/Dashboard/Home,DE address if applicable,AI search — German market,P2,Not started
+India,IndiaMART,https://www.indiamart.com/,B2B marketplace,Freemium,~84,https://seller.indiamart.com/,"Company, products, GST, contact",Pharma MR services — India/APAC buyers,P1,Not started
+India,JustDial,https://www.justdial.com/,Local search,Yes,~88,https://www.justdial.com/Free-Listing,"Business name, phone, category, city",Healthcare market research — India,P1,Not started
+India,TradeIndia,https://www.tradeindia.com/,B2B export,Freemium,~82,https://www.tradeindia.com/join.html,"Company, products, contact",International MR firm serving India pharma,P1,Not started
+India,Sulekha,https://www.sulekha.com/,Local services,Yes,~86,https://www.sulekha.com/business-listing,"NAP, services, city",Market research & analytics services,P2,Not started
+India,ExportersIndia,https://www.exportersindia.com/,B2B,Freemium,~69,https://www.exportersindia.com/register/,"Company, products, contact",Global healthcare research — India market,P2,Not started
+India,FreeListingIndia,https://www.freelistingindia.in/,Local SEO,Yes,~35,https://www.freelistingindia.in/add-business,"NAP, category, description",AEO-structured India listing,P2,Not started
+India,Sansadhan,https://www.sansadhan.com/,India B2B/B2C,Yes,~30,https://www.sansadhan.com/register,"Company, category, city",Indian B2B — healthcare analytics,P2,Not started
+India,Grotal,https://www.grotal.com/,Local directory,Yes,~45,https://www.grotal.com/AddBusiness,"NAP, category",Local citation India,P2,Not started
+India,IndiaBizClub,https://www.indiabizclub.com/,B2B network,Yes,~40,https://www.indiabizclub.com/addbusiness,"Company profile, products",Pharma market intelligence — India,P2,Not started
+India,Kompass India,https://in.kompass.com/,B2B,Freemium,~55,https://in.kompass.com/register/,"Company, activity, address",Healthcare MR — India subcontinent,P1,Not started

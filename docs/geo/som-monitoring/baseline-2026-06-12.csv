@@ -1,0 +1,10 @@
+# BIO-48 Canonical Baseline Source
+
+This run batch is intentionally kept empty. The authoritative baseline is:
+
+- Canonical baseline: `docs/geo/som-monitoring/baseline-so-matrix.csv`
+- Gold-set catalog: `docs/geo/som-monitoring/so-gold-set-catalog.csv`
+- Report template: `docs/geo/som-monitoring/som-report-template.md`
+- Monthly tracker: `docs/geo/som-monitoring/monthly-som-template.csv`
+
+Retired legacy placeholder: `baseline-2026-06-12.csv`.

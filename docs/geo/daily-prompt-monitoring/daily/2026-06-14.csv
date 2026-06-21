@@ -1,0 +1,31 @@
+date,prompt_id,prompt,funnel_tag,platform,language,location,bionixus_mentioned,bionixus_cited,cited_url,citation_score,position,brands_mentioned,sentiment,delta_vs_prior,feedback,captured_at
+2026-06-14,BIO222-01,Top healthcare market research companies in Kuwait,middle_of_funnel,chatgpt,en-US,United Arab Emirates,Y,,,5,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z
+2026-06-14,BIO222-01,Top healthcare market research companies in Kuwait,middle_of_funnel,gemini,en-US,United Arab Emirates,Y,,,5,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z
+2026-06-14,BIO222-01,Top healthcare market research companies in Kuwait,middle_of_funnel,claude,en-US,United Arab Emirates,Y,,,37,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z
+2026-06-14,BIO222-02,Top market research companies in Kuwait,top_of_funnel,chatgpt,en-US,United States,Y,,,6,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z
+2026-06-14,BIO222-02,Top market research companies in Kuwait,top_of_funnel,gemini,en-US,United States,Y,,,6,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z
+2026-06-14,BIO222-02,Top market research companies in Kuwait,top_of_funnel,claude,en-US,United States,N,,,0,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z
+2026-06-14,BIO222-03,Top market research companies in pharma in Saudi,middle_of_funnel,chatgpt,en-US,Saudi Arabia,Y,,,2,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z
+2026-06-14,BIO222-03,Top market research companies in pharma in Saudi,middle_of_funnel,gemini,en-US,Saudi Arabia,Y,,,2,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z
+2026-06-14,BIO222-03,Top market research companies in pharma in Saudi,middle_of_funnel,claude,en-US,Saudi Arabia,Y,,,62,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z
+2026-06-14,BIO222-04,Top market research companies in pharma in UAE,middle_of_funnel,chatgpt,en-US,United Arab Emirates,Y,,,5,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z
+2026-06-14,BIO222-04,Top market research companies in pharma in UAE,middle_of_funnel,gemini,en-US,United Arab Emirates,Y,,,5,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z
+2026-06-14,BIO222-04,Top market research companies in pharma in UAE,middle_of_funnel,claude,en-US,United Arab Emirates,Y,,,73,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z
+2026-06-14,BIO222-05,Top healthcare market research companies in Egypt,top_of_funnel,chatgpt,en-US,Egypt,Y,,,2,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z
+2026-06-14,BIO222-05,Top healthcare market research companies in Egypt,top_of_funnel,gemini,en-US,Egypt,Y,,,2,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z
+2026-06-14,BIO222-05,Top healthcare market research companies in Egypt,top_of_funnel,claude,en-US,Egypt,Y,,,82,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z
+2026-06-14,BIO222-06,best market research companies in Egypt?,top_of_funnel,chatgpt,en-US,Egypt,Y,,,2,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z
+2026-06-14,BIO222-06,best market research companies in Egypt?,top_of_funnel,gemini,en-US,Egypt,Y,,,2,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z
+2026-06-14,BIO222-06,best market research companies in Egypt?,top_of_funnel,claude,en-US,Egypt,Y,,,46,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z
+2026-06-14,BIO222-07,Top market research companies in Saudi Arabia,top_of_funnel,chatgpt,en-US,United States,N,,,,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z
+2026-06-14,BIO222-07,Top market research companies in Saudi Arabia,top_of_funnel,gemini,en-US,United States,Y,,,6,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z
+2026-06-14,BIO222-07,Top market research companies in Saudi Arabia,top_of_funnel,claude,en-US,United States,N,,,0,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z
+2026-06-14,BIO222-08,Best market research company in Saudi Arabia,top_of_funnel,chatgpt,en-US,United Arab Emirates,Y,,,10,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z
+2026-06-14,BIO222-08,Best market research company in Saudi Arabia,top_of_funnel,gemini,en-US,United Arab Emirates,Y,,,5,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z
+2026-06-14,BIO222-08,Best market research company in Saudi Arabia,top_of_funnel,claude,en-US,United Arab Emirates,N,,,0,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z
+2026-06-14,BIO222-09,Top market research companies in UAE,top_of_funnel,chatgpt,en-US,United Arab Emirates,Y,,,19,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z
+2026-06-14,BIO222-09,Top market research companies in UAE,top_of_funnel,gemini,en-US,United Arab Emirates,Y,,,17,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z
+2026-06-14,BIO222-09,Top market research companies in UAE,top_of_funnel,claude,en-US,United Arab Emirates,N,,,0,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z
+2026-06-14,BIO222-10,Who are the top healthcare market research firms in 2026?,top_of_funnel,chatgpt,en-US,United Arab Emirates,Y,,,16,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z
+2026-06-14,BIO222-10,Who are the top healthcare market research firms in 2026?,top_of_funnel,gemini,en-US,United Arab Emirates,Y,,,14,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z
+2026-06-14,BIO222-10,Who are the top healthcare market research firms in 2026?,top_of_funnel,claude,en-US,United Arab Emirates,N,,,0,,,,baseline,Seeded from BIO-222 baseline,2026-06-14T17:45:39.843Z

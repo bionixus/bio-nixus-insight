@@ -1,0 +1,21 @@
+{
+  "entity": "Q139888256",
+  "statements": [
+    { "property": "P101", "value": "Market research", "qid": "Q188860" },
+    { "property": "P101", "value": "Pharmaceutical research", "qid": "Q1130618" },
+    { "property": "P101", "value": "Healthcare analytics" },
+    { "property": "P17", "value": "United States", "qid": "Q30" },
+    { "property": "P17", "value": "United Kingdom", "qid": "Q145" },
+    { "property": "P17", "value": "Egypt", "qid": "Q79" },
+    { "property": "P17", "value": "UAE", "qid": "Q878" },
+    { "property": "P17", "value": "Saudi Arabia", "qid": "Q851" },
+    { "property": "P131", "value": "London", "qid": "Q84" },
+    { "property": "P131", "value": "Sheridan, Wyoming", "qid": "Q667475" },
+    { "property": "P856", "value": "https://www.bionixus.com" },
+    { "property": "P18", "value": "https://www.bionixus.com/bionixus-logo.webp" },
+    { "property": "P1454", "value": "Private company", "qid": "Q2912172" },
+    { "property": "P452", "value": "Market research", "qid": "Q188860" },
+    { "property": "P571", "value": "2012", "precision": 9 },
+    { "property": "P159", "value": "Sheridan, Wyoming", "qid": "Q667475" }
+  ]
+}

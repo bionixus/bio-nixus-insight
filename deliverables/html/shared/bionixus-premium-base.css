@@ -1,0 +1,170 @@
+/**
+ * BioNixus Premium HTML — shared design tokens & print shell
+ * Canonical spec: deliverables/html/DESIGN-SPEC.md
+ * Brand: BIO-38 brand book v1.2 · Proposal fork: McKinsey navy (pharma MR)
+ */
+
+:root {
+  /* 60-30-10: navy dominant, off-white secondary, gold accent */
+  --navy: #002244;
+  --navy-deep: #001833;
+  --blue: #0069A3;
+  --blue-light: #3A8BC0;
+  --steel: #4A6FA5;
+  --gold: #B8862D;
+  --gold-light: #D4A84B;
+  --off-white: #FAFAF8;
+  --cool-white: #F3F5F7;
+  --light-blue: #E4EEF7;
+  --rule: #D0D6DE;
+  --text: #152232;
+  --text-soft: #3D4A5C;
+  --text-muted: #6B7684;
+  --black: #0A0A0A;
+  --paper: #FDFCFA;
+  --paper-screen: #FFFFFF;
+  --shadow-sm: 0 1px 2px rgba(0, 34, 68, 0.04);
+  --shadow-md: 0 8px 32px -4px rgba(0, 34, 68, 0.1), 0 2px 8px rgba(0, 34, 68, 0.04);
+  --shadow-lg: 0 24px 64px -12px rgba(0, 34, 68, 0.14), 0 12px 24px rgba(0, 34, 68, 0.06);
+  --radius: 3px;
+
+  /* Typography — serif authority + sans clarity (pairing contrast) */
+  --serif: 'EB Garamond', Georgia, 'Times New Roman', serif;
+  --sans: 'Barlow', -apple-system, BlinkMacSystemFont, sans-serif;
+  --cond: 'Barlow Condensed', sans-serif;
+  --mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Spacing scale (4px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 56px;
+
+  /* Type scale — body 13.5px; lede +2px; section titles serif 28–42px */
+  --text-xs: 10px;
+  --text-sm: 11px;
+  --text-base: 13.5px;
+  --text-lede: 15px;
+  --text-h2: 28px;
+  --text-h1: 42px;
+  --leading-body: 1.65;
+  --leading-tight: 1.15;
+  --max-line-ch: 75ch;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(0, 105, 163, 0.18);
+  color: var(--navy);
+}
+
+body {
+  background: linear-gradient(165deg, #dce3eb 0%, #e8ecf0 45%, #e2e6ec 100%);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* Document shell — screen preview */
+.document {
+  max-width: 920px;
+  margin: var(--space-6) auto var(--space-7);
+  background: var(--paper-screen);
+  border: 1px solid rgba(0, 34, 68, 0.07);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm), var(--shadow-lg);
+}
+
+/* A4 page — print unit */
+.page {
+  padding: var(--space-7) var(--space-8);
+  position: relative;
+  page-break-after: always;
+  break-after: page;
+  min-height: 920px;
+  background: var(--paper);
+  border-bottom: 1px solid rgba(0, 34, 68, 0.04);
+}
+
+.page:last-child {
+  border-bottom: none;
+  page-break-after: auto;
+  break-after: auto;
+}
+
+/* Section hierarchy — one h1 on cover only */
+.section-num {
+  font-family: var(--cond);
+  font-size: var(--text-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: var(--space-2);
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: var(--text-h2);
+  color: var(--navy);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-3);
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--blue);
+}
+
+.section-lede {
+  color: var(--text-muted);
+  font-size: var(--text-lede);
+  max-width: var(--max-line-ch);
+  margin-bottom: var(--space-5);
+}
+
+/* Print */
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  body {
+    background: #fff;
+    padding: 0;
+  }
+
+  .document {
+    max-width: none;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    min-height: 297mm;
+    margin: 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
+}

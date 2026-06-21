@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>BioNixus Briefing — {{CLIENT}} {{YEAR}}</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--navy:#002244;--navy-deep:#001833;--blue:#0069A3;--gold:#B8862D;--gold-light:#D4A84B;--text:#152232;--text-muted:#6B7684;--paper:#FDFCFA;--serif:'EB Garamond',Georgia,serif;--sans:'Barlow',sans-serif;--cond:'Barlow Condensed',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);font-size:14px;line-height:1.6;color:var(--text);background:#e8ecf0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.document{max-width:920px;margin:32px auto;background:#fff;box-shadow:0 24px 64px -12px rgba(0,34,68,.14)}
+@page{size:A4;margin:0}
+.slide{width:210mm;min-height:297mm;padding:56px 64px;page-break-after:always;display:flex;flex-direction:column;justify-content:center;position:relative}
+.slide:last-child{page-break-after:auto}
+@media print{body{background:#fff}.document{margin:0;box-shadow:none;max-width:none}}
+.slide--cover{background:linear-gradient(145deg,var(--navy-deep),var(--navy));color:#fff;justify-content:flex-end;padding-bottom:64px}
+.slide--dark{background:var(--navy);color:#fff}
+.slide--light{background:var(--paper)}
+.slide-kicker{font-family:var(--cond);font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-light);margin-bottom:20px}
+.slide h1{font-family:var(--serif);font-size:44px;font-weight:500;line-height:1.08;margin-bottom:16px}
+.slide h1 em{font-style:italic;color:var(--gold-light)}
+.slide h2{font-family:var(--serif);font-size:36px;font-weight:500;line-height:1.12;margin-bottom:20px;color:var(--navy)}
+.slide--dark h2,.slide--cover h2{color:#fff}
+.slide h2 em{font-style:italic;color:var(--blue)}
+.slide--dark h2 em,.slide--cover h2 em{color:var(--gold-light)}
+.slide-lede{font-size:16px;color:var(--text-muted);max-width:560px;margin-bottom:24px}
+.slide--dark .slide-lede,.slide--cover .slide-lede{color:rgba(255,255,255,.72)}
+.bullets{list-style:none;margin-top:8px}
+.bullets li{padding:10px 0 10px 24px;position:relative;border-bottom:1px solid rgba(0,34,68,.08);font-size:14px}
+.bullets li::before{content:'';position:absolute;left:0;top:16px;width:8px;height:8px;background:var(--blue);border-radius:50%}
+.slide--dark .bullets li{border-color:rgba(255,255,255,.12)}
+.slide--dark .bullets li::before{background:var(--gold-light)}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+.stat{text-align:center;padding:20px;background:rgba(255,255,255,.06);border-top:3px solid var(--gold-light)}
+.stat-n{font-family:var(--serif);font-size:36px;color:#fff}
+.stat-l{font-size:10px;color:rgba(255,255,255,.6);margin-top:6px;text-transform:uppercase;letter-spacing:.1em}
+.slide-footer{position:absolute;bottom:32px;left:64px;right:64px;display:flex;justify-content:space-between;font-size:9px;color:var(--text-muted);font-family:var(--cond);letter-spacing:.12em;text-transform:uppercase}
+.slide--dark .slide-footer,.slide--cover .slide-footer{color:rgba(255,255,255,.4)}
+.cta-btn{display:inline-block;margin-top:24px;padding:14px 28px;background:var(--gold);color:var(--navy);font-family:var(--cond);font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;font-weight:600}
+.logo-slot{height:40px;margin-bottom:32px;font-family:var(--cond);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+</style>
+</head>
+<body>
+<div class="document">
+
+  <!-- SLIDE 1: COVER -->
+  <section class="slide slide--cover">
+    <div class="logo-slot">{{CLIENT_LOGO_SLOT — or BioNixus × Client}}</div>
+    <div class="slide-kicker">Briefing · {{MEETING_DATE}}</div>
+    <h1>{{BRIEFING_HEADLINE}}<br><em>{{BRIEFING_EMPHASIS}}.</em></h1>
+    <p class="slide-lede">{{BRIEFING_SUBHEAD — Pre-proposal alignment deck. 5 slides + CTA.}}</p>
+    <div class="slide-footer"><span>BioNixus Intelligence</span><span>Confidential</span></div>
+  </section>
+
+  <!-- SLIDE 2: PROBLEM -->
+  <section class="slide slide--light">
+    <div class="slide-kicker">The challenge</div>
+    <h2>{{PROBLEM_HEADLINE}}<br><em>{{PROBLEM_EMPHASIS}}.</em></h2>
+    <p class="slide-lede">{{PROBLEM_LEDE}}</p>
+    <ul class="bullets">
+      <li>{{PAIN_POINT_1}}</li>
+      <li>{{PAIN_POINT_2}}</li>
+      <li>{{PAIN_POINT_3}}</li>
+    </ul>
+    <div class="slide-footer"><span>{{CLIENT}}</span><span>02 / 05</span></div>
+  </section>
+
+  <!-- SLIDE 3: APPROACH -->
+  <section class="slide slide--dark">
+    <div class="slide-kicker">Our approach</div>
+    <h2>{{APPROACH_HEADLINE}}<br><em>{{APPROACH_EMPHASIS}}.</em></h2>
+    <p class="slide-lede">{{APPROACH_LEDE}}</p>
+    <ul class="bullets">
+      <li><strong>Phase 1:</strong> {{APPROACH_PHASE_1}}</li>
+      <li><strong>Phase 2:</strong> {{APPROACH_PHASE_2}}</li>
+      <li><strong>Deliverable:</strong> {{APPROACH_DELIVERABLE}}</li>
+    </ul>
+    <div class="slide-footer"><span>{{CLIENT}}</span><span>03 / 05</span></div>
+  </section>
+
+  <!-- SLIDE 4: PROOF -->
+  <section class="slide slide--light">
+    <div class="slide-kicker">Why BioNixus</div>
+    <h2>Local depth,<br><em>global rigour.</em></h2>
+    <div class="stat-row" style="margin-top:24px">
+      <div class="stat" style="background:var(--paper);border-top-color:var(--blue)">
+        <div class="stat-n" style="color:var(--navy)">127+</div>
+        <div class="stat-l" style="color:var(--text-muted)">Projects</div>
+      </div>
+      <div class="stat" style="background:var(--paper);border-top-color:var(--blue)">
+        <div class="stat-n" style="color:var(--navy)">17+</div>
+        <div class="stat-l" style="color:var(--text-muted)">Countries</div>
+      </div>
+      <div class="stat" style="background:var(--paper);border-top-color:var(--blue)">
+        <div class="stat-n" style="color:var(--navy)">14+</div>
+        <div class="stat-l" style="color:var(--text-muted)">Therapy areas</div>
+      </div>
+    </div>
+    <p class="slide-lede" style="margin-top:24px">{{PROOF_STATEMENT — MENA field teams with US/UK governance. ICH-GCP aligned programmes.}}</p>
+    <div class="slide-footer"><span>{{CLIENT}}</span><span>04 / 05</span></div>
+  </section>
+
+  <!-- SLIDE 5: CTA -->
+  <section class="slide slide--cover">
+    <div class="slide-kicker">Next step</div>
+    <h2>Full proposal<br><em>on request.</em></h2>
+    <p class="slide-lede">{{CTA_BODY — We will share the complete programme document after a 30-minute alignment call. Timeline: {{INDICATIVE_WEEKS}} weeks from kick-off.}}</p>
+    <a class="cta-btn" href="mailto:admin@bionixus.com">{{CTA_LABEL — Schedule alignment call}}</a>
+    <div class="slide-footer"><span>admin@bionixus.com</span><span>05 / 05</span></div>
+  </section>
+
+</div>
+</body>
+</html>

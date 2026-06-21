@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BioNixus — Process Flowcharts (Agent Org Aligned)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Spline+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
+<style>
+  :root{
+    --navy:#14233b; --blue:#2E6FA7; --teal:#0E7C66; --gold:#B5852A;
+    --paper:#f6f2e9; --card:#fffdf8; --ink:#1b2430; --muted:#6b6356; --line:#e3dccb;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; font-family:"Spline Sans",system-ui,sans-serif; color:var(--ink);
+    background:var(--paper);
+    background-image:
+      radial-gradient(circle at 12% -10%, rgba(46,111,167,.07), transparent 42%),
+      radial-gradient(circle at 90% 8%, rgba(14,124,102,.06), transparent 40%),
+      linear-gradient(rgba(20,35,59,.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(20,35,59,.035) 1px, transparent 1px);
+    background-size:auto,auto,26px 26px,26px 26px;
+    line-height:1.55;
+  }
+  .wrap{max-width:1080px; margin:0 auto; padding:0 24px}
+
+  header.top{padding:64px 0 22px}
+  .kicker{font-size:13px; letter-spacing:.32em; text-transform:uppercase; color:var(--teal); font-weight:600; margin:0 0 14px}
+  header.top h1{font-family:"Fraunces",serif; font-weight:600; font-size:clamp(34px,5.4vw,58px); line-height:1.02; margin:0; color:var(--navy); letter-spacing:-.01em}
+  header.top h1 em{font-style:italic; color:var(--teal)}
+  header.top p.sub{max-width:62ch; color:var(--muted); font-size:17px; margin:18px 0 0}
+  .meta{font-size:13px; color:var(--muted); margin:12px 0 0}
+  .rule{height:3px; width:100%; margin:30px 0 0; background:linear-gradient(90deg,var(--navy),var(--teal) 55%,var(--gold)); border-radius:3px}
+
+  nav.toc{position:sticky; top:0; z-index:10; backdrop-filter:blur(8px);
+    background:rgba(246,242,233,.82); border-bottom:1px solid var(--line); padding:12px 0; margin-top:18px}
+  nav.toc .wrap{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+  nav.toc a{font-size:13px; font-weight:500; text-decoration:none; color:var(--navy);
+    border:1px solid var(--line); background:var(--card); padding:7px 13px; border-radius:999px; transition:.18s}
+  nav.toc a:hover{border-color:var(--teal); color:var(--teal); transform:translateY(-1px)}
+  nav.toc a .n{color:var(--gold); font-weight:700; margin-right:6px}
+
+  section.flow{margin:46px 0; opacity:0; transform:translateY(14px); animation:rise .6s ease forwards}
+  section.flow:nth-of-type(1){animation-delay:.05s}
+  section.flow:nth-of-type(2){animation-delay:.1s}
+  @keyframes rise{to{opacity:1; transform:none}}
+  .head{display:flex; align-items:flex-start; gap:18px; margin-bottom:14px}
+  .badge{flex:0 0 auto; font-family:"Fraunces",serif; font-weight:700; font-size:26px; color:#fff;
+    background:linear-gradient(150deg,var(--navy),var(--blue)); width:54px; height:54px; border-radius:14px;
+    display:grid; place-items:center; box-shadow:0 8px 20px -8px rgba(20,35,59,.5)}
+  .head h2{font-family:"Fraunces",serif; font-weight:600; font-size:clamp(22px,3vw,30px); margin:2px 0 4px; color:var(--navy); letter-spacing:-.01em}
+  .head p{margin:0; color:var(--muted); font-size:15px; max-width:70ch}
+  .card{background:var(--card); border:1px solid var(--line); border-left:4px solid transparent;
+    border-image:linear-gradient(var(--navy),var(--teal)) 1; border-radius:0 16px 16px 0;
+    box-shadow:0 18px 40px -28px rgba(20,35,59,.45); padding:22px 18px; overflow-x:auto}
+  .mermaid{display:flex; justify-content:center; min-width:520px}
+
+  .legend{display:flex; gap:18px; flex-wrap:wrap; margin:8px 0 30px; font-size:13px; color:var(--muted)}
+  .legend span{display:inline-flex; align-items:center; gap:8px}
+  .sw{width:26px; height:15px; border-radius:4px; border:1.5px solid}
+  .sw.proc{background:#eef2f7; border-color:var(--blue)}
+  .sw.dec{background:#eef2f7; border-color:var(--blue); transform:rotate(45deg) scale(.8); border-radius:2px}
+  .sw.gate{background:#f6e4bd; border-color:var(--gold)}
+  .sw.se{background:var(--navy); border-color:var(--navy)}
+  .sw.nl{background:#e2f0ec; border-color:var(--teal)}
+
+  footer{border-top:1px solid var(--line); margin-top:50px; padding:26px 0 60px; color:var(--muted); font-size:13px}
+  footer b{color:var(--navy)}
+
+  @media print{
+    body{background:#fff} nav.toc{display:none} .legend{display:none}
+    section.flow{animation:none; opacity:1; transform:none; page-break-before:always; margin:0 0 20px}
+    header.top{padding:10px 0} .card{box-shadow:none}
+  }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <p class="kicker">BioNixus Market Research · Egypt</p>
+    <h1>Process <em>Flowcharts</em></h1>
+    <p class="sub">Five core workflows aligned to the Paperclip agent org and Egypt office RACI. Diamonds are decisions; gold diamonds are stage gates with named accountable approvers; loops show rework or nurture paths.</p>
+    <p class="meta">Revision: 2026-06-15 · Owner: COO · Source task: <a href="/BIO/issues/BIO-281">BIO-281</a></p>
+    <div class="rule"></div>
+  </div>
+</header>
+
+<nav class="toc"><div class="wrap">
+  <a href="#f1"><span class="n">1</span>New project</a>
+  <a href="#f2"><span class="n">2</span>Client enrichment</a>
+  <a href="#f3"><span class="n">3</span>Leads · pipeline · newsletter</a>
+  <a href="#f4"><span class="n">4</span>Finance &amp; approvals</a>
+  <a href="#f5"><span class="n">5</span>Talent &amp; onboarding</a>
+</div></nav>
+
+<div class="wrap">
+
+  <div class="legend">
+    <span><span class="sw se"></span> Start / end</span>
+    <span><span class="sw proc"></span> Step</span>
+    <span><span class="sw dec"></span> Decision</span>
+    <span><span class="sw gate"></span> Stage gate (sign-off)</span>
+    <span><span class="sw nl"></span> Nurture / newsletter</span>
+  </div>
+
+  <!-- 1 -->
+  <section class="flow" id="f1">
+    <div class="head"><div class="badge">1</div><div>
+      <h2>New Project Workflow</h2>
+      <p>From signed SOW to closed project — plan, QC and senior-review gates owned by Market Research Manager and Field Operations Manager; healthcare PV training gate owned by Research Compliance Specialist.</p>
+    </div></div>
+    <div class="card"><pre class="mermaid">
+flowchart TD
+  A(["New project request / SOW signed"]):::se --> B["Project set-up &amp; design · Market Research Manager"]
+  B --> G1{"Plan sign-off? · Market Research Manager"}:::gate
+  G1 -->|No| B
+  G1 -->|Yes| C["Sampling plan · Field Operations Manager"]
+  C --> D["Instrument development &amp; scripting · Market Research Manager"]
+  D --> E["Pilot / soft launch · Field Operations Manager"]
+  E --> P1{"Pilot OK? · Field Operations Manager"}
+  P1 -->|No| D
+  P1 -->|Yes| H{"Healthcare project?"}
+  H -->|Yes| T{"PV/AE training current? · Research Compliance Specialist"}:::gate
+  T -->|No| TR["Train team &amp; freelancers · Research Compliance Specialist"]
+  TR --> F["Fieldwork · Field Operations Manager"]
+  T -->|Yes| F
+  H -->|No| F
+  F --> QG{"QC &amp; back-checks pass? · Field Operations Manager"}:::gate
+  QG -->|No| RR["Reject &amp; replace data · Field Operations Manager"]
+  RR --> F
+  QG -->|Yes| DA["Data processing &amp; analysis · Data Analyst"]
+  DA --> RP["Reporting &amp; recommendations · Market Research Manager"]
+  RP --> SR{"Senior review passed? · Market Research Manager"}:::gate
+  SR -->|No| RP
+  SR -->|Yes| DL["Deliver to client &amp; capture feedback · COO + Market Research Manager"]
+  DL --> AR["Archiving &amp; retention · Research Compliance Specialist"]
+  AR --> Z(["Project closed"]):::se
+  classDef se fill:#14233b,color:#ffffff,stroke:#14233b,stroke-width:1px;
+  classDef gate fill:#f6e4bd,stroke:#B5852A,color:#5c4410,stroke-width:1.5px;
+    </pre></div>
+  </section>
+
+  <!-- 2 -->
+  <section class="flow" id="f2">
+    <div class="head"><div class="badge">2</div><div>
+      <h2>Existing-Client Enrichment</h2>
+      <p>Retention and upsell — COO owns account planning; Business Development Manager drives proposals; CEO approves below-margin pricing. Won deals feed Workflow 1.</p>
+    </div></div>
+    <div class="card"><pre class="mermaid">
+flowchart TD
+  A(["Existing client / project complete"]):::se --> B["Post-project review &amp; feedback · Market Research Manager"]
+  B --> C["Update CRM: account, satisfaction, repeat rate · Business Development Manager"]
+  C --> D["Account plan: needs &amp; whitespace · COO"]
+  D --> E["Schedule check-in / QBR · COO + Business Development Manager"]
+  E --> Fq{"Opportunity identified?"}
+  Fq -->|No| N["Nurture: newsletter, periodic check-in · CMO"]:::nl
+  N --> E
+  Fq -->|Yes| G["Draft proposal / expanded SOW · COO + Business Development Manager"]
+  G --> Hq{"Pricing at/above margin floor?"}
+  Hq -->|No| AP["Below-floor approval · COO + CEO"]:::gate
+  AP --> S["Send proposal · Business Development Manager"]
+  Hq -->|Yes| S
+  S --> W{"Won?"}
+  W -->|No| L["Log reason · Business Development Manager"]
+  L --> N
+  W -->|Yes| K(["New SOW &#8594; New Project workflow"]):::se
+  classDef se fill:#14233b,color:#ffffff,stroke:#14233b,stroke-width:1px;
+  classDef gate fill:#f6e4bd,stroke:#B5852A,color:#5c4410,stroke-width:1.5px;
+  classDef nl fill:#e2f0ec,stroke:#0E7C66,color:#0b3b30;
+    </pre></div>
+  </section>
+
+  <!-- 3 -->
+  <section class="flow" id="f3">
+    <div class="head"><div class="badge">3</div><div>
+      <h2>Cold Outreach · Lead &amp; Pipeline · Newsletter</h2>
+      <p>Outbound BD engine (Business Development Manager + COO) and CMO-owned newsletter nurture loop recycling not-yet-ready prospects back into the pipeline.</p>
+    </div></div>
+    <div class="card"><pre class="mermaid">
+flowchart TD
+  A(["Define ICP / target list · CMO + Business Development Manager"]):::se --> B["Prospect research &amp; qualification · Business Development Manager"]
+  B --> C["Outreach: cold call / email / LinkedIn · Business Development Manager"]
+  C --> D{"Interested?"}
+  D -->|Yes| E["Discovery call · COO + Sales Specialist"]
+  D -->|No| NL["Add to nurture list · CMO"]:::nl
+  E --> Fq{"Qualified? need · budget · timing · COO"}
+  Fq -->|No| NL
+  Fq -->|Yes| G["Proposal / SOW · COO + Business Development Manager"]
+  G --> Hn["Negotiation · Business Development Manager"]
+  Hn --> I{"Won?"}
+  I -->|No| J["Log reason · Business Development Manager"]
+  J --> NL
+  I -->|Yes| K(["New SOW &#8594; New Project workflow"]):::se
+  NL --> M1["Plan monthly content · CMO"]:::nl
+  M1 --> M2["Draft newsletter · CMO + Copywriter"]:::nl
+  M2 --> M3{"Approved? · CMO"}:::gate
+  M3 -->|No| M2
+  M3 -->|Yes| M4["Send to segmented list · CMO"]:::nl
+  M4 --> M5["Track opens / clicks · CMO + Data Analyst"]:::nl
+  M5 --> M6{"Hot lead? · Business Development Manager"}:::nl
+  M6 -->|Yes| E
+  M6 -->|No| M7["Periodic re-touch · Business Development Manager"]:::nl
+  M7 --> M1
+  classDef se fill:#14233b,color:#ffffff,stroke:#14233b,stroke-width:1px;
+  classDef gate fill:#f6e4bd,stroke:#B5852A,color:#5c4410,stroke-width:1.5px;
+  classDef nl fill:#e2f0ec,stroke:#0E7C66,color:#0b3b30;
+    </pre></div>
+  </section>
+
+  <!-- 4 -->
+  <section class="flow" id="f4">
+    <div class="head"><div class="badge">4</div><div>
+      <h2>Finance &amp; Approval Process</h2>
+      <p>Procure-to-pay aligned to spend governance — COO escalates budget variance; CFO owns tiers, maker/checker, and validation; CEO co-approves banking and board-gated spend per BIO-260 envelope.</p>
+    </div></div>
+    <div class="card"><pre class="mermaid">
+flowchart TD
+  A(["Spend / purchase need · line owner"]):::se --> B{"Within approved budget? · CFO"}
+  B -->|No| BA["Escalate budget variance · COO &#8594; CEO &#8594; Board"]
+  BA --> B2{"Budget approved? · Board via CEO"}
+  B2 -->|No| X(["Rejected"]):::se
+  B2 -->|Yes| C["Raise request / PO · budget holder (COO or CTO line)"]
+  B -->|Yes| C
+  C --> T{"Approval tier? · CFO"}
+  T -->|"&#8804; Tier 1"| T1["Budget holder approves · quote-only evidence on issue"]
+  T -->|"Tier 1 to 2"| T2["COO + CFO approve"]
+  T -->|"&gt; Tier 2 / capex / below floor / new contract"| T3["COO + CFO + CEO + Board confirmation"]:::gate
+  T1 --> R{"Approved?"}
+  T2 --> R
+  T3 --> R
+  R -->|No| RV["Revise / reject · CFO"]
+  RV --> C
+  R -->|Yes| G["Goods / services received &amp; verified · line owner"]
+  G --> M["Invoice received — 3-way match: PO, receipt, invoice · Accountant"]
+  M --> P["Payment prepared · Accountant (Maker)"]
+  P --> DD["Dual authorization · CFO (Checker)"]:::gate
+  DD --> O{"Above banking threshold?"}
+  O -->|Yes| OW["CEO co-approval on bank"]:::gate
+  OW --> EX["Payment executed · Accountant"]
+  O -->|No| EX
+  EX --> BK["Recorded in books &#8594; monthly financial pack · CFO"]
+  BK --> Z(["Closed"]):::se
+  classDef se fill:#14233b,color:#ffffff,stroke:#14233b,stroke-width:1px;
+  classDef gate fill:#f6e4bd,stroke:#B5852A,color:#5c4410,stroke-width:1.5px;
+    </pre></div>
+  </section>
+
+  <!-- 5 -->
+  <section class="flow" id="f5">
+    <div class="head"><div class="badge">5</div><div>
+      <h2>Talent Acquisition &amp; Onboarding</h2>
+      <p>From an approved hiring need to a confirmed employee — CEO sign-off for senior roles and headcount overruns; HR Director and HRAdmin own Egypt statutory onboarding.</p>
+    </div></div>
+    <div class="card"><pre class="mermaid">
+flowchart TD
+  A(["Hiring need · hiring manager"]):::se --> B{"Within approved headcount &amp; budget? · HR Director + CFO"}
+  B -->|No| BO["CEO approval — always for senior roles"]:::gate
+  BO --> B2{"Approved? · CEO"}
+  B2 -->|No| X(["On hold"]):::se
+  B2 -->|Yes| C["Define role / JD &amp; band · HR Director + COO"]
+  B -->|Yes| C
+  C --> D["Source: referrals, agencies, job boards · Recruitment Specialist"]
+  D --> E["Screen CVs &#8594; shortlist · HR Director"]
+  E --> Fi["Interviews · hiring manager + COO"]
+  Fi --> Hc{"Healthcare specialist needed?"}
+  Hc -->|Yes| HS["Assess specialist &amp; compliance skills · Research Compliance Specialist"]
+  HS --> S{"Selected?"}
+  Hc -->|No| S
+  S -->|No| D
+  S -->|Yes| SRr{"Senior role?"}
+  SRr -->|Yes| OW["CEO approval of hire &amp; comp"]:::gate
+  SRr -->|No| GM["COO approval · non-senior hire"]:::gate
+  OW --> OF["Offer · HR Director"]
+  GM --> OF
+  OF --> AC{"Accepted?"}
+  AC -->|No| D
+  AC -->|Yes| PRE["Pre-arrival: contract, social insurance, payroll, equipment · HRAdmin + HR Director"]
+  PRE --> ON["Day 1 / Week 1: handbook, policies, ethics/PDPL, PV training · HRAdmin + Research Compliance Specialist"]
+  ON --> PR["Probation — max 3 months · hiring manager"]
+  PR --> RVw{"90-day review — confirm? · COO + HR Director"}:::gate
+  RVw -->|No| EX2(["Exit per procedure · HR Director"]):::se
+  RVw -->|Yes| Z(["Confirmed &#8594; performance cycle"]):::se
+  classDef se fill:#14233b,color:#ffffff,stroke:#14233b,stroke-width:1px;
+  classDef gate fill:#f6e4bd,stroke:#B5852A,color:#5c4410,stroke-width:1.5px;
+    </pre></div>
+  </section>
+
+</div>
+
+<footer><div class="wrap">
+  Aligned to Paperclip agent org (2026-06-15). Operating references: <b>docs/ops/spend-governance.md</b>, <b>docs/ops/flow4-approval-tier-thresholds.md</b> ([BIO-296](/BIO/issues/BIO-296)), <b>docs/ops/bio-260-budget-allocation-revision.md</b> ([BIO-260](/BIO/issues/BIO-260)), Research-Process SOP Manual, Pharmacovigilance / AE SOP, and Egypt onboarding checklists. Tier 1/2/3: $0–$50 / $50.01–$250 / &gt;$250+triggers; banking threshold $250. Project margin floor TBD. Tip: use your browser&rsquo;s Print → Save as PDF for a clean copy (each flowchart prints on its own page).
+</div></footer>
+
+<script>
+  mermaid.initialize({
+    startOnLoad:true,
+    flowchart:{ curve:'basis', nodeSpacing:42, rankSpacing:46, padding:10, useMaxWidth:true },
+    themeVariables:{
+      fontFamily:'Spline Sans, system-ui, sans-serif', fontSize:'14px',
+      primaryColor:'#eef2f7', primaryBorderColor:'#2E6FA7', primaryTextColor:'#14233b',
+      lineColor:'#8190a4', tertiaryColor:'#ffffff'
+    }
+  });
+</script>
+</body>
+</html>

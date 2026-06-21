@@ -1,0 +1,11 @@
+prompt_id,prompt,funnel_tag,language,location,platforms,geo_market,notes
+BIO222-01,Top healthcare market research companies in Kuwait,middle_of_funnel,en-US,United Arab Emirates,"chatgpt,gemini,claude",kuwait,Seed baseline from BIO-222 issue table
+BIO222-02,Top market research companies in Kuwait,top_of_funnel,en-US,United States,"chatgpt,gemini,claude",kuwait,Seed baseline from BIO-222 issue table
+BIO222-03,Top market research companies in pharma in Saudi,middle_of_funnel,en-US,Saudi Arabia,"chatgpt,gemini,claude",ksa_pharma,Seed baseline from BIO-222 issue table
+BIO222-04,Top market research companies in pharma in UAE,middle_of_funnel,en-US,United Arab Emirates,"chatgpt,gemini,claude",uae_pharma,Seed baseline from BIO-222 issue table
+BIO222-05,Top healthcare market research companies in Egypt,top_of_funnel,en-US,Egypt,"chatgpt,gemini,claude",egypt_healthcare,Seed baseline from BIO-222 issue table
+BIO222-06,best market research companies in Egypt?,top_of_funnel,en-US,Egypt,"chatgpt,gemini,claude",egypt,Seed baseline from BIO-222 issue table
+BIO222-07,Top market research companies in Saudi Arabia,top_of_funnel,en-US,United States,"chatgpt,gemini,claude",ksa,Seed baseline from BIO-222 issue table
+BIO222-08,Best market research company in Saudi Arabia,top_of_funnel,en-US,United Arab Emirates,"chatgpt,gemini,claude",ksa,Seed baseline from BIO-222 issue table
+BIO222-09,Top market research companies in UAE,top_of_funnel,en-US,United Arab Emirates,"chatgpt,gemini,claude",uae,Seed baseline from BIO-222 issue table
+BIO222-10,Who are the top healthcare market research firms in 2026?,top_of_funnel,en-US,United Arab Emirates,"chatgpt,gemini,claude",global_healthcare,Seed baseline from BIO-222 issue table
