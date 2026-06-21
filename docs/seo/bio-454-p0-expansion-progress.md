@@ -33,17 +33,17 @@
 | `/healthcare-market-research/therapy/rare-diseases` | 1640 | **Expanded + deploy pending** | Added patient-finding/network sections + merged supplemental FAQs |
 | `/market-research-saudi-arabia-pharmaceutical` | 1617 | **Expanded + deploy pending** | Added SFDA EES evidence-planning section |
 
-## Completed pages (batch 4 — 2026-06-20)
+## Completed pages (batch 4 — 2026-06-20, production verified 2026-06-22)
 
-| Path | Prior wc | Local verify | Notes |
+| Path | Prior wc | Prod verify | Status |
 |---|---:|---:|---|
-| `/healthcare-market-research/therapy/aesthetic-medicine` | 1413 | **2017w** | Pathway/modules sections + supplemental FAQs |
-| `/healthcare-market-research/therapy/vaccines` | 1389 | **2003w** | Pathway/modules sections + supplemental FAQs |
-| `/healthcare-market-research/therapy/diabetes` | 1385 | **2052w** | Pathway/modules sections + supplemental FAQs |
-| `/healthcare-market-research/therapy/cardiology` | 1376 | **2012w** | Pathway/modules sections + supplemental FAQs |
-| `/healthcare-market-research/services/market-access` | 1230 | **2095w** | Pathway/modules + launch-sequencing section + reference guide |
+| `/healthcare-market-research/therapy/aesthetic-medicine` | 1413 | **2022w** | **Production verified** |
+| `/healthcare-market-research/therapy/vaccines` | 1389 | **3171w** | **Production verified** |
+| `/healthcare-market-research/therapy/diabetes` | 1385 | **3316w** | **Production verified** |
+| `/healthcare-market-research/therapy/cardiology` | 1376 | **2017w** | **Production verified** |
+| `/healthcare-market-research/services/market-access` | 1230 | **2100w** | **Production verified** |
 
-Local SSR audit: `SITE_AUDIT_BASE_URL=http://localhost:5173 node scripts/audit-thin-pages-bio448.mjs` after `npm run build && NODE_ENV=production node server.js`.
+Production verified 2026-06-22 via `node scripts/audit-thin-pages-bio448.mjs`.
 
 ## Completed pages (batch 5 — BIO-503 sprint 2026-06-21)
 
@@ -61,17 +61,17 @@ Local SSR audit: `SITE_AUDIT_BASE_URL=http://localhost:5173 node scripts/audit-t
 
 Local audit command: `npm run build:client && npm run build:server && npm run build:move-template && NODE_ENV=production PORT=5174 node server.js` then word-count script against `http://localhost:5174`.
 
-## Completed pages (batch 6 — hub services + respiratory, 2026-06-21)
+## Completed pages (batch 6 — hub services + respiratory, 2026-06-21, production verified 2026-06-22)
 
-| Path | Local SSR verify | Notes |
+| Path | Prod verify | Status |
 |---|---:|---|
-| `/healthcare-market-research/services/quantitative-research` | **2012w** | Pathway/modules/execution sections + expanded FAQs + delivery-model copy |
-| `/healthcare-market-research/services/qualitative-research` | **2002w** | Pathway/modules/execution sections + expanded FAQs + delivery-model copy |
-| `/healthcare-market-research/services/physician-insights` | **2031w** | Pathway/modules/execution sections + expanded FAQs + delivery-model copy |
-| `/healthcare-market-research/services/kol-mapping` | **2008w** | Pathway/modules/execution sections + expanded FAQs + delivery-model copy |
-| `/healthcare-market-research/therapy/respiratory` | **2020w** | Pathway/modules/execution sections + supplemental FAQs |
+| `/healthcare-market-research/services/quantitative-research` | **2017w** | **Production verified** |
+| `/healthcare-market-research/services/qualitative-research` | **2007w** | **Production verified** |
+| `/healthcare-market-research/services/physician-insights` | **2036w** | **Production verified** |
+| `/healthcare-market-research/services/kol-mapping` | **2013w** | **Production verified** |
+| `/healthcare-market-research/therapy/respiratory` | **2024w** | **Production verified** |
 
-Local verify: `npm run build:server && NODE_ENV=production node server.js` then audit against `http://127.0.0.1:5173`.
+Production verified 2026-06-22 via `node scripts/audit-thin-pages-bio448.mjs`.
 
 ## Completed pages (batch 7 — healthcare BOFU + rare-diseases, 2026-06-21)
 
