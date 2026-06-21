@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /**
  * Post-build guard: import the SSR bundle and render critical routes.
- * Catches Rollup symbol collisions and other module-init failures before deploy.
+ * Catches undefined symbols at module init and broken render paths before deploy.
+ * Uses empty initialData (no Sanity/network) so CI stays fast and offline-safe.
  */
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -26,16 +27,15 @@ try {
   process.exit(1);
 }
 
-const { render, fetchRouteData } = serverEntry;
-if (typeof render !== 'function' || typeof fetchRouteData !== 'function') {
-  console.error('verify-ssr-bundle: server-entry.js missing render or fetchRouteData exports');
+const { render } = serverEntry;
+if (typeof render !== 'function') {
+  console.error('verify-ssr-bundle: server-entry.js missing render export');
   process.exit(1);
 }
 
 for (const pathname of CRITICAL_PATHS) {
   try {
-    const data = await fetchRouteData(pathname);
-    const { html } = render(pathname, data);
+    const { html } = render(pathname, {});
     if (!html || html.length < 500) {
       throw new Error(`render returned empty or tiny HTML (${html?.length ?? 0} bytes)`);
     }
