@@ -75,14 +75,29 @@ Local verify: `npm run build:server && NODE_ENV=production node server.js` then 
 
 ## Completed pages (batch 7 — healthcare BOFU + rare-diseases, 2026-06-21)
 
-| Path | Prior wc | Local SSR verify | Notes |
+| Path | Prior wc | Prod verify | Notes |
 |---|---:|---:|---|
-| `/healthcare-market-research/therapy/rare-diseases` | 1997 | **2003w** | Rare-disease execution section + expanded finding paragraph |
-| `/egypt-healthcare-market-research` | 712 | **2036w** | `industryHealthcareExpandedContent.ts` + `IndustryCountryBofuPage` expanded block |
-| `/uae-healthcare-market-research` | 712 | **2033w** | Emirate/payer expanded copy + execution + supplemental FAQs |
-| `/saudi-arabia-healthcare-market-research` | 753 | **2018w** | Cluster/formulary expanded copy + execution + supplemental FAQs |
+| `/healthcare-market-research/therapy/rare-diseases` | 1997 | **2158w** | Rare-disease execution section + expanded finding paragraph |
+| `/egypt-healthcare-market-research` | 712 | **2218w** | `industryHealthcareExpandedContent.ts` + `IndustryCountryBofuPage` expanded block |
+| `/uae-healthcare-market-research` | 712 | **2218w** | Emirate/payer expanded copy + execution + supplemental FAQs |
+| `/saudi-arabia-healthcare-market-research` | 753 | **2204w** | Cluster/formulary expanded copy + execution + supplemental FAQs |
 
 Infrastructure: `src/data/industryHealthcareExpandedContent.ts`, `IndustryCountryBofuPage.tsx` renders `ExpandedServiceLandingContent` for `healthcare` industry BOFU routes.
+
+Production verified 2026-06-21 via `node scripts/audit-thin-pages-bio448.mjs`.
+
+## Batch 8 plan (service landing pages)
+
+P0 candidates with research briefs from `bio-448-thin-page-research-briefs.csv`:
+
+| Path | Current wc | Target | Primary keyword | Tier |
+|---|---:|---:|---|---|
+| `/market-research-kuwait` | 683 | 2000 | pharma market research kuwait | P0 |
+| `/market-research-egypt` | 694 | 2000 | pharma market research egypt | P0 |
+| `/market-research-saudi` | 831 | 2000 | pharma market research saudi arabia | P0 |
+| `/real-world-evidence` | 919 | 2000 | real world evidence pharmaceutical | P0 |
+
+All have research briefs with regulatory refs, internal links, and competitor intel.
 
 ## Next batch
 
