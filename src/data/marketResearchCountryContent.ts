@@ -10,38 +10,564 @@ export type MarketResearchCountryContent = {
   primaryKeyword: string;
   faqItems: MarketResearchFaq[];
   relatedLinks: Array<{ to: string; label: string }>;
+  regulatory: { heading: string; paragraphs: string[] };
+  marketStructure: { heading: string; paragraphs: string[] };
+  services: { heading: string; items: Array<{ title: string; description: string }> };
+  methodology: { heading: string; paragraphs: string[] };
+  therapyFocus: { heading: string; paragraph: string; areas: string[] };
+  process: { heading: string; steps: Array<{ title: string; body: string }> };
+  deliverables: { heading: string; bullets: string[] };
+  decisionBlueprint: { why: string; evidence: string; next: string };
+  hubLinkLabel?: string;
 };
 
-/** English market-research country pages. */
+const COUNTRY_PAGE_DELIVERABLES = [
+  'Executive summary mapped to one commercial or access decision',
+  'Stakeholder segmentation with influence and objection themes',
+  'Quantitative sizing or adoption metrics where the objective requires measurement',
+  'Qualitative depth interviews or advisory-style modules for “why” questions',
+  '30/60/90 action plan with owners and evidence gaps flagged',
+];
+
 const en: Record<string, MarketResearchCountryContent> = {
+  uae: {
+    title: 'Market Research in UAE | Healthcare & Pharma Market Research | BioNixus',
+    description:
+      'Market research in the UAE for pharma and healthcare teams: DHA, DOH, MOHAP-aligned physician, payer, and hospital evidence for launch and access.',
+    canonical: '/market-research-uae',
+    h1: 'Market Research in the UAE',
+    intro:
+      'BioNixus runs market research in the UAE for pharmaceutical and healthcare teams that need launch, access, and pricing calls backed by local evidence — not a generic GCC average. Our programs reach the hospitals, insurers, and physician networks that actually shape uptake, and they segment specialty, primary-care, and institutional pathways across Dubai, Abu Dhabi, and the Northern Emirates rather than treating the country as one market.',
+    countryLabel: 'United Arab Emirates',
+    primaryKeyword: 'Market research in UAE',
+    faqItems: [
+      {
+        question: 'What is healthcare market research in the UAE?',
+        answer:
+          'Healthcare market research in the UAE is evidence work focused on providers, payers, and patients across public and private systems. BioNixus designs studies around DHA, DOH, and MOHAP realities, multilingual fieldwork, and institution-level adoption behavior so commercial and access teams can prioritize the right stakeholders.',
+      },
+      {
+        question: 'How is pharma market research in the UAE different from other GCC markets?',
+        answer:
+          'Pharma market research in the UAE must reflect emirate-level variation in formulary logic, procurement, and specialist concentration. BioNixus segments by Dubai, Abu Dhabi, and Northern Emirates where needed, and aligns recruitment with the facilities and networks that drive prescribing and access outcomes.',
+      },
+      {
+        question: 'What does a typical market research in UAE program include?',
+        answer:
+          'Most programs blend physician or HCP insight (surveys, IDIs, advisory-style depth), payer and access context, and recommendations for sequencing, messaging, and evidence gaps. Outputs are structured for leadership review and cross-functional use.',
+      },
+      {
+        question: 'Can BioNixus run bilingual UAE fieldwork?',
+        answer:
+          'Yes. Arabic–English screeners, moderation, and reporting are standard so local nuance is preserved while regional and global teams receive comparable insight packs.',
+      },
+      {
+        question: 'How long does UAE market research usually take?',
+        answer:
+          'Focused diagnostic modules can start within days of scope sign-off; full mixed-method programs typically run on a multi-week cadence depending on sample size, therapy scarcity, and ethics or hospital access requirements.',
+      },
+      {
+        question: 'Where can I compare UAE with Saudi Arabia or Kuwait?',
+        answer:
+          'Use the healthcare market research hub for regional framing, then open the dedicated Saudi Arabia and Kuwait market research pages linked below for side-by-side country execution planning.',
+      },
+    ],
+    relatedLinks: [
+      { to: '/healthcare-market-research/uae', label: 'Healthcare market research — UAE country hub' },
+      { to: '/uae-healthcare-market-report', label: 'UAE healthcare market report 2026' },
+      { to: '/pharmaceutical-companies-uae', label: 'Top pharmaceutical companies in UAE' },
+      { to: '/uae-pharmaceutical-market-research', label: 'UAE pharmaceutical market research pillar' },
+      { to: '/market-research-ksa', label: 'Market research KSA' },
+      { to: '/market-research-kuwait', label: 'Market research Kuwait' },
+    ],
+    regulatory: {
+      heading: 'Regulatory and payer context for UAE market research',
+      paragraphs: [
+        'UAE market research must reflect a multi-emirate health system: Dubai Health Authority (DHA), Department of Health – Abu Dhabi (DOH), and federal MOHAP requirements can all influence how products are registered, listed, and adopted. BioNixus scopes studies around the regulators and approval pathways that matter for your brand—not a single “UAE average” assumption.',
+        'Private insurance, mandatory benefits, and hospital group procurement create parallel access routes. Research programs therefore map both public-sector referral patterns and private hospital formulary behavior, including where mandatory lists, prior authorization, and medical policy committees slow or accelerate uptake.',
+        'For international portfolios, UAE evidence often feeds GCC roll-ups — a regional market BioNixus sizes at about $23.7 billion in 2024 and projects to reach roughly $49 billion by 2033 (a 7.6% CAGR). We design modules so Dubai and Abu Dhabi insights remain comparable while still capturing the Northern Emirates and cross-border patient flows where clinically relevant.',
+      ],
+    },
+    marketStructure: {
+      heading: 'How the UAE pharmaceutical market is structured',
+      paragraphs: [
+        'The UAE pharmaceutical market was worth roughly $4.15 billion in 2024 and is projected to reach about $8.02 billion by 2033 — a 7.3% CAGR (BioNixus market analysis, 2024), among the faster growth rates in the GCC. That national figure hides where the money actually moves: specialty care concentrates in flagship hospitals and medical cities, while primary and chronic care spreads across clinics, polyclinics, and retail pharmacy networks. Market research in the UAE should segment by care setting, because prescribing authority, budget holders, and adoption speed differ materially between them.',
+        'Multinational manufacturers, regional distributors, and local marketing authorization holders compete across overlapping portfolios. BioNixus maps account archetypes—key opinion leaders, committee chairs, pharmacists, and procurement—to show where influence actually sits for your therapy area.',
+        'Digital health adoption, medical tourism, and expatriate population dynamics add volatility to demand forecasts. We pressure-test sizing models with facility-level analogues and physician-validated assumptions rather than importing EU or US denominators unchanged.',
+      ],
+    },
+    services: {
+      heading: 'UAE market research services BioNixus delivers',
+      items: [
+        {
+          title: 'Physician and HCP quantitative programs',
+          description:
+            'Treatment algorithms, brand choice drivers, sample adequacy by specialty, and message testing for medical and commercial teams.',
+        },
+        {
+          title: 'Payer and access qualitative depth',
+          description:
+            'Formulary committee logic, objection handling, and evidence gaps for DHA/DOH/MOHAP-aligned narratives.',
+        },
+        {
+          title: 'Hospital and procurement mapping',
+          description:
+            'Account prioritization, tender readiness, and committee influence paths for institutional brands.',
+        },
+        {
+          title: 'Launch and pricing diagnostics',
+          description:
+            'Willingness-to-pay proxies, analogues, and sequencing options for new entrants or line extensions.',
+        },
+      ],
+    },
+    methodology: {
+      heading: 'Methodology: how UAE studies are designed',
+      paragraphs: [
+        'Every engagement starts with a single decision statement—launch prioritization, access narrative refresh, competitive response, or growth acceleration. Instruments, sample frames, and analysis plans are built backward from that decision.',
+        'We combine quantitative rigor (structured surveys, chart audits where appropriate, segmentation) with qualitative explanation (IDIs, small advisory groups) so leadership sees both the number and the reason.',
+        'Field governance follows healthcare research norms: screened respondents, documented consent flows, de-identified reporting, and bilingual materials reviewed for clinical accuracy before field start.',
+      ],
+    },
+    therapyFocus: {
+      heading: 'Therapy areas commonly researched in the UAE',
+      paragraph:
+        'BioNixus runs UAE programs across high-priority therapy clusters. Scarcity specialties receive longer recruitment calendars and hospital gatekeeper planning up front.',
+      areas: [
+        'Oncology and hematology',
+        'Diabetes and metabolic disease',
+        'Cardiology and hypertension',
+        'Immunology and biologics',
+        'Rare disease and orphan products',
+        'Vaccines and infectious disease',
+        'Medical devices and diagnostics',
+      ],
+    },
+    process: {
+      heading: 'Typical UAE market research timeline',
+      steps: [
+        {
+          title: 'Days 1–5: Scope and instrument design',
+          body: 'Align on decision, markets within UAE, languages, and feasibility. Finalize screeners and discussion guides.',
+        },
+        {
+          title: 'Weeks 2–4: Fieldwork and quality control',
+          body: 'Recruit physicians, payers, or patients; monitor completes; resolve data quality flags in near real time.',
+        },
+        {
+          title: 'Weeks 4–6: Analysis and executive readout',
+          body: 'Deliver insight packs, dashboards where scoped, and a 30/60/90 action plan for commercial and access leads.',
+        },
+      ],
+    },
+    deliverables: { heading: 'What you receive at the end of a UAE program', bullets: COUNTRY_PAGE_DELIVERABLES },
+    decisionBlueprint: {
+      why: 'UAE launch and access outcomes depend on emirate-level formulary behavior and hospital committee timing—not only brand awareness.',
+      evidence:
+        'Mixed-method programs that link physician adoption data to payer objections reduce rework before registration and listing milestones.',
+      next: 'Pick one UAE decision, confirm DHA/DOH/MOHAP relevance, and run a four-week diagnostic before scaling fieldwork.',
+    },
+  },
+  ksa: {
+    title: 'Market Research KSA | Pharma & Healthcare Intelligence | BioNixus',
+    description:
+      'Market research KSA for pharma teams: SFDA-aware stakeholder insight, NUPCO procurement context, and bilingual fieldwork for Saudi launch decisions.',
+    canonical: '/market-research-ksa',
+    h1: 'Market Research KSA',
+    intro:
+      'BioNixus delivers market research KSA programs built for practical deployment across Saudi public and private healthcare channels. Whether your team searches “market research KSA” or “pharmaceutical market research company in Saudi Arabia,” this page connects KSA-specific evidence—SFDA pathways, NUPCO and institutional procurement, and Arabic–English fieldwork—to launch, access, and growth decisions.',
+    countryLabel: 'Saudi Arabia',
+    primaryKeyword: 'Market Research KSA',
+    faqItems: [
+      {
+        question: 'How is KSA market research different from generic GCC programs?',
+        answer:
+          'KSA work requires SFDA and procurement-aware design, local stakeholder mapping, and Arabic–English execution across MOH, NUPCO-influenced, and private hospital settings.',
+      },
+      {
+        question: 'Do you support both KSA and Saudi keyword intents?',
+        answer:
+          'Yes. This page supports KSA intent while linking to Saudi wording and pharma-specific pages so both keyword families are covered without duplicate content.',
+      },
+      {
+        question: 'Can BioNixus recruit scarce Saudi specialists?',
+        answer:
+          'Yes. Oncology, rare disease, and advanced therapy programs include longer recruitment planning and hospital access coordination.',
+      },
+      {
+        question: 'Does KSA research include NUPCO and tender intelligence?',
+        answer:
+          'Where relevant to scope, we map procurement behavior, tender cycles, and account-level readiness—not only physician attitudes.',
+      },
+      {
+        question: 'What languages are used in KSA fieldwork?',
+        answer:
+          'Arabic and English instruments, moderation, and reporting are standard; materials are aligned to SFDA and local medical terminology.',
+      },
+      {
+        question: 'How does KSA research connect to Vision 2030 priorities?',
+        answer:
+          'Studies reference national transformation goals only where they change stakeholder incentives or care pathways—not as generic backdrop copy.',
+      },
+    ],
+    relatedLinks: [
+      { to: '/market-research-saudi', label: 'Market research Saudi' },
+      { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Pharma market research company in Saudi Arabia' },
+      { to: '/saudi-arabia-healthcare-market-report', label: 'Saudi Arabia healthcare market report' },
+      { to: '/pharmaceutical-companies-saudi-arabia', label: 'Top pharmaceutical companies in Saudi Arabia' },
+      { to: '/pharmacies-saudi-arabia-marketing', label: 'Pharmacy marketing research in Saudi Arabia' },
+      { to: '/healthcare-market-research/uae', label: 'Market research UAE' },
+    ],
+    regulatory: {
+      heading: 'SFDA, NUPCO, and policy context for KSA market research',
+      paragraphs: [
+        'Saudi pharmaceutical market research must align with SFDA registration and post-marketing expectations, including how local evidence supports labeling, pharmacovigilance, and access conversations. BioNixus integrates regulatory milestones into research design so commercial teams do not optimize messages that access teams cannot defend.',
+        'NUPCO and institutional procurement shape uptake speed for many molecules. KSA programs therefore include procurement stakeholders, tender calendars, and account readiness where the brand depends on hospital or centralized buying—not only retail or clinic dynamics.',
+        'Vision 2030 investments in care quality, localization, and digital health keep competitive intensity high — Saudi Arabia accounts for roughly $9.4 billion of the GCC’s approximately $23.7 billion in 2024 pharmaceutical spend (BioNixus market analysis, 2024), close to two-fifths of the region. We connect policy direction to facility-level behavior so strategies reflect implementation reality, not headline statistics alone.',
+      ],
+    },
+    marketStructure: {
+      heading: 'KSA healthcare market structure for research design',
+      paragraphs: [
+        'Saudi Arabia is the Gulf’s largest pharmaceutical market — worth around $9.4 billion in 2024 and projected to reach roughly $11.7 billion by 2033 (BioNixus market analysis, 2024). Scale alone, though, does not tell you where to recruit: the Kingdom mixes large MOH networks, private hospital groups, and specialty centers with uneven geographic density, so sample plans must reflect where your therapy is actually treated — tertiary oncology hubs versus primary care networks, for example.',
+        'Local manufacturing and partnership strategies influence channel conflict and pricing pressure. Market research KSA modules can compare multinational versus local partner routes when portfolio teams evaluate sequencing.',
+        'Pharmacy automation, e-prescribing, and benefit design are evolving. We track how these shifts change adherence, switch risk, and message relevance for chronic therapies.',
+      ],
+    },
+    services: {
+      heading: 'KSA market research services',
+      items: [
+        {
+          title: 'Physician and specialist intelligence',
+          description: 'Prescribing pathways, sequencing, and competitive switch risk by segment.',
+        },
+        {
+          title: 'SFDA and access pathway research',
+          description: 'Evidence needs and friction from registration through institutional uptake.',
+        },
+        {
+          title: 'Hospital and NUPCO procurement analysis',
+          description: 'Account prioritization and committee influence for institutional brands.',
+        },
+        {
+          title: 'Bilingual qualitative and quantitative execution',
+          description: 'Arabic–English workflows for local and global leadership alignment.',
+        },
+      ],
+    },
+    methodology: {
+      heading: 'How BioNixus runs market research KSA programs',
+      paragraphs: [
+        'Scopes anchor on one KSA decision—pre-launch sizing, access narrative, competitive defense, or growth acceleration—and build methods to answer it with audit-ready quality.',
+        'Recruitment targets verified HCPs and relevant institutional stakeholders; screeners are tested for SFDA-sensitive therapy areas before full launch.',
+        'Reporting separates “signal” from anecdote: coded qualitative themes, weighted quant where used, and explicit limitations so executives can defend choices internally.',
+      ],
+    },
+    therapyFocus: {
+      heading: 'Priority therapy areas in KSA research',
+      paragraph: 'KSA portfolios often span chronic and specialty care. Recruitment calendars reflect scarcity and hospital gatekeeping.',
+      areas: [
+        'Oncology and supportive care',
+        'Diabetes and cardiometabolic',
+        'Immunology and biologics',
+        'Rare and orphan disease',
+        'Vaccines and infectious disease',
+        'CNS and neurology',
+        'Women’s health and fertility',
+      ],
+    },
+    process: {
+      heading: 'KSA program phases',
+      steps: [
+        { title: 'Discovery', body: 'Decision workshop, feasibility, and ethics or hospital access planning.' },
+        { title: 'Field', body: 'Quant and qual field with daily QC dashboards for commercial sponsors.' },
+        { title: 'Activation', body: 'Executive readout plus 30/60/90 plan tied to SFDA and access milestones.' },
+      ],
+    },
+    deliverables: { heading: 'KSA deliverables', bullets: COUNTRY_PAGE_DELIVERABLES },
+    decisionBlueprint: {
+      why: 'KSA outcomes are highly sensitive to procurement timing and SFDA-aligned evidence fit.',
+      evidence: 'Early mapping of committees and payers reduces late-stage rework before launch.',
+      next: 'Align medical, access, and commercial on one KSA question, then commission a focused KSA module.',
+    },
+  },
+  saudi: {
+    title: 'Market Research Saudi | Healthcare & Pharma Services | BioNixus',
+    description:
+      'Market research Saudi programs for healthcare and life sciences: physician, payer, and SFDA-aligned evidence for launch, pricing, and access in KSA.',
+    canonical: '/market-research-saudi',
+    h1: 'Market Research Saudi',
+    intro:
+      'BioNixus provides market research Saudi support for teams that need clear evidence from physicians, payers, and institutional stakeholders across the Kingdom. This page targets “market research Saudi” search intent and links to KSA, pharmaceutical, and healthcare hub resources so planners capture both keyword variants with one coherent evidence story.',
+    countryLabel: 'Saudi Arabia',
+    primaryKeyword: 'Market Research Saudi',
+    faqItems: [
+      {
+        question: 'Is this page different from market research KSA?',
+        answer:
+          'Yes. It targets the Saudi phrasing variant while linking to KSA and pharma-specific pages so both keyword families are covered with shared underlying methodology.',
+      },
+      {
+        question: 'Can I request Saudi-only fieldwork from this page?',
+        answer:
+          'Yes. Scopes can be Saudi-exclusive or Saudi-weighted within a broader GCC program with comparable modules in UAE or Kuwait.',
+      },
+      {
+        question: 'What stakeholders are typically included?',
+        answer:
+          'Physicians, pharmacists, hospital administrators, procurement, medical affairs, and payer-facing roles—depending on therapy and access model.',
+      },
+      {
+        question: 'How does market research Saudi support launch planning?',
+        answer:
+          'Studies quantify addressable segments, map adoption barriers, and align messaging with SFDA and institutional evidence expectations.',
+      },
+      {
+        question: 'Are outputs available in Arabic?',
+        answer:
+          'Yes. Executive summaries and appendices can be delivered in Arabic, English, or both for local and regional audiences.',
+      },
+    ],
+    relatedLinks: [
+      { to: '/market-research-ksa', label: 'Market research KSA' },
+      { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Pharma market research in Saudi Arabia' },
+      { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare market research — Saudi Arabia' },
+      { to: '/bionixus-market-research-middle-east', label: 'Middle East pharmaceutical market research' },
+      { to: '/gcc-pharma-market-report-2026', label: 'GCC pharmaceutical market report 2026' },
+    ],
+    regulatory: {
+      heading: 'Why Saudi regulatory context changes your research plan',
+      paragraphs: [
+        'Market research Saudi engagements should treat SFDA requirements and local evidence standards as part of the insight architecture—not a post-hoc checklist. That includes understanding which claims physicians trust and which documents committees request.',
+        'Institutional buying and centralized procurement influence many brands. Saudi programs map where decisions are clinical versus economic, and how long listing or tender steps typically run for comparable therapies.',
+        'Localization policies and workforce nationalization affect partnership choices. Research can test how local manufacturing or licensing strategies change stakeholder perceptions and access speed.',
+      ],
+    },
+    marketStructure: {
+      heading: 'Saudi market structure insights',
+      paragraphs: [
+        'At roughly $9.4 billion in 2024 and a projected $11.7 billion by 2033 (BioNixus market analysis, 2024), Saudi Arabia is the single largest pharmaceutical market in the Gulf. Care is delivered through a mix of public referral networks and fast-growing private capacity, so market research Saudi samples should mirror where your patients and prescribers actually interact with the category — not a national average.',
+        'Specialty therapies often depend on a small set of expert centers; mass-market brands may rely on primary care and pharmacy volume. Segmentation logic must match the model.',
+        'Competitive sets in Saudi Arabia can differ from UAE or Egypt even for the same molecule — and Saudi alone makes up close to two-fifths of the roughly $23.7 billion GCC pharmaceutical market (BioNixus market analysis, 2024). We benchmark switch risk and messaging using Saudi-validated analogues rather than importing Gulf-wide assumptions.',
+      ],
+    },
+    services: {
+      heading: 'Services under market research Saudi',
+      items: [
+        {
+          title: 'Commercial landscape and sizing',
+          description: 'Demand concentration, account tiers, and realistic uptake scenarios.',
+        },
+        {
+          title: 'Medical and access narrative testing',
+          description: 'Message and evidence resonance with physicians and institutional reviewers.',
+        },
+        {
+          title: 'Competitive intelligence',
+          description: 'Positioning, switch triggers, and defensive plays for crowded classes.',
+        },
+        {
+          title: 'Patient and caregiver insight',
+          description: 'Journey friction and support program design where relevant to access.',
+        },
+      ],
+    },
+    methodology: {
+      heading: 'Research methodology for Saudi programs',
+      paragraphs: [
+        'We use decision-led design: one primary question, secondary questions only if they change action, and analysis that leadership can use in the next planning cycle.',
+        'Mixed methods are common—quant for sizing and segmentation, qual for objections and pathway detail—with explicit integration in the final narrative.',
+        'Quality controls include duplicate screening, speed checks, and therapy-appropriate verification steps for HCP respondents.',
+      ],
+    },
+    therapyFocus: {
+      heading: 'Therapy focus in Saudi market research',
+      paragraph: 'Saudi Arabia’s burden of disease profile drives heavy investment in cardiometabolic, oncology, and biologic categories.',
+      areas: [
+        'Oncology',
+        'Diabetes',
+        'Cardiovascular',
+        'Immunology',
+        'Respiratory',
+        'Rare disease',
+        'Vaccines',
+      ],
+    },
+    process: {
+      heading: 'From proposal to action in Saudi Arabia',
+      steps: [
+        { title: 'Align', body: 'Workshop on decision, brand stage, and stakeholder map.' },
+        { title: 'Execute', body: 'Field with bilingual QC and weekly sponsor checkpoints.' },
+        { title: 'Apply', body: 'Workshop on findings; handoff to access and field teams.' },
+      ],
+    },
+    deliverables: { heading: 'Deliverables for Saudi sponsors', bullets: COUNTRY_PAGE_DELIVERABLES },
+    decisionBlueprint: {
+      why: 'Saudi phrasing often reflects brand teams searching separately from access or medical—both need the same evidence base.',
+      evidence: 'Unified Saudi modules prevent conflicting stories across functions.',
+      next: 'Link this page to KSA and pharmaceutical Saudi pages in your internal wiki; commission one integrated study.',
+    },
+  },
+  kuwait: {
+    title: 'Market Research Kuwait | Pharma & Healthcare Research | BioNixus',
+    description:
+      'Market research Kuwait for pharma and healthcare: MOH formulary context, stakeholder insight, and launch readiness in a high-value GCC market.',
+    canonical: '/market-research-kuwait',
+    h1: 'Market Research Kuwait',
+    intro:
+      'BioNixus builds market research Kuwait studies for teams needing decision-ready intelligence in one of the GCC’s concentrated, high-spend healthcare markets. Programs reflect MOH and private channel dynamics, distributor-led access, and bilingual reporting for regional leadership.',
+    countryLabel: 'Kuwait',
+    primaryKeyword: 'Market Research Kuwait',
+    faqItems: [
+      {
+        question: 'What outcomes can market research Kuwait programs support?',
+        answer:
+          'Typical outputs support launch sequencing, stakeholder prioritization, and payer-sensitive positioning in public and private channels.',
+      },
+      {
+        question: 'Does this page connect to Kuwait company-intent content?',
+        answer:
+          'Yes. It links to the Kuwait pharmaceutical companies page and healthcare hub for long-tail company and country research intent.',
+      },
+      {
+        question: 'How concentrated is Kuwait’s prescriber base?',
+        answer:
+          'Many specialties rely on a relatively small expert pool—feasibility and recruitment planning reflect that from day one.',
+      },
+      {
+        question: 'Can Kuwait modules sit inside a GCC program?',
+        answer:
+          'Yes. Kuwait can be a standalone country module or paired with UAE, Saudi Arabia, or Qatar with harmonized instruments.',
+      },
+      {
+        question: 'What access topics are commonly researched?',
+        answer:
+          'Formulary placement, hospital committee behavior, pricing sensitivity, and distributor coverage for institutional products.',
+      },
+    ],
+    relatedLinks: [
+      { to: '/kuwait-market-access-research', label: 'Kuwait market access research' },
+      { to: '/kuwait-healthcare-market-report', label: 'Kuwait healthcare market report' },
+      { to: '/pharmaceutical-companies-kuwait', label: 'Top pharmaceutical companies in Kuwait' },
+      { to: '/healthcare-market-research/kuwait', label: 'Healthcare market research in Kuwait' },
+      { to: '/healthcare-market-research/uae', label: 'Market research UAE' },
+      { to: '/market-research-egypt', label: 'Market research Egypt' },
+    ],
+    regulatory: {
+      heading: 'Kuwait regulatory and access context',
+      paragraphs: [
+        'Kuwait market research should reflect Ministry of Health formulary processes, hospital drug committees, and private insurance rules that can diverge from UAE or Saudi pathways even within the GCC.',
+        'Distributor and marketing authorization holder structures affect who owns access conversations. Studies map commercial versus medical touchpoints accordingly.',
+        'Pricing and reimbursement sensitivity is high relative to market size; research modules often include willingness-to-pay proxies and analogues from comparable Gulf markets — useful when benchmarking Kuwait against the roughly $23.7 billion GCC pharmaceutical market (BioNixus market analysis, 2024).',
+      ],
+    },
+    marketStructure: {
+      heading: 'Kuwait market structure for pharmaceutical teams',
+      paragraphs: [
+        'Kuwait is a smaller but high-value Gulf market: the pharmaceutical sector is forecast to reach about $2.9 billion by 2027, growing around 3.5% a year (BioNixus market analysis, 2024). Healthcare delivery is concentrated in a small number of hospital groups and specialist networks, which simplifies geography but sharpens competition for respondent time.',
+        'Chronic disease management and specialty care drive much of the innovative portfolio volume; recruitment plans prioritize the facilities where those patients are managed.',
+        'Cross-border care seeking exists but is less dominant than in UAE; Kuwait-validated denominators matter for sizing.',
+      ],
+    },
+    services: {
+      heading: 'Kuwait market research services',
+      items: [
+        { title: 'Physician and pharmacist insight', description: 'Adoption, switching, and detailing effectiveness.' },
+        { title: 'Hospital committee and access qual', description: 'Objections, evidence needs, and timeline expectations.' },
+        { title: 'Launch sequencing', description: 'Account tiers and resource allocation for small teams.' },
+        { title: 'GCC comparability modules', description: 'Kuwait vs UAE/Saudi side-by-side when needed.' },
+      ],
+    },
+    methodology: {
+      heading: 'Methodology notes for Kuwait',
+      paragraphs: [
+        'Smaller market size favors focused samples and hybrid designs rather than oversized surveys with thin cells.',
+        'Arabic–English materials are standard; medical terminology is reviewed with local advisors before field.',
+        'We document feasibility limits explicitly so sponsors do not over-interpret thin data.',
+      ],
+    },
+    therapyFocus: {
+      heading: 'Common Kuwait therapy research areas',
+      paragraph: 'Kuwait programs often mirror GCC priority classes with local weighting.',
+      areas: ['Diabetes', 'Cardiology', 'Oncology', 'Immunology', 'Respiratory', 'Women’s health'],
+    },
+    process: {
+      heading: 'Kuwait engagement timeline',
+      steps: [
+        { title: 'Scope', body: 'Decision, therapy, and stakeholder map for Kuwait-only or GCC bundle.' },
+        { title: 'Field', body: 'Recruitment with scarcity-aware calendars.' },
+        { title: 'Readout', body: 'Insight deck and action plan for Kuwait leads.' },
+      ],
+    },
+    deliverables: { heading: 'Kuwait program outputs', bullets: COUNTRY_PAGE_DELIVERABLES },
+    decisionBlueprint: {
+      why: 'Kuwait’s small expert pool makes early feasibility as important as questionnaire design.',
+      evidence: 'Pilot interviews before large quant prevent costly redesigns.',
+      next: 'Run a Kuwait feasibility sprint, then scale to full field.',
+    },
+  },
   egypt: {
-    title: 'Egypt Healthcare Market Research | BioNixus',
-    description: 'Egypt pharmaceutical market research: EDA/UHIA pathways, channel-weighted physician and payer programs, and actionable launch plans.',
-    canonical: '/egypt-healthcare-market-research',
-    h1: 'Egypt Healthcare Market Research',
-    intro: 'We deliver Egypt market research programs for pharmaceutical and healthcare teams that require launch and access decisions grounded in local evidence—not generic MENA summaries. Studies cover hospital, payer, and physician behavior across Cairo, Alexandria, and regional governorates.',
+    title: 'Market Research Egypt | Pharma & Healthcare Intelligence | BioNixus',
+    description:
+      'Market research Egypt for pharma teams: large-scale stakeholder evidence, public and private channel insight, and MENA growth planning.',
+    canonical: '/market-research-egypt',
+    h1: 'Market Research Egypt',
+    intro:
+      'BioNixus executes market research Egypt engagements for organizations that need evidence-led decisions across public, private, and out-of-pocket channels in North Africa’s largest pharmaceutical market. Programs support local manufacturing context, diverse payer behavior, and links to MENA regional strategy.',
     countryLabel: 'Egypt',
-    primaryKeyword: 'Egypt market research',
-    faqItems: [],
-    relatedLinks: [],
+    primaryKeyword: 'Market Research Egypt',
+    faqItems: [
+      {
+        question: 'Why is Egypt important in MENA market research planning?',
+        answer:
+          'Egypt combines large population scale, strong local manufacturing context, and wide stakeholder diversity for regional strategy decisions.',
+      },
+      {
+        question: 'Can this page support top-company long-tail traffic?',
+        answer:
+          'Yes. It internally links to the Egypt pharmaceutical companies page and the 2026 top market research companies guide.',
+      },
+      {
+        question: 'How do public and private channels differ in Egypt research?',
+        answer:
+          'Studies segment MOH, insurance, and private pay dynamics because uptake paths differ by category and price point.',
+      },
+      {
+        question: 'Is Arabic fieldwork available?',
+        answer:
+          'Yes. Arabic moderation and reporting are standard; English packs are available for regional HQ teams.',
+      },
+      {
+        question: 'Can Egypt be bundled with GCC modules?',
+        answer:
+          'Yes. Harmonized instruments can compare Egypt with Gulf markets while preserving local access logic in analysis.',
+      },
+    ],
+    relatedLinks: [
+      { to: '/egypt-pharmaceutical-market-research', label: 'Healthcare market research company in Egypt' },
+      { to: '/pharmaceutical-companies-egypt', label: 'Top pharmaceutical companies in Egypt' },
+      { to: '/insights/top-market-research-companies-egypt-2026', label: 'Top market research companies in Egypt (2026)' },
+      { to: '/egypt-healthcare-market-report', label: 'Egypt healthcare market report' },
+      { to: '/healthcare-market-research/egypt', label: 'Healthcare market research in Egypt' },
+      { to: '/strategic-portfolio', label: 'BioNixus strategic portfolio' },
+      { to: '/market-research-ksa', label: 'Market research KSA' },
+    ],
     regulatory: {
       heading: 'Egypt regulatory and market access context',
       paragraphs: [
-        'Egypt market research must account for Egyptian Drug Authority (EDA) requirements, pricing committees, and tender-oriented public procurement alongside private hospital and clinic channels that operate under different economic and competitive logics. EDA registration timelines, bioequivalence expectations for generics, and local manufacturing incentives shape which products can enter Egypt and at what cost structure. Market research Egypt modules validate how physicians perceive imported versus locally manufactured brands, and whether EDA-driven quality or pricing policies affect prescribing or substitution behavior.',
-        'Universal Health Insurance Authority (UHIA) expansion and public sector procurement through Ministry of Health tenders create distinct access pathways for hospital-administered and outpatient therapies. Tender cycles, pricing negotiations, and formulary inclusion criteria differ significantly from private hospital purchasing or retail pharmacy dynamics. Market research Egypt studies map which channels matter for your therapy area, what evidence committees require, and how long procurement cycles typically run. Programs quantify the revenue split between public tender volume and private market sales so forecasts reflect realistic channel mix assumptions.',
-        'Local manufacturing and generic competition shape willingness to pay and brand loyalty differently than in Gulf markets; studies use Egypt-appropriate analogues and pricing benchmarks rather than importing Saudi or UAE assumptions. Egypt has a large domestic pharmaceutical manufacturing base that produces generics at price points well below imported branded products. Market research Egypt programs test how physicians trade off brand trust versus cost, what clinical or safety concerns justify branded selection, and how private-pay patients versus insured or public sector patients respond to pricing differences. Understanding these dynamics is essential for positioning and pricing strategy in a market where generic substitution is the norm, not the exception.',
-        'Economic sensitivity and out-of-pocket spend influence adherence, brand choice, and therapy persistence across chronic disease categories. Market research Egypt modules capture affordability constraints and patient support program design needs where relevant, recognizing that clinical efficacy data alone does not predict real-world uptake when patients cannot afford to fill prescriptions. Programs assess which patient segments can sustain branded therapy costs, where copay assistance or patient support programs are necessary, and how economic barriers affect long-term market sizing assumptions.',
-      ],
-    },    marketStructure: {
-      heading: 'Egypt pharmaceutical market structure',
-      paragraphs: [
-        'Egypt is North Africa\'s largest pharmaceutical market — about $6.5 billion in 2024 and projected to roughly double to $13.8 billion by 2033 — an 8.74% CAGR (BioNixus market analysis, 2024). Volume often sits in primary care, retail pharmacy, and chronic disease management, while innovative brands concentrate in urban centers and private hospitals — which is why a single national story can mask very different access realities by channel. Market research Egypt programs segment by geography (Cairo/Alexandria delta versus Upper Egypt governorates), channel (MOH/UHIA tender versus private hospital versus retail), and payer (public insurance versus private insurance versus out-of-pocket) to ensure forecasts reflect where your brand can realistically compete.',
-        'Distributor networks and local pharmaceutical company partnerships remain influential; stakeholder maps include commercial operators as well as clinicians. Unlike Gulf markets where pharmaceutical companies often maintain direct market presence, Egypt\'s market access often depends on distributor relationships, local manufacturing partnerships, or licensing deals with Egyptian pharmaceutical companies. Market research Egypt studies identify which distributors control key hospital and pharmacy networks, what their portfolio strategies are, and how partnership selection affects competitive positioning and margin structure. Programs validate whether direct market entry is feasible or whether partnership is the only viable access route.',
-        'Regional HQ teams use Egypt as a scale market for forecasting and as a MENA hub for clinical development, regulatory precedent, and manufacturing partnerships. The scale of Egypt\'s population and pharmaceutical market makes it a natural anchor for regional strategy, but market research Egypt fieldwork must validate assumptions that desk research alone cannot: physician treatment patterns, patient adherence rates, payer formulary inclusion timelines, and competitive brand performance. Programs prevent the mistake of extrapolating Gulf or European data to Egypt without validating that clinical guidelines, prescribing cultures, and economic realities support those assumptions.',
-        'Local manufacturing capacity and government policies favoring domestic production create both opportunity and complexity. Brands willing to partner with local manufacturers or invest in Egyptian production can access preferential pricing, tender qualification, and regulatory pathways not available to purely imported products. Market research Egypt modules quantify how local manufacturing partnerships affect physician and payer perceptions, whether quality concerns exist around local versus imported sourcing, and how these strategic choices influence competitive positioning. Programs assess trade-offs between margin protection and market access speed in a policy environment that increasingly favors localization.',
+        'Egypt market research must account for Egyptian Drug Authority requirements, pricing committees, and tender-oriented public procurement alongside private hospital and clinic channels.',
+        'Local manufacturing and generic competition shape willingness to pay and brand loyalty differently than in Gulf markets; studies use Egypt-appropriate analogues.',
+        'Economic sensitivity and out-of-pocket spend influence adherence and brand choice—research modules capture affordability and switch behavior where relevant.',
       ],
     },
-
+    marketStructure: {
+      heading: 'Egypt pharmaceutical market structure',
+      paragraphs: [
+        'Egypt is North Africa’s largest pharmaceutical market — about $6.5 billion in 2024 and projected to roughly double to $13.8 billion by 2033 — an 8.74% CAGR (BioNixus market analysis, 2024). Volume often sits in primary care, retail pharmacy, and chronic disease management, while innovative brands concentrate in urban centers and private hospitals — which is why a single national story can mask very different access realities by channel.',
+        'Distributor networks and local partners remain influential; stakeholder maps include commercial operators as well as clinicians.',
+        'Regional HQ teams use Egypt as a scale market for forecasting; fieldwork validates assumptions that desk research alone cannot.',
+      ],
+    },
     services: {
       heading: 'Market research Egypt services',
       items: [
@@ -79,7 +605,7 @@ const en: Record<string, MarketResearchCountryContent> = {
         { title: 'Strategy', body: 'MENA leadership readout with Egypt action plan.' },
       ],
     },
-    deliverables: { heading: 'Egypt deliverables', bullets: sharedDeliverables },
+    deliverables: { heading: 'Egypt deliverables', bullets: COUNTRY_PAGE_DELIVERABLES },
     decisionBlueprint: {
       why: 'Egypt scale rewards disciplined segmentation—averages hide channel risk.',
       evidence: 'Channel-specific modules prevent one national story from masking access failure.',
@@ -172,7 +698,7 @@ const ar: Record<string, MarketResearchCountryContent> = {
         { title: 'التفعيل', body: 'قراءة تنفيذية وخطة 30/60/90.' },
       ],
     },
-    deliverables: { heading: 'المخرجات', bullets: sharedDeliverables },
+    deliverables: { heading: 'المخرجات', bullets: COUNTRY_PAGE_DELIVERABLES },
     decisionBlueprint: {
       why: 'قرارات الإمارات تعتمد على الفوارق بين الإمارات ولجان المستشفيات.',
       evidence: 'الربط بين الطبيب والدافع يقلل إعادة العمل قبل الإدراج.',

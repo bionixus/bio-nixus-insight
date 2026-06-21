@@ -13,7 +13,7 @@ export type ServiceLandingExpandedContent = {
   faqs: ServiceLandingFaq[];
 };
 
-const sharedDeliverables = [
+const SERVICE_LANDING_DELIVERABLES = [
   'Executive summary mapped to one commercial, access, or medical decision',
   'Stakeholder segmentation with influence and objection themes',
   'Quantitative sizing or adoption metrics where the objective requires measurement',
@@ -168,7 +168,7 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
     },
     deliverables: {
       heading: 'GCC RWE program outputs',
-      bullets: sharedDeliverables,
+      bullets: SERVICE_LANDING_DELIVERABLES,
     },
     decisionBlueprint: {
       why: 'RWE bridges clinical trial results and payer expectations when market-access choices carry high financial risk — especially under SFDA EES and centralized Gulf procurement.',
@@ -321,7 +321,7 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
     },
     deliverables: {
       heading: 'GCC agency program outputs',
-      bullets: sharedDeliverables,
+      bullets: SERVICE_LANDING_DELIVERABLES,
     },
     decisionBlueprint: {
       why: 'Agency choice affects decision speed, evidence trust, and launch risk across multiple GCC markets — especially when SFDA EES and centralized procurement raise the evidence bar.',
@@ -482,7 +482,7 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
     deliverables: {
       heading: 'Fieldwork program outputs',
       bullets: [
-        ...sharedDeliverables,
+        ...SERVICE_LANDING_DELIVERABLES,
         'Daily QC dashboard exports during active field',
         'Documented exclusion log with reason codes',
         'Bilingual transcripts and coded qual outputs where scoped',
@@ -640,7 +640,7 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
     deliverables: {
       heading: 'UAE fieldwork program outputs',
       bullets: [
-        ...sharedDeliverables,
+        ...SERVICE_LANDING_DELIVERABLES,
         'Emirate-level quota and completion telemetry',
         'Documented exclusion log with reason codes',
         'Bilingual transcripts and coded qual outputs where scoped',
@@ -799,7 +799,7 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
     deliverables: {
       heading: 'KSA fieldwork program outputs',
       bullets: [
-        ...sharedDeliverables,
+        ...SERVICE_LANDING_DELIVERABLES,
         'Channel and institution quota telemetry',
         'Documented exclusion log with reason codes',
         'Arabic transcripts with certified English translation where scoped',
@@ -979,7 +979,7 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
     deliverables: {
       heading: 'Egypt fieldwork program outputs',
       bullets: [
-        ...sharedDeliverables,
+        ...SERVICE_LANDING_DELIVERABLES,
         'Channel-tagged quota telemetry',
         'Documented exclusion log with reason codes',
         'Arabic transcripts with English readout where scoped',
@@ -1145,7 +1145,7 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
     deliverables: {
       heading: 'Kuwait access research outputs',
       bullets: [
-        ...sharedDeliverables,
+        ...SERVICE_LANDING_DELIVERABLES,
         'Institutional influence and objection heat map',
         'Tested value narrative variants with reaction coding',
         'Competitive access landscape appendix where scoped',
@@ -1309,7 +1309,7 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
     deliverables: {
       heading: 'Saudi HEOR program outputs',
       bullets: [
-        ...sharedDeliverables,
+        ...SERVICE_LANDING_DELIVERABLES,
         'Audit-ready assumption log with sensitivity tables',
         'Committee-ready executive summary and slide narrative',
         'Optional qual reaction coding aligned to model scenarios',
