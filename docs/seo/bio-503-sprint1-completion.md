@@ -9,9 +9,9 @@
 | ≥5 P0 pages at ≥2,000 words | ✅ 14 pages (see table) |
 | Word count verified | ✅ Local SSR `<main>` word audit |
 | Hub cross-link within first 200 words | ✅ All pages pass |
-| Deployed URLs | Pending Vercel deploy after push |
+| Deployed URLs | ✅ 14 pages live on production; batch 6 service pages pending deploy |
 
-## Sprint 1 batch (14 pages)
+## Sprint 1 batch (19 pages)
 
 | Path | Words (local SSR) | Hub ≤200w |
 |---|---:|---|
@@ -29,6 +29,39 @@
 | `/healthcare-market-research/therapy/diabetes` | 2053 | ✅ |
 | `/healthcare-market-research/therapy/cardiology` | 2013 | ✅ |
 | `/healthcare-market-research/services/market-access` | 2095 | ✅ |
+| `/healthcare-market-research/services/quantitative-research` | 2012 | ✅ |
+| `/healthcare-market-research/services/qualitative-research` | 2002 | ✅ |
+| `/healthcare-market-research/services/physician-insights` | 2031 | ✅ |
+| `/healthcare-market-research/services/kol-mapping` | 2008 | ✅ |
+| `/healthcare-market-research/therapy/respiratory` | 2020 | ✅ |
+
+## Production URLs (batch 5 — verified 2026-06-21)
+
+- https://www.bionixus.com/real-world-evidence-gcc (2114w)
+- https://www.bionixus.com/healthcare-market-research-agency-gcc (2120w)
+- https://www.bionixus.com/healthcare-fieldwork-middle-east (2193w)
+- https://www.bionixus.com/pharma-fieldwork-uae (2107w)
+- https://www.bionixus.com/pharma-fieldwork-saudi-arabia (2060w)
+- https://www.bionixus.com/pharma-fieldwork-egypt (2040w)
+- https://www.bionixus.com/kuwait-market-access-research (2037w)
+- https://www.bionixus.com/heor-consulting-saudi-arabia (2030w)
+- https://www.bionixus.com/market-research-saudi-arabia-pharmaceutical (2022w)
+
+## Production URLs (therapy batch — verified 2026-06-21)
+
+- https://www.bionixus.com/healthcare-market-research/therapy/aesthetic-medicine (2023w)
+- https://www.bionixus.com/healthcare-market-research/therapy/vaccines (2009w)
+- https://www.bionixus.com/healthcare-market-research/therapy/diabetes (2058w)
+- https://www.bionixus.com/healthcare-market-research/therapy/cardiology (2018w)
+- https://www.bionixus.com/healthcare-market-research/services/market-access (2100w)
+- https://www.bionixus.com/healthcare-market-research/therapy/respiratory (2025w)
+
+## Pending deploy (batch 6 hub services — local SSR verified)
+
+- https://www.bionixus.com/healthcare-market-research/services/quantitative-research (2012w local; prod 1781w pre-deploy)
+- https://www.bionixus.com/healthcare-market-research/services/qualitative-research (2002w local)
+- https://www.bionixus.com/healthcare-market-research/services/physician-insights (2031w local)
+- https://www.bionixus.com/healthcare-market-research/services/kol-mapping (2008w local)
 
 ## Implementation notes
 

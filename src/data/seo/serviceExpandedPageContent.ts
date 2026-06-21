@@ -66,6 +66,16 @@ export const SERVICE_EXPANDED_FAQS: Record<string, ServiceFaq[]> = {
       answer:
         'Segment dossiers, objection hierarchies, medical education choke-point maps, and message tests validated quantitatively—artefacts field teams and access teammates can synchronise on within the same planning cycle.',
     },
+    {
+      question: 'How should physician insight fieldwork be sequenced with access and launch planning?',
+      answer:
+        'Wave design should align to formulary, procurement, and registration calendars so insight arrives before message scale-up—not after affiliates have committed to narratives payers already reject. BioNixus maps explicit handoff gates linking segment dossiers to access objection libraries and quant validation waves.',
+    },
+    {
+      question: 'What governance standards apply to physician insight programmes in regulated markets?',
+      answer:
+        'Interview neutrality, transparent incentive disclosure where applicable, ESOMAR-aligned field protocols, and reproducible appendix layers—quota logs, questionnaire versioning, segment definitions—so medical affairs and compliance teams can audit inference without reconstructing methodology from slide decks alone.',
+    },
   ],
   'kol-mapping': [
     {
@@ -97,6 +107,16 @@ export const SERVICE_EXPANDED_FAQS: Record<string, ServiceFaq[]> = {
       question: 'What deliverables should sponsors expect?',
       answer:
         'Influence maps annotated by decision relevance, advisory roster recommendations, connectivity diagnostics resilient to spokesperson fatigue, and workshop options to translate maps into medical and commercial action plans.',
+    },
+    {
+      question: 'How does KOL mapping integrate with congress and MSL planning?',
+      answer:
+        'Tiered experts link to decision types—initiation, switching, protocol adoption—so congress engagement, advisory design, and MSL deployment prioritise leverage that moves consensus rather than ceremonial visibility. BioNixus optional workshops translate maps into quarterly engagement calendars affiliates can execute.',
+    },
+    {
+      question: 'When should KOL mapping precede versus follow physician insight waves?',
+      answer:
+        'Mapping often precedes deep physician quant when influence structure is uncertain; it follows quant when segment hypotheses need validation against who actually accelerates or vetoes adoption in target institution types. Sequential design avoids redundant interviews and misallocated advisory spend.',
     },
   ],
   'quantitative-research': [
@@ -130,6 +150,16 @@ export const SERVICE_EXPANDED_FAQS: Record<string, ServiceFaq[]> = {
       answer:
         'Harmonised variable dictionaries with local recruitment and language modules; field teams experienced in physician, pharmacist, and payer-adjacent quotas in priority healthcare markets.',
     },
+    {
+      question: 'How should quant sample design reflect payer-adjacent decisions?',
+      answer:
+        'When tender scoring or formulary stewardship shapes uptake, quant modules include pharmacist and procurement-adjacent quotas—not physician-only panels that miss substitution and scoring rituals. BioNixus aligns instrument length and trade-off design to cognitive load budgets each stakeholder type can realistically complete.',
+    },
+    {
+      question: 'What is the typical timeline from scope to leadership-ready quant deliverables?',
+      answer:
+        'Timelines depend on quota complexity and hybrid sequencing, but engagements typically move from calibrated scope memo through field release, cleaning, segmented analytics, and governance-ready synthesis within planning cycles affiliates can align to launch gates—not open-ended tracker maintenance without decision owners.',
+    },
   ],
   'qualitative-research': [
     {
@@ -161,6 +191,16 @@ export const SERVICE_EXPANDED_FAQS: Record<string, ServiceFaq[]> = {
       question: 'What deliverables translate qual depth into action?',
       answer:
         'Theme libraries linked to quant segments, objection hierarchies with illustrative quotes graded for governance, workshop facilitation options, and explicit linkage tables from qualitative findings to KPI owners across medical, brand, and access.',
+    },
+    {
+      question: 'How does BioNixus document saturation and thematic stability in qual programmes?',
+      answer:
+        'Saturation criteria are explicit—not informal—documented against role, corridor, and decision type so procurement and medical governance teams can see when additional interviews would not materially change inference. Theme libraries include stability notes and irreducible market divergences for affiliate respect.',
+    },
+    {
+      question: 'Can qualitative modules run in Arabic, French, or other hub languages?',
+      answer:
+        'Yes. Multilingual moderation and transcription workflows preserve decision authenticity in GCC and European markets while harmonised codebooks enable regional roll-ups. Language choice follows stakeholder type and local affiliate requirements rather than defaulting to English-only convenience.',
     },
   ],
 };

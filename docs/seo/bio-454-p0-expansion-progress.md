@@ -47,19 +47,31 @@ Local SSR audit: `SITE_AUDIT_BASE_URL=http://localhost:5173 node scripts/audit-t
 
 ## Completed pages (batch 5 — BIO-503 sprint 2026-06-21)
 
-| Path | Local SSR verify | Hub in first 200w | Status |
+| Path | Prod verify (2026-06-21) | Hub in first 200w | Status |
 |---|---:|---|---|
-| `/real-world-evidence-gcc` | **2092w** | ✓ | Ready to deploy |
-| `/healthcare-market-research-agency-gcc` | **2098w** | ✓ | Ready to deploy |
-| `/healthcare-fieldwork-middle-east` | **2171w** | ✓ | Ready to deploy |
-| `/pharma-fieldwork-uae` | **2085w** | ✓ | Ready to deploy |
-| `/pharma-fieldwork-saudi-arabia` | **2038w** | ✓ | Ready to deploy |
-| `/pharma-fieldwork-egypt` | **2018w** | ✓ | Ready to deploy |
-| `/kuwait-market-access-research` | **2015w** | ✓ | Ready to deploy |
-| `/heor-consulting-saudi-arabia` | **2008w** | ✓ | Ready to deploy |
-| `/market-research-saudi-arabia-pharmaceutical` | **2017w** | ✓ | Ready to deploy |
+| `/real-world-evidence-gcc` | **2097w** | ✓ | **Production verified** ([BIO-503](/BIO/issues/BIO-503)) |
+| `/healthcare-market-research-agency-gcc` | **2103w** | ✓ | **Production verified** |
+| `/healthcare-fieldwork-middle-east` | **2176w** | ✓ | **Production verified** |
+| `/pharma-fieldwork-uae` | **2090w** | ✓ | **Production verified** |
+| `/pharma-fieldwork-saudi-arabia` | **2043w** | ✓ | **Production verified** |
+| `/pharma-fieldwork-egypt` | **2023w** | ✓ | **Production verified** |
+| `/kuwait-market-access-research` | **2020w** | ✓ | **Production verified** |
+| `/heor-consulting-saudi-arabia` | **2013w** | ✓ | **Production verified** |
+| `/market-research-saudi-arabia-pharmaceutical` | **2022w** | ✓ | **Production verified** |
 
 Local audit command: `npm run build:client && npm run build:server && npm run build:move-template && NODE_ENV=production PORT=5174 node server.js` then word-count script against `http://localhost:5174`.
+
+## Completed pages (batch 6 — hub services + respiratory, 2026-06-21)
+
+| Path | Local SSR verify | Notes |
+|---|---:|---|
+| `/healthcare-market-research/services/quantitative-research` | **2012w** | Pathway/modules/execution sections + expanded FAQs + delivery-model copy |
+| `/healthcare-market-research/services/qualitative-research` | **2002w** | Pathway/modules/execution sections + expanded FAQs + delivery-model copy |
+| `/healthcare-market-research/services/physician-insights` | **2031w** | Pathway/modules/execution sections + expanded FAQs + delivery-model copy |
+| `/healthcare-market-research/services/kol-mapping` | **2008w** | Pathway/modules/execution sections + expanded FAQs + delivery-model copy |
+| `/healthcare-market-research/therapy/respiratory` | **2020w** | Pathway/modules/execution sections + supplemental FAQs |
+
+Local verify: `npm run build:server && NODE_ENV=production node server.js` then audit against `http://127.0.0.1:5173`.
 
 ## Next batch
 

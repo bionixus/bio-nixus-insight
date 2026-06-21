@@ -239,6 +239,81 @@ export default function ServicePage() {
               Programs can run independently or within broader country and therapy workstreams so evidence remains
               aligned across commercial, medical, and market-access stakeholders.
             </p>
+            {service === 'physician-insights' ? (
+              <>
+                <p>
+                  Physician insight programmes distinguish{' '}
+                  <strong className="font-medium text-foreground">stated preference</strong> from{' '}
+                  <strong className="font-medium text-foreground">treated-in-practice behaviour</strong> by pairing
+                  volume-stratified quotas with operational friction diagnostics—infusion capacity, monitoring burden,
+                  prior authorisation fatigue—that explain why confident specialists still maintain suboptimal regimens.
+                </p>
+                <p>
+                  Wave sequencing aligns to formulary and procurement calendars so insight arrives before message
+                  scale-up, with explicit handoff gates linking segment dossiers to access objection libraries on the{' '}
+                  <Link to="/healthcare-market-research/services/market-access" className="text-primary underline">
+                    market access service
+                  </Link>{' '}
+                  and quant validation modules when hybrid designs are required.
+                </p>
+              </>
+            ) : null}
+            {service === 'kol-mapping' ? (
+              <>
+                <p>
+                  KOL mapping prioritises{' '}
+                  <strong className="font-medium text-foreground">decision leverage</strong>—who moves initiation,
+                  switching, and protocol adoption—over connectivity aesthetics that compliance teams cannot action.
+                  Influence tiers connect to congress, advisory, and MSL calendars so engagement spend follows behavioural
+                  evidence rather than ceremonial prominence.
+                </p>
+                <p>
+                  GCC referral gravity and European centre clustering diverge materially; harmonised taxonomies enable
+                  portfolio governance while local modules preserve institution types where consensus actually binds
+                  uptake. See also{' '}
+                  <Link to="/kol-mapping-saudi-arabia-oncology" className="text-primary underline">
+                    oncology KOL mapping in Saudi Arabia
+                  </Link>{' '}
+                  for a country-specific example.
+                </p>
+              </>
+            ) : null}
+            {service === 'quantitative-research' ? (
+              <>
+                <p>
+                  Quantitative engagements align{' '}
+                  <strong className="font-medium text-foreground">powering and quota design</strong> to subgroup
+                  decisions that move revenue and access—not global headline significance that leaves decisive segments
+                  unresolved. Trade-off modules respect cognitive load budgets clinicians and payer-adjacent stakeholders
+                  can realistically complete under ward and procurement time pressure.
+                </p>
+                <p>
+                  Deliverables bifurcate into leadership synthesis and reproducible appendix layers—questionnaire
+                  versioning, quota logs, dashboard codebooks—for governance and alliance diligence. The{' '}
+                  <Link to="/quantitative-healthcare-market-research" className="text-primary underline">
+                    quantitative methodology guide
+                  </Link>{' '}
+                  documents sampling and forecast-bridge standards BioNixus applies across MENA, the UK, and EU5.
+                </p>
+              </>
+            ) : null}
+            {service === 'qualitative-research' ? (
+              <>
+                <p>
+                  Qualitative modules apply{' '}
+                  <strong className="font-medium text-foreground">neutral moderation</strong>, explicit saturation
+                  criteria, and probing ladders that surface operational specifics when clinicians retreat to
+                  platitudes—substitution habits, stewardship interactions, access friction subtext quantitative
+                  trackers miss.
+                </p>
+                <p>
+                  Multi-country programmes harmonise thematic codes for regional roll-ups while tagging irreducible
+                  cultural divergences affiliates must respect. Optional workshops translate objection hierarchies into
+                  HEOR refinement priorities and medical education arcs medical affairs can execute within the same
+                  planning cycle.
+                </p>
+              </>
+            ) : null}
           </div>
           <ReportInsightGrid items={content.bullets} />
         </ReportPremiumSection>
@@ -619,6 +694,10 @@ export default function ServicePage() {
                   when influence intelligence must explain why consensus shifts—or stalls—in specific hospital and
                   procurement contexts.
                 </p>
+                <p>
+                  Investigator and trial-site overlays can be scoped when launch and evidence generation intersect, so
+                  engagement plans do not treat clinical development and commercial influence as separate silos.
+                </p>
               </div>
             </ReportPremiumSection>
           </>
@@ -659,6 +738,11 @@ export default function ServicePage() {
                     healthcare market research hub
                   </Link>{' '}
                   when sequential hybrids must rescue unstable segment hypotheses.
+                </p>
+                <p>
+                  Longitudinal tracker modules can reuse harmonised variable dictionaries when affiliates need
+                  consistent segment definitions across launch-readiness and post-launch monitoring waves—reducing
+                  rework when governance teams compare cohorts year over year.
                 </p>
               </div>
             </ReportPremiumSection>
@@ -731,6 +815,11 @@ export default function ServicePage() {
                   </Link>{' '}
                   when longitudinal tracking must connect to the same variable dictionaries used in launch-readiness
                   waves.
+                </p>
+                <p>
+                  ESOMAR-aligned field governance, multilingual recruitment, and appendix versioning are standard on
+                  quant engagements so analytics and compliance teams can audit quota integrity without reconstructing
+                  methodology from presentation slides alone.
                 </p>
               </div>
             </ReportPremiumSection>
@@ -842,6 +931,16 @@ export default function ServicePage() {
                     healthcare market research hub
                   </Link>{' '}
                   when qual depth must inform access, medical, and brand planning in the same governance cycle.
+                </p>
+                <p>
+                  Chart-stimulated recall and pathway walkthroughs can be scoped when clinicians default to guideline
+                  platitudes—surfacing where operational specifics, not abstract efficacy claims, determine the next
+                  therapeutic step in busy ward and clinic settings.
+                </p>
+                <p>
+                  ESOMAR-aligned moderation standards, multilingual field protocols, and explicit saturation
+                  documentation are included so medical governance and procurement reviewers can trust thematic
+                  stability—not informal “we spoke to enough people” assertions—across MENA, UK, and EU5 programmes.
                 </p>
               </div>
             </ReportPremiumSection>
