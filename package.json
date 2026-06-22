@@ -56,7 +56,8 @@
     "refresh:q2-covers": "node scripts/refresh-q2-blog-covers-and-schema.mjs --all",
     "audit:legacy-blog": "node scripts/audit-rewrite-legacy-blog.mjs --dry-run --all",
     "audit:legacy-blog:sync": "node scripts/audit-rewrite-legacy-blog.mjs --all --sync-existing",
-    "firecrawl": "firecrawl"
+    "firecrawl": "firecrawl",
+    "ghl:pipeline-export": "node scripts/bd/ghl-pipeline-export.mjs"
   },
   "dependencies": {
     "@aws-sdk/client-sesv2": "^3.989.0",
