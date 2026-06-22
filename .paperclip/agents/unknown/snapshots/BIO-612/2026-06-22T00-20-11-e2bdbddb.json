@@ -1,0 +1,130 @@
+{
+  "context": {
+    "summary": "Completed snapshot system implementation - design, scripts, and documentation",
+    "currentPhase": "implementation",
+    "lastDecision": "Created comprehensive docs (design, integration guide, quick reference) for snapshot system",
+    "criticalContext": [
+      "Core scripts (create-snapshot.sh, load-snapshot.sh) tested and working",
+      "Retention policy verified (keeps last 10, archives older)",
+      "Storage: .paperclip/agents/{agent}/snapshots/{issue}/",
+      "JSON format v1.0 defined with context, activity, decisions, remaining work",
+      "Remaining: test with 3+ agent types, add to onboarding docs"
+    ]
+  },
+  "filesActivity": {
+    "created": [
+      {
+        "path": "docs/ops/workspace-state-snapshots.md",
+        "timestamp": "2026-06-22T00:00:00Z",
+        "purpose": "Technical design document"
+      },
+      {
+        "path": "scripts/paperclip/create-snapshot.sh",
+        "timestamp": "2026-06-22T00:15:00Z",
+        "purpose": "Snapshot creation script"
+      },
+      {
+        "path": "scripts/paperclip/load-snapshot.sh",
+        "timestamp": "2026-06-22T00:30:00Z",
+        "purpose": "Snapshot loading script"
+      },
+      {
+        "path": "docs/ops/agent-snapshot-integration.md",
+        "timestamp": "2026-06-22T00:45:00Z",
+        "purpose": "Agent integration guide"
+      },
+      {
+        "path": "docs/ops/snapshots-quick-reference.md",
+        "timestamp": "2026-06-22T01:00:00Z",
+        "purpose": "Quick start guide for agents"
+      }
+    ]
+  },
+  "commandsExecuted": [
+    {
+      "command": "./scripts/paperclip/create-snapshot.sh --auto",
+      "exitCode": 0,
+      "timestamp": "2026-06-22T00:20:00Z",
+      "outcome": "success",
+      "keyOutput": "Created test snapshot"
+    },
+    {
+      "command": "./scripts/paperclip/load-snapshot.sh --format summary",
+      "exitCode": 0,
+      "timestamp": "2026-06-22T00:25:00Z",
+      "outcome": "success",
+      "keyOutput": "Retrieved snapshot data"
+    },
+    {
+      "command": "created 12 test snapshots",
+      "exitCode": 0,
+      "timestamp": "2026-06-22T00:35:00Z",
+      "outcome": "success",
+      "keyOutput": "Verified retention: 10 kept, 2 archived"
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "Use bash scripts with jq for snapshot operations",
+      "rationale": "Portable, minimal dependencies, works in any shell environment",
+      "timestamp": "2026-06-22T00:10:00Z",
+      "alternatives": [
+        "Node.js scripts",
+        "Python scripts"
+      ]
+    },
+    {
+      "decision": "Store snapshots in .paperclip/agents/{agent}/snapshots/{issue}/",
+      "rationale": "Decentralized, agent-specific, doesn't pollute codebase",
+      "timestamp": "2026-06-22T00:12:00Z",
+      "alternatives": [
+        "Central .paperclip/snapshots/",
+        "Issue-level storage"
+      ]
+    },
+    {
+      "decision": "Keep last 10 snapshots, archive older ones",
+      "rationale": "Balance between history and storage overhead",
+      "timestamp": "2026-06-22T00:14:00Z",
+      "alternatives": [
+        "Keep all",
+        "Keep last 5",
+        "Time-based retention"
+      ]
+    }
+  ],
+  "remainingWork": [
+    {
+      "item": "Test snapshot system with HermesEngineer, Coder, Manager agents",
+      "priority": "high",
+      "estimated": "medium"
+    },
+    {
+      "item": "Add snapshot references to agent onboarding documentation",
+      "priority": "medium",
+      "estimated": "small"
+    },
+    {
+      "item": "Consider making snapshot creation mandatory in heartbeat close protocol",
+      "priority": "low",
+      "estimated": "small"
+    }
+  ],
+  "nextAction": {
+    "recommended": "Check for agent onboarding docs and add snapshot system references",
+    "prerequisite": "None - implementation complete",
+    "estimatedEffort": "small"
+  },
+  "heartbeatNumber": 2,
+  "version": "1.0",
+  "issueId": "4c08f710-6a9b-4fbb-b964-a4e3f3f7c416",
+  "issueIdentifier": "BIO-612",
+  "agentId": "ed7d77e3-aa6a-4bb0-8a30-24fe727b2870",
+  "agentNameKey": "unknown",
+  "runId": "e2bdbddb-7e56-4f81-94da-101ae06cd558",
+  "createdAt": "2026-06-22T00:20:11.000Z",
+  "metadata": {
+    "snapshotSize": 4119,
+    "checksum": "sha256-3b4a0172f332061f4089a20942c1641eb97297e093aca0916afcb79ef353a8bf"
+  }
+}

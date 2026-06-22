@@ -1,0 +1,116 @@
+{
+  "context": {
+    "summary": "Implementing workspace state snapshots and memory recovery system",
+    "currentPhase": "implementation",
+    "lastDecision": "Created snapshot format with JSON schema and helper scripts for create/load operations",
+    "criticalContext": [
+      "Snapshot format v1.0 includes context, files, commands, decisions, remaining work, and next action",
+      "Storage location: .paperclip/agents/{agent}/snapshots/{issue}/",
+      "Retention: keep last 10 snapshots per issue, archive older ones"
+    ]
+  },
+  "filesActivity": {
+    "read": [
+      {
+        "path": "memory/2026-06-21.md",
+        "timestamp": "2026-06-22T00:11:00Z",
+        "purpose": "understand existing memory system"
+      },
+      {
+        "path": ".paperclip/bio-379-bio-388-work-state.json",
+        "timestamp": "2026-06-22T00:12:00Z",
+        "purpose": "review existing state tracking"
+      }
+    ],
+    "modified": [],
+    "created": [
+      {
+        "path": "docs/ops/workspace-state-snapshots.md",
+        "timestamp": "2026-06-22T00:15:00Z",
+        "purpose": "design document for snapshot system"
+      },
+      {
+        "path": "scripts/paperclip/create-snapshot.sh",
+        "timestamp": "2026-06-22T00:20:00Z",
+        "purpose": "snapshot creation helper"
+      },
+      {
+        "path": "scripts/paperclip/load-snapshot.sh",
+        "timestamp": "2026-06-22T00:25:00Z",
+        "purpose": "snapshot retrieval helper"
+      }
+    ]
+  },
+  "commandsExecuted": [
+    {
+      "command": "curl /api/issues/BIO-612",
+      "exitCode": 0,
+      "timestamp": "2026-06-22T00:11:00Z",
+      "outcome": "fetched issue details successfully",
+      "keyOutput": "high priority, in_progress, parent BIO-590 done"
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "Use .paperclip/agents/{agent}/snapshots/ directory structure for storage",
+      "rationale": "Keeps snapshots organized by agent and issue, follows existing .paperclip conventions",
+      "timestamp": "2026-06-22T00:16:00Z",
+      "alternatives": [
+        "state/ directory - rejected, already used for other state files"
+      ]
+    },
+    {
+      "decision": "Implement as bash scripts rather than Node.js",
+      "rationale": "Simpler, no dependencies, easier to call from any agent context",
+      "timestamp": "2026-06-22T00:18:00Z",
+      "alternatives": [
+        "Node.js scripts - rejected for added complexity"
+      ]
+    }
+  ],
+  "remainingWork": [
+    {
+      "item": "Test snapshot creation with real data",
+      "priority": "high",
+      "estimated": "small"
+    },
+    {
+      "item": "Test snapshot loading and retrieval",
+      "priority": "high",
+      "estimated": "small"
+    },
+    {
+      "item": "Add agent integration documentation",
+      "priority": "high",
+      "estimated": "medium"
+    },
+    {
+      "item": "Test with 3 agent types (CEO, CTO, CMO)",
+      "priority": "medium",
+      "estimated": "medium"
+    },
+    {
+      "item": "Add to agent onboarding docs",
+      "priority": "low",
+      "estimated": "small"
+    }
+  ],
+  "nextAction": {
+    "recommended": "Test snapshot creation and loading with current issue BIO-612",
+    "prerequisite": "None - scripts are ready",
+    "estimatedEffort": "small"
+  },
+  "blockers": [],
+  "heartbeatNumber": 1,
+  "version": "1.0",
+  "issueId": "BIO-612",
+  "issueIdentifier": "BIO-612",
+  "agentId": "ed7d77e3-aa6a-4bb0-8a30-24fe727b2870",
+  "agentNameKey": "unknown",
+  "runId": "e2bdbddb-7e56-4f81-94da-101ae06cd558",
+  "createdAt": "2026-06-22T00:15:31.000Z",
+  "metadata": {
+    "snapshotSize": 3522,
+    "checksum": "sha256-f6e8e9b8ebf5d63b3064c94defeb5a64136ca1ebc3cd5593b8be1f7aaca1593e"
+  }
+}

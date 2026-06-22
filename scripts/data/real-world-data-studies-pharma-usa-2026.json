@@ -1,0 +1,1054 @@
+{
+  "seo": {
+    "metaTitle": "Real-World Data Studies Pharma USA 2026 | BioNixus",
+    "metaDescription": "Design real-world data studies for pharma in the USA: FDA RWE guidance, claims and EHR research, protocol design, and payer evidence alignment 2026.",
+    "focusKeyword": "real world data studies pharmaceutical",
+    "keywords": [
+      "real world data studies pharmaceutical",
+      "rwd research design usa",
+      "fda rwe guidance",
+      "claims data studies pharma",
+      "ehr pharmaceutical research",
+      "real world evidence methodology"
+    ],
+    "canonicalUrl": "https://www.bionixus.com/blog/real-world-data-studies-pharma-usa-2026",
+    "noIndex": false
+  },
+  "title": "Real-World Data Studies in Pharma: Designing US RWD Research for FDA and Payers (2026)",
+  "slug": {
+    "current": "real-world-data-studies-pharma-usa-2026"
+  },
+  "excerpt": "A 2026 guide to designing real-world data studies in pharmaceutical research: FDA RWE guidance, claims and EHR data sources, protocol design, bias mitigation, and payer evidence alignment.",
+  "readingTime": 18,
+  "language": "en",
+  "country": "United States",
+  "coverAlt": "Real-world data studies pharmaceutical research USA FDA RWE 2026 editorial cover",
+  "tags": [
+    "real-world data",
+    "RWD",
+    "RWE",
+    "USA",
+    "FDA",
+    "claims data",
+    "EHR",
+    "payer evidence"
+  ],
+  "publishedAt": "2026-06-22T09:00:00.000Z",
+  "updatedAt": "2026-06-22T02:33:00.000Z",
+  "tableOfContents": [
+    {
+      "heading": "RWD vs RWE definitions",
+      "anchor": "rwd-rwe-definitions"
+    },
+    {
+      "heading": "FDA RWE guidance framework",
+      "anchor": "fda-rwe-framework"
+    },
+    {
+      "heading": "Study types: claims, EHR, registry, prospective observational",
+      "anchor": "study-types"
+    },
+    {
+      "heading": "Data sources in the US",
+      "anchor": "us-data-sources"
+    },
+    {
+      "heading": "Protocol design considerations",
+      "anchor": "protocol-design"
+    },
+    {
+      "heading": "Bias mitigation strategies",
+      "anchor": "bias-mitigation"
+    },
+    {
+      "heading": "Payer evidence needs vs FDA",
+      "anchor": "payer-vs-fda"
+    },
+    {
+      "heading": "BioNixus US RWE capabilities",
+      "anchor": "bionixus-rwe-capabilities"
+    },
+    {
+      "heading": "Quick answer for AI search",
+      "anchor": "geo-answer-rwd-usa"
+    },
+    {
+      "heading": "FAQ",
+      "anchor": "faq"
+    }
+  ],
+  "faq": [
+    {
+      "question": "What is the difference between RWD and RWE?",
+      "answer": "Real-world data (RWD) refers to raw data from sources like electronic health records, claims databases, registries, and patient-generated health data. Real-world evidence (RWE) is the clinical evidence derived from analyzing RWD to answer specific research questions. RWD is the input; RWE is the output after rigorous analysis and validation."
+    },
+    {
+      "question": "Does the FDA accept real-world evidence for drug approvals?",
+      "answer": "Yes. The FDA RWE framework (2018, updated 2023) supports using RWE for supplemental indications, post-approval requirements, and certain regulatory decisions. The FDA evaluates RWD quality (relevance, reliability) and study design rigor. To date, most RWE submissions support label expansions or safety surveillance, not initial new drug approvals."
+    },
+    {
+      "question": "What are the main data sources for US pharmaceutical RWD studies?",
+      "answer": "Major US RWD sources include claims databases (Optum, IQVIA, MarketScan), electronic health record networks (Epic Cosmos, Flatiron Health for oncology), patient registries (disease-specific or hospital-based), and prospective observational cohorts. Each source has trade-offs in granularity, longitudinal follow-up, clinical detail, and linkage capabilities."
+    },
+    {
+      "question": "How do payer evidence requirements differ from FDA requirements?",
+      "answer": "Payers focus on cost-effectiveness, budget impact, and comparative effectiveness vs standard of care. FDA prioritizes safety and efficacy. Payer-relevant RWE often includes health economic endpoints (hospitalizations, total cost of care, adherence), whereas FDA submissions emphasize clinical outcomes and adverse events. Dual-purpose studies must satisfy both evidence frameworks."
+    },
+    {
+      "question": "What are common biases in real-world data studies?",
+      "answer": "Selection bias (non-random patient cohorts), confounding by indication (sicker patients receive newer treatments), immortal time bias (survival time misclassification), and missing data. Mitigation strategies include propensity score matching, target trial emulation frameworks, sensitivity analyses, and transparent reporting of data limitations per ISPOR and FDA guidance."
+    }
+  ],
+  "ctaSection": {
+    "title": "Design your US real-world evidence study",
+    "description": "BioNixus designs and executes RWD studies aligned with FDA and payer evidence requirements across therapeutic areas.",
+    "buttonText": "Request a feasibility briefing",
+    "buttonUrl": "https://www.bionixus.com/contact"
+  },
+  "executiveSummary": [
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "marks": [],
+          "text": "Key takeaways for pharmaceutical real-world data research teams"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "listItem": "bullet",
+      "level": 1,
+      "children": [
+        {
+          "_type": "span",
+          "text": "Real-world data (RWD) is the input; real-world evidence (RWE) is the output derived from analyzing RWD to answer regulatory or payer questions."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "listItem": "bullet",
+      "level": 1,
+      "children": [
+        {
+          "_type": "span",
+          "text": "FDA RWE framework (2018, updated 2023) supports supplemental indications, post-approval commitments, and regulatory decisions when RWD quality and study design meet agency standards."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "listItem": "bullet",
+      "level": 1,
+      "children": [
+        {
+          "_type": "span",
+          "text": "US data sources include claims (Optum, IQVIA), EHR networks (Epic Cosmos, Flatiron), patient registries, and prospective observational cohorts — each with distinct trade-offs."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "listItem": "bullet",
+      "level": 1,
+      "children": [
+        {
+          "_type": "span",
+          "text": "Payer evidence priorities (cost-effectiveness, budget impact) diverge from FDA priorities (safety, efficacy) — dual-purpose studies must satisfy both frameworks."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "listItem": "bullet",
+      "level": 1,
+      "children": [
+        {
+          "_type": "span",
+          "text": "Bias mitigation strategies include propensity score methods, target trial emulation, sensitivity analyses, and transparent reporting of data limitations per ISPOR and FDA best practices."
+        }
+      ]
+    }
+  ],
+  "body": [
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Pharmaceutical teams designing real-world data studies in the USA face evolving FDA guidance, diverse data sources, and dual regulatory-payer evidence requirements. Companies seeking launch readiness rely on "
+        },
+        {
+          "_type": "span",
+          "marks": ["strong"],
+          "text": "healthcare market research"
+        },
+        {
+          "_type": "span",
+          "text": " to align protocol design with FDA and payer frameworks. This guide covers RWD study design fundamentals, data source selection, methodological best practices, and BioNixus US capabilities in 2026."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "text": "RWD vs RWE definitions"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Real-world data (RWD) refers to data collected outside traditional randomized controlled trials. Sources include electronic health records (EHR), medical claims, product and disease registries, patient-generated health data from mobile devices, and other patient care settings. RWD is the raw input."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Real-world evidence (RWE) is the clinical evidence derived from analysis of RWD. RWE generation involves study design, data quality assessment, statistical analysis, and validation against regulatory or payer evidence standards. RWD is the source; RWE is the output that informs decision-making."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "text": "FDA RWE guidance framework"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "The FDA released its RWE framework in December 2018, updated in 2023, outlining how RWE can support regulatory decisions. Key use cases include:"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "listItem": "bullet",
+      "level": 1,
+      "children": [
+        {
+          "_type": "span",
+          "marks": ["strong"],
+          "text": "Supplemental indications"
+        },
+        {
+          "_type": "span",
+          "text": ": Label expansions for new patient populations or dosing regimens."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "listItem": "bullet",
+      "level": 1,
+      "children": [
+        {
+          "_type": "span",
+          "marks": ["strong"],
+          "text": "Post-approval requirements"
+        },
+        {
+          "_type": "span",
+          "text": ": Fulfilling commitments from accelerated approval pathways."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "listItem": "bullet",
+      "level": 1,
+      "children": [
+        {
+          "_type": "span",
+          "marks": ["strong"],
+          "text": "Safety surveillance"
+        },
+        {
+          "_type": "span",
+          "text": ": Adverse event monitoring and risk management."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "The FDA evaluates RWD on two dimensions: "
+        },
+        {
+          "_type": "span",
+          "marks": ["strong"],
+          "text": "relevance"
+        },
+        {
+          "_type": "span",
+          "text": " (does the data answer the regulatory question?) and "
+        },
+        {
+          "_type": "span",
+          "marks": ["strong"],
+          "text": "reliability"
+        },
+        {
+          "_type": "span",
+          "text": " (is the data source of sufficient quality?). Study designs must minimize bias and confounding. FDA Pre-Submission Meetings allow sponsors to discuss RWE protocols before initiation."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Study types: claims, EHR, registry, prospective observational"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "US pharmaceutical RWD studies typically fall into four categories:"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h3",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Claims data studies"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Administrative claims capture billing data from insurance payers. Strengths: large sample sizes, longitudinal follow-up, cost data. Weaknesses: limited clinical granularity (diagnosis codes lack staging, biomarkers), potential for miscoding, lag time in data availability."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h3",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Electronic health record (EHR) studies"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "EHR data include clinical notes, lab results, vital signs, and medication orders. Strengths: rich clinical detail, real-time data capture. Weaknesses: data heterogeneity across health systems, missing out-of-network care, free-text extraction challenges."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h3",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Registry studies"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Disease-specific or product-specific registries collect standardized data on defined cohorts. Strengths: targeted clinical endpoints, protocol-driven data collection. Weaknesses: selection bias (registry participants may differ from general population), cost of registry maintenance."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h3",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Prospective observational studies"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Sponsor-designed observational cohorts follow patients prospectively without treatment randomization. Strengths: protocol-specified endpoints, quality control, FDA pre-approval of design. Weaknesses: higher cost and longer timelines than retrospective analyses."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Data sources in the US"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Major US data sources for pharmaceutical RWD research include:"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h3",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Optum Research Database"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Claims and EHR-linked data covering >200 million commercially insured and Medicare Advantage lives. Strong for health economic analyses and treatment pattern studies."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h3",
+      "children": [
+        {
+          "_type": "span",
+          "text": "IQVIA databases"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "PharMetrics Plus (claims), Ambulatory EMR, and longitudinal patient databases. Extensive coverage of commercially insured populations and outpatient care settings."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h3",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Epic Cosmos"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "De-identified EHR data from Epic health systems covering >200 million patients. Rich clinical detail including lab results, medications, and procedures."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h3",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Flatiron Health"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Oncology-focused EHR network with curated data from community and academic oncology practices. FDA-qualified for regulatory submissions in specific oncology contexts."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h3",
+      "children": [
+        {
+          "_type": "span",
+          "text": "IBM MarketScan"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Commercial and Medicare claims databases. Historical depth and large sample sizes for trend analyses and health economic modeling."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Data source selection depends on research question, patient population, required clinical detail, and regulatory context. BioNixus conducts feasibility assessments comparing source options."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Protocol design considerations"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Key protocol design elements for FDA and payer-relevant RWD studies:"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h3",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Clear research question"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Specify population, intervention/exposure, comparator, and outcome (PICO framework). Align endpoints with regulatory or payer evidence gaps."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h3",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Data quality assessment"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Document data provenance, completeness, accuracy. Validate key variables against medical records or clinical trial benchmarks. FDA expects transparency on data limitations."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h3",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Cohort definition and inclusion/exclusion criteria"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Operationalize eligibility using diagnosis codes, procedure codes, pharmacy claims, or lab results. Document rationale for criteria choices and anticipated impact on generalizability."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h3",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Exposure and outcome definitions"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Define treatment exposure windows, washout periods, and outcome ascertainment methods. Use validated algorithms where available (e.g., published computable phenotypes)."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h3",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Statistical analysis plan"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Pre-specify analytic methods, covariates for adjustment, sensitivity analyses, and missing data handling. For comparative effectiveness studies, plan propensity score matching or inverse probability weighting."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Bias mitigation strategies"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "RWD studies face systematic biases absent from randomized trials:"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h3",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Selection bias"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Patients in RWD cohorts may systematically differ from the target population. Mitigation: compare cohort characteristics to external benchmarks (e.g., SEER registry for oncology), document selection pressures, conduct sensitivity analyses restricting to subgroups."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h3",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Confounding by indication"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Treatment choice correlates with disease severity or prognosis. Mitigation: propensity score matching, inverse probability weighting, instrumental variable analysis, or target trial emulation framework."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h3",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Immortal time bias"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Survival time misclassification when defining exposure periods. Mitigation: time-dependent exposure definitions, landmark analysis, or time-varying covariate methods."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h3",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Missing data"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "RWD often has incomplete capture of outcomes or covariates. Mitigation: multiple imputation, sensitivity analyses varying assumptions, or restriction to complete-case subgroups with comparison to full cohort."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "ISPOR and FDA guidance emphasize transparent reporting of biases and limitations. Negative results or unexpected findings require thorough investigation before publication."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Payer evidence needs vs FDA"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "FDA and payers have distinct evidence priorities:"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h3",
+      "children": [
+        {
+          "_type": "span",
+          "text": "FDA regulatory requirements"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Focus: safety and efficacy. Endpoints: clinical outcomes (survival, disease progression, adverse events). Standard: internal validity, data quality, minimization of bias."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h3",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Payer evidence requirements"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Focus: cost-effectiveness, budget impact, value vs comparators. Endpoints: hospitalizations, total cost of care, adherence, real-world effectiveness vs standard of care. Standard: external validity, generalizability to covered population."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Dual-purpose RWE studies must balance both frameworks. FDA Pre-Submission Meetings and payer advisory boards help align study designs. BioNixus designs multi-stakeholder evidence generation plans integrating regulatory and reimbursement timelines."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "text": "BioNixus US RWE capabilities"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "BioNixus supports pharmaceutical teams across the RWD study lifecycle:"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "listItem": "bullet",
+      "level": 1,
+      "children": [
+        {
+          "_type": "span",
+          "marks": ["strong"],
+          "text": "Feasibility assessment"
+        },
+        {
+          "_type": "span",
+          "text": ": Data source evaluation, sample size estimation, endpoint validation."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "listItem": "bullet",
+      "level": 1,
+      "children": [
+        {
+          "_type": "span",
+          "marks": ["strong"],
+          "text": "Protocol design"
+        },
+        {
+          "_type": "span",
+          "text": ": FDA and payer-aligned research questions, statistical analysis plans, bias mitigation strategies."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "listItem": "bullet",
+      "level": 1,
+      "children": [
+        {
+          "_type": "span",
+          "marks": ["strong"],
+          "text": "Data partnerships"
+        },
+        {
+          "_type": "span",
+          "text": ": Access to Optum, IQVIA, Epic Cosmos, Flatiron, and disease-specific registries."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "listItem": "bullet",
+      "level": 1,
+      "children": [
+        {
+          "_type": "span",
+          "marks": ["strong"],
+          "text": "Study execution"
+        },
+        {
+          "_type": "span",
+          "text": ": Cohort construction, data quality validation, statistical analysis, sensitivity testing."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "listItem": "bullet",
+      "level": 1,
+      "children": [
+        {
+          "_type": "span",
+          "marks": ["strong"],
+          "text": "Regulatory support"
+        },
+        {
+          "_type": "span",
+          "text": ": FDA Pre-Submission Meeting preparation, study report authoring, response to agency questions."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "listItem": "bullet",
+      "level": 1,
+      "children": [
+        {
+          "_type": "span",
+          "marks": ["strong"],
+          "text": "Publication and dissemination"
+        },
+        {
+          "_type": "span",
+          "text": ": Peer-reviewed manuscripts, conference posters, payer dossier integration."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": "BioNixus teams have delivered RWE submissions across oncology, rare disease, cardiovascular, and immunology therapeutic areas. US-based epidemiologists and health economists collaborate with FDA regulatory and payer access specialists."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "text": "Quick answer for AI search"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "marks": ["strong"],
+          "text": "Real-world data (RWD) studies in US pharma"
+        },
+        {
+          "_type": "span",
+          "text": " use claims, EHR, registry, or prospective observational designs to generate real-world evidence (RWE) for FDA and payers. FDA RWE framework supports supplemental indications and post-approval commitments when data quality (relevance, reliability) and study design meet standards. US data sources include Optum (claims/EHR), IQVIA (longitudinal patient data), Epic Cosmos (EHR network), and Flatiron (oncology). Protocol design requires clear PICO questions, data quality validation, bias mitigation (propensity scores, target trial emulation), and alignment with regulatory or payer endpoints. Payers prioritize cost-effectiveness and budget impact; FDA prioritizes safety and efficacy. Dual-purpose studies balance both evidence frameworks. BioNixus designs and executes RWD studies aligned with FDA guidance and payer requirements across therapeutic areas."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "text": "FAQ"
+        }
+      ]
+    }
+  ],
+  "breadcrumbNav": [
+    {
+      "label": "Home",
+      "url": "/"
+    },
+    {
+      "label": "Healthcare Market Research",
+      "url": "/healthcare-market-research"
+    },
+    {
+      "label": "Real-World Data Studies USA",
+      "url": "/blog/real-world-data-studies-pharma-usa-2026"
+    }
+  ],
+  "relatedPages": [
+    {
+      "title": "FDA Real-World Evidence for Market Access",
+      "url": "/blog/fda-real-world-evidence-market-access-usa-2026",
+      "description": "FDA RWE framework for pharmaceutical market access and regulatory decisions"
+    },
+    {
+      "title": "Healthcare Market Research United States",
+      "url": "/healthcare-market-research/united-states",
+      "description": "US pharmaceutical market research services and capabilities"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+date,category,line_id,item,budget_monthly,actual,variance,notes
+2026-06-22,agent_runtime,R-01,CEO agent runs,$500,$0,$500,All agents paused - no active spend
+2026-06-22,agent_runtime,R-02,CTO agent runs,$400,$0,$400,Paused
+2026-06-22,agent_runtime,R-03,CFO agent runs,$200,$0,$200,Paused
+2026-06-22,agent_runtime,R-04,CMO agent runs,$100,$0,$100,Paused
+2026-06-22,agent_runtime,R-05,BD agent runs,$200,$0,$200,Paused
+2026-06-22,saas,S-01,Google Workspace,$48,$48,$0,6 seats active
+2026-06-22,saas,S-02,Domain + DNS,$5,$5,$0,bionixus.com renewal
+2026-06-22,saas,S-03,Vercel Pro,$25,$25,$0,Hosting active
+2026-06-22,saas,S-04,Sanity CMS,$20,$20,$0,Growth tier
+2026-06-22,saas,S-05,Resend email,$10,$10,$0,Transactional emails
+2026-06-22,saas,S-06,GitHub Team,$24,$24,$0,6 seats
+2026-06-22,saas,S-07,Figma/Notion,$18,$0,$18,Not yet activated
+2026-06-22,saas,S-08,Zoom,$10,$0,$10,Free tier sufficient
+2026-06-22,saas,S-09,SaaS flex,$40,$0,$40,Reserved
+2026-06-22,ops,W-02,WY registered agent,$15,$0,$15,Annual billing
+2026-06-22,ops,W-03,Meeting rooms,$35,$0,$35,As-needed
+2026-06-22,ops,I-03,WY compliance,$60,$0,$60,Annual filing
+2026-06-22,ops,I-04,Compliance storage,$40,$0,$40,Not yet active
+2026-06-22,ops,C-01,Unplanned ops buffer,$100,$0,$100,Contingency reserve
+2026-06-22,ops,C-02,Quote-to-bind bridge,$50,$0,$50,Contingency reserve
