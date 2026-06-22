@@ -261,7 +261,7 @@ const Blog = () => {
               >
                 <li className="rounded-xl border border-white/20 bg-white/10 px-5 py-4 text-center">
                   <p className="text-2xl md:text-3xl font-display font-semibold text-primary-foreground glow-pop">
-                    {postCount}+
+                    {postCount}
                   </p>
                   <p className="text-sm text-primary-foreground/80 mt-1">
                     {isArabicBlog ? 'مقالات منشورة' : 'Published articles'}

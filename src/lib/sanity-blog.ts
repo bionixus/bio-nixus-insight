@@ -13,6 +13,20 @@ function stripHtml(input: string): string {
   return input.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
+/** Safety cap for blog index listing (Sanity + hardcoded). Raise if catalog grows. */
+export const BLOG_INDEX_POST_LIMIT = 512;
+
+function postSortTime(post: Pick<BlogPost, 'publishedAtIso' | 'date'>): number {
+  const raw = post.publishedAtIso || post.date;
+  if (!raw) return 0;
+  const t = new Date(raw).getTime();
+  return Number.isNaN(t) ? 0 : t;
+}
+
+function sortPostsNewestFirst(posts: BlogPost[]): BlogPost[] {
+  return [...posts].sort((a, b) => postSortTime(b) - postSortTime(a));
+}
+
 const POSTS_QUERY = `*[_type == "blogPost" && defined(slug.current)] | order(publishedAt desc, _createdAt desc) {
   _id,
   _type,
@@ -29,7 +43,7 @@ const POSTS_QUERY = `*[_type == "blogPost" && defined(slug.current)] | order(pub
   country,
   "countryTitle": country->title,
   "coverImage": mainImage.asset->url
-}[0...50]`;
+}[0...$limit]`;
 
 const LATEST_INSIGHTS_QUERY = `*[
   _type == "blogPost" &&
@@ -203,16 +217,21 @@ export async function checkSanityConnection(): Promise<{ ok: true } | { ok: fals
   }
 }
 
-export async function fetchSanityPostsWithClient(client: SanityClient): Promise<BlogPost[]> {
+export async function fetchSanityPostsWithClient(
+  client: SanityClient,
+  limit = BLOG_INDEX_POST_LIMIT,
+): Promise<BlogPost[]> {
   try {
-    const raw = await client.fetch<RawSanityPost[]>(POSTS_QUERY);
+    const raw = await client.fetch<RawSanityPost[]>(POSTS_QUERY, {
+      limit: Math.max(1, Math.min(limit, BLOG_INDEX_POST_LIMIT)),
+    });
     const sanityPosts = raw.map((p) => mapRawToPost(p)!).filter(Boolean);
     const sanitySlugs = new Set(sanityPosts.map((p) => p.slug));
     const newHardcoded = hardcodedSeoPosts.filter((p) => !sanitySlugs.has(p.slug));
-    return [...sanityPosts, ...newHardcoded];
+    return sortPostsNewestFirst([...sanityPosts, ...newHardcoded]);
   } catch (err) {
     console.error('Failed to fetch from Sanity CMS, fallback to hardcoded posts', err);
-    return [...hardcodedSeoPosts];
+    return sortPostsNewestFirst([...hardcodedSeoPosts]);
   }
 }
 

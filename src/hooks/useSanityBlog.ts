@@ -24,9 +24,11 @@ export function useSanityBlog(ssrPosts?: BlogPost[] | null) {
     return posts
       .filter((p) => !p.language || p.language === language)
       .sort((a, b) => {
-        const da = a.date ? new Date(a.date).getTime() : 0;
-        const db = b.date ? new Date(b.date).getTime() : 0;
-        return db - da; // newest first
+        const da = a.publishedAtIso || a.date;
+        const db = b.publishedAtIso || b.date;
+        const ta = da ? new Date(da).getTime() : 0;
+        const tb = db ? new Date(db).getTime() : 0;
+        return (Number.isNaN(tb) ? 0 : tb) - (Number.isNaN(ta) ? 0 : ta);
       });
   }, [query.data, language]);
 
