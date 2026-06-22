@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { useMemo } from 'react';
+import { useMemo, useState, useCallback } from 'react';
 import { ArrowLeft, BookOpen, Sparkles } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import BlogSection from '@/components/BlogSection';
+import BlogIndexFilters from '@/components/blog/BlogIndexFilters';
 import { CTASection } from '@/components/shared/CTASection';
 import { useSanityBlog } from '@/hooks/useSanityBlog';
 import { blogRecoveryPaths } from '@/lib/internalLinkRecovery';
@@ -15,6 +16,14 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { getHreflangLinks, languagePaths } from '@/lib/seo';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import type { BlogPost } from '@/types/blog';
+import {
+  ALL_COUNTRIES,
+  ALL_TOPICS,
+  buildFilterOptions,
+  filterBlogPosts,
+  hasActiveBlogFilters,
+  type BlogIndexFilterState,
+} from '@/lib/blog-index-filters';
 
 function buildBlogCollectionSchema(
   canonical: string,
@@ -103,7 +112,66 @@ const Blog = () => {
   const isArabicBlog = pathname.startsWith('/ar/blog');
   const isGerman = pathname.startsWith('/de/');
   const isFrench = pathname.startsWith('/fr/');
-  const postCount = posts?.length ?? ssrPosts?.length ?? 0;
+
+  const allPosts = posts ?? ssrPosts ?? [];
+  const [filterState, setFilterState] = useState<BlogIndexFilterState>({
+    search: '',
+    country: ALL_COUNTRIES,
+    topic: ALL_TOPICS,
+  });
+
+  const countryOptions = useMemo(() => buildFilterOptions(allPosts, 'country'), [allPosts]);
+  const topicOptions = useMemo(() => buildFilterOptions(allPosts, 'category'), [allPosts]);
+  const filteredPosts = useMemo(
+    () => filterBlogPosts(allPosts, filterState),
+    [allPosts, filterState],
+  );
+  const filtersActive = hasActiveBlogFilters(filterState);
+  const postCount = allPosts.length;
+  const visibleCount = filteredPosts.length;
+
+  const handleFilterChange = useCallback((patch: Partial<BlogIndexFilterState>) => {
+    setFilterState((prev) => ({ ...prev, ...patch }));
+  }, []);
+
+  const handleClearFilters = useCallback(() => {
+    setFilterState({ search: '', country: ALL_COUNTRIES, topic: ALL_TOPICS });
+  }, []);
+
+  const filterLabels = isArabicBlog
+    ? {
+        searchPlaceholder: 'ابحث في المقالات بالعنوان أو الموضوع…',
+        countryLabel: 'الدولة / المنطقة',
+        countryAll: 'جميع الدول',
+        topicLabel: 'الموضوع',
+        topicAll: 'جميع المواضيع',
+        clear: 'مسح الفلاتر',
+        showing: (visible: number, total: number) =>
+          visible === total ? `${total} مقالة` : `عرض ${visible} من ${total} مقالة`,
+      }
+    : isGerman
+      ? {
+          searchPlaceholder: 'Artikel nach Titel, Thema oder Stichwort suchen…',
+          countryLabel: 'Land / Region',
+          countryAll: 'Alle Länder',
+          topicLabel: 'Thema',
+          topicAll: 'Alle Themen',
+          clear: 'Filter zurücksetzen',
+          showing: (visible: number, total: number) =>
+            visible === total ? `${total} Artikel` : `${visible} von ${total} Artikeln`,
+        }
+      : isFrench
+        ? {
+            searchPlaceholder: 'Rechercher par titre, thème ou mot-clé…',
+            countryLabel: 'Pays / région',
+            countryAll: 'Tous les pays',
+            topicLabel: 'Thème',
+            topicAll: 'Tous les thèmes',
+            clear: 'Effacer les filtres',
+            showing: (visible: number, total: number) =>
+              visible === total ? `${total} articles` : `${visible} sur ${total} articles`,
+          }
+        : undefined;
 
   const heroRef = useScrollReveal<HTMLElement>({ stagger: 80 });
   const introRef = useScrollReveal<HTMLElement>({ stagger: 100 });
@@ -360,12 +428,27 @@ const Blog = () => {
           </section>
         ) : null}
 
+        {!isLoading && postCount > 0 ? (
+          <BlogIndexFilters
+            state={filterState}
+            onChange={handleFilterChange}
+            onClear={handleClearFilters}
+            countryOptions={countryOptions}
+            topicOptions={topicOptions}
+            visibleCount={visibleCount}
+            totalCount={postCount}
+            labels={filterLabels}
+            dir={mainDir}
+          />
+        ) : null}
+
         <BlogSection
-          posts={posts ?? ssrPosts}
+          posts={filteredPosts}
           isLoading={isLoading && !ssrPosts?.length}
           variant="index"
           showHeader={false}
           showViewAllLink={false}
+          disableFeatured={filtersActive}
         />
 
         <section className="section-padding py-10 bg-background" ref={linksRef}>

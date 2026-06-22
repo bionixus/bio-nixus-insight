@@ -21,6 +21,8 @@ interface BlogSectionProps {
   showHeader?: boolean;
   /** Hide footer link to /blog (redundant on blog index) */
   showViewAllLink?: boolean;
+  /** When true, show all posts in grid (no featured hero card) */
+  disableFeatured?: boolean;
 }
 
 const DEFAULT_COVER_IMAGES = [blogImage1, blogImage2, blogImage3];
@@ -130,6 +132,7 @@ const BlogSection = ({
   variant = 'default',
   showHeader = true,
   showViewAllLink = true,
+  disableFeatured = false,
 }: BlogSectionProps) => {
   const { t, language } = useLanguage();
   const { pathname } = useLocation();
@@ -161,9 +164,10 @@ const BlogSection = ({
   const sectionRef = useScrollReveal<HTMLElement>({ stagger: isMagazineLayout ? 90 : 120, key: revealKey });
 
   const filteredPosts = useMemo(() => list, [list]);
+  const useFeaturedLayout = isMagazineLayout && !disableFeatured;
   const [featuredPost, ...gridPosts] =
-    isMagazineLayout && filteredPosts.length > 0 ? filteredPosts : [null, ...filteredPosts];
-  const gridOnlyPosts = isMagazineLayout ? gridPosts : filteredPosts;
+    useFeaturedLayout && filteredPosts.length > 0 ? filteredPosts : [null, ...filteredPosts];
+  const gridOnlyPosts = useFeaturedLayout ? gridPosts : filteredPosts;
 
   const skeletonGridCount = isHomeLayout ? 2 : isMagazineLayout ? 6 : 3;
 
