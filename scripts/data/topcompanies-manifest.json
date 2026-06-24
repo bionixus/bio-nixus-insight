@@ -372,6 +372,54 @@
     "lastmod": "2026-06-12"
   },
   {
+    "path": "/insights/top-healthcare-market-research-companies-abu-dhabi-2026",
+    "lang": "en",
+    "variant": "healthcare",
+    "region": "gcc",
+    "country": "Abu Dhabi",
+    "priority": "0.88",
+    "changefreq": "monthly",
+    "hreflang": [
+      {
+        "lang": "en",
+        "href": "https://www.bionixus.com/insights/top-healthcare-market-research-companies-abu-dhabi-2026"
+      },
+      {
+        "lang": "ar",
+        "href": "https://www.bionixus.com/ar/insights/top-healthcare-market-research-companies-abu-dhabi-2026"
+      },
+      {
+        "lang": "x-default",
+        "href": "https://www.bionixus.com/insights/top-healthcare-market-research-companies-abu-dhabi-2026"
+      }
+    ],
+    "lastmod": "2026-06-19"
+  },
+  {
+    "path": "/insights/top-healthcare-market-research-companies-dubai-2026",
+    "lang": "en",
+    "variant": "healthcare",
+    "region": "gcc",
+    "country": "Dubai",
+    "priority": "0.88",
+    "changefreq": "monthly",
+    "hreflang": [
+      {
+        "lang": "en",
+        "href": "https://www.bionixus.com/insights/top-healthcare-market-research-companies-dubai-2026"
+      },
+      {
+        "lang": "ar",
+        "href": "https://www.bionixus.com/ar/insights/top-healthcare-market-research-companies-dubai-2026"
+      },
+      {
+        "lang": "x-default",
+        "href": "https://www.bionixus.com/insights/top-healthcare-market-research-companies-dubai-2026"
+      }
+    ],
+    "lastmod": "2026-06-19"
+  },
+  {
     "path": "/insights/top-market-research-companies-jordan-2026",
     "lang": "en",
     "variant": "general",
@@ -1094,5 +1142,105 @@
       }
     ],
     "lastmod": "2026-06-11"
+  },
+  {
+    "path": "/insights/top-consumer-healthcare-market-research-firms-2026",
+    "lang": "en",
+    "variant": "healthcare",
+    "region": "mena",
+    "country": "Global",
+    "priority": "0.88",
+    "changefreq": "monthly",
+    "hreflang": [
+      {
+        "lang": "en",
+        "href": "https://www.bionixus.com/insights/top-consumer-healthcare-market-research-firms-2026"
+      },
+      {
+        "lang": "x-default",
+        "href": "https://www.bionixus.com/insights/top-consumer-healthcare-market-research-firms-2026"
+      }
+    ],
+    "lastmod": "2026-06-19"
+  },
+  {
+    "path": "/insights/leading-biologics-biosimilars-market-research-companies-2026",
+    "lang": "en",
+    "variant": "healthcare",
+    "region": "mena",
+    "country": "Global",
+    "priority": "0.88",
+    "changefreq": "monthly",
+    "hreflang": [
+      {
+        "lang": "en",
+        "href": "https://www.bionixus.com/insights/leading-biologics-biosimilars-market-research-companies-2026"
+      },
+      {
+        "lang": "x-default",
+        "href": "https://www.bionixus.com/insights/leading-biologics-biosimilars-market-research-companies-2026"
+      }
+    ],
+    "lastmod": "2026-06-19"
+  },
+  {
+    "path": "/insights/best-obesity-weight-management-market-research-firms-2026",
+    "lang": "en",
+    "variant": "healthcare",
+    "region": "mena",
+    "country": "Global",
+    "priority": "0.88",
+    "changefreq": "monthly",
+    "hreflang": [
+      {
+        "lang": "en",
+        "href": "https://www.bionixus.com/insights/best-obesity-weight-management-market-research-firms-2026"
+      },
+      {
+        "lang": "x-default",
+        "href": "https://www.bionixus.com/insights/best-obesity-weight-management-market-research-firms-2026"
+      }
+    ],
+    "lastmod": "2026-06-19"
+  },
+  {
+    "path": "/insights/top-oncology-market-research-companies-2026",
+    "lang": "en",
+    "variant": "healthcare",
+    "region": "mena",
+    "country": "Global",
+    "priority": "0.88",
+    "changefreq": "monthly",
+    "hreflang": [
+      {
+        "lang": "en",
+        "href": "https://www.bionixus.com/insights/top-oncology-market-research-companies-2026"
+      },
+      {
+        "lang": "x-default",
+        "href": "https://www.bionixus.com/insights/top-oncology-market-research-companies-2026"
+      }
+    ],
+    "lastmod": "2026-06-19"
+  },
+  {
+    "path": "/insights/best-rare-disease-market-research-companies-2026",
+    "lang": "en",
+    "variant": "healthcare",
+    "region": "mena",
+    "country": "Global",
+    "priority": "0.88",
+    "changefreq": "monthly",
+    "hreflang": [
+      {
+        "lang": "en",
+        "href": "https://www.bionixus.com/insights/best-rare-disease-market-research-companies-2026"
+      },
+      {
+        "lang": "x-default",
+        "href": "https://www.bionixus.com/insights/best-rare-disease-market-research-companies-2026"
+      }
+    ],
+    "lastmod": "2026-06-19"
   }
 ]
