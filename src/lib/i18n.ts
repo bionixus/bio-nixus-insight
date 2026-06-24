@@ -25,7 +25,7 @@ export const translations = {
         'Europe, Middle East, and Africa pharmaceutical and healthcare market research snapshot',
     },
     hero: {
-      tagline: 'Specialist pharmaceutical & healthcare market research',
+      tagline: 'Global International Market Research Firm',
       title: 'Pharmaceutical and healthcare market research for confident launch, access, and growth',
       subtitle:
         'BioNixus is a global pharmaceutical and healthcare market research company. We help pharma, biotech, and medtech teams turn physician, payer, and hospital evidence into decisions that move launches forward — with country-level depth across MENA, Latin America, Eastern Europe, and the wider EMEA region.',

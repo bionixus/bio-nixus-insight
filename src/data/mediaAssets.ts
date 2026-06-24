@@ -7,14 +7,19 @@ export type MediaFigure = {
 };
 
 export type HeroVideoConfig = {
-  src: string;
+  /** Local MP4 path under /public */
+  src?: string;
+  /** YouTube video ID (preferred when hosted on YouTube) */
+  youtubeId?: string;
   poster: string;
   alt: string;
 };
 
 export type ProofVideoConfig = {
-  /** MP4 path under /public; omit to show poster + link fallback */
+  /** MP4 path under /public */
   src?: string;
+  /** YouTube video ID */
+  youtubeId?: string;
   poster: string;
   title: string;
   description: string;
@@ -39,14 +44,14 @@ export const SHARED_FIGURES = {
   hcpWorkshop: {
     src: '/images/quant-hcp-survey-executive.png',
     alt: 'Healthcare market research workshop with GCC commercial and market access leaders reviewing pharmaceutical evidence',
-    caption: 'Decision workshop: converting pharmaceutical evidence into launch and access actions.',
+    caption: 'Converting pharmaceutical data and evidence into launch and access actions.',
     width: 800,
     height: 448,
   },
   validationLab: {
     src: '/images/quant-ai-validation-lab.png',
     alt: 'Pharmaceutical data validation workflow combining quantitative analytics and AI-assisted quality review',
-    caption: 'Validation operations with governed AI-assisted quality controls for healthcare datasets.',
+    caption: 'Human validation operations with governed AI-assisted quality controls for healthcare datasets.',
     width: 800,
     height: 448,
   },
@@ -59,11 +64,11 @@ export const SHARED_FIGURES = {
   },
 } satisfies Record<string, MediaFigure>;
 
-/** Canonical homepage / explainer video (MP4 under /public/media). */
+/** Canonical homepage overview video (YouTube). */
 export const HOME_OVERVIEW_VIDEO = {
-  src: '/media/healthcare-market-research-overview.mp4',
-  poster: '/media/healthcare-market-research-overview-poster.jpg',
-  alt: 'BioNixus healthcare and pharmaceutical market research — global fieldwork and evidence programs',
+  youtubeId: 'XEFjIQRUkCk',
+  poster: 'https://img.youtube.com/vi/XEFjIQRUkCk/hqdefault.jpg',
+  alt: 'BioNixus global market research overview — quantitative, qualitative, and access intelligence',
 } satisfies HeroVideoConfig;
 
 export const PAGE_MEDIA: Record<string, PageMediaConfig> = {
@@ -74,7 +79,7 @@ export const PAGE_MEDIA: Record<string, PageMediaConfig> = {
       figures: [SHARED_FIGURES.hcpWorkshop, SHARED_FIGURES.validationLab],
     },
     proofVideo: {
-      src: HOME_OVERVIEW_VIDEO.src,
+      youtubeId: HOME_OVERVIEW_VIDEO.youtubeId,
       poster: HOME_OVERVIEW_VIDEO.poster,
       title: 'BioNixus healthcare market research overview',
       description:

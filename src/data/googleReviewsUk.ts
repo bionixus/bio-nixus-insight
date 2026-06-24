@@ -1,11 +1,10 @@
 /**
  * BioNixus UK Google Business Profile reviews (London listing).
- * Source: https://www.google.com/maps/place/?q=googlemid%3A%2Fg%2F11vy7d4_n1
- * Last verified: 2026-06-12
+ * Source: https://maps.app.goo.gl/h8eEUQ9V3TryGF1t7
+ * Last verified: 2026-06-25
  */
 
-export const BIONIXUS_UK_GBP_MAPS_URL =
-  'https://www.google.com/maps/place/?q=googlemid%3A%2Fg%2F11vy7d4_n1';
+export const BIONIXUS_UK_GBP_MAPS_URL = 'https://maps.app.goo.gl/h8eEUQ9V3TryGF1t7';
 
 export const BIONIXUS_UK_GBP_PLACE_ID = '/g/11vy7d4_n1';
 

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
+import { PremiumComplianceRibbon } from '@/components/home/PremiumComplianceRibbon';
 import { HOME_OVERVIEW_VIDEO } from '@/data/mediaAssets';
 import EmeaSignalsSection from '@/components/home/EmeaSignalsSection';
 import ServicesSection from '@/components/ServicesSection';
@@ -158,6 +159,7 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
+        <PremiumComplianceRibbon />
         <EmeaSignalsSection />
         <ServicesSection />
         <HomeExplainerSection />

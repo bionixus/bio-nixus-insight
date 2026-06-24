@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import type { ProofVideoConfig } from '@/data/mediaAssets';
 import { OptimizedImage } from '@/components/media/OptimizedImage';
+import { YouTubeEmbed } from '@/components/media/YouTubeEmbed';
 
 type ProofVideoEmbedProps = {
   config: ProofVideoConfig;
@@ -8,7 +9,7 @@ type ProofVideoEmbedProps = {
 };
 
 export function ProofVideoEmbed({ config, className = '' }: ProofVideoEmbedProps) {
-  const { src, poster, title, description, transcript, fallbackHref, fallbackLabel } = config;
+  const { src, youtubeId, poster, title, description, transcript, fallbackHref, fallbackLabel } = config;
 
   return (
     <section className={`section-padding py-8 ${className}`} aria-labelledby="proof-video-heading">
@@ -18,7 +19,14 @@ export function ProofVideoEmbed({ config, className = '' }: ProofVideoEmbedProps
         </h2>
         <p className="text-muted-foreground leading-relaxed mb-6">{description}</p>
 
-        {src ? (
+        {youtubeId ? (
+          <figure className="rounded-xl border border-border bg-card overflow-hidden">
+            <YouTubeEmbed videoId={youtubeId} title={title} />
+            <figcaption className="p-4 text-xs text-muted-foreground leading-relaxed">
+              {transcript}
+            </figcaption>
+          </figure>
+        ) : src ? (
           <figure className="rounded-xl border border-border bg-card overflow-hidden">
             <video
               controls

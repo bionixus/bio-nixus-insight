@@ -305,7 +305,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=128+City+Road,+London,+England+EC1V+2NX,+GB"
+                  href="https://maps.app.goo.gl/h8eEUQ9V3TryGF1t7"
                   target="_blank"
                   rel="noopener noreferrer"
                   title="128 City Road, London, England EC1V 2NX, GB"
