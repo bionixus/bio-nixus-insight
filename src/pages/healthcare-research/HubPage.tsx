@@ -651,6 +651,13 @@ export default function HubPage() {
               <h3 className="text-base font-semibold text-foreground mb-2">EAEU Pharmaceutical Market Access Guide</h3>
               <p className="text-sm text-muted-foreground">Regulatory pathways, registration requirements, and market access strategy across the Eurasian Economic Union.</p>
             </Link>
+            <Link
+              to="/consumer-market-research"
+              className="block p-5 rounded-xl border border-amber-200 bg-amber-50 hover:border-amber-400 transition-colors"
+            >
+              <h3 className="text-base font-semibold text-amber-900 mb-2">Consumer & B2B Research Portal</h3>
+              <p className="text-sm text-amber-700">FMCG, retail, financial services, technology, and 8 more industries — fieldwork in 10+ countries.</p>
+            </Link>
           </div>
       </ReportPremiumSection>
 

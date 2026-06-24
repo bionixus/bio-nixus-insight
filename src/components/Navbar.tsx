@@ -61,6 +61,7 @@ const Navbar = () => {
     { key: 'home', href: basePath, label: t.nav.home },
     { key: 'about', href: '/about', label: t.nav.about },
     { key: 'services', href: '/services', label: t.nav.services },
+    { key: 'industries', href: '/consumer-market-research', label: 'Industries' },
     { key: 'insights', href: insightsHref, label: t.nav.insights },
   ];
 

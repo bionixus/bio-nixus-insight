@@ -28,8 +28,13 @@ const TRUST_STATS = [
 
 const NEXT_STEP_LINKS = [
   {
+    to: '/consumer-market-research',
+    label: 'Consumer & B2B Research Portal',
+    description: 'FMCG, retail, financial services, technology, and 8 more industries across 10+ countries.',
+  },
+  {
     to: '/market-research-by-industry',
-    label: 'Industries index — Saudi Arabia, UAE & Egypt',
+    label: 'Industries index — 10 countries × 16 industries',
     description: 'Every published country-by-industry page in one place.',
   },
   {

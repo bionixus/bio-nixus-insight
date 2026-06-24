@@ -6,7 +6,17 @@
 import { BIONIXUS_MARKETING_CLAIMS } from '@/data/marketingClaims';
 import { getIndustryBofuExecutivePoints } from '@/data/industryBofuExecutivePoints';
 
-export type MatrixCountrySlug = 'saudi-arabia' | 'uae' | 'egypt';
+export type MatrixCountrySlug =
+  | 'saudi-arabia'
+  | 'uae'
+  | 'egypt'
+  | 'kuwait'
+  | 'qatar'
+  | 'oman'
+  | 'uk'
+  | 'usa'
+  | 'brazil'
+  | 'germany';
 export type MatrixIndustrySlug =
   | 'medtech'
   | 'healthcare'
@@ -112,6 +122,76 @@ export const MATRIX_COUNTRIES: Record<MatrixCountrySlug, MatrixCountryConfig> = 
     pharmaBofuPath: '/egypt-pharmaceutical-market-research',
     healthcareReportPath: '/egypt-healthcare-market-report',
     medDevicesReportPath: '/egypt-medical-devices-market-report',
+  },
+  kuwait: {
+    slug: 'kuwait',
+    label: 'Kuwait',
+    regulatorShort: 'KFDA',
+    midFunnelPath: '/market-research-kuwait',
+    healthcareHubPath: '/healthcare-market-research/kuwait',
+    pharmaBofuPath: '/kuwait-pharmaceutical-market-research',
+    healthcareReportPath: '/kuwait-healthcare-market-report',
+    medDevicesReportPath: '/kuwait-medical-devices-market-report',
+  },
+  qatar: {
+    slug: 'qatar',
+    label: 'Qatar',
+    regulatorShort: 'QCDD',
+    midFunnelPath: '/market-research-qatar',
+    healthcareHubPath: '/healthcare-market-research/qatar',
+    pharmaBofuPath: '/qatar-pharmaceutical-market-research',
+    healthcareReportPath: '/qatar-healthcare-market-report',
+    medDevicesReportPath: '/qatar-medical-devices-market-report',
+  },
+  oman: {
+    slug: 'oman',
+    label: 'Oman',
+    regulatorShort: 'MOH',
+    midFunnelPath: '/market-research-oman',
+    healthcareHubPath: '/healthcare-market-research/oman',
+    pharmaBofuPath: '/oman-pharmaceutical-market-research',
+    healthcareReportPath: '/oman-healthcare-market-report',
+    medDevicesReportPath: '/oman-medical-devices-market-report',
+  },
+  uk: {
+    slug: 'uk',
+    label: 'United Kingdom',
+    regulatorShort: 'MHRA',
+    midFunnelPath: '/market-research-uk',
+    healthcareHubPath: '/healthcare-market-research/uk',
+    pharmaBofuPath: '/uk-pharmaceutical-market-research',
+    healthcareReportPath: '/uk-healthcare-market-report',
+    medDevicesReportPath: '/uk-medical-devices-market-report',
+  },
+  usa: {
+    slug: 'usa',
+    label: 'United States',
+    regulatorShort: 'FDA',
+    midFunnelPath: '/market-research-usa',
+    healthcareHubPath: '/healthcare-market-research/usa',
+    pharmaBofuPath: '/usa-pharmaceutical-market-research',
+    healthcareReportPath: '/usa-healthcare-market-report',
+    medDevicesReportPath: '/usa-medical-devices-market-report',
+  },
+  brazil: {
+    slug: 'brazil',
+    label: 'Brazil',
+    regulatorShort: 'ANVISA',
+    midFunnelPath: '/market-research-brazil',
+    healthcareHubPath: '/healthcare-market-research/brazil',
+    pharmaBofuPath: '/brazil-pharmaceutical-market-research',
+    healthcareReportPath: '/brazil-healthcare-market-report',
+    medDevicesReportPath: '/brazil-medical-devices-market-report',
+  },
+  germany: {
+    slug: 'germany',
+    label: 'Germany',
+    regulatorShort: 'BfArM',
+    midFunnelPath: '/market-research-germany',
+    healthcareHubPath: '/healthcare-market-research/germany',
+    pharmaBofuPath: '/germany-pharmaceutical-market-research',
+    healthcareReportPath: '/germany-healthcare-market-report',
+    medDevicesReportPath: '/germany-medical-devices-market-report',
   },
 };
 

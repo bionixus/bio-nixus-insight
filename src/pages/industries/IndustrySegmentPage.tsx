@@ -20,7 +20,11 @@ import { PREMIUM_INDUSTRIES_CSS } from './premiumIndustriesCss';
 const HUB_PATH = '/bionixus-industries';
 
 /** Country cells available for every published matrix industry. */
-const MATRIX_COUNTRY_ORDER: MatrixCountrySlug[] = ['saudi-arabia', 'uae', 'egypt'];
+const MATRIX_COUNTRY_ORDER: MatrixCountrySlug[] = [
+  'saudi-arabia', 'uae', 'egypt',
+  'kuwait', 'qatar', 'oman',
+  'uk', 'usa', 'brazil', 'germany',
+];
 
 /** Accent colour per segment (teal / gold / coral) used for the eyebrow chrome. */
 const SEGMENT_ACCENT: Record<SegmentSlug, 'teal' | 'gold' | 'coral'> = {
@@ -197,8 +201,9 @@ export default function IndustrySegmentPage({ slug }: IndustrySegmentPageProps) 
                   Industries we cover in this <em>segment</em>
                 </h2>
                 <p className="bx-lead">
-                  Each industry has dedicated country pages for Saudi Arabia, the UAE, and Egypt. Follow a link to the
-                  market you are planning for, or start from the{' '}
+                  Each industry has dedicated country pages across the GCC, Europe, and the Americas — Saudi Arabia,
+                  UAE, Egypt, Kuwait, Qatar, Oman, UK, USA, Brazil, and Germany. Follow a link to the market you are
+                  planning for, or start from the{' '}
                   <Link to="/market-research-by-industry">full industries index</Link>.
                 </p>
               </div>

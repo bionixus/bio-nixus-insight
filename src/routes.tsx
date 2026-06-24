@@ -195,6 +195,9 @@ import EsHealthcareMarketResearchSpain from '@/pages/EsHealthcareMarketResearchS
 import ArHealthcareMarketResearch from '@/pages/ArHealthcareMarketResearch';
 import ArHealthcareMarketResearchSaudiArabia from '@/pages/ArHealthcareMarketResearchSaudiArabia';
 
+import ConsumerMarketResearchPortal from '@/pages/ConsumerMarketResearchPortal';
+import IndustryGlobalHubPage from '@/pages/IndustryGlobalHubPage';
+
 const AdminDashboard = lazy(() => import('@/pages/AdminDashboard'));
 const AdminLogin = lazy(() => import('@/pages/AdminLogin'));
 const AdminImportSubscribers = lazy(() => import('@/pages/AdminImportSubscribers'));
@@ -487,6 +490,8 @@ export const routes: RouteObject[] = [
   },
   { path: '/b2b-industries', element: <IndustrySegmentPage slug="b2b" /> },
   { path: '/b2c-industries', element: <IndustrySegmentPage slug="b2c" /> },
+  { path: '/consumer-market-research', element: <ConsumerMarketResearchPortal /> },
+  { path: '/market-research/:industrySlug', element: <IndustryGlobalHubPage /> },
   ...buildIndustryMatrixRoutes(),
   { path: '/admin/dashboard', element: suspensePage(<AdminDashboard />) },
   { path: '/admin/login', element: suspensePage(<AdminLogin />) },

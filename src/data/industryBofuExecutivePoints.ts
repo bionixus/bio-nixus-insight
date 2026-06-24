@@ -2,7 +2,7 @@ import type { MatrixCountrySlug, MatrixIndustrySlug } from '@/data/industryMarke
 
 export type IndustryExecutivePoint = { title: string; body: string };
 
-type ExecutivePointsMatrix = Record<MatrixIndustrySlug, Record<MatrixCountrySlug, IndustryExecutivePoint[]>>;
+type ExecutivePointsMatrix = Record<MatrixIndustrySlug, Partial<Record<MatrixCountrySlug, IndustryExecutivePoint[]>>>;
 
 /** Bespoke executive decision points per industry × country (48 BOFU pages). */
 const EXECUTIVE_POINTS: ExecutivePointsMatrix = {
@@ -856,13 +856,60 @@ const EXECUTIVE_POINTS: ExecutivePointsMatrix = {
   },
 };
 
+function buildFallbackExecutivePoints(
+  industrySlug: MatrixIndustrySlug,
+  countrySlug: MatrixCountrySlug,
+): IndustryExecutivePoint[] {
+  const industryLabels: Record<MatrixIndustrySlug, string> = {
+    medtech: 'MedTech',
+    healthcare: 'Healthcare',
+    biotech: 'Biotech',
+    'consumer-health': 'Consumer health',
+    fmcg: 'FMCG',
+    retail: 'Retail',
+    'financial-services': 'Financial services',
+    telecom: 'Telecom',
+    technology: 'Technology',
+    energy: 'Energy',
+    'real-estate': 'Real estate',
+    automotive: 'Automotive',
+    hospitality: 'Hospitality',
+    'public-sector': 'Public sector',
+    education: 'Education',
+    media: 'Media',
+  };
+  const countryLabels: Partial<Record<MatrixCountrySlug, string>> = {
+    kuwait: 'Kuwait',
+    qatar: 'Qatar',
+    oman: 'Oman',
+    uk: 'United Kingdom',
+    usa: 'United States',
+    brazil: 'Brazil',
+    germany: 'Germany',
+  };
+  const name = industryLabels[industrySlug] ?? industrySlug;
+  const country = countryLabels[countrySlug] ?? countrySlug;
+  return [
+    {
+      title: `Map ${country} market structure before fieldwork`,
+      body: `${name} dynamics in ${country} vary by sector, region, and buyer segment. Anchor your research design on real decision-maker hierarchies and distribution channels specific to the local market before scaling fieldwork.`,
+    },
+    {
+      title: 'Primary evidence, not imported assumptions',
+      body: `Applying averages from neighbouring markets risks costly strategy gaps. ${country} buyers, regulators, and channels have distinct behaviour patterns — commission primary research here rather than relying on desk extrapolation.`,
+    },
+    {
+      title: 'Decision-linked output over slide volume',
+      body: `BioNixus structures ${name.toLowerCase()} programs around three to five decisions your team must act on — launch sequencing, pricing validation, channel prioritisation — so fieldwork translates directly into near-term actions.`,
+    },
+  ];
+}
+
 export function getIndustryBofuExecutivePoints(
   industrySlug: MatrixIndustrySlug,
   countrySlug: MatrixCountrySlug,
 ): IndustryExecutivePoint[] {
   const points = EXECUTIVE_POINTS[industrySlug]?.[countrySlug];
-  if (!points || points.length !== 3) {
-    throw new Error(`Missing or invalid executive points for ${industrySlug}/${countrySlug}`);
-  }
-  return points;
+  if (points && points.length === 3) return points;
+  return buildFallbackExecutivePoints(industrySlug, countrySlug);
 }
