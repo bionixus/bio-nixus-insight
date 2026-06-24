@@ -2,12 +2,15 @@ import { ArrowRight, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
+import { ReportSectionVisual } from '@/components/report-premium/ReportSectionVisual';
 
 const HeroSection = () => {
   const { t, language, isRTL } = useLanguage();
   const basePath = languagePaths[language] || '/';
   const contactPath =
     language === 'fr' ? '/fr/contacts' : language === 'ar' ? '/ar/contacts' : `${basePath === '/' ? '' : basePath}/contact`;
+  const heroVisualAlt =
+    'Healthcare and pharmaceutical market research intelligence dashboard showing GCC and European evidence programs';
 
   return (
     <section
@@ -28,7 +31,8 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 container-wide section-padding pt-32 pb-20">
-        <div className="max-w-4xl">
+        <div className="grid lg:grid-cols-[minmax(0,1.05fr)_minmax(280px,0.95fr)] gap-10 lg:gap-14 items-center">
+          <div className="max-w-4xl">
           {/* Tagline */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8 animate-fade-up">
             <div className="w-2 h-2 rounded-full bg-gold-warm animate-pulse" />
@@ -118,10 +122,18 @@ const HeroSection = () => {
               ))}
             </div>
           </div>
+
+          <div className="hidden lg:block min-w-0 animate-fade-up animation-delay-400">
+            <ReportSectionVisual
+              theme="hero"
+              alt={heroVisualAlt}
+              className="shadow-2xl border border-white/10"
+            />
+          </div>
         </div>
 
         {/* Decorative elements with gentle floating */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-2/3 hidden lg:block">
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-2/3 hidden xl:block pointer-events-none" aria-hidden>
           <div className="absolute top-0 right-20 w-72 h-72 rounded-full bg-gold-warm/10 blur-3xl float-gentle" />
           <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-white/5 blur-3xl float-gentle-delayed" />
         </div>

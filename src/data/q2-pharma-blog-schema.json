@@ -987,5 +987,33 @@
         ]
       }
     ]
+  },
+  "skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement": {
+    "articleSection": "Commercial Effectiveness",
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "AbbVie"
+      },
+      {
+        "@type": "Drug",
+        "name": "Skyrizi",
+        "alternateName": [
+          "risankizumab"
+        ]
+      },
+      {
+        "@type": "MedicalSpecialty",
+        "name": "Immunology"
+      },
+      {
+        "@type": "MedicalSpecialty",
+        "name": "Dermatology"
+      },
+      {
+        "@type": "Place",
+        "name": "United States"
+      }
+    ]
   }
 }

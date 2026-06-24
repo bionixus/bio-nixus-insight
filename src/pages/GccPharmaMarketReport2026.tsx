@@ -83,7 +83,7 @@ const jsonLd = [
       logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
     },
     datePublished: '2026-05-01',
-    dateModified: '2026-06-04',
+    dateModified: '2026-06-22',
     mainEntityOfPage: 'https://www.bionixus.com/gcc-pharma-market-report-2026',
   },
   {

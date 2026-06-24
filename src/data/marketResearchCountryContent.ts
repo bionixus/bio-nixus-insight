@@ -74,6 +74,9 @@ const en: Record<string, MarketResearchCountryContent> = {
     ],
     relatedLinks: [
       { to: '/healthcare-market-research/uae', label: 'Healthcare market research — UAE country hub' },
+      { to: '/healthcare-market-research/dubai', label: 'Healthcare market research Dubai' },
+      { to: '/pharmaceutical-market-research-dubai', label: 'Pharmaceutical market research Dubai' },
+      { to: '/insights/top-healthcare-market-research-companies-dubai-2026', label: 'Top healthcare MR firms Dubai 2026' },
       { to: '/uae-healthcare-market-report', label: 'UAE healthcare market report 2026' },
       { to: '/pharmaceutical-companies-uae', label: 'Top pharmaceutical companies in UAE' },
       { to: '/uae-pharmaceutical-market-research', label: 'UAE pharmaceutical market research pillar' },
@@ -504,6 +507,287 @@ const en: Record<string, MarketResearchCountryContent> = {
       why: 'Kuwait’s small expert pool makes early feasibility as important as questionnaire design.',
       evidence: 'Pilot interviews before large quant prevent costly redesigns.',
       next: 'Run a Kuwait feasibility sprint, then scale to full field.',
+    },
+  },
+  qatar: {
+    title: 'Market Research Qatar | Healthcare & Pharma Research | BioNixus',
+    description:
+      'Market research in Qatar for pharma and healthcare teams: MOPH-aligned physician surveys, HMC stakeholder access, and launch-ready evidence.',
+    canonical: '/market-research-qatar',
+    h1: 'Market Research in Qatar',
+    intro:
+      'BioNixus runs market research in Qatar for pharmaceutical and healthcare teams that need MOPH-aligned evidence across Hamad Medical Corporation networks and private channels—not a generic GCC average.',
+    countryLabel: 'Qatar',
+    primaryKeyword: 'Market research in Qatar',
+    faqItems: [
+      {
+        question: 'What is healthcare market research in Qatar?',
+        answer:
+          'Healthcare market research in Qatar maps physician, payer, and hospital stakeholder behaviour under MOPH and HMC procurement context for launch and access decisions.',
+      },
+      {
+        question: 'Can Qatar modules integrate with UAE or KSA studies?',
+        answer:
+          'Yes. Harmonised GCC instruments allow side-by-side reads while preserving Qatar-specific MOPH and formulary logic.',
+      },
+      {
+        question: 'Does BioNixus run bilingual Qatar fieldwork?',
+        answer:
+          'Arabic–English screener logic, moderation, and reporting are standard for MENA programs including Qatar.',
+      },
+      {
+        question: 'Which stakeholders are typically included?',
+        answer:
+          'Specialists, hospital pharmacy leaders, formulary influencers, and procurement voices across HMC and private networks where therapy-relevant.',
+      },
+      {
+        question: 'Where can I compare Qatar with Kuwait or UAE?',
+        answer:
+          'Use the healthcare market research hub, then open the dedicated Kuwait and UAE market research pages linked below.',
+      },
+    ],
+    relatedLinks: [
+      { to: '/healthcare-market-research/qatar', label: 'Healthcare market research — Qatar country hub' },
+      { to: '/qatar-healthcare-market-report', label: 'Qatar healthcare market report' },
+      { to: '/pharmaceutical-companies-qatar', label: 'Top pharmaceutical companies in Qatar' },
+      { to: '/qatar-market-access-research', label: 'Qatar market access research' },
+      { to: '/market-research-uae', label: 'Market research UAE' },
+      { to: '/market-research-kuwait', label: 'Market research Kuwait' },
+    ],
+    regulatory: {
+      heading: 'MOPH and HMC context for Qatar market research',
+      paragraphs: [
+        'Qatar programs reflect Ministry of Public Health registration requirements and Hamad Medical Corporation procurement pathways that differ from UAE emirate-level logic.',
+        'Private insurance and Sidra Medicine networks add parallel access routes; sampling should mirror where your therapy is realistically listed.',
+      ],
+    },
+    marketStructure: {
+      heading: 'Qatar pharmaceutical market structure',
+      paragraphs: [
+        'Qatar is a compact but high-spend GCC market with concentrated specialist care in Doha referral networks.',
+        'Cross-border benchmarking with UAE and Saudi Arabia is common; instruments should stay comparable while preserving MOPH nuance.',
+      ],
+    },
+    services: {
+      heading: 'Qatar market research services',
+      items: [
+        { title: 'Physician and HCP quant', description: 'Adoption, sequencing, and message testing.' },
+        { title: 'Payer and access qual', description: 'Formulary and committee objection mapping.' },
+        { title: 'KOL mapping', description: 'Influence networks for specialty launches.' },
+        { title: 'GCC bundle modules', description: 'Qatar cell inside multi-country programs.' },
+      ],
+    },
+    methodology: {
+      heading: 'Methodology for Qatar programs',
+      paragraphs: [
+        'Decision-led mixed-method design with bilingual QC and scarcity-aware recruitment calendars.',
+        'Outputs map to one commercial or access decision per phase.',
+      ],
+    },
+    therapyFocus: {
+      heading: 'Therapy focus in Qatar',
+      paragraph: 'Oncology, diabetes, and immunology are frequent priorities in Qatar research programs.',
+      areas: ['Oncology', 'Diabetes', 'Immunology', 'Respiratory', 'Cardiology'],
+    },
+    process: {
+      heading: 'Qatar engagement process',
+      steps: [
+        { title: 'Scope', body: 'Decision gate, therapy, and stakeholder map.' },
+        { title: 'Field', body: 'Bilingual execution with weekly checkpoints.' },
+        { title: 'Apply', body: 'Leadership readout and 30/60/90 actions.' },
+      ],
+    },
+    deliverables: { heading: 'Qatar program outputs', bullets: COUNTRY_PAGE_DELIVERABLES },
+    decisionBlueprint: {
+      why: 'Compact markets require precise stakeholder maps before scaling fieldwork.',
+      evidence: 'Pilot qual often sharpens quant screeners in Qatar specialist pools.',
+      next: 'Link this page to the Qatar healthcare hub and company directory for internal planning.',
+    },
+  },
+  oman: {
+    title: 'Market Research Oman | Healthcare & Pharma Research | BioNixus',
+    description:
+      'Market research in Oman for pharma teams: MOH-aligned physician surveys, Muscat and interior governorate fieldwork, and launch evidence.',
+    canonical: '/market-research-oman',
+    h1: 'Market Research in Oman',
+    intro:
+      'BioNixus delivers market research in Oman for teams needing MOH-aware evidence across public hospitals, private networks, and distributor-led channels.',
+    countryLabel: 'Oman',
+    primaryKeyword: 'Market research in Oman',
+    faqItems: [
+      {
+        question: 'What does healthcare market research in Oman include?',
+        answer:
+          'Physician surveys, payer and access qual, stakeholder mapping, and executive synthesis aligned to MOH tender and formulary behaviour.',
+      },
+      {
+        question: 'How does geography affect Oman sampling?',
+        answer:
+          'Muscat concentration versus interior referral patterns requires segmented design so forecasts reflect real patient flows.',
+      },
+      {
+        question: 'Can Oman connect to UAE or KSA benchmarking?',
+        answer:
+          'Yes. Harmonised GCC modules preserve Oman-specific MOH context while enabling regional portfolio reads.',
+      },
+      {
+        question: 'Does BioNixus cover public and private Oman channels?',
+        answer:
+          'Programs map Royal Hospital, SQUH, and relevant private groups depending on therapy and access objective.',
+      },
+      {
+        question: 'Where is the Oman company directory?',
+        answer:
+          'See the pharmaceutical companies in Oman page linked below for BOFU company-intent research.',
+      },
+    ],
+    relatedLinks: [
+      { to: '/healthcare-market-research/oman', label: 'Healthcare market research — Oman country hub' },
+      { to: '/oman-healthcare-market-report', label: 'Oman healthcare market report' },
+      { to: '/pharmaceutical-companies-oman', label: 'Top pharmaceutical companies in Oman' },
+      { to: '/market-research-uae', label: 'Market research UAE' },
+      { to: '/market-research-qatar', label: 'Market research Qatar' },
+    ],
+    regulatory: {
+      heading: 'MOH context for Oman market research',
+      paragraphs: [
+        'Oman studies reflect MOH tender cycles, SFDA Oman registration context, and public hospital formulary behaviour.',
+        'Distributor structures and interior geography influence who owns access conversations—research maps both early.',
+      ],
+    },
+    marketStructure: {
+      heading: 'Oman market structure',
+      paragraphs: [
+        'Oman combines universal coverage expansion with a growing private hospital sector in Muscat.',
+        'Specialist pools are smaller than UAE; feasibility planning is built into every proposal.',
+      ],
+    },
+    services: {
+      heading: 'Oman market research services',
+      items: [
+        { title: 'Physician insight', description: 'Treatment algorithms and switch behaviour.' },
+        { title: 'Access qual', description: 'Tender and formulary objection themes.' },
+        { title: 'Launch diagnostics', description: 'Sequencing and account prioritization.' },
+        { title: 'GCC comparability', description: 'Oman cell with UAE/KSA harmonisation.' },
+      ],
+    },
+    methodology: {
+      heading: 'Methodology for Oman',
+      paragraphs: [
+        'Hybrid quant–qual designs with Arabic–English field teams and documented recruitment QC.',
+      ],
+    },
+    therapyFocus: {
+      heading: 'Therapy focus in Oman',
+      paragraph: 'Diabetes, oncology, and cardiovascular programs are common in Oman.',
+      areas: ['Diabetes', 'Oncology', 'Cardiology', 'Respiratory'],
+    },
+    process: {
+      heading: 'Oman engagement timeline',
+      steps: [
+        { title: 'Align', body: 'Decision and stakeholder workshop.' },
+        { title: 'Execute', body: 'Field with geography-aware sampling.' },
+        { title: 'Activate', body: 'Readout mapped to launch or access owners.' },
+      ],
+    },
+    deliverables: { heading: 'Oman deliverables', bullets: COUNTRY_PAGE_DELIVERABLES },
+    decisionBlueprint: {
+      why: 'Oman rewards early feasibility in specialist recruitment.',
+      evidence: 'Thin cells are flagged before sponsors commit to oversized quant.',
+      next: 'Pair this page with the Oman pharma company directory for full-funnel planning.',
+    },
+  },
+  bahrain: {
+    title: 'Market Research Bahrain | Healthcare & Pharma Research | BioNixus',
+    description:
+      'Market research in Bahrain for pharma teams: NHRA-aligned physician surveys, Salmaniya stakeholder access, and compact-market fieldwork.',
+    canonical: '/market-research-bahrain',
+    h1: 'Market Research in Bahrain',
+    intro:
+      'BioNixus runs market research in Bahrain for pharmaceutical teams needing NHRA-aware evidence in a compact, high-density GCC market with strong cross-border referral dynamics.',
+    countryLabel: 'Bahrain',
+    primaryKeyword: 'Market research in Bahrain',
+    faqItems: [
+      {
+        question: 'What is healthcare market research in Bahrain?',
+        answer:
+          'Evidence work on physicians, payers, and hospital committees under NHRA and Salmaniya Medical Complex formulary context.',
+      },
+      {
+        question: 'How does cross-border traffic affect Bahrain research?',
+        answer:
+          'Causeway commuter flows can influence referral patterns; sampling accounts for public versus private concentration.',
+      },
+      {
+        question: 'Can Bahrain modules benchmark against KSA or Qatar?',
+        answer:
+          'Yes. Comparable GCC instruments with Bahrain-specific NHRA modules support regional portfolio committees.',
+      },
+      {
+        question: 'Does BioNixus run bilingual Bahrain fieldwork?',
+        answer:
+          'Arabic–English moderation and reporting are standard across MENA programs including Bahrain.',
+      },
+      {
+        question: 'Where is the Bahrain company directory?',
+        answer:
+          'See pharmaceutical companies in Bahrain linked below for company-intent BOFU research.',
+      },
+    ],
+    relatedLinks: [
+      { to: '/healthcare-market-research/bahrain', label: 'Healthcare market research — Bahrain country hub' },
+      { to: '/bahrain-healthcare-market-report', label: 'Bahrain healthcare market report' },
+      { to: '/pharmaceutical-companies-bahrain', label: 'Top pharmaceutical companies in Bahrain' },
+      { to: '/market-research-kuwait', label: 'Market research Kuwait' },
+      { to: '/market-research-qatar', label: 'Market research Qatar' },
+    ],
+    regulatory: {
+      heading: 'NHRA context for Bahrain market research',
+      paragraphs: [
+        'Bahrain programs reflect NHRA registration, Salmaniya formulary influence, and private hospital competition in a compact geography.',
+        'Cross-border dynamics with eastern Saudi Arabia can affect referral and dispensing—research design acknowledges this where relevant.',
+      ],
+    },
+    marketStructure: {
+      heading: 'Bahrain market structure',
+      paragraphs: [
+        'Bahrain’s pharmaceutical market is smaller but strategically positioned for GCC portfolio planning.',
+        'Expert pools are concentrated; hybrid designs often outperform oversized quant with thin cells.',
+      ],
+    },
+    services: {
+      heading: 'Bahrain market research services',
+      items: [
+        { title: 'Physician quant', description: 'Adoption and message testing.' },
+        { title: 'Committee qual', description: 'Formulary and access objections.' },
+        { title: 'Competitive intel', description: 'Switch triggers and defensive plays.' },
+        { title: 'GCC bundles', description: 'Bahrain alongside Kuwait or Qatar.' },
+      ],
+    },
+    methodology: {
+      heading: 'Methodology for Bahrain',
+      paragraphs: [
+        'Focused samples, bilingual QC, and explicit feasibility documentation for compact markets.',
+      ],
+    },
+    therapyFocus: {
+      heading: 'Therapy focus in Bahrain',
+      paragraph: 'Diabetes, oncology, and cardiology are frequent Bahrain research priorities.',
+      areas: ['Diabetes', 'Oncology', 'Cardiology', 'Immunology'],
+    },
+    process: {
+      heading: 'Bahrain engagement process',
+      steps: [
+        { title: 'Scope', body: 'One decision gate and stakeholder map.' },
+        { title: 'Field', body: 'Recruitment with compact-market calendars.' },
+        { title: 'Apply', body: 'Action plan for commercial and access leads.' },
+      ],
+    },
+    deliverables: { heading: 'Bahrain outputs', bullets: COUNTRY_PAGE_DELIVERABLES },
+    decisionBlueprint: {
+      why: 'Compact markets need precise committee and prescriber maps early.',
+      evidence: 'Qual depth often explains quant gaps in Bahrain specialist pools.',
+      next: 'Use the Bahrain healthcare hub and company directory together for SEO and sales alignment.',
     },
   },
   egypt: {

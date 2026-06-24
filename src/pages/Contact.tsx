@@ -3,6 +3,8 @@ import type { Language } from '@/lib/i18n';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ContactSection from '@/components/ContactSection';
+import { OptimizedImage } from '@/components/media/OptimizedImage';
+import { getPageMedia } from '@/data/mediaAssets';
 import { ArrowRight, Zap, Globe, FileCheck } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
@@ -75,6 +77,7 @@ const Contact = () => {
   const statLine = cp?.statLine ?? '';
   const badges = cp?.badges ?? [];
   const guide = contactGuideByLanguage[language] ?? contactGuideByLanguage.en;
+  const contactMedia = getPageMedia('contact');
 
   return (
     <div className="min-h-screen bg-background">
@@ -92,43 +95,65 @@ const Contact = () => {
       <main>
         {/* Catchy hero for pharma – encourage get in touch */}
         <section className="relative section-padding pt-28 pb-16 bg-gradient-to-b from-primary/5 to-background border-b border-border">
-          <div className="container-wide max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-              Get in touch
-            </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-4 text-balance">
-              {heroTitle}
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
-              {heroSubtitle}
-            </p>
-            {statLine && (
-              <p className="text-sm text-muted-foreground mb-8">
-                {statLine}
-              </p>
-            )}
-            {badges.length > 0 && (
-              <div className="flex flex-wrap justify-center gap-3">
-                {badges.map((badge, i) => (
-                  <span
-                    key={i}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-card border border-border text-foreground/90 text-sm font-medium"
-                  >
-                    {i === 0 && <Zap className="w-4 h-4 text-primary" />}
-                    {i === 1 && <Globe className="w-4 h-4 text-primary" />}
-                    {i === 2 && <FileCheck className="w-4 h-4 text-primary" />}
-                    {badge}
-                  </span>
-                ))}
+          <div className="container-wide max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+              <div className={`${isRTL ? 'text-right lg:order-2' : ''}`}>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+                  Get in touch
+                </div>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-4 text-balance">
+                  {heroTitle}
+                </h1>
+                <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-8 leading-relaxed">
+                  {heroSubtitle}
+                </p>
+                {statLine && (
+                  <p className="text-sm text-muted-foreground mb-8">
+                    {statLine}
+                  </p>
+                )}
+                {badges.length > 0 && (
+                  <div className={`flex flex-wrap gap-3 ${isRTL ? 'justify-end' : ''}`}>
+                    {badges.map((badge, i) => (
+                      <span
+                        key={i}
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-card border border-border text-foreground/90 text-sm font-medium"
+                      >
+                        {i === 0 && <Zap className="w-4 h-4 text-primary" />}
+                        {i === 1 && <Globe className="w-4 h-4 text-primary" />}
+                        {i === 2 && <FileCheck className="w-4 h-4 text-primary" />}
+                        {badge}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                <a
+                  href="#contact"
+                  className={`inline-flex items-center gap-2 mt-8 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-opacity group ${isRTL ? 'flex-row-reverse' : ''}`}
+                >
+                  Request a proposal
+                  <ArrowRight className={`w-5 h-5 ${isRTL ? 'rtl:scale-x-[-1] group-hover:-translate-x-1' : 'group-hover:translate-x-1'}`} />
+                </a>
               </div>
-            )}
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 mt-8 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-opacity group"
-            >
-              Request a proposal
-              <ArrowRight className={`w-5 h-5 ${isRTL ? 'rtl:scale-x-[-1] group-hover:-translate-x-1' : 'group-hover:translate-x-1'}`} />
-            </a>
+
+              {contactMedia?.heroImage ? (
+                <figure className={`rounded-2xl border border-border bg-card overflow-hidden shadow-lg ${isRTL ? 'lg:order-1' : ''}`}>
+                  <OptimizedImage
+                    src={contactMedia.heroImage.src}
+                    alt={contactMedia.heroImage.alt}
+                    width={contactMedia.heroImage.width}
+                    height={contactMedia.heroImage.height}
+                    className="w-full aspect-[4/3] object-cover"
+                    loading="eager"
+                    fetchPriority="high"
+                    sizes="hero"
+                  />
+                  <figcaption className="p-4 text-xs text-muted-foreground leading-relaxed">
+                    {contactMedia.heroImage.caption}
+                  </figcaption>
+                </figure>
+              ) : null}
+            </div>
           </div>
         </section>
 

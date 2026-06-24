@@ -1,7 +1,9 @@
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { CalendarDays, Globe2, Sparkles } from 'lucide-react';
+import type { MediaFigure } from '@/data/mediaAssets';
 import type { ReportConversionConfig } from '@/data/reportConversionConfig';
+import { OptimizedImage } from '@/components/media/OptimizedImage';
 import { ReportEarlyCtaBar } from '@/components/report-conversion/ReportEarlyCtaBar';
 import { ReportSectionVisual } from '@/components/report-premium/ReportSectionVisual';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
@@ -24,6 +26,8 @@ type ReportPremiumHeroProps = {
   stats?: ReportHeroStat[];
   /** Caption shown under the stat chips. Pass '' to hide (e.g. on service pages where the chips are operational, not market sizing). */
   statsCaption?: string;
+  /** Optional real photography; falls back to programmatic SVG visual. */
+  heroImage?: MediaFigure;
 };
 
 export function ReportPremiumHero({
@@ -38,6 +42,7 @@ export function ReportPremiumHero({
   metaLinks,
   stats,
   statsCaption = 'Market sizing: BioNixus market analysis, 2026.',
+  heroImage,
 }: ReportPremiumHeroProps) {
   const heroRef = useScrollReveal<HTMLElement>({ stagger: 90, threshold: 0.08 });
 
@@ -92,15 +97,35 @@ export function ReportPremiumHero({
           </div>
 
           <div className="sr sr-right sr-scale min-w-0">
-            <ReportSectionVisual
-              theme="hero"
-              marketSlug={marketSlug}
-              therapySlug={therapySlug}
-              countryName={countryName}
-              therapyName={therapyName}
-              alt={visualAlt}
-              className="shadow-xl"
-            />
+            {heroImage ? (
+              <figure className="rounded-2xl border border-border/70 bg-card overflow-hidden shadow-xl">
+                <OptimizedImage
+                  src={heroImage.src}
+                  alt={heroImage.alt}
+                  width={heroImage.width}
+                  height={heroImage.height}
+                  className="w-full aspect-[4/3] object-cover"
+                  loading="eager"
+                  fetchPriority="high"
+                  sizes="hero"
+                />
+                {heroImage.caption ? (
+                  <figcaption className="p-3 text-xs text-muted-foreground leading-relaxed">
+                    {heroImage.caption}
+                  </figcaption>
+                ) : null}
+              </figure>
+            ) : (
+              <ReportSectionVisual
+                theme="hero"
+                marketSlug={marketSlug}
+                therapySlug={therapySlug}
+                countryName={countryName}
+                therapyName={therapyName}
+                alt={visualAlt}
+                className="shadow-xl"
+              />
+            )}
             {stats && stats.length > 0 ? (
               <>
                 <div className="grid grid-cols-3 gap-3 mt-4">

@@ -4,6 +4,7 @@ import { ArrowRight, Mail, MapPin, Phone } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths, localizedContactPath } from '@/lib/seo';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { TrustCoverageMap } from '@/components/media/TrustCoverageMap';
 
 type ContactValidation = {
   firstName?: string;
@@ -347,7 +348,9 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-4">
+            <TrustCoverageMap />
+
+            <div className="flex flex-wrap gap-4 mt-10">
               <a
                 href="#contact"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-opacity group"

@@ -248,7 +248,7 @@ const KuwaitPharmaCompanies = () => {
 return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Pharmaceutical Companies in Kuwait | Top Medical Distributors &amp; MNCs 2026 | BioNixus</title>
+        <title>Pharmaceutical Companies in Kuwait | Top Distributors 2026 | BioNixus</title>
         <meta
           name="description"
           content="Pharmaceutical companies in Kuwait: ranked distributors (Cura Health, AAW, Almojil, Central Circle Co.), $1.2B market, MOH registration, KSPICO manufacturing, MNC offices (2026)."

@@ -12,6 +12,7 @@ import StatsSection from '@/components/StatsSection';
 import BlogSection from '@/components/BlogSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import HomePathwaysSection, { type PathwayCard } from '@/components/home/HomePathwaysSection';
+import { HomeExplainerSection } from '@/components/media/HomeExplainerSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import { CTASection } from '@/components/shared/CTASection';
@@ -148,6 +149,7 @@ const Index = () => {
         <HeroSection />
         <EmeaSignalsSection />
         <ServicesSection />
+        <HomeExplainerSection />
         <StatsSection />
         <div className="cv-auto">
           <BlogSection

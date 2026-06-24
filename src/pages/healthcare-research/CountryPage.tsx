@@ -7,7 +7,7 @@ import { HealthcareNavCard, HealthcareStatPanel } from '@/components/healthcare-
 import { CountryMarketReferenceGuide } from '@/components/seo/CountryMarketReferenceGuide';
 import { GeoMarketClusterCallout } from '@/components/seo/GeoMarketClusterCallout';
 import { getGeoMarketClusterForSlug } from '@/data/geo-market-page-clusters';
-import { COUNTRY_CONFIGS, type CountryConfig, type CountryRegion } from '@/lib/constants/countries';
+import { COUNTRY_CONFIGS, resolveCountryConfig, type CountryConfig } from '@/lib/constants/countries';
 import { getHealthcareMarketResearchCountryConfig } from '@/data/reportConversionConfig';
 import { ReportMidPageCta } from '@/components/report-conversion';
 import { ReportPremiumSection } from '@/components/report-premium';
@@ -33,62 +33,6 @@ const COUNTRY_NAME_OVERRIDES: Record<string, string> = {
   'united-kingdom': 'United Kingdom',
   'united-arab-emirates': 'United Arab Emirates',
 };
-
-const EUROPE_SLUGS = new Set(['germany', 'france', 'italy', 'spain', 'sweden', 'denmark', 'switzerland']);
-const UK_SLUGS = new Set(['united-kingdom', 'uk']);
-
-function slugToCountryName(slug: string): string {
-  if (COUNTRY_NAME_OVERRIDES[slug]) return COUNTRY_NAME_OVERRIDES[slug];
-  return slug
-    .split('-')
-    .filter(Boolean)
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-    .join(' ');
-}
-
-function inferRegion(slug: string): CountryRegion {
-  if (UK_SLUGS.has(slug)) return 'uk';
-  if (EUROPE_SLUGS.has(slug)) return 'europe';
-  return 'mena';
-}
-
-function buildFallbackCountryConfig(slug: string): CountryConfig {
-  const countryName = slugToCountryName(slug);
-  return {
-    name: countryName,
-    slug,
-    region: inferRegion(slug),
-    metaSuffix: `${countryName} healthcare and pharmaceutical market research insights for launch, access, and growth decisions.`,
-    ogDescription:
-      `BioNixus delivers decision-ready pharmaceutical market research in ${countryName} with localized stakeholder insights, market access context, and practical strategy support.`,
-    h1: `Pharmaceutical Market Research in ${countryName}`,
-    relatedCountries: ['saudi-arabia', 'uae', 'uk', 'europe'],
-    relatedTherapies: ['oncology', 'diabetes', 'respiratory', 'immunology'],
-    keyStats: [
-      { label: 'Market Focus', value: `${countryName} healthcare ecosystem` },
-      { label: 'Research Scope', value: 'Physician, payer, and hospital stakeholders' },
-      { label: 'Delivery Model', value: 'Quantitative + qualitative mixed-methods' },
-      { label: 'Primary Output', value: 'Decision-ready pharmaceutical insight' },
-    ],
-    faqQuestions: [
-      {
-        question: `How does BioNixus support pharmaceutical market research in ${countryName}?`,
-        answer:
-          `BioNixus supports pharmaceutical market research in ${countryName} through localized stakeholder mapping, fit-for-purpose methodology, and execution focused on practical commercial, medical, and access decisions.`,
-      },
-      {
-        question: `Which stakeholder groups are typically included in ${countryName} studies?`,
-        answer:
-          `Most ${countryName} studies include prescribing specialists, institutional influencers, pharmacy stakeholders, and access-relevant decision contributors, depending on the therapy area and strategic objective.`,
-      },
-      {
-        question: `What outputs do clients receive from ${countryName} market research programs?`,
-        answer:
-          `Programs typically deliver structured insight summaries, segment priorities, stakeholder influence mapping, and action-focused recommendations that can be applied to launch, expansion, or optimization plans in ${countryName}.`,
-      },
-    ],
-  };
-}
 
 function buildCountryFaqFallback(config: CountryConfig): { question: string; answer: string }[] {
   const regionLabel =
@@ -139,8 +83,7 @@ export default function CountryPage() {
     country ||
     (typeof data.slug === 'string' ? data.slug : undefined) ||
     aliasSlug;
-  const configuredCountry = resolvedSlug ? COUNTRY_CONFIGS[resolvedSlug] : undefined;
-  const config = resolvedSlug ? configuredCountry ?? buildFallbackCountryConfig(resolvedSlug) : undefined;
+  const config = resolvedSlug ? resolveCountryConfig(resolvedSlug) : undefined;
 
   if (!config) {
     return <Navigate to="/healthcare-market-research" replace />;
@@ -244,17 +187,30 @@ export default function CountryPage() {
                 </>
               ) : config.slug === 'uae' ? (
                 <>
-                  BioNixus runs DHA and DOH-aligned fieldwork in Dubai and Abu Dhabi with MOHAP-aware payer evidence.
-                  For federated UAE planning, see{' '}
+                  BioNixus runs DHA and DOH-aligned{' '}
+                  <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">
+                    healthcare market research
+                  </Link>{' '}
+                  in Dubai and Abu Dhabi with MOHAP-aware payer evidence. For the Dubai MR cluster see{' '}
+                  <Link
+                    to="/pharmaceutical-market-research-dubai"
+                    className="text-primary font-medium hover:underline"
+                  >
+                    healthcare market research Dubai
+                  </Link>{' '}
+                  and our{' '}
+                  <Link
+                    to="/insights/top-healthcare-market-research-companies-dubai-2026"
+                    className="text-primary font-medium hover:underline"
+                  >
+                    top healthcare market research companies in Dubai
+                  </Link>
+                  . For federated UAE planning, see{' '}
                   <Link
                     to="/healthcare-market-research/united-arab-emirates"
                     className="text-primary font-medium hover:underline"
                   >
                     United Arab Emirates healthcare market research
-                  </Link>{' '}
-                  or the{' '}
-                  <Link to="/global-websites/united-arab-emirates" className="text-primary font-medium hover:underline">
-                    UAE go-to-market blueprint
                   </Link>
                   .
                 </>
@@ -507,7 +463,15 @@ export default function CountryPage() {
                 <Link to="/gcc-pharma-market-report-2026" className="text-primary underline font-medium">
                   GCC pharma market report 2026
                 </Link>{' '}
-                for Gulf-wide context.
+                for Gulf-wide context. For GCC in vitro diagnostic (IVD) and medical device procurement intelligence, see the{' '}
+                <Link to="/gcc-medical-devices-market-report" className="text-primary underline font-medium">
+                  GCC medical devices market report
+                </Link>{' '}
+                and{' '}
+                <Link to="/gcc-pharmaceutical-market-research" className="text-primary underline font-medium">
+                  GCC pharmaceutical market research
+                </Link>{' '}
+                service overview.
               </p>
               <p>
                 For focused Saudi execution planning, visit our{' '}
@@ -528,7 +492,7 @@ export default function CountryPage() {
           countryName={config.name}
           marketSlug={config.slug}
         >
-            <p className="text-base leading-relaxed text-muted-foreground">
+            <p className="text-base leading-relaxed text-muted-foreground mb-4">
               For BOFU company-intent searches, use our{' '}
               <Link to="/uae-pharmaceutical-market-research" className="text-primary underline font-medium">
                 healthcare market research company in UAE
@@ -539,6 +503,74 @@ export default function CountryPage() {
               </Link>
               .
             </p>
+            <p className="text-base leading-relaxed text-muted-foreground">
+              Dubai drives much of the UAE&apos;s{' '}
+              <strong className="font-semibold text-foreground">healthcare market research</strong> query volume — see{' '}
+              <Link to="/pharmaceutical-market-research-dubai" className="text-primary underline font-medium">
+                pharmaceutical market research in Dubai
+              </Link>
+              , our{' '}
+              <Link
+                to="/insights/top-healthcare-market-research-companies-dubai-2026"
+                className="text-primary underline font-medium"
+              >
+                top healthcare market research companies in Dubai (2026)
+              </Link>
+              , and the{' '}
+              <Link to="/healthcare-market-research/dubai" className="text-primary underline font-medium">
+                Dubai country research hub
+              </Link>
+              .
+            </p>
+        </ReportPremiumSection>
+      )}
+
+      {config.slug === 'kuwait' && (
+        <ReportPremiumSection
+          id="kuwait-company-intent"
+          title="Kuwait healthcare market research — company intent"
+          countryName={config.name}
+          marketSlug={config.slug}
+        >
+          <p className="text-base leading-relaxed text-muted-foreground">
+            Kuwait is the site&apos;s #1 pharma BOFU click driver — connect{' '}
+            <Link to="/pharmaceutical-companies-kuwait" className="text-primary underline font-medium">
+              pharmaceutical companies in Kuwait
+            </Link>{' '}
+            with{' '}
+            <Link to="/market-research-kuwait" className="text-primary underline font-medium">
+              market research in Kuwait
+            </Link>{' '}
+            and{' '}
+            <Link to="/healthcare-market-research-agency-gcc" className="text-primary underline font-medium">
+              healthcare market research agency GCC
+            </Link>{' '}
+            for full-funnel coverage.
+          </p>
+        </ReportPremiumSection>
+      )}
+
+      {(config.slug === 'qatar' || config.slug === 'oman' || config.slug === 'bahrain') && (
+        <ReportPremiumSection
+          id={`${config.slug}-company-intent`}
+          title={`${config.name} healthcare market research — company intent`}
+          countryName={config.name}
+          marketSlug={config.slug}
+        >
+          <p className="text-base leading-relaxed text-muted-foreground">
+            For company-intent traffic, see{' '}
+            <Link
+              to={`/pharmaceutical-companies-${config.slug}`}
+              className="text-primary underline font-medium"
+            >
+              pharmaceutical companies in {config.name}
+            </Link>
+            ; for mid-funnel planning see{' '}
+            <Link to={`/market-research-${config.slug}`} className="text-primary underline font-medium">
+              market research in {config.name}
+            </Link>
+            .
+          </p>
         </ReportPremiumSection>
       )}
 
@@ -557,6 +589,13 @@ export default function CountryPage() {
               page; for mid-funnel planning see{' '}
               <Link to="/market-research-egypt" className="text-primary underline font-medium">
                 market research in Egypt
+              </Link>
+              . For agency listicle intent, see{' '}
+              <Link
+                to="/blog/top-market-research-companies-egypt-2026"
+                className="text-primary underline font-medium"
+              >
+                top market research companies in Egypt (2026)
               </Link>
               .
             </p>

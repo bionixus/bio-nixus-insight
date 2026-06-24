@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import type { ServiceLandingExpandedContent } from '@/data/serviceLandingContent';
+import { OptimizedImage } from '@/components/media/OptimizedImage';
+import { SHARED_FIGURES } from '@/data/mediaAssets';
 import {
   LongFormList,
   LongFormParagraph,
@@ -49,6 +51,19 @@ export function ExpandedServiceLandingContent({ content }: ExpandedServiceLandin
         {content.methodology.paragraphs.map((paragraph) => (
           <LongFormParagraph key={paragraph.slice(0, 48)}>{paragraph}</LongFormParagraph>
         ))}
+        <figure className="mt-6 rounded-xl border border-border bg-card overflow-hidden">
+          <OptimizedImage
+            src={SHARED_FIGURES.validationLab.src}
+            alt="Pharmaceutical market research methodology validation and quality governance workflow"
+            width={SHARED_FIGURES.validationLab.width}
+            height={SHARED_FIGURES.validationLab.height}
+            className="w-full h-52 object-cover"
+            loading="lazy"
+          />
+          <figcaption className="p-4 text-xs text-muted-foreground leading-relaxed">
+            {SHARED_FIGURES.validationLab.caption}
+          </figcaption>
+        </figure>
       </LongFormSection>
 
       <LongFormSection heading={content.useCases.heading}>

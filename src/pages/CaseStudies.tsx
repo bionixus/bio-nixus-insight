@@ -17,6 +17,10 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { STATS } from '@/lib/companyStats';
+import { MediaVisualBriefing } from '@/components/media/MediaVisualBriefing';
+import { getPageMedia } from '@/data/mediaAssets';
+
+const caseStudiesMedia = getPageMedia('case-studies');
 
 // Research areas and capabilities we want to showcase
 const RESEARCH_AREAS = [
@@ -166,6 +170,14 @@ const CaseStudies = () => {
             </div>
           </div>
         </section>
+
+        {caseStudiesMedia?.visualBriefing ? (
+          <MediaVisualBriefing
+            heading={caseStudiesMedia.visualBriefing.heading}
+            figures={caseStudiesMedia.visualBriefing.figures}
+            className="pt-0 pb-4"
+          />
+        ) : null}
 
         <section className="section-padding bg-background">
           <div className="container-wide">

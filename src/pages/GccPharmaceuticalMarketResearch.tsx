@@ -84,7 +84,7 @@ const articleSchema = {
     'GCC pharmaceutical market research with biologics, generic injectables, drug repurposing, and Saudi Arabia precision medicine intelligence for launch, access, and growth decisions.',
   url: pageUrl,
   datePublished: '2025-09-01',
-  dateModified: '2026-05-25',
+  dateModified: '2026-06-22',
   author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
   publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
 };
@@ -244,10 +244,28 @@ export default function GccPharmaceuticalMarketResearch() {
                 GCC pharma market report 2026
               </Link>
               <Link
-                to="/patient-support-program-research-gcc"
+                to="/healthcare-market-research/saudi-arabia"
                 className="rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted"
               >
-                Patient support program research GCC
+                Healthcare market research Saudi Arabia
+              </Link>
+              <Link
+                to="/healthcare-market-research/uae"
+                className="rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted"
+              >
+                Healthcare market research UAE
+              </Link>
+              <Link
+                to="/healthcare-market-research/egypt"
+                className="rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted"
+              >
+                Healthcare market research Egypt
+              </Link>
+              <Link
+                to="/healthcare-market-research-agency-gcc"
+                className="rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted"
+              >
+                Healthcare market research agency GCC
               </Link>
             </div>
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />

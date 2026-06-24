@@ -44,3 +44,26 @@ export function getPressHeroPreloadUrl(heroImage: string | undefined): string | 
   const url = optimizeSanityImage(heroImage, 1400, 700);
   return url || undefined;
 }
+
+const STATIC_SRCSET_WIDTHS = [400, 640, 800, 1120, 1280] as const;
+
+/**
+ * Build a srcSet for static public images. For Sanity URLs, delegates to optimizeSanityImage.
+ * Static paths are returned as-is (same URL per width) until AVIF/WebP variants exist on disk.
+ */
+export function buildImageSrcSet(
+  src: string,
+  widths: readonly number[] = STATIC_SRCSET_WIDTHS,
+): string {
+  if (!src) return '';
+  if (src.includes(SANITY_CDN)) {
+    return widths.map((w) => `${optimizeSanityImage(src, w)} ${w}w`).join(', ');
+  }
+  return widths.map((w) => `${src} ${w}w`).join(', ');
+}
+
+/** Default sizes attribute for full-width content figures. */
+export const CONTENT_FIGURE_SIZES = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 560px';
+
+/** Default sizes for hero visuals in a two-column layout. */
+export const HERO_VISUAL_SIZES = '(max-width: 1024px) 100vw, 560px';

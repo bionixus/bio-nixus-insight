@@ -1,8 +1,11 @@
 import type { MatrixCountrySlug, MatrixIndustrySlug } from '@/data/industryMarketResearchMatrix';
+import { MATRIX_COUNTRIES as MATRIX_COUNTRIES_MAP, MATRIX_INDUSTRIES as MATRIX_INDUSTRIES_MAP } from '@/data/industryMarketResearchMatrix';
 
 export type IndustryExecutivePoint = { title: string; body: string };
 
-type ExecutivePointsMatrix = Record<MatrixIndustrySlug, Record<MatrixCountrySlug, IndustryExecutivePoint[]>>;
+type ExecutivePointsMatrix = Partial<
+  Record<MatrixIndustrySlug, Partial<Record<MatrixCountrySlug, IndustryExecutivePoint[]>>>
+>;
 
 /** Bespoke executive decision points per industry × country (48 BOFU pages). */
 const EXECUTIVE_POINTS: ExecutivePointsMatrix = {
@@ -861,8 +864,27 @@ export function getIndustryBofuExecutivePoints(
   countrySlug: MatrixCountrySlug,
 ): IndustryExecutivePoint[] {
   const points = EXECUTIVE_POINTS[industrySlug]?.[countrySlug];
-  if (!points || points.length !== 3) {
+  if (points && points.length === 3) {
+    return points;
+  }
+  const country = MATRIX_COUNTRIES_MAP[countrySlug];
+  const industry = MATRIX_INDUSTRIES_MAP[industrySlug];
+  if (!country || !industry) {
     throw new Error(`Missing or invalid executive points for ${industrySlug}/${countrySlug}`);
   }
-  return points;
+  const name = industry.displayNameShort;
+  return [
+    {
+      title: `${country.regulatorShort} context shapes ${name.toLowerCase()} decisions`,
+      body: `${country.label} programs must reflect local regulatory and buyer pathways—not imported regional averages. BioNixus scopes fieldwork to the stakeholders that govern adoption in ${country.label}.`,
+    },
+    {
+      title: 'Segment by channel before sizing',
+      body: `Public, private, and partner pathways diverge in ${country.label}. Research should map account types and committee influence before extrapolating national forecasts.`,
+    },
+    {
+      title: 'Proposal-ready mixed-method delivery',
+      body: `Quantitative confidence plus qualitative depth on objections and sequencing gives launch and access teams one evidence framework for ${name.toLowerCase()} decisions in ${country.label}.`,
+    },
+  ];
 }

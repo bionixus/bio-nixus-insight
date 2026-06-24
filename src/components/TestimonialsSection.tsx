@@ -2,6 +2,14 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { OptimizedImage } from '@/components/media/OptimizedImage';
+import { SHARED_FIGURES } from '@/data/mediaAssets';
+
+const TESTIMONIAL_THUMBNAILS = [
+  SHARED_FIGURES.hcpWorkshop,
+  SHARED_FIGURES.validationLab,
+  SHARED_FIGURES.hcpWorkshop,
+] as const;
 
 const TestimonialsSection = () => {
   const { t } = useLanguage();
@@ -53,8 +61,17 @@ const TestimonialsSection = () => {
             <Link
               key={index}
               to="/case-studies"
-              className="group bg-background p-8 rounded-xl shadow-sm border border-border sr sr-scale-up sr-spring hover-lift block transition-colors hover:border-primary/30"
+              className="group bg-background rounded-xl shadow-sm border border-border sr sr-scale-up sr-spring hover-lift block transition-colors hover:border-primary/30 overflow-hidden"
             >
+              <OptimizedImage
+                src={TESTIMONIAL_THUMBNAILS[index % TESTIMONIAL_THUMBNAILS.length].src}
+                alt={`${testimonial.company} pharmaceutical market research case study preview`}
+                width={400}
+                height={240}
+                className="w-full h-40 object-cover"
+                loading="lazy"
+              />
+              <div className="p-8">
               <div className="flex items-center gap-2 mb-4">
                 <span className="text-xs font-semibold uppercase tracking-wider text-primary/80 bg-primary/10 px-3 py-1 rounded-full">
                   {testimonial.role}
@@ -71,6 +88,7 @@ const TestimonialsSection = () => {
                   {testimonial.author}
                 </span>
                 <ArrowRight className="w-5 h-5 text-primary/60 group-hover:text-primary group-hover:translate-x-1 transition-all" />
+              </div>
               </div>
             </Link>
           ))}

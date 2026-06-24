@@ -1364,6 +1364,308 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
       },
     ],
   },
+
+  'brand-tracking-pharma-gcc': {
+    hubLink: { to: '/healthcare-market-research-agency-gcc', label: 'healthcare market research agency GCC' },
+    regulatory: {
+      heading: 'Regulatory and market context for GCC pharma brand tracking',
+      paragraphs: [
+        'GCC brand tracking must reflect country-specific regulatory milestones — SFDA formulary listings in Saudi Arabia, DHA and DOH coverage decisions in the UAE, MOH Kuwait committee rhythms, and MOPH Qatar formulary processes — not a single Gulf average. Wave timing should align with expected listing and procurement events so tracking captures prescribing shifts when they happen, not quarters later.',
+        'Competitive reference sets in GCC often include regional brands, locally manufactured generics, and product variants absent from US or EU tracking batteries. BioNixus calibrates competitive sets per market before instrument finalisation so share-of-voice and perception metrics reflect the choices physicians actually face.',
+        'Bilingual Arabic–English instruments are standard for KSA and UAE HCP tracking. Saudi national specialists typically achieve higher completion with Arabic-first surveys; UAE panels are predominantly English but UAE national physicians in SEHA facilities often prefer Arabic. Cognitive pilot interviews validate KPI operationalisation across languages before wave launch.',
+        'IQVIA MIDAS integration is optional but valuable: tracking measures intent and perception while IQVIA quantifies prescription volume. When share declines but intent stays stable, the gap points to access or distribution — not messaging — directing a different commercial response.',
+      ],
+    },
+    marketContext: {
+      heading: 'Why longitudinal brand tracking matters in GCC pharma',
+      paragraphs: [
+        'GCC pharmaceutical markets are growing rapidly and attracting generic, biosimilar, and regional entrants that can erode equity built over years of promotional investment within two or three quarters. Brand tracking is the only systematic way to detect awareness, perception, and prescribing-intent erosion early enough to intervene.',
+        'Unlike one-off studies, tracking produces trend data where direction of travel — unaided awareness, prescribing intent, promotional equity — is often more commercially meaningful than any single point-in-time measurement. BioNixus tracking analysis across GCC therapy areas shows prescribing-intent gaps between leading and lagging brands predict IQVIA share movements one to two quarters ahead.',
+        'The concentrated specialist prescriber base in GCC means shifts among even twenty to thirty key specialists can have material commercial impact — sensitivity only detectable through tracking designed for Gulf sample frames, not imported US or EU panel logic.',
+        'Patient brand tracking complements HCP tracking for consumer-facing chronic categories — diabetes, asthma, cardiovascular disease, dermatology — with Arabic-language instruments essential for Saudi national and UAE national patient panels.',
+      ],
+    },
+    services: {
+      heading: 'GCC brand tracking programme modules',
+      items: [
+        {
+          title: 'HCP awareness and prescribing-intent tracking',
+          description:
+            'Five-domain KPI framework: awareness funnel, prescribing behaviour, brand perception, promotional equity, and NPS — calibrated per therapy area with pre-tracking qual to select attribute batteries.',
+        },
+        {
+          title: 'Patient brand tracking',
+          description:
+            'Disease awareness, treatment awareness, satisfaction, and adherence intentions for chronic categories — recruited through in-country Arabic–English patient networks in KSA and UAE.',
+        },
+        {
+          title: 'KSA and UAE market-specific wave design',
+          description:
+            'Geographic concentration sampling for KSA; Dubai versus Abu Dhabi sub-samples for UAE when DHA and DOH formulary dynamics diverge. SFDA-only competitive products incorporated into KSA batteries.',
+        },
+        {
+          title: 'Promotional channel and equity measurement',
+          description:
+            'Channel recall across detail visits, e-detail, congress, digital, and WhatsApp-based HCP communication — mapping reach gaps between investment and physician exposure.',
+        },
+        {
+          title: 'IQVIA MIDAS integration',
+          description:
+            'Combined commercial performance dashboards juxtaposing tracking KPIs with prescription volumes and market share for unified brand-health narratives.',
+        },
+        {
+          title: 'Multi-market GCC harmonization',
+          description:
+            'Comparable KPIs across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman with country appendices and wave-on-wave statistical significance testing.',
+        },
+      ],
+    },
+    methodology: {
+      heading: 'Methodology for GCC pharma brand tracking',
+      paragraphs: [
+        'Sample sizes target statistical power at the metric level: BioNixus recommends a minimum of eighty HCPs per market per wave for primary specialist audiences — sufficient for approximately eighty percent power to detect a ten percentage-point change in awareness or prescribing intent at ninety-five percent confidence. KSA and UAE primary markets typically run n=100–150; Kuwait, Qatar, Bahrain, and Oman secondary markets n=50–80 where specialist populations allow.',
+        'Tracking frequency matches competitive pace: annual or bi-annual for stable therapy areas; quarterly when biosimilar launches, new entrants, or active promotional battles disrupt the category. SFDA and DHA/DOH formulary review cycles should inform wave scheduling at programme initiation.',
+        'Panel-based tracking with rotating fresh-sample refreshment is often more practical in GCC than fully fresh recruitment each wave, given smaller specialist populations. BioNixus manages panel conditioning risk through cohort rotation and eligibility re-verification.',
+        'Each wave delivers a trend report with time-series KPIs, competitive benchmarks, executive summary, and optional real-time dashboard hosting. Wave-on-wave changes are tested for statistical significance before commercial recommendations are issued.',
+      ],
+    },
+    useCases: {
+      heading: 'When GCC teams commission brand tracking',
+      paragraph:
+        'Tracking is commissioned when competitive disruption, launch defence, or portfolio prioritisation requires leading indicators beyond syndicated sales data alone.',
+      areas: [
+        'Post-launch equity monitoring in crowded therapy classes',
+        'Biosimilar and generic entry defence',
+        'Promotional ROI and channel mix optimisation',
+        'Multi-brand portfolio prioritisation across GCC markets',
+        'Medical–commercial alignment on perception drivers',
+        'Patient versus HCP brand health diagnostics',
+        'Pre–formulary listing baseline and post-listing tracking',
+        'Global HQ reporting with GCC-native context',
+      ],
+    },
+    process: {
+      heading: 'Typical GCC brand tracking programme timeline',
+      steps: [
+        {
+          title: 'Weeks 1–2: KPI framework and instrument design',
+          body: 'Competitive set definition, attribute battery selection, bilingual instrument build, and cognitive pilots before wave launch.',
+        },
+        {
+          title: 'Weeks 3–5: Fieldwork and QC',
+          body: 'HCP and optional patient recruitment with daily quality-funnel governance and wave-on-wave panel refresh where applicable.',
+        },
+        {
+          title: 'Weeks 6–8: Analysis and deliverables',
+          body: 'Trend report, executive summary, competitive benchmarks, and optional IQVIA-integrated commercial performance pack.',
+        },
+        {
+          title: 'Ongoing: Wave cadence',
+          body: 'Quarterly, bi-annual, or annual waves aligned to competitive and regulatory calendars with standing dashboard updates.',
+        },
+      ],
+    },
+    deliverables: {
+      heading: 'Brand tracking programme outputs',
+      bullets: [
+        'Wave-on-wave trend report with statistical significance testing',
+        'Executive summary highlighting top commercially material findings',
+        'Competitive benchmark visualisation across defined KPI domains',
+        'Optional IQVIA-integrated commercial performance narrative',
+        'Standing KPI dashboard (Excel, PowerPoint, or hosted digital)',
+        'Audit-ready methodology appendix for internal review',
+      ],
+    },
+    decisionBlueprint: {
+      why: 'GCC competitive change can erode years of promotional equity within two to three quarters — tracking is the earliest reliable signal before IQVIA share moves.',
+      evidence:
+        'Prescribing-intent gaps between leading and lagging brands predict IQVIA market share movements one to two quarters ahead in BioNixus GCC tracking programmes.',
+      next: 'Define competitive set, HCP audience, and commercial questions; BioNixus designs KPI framework, wave schedule, and IQVIA integration path before programme launch.',
+    },
+    faqs: [
+      {
+        question: 'How frequently should a pharma brand run tracking in GCC markets?',
+        answer:
+          'Annual or bi-annual tracking suits stable therapy areas; quarterly tracking is recommended when biosimilar launches, new entrants, or active promotional battles disrupt the category. SFDA and DHA/DOH formulary listing cycles can trigger rapid prescribing shifts that quarterly waves capture and annual waves miss. BioNixus recommends a frequency assessment at programme initiation reviewing the competitive event calendar and regulatory milestones for at least the next twelve months.',
+      },
+      {
+        question: 'What sample sizes are needed for robust GCC brand tracking?',
+        answer:
+          'BioNixus recommends a minimum of eighty HCPs per market per wave for primary specialist audiences — approximately eighty percent power to detect a ten percentage-point change at ninety-five percent confidence. KSA and UAE primary markets typically use n=100–150; secondary GCC markets n=50–80 where feasible. Patient tracking uses n=50–100 per market for common chronic conditions; rare conditions require feasibility assessment.',
+      },
+      {
+        question: 'Which metrics should be included in a GCC pharma brand tracking programme?',
+        answer:
+          'A complete HCP framework spans five domains: awareness (unaided, top-of-mind, aided), perceptions on therapy-critical attributes, prescribing behaviour and forward intent, promotional equity by channel, and Net Promoter Score. BioNixus recommends two to three open-ended verbatim questions per wave for qualitative texture and early warning on emerging perception issues.',
+      },
+      {
+        question: 'How does GCC brand tracking differ methodologically from US or European tracking?',
+        answer:
+          'GCC differs in sample-frame size (panel-based designs often more practical), bilingual instrument requirements, GCC-specific competitive sets including regional and local products, and promotional channel mix including WhatsApp-based HCP communication. BioNixus adapts instruments for Arabic–English fieldwork with cultural validation rather than importing Western tracker templates unchanged.',
+      },
+      {
+        question: 'Can GCC brand tracking data be integrated with IQVIA MIDAS or other secondary data sources?',
+        answer:
+          'Yes. Tracking KPIs align with IQVIA product and segment codes; wave timing can synchronise with MIDAS extract schedules. BioNixus provides primary research and integrated analytical frameworks; IQVIA data access remains the client\'s responsibility.',
+      },
+      {
+        question: 'How long does each GCC brand tracking wave take from instrument finalisation to deliverables?',
+        answer:
+          'A standard KSA and UAE HCP wave typically requires six to eight weeks from survey instrument finalisation to trend report delivery. Full six-market GCC programmes extend to eight to ten weeks depending on sample mix and patient modules. Multi-wave annual agreements streamline wave-to-wave instrument updates and panel refresh.',
+      },
+    ],
+  },
+
+  'specialist-physician-panel-uae': {
+    hubLink: { to: '/gcc-hcp-recruitment-market-research', label: 'GCC HCP recruitment market research' },
+    regulatory: {
+      heading: 'Regulatory, ethics, and data privacy for UAE physician panel research',
+      paragraphs: [
+        'BioNixus adheres to UAE Federal Decree-Law No. 45 of 2021 (PDPL) for all panel research: explicit informed consent specifying research purpose, commissioning organisation category, data storage location, and intended use. Physician identities are not disclosed to clients without separate written consent.',
+        'Every panellist is verified against DHA, DOH, or MOHAP licensing registers confirming active licence status, registered specialty, and emirate of practice. Lapsed, suspended, or relocated physicians are removed at quarterly refresh cycles.',
+        'Honoraria follow IFPMA-aligned UAE healthcare professional interaction codes and are fully disclosed in the consent process. Ethical review through a recognised IRB is available for studies qualifying as research under UAE regulatory definitions.',
+        'Formulary and prescribing behaviour research should sample public hospital specialists within SEHA and DHA networks separately from private settings when DHA and DOH listing dynamics diverge — common for biologics and high-cost specialty therapies.',
+      ],
+    },
+    marketContext: {
+      heading: 'Why validated UAE specialist panels matter',
+      paragraphs: [
+        'UAE prescribing for branded, specialty, and high-cost therapies flows almost entirely through specialists — oncologists, cardiologists, endocrinologists, rheumatologists, pulmonologists — operating within DHA, DOH, SEHA, or private hospital governance. Reaching thirty verified oncologists or twenty-five rheumatologists accesses a large proportion of the commercially relevant audience for most specialty products.',
+        'The UAE had approximately fifteen thousand licensed physicians (MOH 2024), overwhelmingly expatriate with sophisticated clinical literacy from international training. English is the professional lingua franca; research instruments and moderation are typically English-first with Arabic available where completion rates benefit.',
+        'Unverified panels carry significant risk of retired, relocated, or misclassified respondents — producing insights that misdirect commercial strategy. BioNixus three-layer validation (licence, specialty, practice setting) ensures outputs reflect physicians actively treating UAE patients today.',
+        'High expatriate workforce turnover means quarterly panel refresh is essential: re-verification of licence status, updated practice setting, and continuous recruitment through physician directories, association rosters, LinkedIn, and hospital network partnerships.',
+      ],
+    },
+    services: {
+      heading: 'UAE specialist panel research applications',
+      items: [
+        {
+          title: 'Quantitative specialist surveys',
+          description:
+            'Prescribing behaviour, awareness, willingness-to-prescribe, and message testing — n=30–80 for descriptive analysis; n=80–120 for brand tracking waves with wave-on-wave trending.',
+        },
+        {
+          title: 'Advisory boards and expert panels',
+          description:
+            'Eight to twelve specialists for clinical positioning and access validation — recruited in forty-eight to seventy-two hours for common specialties; in-person Dubai or Abu Dhabi or virtual with full logistics.',
+        },
+        {
+          title: 'Delphi consensus panels',
+          description:
+            'Fifteen to twenty-five specialists across two to three rounds for treatment-intensification criteria, biologic initiation thresholds, and referral pathway standards across DHA, DOH, and MOHAP settings.',
+        },
+        {
+          title: 'Conjoint and discrete choice experiments',
+          description:
+            'Forty to sixty specialists quantifying attribute preferences for product profile optimisation — validated through cognitive pilots before launch.',
+        },
+        {
+          title: 'Concept and pre-launch research',
+          description:
+            'Product profile testing and unmet-need mapping with twenty to forty specialists using templates calibrated for UAE clinical decision-making contexts.',
+        },
+        {
+          title: 'Cross-emirate and GCC expansion',
+          description:
+            'Dubai and Abu Dhabi sub-samples when formulary dynamics diverge; GCC-wide recruitment for ultra-rare specialties where UAE-only panels are insufficient.',
+        },
+      ],
+    },
+    methodology: {
+      heading: 'UAE specialist panel validation and recruitment',
+      paragraphs: [
+        'Licence verification confirms active status against DHA Health Professional Register, DOH Abu Dhabi Healthcare Professional Register, or MOHAP physician licence register. Specialty verification matches self-declared specialty to registered specialty; sub-specialty screening catches misclassification (e.g., general internist self-identifying as endocrinologist).',
+        'Practice setting confirmation — public SEHA or DHA, private hospital, or clinic — is a critical sampling variable for formulary access versus treatment preference research. Quarterly refresh re-verifies licences and removes inactive panellists.',
+        'Recruitment channels include LinkedIn professional outreach (effective for DHA private hospital specialists), clinic and hospital network partnerships (SEHA, Mediclinic, Aster, NMC, Cleveland Clinic Abu Dhabi), medical association directories, and panel re-contact (thirty-five to fifty-five percent completion — fastest route for advisory boards).',
+        'Feasibility varies by specialty: endocrinology and cardiology achieve thirty-five to fifty percent contact-to-completion for quantitative surveys in ten to fifteen working days; neurology sub-specialties and haematological oncology extend to fifteen to twenty-five working days. Written feasibility assessments are provided before project commitment.',
+      ],
+    },
+    useCases: {
+      heading: 'When teams use the BioNixus UAE specialist panel',
+      paragraph:
+        'Validated specialist access is the prerequisite for any credible UAE pharma primary research programme — from launch concept testing to quarterly brand tracking.',
+      areas: [
+        'Advisory boards and KOL engagement',
+        'Brand tracking and prescribing behaviour waves',
+        'Formulary access and treatment pathway research',
+        'Message and promotional material testing',
+        'Conjoint and positioning optimisation',
+        'Delphi consensus on guideline interpretation',
+        'Patient identification and referral mapping',
+        'Rare disease studies with GCC panel expansion',
+      ],
+    },
+    process: {
+      heading: 'Typical UAE specialist study timeline',
+      steps: [
+        {
+          title: 'Day 1: feasibility assessment',
+          body: 'Written panel depth, achievable sample size, and timeline estimate for target specialty — typically within twenty-four hours for standard categories.',
+        },
+        {
+          title: 'Week 1: instrument finalisation',
+          body: 'Survey or discussion guide build with optional cognitive pilots for conjoint or complex instruments.',
+        },
+        {
+          title: 'Weeks 2–4: recruitment and fieldwork',
+          body: 'Panel outreach with daily QC; advisory boards often complete recruitment in forty-eight to seventy-two hours for common specialties.',
+        },
+        {
+          title: 'Week 5: analysis and report',
+          body: 'Structured deliverable — survey tables, advisory board thematic report, or Delphi consensus summary — within five working days of field close where scoped.',
+        },
+      ],
+    },
+    deliverables: {
+      heading: 'UAE specialist panel study outputs',
+      bullets: [
+        'Written feasibility assessment before commitment',
+        'Verified respondent roster with licence and specialty documentation',
+        'Quantitative tabulations or qualitative thematic analysis',
+        'Advisory board report with verbatims and recommendations',
+        'Delphi round summaries with consensus metrics',
+        'Audit-ready consent and compliance documentation',
+      ],
+    },
+    decisionBlueprint: {
+      why: 'UAE specialty prescribing is concentrated among a small verified population — unverified panels systematically mislead commercial and access strategy.',
+      evidence:
+        'DHA, DOH, and MOHAP-verified panels outperform unverified samples on specialty alignment, prescribing authority, and UAE-specific clinical experience.',
+      next: 'Request a written feasibility assessment for target specialty, sample size, and method — BioNixus responds within twenty-four hours for standard categories.',
+    },
+    faqs: [
+      {
+        question: 'How does BioNixus verify the credentials of UAE specialist physicians in its panel?',
+        answer:
+          'Three-layer validation: licence verification against DHA, DOH, or MOHAP registers; specialty verification matching declared specialty to registered specialty; practice setting confirmation through clinic, hospital, or health system directories including SEHA, DHA network, Mediclinic, Aster, and Cleveland Clinic Abu Dhabi. Inactive panellists are removed at quarterly refresh.',
+      },
+      {
+        question: 'Which specialist categories are available in the BioNixus UAE physician panel?',
+        answer:
+          'Active panels across oncology, cardiology, endocrinology and diabetology, rheumatology, neurology, pulmonology, nephrology, gastroenterology, dermatology, and infectious disease. Endocrinology and cardiology have the strongest depth (100+ verified panellists each); oncology, rheumatology, and neurology typically forty to eighty; ultra-rare specialties fifteen to thirty nationally with GCC expansion available.',
+      },
+      {
+        question: 'What research applications can the UAE specialist physician panel support?',
+        answer:
+          'Concept and pre-launch research, promotional material testing, advisory boards, Delphi panels, conjoint and discrete choice experiments, brand tracking waves, and patient identification studies — each with validated instrument templates calibrated for UAE specialist contexts.',
+      },
+      {
+        question: 'How does BioNixus handle data privacy and research ethics for UAE physician panel studies?',
+        answer:
+          'All research follows UAE PDPL with explicit opt-in consent. Physician identities are not disclosed without separate consent. Honoraria comply with IFPMA-aligned interaction codes and are disclosed in consent. IRB review is available where studies qualify as research under UAE definitions.',
+      },
+      {
+        question: 'What are realistic feasibility expectations for UAE specialist physician studies?',
+        answer:
+          'Endocrinology and cardiology quantitative surveys typically complete in ten to fifteen working days at thirty-five to fifty percent contact-to-completion. Lower-prevalence specialties extend to fifteen to twenty-five working days. Advisory board recruitment for ten specialists completes in forty-eight to seventy-two hours for common specialties. All estimates are provided in writing before initiation.',
+      },
+      {
+        question: 'How does the Dubai vs Abu Dhabi specialist panel composition differ, and does it matter for research design?',
+        answer:
+          'Dubai hosts a more cosmopolitan, internationally trained workforce with high digital survey completion; Abu Dhabi has higher SEHA public-sector concentration following DOH formulary constraints closely. Separate Dubai and Abu Dhabi sub-samples are recommended for brand tracking or prescribing studies when DHA and DOH formulary listings diverge — common for biologics and high-cost endocrine therapies.',
+      },
+    ],
+  },
 };
 
 /** Shared expansion blocks merged at read time so every P0 landing page clears 2,000 words ([BIO-503]). */

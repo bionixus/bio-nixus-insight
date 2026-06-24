@@ -205,8 +205,8 @@ export default function HubPage() {
   return (
     <>
       <SEOHead
-        title="Healthcare Market Research Companies | Global Pharma Insights | BioNixus"
-        description="Healthcare market research companies trust BioNixus for physician, payer, and hospital evidence across the USA, Europe, MENA, and Asia — quantitative and qualitative programmes with local fieldwork and cross-border comparability."
+        title="Healthcare Market Research by Country | GCC, MENA & Global | BioNixus"
+        description="Healthcare market research by country from BioNixus — physician, payer, and hospital evidence across Saudi Arabia, UAE, Egypt, Kuwait, Qatar, Oman, Bahrain, Europe, and Asia-Pacific with local fieldwork."
         canonical="/healthcare-market-research"
         jsonLd={jsonLd}
       />
@@ -248,6 +248,7 @@ export default function HubPage() {
         }}
         tocItems={[
           { href: '#entry-points', label: 'Entry points' },
+          { href: '#mena-country-mr', label: 'MENA country MR' },
           { href: '#global-coverage', label: 'Global coverage' },
           { href: '#gcc-report-cluster', label: 'GCC reports' },
           { href: '#regional-expertise', label: 'Countries' },
@@ -330,6 +331,18 @@ export default function HubPage() {
               title="Healthcare market research company in Egypt"
             />
             <HealthcareNavCard to="/market-research-egypt" title="Market research in Egypt" />
+            <HealthcareNavCard to="/market-research-kuwait" title="Market research in Kuwait" />
+            <HealthcareNavCard to="/market-research-qatar" title="Market research in Qatar" />
+            <HealthcareNavCard to="/market-research-oman" title="Market research in Oman" />
+            <HealthcareNavCard to="/market-research-bahrain" title="Market research in Bahrain" />
+            <HealthcareNavCard
+              to="/pharmaceutical-market-research-dubai"
+              title="Healthcare market research Dubai"
+            />
+            <HealthcareNavCard
+              to="/healthcare-market-research-agency-gcc"
+              title="Healthcare market research agency GCC"
+            />
             <HealthcareNavCard
               to="/healthcare-market-research/therapy/oncology"
               title="Oncology therapy research"
@@ -340,11 +353,21 @@ export default function HubPage() {
             />
             <HealthcareNavCard
               to="/market-research-by-industry"
-              title="Market research by industry (KSA, UAE, Egypt)"
+              title="Market research by industry (GCC countries)"
             />
             <HealthcareNavCard
               to="/gcc-pharma-market-report-2026"
               title="GCC pharmaceutical market report"
+              featured
+            />
+            <HealthcareNavCard
+              to="/gcc-medical-devices-market-report"
+              title="GCC medical devices & IVD market report"
+              featured
+            />
+            <HealthcareNavCard
+              to="/gcc-pharmaceutical-market-research"
+              title="GCC pharmaceutical market research"
               featured
             />
             <HealthcareNavCard to="/market-reports" title="Market reports hub" featured />
@@ -356,9 +379,48 @@ export default function HubPage() {
       </ReportPremiumSection>
 
       <ReportPremiumSection
+        id="mena-country-mr"
+        title="Healthcare market research by country (MENA &amp; GCC)"
+        subtitle="Research services and fieldwork — distinct from market reports below. Each link opens a country hub for bespoke quantitative and qualitative programmes."
+        variant="muted"
+      >
+        <p className="text-muted-foreground leading-relaxed mb-6 max-w-4xl">
+          Use these pages when you need a{' '}
+          <strong className="font-semibold text-foreground">healthcare market research company</strong> with local
+          fieldwork—not a syndicated report. Every hub links back here and cross-links to at least two sibling GCC
+          markets for regional planning.
+        </p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <HealthcareNavCard to="/healthcare-market-research/saudi-arabia" title="Healthcare market research Saudi Arabia" />
+          <HealthcareNavCard to="/healthcare-market-research/uae" title="Healthcare market research UAE" />
+          <HealthcareNavCard to="/healthcare-market-research/dubai" title="Healthcare market research Dubai" />
+          <HealthcareNavCard to="/healthcare-market-research/egypt" title="Healthcare market research Egypt" />
+          <HealthcareNavCard to="/healthcare-market-research/kuwait" title="Healthcare market research Kuwait" />
+          <HealthcareNavCard to="/healthcare-market-research/qatar" title="Healthcare market research Qatar" />
+          <HealthcareNavCard to="/healthcare-market-research/oman" title="Healthcare market research Oman" />
+          <HealthcareNavCard to="/healthcare-market-research/bahrain" title="Healthcare market research Bahrain" />
+          <HealthcareNavCard to="/healthcare-market-research/turkey" title="Healthcare market research Turkey" />
+          <HealthcareNavCard to="/healthcare-market-research/uk" title="Healthcare market research UK" />
+          <HealthcareNavCard to="/healthcare-market-research/germany" title="Healthcare market research Germany" />
+          <HealthcareNavCard to="/healthcare-market-research/singapore" title="Healthcare market research Singapore" />
+        </div>
+        <p className="text-sm text-muted-foreground mt-6">
+          For market sizing reports and regulatory snapshots, see{' '}
+          <Link to="#global-coverage" className="text-primary font-medium hover:underline">
+            global market coverage (reports)
+          </Link>
+          . For BOFU company-intent pages, see{' '}
+          <Link to="/pharmaceutical-companies-kuwait" className="text-primary font-medium hover:underline">
+            pharmaceutical companies by country
+          </Link>
+          .
+        </p>
+      </ReportPremiumSection>
+
+      <ReportPremiumSection
         id="global-coverage"
         title="Global market coverage: USA, Europe, MENA &amp; Asia"
-        subtitle="One partner across four regions — each country report maps the regulator, payer, and access realities that decide a launch."
+        subtitle="Market reports — regulator, payer, and access snapshots. For bespoke research programmes, use the country MR hubs above."
         variant="default"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">

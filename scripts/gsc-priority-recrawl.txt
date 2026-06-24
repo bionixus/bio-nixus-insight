@@ -1,37 +1,60 @@
-# GSC URL Inspection priority recrawl list — bionixus.com SEO recovery
-# Updated 2026-05-25 after SEO recovery (title/meta/FAQ/schema fixes).
-# Submit the URLs below via Google Search Console -> URL Inspection -> "Request Indexing".
-# Order = priority. Top 4 are the SEO-recovery pages — request indexing on these FIRST.
+# GSC URL Inspection priority recrawl list — Global Country MR sprint
+# Updated 2026-06-23 — MENA country MR + Dubai cluster + GCC BOFU refresh.
+# Submit via Google Search Console → URL Inspection → Request Indexing.
+# Also ping via: npm run indexnow:priority
 
-# --- Recovery priority (request immediately) ---
-https://www.bionixus.com/
-https://www.bionixus.com/blog/healthcare-overview-egypt-market-2026
-https://www.bionixus.com/gcc-pharmaceutical-market-research
-https://www.bionixus.com/gcc-pharma-market-report-2026
+# --- Tier 1: Dubai MR cluster (~1.5k impr, 0 clicks) ---
+https://www.bionixus.com/pharmaceutical-market-research-dubai
+https://www.bionixus.com/insights/top-healthcare-market-research-companies-dubai-2026
+https://www.bionixus.com/insights/top-market-research-companies-dubai-2026
+https://www.bionixus.com/healthcare-market-research/uae
+https://www.bionixus.com/healthcare-market-research/dubai
+https://www.bionixus.com/market-research-uae
 
-# --- Secondary (request after the top 4) ---
-https://www.bionixus.com/sitemap.xml
-https://www.bionixus.com/market-research
+# --- Tier 2: KSA country MR + BOFU ---
+https://www.bionixus.com/healthcare-market-research/saudi-arabia
 https://www.bionixus.com/market-research-saudi-arabia-pharmaceutical
-https://www.bionixus.com/market-research-healthcare
-https://www.bionixus.com/qualitative-market-research
-https://www.bionixus.com/services
-https://www.bionixus.com/services/quantitative-research
-https://www.bionixus.com/services/qualitative-research
-https://www.bionixus.com/services/market-access
+https://www.bionixus.com/market-research-ksa
+
+# --- Tier 3: MENA country MR hubs ---
 https://www.bionixus.com/healthcare-market-research
-https://www.bionixus.com/global-websites
-https://www.bionixus.com/blog
-https://www.bionixus.com/case-studies
-https://www.bionixus.com/mena-pharma-market-data
+https://www.bionixus.com/healthcare-market-research/egypt
+https://www.bionixus.com/healthcare-market-research/kuwait
+https://www.bionixus.com/healthcare-market-research/qatar
+https://www.bionixus.com/healthcare-market-research/oman
+https://www.bionixus.com/healthcare-market-research/bahrain
+https://www.bionixus.com/market-research-egypt
+https://www.bionixus.com/market-research-kuwait
+https://www.bionixus.com/market-research-qatar
+https://www.bionixus.com/market-research-oman
+https://www.bionixus.com/market-research-bahrain
+
+# --- Tier 4: GCC cluster + agency ---
+https://www.bionixus.com/gcc-pharmaceutical-market-research
+https://www.bionixus.com/healthcare-market-research-agency-gcc
+https://www.bionixus.com/uae-pharmaceutical-market-research
+https://www.bionixus.com/egypt-pharmaceutical-market-research
+
+# --- Tier 5: Industry matrix (Kuwait wave sample) ---
+https://www.bionixus.com/market-research-by-industry
+https://www.bionixus.com/kuwait-healthcare-market-research
+https://www.bionixus.com/qatar-healthcare-market-research
+https://www.bionixus.com/oman-healthcare-market-research
+https://www.bionixus.com/bahrain-healthcare-market-research
+
+# --- Tier 6: Europe/APAC country MR ---
+https://www.bionixus.com/healthcare-market-research/uk
+https://www.bionixus.com/healthcare-market-research/germany
+https://www.bionixus.com/healthcare-market-research/france
+https://www.bionixus.com/healthcare-market-research/spain
+https://www.bionixus.com/healthcare-market-research/turkey
+https://www.bionixus.com/healthcare-market-research/singapore
+https://www.bionixus.com/healthcare-market-research/japan
+
+# --- Secondary ---
+https://www.bionixus.com/
+https://www.bionixus.com/premium-home-page
+https://www.bionixus.com/home-staging
+https://www.bionixus.com/sitemap.xml
+https://www.bionixus.com/bionixus-market-research-middle-east
 https://www.bionixus.com/gcc-market-access-guide
-https://www.bionixus.com/pharmacies-saudi-arabia-marketing
-https://www.bionixus.com/pharmaceutical-companies-saudi-arabia
-https://www.bionixus.com/pharmaceutical-companies-uae
-https://www.bionixus.com/pharmaceutical-companies-egypt
-https://www.bionixus.com/pharmaceutical-companies-kuwait
-https://www.bionixus.com/es/market-access
-https://www.bionixus.com/de/blog
-https://www.bionixus.com/fr/blog
-https://www.bionixus.com/ar/contacts
-https://www.bionixus.com/fr/contacts

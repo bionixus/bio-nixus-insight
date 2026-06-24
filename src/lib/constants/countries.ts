@@ -34,7 +34,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     slug: 'saudi-arabia',
     region: 'mena',
     metaSuffix: 'KSA pharma market research with Vision 2030 healthcare expertise.',
-    metaTitle: 'Pharma Market Research Saudi Arabia | SFDA Fieldwork & KOL Studies | BioNixus',
+    metaTitle: 'Healthcare Market Research Saudi Arabia | SFDA Fieldwork | BioNixus',
     metaDescription:
       'Pharmaceutical market research in Saudi Arabia: SFDA-aware physician surveys, Arabic fieldwork, NUPCO-context hospital studies, and KOL mapping across Riyadh, Jeddah, and Dammam.',
     ogDescription:
@@ -86,7 +86,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     slug: 'uae',
     region: 'mena',
     metaSuffix: 'UAE pharmaceutical insights across Abu Dhabi, Dubai, and Sharjah healthcare systems.',
-    metaTitle: 'Pharma Market Research UAE | Dubai & Abu Dhabi Fieldwork | BioNixus',
+    metaTitle: 'Healthcare Market Research UAE | DHA & DOH Fieldwork | BioNixus',
     metaDescription:
       'Pharma market research in the UAE: DHA and DOH-aligned physician surveys, hospital fieldwork in Dubai and Abu Dhabi, and MOHAP-context payer evidence for launch teams.',
     ogDescription:
@@ -178,6 +178,9 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     slug: 'kuwait',
     region: 'mena',
     metaSuffix: 'Kuwait pharmaceutical insight programs for public and private healthcare channels.',
+    metaTitle: 'Healthcare Market Research Kuwait | MOH Fieldwork | BioNixus',
+    metaDescription:
+      'Healthcare and pharmaceutical market research in Kuwait: MOH-aligned physician surveys, hospital stakeholder access, and decision-focused qualitative and quantitative designs.',
     ogDescription:
       'BioNixus executes Kuwait pharmaceutical market research with MOH context, hospital stakeholder access, and decision-focused qualitative and quantitative designs.',
     h1: 'Pharmaceutical Market Research in Kuwait',
@@ -387,6 +390,9 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     slug: 'dubai',
     region: 'mena',
     metaSuffix: 'Dubai healthcare market research targeting DHA regulations and DHCC operations.',
+    metaTitle: 'Healthcare Market Research Dubai | Pharma Fieldwork UAE | BioNixus',
+    metaDescription:
+      'Healthcare market research in Dubai: DHA-compliant physician surveys, DHCC specialist access, payer and formulary research, and pharmaceutical fieldwork across Dubai and the UAE.',
     ogDescription: 'BioNixus executes Dubai pharmaceutical market research, navigating DHA formularies, mandatory insurance dynamics, and the private healthcare ecosystem.',
     h1: 'Pharmaceutical Market Research in Dubai',
     relatedCountries: ['uae', 'abu-dhabi', 'saudi-arabia'],
@@ -497,5 +503,446 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
       }
     ],
     isCity: true,
-  }
+  },
+  qatar: {
+    name: 'Qatar',
+    slug: 'qatar',
+    region: 'mena',
+    metaSuffix: 'Qatar pharmaceutical market research with MOPH and HMC context.',
+    metaTitle: 'Healthcare Market Research Qatar | MOPH Fieldwork | BioNixus',
+    metaDescription:
+      'Healthcare and pharmaceutical market research in Qatar: MOPH-aligned physician surveys, Hamad Medical Corporation stakeholder access, and bilingual fieldwork for launch and access teams.',
+    ogDescription:
+      'BioNixus delivers pharmaceutical market research in Qatar with MOPH context, HMC network access, and decision-focused mixed-method designs.',
+    h1: 'Healthcare Market Research in Qatar',
+    relatedCountries: ['saudi-arabia', 'uae', 'kuwait'],
+    relatedTherapies: ['oncology', 'diabetes', 'respiratory', 'immunology'],
+    keyStats: [
+      { label: 'Pharma Market Size', value: '$1.8B+ annually' },
+      { label: 'Key Regulator', value: 'MOPH' },
+      { label: 'BioNixus Projects', value: '15+ completed Qatar studies' },
+      { label: 'Healthcare Context', value: 'HMC-led public system' },
+    ],
+    faqQuestions: [
+      {
+        question: 'How does BioNixus run healthcare market research in Qatar?',
+        answer:
+          'BioNixus designs Qatar studies around MOPH registration context, Hamad Medical Corporation procurement pathways, and private-sector insurance dynamics. Programs combine physician surveys, payer interviews, and stakeholder mapping aligned to one commercial or access decision.',
+      },
+      {
+        question: 'Which stakeholders matter most in Qatar pharma research?',
+        answer:
+          'High-impact Qatar studies include specialists, hospital pharmacy leaders, formulary influencers, and procurement stakeholders across HMC and private networks such as Sidra Medicine where therapy-relevant.',
+      },
+      {
+        question: 'Can BioNixus run bilingual research in Qatar?',
+        answer:
+          'Yes. Arabic–English screener logic, moderation, and reporting are standard so local nuance is preserved for regional and global leadership teams.',
+      },
+      {
+        question: 'How does Qatar research connect to wider GCC benchmarking?',
+        answer:
+          'Qatar modules can run standalone or with comparable UAE, Saudi Arabia, and Kuwait cells using harmonised instruments for regional portfolio committees.',
+      },
+      {
+        question: 'What outputs do Qatar market research programs deliver?',
+        answer:
+          'Typical deliverables include segment priorities, stakeholder influence maps, access objection themes, and 30/60/90 action plans mapped to MOPH and hospital committee realities.',
+      },
+    ],
+  },
+  oman: {
+    name: 'Oman',
+    slug: 'oman',
+    region: 'mena',
+    metaSuffix: 'Oman pharmaceutical market research with MOH and SFDA Oman context.',
+    metaTitle: 'Healthcare Market Research Oman | MOH Fieldwork | BioNixus',
+    metaDescription:
+      'Healthcare and pharmaceutical market research in Oman: MOH-aligned physician surveys, hospital stakeholder access, and fieldwork across Muscat and interior governorates.',
+    ogDescription:
+      'BioNixus executes pharmaceutical market research in Oman with MOH context, public and private hospital access, and practical launch and access evidence.',
+    h1: 'Healthcare Market Research in Oman',
+    relatedCountries: ['uae', 'saudi-arabia', 'qatar'],
+    relatedTherapies: ['diabetes', 'oncology', 'cardiology', 'respiratory'],
+    keyStats: [
+      { label: 'Pharma Market Size', value: '$900M+ annually' },
+      { label: 'Key Regulator', value: 'MOH / SFDA Oman' },
+      { label: 'BioNixus Projects', value: '12+ completed Oman studies' },
+      { label: 'Healthcare Context', value: 'Universal coverage expansion' },
+    ],
+    faqQuestions: [
+      {
+        question: 'How does BioNixus approach pharmaceutical market research in Oman?',
+        answer:
+          'BioNixus structures Oman research around MOH tender cycles, Sultan Qaboos University Hospital academic influence, and private hospital adoption patterns. Studies map decision-critical stakeholders before fieldwork scale-up.',
+      },
+      {
+        question: 'Which institutions are prioritised in Oman healthcare research?',
+        answer:
+          'Programs typically include Royal Hospital, Sultan Qaboos University Hospital, and relevant private groups depending on therapy area.',
+      },
+      {
+        question: 'Does geography affect Oman sample design?',
+        answer:
+          'Yes. Interior governorate referral patterns and Muscat concentration require segmented sampling so adoption forecasts reflect real patient flows.',
+      },
+      {
+        question: 'Can Oman modules integrate with UAE or KSA studies?',
+        answer:
+          'Yes. Harmonised GCC instruments allow side-by-side reads while preserving Oman-specific MOH and procurement context.',
+      },
+      {
+        question: 'Why do pharma teams commission Oman research with BioNixus?',
+        answer:
+          'Teams need local clarity on formulary behaviour, distributor dynamics, and prescriber adoption with outputs tied to launch sequencing.',
+      },
+    ],
+  },
+  bahrain: {
+    name: 'Bahrain',
+    slug: 'bahrain',
+    region: 'mena',
+    metaSuffix: 'Bahrain pharmaceutical market research with NHRA and Salmaniya context.',
+    metaTitle: 'Healthcare Market Research Bahrain | NHRA Fieldwork | BioNixus',
+    metaDescription:
+      'Healthcare and pharmaceutical market research in Bahrain: NHRA-aligned physician surveys, Salmaniya Medical Complex stakeholder access, and compact-market fieldwork.',
+    ogDescription:
+      'BioNixus delivers pharmaceutical market research in Bahrain with NHRA context, public and private channel mapping, and decision-ready mixed-method outputs.',
+    h1: 'Healthcare Market Research in Bahrain',
+    relatedCountries: ['saudi-arabia', 'qatar', 'kuwait'],
+    relatedTherapies: ['diabetes', 'oncology', 'cardiology', 'immunology'],
+    keyStats: [
+      { label: 'Pharma Market Size', value: '$600M+ annually' },
+      { label: 'Key Regulator', value: 'NHRA' },
+      { label: 'BioNixus Projects', value: '10+ completed Bahrain studies' },
+      { label: 'Healthcare Context', value: 'Compact high-density market' },
+    ],
+    faqQuestions: [
+      {
+        question: 'How does BioNixus run healthcare market research in Bahrain?',
+        answer:
+          'Bahrain programs reflect NHRA registration requirements, Salmaniya Medical Complex formulary influence, and private hospital competition in a compact geography.',
+      },
+      {
+        question: 'Which stakeholders are included in Bahrain pharma studies?',
+        answer:
+          'Typical panels include prescribing specialists, hospital pharmacy leaders, procurement influencers, and payer-adjacent voices across public and private settings.',
+      },
+      {
+        question: 'How does cross-border traffic affect Bahrain research?',
+        answer:
+          'Commuter flows via the King Fahd Causeway can influence referral patterns. Sampling plans account for public-system concentration versus private carve-outs where relevant.',
+      },
+      {
+        question: 'Can Bahrain research benchmark against KSA or Qatar?',
+        answer:
+          'Yes. Comparable GCC modules help portfolio teams interpret Bahrain-specific NHRA dynamics alongside larger neighbour markets.',
+      },
+      {
+        question: 'What makes Bahrain market research decision-ready?',
+        answer:
+          'Outputs link findings to formulary sequencing, messaging priorities, and stakeholder engagement plans—not descriptive reporting alone.',
+      },
+    ],
+  },
+  germany: {
+    name: 'Germany',
+    slug: 'germany',
+    region: 'europe',
+    metaSuffix: 'Germany pharmaceutical market research with AMNOG and G-BA HTA context.',
+    metaTitle: 'Healthcare Market Research Germany | AMNOG & G-BA | BioNixus',
+    metaDescription:
+      'Pharmaceutical market research in Germany: AMNOG-aware physician and payer evidence, hospital stakeholder access, and HTA-aligned study design for launch teams.',
+    ogDescription:
+      'BioNixus delivers pharmaceutical market research in Germany with AMNOG and G-BA context, multilingual fieldwork, and decision-focused outputs.',
+    h1: 'Pharmaceutical Market Research in Germany',
+    relatedCountries: ['uk', 'europe', 'france'],
+    relatedTherapies: ['oncology', 'immunology', 'biologics', 'rare-diseases'],
+    keyStats: [
+      { label: 'Pharma Market Size', value: '$70B+ annually' },
+      { label: 'Key Bodies', value: 'BfArM / G-BA / AMNOG' },
+      { label: 'Language Coverage', value: 'German–English fieldwork' },
+      { label: 'Research Focus', value: 'HTA and hospital access' },
+    ],
+    faqQuestions: [
+      {
+        question: 'How does BioNixus support pharmaceutical market research in Germany?',
+        answer:
+          'BioNixus designs Germany studies around AMNOG benefit assessment realities, hospital formulary behaviour, and specialist adoption patterns with outputs mapped to launch and access decisions.',
+      },
+      {
+        question: 'Which methods work best for Germany pharma insight?',
+        answer:
+          'Mixed quant–qual designs are common: structured physician surveys for confidence, plus qualitative depth on evidence interpretation and access barriers.',
+      },
+      {
+        question: 'Can Germany modules integrate with wider European programmes?',
+        answer:
+          'Yes. Harmonised EU instruments with Germany-specific HTA modules support regional portfolio planning.',
+      },
+    ],
+  },
+  france: {
+    name: 'France',
+    slug: 'france',
+    region: 'europe',
+    metaSuffix: 'France pharmaceutical market research with HAS and ANSM context.',
+    metaTitle: 'Healthcare Market Research France | HAS & ANSM | BioNixus',
+    metaDescription:
+      'Pharmaceutical market research in France: HAS-aware payer evidence, hospital stakeholder interviews, and launch-ready insight for pharma and biotech teams.',
+    ogDescription:
+      'BioNixus executes pharmaceutical market research in France with HAS and ANSM context and practical decision-oriented synthesis.',
+    h1: 'Pharmaceutical Market Research in France',
+    relatedCountries: ['uk', 'europe', 'germany'],
+    relatedTherapies: ['oncology', 'immunology', 'diabetes', 'respiratory'],
+    keyStats: [
+      { label: 'Pharma Market Size', value: '$40B+ annually' },
+      { label: 'Key Bodies', value: 'ANSM / HAS' },
+      { label: 'Language Coverage', value: 'French–English fieldwork' },
+      { label: 'Research Focus', value: 'Hospital and payer access' },
+    ],
+    faqQuestions: [
+      {
+        question: 'How does BioNixus run pharma market research in France?',
+        answer:
+          'Programs reflect HAS transparency requirements, hospital committee behaviour, and specialist adoption with mixed-method designs tied to one strategic decision.',
+      },
+      {
+        question: 'Which stakeholders are prioritised in France studies?',
+        answer:
+          'Prescribing specialists, hospital pharmacy leaders, and access influencers across public and private pathways depending on therapy and care setting.',
+      },
+      {
+        question: 'Can France research connect to EU5 benchmarking?',
+        answer:
+          'Yes. France modules can run with comparable UK and Germany cells using shared core metrics.',
+      },
+    ],
+  },
+  spain: {
+    name: 'Spain',
+    slug: 'spain',
+    region: 'europe',
+    metaSuffix: 'Spain pharmaceutical market research with AEMPS and regional HTA context.',
+    metaTitle: 'Healthcare Market Research Spain | AEMPS Fieldwork | BioNixus',
+    metaDescription:
+      'Pharmaceutical market research in Spain: AEMPS-aligned physician surveys, regional payer context, and hospital stakeholder evidence for launch teams.',
+    ogDescription:
+      'BioNixus delivers pharmaceutical market research in Spain with AEMPS context and multilingual European field execution.',
+    h1: 'Pharmaceutical Market Research in Spain',
+    relatedCountries: ['uk', 'europe', 'france'],
+    relatedTherapies: ['oncology', 'diabetes', 'respiratory', 'cardiology'],
+    keyStats: [
+      { label: 'Pharma Market Size', value: '$25B+ annually' },
+      { label: 'Key Bodies', value: 'AEMPS / regional HTA' },
+      { label: 'Language Coverage', value: 'Spanish–English fieldwork' },
+      { label: 'Research Focus', value: 'Regional access variation' },
+    ],
+    faqQuestions: [
+      {
+        question: 'How does BioNixus support market research in Spain?',
+        answer:
+          'Studies account for regional HTA variation, hospital procurement behaviour, and specialist adoption with decision-linked outputs for commercial and access teams.',
+      },
+      {
+        question: 'What methods are used for Spain pharmaceutical research?',
+        answer:
+          'Quantitative surveys plus qualitative depth interviews are combined based on whether the priority is sizing, objection mapping, or pathway detail.',
+      },
+      {
+        question: 'Can Spain integrate into pan-European programmes?',
+        answer:
+          'Yes. Spain cells use harmonised instruments with local AEMPS and regional access modules.',
+      },
+    ],
+  },
+  turkey: {
+    name: 'Turkey',
+    slug: 'turkey',
+    region: 'mena',
+    metaSuffix: 'Turkey pharmaceutical market research with TITCK and SSI context.',
+    metaTitle: 'Healthcare Market Research Turkey | TITCK Fieldwork | BioNixus',
+    metaDescription:
+      'Healthcare and pharmaceutical market research in Turkey: TITCK-aligned physician surveys, hospital stakeholder access, and launch evidence for MENA–Europe bridge markets.',
+    ogDescription:
+      'BioNixus delivers pharmaceutical market research in Turkey with TITCK context, public and private hospital access, and bilingual field execution.',
+    h1: 'Healthcare Market Research in Turkey',
+    relatedCountries: ['saudi-arabia', 'europe', 'egypt'],
+    relatedTherapies: ['oncology', 'diabetes', 'immunology', 'respiratory'],
+    keyStats: [
+      { label: 'Pharma Market Size', value: '$8B+ annually' },
+      { label: 'Key Regulator', value: 'TITCK' },
+      { label: 'BioNixus Projects', value: '18+ completed Turkey studies' },
+      { label: 'Healthcare Context', value: 'Public SSI plus private growth' },
+    ],
+    faqQuestions: [
+      {
+        question: 'How does BioNixus run pharmaceutical market research in Turkey?',
+        answer:
+          'Programs reflect TITCK registration pathways, SSI reimbursement logic, and private hospital adoption with stakeholder mapping before fieldwork.',
+      },
+      {
+        question: 'Which stakeholders are included in Turkey studies?',
+        answer:
+          'Specialists, hospital pharmacy leaders, procurement influencers, and payer-adjacent voices across Istanbul hubs and Anatolian referral networks.',
+      },
+      {
+        question: 'Can Turkey research support MENA–Europe portfolio planning?',
+        answer:
+          'Yes. Turkey modules bridge Gulf and EU evidence frameworks with comparable core metrics.',
+      },
+      {
+        question: 'Does BioNixus run Turkish-language fieldwork?',
+        answer:
+          'Yes. Turkish–English instruments and moderation preserve medical precision for local and global stakeholders.',
+      },
+      {
+        question: 'What outputs do Turkey programs deliver?',
+        answer:
+          'Segment priorities, access objection themes, and actionable launch or expansion recommendations mapped to TITCK and payer realities.',
+      },
+    ],
+  },
+  singapore: {
+    name: 'Singapore',
+    slug: 'singapore',
+    region: 'europe',
+    metaSuffix: 'Singapore pharmaceutical market research with HSA and MOH context.',
+    metaTitle: 'Healthcare Market Research Singapore | HSA Fieldwork | BioNixus',
+    metaDescription:
+      'Pharmaceutical market research in Singapore: HSA-aligned physician surveys, hospital stakeholder access, and APAC launch evidence for pharma and medtech teams.',
+    ogDescription:
+      'BioNixus executes pharmaceutical market research in Singapore with HSA context and hospital network access across public and private sectors.',
+    h1: 'Healthcare Market Research in Singapore',
+    relatedCountries: ['japan', 'uk', 'uae'],
+    relatedTherapies: ['oncology', 'immunology', 'rare-diseases', 'diabetes'],
+    keyStats: [
+      { label: 'Pharma Market Size', value: '$1.5B+ annually' },
+      { label: 'Key Regulator', value: 'HSA' },
+      { label: 'BioNixus Projects', value: '10+ completed Singapore studies' },
+      { label: 'Healthcare Context', value: 'Public–private dual system' },
+    ],
+    faqQuestions: [
+      {
+        question: 'How does BioNixus support market research in Singapore?',
+        answer:
+          'Studies reflect HSA registration requirements, MOH subsidy pathways, and private hospital adoption with mixed-method designs tied to launch decisions.',
+      },
+      {
+        question: 'Which institutions are covered in Singapore research?',
+        answer:
+          'Programs include public clusters such as SingHealth and NHG networks and private groups including Mount Elizabeth where therapy-relevant.',
+      },
+      {
+        question: 'Can Singapore modules benchmark across APAC?',
+        answer:
+          'Yes. Harmonised instruments support comparison with Japan and wider Asia-Pacific cells.',
+      },
+    ],
+  },
+  japan: {
+    name: 'Japan',
+    slug: 'japan',
+    region: 'europe',
+    metaSuffix: 'Japan pharmaceutical market research with PMDA and NHI context.',
+    metaTitle: 'Healthcare Market Research Japan | PMDA Fieldwork | BioNixus',
+    metaDescription:
+      'Pharmaceutical market research in Japan: PMDA-aware physician surveys, hospital stakeholder access, and NHI-aligned evidence for global launch teams.',
+    ogDescription:
+      'BioNixus delivers pharmaceutical market research in Japan with PMDA and NHI context through coordinated multilingual field partners.',
+    h1: 'Pharmaceutical Market Research in Japan',
+    relatedCountries: ['singapore', 'uk', 'europe'],
+    relatedTherapies: ['oncology', 'rare-diseases', 'immunology', 'biologics'],
+    keyStats: [
+      { label: 'Pharma Market Size', value: '$90B+ annually' },
+      { label: 'Key Bodies', value: 'PMDA / MHLW / NHI' },
+      { label: 'Language Coverage', value: 'Japanese–English workflows' },
+      { label: 'Research Focus', value: 'NHI price and hospital access' },
+    ],
+    faqQuestions: [
+      {
+        question: 'How does BioNixus approach pharmaceutical market research in Japan?',
+        answer:
+          'Programs account for PMDA evidence expectations, NHI pricing dynamics, and hospital formulary behaviour with outputs mapped to access and launch sequencing.',
+      },
+      {
+        question: 'Which methods are used for Japan pharma insight?',
+        answer:
+          'Mixed quant–qual designs with Japanese-language moderation and validated translation workflows for medical and strategic precision.',
+      },
+      {
+        question: 'Can Japan research integrate with global programmes?',
+        answer:
+          'Yes. Japan cells use harmonised global metrics with local PMDA and NHI modules for portfolio committees.',
+      },
+    ],
+  },
 };
+
+const COUNTRY_NAME_OVERRIDES: Record<string, string> = {
+  'united-states': 'United States',
+  'united-kingdom': 'United Kingdom',
+  'united-arab-emirates': 'United Arab Emirates',
+};
+
+const EUROPE_SLUGS = new Set(['germany', 'france', 'italy', 'spain', 'sweden', 'denmark', 'switzerland']);
+const UK_SLUGS = new Set(['united-kingdom', 'uk']);
+
+function slugToCountryName(slug: string): string {
+  if (COUNTRY_NAME_OVERRIDES[slug]) return COUNTRY_NAME_OVERRIDES[slug];
+  return slug
+    .split('-')
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(' ');
+}
+
+function inferCountryRegion(slug: string): CountryRegion {
+  if (UK_SLUGS.has(slug)) return 'uk';
+  if (EUROPE_SLUGS.has(slug)) return 'europe';
+  return 'mena';
+}
+
+/** Fallback config for sitemap country slugs without a rich COUNTRY_CONFIGS entry. */
+export function buildFallbackCountryConfig(slug: string): CountryConfig {
+  const countryName = slugToCountryName(slug);
+  return {
+    name: countryName,
+    slug,
+    region: inferCountryRegion(slug),
+    metaSuffix: `${countryName} healthcare and pharmaceutical market research insights for launch, access, and growth decisions.`,
+    ogDescription:
+      `BioNixus delivers decision-ready pharmaceutical market research in ${countryName} with localized stakeholder insights, market access context, and practical strategy support.`,
+    h1: `Pharmaceutical Market Research in ${countryName}`,
+    relatedCountries: ['saudi-arabia', 'uae', 'uk', 'europe'],
+    relatedTherapies: ['oncology', 'diabetes', 'respiratory', 'immunology'],
+    keyStats: [
+      { label: 'Market Focus', value: `${countryName} healthcare ecosystem` },
+      { label: 'Research Scope', value: 'Physician, payer, and hospital stakeholders' },
+      { label: 'Delivery Model', value: 'Quantitative + qualitative mixed-methods' },
+      { label: 'Primary Output', value: 'Decision-ready pharmaceutical insight' },
+    ],
+    faqQuestions: [
+      {
+        question: `How does BioNixus support pharmaceutical market research in ${countryName}?`,
+        answer:
+          `BioNixus supports pharmaceutical market research in ${countryName} through localized stakeholder mapping, fit-for-purpose methodology, and execution focused on practical commercial, medical, and access decisions.`,
+      },
+      {
+        question: `Which stakeholder groups are typically included in ${countryName} studies?`,
+        answer:
+          `Most ${countryName} studies include prescribing specialists, institutional influencers, pharmacy stakeholders, and access-relevant decision contributors, depending on the therapy area and strategic objective.`,
+      },
+      {
+        question: `What outputs do clients receive from ${countryName} market research programs?`,
+        answer:
+          `Programs typically deliver structured insight summaries, segment priorities, stakeholder influence mapping, and action-focused recommendations that can be applied to launch, expansion, or optimization plans in ${countryName}.`,
+      },
+    ],
+  };
+}
+
+/** Resolve rich or fallback country config for any healthcare MR country slug. */
+export function resolveCountryConfig(slug: string): CountryConfig {
+  return COUNTRY_CONFIGS[slug] ?? buildFallbackCountryConfig(slug);
+}

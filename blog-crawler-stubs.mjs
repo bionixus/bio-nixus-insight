@@ -11,6 +11,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'uae-healthcare-market-trends-2025',
   'desmoid-tumors-nirogacestat-pharma-market-access',
   'neurofibromatosis',
+  'skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement',
 ]);
 
 /** Slugs served primarily from React hardcoded modules (full HTML in SPA). */
@@ -20,6 +21,8 @@ export const BLOG_META_DESCRIPTION_OVERRIDES = {
     '深度解析2026年中国医疗健康市场全景：医保支付改革、创新药出海与生物药增长、AI智慧医疗落地、老龄化诊疗需求变化、医院与基层竞争格局，及跨国药企本地化策略。BioNixus为中国药企、投资人与决策者提供可执行洞察。涵盖器械、数字医疗与支付改革路径。',
   'سوق-الدواء-السعودي-2026':
     'سوق الدواء السعودي 2026: توطين التصنيع، نمو الأدوية الحيوية، توسع التأمين ومشتريات NUPCO—تحليل BioNixus للوصول والتجاري في المملكة',
+  'skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement':
+    'Skyrizi led July pharma TV ad spend and brand-impression rankings. What AbbVie immunology leadership means for omnichannel engagement, HCP digital, and promotional ROI.',
 };
 
 export function getBlogMetaDescriptionOverride(slug) {
@@ -30,6 +33,8 @@ export function getBlogMetaDescriptionOverride(slug) {
 /** ≤60-char primary titles for crawler HTML (before "| BioNixus" suffix). */
 export const BLOG_TITLE_OVERRIDES = {
   'pharmaceutical-market-entry-saudi-arabia-2026-guide': 'Saudi Pharma Market Entry 2026',
+  'skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement':
+    'Skyrizi Tops July Pharma Rankings: Omnichannel Lessons',
 };
 
 export function getBlogTitleOverride(slug) {

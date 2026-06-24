@@ -746,8 +746,13 @@ function blogCanonicalAbsoluteUrl(
   }
 }
 
-const BlogPost = () => {
-  const { slug } = useParams<{ slug: string }>();
+type BlogPostProps = {
+  fixedSlug?: string;
+};
+
+const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
+  const { slug: paramSlug } = useParams<{ slug: string }>();
+  const slug = fixedSlug ?? paramSlug;
   const { pathname } = useLocation();
   const isArBlog = pathname.startsWith('/ar/blog');
   const blogIndexPath = isArBlog ? '/ar/blog' : '/blog';

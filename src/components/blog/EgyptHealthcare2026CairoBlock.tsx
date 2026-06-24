@@ -25,7 +25,7 @@ export function EgyptHealthcare2026CairoBlock() {
         >
           Cairo hospitals healthcare 2023–2026 — hospital clusters and Egypt market context
         </h2>
-        <p className="text-[15px] text-foreground leading-relaxed mb-4">
+        <p className="text-[15px] text-foreground leading-relaxed mb-3">
           Use this snapshot for Cairo hospital footprint, payer mix, and pharmaceutical access signals from
           2023 through 2026. For company-level intelligence, see{' '}
           <Link
@@ -43,6 +43,18 @@ export function EgyptHealthcare2026CairoBlock() {
           </Link>
           .
         </p>
+        <p className="text-sm font-semibold text-foreground mb-2">
+          Top Cairo hospital systems to map for healthcare 2023–2026 (numbered)
+        </p>
+        <ol className="list-decimal list-inside space-y-1.5 text-sm text-muted-foreground mb-4 max-w-3xl">
+          {EGYPT_CAIRO_HOSPITAL_CLUSTERS.map((cluster) => (
+            <li key={cluster.name} className="pl-1">
+              <strong className="text-foreground font-semibold">{cluster.name}</strong>
+              {' — '}
+              {cluster.detail}
+            </li>
+          ))}
+        </ol>
         <ul className="grid sm:grid-cols-2 gap-3 list-none p-0 m-0 mb-4">
           {EGYPT_CAIRO_HOSPITAL_CLUSTERS.map((cluster) => (
             <li

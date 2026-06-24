@@ -477,17 +477,17 @@ const GccMarketAccessGuide = () => {
               <Link to="/healthcare-market-research/uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 UAE pharmaceutical market research and access intelligence
               </Link>
-              <Link to="/global-websites/kuwait" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-                Kuwait pharmaceutical market research and KFDA context
+              <Link to="/healthcare-market-research/kuwait" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                Healthcare market research Kuwait and MOH fieldwork
               </Link>
-              <Link to="/global-websites/qatar" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-                Qatar pharmaceutical market research and formulary dynamics
+              <Link to="/healthcare-market-research/qatar" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                Healthcare market research Qatar and MOPH context
               </Link>
-              <Link to="/global-websites/bahrain" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-                Bahrain pharmaceutical market research and NHRA context
+              <Link to="/healthcare-market-research/bahrain" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                Healthcare market research Bahrain and NHRA context
               </Link>
-              <Link to="/global-websites/oman" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
-                Oman pharmaceutical market research and regulatory pathway insights
+              <Link to="/healthcare-market-research/oman" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                Healthcare market research Oman and MOH pathway insights
               </Link>
               <Link to="/biosimilar-market-entry-saudi-arabia" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 Biosimilar market entry in Saudi Arabia strategy guide (2026)

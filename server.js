@@ -69,6 +69,11 @@ const SAUDI_PHARMA_MARKET_2026_AR_BLOG_AR_TITLE =
 const SAUDI_PHARMA_MARKET_2026_AR_META_DESCRIPTION =
   'سوق الدواء السعودي 2026: توطين التصنيع، نمو الأدوية الحيوية، توسع التأمين ومشتريات NUPCO—تحليل BioNixus للوصول والتجاري في المملكة';
 
+const SKYRIZI_ROOT_SLUG = 'skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement';
+const SKYRIZI_ROOT_TITLE = 'Skyrizi Tops July Pharma Rankings: Omnichannel Lessons | BioNixus';
+const SKYRIZI_ROOT_DESCRIPTION =
+  'Skyrizi led July pharma TV ad spend and brand-impression rankings. What AbbVie immunology leadership means for omnichannel engagement, HCP digital, and promotional ROI.';
+
 const GENERIC_DEFAULT_TITLES = new Set([
   'BioNixus | Healthcare & Pharmaceutical Market Research',
   'BioNixus',
@@ -151,6 +156,9 @@ function buildFallbackTitle(pathname) {
   }
 
   if (path === '/healthcare-market-research') return 'Healthcare & Pharmaceutical Market Research in Dubai, UAE & MENA | BioNixus';
+  if (path === '/fr/healthcare-market-research') return 'Recherche de marché santé et pharma | Europe et MENA | BioNixus';
+  if (path === '/fr/healthcare-market-research/france') return 'Études de marché pharmaceutique France | HAS et ANSM | BioNixus';
+  if (path === `/${SKYRIZI_ROOT_SLUG}`) return SKYRIZI_ROOT_TITLE;
   if (path === '/global-websites/united-arab-emirates') return 'UAE Pharmaceutical Go-to-Market Blueprint | Dubai DHA & Abu Dhabi DOH | BioNixus';
   if (path === '/global-websites/saudi-arabia') return 'Saudi Arabia Pharma Market Entry Blueprint | SFDA, NUPCO & Vision 2030 | BioNixus';
   if (path === '/healthcare-market-research/united-arab-emirates') return 'United Arab Emirates Healthcare Market Research | MOHAP, DHA & DOH | BioNixus';
@@ -196,6 +204,9 @@ function buildFallbackTitle(pathname) {
     }
     if (slug === 'gcc-pharmaceutical-market-comparison-uae-saudi-kuwait') {
       return 'GCC Pharma Comparison UAE vs Saudi vs Kuwait 2026 | BioNixus';
+    }
+    if (slug === SKYRIZI_ROOT_SLUG) {
+      return SKYRIZI_ROOT_TITLE;
     }
     return `${titleCaseFromSlug(slug)} | BioNixus Blog`;
   }
@@ -312,6 +323,15 @@ function buildFallbackDescription(pathname) {
   if (path === '/healthcare-market-research') {
     return 'BioNixus — leading healthcare and pharmaceutical market research company serving Dubai, UAE, and MENA. DHA, MOHAP, and DOH-aligned physician surveys, KOL mapping, and market access.';
   }
+  if (path === '/fr/healthcare-market-research') {
+    return 'Études de marché pharmaceutique et santé en Europe et au Moyen-Orient : preuves médecins, payeurs et hôpitaux pour lancement, accès au marché et croissance — BioNixus.';
+  }
+  if (path === '/fr/healthcare-market-research/france') {
+    return 'Études de marché pharmaceutique France : panels médecins, payeurs, préparation HAS/ASMR et modules CEESP pour équipes internationales — BioNixus.';
+  }
+  if (path === `/${SKYRIZI_ROOT_SLUG}`) {
+    return SKYRIZI_ROOT_DESCRIPTION;
+  }
   if (path === '/global-websites/united-arab-emirates') {
     return 'UAE pharmaceutical go-to-market blueprint: DHA, DOH, and MOHAP launch sequencing, payer mapping, and commercialization intelligence for Dubai and Abu Dhabi.';
   }
@@ -351,6 +371,9 @@ function buildFallbackDescription(pathname) {
     }
     if (slug === 'gcc-pharmaceutical-market-comparison-uae-saudi-kuwait') {
       return 'UAE vs Saudi Arabia vs Kuwait pharmaceutical market comparison: tenders, SFDA-scale regulation in KSA, UAE emirate payers, Kuwait access concentration—BioNixus GCC.';
+    }
+    if (slug === SKYRIZI_ROOT_SLUG) {
+      return SKYRIZI_ROOT_DESCRIPTION;
     }
     return `${titleCaseFromSlug(slug)} insight article from BioNixus covering healthcare and pharmaceutical market strategy.`;
   }
@@ -586,6 +609,7 @@ async function startServer() {
     '/digital-transformation': '/services',
     '/fr/about': '/about',
     '/fr/services': '/services',
+    '/fr/market-research-healthcare': '/fr/healthcare-market-research',
     '/fr/quantitative-research': '/services/quantitative-research',
     '/fr/qualitative-research': '/services/qualitative-research',
     '/fr/success-in-startups': '/bionixus-ai-chatbots-increase-sales-and-lead-generation',

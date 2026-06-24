@@ -15,6 +15,10 @@ import {
 import { ReportPremiumHero } from '@/components/report-premium';
 import { ExpandedServiceLandingContent } from '@/components/page/ExpandedServiceLandingContent';
 import type { ServiceLandingExpandedContent } from '@/data/serviceLandingContent';
+import { getPageMedia } from '@/data/mediaAssets';
+import { MediaVisualBriefing } from '@/components/media/MediaVisualBriefing';
+import { ProcessWorkflowVisual } from '@/components/media/ProcessWorkflowVisual';
+import { ProofVideoEmbed } from '@/components/media/ProofVideoEmbed';
 
 type LinkItem = {
   to: string;
@@ -41,6 +45,8 @@ type StrategicServicePageProps = {
   faqs?: Array<{ question: string; answer: string }>;
   /** Optional long-form sections from serviceLandingContent ([BIO-451]). */
   expandedContent?: ServiceLandingExpandedContent;
+  /** Key into PAGE_MEDIA in mediaAssets.ts; defaults to slug derived from canonical URL. */
+  mediaSlug?: string;
 };
 
 export default function StrategicServicePage({
@@ -58,10 +64,13 @@ export default function StrategicServicePage({
   areaServed,
   faqs,
   expandedContent,
+  mediaSlug,
 }: StrategicServicePageProps) {
   const resolvedFaqs = expandedContent?.faqs ?? faqs;
   const pagePath = canonicalUrl.replace('https://www.bionixus.com', '') || '/';
   const slugKey = pagePath.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '') || 'service';
+  const resolvedMediaSlug = mediaSlug ?? slugKey.replace(/^-|-$/g, '');
+  const pageMedia = getPageMedia(resolvedMediaSlug) ?? getPageMedia('default-service');
   const faqSectionId = `service-faq-${slugKey}`;
   const marketName = areaServed && areaServed.length ? areaServed[0] : 'GCC & MENA';
   const serviceLabel = (serviceType ?? breadcrumbLabel).toLowerCase();
@@ -127,7 +136,26 @@ export default function StrategicServicePage({
           badges={['BioNixus service', 'Senior-led analysis', 'Bilingual fieldwork']}
           stats={metrics.map((m) => ({ value: m.value, label: m.label }))}
           statsCaption=""
+          heroImage={pageMedia?.heroImage}
         />
+
+        {pageMedia?.visualBriefing ? (
+          <MediaVisualBriefing
+            heading={pageMedia.visualBriefing.heading}
+            figures={pageMedia.visualBriefing.figures}
+          />
+        ) : null}
+        {pageMedia?.processHeading ? (
+          <ProcessWorkflowVisual
+            heading={pageMedia.processHeading}
+            steps={[
+              'Discovery and feasibility sprint',
+              'Protocol and sample governance',
+              'Bilingual field execution',
+              'Decision-ready insight handover',
+            ]}
+          />
+        ) : null}
 
         <ReportContentWithAside config={config}>
           <p className="text-sm text-muted-foreground leading-relaxed mb-8">
@@ -157,6 +185,10 @@ export default function StrategicServicePage({
               <ReportMidPageCta config={config} className="mt-8" />
             </div>
           </section>
+
+          {pageMedia?.proofVideo ? (
+            <ProofVideoEmbed config={pageMedia.proofVideo} className="py-6" />
+          ) : null}
 
           {/* Delivery priorities */}
           <section className="section-padding" id="delivery-priorities">

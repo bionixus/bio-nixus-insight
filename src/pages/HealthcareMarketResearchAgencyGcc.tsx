@@ -6,8 +6,8 @@ const expandedContent = getServiceLandingContent('healthcare-market-research-age
 export default function HealthcareMarketResearchAgencyGcc() {
   return (
     <StrategicServicePage
-      title="Healthcare Market Research Companies GCC | Agency for Pharma Evidence | BioNixus"
-      description="Healthcare market research companies in GCC: BioNixus delivers proposal-ready pharmaceutical launch, market access, and growth evidence across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman."
+      title="Pharma Market Research Company GCC | Healthcare Market Research Agency | BioNixus"
+      description="Pharma market research company GCC for launch and access teams. Healthcare market research agency evidence across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman — proposal-ready from BioNixus."
       canonicalUrl="https://www.bionixus.com/healthcare-market-research-agency-gcc"
       breadcrumbLabel="Healthcare Market Research Agency GCC"
       h1="Healthcare Market Research Companies in GCC for Pharmaceutical Launch and Access Decisions"
@@ -17,8 +17,15 @@ export default function HealthcareMarketResearchAgencyGcc() {
       links={[
         { to: '/healthcare-market-research', label: 'Healthcare market research hub', primary: true },
         { to: '/bionixus-market-research-middle-east', label: 'Middle East pharmaceutical market research', primary: true },
+        { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare market research Saudi Arabia' },
+        { to: '/healthcare-market-research/uae', label: 'Healthcare market research UAE' },
+        { to: '/healthcare-market-research/kuwait', label: 'Healthcare market research Kuwait' },
+        { to: '/healthcare-market-research/qatar', label: 'Healthcare market research Qatar' },
+        { to: '/healthcare-market-research/oman', label: 'Healthcare market research Oman' },
+        { to: '/healthcare-market-research/bahrain', label: 'Healthcare market research Bahrain' },
         { to: '/uae-market-access-research', label: 'Market access research UAE' },
         { to: '/kuwait-market-access-research', label: 'Market access research Kuwait' },
+        { to: '/qatar-market-access-research', label: 'Market access research Qatar' },
         { to: '/healthcare-fieldwork-middle-east', label: 'Healthcare fieldwork Middle East' },
         { to: '/real-world-evidence-gcc', label: 'Real world evidence GCC' },
         { to: '/contact', label: 'Request a proposal' },

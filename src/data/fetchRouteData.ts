@@ -1,4 +1,4 @@
-import { COUNTRY_CONFIGS } from '@/lib/constants/countries';
+import { COUNTRY_CONFIGS, resolveCountryConfig } from '@/lib/constants/countries';
 import { sanityServer } from '@/lib/sanity-server';
 import { fetchCaseStudies, fetchCaseStudyBySlug } from '@/lib/sanity-case-studies';
 import type { CaseStudy } from '@/types/caseStudy';
@@ -21,11 +21,42 @@ import { resolveSanityBlogSlug } from '../../blog-legacy-redirects.mjs';
 import { getHardcodedPostBySlug } from '@/data/blog-posts-index';
 import { isHardcodedSeoBlogSlug } from '@/lib/blog-robots';
 import { getBlogHeroPreloadUrl } from '@/lib/image-utils';
+import { SKYRIZI_ROOT_SLUG } from '@/data/blog-skyrizi-omnichannel';
+import { FR_FRANCE_CONTENT, FR_HUB_CONTENT } from '@/data/frHealthcareMarketResearchContent';
 
 function resolveBlogPostForRoute(slug: string, sanityPost: BlogPost | null): BlogPost | null {
   const hardcoded = getHardcodedPostBySlug(slug);
   if (hardcoded && isHardcodedSeoBlogSlug(slug)) return hardcoded;
   return sanityPost ?? hardcoded ?? null;
+}
+
+async function fetchBlogPostRouteData(slug: string): Promise<Record<string, unknown>> {
+  const sanitySlug = resolveSanityBlogSlug(slug);
+  let blogPost: BlogPost | null = null;
+  let relatedPosts: RelatedPostsData = { related: [], prev: null, next: null };
+  try {
+    blogPost = await fetchSanityPostBySlugWithClient(sanitySlug, sanityServer);
+    if (blogPost) {
+      relatedPosts = await fetchRelatedPostsWithClient(
+        sanitySlug,
+        blogPost.category,
+        blogPost.publishedAtIso || blogPost.date,
+        blogPost.country,
+        blogPost.tags ?? [],
+        sanityServer,
+      );
+    }
+  } catch {
+    blogPost = null;
+  }
+  blogPost = resolveBlogPostForRoute(slug, blogPost);
+  return {
+    pageType: 'blog-post',
+    blogSlug: slug,
+    blogPost,
+    relatedPosts,
+    lcpPreloadImageUrl: getBlogHeroPreloadUrl(blogPost?.coverImage),
+  };
 }
 
 const THERAPY_AREAS = [
@@ -105,6 +136,21 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
   const aliasCountryPath = path.match(/^\/(saudi-arabia|uae|kuwait|uk|europe|egypt)$/);
   const normalizedPath = aliasCountryPath ? `/healthcare-market-research/${aliasCountryPath[1]}` : path;
 
+  if (path === '/fr/healthcare-market-research' || path === '/fr/healthcare-market-research/') {
+    return {
+      pageType: 'fr-hub',
+      hubContent: FR_HUB_CONTENT,
+    };
+  }
+
+  if (path === '/fr/healthcare-market-research/france' || path === '/fr/healthcare-market-research/france/') {
+    return {
+      pageType: 'fr-country',
+      slug: 'france',
+      countryContent: FR_FRANCE_CONTENT,
+    };
+  }
+
   if (normalizedPath === '/healthcare-market-research' || normalizedPath === '/healthcare-market-research/') {
     let hubContent: Record<string, unknown> | null = null;
     try {
@@ -125,13 +171,15 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
   const countryMatch = normalizedPath.match(/^\/healthcare-market-research\/([a-z-]+)$/);
   if (countryMatch) {
     const slug = countryMatch[1];
-    const config = COUNTRY_CONFIGS[slug];
-    if (config) {
+    if (slug !== 'therapy' && slug !== 'services') {
+      const config = resolveCountryConfig(slug);
       let countryContent: Record<string, unknown> | null = null;
-      try {
-        countryContent = await sanityServer.fetch(COUNTRY_QUERY, { slug });
-      } catch {
-        countryContent = null;
+      if (COUNTRY_CONFIGS[slug]) {
+        try {
+          countryContent = await sanityServer.fetch(COUNTRY_QUERY, { slug });
+        } catch {
+          countryContent = null;
+        }
       }
 
       return {
@@ -248,32 +296,11 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
   const blogPostMatch = path.match(/^\/blog\/([^/]+)\/?$/);
   if (blogPostMatch) {
     const slug = decodeURIComponent(blogPostMatch[1]);
-    const sanitySlug = resolveSanityBlogSlug(slug);
-    let blogPost: BlogPost | null = null;
-    let relatedPosts: RelatedPostsData = { related: [], prev: null, next: null };
-    try {
-      blogPost = await fetchSanityPostBySlugWithClient(sanitySlug, sanityServer);
-      if (blogPost) {
-        relatedPosts = await fetchRelatedPostsWithClient(
-          sanitySlug,
-          blogPost.category,
-          blogPost.publishedAtIso || blogPost.date,
-          blogPost.country,
-          blogPost.tags ?? [],
-          sanityServer,
-        );
-      }
-    } catch {
-      blogPost = null;
-    }
-    blogPost = resolveBlogPostForRoute(slug, blogPost);
-    return {
-      pageType: 'blog-post',
-      blogSlug: slug,
-      blogPost,
-      relatedPosts,
-      lcpPreloadImageUrl: getBlogHeroPreloadUrl(blogPost?.coverImage),
-    };
+    return fetchBlogPostRouteData(slug);
+  }
+
+  if (path === `/${SKYRIZI_ROOT_SLUG}` || path === `/${SKYRIZI_ROOT_SLUG}/`) {
+    return fetchBlogPostRouteData(SKYRIZI_ROOT_SLUG);
   }
 
   if (path === '/news' || path === '/news/') {

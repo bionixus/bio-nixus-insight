@@ -6,7 +6,7 @@
 import { BIONIXUS_MARKETING_CLAIMS } from '@/data/marketingClaims';
 import { getIndustryBofuExecutivePoints } from '@/data/industryBofuExecutivePoints';
 
-export type MatrixCountrySlug = 'saudi-arabia' | 'uae' | 'egypt';
+export type MatrixCountrySlug = 'saudi-arabia' | 'uae' | 'egypt' | 'kuwait' | 'qatar' | 'oman' | 'bahrain';
 export type MatrixIndustrySlug =
   | 'medtech'
   | 'healthcare'
@@ -112,6 +112,42 @@ export const MATRIX_COUNTRIES: Record<MatrixCountrySlug, MatrixCountryConfig> = 
     pharmaBofuPath: '/egypt-pharmaceutical-market-research',
     healthcareReportPath: '/egypt-healthcare-market-report',
     medDevicesReportPath: '/egypt-medical-devices-market-report',
+  },
+  kuwait: {
+    slug: 'kuwait',
+    label: 'Kuwait',
+    regulatorShort: 'MOH',
+    midFunnelPath: '/market-research-kuwait',
+    healthcareHubPath: '/healthcare-market-research/kuwait',
+    pharmaBofuPath: '/pharmaceutical-companies-kuwait',
+    healthcareReportPath: '/kuwait-healthcare-market-report',
+  },
+  qatar: {
+    slug: 'qatar',
+    label: 'Qatar',
+    regulatorShort: 'MOPH',
+    midFunnelPath: '/market-research-qatar',
+    healthcareHubPath: '/healthcare-market-research/qatar',
+    pharmaBofuPath: '/pharmaceutical-companies-qatar',
+    healthcareReportPath: '/qatar-healthcare-market-report',
+  },
+  oman: {
+    slug: 'oman',
+    label: 'Oman',
+    regulatorShort: 'MOH',
+    midFunnelPath: '/market-research-oman',
+    healthcareHubPath: '/healthcare-market-research/oman',
+    pharmaBofuPath: '/pharmaceutical-companies-oman',
+    healthcareReportPath: '/oman-healthcare-market-report',
+  },
+  bahrain: {
+    slug: 'bahrain',
+    label: 'Bahrain',
+    regulatorShort: 'NHRA',
+    midFunnelPath: '/market-research-bahrain',
+    healthcareHubPath: '/healthcare-market-research/bahrain',
+    pharmaBofuPath: '/pharmaceutical-companies-bahrain',
+    healthcareReportPath: '/bahrain-healthcare-market-report',
   },
 };
 

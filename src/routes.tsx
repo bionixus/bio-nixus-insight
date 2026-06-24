@@ -95,6 +95,9 @@ import UaePricingReimbursementStrategy from '@/pages/UaePricingReimbursementStra
 import MarketResearchKsa from '@/pages/MarketResearchKsa';
 import MarketResearchSaudi from '@/pages/MarketResearchSaudi';
 import MarketResearchKuwait from '@/pages/MarketResearchKuwait';
+import MarketResearchQatar from '@/pages/MarketResearchQatar';
+import MarketResearchOman from '@/pages/MarketResearchOman';
+import MarketResearchBahrain from '@/pages/MarketResearchBahrain';
 import MarketResearchEgypt from '@/pages/MarketResearchEgypt';
 import Nf1PharmaMarketResearch from '@/pages/Nf1PharmaMarketResearch';
 import DesmoidTumorPharmaMarketResearch from '@/pages/DesmoidTumorPharmaMarketResearch';
@@ -174,8 +177,10 @@ import {
 import HealthcareReportsHub from '@/pages/HealthcareReportsHub';
 import HealthcareReportsByTherapy from '@/pages/HealthcareReportsByTherapy';
 import HealthcareReportsByCountry from '@/pages/HealthcareReportsByCountry';
-import CaseStudy from '@/pages/CaseStudy';
+import { SKYRIZI_ROOT_SLUG } from '@/data/blog-skyrizi-omnichannel';
 import HubPage from '@/pages/healthcare-research/HubPage';
+import FrHubPage from '@/pages/healthcare-research/FrHubPage';
+import FrFranceCountryPage from '@/pages/healthcare-research/FrFranceCountryPage';
 import CountryPage from '@/pages/healthcare-research/CountryPage';
 import TherapyPage from '@/pages/healthcare-research/TherapyPage';
 import ServicePage from '@/pages/healthcare-research/ServicePage';
@@ -246,6 +251,9 @@ export const routes: RouteObject[] = [
   { path: '/market-research-ksa', element: <MarketResearchKsa /> },
   { path: '/market-research-saudi', element: <MarketResearchSaudi /> },
   { path: '/market-research-kuwait', element: <MarketResearchKuwait /> },
+  { path: '/market-research-qatar', element: <MarketResearchQatar /> },
+  { path: '/market-research-oman', element: <MarketResearchOman /> },
+  { path: '/market-research-bahrain', element: <MarketResearchBahrain /> },
   { path: '/market-research-egypt', element: <MarketResearchEgypt /> },
   { path: '/market-research-saudi-arabia-pharmaceutical', element: <MarketResearchSaudiArabiaPharmaceutical /> },
   { path: '/market-research-healthcare', element: <MarketResearchHealthcare /> },
@@ -302,6 +310,8 @@ export const routes: RouteObject[] = [
   { path: '/ar/strategic-portfolio', element: <ConfPortfolio locale="ar" /> },
   { path: '/ar/strategic-portfolios', element: <ConfPortfolio locale="ar" /> },
   { path: '/healthcare-market-research', element: <HubPage /> },
+  { path: '/fr/healthcare-market-research', element: <FrHubPage /> },
+  { path: '/fr/healthcare-market-research/france', element: <FrFranceCountryPage /> },
   { path: '/healthcare-market-research/therapy/:area', element: <TherapyPage /> },
   { path: '/healthcare-market-research/services/:service', element: <ServicePage /> },
   { path: '/healthcare-market-research/:country', element: <CountryPage /> },
@@ -433,6 +443,10 @@ export const routes: RouteObject[] = [
   { path: '/pharmacies-saudi-arabia-marketing', element: <PharmaciesSaudiArabiaMarketing /> },
   { path: '/bionixus-ai-chatbots-increase-sales-and-lead-generation', element: <AiChatbotsLeadGeneration /> },
   { path: '/blog/:slug', element: suspensePage(<BlogPost />) },
+  {
+    path: `/${SKYRIZI_ROOT_SLUG}`,
+    element: suspensePage(<BlogPost fixedSlug={SKYRIZI_ROOT_SLUG} />),
+  },
   { path: '/case-studies', element: <CaseStudies /> },
   { path: '/case-studies/:slug', element: suspensePage(<CaseStudy />) },
   { path: '/privacy', element: <Privacy /> },

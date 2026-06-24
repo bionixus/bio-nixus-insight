@@ -403,6 +403,14 @@
       "destination": "/conf/gfk-alternative-egypt.html"
     },
     {
+      "source": "/premium-home-page",
+      "destination": "/premium-home-page.html"
+    },
+    {
+      "source": "/home-staging",
+      "destination": "/home-staging.html"
+    },
+    {
       "source": "/blog/:slug",
       "has": [
         {

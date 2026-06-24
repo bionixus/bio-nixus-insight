@@ -7,9 +7,13 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { CTASection } from '@/components/shared/CTASection';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ExecutiveDecisionBlock, ProofMetricGrid } from '@/components/page/PremiumPageSections';
+import { MediaVisualBriefing } from '@/components/media/MediaVisualBriefing';
+import { ProcessWorkflowVisual } from '@/components/media/ProcessWorkflowVisual';
+import { getPageMedia } from '@/data/mediaAssets';
 import { MARKET_RESEARCH_HUB_SECTIONS } from '@/data/marketResearchCountryContent';
 
 const pageUrl = 'https://www.bionixus.com/market-research';
+const pageMedia = getPageMedia('market-research');
 const faqItems = [
   {
     question: 'Which market research service should we start with?',
@@ -161,6 +165,25 @@ const MarketResearch = () => {
             </div>
           </div>
         </section>
+
+        {pageMedia?.visualBriefing ? (
+          <MediaVisualBriefing
+            heading={pageMedia.visualBriefing.heading}
+            figures={pageMedia.visualBriefing.figures}
+            className="pt-0"
+          />
+        ) : null}
+        {pageMedia?.processHeading ? (
+          <ProcessWorkflowVisual
+            heading={pageMedia.processHeading}
+            steps={[
+              'Align on decision and deadline',
+              'Design quant, qual, or blended protocol',
+              'Execute bilingual GCC / EU fieldwork',
+              'Deliver executive-ready insight cuts',
+            ]}
+          />
+        ) : null}
 
         <ExecutiveDecisionBlock
           heading="Executive decision layer"
