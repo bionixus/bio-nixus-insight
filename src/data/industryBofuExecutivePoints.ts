@@ -886,6 +886,10 @@ function buildFallbackExecutivePoints(
     usa: 'United States',
     brazil: 'Brazil',
     germany: 'Germany',
+    morocco: 'Morocco',
+    nigeria: 'Nigeria',
+    'south-africa': 'South Africa',
+    kenya: 'Kenya',
   };
   const name = industryLabels[industrySlug] ?? industrySlug;
   const country = countryLabels[countrySlug] ?? countrySlug;

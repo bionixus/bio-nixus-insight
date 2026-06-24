@@ -24,6 +24,7 @@ const MATRIX_COUNTRY_ORDER: MatrixCountrySlug[] = [
   'saudi-arabia', 'uae', 'egypt',
   'kuwait', 'qatar', 'oman',
   'uk', 'usa', 'brazil', 'germany',
+  'morocco', 'nigeria', 'south-africa', 'kenya',
 ];
 
 /** Accent colour per segment (teal / gold / coral) used for the eyebrow chrome. */

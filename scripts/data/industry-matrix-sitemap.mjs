@@ -11,6 +11,10 @@ const MATRIX_COUNTRIES = [
   'usa',
   'brazil',
   'germany',
+  'morocco',
+  'nigeria',
+  'south-africa',
+  'kenya',
 ];
 
 const MATRIX_INDUSTRIES = [

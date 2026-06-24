@@ -61,6 +61,15 @@ const Index = () => {
       highlight: false,
     },
     {
+      to: '/consumer-market-research',
+      title: 'Consumer & B2B Market Research',
+      description:
+        'FMCG, retail, financial services, technology, automotive, and 8 more industries — with local field teams in 10+ countries across MENA, Europe, and the Americas.',
+      highlight: true,
+      label: 'Non-Healthcare Industries',
+      decisionHint: 'Expanding beyond pharma?',
+    },
+    {
       to: '/healthcare-market-research/saudi-arabia',
       title: 'Saudi Arabia Pharmaceutical Research',
       description:

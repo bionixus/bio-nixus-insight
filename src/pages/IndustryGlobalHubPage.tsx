@@ -3,6 +3,7 @@ import { ChevronRight, ArrowRight } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { SEOHead } from '@/components/seo/SEOHead';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { buildCanonicalOrganization } from '@/lib/seo/organization';
 import {
   buildFAQSchema,
@@ -24,6 +25,10 @@ const COUNTRY_FLAG: Record<string, string> = {
   usa: '🇺🇸',
   brazil: '🇧🇷',
   germany: '🇩🇪',
+  morocco: '🇲🇦',
+  nigeria: '🇳🇬',
+  'south-africa': '🇿🇦',
+  kenya: '🇰🇪',
 };
 
 export default function IndustryGlobalHubPage() {
@@ -141,6 +146,14 @@ export default function IndustryGlobalHubPage() {
               </a>
             </div>
 
+            <GeoLLMAnswerBlock
+              question={`Best ${config.displayName} market research company`}
+              answer={config.heroSubtitle}
+              points={config.serviceCards.slice(0, 3).map((c) => ({ title: c.title, description: c.body }))}
+              summary="BioNixus combines local field teams in 14+ markets with senior-led analysis to produce evidence that drives commercial decisions."
+              className="mt-8"
+            />
+
             {/* Trust strip */}
             <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm text-muted-foreground">
               <span className="flex items-center gap-1.5">
@@ -194,7 +207,7 @@ export default function IndustryGlobalHubPage() {
               Countries we serve
             </h2>
             <p className="text-muted-foreground mb-10 max-w-2xl">
-              We run {config.displayName.toLowerCase()} research across 10 markets. Select a country for
+              We run {config.displayName.toLowerCase()} research across 14 markets. Select a country for
               localised capabilities and sample specifications.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">

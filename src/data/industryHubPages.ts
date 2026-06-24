@@ -25,6 +25,10 @@ const ALL_COUNTRIES: Array<{ label: string; slug: string }> = [
   { label: 'USA', slug: 'usa' },
   { label: 'Brazil', slug: 'brazil' },
   { label: 'Germany', slug: 'germany' },
+  { label: 'Morocco', slug: 'morocco' },
+  { label: 'Nigeria', slug: 'nigeria' },
+  { label: 'South Africa', slug: 'south-africa' },
+  { label: 'Kenya', slug: 'kenya' },
 ];
 
 export const INDUSTRY_HUB_PAGES: IndustryHubPageConfig[] = [

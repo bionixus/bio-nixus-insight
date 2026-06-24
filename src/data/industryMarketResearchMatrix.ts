@@ -16,7 +16,11 @@ export type MatrixCountrySlug =
   | 'uk'
   | 'usa'
   | 'brazil'
-  | 'germany';
+  | 'germany'
+  | 'morocco'
+  | 'nigeria'
+  | 'south-africa'
+  | 'kenya';
 export type MatrixIndustrySlug =
   | 'medtech'
   | 'healthcare'
@@ -192,6 +196,42 @@ export const MATRIX_COUNTRIES: Record<MatrixCountrySlug, MatrixCountryConfig> = 
     pharmaBofuPath: '/germany-pharmaceutical-market-research',
     healthcareReportPath: '/germany-healthcare-market-report',
     medDevicesReportPath: '/germany-medical-devices-market-report',
+  },
+  morocco: {
+    slug: 'morocco',
+    label: 'Morocco',
+    regulatorShort: 'ANAM',
+    midFunnelPath: '/market-research-morocco',
+    healthcareHubPath: '/healthcare-market-research/morocco',
+    pharmaBofuPath: '/morocco-pharmaceutical-market-research',
+    healthcareReportPath: '/morocco-healthcare-market-report',
+  },
+  nigeria: {
+    slug: 'nigeria',
+    label: 'Nigeria',
+    regulatorShort: 'NAFDAC',
+    midFunnelPath: '/market-research-nigeria',
+    healthcareHubPath: '/healthcare-market-research/nigeria',
+    pharmaBofuPath: '/nigeria-pharmaceutical-market-research',
+    healthcareReportPath: '/nigeria-healthcare-market-report',
+  },
+  'south-africa': {
+    slug: 'south-africa',
+    label: 'South Africa',
+    regulatorShort: 'SAHPRA',
+    midFunnelPath: '/market-research-south-africa',
+    healthcareHubPath: '/healthcare-market-research/south-africa',
+    pharmaBofuPath: '/south-africa-pharmaceutical-market-research',
+    healthcareReportPath: '/south-africa-healthcare-market-report',
+  },
+  kenya: {
+    slug: 'kenya',
+    label: 'Kenya',
+    regulatorShort: 'KEBS',
+    midFunnelPath: '/market-research-kenya',
+    healthcareHubPath: '/healthcare-market-research/kenya',
+    pharmaBofuPath: '/kenya-pharmaceutical-market-research',
+    healthcareReportPath: '/kenya-healthcare-market-report',
   },
 };
 
