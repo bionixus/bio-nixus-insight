@@ -6,6 +6,12 @@ export type MediaFigure = {
   height: number;
 };
 
+export type HeroVideoConfig = {
+  src: string;
+  poster: string;
+  alt: string;
+};
+
 export type ProofVideoConfig = {
   /** MP4 path under /public; omit to show poster + link fallback */
   src?: string;
@@ -19,6 +25,7 @@ export type ProofVideoConfig = {
 };
 
 export type PageMediaConfig = {
+  heroVideo?: HeroVideoConfig;
   heroImage?: MediaFigure;
   visualBriefing?: {
     heading: string;
@@ -52,14 +59,23 @@ export const SHARED_FIGURES = {
   },
 } satisfies Record<string, MediaFigure>;
 
+/** Canonical homepage / explainer video (MP4 under /public/media). */
+export const HOME_OVERVIEW_VIDEO = {
+  src: '/media/healthcare-market-research-overview.mp4',
+  poster: '/media/healthcare-market-research-overview-poster.jpg',
+  alt: 'BioNixus healthcare and pharmaceutical market research — global fieldwork and evidence programs',
+} satisfies HeroVideoConfig;
+
 export const PAGE_MEDIA: Record<string, PageMediaConfig> = {
   home: {
+    heroVideo: HOME_OVERVIEW_VIDEO,
     visualBriefing: {
       heading: 'How BioNixus turns field evidence into launch decisions',
       figures: [SHARED_FIGURES.hcpWorkshop, SHARED_FIGURES.validationLab],
     },
     proofVideo: {
-      poster: '/images/quant-hcp-survey-executive.png',
+      src: HOME_OVERVIEW_VIDEO.src,
+      poster: HOME_OVERVIEW_VIDEO.poster,
       title: 'BioNixus healthcare market research overview',
       description:
         'A short overview of how BioNixus designs quantitative, qualitative, and access programs for pharmaceutical teams in GCC and Europe.',

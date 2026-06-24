@@ -8,7 +8,7 @@ import { getHealthcareMarketResearchHubConfig } from '@/data/reportConversionCon
 import { ReportMidPageCta } from '@/components/report-conversion';
 import { ReportPremiumSection } from '@/components/report-premium';
 import { buildHubPageSchemas } from '@/lib/seo/schemas';
-import { COUNTRY_CONFIGS } from '@/lib/constants/countries';
+import { COUNTRY_CONFIGS, resolveCountryConfig } from '@/lib/constants/countries';
 import { healthcareCountryRecoveryPaths } from '@/lib/internalLinkRecovery';
 import { HubMarketReferenceGuide } from '@/components/seo/HubMarketReferenceGuide';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
@@ -27,7 +27,7 @@ const HUB_FAQS = [
   {
     question: 'Can you run a single study across several countries and languages at once?',
     answer:
-      'Yes — multi-country, multilingual fieldwork is core to how we work. One project office coordinates recruitment, translation, and analysis across markets so your numbers stay comparable from New York to London to Riyadh to Tokyo, while local moderators and native-language interviewers keep the nuance intact. Across our operating history we have delivered work in 17+ countries and 14+ therapeutic areas, which is what makes side-by-side regional reads dependable rather than approximate.',
+      'Yes — multi-country, multilingual fieldwork is core to how we work. From our US headquarters in Sheridan, Wyoming, one global project office coordinates recruitment, translation, and analysis so your numbers stay comparable from New York to Riyadh to Tokyo, while local moderators and native-language interviewers keep the nuance intact. Across our operating history we have delivered work in 17+ countries and 14+ therapeutic areas, which is what makes side-by-side regional reads dependable rather than approximate.',
   },
   {
     question: 'How fast can you turn around a proposal once we share a brief?',
@@ -47,7 +47,7 @@ const HUB_FAQS = [
   {
     question: 'Which countries and regions can BioNixus cover for a global launch or access study?',
     answer:
-      'We deliver healthcare and pharmaceutical research across four regions: the Americas (United States, Canada, Brazil), Europe (United Kingdom, Germany, France, Italy, Spain), MENA and the GCC (Saudi Arabia, UAE, Egypt, Qatar, Kuwait, Oman, Bahrain, Turkey), and Asia-Pacific (Japan, China, India, South Korea, Singapore, Australia) — 17+ countries in total. A single project office harmonises method and reporting so a global programme reads consistently, while local teams preserve in-market nuance. Each country report linked on this page summarises the regulator, payer, and access realities for that market.',
+      'BioNixus is headquartered in Sheridan, Wyoming (USA) and delivers healthcare and pharmaceutical research across four regions: the Americas (United States, Canada, Brazil), Europe (United Kingdom, Germany, France, Italy, Spain), MENA and the GCC (Saudi Arabia, UAE, Egypt, Qatar, Kuwait, Oman, Bahrain, Turkey), and Asia-Pacific (Japan, China, India, South Korea, Singapore, Australia) — 20+ country hubs linked on this page. A single US-led project office harmonises method and reporting so a global programme reads consistently, while regional teams preserve in-market nuance.',
   },
 ];
 
@@ -95,6 +95,8 @@ const GLOBAL_MARKETS: {
       { name: 'Egypt', to: '/egypt-healthcare-market-report' },
       { name: 'Qatar', to: '/qatar-healthcare-market-report' },
       { name: 'Kuwait', to: '/kuwait-healthcare-market-report' },
+      { name: 'Oman', to: '/oman-healthcare-market-report' },
+      { name: 'Bahrain', to: '/bahrain-healthcare-market-report' },
       { name: 'Turkey', to: '/turkey-healthcare-market-report' },
     ],
   },
@@ -114,6 +116,32 @@ const GLOBAL_MARKETS: {
   },
 ];
 
+/** Every live `/healthcare-market-research/{slug}` country hub, grouped for navigation. */
+const ALL_HUB_COUNTRY_GROUPS: { region: string; slugs: string[] }[] = [
+  {
+    region: 'Americas',
+    slugs: ['united-states', 'canada', 'brazil'],
+  },
+  {
+    region: 'Europe',
+    slugs: ['uk', 'germany', 'france', 'italy', 'spain', 'europe'],
+  },
+  {
+    region: 'MENA & GCC',
+    slugs: ['saudi-arabia', 'uae', 'egypt', 'qatar', 'kuwait', 'oman', 'bahrain', 'turkey'],
+  },
+  {
+    region: 'Asia-Pacific',
+    slugs: ['japan', 'china', 'india', 'south-korea', 'singapore', 'australia'],
+  },
+  {
+    region: 'City hubs (MENA)',
+    slugs: ['dubai', 'abu-dhabi', 'riyadh', 'jeddah'],
+  },
+];
+
+const ALL_HUB_COUNTRY_SLUGS = ALL_HUB_COUNTRY_GROUPS.flatMap((group) => group.slugs);
+
 export default function HubPage() {
   const { data } = useInitialData();
   const hubContent =
@@ -121,7 +149,7 @@ export default function HubPage() {
       ? (data.hubContent as Record<string, unknown>)
       : null;
 
-  const countries = Object.values(COUNTRY_CONFIGS);
+  const countries = ALL_HUB_COUNTRY_SLUGS.map((slug) => resolveCountryConfig(slug));
   const hubFaqItems =
     Array.isArray(hubContent?.faq) && hubContent?.faq.length > 0
       ? (hubContent.faq as { question: string; answer: string }[])
@@ -129,11 +157,11 @@ export default function HubPage() {
   const heroTitle =
     typeof hubContent?.title === 'string' && hubContent.title.length > 0
       ? hubContent.title
-      : 'Healthcare market research companies — global pharmaceutical insights across the USA, Europe, MENA and Asia';
+      : 'US-headquartered healthcare market research — global pharmaceutical insights across the Americas, Europe, MENA, and Asia';
   const heroDescription =
     typeof hubContent?.metaDescription === 'string' && hubContent.metaDescription.length > 0
       ? hubContent.metaDescription
-      : 'BioNixus turns physician, payer, and patient evidence into launch, growth, and access decisions for pharma, biotech, and medtech teams — with fieldwork run locally in each market and findings that read consistently across borders.';
+      : 'BioNixus is headquartered in Sheridan, Wyoming (USA) and turns physician, payer, and patient evidence into launch, growth, and access decisions for pharma, biotech, and medtech teams — with fieldwork run locally in each market and findings that read consistently across borders.';
   const jsonLd = [
     ...buildHubPageSchemas(hubFaqItems),
     {
@@ -141,7 +169,7 @@ export default function HubPage() {
       '@type': 'CollectionPage',
       name: 'Global Healthcare & Pharmaceutical Market Research',
       description:
-        'BioNixus healthcare and pharmaceutical market research across the Americas, Europe, MENA & GCC, and Asia-Pacific.',
+        'US-headquartered BioNixus healthcare and pharmaceutical market research across the Americas, Europe, MENA & GCC, and Asia-Pacific.',
       url: 'https://www.bionixus.com/healthcare-market-research',
       isPartOf: { '@type': 'WebSite', url: 'https://www.bionixus.com', name: 'BioNixus' },
       about: GLOBAL_MARKETS.map((r) => r.region),
@@ -149,24 +177,27 @@ export default function HubPage() {
     {
       '@context': 'https://schema.org',
       '@type': 'ItemList',
-      name: 'Country healthcare market reports',
-      itemListElement: GLOBAL_MARKETS.flatMap((r) => r.markets).map((m, idx) => ({
-        '@type': 'ListItem',
-        position: idx + 1,
-        name: `${m.name} healthcare market report`,
-        url: `https://www.bionixus.com${m.to}`,
-      })),
+      name: 'Country healthcare market research hubs',
+      itemListElement: ALL_HUB_COUNTRY_SLUGS.map((slug, idx) => {
+        const config = resolveCountryConfig(slug);
+        return {
+          '@type': 'ListItem',
+          position: idx + 1,
+          name: `${config.name} healthcare market research`,
+          url: `https://www.bionixus.com/healthcare-market-research/${slug}`,
+        };
+      }),
     },
   ];
   const trustSignals =
     Array.isArray(hubContent?.trustSignals) && hubContent.trustSignals.length > 0
       ? (hubContent.trustSignals as { label: string; value: string }[])
       : [
-        { label: 'UK Registration', value: '14408704' },
+        { label: 'US Headquarters', value: 'Sheridan, WY' },
+        { label: 'Global Offices', value: 'London · Cairo · Dubai · Riyadh' },
         { label: 'Core Markets', value: 'Americas, Europe, MENA, Asia' },
         { label: 'Methods', value: 'CATI, CAPI, IDIs, Quant' },
-        { label: 'Compliance', value: 'ESOMAR / GDPR' },
-        { label: 'Coverage Model', value: 'One project office, local execution' },
+        { label: 'Compliance', value: 'ESOMAR / GDPR / HIPAA-aware' },
       ];
   const services =
     Array.isArray(hubContent?.servicesOverview) && hubContent.servicesOverview.length > 0
@@ -205,8 +236,8 @@ export default function HubPage() {
   return (
     <>
       <SEOHead
-        title="Healthcare Market Research by Country | GCC, MENA & Global | BioNixus"
-        description="Healthcare market research by country from BioNixus — physician, payer, and hospital evidence across Saudi Arabia, UAE, Egypt, Kuwait, Qatar, Oman, Bahrain, Europe, and Asia-Pacific with local fieldwork."
+        title="Healthcare Market Research by Country | US HQ · Global Coverage | BioNixus"
+        description="US-headquartered healthcare market research from BioNixus — physician, payer, and hospital evidence across 20+ countries: USA, Canada, Brazil, UK, Europe, GCC, MENA, and Asia-Pacific with local fieldwork."
         canonical="/healthcare-market-research"
         jsonLd={jsonLd}
       />
@@ -225,9 +256,9 @@ export default function HubPage() {
           title: heroTitle,
           statsCaption: '',
           stats: [
-            { value: '17+', label: 'Countries covered' },
+            { value: '20+', label: 'Country hubs' },
             { value: '14+', label: 'Therapeutic areas' },
-            { value: '4 regions', label: 'Americas · Europe · MENA · Asia' },
+            { value: 'US HQ', label: 'Sheridan, Wyoming' },
           ],
           description: (
             <>
@@ -247,11 +278,12 @@ export default function HubPage() {
           ),
         }}
         tocItems={[
+          { href: '#us-headquarters', label: 'US headquarters' },
           { href: '#entry-points', label: 'Entry points' },
-          { href: '#mena-country-mr', label: 'MENA country MR' },
-          { href: '#global-coverage', label: 'Global coverage' },
+          { href: '#global-country-mr', label: 'All countries' },
+          { href: '#global-coverage', label: 'Market reports' },
           { href: '#gcc-report-cluster', label: 'GCC reports' },
-          { href: '#regional-expertise', label: 'Countries' },
+          { href: '#regional-expertise', label: 'Country hubs' },
           { href: '#city-hubs', label: 'City hubs' },
           { href: '#dubai-uae', label: 'UAE focus' },
           { href: '#services', label: 'Services' },
@@ -268,12 +300,12 @@ export default function HubPage() {
         <div className="container-wide max-w-5xl mx-auto px-4">
           <GeoLLMAnswerBlock
             question="Which healthcare market research companies serve the GCC and MENA?"
-            answer="BioNixus is a specialist healthcare market research company for pharmaceutical, biotech, and medtech teams across the GCC and wider MENA — with country-level depth in Saudi Arabia, the UAE, Egypt, Kuwait, Qatar, Oman, and Bahrain, plus comparable multi-country physician and payer programmes."
+            answer="BioNixus is a US-headquartered healthcare market research company (Sheridan, Wyoming) for pharmaceutical, biotech, and medtech teams globally — with country-level depth in the United States, Saudi Arabia, the UAE, Egypt, Kuwait, Qatar, Oman, Bahrain, and across Europe and Asia-Pacific."
             points={[
               {
-                title: 'GCC country execution',
+                title: 'US-led global project office',
                 description:
-                  'SFDA, MOHAP, DHA, and EDA-aligned fieldwork with bilingual Arabic–English moderation and hospital procurement context.',
+                  'Headquartered in Sheridan, Wyoming with regional offices in London, Cairo, Dubai, and Riyadh — one programme office, local execution in every market.',
               },
               {
                 title: 'Quantitative and qualitative depth',
@@ -296,18 +328,50 @@ export default function HubPage() {
         </div>
       </section>
       <ReportPremiumSection
+        id="us-headquarters"
+        title="US-headquartered global healthcare market research"
+        subtitle="BioNixus global headquarters — Sheridan, Wyoming (USA)"
+        variant="default"
+      >
+        <div className="text-muted-foreground leading-relaxed space-y-4 max-w-4xl">
+          <p>
+            <strong className="text-foreground">BioNixus is headquartered in Sheridan, Wyoming (USA)</strong> at
+            1309 Coffeen Ave — our primary corporate office and global programme management hub. US-based leadership
+            coordinates multi-country pharmaceutical and healthcare research across the Americas, Europe, MENA, and
+            Asia-Pacific, with regional execution teams in London, Cairo, Dubai, and Riyadh.
+          </p>
+          <p>
+            For US clients, that means FDA- and HIPAA-aware study design, payer and PBM-context research, and
+            same-business-day alignment with East Coast and Central Time commercial teams. For international
+            programmes, the US headquarters provides a single accountable project office while local fieldwork
+            preserves regulator-specific nuance in every market.
+          </p>
+          <p>
+            Explore the{' '}
+            <Link to="/healthcare-market-research/united-states" className="text-primary font-medium hover:underline">
+              United States healthcare market research hub
+            </Link>{' '}
+            or{' '}
+            <Link to="/contact" className="text-primary font-medium hover:underline">
+              request a proposal
+            </Link>{' '}
+            from our US headquarters team.
+          </p>
+        </div>
+      </ReportPremiumSection>
+
+      <ReportPremiumSection
         id="entry-points"
         title="Where to start: country, therapy, and service-level entry points"
         variant="cream"
       >
           <p className="text-muted-foreground leading-relaxed mb-4 max-w-4xl">
-            BioNixus runs healthcare and pharmaceutical market research in 17+ countries across four regions — the
-            Americas, Europe, MENA &amp; the GCC, and Asia-Pacific — with fieldwork executed locally and findings that
-            compare across borders. The Gulf is one of the fastest-growing pieces of that map: the GCC pharmaceutical
-            market was worth roughly $23.7 billion in 2024 and is projected to reach about $49 billion by 2033, a 7.6%
-            CAGR (BioNixus market analysis, 2024). The links below take you straight from that picture down to the
-            country, therapy area, or service you need to plan, so you skip the generic overview and land on the
-            evidence that informs your next decision.
+            From our US headquarters, BioNixus runs healthcare and pharmaceutical market research in 20+ countries
+            across four regions — the Americas, Europe, MENA &amp; the GCC, and Asia-Pacific — with fieldwork executed
+            locally and findings that compare across borders. The Gulf is one of the fastest-growing pieces of that
+            map: the GCC pharmaceutical market was worth roughly $23.7 billion in 2024 and is projected to reach about
+            $49 billion by 2033, a 7.6% CAGR (BioNixus market analysis, 2024). The links below take you straight from
+            that picture down to the country, therapy area, or service you need to plan.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             <HealthcareNavCard to="/healthcare-market-research/uae" title="UAE healthcare market research" />
@@ -379,16 +443,53 @@ export default function HubPage() {
       </ReportPremiumSection>
 
       <ReportPremiumSection
-        id="mena-country-mr"
-        title="Healthcare market research by country (MENA &amp; GCC)"
-        subtitle="Research services and fieldwork — distinct from market reports below. Each link opens a country hub for bespoke quantitative and qualitative programmes."
+        id="global-country-mr"
+        title="Healthcare market research by country (global)"
+        subtitle="All country hubs — bespoke quantitative and qualitative programmes. Each link opens a country page for fieldwork and stakeholder research."
         variant="muted"
       >
         <p className="text-muted-foreground leading-relaxed mb-6 max-w-4xl">
-          Use these pages when you need a{' '}
+          Browse every country hub below. Use these pages when you need a{' '}
           <strong className="font-semibold text-foreground">healthcare market research company</strong> with local
-          fieldwork—not a syndicated report. Every hub links back here and cross-links to at least two sibling GCC
-          markets for regional planning.
+          fieldwork — not a syndicated report. For market sizing snapshots, see{' '}
+          <Link to="#global-coverage" className="text-primary font-medium hover:underline">
+            global market reports
+          </Link>{' '}
+          further down this page.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {ALL_HUB_COUNTRY_GROUPS.map((group) => (
+            <div key={group.region} className="rounded-2xl border border-border bg-card p-6">
+              <h3 className="text-lg font-bold text-foreground mb-4">{group.region}</h3>
+              <ul className="flex flex-wrap gap-2">
+                {group.slugs.map((slug) => {
+                  const config = resolveCountryConfig(slug);
+                  return (
+                    <li key={slug}>
+                      <Link
+                        to={`/healthcare-market-research/${slug}`}
+                        className="inline-flex items-center rounded-lg border border-border bg-background px-3 py-1.5 text-sm text-foreground hover:border-primary/40 hover:text-primary transition-colors"
+                      >
+                        {config.name}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </ReportPremiumSection>
+
+      <ReportPremiumSection
+        id="mena-country-mr"
+        title="Priority GCC &amp; MENA country hubs"
+        subtitle="High-demand Gulf and North Africa markets — links to full country programmes."
+        variant="default"
+      >
+        <p className="text-muted-foreground leading-relaxed mb-6 max-w-4xl">
+          GCC and MENA remain core execution markets for BioNixus, with Arabic–English bilingual fieldwork and
+          regulator-aware design. Every hub links back here and cross-links to sibling markets for regional planning.
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           <HealthcareNavCard to="/healthcare-market-research/saudi-arabia" title="Healthcare market research Saudi Arabia" />
@@ -400,21 +501,7 @@ export default function HubPage() {
           <HealthcareNavCard to="/healthcare-market-research/oman" title="Healthcare market research Oman" />
           <HealthcareNavCard to="/healthcare-market-research/bahrain" title="Healthcare market research Bahrain" />
           <HealthcareNavCard to="/healthcare-market-research/turkey" title="Healthcare market research Turkey" />
-          <HealthcareNavCard to="/healthcare-market-research/uk" title="Healthcare market research UK" />
-          <HealthcareNavCard to="/healthcare-market-research/germany" title="Healthcare market research Germany" />
-          <HealthcareNavCard to="/healthcare-market-research/singapore" title="Healthcare market research Singapore" />
         </div>
-        <p className="text-sm text-muted-foreground mt-6">
-          For market sizing reports and regulatory snapshots, see{' '}
-          <Link to="#global-coverage" className="text-primary font-medium hover:underline">
-            global market coverage (reports)
-          </Link>
-          . For BOFU company-intent pages, see{' '}
-          <Link to="/pharmaceutical-companies-kuwait" className="text-primary font-medium hover:underline">
-            pharmaceutical companies by country
-          </Link>
-          .
-        </p>
       </ReportPremiumSection>
 
       <ReportPremiumSection
@@ -500,7 +587,11 @@ export default function HubPage() {
         </div>
       </ReportPremiumSection>
 
-      <ReportPremiumSection id="regional-expertise" title="Regional expertise" variant="muted">
+      <ReportPremiumSection id="regional-expertise" title="All country research hubs" variant="muted">
+          <p className="text-muted-foreground mb-6 max-w-4xl">
+            Every country below has a dedicated healthcare market research hub with local fieldwork context,
+            stakeholder FAQs, and cross-links to related markets — coordinated from BioNixus US headquarters.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {countries.filter((c) => !c.isCity).map((country) => (
               <HealthcareNavCard
@@ -600,8 +691,8 @@ export default function HubPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               {
-                title: 'You work where your teams already sit',
-                desc: 'Dubai is the regional headquarters for much of the global pharma industry. We work in the same time zone as your commercial, medical, and market access leads, so reviews happen live rather than over a 10-hour lag.',
+                title: 'US headquarters, global reach',
+                desc: 'Programmes are managed from Sheridan, Wyoming (USA) with regional execution in London, Cairo, Dubai, and Riyadh — so US and international clients share one accountable project office.',
               },
               {
                 title: 'Fieldwork that holds up to a DHA audit',

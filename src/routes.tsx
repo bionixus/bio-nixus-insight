@@ -72,15 +72,6 @@ import GlobalWebsites from '@/pages/GlobalWebsites';
 import GlobalWebsiteCountry from '@/pages/GlobalWebsiteCountry';
 import PremiumHomePreview from '@/pages/PremiumHomePreview';
 import ConfPortfolio from '@/pages/ConfPortfolio';
-import KuwaitPharmaCompanies from '@/pages/KuwaitPharmaCompanies';
-import SaudiPharmaCompanies from '@/pages/SaudiPharmaCompanies';
-import UaePharmaCompanies from '@/pages/UaePharmaCompanies';
-import EgyptPharmaCompanies from '@/pages/EgyptPharmaCompanies';
-import QatarPharmaCompanies from '@/pages/QatarPharmaCompanies';
-import OmanPharmaCompanies from '@/pages/OmanPharmaCompanies';
-import BahrainPharmaCompanies from '@/pages/BahrainPharmaCompanies';
-import IraqPharmaCompanies from '@/pages/IraqPharmaCompanies';
-import IranPharmaCompanies from '@/pages/IranPharmaCompanies';
 import MarketResearchUae from '@/pages/MarketResearchUae';
 import DiabetesMarketResearchUae from '@/pages/DiabetesMarketResearchUae';
 import SpecialistPhysicianPanelUae from '@/pages/SpecialistPhysicianPanelUae';
@@ -172,7 +163,17 @@ import {
   TurkeyMedicalDevicesMarketReport,
   HealthcareReportPage,
   BlogPost,
+  CaseStudy,
   PressReleasePage,
+  UaePharmaCompanies,
+  KuwaitPharmaCompanies,
+  SaudiPharmaCompanies,
+  EgyptPharmaCompanies,
+  QatarPharmaCompanies,
+  OmanPharmaCompanies,
+  BahrainPharmaCompanies,
+  IraqPharmaCompanies,
+  IranPharmaCompanies,
 } from '@/routes/lazyReportPages';
 import HealthcareReportsHub from '@/pages/HealthcareReportsHub';
 import HealthcareReportsByTherapy from '@/pages/HealthcareReportsByTherapy';
@@ -321,9 +322,9 @@ export const routes: RouteObject[] = [
   { path: '/uk', element: <CountryPage /> },
   { path: '/europe', element: <CountryPage /> },
   { path: '/egypt', element: <CountryPage /> },
-  { path: '/pharmaceutical-companies-kuwait', element: <KuwaitPharmaCompanies /> },
-  { path: '/pharmaceutical-companies-saudi-arabia', element: <SaudiPharmaCompanies /> },
-  { path: '/pharmaceutical-companies-uae', element: <UaePharmaCompanies /> },
+  { path: '/pharmaceutical-companies-kuwait', element: suspensePage(<KuwaitPharmaCompanies />) },
+  { path: '/pharmaceutical-companies-saudi-arabia', element: suspensePage(<SaudiPharmaCompanies />) },
+  { path: '/pharmaceutical-companies-uae', element: suspensePage(<UaePharmaCompanies />) },
   { path: '/insights/top-global-healthcare-market-research-companies-2026', element: <TopGlobalHealthcareMarketResearchCompanies2026 /> },
   { path: '/insights/top-pharmaceutical-analytics-companies-worldwide-2026', element: <TopPharmaceuticalAnalyticsCompaniesWorldwide2026 /> },
   { path: '/insights/best-global-market-research-companies-pharma-2026', element: <BestGlobalMarketResearchCompaniesPharma2026 /> },
@@ -369,12 +370,12 @@ export const routes: RouteObject[] = [
   { path: '/insights/leading-biologics-biosimilars-market-research-companies-2026', element: <LeadingBiologicsBiosimilarsMarketResearchCompanies2026 /> },
   { path: '/insights/best-rare-disease-market-research-companies-2026', element: <BestRareDiseaseMarketResearchCompanies2026 /> },
   { path: '/insights/top-consumer-healthcare-market-research-firms-2026', element: <TopConsumerHealthcareMarketResearchFirms2026 /> },
-  { path: '/pharmaceutical-companies-egypt', element: <EgyptPharmaCompanies /> },
-  { path: '/pharmaceutical-companies-qatar', element: <QatarPharmaCompanies /> },
-  { path: '/pharmaceutical-companies-oman', element: <OmanPharmaCompanies /> },
-  { path: '/pharmaceutical-companies-bahrain', element: <BahrainPharmaCompanies /> },
-  { path: '/pharmaceutical-companies-iraq', element: <IraqPharmaCompanies /> },
-  { path: '/pharmaceutical-companies-iran', element: <IranPharmaCompanies /> },
+  { path: '/pharmaceutical-companies-egypt', element: suspensePage(<EgyptPharmaCompanies />) },
+  { path: '/pharmaceutical-companies-qatar', element: suspensePage(<QatarPharmaCompanies />) },
+  { path: '/pharmaceutical-companies-oman', element: suspensePage(<OmanPharmaCompanies />) },
+  { path: '/pharmaceutical-companies-bahrain', element: suspensePage(<BahrainPharmaCompanies />) },
+  { path: '/pharmaceutical-companies-iraq', element: suspensePage(<IraqPharmaCompanies />) },
+  { path: '/pharmaceutical-companies-iran', element: suspensePage(<IranPharmaCompanies />) },
   { path: '/saudi-arabia-medical-devices-market-report', element: suspensePage(<SaudiArabiaMedicalDevicesMarketReport />) },
   { path: '/saudi-arabia-healthcare-market-report', element: suspensePage(<SaudiArabiaHealthcareMarketReport />) },
   { path: '/uae-healthcare-market-report', element: suspensePage(<UaeHealthcareMarketReport />) },

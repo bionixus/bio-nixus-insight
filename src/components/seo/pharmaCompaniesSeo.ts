@@ -15,3 +15,24 @@ export function buildPharmaCompaniesItemListLd(pageUrl: string, companyNames: st
     })),
   };
 }
+
+type PharmaFaqInput = { q: string; a: string };
+
+/** FAQPage JSON-LD aligned with visible <details> content on pharma company guides. */
+export function buildPharmaCompaniesFaqLd(pageUrl: string, items: PharmaFaqInput[]) {
+  const cleanUrl = pageUrl.replace(/\/$/, '');
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    '@id': `${cleanUrl}#faq`,
+    url: `${cleanUrl}#faq`,
+    mainEntity: items.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: f.a,
+      },
+    })),
+  };
+}

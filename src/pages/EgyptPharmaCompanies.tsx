@@ -9,7 +9,8 @@ import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { getPharmaGuideConfig } from '@/data/reportConversionConfig';
 import { PharmaCompaniesGccHubLinks } from '@/components/seo/PharmaCompaniesGccHubLinks';
 import { PharmaCompaniesQuickAnswer } from '@/components/seo/PharmaCompaniesQuickAnswer';
-import { buildPharmaCompaniesItemListLd } from '@/components/seo/pharmaCompaniesSeo';
+import { buildPharmaCompaniesFaqLd, buildPharmaCompaniesItemListLd } from '@/components/seo/pharmaCompaniesSeo';
+import { PharmaCompaniesFaqSection } from '@/components/seo/PharmaCompaniesFaqSection';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -77,7 +78,7 @@ const EgyptPharmaCompanies = () => {
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesItemListLd(citationUrl, pharmaCompanies.map((c) => c.name)))}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: 'Pharmaceutical Companies in Egypt: Complete Industry Guide 2026', description: 'Comprehensive guide to pharmaceutical companies operating in Egypt — local manufacturers, MNC offices, distributors, $5.8B market data, EDA regulatory landscape, and 90% local manufacturing dominance.', url: citationUrl, datePublished: '2026-02-15', dateModified: '2026-02-15', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' } })}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' }, { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.bionixus.com/resources' }, { '@type': 'ListItem', position: 3, name: 'Pharmaceutical Companies in Egypt' }] })}</script>
-        <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqItems.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) })}</script>
+        <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesFaqLd(citationUrl, faqItems))}</script>
       </Helmet>
       <OpenGraphMeta
         title={ogTitle}
@@ -218,10 +219,7 @@ const EgyptPharmaCompanies = () => {
           </div>
         </div></section>
 
-        <section className="section-padding py-16 bg-muted/30" id="faq"><div className="container-wide max-w-5xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-10">Frequently Asked Questions</h2>
-          <div className="space-y-6">{faqItems.map((faq) => (<div key={faq.q} className="bg-card border border-border rounded-xl p-6"><h3 className="text-lg font-display font-semibold text-foreground mb-3">{faq.q}</h3><p className="text-sm text-muted-foreground leading-relaxed">{faq.a}</p></div>))}</div>
-        </div></section>
+        <PharmaCompaniesFaqSection items={faqItems} />
 
         <PharmaCompaniesGccHubLinks country="egypt" />
         <section className="section-padding py-12" id="methodology"><div className="container-wide max-w-5xl mx-auto"><div className="bg-card border border-border rounded-xl p-8"><h2 className="text-xl font-display font-semibold text-foreground mb-4 flex items-center gap-2"><BookOpen className="w-5 h-5 text-primary" />Data Sources &amp; Methodology</h2><p className="text-sm text-muted-foreground leading-relaxed mb-4">This guide aggregates publicly available information from:</p><ul className="text-sm text-muted-foreground space-y-2 mb-6"><li>BioNixus Middle East &amp; Africa Pharmaceutical Market Report</li><li>Egyptian Drug Authority (EDA) — regulatory and market data</li><li>Company filings and annual reports (EIPICO, EVA Pharma, Minapharm, Pharco, etc.)</li><li>Industry reports on Egyptian pharma and distribution</li><li>BioNixus proprietary research from physician surveys in Egypt (2024–2025)</li></ul><p className="text-sm text-muted-foreground leading-relaxed">For customised market intelligence on Egypt, <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.</p></div></div></section>

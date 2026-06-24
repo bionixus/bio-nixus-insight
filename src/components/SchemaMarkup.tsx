@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async'
 import type { BlogPost } from '@/types/blog'
 import { HOME_FAQ_SECTION_ID } from '@/lib/homePageFaq'
 import { buildHomeArticleJsonLdNodes, buildHomeServiceJsonLdNodes } from '@/lib/homePageJsonLd'
+import { buildUkGoogleReviewsLocalBusiness } from '@/lib/seo/googleReviewsSchema'
 import { buildCanonicalOrganization } from '@/lib/seo/organization'
 
 type LanguageCode = 'en' | 'ar' | 'de' | 'fr' | 'es' | 'zh'
@@ -244,6 +245,16 @@ function isValidSchemaNode(node: Record<string, unknown>): boolean {
     return isNonEmptyString(node.name) && isNonEmptyString(node.description)
   }
 
+  if (type === 'LocalBusiness') {
+    return (
+      isNonEmptyString(node.name) &&
+      typeof node.address === 'object' &&
+      node.address !== null &&
+      typeof node.aggregateRating === 'object' &&
+      node.aggregateRating !== null
+    )
+  }
+
   if (type === 'Person') {
     return isNonEmptyString(node.name)
   }
@@ -276,7 +287,11 @@ function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[] {
   const inLanguage = props.language
 
   if (props.pageType === 'home') {
-    const nodes: Record<string, unknown>[] = [buildOrganization(inLanguage), buildWebsite(inLanguage)]
+    const nodes: Record<string, unknown>[] = [
+      buildOrganization(inLanguage),
+      buildWebsite(inLanguage),
+      buildUkGoogleReviewsLocalBusiness(inLanguage),
+    ]
     if (props.faqItems && props.faqItems.length > 0) {
       const faqPage = new URL(toHttpsUrl(props.pageUrl))
       faqPage.hash = HOME_FAQ_SECTION_ID

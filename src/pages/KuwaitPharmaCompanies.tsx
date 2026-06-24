@@ -36,6 +36,7 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { PharmaCompaniesQuickAnswer } from '@/components/seo/PharmaCompaniesQuickAnswer';
+import { buildPharmaCompaniesFaqLd } from '@/components/seo/pharmaCompaniesSeo';
 
 const PHARMA_CONVERSION = getPharmaGuideConfig('kuwait');
 
@@ -280,15 +281,7 @@ return (
           })}
         </script>
         <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: faqItems.map((f) => ({
-              '@type': 'Question',
-              name: f.q,
-              acceptedAnswer: { '@type': 'Answer', text: f.a },
-            })),
-          })}
+          {JSON.stringify(buildPharmaCompaniesFaqLd(citationUrl, faqItems))}
         </script>
         <script type="application/ld+json">{JSON.stringify(topMedicalDistributorsItemListLd)}</script>
       </Helmet>

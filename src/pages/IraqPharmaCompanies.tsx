@@ -7,6 +7,8 @@ import { languagePaths } from '@/lib/seo';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { getPharmaGuideConfig } from '@/data/reportConversionConfig';
+import { buildPharmaCompaniesFaqLd } from '@/components/seo/pharmaCompaniesSeo';
+import { PharmaCompaniesFaqSection } from '@/components/seo/PharmaCompaniesFaqSection';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -72,7 +74,7 @@ const IraqPharmaCompanies = () => {
         <link rel="canonical" href={citationUrl} />
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: 'Pharmaceutical Companies in Iraq: Complete Industry Guide 2026', description: 'Comprehensive guide to pharmaceutical companies operating in Iraq — local manufacturers, MNC offices, distributors, $2.8B market data, KIMADIA regulatory landscape, and dual federal-KRG market outlook.', url: citationUrl, datePublished: '2026-02-15', dateModified: '2026-02-15', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' } })}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' }, { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.bionixus.com/resources' }, { '@type': 'ListItem', position: 3, name: 'Pharmaceutical Companies in Iraq' }] })}</script>
-        <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqItems.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) })}</script>
+        <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesFaqLd(citationUrl, faqItems))}</script>
       </Helmet>
       <OpenGraphMeta
         title={ogTitle}
@@ -191,10 +193,7 @@ const IraqPharmaCompanies = () => {
           ].map((s) => (<div key={s.title} className="bg-card border border-border rounded-xl p-6"><h3 className="text-lg font-display font-semibold text-foreground mb-3">{s.title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p></div>))}</div>
         </div></section>
 
-        <section className="section-padding py-16 bg-muted/30" id="faq"><div className="container-wide max-w-5xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-10">Frequently Asked Questions</h2>
-          <div className="space-y-6">{faqItems.map((faq) => (<div key={faq.q} className="bg-card border border-border rounded-xl p-6"><h3 className="text-lg font-display font-semibold text-foreground mb-3">{faq.q}</h3><p className="text-sm text-muted-foreground leading-relaxed">{faq.a}</p></div>))}</div>
-        </div></section>
+        <PharmaCompaniesFaqSection items={faqItems} />
 
         <section className="section-padding py-12" id="methodology"><div className="container-wide max-w-5xl mx-auto"><div className="bg-card border border-border rounded-xl p-8"><h2 className="text-xl font-display font-semibold text-foreground mb-4 flex items-center gap-2"><BookOpen className="w-5 h-5 text-primary" />Data Sources &amp; Methodology</h2><p className="text-sm text-muted-foreground leading-relaxed mb-4">This guide aggregates publicly available information from:</p><ul className="text-sm text-muted-foreground space-y-2 mb-6"><li>MOH and KIMADIA public information</li><li>BioNixus Middle East &amp; Africa market reports</li><li>Company and industry reports</li><li>BioNixus proprietary research</li></ul><p className="text-sm text-muted-foreground leading-relaxed">For customised market intelligence on Iraq, <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.</p></div></div></section>
         </ReportContentWithAside>

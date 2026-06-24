@@ -9,7 +9,8 @@ import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { getPharmaGuideConfig } from '@/data/reportConversionConfig';
 import { PharmaCompaniesGccHubLinks } from '@/components/seo/PharmaCompaniesGccHubLinks';
 import { PharmaCompaniesQuickAnswer } from '@/components/seo/PharmaCompaniesQuickAnswer';
-import { buildPharmaCompaniesItemListLd } from '@/components/seo/pharmaCompaniesSeo';
+import { PharmaCompaniesFaqSection } from '@/components/seo/PharmaCompaniesFaqSection';
+import { buildPharmaCompaniesFaqLd, buildPharmaCompaniesItemListLd } from '@/components/seo/pharmaCompaniesSeo';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -78,7 +79,7 @@ const UaePharmaCompanies = () => {
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesItemListLd(citationUrl, pharmaCompanies.map((c) => c.name)))}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: 'Pharmaceutical Companies in the UAE: Complete Industry Guide 2026', description: 'Comprehensive guide to pharmaceutical companies operating in the United Arab Emirates — local manufacturers, MNC offices, distributors, $4.5B market data, MOHAP/DHA/DOH regulatory landscape, and medical tourism outlook.', url: citationUrl, datePublished: '2026-02-15', dateModified: '2026-02-15', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' } })}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' }, { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.bionixus.com/resources' }, { '@type': 'ListItem', position: 3, name: 'Pharmaceutical Companies in the UAE' }] })}</script>
-        <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqItems.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) })}</script>
+        <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesFaqLd(citationUrl, faqItems))}</script>
       </Helmet>
       <OpenGraphMeta
         title={ogTitle}
@@ -102,6 +103,13 @@ const UaePharmaCompanies = () => {
           <div className="mt-8 p-5 bg-muted/50 border border-border rounded-xl"><div className="flex items-start gap-3"><Share2 className="w-5 h-5 text-primary mt-0.5 shrink-0" /><div><p className="font-semibold text-foreground text-sm mb-1">Cite this guide</p><p className="text-sm text-muted-foreground leading-relaxed">BioNixus. &quot;Pharmaceutical Companies in the UAE: Complete Industry Guide 2026.&quot; BioNixus Healthcare Market Research, Feb. 2026, <a href={citationUrl} className="text-primary hover:underline break-all">{citationUrl}</a>.<br />Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">CC BY 4.0</a> — free to share and adapt with attribution.</p></div></div></div>
           <ReportEarlyCtaBar config={PHARMA_CONVERSION} className="mt-8" /></div></section>
 
+        <section className="section-padding py-12 bg-primary text-primary-foreground"><div className="container-wide max-w-5xl mx-auto"><div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div><p className="text-3xl md:text-4xl font-display font-bold">$4.5B</p><p className="text-primary-foreground/70 text-sm mt-1">Pharmaceutical market value</p></div>
+          <div><p className="text-3xl md:text-4xl font-display font-bold">17.5%</p><p className="text-primary-foreground/70 text-sm mt-1">Year-over-year growth</p></div>
+          <div><p className="text-3xl md:text-4xl font-display font-bold">10.1M</p><p className="text-primary-foreground/70 text-sm mt-1">Population</p></div>
+          <div><p className="text-3xl md:text-4xl font-display font-bold">$446</p><p className="text-primary-foreground/70 text-sm mt-1">Pharma spending per capita</p></div>
+        </div></div></section>
+
         <PharmaCompaniesQuickAnswer
           country="uae"
           marketSize="approximately USD 4.5 billion"
@@ -111,13 +119,6 @@ const UaePharmaCompanies = () => {
         />
 
         <ReportContentWithAside config={PHARMA_CONVERSION}>
-        <section className="section-padding py-12 bg-primary text-primary-foreground"><div className="container-wide max-w-5xl mx-auto"><div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div><p className="text-3xl md:text-4xl font-display font-bold">$4.5B</p><p className="text-primary-foreground/70 text-sm mt-1">Pharmaceutical market value</p></div>
-          <div><p className="text-3xl md:text-4xl font-display font-bold">17.5%</p><p className="text-primary-foreground/70 text-sm mt-1">Year-over-year growth</p></div>
-          <div><p className="text-3xl md:text-4xl font-display font-bold">10.1M</p><p className="text-primary-foreground/70 text-sm mt-1">Population</p></div>
-          <div><p className="text-3xl md:text-4xl font-display font-bold">$446</p><p className="text-primary-foreground/70 text-sm mt-1">Pharma spending per capita</p></div>
-        </div></div></section>
-
         <section className="section-padding py-8 bg-muted/30"><div className="container-wide max-w-5xl mx-auto">
           <h2 className="text-lg font-display font-semibold text-foreground mb-4">In this guide</h2>
           <div className="grid md:grid-cols-2 gap-2">
@@ -258,10 +259,7 @@ const UaePharmaCompanies = () => {
           </div>
         </div></section>
 
-        <section className="section-padding py-16 bg-muted/30" id="faq"><div className="container-wide max-w-5xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-10">Frequently Asked Questions</h2>
-          <div className="space-y-6">{faqItems.map((faq) => (<div key={faq.q} className="bg-card border border-border rounded-xl p-6"><h3 className="text-lg font-display font-semibold text-foreground mb-3">{faq.q}</h3><p className="text-sm text-muted-foreground leading-relaxed">{faq.a}</p></div>))}</div>
-        </div></section>
+        <PharmaCompaniesFaqSection items={faqItems} />
 
         <PharmaCompaniesGccHubLinks country="uae" />
         <section className="section-padding py-12" id="methodology"><div className="container-wide max-w-5xl mx-auto"><div className="bg-card border border-border rounded-xl p-8"><h2 className="text-xl font-display font-semibold text-foreground mb-4 flex items-center gap-2"><BookOpen className="w-5 h-5 text-primary" />Data Sources &amp; Methodology</h2><p className="text-sm text-muted-foreground leading-relaxed mb-4">This guide aggregates publicly available information from:</p><ul className="text-sm text-muted-foreground space-y-2 mb-6"><li>BioNixus Middle East &amp; Africa Pharmaceutical Market Report</li><li>MOHAP, DHA, DOH — regulatory and market data</li><li>Company filings and annual reports (Julphar, Neopharma, etc.)</li><li>BioNixus proprietary research from physician surveys across the UAE (2024–2025)</li></ul><p className="text-sm text-muted-foreground leading-relaxed">For customised market intelligence on the UAE, <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.</p></div></div></section>

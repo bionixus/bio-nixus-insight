@@ -155,7 +155,7 @@ function buildFallbackTitle(pathname) {
     return `${industryLabel} Market Research Company in ${countryLabel} (2026) | ${titleSuffix} | BioNixus`;
   }
 
-  if (path === '/healthcare-market-research') return 'Healthcare & Pharmaceutical Market Research in Dubai, UAE & MENA | BioNixus';
+  if (path === '/healthcare-market-research') return 'Healthcare Market Research by Country | US HQ · Global Coverage | BioNixus';
   if (path === '/fr/healthcare-market-research') return 'Recherche de marché santé et pharma | Europe et MENA | BioNixus';
   if (path === '/fr/healthcare-market-research/france') return 'Études de marché pharmaceutique France | HAS et ANSM | BioNixus';
   if (path === `/${SKYRIZI_ROOT_SLUG}`) return SKYRIZI_ROOT_TITLE;
@@ -321,7 +321,7 @@ function buildFallbackDescription(pathname) {
     return 'محفظة BioNixus الاستراتيجية: قدرات أبحاث السوق الصحي والدوائي والمستهلك عبر أوروبا والشرق الأوسط وأفريقيا.';
   }
   if (path === '/healthcare-market-research') {
-    return 'BioNixus — leading healthcare and pharmaceutical market research company serving Dubai, UAE, and MENA. DHA, MOHAP, and DOH-aligned physician surveys, KOL mapping, and market access.';
+    return 'US-headquartered healthcare market research from BioNixus — physician, payer, and hospital evidence across 20+ countries: USA, Canada, Brazil, UK, Europe, GCC, MENA, and Asia-Pacific with local fieldwork.';
   }
   if (path === '/fr/healthcare-market-research') {
     return 'Études de marché pharmaceutique et santé en Europe et au Moyen-Orient : preuves médecins, payeurs et hôpitaux pour lancement, accès au marché et croissance — BioNixus.';

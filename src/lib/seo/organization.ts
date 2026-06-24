@@ -6,6 +6,8 @@
  * The static index.html block is hand-aligned to these values.
  */
 
+import { BIONIXUS_UK_GBP_MAPS_URL } from '@/data/googleReviewsUk';
+
 const BASE_URL = 'https://www.bionixus.com';
 
 export const ORG_ID = `${BASE_URL}/#organization`;
@@ -22,6 +24,7 @@ export const ORG_SAME_AS = [
   'https://www.linkedin.com/company/bionixus/',
   'https://www.facebook.com/Bionixus',
   'https://www.instagram.com/bionixus_',
+  BIONIXUS_UK_GBP_MAPS_URL,
 ];
 
 export const ORG_KNOWS_ABOUT = [

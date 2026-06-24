@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
+import { HOME_OVERVIEW_VIDEO } from '@/data/mediaAssets';
 import EmeaSignalsSection from '@/components/home/EmeaSignalsSection';
 import ServicesSection from '@/components/ServicesSection';
 import GeographicCoverageSection from '@/components/GeographicCoverageSection';
@@ -10,6 +12,7 @@ import MethodologySection from '@/components/MethodologySection';
 import TherapeuticAreasSection from '@/components/TherapeuticAreasSection';
 import StatsSection from '@/components/StatsSection';
 import BlogSection from '@/components/BlogSection';
+import GoogleReviewsSection from '@/components/GoogleReviewsSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import HomePathwaysSection, { type PathwayCard } from '@/components/home/HomePathwaysSection';
 import { HomeExplainerSection } from '@/components/media/HomeExplainerSection';
@@ -144,6 +147,14 @@ const Index = () => {
         faqItems={homeFaq.items}
         articlePosts={homeArticlePosts}
       />
+      <Helmet>
+        <link
+          rel="preload"
+          as="image"
+          href={HOME_OVERVIEW_VIDEO.poster}
+          fetchPriority="high"
+        />
+      </Helmet>
       <Navbar />
       <main>
         <HeroSection />
@@ -157,6 +168,7 @@ const Index = () => {
             isLoading={blogLoading && !ssrHomeInsights?.length}
           />
         </div>
+        <GoogleReviewsSection />
         <TestimonialsSection />
         <div className="cv-auto">
           <GeographicCoverageSection />

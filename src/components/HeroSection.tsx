@@ -2,15 +2,15 @@ import { ArrowRight, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
-import { ReportSectionVisual } from '@/components/report-premium/ReportSectionVisual';
+import { getPageMedia } from '@/data/mediaAssets';
+import { HeroBackgroundVideo } from '@/components/media/HeroBackgroundVideo';
 
 const HeroSection = () => {
   const { t, language, isRTL } = useLanguage();
   const basePath = languagePaths[language] || '/';
   const contactPath =
     language === 'fr' ? '/fr/contacts' : language === 'ar' ? '/ar/contacts' : `${basePath === '/' ? '' : basePath}/contact`;
-  const heroVisualAlt =
-    'Healthcare and pharmaceutical market research intelligence dashboard showing GCC and European evidence programs';
+  const heroVideo = getPageMedia('home')?.heroVideo;
 
   return (
     <section
@@ -18,12 +18,15 @@ const HeroSection = () => {
       dir={isRTL ? 'rtl' : undefined}
       lang={language}
     >
-      {/* Background with gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-navy-deep via-navy-medium to-primary" />
-      
+      {heroVideo ? (
+        <HeroBackgroundVideo config={heroVideo} />
+      ) : (
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-deep via-navy-medium to-primary" />
+      )}
+
       {/* Subtle pattern overlay */}
-      <div 
-        className="absolute inset-0 opacity-5"
+      <div
+        className="absolute inset-0 opacity-[0.07] pointer-events-none"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
         }}
@@ -31,8 +34,7 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 container-wide section-padding pt-32 pb-20">
-        <div className="grid lg:grid-cols-[minmax(0,1.05fr)_minmax(280px,0.95fr)] gap-10 lg:gap-14 items-center">
-          <div className="max-w-4xl">
+        <div className="max-w-4xl">
           {/* Tagline */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8 animate-fade-up">
             <div className="w-2 h-2 rounded-full bg-gold-warm animate-pulse" />
@@ -46,7 +48,7 @@ const HeroSection = () => {
             {t.hero.title}
           </h1>
 
-          {/* Lead line (styled as hero subhead; paragraph keeps a single page-level H1) */}
+          {/* Lead line */}
           <p className="text-xl md:text-2xl font-display font-medium text-white/90 max-w-3xl leading-tight mb-6 animate-fade-up animation-delay-300">
             {t.hero.subtitle}
           </p>
@@ -80,7 +82,7 @@ const HeroSection = () => {
             ].map((metric) => (
               <li
                 key={metric.label}
-                className="rounded-xl border border-white/20 bg-white/10 px-5 py-4 text-center"
+                className="rounded-xl border border-white/20 bg-white/10 backdrop-blur-sm px-5 py-4 text-center"
               >
                 <p className="text-2xl md:text-3xl font-display font-semibold text-white">{metric.value}</p>
                 <p className="text-sm text-white/75 mt-1">{metric.label}</p>
@@ -122,17 +124,9 @@ const HeroSection = () => {
               ))}
             </div>
           </div>
-
-          <div className="hidden lg:block min-w-0 animate-fade-up animation-delay-400">
-            <ReportSectionVisual
-              theme="hero"
-              alt={heroVisualAlt}
-              className="shadow-2xl border border-white/10"
-            />
-          </div>
         </div>
 
-        {/* Decorative elements with gentle floating */}
+        {/* Decorative elements */}
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-2/3 hidden xl:block pointer-events-none" aria-hidden>
           <div className="absolute top-0 right-20 w-72 h-72 rounded-full bg-gold-warm/10 blur-3xl float-gentle" />
           <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-white/5 blur-3xl float-gentle-delayed" />
@@ -140,7 +134,7 @@ const HeroSection = () => {
       </div>
 
       {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
     </section>
   );
 };

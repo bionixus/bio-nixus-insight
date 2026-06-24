@@ -63,4 +63,15 @@ export const TurkeyMedicalDevicesMarketReport = lazy(() => import('@/pages/Turke
 export const HealthcareReportPage = lazy(() => import('@/pages/HealthcareReportPage'));
 
 export const BlogPost = lazy(() => import('@/pages/BlogPost'));
+export const CaseStudy = lazy(() => import('@/pages/CaseStudy'));
 export const PressReleasePage = lazy(() => import('@/pages/PressReleasePage'));
+
+export const UaePharmaCompanies = lazy(() => import('@/pages/UaePharmaCompanies'));
+export const KuwaitPharmaCompanies = lazy(() => import('@/pages/KuwaitPharmaCompanies'));
+export const SaudiPharmaCompanies = lazy(() => import('@/pages/SaudiPharmaCompanies'));
+export const EgyptPharmaCompanies = lazy(() => import('@/pages/EgyptPharmaCompanies'));
+export const QatarPharmaCompanies = lazy(() => import('@/pages/QatarPharmaCompanies'));
+export const OmanPharmaCompanies = lazy(() => import('@/pages/OmanPharmaCompanies'));
+export const BahrainPharmaCompanies = lazy(() => import('@/pages/BahrainPharmaCompanies'));
+export const IraqPharmaCompanies = lazy(() => import('@/pages/IraqPharmaCompanies'));
+export const IranPharmaCompanies = lazy(() => import('@/pages/IranPharmaCompanies'));
