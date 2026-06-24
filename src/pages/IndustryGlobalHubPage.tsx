@@ -7,7 +7,7 @@ import { buildCanonicalOrganization } from '@/lib/seo/organization';
 import {
   buildFAQSchema,
   buildBreadcrumbSchema,
-  buildProfessionalServiceSchema,
+  buildServiceSchema,
 } from '@/lib/seo/schemas';
 import { INDUSTRY_HUB_PAGES } from '@/data/industryHubPages';
 
@@ -53,7 +53,7 @@ export default function IndustryGlobalHubPage() {
   const jsonLd = [
     buildCanonicalOrganization(),
     {
-      ...buildProfessionalServiceSchema(),
+      ...buildServiceSchema(),
       name: `BioNixus ${config.displayName} Market Research`,
       serviceType: `${config.displayName} Market Research`,
       description: config.heroSubtitle,

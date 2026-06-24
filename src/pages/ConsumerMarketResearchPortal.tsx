@@ -22,7 +22,7 @@ import Footer from '@/components/Footer';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { buildCanonicalOrganization } from '@/lib/seo/organization';
 import {
-  buildProfessionalServiceSchema,
+  buildServiceSchema,
   buildFAQSchema,
   buildBreadcrumbSchema,
 } from '@/lib/seo/schemas';
@@ -196,7 +196,7 @@ export default function ConsumerMarketResearchPortal() {
 
   const jsonLd = [
     buildCanonicalOrganization(),
-    buildProfessionalServiceSchema(),
+    buildServiceSchema(),
     buildFAQSchema(FAQ_ITEMS, {
       pageUrl: 'https://www.bionixus.com/consumer-market-research',
       sectionId: 'faq',
