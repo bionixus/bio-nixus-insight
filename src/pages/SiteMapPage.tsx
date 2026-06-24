@@ -37,8 +37,14 @@ import {
   type MatrixCountrySlug,
 } from '@/data/industryMarketResearchMatrix';
 import { allListicleConfigs } from '@/data/topCompanies';
+import { INDUSTRY_HUB_PAGES } from '@/data/industryHubPages';
 
-const MATRIX_COUNTRY_ORDER: MatrixCountrySlug[] = ['saudi-arabia', 'uae', 'egypt'];
+const MATRIX_COUNTRY_ORDER: MatrixCountrySlug[] = [
+  'saudi-arabia', 'uae', 'egypt',
+  'kuwait', 'qatar', 'oman',
+  'uk', 'usa', 'brazil', 'germany',
+  'morocco', 'nigeria', 'south-africa', 'kenya',
+];
 
 const industryMatrixGroups = MATRIX_INDUSTRY_SLUGS_ORDERED.filter(
   (slug) => MATRIX_INDUSTRIES[slug].published,
@@ -67,7 +73,8 @@ const staticLinks = [
   { to: '/about', label: 'About' },
   { to: '/services', label: 'Services' },
   { to: '/market-research', label: 'Market Research Hub' },
-  { to: '/market-research-by-industry', label: 'Market Research by Industry (KSA, UAE, Egypt)' },
+  { to: '/consumer-market-research', label: 'Consumer & B2B Market Research — Global Portal' },
+  { to: '/market-research-by-industry', label: 'Market Research by Industry (all countries)' },
   { to: '/healthcare-market-research/uae', label: 'Market Research UAE' },
   { to: '/market-research-ksa', label: 'Market Research KSA' },
   { to: '/market-research-saudi', label: 'Market Research Saudi' },
@@ -275,7 +282,7 @@ function categorizePath(path: string) {
     return 'Industry Market Research';
   }
   if (
-    /^\/(saudi-arabia|uae|egypt)-[a-z0-9-]+-market-research$/.test(path) &&
+    /^\/(saudi-arabia|uae|egypt|kuwait|qatar|oman|uk|usa|brazil|germany|morocco|nigeria|south-africa|kenya)-[a-z0-9-]+-market-research$/.test(path) &&
     path !== '/market-research-by-industry'
   ) {
     return 'Industry Market Research';
@@ -292,6 +299,7 @@ const tocNav = [
   { id: 'section-pharma', label: 'Pharma guides' },
   { id: 'section-reports', label: 'Market reports' },
   { id: 'section-listicles', label: 'Company guides' },
+  { id: 'section-consumer', label: 'Consumer industries' },
   { id: 'section-industry', label: 'Industry matrix' },
   { id: 'section-healthcare', label: 'Healthcare geography' },
   { id: 'section-locales', label: 'Languages' },
@@ -502,7 +510,7 @@ export default function SiteMapPage() {
 
               <dl className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
                 {[
-                  { label: 'XML index', value: '539' },
+                  { label: 'XML index', value: '910' },
                   { label: 'Core routes', value: String(staticLinks.length) },
                   { label: 'Industry matrix', value: String(industryMatrixLinkCount) },
                   { label: 'Report pages', value: String(marketReportLinks.length) },
@@ -743,10 +751,33 @@ export default function SiteMapPage() {
                 </SectionShell>
 
                 <SectionShell
+                  id="section-consumer"
+                  icon={Globe2}
+                  title="Consumer & B2B industries — global hubs"
+                  description="12 non-healthcare industry verticals with global hub pages and country-level BOFU pages across 14 markets."
+                  countLabel={`${INDUSTRY_HUB_PAGES.length + 1} hubs`}
+                >
+                  <ul className="grid gap-2 sm:grid-cols-2">
+                    <li>
+                      <PremiumInternalLink to="/consumer-market-research">
+                        Consumer & B2B Market Research — Global Portal
+                      </PremiumInternalLink>
+                    </li>
+                    {INDUSTRY_HUB_PAGES.map((hub) => (
+                      <li key={hub.slug}>
+                        <PremiumInternalLink to={`/market-research/${hub.slug}`}>
+                          {hub.displayName} Market Research
+                        </PremiumInternalLink>
+                      </li>
+                    ))}
+                  </ul>
+                </SectionShell>
+
+                <SectionShell
                   id="section-industry"
                   icon={LayoutGrid}
-                  title="Market research by industry (KSA, UAE, Egypt)"
-                  description="Sixteen industries × three countries: BOFU company-intent pages and 2026 top-firms listicles—indexed in sitemap.xml alongside the industry hub."
+                  title="Market research by industry (14 countries)"
+                  description="Sixteen industries × 14 countries: BOFU company-intent pages and 2026 top-firms listicles covering GCC, MENA, Africa, Europe, and the Americas."
                   countLabel={`${industryMatrixLinkCount} routes`}
                 >
                   <p className="mb-6 text-sm text-muted-foreground">
