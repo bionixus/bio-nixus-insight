@@ -20,7 +20,7 @@ export function YouTubeEmbed({ videoId, title, className = '' }: YouTubeEmbedPro
   );
 }
 
-export const BIONIXUS_HOME_YOUTUBE_ID = 'XEFjIQRUkCk';
+export const BIONIXUS_HOME_YOUTUBE_ID = '9zPvYCZJQIY';
 
 export const BIONIXUS_HOME_YOUTUBE_URL = `https://youtu.be/${BIONIXUS_HOME_YOUTUBE_ID}`;
 

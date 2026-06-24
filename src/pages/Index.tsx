@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import { PremiumComplianceRibbon } from '@/components/home/PremiumComplianceRibbon';
-import { HOME_OVERVIEW_VIDEO } from '@/data/mediaAssets';
+import { HomeOverviewVideoSection } from '@/components/home/HomeOverviewVideoSection';
 import EmeaSignalsSection from '@/components/home/EmeaSignalsSection';
 import ServicesSection from '@/components/ServicesSection';
 import GeographicCoverageSection from '@/components/GeographicCoverageSection';
@@ -149,12 +149,7 @@ const Index = () => {
         articlePosts={homeArticlePosts}
       />
       <Helmet>
-        <link
-          rel="preload"
-          as="image"
-          href={HOME_OVERVIEW_VIDEO.poster}
-          fetchPriority="high"
-        />
+        <link rel="preload" as="image" href="/bionixus-logo.webp" fetchPriority="high" />
       </Helmet>
       <Navbar />
       <main>
@@ -162,6 +157,7 @@ const Index = () => {
         <PremiumComplianceRibbon />
         <EmeaSignalsSection />
         <ServicesSection />
+        <HomeOverviewVideoSection />
         <HomeExplainerSection />
         <StatsSection />
         <div className="cv-auto">

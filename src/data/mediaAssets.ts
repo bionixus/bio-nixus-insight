@@ -66,14 +66,13 @@ export const SHARED_FIGURES = {
 
 /** Canonical homepage overview video (YouTube). */
 export const HOME_OVERVIEW_VIDEO = {
-  youtubeId: 'XEFjIQRUkCk',
-  poster: 'https://img.youtube.com/vi/XEFjIQRUkCk/hqdefault.jpg',
+  youtubeId: '9zPvYCZJQIY',
+  poster: 'https://img.youtube.com/vi/9zPvYCZJQIY/hqdefault.jpg',
   alt: 'BioNixus global market research overview — quantitative, qualitative, and access intelligence',
 } satisfies HeroVideoConfig;
 
 export const PAGE_MEDIA: Record<string, PageMediaConfig> = {
   home: {
-    heroVideo: HOME_OVERVIEW_VIDEO,
     visualBriefing: {
       heading: 'How BioNixus turns field evidence into launch decisions',
       figures: [SHARED_FIGURES.hcpWorkshop, SHARED_FIGURES.validationLab],
