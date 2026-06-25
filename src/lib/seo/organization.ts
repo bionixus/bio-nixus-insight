@@ -46,6 +46,10 @@ export const ORG_KNOWS_ABOUT = [
   'SFDA market research',
   'NUPCO formulary research',
   'أبحاث سوق صيدلاني المملكة العربية السعودية',
+  'Pharmaceutical market research UAE',
+  'Healthcare market research UAE',
+  'MOHAP market research',
+  'DHA formulary research',
 ];
 
 /** Global reach with explicit deep-fingerprint regions and countries. */
@@ -58,7 +62,7 @@ export const ORG_AREA_SERVED: Array<Record<string, string>> = [
   { '@type': 'Place', name: 'Asia-Pacific' },
   // MENA
   { '@type': 'Country', name: 'Saudi Arabia', sameAs: 'https://www.wikidata.org/wiki/Q851' },
-  { '@type': 'Country', name: 'United Arab Emirates' },
+  { '@type': 'Country', name: 'United Arab Emirates', sameAs: 'https://www.wikidata.org/wiki/Q784' },
   { '@type': 'Country', name: 'Egypt' },
   { '@type': 'Country', name: 'Kuwait' },
   { '@type': 'Country', name: 'Qatar' },

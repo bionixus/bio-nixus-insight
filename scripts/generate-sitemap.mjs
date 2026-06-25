@@ -275,6 +275,7 @@ const staticPages = [
   { path: '/insights/top-market-research-companies-riyadh-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-saudi-arabia-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-dubai-2026', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-uae-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-abu-dhabi-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-kuwait-2026', priority: '0.88', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-riyadh-2026', priority: '0.90', changefreq: 'monthly' },

@@ -331,6 +331,29 @@ const UaeHealthcareMarketReport = () => {
           className="bg-muted/30"
         />
 
+        {/* Related Resources */}
+        <section className="section-padding py-12 bg-muted/30">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-xl font-display font-semibold text-foreground mb-6">Related Resources</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {([
+                { to: '/insights/top-healthcare-market-research-companies-uae-2026', label: 'Top Healthcare Market Research Companies UAE', desc: 'Expert guide to leading healthcare and pharma research firms across all seven UAE emirates.' },
+                { to: '/insights/top-market-research-companies-uae-2026', label: 'Top Market Research Companies UAE', desc: 'General and consumer market research firms ranked across the UAE for 2026.' },
+                { to: '/uae-pharmaceutical-market-research', label: 'UAE Pharmaceutical Market Research', desc: 'DHA/DOH/MOHAP-aligned pharma HCP surveys, KOL mapping, and market access research.' },
+              ] as { to: string; label: string; desc: string }[]).map((r) => (
+                <a
+                  key={r.to}
+                  href={r.to}
+                  className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 hover:shadow-md transition-all"
+                >
+                  <h3 className="font-semibold text-foreground mb-1">{r.label}</h3>
+                  <p className="text-sm text-muted-foreground">{r.desc}</p>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <ReportConsultationBand config={REPORT_CONVERSION} />
         </main>
