@@ -41,6 +41,11 @@ export const ORG_KNOWS_ABOUT = [
   'ANVISA market research',
   'CONITEC evidence generation',
   'Pesquisa de mercado farmacêutico Brasil',
+  'Pharmaceutical market research Saudi Arabia',
+  'Healthcare market research Saudi Arabia',
+  'SFDA market research',
+  'NUPCO formulary research',
+  'أبحاث سوق صيدلاني المملكة العربية السعودية',
 ];
 
 /** Global reach with explicit deep-fingerprint regions and countries. */
@@ -52,7 +57,7 @@ export const ORG_AREA_SERVED: Array<Record<string, string>> = [
   { '@type': 'Place', name: 'Eastern Europe' },
   { '@type': 'Place', name: 'Asia-Pacific' },
   // MENA
-  { '@type': 'Country', name: 'Saudi Arabia' },
+  { '@type': 'Country', name: 'Saudi Arabia', sameAs: 'https://www.wikidata.org/wiki/Q851' },
   { '@type': 'Country', name: 'United Arab Emirates' },
   { '@type': 'Country', name: 'Egypt' },
   { '@type': 'Country', name: 'Kuwait' },

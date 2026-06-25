@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -37,6 +38,8 @@ type StrategicServicePageProps = {
   areaServed?: string[];
   /** Optional FAQ entries; when provided, a FAQPage schema + on-page FAQ render. */
   faqs?: Array<{ question: string; answer: string }>;
+  /** Optional content rendered between the hero and the main decision framework. */
+  belowHero?: ReactNode;
 };
 
 export default function StrategicServicePage({
@@ -53,6 +56,7 @@ export default function StrategicServicePage({
   serviceType,
   areaServed,
   faqs,
+  belowHero,
 }: StrategicServicePageProps) {
   const pagePath = canonicalUrl.replace('https://www.bionixus.com', '') || '/';
   const slugKey = pagePath.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '') || 'service';
@@ -122,6 +126,8 @@ export default function StrategicServicePage({
           stats={metrics.map((m) => ({ value: m.value, label: m.label }))}
           statsCaption=""
         />
+
+        {belowHero}
 
         <ReportContentWithAside config={config}>
           {/* Decision framework */}

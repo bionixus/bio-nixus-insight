@@ -148,7 +148,15 @@ const SaudiArabiaHealthcareMarketReport = () => {
               prioritization, and real-world evidence programs in the Kingdom.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              For deeper intelligence, see:{' '}
+              For pharmaceutical market research, see:{' '}
+              <Link to="/market-research-saudi-arabia-pharmaceutical" className="text-primary hover:underline font-medium">
+                Saudi Arabia pharmaceutical market research
+              </Link>
+              {' '}and the Arabic-language guide:{' '}
+              <Link to="/ar/abhath-suq-adwiyah-saudi-arabia" className="text-primary hover:underline font-medium">
+                أبحاث سوق الأدوية السعودية
+              </Link>
+              . For deeper intelligence, see:{' '}
               <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">
                 GCC Pharmaceutical Market Report 2026
               </Link>

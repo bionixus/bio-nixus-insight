@@ -646,9 +646,10 @@ export default function TopHealthcareMarketResearchCompaniesSaudiArabia2026() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
                 { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Saudi Arabia Pharmaceutical Market Research', desc: 'Full-service pharma research for SFDA registration and commercial strategy.' },
+                { to: '/ar/abhath-suq-adwiyah-saudi-arabia', label: 'أبحاث سوق الأدوية (عربي)', desc: 'Arabic-language pharmaceutical market research guide for Saudi Arabia.' },
+                { to: '/ar/insights/top-sharaket-abhath-sihha-alsaudia-2026', label: 'أفضل شركات أبحاث الصحة (عربي)', desc: 'Arabic-language guide to top healthcare market research companies in Saudi Arabia.' },
                 { to: '/sfda-market-access-strategy-saudi-arabia', label: 'SFDA Market Access Strategy', desc: 'Research support for SFDA submissions, pricing, and formulary access.' },
                 { to: '/kol-mapping-saudi-arabia-oncology', label: 'KOL Mapping Saudi Arabia', desc: 'Oncology and specialty KOL identification and engagement mapping.' },
-                { to: '/physician-survey-saudi-arabia', label: 'Physician Survey Saudi Arabia', desc: 'HCP survey design, recruitment, and analysis for Saudi Arabia.' },
                 { to: '/insights/top-healthcare-market-research-companies-riyadh-2026', label: 'Top Healthcare MRC in Riyadh', desc: 'City-specific guide for Riyadh pharma and healthcare research.' },
                 { to: '/contact', label: 'Request a Proposal', desc: 'Get in touch for a custom Saudi Arabia healthcare research engagement.' },
               ].map((r) => (

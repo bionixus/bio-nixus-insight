@@ -377,6 +377,10 @@ const staticPages = [
   { path: '/pt/pesquisa-mercado-farmaceutico-brasil', priority: '0.88', changefreq: 'monthly' },
   { path: '/pt/pesquisa-mercado-saude-brasil', priority: '0.88', changefreq: 'monthly' },
   { path: '/pt/insights/top-empresas-pesquisa-mercado-brasil-2026', priority: '0.85', changefreq: 'monthly' },
+  // Saudi Arabia Arabic service pages
+  { path: '/ar/abhath-suq-adwiyah-saudi-arabia', priority: '0.88', changefreq: 'monthly' },
+  { path: '/ar/insights/top-sharaket-abhath-alsuq-alsaudia-2026', priority: '0.85', changefreq: 'monthly' },
+  { path: '/ar/insights/top-sharaket-abhath-sihha-alsaudia-2026', priority: '0.85', changefreq: 'monthly' },
 ];
 
 const healthcareTherapySlugs = [
@@ -658,6 +662,21 @@ const hreflangGroups = [
     en: '/insights/top-healthcare-market-research-companies-argentina-2026',
     es: '/es/insights/top-empresas-investigacion-mercado-salud-argentina-2026',
     'x-default': '/insights/top-healthcare-market-research-companies-argentina-2026',
+  },
+  {
+    en: '/market-research-saudi-arabia-pharmaceutical',
+    ar: '/ar/abhath-suq-adwiyah-saudi-arabia',
+    'x-default': '/market-research-saudi-arabia-pharmaceutical',
+  },
+  {
+    en: '/insights/top-market-research-companies-saudi-arabia-2026',
+    ar: '/ar/insights/top-sharaket-abhath-alsuq-alsaudia-2026',
+    'x-default': '/insights/top-market-research-companies-saudi-arabia-2026',
+  },
+  {
+    en: '/insights/top-healthcare-market-research-companies-saudi-arabia-2026',
+    ar: '/ar/insights/top-sharaket-abhath-sihha-alsaudia-2026',
+    'x-default': '/insights/top-healthcare-market-research-companies-saudi-arabia-2026',
   },
 ];
 

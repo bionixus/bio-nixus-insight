@@ -182,6 +182,9 @@ import BrazilPharmaceuticalMarketResearch from '@/pages/BrazilPharmaceuticalMark
 import PtBrazilPharmaceuticalMarketResearch from '@/pages/PtBrazilPharmaceuticalMarketResearch';
 import PtBrazilHealthcareMarketResearch from '@/pages/PtBrazilHealthcareMarketResearch';
 import PtTopEmpresasPesquisaMercadoBrasil2026 from '@/pages/PtTopEmpresasPesquisaMercadoBrasil2026';
+import ArBahthSuqAdwiyahSaudiArabia from '@/pages/ArBahthSuqAdwiyahSaudiArabia';
+import ArTopMarketResearchCompaniesSaudiArabia2026 from '@/pages/ArTopMarketResearchCompaniesSaudiArabia2026';
+import ArTopHealthcareMarketResearchCompaniesSaudiArabia2026 from '@/pages/ArTopHealthcareMarketResearchCompaniesSaudiArabia2026';
 import EsTopMarketResearchCompaniesArgentina2026 from '@/pages/EsTopMarketResearchCompaniesArgentina2026';
 import EsTopHealthcareMarketResearchCompaniesArgentina2026 from '@/pages/EsTopHealthcareMarketResearchCompaniesArgentina2026';
 import HeorConsulting from '@/pages/HeorConsulting';
@@ -377,6 +380,9 @@ export const routes: RouteObject[] = [
   { path: '/pt/pesquisa-mercado-farmaceutico-brasil', element: <PtBrazilPharmaceuticalMarketResearch /> },
   { path: '/pt/pesquisa-mercado-saude-brasil', element: <PtBrazilHealthcareMarketResearch /> },
   { path: '/pt/insights/top-empresas-pesquisa-mercado-brasil-2026', element: <PtTopEmpresasPesquisaMercadoBrasil2026 /> },
+  { path: '/ar/abhath-suq-adwiyah-saudi-arabia', element: <ArBahthSuqAdwiyahSaudiArabia /> },
+  { path: '/ar/insights/top-sharaket-abhath-alsuq-alsaudia-2026', element: <ArTopMarketResearchCompaniesSaudiArabia2026 /> },
+  { path: '/ar/insights/top-sharaket-abhath-sihha-alsaudia-2026', element: <ArTopHealthcareMarketResearchCompaniesSaudiArabia2026 /> },
   { path: '/es/insights/top-empresas-investigacion-mercado-argentina-2026', element: <EsTopMarketResearchCompaniesArgentina2026 /> },
   { path: '/es/insights/top-empresas-investigacion-mercado-salud-argentina-2026', element: <EsTopHealthcareMarketResearchCompaniesArgentina2026 /> },
   { path: '/top-market-research-companies-brazil-2026', element: <Navigate to="/insights/top-market-research-companies-brazil-2026" replace /> },

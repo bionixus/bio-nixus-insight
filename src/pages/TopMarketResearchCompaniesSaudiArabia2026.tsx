@@ -533,6 +533,7 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
                 { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Saudi Arabia Pharmaceutical Market Research', desc: 'SFDA-aligned pharma and market access research for the Kingdom.' },
+                { to: '/ar/insights/top-sharaket-abhath-alsuq-alsaudia-2026', label: 'أفضل شركات أبحاث السوق (عربي)', desc: 'Arabic-language guide to top market research companies in Saudi Arabia.' },
                 { to: '/pharmaceutical-companies-saudi-arabia', label: 'Pharmaceutical Companies in Saudi Arabia', desc: 'Leading pharma companies, market data, and SFDA context.' },
                 { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare Market Research in Saudi Arabia', desc: 'Country hub with FAQs, key stats, and therapy focus.' },
                 { to: '/saudi-arabia-healthcare-market-report', label: 'Saudi Arabia Healthcare Market Report', desc: 'Market sizing, growth drivers, and Vision 2030 outlook.' },

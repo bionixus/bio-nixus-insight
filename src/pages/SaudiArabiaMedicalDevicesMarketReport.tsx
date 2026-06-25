@@ -368,7 +368,8 @@ const SaudiArabiaMedicalDevicesMarketReport = () => {
           <div className="container-wide max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Related BioNixus market intelligence</h2>
             <p className="text-muted-foreground leading-relaxed">
-              BioNixus runs medical device and MedTech market research across the GCC. Compare the Saudi Arabia device market with our{' '}
+              BioNixus runs medical device and MedTech market research across the GCC. For pharmaceutical research, see{' '}
+              <Link to="/market-research-saudi-arabia-pharmaceutical" className="text-primary hover:underline font-medium">Saudi Arabia pharmaceutical market research</Link>. Compare the Saudi Arabia device market with our{' '}
               <Link to="/uae-medical-devices-market-report" className="text-primary hover:underline font-medium">UAE medical devices market report</Link>{' '}and{' '}
               <Link to="/qatar-medical-devices-market-report" className="text-primary hover:underline font-medium">Qatar medical devices market report</Link>, set it against the{' '}
               <Link to="/saudi-arabia-healthcare-market-report" className="text-primary hover:underline font-medium">Saudi Arabia healthcare market report</Link>, or widen the lens with the{' '}
