@@ -481,6 +481,27 @@ export default function ConsumerMarketResearchPortal() {
           </div>
         </section>
 
+        {/* ── 5b. Video ────────────────────────────────────────────────────── */}
+        <section className="py-16 px-4 bg-gray-50">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-gray-900 mb-4">
+              BioNixus in action
+            </h2>
+            <p className="text-gray-500 mb-8 text-sm md:text-base">
+              See how we design and deliver consumer &amp; B2B research programmes across MENA, Africa, and Europe.
+            </p>
+            <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-lg">
+              <iframe
+                src="https://www.youtube.com/embed/XEFjIQRUkCk"
+                title="BioNixus Consumer & B2B Market Research"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              />
+            </div>
+          </div>
+        </section>
+
         {/* ── 6. FAQs ──────────────────────────────────────────────────────── */}
         <section id="faq" className="py-16 px-4 bg-gray-50">
           <div className="max-w-3xl mx-auto">
