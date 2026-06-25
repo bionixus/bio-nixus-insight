@@ -392,6 +392,11 @@ const staticPages = [
   { path: '/healthcare-market-research-canada', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-market-research-companies-canada-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-canada-2026', priority: '0.90', changefreq: 'monthly' },
+  // Australia service pages and listicles
+  { path: '/pharmaceutical-market-research-australia', priority: '0.90', changefreq: 'monthly' },
+  { path: '/healthcare-market-research-australia', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-market-research-companies-australia-2026', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-australia-2026', priority: '0.90', changefreq: 'monthly' },
 ];
 
 const healthcareTherapySlugs = [

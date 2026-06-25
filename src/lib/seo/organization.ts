@@ -58,6 +58,10 @@ export const ORG_KNOWS_ABOUT = [
   'Healthcare market research Canada',
   'CADTH market research',
   'pCPA formulary research Canada',
+  'Pharmaceutical market research Australia',
+  'Healthcare market research Australia',
+  'TGA market research',
+  'PBAC payer research Australia',
 ];
 
 /** Global reach with explicit deep-fingerprint regions and countries. */
@@ -95,7 +99,7 @@ export const ORG_AREA_SERVED: Array<Record<string, string>> = [
   { '@type': 'Country', name: 'India' },
   { '@type': 'Country', name: 'South Korea' },
   { '@type': 'Country', name: 'Singapore' },
-  { '@type': 'Country', name: 'Australia' },
+  { '@type': 'Country', name: 'Australia', sameAs: 'https://www.wikidata.org/wiki/Q408' },
 ];
 
 export const ORG_ADDRESS = [

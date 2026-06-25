@@ -1197,6 +1197,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.bionixus.com/healthcare-market-research-australia</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
     <loc>https://www.bionixus.com/healthcare-market-research-canada</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
@@ -2183,6 +2189,12 @@
     <priority>0.88</priority>
   </url>
   <url>
+    <loc>https://www.bionixus.com/insights/top-healthcare-market-research-companies-australia-2026</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
     <loc>https://www.bionixus.com/insights/top-healthcare-market-research-companies-bahrain-2026</loc>
     <lastmod>2026-06-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/insights/top-healthcare-market-research-companies-bahrain-2026" />
@@ -2547,6 +2559,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bionixus.com/insights/top-market-research-companies-argentina-2026" />
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/insights/top-market-research-companies-australia-2026</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/insights/top-market-research-companies-bahrain-2026</loc>
@@ -5070,6 +5088,12 @@
     <lastmod>2026-06-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/pharmaceutical-market-research-australia</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/pharmaceutical-market-research-canada</loc>
