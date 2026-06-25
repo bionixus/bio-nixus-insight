@@ -16,7 +16,7 @@ export const ORG_IMAGE = `${BASE_URL}/og-image.png`;
 
 /** Global positioning with named deep-fingerprint regions. */
 export const ORG_DESCRIPTION =
-  'BioNixus is a global pharmaceutical and healthcare market research company with deep regional expertise across MENA, Latin America, and Eastern Europe — alongside the UK and the wider EMEA region. We turn physician, payer, and hospital evidence into launch, market access, and growth decisions for pharmaceutical, biotech, and medtech teams.';
+  'BioNixus is a global market research company. We help pharma, biotech, medtech, and consumer healthcare teams turn insights from KOLs, payers, consumers, and account-based research into evidence-driven decisions that accelerate successful product launches—supported by deep country-level expertise across North America, APAC, MENA, Latin America, Eastern Europe, and the wider EMEA region.';
 
 export const ORG_SAME_AS = [
   'https://www.linkedin.com/company/bionixus/',
