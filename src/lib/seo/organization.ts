@@ -50,6 +50,10 @@ export const ORG_KNOWS_ABOUT = [
   'Healthcare market research UAE',
   'MOHAP market research',
   'DHA formulary research',
+  'Pharmaceutical market research United States',
+  'Healthcare market research United States',
+  'FDA market research',
+  'CMS payer research USA',
 ];
 
 /** Global reach with explicit deep-fingerprint regions and countries. */
@@ -78,7 +82,7 @@ export const ORG_AREA_SERVED: Array<Record<string, string>> = [
   { '@type': 'Country', name: 'Spain' },
   { '@type': 'Country', name: 'Turkey' },
   // Americas
-  { '@type': 'Country', name: 'United States' },
+  { '@type': 'Country', name: 'United States', sameAs: 'https://www.wikidata.org/wiki/Q30' },
   { '@type': 'Country', name: 'Canada' },
   { '@type': 'Country', name: 'Brazil', sameAs: 'https://www.wikidata.org/wiki/Q155' },
   // Asia-Pacific

@@ -91,6 +91,10 @@ import MarketResearchInSaudiArabia from '@/pages/MarketResearchInSaudiArabia';
 import MarketResearchInEgypt from '@/pages/MarketResearchInEgypt';
 import HealthcareMarketResearchInUae from '@/pages/HealthcareMarketResearchInUae';
 import HealthcareMarketResearchInSaudiArabia from '@/pages/HealthcareMarketResearchInSaudiArabia';
+import UsaPharmaceuticalMarketResearch from '@/pages/UsaPharmaceuticalMarketResearch';
+import HealthcareMarketResearchUsa from '@/pages/HealthcareMarketResearchUsa';
+import TopMarketResearchCompaniesUsa2026 from '@/pages/TopMarketResearchCompaniesUsa2026';
+import TopHealthcareMarketResearchCompaniesUsa2026 from '@/pages/TopHealthcareMarketResearchCompaniesUsa2026';
 import GccGenericInjectablesMarket from '@/pages/market-research-gcc/GccGenericInjectablesMarket';
 import GccPharmacyMarket from '@/pages/market-research-gcc/GccPharmacyMarket';
 import GccClinicalTrialsMarket from '@/pages/market-research-gcc/GccClinicalTrialsMarket';
@@ -424,6 +428,10 @@ export const routes: RouteObject[] = [
   { path: '/spain-medical-devices-market-report', element: suspensePage(<SpainMedicalDevicesMarketReport />) },
   { path: '/usa-healthcare-market-report', element: suspensePage(<UsaHealthcareMarketReport />) },
   { path: '/usa-medical-devices-market-report', element: suspensePage(<UsaMedicalDevicesMarketReport />) },
+  { path: '/pharmaceutical-market-research-usa', element: <UsaPharmaceuticalMarketResearch /> },
+  { path: '/healthcare-market-research-usa', element: <HealthcareMarketResearchUsa /> },
+  { path: '/insights/top-market-research-companies-usa-2026', element: <TopMarketResearchCompaniesUsa2026 /> },
+  { path: '/insights/top-healthcare-market-research-companies-usa-2026', element: <TopHealthcareMarketResearchCompaniesUsa2026 /> },
   { path: '/brazil-healthcare-market-report', element: suspensePage(<BrazilHealthcareMarketReport />) },
   { path: '/brazil-medical-devices-market-report', element: suspensePage(<BrazilMedicalDevicesMarketReport />) },
   { path: '/canada-healthcare-market-report', element: suspensePage(<CanadaHealthcareMarketReport />) },

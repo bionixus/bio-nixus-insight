@@ -382,6 +382,11 @@ const staticPages = [
   { path: '/ar/abhath-suq-adwiyah-saudi-arabia', priority: '0.88', changefreq: 'monthly' },
   { path: '/ar/insights/top-sharaket-abhath-alsuq-alsaudia-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/ar/insights/top-sharaket-abhath-sihha-alsaudia-2026', priority: '0.85', changefreq: 'monthly' },
+  // USA service pages and listicles
+  { path: '/pharmaceutical-market-research-usa', priority: '0.90', changefreq: 'monthly' },
+  { path: '/healthcare-market-research-usa', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-market-research-companies-usa-2026', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-usa-2026', priority: '0.90', changefreq: 'monthly' },
 ];
 
 const healthcareTherapySlugs = [
