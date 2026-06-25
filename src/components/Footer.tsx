@@ -334,6 +334,57 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Global Markets */}
+        <div className="pt-10 mt-2 border-t border-white/10">
+          <h4 className="font-semibold text-primary-foreground mb-6 uppercase tracking-wide text-sm">
+            Global Markets
+          </h4>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div>
+              <p className="text-primary-foreground/90 text-xs font-semibold uppercase tracking-wider mb-3">MENA</p>
+              <ul className="space-y-2">
+                <li><Link to="/saudi-arabia-healthcare-market-report" className="text-primary-foreground/55 hover:text-primary-foreground transition-colors text-sm">Saudi Arabia</Link></li>
+                <li><Link to="/uae-healthcare-market-report" className="text-primary-foreground/55 hover:text-primary-foreground transition-colors text-sm">UAE</Link></li>
+                <li><Link to="/egypt-healthcare-market-report" className="text-primary-foreground/55 hover:text-primary-foreground transition-colors text-sm">Egypt</Link></li>
+                <li><Link to="/kuwait-healthcare-market-report" className="text-primary-foreground/55 hover:text-primary-foreground transition-colors text-sm">Kuwait</Link></li>
+                <li><Link to="/qatar-healthcare-market-report" className="text-primary-foreground/55 hover:text-primary-foreground transition-colors text-sm">Qatar</Link></li>
+                <li><Link to="/bahrain-healthcare-market-report" className="text-primary-foreground/55 hover:text-primary-foreground transition-colors text-sm">Bahrain</Link></li>
+                <li><Link to="/oman-healthcare-market-report" className="text-primary-foreground/55 hover:text-primary-foreground transition-colors text-sm">Oman</Link></li>
+              </ul>
+            </div>
+            <div>
+              <p className="text-primary-foreground/90 text-xs font-semibold uppercase tracking-wider mb-3">Americas</p>
+              <ul className="space-y-2">
+                <li><Link to="/usa-healthcare-market-report" className="text-primary-foreground/55 hover:text-primary-foreground transition-colors text-sm">United States</Link></li>
+                <li><Link to="/canada-healthcare-market-report" className="text-primary-foreground/55 hover:text-primary-foreground transition-colors text-sm">Canada</Link></li>
+                <li><Link to="/brazil-healthcare-market-report" className="text-primary-foreground/55 hover:text-primary-foreground transition-colors text-sm">Brazil</Link></li>
+              </ul>
+            </div>
+            <div>
+              <p className="text-primary-foreground/90 text-xs font-semibold uppercase tracking-wider mb-3">Europe</p>
+              <ul className="space-y-2">
+                <li><Link to="/uk-healthcare-market-report" className="text-primary-foreground/55 hover:text-primary-foreground transition-colors text-sm">United Kingdom</Link></li>
+                <li><Link to="/germany-healthcare-market-report" className="text-primary-foreground/55 hover:text-primary-foreground transition-colors text-sm">Germany</Link></li>
+                <li><Link to="/france-healthcare-market-report" className="text-primary-foreground/55 hover:text-primary-foreground transition-colors text-sm">France</Link></li>
+                <li><Link to="/italy-healthcare-market-report" className="text-primary-foreground/55 hover:text-primary-foreground transition-colors text-sm">Italy</Link></li>
+                <li><Link to="/spain-healthcare-market-report" className="text-primary-foreground/55 hover:text-primary-foreground transition-colors text-sm">Spain</Link></li>
+                <li><Link to="/turkey-healthcare-market-report" className="text-primary-foreground/55 hover:text-primary-foreground transition-colors text-sm">Turkey</Link></li>
+              </ul>
+            </div>
+            <div>
+              <p className="text-primary-foreground/90 text-xs font-semibold uppercase tracking-wider mb-3">Asia-Pacific</p>
+              <ul className="space-y-2">
+                <li><Link to="/australia-healthcare-market-report" className="text-primary-foreground/55 hover:text-primary-foreground transition-colors text-sm">Australia</Link></li>
+                <li><Link to="/japan-healthcare-market-report" className="text-primary-foreground/55 hover:text-primary-foreground transition-colors text-sm">Japan</Link></li>
+                <li><Link to="/china-healthcare-market-report" className="text-primary-foreground/55 hover:text-primary-foreground transition-colors text-sm">China</Link></li>
+                <li><Link to="/india-healthcare-market-report" className="text-primary-foreground/55 hover:text-primary-foreground transition-colors text-sm">India</Link></li>
+                <li><Link to="/south-korea-healthcare-market-report" className="text-primary-foreground/55 hover:text-primary-foreground transition-colors text-sm">South Korea</Link></li>
+                <li><Link to="/singapore-healthcare-market-report" className="text-primary-foreground/55 hover:text-primary-foreground transition-colors text-sm">Singapore</Link></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
         {/* Bottom */}
         <div
           className={`pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 ${isRTL ? 'md:flex-row-reverse' : ''}`}
