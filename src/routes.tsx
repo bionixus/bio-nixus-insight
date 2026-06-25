@@ -178,6 +178,9 @@ import TopMarketResearchCompaniesArgentina2026 from '@/pages/TopMarketResearchCo
 import TopHealthcareMarketResearchCompaniesArgentina2026 from '@/pages/TopHealthcareMarketResearchCompaniesArgentina2026';
 import PtTopMarketResearchCompaniesBrazil2026 from '@/pages/PtTopMarketResearchCompaniesBrazil2026';
 import PtTopHealthcareMarketResearchCompaniesBrazil2026 from '@/pages/PtTopHealthcareMarketResearchCompaniesBrazil2026';
+import BrazilPharmaceuticalMarketResearch from '@/pages/BrazilPharmaceuticalMarketResearch';
+import PtBrazilPharmaceuticalMarketResearch from '@/pages/PtBrazilPharmaceuticalMarketResearch';
+import PtBrazilHealthcareMarketResearch from '@/pages/PtBrazilHealthcareMarketResearch';
 import EsTopMarketResearchCompaniesArgentina2026 from '@/pages/EsTopMarketResearchCompaniesArgentina2026';
 import EsTopHealthcareMarketResearchCompaniesArgentina2026 from '@/pages/EsTopHealthcareMarketResearchCompaniesArgentina2026';
 import HeorConsulting from '@/pages/HeorConsulting';
@@ -369,6 +372,9 @@ export const routes: RouteObject[] = [
   { path: '/insights/top-healthcare-market-research-companies-argentina-2026', element: <TopHealthcareMarketResearchCompaniesArgentina2026 /> },
   { path: '/pt/insights/top-market-research-companies-brasil-2026', element: <PtTopMarketResearchCompaniesBrazil2026 /> },
   { path: '/pt/insights/top-empresas-pesquisa-mercado-saude-brasil-2026', element: <PtTopHealthcareMarketResearchCompaniesBrazil2026 /> },
+  { path: '/brazil-pharmaceutical-market-research', element: <BrazilPharmaceuticalMarketResearch /> },
+  { path: '/pt/pesquisa-mercado-farmaceutico-brasil', element: <PtBrazilPharmaceuticalMarketResearch /> },
+  { path: '/pt/pesquisa-mercado-saude-brasil', element: <PtBrazilHealthcareMarketResearch /> },
   { path: '/es/insights/top-empresas-investigacion-mercado-argentina-2026', element: <EsTopMarketResearchCompaniesArgentina2026 /> },
   { path: '/es/insights/top-empresas-investigacion-mercado-salud-argentina-2026', element: <EsTopHealthcareMarketResearchCompaniesArgentina2026 /> },
   { path: '/top-market-research-companies-brazil-2026', element: <Navigate to="/insights/top-market-research-companies-brazil-2026" replace /> },
