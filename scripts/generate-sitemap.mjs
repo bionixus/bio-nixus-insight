@@ -372,6 +372,11 @@ const staticPages = [
   { path: '/strategic-portfolio', priority: '0.72', changefreq: 'monthly' },
   { path: '/ar/strategic-portfolio', priority: '0.7', changefreq: 'monthly' },
   { path: '/terms', priority: '0.35', changefreq: 'yearly' },
+  // Brazil pharma & Portuguese service pages
+  { path: '/brazil-pharmaceutical-market-research', priority: '0.88', changefreq: 'monthly' },
+  { path: '/pt/pesquisa-mercado-farmaceutico-brasil', priority: '0.88', changefreq: 'monthly' },
+  { path: '/pt/pesquisa-mercado-saude-brasil', priority: '0.88', changefreq: 'monthly' },
+  { path: '/pt/insights/top-empresas-pesquisa-mercado-brasil-2026', priority: '0.85', changefreq: 'monthly' },
 ];
 
 const healthcareTherapySlugs = [
@@ -622,6 +627,11 @@ const hreflangGroups = [
     en: '/insights/top-healthcare-market-research-companies-argentina-2026',
     es: '/es/insights/top-empresas-investigacion-mercado-salud-argentina-2026',
     'x-default': '/insights/top-healthcare-market-research-companies-argentina-2026',
+  },
+  {
+    en: '/brazil-pharmaceutical-market-research',
+    'pt-BR': '/pt/pesquisa-mercado-farmaceutico-brasil',
+    'x-default': '/brazil-pharmaceutical-market-research',
   },
   {
     en: '/bionixus-ai-chatbots-increase-sales-and-lead-generation',

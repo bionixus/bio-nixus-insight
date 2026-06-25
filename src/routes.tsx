@@ -181,6 +181,7 @@ import PtTopHealthcareMarketResearchCompaniesBrazil2026 from '@/pages/PtTopHealt
 import BrazilPharmaceuticalMarketResearch from '@/pages/BrazilPharmaceuticalMarketResearch';
 import PtBrazilPharmaceuticalMarketResearch from '@/pages/PtBrazilPharmaceuticalMarketResearch';
 import PtBrazilHealthcareMarketResearch from '@/pages/PtBrazilHealthcareMarketResearch';
+import PtTopEmpresasPesquisaMercadoBrasil2026 from '@/pages/PtTopEmpresasPesquisaMercadoBrasil2026';
 import EsTopMarketResearchCompaniesArgentina2026 from '@/pages/EsTopMarketResearchCompaniesArgentina2026';
 import EsTopHealthcareMarketResearchCompaniesArgentina2026 from '@/pages/EsTopHealthcareMarketResearchCompaniesArgentina2026';
 import HeorConsulting from '@/pages/HeorConsulting';
@@ -375,6 +376,7 @@ export const routes: RouteObject[] = [
   { path: '/brazil-pharmaceutical-market-research', element: <BrazilPharmaceuticalMarketResearch /> },
   { path: '/pt/pesquisa-mercado-farmaceutico-brasil', element: <PtBrazilPharmaceuticalMarketResearch /> },
   { path: '/pt/pesquisa-mercado-saude-brasil', element: <PtBrazilHealthcareMarketResearch /> },
+  { path: '/pt/insights/top-empresas-pesquisa-mercado-brasil-2026', element: <PtTopEmpresasPesquisaMercadoBrasil2026 /> },
   { path: '/es/insights/top-empresas-investigacion-mercado-argentina-2026', element: <EsTopMarketResearchCompaniesArgentina2026 /> },
   { path: '/es/insights/top-empresas-investigacion-mercado-salud-argentina-2026', element: <EsTopHealthcareMarketResearchCompaniesArgentina2026 /> },
   { path: '/top-market-research-companies-brazil-2026', element: <Navigate to="/insights/top-market-research-companies-brazil-2026" replace /> },

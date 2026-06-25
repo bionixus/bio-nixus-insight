@@ -372,6 +372,15 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://www.bionixus.com/brazil-pharmaceutical-market-research</loc>
+    <lastmod>2026-06-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/brazil-pharmaceutical-market-research" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.bionixus.com/pt/pesquisa-mercado-farmaceutico-brasil" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bionixus.com/brazil-pharmaceutical-market-research" />
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
     <loc>https://www.bionixus.com/brazil-public-sector-market-research</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -5073,6 +5082,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.bionixus.com/pt/insights/top-empresas-pesquisa-mercado-brasil-2026</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://www.bionixus.com/pt/insights/top-empresas-pesquisa-mercado-saude-brasil-2026</loc>
     <lastmod>2026-06-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/insights/top-healthcare-market-research-companies-brazil-2026" />
@@ -5110,6 +5125,21 @@
     <lastmod>2026-05-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/pt/pesquisa-mercado-farmaceutico-brasil</loc>
+    <lastmod>2026-06-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/brazil-pharmaceutical-market-research" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.bionixus.com/pt/pesquisa-mercado-farmaceutico-brasil" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bionixus.com/brazil-pharmaceutical-market-research" />
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/pt/pesquisa-mercado-saude-brasil</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/qatar-automotive-market-research</loc>

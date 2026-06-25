@@ -380,6 +380,20 @@ export default function PtTopHealthcareMarketResearchCompaniesBrazil2026() {
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Recursos Relacionados</h2>
             <div className="grid md:grid-cols-2 gap-4">
+              <Link to="/pt/pesquisa-mercado-farmaceutico-brasil" className="flex items-center gap-3 p-4 border border-gray-200 rounded-lg hover:border-teal-400 hover:bg-teal-50 transition-colors">
+                <ShieldCheck className="w-5 h-5 text-teal-700 flex-shrink-0" />
+                <div>
+                  <div className="font-medium text-gray-900">Pesquisa de Mercado Farmacêutico no Brasil</div>
+                  <div className="text-sm text-gray-500">ANVISA, CONITEC, CMED e pesquisa primária em conformidade com a LGPD</div>
+                </div>
+              </Link>
+              <Link to="/pt/pesquisa-mercado-saude-brasil" className="flex items-center gap-3 p-4 border border-gray-200 rounded-lg hover:border-teal-400 hover:bg-teal-50 transition-colors">
+                <Stethoscope className="w-5 h-5 text-teal-700 flex-shrink-0" />
+                <div>
+                  <div className="font-medium text-gray-900">Pesquisa de Mercado de Saúde no Brasil</div>
+                  <div className="text-sm text-gray-500">Farmacêutico, dispositivos médicos, SUS, ANS — pesquisa primária em português</div>
+                </div>
+              </Link>
               <Link to="/pt/insights/top-market-research-companies-brasil-2026" className="flex items-center gap-3 p-4 border border-gray-200 rounded-lg hover:border-teal-400 hover:bg-teal-50 transition-colors">
                 <BarChart3 className="w-5 h-5 text-teal-700 flex-shrink-0" />
                 <div>

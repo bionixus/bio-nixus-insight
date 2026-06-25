@@ -36,6 +36,11 @@ export const ORG_KNOWS_ABOUT = [
   'Competitive intelligence',
   'Consumer health and FMCG market research',
   'Financial services market research',
+  'Pharmaceutical market research Brazil',
+  'Healthcare market research Brazil',
+  'ANVISA market research',
+  'CONITEC evidence generation',
+  'Pesquisa de mercado farmacêutico Brasil',
 ];
 
 /** Global reach with explicit deep-fingerprint regions and countries. */
@@ -66,7 +71,7 @@ export const ORG_AREA_SERVED: Array<Record<string, string>> = [
   // Americas
   { '@type': 'Country', name: 'United States' },
   { '@type': 'Country', name: 'Canada' },
-  { '@type': 'Country', name: 'Brazil' },
+  { '@type': 'Country', name: 'Brazil', sameAs: 'https://www.wikidata.org/wiki/Q155' },
   // Asia-Pacific
   { '@type': 'Country', name: 'Japan' },
   { '@type': 'Country', name: 'China' },

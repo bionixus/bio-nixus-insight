@@ -380,6 +380,27 @@ export default function TopHealthcareMarketResearchCompaniesBrazil2026() {
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Related Resources</h2>
             <div className="grid md:grid-cols-2 gap-4">
+              <Link to="/brazil-pharmaceutical-market-research" className="flex items-center gap-3 p-4 border border-gray-200 rounded-lg hover:border-teal-400 hover:bg-teal-50 transition-colors">
+                <ShieldCheck className="w-5 h-5 text-teal-700 flex-shrink-0" />
+                <div>
+                  <div className="font-medium text-gray-900">Brazil Pharmaceutical Market Research</div>
+                  <div className="text-sm text-gray-500">ANVISA, CONITEC, CMED, and LGPD-compliant primary research</div>
+                </div>
+              </Link>
+              <Link to="/pt/pesquisa-mercado-farmaceutico-brasil" className="flex items-center gap-3 p-4 border border-gray-200 rounded-lg hover:border-teal-400 hover:bg-teal-50 transition-colors">
+                <Users className="w-5 h-5 text-teal-700 flex-shrink-0" />
+                <div>
+                  <div className="font-medium text-gray-900">Pesquisa de Mercado Farmacêutico no Brasil (PT)</div>
+                  <div className="text-sm text-gray-500">Versão em português — pesquisa farmacêutica primária no Brasil</div>
+                </div>
+              </Link>
+              <Link to="/pt/pesquisa-mercado-saude-brasil" className="flex items-center gap-3 p-4 border border-gray-200 rounded-lg hover:border-teal-400 hover:bg-teal-50 transition-colors">
+                <Stethoscope className="w-5 h-5 text-teal-700 flex-shrink-0" />
+                <div>
+                  <div className="font-medium text-gray-900">Pesquisa de Mercado de Saúde no Brasil (PT)</div>
+                  <div className="text-sm text-gray-500">Versão em português — pesquisa de saúde primária no Brasil</div>
+                </div>
+              </Link>
               <Link to="/insights/top-market-research-companies-brazil-2026" className="flex items-center gap-3 p-4 border border-gray-200 rounded-lg hover:border-teal-400 hover:bg-teal-50 transition-colors">
                 <BarChart3 className="w-5 h-5 text-teal-700 flex-shrink-0" />
                 <div>
