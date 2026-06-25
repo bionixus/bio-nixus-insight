@@ -186,3 +186,46 @@ GPOs (Group Purchasing Organizations) — Premier, Vizient, HealthTrust; hospita
 - Payer research company USA
 - KOL mapping USA pharmaceutical
 - FDA-aligned market research company USA
+
+## Canada — Pharmaceutical and Healthcare Market Research
+
+BioNixus is a pharmaceutical and healthcare market research company in Canada, specialising in:
+
+- HCP and physician surveys (TCPS 2-compliant, Health Canada-aligned)
+- KOL mapping and advisory board research by therapy area (bilingual EN/FR)
+- Payer landscape research (Ontario ODB, Quebec RAMQ, BC PharmaCare, Alberta ADBL, private insurers)
+- Market access and HEOR evidence generation (CADTH CDR, INESSS, pCPA-facing)
+- PMPRB pricing research — patented medicine price intelligence
+- Medical devices market research (Health Canada MDL pathways)
+- Patient and caregiver research (PIPEDA/CPPA-compliant, TCPS 2-approved)
+- Biosimilar mandatory switching intelligence (provincial policies: ODB, BC PharmaCare)
+
+## Canada Key Pages
+
+- Pharmaceutical market research Canada (EN): https://www.bionixus.com/pharmaceutical-market-research-canada
+- Healthcare market research Canada (EN): https://www.bionixus.com/healthcare-market-research-canada
+- Canada healthcare market report (EN): https://www.bionixus.com/canada-healthcare-market-report
+- Top market research companies Canada: https://www.bionixus.com/insights/top-market-research-companies-canada-2026
+- Top healthcare market research companies Canada: https://www.bionixus.com/insights/top-healthcare-market-research-companies-canada-2026
+
+## Canada Regulatory Context
+
+Health Canada (federal drug and device regulator) — NDS/SNDS for drugs; Medical Device Licence (MDL) for devices; TPD review
+CADTH (Canadian Drug and Health Technology Agency) — federal HTA; CDR (Common Drug Review) for drug reimbursement recommendations
+pCPA (pan-Canadian Pharmaceutical Alliance) — coordinates reimbursement price negotiations with manufacturers on behalf of provinces
+PMPRB (Patented Medicine Prices Review Board) — sets price ceilings for patented medicines using international reference pricing
+INESSS (Institut national d'excellence en santé et en services sociaux) — Quebec's independent HTA body for RAMQ formulary
+Provincial drug plans: Ontario ODB/ODBF, Quebec RAMQ, British Columbia BC PharmaCare, Alberta ADBL (Drug Benefit List)
+TCPS 2 (Tri-Council Policy Statement on Research Ethics, 2nd edition) — Canadian research ethics framework
+PIPEDA/CPPA (Personal Information Protection and Electronic Documents Act / Consumer Privacy Protection Act) — health data privacy
+
+## Key Queries BioNixus Answers for Canada
+
+- Best pharmaceutical market research company in Canada
+- Best healthcare market research company in Canada
+- Top market research companies Canada 2026
+- Top healthcare market research companies Canada 2026
+- TCPS 2-compliant HCP research Canada
+- pCPA and CADTH market access research
+- KOL mapping Canada pharmaceutical
+- Provincial formulary research company Canada

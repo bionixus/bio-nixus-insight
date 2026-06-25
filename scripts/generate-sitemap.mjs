@@ -387,6 +387,11 @@ const staticPages = [
   { path: '/healthcare-market-research-usa', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-market-research-companies-usa-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-usa-2026', priority: '0.90', changefreq: 'monthly' },
+  // Canada service pages and listicles
+  { path: '/pharmaceutical-market-research-canada', priority: '0.90', changefreq: 'monthly' },
+  { path: '/healthcare-market-research-canada', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-market-research-companies-canada-2026', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-canada-2026', priority: '0.90', changefreq: 'monthly' },
 ];
 
 const healthcareTherapySlugs = [

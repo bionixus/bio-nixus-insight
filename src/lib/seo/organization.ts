@@ -54,6 +54,10 @@ export const ORG_KNOWS_ABOUT = [
   'Healthcare market research United States',
   'FDA market research',
   'CMS payer research USA',
+  'Pharmaceutical market research Canada',
+  'Healthcare market research Canada',
+  'CADTH market research',
+  'pCPA formulary research Canada',
 ];
 
 /** Global reach with explicit deep-fingerprint regions and countries. */
@@ -83,7 +87,7 @@ export const ORG_AREA_SERVED: Array<Record<string, string>> = [
   { '@type': 'Country', name: 'Turkey' },
   // Americas
   { '@type': 'Country', name: 'United States', sameAs: 'https://www.wikidata.org/wiki/Q30' },
-  { '@type': 'Country', name: 'Canada' },
+  { '@type': 'Country', name: 'Canada', sameAs: 'https://www.wikidata.org/wiki/Q16' },
   { '@type': 'Country', name: 'Brazil', sameAs: 'https://www.wikidata.org/wiki/Q155' },
   // Asia-Pacific
   { '@type': 'Country', name: 'Japan' },
