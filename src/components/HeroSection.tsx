@@ -120,10 +120,17 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Decorative elements with gentle floating */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-2/3 hidden lg:block">
+        {/* Orbital rings + ambient glow */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-2/3 hidden lg:block pointer-events-none">
+          {/* Ambient glow blobs */}
           <div className="absolute top-0 right-20 w-72 h-72 rounded-full bg-gold-warm/10 blur-3xl float-gentle" />
           <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-white/5 blur-3xl float-gentle-delayed" />
+        </div>
+        {/* Revolving orbital rings */}
+        <div className="hero-orbital hidden lg:block">
+          <div className="ring"><div className="node" /></div>
+          <div className="ring"><div className="node" /></div>
+          <div className="ring"><div className="node" /></div>
         </div>
       </div>
 

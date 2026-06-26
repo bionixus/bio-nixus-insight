@@ -402,6 +402,46 @@ const staticPages = [
   { path: '/healthcare-market-research-new-zealand', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-market-research-companies-new-zealand-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-new-zealand-2026', priority: '0.90', changefreq: 'monthly' },
+  // Switzerland
+  { path: '/pharmaceutical-market-research-switzerland', priority: '0.90', changefreq: 'monthly' },
+  { path: '/healthcare-market-research-switzerland', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-market-research-companies-switzerland-2026', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-switzerland-2026', priority: '0.90', changefreq: 'monthly' },
+  // Germany
+  { path: '/pharmaceutical-market-research-germany', priority: '0.90', changefreq: 'monthly' },
+  { path: '/healthcare-market-research-germany', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-market-research-companies-germany-2026', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-germany-2026', priority: '0.90', changefreq: 'monthly' },
+  // France
+  { path: '/pharmaceutical-market-research-france', priority: '0.90', changefreq: 'monthly' },
+  { path: '/healthcare-market-research-france', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-market-research-companies-france-2026', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-france-2026', priority: '0.90', changefreq: 'monthly' },
+  // Denmark
+  { path: '/pharmaceutical-market-research-denmark', priority: '0.90', changefreq: 'monthly' },
+  { path: '/healthcare-market-research-denmark', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-market-research-companies-denmark-2026', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-denmark-2026', priority: '0.90', changefreq: 'monthly' },
+  // Italy
+  { path: '/pharmaceutical-market-research-italy', priority: '0.90', changefreq: 'monthly' },
+  { path: '/healthcare-market-research-italy', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-market-research-companies-italy-2026', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-italy-2026', priority: '0.90', changefreq: 'monthly' },
+  // Spain
+  { path: '/pharmaceutical-market-research-spain', priority: '0.90', changefreq: 'monthly' },
+  { path: '/healthcare-market-research-spain', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-market-research-companies-spain-2026', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-spain-2026', priority: '0.90', changefreq: 'monthly' },
+  // China
+  { path: '/pharmaceutical-market-research-china', priority: '0.90', changefreq: 'monthly' },
+  { path: '/healthcare-market-research-china', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-market-research-companies-china-2026', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-china-2026', priority: '0.90', changefreq: 'monthly' },
+  // South Korea
+  { path: '/pharmaceutical-market-research-south-korea', priority: '0.90', changefreq: 'monthly' },
+  { path: '/healthcare-market-research-south-korea', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-market-research-companies-south-korea-2026', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-south-korea-2026', priority: '0.90', changefreq: 'monthly' },
 ];
 
 const healthcareTherapySlugs = [
