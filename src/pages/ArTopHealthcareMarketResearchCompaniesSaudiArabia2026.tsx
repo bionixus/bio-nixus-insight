@@ -193,7 +193,7 @@ export default function ArTopHealthcareMarketResearchCompaniesSaudiArabia2026() 
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'الرئيسية', item: 'https://www.bionixus.com/ar' },
       { '@type': 'ListItem', position: 2, name: 'المقالات', item: 'https://www.bionixus.com/ar/blog' },
-      { '@type': 'ListItem', position: 3, name: 'أفضل شركات أبحاث سوق الرعاية الصحية في المملكة (2026)' },
+      { '@type': 'ListItem', position: 3, name: 'أفضل شركات أبحاث سوق الرعاية الصحية في المملكة (2026)', item: CANONICAL },
     ],
   };
 

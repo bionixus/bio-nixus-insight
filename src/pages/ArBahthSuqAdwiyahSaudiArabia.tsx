@@ -75,7 +75,7 @@ const breadcrumbSchema = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'الرئيسية', item: 'https://www.bionixus.com/ar' },
     { '@type': 'ListItem', position: 2, name: 'أبحاث السوق', item: 'https://www.bionixus.com/ar' },
-    { '@type': 'ListItem', position: 3, name: 'أبحاث سوق الأدوية — المملكة العربية السعودية' },
+    { '@type': 'ListItem', position: 3, name: 'أبحاث سوق الأدوية — المملكة العربية السعودية', item: CANONICAL },
   ],
 };
 

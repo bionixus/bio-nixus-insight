@@ -148,7 +148,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' },
       { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.bionixus.com/blog' },
-      { '@type': 'ListItem', position: 3, name: 'Top Market Research Companies in Egypt (2026)' },
+      { '@type': 'ListItem', position: 3, name: 'Top Market Research Companies in Egypt (2026)', item: CANONICAL },
     ],
   };
 

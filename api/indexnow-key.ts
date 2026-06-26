@@ -17,7 +17,7 @@ type RenderResult = {
 };
 
 type ServerEntryModule = {
-  render: (url: string, initialData?: Record<string, unknown>) => RenderResult;
+  render: (url: string, initialData?: Record<string, unknown>) => Promise<RenderResult>;
   fetchRouteData: (url: string) => Promise<Record<string, unknown>>;
 };
 
@@ -734,7 +734,7 @@ async function handleSsrRequest(
   const template = getTemplate();
   const serverEntry = await getServerEntry();
   const initialData = await serverEntry.fetchRouteData(url);
-  const { html: appHtml, helmetData } = serverEntry.render(url, initialData);
+  const { html: appHtml, helmetData } = await serverEntry.render(url, initialData);
   const headTags = [
     helmetData?.title?.toString() || '',
     helmetData?.meta?.toString() || '',

@@ -191,7 +191,7 @@ export default function TopHealthcareMarketResearchCompaniesChina2026() {
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' },
       { '@type': 'ListItem', position: 2, name: 'Insights', item: 'https://www.bionixus.com/insights' },
-      { '@type': 'ListItem', position: 3, name: 'Top Healthcare Market Research Companies in China (2026)' },
+      { '@type': 'ListItem', position: 3, name: 'Top Healthcare Market Research Companies in China (2026)', item: PAGE_CANONICAL },
     ],
   };
 
