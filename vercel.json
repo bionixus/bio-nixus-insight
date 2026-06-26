@@ -346,6 +346,91 @@
       "statusCode": 301
     },
     {
+      "source": "/heor-consulting",
+      "destination": "/healthcare-market-research",
+      "statusCode": 301
+    },
+    {
+      "source": "/medical-affairs-insight-research-gcc",
+      "destination": "/services",
+      "statusCode": 301
+    },
+    {
+      "source": "/pharmacoeconomics-gcc",
+      "destination": "/gcc-pharmaceutical-market-report",
+      "statusCode": 301
+    },
+    {
+      "source": "/top-market-research-companies-brazil-2026",
+      "destination": "/insights/top-market-research-companies-brazil-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/market-reports/uae-medical-devices-market-report",
+      "destination": "/uae-medical-devices-market-report",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/healthcare-market-research",
+      "destination": "/ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/healthcare-market-research/saudi-arabia",
+      "destination": "/ar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/healthcare-market-research",
+      "destination": "/healthcare-market-research",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/blog",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/healthcare-market-research/spain",
+      "destination": "/healthcare-market-research-spain",
+      "statusCode": 301
+    },
+    {
+      "source": "/de/healthcare-market-research/germany",
+      "destination": "/healthcare-market-research-germany",
+      "statusCode": 301
+    },
+    {
+      "source": "/de/blog/gesundheitsmarkt-deutschland-2026",
+      "destination": "/pharmaceutical-market-research-germany",
+      "statusCode": 301
+    },
+    {
+      "source": "/de/blog/amnog-frueher-nutzen-marktzugang-2026",
+      "destination": "/pharmaceutical-market-research-germany",
+      "statusCode": 301
+    },
+    {
+      "source": "/de/blog/pharmamarktforschung-deutschland-2026",
+      "destination": "/pharmaceutical-market-research-germany",
+      "statusCode": 301
+    },
+    {
+      "source": "/de/blog/deutsche-pharmaunternehmen-2026-pipeline-updates",
+      "destination": "/pharmaceutical-market-research-germany",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/blog/etudes-marche-pharmaceutique-france-2026",
+      "destination": "/pharmaceutical-market-research-france",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/blog/evaluation-economique-has-france-2026",
+      "destination": "/pharmaceutical-market-research-france",
+      "statusCode": 301
+    },
+    {
       "source": "/:path(.*)",
       "has": [
         {
