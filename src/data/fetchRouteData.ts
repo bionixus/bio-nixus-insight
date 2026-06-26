@@ -295,7 +295,7 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
 
   const blogPostMatch = path.match(/^\/blog\/([^/]+)\/?$/);
   if (blogPostMatch) {
-    const slug = decodeURIComponent(blogPostMatch[1]);
+    const slug = decodePathSegment(blogPostMatch[1]);
     return fetchBlogPostRouteData(slug);
   }
 

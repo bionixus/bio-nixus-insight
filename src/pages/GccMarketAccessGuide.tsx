@@ -186,7 +186,7 @@ const GccMarketAccessGuide = () => {
             itemListElement: [
               { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' },
               { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.bionixus.com/resources' },
-              { '@type': 'ListItem', position: 3, name: 'GCC Market Access Guide' },
+              { '@type': 'ListItem', position: 3, name: 'GCC Market Access Guide', item: citationUrl },
             ],
           })}
         </script>
