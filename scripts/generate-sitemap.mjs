@@ -397,6 +397,11 @@ const staticPages = [
   { path: '/healthcare-market-research-australia', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-market-research-companies-australia-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-australia-2026', priority: '0.90', changefreq: 'monthly' },
+  // New Zealand service pages and listicles
+  { path: '/pharmaceutical-market-research-new-zealand', priority: '0.90', changefreq: 'monthly' },
+  { path: '/healthcare-market-research-new-zealand', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-market-research-companies-new-zealand-2026', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-new-zealand-2026', priority: '0.90', changefreq: 'monthly' },
 ];
 
 const healthcareTherapySlugs = [

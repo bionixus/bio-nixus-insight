@@ -16,7 +16,7 @@ export const ORG_IMAGE = `${BASE_URL}/og-image.png`;
 
 /** Global positioning with named deep-fingerprint regions. */
 export const ORG_DESCRIPTION =
-  'BioNixus is a global market research company. We help pharma, biotech, medtech, and consumer healthcare teams turn insights from KOLs, payers, consumers, and account-based research into evidence-driven decisions that accelerate successful product launches—supported by deep country-level expertise across North America, APAC, MENA, Latin America, Eastern Europe, and the wider EMEA region.';
+  'BioNixus is a global insights and market research partner, delivering decision-ready intelligence for healthcare and enterprise organizations through deep local expertise across North America, APAC, MENA, Latin America, Eastern Europe, and EMEA.';
 
 export const ORG_SAME_AS = [
   'https://www.linkedin.com/company/bionixus/',
@@ -62,6 +62,10 @@ export const ORG_KNOWS_ABOUT = [
   'Healthcare market research Australia',
   'TGA market research',
   'PBAC payer research Australia',
+  'Pharmaceutical market research New Zealand',
+  'Healthcare market research New Zealand',
+  'Medsafe market research',
+  'PHARMAC payer research New Zealand',
 ];
 
 /** Global reach with explicit deep-fingerprint regions and countries. */
@@ -100,6 +104,7 @@ export const ORG_AREA_SERVED: Array<Record<string, string>> = [
   { '@type': 'Country', name: 'South Korea' },
   { '@type': 'Country', name: 'Singapore' },
   { '@type': 'Country', name: 'Australia', sameAs: 'https://www.wikidata.org/wiki/Q408' },
+  { '@type': 'Country', name: 'New Zealand', sameAs: 'https://www.wikidata.org/wiki/Q664' },
 ];
 
 export const ORG_ADDRESS = [

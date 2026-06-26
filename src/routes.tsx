@@ -103,6 +103,10 @@ import AustraliaPharmaceuticalMarketResearch from '@/pages/AustraliaPharmaceutic
 import HealthcareMarketResearchAustralia from '@/pages/HealthcareMarketResearchAustralia';
 import TopMarketResearchCompaniesAustralia2026 from '@/pages/TopMarketResearchCompaniesAustralia2026';
 import TopHealthcareMarketResearchCompaniesAustralia2026 from '@/pages/TopHealthcareMarketResearchCompaniesAustralia2026';
+import NewZealandPharmaceuticalMarketResearch from '@/pages/NewZealandPharmaceuticalMarketResearch';
+import HealthcareMarketResearchNewZealand from '@/pages/HealthcareMarketResearchNewZealand';
+import TopMarketResearchCompaniesNewZealand2026 from '@/pages/TopMarketResearchCompaniesNewZealand2026';
+import TopHealthcareMarketResearchCompaniesNewZealand2026 from '@/pages/TopHealthcareMarketResearchCompaniesNewZealand2026';
 import GccGenericInjectablesMarket from '@/pages/market-research-gcc/GccGenericInjectablesMarket';
 import GccPharmacyMarket from '@/pages/market-research-gcc/GccPharmacyMarket';
 import GccClinicalTrialsMarket from '@/pages/market-research-gcc/GccClinicalTrialsMarket';
@@ -448,6 +452,10 @@ export const routes: RouteObject[] = [
   { path: '/healthcare-market-research-australia', element: <HealthcareMarketResearchAustralia /> },
   { path: '/insights/top-market-research-companies-australia-2026', element: <TopMarketResearchCompaniesAustralia2026 /> },
   { path: '/insights/top-healthcare-market-research-companies-australia-2026', element: <TopHealthcareMarketResearchCompaniesAustralia2026 /> },
+  { path: '/pharmaceutical-market-research-new-zealand', element: <NewZealandPharmaceuticalMarketResearch /> },
+  { path: '/healthcare-market-research-new-zealand', element: <HealthcareMarketResearchNewZealand /> },
+  { path: '/insights/top-market-research-companies-new-zealand-2026', element: <TopMarketResearchCompaniesNewZealand2026 /> },
+  { path: '/insights/top-healthcare-market-research-companies-new-zealand-2026', element: <TopHealthcareMarketResearchCompaniesNewZealand2026 /> },
   { path: '/brazil-healthcare-market-report', element: suspensePage(<BrazilHealthcareMarketReport />) },
   { path: '/brazil-medical-devices-market-report', element: suspensePage(<BrazilMedicalDevicesMarketReport />) },
   { path: '/canada-healthcare-market-report', element: suspensePage(<CanadaHealthcareMarketReport />) },

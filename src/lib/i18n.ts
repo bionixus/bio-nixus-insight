@@ -232,7 +232,7 @@ export const translations = {
       no: 'No',
     },
     footer: {
-      tagline: 'BioNixus is a global market research company. We help pharma, biotech, medtech, and consumer healthcare teams turn insights from KOLs, payers, consumers, and account-based research into evidence-driven decisions that accelerate successful product launches—supported by deep country-level expertise across North America, APAC, MENA, Latin America, Eastern Europe, and the wider EMEA region.',
+      tagline: 'BioNixus is a global insights and market research partner, delivering decision-ready intelligence for healthcare and enterprise organizations through deep local expertise across North America, APAC, MENA, Latin America, Eastern Europe, and EMEA.',
       quickLinksHeading: 'Quick links',
       companyHeading: 'Company',
       healthcareHub: 'Healthcare market research hub',
