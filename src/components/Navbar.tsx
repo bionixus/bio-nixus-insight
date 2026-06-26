@@ -60,6 +60,7 @@ const Navbar = () => {
     { key: 'home', href: basePath, label: t.nav.home },
     { key: 'about', href: '/about', label: t.nav.about },
     { key: 'services', href: '/services', label: t.nav.services },
+    { key: 'industries', href: '/bionixus-industries', label: t.nav.industries },
     { key: 'insights', href: insightsHref, label: t.nav.insights },
   ];
 
@@ -71,7 +72,7 @@ const Navbar = () => {
           <Link to={basePath} className="flex items-center gap-3" onClick={handleLogoClick}>
             <img
               src="/bionixus-logo.webp"
-              alt="BioNixus — Healthcare & Pharmaceutical Market Research"
+              alt="BioNixus — Global Market Research for Pharma, Healthcare & Industries"
               className="h-9 w-auto object-contain"
               width={126}
               height={36}
