@@ -13,7 +13,7 @@ export function PremiumHeroDashboard({ className = '' }: { className?: string })
           Market Intelligence Dashboard
         </h2>
         <span className="inline-flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-wider text-[#14CFC8]">
-          <span className="h-1.5 w-1.5 rounded-full bg-[#14CFC8] shadow-[0_0_8px_#14CFC8] animate-pulse" />
+          <span className="premium-live-pulse h-1.5 w-1.5 rounded-full bg-[#14CFC8]" />
           Live
         </span>
       </div>
@@ -66,6 +66,7 @@ export function PremiumHeroDashboard({ className = '' }: { className?: string })
           <path
             d="M20,140 C60,135 100,125 140,118 C180,108 220,95 260,82 C300,68 340,55 380,42 C420,32 460,25 490,18 L490,160 L20,160 Z"
             fill="url(#premiumGoldGrad)"
+            className="premium-chart-fade"
           />
           <path
             d="M20,140 C60,135 100,125 140,118 C180,108 220,95 260,82 C300,68 340,55 380,42 C420,32 460,25 490,18"
@@ -73,9 +74,10 @@ export function PremiumHeroDashboard({ className = '' }: { className?: string })
             stroke="#C9A84C"
             strokeWidth="2.5"
             strokeLinecap="round"
+            className="premium-chart-draw"
           />
-          <circle cx="490" cy="18" r="4.5" fill="#C9A84C" />
-          <circle cx="490" cy="45" r="3.5" fill="#0EA5A0" />
+          <circle cx="490" cy="18" r="4.5" fill="#C9A84C" className="premium-dot-fade" style={{ filter: 'drop-shadow(0 0 6px rgba(201,168,76,0.5))' }} />
+          <circle cx="490" cy="45" r="3.5" fill="#0EA5A0" className="premium-dot-fade" style={{ filter: 'drop-shadow(0 0 6px rgba(14,165,160,0.5))' }} />
           <line x1="20" y1="10" x2="38" y2="10" stroke="rgba(201,168,76,0.8)" strokeWidth="2" />
           <text x="42" y="14" fill="rgba(255,255,255,0.4)" fontSize="10" fontFamily="Inter, sans-serif">
             MEA Growth

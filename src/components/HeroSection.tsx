@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { PremiumHeroDashboard } from '@/components/home/PremiumHeroDashboard';
+import { PremiumHeroOrbitals } from '@/components/home/PremiumHeroOrbitals';
 
 const HeroSection = () => {
   const { t, language, isRTL } = useLanguage();
@@ -50,19 +51,11 @@ const HeroSection = () => {
         </svg>
       </div>
 
-      {/* Orbital rings */}
-      <div
-        className="pointer-events-none absolute left-[60%] top-1/2 hidden h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 xl:block"
-        aria-hidden="true"
-      >
-        <div className="absolute inset-0 rounded-full border border-[#C9A84C]/[0.06]" />
-        <div className="absolute inset-[60px] rounded-full border border-[#0EA5A0]/[0.05]" />
-        <div className="absolute inset-[140px] rounded-full border border-[#C9A84C]/[0.04]" />
-      </div>
+      <PremiumHeroOrbitals />
 
       <div className="relative z-10 container-wide mx-auto w-full max-w-[1260px] px-6 pb-20 pt-32 sm:px-10">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-          <div className="max-w-[500px] animate-fade-up">
+          <div className="max-w-[500px] premium-fade-up">
             <div className="mb-8 inline-flex items-center gap-2.5">
               <span className="h-px w-8 bg-[#C9A84C]/40" aria-hidden="true" />
               <span className="text-[11.5px] font-semibold uppercase tracking-[0.2em] text-[#C9A84C]">
@@ -87,7 +80,7 @@ const HeroSection = () => {
               {hero.subtitle}
             </p>
 
-            <PremiumHeroDashboard className="mb-10 lg:hidden" />
+            <PremiumHeroDashboard className="premium-scale-in mb-10 lg:hidden" />
 
             <div className="mb-14 flex flex-col gap-5 sm:flex-row sm:items-center">
               <Link
@@ -132,7 +125,7 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <div className="hidden min-w-0 animate-fade-up animation-delay-200 lg:block">
+          <div className="premium-scale-in hidden min-w-0 lg:block">
             <PremiumHeroDashboard />
           </div>
         </div>

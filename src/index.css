@@ -663,6 +663,23 @@
       transform: scaleY(1) !important;
       transition: none !important;
     }
+    .premium-orbit-slow,
+    .premium-orbit-slow-reverse,
+    .premium-orbit-slow-slower,
+    .premium-hero-orbital .premium-orbit-ring,
+    .premium-hero-orbital .premium-orbit-node,
+    .premium-breathe,
+    .premium-live-pulse,
+    .premium-scale-in,
+    .premium-fade-up,
+    .premium-chart-draw,
+    .premium-chart-fade,
+    .premium-dot-fade {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+      stroke-dashoffset: 0 !important;
+    }
   }
 }
 
@@ -703,6 +720,24 @@
   100% { transform: translateX(-33.333%); }
 }
 
+/* Premium home hero (premium-home-preview.html) */
+@keyframes premiumOrbitSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes premiumBreathe {
+  0%, 100% { opacity: 0.4; }
+  50%      { opacity: 0.8; }
+}
+@keyframes premiumScaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes premiumDrawLine {
+  from { stroke-dashoffset: 800; }
+  to   { stroke-dashoffset: 0; }
+}
+
 @keyframes reportChartDraw {
   from { stroke-dashoffset: 480; }
   to   { stroke-dashoffset: 0; }
@@ -713,6 +748,42 @@
 }
 
 @layer utilities {
+  .premium-orbit-slow {
+    animation: premiumOrbitSlow 60s linear infinite;
+  }
+  .premium-orbit-slow-reverse {
+    animation: premiumOrbitSlow 45s linear infinite reverse;
+  }
+  .premium-orbit-slow-slower {
+    animation: premiumOrbitSlow 90s linear infinite;
+  }
+  .premium-breathe {
+    animation: premiumBreathe 3s ease-in-out infinite;
+  }
+  .premium-live-pulse {
+    animation: premiumBreathe 2s ease-in-out infinite;
+    box-shadow: 0 0 8px #14CFC8;
+  }
+  .premium-scale-in {
+    animation: premiumScaleIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+  }
+  .premium-fade-up {
+    animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .premium-chart-draw {
+    stroke-dasharray: 800;
+    stroke-dashoffset: 800;
+    animation: premiumDrawLine 2.5s ease-out 0.5s forwards;
+  }
+  .premium-chart-fade {
+    opacity: 0;
+    animation: fadeIn 1s ease-out 1.5s forwards;
+  }
+  .premium-dot-fade {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out 2.5s forwards;
+  }
+
   .report-chart-line {
     stroke-dasharray: 480;
     stroke-dashoffset: 480;
@@ -761,5 +832,99 @@
   [data-global-sites-hero] strong.text-foreground {
     color: hsl(var(--gold-light));
     font-weight: 600;
+  }
+}
+
+/* Premium home hero — orbital rings + revolving planets (premium-home-preview.html) */
+.premium-hero-orbital {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible;
+}
+
+.premium-hero-orbital .premium-orbit-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 168, 76, 0.08);
+  transform-origin: 50% 50%;
+  animation: premiumHeroOrbit 60s linear infinite;
+}
+
+.premium-hero-orbital .premium-orbit-ring--2 {
+  inset: 60px;
+  border-color: rgba(14, 165, 160, 0.07);
+  animation: premiumHeroOrbit 45s linear infinite reverse;
+}
+
+.premium-hero-orbital .premium-orbit-ring--3 {
+  inset: 140px;
+  border-color: rgba(201, 168, 76, 0.06);
+  animation: premiumHeroOrbit 90s linear infinite;
+}
+
+.premium-hero-orbital .premium-orbit-node {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: premiumHeroBreathe 3s ease-in-out infinite;
+}
+
+.premium-hero-orbital .premium-orbit-node--gold {
+  background: #c9a84c;
+  box-shadow: 0 0 12px rgba(201, 168, 76, 0.75);
+}
+
+.premium-hero-orbital .premium-orbit-node--teal {
+  background: #0ea5a0;
+  box-shadow: 0 0 12px rgba(14, 165, 160, 0.75);
+}
+
+.premium-hero-orbital .premium-orbit-node--top {
+  top: 0;
+  left: 50%;
+  margin-left: -4px;
+  margin-top: -4px;
+}
+
+.premium-hero-orbital .premium-orbit-node--bottom-right {
+  bottom: 0;
+  right: 0;
+  margin-right: -4px;
+  margin-bottom: -4px;
+}
+
+.premium-hero-orbital .premium-orbit-node--left {
+  top: 50%;
+  left: 0;
+  margin-left: -4px;
+  margin-top: -4px;
+}
+
+@keyframes premiumHeroOrbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes premiumHeroBreathe {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 0.9; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .premium-hero-orbital .premium-orbit-ring {
+    animation: none !important;
+  }
+  .premium-hero-orbital .premium-orbit-node {
+    animation: none !important;
+    opacity: 0.7 !important;
+    transform: none !important;
   }
 }
