@@ -207,6 +207,10 @@ import ArTopMarketResearchCompaniesSaudiArabia2026 from '@/pages/ArTopMarketRese
 import AustraliaPharmaceuticalMarketResearch from '@/pages/AustraliaPharmaceuticalMarketResearch';
 import BrazilPharmaceuticalMarketResearch from '@/pages/BrazilPharmaceuticalMarketResearch';
 import CanadaPharmaceuticalMarketResearch from '@/pages/CanadaPharmaceuticalMarketResearch';
+import JapanPharmaceuticalMarketResearch from '@/pages/JapanPharmaceuticalMarketResearch';
+import HealthcareMarketResearchJapan from '@/pages/HealthcareMarketResearchJapan';
+import TopMarketResearchCompaniesJapan2026 from '@/pages/TopMarketResearchCompaniesJapan2026';
+import TopHealthcareMarketResearchCompaniesJapan2026 from '@/pages/TopHealthcareMarketResearchCompaniesJapan2026';
 import ChinaPharmaceuticalMarketResearch from '@/pages/ChinaPharmaceuticalMarketResearch';
 import ConsumerMarketResearchPortal from '@/pages/ConsumerMarketResearchPortal';
 import DeHealthcareMarketResearchGermany from '@/pages/DeHealthcareMarketResearchGermany';
@@ -641,6 +645,10 @@ export const routes: RouteObject[] = [
   { path: '/market-research/:industrySlug', element: <IndustryGlobalHubPage /> },
   { path: '/pharmaceutical-market-research-australia', element: <AustraliaPharmaceuticalMarketResearch /> },
   { path: '/pharmaceutical-market-research-canada', element: <CanadaPharmaceuticalMarketResearch /> },
+  { path: '/pharmaceutical-market-research-japan', element: <JapanPharmaceuticalMarketResearch /> },
+  { path: '/healthcare-market-research-japan', element: <HealthcareMarketResearchJapan /> },
+  { path: '/insights/top-market-research-companies-japan-2026', element: <TopMarketResearchCompaniesJapan2026 /> },
+  { path: '/insights/top-healthcare-market-research-companies-japan-2026', element: <TopHealthcareMarketResearchCompaniesJapan2026 /> },
   { path: '/pharmaceutical-market-research-china', element: <ChinaPharmaceuticalMarketResearch /> },
   { path: '/pharmaceutical-market-research-denmark', element: <DenmarkPharmaceuticalMarketResearch /> },
   { path: '/pharmaceutical-market-research-france', element: <FrancePharmaceuticalMarketResearch /> },

@@ -39,6 +39,10 @@ export const ORG_KNOWS_ABOUT = [
   'Competitive intelligence',
   'Consumer health and FMCG market research',
   'Financial services market research',
+  'Pharmaceutical market research Japan',
+  'Healthcare market research Japan',
+  'PMDA market research',
+  'NHI payer research Japan',
 ];
 
 /** Global reach with explicit deep-fingerprint regions and countries. */
@@ -71,7 +75,7 @@ export const ORG_AREA_SERVED: Array<Record<string, string>> = [
   { '@type': 'Country', name: 'Canada' },
   { '@type': 'Country', name: 'Brazil' },
   // Asia-Pacific
-  { '@type': 'Country', name: 'Japan' },
+  { '@type': 'Country', name: 'Japan', sameAs: 'https://www.wikidata.org/wiki/Q17' },
   { '@type': 'Country', name: 'China' },
   { '@type': 'Country', name: 'India' },
   { '@type': 'Country', name: 'South Korea' },
