@@ -346,6 +346,21 @@
       "statusCode": 301
     },
     {
+      "source": "/premium-home-page",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/home-staging",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/premium-home-preview",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
       "source": "/heor-consulting",
       "destination": "/healthcare-market-research",
       "statusCode": 301

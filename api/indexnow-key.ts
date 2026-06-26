@@ -145,6 +145,8 @@ function inferHtmlLang(pathname: string): { lang: string; dir: 'ltr' | 'rtl' } {
   if (pathname === '/es' || pathname.startsWith('/es/')) return { lang: 'es', dir: 'ltr' };
   if (pathname === '/ar' || pathname.startsWith('/ar/')) return { lang: 'ar', dir: 'rtl' };
   if (pathname === '/zh' || pathname.startsWith('/zh/')) return { lang: 'zh-CN', dir: 'ltr' };
+  if (pathname === '/pt' || pathname.startsWith('/pt/')) return { lang: 'pt', dir: 'ltr' };
+  if (pathname === '/ru' || pathname.startsWith('/ru/')) return { lang: 'ru', dir: 'ltr' };
   return { lang: 'en', dir: 'ltr' };
 }
 
