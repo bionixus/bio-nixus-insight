@@ -216,6 +216,18 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     zh: '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
     ar: '/ar/arabic-blog-alsawdyh',
   },
+  '/healthcare-market-research-france': {
+    en: '/healthcare-market-research-france',
+    fr: '/fr/healthcare-market-research/france',
+  },
+  '/healthcare-market-research-germany': {
+    en: '/healthcare-market-research-germany',
+    de: '/de/healthcare-market-research/germany',
+  },
+  '/healthcare-market-research-spain': {
+    en: '/healthcare-market-research-spain',
+    es: '/es/healthcare-market-research/spain',
+  },
 };
 
 function findRouteGroup(pathname: string) {

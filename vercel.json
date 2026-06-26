@@ -446,6 +446,21 @@
       "statusCode": 301
     },
     {
+      "source": "/fr/healthcare-market-research",
+      "destination": "/fr/healthcare-market-research/france",
+      "statusCode": 301
+    },
+    {
+      "source": "/de/healthcare-market-research",
+      "destination": "/de/healthcare-market-research/germany",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/healthcare-market-research",
+      "destination": "/es/healthcare-market-research/spain",
+      "statusCode": 301
+    },
+    {
       "source": "/:path(.*)",
       "has": [
         {
