@@ -166,7 +166,7 @@ const MenaMarketData = () => {
             itemListElement: [
               { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' },
               { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.bionixus.com/resources' },
-              { '@type': 'ListItem', position: 3, name: 'MENA Pharma Market Data 2026' },
+              { '@type': 'ListItem', position: 3, name: 'MENA Pharma Market Data 2026', item: citationUrl },
             ],
           })}
         </script>
