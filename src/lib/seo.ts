@@ -378,6 +378,8 @@ export function getGeoMeta(pathname: string): { region: string; placename: strin
     [/\bindia\b/,                           'IN', 'India'],
     [/south.korea|southkorea/,              'KR', 'South Korea'],
     [/singapore/,                           'SG', 'Singapore'],
+    [/malaysia/,                            'MY', 'Malaysia'],
+    [/poland/,                              'PL', 'Poland'],
     [/australia/,                           'AU', 'Australia'],
     [/canada/,                              'CA', 'Canada'],
     [/united.kingdom/,                      'GB', 'United Kingdom'],
