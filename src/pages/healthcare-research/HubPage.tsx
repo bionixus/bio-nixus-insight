@@ -236,8 +236,8 @@ export default function HubPage() {
   return (
     <>
       <SEOHead
-        title="Healthcare Market Research by Country | US HQ · Global Coverage | BioNixus"
-        description="US-headquartered healthcare market research from BioNixus — physician, payer, and hospital evidence across 20+ countries: USA, Canada, Brazil, UK, Europe, GCC, MENA, and Asia-Pacific with local fieldwork."
+        title="Healthcare Market Research Companies & Country Reports 2026 | BioNixus"
+        description="Healthcare market research companies for pharma and medtech: BioNixus delivers physician, payer, and hospital evidence across 20+ countries — USA, GCC, MENA, Europe, and Asia-Pacific with local fieldwork and GCC market reports."
         canonical="/healthcare-market-research"
         jsonLd={jsonLd}
       />
