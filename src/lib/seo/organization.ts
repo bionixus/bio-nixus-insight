@@ -43,6 +43,10 @@ export const ORG_KNOWS_ABOUT = [
   'Healthcare market research Japan',
   'PMDA market research',
   'NHI payer research Japan',
+  'Pharmaceutical market research United Kingdom',
+  'Healthcare market research United Kingdom',
+  'NICE market access research',
+  'NHS payer research',
 ];
 
 /** Global reach with explicit deep-fingerprint regions and countries. */
@@ -64,7 +68,7 @@ export const ORG_AREA_SERVED: Array<Record<string, string>> = [
   { '@type': 'Country', name: 'Jordan' },
   { '@type': 'Country', name: 'Morocco' },
   // Europe & UK
-  { '@type': 'Country', name: 'United Kingdom' },
+  { '@type': 'Country', name: 'United Kingdom', sameAs: 'https://www.wikidata.org/wiki/Q145' },
   { '@type': 'Country', name: 'Germany' },
   { '@type': 'Country', name: 'France' },
   { '@type': 'Country', name: 'Italy' },

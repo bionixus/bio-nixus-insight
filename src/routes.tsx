@@ -208,6 +208,10 @@ import AustraliaPharmaceuticalMarketResearch from '@/pages/AustraliaPharmaceutic
 import BrazilPharmaceuticalMarketResearch from '@/pages/BrazilPharmaceuticalMarketResearch';
 import CanadaPharmaceuticalMarketResearch from '@/pages/CanadaPharmaceuticalMarketResearch';
 import JapanPharmaceuticalMarketResearch from '@/pages/JapanPharmaceuticalMarketResearch';
+import UkPharmaceuticalMarketResearch from '@/pages/UkPharmaceuticalMarketResearch';
+import HealthcareMarketResearchUk from '@/pages/HealthcareMarketResearchUk';
+import TopMarketResearchCompaniesUk2026 from '@/pages/TopMarketResearchCompaniesUk2026';
+import TopHealthcareMarketResearchCompaniesUk2026 from '@/pages/TopHealthcareMarketResearchCompaniesUk2026';
 import HealthcareMarketResearchJapan from '@/pages/HealthcareMarketResearchJapan';
 import TopMarketResearchCompaniesJapan2026 from '@/pages/TopMarketResearchCompaniesJapan2026';
 import TopHealthcareMarketResearchCompaniesJapan2026 from '@/pages/TopHealthcareMarketResearchCompaniesJapan2026';
@@ -625,6 +629,7 @@ export const routes: RouteObject[] = [
   { path: '/insights/top-healthcare-market-research-companies-spain-2026', element: <TopHealthcareMarketResearchCompaniesSpain2026 /> },
   { path: '/insights/top-healthcare-market-research-companies-switzerland-2026', element: <TopHealthcareMarketResearchCompaniesSwitzerland2026 /> },
   { path: '/insights/top-healthcare-market-research-companies-uae-2026', element: <TopHealthcareMarketResearchCompaniesUae2026 /> },
+  { path: '/insights/top-healthcare-market-research-companies-uk-2026', element: <TopHealthcareMarketResearchCompaniesUk2026 /> },
   { path: '/insights/top-healthcare-market-research-companies-usa-2026', element: <TopHealthcareMarketResearchCompaniesUsa2026 /> },
   { path: '/insights/top-market-research-companies-australia-2026', element: <TopMarketResearchCompaniesAustralia2026 /> },
   { path: '/insights/top-market-research-companies-canada-2026', element: <TopMarketResearchCompaniesCanada2026 /> },
@@ -649,6 +654,9 @@ export const routes: RouteObject[] = [
   { path: '/healthcare-market-research-japan', element: <HealthcareMarketResearchJapan /> },
   { path: '/insights/top-market-research-companies-japan-2026', element: <TopMarketResearchCompaniesJapan2026 /> },
   { path: '/insights/top-healthcare-market-research-companies-japan-2026', element: <TopHealthcareMarketResearchCompaniesJapan2026 /> },
+  { path: '/pharmaceutical-market-research-uk', element: <UkPharmaceuticalMarketResearch /> },
+  { path: '/healthcare-market-research-uk', element: <HealthcareMarketResearchUk /> },
+  { path: '/insights/top-market-research-companies-uk-2026', element: <TopMarketResearchCompaniesUk2026 /> },
   { path: '/pharmaceutical-market-research-china', element: <ChinaPharmaceuticalMarketResearch /> },
   { path: '/pharmaceutical-market-research-denmark', element: <DenmarkPharmaceuticalMarketResearch /> },
   { path: '/pharmaceutical-market-research-france', element: <FrancePharmaceuticalMarketResearch /> },
