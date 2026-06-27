@@ -209,6 +209,10 @@ import BrazilPharmaceuticalMarketResearch from '@/pages/BrazilPharmaceuticalMark
 import CanadaPharmaceuticalMarketResearch from '@/pages/CanadaPharmaceuticalMarketResearch';
 import SingaporePharmaceuticalMarketResearch from '@/pages/SingaporePharmaceuticalMarketResearch';
 import PolandPharmaceuticalMarketResearch from '@/pages/PolandPharmaceuticalMarketResearch';
+import MalaysiaPharmaceuticalMarketResearch from '@/pages/MalaysiaPharmaceuticalMarketResearch';
+import HealthcareMarketResearchMalaysia from '@/pages/HealthcareMarketResearchMalaysia';
+import TopMarketResearchCompaniesMalaysia2026 from '@/pages/TopMarketResearchCompaniesMalaysia2026';
+import TopHealthcareMarketResearchCompaniesMalaysia2026 from '@/pages/TopHealthcareMarketResearchCompaniesMalaysia2026';
 import HealthcareMarketResearchPoland from '@/pages/HealthcareMarketResearchPoland';
 import TopMarketResearchCompaniesPoland2026 from '@/pages/TopMarketResearchCompaniesPoland2026';
 import TopHealthcareMarketResearchCompaniesPoland2026 from '@/pages/TopHealthcareMarketResearchCompaniesPoland2026';
@@ -666,6 +670,10 @@ export const routes: RouteObject[] = [
   { path: '/healthcare-market-research-poland', element: <HealthcareMarketResearchPoland /> },
   { path: '/insights/top-market-research-companies-poland-2026', element: <TopMarketResearchCompaniesPoland2026 /> },
   { path: '/insights/top-healthcare-market-research-companies-poland-2026', element: <TopHealthcareMarketResearchCompaniesPoland2026 /> },
+  { path: '/pharmaceutical-market-research-malaysia', element: <MalaysiaPharmaceuticalMarketResearch /> },
+  { path: '/healthcare-market-research-malaysia', element: <HealthcareMarketResearchMalaysia /> },
+  { path: '/insights/top-market-research-companies-malaysia-2026', element: <TopMarketResearchCompaniesMalaysia2026 /> },
+  { path: '/insights/top-healthcare-market-research-companies-malaysia-2026', element: <TopHealthcareMarketResearchCompaniesMalaysia2026 /> },
   { path: '/pharmaceutical-market-research-japan', element: <JapanPharmaceuticalMarketResearch /> },
   { path: '/healthcare-market-research-japan', element: <HealthcareMarketResearchJapan /> },
   { path: '/insights/top-market-research-companies-japan-2026', element: <TopMarketResearchCompaniesJapan2026 /> },

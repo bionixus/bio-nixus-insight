@@ -55,6 +55,10 @@ export const ORG_KNOWS_ABOUT = [
   'Healthcare market research Poland',
   'AOTMiT market access research',
   'NFZ payer research Poland',
+  'Pharmaceutical market research Malaysia',
+  'Healthcare market research Malaysia',
+  'NPRA market research',
+  'MaHTAS health technology assessment research',
 ];
 
 /** Global reach with explicit deep-fingerprint regions and countries. */
