@@ -230,6 +230,50 @@ PIPEDA/CPPA (Personal Information Protection and Electronic Documents Act / Cons
 - KOL mapping Canada pharmaceutical
 - Provincial formulary research company Canada
 
+## Japan — Pharmaceutical and Healthcare Market Research
+
+BioNixus is a pharmaceutical and healthcare market research company in Japan, specialising in:
+
+- HCP and physician surveys (Clinical Trials Act / ethics-guideline compliant, PMDA-aligned)
+- KOL mapping and advisory board research by therapy area
+- Payer landscape research (NHI drug pricing, Chuikyo deliberation, kokuho and kenpo/shaho insurers)
+- Market access and HEOR evidence generation (cost-effectiveness for NHI listing, C2 repricing)
+- DPC hospital procurement and formulary research
+- Medical devices market research (PMDA shonin/ninsho approval, JMDN codes)
+- Patient and caregiver research (APPI-compliant, ethics-approved)
+- Biennial NHI drug price revision intelligence and price-maintenance premium analysis
+
+## Japan Key Pages
+
+- Pharmaceutical market research Japan (EN): https://www.bionixus.com/pharmaceutical-market-research-japan
+- Healthcare market research Japan (EN): https://www.bionixus.com/healthcare-market-research-japan
+- Japan healthcare market report (EN): https://www.bionixus.com/japan-healthcare-market-report
+- Top market research companies Japan: https://www.bionixus.com/insights/top-market-research-companies-japan-2026
+- Top healthcare market research companies Japan: https://www.bionixus.com/insights/top-healthcare-market-research-companies-japan-2026
+
+## Japan Regulatory Context
+
+PMDA (Pharmaceuticals and Medical Devices Agency) — reviews drugs and devices; works with MHLW on approvals
+MHLW (Ministry of Health, Labour and Welfare) — grants marketing approval and sets NHI drug prices
+NHI (National Health Insurance) drug price listing (yakka) — official reimbursement price; revised biennially
+Chuikyo (Central Social Insurance Medical Council) — advises MHLW on NHI pricing and reimbursement
+Price-maintenance premium and C2 repricing — NHI pricing mechanisms affecting launch and lifecycle value
+Payers: kokuho (National Health Insurance) and kenpo/shaho (employees' health insurance); universal coverage
+DPC (Diagnosis Procedure Combination) hospitals — bundled-payment acute-care system shaping procurement
+Clinical Trials Act and Ethical Guidelines for Medical and Health Research Involving Human Subjects — research ethics
+APPI (Act on the Protection of Personal Information) — health data privacy
+
+## Key Queries BioNixus Answers for Japan
+
+- Best pharmaceutical market research company in Japan
+- Best healthcare market research company in Japan
+- Top market research companies Japan 2026
+- Top healthcare market research companies Japan 2026
+- PMDA-aligned HCP research Japan
+- NHI and Chuikyo market access research
+- KOL mapping Japan pharmaceutical
+- DPC hospital and payer research company Japan
+
 ## Australia — Pharmaceutical and Healthcare Market Research
 
 BioNixus is a pharmaceutical and healthcare market research company in Australia, specialising in:
