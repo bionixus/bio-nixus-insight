@@ -455,6 +455,71 @@ const GccMarketAccessGuide = () => {
           </div>
         </section>
 
+        <section className="section-padding py-16" id="payer-evidence-pathways">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Payer and hospital evidence pathways across GCC markets
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-6 max-w-3xl">
+              Registration alone does not guarantee uptake. Each GCC state applies distinct formulary, tender, and
+              reimbursement mechanics that shape how quickly a product moves from marketing authorisation to prescribing.
+              BioNixus access research maps these pathways before launch so evidence packages answer the questions each
+              committee actually asks.
+            </p>
+            <div className="grid md:grid-cols-2 gap-4 mb-8">
+              <article className="rounded-xl border border-border bg-card p-5">
+                <h3 className="text-lg font-semibold text-foreground mb-2">Saudi Arabia: NUPCO and MOH formulary</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  MOH and military hospital demand flows through NUPCO tender lots stratified by therapeutic category.
+                  Private hospital networks operate parallel procurement with insurance steerage. Access research must
+                  distinguish public tender dynamics from private uptake curves — and time fieldwork to formulary uplift
+                  committee cycles where clinician advocacy signals influence lot awards.
+                </p>
+              </article>
+              <article className="rounded-xl border border-border bg-card p-5">
+                <h3 className="text-lg font-semibold text-foreground mb-2">UAE: emirate-level divergence</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  MOHAP federal registration does not replace DHA (Dubai) or DOH (Abu Dhabi) formulary processes.
+                  Mandatory health insurance in Dubai and Abu Dhabi creates payer committees with distinct evidence
+                  thresholds. Launch teams need emirate-specific physician pathway research and pricing sensitivity
+                  work before assuming uniform UAE uptake.
+                </p>
+              </article>
+              <article className="rounded-xl border border-border bg-card p-5">
+                <h3 className="text-lg font-semibold text-foreground mb-2">Kuwait and Qatar: concentrated influence</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Kuwait&apos;s government-funded system and Qatar&apos;s Hamad Medical Corporation centrality mean fewer
+                  but higher-stakes decision nodes. Early KOL and pharmacist engagement research identifies objection
+                  themes before formal committee review — particularly for specialty and high-cost therapies where
+                  budget impact narratives dominate.
+                </p>
+              </article>
+              <article className="rounded-xl border border-border bg-card p-5">
+                <h3 className="text-lg font-semibold text-foreground mb-2">Bahrain and Oman: regional comparability</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Smaller markets often serve as early GCC launch or reference points. NHRA Bahrain mutual recognition
+                  with Saudi and UAE registrations can accelerate entry; Oman&apos;s public-sector influence requires
+                  region-specific field planning. Harmonised GCC access research lets teams test messaging in Bahrain or
+                  Oman before scaling to KSA and UAE.
+                </p>
+              </article>
+            </div>
+            <p className="text-muted-foreground leading-relaxed">
+              BioNixus combines regulatory timeline mapping (above) with primary payer and hospital stakeholder research
+              so market access teams align dossier content, pricing submissions, and medical affairs narratives to each
+              country&apos;s decision architecture. For therapy-specific access playbooks, see{' '}
+              <Link to="/respiratory-market-access-gcc" className="text-primary underline">
+                respiratory market access GCC
+              </Link>{' '}
+              and{' '}
+              <Link to="/saudi-payer-market-access-research" className="text-primary underline">
+                Saudi payer market access research
+              </Link>
+              .
+            </p>
+          </div>
+        </section>
+
         {/* Internal links */}
         <section className="section-padding py-12 bg-muted/20">
           <div className="container-wide max-w-5xl mx-auto">

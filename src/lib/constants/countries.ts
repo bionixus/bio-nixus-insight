@@ -34,9 +34,9 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     slug: 'saudi-arabia',
     region: 'mena',
     metaSuffix: 'KSA pharma market research with Vision 2030 healthcare expertise.',
-    metaTitle: 'Healthcare Market Research Saudi Arabia | SFDA Fieldwork | BioNixus',
+    metaTitle: 'Healthcare Market Research Saudi Arabia 2026 | SFDA & NUPCO | BioNixus',
     metaDescription:
-      'Pharmaceutical market research in Saudi Arabia: SFDA-aware physician surveys, Arabic fieldwork, NUPCO-context hospital studies, and KOL mapping across Riyadh, Jeddah, and Dammam.',
+      'Healthcare market research Saudi Arabia 2026: SFDA-aware physician surveys, NUPCO tender context, Arabic fieldwork, and KOL mapping across Riyadh, Jeddah, and Dammam for pharma launch and access teams.',
     ogDescription:
       'BioNixus delivers pharmaceutical market research in Saudi Arabia with SFDA-aware execution, Arabic fieldwork, and hospital stakeholder access across Riyadh, Jeddah, and Dammam.',
     h1: 'Pharmaceutical Market Research in Saudi Arabia',
