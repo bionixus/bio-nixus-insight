@@ -207,6 +207,9 @@ import ArTopMarketResearchCompaniesSaudiArabia2026 from '@/pages/ArTopMarketRese
 import AustraliaPharmaceuticalMarketResearch from '@/pages/AustraliaPharmaceuticalMarketResearch';
 import BrazilPharmaceuticalMarketResearch from '@/pages/BrazilPharmaceuticalMarketResearch';
 import CanadaPharmaceuticalMarketResearch from '@/pages/CanadaPharmaceuticalMarketResearch';
+import SingaporePharmaceuticalMarketResearch from '@/pages/SingaporePharmaceuticalMarketResearch';
+import TopMarketResearchCompaniesSingapore2026 from '@/pages/TopMarketResearchCompaniesSingapore2026';
+import TopHealthcareMarketResearchCompaniesSingapore2026 from '@/pages/TopHealthcareMarketResearchCompaniesSingapore2026';
 import JapanPharmaceuticalMarketResearch from '@/pages/JapanPharmaceuticalMarketResearch';
 import UkPharmaceuticalMarketResearch from '@/pages/UkPharmaceuticalMarketResearch';
 import HealthcareMarketResearchUk from '@/pages/HealthcareMarketResearchUk';
@@ -237,6 +240,7 @@ import HealthcareMarketResearchInSaudiArabia from '@/pages/HealthcareMarketResea
 import HealthcareMarketResearchInUae from '@/pages/HealthcareMarketResearchInUae';
 import HealthcareMarketResearchItaly from '@/pages/HealthcareMarketResearchItaly';
 import HealthcareMarketResearchNewZealand from '@/pages/HealthcareMarketResearchNewZealand';
+import HealthcareMarketResearchSingapore from '@/pages/HealthcareMarketResearchSingapore';
 import HealthcareMarketResearchSouthKorea from '@/pages/HealthcareMarketResearchSouthKorea';
 import HealthcareMarketResearchSpain from '@/pages/HealthcareMarketResearchSpain';
 import HealthcareMarketResearchSwitzerland from '@/pages/HealthcareMarketResearchSwitzerland';
@@ -612,6 +616,7 @@ export const routes: RouteObject[] = [
   { path: '/healthcare-market-research-in-uae', element: <HealthcareMarketResearchInUae /> },
   { path: '/healthcare-market-research-italy', element: <HealthcareMarketResearchItaly /> },
   { path: '/healthcare-market-research-new-zealand', element: <HealthcareMarketResearchNewZealand /> },
+  { path: '/healthcare-market-research-singapore', element: <HealthcareMarketResearchSingapore /> },
   { path: '/healthcare-market-research-south-korea', element: <HealthcareMarketResearchSouthKorea /> },
   { path: '/healthcare-market-research-spain', element: <HealthcareMarketResearchSpain /> },
   { path: '/healthcare-market-research-switzerland', element: <HealthcareMarketResearchSwitzerland /> },
@@ -650,6 +655,9 @@ export const routes: RouteObject[] = [
   { path: '/market-research/:industrySlug', element: <IndustryGlobalHubPage /> },
   { path: '/pharmaceutical-market-research-australia', element: <AustraliaPharmaceuticalMarketResearch /> },
   { path: '/pharmaceutical-market-research-canada', element: <CanadaPharmaceuticalMarketResearch /> },
+  { path: '/pharmaceutical-market-research-singapore', element: <SingaporePharmaceuticalMarketResearch /> },
+  { path: '/insights/top-market-research-companies-singapore-2026', element: <TopMarketResearchCompaniesSingapore2026 /> },
+  { path: '/insights/top-healthcare-market-research-companies-singapore-2026', element: <TopHealthcareMarketResearchCompaniesSingapore2026 /> },
   { path: '/pharmaceutical-market-research-japan', element: <JapanPharmaceuticalMarketResearch /> },
   { path: '/healthcare-market-research-japan', element: <HealthcareMarketResearchJapan /> },
   { path: '/insights/top-market-research-companies-japan-2026', element: <TopMarketResearchCompaniesJapan2026 /> },
