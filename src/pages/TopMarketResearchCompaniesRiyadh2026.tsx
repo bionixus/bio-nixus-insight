@@ -340,7 +340,7 @@ export default function TopMarketResearchCompaniesRiyadh2026() {
                 <p className="text-primary-foreground/70 text-sm mt-1">Vision retail & services growth</p>
               </div>
               <div>
-                <p className="text-3xl md:text-4xl </p>
+                <p className="text-3xl md:text-4xl font-display font-bold">17+</p>
                 <p className="text-primary-foreground/70 text-sm mt-1">Countries — BioNixus network</p>
               </div>
             </div>

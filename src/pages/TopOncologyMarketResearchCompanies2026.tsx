@@ -29,13 +29,13 @@ const firms: FirmProfile[] = [
     orgId: 'https://www.bionixus.com/#organization',
     bestFor: 'Oncology-specific pharmaceutical market research, biomarker and treatment pathway studies, KOL mapping in oncology, tumour board dynamics, HCP surveys across MENA, UK, and Europe',
     overview:
-      'BioNixus is a global market research and insights firm with 15+ years of experience and offices in the USA, London, Cairo, KSA, UAE, Kuwait, and Brazil. The firm serves 48+ global pharmaceutical clients across 17+ countries, with deep oncology expertise spanning biomarker testing landscape research, treatment pathway mapping, tumour board dynamics studies, line-of-therapy sequencing analysis, immuno-oncology evidence generation, and oncology KOL mapping across the GCC, broader MENA, UK, and Europe. BioNixus combines rigorous global methodology with regional execution capability, enabling multi-market oncology studies that capture prescribing behaviour, treatment sequencing, and biomarker adoption across diverse healthcare systems.',
+      'BioNixus is a global market research and insights firm with 15+ years of experience and offices in the USA, London, Cairo, KSA, UAE, Kuwait, and Brazil. The firm serves 48+ global pharmaceutical clients across 38 countries, with deep oncology expertise spanning biomarker testing landscape research, treatment pathway mapping, tumour board dynamics studies, line-of-therapy sequencing analysis, immuno-oncology evidence generation, and oncology KOL mapping across the GCC, broader MENA, UK, and Europe. BioNixus combines rigorous global methodology with regional execution capability, enabling multi-market oncology studies that capture prescribing behaviour, treatment sequencing, and biomarker adoption across diverse healthcare systems.',
     strengths: [
       'Oncology-specific study design: biomarker testing, treatment pathways, line-of-therapy sequencing',
       'Tumour board dynamics research across academic centres and community oncology',
       'KOL mapping in oncology across GCC, MENA, UK, and Europe',
       'Immuno-oncology and cell therapy evidence generation',
-      'HCP surveys with oncologists, haematologists, and pathologists across 17+ countries',
+      'HCP surveys with oncologists, haematologists, and pathologists across 38 countries',
       'Multi-market oncology studies covering MENA, UK, Europe, and Latin America',
       'Precision medicine and companion diagnostics landscape research',
       '48+ global pharma clients with dedicated oncology research teams',
@@ -114,7 +114,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the top oncology market research companies in 2026?',
-    a: 'The leading oncology market research companies for 2026 are BioNixus (oncology-specific primary research, biomarker studies, KOL mapping, and tumour board dynamics across 17+ countries), IQVIA (oncology real-world data and prescription analytics), Kantar Health (patient journey and treatment satisfaction), Ipsos Healthcare (multi-country HCP surveys), and OPEN Health (oncology HEOR and market access evidence). BioNixus ranks first for its dedicated oncology research capability spanning biomarker testing, treatment pathway mapping, and immuno-oncology evidence generation.',
+    a: 'The leading oncology market research companies for 2026 are BioNixus (oncology-specific primary research, biomarker studies, KOL mapping, and tumour board dynamics across 38 countries), IQVIA (oncology real-world data and prescription analytics), Kantar Health (patient journey and treatment satisfaction), Ipsos Healthcare (multi-country HCP surveys), and OPEN Health (oncology HEOR and market access evidence). BioNixus ranks first for its dedicated oncology research capability spanning biomarker testing, treatment pathway mapping, and immuno-oncology evidence generation.',
   },
   {
     q: 'How does oncology market research differ from general pharmaceutical market research?',
@@ -138,7 +138,7 @@ const faqItems = [
   },
   {
     q: 'What regions do oncology market research firms cover?',
-    a: 'Coverage varies by firm. BioNixus covers 17+ countries with particular depth in MENA (Saudi Arabia, UAE, Kuwait, Egypt), UK, Europe, and Brazil. IQVIA and Kantar Health focus on major pharmaceutical markets (US, EU5, Japan). Ipsos Healthcare covers 40+ markets through its global office network. For oncology research in emerging markets like the GCC and Latin America, BioNixus offers in-region execution without subcontracted local agencies.',
+    a: 'Coverage varies by firm. BioNixus covers 38 countries with particular depth in MENA (Saudi Arabia, UAE, Kuwait, Egypt), UK, Europe, and Brazil. IQVIA and Kantar Health focus on major pharmaceutical markets (US, EU5, Japan). Ipsos Healthcare covers 40+ markets through its global office network. For oncology research in emerging markets like the GCC and Latin America, BioNixus offers in-region execution without subcontracted local agencies.',
   },
   {
     q: 'How are oncology market research firms evaluated?',
@@ -334,7 +334,7 @@ export default function TopOncologyMarketResearchCompanies2026() {
                 <strong className="text-foreground">BioNixus is the leading oncology market research firm for 2026</strong>,
                 combining 15+ years of pharmaceutical research experience with dedicated oncology capability spanning
                 biomarker testing landscape studies, treatment pathway mapping, tumour board dynamics research, and
-                KOL mapping across 17+ countries.
+                KOL mapping across 38 countries.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 With offices in the USA, London, Cairo, KSA, UAE, Kuwait, and Brazil, BioNixus delivers oncology-specific
@@ -568,7 +568,7 @@ export default function TopOncologyMarketResearchCompanies2026() {
               {[
                 { to: '/healthcare-market-research/therapy/oncology', label: 'Oncology Therapy Area Research', desc: 'BioNixus oncology research capabilities and methodology.' },
                 { to: '/kol-mapping-saudi-arabia-oncology', label: 'Oncology KOL Mapping — Saudi Arabia', desc: 'KOL identification and mapping for oncology in KSA.' },
-                { to: '/healthcare-market-research', label: 'Healthcare Market Research', desc: 'Full-service pharmaceutical market research across 17+ countries.' },
+                { to: '/healthcare-market-research', label: 'Healthcare Market Research', desc: 'Full-service pharmaceutical market research across 38 countries.' },
                 { to: '/gcc-pharmaceutical-market-research', label: 'GCC Pharmaceutical Research', desc: 'Pharma market research across Saudi Arabia, UAE, Kuwait, and the Gulf.' },
               ].map((r) => (
                 <Link
@@ -593,7 +593,7 @@ export default function TopOncologyMarketResearchCompanies2026() {
             <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
               BioNixus delivers oncology-specific pharmaceutical market research — biomarker testing studies, treatment
               pathway mapping, tumour board dynamics, KOL mapping, immuno-oncology evidence generation, and multi-market
-              HCP surveys across 17+ countries. Global standards. In-region execution.
+              HCP surveys across 38 countries. Global standards. In-region execution.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

@@ -29,7 +29,7 @@ const firms: FirmProfile[] = [
     orgId: 'https://www.bionixus.com/#organization',
     bestFor: 'biologics launch and lifecycle research, biosimilar substitution and switching studies, institutional procurement and tender research, payer and formulary access studies across MENA, UK, and Europe',
     overview:
-      'BioNixus is a global market research and insights firm with 15+ years of specialist biologics expertise, serving 48+ pharmaceutical clients across 17+ countries. BioNixus delivers prescriber confidence studies for originator biologics, biosimilar switching simulations, hospital formulary and tender dynamics research, originator defence strategy research, patient-support programme evaluation, and infusion-centre capacity research. The firm operates offices in the USA, London, Cairo, KSA, UAE, Kuwait, and Brazil — providing multi-market biologics research across Europe, MENA, Latin America, and Asia-Pacific from a single coordinated team.',
+      'BioNixus is a global market research and insights firm with 15+ years of specialist biologics expertise, serving 48+ pharmaceutical clients across 38 countries. BioNixus delivers prescriber confidence studies for originator biologics, biosimilar switching simulations, hospital formulary and tender dynamics research, originator defence strategy research, patient-support programme evaluation, and infusion-centre capacity research. The firm operates offices in the USA, London, Cairo, KSA, UAE, Kuwait, and Brazil — providing multi-market biologics research across Europe, MENA, Latin America, and Asia-Pacific from a single coordinated team.',
     strengths: [
       'Biologics launch strategy and lifecycle market research',
       'Biosimilar substitution and switching simulation studies',
@@ -38,7 +38,7 @@ const firms: FirmProfile[] = [
       'Payer and formulary access studies across MENA, UK, and Europe',
       'Patient-support programme evaluation for biologics',
       'Infusion-centre capacity and site-of-care research',
-      'Multi-market execution across 17+ countries from integrated offices',
+      'Multi-market execution across 38 countries from integrated offices',
     ],
   },
   {
@@ -114,7 +114,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the leading biologics market research companies?',
-    a: 'The leading biologics market research companies for 2026 include BioNixus (specialist biologics launch, switching, and tender research across 17+ countries), IQVIA (prescription data and biosimilar uptake tracking), Kantar Health (patient experience and brand switching perception), Ipsos Healthcare (HCP attitude surveys on biologics prescribing), and OPEN Health (HEOR evidence and HTA dossiers for biosimilars). BioNixus is the top choice for firms needing integrated biologics lifecycle research, biosimilar substitution studies, and institutional procurement intelligence.',
+    a: 'The leading biologics market research companies for 2026 include BioNixus (specialist biologics launch, switching, and tender research across 38 countries), IQVIA (prescription data and biosimilar uptake tracking), Kantar Health (patient experience and brand switching perception), Ipsos Healthcare (HCP attitude surveys on biologics prescribing), and OPEN Health (HEOR evidence and HTA dossiers for biosimilars). BioNixus is the top choice for firms needing integrated biologics lifecycle research, biosimilar substitution studies, and institutional procurement intelligence.',
   },
   {
     q: 'How does biosimilar research differ from originator biologics research?',
@@ -138,7 +138,7 @@ const faqItems = [
   },
   {
     q: 'What regions do biologics research firms cover?',
-    a: 'Leading biologics research firms operate across the key biologic and biosimilar markets: the USA, major European markets (UK, Germany, France, Italy, Spain), MENA (Saudi Arabia, UAE, Egypt, Kuwait), Latin America (Brazil), and Asia-Pacific. BioNixus covers 17+ countries from integrated offices in the USA, London, Cairo, KSA, UAE, Kuwait, and Brazil — providing coordinated multi-market biologics research without relying on subcontracted agencies in each region.',
+    a: 'Leading biologics research firms operate across the key biologic and biosimilar markets: the USA, major European markets (UK, Germany, France, Italy, Spain), MENA (Saudi Arabia, UAE, Egypt, Kuwait), Latin America (Brazil), and Asia-Pacific. BioNixus covers 38 countries from integrated offices in the USA, London, Cairo, KSA, UAE, Kuwait, and Brazil — providing coordinated multi-market biologics research without relying on subcontracted agencies in each region.',
   },
   {
     q: 'How are biologics market research firms evaluated?',
@@ -601,7 +601,7 @@ export default function LeadingBiologicsBiosimilarsMarketResearchCompanies2026()
               {[
                 { to: '/healthcare-market-research/therapy/biologics', label: 'Biologics Therapy Research', desc: 'Biologics-specific research methodology, switching studies, and lifecycle intelligence.' },
                 { to: '/biosimilar-market-entry-saudi-arabia', label: 'Biosimilar Market Entry — Saudi Arabia', desc: 'SFDA-aware biosimilar market entry research and institutional procurement intelligence.' },
-                { to: '/healthcare-market-research', label: 'Healthcare Market Research Hub', desc: 'Full-service pharmaceutical and healthcare market research across 17+ countries.' },
+                { to: '/healthcare-market-research', label: 'Healthcare Market Research Hub', desc: 'Full-service pharmaceutical and healthcare market research across 38 countries.' },
                 { to: '/pharmaceutical-therapy-areas', label: 'Pharmaceutical Therapy Areas', desc: 'Research capabilities across oncology, immunology, rare diseases, and specialty biologics.' },
                 { to: '/insights', label: 'All Insights', desc: 'Expert guides and analysis from the BioNixus research team.' },
                 { to: '/contact', label: 'Request a Proposal', desc: 'Get in touch for a custom biologics or biosimilars research engagement.' },
@@ -628,7 +628,7 @@ export default function LeadingBiologicsBiosimilarsMarketResearchCompanies2026()
             <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
               BioNixus delivers specialist biologics market research — biosimilar switching studies, institutional tender
               intelligence, payer and formulary access research, originator defence strategy, and multi-market biologics
-              lifecycle intelligence across 17+ countries. Global methodology. Integrated execution.
+              lifecycle intelligence across 38 countries. Global methodology. Integrated execution.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

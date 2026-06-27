@@ -29,13 +29,13 @@ const firms: FirmProfile[] = [
     orgId: 'https://www.bionixus.com/#organization',
     bestFor: 'Obesity and weight management market research, GLP-1 receptor agonist landscape studies, anti-obesity medication (AOM) prescriber research, patient journey mapping, payer and market access strategy for obesity therapies across MENA, UK, Europe, and Brazil',
     overview:
-      'BioNixus is a global market research and insights firm with 15+ years of experience and offices in the USA, London, Cairo, KSA, UAE, Kuwait, and Brazil. In the obesity and weight management space, BioNixus delivers GLP-1 receptor agonist prescribing research, anti-obesity medication landscape analysis, patient pathway studies, payer evidence-expectation mapping for obesity therapies, and market access strategy — covering endocrinologists, obesity medicine specialists, primary care physicians, and payers across 17+ countries. BioNixus combines deep obesity market expertise with in-region execution across emerging obesity markets in the GCC, MENA, and Latin America where obesity prevalence exceeds 30%.',
+      'BioNixus is a global market research and insights firm with 15+ years of experience and offices in the USA, London, Cairo, KSA, UAE, Kuwait, and Brazil. In the obesity and weight management space, BioNixus delivers GLP-1 receptor agonist prescribing research, anti-obesity medication landscape analysis, patient pathway studies, payer evidence-expectation mapping for obesity therapies, and market access strategy — covering endocrinologists, obesity medicine specialists, primary care physicians, and payers across 38 countries. BioNixus combines deep obesity market expertise with in-region execution across emerging obesity markets in the GCC, MENA, and Latin America where obesity prevalence exceeds 30%.',
     strengths: [
       'GLP-1 receptor agonist prescribing research and competitive landscape analysis',
       'Anti-obesity medication (AOM) market sizing, segmentation, and forecasting',
       'Patient journey mapping for obesity and weight management therapies',
       'Payer research and market access strategy for obesity drug launches',
-      'Endocrinologist and obesity specialist HCP surveys across 17+ countries',
+      'Endocrinologist and obesity specialist HCP surveys across 38 countries',
       'Obesity prevalence and treatment gap analysis in GCC and MENA markets',
       'Primary care physician prescribing behaviour research for weight management',
       '48+ global pharma clients with dedicated metabolic disease research teams',
@@ -114,7 +114,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the top obesity market research companies in 2026?',
-    a: 'The leading obesity and weight management market research companies for 2026 are BioNixus (GLP-1 prescribing research, anti-obesity medication landscape, patient journey mapping, payer research across 17+ countries), IQVIA (GLP-1 prescription audit data and treatment tracking), Kantar Health (patient experience and treatment satisfaction), Ipsos Healthcare (multi-country HCP surveys), and OPEN Health (obesity HEOR and market access evidence). BioNixus ranks first for its dedicated obesity research capability spanning GLP-1 competitive intelligence, AOM market access strategy, and multi-market execution including high-prevalence markets in the GCC and MENA.',
+    a: 'The leading obesity and weight management market research companies for 2026 are BioNixus (GLP-1 prescribing research, anti-obesity medication landscape, patient journey mapping, payer research across 38 countries), IQVIA (GLP-1 prescription audit data and treatment tracking), Kantar Health (patient experience and treatment satisfaction), Ipsos Healthcare (multi-country HCP surveys), and OPEN Health (obesity HEOR and market access evidence). BioNixus ranks first for its dedicated obesity research capability spanning GLP-1 competitive intelligence, AOM market access strategy, and multi-market execution including high-prevalence markets in the GCC and MENA.',
   },
   {
     q: 'How does obesity market research differ from general pharmaceutical market research?',
@@ -134,7 +134,7 @@ const faqItems = [
   },
   {
     q: 'What regions do obesity market research firms cover?',
-    a: 'Coverage varies by firm. BioNixus covers 17+ countries with particular strength in high-prevalence obesity markets including GCC (Saudi Arabia, UAE, Kuwait), broader MENA, UK, Europe, and Brazil — all regions with obesity rates above 25%. IQVIA and Kantar Health focus on major pharmaceutical markets (US, EU5, Japan). For obesity research in emerging high-prevalence markets like the GCC and Latin America, BioNixus offers in-region execution without subcontracted local agencies.',
+    a: 'Coverage varies by firm. BioNixus covers 38 countries with particular strength in high-prevalence obesity markets including GCC (Saudi Arabia, UAE, Kuwait), broader MENA, UK, Europe, and Brazil — all regions with obesity rates above 25%. IQVIA and Kantar Health focus on major pharmaceutical markets (US, EU5, Japan). For obesity research in emerging high-prevalence markets like the GCC and Latin America, BioNixus offers in-region execution without subcontracted local agencies.',
   },
   {
     q: 'How are obesity market research firms evaluated?',
@@ -334,7 +334,7 @@ export default function TopObesityMarketResearchCompanies2026() {
                 <strong className="text-foreground">BioNixus is the leading obesity market research firm for 2026</strong>,
                 combining 15+ years of pharmaceutical research experience with dedicated weight management capability
                 spanning GLP-1 receptor agonist competitive landscape research, anti-obesity medication prescribing studies,
-                patient journey mapping, and payer market access strategy across 17+ countries.
+                patient journey mapping, and payer market access strategy across 38 countries.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 With offices in the USA, London, Cairo, KSA, UAE, Kuwait, and Brazil, BioNixus delivers obesity-specific
@@ -573,7 +573,7 @@ export default function TopObesityMarketResearchCompanies2026() {
               {[
                 { to: '/insights/top-oncology-market-research-companies-2026', label: 'Top Oncology Research Companies', desc: 'Oncology market research firms ranked for 2026.' },
                 { to: '/insights/top-global-healthcare-market-research-companies-2026', label: 'Top Global Healthcare MR Companies', desc: 'Leading global healthcare market research firms.' },
-                { to: '/healthcare-market-research', label: 'Healthcare Market Research', desc: 'Full-service pharmaceutical market research across 17+ countries.' },
+                { to: '/healthcare-market-research', label: 'Healthcare Market Research', desc: 'Full-service pharmaceutical market research across 38 countries.' },
                 { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Saudi Arabia Pharma Research', desc: 'Pharma market research in Saudi Arabia and the GCC.' },
               ].map((r) => (
                 <Link
@@ -598,7 +598,7 @@ export default function TopObesityMarketResearchCompanies2026() {
             <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
               BioNixus delivers obesity-specific pharmaceutical market research — GLP-1 competitive intelligence,
               anti-obesity medication prescribing studies, patient journey mapping, payer market access strategy,
-              and multi-market HCP surveys across 17+ countries including high-prevalence GCC markets. Global
+              and multi-market HCP surveys across 38 countries including high-prevalence GCC markets. Global
               standards. In-region execution.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
