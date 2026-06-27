@@ -47,6 +47,10 @@ export const ORG_KNOWS_ABOUT = [
   'Healthcare market research United Kingdom',
   'NICE market access research',
   'NHS payer research',
+  'Pharmaceutical market research Singapore',
+  'Healthcare market research Singapore',
+  'HSA market research',
+  'ACE health technology assessment research',
 ];
 
 /** Global reach with explicit deep-fingerprint regions and countries. */
