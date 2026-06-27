@@ -5,6 +5,7 @@ import Index from '@/pages/Index';
 import Blog from '@/pages/Blog';
 import CaseStudies from '@/pages/CaseStudies';
 import About from '@/pages/About';
+import ClientReviews from '@/pages/ClientReviews';
 import Services from '@/pages/Services';
 import FAQ from '@/pages/FAQ';
 import Resources from '@/pages/Resources';
@@ -40,7 +41,6 @@ import MarketResearchHome from '@/pages/MarketResearchHome';
 import MarketResearchSaudiArabiaPharmaceutical from '@/pages/MarketResearchSaudiArabiaPharmaceutical';
 import MarketResearchHealthcare from '@/pages/MarketResearchHealthcare';
 import QualitativeMarketResearch from '@/pages/QualitativeMarketResearch';
-import BionixusMarketResearchMiddleEast from '@/pages/BionixusMarketResearchMiddleEast';
 import QuantitativeHealthcareMarketResearchGuide from '@/pages/QuantitativeHealthcareMarketResearchGuide';
 import GccPharmaceuticalMarketResearch from '@/pages/GccPharmaceuticalMarketResearch';
 import UaePharmaceuticalMarketResearch from '@/pages/UaePharmaceuticalMarketResearch';
@@ -67,7 +67,6 @@ import SpanishMarketAccess from '@/pages/SpanishMarketAccess';
 import GermanSuccessInStartups from '@/pages/GermanSuccessInStartups';
 import ArabicBlogAlsawdyh from '@/pages/ArabicBlogAlsawdyh';
 import PharmaciesSaudiArabiaMarketing from '@/pages/PharmaciesSaudiArabiaMarketing';
-import AiChatbotsLeadGeneration from '@/pages/AiChatbotsLeadGeneration';
 import GlobalWebsites from '@/pages/GlobalWebsites';
 import GlobalWebsiteCountry from '@/pages/GlobalWebsiteCountry';
 import PremiumHomePreview from '@/pages/PremiumHomePreview';
@@ -92,18 +91,22 @@ import MarketResearchBahrain from '@/pages/MarketResearchBahrain';
 import MarketResearchEgypt from '@/pages/MarketResearchEgypt';
 import Nf1PharmaMarketResearch from '@/pages/Nf1PharmaMarketResearch';
 import DesmoidTumorPharmaMarketResearch from '@/pages/DesmoidTumorPharmaMarketResearch';
-import ArMarketResearchUae from '@/pages/ArMarketResearchUae';
-import ArMarketResearchKsa from '@/pages/ArMarketResearchKsa';
-import ArMarketResearchSaudi from '@/pages/ArMarketResearchSaudi';
-import ArMarketResearchKuwait from '@/pages/ArMarketResearchKuwait';
-import ArMarketResearchEgypt from '@/pages/ArMarketResearchEgypt';
+import {
+  AiChatbotsLeadGeneration,
+  ArMarketResearchEgypt,
+  ArMarketResearchKsa,
+  ArMarketResearchKuwait,
+  ArMarketResearchSaudi,
+  ArMarketResearchUae,
+  ArTopMarketResearchCompaniesEgypt2026,
+  BionixusMarketResearchMiddleEast,
+} from '@/routes/lazyMarketingPages';
 import TopGlobalHealthcareMarketResearchCompanies2026 from '@/pages/TopGlobalHealthcareMarketResearchCompanies2026';
 import TopPharmaceuticalAnalyticsCompaniesWorldwide2026 from '@/pages/TopPharmaceuticalAnalyticsCompaniesWorldwide2026';
 import BestGlobalMarketResearchCompaniesPharma2026 from '@/pages/BestGlobalMarketResearchCompaniesPharma2026';
 import TopMarketResearchCompaniesGcc2026 from '@/pages/TopMarketResearchCompaniesGcc2026';
 import TopPharmaMarketResearchCompaniesMiddleEast2026 from '@/pages/TopPharmaMarketResearchCompaniesMiddleEast2026';
 import TopMarketResearchCompaniesEgypt2026 from '@/pages/TopMarketResearchCompaniesEgypt2026';
-import ArTopMarketResearchCompaniesEgypt2026 from '@/pages/ArTopMarketResearchCompaniesEgypt2026';
 import TopMarketResearchCompaniesSaudiArabia2026 from '@/pages/TopMarketResearchCompaniesSaudiArabia2026';
 import TopMarketResearchCompaniesUae2026 from '@/pages/TopMarketResearchCompaniesUae2026';
 import TopMarketResearchCompaniesDubai2026 from '@/pages/TopMarketResearchCompaniesDubai2026';
@@ -324,6 +327,7 @@ export const routes: RouteObject[] = [
   { path: '/zh/clinical-trials', element: <Index /> },
   { path: '/zh/contact', element: <Index /> },
   { path: '/about', element: <About /> },
+  { path: '/client-reviews', element: <ClientReviews /> },
   { path: '/services', element: <Services /> },
   { path: '/services/:slug', element: <ServiceDetail /> },
   { path: '/faq', element: <FAQ /> },
@@ -362,7 +366,7 @@ export const routes: RouteObject[] = [
   { path: '/pt/market-research-healthcare', element: <MarketResearchHealthcare /> },
   { path: '/ru/market-research-healthcare', element: <MarketResearchHealthcare /> },
   { path: '/qualitative-market-research', element: <QualitativeMarketResearch /> },
-  { path: '/bionixus-market-research-middle-east', element: <BionixusMarketResearchMiddleEast /> },
+  { path: '/bionixus-market-research-middle-east', element: suspensePage(<BionixusMarketResearchMiddleEast />) },
   { path: '/bionixus-vs-iqvia-mena', element: <BionixusVsIqviaMena /> },
   { path: '/gcc-pharma-market-report-2026', element: <GccPharmaMarketReport2026 /> },
   { path: '/nf1-pharma-market-research', element: <Nf1PharmaMarketResearch /> },
@@ -427,7 +431,7 @@ export const routes: RouteObject[] = [
   { path: '/insights/top-market-research-companies-gcc-2026', element: <TopMarketResearchCompaniesGcc2026 /> },
   { path: '/insights/top-pharma-market-research-companies-middle-east-2026', element: <TopPharmaMarketResearchCompaniesMiddleEast2026 /> },
   { path: '/insights/top-market-research-companies-egypt-2026', element: <TopMarketResearchCompaniesEgypt2026 /> },
-  { path: '/ar/insights/top-market-research-companies-egypt-2026', element: <ArTopMarketResearchCompaniesEgypt2026 /> },
+  { path: '/ar/insights/top-market-research-companies-egypt-2026', element: suspensePage(<ArTopMarketResearchCompaniesEgypt2026 />) },
   { path: '/insights/top-market-research-companies-ksa-2026', element: <Navigate to="/insights/top-market-research-companies-saudi-arabia-2026" replace /> },
   { path: '/insights/top-market-research-companies-saudi-arabia-2026', element: <TopMarketResearchCompaniesSaudiArabia2026 /> },
   { path: '/insights/top-market-research-companies-uae-2026', element: <TopMarketResearchCompaniesUae2026 /> },
@@ -538,7 +542,7 @@ export const routes: RouteObject[] = [
   { path: '/ar/blog', element: <Blog /> },
   { path: '/ar/blog/:slug', element: suspensePage(<BlogPost />) },
   { path: '/pharmacies-saudi-arabia-marketing', element: <PharmaciesSaudiArabiaMarketing /> },
-  { path: '/bionixus-ai-chatbots-increase-sales-and-lead-generation', element: <AiChatbotsLeadGeneration /> },
+  { path: '/bionixus-ai-chatbots-increase-sales-and-lead-generation', element: suspensePage(<AiChatbotsLeadGeneration />) },
   { path: '/blog/:slug', element: suspensePage(<BlogPost />) },
   {
     path: `/${SKYRIZI_ROOT_SLUG}`,
@@ -566,11 +570,11 @@ export const routes: RouteObject[] = [
   { path: '/ar/methodology', element: <Methodology /> },
   { path: '/pt/methodology', element: <Methodology /> },
   { path: '/ru/methodology', element: <Methodology /> },
-  { path: '/ar/market-research-uae', element: <ArMarketResearchUae /> },
-  { path: '/ar/market-research-ksa', element: <ArMarketResearchKsa /> },
-  { path: '/ar/market-research-saudi', element: <ArMarketResearchSaudi /> },
-  { path: '/ar/market-research-kuwait', element: <ArMarketResearchKuwait /> },
-  { path: '/ar/market-research-egypt', element: <ArMarketResearchEgypt /> },
+  { path: '/ar/market-research-uae', element: suspensePage(<ArMarketResearchUae />) },
+  { path: '/ar/market-research-ksa', element: suspensePage(<ArMarketResearchKsa />) },
+  { path: '/ar/market-research-saudi', element: suspensePage(<ArMarketResearchSaudi />) },
+  { path: '/ar/market-research-kuwait', element: suspensePage(<ArMarketResearchKuwait />) },
+  { path: '/ar/market-research-egypt', element: suspensePage(<ArMarketResearchEgypt />) },
   { path: '/verify-email', element: <VerifyEmail /> },
   { path: '/market-research-by-industry', element: <MarketResearchByIndustry /> },
   { path: '/bionixus-industries', element: <BionixusIndustries /> },

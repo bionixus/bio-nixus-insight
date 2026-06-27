@@ -46,10 +46,15 @@ export function useScrollReveal<T extends HTMLElement = HTMLElement>(
 
     const io = new IntersectionObserver(reveal, { threshold, rootMargin });
 
-    // Observe all children that have the `.sr` class
     const targets = container.querySelectorAll<HTMLElement>('.sr');
     targets.forEach((el, i) => {
       el.dataset.srIndex = String(i);
+      const rect = el.getBoundingClientRect();
+      const inViewport = rect.top < window.innerHeight * 0.92 && rect.bottom > 0;
+      if (inViewport) {
+        el.classList.add('revealed');
+        return;
+      }
       io.observe(el);
     });
 

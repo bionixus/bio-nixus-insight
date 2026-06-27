@@ -1,0 +1,53 @@
+import { ArrowRight, Star, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { BIONIXUS_UK_AGGREGATE_RATING } from '@/data/googleReviewsUk';
+import { HAPPY_CLIENTS_COUNT } from '@/data/clientReviews';
+
+export function ClientReviewsTeaser() {
+  const sectionRef = useScrollReveal<HTMLElement>({ stagger: 80 });
+
+  return (
+    <section
+      id="client-reviews"
+      className="section-padding bg-background border-t border-border"
+      ref={sectionRef}
+      aria-labelledby="client-reviews-teaser-heading"
+    >
+      <div className="container-wide max-w-5xl mx-auto">
+        <div className="rounded-2xl border border-border bg-card p-8 md:p-10 text-center shadow-sm sr sr-up">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3">
+            Client reviews
+          </p>
+          <h2
+            id="client-reviews-teaser-heading"
+            className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-4"
+          >
+            Recommended by more than {HAPPY_CLIENTS_COUNT} happy clients
+          </h2>
+          <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8">
+            Read verified Google reviews from our London office and testimonials from pharmaceutical,
+            biotech, and medtech partners worldwide.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4 mb-8 text-sm text-foreground">
+            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2">
+              <Users className="w-4 h-4 text-primary" aria-hidden="true" />
+              {HAPPY_CLIENTS_COUNT}+ happy clients
+            </span>
+            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2">
+              <Star className="w-4 h-4 fill-amber-400 text-amber-400" aria-hidden="true" />
+              {BIONIXUS_UK_AGGREGATE_RATING.ratingValue.toFixed(1)} on Google
+            </span>
+          </div>
+          <Link
+            to="/client-reviews"
+            className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+          >
+            Read all client reviews
+            <ArrowRight className="w-4 h-4" aria-hidden="true" />
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}

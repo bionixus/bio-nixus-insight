@@ -457,6 +457,19 @@
                 transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
+  /* LCP: paint hero headings/images before scroll-reveal JS runs (PageSpeed mobile). */
+  .sr-lcp,
+  [data-report-hero] h1,
+  [data-report-hero] img,
+  [data-report-hero] figure,
+  [data-hero-lcp] h1,
+  [data-hero-lcp] .premium-fade-up,
+  [data-hero-lcp] .premium-scale-in {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
   /* --- Revealed state (shared) --- */
   .sr.revealed {
     opacity: 1;
@@ -806,6 +819,22 @@
   .report-article-shell article .max-w-5xl,
   .report-article-shell article .max-w-6xl {
     max-width: none;
+  }
+
+  /* Pharma company directory guides — full column width, no nested narrow containers */
+  .pharma-guide-shell article {
+    max-width: none;
+  }
+  .pharma-guide-shell article section > .container-wide,
+  .pharma-guide-shell article .max-w-3xl,
+  .pharma-guide-shell article .max-w-4xl,
+  .pharma-guide-shell article .max-w-5xl,
+  .pharma-guide-shell article .max-w-6xl {
+    max-width: none;
+  }
+  .pharma-guide-shell article section.section-padding {
+    padding-left: 0;
+    padding-right: 0;
   }
   @media (prefers-reduced-motion: reduce) {
     .report-chart-line,

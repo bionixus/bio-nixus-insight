@@ -49,8 +49,8 @@ export default function FrHealthcareMarketResearchFrance() {
       metrics={[
         {
           label: 'Marchés couverts',
-          value: '17+',
-          detail: 'BioNixus livre des études de marché en santé dans 17+ pays dont la France et l\'Europe.',
+          value: '38',
+          detail: 'BioNixus livre des études de marché en santé dans 38 pays dont la France et l\'Europe.',
         },
         {
           label: 'Années d\'expérience',

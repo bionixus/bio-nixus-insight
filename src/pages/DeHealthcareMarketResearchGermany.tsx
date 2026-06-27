@@ -48,8 +48,8 @@ export default function DeHealthcareMarketResearchGermany() {
       metrics={[
         {
           label: 'Abgedeckte Märkte',
-          value: '17+',
-          detail: 'BioNixus liefert Healthcare-Marktforschung in 17+ Ländern, einschließlich Deutschland und Europa.',
+          value: '38',
+          detail: 'BioNixus liefert Healthcare-Marktforschung in 38 Ländern, einschließlich Deutschland und Europa.',
         },
         {
           label: 'Jahre Erfahrung',

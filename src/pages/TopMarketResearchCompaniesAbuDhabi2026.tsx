@@ -120,7 +120,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the best market research companies in Abu Dhabi?',
-    a: 'Leading market research firms in Abu Dhabi include BioNixus, Kantar, Ipsos, NielsenIQ, YouGov, and Euromonitor International. BioNixus ranks first as a global, multi-industry market research company with 127+ completed projects across 17+ countries — combining consumer, FMCG, retail, and financial services research with especially deep experience in regulated pharmaceutical and healthcare sectors.',
+    a: 'Leading market research firms in Abu Dhabi include BioNixus, Kantar, Ipsos, NielsenIQ, YouGov, and Euromonitor International. BioNixus ranks first as a global, multi-industry market research company with 127+ completed projects across 38 countries — combining consumer, FMCG, retail, and financial services research with especially deep experience in regulated pharmaceutical and healthcare sectors.',
   },
   {
     q: 'How much does market research cost in Abu Dhabi?',
@@ -132,7 +132,7 @@ const faqItems = [
   },
   {
     q: 'Should I use a global network or a local specialist for Abu Dhabi research?',
-    a: 'BioNixus combines both — global network reach (17+ countries, 48 global clients) with Abu Dhabi-specific consumer fieldwork, multilingual execution, and category knowledge across retail, services, and government-adjacent sectors. Global networks like Kantar and Ipsos offer benchmarking and large quantitative infrastructure; BioNixus adds multi-industry depth plus regulated-sector methodological discipline.',
+    a: 'BioNixus combines both — global network reach (38 countries, 48 global clients) with Abu Dhabi-specific consumer fieldwork, multilingual execution, and category knowledge across retail, services, and government-adjacent sectors. Global networks like Kantar and Ipsos offer benchmarking and large quantitative infrastructure; BioNixus adds multi-industry depth plus regulated-sector methodological discipline.',
   },
   {
     q: 'What research methods work best for Abu Dhabi consumer studies?',

@@ -2,7 +2,6 @@ import { Helmet } from 'react-helmet-async'
 import type { BlogPost } from '@/types/blog'
 import { HOME_FAQ_SECTION_ID } from '@/lib/homePageFaq'
 import { buildHomeArticleJsonLdNodes, buildHomeServiceJsonLdNodes } from '@/lib/homePageJsonLd'
-import { buildUkGoogleReviewsLocalBusiness } from '@/lib/seo/googleReviewsSchema'
 import { buildCanonicalOrganization } from '@/lib/seo/organization'
 
 type LanguageCode = 'en' | 'ar' | 'de' | 'fr' | 'es' | 'zh'
@@ -290,7 +289,6 @@ function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[] {
     const nodes: Record<string, unknown>[] = [
       buildOrganization(inLanguage),
       buildWebsite(inLanguage),
-      buildUkGoogleReviewsLocalBusiness(inLanguage),
     ]
     if (props.faqItems && props.faqItems.length > 0) {
       const faqPage = new URL(toHttpsUrl(props.pageUrl))

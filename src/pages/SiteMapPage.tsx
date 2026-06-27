@@ -64,9 +64,10 @@ const industryMatrixLinkCount = industryMatrixGroups.reduce((n, g) => n + g.link
 const staticLinks = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
+  { to: '/client-reviews', label: 'Client Reviews' },
   { to: '/services', label: 'Services' },
   { to: '/market-research', label: 'Market Research Hub' },
-  { to: '/market-research-by-industry', label: 'Market Research by Industry (KSA, UAE, Egypt)' },
+  { to: '/market-research-by-industry', label: 'Market Research by Industry (GCC & Egypt)' },
   { to: '/healthcare-market-research/uae', label: 'Market Research UAE' },
   { to: '/market-research-ksa', label: 'Market Research KSA' },
   { to: '/market-research-saudi', label: 'Market Research Saudi' },

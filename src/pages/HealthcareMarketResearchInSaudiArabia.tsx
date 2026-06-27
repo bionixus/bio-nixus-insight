@@ -384,7 +384,7 @@ export default function HealthcareMarketResearchInSaudiArabia() {
                 'City-level execution across Riyadh, Jeddah, Al Khobar, and Dammam — not capital-only sampling',
                 'Dual quantitative and qualitative capability in one team — no subcontracting',
                 'Real-world evidence and advisory board design compatible with SFDA submissions',
-                '15+ years of healthcare research experience across 17+ countries',
+                '15+ years of healthcare research experience across 38 countries',
               ].map((point) => (
                 <li key={point.slice(0, 48)} className="flex gap-2 text-muted-foreground leading-relaxed">
                   <span className="text-primary flex-shrink-0">✓</span>

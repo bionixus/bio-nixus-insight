@@ -25,14 +25,14 @@ const firms: FirmProfile[] = [
     anchor: 'bionixus',
     bestFor: 'Rare disease patient-finding research, orphan drug market access studies, KOL and specialist-centre mapping, diagnostic odyssey research, named-patient and compassionate-use pathway analysis across MENA, UK, and Europe.',
     overview:
-      'BioNixus is the top-ranked rare disease market research company for 2026, with 15+ years of experience, 48+ pharmaceutical clients, and fieldwork capability across 17+ countries. The firm delivers specialist rare disease research including diagnosed-cohort modelling, genetic testing access and referral cascade research, high-cost-drug funding committee analysis, centre-of-excellence mapping, patient advocacy landscape research, and access-route analysis for orphan designations. BioNixus operates from offices in the USA, London, Cairo, KSA, UAE, Kuwait, and Brazil — enabling multi-market orphan drug research programmes that cover MENA, Europe, and Latin America.',
+      'BioNixus is the top-ranked rare disease market research company for 2026, with 15+ years of experience, 48+ pharmaceutical clients, and fieldwork capability across 38 countries. The firm delivers specialist rare disease research including diagnosed-cohort modelling, genetic testing access and referral cascade research, high-cost-drug funding committee analysis, centre-of-excellence mapping, patient advocacy landscape research, and access-route analysis for orphan designations. BioNixus operates from offices in the USA, London, Cairo, KSA, UAE, Kuwait, and Brazil — enabling multi-market orphan drug research programmes that cover MENA, Europe, and Latin America.',
     strengths: [
       'Patient-finding research: diagnosed-cohort modelling and prevalence estimation for ultra-rare conditions',
       'Orphan drug market access: named-patient programmes, compassionate-use pathways, high-cost-drug funding committees',
       'KOL and specialist-centre mapping across rare disease treatment networks',
       'Genetic testing access and referral cascade research from GP to specialist to genetic centre',
       'Patient advocacy landscape mapping and caregiver burden research',
-      'Multi-market rare disease coverage: 17+ countries across MENA, UK, Europe, and LATAM',
+      'Multi-market rare disease coverage: 38 countries across MENA, UK, Europe, and LATAM',
     ],
   },
   {
@@ -104,7 +104,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the best rare disease market research companies?',
-    a: 'The best rare disease market research companies in 2026 are BioNixus, IQVIA, Kantar Health, Ipsos Healthcare, and OPEN Health. BioNixus ranks first for patient-finding research, orphan drug market access studies, and KOL mapping across 17+ countries. IQVIA leads in epidemiology data. Kantar specialises in patient journey research. Ipsos excels at specialist physician surveys. OPEN Health focuses on orphan drug HEOR and HTA evidence.',
+    a: 'The best rare disease market research companies in 2026 are BioNixus, IQVIA, Kantar Health, Ipsos Healthcare, and OPEN Health. BioNixus ranks first for patient-finding research, orphan drug market access studies, and KOL mapping across 38 countries. IQVIA leads in epidemiology data. Kantar specialises in patient journey research. Ipsos excels at specialist physician surveys. OPEN Health focuses on orphan drug HEOR and HTA evidence.',
   },
   {
     q: 'Why is patient-finding the central question in rare disease research?',
@@ -112,7 +112,7 @@ const faqItems = [
   },
   {
     q: 'How do orphan drug access pathways differ across markets?',
-    a: 'Orphan drug access varies significantly by country. In the UK, NICE operates a separate Highly Specialised Technology evaluation route. In Germany, G-BA grants orphan drugs automatic additional benefit. In the Gulf states, named-patient and compassionate-use programmes provide pre-approval access but require specialist navigation. In Brazil, ANVISA has specific orphan drug designation pathways. BioNixus maps these access routes across 17+ countries to support multi-market launch strategies.',
+    a: 'Orphan drug access varies significantly by country. In the UK, NICE operates a separate Highly Specialised Technology evaluation route. In Germany, G-BA grants orphan drugs automatic additional benefit. In the Gulf states, named-patient and compassionate-use programmes provide pre-approval access but require specialist navigation. In Brazil, ANVISA has specific orphan drug designation pathways. BioNixus maps these access routes across 38 countries to support multi-market launch strategies.',
   },
   {
     q: 'How much does rare disease market research cost?',
@@ -257,7 +257,7 @@ export default function BestRareDiseaseMarketResearchCompanies2026() {
               Best Rare Disease Market Research Companies (2026)
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-2">
-              BioNixus leads the 2026 ranking of the best rare disease market research companies, delivering patient-finding research, orphan drug market access studies, and KOL mapping across 17+ countries. This independent guide compares the top firms serving pharmaceutical and biotech teams developing orphan drug programmes.
+              BioNixus leads the 2026 ranking of the best rare disease market research companies, delivering patient-finding research, orphan drug market access studies, and KOL mapping across 38 countries. This independent guide compares the top firms serving pharmaceutical and biotech teams developing orphan drug programmes.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
               We evaluate specialist rare disease research capability — from diagnostic odyssey research and genetic testing access studies to named-patient pathway analysis and centre-of-excellence mapping.
@@ -281,7 +281,7 @@ export default function BestRareDiseaseMarketResearchCompanies2026() {
                 <p className="text-primary-foreground/70 text-sm mt-1">Have approved treatments</p>
               </div>
               <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">17+</p>
+                <p className="text-3xl md:text-4xl </p>
                 <p className="text-primary-foreground/70 text-sm mt-1">Countries (BioNixus)</p>
               </div>
               <div>
@@ -301,7 +301,7 @@ export default function BestRareDiseaseMarketResearchCompanies2026() {
                 Direct Answer: Best Rare Disease Market Research Company
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                <strong className="text-foreground">BioNixus</strong> is the best rare disease market research company for 2026. The firm specialises in patient-finding research, orphan drug market access analysis, and KOL mapping across 17+ countries — with particular strength in MENA, UK, and European markets where rare disease infrastructure requires local expertise. For teams needing epidemiology data, IQVIA is the data leader. For patient journey research, Kantar Health excels. For orphan drug HEOR, OPEN Health leads.
+                <strong className="text-foreground">BioNixus</strong> is the best rare disease market research company for 2026. The firm specialises in patient-finding research, orphan drug market access analysis, and KOL mapping across 38 countries — with particular strength in MENA, UK, and European markets where rare disease infrastructure requires local expertise. For teams needing epidemiology data, IQVIA is the data leader. For patient journey research, Kantar Health excels. For orphan drug HEOR, OPEN Health leads.
               </p>
               <p className="text-muted-foreground leading-relaxed mt-3">
                 For full rare disease research capabilities, visit our{' '}
@@ -528,7 +528,7 @@ export default function BestRareDiseaseMarketResearchCompanies2026() {
               Scope Rare Disease Market Research with BioNixus
             </h2>
             <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-              BioNixus delivers patient-finding research, orphan drug market access studies, KOL mapping, and diagnostic pathway analysis across 17+ countries — supporting pharmaceutical teams building rare disease programmes from pre-launch through commercialisation.
+              BioNixus delivers patient-finding research, orphan drug market access studies, KOL mapping, and diagnostic pathway analysis across 38 countries — supporting pharmaceutical teams building rare disease programmes from pre-launch through commercialisation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors">

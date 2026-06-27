@@ -307,7 +307,7 @@ export default function HealthcareMarketResearchUsa() {
                 'Deep FDA, CMS, PBM, and IRA regulatory context built into study design',
                 'Dual quantitative and qualitative capability in one team — no subcontracting',
                 'HEOR and RWE program design compatible with FDA, CMS, and ICER evidence requirements',
-                '15+ years of healthcare research experience across 17+ countries',
+                '15+ years of healthcare research experience across 38 countries',
                 'Global benchmarking capability — US studies connect to UK, EU5, Brazil, Saudi Arabia, UAE',
               ].map((point) => (
                 <li key={point.slice(0, 48)} className="flex gap-2 text-muted-foreground leading-relaxed">

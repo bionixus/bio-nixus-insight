@@ -512,7 +512,7 @@ export default function BestGlobalMarketResearchCompaniesPharma2026() {
               Scope Pharmaceutical Market Research with BioNixus
             </h2>
             <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-              BioNixus delivers the best pharmaceutical market research across 17+ countries — rigorous methodology, regulatory-aware fieldwork, multilingual execution, and research-to-strategy integration for global pharma teams.
+              BioNixus delivers the best pharmaceutical market research across 38 countries — rigorous methodology, regulatory-aware fieldwork, multilingual execution, and research-to-strategy integration for global pharma teams.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors">

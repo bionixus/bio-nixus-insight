@@ -152,7 +152,7 @@ const content: GeneralMRPageContent = {
   whyBionixus: {
     heading: 'Why BioNixus is among the leading research companies in UAE',
     points: [
-      'Global market research company — USA HQ, UK and Middle East offices — with 15+ years of experience across 17+ countries',
+      'Global market research company — USA HQ, UK and Middle East offices — with 15+ years of experience across 38 countries',
       'Primary research capability: custom study design and fieldwork across all major UAE consumer and B2B industries',
       'Multilingual UAE panels covering Arabic, English, South Asian, and Filipino consumer segments',
       'Multi-industry expertise: FMCG, retail, BFSI, telecom, real estate, automotive, hospitality, technology, and healthcare',

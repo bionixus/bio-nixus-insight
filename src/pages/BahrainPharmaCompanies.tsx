@@ -18,6 +18,7 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { PHARMA_GUIDE_ARTICLE_CONTAINER, PHARMA_GUIDE_INNER, PHARMA_GUIDE_SECTION_X } from '@/components/report-conversion/constants';
 
 const PHARMA_CONVERSION = getPharmaGuideConfig('bahrain');
 
@@ -88,12 +89,12 @@ const BahrainPharmaCompanies = () => {
       <Navbar />
       <ReportReadingProgress progressId="pharma-guide-rp-bahrain" />
       <main>
-        <div className="section-padding pt-24 pb-4"><div className="container-wide"><div className="flex items-center gap-2 text-sm text-muted-foreground mb-6"><Link to={basePath} className="hover:text-primary transition-colors">Home</Link><span>/</span><Link to="/resources" className="hover:text-primary transition-colors">Resources</Link><span>/</span><span className="text-foreground">Pharmaceutical Companies in Bahrain</span></div></div></div>
+        <div className={`${PHARMA_GUIDE_SECTION_X} pt-24 pb-4`}><div className={PHARMA_GUIDE_INNER}><div className="flex items-center gap-2 text-sm text-muted-foreground mb-6"><Link to={basePath} className="hover:text-primary transition-colors">Home</Link><span>/</span><Link to="/resources" className="hover:text-primary transition-colors">Resources</Link><span>/</span><span className="text-foreground">Pharmaceutical Companies in Bahrain</span></div></div></div>
 
-        <section className="section-padding pt-0 pb-12"><div className="container-wide max-w-5xl mx-auto">
+        <section className={`${PHARMA_GUIDE_SECTION_X} pt-0 pb-12`}><div className={PHARMA_GUIDE_INNER}>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6"><Building2 className="w-4 h-4" />Industry Guide 2026</div>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">Pharmaceutical Companies in Bahrain</h1>
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">Pharmaceutical companies in Bahrain operate in a compact, NHRA-regulated GCC market — see <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">healthcare market research</Link> for Gulf-wide context. This guide covers major pharma companies, a $0.3B market growing at 5.8%, distribution channels, and strategic advantages including proximity to Saudi Arabia.</p>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-5xl">Pharmaceutical Companies in Bahrain</h1>
+          <p className="text-lg text-muted-foreground leading-relaxed max-w-4xl mb-4">Pharmaceutical companies in Bahrain operate in a compact, NHRA-regulated GCC market — see <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">healthcare market research</Link> for Gulf-wide context. This guide covers major pharma companies, a $0.3B market growing at 5.8%, distribution channels, and strategic advantages including proximity to Saudi Arabia.</p>
           <p className="text-sm text-muted-foreground">Last updated: February 2026 &middot; Sources: NHRA, BioNixus MEA, company filings, BioNixus research</p>
           <div className="mt-8 p-5 bg-muted/50 border border-border rounded-xl"><div className="flex items-start gap-3"><Share2 className="w-5 h-5 text-primary mt-0.5 shrink-0" /><div><p className="font-semibold text-foreground text-sm mb-1">Cite this guide</p><p className="text-sm text-muted-foreground leading-relaxed">BioNixus. &quot;Pharmaceutical Companies in Bahrain: Complete Industry Guide 2026.&quot; BioNixus Healthcare Market Research, Feb. 2026, <a href={citationUrl} className="text-primary hover:underline break-all">{citationUrl}</a>.<br />Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">CC BY 4.0</a> — free to share and adapt with attribution.</p></div></div></div>
           <ReportEarlyCtaBar config={PHARMA_CONVERSION} className="mt-8" /></div></section>
@@ -107,15 +108,15 @@ const BahrainPharmaCompanies = () => {
           extraSentence="Proximity to Saudi Arabia makes Bahrain a useful GCC access planning market despite its smaller population."
         />
 
-        <ReportContentWithAside config={PHARMA_CONVERSION}>
-        <section className="section-padding py-12 bg-primary text-primary-foreground"><div className="container-wide max-w-5xl mx-auto"><div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <ReportContentWithAside config={PHARMA_CONVERSION} containerClassName={PHARMA_GUIDE_ARTICLE_CONTAINER}>
+        <section className="py-12 bg-primary text-primary-foreground"><div className="container-wide w-full"><div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div><p className="text-3xl md:text-4xl font-display font-bold">$0.3B</p><p className="text-primary-foreground/70 text-sm mt-1">Pharmaceutical market value</p></div>
           <div><p className="text-3xl md:text-4xl font-display font-bold">5.8%</p><p className="text-primary-foreground/70 text-sm mt-1">Year-over-year growth</p></div>
           <div><p className="text-3xl md:text-4xl font-display font-bold">1.6M</p><p className="text-primary-foreground/70 text-sm mt-1">Population</p></div>
           <div><p className="text-3xl md:text-4xl font-display font-bold">$188</p><p className="text-primary-foreground/70 text-sm mt-1">Pharma spending per capita</p></div>
         </div></div></section>
 
-        <section className="section-padding py-8 bg-muted/30"><div className="container-wide max-w-5xl mx-auto">
+        <section className="section-padding py-8 bg-muted/30"><div className="container-wide w-full">
           <h2 className="text-lg font-display font-semibold text-foreground mb-4">In this guide</h2>
           <div className="grid md:grid-cols-2 gap-2">
             <a href="#market-overview" className="text-sm text-primary hover:underline flex items-center gap-2"><BarChart3 className="w-4 h-4" /> Bahrain Pharmaceutical Market Overview</a>
@@ -129,7 +130,7 @@ const BahrainPharmaCompanies = () => {
           </div>
         </div></section>
 
-        <section className="section-padding py-16" id="market-overview"><div className="container-wide max-w-5xl mx-auto">
+        <section className="section-padding py-16" id="market-overview"><div className="container-wide w-full">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">Bahrain Pharmaceutical Market Overview</h2>
           <div className="prose-body text-muted-foreground leading-relaxed space-y-4 max-w-4xl">
             <p>Bahrain&apos;s pharmaceutical market is the <strong className="text-foreground">smallest in the GCC</strong> but well-regulated, valued at approximately <strong className="text-foreground">US$0.3 billion</strong> and growing at <strong className="text-foreground">5.8% year-over-year</strong>. With a population of 1.6 million and per-capita pharmaceutical spending of <strong className="text-foreground">$188</strong>, Bahrain is a compact market where the <strong className="text-foreground">National Health Regulatory Authority (NHRA)</strong> operates as a modern regulator aligned with regional standards.</p>
@@ -138,7 +139,7 @@ const BahrainPharmaCompanies = () => {
           </div>
         </div></section>
 
-        <section className="section-padding py-16 bg-muted/30" id="top-companies"><div className="container-wide max-w-5xl mx-auto">
+        <section className="section-padding py-16 bg-muted/30" id="top-companies"><div className="container-wide w-full">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">Top Pharmaceutical Companies in Bahrain</h2>
           <p className="text-muted-foreground mb-8 max-w-3xl">The following table lists the major pharmaceutical companies operating in Bahrain — including local manufacturers, multinational offices, regional players, and leading distributors.</p>
           <div className="overflow-x-auto rounded-xl border border-border"><table className="w-full text-sm"><thead><tr className="bg-primary/5 border-b border-border"><th className="text-left px-4 py-3 font-semibold text-foreground">Company</th><th className="text-left px-4 py-3 font-semibold text-foreground">HQ</th><th className="text-left px-4 py-3 font-semibold text-foreground hidden md:table-cell">Type</th><th className="text-left px-4 py-3 font-semibold text-foreground hidden lg:table-cell">Therapeutic Areas</th><th className="text-left px-4 py-3 font-semibold text-foreground hidden xl:table-cell">Notes</th></tr></thead><tbody>
@@ -148,7 +149,7 @@ const BahrainPharmaCompanies = () => {
 
         <ReportMidPageCta config={PHARMA_CONVERSION} />
 
-        <section className="section-padding py-16" id="companies-by-category"><div className="container-wide max-w-5xl mx-auto">
+        <section className="section-padding py-16" id="companies-by-category"><div className="container-wide w-full">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">List of Pharmaceutical Companies in Bahrain by Category</h2>
           <p className="text-muted-foreground mb-10 max-w-3xl">Bahrain pharmaceutical companies span local manufacturers, multinational corporation offices, regional suppliers, and key distributors.</p>
           <div className="grid md:grid-cols-2 gap-8">
@@ -159,7 +160,7 @@ const BahrainPharmaCompanies = () => {
           </div>
         </div></section>
 
-        <section className="section-padding py-16 bg-muted/30" id="regulatory-landscape"><div className="container-wide max-w-5xl mx-auto">
+        <section className="section-padding py-16 bg-muted/30" id="regulatory-landscape"><div className="container-wide w-full">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">Pharma Companies in Bahrain: NHRA Regulatory Landscape</h2>
           <p className="text-muted-foreground mb-10 max-w-3xl">The National Health Regulatory Authority (NHRA) is Bahrain&apos;s pharmaceutical regulator, with a modern framework aligned with GCC and international standards.</p>
           <div className="grid md:grid-cols-2 gap-8 mb-10">
@@ -169,7 +170,7 @@ const BahrainPharmaCompanies = () => {
           <div className="bg-card border border-border rounded-xl p-6"><h3 className="text-lg font-display font-semibold text-foreground mb-3">Vision 2030 &amp; NHRA Modernisation</h3><p className="text-sm text-muted-foreground leading-relaxed">Bahrain&apos;s Economic Vision 2030 includes a healthcare pillar supporting <strong className="text-foreground">NHRA regulatory modernisation</strong>, growing health insurance, and digital health. The free zone and logistics hub status, plus proximity to Saudi Arabia, support market access. For full GCC registration details, see our <Link to="/gcc-market-access-guide" className="text-primary hover:underline">GCC Pharmaceutical Market Access Guide</Link>.</p></div>
         </div></section>
 
-        <section className="section-padding py-16" id="distribution-channels"><div className="container-wide max-w-5xl mx-auto">
+        <section className="section-padding py-16" id="distribution-channels"><div className="container-wide w-full">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">Drug Distribution Channels in Bahrain</h2>
           <p className="text-muted-foreground mb-10 max-w-3xl">Bahrain&apos;s pharmaceutical distribution is government-dominant, with the private sector growing.</p>
           <div className="grid md:grid-cols-2 gap-8">
@@ -178,7 +179,7 @@ const BahrainPharmaCompanies = () => {
           </div>
         </div></section>
 
-        <section className="section-padding py-16" id="growth-drivers"><div className="container-wide max-w-5xl mx-auto">
+        <section className="section-padding py-16" id="growth-drivers"><div className="container-wide w-full">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">Bahrain Pharmaceutical Market Growth Drivers</h2>
           <p className="text-muted-foreground mb-10 max-w-3xl">Vision 2030, NHRA modernisation, and strategic location drive growth in Bahrain&apos;s pharmaceutical sector.</p>
           <div className="grid md:grid-cols-3 gap-6">{[
@@ -191,7 +192,7 @@ const BahrainPharmaCompanies = () => {
           ].map((d) => (<div key={d.title} className="bg-card border border-border rounded-xl p-6"><h3 className="text-lg font-display font-semibold text-foreground mb-3">{d.title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{d.desc}</p></div>))}</div>
         </div></section>
 
-        <section className="section-padding py-16" id="bionixus-support"><div className="container-wide max-w-5xl mx-auto">
+        <section className="section-padding py-16" id="bionixus-support"><div className="container-wide w-full">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">How BioNixus Supports Pharma Companies in Bahrain</h2>
           <p className="text-muted-foreground mb-10 max-w-3xl">BioNixus is a leading healthcare market research company with expertise in the Bahrain and GCC pharmaceutical markets. We help pharma, biotech, and medtech companies with:</p>
           <div className="grid md:grid-cols-2 gap-6 mb-10">{[
@@ -202,7 +203,7 @@ const BahrainPharmaCompanies = () => {
           ].map((s) => (<div key={s.title} className="bg-card border border-border rounded-xl p-6"><h3 className="text-lg font-display font-semibold text-foreground mb-3">{s.title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p></div>))}</div>
         </div></section>
 
-        <section className="section-padding py-16" id="gcc-directories"><div className="container-wide max-w-5xl mx-auto">
+        <section className="section-padding py-16" id="gcc-directories"><div className="container-wide w-full">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">Pharmaceutical companies across the GCC</h2>
           <p className="text-muted-foreground mb-8 max-w-3xl">Compare the Bahrain pharmaceutical industry with BioNixus company directories for the other Gulf and MENA markets.</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -218,7 +219,7 @@ const BahrainPharmaCompanies = () => {
         <PharmaCompaniesFaqSection items={faqItems} />
 
         <PharmaCompaniesGccHubLinks country="bahrain" />
-        <section className="section-padding py-12" id="methodology"><div className="container-wide max-w-5xl mx-auto"><div className="bg-card border border-border rounded-xl p-8"><h2 className="text-xl font-display font-semibold text-foreground mb-4 flex items-center gap-2"><BookOpen className="w-5 h-5 text-primary" />Data Sources &amp; Methodology</h2><p className="text-sm text-muted-foreground leading-relaxed mb-4">This guide aggregates publicly available information from:</p><ul className="text-sm text-muted-foreground space-y-2 mb-6"><li>BioNixus Middle East &amp; Africa Pharmaceutical Market Report</li><li>NHRA — National Health Regulatory Authority (Bahrain)</li><li>Bahrain Economic Vision 2030 documentation</li><li>Company and distributor sources</li><li>BioNixus proprietary research (Bahrain &amp; GCC, 2024–2025)</li></ul><p className="text-sm text-muted-foreground leading-relaxed">For customised market intelligence on Bahrain, <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.</p></div></div></section>
+        <section className="section-padding py-12" id="methodology"><div className="container-wide w-full"><div className="bg-card border border-border rounded-xl p-8"><h2 className="text-xl font-display font-semibold text-foreground mb-4 flex items-center gap-2"><BookOpen className="w-5 h-5 text-primary" />Data Sources &amp; Methodology</h2><p className="text-sm text-muted-foreground leading-relaxed mb-4">This guide aggregates publicly available information from:</p><ul className="text-sm text-muted-foreground space-y-2 mb-6"><li>BioNixus Middle East &amp; Africa Pharmaceutical Market Report</li><li>NHRA — National Health Regulatory Authority (Bahrain)</li><li>Bahrain Economic Vision 2030 documentation</li><li>Company and distributor sources</li><li>BioNixus proprietary research (Bahrain &amp; GCC, 2024–2025)</li></ul><p className="text-sm text-muted-foreground leading-relaxed">For customised market intelligence on Bahrain, <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.</p></div></div></section>
         </ReportContentWithAside>
 
         <ReportConsultationBand config={PHARMA_CONVERSION} />

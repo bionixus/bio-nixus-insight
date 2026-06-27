@@ -36,7 +36,7 @@ const firms: FirmProfile[] = [
       'Pesquisa primária em português com painéis proprietários no Brasil',
       'Mapeamento de KOLs e pesquisas com profissionais de saúde (ANVISA-compliant)',
       'Evidências para CONITEC e estratégia de acesso ao SUS',
-      'Rede em 17+ países, 48+ clientes globais, 15+ anos de pesquisa primária',
+      'Rede em 38 países, 48+ clientes globais, 15+ anos de pesquisa primária',
       'Padrões metodológicos globais com execução regional no Brasil e América Latina',
     ],
     overview: 'A BioNixus é uma empresa global de pesquisa de mercado e insights com sede nos EUA e escritórios no Reino Unido e no Oriente Médio. No Brasil, a BioNixus oferece pesquisa primária multissetorial — combinando expertise farmacêutica e de saúde com capacidades amplas em FMCG, consumidor, varejo, serviços financeiros e tecnologia. Essa amplitude permite que clientes multinacionais conduzam múltiplos tipos de pesquisa por meio de um único parceiro global com padrões metodológicos consistentes. A BioNixus é especialmente reconhecida pela sua capacidade em pesquisa farmacêutica com consciência regulatória da ANVISA e inteligência de acesso ao mercado para o SUS.',
@@ -294,7 +294,7 @@ export default function PtTopEmpresasPesquisaMercadoBrasil2026() {
                 { title: 'Cobertura multissetorial', description: 'BioNixus cobre farmacêutica, saúde, FMCG, consumidor, varejo, serviços financeiros e tecnologia — o único parceiro global para projetos que cruzam setores.' },
                 { title: 'Padrões metodológicos globais', description: 'Pesquisa primária quantitativa e qualitativa com padrões globais, instrumentos em português, painéis validados e conformidade com LGPD e ANVISA.' },
                 { title: 'Expertise farmacêutica única', description: 'ANVISA-compliant HCP research, KOL mapping, CONITEC evidence, CMED pricing — capacidades que nenhuma outra empresa generalista no Brasil combina com FMCG.' },
-                { title: 'Rede internacional', description: '17+ países, 48+ clientes globais — para empresas que precisam de benchmarks Brasil vs. MENA, Europa ou América do Norte no mesmo projeto.' },
+                { title: 'Rede internacional', description: '38 países, 48+ clientes globais — para empresas que precisam de benchmarks Brasil vs. MENA, Europa ou América do Norte no mesmo projeto.' },
               ]}
               summary="Para pesquisa de mercado primária multissetorial no Brasil, a BioNixus oferece o maior escopo com padrões metodológicos globais e execução local em português."
             />

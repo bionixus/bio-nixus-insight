@@ -3,6 +3,7 @@ import path from 'node:path';
 import { canonicalRedirectTarget, isSsrNotFoundPage } from '../seo-noise-query.mjs';
 import { BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH, BLOG_LEGACY_FULL_PATH_REDIRECTS } from '../blog-legacy-redirects.mjs';
 import { normalizeOgCardPath, renderOgCardSvg } from '../lib/og-card-svg.mjs';
+import { buildLcpPreloadTag, getClientAssetHints } from '../lib/ssr-client-asset-hints.mjs';
 
 type HelmetLike = {
   title?: { toString: () => string };
@@ -28,29 +29,9 @@ type RequestLike = {
 
 let templateCache = '';
 let serverEntryCache: ServerEntryModule | null = null;
-let clientAssetHintsCache = '';
 
-function getClientAssetHints(): string {
-  if (clientAssetHintsCache) return clientAssetHintsCache;
-  const assetsDir = path.join(process.cwd(), 'dist', 'client', 'assets');
-  if (!fs.existsSync(assetsDir)) {
-    clientAssetHintsCache = '<link rel="modulepreload" href="/assets/index.js" crossorigin>';
-    return clientAssetHintsCache;
-  }
-  const files = fs.readdirSync(assetsDir);
-  const cssFile = files.find((f) => /^index-.*\.css$/.test(f));
-  const hints = ['<link rel="modulepreload" href="/assets/index.js" crossorigin>'];
-  if (cssFile) {
-    hints.push(`<link rel="stylesheet" href="/assets/${cssFile}">`);
-  }
-  clientAssetHintsCache = hints.join('\n');
-  return clientAssetHintsCache;
-}
-
-function buildLcpPreloadTag(initialData: Record<string, unknown>): string {
-  const url = initialData.lcpPreloadImageUrl;
-  if (typeof url !== 'string' || !url.trim()) return '';
-  return `<link rel="preload" as="image" href="${escapeHtmlAttribute(url)}" fetchpriority="high">`;
+function getCachedClientAssetHints(): string {
+  return getClientAssetHints(path.join(process.cwd(), 'dist', 'client', 'assets'));
 }
 
 function insertShareFigureAfterHero(mainInner: string, figureHtml: string): string {
@@ -656,7 +637,7 @@ function injectHtml(
     helmetData?.script?.toString() || '',
   ].join('\n');
 
-  const perfHints = [getClientAssetHints(), buildLcpPreloadTag(initialData)].filter(Boolean).join('\n');
+  const perfHints = [getCachedClientAssetHints(), buildLcpPreloadTag(initialData)].filter(Boolean).join('\n');
   const combinedHead = perfHints ? `${perfHints}\n${headTags}` : headTags;
 
   const page = template

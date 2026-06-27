@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { PHARMA_GUIDE_INNER, PHARMA_GUIDE_SECTION_X } from '@/components/report-conversion/constants';
 
 export type PharmaCompaniesCountrySlug =
   | 'kuwait'
@@ -47,8 +48,8 @@ export function PharmaCompaniesGccHubLinks({ country }: Props) {
   const peers = PEER_SLUGS.filter((slug) => slug !== country);
 
   return (
-    <section className="section-padding py-12 bg-muted/30" id="gcc-pharma-resources" aria-labelledby="gcc-pharma-resources-heading">
-      <div className="container-wide max-w-5xl mx-auto">
+    <section className={`${PHARMA_GUIDE_SECTION_X} py-12 bg-muted/30`} id="gcc-pharma-resources" aria-labelledby="gcc-pharma-resources-heading">
+      <div className={PHARMA_GUIDE_INNER}>
         <h2 id="gcc-pharma-resources-heading" className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">
           GCC pharmaceutical market research &amp; peer country directories
         </h2>

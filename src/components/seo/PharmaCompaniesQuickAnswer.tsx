@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import type { PharmaCompaniesCountrySlug } from '@/components/seo/PharmaCompaniesGccHubLinks';
 import { COUNTRY_LABELS } from '@/components/seo/pharmaCompaniesCountryLabels';
+import { PHARMA_GUIDE_INNER, PHARMA_GUIDE_SECTION_X } from '@/components/report-conversion/constants';
 
 type Props = {
   country: PharmaCompaniesCountrySlug;
@@ -27,11 +28,11 @@ export function PharmaCompaniesQuickAnswer({
 
   return (
     <section
-      className="section-padding py-10 bg-muted/25 border-y border-border/60"
+      className={`${PHARMA_GUIDE_SECTION_X} py-10 bg-muted/25 border-y border-border/60`}
       id="pharma-companies-quick-answer"
       aria-labelledby="pharma-quick-answer-heading"
     >
-      <div className="container-wide max-w-5xl mx-auto">
+      <div className={PHARMA_GUIDE_INNER}>
         <h2
           id="pharma-quick-answer-heading"
           className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4"

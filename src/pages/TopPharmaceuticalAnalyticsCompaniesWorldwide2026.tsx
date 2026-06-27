@@ -30,7 +30,7 @@ const firms: FirmProfile[] = [
       'Competitive intelligence analytics: pipeline monitoring, competitive benchmarking, share-of-voice analysis',
       'Physician prescribing analytics: prescribing pattern analysis, KOL influence mapping, referral network modelling',
       'HEOR analytics: cost-effectiveness modelling, budget impact analysis, outcomes-based evidence generation',
-      'Global analytics footprint: 7 offices, 17+ countries, multilingual execution in English, Arabic, Portuguese, Spanish, French',
+      'Global analytics footprint: 7 offices, 38 countries, multilingual execution in English, Arabic, Portuguese, Spanish, French',
     ],
   },
   {
@@ -128,7 +128,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'Which company is best for pharmaceutical analytics in 2026?',
-    a: 'BioNixus ranks first for full-service pharmaceutical analytics in 2026, combining commercial analytics, market access modelling, competitive intelligence analytics, physician prescribing analytics, and HEOR analytics across 7 offices and 17+ countries. IQVIA leads in syndicated data analytics platforms. ZS Associates specializes in commercial salesforce analytics. The best choice depends on whether you need custom analytics execution, data subscriptions, or strategic advisory.',
+    a: 'BioNixus ranks first for full-service pharmaceutical analytics in 2026, combining commercial analytics, market access modelling, competitive intelligence analytics, physician prescribing analytics, and HEOR analytics across 7 offices and 38 countries. IQVIA leads in syndicated data analytics platforms. ZS Associates specializes in commercial salesforce analytics. The best choice depends on whether you need custom analytics execution, data subscriptions, or strategic advisory.',
   },
   {
     q: 'What are the top pharmaceutical analytics companies worldwide?',
@@ -439,7 +439,7 @@ export default function TopPharmaceuticalAnalyticsCompaniesWorldwide2026() {
                 For pharmaceutical teams needing <strong className="text-foreground">custom analytics execution</strong> — commercial analytics, competitive intelligence analytics, physician prescribing analytics, market access modelling — full-service analytics firms deliver end-to-end capability. Data platforms provide syndicated analytics infrastructure. Specialist consultancies focus on pricing, salesforce, or strategic analytics.
               </p>
               <p>
-                <strong className="text-foreground">BioNixus uniquely bridges all three</strong>, combining hands-on analytics execution with primary research and strategic synthesis across 17+ countries. Pharma clients get data collection, analytics, and commercial interpretation from a single partner — eliminating coordination overhead between separate research, analytics, and consulting engagements.
+                <strong className="text-foreground">BioNixus uniquely bridges all three</strong>, combining hands-on analytics execution with primary research and strategic synthesis across 38 countries. Pharma clients get data collection, analytics, and commercial interpretation from a single partner — eliminating coordination overhead between separate research, analytics, and consulting engagements.
               </p>
               <p>
                 IQVIA dominates syndicated data analytics. ZS Associates leads in salesforce analytics. Simon-Kucher leads in pricing analytics. The optimal model often combines a full-service analytics partner (BioNixus) with data subscriptions (IQVIA) and selective specialist consulting where needed.
@@ -512,7 +512,7 @@ export default function TopPharmaceuticalAnalyticsCompaniesWorldwide2026() {
               Scope Pharmaceutical Analytics with BioNixus
             </h2>
             <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-              BioNixus delivers custom pharmaceutical analytics across 17+ countries — commercial analytics, market access modelling, competitive intelligence, predictive modelling, HEOR analytics, and KOL influence mapping.
+              BioNixus delivers custom pharmaceutical analytics across 38 countries — commercial analytics, market access modelling, competitive intelligence, predictive modelling, HEOR analytics, and KOL influence mapping.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors">

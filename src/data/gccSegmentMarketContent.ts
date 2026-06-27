@@ -196,7 +196,7 @@ const genericInjectables: GccSegmentContent = {
     'Tender-decision and formulary-committee research methodologies built for hospital-administered products',
     'Deep working knowledge of NUPCO, Rafed, and GCC group-purchasing mechanics',
     'Bilingual Arabic–English fieldwork with clinically validated instruments',
-    '15+ years of healthcare research experience across 17+ countries',
+    '15+ years of healthcare research experience across 38 countries',
   ],
   relatedLinks: [
     { to: '/gcc-biopharmaceuticals-market', label: 'GCC Biopharmaceuticals Market' },
@@ -380,7 +380,7 @@ const pharmacy: GccSegmentContent = {
     'Shopper, category, and claim-testing methodologies for OTC and self-care',
     'E-pharmacy and digital-shelf research for the Gulf\'s fast-growing online channel',
     'Bilingual Arabic–English fieldwork with culturally validated instruments',
-    '15+ years of healthcare and consumer research across 17+ countries',
+    '15+ years of healthcare and consumer research across 38 countries',
   ],
   relatedLinks: [
     { to: '/gcc-generic-injectables-market', label: 'GCC Generic Injectables Market' },
@@ -564,7 +564,7 @@ const clinicalTrials: GccSegmentContent = {
     'Therapy-area expertise spanning oncology, rare disease, metabolic, and immunology',
     'Working knowledge of SFDA, NCBE, and Gulf ethics-committee practice',
     'Bilingual Arabic–English fieldwork with clinically literate researchers',
-    '15+ years of healthcare research experience across 17+ countries',
+    '15+ years of healthcare research experience across 38 countries',
   ],
   relatedLinks: [
     { to: '/gcc-personalized-medicine-market', label: 'GCC Personalized Medicine Market' },
@@ -748,7 +748,7 @@ const personalizedMedicine: GccSegmentContent = {
     'Companion-diagnostic and biomarker-access research methodologies',
     'Working knowledge of SFDA, NUPCO, and Gulf reimbursement for diagnostics and targeted therapies',
     'Bilingual Arabic–English fieldwork with clinically literate researchers',
-    '15+ years of healthcare research experience across 17+ countries',
+    '15+ years of healthcare research experience across 38 countries',
   ],
   relatedLinks: [
     { to: '/gcc-clinical-trials-market', label: 'GCC Clinical Trials Market' },
@@ -932,7 +932,7 @@ const biopharmaceuticals: GccSegmentContent = {
     'Biosimilar substitution and localization-landscape methodologies',
     'Working knowledge of SFDA, NUPCO, Rafed, and Gulf reimbursement for biologics',
     'Bilingual Arabic–English fieldwork with clinically validated instruments',
-    '15+ years of healthcare research experience across 17+ countries',
+    '15+ years of healthcare research experience across 38 countries',
   ],
   relatedLinks: [
     { to: '/gcc-generic-injectables-market', label: 'GCC Generic Injectables Market' },

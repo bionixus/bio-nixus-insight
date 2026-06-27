@@ -53,7 +53,7 @@ export const kuwaitHealthcareEn: CountryListicleConfig = {
       bestFor:
         'pharmaceutical U&A, KOL mapping, MOH Kuwait regulatory awareness, HEOR studies, and physician surveys across Kuwait tertiary hospitals',
       overview:
-        'BioNixus is a global healthcare market research company with GCC execution capability including Kuwait, delivering pharmaceutical usage and attitude studies, KOL identification and mapping across specialties, market access research aligned with MOH Kuwait frameworks, HEOR and pharmacoeconomic studies, patient journey research, and competitive intelligence for the Kuwait pharma market. Arabic-English bilingual fieldwork and established physician networks across Kuwait\'s public hospital system support rigorous healthcare research delivery. 48+ global clients, 17+ countries, 15+ years of experience.',
+        'BioNixus is a global healthcare market research company with GCC execution capability including Kuwait, delivering pharmaceutical usage and attitude studies, KOL identification and mapping across specialties, market access research aligned with MOH Kuwait frameworks, HEOR and pharmacoeconomic studies, patient journey research, and competitive intelligence for the Kuwait pharma market. Arabic-English bilingual fieldwork and established physician networks across Kuwait\'s public hospital system support rigorous healthcare research delivery. 48+ global clients, 38 countries, 15+ years of experience.',
       strengths: [
         'Pharma U&A and brand tracking in Kuwait',
         'KOL mapping across oncology, cardiology, diabetes, and nephrology specialties',

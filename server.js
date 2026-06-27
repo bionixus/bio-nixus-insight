@@ -8,6 +8,7 @@ import { BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH, BLOG_LEGACY_FULL_PATH_REDIRECTS 
 import { getBlogMetaDescriptionOverride } from './blog-crawler-stubs.mjs';
 import { formatMetaDescriptionInRange } from './src/server/seo-meta.js';
 import { normalizeOgCardPath, renderOgCardSvg } from './lib/og-card-svg.mjs';
+import { buildLcpPreloadTag, getClientAssetHints } from './lib/ssr-client-asset-hints.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === 'production';
@@ -477,25 +478,6 @@ function ensureTitleTag(html, pathname) {
   );
 }
 
-function getClientAssetHints() {
-  const assetsDir = path.resolve(__dirname, 'dist/client/assets');
-  if (!fs.existsSync(assetsDir)) {
-    return '<link rel="modulepreload" href="/assets/index.js" crossorigin>';
-  }
-  const files = fs.readdirSync(assetsDir);
-  const cssFile = files.find((f) => /^index-.*\.css$/.test(f));
-  const hints = ['<link rel="modulepreload" href="/assets/index.js" crossorigin>'];
-  if (cssFile) hints.push(`<link rel="stylesheet" href="/assets/${cssFile}">`);
-  return hints.join('\n');
-}
-
-function buildLcpPreloadTag(initialData) {
-  const url = initialData?.lcpPreloadImageUrl;
-  if (typeof url !== 'string' || !url.trim()) return '';
-  const safe = String(url).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
-  return `<link rel="preload" as="image" href="${safe}" fetchpriority="high">`;
-}
-
 function shouldForceArabicMetaDescription(pathname, chosen) {
   if (!chosen) return false;
   if (pathname.startsWith('/ar/') || pathname === '/ar') {
@@ -568,6 +550,8 @@ function serializeInitialDataForInlineScript(initialData) {
 }
 
 async function startServer() {
+  // eslint-disable-next-line no-console
+  console.log(`Starting ${isProduction ? 'production' : 'development'} SSR server on port ${port}…`);
   const app = express();
   app.use(compression());
   const CANONICAL_HOST = 'www.bionixus.com';
@@ -835,6 +819,8 @@ async function startServer() {
 
   let vite;
   if (!isProduction) {
+    // eslint-disable-next-line no-console
+    console.log('Loading Vite dev server (first start can take several minutes)…');
     const { createServer } = await import('vite');
     vite = await createServer({
       root: __dirname,
@@ -842,6 +828,8 @@ async function startServer() {
       server: { middlewareMode: true },
     });
     app.use(vite.middlewares);
+    // eslint-disable-next-line no-console
+    console.log('Vite dev server ready.');
   } else {
     app.use(express.static(path.resolve(__dirname, 'dist/client'), { index: false }));
   }
@@ -955,7 +943,7 @@ async function startServer() {
       const initialDataSerialized = serializeInitialDataForInlineScript(initialData);
 
       const perfHints = isProduction
-        ? [getClientAssetHints(), buildLcpPreloadTag(initialData)].filter(Boolean).join('\n')
+        ? [getClientAssetHints(path.resolve(__dirname, 'dist/client/assets')), buildLcpPreloadTag(initialData)].filter(Boolean).join('\n')
         : buildLcpPreloadTag(initialData);
       const combinedHead = perfHints ? `${perfHints}\n${headTags}` : headTags;
 

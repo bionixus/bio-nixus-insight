@@ -152,7 +152,7 @@ const content: GeneralMRPageContent = {
   whyBionixus: {
     heading: 'Why BioNixus is among the top market research companies in Saudi Arabia',
     points: [
-      'Global market research company — USA HQ, UK and Middle East offices — with 15+ years of experience in 17+ countries',
+      'Global market research company — USA HQ, UK and Middle East offices — with 15+ years of experience in 38 countries',
       'Primary research capability: custom study design and Saudi fieldwork across all major consumer and B2B industries',
       'Vision 2030-aware study design — tracking structural shifts in female consumer behaviour, entertainment, and digital adoption',
       'Saudi consumer and professional panels with national coverage across Riyadh, Jeddah, and Eastern Province',

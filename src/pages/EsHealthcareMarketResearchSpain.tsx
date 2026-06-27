@@ -49,7 +49,7 @@ export default function EsHealthcareMarketResearchSpain() {
       metrics={[
         {
           label: 'Mercados cubiertos',
-          value: '17+',
+          value: '38',
           detail: 'BioNixus realiza investigación de mercado en salud en más de 17 países, incluida España y Europa.',
         },
         {

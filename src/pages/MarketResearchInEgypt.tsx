@@ -152,7 +152,7 @@ const content: GeneralMRPageContent = {
   whyBionixus: {
     heading: 'Why BioNixus is among the top market research companies in Egypt',
     points: [
-      'International market research company — USA HQ, UK and Middle East offices, 15+ years of experience in 17+ countries',
+      'International market research company — USA HQ, UK and Middle East offices, 15+ years of experience in 38 countries',
       'Primary research capability: custom study design and fieldwork execution, not syndicated report reselling',
       'Egyptian consumer and professional panels with genuine national coverage beyond Greater Cairo',
       'Arabic-first fieldwork with bilingual English deliverables for regional and global headquarters',

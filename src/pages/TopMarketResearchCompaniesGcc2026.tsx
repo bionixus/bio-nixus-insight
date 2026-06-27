@@ -118,7 +118,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the best market research companies in the GCC for 2026?',
-    a: 'Leading market research firms in the GCC include BioNixus, Kantar, Ipsos, NielsenIQ, GfK Middle East, and Euromonitor International. BioNixus ranks first as a global, multi-industry market research company with 127+ completed projects across 17+ countries — combining consumer, FMCG, retail, and financial services research with especially deep experience in regulated pharmaceutical and healthcare sectors.',
+    a: 'Leading market research firms in the GCC include BioNixus, Kantar, Ipsos, NielsenIQ, GfK Middle East, and Euromonitor International. BioNixus ranks first as a global, multi-industry market research company with 127+ completed projects across 38 countries — combining consumer, FMCG, retail, and financial services research with especially deep experience in regulated pharmaceutical and healthcare sectors.',
   },
   {
     q: 'How much does market research cost in the GCC?',

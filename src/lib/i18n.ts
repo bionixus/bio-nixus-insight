@@ -32,7 +32,7 @@ export const translations = {
       subtitle:
         'BioNixus is a global insights and market research partner across the Americas, EMEA, and APAC — with country-level depth where it matters. We help pharma, biotech, and medtech teams turn KOL, payer, and hospital evidence into launch, access, and growth decisions.',
       trustStripPrimary: 'Trusted by',
-      trustStripStats: '48 global clients · 127+ projects · 17+ countries',
+      trustStripStats: '48 global clients · 127+ projects · 38 countries',
       valueProposition: 'Every engagement starts from a real commercial question, not a generic data dump. You get defensible quantitative and qualitative evidence — scoped to the decision, the market, and the regulatory reality you actually operate in — from pre-launch sizing through post-launch optimization.',
       serviceHighlights: [
         'Multi-country physician & payer research',
@@ -44,7 +44,7 @@ export const translations = {
       ctaSecondary: 'View Case Studies',
       trustBar: 'Decision-ready evidence for pharmaceutical, biotech, and medtech teams since 2012, across',
       trustCountries: 'MENA, Latin America, Eastern Europe, the UK, and the wider EMEA region.',
-      complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'SFDA Compliant', 'ICH-GCP'],
+      complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'FDA Compliant', 'ICH-GCP'],
     },
     services: {
       title: 'Pharmaceutical and healthcare market research services',
@@ -98,7 +98,7 @@ export const translations = {
         },
         {
           title: 'Methodology and Compliance',
-          description: 'Fieldwork governed by GDPR, EMA, MOH, and SFDA-aligned standards, with respondent verification and audit-ready documentation at every step.',
+          description: 'Fieldwork governed by GDPR, EMA, MOH, and FDA-aligned standards, with respondent verification and audit-ready documentation at every step.',
           bullets: [
             'Compliance-aware fieldwork governance',
             'Quality controls and data integrity protocols',
@@ -155,7 +155,7 @@ export const translations = {
       items: [
         { value: '127+', label: 'Projects Delivered' },
         { value: '48', label: 'Global Clients' },
-        { value: '17+', label: 'Countries Covered' },
+        { value: '38', label: 'Countries Covered' },
         { value: '14+', label: 'Therapeutic Areas' },
       ],
     },
@@ -341,7 +341,7 @@ export const translations = {
           countries: [
             {
               name: 'GCC',
-              items: ['Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, Oman', 'SFDA and MOHAP aligned fieldwork'],
+              items: ['Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, Oman', 'FDA and MOHAP aligned fieldwork'],
             },
             {
               name: 'North Africa',
@@ -392,7 +392,7 @@ export const translations = {
       ctaSecondary: 'BioNixus Fallstudien ansehen',
       trustBar: 'Vertrauenswürdig in',
       trustCountries: 'UK • Deutschland • Frankreich • Spanien • Italien • UAE • Saudi-Arabien • Ägypten • Kuwait • Katar',
-      complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'SFDA Compliant', 'ICH-GCP'],
+      complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'FDA Compliant', 'ICH-GCP'],
     },
     services: {
       title: 'Umfassende Gesundheitsmarktforschungsdienstleistungen für UK & europäische Pharmaunternehmen',
@@ -494,7 +494,7 @@ export const translations = {
     stats: {
       title: 'Globale Wirkung',
       items: [
-        { value: '17+', label: 'Abgedeckte Länder' },
+        { value: '38', label: 'Abgedeckte Länder' },
         { value: '14+', label: 'Therapiegebiete' },
         { value: '127+', label: 'Gelieferte Projekte' },
         { value: '15+', label: 'Jahre Erfahrung' },
@@ -650,7 +650,7 @@ export const translations = {
       ctaSecondary: 'Voir les études de cas BioNixus',
       trustBar: 'Partenaire de confiance des laboratoires pharmaceutiques en',
       trustCountries: 'UK • Allemagne • France • Espagne • Italie • EAU • Arabie Saoudite • Égypte • Koweït • Qatar',
-      complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'SFDA Compliant', 'ICH-GCP'],
+      complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'FDA Compliant', 'ICH-GCP'],
     },
     services: {
       title: 'Études de Marché Santé Complètes pour les Entreprises Pharmaceutiques UK & Européennes',
@@ -752,7 +752,7 @@ export const translations = {
     stats: {
       title: 'Impact Mondial',
       items: [
-        { value: '17+', label: 'Pays Couverts' },
+        { value: '38', label: 'Pays Couverts' },
         { value: '14+', label: 'Aires Thérapeutiques' },
         { value: '127+', label: 'Projets Livrés' },
         { value: '15+', label: 'Années d\'Expérience' },
@@ -908,7 +908,7 @@ export const translations = {
       ctaSecondary: 'Ver estudios de caso BioNixus',
       trustBar: 'Socio de confianza de laboratorios farmacéuticos en',
       trustCountries: 'UK • Alemania • Francia • España • Italia • EAU • Arabia Saudí • Egipto • Kuwait • Qatar',
-      complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'SFDA Compliant', 'ICH-GCP'],
+      complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'FDA Compliant', 'ICH-GCP'],
     },
     services: {
       title: 'Servicios Integrales de Investigación de Mercado Sanitario para Empresas Farmacéuticas UK y Europeas',
@@ -1010,7 +1010,7 @@ export const translations = {
     stats: {
       title: 'Impacto Global',
       items: [
-        { value: '17+', label: 'Países Cubiertos' },
+        { value: '38', label: 'Países Cubiertos' },
         { value: '14+', label: 'Áreas Terapéuticas' },
         { value: '127+', label: 'Proyectos Entregados' },
         { value: '15+', label: 'Años de Experiencia' },
@@ -1165,7 +1165,7 @@ export const translations = {
       ctaSecondary: '查看 BioNixus 案例研究',
       trustBar: '受以下国家制药企业信赖',
       trustCountries: '英国•德国•法国•西班牙•意大利•阿联酋•沙特•埃及•科威特•卡塔尔',
-      complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'SFDA Compliant', 'ICH-GCP'],
+      complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'FDA Compliant', 'ICH-GCP'],
     },
     services: {
       title: '英国及欧洲制药企业综合医疗市场研究服务',
@@ -1267,7 +1267,7 @@ export const translations = {
     stats: {
       title: '全球影响',
       items: [
-        { value: '17+', label: '覆盖国家' },
+        { value: '38', label: '覆盖国家' },
         { value: '14+', label: '治疗领域' },
         { value: '127+', label: '交付项目' },
         { value: '15+', label: '年经验' },
@@ -1417,7 +1417,7 @@ export const translations = {
       ctaSecondary: 'عرض دراسات الحالة BioNixus',
       trustBar: 'موثوق به من قبل شركات الأدوية في',
       trustCountries: 'السعودية • الإمارات • الكويت • قطر • مصر • المغرب • الجزائر • تونس',
-      complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'SFDA Compliant', 'ICH-GCP'],
+      complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'FDA Compliant', 'ICH-GCP'],
     },
     services: {
       title: 'خبرتنا',
@@ -1458,7 +1458,7 @@ export const translations = {
           title: 'استراتيجية الوصول للسوق ودعم الاقتصاد الصحي',
           intro: 'الاستفادة من رؤى أبحاث السوق العميقة لدعم استراتيجيات الوصول للسوق والتسعير والسداد عبر أسواق الخليج والشرق الأوسط.',
           regions: [
-            { name: 'دول الخليج العربي', items: ['تحليل المشهد التنظيمي والتسعير (SFDA، DHA، MOH)', 'استراتيجية المناقصات الحكومية والوصول لقوائم المستشفيات', 'رؤى أصحاب المصلحة الحكوميين', 'تطوير عرض القيمة والرسائل التسويقية'] },
+            { name: 'دول الخليج العربي', items: ['تحليل المشهد التنظيمي والتسعير (FDA، DHA، MOH)', 'استراتيجية المناقصات الحكومية والوصول لقوائم المستشفيات', 'رؤى أصحاب المصلحة الحكوميين', 'تطوير عرض القيمة والرسائل التسويقية'] },
             { name: 'مصر وشمال أفريقيا', items: ['استراتيجية التسعير والسداد', 'تحليل التأمين الصحي والقطاع الخاص', 'أبحاث الاقتصاد الصحي والنتائج (HEOR)'] },
           ],
           note: 'خدماتنا في الوصول للسوق قائمة على الأبحاث، باستخدام رؤى الأطباء، الجهات الدافعة، وأصحاب المصلحة المجمعة من خلال قدراتنا الأساسية في أبحاث السوق.',
@@ -1529,7 +1529,7 @@ export const translations = {
     stats: {
       title: 'التأثير العالمي',
       items: [
-        { value: '+17', label: 'دولة مغطاة' },
+        { value: '+38', label: 'دولة مغطاة' },
         { value: '+14', label: 'مجال علاجي' },
         { value: '+120', label: 'مشروع منجز' },
         { value: '+15', label: 'سنة خبرة' },
@@ -1672,7 +1672,7 @@ export const translations = {
             { heading: 'التغطية الجغرافية', items: ['الرياض: مستشفيات وزارة الصحة، المدن الطبية، القطاع الخاص', 'جدة: المستشفيات الجامعية، المراكز التخصصية', 'الدمام والمنطقة الشرقية: المجمعات الطبية', 'المدينة المنورة، مكة المكرمة، أبها: التغطية الإقليمية'] },
             { heading: 'المؤسسات الصحية الرئيسية', items: ['وزارة الصحة - شبكة المستشفيات الحكومية', 'مدينة الملك فهد الطبية', 'مجمع الملك عبدالله الطبي', 'مستشفى الملك فيصل التخصصي', 'القطاع الخاص: مستشفى المملكة، سليمان الحبيب، دله'] },
             { heading: 'التخصصات البحثية', text: 'السكري، القلب والأوعية الدموية، الأورام، الأمراض النادرة، طب الأطفال، صحة المرأة' },
-            { heading: 'الامتثال التنظيمي', text: 'متوافق مع هيئة الغذاء والدواء السعودية (SFDA) ووزارة الصحة' },
+            { heading: 'الامتثال التنظيمي', text: 'متوافق مع FDA ووزارة الصحة' },
           ],
         },
         {
@@ -1729,7 +1729,7 @@ export const translations = {
       steps: [
         {
           title: 'المرحلة 1: تصميم البحث وتطوير البروتوكول',
-          items: ['منهجية مخصصة متوافقة مع المجال العلاجي', 'الامتثال التنظيمي (SFDA، DHA، وزارات الصحة الإقليمية)', 'حماية البيانات والخصوصية', 'معايير البحث السريري الدولية (ICH-GCP)', 'حسابات القوة الإحصائية', 'التكيف الثقافي واللغوي'],
+          items: ['منهجية مخصصة متوافقة مع المجال العلاجي', 'الامتثال التنظيمي (FDA، DHA، وزارات الصحة الإقليمية)', 'حماية البيانات والخصوصية', 'معايير البحث السريري الدولية (ICH-GCP)', 'حسابات القوة الإحصائية', 'التكيف الثقافي واللغوي'],
         },
         {
           title: 'المرحلة 2: توظيف الأطباء والمهنيين الصحيين',
@@ -1817,7 +1817,7 @@ export const translations = {
     stats: {
       title: 'Impacto Global',
       items: [
-        { value: '17+', label: 'Países Atendidos' },
+        { value: '38', label: 'Países Atendidos' },
         { value: '14+', label: 'Áreas Terapêuticas' },
         { value: '120+', label: 'Projetos Entregues' },
         { value: '15+', label: 'Anos de Experiência' },
@@ -1936,7 +1936,7 @@ export const translations = {
       ctaSecondary: 'Просмотреть кейсы',
       trustBar: 'Доказательная база для фармацевтических, биотехнологических и медицинских команд с 2012 года',
       trustCountries: 'Россия, Восточная Европа, MENA, GCC и Великобритания.',
-      complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'SFDA Compliant', 'ICH-GCP'],
+      complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'FDA Compliant', 'ICH-GCP'],
     },
     services: {
       title: 'Услуги маркетинговых исследований в фармацевтике и здравоохранении',
@@ -1988,7 +1988,7 @@ export const translations = {
         },
         {
           title: 'Методология и соответствие требованиям',
-          description: 'Полевые работы в соответствии со стандартами ГРЛС, Минздрава РФ, GDPR, EMA и SFDA с верификацией респондентов и документацией для аудита на каждом этапе.',
+          description: 'Полевые работы в соответствии со стандартами ГРЛС, Минздрава РФ, GDPR, EMA и FDA с верификацией респондентов и документацией для аудита на каждом этапе.',
           bullets: [
             'Управление полевыми работами с учётом нормативных требований',
             'Контроль качества и протоколы целостности данных',
@@ -2043,7 +2043,7 @@ export const translations = {
     stats: {
       title: 'Глобальный охват',
       items: [
-        { value: '17+', label: 'Охваченных стран' },
+        { value: '38', label: 'Охваченных стран' },
         { value: '14+', label: 'Терапевтических областей' },
         { value: '120+', label: 'Реализованных проектов' },
         { value: '15+', label: 'Лет опыта' },

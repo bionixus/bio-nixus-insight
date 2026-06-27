@@ -2,6 +2,16 @@
 export const REPORT_ARTICLE_CONTAINER =
   'container-wide px-6 md:px-10 lg:px-12 xl:px-16 pb-16 pt-2';
 
+/** Wider shell for pharmaceutical company directory guides (uses full viewport up to 90rem). */
+export const PHARMA_GUIDE_ARTICLE_CONTAINER =
+  'pharma-guide-shell container-wide max-w-[90rem] px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 pb-16 pt-2';
+
+/** Horizontal padding aligned with PHARMA_GUIDE_ARTICLE_CONTAINER (no xl:px-32 section-padding). */
+export const PHARMA_GUIDE_SECTION_X =
+  'px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12';
+
+export const PHARMA_GUIDE_INNER = 'max-w-[90rem] mx-auto w-full';
+
 export const BIONIXUS_EMAIL = 'admin@bionixus.com';
 export const BIONIXUS_PHONE_US = '+18884655557';
 export const BIONIXUS_PHONE_US_DISPLAY = '+1 888 465 5557';

@@ -46,6 +46,9 @@ function DeferredAnalytics() {
 
   return (
     <SilentBoundary>
+      <GoogleTagManager />
+      <GoogleAnalytics />
+      <GA4EventTracker />
       <Suspense fallback={null}>
         <LazyStatsigInit />
         <LazyVercelAnalytics />
@@ -60,10 +63,7 @@ function AppProviders({ children }: { children: ReactNode }) {
       <ScrollToTop />
       <RouteNavigationPreloader />
       <LanguageProvider>
-        <GoogleTagManager />
         <DocumentHead />
-        <GoogleAnalytics />
-        <GA4EventTracker />
         <TooltipProvider>
           <Toaster />
           <Sonner />

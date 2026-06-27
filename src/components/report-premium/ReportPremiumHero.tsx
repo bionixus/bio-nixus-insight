@@ -84,7 +84,7 @@ export function ReportPremiumHero({
 
             <h1
               id="report-hero-title"
-              className="text-3xl md:text-4xl lg:text-[2.75rem] font-display font-bold text-foreground mb-5 leading-[1.12] sr sr-up sr-line"
+              className="sr-lcp text-3xl md:text-4xl lg:text-[2.75rem] font-display font-bold text-foreground mb-5 leading-[1.12]"
             >
               {title}
             </h1>
@@ -96,7 +96,7 @@ export function ReportPremiumHero({
             <ReportEarlyCtaBar config={config} className="sr sr-up" />
           </div>
 
-          <div className="sr sr-right sr-scale min-w-0">
+          <div className="sr-lcp min-w-0">
             {heroImage ? (
               <figure className="rounded-2xl border border-border/70 bg-card overflow-hidden shadow-xl">
                 <OptimizedImage

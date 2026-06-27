@@ -51,6 +51,7 @@ function routeProvidesOwnDocumentHead(pathname: string): boolean {
   }
 
   if (path === '/sitemap') return true;
+  if (path === '/client-reviews') return true;
   if (path === '/insights/top-market-research-companies-egypt-2026') return true;
   if (path === '/ar/insights/top-market-research-companies-egypt-2026') return true;
   if (path === '/insights/top-market-research-companies-brazil-2026') return true;
@@ -198,7 +199,7 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
 
   if (path === '/about') {
     return clampDescription(
-      'BioNixus is an international healthcare market research firm with offices in the US and UK, specializing in pharma consulting across 17+ EMEA countries.'
+      'BioNixus is an international healthcare market research firm with offices in the US and UK, specializing in pharma consulting across 38 countries.'
     );
   }
 

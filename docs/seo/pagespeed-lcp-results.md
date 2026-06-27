@@ -26,10 +26,13 @@ Lazy chunks now include `BlogPost`, `HealthcareReportPage`, per-country report p
 
 1. **`hydrateRoot`** — preserve SSR markup; no `innerHTML` wipe before paint.
 2. **Blog LCP preload** — `lcpPreloadImageUrl` in `fetchRouteData` + `<link rel="preload" as="image">` in SSR head.
-3. **Route code-splitting** — [`src/routes/lazyReportPages.ts`](../../src/routes/lazyReportPages.ts).
+3. **Route code-splitting** — [`src/routes/lazyReportPages.ts`](../../src/routes/lazyReportPages.ts) and [`src/routes/lazyMarketingPages.ts`](../../src/routes/lazyMarketingPages.ts).
 4. **Deferred Recharts** — [`ReportTherapySpendChartLazy`](../../src/components/report-premium/ReportTherapySpendChartLazy.tsx).
 5. **SEO share image** — smaller, `fetchpriority="low"`, inserted after first hero `<h1>` section.
-6. **`modulepreload` + CSS** — injected in [`api/indexnow-key.ts`](../../api/indexnow-key.ts) and production [`server.js`](../../server.js).
+6. **`modulepreload` + CSS preload** — [`lib/ssr-client-asset-hints.mjs`](../../lib/ssr-client-asset-hints.mjs), production [`server.js`](../../server.js), and [`api/indexnow-key.ts`](../../api/indexnow-key.ts).
+7. **Critical LCP CSS** — inline `<style id="critical-lcp">` in [`index.html`](../../index.html) plus `.sr-lcp` / `[data-hero-lcp]` rules in [`src/index.css`](../../src/index.css) so hero headings paint before scroll-reveal JS.
+8. **Deferred analytics** — GTM, GA4, Statsig, and Vercel Analytics load after 3s idle (`DeferredAnalytics` in [`src/App.tsx`](../../src/App.tsx)).
+9. **Scroll-reveal LCP fix** — report/home heroes use `.sr-lcp`; in-viewport `.sr` elements reveal immediately in [`useScrollReveal`](../../src/hooks/useScrollReveal.ts).
 
 ## Re-test after deploy (mobile)
 

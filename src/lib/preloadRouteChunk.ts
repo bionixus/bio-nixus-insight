@@ -31,6 +31,38 @@ const IRREGULAR_IMPORTS: Record<string, Importer> = {
 /** Dynamic-slug routes matched by prefix. */
 const PREFIX_IMPORTS: Array<{ test: (path: string) => boolean; load: Importer }> = [
   {
+    test: (path) => path === '/bionixus-market-research-middle-east',
+    load: () => import('@/pages/BionixusMarketResearchMiddleEast'),
+  },
+  {
+    test: (path) => path === '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
+    load: () => import('@/pages/AiChatbotsLeadGeneration'),
+  },
+  {
+    test: (path) => path === '/ar/insights/top-market-research-companies-egypt-2026',
+    load: () => import('@/pages/ArTopMarketResearchCompaniesEgypt2026'),
+  },
+  {
+    test: (path) => path === '/ar/market-research-uae',
+    load: () => import('@/pages/ArMarketResearchUae'),
+  },
+  {
+    test: (path) => path === '/ar/market-research-ksa',
+    load: () => import('@/pages/ArMarketResearchKsa'),
+  },
+  {
+    test: (path) => path === '/ar/market-research-saudi',
+    load: () => import('@/pages/ArMarketResearchSaudi'),
+  },
+  {
+    test: (path) => path === '/ar/market-research-kuwait',
+    load: () => import('@/pages/ArMarketResearchKuwait'),
+  },
+  {
+    test: (path) => path === '/ar/market-research-egypt',
+    load: () => import('@/pages/ArMarketResearchEgypt'),
+  },
+  {
     test: (path) =>
       path.startsWith('/market-reports/') &&
       !path.startsWith('/market-reports/therapy/') &&

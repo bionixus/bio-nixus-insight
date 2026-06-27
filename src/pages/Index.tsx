@@ -9,13 +9,11 @@ import { HomeOverviewVideoSection } from '@/components/home/HomeOverviewVideoSec
 import GlobalReachSection from '@/components/home/GlobalReachSection';
 import IndustriesGatewaySection from '@/components/home/IndustriesGatewaySection';
 import ServicesSection from '@/components/ServicesSection';
-import GeographicCoverageSection from '@/components/GeographicCoverageSection';
 import MethodologySection from '@/components/MethodologySection';
-import TherapeuticAreasSection from '@/components/TherapeuticAreasSection';
 import StatsSection from '@/components/StatsSection';
 import BlogSection from '@/components/BlogSection';
-import GoogleReviewsSection from '@/components/GoogleReviewsSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
+import { ClientReviewsTeaser } from '@/components/home/ClientReviewsTeaser';
 import HomePathwaysSection, { type PathwayCard } from '@/components/home/HomePathwaysSection';
 import { HomeExplainerSection } from '@/components/media/HomeExplainerSection';
 import ContactSection from '@/components/ContactSection';
@@ -70,7 +68,7 @@ const Index = () => {
       to: '/healthcare-market-research/saudi-arabia',
       title: 'Saudi Arabia Pharmaceutical Research',
       description:
-        'SFDA-aligned pharmaceutical and healthcare market research intelligence for launch, access, and growth in KSA.',
+        'FDA-aligned pharmaceutical and healthcare market research intelligence for launch, access, and growth in KSA.',
       highlight: true,
       label: 'Country-Level Depth',
       decisionHint: 'Best for country-level execution',
@@ -177,14 +175,8 @@ const Index = () => {
             isLoading={blogLoading && !ssrHomeInsights?.length}
           />
         </div>
-        <GoogleReviewsSection />
+        <ClientReviewsTeaser />
         <TestimonialsSection />
-        <div className="cv-auto">
-          <GeographicCoverageSection />
-        </div>
-        <div className="cv-auto">
-          <TherapeuticAreasSection />
-        </div>
         <div className="cv-auto">
           <HomePathwaysSection cards={featuredCards} />
         </div>

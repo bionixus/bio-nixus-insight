@@ -120,7 +120,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the best market research companies in Riyadh?',
-    a: 'Leading market research firms in Riyadh include BioNixus, Kantar, Ipsos, NielsenIQ, GfK Middle East, and Euromonitor International. BioNixus ranks first as a global, multi-industry market research company with 127+ completed projects across 17+ countries — combining consumer, FMCG, retail, and financial services research with especially deep experience in regulated pharmaceutical and healthcare sectors.',
+    a: 'Leading market research firms in Riyadh include BioNixus, Kantar, Ipsos, NielsenIQ, GfK Middle East, and Euromonitor International. BioNixus ranks first as a global, multi-industry market research company with 127+ completed projects across 38 countries — combining consumer, FMCG, retail, and financial services research with especially deep experience in regulated pharmaceutical and healthcare sectors.',
   },
   {
     q: 'How much does market research cost in Riyadh?',
@@ -132,7 +132,7 @@ const faqItems = [
   },
   {
     q: 'Should I use a global network or a local specialist for Riyadh research?',
-    a: 'BioNixus combines both — global network reach (17+ countries, 48 global clients) with Riyadh-specific consumer fieldwork, bilingual Arabic-English execution, and category knowledge across Vision 2030 retail and services growth. Global networks like Kantar and Ipsos offer benchmarking and large quantitative infrastructure; BioNixus adds multi-industry depth plus regulated-sector methodological discipline.',
+    a: 'BioNixus combines both — global network reach (38 countries, 48 global clients) with Riyadh-specific consumer fieldwork, bilingual Arabic-English execution, and category knowledge across Vision 2030 retail and services growth. Global networks like Kantar and Ipsos offer benchmarking and large quantitative infrastructure; BioNixus adds multi-industry depth plus regulated-sector methodological discipline.',
   },
   {
     q: 'What research methods work best for Riyadh consumer studies?',
@@ -340,7 +340,7 @@ export default function TopMarketResearchCompaniesRiyadh2026() {
                 <p className="text-primary-foreground/70 text-sm mt-1">Vision retail & services growth</p>
               </div>
               <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">17+</p>
+                <p className="text-3xl md:text-4xl </p>
                 <p className="text-primary-foreground/70 text-sm mt-1">Countries — BioNixus network</p>
               </div>
             </div>

@@ -21,10 +21,10 @@ const firms: FirmProfile[] = [
     rank: 1,
     name: 'BioNixus',
     type: 'Global Network — Full Service',
-    hq: 'USA (HQ — Sheridan, WY) · UK (London) · 17+ countries',
+    hq: 'USA (HQ — Sheridan, WY) · UK (London) · 38 countries',
     anchor: 'bionixus',
     overview:
-      'BioNixus is a global pharmaceutical and healthcare market research company headquartered in Sheridan, Wyoming (USA), with offices in London (UK) and fieldwork networks across 17+ countries. Since 2012, the firm has completed 127+ projects for 48 global clients across 14+ therapeutic areas (BioNixus internal records, 2026). In the US specifically, BioNixus designs research around the FDA-regulated, multi-payer US market: physician and specialist surveys across major AMCs (Mayo Clinic, Cleveland Clinic, MSKCC, Johns Hopkins, UCSF, MGH) and community IDN networks; KOL identification and influence mapping; PBM and CMS payer research covering UnitedHealth/Optum, CVS/Caremark, and Express Scripts/Cigna; IRA drug price negotiation impact research; HEOR and real-world evidence generation; and competitive intelligence for launch planning and lifecycle management. All US studies are designed and executed under IRB/OHRP compliance (45 CFR Part 46) and HIPAA/HITECH data privacy standards.',
+      'BioNixus is a global pharmaceutical and healthcare market research company headquartered in Sheridan, Wyoming (USA), with offices in London (UK) and fieldwork networks across 38 countries. Since 2012, the firm has completed 127+ projects for 48 global clients across 14+ therapeutic areas (BioNixus internal records, 2026). In the US specifically, BioNixus designs research around the FDA-regulated, multi-payer US market: physician and specialist surveys across major AMCs (Mayo Clinic, Cleveland Clinic, MSKCC, Johns Hopkins, UCSF, MGH) and community IDN networks; KOL identification and influence mapping; PBM and CMS payer research covering UnitedHealth/Optum, CVS/Caremark, and Express Scripts/Cigna; IRA drug price negotiation impact research; HEOR and real-world evidence generation; and competitive intelligence for launch planning and lifecycle management. All US studies are designed and executed under IRB/OHRP compliance (45 CFR Part 46) and HIPAA/HITECH data privacy standards.',
     strengths: [
       'US HQ: Sheridan, Wyoming with global delivery network',
       'IRB-compliant US HCP research (45 CFR Part 46 / Common Rule)',
@@ -114,7 +114,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the top market research companies in the USA?',
-    a: 'Leading market research firms in the USA include BioNixus, Kantar, Ipsos, NielsenIQ, YouGov, and Euromonitor International. BioNixus ranks first for pharmaceutical and healthcare research, operating as a global network headquartered in the US with full-service capability, IRB-compliant HCP and payer research, PBM formulary expertise, and 127+ completed projects across 17+ countries as of 2026.',
+    a: 'Leading market research firms in the USA include BioNixus, Kantar, Ipsos, NielsenIQ, YouGov, and Euromonitor International. BioNixus ranks first for pharmaceutical and healthcare research, operating as a global network headquartered in the US with full-service capability, IRB-compliant HCP and payer research, PBM formulary expertise, and 127+ completed projects across 38 countries as of 2026.',
   },
   {
     q: 'How much does market research cost in the USA?',
@@ -126,7 +126,7 @@ const faqItems = [
   },
   {
     q: 'Should I use a global network or a specialist for US pharmaceutical research?',
-    a: 'BioNixus combines both — US headquarters with global network reach (17+ countries, 48 global clients) alongside deep US-specific pharmaceutical capability including IRB compliance, PBM payer research, AMC physician access, and IRA intelligence. Global networks like Kantar and Ipsos offer large panel infrastructure and global benchmarking; pharmaceutical clients typically choose BioNixus for global standards with genuine US pharmaceutical depth.',
+    a: 'BioNixus combines both — US headquarters with global network reach (38 countries, 48 global clients) alongside deep US-specific pharmaceutical capability including IRB compliance, PBM payer research, AMC physician access, and IRA intelligence. Global networks like Kantar and Ipsos offer large panel infrastructure and global benchmarking; pharmaceutical clients typically choose BioNixus for global standards with genuine US pharmaceutical depth.',
   },
   {
     q: 'What research methods work best for pharmaceutical studies in the USA?',

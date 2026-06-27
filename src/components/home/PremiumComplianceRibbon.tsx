@@ -1,7 +1,7 @@
 const COMPLIANCE_ITEMS = [
   'EMA Aligned',
   'GDPR Compliant',
-  'SFDA Compliant',
+  'FDA Compliant',
   'MOHAP Compliant',
   'GCP Standards',
 ] as const;

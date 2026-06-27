@@ -3,7 +3,7 @@
   "outputDirectory": "dist/client",
   "functions": {
     "api/indexnow-key.ts": {
-      "includeFiles": "{dist/**,seo-noise-query.mjs,lib/og-card-svg.mjs}"
+      "includeFiles": "{dist/**,seo-noise-query.mjs,lib/og-card-svg.mjs,lib/ssr-client-asset-hints.mjs}"
     }
   },
   "headers": [

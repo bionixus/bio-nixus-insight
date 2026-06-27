@@ -1,4 +1,5 @@
 import { ChevronDown } from 'lucide-react';
+import { PHARMA_GUIDE_INNER, PHARMA_GUIDE_SECTION_X } from '@/components/report-conversion/constants';
 
 export type PharmaCompaniesFaqItem = { q: string; a: string };
 
@@ -13,8 +14,8 @@ export function PharmaCompaniesFaqSection({
   title = 'Frequently Asked Questions',
 }: Props) {
   return (
-    <section className="section-padding py-16 bg-muted/30 scroll-mt-28" id="faq">
-      <div className="container-wide max-w-5xl mx-auto">
+    <section className={`${PHARMA_GUIDE_SECTION_X} py-16 bg-muted/30 scroll-mt-28`} id="faq">
+      <div className={PHARMA_GUIDE_INNER}>
         <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-8">{title}</h2>
         <div className="rounded-xl overflow-hidden border border-border bg-background shadow-sm">
           {items.map((faq) => (

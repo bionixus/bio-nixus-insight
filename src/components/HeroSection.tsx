@@ -19,6 +19,7 @@ const HeroSection = () => {
 
   return (
     <section
+      data-hero-lcp
       className={`relative flex min-h-screen items-center overflow-hidden bg-[#06101F] ${language === 'ar' ? 'hero-arabic' : ''} ${language === 'de' ? 'hero-german' : ''} ${language === 'fr' ? 'hero-french' : ''} ${language === 'es' ? 'hero-spanish' : ''} ${language === 'zh' ? 'hero-chinese' : ''}`}
       dir={isRTL ? 'rtl' : undefined}
       lang={language}
@@ -65,7 +66,7 @@ const HeroSection = () => {
               </span>
             </div>
 
-            <h1 className="mb-7 font-display text-[clamp(2.8rem,4.5vw,4.2rem)] font-light leading-[1.12] tracking-tight text-[#FFFEFB] text-balance">
+            <h1 className="sr-lcp mb-7 font-display text-[clamp(2.8rem,4.5vw,4.2rem)] font-light leading-[1.12] tracking-tight text-[#FFFEFB] text-balance">
               {hero.titleLead && hero.titleEmphasis ? (
                 <>
                   {hero.titleLead}{' '}
@@ -121,7 +122,7 @@ const HeroSection = () => {
               </div>
               <p className="text-[13px] font-light leading-snug text-white/35">
                 {hero.trustStripPrimary ?? 'Trusted by'}{' '}
-                <strong className="font-medium text-white/70">{hero.trustStripStats ?? '48 global clients · 127+ projects · 17+ countries'}</strong>
+                <strong className="font-medium text-white/70">{hero.trustStripStats ?? '48 global clients · 127+ projects · 38 countries'}</strong>
               </p>
             </div>
           </div>

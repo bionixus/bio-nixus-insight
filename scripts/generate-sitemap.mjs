@@ -165,6 +165,7 @@ const staticPages = [
   { path: '/ar', priority: '0.9', changefreq: 'weekly' },
   { path: '/pt', priority: '0.9', changefreq: 'weekly' },
   { path: '/about', priority: '0.9' },
+  { path: '/client-reviews', priority: '0.85', changefreq: 'monthly' },
   { path: '/contact', priority: '0.9' },
   { path: '/de/contact', priority: '0.7', changefreq: 'monthly' },
   { path: '/es/contact', priority: '0.7', changefreq: 'monthly' },
