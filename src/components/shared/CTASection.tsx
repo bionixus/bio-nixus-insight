@@ -20,8 +20,8 @@ export function CTASection({ variant, countryName, therapyArea }: CTASectionProp
       <div className="container-wide max-w-4xl mx-auto text-center">
         <h2 className="text-3xl font-display font-semibold mb-4">{headlineByVariant[variant]}</h2>
         <p className="text-primary-foreground/90 mb-7 leading-relaxed">
-          Our team supports pharmaceutical companies with decision-ready insights across MENA, UK, and Europe
-          using quantitative and qualitative methodologies.
+          Our team supports pharmaceutical companies with decision-ready insights across the Americas, Europe, and the
+          Middle East using quantitative and qualitative methodologies.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
           <Link

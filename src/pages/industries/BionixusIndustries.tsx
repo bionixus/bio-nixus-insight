@@ -239,7 +239,7 @@ export default function BionixusIndustries() {
             <div className="bx-ribbon-item"><span className="bx-ic" aria-hidden="true">◆</span> Americas</div>
             <div className="bx-ribbon-item"><span className="bx-ic" aria-hidden="true">◆</span> Europe &amp; UK</div>
             <div className="bx-ribbon-item"><span className="bx-ic" aria-hidden="true">◆</span> GCC &amp; MENA</div>
-            <div className="bx-ribbon-item"><span className="bx-ic" aria-hidden="true">◆</span> Bilingual Arabic–English fieldwork</div>
+            <div className="bx-ribbon-item"><span className="bx-ic" aria-hidden="true">◆</span> Asia-Pacific</div>
             <div className="bx-ribbon-item"><span className="bx-ic" aria-hidden="true">◆</span> One evidence framework</div>
           </div>
         </div>

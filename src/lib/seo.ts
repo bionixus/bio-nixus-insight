@@ -22,7 +22,8 @@ export const seoByLanguage: Record<Language, {
     // Brand-first title (≤60 chars after normalizeSeoTitle) so search engines never see a
     // truncated tail and the brand name "Bionixus" / "BioNixus" wins its own SERP at #1.
     title: 'BioNixus | Pharmaceutical & Healthcare Market Research',
-    description: 'Global pharmaceutical & healthcare market research for MENA, Europe, and GCC — physician surveys, KOL mapping, payer insight, and market access strategy. US-headquartered with London and Cairo offices, serving 48 global clients across 127+ projects since 2012.',
+    description:
+      'Global pharmaceutical and healthcare market research across the Americas, Europe, and the Middle East — plus B2B and B2C market research. Physician surveys, KOL mapping, payer insight, and market access strategy. US-headquartered with London and Cairo offices, serving 48 global clients across 127+ projects since 2012.',
     keywords: 'pharmaceutical market research company, healthcare market research company, healthcare market research, MENA market research, pharmaceutical consulting, competitive intelligence, market access, clinical trials, UAE healthcare research, healthcare market research company UAE, pharma market research company UAE, Saudi Arabia pharma research, healthcare market research company Saudi Arabia, pharma market research company KSA, healthcare market research company Egypt, pharma market research company Egypt, market research company Egypt, market research Egypt, medtech market research Saudi Arabia, medtech market research UAE, medtech market research Egypt, FMCG market research Middle East, financial services market research GCC, biotech, life sciences',
     canonicalPath: '/',
   },

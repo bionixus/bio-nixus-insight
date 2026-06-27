@@ -20,9 +20,9 @@ export function PremiumHeroDashboard({ className = '' }: { className?: string })
 
       <div className="relative mb-7 h-[200px]">
         <div className="absolute right-5 top-2 z-10 rounded-[10px] border border-[#C9A84C]/20 bg-[#06101F]/85 px-4 py-3 backdrop-blur-sm">
-          <p className="font-display text-[28px] font-medium leading-none text-[#C9A84C]">~$85B</p>
-          <p className="mt-1 text-[11px] text-white/35">MEA Pharma Market (2026E)</p>
-          <p className="mt-0.5 text-[11px] font-medium text-[#14CFC8]">↑ ~8% CAGR 2024–2026</p>
+          <p className="font-display text-[28px] font-medium leading-none text-[#C9A84C]">~$1.8T</p>
+          <p className="mt-1 text-[11px] text-white/35">Global Pharma Market (2026E)</p>
+          <p className="mt-0.5 text-[11px] font-medium text-[#14CFC8]">↑ ~6% CAGR 2024–2026</p>
         </div>
         <svg viewBox="0 0 500 180" className="h-full w-full" preserveAspectRatio="none" aria-hidden="true">
           <defs>
@@ -80,11 +80,11 @@ export function PremiumHeroDashboard({ className = '' }: { className?: string })
           <circle cx="490" cy="45" r="3.5" fill="#0EA5A0" className="premium-dot-fade" style={{ filter: 'drop-shadow(0 0 6px rgba(14,165,160,0.5))' }} />
           <line x1="20" y1="10" x2="38" y2="10" stroke="rgba(201,168,76,0.8)" strokeWidth="2" />
           <text x="42" y="14" fill="rgba(255,255,255,0.4)" fontSize="10" fontFamily="Inter, sans-serif">
-            MEA Growth
+            Global benchmark
           </text>
-          <line x1="120" y1="10" x2="138" y2="10" stroke="rgba(14,165,160,0.5)" strokeWidth="2" />
-          <text x="142" y="14" fill="rgba(255,255,255,0.4)" fontSize="10" fontFamily="Inter, sans-serif">
-            Europe Benchmark
+          <line x1="130" y1="10" x2="148" y2="10" stroke="rgba(14,165,160,0.5)" strokeWidth="2" />
+          <text x="152" y="14" fill="rgba(255,255,255,0.4)" fontSize="10" fontFamily="Inter, sans-serif">
+            Regional depth
           </text>
         </svg>
       </div>
@@ -92,8 +92,8 @@ export function PremiumHeroDashboard({ className = '' }: { className?: string })
       <div className="grid grid-cols-3 gap-3">
         {[
           { label: 'Global Pharma', value: '~$1.8T', sub: '2026E market' },
-          { label: 'EMEA Pharma', value: '~$580B', sub: '2026E market' },
-          { label: 'MENA Pharma', value: '~$50B', sub: '2026E market' },
+          { label: 'Americas Pharma', value: '~$720B', sub: '2026E market' },
+          { label: 'APAC Pharma', value: '~$480B', sub: '2026E market' },
         ].map((metric) => (
           <div
             key={metric.label}

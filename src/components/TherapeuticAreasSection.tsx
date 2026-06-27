@@ -11,13 +11,23 @@ type TherapeuticAreasZh = TherapeuticAreasDe;
 const TherapeuticAreasSection = () => {
   const { t, language } = useLanguage();
   const sectionRef = useScrollReveal<HTMLElement>({ stagger: 60 });
+  const dataEn = 'therapeuticAreasEn' in t ? (t as { therapeuticAreasEn?: TherapeuticAreasDe }).therapeuticAreasEn : undefined;
   const dataDe = 'therapeuticAreasDe' in t ? (t as { therapeuticAreasDe?: TherapeuticAreasDe }).therapeuticAreasDe : undefined;
   const dataFr = 'therapeuticAreasFr' in t ? (t as { therapeuticAreasFr?: TherapeuticAreasFr }).therapeuticAreasFr : undefined;
   const dataEs = 'therapeuticAreasEs' in t ? (t as { therapeuticAreasEs?: TherapeuticAreasEs }).therapeuticAreasEs : undefined;
   const dataZh = 'therapeuticAreasZh' in t ? (t as { therapeuticAreasZh?: TherapeuticAreasZh }).therapeuticAreasZh : undefined;
-  const data = language === 'zh' ? dataZh : language === 'es' ? dataEs : language === 'fr' ? dataFr : dataDe;
+  const data =
+    language === 'en'
+      ? dataEn
+      : language === 'zh'
+        ? dataZh
+        : language === 'es'
+          ? dataEs
+          : language === 'fr'
+            ? dataFr
+            : dataDe;
 
-  if ((language !== 'de' && language !== 'fr' && language !== 'es' && language !== 'zh') || !data) return null;
+  if (!data) return null;
 
   return (
     <section

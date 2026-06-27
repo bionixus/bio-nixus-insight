@@ -82,9 +82,9 @@ export const PAGE_MEDIA: Record<string, PageMediaConfig> = {
       poster: HOME_OVERVIEW_VIDEO.poster,
       title: 'BioNixus healthcare market research overview',
       description:
-        'A short overview of how BioNixus designs quantitative, qualitative, and access programs for pharmaceutical teams in GCC and Europe.',
+        'A short overview of how BioNixus designs quantitative, qualitative, and access programs for pharmaceutical teams in global markets including the Americas, Europe, and the Middle East.',
       transcript:
-        'BioNixus supports pharmaceutical and healthcare teams with market research built for real decisions — launch readiness, market access, payer evidence, and competitive intelligence. Programs combine senior-led design, bilingual Arabic–English fieldwork, and audit-ready governance across GCC and European markets.',
+        'BioNixus supports pharmaceutical and healthcare teams with market research built for real decisions — launch readiness, market access, payer evidence, and competitive intelligence. Programs combine senior-led design, bilingual Arabic–English fieldwork, and audit-ready governance across global markets including the Americas, Europe, and the Middle East.',
       fallbackHref: '/case-studies',
       fallbackLabel: 'Browse anonymized case studies',
     },

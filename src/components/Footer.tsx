@@ -229,6 +229,14 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  to="/bionixus-industries"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  {f.industriesHub ?? 'Industries'}
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/news"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >

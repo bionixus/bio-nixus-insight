@@ -6,7 +6,8 @@ import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import { PremiumComplianceRibbon } from '@/components/home/PremiumComplianceRibbon';
 import { HomeOverviewVideoSection } from '@/components/home/HomeOverviewVideoSection';
-import EmeaSignalsSection from '@/components/home/EmeaSignalsSection';
+import GlobalReachSection from '@/components/home/GlobalReachSection';
+import IndustriesGatewaySection from '@/components/home/IndustriesGatewaySection';
 import ServicesSection from '@/components/ServicesSection';
 import GeographicCoverageSection from '@/components/GeographicCoverageSection';
 import MethodologySection from '@/components/MethodologySection';
@@ -62,7 +63,7 @@ const Index = () => {
       to: '/healthcare-market-research',
       title: 'Healthcare Market Research',
       description:
-        'Decision-ready healthcare market research programs for pharmaceutical teams in Europe, the UK, MENA, and GCC markets.',
+        'Decision-ready healthcare market research programs for pharmaceutical teams — globally, with deep execution in Europe, the Americas, and the Middle East.',
       highlight: false,
     },
     {
@@ -120,10 +121,19 @@ const Index = () => {
       decisionHint: 'Best for quantitative design decisions',
     },
     {
+      to: '/bionixus-industries',
+      title: 'All Industries',
+      description:
+        'Explore pharma and healthcare, B2B, and B2C market research — the same rigor behind 127+ projects across 16 industry verticals.',
+      highlight: true,
+      label: 'Cross-Industry',
+      decisionHint: 'Explore the industries hub',
+    },
+    {
       to: '/global-websites',
       title: 'Global Websites Directory',
       description:
-        'Discover healthcare market research pages by country to support pharmaceutical strategy across Europe and the Middle East.',
+        'Discover market research pages by country and region to support pharmaceutical and enterprise strategy worldwide.',
       highlight: true,
       label: 'Country-Level Depth',
       decisionHint: 'Best for multi-country planning',
@@ -155,11 +165,12 @@ const Index = () => {
       <main>
         <HeroSection />
         <PremiumComplianceRibbon />
-        <EmeaSignalsSection />
+        <GlobalReachSection />
         <ServicesSection />
         <HomeOverviewVideoSection />
         <HomeExplainerSection />
         <StatsSection />
+        <IndustriesGatewaySection />
         <div className="cv-auto">
           <BlogSection
             posts={homeArticlePosts ?? undefined}

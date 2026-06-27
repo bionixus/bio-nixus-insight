@@ -24,7 +24,12 @@ const byLanguage: Record<Language, HomeFaqBlock> = {
       {
         question: 'Which regions does BioNixus cover for pharmaceutical and healthcare market research?',
         answer:
-          'BioNixus runs healthcare market research across Europe and the United Kingdom, the Middle East and North Africa, and the Gulf Cooperation Council (GCC), including priority markets such as Saudi Arabia, the United Arab Emirates, Egypt, Kuwait, and Qatar. Programs can be single-country, regional, or multi-market with comparable design where you need cross-country pharmaceutical insight.',
+          'BioNixus runs healthcare market research across the Americas, Europe and the United Kingdom, Asia-Pacific, and the Middle East and North Africa — including the Gulf Cooperation Council (GCC) and priority markets such as the United States, Canada, the United Kingdom, Saudi Arabia, the United Arab Emirates, Egypt, Kuwait, and Qatar. Programs can be single-country, regional, or multi-market with comparable design where you need cross-country pharmaceutical insight.',
+      },
+      {
+        question: 'Does BioNixus only do healthcare market research?',
+        answer:
+          'No. Pharmaceutical and healthcare research is where BioNixus leads, but the same sampling discipline and senior-led analysis extend to B2B and B2C categories — including technology, FMCG, financial services, and more. Explore the BioNixus Industries hub to see all three segments.',
       },
       {
         question: 'What types of healthcare market research and pharmaceutical insights does BioNixus offer?',

@@ -55,14 +55,15 @@ const HomePathwaysSection = ({ cards }: HomePathwaysSectionProps) => {
     <section className="section-padding py-12 bg-muted/20" ref={sectionRef}>
       <div className="container-wide max-w-6xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4 sr sr-up sr-line">
-          Priority Healthcare Market Research Pathways
+          Healthcare Research Pathways
         </h2>
         <p className="text-muted-foreground mb-8 max-w-3xl sr sr-up leading-relaxed">
-          Use these{' '}
+          BioNixus runs healthcare market research globally — with country-level depth across the Americas, Europe, and
+          the Middle East. Use these{' '}
           <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline cursor-pointer">
             healthcare market research
           </Link>{' '}
-          pathways for launch, market access, and growth across Europe and the Middle East. Compare methods in our{' '}
+          pathways for launch, market access, and growth. Compare methods in our{' '}
           <Link to="/market-research" className="text-primary font-medium hover:underline cursor-pointer">
             market research
           </Link>{' '}

@@ -16,13 +16,13 @@ export const translations = {
     nav: {
       home: 'Home',
       services: 'Services',
+      industries: 'Industries',
       insights: 'Insights',
       about: 'About',
       contact: 'Contact',
     },
     indexLanding: {
-      emeaSignalsH2:
-        'Europe, Middle East, and Africa pharmaceutical and healthcare market research snapshot',
+      emeaSignalsH2: 'Global reach with local execution depth',
     },
     hero: {
       tagline: 'Global International Market Research Firm',
@@ -30,7 +30,9 @@ export const translations = {
       titleEmphasis: 'pharma strategy',
       title: 'Pharmaceutical and healthcare market research for confident launch, access, and growth',
       subtitle:
-        'BioNixus is a global market research company. We help pharma, biotech, and medtech and consumer teams turn KOLs, payers, consumers and account based evidence into decisions that move launches forward — with country-level depth across MENA, Latin America, Eastern Europe, and the wider EMEA region.',
+        'BioNixus is a global insights and market research partner across the Americas, EMEA, and APAC — with country-level depth where it matters. We help pharma, biotech, and medtech teams turn KOL, payer, and hospital evidence into launch, access, and growth decisions.',
+      trustStripPrimary: 'Trusted by',
+      trustStripStats: '48 global clients · 127+ projects · 17+ countries',
       valueProposition: 'Every engagement starts from a real commercial question, not a generic data dump. You get defensible quantitative and qualitative evidence — scoped to the decision, the market, and the regulatory reality you actually operate in — from pre-launch sizing through post-launch optimization.',
       serviceHighlights: [
         'Multi-country physician & payer research',
@@ -46,7 +48,8 @@ export const translations = {
     },
     services: {
       title: 'Pharmaceutical and healthcare market research services',
-      subtitle: 'Decision-ready quantitative and qualitative evidence for launch, market access, and growth — across the GCC, MENA, Europe, and the UK.',
+      subtitle:
+        'Decision-ready quantitative and qualitative evidence for launch, market access, and growth — globally, with deep execution in Europe, the Americas, and the Middle East.',
       items: [
         {
           title: 'Quantitative Healthcare Market Research',
@@ -85,8 +88,9 @@ export const translations = {
           ],
         },
         {
-          title: 'Europe and Middle East Coverage',
-          description: 'Country-level execution across the UK, Germany, France, Italy, Spain, Saudi Arabia, the UAE, Egypt, Kuwait, and Qatar, with comparable design for regional roll-ups.',
+          title: 'Global Country-Level Execution',
+          description:
+            'Country-level execution across the United States, Canada, the UK, Germany, France, Italy, Spain, Saudi Arabia, the UAE, Egypt, Kuwait, Qatar, and APAC priority markets — with comparable design for regional roll-ups.',
           bullets: [
             'Country-level execution with regional comparability',
             'Cross-market insight for portfolio planning',
@@ -235,10 +239,12 @@ export const translations = {
       no: 'No',
     },
     footer: {
-      tagline: 'Global Pharmaceutical & Healthcare Market Research with deep regional expertise across MENA, Latin America, and Eastern Europe. Delivering evidence-based insights to pharmaceutical and biotech leaders worldwide.',
+      tagline:
+        'Global market research with pharma and healthcare leadership — and proven capability across B2B and B2C sectors. Delivering evidence-based insights to pharmaceutical, biotech, and enterprise teams worldwide.',
       quickLinksHeading: 'Quick links',
       companyHeading: 'Company',
       healthcareHub: 'Healthcare market research hub',
+      industriesHub: 'Industries',
       blogAndInsights: 'Blog & insights',
       sitemap: 'Full site directory',
       about: 'About',
@@ -297,11 +303,78 @@ export const translations = {
       description: 'The page you are looking for does not exist or has been moved.',
       backHome: 'Return to Home',
     },
+    geographicCoverageEn: {
+      title: 'Global geographic coverage',
+      regions: [
+        {
+          name: 'Americas',
+          countries: [
+            {
+              name: 'United States & Canada',
+              items: ['Pharma, medtech, and enterprise research', 'US-headquartered governance'],
+            },
+            {
+              name: 'Latin America',
+              items: ['Mexico and Brazil fieldwork', 'Consumer and B2B programs'],
+            },
+          ],
+        },
+        {
+          name: 'Europe & UK',
+          countries: [
+            {
+              name: 'United Kingdom',
+              items: ['NHS and private healthcare', 'HTA and payer research'],
+            },
+            {
+              name: 'EU5+ markets',
+              items: ['Germany, France, Italy, Spain', 'Pan-European comparability'],
+            },
+            {
+              name: 'Eastern Europe & Turkey',
+              items: ['Regional roll-ups', 'Local regulatory alignment'],
+            },
+          ],
+        },
+        {
+          name: 'Middle East & Africa',
+          countries: [
+            {
+              name: 'GCC',
+              items: ['Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, Oman', 'SFDA and MOHAP aligned fieldwork'],
+            },
+            {
+              name: 'North Africa',
+              items: ['Egypt, Morocco, Algeria, Tunisia', 'Bilingual Arabic–English programs'],
+            },
+          ],
+        },
+        {
+          name: 'Asia-Pacific',
+          countries: [
+            {
+              name: 'China, Japan, Singapore',
+              items: ['Pharmaceutical and enterprise research', 'Multilingual deployment'],
+            },
+          ],
+        },
+      ],
+    },
+    therapeuticAreasEn: {
+      title: 'Therapeutic areas we cover',
+      areas: [
+        { name: 'Oncology', description: 'Launch sequencing, biomarker adoption, KOL mapping' },
+        { name: 'Immunology & rare diseases', description: 'Access pathways, payer evidence, patient journey' },
+        { name: 'Diabetes & endocrinology', description: 'Prescribing trends, device adoption, market sizing' },
+        { name: 'Digital health & medtech', description: 'Hospital adoption, reimbursement, competitive intelligence' },
+      ],
+    },
   },
   de: {
     nav: {
       home: 'Startseite',
       services: 'Leistungen',
+      industries: 'Branchen',
       insights: 'Erkenntnisse',
       about: 'Über uns',
       contact: 'Kontakt',
@@ -558,6 +631,7 @@ export const translations = {
     nav: {
       home: 'Accueil',
       services: 'Services',
+      industries: 'Secteurs',
       insights: 'Perspectives',
       about: 'À propos',
       contact: 'Contact',
@@ -815,6 +889,7 @@ export const translations = {
     nav: {
       home: 'Inicio',
       services: 'Servicios',
+      industries: 'Industrias',
       insights: 'Perspectivas',
       about: 'Nosotros',
       contact: 'Contacto',
@@ -1072,6 +1147,7 @@ export const translations = {
     nav: {
       home: '首页',
       services: '服务',
+      industries: '行业',
       insights: '洞察',
       about: '关于我们',
       contact: '联系我们',
@@ -1323,6 +1399,7 @@ export const translations = {
     nav: {
       home: 'الرئيسية',
       services: 'الخدمات',
+      industries: 'القطاعات',
       insights: 'الرؤى',
       about: 'من نحن',
       contact: 'اتصل بنا',
@@ -1685,6 +1762,7 @@ export const translations = {
     nav: {
       home: 'Início',
       services: 'Serviços',
+      industries: 'Setores',
       insights: 'Insights',
       about: 'Sobre nós',
       contact: 'Contato',
@@ -1836,6 +1914,7 @@ export const translations = {
     nav: {
       home: 'Главная',
       services: 'Услуги',
+      industries: 'Отрасли',
       insights: 'Аналитика',
       about: 'О нас',
       contact: 'Контакт',
