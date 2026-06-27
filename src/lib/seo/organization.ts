@@ -51,6 +51,10 @@ export const ORG_KNOWS_ABOUT = [
   'Healthcare market research Singapore',
   'HSA market research',
   'ACE health technology assessment research',
+  'Pharmaceutical market research Poland',
+  'Healthcare market research Poland',
+  'AOTMiT market access research',
+  'NFZ payer research Poland',
 ];
 
 /** Global reach with explicit deep-fingerprint regions and countries. */
@@ -78,6 +82,7 @@ export const ORG_AREA_SERVED: Array<Record<string, string>> = [
   { '@type': 'Country', name: 'Italy' },
   { '@type': 'Country', name: 'Spain' },
   { '@type': 'Country', name: 'Turkey' },
+  { '@type': 'Country', name: 'Poland', sameAs: 'https://www.wikidata.org/wiki/Q36' },
   // Americas
   { '@type': 'Country', name: 'United States' },
   { '@type': 'Country', name: 'Canada' },
