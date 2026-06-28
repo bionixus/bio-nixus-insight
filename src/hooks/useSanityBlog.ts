@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { fetchSanityLatestInsights, fetchSanityPosts } from '@/lib/sanity-blog';
+import { fetchSanityLatestInsights, fetchSanityPosts, fetchIndustriesInsights } from '@/lib/sanity-blog';
 import { isSanityConfigured } from '@/lib/sanity';
 import { useLanguage } from '@/contexts/LanguageContext';
 import type { BlogPost } from '@/types/blog';
@@ -11,8 +11,8 @@ export function useSanityBlog(ssrPosts?: BlogPost[] | null) {
   const hasSsrIndex = Array.isArray(ssrPosts);
 
   const query = useQuery({
-    queryKey: ['sanity-blog', language],
-    queryFn: fetchSanityPosts,
+    queryKey: ['sanity-blog', language, 'healthcare'],
+    queryFn: () => fetchSanityPosts({ silo: 'healthcare' }),
     enabled: isSanityConfigured() || hasSsrIndex,
     staleTime: 60 * 1000, // 1 minute
     initialData: hasSsrIndex ? ssrPosts! : undefined,
@@ -48,4 +48,30 @@ export function useSanityLatestInsights(limit = 3, ssrPosts?: BlogPost[] | null)
     staleTime: 2 * 60 * 1000,
     gcTime: 10 * 60 * 1000,
   });
+}
+
+/** Industries insights hub — B2B/B2C posts for /bionixus-industries/insights */
+export function useIndustriesInsights(ssrPosts?: BlogPost[] | null) {
+  const hasSsrIndex = Array.isArray(ssrPosts);
+
+  const query = useQuery({
+    queryKey: ['industries-insights'],
+    queryFn: () => fetchIndustriesInsights(),
+    enabled: isSanityConfigured() || hasSsrIndex,
+    staleTime: 60 * 1000,
+    initialData: hasSsrIndex ? ssrPosts! : undefined,
+  });
+
+  const data = useMemo(() => {
+    const posts = query.data ?? [];
+    return posts.sort((a, b) => {
+      const da = a.publishedAtIso || a.date;
+      const db = b.publishedAtIso || b.date;
+      const ta = da ? new Date(da).getTime() : 0;
+      const tb = db ? new Date(db).getTime() : 0;
+      return (Number.isNaN(tb) ? 0 : tb) - (Number.isNaN(ta) ? 0 : ta);
+    });
+  }, [query.data]);
+
+  return { ...query, data };
 }
