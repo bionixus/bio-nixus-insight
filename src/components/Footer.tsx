@@ -1,6 +1,14 @@
 import { useState } from 'react';
 import { Linkedin, Facebook, Instagram, Mail } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import {
+  BIONIXUS_PHONE_EG,
+  BIONIXUS_PHONE_EG_DISPLAY,
+  BIONIXUS_PHONE_UK,
+  BIONIXUS_PHONE_UK_DISPLAY,
+  BIONIXUS_PHONE_US,
+  BIONIXUS_PHONE_US_DISPLAY,
+} from '@/components/report-conversion/constants';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { ClientPortalDialog } from '@/components/ClientPortalDialog';
@@ -8,6 +16,12 @@ import { ClientPortalDialog } from '@/components/ClientPortalDialog';
 const Footer = () => {
   const { pathname } = useLocation();
   const { t, language, isRTL } = useLanguage();
+  const phoneRegionLabels = t.homePage.cta.phoneRegionLabels;
+  const phoneLines = [
+    { tel: BIONIXUS_PHONE_US, label: `${phoneRegionLabels[0]} ${BIONIXUS_PHONE_US_DISPLAY}` },
+    { tel: BIONIXUS_PHONE_UK, label: `${phoneRegionLabels[1]} ${BIONIXUS_PHONE_UK_DISPLAY}` },
+    { tel: BIONIXUS_PHONE_EG, label: `${phoneRegionLabels[2]} ${BIONIXUS_PHONE_EG_DISPLAY}` },
+  ];
   const basePath = languagePaths[language] || '/';
   const [portalOpen, setPortalOpen] = useState(false);
   const [nlName, setNlName] = useState('');
@@ -319,11 +333,8 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a
-                  href="tel:+18884655557"
-                  className="hover:text-primary-foreground transition-colors"
-                >
-                  US No. +1 888 465 5557
+                <a href={`tel:${phoneLines[0].tel}`} className="hover:text-primary-foreground transition-colors">
+                  {phoneLines[0].label}
                 </a>
               </li>
               <li>
@@ -338,19 +349,13 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a
-                  href="tel:+447727666682"
-                  className="hover:text-primary-foreground transition-colors"
-                >
-                  Europe No. +44 7727 666682
+                <a href={`tel:${phoneLines[1].tel}`} className="hover:text-primary-foreground transition-colors">
+                  {phoneLines[1].label}
                 </a>
               </li>
               <li>
-                <a
-                  href="tel:+201206882323"
-                  className="hover:text-primary-foreground transition-colors"
-                >
-                  Middle East, Africa and Asia No. +20 120 688 2323
+                <a href={`tel:${phoneLines[2].tel}`} className="hover:text-primary-foreground transition-colors">
+                  {phoneLines[2].label}
                 </a>
               </li>
             </ul>
