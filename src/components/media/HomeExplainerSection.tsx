@@ -1,9 +1,11 @@
-import { getPageMedia } from '@/data/mediaAssets';
+import { getLocalizedHomeMedia } from '@/data/localizedHomeMedia';
 import { MediaVisualBriefing } from '@/components/media/MediaVisualBriefing';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 /** Homepage visual briefing figures (below overview video). */
 export function HomeExplainerSection() {
-  const media = getPageMedia('home');
+  const { language, t } = useLanguage();
+  const media = getLocalizedHomeMedia(language, t.homePage);
   if (!media?.visualBriefing) return null;
 
   return (
