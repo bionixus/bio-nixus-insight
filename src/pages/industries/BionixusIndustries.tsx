@@ -3,19 +3,17 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
-import { useIndustriesInsights } from '@/hooks/useSanityBlog';
-import { getBlogPostPath, INDUSTRIES_INSIGHTS_INDEX_PATH } from '@/lib/blog-content-silo';
-import { industrySlugLabel } from '@/lib/industries-insights-filters';
+import { INDUSTRIES_INSIGHTS_SECTION_PATH } from '@/lib/blog-content-silo';
 import { SEGMENTS, SEGMENT_ORDER, type SegmentSlug } from '@/data/bionixusIndustrySegments';
 import {
   BIONIXUS_INDUSTRIES_REGION_GROUPS,
-  getHealthcareHubPathForIndexCountry,
+  getIndustriesHubCountryPath,
 } from '@/data/industryHubCountries';
 import { COMPANY_BOILERPLATE_SHORT } from '@/data/companyStory';
+import IndustriesInsightsSection from '@/pages/industries/IndustriesInsightsSection';
 import { PREMIUM_INDUSTRIES_CSS } from './premiumIndustriesCss';
 
 const HUB_PATH = '/bionixus-industries';
-const INSIGHTS_PATH = INDUSTRIES_INSIGHTS_INDEX_PATH;
 
 const HUB_TITLE = 'Market Research Across Industries | BioNixus';
 const HUB_DESCRIPTION = COMPANY_BOILERPLATE_SHORT;
@@ -45,7 +43,7 @@ const TRUST_STATS = [
 
 const NEXT_STEP_LINKS = [
   {
-    to: '/bionixus-industries/insights',
+    to: INDUSTRIES_INSIGHTS_SECTION_PATH,
     label: 'Industry insights — B2B & B2C',
     description: 'Articles on FMCG, technology, retail, and enterprise research across MENA.',
   },
@@ -101,9 +99,6 @@ const HUB_FAQ = [
 
 
 export default function BionixusIndustries() {
-  const { data: insightPosts = [], isLoading: insightsLoading } = useIndustriesInsights();
-  const latestInsights = insightPosts.slice(0, 3);
-
   const jsonLd = [
     {
       '@context': 'https://schema.org',
@@ -178,9 +173,9 @@ export default function BionixusIndustries() {
                 This hub is the bridge between them.
               </p>
               <div className="bx-hero-actions">
-                <Link to={INSIGHTS_PATH} className="bx-btn-gold">
+                <a href="#insights" className="bx-btn-gold">
                   Industry insights portal →
-                </Link>
+                </a>
                 <Link to="/market-research-by-industry" className="bx-btn-ghost">
                   Explore the industries index
                 </Link>
@@ -325,70 +320,7 @@ export default function BionixusIndustries() {
           </div>
         </section>
 
-        {/* ===== INDUSTRY INSIGHTS PORTAL ===== */}
-        <section className="bx-section bx-insights-portal" aria-labelledby="bx-insights-portal-heading">
-          <div className="bx-inner">
-            <div className="bx-insights-portal-grid">
-              <div className="bx-insights-portal-copy">
-                <div className="bx-eyebrow gold">
-                  <span className="bx-line" /> B2B &amp; B2C insights
-                </div>
-                <h2 id="bx-insights-portal-heading" className="bx-h2">
-                  Industry insights <em>portal</em>
-                </h2>
-                <p className="bx-lead">
-                  Fieldwork-led articles for non-healthcare buyers — filter by industry vertical and country.
-                  Healthcare and pharmaceutical research stays on our dedicated blog.
-                </p>
-                <div className="bx-cta-actions mt-8">
-                  <Link to={INSIGHTS_PATH} className="bx-btn-gold">
-                    Open insights portal →
-                  </Link>
-                  <Link to="/contact" className="bx-btn-ghost dark">
-                    Request a proposal
-                  </Link>
-                </div>
-              </div>
-              <div className="bx-insights-portal-panel">
-                <div className="bx-insights-portal-panel-head">
-                  <h3>Latest industry articles</h3>
-                  {!insightsLoading && insightPosts.length > 0 ? (
-                    <span className="bx-insights-count">{insightPosts.length} published</span>
-                  ) : null}
-                </div>
-                {insightsLoading ? (
-                  <ul className="bx-insights-teaser-list" aria-busy="true">
-                    {[0, 1, 2].map((i) => (
-                      <li key={i} className="bx-insights-teaser-skeleton" />
-                    ))}
-                  </ul>
-                ) : latestInsights.length > 0 ? (
-                  <ul className="bx-insights-teaser-list">
-                    {latestInsights.map((post) => (
-                      <li key={post.id}>
-                        <Link to={getBlogPostPath(post)} className="bx-insights-teaser-card">
-                          <span className="bx-insights-teaser-meta">
-                            {post.industrySlug ? industrySlugLabel(post.industrySlug) : post.category}
-                            {post.country ? ` · ${post.country}` : ''}
-                          </span>
-                          <span className="bx-insights-teaser-title">{post.title}</span>
-                          <span className="bx-insights-teaser-arrow" aria-hidden="true">→</span>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p className="bx-insights-empty">
-                    Articles publishing soon — explore country × industry service pages in the meantime.
-                  </p>
-                )}
-                <Link to={INSIGHTS_PATH} className="bx-insights-portal-foot">
-                  Browse all industry insights →
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+        <IndustriesInsightsSection />
 
         {/* ===== DARK NARRATIVE ===== */}
         <section className="bx-section dark">
@@ -418,6 +350,14 @@ export default function BionixusIndustries() {
                 <Link to="/b2c-industries">B2C industries</Link> work, and a direct line back to the{' '}
                 <Link to="/healthcare-market-research">healthcare market research hub</Link> where the firm began.
               </p>
+              <p className="bx-lead light">
+                B2B market research entry points across the Americas, Europe, MENA &amp; GCC, Africa, and APAC.
+                Each country chip opens a technology market research page — browse{' '}
+                <Link to="/b2b-industries">B2B industries</Link> or{' '}
+                <Link to="/b2c-industries">B2C industries</Link> for other verticals. Pharmaceutical and
+                healthcare country programmes live on the{' '}
+                <Link to="/healthcare-market-research">healthcare market research hub</Link>.
+              </p>
             </div>
             <div className="bx-country-grid bx-country-grid--after-narrative">
               {BIONIXUS_INDUSTRIES_REGION_GROUPS.map((group) => (
@@ -428,7 +368,7 @@ export default function BionixusIndustries() {
                     {group.countries.map((country) => (
                       <Link
                         key={country.slug}
-                        to={getHealthcareHubPathForIndexCountry(country)}
+                        to={getIndustriesHubCountryPath(country, 'b2b')}
                         className="bx-chip"
                       >
                         {country.label}

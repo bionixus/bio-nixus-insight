@@ -422,41 +422,143 @@ export const translations = {
       ],
     },
     services: {
-      title: 'Pharmazeutische und Gesundheitsmarktforschungsleistungen',
+      title: 'Pharmazeutische und Gesundheitsmarktforschung in Deutschland und Europa',
       subtitle:
-        'Entscheidungsreife quantitative und qualitative Erkenntnisse für Markteinführung, Marktzugang und Wachstum — global, mit starker Umsetzung in Europa, Amerika und Naher Osten.',
+        'Entscheidungsreife quantitative und qualitative Erkenntnisse für Markteinführung, Marktzugang und Wachstum — mit Schwerpunkt Deutschland, EU5, UK und pan-europäischer Umsetzung.',
+      servicePrimaryDe: [
+        {
+          title: 'Quantitative Gesundheitsmarktforschung & Ärztebefragungen — Deutschland und Europa',
+          lead: 'Statistisch abgesicherte Erkenntnisse aus groß angelegten Ärzte-, Kostenträger- und Klinikumfragen in Deutschland, EU5 und UK. Unsere quantitative Methodik liefert die Evidenz für G-BA-, IQWiG-, AMNOG- und HTA-relevante Entscheidungen.',
+          regions: [
+            {
+              name: 'Deutschland',
+              items: [
+                'G-BA- und IQWiG-Interessengruppen-Forschung',
+                'AMNOG / Frühe Nutzenbewertung und Erstattungsstrategie',
+                'Krankenhaus- und Ambulanzpanels',
+                'Kassenärztliche Vereinigungen und Facharztnetzwerke',
+                'Universitätskliniken und Maximalversorger',
+              ],
+            },
+            {
+              name: 'EU5 & UK',
+              items: [
+                'Frankreich (HAS, CEPS)',
+                'Italien (AIFA)',
+                'Spanien und Portugal',
+                'Niederlande (Zorginstituut)',
+                'UK (NICE, NHS England, Schottland, Wales)',
+              ],
+            },
+            {
+              name: 'Weitere europäische Märkte',
+              items: ['Schweiz und Österreich (DACH)', 'Belgien und Benelux', 'Skandinavien', 'Osteuropa auf Anfrage'],
+            },
+          ],
+          deliverables:
+            'Lieferungen: Statistische Berichte, Marktgrößenschätzung, Verschreibungs- und Pfadanalysen, Prognosen, Segmentierung, pan-europäische Vergleichsanalysen',
+        },
+        {
+          title: 'Qualitative pharmazeutische Marktforschung — Deutschland und Europa',
+          lead: 'Tiefgehende qualitative Erkenntnisse zu klinischen Perspektiven, Versorgungsrealität und ungedeckten medizinischen Bedürfnissen — durch Experteninterviews, Fokusgruppen und Advisory Boards in Deutschland und Europa.',
+          regions: [
+            {
+              name: 'Deutschland',
+              items: [
+                'Experteninterviews mit Fachärzten und Klinik-Entscheidern',
+                'Advisory Boards und KOL-Runden',
+                'Behandlungspfad- und Patientenreise-Analysen',
+                'Fokusgruppen mit Ärzten und Kostenträgern',
+              ],
+            },
+            {
+              name: 'EU5 & UK',
+              items: [
+                'Pan-europäisches KOL-Mapping',
+                'Länderübergreifende Fokusgruppen',
+                'NHS-Berater- und GP-Interviews (UK)',
+                'HTA- und Erstattungs-Expertenpanels',
+              ],
+            },
+            {
+              name: 'Therapeutische Schwerpunkte',
+              items: ['Onkologie und seltene Erkrankungen', 'Endokrinologie / Diabetes', 'Immunologie und Biologika'],
+            },
+          ],
+          deliverables:
+            'Lieferungen: Thematische Analyse, Konsenszusammenfassungen, Marktzugangs-Empfehlungen, KOL-Strategien, ungedeckte Bedarfsanalysen',
+        },
+      ],
+      serviceSecondaryDe: [
+        {
+          title: 'Marktzugang, HTA und Kostenträgerstrategie',
+          intro:
+            'Evidenzbasierte Preis-, Erstattungs- und Wertstory-Programme für Deutschland und Europa — abgestimmt auf nationale HTA-Prozesse und Kostenträgerlogik.',
+          items: [
+            'Deutschland: G-BA, IQWiG, AMNOG und Krankenkassen-Engagement',
+            'UK: NICE, NHS England und devolved nations',
+            'Frankreich: HAS und CEPS; Italien: AIFA; Spanien: AEMPS',
+            'Kosten-Nutzen- und HEOR-Analysen für HTA-Einreichungen',
+          ],
+        },
+        {
+          title: 'Methodik, DSGVO und regulatorische Compliance',
+          intro:
+            'Unsere Forschung in Deutschland und Europa entspricht EMA-, MHRA- und DSGVO-Anforderungen — mit auditfähiger Dokumentation für Ihr Governance-Team.',
+          items: [
+            'EMA- und MHRA-konforme Erhebungsprotokolle',
+            'DSGVO-konforme Datenerhebung und Speicherung',
+            'ICH-GCP für klinische Begleit- und RWE-Programme',
+            'Mehrsprachige Moderation: Deutsch, Englisch, Französisch',
+          ],
+        },
+      ],
       items: [
         {
-          title: 'Quantitative Gesundheitsmarktforschung & Ärztebefragungen',
-          description: 'Groß angelegte statistische Erkenntnisse von Ärzten und Gesundheitsfachkräften in UK, Europa und MENA. Leistungen: NHS- und private Anbieterforschung, Krankenhauspräferenzstudien, Verschreibungsverfolgung, Gesundheitstechnologiebewertungs-Entscheider-Erkenntnisse, Kostenträgeranalyse, Mehrländer-Umfragen (UAE, Saudi-Arabien, Ägypten, Kuwait, Katar). Lieferungen: Statistische Berichte, Marktgrößenschätzung, Pfadanalyse, Prognosen, Segmentierung, vergleichende Erkenntnisse.',
+          title: 'Wettbewerbsanalyse & Marktlandschaft',
+          description:
+            'Pipeline-Monitoring, Landschaftsbewertungen und Markteinführungsreife für europäische Märkte — als belastbare Grundlage für Portfolio- und Launch-Entscheidungen.',
         },
         {
-          title: 'Qualitative pharmazeutische Marktforschung & Experten-Erkenntnisse',
-          description: 'Tiefgehende qualitative Marktforschung zu klinischen Perspektiven und ungedeckten medizinischen Bedürfnissen in UK, Europa und MENA. Leistungen: NHS-Berater/GP-Interviews, NICE-Ausschuss-Engagement, pan-europäisches KOL-Mapping, länderübergreifende Fokusgruppen, Behandlungspfad-Analyse, Golf-Gesundheitswesen-Erkenntnisse. Lieferungen: Thematische Analyse, Konsenszusammenfassungen, Marktzugangs-Empfehlungen, KOL-Strategien.',
-        },
-        {
-          title: 'Marktzugang & Gesundheitstechnologiebewertungs-Strategie',
-          description: 'NICE-, G-BA-, HAS- und Gesundheitstechnologiebewertungs-Anforderungsintegration. Evidenzbasierte Preisstrategien und Kostenträger-Engagement-Frameworks für UK und europäische Märkte. Kosten-Nutzen-Analyse für Gesundheitstechnologiebewertungs-Einreichungen.',
-        },
-        {
-          title: 'KOL- & Interessengruppen-Kartierung',
-          description: 'UK- und pan-europäisches KOL-Mapping und Engagement. NHS-Berater- und Royal College-Mitglieder-Netzwerke. Mehrländer-Ärzteverbands-Partnerschaften und Krankenhaus-Anbieter-Panels.',
-        },
-        {
-          title: 'Geografische Abdeckung: Europa • MENA',
-          description: 'UK: NHS England, Schottland, Wales, Nordirland; Londoner Lehrkrankenhäuser; NICE, MHRA Interessengruppen-Forschung. Europa: Deutschland (G-BA, IQWiG), Frankreich (HAS, CEPS), Spanien, Italien, Niederlande, Belgien, Schweiz. MENA: VAE (DHA, HAAD), Saudi-Arabien, Ägypten, Kuwait, Katar.',
-        },
-        {
-          title: 'Methodik & Compliance',
-          description: 'MHRA- und EMA-Regulierungskonformität. DSGVO-konforme Datenerhebung. NHS Research Ethics Committee (REC) Standards. Mehrsprachige Umfragebereitstellung (Englisch, Deutsch, Französisch, Spanisch, Italienisch, Arabisch). Sichere Datenverschlüsselung und Gesundheitsökonomie und Versorgungsforschung (HEOR)-Analyse.',
+          title: 'Unterstützung klinischer Studien & RWE',
+          description:
+            'Standort- und Prüfer-Identifikation, Rekrutierungs-Durchführbarkeit und RWE-Planung in Deutschland, EU5 und angrenzenden europäischen Märkten.',
         },
       ],
     },
     geographicCoverageDe: {
-      title: 'Geografische Abdeckung: Europa • MENA',
+      title: 'Geografische Abdeckung: Deutschland & Europa',
       regions: [
-        { name: 'Europa - Pan-europäisches Forschungsnetzwerk', countries: [{ name: 'Deutschland', items: ['G-BA und IQWiG Interessengruppen-Forschung', 'Krankenhaus und ambulante Versorgung'] }, { name: 'Frankreich', items: ['HAS und CEPS Entscheider-Erkenntnisse', 'Öffentliche und private Krankenhäuser'] }, { name: 'Weitere Märkte', items: ['UK, Spanien, Italien, Niederlande, Belgien, Schweiz', 'Regionale Gesundheitssysteme und Fachversorgung'] }] },
-        { name: 'MENA - Strategische Markterweiterung', countries: [{ name: 'VAE', items: ['DHA- und HAAD-regulierte Einrichtungen', 'Dubai Healthcare City'] }, { name: 'Saudi-Arabien', items: ['MOH Gesundheitswesen-Transformation'] }, { name: 'Weitere Märkte', items: ['Ägypten, Kuwait, Katar', 'Öffentliche und private Gesundheitsnetzwerke'] }] },
+        {
+          name: 'Deutschland — Kernmarkt',
+          countries: [
+            {
+              name: 'Deutschland',
+              items: [
+                'G-BA und IQWiG Interessengruppen-Forschung',
+                'Krankenhaus- und ambulante Versorgung',
+                'AMNOG / Frühe Nutzenbewertung',
+                'Krankenkassen- und Kostenträgerpanels',
+              ],
+            },
+          ],
+        },
+        {
+          name: 'Europa — Pan-europäisches Forschungsnetzwerk',
+          countries: [
+            { name: 'Frankreich', items: ['HAS und CEPS Entscheider-Erkenntnisse', 'Öffentliche und private Krankenhäuser'] },
+            { name: 'UK', items: ['NICE und NHS England', 'Schottland, Wales, Nordirland'] },
+            { name: 'Weitere EU5 & Märkte', items: ['Italien, Spanien, Niederlande, Belgien, Schweiz', 'Regionale Gesundheitssysteme und Fachversorgung'] },
+          ],
+        },
+        {
+          name: 'Erweiterung — Naher Osten & Nordafrika',
+          countries: [
+            { name: 'VAE', items: ['DHA- und DOH-regulierte Einrichtungen', 'Dubai Healthcare City'] },
+            { name: 'Saudi-Arabien', items: ['Gesundheitswesen-Transformation'] },
+            { name: 'Weitere Märkte', items: ['Ägypten, Kuwait, Katar', 'Öffentliche und private Gesundheitsnetzwerke'] },
+          ],
+        },
       ],
     },
     methodologyDe: {

@@ -3,6 +3,7 @@ import { ArrowRight, Building2, HeartPulse, ShoppingBag } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { SEGMENTS } from '@/data/bionixusIndustrySegments';
+import { INDUSTRIES_INSIGHTS_SECTION_PATH } from '@/lib/blog-content-silo';
 
 const HUB_PATH = '/bionixus-industries';
 
@@ -90,7 +91,7 @@ const IndustriesGatewaySection = () => {
             <ArrowRight className="h-4 w-4" aria-hidden />
           </Link>
           <p className="mt-3 text-sm text-muted-foreground">
-            <Link to="/bionixus-industries/insights" className="text-primary font-medium hover:underline">
+            <Link to={INDUSTRIES_INSIGHTS_SECTION_PATH} className="text-primary font-medium hover:underline">
               {copy.insightsLink}
             </Link>
           </p>

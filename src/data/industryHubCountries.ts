@@ -245,6 +245,19 @@ export function isMatrixCountrySlug(slug: string): slug is MatrixCountrySlug {
   return MATRIX_COUNTRY_SET.has(slug);
 }
 
+/**
+ * B2B or B2C country entry path for the non-healthcare industries silo
+ * (`/bionixus-industries`, `/b2b-industries`, `/b2c-industries`).
+ * Never use {@link getHealthcareHubPathForIndexCountry} on those pages.
+ */
+export function getIndustriesHubCountryPath(
+  country: MarketResearchIndexCountry,
+  segment: 'b2b' | 'b2c' = 'b2b',
+): string {
+  const industrySlug = segment === 'b2c' ? DEFAULT_B2C_INDUSTRY_SLUG : DEFAULT_B2B_INDUSTRY_SLUG;
+  return getIndustrySegmentCountryPath(country.slug, industrySlug);
+}
+
 export function getHealthcareHubPathForIndexCountry(country: MarketResearchIndexCountry): string {
   if (isMatrixCountrySlug(country.slug)) {
     return MATRIX_COUNTRIES[country.slug].healthcareHubPath;

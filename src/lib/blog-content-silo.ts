@@ -5,7 +5,13 @@ export type ContentSilo = 'healthcare' | 'industries';
 export const HEALTHCARE_SILO_GROQ = '(contentSilo == "healthcare" || !defined(contentSilo))';
 export const INDUSTRIES_SILO_GROQ = 'contentSilo == "industries"';
 
-export const INDUSTRIES_INSIGHTS_INDEX_PATH = '/bionixus-industries/insights';
+export const INDUSTRIES_HUB_PATH = '/bionixus-industries';
+/** On-page insights section on the industries hub (canonical index for B2B/B2C articles). */
+export const INDUSTRIES_INSIGHTS_SECTION_PATH = `${INDUSTRIES_HUB_PATH}#insights`;
+/** Legacy index URL — redirects to {@link INDUSTRIES_INSIGHTS_SECTION_PATH}. */
+export const INDUSTRIES_INSIGHTS_LEGACY_INDEX_PATH = '/bionixus-industries/insights';
+/** @deprecated Use {@link INDUSTRIES_INSIGHTS_SECTION_PATH} for index links. */
+export const INDUSTRIES_INSIGHTS_INDEX_PATH = INDUSTRIES_INSIGHTS_SECTION_PATH;
 export const HEALTHCARE_BLOG_INDEX_PATH = '/blog';
 
 export function resolveContentSilo(post: Pick<BlogPost, 'contentSilo'>): ContentSilo {
@@ -33,7 +39,7 @@ export function getBlogIndexLabelForPost(post: Pick<BlogPost, 'contentSilo'>): s
 }
 
 /** Path prefix for individual industry insight articles (no trailing slash). */
-export const INDUSTRIES_INSIGHT_POST_PATH_PREFIX = INDUSTRIES_INSIGHTS_INDEX_PATH;
+export const INDUSTRIES_INSIGHT_POST_PATH_PREFIX = INDUSTRIES_INSIGHTS_LEGACY_INDEX_PATH;
 
 export function getIndustriesInsightPostPath(slug: string): string {
   return `${INDUSTRIES_INSIGHT_POST_PATH_PREFIX}/${slug}`;

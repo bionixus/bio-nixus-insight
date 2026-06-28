@@ -12,13 +12,9 @@ import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { PremiumComplianceRibbon } from '@/components/home/PremiumComplianceRibbon';
 import { serviceRecoveryPaths } from '@/lib/internalLinkRecovery';
 import {
-  COMMERCIAL_OFFERINGS,
-  HEALTHCARE_SERVICES,
-  HERO_METRICS,
-  HUB_LINKS,
-  METHODOLOGY_SERVICES,
-  SERVICE_FAQ,
+  getServicesHubBundle,
 } from '@/data/servicesHubContent';
+import { languagePaths, localizedContactPath } from '@/lib/seo';
 
 const recoveryLinkLabels: Record<string, string> = {
   '/bionixus-market-research-middle-east': 'Middle East Pharmaceutical Market Research',
@@ -46,13 +42,19 @@ const recoveryLinksWithLabels = serviceRecoveryPaths.map((path) => ({
   label: pathToLabel(path),
 }));
 
-const servicesHubJsonLd = {
+const servicesHubJsonLd = (
+  healthcareServices: ReturnType<typeof getServicesHubBundle>['healthcareServices'],
+  methodologyServices: ReturnType<typeof getServicesHubBundle>['methodologyServices'],
+  commercialOfferings: ReturnType<typeof getServicesHubBundle>['commercialOfferings'],
+  name: string,
+  description: string,
+  url: string,
+) => ({
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
-  name: 'Global Market Research Services',
-  description:
-    'Pharmaceutical and healthcare market research plus B2B and B2C commercial research — CATI, CAWI, CAPI, focus groups, mystery shopping, price elasticity, and online behaviour tracking across 38 countries.',
-  url: 'https://www.bionixus.com/services',
+  name,
+  description,
+  url,
   publisher: {
     '@type': 'Organization',
     name: 'BioNixus',
@@ -60,42 +62,90 @@ const servicesHubJsonLd = {
   },
   mainEntity: {
     '@type': 'ItemList',
-    numberOfItems: HEALTHCARE_SERVICES.length + METHODOLOGY_SERVICES.length + COMMERCIAL_OFFERINGS.length,
+    numberOfItems: healthcareServices.length + methodologyServices.length + commercialOfferings.length,
     itemListElement: [
-      ...HEALTHCARE_SERVICES.map((svc, i) => ({
+      ...healthcareServices.map((svc, i) => ({
         '@type': 'ListItem',
         position: i + 1,
         name: svc.title,
         url: `https://www.bionixus.com/services/${svc.slug}`,
       })),
-      ...METHODOLOGY_SERVICES.map((svc, i) => ({
+      ...methodologyServices.map((svc, i) => ({
         '@type': 'ListItem',
-        position: HEALTHCARE_SERVICES.length + i + 1,
+        position: healthcareServices.length + i + 1,
         name: svc.title,
         url: `https://www.bionixus.com${svc.href}`,
       })),
-      ...COMMERCIAL_OFFERINGS.map((offering, i) => ({
+      ...commercialOfferings.map((offering, i) => ({
         '@type': 'ListItem',
-        position: HEALTHCARE_SERVICES.length + METHODOLOGY_SERVICES.length + i + 1,
+        position: healthcareServices.length + methodologyServices.length + i + 1,
         name: offering.title,
         url: `https://www.bionixus.com${offering.to}`,
       })),
     ],
   },
-};
+});
 
-const faqJsonLd = {
+const faqJsonLd = (items: readonly { question: string; answer: string }[]) => ({
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: SERVICE_FAQ.map((item) => ({
+  mainEntity: items.map((item) => ({
     '@type': 'Question',
     name: item.question,
     acceptedAnswer: { '@type': 'Answer', text: item.answer },
   })),
-};
+});
 
 const Services = () => {
   const { language } = useLanguage();
+  const bundle = getServicesHubBundle(language);
+  const copy = bundle.copy;
+  const healthcareServices = bundle.healthcareServices;
+  const methodologyServices = bundle.methodologyServices;
+  const commercialOfferings = bundle.commercialOfferings;
+  const hubLinks = bundle.hubLinks;
+  const serviceFaq = bundle.serviceFaq;
+  const heroMetrics = bundle.heroMetrics;
+
+  const recoveryLinksWithLabels = useMemo(
+    () =>
+      serviceRecoveryPaths.map((path) => ({
+        path,
+        label: bundle.recoveryLabels[path] ?? pathToLabel(path),
+      })),
+    [bundle.recoveryLabels],
+  );
+
+  const basePath = languagePaths[language] || '/';
+  const servicesPath = basePath === '/' ? '/services' : `${basePath}/services`;
+  const contactPath = localizedContactPath(language);
+  const methodologyPath = basePath === '/' ? '/methodology' : `${basePath}/methodology`;
+
+  const breadcrumbItems = useMemo(
+    () => [
+      { name: copy?.breadcrumb.home ?? 'Home', href: basePath === '/' ? '/' : basePath },
+      { name: copy?.breadcrumb.services ?? 'Services', href: servicesPath },
+    ],
+    [basePath, copy, servicesPath],
+  );
+
+  const jsonLd = useMemo(
+    () => [
+      buildBreadcrumbSchema(breadcrumbItems),
+      servicesHubJsonLd(
+        healthcareServices,
+        methodologyServices,
+        commercialOfferings,
+        copy?.jsonLd.collectionName ?? 'Global Market Research Services',
+        copy?.jsonLd.collectionDescription ??
+          'Pharmaceutical and healthcare market research plus B2B and B2C commercial research — CATI, CAWI, CAPI, focus groups, mystery shopping, price elasticity, and online behaviour tracking across 38 countries.',
+        copy?.seo.canonical ?? 'https://www.bionixus.com/services',
+      ),
+      faqJsonLd(serviceFaq),
+    ],
+    [breadcrumbItems, commercialOfferings, copy, healthcareServices, methodologyServices, serviceFaq],
+  );
+
   const heroRef = useScrollReveal<HTMLElement>({ stagger: 80 });
   const introRef = useScrollReveal<HTMLElement>({ stagger: 100 });
   const healthcareRef = useScrollReveal<HTMLElement>({ stagger: 80 });
@@ -103,25 +153,18 @@ const Services = () => {
   const commercialRef = useScrollReveal<HTMLElement>({ stagger: 80 });
   const linksRef = useScrollReveal<HTMLElement>({ stagger: 60 });
 
-  const breadcrumbItems = useMemo(
-    () => [
-      { name: 'Home', href: '/' },
-      { name: 'Services', href: '/services' },
-    ],
-    [],
-  );
-
-  const jsonLd = useMemo(
-    () => [buildBreadcrumbSchema(breadcrumbItems), servicesHubJsonLd, faqJsonLd],
-    [breadcrumbItems],
-  );
-
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Global Market Research Services | Pharma, Healthcare & Commercial | BioNixus"
-        description="BioNixus market research across 38 countries — pharma modules, CATI, CAWI, CAPI, focus groups, mystery shopping, price elasticity, and B2B/B2C programmes for financial services, retail, technology, and more."
-        canonical="https://www.bionixus.com/services"
+        title={
+          copy?.seo.title ??
+          'Global Market Research Services | Pharma, Healthcare & Commercial | BioNixus'
+        }
+        description={
+          copy?.seo.description ??
+          'BioNixus market research across 38 countries — pharma modules, CATI, CAWI, CAPI, focus groups, mystery shopping, price elasticity, and B2B/B2C programmes for financial services, retail, technology, and more.'
+        }
+        canonical={copy?.seo.canonical ?? 'https://www.bionixus.com/services'}
         jsonLd={jsonLd}
       />
       <Navbar />
@@ -148,36 +191,36 @@ const Services = () => {
               <span className="h-px w-8 bg-[#C9A84C]/40" aria-hidden="true" />
               <Globe2 className="h-4 w-4 text-[#C9A84C]" aria-hidden="true" />
               <span className="text-[11.5px] font-semibold uppercase tracking-[0.2em] text-[#C9A84C]">
-                Global services
+                {copy?.hero.eyebrow ?? 'Global services'}
               </span>
             </div>
             <h1 className="mb-6 max-w-4xl font-display text-3xl font-light leading-tight tracking-tight md:text-4xl lg:text-5xl sr sr-up sr-line revealed">
-              Market research services for pharma, healthcare, and commercial industries
+              {copy?.hero.h1 ??
+                'Market research services for pharma, healthcare, and commercial industries'}
             </h1>
             <p className="mb-8 max-w-3xl text-lg leading-relaxed text-white/75 md:text-xl sr sr-up revealed">
-              BioNixus runs senior-led programmes across 38 countries — from physician surveys and HTA strategy to
-              CATI, CAWI, CAPI fieldwork, focus groups, mystery shopping, price elasticity, and online behaviour
-              tracking. One firm, one methodology standard, scoped to the decision you need to make.
+              {copy?.hero.subtitle ??
+                'BioNixus runs senior-led programmes across 38 countries — from physician surveys and HTA strategy to CATI, CAWI, CAPI fieldwork, focus groups, mystery shopping, price elasticity, and online behaviour tracking. One firm, one methodology standard, scoped to the decision you need to make.'}
             </p>
             <div className="mb-10 flex flex-wrap gap-3 sr sr-up revealed">
               <Link
-                to="/contact"
+                to={contactPath}
                 className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-[#C9A84C] to-[#B8933E] px-6 py-3 text-sm font-semibold text-[#06101F] shadow-[0_4px_20px_rgba(201,168,76,0.25)] transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_40px_rgba(201,168,76,0.35)] cursor-pointer"
               >
-                Request a proposal
+                {copy?.hero.ctaProposal ?? 'Request a proposal'}
               </Link>
               <Link
-                to="/methodology"
+                to={methodologyPath}
                 className="inline-flex items-center gap-2 rounded-xl border border-white/15 px-6 py-3 text-sm font-normal text-white/60 transition-colors hover:border-white/30 hover:text-white cursor-pointer"
               >
-                Research methodology
+                {copy?.hero.ctaMethodology ?? 'Research methodology'}
               </Link>
             </div>
             <ul
               className="grid grid-cols-2 gap-4 sm:grid-cols-4 sr sr-up revealed"
               aria-label="Service credentials"
             >
-              {HERO_METRICS.map((metric) => (
+              {heroMetrics.map((metric) => (
                 <li
                   key={metric.label}
                   className="rounded-xl border border-white/15 bg-white/5 px-4 py-4 text-center"
@@ -195,34 +238,44 @@ const Services = () => {
         <section className="section-padding py-14 bg-[#F4F2ED]" ref={introRef}>
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6 sr sr-up sr-line">
-              Three connected research portfolios
+              {copy?.intro.h2 ?? 'Three connected research portfolios'}
             </h2>
             <div className="grid md:grid-cols-3 gap-8 text-muted-foreground leading-relaxed">
-              <article className="rounded-xl border border-[#D6D0C7]/60 bg-white p-6 sr sr-left hover-lift">
-                <h3 className="text-lg font-display font-semibold text-foreground mb-3">Pharma &amp; healthcare</h3>
+              {(copy?.intro.columns ?? [
+                {
+                  h3: 'Pharma & healthcare',
+                  body: 'Regulated categories that demand verified HCP and payer samples, HTA-aware synthesis, and launch-ready evidence across the US, EU5, UK, GCC, and North Africa.',
+                },
+                {
+                  h3: 'Methodologies & fieldwork',
+                  body: 'CATI, CAWI, CAPI, focus groups, mystery shopping, price elasticity, brand tracking, and digital behaviour modules — combinable into one programme with shared QC and reporting.',
+                },
+                {
+                  h3: 'Commercial & cross-industry',
+                  body: 'B2B buyer research, shopper insight, and consumer segmentation for banking, retail, tourism, technology, manufacturing, and FMCG — via the',
+                },
+              ]).map((column, index) => (
+              <article
+                key={column.h3}
+                className={`rounded-xl border border-[#D6D0C7]/60 bg-white p-6 sr hover-lift ${
+                  index === 0 ? 'sr-left' : index === 1 ? 'sr-up' : 'sr-right'
+                }`}
+              >
+                <h3 className="text-lg font-display font-semibold text-foreground mb-3">{column.h3}</h3>
                 <p>
-                  Regulated categories that demand verified HCP and payer samples, HTA-aware synthesis, and
-                  launch-ready evidence across the US, EU5, UK, GCC, and North Africa.
+                  {column.body}
+                  {index === 2 ? (
+                    <>
+                      {' '}
+                      <Link to="/bionixus-industries" className="text-primary font-medium hover:underline">
+                        {language === 'de' ? 'Branchen-Hub' : 'industries hub'}
+                      </Link>
+                      .
+                    </>
+                  ) : null}
                 </p>
               </article>
-              <article className="rounded-xl border border-[#D6D0C7]/60 bg-white p-6 sr sr-up hover-lift">
-                <h3 className="text-lg font-display font-semibold text-foreground mb-3">Methodologies &amp; fieldwork</h3>
-                <p>
-                  CATI, CAWI, CAPI, focus groups, mystery shopping, price elasticity, brand tracking, and digital
-                  behaviour modules — combinable into one programme with shared QC and reporting.
-                </p>
-              </article>
-              <article className="rounded-xl border border-[#D6D0C7]/60 bg-white p-6 sr sr-right hover-lift">
-                <h3 className="text-lg font-display font-semibold text-foreground mb-3">Commercial &amp; cross-industry</h3>
-                <p>
-                  B2B buyer research, shopper insight, and consumer segmentation for banking, retail, tourism,
-                  technology, manufacturing, and FMCG — via the{' '}
-                  <Link to="/bionixus-industries" className="text-primary font-medium hover:underline">
-                    industries hub
-                  </Link>
-                  .
-                </p>
-              </article>
+              ))}
             </div>
           </div>
         </section>
@@ -231,15 +284,15 @@ const Services = () => {
           <div className="container-wide max-w-6xl mx-auto">
             <div className="mb-10 max-w-3xl">
               <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3 sr sr-up sr-line">
-                Pharma &amp; healthcare research modules
+                {copy?.healthcare.h2 ?? 'Pharma & healthcare research modules'}
               </h2>
               <p className="text-muted-foreground leading-relaxed sr sr-up">
-                Quantitative, qualitative, access, intelligence, trial support, and stakeholder mapping — combinable
-                into one global programme.
+                {copy?.healthcare.intro ??
+                  'Quantitative, qualitative, access, intelligence, trial support, and stakeholder mapping — combinable into one global programme.'}
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {HEALTHCARE_SERVICES.map((svc) => {
+              {healthcareServices.map((svc) => {
                 const Icon = svc.icon;
                 return (
                   <Link
@@ -268,7 +321,7 @@ const Services = () => {
                       ))}
                     </div>
                     <span className="inline-flex items-center gap-1 text-sm font-medium text-primary group-hover:gap-2 transition-all">
-                      View scope <ArrowRight className="h-4 w-4" aria-hidden />
+                      {copy?.healthcare.viewScope ?? 'View scope'} <ArrowRight className="h-4 w-4" aria-hidden />
                     </span>
                   </Link>
                 );
@@ -284,19 +337,18 @@ const Services = () => {
           <div className="container-wide max-w-6xl mx-auto">
             <div className="mb-10 max-w-3xl">
               <p className="mb-3 text-[11.5px] font-semibold uppercase tracking-[0.2em] text-[#C9A84C] sr sr-up">
-                Fieldwork &amp; analytics
+                {copy?.methodology.eyebrow ?? 'Fieldwork & analytics'}
               </p>
               <h2 className="text-2xl md:text-3xl font-display font-light text-[#FFFEFB] mb-3 sr sr-up sr-line">
-                Methodologies across industries
+                {copy?.methodology.h2 ?? 'Methodologies across industries'}
               </h2>
               <p className="text-white/65 leading-relaxed sr sr-up">
-                The same senior team runs CATI, CAWI, and CAPI fieldwork for pharma HCP panels and B2B buyer
-                programmes — plus mystery shopping, price elasticity, focus groups, and online behaviour tracking
-                where your category demands it.
+                {copy?.methodology.intro ??
+                  'The same senior team runs CATI, CAWI, and CAPI fieldwork for pharma HCP panels and B2B buyer programmes — plus mystery shopping, price elasticity, focus groups, and online behaviour tracking where your category demands it.'}
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {METHODOLOGY_SERVICES.map((svc) => {
+              {methodologyServices.map((svc) => {
                 const Icon = svc.icon;
                 return (
                   <Link
@@ -325,7 +377,7 @@ const Services = () => {
                       {svc.industries}
                     </p>
                     <span className="inline-flex items-center gap-1 text-sm font-medium text-[#E4CC7A] group-hover:gap-2 transition-all">
-                      Learn more <ArrowRight className="h-4 w-4" aria-hidden />
+                      {copy?.methodology.learnMore ?? 'Learn more'} <ArrowRight className="h-4 w-4" aria-hidden />
                     </span>
                   </Link>
                 );
@@ -338,15 +390,15 @@ const Services = () => {
           <div className="container-wide max-w-6xl mx-auto">
             <div className="mb-10 max-w-3xl">
               <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3 sr sr-up sr-line">
-                Commercial &amp; cross-industry research
+                {copy?.commercial.h2 ?? 'Commercial & cross-industry research'}
               </h2>
               <p className="text-muted-foreground leading-relaxed sr sr-up">
-                Non-pharma programmes for enterprise buyers, institutional decision-makers, and consumer markets —
-                Americas, EMEA, Africa, and LATAM.
+                {copy?.commercial.intro ??
+                  'Non-pharma programmes for enterprise buyers, institutional decision-makers, and consumer markets — Americas, EMEA, Africa, and LATAM.'}
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
-              {COMMERCIAL_OFFERINGS.map((offering) => {
+              {commercialOfferings.map((offering) => {
                 const Icon = offering.icon;
                 return (
                   <Link
@@ -368,7 +420,7 @@ const Services = () => {
                       {offering.examples}
                     </p>
                     <span className="inline-flex items-center gap-1 text-sm font-medium text-primary group-hover:gap-2 transition-all">
-                      Explore segment <ArrowRight className="h-4 w-4" aria-hidden />
+                      {copy?.commercial.explore ?? 'Explore segment'} <ArrowRight className="h-4 w-4" aria-hidden />
                     </span>
                   </Link>
                 );
@@ -380,14 +432,14 @@ const Services = () => {
         <section className="section-padding py-14" ref={linksRef}>
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl font-display font-semibold text-foreground mb-4 sr sr-up sr-line">
-              Related research hubs &amp; industries
+              {copy?.links.h2 ?? 'Related research hubs & industries'}
             </h2>
             <p className="text-muted-foreground mb-6 max-w-2xl sr sr-up">
-              Start from a healthcare hub, an industry segment, or a global index — depending on your category and
-              geography.
+              {copy?.links.intro ??
+                'Start from a healthcare hub, an industry segment, or a global index — depending on your category and geography.'}
             </p>
             <ul className="grid sm:grid-cols-2 gap-3 sr sr-up">
-              {HUB_LINKS.map((link) => (
+              {hubLinks.map((link) => (
                 <li key={link.to}>
                   <Link to={link.to} className="text-primary font-medium hover:underline cursor-pointer">
                     {link.label}
@@ -398,9 +450,9 @@ const Services = () => {
 
             <details className="mt-8 rounded-xl border border-border bg-card p-6 sr sr-up">
               <summary className="cursor-pointer font-display font-semibold text-foreground list-none flex items-center justify-between gap-2">
-                More research guides
+                {copy?.links.moreGuides ?? 'More research guides'}
                 <span className="text-sm font-normal text-muted-foreground">
-                  {recoveryLinksWithLabels.length} links
+                  {recoveryLinksWithLabels.length} {copy?.links.linksCount ?? 'links'}
                 </span>
               </summary>
               <ul className="grid sm:grid-cols-2 gap-2 mt-4 pt-4 border-t border-border">
@@ -419,10 +471,10 @@ const Services = () => {
         <section className="section-padding py-14 bg-[#F4F2ED]">
           <div className="container-wide max-w-3xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-8 text-center">
-              Frequently asked questions
+              {copy?.faq.h2 ?? 'Frequently asked questions'}
             </h2>
             <div className="space-y-3">
-              {SERVICE_FAQ.map((item) => (
+              {serviceFaq.map((item) => (
                 <details
                   key={item.question}
                   className="rounded-xl border border-[#D6D0C7]/60 bg-white px-6 py-4 group"

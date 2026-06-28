@@ -1,0 +1,41 @@
+---
+description: Enforce healthcare vs industries silo internal linking — country chips and cross-links must stay in the correct silo.
+globs: src/pages/industries/**/*,src/pages/healthcare-research/**/*,src/data/industryHubCountries.ts,src/components/home/**/*
+alwaysApply: false
+---
+
+# Industry silo internal linking
+
+BioNixus has two linked content silos. Country chips and hub cross-links must never cross silos.
+
+## Non-healthcare industries silo
+
+Pages: `/bionixus-industries`, `/b2b-industries`, `/b2c-industries`, `/market-research-by-industry` (B2B/B2C sections only), industry BOFU matrix pages, `/bionixus-industries/insights/:slug`.
+
+- Country chips and regional coverage links → **B2B or B2C country pages only**.
+- Use `getIndustriesHubCountryPath(country, 'b2b' | 'b2c')` or `getIndustrySegmentCountryPath(countrySlug, industrySlug)` from `@/data/industryHubCountries`.
+- Industry insights index → on-page section `/bionixus-industries#insights` (not a standalone index URL).
+- Do **not** link country chips to `/healthcare-market-research/*`, pharmaceutical BOFU URLs, or `/blog`.
+
+## Healthcare & pharmaceutical silo
+
+Pages: `/healthcare-market-research`, country/therapy/service subpages, `/blog`, `/insights`, pharma BOFU pages.
+
+- Country chips and regional coverage links → **healthcare or pharmaceutical pages only**.
+- Use `getHealthcareHubPathForIndexCountry`, `/healthcare-market-research/:slug`, or `getPharmaBofuPathForIndexCountry` from `@/data/industryHubCountries`.
+- Do **not** link country chips to B2B/B2C industry BOFU pages or `/b2b-industries` / `/b2c-industries` country entry URLs.
+
+## Bridge pages
+
+`/bionixus-industries` is the deliberate bridge: it may **mention** both silos in prose and link to each silo's **hub** (`/healthcare-market-research`, `/b2b-industries`, `/b2c-industries`), but country chips on that page still follow the non-healthcare rule above.
+
+`/market-research-by-industry` is a cross-index: it may link to healthcare, pharma, and B2B/B2C entry points per country by design.
+
+## Helpers (prefer these over ad-hoc paths)
+
+| Silo | Helper | Example target |
+|------|--------|----------------|
+| Industries | `getIndustriesHubCountryPath(country, 'b2b')` | `/saudi-arabia-technology-market-research` |
+| Industries | `getIndustrySegmentCountryPath(slug, industrySlug)` | Matrix BOFU or `/{country}-{industry}-market-research` |
+| Healthcare | `getHealthcareHubPathForIndexCountry(country)` | `/healthcare-market-research/uae` |
+| Healthcare | `getPharmaBofuPathForIndexCountry(country)` | `/pharmaceutical-market-research-usa` |

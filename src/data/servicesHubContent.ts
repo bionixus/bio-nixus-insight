@@ -20,6 +20,17 @@ import {
   Cpu,
   type LucideIcon,
 } from 'lucide-react';
+import type { Language } from '@/lib/i18n';
+import {
+  DE_COMMERCIAL_OFFERINGS,
+  DE_HEALTHCARE_SERVICES,
+  DE_HERO_METRICS,
+  DE_HUB_LINKS,
+  DE_METHODOLOGY_SERVICES,
+  DE_RECOVERY_LINK_LABELS,
+  DE_SERVICE_FAQ,
+  DE_SERVICES_HUB_COPY,
+} from './servicesHubContent.de';
 
 export type HealthcareService = {
   slug: string;
@@ -268,3 +279,28 @@ export const HERO_METRICS = [
   { value: '6', label: 'Core pharma modules' },
   { value: '9+', label: 'Fieldwork modes' },
 ] as const;
+
+export function getServicesHubBundle(language: Language) {
+  if (language === 'de') {
+    return {
+      copy: DE_SERVICES_HUB_COPY,
+      heroMetrics: DE_HERO_METRICS,
+      healthcareServices: DE_HEALTHCARE_SERVICES,
+      methodologyServices: DE_METHODOLOGY_SERVICES,
+      commercialOfferings: DE_COMMERCIAL_OFFERINGS,
+      hubLinks: DE_HUB_LINKS,
+      serviceFaq: DE_SERVICE_FAQ,
+      recoveryLabels: DE_RECOVERY_LINK_LABELS,
+    };
+  }
+  return {
+    copy: null,
+    heroMetrics: HERO_METRICS,
+    healthcareServices: HEALTHCARE_SERVICES,
+    methodologyServices: METHODOLOGY_SERVICES,
+    commercialOfferings: COMMERCIAL_OFFERINGS,
+    hubLinks: HUB_LINKS,
+    serviceFaq: SERVICE_FAQ,
+    recoveryLabels: {} as Record<string, string>,
+  };
+}
