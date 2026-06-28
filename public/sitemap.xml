@@ -85,6 +85,7 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/blog" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr/blog" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.bionixus.com/ar/blog" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.bionixus.com/zh/blog" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.bionixus.com/ru/blog" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bionixus.com/blog" />
     <changefreq>weekly</changefreq>
@@ -230,7 +231,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/ar/methodology</loc>
-    <lastmod>2026-05-27</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -250,12 +251,6 @@
     <loc>https://www.bionixus.com/australia-medical-devices-market-report</loc>
     <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.bionixus.com/australia-medtech-market-research</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
@@ -396,7 +391,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/bionixus-market-research-middle-east</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -420,6 +415,7 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/blog" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr/blog" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.bionixus.com/ar/blog" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.bionixus.com/zh/blog" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.bionixus.com/ru/blog" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bionixus.com/blog" />
     <changefreq>daily</changefreq>
@@ -1200,12 +1196,6 @@
     <priority>0.88</priority>
   </url>
   <url>
-    <loc>https://www.bionixus.com/brazil-medtech-market-research</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://www.bionixus.com/brazil-pharmaceutical-market-research</loc>
     <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
@@ -1227,12 +1217,6 @@
     <loc>https://www.bionixus.com/canada-medical-devices-market-report</loc>
     <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.bionixus.com/canada-medtech-market-research</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
@@ -1275,12 +1259,6 @@
     <loc>https://www.bionixus.com/china-medical-devices-market-report</loc>
     <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.bionixus.com/china-medtech-market-research</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
@@ -1366,6 +1344,7 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/blog" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr/blog" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.bionixus.com/ar/blog" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.bionixus.com/zh/blog" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.bionixus.com/ru/blog" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bionixus.com/blog" />
     <changefreq>weekly</changefreq>
@@ -1403,7 +1382,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/de/methodology</loc>
-    <lastmod>2026-05-27</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1416,12 +1395,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bionixus.com/bionixus-ai-chatbots-increase-sales-and-lead-generation" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.bionixus.com/denmark-medtech-market-research</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/desmoid-tumor-pharma-market-research</loc>
@@ -1638,7 +1611,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/es/methodology</loc>
-    <lastmod>2026-05-27</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1686,6 +1659,7 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/blog" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr/blog" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.bionixus.com/ar/blog" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.bionixus.com/zh/blog" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.bionixus.com/ru/blog" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bionixus.com/blog" />
     <changefreq>weekly</changefreq>
@@ -1738,7 +1712,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/fr/methodology</loc>
-    <lastmod>2026-05-27</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1753,12 +1727,6 @@
     <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
-  </url>
-  <url>
-    <loc>https://www.bionixus.com/france-medtech-market-research</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/gcc-anesthesia-surgical-market-report</loc>
@@ -1792,7 +1760,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/gcc-market-access-guide</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -1837,12 +1805,6 @@
     <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
-  </url>
-  <url>
-    <loc>https://www.bionixus.com/germany-medtech-market-research</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/gfk-alternative-egypt</loc>
@@ -3753,12 +3715,6 @@
     <priority>0.88</priority>
   </url>
   <url>
-    <loc>https://www.bionixus.com/italy-medtech-market-research</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://www.bionixus.com/japan-healthcare-market-report</loc>
     <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
@@ -3768,12 +3724,6 @@
     <loc>https://www.bionixus.com/japan-medical-devices-market-report</loc>
     <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.bionixus.com/japan-medtech-market-research</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
@@ -3898,12 +3848,6 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/kuwait-telecom-market-research</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.bionixus.com/malaysia-medtech-market-research</loc>
     <lastmod>2026-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
@@ -4810,7 +4754,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/market-research</loc>
-    <lastmod>2026-06-24</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -4945,12 +4889,6 @@
     <lastmod>2026-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.bionixus.com/new-zealand-medtech-market-research</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/news</loc>
@@ -5295,12 +5233,6 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.bionixus.com/poland-medtech-market-research</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://www.bionixus.com/premium-home-page</loc>
     <lastmod>2026-06-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -5356,6 +5288,7 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/blog" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr/blog" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.bionixus.com/ar/blog" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.bionixus.com/zh/blog" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.bionixus.com/ru/blog" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bionixus.com/blog" />
     <changefreq>weekly</changefreq>
@@ -5417,7 +5350,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/pt/methodology</loc>
-    <lastmod>2026-05-27</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -5621,6 +5554,7 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/blog" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr/blog" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.bionixus.com/ar/blog" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.bionixus.com/zh/blog" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.bionixus.com/ru/blog" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bionixus.com/blog" />
     <changefreq>weekly</changefreq>
@@ -5840,12 +5774,6 @@
     <priority>0.83</priority>
   </url>
   <url>
-    <loc>https://www.bionixus.com/singapore-medtech-market-research</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://www.bionixus.com/sitemap</loc>
     <lastmod>2026-06-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -5870,12 +5798,6 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.bionixus.com/south-korea-medtech-market-research</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://www.bionixus.com/spain-healthcare-market-report</loc>
     <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
@@ -5888,12 +5810,6 @@
     <priority>0.88</priority>
   </url>
   <url>
-    <loc>https://www.bionixus.com/spain-medtech-market-research</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://www.bionixus.com/specialist-physician-panel-uae</loc>
     <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -5904,12 +5820,6 @@
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.72</priority>
-  </url>
-  <url>
-    <loc>https://www.bionixus.com/switzerland-medtech-market-research</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/terms</loc>
@@ -6068,12 +5978,6 @@
     <priority>0.88</priority>
   </url>
   <url>
-    <loc>https://www.bionixus.com/uk-medtech-market-research</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://www.bionixus.com/usa-healthcare-market-report</loc>
     <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
@@ -6084,12 +5988,6 @@
     <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
-  </url>
-  <url>
-    <loc>https://www.bionixus.com/usa-medtech-market-research</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/zh</loc>
@@ -6119,6 +6017,20 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.bionixus.com/ru/about" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bionixus.com/about" />
     <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/zh/blog</loc>
+    <lastmod>2026-06-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/blog" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.bionixus.com/pt/blog" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/blog" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.bionixus.com/fr/blog" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.bionixus.com/ar/blog" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.bionixus.com/zh/blog" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.bionixus.com/ru/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bionixus.com/blog" />
+    <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
@@ -6153,7 +6065,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/zh/methodology</loc>
-    <lastmod>2026-05-27</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

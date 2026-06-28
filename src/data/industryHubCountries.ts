@@ -56,6 +56,28 @@ const HEALTHCARE_ADJACENT_INDUSTRIES: ReadonlySet<MatrixIndustrySlug> = new Set(
   'consumer-health',
 ]);
 
+/** Keep in sync with DEVELOPED_MARKET_MEDTECH_SLUGS in developedMarketMedtechPages.ts */
+const DEVELOPED_MARKET_MEDTECH_COUNTRIES = new Set([
+  'canada',
+  'usa',
+  'uk',
+  'australia',
+  'germany',
+  'france',
+  'japan',
+  'china',
+  'singapore',
+  'italy',
+  'spain',
+  'switzerland',
+  'denmark',
+  'new-zealand',
+  'south-korea',
+  'poland',
+  'malaysia',
+  'brazil',
+]);
+
 function findIndexCountry(slug: string): MarketResearchIndexCountry | undefined {
   return MARKET_RESEARCH_BY_INDUSTRY_COUNTRIES.find((country) => country.slug === slug);
 }
@@ -67,6 +89,10 @@ export function resolveCountryIndustryMarketResearchPath(
 ): string {
   if (MATRIX_COUNTRY_SET.has(countrySlug)) {
     return getIndustryBofuPath(countrySlug as MatrixCountrySlug, industrySlug);
+  }
+
+  if (industrySlug === 'medtech' && DEVELOPED_MARKET_MEDTECH_COUNTRIES.has(countrySlug)) {
+    return `/${countrySlug}-medtech-market-research`;
   }
 
   const country: MarketResearchIndexCountry =
@@ -256,6 +282,19 @@ export const BIONIXUS_INDUSTRIES_REGION_GROUPS: MarketResearchIndexRegion[] = [
 
 export function isMatrixCountrySlug(slug: string): slug is MatrixCountrySlug {
   return MATRIX_COUNTRY_SET.has(slug);
+}
+
+/**
+ * B2B or B2C country entry path for the non-healthcare industries silo
+ * (`/bionixus-industries`, `/b2b-industries`, `/b2c-industries`).
+ * Never use {@link getHealthcareHubPathForIndexCountry} on those pages.
+ */
+export function getIndustriesHubCountryPath(
+  country: MarketResearchIndexCountry,
+  segment: 'b2b' | 'b2c' = 'b2b',
+): string {
+  const industrySlug = segment === 'b2c' ? DEFAULT_B2C_INDUSTRY_SLUG : DEFAULT_B2B_INDUSTRY_SLUG;
+  return getIndustrySegmentCountryPath(country.slug, industrySlug);
 }
 
 export function getHealthcareHubPathForIndexCountry(country: MarketResearchIndexCountry): string {

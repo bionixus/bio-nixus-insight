@@ -376,6 +376,14 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
   }
 
   if (path === '/bionixus-industries/insights' || path === '/bionixus-industries/insights/') {
+    return {
+      pageType: 'redirect',
+      statusCode: 301,
+      redirectTo: '/bionixus-industries#insights',
+    };
+  }
+
+  if (path === '/bionixus-industries' || path === '/bionixus-industries/') {
     let industriesInsights: BlogPost[] = [];
     try {
       industriesInsights = await fetchIndustriesInsightsWithClient(sanityServer);
@@ -383,7 +391,7 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
       industriesInsights = [];
     }
     return {
-      pageType: 'industries-insights-index',
+      pageType: 'bionixus-industries',
       industriesInsights,
     };
   }

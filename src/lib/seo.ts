@@ -137,6 +137,20 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     pt: '/pt/about',
     ru: '/ru/about',
   },
+  '/bionixus-industries': {
+    en: '/bionixus-industries',
+    de: '/de/bionixus-industries',
+    fr: '/fr/bionixus-industries',
+    es: '/es/bionixus-industries',
+    zh: '/zh/bionixus-industries',
+    ar: '/ar/bionixus-industries',
+    pt: '/pt/bionixus-industries',
+    ru: '/ru/bionixus-industries',
+  },
+  '/services': {
+    en: '/services',
+    de: '/de/services',
+  },
   '/blog': {
     en: '/blog',
     de: '/de/blog',
