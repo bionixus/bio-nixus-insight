@@ -45,13 +45,13 @@ export const homePageUiStrings: Record<Language, HomePageUiOverlay> = {
         'Benötigen Sie einen maßgeschneiderten Gesundheitsmarktforschungs-Umfang für Ihre pharmazeutischen Prioritäten?',
       bottomCtaButton: 'Angebot anfordern',
       countryDepthBadge: 'Länder-Tiefe',
-      kolCardTitle: 'KOL- & Stakeholder-Mapping',
+      kolCardTitle: 'KOL- und Interessengruppen-Kartierung',
     },
     footer: {
       clientReviewsLink: 'Kundenbewertungen',
-      newsPress: 'News & Presse',
+      newsPress: 'Neuigkeiten & Presse',
       newsletterConsent:
-        'Ich möchte monatliche EMEA-Pharma-Forschungserkenntnisse von BioNixus erhalten. Ich kann mich jederzeit abmelden.',
+        'Ich möchte monatliche pharmazeutische EMEA-Erkenntnisse von BioNixus erhalten. Ich kann mich jederzeit abmelden.',
       industriesHub: 'Branchen',
     },
     clientReviewsTeaser: { happyClientsCount: '40' },

@@ -398,47 +398,53 @@ export const translations = {
       titleEmphasis: 'Pharmazeutische Strategie prägt',
       title: 'Pharmazeutische und Gesundheitsmarktforschung für sichere Markteinführung, Zugang und Wachstum',
       subtitle:
-        'BioNixus ist ein globaler Insights- und Marktforschungspartner in Amerika, EMEA und APAC — mit Länder-Tiefe, wo sie zählt. Wir helfen pharmazeutischen, Biotech- und MedTech-Teams, KOL-, Kostenträger- und Krankenhaus-Evidenz in Entscheidungen zu Markteinführung, Zugang und Wachstum zu übersetzen.',
+        'BioNixus ist ein globaler Erkenntnis- und Marktforschungspartner in Amerika, EMEA und APAC — mit Länder-Tiefe, wo sie zählt. Wir helfen pharmazeutischen, Biotechnologie- und Medizintechnik-Teams, KOL-, Kostenträger- und Krankenhaus-Evidenz in Entscheidungen zu Markteinführung, Zugang und Wachstum zu übersetzen.',
       trustStripPrimary: 'Vertrauenswürdig bei',
       trustStripStats: '48 globale Kunden · 127+ Projekte · 38 Länder',
       valueProposition:
-        'Jedes Mandat beginnt mit einer echten Commercial-Frage, nicht mit einem generischen Datenexport. Sie erhalten belastbare quantitative und qualitative Evidenz — zugeschnitten auf Entscheidung, Markt und regulatorische Realität — von der Pre-Launch-Sizing bis zur Post-Launch-Optimierung.',
+        'Jedes Mandat beginnt mit einer echten vertrieblichen Frage, nicht mit einem generischen Datenexport. Sie erhalten belastbare quantitative und qualitative Erkenntnisse — zugeschnitten auf Entscheidung, Markt und regulatorische Realität — von der Marktgrößenanalyse vor der Markteinführung bis zur Optimierung nach der Markteinführung.',
       serviceHighlights: [
         'Mehrländer-Ärzte- und Kostenträgerforschung',
         'Evidenz für Markteinführung, Zugang und Wachstum',
-        'Compliance-konformes Fieldwork',
+        'Regulatorisch konforme Feldforschung',
       ],
       cta: 'Angebot anfordern',
       ctaPremium: 'Discovery Call buchen →',
       ctaSecondary: 'Fallstudien ansehen',
-      trustBar: 'Entscheidungsreife Evidenz für pharmazeutische, Biotech- und MedTech-Teams seit 2012, in',
+      trustBar: 'Entscheidungsreife Evidenz für pharmazeutische, Biotechnologie- und Medizintechnik-Teams seit 2012, in',
       trustCountries: 'MENA, Lateinamerika, Osteuropa, UK und der weiteren EMEA-Region.',
-      complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'FDA Compliant', 'ICH-GCP'],
+      complianceBadges: [
+        'MHRA-konform',
+        'EMA-ausgerichtet',
+        'DSGVO-konform',
+        'FDA-konform',
+        'ICH-GCP',
+      ],
     },
     services: {
       title: 'Pharmazeutische und Gesundheitsmarktforschungsleistungen',
       subtitle:
-        'Entscheidungsreife quantitative und qualitative Evidenz für Markteinführung, Marktzugang und Wachstum — global, mit starker Umsetzung in Europa, Amerika und Naher Osten.',
+        'Entscheidungsreife quantitative und qualitative Erkenntnisse für Markteinführung, Marktzugang und Wachstum — global, mit starker Umsetzung in Europa, Amerika und Naher Osten.',
       items: [
         {
-          title: 'Quantitative Gesundheitsforschung & Ärztebefragungen',
+          title: 'Quantitative Gesundheitsmarktforschung & Ärztebefragungen',
           description: 'Groß angelegte statistische Erkenntnisse von Ärzten und Gesundheitsfachkräften in UK, Europa und MENA. Leistungen: NHS- und private Anbieterforschung, Krankenhauspräferenzstudien, Verschreibungsverfolgung, Gesundheitstechnologiebewertungs-Entscheider-Erkenntnisse, Kostenträgeranalyse, Mehrländer-Umfragen (UAE, Saudi-Arabien, Ägypten, Kuwait, Katar). Lieferungen: Statistische Berichte, Marktgrößenschätzung, Pfadanalyse, Prognosen, Segmentierung, vergleichende Erkenntnisse.',
         },
         {
-          title: 'Qualitative pharmazeutische Forschung & Experten-Erkenntnisse',
-          description: 'Tiefgehende qualitative Forschung zu klinischen Perspektiven und ungedeckten medizinischen Bedürfnissen in UK, Europa und MENA. Leistungen: NHS-Berater/GP-Interviews, NICE-Ausschuss-Engagement, pan-europäisches KOL-Mapping, länderübergreifende Fokusgruppen, Behandlungspfad-Analyse, Golf-Gesundheitswesen-Erkenntnisse. Lieferungen: Thematische Analyse, Konsenszusammenfassungen, Marktzugangs-Empfehlungen, KOL-Strategien.',
+          title: 'Qualitative pharmazeutische Marktforschung & Experten-Erkenntnisse',
+          description: 'Tiefgehende qualitative Marktforschung zu klinischen Perspektiven und ungedeckten medizinischen Bedürfnissen in UK, Europa und MENA. Leistungen: NHS-Berater/GP-Interviews, NICE-Ausschuss-Engagement, pan-europäisches KOL-Mapping, länderübergreifende Fokusgruppen, Behandlungspfad-Analyse, Golf-Gesundheitswesen-Erkenntnisse. Lieferungen: Thematische Analyse, Konsenszusammenfassungen, Marktzugangs-Empfehlungen, KOL-Strategien.',
         },
         {
           title: 'Marktzugang & Gesundheitstechnologiebewertungs-Strategie',
           description: 'NICE-, G-BA-, HAS- und Gesundheitstechnologiebewertungs-Anforderungsintegration. Evidenzbasierte Preisstrategien und Kostenträger-Engagement-Frameworks für UK und europäische Märkte. Kosten-Nutzen-Analyse für Gesundheitstechnologiebewertungs-Einreichungen.',
         },
         {
-          title: 'KOL & Stakeholder-Mapping',
+          title: 'KOL- & Interessengruppen-Kartierung',
           description: 'UK- und pan-europäisches KOL-Mapping und Engagement. NHS-Berater- und Royal College-Mitglieder-Netzwerke. Mehrländer-Ärzteverbands-Partnerschaften und Krankenhaus-Anbieter-Panels.',
         },
         {
           title: 'Geografische Abdeckung: Europa • MENA',
-          description: 'UK: NHS England, Schottland, Wales, Nordirland; Londoner Lehrkrankenhäuser; NICE, MHRA Stakeholder-Forschung. Europa: Deutschland (G-BA, IQWiG), Frankreich (HAS, CEPS), Spanien, Italien, Niederlande, Belgien, Schweiz. MENA: UAE (DHA, HAAD), Saudi-Arabien, Ägypten, Kuwait, Katar.',
+          description: 'UK: NHS England, Schottland, Wales, Nordirland; Londoner Lehrkrankenhäuser; NICE, MHRA Interessengruppen-Forschung. Europa: Deutschland (G-BA, IQWiG), Frankreich (HAS, CEPS), Spanien, Italien, Niederlande, Belgien, Schweiz. MENA: VAE (DHA, HAAD), Saudi-Arabien, Ägypten, Kuwait, Katar.',
         },
         {
           title: 'Methodik & Compliance',
@@ -449,8 +455,8 @@ export const translations = {
     geographicCoverageDe: {
       title: 'Geografische Abdeckung: Europa • MENA',
       regions: [
-        { name: 'Europa - Pan-europäisches Forschungsnetzwerk', countries: [{ name: 'Deutschland', items: ['G-BA und IQWiG Stakeholder-Forschung', 'Krankenhaus und ambulante Versorgung'] }, { name: 'Frankreich', items: ['HAS und CEPS Entscheider-Erkenntnisse', 'Öffentliche und private Krankenhäuser'] }, { name: 'Weitere Märkte', items: ['UK, Spanien, Italien, Niederlande, Belgien, Schweiz', 'Regionale Gesundheitssysteme und Fachversorgung'] }] },
-        { name: 'MENA - Strategische Markterweiterung', countries: [{ name: 'UAE', items: ['DHA- und HAAD-regulierte Einrichtungen', 'Dubai Healthcare City'] }, { name: 'Saudi-Arabien', items: ['MOH Gesundheitswesen-Transformation'] }, { name: 'Weitere Märkte', items: ['Ägypten, Kuwait, Katar', 'Öffentliche und private Gesundheitsnetzwerke'] }] },
+        { name: 'Europa - Pan-europäisches Forschungsnetzwerk', countries: [{ name: 'Deutschland', items: ['G-BA und IQWiG Interessengruppen-Forschung', 'Krankenhaus und ambulante Versorgung'] }, { name: 'Frankreich', items: ['HAS und CEPS Entscheider-Erkenntnisse', 'Öffentliche und private Krankenhäuser'] }, { name: 'Weitere Märkte', items: ['UK, Spanien, Italien, Niederlande, Belgien, Schweiz', 'Regionale Gesundheitssysteme und Fachversorgung'] }] },
+        { name: 'MENA - Strategische Markterweiterung', countries: [{ name: 'VAE', items: ['DHA- und HAAD-regulierte Einrichtungen', 'Dubai Healthcare City'] }, { name: 'Saudi-Arabien', items: ['MOH Gesundheitswesen-Transformation'] }, { name: 'Weitere Märkte', items: ['Ägypten, Kuwait, Katar', 'Öffentliche und private Gesundheitsnetzwerke'] }] },
       ],
     },
     methodologyDe: {
@@ -467,12 +473,12 @@ export const translations = {
       areas: [
         { name: 'Onkologie', description: 'Behandlungspfade, KOL-Mapping, Biologika-Adoption' },
         { name: 'Endokrinologie', description: 'Diabetes, Adipositas, Schilddrüse' },
-        { name: 'Seltene Erkrankungen', description: 'Zugangsstrategien, Patient Journey' },
+        { name: 'Seltene Erkrankungen', description: 'Zugangsstrategien, Patientenreise' },
       ],
     },
     insights: {
       title: 'Aktuelle Erkenntnisse',
-      subtitle: 'Thought Leadership und Forschungsperspektiven von unserem globalen Team',
+      subtitle: 'Führungsperspektiven und Forschungseinblicke von unserem globalen Team',
       readMore: 'Artikel lesen',
       items: [
         {
@@ -497,7 +503,7 @@ export const translations = {
     },
     blog: {
       title: 'Aktuelle Erkenntnisse',
-      subtitle: 'Thought Leadership und Forschungsperspektiven von unserem globalen Team',
+      subtitle: 'Führungsperspektiven und Forschungseinblicke von unserem globalen Team',
       readMore: 'Artikel lesen',
       readMoreArticles: 'Weitere Artikel lesen',
       filterAllTopics: 'Alle Themen',
@@ -524,11 +530,11 @@ export const translations = {
     },
     testimonials: {
       title: 'Ausgewählte Fallstudien',
-      subtitle: 'Konkrete Ergebnisse unserer Arbeit mit pharmazeutischen und Biotech-Teams weltweit',
+      subtitle: 'Konkrete Ergebnisse unserer Arbeit mit pharmazeutischen und Biotechnologie-Teams weltweit',
       items: [
-        { quote: 'Erfahren Sie, wie BioNixus die GCC-Onkologie-Einführungsstrategie eines Top-10-pharmazeutischen Unternehmens mit quantitativen Ärztebefragungen und Wettbewerbsanalysen gestaltete.', author: 'GCC-Onkologie-Launch', role: 'Fallstudie', company: 'Multinationales pharmazeutisches Unternehmen' },
-        { quote: 'Sehen Sie, wie BioNixus einem mittelständischen Biotech-Unternehmen half, die EMEA-Expansion mit länderübergreifendem KOL-Mapping und Marktzugangsdiagnostik zu beschleunigen.', author: 'EMEA-Expansion', role: 'Fallstudie', company: 'Mittelständisches Biotech' },
-        { quote: 'Entdecken Sie, wie BioNixus Launch-Readiness-Evidenz für ein spezialisiertes pharmazeutisches Unternehmen lieferte, das mit Kostenträger- und Klinikforschung in drei europäische Märkte eintrat.', author: 'Europäische Markteinführung', role: 'Fallstudie', company: 'Spezial-pharmazeutisches Unternehmen' },
+        { quote: 'Erfahren Sie, wie BioNixus die GCC-Onkologie-Markteinführungsstrategie eines Top-10-pharmazeutischen Unternehmens mit quantitativen Ärztebefragungen und Wettbewerbsanalysen gestaltete.', author: 'GCC-Onkologie-Markteinführung', role: 'Fallstudie', company: 'Multinationales pharmazeutisches Unternehmen' },
+        { quote: 'Sehen Sie, wie BioNixus einem mittelständischen Biotechnologie-Unternehmen half, die EMEA-Expansion mit länderübergreifendem KOL-Mapping und Marktzugangsdiagnostik zu beschleunigen.', author: 'EMEA-Expansion', role: 'Fallstudie', company: 'Mittelständisches Biotechnologie-Unternehmen' },
+        { quote: 'Entdecken Sie, wie BioNixus Markteinführungsreife-Evidenz für ein spezialisiertes pharmazeutisches Unternehmen lieferte, das mit Kostenträger- und Klinikforschung in drei europäische Märkte eintrat.', author: 'Europäische Markteinführung', role: 'Fallstudie', company: 'Spezial-pharmazeutisches Unternehmen' },
       ],
     },
     clientReviewsTeaser: {
@@ -536,7 +542,7 @@ export const translations = {
       titleBeforeCount: 'Empfohlen von mehr als',
       titleAfterCount: 'zufriedenen Kunden',
       description:
-        'Lesen Sie verifizierte Google-Bewertungen unseres Londoner Büros und Referenzen von pharmazeutischen, Biotech- und Medizintechnik-Partnern in den USA, Europa und LATAM.',
+        'Lesen Sie verifizierte Google-Bewertungen unseres Londoner Büros und Referenzen von pharmazeutischen, Biotechnologie- und Medizintechnik-Partnern in den USA, Europa und LATAM.',
       happyClientsBadgeSuffix: 'zufriedene Kunden',
       googleRatingSuffix: 'auf Google',
       cta: 'Alle Kundenbewertungen lesen',
@@ -596,15 +602,15 @@ export const translations = {
       no: 'Nein',
     },
     footer: {
-      tagline: 'Gesundheitsmarktforschung | Pharmazeutische Erkenntnisse Europa & MENA. Evidenzbasierte Erkenntnisse für pharmazeutische und Biotech-Führungskräfte weltweit.',
+      tagline: 'Gesundheitsmarktforschung | Pharmazeutische Erkenntnisse Europa & MENA. Evidenzbasierte Erkenntnisse für pharmazeutische und Biotechnologie-Führungskräfte weltweit.',
       quickLinksHeading: 'Schnellzugriffe',
       companyHeading: 'Unternehmen',
-      healthcareHub: 'Healthcare-Marktforschungs-Hub',
-      blogAndInsights: 'Blog & Insights',
+      healthcareHub: 'Zentrum für Gesundheitsmarktforschung',
+      blogAndInsights: 'Blog & Erkenntnisse',
       sitemap: 'Vollständige Seitenübersicht',
       about: 'Über uns',
       services: 'Dienstleistungen',
-      insights: 'Insights',
+      insights: 'Erkenntnisse',
       careers: 'Karriere',
       clientsPortal: 'Kundenportal',
       caseStudies: 'Fallstudien',
@@ -616,7 +622,7 @@ export const translations = {
       privacy: 'Datenschutzerklärung',
       terms: 'Nutzungsbedingungen',
       newsletterHeading: 'Newsletter',
-      newsletterDesc: 'Erhalten Sie Gesundheits-Insights direkt in Ihren Posteingang.',
+      newsletterDesc: 'Erhalten Sie Gesundheitserkenntnisse direkt in Ihren Posteingang.',
       newsletterPlaceholder: 'Ihr Name',
       newsletterEmailPlaceholder: 'Geschäftliche E-Mail',
       newsletterButton: 'Abonnieren',

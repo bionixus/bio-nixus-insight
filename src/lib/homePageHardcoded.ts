@@ -318,7 +318,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     industriesGateway: {
       h2: "Über das Gesundheitswesen hinaus — Forschung in allen Branchen",
-      intro: "Dieselbe Stichprobenmethodik und von erfahrenen Analysten geleitete Auswertung, die wir für die Pharmaindustrie entwickelt haben, gilt jetzt auch für Geschäfts- und Privatkundenmärkte.",
+      intro: "Dieselbe Stichprobenmethodik und von erfahrenen Analysten geleitete Auswertung, die wir für die pharmazeutische Industrie entwickelt haben, gilt jetzt auch für Geschäfts- und Privatkundenmärkte.",
       stats: [
         {
           value: "127+",
@@ -334,14 +334,14 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
         }
       ],
       exploreAll: "Alle Branchen entdecken",
-      insightsLink: "Geschäftskunden- & Privatkunden-Brancheninsights lesen",
+      insightsLink: "Geschäftskunden- und Privatkunden-Branchenerkenntnisse lesen",
       exploreSegment: "Entdecken: {segment}"
     },
     industrySegments: {
       pharma: {
-        label: "Pharmaindustrie & Gesundheitswesen",
+        label: "Pharmazeutik & Gesundheitswesen",
         tagline: "Wo BioNixus entstand — und weiterhin führt.",
-        navLabel: "Pharmaindustrie & Gesundheitswesen"
+        navLabel: "Pharmazeutik & Gesundheitswesen"
       },
       b2b: {
         label: "Geschäftskunden-Branchen",
@@ -350,7 +350,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       },
       b2c: {
         label: "Privatkunden-Branchen",
-        tagline: "Verbrauchernachfrage, Marken und Shopper Journey.",
+        tagline: "Verbrauchernachfrage, Marken und Käuferreise.",
         navLabel: "Privatkunden-Branchen"
       }
     },
@@ -358,30 +358,30 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       h2: "Gesundheitswesen-Forschungspfade",
       introFull: "BioNixus führt Gesundheitsmarktforschung weltweit durch — mit Länder-Tiefe in Amerika, Europa und Naher Osten. Nutzen Sie diese Pfade für Markteinführung, Marktzugang und Wachstum. Methoden vergleichen Sie in unserem Marktforschungs-Übersichtsbereich.",
       moreSummary: "Weitere Forschungspfade",
-      moreLinksTemplate: "{N} Links"
+      moreLinksTemplate: "{N} Verknüpfungen"
     },
     pathwayCards: [
       {
         title: "Gesundheitsmarktforschung",
-        description: "Entscheidungsreife Gesundheitsmarktforschung für Pharmaindustrie-Teams — global, mit starker Umsetzung in Europa, Amerika und Nahem Osten."
+        description: "Entscheidungsreife Gesundheitsmarktforschung für pharmazeutische Teams — global, mit starker Umsetzung in Europa, Amerika und Nahem Osten."
       },
       {
-        title: "Pharmaindustriezeutische Forschung Saudi-Arabien",
-        description: "saudi-arabische Arzneimittelbehörde-ausgerichtete Pharmaindustrie- und Gesundheitsmarkt-Marktinformationen für Markteinführung, Zugang und Wachstum in Saudi-Arabien.",
+        title: "Pharmazeutische Forschung Saudi-Arabien",
+        description: "saudi-arabische Arzneimittelbehörde-ausgerichtete pharmazeutische und Gesundheitsmarktinformationen für Markteinführung, Zugang und Wachstum in Saudi-Arabien.",
         label: "Länder-Tiefe",
         hint: "Ideal für länderbezogene Umsetzung"
       },
       {
-        title: "Pharmaindustriemarktforschung Vereinigte Arabische Emirate",
-        description: "Gesundheits-Marktinformationen für Dubai und Abu Dhabi: Arzneimittelentwicklung, Marktzugang sowie quantitative und qualitative Forschung in den Emiraten.",
+        title: "Pharmazeutische Marktforschung Vereinigte Arabische Emirate",
+        description: "Gesundheits-Marktinformationen für Dubai und Abu Dhabi: Arzneimittelentwicklung, Marktzugang sowie quantitative und qualitative Marktforschung in den Emiraten.",
         label: "Vereinigte Arabische Emirate-Priorität",
-        hint: "Ideal für Markteinführung- und Marktzugang-Umsetzung in den Vereinigte Arabische Emirate"
+        hint: "Ideal für Markteinführungs- und Marktzugangsumsetzung in den Vereinigten Arabischen Emiraten"
       },
       {
-        title: "Pharmaindustriemarktforschung Naher Osten",
+        title: "Pharmazeutische Marktforschung Naher Osten",
         description: "Arzneimittel-Evidenzprogramme mit Fokus auf den Golf-Kooperationsrat für Reihenfolge der Markteinführung, Marktzugang und länderübergreifende Umsetzung.",
         label: "Priorität Golf-Kooperationsrat",
-        hint: "Ideal für Markteinführung- und Marktzugang-Entscheidungen im Nahen Osten"
+        hint: "Ideal für Markteinführungs- und Marktzugangsentscheidungen im Nahen Osten"
       },
       {
         title: "Strategisches Portfolio",
@@ -391,51 +391,51 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       },
       {
         title: "Top-Marktforschungsunternehmen in Ägypten (2026)",
-        description: "Unabhängiger Leitfaden: Vergleich von 5 führenden Anbietern für Gesundheitswesen-, Pharmaindustrie- und Verbraucherforschung in Ägypten — dem größten Naher Osten und Nordafrika-Markt.",
+        description: "Unabhängiger Leitfaden: Vergleich von 5 führenden Anbietern für Gesundheitswesen-, pharmazeutische und Verbraucherforschung in Ägypten — dem größten Markt in Naher Osten und Nordafrika.",
         label: "Neuer Leitfaden",
         hint: "Ideal für Partnerauswahl in Ägypten"
       },
       {
-        title: "Leitfaden quantitative Gesundheitsmarktforschung",
-        description: "Umsetzungsfertiger 2026-Leitfaden für Umfragearchitektur, Laufende-Studien-Governance und KI-gestützte Validierung in Saudi-Arabien und den Vereinigte Arabische Emirate.",
+        title: "Leitfaden zur quantitativen Gesundheitsmarktforschung",
+        description: "Umsetzungsfertiger 2026-Leitfaden für Umfragearchitektur, Steuerung laufender Studien und KI-gestützte Validierung in Saudi-Arabien und den Vereinigten Arabischen Emiraten.",
         label: "Empfohlener Leitfaden",
-        hint: "Ideal für quantitative Design-Entscheidungen"
+        hint: "Ideal für Entscheidungen zur quantitativen Studienkonzeption"
       },
       {
         title: "Alle Branchen",
-        description: "Entdecken Sie Pharmaindustrie-, Geschäftskunden- und Privatkunden-Marktforschung — dieselbe Qualität hinter 127+ Projekten in 16 Branchen.",
+        description: "Entdecken Sie pharmazeutische, geschäftskunden- und privatkundenorientierte Marktforschung — dieselbe Qualität hinter 127+ Projekten in 16 Branchen.",
         label: "Branchenübergreifend",
         hint: "Branchen-Übersichtsbereich entdecken"
       },
       {
         title: "Verzeichnis globaler Websites",
-        description: "Marktforschungsseiten nach Land und Region — für Pharmaindustrie- und Unternehmensstrategie weltweit.",
+        description: "Marktforschungsseiten nach Land und Region — für pharmazeutische und Unternehmensstrategie weltweit.",
         label: "Länder-Tiefe",
         hint: "Ideal für Mehrländer-Planung"
       }
     ],
     visualBriefing: {
-      heading: "Wie BioNixus Felddaten in Markteinführung-Entscheidungen überführt",
+      heading: "Wie BioNixus Felddaten in Markteinführungsentscheidungen überführt",
       figures: [
         {
-          alt: "Gesundheitswesen-Marktforschungs-Workshop mit Golf-Kooperationsrat-Commercial- und Marktzugang-Führungskräften",
-          caption: "Pharmaindustrie-Daten und Evidenz in Markteinführung- und Marktzugang-Maßnahmen überführen."
+          alt: "Gesundheitswesen-Marktforschungs-Workshop mit Vertriebs- und Marktzugangsführungskräften aus dem Golf-Kooperationsrat",
+          caption: "Pharmazeutische Daten und Evidenz in Markteinführungs- und Marktzugangsmaßnahmen überführen."
         },
         {
-          alt: "Pharmaindustrie-Datenvalidierung mit quantitativer Analytik und KI-gestützter Qualitätsprüfung",
+          alt: "Pharmazeutische Datenvalidierung mit quantitativer Analyse und KI-gestützter Qualitätsprüfung",
           caption: "Menschliche Validierung mit geregelten KI-gestützten Qualitätskontrollen für Gesundheitswesen-Datensätze."
         }
       ]
     },
     overviewVideo: {
       title: "BioNixus Gesundheitsmarktforschung — Überblick",
-      description: "Kurzer Überblick, wie BioNixus quantitative, qualitative und Marktzugang-Programme für Pharmaindustrie-Teams in Amerika, Europa und Nahem Osten gestaltet.",
-      transcript: "BioNixus unterstützt Pharmaindustrie- und Gesundheitswesen-Teams mit Marktforschung für echte Entscheidungen — Markteinführung-Readiness, Marktzugang, Payör-Evidenz und Wettbewerbsintelligence. Programme verbinden erfahrene geführte Konzeption, zweisprachige arabisch-englische Feldarbeit und auditfähige Governance in Amerika, Europa und Nahem Osten.",
+      description: "Kurzer Überblick, wie BioNixus Programme für quantitative und qualitative Marktforschung sowie Marktzugang für pharmazeutische Teams in Amerika, Europa und Nahem Osten gestaltet.",
+      transcript: "BioNixus unterstützt pharmazeutische und Gesundheitswesen-Teams mit Marktforschung für echte Entscheidungen — Markteinführungsreife, Marktzugang, Kostenträgernachweise und Wettbewerbsanalyse. Programme verbinden erfahrungsgeleitete Konzeption, zweisprachige arabisch-englische Feldforschung und prüfungsfähige Qualitätssicherung in Amerika, Europa und Nahem Osten.",
       fallbackLabel: "Anonymisierte Fallstudien ansehen"
     },
     cta: {
       researchProposalHeadline: "Individuelles Gesundheitsmarktforschungs-Angebot anfordern",
-      body: "Unser Team liefert Pharmaindustrieunternehmen entscheidungsreife Erkenntnisse in Amerika, Europa und Nahem Osten — quantitativ und qualitativ.",
+      body: "Unser Team liefert pharmazeutischen Unternehmen entscheidungsreife Erkenntnisse in Amerika, Europa und Nahem Osten — mit quantitativen und qualitativen Methoden.",
       requestProposal: "Angebot anfordern",
       emailUs: "E-Mail senden",
       mailtoSubject: "Anfrage Gesundheitsmarktforschung",
@@ -447,7 +447,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     testimonials: {
       marquee: "Branchenführer an unserer Seite",
-      altTemplate: "{company} — Fallstudie Pharmaindustriemarktforschung (Vorschau)"
+      altTemplate: "{company} — Fallstudie pharmazeutische Marktforschung (Vorschau)"
     },
     heroTrust: {
       primary: "Vertrauenswürdig bei",
