@@ -53,7 +53,7 @@ export const aboutPageCopyFr: AboutPageCopy = {
   storyAct3P2After: '.',
   diffH2: 'Ce qui nous distingue',
   diffIntro:
-    'Trois éléments séparent une mission BioNixus d’une recherche commandée ailleurs — qu’il s’agisse d’une étude payeur en Allemagne ou d’une segmentation B2B dans le GCC.',
+    'Trois éléments séparent une mission BioNixus d’une recherche commandée ailleurs — qu’il s’agisse d’une étude payeur aux États-Unis ou en Allemagne, d’un programme de segmentation B2B dans le GCC ou d’une étude d’élasticité-prix au Brésil ou à Singapour.',
   differentiators: [
     {
       title: 'Portée mondiale, exécution régionale',

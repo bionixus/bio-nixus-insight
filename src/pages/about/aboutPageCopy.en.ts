@@ -58,7 +58,7 @@ export const aboutPageCopyEn: AboutPageCopy = {
   storyAct3P2After: '.',
   diffH2: 'What Sets Us Apart',
   diffIntro:
-    'Three things consistently separate a BioNixus engagement from commissioning research elsewhere — whether your brief is a payer study in Germany or a B2B segmentation programme in the GCC.',
+    'Three things consistently separate a BioNixus engagement from commissioning research elsewhere — whether your brief is a payer study in the USA or Germany, a B2B segmentation programme in the GCC, or a Price Elasticity study in Brazil or Singapore.',
   differentiators: [
     {
       title: 'Global reach, regional execution',

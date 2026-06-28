@@ -52,7 +52,7 @@ export const aboutPageCopyZh: AboutPageCopy = {
   storyAct3LinkMethodology: '研究方法论',
   storyAct3P2After: '。',
   diffH2: '我们的差异',
-  diffIntro: '三件事使 BioNixus 项目区别于在其他地方采购的研究——无论是德国支付方研究还是 GCC 的 B2B 细分项目。',
+  diffIntro: '三件事使 BioNixus 项目区别于在其他地方采购的研究——无论是美国或德国的支付方研究、海湾合作国家的 B2B 细分项目，还是巴西或新加坡的价格弹性研究。',
   differentiators: [
     {
       title: '全球覆盖，区域执行',

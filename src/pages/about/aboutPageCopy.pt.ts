@@ -53,7 +53,7 @@ export const aboutPageCopyPt: AboutPageCopy = {
   storyAct3P2After: '.',
   diffH2: 'O que nos distingue',
   diffIntro:
-    'Três coisas separam um mandato BioNixus de contratar pesquisa noutro sítio — seja um estudo de pagadores na Alemanha ou segmentação B2B no GCC.',
+    'Três coisas separam um mandato BioNixus de contratar pesquisa noutro sítio — seja um estudo de pagadores nos EUA ou na Alemanha, segmentação B2B no GCC ou um estudo de elasticidade de preços no Brasil ou em Singapura.',
   differentiators: [
     {
       title: 'Alcance global, execução regional',

@@ -53,7 +53,7 @@ export const aboutPageCopyEs: AboutPageCopy = {
   storyAct3P2After: '.',
   diffH2: 'Lo que nos distingue',
   diffIntro:
-    'Tres cosas separan un encargo BioNixus de encargar investigación en otro lugar — ya sea un estudio de pagadores en Alemania o un programa B2B de segmentación en el GCC.',
+    'Tres cosas separan un encargo BioNixus de encargar investigación en otro lugar — ya sea un estudio de pagadores en EE. UU. o Alemania, un programa de segmentación B2B en el GCC o un estudio de elasticidad de precios en Brasil o Singapur.',
   differentiators: [
     {
       title: 'Alcance global, ejecución regional',
