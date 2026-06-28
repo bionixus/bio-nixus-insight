@@ -704,9 +704,17 @@ async function handleSsrRequest(
   const pathname = url.split('?')[0] || '/';
   const query = url.includes('?') ? `?${url.split('?').slice(1).join('?')}` : '';
 
-  if (REDIRECTS[pathname]) {
+  let decodedPathname = pathname;
+  try {
+    decodedPathname = decodeURIComponent(pathname);
+  } catch {
+    /* keep raw pathname */
+  }
+
+  const redirectTarget = REDIRECTS[pathname] ?? REDIRECTS[decodedPathname];
+  if (redirectTarget) {
     res.setHeader('Cache-Control', 'public, max-age=3600');
-    res.redirect(301, REDIRECTS[pathname]);
+    res.redirect(301, redirectTarget);
     return;
   }
 

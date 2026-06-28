@@ -908,8 +908,16 @@ async function startServer() {
         return;
       }
 
-      if (REDIRECTS[req.path]) {
-        res.redirect(301, REDIRECTS[req.path]);
+      let decodedPath = req.path;
+      try {
+        decodedPath = decodeURIComponent(req.path);
+      } catch {
+        /* keep raw path */
+      }
+
+      const blogRedirectTarget = REDIRECTS[req.path] ?? REDIRECTS[decodedPath];
+      if (blogRedirectTarget) {
+        res.redirect(301, blogRedirectTarget);
         return;
       }
 
