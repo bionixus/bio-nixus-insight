@@ -3,8 +3,6 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
-import { useIndustriesInsights } from '@/hooks/useSanityBlog';
-import { INDUSTRIES_INSIGHTS_INDEX_PATH, getBlogPostPath } from '@/lib/blog-content-silo';
 import {
   SEGMENTS,
   SEGMENT_ORDER,
@@ -88,11 +86,6 @@ export default function IndustrySegmentPage({ slug }: IndustrySegmentPageProps) 
   const coveredIndustries = getSegmentMatrixIndustries(slug);
   const segmentCountries = getSegmentCountries(slug);
   const otherSegments = SEGMENT_ORDER.filter((s) => s !== slug).map((s) => SEGMENTS[s]);
-  const { data: industriesInsights } = useIndustriesInsights();
-  const segmentInsights =
-    slug === 'b2b' || slug === 'b2c'
-      ? (industriesInsights ?? []).filter((post) => post.industrySegment === slug).slice(0, 3)
-      : [];
 
   const jsonLd = [
     {
@@ -448,47 +441,6 @@ export default function IndustrySegmentPage({ slug }: IndustrySegmentPageProps) 
             </div>
           </div>
         </section>
-
-        {segmentInsights.length > 0 ? (
-          <section className="bx-section cream">
-            <div className="bx-inner">
-              <div className="bx-section-head">
-                <div className={`bx-eyebrow ${accent}`}>
-                  <span className="bx-line" /> Insights
-                </div>
-                <h2 className="bx-h2">
-                  Latest <em>industry insights</em>
-                </h2>
-                <p className="bx-lead">
-                  Fieldwork-led articles for {segment.label.toLowerCase()} buyers —{' '}
-                  <Link to={INDUSTRIES_INSIGHTS_INDEX_PATH}>view all industry insights</Link>.
-                </p>
-              </div>
-              <div className="bx-next-grid">
-                {segmentInsights.map((post) => (
-                  <Link key={post.id} to={getBlogPostPath(post)} className="bx-next-card">
-                    <span className="bx-next-label">
-                      {post.title} <span className="bx-next-arrow" aria-hidden="true">→</span>
-                    </span>
-                    {post.excerpt ? <span className="bx-next-desc">{post.excerpt}</span> : null}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </section>
-        ) : slug === 'b2b' || slug === 'b2c' ? (
-          <section className="bx-section cream">
-            <div className="bx-inner max-w-3xl">
-              <p className="text-muted-foreground leading-relaxed">
-                {segment.label} insights are published on our{' '}
-                <Link to={INDUSTRIES_INSIGHTS_INDEX_PATH} className="text-primary font-medium hover:underline">
-                  industry insights hub
-                </Link>
-                .
-              </p>
-            </div>
-          </section>
-        ) : null}
 
         {/* ===== FAQ ===== */}
         <section className="bx-section cream">
