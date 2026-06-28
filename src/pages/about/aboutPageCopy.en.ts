@@ -111,6 +111,7 @@ export const aboutPageCopyEn: AboutPageCopy = {
       title: 'Egypt — Greater Cairo (MENA Regional Office)',
       lines: [
         'MENA regional operations and bilingual fieldwork hub serving the GCC, North Africa, and wider Middle East programmes.',
+        '+20 120 688 2323',
       ],
       linkLabel: 'Egypt market research',
     },

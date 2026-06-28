@@ -61,6 +61,16 @@ function AboutOfficeBlock({
               </span>
             );
           }
+          if (line.startsWith('+20 ')) {
+            return (
+              <span key={line}>
+                <a href="tel:+201206882323" className="text-primary hover:underline cursor-pointer">
+                  {line}
+                </a>
+                {lineIndex < office.lines.length - 1 ? <br /> : null}
+              </span>
+            );
+          }
           return (
             <span key={line}>
               {line}

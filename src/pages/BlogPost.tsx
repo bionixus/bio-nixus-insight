@@ -31,8 +31,13 @@ import {
 } from '@/lib/seo-meta';
 import RelatedPosts from '@/components/RelatedPosts';
 import { EgyptHealthcare2026CairoBlock } from '@/components/blog/EgyptHealthcare2026CairoBlock';
-import { getGermanBlogFaqItems, localizeTocForGerman, resolveGermanExecutiveSummary } from '@/data/germanBlogFaq';
-import { getGermanBlogCta } from '@/data/germanBlogCta';
+import {
+  getLocalizedBlogFaqItems,
+  getLocalizedBlogCta,
+  resolveLocalizedExecutiveSummary,
+  localizeTocForLocale,
+  getRelatedResearchLinksForLocale,
+} from '@/lib/blogLocaleContent';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import BlogSiteExplorer from '@/components/BlogSiteExplorer';
@@ -45,6 +50,7 @@ import {
   getBlogArticleIndexPath,
   getBlogPostUiStrings,
   resolveBlogArticleLocale,
+  BLOG_DATE_LOCALE,
 } from '@/lib/blogPostUiStrings';
 import { useInitialData } from '@/contexts/InitialDataContext';
 import Navbar from '@/components/Navbar';
@@ -1075,12 +1081,12 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
       : [];
 
   const localizedPostFaqItems =
-    articleLocale === 'de'
-      ? getGermanBlogFaqItems(slug, post.title, postFaqItems)
-      : postFaqItems;
+    articleLocale === 'en'
+      ? postFaqItems
+      : getLocalizedBlogFaqItems(articleLocale, slug, post.title, postFaqItems);
 
   const localizedCtaSection =
-    articleLocale === 'de' ? getGermanBlogCta(slug, post.ctaSection) : post.ctaSection;
+    articleLocale === 'en' ? post.ctaSection : getLocalizedBlogCta(articleLocale, slug, post.ctaSection);
 
   const mergedBlogFaqItems = [
     ...(isEgyptHealthcare2026 ? EGYPT_HEALTHCARE_2026_CAIRO_FAQ : []),
@@ -1105,12 +1111,12 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
             : null;
 
   const localizedExecutiveSummary =
-    articleLocale === 'de'
-      ? resolveGermanExecutiveSummary(post.title, slug, executiveSummary)
-      : executiveSummary;
+    articleLocale === 'en'
+      ? executiveSummary
+      : resolveLocalizedExecutiveSummary(articleLocale, post.title, slug, executiveSummary);
 
   const localizedTableOfContents =
-    articleLocale === 'de' ? localizeTocForGerman(resolvedTableOfContents) : resolvedTableOfContents;
+    articleLocale === 'en' ? resolvedTableOfContents : localizeTocForLocale(articleLocale, resolvedTableOfContents);
 
   const heroCoverImage =
     therapyStaticBundledCover ||
@@ -1683,33 +1689,10 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
                   {blogUi.relatedResearchDescription}
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {(
-                    articleLocale === 'de'
-                      ? [
-                          { to: '/de/healthcare-market-research/germany', label: 'Gesundheitsmarktforschung Deutschland' },
-                          { to: '/europe', label: 'Healthcare-Marktforschung Europa' },
-                          { to: '/uk', label: 'Pharmamarktforschung UK' },
-                          { to: '/de/blog/pharmamarktforschung-deutschland-2026', label: 'Pharmamarktforschung Deutschland 2026' },
-                          { to: '/de/blog/amnog-frueher-nutzen-marktzugang-2026', label: 'AMNOG Früher Nutzen & Marktzugang' },
-                          { to: '/de/contact', label: 'BioNixus kontaktieren' },
-                        ]
-                      : [
-                          ...(isGccComparisonEn
-                            ? [
-                                { to: '/gcc-pharmaceutical-market-research', label: 'GCC pharmaceutical market research' },
-                                { to: '/healthcare-market-research/kuwait', label: 'Healthcare market research in Kuwait' },
-                                { to: '/blog/gcc-pharmaceuticals-market-2026', label: 'GCC pharma market 2026 full insight' },
-                              ]
-                            : []),
-                          ...(isQuantMrMaEn
-                            ? [{ to: '/quantitative-healthcare-market-research', label: 'Quantitative healthcare market research methodology' }]
-                            : []),
-                          { to: '/healthcare-market-research', label: 'EMEA healthcare market research hub' },
-                          { to: '/healthcare-market-research/saudi-arabia', label: 'Pharma market research in Saudi Arabia' },
-                          { to: '/healthcare-market-research/uae', label: 'Healthcare market research in the UAE' },
-                          { to: '/healthcare-market-research/therapy/oncology', label: 'Oncology market research in MENA' },
-                        ]
-                  ).map(({ to, label }) => (
+                  {getRelatedResearchLinksForLocale(articleLocale, {
+                    isGccComparisonEn,
+                    isQuantMrMaEn,
+                  }).map(({ to, label }) => (
                     <Link
                       key={to}
                       to={to}
@@ -1828,7 +1811,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
                     )}
                     {post.updatedAtIso && post.updatedAtIso !== post.publishedAtIso && (
                       <p className="text-xs text-muted-foreground mt-1">
-                        {blogUi.updated} {new Date(post.updatedAtIso).toLocaleDateString(articleLocale === 'de' ? 'de-DE' : articleLocale === 'ar' ? 'ar-EG' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
+                        {blogUi.updated} {new Date(post.updatedAtIso).toLocaleDateString(BLOG_DATE_LOCALE[articleLocale], { day: 'numeric', month: 'short', year: 'numeric' })}
                       </p>
                     )}
                   </div>

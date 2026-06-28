@@ -5,27 +5,28 @@ import {
   type MatrixCountrySlug,
   type MatrixIndustrySlug,
 } from './industryMarketResearchMatrix';
+import { sortBySegmentCountryPriority } from './segmentCountryOrder';
 
 export type IndustryHubCountry = { slug: string; label: string };
 
 /** Countries linked from global industry hub pages (`/market-research/:industry`). */
-export const INDUSTRY_HUB_COUNTRIES: IndustryHubCountry[] = [
-  { label: 'Saudi Arabia', slug: 'saudi-arabia' },
+export const INDUSTRY_HUB_COUNTRIES: IndustryHubCountry[] = sortBySegmentCountryPriority([
+  { label: 'USA', slug: 'usa' },
+  { label: 'UK', slug: 'uk' },
+  { label: 'Germany', slug: 'germany' },
+  { label: 'Brazil', slug: 'brazil' },
   { label: 'UAE', slug: 'uae' },
+  { label: 'Saudi Arabia', slug: 'saudi-arabia' },
   { label: 'Egypt', slug: 'egypt' },
   { label: 'Kuwait', slug: 'kuwait' },
   { label: 'Qatar', slug: 'qatar' },
   { label: 'Oman', slug: 'oman' },
   { label: 'Bahrain', slug: 'bahrain' },
-  { label: 'UK', slug: 'uk' },
-  { label: 'USA', slug: 'usa' },
-  { label: 'Brazil', slug: 'brazil' },
-  { label: 'Germany', slug: 'germany' },
   { label: 'Morocco', slug: 'morocco' },
   { label: 'Nigeria', slug: 'nigeria' },
   { label: 'South Africa', slug: 'south-africa' },
   { label: 'Kenya', slug: 'kenya' },
-];
+]);
 
 const MATRIX_COUNTRY_SET = new Set<string>(MATRIX_COUNTRY_SLUGS_ORDERED);
 
@@ -47,25 +48,33 @@ export function getIndustrySegmentCountryPath(
 
 export const B2B_COUNTRY_GROUPS: Array<{ region: string; countries: IndustryHubCountry[] }> = [
   {
-    region: 'MENA & GCC',
-    countries: MATRIX_COUNTRY_SLUGS_ORDERED.map((slug) => ({
-      slug,
-      label: MATRIX_COUNTRIES[slug].label,
-    })),
-  },
-  {
-    region: 'Africa',
-    countries: INDUSTRY_HUB_COUNTRIES.filter((c) =>
-      ['morocco', 'nigeria', 'south-africa', 'kenya'].includes(c.slug),
+    region: 'Americas',
+    countries: sortBySegmentCountryPriority(
+      INDUSTRY_HUB_COUNTRIES.filter((country) => ['usa', 'brazil'].includes(country.slug)),
     ),
   },
   {
     region: 'Europe',
-    countries: INDUSTRY_HUB_COUNTRIES.filter((c) => ['uk', 'germany'].includes(c.slug)),
+    countries: sortBySegmentCountryPriority(
+      INDUSTRY_HUB_COUNTRIES.filter((country) => ['uk', 'germany'].includes(country.slug)),
+    ),
   },
   {
-    region: 'Americas',
-    countries: INDUSTRY_HUB_COUNTRIES.filter((c) => ['usa', 'brazil'].includes(c.slug)),
+    region: 'MENA & GCC',
+    countries: sortBySegmentCountryPriority(
+      MATRIX_COUNTRY_SLUGS_ORDERED.map((slug) => ({
+        slug,
+        label: MATRIX_COUNTRIES[slug].label,
+      })),
+    ),
+  },
+  {
+    region: 'Africa',
+    countries: sortBySegmentCountryPriority(
+      INDUSTRY_HUB_COUNTRIES.filter((country) =>
+        ['morocco', 'nigeria', 'south-africa', 'kenya'].includes(country.slug),
+      ),
+    ),
   },
 ];
 
@@ -166,6 +175,40 @@ export const MARKET_RESEARCH_BY_INDUSTRY_GROUPS: MarketResearchIndexRegion[] = [
 
 export const MARKET_RESEARCH_BY_INDUSTRY_COUNTRIES: MarketResearchIndexCountry[] =
   MARKET_RESEARCH_BY_INDUSTRY_GROUPS.flatMap((group) => group.countries);
+
+const americasGroup = MARKET_RESEARCH_BY_INDUSTRY_GROUPS.find((group) => group.region === 'Americas');
+const europeGroup = MARKET_RESEARCH_BY_INDUSTRY_GROUPS.find((group) => group.region === 'Europe');
+const menaGroup = MARKET_RESEARCH_BY_INDUSTRY_GROUPS.find((group) => group.region === 'MENA & GCC');
+const africaGroup = MARKET_RESEARCH_BY_INDUSTRY_GROUPS.find((group) => group.region === 'Africa');
+const apacGroup = MARKET_RESEARCH_BY_INDUSTRY_GROUPS.find((group) => group.region === 'Asia-Pacific');
+
+/** Regional coverage for `/bionixus-industries` — LATAM and APAC called out explicitly. */
+export const BIONIXUS_INDUSTRIES_REGION_GROUPS: MarketResearchIndexRegion[] = [
+  {
+    region: 'North America',
+    description:
+      'US global headquarters in Wyoming plus Canada — FDA-aware pharma, medtech, and cross-industry programmes with harmonised North American readouts.',
+    countries:
+      americasGroup?.countries.filter((country) => ['usa', 'canada'].includes(country.slug)) ?? [],
+  },
+  {
+    region: 'Latin America (LATAM)',
+    description:
+      'Portuguese and Spanish field teams across Brazil, Mexico, Colombia, and Andean markets — ANVISA-aware pharma, hospital procurement, and consumer research with bilingual moderation.',
+    countries:
+      americasGroup?.countries.filter((country) => country.slug === 'brazil') ?? [],
+  },
+  ...(europeGroup ? [europeGroup] : []),
+  ...(menaGroup ? [menaGroup] : []),
+  ...(africaGroup ? [africaGroup] : []),
+  {
+    region: 'Asia-Pacific (APAC)',
+    description:
+      apacGroup?.description ??
+      'APAC pharmaceutical and industry research through local moderators, hospital networks, and payer-aware mixed-method designs.',
+    countries: apacGroup?.countries ?? [],
+  },
+];
 
 export function isMatrixCountrySlug(slug: string): slug is MatrixCountrySlug {
   return MATRIX_COUNTRY_SET.has(slug);

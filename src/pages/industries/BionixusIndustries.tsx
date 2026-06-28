@@ -4,6 +4,10 @@ import Footer from '@/components/Footer';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { SEGMENTS, SEGMENT_ORDER, type SegmentSlug } from '@/data/bionixusIndustrySegments';
+import {
+  BIONIXUS_INDUSTRIES_REGION_GROUPS,
+  getHealthcareHubPathForIndexCountry,
+} from '@/data/industryHubCountries';
 import { COMPANY_BOILERPLATE_SHORT } from '@/data/companyStory';
 import { PREMIUM_INDUSTRIES_CSS } from './premiumIndustriesCss';
 
@@ -18,6 +22,15 @@ const SEGMENT_ACCENT: Record<SegmentSlug, string> = {
   b2b: 'gold',
   b2c: 'coral',
 };
+
+const REGION_RIBBON = [
+  'North America',
+  'LATAM',
+  'Europe & UK',
+  'GCC & MENA',
+  'APAC',
+  'One evidence framework',
+];
 
 const TRUST_STATS = [
   { value: '2012', label: 'Founded in London', sub: 'UK pharmaceutical research roots' },
@@ -73,7 +86,7 @@ const HUB_FAQ = [
   {
     question: 'Where is BioNixus based and which regions does it cover?',
     answer:
-      'BioNixus was founded in London in 2012, is US-headquartered in Sheridan, Wyoming, and runs MENA programmes from a regional office in Greater Cairo. That footprint supports programmes across the Americas, Europe, and the GCC under one evidence framework, with bilingual Arabic–English fieldwork in MENA.',
+      'BioNixus was founded in London in 2012, is US-headquartered in Sheridan, Wyoming, and runs MENA programmes from a regional office in Greater Cairo. That footprint supports programmes across North America, LATAM, Europe, the GCC, Africa, and APAC under one evidence framework — with bilingual Arabic–English fieldwork in MENA and Portuguese and Spanish moderation in Latin America.',
   },
   {
     question: 'How are the three industry segments connected?',
@@ -151,7 +164,7 @@ export default function BionixusIndustries() {
               <p className="bx-hero-sub">
                 BioNixus began in <strong>pharmaceutical and healthcare research in 2012</strong> and still leads there.
                 The same sampling discipline and senior-led analysis now run across three connected segments — pharma
-                &amp; healthcare, B2B, and B2C — for clients across the Americas, EMEA, and the GCC.
+                &amp; healthcare, B2B, and B2C — for clients across North America, LATAM, Europe, the GCC, and APAC.
               </p>
               <p className="bx-hero-sub">
                 The site is built as two linked silos: a regulated healthcare silo and a non-healthcare industries silo.
@@ -241,11 +254,11 @@ export default function BionixusIndustries() {
         {/* ===== REGION RIBBON ===== */}
         <div className="bx-ribbon">
           <div className="bx-ribbon-inner">
-            <div className="bx-ribbon-item"><span className="bx-ic" aria-hidden="true">◆</span> Americas</div>
-            <div className="bx-ribbon-item"><span className="bx-ic" aria-hidden="true">◆</span> Europe &amp; UK</div>
-            <div className="bx-ribbon-item"><span className="bx-ic" aria-hidden="true">◆</span> GCC &amp; MENA</div>
-            <div className="bx-ribbon-item"><span className="bx-ic" aria-hidden="true">◆</span> Asia-Pacific</div>
-            <div className="bx-ribbon-item"><span className="bx-ic" aria-hidden="true">◆</span> One evidence framework</div>
+            {REGION_RIBBON.map((region) => (
+              <div className="bx-ribbon-item" key={region}>
+                <span className="bx-ic" aria-hidden="true">◆</span> {region}
+              </div>
+            ))}
           </div>
         </div>
 
@@ -311,26 +324,47 @@ export default function BionixusIndustries() {
           <div className="bx-inner">
             <div className="bx-section-head">
               <div className="bx-eyebrow teal">
-                <span className="bx-line" /> One firm, three regions
+                <span className="bx-line" /> Global regional coverage
               </div>
               <h2 className="bx-h2 light">
-                The Americas, EMEA, and the GCC — under <em>one evidence framework</em>
+                North America, LATAM, Europe, MENA, and APAC — under <em>one evidence framework</em>
               </h2>
             </div>
             <div className="bx-narrative">
               <p>
                 BioNixus is US-headquartered in Sheridan, Wyoming, with research operations in London and Cairo. That
-                structure lets us run American and European programmes to the same standard as our MENA fieldwork — and
-                benchmark a launch or a brand across all three regions inside a single evidence framework.
+                structure lets us run American, European, LATAM, and APAC programmes to the same standard as our MENA
+                fieldwork — and benchmark a launch or a brand across every region inside a single evidence framework.
               </p>
               <p>
-                In the United States and the wider Americas, our healthcare heritage means studies are held to
-                clinical-grade governance: verified respondents, defensible sampling, and analysis built for a decision
-                rather than a slide library. Those same standards now carry into our{' '}
+                In <strong>Latin America</strong>, Portuguese and Spanish field teams support ANVISA-aware pharma,
+                hospital procurement, and consumer programmes across Brazil and harmonised multi-country LATAM readouts.
+                In <strong>Asia-Pacific</strong>, local moderators and hospital networks field PMDA-, NMPA-, and
+                CDSCO-aware designs for Japan, China, India, South Korea, Singapore, and Australia — with the same
+                governance applied to our{' '}
                 <Link to="/b2b-industries">B2B industries</Link> and{' '}
-                <Link to="/b2c-industries">B2C industries</Link> work, and connect back to the{' '}
+                <Link to="/b2c-industries">B2C industries</Link> work, and a direct line back to the{' '}
                 <Link to="/healthcare-market-research">healthcare market research hub</Link> where the firm began.
               </p>
+            </div>
+            <div className="bx-country-grid bx-country-grid--after-narrative">
+              {BIONIXUS_INDUSTRIES_REGION_GROUPS.map((group) => (
+                <article key={group.region} className="bx-country-region">
+                  <h3>{group.region}</h3>
+                  <p className="bx-region-desc">{group.description}</p>
+                  <div className="bx-chips">
+                    {group.countries.map((country) => (
+                      <Link
+                        key={country.slug}
+                        to={getHealthcareHubPathForIndexCountry(country)}
+                        className="bx-chip"
+                      >
+                        {country.label}
+                      </Link>
+                    ))}
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>

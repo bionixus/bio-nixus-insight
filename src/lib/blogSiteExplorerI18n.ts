@@ -34,6 +34,46 @@ const UI: Record<BlogArticleLocale, SiteExplorerUiStrings> = {
     groupsLabel: (groups, urls) => `${groups} مجموعات · ${urls} روابط`,
     sitemapLink: 'خريطة الموقع الكاملة',
   },
+  fr: {
+    ariaLabel: 'Répertoire du site BioNixus',
+    title: 'Explorer les capacités et hubs BioNixus',
+    description:
+      'Répertoire de toutes les destinations marketing indexées — hubs pays et thérapeutiques, méthodologies, annuaires pharma, rapports de marché, sites globaux, insights, études de cas et pages localisées dans le monde.',
+    groupsLabel: (groups, urls) => `${groups} groupes · ${urls} URLs`,
+    sitemapLink: 'Plan du site complet',
+  },
+  es: {
+    ariaLabel: 'Directorio del sitio BioNixus',
+    title: 'Explorar capacidades y hubs de BioNixus',
+    description:
+      'Directorio de destinos de marketing indexados — hubs de países y terapias, metodologías, directorios farmacéuticos, informes de mercado, sitios globales, insights, casos de estudio y cobertura localizada en todo el mundo.',
+    groupsLabel: (groups, urls) => `${groups} grupos · ${urls} URLs`,
+    sitemapLink: 'Mapa del sitio completo',
+  },
+  pt: {
+    ariaLabel: 'Diretório do site BioNixus',
+    title: 'Explorar capacidades e hubs BioNixus',
+    description:
+      'Diretório de destinos de marketing indexados — hubs de países e terapias, metodologias, diretórios farmacêuticos, relatórios de mercado, sites globais, insights, casos de estudo e cobertura localizada mundialmente.',
+    groupsLabel: (groups, urls) => `${groups} grupos · ${urls} URLs`,
+    sitemapLink: 'Mapa do site completo',
+  },
+  ru: {
+    ariaLabel: 'Каталог сайта BioNixus',
+    title: 'Возможности и хабы BioNixus',
+    description:
+      'Каталог всех индексируемых маркетинговых страниц — хабы стран и терапий, методологии, фарма-справочники, отчёты, глобальные сайты, insights, кейсы и локализованное покрытие по миру.',
+    groupsLabel: (groups, urls) => `${groups} групп · ${urls} URL`,
+    sitemapLink: 'Полная карта сайта',
+  },
+  zh: {
+    ariaLabel: 'BioNixus 网站目录',
+    title: '探索 BioNixus 能力与中心页',
+    description:
+      '所有已索引营销页面的目录 — 国家与治疗领域中心、研究方法、医药目录、市场报告、全球网站、洞察、案例研究及全球本地化覆盖。',
+    groupsLabel: (groups, urls) => `${groups} 组 · ${urls} 链接`,
+    sitemapLink: '完整网站地图',
+  },
 };
 
 type SectionMeta = { id: string; title: string; description?: string };
@@ -146,6 +186,26 @@ const SECTIONS_AR: SectionMeta[] = [
   { id: 'other', title: 'صفحات إضافية', description: 'روابط داعمة وأدوات.' },
 ];
 
+/** Arabic anchor text overrides for explorer links (path → label). */
+export const AR_PATH_LABEL_OVERRIDES: Readonly<Record<string, string>> = {
+  '/': 'الرئيسية',
+  '/ar': 'BioNixus — الصفحة الرئيسية العربية',
+  '/ar/blog': 'المدونة العربية',
+  '/ar/contact': 'تواصل معنا',
+  '/ar/market-research-healthcare': 'أبحاث سوق الرعاية الصحية',
+  '/contact': 'تواصل',
+  '/about': 'من نحن',
+  '/healthcare-market-research': 'محور أبحاث سوق الرعاية الصحية',
+  '/healthcare-market-research/saudi-arabia': 'أبحاث السوق في السعودية',
+  '/healthcare-market-research/uae': 'أبحاث السوق في الإمارات',
+  '/gcc-pharmaceutical-market-research': 'أبحاث السوق الدوائي في GCC',
+  '/ar/blog/gcc-pharmaceuticals-market-arabic-2026': 'سوق الأدوية في الخليج 2026',
+  '/ar/arabic-blog-alsawdyh': 'دليل أبحاث السوق الدوائي في السعودية',
+  '/insights': 'الرؤى',
+  '/case-studies': 'دراسات الحالة',
+  '/sitemap': 'خريطة الموقع',
+};
+
 /** German anchor text overrides for explorer links (path → label). */
 export const DE_PATH_LABEL_OVERRIDES: Readonly<Record<string, string>> = {
   '/': 'Startseite',
@@ -196,12 +256,31 @@ export const DE_PATH_LABEL_OVERRIDES: Readonly<Record<string, string>> = {
 };
 
 export function getSiteExplorerUiStrings(locale: BlogArticleLocale): SiteExplorerUiStrings {
-  return UI[locale];
+  return UI[locale] ?? UI.en;
 }
 
 export function getSiteExplorerSectionMeta(locale: BlogArticleLocale): SectionMeta[] {
   if (locale === 'de') return SECTIONS_DE;
   if (locale === 'ar') return SECTIONS_AR;
+  if (locale === 'fr') {
+    return SECTIONS_EN.map((s) => ({
+      ...s,
+      title: s.title
+        .replace('Home & language hubs', 'Accueil et hubs linguistiques')
+        .replace('Company, trust & methodology', 'Entreprise, confiance et méthodologie')
+        .replace('Core services', 'Services principaux')
+        .replace('Healthcare market research hub', 'Hub études de marché santé')
+        .replace('Global websites', 'Sites globaux')
+        .replace('GCC, MENA & specialty programs', 'GCC, MENA et programmes spécialisés')
+        .replace('Pharmaceutical company directories', 'Annuaires pharma')
+        .replace('Healthcare & devices market reports', 'Rapports marché santé & dispositifs')
+        .replace('Blog & insights', 'Blog et insights')
+        .replace('Case studies', 'Études de cas')
+        .replace('Portfolio & conference', 'Portfolio et conférences')
+        .replace('Localized pages', 'Pages localisées')
+        .replace('Additional pages', 'Pages supplémentaires'),
+    }));
+  }
   return SECTIONS_EN;
 }
 

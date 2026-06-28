@@ -98,7 +98,7 @@ export const aboutPageCopyFr: AboutPageCopy = {
     { title: 'Royaume-Uni — Londres (siège fondateur)', lines: ['128 City Road', 'London, EC1V 2NX', '+44 7727 666682'] },
     {
       title: 'Égypte — Grand Caire (bureau régional MENA)',
-      lines: ['Opérations MENA et hub terrain bilingue pour le GCC, l’Afrique du Nord et le Moyen-Orient.'],
+      lines: ['Opérations MENA et hub terrain bilingue pour le GCC, l’Afrique du Nord et le Moyen-Orient.', '+20 120 688 2323'],
       linkLabel: 'Recherche marché Égypte',
     },
   ],

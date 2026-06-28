@@ -43,10 +43,21 @@ export function isIndustriesInsightPostPath(pathname: string): boolean {
   return /^\/bionixus-industries\/insights\/[^/]+/.test(pathname.split('?')[0] || '');
 }
 
+const LOCALIZED_BLOG_PREFIX: Record<string, string> = {
+  ar: '/ar/blog',
+  de: '/de/blog',
+  fr: '/fr/blog',
+  es: '/es/blog',
+  pt: '/pt/blog',
+  ru: '/ru/blog',
+  zh: '/zh/blog',
+};
+
 export function getBlogPostPath(
   post: Pick<BlogPost, 'slug' | 'contentSilo' | 'language'>,
 ): string {
-  if (post.language === 'ar') return `/ar/blog/${post.slug}`;
+  const prefix = post.language ? LOCALIZED_BLOG_PREFIX[post.language] : undefined;
+  if (prefix) return `${prefix}/${post.slug}`;
   if (isIndustriesPost(post)) return getIndustriesInsightPostPath(post.slug);
   return `/blog/${post.slug}`;
 }

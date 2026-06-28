@@ -108,6 +108,7 @@ export const aboutPageCopyDe: AboutPageCopy = {
       title: 'Ägypten — Großraum Kairo (MENA-Regionalbüro)',
       lines: [
         'Regionale MENA-Operationen und zweisprachiges Fieldwork-Hub für GCC-, Nordafrika- und Nahost-Programme.',
+        '+20 120 688 2323',
       ],
       linkLabel: 'Marktforschung Ägypten',
     },

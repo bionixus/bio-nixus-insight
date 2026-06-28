@@ -98,7 +98,7 @@ export const aboutPageCopyEs: AboutPageCopy = {
     { title: 'Reino Unido — Londres (oficina fundacional)', lines: ['128 City Road', 'London, EC1V 2NX', '+44 7727 666682'] },
     {
       title: 'Egipto — El Gran Cairo (oficina regional MENA)',
-      lines: ['Operaciones MENA y hub bilingüe de fieldwork para GCC, Norte de África y Oriente Medio.'],
+      lines: ['Operaciones MENA y hub bilingüe de fieldwork para GCC, Norte de África y Oriente Medio.', '+20 120 688 2323'],
       linkLabel: 'Investigación de mercado Egipto',
     },
   ],

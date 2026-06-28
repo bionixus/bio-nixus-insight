@@ -134,7 +134,7 @@ export const SEGMENTS: Record<SegmentSlug, SegmentConfig> = {
       {
         question: 'Which B2B industries does BioNixus cover?',
         answer:
-          'Technology and B2B software, energy and industrials, real estate and construction, public sector and government, and education — with country pages across Saudi Arabia, the UAE, Egypt, Kuwait, Qatar, Oman, Bahrain, the UK, USA, Brazil, Germany, Morocco, Nigeria, South Africa, and Kenya.',
+          'Technology and B2B software, energy and industrials, real estate and construction, public sector and government, and education — with country pages across the United States, United Kingdom, Germany, Brazil, UAE, Saudi Arabia, and the wider MENA and African markets.',
       },
       {
         question: 'How does B2B market research differ from consumer research?',
@@ -176,7 +176,7 @@ export const SEGMENTS: Record<SegmentSlug, SegmentConfig> = {
       {
         question: 'Which B2C industries does BioNixus cover?',
         answer:
-          'FMCG and consumer goods, retail and shopper, financial services and banking, telecom and connectivity, automotive, hospitality and tourism, and media and entertainment — with country pages across Saudi Arabia, the UAE, Egypt, Kuwait, Qatar, Oman, Bahrain, the UK, USA, Brazil, Germany, Morocco, Nigeria, South Africa, and Kenya.',
+          'FMCG and consumer goods, retail and shopper, financial services and banking, telecom and connectivity, automotive, hospitality and tourism, and media and entertainment — with country pages across the United States, United Kingdom, Germany, Brazil, UAE, Saudi Arabia, and the wider MENA and African markets.',
       },
       {
         question: 'What consumer research methods does BioNixus use?',

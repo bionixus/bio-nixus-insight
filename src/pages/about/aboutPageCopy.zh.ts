@@ -89,7 +89,7 @@ export const aboutPageCopyZh: AboutPageCopy = {
     { title: '英国——伦敦（创始办公室）', lines: ['128 City Road', 'London, EC1V 2NX', '+44 7727 666682'] },
     {
       title: '埃及——大开罗（MENA 区域办公室）',
-      lines: ['MENA 区域运营与阿英双语现场中心，服务 GCC、北非与中东更广泛项目。'],
+      lines: ['MENA 区域运营与阿英双语现场中心，服务 GCC、北非与中东更广泛项目。', '+20 120 688 2323'],
       linkLabel: '埃及市场研究',
     },
   ],

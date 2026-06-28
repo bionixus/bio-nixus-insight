@@ -98,7 +98,7 @@ export const aboutPageCopyPt: AboutPageCopy = {
     { title: 'Reino Unido — Londres (escritório fundador)', lines: ['128 City Road', 'London, EC1V 2NX', '+44 7727 666682'] },
     {
       title: 'Egito — Grande Cairo (escritório regional MENA)',
-      lines: ['Operações MENA e hub bilingue de fieldwork para GCC, Norte de África e Médio Oriente.'],
+      lines: ['Operações MENA e hub bilingue de fieldwork para GCC, Norte de África e Médio Oriente.', '+20 120 688 2323'],
       linkLabel: 'Pesquisa de mercado Egito',
     },
   ],

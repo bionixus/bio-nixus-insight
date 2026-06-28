@@ -233,6 +233,8 @@ export const PREMIUM_INDUSTRIES_CSS = `
 .bx-ind .bx-country-region { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 24px 26px; }
 .bx-ind .bx-country-region h3 { font-family: var(--bx-font-display); font-size: 18px; font-weight: 500; color: var(--bx-warm-white); margin: 0 0 10px; }
 .bx-ind .bx-country-region .bx-region-desc { font-size: 13px; color: rgba(255,255,255,0.45); font-weight: 300; line-height: 1.65; margin: 0 0 14px; }
+.bx-ind .bx-country-region.bx-country-region--full { grid-column: 1 / -1; }
+.bx-ind .bx-country-grid.bx-country-grid--flat { grid-template-columns: 1fr; }
 
 /* ===== DARK NARRATIVE ===== */
 .bx-ind .bx-section.dark .bx-dark-bg { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 60% 50% at 25% 70%, rgba(14,165,160,0.07), transparent), radial-gradient(ellipse 40% 40% at 82% 18%, rgba(201,168,76,0.05), transparent); }

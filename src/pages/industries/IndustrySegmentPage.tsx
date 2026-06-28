@@ -15,7 +15,7 @@ import {
   MATRIX_INDUSTRIES,
   getIndustryBofuPath,
 } from '@/data/industryMarketResearchMatrix';
-import { HEALTHCARE_HUB_COUNTRY_GROUPS, HEALTHCARE_HUB_COUNTRY_SLUGS } from '@/data/healthcareHubCountries';
+import { HEALTHCARE_HUB_COUNTRY_SLUGS } from '@/data/healthcareHubCountries';
 import {
   B2B_AREA_SERVED,
   B2B_COUNTRY_GROUPS,
@@ -25,6 +25,7 @@ import {
   DEFAULT_B2C_INDUSTRY_SLUG,
   getIndustrySegmentCountryPath,
 } from '@/data/industryHubCountries';
+import { sortBySegmentCountryPriority } from '@/data/segmentCountryOrder';
 import { resolveCountryConfig } from '@/lib/constants/countries';
 import { PREMIUM_INDUSTRIES_CSS } from './premiumIndustriesCss';
 
@@ -36,12 +37,14 @@ const ALL_SEGMENT_COUNTRY_GROUPS = B2B_COUNTRY_GROUPS;
 
 function getSegmentCountries(slug: SegmentSlug) {
   if (slug === 'pharma-healthcare') {
-    return HEALTHCARE_HUB_COUNTRY_SLUGS.map((countrySlug) => {
-      const config = resolveCountryConfig(countrySlug);
-      return { slug: countrySlug, label: config.name };
-    });
+    return sortBySegmentCountryPriority(
+      HEALTHCARE_HUB_COUNTRY_SLUGS.map((countrySlug) => {
+        const config = resolveCountryConfig(countrySlug);
+        return { slug: countrySlug, label: config.name };
+      }),
+    );
   }
-  return ALL_SEGMENT_COUNTRY_GROUPS.flatMap((group) => group.countries);
+  return sortBySegmentCountryPriority(ALL_SEGMENT_COUNTRY_GROUPS.flatMap((group) => group.countries));
 }
 
 function getSegmentIndustryCountryPath(
@@ -61,8 +64,8 @@ function getSegmentIndustryCountryPath(
 const SEGMENT_COUNTRY_LEAD: Record<SegmentSlug, string> = {
   'pharma-healthcare':
     'Each industry links to country pages across the Americas, Europe, MENA & GCC, and Asia-Pacific — GCC matrix markets use dedicated industry BOFU pages; all other hubs link to our healthcare country programmes.',
-  b2b: 'Each industry has dedicated country pages across Saudi Arabia, the UAE, Egypt, Kuwait, Qatar, Oman, Bahrain, the UK, USA, Brazil, Germany, Morocco, Nigeria, South Africa, and Kenya.',
-  b2c: 'Each industry has dedicated country pages across Saudi Arabia, the UAE, Egypt, Kuwait, Qatar, Oman, Bahrain, the UK, USA, Brazil, Germany, Morocco, Nigeria, South Africa, and Kenya.',
+  b2b: 'Each industry has dedicated country pages across the United States, United Kingdom, Germany, Brazil, UAE, Saudi Arabia, and the wider MENA, African, and European markets.',
+  b2c: 'Each industry has dedicated country pages across the United States, United Kingdom, Germany, Brazil, UAE, Saudi Arabia, and the wider MENA, African, and European markets.',
 };
 
 /** Accent colour per segment (teal / gold / coral) used for the eyebrow chrome. */
@@ -316,26 +319,20 @@ export default function IndustrySegmentPage({ slug }: IndustrySegmentPageProps) 
                   <Link to="/healthcare-market-research">healthcare market research hub</Link>.
                 </p>
               </div>
-              <div className="bx-country-grid">
-                {HEALTHCARE_HUB_COUNTRY_GROUPS.map((group) => (
-                  <article key={group.region} className="bx-country-region">
-                    <h3>{group.region}</h3>
-                    <div className="bx-chips">
-                      {group.slugs.map((countrySlug) => {
-                        const config = resolveCountryConfig(countrySlug);
-                        return (
-                          <Link
-                            key={countrySlug}
-                            to={`/healthcare-market-research/${countrySlug}`}
-                            className="bx-chip"
-                          >
-                            {config.name}
-                          </Link>
-                        );
-                      })}
-                    </div>
-                  </article>
-                ))}
+              <div className="bx-country-grid bx-country-grid--flat">
+                <article className="bx-country-region bx-country-region--full">
+                  <div className="bx-chips">
+                    {segmentCountries.map((country) => (
+                      <Link
+                        key={country.slug}
+                        to={`/healthcare-market-research/${country.slug}`}
+                        className="bx-chip"
+                      >
+                        {country.label}
+                      </Link>
+                    ))}
+                  </div>
+                </article>
               </div>
             </div>
           </section>
@@ -358,12 +355,11 @@ export default function IndustrySegmentPage({ slug }: IndustrySegmentPageProps) 
                   <Link to="/market-research/technology">technology market research</Link>.
                 </p>
               </div>
-              <div className="bx-country-grid">
-                {B2B_COUNTRY_GROUPS.map((group) => (
-                  <article key={group.region} className="bx-country-region">
-                    <h3>{group.region}</h3>
-                    <div className="bx-chips">
-                      {group.countries.map((country) => (
+              <div className="bx-country-grid bx-country-grid--flat">
+                <article className="bx-country-region bx-country-region--full">
+                  <div className="bx-chips">
+                    {sortBySegmentCountryPriority(B2B_COUNTRY_GROUPS.flatMap((group) => group.countries)).map(
+                      (country) => (
                         <Link
                           key={country.slug}
                           to={getIndustrySegmentCountryPath(country.slug, DEFAULT_B2B_INDUSTRY_SLUG)}
@@ -371,10 +367,10 @@ export default function IndustrySegmentPage({ slug }: IndustrySegmentPageProps) 
                         >
                           {country.label}
                         </Link>
-                      ))}
-                    </div>
-                  </article>
-                ))}
+                      ),
+                    )}
+                  </div>
+                </article>
               </div>
             </div>
           </section>
@@ -397,12 +393,11 @@ export default function IndustrySegmentPage({ slug }: IndustrySegmentPageProps) 
                   or browse <Link to="/market-research/fmcg">FMCG market research</Link>.
                 </p>
               </div>
-              <div className="bx-country-grid">
-                {B2C_COUNTRY_GROUPS.map((group) => (
-                  <article key={group.region} className="bx-country-region">
-                    <h3>{group.region}</h3>
-                    <div className="bx-chips">
-                      {group.countries.map((country) => (
+              <div className="bx-country-grid bx-country-grid--flat">
+                <article className="bx-country-region bx-country-region--full">
+                  <div className="bx-chips">
+                    {sortBySegmentCountryPriority(B2C_COUNTRY_GROUPS.flatMap((group) => group.countries)).map(
+                      (country) => (
                         <Link
                           key={country.slug}
                           to={getIndustrySegmentCountryPath(country.slug, DEFAULT_B2C_INDUSTRY_SLUG)}
@@ -410,10 +405,10 @@ export default function IndustrySegmentPage({ slug }: IndustrySegmentPageProps) 
                         >
                           {country.label}
                         </Link>
-                      ))}
-                    </div>
-                  </article>
-                ))}
+                      ),
+                    )}
+                  </div>
+                </article>
               </div>
             </div>
           </section>
