@@ -1,15 +1,15 @@
 import type { AboutPageCopy } from './aboutPageCopy.types';
 
 export const aboutPageCopyDe: AboutPageCopy = {
-  seoTitle: 'Über BioNixus | Globale Marktforschung auf reguliertem Pharma-Fundament',
+  seoTitle: 'Über BioNixus | Globale Marktforschung auf reguliertem pharmazeutischen Fundament',
   seoDescription:
-    '2012 in London gegründet, wuchs BioNixus von britischer Pharma-Marktforschung zu einem der weltweit führenden 100 Marktforschungsunternehmen — US-Hauptsitz, MENA-Regionalbüro im Großraum Kairo, tätig in 38 Ländern und 16 Branchenvertikalen.',
+    '2012 in London gegründet, wuchs BioNixus von britischer pharmazeutischer Marktforschung zu einem der weltweit führenden 100 Marktforschungsunternehmen — US-Hauptsitz, MENA-Regionalbüro im Großraum Kairo, tätig in 38 Ländern und 16 Branchenvertikalen.',
   breadcrumbHome: 'Startseite',
   breadcrumbAbout: 'Über uns',
   heroTagline: 'Globales internationales Marktforschungsunternehmen',
-  h1: 'Globale Marktforschung — auf Pharma aufgebaut, der am stärksten regulierten Branche, die wir bedienen, und über Branchen hinweg ausgeweitet',
+  h1: 'Globale Marktforschung — auf pharmazeutischer Forschung aufgebaut, der am stärksten regulierten Branche, die wir bedienen, und über Branchen hinweg ausgeweitet',
   heroSubheadBeforeSa:
-    'BioNixus wurde 2012 in London in der Pharma-Marktforschung gegründet — der am stärksten regulierten Branche, die wir bedienen. Als Kundenprogramme in den Nahen Osten und in die Amerikas reichten, eröffneten wir ein MENA-Regionalbüro im Großraum Kairo und richteten den globalen US-Hauptsitz in Wyoming ein. Diese GCP-konforme Disziplin erstreckt sich heute auf B2B- und B2C-Programme in 38 Ländern — einschließlich dedizierter ',
+    'BioNixus wurde 2012 in London in der pharmazeutischen Marktforschung gegründet — der am stärksten regulierten Branche, die wir bedienen. Als Kundenprogramme in den Nahen Osten und in die Amerikas reichten, eröffneten wir ein MENA-Regionalbüro im Großraum Kairo und richteten den globalen US-Hauptsitz in Wyoming ein. Diese GCP-konforme Disziplin erstreckt sich heute auf B2B- und B2C-Programme in 38 Ländern — einschließlich dedizierter ',
   heroLinkSa: 'Gesundheitsmarktforschung in Saudi-Arabien',
   heroSubheadBeforeUae: ', den ',
   heroLinkUae: 'VAE',
@@ -31,12 +31,12 @@ export const aboutPageCopyDe: AboutPageCopy = {
     'Eine Überzeugung. Drei Kontinente. Ein Platz unter den weltweit führenden Marktforschungsunternehmen.',
   storyAct1H3: 'London, 2012 — wo alles begann',
   storyAct1P1:
-    'Wir starteten in London, weil dort einige der weltweit anspruchsvollsten Standards für Gesundheitsnachweise bereits galten — NICE, MHRA, NHS-Formularrealität und Pharmateams, die sich keine Forschung leisten konnten, die eine Governance-Prüfung nicht überstehen würde. BioNixus wurde 2012 dort mit einer einzigen, hartnäckigen Überzeugung gegründet: Wer Launch- oder Zugangsentscheidungen trifft, verdient Evidenz aus dem Markt selbst — nicht ein Deck, das drei Zeitzonen entfernt zusammengestellt wurde.',
+    'Wir starteten in London, weil dort einige der weltweit anspruchsvollsten Standards für Gesundheitsnachweise bereits galten — NICE, MHRA, NHS-Formularrealität und pharmazeutische Teams, die sich keine Forschung leisten konnten, die eine Governance-Prüfung nicht überstehen würde. BioNixus wurde 2012 dort mit einer einzigen, hartnäckigen Überzeugung gegründet: Wer Launch- oder Zugangsentscheidungen trifft, verdient Evidenz aus dem Markt selbst — nicht ein Deck, das drei Zeitzonen entfernt zusammengestellt wurde.',
   storyAct1P2:
-    'Pharma-Marktforschung war unser Einstieg aus gutem Grund. Sie ist die am stärksten regulierte Branche, die wir bedienen. GCP, Payer-Governance, prüfbare Methodik — das waren für uns nie Marketingfloskeln, sondern die Bedingungen, unter denen wir gelernt haben zu arbeiten.',
+    'Pharmazeutische Marktforschung war unser Einstieg aus gutem Grund. Sie ist die am stärksten regulierte Branche, die wir bedienen. GCP, Payer-Governance, prüfbare Methodik — das waren für uns nie Marketingfloskeln, sondern die Bedingungen, unter denen wir gelernt haben zu arbeiten.',
   storyAct2H3: 'MENA und die Vereinigten Staaten — wie wir wuchsen',
   storyAct2P1:
-    'Als Pharma-Kunden über Europa hinausblickten, zogen zwei Regionen uns mit gleicher Kraft an. Naher Osten und Nordafrika — schnell wachsend, untererforscht, hungrig nach Launch- und Zugangsintelligenz, die SFDA, DHA, MOHAP und die lokale klinische Realität respektiert. Und die Vereinigten Staaten — der weltweit größte Pharmamarkt, in dem unsere Kunden dieselbe in London aufgebaute Strenge in amerikanischem Maßstab brauchten.',
+    'Als pharmazeutische Kunden über Europa hinausblickten, zogen zwei Regionen uns mit gleicher Kraft an. Naher Osten und Nordafrika — schnell wachsend, untererforscht, hungrig nach Launch- und Zugangsintelligenz, die SFDA, DHA, MOHAP und die lokale klinische Realität respektiert. Und die Vereinigten Staaten — der weltweit größte pharmazeutische Markt, in dem unsere Kunden dieselbe in London aufgebaute Strenge in amerikanischem Maßstab brauchten.',
   storyAct2P2BeforeLink:
     'Wir antworteten, indem wir dort wuchsen, wo die Arbeit war — nicht wo es einfach war. Ein ',
   storyAct2LinkCairo: 'MENA-Regionalbüro im Großraum Kairo',
@@ -44,10 +44,10 @@ export const aboutPageCopyDe: AboutPageCopy = {
     ' brachte uns arabisch-englische Field-Teams, Zugang zu Ärzten im gesamten GCC und in Nordafrika und operative Ausführung vor Ort, die Schreibtischforschung nie ersetzen kann. Der US-Hauptsitz in Sheridan, Wyoming folgte — nicht als Verlagerung, sondern als natürlicher Sitz für ein Unternehmen, dessen Kunden und Ambitionen wirklich global geworden waren. London blieb unsere europäische Basis und der Ort, an dem BioNixus begann.',
   storyAct3H3: 'Heute — unter den weltweit Top 100',
   storyAct3P1:
-    'Dieser Bogen — Londoner Wurzeln, regionale MENA-Tiefe, amerikanischer Hauptsitz — trug BioNixus in den Kreis der weltweit führenden 100 Marktforschungsunternehmen. Wir sind in 38 Ländern und über 14 Therapiegebiete tätig, auf Englisch, Arabisch, Französisch, Deutsch, Spanisch und Chinesisch. Die unter Regulierung geschmiedete Pharma-Disziplin erstreckt sich heute auf B2B- und B2C-Programme in 16 Branchenvertikalen — weil Kunden uns baten, denselben Standard überall anzuwenden.',
+    'Dieser Bogen — Londoner Wurzeln, regionale MENA-Tiefe, amerikanischer Hauptsitz — trug BioNixus in den Kreis der weltweit führenden 100 Marktforschungsunternehmen. Wir sind in 38 Ländern und über 14 Therapiegebiete tätig, auf Englisch, Arabisch, Französisch, Deutsch, Spanisch und Chinesisch. Die unter Regulierung geschmiedete pharmazeutische Disziplin erstreckt sich heute auf B2B- und B2C-Programme in 16 Branchenvertikalen — weil Kunden uns baten, denselben Standard überall anzuwenden.',
   storyAct3P2BeforePharma:
     '127+ Projekte für 48 globale Kunden. Das Team, das Ihre Studie plant, ist noch immer das Team, das sie liefert. Das hat sich seit London nicht geändert. Was sich geändert hat, ist, wie viele Märkte — und wie viele Branchen — uns vertrauen. Entdecken Sie unsere ',
-  storyAct3LinkPharma: 'Pharma- & Gesundheitsforschung',
+  storyAct3LinkPharma: 'Pharmazeutische & Gesundheitsforschung',
   storyAct3P2Mid1: ', den vollständigen ',
   storyAct3LinkIndustries: 'Branchen-Hub',
   storyAct3P2Mid2: ' oder unsere ',
@@ -55,15 +55,15 @@ export const aboutPageCopyDe: AboutPageCopy = {
   storyAct3P2After: '.',
   diffH2: 'Was uns auszeichnet',
   diffIntro:
-    'Drei Dinge unterscheiden eine BioNixus-Beauftragung von Forschung anderswo — ob Ihr Briefing eine Payer-Studie in Deutschland oder ein B2B-Segmentierungsprogramm im GCC ist.',
+    'Drei Dinge unterscheiden eine BioNixus-Beauftragung von Forschung anderswo — ob Ihr Briefing eine Payer-Studie in den USA oder Deutschland, ein B2B-Segmentierungsprogramm im GCC oder eine Preiselastizitätsstudie in Brasilien oder Singapur ist.',
   differentiators: [
     {
       title: 'Globale Reichweite, regionale Umsetzung',
       body: 'In London gegründet, in den USA headquartered, mit einem MENA-Regionalbüro im Großraum Kairo — BioNixus ist in 38 Ländern und sechs Sprachen im Feld. Unsere arabisch-englischen Teams im GCC und in Nordafrika kennen die Regulatoren, die Gesundheitsentscheidungen prägen — SFDA, DHA, MOHAP und EDA — sowie die klinischen Nuancen jeder Verschreibungspraxis.',
     },
     {
-      title: 'Pharma-Heritage, branchenübergreifende Strenge',
-      body: 'Wir wurden auf Pharma- und Gesundheitsforschung gegründet — der am stärksten regulierten Branche, die wir bedienen — und jede andere Vertikale erbt diese Disziplin. Verifizierte Respondenten, transparente Quoten, dokumentierte Methoden und Erkenntnisse für eine konkrete Entscheidung: dieselbe Messlatte, ob Sie einen Onkologie-Launch dimensionieren oder Beschaffungsverhalten im Unternehmenssektor kartieren.',
+      title: 'Pharmazeutisches Erbe, branchenübergreifende Strenge',
+      body: 'Wir wurden auf pharmazeutischer und Gesundheitsforschung gegründet — der am stärksten regulierten Branche, die wir bedienen — und jede andere Vertikale erbt diese Disziplin. Verifizierte Respondenten, transparente Quoten, dokumentierte Methoden und Erkenntnisse für eine konkrete Entscheidung: dieselbe Messlatte, ob Sie einen Onkologie-Launch dimensionieren oder Beschaffungsverhalten im Unternehmenssektor kartieren.',
     },
     {
       title: 'Senior-geführte, compliance-bewusste Lieferung',

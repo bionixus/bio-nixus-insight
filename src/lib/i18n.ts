@@ -395,10 +395,10 @@ export const translations = {
     hero: {
       tagline: 'Globales Internationales Marktforschungsunternehmen',
       titleLead: 'Forschung, die',
-      titleEmphasis: 'Pharma-Strategie prägt',
+      titleEmphasis: 'Pharmazeutische Strategie prägt',
       title: 'Pharmazeutische und Gesundheitsmarktforschung für sichere Markteinführung, Zugang und Wachstum',
       subtitle:
-        'BioNixus ist ein globaler Insights- und Marktforschungspartner in Amerika, EMEA und APAC — mit Länder-Tiefe, wo sie zählt. Wir helfen Pharma-, Biotech- und MedTech-Teams, KOL-, Kostenträger- und Krankenhaus-Evidenz in Entscheidungen zu Markteinführung, Zugang und Wachstum zu übersetzen.',
+        'BioNixus ist ein globaler Insights- und Marktforschungspartner in Amerika, EMEA und APAC — mit Länder-Tiefe, wo sie zählt. Wir helfen pharmazeutischen, Biotech- und MedTech-Teams, KOL-, Kostenträger- und Krankenhaus-Evidenz in Entscheidungen zu Markteinführung, Zugang und Wachstum zu übersetzen.',
       trustStripPrimary: 'Vertrauenswürdig bei',
       trustStripStats: '48 globale Kunden · 127+ Projekte · 38 Länder',
       valueProposition:
@@ -411,7 +411,7 @@ export const translations = {
       cta: 'Angebot anfordern',
       ctaPremium: 'Discovery Call buchen →',
       ctaSecondary: 'Fallstudien ansehen',
-      trustBar: 'Entscheidungsreife Evidenz für Pharma-, Biotech- und MedTech-Teams seit 2012, in',
+      trustBar: 'Entscheidungsreife Evidenz für pharmazeutische, Biotech- und MedTech-Teams seit 2012, in',
       trustCountries: 'MENA, Lateinamerika, Osteuropa, UK und der weiteren EMEA-Region.',
       complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'FDA Compliant', 'ICH-GCP'],
     },
@@ -510,7 +510,7 @@ export const translations = {
         { category: 'Onkologie', country: 'UK', title: 'Präzisionsmedizin Marktdynamik 2025', excerpt: 'Umfassende Analyse von Biomarker-gesteuerten Therapien und dem sich entwickelnden Onkologie-Behandlungsparadigma.', date: 'Branchenanalyse', coverImage: '/blog-insight-3.png' },
         { category: 'Klinische Studien', country: 'Deutschland', title: 'Klinische Studiendurchführbarkeit in europäischen Märkten', excerpt: 'Strategische Erkenntnisse zur Optimierung der Standortauswahl und Patientenrekrutierung in Deutschland und Nachbarmärkten.', date: 'Forschungsbericht', coverImage: '/blog-insight-1.png' },
         { category: 'Gesundheitsforschung', country: 'UAE', title: 'Gesundheitsmarktdynamik in den VAE', excerpt: 'Umfassende Analyse des pharmazeutischen Marktzugangs, der regulatorischen Landschaft und kommerzieller Chancen in den Vereinigten Arabischen Emiraten.', date: 'Marktanalyse', coverImage: '/blog-insight-2.png' },
-        { category: 'Marktzugang', country: 'Saudi-Arabien', title: 'Pharmazeutische Innovation in Saudi-Arabien', excerpt: 'Wie die Gesundheitstransformation Saudi-Arabiens neue Chancen für Pharmaunternehmen in der MENA-Region schafft.', date: 'Strategische Kurzanalyse', coverImage: '/blog-insight-3.png' },
+        { category: 'Marktzugang', country: 'Saudi-Arabien', title: 'Pharmazeutische Innovation in Saudi-Arabien', excerpt: 'Wie die Gesundheitstransformation Saudi-Arabiens neue Chancen für pharmazeutische Unternehmen in der MENA-Region schafft.', date: 'Strategische Kurzanalyse', coverImage: '/blog-insight-3.png' },
       ],
     },
     stats: {
@@ -524,11 +524,11 @@ export const translations = {
     },
     testimonials: {
       title: 'Ausgewählte Fallstudien',
-      subtitle: 'Konkrete Ergebnisse unserer Arbeit mit Pharma- und Biotech-Teams weltweit',
+      subtitle: 'Konkrete Ergebnisse unserer Arbeit mit pharmazeutischen und Biotech-Teams weltweit',
       items: [
-        { quote: 'Erfahren Sie, wie BioNixus die GCC-Onkologie-Einführungsstrategie eines Top-10-Pharmaunternehmens mit quantitativen Ärztebefragungen und Wettbewerbsanalysen gestaltete.', author: 'GCC-Onkologie-Launch', role: 'Fallstudie', company: 'Multinationales Pharmaunternehmen' },
+        { quote: 'Erfahren Sie, wie BioNixus die GCC-Onkologie-Einführungsstrategie eines Top-10-pharmazeutischen Unternehmens mit quantitativen Ärztebefragungen und Wettbewerbsanalysen gestaltete.', author: 'GCC-Onkologie-Launch', role: 'Fallstudie', company: 'Multinationales pharmazeutisches Unternehmen' },
         { quote: 'Sehen Sie, wie BioNixus einem mittelständischen Biotech-Unternehmen half, die EMEA-Expansion mit länderübergreifendem KOL-Mapping und Marktzugangsdiagnostik zu beschleunigen.', author: 'EMEA-Expansion', role: 'Fallstudie', company: 'Mittelständisches Biotech' },
-        { quote: 'Entdecken Sie, wie BioNixus Launch-Readiness-Evidenz für ein Spezialpharma-Unternehmen lieferte, das mit Kostenträger- und Klinikforschung in drei europäische Märkte eintrat.', author: 'Europäische Markteinführung', role: 'Fallstudie', company: 'Spezial-Pharmaunternehmen' },
+        { quote: 'Entdecken Sie, wie BioNixus Launch-Readiness-Evidenz für ein spezialisiertes pharmazeutisches Unternehmen lieferte, das mit Kostenträger- und Klinikforschung in drei europäische Märkte eintrat.', author: 'Europäische Markteinführung', role: 'Fallstudie', company: 'Spezial-pharmazeutisches Unternehmen' },
       ],
     },
     clientReviewsTeaser: {
@@ -536,7 +536,7 @@ export const translations = {
       titleBeforeCount: 'Empfohlen von mehr als',
       titleAfterCount: 'zufriedenen Kunden',
       description:
-        'Lesen Sie verifizierte Google-Bewertungen unseres Londoner Büros und Referenzen von Pharma-, Biotech- und Medizintechnik-Partnern in den USA, Europa und LATAM.',
+        'Lesen Sie verifizierte Google-Bewertungen unseres Londoner Büros und Referenzen von pharmazeutischen, Biotech- und Medizintechnik-Partnern in den USA, Europa und LATAM.',
       happyClientsBadgeSuffix: 'zufriedene Kunden',
       googleRatingSuffix: 'auf Google',
       cta: 'Alle Kundenbewertungen lesen',
@@ -596,7 +596,7 @@ export const translations = {
       no: 'Nein',
     },
     footer: {
-      tagline: 'Gesundheitsmarktforschung | Pharma-Insights Europa & MENA. Evidenzbasierte Erkenntnisse für Pharma- und Biotech-Führungskräfte weltweit.',
+      tagline: 'Gesundheitsmarktforschung | Pharmazeutische Erkenntnisse Europa & MENA. Evidenzbasierte Erkenntnisse für pharmazeutische und Biotech-Führungskräfte weltweit.',
       quickLinksHeading: 'Schnellzugriffe',
       companyHeading: 'Unternehmen',
       healthcareHub: 'Healthcare-Marktforschungs-Hub',
