@@ -2,6 +2,7 @@
 export const SEGMENT_COUNTRY_PRIORITY_SLUGS: readonly string[] = [
   'usa',
   'united-states',
+  'canada',
   'uk',
   'germany',
   'france',
