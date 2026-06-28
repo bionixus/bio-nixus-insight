@@ -96,9 +96,20 @@ const SKYRIZI_ROOT_DESCRIPTION =
 
 const GENERIC_DEFAULT_TITLES = new Set([
   'BioNixus | Healthcare & Pharmaceutical Market Research',
+  'BioNixus | Global Pharmaceutical & Healthcare Market Research',
   'BioNixus',
   'Healthcare & Pharmaceutical Market Research | BioNixus',
 ]);
+
+/** GSC CTR overrides — keep in sync with BlogPost.tsx EGYPT/KUWAIT constants */
+const EGYPT_HEALTHCARE_2026_SLUG = 'healthcare-overview-egypt-market-2026';
+const EGYPT_HEALTHCARE_2026_TITLE = 'Cairo Hospitals Healthcare 2023–2026 | BioNixus';
+const EGYPT_HEALTHCARE_2026_META =
+  'Cairo hospitals healthcare 2023–2026: Kasr Al-Ainy, Cleopatra, Saudi German Cairo, EDA pharma access, UHI payer trends — BioNixus Egypt market research.';
+const KUWAIT_HEALTHCARE_2026_SLUG = 'healthcare-overview-kuwait-market-2026';
+const KUWAIT_HEALTHCARE_2026_TITLE = 'April Healthcare Kuwait | Healthcare 2026 | BioNixus';
+const KUWAIT_HEALTHCARE_2026_META =
+  'April healthcare Kuwait & Kuwait healthcare 2026: MOH hospitals, pharma distributors, tender policy, and physician insights from BioNixus market research.';
 
 function buildFallbackTitle(pathname) {
   const cleanPath = (pathname || '/').split('?')[0].split('#')[0] || '/';
@@ -227,6 +238,12 @@ function buildFallbackTitle(pathname) {
     }
     if (slug === SKYRIZI_ROOT_SLUG) {
       return SKYRIZI_ROOT_TITLE;
+    }
+    if (slug === EGYPT_HEALTHCARE_2026_SLUG) {
+      return EGYPT_HEALTHCARE_2026_TITLE;
+    }
+    if (slug === KUWAIT_HEALTHCARE_2026_SLUG) {
+      return KUWAIT_HEALTHCARE_2026_TITLE;
     }
     return `${titleCaseFromSlug(slug)} | BioNixus Blog`;
   }
@@ -395,6 +412,12 @@ function buildFallbackDescription(pathname) {
     if (slug === SKYRIZI_ROOT_SLUG) {
       return SKYRIZI_ROOT_DESCRIPTION;
     }
+    if (slug === EGYPT_HEALTHCARE_2026_SLUG) {
+      return EGYPT_HEALTHCARE_2026_META;
+    }
+    if (slug === KUWAIT_HEALTHCARE_2026_SLUG) {
+      return KUWAIT_HEALTHCARE_2026_META;
+    }
     return `${titleCaseFromSlug(slug)} insight article from BioNixus covering healthcare and pharmaceutical market strategy.`;
   }
   if (path.startsWith('/ar/blog/')) {
@@ -485,7 +508,9 @@ function ensureTitleTag(html, pathname) {
   // that React-Helmet didn't override at SSR time, typically because page
   // data is fetched async from Sanity), replace it with the path-specific
   // fallback so each URL ships a unique <title>.
-  const isGeneric = chosen ? GENERIC_DEFAULT_TITLES.has(chosen) : false;
+  const isGeneric = chosen
+    ? GENERIC_DEFAULT_TITLES.has(chosen) || /^BioNixus \| Global Pharmaceutical/i.test(chosen)
+    : false;
   const forceLocale = shouldForceLocaleFallback(pathname, chosen);
   const strengthened =
     isGeneric || forceLocale || normalized.length < 30 ? fallbackTitle : normalized;
