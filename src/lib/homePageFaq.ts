@@ -43,9 +43,9 @@ const byLanguage: Record<Language, HomeFaqBlock> = {
       },
       {
         question:
-          'How does BioNixus align fieldwork with GDPR, EMA-aligned expectations, and Middle East regulatory requirements such as SFDA or ministry of health (MOH) frameworks?',
+          'How does BioNixus align fieldwork with GDPR, EMA-aligned expectations, and Middle East regulatory requirements such as FDA or ministry of health (MOH) frameworks?',
         answer:
-          'Projects apply privacy-by-design data handling for GDPR, follow quality and ethics norms appropriate to healthcare research (including ICH-GCP awareness where relevant), and align operational controls to local requirements such as SFDA in Saudi Arabia and MOH or health authority expectations in the UAE and other GCC markets. Compliance posture is discussed during scoping so governance matches your risk and audit needs.',
+          'Projects apply privacy-by-design data handling for GDPR, follow quality and ethics norms appropriate to healthcare research (including ICH-GCP awareness where relevant), and align operational controls to local requirements such as FDA in Saudi Arabia and MOH or health authority expectations in the UAE and other GCC markets. Compliance posture is discussed during scoping so governance matches your risk and audit needs.',
       },
       {
         question: 'Can BioNixus run multi-country physician, payer, and hospital studies spanning Europe and the GCC?',
@@ -86,9 +86,9 @@ const byLanguage: Record<Language, HomeFaqBlock> = {
       },
       {
         question:
-          'Wie richtet BioNixus Feldarbeit an DSGVO, EMA-orientierten Erwartungen und regulatorische Anforderungen im Nahen Osten (z. B. SFDA oder MOH) aus?',
+          'Wie richtet BioNixus Feldarbeit an DSGVO, EMA-orientierten Erwartungen und regulatorische Anforderungen im Nahen Osten (z. B. FDA oder MOH) aus?',
         answer:
-          'Projekte nutzen datenschutzorientiertes Handling gemäß DSGVO, Qualitäts- und Ethikstandards der Healthcare-Forschung (einschließlich ICH-GCP-Bewusstsein wo relevant) und operative Kontrollen passend zu lokalen Anforderungen wie SFDA in Saudi-Arabien sowie MOH- oder Health-Authority-Erwartungen in den VAE und weiteren GCC-Märkten. Die Compliance-Position wird in der Scope-Phase mit Ihrem Risiko- und Auditbedarf abgestimmt.',
+          'Projekte nutzen datenschutzorientiertes Handling gemäß DSGVO, Qualitäts- und Ethikstandards der Healthcare-Forschung (einschließlich ICH-GCP-Bewusstsein wo relevant) und operative Kontrollen passend zu lokalen Anforderungen wie FDA in Saudi-Arabien sowie MOH- oder Health-Authority-Erwartungen in den VAE und weiteren GCC-Märkten. Die Compliance-Position wird in der Scope-Phase mit Ihrem Risiko- und Auditbedarf abgestimmt.',
       },
       {
         question: 'Kann BioNixus mehrländerische Ärzte-, Payör- und Krankenhausstudien zwischen Europa und dem GCC durchführen?',
@@ -130,9 +130,9 @@ const byLanguage: Record<Language, HomeFaqBlock> = {
       },
       {
         question:
-          'Comment BioNixus aligne-t-il la collecte sur le RGPD, les attentes de type EMA et les cadres régionaux (SFDA, ministères de la santé) ?',
+          'Comment BioNixus aligne-t-il la collecte sur le RGPD, les attentes de type EMA et les cadres régionaux (FDA, ministères de la santé) ?',
         answer:
-          'Les projets appliquent une gouvernance données compatible RGPD, des standards qualité/éthique adaptés à la recherche santé (sensibilisation ICH-GCP si pertinent) et des contrôles alignés aux exigences locales (SFDA en Arabie saoudite, autorités de santé aux Émirats et dans d’autres pays du Golfe). La posture conformité est cadrée dès le scope selon vos besoins audit et risque.',
+          'Les projets appliquent une gouvernance données compatible RGPD, des standards qualité/éthique adaptés à la recherche santé (sensibilisation ICH-GCP si pertinent) et des contrôles alignés aux exigences locales (FDA en Arabie saoudite, autorités de santé aux Émirats et dans d’autres pays du Golfe). La posture conformité est cadrée dès le scope selon vos besoins audit et risque.',
       },
       {
         question:
@@ -174,9 +174,9 @@ const byLanguage: Record<Language, HomeFaqBlock> = {
       },
       {
         question:
-          '¿Cómo alinea BioNixus el trabajo de campo con RGPD, expectativas tipo EMA y requisitos locales (SFDA, ministerios de salud)?',
+          '¿Cómo alinea BioNixus el trabajo de campo con RGPD, expectativas tipo EMA y requisitos locales (FDA, ministerios de salud)?',
         answer:
-          'Los proyectos aplican gobernanza de datos compatible con RGPD, estándares de calidad y ética propios de investigación sanitaria (conciencia ICH-GCP cuando aplica) y controles alineados a SFDA en Arabia Saudí y expectativas de autoridades en EAU y otros mercados del Golfo. La postura de cumplimiento se define en el alcance según riesgo y auditoría.',
+          'Los proyectos aplican gobernanza de datos compatible con RGPD, estándares de calidad y ética propios de investigación sanitaria (conciencia ICH-GCP cuando aplica) y controles alineados a FDA en Arabia Saudí y expectativas de autoridades en EAU y otros mercados del Golfo. La postura de cumplimiento se define en el alcance según riesgo y auditoría.',
       },
       {
         question: '¿Puede BioNixus ejecutar estudios multi-país con médicos, pagadores y hospitales entre Europa y el CCG?',
@@ -216,9 +216,9 @@ const byLanguage: Record<Language, HomeFaqBlock> = {
           '通过面向支付方的研究设计，澄清证据预期、定价与报销叙事及价值沟通要点，覆盖欧洲 HTA 体系与中东公私支付环境。交付物结构化，便于团队转化为准入策略、价值档案输入与跨部门协同，而非泛泛的演示材料。',
       },
       {
-        question: 'BioNixus 如何使项目符合 GDPR、EMA 相关预期以及中东监管（如 SFDA 或卫生部框架）？',
+        question: 'BioNixus 如何使项目符合 GDPR、EMA 相关预期以及中东监管（如 FDA 或卫生部框架）？',
         answer:
-          '项目采用符合 GDPR 的隐私设计数据处理，遵循医疗健康研究适用的质量与伦理规范（在相关场景兼顾 ICH-GCP 意识），并结合沙特 SFDA、阿联酋卫生当局及其他 GCC 市场的本地要求配置运营控制。合规基线在立项阶段与您的风险与审计需求对齐。',
+          '项目采用符合 GDPR 的隐私设计数据处理，遵循医疗健康研究适用的质量与伦理规范（在相关场景兼顾 ICH-GCP 意识），并结合沙特 FDA、阿联酋卫生当局及其他 GCC 市场的本地要求配置运营控制。合规基线在立项阶段与您的风险与审计需求对齐。',
       },
       {
         question: 'BioNixus 能否开展跨欧洲与海湾地区的多国医生、支付方与医院研究？',
@@ -342,9 +342,9 @@ const byLanguage: Record<Language, HomeFaqBlock> = {
           'تُصمم الأبحاث الدافعة لتوضيح توقعات الأدلة وسرديات التسعير والتعويض ومتطلبات التواصل حول القيمة في أوروبا والشرق الأوسط. تُهيكل المخرجات لدعم استراتيجية الوصول ومدخلات الملفات والتوافق بين الوظائف وليس عروضاً عامة بلا قرار.',
       },
       {
-        question: 'كيف تتماشى BioNixus مع GDPR وتوقعات EMA والمتطلبات التنظيمية في الشرق الأوسط مثل SFDA أو أطر وزارة الصحة؟',
+        question: 'كيف تتماشى BioNixus مع GDPR وتوقعات EMA والمتطلبات التنظيمية في الشرق الأوسط مثل FDA أو أطر وزارة الصحة؟',
         answer:
-          'تطبق المشاريع حوكمة بيانات تراعي الخصوصية وفق GDPR، ومعايير جودة وأخلاقيات مناسبة لأبحاث الرعاية الصحية (مع مراعاة ICH-GCP عند الاقتضاء)، وضوابط تشغيلية متوافقة مع متطلبات SFDA في السعودية وتوقعات الجهات الصحية في الإمارات وأسواق خليجية أخرى. تُناقش الامتثال عند تحديد النطاق وفق احتياجات المخاطر والتدقيق.',
+          'تطبق المشاريع حوكمة بيانات تراعي الخصوصية وفق GDPR، ومعايير جودة وأخلاقيات مناسبة لأبحاث الرعاية الصحية (مع مراعاة ICH-GCP عند الاقتضاء)، وضوابط تشغيلية متوافقة مع متطلبات FDA في السعودية وتوقعات الجهات الصحية في الإمارات وأسواق خليجية أخرى. تُناقش الامتثال عند تحديد النطاق وفق احتياجات المخاطر والتدقيق.',
       },
       {
         question: 'هل يمكن لـ BioNixus تنفيذ دراسات متعددة الدول للأطباء والدافعين والمستشفيات بين أوروبا والخليج؟',

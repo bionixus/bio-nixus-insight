@@ -1,0 +1,17 @@
+English_term,Rule,de,fr,es,pt,ru,zh,ar
+GCC,"Use full institution name, not abbreviation alone",Golf-Kooperationsrat,Conseil de coopération du Golfe,Consejo de Cooperación del Golfo,Conselho de Cooperação do Golfo,Совет сотрудничества стран Залива,海湾合作委员会,مجلس التعاون الخليجي
+MENA,Geographic region — spell out,Naher Osten und Nordafrika,Moyen-Orient et Afrique du Nord,Oriente Medio y Norte de África,Oriente Médio e Norte da África,Ближний Восток и Северная Африка,中东与北非,الشرق الأوسط وشمال أفريقيا
+Pharma / pharmaceutical,Industry term — native word,Pharmaindustrie / Arzneimittel,industrie pharmaceutique / médicaments,industria farmacéutica / medicamentos,indústria farmacêutica / medicamentos,фармацевтика / лекарственные препараты,医药 / 制药,الصناعة الدوائية / الأدوية
+Healthcare,Not Healthcare loanword in DE,Gesundheitswesen,santé / soins de santé,sanidad / salud,saúde,здравоохранение,医疗健康,الرعاية الصحية
+Launch,Commercial term,Markteinführung,lancement,lanzamiento,lançamento,вывод на рынок,上市,الإطلاق
+Market access,Payer/regulatory term,Marktzugang,accès au marché,acceso al mercado,acesso ao mercado,доступ на рынок,市场准入,الوصول إلى السوق
+B2B,Spell out market type,Geschäftskundenmarkt,marché entreprises,mercado empresarial,mercado corporativo,корпоративный рынок,企业市场,سوق الشركات
+B2C,Spell out market type,Privatkundenmarkt,marché consommateurs,mercado de consumo,mercado de consumo,потребительский рынок,消费者市场,سوق المستهلكين
+APAC,Geographic,Asien und Pazifik,Asie et Pacifique,Asia y Pacífico,Ásia e Pacífico,Азия и Тихоокеанский регион,亚太地区,آسيا والمحيط الهادئ
+CAGR,Financial metric,durchschnittliche jährliche Wachstumsrate,taux de croissance annuel composé,tasa de crecimiento anual compuesta,taxa de crescimento anual composta,среднегодовой темп роста,复合年增长率,معدل النمو السنوي المركب
+Intelligence,Not Intelligence loanword,Marktinformationen / Erkenntnisse,informations marché / insights,información de mercado,informações de mercado,рыночная информация,市场信息,معلومات السوق
+Hub,Navigation — not Hub,Übersichtsbereich,espace central,centro de recursos,central de recursos,центральный раздел,枢纽页,المركز
+Insights,Not Insights in DE nav body,Erkenntnisse,analyses / perspectives,perspectivas,insights → percepções,аналитика,洞察,رؤى
+KSA,Country name,Saudi-Arabien,Arabie saoudite,Arabia Saudí,Arábia Saudita,Саудовская Аравия,沙特阿拉伯,المملكة العربية السعودية
+UAE,Country name,Vereinigte Arabische Emirate,Émirats arabes unis,Emiratos Árabes Unidos,Emirados Árabes Unidos,Объединённые Арабские Эмираты,阿拉伯联合酋长国,الإمارات العربية المتحدة
+LATAM,Region,Lateinamerika,Amérique latine,América Latina,América Latina,Латинская Америка,拉丁美洲,أمريكا اللاتينية
