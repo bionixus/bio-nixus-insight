@@ -15,6 +15,12 @@ import {
 } from '@/data/arabicBlogFaq';
 import { getArabicBlogCta } from '@/data/arabicBlogCta';
 import {
+  getChineseBlogFaqItems,
+  localizeTocForChinese,
+  resolveChineseExecutiveSummary,
+} from '@/data/chineseBlogFaq';
+import { getChineseBlogCta } from '@/data/chineseBlogCta';
+import {
   getGenericLocaleBlogCta,
   getGenericLocaleBlogFaq,
   getRelatedResearchLinksForLocale,
@@ -34,6 +40,7 @@ export function getLocalizedBlogFaqItems(
 ): BlogFaqItem[] {
   if (locale === 'de') return getGermanBlogFaqItems(slug, title, sanityFaq);
   if (locale === 'ar') return getArabicBlogFaqItems(slug, title, sanityFaq);
+  if (locale === 'zh') return getChineseBlogFaqItems(slug, title, sanityFaq);
   if (locale !== 'en') return getGenericLocaleBlogFaq(locale, title, sanityFaq);
   return sanityFaq;
 }
@@ -46,6 +53,7 @@ export function getLocalizedBlogCta(
   if (locale === 'en') return sanityCta;
   if (locale === 'de') return getGermanBlogCta(slug, sanityCta);
   if (locale === 'ar') return getArabicBlogCta(slug, sanityCta);
+  if (locale === 'zh') return getChineseBlogCta(slug, sanityCta);
   return getGenericLocaleBlogCta(locale, sanityCta);
 }
 
@@ -58,6 +66,7 @@ export function resolveLocalizedExecutiveSummary(
   if (locale === 'en') return summary;
   if (locale === 'de') return resolveGermanExecutiveSummary(title, slug, summary);
   if (locale === 'ar') return resolveArabicExecutiveSummary(title, slug, summary);
+  if (locale === 'zh') return resolveChineseExecutiveSummary(title, slug, summary);
   return resolveGenericLocaleExecutiveSummary(locale, title, summary);
 }
 
@@ -68,5 +77,6 @@ export function localizeTocForLocale<T extends { heading?: string; anchor?: stri
   if (locale === 'en' || !items?.length) return items ?? null;
   if (locale === 'de') return localizeTocForGerman(items);
   if (locale === 'ar') return localizeTocForArabic(items);
+  if (locale === 'zh') return localizeTocForChinese(items);
   return localizeTocForGenericLocale(locale, items);
 }

@@ -54,6 +54,24 @@ const ARABIC_BLOG_CTA_BY_SLUG: Record<string, BlogPostCtaSection> = {
     buttonText: 'اطلب إحاطة',
     buttonUrl: 'https://www.bionixus.com/ar/contact',
   },
+  'saudi-healthcare-market-research-guide-ar-2026': {
+    title: 'دليل أبحاث السوق الصحي في السعودية — BioNixus',
+    description: 'SFDA وCHI وNUPCO، KOL، وبرامج MR ميدانية للفرق الدوائية في المملكة.',
+    buttonText: 'تواصل معنا',
+    buttonUrl: 'https://www.bionixus.com/ar/contact',
+  },
+  'heor-consulting-saudi-arabia-ar-2026': {
+    title: 'استشارات HEOR في السعودية',
+    description: 'نمذجة اقتصاد صحي، RWE، ودعم dossiers لـ SFDA وCHI — بالعربية والإنجليزية.',
+    buttonText: 'اطلب إحاطة',
+    buttonUrl: 'https://www.bionixus.com/ar/contact',
+  },
+  'saudi-arabia-pharmaceutical-market-research-2026-ar': {
+    title: 'أبحاث السوق الدوائي في السعودية 2026',
+    description: 'Vision 2030، SFDA، وبرامج insight للإطلاق والتسعير في المملكة.',
+    buttonText: 'تواصل مع BioNixus',
+    buttonUrl: 'https://www.bionixus.com/ar/contact',
+  },
 };
 
 export function getArabicBlogCta(

@@ -342,7 +342,21 @@ const GERMAN_SLUG_RE = /germany|deutsche|gesundheit|pharmamarktforschung|amnog-f
 /** Latin-slug Arabic articles published under `/blog/` (transliterated URLs). */
 const LATIN_SLUG_ARABIC_BLOG_POSTS = new Set([
   'souk-adwiya-saudiya-dalil-shamel-rueya-2030-2026',
+  'saudi-healthcare-market-research-guide-ar-2026',
+  'heor-consulting-saudi-arabia-ar-2026',
+  'saudi-arabia-pharmaceutical-market-research-2026-ar',
+  'saudi-healthcare-market-research-firms-ar',
+  'quantitative-market-research-and-market-access',
 ]);
+
+/** Latin-slug Chinese articles published under `/blog/` without `/zh/` prefix. */
+const LATIN_SLUG_CHINESE_BLOG_POSTS = new Set([
+  'pharmaceutical-market-research-china-2026',
+  'nmpa-pharmaceutical-market-research-china-2026',
+  'healthcare-overview-china-market-2026',
+]);
+
+const CHINESE_SLUG_RE = /china|nmpa|chinese|zh-/i;
 
 const ARABIC_SCRIPT_RE = /[\u0600-\u06FF]/;
 
@@ -364,8 +378,10 @@ export function resolveBlogArticleLocale(
     return lang as BlogArticleLocale;
   }
   if (LATIN_SLUG_ARABIC_BLOG_POSTS.has(post?.slug ?? '')) return 'ar';
+  if (LATIN_SLUG_CHINESE_BLOG_POSTS.has(post?.slug ?? '')) return 'zh';
   if (ARABIC_SCRIPT_RE.test(post?.slug ?? '')) return 'ar';
   if (ARABIC_SCRIPT_RE.test(post?.title ?? '')) return 'ar';
+  if (CHINESE_SLUG_RE.test(post?.slug ?? '')) return 'zh';
   if (GERMAN_SLUG_RE.test(post?.slug ?? '')) return 'de';
   return 'en';
 }

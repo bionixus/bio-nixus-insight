@@ -186,6 +186,22 @@ const SECTIONS_AR: SectionMeta[] = [
   { id: 'other', title: 'صفحات إضافية', description: 'روابط داعمة وأدوات.' },
 ];
 
+const SECTIONS_ZH: SectionMeta[] = [
+  { id: 'hubs', title: '首页与语言中心', description: 'BioNixus 本地化入口。' },
+  { id: 'company', title: '公司、信任与方法论', description: '关于我们、联系、合规与工作方式。' },
+  { id: 'services', title: '核心服务', description: '定量、定性、准入、情报、试验、KOL。' },
+  { id: 'healthcare', title: '医疗健康市场研究中心', description: '国家、城市、治疗领域与研究模块。' },
+  { id: 'global', title: '全球网站', description: '按国家浏览，服务国际团队。' },
+  { id: 'pillars', title: 'GCC、MENA 与专项项目', description: '支柱页面与深度报告。' },
+  { id: 'pharma-cos', title: '制药企业目录', description: '按国家的行业概览。' },
+  { id: 'reports', title: '医疗与器械市场报告', description: 'GCC 与国家市场简报。' },
+  { id: 'blog', title: '博客与洞察', description: '编辑简报、指南与区域分析。' },
+  { id: 'cases', title: '案例研究', description: '精选客户证据与项目成果。' },
+  { id: 'portfolio', title: '作品集与会议', description: '战略作品集与活动页面。' },
+  { id: 'localized', title: '本地化页面', description: '按语言的市场准入、联系与研究。' },
+  { id: 'other', title: '其他页面', description: '辅助链接与工具。' },
+];
+
 /** Arabic anchor text overrides for explorer links (path → label). */
 export const AR_PATH_LABEL_OVERRIDES: Readonly<Record<string, string>> = {
   '/': 'الرئيسية',
@@ -204,6 +220,26 @@ export const AR_PATH_LABEL_OVERRIDES: Readonly<Record<string, string>> = {
   '/insights': 'الرؤى',
   '/case-studies': 'دراسات الحالة',
   '/sitemap': 'خريطة الموقع',
+};
+
+/** Chinese anchor text overrides for explorer links (path → label). */
+export const ZH_PATH_LABEL_OVERRIDES: Readonly<Record<string, string>> = {
+  '/': '首页',
+  '/zh': 'BioNixus — 中文首页',
+  '/zh/blog': '中文博客',
+  '/zh/contact': '联系我们',
+  '/zh/market-research-healthcare': '医疗健康市场研究',
+  '/zh/about': '关于我们',
+  '/zh/methodology': '方法论',
+  '/contact': '联系',
+  '/about': '关于我们',
+  '/healthcare-market-research': '医疗健康市场研究中心',
+  '/healthcare-market-research/china': '中国医药市场研究',
+  '/blog/pharmaceutical-market-research-china-2026': '2026 中国医药市场研究',
+  '/blog/nmpa-pharmaceutical-market-research-china-2026': 'NMPA 与中国医药市场研究',
+  '/insights': '洞察',
+  '/case-studies': '案例研究',
+  '/sitemap': '网站地图',
 };
 
 /** German anchor text overrides for explorer links (path → label). */
@@ -262,6 +298,7 @@ export function getSiteExplorerUiStrings(locale: BlogArticleLocale): SiteExplore
 export function getSiteExplorerSectionMeta(locale: BlogArticleLocale): SectionMeta[] {
   if (locale === 'de') return SECTIONS_DE;
   if (locale === 'ar') return SECTIONS_AR;
+  if (locale === 'zh') return SECTIONS_ZH;
   if (locale === 'fr') {
     return SECTIONS_EN.map((s) => ({
       ...s,

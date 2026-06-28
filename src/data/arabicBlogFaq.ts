@@ -157,6 +157,37 @@ const ARABIC_BLOG_FAQ_BY_SLUG: Record<string, BlogFaqItem[]> = {
         'الكمي يحدد «ماذا»؛ النوعي يفسر «لماذا» — معاً يدعمان dossiers واستراتيجية تسعير.',
     },
   ],
+  'saudi-healthcare-market-research-guide-ar-2026': [
+    {
+      question: 'ما الذي يميز دليل أبحاث السوق الصحي في السعودية؟',
+      answer:
+        'يركز على SFDA وCHI وNUPCO، شبكات الأطباء السعوديين، وامتثال PDPL — لفرق global وlocal.',
+    },
+    {
+      question: 'كيف تبدأ BioNixus برنامج MR في المملكة؟',
+      answer:
+        'بتحديد السؤال التجاري، ثم تصميم mixed-mode يناسب KOL والمستشفيات الحكومية والخاصة.',
+    },
+  ],
+  'heor-consulting-saudi-arabia-ar-2026': [
+    {
+      question: 'ما دور HEOR في السعودية؟',
+      answer:
+        'يدعم ملفات SFDA وCHI وNUPCO ببيانات التكلفة والنتائج — مع RWE محلي.',
+    },
+    {
+      question: 'هل BioNixus تقدم HEOR بالعربية؟',
+      answer:
+        'نعم — نمذجة اقتصاد صحي، مقابلات payers، وتحليل gap لل dossiers السعودية.',
+    },
+  ],
+  'saudi-arabia-pharmaceutical-market-research-2026-ar': [
+    {
+      question: 'ما أبرز اتجاهات سوق الأدوية السعودي 2026؟',
+      answer:
+        'Vision 2030، localization، وضغط تسعير عبر CHI وNUPCO مع تسريع SFDA.',
+    },
+  ],
 };
 
 const EN_SUMMARY_MARKERS =

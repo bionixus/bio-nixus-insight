@@ -1,6 +1,7 @@
 import type { BlogArticleLocale } from '@/lib/blogPostUiStrings';
 import { BLOG_INDEX_FAQ_DE, type BlogFaqItem } from '@/data/germanBlogFaq';
 import { BLOG_INDEX_FAQ_AR } from '@/data/arabicBlogFaq';
+import { BLOG_INDEX_FAQ_ZH } from '@/data/chineseBlogFaq';
 import { getGenericLocaleBlogFaq } from '@/data/localizedBlogGeneric';
 
 const BLOG_INDEX_FAQ_EN: BlogFaqItem[] = [
@@ -24,6 +25,7 @@ const BLOG_INDEX_FAQ_EN: BlogFaqItem[] = [
 export function getBlogIndexFaq(locale: BlogArticleLocale): BlogFaqItem[] {
   if (locale === 'de') return BLOG_INDEX_FAQ_DE;
   if (locale === 'ar') return BLOG_INDEX_FAQ_AR;
+  if (locale === 'zh') return BLOG_INDEX_FAQ_ZH;
   if (locale === 'en') return BLOG_INDEX_FAQ_EN;
   return getGenericLocaleBlogFaq(locale, undefined, []);
 }

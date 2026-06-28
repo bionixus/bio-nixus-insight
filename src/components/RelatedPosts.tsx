@@ -11,6 +11,35 @@ import type { BlogPost } from '@/types/blog';
 import type { BlogArticleLocale } from '@/lib/blogPostUiStrings';
 import { getBlogPostUiStrings } from '@/lib/blogPostUiStrings';
 
+function postMatchesLocale(language: string | undefined, locale: BlogArticleLocale): boolean {
+  if (locale === 'en') return !language || language === 'en';
+  return language === locale;
+}
+
+function filterRelatedByLocale(
+  data: RelatedPostsData,
+  locale: BlogArticleLocale,
+): RelatedPostsData {
+  if (locale === 'en') return data;
+  return {
+    related: data.related.filter((p) => postMatchesLocale(p.language, locale)),
+    prev: data.prev && postMatchesLocale(data.prev.language, locale) ? data.prev : null,
+    next: data.next && postMatchesLocale(data.next.language, locale) ? data.next : null,
+  };
+}
+
+interface RelatedPostsProps {
+  currentSlug: string;
+  category: string;
+  date: string;
+  country?: string;
+  tags?: string[];
+  /** From Express SSR (`fetchRouteData`) so related links appear in initial HTML */
+  initialRelated?: RelatedPostsData;
+  contentSilo?: ContentSilo;
+  locale?: BlogArticleLocale;
+}
+
 import blogImage1 from '@/assets/blog-insight-1.png';
 import blogImage2 from '@/assets/blog-insight-2.png';
 import blogImage3 from '@/assets/blog-insight-3.png';
@@ -25,18 +54,6 @@ function getCover(url: string | undefined, i: number): string {
 function getCoverSrcSet(url: string | undefined): string | undefined {
   if (!url?.startsWith('http') || !url.includes('cdn.sanity.io')) return undefined;
   return `${optimizeSanityImage(url, 400, 250)} 400w, ${optimizeSanityImage(url, 640, 400)} 640w`;
-}
-
-interface RelatedPostsProps {
-  currentSlug: string;
-  category: string;
-  date: string;
-  country?: string;
-  tags?: string[];
-  /** From Express SSR (`fetchRouteData`) so related links appear in initial HTML */
-  initialRelated?: RelatedPostsData;
-  contentSilo?: ContentSilo;
-  locale?: BlogArticleLocale;
 }
 
 /* ─── Single related-post card ─── */
@@ -121,7 +138,8 @@ const RelatedPosts = ({
 
   if (!data) return null;
 
-  const { related, prev, next } = data;
+  const localizedData = filterRelatedByLocale(data, locale);
+  const { related, prev, next } = localizedData;
   const hasRelated = related.length > 0;
   const hasNav = prev || next;
 

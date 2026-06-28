@@ -246,8 +246,9 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
     '/de/blog/',
     '/fr/blog',
     '/fr/blog/',
-    '/ar/blog',
     '/ar/blog/',
+    '/zh/blog',
+    '/zh/blog/',
   ]);
   if (blogIndexPaths.has(path)) {
     let blogPosts: BlogPost[] = [];
@@ -258,6 +259,10 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
     }
     if (path.startsWith('/ar/blog')) {
       blogPosts = blogPosts.filter((p) => !p.language || p.language === 'ar');
+    } else if (path.startsWith('/zh/blog')) {
+      blogPosts = blogPosts.filter((p) => !p.language || p.language === 'zh');
+    } else if (path.startsWith('/de/blog')) {
+      blogPosts = blogPosts.filter((p) => !p.language || p.language === 'de');
     }
     return {
       pageType: 'blog-index',

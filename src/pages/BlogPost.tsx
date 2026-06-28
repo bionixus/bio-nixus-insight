@@ -776,8 +776,12 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
   const slug = fixedSlug ?? paramSlug;
   const { pathname } = useLocation();
   const navigate = useNavigate();
+  const errorLocale = resolveBlogArticleLocale(null, pathname);
+  const errorUi = getBlogPostUiStrings(errorLocale);
+  const errorBlogIndexPath = getBlogArticleIndexPath(errorLocale);
+  const errorBlogIndexLabel = getBlogArticleIndexLabel(errorLocale);
   const isArBlog = pathname.startsWith('/ar/blog');
-  const blogIndexPath = isArBlog ? '/ar/blog' : '/blog';
+  const blogIndexPath = errorBlogIndexPath;
   const isQuantMrMaEn = slug === QUANT_MR_MA_SLUG && !isArBlog;
   const isGccComparisonEn = slug === GCC_PHARMA_COMPARISON_SLUG && !isArBlog;
   const isPharmacoeconomicsGccEn = slug === PHARMACOECONOMICS_GCC_SLUG && !isArBlog;
@@ -878,11 +882,11 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
     return (
       <div className="min-h-screen bg-background">
         <Navbar />
-        <main className="px-6 py-16 max-w-3xl mx-auto">
-          <h1 className="text-2xl font-display font-semibold text-foreground mb-4">BioNixus blog article</h1>
-          <p className="text-muted-foreground">Invalid article.</p>
-          <Link to={blogIndexPath} className="mt-4 inline-flex items-center gap-2 text-primary font-medium hover:underline">
-            <ArrowLeft className="w-4 h-4" /> Back to articles
+        <main className="px-6 py-16 max-w-3xl mx-auto" lang={errorLocale} dir={isRtlBlogLocale(errorLocale) ? 'rtl' : 'ltr'}>
+          <h1 className="text-2xl font-display font-semibold text-foreground mb-4">BioNixus</h1>
+          <p className="text-muted-foreground">{errorUi.invalidArticle}</p>
+          <Link to={errorBlogIndexPath} className="mt-4 inline-flex items-center gap-2 text-primary font-medium hover:underline">
+            <ArrowLeft className={`w-4 h-4${isRtlBlogLocale(errorLocale) ? ' rotate-180' : ''}`} /> {errorUi.backTo(errorBlogIndexLabel)}
           </Link>
         </main>
         <Footer />
@@ -922,14 +926,14 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
     return (
       <div className="min-h-screen bg-background">
         <Navbar />
-        <main className="px-6 py-16 max-w-3xl mx-auto">
-          <Link to={articleIndexPath} className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary text-sm mb-8 transition-colors">
-            <ArrowLeft className="w-3.5 h-3.5" /> Back to {articleIndexLabel.toLowerCase()}
+        <main className="px-6 py-16 max-w-3xl mx-auto" lang={errorLocale} dir={isRtlBlogLocale(errorLocale) ? 'rtl' : 'ltr'}>
+          <Link to={errorBlogIndexPath} className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary text-sm mb-8 transition-colors">
+            <ArrowLeft className={`w-3.5 h-3.5${isRtlBlogLocale(errorLocale) ? ' rotate-180' : ''}`} /> {errorUi.backTo(errorBlogIndexLabel)}
           </Link>
           <h1 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3 text-balance">
-            {slug ? `${formatSlugAsPageHeading(slug)} — BioNixus` : 'BioNixus insight'}
+            {slug ? `${formatSlugAsPageHeading(slug)} — BioNixus` : 'BioNixus'}
           </h1>
-          <p className="text-muted-foreground mb-4">Article not found.</p>
+          <p className="text-muted-foreground mb-4">{errorUi.articleNotFound}</p>
         </main>
         <Footer />
       </div>
