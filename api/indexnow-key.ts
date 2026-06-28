@@ -4,6 +4,7 @@ import { canonicalRedirectTarget, isSsrNotFoundPage } from '../seo-noise-query.m
 import { BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH, BLOG_LEGACY_FULL_PATH_REDIRECTS } from '../blog-legacy-redirects.mjs';
 import { normalizeOgCardPath, renderOgCardSvg } from '../lib/og-card-svg.mjs';
 import { buildLcpPreloadTag, getClientAssetHints } from '../lib/ssr-client-asset-hints.mjs';
+import { resolveLegacyCountryIndustryMarketResearchRedirect } from '../lib/country-industry-redirects.mjs';
 
 type HelmetLike = {
   title?: { toString: () => string };
@@ -706,6 +707,13 @@ async function handleSsrRequest(
   if (REDIRECTS[pathname]) {
     res.setHeader('Cache-Control', 'public, max-age=3600');
     res.redirect(301, REDIRECTS[pathname]);
+    return;
+  }
+
+  const legacyCountryIndustryTarget = resolveLegacyCountryIndustryMarketResearchRedirect(pathname);
+  if (legacyCountryIndustryTarget) {
+    res.setHeader('Cache-Control', 'public, max-age=3600');
+    res.redirect(301, legacyCountryIndustryTarget);
     return;
   }
 

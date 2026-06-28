@@ -40,10 +40,41 @@ export function getIndustrySegmentCountryPath(
   countrySlug: string,
   industrySlug: MatrixIndustrySlug,
 ): string {
+  return resolveCountryIndustryMarketResearchPath(countrySlug, industrySlug);
+}
+
+const HEALTHCARE_ADJACENT_INDUSTRIES: ReadonlySet<MatrixIndustrySlug> = new Set([
+  'healthcare',
+  'medtech',
+  'biotech',
+  'consumer-health',
+]);
+
+function findIndexCountry(slug: string): MarketResearchIndexCountry | undefined {
+  return MARKET_RESEARCH_BY_INDUSTRY_COUNTRIES.find((country) => country.slug === slug);
+}
+
+/** Canonical target for `/{country}-{industry}-market-research` outside the GCC matrix. */
+export function resolveCountryIndustryMarketResearchPath(
+  countrySlug: string,
+  industrySlug: MatrixIndustrySlug,
+): string {
   if (MATRIX_COUNTRY_SET.has(countrySlug)) {
     return getIndustryBofuPath(countrySlug as MatrixCountrySlug, industrySlug);
   }
-  return `/${countrySlug}-${industrySlug}-market-research`;
+
+  const country: MarketResearchIndexCountry =
+    findIndexCountry(countrySlug) ?? { slug: countrySlug, label: countrySlug };
+
+  if (HEALTHCARE_ADJACENT_INDUSTRIES.has(industrySlug)) {
+    if (industrySlug !== 'healthcare') {
+      const pharmaPath = getPharmaBofuPathForIndexCountry(country);
+      if (pharmaPath) return pharmaPath;
+    }
+    return getHealthcareHubPathForIndexCountry(country);
+  }
+
+  return `/market-research/${industrySlug}`;
 }
 
 export const B2B_COUNTRY_GROUPS: Array<{ region: string; countries: IndustryHubCountry[] }> = [

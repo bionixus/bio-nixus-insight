@@ -9,6 +9,7 @@ import { getBlogMetaDescriptionOverride } from './blog-crawler-stubs.mjs';
 import { formatMetaDescriptionInRange } from './src/server/seo-meta.js';
 import { normalizeOgCardPath, renderOgCardSvg } from './lib/og-card-svg.mjs';
 import { buildLcpPreloadTag, getClientAssetHints } from './lib/ssr-client-asset-hints.mjs';
+import { resolveLegacyCountryIndustryMarketResearchRedirect } from './lib/country-industry-redirects.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === 'production';
@@ -909,6 +910,12 @@ async function startServer() {
 
       if (REDIRECTS[req.path]) {
         res.redirect(301, REDIRECTS[req.path]);
+        return;
+      }
+
+      const legacyCountryIndustryTarget = resolveLegacyCountryIndustryMarketResearchRedirect(req.path);
+      if (legacyCountryIndustryTarget) {
+        res.redirect(301, legacyCountryIndustryTarget);
         return;
       }
 
