@@ -19,19 +19,20 @@
 
 | Office Type | Location |
 |-------------|----------|
+| Founded | London, United Kingdom (2012) |
 | Global Headquarters | Sheridan, Wyoming, United States |
-| Regional Office | London, United Kingdom |
-| Regional Office | Cairo, Egypt |
+| Founding Office | London, United Kingdom |
+| MENA Regional Office | Greater Cairo, Egypt |
 | Country Office | Saudi Arabia (KSA) |
 | Country Office | United Arab Emirates (UAE) |
 | Country Office | Kuwait |
 | Country Office | Brazil |
 
-**Scale:** 17+ countries covered · 14+ therapeutic areas · 127+ projects delivered · 48 global clients · Offices across 4 continents
+**Scale:** 38 countries covered · 16 industry verticals · 14+ therapeutic areas · 127+ projects delivered · 48 global clients · Recognised among the world's top 100 market research firms
 
 ### 1.3 Brand Positioning
 
-BioNixus is a global International Market Research firm headquartered in the United States, with regional offices in London and Cairo, and country offices in Saudi Arabia, UAE, Kuwait, and Brazil. Recognised as one of the top global analytics and market research companies in the healthcare domain, BioNixus has strong heritage across industries — with particular depth in Pharma, Healthcare, and Life Sciences. We deliver hospital sales data, consumption analytics, quantitative and qualitative research, and market access strategy for pharma, biotech, and medtech teams worldwide.
+BioNixus is a global International Market Research firm founded in London in 2012 in pharmaceutical market research — the most regulated industry it serves. Expansion into the Middle East and the Americas brought a MENA regional office in Greater Cairo and US global headquarters in Sheridan, Wyoming. Recognised among the world's top 100 market research firms, BioNixus has strong heritage in pharma, healthcare, and life sciences, with the same evidence standards extended across 16 industry verticals. We deliver hospital sales data, consumption analytics, quantitative and qualitative research, and market access strategy for pharma, biotech, and medtech teams worldwide.
 
 ### 1.4 Tagline
 
@@ -244,7 +245,7 @@ The BioNixus logo is the primary visual mark of the brand. Two logo variants exi
 - Reference specific geographies, therapeutic areas, and stakeholders
 - Name compliance standards and regulatory bodies (GDPR, EMA, MHRA, SFDA, MOH, ICH-GCP, NHS REC)
 - Address the reader's commercial decision, not abstract research
-- Cite scale metrics where appropriate (17+ countries, 127+ projects, etc.)
+- Cite scale metrics where appropriate (38 countries, 127+ projects, etc.)
 
 **Don't:**
 - Use buzzwords without substance ("synergy", "leverage", "holistic")
@@ -401,7 +402,7 @@ All BioNixus communications must reflect our compliance standards:
 | HQ | Sheridan, Wyoming, USA |
 | Regional Offices | London, UK · Cairo, Egypt |
 | Country Offices | Saudi Arabia · UAE · Kuwait · Brazil |
-| Scale | 17+ countries · 14+ therapy areas · 127+ projects · 48 clients |
+| Scale | 38 countries · 14+ therapy areas · 127+ projects · 48 clients |
 | Email | admin@bionixus.com |
 | LinkedIn | linkedin.com/company/bionixus/ |
 

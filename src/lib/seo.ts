@@ -127,6 +127,16 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     ar: '/ar/methodology',
     pt: '/pt/methodology',
   },
+  '/about': {
+    en: '/about',
+    de: '/de/about',
+    fr: '/fr/about',
+    es: '/es/about',
+    zh: '/zh/about',
+    ar: '/ar/about',
+    pt: '/pt/about',
+    ru: '/ru/about',
+  },
   '/blog': {
     en: '/blog',
     de: '/de/blog',

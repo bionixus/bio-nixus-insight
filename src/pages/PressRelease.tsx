@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom'
+import { COMPANY_BOILERPLATE_PRESS } from '@/data/companyStory'
 import { useQuery } from '@tanstack/react-query'
 import { Helmet } from 'react-helmet-async'
 import { PortableText } from '@portabletext/react'
@@ -301,11 +301,7 @@ export default function PressRelease() {
               About BioNixus
             </p>
             <p className="text-[14px] text-muted-foreground leading-[1.8]">
-              BioNixus is a global healthcare and pharmaceutical market research network with strong regional
-              presence in the GCC and MENA region. The firm delivers qualitative and quantitative research
-              programmes for pharmaceutical, medtech, and diagnostics companies navigating market access,
-              formulary listing, launch strategy, and competitive intelligence. With 120+ delivered programmes
-              across 17 countries, BioNixus combines local fieldwork depth with global research standards.{' '}
+              {COMPANY_BOILERPLATE_PRESS}{' '}
               <Link to="/" className="text-primary hover:text-accent-foreground hover:underline transition-colors">
                 www.bionixus.com
               </Link>

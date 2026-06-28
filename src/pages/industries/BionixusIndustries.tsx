@@ -4,13 +4,13 @@ import Footer from '@/components/Footer';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { SEGMENTS, SEGMENT_ORDER, type SegmentSlug } from '@/data/bionixusIndustrySegments';
+import { COMPANY_BOILERPLATE_SHORT } from '@/data/companyStory';
 import { PREMIUM_INDUSTRIES_CSS } from './premiumIndustriesCss';
 
 const HUB_PATH = '/bionixus-industries';
 
 const HUB_TITLE = 'Market Research Across Industries | BioNixus';
-const HUB_DESCRIPTION =
-  'BioNixus runs market research across pharma & healthcare, B2B, and B2C industries — US-headquartered, with research teams in London and Cairo and bilingual fieldwork across the Americas, EMEA, and the GCC.';
+const HUB_DESCRIPTION = COMPANY_BOILERPLATE_SHORT;
 
 /** Per-segment accent used to colour the cards and markers. */
 const SEGMENT_ACCENT: Record<SegmentSlug, string> = {
@@ -20,16 +20,21 @@ const SEGMENT_ACCENT: Record<SegmentSlug, string> = {
 };
 
 const TRUST_STATS = [
-  { value: '2012', label: 'Operating since', sub: 'more than a decade' },
-  { value: '127+', label: 'Projects delivered', sub: 'across 17+ countries' },
+  { value: '2012', label: 'Founded in London', sub: 'UK pharmaceutical research roots' },
+  { value: '127+', label: 'Projects delivered', sub: 'across 38 countries' },
   { value: '48', label: 'Clients served', sub: 'pharma to consumer' },
-  { value: '14+', label: 'Therapeutic areas', sub: 'and growing' },
+  { value: '16', label: 'Industry verticals', sub: 'and growing' },
 ];
 
 const NEXT_STEP_LINKS = [
   {
+    to: '/bionixus-industries/insights',
+    label: 'Industry insights — B2B & B2C',
+    description: 'Articles on FMCG, technology, retail, and enterprise research across MENA.',
+  },
+  {
     to: '/market-research-by-industry',
-    label: 'Industries index — Saudi Arabia, UAE & Egypt',
+    label: 'Industries index — GCC & MENA (7 markets)',
     description: 'Every published country-by-industry page in one place.',
   },
   {
@@ -63,12 +68,12 @@ const HUB_FAQ = [
   {
     question: 'Does BioNixus only do healthcare market research?',
     answer:
-      'No. Healthcare and pharmaceutical research is where BioNixus was founded and where it leads, but the same sampling discipline and senior-led analysis now extend to B2B and B2C categories through the B2B industries and B2C industries sections.',
+      'No. Healthcare and pharmaceutical research is where BioNixus was founded in London in 2012 and where it leads, but the same sampling discipline and senior-led analysis now extend to B2B and B2C categories through the B2B industries and B2C industries sections.',
   },
   {
     question: 'Where is BioNixus based and which regions does it cover?',
     answer:
-      'BioNixus is US-headquartered in Sheridan, Wyoming, with research operations in London and Cairo. That footprint supports programmes across the Americas, Europe, and the GCC under one evidence framework, with bilingual Arabic–English fieldwork in MENA.',
+      'BioNixus was founded in London in 2012, is US-headquartered in Sheridan, Wyoming, and runs MENA programmes from a regional office in Greater Cairo. That footprint supports programmes across the Americas, Europe, and the GCC under one evidence framework, with bilingual Arabic–English fieldwork in MENA.',
   },
   {
     question: 'How are the three industry segments connected?',
@@ -226,7 +231,7 @@ export default function BionixusIndustries() {
                 </div>
 
                 <div className="bx-card-foot">
-                  <strong>Since 2012</strong> · <strong>127+</strong> projects · <strong>48</strong> clients · <strong>17+</strong> countries
+                  <strong>Since 2012</strong> · <strong>127+</strong> projects · <strong>48</strong> clients · <strong>38</strong> countries
                 </div>
               </div>
             </div>

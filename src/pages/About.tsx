@@ -1,137 +1,191 @@
+import { useMemo } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Globe, Users, TrendingUp, Shield, Target, Microscope, Award, Building2 } from 'lucide-react';
+import { Globe, HeartPulse, ShieldCheck, Target, Microscope, Building2 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { languagePaths } from '@/lib/seo';
-import { Helmet } from 'react-helmet-async';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { CTASection } from '@/components/shared/CTASection';
+import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
+import { SEOHead } from '@/components/seo/SEOHead';
+import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
+import { getCanonicalUrl, getLocalizedPathForLanguage, localizedContactPath } from '@/lib/seo';
+import { PremiumComplianceRibbon } from '@/components/home/PremiumComplianceRibbon';
+import GlobalReachSection from '@/components/home/GlobalReachSection';
+import IndustriesGatewaySection from '@/components/home/IndustriesGatewaySection';
+import {
+  ABOUT_LANGUAGE_MIRROR,
+  getAboutPageCopy,
+  type AboutPageCopy,
+} from '@/pages/about';
 
-const TRUST_METRICS = [
-  { value: '127+', label: 'Projects delivered' },
-  { value: '48', label: 'Global clients' },
-  { value: '17+', label: 'Countries covered' },
-  { value: '14+', label: 'Therapeutic areas' },
-] as const;
+const DIFF_ICONS = [Globe, HeartPulse, ShieldCheck] as const;
+const VALUE_ICONS = [ShieldCheck, Target, Microscope, Globe] as const;
 
-const COMPLIANCE_BADGES = ['GDPR', 'BHBIA', 'EphMRA', 'ICC / ESOMAR'] as const;
+function AboutOfficeBlock({
+  office,
+  index,
+  egyptPath,
+}: {
+  office: AboutPageCopy['offices'][number];
+  index: number;
+  egyptPath: string;
+}) {
+  const reveal = index === 0 ? 'sr-left' : index === 1 ? 'sr-up' : 'sr-right';
+  return (
+    <div className={`bg-card border border-border rounded-xl p-8 ${reveal} hover-lift sr sr-scale-up sr-spring`}>
+      <div className="flex items-center gap-3 mb-3">
+        <Building2 className="w-5 h-5 text-primary" aria-hidden />
+        <h3 className="text-lg font-display font-semibold text-foreground">{office.title}</h3>
+      </div>
+      <p className="text-muted-foreground">
+        {office.lines.map((line, lineIndex) => {
+          if (line.startsWith('+1 ')) {
+            return (
+              <span key={line}>
+                <a href="tel:+18884655557" className="text-primary hover:underline cursor-pointer">
+                  {line}
+                </a>
+                {lineIndex < office.lines.length - 1 ? <br /> : null}
+              </span>
+            );
+          }
+          if (line.startsWith('+44 ')) {
+            return (
+              <span key={line}>
+                <a href="tel:+447727666682" className="text-primary hover:underline cursor-pointer">
+                  {line}
+                </a>
+                {lineIndex < office.lines.length - 1 ? <br /> : null}
+              </span>
+            );
+          }
+          return (
+            <span key={line}>
+              {line}
+              {lineIndex < office.lines.length - 1 ? <br /> : null}
+            </span>
+          );
+        })}
+        {office.linkLabel ? (
+          <>
+            {' '}
+            <Link to={egyptPath} className="text-primary font-medium hover:underline">
+              {office.linkLabel}
+            </Link>
+          </>
+        ) : null}
+      </p>
+    </div>
+  );
+}
 
 const About = () => {
-  const { language } = useLanguage();
-  const basePath = languagePaths[language] || '/';
+  const { language, isRTL } = useLanguage();
+  const copy = getAboutPageCopy(language);
+  const aboutPath = getLocalizedPathForLanguage('/about', language);
+  const contactPath = localizedContactPath(language);
+  const homePath = getLocalizedPathForLanguage('/', language);
+  const saPath = '/market-research-saudi-arabia-pharmaceutical';
+  const uaePath = '/uae-pharmaceutical-market-research';
+  const egyptPath = '/egypt-pharmaceutical-market-research';
+  const pharmaIndustriesPath = '/pharma-healthcare-industries';
+  const industriesHubPath = '/bionixus-industries';
+  const methodologyPath = getLocalizedPathForLanguage('/methodology', language);
+  const gccAccessPath = '/gcc-market-access-guide';
+
   const heroRef = useScrollReveal<HTMLElement>({ stagger: 80 });
   const storyRef = useScrollReveal<HTMLElement>({ stagger: 100 });
   const diffRef = useScrollReveal<HTMLElement>({ stagger: 120 });
   const valuesRef = useScrollReveal<HTMLElement>({ stagger: 100 });
   const presenceRef = useScrollReveal<HTMLElement>({ stagger: 100 });
 
+  const breadcrumbItems = useMemo(
+    () => [
+      { name: copy.breadcrumbHome, href: homePath },
+      { name: copy.breadcrumbAbout, href: aboutPath },
+    ],
+    [copy.breadcrumbAbout, copy.breadcrumbHome, aboutPath, homePath],
+  );
+
+  const jsonLd = useMemo(() => [buildBreadcrumbSchema(breadcrumbItems)], [breadcrumbItems]);
+  const canonicalUrl = getCanonicalUrl(aboutPath);
+
   return (
     <div className="min-h-screen bg-background">
-      <SchemaMarkup
-        pageType="about"
-        pageUrl="https://www.bionixus.com/about"
-        language="en"
-        people={[
-          {
-            name: 'Mohammad Alsaadany',
-            jobTitle: 'Healthcare Market Research Expert',
-            sameAs: 'https://www.linkedin.com/in/mohammad-alsaadany',
-          },
-        ]}
-      />
-      <Helmet>
-        <script type="application/ld+json">{JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' },
-            { '@type': 'ListItem', position: 2, name: 'About', item: 'https://www.bionixus.com/about' },
-          ],
-        })}</script>
-      </Helmet>
-      <Helmet>
-        <title>About BioNixus | Pharmaceutical & Healthcare Market Research</title>
-        <meta
-          name="description"
-          content="BioNixus is a specialist pharmaceutical and healthcare market research company operating since 2012 — US-headquartered with London and Cairo operations, delivering physician, payer, and hospital insight across 17+ countries and 14+ therapeutic areas."
-        />
-        <link rel="canonical" href="https://www.bionixus.com/about" />
-      </Helmet>
+      <SchemaMarkup pageType="about" pageUrl={canonicalUrl} language={language} />
+      <SEOHead title={copy.seoTitle} description={copy.seoDescription} canonical={canonicalUrl} jsonLd={jsonLd} />
       <Navbar />
-      {/* English-only canonical page: force LTR so stored Arabic locale does not mirror English copy */}
-      <main dir="ltr" lang="en">
-        <div className="section-padding pt-24 pb-4">
+      <main dir={isRTL ? 'rtl' : 'ltr'} lang={language}>
+        <div className="section-padding pt-24 pb-2">
           <div className="container-wide">
-            <Link
-              to={basePath}
-              className="inline-flex items-center gap-2 text-primary font-medium hover:underline cursor-pointer"
-            >
-              <ArrowLeft className="w-4 h-4" aria-hidden /> Back to Home
-            </Link>
+            <BreadcrumbNav items={breadcrumbItems} />
           </div>
         </div>
 
-        {/* Hero — Trust & Authority pattern */}
         <section
-          className="section-padding pt-4 pb-12 bg-gradient-to-br from-navy-deep via-navy-medium to-primary text-primary-foreground"
+          className="section-padding relative overflow-hidden pb-12 pt-4 text-[#FFFEFB]"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 55% at 65% 45%, rgba(12,27,51,1) 0%, transparent 70%),
+              radial-gradient(ellipse 50% 45% at 20% 80%, rgba(14,165,160,0.08) 0%, transparent 50%),
+              linear-gradient(180deg, #06101F 0%, #081628 100%)
+            `,
+          }}
           ref={heroRef}
         >
-          <div className="container-wide max-w-5xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-primary-foreground text-sm font-medium mb-6 sr sr-left sr-fast revealed">
-              <Award className="w-4 h-4" aria-hidden />
-              About BioNixus
+          <div className="container-wide relative z-10 mx-auto max-w-5xl">
+            <div className="mb-6 inline-flex items-center gap-2.5 sr sr-left sr-fast revealed">
+              <span className="h-px w-8 bg-[#C9A84C]/40" aria-hidden="true" />
+              <span className="text-[11.5px] font-semibold uppercase tracking-[0.2em] text-[#C9A84C]">{copy.heroTagline}</span>
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold mb-6 max-w-4xl leading-tight sr sr-up sr-line revealed">
-              A global pharmaceutical and healthcare market research company with deep regional roots
+            <h1 className="mb-6 max-w-4xl font-display text-3xl font-light leading-tight tracking-tight md:text-4xl lg:text-5xl sr sr-up sr-line revealed">
+              {copy.h1}
             </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed max-w-3xl mb-8 sr sr-up revealed">
-              BioNixus has been running pharmaceutical and healthcare market research since 2012, headquartered in the United States with a London office and a Cairo fieldwork base. We design quantitative and qualitative studies for pharmaceutical, biotech, and medtech teams worldwide — with deep regional expertise across MENA, Latin America, and Eastern Europe alongside the wider EMEA region — including dedicated coverage as a{' '}
-              <Link to="/market-research-saudi-arabia-pharmaceutical" className="underline font-medium text-primary-foreground">
-                healthcare market research company in Saudi Arabia
+            <p className="mb-8 max-w-3xl text-lg leading-relaxed text-white/75 md:text-xl sr sr-up revealed">
+              {copy.heroSubheadBeforeSa}
+              <Link to={saPath} className="font-medium text-[#E4CC7A] underline underline-offset-2 hover:text-[#C9A84C]">
+                {copy.heroLinkSa}
               </Link>
-              , the{' '}
-              <Link to="/uae-pharmaceutical-market-research" className="underline font-medium text-primary-foreground">
-                UAE
+              {copy.heroSubheadBeforeUae}
+              <Link to={uaePath} className="font-medium text-[#E4CC7A] underline underline-offset-2 hover:text-[#C9A84C]">
+                {copy.heroLinkUae}
               </Link>
-              , and{' '}
-              <Link to="/egypt-pharmaceutical-market-research" className="underline font-medium text-primary-foreground">
-                Egypt
+              {copy.heroSubheadBeforeEg}
+              <Link to={egyptPath} className="font-medium text-[#E4CC7A] underline underline-offset-2 hover:text-[#C9A84C]">
+                {copy.heroLinkEg}
               </Link>
-              .
+              {copy.heroSubheadAfter}
             </p>
-            <div className="flex flex-wrap gap-3 mb-10 sr sr-up revealed">
+            <div className="mb-10 flex flex-wrap gap-3 sr sr-up revealed">
               <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors duration-200 cursor-pointer"
+                to={contactPath}
+                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-[#C9A84C] to-[#B8933E] px-6 py-3 text-sm font-semibold text-[#06101F] shadow-[0_4px_20px_rgba(201,168,76,0.25)] transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_40px_rgba(201,168,76,0.35)] cursor-pointer"
               >
-                Request a proposal
+                {copy.ctaPrimary}
               </Link>
               <Link
-                to="/healthcare-market-research"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/40 text-primary-foreground font-semibold hover:bg-white/10 transition-colors duration-200 cursor-pointer"
+                to={industriesHubPath}
+                className="inline-flex items-center gap-2 rounded-xl border border-white/15 px-6 py-3 text-sm font-normal text-white/60 transition-colors hover:border-white/30 hover:text-white cursor-pointer"
               >
-                Explore market research
+                {copy.ctaSecondary}
               </Link>
             </div>
-            <ul className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8 sr sr-up revealed" aria-label="Company credentials">
-              {TRUST_METRICS.map((metric) => (
-                <li
-                  key={metric.label}
-                  className="rounded-xl border border-white/20 bg-white/10 px-5 py-4 text-center"
-                >
-                  <p className="text-2xl md:text-3xl font-display font-semibold text-primary-foreground">{metric.value}</p>
-                  <p className="text-sm text-primary-foreground/80 mt-1">{metric.label}</p>
+            <ul
+              className="mb-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5 sr sr-up revealed"
+              aria-label="Company credentials"
+            >
+              {copy.metrics.map((metric) => (
+                <li key={metric.label} className="rounded-xl border border-white/15 bg-white/5 px-4 py-4 text-center">
+                  <p className="font-display text-2xl font-semibold text-[#FFFEFB] md:text-3xl">{metric.value}</p>
+                  <p className="mt-1 text-xs text-white/60 md:text-sm">{metric.label}</p>
                 </li>
               ))}
             </ul>
             <div className="flex flex-wrap gap-2 sr sr-up revealed" aria-label="Compliance standards">
-              {COMPLIANCE_BADGES.map((badge) => (
-                <span
-                  key={badge}
-                  className="px-3 py-1 rounded-md bg-white/10 text-xs font-medium text-primary-foreground/90 border border-white/15"
-                >
+              {copy.compliance.map((badge) => (
+                <span key={badge} className="rounded-md border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/70">
                   {badge}
                 </span>
               ))}
@@ -139,184 +193,137 @@ const About = () => {
           </div>
         </section>
 
-        {/* Our Story */}
+        <PremiumComplianceRibbon />
+        <GlobalReachSection />
+
         <section className="section-padding py-16 bg-cream-dark" ref={storyRef}>
           <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-8 sr sr-up sr-line">
-              Our Story
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4 sr sr-up sr-line">
+              {copy.storyH2}
             </h2>
-            <div className="grid md:grid-cols-2 gap-12">
+            <p className="text-lg text-foreground/80 leading-relaxed max-w-3xl mb-6 sr sr-up font-display">{copy.storyTagline}</p>
+            <p className="text-sm text-muted-foreground mb-10 sr sr-up">
+              {copy.langMirrorLead}{' '}
+              {ABOUT_LANGUAGE_MIRROR.map(({ href, label }, i) => (
+                <span key={href}>
+                  {i > 0 ? ' · ' : null}
+                  <Link to={href} className="text-primary font-medium hover:underline">
+                    {label}
+                  </Link>
+                </span>
+              ))}
+            </p>
+
+            <div className="space-y-12">
               <div className="space-y-5 text-muted-foreground leading-relaxed sr sr-left">
-                <p>
-                  BioNixus began in 2012 with a straightforward conviction: pharmaceutical decision-makers deserve first-hand evidence from the markets they actually serve — not secondary data repackaged from thousands of miles away. That conviction still shapes every study we run.
-                </p>
-                <p>
-                  We saw the gap most clearly across the Middle East and North Africa — home to some of the world's fastest-growing pharmaceutical markets, yet routinely underserved by conventional research models. Physicians in Saudi Arabia, the UAE, Egypt, Kuwait, and Qatar held insight that mattered for launch and access, but the fieldwork infrastructure to reach them, in their language and within their regulatory reality, largely did not exist. So we built it.
-                </p>
+                <h3 className="text-lg font-display font-semibold text-foreground">{copy.storyAct1H3}</h3>
+                <p>{copy.storyAct1P1}</p>
+                <p>{copy.storyAct1P2}</p>
               </div>
               <div className="space-y-5 text-muted-foreground leading-relaxed sr sr-right">
+                <h3 className="text-lg font-display font-semibold text-foreground">{copy.storyAct2H3}</h3>
+                <p>{copy.storyAct2P1}</p>
                 <p>
-                  Today, BioNixus runs research across 17+ countries and 14+ therapeutic areas, fielding in English, Arabic, French, German, Spanish, and Chinese. Our footprint across the United States, the United Kingdom, and Egypt lets us connect Western pharmaceutical innovation to the on-the-ground realities of EMEA markets — and increasingly to wider Asian and global studies.
-                </p>
-                <p>
-                  With 127+ projects delivered for 48 global clients, we pair the methodological rigour of a large consultancy with the speed, seniority, and cost discipline of a specialist firm. The team that scopes your study is the same team that delivers it — and you can see exactly how we work in our{' '}
-                  <Link to="/methodology" className="text-primary font-medium hover:underline">
-                    research methodology
+                  {copy.storyAct2P2BeforeLink}
+                  <Link to={egyptPath} className="text-primary font-medium hover:underline">
+                    {copy.storyAct2LinkCairo}
                   </Link>
-                  .
+                  {copy.storyAct2P2AfterLink}
+                </p>
+              </div>
+              <div className="space-y-5 text-muted-foreground leading-relaxed sr sr-left">
+                <h3 className="text-lg font-display font-semibold text-foreground">{copy.storyAct3H3}</h3>
+                <p>{copy.storyAct3P1}</p>
+                <p>
+                  {copy.storyAct3P2BeforePharma}
+                  <Link to={pharmaIndustriesPath} className="text-primary font-medium hover:underline">
+                    {copy.storyAct3LinkPharma}
+                  </Link>
+                  {copy.storyAct3P2Mid1}
+                  <Link to={industriesHubPath} className="text-primary font-medium hover:underline">
+                    {copy.storyAct3LinkIndustries}
+                  </Link>
+                  {copy.storyAct3P2Mid2}
+                  <Link to={methodologyPath} className="text-primary font-medium hover:underline">
+                    {copy.storyAct3LinkMethodology}
+                  </Link>
+                  {copy.storyAct3P2After}
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* What Sets Us Apart */}
+        <IndustriesGatewaySection />
+
         <section className="section-padding py-16" ref={diffRef}>
           <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4 sr sr-up sr-line">
-              What Sets Us Apart
-            </h2>
-            <p className="text-muted-foreground mb-12 max-w-2xl sr sr-up">
-              Three things consistently separate a BioNixus engagement from commissioning research elsewhere.
-            </p>
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4 sr sr-up sr-line">{copy.diffH2}</h2>
+            <p className="text-muted-foreground mb-12 max-w-2xl sr sr-up">{copy.diffIntro}</p>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-card border border-border rounded-xl p-8 sr sr-scale-up sr-spring hover-lift">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6" aria-hidden>
-                  <Globe className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-xl font-display font-semibold text-foreground mb-3">
-                  Deep MENA Expertise
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  We maintain a deep, continuously refreshed physician and stakeholder panel across the GCC and North Africa. Our bilingual Arabic–English teams know the regulators that govern healthcare decisions — SFDA, DHA, MOHAP, and the EDA — and the clinical and cultural nuances that shape how treatments are prescribed in each market.
-                </p>
-              </div>
-              <div className="bg-card border border-border rounded-xl p-8 sr sr-scale-up sr-spring hover-lift">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6" aria-hidden>
-                  <TrendingUp className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-xl font-display font-semibold text-foreground mb-3">
-                  Cost-Effective Excellence
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  You get premium research without the premium overhead. Instead of layering account managers over subcontracted fieldwork, BioNixus runs a lean, senior-led model — so you work directly with experienced researchers who own your project end to end, not coordinators managing an outsourced panel.
-                </p>
-              </div>
-              <div className="bg-card border border-border rounded-xl p-8 sr sr-scale-up sr-spring hover-lift">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6" aria-hidden>
-                  <Users className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-xl font-display font-semibold text-foreground mb-3">
-                  Physician & HCP Network
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Our network reaches physicians, hospital decision-makers, payers, and key opinion leaders across 17+ countries. That direct access translates into faster recruitment, stronger response rates, and authentic clinical perspective — the kind of evidence secondary databases can describe but never capture.
-                </p>
-              </div>
+              {copy.differentiators.map((item, index) => {
+                const Icon = DIFF_ICONS[index] ?? Globe;
+                return (
+                  <div key={item.title} className="bg-card border border-border rounded-xl p-8 sr sr-scale-up sr-spring hover-lift">
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6" aria-hidden>
+                      <Icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-display font-semibold text-foreground mb-3">{item.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{item.body}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
 
-        {/* Our Values */}
         <section className="section-padding py-16 bg-cream-dark" ref={valuesRef}>
           <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-12 sr sr-up sr-line">
-              Our Values
-            </h2>
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-12 sr sr-up sr-line">{copy.valuesH2}</h2>
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="flex gap-5 sr sr-left hover-lift">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-1" aria-hidden>
-                  <Shield className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-display font-semibold text-foreground mb-2">Rigour & Integrity</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Every figure we report is traceable, every method is documented, and every recommendation is anchored in evidence you can audit. We work to GDPR, BHBIA, EphMRA, and ICC/ESOMAR standards as a baseline, not an afterthought.
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-5 sr sr-right hover-lift">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-1" aria-hidden>
-                  <Target className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-display font-semibold text-foreground mb-2">Actionable Intelligence</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    We don't deliver reports that sit on a shelf. Each study is engineered to feed a real decision — a launch sequence, a pricing position, or a{' '}
-                    <Link to="/gcc-market-access-guide" className="text-primary font-medium hover:underline">
-                      market access submission
-                    </Link>{' '}
-                    — with findings framed for the people who have to act on them.
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-5 sr sr-left hover-lift">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-1" aria-hidden>
-                  <Microscope className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-display font-semibold text-foreground mb-2">Scientific Depth</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    We work at therapeutic-area depth, from oncology treatment pathways to rare-disease patient journeys. Because we understand the clinical landscape, we ask physicians sharper questions and interpret their answers in the context that matters.
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-5 sr sr-right hover-lift">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-1" aria-hidden>
-                  <Globe className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-display font-semibold text-foreground mb-2">Cultural Competence</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Research across EMEA takes more than translation. Our teams have first-hand experience of GCC, North African, and European health systems, so study design, recruitment, and interpretation reflect how care is really delivered in each market.
-                  </p>
-                </div>
-              </div>
+              {copy.values.map((value, index) => {
+                const Icon = VALUE_ICONS[index] ?? ShieldCheck;
+                return (
+                  <div key={value.title} className={`flex gap-5 sr ${index % 2 === 0 ? 'sr-left' : 'sr-right'} hover-lift`}>
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-1" aria-hidden>
+                      <Icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-display font-semibold text-foreground mb-2">{value.title}</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {value.bodyBeforeLink ? (
+                          <>
+                            {value.bodyBeforeLink}
+                            <Link to={gccAccessPath} className="text-primary font-medium hover:underline">
+                              {value.linkLabel}
+                            </Link>
+                            {value.bodyAfterLink}
+                          </>
+                        ) : (
+                          value.body
+                        )}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
 
-        {/* Global Presence */}
         <section className="section-padding py-16" ref={presenceRef}>
           <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4 sr sr-up sr-line">
-              Global Presence
-            </h2>
-            <p className="text-muted-foreground mb-8 max-w-2xl sr sr-up">
-              Our registered offices anchor a research footprint that reaches well beyond them — including a Cairo fieldwork base and active coverage across the GCC, North Africa, and Europe.
-            </p>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-card border border-border rounded-xl p-8 sr sr-left hover-lift">
-                <div className="flex items-center gap-3 mb-3">
-                  <Building2 className="w-5 h-5 text-primary" aria-hidden />
-                  <h3 className="text-lg font-display font-semibold text-foreground">
-                    United States — Headquarters
-                  </h3>
-                </div>
-                <p className="text-muted-foreground">
-                  1309 Coffeen Ave<br />
-                  Sheridan, Wyoming 82801<br />
-                  <a href="tel:+18884655557" className="text-primary hover:underline cursor-pointer">+1 888 465 5557</a>
-                </p>
-              </div>
-              <div className="bg-card border border-border rounded-xl p-8 sr sr-right hover-lift">
-                <div className="flex items-center gap-3 mb-3">
-                  <Building2 className="w-5 h-5 text-primary" aria-hidden />
-                  <h3 className="text-lg font-display font-semibold text-foreground">
-                    United Kingdom — London Office
-                  </h3>
-                </div>
-                <p className="text-muted-foreground">
-                  128 City Road<br />
-                  London, EC1V 2NX<br />
-                  <a href="tel:+447727666682" className="text-primary hover:underline cursor-pointer">+44 7727 666682</a>
-                </p>
-              </div>
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4 sr sr-up sr-line">{copy.presenceH2}</h2>
+            <p className="text-muted-foreground mb-8 max-w-2xl sr sr-up">{copy.presenceIntro}</p>
+            <div className="grid md:grid-cols-3 gap-8">
+              {copy.offices.map((office, index) => (
+                <AboutOfficeBlock key={office.title} office={office} index={index} egyptPath={egyptPath} />
+              ))}
             </div>
           </div>
         </section>
 
-        <CTASection variant="service" />
+        <CTASection variant="research-proposal" />
       </main>
       <Footer />
     </div>

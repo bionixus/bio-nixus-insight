@@ -15,19 +15,19 @@ interface FAQItem {
 const faqs: FAQItem[] = [
   {
     question: 'What is BioNixus?',
-    answer: 'BioNixus is a specialist pharmaceutical and healthcare market research company, US-headquartered with operations in London and Cairo. We have been operating since 2012 and run quantitative and qualitative research for pharmaceutical, biotech, and medical device teams across Europe, the Middle East, and North Africa (EMEA). To date that adds up to 127+ delivered projects for 48 clients, across 17+ countries and 14+ therapeutic areas.',
+    answer: 'BioNixus is a global market research firm founded in London in 2012 in pharmaceutical and healthcare research, now recognised among the world\'s top 100 market research companies. US-headquartered with its founding office in London and a MENA regional office in Greater Cairo, BioNixus runs quantitative and qualitative research for pharmaceutical, biotech, and medical device teams — and extends the same evidence standards across 16 industry verticals. To date: 127+ delivered projects for 48 clients, across 38 countries and 14+ therapeutic areas.',
   },
   {
     question: 'What services does BioNixus offer?',
-    answer: 'The core is healthcare market research: quantitative physician and HCP surveys, qualitative KOL interviews and focus groups, market access and HTA consulting, competitive intelligence, clinical trial support, and KOL and stakeholder mapping. The mix is built around your decision rather than sold as a fixed package, and it runs across 17+ countries in EMEA.',
+    answer: 'The core is healthcare market research: quantitative physician and HCP surveys, qualitative KOL interviews and focus groups, market access and HTA consulting, competitive intelligence, clinical trial support, and KOL and stakeholder mapping. The mix is built around your decision rather than sold as a fixed package, and it runs across 38 countries in EMEA.',
   },
   {
     question: 'Which countries does BioNixus cover?',
-    answer: 'We work across 17+ countries: the EU5 (UK, Germany, France, Spain, Italy), the GCC (UAE, Saudi Arabia, Kuwait, Qatar, Bahrain, Oman), and North Africa (Egypt, Morocco, Tunisia, Algeria). Our depth is strongest in MENA, where a proprietary physician and HCP panel and bilingual Arabic–English teams let us recruit specialists that generalist agencies struggle to reach.',
+    answer: 'We work across 38 countries: the EU5 (UK, Germany, France, Spain, Italy), the GCC (UAE, Saudi Arabia, Kuwait, Qatar, Bahrain, Oman), and North Africa (Egypt, Morocco, Tunisia, Algeria). Our depth is strongest in MENA, where a proprietary physician and HCP panel and bilingual Arabic–English teams let us recruit specialists that generalist agencies struggle to reach.',
   },
   {
     question: 'What makes BioNixus different from larger market research firms?',
-    answer: 'Three things. First, genuine MENA depth — a proprietary GCC physician and HCP panel and Arabic–English research teams, not a regional desk bolted onto a Western agency. Second, a senior-led, lean model: the people who scope your study are the people who run it, which keeps quality high and cost competitive against the large consultancies. Third, that proprietary network means we can recruit scarce specialists quickly and bring back authentic clinical perspective across 17+ countries.',
+    answer: 'Three things. First, a London-founded firm that scaled globally — US headquarters, Greater Cairo MENA regional office, and fieldwork across 38 countries in six languages. Second, a senior-led, lean model: the people who scope your study are the people who run it. Third, pharma heritage applied everywhere — the same GCP-grade rigour whether the brief is a payer study in Germany or a B2B segmentation programme in the GCC.',
   },
   {
     question: 'What therapeutic areas does BioNixus specialize in?',
@@ -55,7 +55,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: 'Where is BioNixus located?',
-    answer: 'BioNixus is headquartered at 1309 Coffeen Ave, Sheridan, Wyoming 82801, USA, with a UK office at 128 City Road, London, EC1V 2NX, GB, and an operational base in Cairo for MENA fieldwork. That spread is deliberate: it lets us sit between Western pharmaceutical innovation and the on-the-ground realities of EMEA markets, rather than viewing the region from a distance.',
+    answer: 'BioNixus was founded in London in 2012. Global headquarters: 1309 Coffeen Ave, Sheridan, Wyoming 82801, USA. Founding office: 128 City Road, London, EC1V 2NX, GB. MENA regional office: Greater Cairo, Egypt — bilingual fieldwork hub for GCC and North Africa programmes.',
   },
   {
     question: 'Can BioNixus conduct research in Arabic?',
