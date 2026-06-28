@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { SEOHead } from '@/components/seo/SEOHead';
-import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
-import { CTASection } from '@/components/shared/CTASection';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { INDUSTRY_SEGMENT, SEGMENT_ORDER, SEGMENTS, type SegmentSlug } from '@/data/bionixusIndustrySegments';
 import {
@@ -25,6 +23,7 @@ import {
   isMatrixCountrySlug,
   type MarketResearchIndexCountry,
 } from '@/data/industryHubCountries';
+import { PREMIUM_INDUSTRIES_CSS } from '@/pages/industries/premiumIndustriesCss';
 
 const COUNTRY_COUNT = MARKET_RESEARCH_BY_INDUSTRY_COUNTRIES.length;
 
@@ -51,6 +50,12 @@ const SEGMENT_LABEL: Record<SegmentSlug, string> = {
   b2c: 'B2C',
 };
 
+const SEGMENT_ACCENT: Record<SegmentSlug, 'teal' | 'gold' | 'coral'> = {
+  'pharma-healthcare': 'teal',
+  b2b: 'gold',
+  b2c: 'coral',
+};
+
 function industriesForSegment(segment: SegmentSlug, published: MatrixIndustrySlug[]): MatrixIndustrySlug[] {
   return published.filter((slug) => INDUSTRY_SEGMENT[slug] === segment);
 }
@@ -64,40 +69,37 @@ function MatrixCountrySection({
 }) {
   const country = MATRIX_COUNTRIES[countrySlug];
   return (
-    <section
-      id={`country-${countrySlug}`}
-      className="section-padding py-12 border-t border-border scroll-mt-28"
-    >
-      <div className="container-wide max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+    <section id={`country-${countrySlug}`} className="bx-country-block bx-country-block--matrix">
+      <div className="bx-inner">
+        <div className="bx-country-block-head">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-2">
-              {country.regulatorShort} · Full industry matrix
-            </p>
-            <h3 className="text-2xl md:text-3xl font-display font-semibold text-foreground">{country.label}</h3>
+            <div className="bx-eyebrow gold">
+              <span className="bx-line" /> {country.regulatorShort} · Full industry matrix
+            </div>
+            <h3 className="bx-h2">{country.label}</h3>
           </div>
-          <div className="flex flex-wrap gap-3 text-sm">
-            <Link to={country.midFunnelPath} className="text-primary hover:underline">
-              Market research overview
+          <div className="bx-link-row">
+            <Link to={country.midFunnelPath} className="bx-text-link gold">
+              Market research overview →
             </Link>
-            <Link to={country.healthcareHubPath} className="text-primary hover:underline">
-              Healthcare hub
+            <Link to={country.healthcareHubPath} className="bx-text-link">
+              Healthcare hub →
             </Link>
           </div>
         </div>
 
-        <div className="rounded-xl border border-primary/20 bg-primary/5 p-5 mb-8">
-          <h4 className="font-semibold text-foreground mb-2">Pharmaceutical &amp; drug launch</h4>
-          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
-            <Link to={country.pharmaBofuPath} className="text-primary hover:underline">
-              Pharmaceutical market research company
+        <div className="bx-pharma-band">
+          <h4>Pharmaceutical &amp; drug launch</h4>
+          <div className="bx-link-row">
+            <Link to={country.pharmaBofuPath} className="bx-text-link">
+              Pharmaceutical market research company →
             </Link>
-            <Link to={country.healthcareReportPath} className="text-primary hover:underline">
-              Healthcare market report
+            <Link to={country.healthcareReportPath} className="bx-text-link">
+              Healthcare market report →
             </Link>
             {country.medDevicesReportPath ? (
-              <Link to={country.medDevicesReportPath} className="text-primary hover:underline">
-                Medical devices market report
+              <Link to={country.medDevicesReportPath} className="bx-text-link">
+                Medical devices market report →
               </Link>
             ) : null}
           </div>
@@ -107,32 +109,24 @@ function MatrixCountrySection({
           const segmentIndustries = industriesForSegment(segmentSlug, publishedIndustries);
           if (segmentIndustries.length === 0) return null;
           return (
-            <div key={segmentSlug} className="mb-10 last:mb-0">
-              <h4 className="text-lg font-display font-semibold text-foreground mb-4">
-                {SEGMENT_LABEL[segmentSlug]}
-              </h4>
-              <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            <div key={segmentSlug} className="bx-segment-block">
+              <h4 className="bx-segment-label">{SEGMENT_LABEL[segmentSlug]}</h4>
+              <div className="bx-index-card-grid">
                 {segmentIndustries.map((industrySlug) => {
                   const industry = MATRIX_INDUSTRIES[industrySlug];
                   return (
-                    <li key={industrySlug} className="rounded-xl border border-border bg-card p-4 space-y-1.5">
-                      <p className="font-medium text-foreground text-sm">{industry.displayName}</p>
-                      <Link
-                        to={getIndustryBofuPath(countrySlug, industrySlug)}
-                        className="block text-sm text-primary hover:underline"
-                      >
-                        Company-intent page
+                    <article key={industrySlug} className="bx-index-card">
+                      <h5>{industry.displayName}</h5>
+                      <Link to={getIndustryBofuPath(countrySlug, industrySlug)}>
+                        Company-intent page →
                       </Link>
-                      <Link
-                        to={getIndustryListiclePath(countrySlug, industrySlug)}
-                        className="block text-sm text-primary hover:underline"
-                      >
-                        Top firms (2026)
+                      <Link to={getIndustryListiclePath(countrySlug, industrySlug)}>
+                        Top firms (2026) →
                       </Link>
-                    </li>
+                    </article>
                   );
                 })}
-              </ul>
+              </div>
             </div>
           );
         })}
@@ -153,41 +147,38 @@ function ExtendedCountrySection({
   const midFunnelPath = getMidFunnelPathForIndexCountry(country);
 
   return (
-    <section
-      id={`country-${country.slug}`}
-      className="section-padding py-10 border-t border-border scroll-mt-28"
-    >
-      <div className="container-wide max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
+    <section id={`country-${country.slug}`} className="bx-country-block">
+      <div className="bx-inner">
+        <div className="bx-country-block-head">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-2">
-              Global market
-            </p>
-            <h3 className="text-2xl font-display font-semibold text-foreground">{country.label}</h3>
+            <div className="bx-eyebrow teal">
+              <span className="bx-line" /> Global market
+            </div>
+            <h3 className="bx-h2">{country.label}</h3>
           </div>
-          <div className="flex flex-wrap gap-3 text-sm">
-            <Link to={healthcarePath} className="text-primary hover:underline">
-              Healthcare hub
+          <div className="bx-link-row">
+            <Link to={healthcarePath} className="bx-text-link">
+              Healthcare hub →
             </Link>
             {midFunnelPath ? (
-              <Link to={midFunnelPath} className="text-primary hover:underline">
-                Market research overview
+              <Link to={midFunnelPath} className="bx-text-link gold">
+                Market research overview →
               </Link>
             ) : null}
           </div>
         </div>
 
         {(pharmaPath || healthcarePath) && (
-          <div className="rounded-xl border border-border bg-muted/30 p-5 mb-8">
-            <h4 className="font-semibold text-foreground mb-2">Pharmaceutical &amp; healthcare</h4>
-            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+          <div className="bx-pharma-band">
+            <h4>Pharmaceutical &amp; healthcare</h4>
+            <div className="bx-link-row">
               {pharmaPath ? (
-                <Link to={pharmaPath} className="text-primary hover:underline">
-                  Pharmaceutical market research
+                <Link to={pharmaPath} className="bx-text-link">
+                  Pharmaceutical market research →
                 </Link>
               ) : null}
-              <Link to={healthcarePath} className="text-primary hover:underline">
-                Healthcare market research hub
+              <Link to={healthcarePath} className="bx-text-link">
+                Healthcare market research hub →
               </Link>
             </div>
           </div>
@@ -197,26 +188,21 @@ function ExtendedCountrySection({
           const segmentIndustries = industriesForSegment(segmentSlug, publishedIndustries);
           if (segmentIndustries.length === 0) return null;
           return (
-            <div key={segmentSlug} className="mb-8 last:mb-0">
-              <h4 className="text-lg font-display font-semibold text-foreground mb-4">
-                {SEGMENT_LABEL[segmentSlug]}
-              </h4>
-              <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            <div key={segmentSlug} className="bx-segment-block">
+              <h4 className="bx-segment-label">{SEGMENT_LABEL[segmentSlug]}</h4>
+              <div className="bx-index-card-grid">
                 {segmentIndustries.map((industrySlug) => {
                   const industry = MATRIX_INDUSTRIES[industrySlug];
                   return (
-                    <li key={industrySlug} className="rounded-xl border border-border bg-card p-4">
-                      <p className="font-medium text-foreground text-sm mb-1.5">{industry.displayName}</p>
-                      <Link
-                        to={getIndustrySegmentCountryPath(country.slug, industrySlug)}
-                        className="block text-sm text-primary hover:underline"
-                      >
-                        {industry.displayNameShort} market research
+                    <article key={industrySlug} className="bx-index-card">
+                      <h5>{industry.displayName}</h5>
+                      <Link to={getIndustrySegmentCountryPath(country.slug, industrySlug)}>
+                        {industry.displayNameShort} market research →
                       </Link>
-                    </li>
+                    </article>
                   );
                 })}
-              </ul>
+              </div>
             </div>
           );
         })}
@@ -246,122 +232,245 @@ export default function MarketResearchByIndustry() {
         canonical="/market-research-by-industry"
         jsonLd={jsonLd}
       />
+      <style dangerouslySetInnerHTML={{ __html: PREMIUM_INDUSTRIES_CSS }} />
       <Navbar />
-      <main>
-        <BreadcrumbNav
-          items={[
-            { name: 'Home', href: '/' },
-            { name: 'Market Research', href: '/market-research' },
-            { name: 'Market Research by Industry', href: '/market-research-by-industry' },
-          ]}
-        />
-        <section className="section-padding py-14">
-          <div className="container-wide max-w-5xl mx-auto">
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-primary/80 mb-3">
-              Global index
-            </p>
-            <h1 className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-4">
-              Market Research by Industry — Global Coverage
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              BioNixus is a global market research firm with U.S. headquarters, regional offices in London and
-              Cairo, and field programmes across the Americas, Europe, MENA, Africa, and Asia-Pacific. This index
-              maps {publishedIndustries.length} industries to {COUNTRY_COUNT} countries — from full GCC
-              company-intent matrices to healthcare hubs and country–industry entry points worldwide.
-            </p>
-            <div className="flex flex-wrap gap-3 mb-8">
-              <span className="rounded-full bg-primary/10 text-primary text-sm font-medium px-4 py-1.5">
-                {COUNTRY_COUNT} countries
-              </span>
-              <span className="rounded-full bg-primary/10 text-primary text-sm font-medium px-4 py-1.5">
-                {publishedIndustries.length} industries
-              </span>
-              <span className="rounded-full bg-primary/10 text-primary text-sm font-medium px-4 py-1.5">
-                6 regions
-              </span>
-              <span className="rounded-full bg-muted text-muted-foreground text-sm font-medium px-4 py-1.5">
-                GCC full matrix + global hubs
-              </span>
+      <main className="bx-ind">
+        {/* ===== HERO ===== */}
+        <section className="bx-hero">
+          <div className="bx-hero-bg" aria-hidden="true" />
+          <div className="bx-hero-grid" aria-hidden="true">
+            <svg viewBox="0 0 1440 700" preserveAspectRatio="none">
+              <defs>
+                <pattern id="bxHexGridIndex" width="60" height="52" patternUnits="userSpaceOnUse">
+                  <path
+                    d="M30 0 L60 15 L60 37 L30 52 L0 37 L0 15 Z"
+                    fill="none"
+                    stroke="rgba(255,255,255,0.4)"
+                    strokeWidth="0.5"
+                  />
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#bxHexGridIndex)" />
+            </svg>
+          </div>
+          <div className="bx-orbital" aria-hidden="true">
+            <div className="bx-ring">
+              <div className="bx-node" />
             </div>
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              <Link to="/market-research" className="text-primary underline">
-                Market research hub
-              </Link>
-              {' · '}
-              <Link to="/bionixus-industries" className="text-primary underline">
-                Industries overview
-              </Link>
-              {' · '}
-              <Link to="/healthcare-market-research" className="text-primary underline">
-                Healthcare market research
-              </Link>
-              {' · '}
-              <Link to="/global-websites" className="text-primary underline">
-                Global websites directory
-              </Link>
-            </p>
-            <nav aria-label="Jump to region" className="space-y-4">
+            <div className="bx-ring">
+              <div className="bx-node" />
+            </div>
+            <div className="bx-ring">
+              <div className="bx-node" />
+            </div>
+          </div>
+
+          <div className="bx-inner bx-hero-inner">
+            <div className="bx-hero-copy">
+              <nav className="bx-breadcrumb" aria-label="Breadcrumb">
+                <Link to="/">Home</Link>
+                <span aria-hidden="true">/</span>
+                <Link to="/market-research">Market Research</Link>
+                <span aria-hidden="true">/</span>
+                <span aria-current="page">By Industry</span>
+              </nav>
+              <div className="bx-eyebrow gold">
+                <span className="bx-line" /> Global index
+              </div>
+              <h1>
+                Market research by industry — <em>global coverage</em>
+              </h1>
+              <p className="bx-hero-tagline">Every country, every vertical, one evidence framework</p>
+              <p className="bx-hero-sub">
+                BioNixus is a global market research firm with U.S. headquarters, regional offices in London and
+                Cairo, and field programmes across the Americas, Europe, MENA, Africa, and Asia-Pacific. This index
+                maps <strong>{publishedIndustries.length} industries</strong> to{' '}
+                <strong>{COUNTRY_COUNT} countries</strong> — from full GCC company-intent matrices to healthcare hubs
+                and country–industry entry points worldwide.
+              </p>
+              <div className="bx-hero-actions">
+                <a href="#region-americas" className="bx-btn-gold">
+                  Jump to a region →
+                </a>
+                <Link to="/bionixus-industries" className="bx-btn-ghost">
+                  <span aria-hidden="true">◈</span> Industries overview
+                </Link>
+              </div>
+            </div>
+
+            <div className="bx-hero-visual">
+              <div className="bx-card">
+                <div className="bx-card-head">
+                  <h2>Index at a glance</h2>
+                  <div className="bx-live">
+                    <span className="bx-pulse" /> Live
+                  </div>
+                </div>
+                <div className="bx-seg-rows">
+                  <div className="bx-seg-row">
+                    <span className="bx-seg-dot gold" aria-hidden="true" />
+                    <div>
+                      <div className="bx-seg-row-name">{COUNTRY_COUNT} countries</div>
+                      <div className="bx-seg-row-tag">Americas · Europe · MENA · Africa · APAC</div>
+                    </div>
+                  </div>
+                  <div className="bx-seg-row">
+                    <span className="bx-seg-dot teal" aria-hidden="true" />
+                    <div>
+                      <div className="bx-seg-row-name">{publishedIndustries.length} industries</div>
+                      <div className="bx-seg-row-tag">Pharma · B2B · B2C verticals</div>
+                    </div>
+                  </div>
+                  <div className="bx-seg-row">
+                    <span className="bx-seg-dot coral" aria-hidden="true" />
+                    <div>
+                      <div className="bx-seg-row-name">7 GCC matrix markets</div>
+                      <div className="bx-seg-row-tag">Full BOFU + 2026 listicles</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="bx-card-foot">
+                  <strong>6 regions</strong> · GCC full matrix + global hubs
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ===== REGION RIBBON ===== */}
+        <div className="bx-ribbon">
+          <div className="bx-ribbon-inner">
+            <div className="bx-ribbon-item">
+              <span className="bx-ic" aria-hidden="true">◆</span> Americas
+            </div>
+            <div className="bx-ribbon-item">
+              <span className="bx-ic" aria-hidden="true">◆</span> Europe &amp; UK
+            </div>
+            <div className="bx-ribbon-item">
+              <span className="bx-ic" aria-hidden="true">◆</span> MENA &amp; GCC
+            </div>
+            <div className="bx-ribbon-item">
+              <span className="bx-ic" aria-hidden="true">◆</span> Africa
+            </div>
+            <div className="bx-ribbon-item">
+              <span className="bx-ic" aria-hidden="true">◆</span> Asia-Pacific
+            </div>
+          </div>
+        </div>
+
+        {/* ===== STATS ===== */}
+        <div className="bx-stats">
+          <div className="bx-stats-inner">
+            <div className="bx-stat">
+              <div className="bx-stat-num">{COUNTRY_COUNT}</div>
+              <div className="bx-stat-label">Countries</div>
+              <div className="bx-stat-sub">6 regional groups</div>
+            </div>
+            <div className="bx-stat">
+              <div className="bx-stat-num">{publishedIndustries.length}</div>
+              <div className="bx-stat-label">Industries</div>
+              <div className="bx-stat-sub">Pharma · B2B · B2C</div>
+            </div>
+            <div className="bx-stat">
+              <div className="bx-stat-num">7</div>
+              <div className="bx-stat-label">GCC matrix markets</div>
+              <div className="bx-stat-sub">Full BOFU coverage</div>
+            </div>
+            <div className="bx-stat">
+              <div className="bx-stat-num">2026</div>
+              <div className="bx-stat-label">Listicle guides</div>
+              <div className="bx-stat-sub">Top firms by industry</div>
+            </div>
+          </div>
+        </div>
+
+        {/* ===== JUMP TO REGION ===== */}
+        <section className="bx-section cream">
+          <div className="bx-inner">
+            <div className="bx-section-head">
+              <div className="bx-eyebrow gold">
+                <span className="bx-line" /> Navigate
+              </div>
+              <h2 className="bx-h2">
+                Jump to a <em>country</em>
+              </h2>
+              <p className="bx-lead">
+                <Link to="/market-research">Market research hub</Link>
+                {' · '}
+                <Link to="/bionixus-industries">Industries overview</Link>
+                {' · '}
+                <Link to="/healthcare-market-research">Healthcare market research</Link>
+                {' · '}
+                <Link to="/global-websites">Global websites directory</Link>
+              </p>
+            </div>
+            <nav aria-label="Jump to region" className="bx-index-jump-grid">
               {MARKET_RESEARCH_BY_INDUSTRY_GROUPS.map((group) => (
-                <div key={group.region}>
-                  <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-2">
-                    {group.region}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
+                <article key={group.region} className="bx-index-jump-region">
+                  <h3>{group.region}</h3>
+                  <div className="bx-chips">
                     {group.countries.map((country) => (
-                      <a
-                        key={country.slug}
-                        href={`#country-${country.slug}`}
-                        className="text-sm rounded-lg border border-border px-3 py-1.5 text-foreground hover:border-primary/40 hover:text-primary transition-colors"
-                      >
+                      <a key={country.slug} href={`#country-${country.slug}`} className="bx-chip">
                         {country.label}
                       </a>
                     ))}
                   </div>
-                </div>
+                </article>
               ))}
             </nav>
           </div>
         </section>
 
-        <section className="section-padding py-4 border-t border-border bg-muted/10">
-          <div className="container-wide max-w-6xl mx-auto space-y-6">
-            <h2 className="text-xl font-display font-semibold text-foreground">Jump to industry</h2>
+        {/* ===== JUMP TO INDUSTRY ===== */}
+        <section className="bx-section">
+          <div className="bx-inner">
+            <div className="bx-section-head">
+              <div className="bx-eyebrow teal">
+                <span className="bx-line" /> Verticals
+              </div>
+              <h2 className="bx-h2">
+                Jump to an <em>industry</em>
+              </h2>
+            </div>
             {SEGMENT_ORDER.map((segmentSlug) => {
               const slugs = industriesForSegment(segmentSlug, publishedIndustries);
               if (slugs.length === 0) return null;
+              const accent = SEGMENT_ACCENT[segmentSlug];
               return (
-                <div key={segmentSlug}>
-                  <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-2">
-                    {SEGMENTS[segmentSlug].label}
-                  </p>
-                  <ul className="flex flex-wrap gap-2">
+                <div key={segmentSlug} className="bx-segment-block">
+                  <h3 className={`bx-eyebrow ${accent}`}>
+                    <span className="bx-line" /> {SEGMENTS[segmentSlug].label}
+                  </h3>
+                  <div className="bx-chips">
                     {slugs.map((industrySlug) => (
-                      <li key={industrySlug}>
-                        <a
-                          href={`#industry-${industrySlug}`}
-                          className="text-sm rounded-lg border border-border bg-card px-3 py-1.5 text-foreground hover:border-primary/40 hover:text-primary transition-colors"
-                        >
-                          {MATRIX_INDUSTRIES[industrySlug].displayName}
-                        </a>
-                      </li>
+                      <a key={industrySlug} href={`#industry-${industrySlug}`} className="bx-chip">
+                        {MATRIX_INDUSTRIES[industrySlug].displayName}
+                      </a>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               );
             })}
           </div>
         </section>
 
+        {/* ===== BY REGION / COUNTRY ===== */}
         {MARKET_RESEARCH_BY_INDUSTRY_GROUPS.map((group) => (
-          <section key={group.region} className="border-t border-border bg-muted/5">
-            <div className="container-wide max-w-6xl mx-auto section-padding py-10">
-              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">
-                {group.region}
-              </h2>
-              <p className="text-muted-foreground leading-relaxed max-w-3xl mb-2">{group.description}</p>
-              <p className="text-sm text-muted-foreground">
-                {group.countries.length} {group.countries.length === 1 ? 'market' : 'markets'} in this region
-              </p>
+          <div key={group.region}>
+            <div
+              id={`region-${group.region.toLowerCase().replace(/[^a-z]+/g, '-').replace(/-+$/, '')}`}
+              className="bx-region-band"
+            >
+              <div className="bx-inner">
+                <div className="bx-eyebrow gold">
+                  <span className="bx-line" /> {group.region}
+                </div>
+                <h2 className="bx-h2">{group.region}</h2>
+                <p className="bx-lead">{group.description}</p>
+                <p className="bx-region-meta">
+                  {group.countries.length} {group.countries.length === 1 ? 'market' : 'markets'} in this region
+                </p>
+              </div>
             </div>
             {group.countries.map((country) =>
               isMatrixCountrySlug(country.slug) ? (
@@ -378,50 +487,62 @@ export default function MarketResearchByIndustry() {
                 />
               ),
             )}
-          </section>
+          </div>
         ))}
+
+        {/* ===== BY INDUSTRY ===== */}
+        <section className="bx-section cream">
+          <div className="bx-inner">
+            <div className="bx-section-head center">
+              <div className="bx-eyebrow gold">
+                <span className="bx-line" /> Cross-index
+              </div>
+              <h2 className="bx-h2">
+                Browse by <em>industry</em>
+              </h2>
+              <p className="bx-lead center">
+                GCC markets include listicle guides; all countries link to company-intent or industry entry pages.
+              </p>
+            </div>
+          </div>
+        </section>
 
         {publishedIndustries.map((industrySlug) => {
           const industry = MATRIX_INDUSTRIES[industrySlug];
+          const segmentSlug = INDUSTRY_SEGMENT[industrySlug];
+          const accent = SEGMENT_ACCENT[segmentSlug];
           return (
             <section
               key={industrySlug}
               id={`industry-${industrySlug}`}
-              className="section-padding py-10 border-t border-border bg-muted/20 scroll-mt-28"
+              className="bx-section bx-industry-section"
             >
-              <div className="container-wide max-w-6xl mx-auto">
-                <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-2">
-                  {SEGMENT_LABEL[INDUSTRY_SEGMENT[industrySlug]]}
-                </p>
-                <h2 className="text-2xl font-display font-semibold text-foreground mb-2">{industry.displayName}</h2>
-                <p className="text-sm text-muted-foreground mb-6">
-                  GCC markets include listicle guides; all countries link to company-intent or industry entry pages.
-                </p>
+              <div className="bx-inner">
+                <div className={`bx-eyebrow ${accent}`}>
+                  <span className="bx-line" /> {SEGMENT_LABEL[segmentSlug]}
+                </div>
+                <h2 className="bx-h2">{industry.displayName}</h2>
+                <p className="bx-lead">{industry.knowsAbout.slice(0, 3).join(' · ')}</p>
+
                 {MARKET_RESEARCH_BY_INDUSTRY_GROUPS.map((group) => (
-                  <div key={group.region} className="mb-8 last:mb-0">
-                    <h3 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-3">
-                      {group.region}
-                    </h3>
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                  <div key={group.region} className="bx-industry-region-block">
+                    <p className="bx-industry-region-label">{group.region}</p>
+                    <div className="bx-index-card-grid">
                       {group.countries.map((country) => (
-                        <article key={country.slug} className="rounded-xl border border-border bg-card p-5 space-y-2">
-                          <h4 className="font-semibold text-foreground">{country.label}</h4>
+                        <article key={country.slug} className="bx-index-card">
+                          <h5>{country.label}</h5>
                           <Link
                             to={
                               isMatrixCountrySlug(country.slug)
                                 ? getIndustryBofuPath(country.slug, industrySlug)
                                 : getIndustrySegmentCountryPath(country.slug, industrySlug)
                             }
-                            className="block text-sm text-primary hover:underline"
                           >
-                            {industry.displayNameShort} market research company
+                            {industry.displayNameShort} market research company →
                           </Link>
                           {isMatrixCountrySlug(country.slug) ? (
-                            <Link
-                              to={getIndustryListiclePath(country.slug, industrySlug)}
-                              className="block text-sm text-primary hover:underline"
-                            >
-                              Top firms guide (2026)
+                            <Link to={getIndustryListiclePath(country.slug, industrySlug)}>
+                              Top firms guide (2026) →
                             </Link>
                           ) : null}
                         </article>
@@ -434,26 +555,50 @@ export default function MarketResearchByIndustry() {
           );
         })}
 
-        <section className="section-padding py-12 border-t border-border">
-          <div className="container-wide max-w-3xl mx-auto">
-            <h2 className="text-2xl font-display font-semibold text-foreground mb-6">Frequently asked questions</h2>
-            <div className="space-y-4">
+        {/* ===== FAQ ===== */}
+        <section className="bx-section cream">
+          <div className="bx-inner">
+            <div className="bx-section-head center">
+              <div className="bx-eyebrow gold">
+                <span className="bx-line" /> Questions <span className="bx-line" />
+              </div>
+              <h2 className="bx-h2">
+                Frequently asked <em>questions</em>
+              </h2>
+            </div>
+            <div className="bx-faq-wrap">
               {HUB_FAQ.map((item) => (
-                <details key={item.question} className="group border border-border rounded-xl bg-card">
-                  <summary className="cursor-pointer list-none px-6 py-4 font-display font-semibold text-foreground flex items-center justify-between gap-4">
+                <details className="bx-faq" key={item.question}>
+                  <summary>
                     {item.question}
-                    <span className="text-primary text-xl group-open:rotate-45 transition-transform" aria-hidden="true">
+                    <span className="bx-faq-icon" aria-hidden="true">
                       +
                     </span>
                   </summary>
-                  <div className="px-6 pb-5 text-muted-foreground leading-relaxed">{item.answer}</div>
+                  <p className="bx-faq-a">{item.answer}</p>
                 </details>
               ))}
             </div>
           </div>
         </section>
 
-        <CTASection variant="research-proposal" />
+        {/* ===== CTA ===== */}
+        <section className="bx-cta-section">
+          <div className="bx-cta-card">
+            <h2>Plan your market research programme</h2>
+            <p>
+              Tell us the country, industry, and decision in front of you. We will scope the evidence to match it.
+            </p>
+            <div className="bx-cta-actions">
+              <Link to="/contact" className="bx-btn-gold">
+                Book a discovery call →
+              </Link>
+              <Link to="/market-research" className="bx-btn-ghost">
+                Explore our services
+              </Link>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>

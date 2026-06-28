@@ -226,8 +226,13 @@ export const PREMIUM_INDUSTRIES_CSS = `
 
 /* ===== COUNTRY GRID (pharma segment) ===== */
 .bx-ind .bx-country-grid { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.bx-ind .bx-country-grid.bx-country-grid--after-narrative { margin-top: 40px; }
+@media (min-width: 1024px) {
+  .bx-ind .bx-country-grid { grid-template-columns: repeat(3, 1fr); }
+}
 .bx-ind .bx-country-region { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 24px 26px; }
-.bx-ind .bx-country-region h3 { font-family: var(--bx-font-display); font-size: 18px; font-weight: 500; color: var(--bx-warm-white); margin: 0 0 14px; }
+.bx-ind .bx-country-region h3 { font-family: var(--bx-font-display); font-size: 18px; font-weight: 500; color: var(--bx-warm-white); margin: 0 0 10px; }
+.bx-ind .bx-country-region .bx-region-desc { font-size: 13px; color: rgba(255,255,255,0.45); font-weight: 300; line-height: 1.65; margin: 0 0 14px; }
 
 /* ===== DARK NARRATIVE ===== */
 .bx-ind .bx-section.dark .bx-dark-bg { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 60% 50% at 25% 70%, rgba(14,165,160,0.07), transparent), radial-gradient(ellipse 40% 40% at 82% 18%, rgba(201,168,76,0.05), transparent); }
@@ -270,6 +275,43 @@ export const PREMIUM_INDUSTRIES_CSS = `
 .bx-ind .bx-cta-card p { font-size: 17px; color: rgba(255,255,255,0.5); margin: 0 0 34px; position: relative; font-weight: 300; }
 .bx-ind .bx-cta-actions { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; position: relative; }
 
+/* ===== MARKET RESEARCH BY INDUSTRY INDEX ===== */
+.bx-ind .bx-index-jump-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.bx-ind .bx-index-jump-region h3 { font-family: var(--bx-font-display); font-size: 17px; font-weight: 500; color: var(--bx-navy); margin: 0 0 12px; }
+.bx-ind .bx-country-block { padding: 56px 0; border-top: 1px solid var(--bx-gray-100); scroll-margin-top: 112px; }
+.bx-ind .bx-country-block--matrix { background: linear-gradient(180deg, rgba(201,168,76,0.05) 0%, transparent 100%); }
+.bx-ind .bx-country-block-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px; margin-bottom: 28px; }
+.bx-ind .bx-country-block-head .bx-h2 { margin: 8px 0 0; font-size: clamp(1.6rem, 2.5vw, 2.2rem); }
+.bx-ind .bx-link-row { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; }
+.bx-ind .bx-text-link { font-size: 13.5px; font-weight: 600; color: var(--bx-teal); text-decoration: none; letter-spacing: 0.2px; transition: color 0.25s; }
+.bx-ind .bx-text-link:hover { color: var(--bx-navy); }
+.bx-ind .bx-text-link.gold { color: #A8872E; }
+.bx-ind .bx-text-link.gold:hover { color: var(--bx-navy); }
+.bx-ind .bx-pharma-band {
+  background: linear-gradient(135deg, rgba(14,165,160,0.07), rgba(14,165,160,0.03));
+  border: 1px solid rgba(14,165,160,0.18); border-radius: 16px; padding: 22px 26px; margin-bottom: 32px;
+}
+.bx-ind .bx-pharma-band h4 { font-family: var(--bx-font-display); font-size: 17px; font-weight: 500; color: var(--bx-navy); margin: 0 0 12px; }
+.bx-ind .bx-segment-block { margin-bottom: 36px; }
+.bx-ind .bx-segment-block:last-child { margin-bottom: 0; }
+.bx-ind .bx-segment-label { font-family: var(--bx-font-display); font-size: 19px; font-weight: 500; color: var(--bx-navy); margin: 0 0 16px; }
+.bx-ind .bx-index-card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.bx-ind .bx-index-card {
+  background: var(--bx-warm-white); border: 1px solid var(--bx-gray-100); border-radius: 14px;
+  padding: 18px 20px; transition: all 0.35s var(--bx-ease-out);
+}
+.bx-ind .bx-index-card:hover { border-color: var(--bx-gold); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(6,16,31,0.06); }
+.bx-ind .bx-index-card h5 { font-size: 14px; font-weight: 600; color: var(--bx-navy); margin: 0 0 10px; }
+.bx-ind .bx-index-card a { display: block; font-size: 12.5px; color: var(--bx-gray-500); text-decoration: none; margin-top: 6px; transition: color 0.25s; }
+.bx-ind .bx-index-card a:hover { color: var(--bx-teal); }
+.bx-ind .bx-region-band { padding: 48px 40px 32px; background: var(--bx-cream); border-top: 1px solid var(--bx-gray-100); }
+.bx-ind .bx-region-band .bx-lead { margin-top: 12px; max-width: 720px; }
+.bx-ind .bx-region-meta { font-size: 13px; color: var(--bx-gray-500); font-weight: 500; margin-top: 8px; letter-spacing: 0.3px; }
+.bx-ind .bx-industry-section { scroll-margin-top: 112px; }
+.bx-ind .bx-industry-region-block { margin-bottom: 32px; }
+.bx-ind .bx-industry-region-block:last-child { margin-bottom: 0; }
+.bx-ind .bx-industry-region-label { font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 2.5px; color: var(--bx-gray-500); margin: 0 0 14px; }
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
   .bx-ind .bx-hero-inner { grid-template-columns: 1fr; gap: 48px; }
@@ -278,6 +320,8 @@ export const PREMIUM_INDUSTRIES_CSS = `
   .bx-ind .bx-next-grid { grid-template-columns: 1fr; }
   .bx-ind .bx-cover-grid { grid-template-columns: 1fr; }
   .bx-ind .bx-country-grid { grid-template-columns: 1fr; }
+  .bx-ind .bx-index-card-grid { grid-template-columns: repeat(2, 1fr); }
+  .bx-ind .bx-index-jump-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 720px) {
   .bx-ind .bx-inner, .bx-ind .bx-section, .bx-ind .bx-stats, .bx-ind .bx-ribbon, .bx-ind .bx-cta-section { padding-left: 22px; padding-right: 22px; }
@@ -287,5 +331,7 @@ export const PREMIUM_INDUSTRIES_CSS = `
   .bx-ind .bx-stat-num { font-size: 42px; }
   .bx-ind .bx-ribbon-inner { gap: 18px; }
   .bx-ind .bx-hero-actions .bx-btn-gold, .bx-ind .bx-hero-actions .bx-btn-ghost { width: 100%; justify-content: center; }
+  .bx-ind .bx-index-card-grid { grid-template-columns: 1fr; }
+  .bx-ind .bx-region-band { padding-left: 22px; padding-right: 22px; }
 }
 `;
