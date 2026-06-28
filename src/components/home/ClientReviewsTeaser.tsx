@@ -7,7 +7,8 @@ import { HAPPY_CLIENTS_COUNT } from '@/data/clientReviews';
 
 export function ClientReviewsTeaser() {
   const { t } = useLanguage();
-  const copy = t.clientReviewsTeaser;
+  const copy = t.clientReviewsTeaser as typeof t.clientReviewsTeaser & { happyClientsCount?: string };
+  const clientCount = copy.happyClientsCount ?? String(HAPPY_CLIENTS_COUNT);
   const sectionRef = useScrollReveal<HTMLElement>({ stagger: 80 });
 
   return (
@@ -24,13 +25,13 @@ export function ClientReviewsTeaser() {
             id="client-reviews-teaser-heading"
             className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-4"
           >
-            {copy.titleBeforeCount} {HAPPY_CLIENTS_COUNT} {copy.titleAfterCount}
+            {copy.titleBeforeCount} {clientCount} {copy.titleAfterCount}
           </h2>
           <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8">{copy.description}</p>
           <div className="flex flex-wrap items-center justify-center gap-4 mb-8 text-sm text-foreground">
             <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2">
               <Users className="w-4 h-4 text-primary" aria-hidden="true" />
-              {HAPPY_CLIENTS_COUNT}+ {copy.happyClientsBadgeSuffix}
+              {clientCount}+ {copy.happyClientsBadgeSuffix}
             </span>
             <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2">
               <Star className="w-4 h-4 fill-amber-400 text-amber-400" aria-hidden="true" />

@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, ReactNode, useEffect, useLayoutEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Language, translations, languages } from '@/lib/i18n';
-import { homePageHardcoded, type HomePageHardcodedCopy } from '@/lib/homePageHardcoded';
+import { translations, languages, type Language } from '@/lib/i18n';
+import { getTranslations, type MergedTranslations } from '@/lib/getTranslations';
 
 /** useLayoutEffect on the client, useEffect on the server (avoids SSR warning). */
 const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
@@ -9,14 +9,14 @@ const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffec
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (typeof translations)[Language] & { homePage: HomePageHardcodedCopy };
+  t: MergedTranslations;
   isRTL: boolean;
 }
 
 const fallbackLanguageContext: LanguageContextType = {
   language: 'en',
   setLanguage: () => {},
-  t: { ...translations.en, homePage: homePageHardcoded.en },
+  t: getTranslations('en'),
   isRTL: false,
 };
 
@@ -64,7 +64,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const value = {
     language: language,
     setLanguage,
-    t: { ...translations[language], homePage: homePageHardcoded[language] },
+    t: getTranslations(language),
     isRTL,
   };
 

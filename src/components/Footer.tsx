@@ -16,6 +16,11 @@ const Footer = () => {
   const [nlLoading, setNlLoading] = useState(false);
   const [nlStatus, setNlStatus] = useState<'idle' | 'success' | 'already' | 'error'>('idle');
   const f = t.footer as Record<string, string>;
+  const footerExtra = t.footer as typeof t.footer & {
+    clientReviewsLink?: string;
+    newsPress?: string;
+    newsletterConsent?: string;
+  };
 
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -143,9 +148,11 @@ const Footer = () => {
                       className="mt-0.5 rounded border-white/30"
                     />
                     <span>
-                      I would like to receive monthly EMEA pharma research insights from BioNixus. I can unsubscribe anytime.{' '}
+                      {footerExtra.newsletterConsent ??
+                        f.newsletterConsent ??
+                        'I would like to receive monthly EMEA pharma research insights from BioNixus. I can unsubscribe anytime.'}{' '}
                       <Link to="/privacy" className="text-primary-foreground/80 underline hover:no-underline">
-                        Privacy Policy
+                        {t.footer.privacy}
                       </Link>
                     </span>
                   </label>
@@ -216,7 +223,7 @@ const Footer = () => {
                   to="/client-reviews"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
-                  Client reviews
+                  {footerExtra.clientReviewsLink ?? f.clientReviewsLink ?? 'Client reviews'}
                 </Link>
               </li>
               <li>
@@ -248,7 +255,7 @@ const Footer = () => {
                   to="/news"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
-                  News &amp; press
+                  {footerExtra.newsPress ?? f.newsPress ?? 'News & press'}
                 </Link>
               </li>
               <li>
