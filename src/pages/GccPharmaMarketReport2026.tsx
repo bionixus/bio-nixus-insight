@@ -148,8 +148,8 @@ const GccPharmaMarketReport2026 = () => {
       <Navbar />
 
       <SEOHead
-        title="GCC Pharma Market Report 2026 | Biologics, Generic Injectables & Market Size | BioNixus"
-        description="GCC pharmaceutical market report 2026: biologics, generic injectables, generic drug & nutraceutical segments—hospital sales data and consumption analytics across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain and Oman."
+        title="GCC Pharma Market Report 2026 | Biologics & Generic Drugs | BioNixus"
+        description="GCC pharma market report 2026: USD 27B market, biologics ($4.8–5.4B), generic injectables ($1.6–1.9B), generic drug segment, Saudi precision medicine — hospital consumption data from BioNixus."
         canonical="https://www.bionixus.com/gcc-pharma-market-report-2026"
         jsonLd={jsonLd}
       />
@@ -162,7 +162,7 @@ const GccPharmaMarketReport2026 = () => {
         </div>
 
         <ReportPremiumHero
-          title="GCC Pharmaceutical Market Report 2026: Sales, Consumption, and Strategic Intelligence"
+          title="GCC Pharma Market Report 2026: Biologics, Generic Drugs & Market Size"
           description="BioNixus operates offices in the United States, London, and Cairo, delivering hospital sales data, consumption analytics, and primary research across GCC and Egypt since 2012 — with account-level intelligence that audit panels cannot replicate."
           config={REPORT_CONVERSION}
           marketSlug="gcc"

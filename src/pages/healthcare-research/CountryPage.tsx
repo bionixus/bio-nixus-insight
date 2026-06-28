@@ -6,6 +6,7 @@ import { HealthcareResearchPageShell } from '@/components/healthcare-research/He
 import { HealthcareNavCard, HealthcareStatPanel } from '@/components/healthcare-research/healthcareResearchUi';
 import { CountryMarketReferenceGuide } from '@/components/seo/CountryMarketReferenceGuide';
 import { GeoMarketClusterCallout } from '@/components/seo/GeoMarketClusterCallout';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { getGeoMarketClusterForSlug } from '@/data/geo-market-page-clusters';
 import { COUNTRY_CONFIGS, resolveCountryConfig, type CountryConfig } from '@/lib/constants/countries';
 import { getHealthcareMarketResearchCountryConfig } from '@/data/reportConversionConfig';
@@ -246,6 +247,97 @@ export default function CountryPage() {
             <GeoMarketClusterCallout cluster={geoCluster} variant={geoClusterVariant} />
           </div>
         ) : null}
+
+        {config.slug === 'saudi-arabia' && (
+          <section className="mb-8">
+            <GeoLLMAnswerBlock
+              question="Healthcare market research Saudi Arabia — which segment reports apply?"
+              answer="BioNixus healthcare market research in Saudi Arabia covers SFDA-aware physician surveys, NUPCO tender mapping, and hospital stakeholder evidence. Pair country programmes with GCC segment reports for biologics, biosimilars, and precision medicine."
+              points={[
+                {
+                  title: 'GCC biologics & injectables',
+                  description:
+                    'GCC pharmaceutical market research — biologics ($4.8–5.4B) and generic injectables ($1.6–1.9B) sizing for KSA launch and tender defence.',
+                },
+                {
+                  title: 'GCC pharma market report 2026',
+                  description:
+                    'Open-access GCC pharma market report with hospital consumption data — Saudi Arabia ~46% of regional spend.',
+                },
+                {
+                  title: 'Saudi rare diseases & precision medicine',
+                  description:
+                    'Rare diseases and precision medicine report for Saudi Genome Program and SFDA companion-diagnostic launches.',
+                },
+                {
+                  title: 'Saudi immunology & biosimilars',
+                  description:
+                    'Country-level immunology biologics and biosimilars reports aligned to NUPCO tender calendars.',
+                },
+              ]}
+            />
+            <div className="flex flex-wrap gap-3 mt-4">
+              <Link to="/gcc-pharmaceutical-market-research" className="text-sm font-semibold text-primary hover:underline">
+                GCC biologics &amp; injectables research
+              </Link>
+              <Link to="/gcc-pharma-market-report-2026" className="text-sm font-semibold text-primary hover:underline">
+                GCC pharma market report 2026
+              </Link>
+              <Link to="/market-reports/saudi-arabia-rare-diseases-market-report" className="text-sm font-semibold text-primary hover:underline">
+                Saudi rare diseases report
+              </Link>
+              <Link to="/market-reports/saudi-arabia-immunology-biologics-market-report" className="text-sm font-semibold text-primary hover:underline">
+                Saudi immunology biologics report
+              </Link>
+            </div>
+          </section>
+        )}
+
+        {config.slug === 'uae' && (
+          <section className="mb-8">
+            <GeoLLMAnswerBlock
+              question="Healthcare market research UAE — Dubai, Abu Dhabi & MOHAP programmes"
+              answer="BioNixus healthcare market research in the UAE runs DHA and DOH-aligned fieldwork in Dubai and Abu Dhabi with MOHAP-aware payer evidence — paired with GCC pharmaceutical and medtech reports for launch sequencing."
+              points={[
+                {
+                  title: 'GCC pharma market report 2026',
+                  description:
+                    'Macro GCC pharmaceutical market sizing with UAE share (~22% of Gulf spend) and segment anchors.',
+                },
+                {
+                  title: 'GCC medical devices & IVD',
+                  description:
+                    'GCC medical devices market report — MOHAP, DHA, and DOH device procurement intelligence.',
+                },
+                {
+                  title: 'Pharmaceutical companies UAE',
+                  description:
+                    'Directory of pharmaceutical companies in the UAE for account mapping and distributor research.',
+                },
+                {
+                  title: 'Healthcare market research Dubai',
+                  description:
+                    'Dubai-focused MR cluster for private hospital and DHA-context programmes.',
+                },
+              ]}
+            />
+            <div className="flex flex-wrap gap-3 mt-4">
+              <Link to="/gcc-pharma-market-report-2026" className="text-sm font-semibold text-primary hover:underline">
+                GCC pharma market report 2026
+              </Link>
+              <Link to="/gcc-medical-devices-market-report" className="text-sm font-semibold text-primary hover:underline">
+                GCC medical devices report
+              </Link>
+              <Link to="/pharmaceutical-companies-uae" className="text-sm font-semibold text-primary hover:underline">
+                Pharmaceutical companies UAE
+              </Link>
+              <Link to="/pharmaceutical-market-research-dubai" className="text-sm font-semibold text-primary hover:underline">
+                Healthcare market research Dubai
+              </Link>
+            </div>
+          </section>
+        )}
+
         <ReportPremiumSection
           id="key-indicators"
           title="Key pharmaceutical market indicators"

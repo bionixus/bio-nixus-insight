@@ -84,7 +84,7 @@ const GermanyHealthcareMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="Germany Healthcare Market Report 2026 | AMNOG, GKV & Pharma Market Intelligence | BioNixus"
+      title="Germany Healthcare Market Research Report 2026 | AMNOG & GKV | BioNixus"
       description="Germany healthcare market at EUR 430B in 2026. AMNOG benefit assessment, GKV pharmaceutical spend, IQWiG/G-BA market access, medical devices (EUR 31B), and BioNixus intelligence for European pharma companies expanding to GCC."
       canonical="https://www.bionixus.com/germany-healthcare-market-report"
       jsonLd={jsonLd}

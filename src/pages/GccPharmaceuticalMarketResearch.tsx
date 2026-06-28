@@ -1,8 +1,9 @@
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
 import {
@@ -16,11 +17,12 @@ import { ReportPremiumHero, ReportPremiumSection } from '@/components/report-pre
 const pageUrl = 'https://www.bionixus.com/gcc-pharmaceutical-market-research';
 const REPORT_CONVERSION = getStandaloneReportConfig('/gcc-pharmaceutical-market-research');
 
-/**
- * FAQs target the stuck GSC queries ranking positions 40–70:
- * "gcc drug repurposing market", "gcc generic injectables market",
- * "gcc biologics market", "saudi arabia precision medicine market".
- */
+const PAGE_TITLE = 'GCC Biologics & Generic Injectables Market 2026 | BioNixus';
+const PAGE_H1 =
+  'GCC Biologics & Generic Injectables Market Research 2026 — Precision Medicine & Drug Repurposing';
+const PAGE_DESCRIPTION =
+  'GCC biologics market ($4.8–5.4B), generic injectables ($1.6–1.9B), drug repurposing & Saudi precision medicine — pharmaceutical market research across KSA, UAE, Kuwait, Qatar, Bahrain & Oman.';
+
 const FAQ_ITEMS = [
   {
     question: 'What is the size of the GCC biologics market in 2026?',
@@ -56,63 +58,109 @@ const FAQ_ITEMS = [
 
 const FAQ_SECTION_ID = 'gcc-pharma-research-faq';
 
-const faqPageSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  url: `${pageUrl}#${FAQ_SECTION_ID}`,
-  mainEntity: FAQ_ITEMS.map((item) => ({
-    '@type': 'Question',
-    name: item.question,
-    acceptedAnswer: { '@type': 'Answer', text: item.answer },
-  })),
-};
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' },
+      { '@type': 'ListItem', position: 2, name: 'GCC Pharmaceutical Market Research', item: pageUrl },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: PAGE_H1,
+    description: PAGE_DESCRIPTION,
+    url: pageUrl,
+    datePublished: '2025-09-01',
+    dateModified: '2026-06-28',
+    author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+    publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    url: `${pageUrl}#${FAQ_SECTION_ID}`,
+    mainEntity: FAQ_ITEMS.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  },
+];
 
-const breadcrumbSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' },
-    { '@type': 'ListItem', position: 2, name: 'GCC Pharmaceutical Market Research', item: pageUrl },
-  ],
-};
+const SEGMENT_ROWS = [
+  {
+    segment: 'GCC biologics market',
+    size2026: 'USD 4.8–5.4B',
+    growth: '8–11% CAGR',
+    leadMarkets: 'Saudi Arabia, UAE',
+    drivers: 'Oncology, immunology, GLP-1 diabetes; biosimilar uptake post-SFDA/MOHAP pathways',
+  },
+  {
+    segment: 'GCC generic injectables market',
+    size2026: 'USD 1.6–1.9B',
+    growth: '6–9% CAGR',
+    leadMarkets: 'Saudi Arabia, UAE, Kuwait',
+    drivers: 'NUPCO tenders, hospital-administered volume, local manufacturing incentives',
+  },
+  {
+    segment: 'GCC drug repurposing',
+    size2026: 'Emerging (no single audited total)',
+    growth: 'Pipeline-led',
+    leadMarkets: 'Saudi Arabia, UAE',
+    drivers: 'Oncology, rare disease, metabolic; academic–industry PPP grants',
+  },
+  {
+    segment: 'Saudi Arabia precision medicine',
+    size2026: 'Fastest GCC subsegment',
+    growth: '15%+ in genomics-guided oncology',
+    leadMarkets: 'Riyadh, Jeddah academic networks',
+    drivers: 'Saudi Genome Program, SFDA companion diagnostics, Vision 2030 health pillar',
+  },
+];
 
-const articleSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: 'GCC Pharmaceutical Market Research — Biologics, Generic Injectables & Precision Medicine 2026',
-  description:
-    'GCC pharmaceutical market research with biologics, generic injectables, drug repurposing, and Saudi Arabia precision medicine intelligence for launch, access, and growth decisions.',
-  url: pageUrl,
-  datePublished: '2025-09-01',
-  dateModified: '2026-06-22',
-  author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
-  publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
-};
+const COUNTRY_BREAKDOWN = [
+  {
+    country: 'Saudi Arabia',
+    share: '~46% GCC pharma spend',
+    focus: 'NUPCO tendering, SFDA biologics/biosimilars, precision medicine at KFSH&RC and NGHA clusters',
+    link: '/healthcare-market-research/saudi-arabia',
+    linkLabel: 'Healthcare market research Saudi Arabia',
+  },
+  {
+    country: 'United Arab Emirates',
+    share: '~22% GCC pharma spend',
+    focus: 'MOHAP/DHA/DOH listing, private hospital branded uptake, Dubai–Abu Dhabi launch sequencing',
+    link: '/healthcare-market-research/uae',
+    linkLabel: 'Healthcare market research UAE',
+  },
+  {
+    country: 'Kuwait',
+    share: '~8% GCC pharma spend',
+    focus: 'MOH tender stores, hospital injectables, distributor-led retail pharmacy',
+    link: '/healthcare-market-research/kuwait',
+    linkLabel: 'Healthcare market research Kuwait',
+  },
+  {
+    country: 'Qatar, Bahrain, Oman',
+    share: '~24% combined',
+    focus: 'MOPH/NHRA/MOH registration, Hamad and NHRA mutual recognition, smaller tender calendars',
+    link: '/healthcare-market-research/qatar',
+    linkLabel: 'Healthcare market research Qatar',
+  },
+];
 
 export default function GccPharmaceuticalMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>GCC Biologics Market & Generic Injectables Research 2026 | BioNixus</title>
-        <meta
-          name="description"
-          content="GCC biologics market, generic injectables, drug repurposing & Saudi Arabia precision medicine—pharmaceutical market research across KSA, UAE, Kuwait, Qatar, Bahrain and Oman."
-        />
-        <link rel="canonical" href={pageUrl} />
-        <meta
-          property="og:title"
-          content="GCC Pharmaceutical Market Research — Biologics, Injectables & Precision Medicine 2026"
-        />
-        <meta
-          property="og:description"
-          content="Decision-ready GCC pharma research: biologics, generic injectables, drug repurposing, and Saudi Arabia precision medicine intelligence."
-        />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content={pageUrl} />
-        <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqPageSchema)}</script>
-      </Helmet>
+      <SEOHead
+        title={PAGE_TITLE}
+        description={PAGE_DESCRIPTION}
+        canonical={pageUrl}
+        jsonLd={jsonLd}
+      />
       <Navbar />
       <ReportReadingProgress progressId="report-rp-gcc-pharmaceutical-market-research" />
       <main>
@@ -128,21 +176,22 @@ export default function GccPharmaceuticalMarketResearch() {
         </div>
 
         <ReportPremiumHero
-          title="GCC Pharmaceutical Market Research — Biologics, Generic Injectables & Precision Medicine 2026"
+          title={PAGE_H1}
           description={
             <>
               <p>
                 GCC pharmaceutical market research for launch, access, and growth across Saudi Arabia, the UAE,
                 Kuwait, Qatar, Bahrain, and Oman. This page covers the four sub-segments where the regional market is
-                moving fastest in 2026: the <strong className="font-medium text-foreground">GCC biologics market</strong>
-                , the <strong className="font-medium text-foreground">GCC generic injectables market</strong>,{' '}
+                moving fastest in 2026: the{' '}
+                <strong className="font-medium text-foreground">GCC biologics market</strong>, the{' '}
+                <strong className="font-medium text-foreground">GCC generic injectables market</strong>,{' '}
                 <strong className="font-medium text-foreground">GCC drug repurposing</strong>, and the{' '}
                 <strong className="font-medium text-foreground">Saudi Arabia precision medicine market</strong>.
               </p>
               <p className="mt-4 text-sm text-muted-foreground">
                 For open-access market sizing and hospital consumption intelligence, see the{' '}
                 <Link to="/gcc-pharma-market-report-2026" className="text-primary font-medium hover:underline">
-                  GCC pharmaceutical market report 2026
+                  GCC pharma market report 2026
                 </Link>
                 . For country and therapy programmes, use the{' '}
                 <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">
@@ -162,39 +211,148 @@ export default function GccPharmaceuticalMarketResearch() {
           ]}
         />
 
+        <section className="section-padding py-10 bg-background border-b border-border/60">
+          <div className="container-wide max-w-5xl">
+            <GeoLLMAnswerBlock
+              question="What is the GCC biologics and generic injectables market size in 2026?"
+              answer="BioNixus estimates the GCC biologics market at USD 4.8–5.4 billion and the GCC generic injectables market at USD 1.6–1.9 billion in 2026. Saudi Arabia accounts for roughly 55% of biologics spend and the UAE about 20%; hospital-administered injectables are shaped by NUPCO tendering in KSA and MOHAP listing in the UAE."
+              points={[
+                {
+                  title: 'GCC biologics market',
+                  description:
+                    'Oncology, immunology, and GLP-1 diabetes biologics; biosimilar penetration accelerating after SFDA and MOHAP interchangeability guidance.',
+                },
+                {
+                  title: 'GCC generic injectables market',
+                  description:
+                    'Hospital-administered segment driven by centralized tenders — NUPCO in Saudi Arabia, MOHAP and emirate listing in the UAE.',
+                },
+                {
+                  title: 'Saudi Arabia precision medicine',
+                  description:
+                    'Saudi Genome Program and SFDA companion-diagnostic pathways driving genomics-guided oncology and rare-disease launches.',
+                },
+                {
+                  title: 'GCC drug repurposing',
+                  description:
+                    'Emerging oncology and rare-disease opportunity funded through Vision 2030 and UAE life-sciences grants.',
+                },
+              ]}
+              summary="For segment-level hospital consumption data, see the GCC pharma market report 2026 and immunology/biosimilars market reports linked below."
+            />
+          </div>
+        </section>
+
         <ReportContentWithAside
           config={REPORT_CONVERSION}
           tocItems={[
+            { href: '#segment-table', label: 'Segment sizing' },
+            { href: '#country-breakdown', label: 'Country breakdown' },
             { href: '#priority-segments', label: 'Priority segments' },
             { href: '#research-approach', label: 'Research approach' },
+            { href: '#regulatory-landscape', label: 'Regulatory landscape' },
             { href: '#related-resources', label: 'Related resources' },
             { href: `#${FAQ_SECTION_ID}`, label: 'FAQ' },
           ]}
         >
-          <ReportPremiumSection id="priority-segments" title="Priority GCC pharma segments in 2026" variant="cream">
+          <ReportPremiumSection id="segment-table" title="GCC pharmaceutical segment sizing (2026 reference)" variant="cream">
+            <p className="text-muted-foreground leading-relaxed mb-6 max-w-4xl">
+              The table below maps the four GSC query clusters —{' '}
+              <strong className="text-foreground">gcc biologics market</strong>,{' '}
+              <strong className="text-foreground">gcc generic injectables market</strong>,{' '}
+              <strong className="text-foreground">gcc drug repurposing market</strong>, and{' '}
+              <strong className="text-foreground">saudi arabia precision medicine market</strong> — to BioNixus
+              macro reference points. Use it to align launch, access, and tender-defence planning with the segments
+              that concentrate regional spend.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-border">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-muted/50 border-b border-border">
+                    <th className="text-left p-3 font-semibold text-foreground">Segment</th>
+                    <th className="text-left p-3 font-semibold text-foreground">2026 size</th>
+                    <th className="text-left p-3 font-semibold text-foreground">Growth</th>
+                    <th className="text-left p-3 font-semibold text-foreground">Lead markets</th>
+                    <th className="text-left p-3 font-semibold text-foreground hidden lg:table-cell">Key drivers</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {SEGMENT_ROWS.map((row) => (
+                    <tr key={row.segment} className="border-b border-border/60 last:border-0">
+                      <td className="p-3 font-medium text-foreground">{row.segment}</td>
+                      <td className="p-3 text-muted-foreground">{row.size2026}</td>
+                      <td className="p-3 text-muted-foreground">{row.growth}</td>
+                      <td className="p-3 text-muted-foreground">{row.leadMarkets}</td>
+                      <td className="p-3 text-muted-foreground hidden lg:table-cell">{row.drivers}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection id="country-breakdown" title="GCC country breakdown for pharmaceutical market research">
+            <p className="text-muted-foreground leading-relaxed mb-6 max-w-4xl">
+              Gulf markets share Arabic-language touchpoints and GCC coordination on several policy themes, but payer
+              logic, hospital procurement, and retail pharmacy dynamics diverge materially between Riyadh, Dubai, Doha,
+              and Manama. Effective GCC pharmaceutical market research sequences evidence by country — not as a single
+              regional average.
+            </p>
+            <div className="grid md:grid-cols-2 gap-4">
+              {COUNTRY_BREAKDOWN.map((row) => (
+                <article key={row.country} className="rounded-xl border border-border bg-card p-5">
+                  <h3 className="font-semibold text-foreground mb-1">{row.country}</h3>
+                  <p className="text-xs font-medium text-primary mb-2">{row.share}</p>
+                  <p className="text-sm text-muted-foreground mb-3">{row.focus}</p>
+                  <Link
+                    to={row.link}
+                    className="text-sm text-primary font-semibold underline underline-offset-2 hover:no-underline"
+                  >
+                    {row.linkLabel}
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection id="priority-segments" title="Priority GCC pharma segments in 2026" variant="muted">
             <div className="grid md:grid-cols-2 gap-4">
               <article className="rounded-xl border border-border bg-card p-5">
-                <h3 className="font-semibold text-foreground mb-2">GCC biologics & generic injectables market</h3>
+                <h3 className="font-semibold text-foreground mb-2">GCC biologics &amp; generic injectables market</h3>
                 <p className="text-sm text-muted-foreground">
                   Saudi Arabia and the UAE concentrate most biologics and hospital injectables spend; tracker programmes
                   follow biosimilar penetration, NUPCO tenders, and MOHAP listing. For KSA specifics, combine this hub
                   with the{' '}
                   <Link
-                    to="/biosimilar-market-entry-saudi-arabia"
+                    to="/market-reports/gcc-immunology-biologics-market-report"
                     className="text-primary font-semibold underline underline-offset-2 hover:no-underline"
                   >
-                    biosimilar market entry Saudi Arabia playbook
+                    GCC immunology and biologics market report
+                  </Link>{' '}
+                  and{' '}
+                  <Link
+                    to="/market-reports/gcc-biosimilars-market-report"
+                    className="text-primary font-semibold underline underline-offset-2 hover:no-underline"
+                  >
+                    GCC biosimilars and generic injectables report
                   </Link>
                   .
                 </p>
               </article>
               <article className="rounded-xl border border-border bg-card p-5">
                 <h3 className="font-semibold text-foreground mb-2">
-                  Saudi Arabia precision medicine & GCC drug repurposing
+                  Saudi Arabia precision medicine &amp; GCC drug repurposing
                 </h3>
                 <p className="text-sm text-muted-foreground">
                   The Saudi Genome Program and SFDA companion-diagnostic guidance are unlocking precision-medicine
-                  launches; regional drug-repurposing activity is rising in oncology and rare disease.
+                  launches; regional drug-repurposing activity is rising in oncology and rare disease. See the{' '}
+                  <Link
+                    to="/market-reports/saudi-arabia-rare-diseases-market-report"
+                    className="text-primary font-semibold underline underline-offset-2 hover:no-underline"
+                  >
+                    Saudi Arabia rare diseases and precision medicine report
+                  </Link>{' '}
+                  for orphan and biomarker-defined programmes.
                 </p>
               </article>
             </div>
@@ -226,22 +384,62 @@ export default function GccPharmaceuticalMarketResearch() {
                 those signals into account lists, messaging guardrails, and scenario planning for leadership committees
                 rather than stopping at chart decks.
               </p>
+              <p>
+                For medical device and IVD portfolios that sit alongside pharmaceutical launches, pair this page with
+                the{' '}
+                <Link to="/gcc-medical-devices-market-report" className="text-primary font-medium hover:underline">
+                  GCC medical devices market report
+                </Link>{' '}
+                — hospital procurement intelligence for SFDA- and MOHAP-registered device categories often determines
+                whether a combined pharma–device account strategy is feasible in the same institution.
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection id="regulatory-landscape" title="GCC regulatory and access landscape (2026)" variant="cream">
+            <div className="space-y-4 text-muted-foreground leading-relaxed max-w-4xl">
+              <p>
+                Saudi Arabia&apos;s SFDA remains the dominant registration gateway for innovative medicines entering the
+                Gulf. Biologics and biosimilars follow distinct MDR pathways; companion diagnostics for precision
+                medicine require explicit SFDA alignment before hospital adoption at KFSH&RC, NGHA, and major MOH
+                facilities. NUPCO centralized tendering shapes hospital-administered generic injectables — a product
+                can be SFDA-approved yet remain commercially invisible if it misses tender windows or price corridors.
+              </p>
+              <p>
+                In the UAE, MOHAP federal registration coexists with DHA (Dubai) and DOH (Abu Dhabi) emirate-specific
+                requirements. Private hospital groups in Dubai often adopt branded biologics faster than MOH facilities,
+                while Abu Dhabi&apos;s SEHA network follows distinct formulary committees. Kuwait&apos;s MOH tender stores
+                and Qatar&apos;s Hamad Medical Corporation procurement operate independently — research programmes must
+                map each authority&apos;s evidence expectations separately.
+              </p>
+              <p>
+                BioNixus fieldwork is bilingual (Arabic/English), ESOMAR-compliant, and designed for adverse-event
+                handling in HCP interviews. Outputs include stakeholder maps, adoption forecasts, pricing scenario
+                libraries, and account-level tender calendars — the operational intelligence commercial and access teams
+                need before committing launch sequencing across the six GCC markets.
+              </p>
             </div>
           </ReportPremiumSection>
 
           <ReportPremiumSection id="related-resources" title="Related BioNixus resources" variant="muted">
             <div className="flex flex-wrap gap-3">
               <Link
-                to="/bionixus-market-research-middle-east"
+                to="/gcc-pharma-market-report-2026"
                 className="rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground"
               >
-                Middle East pharmaceutical market research
+                GCC pharma market report 2026
               </Link>
               <Link
-                to="/gcc-pharma-market-report-2026"
+                to="/gcc-medical-devices-market-report"
                 className="rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted"
               >
-                GCC pharma market report 2026
+                GCC medical devices &amp; IVD report
+              </Link>
+              <Link
+                to="/bionixus-market-research-middle-east"
+                className="rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted"
+              >
+                Middle East pharmaceutical market research
               </Link>
               <Link
                 to="/healthcare-market-research/saudi-arabia"
@@ -256,10 +454,16 @@ export default function GccPharmaceuticalMarketResearch() {
                 Healthcare market research UAE
               </Link>
               <Link
-                to="/healthcare-market-research/egypt"
+                to="/pharmaceutical-companies-saudi-arabia"
                 className="rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted"
               >
-                Healthcare market research Egypt
+                Pharmaceutical companies in Saudi Arabia
+              </Link>
+              <Link
+                to="/pharmaceutical-companies-uae"
+                className="rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted"
+              >
+                Pharmaceutical companies in UAE
               </Link>
               <Link
                 to="/healthcare-market-research-agency-gcc"

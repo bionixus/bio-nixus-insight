@@ -13,6 +13,7 @@ Create these under **Performance → Search results → + New** (save as named v
 
 | View name | Filters |
 |-----------|---------|
+| `Global excl India` | All countries **except India** — primary CTR recovery measurement view |
 | `MENA money geos` | Country: **Egypt**, **Kuwait**, **UAE**, **Saudi Arabia** |
 | `MENA BOFU pages` | Page contains: `/pharmaceutical-companies-` OR `/market-research-saudi` OR `/market-research-uae` OR `/egypt-pharmaceutical` OR `/uae-pharmaceutical` |
 | `MENA country MR pages` | Page contains: `/healthcare-market-research/` OR `/market-research-uae` OR `/market-research-ksa` OR `/market-research-kuwait` OR `/market-research-egypt` OR `/market-research-qatar` OR `/market-research-oman` OR `/market-research-bahrain` |

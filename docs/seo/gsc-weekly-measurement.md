@@ -28,7 +28,19 @@ Jun 14 average position **30.8** (vs ~20–23 prior days) suggests incomplete/pr
 | Saudi Arabia | 47 | 8,639 | 0.54% |
 | United States | 33 | **55,520** | **0.06%** |
 
-Low-intent US/India impression volume inflates totals. Track **MENA money geos** (Egypt, Kuwait, UAE, KSA) separately from site-wide impressions.
+Low-intent India impression volume inflates totals. Track **`Global excl India`** (primary recovery view), **MENA money geos** (Egypt, Kuwait, UAE, KSA), and US/EU/APAC separately.
+
+**CTR recovery deploy (2026-06-28):** After deploy, request GSC re-index for:
+- `/blog/healthcare-overview-egypt-market-2026`
+- `/blog/healthcare-overview-kuwait-market-2026`
+- `/gcc-pharmaceutical-market-research`
+- `/gcc-medical-devices-market-report`
+- `/gcc-pharma-market-report-2026`
+- `/healthcare-market-research`
+- `/services/market-access`
+- `/healthcare-market-research/saudi-arabia`
+- `/healthcare-market-research/uae`
+- `/usa-healthcare-market-report`, `/uk-healthcare-market-report`, `/canada-healthcare-market-report`
 
 **MENA dashboard:** See [gsc-mena-dashboard.md](./gsc-mena-dashboard.md) for saved GSC views, 2x targets, and coverage export (2026-06-22).  
 **Biweekly iteration log:** [biweekly-iteration-log-2026-06-22.md](./biweekly-iteration-log-2026-06-22.md)  

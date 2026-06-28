@@ -84,8 +84,8 @@ const UsaHealthcareMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="USA Healthcare Market Report 2026 | FDA, CMS, PBMs & Pharmaceutical Market Intelligence | BioNixus"
-      description="USA healthcare market at USD 4.5 trillion in 2026 — world's largest. FDA approval pathways, Medicare IRA drug negotiations, PBM formulary access, USD 600B pharmaceutical market, and BioNixus GCC expansion intelligence."
+      title="USA Healthcare Market Research Report 2026 | FDA, CMS & Pharma | BioNixus"
+      description="USA healthcare market research: USD 4.5T healthcare market, FDA approval pathways, Medicare, PBMs, USD 600B pharmaceutical market — BioNixus global pharma & GCC expansion intelligence."
       canonical="https://www.bionixus.com/usa-healthcare-market-report"
       jsonLd={jsonLd}
     />

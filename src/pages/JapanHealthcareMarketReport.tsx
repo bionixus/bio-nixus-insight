@@ -84,7 +84,7 @@ const JapanHealthcareMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="Japan Healthcare Market Report 2026 | PMDA, NHI Drug Pricing & Pharmaceutical Market Intelligence | BioNixus"
+      title="Japan Healthcare Market Research Report 2026 | PMDA & NHI Pricing | BioNixus"
       description="Japan healthcare market at USD 530B in 2026 — world's third largest. PMDA Sakigake approval, NHI biannual price revision, aging population dynamics, world's third-largest pharma market, and BioNixus GCC intelligence."
       canonical="https://www.bionixus.com/japan-healthcare-market-report"
       jsonLd={jsonLd}

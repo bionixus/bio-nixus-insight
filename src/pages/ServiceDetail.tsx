@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { ServiceMarketReferenceGuide } from '@/components/seo/ServiceMarketReferenceGuide';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 
 interface ServiceData {
   title: string;
@@ -79,10 +80,12 @@ const serviceData: Record<string, ServiceData> = {
     ctaText: 'Discuss Your Qualitative Research Needs',
   },
   'market-access': {
-    title: 'Market Access & HTA Strategy',
-    metaTitle: 'Market Access Consulting | HTA Strategy EMEA — BioNixus',
-    metaDescription: 'Market access consulting for pharmaceutical companies: HTA submission support for NICE, G-BA, HAS, and Gulf health authorities. Pricing, reimbursement, and payer research across UK, EU5, and GCC.',
-    heroSubtitle: 'Evidence-based pricing, payer engagement, and HTA submission support for UK, European, and GCC markets.',
+    title: 'Market Access Consulting | HTA EMEA & GCC Pricing',
+    metaTitle: 'Market Access Consulting | HTA EMEA & GCC Pricing | BioNixus',
+    metaDescription:
+      'Market access consulting for pharma: NICE, G-BA, HAS HTA support plus GCC SFDA, MOHAP & NUPCO pricing, reimbursement, and payer research across UK, EU5, and Gulf markets.',
+    heroSubtitle:
+      'Evidence-based HTA submission support for UK and EU5 payers — plus SFDA, MOHAP, and NUPCO market access strategy for Saudi Arabia, UAE, and the wider GCC.',
     overview: 'BioNixus supports pharmaceutical companies in navigating the complex market access landscape across EMEA. Our research-driven approach combines physician insights, payer intelligence, and health economics to develop evidence-based strategies that accelerate formulary access and optimize pricing.',
     capabilities: [
       'HTA submission support for NICE (UK), G-BA/IQWiG (Germany), HAS/CEPS (France)',
@@ -242,6 +245,40 @@ const ServiceDetail = () => {
             </p>
           </div>
         </section>
+
+        {slug === 'market-access' && (
+          <section className="section-padding py-10 bg-background border-b border-border/60">
+            <div className="container-wide max-w-4xl mx-auto">
+              <GeoLLMAnswerBlock
+                question="What does market access consulting for pharmaceutical companies in the GCC involve?"
+                answer="BioNixus market access consulting combines EMEA HTA submission support (NICE, G-BA, HAS) with Gulf-specific SFDA, MOHAP, DHA, and NUPCO pricing and reimbursement strategy — payer research, formulary mapping, tender defence, and willingness-to-pay studies across UK, EU5, Saudi Arabia, UAE, and Kuwait."
+                points={[
+                  {
+                    title: 'EMEA HTA pathways',
+                    description:
+                      'NICE technology appraisals, G-BA/IQWiG AMNOG dossiers, HAS CEPS pricing — evidence gap analysis and value dossier development.',
+                  },
+                  {
+                    title: 'GCC SFDA & MOHAP access',
+                    description:
+                      'SFDA registration sequencing, NUPCO tender mapping, MOHAP/DHA/DOH listing strategy, and hospital formulary committee research.',
+                  },
+                  {
+                    title: 'Pricing & payer research',
+                    description:
+                      'Willingness-to-pay studies, budget impact models, and pricing corridor analysis for confidential negotiations.',
+                  },
+                  {
+                    title: 'Linked healthcare hub',
+                    description:
+                      'Country-level market research programmes via the healthcare market research hub and GCC pharmaceutical market reports.',
+                  },
+                ]}
+                summary="Request a market access proposal through BioNixus contact — scoped to your target EMEA and GCC markets."
+              />
+            </div>
+          </section>
+        )}
 
         {/* Overview */}
         <section className="section-padding py-12 bg-cream-dark">

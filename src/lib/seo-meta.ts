@@ -1,4 +1,5 @@
-const TITLE_MAX = 60
+/** Google SERP display band — primary keyword cluster should survive truncation. */
+const TITLE_MAX = 65
 /** Ahrefs / SERP target band for meta descriptions. */
 const DESC_MIN = 120
 const DESC_MAX = 130
@@ -51,7 +52,33 @@ function stripTags(input: string): string {
 function withEllipsis(text: string, max: number): string {
   const cleaned = String(text || '').trim()
   if (cleaned.length <= max) return cleaned
-  return `${cleaned.slice(0, Math.max(0, max - 3)).trim()}...`
+  const slice = cleaned.slice(0, Math.max(0, max - 3))
+  const lastSpace = slice.lastIndexOf(' ')
+  if (lastSpace > Math.floor(max * 0.45)) {
+    return `${slice.slice(0, lastSpace).trim()}...`
+  }
+  return `${slice.trim()}...`
+}
+
+/**
+ * Builds a GSC query-aligned title: `{primary} | {brand}` within TITLE_MAX,
+ * truncating the primary segment at a word boundary before dropping keywords.
+ */
+export function seoTitleForQuery(primary: string | undefined, brand = 'BioNixus'): string {
+  const brandSuffix = ` | ${brand}`
+  const maxPrimary = TITLE_MAX - brandSuffix.length
+  let core = dedupePipeBioNixusTail(String(primary || '').trim())
+  core = core.replace(/(\s*\|\s*BioNixus(?:\s+Case\s+Studies)?\s*)+$/i, '').trim()
+  const brandEsc = brand.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  const exactBrand = new RegExp(`\\s*\\|\\s*${brandEsc}\\s*$`, 'i')
+  while (exactBrand.test(core)) {
+    core = core.replace(exactBrand, '').trim()
+  }
+  if (!core) return normalizeSeoTitle(brand, brand)
+  if (core.length > maxPrimary) {
+    core = withEllipsis(core, maxPrimary)
+  }
+  return `${core}${brandSuffix}`
 }
 
 export function normalizeSeoTitle(title?: string, fallback = 'BioNixus'): string {

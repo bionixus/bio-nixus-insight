@@ -84,8 +84,8 @@ const UkHealthcareMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="UK Healthcare Market Report 2026 | NHS, NICE & Pharma Intelligence | BioNixus"
-      description="UK healthcare market at GBP 260B in 2026. NHS pharmaceutical spend, NICE technology appraisals, MHRA post-Brexit regulation, medical devices, and BioNixus intelligence for UK pharma companies expanding to GCC and MENA."
+      title="UK Healthcare Market Research Report 2026 | NHS, NICE & Pharma | BioNixus"
+      description="UK healthcare market research: GBP 260B NHS market, NICE technology appraisals, MHRA regulation, pharmaceutical market intelligence — BioNixus GCC and MENA expansion support."
       canonical="https://www.bionixus.com/uk-healthcare-market-report"
       jsonLd={jsonLd}
     />
