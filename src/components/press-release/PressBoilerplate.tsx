@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
+import { COMPANY_BOILERPLATE_PRESS } from '@/data/companyStory'
 
-const DEFAULT_BOILERPLATE =
-  'BioNixus is a global healthcare and pharmaceutical market research firm headquartered in the United States, with regional offices in London and Cairo and country presence across the Americas, Europe, and the Middle East. The company delivers quantitative physician research, qualitative KOL programmes, payer and HTA intelligence, and launch strategy support for commercial, medical, and market access teams worldwide.'
+const DEFAULT_BOILERPLATE = COMPANY_BOILERPLATE_PRESS
 
 type PressBoilerplateProps = {
   boilerplate?: string
