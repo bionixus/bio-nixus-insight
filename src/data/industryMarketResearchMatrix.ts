@@ -1,6 +1,6 @@
 /**
- * Country × industry market research pages (Saudi Arabia, UAE, Egypt).
- * Pharmaceutical BOFU uses separate legacy URLs — not in this matrix.
+ * Country × industry market research pages (GCC & MENA markets).
+ * Pharmaceutical BOFU uses separate legacy URLs — linked from the industry hub, not matrix paths.
  */
 
 import { BIONIXUS_MARKETING_CLAIMS } from '@/data/marketingClaims';
@@ -452,7 +452,7 @@ export function buildIndustryCountryPageConfig(
     executivePoints: getIndustryBofuExecutivePoints(industrySlug, countrySlug),
     proofBullets: [
       {
-        title: `17+ countries, ${country.label} fieldwork`,
+        title: `38 countries, ${country.label} fieldwork`,
         body: `BioNixus executes ${industry.displayNameShort.toLowerCase()} studies from regional offices with MENA-scale reach.`,
       },
       {
@@ -592,6 +592,16 @@ export function getAllPublishedMatrixPairs(): Array<{
   }
   return pairs;
 }
+
+export const MATRIX_COUNTRY_SLUGS_ORDERED: MatrixCountrySlug[] = [
+  'saudi-arabia',
+  'uae',
+  'egypt',
+  'kuwait',
+  'qatar',
+  'oman',
+  'bahrain',
+];
 
 export const MATRIX_INDUSTRY_SLUGS_ORDERED: MatrixIndustrySlug[] = [
   'medtech',
