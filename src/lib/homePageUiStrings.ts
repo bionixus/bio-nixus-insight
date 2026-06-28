@@ -3,6 +3,13 @@ import type { Language } from './i18n';
 
 export type HomePageUiOverlay = {
   heroTrust?: { trustStripPrimary: string; trustStripStats: string };
+  ctaVariants?: {
+    country: string;
+    countryFallback: string;
+    therapy: string;
+    therapyFallback: string;
+    service: string;
+  };
   services?: {
     bottomCtaPrompt: string;
     bottomCtaButton: string;
@@ -20,6 +27,13 @@ export type HomePageUiOverlay = {
 
 export const homePageUiStrings: Record<Language, HomePageUiOverlay> = {
   en: {
+    ctaVariants: {
+      country: 'Discuss your {country} pharmaceutical research strategy',
+      countryFallback: 'your country',
+      therapy: 'Explore {therapy} market research opportunities',
+      therapyFallback: 'therapy',
+      service: 'Talk with BioNixus research specialists',
+    },
     services: {
       bottomCtaPrompt:
         'Need a tailored healthcare market research scope for your pharmaceutical priorities?',
@@ -36,6 +50,13 @@ export const homePageUiStrings: Record<Language, HomePageUiOverlay> = {
     clientReviewsTeaser: { happyClientsCount: '40' },
   },
   de: {
+    ctaVariants: {
+      country: 'Besprechen Sie Ihre pharmazeutische Forschungsstrategie für {country}',
+      countryFallback: 'Ihr Zielland',
+      therapy: 'Marktforschungsmöglichkeiten in {therapy} erkunden',
+      therapyFallback: 'Therapiebereich',
+      service: 'Sprechen Sie mit BioNixus-Forschungsspezialisten',
+    },
     heroTrust: {
       trustStripPrimary: 'Vertrauenswürdig bei',
       trustStripStats: '48 globale Kunden · 127+ Projekte · 38 Länder',
@@ -57,6 +78,13 @@ export const homePageUiStrings: Record<Language, HomePageUiOverlay> = {
     clientReviewsTeaser: { happyClientsCount: '40' },
   },
   fr: {
+    ctaVariants: {
+      country: 'Discutez de votre stratégie de recherche pharmaceutique en {country}',
+      countryFallback: 'votre pays',
+      therapy: 'Explorez les opportunités d’études de marché en {therapy}',
+      therapyFallback: 'thérapie',
+      service: 'Échangez avec les spécialistes recherche BioNixus',
+    },
     heroTrust: {
       trustStripPrimary: 'Recommandé par',
       trustStripStats: '48 clients mondiaux · 127+ projets · 38 pays',
@@ -78,6 +106,13 @@ export const homePageUiStrings: Record<Language, HomePageUiOverlay> = {
     clientReviewsTeaser: { happyClientsCount: '40' },
   },
   es: {
+    ctaVariants: {
+      country: 'Analice su estrategia de investigación farmacéutica en {country}',
+      countryFallback: 'su país',
+      therapy: 'Explore oportunidades de investigación de mercado en {therapy}',
+      therapyFallback: 'terapia',
+      service: 'Hable con especialistas en investigación de BioNixus',
+    },
     heroTrust: {
       trustStripPrimary: 'Recomendado por',
       trustStripStats: '48 clientes globales · 127+ proyectos · 38 países',
@@ -99,6 +134,13 @@ export const homePageUiStrings: Record<Language, HomePageUiOverlay> = {
     clientReviewsTeaser: { happyClientsCount: '40' },
   },
   pt: {
+    ctaVariants: {
+      country: 'Discuta sua estratégia de pesquisa farmacêutica em {country}',
+      countryFallback: 'seu país',
+      therapy: 'Explore oportunidades de pesquisa de mercado em {therapy}',
+      therapyFallback: 'terapia',
+      service: 'Fale com especialistas em pesquisa da BioNixus',
+    },
     heroTrust: {
       trustStripPrimary: 'Recomendado por',
       trustStripStats: '48 clientes globais · 127+ projetos · 38 países',
@@ -120,6 +162,13 @@ export const homePageUiStrings: Record<Language, HomePageUiOverlay> = {
     clientReviewsTeaser: { happyClientsCount: '40' },
   },
   ru: {
+    ctaVariants: {
+      country: 'Обсудите фармацевтическую исследовательскую стратегию для {country}',
+      countryFallback: 'вашей страны',
+      therapy: 'Изучите возможности исследований рынка в {therapy}',
+      therapyFallback: 'терапии',
+      service: 'Поговорите со специалистами BioNixus по исследованиям',
+    },
     heroTrust: {
       trustStripPrimary: 'Нам доверяют',
       trustStripStats: '48 клиентов · 127+ проектов · 38 стран',
@@ -141,6 +190,13 @@ export const homePageUiStrings: Record<Language, HomePageUiOverlay> = {
     clientReviewsTeaser: { happyClientsCount: '40' },
   },
   zh: {
+    ctaVariants: {
+      country: '讨论您在{country}的医药研究策略',
+      countryFallback: '目标国家',
+      therapy: '探索{therapy}市场研究机会',
+      therapyFallback: '治疗领域',
+      service: '与 BioNixus 研究专家交流',
+    },
     heroTrust: {
       trustStripPrimary: '深受信赖',
       trustStripStats: '四十八家全球客户 · 一百二十七+项目 · 三十八个国家',
@@ -160,6 +216,13 @@ export const homePageUiStrings: Record<Language, HomePageUiOverlay> = {
     clientReviewsTeaser: { happyClientsCount: '四十' },
   },
   ar: {
+    ctaVariants: {
+      country: 'ناقش استراتيجية أبحاث الأدوية في {country}',
+      countryFallback: 'بلدك',
+      therapy: 'استكشف فرص أبحاث سوق {therapy}',
+      therapyFallback: 'المجال العلاجي',
+      service: 'تحدث مع متخصصي أبحاث BioNixus',
+    },
     heroTrust: {
       trustStripPrimary: 'موثوق به من',
       trustStripStats: '٤٨ عميلاً عالمياً · ١٢٧+ مشروعاً · ٣٨ دولة',

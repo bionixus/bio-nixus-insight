@@ -5,15 +5,13 @@ import Footer from '@/components/Footer';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useIndustriesInsights } from '@/hooks/useSanityBlog';
-import { getBlogPostPath, INDUSTRIES_INSIGHTS_INDEX_PATH } from '@/lib/blog-content-silo';
-import { industrySlugLabel } from '@/lib/industries-insights-filters';
 import { getLocalizedPathForLanguage, localizedContactPath } from '@/lib/seo';
 import { SEGMENTS, SEGMENT_ORDER, type SegmentSlug } from '@/data/bionixusIndustrySegments';
 import {
   BIONIXUS_INDUSTRIES_REGION_GROUPS,
-  getHealthcareHubPathForIndexCountry,
+  getIndustriesHubCountryPath,
 } from '@/data/industryHubCountries';
+import IndustriesInsightsSection from '@/pages/industries/IndustriesInsightsSection';
 import { PREMIUM_INDUSTRIES_CSS } from './premiumIndustriesCss';
 import {
   BIONIXUS_INDUSTRIES_LANGUAGE_MIRROR,
@@ -21,7 +19,6 @@ import {
 } from './bionixusIndustriesCopy';
 
 const HUB_CANONICAL = '/bionixus-industries';
-const INSIGHTS_PATH = INDUSTRIES_INSIGHTS_INDEX_PATH;
 
 /** Per-segment accent used to colour the cards and markers. */
 const SEGMENT_ACCENT: Record<SegmentSlug, string> = {
@@ -37,9 +34,6 @@ export default function BionixusIndustries() {
   const homePath = getLocalizedPathForLanguage('/', language);
   const contactPath = localizedContactPath(language);
   const marketResearchPath = getLocalizedPathForLanguage('/market-research', language);
-
-  const { data: insightPosts = [], isLoading: insightsLoading } = useIndustriesInsights();
-  const latestInsights = insightPosts.slice(0, 3);
 
   const regionGroups = useMemo(
     () =>
@@ -145,9 +139,9 @@ export default function BionixusIndustries() {
                 ))}
               </p>
               <div className="bx-hero-actions">
-                <Link to={INSIGHTS_PATH} className="bx-btn-gold">
+                <a href="#insights" className="bx-btn-gold">
                   {copy.ctaInsights}
-                </Link>
+                </a>
                 <Link
                   to={getLocalizedPathForLanguage('/market-research-by-industry', language)}
                   className="bx-btn-ghost"
@@ -315,66 +309,7 @@ export default function BionixusIndustries() {
           </div>
         </section>
 
-        <section className="bx-section bx-insights-portal" aria-labelledby="bx-insights-portal-heading">
-          <div className="bx-inner">
-            <div className="bx-insights-portal-grid">
-              <div className="bx-insights-portal-copy">
-                <div className="bx-eyebrow gold">
-                  <span className="bx-line" /> {copy.insightsEyebrow}
-                </div>
-                <h2 id="bx-insights-portal-heading" className="bx-h2">
-                  {copy.insightsH2Before}<em>{copy.insightsH2Em}</em>
-                </h2>
-                <p className="bx-lead">{copy.insightsLead}</p>
-                <div className="bx-cta-actions mt-8">
-                  <Link to={INSIGHTS_PATH} className="bx-btn-gold">
-                    {copy.insightsCtaOpen}
-                  </Link>
-                  <Link to={contactPath} className="bx-btn-ghost dark">
-                    {copy.insightsCtaProposal}
-                  </Link>
-                </div>
-              </div>
-              <div className="bx-insights-portal-panel">
-                <div className="bx-insights-portal-panel-head">
-                  <h3>{copy.insightsPanelHead}</h3>
-                  {!insightsLoading && insightPosts.length > 0 ? (
-                    <span className="bx-insights-count">
-                      {insightPosts.length} {copy.insightsPublishedSuffix}
-                    </span>
-                  ) : null}
-                </div>
-                {insightsLoading ? (
-                  <ul className="bx-insights-teaser-list" aria-busy="true">
-                    {[0, 1, 2].map((i) => (
-                      <li key={i} className="bx-insights-teaser-skeleton" />
-                    ))}
-                  </ul>
-                ) : latestInsights.length > 0 ? (
-                  <ul className="bx-insights-teaser-list">
-                    {latestInsights.map((post) => (
-                      <li key={post.id}>
-                        <Link to={getBlogPostPath(post)} className="bx-insights-teaser-card">
-                          <span className="bx-insights-teaser-meta">
-                            {post.industrySlug ? industrySlugLabel(post.industrySlug) : post.category}
-                            {post.country ? ` · ${post.country}` : ''}
-                          </span>
-                          <span className="bx-insights-teaser-title">{post.title}</span>
-                          <span className="bx-insights-teaser-arrow" aria-hidden="true">→</span>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p className="bx-insights-empty">{copy.insightsEmpty}</p>
-                )}
-                <Link to={INSIGHTS_PATH} className="bx-insights-portal-foot">
-                  {copy.insightsBrowseAll}
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+        <IndustriesInsightsSection />
 
         <section className="bx-section dark">
           <div className="bx-dark-bg" aria-hidden="true" />
@@ -414,7 +349,7 @@ export default function BionixusIndustries() {
                     {group.countries.map((country) => (
                       <Link
                         key={country.slug}
-                        to={getHealthcareHubPathForIndexCountry(country)}
+                        to={getIndustriesHubCountryPath(country, 'b2b')}
                         className="bx-chip"
                       >
                         {country.label}

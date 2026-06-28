@@ -4,8 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { SEGMENTS } from '@/data/bionixusIndustrySegments';
 import { INDUSTRIES_INSIGHTS_SECTION_PATH } from '@/lib/blog-content-silo';
-
-const HUB_PATH = '/bionixus-industries';
+import { getLocalizedPathForLanguage } from '@/lib/seo';
 
 const SEGMENT_ICONS = {
   'pharma-healthcare': HeartPulse,
@@ -14,10 +13,11 @@ const SEGMENT_ICONS = {
 } as const;
 
 const IndustriesGatewaySection = () => {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
   const sectionRef = useScrollReveal<HTMLElement>({ stagger: 90 });
   const copy = t.homePage.industriesGateway;
   const segments = t.homePage.industrySegments;
+  const hubPath = getLocalizedPathForLanguage('/bionixus-industries', language);
 
   const segmentCopy = {
     'pharma-healthcare': segments.pharma,
@@ -84,7 +84,7 @@ const IndustriesGatewaySection = () => {
 
         <div className="text-center sr sr-up">
           <Link
-            to={HUB_PATH}
+            to={hubPath}
             className="inline-flex items-center gap-2 text-primary font-semibold hover:underline cursor-pointer"
           >
             {copy.exploreAll}

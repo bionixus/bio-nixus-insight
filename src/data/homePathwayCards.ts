@@ -1,6 +1,7 @@
 import type { Language } from '@/lib/i18n';
 import type { HomePathwayCardCopy } from '@/lib/homePageHardcoded';
 import type { PathwayCard } from '@/components/home/HomePathwaysSection';
+import { getLocalizedPathForLanguage, languagePaths } from '@/lib/seo';
 
 const PATHWAY_ROUTES: {
   to: string;
@@ -27,11 +28,20 @@ const ARABIC_BONUS_CARD: PathwayCard = {
   decisionHint: 'مقالات وروابط ذات صلة',
 };
 
+function localizeHomePathwayRoute(enPath: string, language: Language): string {
+  const localized = getLocalizedPathForLanguage(enPath, language);
+  if (localized !== enPath) return localized;
+  if (language === 'en') return enPath;
+  const prefix = languagePaths[language];
+  if (!prefix || prefix === '/') return enPath;
+  return `${prefix}${enPath}`;
+}
+
 export function buildHomePathwayCards(language: Language, cards: HomePathwayCardCopy[]): PathwayCard[] {
   const built = PATHWAY_ROUTES.map((route, i) => {
     const copy = cards[i];
     return {
-      to: route.to,
+      to: localizeHomePathwayRoute(route.to, language),
       title: copy.title,
       description: copy.description,
       highlight: route.highlight,

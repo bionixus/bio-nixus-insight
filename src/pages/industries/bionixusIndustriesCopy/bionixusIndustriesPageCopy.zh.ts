@@ -15,13 +15,13 @@ export const bionixusIndustriesPageCopyZh: BionixusIndustriesPageCopy = {
   heroSub1AfterStrong:
     '，并在此持续领先。同一抽样规范与资深主导分析现运行于三个互联板块——医药与健康、B2B 与 B2C——服务北美、LATAM、欧洲、GCC 与 APAC 客户。',
   heroSub2:
-    '网站构建为两个互联 silo：受监管的医疗健康 silo 与非医疗健康行业 silo。本中心页是二者之间的桥梁。',
+    '网站构建为两个互联专区：受监管的医疗健康专区与非医疗健康行业专区。本中心页是二者之间的桥梁。',
   ctaInsights: '行业洞察门户 →',
   ctaIndustriesIndex: '浏览行业索引',
   cardHead: '覆盖概览',
   cardLive: '实时',
-  chartNonHealthcare: '非医疗健康 silo',
-  chartHealthcare: '医疗健康 silo',
+  chartNonHealthcare: '非医疗健康专区',
+  chartHealthcare: '医疗健康专区',
   cardFoot: '自 2012 年起 · 127+ 项目 · 48 位客户 · 38 国',
   regionRibbon: [
     '北美',
@@ -62,7 +62,7 @@ export const bionixusIndustriesPageCopyZh: BionixusIndustriesPageCopy = {
       label: 'B2C 行业',
       tagline: '消费需求、品牌与购物者旅程。',
       intro:
-        'Consumer 市场在大规模上由感知、习惯与价格敏感度驱动。BioNixus 衡量选择驱动因素——覆盖 FMCG、零售、金融服务、电信、汽车、酒店与媒体——样本代表真实人口，而非开放互联网 opt-in 池。',
+        '消费市场在大规模上由感知、习惯与价格敏感度驱动。BioNixus 衡量选择驱动因素——覆盖 FMCG、零售、金融服务、电信、汽车、酒店与媒体——样本代表真实人口，而非开放互联网 opt-in 池。',
       enterCta: '进入 B2C 行业 →',
     },
   },
@@ -70,25 +70,25 @@ export const bionixusIndustriesPageCopyZh: BionixusIndustriesPageCopy = {
   insightsH2Before: '行业洞察',
   insightsH2Em: '门户',
   insightsLead:
-    '面向非医疗健康采购方的 fieldwork 驱动文章——按行业垂直与国家筛选。医药与健康研究保留于专属博客。',
+    '面向非医疗健康采购方的现场研究驱动文章——按行业垂直与国家筛选。医药与健康研究保留于专属博客。',
   insightsCtaOpen: '打开洞察门户 →',
   insightsCtaProposal: '索取方案',
   insightsPanelHead: '最新行业文章',
   insightsPublishedSuffix: '已发布',
-  insightsEmpty: '文章即将发布——在此期间可浏览 country × industry 服务页。',
+  insightsEmpty: '文章即将发布——在此期间可浏览国家 × 行业服务页。',
   insightsBrowseAll: '浏览全部行业洞察 →',
   narrativeEyebrow: '全球区域覆盖',
   narrativeH2Before: '北美、LATAM、欧洲、MENA 与 APAC——在',
   narrativeH2Em: '统一证据框架下',
   narrativeP1:
-    'BioNixus 美国总部位于 Wyoming 州 Sheridan，研究运营分布于伦敦与开罗。该结构使我们以与 MENA fieldwork 相同的标准执行 American、European、LATAM 与 APAC 项目——并在单一证据框架内跨所有区域对标 launch 或 brand。',
+    'BioNixus 美国总部位于 Wyoming 州 Sheridan，研究运营分布于伦敦与开罗。该结构使我们以与 MENA 现场研究相同的标准执行美国、欧洲、LATAM 与 APAC 项目——并在单一证据框架内跨所有区域对标上市或品牌。',
   narrativeP2Part1: '在',
   narrativeLatamLabel: '拉丁美洲',
   narrativeP2Part2:
-    '，葡萄牙语与西班牙语 field teams 支持 ANVISA-aware pharma、医院 procurement 与 consumer 项目，覆盖巴西及 harmonised multi-country LATAM readouts。在',
+    '，葡萄牙语与西班牙语现场团队支持 ANVISA 合规医药、医院采购与消费者项目，覆盖巴西及协调一致的多国 LATAM 汇总。在',
   narrativeApacLabel: '亚太',
   narrativeP2Part3:
-    '，local moderators 与 hospital networks 执行 PMDA、NMPA 与 CDSCO-aware designs，覆盖日本、中国、印度、韩国、新加坡与澳大利亚——同一 governance 亦应用于我们的',
+    '，本地主持人与医院网络执行 PMDA、NMPA 与 CDSCO 合规设计，覆盖日本、中国、印度、韩国、新加坡与澳大利亚——同一治理规范亦应用于我们的',
   narrativeB2bLink: 'B2B 行业',
   narrativeP2Part4: '与',
   narrativeB2cLink: 'B2C 行业',
@@ -99,32 +99,32 @@ export const bionixusIndustriesPageCopyZh: BionixusIndustriesPageCopy = {
     {
       region: '北美',
       description:
-        'Wyoming 美国全球总部加加拿大——FDA-aware pharma、medtech 与 cross-industry 项目，harmonised North American readouts。',
+        'Wyoming 美国全球总部加加拿大——FDA 合规医药、medtech 与跨行业项目，协调一致的北美汇总。',
     },
     {
       region: '拉丁美洲（LATAM）',
       description:
-        '巴西、墨西哥、哥伦比亚与 Andean markets 的葡萄牙语与西班牙语 field teams——ANVISA-aware pharma、医院 procurement 与 consumer research，bilingual moderation。',
+        '巴西、墨西哥、哥伦比亚与安第斯市场的葡萄牙语与西班牙语现场团队——ANVISA 合规医药、医院采购与消费者研究，双语主持。',
     },
     {
       region: '欧洲',
       description:
-        'London regional office 与 coordinated EU5+ fieldwork——HTA-aware pharmaceutical research 与 B2B/B2C industry programmes。',
+        '伦敦区域办公室与协调 EU5+ 现场研究——HTA 合规医药研究与 B2B/B2C 行业项目。',
     },
     {
       region: 'MENA 与 GCC',
       description:
-        '深厚 GCC heritage，country offices，regulator-aware pharmaceutical research，以及最完整的 sixteen-industry matrix 覆盖。',
+        '深厚 GCC 根基，各国办公室，监管机构合规医药研究，以及最完整的 16 行业矩阵覆盖。',
     },
     {
       region: '非洲',
       description:
-        'Cairo regional hub 与 pan-African field partners——North Africa 以外的 hospital、payer 与 consumer research。',
+        '开罗区域中心与泛非现场合作伙伴——北非以外的医院、支付方与消费者研究。',
     },
     {
       region: '亚太（APAC）',
       description:
-        'APAC pharmaceutical 与 industry research——local moderators、hospital networks 与 payer-aware mixed-method designs。',
+        '亚太医药与行业研究——本地主持人、医院网络与支付方合规 mixed-method 设计。',
     },
   ],
   nextEyebrow: '下一步',
@@ -134,27 +134,27 @@ export const bionixusIndustriesPageCopyZh: BionixusIndustriesPageCopy = {
     {
       path: '/bionixus-industries/insights',
       label: '行业洞察 — B2B 与 B2C',
-      description: 'FMCG、科技、零售与 MENA enterprise research 文章。',
+      description: 'FMCG、科技、零售与 MENA 企业研究文章。',
     },
     {
       path: '/market-research-by-industry',
       label: '行业索引 — GCC 与 MENA（7 个市场）',
-      description: '所有已发布 country-by-industry 页面汇总。',
+      description: '所有已发布的国家 × 行业页面汇总。',
     },
     {
       path: '/healthcare-market-research',
       label: '医疗健康市场研究中心',
-      description: 'country-by-country pharma 与 healthcare silo。',
+      description: '逐国医药与健康专区。',
     },
     {
       path: '/market-research',
       label: '市场研究服务概览',
-      description: 'Quantitative、qualitative 与 mixed-method 能力。',
+      description: '定量、定性与 mixed-method 能力。',
     },
     {
       path: '/bionixus-market-research-middle-east',
       label: '中东市场研究支柱页',
-      description: '我们如何在 MENA 开展与 govern research。',
+      description: '我们如何在 MENA 开展与治理研究。',
     },
     {
       path: '/about',
@@ -169,22 +169,22 @@ export const bionixusIndustriesPageCopyZh: BionixusIndustriesPageCopy = {
     {
       question: 'BioNixus 覆盖哪些行业？',
       answer:
-        'BioNixus 将工作组织为三个板块：pharma & healthcare（pharma、MedTech、hospitals、biotech 与 consumer health）、B2B（technology、energy、real estate、public sector 与 education）与 B2C（FMCG、retail、automotive、hospitality、media、telecom 与 financial services）。',
+        'BioNixus 将工作组织为三个板块：医药与健康（pharma、MedTech、医院、biotech 与 consumer health）、B2B（科技、能源、房地产、公共部门与教育）与 B2C（FMCG、零售、汽车、酒店、媒体、电信与金融服务）。',
     },
     {
-      question: 'BioNixus 是否只做 healthcare market research？',
+      question: 'BioNixus 是否只做医疗健康市场研究？',
       answer:
-        '否。Healthcare 与 pharmaceutical research 是 BioNixus 2012 年在伦敦创立并持续领先的领域，但同一抽样规范与资深主导分析现已通过 B2B industries 与 B2C industries 板块延伸至 B2B 与 B2C 品类。',
+        '否。医药与健康研究是 BioNixus 2012 年在伦敦创立并持续领先的领域，但同一抽样规范与资深主导分析现已通过 B2B 与 B2C 行业板块延伸至 B2B 与 B2C 品类。',
     },
     {
       question: 'BioNixus 总部在哪里？覆盖哪些区域？',
       answer:
-        'BioNixus 2012 年创立于伦敦，美国总部位于 Sheridan, Wyoming，MENA 项目由大开罗区域办公室执行。该 footprint 在统一 evidence framework 下支持北美、LATAM、欧洲、GCC、Africa 与 APAC 项目——MENA 提供 bilingual Arabic–English fieldwork，Latin America 提供 Portuguese 与 Spanish moderation。',
+        'BioNixus 2012 年创立于伦敦，美国总部位于 Sheridan, Wyoming，MENA 项目由大开罗区域办公室执行。该布局在统一证据框架下支持北美、LATAM、欧洲、GCC、非洲与 APAC 项目——MENA 提供阿英双语现场研究，拉丁美洲提供葡萄牙语与西班牙语主持。',
     },
     {
       question: '三个行业板块如何关联？',
       answer:
-        '本中心页是二者之间的 deliberate 桥梁。Pharma & healthcare silo 连接深度 country 与 therapy coverage，B2B 与 B2C 板块将同一标准应用于 non-healthcare 品类。使用上方 segment cards 进入所需板块。',
+        '本中心页是二者之间的刻意桥梁。医药与健康专区连接深度国家与治疗覆盖，B2B 与 B2C 板块将同一标准应用于非医疗健康品类。使用上方板块卡片进入所需部分。',
     },
   ],
   finalCtaH2: '与 BioNixus 规划您的下一项研究',
