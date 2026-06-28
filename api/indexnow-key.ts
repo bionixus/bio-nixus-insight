@@ -63,7 +63,6 @@ const REDIRECTS: Record<string, string> = {
   '/fr/contact': '/fr/contacts',
   '/ar/contact': '/ar/contacts',
   '/adobe-experience-cloud': '/services',
-  '/ar/about': '/about',
   '/ar/healthcare-market-research-saudi-arabia-ksa': '/healthcare-market-research/saudi-arabia',
   '/ar/services': '/services',
   '/ar/sustainability-saudi-arabia-ksa': '/healthcare-market-research/saudi-arabia',
@@ -76,11 +75,9 @@ const REDIRECTS: Record<string, string> = {
   '/contact-details-bionixus': '/contact',
   '/customer-experience': '/services/competitive-intelligence',
   '/cx-ai-services': '/services/competitive-intelligence',
-  '/de/about': '/about',
   '/de/contacts': '/de/contact',
   '/de/services': '/services',
   '/digital-transformation': '/services',
-  '/fr/about': '/about',
   '/fr/services': '/services',
   '/fr/quantitative-research': '/services/quantitative-research',
   '/fr/qualitative-research': '/services/qualitative-research',
@@ -125,6 +122,8 @@ function inferHtmlLang(pathname: string): { lang: string; dir: 'ltr' | 'rtl' } {
   if (pathname === '/fr' || pathname.startsWith('/fr/')) return { lang: 'fr', dir: 'ltr' };
   if (pathname === '/es' || pathname.startsWith('/es/')) return { lang: 'es', dir: 'ltr' };
   if (pathname === '/ar' || pathname.startsWith('/ar/')) return { lang: 'ar', dir: 'rtl' };
+  if (pathname === '/pt' || pathname.startsWith('/pt/')) return { lang: 'pt', dir: 'ltr' };
+  if (pathname === '/ru' || pathname.startsWith('/ru/')) return { lang: 'ru', dir: 'ltr' };
   if (pathname === '/zh' || pathname.startsWith('/zh/')) return { lang: 'zh-CN', dir: 'ltr' };
   return { lang: 'en', dir: 'ltr' };
 }
