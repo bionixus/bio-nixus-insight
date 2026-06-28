@@ -25,7 +25,12 @@ export const aboutPageCopyDe: AboutPageCopy = {
     { value: '16', label: 'Branchenvertikalen' },
     { value: '14+', label: 'Therapiegebiete' },
   ],
-  compliance: ['EMA-konform', 'DSGVO-konform', 'FDA-konform', 'MOHAP-konform', 'GCP-Standards'],
+  compliance: [
+    'MHRA- und EMA-Regulierungskonformität',
+    'NHS Research Ethics Committee (REC) Standards',
+    'DSGVO-konforme Datenerhebungsprotokolle',
+    'ICH-GCP-Richtlinien für klinische Forschung',
+  ],
   storyH2: 'Unsere Geschichte',
   storyTagline:
     'Eine Überzeugung. Drei Kontinente. Ein Platz unter den weltweit führenden Marktforschungsunternehmen.',

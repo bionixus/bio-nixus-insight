@@ -25,7 +25,12 @@ export const aboutPageCopyFr: AboutPageCopy = {
     { value: '16', label: 'Verticales sectorielles' },
     { value: '14+', label: 'Aires thérapeutiques' },
   ],
-  compliance: ['Aligné EMA', 'Conforme RGPD', 'Conforme FDA', 'Conforme MOHAP', 'Normes GCP'],
+  compliance: [
+    'Conformité réglementaire MHRA et EMA',
+    'Normes NHS Research Ethics Committee (REC)',
+    'Protocoles de collecte de données conformes au RGPD',
+    'Lignes directrices ICH-GCP pour la recherche clinique',
+  ],
   storyH2: 'Notre histoire',
   storyTagline: 'Une conviction. Trois continents. Une place parmi les cabinets de recherche marché mondiaux de premier plan.',
   storyAct1H3: 'Londres, 2012 — le point de départ',

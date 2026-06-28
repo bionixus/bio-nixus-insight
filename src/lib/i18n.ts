@@ -44,7 +44,12 @@ export const translations = {
       ctaSecondary: 'View Case Studies',
       trustBar: 'Decision-ready evidence for pharmaceutical, biotech, and medtech teams since 2012, across',
       trustCountries: 'MENA, Latin America, Eastern Europe, the UK, and the wider EMEA region.',
-      complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'FDA Compliant', 'ICH-GCP'],
+      complianceBadges: [
+        'MHRA and EMA regulatory compliance',
+        'NHS Research Ethics Committee (REC) standards',
+        'GDPR-compliant data collection protocols',
+        'ICH-GCP guidelines for clinical research',
+      ],
     },
     services: {
       title: 'Pharmaceutical and healthcare market research services',
@@ -414,11 +419,10 @@ export const translations = {
       trustBar: 'Entscheidungsreife Evidenz für pharmazeutische, Biotechnologie- und Medizintechnik-Teams seit 2012, in',
       trustCountries: 'MENA, Lateinamerika, Osteuropa, UK und der weiteren EMEA-Region.',
       complianceBadges: [
-        'MHRA-konform',
-        'EMA-ausgerichtet',
-        'DSGVO-konform',
-        'FDA-konform',
-        'ICH-GCP',
+        'MHRA- und EMA-Regulierungskonformität',
+        'NHS Research Ethics Committee (REC) Standards',
+        'DSGVO-konforme Datenerhebungsprotokolle',
+        'ICH-GCP-Richtlinien für klinische Forschung',
       ],
     },
     services: {
@@ -790,7 +794,12 @@ export const translations = {
       ctaSecondary: 'Voir les études de cas BioNixus',
       trustBar: 'Partenaire de confiance des laboratoires pharmaceutiques en',
       trustCountries: 'UK • Allemagne • France • Espagne • Italie • EAU • Arabie Saoudite • Égypte • Koweït • Qatar',
-      complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'FDA Compliant', 'ICH-GCP'],
+      complianceBadges: [
+        'Conformité réglementaire MHRA et EMA',
+        'Normes NHS Research Ethics Committee (REC)',
+        'Protocoles de collecte de données conformes au RGPD',
+        'Lignes directrices ICH-GCP pour la recherche clinique',
+      ],
     },
     services: {
       title: 'Études de Marché Santé Complètes pour les Entreprises Pharmaceutiques UK & Européennes',
@@ -1058,7 +1067,12 @@ export const translations = {
       ctaSecondary: 'Ver estudios de caso BioNixus',
       trustBar: 'Socio de confianza de laboratorios farmacéuticos en',
       trustCountries: 'UK • Alemania • Francia • España • Italia • EAU • Arabia Saudí • Egipto • Kuwait • Qatar',
-      complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'FDA Compliant', 'ICH-GCP'],
+      complianceBadges: [
+        'Cumplimiento normativo MHRA y EMA',
+        'Estándares NHS Research Ethics Committee (REC)',
+        'Protocolos de recopilación de datos conforme al RGPD',
+        'Directrices ICH-GCP para investigación clínica',
+      ],
     },
     services: {
       title: 'Servicios Integrales de Investigación de Mercado Sanitario para Empresas Farmacéuticas UK y Europeas',
@@ -1325,7 +1339,12 @@ export const translations = {
       ctaSecondary: '查看 BioNixus 案例研究',
       trustBar: '受以下国家制药企业信赖',
       trustCountries: '英国•德国•法国•西班牙•意大利•阿联酋•沙特•埃及•科威特•卡塔尔',
-      complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'FDA Compliant', 'ICH-GCP'],
+      complianceBadges: [
+        'MHRA和EMA监管合规',
+        'NHS研究伦理委员会（REC）标准',
+        '符合GDPR的数据采集协议',
+        'ICH-GCP临床研究指南',
+      ],
     },
     services: {
       title: '英国及欧洲制药企业综合医疗市场研究服务',
@@ -1587,7 +1606,12 @@ export const translations = {
       ctaSecondary: 'عرض دراسات الحالة BioNixus',
       trustBar: 'موثوق به من قبل شركات الأدوية في',
       trustCountries: 'السعودية • الإمارات • الكويت • قطر • مصر • المغرب • الجزائر • تونس',
-      complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'FDA Compliant', 'ICH-GCP'],
+      complianceBadges: [
+        'الامتثال التنظيمي لـ MHRA و EMA',
+        'معايير لجنة أخلاقيات البحث في NHS (REC)',
+        'بروتوكولات جمع البيانات المتوافقة مع GDPR',
+        'إرشادات ICH-GCP للبحث السريري',
+      ],
     },
     services: {
       title: 'خبرتنا',
@@ -1960,7 +1984,12 @@ export const translations = {
       ctaSecondary: 'Ver Casos de Estudo da BioNixus',
       trustBar: 'Evidências prontas para decisão para equipes farmacêuticas, biotech e medtech, em',
       trustCountries: 'Brasil • América Latina • Europa • Reino Unido • MENA',
-      complianceBadges: ['Conformidade ANVISA', 'LGPD', 'EMA Aligned', 'GDPR Compliant', 'ICH-GCP'],
+      complianceBadges: [
+        'Conformidade regulamentar MHRA e EMA',
+        'Normas NHS Research Ethics Committee (REC)',
+        'Protocolos de recolha de dados em conformidade com o RGPD',
+        'Diretrizes ICH-GCP para investigação clínica',
+      ],
     },
     services: {
       title: 'Serviços de Pesquisa de Mercado',
@@ -2137,7 +2166,12 @@ export const translations = {
       ctaSecondary: 'Просмотреть кейсы',
       trustBar: 'Доказательная база для фармацевтических, биотехнологических и медицинских команд с 2012 года',
       trustCountries: 'Россия, Восточная Европа, MENA, GCC и Великобритания.',
-      complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'FDA Compliant', 'ICH-GCP'],
+      complianceBadges: [
+        'Соответствие нормативным требованиям MHRA и EMA',
+        'Стандарты NHS Research Ethics Committee (REC)',
+        'Протоколы сбора данных в соответствии с GDPR',
+        'Руководство ICH-GCP для клинических исследований',
+      ],
     },
     services: {
       title: 'Услуги маркетинговых исследований в фармацевтике и здравоохранении',

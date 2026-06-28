@@ -8,7 +8,12 @@ const METRICS = [
   { value: '14+', label: 'Therapeutic areas' },
 ] as const;
 
-const COMPLIANCE = ['EMA Aligned', 'GDPR Compliant', 'FDA Compliant', 'MOHAP Compliant', 'GCP Standards'] as const;
+const COMPLIANCE = [
+  'MHRA and EMA regulatory compliance',
+  'NHS Research Ethics Committee (REC) standards',
+  'GDPR-compliant data collection protocols',
+  'ICH-GCP guidelines for clinical research',
+] as const;
 
 export const aboutPageCopyEn: AboutPageCopy = {
   seoTitle: 'About BioNixus | Global Market Research Built on Regulated Pharma',

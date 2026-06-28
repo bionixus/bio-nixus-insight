@@ -25,7 +25,12 @@ export const aboutPageCopyPt: AboutPageCopy = {
     { value: '16', label: 'Verticais setoriais' },
     { value: '14+', label: 'Áreas terapêuticas' },
   ],
-  compliance: ['Alinhado EMA', 'Conforme RGPD', 'Conforme FDA', 'Conforme MOHAP', 'Padrões GCP'],
+  compliance: [
+    'Conformidade regulamentar MHRA e EMA',
+    'Normas NHS Research Ethics Committee (REC)',
+    'Protocolos de recolha de dados em conformidade com o RGPD',
+    'Diretrizes ICH-GCP para investigação clínica',
+  ],
   storyH2: 'A nossa história',
   storyTagline: 'Uma convicção. Três continentes. Um lugar entre as principais empresas globais de pesquisa de mercado.',
   storyAct1H3: 'Londres, 2012 — onde começámos',

@@ -9,7 +9,7 @@ export type HomePathwayCardCopy = {
 };
 
 export type HomePageHardcodedCopy = {
-  compliance: { badges: [string, string, string, string, string] };
+  compliance: { badges: [string, string, string, string] };
   heroDashboard: {
     heading: string;
     status: string;
@@ -85,11 +85,10 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
   en: {
     compliance: {
       badges: [
-        "EMA Aligned",
-        "GDPR Compliant",
-        "FDA Compliant",
-        "MOHAP Compliant",
-        "GCP Standards"
+        "MHRA and EMA regulatory compliance",
+        "NHS Research Ethics Committee (REC) standards",
+        "GDPR-compliant data collection protocols",
+        "ICH-GCP guidelines for clinical research"
       ]
     },
     heroDashboard: {
@@ -275,11 +274,10 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
   de: {
     compliance: {
       badges: [
-        "Ausgerichtet an der Europäischen Arzneimittel-Agentur",
-        "Konform mit der Datenschutz-Grundverordnung",
-        "Konform mit der saudi-arabischen Lebensmittel- und Arzneimittelbehörde",
-        "Konform mit dem Gesundheitsministerium der Vereinigten Arabischen Emirate",
-        "Standards Guter Klinischer Praxis"
+        "MHRA- und EMA-Regulierungskonformität",
+        "NHS Research Ethics Committee (REC) Standards",
+        "DSGVO-konforme Datenerhebungsprotokolle",
+        "ICH-GCP-Richtlinien für klinische Forschung"
       ]
     },
     heroDashboard: {
@@ -465,11 +463,10 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
   fr: {
     compliance: {
       badges: [
-        "Aligné sur l’Agence européenne des médicaments",
-        "Conforme au Règlement général sur la protection des données",
-        "Conforme à l’Autorité saoudienne des aliments et des médicaments",
-        "Conforme au ministère de la Santé des Émirats arabes unis",
-        "Normes de Bonnes Pratiques Cliniques"
+        "Conformité réglementaire MHRA et EMA",
+        "Normes NHS Research Ethics Committee (REC)",
+        "Protocoles de collecte de données conformes au RGPD",
+        "Lignes directrices ICH-GCP pour la recherche clinique"
       ]
     },
     heroDashboard: {
@@ -655,11 +652,10 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
   es: {
     compliance: {
       badges: [
-        "Alineado con la Agencia Europea de Medicamentos",
-        "Conforme al Reglamento General de Protección de Datos",
-        "Conforme con la Autoridad Saudí de Alimentos y Medicamentos",
-        "Conforme con el Ministerio de Salud de los Emiratos Árabes Unidos",
-        "Estándares de Buenas Prácticas Clínicas"
+        "Cumplimiento normativo MHRA y EMA",
+        "Estándares NHS Research Ethics Committee (REC)",
+        "Protocolos de recopilación de datos conforme al RGPD",
+        "Directrices ICH-GCP para investigación clínica"
       ]
     },
     heroDashboard: {
@@ -845,11 +841,10 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
   pt: {
     compliance: {
       badges: [
-        "Alinhado à Agência Europeia de Medicamentos",
-        "Em conformidade com o Regulamento Geral de Proteção de Dados",
-        "Em conformidade com a Autoridade Saudita de Alimentos e Medicamentos",
-        "Em conformidade com o Ministério da Saúde dos Emirados Árabes Unidos",
-        "Padrões de Boas Práticas Clínicas"
+        "Conformidade regulamentar MHRA e EMA",
+        "Normas NHS Research Ethics Committee (REC)",
+        "Protocolos de recolha de dados em conformidade com o RGPD",
+        "Diretrizes ICH-GCP para investigação clínica"
       ]
     },
     heroDashboard: {
@@ -1035,11 +1030,10 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
   ru: {
     compliance: {
       badges: [
-        "Соответствие Европейскому агентству лекарственных средств",
-        "Соответствие Общему регламенту по защите данных",
-        "Соответствие Управлению по контролю за продуктами и лекарствами Саудовской Аравии",
-        "Соответствие Министерству здравоохранения Объединённых Арабских Эмиратов",
-        "Стандарты Надлежащей клинической практики"
+        "Соответствие нормативным требованиям MHRA и EMA",
+        "Стандарты NHS Research Ethics Committee (REC)",
+        "Протоколы сбора данных в соответствии с GDPR",
+        "Руководство ICH-GCP для клинических исследований"
       ]
     },
     heroDashboard: {
@@ -1225,11 +1219,10 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
   zh: {
     compliance: {
       badges: [
-        "符合欧洲药品管理局要求",
-        "符合《通用数据保护条例》",
-        "符合沙特阿拉伯食品药品管理局要求",
-        "符合阿联酋卫生部要求",
-        "良好临床规范标准"
+        "MHRA和EMA监管合规",
+        "NHS研究伦理委员会（REC）标准",
+        "符合GDPR的数据采集协议",
+        "ICH-GCP临床研究指南"
       ]
     },
     heroDashboard: {
@@ -1415,11 +1408,10 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
   ar: {
     compliance: {
       badges: [
-        "متوافق مع الوكالة الأوروبية للأدوية",
-        "متوافق مع اللائحة العامة لحماية البيانات",
-        "متوافق مع الهيئة العامة للغذاء والدواء في السعودية",
-        "متوافق مع وزارة الصحة ووقاية المجتمع في الإمارات",
-        "معايير ممارسات التصنيع السريري الجيدة"
+        "الامتثال التنظيمي لـ MHRA و EMA",
+        "معايير لجنة أخلاقيات البحث في NHS (REC)",
+        "بروتوكولات جمع البيانات المتوافقة مع GDPR",
+        "إرشادات ICH-GCP للبحث السريري"
       ]
     },
     heroDashboard: {

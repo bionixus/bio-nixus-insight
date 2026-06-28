@@ -25,7 +25,12 @@ export const aboutPageCopyZh: AboutPageCopy = {
     { value: '16', label: '行业垂直' },
     { value: '14+', label: '治疗领域' },
   ],
-  compliance: ['符合 EMA', 'GDPR 合规', 'FDA 合规', 'MOHAP 合规', 'GCP 标准'],
+  compliance: [
+    'MHRA和EMA监管合规',
+    'NHS研究伦理委员会（REC）标准',
+    '符合GDPR的数据采集协议',
+    'ICH-GCP临床研究指南',
+  ],
   storyH2: '我们的故事',
   storyTagline: '一种信念。三大洲。跻身全球领先市场研究公司之列。',
   storyAct1H3: '伦敦，2012——起点',
