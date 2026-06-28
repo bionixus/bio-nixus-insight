@@ -1,4 +1,9 @@
 import {
+  DEVELOPED_MARKET_MEDTECH_SLUGS,
+  getDevelopedMarketMedtechPath,
+  type DevelopedMarketMedtechSlug,
+} from './developedMarketMedtechPages';
+import {
   MATRIX_COUNTRIES,
   MATRIX_COUNTRY_SLUGS_ORDERED,
   getIndustryBofuPath,
@@ -29,6 +34,7 @@ export const INDUSTRY_HUB_COUNTRIES: IndustryHubCountry[] = sortBySegmentCountry
 ]);
 
 const MATRIX_COUNTRY_SET = new Set<string>(MATRIX_COUNTRY_SLUGS_ORDERED);
+const DEVELOPED_MARKET_MEDTECH_COUNTRY_SET = new Set<string>(DEVELOPED_MARKET_MEDTECH_SLUGS);
 
 /** Default B2B industry slug used for country entry links on segment pages. */
 export const DEFAULT_B2B_INDUSTRY_SLUG: MatrixIndustrySlug = 'technology';
@@ -65,6 +71,13 @@ export function resolveCountryIndustryMarketResearchPath(
 
   const country: MarketResearchIndexCountry =
     findIndexCountry(countrySlug) ?? { slug: countrySlug, label: countrySlug };
+
+  if (
+    industrySlug === 'medtech' &&
+    DEVELOPED_MARKET_MEDTECH_COUNTRY_SET.has(countrySlug)
+  ) {
+    return getDevelopedMarketMedtechPath(countrySlug as DevelopedMarketMedtechSlug);
+  }
 
   if (HEALTHCARE_ADJACENT_INDUSTRIES.has(industrySlug)) {
     if (industrySlug !== 'healthcare') {
