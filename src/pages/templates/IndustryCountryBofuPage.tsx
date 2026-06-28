@@ -15,6 +15,7 @@ import { getIndustryListicleCrossLinks } from '@/data/industry-listicle-clusters
 import { IndustryListicleClusterCallout } from '@/components/seo/IndustryListicleClusterCallout';
 import { ExpandedServiceLandingContent } from '@/components/page/ExpandedServiceLandingContent';
 import { getHealthcareIndustryExpandedContent } from '@/data/industryHealthcareExpandedContent';
+import { getGccIndustryExpandedContent } from '@/data/industryGccAdjacentExpandedContent';
 
 type IndustryCountryBofuPageProps = {
   countrySlug: MatrixCountrySlug;
@@ -37,8 +38,11 @@ export default function IndustryCountryBofuPage({ countrySlug, industrySlug }: I
   const clusterRole = `Company-intent page for ${config.industry.displayNameShort.toLowerCase()} programs in ${config.country.label} — paired with the 2026 firm rankings listicle and cross-industry geo guides.`;
   const expandedHealthcare =
     industrySlug === 'healthcare' ? getHealthcareIndustryExpandedContent(countrySlug) : null;
-  const faqItems = expandedHealthcare
-    ? [...config.faqItems, ...expandedHealthcare.faqs]
+  const expandedAdjacent =
+    industrySlug !== 'healthcare' ? getGccIndustryExpandedContent(countrySlug, industrySlug) : null;
+  const expandedContent = expandedHealthcare ?? expandedAdjacent;
+  const faqItems = expandedContent
+    ? [...config.faqItems, ...expandedContent.faqs]
     : config.faqItems;
   const primaryHubPath = config.industry.isHealthcareAdjacent
     ? '/healthcare-market-research'
@@ -240,10 +244,10 @@ export default function IndustryCountryBofuPage({ countrySlug, industrySlug }: I
           </div>
         </section>
 
-        {expandedHealthcare ? (
+        {expandedContent ? (
           <section className="py-12">
             <div className="container-wide max-w-5xl mx-auto">
-              <ExpandedServiceLandingContent content={expandedHealthcare} />
+              <ExpandedServiceLandingContent content={expandedContent} />
             </div>
           </section>
         ) : null}

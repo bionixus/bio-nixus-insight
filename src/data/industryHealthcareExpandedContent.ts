@@ -47,7 +47,191 @@ const SAUDI_REGULATORY: string[] = [
 const GCC_MARKET_SNIPPET =
   'The GCC pharmaceutical market was worth roughly USD 23.7 billion in 2024 and is projected to reach about USD 49 billion by 2033 — a 7.6% CAGR (BioNixus market analysis, 2024).';
 
-export const HEALTHCARE_INDUSTRY_EXPANDED: Record<MatrixCountrySlug, HealthcareIndustryExpandedContent> = {
+const KUWAIT_REGULATORY: string[] = [
+  'Healthcare provider research in Kuwait must reflect MOH oversight, KFD formulary rhythms, and concentrated public procurement relative to population — a few hospital networks gate much of institutional volume.',
+  'Private insurance penetration is lower than UAE but growing; segmentation between ministry facilities and private hospitals prevents single-network skew.',
+  'High-cost therapy committees apply rigorous budget scrutiny; administrator and pharmacy modules surface objections clinical panels alone miss.',
+  'Arabic–English fieldwork is standard for physician, nurse, and administrator interviews across Kuwait City and secondary governorates.',
+  'Cross-GCC harmonization with Saudi and UAE cells helps regional portfolios without assuming identical tender timing or committee structure.',
+  'Referral patterns for specialty care may include regional centres; feasibility documents local versus referred pathways where relevant to service-line sizing.',
+];
+
+const QATAR_REGULATORY: string[] = [
+  'Healthcare provider research in Qatar must align with MOPH oversight, Hamad Medical Corporation system influence, and growing private hospital investment with concentrated specialist networks.',
+  'Small population but high spend per capita concentrates formulary and capital committee influence; institution tagging precedes scaled physician lists.',
+  'Precision medicine and genomics initiatives create distinct investigator and administrator priorities in named specialty centres.',
+  'Arabic–English execution preserves nuance for global sponsors while maintaining audit-ready governance for multinational medical teams.',
+  'Insurance mandate dynamics and employer-sponsored segments shape patient flows; payer tags belong in feasibility before field opens.',
+  'Qatar modules roll up with UAE and Kuwait harmonized instruments when regional leadership requires comparable GCC readouts.',
+];
+
+const OMAN_REGULATORY: string[] = [
+  'Healthcare provider research in Oman reflects MOH oversight, regional referral patterns across governorates, and procurement rhythms distinct from larger Gulf markets.',
+  'Public sector concentration means ministry tender calendars strongly influence hospital supply; private share grows but remains niche for many categories.',
+  'Geographic spread requires Muscat and secondary city quotas so conclusions are not capital-only skew.',
+  'Arabic–English fieldwork reaches clinicians and administrators with documented travel and institution verification.',
+  'Some specialty care refers to UAE or Saudi centres; research notes local versus referred treatment when sizing service lines.',
+  'Harmonized GCC programmes include Oman appendices with explicit sample limitations when categories are niche.',
+];
+
+const BAHRAIN_REGULATORY: string[] = [
+  'Healthcare provider research in Bahrain aligns with NHRA oversight, compact hospital network, and cross-border care flows with Saudi Eastern Province.',
+  'High insurance penetration supports distinct private pathway behaviour versus public facilities; segmentation is essential in a small market.',
+  'Named facilities concentrate influence; landscape refresh cadence should match active launch timelines to avoid stale institution maps.',
+  'Arabic–English depth interviews with administrators, clinicians, and pharmacy leaders support formulary and service-line decisions.',
+  'Bahrain often serves as GCC pilot market; readouts clarify whether conclusions export to Saudi or UAE scale-up strategies.',
+  'Connect Bahrain provider modules with the Bahrain healthcare market report and pharmaceutical companies Bahrain page for macro alignment.',
+];
+
+function buildGccHealthcareExpanded(
+  label: string,
+  regulatorShort: string,
+  regulatoryParagraphs: string[],
+  marketFocus: string,
+  reportPath: string,
+): HealthcareIndustryExpandedContent {
+  return {
+    hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
+    regulatory: {
+      heading: `Regulatory and institutional context for ${label} healthcare provider research`,
+      paragraphs: regulatoryParagraphs,
+    },
+    marketContext: {
+      heading: `Why ${label} hospital and provider research requires local evidence`,
+      paragraphs: [
+        `${GCC_MARKET_SNIPPET} ${marketFocus}`,
+        `${label} provider decisions concentrate in identifiable hospital networks and committee rhythms — syndicated averages hide the gates that determine uptake.`,
+        'Launch and expansion plans fail when prescriber enthusiasm is mistaken for institutional uptake; provider research links clinical intent to formulary, tender, and workflow constraints.',
+        `BioNixus executes bilingual programmes with audit-ready governance suitable for multinational medical, access, and commercial teams operating in ${label}.`,
+        'Multinational portfolios often run parallel GCC cells; harmonized instruments preserve local channel readouts while enabling regional roll-up for leadership.',
+        `Pair ${label} provider research with the ${label} healthcare market report and pharmaceutical context pages when decisions span hospital and drug channels.`,
+        'Administrator interviews often reveal capacity, staffing, and capital expenditure gates that limit service-line expansion even when clinical demand is visible in physician panels alone.',
+      ],
+    },
+    services: {
+      heading: `Healthcare provider market research services BioNixus delivers in ${label}`,
+      items: [
+        {
+          title: 'Hospital and network landscape mapping',
+          description: `Identify influential provider groups, referral cascades, and procurement nodes across public and private channels in ${label}.`,
+        },
+        {
+          title: 'Physician and administrator depth interviews',
+          description: 'Arabic–English qual modules for pathway, formulary, and operational workflow questions with audit-ready transcripts.',
+        },
+        {
+          title: 'Quantitative provider adoption surveys',
+          description: 'Segmentation and tracking with institution tags, payer context, and documented QC.',
+        },
+        {
+          title: 'Formulary and committee objection research',
+          description: `Qual modules for P&T, medical affairs, and administrator perspectives on listing and sequencing under ${regulatorShort} context.`,
+        },
+        {
+          title: 'Competitive provider landscaping',
+          description: `Neutral mapping of incumbent service lines, capacity, and positioning by institution type in ${label}.`,
+        },
+        {
+          title: 'GCC roll-up from local cell',
+          description: 'Harmonized instruments with Saudi, UAE, or Egypt appendices for regional portfolio decisions.',
+        },
+      ],
+    },
+    methodology: {
+      heading: `${label} healthcare provider research methodology`,
+      paragraphs: [
+        'Decision lock to one institutional or network outcome before stakeholder lists expand.',
+        'Institution verification and committee calendar mapping precede recruitment when listing windows are time-bound.',
+        'Arabic–English instruments with medical terminology review preserve nuance for global sponsors.',
+        'Mixed-method integration delivers one evidence pack for medical, access, and commercial teams.',
+        'Soft-launch completes validate institution and payer quotas before database lock; daily telemetry flags skew early.',
+        'Audit-ready appendices support internal review, partner diligence, and medical affairs governance.',
+      ],
+    },
+    useCases: {
+      heading: `Common ${label} healthcare provider research use cases`,
+      paragraph: `${label} provider research supports hospital network strategy, formulary defence, specialty service expansion, and institutional access planning.`,
+      areas: [
+        'Hospital group prioritisation',
+        'Formulary and committee objection mapping',
+        'Specialty centre influence mapping',
+        'Procurement and tender intelligence',
+        'Private-sector expansion planning',
+        'Regional GCC benchmarking',
+      ],
+    },
+    process: {
+      heading: `How BioNixus runs ${label} healthcare provider programs`,
+      steps: [
+        {
+          title: 'Institutional scoping',
+          body: `Align on network, formulary, or service-line decision and map public versus private pathways in ${label}.`,
+        },
+        {
+          title: 'Feasibility and permissions',
+          body: 'Validate hospital access, committee timing, and bilingual requirements before recruitment scales.',
+        },
+        {
+          title: 'Field with institution tags',
+          body: 'Recruit administrators, clinicians, and pharmacy leaders with daily QC and channel telemetry.',
+        },
+        {
+          title: 'Access-aligned readout',
+          body: `Link findings to ${regulatorShort} and payer context with 30/60/90 actions for launch teams.`,
+        },
+      ],
+    },
+    deliverables: {
+      heading: `Typical ${label} healthcare provider deliverables`,
+      bullets: healthcareDeliverables,
+    },
+    decisionBlueprint: {
+      why: `${label} provider decisions concentrate in identifiable institutions — syndicated averages hide the gates that determine uptake.`,
+      evidence: 'Institution-tagged mixed-method research with formulary and procurement modules surfaces behaviour prescriber-only panels cannot.',
+      next: `Scope a ${label} cell on one network or formulary decision, then harmonize with other GCC markets if the portfolio requires roll-up.`,
+    },
+    faqs: [
+      {
+        question: `Does BioNixus map ${label} hospital networks and specialty clusters?`,
+        answer: `Yes. Landscape modules identify ministry, private, and specialty-centre nodes with institution tags so field and medical plans align to concentrated treatment networks in ${label}.`,
+      },
+      {
+        question: `Can ${label} healthcare provider studies include pharmacist and administrator depth?`,
+        answer: 'Yes. Formulary and substitution behaviour often sits with pharmacy and operations leaders; BioNixus recruits across roles with documented exclusion rules and bilingual QC.',
+      },
+      {
+        question: `Does BioNixus run Arabic fieldwork for ${label} hospital stakeholders?`,
+        answer: 'Yes. Arabic–English instruments and moderation are standard; medical terminology is reviewed with local advisors before field.',
+      },
+      {
+        question: `Can ${label} provider research roll up to GCC benchmarks?`,
+        answer: 'Yes. Local cells use harmonized instruments with Saudi and UAE appendices so regional portfolio committees receive comparable metrics without losing local detail.',
+      },
+      {
+        question: `What timeline should teams expect for ${label} provider programs?`,
+        answer: 'Focused qual modules often field within three to five weeks after feasibility; larger multi-site quant programs may extend depending on institution access requirements.',
+      },
+      {
+        question: `How does BioNixus align ${label} provider research with access planning?`,
+        answer: `Readouts link institutional behaviour to ${regulatorShort} and payer context with 30/60/90 actions for medical, access, and commercial owners — see also ${reportPath}.`,
+      },
+    ],
+    execution: {
+      heading: `From ${label} provider insight to network and access alignment`,
+      paragraphs: [
+        `${label} provider research earns its budget when it reshapes which hospital networks and committees you prioritize, how procurement overlays adoption, and when medical education should precede access submissions — not when specialist enthusiasm is treated as national uptake.`,
+        `BioNixus connects readouts to the healthcare market research hub, ${reportPath}, and pharma fieldwork modules so medical, access, and field teams synchronize on institutional maps before scale-up.`,
+        'Final packs include institution-level influence maps, formulary objection themes, and committee calendar notes so access submissions align to the gates that determine uptake.',
+        'Portfolio committees should review institution-tagged readouts before national roll-up so 30/60/90 actions reflect treatable demand where facilities can operationalize change.',
+        'When portfolios include medtech or specialty care, administrator modules capture bed-capacity, staffing, and capital gates that physician interviews alone cannot surface.',
+      ],
+    },
+  };
+}
+
+export const HEALTHCARE_INDUSTRY_EXPANDED: Partial<
+  Record<MatrixCountrySlug, HealthcareIndustryExpandedContent>
+> = {
   egypt: {
     hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
     regulatory: {
@@ -540,6 +724,34 @@ export const HEALTHCARE_INDUSTRY_EXPANDED: Record<MatrixCountrySlug, HealthcareI
       ],
     },
   },
+  kuwait: buildGccHealthcareExpanded(
+    'Kuwait',
+    'MOH',
+    KUWAIT_REGULATORY,
+    'Kuwait combines concentrated MOH procurement, KFD formulary influence, and a compact hospital network where a few institutions gate much of specialty volume.',
+    '/kuwait-healthcare-market-report',
+  ),
+  qatar: buildGccHealthcareExpanded(
+    'Qatar',
+    'MOPH',
+    QATAR_REGULATORY,
+    'Qatar combines MOPH oversight, HMC system concentration, and high per-capita spend with growing private hospital investment ahead of sustained specialty capacity expansion.',
+    '/qatar-healthcare-market-report',
+  ),
+  oman: buildGccHealthcareExpanded(
+    'Oman',
+    'MOH',
+    OMAN_REGULATORY,
+    'Oman spans ministry-led public care across governorates with growing private share — provider research must reflect geographic and referral reality outside Muscat alone.',
+    '/oman-healthcare-market-report',
+  ),
+  bahrain: buildGccHealthcareExpanded(
+    'Bahrain',
+    'NHRA',
+    BAHRAIN_REGULATORY,
+    'Bahrain’s compact NHRA-regulated market concentrates influence in named facilities with strong insurance penetration and cross-border flows from Saudi Eastern Province.',
+    '/bahrain-healthcare-market-report',
+  ),
 };
 
 export function getHealthcareIndustryExpandedContent(
