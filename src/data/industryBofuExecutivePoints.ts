@@ -1105,6 +1105,25 @@ const EXECUTIVE_POINTS_COUNTRY: Partial<Record<MatrixCountrySlug, Partial<Record
       { title: 'Arabic-language content preference is strong across age groups', body: 'Oman\'s media consumption is predominantly Arabic-language across all age segments, with English content consumption concentrated among expats and internationally educated Omani nationals. Advertising pre-testing in Oman should default to Arabic-language stimulus — English stimulus systematically underperforms for nationally representative Omani samples.' },
     ],
   },
+  egypt: {
+    'financial-services': [
+      {
+        title: 'Inclusion milestone shifts competition to quality',
+        body:
+          'CBE reported 77.6% financial inclusion and 54.7 million active accounts by December 2025 — the battleground moved from basic access to service quality, credit penetration, and segment-specific propositions. Research must quota gender, youth, and governorate cells; national averages hide where wallet and agent networks still lag.',
+      },
+      {
+        title: 'CBE and FRA split governs instrument design',
+        body:
+          'Banking supervision sits with CBE; capital markets and non-bank financial activities with FRA. Product concept tests spanning lending, insurance, and investment propositions need regulator-specific compliance review — a generic “financial services” screener misprices eligibility and biases samples.',
+      },
+      {
+        title: 'Trust and FX sensitivity override yield messaging',
+        body:
+          'Inflation and currency volatility eroded retail confidence in savings and investment products. Message testing should stress safety, liquidity, and transparent fees — not headline yield alone. Macro-sensitive scenarios should accompany any credit or FX-linked product concept work.',
+      },
+    ],
+  },
   uk: {
     medtech: [
       {

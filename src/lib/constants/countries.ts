@@ -34,12 +34,12 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     slug: 'saudi-arabia',
     region: 'mena',
     metaSuffix: 'KSA pharma market research with Vision 2030 healthcare expertise.',
-    metaTitle: 'Healthcare Market Research Saudi Arabia 2026 | SFDA & NUPCO | BioNixus',
+    metaTitle: 'Healthcare Market Research Saudi Arabia | SFDA & NUPCO | BioNixus',
     metaDescription:
       'Healthcare market research Saudi Arabia 2026: SFDA-aware physician surveys, NUPCO tender context, Arabic fieldwork, and KOL mapping across Riyadh, Jeddah, and Dammam for pharma launch and access teams.',
     ogDescription:
       'BioNixus delivers pharmaceutical market research in Saudi Arabia with SFDA-aware execution, Arabic fieldwork, and hospital stakeholder access across Riyadh, Jeddah, and Dammam.',
-    h1: 'Pharmaceutical Market Research in Saudi Arabia',
+    h1: 'Healthcare Market Research in Saudi Arabia',
     relatedCountries: ['uae', 'kuwait'],
     relatedTherapies: ['diabetes', 'oncology', 'respiratory', 'immunology'],
     keyStats: [
@@ -86,12 +86,12 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     slug: 'uae',
     region: 'mena',
     metaSuffix: 'UAE pharmaceutical insights across Abu Dhabi, Dubai, and Sharjah healthcare systems.',
-    metaTitle: 'Healthcare Market Research UAE | DHA & DOH Fieldwork | BioNixus',
+    metaTitle: 'Healthcare Market Research UAE | DHA, DOH & MOHAP | BioNixus',
     metaDescription:
       'Pharma market research in the UAE: DHA and DOH-aligned physician surveys, hospital fieldwork in Dubai and Abu Dhabi, and MOHAP-context payer evidence for launch teams.',
     ogDescription:
       'BioNixus provides UAE pharmaceutical market research with DOH and MOHAP context, multilingual field execution, and access to major hospital networks.',
-    h1: 'Pharmaceutical Market Research in the UAE',
+    h1: 'Healthcare Market Research in the UAE',
     relatedCountries: ['saudi-arabia', 'kuwait'],
     relatedTherapies: ['oncology', 'diabetes', 'respiratory', 'vaccines'],
     keyStats: [

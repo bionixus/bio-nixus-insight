@@ -62,7 +62,7 @@ function BlogCardMeta({
   return (
     <div className="space-y-3">
       <div className="flex items-center gap-3 flex-wrap">
-        <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full">
+        <span className="px-3 py-1 bg-[#C9A84C]/10 text-[#9A7A2E] text-xs font-semibold rounded-full">
           {post.category}
         </span>
         {post.country ? (
@@ -183,7 +183,9 @@ const BlogSection = ({
     <section
       id="insights"
       className={`section-padding ${
-        variant === 'index' ? 'py-12 bg-cream-dark' : 'bg-background'
+        variant === 'index'
+          ? 'border-t border-border/40 bg-white py-16'
+          : 'bg-background'
       }`}
       ref={sectionRef}
     >
@@ -252,7 +254,7 @@ const BlogSection = ({
           ) : (
           <Link
             to={`${blogBasePath}/${featuredPost.slug}`}
-            className="group block mb-10 sr sr-scale-up sr-spring hover-lift rounded-2xl border border-border bg-card overflow-hidden cursor-pointer"
+            className="group mb-10 block cursor-pointer overflow-hidden rounded-2xl border border-[#C9A84C]/20 bg-card shadow-[0_8px_40px_rgba(6,16,31,0.06)] transition-all hover-lift sr sr-scale-up sr-spring"
           >
             <article className="grid md:grid-cols-2 gap-0">
               <BlogCardImage
@@ -262,7 +264,7 @@ const BlogSection = ({
                 readMoreLabel={t.blog.readMore}
               />
               <div className="p-8 md:p-10 flex flex-col justify-center">
-                <span className="inline-flex w-fit px-3 py-1 mb-4 rounded-full bg-accent/15 text-accent-foreground text-xs font-semibold uppercase tracking-wide">
+                <span className="mb-4 inline-flex w-fit rounded-full bg-gradient-to-r from-[#C9A84C]/15 to-[#C9A84C]/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-[#9A7A2E]">
                   {isHomeLayout ? 'Featured insight' : 'Latest insight'}
                 </span>
                 <BlogCardMeta post={featuredPost} featured />
@@ -306,8 +308,10 @@ const BlogSection = ({
               <Link
                 key={post.id}
                 to={`${blogBasePath}/${post.slug}`}
-                className={`group block sr sr-scale-up sr-spring hover-lift cursor-pointer ${
-                  isMagazineLayout ? 'rounded-xl border border-border bg-card p-6' : ''
+                className={`group block cursor-pointer sr sr-scale-up sr-spring hover-lift ${
+                  isMagazineLayout
+                    ? 'overflow-hidden rounded-xl border border-border/80 bg-card p-6 shadow-sm transition-shadow hover:shadow-md'
+                    : ''
                 }`}
               >
                 <article>

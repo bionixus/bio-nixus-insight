@@ -74,12 +74,12 @@ const BlogIndexFilters = ({
 
   return (
     <section
-      className="section-padding pt-0 pb-6 bg-cream-dark/40"
+      className="section-padding relative z-10 -mt-6 pb-8 pt-0"
       aria-label="Filter blog articles"
       dir={dir}
     >
       <div className="container-wide">
-        <div className="rounded-2xl border border-border/80 bg-card/95 p-4 md:p-6 shadow-[0_8px_30px_rgba(15,23,42,0.06)] backdrop-blur-sm">
+        <div className="rounded-2xl border border-border/80 bg-card/95 p-4 shadow-[0_8px_32px_rgba(6,16,31,0.06)] backdrop-blur-md md:p-6">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div className="grid flex-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               <div className="relative sm:col-span-2 lg:col-span-1">

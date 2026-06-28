@@ -295,20 +295,22 @@ const UAE_HEALTHCARE_TRENDS_2025_META_DESCRIPTION =
  * without requiring a Sanity CMS sync.
  */
 const EGYPT_HEALTHCARE_2026_SLUG = 'healthcare-overview-egypt-market-2026';
-const EGYPT_HEALTHCARE_2026_TITLE = 'Cairo Hospitals Healthcare 2023–2026 | Egypt Market Overview | BioNixus';
+const EGYPT_HEALTHCARE_2026_DISPLAY_TITLE =
+  'Cairo Hospitals Healthcare 2023–2026: Egypt Market Overview';
+const EGYPT_HEALTHCARE_2026_TITLE = 'Cairo Hospitals Healthcare 2023–2026';
 const EGYPT_HEALTHCARE_2026_META_DESCRIPTION =
-  'Cairo hospitals and Egypt healthcare 2023–2026: hospital footprint, EDA pharma landscape, payer trends, and physician insights from BioNixus market research.';
-const EGYPT_HEALTHCARE_2026_OG_TITLE =
-  'Egypt Healthcare Market 2026 — Cairo Hospitals, Pharma & Physician Data';
+  'Cairo hospitals healthcare 2023–2026: Kasr Al-Ainy, Cleopatra, Saudi German Cairo, EDA pharma access, UHI payer trends — BioNixus Egypt market research.';
+const EGYPT_HEALTHCARE_2026_OG_TITLE = EGYPT_HEALTHCARE_2026_DISPLAY_TITLE;
 const EGYPT_HEALTHCARE_2026_OG_DESCRIPTION =
   'Full Egypt healthcare overview for 2026 — Cairo hospital landscape, EDA regulation, pharmaceutical market size, and primary physician research from BioNixus.';
 
 const KUWAIT_HEALTHCARE_2026_SLUG = 'healthcare-overview-kuwait-market-2026';
-const KUWAIT_HEALTHCARE_2026_TITLE = 'Kuwait Healthcare Market 2026 | Hospitals, Distributors & April Healthcare | BioNixus';
+const KUWAIT_HEALTHCARE_2026_DISPLAY_TITLE =
+  'April Healthcare Kuwait & Kuwait Healthcare Market 2026 Overview';
+const KUWAIT_HEALTHCARE_2026_TITLE = 'April Healthcare Kuwait | Healthcare 2026';
 const KUWAIT_HEALTHCARE_2026_META_DESCRIPTION =
-  'Kuwait healthcare market 2026 snapshot: public hospital footprint, pharmaceutical distributors (including April Healthcare Kuwait), MOH policy trends, and physician insights from BioNixus.';
-const KUWAIT_HEALTHCARE_2026_OG_TITLE =
-  'Kuwait Healthcare Overview 2026 — Hospitals, Pharma Distributors & Market Data';
+  'April healthcare Kuwait & Kuwait healthcare 2026: MOH hospitals, pharma distributors, tender policy, and physician insights from BioNixus market research.';
+const KUWAIT_HEALTHCARE_2026_OG_TITLE = KUWAIT_HEALTHCARE_2026_DISPLAY_TITLE;
 const KUWAIT_HEALTHCARE_2026_OG_DESCRIPTION =
   'Kuwait healthcare overview for 2026 — hospital and distributor landscape, April Healthcare and peer importers, MOH regulation, and BioNixus market research context.';
 
@@ -951,13 +953,17 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
   const isUaeHealthcareTrends2025En = slug === UAE_HEALTHCARE_TRENDS_2025_SLUG && !isArBlog;
   const comparisonPageUrl = `https://www.bionixus.com/blog/${GCC_PHARMA_COMPARISON_SLUG}`;
   const pageUrl = blogCanonicalAbsoluteUrl(pathname, post.seoCanonicalUrl, isGccComparisonEn, comparisonPageUrl);
-  const articleDisplayTitle = isGccComparisonEn
-    ? GCC_PHARMA_COMPARISON_DISPLAY_TITLE
-    : isGccPharmacoeconomicsEn
-      ? GCC_PHARMACOECONOMICS_DISPLAY_TITLE
-      : isTherapyStaticBlogEn
-        ? therapyStaticBlogBundle!.displayTitle
-        : post.title;
+  const articleDisplayTitle = isEgyptHealthcare2026
+    ? EGYPT_HEALTHCARE_2026_DISPLAY_TITLE
+    : isKuwaitHealthcare2026
+      ? KUWAIT_HEALTHCARE_2026_DISPLAY_TITLE
+      : isGccComparisonEn
+        ? GCC_PHARMA_COMPARISON_DISPLAY_TITLE
+        : isGccPharmacoeconomicsEn
+          ? GCC_PHARMACOECONOMICS_DISPLAY_TITLE
+          : isTherapyStaticBlogEn
+            ? therapyStaticBlogBundle!.displayTitle
+            : post.title;
   const bodySourceForMeta = typeof post.body === 'string' ? post.body : post.excerpt || post.title;
   let titleCore = dedupePipeBioNixusTail(post.seoMetaTitle || post.title || 'BioNixus');
   if (isEgyptHealthcare2026) {
@@ -1166,9 +1172,9 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
         language={language}
         headline={
           isEgyptHealthcare2026
-            ? EGYPT_HEALTHCARE_2026_OG_TITLE
+            ? EGYPT_HEALTHCARE_2026_DISPLAY_TITLE
             : isKuwaitHealthcare2026
-              ? KUWAIT_HEALTHCARE_2026_OG_TITLE
+              ? KUWAIT_HEALTHCARE_2026_DISPLAY_TITLE
             : isQuantMrMaEn
               ? QUANT_MR_MA_OG_TITLE
               : isGccComparisonEn
@@ -1297,6 +1303,14 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
       <Navbar />
 
       <main dir={isRtlArticle ? 'rtl' : 'ltr'} lang={articleLocale}>
+        {isEgyptHealthcare2026 && (
+          <div className="section-padding pt-24 pb-0 bg-background">
+            <div className="container-wide max-w-4xl">
+              <EgyptHealthcare2026CairoBlock />
+            </div>
+          </div>
+        )}
+
         {/* ── HERO ─────────────────────────────────────────────────────── */}
         {heroCoverImage ? (
           <div
@@ -1506,16 +1520,20 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
               {/* GCC 2026 premium dashboard enhancement */}
               {isGccPharma2026 && <PremiumGcc2026Enhancement />}
 
-              {isEgyptHealthcare2026 && <EgyptHealthcare2026CairoBlock />}
-
               {isKuwaitHealthcare2026 && (
                 <aside
                   className="mb-8 rounded-xl border border-primary/15 bg-primary/[0.025] p-5 lg:p-6"
-                  aria-label="Kuwait healthcare market quick navigation"
+                  aria-labelledby="kuwait-healthcare-2026-heading"
                 >
                   <p className="text-[11px] font-extrabold tracking-[0.12em] uppercase text-primary mb-3">
-                    Kuwait healthcare 2026 — quick navigation
+                    April healthcare Kuwait — Kuwait healthcare 2026
                   </p>
+                  <h2
+                    id="kuwait-healthcare-2026-heading"
+                    className="text-xl md:text-2xl font-display font-semibold text-foreground mb-3 text-balance"
+                  >
+                    April Healthcare Kuwait &amp; Kuwait healthcare market 2026 snapshot
+                  </h2>
                   <p className="text-[15px] text-foreground leading-relaxed mb-3">
                     This overview maps the Kuwait healthcare market in 2026 — public hospital footprint,
                     pharmaceutical distributors (including April Healthcare Kuwait), MOH policy trends, and physician

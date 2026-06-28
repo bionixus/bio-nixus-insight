@@ -22,10 +22,10 @@ const ARTICLE_URL = `https://www.bionixus.com${ARTICLE_PATH}`;
 const COVER_FILENAME = `${SLUG}-cover.jpg`;
 const ARTICLE_H1 = 'Financial Services Market Research in Egypt (2026 Guide)';
 const ARTICLE_EXCERPT =
-  'A structured 2026 guide to financial services market research in Egypt — CBE inclusion context, methodology, how to choose a partner, and detailed profiles of BioNixus, Ipsos, Kantar, NielsenIQ, Euromonitor, and Market Vision with official website links.';
+  'A structured 2026 guide to financial services market research in Egypt — CBE inclusion context, methodology, how to choose a partner, and detailed profiles of BioNixus, Ipsos, Kantar, NielsenIQ, and Euromonitor with official website links.';
 const SEO_META_TITLE = 'Financial Services Market Research Egypt 2026 | BioNixus';
 const SEO_META_DESCRIPTION =
-  '2026 guide to financial services market research in Egypt: CBE inclusion data, research methods, and profiles of Ipsos, Kantar, NielsenIQ, Euromonitor, Market Vision, and BioNixus.';
+  '2026 guide to financial services market research in Egypt: CBE inclusion data, research methods, and profiles of Ipsos, Kantar, NielsenIQ, Euromonitor, and BioNixus.';
 const OG_DESCRIPTION =
   'How to run credible financial services market research in Egypt — market context, methodologies, and leading research firms with website links.';
 const COVER_ALT =
@@ -75,7 +75,7 @@ function buildSharedContent(bodyHtml) {
           {
             _type: 'span',
             marks: [],
-            text: 'Egypt reached a 77.6% financial inclusion rate and 54.7 million active accounts by December 2025 (CBE). This guide covers research methodologies, regulator context, partner selection criteria, and detailed profiles of six leading firms serving financial services clients — with links to each website.',
+            text: 'Egypt reached a 77.6% financial inclusion rate and 54.7 million active accounts by December 2025 (CBE). This guide covers research methodologies, regulator context, partner selection criteria, and detailed profiles of five leading firms serving financial services clients — with links to each website.',
           },
         ],
         markDefs: [],
@@ -100,17 +100,12 @@ function buildSharedContent(bodyHtml) {
       {
         question: 'Which firms lead financial services research in Egypt?',
         answer:
-          'Leading options include BioNixus, Ipsos Egypt (BankScape), Kantar, NielsenIQ, Euromonitor International, and Market Vision Egypt — each with different strengths in custom fieldwork, syndicated tracking, or category reports.',
+          'Leading options include BioNixus, Ipsos Egypt, Kantar, NielsenIQ, and Euromonitor International — each with different strengths in custom fieldwork, syndicated tracking, or category reports.',
       },
       {
         question: 'What did the Central Bank of Egypt report for financial inclusion in 2025?',
         answer:
           'The CBE reported a 77.6% financial inclusion rate among citizens aged 15+ by December 2025, with 54.7 million active transactional accounts — up from 27.4% inclusion in 2016.',
-      },
-      {
-        question: 'What is BankScape Egypt?',
-        answer:
-          'BankScape Egypt is Ipsos’s syndicated study on Egypt’s financial services industry, covering consumer trends, brand perceptions, and channel behaviour. See ipsos.com/en-eg/bankscape-egypt.',
       },
       {
         question: 'Where are BioNixus industry insights published?',
@@ -223,7 +218,6 @@ async function main() {
         'financial services market research Egypt',
         'banking market research Egypt',
         'Egypt fintech research',
-        'BankScape Egypt',
         'CBE financial inclusion',
         'BioNixus',
         'Ipsos Egypt',

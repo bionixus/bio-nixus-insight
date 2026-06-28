@@ -2,11 +2,14 @@ import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useMemo, useState, useCallback } from 'react';
-import { ArrowLeft, BookOpen, Sparkles } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import BlogSection from '@/components/BlogSection';
 import BlogIndexFilters from '@/components/blog/BlogIndexFilters';
+import { BlogIndexHero } from '@/components/blog/BlogIndexHero';
+import { BlogRelatedPathways } from '@/components/blog/BlogRelatedPathways';
+import { PremiumComplianceRibbon } from '@/components/home/PremiumComplianceRibbon';
+import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { CTASection } from '@/components/shared/CTASection';
 import { useSanityBlog } from '@/hooks/useSanityBlog';
 import { blogRecoveryPaths } from '@/lib/internalLinkRecovery';
@@ -175,7 +178,6 @@ const Blog = () => {
 
   const heroRef = useScrollReveal<HTMLElement>({ stagger: 80 });
   const introRef = useScrollReveal<HTMLElement>({ stagger: 100 });
-  const linksRef = useScrollReveal<HTMLElement>({ stagger: 60 });
 
   const canonical = isArabicBlog
     ? 'https://www.bionixus.com/ar/blog'
@@ -219,6 +221,132 @@ const Blog = () => {
       : isFrench
         ? 'Cette page blog met en avant des analyses actionnables pour les équipes pharma en France, en Europe et en MENA.'
         : 'Connect product strategy with market evidence—from physician surveys and payer interviews to patient journey work and GCC access scenarios.';
+
+  const contactPath =
+    language === 'fr'
+      ? '/fr/contacts'
+      : language === 'ar'
+        ? '/ar/contacts'
+        : language === 'zh'
+          ? '/zh/contact'
+          : `${basePath === '/' ? '' : basePath}/contact`;
+
+  const heroEyebrow = isArabicBlog
+    ? 'المدونة'
+    : isGerman
+      ? 'Blog'
+      : isFrench
+        ? 'Blog'
+        : 'Insights & Research';
+  const heroStats =
+    !isLoading && postCount > 0
+      ? [
+          {
+            value: String(postCount),
+            label: isArabicBlog
+              ? 'مقالات منشورة'
+              : isGerman
+                ? 'Veröffentlichte Artikel'
+                : isFrench
+                  ? 'Articles publiés'
+                  : 'Published articles',
+          },
+          {
+            value: 'EMEA',
+            label: isArabicBlog
+              ? 'تغطية إقليمية'
+              : isGerman
+                ? 'Regionale Abdeckung'
+                : isFrench
+                  ? 'Couverture régionale'
+                  : 'Regional coverage',
+          },
+          {
+            value: '◈',
+            label: isArabicBlog
+              ? 'رؤى ميدانية'
+              : isGerman
+                ? 'Feldstudien-Insights'
+                : isFrench
+                  ? 'Insights terrain'
+                  : 'Fieldwork-led insights',
+          },
+        ]
+      : undefined;
+  const browseLabel = isArabicBlog
+    ? 'تصفح المقالات'
+    : isGerman
+      ? 'Artikel entdecken'
+      : isFrench
+        ? 'Parcourir les articles'
+        : 'Browse articles';
+  const proposalLabel = isArabicBlog
+    ? 'اطلب عرضاً'
+    : isGerman
+      ? 'Angebot anfordern'
+      : isFrench
+        ? 'Demander une proposition'
+        : 'Request a proposal';
+  const homeLabel = isArabicBlog
+    ? 'العودة للرئيسية'
+    : isGerman
+      ? 'Zur Startseite'
+      : isFrench
+        ? 'Retour à l’accueil'
+        : 'Back to Home';
+  const homeHref = isArabicBlog ? '/ar' : basePath;
+
+  const relatedPathwayLinks = isArabicBlog
+    ? [
+        { to: '/healthcare-market-research/saudi-arabia', label: 'أبحاث سوق الرعاية الصحية في السعودية' },
+        { to: '/ar/arabic-blog-alsawdyh', label: 'دليل أبحاث السوق الدوائي في السعودية' },
+        { to: '/gcc-pharmaceutical-market-research', label: 'أبحاث السوق الدوائي في GCC' },
+        { to: '/ar/contact', label: 'تواصل مع BioNixus' },
+      ]
+    : isGerman
+      ? [
+          { to: '/de/healthcare-market-research/germany', label: 'Gesundheitsmarktforschung Deutschland' },
+          { to: '/europe', label: 'Healthcare-Marktforschung Europa' },
+          { to: '/de/contact', label: 'BioNixus kontaktieren' },
+          { to: '/case-studies', label: 'Fallstudien' },
+        ]
+      : isFrench
+        ? [
+            { to: '/fr/market-research-healthcare', label: 'Études de marché santé' },
+            { to: '/healthcare-market-research/france', label: 'Recherche pharma France' },
+            { to: '/fr/contacts', label: 'Contacter BioNixus' },
+            { to: '/case-studies', label: 'Études de cas' },
+          ]
+        : [
+            {
+              to: '/healthcare-market-research',
+              label: 'Healthcare market research hub',
+              description: 'Country hubs, therapy areas, and research modules.',
+            },
+            {
+              to: '/insights',
+              label: 'Insights overview',
+              description: 'Rankings, guides, and strategic market intelligence.',
+            },
+            {
+              to: '/services',
+              label: 'Research services',
+              description: 'Quantitative, qualitative, access, and KOL programmes.',
+            },
+            {
+              to: '/case-studies',
+              label: 'Case studies',
+              description: 'Evidence from recent pharma and healthcare engagements.',
+            },
+          ];
+
+  const introHeading = isArabicBlog
+    ? 'ربط الاستراتيجية بأدلة السوق'
+    : isGerman
+      ? 'Strategie mit Marktevidenz verbinden'
+      : isFrench
+        ? 'Relier stratégie et preuves de marché'
+        : 'From evidence to launch decisions';
 
   const collectionSchema = buildBlogCollectionSchema(canonical, title, description, postCount);
   const breadcrumbSchema = isArabicBlog
@@ -287,99 +415,32 @@ const Blog = () => {
       </Helmet>
       <Navbar />
       <main dir={mainDir} lang={mainLang}>
-        <div className="section-padding pt-24 pb-4">
-          <div className="container-wide">
-            <Link
-              to={isArabicBlog ? '/ar' : basePath}
-              className="inline-flex items-center gap-2 text-primary font-medium hover:underline cursor-pointer"
-            >
-              <ArrowLeft className="w-4 h-4 shrink-0" aria-hidden />
-              {isArabicBlog ? 'العودة للرئيسية' : 'Back to Home'}
-            </Link>
-          </div>
-        </div>
+        <BlogIndexHero
+          dir={mainDir}
+          lang={mainLang}
+          homeHref={homeHref}
+          homeLabel={homeLabel}
+          eyebrow={heroEyebrow}
+          title={heroTitle}
+          subtitle={heroSubtitle}
+          stats={heroStats}
+          browseLabel={browseLabel}
+          proposalLabel={proposalLabel}
+          proposalHref={contactPath}
+          sectionRef={heroRef}
+        />
+        <PremiumComplianceRibbon />
 
-        <section
-          className="section-padding pt-4 pb-12 bg-gradient-to-br from-navy-deep via-navy-medium to-primary text-primary-foreground relative overflow-hidden"
-          ref={heroRef}
-        >
-          <div
-            className="pointer-events-none absolute -top-24 end-0 w-72 h-72 rounded-full bg-white/5 blur-3xl float-gentle"
-            aria-hidden
-          />
-          <div
-            className="pointer-events-none absolute bottom-0 start-8 w-48 h-48 rounded-full bg-accent/20 blur-2xl float-gentle-delayed"
-            aria-hidden
-          />
-          <div className="container-wide max-w-5xl mx-auto relative">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-primary-foreground text-sm font-medium mb-6 sr sr-left sr-fast revealed">
-              <BookOpen className="w-4 h-4" aria-hidden />
-              {isArabicBlog ? 'المدونة' : isGerman ? 'Blog' : isFrench ? 'Blog' : 'Insights & Blog'}
+        <section className="section-padding border-b border-border/60 bg-[#FAF8F4] py-12" ref={introRef}>
+          <div className="container-wide mx-auto max-w-5xl">
+            <div className="mb-3 inline-flex items-center gap-2.5">
+              <span className="h-px w-8 bg-[#C9A84C]/50" aria-hidden />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#C9A84C]">
+                {isArabicBlog ? 'نهج البحث' : isGerman ? 'Forschungsansatz' : isFrench ? 'Approche' : 'Research approach'}
+              </span>
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold mb-6 max-w-4xl leading-tight sr sr-up sr-line revealed">
-              {heroTitle}
-            </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed max-w-3xl mb-8 sr sr-up revealed">
-              {heroSubtitle}
-            </p>
-            {!isLoading && postCount > 0 ? (
-              <ul
-                className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 sr sr-up revealed"
-                aria-label={isArabicBlog ? 'إحصائيات المدونة' : 'Blog highlights'}
-              >
-                <li className="rounded-xl border border-white/20 bg-white/10 px-5 py-4 text-center">
-                  <p className="text-2xl md:text-3xl font-display font-semibold text-primary-foreground glow-pop">
-                    {postCount}
-                  </p>
-                  <p className="text-sm text-primary-foreground/80 mt-1">
-                    {isArabicBlog ? 'مقالات منشورة' : 'Published articles'}
-                  </p>
-                </li>
-                <li className="rounded-xl border border-white/20 bg-white/10 px-5 py-4 text-center">
-                  <p className="text-2xl md:text-3xl font-display font-semibold text-primary-foreground">
-                    EMEA
-                  </p>
-                  <p className="text-sm text-primary-foreground/80 mt-1">
-                    {isArabicBlog ? 'تغطية إقليمية' : 'Regional coverage'}
-                  </p>
-                </li>
-                <li className="rounded-xl border border-white/20 bg-white/10 px-5 py-4 text-center">
-                  <p className="text-2xl md:text-3xl font-display font-semibold text-primary-foreground flex items-center justify-center gap-1">
-                    <Sparkles className="w-6 h-6 text-accent" aria-hidden />
-                  </p>
-                  <p className="text-sm text-primary-foreground/80 mt-1">
-                    {isArabicBlog ? 'رؤى ميدانية' : 'Fieldwork-led insights'}
-                  </p>
-                </li>
-              </ul>
-            ) : null}
-            <div className="flex flex-wrap gap-3 sr sr-up revealed">
-              <a
-                href="#insights"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors duration-200 cursor-pointer shimmer"
-              >
-                {isArabicBlog ? 'تصفح المقالات' : 'Browse articles'}
-              </a>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/40 text-primary-foreground font-semibold hover:bg-white/10 transition-colors duration-200 cursor-pointer"
-              >
-                {isArabicBlog ? 'اطلب عرضاً' : 'Request a proposal'}
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        <section className="section-padding py-10 bg-background" ref={introRef}>
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6 sr sr-up sr-line">
-              {isArabicBlog
-                ? 'ربط الاستراتيجية بأدلة السوق'
-                : isGerman
-                  ? 'Strategie mit Marktevidenz verbinden'
-                  : isFrench
-                    ? 'Relier stratégie et preuves de marché'
-                    : 'From evidence to launch decisions'}
+            <h2 className="mb-6 font-display text-2xl font-semibold text-foreground md:text-3xl sr sr-up sr-line">
+              {introHeading}
             </h2>
             <div className="grid md:grid-cols-2 gap-8 text-muted-foreground leading-relaxed text-[15px]">
               <p className="sr sr-left">{introText}</p>
@@ -451,79 +512,42 @@ const Blog = () => {
           disableFeatured={filtersActive}
         />
 
-        <section className="section-padding py-10 bg-background" ref={linksRef}>
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl font-display font-semibold text-foreground mb-4 sr sr-up">
-              {isArabicBlog ? 'روابط بحثية ذات صلة' : 'Related research paths'}
-            </h2>
-            <p className="text-muted-foreground mb-6 max-w-2xl sr sr-up">
-              {isArabicBlog
-                ? 'صفحات مرجعية تُستخدم غالباً مع مقالات المدونة.'
-                : 'Hub pages and guides commonly paired with these insights.'}
-            </p>
-            <ul className="grid sm:grid-cols-2 gap-3 sr sr-up">
-              <li>
-                <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline cursor-pointer">
-                  Healthcare market research hub
-                </Link>
-              </li>
-              <li>
-                <Link to="/insights" className="text-primary font-medium hover:underline cursor-pointer">
-                  Insights overview
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-primary font-medium hover:underline cursor-pointer">
-                  Research services
-                </Link>
-              </li>
-              <li>
-                <Link to="/case-studies" className="text-primary font-medium hover:underline cursor-pointer">
-                  Case studies
-                </Link>
-              </li>
-            </ul>
-
-            <details className="mt-8 rounded-xl border border-border bg-card p-6 sr sr-up">
-              <summary className="cursor-pointer font-display font-semibold text-foreground list-none flex items-center justify-between gap-2">
-                {isArabicBlog ? 'المزيد من روابط المقالات' : 'More article links'}
-                <span className="text-sm font-normal text-muted-foreground">
-                  {recoveryLinks.length} links
-                </span>
-              </summary>
-              <ul className="grid sm:grid-cols-2 gap-2 mt-4 pt-4 border-t border-border max-h-64 overflow-y-auto">
-                {recoveryLinks.map(({ path, label }) => (
-                  <li key={path}>
-                    <Link to={path} className="text-sm text-primary hover:underline cursor-pointer">
-                      {label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </details>
-          </div>
-        </section>
+        <BlogRelatedPathways
+          dir={mainDir}
+          heading={
+            isArabicBlog
+              ? 'روابط بحثية ذات صلة'
+              : isGerman
+                ? 'Verwandte Forschungspfade'
+                : isFrench
+                  ? 'Parcours de recherche associés'
+                  : 'Related research paths'
+          }
+          description={
+            isArabicBlog
+              ? 'صفحات مرجعية تُستخدم غالباً مع مقالات المدونة.'
+              : isGerman
+                ? 'Hub-Seiten und Leitfäden, die häufig mit diesen Insights kombiniert werden.'
+                : isFrench
+                  ? 'Pages hub et guides souvent associés à ces analyses.'
+                  : 'Hub pages and guides commonly paired with these insights.'
+          }
+          links={relatedPathwayLinks}
+          moreHeading={
+            isArabicBlog
+              ? 'المزيد من روابط المقالات'
+              : isGerman
+                ? 'Weitere Artikel-Links'
+                : isFrench
+                  ? 'Plus de liens d’articles'
+                  : 'More article links'
+          }
+          moreLinks={recoveryLinks}
+        />
 
         {!isArabicBlog && !isGerman && !isFrench ? (
-          <section className="section-padding py-12">
-            <div className="container-wide max-w-3xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-8 text-center sr sr-up sr-line sr-line-center">
-                Frequently asked questions
-              </h2>
-              <div className="space-y-3">
-                {BLOG_FAQ_EN.map((item) => (
-                  <details
-                    key={item.question}
-                    className="rounded-xl border border-border bg-card px-6 py-4 sr sr-up"
-                  >
-                    <summary className="cursor-pointer font-medium text-foreground list-none">
-                      {item.question}
-                    </summary>
-                    <p className="mt-3 text-muted-foreground leading-relaxed text-sm">{item.answer}</p>
-                  </details>
-                ))}
-              </div>
-            </div>
+          <section className="section-padding border-t border-border/60 bg-cream py-12">
+            <FAQSection title="Frequently asked questions" items={[...BLOG_FAQ_EN]} className="bg-transparent py-0" />
           </section>
         ) : null}
 

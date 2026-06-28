@@ -63,7 +63,7 @@ const GLOBAL_MARKETS: {
   {
     region: 'Americas',
     blurb:
-      'The world’s largest pharmaceutical market plus high-growth Latin American demand—commercial scale governed by payer access and pricing scrutiny.',
+      'The world\'s largest pharmaceutical market plus high-growth Latin American demand — healthcare market research USA teams use for FDA, CMS, and PBM-context evidence.',
     regulators: 'FDA · Health Canada · ANVISA',
     markets: [
       { name: 'United States', to: '/usa-healthcare-market-report' },
@@ -74,7 +74,7 @@ const GLOBAL_MARKETS: {
   {
     region: 'Europe',
     blurb:
-      'Centralised EMA approval but national HTA gatekeeping—where evidence has to satisfy NICE, G-BA/AMNOG, HAS, AIFA, and AEMPS market by market.',
+      'Centralised EMA approval but national HTA gatekeeping — pharmaceutical market research Europe requires NICE, G-BA/AMNOG, HAS, AIFA, and AEMPS evidence market by market.',
     regulators: 'EMA · NICE · AMNOG · HAS',
     markets: [
       { name: 'United Kingdom', to: '/uk-healthcare-market-report' },
@@ -154,10 +154,18 @@ export default function HubPage() {
     Array.isArray(hubContent?.faq) && hubContent?.faq.length > 0
       ? (hubContent.faq as { question: string; answer: string }[])
       : HUB_FAQS;
+  const hubSeoTitle =
+    typeof hubContent?.metaTitle === 'string' && hubContent.metaTitle.length > 0
+      ? hubContent.metaTitle
+      : 'Healthcare Market Research | Global Pharma & MedTech | BioNixus';
+  const hubSeoDescription =
+    typeof hubContent?.metaDescription === 'string' && hubContent.metaDescription.length > 0
+      ? hubContent.metaDescription
+      : 'Healthcare market research for pharmaceutical and medtech teams — physician, payer, and hospital evidence across USA, Europe, GCC, MENA, and Asia-Pacific (excluding India-only programmes). US HQ, 20+ country hubs.';
   const heroTitle =
     typeof hubContent?.title === 'string' && hubContent.title.length > 0
       ? hubContent.title
-      : 'US-headquartered healthcare market research — global pharmaceutical insights across the Americas, Europe, MENA, and Asia';
+      : 'Healthcare market research — global pharmaceutical & medtech insights across the Americas, Europe, MENA, and Asia-Pacific';
   const heroDescription =
     typeof hubContent?.metaDescription === 'string' && hubContent.metaDescription.length > 0
       ? hubContent.metaDescription
@@ -236,8 +244,8 @@ export default function HubPage() {
   return (
     <>
       <SEOHead
-        title="Healthcare Market Research Company | 20+ Countries | BioNixus"
-        description="Healthcare market research company for pharma and medtech — physician, payer, and hospital evidence across USA, Europe, GCC, MENA, and Asia-Pacific. US HQ with local fieldwork in 20+ countries."
+        title={hubSeoTitle}
+        description={hubSeoDescription}
         canonical="/healthcare-market-research"
         jsonLd={jsonLd}
       />
@@ -327,6 +335,35 @@ export default function HubPage() {
           />
         </div>
       </section>
+
+      <ReportPremiumSection
+        id="gcc-report-cluster"
+        title="GCC pharmaceutical &amp; medtech market reports (2026)"
+        variant="default"
+      >
+        <p className="text-muted-foreground leading-relaxed mb-6 max-w-4xl">
+          High-impression Gulf queries — biologics, generic injectables, medical devices, and precision medicine — map
+          to the flagship reports below. Start here for GCC segment sizing before scoping a country programme.
+        </p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <HealthcareNavCard to="/gcc-pharma-market-report-2026" title="GCC pharma market report 2026" featured />
+          <HealthcareNavCard to="/gcc-pharmaceutical-market-research" title="GCC biologics &amp; injectables research" />
+          <HealthcareNavCard to="/gcc-medical-devices-market-report" title="GCC medical devices &amp; IVD report" />
+          <HealthcareNavCard
+            to="/market-reports/gcc-immunology-biologics-market-report"
+            title="GCC immunology &amp; biologics market report"
+          />
+          <HealthcareNavCard
+            to="/market-reports/gcc-biosimilars-market-report"
+            title="GCC biosimilars &amp; generic injectables report"
+          />
+          <HealthcareNavCard
+            to="/healthcare-market-research/saudi-arabia"
+            title="Healthcare market research Saudi Arabia"
+          />
+        </div>
+      </ReportPremiumSection>
+
       <ReportPremiumSection
         id="us-headquarters"
         title="US-headquartered global healthcare market research"
@@ -553,31 +590,15 @@ export default function HubPage() {
       </ReportPremiumSection>
 
       <ReportPremiumSection
-        id="gcc-report-cluster"
-        title="GCC pharmaceutical &amp; medtech market reports (2026)"
+        id="gcc-report-cluster-extended"
+        title="GCC pharma company directories &amp; peer country links"
         variant="default"
       >
         <p className="text-muted-foreground leading-relaxed mb-6 max-w-4xl">
-          High-impression Gulf segment queries—biologics, generic injectables, medical devices, and precision
-          medicine—map to the flagship reports below. Country pharma company directories link here to pass authority
-          from page-one BOFU URLs into the report cluster.
+          Country pharma company directories link into the GCC report cluster above to pass authority from page-one
+          BOFU URLs into segment reports.
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <HealthcareNavCard to="/gcc-pharma-market-report-2026" title="GCC pharma market report 2026" featured />
-          <HealthcareNavCard to="/gcc-pharmaceutical-market-research" title="GCC biologics &amp; injectables research" />
-          <HealthcareNavCard to="/gcc-medical-devices-market-report" title="GCC medical devices &amp; IVD report" />
-          <HealthcareNavCard
-            to="/market-reports/gcc-immunology-biologics-market-report"
-            title="GCC immunology &amp; biologics market report"
-          />
-          <HealthcareNavCard
-            to="/market-reports/gcc-biosimilars-market-report"
-            title="GCC biosimilars &amp; generic injectables report"
-          />
-          <HealthcareNavCard
-            to="/healthcare-market-research/saudi-arabia"
-            title="Saudi Arabia healthcare market research"
-          />
           <HealthcareNavCard
             to="/pharmaceutical-companies-saudi-arabia"
             title="Pharmaceutical companies in Saudi Arabia"
