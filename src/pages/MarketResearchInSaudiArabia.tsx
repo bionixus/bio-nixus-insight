@@ -104,6 +104,7 @@ const content: GeneralMRPageContent = {
       "Saudi Arabia is the GCC's largest economy — roughly $1.1 trillion GDP in 2024 — and its fastest-transforming consumer market. Vision 2030's non-oil economy goals are creating new categories (entertainment, tourism, sports), expanding existing ones (retail, fintech, real estate), and fundamentally changing who buys what and why. Market research built even 18 months ago may not reflect today's Saudi consumer accurately.",
       "The Kingdom's population of approximately 36 million includes roughly 37% expatriates concentrated in the Eastern Province and urban centres. Saudi nationals and expatriates differ significantly in spending patterns, brand loyalty, and category participation — market research that doesn't segment by nationality status misses critical commercial differences. BioNixus builds this segmentation into every Saudi study design.",
       "Geographically, Saudi Arabia's three primary metro areas — Riyadh (the administrative and commercial capital), Jeddah (the commercial and trade hub), and Dammam/Khobar (the Eastern Province energy cluster) — behave as distinct sub-markets. Research that reports only a national Saudi average often obscures the actual geographic distribution of demand, which for most categories is heavily Riyadh-skewed.",
+      "For pharmaceutical and healthcare teams, Saudi market research must also account for NUPCO central procurement cycles, SFDA registration timelines, and the split between Ministry of Health hospital demand and private insurance-led channels in Jeddah and Riyadh. BioNixus designs Saudi healthcare studies with these access dynamics built in — linking physician attitude data to the formulary and tender environment that actually determines uptake.",
     ],
   },
   topCompanies: [
@@ -197,6 +198,11 @@ const content: GeneralMRPageContent = {
       question: 'How does BioNixus compare to Kantar and Ipsos for Saudi Arabia research?',
       answer:
         "Kantar Saudi Arabia is strongest for brand tracking, media measurement, and consumer panel syndicated products. Ipsos Saudi Arabia is known for large quantitative studies and government research contracts. BioNixus specialises in primary, decision-specific custom research across multiple industries — with Vision 2030-aware study design, national Arabic fieldwork, and deliverables built around commercial decisions rather than syndicated subscriptions.",
+    },
+    {
+      question: 'Which Saudi cities should market research samples include?',
+      answer:
+        'Most Saudi consumer and B2B categories require Riyadh, Jeddah, and Eastern Province coverage at minimum. Vision 2030 entertainment and tourism studies may add NEOM-adjacent or Red Sea destination samples. Pharma and healthcare programmes typically weight Riyadh for regulatory and MoH procurement insight, Jeddah for private hospital channels, and Dammam/Al Khobar for Aramco-affiliated and Eastern Province hospital networks.',
     },
   ],
   relatedLinks: [

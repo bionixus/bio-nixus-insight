@@ -16,6 +16,8 @@ const LANGUAGE_MIRROR = [
   { href: '/de/methodology', label: 'Deutsch' },
   { href: '/fr/methodology', label: 'Français' },
   { href: '/es/methodology', label: 'Español' },
+  { href: '/pt/methodology', label: 'Português' },
+  { href: '/ru/methodology', label: 'Русский' },
   { href: '/zh/methodology', label: '中文' },
   { href: '/ar/methodology', label: 'العربية' },
 ];

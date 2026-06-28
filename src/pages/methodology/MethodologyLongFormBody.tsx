@@ -20,6 +20,9 @@ export function MethodologyLongFormBody({ lang }: { lang: Language }): JSX.Eleme
       return <MethodologyLongFormZh lang={lang} />;
     case 'ar':
       return <MethodologyLongFormAr lang={lang} />;
+    case 'pt':
+    case 'ru':
+      return <MethodologyLongFormEn lang={lang} />;
     default:
       return <MethodologyLongFormEn lang={lang} />;
   }
