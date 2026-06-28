@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { getLocalizedPathForLanguage } from '@/lib/seo';
 
 export type PathwayCard = {
   to: string;
@@ -54,6 +55,15 @@ const HomePathwaysSection = ({ cards }: HomePathwaysSectionProps) => {
   const primary = cards.slice(0, PRIMARY_COUNT);
   const more = cards.slice(PRIMARY_COUNT);
   const moreLinksLabel = pathways.moreLinksTemplate.replace('{N}', String(more.length));
+  const healthcareHref = getLocalizedPathForLanguage('/healthcare-market-research', language);
+  const hubHref = getLocalizedPathForLanguage('/market-research', language);
+  const hasLinkedIntro = Boolean(
+    pathways.introPart1 &&
+      pathways.introLinkHealthcare &&
+      pathways.introPart2 &&
+      pathways.introLinkHub &&
+      pathways.introPart3,
+  );
 
   return (
     <section className="section-padding py-12 bg-muted/20" ref={sectionRef}>
@@ -62,14 +72,14 @@ const HomePathwaysSection = ({ cards }: HomePathwaysSectionProps) => {
           {pathways.h2}
         </h2>
         <p className="text-muted-foreground mb-8 max-w-3xl sr sr-up leading-relaxed">
-          {language === 'en' && pathways.introPart1 && pathways.introLinkHealthcare ? (
+          {hasLinkedIntro ? (
             <>
               {pathways.introPart1}
-              <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline cursor-pointer">
+              <Link to={healthcareHref} className="text-primary font-medium hover:underline cursor-pointer">
                 {pathways.introLinkHealthcare}
               </Link>
               {pathways.introPart2}
-              <Link to="/market-research" className="text-primary font-medium hover:underline cursor-pointer">
+              <Link to={hubHref} className="text-primary font-medium hover:underline cursor-pointer">
                 {pathways.introLinkHub}
               </Link>
               {pathways.introPart3}

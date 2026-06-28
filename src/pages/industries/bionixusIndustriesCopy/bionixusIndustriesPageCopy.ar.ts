@@ -16,7 +16,7 @@ export const bionixusIndustriesPageCopyAr: BionixusIndustriesPageCopy = {
     ' ولا تزال تقود هناك. الانضباط نفسه في أخذ العينات والتحليل بقيادة كبار الباحثين يعمل الآن عبر ثلاثة قطاعات مترابطة — الأدوية والرعاية الصحية، وB2B، وB2C — لعملاء في أمريكا الشمالية وLATAM وأوروبا ودول مجلس التعاون وAPAC.',
   heroSub2:
     'الموقع مبني كسيلين مترابطين: سيلو الرعاية الصحية المنظم وسيلو الصناعات غير الصحية. هذا المركز هو الجسر بينهما.',
-  ctaInsights: 'بوابة insights القطاعية →',
+  ctaInsights: 'بوابة الرؤى القطاعية →',
   ctaIndustriesIndex: 'استكشف فهرس القطاعات',
   cardHead: 'نظرة على التغطية',
   cardLive: 'مباشر',
@@ -66,23 +66,23 @@ export const bionixusIndustriesPageCopyAr: BionixusIndustriesPageCopy = {
       enterCta: 'الدخول إلى قطاعات B2C →',
     },
   },
-  insightsEyebrow: 'insights B2B وB2C',
-  insightsH2Before: 'بوابة insights ',
+  insightsEyebrow: 'رؤى B2B وB2C',
+  insightsH2Before: 'بوابة الرؤى ',
   insightsH2Em: 'القطاعية',
   insightsLead:
-    'مقالات مبنية على fieldwork للمشترين خارج الرعاية الصحية — رشّح حسب القطاع الصناعي والدولة. أبحاث الرعاية الصحية والأدوية تبقى في مدونتنا المخصصة.',
-  insightsCtaOpen: 'فتح بوابة insights →',
+    'مقالات مبنية على العمل الميداني للمشترين خارج الرعاية الصحية — رشّح حسب القطاع الصناعي والدولة. أبحاث الرعاية الصحية والأدوية تبقى في مدونتنا المخصصة.',
+  insightsCtaOpen: 'فتح بوابة الرؤى →',
   insightsCtaProposal: 'طلب عرض',
   insightsPanelHead: 'أحدث المقالات القطاعية',
   insightsPublishedSuffix: 'منشور',
   insightsEmpty:
-    'مقالات قريبًا — استكشف صفحات الخدمة country × industry في هذه الأثناء.',
-  insightsBrowseAll: 'تصفح كل insights القطاعية →',
+    'مقالات قريبًا — استكشف صفحات الخدمة «الدولة × الصناعة» في هذه الأثناء.',
+  insightsBrowseAll: 'تصفح كل الرؤى القطاعية →',
   narrativeEyebrow: 'تغطية إقليمية عالمية',
   narrativeH2Before: 'أمريكا الشمالية وLATAM وأوروبا والشرق الأوسط وشمال أفريقيا وAPAC — تحت ',
   narrativeH2Em: 'إطار أدلة واحد',
   narrativeP1:
-    'BioNixus مقرها الأمريكي في Sheridan بولاية Wyoming، مع عمليات أبحاث في لندن والقاهرة. هذا الهيكل يتيح تنفيذ برامج American وEuropean وLATAM وAPAC بنفس معيار fieldwork MENA — ومقارنة إطلاق أو علامة عبر كل منطقة داخل إطار أدلة واحد.',
+    'BioNixus مقرها الأمريكي في Sheridan بولاية Wyoming، مع عمليات أبحاث في لندن والقاهرة. هذا الهيكل يتيح تنفيذ برامج أمريكية وأوروبية وLATAM وAPAC بنفس معيار العمل الميداني في MENA — ومقارنة إطلاق أو علامة عبر كل منطقة داخل إطار أدلة واحد.',
   narrativeP2Part1: 'في ',
   narrativeLatamLabel: 'أمريكا اللاتينية',
   narrativeP2Part2:
@@ -134,13 +134,13 @@ export const bionixusIndustriesPageCopyAr: BionixusIndustriesPageCopy = {
   nextSteps: [
     {
       path: '/bionixus-industries/insights',
-      label: 'Insights القطاعية — B2B وB2C',
+      label: 'رؤى قطاعية — B2B وB2C',
       description: 'مقالات عن FMCG والتكنولوجيا والتجزئة وأبحاث enterprise في MENA.',
     },
     {
       path: '/market-research-by-industry',
       label: 'فهرس القطاعات — دول مجلس التعاون والشرق الأوسط وشمال أفريقيا (7 أسواق)',
-      description: 'كل صفحات country-by-industry المنشورة في مكان واحد.',
+      description: 'كل صفحات «الدولة × الصناعة» المنشورة في مكان واحد.',
     },
     {
       path: '/healthcare-market-research',

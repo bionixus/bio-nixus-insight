@@ -132,14 +132,11 @@ function buildLocale(lang) {
     pathways: {
       h2: L(35, lang),
       introFull: L(36, lang),
-      introPart1:
-        lang === 'en'
-          ? 'BioNixus runs healthcare market research globally — with country-level depth across the Americas, Europe, and the Middle East. Use these '
-          : undefined,
-      introLinkHealthcare: lang === 'en' ? 'healthcare market research' : undefined,
-      introPart2: lang === 'en' ? ' pathways for launch, market access, and growth. Compare methods in our ' : undefined,
-      introLinkHub: lang === 'en' ? 'market research' : undefined,
-      introPart3: lang === 'en' ? ' hub.' : undefined,
+      introPart1: L(96, lang) || undefined,
+      introLinkHealthcare: L(97, lang) || undefined,
+      introPart2: L(98, lang) || undefined,
+      introLinkHub: L(99, lang) || undefined,
+      introPart3: L(100, lang) || undefined,
       moreSummary: L(37, lang),
       moreLinksTemplate: L(38, lang),
     },
