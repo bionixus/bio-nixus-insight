@@ -171,7 +171,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       introLinkHealthcare: "healthcare market research",
       introPart2: " pathways for launch, market access, and growth. Compare methods in our ",
       introLinkHub: "market research",
-      introPart3: " hub.",
+      introPart3: "hub.",
       moreSummary: "More research pathways",
       moreLinksTemplate: "{N} links"
     },
@@ -355,8 +355,13 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       }
     },
     pathways: {
-      h2: "Gesundheitswesen-Forschungspfade",
-      introFull: "BioNixus führt Gesundheitsmarktforschung weltweit durch — mit Länder-Tiefe in Amerika, Europa und Naher Osten. Nutzen Sie diese Pfade für Markteinführung, Marktzugang und Wachstum. Methoden vergleichen Sie in unserem Marktforschungs-Übersichtsbereich.",
+      h2: "Gesundheitsmarktforschungswege",
+      introFull: "BioNixus führt Gesundheitsmarktforschung weltweit durch — mit länderbezogener Tiefe in Deutschland, Europa, Amerika und Nahem Osten. Nutzen Sie diese Gesundheitsmarktforschungswege für Markteinführung, Marktzugang und Wachstum. Methoden vergleichen Sie in unserem Marktforschungs-Übersichtsbereich.",
+      introPart1: "BioNixus führt Gesundheitsmarktforschung weltweit durch — mit länderbezogener Tiefe in Deutschland, Europa, Amerika und Nahem Osten. Nutzen Sie diese ",
+      introLinkHealthcare: "Gesundheitsmarktforschungswege",
+      introPart2: " für Markteinführung, Marktzugang und Wachstum. Methoden vergleichen Sie in unserem ",
+      introLinkHub: "Marktforschungs-Übersichtsbereich",
+      introPart3: ".",
       moreSummary: "Weitere Forschungspfade",
       moreLinksTemplate: "{N} Verknüpfungen"
     },
@@ -541,7 +546,12 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     pathways: {
       h2: "Parcours de recherche santé",
-      introFull: "BioNixus mène des études de marché santé dans le monde — avec une profondeur pays en Amériques, Europe et Moyen-Orient. Utilisez ces parcours pour lancement, accès marché et croissance. Comparez les méthodes dans notre hub.",
+      introFull: "BioNixus mène des études de marché santé dans le monde — avec une profondeur pays en Amériques, Europe et Moyen-Orient. Utilisez ces parcours de recherche santé pour le lancement, l'accès au marché et la croissance. Comparez les méthodes dans notre pôle de recherche marché.",
+      introPart1: "BioNixus mène des études de marché santé dans le monde — avec une profondeur pays en Amériques, Europe et Moyen-Orient. Utilisez ces ",
+      introLinkHealthcare: "parcours de recherche santé",
+      introPart2: " pour le lancement, l'accès au marché et la croissance. Comparez les méthodes dans notre ",
+      introLinkHub: "pôle de recherche marché",
+      introPart3: ".",
       moreSummary: "Plus de parcours de recherche",
       moreLinksTemplate: "{N} liens"
     },
@@ -726,7 +736,12 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     pathways: {
       h2: "Rutas de investigación sanitaria",
-      introFull: "BioNixus ejecuta investigación de mercado sanitario a nivel global — con profundidad por país en Américas, Europa y Oriente Medio. Use estas rutas para lanzamiento, acceso y crecimiento. Compare métodos en nuestro hub.",
+      introFull: "BioNixus ejecuta investigación de mercado sanitario a nivel global — con profundidad por país en Américas, Europa y Oriente Medio. Use estas rutas de investigación de mercado sanitario para lanzamiento, acceso al mercado y crecimiento. Compare métodos en nuestro centro de investigación de mercado.",
+      introPart1: "BioNixus ejecuta investigación de mercado sanitario a nivel global — con profundidad por país en Américas, Europa y Oriente Medio. Use estas rutas de ",
+      introLinkHealthcare: "investigación de mercado sanitario",
+      introPart2: " para lanzamiento, acceso al mercado y crecimiento. Compare métodos en nuestro ",
+      introLinkHub: "centro de investigación de mercado",
+      introPart3: ".",
       moreSummary: "Más rutas de investigación",
       moreLinksTemplate: "{N} enlaces"
     },
@@ -911,7 +926,12 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     pathways: {
       h2: "Rotas de pesquisa em saúde",
-      introFull: "A BioNixus conduz pesquisa de mercado em saúde globalmente — com profundidade por país nas Américas, Europa e Oriente Médio. Use estas rotas para lançamento, acesso e crescimento. Compare métodos no nosso hub.",
+      introFull: "A BioNixus conduz pesquisa de mercado em saúde globalmente — com profundidade por país nas Américas, Europa e Oriente Médio. Use estas rotas de pesquisa de mercado em saúde para lançamento, acesso ao mercado e crescimento. Compare métodos no nosso centro de pesquisa de mercado.",
+      introPart1: "A BioNixus conduz pesquisa de mercado em saúde globalmente — com profundidade por país nas Américas, Europa e Oriente Médio. Use estas rotas de ",
+      introLinkHealthcare: "pesquisa de mercado em saúde",
+      introPart2: " para lançamento, acesso ao mercado e crescimento. Compare métodos no nosso ",
+      introLinkHub: "centro de pesquisa de mercado",
+      introPart3: ".",
       moreSummary: "Mais rotas de pesquisa",
       moreLinksTemplate: "{N} links"
     },
@@ -1096,7 +1116,12 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     pathways: {
       h2: "Направления исследований в здравоохранении",
-      introFull: "BioNixus проводит исследования рынка здравоохранения по всему миру — с глубиной на уровне стран в Америке, Европе и на Ближнем Востоке. Используйте эти маршруты для запуска, доступа и роста. Сравните методы в нашем хабе.",
+      introFull: "BioNixus проводит исследования рынка здравоохранения по всему миру — с глубиной на уровне стран в Америке, Европе и на Ближнем Востоке. Используйте эти направления исследований здравоохранения для запуска, доступа и роста. Сравните методы в нашем центре исследований рынка.",
+      introPart1: "BioNixus проводит исследования рынка здравоохранения по всему миру — с глубиной на уровне стран в Америке, Европе и на Ближнем Востоке. Используйте эти ",
+      introLinkHealthcare: "направления исследований здравоохранения",
+      introPart2: " для запуска, доступа и роста. Сравните методы в нашем ",
+      introLinkHub: "центре исследований рынка",
+      introPart3: ".",
       moreSummary: "Другие направления исследований",
       moreLinksTemplate: "{N} ссылок"
     },
@@ -1281,7 +1306,12 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     pathways: {
       h2: "医疗健康研究路径",
-      introFull: "BioNixus 在全球开展医疗健康市场研究 — 在美洲、欧洲与中东具备国家级深度。使用这些路径支持上市、准入与增长。请在我们的市场研究枢纽中比较方法。",
+      introFull: "BioNixus 在全球开展医疗健康市场研究 — 在美洲、欧洲与中东具备国家级深度。使用这些医疗健康市场研究路径支持上市、准入与增长。请在我们的市场研究枢纽中比较方法。",
+      introPart1: "BioNixus 在全球开展医疗健康市场研究 — 在美洲、欧洲与中东具备国家级深度。使用这些",
+      introLinkHealthcare: "医疗健康市场研究路径",
+      introPart2: "支持上市、准入与增长。请在我们的",
+      introLinkHub: "市场研究枢纽",
+      introPart3: "中比较方法。",
       moreSummary: "更多研究路径",
       moreLinksTemplate: "{N} 个链接"
     },
@@ -1466,7 +1496,12 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     pathways: {
       h2: "مسارات أبحاث الرعاية الصحية",
-      introFull: "تنفّذ بيونكسس أبحاث السوق الصحي عالمياً — بعمق على مستوى الدولة عبر الأمريكتين وأوروبا والشرق الأوسط. استخدم هذه المسارات للإطلاق والوصول والنمو. قارن المنهجيات في مركز أبحاث السوق.",
+      introFull: "تنفّذ بيونكسس أبحاث السوق الصحي عالمياً — بعمق على مستوى الدولة عبر الأمريكتين وأوروبا والشرق الأوسط. استخدم مسارات أبحاث السوق الصحي للإطلاق والوصول والنمو. قارن المنهجيات في مركز أبحاث السوق.",
+      introPart1: "تنفّذ بيونكسس أبحاث السوق الصحي عالمياً — بعمق على مستوى الدولة عبر الأمريكتين وأوروبا والشرق الأوسط. استخدم ",
+      introLinkHealthcare: "مسارات أبحاث السوق الصحي",
+      introPart2: " للإطلاق والوصول والنمو. قارن المنهجيات في ",
+      introLinkHub: "مركز أبحاث السوق",
+      introPart3: ".",
       moreSummary: "مسارات بحث إضافية",
       moreLinksTemplate: "{N} روابط"
     },
