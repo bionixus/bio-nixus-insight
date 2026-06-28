@@ -1,11 +1,18 @@
 import { useEffect } from 'react';
-import { useParams, Link, useLocation } from 'react-router-dom';
+import { useParams, Link, useLocation, useNavigate } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { sanitizeBodyHtml } from '@/lib/sanitize-body-html';
 import { PortableText } from '@portabletext/react';
 import type { PortableTextBlock } from '@portabletext/types';
 import { Helmet } from 'react-helmet-async';
 import { fetchSanityPostBySlug, type RelatedPostsData } from '@/lib/sanity-blog';
+import {
+  getBlogIndexLabelForPost,
+  getBlogIndexPathForPost,
+  getIndustriesInsightPostPath,
+  INDUSTRIES_INSIGHTS_INDEX_PATH,
+  resolveContentSilo,
+} from '@/lib/blog-content-silo';
 import { getHardcodedPostBySlug } from '@/data/blog-posts-index';
 import {
   BLOG_INDEX_ROBOTS,
@@ -24,7 +31,8 @@ import {
 } from '@/lib/seo-meta';
 import RelatedPosts from '@/components/RelatedPosts';
 import { EgyptHealthcare2026CairoBlock } from '@/components/blog/EgyptHealthcare2026CairoBlock';
-import { EGYPT_HEALTHCARE_2026_CAIRO_FAQ } from '@/data/egyptHealthcare2026CairoSeo';
+import { getGermanBlogFaqItems, localizeTocForGerman, resolveGermanExecutiveSummary } from '@/data/germanBlogFaq';
+import { getGermanBlogCta } from '@/data/germanBlogCta';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import BlogSiteExplorer from '@/components/BlogSiteExplorer';
@@ -32,6 +40,12 @@ import { getOgLocale, getOgLocaleAlternates } from '@/lib/seo';
 import { resolveSanityBlogSlug, BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH } from '../../blog-legacy-redirects.mjs';
 import { isSanityConfigured } from '@/lib/sanity';
 import { useLanguage } from '@/contexts/LanguageContext';
+import {
+  getBlogArticleIndexLabel,
+  getBlogArticleIndexPath,
+  getBlogPostUiStrings,
+  resolveBlogArticleLocale,
+} from '@/lib/blogPostUiStrings';
 import { useInitialData } from '@/contexts/InitialDataContext';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -754,6 +768,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
   const { slug: paramSlug } = useParams<{ slug: string }>();
   const slug = fixedSlug ?? paramSlug;
   const { pathname } = useLocation();
+  const navigate = useNavigate();
   const isArBlog = pathname.startsWith('/ar/blog');
   const blogIndexPath = isArBlog ? '/ar/blog' : '/blog';
   const isQuantMrMaEn = slug === QUANT_MR_MA_SLUG && !isArBlog;
@@ -814,6 +829,11 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
   const post = preferHardcodedPillar
     ? hardcodedPillar
     : sanityPost ?? hardcodedPillar ?? fallbackPost;
+  const resolvedSilo = post ? resolveContentSilo(post) : 'healthcare';
+  const articleIndexPath = isArBlog ? '/ar/blog' : getBlogIndexPathForPost(post ?? { contentSilo: 'healthcare' });
+  const articleIndexLabel = isArBlog
+    ? 'المدونة العربية'
+    : getBlogIndexLabelForPost(post ?? { contentSilo: 'healthcare' });
   const executiveSummary =
     post && !isGccComparisonEn ? getExecutiveSummaryToRender(post, slug, { isArBlog }) : null;
 
@@ -822,6 +842,15 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
       const target = pathname.startsWith('/de/') ? '/de/blog' : '/blog';
       window.location.replace(target);
       return;
+    }
+    if (
+      slug &&
+      !isArBlog &&
+      post &&
+      resolveContentSilo(post) === 'industries' &&
+      pathname.startsWith('/blog/')
+    ) {
+      navigate(getIndustriesInsightPostPath(slug), { replace: true });
     }
     const bar = document.getElementById('blog-rp');
     if (!bar) return;
@@ -833,7 +862,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
     };
     window.addEventListener('scroll', update, { passive: true });
     return () => window.removeEventListener('scroll', update);
-  }, [post]);
+  }, [post, slug, pathname, isArBlog, navigate]);
 
   if (!slug) {
     return (
@@ -884,8 +913,8 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
       <div className="min-h-screen bg-background">
         <Navbar />
         <main className="px-6 py-16 max-w-3xl mx-auto">
-          <Link to={blogIndexPath} className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary text-sm mb-8 transition-colors">
-            <ArrowLeft className="w-3.5 h-3.5" /> Back to insights
+          <Link to={articleIndexPath} className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary text-sm mb-8 transition-colors">
+            <ArrowLeft className="w-3.5 h-3.5" /> Back to {articleIndexLabel.toLowerCase()}
           </Link>
           <h1 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3 text-balance">
             {slug ? `${formatSlugAsPageHeading(slug)} — BioNixus` : 'BioNixus insight'}
@@ -898,6 +927,12 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
   }
 
   const pathClean = (pathname.split('?')[0] || '/blog').replace(/\/+$/, '') || '/blog';
+  const articleLocale = resolveBlogArticleLocale(post, pathname);
+  const blogUi = getBlogPostUiStrings(articleLocale);
+  const localizedArticleIndexPath =
+    articleLocale === 'en' ? articleIndexPath : getBlogArticleIndexPath(articleLocale, resolvedSilo);
+  const localizedArticleIndexLabel =
+    articleLocale === 'en' ? articleIndexLabel : getBlogArticleIndexLabel(articleLocale, resolvedSilo);
   const isEgyptHealthcare2026 = slug === EGYPT_HEALTHCARE_2026_SLUG;
   const isKuwaitHealthcare2026 = slug === KUWAIT_HEALTHCARE_2026_SLUG;
   const isUaeHealthcareTrends2025En = slug === UAE_HEALTHCARE_TRENDS_2025_SLUG && !isArBlog;
@@ -1028,6 +1063,25 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
   const ogTimes = blogOgArticleIsoTimestamps(post);
   const blogHreflangAlternates = blogEnArAlternateUrls(pathClean);
 
+  const postFaqItems =
+    Array.isArray(post.faq) &&
+    !isPharmacoeconomicsGccEn &&
+    !isGccPharmacoeconomicsEn &&
+    !isTherapyStaticBlogEn &&
+    !isEgyptHealthcare2026
+      ? post.faq
+          .filter((item) => Boolean(item.question && item.answer))
+          .map((item) => ({ question: item.question!, answer: item.answer! }))
+      : [];
+
+  const localizedPostFaqItems =
+    articleLocale === 'de'
+      ? getGermanBlogFaqItems(slug, post.title, postFaqItems)
+      : postFaqItems;
+
+  const localizedCtaSection =
+    articleLocale === 'de' ? getGermanBlogCta(slug, post.ctaSection) : post.ctaSection;
+
   const mergedBlogFaqItems = [
     ...(isEgyptHealthcare2026 ? EGYPT_HEALTHCARE_2026_CAIRO_FAQ : []),
     ...(isQuantMrMaEn ? QUANT_MR_MA_SCHEMA_FAQ : []),
@@ -1035,15 +1089,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
     ...(isPharmacoeconomicsGccEn ? PHARMACOECONOMICS_GCC_SCHEMA_FAQ : []),
     ...(isGccPharmacoeconomicsEn ? GCC_PHARMACOECONOMICS_SCHEMA_FAQ : []),
     ...(isTherapyStaticBlogEn ? therapyStaticBlogBundle!.schemaFaq : []),
-    ...(Array.isArray(post.faq) &&
-    !isPharmacoeconomicsGccEn &&
-    !isGccPharmacoeconomicsEn &&
-    !isTherapyStaticBlogEn &&
-    !isEgyptHealthcare2026
-      ? post.faq
-        .filter((item) => Boolean(item.question && item.answer))
-        .map((item) => ({ question: item.question!, answer: item.answer! }))
-      : []),
+    ...localizedPostFaqItems,
   ];
 
   const resolvedTableOfContents = isGccComparisonEn
@@ -1057,6 +1103,14 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
           : Array.isArray(post.tableOfContents) && post.tableOfContents.length > 0
             ? post.tableOfContents
             : null;
+
+  const localizedExecutiveSummary =
+    articleLocale === 'de'
+      ? resolveGermanExecutiveSummary(post.title, slug, executiveSummary)
+      : executiveSummary;
+
+  const localizedTableOfContents =
+    articleLocale === 'de' ? localizeTocForGerman(resolvedTableOfContents) : resolvedTableOfContents;
 
   const heroCoverImage =
     therapyStaticBundledCover ||
@@ -1164,11 +1218,24 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
                 { name: 'المدونة العربية', item: 'https://www.bionixus.com/ar/blog' },
                 { name: articleDisplayTitle, item: pageUrl },
               ]
-            : [
-                { name: 'Home', item: 'https://www.bionixus.com/' },
-                { name: 'Blog', item: 'https://www.bionixus.com/blog' },
-                { name: articleDisplayTitle, item: pageUrl },
-              ]
+            : articleLocale === 'de'
+              ? [
+                  { name: 'Startseite', item: 'https://www.bionixus.com/de' },
+                  { name: 'Blog', item: 'https://www.bionixus.com/de/blog' },
+                  { name: articleDisplayTitle, item: pageUrl },
+                ]
+            : resolvedSilo === 'industries'
+              ? [
+                  { name: 'Home', item: 'https://www.bionixus.com/' },
+                  { name: 'Industries', item: 'https://www.bionixus.com/bionixus-industries' },
+                  { name: 'Industry Insights', item: `https://www.bionixus.com${INDUSTRIES_INSIGHTS_INDEX_PATH}` },
+                  { name: articleDisplayTitle, item: pageUrl },
+                ]
+              : [
+                  { name: 'Home', item: 'https://www.bionixus.com/' },
+                  { name: 'Blog', item: 'https://www.bionixus.com/blog' },
+                  { name: articleDisplayTitle, item: pageUrl },
+                ]
         }
         faqItems={mergedBlogFaqItems}
         itemList={slug === 'top-healthcare-market-research-firms-saudi-arabia' ? {
@@ -1239,8 +1306,8 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
             <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--gold-light)) 55%, transparent 100%)' }} />
 
             <div className="absolute bottom-0 left-0 right-0 px-6 md:px-10 pb-8 md:pb-10 z-10">
-              <Link to={blogIndexPath} className="inline-flex items-center gap-1.5 text-white/50 hover:text-white/80 text-sm mb-5 transition-colors">
-                <ArrowLeft className="w-3.5 h-3.5" /> Back to insights
+              <Link to={localizedArticleIndexPath} className="inline-flex items-center gap-1.5 text-white/50 hover:text-white/80 text-sm mb-5 transition-colors">
+                <ArrowLeft className="w-3.5 h-3.5" /> {blogUi.backTo(localizedArticleIndexLabel)}
               </Link>
 
               {post.category && (
@@ -1280,7 +1347,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
                 {post.readingTime != null && (
                   <div className="flex items-center gap-1.5 text-[13px] text-white/55 px-4 border-r border-white/20">
                     <Clock className="w-3 h-3 opacity-60" aria-hidden />
-                    <strong className="text-white/80 font-medium">{post.readingTime} min</strong>
+                    <strong className="text-white/80 font-medium">{post.readingTime} {blogUi.readingMin}</strong>
                   </div>
                 )}
                 {post.country && (
@@ -1298,8 +1365,8 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
             <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--gold-light)) 55%, transparent 100%)' }} />
             <div className="absolute -top-32 -right-32 w-80 h-80 rounded-full opacity-[0.06]" style={{ background: 'hsl(var(--accent))' }} />
             <div className="max-w-screen-xl mx-auto px-6 md:px-10">
-              <Link to={blogIndexPath} className="inline-flex items-center gap-1.5 text-white/50 hover:text-white/80 text-sm mb-6 transition-colors">
-                <ArrowLeft className="w-3.5 h-3.5" /> Back to insights
+              <Link to={localizedArticleIndexPath} className="inline-flex items-center gap-1.5 text-white/50 hover:text-white/80 text-sm mb-6 transition-colors">
+                <ArrowLeft className="w-3.5 h-3.5" /> {blogUi.backTo(localizedArticleIndexLabel)}
               </Link>
               {post.category && (
                 <div className="mb-4">
@@ -1333,7 +1400,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
                 {post.readingTime != null && (
                   <div className="flex items-center gap-1.5 text-[13px] text-white/55 px-4 border-r border-white/20">
                     <Clock className="w-3 h-3 opacity-60" aria-hidden />
-                    <strong className="text-white/80 font-medium">{post.readingTime} min</strong>
+                    <strong className="text-white/80 font-medium">{post.readingTime} {blogUi.readingMin}</strong>
                   </div>
                 )}
                 {post.country && (
@@ -1365,42 +1432,42 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
                     ))}
                   </div>
                 ) : <div />}
-                <ShareButtons url={pageUrl} title={articleDisplayTitle} contentType="blog" slug={slug!} />
+                <ShareButtons url={pageUrl} title={articleDisplayTitle} contentType="blog" slug={slug!} locale={articleLocale} />
               </div>
 
               {/* Executive summary */}
-              {executiveSummary && (
+              {localizedExecutiveSummary && (
                 <aside
                   className="relative mb-8 py-5 px-5 bg-primary/[0.025] border border-primary/[0.08] overflow-hidden"
                   style={{ borderLeft: '4px solid hsl(var(--accent))', borderRadius: '0 12px 12px 0' }}
-                  aria-label="Executive summary"
+                  aria-label={blogUi.executiveSummaryAria}
                 >
                   <div className="flex items-center gap-2.5 mb-3">
                     <div className="w-7 h-7 rounded-md flex items-center justify-center flex-shrink-0" style={{ background: 'hsl(var(--accent))' }}>
                       <AlignLeft className="w-3.5 h-3.5" style={{ color: 'hsl(var(--navy-deep))' }} aria-hidden />
                     </div>
-                    <span className="text-[11px] font-extrabold tracking-[0.1em] uppercase text-primary">Executive Summary</span>
+                    <span className="text-[11px] font-extrabold tracking-[0.1em] uppercase text-primary">{blogUi.executiveSummary}</span>
                   </div>
                   <div className="font-display text-[17px] italic leading-[1.72] text-foreground">
-                    {typeof executiveSummary === 'string' ? (
-                      <div dangerouslySetInnerHTML={{ __html: sanitizeBodyHtml(executiveSummary) }} />
+                    {typeof localizedExecutiveSummary === 'string' ? (
+                      <div dangerouslySetInnerHTML={{ __html: sanitizeBodyHtml(localizedExecutiveSummary) }} />
                     ) : (
-                      <PortableText value={executiveSummary as PortableTextBlock[]} components={portableTextComponents} />
+                      <PortableText value={localizedExecutiveSummary as PortableTextBlock[]} components={portableTextComponents} />
                     )}
                   </div>
                 </aside>
               )}
 
               {/* Table of contents — inline grid */}
-              {resolvedTableOfContents && resolvedTableOfContents.length > 0 && (
-                <nav className="mb-8 rounded-xl overflow-hidden border border-border" aria-label="Table of contents">
+              {localizedTableOfContents && localizedTableOfContents.length > 0 && (
+                <nav className="mb-8 rounded-xl overflow-hidden border border-border" aria-label={blogUi.tocAriaLabel}>
                   <div className="flex items-center gap-2 px-5 py-3.5 bg-muted/70 border-b border-border">
                     <List className="w-3.5 h-3.5 text-accent" aria-hidden />
-                    <span className="text-[11px] font-extrabold uppercase tracking-[0.08em] text-primary">Contents</span>
-                    <span className="ml-auto text-[11px] text-muted-foreground">{resolvedTableOfContents.length} sections</span>
+                    <span className="text-[11px] font-extrabold uppercase tracking-[0.08em] text-primary">{blogUi.tocHeading}</span>
+                    <span className="ml-auto text-[11px] text-muted-foreground">{blogUi.tocSectionCount(localizedTableOfContents.length)}</span>
                   </div>
                   <div className="p-5 grid sm:grid-cols-2 gap-x-6 gap-y-2.5 bg-background/60">
-                    {resolvedTableOfContents.map((item, i) => (
+                    {localizedTableOfContents.map((item, i) => (
                       <a
                         key={i}
                         href={item.anchor ? `#${item.anchor}` : undefined}
@@ -1610,28 +1677,39 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
               <section className="mt-10 rounded-2xl border border-border bg-muted/20 p-5 lg:p-6">
                 <h2 className="font-display text-lg font-bold text-foreground mb-1 flex items-center gap-2">
                   <ArrowUpRight className="w-4 h-4 text-accent flex-shrink-0" aria-hidden />
-                  Explore related research
+                  {blogUi.relatedResearchHeading}
                 </h2>
                 <p className="text-sm text-muted-foreground mb-4">
-                  For deeper regional insight, explore our healthcare market research framework and country coverage.
+                  {blogUi.relatedResearchDescription}
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {[
-                    ...(isGccComparisonEn
+                  {(
+                    articleLocale === 'de'
                       ? [
-                          { to: '/gcc-pharmaceutical-market-research', label: 'GCC pharmaceutical market research' },
-                          { to: '/healthcare-market-research/kuwait', label: 'Healthcare market research in Kuwait' },
-                          { to: '/blog/gcc-pharmaceuticals-market-2026', label: 'GCC pharma market 2026 full insight' },
+                          { to: '/de/healthcare-market-research/germany', label: 'Gesundheitsmarktforschung Deutschland' },
+                          { to: '/europe', label: 'Healthcare-Marktforschung Europa' },
+                          { to: '/uk', label: 'Pharmamarktforschung UK' },
+                          { to: '/de/blog/pharmamarktforschung-deutschland-2026', label: 'Pharmamarktforschung Deutschland 2026' },
+                          { to: '/de/blog/amnog-frueher-nutzen-marktzugang-2026', label: 'AMNOG Früher Nutzen & Marktzugang' },
+                          { to: '/de/contact', label: 'BioNixus kontaktieren' },
                         ]
-                      : []),
-                    ...(isQuantMrMaEn
-                      ? [{ to: '/quantitative-healthcare-market-research', label: 'Quantitative healthcare market research methodology' }]
-                      : []),
-                    { to: '/healthcare-market-research', label: 'EMEA healthcare market research hub' },
-                    { to: '/healthcare-market-research/saudi-arabia', label: 'Pharma market research in Saudi Arabia' },
-                    { to: '/healthcare-market-research/uae', label: 'Healthcare market research in the UAE' },
-                    { to: '/healthcare-market-research/therapy/oncology', label: 'Oncology market research in MENA' },
-                  ].map(({ to, label }) => (
+                      : [
+                          ...(isGccComparisonEn
+                            ? [
+                                { to: '/gcc-pharmaceutical-market-research', label: 'GCC pharmaceutical market research' },
+                                { to: '/healthcare-market-research/kuwait', label: 'Healthcare market research in Kuwait' },
+                                { to: '/blog/gcc-pharmaceuticals-market-2026', label: 'GCC pharma market 2026 full insight' },
+                              ]
+                            : []),
+                          ...(isQuantMrMaEn
+                            ? [{ to: '/quantitative-healthcare-market-research', label: 'Quantitative healthcare market research methodology' }]
+                            : []),
+                          { to: '/healthcare-market-research', label: 'EMEA healthcare market research hub' },
+                          { to: '/healthcare-market-research/saudi-arabia', label: 'Pharma market research in Saudi Arabia' },
+                          { to: '/healthcare-market-research/uae', label: 'Healthcare market research in the UAE' },
+                          { to: '/healthcare-market-research/therapy/oncology', label: 'Oncology market research in MENA' },
+                        ]
+                  ).map(({ to, label }) => (
                     <Link
                       key={to}
                       to={to}
@@ -1644,20 +1722,20 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
               </section>
 
               {/* Explore site */}
-              <BlogSiteExplorer />
+              <BlogSiteExplorer locale={articleLocale} />
 
               {/* FAQ — uses <details>/<summary> so answers are always in server-rendered HTML */}
               {mergedBlogFaqItems.length > 0 && (
-                <section className="mt-12" aria-label="Frequently asked questions">
+                <section className="mt-12" aria-label={blogUi.faqHeading}>
                   <h2 className="font-display text-2xl font-bold tracking-tight text-primary mb-6 flex items-center gap-3">
-                    <span className="inline-flex px-2 py-0.5 text-[10px] font-extrabold tracking-[0.1em] uppercase rounded-sm" style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--navy-deep))' }}>FAQ</span>
-                    Frequently asked questions
+                    <span className="inline-flex px-2 py-0.5 text-[10px] font-extrabold tracking-[0.1em] uppercase rounded-sm" style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--navy-deep))' }}>{blogUi.faqBadge}</span>
+                    {blogUi.faqHeading}
                   </h2>
                   <div className="w-full divide-y divide-border border-t border-border">
                     {mergedBlogFaqItems.map((item, i) => (
                       <details key={i} className="group">
                         <summary className="flex items-center justify-between cursor-pointer text-left text-[15px] font-semibold text-primary hover:text-accent-foreground py-5 list-none [&::-webkit-details-marker]:hidden">
-                          <span>{item.question || 'Question'}</span>
+                          <span>{item.question || blogUi.faqQuestionFallback}</span>
                           <svg className="w-4 h-4 shrink-0 ml-2 text-muted-foreground transition-transform group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                         </summary>
                         <div className="text-[15px] text-muted-foreground leading-relaxed pb-5">
@@ -1670,8 +1748,8 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
               )}
 
               {/* CTA Card — premium gradient */}
-              {post.ctaSection &&
-                (post.ctaSection.title || post.ctaSection.description || post.ctaSection.buttonText || post.ctaSection.buttonUrl) && (
+              {localizedCtaSection &&
+                (localizedCtaSection.title || localizedCtaSection.description || localizedCtaSection.buttonText || localizedCtaSection.buttonUrl) && (
                   <div
                     className="mt-12 rounded-2xl p-7 md:p-9 relative overflow-hidden"
                     style={{ background: 'linear-gradient(135deg, hsl(var(--navy-deep)) 0%, hsl(var(--navy-medium)) 100%)' }}
@@ -1680,34 +1758,34 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
                     <div className="absolute -top-16 -right-16 w-56 h-56 rounded-full opacity-[0.07] pointer-events-none" style={{ background: 'hsl(var(--accent))' }} />
                     <div className="absolute -bottom-20 -left-10 w-48 h-48 rounded-full opacity-[0.05] pointer-events-none" style={{ background: 'hsl(var(--accent))' }} />
 
-                    {post.ctaSection.title && (
+                    {localizedCtaSection.title && (
                       <>
                         <p className="text-[10px] font-extrabold tracking-[0.16em] uppercase mb-3" style={{ color: 'hsl(var(--accent))' }}>
-                          Expert Consultation
+                          {blogUi.ctaEyebrow}
                         </p>
                         <h2 className="font-display text-2xl md:text-3xl font-bold text-white leading-snug tracking-tight mb-3 max-w-lg">
-                          {post.ctaSection.title}
+                          {localizedCtaSection.title}
                         </h2>
                       </>
                     )}
-                    {post.ctaSection.description && (
+                    {localizedCtaSection.description && (
                       <p className="text-[15px] leading-relaxed text-white/60 mb-7 max-w-lg">
-                        {post.ctaSection.description}
+                        {localizedCtaSection.description}
                       </p>
                     )}
-                    {post.ctaSection.buttonText && post.ctaSection.buttonUrl && (
+                    {localizedCtaSection.buttonText && localizedCtaSection.buttonUrl && (
                       (() => {
-                        const target = resolveCtaHref(post.ctaSection!.buttonUrl!);
+                        const target = resolveCtaHref(localizedCtaSection!.buttonUrl!);
                         const btnClass = "inline-flex items-center gap-2 px-6 py-3 text-sm font-bold rounded-md transition-all hover:-translate-y-0.5 hover:shadow-lg";
                         const btnStyle = { background: 'hsl(var(--accent))', color: 'hsl(var(--navy-deep))' };
                         return target.kind === 'internal' ? (
                           <Link to={target.to} className={btnClass} style={btnStyle}>
-                            {post.ctaSection!.buttonText}
+                            {localizedCtaSection!.buttonText}
                             <ArrowUpRight className="w-4 h-4" aria-hidden />
                           </Link>
                         ) : (
                           <a href={target.href} target="_blank" rel="noopener noreferrer" className={btnClass} style={btnStyle}>
-                            {post.ctaSection!.buttonText}
+                            {localizedCtaSection!.buttonText}
                             <ArrowUpRight className="w-4 h-4" aria-hidden />
                           </a>
                         );
@@ -1735,7 +1813,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
                     </div>
                   )}
                   <div className="flex-1 min-w-0">
-                    <p className="text-[10px] font-extrabold tracking-[0.1em] uppercase mb-0.5" style={{ color: 'hsl(var(--accent))' }}>Research Author</p>
+                    <p className="text-[10px] font-extrabold tracking-[0.1em] uppercase mb-0.5" style={{ color: 'hsl(var(--accent))' }}>{blogUi.authorEyebrow}</p>
                     <p className="text-[15px] font-semibold text-primary">
                       {post.authorLinkedIn ? (
                         <a href={post.authorLinkedIn} target="_blank" rel="noopener noreferrer" className="hover:underline">{post.authorName}</a>
@@ -1745,12 +1823,12 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
                     {post.authorLinkedIn && (
                       <a href={post.authorLinkedIn} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-primary/70 hover:text-primary transition-colors">
                         <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                        LinkedIn Profile
+                        {blogUi.linkedInProfile}
                       </a>
                     )}
                     {post.updatedAtIso && post.updatedAtIso !== post.publishedAtIso && (
                       <p className="text-xs text-muted-foreground mt-1">
-                        Updated {new Date(post.updatedAtIso).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
+                        {blogUi.updated} {new Date(post.updatedAtIso).toLocaleDateString(articleLocale === 'de' ? 'de-DE' : articleLocale === 'ar' ? 'ar-EG' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
                       </p>
                     )}
                   </div>
@@ -1762,14 +1840,14 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
             <aside className="hidden lg:block sticky top-20 space-y-4" aria-label="Article sidebar">
 
               {/* Table of contents */}
-              {resolvedTableOfContents && resolvedTableOfContents.length > 0 && (
-                <nav className="rounded-xl overflow-hidden border border-border shadow-sm" aria-label="Article sections">
+              {localizedTableOfContents && localizedTableOfContents.length > 0 && (
+                <nav className="rounded-xl overflow-hidden border border-border shadow-sm" aria-label={blogUi.tocAriaLabel}>
                   <div className="flex items-center gap-2 px-4 py-3" style={{ background: 'hsl(var(--primary))' }}>
                     <List className="w-3.5 h-3.5" style={{ color: 'hsl(var(--accent))' }} aria-hidden />
-                    <span className="text-[11px] font-extrabold uppercase tracking-[0.1em] text-white">On this page</span>
+                    <span className="text-[11px] font-extrabold uppercase tracking-[0.1em] text-white">{blogUi.tocHeading}</span>
                   </div>
                   <div className="py-2 bg-background">
-                    {resolvedTableOfContents.map((item, i) => (
+                    {localizedTableOfContents.map((item, i) => (
                       <a
                         key={i}
                         href={item.anchor ? `#${item.anchor}` : undefined}
@@ -1788,14 +1866,14 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
                 style={{ background: 'linear-gradient(160deg, hsl(var(--navy-deep)) 0%, hsl(var(--navy-medium)) 100%)' }}
               >
                 <div className="absolute -top-8 -right-8 w-28 h-28 rounded-full opacity-[0.1] pointer-events-none" style={{ background: 'hsl(var(--accent))' }} />
-                <p className="text-[10px] font-extrabold tracking-[0.14em] uppercase mb-2" style={{ color: 'hsl(var(--accent))' }}>Expert Research</p>
-                <p className="font-display text-base font-bold text-white leading-snug mb-4">Need a pharma market research for your team?</p>
+                <p className="text-[10px] font-extrabold tracking-[0.14em] uppercase mb-2" style={{ color: 'hsl(var(--accent))' }}>{blogUi.sidebarCtaEyebrow}</p>
+                <p className="font-display text-base font-bold text-white leading-snug mb-4">{blogUi.sidebarCtaTitle}</p>
                 <Link
-                  to="/contact"
+                  to={blogUi.contactPath}
                   className="flex items-center justify-center gap-1.5 py-2.5 text-[13px] font-bold rounded-md w-full transition-all hover:-translate-y-0.5"
                   style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--navy-deep))' }}
                 >
-                  Request a briefing
+                  {blogUi.sidebarCtaButton}
                   <ArrowUpRight className="w-3.5 h-3.5" aria-hidden />
                 </Link>
               </div>
@@ -1811,6 +1889,8 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
             country={post.country}
             tags={displayBlogTags}
             initialRelated={initialRelated}
+            contentSilo={resolvedSilo}
+            locale={articleLocale}
           />
         </div>
       </main>

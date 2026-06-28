@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import type { BlogPost } from '@/types/blog';
+import { INDUSTRIES_INSIGHTS_INDEX_PATH } from '@/lib/blog-content-silo';
 
 import { optimizeSanityImage } from '@/lib/image-utils';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
@@ -21,6 +22,8 @@ interface BlogSectionProps {
   showHeader?: boolean;
   /** Hide footer link to /blog (redundant on blog index) */
   showViewAllLink?: boolean;
+  /** Override base path for article links (e.g. /bionixus-industries/insights) */
+  postBasePath?: string;
   /** When true, show all posts in grid (no featured hero card) */
   disableFeatured?: boolean;
 }
@@ -133,16 +136,21 @@ const BlogSection = ({
   showHeader = true,
   showViewAllLink = true,
   disableFeatured = false,
+  postBasePath,
 }: BlogSectionProps) => {
   const { t, language } = useLanguage();
   const { pathname } = useLocation();
-  const blogBasePath = pathname.startsWith('/ar/blog')
-    ? '/ar/blog'
-    : pathname.startsWith('/de/')
-      ? '/de/blog'
-      : pathname.startsWith('/fr/')
-        ? '/fr/blog'
-        : '/blog';
+  const blogBasePath =
+    postBasePath ??
+    (pathname.startsWith('/bionixus-industries/insights')
+      ? INDUSTRIES_INSIGHTS_INDEX_PATH
+      : pathname.startsWith('/ar/blog')
+        ? '/ar/blog'
+        : pathname.startsWith('/de/')
+          ? '/de/blog'
+          : pathname.startsWith('/fr/')
+            ? '/fr/blog'
+            : '/blog');
 
   const isPlaceholderSlug = (slug: string) => slug.startsWith('fallback-');
   const isMagazineLayout = variant === 'index' || variant === 'home';

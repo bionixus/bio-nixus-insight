@@ -7,6 +7,12 @@ import type { SanityClient } from '@sanity/client';
 import { getSanityClient } from './sanity';
 import { resolveBlogSeoNoIndex } from '@/lib/blog-robots';
 import type { BlogPost } from '@/types/blog';
+import {
+  type ContentSilo,
+  filterPostsBySilo,
+  HEALTHCARE_SILO_GROQ,
+  INDUSTRIES_SILO_GROQ,
+} from '@/lib/blog-content-silo';
 import { hardcodedSeoPosts, getHardcodedPostBySlug } from '@/data/blog-posts-index';
 
 function stripHtml(input: string): string {
@@ -27,7 +33,19 @@ function sortPostsNewestFirst(posts: BlogPost[]): BlogPost[] {
   return [...posts].sort((a, b) => postSortTime(b) - postSortTime(a));
 }
 
-const POSTS_QUERY = `*[_type == "blogPost" && defined(slug.current)] | order(publishedAt desc, _createdAt desc) {
+function siloFilterClause(silo: ContentSilo): string {
+  return silo === 'industries' ? INDUSTRIES_SILO_GROQ : HEALTHCARE_SILO_GROQ;
+}
+
+const SILO_FIELDS = `
+  contentSilo,
+  industrySegment,
+  industrySlug,
+`;
+
+function buildPostsQuery(silo: ContentSilo): string {
+  const siloFilter = siloFilterClause(silo);
+  return `*[_type == "blogPost" && defined(slug.current) && ${siloFilter}] | order(publishedAt desc, _createdAt desc) {
   _id,
   _type,
   title,
@@ -42,12 +60,15 @@ const POSTS_QUERY = `*[_type == "blogPost" && defined(slug.current)] | order(pub
   "categories": categories[]->title,
   country,
   "countryTitle": country->title,
-  "coverImage": mainImage.asset->url
+  "coverImage": mainImage.asset->url,
+  ${SILO_FIELDS}
 }[0...$limit]`;
+}
 
 const LATEST_INSIGHTS_QUERY = `*[
   _type == "blogPost" &&
   defined(slug.current) &&
+  (${HEALTHCARE_SILO_GROQ}) &&
   (!defined(language) || language == $language)
 ] | order(coalesce(publishedAt, _createdAt) desc) {
   _id,
@@ -65,7 +86,32 @@ const LATEST_INSIGHTS_QUERY = `*[
   country,
   "countryTitle": country->title,
   "coverImage": mainImage.asset->url,
-  "authorName": author->name
+  "authorName": author->name,
+  ${SILO_FIELDS}
+}[0...$limit]`;
+
+const INDUSTRIES_INSIGHTS_QUERY = `*[
+  _type == "blogPost" &&
+  defined(slug.current) &&
+  ${INDUSTRIES_SILO_GROQ}
+] | order(coalesce(publishedAt, _createdAt) desc) {
+  _id,
+  _type,
+  title,
+  "slug": slug.current,
+  excerpt,
+  language,
+  "date": coalesce(publishedAt, _createdAt),
+  "publishedAtIso": coalesce(publishedAt, _createdAt),
+  "updatedAtIso": coalesce(updatedAt, _updatedAt, publishedAt, _createdAt),
+  category,
+  "categoryTitle": category->title,
+  "categories": categories[]->title,
+  country,
+  "countryTitle": country->title,
+  "coverImage": mainImage.asset->url,
+  "authorName": author->name,
+  ${SILO_FIELDS}
 }[0...$limit]`;
 
 const POST_BY_SLUG_QUERY = `*[_type == "blogPost" && slug.current == $slug][0] {
@@ -98,7 +144,8 @@ const POST_BY_SLUG_QUERY = `*[_type == "blogPost" && slug.current == $slug][0] {
   "authorName": author->name,
   "authorTitle": author->title,
   "authorImage": author->image.asset->url,
-  "authorLinkedIn": author->linkedIn
+  "authorLinkedIn": author->linkedIn,
+  ${SILO_FIELDS}
 }`;
 
 /**
@@ -158,6 +205,13 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
     coverImage: p.coverImage ?? undefined,
     publishedAtIso: p.publishedAtIso,
     updatedAtIso: p.updatedAtIso,
+    ...(p.contentSilo === 'industries' || p.contentSilo === 'healthcare'
+      ? { contentSilo: p.contentSilo }
+      : {}),
+    ...(p.industrySegment === 'b2b' || p.industrySegment === 'b2c'
+      ? { industrySegment: p.industrySegment }
+      : {}),
+    ...(p.industrySlug ? { industrySlug: p.industrySlug } : {}),
     ...(authorFromQuery ? { authorName: authorFromQuery } : {}),
     ...(includeBody && (() => {
       const raw = p as RawSanityPost & { bodyHtml?: string };
@@ -220,23 +274,47 @@ export async function checkSanityConnection(): Promise<{ ok: true } | { ok: fals
 export async function fetchSanityPostsWithClient(
   client: SanityClient,
   limit = BLOG_INDEX_POST_LIMIT,
+  options: { silo?: ContentSilo } = {},
 ): Promise<BlogPost[]> {
+  const silo = options.silo ?? 'healthcare';
+  const effectiveLimit = limit ?? BLOG_INDEX_POST_LIMIT;
   try {
-    const raw = await client.fetch<RawSanityPost[]>(POSTS_QUERY, {
-      limit: Math.max(1, Math.min(limit, BLOG_INDEX_POST_LIMIT)),
+    const raw = await client.fetch<RawSanityPost[]>(buildPostsQuery(silo), {
+      limit: Math.max(1, Math.min(effectiveLimit, BLOG_INDEX_POST_LIMIT)),
     });
     const sanityPosts = raw.map((p) => mapRawToPost(p)!).filter(Boolean);
     const sanitySlugs = new Set(sanityPosts.map((p) => p.slug));
-    const newHardcoded = hardcodedSeoPosts.filter((p) => !sanitySlugs.has(p.slug));
-    return sortPostsNewestFirst([...sanityPosts, ...newHardcoded]);
+    const newHardcoded = hardcodedSeoPosts.filter(
+      (p) => !sanitySlugs.has(p.slug) && (silo === 'healthcare' ? true : false),
+    );
+    return sortPostsNewestFirst([...sanityPosts, ...filterPostsBySilo(newHardcoded, silo)]);
   } catch (err) {
     console.error('Failed to fetch from Sanity CMS, fallback to hardcoded posts', err);
-    return sortPostsNewestFirst([...hardcodedSeoPosts]);
+    return sortPostsNewestFirst(filterPostsBySilo([...hardcodedSeoPosts], silo));
   }
 }
 
-export async function fetchSanityPosts(): Promise<BlogPost[]> {
-  return fetchSanityPostsWithClient(getSanityClient());
+export async function fetchSanityPosts(options: { silo?: ContentSilo } = {}): Promise<BlogPost[]> {
+  return fetchSanityPostsWithClient(getSanityClient(), BLOG_INDEX_POST_LIMIT, options);
+}
+
+export async function fetchIndustriesInsightsWithClient(
+  client: SanityClient,
+  limit = BLOG_INDEX_POST_LIMIT,
+): Promise<BlogPost[]> {
+  try {
+    const raw = await client.fetch<RawSanityPost[]>(INDUSTRIES_INSIGHTS_QUERY, {
+      limit: Math.max(1, Math.min(limit, BLOG_INDEX_POST_LIMIT)),
+    });
+    return sortPostsNewestFirst(raw.map((p) => mapRawToPost(p)!).filter(Boolean));
+  } catch (err) {
+    console.error('Failed to fetch industries insights from Sanity CMS', err);
+    return [];
+  }
+}
+
+export async function fetchIndustriesInsights(limit = BLOG_INDEX_POST_LIMIT): Promise<BlogPost[]> {
+  return fetchIndustriesInsightsWithClient(getSanityClient(), limit);
 }
 
 export async function fetchSanityLatestInsightsWithClient(
@@ -252,9 +330,11 @@ export async function fetchSanityLatestInsightsWithClient(
     const sanityPosts = raw.map((p) => mapRawToPost(p)!).filter(Boolean);
 
     const sanitySlugs = new Set(sanityPosts.map((p) => p.slug));
-    const newHardcoded = hardcodedSeoPosts.filter((p) => !sanitySlugs.has(p.slug) && (!p.language || p.language === language));
+    const newHardcoded = hardcodedSeoPosts.filter(
+      (p) => !sanitySlugs.has(p.slug) && (!p.language || p.language === language),
+    );
 
-    const combined = [...sanityPosts, ...newHardcoded];
+    const combined = filterPostsBySilo([...sanityPosts, ...newHardcoded], 'healthcare');
     combined.sort((a, b) => {
       const da = a.date ? new Date(a.date).getTime() : 0;
       const db = b.date ? new Date(b.date).getTime() : 0;
@@ -263,7 +343,10 @@ export async function fetchSanityLatestInsightsWithClient(
     return combined.slice(0, Math.max(1, Math.min(limit, 6)));
   } catch (err) {
     console.error('Failed to fetch latest insights from Sanity CMS, fallback to hardcoded posts', err);
-    const hardcodedFiltered = hardcodedSeoPosts.filter((p) => !p.language || p.language === language);
+    const hardcodedFiltered = filterPostsBySilo(
+      hardcodedSeoPosts.filter((p) => !p.language || p.language === language),
+      'healthcare',
+    );
     hardcodedFiltered.sort((a, b) => {
       const da = a.date ? new Date(a.date).getTime() : 0;
       const db = b.date ? new Date(b.date).getTime() : 0;
@@ -309,32 +392,29 @@ export async function fetchSanityPostBySlug(slug: string): Promise<BlogPost | nu
  * Related posts query: finds posts by same category OR same country (since category is often null).
  * Falls back to latest posts excluding the current one.
  */
-const RELATED_POSTS_QUERY = `{
+function buildRelatedPostsQuery(silo: ContentSilo): string {
+  const siloFilter = siloFilterClause(silo);
+  const cardFields = `_id, _type, title, "slug": slug.current, excerpt, language, "date": coalesce(publishedAt, _createdAt), category, country, "coverImage": mainImage.asset->url, contentSilo, industrySegment, industrySlug`;
+  return `{
   "byTags": *[
     _type == "blogPost" &&
     defined(slug.current) &&
     slug.current != $slug &&
+    ${siloFilter} &&
     count((tags[])[@ in $tags]) > 0 &&
     count($tags) > 0
-  ] | order(publishedAt desc, _createdAt desc)[0...8] {
-    _id, _type, title, "slug": slug.current, excerpt, language, "date": coalesce(publishedAt, _createdAt), category, country, "coverImage": mainImage.asset->url
-  },
-  "byCategory": *[_type == "blogPost" && defined(slug.current) && slug.current != $slug && category == $category && $category != ""] | order(publishedAt desc, _createdAt desc)[0...3] {
-    _id, _type, title, "slug": slug.current, excerpt, language, "date": coalesce(publishedAt, _createdAt), category, country, "coverImage": mainImage.asset->url
-  },
-  "byCountry": *[_type == "blogPost" && defined(slug.current) && slug.current != $slug && country == $country && $country != ""] | order(publishedAt desc, _createdAt desc)[0...6] {
-    _id, _type, title, "slug": slug.current, excerpt, language, "date": coalesce(publishedAt, _createdAt), category, country, "coverImage": mainImage.asset->url
-  },
-  "latest": *[_type == "blogPost" && defined(slug.current) && slug.current != $slug] | order(publishedAt desc, _createdAt desc)[0...6] {
-    _id, _type, title, "slug": slug.current, excerpt, language, "date": coalesce(publishedAt, _createdAt), category, country, "coverImage": mainImage.asset->url
-  },
-  "prev": *[_type == "blogPost" && defined(slug.current) && coalesce(publishedAt, _createdAt) < $date] | order(publishedAt desc, _createdAt desc)[0] {
+  ] | order(publishedAt desc, _createdAt desc)[0...8] { ${cardFields} },
+  "byCategory": *[_type == "blogPost" && defined(slug.current) && slug.current != $slug && ${siloFilter} && category == $category && $category != ""] | order(publishedAt desc, _createdAt desc)[0...3] { ${cardFields} },
+  "byCountry": *[_type == "blogPost" && defined(slug.current) && slug.current != $slug && ${siloFilter} && country == $country && $country != ""] | order(publishedAt desc, _createdAt desc)[0...6] { ${cardFields} },
+  "latest": *[_type == "blogPost" && defined(slug.current) && slug.current != $slug && ${siloFilter}] | order(publishedAt desc, _createdAt desc)[0...6] { ${cardFields} },
+  "prev": *[_type == "blogPost" && defined(slug.current) && ${siloFilter} && coalesce(publishedAt, _createdAt) < $date] | order(publishedAt desc, _createdAt desc)[0] {
     _id, title, "slug": slug.current, language
   },
-  "next": *[_type == "blogPost" && defined(slug.current) && coalesce(publishedAt, _createdAt) > $date] | order(publishedAt asc, _createdAt asc)[0] {
+  "next": *[_type == "blogPost" && defined(slug.current) && ${siloFilter} && coalesce(publishedAt, _createdAt) > $date] | order(publishedAt asc, _createdAt asc)[0] {
     _id, title, "slug": slug.current, language
   }
 }`;
+}
 
 export interface RelatedPostsData {
   related: BlogPost[];
@@ -349,6 +429,7 @@ export async function fetchRelatedPostsWithClient(
   country: string | undefined,
   tags: string[],
   client: SanityClient,
+  contentSilo: ContentSilo = 'healthcare',
 ): Promise<RelatedPostsData> {
   try {
     const raw = await client.fetch<{
@@ -358,7 +439,7 @@ export async function fetchRelatedPostsWithClient(
       latest: RawSanityPost[];
       prev: { _id: string; title: string; slug: string; language?: string } | null;
       next: { _id: string; title: string; slug: string; language?: string } | null;
-    }>(RELATED_POSTS_QUERY, {
+    }>(buildRelatedPostsQuery(contentSilo), {
       slug,
       category: category || '',
       country: country || '',
@@ -399,8 +480,9 @@ export async function fetchRelatedPosts(
   date: string,
   country?: string,
   tags: string[] = [],
+  contentSilo: ContentSilo = 'healthcare',
 ): Promise<RelatedPostsData> {
-  return fetchRelatedPostsWithClient(slug, category, date, country, tags, getSanityClient());
+  return fetchRelatedPostsWithClient(slug, category, date, country, tags, getSanityClient(), contentSilo);
 }
 
 function formatDate(iso: string | undefined): string {
@@ -455,4 +537,7 @@ interface RawSanityPost {
   authorTitle?: string;
   authorImage?: string;
   authorLinkedIn?: string;
+  contentSilo?: 'healthcare' | 'industries';
+  industrySegment?: 'b2b' | 'b2c';
+  industrySlug?: string;
 }

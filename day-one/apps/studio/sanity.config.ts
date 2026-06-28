@@ -2,6 +2,7 @@ import {defineConfig, definePlugin} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
+import {structure} from './structure'
 import {PreviewAction} from './components/PreviewAction'
 import {CsvImportTool} from './components/CsvImportTool'
 import {UploadIcon} from '@sanity/icons'
@@ -26,7 +27,7 @@ export default defineConfig({
   dataset: 'production',
 
   plugins: [
-    structureTool(),
+    structureTool({ structure }),
     visionTool(),
     csvImportPlugin(),
     // Presentation tool disabled to prevent Structure tool crash.

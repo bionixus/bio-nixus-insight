@@ -579,6 +579,7 @@ export const routes: RouteObject[] = [
   { path: '/verify-email', element: <VerifyEmail /> },
   { path: '/market-research-by-industry', element: <MarketResearchByIndustry /> },
   { path: '/bionixus-industries', element: <BionixusIndustries /> },
+  { path: '/bionixus-industries/insights/:slug', element: suspensePage(<BlogPost />) },
   { path: '/bionixus-industries/insights', element: <BionixusIndustriesInsights /> },
   { path: '/pharma-healthcare-industries', element: <IndustrySegmentPage slug="pharma-healthcare" /> },
   {

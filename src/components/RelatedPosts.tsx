@@ -2,10 +2,14 @@ import { Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
 import { fetchRelatedPosts, type RelatedPostsData } from '@/lib/sanity-blog';
+import type { ContentSilo } from '@/lib/blog-content-silo';
+import { getBlogPostPath } from '@/lib/blog-content-silo';
 import { isSanityConfigured } from '@/lib/sanity';
 import { optimizeSanityImage } from '@/lib/image-utils';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import type { BlogPost } from '@/types/blog';
+import type { BlogArticleLocale } from '@/lib/blogPostUiStrings';
+import { getBlogPostUiStrings } from '@/lib/blogPostUiStrings';
 
 import blogImage1 from '@/assets/blog-insight-1.png';
 import blogImage2 from '@/assets/blog-insight-2.png';
@@ -31,17 +35,15 @@ interface RelatedPostsProps {
   tags?: string[];
   /** From Express SSR (`fetchRouteData`) so related links appear in initial HTML */
   initialRelated?: RelatedPostsData;
-}
-
-function blogBaseForPost(post: BlogPost): string {
-  return post.language === 'ar' ? '/ar/blog' : '/blog';
+  contentSilo?: ContentSilo;
+  locale?: BlogArticleLocale;
 }
 
 /* ─── Single related-post card ─── */
-function PostCard({ post, index }: { post: BlogPost; index: number }) {
+function PostCard({ post, index, readArticleLabel }: { post: BlogPost; index: number; readArticleLabel: string }) {
   return (
     <Link
-      to={`${blogBaseForPost(post)}/${post.slug}`}
+      to={getBlogPostPath(post)}
       className="group block sr sr-scale-up sr-spring hover-lift rounded-xl overflow-hidden border border-border bg-card"
     >
       {/* Image */}
@@ -82,7 +84,7 @@ function PostCard({ post, index }: { post: BlogPost; index: number }) {
           </p>
         )}
         <div className="flex items-center gap-1.5 text-primary text-sm font-medium pt-1 group-hover:gap-2.5 transition-all">
-          Read article
+          {readArticleLabel}
           <ArrowUpRight className="w-3.5 h-3.5" />
         </div>
       </div>
@@ -98,11 +100,14 @@ const RelatedPosts = ({
   country,
   tags,
   initialRelated,
+  contentSilo = 'healthcare',
+  locale = 'en',
 }: RelatedPostsProps) => {
+  const ui = getBlogPostUiStrings(locale);
   const hasSsrRelated = initialRelated != null;
   const { data } = useQuery({
-    queryKey: ['related-posts', currentSlug, category, country, tags?.join('|') || ''],
-    queryFn: () => fetchRelatedPosts(currentSlug, category, date, country, tags || []),
+    queryKey: ['related-posts', currentSlug, category, country, tags?.join('|') || '', contentSilo],
+    queryFn: () => fetchRelatedPosts(currentSlug, category, date, country, tags || [], contentSilo),
     enabled: Boolean(currentSlug) && (isSanityConfigured() || hasSsrRelated),
     staleTime: 60 * 1000,
     initialData: initialRelated,
@@ -128,18 +133,18 @@ const RelatedPosts = ({
       {hasNav && (
         <nav
           className="flex justify-between items-stretch gap-6 mb-14"
-          aria-label="Post navigation"
+          aria-label={ui.postNavigationAria}
         >
           {prev ? (
             <Link
-              to={`${prev.language === 'ar' ? '/ar/blog' : '/blog'}/${prev.slug}`}
+              to={getBlogPostPath(prev)}
               className="group flex items-center gap-3 px-5 py-4 rounded-xl border border-border bg-card hover:border-primary/40 hover:shadow-md transition-all max-w-[48%] sr sr-left"
             >
               <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
                 <ArrowLeft className="w-4 h-4 text-primary" />
               </div>
               <div className="min-w-0">
-                <span className="text-xs text-muted-foreground uppercase tracking-wider">Previous</span>
+                <span className="text-xs text-muted-foreground uppercase tracking-wider">{ui.previous}</span>
                 <p className="text-sm font-semibold text-foreground line-clamp-1 group-hover:text-primary transition-colors">
                   {prev.title}
                 </p>
@@ -150,11 +155,11 @@ const RelatedPosts = ({
           )}
           {next ? (
             <Link
-              to={`${next.language === 'ar' ? '/ar/blog' : '/blog'}/${next.slug}`}
+              to={getBlogPostPath(next)}
               className="group flex items-center gap-3 px-5 py-4 rounded-xl border border-border bg-card hover:border-primary/40 hover:shadow-md transition-all max-w-[48%] text-right sr sr-right"
             >
               <div className="min-w-0">
-                <span className="text-xs text-muted-foreground uppercase tracking-wider">Next</span>
+                <span className="text-xs text-muted-foreground uppercase tracking-wider">{ui.next}</span>
                 <p className="text-sm font-semibold text-foreground line-clamp-1 group-hover:text-primary transition-colors">
                   {next.title}
                 </p>
@@ -171,15 +176,15 @@ const RelatedPosts = ({
 
       {/* Related posts */}
       {hasRelated && (
-        <section aria-label="Related articles">
+        <section aria-label={ui.relatedArticlesAria}>
           <div className="flex items-center gap-4 mb-8">
             <h3 className="text-xl md:text-2xl font-display font-semibold text-foreground sr sr-up sr-line">
-              Related Articles
+              {ui.relatedArticles}
             </h3>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {related.map((post, i) => (
-              <PostCard key={post.id} post={post} index={i} />
+              <PostCard key={post.id} post={post} index={i} readArticleLabel={ui.readArticle} />
             ))}
           </div>
         </section>

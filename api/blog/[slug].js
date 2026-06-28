@@ -31,6 +31,7 @@ const BASE = 'https://www.bionixus.com';
 const QUERY = `*[_type == "blogPost" && slug.current == $slug][0]{
   title,
   excerpt,
+  contentSilo,
   "seoMetaDescription": seo.metaDescription,
   "seoMetaTitle": seo.metaTitle,
   "body": coalesce(body, content),
@@ -225,6 +226,9 @@ export default async function handler(req, res) {
     return handlePressReleaseCrawler(req, res, sanityClient, slug);
   }
 
+  const industriesInsight =
+    req.query.industriesInsight === '1' || req.query.industriesInsight === 'true';
+
   const legacyTarget = LEGACY_BLOG_SLUG_TO_CANONICAL[slug];
   if (legacyTarget) {
     return res.redirect(301, `${BASE}/blog/${legacyTarget}`);
@@ -251,6 +255,18 @@ export default async function handler(req, res) {
       return sendCompressedHtml(req, res, buildFallbackHtml(slug));
     }
 
+    if (industriesInsight) {
+      if (post.contentSilo !== 'industries') {
+        return res.redirect(301, `${BASE}/blog/${encodeURIComponent(slug)}`);
+      }
+    } else if (post.contentSilo === 'industries') {
+      return res.redirect(301, `${BASE}/bionixus-industries/insights/${encodeURIComponent(slug)}`);
+    }
+
+    const pagePath = industriesInsight
+      ? `/bionixus-industries/insights/${encodeURIComponent(slug)}`
+      : `/blog/${encodeURIComponent(slug)}`;
+
     const titleCore =
       getBlogTitleOverride(slug) ||
       pickLocalizedString(post.seoMetaTitle) ||
@@ -272,7 +288,7 @@ export default async function handler(req, res) {
       }),
     );
     const image = post.coverImage || `${BASE}/og-image.png`;
-    const url = `${BASE}/blog/${esc(slug)}`;
+    const url = `${BASE}${pagePath}`;
     const author = post.author || 'BioNixus Research Team';
     const category =
       typeof post.category === 'string'
@@ -369,15 +385,38 @@ export default async function handler(req, res) {
     });
 
     // BreadcrumbList JSON-LD
-    const breadcrumbJsonLd = JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: BASE },
-        { '@type': 'ListItem', position: 2, name: 'Blog', item: `${BASE}/blog` },
-        { '@type': 'ListItem', position: 3, name: post.title || slug },
-      ],
-    });
+    const breadcrumbJsonLd = JSON.stringify(
+      industriesInsight
+        ? {
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: BASE },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Industries',
+                item: `${BASE}/bionixus-industries`,
+              },
+              {
+                '@type': 'ListItem',
+                position: 3,
+                name: 'Industry Insights',
+                item: `${BASE}/bionixus-industries/insights`,
+              },
+              { '@type': 'ListItem', position: 4, name: post.title || slug, item: url },
+            ],
+          }
+        : {
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: BASE },
+              { '@type': 'ListItem', position: 2, name: 'Blog', item: `${BASE}/blog` },
+              { '@type': 'ListItem', position: 3, name: post.title || slug, item: url },
+            ],
+          },
+    );
 
     const html = `<!DOCTYPE html>
 <html lang="en">
@@ -421,7 +460,11 @@ export default async function handler(req, res) {
 </head>
 <body>
   <nav aria-label="Breadcrumb">
-    <a href="${BASE}">Home</a> &gt; <a href="${BASE}/blog">Blog</a> &gt; <span>${title}</span>
+    ${
+      industriesInsight
+        ? `<a href="${BASE}">Home</a> &gt; <a href="${BASE}/bionixus-industries">Industries</a> &gt; <a href="${BASE}/bionixus-industries/insights">Industry Insights</a> &gt; <span>${title}</span>`
+        : `<a href="${BASE}">Home</a> &gt; <a href="${BASE}/blog">Blog</a> &gt; <span>${title}</span>`
+    }
   </nav>
   <article>
     <header>
