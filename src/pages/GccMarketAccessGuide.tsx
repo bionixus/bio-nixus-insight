@@ -455,6 +455,47 @@ const GccMarketAccessGuide = () => {
           </div>
         </section>
 
+        {/* NUPCO and GCC tender landscape */}
+        <section className="section-padding py-12" id="nupco-tenders">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              NUPCO tenders and GCC hospital procurement
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Saudi Arabia&apos;s National Unified Procurement Company (NUPCO) centralises Ministry of Health
+                pharmaceutical and medical device tenders — making tender calendar timing, committee evaluation criteria,
+                and post-award uptake as important as SFDA registration for launch teams. Kuwait, Qatar, and Oman run
+                parallel government tender routes through their respective Ministry of Health procurement offices, while
+                UAE hospital demand splits between MOHAP national registration and emirate-level DHA/DOH formulary
+                decisions in Dubai and Abu Dhabi.
+              </p>
+              <p>
+                BioNixus supports GCC access teams with research that links regulatory milestones to procurement
+                outcomes: hospital pharmacist and procurement officer interviews on tender win/loss drivers, physician
+                switching intent after award, biosimilar substitution in government formularies, and pricing sensitivity
+                relative to SFDA- or MOHAP-approved list prices. These modules complement standard payer landscape
+                analysis and HTA-style evidence planning described in the country tables above.
+              </p>
+              <p>
+                For Saudi-specific tender mechanics, see our{' '}
+                <Link to="/blog/nupco-saudi-arabia-tendering-guide" className="text-primary underline font-medium">
+                  NUPCO tendering guide
+                </Link>
+                . For integrated GCC fieldwork on access decisions, see{' '}
+                <Link to="/healthcare-market-research-agency-gcc" className="text-primary underline font-medium">
+                  healthcare market research agency GCC
+                </Link>{' '}
+                and{' '}
+                <Link to="/real-world-evidence-gcc" className="text-primary underline font-medium">
+                  real-world evidence GCC
+                </Link>
+                .
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Internal links */}
         <section className="section-padding py-12 bg-muted/20">
           <div className="container-wide max-w-5xl mx-auto">
@@ -538,7 +579,7 @@ const GccMarketAccessGuide = () => {
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-10">
               Frequently Asked Questions
             </h2>
-            <div className="space-y-6">
+            <div className="space-y-4">
               {[
                 {
                   q: 'How long does pharmaceutical registration take in Saudi Arabia (SFDA)?',
@@ -558,17 +599,27 @@ const GccMarketAccessGuide = () => {
                 },
                 {
                   q: 'What are the benefits of local pharmaceutical manufacturing in the GCC?',
-                  a: 'GCC governments offer significant incentives for local manufacturing: priority regulatory review (faster SFDA approval), preferential government procurement (60%+ of government hospital contracts), tax benefits, and extended market exclusivity periods. Saudi Arabia\'s Vision 2030 targets 40% local manufacturing by 2030.',
+                  a: "GCC governments offer significant incentives for local manufacturing: priority regulatory review (faster SFDA approval), preferential government procurement (60%+ of government hospital contracts), tax benefits, and extended market exclusivity periods. Saudi Arabia's Vision 2030 targets 40% local manufacturing by 2030.",
                 },
                 {
                   q: 'Is Arabic labelling mandatory for pharmaceuticals in the GCC?',
                   a: 'Yes, Arabic labelling is mandatory in Saudi Arabia, Kuwait, and Oman. UAE and Qatar require bilingual (English + Arabic) labelling. Bahrain accepts English-only labelling for some product categories but Arabic is recommended. Patient information leaflets must be in Arabic across all GCC markets.',
                 },
+                {
+                  q: 'How does NUPCO affect market access in Saudi Arabia?',
+                  a: 'NUPCO runs central tenders for Ministry of Health hospitals, determining which products receive large-volume public sector contracts. Launch teams must align SFDA registration timing, pricing, and clinical narratives with NUPCO evaluation cycles — often 12–18 months after initial regulatory approval.',
+                },
+                {
+                  q: 'What evidence do GCC hospital formulary committees typically require?',
+                  a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
+                },
               ].map((faq) => (
-                <div key={faq.q} className="bg-card border border-border rounded-xl p-6">
-                  <h3 className="text-lg font-display font-semibold text-foreground mb-3">{faq.q}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{faq.a}</p>
-                </div>
+                <details key={faq.q} className="bg-card border border-border rounded-xl p-6">
+                  <summary className="text-lg font-display font-semibold text-foreground cursor-pointer list-none">
+                    {faq.q}
+                  </summary>
+                  <p className="text-sm text-muted-foreground leading-relaxed mt-3">{faq.a}</p>
+                </details>
               ))}
             </div>
           </div>

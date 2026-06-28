@@ -107,6 +107,42 @@ export const METHODOLOGY_SEO_AND_HERO: Record<
       '多国上市研究、单个国家医保方格局评估或持续竞争情报项目——我们都会根据复杂度、监管环境与证据阈值调整方法学与治理。请联系我们定制方案。',
     ctaButton: '联系 BioNixus',
   },
+  pt: {
+    seoTitle: 'Metodologia de pesquisa de mercado em saúde | BioNixus',
+    seoDescription:
+      'Como a BioNixus projeta, executa e garante qualidade em pesquisa de mercado em saúde: desenho de estudo, amostragem, governança de campo, validação de dados, ética e relatórios orientados à decisão em EMEA e no Golfo.',
+    h1: 'Metodologia de pesquisa de mercado em saúde',
+    intro:
+      'Uma decisão farmacêutica só é tão boa quanto a evidência que a sustenta — e essa evidência só é confiável quando o processo que a produziu é transparente. Esta página explica como a BioNixus desenha cada estudo, recruta e verifica os respondentes certos, governa o trabalho de campo, valida os dados, cumpre requisitos éticos e regulatórios em cada mercado e entrega achados acionáveis. Sem caixas-pretas.',
+    langMirrorLead: 'Versões idiomáticas desta metodologia:',
+    langMirrorMid:
+      '. Alinhe planos de evidência ao hub de insights de pesquisa de mercado em',
+    langMirrorTail: 'ou explore',
+    marketResearchHubLabel: 'hub de dados e insights de pesquisa de mercado',
+    gfkAlternativeLabel: 'cobertura alternativa de pesquisa de mercado no Egito',
+    ctaTitle: 'Discuta os requisitos do seu estudo',
+    ctaBody:
+      'Um estudo de lançamento multi-país, um panorama de pagadores em um único mercado ou um programa contínuo de inteligência competitiva — o método adapta-se à complexidade e ao contexto regulatório. Conte-nos a decisão que precisa tomar e desenharemos a pesquisa que atende ao seu padrão de evidência.',
+    ctaButton: 'Entre em contato',
+  },
+  ru: {
+    seoTitle: 'Методология исследований рынка здравоохранения | BioNixus',
+    seoDescription:
+      'Как BioNixus проектирует, проводит и контролирует качество исследований рынка здравоохранения: дизайн исследования, выборка, управление полевыми работами, валидация данных, этика и отчётность, ориентированная на решения, в EMEA и странах Персидского залива.',
+    h1: 'Методология исследований рынка здравоохранения',
+    intro:
+      'Фармацевтическое решение настолько надёжно, насколько надёжны доказательства, на которых оно основано — а доказательства заслуживают доверия только тогда, когда виден весь процесс их получения. На этой странице описано, как BioNixus проектирует каждое исследование, подбирает и верифицирует респондентов, управляет полевыми работами, валидирует данные, соблюдает этические и регуляторные требования в каждой стране и готовит выводы, пригодные для действий. Без «чёрных ящиков».',
+    langMirrorLead: 'Языковые версии этой методологии:',
+    langMirrorMid:
+      '. Согласуйте план доказательной базы с хабом аналитики исследований рынка на',
+    langMirrorTail: 'или изучите',
+    marketResearchHubLabel: 'хаб данных и аналитики исследований рынка',
+    gfkAlternativeLabel: 'альтернативное покрытие исследований рынка в Египте',
+    ctaTitle: 'Обсудите требования к исследованию',
+    ctaBody:
+      'Многонациональное исследование перед запуском, картирование плательщиков в одной стране или постоянная конкурентная аналитика — методология адаптируется к сложности и регуляторному контексту. Расскажите, какое решение вам нужно принять, и мы спроектируем исследование под ваш стандарт доказательности.',
+    ctaButton: 'Связаться с нами',
+  },
   ar: {
     seoTitle: 'منهجية أبحاث السوق الصحي | BioNixus',
     seoDescription:

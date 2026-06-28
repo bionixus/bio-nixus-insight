@@ -4,19 +4,20 @@ import { ArrowLeft, BookOpen } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import BlogSection from '@/components/BlogSection';
-import BlogIndexFilters from '@/components/blog/BlogIndexFilters';
+import IndustriesInsightsFilters from '@/components/blog/IndustriesInsightsFilters';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { useIndustriesInsights } from '@/hooks/useSanityBlog';
 import { useInitialData } from '@/contexts/InitialDataContext';
 import {
   ALL_COUNTRIES,
-  ALL_TOPICS,
   buildFilterOptions,
 } from '@/lib/blog-index-filters';
 import {
+  ALL_INDUSTRIES,
   ALL_SEGMENTS,
   DEFAULT_INDUSTRIES_INSIGHTS_FILTER_STATE,
+  buildIndustrySlugFilterOptions,
   filterIndustriesInsightsPosts,
   hasActiveIndustriesInsightsFilters,
   type IndustriesInsightsFilterState,
@@ -123,7 +124,7 @@ export default function BionixusIndustriesInsights() {
   );
 
   const countryOptions = useMemo(() => buildFilterOptions(allPosts, 'country'), [allPosts]);
-  const topicOptions = useMemo(() => buildFilterOptions(allPosts, 'category'), [allPosts]);
+  const industryOptions = useMemo(() => buildIndustrySlugFilterOptions(allPosts), [allPosts]);
   const filteredPosts = useMemo(
     () => filterIndustriesInsightsPosts(allPosts, filterState),
     [allPosts, filterState],
@@ -201,13 +202,20 @@ export default function BionixusIndustriesInsights() {
           <div className="bx-inner max-w-5xl">
             <div className="bx-section-head">
               <div className="bx-eyebrow gold">
-                <span className="bx-line" /> Filter by segment
+                <span className="bx-line" /> Refine results
               </div>
               <h2 className="bx-h2">
-                Choose your <em>segment</em>
+                Filter by <em>segment</em>, industry, and market
               </h2>
+              <p className="bx-lead">
+                Browse B2B and B2C fieldwork articles by vertical and country — separate from our{' '}
+                <Link to="/blog" className="text-primary font-medium hover:underline">
+                  healthcare insights blog
+                </Link>
+                .
+              </p>
             </div>
-            <div className="flex flex-wrap gap-3 mb-6" role="group" aria-label="Filter by industry segment">
+            <div className="flex flex-wrap gap-3 mb-2" role="group" aria-label="Filter by industry segment">
               {SEGMENT_PILLS.map(({ value, label }) => {
                 const active = filterState.segment === value;
                 return (
@@ -227,14 +235,40 @@ export default function BionixusIndustriesInsights() {
                 );
               })}
             </div>
-            <p className="text-muted-foreground leading-relaxed text-[15px]">
-              Articles here support brand, commercial, and strategy teams in non-healthcare categories.
-              For pharmaceutical and healthcare research, visit our{' '}
-              <Link to="/blog" className="text-primary font-medium hover:underline">
-                healthcare insights blog
-              </Link>
-              .
-            </p>
+            {industryOptions.length > 0 ? (
+              <div className="flex flex-wrap gap-2 mt-4" role="group" aria-label="Quick filter by industry">
+                <button
+                  type="button"
+                  onClick={() => handleFilterChange({ industry: ALL_INDUSTRIES })}
+                  className={`rounded-full px-4 py-1.5 text-xs font-semibold transition-colors cursor-pointer ${
+                    filterState.industry === ALL_INDUSTRIES
+                      ? 'bg-primary/15 text-primary border border-primary/30'
+                      : 'border border-border bg-card text-muted-foreground hover:border-primary/30'
+                  }`}
+                  aria-pressed={filterState.industry === ALL_INDUSTRIES}
+                >
+                  All industries
+                </button>
+                {industryOptions.map((opt) => {
+                  const active = filterState.industry === opt.value;
+                  return (
+                    <button
+                      key={opt.value}
+                      type="button"
+                      onClick={() => handleFilterChange({ industry: opt.value })}
+                      className={`rounded-full px-4 py-1.5 text-xs font-semibold transition-colors cursor-pointer ${
+                        active
+                          ? 'bg-primary/15 text-primary border border-primary/30'
+                          : 'border border-border bg-card text-muted-foreground hover:border-primary/30'
+                      }`}
+                      aria-pressed={active}
+                    >
+                      {opt.label} ({opt.count})
+                    </button>
+                  );
+                })}
+              </div>
+            ) : null}
           </div>
         </section>
 
@@ -250,12 +284,12 @@ export default function BionixusIndustriesInsights() {
         ) : null}
 
         {!isLoading && postCount > 0 ? (
-          <BlogIndexFilters
+          <IndustriesInsightsFilters
             state={filterState}
             onChange={handleFilterChange}
             onClear={handleClearFilters}
+            industryOptions={industryOptions}
             countryOptions={countryOptions}
-            topicOptions={topicOptions}
             visibleCount={visibleCount}
             totalCount={postCount}
           />
@@ -298,6 +332,7 @@ export default function BionixusIndustriesInsights() {
               variant="index"
               showHeader={false}
               disableFeatured={postCount < 6}
+              postBasePath={INDUSTRIES_INSIGHTS_INDEX_PATH}
             />
           )}
           {!isLoading && filtersActive && visibleCount === 0 && postCount > 0 ? (

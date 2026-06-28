@@ -314,6 +314,65 @@ export const PREMIUM_INDUSTRIES_CSS = `
 .bx-ind .bx-industry-region-block:last-child { margin-bottom: 0; }
 .bx-ind .bx-industry-region-label { font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 2.5px; color: var(--bx-gray-500); margin: 0 0 14px; }
 
+/* ===== INDUSTRY INSIGHTS PORTAL (hub teaser) ===== */
+.bx-ind .bx-insights-portal {
+  background: linear-gradient(180deg, var(--bx-warm-white) 0%, var(--bx-cream) 100%);
+  border-top: 1px solid var(--bx-gray-100);
+  border-bottom: 1px solid var(--bx-gray-100);
+}
+.bx-ind .bx-insights-portal-grid {
+  display: grid; grid-template-columns: 1fr 1.05fr; gap: 48px; align-items: stretch;
+}
+.bx-ind .bx-insights-portal-copy { display: flex; flex-direction: column; justify-content: center; }
+.bx-ind .bx-insights-portal-panel {
+  background: var(--bx-navy); border-radius: 20px; padding: 28px 30px;
+  box-shadow: 0 24px 64px rgba(6,16,31,0.14); color: rgba(255,255,255,0.88);
+}
+.bx-ind .bx-insights-portal-panel-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.bx-ind .bx-insights-portal-panel-head h3 {
+  font-family: var(--bx-font-display); font-size: 1.35rem; font-weight: 500; color: #fff; margin: 0;
+}
+.bx-ind .bx-insights-count {
+  font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--bx-gold-light); white-space: nowrap;
+}
+.bx-ind .bx-insights-teaser-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.bx-ind .bx-insights-teaser-card {
+  display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center;
+  padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03); text-decoration: none; transition: all 0.3s var(--bx-ease-out);
+}
+.bx-ind .bx-insights-teaser-card:hover {
+  border-color: rgba(201,168,76,0.35); background: rgba(201,168,76,0.08); transform: translateX(4px);
+}
+.bx-ind .bx-insights-teaser-meta {
+  display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.6px; text-transform: uppercase;
+  color: rgba(255,255,255,0.45); margin-bottom: 4px; grid-column: 1 / -1;
+}
+.bx-ind .bx-insights-teaser-title {
+  font-size: 14px; font-weight: 600; line-height: 1.45; color: rgba(255,255,255,0.92);
+}
+.bx-ind .bx-insights-teaser-arrow { color: var(--bx-gold); font-size: 16px; opacity: 0.7; transition: opacity 0.2s; }
+.bx-ind .bx-insights-teaser-card:hover .bx-insights-teaser-arrow { opacity: 1; }
+.bx-ind .bx-insights-teaser-skeleton {
+  height: 72px; border-radius: 12px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.04) 100%);
+  animation: bxindBreathe 1.8s ease-in-out infinite;
+}
+.bx-ind .bx-insights-empty { font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.55); margin: 0; }
+.bx-ind .bx-insights-portal-foot {
+  display: inline-flex; margin-top: 18px; font-size: 13px; font-weight: 600;
+  color: var(--bx-gold-light); text-decoration: none; transition: color 0.2s;
+}
+.bx-ind .bx-insights-portal-foot:hover { color: #fff; }
+.bx-ind .bx-btn-ghost.dark {
+  border-color: rgba(6,16,31,0.15); color: var(--bx-navy);
+}
+.bx-ind .bx-btn-ghost.dark:hover { border-color: var(--bx-gold); color: var(--bx-navy); background: rgba(201,168,76,0.08); }
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
   .bx-ind .bx-hero-inner { grid-template-columns: 1fr; gap: 48px; }
@@ -324,6 +383,7 @@ export const PREMIUM_INDUSTRIES_CSS = `
   .bx-ind .bx-country-grid { grid-template-columns: 1fr; }
   .bx-ind .bx-index-card-grid { grid-template-columns: repeat(2, 1fr); }
   .bx-ind .bx-index-jump-grid { grid-template-columns: 1fr; }
+  .bx-ind .bx-insights-portal-grid { grid-template-columns: 1fr; gap: 32px; }
 }
 @media (max-width: 720px) {
   .bx-ind .bx-inner, .bx-ind .bx-section, .bx-ind .bx-stats, .bx-ind .bx-ribbon, .bx-ind .bx-cta-section { padding-left: 22px; padding-right: 22px; }

@@ -5,6 +5,7 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
 import { MarketIntelligenceSections } from '@/components/market-intelligence';
 import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
@@ -135,6 +136,38 @@ const GccMedicalDevicesMarketReport = () => {
             { value: '8.5%', label: 'CAGR 2026–2030' },
           ]}
         />
+
+        <section className="section-padding py-8 bg-muted/10">
+          <div className="container-wide max-w-4xl mx-auto">
+            <GeoLLMAnswerBlock
+              question="How big is the GCC medical devices and IVD market in 2026?"
+              answer="The GCC medical devices and in vitro diagnostic (IVD) market is estimated at USD 5.5–6.2 billion in 2026, with Saudi Arabia representing roughly 52% of regional spend, the UAE about 28%, and Qatar, Kuwait, Bahrain, and Oman accounting for the remainder. Growth drivers include Vision 2030 hospital expansion, rising diabetes and cardiovascular burden, and SFDA/MOHAP device registration reforms."
+              points={[
+                {
+                  title: 'Saudi Arabia leadership',
+                  description:
+                    'USD 2.8–3.1B medtech spend anchored in MOH, NGHA, and private hospital networks across Riyadh, Jeddah, and the Eastern Province.',
+                },
+                {
+                  title: 'IVD and point-of-care acceleration',
+                  description:
+                    'HbA1c, cardiac biomarker, and infectious disease rapid tests scaling with decentralized care and diabetes prevalence.',
+                },
+                {
+                  title: 'Regulatory pathways',
+                  description:
+                    'SFDA MDIR, UAE MOHAP/DHA/DOH, and NHRA Bahrain registration timelines mapped for launch sequencing.',
+                },
+                {
+                  title: 'Hospital procurement intelligence',
+                  description:
+                    'Account-level budget cycles, biomedical engineering contacts, and device replacement schedules from primary research.',
+                },
+              ]}
+              summary="BioNixus GCC medical devices market report combines sizing with hospital procurement intelligence — request a tailored medtech scope through contact."
+            />
+          </div>
+        </section>
 
         {/* Executive Summary */}
         <ReportContentWithAside config={REPORT_CONVERSION}>

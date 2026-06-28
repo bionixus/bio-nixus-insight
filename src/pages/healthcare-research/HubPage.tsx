@@ -27,7 +27,7 @@ const HUB_FAQS = [
   {
     question: 'Can you run a single study across several countries and languages at once?',
     answer:
-      'Yes — multi-country, multilingual fieldwork is core to how we work. From our US headquarters in Sheridan, Wyoming, one global project office coordinates recruitment, translation, and analysis so your numbers stay comparable from New York to Riyadh to Tokyo, while local moderators and native-language interviewers keep the nuance intact. Across our operating history we have delivered work in 38 countries and 14+ therapeutic areas, which is what makes side-by-side regional reads dependable rather than approximate.',
+      'Yes — multi-country, multilingual fieldwork is core to how we work. From our US headquarters in Sheridan, Wyoming, one global project office coordinates recruitment, translation, and analysis so your numbers stay comparable from New York to Riyadh to Tokyo, while local moderators and native-language interviewers keep the nuance intact. Across our operating history we have delivered work in 17+ countries and 14+ therapeutic areas, which is what makes side-by-side regional reads dependable rather than approximate.',
   },
   {
     question: 'How fast can you turn around a proposal once we share a brief?',
@@ -116,10 +116,31 @@ const GLOBAL_MARKETS: {
   },
 ];
 
-import {
-  HEALTHCARE_HUB_COUNTRY_GROUPS as ALL_HUB_COUNTRY_GROUPS,
-  HEALTHCARE_HUB_COUNTRY_SLUGS as ALL_HUB_COUNTRY_SLUGS,
-} from '@/data/healthcareHubCountries';
+/** Every live `/healthcare-market-research/{slug}` country hub, grouped for navigation. */
+const ALL_HUB_COUNTRY_GROUPS: { region: string; slugs: string[] }[] = [
+  {
+    region: 'Americas',
+    slugs: ['united-states', 'canada', 'brazil'],
+  },
+  {
+    region: 'Europe',
+    slugs: ['uk', 'germany', 'france', 'italy', 'spain', 'europe'],
+  },
+  {
+    region: 'MENA & GCC',
+    slugs: ['saudi-arabia', 'uae', 'egypt', 'qatar', 'kuwait', 'oman', 'bahrain', 'turkey'],
+  },
+  {
+    region: 'Asia-Pacific',
+    slugs: ['japan', 'china', 'india', 'south-korea', 'singapore', 'australia'],
+  },
+  {
+    region: 'City hubs (MENA)',
+    slugs: ['dubai', 'abu-dhabi', 'riyadh', 'jeddah'],
+  },
+];
+
+const ALL_HUB_COUNTRY_SLUGS = ALL_HUB_COUNTRY_GROUPS.flatMap((group) => group.slugs);
 
 export default function HubPage() {
   const { data } = useInitialData();
@@ -215,8 +236,8 @@ export default function HubPage() {
   return (
     <>
       <SEOHead
-        title="Healthcare Market Research by Country | US HQ · Global Coverage | BioNixus"
-        description="US-headquartered healthcare market research from BioNixus — physician, payer, and hospital evidence across 20+ countries: USA, Canada, Brazil, UK, Europe, GCC, MENA, and Asia-Pacific with local fieldwork."
+        title="Healthcare Market Research Company | 20+ Countries | BioNixus"
+        description="Healthcare market research company for pharma and medtech — physician, payer, and hospital evidence across USA, Europe, GCC, MENA, and Asia-Pacific. US HQ with local fieldwork in 20+ countries."
         canonical="/healthcare-market-research"
         jsonLd={jsonLd}
       />
@@ -294,7 +315,7 @@ export default function HubPage() {
               {
                 title: 'Cross-border comparability',
                 description:
-                  'Harmonised instruments across 38 countries so regional sequencing and access strategy reads consistently.',
+                  'Harmonised instruments across 17+ countries so regional sequencing and access strategy reads consistently.',
               },
               {
                 title: 'Report and directory hub',
