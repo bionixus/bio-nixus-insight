@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export type PathwayCard = {
@@ -47,27 +48,35 @@ function PathwayCardLink({ card }: { card: PathwayCard }) {
 }
 
 const HomePathwaysSection = ({ cards }: HomePathwaysSectionProps) => {
+  const { t, language } = useLanguage();
   const sectionRef = useScrollReveal<HTMLElement>({ stagger: 90 });
+  const pathways = t.homePage.pathways;
   const primary = cards.slice(0, PRIMARY_COUNT);
   const more = cards.slice(PRIMARY_COUNT);
+  const moreLinksLabel = pathways.moreLinksTemplate.replace('{N}', String(more.length));
 
   return (
     <section className="section-padding py-12 bg-muted/20" ref={sectionRef}>
       <div className="container-wide max-w-6xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4 sr sr-up sr-line">
-          Healthcare Research Pathways
+          {pathways.h2}
         </h2>
         <p className="text-muted-foreground mb-8 max-w-3xl sr sr-up leading-relaxed">
-          BioNixus runs healthcare market research globally — with country-level depth across the Americas, Europe, and
-          the Middle East. Use these{' '}
-          <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline cursor-pointer">
-            healthcare market research
-          </Link>{' '}
-          pathways for launch, market access, and growth. Compare methods in our{' '}
-          <Link to="/market-research" className="text-primary font-medium hover:underline cursor-pointer">
-            market research
-          </Link>{' '}
-          hub.
+          {language === 'en' && pathways.introPart1 && pathways.introLinkHealthcare ? (
+            <>
+              {pathways.introPart1}
+              <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline cursor-pointer">
+                {pathways.introLinkHealthcare}
+              </Link>
+              {pathways.introPart2}
+              <Link to="/market-research" className="text-primary font-medium hover:underline cursor-pointer">
+                {pathways.introLinkHub}
+              </Link>
+              {pathways.introPart3}
+            </>
+          ) : (
+            pathways.introFull
+          )}
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
@@ -79,8 +88,8 @@ const HomePathwaysSection = ({ cards }: HomePathwaysSectionProps) => {
         {more.length > 0 ? (
           <details className="rounded-xl border border-border bg-card p-6 sr sr-up">
             <summary className="cursor-pointer font-display font-semibold text-foreground list-none flex items-center justify-between gap-2">
-              More research pathways
-              <span className="text-sm font-normal text-muted-foreground">{more.length} links</span>
+              {pathways.moreSummary}
+              <span className="text-sm font-normal text-muted-foreground">{moreLinksLabel}</span>
             </summary>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6 pt-6 border-t border-border">
               {more.map((card) => (

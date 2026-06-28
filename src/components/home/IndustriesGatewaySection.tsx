@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Building2, HeartPulse, ShoppingBag } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { SEGMENTS } from '@/data/bionixusIndustrySegments';
 
@@ -11,14 +12,17 @@ const SEGMENT_ICONS = {
   b2c: ShoppingBag,
 } as const;
 
-const PROOF_STATS = [
-  { value: '127+', label: 'Projects across industries' },
-  { value: '16', label: 'Industry verticals' },
-  { value: '7', label: 'GCC/MENA markets with industry pages' },
-];
-
 const IndustriesGatewaySection = () => {
+  const { t } = useLanguage();
   const sectionRef = useScrollReveal<HTMLElement>({ stagger: 90 });
+  const copy = t.homePage.industriesGateway;
+  const segments = t.homePage.industrySegments;
+
+  const segmentCopy = {
+    'pharma-healthcare': segments.pharma,
+    b2b: segments.b2b,
+    b2c: segments.b2c,
+  } as const;
 
   return (
     <section
@@ -32,18 +36,17 @@ const IndustriesGatewaySection = () => {
             id="industries-gateway-heading"
             className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4"
           >
-            Beyond healthcare — research across industries
+            {copy.h2}
           </h2>
-          <p className="text-muted-foreground leading-relaxed">
-            The same sampling discipline and senior-led analysis we built for pharma now extends to B2B and B2C
-            markets.
-          </p>
+          <p className="text-muted-foreground leading-relaxed">{copy.intro}</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-5 mb-10">
           {(['pharma-healthcare', 'b2b', 'b2c'] as const).map((slug) => {
             const segment = SEGMENTS[slug];
+            const localized = segmentCopy[slug];
             const Icon = SEGMENT_ICONS[slug];
+            const exploreLabel = copy.exploreSegment.replace('{segment}', localized.navLabel);
             return (
               <Link
                 key={slug}
@@ -54,11 +57,11 @@ const IndustriesGatewaySection = () => {
                   <Icon className="h-5 w-5 text-primary" aria-hidden />
                 </div>
                 <h3 className="font-display font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                  {segment.label}
+                  {localized.label}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed flex-1">{segment.tagline}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed flex-1">{localized.tagline}</p>
                 <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary group-hover:gap-2 transition-all">
-                  Explore {segment.navLabel}
+                  {exploreLabel}
                   <ArrowRight className="h-4 w-4" aria-hidden />
                 </span>
               </Link>
@@ -67,7 +70,7 @@ const IndustriesGatewaySection = () => {
         </div>
 
         <div className="grid sm:grid-cols-3 gap-4 mb-8">
-          {PROOF_STATS.map((stat) => (
+          {copy.stats.map((stat) => (
             <div
               key={stat.label}
               className="rounded-xl border border-border bg-muted/30 px-5 py-4 text-center sr sr-up"
@@ -83,9 +86,14 @@ const IndustriesGatewaySection = () => {
             to={HUB_PATH}
             className="inline-flex items-center gap-2 text-primary font-semibold hover:underline cursor-pointer"
           >
-            Explore all industries
+            {copy.exploreAll}
             <ArrowRight className="h-4 w-4" aria-hidden />
           </Link>
+          <p className="mt-3 text-sm text-muted-foreground">
+            <Link to="/bionixus-industries/insights" className="text-primary font-medium hover:underline">
+              {copy.insightsLink}
+            </Link>
+          </p>
         </div>
       </div>
     </section>

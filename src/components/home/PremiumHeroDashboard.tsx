@@ -1,5 +1,10 @@
+import { useLanguage } from '@/contexts/LanguageContext';
+
 /** Market intelligence dashboard card — matches premium-home-preview.html hero visual. */
 export function PremiumHeroDashboard({ className = '' }: { className?: string }) {
+  const { t } = useLanguage();
+  const d = t.homePage.heroDashboard;
+
   return (
     <div
       className={`relative overflow-hidden rounded-3xl border border-white/[0.06] bg-white/[0.025] p-7 sm:p-9 backdrop-blur-md shadow-[0_40px_80px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.04)] ${className}`.trim()}
@@ -9,20 +14,18 @@ export function PremiumHeroDashboard({ className = '' }: { className?: string })
         aria-hidden="true"
       />
       <div className="mb-7 flex items-center justify-between gap-4">
-        <h2 className="font-display text-lg font-normal tracking-wide text-white/80">
-          Market Intelligence Dashboard
-        </h2>
+        <h2 className="font-display text-lg font-normal tracking-wide text-white/80">{d.heading}</h2>
         <span className="inline-flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-wider text-[#14CFC8]">
           <span className="premium-live-pulse h-1.5 w-1.5 rounded-full bg-[#14CFC8]" />
-          Live
+          {d.status}
         </span>
       </div>
 
       <div className="relative mb-7 h-[200px]">
         <div className="absolute right-5 top-2 z-10 rounded-[10px] border border-[#C9A84C]/20 bg-[#06101F]/85 px-4 py-3 backdrop-blur-sm">
-          <p className="font-display text-[28px] font-medium leading-none text-[#C9A84C]">~$1.8T</p>
-          <p className="mt-1 text-[11px] text-white/35">Global Pharma Market (2026E)</p>
-          <p className="mt-0.5 text-[11px] font-medium text-[#14CFC8]">↑ ~6% CAGR 2024–2026</p>
+          <p className="font-display text-[28px] font-medium leading-none text-[#C9A84C]">{d.calloutValue}</p>
+          <p className="mt-1 text-[11px] text-white/35">{d.calloutLabel}</p>
+          <p className="mt-0.5 text-[11px] font-medium text-[#14CFC8]">{d.calloutCagr}</p>
         </div>
         <svg viewBox="0 0 500 180" className="h-full w-full" preserveAspectRatio="none" aria-hidden="true">
           <defs>
@@ -80,21 +83,17 @@ export function PremiumHeroDashboard({ className = '' }: { className?: string })
           <circle cx="490" cy="45" r="3.5" fill="#0EA5A0" className="premium-dot-fade" style={{ filter: 'drop-shadow(0 0 6px rgba(14,165,160,0.5))' }} />
           <line x1="20" y1="10" x2="38" y2="10" stroke="rgba(201,168,76,0.8)" strokeWidth="2" />
           <text x="42" y="14" fill="rgba(255,255,255,0.4)" fontSize="10" fontFamily="Inter, sans-serif">
-            Global benchmark
+            {d.legendGlobal}
           </text>
           <line x1="130" y1="10" x2="148" y2="10" stroke="rgba(14,165,160,0.5)" strokeWidth="2" />
           <text x="152" y="14" fill="rgba(255,255,255,0.4)" fontSize="10" fontFamily="Inter, sans-serif">
-            Regional depth
+            {d.legendRegional}
           </text>
         </svg>
       </div>
 
       <div className="grid grid-cols-3 gap-3">
-        {[
-          { label: 'Global Pharma', value: '~$1.8T', sub: '2026E market' },
-          { label: 'Americas Pharma', value: '~$720B', sub: '2026E market' },
-          { label: 'APAC Pharma', value: '~$480B', sub: '2026E market' },
-        ].map((metric) => (
+        {d.metrics.map((metric) => (
           <div
             key={metric.label}
             className="rounded-[14px] border border-white/[0.05] bg-white/[0.03] px-4 py-4 text-center transition-colors hover:border-[#C9A84C]/15 hover:bg-[#C9A84C]/[0.03]"
