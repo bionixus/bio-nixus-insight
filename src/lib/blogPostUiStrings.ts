@@ -327,8 +327,6 @@ const UI: Record<BlogArticleLocale, BlogPostUiStrings> = {
   },
 };
 
-const GERMAN_SLUG_RE = /germany|deutsche|gesundheit|pharmamarktforschung|amnog-frueher/i;
-
 const LOCALE_PREFIX: Record<Exclude<BlogArticleLocale, 'en'>, string> = {
   de: '/de',
   ar: '/ar',
@@ -339,8 +337,21 @@ const LOCALE_PREFIX: Record<Exclude<BlogArticleLocale, 'en'>, string> = {
   zh: '/zh',
 };
 
+const GERMAN_SLUG_RE = /germany|deutsche|gesundheit|pharmamarktforschung|amnog-frueher/i;
+
+/** Latin-slug Arabic articles published under `/blog/` (transliterated URLs). */
+const LATIN_SLUG_ARABIC_BLOG_POSTS = new Set([
+  'souk-adwiya-saudiya-dalil-shamel-rueya-2030-2026',
+]);
+
+const ARABIC_SCRIPT_RE = /[\u0600-\u06FF]/;
+
+export function isRtlBlogLocale(locale: BlogArticleLocale): boolean {
+  return locale === 'ar';
+}
+
 export function resolveBlogArticleLocale(
-  post: { language?: string; slug?: string } | null | undefined,
+  post: { language?: string; slug?: string; title?: string } | null | undefined,
   pathname: string,
 ): BlogArticleLocale {
   for (const [locale, prefix] of Object.entries(LOCALE_PREFIX) as [Exclude<BlogArticleLocale, 'en'>, string][]) {
@@ -352,7 +363,9 @@ export function resolveBlogArticleLocale(
   if (lang && lang !== 'en' && lang in LOCALE_PREFIX) {
     return lang as BlogArticleLocale;
   }
-  if (/[\u0600-\u06FF]/.test(post?.slug ?? '')) return 'ar';
+  if (LATIN_SLUG_ARABIC_BLOG_POSTS.has(post?.slug ?? '')) return 'ar';
+  if (ARABIC_SCRIPT_RE.test(post?.slug ?? '')) return 'ar';
+  if (ARABIC_SCRIPT_RE.test(post?.title ?? '')) return 'ar';
   if (GERMAN_SLUG_RE.test(post?.slug ?? '')) return 'de';
   return 'en';
 }

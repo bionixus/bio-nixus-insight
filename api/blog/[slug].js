@@ -27,9 +27,28 @@ const sanityClient = createClient({
 
 const BASE = 'https://www.bionixus.com';
 
+/** Latin-slug Arabic articles published under `/blog/` (transliterated URLs). */
+const LATIN_SLUG_ARABIC_BLOG_POSTS = new Set([
+  'souk-adwiya-saudiya-dalil-shamel-rueya-2030-2026',
+]);
+
+const ARABIC_SCRIPT_RE = /[\u0600-\u06FF]/;
+
+function isArabicBlogPost(post, slug) {
+  if (post?.language === 'ar') return true;
+  if (LATIN_SLUG_ARABIC_BLOG_POSTS.has(slug)) return true;
+  if (ARABIC_SCRIPT_RE.test(post?.title ?? '')) return true;
+  return false;
+}
+
+function htmlDocumentAttrs(isArabic) {
+  return isArabic ? ' lang="ar" dir="rtl"' : ' lang="en"';
+}
+
 // Fetch full post including body content for crawlers (AhrefsBot, Googlebot, etc.)
 const QUERY = `*[_type == "blogPost" && slug.current == $slug][0]{
   title,
+  language,
   excerpt,
   contentSilo,
   "seoMetaDescription": seo.metaDescription,
@@ -63,10 +82,13 @@ function escJson(str) {
 }
 
 /** Resolve Sanity locale objects { en: "..." } or plain strings */
-function pickLocalizedString(field) {
+function pickLocalizedString(field, preferLocale = 'en') {
   if (field == null) return '';
   if (typeof field === 'string') return field;
   if (typeof field === 'object' && field !== null) {
+    if (preferLocale !== 'en' && typeof field[preferLocale] === 'string' && field[preferLocale].trim()) {
+      return field[preferLocale];
+    }
     if (typeof field.en === 'string' && field.en.trim()) return field.en;
     const first = Object.values(field).find((v) => typeof v === 'string' && v.trim());
     return typeof first === 'string' ? first : '';
@@ -267,9 +289,12 @@ export default async function handler(req, res) {
       ? `/bionixus-industries/insights/${encodeURIComponent(slug)}`
       : `/blog/${encodeURIComponent(slug)}`;
 
+    const isArabic = isArabicBlogPost(post, slug);
+    const contentLocale = isArabic ? 'ar' : 'en';
+
     const titleCore =
       getBlogTitleOverride(slug) ||
-      pickLocalizedString(post.seoMetaTitle) ||
+      pickLocalizedString(post.seoMetaTitle, contentLocale) ||
       post.title ||
       'BioNixus Blog';
     const documentTitle = seoTitleWithBrandOnce(titleCore);
@@ -281,8 +306,8 @@ export default async function handler(req, res) {
       buildSeoDescription({
         preferred:
           metaOverride ||
-          pickLocalizedString(post.seoMetaDescription) ||
-          pickLocalizedString(post.excerpt),
+          pickLocalizedString(post.seoMetaDescription, contentLocale) ||
+          pickLocalizedString(post.excerpt, contentLocale),
         bodySource: rawBodyText,
         fallback: `${post?.title || 'BioNixus'} — Read the full article on BioNixus.`,
       }),
@@ -299,8 +324,8 @@ export default async function handler(req, res) {
 
     // Render full article body as HTML (bodyHtml is the primary field in Studio uploader posts)
     let articleBodyHtml = '';
-    const bodyHtmlRaw = pickLocalizedString(post.bodyHtml);
-    const htmlContentRaw = pickLocalizedString(post.htmlContent);
+    const bodyHtmlRaw = pickLocalizedString(post.bodyHtml, contentLocale);
+    const htmlContentRaw = pickLocalizedString(post.htmlContent, contentLocale);
     if (bodyHtmlRaw) {
       articleBodyHtml = bodyHtmlRaw;
     } else if (htmlContentRaw) {
@@ -309,8 +334,7 @@ export default async function handler(req, res) {
       // Portable Text — could be a flat array or a locale object { en: [...], ar: [...] }
       let bodyBlocks = post.body;
       if (bodyBlocks && !Array.isArray(bodyBlocks) && typeof bodyBlocks === 'object') {
-        // Locale-aware: pick English first, then any available
-        bodyBlocks = bodyBlocks.en || Object.values(bodyBlocks).find(v => Array.isArray(v)) || [];
+        bodyBlocks = bodyBlocks[contentLocale] || bodyBlocks.en || Object.values(bodyBlocks).find(v => Array.isArray(v)) || [];
       }
       if (Array.isArray(bodyBlocks) && bodyBlocks.length > 0) {
         articleBodyHtml = portableTextToHTML(bodyBlocks);
@@ -328,7 +352,7 @@ export default async function handler(req, res) {
         ? post.executiveSummary
         : portableTextToPlain(post.executiveSummary);
       if (summaryText) {
-        summaryHtml = `<section><h2>Executive Summary</h2><p>${esc(summaryText)}</p></section>`;
+        summaryHtml = `<section><h2>${isArabic ? 'ملخص تنفيذي' : 'Executive Summary'}</h2><p>${esc(summaryText)}</p></section>`;
       }
     }
 
@@ -419,7 +443,7 @@ export default async function handler(req, res) {
     );
 
     const html = `<!DOCTYPE html>
-<html lang="en">
+<html${htmlDocumentAttrs(isArabic)}>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -430,8 +454,8 @@ export default async function handler(req, res) {
 
   <!-- Open Graph / Facebook / LinkedIn -->
   <meta property="og:type" content="article">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:locale:alternate" content="ar_SA">
+  <meta property="og:locale" content="${isArabic ? 'ar_SA' : 'en_US'}">
+  <meta property="og:locale:alternate" content="${isArabic ? 'en_US' : 'ar_SA'}">
   <meta property="og:site_name" content="BioNixus">
   <meta property="og:title" content="${title}">
   <meta property="og:description" content="${description}">
@@ -458,7 +482,7 @@ export default async function handler(req, res) {
   <script type="application/ld+json">${breadcrumbJsonLd}</script>
   ${faqJsonLd}
 </head>
-<body>
+<body${isArabic ? ' dir="rtl"' : ''}>
   <nav aria-label="Breadcrumb">
     ${
       industriesInsight
@@ -466,10 +490,10 @@ export default async function handler(req, res) {
         : `<a href="${BASE}">Home</a> &gt; <a href="${BASE}/blog">Blog</a> &gt; <span>${title}</span>`
     }
   </nav>
-  <article>
+  <article${isArabic ? ' dir="rtl" lang="ar"' : ''}>
     <header>
       <h1>${title}</h1>
-      ${post.publishedAt ? `<time datetime="${esc(post.publishedAt)}">${new Date(post.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>` : ''}
+      ${post.publishedAt ? `<time datetime="${esc(post.publishedAt)}">${new Date(post.publishedAt).toLocaleDateString(isArabic ? 'ar-EG' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>` : ''}
       ${author ? `<p>By ${esc(author)}</p>` : ''}
       ${category ? `<p>Category: ${esc(category)}</p>` : ''}
     </header>
@@ -492,6 +516,7 @@ export default async function handler(req, res) {
 
 function buildIndexableStubHtml(slug, stub) {
   const url = `${BASE}/blog/${slug.split('/').map(encodeURIComponent).join('/')}`;
+  const isArabic = LATIN_SLUG_ARABIC_BLOG_POSTS.has(slug) || ARABIC_SCRIPT_RE.test(stub?.title ?? '');
   const normalizedTitle = normalizeSeoTitle(stub?.title || slug.replace(/-/g, ' '), 'BioNixus');
   const title = esc(normalizedTitle);
   const description = esc(
@@ -502,7 +527,7 @@ function buildIndexableStubHtml(slug, stub) {
   );
   const relatedNav = buildRelatedInternalLinksNav(String(slug));
   return `<!DOCTYPE html>
-<html lang="en">
+<html${htmlDocumentAttrs(isArabic)}>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -517,11 +542,11 @@ function buildIndexableStubHtml(slug, stub) {
   <meta property="og:type" content="article">
   <link rel="canonical" href="${url}">
 </head>
-<body>
+<body${isArabic ? ' dir="rtl"' : ''}>
   <nav aria-label="Breadcrumb">
     <a href="${BASE}">Home</a> &gt; <a href="${BASE}/blog">Blog</a> &gt; <span>${title}</span>
   </nav>
-  <article>
+  <article${isArabic ? ' dir="rtl" lang="ar"' : ''}>
     <header><h1>${title}</h1></header>
     <p>${description}</p>
     <p>Read the full article on <a href="${url}">BioNixus</a>.</p>

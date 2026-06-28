@@ -49,6 +49,7 @@ import {
   getBlogArticleIndexLabel,
   getBlogArticleIndexPath,
   getBlogPostUiStrings,
+  isRtlBlogLocale,
   resolveBlogArticleLocale,
   BLOG_DATE_LOCALE,
 } from '@/lib/blogPostUiStrings';
@@ -836,12 +837,15 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
     ? hardcodedPillar
     : sanityPost ?? hardcodedPillar ?? fallbackPost;
   const resolvedSilo = post ? resolveContentSilo(post) : 'healthcare';
+  const articleLocale = resolveBlogArticleLocale(post, pathname);
+  const isRtlArticle = isRtlBlogLocale(articleLocale);
+  const isArabicArticle = isRtlArticle;
   const articleIndexPath = isArBlog ? '/ar/blog' : getBlogIndexPathForPost(post ?? { contentSilo: 'healthcare' });
   const articleIndexLabel = isArBlog
     ? 'المدونة العربية'
     : getBlogIndexLabelForPost(post ?? { contentSilo: 'healthcare' });
   const executiveSummary =
-    post && !isGccComparisonEn ? getExecutiveSummaryToRender(post, slug, { isArBlog }) : null;
+    post && !isGccComparisonEn ? getExecutiveSummaryToRender(post, slug, { isArBlog: isArabicArticle }) : null;
 
   useEffect(() => {
     if (slug?.startsWith('fallback-')) {
@@ -933,7 +937,6 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
   }
 
   const pathClean = (pathname.split('?')[0] || '/blog').replace(/\/+$/, '') || '/blog';
-  const articleLocale = resolveBlogArticleLocale(post, pathname);
   const blogUi = getBlogPostUiStrings(articleLocale);
   const localizedArticleIndexPath =
     articleLocale === 'en' ? articleIndexPath : getBlogArticleIndexPath(articleLocale, resolvedSilo);
@@ -968,14 +971,14 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
   } else if (isTherapyStaticBlogEn) {
     titleCore = therapyStaticBlogBundle!.metaTitle;
   } else if (isSaudiPharmaMarket2026ArArticle) {
-    titleCore = isArBlog ? SAUDI_PHARMA_MARKET_2026_AR_BLOG_AR_TITLE : SAUDI_PHARMA_MARKET_2026_AR_BLOG_EN_TITLE;
+    titleCore = isArabicArticle ? SAUDI_PHARMA_MARKET_2026_AR_BLOG_AR_TITLE : SAUDI_PHARMA_MARKET_2026_AR_BLOG_EN_TITLE;
   } else if (isGccMeastPharmaHealthArticleAr) {
-    titleCore = isArBlog ? GCC_MEAST_PHARMA_HEALTH_AR_BLOG_AR_TITLE : GCC_MEAST_PHARMA_HEALTH_AR_BLOG_EN_TITLE;
+    titleCore = isArabicArticle ? GCC_MEAST_PHARMA_HEALTH_AR_BLOG_AR_TITLE : GCC_MEAST_PHARMA_HEALTH_AR_BLOG_EN_TITLE;
   } else if (slug === CHINA_HEALTHCARE_2026_SLUG) {
     titleCore = CHINA_HEALTHCARE_2026_TITLE_CORE;
   } else if (slug === SAUDI_PHARMA_ENTRY_2026_GUIDE_SLUG) {
     titleCore = SAUDI_PHARMA_ENTRY_2026_TITLE_CORE;
-  } else if (slug === SAUDI_HCR_FIRMS_AR_SLUG && isArBlog) {
+  } else if (slug === SAUDI_HCR_FIRMS_AR_SLUG && isArabicArticle) {
     titleCore = SAUDI_HCR_FIRMS_AR_TITLE_CORE;
   }
   const documentTitle = seoTitleWithBrandOnce(titleCore);
@@ -985,7 +988,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
     fallback: post.excerpt || post.title,
   });
   const arBlogMetaOverride =
-    slug && ARABIC_BLOG_META_DESCRIPTION_BY_SLUG[slug] && isArBlog
+    slug && ARABIC_BLOG_META_DESCRIPTION_BY_SLUG[slug] && isArabicArticle
       ? buildSeoDescription({
           preferred: ARABIC_BLOG_META_DESCRIPTION_BY_SLUG[slug],
           fallback: metaDescription,
@@ -1218,7 +1221,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
         publishedAt={post.publishedAtIso}
         modifiedAt={post.updatedAtIso || post.publishedAtIso}
         breadcrumb={
-          language === 'ar' && isArBlog
+          articleLocale === 'ar'
             ? [
                 { name: 'الرئيسية', item: 'https://www.bionixus.com/ar' },
                 { name: 'المدونة العربية', item: 'https://www.bionixus.com/ar/blog' },
@@ -1263,6 +1266,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
       <Helmet>
         <title>{documentTitle}</title>
         <meta name="description" content={finalMetaDescription} />
+        {isRtlArticle ? <html lang="ar" dir="rtl" /> : null}
         <meta
           name="robots"
           content={
@@ -1288,7 +1292,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
 
       <Navbar />
 
-      <main>
+      <main dir={isRtlArticle ? 'rtl' : 'ltr'} lang={articleLocale}>
         {/* ── HERO ─────────────────────────────────────────────────────── */}
         {heroCoverImage ? (
           <div
@@ -1313,7 +1317,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
 
             <div className="absolute bottom-0 left-0 right-0 px-6 md:px-10 pb-8 md:pb-10 z-10">
               <Link to={localizedArticleIndexPath} className="inline-flex items-center gap-1.5 text-white/50 hover:text-white/80 text-sm mb-5 transition-colors">
-                <ArrowLeft className="w-3.5 h-3.5" /> {blogUi.backTo(localizedArticleIndexLabel)}
+                <ArrowLeft className={`w-3.5 h-3.5${isRtlArticle ? ' rotate-180' : ''}`} /> {blogUi.backTo(localizedArticleIndexLabel)}
               </Link>
 
               {post.category && (
@@ -1372,7 +1376,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
             <div className="absolute -top-32 -right-32 w-80 h-80 rounded-full opacity-[0.06]" style={{ background: 'hsl(var(--accent))' }} />
             <div className="max-w-screen-xl mx-auto px-6 md:px-10">
               <Link to={localizedArticleIndexPath} className="inline-flex items-center gap-1.5 text-white/50 hover:text-white/80 text-sm mb-6 transition-colors">
-                <ArrowLeft className="w-3.5 h-3.5" /> {blogUi.backTo(localizedArticleIndexLabel)}
+                <ArrowLeft className={`w-3.5 h-3.5${isRtlArticle ? ' rotate-180' : ''}`} /> {blogUi.backTo(localizedArticleIndexLabel)}
               </Link>
               {post.category && (
                 <div className="mb-4">
@@ -1425,7 +1429,11 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
           <div className="grid lg:grid-cols-[minmax(0,1fr)_272px] gap-10 lg:gap-14 pt-8 pb-20 items-start">
 
             {/* ── ARTICLE MAIN ───────────────────────────────────────────── */}
-            <article className="rounded-3xl border border-border/70 bg-card/35 shadow-[0_32px_90px_-40px_rgb(15_23_42/0.22)] ring-1 ring-border/60 backdrop-blur-sm px-4 py-8 sm:px-7 sm:py-10 md:px-10 md:py-11">
+            <article
+              dir={isRtlArticle ? 'rtl' : 'ltr'}
+              lang={articleLocale}
+              className="rounded-3xl border border-border/70 bg-card/35 shadow-[0_32px_90px_-40px_rgb(15_23_42/0.22)] ring-1 ring-border/60 backdrop-blur-sm px-4 py-8 sm:px-7 sm:py-10 md:px-10 md:py-11"
+            >
 
               {/* Tags + Share toolbar */}
               <div className="flex items-center justify-between flex-wrap gap-3 pb-5 mb-7 border-b border-border">
@@ -1445,7 +1453,11 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
               {localizedExecutiveSummary && (
                 <aside
                   className="relative mb-8 py-5 px-5 bg-primary/[0.025] border border-primary/[0.08] overflow-hidden"
-                  style={{ borderLeft: '4px solid hsl(var(--accent))', borderRadius: '0 12px 12px 0' }}
+                  style={
+                    isRtlArticle
+                      ? { borderRight: '4px solid hsl(var(--accent))', borderRadius: '12px 0 0 12px' }
+                      : { borderLeft: '4px solid hsl(var(--accent))', borderRadius: '0 12px 12px 0' }
+                  }
                   aria-label={blogUi.executiveSummaryAria}
                 >
                   <div className="flex items-center gap-2.5 mb-3">
@@ -1659,7 +1671,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
               ) : null}
               <div className="blog-article-body blog-drop-cap">
                 {(() => {
-                  const body = getBodyToRender(post, slug, { isArBlog });
+                  const body = getBodyToRender(post, slug, { isArBlog: isArabicArticle });
                   if (typeof body === 'string') return renderStringBody(body);
                   if (Array.isArray(body)) {
                     const blocks = body as PortableTextBlock[];

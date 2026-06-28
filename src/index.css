@@ -317,6 +317,22 @@
     color: hsl(var(--muted-foreground));
     background: hsl(var(--muted) / 0.6);
   }
+
+  /* Arabic / RTL blog prose overrides */
+  [dir="rtl"] .prose-body h2 {
+    @apply border-l-0 border-r-4 pl-0 pr-4;
+  }
+  [dir="rtl"] .prose-body ul,
+  [dir="rtl"] .prose-body ol {
+    @apply pl-0 pr-6;
+  }
+  [dir="rtl"] .prose-body .executive-summary,
+  [dir="rtl"] .prose-body .methodology {
+    @apply border-l-0 border-r-4 pl-0 pr-6;
+  }
+  [dir="rtl"] .prose-body thead th {
+    @apply text-right;
+  }
 }
 
 /* ── Premium Blog Components ────────────────────────────────────────────── */
@@ -365,6 +381,13 @@
   background: linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--gold-light)) 100%);
 }
 
+[dir="rtl"] .blog-prose-h2::after,
+[dir="rtl"] .blog-article-body .prose-body h2::after {
+  left: auto;
+  right: 0;
+  background: linear-gradient(270deg, hsl(var(--accent)) 0%, hsl(var(--gold-light)) 100%);
+}
+
 /* Drop cap on first paragraph of article body */
 .blog-drop-cap > p:first-of-type::first-letter,
 .blog-drop-cap .prose-body > p:first-of-type::first-letter {
@@ -375,6 +398,12 @@
   float: left;
   margin: 0.06em 0.1em 0 0;
   color: hsl(var(--primary));
+}
+
+[dir="rtl"] .blog-drop-cap > p:first-of-type::first-letter,
+[dir="rtl"] .blog-drop-cap .prose-body > p:first-of-type::first-letter {
+  float: right;
+  margin: 0.06em 0 0 0.1em;
 }
 
 /* TOC numbered badge */
