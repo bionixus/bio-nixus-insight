@@ -416,7 +416,7 @@ export const PREMIUM_INDUSTRIES_CSS = `
 .bx-ind .bx-method-table td:first-child { font-weight: 600; color: var(--bx-navy); }
 .bx-ind .bx-method-table a { color: var(--bx-teal); font-weight: 500; text-decoration: none; }
 .bx-ind .bx-method-table a:hover { text-decoration: underline; }
-.bx-ind .bx-proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.bx-ind .bx-proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 48px; }
 .bx-ind .bx-proof-card {
   background: var(--bx-warm-white); border: 1px solid var(--bx-gray-100); border-radius: 16px;
   padding: 28px 26px; transition: all 0.35s var(--bx-ease-out);
