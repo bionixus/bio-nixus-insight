@@ -1,3 +1,5 @@
+import { INDUSTRY_HUB_COUNTRIES } from '@/data/industryHubCountries';
+
 export interface IndustryHubPageConfig {
   slug: string;
   displayName: string;
@@ -14,22 +16,7 @@ export interface IndustryHubPageConfig {
   countryLinks: Array<{ label: string; slug: string }>;
 }
 
-const ALL_COUNTRIES: Array<{ label: string; slug: string }> = [
-  { label: 'Saudi Arabia', slug: 'saudi-arabia' },
-  { label: 'UAE', slug: 'uae' },
-  { label: 'Egypt', slug: 'egypt' },
-  { label: 'Kuwait', slug: 'kuwait' },
-  { label: 'Qatar', slug: 'qatar' },
-  { label: 'Oman', slug: 'oman' },
-  { label: 'UK', slug: 'uk' },
-  { label: 'USA', slug: 'usa' },
-  { label: 'Brazil', slug: 'brazil' },
-  { label: 'Germany', slug: 'germany' },
-  { label: 'Morocco', slug: 'morocco' },
-  { label: 'Nigeria', slug: 'nigeria' },
-  { label: 'South Africa', slug: 'south-africa' },
-  { label: 'Kenya', slug: 'kenya' },
-];
+const ALL_COUNTRIES = INDUSTRY_HUB_COUNTRIES;
 
 export const INDUSTRY_HUB_PAGES: IndustryHubPageConfig[] = [
   {

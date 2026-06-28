@@ -5,6 +5,9 @@ import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { seoByLanguage, getCanonicalPath, getCanonicalUrl, getHreflangLinks, getGeoMeta, defaultOgImageUrl, getOgLocale, getOgLocaleAlternates } from '@/lib/seo';
 import { normalizeSeoTitle } from '@/lib/seo-meta';
 import type { Language } from '@/lib/i18n';
+import { MATRIX_COUNTRY_SLUGS_ORDERED } from '@/data/industryMarketResearchMatrix';
+
+const MATRIX_COUNTRY_PATH_PATTERN = MATRIX_COUNTRY_SLUGS_ORDERED.join('|');
 
 function cleanPath(pathname: string): string {
   const p = pathname.split('?')[0].split('#')[0] || '/';
@@ -74,8 +77,8 @@ function routeProvidesOwnDocumentHead(pathname: string): boolean {
   if (path === '/insights/top-healthcare-market-research-companies-riyadh-2026') return true;
 
   /** Industry × country matrix listicles and BOFU pages (SEOHead / Helmet on route). */
-  if (/^\/insights\/top-[\w-]+-market-research-companies-(saudi-arabia|uae|egypt)-2026$/.test(path)) return true;
-  if (/^\/(saudi-arabia|uae|egypt)-[\w-]+-market-research$/.test(path)) return true;
+  if (new RegExp(`^\\/insights\\/top-[\\w-]+-market-research-companies-(${MATRIX_COUNTRY_PATH_PATTERN})-2026$`).test(path)) return true;
+  if (new RegExp(`^\\/(${MATRIX_COUNTRY_PATH_PATTERN})-[\\w-]+-market-research$`).test(path)) return true;
 
   /** SEOHead-based market report hub and category index pages. */
   if (path === '/market-reports' || path.startsWith('/market-reports/therapy/') || path.startsWith('/market-reports/country/')) {

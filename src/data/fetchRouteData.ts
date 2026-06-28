@@ -6,16 +6,18 @@ import {
   fetchSanityPostBySlugWithClient,
   fetchSanityPostsWithClient,
   fetchSanityLatestInsightsWithClient,
+  fetchIndustriesInsightsWithClient,
   fetchRelatedPostsWithClient,
   type RelatedPostsData,
 } from '@/lib/sanity-blog';
+import { getIndustriesInsightPostPath, resolveContentSilo } from '@/lib/blog-content-silo';
 import type { BlogPost } from '@/types/blog';
 import type { PressRelease, PressReleaseListItem } from '@/types/pressRelease';
 import {
   fetchSanityPressReleaseBySlugWithClient,
   fetchSanityPressReleasesWithClient,
 } from '@/lib/sanity-press';
-import { getPressHeroPreloadUrl } from '@/lib/image-utils';
+import { getPressHeroPreloadUrlForRelease } from '@/lib/pressReleaseHero';
 import type { Language } from '@/lib/i18n';
 import { resolveSanityBlogSlug } from '../../blog-legacy-redirects.mjs';
 import { getHardcodedPostBySlug } from '@/data/blog-posts-index';
@@ -44,6 +46,7 @@ async function fetchBlogPostRouteData(slug: string): Promise<Record<string, unkn
         blogPost.country,
         blogPost.tags ?? [],
         sanityServer,
+        resolveContentSilo(blogPost),
       );
     }
   } catch {
@@ -249,7 +252,7 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
   if (blogIndexPaths.has(path)) {
     let blogPosts: BlogPost[] = [];
     try {
-      blogPosts = await fetchSanityPostsWithClient(sanityServer);
+      blogPosts = await fetchSanityPostsWithClient(sanityServer, undefined, { silo: 'healthcare' });
     } catch {
       blogPosts = [];
     }
@@ -278,6 +281,7 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
           blogPost.country,
           blogPost.tags ?? [],
           sanityServer,
+          resolveContentSilo(blogPost),
         );
       }
     } catch {
@@ -293,10 +297,36 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
     };
   }
 
+  const industriesInsightPostMatch = path.match(/^\/bionixus-industries\/insights\/([^/]+)\/?$/);
+  if (industriesInsightPostMatch) {
+    const slug = decodePathSegment(industriesInsightPostMatch[1]);
+    const data = await fetchBlogPostRouteData(slug);
+    const post = data.blogPost as BlogPost | null;
+    if (post && resolveContentSilo(post) !== 'industries') {
+      return {
+        pageType: 'blog-post',
+        blogSlug: slug,
+        blogPost: null,
+        relatedPosts: { related: [], prev: null, next: null },
+        lcpPreloadImageUrl: undefined,
+      };
+    }
+    return data;
+  }
+
   const blogPostMatch = path.match(/^\/blog\/([^/]+)\/?$/);
   if (blogPostMatch) {
     const slug = decodePathSegment(blogPostMatch[1]);
-    return fetchBlogPostRouteData(slug);
+    const data = await fetchBlogPostRouteData(slug);
+    const post = data.blogPost as BlogPost | null;
+    if (post && resolveContentSilo(post) === 'industries') {
+      return {
+        pageType: 'redirect',
+        statusCode: 301,
+        redirectTo: getIndustriesInsightPostPath(slug),
+      };
+    }
+    return data;
   }
 
   if (path === `/${SKYRIZI_ROOT_SLUG}` || path === `/${SKYRIZI_ROOT_SLUG}/`) {
@@ -332,12 +362,25 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
       pageType: 'press-post',
       pressSlug: slug,
       pressRelease,
-      lcpPreloadImageUrl: getPressHeroPreloadUrl(pressRelease?.heroImage),
+      lcpPreloadImageUrl: getPressHeroPreloadUrlForRelease(pressRelease),
     };
   }
 
   if (path === '/media' || path === '/media/') {
     return { pageType: 'media-kit' };
+  }
+
+  if (path === '/bionixus-industries/insights' || path === '/bionixus-industries/insights/') {
+    let industriesInsights: BlogPost[] = [];
+    try {
+      industriesInsights = await fetchIndustriesInsightsWithClient(sanityServer);
+    } catch {
+      industriesInsights = [];
+    }
+    return {
+      pageType: 'industries-insights-index',
+      industriesInsights,
+    };
   }
 
   const homeLang = marketingHomeLanguage(normalizedPath);

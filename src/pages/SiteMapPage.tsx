@@ -24,8 +24,9 @@ import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { defaultOgImageUrl } from '@/lib/seo';
 import { CTASection } from '@/components/shared/CTASection';
-import { useSanityBlog } from '@/hooks/useSanityBlog';
+import { useSanityBlog, useIndustriesInsights } from '@/hooks/useSanityBlog';
 import { fetchCaseStudies } from '@/lib/sanity-case-studies';
+import { getBlogPostPath, INDUSTRIES_INSIGHTS_INDEX_PATH } from '@/lib/blog-content-silo';
 import { LOW_INTERNAL_LINK_PATHS } from '@/lib/lowInternalLinkTargets.generated';
 import { INTERNAL_LINK_PRIORITY_TARGETS } from '@/lib/internalLinkAmplificationTargets';
 import {
@@ -34,16 +35,14 @@ import {
   MATRIX_INDUSTRY_SLUGS_ORDERED,
   getIndustryBofuPath,
   getIndustryListiclePath,
-  type MatrixCountrySlug,
+  MATRIX_COUNTRY_SLUGS_ORDERED,
 } from '@/data/industryMarketResearchMatrix';
-
-const MATRIX_COUNTRY_ORDER: MatrixCountrySlug[] = ['saudi-arabia', 'uae', 'egypt'];
 
 const industryMatrixGroups = MATRIX_INDUSTRY_SLUGS_ORDERED.filter(
   (slug) => MATRIX_INDUSTRIES[slug].published,
 ).map((industrySlug) => {
   const industry = MATRIX_INDUSTRIES[industrySlug];
-  const links = MATRIX_COUNTRY_ORDER.flatMap((countrySlug) => {
+  const links = MATRIX_COUNTRY_SLUGS_ORDERED.flatMap((countrySlug) => {
     const country = MATRIX_COUNTRIES[countrySlug];
     return [
       {
@@ -67,7 +66,9 @@ const staticLinks = [
   { to: '/client-reviews', label: 'Client Reviews' },
   { to: '/services', label: 'Services' },
   { to: '/market-research', label: 'Market Research Hub' },
-  { to: '/market-research-by-industry', label: 'Market Research by Industry (GCC & Egypt)' },
+  { to: '/market-research-by-industry', label: 'Market Research by Industry (GCC & MENA)' },
+  { to: '/bionixus-industries', label: 'BioNixus Industries Hub' },
+  { to: '/bionixus-industries/insights', label: 'Industry Insights (B2B & B2C)' },
   { to: '/healthcare-market-research/uae', label: 'Market Research UAE' },
   { to: '/market-research-ksa', label: 'Market Research KSA' },
   { to: '/market-research-saudi', label: 'Market Research Saudi' },
@@ -297,8 +298,9 @@ function categorizePath(path: string) {
   if (path.startsWith('/insights/top-') && path.includes('-market-research-companies-')) {
     return 'Industry Market Research';
   }
+  const matrixCountryPattern = MATRIX_COUNTRY_SLUGS_ORDERED.join('|');
   if (
-    /^\/(saudi-arabia|uae|egypt)-[a-z0-9-]+-market-research$/.test(path) &&
+    new RegExp(`^\\/(${matrixCountryPattern})-[a-z0-9-]+-market-research$`).test(path) &&
     path !== '/market-research-by-industry'
   ) {
     return 'Industry Market Research';
@@ -319,7 +321,8 @@ const tocNav = [
   { id: 'section-global', label: 'Global websites' },
   { id: 'section-listicles', label: '2026 rankings' },
   { id: 'section-locales', label: 'Languages' },
-  { id: 'section-blog', label: 'Blog & insights' },
+  { id: 'section-blog', label: 'Healthcare blog' },
+  { id: 'section-industry-insights', label: 'Industry insights' },
   { id: 'section-priority', label: 'Priority routes' },
   { id: 'section-cases', label: 'Case studies' },
   { id: 'section-extended', label: 'Extended coverage' },
@@ -385,6 +388,7 @@ function SectionShell({
 
 export default function SiteMapPage() {
   const { data: blogPosts = [] } = useSanityBlog();
+  const { data: industriesPosts = [] } = useIndustriesInsights();
   const { data: caseStudies = [] } = useQuery({
     queryKey: ['sitemap-case-studies'],
     queryFn: fetchCaseStudies,
@@ -524,13 +528,14 @@ export default function SiteMapPage() {
                 </Link>
               </div>
 
-              <dl className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+              <dl className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
                 {[
                   { label: 'XML index', value: '618' },
                   { label: 'Core routes', value: String(staticLinks.length) },
                   { label: 'Industry matrix', value: String(industryMatrixLinkCount) },
                   { label: 'Report pages', value: String(marketReportLinks.length) },
-                  { label: 'Live articles', value: String(blogPosts.length) },
+                  { label: 'Healthcare blog', value: String(blogPosts.length) },
+                  { label: 'Industry insights', value: String(industriesPosts.length) },
                 ].map((stat) => (
                   <div
                     key={stat.label}
@@ -771,8 +776,8 @@ export default function SiteMapPage() {
                 <SectionShell
                   id="section-industry"
                   icon={LayoutGrid}
-                  title="Market research by industry (KSA, UAE, Egypt)"
-                  description="Sixteen industries × three countries: BOFU company-intent pages and 2026 top-firms listicles—indexed in sitemap.xml alongside the industry hub."
+                  title="Market research by industry (GCC & MENA)"
+                  description="Sixteen industries × seven countries: BOFU company-intent pages and 2026 top-firms listicles—indexed in sitemap.xml alongside the industry hub."
                   countLabel={`${industryMatrixLinkCount} routes`}
                 >
                   <p className="mb-6 text-sm text-muted-foreground">
@@ -824,8 +829,8 @@ export default function SiteMapPage() {
                     <SectionShell
                       id="section-blog-en"
                       icon={Newspaper}
-                      title="Latest English blog articles"
-                      description="Sanity-backed posts served under /blog/. Pair with localized and Arabic equivalents where available."
+                      title="Healthcare & pharmaceutical blog"
+                      description="Sanity-backed posts served under /blog/ only — pharmaceutical, clinical, and market access content."
                       countLabel={`${blogPosts.length} articles`}
                     >
                       <ul className="grid gap-2">
@@ -864,6 +869,41 @@ export default function SiteMapPage() {
                     </SectionShell>
                   </div>
                 </div>
+
+                <SectionShell
+                  id="section-industry-insights"
+                  icon={Building2}
+                  title="Industry insights (B2B & B2C)"
+                  description={`Non-healthcare market research articles served under ${INDUSTRIES_INSIGHTS_INDEX_PATH}/ — separate from the pharmaceutical blog.`}
+                  countLabel={`${industriesPosts.length} articles`}
+                >
+                  <p className="mb-4 text-sm text-muted-foreground">
+                    Hub index:{' '}
+                    <Link
+                      to={INDUSTRIES_INSIGHTS_INDEX_PATH}
+                      className="font-medium text-primary underline-offset-4 hover:underline"
+                    >
+                      Industry Insights portal
+                    </Link>
+                  </p>
+                  {industriesPosts.length > 0 ? (
+                    <ul className="grid gap-2 sm:grid-cols-2">
+                      {industriesPosts.map((post) => (
+                        <li key={post.id}>
+                          <PremiumInternalLink to={getBlogPostPath(post)}>{post.title}</PremiumInternalLink>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-sm text-muted-foreground">
+                      Industry articles are published on the{' '}
+                      <Link to={INDUSTRIES_INSIGHTS_INDEX_PATH} className="text-primary font-medium hover:underline">
+                        Industry Insights hub
+                      </Link>
+                      .
+                    </p>
+                  )}
+                </SectionShell>
 
                 <SectionShell
                   id="section-priority"

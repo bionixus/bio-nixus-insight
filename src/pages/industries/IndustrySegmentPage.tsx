@@ -3,6 +3,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
+import { useIndustriesInsights } from '@/hooks/useSanityBlog';
+import { INDUSTRIES_INSIGHTS_INDEX_PATH, getBlogPostPath } from '@/lib/blog-content-silo';
 import {
   SEGMENTS,
   SEGMENT_ORDER,
@@ -11,16 +13,59 @@ import {
 } from '@/data/bionixusIndustrySegments';
 import {
   MATRIX_COUNTRIES,
+  MATRIX_COUNTRY_SLUGS_ORDERED,
   MATRIX_INDUSTRIES,
   getIndustryBofuPath,
-  type MatrixCountrySlug,
 } from '@/data/industryMarketResearchMatrix';
+import { HEALTHCARE_HUB_COUNTRY_GROUPS, HEALTHCARE_HUB_COUNTRY_SLUGS } from '@/data/healthcareHubCountries';
+import {
+  B2B_AREA_SERVED,
+  B2B_COUNTRY_GROUPS,
+  B2C_AREA_SERVED,
+  B2C_COUNTRY_GROUPS,
+  DEFAULT_B2B_INDUSTRY_SLUG,
+  DEFAULT_B2C_INDUSTRY_SLUG,
+  getIndustrySegmentCountryPath,
+} from '@/data/industryHubCountries';
+import { resolveCountryConfig } from '@/lib/constants/countries';
 import { PREMIUM_INDUSTRIES_CSS } from './premiumIndustriesCss';
 
 const HUB_PATH = '/bionixus-industries';
 
-/** Country cells available for every published matrix industry. */
-const MATRIX_COUNTRY_ORDER: MatrixCountrySlug[] = ['saudi-arabia', 'uae', 'egypt'];
+const MATRIX_COUNTRY_SET = new Set<string>(MATRIX_COUNTRY_SLUGS_ORDERED);
+
+const ALL_SEGMENT_COUNTRY_GROUPS = B2B_COUNTRY_GROUPS;
+
+function getSegmentCountries(slug: SegmentSlug) {
+  if (slug === 'pharma-healthcare') {
+    return HEALTHCARE_HUB_COUNTRY_SLUGS.map((countrySlug) => {
+      const config = resolveCountryConfig(countrySlug);
+      return { slug: countrySlug, label: config.name };
+    });
+  }
+  return ALL_SEGMENT_COUNTRY_GROUPS.flatMap((group) => group.countries);
+}
+
+function getSegmentIndustryCountryPath(
+  slug: SegmentSlug,
+  countrySlug: string,
+  industrySlug: Parameters<typeof getIndustryBofuPath>[1],
+) {
+  if (slug === 'pharma-healthcare') {
+    if (MATRIX_COUNTRY_SET.has(countrySlug)) {
+      return getIndustryBofuPath(countrySlug as Parameters<typeof getIndustryBofuPath>[0], industrySlug);
+    }
+    return `/healthcare-market-research/${countrySlug}`;
+  }
+  return getIndustrySegmentCountryPath(countrySlug, industrySlug);
+}
+
+const SEGMENT_COUNTRY_LEAD: Record<SegmentSlug, string> = {
+  'pharma-healthcare':
+    'Each industry links to country pages across the Americas, Europe, MENA & GCC, and Asia-Pacific — GCC matrix markets use dedicated industry BOFU pages; all other hubs link to our healthcare country programmes.',
+  b2b: 'Each industry has dedicated country pages across Saudi Arabia, the UAE, Egypt, Kuwait, Qatar, Oman, Bahrain, the UK, USA, Brazil, Germany, Morocco, Nigeria, South Africa, and Kenya.',
+  b2c: 'Each industry has dedicated country pages across Saudi Arabia, the UAE, Egypt, Kuwait, Qatar, Oman, Bahrain, the UK, USA, Brazil, Germany, Morocco, Nigeria, South Africa, and Kenya.',
+};
 
 /** Accent colour per segment (teal / gold / coral) used for the eyebrow chrome. */
 const SEGMENT_ACCENT: Record<SegmentSlug, 'teal' | 'gold' | 'coral'> = {
@@ -41,7 +86,13 @@ export default function IndustrySegmentPage({ slug }: IndustrySegmentPageProps) 
 
   const accent = SEGMENT_ACCENT[slug];
   const coveredIndustries = getSegmentMatrixIndustries(slug);
+  const segmentCountries = getSegmentCountries(slug);
   const otherSegments = SEGMENT_ORDER.filter((s) => s !== slug).map((s) => SEGMENTS[s]);
+  const { data: industriesInsights } = useIndustriesInsights();
+  const segmentInsights =
+    slug === 'b2b' || slug === 'b2c'
+      ? (industriesInsights ?? []).filter((post) => post.industrySegment === slug).slice(0, 3)
+      : [];
 
   const jsonLd = [
     {
@@ -54,7 +105,35 @@ export default function IndustrySegmentPage({ slug }: IndustrySegmentPageProps) 
         name: 'BioNixus',
         url: 'https://www.bionixus.com',
       },
-      areaServed: ['United States', 'United Kingdom', 'Saudi Arabia', 'United Arab Emirates', 'Egypt'],
+      areaServed: slug === 'pharma-healthcare'
+        ? [
+            'United States',
+            'Canada',
+            'Brazil',
+            'United Kingdom',
+            'Germany',
+            'France',
+            'Italy',
+            'Spain',
+            'Saudi Arabia',
+            'United Arab Emirates',
+            'Egypt',
+            'Kuwait',
+            'Qatar',
+            'Oman',
+            'Bahrain',
+            'Turkey',
+            'Japan',
+            'China',
+            'India',
+            'Singapore',
+            'Australia',
+          ]
+        : slug === 'b2b'
+          ? B2B_AREA_SERVED
+          : slug === 'b2c'
+            ? B2C_AREA_SERVED
+            : MATRIX_COUNTRY_SLUGS_ORDERED.map((countrySlug) => MATRIX_COUNTRIES[countrySlug].label),
       url: `https://www.bionixus.com${segment.path}`,
     },
     buildBreadcrumbSchema([
@@ -197,8 +276,7 @@ export default function IndustrySegmentPage({ slug }: IndustrySegmentPageProps) 
                   Industries we cover in this <em>segment</em>
                 </h2>
                 <p className="bx-lead">
-                  Each industry has dedicated country pages for Saudi Arabia, the UAE, and Egypt. Follow a link to the
-                  market you are planning for, or start from the{' '}
+                  {SEGMENT_COUNTRY_LEAD[slug]} Follow a link to the market you are planning for, or start from the{' '}
                   <Link to="/market-research-by-industry">full industries index</Link>.
                 </p>
               </div>
@@ -210,15 +288,139 @@ export default function IndustrySegmentPage({ slug }: IndustrySegmentPageProps) 
                       <h3>{industry.displayName}</h3>
                       <p className="bx-cover-knows">{industry.knowsAbout.slice(0, 3).join(' · ')}</p>
                       <div className="bx-chips">
-                        {MATRIX_COUNTRY_ORDER.map((countrySlug) => (
-                          <Link key={countrySlug} to={getIndustryBofuPath(countrySlug, industrySlug)} className="bx-chip">
-                            {industry.displayNameShort} in {MATRIX_COUNTRIES[countrySlug].label}
+                        {segmentCountries.map((country) => (
+                          <Link
+                            key={country.slug}
+                            to={getSegmentIndustryCountryPath(slug, country.slug, industrySlug)}
+                            className="bx-chip"
+                          >
+                            {industry.displayNameShort} in {country.label}
                           </Link>
                         ))}
                       </div>
                     </article>
                   );
                 })}
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        {slug === 'pharma-healthcare' ? (
+          <section className="bx-section dark">
+            <div className="bx-dark-bg" aria-hidden="true" />
+            <div className="bx-inner">
+              <div className="bx-section-head">
+                <div className="bx-eyebrow teal">
+                  <span className="bx-line" /> Global coverage
+                </div>
+                <h2 className="bx-h2 light">
+                  Countries we <em>serve</em>
+                </h2>
+                <p className="bx-lead light">
+                  Pharmaceutical and healthcare research across the Americas, Europe, MENA &amp; GCC, and Asia-Pacific.
+                  Select a country hub for local fieldwork context, or browse the{' '}
+                  <Link to="/healthcare-market-research">healthcare market research hub</Link>.
+                </p>
+              </div>
+              <div className="bx-country-grid">
+                {HEALTHCARE_HUB_COUNTRY_GROUPS.map((group) => (
+                  <article key={group.region} className="bx-country-region">
+                    <h3>{group.region}</h3>
+                    <div className="bx-chips">
+                      {group.slugs.map((countrySlug) => {
+                        const config = resolveCountryConfig(countrySlug);
+                        return (
+                          <Link
+                            key={countrySlug}
+                            to={`/healthcare-market-research/${countrySlug}`}
+                            className="bx-chip"
+                          >
+                            {config.name}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        {slug === 'b2b' ? (
+          <section className="bx-section dark">
+            <div className="bx-dark-bg" aria-hidden="true" />
+            <div className="bx-inner">
+              <div className="bx-section-head">
+                <div className="bx-eyebrow gold">
+                  <span className="bx-line" /> Global coverage
+                </div>
+                <h2 className="bx-h2 light">
+                  Countries we <em>serve</em>
+                </h2>
+                <p className="bx-lead light">
+                  B2B market research across MENA &amp; GCC, Africa, Europe, and the Americas — technology, energy,
+                  real estate, public sector, and education. Select a country for local fieldwork, or browse{' '}
+                  <Link to="/market-research/technology">technology market research</Link>.
+                </p>
+              </div>
+              <div className="bx-country-grid">
+                {B2B_COUNTRY_GROUPS.map((group) => (
+                  <article key={group.region} className="bx-country-region">
+                    <h3>{group.region}</h3>
+                    <div className="bx-chips">
+                      {group.countries.map((country) => (
+                        <Link
+                          key={country.slug}
+                          to={getIndustrySegmentCountryPath(country.slug, DEFAULT_B2B_INDUSTRY_SLUG)}
+                          className="bx-chip"
+                        >
+                          {country.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        {slug === 'b2c' ? (
+          <section className="bx-section dark">
+            <div className="bx-dark-bg" aria-hidden="true" />
+            <div className="bx-inner">
+              <div className="bx-section-head">
+                <div className="bx-eyebrow coral">
+                  <span className="bx-line" /> Global coverage
+                </div>
+                <h2 className="bx-h2 light">
+                  Countries we <em>serve</em>
+                </h2>
+                <p className="bx-lead light">
+                  B2C market research across MENA &amp; GCC, Africa, Europe, and the Americas — FMCG, retail,
+                  financial services, telecom, automotive, hospitality, and media. Select a country for local fieldwork,
+                  or browse <Link to="/market-research/fmcg">FMCG market research</Link>.
+                </p>
+              </div>
+              <div className="bx-country-grid">
+                {B2C_COUNTRY_GROUPS.map((group) => (
+                  <article key={group.region} className="bx-country-region">
+                    <h3>{group.region}</h3>
+                    <div className="bx-chips">
+                      {group.countries.map((country) => (
+                        <Link
+                          key={country.slug}
+                          to={getIndustrySegmentCountryPath(country.slug, DEFAULT_B2C_INDUSTRY_SLUG)}
+                          className="bx-chip"
+                        >
+                          {country.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </article>
+                ))}
               </div>
             </div>
           </section>
@@ -246,6 +448,47 @@ export default function IndustrySegmentPage({ slug }: IndustrySegmentPageProps) 
             </div>
           </div>
         </section>
+
+        {segmentInsights.length > 0 ? (
+          <section className="bx-section cream">
+            <div className="bx-inner">
+              <div className="bx-section-head">
+                <div className={`bx-eyebrow ${accent}`}>
+                  <span className="bx-line" /> Insights
+                </div>
+                <h2 className="bx-h2">
+                  Latest <em>industry insights</em>
+                </h2>
+                <p className="bx-lead">
+                  Fieldwork-led articles for {segment.label.toLowerCase()} buyers —{' '}
+                  <Link to={INDUSTRIES_INSIGHTS_INDEX_PATH}>view all industry insights</Link>.
+                </p>
+              </div>
+              <div className="bx-next-grid">
+                {segmentInsights.map((post) => (
+                  <Link key={post.id} to={getBlogPostPath(post)} className="bx-next-card">
+                    <span className="bx-next-label">
+                      {post.title} <span className="bx-next-arrow" aria-hidden="true">→</span>
+                    </span>
+                    {post.excerpt ? <span className="bx-next-desc">{post.excerpt}</span> : null}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : slug === 'b2b' || slug === 'b2c' ? (
+          <section className="bx-section cream">
+            <div className="bx-inner max-w-3xl">
+              <p className="text-muted-foreground leading-relaxed">
+                {segment.label} insights are published on our{' '}
+                <Link to={INDUSTRIES_INSIGHTS_INDEX_PATH} className="text-primary font-medium hover:underline">
+                  industry insights hub
+                </Link>
+                .
+              </p>
+            </div>
+          </section>
+        ) : null}
 
         {/* ===== FAQ ===== */}
         <section className="bx-section cream">

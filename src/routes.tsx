@@ -36,6 +36,7 @@ import MarketResearch from '@/pages/MarketResearch';
 import MarketResearchByIndustry from '@/pages/MarketResearchByIndustry';
 import { buildIndustryMatrixRoutes } from '@/data/industryMatrixRoutes';
 import BionixusIndustries from '@/pages/industries/BionixusIndustries';
+import BionixusIndustriesInsights from '@/pages/industries/BionixusIndustriesInsights';
 import IndustrySegmentPage from '@/pages/industries/IndustrySegmentPage';
 import MarketResearchHome from '@/pages/MarketResearchHome';
 import MarketResearchSaudiArabiaPharmaceutical from '@/pages/MarketResearchSaudiArabiaPharmaceutical';
@@ -578,6 +579,7 @@ export const routes: RouteObject[] = [
   { path: '/verify-email', element: <VerifyEmail /> },
   { path: '/market-research-by-industry', element: <MarketResearchByIndustry /> },
   { path: '/bionixus-industries', element: <BionixusIndustries /> },
+  { path: '/bionixus-industries/insights', element: <BionixusIndustriesInsights /> },
   { path: '/pharma-healthcare-industries', element: <IndustrySegmentPage slug="pharma-healthcare" /> },
   {
     path: '/clinical-diagnostics-market-research',

@@ -92,7 +92,7 @@ export const SEGMENTS: Record<SegmentSlug, SegmentConfig> = {
       {
         question: 'What pharmaceutical and healthcare research does BioNixus run?',
         answer:
-          'Quantitative physician and HCP surveys, qualitative KOL and payer interviews, market access and HTA support, competitive intelligence, real-world evidence, and launch readiness — across the EU5, the GCC, North Africa, and the Americas.',
+          'Quantitative physician and HCP surveys, qualitative KOL and payer interviews, market access and HTA support, competitive intelligence, real-world evidence, and launch readiness — across the United States, Canada, Brazil, the UK, EU5, GCC, North Africa, Turkey, and Asia-Pacific priority markets.',
       },
       {
         question: 'Does BioNixus cover the United States and the Americas for healthcare?',
@@ -114,7 +114,7 @@ export const SEGMENTS: Record<SegmentSlug, SegmentConfig> = {
     tagline: 'Enterprise, institutional, and infrastructure markets.',
     seoTitle: 'B2B Market Research | Technology, Energy, Real Estate & More | BioNixus',
     seoDescription:
-      'BioNixus B2B market research for technology, energy and industrials, real estate, public sector, and education — buyer journeys, market sizing, and competitive intelligence across MENA and beyond.',
+      'BioNixus B2B market research for technology, energy and industrials, real estate, public sector, and education — buyer journeys, market sizing, and competitive intelligence across MENA, Africa, Europe, and the Americas.',
     h1: 'B2B Industries Market Research',
     intro:
       'B2B decisions turn on a small number of high-value buyers, long sales cycles, and committees rather than crowds. BioNixus brings the same sampling discipline and senior-led analysis we built in healthcare to technology, energy, real estate, public sector, and education research.',
@@ -127,14 +127,14 @@ export const SEGMENTS: Record<SegmentSlug, SegmentConfig> = {
     featuredLinks: [
       { to: '/bionixus-industries', label: 'BioNixus across industries (hub)' },
       { to: '/b2c-industries', label: 'B2C industries market research' },
-      { to: '/market-research-by-industry', label: 'All industries index (KSA, UAE, Egypt)' },
+      { to: '/market-research-by-industry', label: 'All industries index (GCC & MENA)' },
       { to: '/bionixus-market-research-middle-east', label: 'Middle East market research pillar' },
     ],
     faqItems: [
       {
         question: 'Which B2B industries does BioNixus cover?',
         answer:
-          'Technology and B2B software, energy and industrials, real estate and construction, public sector and government, and education — with country pages for Saudi Arabia, the UAE, and Egypt.',
+          'Technology and B2B software, energy and industrials, real estate and construction, public sector and government, and education — with country pages across Saudi Arabia, the UAE, Egypt, Kuwait, Qatar, Oman, Bahrain, the UK, USA, Brazil, Germany, Morocco, Nigeria, South Africa, and Kenya.',
       },
       {
         question: 'How does B2B market research differ from consumer research?',
@@ -144,7 +144,7 @@ export const SEGMENTS: Record<SegmentSlug, SegmentConfig> = {
       {
         question: 'Can BioNixus benchmark a B2B market across several countries?',
         answer:
-          'Yes. Modules can run standalone or with comparable Saudi, UAE, and Egypt cells using consistent instruments, so cross-market findings stay directly comparable.',
+          'Yes. Modules can run standalone or with comparable cells across GCC, MENA, Africa, Europe, and the Americas using consistent instruments, so cross-market findings stay directly comparable.',
       },
     ],
   },
@@ -156,7 +156,7 @@ export const SEGMENTS: Record<SegmentSlug, SegmentConfig> = {
     tagline: 'Consumer demand, brands, and the shopper journey.',
     seoTitle: 'B2C Market Research | FMCG, Retail, Telecom, Finance & More | BioNixus',
     seoDescription:
-      'BioNixus B2C market research for FMCG, retail, financial services, telecom, automotive, hospitality, and media — consumer demand, brand tracking, and shopper insight across MENA and beyond.',
+      'BioNixus B2C market research for FMCG, retail, financial services, telecom, automotive, hospitality, and media — consumer demand, brand tracking, and shopper insight across MENA, Africa, Europe, and the Americas.',
     h1: 'B2C Industries Market Research',
     intro:
       'Consumer markets move on perception, habit, and price sensitivity at scale. BioNixus measures what drives choice — across FMCG, retail, financial services, telecom, automotive, hospitality, and media — with samples that represent the real population, not an open-internet opt-in pool.',
@@ -169,14 +169,14 @@ export const SEGMENTS: Record<SegmentSlug, SegmentConfig> = {
     featuredLinks: [
       { to: '/bionixus-industries', label: 'BioNixus across industries (hub)' },
       { to: '/b2b-industries', label: 'B2B industries market research' },
-      { to: '/market-research-by-industry', label: 'All industries index (KSA, UAE, Egypt)' },
+      { to: '/market-research-by-industry', label: 'All industries index (GCC & MENA)' },
       { to: '/bionixus-market-research-middle-east', label: 'Middle East market research pillar' },
     ],
     faqItems: [
       {
         question: 'Which B2C industries does BioNixus cover?',
         answer:
-          'FMCG and consumer goods, retail and shopper, financial services and banking, telecom and connectivity, automotive, hospitality and tourism, and media and entertainment — with country pages for Saudi Arabia, the UAE, and Egypt.',
+          'FMCG and consumer goods, retail and shopper, financial services and banking, telecom and connectivity, automotive, hospitality and tourism, and media and entertainment — with country pages across Saudi Arabia, the UAE, Egypt, Kuwait, Qatar, Oman, Bahrain, the UK, USA, Brazil, Germany, Morocco, Nigeria, South Africa, and Kenya.',
       },
       {
         question: 'What consumer research methods does BioNixus use?',

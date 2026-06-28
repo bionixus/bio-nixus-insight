@@ -8,7 +8,7 @@ import { CTASection } from '@/components/shared/CTASection'
 import { useInitialData } from '@/contexts/InitialDataContext'
 import type { PressReleaseListItem } from '@/types/pressRelease'
 import { PRESS_RSS_URL } from '@/lib/pressReleaseConstants'
-import { optimizeSanityImage } from '@/lib/image-utils'
+import { getPressListThumbUrl } from '@/lib/pressReleaseHero'
 import { CalendarDays, Rss } from 'lucide-react'
 
 const CANONICAL = 'https://www.bionixus.com/news'
@@ -27,7 +27,7 @@ function buildNewsHubSchemas(postCount: number) {
       '@type': 'CollectionPage',
       name: 'BioNixus News and Press Releases',
       description:
-        'Official BioNixus press releases on healthcare and pharmaceutical market research, GCC market access, and published market intelligence.',
+        'Official corporate announcements from BioNixus Global. Press releases on global market research, market access, and published industry intelligence.',
       url: CANONICAL,
       publisher: {
         '@type': 'Organization',
@@ -68,7 +68,7 @@ export default function NewsHub() {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="News & Press Releases | BioNixus Healthcare Market Research"
-        description="Official BioNixus press releases on pharmaceutical market research, GCC access, and published healthcare intelligence for journalists and partners."
+        description="Official corporate announcements from BioNixus Global. Press releases for journalists and partners, with links to healthcare and industry insights."
         canonical="/news"
         jsonLd={schemas}
       />
@@ -104,17 +104,17 @@ export default function NewsHub() {
               News
             </h1>
             <p className="mt-4 max-w-3xl text-lg text-muted-foreground leading-relaxed">
-              Official announcements from BioNixus on{' '}
+              Official corporate announcements from BioNixus Global. For expert analysis and research
+              methodology, visit our{' '}
+              <Link to="/blog" className="font-medium text-primary underline underline-offset-2 hover:no-underline">
+                healthcare insights blog
+              </Link>
+              {' '}or our{' '}
               <Link
-                to="/healthcare-market-research"
+                to="/bionixus-industries/insights"
                 className="font-medium text-primary underline underline-offset-2 hover:no-underline"
               >
-                healthcare market research
-              </Link>
-              , GCC pharmaceutical access, and published market intelligence. For methodology articles,
-              visit our{' '}
-              <Link to="/blog" className="font-medium text-primary underline underline-offset-2 hover:no-underline">
-                insights blog
+                industry insights blog
               </Link>
               .
             </p>
@@ -146,9 +146,7 @@ export default function NewsHub() {
           ) : (
             <ul className="divide-y divide-border/70 list-none p-0 m-0">
               {releases.map((item) => {
-                const thumb = item.heroImage
-                  ? optimizeSanityImage(item.heroImage, 400, 225)
-                  : undefined
+                const thumb = getPressListThumbUrl(item)
                 return (
                   <li key={item._id} className="py-8 first:pt-0">
                     <article>
@@ -183,16 +181,22 @@ export default function NewsHub() {
                         </Link>
                       </p>
                       {thumb ? (
-                        <Link to={`/news/${item.slug}`} className="mt-4 block max-w-md">
-                          <img
-                            src={thumb}
-                            alt={item.heroImageAlt || item.headline}
-                            width={400}
-                            height={225}
-                            className="rounded-md border border-border/50 object-cover w-full"
-                            loading="lazy"
-                            decoding="async"
-                          />
+                        <Link to={`/news/${item.slug}`} className="mt-4 block max-w-md group">
+                          <div className="relative overflow-hidden rounded-xl border border-border/50 shadow-sm transition-shadow group-hover:shadow-md group-hover:border-[#C9A84C]/30">
+                            <div
+                              className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+                              aria-hidden
+                            />
+                            <img
+                              src={thumb}
+                              alt={item.heroImageAlt || item.headline}
+                              width={400}
+                              height={225}
+                              className="object-cover w-full aspect-[16/9]"
+                              loading="lazy"
+                              decoding="async"
+                            />
+                          </div>
                         </Link>
                       ) : null}
                     </article>

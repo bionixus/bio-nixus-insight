@@ -168,6 +168,16 @@ export const translations = {
         { quote: 'Discover how BioNixus delivered launch-readiness evidence for a specialty pharma entering three European markets with payer and hospital research.', author: 'European Launch Readiness', role: 'Case Study', company: 'Specialty Pharmaceutical' },
       ],
     },
+    clientReviewsTeaser: {
+      eyebrow: 'Client reviews',
+      titleBeforeCount: 'Recommended by more than',
+      titleAfterCount: 'happy clients',
+      description:
+        'Read verified Google reviews from our London office and testimonials from pharmaceutical, biotech, and medical device partners across the US, Europe, and LATAM.',
+      happyClientsBadgeSuffix: 'happy clients',
+      googleRatingSuffix: 'on Google',
+      cta: 'Read all client reviews',
+    },
     contactPage: {
       heroTitle: "One conversation can change your launch.",
       heroSubtitle: "Join pharmaceutical teams across EMEA who use BioNixus to unlock market insights—faster. Get a tailored proposal in 24 hours. No commitment, no fluff.",
@@ -380,23 +390,35 @@ export const translations = {
       contact: 'Kontakt',
     },
     indexLanding: {
-      emeaSignalsH2: 'Kurzüberblick: Pharmazeutische Gesundheitsmarktforschung in Europa, Naher Osten und Afrika',
+      emeaSignalsH2: 'Globale Reichweite mit lokaler Umsetzungstiefe',
     },
     hero: {
-      tagline: 'EMEA Gesundheitsmarktforschung',
-      title: 'BioNixus Gesundheitsmarktforschungsdienste für pharmazeutische Teams in EMEA',
-      subtitle: 'Verwandeln Sie Ärzte- und Krankenhaus-Erkenntnisse in strategische Intelligenz in UK-, Europa- und MENA-Märkten',
-      valueProposition: 'Wir liefern umfassende quantitative und qualitative Marktforschung, die klinische Daten in umsetzbare pharmazeutische Intelligence verwandelt. Unsere spezialisierte Methodik erfasst authentische Ärzteperspektiven aus NHS und privaten Gesundheitssystemen, Krankenhaustrends und Patienteneinblicken in UK, Europa und MENA.',
-      serviceHighlights: ['UK NHS & Private Healthcare Research', 'Pan-europäische Ärztebefragungen', 'Qualitative Meinungsführer-Interviews (KOL)', 'Mehrländer-Datenanalyse', 'UK • Europa • MENA Abdeckung'],
+      tagline: 'Globales Internationales Marktforschungsunternehmen',
+      titleLead: 'Forschung, die',
+      titleEmphasis: 'Pharma-Strategie prägt',
+      title: 'Pharmazeutische und Gesundheitsmarktforschung für sichere Markteinführung, Zugang und Wachstum',
+      subtitle:
+        'BioNixus ist ein globaler Insights- und Marktforschungspartner in Amerika, EMEA und APAC — mit Länder-Tiefe, wo sie zählt. Wir helfen Pharma-, Biotech- und MedTech-Teams, KOL-, Kostenträger- und Krankenhaus-Evidenz in Entscheidungen zu Markteinführung, Zugang und Wachstum zu übersetzen.',
+      trustStripPrimary: 'Vertrauenswürdig bei',
+      trustStripStats: '48 globale Kunden · 127+ Projekte · 38 Länder',
+      valueProposition:
+        'Jedes Mandat beginnt mit einer echten Commercial-Frage, nicht mit einem generischen Datenexport. Sie erhalten belastbare quantitative und qualitative Evidenz — zugeschnitten auf Entscheidung, Markt und regulatorische Realität — von der Pre-Launch-Sizing bis zur Post-Launch-Optimierung.',
+      serviceHighlights: [
+        'Mehrländer-Ärzte- und Kostenträgerforschung',
+        'Evidenz für Markteinführung, Zugang und Wachstum',
+        'Compliance-konformes Fieldwork',
+      ],
       cta: 'Angebot anfordern',
-      ctaSecondary: 'BioNixus Fallstudien ansehen',
-      trustBar: 'Vertrauenswürdig in',
-      trustCountries: 'UK • Deutschland • Frankreich • Spanien • Italien • UAE • Saudi-Arabien • Ägypten • Kuwait • Katar',
+      ctaPremium: 'Discovery Call buchen →',
+      ctaSecondary: 'Fallstudien ansehen',
+      trustBar: 'Entscheidungsreife Evidenz für Pharma-, Biotech- und MedTech-Teams seit 2012, in',
+      trustCountries: 'MENA, Lateinamerika, Osteuropa, UK und der weiteren EMEA-Region.',
       complianceBadges: ['MHRA Compliant', 'EMA Aligned', 'GDPR Compliant', 'FDA Compliant', 'ICH-GCP'],
     },
     services: {
-      title: 'Umfassende Gesundheitsmarktforschungsdienstleistungen für UK & europäische Pharmaunternehmen',
-      subtitle: 'Quantitative und qualitative Erkenntnisse von Ärzten und Krankenhäusern in UK, Europa & MENA',
+      title: 'Pharmazeutische und Gesundheitsmarktforschungsleistungen',
+      subtitle:
+        'Entscheidungsreife quantitative und qualitative Evidenz für Markteinführung, Marktzugang und Wachstum — global, mit starker Umsetzung in Europa, Amerika und Naher Osten.',
       items: [
         {
           title: 'Quantitative Gesundheitsforschung & Ärztebefragungen',
@@ -508,6 +530,16 @@ export const translations = {
         { quote: 'Sehen Sie, wie BioNixus einem mittelständischen Biotech-Unternehmen half, die EMEA-Expansion mit länderübergreifendem KOL-Mapping und Marktzugangsdiagnostik zu beschleunigen.', author: 'EMEA-Expansion', role: 'Fallstudie', company: 'Mittelständisches Biotech' },
         { quote: 'Entdecken Sie, wie BioNixus Launch-Readiness-Evidenz für ein Spezialpharma-Unternehmen lieferte, das mit Kostenträger- und Klinikforschung in drei europäische Märkte eintrat.', author: 'Europäische Markteinführung', role: 'Fallstudie', company: 'Spezial-Pharmaunternehmen' },
       ],
+    },
+    clientReviewsTeaser: {
+      eyebrow: 'Kundenbewertungen',
+      titleBeforeCount: 'Empfohlen von mehr als',
+      titleAfterCount: 'zufriedenen Kunden',
+      description:
+        'Lesen Sie verifizierte Google-Bewertungen unseres Londoner Büros und Referenzen von Pharma-, Biotech- und Medizintechnik-Partnern in den USA, Europa und LATAM.',
+      happyClientsBadgeSuffix: 'zufriedene Kunden',
+      googleRatingSuffix: 'auf Google',
+      cta: 'Alle Kundenbewertungen lesen',
     },
     contact: {
       title: 'Lassen Sie uns verbinden',
@@ -767,6 +799,16 @@ export const translations = {
         { quote: 'Apprenez comment BioNixus a fourni les preuves de préparation au lancement pour un laboratoire spécialisé entrant sur trois marchés européens avec des recherches payeurs et hospitalières.', author: 'Préparation Lancement Europe', role: 'Étude de Cas', company: 'Pharmaceutique Spécialisée' },
       ],
     },
+    clientReviewsTeaser: {
+      eyebrow: 'Avis clients',
+      titleBeforeCount: 'Recommandé par plus de',
+      titleAfterCount: 'clients satisfaits',
+      description:
+        'Consultez les avis Google vérifiés de notre bureau londonien et les témoignages de partenaires pharmaceutiques, biotech et dispositifs médicaux aux États-Unis, en Europe et en LATAM.',
+      happyClientsBadgeSuffix: 'clients satisfaits',
+      googleRatingSuffix: 'sur Google',
+      cta: 'Lire tous les avis clients',
+    },
     contact: {
       title: 'Connectons-nous',
       subtitle: 'Prêt à transformer votre stratégie de marché santé? Notre équipe d\'experts est là pour vous aider.',
@@ -1025,6 +1067,16 @@ export const translations = {
         { quote: 'Descubra cómo BioNixus proporcionó evidencia de preparación al lanzamiento para una farmacéutica especializada que ingresaba a tres mercados europeos con investigación de pagadores y hospitales.', author: 'Preparación Lanzamiento Europa', role: 'Caso de Estudio', company: 'Farmacéutica Especializada' },
       ],
     },
+    clientReviewsTeaser: {
+      eyebrow: 'Opiniones de clientes',
+      titleBeforeCount: 'Recomendado por más de',
+      titleAfterCount: 'clientes satisfechos',
+      description:
+        'Lea opiniones verificadas de Google de nuestra oficina de Londres y testimonios de socios farmacéuticos, biotecnológicos y de dispositivos médicos en EE. UU., Europa y LATAM.',
+      happyClientsBadgeSuffix: 'clientes satisfechos',
+      googleRatingSuffix: 'en Google',
+      cta: 'Leer todas las opiniones de clientes',
+    },
     contact: {
       title: 'Conectemos',
       subtitle: '¿Listo para transformar su estrategia de mercado sanitario? Nuestro equipo de expertos está aquí para ayudarle.',
@@ -1281,6 +1333,16 @@ export const translations = {
         { quote: '看BioNixus如何帮助一家中型生物科技公司，通过多国KOL映射和市场准入诊断加速EMEA扩张。', author: 'EMEA扩张', role: '案例研究', company: '中型生物科技' },
         { quote: '发现BioNixus如何为一家专科制药公司进入三个欧洲市场提供上市准备证据，涵盖支付方和医院研究。', author: '欧洲上市准备', role: '案例研究', company: '专科制药企业' },
       ],
+    },
+    clientReviewsTeaser: {
+      eyebrow: '客户评价',
+      titleBeforeCount: '获得超过',
+      titleAfterCount: '位满意客户的推荐',
+      description:
+        '阅读我们伦敦办公室经核实的 Google 评价，以及来自美国、欧洲和拉美制药、生物技术和医疗器械合作伙伴的客户证言。',
+      happyClientsBadgeSuffix: '位满意客户',
+      googleRatingSuffix: 'Google 评分',
+      cta: '查看全部客户评价',
     },
     contact: {
       title: '联系我们',
@@ -1543,6 +1605,16 @@ export const translations = {
         { quote: 'شاهد كيف ساعدت BioNixus شركة تكنولوجيا حيوية متوسطة في تسريع التوسع في أوروبا والشرق الأوسط عبر رسم خرائط KOL متعدد البلدان وتشخيصات الوصول للسوق.', author: 'التوسع في EMEA', role: 'دراسة حالة', company: 'شركة تكنولوجيا حيوية متوسطة' },
         { quote: 'اكتشف كيف قدّمت BioNixus أدلة جاهزية الإطلاق لشركة أدوية متخصصة تدخل ثلاثة أسواق أوروبية من خلال أبحاث الجهات الدافعة والمستشفيات.', author: 'جاهزية الإطلاق الأوروبي', role: 'دراسة حالة', company: 'شركة أدوية متخصصة' },
       ],
+    },
+    clientReviewsTeaser: {
+      eyebrow: 'آراء العملاء',
+      titleBeforeCount: 'موصى به من أكثر من',
+      titleAfterCount: 'عميل راضٍ',
+      description:
+        'اطلع على تقييمات Google الموثّقة من مكتبنا في لندن وشهادات شركائنا في الأدوية والتكنولوجيا الحيوية والأجهزة الطبية في الولايات المتحدة وأوروبا وأمريكا اللاتينية.',
+      happyClientsBadgeSuffix: 'عميل راضٍ',
+      googleRatingSuffix: 'على Google',
+      cta: 'قراءة جميع آراء العملاء',
     },
     contact: {
       title: 'لنتواصل',
@@ -1832,6 +1904,16 @@ export const translations = {
         { quote: 'Descubra como a BioNixus forneceu evidências de prontidão para lançamento para uma farmacêutica especializada entrando em três mercados europeus.', author: 'Prontidão Lançamento Europa', role: 'Caso de Estudo', company: 'Farmacêutica Especializada' },
       ],
     },
+    clientReviewsTeaser: {
+      eyebrow: 'Avaliações de clientes',
+      titleBeforeCount: 'Recomendado por mais de',
+      titleAfterCount: 'clientes satisfeitos',
+      description:
+        'Leia avaliações verificadas no Google do nosso escritório em Londres e depoimentos de parceiros farmacêuticos, biotecnológicos e de dispositivos médicos nos EUA, Europa e LATAM.',
+      happyClientsBadgeSuffix: 'clientes satisfeitos',
+      googleRatingSuffix: 'no Google',
+      cta: 'Ler todas as avaliações de clientes',
+    },
     contactPage: {
       title: 'Entre em Contato',
       subtitle: 'Pronto para transformar sua estratégia de mercado de saúde? Nossa equipe de especialistas está aqui para ajudá-lo.',
@@ -1862,17 +1944,11 @@ export const translations = {
       detailsLabel: 'Como podemos ajudá-lo?',
     },
     contactHomeEmbed: {
-      title: 'Entre em Contato',
-      subtitle: 'Nossa equipe de especialistas está aqui para ajudá-lo.',
-      email: 'admin@bionixus.com',
-      firstName: 'Nome',
-      lastName: 'Sobrenome',
-      workEmail: 'E-mail profissional',
-      company: 'Empresa',
-      projectDetails: 'Detalhes do projeto',
-      submitButton: 'Enviar Mensagem',
-      thankYouTitle: 'Mensagem enviada!',
-      thankYouMessage: 'Nossa equipe responderá em breve.',
+      title: 'Solicitar proposta personalizada de pesquisa em saúde',
+      body:
+        'A página inicial resume serviços, cobertura regional e metodologia. A página de contacto dedicada inclui o formulário completo, contexto de privacidade e campos estruturados para a BioNixus responder com um plano definido — normalmente em um dia útil.',
+      cta: 'Abrir o formulário de contacto completo',
+      emailLine: 'Prefere e-mail? admin@bionixus.com',
     },
     localePrompt: {
       message: 'Esta página está disponível em Português.',
@@ -1906,8 +1982,25 @@ export const translations = {
       cta: 'Voltar para o Início',
     },
     methodologyPt: {
-      title: 'Nossa Metodologia de Pesquisa',
-      subtitle: 'Padrões globais adaptados ao contexto local — com conformidade ANVISA, LGPD e ICH-GCP',
+      title: 'Metodologia de pesquisa em saúde, qualidade de dados e conformidade regulatória',
+      intro: 'Padrões globais adaptados ao contexto local — com conformidade ANVISA, LGPD e ICH-GCP.',
+      steps: [
+        {
+          title: 'Conformidade regulatória',
+          description:
+            'Conformidade com ANVISA e regulamentação brasileira. Padrões EMA e MHRA. Protocolos de coleta de dados em conformidade com a LGPD. Diretrizes ICH-GCP para pesquisa clínica.',
+        },
+        {
+          title: 'Coleta e qualidade de dados',
+          description:
+            'Implementação multilíngue de pesquisas (português, inglês, espanhol, árabe). Validação de dados em tempo real e controles de qualidade. Protocolos de verificação de identidade de médicos. Criptografia e armazenamento seguro de dados.',
+        },
+        {
+          title: 'Análise avançada',
+          description:
+            'Modelagem estatística e análise preditiva. HEOR e análise de custo-efetividade para submissões HTA. Análise comparativa entre países.',
+        },
+      ],
     },
   },
   ru: {
@@ -2057,6 +2150,16 @@ export const translations = {
         { quote: 'Посмотрите, как BioNixus помогла биотехнологической компании среднего размера ускорить расширение в EMEA с помощью многострановой карты KOL и диагностики доступа на рынок.', author: 'Расширение в EMEA', role: 'Кейс', company: 'Биотехнологическая компания' },
         { quote: 'Узнайте, как BioNixus предоставила доказательную базу готовности к запуску для специализированной фармацевтической компании, выходящей на три европейских рынка.', author: 'Готовность к европейскому запуску', role: 'Кейс', company: 'Специализированная фармацевтика' },
       ],
+    },
+    clientReviewsTeaser: {
+      eyebrow: 'Отзывы клиентов',
+      titleBeforeCount: 'Нас рекомендуют более',
+      titleAfterCount: 'довольных клиентов',
+      description:
+        'Читайте проверенные отзывы Google нашего лондонского офиса и отзывы партнёров из фармацевтики, биотехнологий и медицинских устройств в США, Европе и LATAM.',
+      happyClientsBadgeSuffix: 'довольных клиентов',
+      googleRatingSuffix: 'на Google',
+      cta: 'Читать все отзывы клиентов',
     },
     contactPage: {
       heroTitle: 'Один разговор может изменить ваш запуск.',

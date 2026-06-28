@@ -927,6 +927,10 @@ async function startServer() {
         console.error('SSR fetchRouteData failed:', routeErr);
         return { pageType: 'generic', routeFetchError: true };
       });
+      if (initialData?.pageType === 'redirect' && typeof initialData.redirectTo === 'string') {
+        res.redirect(Number(initialData.statusCode) || 301, initialData.redirectTo);
+        return;
+      }
       const { html: appHtml, helmetData } = render(url, initialData);
 
       const headTags = [

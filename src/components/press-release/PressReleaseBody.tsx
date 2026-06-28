@@ -9,7 +9,7 @@ type PressReleaseBodyProps = {
 export function PressReleaseBody({ body }: PressReleaseBodyProps) {
   if (!body?.length) return null
   return (
-    <div className="press-prose max-w-3xl">
+    <div className="press-prose max-w-none">
       <PortableText value={body} components={pressPortableTextComponents} />
     </div>
   )

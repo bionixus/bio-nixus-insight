@@ -12,7 +12,13 @@ import {
   BIONIXUS_UK_GBP_MAPS_URL,
   BIONIXUS_UK_GOOGLE_REVIEWS,
 } from '@/data/googleReviewsUk';
-import { BIONIXUS_CLIENT_TESTIMONIALS, HAPPY_CLIENTS_COUNT } from '@/data/clientReviews';
+import {
+  BIONIXUS_CLIENT_TESTIMONIALS,
+  BIONIXUS_CROSS_INDUSTRY_TESTIMONIALS,
+  CLIENT_TESTIMONIAL_REGION_LABELS,
+  CROSS_INDUSTRY_LABELS,
+  HAPPY_CLIENTS_COUNT,
+} from '@/data/clientReviews';
 import { buildUkGoogleReviewsLocalBusiness } from '@/lib/seo/googleReviewsSchema';
 import { buildCanonicalOrganization } from '@/lib/seo/organization';
 
@@ -38,7 +44,7 @@ const CLIENT_REVIEWS_FAQ = [
   {
     question: 'Are these Google reviews verified?',
     answer:
-      'The Google reviews section lists verified feedback from our London corporate office on Google Business Profile. Client testimonials below are collected from project feedback and partnership reviews with pharmaceutical and biotech teams.',
+      'The Google reviews section lists verified feedback from our London corporate office on Google Business Profile. Client testimonials below are collected from project feedback and partnership reviews across healthcare, financial services, tourism, real estate, manufacturing, and technology sectors.',
   },
   {
     question: 'How many clients has BioNixus worked with?',
@@ -56,6 +62,7 @@ const ClientReviews = () => {
   const heroRef = useScrollReveal<HTMLElement>({ stagger: 80 });
   const googleRef = useScrollReveal<HTMLElement>({ stagger: 100 });
   const clientRef = useScrollReveal<HTMLElement>({ stagger: 100 });
+  const crossIndustryRef = useScrollReveal<HTMLElement>({ stagger: 100 });
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -86,7 +93,7 @@ const ClientReviews = () => {
         <title>Client Reviews | BioNixus Pharmaceutical Market Research</title>
         <meta
           name="description"
-          content="Read verified Google reviews and client testimonials for BioNixus. Recommended by more than 40 happy pharmaceutical, biotech, and medtech clients worldwide."
+          content="Read verified Google reviews and client testimonials for BioNixus. Recommended by more than 40 happy pharmaceutical, biotech, and medical device clients across the US, Europe, and LATAM."
         />
         <link rel="canonical" href={PAGE_URL} />
         <script type="application/ld+json">{JSON.stringify(buildCanonicalOrganization('en'))}</script>
@@ -96,7 +103,7 @@ const ClientReviews = () => {
       </Helmet>
       <OpenGraphMeta
         title="Client Reviews | BioNixus"
-        description="Verified Google reviews and client testimonials. Recommended by more than 40 happy pharmaceutical and healthcare research clients."
+        description="Verified Google reviews and client testimonials from pharmaceutical and medical device partners across the US, Europe, G5, and LATAM."
         url={PAGE_URL}
       />
 
@@ -126,8 +133,9 @@ const ClientReviews = () => {
               Recommended by more than {HAPPY_CLIENTS_COUNT} happy clients
             </h1>
             <p className="text-lg text-primary-foreground/90 leading-relaxed mb-10 sr sr-up">
-              Pharmaceutical, biotech, and medtech teams trust BioNixus for healthcare market research across EMEA —
-              from verified Google reviews to project feedback from long-term partners.
+              Pharmaceutical, biotech, and medical device teams trust BioNixus for healthcare market research
+              worldwide — from verified Google reviews to project feedback from partners across the Americas, Europe,
+              and LATAM.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-6 sr sr-up">
               <div className="flex items-center gap-3 rounded-xl bg-white/10 border border-white/20 px-5 py-3">
@@ -227,11 +235,12 @@ const ClientReviews = () => {
                 id="client-testimonials-heading"
                 className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-4 sr sr-up"
               >
-                What our pharmaceutical clients say
+                What our pharmaceutical &amp; medtech clients say
               </h2>
               <p className="text-muted-foreground leading-relaxed sr sr-up">
-                Selected testimonials from market access, medical affairs, and insights leaders who have partnered with
-                BioNixus on quantitative surveys, KOL mapping, and launch-readiness programmes.
+                Selected testimonials from market access, medical affairs, and insights leaders — including US and
+                North America, Europe and G5 markets, and LATAM and Brazil — on surveys, KOL mapping, payer research,
+                and device pathway programmes.
               </p>
             </div>
 
@@ -246,6 +255,20 @@ const ClientReviews = () => {
                     &ldquo;{testimonial.body}&rdquo;
                   </blockquote>
                   <footer className="mt-5 pt-5 border-t border-border">
+                    {(testimonial.region || testimonial.sector) && (
+                      <div className="flex flex-wrap gap-2 mb-3">
+                        {testimonial.region ? (
+                          <span className="text-xs font-semibold uppercase tracking-wider text-primary/90 bg-primary/10 px-2.5 py-1 rounded-full">
+                            {CLIENT_TESTIMONIAL_REGION_LABELS[testimonial.region]}
+                          </span>
+                        ) : null}
+                        {testimonial.sector ? (
+                          <span className="text-xs font-semibold uppercase tracking-wider text-foreground/80 bg-muted px-2.5 py-1 rounded-full">
+                            {testimonial.sector === 'medtech' ? 'Medical devices' : 'Pharma'}
+                          </span>
+                        ) : null}
+                      </div>
+                    )}
                     <cite className="not-italic font-semibold text-foreground block">{testimonial.author}</cite>
                     <p className="text-sm text-muted-foreground mt-1">
                       {testimonial.role}, {testimonial.company}
@@ -257,7 +280,56 @@ const ClientReviews = () => {
           </div>
         </section>
 
-        <section className="section-padding bg-background border-t border-border" aria-labelledby="reviews-faq-heading">
+        <section
+          id="cross-industry-testimonials"
+          className="section-padding bg-background border-t border-border"
+          ref={crossIndustryRef}
+          aria-labelledby="cross-industry-testimonials-heading"
+        >
+          <div className="container-wide">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3 sr sr-up">
+                Beyond healthcare
+              </p>
+              <h2
+                id="cross-industry-testimonials-heading"
+                className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-4 sr sr-up"
+              >
+                Clients across other industries
+              </h2>
+              <p className="text-muted-foreground leading-relaxed sr sr-up">
+                BioNixus also supports market research for banks and financial services, wood manufacturing,
+                tourism and hospitality, real estate, and AI and IT startups — with the same senior-led methodology
+                and global field execution.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {BIONIXUS_CROSS_INDUSTRY_TESTIMONIALS.map((testimonial) => (
+                <article
+                  key={testimonial.author}
+                  className="bg-card border border-border rounded-xl p-6 shadow-sm sr sr-scale-up hover-lift"
+                >
+                  <StarRating rating={testimonial.rating} />
+                  <blockquote className="mt-4 text-foreground leading-relaxed">
+                    &ldquo;{testimonial.body}&rdquo;
+                  </blockquote>
+                  <footer className="mt-5 pt-5 border-t border-border">
+                    <span className="inline-flex text-xs font-semibold uppercase tracking-wider text-primary/90 bg-primary/10 px-2.5 py-1 rounded-full mb-3">
+                      {CROSS_INDUSTRY_LABELS[testimonial.industry]}
+                    </span>
+                    <cite className="not-italic font-semibold text-foreground block">{testimonial.author}</cite>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      {testimonial.role}, {testimonial.company}
+                    </p>
+                  </footer>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section-padding bg-cream border-t border-border" aria-labelledby="reviews-faq-heading">
           <div className="container-wide max-w-3xl mx-auto">
             <h2 id="reviews-faq-heading" className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-8 text-center">
               Frequently asked questions

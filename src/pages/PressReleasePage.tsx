@@ -7,6 +7,8 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav'
 import OpenGraphMeta from '@/components/OpenGraphMeta'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import { PressReleaseHero } from '@/components/press-release/PressReleaseHero'
+import { PressReleaseShareBar } from '@/components/press-release/PressReleaseShareBar'
+import { getPressHeroDisplayUrl } from '@/lib/pressReleaseHero'
 import { PressReleaseBody } from '@/components/press-release/PressReleaseBody'
 import { RelatedReportCallout } from '@/components/press-release/RelatedReportCallout'
 import { PressBoilerplate } from '@/components/press-release/PressBoilerplate'
@@ -27,9 +29,10 @@ import { ArrowLeft, Mail, Phone } from 'lucide-react'
 const ORIGIN = 'https://www.bionixus.com'
 
 function pressOgImage(release: PressRelease): string {
+  const heroDisplay = getPressHeroDisplayUrl(release)
   const raw =
     release.openGraph?.ogImageUrl ||
-    release.heroImage ||
+    heroDisplay ||
     `${ORIGIN}/og-image.png`
   return raw.startsWith('/') ? `${ORIGIN}${raw}` : raw
 }
@@ -171,62 +174,74 @@ export default function PressReleasePage() {
         </div>
 
         <article>
-          <PressReleaseHero release={release} />
+          <PressReleaseHero release={release} pageUrl={pageUrl} />
           <div className="container-wide section-padding max-w-5xl">
-            <p className="mb-8 text-[15px] text-muted-foreground max-w-3xl">
+            <div className="rounded-3xl border border-border/70 bg-card/40 shadow-[0_32px_90px_-40px_rgb(15_23_42/0.18)] ring-1 ring-border/60 px-5 py-8 sm:px-8 sm:py-10 md:px-10 md:py-11 -mt-6 relative z-10">
+              <PressReleaseShareBar
+                url={pageUrl}
+                title={release.headline}
+                slug={release.slug}
+                className="pb-6 mb-8 border-b border-border/70"
+              />
+              <PressReleaseBody body={release.body} />
+              <RelatedReportCallout relatedReportSlug={release.relatedReportSlug} />
+              <PressBoilerplate boilerplate={release.boilerplate} />
+
+              <section
+                className="mt-10 rounded-2xl border border-primary/10 bg-gradient-to-br from-primary/[0.04] to-[#C9A84C]/[0.06] p-6 md:p-8"
+                aria-label="Press contact"
+              >
+                <h2 className="font-display text-xl font-semibold text-primary mb-3">Media contact</h2>
+                <p className="text-sm text-muted-foreground mb-4 max-w-2xl">
+                  For interview requests, embargoed briefings, or additional corporate assets, contact our press desk.
+                </p>
+                <ul className="space-y-2.5 text-[15px] list-none p-0 m-0">
+                  <li>
+                    <a
+                      href={`mailto:${DEFAULT_PRESS_MEDIA_EMAIL}`}
+                      className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
+                    >
+                      <Mail className="h-4 w-4 shrink-0" aria-hidden />
+                      {DEFAULT_PRESS_MEDIA_EMAIL}
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href={`tel:${DEFAULT_PRESS_MEDIA_PHONE_US.replace(/[^\d+]/g, '')}`}
+                      className="inline-flex items-center gap-2 text-foreground hover:text-primary"
+                    >
+                      <Phone className="h-4 w-4 shrink-0" aria-hidden />
+                      US {DEFAULT_PRESS_MEDIA_PHONE_US}
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href={`tel:${DEFAULT_PRESS_MEDIA_PHONE_UK.replace(/[^\d+]/g, '')}`}
+                      className="inline-flex items-center gap-2 text-foreground hover:text-primary"
+                    >
+                      <Phone className="h-4 w-4 shrink-0" aria-hidden />
+                      UK {DEFAULT_PRESS_MEDIA_PHONE_UK}
+                    </a>
+                  </li>
+                </ul>
+                <p className="mt-4 text-sm">
+                  <Link to="/media" className="font-medium text-primary hover:underline">
+                    Logos and media kit
+                  </Link>
+                </p>
+              </section>
+            </div>
+
+            <p className="mt-6 text-[15px] text-muted-foreground max-w-3xl">
               For context on BioNixus programmes, see our{' '}
               <Link
                 to="/healthcare-market-research"
                 className="font-medium text-primary underline underline-offset-2 hover:no-underline"
               >
-                healthcare market research hub
+                global healthcare market research hub
               </Link>
               .
             </p>
-            <PressReleaseBody body={release.body} />
-            <RelatedReportCallout relatedReportSlug={release.relatedReportSlug} />
-            <PressBoilerplate boilerplate={release.boilerplate} />
-
-            <section
-              className="mt-10 rounded-xl border border-border bg-muted/30 p-6 max-w-3xl"
-              aria-label="Press contact"
-            >
-              <h2 className="font-display text-lg font-semibold text-primary mb-3">Media contact</h2>
-              <ul className="space-y-2 text-[15px] list-none p-0 m-0">
-                <li>
-                  <a
-                    href={`mailto:${DEFAULT_PRESS_MEDIA_EMAIL}`}
-                    className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
-                  >
-                    <Mail className="h-4 w-4 shrink-0" aria-hidden />
-                    {DEFAULT_PRESS_MEDIA_EMAIL}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`tel:${DEFAULT_PRESS_MEDIA_PHONE_US.replace(/[^\d+]/g, '')}`}
-                    className="inline-flex items-center gap-2 text-foreground hover:text-primary"
-                  >
-                    <Phone className="h-4 w-4 shrink-0" aria-hidden />
-                    US {DEFAULT_PRESS_MEDIA_PHONE_US}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`tel:${DEFAULT_PRESS_MEDIA_PHONE_UK.replace(/[^\d+]/g, '')}`}
-                    className="inline-flex items-center gap-2 text-foreground hover:text-primary"
-                  >
-                    <Phone className="h-4 w-4 shrink-0" aria-hidden />
-                    UK {DEFAULT_PRESS_MEDIA_PHONE_UK}
-                  </a>
-                </li>
-              </ul>
-              <p className="mt-3 text-sm">
-                <Link to="/media" className="font-medium text-primary hover:underline">
-                  Logos and media kit
-                </Link>
-              </p>
-            </section>
           </div>
         </article>
 

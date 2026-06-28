@@ -60,11 +60,20 @@ function withKeys(items) {
   }))
 }
 
+const DE_CTA_SECTION = {
+  title: 'AMNOG & europäischer Marktzugang mit BioNixus',
+  description:
+    'Von der frühen Nutzenbewertung (G-BA/IQWiG) bis zu EU-HTA und nationalen Preisverhandlungen — BioNixus verbindet Dossier-Strategie, Evidenzplanung und Feldforschung für Deutschland und Europa.',
+  buttonText: 'Beratung anfragen',
+  buttonUrl: 'https://www.bionixus.com/de/contact',
+}
+
 function buildSharedContent(bodyHtml) {
   return {
     title: ARTICLE_H1.slice(0, 200),
     bodyHtml,
     excerpt: ARTICLE_EXCERPT,
+    ctaSection: DE_CTA_SECTION,
     executiveSummary: withKeys([
       {
         _type: 'block',
@@ -263,13 +272,7 @@ async function main() {
     language: 'de',
     readingTime: 14,
     tags: ['Deutsch', 'Deutschland', 'AMNOG', 'G-BA', 'IQWiG', 'Marktzugang', 'BioNixus'],
-    ctaSection: {
-      title: 'AMNOG-Dossier mit BioNixus vorbereiten',
-      description:
-        'BioNixus unterstützt Market-Access-Teams in Deutschland bei der Dossiervorbereitung: Patientenpräferenzstudien, Ärzteinterviews zur unerfüllten Therapienachfrage und versorgungsnahe Evidenz für den G-BA.',
-      buttonText: 'Kontakt aufnehmen',
-      buttonUrl: 'https://www.bionixus.com/de/contact',
-    },
+    ctaSection: DE_CTA_SECTION,
     body: [],
   }
 

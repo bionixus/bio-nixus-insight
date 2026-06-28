@@ -312,7 +312,7 @@ export default function TopOncologyMarketResearchCompanies2026() {
                 <p className="text-primary-foreground/70 text-sm mt-1">Pipeline in immuno-oncology</p>
               </div>
               <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">17+</p>
+                <p className="text-3xl md:text-4xl font-display font-bold">38</p>
                 <p className="text-primary-foreground/70 text-sm mt-1">Countries BioNixus covers</p>
               </div>
               <div>

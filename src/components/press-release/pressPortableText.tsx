@@ -11,12 +11,12 @@ export const pressPortableTextComponents = {
       <h3 className="mt-8 mb-3 font-display text-xl font-semibold text-foreground">{children}</h3>
     ),
     blockquote: ({ children }: { children?: ReactNode }) => (
-      <blockquote className="my-6 border-l-4 border-accent pl-5 text-muted-foreground italic leading-relaxed">
+      <blockquote className="my-8 rounded-r-xl border-l-4 border-[#C9A84C] bg-[#06101F]/[0.03] py-4 pl-5 pr-4 text-muted-foreground italic leading-relaxed">
         {children}
       </blockquote>
     ),
     normal: ({ children }: { children?: ReactNode }) => (
-      <p className="mb-5 text-[1.0625rem] leading-[1.8] text-foreground">{children}</p>
+      <p className="mb-5 text-[1.0625rem] leading-[1.85] text-foreground/90">{children}</p>
     ),
   },
   marks: {

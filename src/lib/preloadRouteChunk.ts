@@ -74,7 +74,10 @@ const PREFIX_IMPORTS: Array<{ test: (path: string) => boolean; load: Importer }>
     load: () => import('@/pages/PressReleasePage'),
   },
   {
-    test: (path) => path.startsWith('/blog/') || path.startsWith('/ar/blog/'),
+    test: (path) =>
+      path.startsWith('/blog/') ||
+      path.startsWith('/ar/blog/') ||
+      path.startsWith('/bionixus-industries/insights/'),
     load: () => import('@/pages/BlogPost'),
   },
 ];

@@ -10,8 +10,6 @@ const HeroSection = () => {
     titleLead?: string;
     titleEmphasis?: string;
     ctaPremium?: string;
-    trustStripPrimary?: string;
-    trustStripStats?: string;
   };
   const basePath = languagePaths[language] || '/';
   const contactPath =
@@ -121,8 +119,8 @@ const HeroSection = () => {
                 ))}
               </div>
               <p className="text-[13px] font-light leading-snug text-white/35">
-                {hero.trustStripPrimary ?? 'Trusted by'}{' '}
-                <strong className="font-medium text-white/70">{hero.trustStripStats ?? '48 global clients · 127+ projects · 38 countries'}</strong>
+                {t.homePage.heroTrust.primary}{' '}
+                <strong className="font-medium text-white/70">{t.homePage.heroTrust.stats}</strong>
               </p>
             </div>
           </div>

@@ -60,11 +60,20 @@ function withKeys(items) {
   }))
 }
 
+const DE_CTA_SECTION = {
+  title: 'Pharmamarktforschung in Deutschland & Europa mit BioNixus',
+  description:
+    'BioNixus unterstützt pharmazeutische Teams mit Ärztebefragungen, KOL-Mapping, RWE-Studien und AMNOG-begleitender Marktforschung in Deutschland — ergänzt durch EU-HTA- und UK-NICE-Expertise für kohärente Europa-Strategien.',
+  buttonText: 'Jetzt anfragen',
+  buttonUrl: 'https://www.bionixus.com/de/contact',
+}
+
 function buildSharedContent(bodyHtml) {
   return {
     title: ARTICLE_H1.slice(0, 200),
     bodyHtml,
     excerpt: ARTICLE_EXCERPT,
+    ctaSection: DE_CTA_SECTION,
     executiveSummary: withKeys([
       {
         _type: 'block',
@@ -264,13 +273,7 @@ async function main() {
     language: 'de',
     readingTime: 15,
     tags: ['Deutsch', 'Deutschland', 'Pharmamarktforschung', 'GKV', 'KOL', 'RWE', 'BioNixus'],
-    ctaSection: {
-      title: 'Pharmamarktforschung in Deutschland mit BioNixus',
-      description:
-        'BioNixus unterstützt pharmazeutische Teams in Deutschland mit Ärztebefragungen, KOL-Mapping, RWE-Studien und AMNOG-begleitender Marktforschung. Für strategische Entscheidungen, nicht nur Datenaggregation.',
-      buttonText: 'Jetzt anfragen',
-      buttonUrl: 'https://www.bionixus.com/de/contact',
-    },
+    ctaSection: DE_CTA_SECTION,
     body: [],
   }
 

@@ -713,6 +713,11 @@ async function handleSsrRequest(
   const template = getTemplate();
   const serverEntry = await getServerEntry();
   const initialData = await serverEntry.fetchRouteData(url);
+  if (initialData?.pageType === 'redirect' && typeof initialData.redirectTo === 'string') {
+    res.setHeader('Cache-Control', 'public, max-age=3600');
+    res.redirect(Number(initialData.statusCode) || 301, initialData.redirectTo);
+    return;
+  }
   const { html: appHtml, helmetData } = serverEntry.render(url, initialData);
   const headTags = [
     helmetData?.title?.toString() || '',

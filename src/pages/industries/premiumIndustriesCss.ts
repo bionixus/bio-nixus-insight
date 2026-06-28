@@ -224,6 +224,11 @@ export const PREMIUM_INDUSTRIES_CSS = `
 .bx-ind .bx-chip { font-size: 12.5px; font-weight: 500; color: var(--bx-navy); background: var(--bx-cream); border: 1px solid var(--bx-gray-100); border-radius: 999px; padding: 6px 14px; text-decoration: none; transition: all 0.25s; }
 .bx-ind .bx-chip:hover { border-color: var(--bx-gold); color: #A8872E; background: #FDF6E3; }
 
+/* ===== COUNTRY GRID (pharma segment) ===== */
+.bx-ind .bx-country-grid { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.bx-ind .bx-country-region { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 24px 26px; }
+.bx-ind .bx-country-region h3 { font-family: var(--bx-font-display); font-size: 18px; font-weight: 500; color: var(--bx-warm-white); margin: 0 0 14px; }
+
 /* ===== DARK NARRATIVE ===== */
 .bx-ind .bx-section.dark .bx-dark-bg { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 60% 50% at 25% 70%, rgba(14,165,160,0.07), transparent), radial-gradient(ellipse 40% 40% at 82% 18%, rgba(201,168,76,0.05), transparent); }
 .bx-ind .bx-narrative { position: relative; z-index: 2; max-width: 760px; }
@@ -272,6 +277,7 @@ export const PREMIUM_INDUSTRIES_CSS = `
   .bx-ind .bx-seg-grid { grid-template-columns: 1fr; }
   .bx-ind .bx-next-grid { grid-template-columns: 1fr; }
   .bx-ind .bx-cover-grid { grid-template-columns: 1fr; }
+  .bx-ind .bx-country-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 720px) {
   .bx-ind .bx-inner, .bx-ind .bx-section, .bx-ind .bx-stats, .bx-ind .bx-ribbon, .bx-ind .bx-cta-section { padding-left: 22px; padding-right: 22px; }

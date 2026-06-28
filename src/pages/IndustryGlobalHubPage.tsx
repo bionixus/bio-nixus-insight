@@ -207,7 +207,7 @@ export default function IndustryGlobalHubPage() {
               Countries we serve
             </h2>
             <p className="text-muted-foreground mb-10 max-w-2xl">
-              We run {config.displayName.toLowerCase()} research across 14 markets. Select a country for
+              We run {config.displayName.toLowerCase()} research across {config.countryLinks.length} markets. Select a country for
               localised capabilities and sample specifications.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">

@@ -362,6 +362,7 @@ const staticPages = [
   { path: '/bahrain-healthcare-market-report', priority: '0.83', changefreq: 'monthly' },
   { path: '/bahrain-medical-devices-market-report', priority: '0.83', changefreq: 'monthly' },
   { path: '/bionixus-industries', priority: '0.80', changefreq: 'monthly' },
+  { path: '/bionixus-industries/insights', priority: '0.75', changefreq: 'weekly' },
   { path: '/brazil-healthcare-market-report', priority: '0.88', changefreq: 'monthly' },
   { path: '/brazil-medical-devices-market-report', priority: '0.88', changefreq: 'monthly' },
   { path: '/brazil-pharmaceutical-market-research', priority: '0.88', changefreq: 'monthly' },
@@ -923,7 +924,7 @@ async function fetchSanityContent(
       ...(token ? { token } : {}),
     });
     const typeArray = Array.isArray(types) ? types : [types];
-    const query = `*[_type in $types && defined(slug.current)]{ "slug": slug.current, _updatedAt }`;
+    const query = `*[_type in $types && defined(slug.current)]{ "slug": slug.current, contentSilo, _updatedAt }`;
     const list = await Promise.race([
       client.fetch(query, { types: typeArray }),
       new Promise((_, reject) =>
@@ -937,7 +938,11 @@ async function fetchSanityContent(
       const existing = map.get(item.slug);
       const updatedAt = item._updatedAt ? item._updatedAt.slice(0, 10) : null;
       if (!existing || (updatedAt && updatedAt > existing.lastmod)) {
-        map.set(item.slug, { slug: item.slug, lastmod: updatedAt });
+        map.set(item.slug, {
+          slug: item.slug,
+          lastmod: updatedAt,
+          contentSilo: item.contentSilo,
+        });
       }
     }
     return [...map.values()];
@@ -1362,16 +1367,18 @@ async function main() {
       skipLiveResolution: true,
     });
   }
-  for (const { slug, lastmod } of blogContent) {
+  for (const { slug, lastmod, contentSilo } of blogContent) {
     if (BLOG_SLUG_SITEMAP_STATIC_ONLY.has(slug)) continue;
-    const url = `${BASE}/blog/${percentEncodeLower(slug)}`;
+    const pathPrefix =
+      contentSilo === 'industries' ? '/bionixus-industries/insights' : '/blog';
+    const url = `${BASE}${pathPrefix}/${percentEncodeLower(slug)}`;
     candidates.set(url, {
       priority: '0.7',
       changefreq: 'monthly',
       lastmod: lastmod || today,
-      enforceCanonical: true,
-      skipLiveResolution: false,
-      fallbackOnFetchFailure: true,
+      enforceCanonical: contentSilo !== 'industries',
+      skipLiveResolution: contentSilo === 'industries',
+      fallbackOnFetchFailure: contentSilo !== 'industries',
     });
   }
   for (const { slug, lastmod } of caseContent) {

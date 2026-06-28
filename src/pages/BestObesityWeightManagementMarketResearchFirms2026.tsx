@@ -325,7 +325,7 @@ export default function BestObesityWeightManagementMarketResearchFirms2026() {
                 <p className="text-primary-foreground/70 text-sm mt-1">GLP-1 class revenue</p>
               </div>
               <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">17+</p>
+                <p className="text-3xl md:text-4xl font-display font-bold">38</p>
                 <p className="text-primary-foreground/70 text-sm mt-1">Countries covered</p>
               </div>
               <div>
