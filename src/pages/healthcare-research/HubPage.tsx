@@ -157,7 +157,7 @@ export default function HubPage() {
   const hubSeoTitle =
     typeof hubContent?.metaTitle === 'string' && hubContent.metaTitle.length > 0
       ? hubContent.metaTitle
-      : 'Healthcare Market Research | Global Pharma & MedTech | BioNixus';
+      : 'Healthcare Market Research Company | Global Pharma & MedTech | BioNixus';
   const hubSeoDescription =
     typeof hubContent?.metaDescription === 'string' && hubContent.metaDescription.length > 0
       ? hubContent.metaDescription

@@ -313,6 +313,8 @@ const GccMarketAccessGuide = () => {
               <a href="#regulatory-overview" className="text-sm text-primary hover:underline flex items-center gap-2"><ShieldCheck className="w-4 h-4" /> Regulatory Bodies by Country</a>
               <a href="#registration-timeline" className="text-sm text-primary hover:underline flex items-center gap-2"><Clock className="w-4 h-4" /> Typical Registration Timeline</a>
               <a href="#country-details" className="text-sm text-primary hover:underline flex items-center gap-2"><Globe className="w-4 h-4" /> Country-by-Country Requirements</a>
+              <a href="#nupco-tenders" className="text-sm text-primary hover:underline flex items-center gap-2"><Building2 className="w-4 h-4" /> NUPCO Tenders &amp; Procurement</a>
+              <a href="#biosimilars-hta" className="text-sm text-primary hover:underline flex items-center gap-2"><Scale className="w-4 h-4" /> Biosimilars &amp; HTA Evidence</a>
               <a href="#faq" className="text-sm text-primary hover:underline flex items-center gap-2"><BookOpen className="w-4 h-4" /> Frequently Asked Questions</a>
             </div>
           </div>
@@ -491,6 +493,52 @@ const GccMarketAccessGuide = () => {
                   real-world evidence GCC
                 </Link>
                 .
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Biosimilars, biologics & HTA-style evidence */}
+        <section className="section-padding py-12 bg-muted/10" id="biosimilars-hta">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Biosimilars, biologics, and HTA-style evidence in GCC markets
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                GCC market access for biologics and biosimilars increasingly mirrors HTA-style scrutiny even where
+                formal health technology assessment agencies do not yet exist at European scale. Saudi Arabia&apos;s SFDA
+                Economic Evaluation System (effective July 2025) requires pharmacoeconomic evidence for selected
+                high-cost therapies at registration. UAE emirate formularies, Hamad Medical Corporation in Qatar, and
+                Kuwait&apos;s Ministry of Health committees routinely request budget-impact narratives, comparator
+                justification, and real-world use cases before listing innovator or biosimilar products on government
+                formularies.
+              </p>
+              <p>
+                Bahrain&apos;s NHRA was the first GCC regulator to publish a formal biosimilar pathway; Saudi Arabia and
+                UAE have since tightened interchangeability and substitution guidance for hospital pharmacies. Launch
+                teams must sequence SFDA or MOHAP registration, pricing approval, and tender positioning — biosimilar
+                entrants often compete on NUPCO or Central Medical Stores award timing rather than physician preference
+                alone. BioNixus designs payer and hospital committee research that surfaces the exact economic and
+                clinical questions each authority asks before formulary inclusion.
+              </p>
+              <p>
+                For biologics and biosimilar portfolios, evidence planning should combine regulatory dossier
+                requirements with primary research on switching barriers, pharmacist substitution behaviour, cold-chain
+                logistics constraints, and physician confidence in biosimilar interchangeability. Connect this section
+                with our{' '}
+                <Link to="/biosimilar-market-entry-saudi-arabia" className="text-primary underline font-medium">
+                  biosimilar market entry Saudi Arabia guide
+                </Link>
+                ,{' '}
+                <Link to="/gcc-pharmaceutical-market-research" className="text-primary underline font-medium">
+                  GCC pharmaceutical market research
+                </Link>
+                , and{' '}
+                <Link to="/real-world-evidence-gcc" className="text-primary underline font-medium">
+                  real-world evidence GCC
+                </Link>{' '}
+                programmes when building integrated access strategy across multiple Gulf states.
               </p>
             </div>
           </div>

@@ -68,6 +68,38 @@ const PAGE_ENHANCEMENTS: Partial<Record<CountryIndustryKey, PageEnhancement>> = 
       'For the 2026 firm comparison guide, see our independent listicle ranking top financial services market research companies in Egypt; this page is BioNixus as your execution partner with Cairo office coverage and healthcare-grade research governance.',
     ],
   },
+  'uae:medtech': {
+    uniquenessParagraphs: [
+      'MedTech market research in the UAE must separate Dubai private-hospital procurement from Abu Dhabi insurance-mandated pathways and federal MOHAP registration — three parallel systems that syndicated device reports collapse into a single “UAE average” that misprices launch sequencing.',
+      'Mandatory health insurance tiers create distinct device adoption curves: Essential Benefits Plan networks favour cost-contained utilisation, while premium international hospital groups sustain innovator uptake for robotics, advanced imaging, and interventional cardiology.',
+      'BioNixus UAE MedTech programmes recruit verified biomedical engineers, cath-lab directors, OR managers, and procurement leads across DHA-licensed Dubai facilities and DOH Abu Dhabi networks — with Arabic–English moderation standard for administrator and clinician depth.',
+      'Emirate-tagged readouts precede national roll-up: Dubai medical-tourism corridors and Abu Dhabi insurance density require separate 30/60/90 commercial actions before regional portfolio committees extrapolate a single UAE forecast.',
+    ],
+  },
+  'uae:consumer-health': {
+    uniquenessParagraphs: [
+      'Consumer health and OTC research in the UAE reflects among the highest e-commerce penetration rates in MENA, mall-pharmacy formats, and influencer-led discovery alongside traditional community pharmacy — each channel follows distinct shopper missions that capital-city-only samples misrepresent.',
+      'Emirate-level income segmentation drives category growth: Dubai premium wellness missions differ materially from Northern Emirates mass-market OTC behaviour; research quotas must document emirate, nationality cohort, and insurance tier before national media spend is committed.',
+      'Regulatory claims boundaries for supplements, cosmetics, and OTC medicines require legal review before concept testing scales; BioNixus scopes permissible health-benefit language per MOHAP category before shopper message modules field.',
+      'Multilingual fieldwork — Arabic, English, Hindi, and Tagalog — reaches expatriate shopper segments that dominate specific OTC categories; pharmacist recommendation modules capture detail beyond shelf analytics where category dynamics require both channels.',
+    ],
+  },
+  'egypt:medtech': {
+    uniquenessParagraphs: [
+      'MedTech market research in Egypt runs through EDA device registration, ministry hospital tender cycles, and distributor networks that differ materially from Gulf NUPCO models — a single “MENA device average” systematically misstates listing probability and replacement-cycle timing.',
+      'Public ministry hospitals, university centres, and fast-growing private groups follow distinct procurement rhythms; BioNixus sample design reflects realistic listing accounts rather than convenience capital-city panels that overstate private-sector device uptake.',
+      'Hard-currency budgets and FX-sensitive tenders affect device affordability; total cost of ownership, local service capability, and spare-parts logistics weigh as heavily as clinical enthusiasm in Egyptian biomedical engineering committee decisions.',
+      'Upper Egypt referral patterns differ from Cairo corridors; geographic quotas prevent capital-city skew in national adoption forecasts — Arabic fieldwork is mandatory for physician, biomedical engineering, and procurement depth interviews.',
+    ],
+  },
+  'egypt:consumer-health': {
+    uniquenessParagraphs: [
+      'Consumer health research in Egypt spans mass-market pharmacy chains, traditional outlets, and mobile-wallet e-commerce — out-of-pocket spend dominates many OTC categories, so pricing and pack-size testing requires income-segmented shopper modules beyond Greater Cairo elites.',
+      'Regulatory scope for supplements and OTC claims follows EDA categories; message research aligns to permissible claims before national roll-out, preventing creative concepts that cannot legally deploy after research completes.',
+      'Seasonal demand, Ramadan purchasing patterns, and rural–urban splits affect distribution velocity; field quotas document governorate geography before conclusions drive national media investment across Egypt’s 105+ million population.',
+      'Pharmacist recommendation remains influential for OTC categories; pharmacy intercept and pharmacist depth modules complement shopper quant where category dynamics require both recommendation behaviour and shelf analytics.',
+    ],
+  },
 };
 
 const REGULATORY_CONTENT: Partial<

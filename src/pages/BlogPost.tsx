@@ -296,10 +296,10 @@ const UAE_HEALTHCARE_TRENDS_2025_META_DESCRIPTION =
  */
 const EGYPT_HEALTHCARE_2026_SLUG = 'healthcare-overview-egypt-market-2026';
 const EGYPT_HEALTHCARE_2026_DISPLAY_TITLE =
-  'Cairo Hospitals Healthcare 2023–2026: Egypt Market Overview';
-const EGYPT_HEALTHCARE_2026_TITLE = 'Cairo Hospitals Healthcare 2023–2026';
+  'cairo hospitals healthcare 2023-2026 | Egypt Market Overview';
+const EGYPT_HEALTHCARE_2026_TITLE = 'cairo hospitals healthcare 2023-2026';
 const EGYPT_HEALTHCARE_2026_META_DESCRIPTION =
-  'Cairo hospitals healthcare 2023–2026: Kasr Al-Ainy, Cleopatra, Saudi German Cairo, EDA pharma access, UHI payer trends — BioNixus Egypt market research.';
+  'cairo hospitals healthcare 2023-2026: Kasr Al-Ainy, Cleopatra, Saudi German Cairo, EDA pharma access, UHI payer trends — BioNixus Egypt market research.';
 const EGYPT_HEALTHCARE_2026_OG_TITLE = EGYPT_HEALTHCARE_2026_DISPLAY_TITLE;
 const EGYPT_HEALTHCARE_2026_OG_DESCRIPTION =
   'Full Egypt healthcare overview for 2026 — Cairo hospital landscape, EDA regulation, pharmaceutical market size, and primary physician research from BioNixus.';
