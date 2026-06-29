@@ -1,4 +1,5 @@
 import type { ReportEntry } from '@/data/healthcareReportTypes';
+import { normalizeReportCopyWordCounts } from '@/data/normalizeReportCopyWordCounts';
 import { GCC_BIOSIMILARS_COPY } from '@/data/reportCopyOverrides/gccBiosimilarsMarketReport';
 import { GCC_IMMUNOLOGY_BIOLOGICS_COPY } from '@/data/reportCopyOverrides/gccImmunologyBiologicsMarketReport';
 import { SAUDI_ARABIA_ONCOLOGY_COPY } from '@/data/reportCopyOverrides/saudiArabiaOncologyMarketReport';
@@ -62,6 +63,6 @@ export function applyReportCopyOverrides(entries: ReportEntry[]): ReportEntry[] 
     const override = BY_SLUG.get(entry.slug);
     if (!override) return entry;
     const { slug: _slug, ...patch } = override;
-    return { ...entry, ...patch };
+    return normalizeReportCopyWordCounts({ ...entry, ...patch });
   });
 }
