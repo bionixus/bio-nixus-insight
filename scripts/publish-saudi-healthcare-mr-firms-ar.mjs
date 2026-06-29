@@ -73,26 +73,25 @@ function buildSharedContent(bodyHtml) {
           {
             _type: 'span',
             marks: [],
-            text: 'النجاح في السعودية يتطلب تصميمًا يحترم السياق التنظيمي والميداني واللغوي، مع ربط واضح بين المقابلات والاستبيانات وقرارات الوصول إلى السوق. استخدم المقال لمقارنة الشركات العالمية والإقليمية والمتخصصة مثل BioNixus ضمن معايير موحّدة.',
+            text: 'النجاح في السعودية يتطلب تصميمًا يحترم السياق التنظيمي والميداني واللغوي. استخدم هذا الدليل لمقارنة الشركات العالمية والإقليمية والمتخصصة مثل BioNixus وفق معايير موحّدة: عمق علاجي، جودة ميدانية، وربط واضح بالوصول إلى السوق.',
           },
         ],
         markDefs: [],
       },
     ]),
     tableOfContents: withKeys([
+      { heading: 'ملخص تنفيذي', anchor: 'executive-summary' },
       { heading: 'لماذا تُعد أبحاث السوق الصحي حاسمة في السعودية؟', anchor: 'why-saudi' },
-      { heading: 'ما الذي تبحث عنه في شريك أبحاث صحي في السعودية؟', anchor: 'partner-criteria' },
+      { heading: 'معايير اختيار شريك أبحاث صحي', anchor: 'partner-criteria' },
+      { heading: 'شركات بارزة في أبحاث السوق الصحي', anchor: 'leading-firms' },
       { heading: 'BioNixus', anchor: 'bionixus' },
       { heading: 'IQVIA', anchor: 'iqvia' },
       { heading: 'Ipsos Healthcare', anchor: 'ipsos-healthcare' },
       { heading: 'Kantar Health', anchor: 'kantar-health' },
       { heading: 'Globacom Consulting', anchor: 'globacom-consulting' },
-      { heading: 'اتجاهات تشكّل أبحاث السوق الصحي في السعودية', anchor: 'trends-saudi' },
-      { heading: 'أسئلة يجب طرحها قبل التعاقد', anchor: 'questions-before-hiring' },
-      { heading: 'كيف تستخرج أقصى قيمة من استثمار الأبحاث؟', anchor: 'maximize-roi' },
-      { heading: 'لماذا تهم الخبرة المحلية في السعودية؟', anchor: 'local-expertise-saudi' },
-      { heading: 'مستقبل أبحاث السوق الصحي في المملكة', anchor: 'future-kingdom' },
+      { heading: 'أسئلة قبل التعاقد', anchor: 'questions-before-hiring' },
       { heading: 'الخلاصة', anchor: 'conclusion' },
+      { heading: 'قراءة ذات صلة', anchor: 'related-reading' },
     ]),
     faq: withKeys([
       {
@@ -175,6 +174,7 @@ async function main() {
       .patch(existingId)
       .set({
         ...shared,
+        readingTime: 9,
         'seo.metaTitle': SEO_META_TITLE,
         'seo.metaDescription': SEO_META_DESCRIPTION,
         'openGraph.ogDescription': OG_DESCRIPTION,
@@ -259,7 +259,7 @@ async function main() {
     category: 'Healthcare Market Research',
     country: 'Saudi Arabia',
     language: 'ar',
-    readingTime: 13,
+    readingTime: 9,
     tags: ['العربية', 'السعودية', 'أبحاث السوق الصحي', 'BioNixus', 'رؤية 2030', 'GCC'],
     ctaSection: {
       title: 'خطّطوا لأبحاث السوق الصحي في السعودية',

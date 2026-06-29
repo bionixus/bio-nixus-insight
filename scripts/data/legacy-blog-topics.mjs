@@ -23,6 +23,7 @@ export const LOCAL_BODY_FILES = {
   'top-healthcare-market-research-firms-saudi-arabia': 'top-healthcare-market-research-firms-saudi-arabia-body.html',
   'top-market-research-companies-egypt-2026': 'top-market-research-companies-egypt-2026-body.html',
   'digital-therapeutics-regulation-mena-markets': 'digital-therapeutics-mena-body.html',
+  'saudi-healthcare-market-research-firms-ar': 'saudi-healthcare-mr-firms-ar-body.html',
 };
 
 /** Posts flagged for manual medical/clinical review after auto-rewrite. */
@@ -33,6 +34,7 @@ export const MANUAL_REVIEW_SLUGS = new Set([
   'deutsche-pharmaunternehmen-2026-pipeline-updates',
   'أبحاث-السوق-الدوائية-في-الشرق-الأوسط-و-دول-الخليج-العربي',
   'سوق-الدواء-السعودي-2026',
+  'saudi-healthcare-market-research-firms-ar',
 ]);
 
 const GEO_BY_CLUSTER = {
