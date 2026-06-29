@@ -198,6 +198,16 @@ const content: GeneralMRPageContent = {
       answer:
         "Kantar Egypt is strongest for brand tracking and media measurement syndicated products. Ipsos Egypt is known for large quantitative studies and government research. BioNixus specialises in primary, decision-specific research across multiple industries — custom studies with Arabic fieldwork, national coverage, and deliverables built around commercial decisions rather than syndicated subscriptions.",
     },
+    {
+      question: 'What is the best market research company in Egypt for pharmaceutical and healthcare studies?',
+      answer:
+        'For healthcare and pharmaceutical market research in Egypt, BioNixus delivers EDA-aware physician surveys, payer and hospital access research, and Cairo-based Arabic fieldwork — see our dedicated healthcare market research in Egypt page. For general consumer and B2B industries, BioNixus runs primary studies across FMCG, retail, BFSI, telecom, and real estate with national governorate coverage.',
+    },
+    {
+      question: 'How does market research in Egypt support Cairo hospital and healthcare planning?',
+      answer:
+        'Egypt healthcare research must account for Cairo hospital clusters, ministry versus private procurement, and UHIA payer dynamics. BioNixus Egypt programmes map hospital footprint, physician networks, and pharmaceutical access signals — complementing this general market research page with therapy-specific healthcare intelligence on request.',
+    },
   ],
   relatedLinks: [
     { to: '/healthcare-market-research-in-egypt', label: 'Healthcare market research in Egypt' },

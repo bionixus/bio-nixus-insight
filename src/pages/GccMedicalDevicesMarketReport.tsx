@@ -110,8 +110,8 @@ const GccMedicalDevicesMarketReport = () => {
       <Navbar />
 
       <SEOHead
-        title="GCC Medical Devices Market 2026 | IVD & $5.8B Size | BioNixus"
-        description="GCC medical devices & in vitro diagnostic (IVD) market ~USD 5.8B in 2026, $9B+ by 2030. Saudi Arabia, UAE, Kuwait — SFDA, MOHAP, DHA regulation, prefilled syringes, hospital procurement from BioNixus."
+        title="GCC Medical Devices Market Report 2026 | $5.8B IVD & MedTech | BioNixus"
+        description="GCC medical devices market report 2026: ~USD 5.8B IVD and medtech spend, $9B+ by 2030. Saudi Arabia, UAE, Kuwait hospital procurement, SFDA/MOHAP regulation, prefilled syringes — BioNixus intelligence."
         canonical="https://www.bionixus.com/gcc-medical-devices-market-report"
         jsonLd={jsonLd}
       />
@@ -321,6 +321,62 @@ const GccMedicalDevicesMarketReport = () => {
                     <h3 className="text-base font-display font-semibold text-foreground">{segment}</h3>
                     <span className="text-xs font-medium text-primary ml-2 shrink-0">{share}</span>
                   </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* IVD, prefilled syringes & drug-delivery devices */}
+        <section className="section-padding" id="ivd-prefilled-syringes">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              IVD, prefilled syringes, and drug-delivery devices in the GCC
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              In vitro diagnostics (IVD) and drug-delivery devices — including prefilled syringes, auto-injectors,
+              pen injectors, and wearable infusion pumps — represent one of the fastest-growing sub-segments within the
+              GCC medical devices market. Saudi Arabia&apos;s national diabetes and cardiovascular screening programmes,
+              UAE hospital laboratory upgrades, and Qatar&apos;s specialty-care expansion are driving parallel demand for
+              point-of-care tests, molecular diagnostics platforms, and self-administration devices that reduce
+              hospital-administered injection burden.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Prefilled syringe and combination-product categories sit at the intersection of device and pharmaceutical
+              regulation: SFDA MDIR classification, MOHAP device registration, and NUPCO tender evaluation criteria
+              differ from standard pharmaceutical dossier pathways. BioNixus maps which hospital committees evaluate
+              device-drug combinations, how biomedical engineering and pharmacy jointly gate adoption, and where
+              private-hospital procurement cycles create faster listing routes than MOH-centralised tenders.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              For launch teams sizing IVD or drug-delivery opportunity, account-level intelligence matters more than
+              import-statistics extrapolation: which cath-labs and diabetes centres run CGM programmes, which hospital
+              pharmacies stock prefilled biologic delivery devices, and which procurement heads control replacement
+              cycles for infusion pumps and insulin pens. BioNixus primary research closes these gaps with
+              hospital-tagged respondent samples across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman.
+            </p>
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                {
+                  title: 'Point-of-care & molecular IVD',
+                  body: 'HbA1c, cardiac biomarker, infectious-disease rapid tests, and PCR platforms scaling with decentralized care models and diabetes prevalence across KSA and UAE.',
+                },
+                {
+                  title: 'Prefilled syringes & auto-injectors',
+                  body: 'Biologic self-administration devices evaluated by pharmacy, biomedical engineering, and specialty committees — distinct from standard device capital procurement.',
+                },
+                {
+                  title: 'CGM & diabetes delivery',
+                  body: 'Continuous glucose monitoring and insulin pen adoption accelerating where reimbursement and private insurance pathways support outpatient device use.',
+                },
+                {
+                  title: 'NUPCO & tender alignment',
+                  body: 'Central tender schedules for MOH-linked facilities require device-drug evidence packages aligned to SFDA registration timing and committee review windows.',
+                },
+              ].map(({ title, body }) => (
+                <div key={title} className="bg-white rounded-xl border border-border p-5 shadow-sm">
+                  <h3 className="text-base font-display font-semibold text-foreground mb-2">{title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
                 </div>
               ))}
