@@ -18,7 +18,7 @@ import {
   ABOUT_LANGUAGE_MIRROR,
   getAboutPageCopy,
   type AboutPageCopy,
-} from '@/pages/about';
+} from '@/pages/about/index';
 
 const DIFF_ICONS = [Globe, HeartPulse, ShieldCheck] as const;
 const VALUE_ICONS = [ShieldCheck, Target, Microscope, Globe] as const;
