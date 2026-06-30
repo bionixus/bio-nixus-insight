@@ -18,6 +18,7 @@ import {
 import { INDUSTRY_SEGMENT } from '@/data/bionixusIndustrySegments';
 import { BIONIXUS_MARKETING_CLAIMS } from '@/data/marketingClaims';
 import { PREMIUM_INDUSTRIES_CSS } from '@/pages/industries/premiumIndustriesCss';
+import { WhyBioNixusIntro } from '@/components/shared/WhyBioNixusIntro';
 import type { ServiceLandingExpandedContent } from '@/data/serviceLandingContent';
 
 type IndustryCountryBofuPageProps = {
@@ -400,6 +401,7 @@ export default function IndustryCountryBofuPage({ countrySlug, industrySlug }: I
                 Why BioNixus for {config.industry.displayNameShort} in {config.country.label}
               </h2>
             </div>
+            {segment === 'pharma-healthcare' ? <WhyBioNixusIntro className="bx-hero-sub mb-6" /> : null}
             <div className="bx-proof-grid" style={{ marginTop: 0 }}>
               {config.proofBullets.map((item) => (
                 <article key={item.title} className="bx-proof-card">

@@ -12,6 +12,7 @@ import { COUNTRY_CONFIGS, resolveCountryConfig } from '@/lib/constants/countries
 import { healthcareCountryRecoveryPaths } from '@/lib/internalLinkRecovery';
 import { HubMarketReferenceGuide } from '@/components/seo/HubMarketReferenceGuide';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+import { BIONIXUS_POSITIONING_V2 } from '@/data/bionixusPositioningCopy';
 
 const HUB_FAQS = [
   {
@@ -169,7 +170,7 @@ export default function HubPage() {
   const heroDescription =
     typeof hubContent?.metaDescription === 'string' && hubContent.metaDescription.length > 0
       ? hubContent.metaDescription
-      : 'BioNixus is headquartered in Sheridan, Wyoming (USA) and turns physician, payer, and patient evidence into launch, growth, and access decisions for pharma, biotech, and medtech teams — with fieldwork run locally in each market and findings that read consistently across borders.';
+      : BIONIXUS_POSITIONING_V2;
   const jsonLd = [
     ...buildHubPageSchemas(hubFaqItems),
     {

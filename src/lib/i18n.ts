@@ -26,11 +26,11 @@ export const translations = {
     },
     hero: {
       tagline: 'Global International Market Research Firm',
-      titleLead: 'Research that shapes',
-      titleEmphasis: 'pharma strategy',
+      titleLead: 'Research That Shapes',
+      titleEmphasis: 'Your Strategy',
       title: 'Pharmaceutical and healthcare market research for confident launch, access, and growth',
       subtitle:
-        'BioNixus is a global insights and market research partner across the Americas, EMEA, and APAC — with country-level depth where it matters. We help pharma, biotech, and medtech teams turn KOL, payer, and hospital evidence into launch, access, and growth decisions.',
+        'BioNixus is a global insights and market research partner across the Americas, EMEA, and APAC — with country-level depth where decisions are won or lost. We advise pharmaceutical, biotech, and medtech leaders on launch, access, and growth; and extend the same evidence discipline to B2B, consumer, and industrial clients where market entry, pricing, and stakeholder behaviour shape commercial outcomes. Our work turns KOL, payer, and hospital intelligence — alongside customer, channel, and competitive insight — into decisions leadership teams can act on with confidence.',
       trustStripPrimary: 'Trusted by',
       trustStripStats: '48 global clients · 127+ projects · 38 countries',
       valueProposition: 'Every engagement starts from a real commercial question, not a generic data dump. You get defensible quantitative and qualitative evidence — scoped to the decision, the market, and the regulatory reality you actually operate in — from pre-launch sizing through post-launch optimization.',

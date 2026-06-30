@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { WhyBioNixusIntro } from '@/components/shared/WhyBioNixusIntro';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { SEOHead } from '@/components/seo/SEOHead';
@@ -170,6 +171,7 @@ export default function FrancePharmaceuticalMarketResearch() {
             <h2 className="text-3xl font-display font-semibold text-foreground mb-5">
               Why BioNixus for French pharmaceutical market research
             </h2>
+            <WhyBioNixusIntro className="mb-6 max-w-4xl" />
             <div className="grid md:grid-cols-2 gap-4">
               {[
                 {

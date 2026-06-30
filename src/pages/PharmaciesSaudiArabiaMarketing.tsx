@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { CTASection } from '@/components/shared/CTASection';
+import { WhyBioNixusIntro } from '@/components/shared/WhyBioNixusIntro';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 
 const faqItems = [
@@ -438,10 +439,7 @@ export default function PharmaciesSaudiArabiaMarketing() {
               <h2 className="text-3xl font-display font-semibold text-foreground mb-4">
                 Why BioNixus for Pharmacy Market Research in Saudi Arabia?
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                BioNixus is the leading healthcare and pharmaceutical market research consultancy serving Saudi Arabia
-                and the broader GCC region.
-              </p>
+              <WhyBioNixusIntro className="text-muted-foreground leading-relaxed mb-6" />
               <div className="grid md:grid-cols-2 gap-4 mb-8">
                 <div className="border border-border rounded-lg p-4 bg-card">
                   <h3 className="font-semibold text-foreground text-sm mb-1">Quantitative & Qualitative Research</h3>

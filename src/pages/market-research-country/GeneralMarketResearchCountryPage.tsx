@@ -6,6 +6,7 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { CTASection } from '@/components/shared/CTASection';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+import { WhyBioNixusIntro } from '@/components/shared/WhyBioNixusIntro';
 
 export type GeneralMRPageContent = {
   title: string;
@@ -255,7 +256,8 @@ export default function GeneralMarketResearchCountryPage({ content }: Props) {
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
               {whyBionixus.heading}
             </h2>
-            <ul className="grid sm:grid-cols-2 gap-3">
+            <WhyBioNixusIntro />
+            <ul className="grid sm:grid-cols-2 gap-3 mt-6">
               {whyBionixus.points.map((pt) => (
                 <li key={pt.slice(0, 48)} className="flex gap-2 text-muted-foreground leading-relaxed">
                   <span className="text-primary flex-shrink-0">✓</span>

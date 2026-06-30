@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
+import { WhyBioNixusIntro } from '@/components/shared/WhyBioNixusIntro';
 import { CTASection } from '@/components/shared/CTASection';
 import { buildBreadcrumbSchema, buildFAQSchema, buildServiceSchema } from '@/lib/seo/schemas';
 import type { GccSegmentContent } from '@/data/gccSegmentMarketContent';
@@ -159,7 +160,8 @@ export default function GccSegmentMarketPage({ content }: { content: GccSegmentC
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
               Why pharmaceutical teams choose BioNixus for GCC {content.segmentLabel.toLowerCase()} research
             </h2>
-            <ul className="grid sm:grid-cols-2 gap-3">
+            <WhyBioNixusIntro />
+            <ul className="grid sm:grid-cols-2 gap-3 mt-6">
               {content.whyBionixus.map((point) => (
                 <li key={point.slice(0, 48)} className="flex gap-2 text-muted-foreground leading-relaxed">
                   <span className="text-primary flex-shrink-0">✓</span>

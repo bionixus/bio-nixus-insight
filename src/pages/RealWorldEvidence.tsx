@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { CTASection } from '@/components/shared/CTASection';
+import { WhyBioNixusIntro } from '@/components/shared/WhyBioNixusIntro';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 
 const pageUrl = 'https://www.bionixus.com/real-world-evidence';
@@ -163,6 +164,7 @@ export default function RealWorldEvidence() {
                 <h2 id="why-bionixus" className="text-2xl font-display font-semibold text-foreground mb-4">
                   Why BioNixus is the right real world evidence partner
                 </h2>
+                <WhyBioNixusIntro className="text-muted-foreground leading-relaxed mb-6" />
                 <p className="text-muted-foreground leading-relaxed mb-6">
                   Large platforms often emphasize proprietary datasets and global scale. BioNixus focuses on{' '}
                   <strong className="text-foreground">decision fidelity</strong>: evidence that matches your question, your markets, and

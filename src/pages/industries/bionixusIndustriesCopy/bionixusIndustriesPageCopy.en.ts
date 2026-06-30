@@ -1,19 +1,18 @@
 import type { BionixusIndustriesPageCopy } from './bionixusIndustriesPageCopy.types';
+import { BIONIXUS_POSITIONING_V3 } from '@/data/bionixusPositioningCopy';
 
 export const bionixusIndustriesPageCopyEn: BionixusIndustriesPageCopy = {
   seoTitle: 'Market Research Across Industries | BioNixus',
-  seoDescription:
-    'BioNixus was founded in London in 2012 in pharmaceutical market research and is now recognised among the world\'s top 100 market research firms. US-headquartered in Sheridan, Wyoming, with its founding office in London and a MENA regional office in Greater Cairo, the firm delivers quantitative and qualitative research across 38 countries and 16 industry verticals — pharma and healthcare where it leads, with the same evidence standards extended to B2B and B2C programmes worldwide.',
+  seoDescription: BIONIXUS_POSITIONING_V3,
   breadcrumbHome: 'Home',
   breadcrumbIndustries: 'Industries',
   schemaCollectionName: 'Market Research Across Industries',
   heroEyebrow: 'Market research across industries',
   h1BeforeEm: 'One research firm ',
   h1Em: 'guiding every industry we serve',
-  heroSub1BeforeStrong: 'BioNixus began in ',
-  heroSub1Strong: 'pharmaceutical and healthcare research in 2012',
-  heroSub1AfterStrong:
-    ' and still leads there. The same sampling discipline and senior-led analysis now run across three connected segments — pharma & healthcare, B2B, and B2C — for clients across North America, LATAM, Europe, the GCC, and APAC.',
+  heroSub1BeforeStrong: '',
+  heroSub1Strong: '',
+  heroSub1AfterStrong: BIONIXUS_POSITIONING_V3,
   heroSub2:
     'The site is built as two linked silos: a regulated healthcare silo and a non-healthcare industries silo. This hub is the bridge between them.',
   ctaInsights: 'Industry insights portal →',
