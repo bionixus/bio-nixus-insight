@@ -1,10 +1,19 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Mail, MapPin, Phone } from 'lucide-react';
+import {
+  BIONIXUS_PHONE_EG,
+  BIONIXUS_PHONE_EG_DISPLAY,
+  BIONIXUS_PHONE_UK,
+  BIONIXUS_PHONE_UK_DISPLAY,
+  BIONIXUS_PHONE_US,
+  BIONIXUS_PHONE_US_DISPLAY,
+} from '@/components/report-conversion/constants';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths, localizedContactPath } from '@/lib/seo';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { TrustCoverageMap } from '@/components/media/TrustCoverageMap';
+import { CONTACT_FORM_COUNTRIES } from '@/data/contactFormCountries';
 
 type ContactValidation = {
   firstName?: string;
@@ -21,22 +30,6 @@ type ContactValidation = {
   success?: string;
   error?: string;
 };
-
-const COUNTRY_OPTIONS = [
-  'United Kingdom',
-  'Germany',
-  'France',
-  'Spain',
-  'Italy',
-  'Saudi Arabia',
-  'UAE',
-  'Egypt',
-  'Kuwait',
-  'Qatar',
-  'Bahrain',
-  'Oman',
-  'Other',
-] as const;
 
 const RESEARCH_INTERESTS = [
   'Quantitative',
@@ -116,6 +109,12 @@ type ContactSectionProps = {
 
 const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
   const { t, language, isRTL } = useLanguage();
+  const phoneRegionLabels = t.homePage.cta.phoneRegionLabels;
+  const phoneLines = [
+    { tel: BIONIXUS_PHONE_US, label: `${phoneRegionLabels[0]} ${BIONIXUS_PHONE_US_DISPLAY}` },
+    { tel: BIONIXUS_PHONE_UK, label: `${phoneRegionLabels[1]} ${BIONIXUS_PHONE_UK_DISPLAY}` },
+    { tel: BIONIXUS_PHONE_EG, label: `${phoneRegionLabels[2]} ${BIONIXUS_PHONE_EG_DISPLAY}` },
+  ];
   const sectionRef = useScrollReveal<HTMLElement>({ stagger: 80 });
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -334,15 +333,15 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
                 <div>
                   <div className="text-sm text-muted-foreground">{t.contact.phoneLabel}</div>
                   <div className="flex flex-col gap-1">
-                    <a href="tel:+18884655557" className="text-foreground font-medium hover:text-primary transition-colors">
-                      US No. +1 888 465 5557
-                    </a>
-                    <a href="tel:+447727666682" className="text-foreground font-medium hover:text-primary transition-colors">
-                      Europe No. +44 7727 666682
-                    </a>
-                    <a href="tel:+201206882323" className="text-foreground font-medium hover:text-primary transition-colors">
-                      Middle East, Africa and Asia No. +20 120 688 2323
-                    </a>
+                    {phoneLines.map((line) => (
+                      <a
+                        key={line.tel}
+                        href={`tel:${line.tel}`}
+                        className="text-foreground font-medium hover:text-primary transition-colors"
+                      >
+                        {line.label}
+                      </a>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -476,7 +475,7 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="country" className="block text-sm font-medium text-foreground mb-2">
-                        Country / Region <span className="text-destructive">*</span>
+                        {place('countryLabel', 'Country / Region')} <span className="text-destructive">*</span>
                       </label>
                       <select
                         id="country"
@@ -486,9 +485,9 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
                         className={`w-full px-4 py-3 rounded-lg border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.country ? 'border-destructive' : 'border-input'}`}
                         defaultValue=""
                       >
-                        <option value="" disabled>Select country…</option>
-                        {COUNTRY_OPTIONS.map((c) => (
-                          <option key={c} value={c}>{c}</option>
+                        <option value="" disabled>{place('selectCountry', 'Select country…')}</option>
+                        {CONTACT_FORM_COUNTRIES.map((countryName) => (
+                          <option key={countryName} value={countryName}>{countryName}</option>
                         ))}
                       </select>
                       {errors.country && <p className="text-sm text-destructive mt-1">{errors.country}</p>}

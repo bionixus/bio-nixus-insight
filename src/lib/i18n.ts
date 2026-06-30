@@ -185,9 +185,9 @@ export const translations = {
     },
     contactPage: {
       heroTitle: "One conversation can change your launch.",
-      heroSubtitle: "Join pharmaceutical teams across EMEA who use BioNixus to unlock market insights—faster. Get a tailored proposal in 24 hours. No commitment, no fluff.",
-      statLine: "Trusted by leading pharmaceutical companies in UK • Germany • France • UAE • Saudi Arabia • Egypt",
-      badges: ['24h proposal turnaround', 'EMEA-native fieldwork', 'NICE & HTA-ready insights'],
+      heroSubtitle: "Join pharmaceutical teams worldwide who use BioNixus for healthcare market research across 20+ countries. Get a tailored proposal within 24 hours.",
+      statLine: "Global headquarters — Sheridan, Wyoming (USA) · Regional offices London, Dubai, Riyadh, Cairo",
+      badges: ['24h proposal turnaround', '20+ country fieldwork', 'GDPR & ESOMAR-aligned'],
     },
     methodologyEn: {
       title: 'Healthcare market research methodology, data quality, and regulatory compliance',
@@ -200,7 +200,7 @@ export const translations = {
     },
     contact: {
       title: "Let's Connect",
-      subtitle: 'Ready to transform your healthcare market strategy? Our team of experts is here to help.',
+      subtitle: 'Ready to scope healthcare market research anywhere in the world? Tell us your target country and timeline—our team responds within one business day.',
       cta: 'Schedule a Consultation',
       ctaSecondary: 'Explore Our Services',
       email: 'admin@bionixus.com',
@@ -219,6 +219,8 @@ export const translations = {
       lastNamePlaceholder: 'Smith',
       workEmailPlaceholder: 'john@company.com',
       companyPlaceholder: 'Your Company',
+      countryLabel: 'Country / Region',
+      selectCountry: 'Select country…',
       messagePlaceholder: 'Tell us about your research needs...',
       successTitle: 'Thank You!',
       successBody: 'Your inquiry has been successfully submitted. Our team will get back to you shortly.',
@@ -232,6 +234,7 @@ export const translations = {
         lastName: 'Please enter your last name',
         workEmail: 'Please enter a valid work email',
         company: 'Please enter your company name',
+        country: 'Please select your country or region',
         message: 'Please describe how we can help you',
         privacy: 'Please accept the privacy policy',
         emailFormat: 'Please enter a valid email address',
@@ -2305,9 +2308,9 @@ export const translations = {
     },
     contactPage: {
       heroTitle: 'Один разговор может изменить ваш запуск.',
-      heroSubtitle: 'Присоединяйтесь к фармацевтическим командам по всей Европе, которые используют BioNixus для получения рыночных инсайтов быстрее. Получите индивидуальное предложение в течение 24 часов.',
-      statLine: 'Доверяют ведущие фармацевтические компании в России • Германии • Франции • ОАЭ • Саудовской Аравии • Египте',
-      badges: ['Предложение за 24 часа', 'Полевые работы с европейским опытом', 'Инсайты для HTA'],
+      heroSubtitle: 'Присоединяйтесь к фармацевтическим командам по всему миру, которые используют BioNixus для исследований рынка здравоохранения в 20+ странах. Получите индивидуальное предложение в течение 24 часов.',
+      statLine: 'Глобальный штаб — Sheridan, Wyoming (США) · Региональные офисы: Лондон, Дубай, Эр-Рияд, Каир',
+      badges: ['Предложение за 24 часа', 'Полевые работы в 20+ странах', 'Соответствие GDPR и ESOMAR'],
     },
     methodologyRu: {
       title: 'Методология маркетинговых исследований в здравоохранении, качество данных и соответствие нормативным требованиям',
