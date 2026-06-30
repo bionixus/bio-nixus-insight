@@ -313,6 +313,8 @@ const GccMarketAccessGuide = () => {
               <a href="#regulatory-overview" className="text-sm text-primary hover:underline flex items-center gap-2"><ShieldCheck className="w-4 h-4" /> Regulatory Bodies by Country</a>
               <a href="#registration-timeline" className="text-sm text-primary hover:underline flex items-center gap-2"><Clock className="w-4 h-4" /> Typical Registration Timeline</a>
               <a href="#country-details" className="text-sm text-primary hover:underline flex items-center gap-2"><Globe className="w-4 h-4" /> Country-by-Country Requirements</a>
+              <a href="#nupco-tenders" className="text-sm text-primary hover:underline flex items-center gap-2"><Building2 className="w-4 h-4" /> NUPCO &amp; GCC tenders</a>
+              <a href="#biosimilars-hta" className="text-sm text-primary hover:underline flex items-center gap-2"><Scale className="w-4 h-4" /> Biosimilars &amp; HTA evidence</a>
               <a href="#faq" className="text-sm text-primary hover:underline flex items-center gap-2"><BookOpen className="w-4 h-4" /> Frequently Asked Questions</a>
             </div>
           </div>
@@ -496,6 +498,51 @@ const GccMarketAccessGuide = () => {
           </div>
         </section>
 
+        {/* Biosimilars, HTA, and formulary evidence */}
+        <section className="section-padding py-12 bg-muted/20" id="biosimilars-hta">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Biosimilars, HTA-style evidence, and GCC formulary committees
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                GCC hospital formulary committees increasingly expect budget-impact analysis, comparator
+                justification, and local real-world use narratives alongside clinical efficacy summaries —
+                particularly for biologics, biosimilars, and high-cost specialty medicines. Saudi Arabia&apos;s SFDA
+                Economic Evaluation System (from July 2025) formalises pharmacoeconomic requirements for selected
+                categories; UAE emirate committees apply distinct prior-authorization templates through DHA and
+                DOH; Kuwait and Qatar MOH formulary reviews emphasise tender price corridors relative to reference
+                markets.
+              </p>
+              <p>
+                Biosimilar substitution rules differ by country and channel: NUPCO tender awards can reset
+                hospital-administered biosimilar share across MOH-linked facilities, while private UAE hospital
+                groups may maintain innovator preference longer if payer prior authorization favours originators.
+                Research should map pharmacist substitution authority, cold-chain logistics confidence, and
+                physician interchangeability perceptions before national launch models assume automatic switching.
+              </p>
+              <p>
+                BioNixus designs payer and hospital committee research that surfaces the exact evidence gaps
+                dossiers miss — qualitative depth on objection libraries, quantitative modules on willingness to
+                switch, and optional real-world evidence appendices aligned to SFDA and MOHAP expectations. Pair
+                this guide with{' '}
+                <Link to="/biosimilar-market-entry-saudi-arabia" className="text-primary underline font-medium">
+                  biosimilar market entry in Saudi Arabia
+                </Link>
+                ,{' '}
+                <Link to="/real-world-evidence-gcc" className="text-primary underline font-medium">
+                  real-world evidence GCC
+                </Link>
+                , and{' '}
+                <Link to="/gcc-pharmaceutical-market-research" className="text-primary underline font-medium">
+                  GCC pharmaceutical market research
+                </Link>{' '}
+                for therapy-specific fieldwork.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Internal links */}
         <section className="section-padding py-12 bg-muted/20">
           <div className="container-wide max-w-5xl mx-auto">
@@ -612,6 +659,14 @@ const GccMarketAccessGuide = () => {
                 {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
+                },
+                {
+                  q: 'How do biosimilar substitution rules differ across GCC countries?',
+                  a: 'Saudi Arabia NUPCO tenders can drive rapid hospital biosimilar uptake after award; UAE private hospitals may retain innovator preference under prior-authorization rules; Kuwait and Qatar MOH committees apply distinct price corridors. BioNixus maps pharmacist substitution authority and physician confidence by country before launch models assume automatic switching.',
+                },
+                {
+                  q: 'What HTA-style evidence do SFDA and GCC payers expect in 2026?',
+                  a: 'SFDA Economic Evaluation System requirements (from July 2025) raise pharmacoeconomic expectations for selected categories. UAE DHA and DOH committees request budget-impact narratives; Kuwait and Qatar emphasise comparator pricing. BioNixus payer research identifies evidence gaps dossiers miss before committee submission.',
                 },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">

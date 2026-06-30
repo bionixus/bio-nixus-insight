@@ -104,6 +104,7 @@ const content: GeneralMRPageContent = {
       "Egypt is North Africa's largest economy and consumer market. With a population of 105+ million growing at approximately 1.8% annually, it offers scale that few MENA markets can match. The consumer FMCG market is the region's largest by volume; the pharmaceutical sector was worth roughly $6.5 billion in 2024 projected to nearly double by 2033; and real estate, telecom, and financial services are each undergoing structural transformation.",
       "The market's complexity comes from its stratification: Greater Cairo (20+ million people) behaves differently from Alexandria, Delta cities, and Upper Egypt governorates. Income distribution is wide, the informal economy is substantial, and consumer behaviour is shifting faster than any single syndicated report captures — which is why primary research from market research companies in Egypt matters for decisions at brand, category, or market-entry level.",
       "Egypt's young demographic (median age approximately 24) and rising digital adoption — e-commerce tripled post-2020, mobile money is scaling rapidly — create dynamic conditions where brand loyalties and channel preferences shift quickly. Research programs built on current fieldwork, not 18-month-old syndicated snapshots, give commercial teams the edge in this fast-moving market.",
+      "Universal Health Insurance (UHI) rollout and CBE financial-inclusion milestones are reshaping who pays for healthcare and banking services outside classic out-of-pocket models. Market research briefs should stress-test coverage and wallet adoption assumptions by governorate — Cairo-only samples systematically overstate digital and insured behaviour relative to Delta and Upper Egypt.",
     ],
   },
   topCompanies: [
@@ -197,6 +198,21 @@ const content: GeneralMRPageContent = {
       question: 'How does BioNixus compare to Kantar and Ipsos for market research in Egypt?',
       answer:
         "Kantar Egypt is strongest for brand tracking and media measurement syndicated products. Ipsos Egypt is known for large quantitative studies and government research. BioNixus specialises in primary, decision-specific research across multiple industries — custom studies with Arabic fieldwork, national coverage, and deliverables built around commercial decisions rather than syndicated subscriptions.",
+    },
+    {
+      question: 'How much does market research cost in Egypt?',
+      answer:
+        'Scope drives cost. Focused quantitative consumer or B2B modules often start in the low five figures USD; multi-city qual–quant programmes with governorate quotas run higher. BioNixus scopes to one commercial decision per phase with written feasibility before commitment.',
+    },
+    {
+      question: 'Does BioNixus cover Upper Egypt and Delta cities in research samples?',
+      answer:
+        'Yes. BioNixus programmes quota across Cairo, Alexandria, Giza, Mansoura, Assiut, and other governorates as brief requires — with explicit documentation when studies are Greater Cairo–weighted versus nationally representative.',
+    },
+    {
+      question: 'What is the best market research company in Egypt for pharmaceutical teams?',
+      answer:
+        'For healthcare and pharmaceutical research, see BioNixus healthcare market research in Egypt — HCP, payer, patient, and access studies with EDA-aware design. For all-industry consumer and B2B research on this page, BioNixus delivers primary fieldwork with Arabic moderation and national panel coverage.',
     },
   ],
   relatedLinks: [
