@@ -421,6 +421,40 @@ export default function GccPharmaceuticalMarketResearch() {
             </div>
           </ReportPremiumSection>
 
+          <ReportPremiumSection id="nupco-biosimilar-dynamics" title="NUPCO tender dynamics and biosimilar adoption signals" variant="default">
+            <div className="space-y-4 text-muted-foreground leading-relaxed max-w-4xl">
+              <p>
+                Saudi NUPCO centralized awards can shift hospital-administered biologic and biosimilar share across
+                hundreds of MOH-linked facilities within a single tender cycle — making tender timing, price
+                corridor positioning, and physician confidence in interchangeability as important as SFDA registration
+                for launch sequencing. BioNixus tracks procurement committee criteria, pharmacist substitution
+                behaviour, and post-award uptake curves for biologics and generic injectables categories.
+              </p>
+              <p>
+                In the UAE, private hospital groups (Mediclinic, NMC, Cleveland Clinic Abu Dhabi) often adopt
+                innovator biologics faster than Essential Benefits Plan channels, while Kuwait and Qatar MOH tenders
+                emphasise budget-impact narratives for high-cost therapies. Harmonized GCC research programmes should
+                tag institution type, payer tier, and tender-governed versus private carve-out volume before regional
+                roll-up — imported European averages misprice Gulf committee behaviour.
+              </p>
+              <p>
+                For access context, see the{' '}
+                <Link to="/gcc-market-access-guide" className="text-primary font-medium hover:underline">
+                  GCC market access guide
+                </Link>
+                ,{' '}
+                <Link to="/biosimilar-market-entry-saudi-arabia" className="text-primary font-medium hover:underline">
+                  biosimilar market entry Saudi Arabia
+                </Link>
+                , and{' '}
+                <Link to="/healthcare-market-research-in-saudi-arabia" className="text-primary font-medium hover:underline">
+                  healthcare market research in Saudi Arabia
+                </Link>
+                .
+              </p>
+            </div>
+          </ReportPremiumSection>
+
           <ReportPremiumSection id="related-resources" title="Related BioNixus resources" variant="muted">
             <div className="flex flex-wrap gap-3">
               <Link

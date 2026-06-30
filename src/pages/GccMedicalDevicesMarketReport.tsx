@@ -277,6 +277,53 @@ const GccMedicalDevicesMarketReport = () => {
           </div>
         </section>
 
+        {/* IVD, molecular diagnostics, and prefilled syringes */}
+        <section className="section-padding bg-cream-dark" id="ivd-prefilled-syringes">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              IVD, molecular diagnostics, and prefilled syringes in the GCC
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                In-vitro diagnostics (IVD) and point-of-care testing represent roughly 16% of GCC medical device
+                spend — accelerated by national diabetes screening, infectious-disease surveillance, and hospital
+                laboratory automation programmes in Saudi Arabia and the UAE. SFDA and MOHAP classify IVD kits and
+                analyzers under device pathways distinct from therapeutic products; registration timelines, local
+                authorized representative requirements, and hospital tender eligibility should be mapped before
+                commercial forecasts assume listing.
+              </p>
+              <p>
+                Molecular diagnostics (PCR, NGS panels, companion diagnostics) concentrate at KFSH&amp;RC, Sheikh
+                Shakhbout Medical City, Cleveland Clinic Abu Dhabi, and major MOH reference laboratories. BioNixus
+                tracks clinician adoption, laboratory director procurement criteria, and competitive switching
+                barriers for IVD categories where syndicated import statistics understate account-level behaviour.
+              </p>
+              <p>
+                Prefilled syringes and drug–device combination products sit at the pharma–device boundary: NUPCO and
+                MOH hospital tenders increasingly bundle injectable medicines with delivery devices, while private
+                UAE channels adopt premium auto-injector and prefilled formats for biologics and GLP-1 therapies.
+                Research programmes should tag institution type, tender versus private procurement, and cold-chain
+                confidence before extrapolating GCC-wide uptake.
+              </p>
+              <p>
+                For Saudi-specific IVD depth, see our{' '}
+                <Link to="/blog/saudi-arabia-in-vitro-diagnostics-market" className="text-primary hover:underline font-medium">
+                  Saudi Arabia IVD market analysis
+                </Link>
+                . For combined pharma–device access strategy, pair this report with the{' '}
+                <Link to="/gcc-market-access-guide" className="text-primary hover:underline font-medium">
+                  GCC market access guide
+                </Link>{' '}
+                and{' '}
+                <Link to="/uae-medtech-market-research" className="text-primary hover:underline font-medium">
+                  UAE MedTech market research
+                </Link>
+                .
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Segments */}
         <section className="section-padding bg-cream-dark" id="device-segments">
           <div className="container-wide max-w-4xl mx-auto">

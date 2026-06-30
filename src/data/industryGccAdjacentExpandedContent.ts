@@ -57,6 +57,8 @@ const COUNTRY_REGULATORY: Record<MatrixCountrySlug, CountryIndustryRegulatory> =
       'Procurement committees expect economic narratives and user-workflow proof; cath-lab, OR, and nursing modules should test objection libraries insurers cite in prior authorization.',
       'Arabic–English moderation preserves nuance in administrator and clinician conversations while delivering comparable analytics for regional leadership.',
       'Emirate-level readouts should precede national roll-up: Dubai private growth versus Abu Dhabi insurance density requires separate 30/60/90 actions.',
+      'Robotic surgery and hybrid OR adoption at Cleveland Clinic Abu Dhabi, Mediclinic City, and major Dubai private groups creates distinct premium-device segments — feasibility should map which accounts justify innovator pricing versus mid-tier volume plays.',
+      'Medical tourism patient flows through Dubai Healthcare City and Abu Dhabi clusters inflate certain specialty categories; research briefs should separate resident insured populations from short-stay medical travellers when sizing addressable demand.',
     ],
     biotech: [
       'Biotech research in the UAE spans MOHAP and emirate regulators, mandatory insurance formularies, and fast-growing private hospital adoption of innovator biologics.',
@@ -65,6 +67,8 @@ const COUNTRY_REGULATORY: Record<MatrixCountrySlug, CountryIndustryRegulatory> =
       'Cold-chain, compounding, and biosimilar switching policies differ by insurer tier; pharmacist and payer modules clarify operational rules committees rely on.',
       'Clinical research hubs in Dubai and Abu Dhabi attract multinational trial activity; site feasibility should map investigator networks relevant to your modality.',
       'Pair UAE biotech evidence with MOHAP access context and the UAE healthcare market report when decisions span provider and drug channels.',
+      'Oncology and immunology biologics concentrate at Tawam, Sheikh Khalifa Medical City, and private oncology centres — KOL mapping should tag institution type before national extrapolation.',
+      'Pharmacoeconomic dossiers for high-cost biologics increasingly require budget-impact narratives aligned to DHA and DOH prior-authorization templates; qual modules should surface committee objections dossiers miss.',
     ],
     'consumer-health': [
       'Consumer health research in the UAE reflects high e-commerce penetration, mall pharmacy formats, and influencer-led discovery alongside traditional community pharmacy.',
@@ -73,6 +77,8 @@ const COUNTRY_REGULATORY: Record<MatrixCountrySlug, CountryIndustryRegulatory> =
       'Multilingual fieldwork (Arabic, English, Hindi, Tagalog) reaches expatriate shopper segments that dominate certain OTC categories.',
       'Employer wellness programmes and insurance formulary adjacency affect pharmacy recommendation behaviour; pharmacist modules capture detail beyond shelf analytics.',
       'Link UAE consumer health modules with GCC pharmacy market and retail research when omnichannel strategy spans bricks and e-pharmacy.',
+      'E-pharmacy and quick-commerce delivery (Talabat, Noon, pharmacy apps) reshape OTC discovery for younger expatriate cohorts — shopper journeys should tag channel origin before attributing brand lift to traditional pharmacy detail.',
+      'Ramadan and summer travel seasons shift category velocity for vitamins, hydration, and travel-health OTC; tracking studies must document field windows so conclusions are not misread as structural trend.',
     ],
   },
   egypt: {
@@ -83,6 +89,8 @@ const COUNTRY_REGULATORY: Record<MatrixCountrySlug, CountryIndustryRegulatory> =
       'Upper Egypt referral patterns differ from Cairo corridors; geographic quotas prevent capital-city skew in national adoption forecasts.',
       'Arabic fieldwork is mandatory for physician, biomedical engineering, and procurement depth; BioNixus Egypt programmes use verified specialist networks.',
       'Connect Egypt device research with the Egypt medical devices market report and pharmaceutical market research Egypt when portfolios span drug and device channels.',
+      'University hospital centres (Kasr Al Ainy, Ain Shams, Alexandria) gate high-value imaging and surgical categories — influence maps should separate academic procurement from ministry tender lots.',
+      'Local assembly and distributor service networks increasingly determine tender eligibility; research should capture spare-parts availability and technician training as switching barriers alongside clinical preference.',
     ],
     biotech: [
       'Biotech research in Egypt intersects EDA biologics regulation, UHIA public procurement, and growing private hospital adoption of innovator therapies.',
@@ -91,6 +99,8 @@ const COUNTRY_REGULATORY: Record<MatrixCountrySlug, CountryIndustryRegulatory> =
       'Pharmacist substitution and institutional protocols can override specialist preference; research documents operational rules alongside prescriber intent.',
       'Arabic–English execution preserves nuance for global sponsors; Egypt cells harmonize with GCC appendices when regional portfolios require roll-up.',
       'Pair biotech modules with Egypt pharmaceutical market research and the Egypt healthcare market report for macro context alongside institutional depth.',
+      'UHIA centralized procurement for high-cost biologics creates long tender cycles — physician confidence and pharmacist substitution rules should be tracked in parallel with specialist prescribing intent.',
+      'Rare-disease and oncology biologics often route through named referral centres; patient-flow mapping prevents overstating national penetration from Cairo-only KOL panels.',
     ],
     'consumer-health': [
       'Consumer health research in Egypt spans mass-market pharmacy chains, traditional outlets, and growing e-commerce with mobile-wallet payment adoption.',
@@ -99,6 +109,8 @@ const COUNTRY_REGULATORY: Record<MatrixCountrySlug, CountryIndustryRegulatory> =
       'Seasonal and rural–urban splits affect distribution; field quotas document geography before conclusions drive national media spend.',
       'Pharmacist recommendation remains influential; pharmacy intercept and depth modules complement shopper quant where category dynamics require both.',
       'Link Egypt consumer health readouts with market research Egypt hub pages when retail strategy connects to broader healthcare portfolio decisions.',
+      'Mobile-wallet checkout (Fawry, Vodafone Cash, InstaPay) accelerates e-pharmacy and social-commerce OTC trials — research should measure payment friction and delivery trust, not only shelf visibility.',
+      'Local manufacturing of OTC and supplements (EIPICO, Memphis, Eva Pharma adjacency) shapes price corridors; competitive modules should tag domestic versus imported SKU positioning before share conclusions.',
     ],
   },
   kuwait: {
