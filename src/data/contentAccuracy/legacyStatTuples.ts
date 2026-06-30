@@ -110,7 +110,7 @@ export const LEGACY_STAT_TUPLES: Record<string, StatTuple> = {
   "turkey:oncology": ["~$1.95B","Market size 2026","~$3.20B","Forecast 2030","9.9%","CAGR 2026–2030"] as StatTuple,
   "turkey:rare-diseases": ["~$580M","Market size 2026","~$1.02B","Forecast 2030","15.2%","CAGR 2026–2030"] as StatTuple,
   "turkey:respiratory": ["~$1.42B","Market size 2026","~$2.28B","Forecast 2030","12.5%","CAGR 2026–2030"] as StatTuple,
-  "uae:biosimilars": ["~$138M","Market size 2026","~$248M","Forecast 2030","17.4%","CAGR 2026–2030"] as StatTuple,
+  "uae:biosimilars": ["~$135M","Market size 2026","~$275M","Forecast 2030","19.5%","CAGR 2026–2030"] as StatTuple,
   "uae:cardiovascular": ["~$410M","Market size 2026","~$618M","Forecast 2030","11.7%","CAGR 2026–2030"] as StatTuple,
   "uae:dermatology": ["~$48M","Market size 2026","~$82M","Forecast 2030","17.4%","CAGR 2026–2030"] as StatTuple,
   "uae:diabetes-metabolic": ["~$382M","Market size 2026","~$652M","Forecast 2030","14.0%","CAGR 2026–2030"] as StatTuple,
