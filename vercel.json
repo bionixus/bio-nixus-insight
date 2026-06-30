@@ -383,6 +383,10 @@
       "destination": "/conf/biosimilar-market-entry-saudi-arabia.html"
     },
     {
+      "source": "/uae-biosimilars-white-paper-2026",
+      "destination": "/conf/uae-biosimilars-market-report-2026.html"
+    },
+    {
       "source": "/iqvia-alternative",
       "destination": "/conf/iqvia-alternative.html"
     },

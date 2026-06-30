@@ -30,6 +30,8 @@ import {
   ReportRelatedCards,
   ReportSourcesBlock,
 } from '@/components/report-premium';
+import { MarketReportWhitePaperBand } from '@/components/report-premium/MarketReportWhitePaperBand';
+import { getMarketReportWhitePaper } from '@/data/marketReportWhitePapers';
 import { ReportTherapySpendChartLazy } from '@/components/report-premium/ReportTherapySpendChartLazy';
 
 function pickVariant(seed: string, options: [string, string, string]) {
@@ -57,6 +59,7 @@ export default function HealthcareReportPage() {
   const conversionConfig = buildConversionConfigFromReportEntry(report);
   const gccEnrichment = getGccTherapyEnrichment(report.slug);
   const gccTherapyComparator = gccTherapyReportPath(report.therapyAreaSlug);
+  const whitePaper = getMarketReportWhitePaper(report.slug);
   const introLead = pickVariant(report.slug, [
     `${report.market} ${report.therapyArea} demand is influenced by provider pathway constraints, access sequencing, and institution-level implementation capacity.`,
     `In ${report.market}, ${report.therapyArea} performance depends on how policy timing, reimbursement workflow, and care delivery realities interact in practice.`,
@@ -379,6 +382,8 @@ export default function HealthcareReportPage() {
 
           <ReportRelatedCards reports={relatedReports} />
         </ReportContentWithAside>
+
+        {whitePaper ? <MarketReportWhitePaperBand whitePaper={whitePaper} /> : null}
 
         <ReportConsultationBand config={conversionConfig} />
       </main>

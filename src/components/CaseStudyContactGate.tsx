@@ -35,6 +35,8 @@ interface CaseStudyContactGateProps {
   onSuccess: () => void;
   /** When set (e.g. "Subscribe to continue reading"), used as dialog title instead of requestAccessTitle */
   dialogTitle?: string;
+  requestType?: string;
+  formVariant?: string;
 }
 
 export function CaseStudyContactGate({
@@ -43,6 +45,8 @@ export function CaseStudyContactGate({
   caseStudyTitle,
   onSuccess,
   dialogTitle,
+  requestType = 'Case Study Access Request',
+  formVariant = 'case_study_gate',
 }: CaseStudyContactGateProps) {
   const { t } = useLanguage();
   const [submitting, setSubmitting] = useState(false);
@@ -84,9 +88,9 @@ export function CaseStudyContactGate({
     if (Object.keys(next).length > 0) return;
 
     data.set('_subject', `New Form Submission - ${firstName} ${lastName}`);
-    data.set('requestType', 'Case Study Access Request');
+    data.set('requestType', requestType);
     data.set('caseStudyTitle', caseStudyTitle);
-    data.set('formVariant', 'case_study_gate');
+    data.set('formVariant', formVariant);
     data.set('sourcePage', currentPath);
     data.set('sourceUrl', currentUrl);
     data.set('reportName', caseStudyTitle);
