@@ -18,6 +18,10 @@ import { SAUDI_ARABIA_NEUROLOGY_CNS_COPY } from '@/data/reportCopyOverrides/saud
 import { SAUDI_ARABIA_BIOSIMILARS_COPY } from '@/data/reportCopyOverrides/saudiArabiaBiosimilarsMarketReport';
 import { UAE_NEUROLOGY_CNS_COPY } from '@/data/reportCopyOverrides/uaeNeurologyCnsMarketReport';
 import { UAE_BIOSIMILARS_COPY } from '@/data/reportCopyOverrides/uaeBiosimilarsMarketReport';
+import { KUWAIT_BIOSIMILARS_COPY } from '@/data/reportCopyOverrides/kuwaitBiosimilarsMarketReport';
+import { QATAR_BIOSIMILARS_COPY } from '@/data/reportCopyOverrides/qatarBiosimilarsMarketReport';
+import { BAHRAIN_BIOSIMILARS_COPY } from '@/data/reportCopyOverrides/bahrainBiosimilarsMarketReport';
+import { OMAN_BIOSIMILARS_COPY } from '@/data/reportCopyOverrides/omanBiosimilarsMarketReport';
 import { SAUDI_ARABIA_DIGITAL_HEALTH_COPY } from '@/data/reportCopyOverrides/saudiArabiaDigitalHealthMarketReport';
 import { SAUDI_ARABIA_VACCINES_COPY } from '@/data/reportCopyOverrides/saudiArabiaVaccinesMarketReport';
 import { SAUDI_ARABIA_DERMATOLOGY_COPY } from '@/data/reportCopyOverrides/saudiArabiaDermatologyMarketReport';
@@ -47,6 +51,10 @@ const OVERRIDES: OverrideCopy[] = [
   SAUDI_ARABIA_BIOSIMILARS_COPY,
   UAE_NEUROLOGY_CNS_COPY,
   UAE_BIOSIMILARS_COPY,
+  KUWAIT_BIOSIMILARS_COPY,
+  QATAR_BIOSIMILARS_COPY,
+  BAHRAIN_BIOSIMILARS_COPY,
+  OMAN_BIOSIMILARS_COPY,
   SAUDI_ARABIA_DIGITAL_HEALTH_COPY,
   SAUDI_ARABIA_VACCINES_COPY,
   SAUDI_ARABIA_DERMATOLOGY_COPY,
