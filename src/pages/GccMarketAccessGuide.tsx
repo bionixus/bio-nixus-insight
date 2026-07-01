@@ -174,7 +174,7 @@ const GccMarketAccessGuide = () => {
             description: 'Complete guide to pharmaceutical drug registration, pricing, and reimbursement across the 6 GCC countries: Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman.',
             url: citationUrl,
             datePublished: '2026-01-15',
-            dateModified: '2026-06-16',
+            dateModified: '2026-07-01',
             author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
             publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
           })}
@@ -491,6 +491,57 @@ const GccMarketAccessGuide = () => {
                   real-world evidence GCC
                 </Link>
                 .
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Biosimilars, HTA-style evidence, and GCC pricing harmonisation */}
+        <section className="section-padding py-12 bg-muted/10" id="biosimilars-hta">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Biosimilars, HTA-style evidence, and GCC pricing harmonisation
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                GCC market access for biologics and biosimilars now requires evidence beyond classical registration
+                dossiers. Saudi Arabia&apos;s SFDA Economic Evaluation System (EES), effective from July 2025, expects
+                pharmacoeconomic and budget-impact narratives at registration for many innovative and high-cost therapies.
+                Bahrain&apos;s NHRA was the first GCC authority with a formal biosimilar pathway; Saudi Arabia and the UAE
+                have accelerated interchangeability guidance, shifting hospital pharmacist substitution behaviour and
+                NUPCO tender scoring toward cost-offset arguments rather than clinical differentiation alone.
+              </p>
+              <p>
+                While full NICE-style HTA does not exist uniformly across the Gulf, hospital formulary committees,
+                MOH procurement reviewers, and emirate-level DHA/DOH boards increasingly ask HTA-like questions:
+                comparator acceptability, subgroup fragility, adherence realism, and budget impact versus incumbent
+                therapies. BioNixus designs payer and pharmacist research that surfaces these objection patterns before
+                dossier lock — linking qualitative hesitations to targeted HEOR refinement rather than static models
+                misaligned with live committee discourse.
+              </p>
+              <p>
+                GCC pricing harmonisation initiatives aim to reduce cross-border arbitrage, but country-level ERP baskets,
+                tender calendars, and local-manufacturing incentives still diverge. A product priced for Saudi NUPCO
+                corridors may face different reference baskets in Kuwait or Qatar; UAE emirate formularies can list a
+                therapy while MOHAP national registration remains the gating step for wider distribution. Access teams
+                should sequence registration, pricing approval, and tender defence by country — not assume a single GCC
+                launch narrative.
+              </p>
+              <p>
+                For biosimilar defence and tender preparation, combine this guide with{' '}
+                <Link to="/biosimilar-market-entry-saudi-arabia" className="text-primary underline font-medium">
+                  biosimilar market entry in Saudi Arabia
+                </Link>
+                , the{' '}
+                <Link to="/market-reports/gcc-biosimilars-market-report" className="text-primary underline font-medium">
+                  GCC biosimilars market report
+                </Link>
+                , and{' '}
+                <Link to="/services/market-access" className="text-primary underline font-medium">
+                  market access consulting services
+                </Link>
+                . BioNixus runs bilingual payer forensics, pharmacist substitution studies, and NUPCO calendar mapping
+                so medical, access, and brand teams share one behavioural evidence base before committee submission.
               </p>
             </div>
           </div>
