@@ -71,6 +71,16 @@
       "statusCode": 301
     },
     {
+      "source": "/healthcare-market-research/quantitative",
+      "destination": "/quantitative-healthcare-market-research",
+      "statusCode": 301
+    },
+    {
+      "source": "/healthcare-market-research/qualitative",
+      "destination": "/qualitative-market-research",
+      "statusCode": 301
+    },
+    {
       "source": "/conf/",
       "destination": "/conf",
       "statusCode": 301

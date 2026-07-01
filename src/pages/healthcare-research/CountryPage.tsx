@@ -75,6 +75,14 @@ function buildEvidenceSafeStats(config: CountryConfig): { label: string; value: 
   ];
 }
 
+// Non-country method/topic slugs that must never fall through to the generic
+// fallback-country template (they collide with dedicated guide pages and would
+// otherwise create thin duplicate content competing with the real page).
+const NON_COUNTRY_SLUG_REDIRECTS: Record<string, string> = {
+  quantitative: '/quantitative-healthcare-market-research',
+  qualitative: '/qualitative-market-research',
+};
+
 export default function CountryPage() {
   const { country } = useParams<{ country: string }>();
   const location = useLocation();
@@ -84,6 +92,11 @@ export default function CountryPage() {
     country ||
     (typeof data.slug === 'string' ? data.slug : undefined) ||
     aliasSlug;
+
+  if (resolvedSlug && NON_COUNTRY_SLUG_REDIRECTS[resolvedSlug]) {
+    return <Navigate to={NON_COUNTRY_SLUG_REDIRECTS[resolvedSlug]} replace />;
+  }
+
   const config = resolvedSlug ? resolveCountryConfig(resolvedSlug) : undefined;
 
   if (!config) {
