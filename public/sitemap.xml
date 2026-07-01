@@ -1216,6 +1216,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.bionixus.com/healthcare-market-research-argentina</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
     <loc>https://www.bionixus.com/healthcare-market-research-australia</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -3767,6 +3773,12 @@
     <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/pharmaceutical-market-research-argentina</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/pharmaceutical-market-research-australia</loc>

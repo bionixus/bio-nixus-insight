@@ -420,6 +420,8 @@ const staticPages = [
   { path: '/healthcare-market-research-sweden', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-market-research-companies-sweden-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-sweden-2026', priority: '0.90', changefreq: 'monthly' },
+  { path: '/pharmaceutical-market-research-argentina', priority: '0.90', changefreq: 'monthly' },
+  { path: '/healthcare-market-research-argentina', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-malaysia-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-market-research-companies-japan-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-japan-2026', priority: '0.90', changefreq: 'monthly' },
