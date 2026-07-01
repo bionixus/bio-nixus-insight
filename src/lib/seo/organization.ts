@@ -67,6 +67,10 @@ export const ORG_KNOWS_ABOUT = [
   'Healthcare market research Netherlands',
   'CBG-MEB market research',
   'Zorginstituut Nederland market access research',
+  'Pharmaceutical market research Sweden',
+  'Healthcare market research Sweden',
+  'Läkemedelsverket market research',
+  'TLV value-based reimbursement research',
 ];
 
 /** Global reach with explicit deep-fingerprint regions and countries. */
@@ -96,6 +100,7 @@ export const ORG_AREA_SERVED: Array<Record<string, string>> = [
   { '@type': 'Country', name: 'Turkey', sameAs: 'https://www.wikidata.org/wiki/Q43' },
   { '@type': 'Country', name: 'Poland', sameAs: 'https://www.wikidata.org/wiki/Q36' },
   { '@type': 'Country', name: 'Netherlands', sameAs: 'https://www.wikidata.org/wiki/Q29999' },
+  { '@type': 'Country', name: 'Sweden', sameAs: 'https://www.wikidata.org/wiki/Q34' },
   // Americas
   { '@type': 'Country', name: 'United States' },
   { '@type': 'Country', name: 'Canada' },

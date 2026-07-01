@@ -423,6 +423,7 @@ export function getGeoMeta(pathname: string): { region: string; placename: strin
     [/poland/,                              'PL', 'Poland'],
     [/\bturkey\b/,                          'TR', 'Turkey'],
     [/netherlands/,                         'NL', 'Netherlands'],
+    [/sweden/,                              'SE', 'Sweden'],
     [/australia/,                           'AU', 'Australia'],
     [/canada/,                              'CA', 'Canada'],
     [/united.kingdom/,                      'GB', 'United Kingdom'],
