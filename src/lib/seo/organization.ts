@@ -59,6 +59,10 @@ export const ORG_KNOWS_ABOUT = [
   'Healthcare market research Malaysia',
   'NPRA market research',
   'MaHTAS health technology assessment research',
+  'Pharmaceutical market research Turkey',
+  'Healthcare market research Turkey',
+  'TİTCK market research',
+  'SGK payer research Turkey',
 ];
 
 /** Global reach with explicit deep-fingerprint regions and countries. */
@@ -85,7 +89,7 @@ export const ORG_AREA_SERVED: Array<Record<string, string>> = [
   { '@type': 'Country', name: 'France' },
   { '@type': 'Country', name: 'Italy' },
   { '@type': 'Country', name: 'Spain' },
-  { '@type': 'Country', name: 'Turkey' },
+  { '@type': 'Country', name: 'Turkey', sameAs: 'https://www.wikidata.org/wiki/Q43' },
   { '@type': 'Country', name: 'Poland', sameAs: 'https://www.wikidata.org/wiki/Q36' },
   // Americas
   { '@type': 'Country', name: 'United States' },
