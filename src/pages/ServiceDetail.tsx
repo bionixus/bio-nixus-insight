@@ -7,6 +7,8 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { ServiceMarketReferenceGuide } from '@/components/seo/ServiceMarketReferenceGuide';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+import { FAQSection } from '@/components/healthcare-research/FAQSection';
+import { SERVICE_EXPANDED_FAQS } from '@/data/seo/serviceExpandedPageContent';
 
 interface ServiceData {
   title: string;
@@ -382,6 +384,105 @@ const ServiceDetail = () => {
             </div>
           </div>
         </section>
+
+        {slug === 'market-access' && (
+          <>
+            <section className="section-padding py-12 bg-cream-dark">
+              <div className="container-wide max-w-4xl mx-auto">
+                <h2 className="text-2xl font-display font-semibold text-foreground mb-4">
+                  EMEA and GCC market access: where dossier claims stop converting to funded uptake
+                </h2>
+                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                  <p>
+                    Market access programmes fail when willingness-to-pay exercises ignore the procedural calendars,
+                    comparator acceptability rituals, and budget-impact skepticism that gate real uptake. BioNixus maps
+                    payer objections, formulary stewardship behaviour, and tender scoring dimensions — so HEOR, medical,
+                    and brand teams refine dossiers and launch sequencing with behavioural realism before submission.
+                  </p>
+                  <p>
+                    GCC contexts often feature consolidated procurement horizons (NUPCO in Saudi Arabia, MOH tenders in
+                    Kuwait and Qatar) and pharmacist substitution overlays; the UK applies NICE-aligned
+                    cost-effectiveness rituals; EU5 markets fragment by national HTA, rebate, and regional autonomy.
+                    Comparable survey cores enable regional governance; local modules preserve the access realism that
+                    determines whether launch spend matches committee calendars.
+                  </p>
+                  <p>
+                    Deliverables include objection libraries ranked by decision stage, evidence-gap maps, pricing
+                    narrative tests, tender scenario notes, and executive summaries linking access risks to commercial
+                    KPI owners. Pair this service with the{' '}
+                    <Link to="/gcc-market-access-guide" className="text-primary underline font-medium">
+                      GCC market access guide
+                    </Link>
+                    ,{' '}
+                    <Link to="/heor-consulting-saudi-arabia" className="text-primary underline font-medium">
+                      HEOR consulting in Saudi Arabia
+                    </Link>
+                    , and country hubs on the{' '}
+                    <Link to="/healthcare-market-research" className="text-primary underline font-medium">
+                      healthcare market research hub
+                    </Link>
+                    .
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section className="section-padding py-12">
+              <div className="container-wide max-w-4xl mx-auto">
+                <h2 className="text-2xl font-display font-semibold text-foreground mb-6">
+                  Market access research modules BioNixus integrates
+                </h2>
+                <ul className="space-y-4 text-muted-foreground leading-relaxed list-none p-0 m-0">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <span>
+                      <strong className="text-foreground">Payer and authority objection forensics:</strong> ranked
+                      hesitations by decision stage, comparator acceptability sensitivities, and budget-impact
+                      skepticism modalities that determine deferral or rejection.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <span>
+                      <strong className="text-foreground">Stakeholder and veto mapping:</strong> formulary committees,
+                      HTA reviewers, hospital procurement leads, and clinician champions who translate dossier claims
+                      into protocol behaviour.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <span>
+                      <strong className="text-foreground">Pricing and narrative testing:</strong> value communication,
+                      outcomes-based access discussions, and tender scenario notes where institutional procurement
+                      overlays medical decision-making.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <span>
+                      <strong className="text-foreground">Launch sequencing alignment:</strong> country order, evidence
+                      sequencing, and affiliate resource allocation tied to registration timing, formulary cycles, and
+                      procurement windows that actually bind uptake.
+                    </span>
+                  </li>
+                </ul>
+                <p className="text-muted-foreground leading-relaxed mt-6">
+                  In Gulf corridors, consolidated procurement and SFDA economic evaluation overlays mean access insight
+                  must connect to tender defence and pricing narrative tests before brand teams scale messaging. UK and
+                  EU5 affiliates benefit from comparator acceptability maps and subgroup fragility registers that tell
+                  medical affairs exactly which evidence gaps to close before resubmission.
+                </p>
+              </div>
+            </section>
+
+            <FAQSection
+              sectionId="market-access-service-faq"
+              title="Market access consulting — frequently asked questions"
+              items={SERVICE_EXPANDED_FAQS['market-access'] ?? []}
+              className="bg-muted/30"
+            />
+          </>
+        )}
 
         {slug ? <ServiceMarketReferenceGuide serviceSlug={slug} /> : null}
 

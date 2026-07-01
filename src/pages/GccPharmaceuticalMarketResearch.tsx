@@ -421,6 +421,46 @@ export default function GccPharmaceuticalMarketResearch() {
             </div>
           </ReportPremiumSection>
 
+          <ReportPremiumSection
+            id="nupco-biosimilar-intelligence"
+            title="NUPCO tender intelligence and biosimilar penetration in the GCC"
+            variant="muted"
+          >
+            <div className="space-y-4 text-muted-foreground leading-relaxed max-w-4xl">
+              <p>
+                Saudi Arabia&apos;s National Unified Procurement Company (NUPCO) centralises Ministry of Health
+                pharmaceutical tenders — making tender calendar timing, committee evaluation criteria, and post-award
+                uptake as important as SFDA registration for launch teams. BioNixus tracks NUPCO award cycles,
+                pharmacist switching intent after tender wins, and biosimilar substitution patterns in government
+                formularies so access and brand teams align pricing narratives with procurement scoring rather than
+                clinical claims alone.
+              </p>
+              <p>
+                Biosimilar penetration accelerated across the GCC after SFDA and MOHAP interchangeability guidance matured
+                in 2024–2025. Hospital pharmacists in Riyadh, Jeddah, and Dubai increasingly exercise substitution
+                authority for reference biologics with approved biosimilars — shifting competitive defence from
+                efficacy differentiation to budget-impact, cold-chain reliability, and prescriber confidence modules.
+                Quantitative tracker programmes should segment by institution type (MOH, NGHA, private) because
+                substitution behaviour diverges materially between channels.
+              </p>
+              <p>
+                For tender mechanics and biosimilar entry playbooks, see the{' '}
+                <Link to="/blog/nupco-saudi-arabia-tendering-guide" className="text-primary font-medium hover:underline">
+                  NUPCO tendering guide
+                </Link>
+                ,{' '}
+                <Link to="/biosimilar-market-entry-saudi-arabia" className="text-primary font-medium hover:underline">
+                  biosimilar market entry Saudi Arabia
+                </Link>
+                , and the{' '}
+                <Link to="/market-reports/gcc-biosimilars-market-report" className="text-primary font-medium hover:underline">
+                  GCC biosimilars market report
+                </Link>
+                .
+              </p>
+            </div>
+          </ReportPremiumSection>
+
           <ReportPremiumSection id="related-resources" title="Related BioNixus resources" variant="muted">
             <div className="flex flex-wrap gap-3">
               <Link

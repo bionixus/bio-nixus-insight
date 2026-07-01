@@ -328,6 +328,73 @@ const GccMedicalDevicesMarketReport = () => {
           </div>
         </section>
 
+        </section>
+
+        {/* IVD, prefilled syringes, and hospital laboratory procurement */}
+        <section className="section-padding bg-muted/10" id="ivd-prefilled-syringes">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              IVD, prefilled syringes, and hospital laboratory procurement in the GCC
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed mb-8">
+              <p>
+                In vitro diagnostics (IVD) and prefilled syringe categories account for a growing share of GCC medical
+                device spend as diabetes screening, cardiovascular biomarker panels, and hospital-administered biologics
+                scale across MOH, NGHA, and private networks. Saudi Arabia&apos;s national diabetes and CVD screening
+                programmes drive laboratory analyser and point-of-care test volume; the UAE&apos;s mandatory insurance
+                models accelerate outpatient IVD uptake in Dubai and Abu Dhabi private chains. Mindray, Roche
+                Diagnostics, Abbott, and Siemens Healthineers compete for mid-tier hospital laboratory contracts while
+                local distributors manage SFDA and MOHAP registration, cold-chain logistics, and tender documentation.
+              </p>
+              <p>
+                Prefilled syringes — insulin, anticoagulants, biologics, and vaccines — sit at the intersection of
+                pharmaceutical and device procurement. NUPCO tenders in Saudi Arabia and MOHAP hospital contracts in the
+                UAE evaluate device ergonomics, needle-stick safety, cold-chain integrity, and pharmacist substitution
+                rules alongside drug efficacy. BioNixus maps biomedical engineering preferences, procurement committee
+                scoring dimensions, and clinical user switching barriers for IVD and drug–device combination products
+                that syndicated import statistics cannot resolve at account level.
+              </p>
+              <p>
+                Regulatory pathways differ by risk class: SFDA MDIR Class A devices may proceed via notification while
+                Class B–D IVD analysers require technical review (6–18 months). UAE MOHAP federal registration coexists
+                with DHA and DOH emirate listings; a laboratory analyser approved federally may still require emirate
+                formulary steps before Dubai Health Authority hospital adoption. NHRA Bahrain offers mutual recognition
+                for Saudi- and UAE-registered devices, creating a sequencing opportunity for manufacturers prioritising
+                multi-country GCC launches.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                {
+                  category: 'Core laboratory IVD',
+                  detail:
+                    'Automated chemistry, immunoassay, and haematology analysers — replacement cycles tied to MOH capital budgets and Vision 2030 hospital upgrades.',
+                },
+                {
+                  category: 'Point-of-care diagnostics',
+                  detail:
+                    'HbA1c, cardiac troponin, and infectious disease rapid tests scaling with decentralised diabetes and emergency care models.',
+                },
+                {
+                  category: 'Molecular & PCR platforms',
+                  detail:
+                    'Post-pandemic infrastructure retention; oncology companion diagnostics gaining share at KFSH&RC and major UAE academic centres.',
+                },
+                {
+                  category: 'Prefilled syringes & autoinjectors',
+                  detail:
+                    'GLP-1, insulin, and biologic delivery devices — tender scoring blends clinical preference with pharmacist substitution and cold-chain compliance.',
+                },
+              ].map(({ category, detail }) => (
+                <div key={category} className="bg-white rounded-xl border border-border p-5 shadow-sm">
+                  <h3 className="text-base font-display font-semibold text-foreground mb-2">{category}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{detail}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* How BioNixus is Different */}
         <section className="section-padding" id="data-methodology">
           <div className="container-wide max-w-4xl mx-auto">
