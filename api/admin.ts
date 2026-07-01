@@ -2,6 +2,14 @@ import { createClient } from '@sanity/client'
 import { GoogleAuth } from 'google-auth-library'
 import crypto from 'crypto'
 import { parse } from 'csv-parse/sync'
+import { selectBatchRecipients } from '../lib/newsletter/selectBatchRecipients'
+import { getCompanyDomain } from '../lib/newsletter/companyDomain'
+import {
+  companyDomainToBatchSegment,
+  isBatchSegment,
+  BATCH_SEGMENT_PREFIX,
+} from '../lib/newsletter/batchSegments'
+import { buildSegmentGROQConditions, parseSegmentList } from '../lib/newsletter/segmentFilters'
 
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'BioNixus2026!'
 
@@ -135,6 +143,48 @@ export default async function handler(req: any, res: any) {
     return handleExportSubscribers(req, res)
   }
 
+  // ─── preview-newsletter-batch: GET ───
+  if (action === 'preview-newsletter-batch') {
+    if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' })
+    return handlePreviewNewsletterBatch(req, res)
+  }
+
+  // ─── newsletter-recipients: GET ───
+  if (action === 'newsletter-recipients') {
+    if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' })
+    return handleNewsletterRecipients(req, res)
+  }
+
+  // ─── update-newsletter-content: POST ───
+  if (action === 'update-newsletter-content') {
+    if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' })
+    return handleUpdateNewsletterContent(req, res)
+  }
+
+  // ─── list-batch-segments: GET ───
+  if (action === 'list-batch-segments') {
+    if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' })
+    return handleListBatchSegments(req, res)
+  }
+
+  // ─── generate-company-batch-segments: POST ───
+  if (action === 'generate-company-batch-segments') {
+    if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' })
+    return handleGenerateCompanyBatchSegments(req, res)
+  }
+
+  // ─── list-newsletters: GET ───
+  if (action === 'list-newsletters') {
+    if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' })
+    return handleListNewsletters(req, res)
+  }
+
+  // ─── add-newsletter-recipients: POST ───
+  if (action === 'add-newsletter-recipients') {
+    if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' })
+    return handleAddNewsletterRecipients(req, res)
+  }
+
   return res.status(400).json({ error: 'Unknown action' })
 }
 
@@ -149,6 +199,8 @@ async function handleSubscribers(req: any, res: any) {
       search = '',
       status = 'all',
       segment = 'all',
+      includeSegments: includeSegmentsRaw,
+      excludeSegments: excludeSegmentsRaw,
       verified = 'all',
       engagement = 'all',
     } = req.query
@@ -174,9 +226,14 @@ async function handleSubscribers(req: any, res: any) {
       conditions.push('subscribed == false')
     }
 
-    if (segment !== 'all') {
-      conditions.push(`"${segment}" in segments`)
+    const includeSegments = parseSegmentList(includeSegmentsRaw)
+    const excludeSegments = parseSegmentList(excludeSegmentsRaw)
+
+    if (includeSegments.length === 0 && excludeSegments.length === 0 && segment !== 'all') {
+      includeSegments.push(String(segment))
     }
+
+    conditions.push(...buildSegmentGROQConditions(includeSegments, excludeSegments))
 
     if (verified === 'verified') {
       conditions.push('emailVerified == true')
@@ -249,6 +306,41 @@ async function handleBulkActions(req: any, res: any) {
   }
 
   try {
+    if (action === 'add_to_newsletter') {
+      if (!data?.newsletterId) {
+        return res.status(400).json({ error: 'newsletterId is required' })
+      }
+
+      const newsletter = await sanityServer.fetch(
+        `*[_type == "newsletter" && _id == $id][0]{ _id, title, status, manualRecipientIds }`,
+        { id: data.newsletterId }
+      )
+
+      if (!newsletter) {
+        return res.status(404).json({ error: 'Newsletter not found' })
+      }
+
+      if (newsletter.status === 'sent') {
+        return res.status(400).json({ error: 'Newsletter is already fully sent' })
+      }
+
+      const existing: string[] = newsletter.manualRecipientIds || []
+      const toAdd = subscriberIds.filter((id: string) => !existing.includes(id))
+      const merged = [...existing, ...toAdd]
+
+      await sanityServer
+        .patch(data.newsletterId)
+        .set({ manualRecipientIds: merged })
+        .commit()
+
+      return res.status(200).json({
+        success: true,
+        affected: toAdd.length,
+        newsletterTitle: newsletter.title,
+        totalQueued: merged.length,
+      })
+    }
+
     let affected = 0
 
     for (const id of subscriberIds) {
@@ -858,10 +950,23 @@ async function handleResetNewsletter(req: any, res: any) {
   }
 
   try {
+    const deliveryIds: string[] = await sanityServer.fetch(
+      `*[_type == "newsletterDelivery" && newsletter._ref == $id]._id`,
+      { id: newsletterId }
+    )
+
+    if (deliveryIds.length > 0) {
+      let tx = sanityServer.transaction()
+      for (const id of deliveryIds) {
+        tx = tx.delete(id)
+      }
+      await tx.commit()
+    }
+
     await sanityServer
       .patch(newsletterId)
       .set({ status: 'draft' })
-      .unset(['sentAt', 'stats'])
+      .unset(['sentAt', 'sendStartedAt', 'sendCompletedAt', 'stats'])
       .commit()
 
     return res.status(200).json({ success: true, message: 'Newsletter reset to draft' })
@@ -1405,6 +1510,7 @@ async function handleImportSubscribers(req: any, res: any) {
       mobile: string | null
       title: string | null
       company: string | null
+      companyDomain: string
       language: string
       segments: string[]
       subscribed: boolean
@@ -1460,6 +1566,9 @@ async function handleImportSubscribers(req: any, res: any) {
         if (normalized.length > 0) segments = normalized
       }
 
+      const batchSegment = companyDomainToBatchSegment(getCompanyDomain(email))
+      if (!segments.includes(batchSegment)) segments.push(batchSegment)
+
       docsToCreate.push({
         _type: 'subscriber',
         firstName: record.firstName.trim(),
@@ -1469,6 +1578,7 @@ async function handleImportSubscribers(req: any, res: any) {
         mobile: record.mobile?.trim() || null,
         title: record.title?.trim() || null,
         company: record.company?.trim() || null,
+        companyDomain: getCompanyDomain(email),
         language: record.language?.toLowerCase() || 'en',
         segments,
         subscribed: record.subscribed === 'false' ? false : true,
@@ -1513,17 +1623,30 @@ async function handleImportSubscribers(req: any, res: any) {
 // ═══════════════════════════════════════════════════════════════════
 async function handleExportSubscribers(req: any, res: any) {
   try {
-    const { status = 'all', segment = 'all', verified = 'all' } = req.query
-    let query = '*[_type == "subscriber"'
-    const conditions: string[] = []
+    const {
+      status = 'all',
+      segment = 'all',
+      includeSegments: includeSegmentsRaw,
+      excludeSegments: excludeSegmentsRaw,
+      verified = 'all',
+    } = req.query
+
+    const conditions: string[] = ['_type == "subscriber"']
 
     if (status === 'subscribed') conditions.push('subscribed == true')
     else if (status === 'unsubscribed') conditions.push('subscribed == false')
-    if (segment !== 'all') conditions.push(`"${segment}" in segments`)
+
+    const includeSegments = parseSegmentList(includeSegmentsRaw)
+    const excludeSegments = parseSegmentList(excludeSegmentsRaw)
+    if (includeSegments.length === 0 && excludeSegments.length === 0 && segment !== 'all') {
+      includeSegments.push(String(segment))
+    }
+    conditions.push(...buildSegmentGROQConditions(includeSegments, excludeSegments))
+
     if (verified === 'verified') conditions.push('emailVerified == true')
     else if (verified === 'unverified') conditions.push('emailVerified == false')
-    if (conditions.length > 0) query += ' && ' + conditions.join(' && ')
-    query += '] | order(subscribedAt desc)'
+
+    const query = `*[${conditions.join(' && ')}] | order(subscribedAt desc)`
 
     const subscribers = await sanityServer.fetch(query)
     const headers = [
@@ -1569,5 +1692,303 @@ async function handleExportSubscribers(req: any, res: any) {
   } catch (error: any) {
     console.error('Export error:', error)
     return res.status(500).json({ error: 'Export failed' })
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// Newsletter batch preview
+// ═══════════════════════════════════════════════════════════════════
+async function handlePreviewNewsletterBatch(req: any, res: any) {
+  const newsletterId = req.query.newsletterId as string
+  if (!newsletterId) {
+    return res.status(400).json({ error: 'newsletterId is required' })
+  }
+
+  try {
+    const newsletter = await sanityServer.fetch(
+      `*[_type == "newsletter" && _id == $id][0] {
+        _id, title, subject, preheader, targetSegments, excludeSegments, manualRecipientIds, status, stats
+      }`,
+      { id: newsletterId }
+    )
+    if (!newsletter) {
+      return res.status(404).json({ error: 'Newsletter not found' })
+    }
+
+    const batch = await selectBatchRecipients(
+      sanityServer,
+      newsletter._id,
+      newsletter.targetSegments || ['all'],
+      {
+        manualRecipientIds: newsletter.manualRecipientIds || [],
+        excludeSegments: newsletter.excludeSegments || [],
+      }
+    )
+
+    return res.status(200).json({
+      newsletter: {
+        _id: newsletter._id,
+        title: newsletter.title,
+        subject: newsletter.subject,
+        preheader: newsletter.preheader,
+        status: newsletter.status,
+        stats: newsletter.stats,
+        manualRecipientCount: (newsletter.manualRecipientIds || []).length,
+      },
+      batchSize: batch.toSend.length,
+      manualInBatch: batch.toSend.filter((s) =>
+        (newsletter.manualRecipientIds || []).includes(s._id)
+      ).length,
+      sampleRecipients: batch.toSend.slice(0, 10).map((s) => ({
+        _id: s._id,
+        email: s.email,
+        firstName: s.firstName,
+        lastName: s.lastName,
+        company: s.company,
+        companyDomain: s.companyDomain,
+      })),
+      skipped: batch.skipped,
+      remainingAfterBatch: batch.remainingAfterBatch,
+      totalEligible: batch.totalEligible,
+      from: process.env.NEWSLETTER_FROM_EMAIL || 'BioNixus Market Research <emea@bionixus.com>',
+      replyTo: process.env.NEWSLETTER_REPLY_TO || 'admin@bionixus.com',
+    })
+  } catch (error: any) {
+    console.error('Preview batch error:', error)
+    return res.status(500).json({ error: error.message })
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// Newsletter recipients & opens
+// ═══════════════════════════════════════════════════════════════════
+async function handleNewsletterRecipients(req: any, res: any) {
+  const newsletterId = req.query.newsletterId as string
+  const filter = (req.query.filter as string) || 'all'
+
+  if (!newsletterId) {
+    return res.status(400).json({ error: 'newsletterId is required' })
+  }
+
+  try {
+    let filterClause = ''
+    if (filter === 'opened') filterClause = ' && defined(openedAt)'
+    else if (filter === 'not_opened') filterClause = ' && !defined(openedAt)'
+
+    const deliveries = await sanityServer.fetch(
+      `*[_type == "newsletterDelivery" && newsletter._ref == $id${filterClause}] | order(sentAt desc) {
+        _id, email, firstName, lastName, company, companyDomain,
+        sentAt, openedAt, openCount, clickedAt, clickCount, status
+      }`,
+      { id: newsletterId }
+    )
+
+    return res.status(200).json({ deliveries, count: deliveries.length })
+  } catch (error: any) {
+    console.error('Newsletter recipients error:', error)
+    return res.status(500).json({ error: error.message })
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// Update newsletter subject/preheader from admin review modal
+// ═══════════════════════════════════════════════════════════════════
+async function handleUpdateNewsletterContent(req: any, res: any) {
+  const { newsletterId, subject, preheader, locale = 'en' } = req.body
+
+  if (!newsletterId) {
+    return res.status(400).json({ error: 'newsletterId is required' })
+  }
+
+  try {
+    const patch: Record<string, string> = {}
+    if (subject !== undefined) patch[`subject.${locale}`] = subject
+    if (preheader !== undefined) patch[`preheader.${locale}`] = preheader
+
+    if (Object.keys(patch).length === 0) {
+      return res.status(400).json({ error: 'Nothing to update' })
+    }
+
+    await sanityServer.patch(newsletterId).set(patch).commit()
+    return res.status(200).json({ success: true })
+  } catch (error: any) {
+    console.error('Update newsletter content error:', error)
+    return res.status(500).json({ error: error.message })
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// Company batch segments (one company per batch_* segment)
+// ═══════════════════════════════════════════════════════════════════
+async function handleListBatchSegments(_req: any, res: any) {
+  try {
+    const subscribers: {
+      companyDomain?: string
+      company?: string
+      segments?: string[]
+    }[] = await sanityServer.fetch(
+      `*[_type == "subscriber" && subscribed == true] { companyDomain, company, segments }`
+    )
+
+    const map = new Map<
+      string,
+      { segment: string; companyDomain: string; count: number; sampleCompany: string | null }
+    >()
+
+    for (const sub of subscribers) {
+      const batchSegment = sub.segments?.find((s) => isBatchSegment(s))
+      if (!batchSegment) continue
+
+      const existing = map.get(batchSegment)
+      if (existing) {
+        existing.count++
+        if (!existing.sampleCompany && sub.company) existing.sampleCompany = sub.company
+      } else {
+        map.set(batchSegment, {
+          segment: batchSegment,
+          companyDomain: sub.companyDomain || batchSegment.replace(BATCH_SEGMENT_PREFIX, ''),
+          count: 1,
+          sampleCompany: sub.company || null,
+        })
+      }
+    }
+
+    const batches = [...map.values()].sort((a, b) => b.count - a.count)
+
+    return res.status(200).json({
+      totalBatches: batches.length,
+      totalSubscribers: batches.reduce((n, b) => n + b.count, 0),
+      batches,
+    })
+  } catch (error: any) {
+    console.error('List batch segments error:', error)
+    return res.status(500).json({ error: error.message })
+  }
+}
+
+async function handleGenerateCompanyBatchSegments(req: any, res: any) {
+  const { audienceSegment } = req.body || {}
+
+  try {
+    let query = `*[_type == "subscriber" && subscribed == true && defined(email)] { _id, email, companyDomain, segments, company }`
+    const params: Record<string, unknown> = {}
+
+    if (audienceSegment && audienceSegment !== 'all') {
+      query = `*[_type == "subscriber" && subscribed == true && defined(email) && $audienceSegment in segments] { _id, email, companyDomain, segments, company }`
+      params.audienceSegment = audienceSegment
+    }
+
+    const subscribers: {
+      _id: string
+      email: string
+      companyDomain?: string
+      segments?: string[]
+      company?: string
+    }[] = await sanityServer.fetch(query, params)
+
+    let updated = 0
+    const batchCounts: Record<string, number> = {}
+
+    for (let i = 0; i < subscribers.length; i += 50) {
+      const chunk = subscribers.slice(i, i + 50)
+      let tx = sanityServer.transaction()
+
+      for (const sub of chunk) {
+        const domain = sub.companyDomain || getCompanyDomain(sub.email)
+        const batchSegment = companyDomainToBatchSegment(domain)
+        const withoutBatch = (sub.segments || []).filter((s) => !isBatchSegment(s))
+        const nextSegments = withoutBatch.includes(batchSegment)
+          ? withoutBatch
+          : [...withoutBatch, batchSegment]
+
+        batchCounts[batchSegment] = (batchCounts[batchSegment] || 0) + 1
+
+        tx = tx.patch(sub._id, {
+          set: {
+            companyDomain: domain,
+            segments: nextSegments,
+          },
+        })
+        updated++
+      }
+
+      await tx.commit()
+    }
+
+    const batches = Object.entries(batchCounts)
+      .map(([segment, subscriberCount]) => ({ segment, subscriberCount }))
+      .sort((a, b) => b.subscriberCount - a.subscriberCount)
+
+    return res.status(200).json({
+      success: true,
+      updated,
+      totalBatches: batches.length,
+      batches,
+    })
+  } catch (error: any) {
+    console.error('Generate batch segments error:', error)
+    return res.status(500).json({ error: error.message })
+  }
+}
+
+async function handleListNewsletters(_req: any, res: any) {
+  try {
+    const newsletters = await sanityServer.fetch(`
+      *[_type == "newsletter" && status != "sent"] | order(_createdAt desc) {
+        _id, title, status, manualRecipientIds, targetSegments
+      }
+    `)
+
+    return res.status(200).json({
+      newsletters: newsletters.map((nl: any) => ({
+        _id: nl._id,
+        title: nl.title,
+        status: nl.status,
+        manualRecipientCount: (nl.manualRecipientIds || []).length,
+        targetSegments: nl.targetSegments || [],
+      })),
+    })
+  } catch (error: any) {
+    console.error('List newsletters error:', error)
+    return res.status(500).json({ error: error.message })
+  }
+}
+
+async function handleAddNewsletterRecipients(req: any, res: any) {
+  const { newsletterId, subscriberIds } = req.body
+
+  if (!newsletterId || !Array.isArray(subscriberIds) || subscriberIds.length === 0) {
+    return res.status(400).json({ error: 'newsletterId and subscriberIds are required' })
+  }
+
+  try {
+    const newsletter = await sanityServer.fetch(
+      `*[_type == "newsletter" && _id == $id][0]{ _id, title, status, manualRecipientIds }`,
+      { id: newsletterId }
+    )
+
+    if (!newsletter) {
+      return res.status(404).json({ error: 'Newsletter not found' })
+    }
+
+    if (newsletter.status === 'sent') {
+      return res.status(400).json({ error: 'Newsletter is already fully sent' })
+    }
+
+    const existing: string[] = newsletter.manualRecipientIds || []
+    const toAdd = subscriberIds.filter((id: string) => !existing.includes(id))
+    const merged = [...existing, ...toAdd]
+
+    await sanityServer.patch(newsletterId).set({ manualRecipientIds: merged }).commit()
+
+    return res.status(200).json({
+      success: true,
+      added: toAdd.length,
+      totalQueued: merged.length,
+      newsletterTitle: newsletter.title,
+    })
+  } catch (error: any) {
+    console.error('Add newsletter recipients error:', error)
+    return res.status(500).json({ error: error.message })
   }
 }

@@ -62,6 +62,20 @@ function extractPreheader(html) {
   return match ? match[1].replace(/\s+/g, ' ').trim() : '';
 }
 
+function assertResendReadyHtml(html, filePath) {
+  const trimmed = html.trim();
+  if (!/<!DOCTYPE\s+html/i.test(trimmed) && !/^<html[\s>]/i.test(trimmed)) {
+    console.warn(
+      `Warning: ${filePath} is not a complete HTML document. Resend sends self-contained newsletters without the generic wrapper.`
+    );
+  }
+  if (!html.includes('{{{SUBSCRIBER_UNSUBSCRIBE_URL}}}') && !html.includes('{{UNSUBSCRIBE_URL}}') && !/href=["']#["'][^>]*>\s*Unsubscribe/i.test(html)) {
+    console.warn(
+      `Warning: ${filePath} has no {{{SUBSCRIBER_UNSUBSCRIBE_URL}}} placeholder — unsubscribe links may not personalize.`
+    );
+  }
+}
+
 function deriveTitleFromFilename(filename) {
   const base = path.basename(filename, '.html');
   const withoutDate = base.replace(/^\d{4}-\d{2}-\d{2}-/, '');
@@ -106,6 +120,7 @@ async function main() {
   }
 
   const html = fs.readFileSync(filePath, 'utf8');
+  assertResendReadyHtml(html, filePath);
   const title = titleArg || `Issue 17 — UAE Biosimilars Market Report 2026`;
   const subject = subjectArg || 'UAE Biosimilars Market Report 2026 — DOH, EDE & payer intelligence';
   const preheader =

@@ -113,6 +113,13 @@ export default {
       },
     },
     {
+      name: 'resendTemplateId',
+      title: 'Resend Template ID',
+      type: 'string',
+      description: 'Published Resend template ID — when set, sends use resend.emails.send({ template }) instead of raw HTML',
+      readOnly: true,
+    },
+    {
       name: 'targetSegments',
       title: 'Send to Segments',
       type: 'array',
@@ -133,6 +140,34 @@ export default {
       validation: (Rule: any) => Rule.required().min(1),
     },
     {
+      name: 'excludeSegments',
+      title: 'Exclude Segments',
+      type: 'array',
+      of: [{ type: 'string' }],
+      description: 'Subscribers with any of these segments will not receive this newsletter',
+      options: {
+        list: [
+          { title: 'All Subscribers', value: 'all' },
+          { title: 'Pharmaceutical Clients', value: 'pharma_clients' },
+          { title: 'Hospital Administrators', value: 'hospital_admins' },
+          { title: 'Clinical Trial Participants', value: 'trial_participants' },
+          { title: 'Market Research Leads', value: 'market_research' },
+          { title: 'Key Opinion Leaders (KOLs)', value: 'kols' },
+          { title: 'Healthcare Providers', value: 'healthcare_providers' },
+          { title: 'Pharma Cold Leads (no verification needed)', value: 'pharma_cold_leads' },
+          { title: 'Test List (no verification needed)', value: 'test_list' },
+        ],
+      },
+    },
+    {
+      name: 'manualRecipientIds',
+      title: 'Manual Recipients',
+      type: 'array',
+      of: [{ type: 'string' }],
+      description: 'Subscriber document IDs explicitly queued for the next send batch',
+      readOnly: true,
+    },
+    {
       name: 'status',
       title: 'Status',
       type: 'string',
@@ -140,6 +175,7 @@ export default {
         list: [
           { title: 'Draft', value: 'draft' },
           { title: 'Scheduled', value: 'scheduled' },
+          { title: 'In Progress', value: 'in_progress' },
           { title: 'Sent', value: 'sent' },
         ],
       },
@@ -155,6 +191,19 @@ export default {
     {
       name: 'sentAt',
       title: 'Sent At',
+      type: 'datetime',
+      readOnly: true,
+      description: 'Set when all batches are complete',
+    },
+    {
+      name: 'sendStartedAt',
+      title: 'Send Started At',
+      type: 'datetime',
+      readOnly: true,
+    },
+    {
+      name: 'sendCompletedAt',
+      title: 'Send Completed At',
       type: 'datetime',
       readOnly: true,
     },
@@ -229,6 +278,12 @@ export default {
           title: 'Bounce Rate (%)',
           type: 'number',
         },
+        {
+          name: 'remainingCount',
+          title: 'Remaining Recipients',
+          type: 'number',
+          description: 'Subscribers still eligible for this newsletter',
+        },
       ],
     },
   ],
@@ -245,6 +300,7 @@ export default {
         {
           draft: '📝',
           scheduled: '⏰',
+          in_progress: '📤',
           sent: '✅',
         }[status as string] || '❓'
 

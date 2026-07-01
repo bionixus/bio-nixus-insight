@@ -2,6 +2,8 @@ import { Resend } from 'resend'
 import { SESv2Client, SendEmailCommand } from '@aws-sdk/client-sesv2'
 import { createClient } from '@sanity/client'
 import { toHTML } from '@portabletext/to-html'
+import { selectBatchRecipients } from '../lib/newsletter/selectBatchRecipients'
+import { getCompanyDomain } from '../lib/newsletter/companyDomain'
 
 // ─── Config ───
 export const config = {
@@ -21,6 +23,9 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 
 const BASE_URL = process.env.VITE_BASE_URL || 'https://www.bionixus.com'
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'BioNixus2026!'
+const NEWSLETTER_FROM =
+  process.env.NEWSLETTER_FROM_EMAIL || 'BioNixus Market Research <emea@bionixus.com>'
+const NEWSLETTER_REPLY_TO = process.env.NEWSLETTER_REPLY_TO || 'admin@bionixus.com'
 
 // ─── AWS SES setup (opt-in — requires USE_AWS_SES=true in addition to credentials) ───
 // SES stays disabled until explicitly enabled, so Resend is the default even if
@@ -32,8 +37,8 @@ const SES_ENABLED = !!(
   process.env.AWS_SES_SECRET_ACCESS_KEY &&
   process.env.AWS_SES_REGION
 )
-const SES_FROM = process.env.AWS_SES_FROM_EMAIL || 'BioNixus Market Research <newsletter@bionixus.com>'
-const SES_REPLY_TO = process.env.AWS_SES_REPLY_TO || 'digital@bionixus.uk'
+const SES_FROM = process.env.AWS_SES_FROM_EMAIL || NEWSLETTER_FROM
+const SES_REPLY_TO = process.env.AWS_SES_REPLY_TO || NEWSLETTER_REPLY_TO
 const SES_CONFIG_SET = process.env.AWS_SES_CONFIG_SET || '' // Optional: for open/click tracking
 
 let sesClient: SESv2Client | null = null
@@ -85,18 +90,23 @@ async function sendViaResend(
   subject: string,
   html: string,
   tags: { name: string; value: string }[],
-  newsletterId: string
+  newsletterId: string,
+  template?: { id: string; variables?: Record<string, string | number> }
 ): Promise<SendResult> {
   try {
-    const result = await resend.emails.send({
-      from: 'BioNixus Market Research <newsletter@bionixus.com>',
-      replyTo: 'digital@bionixus.uk',
+    const payload: Parameters<typeof resend.emails.send>[0] = {
+      from: NEWSLETTER_FROM,
+      replyTo: NEWSLETTER_REPLY_TO,
       to,
       subject,
-      html,
       headers: { 'X-Entity-Ref-ID': newsletterId },
       tags,
-    })
+      ...(template
+        ? { template: { id: template.id, variables: template.variables } }
+        : { html }),
+    }
+
+    const result = await resend.emails.send(payload)
 
     if (result.error) {
       return { success: false, error: result.error.message }
@@ -112,17 +122,24 @@ async function sendEmail(
   subject: string,
   html: string,
   tags: { name: string; value: string }[],
-  newsletterId: string
+  newsletterId: string,
+  resendTemplate?: { id: string; variables?: Record<string, string | number> }
 ): Promise<SendResult> {
   if (SES_ENABLED) {
     return sendViaSES(to, subject, html, tags)
   }
-  return sendViaResend(to, subject, html, tags, newsletterId)
+  return sendViaResend(to, subject, html, tags, newsletterId, resendTemplate)
 }
 
 // ─── Parallel batch helper ───
 async function sendBatch(
-  items: { subscriber: any; subject: string; html: string; tags: { name: string; value: string }[] }[],
+  items: {
+    subscriber: any
+    subject: string
+    html: string
+    tags: { name: string; value: string }[]
+    resendTemplate?: { id: string; variables?: Record<string, string | number> }
+  }[],
   newsletterId: string
 ): Promise<{ subscriber: any; result: SendResult }[]> {
   return Promise.all(
@@ -132,7 +149,8 @@ async function sendBatch(
         item.subject,
         item.html,
         item.tags,
-        newsletterId
+        newsletterId,
+        item.resendTemplate
       )
       return { subscriber: item.subscriber, result }
     })
@@ -156,10 +174,16 @@ export default async function handler(req: any, res: any) {
     return res.status(401).json({ error: 'Unauthorized' })
   }
 
-  const { newsletterId } = req.body
+  const { newsletterId, confirmedSubject, confirmedPreheader, contentReviewed } = req.body
 
   if (!newsletterId) {
     return res.status(400).json({ error: 'Newsletter ID is required' })
+  }
+
+  if (!contentReviewed) {
+    return res.status(400).json({
+      error: 'Content review required — confirm subject, preheader, and preview before sending',
+    })
   }
 
   try {
@@ -170,7 +194,8 @@ export default async function handler(req: any, res: any) {
 
     const newsletter = await sanityServer.fetch(
       `*[_type == "newsletter" && _id == $id][0] {
-        _id, title, subject, preheader, contentType, content, htmlContent, targetSegments, status
+        _id, title, subject, preheader, contentType, content, htmlContent,
+        targetSegments, excludeSegments, manualRecipientIds, status, resendTemplateId
       }`,
       { id: newsletterId }
     )
@@ -180,38 +205,54 @@ export default async function handler(req: any, res: any) {
     }
 
     if (newsletter.status === 'sent') {
-      return res.status(400).json({ error: 'Newsletter already sent' })
+      return res.status(400).json({ error: 'Newsletter already fully sent' })
     }
 
     console.log(`[Newsletter] Found: "${newsletter.title}", segments: ${newsletter.targetSegments?.join(', ')}`)
 
-    // 2. Get subscribers
     const targetSegments = newsletter.targetSegments || ['all']
-    const hasNoVerifySegment = targetSegments.some(
-      (s: string) => s === 'pharma_cold_leads' || s === 'test_list'
+    const manualRecipientIds: string[] = newsletter.manualRecipientIds || []
+    const batch = await selectBatchRecipients(sanityServer, newsletter._id, targetSegments, {
+      manualRecipientIds,
+      excludeSegments: newsletter.excludeSegments || [],
+    })
+
+    console.log(
+      `[Newsletter] Batch: ${batch.toSend.length} to send, ${batch.remainingAfterBatch} remaining after batch`
     )
 
-    const subscribers = await sanityServer.fetch(
-      `*[_type == "subscriber" && subscribed == true && count((segments[@ in $targetSegments])) > 0 && (
-        emailVerified == true ||
-        ($hasNoVerifySegment && ("pharma_cold_leads" in segments || "test_list" in segments))
-      )] { _id, email, firstName, lastName, language }`,
-      { targetSegments, hasNoVerifySegment: hasNoVerifySegment || false }
-    )
-
-    console.log(`[Newsletter] Found ${subscribers.length} matching subscribers`)
-
-    if (!subscribers || subscribers.length === 0) {
-      return res.status(400).json({ error: 'No subscribers found for target segments' })
+    if (batch.toSend.length === 0) {
+      return res.status(400).json({
+        error: 'No recipients eligible for today\'s batch',
+        skipped: batch.skipped,
+        remaining: batch.remainingAfterBatch,
+      })
     }
 
+    const subscribers = batch.toSend
+
     // 3. Prepare all emails
-    const emailItems: { subscriber: any; subject: string; html: string; tags: { name: string; value: string }[] }[] = []
+    const emailItems: {
+      subscriber: any
+      subject: string
+      html: string
+      tags: { name: string; value: string }[]
+      resendTemplate?: { id: string; variables?: Record<string, string | number> }
+    }[] = []
+
+    const useResendTemplate = !SES_ENABLED && !!newsletter.resendTemplateId
 
     for (const subscriber of subscribers) {
       const locale = subscriber.language || 'en'
-      const subject = newsletter.subject?.[locale] || newsletter.subject?.en || newsletter.title || 'Newsletter'
-      const preheader = newsletter.preheader?.[locale] || newsletter.preheader?.en || ''
+      const sanitySubject =
+        newsletter.subject?.[locale] || newsletter.subject?.en || newsletter.title || 'Newsletter'
+      const subject =
+        confirmedSubject?.trim() || sanitySubject
+      const preheader =
+        confirmedPreheader?.trim() ||
+        newsletter.preheader?.[locale] ||
+        newsletter.preheader?.en ||
+        ''
 
       let bodyContent = ''
       if (newsletter.contentType === 'html') {
@@ -221,15 +262,19 @@ export default async function handler(req: any, res: any) {
         bodyContent = ptContent ? portableTextToHTML(ptContent) : ''
       }
 
-      const subscriberName = [subscriber.firstName, subscriber.lastName].filter(Boolean).join(' ')
-      const html = generateEmailTemplate({
-        subject,
-        preheader,
-        content: bodyContent,
-        subscriberName,
-        subscriberId: subscriber._id,
-        unsubscribeLink: `${BASE_URL}/unsubscribe?id=${subscriber._id}`,
-      })
+      const unsubscribeLink = `${BASE_URL}/unsubscribe?id=${subscriber._id}`
+
+      const html =
+        useResendTemplate
+          ? ''
+          : newsletter.contentType === 'html' && isCompleteHtmlDocument(bodyContent)
+            ? personalizeHtmlNewsletter(bodyContent, { unsubscribeLink })
+            : generateEmailTemplate({
+                subject,
+                preheader,
+                content: bodyContent,
+                unsubscribeLink,
+              })
 
       emailItems.push({
         subscriber,
@@ -240,6 +285,14 @@ export default async function handler(req: any, res: any) {
           { name: 'subscriber_id', value: subscriber._id },
           { name: 'language', value: locale },
         ],
+        ...(useResendTemplate
+          ? {
+              resendTemplate: {
+                id: newsletter.resendTemplateId,
+                variables: { SUBSCRIBER_UNSUBSCRIBE_URL: unsubscribeLink },
+              },
+            }
+          : {}),
       })
     }
 
@@ -253,6 +306,10 @@ export default async function handler(req: any, res: any) {
     const errors: string[] = []
     const failedEmails: { email: string; subscriberId: string; reason: string }[] = []
     const successIds: string[] = []
+    const deliveryRecords: {
+      subscriber: any
+      resendEmailId?: string
+    }[] = []
     let successCount = 0
     let failedCount = 0
 
@@ -270,6 +327,7 @@ export default async function handler(req: any, res: any) {
       for (const { subscriber, result } of results) {
         if (result.success) {
           successIds.push(subscriber._id)
+          deliveryRecords.push({ subscriber, resendEmailId: result.messageId })
           successCount++
         } else if (result.error?.includes('Too many requests') || result.error?.includes('rate')) {
           // Rate-limited — retry with exponential backoff
@@ -278,9 +336,18 @@ export default async function handler(req: any, res: any) {
             const backoff = attempt * 1500 // 1.5s, 3s, 4.5s
             console.log(`[Newsletter] Rate-limited ${subscriber.email}, retry ${attempt}/${MAX_RETRIES} in ${backoff}ms`)
             await sleep(backoff)
-            const retry = await sendEmail(subscriber.email, batch[0].subject, batch[0].html, batch[0].tags, newsletter._id)
+            const item = batch.find((b) => b.subscriber._id === subscriber._id)
+            const retry = await sendEmail(
+              subscriber.email,
+              item?.subject ?? batch[0].subject,
+              item?.html ?? batch[0].html,
+              item?.tags ?? batch[0].tags,
+              newsletter._id,
+              item?.resendTemplate
+            )
             if (retry.success) {
               successIds.push(subscriber._id)
+              deliveryRecords.push({ subscriber, resendEmailId: retry.messageId })
               successCount++
               retrySuccess = true
               break
@@ -312,8 +379,43 @@ export default async function handler(req: any, res: any) {
 
     console.log(`[Newsletter] Done: ${successCount} succeeded, ${failedCount} failed (via ${provider})`)
 
-    // 5. Update subscriber analytics (batch by 25, flush incrementally to avoid timeout)
     const now = new Date().toISOString()
+
+    if (successCount === 0) {
+      return res.status(500).json({
+        success: false,
+        error: `All ${failedCount} emails failed`,
+        provider,
+        errors,
+        failedEmails,
+        skipped: batch.skipped,
+      })
+    }
+
+    // 5. Create newsletterDelivery records
+    for (const { subscriber, resendEmailId } of deliveryRecords) {
+      try {
+        await sanityServer.create({
+          _type: 'newsletterDelivery',
+          newsletter: { _type: 'reference', _ref: newsletter._id },
+          subscriber: { _type: 'reference', _ref: subscriber._id },
+          email: subscriber.email,
+          firstName: subscriber.firstName || null,
+          lastName: subscriber.lastName || null,
+          company: subscriber.company || null,
+          companyDomain: subscriber.companyDomain || getCompanyDomain(subscriber.email),
+          sentAt: now,
+          resendEmailId: resendEmailId || null,
+          status: 'sent',
+          openCount: 0,
+          clickCount: 0,
+        })
+      } catch (e: any) {
+        console.error(`[Newsletter] Delivery record error for ${subscriber.email}:`, e?.message || e)
+      }
+    }
+
+    // 6. Update subscriber analytics (batch by 25, flush incrementally to avoid timeout)
     const ANALYTICS_BATCH = 25
     for (let i = 0; i < successIds.length; i += ANALYTICS_BATCH) {
       const chunk = successIds.slice(i, i + ANALYTICS_BATCH)
@@ -333,35 +435,45 @@ export default async function handler(req: any, res: any) {
       }
     }
 
-    // 6. Mark as sent if at least one succeeded
-    if (successCount === 0) {
-      return res.status(500).json({
-        success: false,
-        error: `All ${failedCount} emails failed`,
-        provider,
-        errors,
-        failedEmails,
-      })
-    }
+    const isComplete = batch.remainingAfterBatch === 0
+    const prevStats = (await sanityServer.fetch(
+      `*[_type == "newsletter" && _id == $id][0].stats`,
+      { id: newsletter._id }
+    )) || {}
+
+    const cumulativeSuccess = (prevStats.successCount || 0) + successCount
+    const cumulativeFailed = (prevStats.failedCount || 0) + failedCount
+
+    const sentManualIds = new Set(successIds.filter((id) => manualRecipientIds.includes(id)))
+    const remainingManualIds = manualRecipientIds.filter((id) => !sentManualIds.has(id))
 
     await sanityServer
       .patch(newsletter._id)
       .set({
-        status: 'sent',
-        sentAt: now,
+        status: isComplete ? 'sent' : 'in_progress',
+        manualRecipientIds: remainingManualIds,
+        ...(newsletter.status === 'draft' ? { sendStartedAt: now } : {}),
+        ...(isComplete ? { sentAt: now, sendCompletedAt: now } : {}),
         stats: {
-          totalSent: subscribers.length,
-          successCount,
-          failedCount,
-          openCount: 0, uniqueOpenCount: 0,
-          clickCount: 0, uniqueClickCount: 0,
-          bounceCount: 0, complaintCount: 0, unsubscribeCount: 0,
-          openRate: 0, clickRate: 0, bounceRate: 0,
+          totalSent: cumulativeSuccess,
+          successCount: cumulativeSuccess,
+          failedCount: cumulativeFailed,
+          openCount: prevStats.openCount || 0,
+          uniqueOpenCount: prevStats.uniqueOpenCount || 0,
+          clickCount: prevStats.clickCount || 0,
+          uniqueClickCount: prevStats.uniqueClickCount || 0,
+          bounceCount: prevStats.bounceCount || 0,
+          complaintCount: prevStats.complaintCount || 0,
+          unsubscribeCount: prevStats.unsubscribeCount || 0,
+          openRate: prevStats.openRate || 0,
+          clickRate: prevStats.clickRate || 0,
+          bounceRate: prevStats.bounceRate || 0,
+          remainingCount: batch.remainingAfterBatch,
         },
       })
       .commit()
 
-    // 7. Store failed emails as separate documents
+    // 8. Store failed emails as separate documents
     if (failedEmails.length > 0) {
       let tx = sanityServer.transaction()
       for (const fe of failedEmails) {
@@ -382,9 +494,12 @@ export default async function handler(req: any, res: any) {
     return res.status(200).json({
       success: true,
       provider,
-      totalSent: subscribers.length,
-      successCount,
-      failedCount,
+      batchSent: successCount,
+      successCount: cumulativeSuccess,
+      failedCount: cumulativeFailed,
+      skipped: batch.skipped,
+      remaining: batch.remainingAfterBatch,
+      status: isComplete ? 'sent' : 'in_progress',
       failedEmails: failedEmails.length > 0 ? failedEmails : undefined,
       errors: errors.length > 0 ? errors : undefined,
     })
@@ -444,6 +559,26 @@ function escapeHtml(str: string): string {
     .replace(/"/g, '&quot;')
 }
 
+/** Newsletters in /newsletters are self-contained HTML documents — do not wrap again. */
+function isCompleteHtmlDocument(html: string): boolean {
+  const trimmed = html.trim()
+  return /<!DOCTYPE\s+html/i.test(trimmed) || /^<html[\s>]/i.test(trimmed)
+}
+
+function personalizeHtmlNewsletter(
+  html: string,
+  { unsubscribeLink }: { unsubscribeLink: string }
+): string {
+  const safeLink = escapeHtml(unsubscribeLink)
+  return html
+    .replace(/\{\{\{SUBSCRIBER_UNSUBSCRIBE_URL\}\}\}/g, safeLink)
+    .replace(/\{\{UNSUBSCRIBE_URL\}\}/g, safeLink)
+    .replace(
+      /(<a\b[^>]*href=["'])#(["'][^>]*>\s*Unsubscribe)/gi,
+      `$1${safeLink}$2`
+    )
+}
+
 // ═══════════════════════════════════════════════════════════════════
 // Email template generator
 // ═══════════════════════════════════════════════════════════════════
@@ -451,10 +586,13 @@ function generateEmailTemplate({
   subject,
   preheader,
   content,
-  subscriberName,
-  subscriberId,
   unsubscribeLink,
-}: any) {
+}: {
+  subject: string
+  preheader: string
+  content: string
+  unsubscribeLink: string
+}) {
   return `
 <!DOCTYPE html>
 <html lang="en">
@@ -483,11 +621,9 @@ function generateEmailTemplate({
         <p style="color: #c8a45a; margin: 8px 0 0 0; font-size: 14px; letter-spacing: 1px;">Healthcare Market Research</p>
       </td>
     </tr>
-    <!-- Greeting -->
-    ${subscriberName ? `<tr><td style="padding: 24px 24px 0 24px; font-size: 16px; color: #333;">Hi ${escapeHtml(subscriberName)},</td></tr>` : ''}
     <!-- Content -->
     <tr>
-      <td style="padding: 16px 0 0 0;">
+      <td style="padding: 24px 24px 0 24px;">
         ${content}
       </td>
     </tr>

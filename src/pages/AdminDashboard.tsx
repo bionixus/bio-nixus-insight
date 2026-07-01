@@ -1,15 +1,45 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { useAdminAuth, getAuthToken } from '@/hooks/useAdminAuth'
+import { SegmentMultiSelect, SegmentChipPicker } from '@/components/admin/SegmentMultiSelect'
+import { CORE_SEGMENTS } from '../../lib/newsletter/batchSegments'
 
-function BulkActionsPanel({ selectedIds, onActionComplete }: any) {
+interface NewsletterOption {
+  _id: string
+  title: string
+  status: string
+  manualRecipientCount: number
+}
+
+interface BulkActionsPanelProps {
+  selectedIds: string[]
+  batchSegmentOptions: { value: string; label: string }[]
+  onActionComplete: () => void
+}
+
+function BulkActionsPanel({ selectedIds, batchSegmentOptions, onActionComplete }: BulkActionsPanelProps) {
   const [action, setAction] = useState('')
   const [segmentData, setSegmentData] = useState({
     segment: '',
     segments: [] as string[],
     language: 'en',
+    newsletterId: '',
   })
+  const [newsletters, setNewsletters] = useState<NewsletterOption[]>([])
   const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    if (selectedIds.length === 0) return
+    const token = getAuthToken()
+    fetch('/api/admin?action=list-newsletters', {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then((r) => r.json())
+      .then((d) => {
+        if (d.newsletters) setNewsletters(d.newsletters)
+      })
+      .catch(() => {})
+  }, [selectedIds.length])
 
   const handleBulkAction = async () => {
     if (selectedIds.length === 0) {
@@ -17,7 +47,17 @@ function BulkActionsPanel({ selectedIds, onActionComplete }: any) {
       return
     }
 
-    const actionLabels: any = {
+    if (action === 'replace_segments' && segmentData.segments.length === 0) {
+      alert('Please select at least one segment to replace with')
+      return
+    }
+
+    if (action === 'add_to_newsletter' && !segmentData.newsletterId) {
+      alert('Please select a newsletter')
+      return
+    }
+
+    const actionLabels: Record<string, string> = {
       delete: 'unsubscribe',
       hard_delete: 'permanently delete',
       add_segment: 'add segment to',
@@ -27,6 +67,7 @@ function BulkActionsPanel({ selectedIds, onActionComplete }: any) {
       resubscribe: 'reactivate',
       verify: 'mark as verified',
       unverify: 'mark as unverified',
+      add_to_newsletter: 'add to newsletter send list for',
     }
 
     const confirmed = confirm(
@@ -49,7 +90,9 @@ function BulkActionsPanel({ selectedIds, onActionComplete }: any) {
           action,
           subscriberIds: selectedIds,
           data:
-            action.includes('segment') || action === 'change_language'
+            action.includes('segment') ||
+            action === 'change_language' ||
+            action === 'add_to_newsletter'
               ? segmentData
               : undefined,
         }),
@@ -58,12 +101,18 @@ function BulkActionsPanel({ selectedIds, onActionComplete }: any) {
       const result = await response.json()
 
       if (result.success) {
-        alert(`✅ Successfully processed ${result.affected} subscriber(s)`)
+        if (action === 'add_to_newsletter') {
+          alert(
+            `✅ Added ${result.affected} subscriber(s) to "${result.newsletterTitle}" (${result.totalQueued} total queued)`
+          )
+        } else {
+          alert(`✅ Successfully processed ${result.affected} subscriber(s)`)
+        }
         onActionComplete()
       } else {
         alert(`❌ Error: ${result.error}`)
       }
-    } catch (error) {
+    } catch {
       alert('❌ Failed to perform bulk action')
     } finally {
       setLoading(false)
@@ -98,7 +147,7 @@ function BulkActionsPanel({ selectedIds, onActionComplete }: any) {
     >
       <h3 style={{ marginTop: 0 }}>⚡ Bulk Actions ({selectedIds.length} selected)</h3>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '2fr 2fr 1fr', gap: '15px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr auto', gap: '15px', alignItems: 'start' }}>
         <select
           value={action}
           onChange={(e) => setAction(e.target.value)}
@@ -115,6 +164,7 @@ function BulkActionsPanel({ selectedIds, onActionComplete }: any) {
           <option value="add_segment">➕ Add Segment</option>
           <option value="remove_segment">➖ Remove Segment</option>
           <option value="replace_segments">🔄 Replace All Segments</option>
+          <option value="add_to_newsletter">📧 Add to Newsletter Send</option>
           <option value="change_language">🌍 Change Language</option>
           <option value="resubscribe">🔄 Reactivate</option>
           <option value="delete">🚫 Unsubscribe</option>
@@ -133,15 +183,45 @@ function BulkActionsPanel({ selectedIds, onActionComplete }: any) {
             }}
           >
             <option value="">Choose Segment...</option>
-            <option value="all">All Subscribers</option>
-            <option value="pharma_clients">Pharmaceutical Clients</option>
-            <option value="hospital_admins">Hospital Administrators</option>
-            <option value="kols">Key Opinion Leaders</option>
-            <option value="trial_participants">Clinical Trial Participants</option>
-            <option value="market_research">Market Research Leads</option>
-            <option value="healthcare_providers">Healthcare Providers</option>
-            <option value="pharma_cold_leads">Pharma Cold Leads</option>
-            <option value="test_list">Test List</option>
+            {CORE_SEGMENTS.map((s) => (
+              <option key={s.value} value={s.value}>
+                {s.label}
+              </option>
+            ))}
+            {batchSegmentOptions.length > 0 && (
+              <optgroup label="Company batches">
+                {batchSegmentOptions.map((b) => (
+                  <option key={b.value} value={b.value}>
+                    {b.label}
+                  </option>
+                ))}
+              </optgroup>
+            )}
+          </select>
+        ) : action === 'replace_segments' ? (
+          <SegmentChipPicker
+            selected={segmentData.segments}
+            onChange={(segments) => setSegmentData({ ...segmentData, segments })}
+            batchOptions={batchSegmentOptions}
+          />
+        ) : action === 'add_to_newsletter' ? (
+          <select
+            value={segmentData.newsletterId}
+            onChange={(e) => setSegmentData({ ...segmentData, newsletterId: e.target.value })}
+            style={{
+              padding: '10px',
+              border: '1px solid #ddd',
+              borderRadius: '6px',
+              fontSize: '14px',
+            }}
+          >
+            <option value="">Choose Newsletter...</option>
+            {newsletters.map((nl) => (
+              <option key={nl._id} value={nl._id}>
+                {nl.title} ({nl.status}
+                {nl.manualRecipientCount > 0 ? `, ${nl.manualRecipientCount} queued` : ''})
+              </option>
+            ))}
           </select>
         ) : action === 'change_language' ? (
           <select
@@ -188,16 +268,20 @@ function BulkActionsPanel({ selectedIds, onActionComplete }: any) {
 export default function AdminDashboard() {
   const { loading: authLoading, isAuthenticated } = useAdminAuth()
   const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
 
   const [data, setData] = useState<any>(null)
   const [loading, setLoading] = useState(true)
   const [selectedIds, setSelectedIds] = useState<string[]>([])
+  const [batchSegmentOptions, setBatchSegmentOptions] = useState<{ value: string; label: string }[]>([])
+  const urlSegment = searchParams.get('segment')
   const [filters, setFilters] = useState({
     page: 1,
     perPage: 50,
     search: '',
     status: 'all',
-    segment: 'all',
+    includeSegments: urlSegment && urlSegment !== 'all' ? [urlSegment] : [] as string[],
+    excludeSegments: [] as string[],
     verified: 'all',
     engagement: 'all',
   })
@@ -207,16 +291,44 @@ export default function AdminDashboard() {
     fetchData()
   }, [isAuthenticated, filters])
 
+  useEffect(() => {
+    if (!isAuthenticated) return
+    const token = getAuthToken()
+    fetch('/api/admin?action=list-batch-segments', {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then((r) => r.json())
+      .then((d) => {
+        if (d.batches) {
+          setBatchSegmentOptions(
+            d.batches.map((b: { segment: string; companyDomain: string }) => ({
+              value: b.segment,
+              label: `${b.companyDomain} (${b.segment})`,
+            }))
+          )
+        }
+      })
+      .catch(() => {})
+  }, [isAuthenticated])
+
   const fetchData = async () => {
     setLoading(true)
     try {
       const token = getAuthToken()
-      const params = new URLSearchParams(
-        Object.entries(filters).reduce(
-          (acc, [k, v]) => ({ ...acc, [k]: String(v) }),
-          {} as Record<string, string>
-        )
-      )
+      const params = new URLSearchParams({
+        page: String(filters.page),
+        perPage: String(filters.perPage),
+        search: filters.search,
+        status: filters.status,
+        verified: filters.verified,
+        engagement: filters.engagement,
+      })
+      if (filters.includeSegments.length > 0) {
+        params.set('includeSegments', filters.includeSegments.join(','))
+      }
+      if (filters.excludeSegments.length > 0) {
+        params.set('excludeSegments', filters.excludeSegments.join(','))
+      }
 
       const response = await fetch(`/api/admin?action=subscribers&${params}`, {
         headers: { Authorization: `Bearer ${token}` },
@@ -240,9 +352,14 @@ export default function AdminDashboard() {
     const token = getAuthToken()
     const params = new URLSearchParams({
       status: filters.status,
-      segment: filters.segment,
       verified: filters.verified,
     })
+    if (filters.includeSegments.length > 0) {
+      params.set('includeSegments', filters.includeSegments.join(','))
+    }
+    if (filters.excludeSegments.length > 0) {
+      params.set('excludeSegments', filters.excludeSegments.join(','))
+    }
 
     try {
       const response = await fetch(`/api/admin?action=export-subscribers&${params}`, {
@@ -308,6 +425,20 @@ export default function AdminDashboard() {
           <p style={{ margin: 0, opacity: 0.9 }}>BioNixus Healthcare Market Research</p>
         </div>
         <div style={{ display: 'flex', gap: '10px' }}>
+          <button
+            onClick={() => navigate('/admin/batch-segments')}
+            style={{
+              padding: '10px 20px',
+              background: 'white',
+              color: '#667eea',
+              border: 'none',
+              borderRadius: '6px',
+              cursor: 'pointer',
+              fontWeight: 'bold',
+            }}
+          >
+            🏢 Batch Segments
+          </button>
           <button
             onClick={() => navigate('/admin/send-newsletter')}
             style={{
@@ -415,6 +546,7 @@ export default function AdminDashboard() {
       {/* Bulk Actions */}
       <BulkActionsPanel
         selectedIds={selectedIds}
+        batchSegmentOptions={batchSegmentOptions}
         onActionComplete={() => {
           setSelectedIds([])
           fetchData()
@@ -434,7 +566,7 @@ export default function AdminDashboard() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: '2fr 1fr 1fr 1fr 1fr',
+            gridTemplateColumns: '2fr 1fr 1fr 1fr',
             gap: '15px',
             marginBottom: '15px',
           }}
@@ -465,27 +597,6 @@ export default function AdminDashboard() {
             <option value="all">All Status</option>
             <option value="subscribed">✅ Subscribed</option>
             <option value="unsubscribed">❌ Unsubscribed</option>
-          </select>
-
-          <select
-            value={filters.segment}
-            onChange={(e) => setFilters({ ...filters, segment: e.target.value, page: 1 })}
-            style={{
-              padding: '10px',
-              border: '1px solid #ddd',
-              borderRadius: '6px',
-              fontSize: '14px',
-            }}
-          >
-            <option value="all">All Segments</option>
-            <option value="pharma_clients">Pharmaceutical Clients</option>
-            <option value="hospital_admins">Hospital Administrators</option>
-            <option value="trial_participants">Clinical Trial Participants</option>
-            <option value="market_research">Market Research Leads</option>
-            <option value="kols">Key Opinion Leaders (KOLs)</option>
-            <option value="healthcare_providers">Healthcare Providers</option>
-            <option value="pharma_cold_leads">Pharma Cold Leads</option>
-            <option value="test_list">Test List</option>
           </select>
 
           <select
@@ -521,6 +632,55 @@ export default function AdminDashboard() {
             <option value="new">🆕 New (No Emails Sent)</option>
           </select>
         </div>
+
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '15px',
+            marginBottom: '15px',
+          }}
+        >
+          <SegmentMultiSelect
+            label="Include segments (match any)"
+            selected={filters.includeSegments}
+            onChange={(includeSegments) =>
+              setFilters({ ...filters, includeSegments, page: 1 })
+            }
+            batchOptions={batchSegmentOptions}
+            accentColor="#28a745"
+          />
+          <SegmentMultiSelect
+            label="Exclude segments (must not have)"
+            selected={filters.excludeSegments}
+            onChange={(excludeSegments) =>
+              setFilters({ ...filters, excludeSegments, page: 1 })
+            }
+            batchOptions={batchSegmentOptions}
+            accentColor="#dc3545"
+          />
+        </div>
+
+        {(filters.includeSegments.length > 0 || filters.excludeSegments.length > 0) && (
+          <button
+            type="button"
+            onClick={() =>
+              setFilters({ ...filters, includeSegments: [], excludeSegments: [], page: 1 })
+            }
+            style={{
+              padding: '6px 12px',
+              marginBottom: '15px',
+              background: 'transparent',
+              color: '#666',
+              border: '1px solid #ddd',
+              borderRadius: '6px',
+              cursor: 'pointer',
+              fontSize: '13px',
+            }}
+          >
+            Clear segment filters
+          </button>
+        )}
 
         <div style={{ display: 'flex', gap: '10px' }}>
           <button

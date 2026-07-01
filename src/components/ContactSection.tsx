@@ -12,7 +12,7 @@ import {
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths, localizedContactPath } from '@/lib/seo';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
-import { TrustCoverageMap } from '@/components/media/TrustCoverageMap';
+import { GlobalCoverage38Map } from '@/components/media/GlobalCoverage38Map';
 import { CONTACT_FORM_COUNTRIES } from '@/data/contactFormCountries';
 
 type ContactValidation = {
@@ -105,9 +105,20 @@ function sendErrorEmail(fields: ErrorEmailFields, errorDetails: string) {
 type ContactSectionProps = {
   /** When true (homepage only), show a short CTA instead of the full proposal form to avoid near-duplicate HTML vs `/contact`. */
   embedOnHomePage?: boolean;
+  /** Premium editorial layout for `/contact` — skips duplicate hero copy, uses elevated cards. */
+  premiumLayout?: boolean;
 };
 
-const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
+const OFFICE_LOCATIONS = [
+  { city: 'Sheridan, WY', role: 'Global HQ' },
+  { city: 'London, UK', role: 'Europe' },
+  { city: 'Dubai, UAE', role: 'GCC hub' },
+  { city: 'Riyadh & Jeddah', role: 'Saudi Arabia' },
+  { city: 'Kuwait City', role: 'Kuwait' },
+  { city: 'Cairo, Egypt', role: 'MENA' },
+] as const;
+
+const ContactSection = ({ embedOnHomePage = false, premiumLayout = false }: ContactSectionProps) => {
   const { t, language, isRTL } = useLanguage();
   const phoneRegionLabels = t.homePage.cta.phoneRegionLabels;
   const phoneLines = [
@@ -275,102 +286,175 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
     );
   }
 
-  return (
-    <section id="contact" className="section-padding bg-background" ref={sectionRef}>
-      <div className="container-wide">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left Content */}
-          <div className="sr sr-left">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6">
-              {t.contact.title}
-            </h2>
-            <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
-              {t.contact.subtitle}
-            </p>
+  const sectionBg = premiumLayout ? 'bg-[#FAFAF8]' : 'bg-background';
+  const formCardClass = premiumLayout
+    ? 'relative bg-white p-8 lg:p-10 rounded-2xl shadow-[0_24px_64px_-20px_rgba(16,28,48,0.14)] border border-border/60 scroll-mt-28 overflow-hidden'
+    : 'bg-card p-8 lg:p-10 rounded-2xl shadow-elegant border border-border scroll-mt-24';
+  const inputClass = premiumLayout
+    ? 'w-full px-4 py-3 rounded-lg border bg-[#FAFAF8] text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/25 focus:border-[#C9A84C]/50 transition-colors'
+    : 'w-full px-4 py-3 rounded-lg border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors';
+  const submitBtnClass = premiumLayout
+    ? 'w-full py-4 rounded-lg font-semibold text-[#06101F] bg-gradient-to-r from-[#C9A84C] to-[#B8862D] shadow-[0_8px_28px_-8px_rgba(201,168,76,0.4)] hover:brightness-105 transition-all disabled:opacity-70 disabled:cursor-not-allowed'
+    : 'w-full py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-opacity disabled:opacity-70 disabled:cursor-not-allowed';
 
-            <div className="space-y-6 mb-10">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center">
-                  <Mail className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <div className="text-sm text-muted-foreground">{t.contact.emailLabel}</div>
-                  <a href="mailto:admin@bionixus.com" className="text-foreground font-medium hover:text-primary transition-colors">
+  return (
+    <section id="contact" className={`section-padding ${sectionBg}`} ref={sectionRef}>
+      <div className="container-wide max-w-6xl mx-auto">
+        {premiumLayout ? (
+          <div className={`mb-10 max-w-2xl ${isRTL ? 'mr-auto text-right' : ''}`}>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/70 mb-3">Get in touch</p>
+            <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground">{t.contact.formTitle}</h2>
+            <p className="mt-3 text-muted-foreground leading-relaxed">{t.contact.subtitle}</p>
+          </div>
+        ) : null}
+
+        <div className={`grid lg:grid-cols-2 gap-12 lg:gap-16 ${premiumLayout ? 'items-start' : 'items-center'}`}>
+          {/* Left Content */}
+          <div className={`sr sr-left ${premiumLayout ? 'space-y-6' : ''}`}>
+            {!premiumLayout ? (
+              <>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6">
+                  {t.contact.title}
+                </h2>
+                <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
+                  {t.contact.subtitle}
+                </p>
+              </>
+            ) : null}
+
+            {premiumLayout ? (
+              <div className="grid sm:grid-cols-2 gap-4">
+                <article className="rounded-xl border border-border/70 bg-white p-5 shadow-[0_12px_40px_-16px_rgba(16,28,48,0.1)]">
+                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-[#06101F]/5">
+                    <Mail className="h-4 w-4 text-[#C9A84C]" />
+                  </div>
+                  <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-1">{t.contact.emailLabel}</div>
+                  <a href="mailto:admin@bionixus.com" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
                     {t.contact.email}
                   </a>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center">
-                  <MapPin className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <div className="text-sm text-muted-foreground">{t.contact.headquartersLabel}</div>
-                  <div className="text-foreground font-medium">{t.contact.headquarters}</div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center">
-                  <MapPin className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <div className="text-sm text-muted-foreground">Regional Representation</div>
-                  <div className="text-foreground font-medium mt-1">
-                    Dubai, UAE<br />
-                    Jeddah, Saudi Arabia<br />
-                    Kuwait City, Kuwait<br />
-                    Cairo, Egypt
+                </article>
+                <article className="rounded-xl border border-border/70 bg-white p-5 shadow-[0_12px_40px_-16px_rgba(16,28,48,0.1)]">
+                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-[#06101F]/5">
+                    <Phone className="h-4 w-4 text-[#C9A84C]" />
                   </div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center">
-                  <Phone className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <div className="text-sm text-muted-foreground">{t.contact.phoneLabel}</div>
+                  <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">{t.contact.phoneLabel}</div>
                   <div className="flex flex-col gap-1">
                     {phoneLines.map((line) => (
-                      <a
-                        key={line.tel}
-                        href={`tel:${line.tel}`}
-                        className="text-foreground font-medium hover:text-primary transition-colors"
-                      >
+                      <a key={line.tel} href={`tel:${line.tel}`} className="text-sm font-medium text-foreground hover:text-primary transition-colors">
                         {line.label}
                       </a>
                     ))}
                   </div>
+                </article>
+                <article className="sm:col-span-2 rounded-xl border border-border/70 bg-white p-5 shadow-[0_12px_40px_-16px_rgba(16,28,48,0.1)]">
+                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-[#06101F]/5">
+                    <MapPin className="h-4 w-4 text-[#C9A84C]" />
+                  </div>
+                  <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+                    Regional offices · 38-country coverage
+                  </div>
+                  <div className="grid sm:grid-cols-2 gap-x-6 gap-y-2">
+                    {OFFICE_LOCATIONS.map((office) => (
+                      <div key={office.city} className="flex items-baseline justify-between gap-2 text-sm">
+                        <span className="font-medium text-foreground">{office.city}</span>
+                        <span className="text-xs text-muted-foreground shrink-0">{office.role}</span>
+                      </div>
+                    ))}
+                  </div>
+                </article>
+              </div>
+            ) : (
+              <div className="space-y-6 mb-10">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center">
+                    <Mail className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <div className="text-sm text-muted-foreground">{t.contact.emailLabel}</div>
+                    <a href="mailto:admin@bionixus.com" className="text-foreground font-medium hover:text-primary transition-colors">
+                      {t.contact.email}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center">
+                    <MapPin className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <div className="text-sm text-muted-foreground">{t.contact.headquartersLabel}</div>
+                    <div className="text-foreground font-medium">{t.contact.headquarters}</div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center">
+                    <MapPin className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <div className="text-sm text-muted-foreground">Regional offices · 38-country coverage</div>
+                    <div className="text-foreground font-medium mt-1">
+                      Sheridan, WY (global HQ)<br />
+                      London, UK<br />
+                      Dubai, UAE<br />
+                      Riyadh &amp; Jeddah, Saudi Arabia<br />
+                      Kuwait City, Kuwait<br />
+                      Cairo, Egypt
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center">
+                    <Phone className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <div className="text-sm text-muted-foreground">{t.contact.phoneLabel}</div>
+                    <div className="flex flex-col gap-1">
+                      {phoneLines.map((line) => (
+                        <a
+                          key={line.tel}
+                          href={`tel:${line.tel}`}
+                          className="text-foreground font-medium hover:text-primary transition-colors"
+                        >
+                          {line.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
 
-            <TrustCoverageMap />
+            <GlobalCoverage38Map variant="sidebar" premium={premiumLayout} className={premiumLayout ? 'mt-2' : ''} />
 
-            <div className="flex flex-wrap gap-4 mt-10">
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-opacity group"
-              >
-                {t.contact.cta}
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-              {(t.contact as { ctaSecondary?: string }).ctaSecondary && (
-                <Link
-                  to={basePath === '/' ? '/#services' : `${basePath}#services`}
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-foreground rounded-lg font-semibold border border-border hover:bg-secondary/80 transition-colors group"
+            {!premiumLayout ? (
+              <div className="flex flex-wrap gap-4 mt-10">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-opacity group"
                 >
-                  {(t.contact as { ctaSecondary: string }).ctaSecondary}
+                  {t.contact.cta}
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              )}
-            </div>
+                </a>
+                {(t.contact as { ctaSecondary?: string }).ctaSecondary && (
+                  <Link
+                    to={basePath === '/' ? '/#services' : `${basePath}#services`}
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-foreground rounded-lg font-semibold border border-border hover:bg-secondary/80 transition-colors group"
+                  >
+                    {(t.contact as { ctaSecondary: string }).ctaSecondary}
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                )}
+              </div>
+            ) : null}
           </div>
 
           {/* Right - Contact Form Card or Success Message */}
-          <div id="request-proposal" className="bg-card p-8 lg:p-10 rounded-2xl shadow-elegant border border-border sr sr-right scroll-mt-24">
+          <div id="request-proposal" className={`${formCardClass} sr sr-right`}>
+            {premiumLayout ? (
+              <div className="pointer-events-none absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/50 to-transparent" aria-hidden />
+            ) : null}
             {submitted ? (
               <div className="success-message text-center" lang={language}>
                 <div className="success-icon w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-primary">
@@ -396,7 +480,9 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
               </div>
             ) : (
               <>
-                <h3 className="text-xl font-semibold text-foreground mb-6">{t.contact.formTitle}</h3>
+                {!premiumLayout ? (
+                  <h3 className="text-xl font-semibold text-foreground mb-6">{t.contact.formTitle}</h3>
+                ) : null}
                 <form
                   action={FORMSPREE_ENDPOINT}
                   method="POST"
@@ -416,7 +502,7 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
                         type="text"
                         required
                         aria-invalid={Boolean(errors.firstName)}
-                        className={`w-full px-4 py-3 rounded-lg border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.firstName ? 'border-destructive' : 'border-input'}`}
+                        className={`${inputClass} ${errors.firstName ? 'border-destructive' : 'border-input'}`}
                         placeholder={place('firstNamePlaceholder', 'John')}
                       />
                       {errors.firstName && <p className="text-sm text-destructive mt-1">{errors.firstName}</p>}
@@ -431,7 +517,7 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
                         type="text"
                         required
                         aria-invalid={Boolean(errors.lastName)}
-                        className={`w-full px-4 py-3 rounded-lg border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.lastName ? 'border-destructive' : 'border-input'}`}
+                        className={`${inputClass} ${errors.lastName ? 'border-destructive' : 'border-input'}`}
                         placeholder={place('lastNamePlaceholder', 'Smith')}
                       />
                       {errors.lastName && <p className="text-sm text-destructive mt-1">{errors.lastName}</p>}
@@ -449,7 +535,7 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
                       type="email"
                       required
                       aria-invalid={Boolean(errors.workEmail)}
-                      className={`w-full px-4 py-3 rounded-lg border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.workEmail ? 'border-destructive' : 'border-input'}`}
+                      className={`${inputClass} ${errors.workEmail ? 'border-destructive' : 'border-input'}`}
                       placeholder={place('workEmailPlaceholder', 'john@company.com')}
                     />
                     {errors.workEmail && <p className="text-sm text-destructive mt-1">{errors.workEmail}</p>}
@@ -465,7 +551,7 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
                       type="text"
                       required
                       aria-invalid={Boolean(errors.company)}
-                      className={`w-full px-4 py-3 rounded-lg border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.company ? 'border-destructive' : 'border-input'}`}
+                      className={`${inputClass} ${errors.company ? 'border-destructive' : 'border-input'}`}
                       placeholder={place('companyPlaceholder', 'Your Company')}
                     />
                     {errors.company && <p className="text-sm text-destructive mt-1">{errors.company}</p>}
@@ -482,7 +568,7 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
                         name="country"
                         required
                         aria-invalid={Boolean(errors.country)}
-                        className={`w-full px-4 py-3 rounded-lg border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.country ? 'border-destructive' : 'border-input'}`}
+                        className={`${inputClass} ${errors.country ? 'border-destructive' : 'border-input'}`}
                         defaultValue=""
                       >
                         <option value="" disabled>{place('selectCountry', 'Select country…')}</option>
@@ -502,7 +588,7 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
                         type="tel"
                         required
                         aria-invalid={Boolean(errors.phone)}
-                        className={`w-full px-4 py-3 rounded-lg border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.phone ? 'border-destructive' : 'border-input'}`}
+                        className={`${inputClass} ${errors.phone ? 'border-destructive' : 'border-input'}`}
                         placeholder="+44 7700 900000"
                       />
                       {errors.phone && <p className="text-sm text-destructive mt-1">{errors.phone}</p>}
@@ -538,7 +624,7 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
                       <select
                         id="timeline"
                         name="timeline"
-                        className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+                        className={`${inputClass} border-input`}
                         defaultValue=""
                       >
                         <option value="">Select timeline…</option>
@@ -554,7 +640,7 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
                       <select
                         id="budget"
                         name="budget"
-                        className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+                        className={`${inputClass} border-input`}
                         defaultValue=""
                       >
                         <option value="">Select budget…</option>
@@ -575,7 +661,7 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
                       name="referralSource"
                       required
                       aria-invalid={Boolean(errors.referralSource)}
-                      className={`w-full px-4 py-3 rounded-lg border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.referralSource ? 'border-destructive' : 'border-input'}`}
+                      className={`${inputClass} ${errors.referralSource ? 'border-destructive' : 'border-input'}`}
                       defaultValue=""
                     >
                       <option value="" disabled>Select…</option>
@@ -599,7 +685,7 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
                       rows={4}
                       required
                       aria-invalid={Boolean(errors.message)}
-                      className={`w-full px-4 py-3 rounded-lg border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors resize-none ${errors.message ? 'border-destructive' : 'border-input'}`}
+                      className={`${inputClass} resize-none ${errors.message ? 'border-destructive' : 'border-input'}`}
                       placeholder={place('messagePlaceholder', 'Tell us about your research needs...')}
                     />
                     {errors.message && <p className="text-sm text-destructive mt-1">{errors.message}</p>}
@@ -633,7 +719,7 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="w-full py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-opacity disabled:opacity-70 disabled:cursor-not-allowed"
+                    className={submitBtnClass}
                   >
                     {submitting ? '...' : t.contact.submitButton}
                   </button>

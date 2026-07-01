@@ -21,6 +21,7 @@ export const LOCAL_BODY_FILES = {
   'top-healthcare-market-research-companies-uae': 'top-healthcare-market-research-companies-uae-body.html',
   'top-healthcare-market-research-companies-kuwait': 'top-healthcare-market-research-companies-kuwait-body.html',
   'top-healthcare-market-research-firms-saudi-arabia': 'top-healthcare-market-research-firms-saudi-arabia-body.html',
+  'top-healthcare-market-research-firms-mena-europe': 'top-healthcare-market-research-firms-mena-europe-body.html',
   'top-market-research-companies-egypt-2026': 'top-market-research-companies-egypt-2026-body.html',
   'digital-therapeutics-regulation-mena-markets': 'digital-therapeutics-mena-body.html',
   'saudi-healthcare-market-research-firms-ar': 'saudi-healthcare-mr-firms-ar-body.html',

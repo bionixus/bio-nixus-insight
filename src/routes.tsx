@@ -307,6 +307,8 @@ const AdminAnalytics = lazy(() => import('@/pages/AdminAnalytics'));
 const AdminCalendar = lazy(() => import('@/pages/AdminCalendar'));
 const AdminCalendarNew = lazy(() => import('@/pages/AdminCalendarNew'));
 const AdminSendNewsletter = lazy(() => import('@/pages/AdminSendNewsletter'));
+const AdminNewsletterRecipients = lazy(() => import('@/pages/AdminNewsletterRecipients'));
+const AdminBatchSegments = lazy(() => import('@/pages/AdminBatchSegments'));
 
 function suspensePage(node: ReactNode) {
   return <Suspense fallback={<RouteLoadingFallback />}>{node}</Suspense>;
@@ -615,6 +617,8 @@ export const routes: RouteObject[] = [
   { path: '/admin/calendar', element: suspensePage(<AdminCalendar />) },
   { path: '/admin/calendar/new', element: suspensePage(<AdminCalendarNew />) },
   { path: '/admin/send-newsletter', element: suspensePage(<AdminSendNewsletter />) },
+  { path: '/admin/batch-segments', element: suspensePage(<AdminBatchSegments />) },
+  { path: '/admin/newsletter/:id/recipients', element: suspensePage(<AdminNewsletterRecipients />) },
   // --- ported SEO pages (country pharma/healthcare service + listicles + GCC segments) ---
   { path: '/ar/abhath-suq-adwiyah-saudi-arabia', element: <ArBahthSuqAdwiyahSaudiArabia /> },
   { path: '/ar/healthcare-market-research', element: <ArHealthcareMarketResearch /> },

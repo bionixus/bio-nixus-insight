@@ -185,9 +185,9 @@ export const translations = {
     },
     contactPage: {
       heroTitle: "One conversation can change your launch.",
-      heroSubtitle: "Join pharmaceutical teams worldwide who use BioNixus for healthcare market research across 20+ countries. Get a tailored proposal within 24 hours.",
-      statLine: "Global headquarters — Sheridan, Wyoming (USA) · Regional offices London, Dubai, Riyadh, Cairo",
-      badges: ['24h proposal turnaround', '20+ country fieldwork', 'GDPR & ESOMAR-aligned'],
+      heroSubtitle: "Join pharmaceutical teams worldwide who use BioNixus for healthcare market research across 38 countries on six continents. Get a tailored proposal within 24 hours.",
+      statLine: "Global HQ — Sheridan, Wyoming (USA) · Regional offices London, Dubai, Riyadh, Jeddah, Kuwait City, Cairo · 38-country field coverage",
+      badges: ['24h proposal turnaround', '38-country fieldwork', 'GDPR & ESOMAR-aligned'],
     },
     methodologyEn: {
       title: 'Healthcare market research methodology, data quality, and regulatory compliance',
@@ -200,7 +200,7 @@ export const translations = {
     },
     contact: {
       title: "Let's Connect",
-      subtitle: 'Ready to scope healthcare market research anywhere in the world? Tell us your target country and timeline—our team responds within one business day.',
+      subtitle: 'Ready to scope healthcare market research in any of our 38 countries? Tell us your target market and timeline—our team responds within one business day.',
       cta: 'Schedule a Consultation',
       ctaSecondary: 'Explore Our Services',
       email: 'admin@bionixus.com',
@@ -2308,9 +2308,9 @@ export const translations = {
     },
     contactPage: {
       heroTitle: 'Один разговор может изменить ваш запуск.',
-      heroSubtitle: 'Присоединяйтесь к фармацевтическим командам по всему миру, которые используют BioNixus для исследований рынка здравоохранения в 20+ странах. Получите индивидуальное предложение в течение 24 часов.',
-      statLine: 'Глобальный штаб — Sheridan, Wyoming (США) · Региональные офисы: Лондон, Дубай, Эр-Рияд, Каир',
-      badges: ['Предложение за 24 часа', 'Полевые работы в 20+ странах', 'Соответствие GDPR и ESOMAR'],
+      heroSubtitle: 'Присоединяйтесь к фармацевтическим командам по всему миру, которые используют BioNixus для исследований рынка здравоохранения в 38 странах на шести континентах. Получите индивидуальное предложение в течение 24 часов.',
+      statLine: 'Глобальный штаб — Sheridan, Wyoming (США) · Региональные офисы: Лондон, Дубай, Эр-Рияд, Jeddah, Кувейт, Каир · охват 38 стран',
+      badges: ['Предложение за 24 часа', 'Полевые работы в 38 странах', 'Соответствие GDPR и ESOMAR'],
     },
     methodologyRu: {
       title: 'Методология маркетинговых исследований в здравоохранении, качество данных и соответствие нормативным требованиям',
