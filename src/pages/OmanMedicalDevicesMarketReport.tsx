@@ -26,27 +26,42 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
   {
     question: 'How big is the Oman medical devices market in 2026?',
     answer:
-      'The Oman medical devices market is estimated at USD 240–280 million in 2026, growing at approximately 6% CAGR through 2030. MOH Oman procurement accounts for approximately 70% of total device spend, with private hospitals — including Aster Royal, Badr Al Samaa, and Al Hayat International — accounting for the remainder. Oman Vision 2040\'s healthcare privatization commitments are gradually expanding the private channel and creating new procurement pathways beyond MOH.',
+      'The Oman medical devices market is estimated at USD 240–280 million in 2026, growing at approximately 6% CAGR through 2030. MOH Oman procurement accounts for approximately 70% of total device spend, with private hospitals — including Aster Royal, Badr Al Samaa, and Al Hayat International — accounting for the remainder. Oman Vision 2040\'s healthcare privatization commitments are gradually expanding the private channel and creating new procurement pathways beyond MOH. Because Oman has limited domestic device manufacturing capacity, the large majority of device supply is imported, which makes distributor selection and MOH registration timelines the two factors most likely to determine how quickly a manufacturer can reach the market.',
   },
   {
     question: 'How does Oman medical device registration and procurement work?',
     answer:
-      'The Ministry of Health Oman (MOH) oversees medical device registration through its Directorate General of Pharmaceutical Affairs. Oman accepts CE-marked and FDA-cleared devices with supporting technical documentation. Registration timelines typically range from 6–18 months. MOH procurement is centralized through the Central Medical Stores and hospital-level procurement committees. Royal Hospital (the flagship academic medical center) and Sultan Qaboos University Hospital are the two highest-priority accounts. BioNixus tracks MOH Oman registration and procurement cycles by device category.',
+      'The Ministry of Health Oman (MOH) oversees medical device registration through its Directorate General of Pharmaceutical Affairs, which administers device listing alongside pharmaceutical registration under a shared regulatory structure. Oman accepts CE-marked and FDA-cleared devices with supporting technical documentation, and reference-agency approvals from a recognized regulator can shorten the technical review for many device classes. Registration timelines typically range from 6–18 months. Once registered, devices move into the MOH Central Medical Stores and CSSD (Central Sterile Supply Department) system, which handles hospital-level procurement committees and annual tender cycles. Royal Hospital (the flagship academic medical center) and Sultan Qaboos University Hospital are the two highest-priority accounts, since MOH\'s centralized tendering process routes the largest device volumes through these facilities before distribution to secondary hospitals. BioNixus tracks MOH Oman registration and procurement cycles by device category.',
   },
   {
     question: 'What are the leading medical device segments in Oman?',
     answer:
-      'Diagnostic imaging, cardiovascular devices, diabetes care equipment, and patient monitoring systems are Oman\'s leading medical device segments by value. Diabetes prevalence (~19% adult population) creates strong structural demand for glucose monitoring and insulin delivery devices. Cardiovascular disease and cancer are the two leading causes of mortality, driving demand for cardiac intervention devices and oncology-related diagnostic and therapeutic equipment.',
+      'Diagnostic imaging, cardiovascular devices, diabetes care equipment, and patient monitoring systems are Oman\'s leading medical device segments by value. Diabetes prevalence (~19% adult population) creates strong structural demand for glucose monitoring and insulin delivery devices. Cardiovascular disease and cancer are the two leading causes of mortality, driving demand for cardiac intervention devices and oncology-related diagnostic and therapeutic equipment. Cardiovascular disease alone accounts for roughly 28% of all-cause mortality in Oman, while national cancer registry data records approximately 3,500 new cancer cases annually, with colorectal and breast cancer the most prevalent — sustaining steady demand for radiotherapy equipment, surgical oncology instruments, and diagnostic imaging platforms at Royal Hospital\'s National Oncology Centre. Orthopedic implants and trauma equipment form another consistent growth category, driven largely by Khoula Hospital\'s role as Oman\'s Level 1 trauma referral center.',
   },
   {
     question: 'How is Oman Vision 2040 affecting the medical devices market?',
     answer:
-      'Oman Vision 2040\'s health pillar targets a 35% private sector healthcare share (vs. approximately 30% currently), expansion of health insurance coverage to expatriate residents, and development of integrated health cities. The Oman Health Information System (OHIS) digitalization is improving procurement data visibility. These structural shifts are expected to accelerate private hospital medical device procurement and create more competitive tender dynamics as private insurance coverage grows.',
+      'Oman Vision 2040\'s health pillar targets a 35% private sector healthcare share (vs. approximately 30% currently), expansion of health insurance coverage to expatriate residents, and development of integrated health cities. The Oman Health Information System (OHIS) digitalization is improving procurement data visibility. These structural shifts are expected to accelerate private hospital medical device procurement and create more competitive tender dynamics as private insurance coverage grows. The planned integrated health cities are expected to combine public and private capacity under one campus model, and as these facilities come online they should generate incremental demand for advanced diagnostic imaging, patient monitoring, and surgical equipment beyond what existing MOH hospitals currently procure.',
   },
   {
     question: 'What is the Royal Hospital Oman\'s role in medical device procurement?',
     answer:
-      'Royal Hospital Muscat is Oman\'s flagship tertiary care center and the country\'s highest-value medical device account. Royal Hospital operates specialist programs in cardiac surgery, neurology, oncology, and organ transplantation — creating disproportionate demand for high-acuity devices relative to its bed count. Key Account Management strategy in Oman typically prioritizes Royal Hospital and Sultan Qaboos University Hospital before other MOH facilities.',
+      'Royal Hospital Muscat is Oman\'s flagship tertiary care center and the country\'s highest-value medical device account. Royal Hospital operates specialist programs in cardiac surgery, neurology, oncology, and organ transplantation — creating disproportionate demand for high-acuity devices relative to its bed count. Key Account Management strategy in Oman typically prioritizes Royal Hospital and Sultan Qaboos University Hospital before other MOH facilities. Sultan Qaboos University Hospital adds an academic dimension to this dynamic, since its research and training programs often influence which device technologies are adopted first and subsequently referenced by MOH\'s wider tendering process. Secondary facilities such as Khoula Hospital and Al Nahdha Hospital typically adopt new device categories only after they have been validated at these two lead institutions.',
+  },
+  {
+    question: 'How does GCC mutual recognition affect medical device registration in Oman?',
+    answer:
+      'Oman participates in a GCC-wide mutual recognition mechanism that allows medical devices already approved by another Gulf regulator — such as Saudi Arabia\'s SFDA or the UAE\'s MOHAP — to be referenced during MOH Oman\'s technical review. In practice this can shorten the evaluation stage for lower- and moderate-risk device classes, since much of the underlying technical dossier has already been assessed elsewhere in the region. High-risk implantable and life-sustaining devices generally still undergo a full independent MOH Oman review regardless of prior GCC approval. For manufacturers already active elsewhere in the Gulf, a common strategy is to sequence registrations — filing first in a faster-moving GCC market and then referencing that approval in the Oman submission — to compress overall regional launch timelines. BioNixus tracks GCC mutual recognition outcomes across member states to help manufacturers plan multi-country registration sequencing.',
+  },
+  {
+    question: 'Do medical device companies need a local distributor or agent to sell in Oman?',
+    answer:
+      'Yes — MOH Oman registration and tender participation require a locally licensed distributor or agent registered with Omani authorities, consistent with practice across most GCC markets. The local agent is typically responsible for maintaining registration dossiers, managing after-sales service and technical support obligations, and representing the manufacturer in MOH tender submissions and hospital-level procurement discussions. Given Oman\'s concentrated public-sector procurement structure, the choice of distributor materially affects a manufacturer\'s access to Royal Hospital, Sultan Qaboos University Hospital, and other MOH facilities, since incumbent distributors often hold long-standing relationships with hospital procurement committees. Manufacturers entering Oman for the first time typically benefit from selecting a distributor with an existing footprint across both MOH tenders and private hospital groups such as Aster Royal and Badr Al Samaa.',
+  },
+  {
+    question: 'How is digital health adoption shaping medical device demand in Oman?',
+    answer:
+      'The Oman Health Information System (OHIS) digitalization program is expanding electronic health record coverage and improving procurement data visibility across MOH facilities, gradually shifting demand toward connected diagnostic and monitoring devices that integrate with hospital IT systems. Royal Hospital and Sultan Qaboos University Hospital, as Oman\'s leading academic and referral centers, are typically the earliest adopters of networked patient monitoring, telehealth-enabled diagnostic equipment, and digital imaging systems. As OHIS matures, MOH\'s centralized tendering process is increasingly favoring devices with proven interoperability and data-security compliance over standalone equipment. This shift creates an incremental advantage for device manufacturers that can demonstrate integration capability with Oman\'s national health information infrastructure alongside traditional clinical performance data.',
   },
   {
     question: 'How does BioNixus approach Oman medical device and pharmaceutical research?',
@@ -139,7 +154,19 @@ const OmanMedicalDevicesMarketReport = () => {
               or UAE, with strong specialist loyalty to established suppliers and procurement cycles that reward
               long-term account relationships. MOH Central Medical Stores procurement creates a concentrated
               access target, while the growing private hospital sector — Aster Royal, Al Hayat, and Badr Al Samaa
-              chains — is creating decentralized procurement opportunities.
+              chains — is creating decentralized procurement opportunities. Because Oman has limited domestic
+              device manufacturing, nearly all supply is imported through MOH-registered local distributors and
+              agents, which makes the choice of in-market partner a critical determinant of tender access at
+              Royal Hospital, Sultan Qaboos University Hospital, and other MOH facilities.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Relative to Saudi Arabia and the UAE, Oman's device registration and tender cycles move more slowly
+              but are also less crowded with competing suppliers, which rewards manufacturers willing to invest in
+              a multi-year account-building strategy rather than a transactional, tender-by-tender approach.
+              GCC mutual recognition, growing OHIS digital health infrastructure, and Oman Vision 2040's health-pillar
+              commitments are gradually reshaping this environment, and companies that build early relationships
+              with Royal Hospital and SQUH procurement committees are typically best positioned as MOH's centralized
+              tendering process evolves.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               See the{' '}
@@ -172,6 +199,71 @@ const OmanMedicalDevicesMarketReport = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="section-padding bg-cream-dark" id="regulatory-pathway">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Oman Medical Device Regulatory Pathway</h2>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              MOH Oman regulates medical devices through the same Directorate General of Pharmaceutical Affairs
+              that oversees pharmaceutical registration, giving device manufacturers a broadly similar submission
+              and review structure to follow. The pathway below reflects the sequence manufacturers typically
+              move through — from initial dossier submission to final tender award — and highlights where GCC
+              mutual recognition and CSSD/Central Pharmacy listing enter the process.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                { step: '1. Dossier submission', note: 'CE-marked or FDA-cleared device technical file submitted to MOH Drug Registration & Drug Control Department; CTD-style format expected' },
+                { step: '2. Technical review', note: 'MOH technical evaluation of device safety and performance data; GCC mutual recognition referenced for devices already approved by SFDA, MOHAP, or another GCC regulator' },
+                { step: '3. Pricing and classification', note: 'MOH Pricing Committee reviews device category and, where applicable, comparator pricing across the GCC' },
+                { step: '4. Marketing authorisation', note: 'MOH issues formal authorisation permitting the device to be marketed and distributed in Oman' },
+                { step: '5. CSSD / Central Pharmacy listing', note: 'Device enters the Central Sterile Supply Department and Central Pharmacy formulary covering Royal Hospital, SQUH, and other MOH facilities' },
+                { step: '6. Tender award', note: 'MOH Procurement Department runs annual tender cycles; local distributor represents the manufacturer in submissions and hospital-level negotiations' },
+              ].map(({ step, note }) => (
+                <div key={step} className="bg-white rounded-xl border border-border p-4 shadow-sm">
+                  <p className="font-semibold text-foreground text-sm mb-1">{step}</p>
+                  <p className="text-xs text-muted-foreground">{note}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-muted-foreground leading-relaxed mt-6">
+              Because high-risk implantable and life-sustaining devices generally require a full independent MOH
+              Oman review regardless of prior GCC approval, manufacturers with such products should plan for the
+              longer end of the registration timeline and build the local distributor relationship early, since
+              the agent typically manages ongoing dossier maintenance, after-sales service commitments, and
+              tender documentation once the device is registered.
+            </p>
+          </div>
+        </section>
+
+        <section className="section-padding" id="procurement-landscape">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Oman Device Procurement Landscape</h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Oman's medical device procurement is anchored in a centralized, MOH-led system that channels the
+              majority of national device spend through the Central Medical Stores and CSSD network before
+              distributing to individual hospitals. Royal Hospital Muscat and Sultan Qaboos University Hospital
+              sit at the top of this system: both operate as reference centers whose specialist procurement
+              committees typically evaluate and adopt new device categories before they are rolled out more
+              broadly across MOH's hospital network, including Khoula Hospital and Al Nahdha Hospital.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Annual MOH tender cycles remain the primary route to volume device sales, and incumbency matters —
+              suppliers with established relationships at Royal Hospital and SQUH tend to retain share across
+              renewal cycles, which is one reason Oman rewards a long-term account-management approach over a
+              transactional, tender-by-tender strategy. Outside the MOH system, the private hospital sector —
+              led by Aster Royal Hospital and the multi-facility Badr Al Samaa Group — is procuring independently
+              at a growing pace, supported by Oman Vision 2040's push toward a larger private-sector healthcare
+              share and expanded expatriate insurance coverage.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              Looking ahead, Oman Vision 2040's planned integrated health cities and the continued rollout of the
+              Oman Health Information System (OHIS) are expected to gradually diversify procurement beyond the
+              traditional MOH tender cycle, favoring manufacturers that can combine competitive tender pricing
+              with device interoperability and after-sales support capability delivered through a capable local
+              distributor.
+            </p>
           </div>
         </section>
 

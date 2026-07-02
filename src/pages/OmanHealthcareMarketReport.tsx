@@ -49,6 +49,21 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
       'Oncology is Oman\'s fastest-growing pharmaceutical therapy area — the Sultan Qaboos Comprehensive Cancer Care and Research Centre expansion is creating new consumption capacity. Diabetes management (GLP-1 receptor agonists, insulin intensification) is structurally large given ~19% adult prevalence. Rare diseases have growing attention through Royal Hospital\'s genetics program. Immunology and biologics are expanding as private insurance formularies broaden coverage of specialty drugs.',
   },
   {
+    question: 'How does private health insurance and the Dhamani scheme affect market access in Oman?',
+    answer:
+      'Oman introduced Dhamani, its mandatory health insurance scheme for private-sector employees and their dependents, in 2021, formalizing a channel that had previously been fragmented across employer-arranged policies. Dhamani-compliant insurers must offer a minimum benefits package that increasingly includes outpatient pharmaceuticals, chronic disease management, and specialist referrals, expanding the addressable market beyond MOH facilities alone. Private hospitals such as Al Shifa Hospital and Muscat Private Hospital rely heavily on Dhamani-linked reimbursement to fund specialty drug formularies that would otherwise be constrained by out-of-pocket affordability. For pharmaceutical manufacturers, insurer formulary inclusion is now a parallel access pathway alongside MOH Central Pharmacy listing, particularly for chronic and specialty therapies favored by private-sector and expatriate patients. BioNixus tracks Dhamani-linked insurer formulary decisions alongside MOH listing status to give clients a complete view of Oman market access.',
+  },
+  {
+    question: "What is Oman's regulatory and reimbursement approach to biosimilars and generic medicines?",
+    answer:
+      'MOH Oman actively promotes generic substitution to manage its pharmaceutical import bill, given that Oman imports approximately 97% of its medicines and has limited local manufacturing capacity. Generic registration follows an abbreviated dossier pathway referencing bioequivalence data, which typically completes faster than the 18–30 month innovator registration timeline. Biosimilars are registered under a comparability framework aligned with WHO and GCC guidance, though physician and patient acceptance in specialty categories such as oncology and immunology remains an ongoing education need at Royal Hospital and SQUH. MOH tender procurement frequently favors the lowest-cost qualified generic or biosimilar supplier for high-volume chronic disease categories including diabetes and cardiovascular therapies. Originator manufacturers competing in Oman should expect generic and biosimilar entry to compress volumes materially within 12–24 months of patent expiry or loss of exclusivity in most therapeutic classes.',
+  },
+  {
+    question: 'What does the clinical trial and research environment look like in Oman?',
+    answer:
+      "Clinical research in Oman is anchored by Sultan Qaboos University Hospital, which combines academic research infrastructure with a national genomics and oncology research agenda. MOH's Research and Studies Department, together with institutional ethics committees at SQUH and Royal Hospital, reviews clinical trial protocols against ICH-GCP standards, though overall trial volume remains modest relative to Saudi Arabia and the UAE. Investigator-initiated and multinational Phase III trials in oncology, diabetes, and cardiovascular disease represent the bulk of current activity, reflecting the country's dominant disease burden. Vision 2040's emphasis on building a knowledge-based healthcare economy is gradually increasing government support for local research capacity and international trial partnerships. Manufacturers evaluating Oman as a trial site benefit from smaller, well-characterized patient registries and strong specialist engagement at the country's principal referral hospitals.",
+  },
+  {
     question: 'How does BioNixus conduct pharmaceutical market research in Oman?',
     answer:
       'BioNixus conducts Oman pharmaceutical market research through primary physician surveys across specialist panels at Royal Hospital, Sultan Qaboos University Hospital, and private hospital groups. Programs include quantitative HCP surveys (oncology, endocrinology, cardiology, rheumatology), qualitative KOL interviews, MOH registration and formulary tracking, and competitive consumption intelligence. Oman is covered both as part of GCC-wide programs and as standalone country engagements.',
@@ -139,7 +154,13 @@ const OmanHealthcareMarketReport = () => {
               Arabia or UAE, with strong specialist loyalty and MOH procurement cycles that create predictable
               access windows. Vision 2040's private sector participation targets are gradually diversifying the
               procurement landscape, adding private hospital and insurance-funded channels to the previously
-              government-dominated market.
+              government-dominated market. Royal Hospital Muscat and Sultan Qaboos University Hospital remain the
+              gravitational centers of specialist prescribing and clinical decision-making, meaning market entry
+              strategies built around a small number of high-influence tertiary centers can achieve national reach
+              more efficiently than in larger, more fragmented GCC markets. At the same time, the mandatory
+              Dhamani private health insurance scheme is steadily building a second, insurer-funded access
+              pathway alongside MOH Central Pharmacy tendering, which manufacturers increasingly need to plan
+              for in parallel.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               See also:{' '}
@@ -157,6 +178,38 @@ const OmanHealthcareMarketReport = () => {
 
         <MarketIntelligenceSections marketSlug="oman" countryName="Oman" variant="healthcare" />
 
+        <section className="section-padding bg-cream-dark" id="payer-landscape">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Oman Healthcare Payer Landscape</h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Oman's healthcare financing remains predominantly government-funded: the Ministry of Health accounts
+              for approximately 70% of total health expenditure, drawing on oil revenues to provide free or
+              heavily subsidized care to Omani nationals through MOH hospitals and health centers. Procurement for
+              this channel runs through MOH Central Pharmacy and the annual MOH Procurement Department tender
+              cycle, which covers Royal Hospital, Sultan Qaboos University Hospital, Khoula Hospital, and the wider
+              MOH network. This creates a relatively concentrated, predictable buying process compared with the
+              multi-payer environments of Saudi Arabia or the UAE, but it also means formulary listing at MOH
+              Central Pharmacy is a near-mandatory gateway for any product targeting public-sector volume.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              A second, faster-growing payer channel has emerged around mandatory private health insurance.
+              Dhamani, Oman's national scheme for private-sector employees and dependents, has pushed insurers to
+              build out benefit packages covering outpatient pharmaceuticals and chronic disease management,
+              expanding coverage beyond what employer-arranged policies previously offered. Private hospital
+              groups — including Al Shifa Hospital and Muscat Private Hospital — increasingly depend on
+              Dhamani-linked reimbursement to support specialty drug formularies for oncology, immunology, and
+              biologic therapies that would otherwise be limited by out-of-pocket cost sensitivity among patients.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              For pharmaceutical and medical device manufacturers, this dual-channel structure means market access
+              planning in Oman now requires tracking both MOH tender cycles and private insurer formulary
+              decisions in parallel, rather than treating MOH listing as the sole gatekeeper. BioNixus monitors
+              both channels — MOH Central Pharmacy inclusion and Dhamani-linked insurer coverage — to give clients
+              a complete picture of reimbursement pathways across Oman's public and private healthcare systems.
+            </p>
+          </div>
+        </section>
+
         <section className="section-padding" id="therapy-areas">
           <div className="container-wide max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Oman Pharmaceutical Therapy Areas 2026</h2>
@@ -171,6 +224,33 @@ const OmanHealthcareMarketReport = () => {
               ].map(({ area, note }) => (
                 <div key={area} className="bg-white rounded-xl border border-border p-4 shadow-sm">
                   <p className="font-semibold text-foreground text-sm mb-1">{area}</p>
+                  <p className="text-xs text-muted-foreground">{note}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section-padding bg-cream-dark" id="hospital-network">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Oman Hospital Network</h2>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Oman's approximately 7,000 hospital beds are concentrated in a small number of high-influence
+              tertiary and referral centers, mostly clustered around Muscat. Understanding which institutions
+              drive specialist prescribing and patient referral flow is central to designing an efficient HCP
+              engagement and market access strategy in a market of Oman's size.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                { name: 'Royal Hospital Muscat', note: "Oman's main public tertiary referral centre, with strong oncology, cardiology, and neurology programs and the National Oncology Centre for radiotherapy and chemotherapy." },
+                { name: 'Sultan Qaboos University Hospital (SQUH)', note: 'Academic tertiary hospital and Oman\'s principal research hub, spanning oncology, genomics, and neurology; a key site for BioNixus specialist panels and clinical research partnerships.' },
+                { name: 'Khoula Hospital', note: "Oman's designated Level 1 trauma centre, covering trauma, orthopaedics, and emergency medicine for Muscat and surrounding governorates." },
+                { name: 'Al Shifa Hospital', note: 'Leading private hospital combining general medicine with an oncology service line, increasingly reimbursed through Dhamani-linked private insurance.' },
+                { name: 'Muscat Private Hospital', note: 'Established private general hospital serving Muscat\'s expatriate and privately insured patient population.' },
+                { name: 'Al Masarra Hospital', note: "Oman's dedicated mental health facility, reflecting growing MOH investment in psychiatric capacity alongside private-sector expansion." },
+              ].map(({ name, note }) => (
+                <div key={name} className="bg-white rounded-xl border border-border p-4 shadow-sm">
+                  <p className="font-semibold text-foreground text-sm mb-1">{name}</p>
                   <p className="text-xs text-muted-foreground">{note}</p>
                 </div>
               ))}
