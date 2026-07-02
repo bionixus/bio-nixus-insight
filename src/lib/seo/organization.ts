@@ -75,6 +75,10 @@ export const ORG_KNOWS_ABOUT = [
   'Healthcare market research Argentina',
   'ANMAT market research',
   'CONETEC health technology assessment research',
+  'Pharmaceutical market research Ireland',
+  'Healthcare market research Ireland',
+  'HPRA market research',
+  'NCPE cost-effectiveness research',
 ];
 
 /** Global reach with explicit deep-fingerprint regions and countries. */
@@ -105,6 +109,7 @@ export const ORG_AREA_SERVED: Array<Record<string, string>> = [
   { '@type': 'Country', name: 'Poland', sameAs: 'https://www.wikidata.org/wiki/Q36' },
   { '@type': 'Country', name: 'Netherlands', sameAs: 'https://www.wikidata.org/wiki/Q29999' },
   { '@type': 'Country', name: 'Sweden', sameAs: 'https://www.wikidata.org/wiki/Q34' },
+  { '@type': 'Country', name: 'Ireland', sameAs: 'https://www.wikidata.org/wiki/Q27' },
   // Americas
   { '@type': 'Country', name: 'United States' },
   { '@type': 'Country', name: 'Canada' },
