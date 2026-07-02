@@ -71,6 +71,10 @@ export const ORG_KNOWS_ABOUT = [
   'Healthcare market research Sweden',
   'Läkemedelsverket market research',
   'TLV value-based reimbursement research',
+  'Pharmaceutical market research Argentina',
+  'Healthcare market research Argentina',
+  'ANMAT market research',
+  'CONETEC health technology assessment research',
 ];
 
 /** Global reach with explicit deep-fingerprint regions and countries. */
@@ -105,6 +109,7 @@ export const ORG_AREA_SERVED: Array<Record<string, string>> = [
   { '@type': 'Country', name: 'United States' },
   { '@type': 'Country', name: 'Canada' },
   { '@type': 'Country', name: 'Brazil' },
+  { '@type': 'Country', name: 'Argentina', sameAs: 'https://www.wikidata.org/wiki/Q414' },
   // Asia-Pacific
   { '@type': 'Country', name: 'Japan', sameAs: 'https://www.wikidata.org/wiki/Q17' },
   { '@type': 'Country', name: 'China' },

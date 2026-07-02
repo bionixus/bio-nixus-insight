@@ -233,6 +233,8 @@ import SwedenPharmaceuticalMarketResearch from '@/pages/SwedenPharmaceuticalMark
 import HealthcareMarketResearchSweden from '@/pages/HealthcareMarketResearchSweden';
 import TopMarketResearchCompaniesSweden2026 from '@/pages/TopMarketResearchCompaniesSweden2026';
 import TopHealthcareMarketResearchCompaniesSweden2026 from '@/pages/TopHealthcareMarketResearchCompaniesSweden2026';
+import ArgentinaPharmaceuticalMarketResearch from '@/pages/ArgentinaPharmaceuticalMarketResearch';
+import HealthcareMarketResearchArgentina from '@/pages/HealthcareMarketResearchArgentina';
 import TopMarketResearchCompaniesSingapore2026 from '@/pages/TopMarketResearchCompaniesSingapore2026';
 import TopHealthcareMarketResearchCompaniesSingapore2026 from '@/pages/TopHealthcareMarketResearchCompaniesSingapore2026';
 import JapanPharmaceuticalMarketResearch from '@/pages/JapanPharmaceuticalMarketResearch';
@@ -716,6 +718,8 @@ export const routes: RouteObject[] = [
   { path: '/healthcare-market-research-sweden', element: <HealthcareMarketResearchSweden /> },
   { path: '/insights/top-market-research-companies-sweden-2026', element: <TopMarketResearchCompaniesSweden2026 /> },
   { path: '/insights/top-healthcare-market-research-companies-sweden-2026', element: <TopHealthcareMarketResearchCompaniesSweden2026 /> },
+  { path: '/pharmaceutical-market-research-argentina', element: <ArgentinaPharmaceuticalMarketResearch /> },
+  { path: '/healthcare-market-research-argentina', element: <HealthcareMarketResearchArgentina /> },
   { path: '/pharmaceutical-market-research-malaysia', element: <MalaysiaPharmaceuticalMarketResearch /> },
   { path: '/healthcare-market-research-malaysia', element: <HealthcareMarketResearchMalaysia /> },
   { path: '/insights/top-market-research-companies-malaysia-2026', element: <TopMarketResearchCompaniesMalaysia2026 /> },
