@@ -3,6 +3,14 @@
 # Submit via Google Search Console → URL Inspection → Request Indexing.
 # Also ping via: npm run indexnow:priority
 
+# --- Tier 0: 2026-07-02 SEO sprint (SSR fix + thin page expansion) ---
+https://www.bionixus.com/gcc-medical-devices-market-report
+https://www.bionixus.com/bionixus-market-research-middle-east
+https://www.bionixus.com/gcc-market-access-guide
+https://www.bionixus.com/uae-pharmaceutical-market-research
+https://www.bionixus.com/egypt-pharmaceutical-market-research
+https://www.bionixus.com/kantar-health-alternative-gcc
+
 # --- Tier 1: Dubai MR cluster (~1.5k impr, 0 clicks) ---
 https://www.bionixus.com/pharmaceutical-market-research-dubai
 https://www.bionixus.com/insights/top-healthcare-market-research-companies-dubai-2026
