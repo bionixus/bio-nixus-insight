@@ -63,6 +63,10 @@ export const ORG_KNOWS_ABOUT = [
   'Healthcare market research Turkey',
   'TİTCK market research',
   'SGK payer research Turkey',
+  'Pharmaceutical market research Netherlands',
+  'Healthcare market research Netherlands',
+  'CBG-MEB market research',
+  'Zorginstituut Nederland market access research',
 ];
 
 /** Global reach with explicit deep-fingerprint regions and countries. */
@@ -91,6 +95,7 @@ export const ORG_AREA_SERVED: Array<Record<string, string>> = [
   { '@type': 'Country', name: 'Spain' },
   { '@type': 'Country', name: 'Turkey', sameAs: 'https://www.wikidata.org/wiki/Q43' },
   { '@type': 'Country', name: 'Poland', sameAs: 'https://www.wikidata.org/wiki/Q36' },
+  { '@type': 'Country', name: 'Netherlands', sameAs: 'https://www.wikidata.org/wiki/Q29999' },
   // Americas
   { '@type': 'Country', name: 'United States' },
   { '@type': 'Country', name: 'Canada' },
