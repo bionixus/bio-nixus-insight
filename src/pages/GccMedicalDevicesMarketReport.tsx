@@ -328,6 +328,40 @@ const GccMedicalDevicesMarketReport = () => {
           </div>
         </section>
 
+        {/* IVD and prefilled syringes — high-growth GCC segments */}
+        <section className="section-padding bg-cream-dark" id="ivd-prefilled-syringes">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              In vitro diagnostics (IVD) and prefilled syringes in the GCC
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              IVD represents roughly 16% of GCC medical device value — laboratory analysers, molecular diagnostics,
+              point-of-care cardiac and diabetes tests, and infectious disease rapid kits scaling with national screening
+              programmes. Saudi Arabia&apos;s SFDA IVD registration pathway and UAE MOHAP device classification require
+              launch teams to sequence regulatory clearance with hospital laboratory procurement cycles, which often lag
+              marketing authorisation by six to twelve months.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Prefilled syringes and combination devices are growing with biologic and biosimilar volume in government
+              tenders — NUPCO in Saudi Arabia and Central Medical Stores in Kuwait evaluate device ergonomics, cold-chain
+              logistics, and pharmacist preparation time alongside drug economics. BioNixus maps biomedical engineering
+              and pharmacy stakeholder preferences at account level so device manufacturers can prioritise SKUs that win
+              tender scoring and clinical adoption simultaneously.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              For Saudi IVD depth, read our{' '}
+              <Link to="/blog/saudi-arabia-in-vitro-diagnostics-market" className="text-primary hover:underline font-medium">
+                Saudi Arabia in vitro diagnostics market analysis
+              </Link>
+              . For pharmaceutical adjacency, compare the{' '}
+              <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">
+                GCC pharmaceutical market report 2026
+              </Link>
+              .
+            </p>
+          </div>
+        </section>
+
         {/* How BioNixus is Different */}
         <section className="section-padding" id="data-methodology">
           <div className="container-wide max-w-4xl mx-auto">

@@ -101,8 +101,8 @@ import {
   ArMarketResearchSaudi,
   ArMarketResearchUae,
   ArTopMarketResearchCompaniesEgypt2026,
-  BionixusMarketResearchMiddleEast,
 } from '@/routes/lazyMarketingPages';
+import BionixusMarketResearchMiddleEast from '@/pages/BionixusMarketResearchMiddleEast';
 import TopGlobalHealthcareMarketResearchCompanies2026 from '@/pages/TopGlobalHealthcareMarketResearchCompanies2026';
 import TopPharmaceuticalAnalyticsCompaniesWorldwide2026 from '@/pages/TopPharmaceuticalAnalyticsCompaniesWorldwide2026';
 import BestGlobalMarketResearchCompaniesPharma2026 from '@/pages/BestGlobalMarketResearchCompaniesPharma2026';
@@ -119,13 +119,13 @@ import TopHealthcareMarketResearchCompaniesSaudiArabia2026 from '@/pages/TopHeal
 import TopHealthcareMarketResearchCompaniesDubai2026 from '@/pages/TopHealthcareMarketResearchCompaniesDubai2026';
 import TopHealthcareMarketResearchCompaniesAbuDhabi2026 from '@/pages/TopHealthcareMarketResearchCompaniesAbuDhabi2026';
 import TopHealthcareMarketResearchCompaniesKuwait2026 from '@/pages/TopHealthcareMarketResearchCompaniesKuwait2026';
+import GccMedicalDevicesMarketReport from '@/pages/GccMedicalDevicesMarketReport';
 import {
   SaudiArabiaMedicalDevicesMarketReport,
   SaudiArabiaHealthcareMarketReport,
   UaeHealthcareMarketReport,
   UaeMedicalDevicesMarketReport,
   GccAnesthesiaSurgicalMarket,
-  GccMedicalDevicesMarketReport,
   KuwaitMedicalDevicesMarketReport,
   KuwaitHealthcareMarketReport,
   QatarMedicalDevicesMarketReport,
@@ -374,7 +374,7 @@ export const routes: RouteObject[] = [
   { path: '/pt/market-research-healthcare', element: <MarketResearchHealthcare /> },
   { path: '/ru/market-research-healthcare', element: <MarketResearchHealthcare /> },
   { path: '/qualitative-market-research', element: <QualitativeMarketResearch /> },
-  { path: '/bionixus-market-research-middle-east', element: suspensePage(<BionixusMarketResearchMiddleEast />) },
+  { path: '/bionixus-market-research-middle-east', element: <BionixusMarketResearchMiddleEast /> },
   { path: '/bionixus-vs-iqvia-mena', element: <BionixusVsIqviaMena /> },
   { path: '/gcc-pharma-market-report-2026', element: <GccPharmaMarketReport2026 /> },
   { path: '/nf1-pharma-market-research', element: <Nf1PharmaMarketResearch /> },
@@ -489,7 +489,7 @@ export const routes: RouteObject[] = [
   { path: '/uae-healthcare-market-report', element: suspensePage(<UaeHealthcareMarketReport />) },
   { path: '/uae-medical-devices-market-report', element: suspensePage(<UaeMedicalDevicesMarketReport />) },
   { path: '/gcc-anesthesia-surgical-market-report', element: suspensePage(<GccAnesthesiaSurgicalMarket />) },
-  { path: '/gcc-medical-devices-market-report', element: suspensePage(<GccMedicalDevicesMarketReport />) },
+  { path: '/gcc-medical-devices-market-report', element: <GccMedicalDevicesMarketReport /> },
   { path: '/kuwait-medical-devices-market-report', element: suspensePage(<KuwaitMedicalDevicesMarketReport />) },
   { path: '/kuwait-healthcare-market-report', element: suspensePage(<KuwaitHealthcareMarketReport />) },
   { path: '/qatar-medical-devices-market-report', element: suspensePage(<QatarMedicalDevicesMarketReport />) },

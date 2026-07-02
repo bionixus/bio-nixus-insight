@@ -313,6 +313,8 @@ const GccMarketAccessGuide = () => {
               <a href="#regulatory-overview" className="text-sm text-primary hover:underline flex items-center gap-2"><ShieldCheck className="w-4 h-4" /> Regulatory Bodies by Country</a>
               <a href="#registration-timeline" className="text-sm text-primary hover:underline flex items-center gap-2"><Clock className="w-4 h-4" /> Typical Registration Timeline</a>
               <a href="#country-details" className="text-sm text-primary hover:underline flex items-center gap-2"><Globe className="w-4 h-4" /> Country-by-Country Requirements</a>
+              <a href="#biosimilars-hta" className="text-sm text-primary hover:underline flex items-center gap-2"><Scale className="w-4 h-4" /> Biosimilars &amp; HTA Evidence</a>
+              <a href="#nupco-tenders" className="text-sm text-primary hover:underline flex items-center gap-2"><Building2 className="w-4 h-4" /> NUPCO &amp; Tender Landscape</a>
               <a href="#faq" className="text-sm text-primary hover:underline flex items-center gap-2"><BookOpen className="w-4 h-4" /> Frequently Asked Questions</a>
             </div>
           </div>
@@ -451,6 +453,42 @@ const GccMarketAccessGuide = () => {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Biosimilars and HTA evidence in GCC markets */}
+        <section className="section-padding py-12 bg-muted/20" id="biosimilars-hta">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Biosimilars, biologics, and HTA-style evidence in GCC market access
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Biosimilar and biologic launches in the GCC increasingly face formulary committees that ask for
+                extrapolation justification, switching data, and budget impact relative to reference biologics — not
+                only SFDA or MOHAP registration certificates. Saudi Arabia&apos;s SFDA biosimilar pathway and Bahrain
+                NHRA&apos;s formal biosimilar framework set regulatory expectations, but hospital uptake still depends on
+                NUPCO tender scoring, pharmacist substitution rules, and physician confidence in interchangeability.
+              </p>
+              <p>
+                BioNixus supports access teams with research that mirrors HTA committee questions: comparative clinical
+                narratives tested with hospital pharmacists and procurement officers, sensitivity to reference-price
+                erosion under external reference pricing baskets, and uptake forecasting segmented by government versus
+                private channels. For Saudi-specific biosimilar strategy, see our{' '}
+                <Link to="/biosimilar-market-entry-saudi-arabia" className="text-primary underline font-medium">
+                  biosimilar market entry Saudi Arabia guide
+                </Link>
+                .
+              </p>
+              <p>
+                Across the UAE, Kuwait, and Qatar, payer committees often request localized budget-impact framing even
+                when global pharmacoeconomic models exist. BioNixus designs mixed-method modules — quantitative
+                physician adoption surveys plus qualitative payer interviews — so launch teams can align dossier claims
+                with the evidence thresholds each country&apos;s formulary route actually applies. This reduces the
+                common failure mode where registration succeeds but tender or insurance listing stalls for six to twelve
+                months pending additional local evidence.
+              </p>
             </div>
           </div>
         </section>
