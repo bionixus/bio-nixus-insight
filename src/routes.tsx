@@ -46,6 +46,11 @@ import QualitativeMarketResearch from '@/pages/QualitativeMarketResearch';
 import QuantitativeHealthcareMarketResearchGuide from '@/pages/QuantitativeHealthcareMarketResearchGuide';
 import GccPharmaceuticalMarketResearch from '@/pages/GccPharmaceuticalMarketResearch';
 import UaePharmaceuticalMarketResearch from '@/pages/UaePharmaceuticalMarketResearch';
+import KuwaitPharmaceuticalMarketResearch from '@/pages/KuwaitPharmaceuticalMarketResearch';
+import QatarPharmaceuticalMarketResearch from '@/pages/QatarPharmaceuticalMarketResearch';
+import BahrainPharmaceuticalMarketResearch from '@/pages/BahrainPharmaceuticalMarketResearch';
+import OmanPharmaceuticalMarketResearch from '@/pages/OmanPharmaceuticalMarketResearch';
+import JordanPharmaceuticalMarketResearch from '@/pages/JordanPharmaceuticalMarketResearch';
 import EgyptPharmaceuticalMarketResearch from '@/pages/EgyptPharmaceuticalMarketResearch';
 import SaudiPayerMarketAccessResearch from '@/pages/SaudiPayerMarketAccessResearch';
 import GccHcpRecruitmentMarketResearch from '@/pages/GccHcpRecruitmentMarketResearch';
@@ -271,6 +276,11 @@ import HealthcareMarketResearchFrance from '@/pages/HealthcareMarketResearchFran
 import HealthcareMarketResearchGermany from '@/pages/HealthcareMarketResearchGermany';
 import HealthcareMarketResearchInSaudiArabia from '@/pages/HealthcareMarketResearchInSaudiArabia';
 import HealthcareMarketResearchInUae from '@/pages/HealthcareMarketResearchInUae';
+import HealthcareMarketResearchInKuwait from '@/pages/HealthcareMarketResearchInKuwait';
+import HealthcareMarketResearchInQatar from '@/pages/HealthcareMarketResearchInQatar';
+import HealthcareMarketResearchInBahrain from '@/pages/HealthcareMarketResearchInBahrain';
+import HealthcareMarketResearchInOman from '@/pages/HealthcareMarketResearchInOman';
+import HealthcareMarketResearchInJordan from '@/pages/HealthcareMarketResearchInJordan';
 import HealthcareMarketResearchItaly from '@/pages/HealthcareMarketResearchItaly';
 import HealthcareMarketResearchNewZealand from '@/pages/HealthcareMarketResearchNewZealand';
 import HealthcareMarketResearchSingapore from '@/pages/HealthcareMarketResearchSingapore';
@@ -406,6 +416,11 @@ export const routes: RouteObject[] = [
   { path: '/gfk-alternative-egypt', element: <GfkAlternativeEgypt /> },
   { path: '/gcc-pharmaceutical-market-research', element: <GccPharmaceuticalMarketResearch /> },
   { path: '/uae-pharmaceutical-market-research', element: <UaePharmaceuticalMarketResearch /> },
+  { path: '/pharmaceutical-market-research-kuwait', element: <KuwaitPharmaceuticalMarketResearch /> },
+  { path: '/pharmaceutical-market-research-qatar', element: <QatarPharmaceuticalMarketResearch /> },
+  { path: '/pharmaceutical-market-research-bahrain', element: <BahrainPharmaceuticalMarketResearch /> },
+  { path: '/pharmaceutical-market-research-oman', element: <OmanPharmaceuticalMarketResearch /> },
+  { path: '/pharmaceutical-market-research-jordan', element: <JordanPharmaceuticalMarketResearch /> },
   { path: '/egypt-pharmaceutical-market-research', element: <EgyptPharmaceuticalMarketResearch /> },
   { path: '/saudi-payer-market-access-research', element: <SaudiPayerMarketAccessResearch /> },
   { path: '/gcc-hcp-recruitment-market-research', element: <GccHcpRecruitmentMarketResearch /> },
@@ -665,6 +680,11 @@ export const routes: RouteObject[] = [
   { path: '/healthcare-market-research-germany', element: <HealthcareMarketResearchGermany /> },
   { path: '/healthcare-market-research-in-saudi-arabia', element: <HealthcareMarketResearchInSaudiArabia /> },
   { path: '/healthcare-market-research-in-uae', element: <HealthcareMarketResearchInUae /> },
+  { path: '/healthcare-market-research-kuwait', element: <HealthcareMarketResearchInKuwait /> },
+  { path: '/healthcare-market-research-qatar', element: <HealthcareMarketResearchInQatar /> },
+  { path: '/healthcare-market-research-bahrain', element: <HealthcareMarketResearchInBahrain /> },
+  { path: '/healthcare-market-research-oman', element: <HealthcareMarketResearchInOman /> },
+  { path: '/healthcare-market-research-jordan', element: <HealthcareMarketResearchInJordan /> },
   { path: '/healthcare-market-research-italy', element: <HealthcareMarketResearchItaly /> },
   { path: '/healthcare-market-research-new-zealand', element: <HealthcareMarketResearchNewZealand /> },
   { path: '/healthcare-market-research-singapore', element: <HealthcareMarketResearchSingapore /> },
