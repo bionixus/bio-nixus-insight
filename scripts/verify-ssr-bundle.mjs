@@ -17,8 +17,11 @@ const CRITICAL_PATHS = [
   '/fr/healthcare-market-research/france',
   '/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement',
   '/market-research-uae',
-  '/ar/market-research-uae',
   '/real-world-evidence-gcc',
+  '/gcc-medical-devices-market-report',
+  '/bionixus-market-research-middle-east',
+  '/gcc-pharmaceutical-market-research',
+  '/saudi-arabia-medical-devices-market-report',
 ];
 
 let serverEntry;
@@ -30,19 +33,34 @@ try {
   process.exit(1);
 }
 
-const { render } = serverEntry;
+const { render, fetchRouteData } = serverEntry;
 if (typeof render !== 'function') {
   console.error('verify-ssr-bundle: server-entry.js missing render export');
+  process.exit(1);
+}
+if (typeof fetchRouteData !== 'function') {
+  console.error('verify-ssr-bundle: server-entry.js missing fetchRouteData export');
   process.exit(1);
 }
 
 for (const pathname of CRITICAL_PATHS) {
   try {
-    const { html } = render(pathname, {});
+    const initialData = await fetchRouteData(pathname).catch(() => ({}));
+    const { html } = await render(pathname, initialData);
     if (!html || html.length < 500) {
       throw new Error(`render returned empty or tiny HTML (${html?.length ?? 0} bytes)`);
     }
-    console.log(`verify-ssr-bundle: OK ${pathname} (${html.length} bytes)`);
+    const mainText = html
+      .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+      .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+    const wordCount = mainText ? mainText.split(' ').filter(Boolean).length : 0;
+    if (wordCount < 500) {
+      throw new Error(`render returned thin SSR content (${wordCount} words)`);
+    }
+    console.log(`verify-ssr-bundle: OK ${pathname} (${html.length} bytes, ~${wordCount} words)`);
   } catch (error) {
     console.error(`verify-ssr-bundle: FAILED ${pathname}`);
     console.error(error);
