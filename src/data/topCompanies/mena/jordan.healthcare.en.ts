@@ -256,7 +256,7 @@ export const jordanHealthcareEn: CountryListicleConfig = {
     { to: '/insights/top-healthcare-market-research-companies-lebanon-2026', label: 'Healthcare Market Research Companies in Lebanon' },
     { to: '/insights/top-healthcare-market-research-companies-egypt-2026', label: 'Healthcare Market Research Companies in Egypt' },
     { to: '/insights/top-healthcare-market-research-companies-morocco-2026', label: 'Healthcare Market Research Companies in Morocco' },
-    { to: '/gcc-market-access-guide', label: 'MENA Market Access Guide' },
+    { to: '/gcc-market-access-guide', label: 'GCC Market Access Guide' },
     { to: '/contact', label: 'Request a Jordan Healthcare Research Proposal' },
   ],
   cta: {

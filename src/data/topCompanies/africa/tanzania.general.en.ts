@@ -241,8 +241,8 @@ export const tanzaniaGeneralEn: CountryListicleConfig = {
     { to: '/insights/top-market-research-companies-kenya-2026', label: 'Best Market Research Companies in Kenya' },
     { to: '/insights/top-market-research-companies-ethiopia-2026', label: 'Best Market Research Companies in Ethiopia' },
     { to: '/insights/top-market-research-companies-uganda-2026', label: 'Best Market Research Companies in Uganda' },
-    { to: '/gcc-market-access-guide', label: 'Africa Market Access Guide' },
-    { to: '/gcc-pharmaceutical-market-research', label: 'Pharmaceutical Market Research Africa' },
+    { to: '/gcc-market-access-guide', label: 'GCC Market Access Guide' },
+    { to: '/gcc-pharmaceutical-market-research', label: 'GCC Pharmaceutical Market Research' },
     { to: '/contact', label: 'Request a Tanzania Research Proposal' },
   ],
   cta: {

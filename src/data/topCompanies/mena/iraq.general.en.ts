@@ -257,7 +257,7 @@ export const iraqGeneralEn: CountryListicleConfig = {
     { to: '/insights/top-market-research-companies-lebanon-2026', label: 'Best Market Research Companies in Lebanon' },
     { to: '/insights/top-market-research-companies-morocco-2026', label: 'Best Market Research Companies in Morocco' },
     { to: '/insights/top-market-research-companies-algeria-2026', label: 'Best Market Research Companies in Algeria' },
-    { to: '/gcc-market-access-guide', label: 'MENA Market Access Guide' },
+    { to: '/gcc-market-access-guide', label: 'GCC Market Access Guide' },
     { to: '/contact', label: 'Request an Iraq Research Proposal' },
   ],
   cta: {

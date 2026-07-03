@@ -241,8 +241,8 @@ export const kenyaGeneralEn: CountryListicleConfig = {
     { to: '/insights/top-market-research-companies-south-africa-2026', label: 'Best Market Research Companies in South Africa' },
     { to: '/insights/top-market-research-companies-nigeria-2026', label: 'Best Market Research Companies in Nigeria' },
     { to: '/insights/top-market-research-companies-uae-2026', label: 'Best Market Research Companies in the UAE' },
-    { to: '/gcc-market-access-guide', label: 'Africa Market Access Guide' },
-    { to: '/gcc-pharmaceutical-market-research', label: 'Pharmaceutical Market Research Africa' },
+    { to: '/gcc-market-access-guide', label: 'GCC Market Access Guide' },
+    { to: '/gcc-pharmaceutical-market-research', label: 'GCC Pharmaceutical Market Research' },
     { to: '/contact', label: 'Request a Kenya Research Proposal' },
   ],
   cta: {
