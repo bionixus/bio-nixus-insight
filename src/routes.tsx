@@ -185,6 +185,7 @@ import HealthcareReportsHub from '@/pages/HealthcareReportsHub';
 import HealthcareReportsByTherapy from '@/pages/HealthcareReportsByTherapy';
 import HealthcareReportsByCountry from '@/pages/HealthcareReportsByCountry';
 import { SKYRIZI_ROOT_SLUG } from '@/data/blog-skyrizi-omnichannel';
+import BlogPostPage from '@/pages/BlogPost';
 import HubPage from '@/pages/healthcare-research/HubPage';
 import FrHubPage from '@/pages/healthcare-research/FrHubPage';
 import FrFranceCountryPage from '@/pages/healthcare-research/FrFranceCountryPage';
@@ -390,7 +391,7 @@ export const routes: RouteObject[] = [
   { path: '/pt/market-research-healthcare', element: <MarketResearchHealthcare /> },
   { path: '/ru/market-research-healthcare', element: <MarketResearchHealthcare /> },
   { path: '/qualitative-market-research', element: <QualitativeMarketResearch /> },
-  { path: '/bionixus-market-research-middle-east', element: suspensePage(<BionixusMarketResearchMiddleEast />) },
+  { path: '/bionixus-market-research-middle-east', element: <BionixusMarketResearchMiddleEast /> },
   { path: '/bionixus-vs-iqvia-mena', element: <BionixusVsIqviaMena /> },
   { path: '/gcc-pharma-market-report-2026', element: <GccPharmaMarketReport2026 /> },
   { path: '/nf1-pharma-market-research', element: <Nf1PharmaMarketResearch /> },
@@ -505,7 +506,7 @@ export const routes: RouteObject[] = [
   { path: '/uae-healthcare-market-report', element: suspensePage(<UaeHealthcareMarketReport />) },
   { path: '/uae-medical-devices-market-report', element: suspensePage(<UaeMedicalDevicesMarketReport />) },
   { path: '/gcc-anesthesia-surgical-market-report', element: suspensePage(<GccAnesthesiaSurgicalMarket />) },
-  { path: '/gcc-medical-devices-market-report', element: suspensePage(<GccMedicalDevicesMarketReport />) },
+  { path: '/gcc-medical-devices-market-report', element: <GccMedicalDevicesMarketReport /> },
   { path: '/kuwait-medical-devices-market-report', element: suspensePage(<KuwaitMedicalDevicesMarketReport />) },
   { path: '/kuwait-healthcare-market-report', element: suspensePage(<KuwaitHealthcareMarketReport />) },
   { path: '/qatar-medical-devices-market-report', element: suspensePage(<QatarMedicalDevicesMarketReport />) },
@@ -574,7 +575,7 @@ export const routes: RouteObject[] = [
   { path: '/blog/:slug', element: suspensePage(<BlogPost />) },
   {
     path: `/${SKYRIZI_ROOT_SLUG}`,
-    element: suspensePage(<BlogPost fixedSlug={SKYRIZI_ROOT_SLUG} />),
+    element: <BlogPostPage fixedSlug={SKYRIZI_ROOT_SLUG} />,
   },
   { path: '/case-studies', element: <CaseStudies /> },
   { path: '/case-studies/:slug', element: suspensePage(<CaseStudy />) },

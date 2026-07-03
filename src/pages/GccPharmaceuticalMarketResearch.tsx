@@ -251,6 +251,7 @@ export default function GccPharmaceuticalMarketResearch() {
             { href: '#priority-segments', label: 'Priority segments' },
             { href: '#research-approach', label: 'Research approach' },
             { href: '#regulatory-landscape', label: 'Regulatory landscape' },
+            { href: '#biosimilar-tender-research', label: 'Biosimilar & tenders' },
             { href: '#related-resources', label: 'Related resources' },
             { href: `#${FAQ_SECTION_ID}`, label: 'FAQ' },
           ]}
@@ -417,6 +418,57 @@ export default function GccPharmaceuticalMarketResearch() {
                 handling in HCP interviews. Outputs include stakeholder maps, adoption forecasts, pricing scenario
                 libraries, and account-level tender calendars — the operational intelligence commercial and access teams
                 need before committing launch sequencing across the six GCC markets.
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection
+            id="biosimilar-tender-research"
+            title="Biosimilar penetration, NUPCO tenders, and hospital injectables intelligence"
+            variant="muted"
+          >
+            <div className="space-y-4 text-muted-foreground leading-relaxed max-w-4xl">
+              <p>
+                The GCC generic injectables market is not a single retail channel story. In Saudi Arabia, NUPCO
+                tender outcomes determine which hospital-administered molecules reach MOH, NGHA, and military networks
+                at scale — biosimilar and generic injectable portfolios must be researched against tender calendars,
+                price corridors, and post-award switching behaviour, not only against SFDA approval status. In the UAE,
+                MOHAP listing and emirate formulary decisions in Dubai and Abu Dhabi create parallel uptake curves for
+                the same molecule class, which is why BioNixus sequences injectables research by institution type rather
+                than treating the Emirates as one average.
+              </p>
+              <p>
+                For biologics, interchangeability guidance from SFDA and MOHAP has accelerated biosimilar adoption in
+                oncology, immunology, and diabetes — but physician confidence, pharmacist substitution rules, and payer
+                incentives still diverge between Riyadh academic centres and Dubai private hospitals. Quantitative
+                programmes track prescribing intent, switching barriers, and account-level share shifts after tender
+                awards; qualitative modules explain why uptake stalls when procurement wins do not translate into
+                ward-level administration. Teams defending originator share or planning biosimilar entry use this
+                evidence to align medical, access, and commercial narratives before committee season.
+              </p>
+              <p>
+                Kuwait and Qatar concentrate smaller but strategically important hospital injectables volume through MOH
+                tender stores and Hamad procurement respectively. Oman and Bahrain add NHRA and MOH registration nuance
+                where mutual recognition can shorten timelines but not guarantee formulary inclusion. BioNixus maps
+                these country-specific procurement rhythms alongside the{' '}
+                <Link to="/gcc-market-access-guide" className="text-primary font-medium hover:underline">
+                  GCC market access guide
+                </Link>{' '}
+                and{' '}
+                <Link to="/biosimilar-market-entry-saudi-arabia" className="text-primary font-medium hover:underline">
+                  biosimilar market entry Saudi Arabia
+                </Link>{' '}
+                resources — giving launch teams a single evidence thread from registration through tender defence.
+              </p>
+              <p>
+                For combined pharma–device accounts, hospital procurement intelligence on prefilled syringes, infusion
+                pumps, and point-of-care diagnostics often determines whether injectable launches can be bundled with
+                medtech tenders. Pair this section with the{' '}
+                <Link to="/gcc-medical-devices-market-report" className="text-primary font-medium hover:underline">
+                  GCC medical devices market report
+                </Link>{' '}
+                when your portfolio spans biologics, hospital-administered generics, and companion diagnostics in the
+                same institution.
               </p>
             </div>
           </ReportPremiumSection>

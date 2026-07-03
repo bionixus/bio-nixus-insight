@@ -10,6 +10,5 @@ export const AiChatbotsLeadGeneration = lazy(() => import('@/pages/AiChatbotsLea
 export const ArTopMarketResearchCompaniesEgypt2026 = lazy(
   () => import('@/pages/ArTopMarketResearchCompaniesEgypt2026'),
 );
-export const BionixusMarketResearchMiddleEast = lazy(
-  () => import('@/pages/BionixusMarketResearchMiddleEast'),
-);
+/** Eager import — SEO pillar; lazy()+Suspense breaks renderToString SSR. */
+export { default as BionixusMarketResearchMiddleEast } from '@/pages/BionixusMarketResearchMiddleEast';

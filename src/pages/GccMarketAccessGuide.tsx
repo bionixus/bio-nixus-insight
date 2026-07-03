@@ -455,6 +455,49 @@ const GccMarketAccessGuide = () => {
           </div>
         </section>
 
+        {/* Biosimilars, HTA, and evidence expectations */}
+        <section className="section-padding py-12 bg-muted/10" id="biosimilars-hta">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Biosimilars, HTA-style evidence, and GCC payer expectations in 2026
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                GCC payers increasingly expect pharmacoeconomic and budget-impact evidence alongside clinical
+                dossiers — especially for biologics, oncology, and high-cost specialty medicines. Saudi Arabia&apos;s
+                SFDA Economic Evaluation Submission (EES) pathway formalises cost-effectiveness requirements for
+                selected products; UAE emirate formularies and MOHAP pricing reviews apply similar scrutiny for
+                hospital-administered therapies. Kuwait MOH tender committees and Qatar Hamad procurement evaluate
+                therapeutic alternatives with explicit budget-impact forecasts, while Oman and Bahrain NHRA processes
+                weigh local epidemiology and substitution potential when listing biosimilars.
+              </p>
+              <p>
+                BioNixus integrates HEOR modules with primary fieldwork so access teams do not commission disconnected
+                budget models and physician surveys. Typical programmes combine epidemiology-informed sizing,
+                treatment-pathway mapping, willingness-to-pay proxies, and committee objection research — outputs
+                structured for SFDA EES, tender dossiers, or emirate formulary submissions as required. For biosimilar
+                portfolios, research tracks interchangeability confidence, pharmacist substitution behaviour, and
+                physician switching intent after NUPCO or MOH tender awards.
+              </p>
+              <p>
+                See also{' '}
+                <Link to="/heor-consulting-saudi-arabia" className="text-primary underline font-medium">
+                  HEOR consulting Saudi Arabia
+                </Link>
+                ,{' '}
+                <Link to="/budget-impact-model-saudi-arabia" className="text-primary underline font-medium">
+                  budget impact model Saudi Arabia
+                </Link>
+                , and{' '}
+                <Link to="/gcc-pharmaceutical-market-research" className="text-primary underline font-medium">
+                  GCC pharmaceutical market research
+                </Link>{' '}
+                for segment-level biologics and injectables intelligence that feeds access narratives.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* NUPCO and GCC tender landscape */}
         <section className="section-padding py-12" id="nupco-tenders">
           <div className="container-wide max-w-5xl mx-auto">
