@@ -3,6 +3,7 @@ import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import type { ReportConversionConfig } from '@/data/reportConversionConfig';
 import { BIONIXUS_EMAIL, mailtoHref } from '@/components/report-conversion/constants';
 import { ReportPhoneLinks } from '@/components/report-conversion/ReportPhoneLinks';
+import { trackCtaClick } from '@/lib/analytics';
 
 type ReportConsultationBandProps = {
   config: ReportConversionConfig;
@@ -39,6 +40,7 @@ export function ReportConsultationBand({ config }: ReportConsultationBandProps) 
         <div className="flex flex-col sm:flex-row flex-wrap gap-3 justify-center">
           <Link
             to="/contact"
+            onClick={() => trackCtaClick({ ctaId: 'report_consultation_primary', ctaLocation: 'consultation_band', targetUrl: '/contact' })}
             className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-md text-sm font-bold transition-all hover:-translate-y-0.5 shadow-xl"
             style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--navy-deep))' }}
           >
@@ -47,6 +49,7 @@ export function ReportConsultationBand({ config }: ReportConsultationBandProps) 
           </Link>
           <Link
             to="/services"
+            onClick={() => trackCtaClick({ ctaId: 'report_consultation_secondary', ctaLocation: 'consultation_band', targetUrl: '/services' })}
             className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-md text-sm font-bold border border-white/30 text-white hover:bg-white/10 transition-colors"
           >
             View services catalogue <ArrowRight className="w-4 h-4 shrink-0" aria-hidden />
