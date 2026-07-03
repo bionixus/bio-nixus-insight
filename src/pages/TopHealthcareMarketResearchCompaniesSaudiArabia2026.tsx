@@ -188,6 +188,7 @@ export default function TopHealthcareMarketResearchCompaniesSaudiArabia2026() {
         '@type': 'ListItem',
         position: 3,
         name: 'Top Healthcare Market Research Companies in Saudi Arabia (2026)',
+        item: CANONICAL,
       },
     ],
   };

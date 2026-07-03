@@ -186,6 +186,7 @@ export default function TopObesityMarketResearchCompanies2026() {
         '@type': 'ListItem',
         position: 3,
         name: 'Top Obesity & Weight Management Market Research Companies (2026)',
+        item: CANONICAL,
       },
     ],
   };

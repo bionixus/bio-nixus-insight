@@ -209,6 +209,7 @@ export default function BestObesityWeightManagementMarketResearchFirms2026() {
         '@type': 'ListItem',
         position: 3,
         name: 'Best Obesity & Weight Management Market Research Firms',
+        item: CANONICAL,
       },
     ],
   };
