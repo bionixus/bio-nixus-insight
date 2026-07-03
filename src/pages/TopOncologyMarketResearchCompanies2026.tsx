@@ -186,6 +186,7 @@ export default function TopOncologyMarketResearchCompanies2026() {
         '@type': 'ListItem',
         position: 3,
         name: 'Top Oncology Market Research Companies (2026)',
+        item: CANONICAL,
       },
     ],
   };

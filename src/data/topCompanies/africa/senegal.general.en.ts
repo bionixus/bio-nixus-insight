@@ -257,7 +257,7 @@ export const senegalGeneralEn: CountryListicleConfig = {
     { to: '/insights/top-market-research-companies-south-africa-2026', label: 'Best Market Research Companies in South Africa' },
     { to: '/insights/top-market-research-companies-morocco-2026', label: 'Best Market Research Companies in Morocco' },
     { to: '/insights/top-market-research-companies-algeria-2026', label: 'Best Market Research Companies in Algeria' },
-    { to: '/africa-market-access-guide', label: 'Africa Market Access Guide' },
+    { to: '/gcc-market-access-guide', label: 'GCC Market Access Guide' },
     { to: '/contact', label: 'Request a Senegal Research Proposal' },
   ],
   cta: {

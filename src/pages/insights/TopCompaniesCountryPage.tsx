@@ -26,7 +26,7 @@ export default function TopCompaniesCountryPage({ config }: Props) {
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: breadcrumb.home, item: 'https://www.bionixus.com/' },
       { '@type': 'ListItem', position: 2, name: breadcrumb.insights, item: 'https://www.bionixus.com/insights' },
-      { '@type': 'ListItem', position: 3, name: breadcrumb.current },
+      { '@type': 'ListItem', position: 3, name: breadcrumb.current, item: canonical },
     ],
   };
 

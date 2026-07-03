@@ -220,6 +220,7 @@ export default function TopHealthcareMarketResearchCompaniesUae2026() {
         '@type': 'ListItem',
         position: 3,
         name: 'Top Healthcare Market Research Companies in UAE (2026)',
+        item: CANONICAL,
       },
     ],
   };

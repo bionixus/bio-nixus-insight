@@ -172,6 +172,10 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     zh: '/zh/healthcare-market-research',
     ru: '/ru/healthcare-market-research',
   },
+  '/healthcare-market-research/saudi-arabia': {
+    en: '/healthcare-market-research/saudi-arabia',
+    ar: '/ar/healthcare-market-research/saudi-arabia',
+  },
   '/market-research': {
     en: '/market-research',
     de: '/de/market-research-healthcare',

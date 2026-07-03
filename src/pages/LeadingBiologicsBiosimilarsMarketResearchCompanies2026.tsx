@@ -186,6 +186,7 @@ export default function LeadingBiologicsBiosimilarsMarketResearchCompanies2026()
         '@type': 'ListItem',
         position: 3,
         name: 'Leading Biologics and Biosimilars Market Research Companies (2026)',
+        item: CANONICAL,
       },
     ],
   };

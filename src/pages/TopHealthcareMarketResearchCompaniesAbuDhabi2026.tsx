@@ -188,6 +188,7 @@ export default function TopHealthcareMarketResearchCompaniesAbuDhabi2026() {
         '@type': 'ListItem',
         position: 3,
         name: 'Top Healthcare Market Research Companies in Abu Dhabi (2026)',
+        item: CANONICAL,
       },
     ],
   };

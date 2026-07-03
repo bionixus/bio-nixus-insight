@@ -12,7 +12,6 @@ export const angolaGeneralEn: CountryListicleConfig = {
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-angola-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-angola-2026' },
-    { lang: 'pt', href: 'https://www.bionixus.com/pt/insights/top-market-research-companies-angola-2026' },
     { lang: 'x-default', href: 'https://www.bionixus.com/insights/top-market-research-companies-angola-2026' },
   ],
   ogLocale: 'en_AO',
@@ -241,7 +240,6 @@ export const angolaGeneralEn: CountryListicleConfig = {
   relatedTitle: 'Related Resources',
   related: [
     { to: '/insights/top-market-research-companies-south-africa-2026', label: 'Best Market Research Companies in South Africa' },
-    { to: '/insights/top-healthcare-market-research-companies-south-africa-2026', label: 'Healthcare Market Research Companies in South Africa' },
     { to: '/insights/top-market-research-companies-nigeria-2026', label: 'Best Market Research Companies in Nigeria' },
     { to: '/insights/top-market-research-companies-kenya-2026', label: 'Best Market Research Companies in Kenya' },
     { to: '/pharmaceutical-market-research', label: 'Pharmaceutical Market Research Services' },

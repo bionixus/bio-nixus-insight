@@ -11,6 +11,8 @@ import {
   buildServiceSchema,
 } from '@/lib/seo/schemas';
 import { INDUSTRY_HUB_PAGES } from '@/data/industryHubPages';
+import { resolveCountryIndustryMarketResearchPath } from '@/data/industryHubCountries';
+import type { MatrixIndustrySlug } from '@/data/industryMarketResearchMatrix';
 
 const BASE_URL = 'https://www.bionixus.com';
 
@@ -214,7 +216,7 @@ export default function IndustryGlobalHubPage() {
               {config.countryLinks.map((country) => (
                 <Link
                   key={country.slug}
-                  to={`/${country.slug}-${config.slug}-market-research`}
+                  to={resolveCountryIndustryMarketResearchPath(country.slug, config.slug as MatrixIndustrySlug)}
                   className="group flex flex-col items-center gap-2 rounded-xl border border-border bg-card p-4 text-center hover:border-primary/50 hover:shadow-sm transition-all"
                 >
                   <span className="text-3xl" aria-hidden="true">

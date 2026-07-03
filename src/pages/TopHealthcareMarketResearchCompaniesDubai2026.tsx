@@ -188,6 +188,7 @@ export default function TopHealthcareMarketResearchCompaniesDubai2026() {
         '@type': 'ListItem',
         position: 3,
         name: 'Top Healthcare Market Research Companies in Dubai (2026)',
+        item: CANONICAL,
       },
     ],
   };
