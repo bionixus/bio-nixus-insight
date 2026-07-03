@@ -368,6 +368,8 @@ const GccMedicalDevicesMarketReport = () => {
           </div>
         </section>
 
+        <MarketIntelligenceSections marketSlug="gcc" countryName="GCC" variant="medical-devices" />
+
         </ReportContentWithAside>
 
                 <section className="section-padding" id="related-intelligence">
