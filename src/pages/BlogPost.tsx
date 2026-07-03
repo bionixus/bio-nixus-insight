@@ -896,7 +896,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
     );
   }
 
-  if (isLoading && !fallbackPost) {
+  if (isLoading && !fallbackPost && !post) {
     return (
       <div className="min-h-screen bg-background">
         <Navbar />

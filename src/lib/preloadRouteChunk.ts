@@ -26,6 +26,8 @@ function slugToComponentName(slug: string): string {
 /** Report routes whose file name does not match slug -> PascalCase + "Report". */
 const IRREGULAR_IMPORTS: Record<string, Importer> = {
   '/gcc-anesthesia-surgical-market-report': () => import('@/pages/GccAnesthesiaSurgicalMarket'),
+  '/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement': () =>
+    import('@/pages/BlogPost'),
 };
 
 /** Dynamic-slug routes matched by prefix. */
