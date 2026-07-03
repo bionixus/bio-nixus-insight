@@ -14,6 +14,7 @@ import { languagePaths, localizedContactPath } from '@/lib/seo';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { TrustCoverageMap } from '@/components/media/TrustCoverageMap';
 import { CONTACT_FORM_COUNTRIES } from '@/data/contactFormCountries';
+import { trackLeadSubmitted } from '@/lib/analytics';
 
 type ContactValidation = {
   firstName?: string;
@@ -204,6 +205,7 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
       });
       if (res.ok) {
         setSubmitted(true);
+        trackLeadSubmitted({ formId: 'contact_section' });
         try {
           await fetch('/api/subscribe', {
             method: 'POST',

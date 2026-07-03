@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import type { ReportConversionConfig } from '@/data/reportConversionConfig';
 import { mailtoHref } from '@/components/report-conversion/constants';
+import { trackCtaClick } from '@/lib/analytics';
 
 type ReportMidPageCtaProps = {
   config: ReportConversionConfig;
@@ -34,6 +35,7 @@ export function ReportMidPageCta({ config, className = 'my-10' }: ReportMidPageC
       <div className="flex flex-col sm:flex-row flex-wrap gap-3">
         <Link
           to="/contact"
+          onClick={() => trackCtaClick({ ctaId: 'report_midpage_primary', ctaLocation: 'mid_page', targetUrl: '/contact' })}
           className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-bold rounded-md transition-all hover:-translate-y-0.5 shadow-lg"
           style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--navy-deep))' }}
         >
@@ -49,6 +51,7 @@ export function ReportMidPageCta({ config, className = 'my-10' }: ReportMidPageC
         </a>
         <Link
           to="/healthcare-market-research"
+          onClick={() => trackCtaClick({ ctaId: 'report_midpage_secondary', ctaLocation: 'mid_page', targetUrl: '/healthcare-market-research' })}
           className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-white/85 hover:text-white transition-colors underline-offset-4 hover:underline"
         >
           View international research playbook

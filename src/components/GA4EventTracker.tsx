@@ -1,12 +1,6 @@
 import { useEffect, useState } from 'react';
 import { hasAnalyticsConsent, onConsentChange } from '@/lib/consent';
-
-type EventParams = Record<string, string | number | boolean | undefined>;
-
-function emitEvent(eventName: string, params: EventParams) {
-  if (typeof window === 'undefined' || typeof window.gtag !== 'function') return;
-  window.gtag('event', eventName, params);
-}
+import { trackGaEvent as emitEvent } from '@/lib/analytics';
 
 export default function GA4EventTracker() {
   const [consentGranted, setConsentGranted] = useState(() => hasAnalyticsConsent());
