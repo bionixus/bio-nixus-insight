@@ -52,6 +52,7 @@ import BahrainPharmaceuticalMarketResearch from '@/pages/BahrainPharmaceuticalMa
 import OmanPharmaceuticalMarketResearch from '@/pages/OmanPharmaceuticalMarketResearch';
 import JordanPharmaceuticalMarketResearch from '@/pages/JordanPharmaceuticalMarketResearch';
 import EgyptPharmaceuticalMarketResearch from '@/pages/EgyptPharmaceuticalMarketResearch';
+import HealthcareMarketResearchInEgypt from '@/pages/HealthcareMarketResearchInEgypt';
 import SaudiPayerMarketAccessResearch from '@/pages/SaudiPayerMarketAccessResearch';
 import GccHcpRecruitmentMarketResearch from '@/pages/GccHcpRecruitmentMarketResearch';
 import HealthcareMarketResearchAgencyGcc from '@/pages/HealthcareMarketResearchAgencyGcc';
@@ -218,6 +219,7 @@ import ArTopHealthcareMarketResearchCompaniesSaudiArabia2026 from '@/pages/ArTop
 import ArTopMarketResearchCompaniesSaudiArabia2026 from '@/pages/ArTopMarketResearchCompaniesSaudiArabia2026';
 import AustraliaPharmaceuticalMarketResearch from '@/pages/AustraliaPharmaceuticalMarketResearch';
 import BrazilPharmaceuticalMarketResearch from '@/pages/BrazilPharmaceuticalMarketResearch';
+import BrazilHealthcareMarketResearch from '@/pages/BrazilHealthcareMarketResearch';
 import CanadaPharmaceuticalMarketResearch from '@/pages/CanadaPharmaceuticalMarketResearch';
 import IndiaPharmaceuticalMarketResearch from '@/pages/IndiaPharmaceuticalMarketResearch';
 import SingaporePharmaceuticalMarketResearch from '@/pages/SingaporePharmaceuticalMarketResearch';
@@ -426,6 +428,7 @@ export const routes: RouteObject[] = [
   { path: '/pharmaceutical-market-research-oman', element: <OmanPharmaceuticalMarketResearch /> },
   { path: '/pharmaceutical-market-research-jordan', element: <JordanPharmaceuticalMarketResearch /> },
   { path: '/egypt-pharmaceutical-market-research', element: <EgyptPharmaceuticalMarketResearch /> },
+  { path: '/egypt-healthcare-market-research', element: <HealthcareMarketResearchInEgypt /> },
   { path: '/saudi-payer-market-access-research', element: <SaudiPayerMarketAccessResearch /> },
   { path: '/gcc-hcp-recruitment-market-research', element: <GccHcpRecruitmentMarketResearch /> },
   { path: '/healthcare-market-research-agency-gcc', element: <HealthcareMarketResearchAgencyGcc /> },
@@ -663,6 +666,7 @@ export const routes: RouteObject[] = [
   { path: '/ar/insights/top-sharaket-abhath-alsuq-alsaudia-2026', element: <ArTopMarketResearchCompaniesSaudiArabia2026 /> },
   { path: '/ar/insights/top-sharaket-abhath-sihha-alsaudia-2026', element: <ArTopHealthcareMarketResearchCompaniesSaudiArabia2026 /> },
   { path: '/brazil-pharmaceutical-market-research', element: <BrazilPharmaceuticalMarketResearch /> },
+  { path: '/brazil-healthcare-market-research', element: <BrazilHealthcareMarketResearch /> },
   { path: '/consumer-market-research', element: <ConsumerMarketResearchPortal /> },
   { path: '/de/healthcare-market-research/:country', element: <CountryPage /> },
   { path: '/de/healthcare-market-research/germany', element: <DeHealthcareMarketResearchGermany /> },
