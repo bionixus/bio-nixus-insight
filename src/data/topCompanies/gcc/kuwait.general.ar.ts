@@ -254,10 +254,10 @@ export const kuwaitGeneralAr: CountryListicleConfig = {
   relatedTitle: 'موارد ذات صلة',
   related: [
     { to: '/ar/insights/top-market-research-companies-uae-2026', label: 'أفضل شركات أبحاث السوق في الإمارات' },
-    { to: '/ar/insights/top-market-research-companies-ksa-2026', label: 'أفضل شركات أبحاث السوق في المملكة العربية السعودية' },
+    { to: '/insights/top-market-research-companies-ksa-2026', label: 'أفضل شركات أبحاث السوق في المملكة العربية السعودية' },
     { to: '/ar/insights/top-market-research-companies-qatar-2026', label: 'أفضل شركات أبحاث السوق في قطر' },
-    { to: '/ar/gcc-market-access-guide', label: 'دليل الوصول إلى أسواق الخليج' },
-    { to: '/ar/pharmaceutical-market-research', label: 'أبحاث السوق الصيدلانية في الخليج' },
+    { to: '/gcc-market-access-guide', label: 'دليل الوصول إلى أسواق الخليج' },
+    { to: '/gcc-pharmaceutical-market-research', label: 'أبحاث السوق الصيدلانية في الخليج' },
     { to: '/ar/contact', label: 'طلب مقترح بحثي للكويت' },
   ],
   cta: {

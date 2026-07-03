@@ -241,8 +241,8 @@ export const ugandaGeneralEn: CountryListicleConfig = {
     { to: '/insights/top-market-research-companies-kenya-2026', label: 'Best Market Research Companies in Kenya' },
     { to: '/insights/top-market-research-companies-tanzania-2026', label: 'Best Market Research Companies in Tanzania' },
     { to: '/insights/top-market-research-companies-ethiopia-2026', label: 'Best Market Research Companies in Ethiopia' },
-    { to: '/africa-market-access-guide', label: 'Africa Market Access Guide' },
-    { to: '/pharmaceutical-market-research-africa', label: 'Pharmaceutical Market Research Africa' },
+    { to: '/gcc-market-access-guide', label: 'Africa Market Access Guide' },
+    { to: '/gcc-pharmaceutical-market-research', label: 'Pharmaceutical Market Research Africa' },
     { to: '/contact', label: 'Request a Uganda Research Proposal' },
   ],
   cta: {

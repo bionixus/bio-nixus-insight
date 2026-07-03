@@ -77,6 +77,7 @@ import MarketResearchUae from '@/pages/MarketResearchUae';
 import DiabetesMarketResearchUae from '@/pages/DiabetesMarketResearchUae';
 import SpecialistPhysicianPanelUae from '@/pages/SpecialistPhysicianPanelUae';
 import MslInsightResearchMiddleEast from '@/pages/MslInsightResearchMiddleEast';
+import MedicalAffairsInsightResearchGcc from '@/pages/MedicalAffairsInsightResearchGcc';
 import BrandTrackingPharmaGcc from '@/pages/BrandTrackingPharmaGcc';
 import CommercialEffectivenessPharmaMiddleEast from '@/pages/CommercialEffectivenessPharmaMiddleEast';
 import HealthcareFieldworkGcc from '@/pages/HealthcareFieldworkGcc';
@@ -364,6 +365,7 @@ export const routes: RouteObject[] = [
   { path: '/diabetes-market-research-uae', element: <DiabetesMarketResearchUae /> },
   { path: '/specialist-physician-panel-uae', element: <SpecialistPhysicianPanelUae /> },
   { path: '/msl-insight-research-middle-east', element: <MslInsightResearchMiddleEast /> },
+  { path: '/medical-affairs-insight-research-gcc', element: <MedicalAffairsInsightResearchGcc /> },
   { path: '/brand-tracking-pharma-gcc', element: <BrandTrackingPharmaGcc /> },
   { path: '/commercial-effectiveness-pharma-middle-east', element: <CommercialEffectivenessPharmaMiddleEast /> },
   { path: '/healthcare-fieldwork-gcc', element: <HealthcareFieldworkGcc /> },

@@ -12,8 +12,6 @@ export const tunisiaGeneralEn: CountryListicleConfig = {
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-tunisia-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-tunisia-2026' },
-    { lang: 'fr', href: 'https://www.bionixus.com/fr/insights/top-market-research-companies-tunisia-2026' },
-    { lang: 'ar', href: 'https://www.bionixus.com/ar/insights/top-market-research-companies-tunisia-2026' },
     { lang: 'x-default', href: 'https://www.bionixus.com/insights/top-market-research-companies-tunisia-2026' },
   ],
   ogLocale: 'en_TN',
@@ -245,7 +243,7 @@ export const tunisiaGeneralEn: CountryListicleConfig = {
     { to: '/insights/top-market-research-companies-algeria-2026', label: 'Best Market Research Companies in Algeria' },
     { to: '/insights/top-market-research-companies-egypt-2026', label: 'Best Market Research Companies in Egypt' },
     { to: '/insights/top-market-research-companies-uae-2026', label: 'Best Market Research Companies in the UAE' },
-    { to: '/north-africa-market-research', label: 'North Africa Market Research' },
+    { to: '/market-research-egypt', label: 'North Africa Market Research' },
     { to: '/contact', label: 'Request a Tunisia Research Proposal' },
   ],
   cta: {

@@ -1,7 +1,7 @@
 import type { Language } from '@/lib/i18n';
 import type { HomePathwayCardCopy } from '@/lib/homePageHardcoded';
 import type { PathwayCard } from '@/components/home/HomePathwaysSection';
-import { getLocalizedPathForLanguage, languagePaths } from '@/lib/seo';
+import { getLocalizedPathForLanguage } from '@/lib/seo';
 
 const PATHWAY_ROUTES: {
   to: string;
@@ -29,12 +29,10 @@ const ARABIC_BONUS_CARD: PathwayCard = {
 };
 
 function localizeHomePathwayRoute(enPath: string, language: Language): string {
-  const localized = getLocalizedPathForLanguage(enPath, language);
-  if (localized !== enPath) return localized;
-  if (language === 'en') return enPath;
-  const prefix = languagePaths[language];
-  if (!prefix || prefix === '/') return enPath;
-  return `${prefix}${enPath}`;
+  // Only follow a locale prefix when a real translated route exists for it
+  // (via localizedRouteGroups); otherwise link to the English page rather
+  // than guessing a `${prefix}${enPath}` URL that may not have a route.
+  return getLocalizedPathForLanguage(enPath, language);
 }
 
 export function buildHomePathwayCards(language: Language, cards: HomePathwayCardCopy[]): PathwayCard[] {

@@ -10,7 +10,7 @@ const content: GeneralMRPageContent = {
   intro:
     "Market research companies in Egypt operate in North Africa's most populous market — a 105+ million consumer base spanning modern retail, a large informal economy, and one of the region's most active manufacturing sectors. BioNixus is an international market research company delivering primary consumer, B2B, and industry-specific studies across Cairo, Alexandria, the Delta, and Upper Egypt for global and regional clients.",
   countryLabel: 'Egypt',
-  healthcarePageLink: '/healthcare-market-research-in-egypt',
+  healthcarePageLink: '/healthcare-market-research/egypt',
   healthcarePageLabel: 'Healthcare & pharmaceutical market research in Egypt',
   industries: [
     {
@@ -200,7 +200,7 @@ const content: GeneralMRPageContent = {
     },
   ],
   relatedLinks: [
-    { to: '/healthcare-market-research-in-egypt', label: 'Healthcare market research in Egypt' },
+    { to: '/healthcare-market-research/egypt', label: 'Healthcare market research in Egypt' },
     {
       to: '/insights/top-market-research-companies-egypt-2026',
       label: 'Top market research companies in Egypt (2026 guide)',
