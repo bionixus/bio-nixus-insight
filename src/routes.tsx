@@ -219,6 +219,7 @@ import ArTopMarketResearchCompaniesSaudiArabia2026 from '@/pages/ArTopMarketRese
 import AustraliaPharmaceuticalMarketResearch from '@/pages/AustraliaPharmaceuticalMarketResearch';
 import BrazilPharmaceuticalMarketResearch from '@/pages/BrazilPharmaceuticalMarketResearch';
 import CanadaPharmaceuticalMarketResearch from '@/pages/CanadaPharmaceuticalMarketResearch';
+import IndiaPharmaceuticalMarketResearch from '@/pages/IndiaPharmaceuticalMarketResearch';
 import SingaporePharmaceuticalMarketResearch from '@/pages/SingaporePharmaceuticalMarketResearch';
 import PolandPharmaceuticalMarketResearch from '@/pages/PolandPharmaceuticalMarketResearch';
 import MalaysiaPharmaceuticalMarketResearch from '@/pages/MalaysiaPharmaceuticalMarketResearch';
@@ -270,6 +271,7 @@ import GccPharmacyMarket from '@/pages/market-research-gcc/GccPharmacyMarket';
 import GermanyPharmaceuticalMarketResearch from '@/pages/GermanyPharmaceuticalMarketResearch';
 import HealthcareMarketResearchAustralia from '@/pages/HealthcareMarketResearchAustralia';
 import HealthcareMarketResearchCanada from '@/pages/HealthcareMarketResearchCanada';
+import HealthcareMarketResearchIndia from '@/pages/HealthcareMarketResearchIndia';
 import HealthcareMarketResearchChina from '@/pages/HealthcareMarketResearchChina';
 import HealthcareMarketResearchDenmark from '@/pages/HealthcareMarketResearchDenmark';
 import HealthcareMarketResearchFrance from '@/pages/HealthcareMarketResearchFrance';
@@ -308,6 +310,7 @@ import TopHealthcareMarketResearchCompaniesDenmark2026 from '@/pages/TopHealthca
 import TopHealthcareMarketResearchCompaniesFrance2026 from '@/pages/TopHealthcareMarketResearchCompaniesFrance2026';
 import TopHealthcareMarketResearchCompaniesGermany2026 from '@/pages/TopHealthcareMarketResearchCompaniesGermany2026';
 import TopHealthcareMarketResearchCompaniesItaly2026 from '@/pages/TopHealthcareMarketResearchCompaniesItaly2026';
+import TopHealthcareMarketResearchCompaniesIndia2026 from '@/pages/TopHealthcareMarketResearchCompaniesIndia2026';
 import TopHealthcareMarketResearchCompaniesNewZealand2026 from '@/pages/TopHealthcareMarketResearchCompaniesNewZealand2026';
 import TopHealthcareMarketResearchCompaniesSouthKorea2026 from '@/pages/TopHealthcareMarketResearchCompaniesSouthKorea2026';
 import TopHealthcareMarketResearchCompaniesSpain2026 from '@/pages/TopHealthcareMarketResearchCompaniesSpain2026';
@@ -321,6 +324,7 @@ import TopMarketResearchCompaniesDenmark2026 from '@/pages/TopMarketResearchComp
 import TopMarketResearchCompaniesFrance2026 from '@/pages/TopMarketResearchCompaniesFrance2026';
 import TopMarketResearchCompaniesGermany2026 from '@/pages/TopMarketResearchCompaniesGermany2026';
 import TopMarketResearchCompaniesItaly2026 from '@/pages/TopMarketResearchCompaniesItaly2026';
+import TopMarketResearchCompaniesIndia2026 from '@/pages/TopMarketResearchCompaniesIndia2026';
 import TopMarketResearchCompaniesNewZealand2026 from '@/pages/TopMarketResearchCompaniesNewZealand2026';
 import TopMarketResearchCompaniesSouthKorea2026 from '@/pages/TopMarketResearchCompaniesSouthKorea2026';
 import TopMarketResearchCompaniesSpain2026 from '@/pages/TopMarketResearchCompaniesSpain2026';
@@ -674,6 +678,7 @@ export const routes: RouteObject[] = [
   { path: '/gcc-pharmacy-market', element: <GccPharmacyMarket /> },
   { path: '/healthcare-market-research-australia', element: <HealthcareMarketResearchAustralia /> },
   { path: '/healthcare-market-research-canada', element: <HealthcareMarketResearchCanada /> },
+  { path: '/healthcare-market-research-india', element: <HealthcareMarketResearchIndia /> },
   { path: '/healthcare-market-research-china', element: <HealthcareMarketResearchChina /> },
   { path: '/healthcare-market-research-denmark', element: <HealthcareMarketResearchDenmark /> },
   { path: '/healthcare-market-research-france', element: <HealthcareMarketResearchFrance /> },
@@ -695,6 +700,7 @@ export const routes: RouteObject[] = [
   { path: '/heor-consulting', element: <HeorConsulting /> },
   { path: '/insights/top-healthcare-market-research-companies-australia-2026', element: <TopHealthcareMarketResearchCompaniesAustralia2026 /> },
   { path: '/insights/top-healthcare-market-research-companies-canada-2026', element: <TopHealthcareMarketResearchCompaniesCanada2026 /> },
+  { path: '/insights/top-healthcare-market-research-companies-india-2026', element: <TopHealthcareMarketResearchCompaniesIndia2026 /> },
   { path: '/insights/top-healthcare-market-research-companies-china-2026', element: <TopHealthcareMarketResearchCompaniesChina2026 /> },
   { path: '/insights/top-healthcare-market-research-companies-denmark-2026', element: <TopHealthcareMarketResearchCompaniesDenmark2026 /> },
   { path: '/insights/top-healthcare-market-research-companies-france-2026', element: <TopHealthcareMarketResearchCompaniesFrance2026 /> },
@@ -709,6 +715,7 @@ export const routes: RouteObject[] = [
   { path: '/insights/top-healthcare-market-research-companies-usa-2026', element: <TopHealthcareMarketResearchCompaniesUsa2026 /> },
   { path: '/insights/top-market-research-companies-australia-2026', element: <TopMarketResearchCompaniesAustralia2026 /> },
   { path: '/insights/top-market-research-companies-canada-2026', element: <TopMarketResearchCompaniesCanada2026 /> },
+  { path: '/insights/top-market-research-companies-india-2026', element: <TopMarketResearchCompaniesIndia2026 /> },
   { path: '/insights/top-market-research-companies-china-2026', element: <TopMarketResearchCompaniesChina2026 /> },
   { path: '/insights/top-market-research-companies-denmark-2026', element: <TopMarketResearchCompaniesDenmark2026 /> },
   { path: '/insights/top-market-research-companies-france-2026', element: <TopMarketResearchCompaniesFrance2026 /> },
@@ -726,6 +733,7 @@ export const routes: RouteObject[] = [
   { path: '/market-research/:industrySlug', element: <IndustryGlobalHubPage /> },
   { path: '/pharmaceutical-market-research-australia', element: <AustraliaPharmaceuticalMarketResearch /> },
   { path: '/pharmaceutical-market-research-canada', element: <CanadaPharmaceuticalMarketResearch /> },
+  { path: '/pharmaceutical-market-research-india', element: <IndiaPharmaceuticalMarketResearch /> },
   { path: '/pharmaceutical-market-research-singapore', element: <SingaporePharmaceuticalMarketResearch /> },
   { path: '/insights/top-market-research-companies-singapore-2026', element: <TopMarketResearchCompaniesSingapore2026 /> },
   { path: '/insights/top-healthcare-market-research-companies-singapore-2026', element: <TopHealthcareMarketResearchCompaniesSingapore2026 /> },
