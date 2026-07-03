@@ -986,7 +986,7 @@ async function startServer() {
         res.redirect(Number(initialData.statusCode) || 301, initialData.redirectTo);
         return;
       }
-      const { html: appHtml, helmetData } = render(url, initialData);
+      const { html: appHtml, helmetData } = await render(url, initialData);
 
       const headTags = [
         helmetData?.title?.toString() || '',
