@@ -48,6 +48,11 @@ const faqItems = [
     answer:
       'Yes. Italian modules can run with comparable cells in Germany, France, Spain, and the UK — and beyond to the USA, Canada, Japan, and other markets — using consistent instruments for global portfolio committees managing EU5 and multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How does BioNixus handle regional SSR formulary restrictions in Italian research?',
+    answer:
+      'Italian market access is not only national AIFA — regional SSR systems in Lombardia, Lazio, Veneto, Emilia-Romagna, and Campania can impose nota limitativa, PT Regionale, or additional prior-authorisation rules after national PFN listing. BioNixus maps regional payer pathways in parallel with national AIFA research, interviewing hospital pharmacy directors, regional formulary advisors, and IRCCS pharmacy committees so launch and access teams understand where national approval does not guarantee regional uptake.',
+  },
 ];
 
 const jsonLd = [
