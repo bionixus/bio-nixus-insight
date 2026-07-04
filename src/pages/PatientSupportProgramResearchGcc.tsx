@@ -1,4 +1,7 @@
 import StrategicServicePage from '@/pages/templates/StrategicServicePage';
+import { getServiceLandingContent } from '@/data/serviceLandingContent';
+
+const expandedContent = getServiceLandingContent('patient-support-program-research-gcc');
 
 export default function PatientSupportProgramResearchGcc() {
   return (
@@ -8,6 +11,8 @@ export default function PatientSupportProgramResearchGcc() {
       canonicalUrl="https://www.bionixus.com/patient-support-program-research-gcc"
       breadcrumbLabel="Patient Support Program Research GCC"
       h1="Patient Support Program Research GCC"
+      serviceType="Patient support program research"
+      areaServed={['Saudi Arabia', 'UAE', 'Kuwait', 'Qatar', 'GCC']}
       intro="In the GCC, a lot of a brand's value leaks after launch — at the points where patients fall out of diagnosis, initiation, and refill. Patient support programs are meant to close those gaps, but only if you know where the friction actually sits. BioNixus maps the diagnosis-to-treatment journey, locates the real drop-off points, and turns them into support interventions you can test against an adherence or persistence metric."
       links={[
         { to: '/real-world-evidence-gcc', label: 'Real world evidence GCC', primary: true },
@@ -53,6 +58,7 @@ export default function PatientSupportProgramResearchGcc() {
           detail: 'Structured optimization windows for cross-functional PSP owners.',
         },
       ]}
+      expandedContent={expandedContent}
     />
   );
 }

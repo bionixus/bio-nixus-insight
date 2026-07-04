@@ -1,4 +1,7 @@
 import StrategicServicePage from '@/pages/templates/StrategicServicePage';
+import { getServiceLandingContent } from '@/data/serviceLandingContent';
+
+const expandedContent = getServiceLandingContent('gcc-hcp-recruitment-market-research');
 
 export default function GccHcpRecruitmentMarketResearch() {
   return (
@@ -8,6 +11,8 @@ export default function GccHcpRecruitmentMarketResearch() {
       canonicalUrl="https://www.bionixus.com/gcc-hcp-recruitment-market-research"
       breadcrumbLabel="GCC HCP Recruitment Market Research"
       h1="Physician Recruitment in Saudi Arabia and GCC"
+      serviceType="Healthcare professional recruitment research"
+      areaServed={['Saudi Arabia', 'GCC']}
       intro="A GCC physician study is only as credible as the people who actually answered it. In markets where some specialties number in the dozens, sample quality is the study — not a logistics detail. BioNixus recruits verified specialists across Saudi Arabia and the wider Gulf with role and licence validation, incidence-aware quotas, and a quality funnel that is governed while fieldwork is live, not audited after the fact."
       links={[
         { to: '/bionixus-market-research-middle-east', label: 'Back to Middle East pillar', primary: true },
@@ -53,6 +58,7 @@ export default function GccHcpRecruitmentMarketResearch() {
           detail: 'Sample architecture remains traceable from screener design to final analytic base.',
         },
       ]}
+      expandedContent={expandedContent}
     />
   );
 }

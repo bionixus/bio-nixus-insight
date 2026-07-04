@@ -1,4 +1,7 @@
 import StrategicServicePage from '@/pages/templates/StrategicServicePage';
+import { getServiceLandingContent } from '@/data/serviceLandingContent';
+
+const expandedContent = getServiceLandingContent('uae-market-access-research');
 
 export default function UaeMarketAccessResearch() {
   return (
@@ -8,6 +11,8 @@ export default function UaeMarketAccessResearch() {
       canonicalUrl="https://www.bionixus.com/uae-market-access-research"
       breadcrumbLabel="Market Access Research UAE"
       h1="Market Access Research UAE"
+      serviceType="Pharmaceutical market access research"
+      areaServed={['UAE', 'GCC']}
       intro="In the UAE, the same product can face three different access timelines. Federal MOHAP registration is only the entry point — Dubai (DHA) and Abu Dhabi (DOH) run their own formulary and procurement processes, and most volume sits in an insurance-funded private sector. BioNixus maps those pathways, tests your value story against the objections payers actually raise, and tells you which emirate to enter first."
       links={[
         { to: '/healthcare-market-research-agency-gcc', label: 'Healthcare market research agency GCC', primary: true },
@@ -54,6 +59,7 @@ export default function UaeMarketAccessResearch() {
           detail: 'Execution roadmap linked to launch and reimbursement milestones.',
         },
       ]}
+      expandedContent={expandedContent}
     />
   );
 }

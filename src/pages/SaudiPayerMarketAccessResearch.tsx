@@ -1,4 +1,7 @@
 import StrategicServicePage from '@/pages/templates/StrategicServicePage';
+import { getServiceLandingContent } from '@/data/serviceLandingContent';
+
+const expandedContent = getServiceLandingContent('saudi-payer-market-access-research');
 
 export default function SaudiPayerMarketAccessResearch() {
   return (
@@ -8,6 +11,8 @@ export default function SaudiPayerMarketAccessResearch() {
       canonicalUrl="https://www.bionixus.com/saudi-payer-market-access-research"
       breadcrumbLabel="Saudi Payer Market Access Research"
       h1="Saudi Payer Market Access Research"
+      serviceType="Pharmaceutical payer market access research"
+      areaServed={['Saudi Arabia']}
       intro="In Saudi Arabia, reimbursement runs through centralised NUPCO procurement and institutional formularies at MOH and NGHA, with SFDA pricing in the background. The value evidence that wins is the evidence those committees actually weigh — not a global dossier ported in. BioNixus diagnoses what each payer segment expects, maps the procurement pathway, and prioritises the objections worth answering first."
       links={[
         { to: '/bionixus-market-research-middle-east', label: 'Open Middle East pillar', primary: true },
@@ -53,6 +58,7 @@ export default function SaudiPayerMarketAccessResearch() {
           detail: 'Decision map built for cross-functional launch and access operations.',
         },
       ]}
+      expandedContent={expandedContent}
     />
   );
 }
