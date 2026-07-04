@@ -18,6 +18,7 @@ export default function HealthcareFieldworkMiddleEast() {
         { to: '/healthcare-market-research', label: 'Healthcare market research hub', primary: true },
         { to: '/gcc-hcp-recruitment-market-research', label: 'GCC HCP recruitment standards', primary: true },
         { to: '/real-world-evidence-gcc', label: 'Real-world evidence in the GCC', primary: true },
+        { to: '/healthcare-fieldwork-gcc', label: 'Healthcare fieldwork GCC' },
         { to: '/quantitative-healthcare-market-research', label: 'Quantitative research framework' },
         { to: '/qualitative-market-research', label: 'Qualitative market research' },
         { to: '/market-research-healthcare', label: 'Healthcare market research services' },

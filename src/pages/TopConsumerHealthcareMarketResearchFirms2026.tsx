@@ -437,6 +437,7 @@ export default function TopConsumerHealthcareMarketResearchFirms2026() {
                 { to: '/market-research-by-industry', label: 'Market Research by Industry', desc: 'Industry-specific market research solutions from BioNixus.' },
                 { to: '/pharmaceutical-therapy-areas', label: 'Pharmaceutical Therapy Areas', desc: 'Therapy area expertise across oncology, immunology, respiratory, and more.' },
                 { to: '/bionixus-industries', label: 'BioNixus Industries', desc: 'Industry coverage spanning pharma, biotech, consumer health, and medtech.' },
+                { to: '/consumer-market-research', label: 'Consumer & Business Market Research', desc: 'FMCG, retail, and consumer market research services from BioNixus.' },
                 { to: '/insights/top-global-healthcare-market-research-companies-2026', label: 'Top Global Healthcare Market Research Companies', desc: 'Broader ranking covering pharma analytics and strategy consulting firms.' },
                 { to: '/contact', label: 'Request a Proposal', desc: 'Scope a custom consumer healthcare research engagement.' },
               ].map((r) => (
