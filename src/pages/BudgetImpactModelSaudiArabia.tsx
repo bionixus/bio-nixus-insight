@@ -1,4 +1,7 @@
 import StrategicServicePage from '@/pages/templates/StrategicServicePage';
+import { getServiceLandingContent } from '@/data/serviceLandingContent';
+
+const expandedContent = getServiceLandingContent('budget-impact-model-saudi-arabia');
 
 export default function BudgetImpactModelSaudiArabia() {
   return (
@@ -8,6 +11,8 @@ export default function BudgetImpactModelSaudiArabia() {
       canonicalUrl="https://www.bionixus.com/budget-impact-model-saudi-arabia"
       breadcrumbLabel="Budget Impact Model Saudi Arabia"
       h1="Budget Impact Model Saudi Arabia"
+      serviceType="Budget impact modeling"
+      areaServed={['Saudi Arabia']}
       intro="A budget impact model in Saudi Arabia is a negotiation tool, not a spreadsheet exercise — it has to survive a payer committee, not just compute a number. BioNixus builds models on Kingdom-specific uptake, mix, and pricing assumptions, stress-tests them with sensitivity bands, and frames the output so it stands up in the reimbursement and procurement conversations that actually decide access."
       links={[
         { to: '/heor-consulting-saudi-arabia', label: 'HEOR consulting Saudi Arabia', primary: true },
@@ -53,6 +58,7 @@ export default function BudgetImpactModelSaudiArabia() {
           detail: 'Model narrative aligns with payer and institutional review requirements.',
         },
       ]}
+      expandedContent={expandedContent}
     />
   );
 }

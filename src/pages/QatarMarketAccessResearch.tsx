@@ -1,4 +1,7 @@
 import StrategicServicePage from '@/pages/templates/StrategicServicePage';
+import { getServiceLandingContent } from '@/data/serviceLandingContent';
+
+const expandedContent = getServiceLandingContent('qatar-market-access-research');
 
 export default function QatarMarketAccessResearch() {
   return (
@@ -8,6 +11,8 @@ export default function QatarMarketAccessResearch() {
       canonicalUrl="https://www.bionixus.com/qatar-market-access-research"
       breadcrumbLabel="Market Access Research Qatar"
       h1="Market Access Research Qatar"
+      serviceType="Pharmaceutical market access research"
+      areaServed={['Qatar', 'GCC']}
       intro="Qatar is a small, affluent market where demand concentrates in a handful of institutions and the evidence bar is high. That concentration cuts both ways: access can move quickly when the value story fits, and one weak evidence point is immediately visible. BioNixus maps institutional influence, pressure-tests the value narrative, and sequences engagement so launch teams carry less execution risk into the room."
       links={[
         { to: '/healthcare-market-research-agency-gcc', label: 'Healthcare market research agency GCC', primary: true },
@@ -53,6 +58,7 @@ export default function QatarMarketAccessResearch() {
           detail: 'Action sequence suitable for launch and access steering meetings.',
         },
       ]}
+      expandedContent={expandedContent}
     />
   );
 }
