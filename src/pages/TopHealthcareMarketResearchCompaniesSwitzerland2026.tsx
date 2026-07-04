@@ -252,6 +252,7 @@ export default function TopHealthcareMarketResearchCompaniesSwitzerland2026() {
         <meta name="geo.region" content="CH" />
         <meta name="geo.placename" content="Switzerland" />
         <link rel="canonical" href={PAGE_CANONICAL} />
+        <link rel="alternate" hreflang="en-CH" href={PAGE_CANONICAL} />
         <link rel="alternate" hreflang="de-CH" href={PAGE_CANONICAL} />
         <link rel="alternate" hreflang="fr-CH" href={PAGE_CANONICAL} />
         <link rel="alternate" hreflang="it-CH" href={PAGE_CANONICAL} />

@@ -126,6 +126,7 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     zh: '/zh/methodology',
     ar: '/ar/methodology',
     pt: '/pt/methodology',
+    ru: '/ru/methodology',
   },
   '/about': {
     en: '/about',
@@ -317,10 +318,22 @@ export function getCanonicalPath(pathname: string = '/') {
   return Object.values(routes).includes(normalized) ? normalized : routes.en;
 }
 
-const HREFLANG_LANG_KEYS = ['en', 'de', 'fr', 'es', 'zh', 'ar'] as const;
+const HREFLANG_LANG_KEYS: readonly Language[] = ['en', 'de', 'fr', 'es', 'zh', 'ar', 'pt', 'ru'];
 
-function hreflangLangCode(key: (typeof HREFLANG_LANG_KEYS)[number]): string {
+function hreflangLangCode(key: Language): string {
   return key === 'zh' ? 'zh-CN' : key;
+}
+
+/** Detect the UI language implied by a path's prefix (e.g. /de/... -> 'de'), defaulting to 'en'. */
+function detectLanguageFromPath(normalized: string): Language {
+  const candidates = (Object.keys(languagePaths) as Language[])
+    .filter((lang) => lang !== 'en')
+    .sort((a, b) => languagePaths[b].length - languagePaths[a].length);
+  for (const lang of candidates) {
+    const prefix = languagePaths[lang];
+    if (normalized === prefix || normalized.startsWith(`${prefix}/`)) return lang;
+  }
+  return 'en';
 }
 
 export function getHreflangLinks(pathname: string = '/') {
@@ -331,9 +344,11 @@ export function getHreflangLinks(pathname: string = '/') {
 
   if (!group) {
     const fallbackHref = absoluteHref(normalized);
+    const currentLang = detectLanguageFromPath(normalized);
+    const selfLang = hreflangLangCode(currentLang);
     return [
       { lang: 'x-default', href: fallbackHref },
-      { lang: 'en', href: fallbackHref },
+      { lang: selfLang, href: fallbackHref },
     ];
   }
 
@@ -342,7 +357,7 @@ export function getHreflangLinks(pathname: string = '/') {
   const enHref = absoluteHref(enPath);
 
   /** One representative language per distinct URL (first declared key wins). */
-  const hrefToLang = new Map<string, (typeof HREFLANG_LANG_KEYS)[number]>();
+  const hrefToLang = new Map<string, Language>();
   for (const key of HREFLANG_LANG_KEYS) {
     const path = routes[key];
     if (!path) continue;
