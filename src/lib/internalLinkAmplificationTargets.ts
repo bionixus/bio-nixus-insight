@@ -48,6 +48,10 @@ export const INTERNAL_LINK_PRIORITY_TARGETS: ReadonlyArray<{ to: string; label: 
     to: '/ar/blog/سوق-الدواء-السعودي-2026',
     label: 'Saudi Arabian pharmaceutical market 2026 (Arabic canonical)',
   },
+  {
+    to: '/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement',
+    label: 'Blog — Skyrizi omnichannel engagement rankings',
+  },
 ];
 
 const priorityTo = new Set(INTERNAL_LINK_PRIORITY_TARGETS.map((t) => t.to));

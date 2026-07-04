@@ -194,6 +194,72 @@ export default function Insights() {
               >
                 Strategic Portfolio
               </Link>
+              <Link
+                to="/insights/top-consumer-healthcare-market-research-firms-2026"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Top Consumer Healthcare Market Research Firms (2026)
+              </Link>
+              <Link
+                to="/insights/top-market-research-companies-oman-2026"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Best Market Research Companies in Oman (2026)
+              </Link>
+              <Link
+                to="/insights/top-healthcare-market-research-companies-belgium-2026"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Best Healthcare Market Research Companies in Belgium (2026)
+              </Link>
+              <Link
+                to="/insights/top-market-research-companies-ghana-2026"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Best Market Research Companies in Ghana (2026)
+              </Link>
+              <Link
+                to="/insights/leading-biologics-biosimilars-market-research-companies-2026"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Leading Biologics and Biosimilars Market Research Companies
+              </Link>
+              <Link
+                to="/insights/top-market-research-companies-iraq-2026"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Best Market Research Companies in Iraq (2026)
+              </Link>
+              <Link
+                to="/insights/best-obesity-weight-management-market-research-firms-2026"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Best Obesity &amp; Weight Management Market Research Firms
+              </Link>
+              <Link
+                to="/insights/top-market-research-companies-angola-2026"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Best Market Research Companies in Angola (2026)
+              </Link>
+              <Link
+                to="/insights/top-oncology-market-research-companies-2026"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Top Oncology Market Research Companies (2026)
+              </Link>
+              <Link
+                to="/insights/best-rare-disease-market-research-companies-2026"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Best Rare Disease Market Research Companies (2026)
+              </Link>
+              <Link
+                to="/insights/top-market-research-companies-bahrain-2026"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Best Market Research Companies in Bahrain (2026)
+              </Link>
             </div>
           </div>
         </section>

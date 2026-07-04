@@ -392,6 +392,13 @@ export default function PtTopMarketResearchCompaniesBrazil2026() {
                   <div className="text-sm text-gray-500">Read this guide in English</div>
                 </div>
               </Link>
+              <Link to="/pt/insights/top-empresas-pesquisa-mercado-brasil-2026" className="flex items-center gap-3 p-4 border border-gray-200 rounded-lg hover:border-green-400 hover:bg-green-50 transition-colors">
+                <Users className="w-5 h-5 text-green-700 flex-shrink-0" />
+                <div>
+                  <div className="font-medium text-gray-900">Top Empresas de Pesquisa de Mercado no Brasil</div>
+                  <div className="text-sm text-gray-500">Guia completo de empresas de pesquisa de mercado no Brasil</div>
+                </div>
+              </Link>
             </div>
           </section>
 
