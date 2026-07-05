@@ -19,7 +19,7 @@ type RenderResult = {
 };
 
 type ServerEntryModule = {
-  render: (url: string, initialData?: Record<string, unknown>) => RenderResult;
+  render: (url: string, initialData?: Record<string, unknown>) => Promise<RenderResult>;
   fetchRouteData: (url: string) => Promise<Record<string, unknown>>;
 };
 
@@ -733,7 +733,7 @@ async function handleSsrRequest(
     res.redirect(Number(initialData.statusCode) || 301, initialData.redirectTo);
     return;
   }
-  const { html: appHtml, helmetData } = serverEntry.render(url, initialData);
+  const { html: appHtml, helmetData } = await serverEntry.render(url, initialData);
   const headTags = [
     helmetData?.title?.toString() || '',
     helmetData?.meta?.toString() || '',

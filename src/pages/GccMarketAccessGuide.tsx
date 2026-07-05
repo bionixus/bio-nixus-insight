@@ -656,6 +656,10 @@ const GccMarketAccessGuide = () => {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
                 },
+                {
+                  q: 'How do GCC biosimilar and HTA pathways differ in 2026?',
+                  a: 'Saudi Arabia\'s SFDA biosimilar guideline and Economic Evaluation System (EES) from July 2025 require local budget-impact and cost-effectiveness evidence for many innovative and biosimilar filings. The UAE\'s MOHAP pathway recognises EU and FDA biosimilar dossiers but emirate formulary committees in Dubai and Abu Dhabi still evaluate interchangeability separately. Kuwait and Qatar run hospital tender stores where biosimilar uptake depends on NUPCO-style central procurement or Hamad formulary decisions rather than retail substitution. BioNixus maps these parallel regulatory and payer tracks so access teams do not assume a single GCC launch sequence.',
+                },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">
                   <summary className="text-lg font-display font-semibold text-foreground cursor-pointer list-none">

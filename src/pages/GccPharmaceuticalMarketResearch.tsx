@@ -449,8 +449,13 @@ export default function GccPharmaceuticalMarketResearch() {
               <p>
                 Kuwait and Qatar concentrate smaller but strategically important hospital injectables volume through MOH
                 tender stores and Hamad procurement respectively. Oman and Bahrain add NHRA and MOH registration nuance
-                where mutual recognition can shorten timelines but not guarantee formulary inclusion. BioNixus maps
-                these country-specific procurement rhythms alongside the{' '}
+                where mutual recognition can shorten timelines but not guarantee formulary inclusion. Across all six GCC
+                markets, precision-medicine and companion-diagnostic launches now require paired SFDA or MOHAP device
+                clearance before oncology biologics reach ward-level adoption — a sequencing constraint that generic
+                injectables portfolios rarely face but biologics teams must model in launch research.
+              </p>
+              <p>
+                BioNixus maps these country-specific procurement rhythms alongside the{' '}
                 <Link to="/gcc-market-access-guide" className="text-primary font-medium hover:underline">
                   GCC market access guide
                 </Link>{' '}

@@ -362,6 +362,12 @@ const SaudiArabiaMedicalDevicesMarketReport = () => {
           </div>
         </section>
 
+        <MarketIntelligenceSections
+          marketSlug="saudi-arabia"
+          countryName="Saudi Arabia"
+          variant="medical-devices"
+        />
+
         </ReportContentWithAside>
 
                 <section className="section-padding" id="related-intelligence">
