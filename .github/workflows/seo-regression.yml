@@ -121,6 +121,14 @@ jobs:
     # catches anything a local build can't see (env-var drift, deploy config).
     if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success' && contains(github.event.deployment_status.target_url, 'vercel.app')
     runs-on: ubuntu-latest
+    # deployment_status-triggered runs get a read-only GITHUB_TOKEN by
+    # default regardless of the repo's default workflow permissions (unlike
+    # pull_request/push) — without this, createComment 403s with "Resource
+    # not accessible by integration" (confirmed on PR #47).
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
     steps:
       - uses: actions/checkout@v4
 
