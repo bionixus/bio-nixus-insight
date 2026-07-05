@@ -10,6 +10,16 @@ const Privacy = () => {
         <title>Privacy Policy | BioNixus</title>
         <meta name="description" content="BioNixus privacy policy. GDPR-compliant data protection, cookie policy, and your rights regarding personal data collected through our healthcare market research services." />
         <link rel="canonical" href="https://www.bionixus.com/privacy" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' },
+              { '@type': 'ListItem', position: 2, name: 'Privacy Policy', item: 'https://www.bionixus.com/privacy' },
+            ],
+          })}
+        </script>
       </Helmet>
       <Navbar />
       <main className="section-padding py-16">
