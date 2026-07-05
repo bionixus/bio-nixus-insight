@@ -74,6 +74,24 @@ This has two cascading effects worth knowing about specifically:
   the "duplicate" pages in a finding actually rendered real content before
   treating an S06 hit as real.
 
+## CI is currently non-blocking (temporary)
+
+The first real CI run against production (PR #47) confirmed ~764 genuine,
+pre-existing errors on the live site (thin Arabic pages, duplicate/truncated
+listicle titles, stale sitemap redirects, and more — see that PR for the
+full list). Turning on `--fail-on error` unconditionally would make every
+future PR's CI check red regardless of what it actually changes, which
+defeats the point of a regression gate. All three jobs in
+`.github/workflows/seo-regression.yml` currently run with
+`continue-on-error: true` (or no hard-fail step, for the preview job) so the
+suite is visible — reports upload as artifacts, the preview job still
+comments pass/warn/error counts on the PR — without blocking merges.
+**This is temporary.** Once the backlog above is fixed in follow-up PRs
+(down to zero, or close enough that remaining errors are deliberately
+allowlisted), remove `continue-on-error: true` from the two `run` steps and
+re-add a hard-fail step to `seo-regression-preview` (see the comment at the
+bottom of that job) so CI actually blocks new regressions again.
+
 ## Reading the report
 
 `seo-report.json` has:
