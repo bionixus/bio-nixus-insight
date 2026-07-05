@@ -155,12 +155,23 @@ jobs:
             const fs = require('fs');
             const report = JSON.parse(fs.readFileSync('seo-report-preview.json', 'utf-8'));
             const { pass, warn, error } = report.counts;
+            // `deployment` is a sibling of `deployment_status` on this event's
+            // payload, not nested under it — context.payload.deployment.sha.
             const prs = await github.rest.repos.listPullRequestsAssociatedWithCommit({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              commit_sha: context.payload.deployment_status.deployment.sha,
+              commit_sha: context.payload.deployment.sha,
             });
-            const body = `**SEO Regression Suite — preview check** (${report.urlCount} URLs)\n\n| pass | warn | error |\n|---|---|---|\n| ${pass} | ${warn} | ${error} |\n\n${error > 0 ? '❌ Errors found — see the `seo-report-preview` artifact for details.' : '✅ No errors.'}`;
+            // A Vercel preview behind deployment protection (Vercel
+            // Authentication / SSO) redirects every request to /sso-api —
+            // the crawl finds 0 real sitemap URLs and every check reports a
+            // meaningless "error" against a login redirect, not a real
+            // regression. Surface that plainly instead of a scary-looking
+            // error table when it happens.
+            const protectedByAuth = report.urlCount === 0 || report.findings.some((f) => /\/sso-api/i.test(f.message || ''));
+            const body = protectedByAuth
+              ? `**SEO Regression Suite — preview check**\n\n⚠️ Could not test: this preview deployment appears to be behind Vercel deployment protection (requests redirect to \`/sso-api\`). Disable protection for preview branches, or configure a protection-bypass token, for this check to see real content.`
+              : `**SEO Regression Suite — preview check** (${report.urlCount} URLs)\n\n| pass | warn | error |\n|---|---|---|\n| ${pass} | ${warn} | ${error} |\n\n${error > 0 ? '❌ Errors found — see the `seo-report-preview` artifact for details.' : '✅ No errors.'}`;
             for (const pr of prs.data) {
               await github.rest.issues.createComment({
                 owner: context.repo.owner,
