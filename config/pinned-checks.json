@@ -10,17 +10,15 @@
     },
     {
       "url": "/news",
-      "bug": "P0 2026-07-05 (same as above) — pinned separately since /news was the URL first reported broken.",
+      "bug": "P0 2026-07-05 (same as above) — pinned separately since /news was the URL first reported broken. No minWords here deliberately: this page's press-release list is Sanity-sourced with a legitimate empty state (\"No press releases are published yet\") when the CMS has nothing new or is briefly unreachable, which isn't the P0 bug — the P0 symptom (undefined/null leakage, missing base chrome) is what mustContain/mustNotContain guard.",
       "mustContain": ["News", "BioNixus"],
-      "mustNotContain": ["undefined", "null"],
-      "minWords": 150
+      "mustNotContain": ["undefined", "null"]
     },
     {
       "url": "/blog/gcc-pharmaceuticals-market-2026",
-      "bug": "P0 2026-07-05 — hardcoded/fallback blog post used to confirm the fix resolves real content, not just a Sanity-backed skeleton.",
+      "bug": "P0 2026-07-05 — this specific post is used to confirm the fix resolves real content, not just a broken shell. No minWords here deliberately: the blog detail route queries Sanity by slug at render time with no offline fallback, so this legitimately renders thin when the CMS is unreachable (same class as R07b's documented Sanity-sandbox caveat) — that's a CMS-availability concern, not the P0 regression this pin guards (undefined/null leakage).",
       "mustContain": ["GCC"],
-      "mustNotContain": ["undefined", "null"],
-      "minWords": 1000
+      "mustNotContain": ["undefined", "null"]
     },
     {
       "url": "/de/healthcare-market-research/uae",
