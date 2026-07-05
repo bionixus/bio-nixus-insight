@@ -1,0 +1,145 @@
+name: SEO Regression Suite
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    # Nightly against production with --baseline, so CMS-content drift (Sanity
+    # edits made outside a deploy) is caught within 24h, not at the next deploy.
+    - cron: '17 3 * * *'
+  deployment_status: {}
+  workflow_dispatch: {}
+
+jobs:
+  seo-regression:
+    if: github.event_name == 'pull_request' || github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build client + server bundles
+        run: |
+          npm run build:client
+          npm run build:server
+          node -e "const fs=require('fs');const s='dist/client/index.html',d='dist/client/_ssr-template.html';if(fs.existsSync(s)){fs.copyFileSync(s,d);fs.unlinkSync(s);}"
+
+      - name: Start server.js on :4173
+        run: |
+          NODE_ENV=production PORT=4173 nohup node server.js > server.log 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -sf http://localhost:4173/ > /dev/null; then echo "Server is up"; exit 0; fi
+            sleep 1
+          done
+          echo "Server did not become ready in time"; cat server.log; exit 1
+
+      - name: Run SEO regression suite
+        run: npm run seo:test
+
+      - name: Show server log on failure
+        if: failure()
+        run: cat server.log || true
+
+      - name: Upload seo-report.json
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-report
+          path: seo-report.json
+          retention-days: 30
+
+  seo-regression-nightly-production:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run SEO regression suite against production with baseline drift check
+        run: |
+          node scripts/seo-regression.mjs \
+            --base https://www.bionixus.com \
+            --concurrency 8 \
+            --fail-on error \
+            --baseline seo-baseline.json \
+            --report seo-report-production.json
+
+      - name: Upload production seo-report.json
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-report-production-nightly
+          path: seo-report-production.json
+          retention-days: 30
+
+  seo-regression-preview:
+    # Reruns the suite against the deployed Vercel preview URL (real network,
+    # real Sanity access, real everything) and comments the result on the PR —
+    # catches anything a local build can't see (env-var drift, deploy config).
+    if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success' && contains(github.event.deployment_status.target_url, 'vercel.app')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run SEO regression suite against preview URL
+        id: seo
+        run: |
+          node scripts/seo-regression.mjs \
+            --base "${{ github.event.deployment_status.target_url }}" \
+            --concurrency 8 \
+            --fail-on error \
+            --report seo-report-preview.json
+        continue-on-error: true
+
+      - name: Upload preview seo-report.json
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-report-preview
+          path: seo-report-preview.json
+          retention-days: 30
+
+      - name: Comment result on PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = JSON.parse(fs.readFileSync('seo-report-preview.json', 'utf-8'));
+            const { pass, warn, error } = report.counts;
+            const prs = await github.rest.repos.listPullRequestsAssociatedWithCommit({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              commit_sha: context.payload.deployment_status.deployment.sha,
+            });
+            const body = `**SEO Regression Suite — preview check** (${report.urlCount} URLs)\n\n| pass | warn | error |\n|---|---|---|\n| ${pass} | ${warn} | ${error} |\n\n${error > 0 ? '❌ Errors found — see the `seo-report-preview` artifact for details.' : '✅ No errors.'}`;
+            for (const pr of prs.data) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: pr.number,
+                body,
+              });
+            }
+
+      - name: Fail if errors found
+        if: steps.seo.outcome == 'failure'
+        run: exit 1

@@ -42,3 +42,10 @@ tmp/
 
 # Google Search Console local CSV exports
 .gsc-tmp/
+
+# SEO regression suite — generated locally on every run, environment-specific
+# (crawled host/URLs differ between local/preview/production); the committed
+# artifact is reports/dedup-initial.json, not these.
+/seo-report.json
+/seo-baseline.json
+/.seo-canary-state.json

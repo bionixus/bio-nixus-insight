@@ -1,0 +1,30 @@
+name: SEO Production Canary
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch: {}
+
+jobs:
+  canary:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Restore canary state (last-known-good title hashes)
+        uses: actions/cache@v4
+        with:
+          path: .seo-canary-state.json
+          key: seo-canary-state-v1
+
+      - name: Run canary against production
+        env:
+          ALERT_WEBHOOK: ${{ secrets.SEO_ALERT_WEBHOOK }}
+        run: npm run seo:canary -- --base https://www.bionixus.com

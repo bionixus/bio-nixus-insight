@@ -600,6 +600,20 @@ function serializeInitialDataForInlineScript(initialData) {
   }
 }
 
+// A raw socket-level error (e.g. ECONNRESET from an upstream fetch, such as
+// Sanity CMS, whose HTTP client doesn't always attach its own listener)
+// otherwise crashes the entire process for every concurrent request, not
+// just the one that triggered it. Log and keep serving instead — this is a
+// safety net, not a substitute for fixing a specific unhandled promise.
+process.on('uncaughtException', (error) => {
+  // eslint-disable-next-line no-console
+  console.error('Uncaught exception (process kept alive):', error);
+});
+process.on('unhandledRejection', (reason) => {
+  // eslint-disable-next-line no-console
+  console.error('Unhandled promise rejection (process kept alive):', reason);
+});
+
 async function startServer() {
   // eslint-disable-next-line no-console
   console.log(`Starting ${isProduction ? 'production' : 'development'} SSR server on port ${port}…`);
