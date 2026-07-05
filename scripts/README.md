@@ -139,10 +139,27 @@ the exception is legitimate.
 ## Content de-duplication remediation
 
 `reports/dedup-initial.json` is the S06 cluster report from the first full
-run this session — the work queue for differentiating/consolidating/
-enriching near-duplicate pages. See the PR description for the fix-per-type
-decision tree (differentiate legitimate programmatic pages, 301-consolidate
-genuinely redundant ones, enrich-or-noindex thin boilerplate-heavy ones).
+run this session, filtered down to the 2 clusters that are real (a raw local
+run also surfaces Sanity-sandbox-cascade "clusters" — see the caveat above —
+those are excluded, and a CI run with real network access should be treated
+as authoritative for anything beyond these two):
+
+- **`/global-websites/{country}`** (14 pages, ~2,500 words each, only
+  4–8 words per page not shared with a sibling) — Type A, differentiate:
+  a single `GlobalWebsiteCountry` template driven by `globalWebsitesData.ts`
+  currently swaps in little beyond the country name. Needs real per-country
+  differentiating content, not a data/template bug.
+- **`/healthcare-market-research/{algeria,kenya,united-states}`** (3 pages,
+  ~1,800 words, 13–17 unique words each) — same Type A pattern, smaller
+  cluster.
+
+Fixing either is a content-writing task (differentiating 17 pages with real,
+fact-checked per-country detail), not a suite change — scoped out of this
+PR and left as the next item in the ongoing thin/duplicate-page remediation
+cadence already used elsewhere this session, rather than rushed here. The
+general fix-per-type decision tree (differentiate legitimate programmatic
+pages, 301-consolidate genuinely redundant ones, enrich-or-noindex thin
+boilerplate-heavy ones) still applies to whatever a fresh CI run surfaces.
 
 ## Production canary
 
