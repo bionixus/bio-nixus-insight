@@ -9,6 +9,7 @@
     "seo:test": "node scripts/seo-regression.mjs --base http://localhost:4173 --sitemap dist/client/sitemap.xml --concurrency 12 --fail-on error",
     "seo:test:fast": "node scripts/seo-regression.mjs --base http://localhost:4173 --sitemap dist/client/sitemap.xml --concurrency 24 --skip-og-images --skip-redirect-map",
     "seo:baseline": "node scripts/seo-regression.mjs --base http://localhost:4173 --sitemap dist/client/sitemap.xml --concurrency 12 --update-baseline",
+    "seo:test:rules": "node scripts/test-seo-regression-rules.mjs",
     "seo:canary": "node scripts/seo-canary.mjs",
     "generate-sitemap": "node scripts/emit-topcompanies-manifest.mjs && node scripts/generate-sitemap.mjs",
     "refresh:geo": "node scripts/refresh-geo-assets.mjs",

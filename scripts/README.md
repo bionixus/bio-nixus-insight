@@ -19,7 +19,20 @@ NODE_ENV=production PORT=4173 node server.js &
 npm run seo:test          # full run, fails CI-style on any error
 npm run seo:test:fast     # skips OG-image fetches and the redirect-map check, for quick local iteration
 npm run seo:baseline      # writes seo-baseline.json from the current run, for S05 drift detection later
+npm run seo:test:rules    # seeded-fault tests against the rule engine itself — no build/server needed
 ```
+
+## Seeded-fault tests (`scripts/test-seo-regression-rules.mjs`)
+
+Constructs a synthetic HTML fixture for each of six bug classes this suite
+exists to catch, runs the real rule function against it, and asserts the
+expected rule fires with `error` status: R07/R07b (thin/skeleton page — the
+React.lazy-without-preload class), R08 (wrong canonical), S01 (orphan page),
+S03 (broken legacy redirect), S06 (near-duplicate content), and R10
+(hreflang reciprocity — the class fixed in PR #43). Runs against the rule
+functions directly rather than a real page + rebuild + server cycle, so it's
+fast and deterministic and runs first in CI, before the expensive
+build/crawl steps.
 
 Useful flags on `scripts/seo-regression.mjs` directly:
 
@@ -47,6 +60,19 @@ real regression. The CI workflow runs in GitHub's hosted runners, which do
 have real network access, so this should not affect CI results; if it ever
 does, check whether the runner can reach Sanity before assuming the content
 itself regressed.
+
+This has two cascading effects worth knowing about specifically:
+- **S01 (orphan pages)**: a Sanity-thin blog/news index page can't render its
+  real list of post links, so every individual post it would normally link
+  to looks orphaned in a Sanity-blocked run, even though production's real
+  index page links to them fine.
+- **S06 (near-duplicate content)**: many unrelated Sanity-backed pages (blog
+  posts, case studies, news items) all collapse to the same tiny empty-state
+  chrome text when Sanity is unreachable, so MinHash reports them as ~100%
+  similar to each other. A Sanity-blocked run can show dozens of S06 pairs
+  between pages that share nothing but being empty — always check whether
+  the "duplicate" pages in a finding actually rendered real content before
+  treating an S06 hit as real.
 
 ## Reading the report
 

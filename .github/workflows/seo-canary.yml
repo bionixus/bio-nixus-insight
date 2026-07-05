@@ -22,7 +22,12 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .seo-canary-state.json
-          key: seo-canary-state-v1
+          # Run-id-suffixed key so every run is a fresh miss and actually saves
+          # its updated state — a fixed key restores fine but a cache hit skips
+          # the post-job save, freezing the state after the first run.
+          key: seo-canary-state-v1-${{ github.run_id }}
+          restore-keys: |
+            seo-canary-state-v1-
 
       - name: Run canary against production
         env:
