@@ -33,6 +33,12 @@ describe('buildGuideTitle', () => {
     expect(title).toContain('(2026) | BioNixus');
     expect(title.length).toBeLessThanOrEqual(TITLE_MAX);
   });
+
+  it('does not leave a dangling preposition/conjunction right before the year', () => {
+    const title = buildGuideTitle({ benefitHeadline: 'Scope Pharma & Medtech Research Across 20+ Countries', year: 2026 });
+    expect(title.length).toBeLessThanOrEqual(TITLE_MAX);
+    expect(title).not.toMatch(/\b(a|an|the|to|of|in|on|at|by|for|with|and|or|across|from|into|&)\s*\(2026\)/i);
+  });
 });
 
 describe('buildMetaDescription', () => {

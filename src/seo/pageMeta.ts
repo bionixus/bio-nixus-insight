@@ -30,12 +30,29 @@ const GENERIC_PAD_SENTENCES = [
   'Quantitative and qualitative fieldwork across GCC, MENA, and Europe.',
 ];
 
+/** Trailing words that read as incomplete/dangling if left as the last word of a truncated phrase. */
+const DANGLING_TRAILING_WORDS = new Set([
+  'a', 'an', 'the', 'to', 'of', 'in', 'on', 'at', 'by', 'for', 'with', 'and', 'or', 'across', 'from', 'into', '&',
+]);
+
 function truncateAtWordBoundary(text: string, max: number): string {
   const cleaned = String(text || '').trim();
   if (cleaned.length <= max) return cleaned;
-  const slice = cleaned.slice(0, Math.max(0, max));
-  const lastSpace = slice.lastIndexOf(' ');
-  const cut = lastSpace > Math.floor(max * 0.5) ? slice.slice(0, lastSpace) : slice;
+  let slice = cleaned.slice(0, Math.max(0, max));
+  let lastSpace = slice.lastIndexOf(' ');
+  let cut = lastSpace > Math.floor(max * 0.5) ? slice.slice(0, lastSpace) : slice;
+
+  // Back up past a dangling preposition/conjunction (e.g. "...Research Across")
+  // rather than leave it stranded with nothing after it.
+  while (true) {
+    const words = cut.trim().split(/\s+/);
+    const last = words[words.length - 1]?.toLowerCase().replace(/[.,;:]+$/, '');
+    if (words.length <= 1 || !last || !DANGLING_TRAILING_WORDS.has(last)) break;
+    const nextLastSpace = cut.trim().lastIndexOf(' ');
+    if (nextLastSpace <= 0) break;
+    cut = cut.trim().slice(0, nextLastSpace);
+  }
+
   return cut.trim().replace(/[.,;:\-–—\s]+$/, '');
 }
 
