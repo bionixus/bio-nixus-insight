@@ -19,7 +19,7 @@ type RenderResult = {
 };
 
 type ServerEntryModule = {
-  render: (url: string, initialData?: Record<string, unknown>) => RenderResult;
+  render: (url: string, initialData?: Record<string, unknown>) => Promise<RenderResult>;
   fetchRouteData: (url: string) => Promise<Record<string, unknown>>;
 };
 
@@ -178,6 +178,7 @@ const SAUDI_PHARMA_MARKET_2026_AR_META_DESCRIPTION =
 
 const GENERIC_DEFAULT_TITLES = new Set<string>([
   'BioNixus | Healthcare & Pharmaceutical Market Research',
+  'BioNixus | Global Pharmaceutical & Healthcare Market Research',
   'BioNixus',
   'Healthcare & Pharmaceutical Market Research | BioNixus',
 ]);
@@ -478,7 +479,9 @@ function ensureTitleTag(html: string, pathname: string): string {
   // that React-Helmet didn't override at SSR time, typically because page
   // data is fetched async from Sanity), replace it with the path-specific
   // fallback so each URL ships a unique <title>.
-  const isGeneric = chosen ? GENERIC_DEFAULT_TITLES.has(chosen) : false;
+  const isGeneric = chosen
+    ? GENERIC_DEFAULT_TITLES.has(chosen) || /^BioNixus \| Global Pharmaceutical/i.test(chosen)
+    : false;
   const forceLocale = shouldForceLocaleFallback(pathname, chosen);
   const strengthened =
     isGeneric || forceLocale || normalized.length < 30 ? fallbackTitle : normalized;
@@ -733,7 +736,16 @@ async function handleSsrRequest(
     res.redirect(Number(initialData.statusCode) || 301, initialData.redirectTo);
     return;
   }
-  const { html: appHtml, helmetData } = serverEntry.render(url, initialData);
+  const renderResult = await serverEntry.render(url, initialData);
+  if (typeof renderResult?.html !== 'string') {
+    // eslint-disable-next-line no-console
+    console.error('SSR render() returned no html for', url, '- serving 503 instead of a broken shell.');
+    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+    res.setHeader('Retry-After', '30');
+    res.status(503).send('Temporarily unavailable. Please retry shortly.');
+    return;
+  }
+  const { html: appHtml, helmetData } = renderResult;
   const headTags = [
     helmetData?.title?.toString() || '',
     helmetData?.meta?.toString() || '',
