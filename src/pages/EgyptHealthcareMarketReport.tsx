@@ -147,7 +147,8 @@ const EgyptHealthcareMarketReport = () => {
               partnership requirements, and UHI formulary listing — require country-specific intelligence
               that regional GCC reports do not provide. BioNixus's Cairo office has operated in-market
               since 2012, maintaining the specialist HCP panels, payer relationships, and institutional
-              procurement contacts that power accurate Egypt healthcare intelligence.
+              procurement contacts that power accurate Egypt healthcare intelligence across Greater Cairo
+              hospital networks and the expanding new administrative capital medical corridor.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
               For execution support, see our{' '}

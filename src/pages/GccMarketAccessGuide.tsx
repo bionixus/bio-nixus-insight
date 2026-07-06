@@ -159,7 +159,7 @@ const GccMarketAccessGuide = () => {
         <title>GCC Pharmaceutical Market Access Guide 2026 | SFDA, MOHAP Registration & Pricing | BioNixus</title>
         <meta
           name="description"
-          content="GCC pharmaceutical market access guide 2026: SFDA, MOHAP, DHA, and MOH drug registration timelines, pricing mechanisms, reimbursement models, and regulatory requirements for Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman."
+          content="GCC pharmaceutical market access guide 2026: SFDA, MOHAP & MOH registration, biosimilar pathways, NUPCO tenders, ERP pricing, and HTA evidence for Saudi Arabia, UAE, Kuwait, Qatar, Bahrain & Oman."
         />
         <link rel="canonical" href={citationUrl} />
         <meta property="og:title" content="GCC Pharmaceutical Market Access Guide 2026 — Registration, Pricing & Reimbursement" />
@@ -519,6 +519,13 @@ const GccMarketAccessGuide = () => {
                 switching intent after award, biosimilar substitution in government formularies, and pricing sensitivity
                 relative to SFDA- or MOHAP-approved list prices. These modules complement standard payer landscape
                 analysis and HTA-style evidence planning described in the country tables above.
+              </p>
+              <p>
+                Teams preparing GCC market access dossiers in 2026 should sequence SFDA or MOHAP registration milestones,
+                ERP price filing, and tender submission windows in one integrated calendar — committees increasingly
+                reject late economic evidence that was not stress-tested against local comparator prices and hospital
+                budget cycles. BioNixus maps those milestones per country so medical, access, and finance leads share
+                the same decision dates before fieldwork begins.
               </p>
               <p>
                 For Saudi-specific tender mechanics, see our{' '}
