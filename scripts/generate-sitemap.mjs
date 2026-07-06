@@ -94,6 +94,8 @@ const SITEMAP_REDIRECT_SOURCE_PATHS = new Set([
   '/conf',
   '/ar/conf',
   '/healthcare-market-research/united-kingdom',
+  '/healthcare-market-research/quantitative',
+  '/healthcare-market-research/qualitative',
   '/blog/gcc-pharmaceuticals-market-arabic-2026',
   // Alias / duplicate insight URLs — canonical targets only in sitemap (avoid keyword cannibalization).
   '/insights/top-market-research-companies-ksa-2026',

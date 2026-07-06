@@ -25,6 +25,12 @@ export function EgyptHealthcare2026CairoBlock() {
         >
           Cairo hospitals healthcare 2023–2026 — hospital clusters and Egypt market context
         </h2>
+        <p className="text-[15px] text-foreground leading-relaxed mb-3 font-medium">
+          <strong>Answer:</strong> Cairo hospitals healthcare from 2023 through 2026 spans public university
+          centres (Kasr Al-Ainy, Ain Shams, Nasser Institute), private groups (Saudi German, Cleopatra, Dar
+          Al-Fouad), and new capital facilities under universal health insurance — the clusters below map where
+          pharmaceutical access, payer mix, and physician prescribing shift fastest.
+        </p>
         <p className="text-[15px] text-foreground leading-relaxed mb-3">
           Use this snapshot for Cairo hospital footprint, payer mix, and pharmaceutical access signals from
           2023 through 2026. For company-level intelligence, see{' '}
