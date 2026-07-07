@@ -156,10 +156,10 @@ const GccMarketAccessGuide = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>GCC Pharmaceutical Market Access Guide 2026 | SFDA, MOHAP Registration & Pricing | BioNixus</title>
+        <title>GCC Market Access Guide 2026 | SFDA, NUPCO Tenders & Pricing | BioNixus</title>
         <meta
           name="description"
-          content="GCC pharmaceutical market access guide 2026: SFDA, MOHAP, DHA, and MOH drug registration timelines, pricing mechanisms, reimbursement models, and regulatory requirements for Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman."
+          content="Free GCC pharmaceutical market access guide 2026: SFDA & MOHAP registration timelines, NUPCO tender calendars, biosimilar HTA evidence, ERP pricing, and reimbursement across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman."
         />
         <link rel="canonical" href={citationUrl} />
         <meta property="og:title" content="GCC Pharmaceutical Market Access Guide 2026 — Registration, Pricing & Reimbursement" />
@@ -174,7 +174,7 @@ const GccMarketAccessGuide = () => {
             description: 'Complete guide to pharmaceutical drug registration, pricing, and reimbursement across the 6 GCC countries: Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman.',
             url: citationUrl,
             datePublished: '2026-01-15',
-            dateModified: '2026-06-16',
+            dateModified: '2026-07-07',
             author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
             publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
           })}
@@ -534,6 +534,15 @@ const GccMarketAccessGuide = () => {
                   real-world evidence GCC
                 </Link>
                 .
+              </p>
+              <p>
+                In 2026, launch teams should map three procurement rhythms in parallel: NUPCO evaluation windows
+                (typically 12–18 months after SFDA approval for hospital-administered molecules), Kuwait MOH tender
+                store cycles (often quarterly for high-volume injectables), and UAE emirate formulary updates where
+                DHA and DOH committees may list products on different timelines despite shared MOHAP registration.
+                BioNixus maintains tender calendars and post-award uptake trackers so access and commercial leaders can
+                sequence medical education, pricing submissions, and field force deployment against real committee
+                dates — not generic regional assumptions.
               </p>
             </div>
           </div>
