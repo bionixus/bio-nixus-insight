@@ -17,11 +17,11 @@ import { ReportPremiumHero, ReportPremiumSection } from '@/components/report-pre
 const pageUrl = 'https://www.bionixus.com/gcc-pharmaceutical-market-research';
 const REPORT_CONVERSION = getStandaloneReportConfig('/gcc-pharmaceutical-market-research');
 
-const PAGE_TITLE = 'GCC Biologics & Generic Injectables Market 2026 | BioNixus';
+const PAGE_TITLE = 'GCC Biologics Market $5B+ & Generic Injectables 2026 | BioNixus';
 const PAGE_H1 =
   'GCC Biologics & Generic Injectables Market Research 2026 — Precision Medicine & Drug Repurposing';
 const PAGE_DESCRIPTION =
-  'GCC biologics market ($4.8–5.4B), generic injectables ($1.6–1.9B), drug repurposing & Saudi precision medicine — pharmaceutical market research across KSA, UAE, Kuwait, Qatar, Bahrain & Oman.';
+  'GCC biologics market ($4.8–5.4B), generic injectables ($1.6–1.9B), biosimilar tenders, drug repurposing & Saudi precision medicine — pharmaceutical market research across KSA, UAE, Kuwait, Qatar, Bahrain & Oman.';
 
 const FAQ_ITEMS = [
   {
@@ -50,9 +50,9 @@ const FAQ_ITEMS = [
       'BioNixus runs primary physician and KOL research, quantitative tracker programs, market access and pricing studies, KOL mapping, and competitive intelligence across Saudi Arabia, the UAE, Kuwait, Qatar, Bahrain, and Oman. Programs are bilingual (Arabic/English), SFDA/MOHAP-aware, and aligned to launch, access, and growth decision windows.',
   },
   {
-    question: 'Which GCC therapy areas drive the most pharma growth in 2026?',
+    question: 'How do NUPCO tenders affect GCC biologics and injectables uptake?',
     answer:
-      'In 2026, the fastest-growing GCC therapy areas are oncology, diabetes and obesity (GLP-1 driven), rare disease, immunology, and cardiovascular. Saudi Arabia and the UAE concentrate the bulk of innovative-medicine spend, while Kuwait and Qatar prioritize tendered generic and hospital-administered portfolios.',
+      'In Saudi Arabia, NUPCO tender awards determine which hospital-administered biologics and generic injectables reach MOH, NGHA, and military networks at scale — SFDA approval alone does not guarantee uptake. BioNixus tracks tender calendars, price corridors, post-award switching behaviour, and physician confidence after biosimilar awards so launch and access teams can align medical narratives before committee season.',
   },
 ];
 
@@ -74,7 +74,7 @@ const jsonLd = [
     description: PAGE_DESCRIPTION,
     url: pageUrl,
     datePublished: '2025-09-01',
-    dateModified: '2026-06-28',
+    dateModified: '2026-07-07',
     author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
   },
