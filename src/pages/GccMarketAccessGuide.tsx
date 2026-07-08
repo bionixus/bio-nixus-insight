@@ -156,14 +156,14 @@ const GccMarketAccessGuide = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>GCC Pharmaceutical Market Access Guide 2026 | SFDA, MOHAP Registration & Pricing | BioNixus</title>
+        <title>GCC Market Access Guide 2026 | SFDA, MOHAP, NUPCO & Pricing | BioNixus</title>
         <meta
           name="description"
-          content="GCC pharmaceutical market access guide 2026: SFDA, MOHAP, DHA, and MOH drug registration timelines, pricing mechanisms, reimbursement models, and regulatory requirements for Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman."
+          content="Free GCC pharmaceutical market access guide 2026: SFDA, MOHAP, DHA registration timelines (8–18 months), NUPCO tenders, biosimilar HTA evidence, and pricing across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain & Oman."
         />
         <link rel="canonical" href={citationUrl} />
-        <meta property="og:title" content="GCC Pharmaceutical Market Access Guide 2026 — Registration, Pricing & Reimbursement" />
-        <meta property="og:description" content="Free guide: How to register pharmaceuticals in Saudi Arabia, UAE, Kuwait, Qatar, Bahrain & Oman. Registration timelines, pricing mechanisms, and regulatory requirements." />
+        <meta property="og:title" content="GCC Pharmaceutical Market Access Guide 2026 — SFDA, MOHAP & NUPCO" />
+        <meta property="og:description" content="Register pharmaceuticals in the GCC: SFDA/MOHAP timelines, NUPCO tender calendars, biosimilar HTA evidence, and pricing mechanisms for all 6 Gulf markets." />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={citationUrl} />
         <script type="application/ld+json">
@@ -477,7 +477,9 @@ const GccMarketAccessGuide = () => {
                 treatment-pathway mapping, willingness-to-pay proxies, and committee objection research — outputs
                 structured for SFDA EES, tender dossiers, or emirate formulary submissions as required. For biosimilar
                 portfolios, research tracks interchangeability confidence, pharmacist substitution behaviour, and
-                physician switching intent after NUPCO or MOH tender awards.
+                physician switching intent after NUPCO or MOH tender awards. Teams preparing SFDA EES submissions
+                should align comparator selection and budget-impact assumptions to locally observed treatment pathways
+                — not EU-only models — before dossier filing.
               </p>
               <p>
                 See also{' '}

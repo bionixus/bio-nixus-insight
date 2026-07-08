@@ -44,6 +44,11 @@ const faqItems = [
       'Yes. BioNixus designs and executes Italian patient research in compliance with GDPR and the Italian Privacy Code (D.Lgs. 196/2003 as amended by D.Lgs. 101/2018). All patient and caregiver research involves documented informed consent, de-identified reporting, Garante Privacy-compliant data handling, and where required, Italian CE (Comitato Etico) ethics review coordination.',
   },
   {
+    question: 'How does AIFA CTS innovation classification affect Italian market access?',
+    answer:
+      'AIFA CTS assigns innovativo, innovativo condizionato, or non-innovativo status — determining reimbursement fund allocation, CPR negotiation urgency, and evidence requirements. Innovativo products enter accelerated CPR tracks; non-innovativo products face reference-pricing pressure. BioNixus aligns HCP and payer research to the CTS classification pathway before dossier submission.',
+  },
+  {
     question: 'Can Italian healthcare research connect to global EU5 benchmarking programs?',
     answer:
       'Yes. Italian modules can run with comparable cells in Germany, France, Spain, and the UK — and beyond to the USA, Canada, Japan, and other markets — using consistent instruments for global portfolio committees managing EU5 and multi-market access strategy from one research partner.',
@@ -307,7 +312,9 @@ export default function HealthcareMarketResearchItaly() {
                 categories, and step therapy requirements for Class A reimbursement. Understanding nota limitativa
                 dynamics at both the AIFA level and the regional SSR level is essential for launch strategy and
                 real-world evidence programme design. BioNixus conducts nota limitativa impact research: physician
-                perception studies, prescriber compliance research, and SSR adoption barrier studies.
+                perception studies, prescriber compliance research, and SSR adoption barrier studies — including
+                mapping how Lombardia and Lazio SSR committees interpret national nota limitative differently in
+                practice.
               </p>
             </div>
           </div>
