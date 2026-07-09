@@ -16,6 +16,8 @@ import {
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
 import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
+import { EgyptHealthcare2026CairoBlock } from '@/components/blog/EgyptHealthcare2026CairoBlock';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -180,6 +182,36 @@ const EgyptHealthcareMarketReport = () => {
               .
             </p>
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
+          </div>
+        </section>
+
+        <section className="section-padding py-10 bg-muted/10" id="cairo-hospitals-healthcare">
+          <div className="container-wide max-w-4xl mx-auto">
+            <GeoLLMAnswerBlock
+              question="What is the Cairo hospitals healthcare landscape for 2023–2026?"
+              answer="Cairo hospitals healthcare 2023–2026 spans public tertiary centres (Kasr Al-Ainy, Ain Shams, Nasser Institute), private groups (Saudi German, Cleopatra, Dar Al-Fouad), and new administrative capital facilities under Egypt's UHI rollout — the clinical hub where EDA-regulated pharma access and hospital formulary decisions concentrate."
+              points={[
+                {
+                  title: 'Public tertiary referral volume',
+                  description:
+                    'University hospitals anchor oncology, cardiology, and rare-disease pathways — high-acuity prescribing and UHI formulary influence.',
+                },
+                {
+                  title: 'Private hospital branded uptake',
+                  description:
+                    'Cleopatra, Dar Al-Fouad, and As-Salam International drive private-payer and corporate-insurance specialty volumes.',
+                },
+                {
+                  title: 'UHI expansion 2023–2026',
+                  description:
+                    'Universal health insurance enrollment shifts formulary access and hospital procurement — Cairo remains the regulatory and KOL hub.',
+                },
+              ]}
+              summary="BioNixus tracks Cairo hospital consumption, physician panels, and UHI formulary signals from our Greater Cairo regional office."
+            />
+            <div className="mt-8">
+              <EgyptHealthcare2026CairoBlock />
+            </div>
           </div>
         </section>
 
