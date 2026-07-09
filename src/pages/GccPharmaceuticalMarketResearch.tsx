@@ -17,11 +17,11 @@ import { ReportPremiumHero, ReportPremiumSection } from '@/components/report-pre
 const pageUrl = 'https://www.bionixus.com/gcc-pharmaceutical-market-research';
 const REPORT_CONVERSION = getStandaloneReportConfig('/gcc-pharmaceutical-market-research');
 
-const PAGE_TITLE = 'GCC Biologics & Generic Injectables Market 2026 | BioNixus';
+const PAGE_TITLE = 'GCC Pharmaceutical Market Research 2026 | Biologics, NUPCO & Biosimilars | BioNixus';
 const PAGE_H1 =
-  'GCC Biologics & Generic Injectables Market Research 2026 — Precision Medicine & Drug Repurposing';
+  'GCC Pharmaceutical Market Research 2026 — Biologics, Generic Injectables, NUPCO Tenders & Precision Medicine';
 const PAGE_DESCRIPTION =
-  'GCC biologics market ($4.8–5.4B), generic injectables ($1.6–1.9B), drug repurposing & Saudi precision medicine — pharmaceutical market research across KSA, UAE, Kuwait, Qatar, Bahrain & Oman.';
+  'GCC pharmaceutical market research for biologics ($4.8–5.4B), generic injectables ($1.6–1.9B), NUPCO tender intelligence, biosimilar penetration, and Saudi precision medicine — primary research across KSA, UAE, Kuwait, Qatar, Bahrain & Oman.';
 
 const FAQ_ITEMS = [
   {
@@ -53,6 +53,11 @@ const FAQ_ITEMS = [
     question: 'Which GCC therapy areas drive the most pharma growth in 2026?',
     answer:
       'In 2026, the fastest-growing GCC therapy areas are oncology, diabetes and obesity (GLP-1 driven), rare disease, immunology, and cardiovascular. Saudi Arabia and the UAE concentrate the bulk of innovative-medicine spend, while Kuwait and Qatar prioritize tendered generic and hospital-administered portfolios.',
+  },
+  {
+    question: 'How does BioNixus research NUPCO tenders and biosimilar uptake in the GCC?',
+    answer:
+      'BioNixus combines NUPCO tender calendar tracking, hospital pharmacist and procurement interviews, physician switching-intent surveys after award, and biosimilar interchangeability confidence modules across SFDA and MOHAP pathways. Outputs link tender win/loss drivers to account-level uptake forecasts — so access and commercial teams defend originator share or sequence biosimilar entry with evidence committees expect.',
   },
 ];
 
