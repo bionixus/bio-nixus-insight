@@ -16,6 +16,10 @@ import {
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
 import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
+import {
+  EGYPT_CAIRO_HOSPITAL_CLUSTERS,
+  EGYPT_HEALTHCARE_2026_CAIRO_FAQ,
+} from '@/data/egyptHealthcare2026CairoSeo';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -220,6 +224,54 @@ const EgyptHealthcareMarketReport = () => {
                   <p className="font-semibold text-foreground text-sm mb-1">{area}</p>
                   <p className="text-xs text-muted-foreground">{note}</p>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section-padding" id="cairo-hospitals-healthcare">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              Cairo hospitals healthcare 2023–2026 — hospital clusters and pharma access
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Cairo concentrates Egypt&apos;s highest-acuity hospital volumes, teaching-hospital research networks,
+              and private payer mix — making it the anchor geography for pharmaceutical launch and UHI formulary
+              planning from 2023 through 2026. BioNixus maps prescribing behaviour, hospital pharmacy procurement,
+              and KOL influence across public university centres, private hospital groups, and the new administrative
+              capital corridor where UHI enrollment is expanding insured catchment.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              For the full Egypt market overview with Cairo hospital tables and policy timeline, see our{' '}
+              <Link
+                to="/blog/healthcare-overview-egypt-market-2026"
+                className="text-primary hover:underline font-medium"
+              >
+                Egypt healthcare market overview 2026
+              </Link>
+              . For company-level intelligence, pair this report with{' '}
+              <Link
+                to="/pharmaceutical-companies-egypt"
+                className="text-primary hover:underline font-medium"
+              >
+                pharmaceutical companies in Egypt
+              </Link>
+              .
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {EGYPT_CAIRO_HOSPITAL_CLUSTERS.map((cluster) => (
+                <article key={cluster.name} className="bg-white rounded-xl border border-border p-5 shadow-sm">
+                  <h3 className="text-base font-semibold text-foreground mb-2">{cluster.name}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{cluster.detail}</p>
+                </article>
+              ))}
+            </div>
+            <div className="mt-6 space-y-3">
+              {EGYPT_HEALTHCARE_2026_CAIRO_FAQ.slice(0, 2).map((item) => (
+                <details key={item.question} className="bg-white rounded-xl border border-border p-4 shadow-sm">
+                  <summary className="cursor-pointer font-semibold text-foreground text-sm">{item.question}</summary>
+                  <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{item.answer}</p>
+                </details>
               ))}
             </div>
           </div>

@@ -1,14 +1,14 @@
 {
   "summary": {
-    "generatedAt": "2026-07-03T04:01:55.378Z",
+    "generatedAt": "2026-07-10T04:01:51.593Z",
     "baseUrl": "https://www.bionixus.com",
     "wordThreshold": 2000,
-    "totalAudited": 371,
-    "livePages": 370,
-    "thinPages": 213,
+    "totalAudited": 384,
+    "livePages": 383,
+    "thinPages": 183,
     "notFound": 0,
     "errors": 1,
-    "healthcareMarketResearchThin": 21
+    "healthcareMarketResearchThin": 26
   },
   "rows": [
     {
@@ -25,16 +25,29 @@
       "error": "fetch failed"
     },
     {
-      "pathname": "/kantar-health-alternative-gcc",
-      "url": "https://www.bionixus.com/kantar-health-alternative-gcc",
-      "finalUrl": "https://www.bionixus.com/kantar-health-alternative-gcc",
+      "pathname": "/egypt-healthcare-market-report",
+      "url": "https://www.bionixus.com/egypt-healthcare-market-report",
+      "finalUrl": "https://www.bionixus.com/egypt-healthcare-market-report",
       "status": 200,
       "inSitemap": true,
-      "title": "Kantar Health Alternative in GCC & Middle East | BioNixus",
-      "h1": "Kantar Health Alternative for GCC and Middle East — BioNixus",
-      "wordCount": 1987,
+      "title": "Egypt Healthcare Market Report 2026 | USD 25B+ Pharma & UHI",
+      "h1": "Egypt Healthcare Market Report 2026: Pharmaceutical Intelligence, UHI Access, and EDA Registration",
+      "wordCount": 1995,
       "thin": true,
-      "gap": 13,
+      "gap": 5,
+      "error": null
+    },
+    {
+      "pathname": "/gcc-pharmaceutical-market-research",
+      "url": "https://www.bionixus.com/gcc-pharmaceutical-market-research",
+      "finalUrl": "https://www.bionixus.com/gcc-pharmaceutical-market-research",
+      "status": 200,
+      "inSitemap": true,
+      "title": "GCC Biologics & Generic Injectables Market 2026 | BioNixus",
+      "h1": "GCC Biologics & Generic Injectables Market Research 2026 — Precision Medicine & Drug Repurposing",
+      "wordCount": 1970,
+      "thin": true,
+      "gap": 30,
       "error": null
     },
     {
@@ -48,6 +61,19 @@
       "wordCount": 1958,
       "thin": true,
       "gap": 42,
+      "error": null
+    },
+    {
+      "pathname": "/pt/insights/top-market-research-companies-brasil-2026",
+      "url": "https://www.bionixus.com/pt/insights/top-market-research-companies-brasil-2026",
+      "finalUrl": "https://www.bionixus.com/pt/insights/top-market-research-companies-brasil-2026",
+      "status": 200,
+      "inSitemap": true,
+      "title": "5 Melhores Empresas de Pesquisa de Mercado no Bra | BioNixus",
+      "h1": "5 Melhores Empresas de Pesquisa de Mercado no Brasil (2026)",
+      "wordCount": 1956,
+      "thin": true,
+      "gap": 44,
       "error": null
     },
     {
@@ -74,19 +100,6 @@
       "wordCount": 1939,
       "thin": true,
       "gap": 61,
-      "error": null
-    },
-    {
-      "pathname": "/pt/insights/top-market-research-companies-brasil-2026",
-      "url": "https://www.bionixus.com/pt/insights/top-market-research-companies-brasil-2026",
-      "finalUrl": "https://www.bionixus.com/pt/insights/top-market-research-companies-brasil-2026",
-      "status": 200,
-      "inSitemap": true,
-      "title": "5 Melhores Empresas de Pesquisa de Mercado no Bra | BioNixus",
-      "h1": "5 Melhores Empresas de Pesquisa de Mercado no Brasil (2026)",
-      "wordCount": 1938,
-      "thin": true,
-      "gap": 62,
       "error": null
     },
     {
@@ -129,6 +142,45 @@
       "error": null
     },
     {
+      "pathname": "/gcc-market-access-guide",
+      "url": "https://www.bionixus.com/gcc-market-access-guide",
+      "finalUrl": "https://www.bionixus.com/gcc-market-access-guide",
+      "status": 200,
+      "inSitemap": true,
+      "title": "GCC Pharmaceutical Market Access Guide 2026 | SFD | BioNixus",
+      "h1": "GCC pharmaceutical market access guide 2026 — registration, pricing, and reimbursement",
+      "wordCount": 1908,
+      "thin": true,
+      "gap": 92,
+      "error": null
+    },
+    {
+      "pathname": "/china-healthcare-market-report",
+      "url": "https://www.bionixus.com/china-healthcare-market-report",
+      "finalUrl": "https://www.bionixus.com/china-healthcare-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "China Healthcare Market Report 2026 | NMPA, NRDL...",
+      "h1": "China Healthcare Market Report 2026: NMPA Approval, NRDL Reimbursement, and VBP Commercial Intelligence",
+      "wordCount": 1907,
+      "thin": true,
+      "gap": 93,
+      "error": null
+    },
+    {
+      "pathname": "/pharmaceutical-market-research-qatar",
+      "url": "https://www.bionixus.com/pharmaceutical-market-research-qatar",
+      "finalUrl": "https://www.bionixus.com/pharmaceutical-market-research-qatar",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Healthcare Market Research Company in Qatar | MoPH & HMC |.",
+      "h1": "Healthcare & Pharmaceutical Market Research Company in Qatar",
+      "wordCount": 1907,
+      "thin": true,
+      "gap": 93,
+      "error": null
+    },
+    {
       "pathname": "/healthcare-market-research-china",
       "url": "https://www.bionixus.com/healthcare-market-research-china",
       "finalUrl": "https://www.bionixus.com/healthcare-market-research-china",
@@ -139,6 +191,19 @@
       "wordCount": 1903,
       "thin": true,
       "gap": 97,
+      "error": null
+    },
+    {
+      "pathname": "/healthcare-market-research-bahrain",
+      "url": "https://www.bionixus.com/healthcare-market-research-bahrain",
+      "finalUrl": "https://www.bionixus.com/healthcare-market-research-bahrain",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Healthcare Market Research Bahrain | NHRA-Aligned | BioNixus",
+      "h1": "Healthcare & Pharmaceutical Market Research in Bahrain",
+      "wordCount": 1893,
+      "thin": true,
+      "gap": 107,
       "error": null
     },
     {
@@ -155,19 +220,6 @@
       "error": null
     },
     {
-      "pathname": "/pharmaceutical-market-research-dubai",
-      "url": "https://www.bionixus.com/pharmaceutical-market-research-dubai",
-      "finalUrl": "https://www.bionixus.com/pharmaceutical-market-research-dubai",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Healthcare Market Research Dubai | Pharma Fieldwork UAE | BioNixus",
-      "h1": "Pharmaceutical Market Research Companies in Dubai — BioNixus UAE",
-      "wordCount": 1858,
-      "thin": true,
-      "gap": 142,
-      "error": null
-    },
-    {
       "pathname": "/brazil-healthcare-market-report",
       "url": "https://www.bionixus.com/brazil-healthcare-market-report",
       "finalUrl": "https://www.bionixus.com/brazil-healthcare-market-report",
@@ -181,6 +233,32 @@
       "error": null
     },
     {
+      "pathname": "/turkey-healthcare-market-report",
+      "url": "https://www.bionixus.com/turkey-healthcare-market-report",
+      "finalUrl": "https://www.bionixus.com/turkey-healthcare-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Turkey Healthcare Market Report 2026 | TİTCK, SGK...",
+      "h1": "Turkey Healthcare Market Report 2026: TİTCK, SGK Reimbursement, and Europe-MENA Crossroads Market Intelligence",
+      "wordCount": 1851,
+      "thin": true,
+      "gap": 149,
+      "error": null
+    },
+    {
+      "pathname": "/germany-medical-devices-market-report",
+      "url": "https://www.bionixus.com/germany-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/germany-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Germany Medical Devices Market Report 2026 | EU MDR, NUB...",
+      "h1": "Germany Medical Devices Market Report 2026: EU MDR Compliance, DRG Reimbursement, and Hospital Procurement Intelligence",
+      "wordCount": 1849,
+      "thin": true,
+      "gap": 151,
+      "error": null
+    },
+    {
       "pathname": "/healthcare-market-research-south-korea",
       "url": "https://www.bionixus.com/healthcare-market-research-south-korea",
       "finalUrl": "https://www.bionixus.com/healthcare-market-research-south-korea",
@@ -188,6 +266,19 @@
       "inSitemap": true,
       "title": "Healthcare Market Research Company in South Korea | MFDS &.",
       "h1": "Healthcare & Pharmaceutical Market Research in South Korea",
+      "wordCount": 1840,
+      "thin": true,
+      "gap": 160,
+      "error": null
+    },
+    {
+      "pathname": "/india-healthcare-market-report",
+      "url": "https://www.bionixus.com/india-healthcare-market-report",
+      "finalUrl": "https://www.bionixus.com/india-healthcare-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "India Healthcare Market Report 2026 | CDSCO, Ayushman Bhara",
+      "h1": "India Healthcare Market Report 2026: CDSCO, Ayushman Bharat, and Pharmaceutical Market Intelligence",
       "wordCount": 1840,
       "thin": true,
       "gap": 160,
@@ -233,16 +324,16 @@
       "error": null
     },
     {
-      "pathname": "/gcc-market-access-guide",
-      "url": "https://www.bionixus.com/gcc-market-access-guide",
-      "finalUrl": "https://www.bionixus.com/gcc-market-access-guide",
+      "pathname": "/uk-medical-devices-market-report",
+      "url": "https://www.bionixus.com/uk-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/uk-medical-devices-market-report",
       "status": 200,
       "inSitemap": true,
-      "title": "GCC Pharmaceutical Market Access Guide 2026 | SFD | BioNixus",
-      "h1": "GCC pharmaceutical market access guide 2026 — registration, pricing, and reimbursement",
-      "wordCount": 1728,
+      "title": "UK Medical Devices Market Report 2026 | UKCA, MHRA & NHS...",
+      "h1": "UK Medical Devices Market Report 2026: UKCA Marking, NHS Supply Chain, and MHRA Regulatory Intelligence",
+      "wordCount": 1751,
       "thin": true,
-      "gap": 272,
+      "gap": 249,
       "error": null
     },
     {
@@ -256,6 +347,19 @@
       "wordCount": 1719,
       "thin": true,
       "gap": 281,
+      "error": null
+    },
+    {
+      "pathname": "/healthcare-market-research-india",
+      "url": "https://www.bionixus.com/healthcare-market-research-india",
+      "finalUrl": "https://www.bionixus.com/healthcare-market-research-india",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Healthcare Market Research Company in India | CDSCO & ICMR.",
+      "h1": "Healthcare & Pharmaceutical Market Research in India",
+      "wordCount": 1710,
+      "thin": true,
+      "gap": 290,
       "error": null
     },
     {
@@ -324,19 +428,6 @@
       "error": null
     },
     {
-      "pathname": "/gcc-pharmaceutical-market-research",
-      "url": "https://www.bionixus.com/gcc-pharmaceutical-market-research",
-      "finalUrl": "https://www.bionixus.com/gcc-pharmaceutical-market-research",
-      "status": 200,
-      "inSitemap": true,
-      "title": "GCC Biologics & Generic Injectables Market 2026 | BioNixus",
-      "h1": "GCC Biologics & Generic Injectables Market Research 2026 — Precision Medicine & Drug Repurposing",
-      "wordCount": 1656,
-      "thin": true,
-      "gap": 344,
-      "error": null
-    },
-    {
       "pathname": "/healthcare-market-research-australia",
       "url": "https://www.bionixus.com/healthcare-market-research-australia",
       "finalUrl": "https://www.bionixus.com/healthcare-market-research-australia",
@@ -376,6 +467,19 @@
       "error": null
     },
     {
+      "pathname": "/egypt-medical-devices-market-report",
+      "url": "https://www.bionixus.com/egypt-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/egypt-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Egypt Medical Devices Market Report 2026 | USD 1.3B Market",
+      "h1": "Egypt Medical Devices Market Report 2026: Market Size, UHI Program, and Cairo Hospital Intelligence",
+      "wordCount": 1639,
+      "thin": true,
+      "gap": 361,
+      "error": null
+    },
+    {
       "pathname": "/healthcare-market-research-poland",
       "url": "https://www.bionixus.com/healthcare-market-research-poland",
       "finalUrl": "https://www.bionixus.com/healthcare-market-research-poland",
@@ -402,6 +506,32 @@
       "error": null
     },
     {
+      "pathname": "/turkey-medical-devices-market-report",
+      "url": "https://www.bionixus.com/turkey-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/turkey-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Turkey Medical Devices Market Report 2026 | TİTCK CE Markin",
+      "h1": "Turkey Medical Devices Market Report 2026: TİTCK Regulation, SGK SUT Reimbursement, and Medical Tourism Intelligence",
+      "wordCount": 1606,
+      "thin": true,
+      "gap": 394,
+      "error": null
+    },
+    {
+      "pathname": "/india-medical-devices-market-report",
+      "url": "https://www.bionixus.com/india-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/india-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "India Medical Devices Market Report 2026 | MDR 2017, PLI...",
+      "h1": "India Medical Devices Market Report 2026: CDSCO MDR 2017, PLI Manufacturing, and Commercial Intelligence",
+      "wordCount": 1604,
+      "thin": true,
+      "gap": 396,
+      "error": null
+    },
+    {
       "pathname": "/ar/insights/top-sharaket-abhath-sihha-alsaudia-2026",
       "url": "https://www.bionixus.com/ar/insights/top-sharaket-abhath-sihha-alsaudia-2026",
       "finalUrl": "https://www.bionixus.com/ar/insights/top-sharaket-abhath-sihha-alsaudia-2026",
@@ -412,6 +542,19 @@
       "wordCount": 1592,
       "thin": true,
       "gap": 408,
+      "error": null
+    },
+    {
+      "pathname": "/singapore-medical-devices-market-report",
+      "url": "https://www.bionixus.com/singapore-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/singapore-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Singapore Medical Devices Market Report 2026 | HSA...",
+      "h1": "Singapore Medical Devices Market Report 2026: HSA Regulation, ASEAN Distribution Hub, and Medical Tourism Intelligence",
+      "wordCount": 1578,
+      "thin": true,
+      "gap": 422,
       "error": null
     },
     {
@@ -467,6 +610,19 @@
       "error": null
     },
     {
+      "pathname": "/kuwait-medical-devices-market-report",
+      "url": "https://www.bionixus.com/kuwait-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/kuwait-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Kuwait Medical Devices Market Report 2026 | CMS Procurement",
+      "h1": "Kuwait Medical Devices Market Report 2026: CMS Procurement, MOPH Registration, and Hospital Intelligence",
+      "wordCount": 1552,
+      "thin": true,
+      "gap": 448,
+      "error": null
+    },
+    {
       "pathname": "/healthcare-market-research-spain",
       "url": "https://www.bionixus.com/healthcare-market-research-spain",
       "finalUrl": "https://www.bionixus.com/healthcare-market-research-spain",
@@ -490,6 +646,19 @@
       "wordCount": 1545,
       "thin": true,
       "gap": 455,
+      "error": null
+    },
+    {
+      "pathname": "/south-korea-medical-devices-market-report",
+      "url": "https://www.bionixus.com/south-korea-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/south-korea-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "South Korea Medical Devices Market Report 2026 | MFDS, NHIS",
+      "h1": "South Korea Medical Devices Market Report 2026: MFDS Regulation, NHIS Reimbursement, and Export Market Intelligence",
+      "wordCount": 1544,
+      "thin": true,
+      "gap": 456,
       "error": null
     },
     {
@@ -539,9 +708,9 @@
       "inSitemap": true,
       "title": "Global Market Research Services | Pharma, Healthcare &...",
       "h1": "Market research services for pharma, healthcare, and commercial industries",
-      "wordCount": 1521,
+      "wordCount": 1524,
       "thin": true,
-      "gap": 479,
+      "gap": 476,
       "error": null
     },
     {
@@ -558,6 +727,45 @@
       "error": null
     },
     {
+      "pathname": "/spain-medical-devices-market-report",
+      "url": "https://www.bionixus.com/spain-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/spain-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Spain Medical Devices Market Report 2026 | AEMPS, RAMD...",
+      "h1": "Spain Medical Devices Market Report 2026: AEMPS Regulation, SNS Reimbursement, and Regional Procurement Intelligence",
+      "wordCount": 1479,
+      "thin": true,
+      "gap": 521,
+      "error": null
+    },
+    {
+      "pathname": "/saudi-arabia-medical-devices-market-report",
+      "url": "https://www.bionixus.com/saudi-arabia-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/saudi-arabia-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Saudi Arabia Medical Devices Market Report 2026 | Hospital.",
+      "h1": "Saudi Arabia Medical Devices Market Report 2026: Hospital Consumption and Commercial Intelligence",
+      "wordCount": 1470,
+      "thin": true,
+      "gap": 530,
+      "error": null
+    },
+    {
+      "pathname": "/gcc-anesthesia-surgical-market-report",
+      "url": "https://www.bionixus.com/gcc-anesthesia-surgical-market-report",
+      "finalUrl": "https://www.bionixus.com/gcc-anesthesia-surgical-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "GCC Anesthesia & Surgical Market Report 2026 | Hospital...",
+      "h1": "GCC Anesthesia and Surgical Market Report 2026: Hospital Procedure Volumes and Drug Consumption Intelligence",
+      "wordCount": 1445,
+      "thin": true,
+      "gap": 555,
+      "error": null
+    },
+    {
       "pathname": "/healthcare-market-research-germany",
       "url": "https://www.bionixus.com/healthcare-market-research-germany",
       "finalUrl": "https://www.bionixus.com/healthcare-market-research-germany",
@@ -568,6 +776,32 @@
       "wordCount": 1428,
       "thin": true,
       "gap": 572,
+      "error": null
+    },
+    {
+      "pathname": "/healthcare-market-research-qatar",
+      "url": "https://www.bionixus.com/healthcare-market-research-qatar",
+      "finalUrl": "https://www.bionixus.com/healthcare-market-research-qatar",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Healthcare Market Research Qatar | Doha & MoPH | BioNixus",
+      "h1": "Healthcare & Pharmaceutical Market Research in Qatar",
+      "wordCount": 1420,
+      "thin": true,
+      "gap": 580,
+      "error": null
+    },
+    {
+      "pathname": "/uae-healthcare-market-report",
+      "url": "https://www.bionixus.com/uae-healthcare-market-report",
+      "finalUrl": "https://www.bionixus.com/uae-healthcare-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "UAE Healthcare Market Report 2026 | Market Size, Pharma &...",
+      "h1": "UAE Healthcare Market Report 2026: Market Size, Pharmaceutical Intelligence, and Commercial Strategy",
+      "wordCount": 1392,
+      "thin": true,
+      "gap": 608,
       "error": null
     },
     {
@@ -607,6 +841,32 @@
       "wordCount": 1376,
       "thin": true,
       "gap": 624,
+      "error": null
+    },
+    {
+      "pathname": "/healthcare-market-research-oman",
+      "url": "https://www.bionixus.com/healthcare-market-research-oman",
+      "finalUrl": "https://www.bionixus.com/healthcare-market-research-oman",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Healthcare Market Research Oman | MoH Oman & SQUH | BioNixus",
+      "h1": "Healthcare & Pharmaceutical Market Research in Oman",
+      "wordCount": 1362,
+      "thin": true,
+      "gap": 638,
+      "error": null
+    },
+    {
+      "pathname": "/healthcare-market-research-jordan",
+      "url": "https://www.bionixus.com/healthcare-market-research-jordan",
+      "finalUrl": "https://www.bionixus.com/healthcare-market-research-jordan",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Healthcare Market Research Jordan | JFDA-Aligned | BioNixus",
+      "h1": "Healthcare & Pharmaceutical Market Research in Jordan",
+      "wordCount": 1355,
+      "thin": true,
+      "gap": 645,
       "error": null
     },
     {
@@ -675,29 +935,16 @@
       "error": null
     },
     {
-      "pathname": "/home-staging",
-      "url": "https://www.bionixus.com/home-staging",
-      "finalUrl": "https://www.bionixus.com/home-staging",
+      "pathname": "/egypt-healthcare-market-research",
+      "url": "https://www.bionixus.com/egypt-healthcare-market-research",
+      "finalUrl": "https://www.bionixus.com/egypt-healthcare-market-research",
       "status": 200,
       "inSitemap": true,
-      "title": "BioNixus | Pharma Market Research — Europe, Middle East & Africa",
-      "h1": "Research that shapes pharma strategy",
-      "wordCount": 1286,
+      "title": "Healthcare Market Research Company in Egypt | BioNixus",
+      "h1": "Healthcare Market Research Company in Egypt",
+      "wordCount": 1280,
       "thin": true,
-      "gap": 714,
-      "error": null
-    },
-    {
-      "pathname": "/premium-home-page",
-      "url": "https://www.bionixus.com/premium-home-page",
-      "finalUrl": "https://www.bionixus.com/premium-home-page",
-      "status": 200,
-      "inSitemap": true,
-      "title": "BioNixus | Pharma Market Research — Europe, Middle East & Africa",
-      "h1": "Research that shapes pharma strategy",
-      "wordCount": 1286,
-      "thin": true,
-      "gap": 714,
+      "gap": 720,
       "error": null
     },
     {
@@ -950,6 +1197,19 @@
     {
       "pathname": "/fr/healthcare-market-research",
       "url": "https://www.bionixus.com/fr/healthcare-market-research",
+      "finalUrl": "https://www.bionixus.com/fr/healthcare-market-research",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Recherche de marché santé et pharma | Europe et M | BioNixus",
+      "h1": "Recherche de marché santé et pharmaceutique pour l&#x27;Europe et le Moyen-Orient",
+      "wordCount": 938,
+      "thin": true,
+      "gap": 1062,
+      "error": null
+    },
+    {
+      "pathname": "/fr/market-research-healthcare",
+      "url": "https://www.bionixus.com/fr/market-research-healthcare",
       "finalUrl": "https://www.bionixus.com/fr/healthcare-market-research",
       "status": 200,
       "inSitemap": true,
@@ -1650,45 +1910,6 @@
       "error": null
     },
     {
-      "pathname": "/uae-market-access-research",
-      "url": "https://www.bionixus.com/uae-market-access-research",
-      "finalUrl": "https://www.bionixus.com/uae-market-access-research",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Market Access Research UAE | BioNixus",
-      "h1": "Market Access Research UAE",
-      "wordCount": 627,
-      "thin": true,
-      "gap": 1373,
-      "error": null
-    },
-    {
-      "pathname": "/saudi-payer-market-access-research",
-      "url": "https://www.bionixus.com/saudi-payer-market-access-research",
-      "finalUrl": "https://www.bionixus.com/saudi-payer-market-access-research",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Saudi Payer Market Access Research | BioNixus",
-      "h1": "Saudi Payer Market Access Research",
-      "wordCount": 620,
-      "thin": true,
-      "gap": 1380,
-      "error": null
-    },
-    {
-      "pathname": "/budget-impact-model-saudi-arabia",
-      "url": "https://www.bionixus.com/budget-impact-model-saudi-arabia",
-      "finalUrl": "https://www.bionixus.com/budget-impact-model-saudi-arabia",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Budget Impact Model Saudi Arabia | BioNixus",
-      "h1": "Budget Impact Model Saudi Arabia",
-      "wordCount": 617,
-      "thin": true,
-      "gap": 1383,
-      "error": null
-    },
-    {
       "pathname": "/global-websites/united-kingdom",
       "url": "https://www.bionixus.com/global-websites/united-kingdom",
       "finalUrl": "https://www.bionixus.com/global-websites/united-kingdom",
@@ -1699,45 +1920,6 @@
       "wordCount": 617,
       "thin": true,
       "gap": 1383,
-      "error": null
-    },
-    {
-      "pathname": "/gcc-hcp-recruitment-market-research",
-      "url": "https://www.bionixus.com/gcc-hcp-recruitment-market-research",
-      "finalUrl": "https://www.bionixus.com/gcc-hcp-recruitment-market-research",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Physician Recruitment in Saudi Arabia and GCC | BioNixus",
-      "h1": "Physician Recruitment in Saudi Arabia and GCC",
-      "wordCount": 608,
-      "thin": true,
-      "gap": 1392,
-      "error": null
-    },
-    {
-      "pathname": "/patient-support-program-research-gcc",
-      "url": "https://www.bionixus.com/patient-support-program-research-gcc",
-      "finalUrl": "https://www.bionixus.com/patient-support-program-research-gcc",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Patient Support Program Research GCC | BioNixus",
-      "h1": "Patient Support Program Research GCC",
-      "wordCount": 599,
-      "thin": true,
-      "gap": 1401,
-      "error": null
-    },
-    {
-      "pathname": "/qatar-market-access-research",
-      "url": "https://www.bionixus.com/qatar-market-access-research",
-      "finalUrl": "https://www.bionixus.com/qatar-market-access-research",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Market Access Research Qatar | BioNixus",
-      "h1": "Market Access Research Qatar",
-      "wordCount": 593,
-      "thin": true,
-      "gap": 1407,
       "error": null
     },
     {
@@ -1832,16 +2014,16 @@
       "error": null
     },
     {
-      "pathname": "/fr/market-research-healthcare",
-      "url": "https://www.bionixus.com/fr/market-research-healthcare",
-      "finalUrl": "https://www.bionixus.com/fr/market-research-healthcare",
+      "pathname": "/insights",
+      "url": "https://www.bionixus.com/insights",
+      "finalUrl": "https://www.bionixus.com/insights",
       "status": 200,
       "inSitemap": true,
-      "title": "Healthcare Market Research | Recherche healthcare et...",
-      "h1": "Healthcare market research pour decisions pharmaceutiques en Europe et Moyen-Orient",
-      "wordCount": 359,
+      "title": "BioNixus Insights for Healthcare & Pharma Strategy",
+      "h1": "Why BioNixus Insights Matter in Healthcare and Pharmaceuticals",
+      "wordCount": 390,
       "thin": true,
-      "gap": 1641,
+      "gap": 1610,
       "error": null
     },
     {
@@ -1894,19 +2076,6 @@
       "wordCount": 319,
       "thin": true,
       "gap": 1681,
-      "error": null
-    },
-    {
-      "pathname": "/insights",
-      "url": "https://www.bionixus.com/insights",
-      "finalUrl": "https://www.bionixus.com/insights",
-      "status": 200,
-      "inSitemap": true,
-      "title": "BioNixus Insights for Healthcare & Pharma Strategy",
-      "h1": "Why BioNixus Insights Matter in Healthcare and Pharmaceuticals",
-      "wordCount": 312,
-      "thin": true,
-      "gap": 1688,
       "error": null
     },
     {
@@ -2053,227 +2222,6 @@
       "error": null
     },
     {
-      "pathname": "/saudi-arabia-medical-devices-market-report",
-      "url": "https://www.bionixus.com/saudi-arabia-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/saudi-arabia-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Saudi Arabia Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 18,
-      "thin": true,
-      "gap": 1982,
-      "error": null
-    },
-    {
-      "pathname": "/south-korea-medical-devices-market-report",
-      "url": "https://www.bionixus.com/south-korea-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/south-korea-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "South Korea Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 18,
-      "thin": true,
-      "gap": 1982,
-      "error": null
-    },
-    {
-      "pathname": "/australia-medical-devices-market-report",
-      "url": "https://www.bionixus.com/australia-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/australia-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Australia Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/bahrain-medical-devices-market-report",
-      "url": "https://www.bionixus.com/bahrain-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/bahrain-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Bahrain Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/bionixus-market-research-middle-east",
-      "url": "https://www.bionixus.com/bionixus-market-research-middle-east",
-      "finalUrl": "https://www.bionixus.com/bionixus-market-research-middle-east",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Bionixus Market Research Middle East | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/canada-medical-devices-market-report",
-      "url": "https://www.bionixus.com/canada-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/canada-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Canada Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/china-medical-devices-market-report",
-      "url": "https://www.bionixus.com/china-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/china-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "China Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/egypt-medical-devices-market-report",
-      "url": "https://www.bionixus.com/egypt-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/egypt-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Egypt Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/france-medical-devices-market-report",
-      "url": "https://www.bionixus.com/france-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/france-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "France Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/gcc-anesthesia-surgical-market-report",
-      "url": "https://www.bionixus.com/gcc-anesthesia-surgical-market-report",
-      "finalUrl": "https://www.bionixus.com/gcc-anesthesia-surgical-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Gcc Anesthesia Surgical Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/gcc-medical-devices-market-report",
-      "url": "https://www.bionixus.com/gcc-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/gcc-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Gcc Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/germany-medical-devices-market-report",
-      "url": "https://www.bionixus.com/germany-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/germany-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Germany Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/india-medical-devices-market-report",
-      "url": "https://www.bionixus.com/india-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/india-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "India Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/italy-medical-devices-market-report",
-      "url": "https://www.bionixus.com/italy-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/italy-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Italy Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/japan-medical-devices-market-report",
-      "url": "https://www.bionixus.com/japan-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/japan-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Japan Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/kuwait-medical-devices-market-report",
-      "url": "https://www.bionixus.com/kuwait-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/kuwait-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Kuwait Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/oman-medical-devices-market-report",
-      "url": "https://www.bionixus.com/oman-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/oman-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Oman Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
       "pathname": "/pharmaceutical-companies-saudi-arabia",
       "url": "https://www.bionixus.com/pharmaceutical-companies-saudi-arabia",
       "finalUrl": "https://www.bionixus.com/pharmaceutical-companies-saudi-arabia",
@@ -2284,253 +2232,6 @@
       "wordCount": 17,
       "thin": true,
       "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/qatar-medical-devices-market-report",
-      "url": "https://www.bionixus.com/qatar-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/qatar-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Qatar Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/saudi-arabia-healthcare-market-report",
-      "url": "https://www.bionixus.com/saudi-arabia-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/saudi-arabia-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Saudi Arabia Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/singapore-medical-devices-market-report",
-      "url": "https://www.bionixus.com/singapore-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/singapore-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Singapore Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/south-korea-healthcare-market-report",
-      "url": "https://www.bionixus.com/south-korea-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/south-korea-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "South Korea Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/spain-medical-devices-market-report",
-      "url": "https://www.bionixus.com/spain-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/spain-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Spain Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/turkey-medical-devices-market-report",
-      "url": "https://www.bionixus.com/turkey-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/turkey-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Turkey Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/uae-medical-devices-market-report",
-      "url": "https://www.bionixus.com/uae-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/uae-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Uae Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/uk-medical-devices-market-report",
-      "url": "https://www.bionixus.com/uk-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/uk-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Uk Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/usa-medical-devices-market-report",
-      "url": "https://www.bionixus.com/usa-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/usa-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Usa Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/australia-healthcare-market-report",
-      "url": "https://www.bionixus.com/australia-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/australia-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Australia Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/canada-healthcare-market-report",
-      "url": "https://www.bionixus.com/canada-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/canada-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Canada Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/china-healthcare-market-report",
-      "url": "https://www.bionixus.com/china-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/china-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "China Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/egypt-healthcare-market-report",
-      "url": "https://www.bionixus.com/egypt-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/egypt-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Egypt Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/france-healthcare-market-report",
-      "url": "https://www.bionixus.com/france-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/france-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "France Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/germany-healthcare-market-report",
-      "url": "https://www.bionixus.com/germany-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/germany-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Germany Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/india-healthcare-market-report",
-      "url": "https://www.bionixus.com/india-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/india-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "India Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/italy-healthcare-market-report",
-      "url": "https://www.bionixus.com/italy-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/italy-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Italy Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/kuwait-healthcare-market-report",
-      "url": "https://www.bionixus.com/kuwait-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/kuwait-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Kuwait Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/oman-healthcare-market-report",
-      "url": "https://www.bionixus.com/oman-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/oman-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Oman Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
       "error": null
     },
     {
@@ -2638,97 +2339,6 @@
       "error": null
     },
     {
-      "pathname": "/qatar-healthcare-market-report",
-      "url": "https://www.bionixus.com/qatar-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/qatar-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Qatar Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/singapore-healthcare-market-report",
-      "url": "https://www.bionixus.com/singapore-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/singapore-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Singapore Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/spain-healthcare-market-report",
-      "url": "https://www.bionixus.com/spain-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/spain-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Spain Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/turkey-healthcare-market-report",
-      "url": "https://www.bionixus.com/turkey-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/turkey-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Turkey Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/uae-healthcare-market-report",
-      "url": "https://www.bionixus.com/uae-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/uae-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Uae Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/uk-healthcare-market-report",
-      "url": "https://www.bionixus.com/uk-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/uk-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Uk Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/usa-healthcare-market-report",
-      "url": "https://www.bionixus.com/usa-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/usa-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Usa Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
       "pathname": "/ar/market-research-egypt",
       "url": "https://www.bionixus.com/ar/market-research-egypt",
       "finalUrl": "https://www.bionixus.com/ar/market-research-egypt",
@@ -2781,12 +2391,12 @@
       "error": null
     },
     {
-      "pathname": "/premium-home-preview",
-      "url": "https://www.bionixus.com/premium-home-preview",
-      "finalUrl": "https://www.bionixus.com/premium-home-preview",
+      "pathname": "/ar/market-research-uae",
+      "url": "https://www.bionixus.com/ar/market-research-uae",
+      "finalUrl": "https://www.bionixus.com/ar/market-research-uae",
       "status": 200,
       "inSitemap": true,
-      "title": "Premium Home Preview | BioNixus",
+      "title": "Market Research UAE | BioNixus",
       "h1": "",
       "wordCount": 15,
       "thin": true,
@@ -2814,9 +2424,9 @@
       "inSitemap": true,
       "title": "Healthcare Fieldwork Middle East | BioNixus",
       "h1": "Healthcare Fieldwork Middle East",
-      "wordCount": 8004,
+      "wordCount": 8008,
       "thin": false,
-      "gap": -6004,
+      "gap": -6008,
       "error": null
     },
     {
@@ -2859,6 +2469,32 @@
       "error": null
     },
     {
+      "pathname": "/patient-support-program-research-gcc",
+      "url": "https://www.bionixus.com/patient-support-program-research-gcc",
+      "finalUrl": "https://www.bionixus.com/patient-support-program-research-gcc",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Patient Support Program Research GCC | BioNixus",
+      "h1": "Patient Support Program Research GCC",
+      "wordCount": 6375,
+      "thin": false,
+      "gap": -4375,
+      "error": null
+    },
+    {
+      "pathname": "/qatar-market-access-research",
+      "url": "https://www.bionixus.com/qatar-market-access-research",
+      "finalUrl": "https://www.bionixus.com/qatar-market-access-research",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Market Access Research Qatar | BioNixus",
+      "h1": "Market Access Research Qatar",
+      "wordCount": 6065,
+      "thin": false,
+      "gap": -4065,
+      "error": null
+    },
+    {
       "pathname": "/pharma-fieldwork-egypt",
       "url": "https://www.bionixus.com/pharma-fieldwork-egypt",
       "finalUrl": "https://www.bionixus.com/pharma-fieldwork-egypt",
@@ -2869,6 +2505,58 @@
       "wordCount": 5612,
       "thin": false,
       "gap": -3612,
+      "error": null
+    },
+    {
+      "pathname": "/budget-impact-model-saudi-arabia",
+      "url": "https://www.bionixus.com/budget-impact-model-saudi-arabia",
+      "finalUrl": "https://www.bionixus.com/budget-impact-model-saudi-arabia",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Budget Impact Model Saudi Arabia | BioNixus",
+      "h1": "Budget Impact Model Saudi Arabia",
+      "wordCount": 5239,
+      "thin": false,
+      "gap": -3239,
+      "error": null
+    },
+    {
+      "pathname": "/saudi-payer-market-access-research",
+      "url": "https://www.bionixus.com/saudi-payer-market-access-research",
+      "finalUrl": "https://www.bionixus.com/saudi-payer-market-access-research",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Saudi Payer Market Access Research | BioNixus",
+      "h1": "Saudi Payer Market Access Research",
+      "wordCount": 5225,
+      "thin": false,
+      "gap": -3225,
+      "error": null
+    },
+    {
+      "pathname": "/uae-market-access-research",
+      "url": "https://www.bionixus.com/uae-market-access-research",
+      "finalUrl": "https://www.bionixus.com/uae-market-access-research",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Market Access Research UAE | BioNixus",
+      "h1": "Market Access Research UAE",
+      "wordCount": 5129,
+      "thin": false,
+      "gap": -3129,
+      "error": null
+    },
+    {
+      "pathname": "/gcc-hcp-recruitment-market-research",
+      "url": "https://www.bionixus.com/gcc-hcp-recruitment-market-research",
+      "finalUrl": "https://www.bionixus.com/gcc-hcp-recruitment-market-research",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Physician Recruitment in Saudi Arabia and GCC | BioNixus",
+      "h1": "Physician Recruitment in Saudi Arabia and GCC",
+      "wordCount": 5117,
+      "thin": false,
+      "gap": -3117,
       "error": null
     },
     {
@@ -2898,6 +2586,19 @@
       "error": null
     },
     {
+      "pathname": "/medical-affairs-insight-research-gcc",
+      "url": "https://www.bionixus.com/medical-affairs-insight-research-gcc",
+      "finalUrl": "https://www.bionixus.com/medical-affairs-insight-research-gcc",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Medical Affairs Insight Research GCC | BioNixus",
+      "h1": "Medical Affairs Insight Research GCC",
+      "wordCount": 4108,
+      "thin": false,
+      "gap": -2108,
+      "error": null
+    },
+    {
       "pathname": "/patient-adherence-research-middle-east",
       "url": "https://www.bionixus.com/patient-adherence-research-middle-east",
       "finalUrl": "https://www.bionixus.com/patient-adherence-research-middle-east",
@@ -2921,6 +2622,19 @@
       "wordCount": 3876,
       "thin": false,
       "gap": -1876,
+      "error": null
+    },
+    {
+      "pathname": "/uk-healthcare-market-report",
+      "url": "https://www.bionixus.com/uk-healthcare-market-report",
+      "finalUrl": "https://www.bionixus.com/uk-healthcare-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "UK Healthcare Market Research Report 2026 | NHS, NICE &...",
+      "h1": "UK Healthcare Market Report 2026: NHS Pharmaceutical Market, NICE Access, and Commercial Intelligence",
+      "wordCount": 3692,
+      "thin": false,
+      "gap": -1692,
       "error": null
     },
     {
@@ -2950,6 +2664,19 @@
       "error": null
     },
     {
+      "pathname": "/germany-healthcare-market-report",
+      "url": "https://www.bionixus.com/germany-healthcare-market-report",
+      "finalUrl": "https://www.bionixus.com/germany-healthcare-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Germany Healthcare Market Research Report 2026 | AMNOG & GK",
+      "h1": "Germany Healthcare Market Report 2026: AMNOG Market Access, GKV Pharmaceutical Spend, and Commercial Intelligence",
+      "wordCount": 3460,
+      "thin": false,
+      "gap": -1460,
+      "error": null
+    },
+    {
       "pathname": "/uae-pricing-reimbursement-strategy",
       "url": "https://www.bionixus.com/uae-pricing-reimbursement-strategy",
       "finalUrl": "https://www.bionixus.com/uae-pricing-reimbursement-strategy",
@@ -2973,6 +2700,19 @@
       "wordCount": 3409,
       "thin": false,
       "gap": -1409,
+      "error": null
+    },
+    {
+      "pathname": "/australia-healthcare-market-report",
+      "url": "https://www.bionixus.com/australia-healthcare-market-report",
+      "finalUrl": "https://www.bionixus.com/australia-healthcare-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Australia Healthcare Market Report 2026 | TGA, PBS, PBAC &.",
+      "h1": "Australia Healthcare Market Report 2026: TGA, PBS, PBAC Market Access, and Commercial Intelligence",
+      "wordCount": 3322,
+      "thin": false,
+      "gap": -1322,
       "error": null
     },
     {
@@ -3002,6 +2742,45 @@
       "error": null
     },
     {
+      "pathname": "/canada-healthcare-market-report",
+      "url": "https://www.bionixus.com/canada-healthcare-market-report",
+      "finalUrl": "https://www.bionixus.com/canada-healthcare-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Canada Healthcare Market Research Report 2026 | CADTH & pCP",
+      "h1": "Canada Healthcare Market Report 2026: CADTH HTA, pCPA Negotiations, and Provincial Formulary Intelligence",
+      "wordCount": 3283,
+      "thin": false,
+      "gap": -1283,
+      "error": null
+    },
+    {
+      "pathname": "/bionixus-industries/insights/financial-services-market-research-egypt-2026",
+      "url": "https://www.bionixus.com/bionixus-industries/insights/financial-services-market-research-egypt-2026",
+      "finalUrl": "https://www.bionixus.com/bionixus-industries/insights/financial-services-market-research-egypt-2026",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Financial Services Market Research Egypt 2026 | BioNixus",
+      "h1": "Financial Services Market Research in Egypt (2026 Guide)",
+      "wordCount": 3252,
+      "thin": false,
+      "gap": -1252,
+      "error": null
+    },
+    {
+      "pathname": "/qatar-healthcare-market-report",
+      "url": "https://www.bionixus.com/qatar-healthcare-market-report",
+      "finalUrl": "https://www.bionixus.com/qatar-healthcare-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Qatar Healthcare Market Report 2026 | Pharma, HTA & Market.",
+      "h1": "Qatar Healthcare Market Report 2026: Pharmaceutical Intelligence, HMC Access, and HTA Landscape",
+      "wordCount": 3235,
+      "thin": false,
+      "gap": -1235,
+      "error": null
+    },
+    {
       "pathname": "/japan-healthcare-market-report",
       "url": "https://www.bionixus.com/japan-healthcare-market-report",
       "finalUrl": "https://www.bionixus.com/japan-healthcare-market-report",
@@ -3028,6 +2807,19 @@
       "error": null
     },
     {
+      "pathname": "/bionixus-industries/insights/online-market-research-social-listening-brand-growth-2026",
+      "url": "https://www.bionixus.com/bionixus-industries/insights/online-market-research-social-listening-brand-growth-2026",
+      "finalUrl": "https://www.bionixus.com/bionixus-industries/insights/online-market-research-social-listening-brand-growth-2026",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Online Market Research & Social Listening 2026 | BioNixus",
+      "h1": "Online Market Research and Social Listening for Brand Growth (2026 Guide)",
+      "wordCount": 3153,
+      "thin": false,
+      "gap": -1153,
+      "error": null
+    },
+    {
       "pathname": "/gcc-pharma-market-report-2026",
       "url": "https://www.bionixus.com/gcc-pharma-market-report-2026",
       "finalUrl": "https://www.bionixus.com/gcc-pharma-market-report-2026",
@@ -3038,6 +2830,110 @@
       "wordCount": 3142,
       "thin": false,
       "gap": -1142,
+      "error": null
+    },
+    {
+      "pathname": "/south-korea-healthcare-market-report",
+      "url": "https://www.bionixus.com/south-korea-healthcare-market-report",
+      "finalUrl": "https://www.bionixus.com/south-korea-healthcare-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "South Korea Healthcare Market Report 2026 | HIRA, NHIS...",
+      "h1": "South Korea Healthcare Market Report 2026: HIRA, NHIS Reimbursement, and Biopharmaceutical Industry Intelligence",
+      "wordCount": 3126,
+      "thin": false,
+      "gap": -1126,
+      "error": null
+    },
+    {
+      "pathname": "/japan-medical-devices-market-report",
+      "url": "https://www.bionixus.com/japan-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/japan-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Japan Medical Devices Market Report 2026 | PMDA Approval, N",
+      "h1": "Japan Medical Devices Market Report 2026: PMDA Regulation, NHI Reimbursement, and Commercial Intelligence",
+      "wordCount": 3100,
+      "thin": false,
+      "gap": -1100,
+      "error": null
+    },
+    {
+      "pathname": "/pharmaceutical-market-research-india",
+      "url": "https://www.bionixus.com/pharmaceutical-market-research-india",
+      "finalUrl": "https://www.bionixus.com/pharmaceutical-market-research-india",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Pharmaceutical Market Research Company in India | CDSCO, NP",
+      "h1": "Pharmaceutical Market Research Company in India",
+      "wordCount": 3067,
+      "thin": false,
+      "gap": -1067,
+      "error": null
+    },
+    {
+      "pathname": "/australia-medical-devices-market-report",
+      "url": "https://www.bionixus.com/australia-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/australia-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Australia Medical Devices Market Report 2026 | TGA ARTG,...",
+      "h1": "Australia Medical Devices Market Report 2026: TGA Registration, Prostheses List, and MSAC Reimbursement Intelligence",
+      "wordCount": 2993,
+      "thin": false,
+      "gap": -993,
+      "error": null
+    },
+    {
+      "pathname": "/singapore-healthcare-market-report",
+      "url": "https://www.bionixus.com/singapore-healthcare-market-report",
+      "finalUrl": "https://www.bionixus.com/singapore-healthcare-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Singapore Healthcare Market Report 2026 | HSA, ACE, 3Ms &...",
+      "h1": "Singapore Healthcare Market Report 2026: HSA Registration, ACE HTA, and Southeast Asia Pharma Hub Intelligence",
+      "wordCount": 2983,
+      "thin": false,
+      "gap": -983,
+      "error": null
+    },
+    {
+      "pathname": "/france-healthcare-market-report",
+      "url": "https://www.bionixus.com/france-healthcare-market-report",
+      "finalUrl": "https://www.bionixus.com/france-healthcare-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "France Healthcare Market Report 2026 | HAS ASMR, Assurance.",
+      "h1": "France Healthcare Market Report 2026: HAS Market Access, Assurance Maladie, and Commercial Intelligence",
+      "wordCount": 2981,
+      "thin": false,
+      "gap": -981,
+      "error": null
+    },
+    {
+      "pathname": "/spain-healthcare-market-report",
+      "url": "https://www.bionixus.com/spain-healthcare-market-report",
+      "finalUrl": "https://www.bionixus.com/spain-healthcare-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Spain Healthcare Market Report 2026 | AEMPS, SNS...",
+      "h1": "Spain Healthcare Market Report 2026: AEMPS Market Access, SNS Reimbursement, and Regional Commercial Intelligence",
+      "wordCount": 2954,
+      "thin": false,
+      "gap": -954,
+      "error": null
+    },
+    {
+      "pathname": "/china-medical-devices-market-report",
+      "url": "https://www.bionixus.com/china-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/china-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "China Medical Devices Market Report 2026 | NMPA, VBP...",
+      "h1": "China Medical Devices Market Report 2026: NMPA Regulation, VBP Procurement, and Import Substitution Intelligence",
+      "wordCount": 2949,
+      "thin": false,
+      "gap": -949,
       "error": null
     },
     {
@@ -3054,6 +2950,32 @@
       "error": null
     },
     {
+      "pathname": "/canada-medical-devices-market-report",
+      "url": "https://www.bionixus.com/canada-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/canada-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Canada Medical Devices Market Report 2026 | Health Canada...",
+      "h1": "Canada Medical Devices Market Report 2026: Health Canada Licensing, CADTH Review, and Provincial Procurement Intelligence",
+      "wordCount": 2862,
+      "thin": false,
+      "gap": -862,
+      "error": null
+    },
+    {
+      "pathname": "/italy-medical-devices-market-report",
+      "url": "https://www.bionixus.com/italy-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/italy-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Italy Medical Devices Market Report 2026 | EU MDR, BDNM...",
+      "h1": "Italy Medical Devices Market Report 2026: EU MDR, BDNM Registration, and Regional Hospital Procurement Intelligence",
+      "wordCount": 2847,
+      "thin": false,
+      "gap": -847,
+      "error": null
+    },
+    {
       "pathname": "/bahrain-healthcare-market-report",
       "url": "https://www.bionixus.com/bahrain-healthcare-market-report",
       "finalUrl": "https://www.bionixus.com/bahrain-healthcare-market-report",
@@ -3064,6 +2986,45 @@
       "wordCount": 2840,
       "thin": false,
       "gap": -840,
+      "error": null
+    },
+    {
+      "pathname": "/uae-medical-devices-market-report",
+      "url": "https://www.bionixus.com/uae-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/uae-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "UAE Medical Devices Market Report 2026 | MOHAP Registration",
+      "h1": "UAE Medical Devices Market Report 2026: MOHAP Registration, Dubai Hub Strategy, and Hospital Procurement Intelligence",
+      "wordCount": 2824,
+      "thin": false,
+      "gap": -824,
+      "error": null
+    },
+    {
+      "pathname": "/usa-medical-devices-market-report",
+      "url": "https://www.bionixus.com/usa-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/usa-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "USA Medical Devices Market Report 2026 | FDA 510(k)/PMA, CM",
+      "h1": "USA Medical Devices Market Report 2026: FDA Approval, CMS Reimbursement, and GPO/IDN Procurement Intelligence",
+      "wordCount": 2816,
+      "thin": false,
+      "gap": -816,
+      "error": null
+    },
+    {
+      "pathname": "/italy-healthcare-market-report",
+      "url": "https://www.bionixus.com/italy-healthcare-market-report",
+      "finalUrl": "https://www.bionixus.com/italy-healthcare-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Italy Healthcare Market Report 2026 | AIFA, SSN Reimburseme",
+      "h1": "Italy Healthcare Market Report 2026: AIFA Market Access, SSN Reimbursement, and Commercial Intelligence",
+      "wordCount": 2815,
+      "thin": false,
+      "gap": -815,
       "error": null
     },
     {
@@ -3103,6 +3064,19 @@
       "wordCount": 2748,
       "thin": false,
       "gap": -748,
+      "error": null
+    },
+    {
+      "pathname": "/kuwait-healthcare-market-report",
+      "url": "https://www.bionixus.com/kuwait-healthcare-market-report",
+      "finalUrl": "https://www.bionixus.com/kuwait-healthcare-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Kuwait Healthcare Market Report 2026 | Pharma, Medical...",
+      "h1": "Kuwait Healthcare Market Report 2026: Pharmaceutical Intelligence, Medical Devices, and Market Access",
+      "wordCount": 2746,
+      "thin": false,
+      "gap": -746,
       "error": null
     },
     {
@@ -3168,6 +3142,19 @@
       "wordCount": 2689,
       "thin": false,
       "gap": -689,
+      "error": null
+    },
+    {
+      "pathname": "/oman-medical-devices-market-report",
+      "url": "https://www.bionixus.com/oman-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/oman-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Oman Medical Devices Market Report 2026 | MOH Procurement &",
+      "h1": "Oman Medical Devices Market Report 2026: MOH Registration, Royal Hospital, and Vision 2040 Commercial Intelligence",
+      "wordCount": 2684,
+      "thin": false,
+      "gap": -684,
       "error": null
     },
     {
@@ -3405,6 +3392,19 @@
       "error": null
     },
     {
+      "pathname": "/qatar-medical-devices-market-report",
+      "url": "https://www.bionixus.com/qatar-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/qatar-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Qatar Medical Devices Market Report 2026 | HMC Procurement",
+      "h1": "Qatar Medical Devices Market Report 2026: HMC Procurement, Sidra Medicine, and Commercial Intelligence",
+      "wordCount": 2612,
+      "thin": false,
+      "gap": -612,
+      "error": null
+    },
+    {
       "pathname": "/pharmaceutical-market-research-germany",
       "url": "https://www.bionixus.com/pharmaceutical-market-research-germany",
       "finalUrl": "https://www.bionixus.com/pharmaceutical-market-research-germany",
@@ -3496,6 +3496,32 @@
       "error": null
     },
     {
+      "pathname": "/bahrain-medical-devices-market-report",
+      "url": "https://www.bionixus.com/bahrain-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/bahrain-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Bahrain Medical Devices Market Report 2026 | NHRA...",
+      "h1": "Bahrain Medical Devices Market Report 2026: NHRA Registration, GCC Sequential Entry, and Commercial Strategy",
+      "wordCount": 2594,
+      "thin": false,
+      "gap": -594,
+      "error": null
+    },
+    {
+      "pathname": "/france-medical-devices-market-report",
+      "url": "https://www.bionixus.com/france-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/france-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "France Medical Devices Market Report 2026 | LPP...",
+      "h1": "France Medical Devices Market Report 2026: LPP Listing, ANSM Regulation, and Hospital Procurement Intelligence",
+      "wordCount": 2594,
+      "thin": false,
+      "gap": -594,
+      "error": null
+    },
+    {
       "pathname": "/pharmaceutical-market-research-france",
       "url": "https://www.bionixus.com/pharmaceutical-market-research-france",
       "finalUrl": "https://www.bionixus.com/pharmaceutical-market-research-france",
@@ -3574,6 +3600,19 @@
       "error": null
     },
     {
+      "pathname": "/oman-healthcare-market-report",
+      "url": "https://www.bionixus.com/oman-healthcare-market-report",
+      "finalUrl": "https://www.bionixus.com/oman-healthcare-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Oman Healthcare Market Report 2026 | Pharma Market Size & M",
+      "h1": "Oman Healthcare Market Report 2026: Pharmaceutical Intelligence, MOH Access, and Vision 2040 Strategy",
+      "wordCount": 2445,
+      "thin": false,
+      "gap": -445,
+      "error": null
+    },
+    {
       "pathname": "/pharmaceutical-market-research-spain",
       "url": "https://www.bionixus.com/pharmaceutical-market-research-spain",
       "finalUrl": "https://www.bionixus.com/pharmaceutical-market-research-spain",
@@ -3615,6 +3654,19 @@
     {
       "pathname": "/healthcare-market-research/uae",
       "url": "https://www.bionixus.com/healthcare-market-research/uae",
+      "finalUrl": "https://www.bionixus.com/healthcare-market-research/uae",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Healthcare Market Research UAE | DHA, DOH & MOHAP | BioNixus",
+      "h1": "Healthcare Market Research in the UAE",
+      "wordCount": 2425,
+      "thin": false,
+      "gap": -425,
+      "error": null
+    },
+    {
+      "pathname": "/market-research-in-uae",
+      "url": "https://www.bionixus.com/market-research-in-uae",
       "finalUrl": "https://www.bionixus.com/healthcare-market-research/uae",
       "status": 200,
       "inSitemap": true,
@@ -3704,19 +3756,6 @@
       "error": null
     },
     {
-      "pathname": "/market-research-in-uae",
-      "url": "https://www.bionixus.com/market-research-in-uae",
-      "finalUrl": "https://www.bionixus.com/market-research-uae",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Market Research in UAE | Healthcare & Pharma Market Researc",
-      "h1": "Market Research in the UAE",
-      "wordCount": 2345,
-      "thin": false,
-      "gap": -345,
-      "error": null
-    },
-    {
       "pathname": "/market-research-uae",
       "url": "https://www.bionixus.com/market-research-uae",
       "finalUrl": "https://www.bionixus.com/market-research-uae",
@@ -3730,6 +3769,19 @@
       "error": null
     },
     {
+      "pathname": "/gcc-medical-devices-market-report",
+      "url": "https://www.bionixus.com/gcc-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/gcc-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "GCC Medical Devices Market 2026 | IVD & $5.8B Siz | BioNixus",
+      "h1": "GCC Medical Devices Market 2026: IVD, Prefilled Syringes & Hospital Procurement",
+      "wordCount": 2334,
+      "thin": false,
+      "gap": -334,
+      "error": null
+    },
+    {
       "pathname": "/market-research-ksa",
       "url": "https://www.bionixus.com/market-research-ksa",
       "finalUrl": "https://www.bionixus.com/market-research-ksa",
@@ -3740,19 +3792,6 @@
       "wordCount": 2311,
       "thin": false,
       "gap": -311,
-      "error": null
-    },
-    {
-      "pathname": "/egypt-healthcare-market-research",
-      "url": "https://www.bionixus.com/egypt-healthcare-market-research",
-      "finalUrl": "https://www.bionixus.com/egypt-healthcare-market-research",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Healthcare Market Research Company in Egypt (2026) | EDA...",
-      "h1": "Healthcare Providers & Hospitals market research company in Egypt",
-      "wordCount": 2298,
-      "thin": false,
-      "gap": -298,
       "error": null
     },
     {
@@ -3808,16 +3847,16 @@
       "error": null
     },
     {
-      "pathname": "/ar/market-research-uae",
-      "url": "https://www.bionixus.com/ar/market-research-uae",
-      "finalUrl": "https://www.bionixus.com/ar/market-research-uae",
+      "pathname": "/saudi-arabia-healthcare-market-report",
+      "url": "https://www.bionixus.com/saudi-arabia-healthcare-market-report",
+      "finalUrl": "https://www.bionixus.com/saudi-arabia-healthcare-market-report",
       "status": 200,
       "inSitemap": true,
-      "title": "أبحاث السوق في الإمارات العربية المتحدة | أبحاث السوق الصحية...",
-      "h1": "أبحاث السوق في الإمارات العربية المتحدة",
-      "wordCount": 2233,
+      "title": "Saudi Arabia Healthcare Market Report 2026 | USD 60B Market",
+      "h1": "Saudi Arabia Healthcare Market Report 2026: Market Size, Pharmaceutical Intelligence, and Vision 2030 Strategy",
+      "wordCount": 2239,
       "thin": false,
-      "gap": -233,
+      "gap": -239,
       "error": null
     },
     {
@@ -4039,6 +4078,19 @@
       "wordCount": 2152,
       "thin": false,
       "gap": -152,
+      "error": null
+    },
+    {
+      "pathname": "/pharmaceutical-market-research-kuwait",
+      "url": "https://www.bionixus.com/pharmaceutical-market-research-kuwait",
+      "finalUrl": "https://www.bionixus.com/pharmaceutical-market-research-kuwait",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Pharmaceutical Market Research Company in Kuwait | MOH &...",
+      "h1": "Pharmaceutical Market Research Company in Kuwait",
+      "wordCount": 2142,
+      "thin": false,
+      "gap": -142,
       "error": null
     },
     {
@@ -4289,6 +4341,19 @@
       "error": null
     },
     {
+      "pathname": "/bionixus-market-research-middle-east",
+      "url": "https://www.bionixus.com/bionixus-market-research-middle-east",
+      "finalUrl": "https://www.bionixus.com/bionixus-market-research-middle-east",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Middle East Pharmaceutical Market Research | GCC | BioNixus",
+      "h1": "Middle East Pharmaceutical Market Research That Moves GCC Launch Decisions Faster",
+      "wordCount": 2093,
+      "thin": false,
+      "gap": -93,
+      "error": null
+    },
+    {
       "pathname": "/healthcare-market-research/algeria",
       "url": "https://www.bionixus.com/healthcare-market-research/algeria",
       "finalUrl": "https://www.bionixus.com/healthcare-market-research/algeria",
@@ -4432,6 +4497,19 @@
       "error": null
     },
     {
+      "pathname": "/brazil-healthcare-market-research",
+      "url": "https://www.bionixus.com/brazil-healthcare-market-research",
+      "finalUrl": "https://www.bionixus.com/healthcare-market-research/brazil",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Pharmaceutical Market Research in Brazil | BioNixus",
+      "h1": "Pharmaceutical Market Research in Brazil",
+      "wordCount": 2091,
+      "thin": false,
+      "gap": -91,
+      "error": null
+    },
+    {
       "pathname": "/healthcare-market-research/china",
       "url": "https://www.bionixus.com/healthcare-market-research/china",
       "finalUrl": "https://www.bionixus.com/healthcare-market-research/china",
@@ -4442,6 +4520,19 @@
       "wordCount": 2091,
       "thin": false,
       "gap": -91,
+      "error": null
+    },
+    {
+      "pathname": "/pharmaceutical-market-research-oman",
+      "url": "https://www.bionixus.com/pharmaceutical-market-research-oman",
+      "finalUrl": "https://www.bionixus.com/pharmaceutical-market-research-oman",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Pharmaceutical Market Research Company in Oman | MoH Oman",
+      "h1": "Healthcare & Pharmaceutical Market Research Company in Oman",
+      "wordCount": 2089,
+      "thin": false,
+      "gap": -89,
       "error": null
     },
     {
@@ -4458,6 +4549,19 @@
       "error": null
     },
     {
+      "pathname": "/usa-healthcare-market-report",
+      "url": "https://www.bionixus.com/usa-healthcare-market-report",
+      "finalUrl": "https://www.bionixus.com/usa-healthcare-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "USA Healthcare Market Research Report 2026 | FDA, CMS &...",
+      "h1": "USA Healthcare Market Report 2026: FDA Approval, Medicare IRA Negotiations, and Commercial Market Intelligence",
+      "wordCount": 2087,
+      "thin": false,
+      "gap": -87,
+      "error": null
+    },
+    {
       "pathname": "/healthcare-market-research/bahrain",
       "url": "https://www.bionixus.com/healthcare-market-research/bahrain",
       "finalUrl": "https://www.bionixus.com/healthcare-market-research/bahrain",
@@ -4468,6 +4572,19 @@
       "wordCount": 2081,
       "thin": false,
       "gap": -81,
+      "error": null
+    },
+    {
+      "pathname": "/healthcare-market-research-kuwait",
+      "url": "https://www.bionixus.com/healthcare-market-research-kuwait",
+      "finalUrl": "https://www.bionixus.com/healthcare-market-research/kuwait",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Healthcare Market Research Kuwait | MOH Fieldwork | BioNixus",
+      "h1": "Pharmaceutical Market Research in Kuwait",
+      "wordCount": 2080,
+      "thin": false,
+      "gap": -80,
       "error": null
     },
     {
@@ -4679,6 +4796,19 @@
       "error": null
     },
     {
+      "pathname": "/pharmaceutical-market-research-dubai",
+      "url": "https://www.bionixus.com/pharmaceutical-market-research-dubai",
+      "finalUrl": "https://www.bionixus.com/pharmaceutical-market-research-dubai",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Healthcare Market Research Dubai | Pharma Fieldwork UAE | BioNixus",
+      "h1": "Pharmaceutical Market Research Companies in Dubai — BioNixus UAE",
+      "wordCount": 2049,
+      "thin": false,
+      "gap": -49,
+      "error": null
+    },
+    {
       "pathname": "/uae-biotech-market-research",
       "url": "https://www.bionixus.com/uae-biotech-market-research",
       "finalUrl": "https://www.bionixus.com/uae-biotech-market-research",
@@ -4689,6 +4819,19 @@
       "wordCount": 2047,
       "thin": false,
       "gap": -47,
+      "error": null
+    },
+    {
+      "pathname": "/pharmaceutical-market-research-jordan",
+      "url": "https://www.bionixus.com/pharmaceutical-market-research-jordan",
+      "finalUrl": "https://www.bionixus.com/pharmaceutical-market-research-jordan",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Pharmaceutical Market Research Company in Jordan | JFDA |...",
+      "h1": "Pharmaceutical Market Research Company in Jordan",
+      "wordCount": 2046,
+      "thin": false,
+      "gap": -46,
       "error": null
     },
     {
@@ -4770,6 +4913,32 @@
       "error": null
     },
     {
+      "pathname": "/kantar-health-alternative-gcc",
+      "url": "https://www.bionixus.com/kantar-health-alternative-gcc",
+      "finalUrl": "https://www.bionixus.com/kantar-health-alternative-gcc",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Kantar Health Alternative in GCC & Middle East | BioNixus",
+      "h1": "Kantar Health Alternative for GCC and Middle East — BioNixus",
+      "wordCount": 2022,
+      "thin": false,
+      "gap": -22,
+      "error": null
+    },
+    {
+      "pathname": "/pharmaceutical-market-research-bahrain",
+      "url": "https://www.bionixus.com/pharmaceutical-market-research-bahrain",
+      "finalUrl": "https://www.bionixus.com/pharmaceutical-market-research-bahrain",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Healthcare Market Research Company in Bahrain | NHRA & HTA",
+      "h1": "Healthcare & Pharmaceutical Market Research Company in Bahrain",
+      "wordCount": 2022,
+      "thin": false,
+      "gap": -22,
+      "error": null
+    },
+    {
       "pathname": "/healthcare-market-research/therapy/cardiology",
       "url": "https://www.bionixus.com/healthcare-market-research/therapy/cardiology",
       "finalUrl": "https://www.bionixus.com/healthcare-market-research/therapy/cardiology",
@@ -4837,16 +5006,29 @@
   ],
   "thin": [
     {
-      "pathname": "/kantar-health-alternative-gcc",
-      "url": "https://www.bionixus.com/kantar-health-alternative-gcc",
-      "finalUrl": "https://www.bionixus.com/kantar-health-alternative-gcc",
+      "pathname": "/egypt-healthcare-market-report",
+      "url": "https://www.bionixus.com/egypt-healthcare-market-report",
+      "finalUrl": "https://www.bionixus.com/egypt-healthcare-market-report",
       "status": 200,
       "inSitemap": true,
-      "title": "Kantar Health Alternative in GCC & Middle East | BioNixus",
-      "h1": "Kantar Health Alternative for GCC and Middle East — BioNixus",
-      "wordCount": 1987,
+      "title": "Egypt Healthcare Market Report 2026 | USD 25B+ Pharma & UHI",
+      "h1": "Egypt Healthcare Market Report 2026: Pharmaceutical Intelligence, UHI Access, and EDA Registration",
+      "wordCount": 1995,
       "thin": true,
-      "gap": 13,
+      "gap": 5,
+      "error": null
+    },
+    {
+      "pathname": "/gcc-pharmaceutical-market-research",
+      "url": "https://www.bionixus.com/gcc-pharmaceutical-market-research",
+      "finalUrl": "https://www.bionixus.com/gcc-pharmaceutical-market-research",
+      "status": 200,
+      "inSitemap": true,
+      "title": "GCC Biologics & Generic Injectables Market 2026 | BioNixus",
+      "h1": "GCC Biologics & Generic Injectables Market Research 2026 — Precision Medicine & Drug Repurposing",
+      "wordCount": 1970,
+      "thin": true,
+      "gap": 30,
       "error": null
     },
     {
@@ -4860,6 +5042,19 @@
       "wordCount": 1958,
       "thin": true,
       "gap": 42,
+      "error": null
+    },
+    {
+      "pathname": "/pt/insights/top-market-research-companies-brasil-2026",
+      "url": "https://www.bionixus.com/pt/insights/top-market-research-companies-brasil-2026",
+      "finalUrl": "https://www.bionixus.com/pt/insights/top-market-research-companies-brasil-2026",
+      "status": 200,
+      "inSitemap": true,
+      "title": "5 Melhores Empresas de Pesquisa de Mercado no Bra | BioNixus",
+      "h1": "5 Melhores Empresas de Pesquisa de Mercado no Brasil (2026)",
+      "wordCount": 1956,
+      "thin": true,
+      "gap": 44,
       "error": null
     },
     {
@@ -4886,19 +5081,6 @@
       "wordCount": 1939,
       "thin": true,
       "gap": 61,
-      "error": null
-    },
-    {
-      "pathname": "/pt/insights/top-market-research-companies-brasil-2026",
-      "url": "https://www.bionixus.com/pt/insights/top-market-research-companies-brasil-2026",
-      "finalUrl": "https://www.bionixus.com/pt/insights/top-market-research-companies-brasil-2026",
-      "status": 200,
-      "inSitemap": true,
-      "title": "5 Melhores Empresas de Pesquisa de Mercado no Bra | BioNixus",
-      "h1": "5 Melhores Empresas de Pesquisa de Mercado no Brasil (2026)",
-      "wordCount": 1938,
-      "thin": true,
-      "gap": 62,
       "error": null
     },
     {
@@ -4941,6 +5123,45 @@
       "error": null
     },
     {
+      "pathname": "/gcc-market-access-guide",
+      "url": "https://www.bionixus.com/gcc-market-access-guide",
+      "finalUrl": "https://www.bionixus.com/gcc-market-access-guide",
+      "status": 200,
+      "inSitemap": true,
+      "title": "GCC Pharmaceutical Market Access Guide 2026 | SFD | BioNixus",
+      "h1": "GCC pharmaceutical market access guide 2026 — registration, pricing, and reimbursement",
+      "wordCount": 1908,
+      "thin": true,
+      "gap": 92,
+      "error": null
+    },
+    {
+      "pathname": "/china-healthcare-market-report",
+      "url": "https://www.bionixus.com/china-healthcare-market-report",
+      "finalUrl": "https://www.bionixus.com/china-healthcare-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "China Healthcare Market Report 2026 | NMPA, NRDL...",
+      "h1": "China Healthcare Market Report 2026: NMPA Approval, NRDL Reimbursement, and VBP Commercial Intelligence",
+      "wordCount": 1907,
+      "thin": true,
+      "gap": 93,
+      "error": null
+    },
+    {
+      "pathname": "/pharmaceutical-market-research-qatar",
+      "url": "https://www.bionixus.com/pharmaceutical-market-research-qatar",
+      "finalUrl": "https://www.bionixus.com/pharmaceutical-market-research-qatar",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Healthcare Market Research Company in Qatar | MoPH & HMC |.",
+      "h1": "Healthcare & Pharmaceutical Market Research Company in Qatar",
+      "wordCount": 1907,
+      "thin": true,
+      "gap": 93,
+      "error": null
+    },
+    {
       "pathname": "/healthcare-market-research-china",
       "url": "https://www.bionixus.com/healthcare-market-research-china",
       "finalUrl": "https://www.bionixus.com/healthcare-market-research-china",
@@ -4951,6 +5172,19 @@
       "wordCount": 1903,
       "thin": true,
       "gap": 97,
+      "error": null
+    },
+    {
+      "pathname": "/healthcare-market-research-bahrain",
+      "url": "https://www.bionixus.com/healthcare-market-research-bahrain",
+      "finalUrl": "https://www.bionixus.com/healthcare-market-research-bahrain",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Healthcare Market Research Bahrain | NHRA-Aligned | BioNixus",
+      "h1": "Healthcare & Pharmaceutical Market Research in Bahrain",
+      "wordCount": 1893,
+      "thin": true,
+      "gap": 107,
       "error": null
     },
     {
@@ -4967,19 +5201,6 @@
       "error": null
     },
     {
-      "pathname": "/pharmaceutical-market-research-dubai",
-      "url": "https://www.bionixus.com/pharmaceutical-market-research-dubai",
-      "finalUrl": "https://www.bionixus.com/pharmaceutical-market-research-dubai",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Healthcare Market Research Dubai | Pharma Fieldwork UAE | BioNixus",
-      "h1": "Pharmaceutical Market Research Companies in Dubai — BioNixus UAE",
-      "wordCount": 1858,
-      "thin": true,
-      "gap": 142,
-      "error": null
-    },
-    {
       "pathname": "/brazil-healthcare-market-report",
       "url": "https://www.bionixus.com/brazil-healthcare-market-report",
       "finalUrl": "https://www.bionixus.com/brazil-healthcare-market-report",
@@ -4993,6 +5214,32 @@
       "error": null
     },
     {
+      "pathname": "/turkey-healthcare-market-report",
+      "url": "https://www.bionixus.com/turkey-healthcare-market-report",
+      "finalUrl": "https://www.bionixus.com/turkey-healthcare-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Turkey Healthcare Market Report 2026 | TİTCK, SGK...",
+      "h1": "Turkey Healthcare Market Report 2026: TİTCK, SGK Reimbursement, and Europe-MENA Crossroads Market Intelligence",
+      "wordCount": 1851,
+      "thin": true,
+      "gap": 149,
+      "error": null
+    },
+    {
+      "pathname": "/germany-medical-devices-market-report",
+      "url": "https://www.bionixus.com/germany-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/germany-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Germany Medical Devices Market Report 2026 | EU MDR, NUB...",
+      "h1": "Germany Medical Devices Market Report 2026: EU MDR Compliance, DRG Reimbursement, and Hospital Procurement Intelligence",
+      "wordCount": 1849,
+      "thin": true,
+      "gap": 151,
+      "error": null
+    },
+    {
       "pathname": "/healthcare-market-research-south-korea",
       "url": "https://www.bionixus.com/healthcare-market-research-south-korea",
       "finalUrl": "https://www.bionixus.com/healthcare-market-research-south-korea",
@@ -5000,6 +5247,19 @@
       "inSitemap": true,
       "title": "Healthcare Market Research Company in South Korea | MFDS &.",
       "h1": "Healthcare & Pharmaceutical Market Research in South Korea",
+      "wordCount": 1840,
+      "thin": true,
+      "gap": 160,
+      "error": null
+    },
+    {
+      "pathname": "/india-healthcare-market-report",
+      "url": "https://www.bionixus.com/india-healthcare-market-report",
+      "finalUrl": "https://www.bionixus.com/india-healthcare-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "India Healthcare Market Report 2026 | CDSCO, Ayushman Bhara",
+      "h1": "India Healthcare Market Report 2026: CDSCO, Ayushman Bharat, and Pharmaceutical Market Intelligence",
       "wordCount": 1840,
       "thin": true,
       "gap": 160,
@@ -5045,16 +5305,16 @@
       "error": null
     },
     {
-      "pathname": "/gcc-market-access-guide",
-      "url": "https://www.bionixus.com/gcc-market-access-guide",
-      "finalUrl": "https://www.bionixus.com/gcc-market-access-guide",
+      "pathname": "/uk-medical-devices-market-report",
+      "url": "https://www.bionixus.com/uk-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/uk-medical-devices-market-report",
       "status": 200,
       "inSitemap": true,
-      "title": "GCC Pharmaceutical Market Access Guide 2026 | SFD | BioNixus",
-      "h1": "GCC pharmaceutical market access guide 2026 — registration, pricing, and reimbursement",
-      "wordCount": 1728,
+      "title": "UK Medical Devices Market Report 2026 | UKCA, MHRA & NHS...",
+      "h1": "UK Medical Devices Market Report 2026: UKCA Marking, NHS Supply Chain, and MHRA Regulatory Intelligence",
+      "wordCount": 1751,
       "thin": true,
-      "gap": 272,
+      "gap": 249,
       "error": null
     },
     {
@@ -5068,6 +5328,19 @@
       "wordCount": 1719,
       "thin": true,
       "gap": 281,
+      "error": null
+    },
+    {
+      "pathname": "/healthcare-market-research-india",
+      "url": "https://www.bionixus.com/healthcare-market-research-india",
+      "finalUrl": "https://www.bionixus.com/healthcare-market-research-india",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Healthcare Market Research Company in India | CDSCO & ICMR.",
+      "h1": "Healthcare & Pharmaceutical Market Research in India",
+      "wordCount": 1710,
+      "thin": true,
+      "gap": 290,
       "error": null
     },
     {
@@ -5136,19 +5409,6 @@
       "error": null
     },
     {
-      "pathname": "/gcc-pharmaceutical-market-research",
-      "url": "https://www.bionixus.com/gcc-pharmaceutical-market-research",
-      "finalUrl": "https://www.bionixus.com/gcc-pharmaceutical-market-research",
-      "status": 200,
-      "inSitemap": true,
-      "title": "GCC Biologics & Generic Injectables Market 2026 | BioNixus",
-      "h1": "GCC Biologics & Generic Injectables Market Research 2026 — Precision Medicine & Drug Repurposing",
-      "wordCount": 1656,
-      "thin": true,
-      "gap": 344,
-      "error": null
-    },
-    {
       "pathname": "/healthcare-market-research-australia",
       "url": "https://www.bionixus.com/healthcare-market-research-australia",
       "finalUrl": "https://www.bionixus.com/healthcare-market-research-australia",
@@ -5188,6 +5448,19 @@
       "error": null
     },
     {
+      "pathname": "/egypt-medical-devices-market-report",
+      "url": "https://www.bionixus.com/egypt-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/egypt-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Egypt Medical Devices Market Report 2026 | USD 1.3B Market",
+      "h1": "Egypt Medical Devices Market Report 2026: Market Size, UHI Program, and Cairo Hospital Intelligence",
+      "wordCount": 1639,
+      "thin": true,
+      "gap": 361,
+      "error": null
+    },
+    {
       "pathname": "/healthcare-market-research-poland",
       "url": "https://www.bionixus.com/healthcare-market-research-poland",
       "finalUrl": "https://www.bionixus.com/healthcare-market-research-poland",
@@ -5214,6 +5487,32 @@
       "error": null
     },
     {
+      "pathname": "/turkey-medical-devices-market-report",
+      "url": "https://www.bionixus.com/turkey-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/turkey-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Turkey Medical Devices Market Report 2026 | TİTCK CE Markin",
+      "h1": "Turkey Medical Devices Market Report 2026: TİTCK Regulation, SGK SUT Reimbursement, and Medical Tourism Intelligence",
+      "wordCount": 1606,
+      "thin": true,
+      "gap": 394,
+      "error": null
+    },
+    {
+      "pathname": "/india-medical-devices-market-report",
+      "url": "https://www.bionixus.com/india-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/india-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "India Medical Devices Market Report 2026 | MDR 2017, PLI...",
+      "h1": "India Medical Devices Market Report 2026: CDSCO MDR 2017, PLI Manufacturing, and Commercial Intelligence",
+      "wordCount": 1604,
+      "thin": true,
+      "gap": 396,
+      "error": null
+    },
+    {
       "pathname": "/ar/insights/top-sharaket-abhath-sihha-alsaudia-2026",
       "url": "https://www.bionixus.com/ar/insights/top-sharaket-abhath-sihha-alsaudia-2026",
       "finalUrl": "https://www.bionixus.com/ar/insights/top-sharaket-abhath-sihha-alsaudia-2026",
@@ -5224,6 +5523,19 @@
       "wordCount": 1592,
       "thin": true,
       "gap": 408,
+      "error": null
+    },
+    {
+      "pathname": "/singapore-medical-devices-market-report",
+      "url": "https://www.bionixus.com/singapore-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/singapore-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Singapore Medical Devices Market Report 2026 | HSA...",
+      "h1": "Singapore Medical Devices Market Report 2026: HSA Regulation, ASEAN Distribution Hub, and Medical Tourism Intelligence",
+      "wordCount": 1578,
+      "thin": true,
+      "gap": 422,
       "error": null
     },
     {
@@ -5279,6 +5591,19 @@
       "error": null
     },
     {
+      "pathname": "/kuwait-medical-devices-market-report",
+      "url": "https://www.bionixus.com/kuwait-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/kuwait-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Kuwait Medical Devices Market Report 2026 | CMS Procurement",
+      "h1": "Kuwait Medical Devices Market Report 2026: CMS Procurement, MOPH Registration, and Hospital Intelligence",
+      "wordCount": 1552,
+      "thin": true,
+      "gap": 448,
+      "error": null
+    },
+    {
       "pathname": "/healthcare-market-research-spain",
       "url": "https://www.bionixus.com/healthcare-market-research-spain",
       "finalUrl": "https://www.bionixus.com/healthcare-market-research-spain",
@@ -5302,6 +5627,19 @@
       "wordCount": 1545,
       "thin": true,
       "gap": 455,
+      "error": null
+    },
+    {
+      "pathname": "/south-korea-medical-devices-market-report",
+      "url": "https://www.bionixus.com/south-korea-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/south-korea-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "South Korea Medical Devices Market Report 2026 | MFDS, NHIS",
+      "h1": "South Korea Medical Devices Market Report 2026: MFDS Regulation, NHIS Reimbursement, and Export Market Intelligence",
+      "wordCount": 1544,
+      "thin": true,
+      "gap": 456,
       "error": null
     },
     {
@@ -5351,9 +5689,9 @@
       "inSitemap": true,
       "title": "Global Market Research Services | Pharma, Healthcare &...",
       "h1": "Market research services for pharma, healthcare, and commercial industries",
-      "wordCount": 1521,
+      "wordCount": 1524,
       "thin": true,
-      "gap": 479,
+      "gap": 476,
       "error": null
     },
     {
@@ -5370,6 +5708,45 @@
       "error": null
     },
     {
+      "pathname": "/spain-medical-devices-market-report",
+      "url": "https://www.bionixus.com/spain-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/spain-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Spain Medical Devices Market Report 2026 | AEMPS, RAMD...",
+      "h1": "Spain Medical Devices Market Report 2026: AEMPS Regulation, SNS Reimbursement, and Regional Procurement Intelligence",
+      "wordCount": 1479,
+      "thin": true,
+      "gap": 521,
+      "error": null
+    },
+    {
+      "pathname": "/saudi-arabia-medical-devices-market-report",
+      "url": "https://www.bionixus.com/saudi-arabia-medical-devices-market-report",
+      "finalUrl": "https://www.bionixus.com/saudi-arabia-medical-devices-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Saudi Arabia Medical Devices Market Report 2026 | Hospital.",
+      "h1": "Saudi Arabia Medical Devices Market Report 2026: Hospital Consumption and Commercial Intelligence",
+      "wordCount": 1470,
+      "thin": true,
+      "gap": 530,
+      "error": null
+    },
+    {
+      "pathname": "/gcc-anesthesia-surgical-market-report",
+      "url": "https://www.bionixus.com/gcc-anesthesia-surgical-market-report",
+      "finalUrl": "https://www.bionixus.com/gcc-anesthesia-surgical-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "GCC Anesthesia & Surgical Market Report 2026 | Hospital...",
+      "h1": "GCC Anesthesia and Surgical Market Report 2026: Hospital Procedure Volumes and Drug Consumption Intelligence",
+      "wordCount": 1445,
+      "thin": true,
+      "gap": 555,
+      "error": null
+    },
+    {
       "pathname": "/healthcare-market-research-germany",
       "url": "https://www.bionixus.com/healthcare-market-research-germany",
       "finalUrl": "https://www.bionixus.com/healthcare-market-research-germany",
@@ -5380,6 +5757,32 @@
       "wordCount": 1428,
       "thin": true,
       "gap": 572,
+      "error": null
+    },
+    {
+      "pathname": "/healthcare-market-research-qatar",
+      "url": "https://www.bionixus.com/healthcare-market-research-qatar",
+      "finalUrl": "https://www.bionixus.com/healthcare-market-research-qatar",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Healthcare Market Research Qatar | Doha & MoPH | BioNixus",
+      "h1": "Healthcare & Pharmaceutical Market Research in Qatar",
+      "wordCount": 1420,
+      "thin": true,
+      "gap": 580,
+      "error": null
+    },
+    {
+      "pathname": "/uae-healthcare-market-report",
+      "url": "https://www.bionixus.com/uae-healthcare-market-report",
+      "finalUrl": "https://www.bionixus.com/uae-healthcare-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "UAE Healthcare Market Report 2026 | Market Size, Pharma &...",
+      "h1": "UAE Healthcare Market Report 2026: Market Size, Pharmaceutical Intelligence, and Commercial Strategy",
+      "wordCount": 1392,
+      "thin": true,
+      "gap": 608,
       "error": null
     },
     {
@@ -5419,6 +5822,32 @@
       "wordCount": 1376,
       "thin": true,
       "gap": 624,
+      "error": null
+    },
+    {
+      "pathname": "/healthcare-market-research-oman",
+      "url": "https://www.bionixus.com/healthcare-market-research-oman",
+      "finalUrl": "https://www.bionixus.com/healthcare-market-research-oman",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Healthcare Market Research Oman | MoH Oman & SQUH | BioNixus",
+      "h1": "Healthcare & Pharmaceutical Market Research in Oman",
+      "wordCount": 1362,
+      "thin": true,
+      "gap": 638,
+      "error": null
+    },
+    {
+      "pathname": "/healthcare-market-research-jordan",
+      "url": "https://www.bionixus.com/healthcare-market-research-jordan",
+      "finalUrl": "https://www.bionixus.com/healthcare-market-research-jordan",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Healthcare Market Research Jordan | JFDA-Aligned | BioNixus",
+      "h1": "Healthcare & Pharmaceutical Market Research in Jordan",
+      "wordCount": 1355,
+      "thin": true,
+      "gap": 645,
       "error": null
     },
     {
@@ -5487,29 +5916,16 @@
       "error": null
     },
     {
-      "pathname": "/home-staging",
-      "url": "https://www.bionixus.com/home-staging",
-      "finalUrl": "https://www.bionixus.com/home-staging",
+      "pathname": "/egypt-healthcare-market-research",
+      "url": "https://www.bionixus.com/egypt-healthcare-market-research",
+      "finalUrl": "https://www.bionixus.com/egypt-healthcare-market-research",
       "status": 200,
       "inSitemap": true,
-      "title": "BioNixus | Pharma Market Research — Europe, Middle East & Africa",
-      "h1": "Research that shapes pharma strategy",
-      "wordCount": 1286,
+      "title": "Healthcare Market Research Company in Egypt | BioNixus",
+      "h1": "Healthcare Market Research Company in Egypt",
+      "wordCount": 1280,
       "thin": true,
-      "gap": 714,
-      "error": null
-    },
-    {
-      "pathname": "/premium-home-page",
-      "url": "https://www.bionixus.com/premium-home-page",
-      "finalUrl": "https://www.bionixus.com/premium-home-page",
-      "status": 200,
-      "inSitemap": true,
-      "title": "BioNixus | Pharma Market Research — Europe, Middle East & Africa",
-      "h1": "Research that shapes pharma strategy",
-      "wordCount": 1286,
-      "thin": true,
-      "gap": 714,
+      "gap": 720,
       "error": null
     },
     {
@@ -5762,6 +6178,19 @@
     {
       "pathname": "/fr/healthcare-market-research",
       "url": "https://www.bionixus.com/fr/healthcare-market-research",
+      "finalUrl": "https://www.bionixus.com/fr/healthcare-market-research",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Recherche de marché santé et pharma | Europe et M | BioNixus",
+      "h1": "Recherche de marché santé et pharmaceutique pour l&#x27;Europe et le Moyen-Orient",
+      "wordCount": 938,
+      "thin": true,
+      "gap": 1062,
+      "error": null
+    },
+    {
+      "pathname": "/fr/market-research-healthcare",
+      "url": "https://www.bionixus.com/fr/market-research-healthcare",
       "finalUrl": "https://www.bionixus.com/fr/healthcare-market-research",
       "status": 200,
       "inSitemap": true,
@@ -6462,45 +6891,6 @@
       "error": null
     },
     {
-      "pathname": "/uae-market-access-research",
-      "url": "https://www.bionixus.com/uae-market-access-research",
-      "finalUrl": "https://www.bionixus.com/uae-market-access-research",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Market Access Research UAE | BioNixus",
-      "h1": "Market Access Research UAE",
-      "wordCount": 627,
-      "thin": true,
-      "gap": 1373,
-      "error": null
-    },
-    {
-      "pathname": "/saudi-payer-market-access-research",
-      "url": "https://www.bionixus.com/saudi-payer-market-access-research",
-      "finalUrl": "https://www.bionixus.com/saudi-payer-market-access-research",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Saudi Payer Market Access Research | BioNixus",
-      "h1": "Saudi Payer Market Access Research",
-      "wordCount": 620,
-      "thin": true,
-      "gap": 1380,
-      "error": null
-    },
-    {
-      "pathname": "/budget-impact-model-saudi-arabia",
-      "url": "https://www.bionixus.com/budget-impact-model-saudi-arabia",
-      "finalUrl": "https://www.bionixus.com/budget-impact-model-saudi-arabia",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Budget Impact Model Saudi Arabia | BioNixus",
-      "h1": "Budget Impact Model Saudi Arabia",
-      "wordCount": 617,
-      "thin": true,
-      "gap": 1383,
-      "error": null
-    },
-    {
       "pathname": "/global-websites/united-kingdom",
       "url": "https://www.bionixus.com/global-websites/united-kingdom",
       "finalUrl": "https://www.bionixus.com/global-websites/united-kingdom",
@@ -6511,45 +6901,6 @@
       "wordCount": 617,
       "thin": true,
       "gap": 1383,
-      "error": null
-    },
-    {
-      "pathname": "/gcc-hcp-recruitment-market-research",
-      "url": "https://www.bionixus.com/gcc-hcp-recruitment-market-research",
-      "finalUrl": "https://www.bionixus.com/gcc-hcp-recruitment-market-research",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Physician Recruitment in Saudi Arabia and GCC | BioNixus",
-      "h1": "Physician Recruitment in Saudi Arabia and GCC",
-      "wordCount": 608,
-      "thin": true,
-      "gap": 1392,
-      "error": null
-    },
-    {
-      "pathname": "/patient-support-program-research-gcc",
-      "url": "https://www.bionixus.com/patient-support-program-research-gcc",
-      "finalUrl": "https://www.bionixus.com/patient-support-program-research-gcc",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Patient Support Program Research GCC | BioNixus",
-      "h1": "Patient Support Program Research GCC",
-      "wordCount": 599,
-      "thin": true,
-      "gap": 1401,
-      "error": null
-    },
-    {
-      "pathname": "/qatar-market-access-research",
-      "url": "https://www.bionixus.com/qatar-market-access-research",
-      "finalUrl": "https://www.bionixus.com/qatar-market-access-research",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Market Access Research Qatar | BioNixus",
-      "h1": "Market Access Research Qatar",
-      "wordCount": 593,
-      "thin": true,
-      "gap": 1407,
       "error": null
     },
     {
@@ -6644,16 +6995,16 @@
       "error": null
     },
     {
-      "pathname": "/fr/market-research-healthcare",
-      "url": "https://www.bionixus.com/fr/market-research-healthcare",
-      "finalUrl": "https://www.bionixus.com/fr/market-research-healthcare",
+      "pathname": "/insights",
+      "url": "https://www.bionixus.com/insights",
+      "finalUrl": "https://www.bionixus.com/insights",
       "status": 200,
       "inSitemap": true,
-      "title": "Healthcare Market Research | Recherche healthcare et...",
-      "h1": "Healthcare market research pour decisions pharmaceutiques en Europe et Moyen-Orient",
-      "wordCount": 359,
+      "title": "BioNixus Insights for Healthcare & Pharma Strategy",
+      "h1": "Why BioNixus Insights Matter in Healthcare and Pharmaceuticals",
+      "wordCount": 390,
       "thin": true,
-      "gap": 1641,
+      "gap": 1610,
       "error": null
     },
     {
@@ -6706,19 +7057,6 @@
       "wordCount": 319,
       "thin": true,
       "gap": 1681,
-      "error": null
-    },
-    {
-      "pathname": "/insights",
-      "url": "https://www.bionixus.com/insights",
-      "finalUrl": "https://www.bionixus.com/insights",
-      "status": 200,
-      "inSitemap": true,
-      "title": "BioNixus Insights for Healthcare & Pharma Strategy",
-      "h1": "Why BioNixus Insights Matter in Healthcare and Pharmaceuticals",
-      "wordCount": 312,
-      "thin": true,
-      "gap": 1688,
       "error": null
     },
     {
@@ -6865,227 +7203,6 @@
       "error": null
     },
     {
-      "pathname": "/saudi-arabia-medical-devices-market-report",
-      "url": "https://www.bionixus.com/saudi-arabia-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/saudi-arabia-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Saudi Arabia Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 18,
-      "thin": true,
-      "gap": 1982,
-      "error": null
-    },
-    {
-      "pathname": "/south-korea-medical-devices-market-report",
-      "url": "https://www.bionixus.com/south-korea-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/south-korea-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "South Korea Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 18,
-      "thin": true,
-      "gap": 1982,
-      "error": null
-    },
-    {
-      "pathname": "/australia-medical-devices-market-report",
-      "url": "https://www.bionixus.com/australia-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/australia-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Australia Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/bahrain-medical-devices-market-report",
-      "url": "https://www.bionixus.com/bahrain-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/bahrain-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Bahrain Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/bionixus-market-research-middle-east",
-      "url": "https://www.bionixus.com/bionixus-market-research-middle-east",
-      "finalUrl": "https://www.bionixus.com/bionixus-market-research-middle-east",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Bionixus Market Research Middle East | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/canada-medical-devices-market-report",
-      "url": "https://www.bionixus.com/canada-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/canada-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Canada Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/china-medical-devices-market-report",
-      "url": "https://www.bionixus.com/china-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/china-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "China Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/egypt-medical-devices-market-report",
-      "url": "https://www.bionixus.com/egypt-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/egypt-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Egypt Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/france-medical-devices-market-report",
-      "url": "https://www.bionixus.com/france-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/france-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "France Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/gcc-anesthesia-surgical-market-report",
-      "url": "https://www.bionixus.com/gcc-anesthesia-surgical-market-report",
-      "finalUrl": "https://www.bionixus.com/gcc-anesthesia-surgical-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Gcc Anesthesia Surgical Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/gcc-medical-devices-market-report",
-      "url": "https://www.bionixus.com/gcc-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/gcc-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Gcc Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/germany-medical-devices-market-report",
-      "url": "https://www.bionixus.com/germany-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/germany-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Germany Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/india-medical-devices-market-report",
-      "url": "https://www.bionixus.com/india-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/india-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "India Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/italy-medical-devices-market-report",
-      "url": "https://www.bionixus.com/italy-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/italy-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Italy Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/japan-medical-devices-market-report",
-      "url": "https://www.bionixus.com/japan-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/japan-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Japan Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/kuwait-medical-devices-market-report",
-      "url": "https://www.bionixus.com/kuwait-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/kuwait-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Kuwait Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/oman-medical-devices-market-report",
-      "url": "https://www.bionixus.com/oman-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/oman-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Oman Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
       "pathname": "/pharmaceutical-companies-saudi-arabia",
       "url": "https://www.bionixus.com/pharmaceutical-companies-saudi-arabia",
       "finalUrl": "https://www.bionixus.com/pharmaceutical-companies-saudi-arabia",
@@ -7096,253 +7213,6 @@
       "wordCount": 17,
       "thin": true,
       "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/qatar-medical-devices-market-report",
-      "url": "https://www.bionixus.com/qatar-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/qatar-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Qatar Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/saudi-arabia-healthcare-market-report",
-      "url": "https://www.bionixus.com/saudi-arabia-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/saudi-arabia-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Saudi Arabia Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/singapore-medical-devices-market-report",
-      "url": "https://www.bionixus.com/singapore-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/singapore-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Singapore Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/south-korea-healthcare-market-report",
-      "url": "https://www.bionixus.com/south-korea-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/south-korea-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "South Korea Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/spain-medical-devices-market-report",
-      "url": "https://www.bionixus.com/spain-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/spain-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Spain Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/turkey-medical-devices-market-report",
-      "url": "https://www.bionixus.com/turkey-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/turkey-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Turkey Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/uae-medical-devices-market-report",
-      "url": "https://www.bionixus.com/uae-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/uae-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Uae Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/uk-medical-devices-market-report",
-      "url": "https://www.bionixus.com/uk-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/uk-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Uk Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/usa-medical-devices-market-report",
-      "url": "https://www.bionixus.com/usa-medical-devices-market-report",
-      "finalUrl": "https://www.bionixus.com/usa-medical-devices-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Usa Medical Devices Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 17,
-      "thin": true,
-      "gap": 1983,
-      "error": null
-    },
-    {
-      "pathname": "/australia-healthcare-market-report",
-      "url": "https://www.bionixus.com/australia-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/australia-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Australia Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/canada-healthcare-market-report",
-      "url": "https://www.bionixus.com/canada-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/canada-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Canada Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/china-healthcare-market-report",
-      "url": "https://www.bionixus.com/china-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/china-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "China Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/egypt-healthcare-market-report",
-      "url": "https://www.bionixus.com/egypt-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/egypt-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Egypt Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/france-healthcare-market-report",
-      "url": "https://www.bionixus.com/france-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/france-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "France Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/germany-healthcare-market-report",
-      "url": "https://www.bionixus.com/germany-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/germany-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Germany Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/india-healthcare-market-report",
-      "url": "https://www.bionixus.com/india-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/india-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "India Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/italy-healthcare-market-report",
-      "url": "https://www.bionixus.com/italy-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/italy-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Italy Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/kuwait-healthcare-market-report",
-      "url": "https://www.bionixus.com/kuwait-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/kuwait-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Kuwait Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/oman-healthcare-market-report",
-      "url": "https://www.bionixus.com/oman-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/oman-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Oman Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
       "error": null
     },
     {
@@ -7450,97 +7320,6 @@
       "error": null
     },
     {
-      "pathname": "/qatar-healthcare-market-report",
-      "url": "https://www.bionixus.com/qatar-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/qatar-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Qatar Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/singapore-healthcare-market-report",
-      "url": "https://www.bionixus.com/singapore-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/singapore-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Singapore Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/spain-healthcare-market-report",
-      "url": "https://www.bionixus.com/spain-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/spain-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Spain Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/turkey-healthcare-market-report",
-      "url": "https://www.bionixus.com/turkey-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/turkey-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Turkey Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/uae-healthcare-market-report",
-      "url": "https://www.bionixus.com/uae-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/uae-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Uae Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/uk-healthcare-market-report",
-      "url": "https://www.bionixus.com/uk-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/uk-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Uk Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
-      "pathname": "/usa-healthcare-market-report",
-      "url": "https://www.bionixus.com/usa-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/usa-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Usa Healthcare Market Report | BioNixus",
-      "h1": "",
-      "wordCount": 16,
-      "thin": true,
-      "gap": 1984,
-      "error": null
-    },
-    {
       "pathname": "/ar/market-research-egypt",
       "url": "https://www.bionixus.com/ar/market-research-egypt",
       "finalUrl": "https://www.bionixus.com/ar/market-research-egypt",
@@ -7593,12 +7372,12 @@
       "error": null
     },
     {
-      "pathname": "/premium-home-preview",
-      "url": "https://www.bionixus.com/premium-home-preview",
-      "finalUrl": "https://www.bionixus.com/premium-home-preview",
+      "pathname": "/ar/market-research-uae",
+      "url": "https://www.bionixus.com/ar/market-research-uae",
+      "finalUrl": "https://www.bionixus.com/ar/market-research-uae",
       "status": 200,
       "inSitemap": true,
-      "title": "Premium Home Preview | BioNixus",
+      "title": "Market Research UAE | BioNixus",
       "h1": "",
       "wordCount": 15,
       "thin": true,
