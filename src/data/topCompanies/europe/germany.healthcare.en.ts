@@ -12,7 +12,6 @@ export const germanyHealthcareEn: CountryListicleConfig = {
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-germany-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-germany-2026' },
-    { lang: 'de', href: 'https://www.bionixus.com/de/insights/top-healthcare-market-research-companies-germany-2026' },
     { lang: 'x-default', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-germany-2026' },
   ],
   ogLocale: 'en_DE',

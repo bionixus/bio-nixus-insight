@@ -12,7 +12,6 @@ export const peruHealthcareEn: CountryListicleConfig = {
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-peru-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-peru-2026' },
-    { lang: 'es', href: 'https://www.bionixus.com/es/insights/top-healthcare-market-research-companies-peru-2026' },
     { lang: 'x-default', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-peru-2026' },
   ],
   ogLocale: 'en_PE',

@@ -12,7 +12,6 @@ export const italyHealthcareEn: CountryListicleConfig = {
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-italy-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-italy-2026' },
-    { lang: 'it', href: 'https://www.bionixus.com/it/insights/top-healthcare-market-research-companies-italy-2026' },
     { lang: 'x-default', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-italy-2026' },
   ],
   ogLocale: 'en_IT',
