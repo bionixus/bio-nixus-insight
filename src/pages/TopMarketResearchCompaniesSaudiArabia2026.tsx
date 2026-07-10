@@ -249,6 +249,7 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
         <link rel="canonical" href={CANONICAL} />
         <link rel="alternate" hreflang="en" href={CANONICAL} />
         <link rel="alternate" hreflang="x-default" href={CANONICAL} />
+        <link rel="alternate" hreflang="ar" href="https://www.bionixus.com/ar/insights/top-sharaket-abhath-alsuq-alsaudia-2026" />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
