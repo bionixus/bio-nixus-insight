@@ -17,11 +17,11 @@ import { ReportPremiumHero, ReportPremiumSection } from '@/components/report-pre
 const pageUrl = 'https://www.bionixus.com/gcc-pharmaceutical-market-research';
 const REPORT_CONVERSION = getStandaloneReportConfig('/gcc-pharmaceutical-market-research');
 
-const PAGE_TITLE = 'GCC Biologics & Generic Injectables Market 2026 | BioNixus';
+const PAGE_TITLE = 'GCC Biologics & Generic Injectables Market 2026 | NUPCO & Biosimilars | BioNixus';
 const PAGE_H1 =
   'GCC Biologics & Generic Injectables Market Research 2026 — Precision Medicine & Drug Repurposing';
 const PAGE_DESCRIPTION =
-  'GCC biologics market ($4.8–5.4B), generic injectables ($1.6–1.9B), drug repurposing & Saudi precision medicine — pharmaceutical market research across KSA, UAE, Kuwait, Qatar, Bahrain & Oman.';
+  'GCC biologics ($4.8–5.4B) and generic injectables ($1.6–1.9B) in 2026 — NUPCO tender intelligence, biosimilar penetration, SFDA/MOHAP pathways, and pharmaceutical market research across KSA, UAE, Kuwait, Qatar, Bahrain & Oman.';
 
 const FAQ_ITEMS = [
   {
@@ -53,6 +53,16 @@ const FAQ_ITEMS = [
     question: 'Which GCC therapy areas drive the most pharma growth in 2026?',
     answer:
       'In 2026, the fastest-growing GCC therapy areas are oncology, diabetes and obesity (GLP-1 driven), rare disease, immunology, and cardiovascular. Saudi Arabia and the UAE concentrate the bulk of innovative-medicine spend, while Kuwait and Qatar prioritize tendered generic and hospital-administered portfolios.',
+  },
+  {
+    question: 'How do NUPCO tenders shape GCC generic injectables market research?',
+    answer:
+      'In Saudi Arabia, NUPCO central tenders determine which hospital-administered generic injectables and biosimilars reach MOH, NGHA, and military networks at scale. Market research must align with tender calendars, price corridors, committee evaluation criteria, and post-award switching behaviour — not only SFDA approval status. BioNixus tracks procurement officer and hospital pharmacist intent alongside physician prescribing after tender awards.',
+  },
+  {
+    question: 'What should launch teams research before GCC biosimilar entry in 2026?',
+    answer:
+      'Teams should map SFDA and MOHAP interchangeability guidance, pharmacist substitution rules, payer incentives, and account-level uptake curves in Riyadh academic centres versus Dubai private hospitals. Quantitative tracker programmes and qualitative committee research explain why procurement wins do not always convert to ward-level administration — the gap that drives originator defence and biosimilar launch sequencing.',
   },
 ];
 

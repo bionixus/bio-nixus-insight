@@ -477,7 +477,9 @@ const GccMarketAccessGuide = () => {
                 treatment-pathway mapping, willingness-to-pay proxies, and committee objection research — outputs
                 structured for SFDA EES, tender dossiers, or emirate formulary submissions as required. For biosimilar
                 portfolios, research tracks interchangeability confidence, pharmacist substitution behaviour, and
-                physician switching intent after NUPCO or MOH tender awards.
+                physician switching intent after NUPCO or MOH tender awards. Saudi EES reviewers increasingly expect
+                scenario libraries that stress-test uptake under NUPCO price corridors and MOH formulary restrictions —
+                not only EU-style ICER thresholds copied without local epidemiology.
               </p>
               <p>
                 See also{' '}
@@ -655,6 +657,14 @@ const GccMarketAccessGuide = () => {
                 {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
+                },
+                {
+                  q: 'What is the SFDA Economic Evaluation Submission (EES) pathway in Saudi Arabia?',
+                  a: 'SFDA EES formalises pharmacoeconomic and budget-impact requirements for selected high-cost medicines — especially biologics, oncology, and specialty therapies. Dossiers typically require cost-effectiveness versus local comparators, budget impact under NUPCO or MOH procurement scenarios, and sensitivity analysis aligned to Saudi epidemiology. BioNixus pairs HEOR modelling with primary payer and physician research so EES submissions reflect committee objections before submission.',
+                },
+                {
+                  q: 'How long does end-to-end GCC market access typically take in 2026?',
+                  a: 'Most pharmaceutical teams should plan 12–24 months from scientific-office appointment through SFDA or MOHAP registration, pricing approval, and first hospital or tender listing — longer for biologics requiring EES or multi-emirate UAE formulary steps. Parallelising payer research with regulatory milestones reduces launch slippage when NUPCO or MOH tender windows open before national listing is complete.',
                 },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">
