@@ -71,6 +71,8 @@ Each directory listing is an independent third-party signal that confirms BioNix
 - **Checkmarket/Research Access:** Submit to industry aggregator directories
 - **G2.com:** Create profile under Market Research category
 - **UpCity:** List under Market Research category
+- **Greenbook (greenbook.org):** Create/claim profile under Market Research; confirmed via competitive research to occupy significant SERP real estate for "market research companies in Egypt" — a direct competitor for the exact keyword BioNixus's `/insights/top-market-research-companies-egypt-2026` listicle already ranks against
+- **Sortlist (sortlist.com):** Create/claim agency profile under Market Research; same "market research companies in Egypt" SERP-occupancy finding as Greenbook — ranking #1 for this phrase durably likely requires displacing directory/listicle pages, not just individual firm homepages
 
 ---
 
