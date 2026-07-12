@@ -1,0 +1,195 @@
+name: SEO Regression Suite
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    # Nightly against production with --baseline, so CMS-content drift (Sanity
+    # edits made outside a deploy) is caught within 24h, not at the next deploy.
+    - cron: '17 3 * * *'
+  deployment_status: {}
+  workflow_dispatch: {}
+
+jobs:
+  seo-regression:
+    if: github.event_name == 'pull_request' || github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run seeded-fault tests against the rule engine itself
+        run: npm run seo:test:rules
+
+      - name: Build client + server bundles
+        run: |
+          npm run build:client
+          npm run build:server
+          node -e "const fs=require('fs');const s='dist/client/index.html',d='dist/client/_ssr-template.html';if(fs.existsSync(s)){fs.copyFileSync(s,d);fs.unlinkSync(s);}"
+
+      - name: Start server.js on :4173
+        run: |
+          NODE_ENV=production PORT=4173 nohup node server.js > server.log 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -sf http://localhost:4173/ > /dev/null; then echo "Server is up"; exit 0; fi
+            sleep 1
+          done
+          echo "Server did not become ready in time"; cat server.log; exit 1
+
+      # continue-on-error: the site currently has a real pre-existing backlog
+      # of ~764 SEO errors (confirmed via this exact job on PR #47 — thin
+      # Arabic pages, duplicate/truncated titles, stale sitemap redirects,
+      # etc.), so --fail-on error would turn every future PR red regardless
+      # of what it actually changes. Non-blocking until that backlog is
+      # fixed in follow-up PRs; re-enable by removing continue-on-error once
+      # `npm run seo:test` is clean (or close to it) on main.
+      - name: Run SEO regression suite
+        id: seotest
+        continue-on-error: true
+        run: npm run seo:test
+
+      - name: Show server log if the suite step failed
+        if: steps.seotest.outcome == 'failure'
+        run: cat server.log || true
+
+      - name: Upload seo-report.json
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-report
+          path: seo-report.json
+          retention-days: 30
+
+  seo-regression-nightly-production:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Restore rolling baseline (word count / title / canonical from the last nightly run)
+        uses: actions/cache@v4
+        with:
+          path: seo-baseline.json
+          # A fixed key would restore fine but never actually save an update —
+          # actions/cache treats a key as immutable once written, so a cache
+          # hit skips the post-job save entirely and the baseline would freeze
+          # after its first run. A run-id-suffixed key is always a fresh miss
+          # (so it always saves), and restore-keys falls back to the most
+          # recent prior run's cache by prefix match.
+          key: seo-baseline-v1-${{ github.run_id }}
+          restore-keys: |
+            seo-baseline-v1-
+
+      # continue-on-error: same pre-existing-backlog reason as the PR/push job
+      # above — re-enable once the backlog is fixed.
+      - name: Run SEO regression suite against production with baseline drift check
+        continue-on-error: true
+        run: |
+          node scripts/seo-regression.mjs \
+            --base https://www.bionixus.com \
+            --concurrency 8 \
+            --fail-on error \
+            --baseline seo-baseline.json \
+            --update-baseline \
+            --report seo-report-production.json
+
+      - name: Upload production seo-report.json
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-report-production-nightly
+          path: seo-report-production.json
+          retention-days: 30
+
+  seo-regression-preview:
+    # Reruns the suite against the deployed Vercel preview URL (real network,
+    # real Sanity access, real everything) and comments the result on the PR —
+    # catches anything a local build can't see (env-var drift, deploy config).
+    if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success' && contains(github.event.deployment_status.target_url, 'vercel.app')
+    runs-on: ubuntu-latest
+    # deployment_status-triggered runs get a read-only GITHUB_TOKEN by
+    # default regardless of the repo's default workflow permissions (unlike
+    # pull_request/push) — without this, createComment 403s with "Resource
+    # not accessible by integration" (confirmed on PR #47).
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run SEO regression suite against preview URL
+        id: seo
+        run: |
+          node scripts/seo-regression.mjs \
+            --base "${{ github.event.deployment_status.target_url }}" \
+            --concurrency 8 \
+            --fail-on error \
+            --report seo-report-preview.json
+        continue-on-error: true
+
+      - name: Upload preview seo-report.json
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-report-preview
+          path: seo-report-preview.json
+          retention-days: 30
+
+      - name: Comment result on PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = JSON.parse(fs.readFileSync('seo-report-preview.json', 'utf-8'));
+            const { pass, warn, error } = report.counts;
+            // `deployment` is a sibling of `deployment_status` on this event's
+            // payload, not nested under it — context.payload.deployment.sha.
+            const prs = await github.rest.repos.listPullRequestsAssociatedWithCommit({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              commit_sha: context.payload.deployment.sha,
+            });
+            // A Vercel preview behind deployment protection (Vercel
+            // Authentication / SSO) redirects every request to /sso-api —
+            // the crawl finds 0 real sitemap URLs and every check reports a
+            // meaningless "error" against a login redirect, not a real
+            // regression. Surface that plainly instead of a scary-looking
+            // error table when it happens.
+            const protectedByAuth = report.urlCount === 0 || report.findings.some((f) => /\/sso-api/i.test(f.message || ''));
+            const body = protectedByAuth
+              ? `**SEO Regression Suite — preview check**\n\n⚠️ Could not test: this preview deployment appears to be behind Vercel deployment protection (requests redirect to \`/sso-api\`). Disable protection for preview branches, or configure a protection-bypass token, for this check to see real content.`
+              : `**SEO Regression Suite — preview check** (${report.urlCount} URLs)\n\n| pass | warn | error |\n|---|---|---|\n| ${pass} | ${warn} | ${error} |\n\n${error > 0 ? '❌ Errors found — see the `seo-report-preview` artifact for details.' : '✅ No errors.'}`;
+            for (const pr of prs.data) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: pr.number,
+                body,
+              });
+            }
+      # This job deliberately does not fail on errors found — same
+      # pre-existing-backlog reason as the other two jobs in this file. The
+      # PR comment above is the signal; re-add a hard-fail step here (e.g.
+      # `if: steps.seo.outcome == 'failure'` -> `run: exit 1`) once the
+      # backlog is fixed and this should start blocking merges again.

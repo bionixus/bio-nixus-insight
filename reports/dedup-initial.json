@@ -1,0 +1,125 @@
+{
+  "_comment": "S06 near-duplicate content clusters, from a local sandbox run against a built server.js (see scripts/README.md). Two clusters found in the raw run were excluded here as sandbox artifacts, not real duplication: every page in each was exactly 10 words / 0 unique words, which is the documented Sanity-CMS-unreachable cascade (many different Sanity-backed pages all render the same tiny empty-state chrome when the CMS cannot be reached, so MinHash sees them as near-identical). A CI run with real network access should be treated as authoritative and may surface additional real clusters this sandbox run could not see.",
+  "generatedAt": "2026-07-05T13:38:29.992Z",
+  "source": "local sandbox run (server.js, no Sanity network access) — see _comment",
+  "clusters": [
+    {
+      "locale": "en",
+      "urls": [
+        "http://localhost:4173/global-websites/algeria",
+        "http://localhost:4173/global-websites/iraq",
+        "http://localhost:4173/global-websites/jordan",
+        "http://localhost:4173/global-websites/tunisia",
+        "http://localhost:4173/global-websites/canada",
+        "http://localhost:4173/global-websites/south-africa",
+        "http://localhost:4173/global-websites/china",
+        "http://localhost:4173/global-websites/kenya",
+        "http://localhost:4173/global-websites/mexico",
+        "http://localhost:4173/global-websites/morocco",
+        "http://localhost:4173/global-websites/nigeria",
+        "http://localhost:4173/global-websites/switzerland",
+        "http://localhost:4173/global-websites/japan",
+        "http://localhost:4173/global-websites/libya"
+      ],
+      "avgSimilarity": 0.8288901098901104,
+      "perUrl": [
+        {
+          "url": "http://localhost:4173/global-websites/algeria",
+          "totalWords": 2531,
+          "uniqueWords": 5
+        },
+        {
+          "url": "http://localhost:4173/global-websites/canada",
+          "totalWords": 2511,
+          "uniqueWords": 7
+        },
+        {
+          "url": "http://localhost:4173/global-websites/china",
+          "totalWords": 2510,
+          "uniqueWords": 6
+        },
+        {
+          "url": "http://localhost:4173/global-websites/iraq",
+          "totalWords": 2531,
+          "uniqueWords": 5
+        },
+        {
+          "url": "http://localhost:4173/global-websites/japan",
+          "totalWords": 2508,
+          "uniqueWords": 4
+        },
+        {
+          "url": "http://localhost:4173/global-websites/jordan",
+          "totalWords": 2531,
+          "uniqueWords": 5
+        },
+        {
+          "url": "http://localhost:4173/global-websites/kenya",
+          "totalWords": 2529,
+          "uniqueWords": 5
+        },
+        {
+          "url": "http://localhost:4173/global-websites/libya",
+          "totalWords": 2531,
+          "uniqueWords": 8
+        },
+        {
+          "url": "http://localhost:4173/global-websites/mexico",
+          "totalWords": 2511,
+          "uniqueWords": 5
+        },
+        {
+          "url": "http://localhost:4173/global-websites/morocco",
+          "totalWords": 2531,
+          "uniqueWords": 5
+        },
+        {
+          "url": "http://localhost:4173/global-websites/nigeria",
+          "totalWords": 2529,
+          "uniqueWords": 5
+        },
+        {
+          "url": "http://localhost:4173/global-websites/south-africa",
+          "totalWords": 2574,
+          "uniqueWords": 6
+        },
+        {
+          "url": "http://localhost:4173/global-websites/switzerland",
+          "totalWords": 2519,
+          "uniqueWords": 7
+        },
+        {
+          "url": "http://localhost:4173/global-websites/tunisia",
+          "totalWords": 2531,
+          "uniqueWords": 5
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "urls": [
+        "http://localhost:4173/healthcare-market-research/algeria",
+        "http://localhost:4173/healthcare-market-research/united-states",
+        "http://localhost:4173/healthcare-market-research/kenya"
+      ],
+      "avgSimilarity": 0.8436666666666666,
+      "perUrl": [
+        {
+          "url": "http://localhost:4173/healthcare-market-research/algeria",
+          "totalWords": 1828,
+          "uniqueWords": 17
+        },
+        {
+          "url": "http://localhost:4173/healthcare-market-research/kenya",
+          "totalWords": 1828,
+          "uniqueWords": 15
+        },
+        {
+          "url": "http://localhost:4173/healthcare-market-research/united-states",
+          "totalWords": 1873,
+          "uniqueWords": 13
+        }
+      ]
+    }
+  ]
+}

@@ -600,6 +600,20 @@ function serializeInitialDataForInlineScript(initialData) {
   }
 }
 
+// A raw socket-level error (e.g. ECONNRESET from an upstream fetch, such as
+// Sanity CMS, whose HTTP client doesn't always attach its own listener)
+// otherwise crashes the entire process for every concurrent request, not
+// just the one that triggered it. Log and keep serving instead — this is a
+// safety net, not a substitute for fixing a specific unhandled promise.
+process.on('uncaughtException', (error) => {
+  // eslint-disable-next-line no-console
+  console.error('Uncaught exception (process kept alive):', error);
+});
+process.on('unhandledRejection', (reason) => {
+  // eslint-disable-next-line no-console
+  console.error('Unhandled promise rejection (process kept alive):', reason);
+});
+
 async function startServer() {
   // eslint-disable-next-line no-console
   console.log(`Starting ${isProduction ? 'production' : 'development'} SSR server on port ${port}…`);
@@ -772,6 +786,42 @@ async function startServer() {
     res.type('html').sendFile(gfkAltEgyptAbsolutePath);
   });
 
+  // Must run before express.static below: a legacy redirect source path
+  // (e.g. /conf, /news) can coincide with a real directory under dist/client
+  // (one-off static decks live there too), and express.static's own
+  // directory handling 301s bare paths to add a trailing slash — the exact
+  // opposite of this site's no-trailing-slash canonical policy, and it would
+  // silently swallow the intended redirect target.
+  app.use((req, res, next) => {
+    const rawPathAndQuery = (req.originalUrl || req.url || '/').split('#')[0];
+    const canonical = canonicalRedirectTarget(rawPathAndQuery);
+    if (canonical.changed && canonical.full !== canonical.original) {
+      res.redirect(301, canonical.full);
+      return;
+    }
+
+    let decodedPath = req.path;
+    try {
+      decodedPath = decodeURIComponent(req.path);
+    } catch {
+      /* keep raw path */
+    }
+
+    const blogRedirectTarget = REDIRECTS[req.path] ?? REDIRECTS[decodedPath];
+    if (blogRedirectTarget) {
+      res.redirect(301, blogRedirectTarget);
+      return;
+    }
+
+    const legacyCountryIndustryTarget = resolveLegacyCountryIndustryMarketResearchRedirect(req.path);
+    if (legacyCountryIndustryTarget) {
+      res.redirect(301, legacyCountryIndustryTarget);
+      return;
+    }
+
+    next();
+  });
+
   let vite;
   if (!isProduction) {
     // eslint-disable-next-line no-console
@@ -786,7 +836,13 @@ async function startServer() {
     // eslint-disable-next-line no-console
     console.log('Vite dev server ready.');
   } else {
-    app.use(express.static(path.resolve(__dirname, 'dist/client'), { index: false }));
+    // redirect:false matches Vercel's actual production static-file resolution
+    // (which never auto-redirects a bare path to add a trailing slash): without
+    // it, a real SPA route that happens to share a name with a directory under
+    // dist/client (e.g. /news, which also holds a static news/feed.xml asset)
+    // gets intercepted by express.static's own directory-redirect before the
+    // SSR handler ever runs, permanently 301-ing the real page to a 404.
+    app.use(express.static(path.resolve(__dirname, 'dist/client'), { index: false, redirect: false }));
   }
 
   app.get('/robots.txt', (_req, res) => {
@@ -840,32 +896,6 @@ async function startServer() {
 
   app.use(async (req, res, next) => {
     try {
-      const rawPathAndQuery = (req.originalUrl || req.url || '/').split('#')[0];
-      const canonical = canonicalRedirectTarget(rawPathAndQuery);
-      if (canonical.changed && canonical.full !== canonical.original) {
-        res.redirect(301, canonical.full);
-        return;
-      }
-
-      let decodedPath = req.path;
-      try {
-        decodedPath = decodeURIComponent(req.path);
-      } catch {
-        /* keep raw path */
-      }
-
-      const blogRedirectTarget = REDIRECTS[req.path] ?? REDIRECTS[decodedPath];
-      if (blogRedirectTarget) {
-        res.redirect(301, blogRedirectTarget);
-        return;
-      }
-
-      const legacyCountryIndustryTarget = resolveLegacyCountryIndustryMarketResearchRedirect(req.path);
-      if (legacyCountryIndustryTarget) {
-        res.redirect(301, legacyCountryIndustryTarget);
-        return;
-      }
-
       const url = req.originalUrl;
 
       let template;

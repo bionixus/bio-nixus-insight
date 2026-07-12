@@ -1,0 +1,22 @@
+{
+  "host": "www.bionixus.com",
+  "trailingSlashPolicy": "no-trailing-slash",
+  "locales": ["en", "de", "fr", "es", "ar", "zh", "pt", "ru"],
+  "regionVariants": ["en-ch", "de-ch", "fr-ch", "it-ch", "zh-cn"],
+  "minWordCountDefault": 150,
+  "minWordCountOverrides": [
+    { "pattern": "^/contact$", "min": 40 },
+    { "pattern": "^/(de|fr|es|ar|zh|pt|ru)/contact(s)?$", "min": 40 },
+    { "pattern": "^/blog/.+", "min": 200 },
+    { "pattern": "^/(de|fr|es|ar|zh|pt|ru)/blog/.+", "min": 150 },
+    { "pattern": "^/unsubscribe$", "min": 10 }
+  ],
+  "noindexAllowlist": [],
+  "orphanAllowlist": [],
+  "duplicateTitleExemptPatterns": [],
+  "jsonldOrganizationAllowlist": ["^/unsubscribe$"],
+  "routeDriftAllowlist": ["^/admin", "^/api/"],
+  "htmlLangExemptPatterns": [
+    "^/blog/souk-adwiya-saudiya-dalil-shamel-rueya-2030-2026$"
+  ]
+}

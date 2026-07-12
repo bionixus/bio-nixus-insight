@@ -1,0 +1,178 @@
+{
+  "_comment": "Explicit regression pins for bugs found and fixed during the 2026-07-04/05 session. Each entry names the exact bug it guards against so a future regression can never silently return. See scripts/README.md for how these are run.",
+  "checks": [
+    {
+      "url": "/",
+      "bug": "P0 2026-07-05: api/indexnow-key.ts called serverEntry.render() without await, shipping a literal \"undefined\" body + truncated generic title on every URL (PR #45).",
+      "mustContain": ["BioNixus"],
+      "mustNotContain": ["undefined", "null"],
+      "minWords": 150
+    },
+    {
+      "url": "/news",
+      "bug": "P0 2026-07-05 (same as above) — pinned separately since /news was the URL first reported broken. No minWords here deliberately: this page's press-release list is Sanity-sourced with a legitimate empty state (\"No press releases are published yet\") when the CMS has nothing new or is briefly unreachable, which isn't the P0 bug — the P0 symptom (undefined/null leakage, missing base chrome) is what mustContain/mustNotContain guard.",
+      "mustContain": ["News", "BioNixus"],
+      "mustNotContain": ["undefined", "null"]
+    },
+    {
+      "url": "/blog/gcc-pharmaceuticals-market-2026",
+      "bug": "P0 2026-07-05 — this specific post is used to confirm the fix resolves real content, not just a broken shell. No minWords here deliberately: the blog detail route queries Sanity by slug at render time with no offline fallback, so this legitimately renders thin when the CMS is unreachable (same class as R07b's documented Sanity-sandbox caveat) — that's a CMS-availability concern, not the P0 regression this pin guards (undefined/null leakage).",
+      "mustContain": ["GCC"],
+      "mustNotContain": ["undefined", "null"]
+    },
+    {
+      "url": "/de/healthcare-market-research/uae",
+      "bug": "Hreflang/html-lang mismatch (PR #43): getHreflangLinks()'s !group fallback mislabeled every non-English page as en.",
+      "expectedHtmlLangPrefix": "de",
+      "expectedHreflangSelfPrefix": "de"
+    },
+    {
+      "url": "/insights/top-market-research-companies-switzerland-2026",
+      "bug": "Hreflang/html-lang mismatch (PR #43): hardcoded Swiss hreflang set (de-CH/fr-CH/it-CH/x-default) omitted an en/en-CH self-reference.",
+      "expectedHtmlLangPrefix": "en",
+      "expectedHreflangSelfPrefix": "en"
+    },
+    {
+      "url": "/insights/top-healthcare-market-research-companies-switzerland-2026",
+      "bug": "Hreflang/html-lang mismatch (PR #43) — same as above, second Swiss listicle.",
+      "expectedHtmlLangPrefix": "en",
+      "expectedHreflangSelfPrefix": "en"
+    },
+    {
+      "url": "/fr/blog/etudes-marche-pharmaceutique-france-2026",
+      "bug": "Hreflang/html-lang mismatch (PR #43): DE/FR blog posts fell through DocumentHead's incomplete opt-out regex into the same !group fallback bug.",
+      "expectedHtmlLangPrefix": "fr",
+      "expectedHreflangSelfPrefix": "fr"
+    },
+    {
+      "url": "/fr/blog/evaluation-economique-has-france-2026",
+      "bug": "Hreflang/html-lang mismatch (PR #43) — same class as above.",
+      "expectedHtmlLangPrefix": "fr",
+      "expectedHreflangSelfPrefix": "fr"
+    },
+    {
+      "url": "/de/blog/gesundheitsmarkt-deutschland-2026",
+      "bug": "Hreflang/html-lang mismatch (PR #43) — same class as above.",
+      "expectedHtmlLangPrefix": "de",
+      "expectedHreflangSelfPrefix": "de"
+    },
+    {
+      "url": "/de/blog/amnog-frueher-nutzen-marktzugang-2026",
+      "bug": "Hreflang/html-lang mismatch (PR #43) — same class as above.",
+      "expectedHtmlLangPrefix": "de",
+      "expectedHreflangSelfPrefix": "de"
+    },
+    {
+      "url": "/de/blog/pharmamarktforschung-deutschland-2026",
+      "bug": "Hreflang/html-lang mismatch (PR #43) — same class as above.",
+      "expectedHtmlLangPrefix": "de",
+      "expectedHreflangSelfPrefix": "de"
+    },
+    {
+      "url": "/de/blog/deutsche-pharmaunternehmen-2026-pipeline-updates",
+      "bug": "Hreflang/html-lang mismatch (PR #43) — same class as above.",
+      "expectedHtmlLangPrefix": "de",
+      "expectedHreflangSelfPrefix": "de"
+    },
+    {
+      "url": "/ru/methodology",
+      "bug": "Hreflang/html-lang mismatch (PR #43): HREFLANG_LANG_KEYS structurally excluded ru/pt even when a route-group entry existed; server.js's inferHtmlLang() also had no /ru/ prefix handling.",
+      "expectedHtmlLangPrefix": "ru",
+      "expectedHreflangSelfPrefix": "ru"
+    },
+    {
+      "url": "/ar/healthcare-market-research/saudi-arabia",
+      "bug": "Hreflang/html-lang mismatch (PR #43) — country-page locale variant.",
+      "expectedHtmlLangPrefix": "ar",
+      "expectedHreflangSelfPrefix": "ar"
+    },
+    {
+      "url": "/ar/healthcare-market-research/uae",
+      "bug": "Hreflang/html-lang mismatch (PR #43) — country-page locale variant.",
+      "expectedHtmlLangPrefix": "ar",
+      "expectedHreflangSelfPrefix": "ar"
+    },
+    {
+      "url": "/fr/healthcare-market-research/uae",
+      "bug": "Hreflang/html-lang mismatch (PR #43) — country-page locale variant.",
+      "expectedHtmlLangPrefix": "fr",
+      "expectedHreflangSelfPrefix": "fr"
+    },
+    {
+      "url": "/fr/healthcare-market-research/france",
+      "bug": "Hreflang/html-lang mismatch (PR #43) — country-page locale variant.",
+      "expectedHtmlLangPrefix": "fr",
+      "expectedHreflangSelfPrefix": "fr"
+    },
+    {
+      "url": "/fr/healthcare-market-research/saudi-arabia",
+      "bug": "Hreflang/html-lang mismatch (PR #43) — country-page locale variant.",
+      "expectedHtmlLangPrefix": "fr",
+      "expectedHreflangSelfPrefix": "fr"
+    },
+    {
+      "url": "/es/healthcare-market-research/uae",
+      "bug": "Hreflang/html-lang mismatch (PR #43) — country-page locale variant.",
+      "expectedHtmlLangPrefix": "es",
+      "expectedHreflangSelfPrefix": "es"
+    },
+    {
+      "url": "/es/healthcare-market-research/spain",
+      "bug": "Hreflang/html-lang mismatch (PR #43) — country-page locale variant.",
+      "expectedHtmlLangPrefix": "es",
+      "expectedHreflangSelfPrefix": "es"
+    },
+    {
+      "url": "/es/healthcare-market-research/saudi-arabia",
+      "bug": "Hreflang/html-lang mismatch (PR #43) — country-page locale variant.",
+      "expectedHtmlLangPrefix": "es",
+      "expectedHreflangSelfPrefix": "es"
+    },
+    {
+      "url": "/de/healthcare-market-research/saudi-arabia",
+      "bug": "Hreflang/html-lang mismatch (PR #43) — country-page locale variant.",
+      "expectedHtmlLangPrefix": "de",
+      "expectedHreflangSelfPrefix": "de"
+    },
+    {
+      "url": "/qatar-market-access-research",
+      "bug": "Thin standalone service page (PR #41): page never passed expandedContent to StrategicServicePage. Was ~725-759 words; fix brought it to 6,197.",
+      "minWords": 2000
+    },
+    {
+      "url": "/gcc-hcp-recruitment-market-research",
+      "bug": "Thin standalone service page (PR #41) — same class as above. Was ~750 words; fix brought it to 5,249.",
+      "minWords": 2000
+    },
+    {
+      "url": "/budget-impact-model-saudi-arabia",
+      "bug": "Thin standalone service page (PR #41) — same class as above. Was ~750 words; fix brought it to 5,371.",
+      "minWords": 2000
+    },
+    {
+      "url": "/patient-support-program-research-gcc",
+      "bug": "Thin standalone service page (PR #41) — same class as above. Was ~750 words; fix brought it to 6,507.",
+      "minWords": 2000
+    },
+    {
+      "url": "/saudi-payer-market-access-research",
+      "bug": "Thin standalone service page (PR #41) — same class as above. Was ~750 words; fix brought it to 5,357.",
+      "minWords": 2000
+    },
+    {
+      "url": "/uae-market-access-research",
+      "bug": "Thin standalone service page (PR #41) — same class as above. Was ~750 words; fix brought it to 5,261.",
+      "minWords": 2000
+    },
+    {
+      "url": "/terms-and-conditions",
+      "bug": "Drifted duplicate redirect maps (PR #46): api/indexnow-key.ts's stale copy redirected this to /privacy instead of /terms.",
+      "expectedRedirectTo": "/terms"
+    },
+    {
+      "url": "/conf",
+      "bug": "Drifted duplicate redirect maps (PR #46): missing entirely from api/indexnow-key.ts's map, so it didn't redirect at all in production.",
+      "expectedRedirectTo": "/strategic-portfolio"
+    }
+  ]
+}
