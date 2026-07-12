@@ -2220,6 +2220,177 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
       },
     ],
   },
+  'hta-studies-saudi-arabia': {
+    hubLink: { to: '/heor-consulting-saudi-arabia', label: 'HEOR consulting Saudi Arabia' },
+    regulatory: {
+      heading: 'The SFDA health technology assessment framework in Saudi Arabia',
+      paragraphs: [
+        "Health technology assessment (HTA) in Saudi Arabia runs on the same regulatory backbone as the country's economic-evaluation requirements: SFDA's Economic Evaluation Studies Guideline, published 10 July 2024, and the Pharmacoeconomic Submission Portal Manual, published January 2025. General dossier requirements under this framework became mandatory in January 2025, and the economic-evaluation component that sits at the core of HTA review became mandatory from 1 July 2025. A product cleared today is reviewed against a current, published guideline — not an informal or evolving expectation — which means dossier structure, evidence tier, and comparator justification all have to match what the guideline specifies rather than what a global HTA dossier template happens to produce.",
+        "SFDA's framework sorts economic evidence supporting an HTA review into two tiers. Budget impact analysis and cost-minimisation analysis are classified as \"Partial Economic Studies\" — a narrower evidence requirement. Cost-utility analysis (cost-effectiveness expressed as cost per QALY) and cost-benefit analysis are classified as \"Full Economic Studies,\" the tier expected where a product's clinical and cost profile makes comparative effectiveness against standard of care a material consideration — typically chronic-disease, oncology, and specialty therapies. Which tier a specific submission needs to satisfy is one of the first questions an HTA strategy has to answer, since scoping the wrong tier either under-prepares a submission that needed the fuller evidence base or over-invests in analysis a lighter-tier product did not require.",
+        "An HTA dossier is built from more than the economic model alone. SFDA's framework expects a systematic literature review establishing the clinical evidence base, the economic evaluation itself (Partial or Full, as the product's profile requires), a budget impact analysis as a mandatory companion to any Full Economic Study, and comparator justification consistent with SFDA's pricing procedure. Each of these components is reviewed together, not as independent submissions, which is why an HTA strategy scoped around the economic model alone — without the systematic literature review and comparator justification built to the same standard — routinely generates review queries that a properly sequenced dossier would have pre-empted.",
+        "Comparator selection sits at the center of HTA review because it anchors both the clinical-value argument and the pricing procedure the dossier also has to satisfy. SFDA's pricing framework draws on external reference pricing across roughly sixteen international markets to set the public list price, and an HTA dossier's comparator choice has to be consistent with that reference-pricing basket as well as with what Saudi clinical practice actually uses — a comparator selected purely because it produces a favorable cost-effectiveness result, without regard to reference-pricing or clinical-practice consistency, weakens the credibility of the entire dossier.",
+        "Managed entry agreements are an increasingly common feature of Saudi HTA outcomes where a product's evidence carries meaningful uncertainty. Both financial arrangements (discounts, price-volume caps) and outcomes-based arrangements tied to a measurable clinical result are used to bridge a gap between a sponsor's claimed value and a payer's willingness to accept that value without further evidence — a commonly cited example structures rebates around a hepatitis C treatment achieving a sustained virologic response threshold of 95% or higher. Where BioNixus identifies meaningful uncertainty in a product's HTA evidence base during scoping, managed entry agreement design is built as a parallel workstream rather than treated as a fallback only considered after a dossier is rejected.",
+        "NUPCO sits downstream of the HTA and registration process as the centralized public-sector procurement body — the PIF-owned National Unified Procurement Company, established 2009, with a government tender market estimated at roughly SAR 21 billion. A favorable HTA outcome and SFDA registration do not automatically translate into NUPCO formulary inclusion or favorable tender pricing; NUPCO's technical committee reviews the HTA and economic evidence alongside volume commitments and supply-security criteria that sit outside SFDA's own review scope. An HTA strategy that stops at registration, without a plan for how the same evidence carries into a NUPCO tender conversation, leaves value on the table that the dossier has already paid to build.",
+        "Regional MOH formulary committees and National Guard Health Affairs (NGHA) layer additional institutional review on top of national HTA and registration clearance. A product cleared nationally can still stall at the institutional level if the HTA evidence package does not speak to hospital-specific budget constraints and patient volumes — which is part of why BioNixus scopes HTA strategy with an explicit view toward how the evidence will be reused, or needs to be adapted, for MOH regional and NGHA institutional review after national clearance.",
+      ],
+    },
+    marketContext: {
+      heading: 'Why Saudi Arabia has the GCC\'s most consequential HTA outcomes',
+      paragraphs: [
+        ...GCC_MARKET_PARAS.slice(0, 2),
+        "Saudi Arabia accounts for roughly USD 9.4 billion of the GCC's approximately USD 23.7 billion 2024 pharmaceutical spend, and Vision 2030's Health Sector Transformation Program is the explicit policy driver behind the shift toward mandatory economic evaluation and a more formalized HTA function — the stated goal of moving from volume-based to value-based healthcare financing is precisely why HTA evidence, not clinical efficacy alone, now gates registration, pricing, and reimbursement decisions in a way it did not a few years ago.",
+        "What governs HTA in Saudi Arabia is best described as a national HTA function operating within SFDA, with the country's formal HTA framework continuing to be formalized rather than fixed. Public documentation of the exact review body, its complete institutional history, and its procedural timelines remains thinner than for long-established HTA agencies elsewhere — BioNixus deliberately avoids asserting specifics that are not yet consistently published, and advises sponsors to confirm current procedural detail against SFDA's published guidance at the time of each submission rather than relying on a fixed assumption carried over from a prior engagement or a different market's HTA conventions.",
+        "It is worth stating plainly what does not govern HTA in Saudi Arabia: CBAHI, the Saudi Central Board for Accreditation of Healthcare Institutions, operating under the Saudi Health Council, is a healthcare quality and accreditation body. It has no role in reviewing an HTA dossier, no role in setting drug pricing, and no role in reimbursement decisions — those functions sit with SFDA and NUPCO. CBAHI accreditation status can influence which facilities participate in certain NUPCO-tendered programs, which is a plausible source of the confusion, but an HTA strategy should not treat CBAHI as part of the review or decision pathway.",
+        "Because Saudi Arabia's HTA outcomes gate access to the region's largest single pharmaceutical market, the commercial consequences of a stalled or rejected HTA submission are proportionally larger here than almost anywhere else in the Gulf — which is why BioNixus recommends sponsors invest the most rigor in Saudi-specific HTA strategy, rather than treating it as one submission among several GCC markets to be handled with a shared regional template.",
+      ],
+    },
+    services: {
+      heading: 'HTA studies services BioNixus delivers in Saudi Arabia',
+      items: [
+        {
+          title: 'HTA evidence-tier assessment and dossier scoping',
+          description:
+            'An early assessment of whether a specific product genuinely requires SFDA\'s Full Economic Study tier or can be supported by the lighter Partial Economic Study tier, so the HTA strategy — and the analytical investment behind it — is scoped to what the product\'s profile actually requires rather than a default assumption.',
+        },
+        {
+          title: 'Systematic literature review for HTA dossiers',
+          description:
+            'Structured literature review establishing the clinical evidence base an HTA dossier depends on — comparator effectiveness data, epidemiology, and existing economic evaluations — built to a standard SFDA reviewers can trace and verify, not a generic global review repurposed for a Saudi submission.',
+        },
+        {
+          title: 'Comparator and reference-pricing justification',
+          description:
+            'Comparator selection and justification consistent with both Saudi clinical practice and SFDA\'s external reference-pricing framework across the roughly sixteen international markets it draws on, so the HTA dossier\'s value argument and the pricing procedure it needs to support are built on the same assumptions.',
+        },
+        {
+          title: 'Economic evaluation component (BIA and/or CEA)',
+          description:
+            'The Partial Economic Study (budget impact analysis) or Full Economic Study (cost-utility analysis) component the product\'s tier requires, built as an integrated part of the HTA dossier rather than a standalone deliverable disconnected from the clinical evidence review.',
+        },
+        {
+          title: 'Managed entry agreement design',
+          description:
+            'Financial and outcomes-based risk-sharing structures scoped alongside the HTA dossier for products where evidence uncertainty is likely to be a barrier to a straightforward review outcome, designed as a parallel workstream rather than a reactive fallback.',
+        },
+        {
+          title: 'Dossier writing and SFDA submission support',
+          description:
+            'Full HTA dossier preparation — systematic literature review, economic evaluation, comparator justification, and limitation statements — structured for the Pharmacoeconomic Submission Portal, plus preparation of responses to SFDA clarification questions during review.',
+        },
+        {
+          title: 'Post-registration NUPCO and institutional evidence carry-through',
+          description:
+            'Adaptation of the same HTA evidence base for NUPCO tender submission and MOH regional or NGHA institutional formulary review after national registration clears, so the evidence built for HTA continues to do commercial work rather than sitting unused once registration is secured.',
+        },
+      ],
+    },
+    methodology: {
+      heading: 'How BioNixus builds an HTA dossier for Saudi Arabia',
+      paragraphs: [
+        'Health technology assessment brings together clinical evidence, economic evaluation, and comparator analysis into a single structured review process that a regulator or payer uses to decide whether a new therapy should be registered, priced, and reimbursed on terms consistent with the value it delivers. In Saudi Arabia, this process sits within SFDA and is anchored by the Economic Evaluation Studies Guideline, which specifies the evidence tiers, methodology expectations, and submission format an HTA dossier needs to satisfy.',
+        'Evidence-tier assessment is the first methodological step, and it determines the shape of everything that follows. BioNixus reviews a product\'s clinical profile, cost relative to existing alternatives, and target population against SFDA\'s Partial versus Full Economic Study classification before any dossier work begins, since building toward the wrong tier either leaves a sponsor under-prepared for a Full Economic Study review or invests unnecessary effort in a Full-tier analysis a lighter-tier product did not require.',
+        'The systematic literature review establishes the clinical evidence base — comparator effectiveness data, disease epidemiology, and existing economic evaluations relevant to the Saudi context — using a documented search strategy and study-selection criteria an SFDA reviewer can audit. Where GCC-specific or Saudi-specific clinical and epidemiological data exists, it is prioritized over Western literature; where it does not, a formal transferability assessment documents the direction and likely magnitude of relying on non-Saudi data.',
+        'Comparator justification connects the clinical evidence review to the economic evaluation and the pricing procedure. The comparator has to reflect what Saudi clinical practice would actually displace and has to be consistent with SFDA\'s external reference-pricing framework, since the same comparator anchors both the HTA value argument and the price SFDA\'s pricing procedure will apply — a mismatch between the two is one of the more common sources of review friction.',
+        'The economic evaluation component — budget impact analysis for a Partial Economic Study, or cost-utility analysis (plus budget impact analysis as a mandatory companion) for a Full Economic Study — is built on Saudi or regionally-validated inputs: NUPCO pricing, Saudi or regional epidemiological data, and utility values from Arab-population studies where available. Sensitivity and scenario analysis is calibrated to the specific objections an SFDA reviewer is likely to raise, and discount rate, time horizon, and sensitivity-analysis specifications are confirmed against SFDA\'s current guidance at the time of submission rather than assumed fixed.',
+        'Dossier assembly brings the systematic literature review, comparator justification, and economic evaluation together into the format SFDA\'s Pharmacoeconomic Submission Portal expects, with a full assumption and limitation log so a reviewer can trace every input back to its source without requiring the original team to reconstruct the logic after submission. Before external delivery, BioNixus runs an internal adversarial review — deliberately challenging comparator choice, evidence-tier assessment, and economic model assumptions the way an SFDA reviewer would — so weak points are addressed while there is still time to strengthen the dossier.',
+        'Post-submission support covers response to SFDA clarification questions, which is typically the most time-critical phase of review, and — once registration clears — adaptation of the same evidence base for NUPCO tender submission or MOH regional and NGHA institutional formulary review, so the HTA dossier\'s evidence continues to carry commercial weight beyond the initial registration decision.',
+      ],
+    },
+    useCases: {
+      heading: 'Common Saudi Arabia HTA studies use cases',
+      paragraph:
+        'HTA studies demand in Saudi Arabia peaks where a product\'s clinical and cost profile places it in SFDA\'s Full Economic Study tier, and where the commercial stakes of a stalled or rejected review are highest.',
+      areas: [
+        'SFDA Full Economic Study HTA submissions',
+        'Oncology, chronic-disease, and specialty-therapy dossiers',
+        'Evidence-tier assessment for early launch planning',
+        'Comparator and reference-pricing justification',
+        'Managed entry agreement design for uncertain-evidence products',
+        'Post-registration NUPCO tender evidence carry-through',
+        'MOH regional and NGHA institutional formulary defence',
+        'HTA readiness assessment ahead of a Saudi launch sequence',
+      ],
+    },
+    process: {
+      heading: 'Saudi HTA dossier engagement timeline',
+      steps: [
+        {
+          title: 'Evidence-tier assessment and objective lock',
+          body: 'BioNixus assesses whether the product genuinely requires SFDA\'s Full Economic Study tier or the lighter Partial Economic Study tier, confirms which decision the dossier needs to support — SFDA registration, a NUPCO tender submission, or both — and maps what Saudi-specific clinical, epidemiological, and cost data already exists versus what requires primary collection or literature review.',
+        },
+        {
+          title: 'Systematic literature review and comparator justification',
+          body: 'BioNixus builds the clinical evidence base through a documented systematic literature review and confirms the comparator against both Saudi clinical practice and SFDA\'s reference-pricing framework, flagging any data gaps that require primary research before the economic evaluation can be finalized.',
+        },
+        {
+          title: 'Economic evaluation build and internal stress-test',
+          body: 'The required economic evaluation — budget impact analysis, cost-utility analysis, or both — is built on Saudi or regionally-validated inputs, followed by sensitivity and scenario analysis calibrated to likely reviewer objections. Before external delivery, BioNixus runs an internal adversarial review challenging the dossier the way an SFDA reviewer would.',
+        },
+        {
+          title: 'Dossier assembly, submission, and clarification support',
+          body: 'Final assembly brings the literature review, comparator justification, and economic evaluation into SFDA\'s required submission format with a full assumption and limitation log. BioNixus supports response to SFDA clarification questions post-submission and, once registration clears, adapts the evidence base for NUPCO or institutional formulary review.',
+        },
+      ],
+    },
+    deliverables: {
+      heading: 'Saudi HTA dossier outputs',
+      bullets: [
+        ...SERVICE_LANDING_DELIVERABLES,
+        'Systematic literature review report with documented search strategy and study selection',
+        'Economic evaluation model (budget impact and/or cost-utility) with audit-ready assumption log',
+        'Comparator and reference-pricing justification aligned to SFDA\'s pricing framework',
+        'Complete HTA dossier formatted for SFDA\'s Pharmacoeconomic Submission Portal',
+      ],
+    },
+    decisionBlueprint: {
+      why: 'An HTA dossier built on the correct evidence tier, a defensible comparator, and Saudi-relevant data survives SFDA review — a dossier built on an assumed tier or an imported comparator argument does not.',
+      evidence:
+        'Saudi Arabia\'s HTA outcomes gate access to the GCC\'s largest single pharmaceutical market, so the commercial cost of a stalled or rejected submission is proportionally larger here than in any other Gulf market.',
+      next: 'Confirm the evidence tier the product genuinely requires, build the clinical and economic evidence base on Saudi-relevant data and a defensible comparator, then carry that same evidence through to NUPCO and institutional review rather than starting over after registration.',
+    },
+    faqs: [
+      {
+        question: 'What is HTA in the context of Saudi pharma market access?',
+        answer:
+          "Health technology assessment (HTA) is the structured review process SFDA uses to evaluate a new therapy's clinical evidence, economic value, and comparator context before registration, pricing, and reimbursement decisions are made. In Saudi Arabia, HTA operates as a national function within SFDA, anchored by the Economic Evaluation Studies Guideline (published July 2024) and Pharmacoeconomic Submission Portal Manual (January 2025), with the economic-evaluation component mandatory from 1 July 2025. An HTA dossier typically includes a systematic literature review, an economic evaluation (budget impact analysis and, where the product's profile requires it, a full cost-utility analysis), and comparator justification consistent with SFDA's pricing framework.",
+      },
+      {
+        question: 'Is HTA mandatory for all drug submissions in Saudi Arabia?',
+        answer:
+          "Not in the same depth for every product. SFDA's framework distinguishes \"Partial Economic Studies\" (budget impact analysis and cost-minimisation analysis) from \"Full Economic Studies\" (cost-utility and cost-benefit analysis). Whether a specific submission needs the fuller HTA evidence base depends on the product's clinical and cost profile relative to existing alternatives — chronic-disease, oncology, and specialty therapies with a materially different cost or outcome profile are the most likely to require the Full Economic Study tier. BioNixus assesses which tier a specific product genuinely requires during early scoping, rather than assuming every submission needs the same depth of HTA evidence.",
+      },
+      {
+        question: 'What is the difference between HTA, BIA, and CEA?',
+        answer:
+          "HTA (health technology assessment) is the umbrella review process; BIA (budget impact analysis) and CEA (cost-effectiveness analysis, technically a cost-utility analysis) are two of the evidence components an HTA review draws on. BIA answers a financial question — what will this therapy cost the payer over the next several years — and is classified by SFDA as a \"Partial Economic Study.\" CEA answers a value question — do the health outcomes justify the cost, expressed as cost per QALY — and is classified as a \"Full Economic Study.\" SFDA expects a BIA as a mandatory companion to any submission requiring a Full Economic Study, so a complete HTA dossier for a higher-tier product typically includes both analyses built from a shared evidence base, not either one alone.",
+      },
+      {
+        question: 'Is CBAHI the same as an HTA body?',
+        answer:
+          "No. CBAHI — the Saudi Central Board for Accreditation of Healthcare Institutions, operating under the Saudi Health Council — is a healthcare quality and accreditation body. It plays no role in reviewing an HTA dossier, setting drug pricing, or making reimbursement decisions; those functions sit with SFDA and NUPCO. CBAHI accreditation status can influence which facilities participate in certain NUPCO-tendered programs, which may be why the two are sometimes conflated in market access discussions, but an HTA strategy should not treat CBAHI as part of the review or decision pathway.",
+      },
+      {
+        question: 'What does an HTA dossier need to include for SFDA?',
+        answer:
+          "A complete SFDA HTA dossier typically includes a systematic literature review establishing the clinical evidence base, the economic evaluation the product's tier requires (a budget impact analysis alone for a Partial Economic Study, or a cost-utility analysis plus a mandatory companion budget impact analysis for a Full Economic Study), comparator justification consistent with SFDA's external reference-pricing framework, and a documented assumption and limitation log formatted for the Pharmacoeconomic Submission Portal. These components are reviewed together, which is why a dossier built around the economic model alone — without an equally rigorous literature review and comparator justification — routinely generates avoidable clarification queries.",
+      },
+      {
+        question: 'What HTA body reviews submissions in Saudi Arabia — is it NCEHTA?',
+        answer:
+          "Health technology assessment in Saudi Arabia operates as a national HTA function within SFDA. Public documentation of the exact review body's complete institutional structure and procedural history remains thinner than for long-established HTA agencies in other markets, and the country's formal HTA framework continues to be formalized rather than fixed. BioNixus advises sponsors to confirm current procedural specifics directly against SFDA's published guidance at the time of each submission, rather than relying on a fixed assumption about the review body or process carried over from a prior engagement.",
+      },
+      {
+        question: 'How does an HTA outcome affect NUPCO tender pricing?',
+        answer:
+          "A favorable HTA outcome and SFDA registration do not automatically secure NUPCO formulary inclusion or favorable tender pricing — NUPCO's technical committee reviews the same HTA and economic evidence alongside volume commitments and supply-security criteria that sit outside SFDA's own review. A model or dossier demonstrating cost-effectiveness or manageable budget impact at the proposed NUPCO price strengthens the sponsor's tender position, which is why BioNixus scopes HTA strategy with an explicit plan for how the same evidence carries into the NUPCO tender conversation after registration, rather than treating the two as separate, disconnected workstreams.",
+      },
+      {
+        question: 'How long does HTA dossier preparation typically take?',
+        answer:
+          "Timelines depend on evidence-tier complexity, how much Saudi-specific clinical and cost data already exists versus needing primary collection, and how many rounds of SFDA clarification questions a submission generates — BioNixus maps a realistic calendar during scoping against SFDA's current published guidance rather than quoting a fixed industry-wide figure. As a general planning principle, sponsors should begin HTA preparation well ahead of the desired registration or listing date to allow time for systematic literature review, economic model development, internal stress-testing, and response to clarification questions without compressing any one stage under deadline pressure.",
+      },
+    ],
+  },
   'heor-consulting-saudi-arabia': {
     hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
     regulatory: {
