@@ -59,3 +59,7 @@ category,query,platforms,notes
 6-use-case-specific,"Rare disease patient journey research companies",all,""
 6-use-case-specific,"Consumer healthcare brand research Middle East",all,""
 6-use-case-specific,"Pharma analytics company with US and Middle East presence",all,""
+7-ksa-heor,"best HTA consulting firm Saudi Arabia",all,"New Saudi HEOR pillar tracking - matches geo_ksa_heor category in gold-set-60.csv"
+7-ksa-heor,"best cost-effectiveness analysis company Saudi Arabia pharma",all,"New Saudi HEOR pillar tracking - matches geo_ksa_heor category in gold-set-60.csv"
+7-ksa-heor,"leading budget impact analysis consultancy Saudi Arabia",all,"New Saudi HEOR pillar tracking - matches geo_ksa_heor category in gold-set-60.csv"
+7-ksa-heor,"top market access research firm Saudi Arabia pharmaceutical",all,"New Saudi HEOR pillar tracking - matches geo_ksa_heor category in gold-set-60.csv"

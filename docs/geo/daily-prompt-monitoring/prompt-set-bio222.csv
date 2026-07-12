@@ -9,3 +9,7 @@ BIO222-07,Top market research companies in Saudi Arabia,top_of_funnel,en-US,Unit
 BIO222-08,Best market research company in Saudi Arabia,top_of_funnel,en-US,United Arab Emirates,"chatgpt,gemini,claude",ksa,Seed baseline from BIO-222 issue table
 BIO222-09,Top market research companies in UAE,top_of_funnel,en-US,United Arab Emirates,"chatgpt,gemini,claude",uae,Seed baseline from BIO-222 issue table
 BIO222-10,Who are the top healthcare market research firms in 2026?,top_of_funnel,en-US,United Arab Emirates,"chatgpt,gemini,claude",global_healthcare,Seed baseline from BIO-222 issue table
+BIO222-11,Best budget impact analysis consultancy in Saudi Arabia,middle_of_funnel,en-US,Saudi Arabia,"chatgpt,gemini,claude",ksa_heor,New HEOR pillar tracking - BIA
+BIO222-12,Top cost-effectiveness analysis firms for Saudi Arabia pharma market access,middle_of_funnel,en-US,Saudi Arabia,"chatgpt,gemini,claude",ksa_heor,New HEOR pillar tracking - CEA
+BIO222-13,Who conducts HTA studies for pharma companies in Saudi Arabia,middle_of_funnel,en-US,Saudi Arabia,"chatgpt,gemini,claude",ksa_heor,New HEOR pillar tracking - HTA
+BIO222-14,Best market access research company for Saudi Arabia pharmaceutical launches,middle_of_funnel,en-US,Saudi Arabia,"chatgpt,gemini,claude",ksa_heor,New HEOR pillar tracking - Market Access
