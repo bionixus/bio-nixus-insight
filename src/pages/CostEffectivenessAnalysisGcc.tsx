@@ -12,32 +12,32 @@ const faqItems = [
   {
     question: 'Does Saudi Arabia require a cost-effectiveness analysis for drug formulary listing?',
     answer:
-      'Saudi Arabia has the most formalised health technology assessment process in the GCC, operated by the National Centre for Health Technology Assessment (NCEHTA), which functions as a department within the Saudi Food and Drug Authority (SFDA). For drugs seeking inclusion on the National Essential Medicine List (NEML) or NUPCO formulary — both key access pathways for the MOH sector — NCEHTA can be formally engaged to conduct or review an HTA. While a cost-effectiveness analysis is not legally mandatory for every drug listing, NCEHTA\'s reference case methodology explicitly requires a cost-utility analysis (CEA expressed as cost per QALY) as the preferred economic evaluation type for chronic conditions, oncology products, and specialty medicines where the comparative effectiveness over standard of care is a meaningful consideration. In practice, for any product with a significant budget impact (typically defined by NCEHTA as affecting more than 0.5% of the Ministry of Health annual drug budget) or where the drug costs substantially more than existing alternatives, a full health technology assessment including cost-effectiveness analysis is expected. Teams that submit without one risk a delayed or conditional listing, pricing concessions, or outright rejection from NUPCO\'s centralised tender process.',
+      "Not for every listing, but the threshold for when one is expected has narrowed since SFDA's Economic Evaluation System became mandatory in July 2025. SFDA classifies cost-utility analysis (cost-effectiveness expressed as cost per QALY) as a \"Full Economic Study,\" required for products — typically chronic-disease, oncology, and specialty therapies — where comparative effectiveness against standard of care is a material consideration. Products with a lighter cost or clinical profile may only require the smaller \"Partial Economic Study\" tier (budget impact analysis). Teams that submit without the required tier risk a delayed or conditional listing, or additional review queries from NUPCO's centralised tender process. For the full Saudi-specific methodology and evidence-tier guidance, see cost-effectiveness analysis Saudi Arabia.",
   },
   {
-    question: 'What QALY thresholds does NCEHTA use in Saudi Arabia?',
+    question: 'What QALY thresholds do GCC health authorities use?',
     answer:
-      'NCEHTA has not published a formal, fixed willingness-to-pay (WTP) threshold per QALY gained, and no GCC country has done so. However, from reviewing published NCEHTA assessments, stakeholder feedback, and the healthcare financing context, informal benchmarks have emerged in the pharmaceutical market access community. For Saudi Arabia (MOH payer perspective), an ICER below approximately $20,000–$40,000 per QALY is considered likely cost-effective; ICERs between $40,000 and $80,000 may be accepted for oncology or rare disease indications with unmet need; ICERs above $80,000 per QALY face significant scrutiny and typically require additional justification — such as severity of disease, lack of therapeutic alternatives, or carer and productivity benefits. These are informal benchmarks derived from observed NCEHTA decisions rather than published policy. The absence of a formal threshold means that clinical effectiveness, local epidemiological burden, and budget impact arguments carry substantial weight in parallel with the cost-per-QALY calculation. NCEHTA guidance references the GDP-per-capita rule of thumb (approximately $25,000 USD for KSA in 2024) as a contextual anchor but does not use it mechanistically.',
+      'No GCC country has published a formal, fixed willingness-to-pay (WTP) threshold per QALY. Saudi Arabia has the most developed public discussion of a research-derived threshold — an estimate of roughly SAR 50,000 to 75,000 per QALY (about 58%–86% of GDP per capita) drawn from published health-economics literature, not a government policy document; see cost-effectiveness analysis Saudi Arabia for the full framing. For the UAE (DHA/Dubai insurer perspective), informal benchmarks in the $40,000–$80,000 per QALY range (roughly AED 150,000–300,000) are observed in DHA health economics reviews, reflecting higher per-capita healthcare spending. Qatar\'s high GDP per capita suggests potential acceptance of higher ICERs for serious conditions, but no formal HTA body or threshold exists; HMC formulary decisions are made by a clinical committee with budgetary awareness rather than a systematic QALY calculation. Kuwait, Bahrain, and Oman have no formal HTA body, and formulary decisions are driven primarily by clinical guidelines, price relative to standard of care, and budget impact rather than a cost-per-QALY calculation.',
   },
   {
     question: 'What data inputs are needed for a GCC economic model?',
     answer:
-      'A cost-effectiveness or budget impact model for a GCC submission requires five categories of data inputs, and sourcing locally relevant versions of each is the primary methodological challenge. First, transition probabilities or clinical event rates: derived from RCT data where available, supplemented by published observational studies; for GCC-specific transitions (e.g., diabetes complications rates in Arab populations), peer-reviewed literature from the Gulf region or MENA, or local RWD studies, should replace Western clinical inputs where material differences exist. Second, utility values (health state values for QALYs): ideally generated from studies in Arab populations using validated preference-based instruments such as EQ-5D-5L; published utility studies from KSA, UAE, or Egypt now exist for major chronic conditions including diabetes, cardiovascular disease, and oncology. Third, unit costs: GCC-specific resource use costs are the hardest input to standardise. BioNixus uses KFSH&RC (King Faisal Specialist Hospital and Research Centre) published cost studies, NUPCO drug price lists, MOH fee schedules, and primary cost collection from clinical expert interviews to build Saudi-specific cost databases. UAE unit costs can be derived from DHA procedure tariffs and Daman insurance reimbursement schedules. Fourth, population epidemiology: disease prevalence and incidence for model cohort sizing, drawn from NHIC statistical yearbooks, published Saudi epidemiology literature, and regional WHO data. Fifth, discount rates: NCEHTA guidance specifies 3.5% per annum for both costs and health effects in the reference case — consistent with NICE methodology in England and most European HTA bodies.',
+      'A cost-effectiveness or budget impact model for a GCC submission requires five categories of data inputs, and sourcing locally relevant versions of each is the primary methodological challenge. First, transition probabilities or clinical event rates: derived from RCT data where available, supplemented by published observational studies; for GCC-specific transitions (e.g., diabetes complications rates in Arab populations), peer-reviewed literature from the Gulf region or MENA, or local RWD studies, should replace Western clinical inputs where material differences exist. Second, utility values (health state values for QALYs): ideally generated from studies in Arab populations using validated preference-based instruments such as EQ-5D-5L; published utility studies from KSA, UAE, or Egypt now exist for major chronic conditions including diabetes, cardiovascular disease, and oncology. Third, unit costs: GCC-specific resource use costs are the hardest input to standardise. BioNixus uses KFSH&RC (King Faisal Specialist Hospital and Research Centre) published cost studies, NUPCO drug price lists, MOH fee schedules, and primary cost collection from clinical expert interviews to build Saudi-specific cost databases. UAE unit costs can be derived from DHA procedure tariffs and Daman insurance reimbursement schedules. Fourth, population epidemiology: disease prevalence and incidence for model cohort sizing, drawn from NHIC statistical yearbooks, published Saudi epidemiology literature, and regional WHO data. Fifth, discount rates: current SFDA and NCEHTA guidance should be confirmed at the time of submission rather than assumed fixed, since technical reference-case parameters are part of a guideline that continues to be updated.',
   },
   {
     question: 'How is cost-effectiveness analysis different from budget impact modelling?',
     answer:
-      'Cost-effectiveness analysis (CEA) and budget impact modelling (BIM) address fundamentally different questions and serve different decision-making purposes, though both are typically required for a complete GCC market access submission. A cost-effectiveness analysis asks whether the health outcomes gained from a new intervention are worth the additional cost — the answer is expressed as the incremental cost-effectiveness ratio (ICER), measured in cost per quality-adjusted life year (QALY) gained. The CEA adopts a societal or healthcare system perspective and models outcomes over a long time horizon (often lifetime) to fully capture the value of durable clinical benefits. A budget impact model, by contrast, asks a purely financial question: how much will it cost the payer to fund this drug over the next 3–5 years given realistic uptake assumptions? The BIM does not require a QALY calculation; it models drug acquisition costs, offset savings from displaced treatments or avoided complications, and net budget impact per year. NCEHTA requires a BIM as a mandatory companion to the HTA dossier. NUPCO procurement decisions place heavy weight on the BIM when making pricing and volume decisions. The Abu Dhabi DOH also requires a BIM for high-cost medicines included in the DOH Essential Drug List review. In BioNixus practice, CEA and BIM are developed in parallel from a shared dataset, with the CEA informing the value argument and the BIM quantifying affordability and managing payer risk through managed entry agreement design.',
+      'Cost-effectiveness analysis (CEA) and budget impact modelling (BIM) address fundamentally different questions and serve different decision-making purposes, though both are typically required for a complete GCC market access submission. A cost-effectiveness analysis asks whether the health outcomes gained from a new intervention are worth the additional cost — the answer is expressed as the incremental cost-effectiveness ratio (ICER), measured in cost per quality-adjusted life year (QALY) gained. The CEA adopts a societal or healthcare system perspective and models outcomes over a long time horizon (often lifetime) to fully capture the value of durable clinical benefits. A budget impact model, by contrast, asks a purely financial question: how much will it cost the payer to fund this drug over the next 3–5 years given realistic uptake assumptions? The BIM does not require a QALY calculation; it models drug acquisition costs, offset savings from displaced treatments or avoided complications, and net budget impact per year. SFDA expects a budget impact model as a mandatory companion to any submission requiring a Full Economic Study. The Abu Dhabi DOH also requires a BIM for high-cost medicines included in the DOH Essential Drug List review. In BioNixus practice, CEA and BIM are developed in parallel from a shared dataset, with the CEA informing the value argument and the BIM quantifying affordability and managing payer risk through managed entry agreement design.',
   },
   {
     question: 'Can Western economic models be adapted for GCC submissions?',
     answer:
-      'Western models can serve as a starting point — and many NCEHTA submissions do begin from a model originally built for EMA or NICE — but direct transfer without adaptation is rarely sufficient to satisfy GCC HTA reviewers. The key adaptation requirements are: (1) replace Western utility values with locally validated or published GCC/Arab population utility data where available, since health state preferences can differ materially between patient populations; (2) replace Western unit costs with Saudi or UAE-specific drug prices (NUPCO list prices), hospital stay costs, and procedure costs — Western DRG-based costs are systematically different from Gulf healthcare costing structures; (3) adjust clinical event rates and natural history assumptions for GCC-specific epidemiological context (e.g., diabetes complication rates in Saudi Arabia are different from UK rates due to differences in baseline glycaemic control, obesity prevalence, and comorbidity); (4) resize the model population using Saudi or UAE epidemiological data rather than NHS or US census data; (5) apply NCEHTA-specified discount rates (3.5%) and time horizons; (6) conduct all required sensitivity analyses specified in the NCEHTA reference case, including probabilistic sensitivity analysis with at least 1,000 Monte Carlo iterations. A full GCC adaptation of a well-documented NICE-format model typically requires 8–14 weeks of modelling effort and is included within BioNixus\'s CEA/BIM development scope.',
+      "Western models can serve as a starting point — and many Saudi and UAE submissions do begin from a model originally built for EMA or NICE — but direct transfer without adaptation is rarely sufficient to satisfy GCC HTA reviewers. The key adaptation requirements are: (1) replace Western utility values with locally validated or published GCC/Arab population utility data where available, since health state preferences can differ materially between patient populations; (2) replace Western unit costs with Saudi or UAE-specific drug prices (NUPCO list prices), hospital stay costs, and procedure costs — Western DRG-based costs are systematically different from Gulf healthcare costing structures; (3) adjust clinical event rates and natural history assumptions for GCC-specific epidemiological context (e.g., diabetes complication rates in Saudi Arabia are different from UK rates due to differences in baseline glycaemic control, obesity prevalence, and comorbidity); (4) resize the model population using Saudi or UAE epidemiological data rather than NHS or US census data; (5) confirm and apply the discount rate, time horizon, and sensitivity-analysis requirements specified in the current SFDA or DHA guidance at the time of submission, rather than a fixed assumption carried over from a prior engagement. A full GCC adaptation of a well-documented NICE-format model typically requires several weeks of dedicated modelling effort and is included within BioNixus's CEA/BIM development scope.",
   },
   {
-    question: 'How long does the NCEHTA HTA review process take in Saudi Arabia?',
+    question: 'How long does the HTA review process take in Saudi Arabia?',
     answer:
-      'NCEHTA\'s review timeline varies depending on whether the submission is a full HTA assessment, an expedited review, or a rapid review. For a full HTA submission — involving a systematic literature review, cost-effectiveness analysis, budget impact model, and dossier preparation to NCEHTA format — the sponsor\'s preparation time is typically 16–24 weeks for a well-resourced team with access to appropriate data. After submission, NCEHTA\'s review process has historically taken 3–6 months for an initial response, with one or more rounds of clarification questions extending the total clock-stop time by 4–12 additional weeks. Total time from submission to final NCEHTA recommendation therefore runs 6–12 months in a typical case, though priority review processes are available for drugs addressing significant unmet medical needs. BioNixus supports the full pre-submission phase — economic model development, systematic literature review, dossier writing, and response to NCEHTA clarification questions — and recommends beginning the HTA preparation process at least 12 months before the desired listing date to allow adequate time for iterative refinement and submission.',
+      "Review timelines vary depending on submission complexity, the completeness of the economic evidence package, and how many rounds of clarification questions a review generates — BioNixus scopes the expected calendar against SFDA's current published guidance for each engagement rather than a fixed industry-wide figure. As a general planning principle, sponsors should begin HTA preparation well ahead of the desired listing date to allow time for iterative model refinement, dossier writing, and response to clarification questions. BioNixus supports the full pre-submission phase — economic model development, systematic literature review, dossier writing, and response to SFDA clarification questions — and maps a realistic submission calendar during scoping rather than assuming a generic timeline applies. See cost-effectiveness analysis Saudi Arabia for the current SFDA framework this timeline sits within.",
   },
 ];
 
@@ -66,10 +66,10 @@ export default function CostEffectivenessAnalysisGcc() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Cost Effectiveness Analysis GCC | BioNixus</title>
+        <title>Cost Effectiveness Analysis GCC: Saudi Arabia, UAE, Kuwait, Qatar Comparison | BioNixus</title>
         <meta
           name="description"
-          content="Cost effectiveness analysis GCC: NCEHTA requirements, QALY thresholds, Markov model development, NUPCO dossier support, and budget impact modelling for Saudi Arabia, UAE, and wider GCC pharmaceutical market access."
+          content="Compare cost-effectiveness analysis requirements across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman — HTA pathways, informal QALY thresholds, model development, and budget impact modelling for GCC pharmaceutical market access."
         />
         <link rel="canonical" href={pageUrl} />
         {jsonLd.map((schema, index) => (
@@ -88,9 +88,10 @@ export default function CostEffectivenessAnalysisGcc() {
           ]}
         />
         <PremiumHero
-          h1="Cost Effectiveness Analysis GCC"
-          intro="BioNixus builds cost-effectiveness analyses and budget impact models for pharmaceutical market access across GCC — from NCEHTA-format HTA dossiers for Saudi Arabia to DHA health economics submissions in Dubai and informal economic arguments for formulary committees in Kuwait, Qatar, Bahrain, and Oman."
+          h1="Cost Effectiveness Analysis GCC: Saudi Arabia, UAE, Kuwait, Qatar Comparison"
+          intro="Cost-effectiveness requirements vary sharply across the Gulf — Saudi Arabia's SFDA framework, DHA health economics review in Dubai, and informal economic arguments for formulary committees in Kuwait, Qatar, Bahrain, and Oman are genuinely different processes. This page compares them side by side; for the full Saudi-specific methodology, see cost-effectiveness analysis Saudi Arabia."
           links={[
+            { to: '/cost-effectiveness-analysis-saudi-arabia', label: 'Cost-effectiveness analysis Saudi Arabia', primary: true },
             { to: '/heor-consulting-saudi-arabia', label: 'HEOR consulting Saudi Arabia' },
             { to: '/budget-impact-model-saudi-arabia', label: 'Budget impact model Saudi Arabia' },
             { to: '/real-world-evidence-gcc', label: 'Real world evidence GCC' },
@@ -103,16 +104,16 @@ export default function CostEffectivenessAnalysisGcc() {
           heading="GCC cost-effectiveness decision framework"
           points={[
             {
-              title: 'Formal HTA is the Saudi standard',
-              body: 'NCEHTA (part of SFDA) is the GCC\'s only formal HTA body. Its reference case specifies cost-utility analysis (cost per QALY), 3.5% discount rates, and probabilistic sensitivity analysis — requirements that must be met for NEML and NUPCO formulary submissions.',
+              title: 'Saudi Arabia has the most defined framework',
+              body: 'SFDA\'s Economic Evaluation System, mandatory from July 2025, classifies cost-utility analysis as a "Full Economic Study" with published guidance — the most current, publicly documented HTA-adjacent framework in the GCC. See cost-effectiveness analysis Saudi Arabia for the full requirements.',
             },
             {
-              title: 'WTP thresholds are informal but decisive',
-              body: 'No GCC country publishes a formal willingness-to-pay threshold. Informal KSA benchmarks of $20,000–$40,000/QALY (MOH perspective) and $40,000–$80,000/QALY (UAE) guide what passes scrutiny. Models must be built with these in mind from day one.',
+              title: 'WTP thresholds are informal everywhere',
+              body: 'No GCC country publishes a formal willingness-to-pay threshold. A research-derived Saudi estimate of roughly SAR 50,000–75,000/QALY and informal UAE benchmarks of $40,000–$80,000/QALY guide what passes scrutiny, but neither is official government policy.',
             },
             {
               title: 'Local data inputs are now expected',
-              body: 'NCEHTA reviewers and NUPCO committees increasingly challenge models built on Western utility values and cost data. Saudi and UAE-specific inputs — derived from NHIC data, KFSH&RC cost studies, and NUPCO drug prices — are now the credibility baseline.',
+              body: 'Reviewers across Saudi Arabia and the UAE increasingly challenge models built on Western utility values and cost data. Saudi and UAE-specific inputs — derived from NHIC data, KFSH&RC cost studies, and NUPCO drug prices — are now the credibility baseline.',
             },
           ]}
         />
@@ -142,7 +143,7 @@ export default function CostEffectivenessAnalysisGcc() {
 
             <h3 className="text-xl font-semibold text-foreground mb-3">Government-funded systems: KSA, Kuwait, Qatar, Bahrain, Oman</h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Saudi Arabia, Kuwait, Qatar, Bahrain, and Oman operate predominantly government-funded healthcare systems where the Ministry of Health provides free care to citizens and subsidised care to residents. In Saudi Arabia, the MOH manages approximately 60% of hospital beds and funds medicines through centralised NUPCO procurement. This creates a single-payer dynamic where the MOH perspective is the dominant analytical lens: the CEA should model costs from the MOH healthcare budget perspective, and the budget impact model should quantify the net annual cost to the MOH sector. In Kuwait, the Ministry of Health Central Pharmacy procures medicines for all public facilities — a similar dynamic applies. In Qatar, the Supreme Council of Health (now MoPH) and Hamad Medical Corporation jointly determine formulary access; the payer perspective is effectively the HMC institutional budget.
+              Saudi Arabia, Kuwait, Qatar, Bahrain, and Oman operate predominantly government-funded healthcare systems where the Ministry of Health provides free care to citizens and subsidised care to residents. In Saudi Arabia, the MOH manages a majority of hospital beds and funds medicines through centralised NUPCO procurement. This creates a single-payer dynamic where the MOH perspective is the dominant analytical lens: the CEA should model costs from the MOH healthcare budget perspective, and the budget impact model should quantify the net annual cost to the MOH sector. In Kuwait, the Ministry of Health Central Pharmacy procures medicines for all public facilities — a similar dynamic applies. In Qatar, the Supreme Council of Health (now MoPH) and Hamad Medical Corporation jointly determine formulary access; the payer perspective is effectively the HMC institutional budget.
             </p>
 
             <h3 className="text-xl font-semibold text-foreground mb-3">Mandatory insurance markets: Dubai and Abu Dhabi (UAE)</h3>
@@ -154,17 +155,17 @@ export default function CostEffectivenessAnalysisGcc() {
               Willingness-to-pay thresholds by GCC country
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              No GCC country has formally published a WTP threshold per QALY. All thresholds that practitioners reference are informal benchmarks derived from observed HTA decisions, published NCEHTA assessments, and market access advisory experience. The following ranges represent the current professional consensus:
+              No GCC country has formally published a WTP threshold per QALY. All thresholds that practitioners reference are informal benchmarks or research-derived estimates, not government policy. The following ranges represent the current professional consensus:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-6">
               <li>
-                <strong className="text-foreground">Saudi Arabia (MOH/NCEHTA perspective):</strong> $20,000–$40,000 per QALY for standard chronic disease indications; up to $80,000 per QALY may be considered for oncology or rare diseases with significant unmet need. No formal publication; derived from NCEHTA assessment outcomes and internal communications with SFDA.
+                <strong className="text-foreground">Saudi Arabia:</strong> A research-derived estimate of roughly SAR 50,000–75,000 per QALY (about 58%–86% of GDP per capita) is the most cited reference point in published health-economics literature — not an officially codified government threshold. See <Link to="/cost-effectiveness-analysis-saudi-arabia" className="text-primary hover:underline">cost-effectiveness analysis Saudi Arabia</Link> for the full framing.
               </li>
               <li>
                 <strong className="text-foreground">UAE (DHA / Dubai insurer perspective):</strong> $40,000–$80,000 per QALY (approximately AED 150,000–300,000), reflecting higher per-capita healthcare spending and a mixed public-private financing model. The DHA has not published a threshold document; this range is observed in DHA health economics reviews.
               </li>
               <li>
-                <strong className="text-foreground">Qatar:</strong> Qatar's GDP per capita ($68,000+ USD in 2024) suggests potential acceptance of higher ICERs — possibly $50,000–$100,000 per QALY for serious conditions — but no formal HTA body and no formal threshold exists. HMC formulary decisions are made by a clinical committee with budgetary awareness rather than a systematic QALY calculation.
+                <strong className="text-foreground">Qatar:</strong> Qatar's high GDP per capita suggests potential acceptance of higher ICERs for serious conditions, but no formal HTA body and no formal threshold exists. HMC formulary decisions are made by a clinical committee with budgetary awareness rather than a systematic QALY calculation.
               </li>
               <li>
                 <strong className="text-foreground">Kuwait, Bahrain, Oman:</strong> No formal HTA body. Formulary decisions by Ministry of Health committees are driven primarily by clinical guidelines, drug price relative to standard of care, and budget impact. Economic arguments remain useful as supporting evidence but are not the primary decision driver.
@@ -172,22 +173,16 @@ export default function CostEffectivenessAnalysisGcc() {
             </ul>
 
             <h2 className="text-2xl font-display font-semibold text-foreground mb-4 mt-8">
-              Saudi NCEHTA: the GCC's formal HTA body
+              Saudi Arabia: the GCC's most developed HTA framework
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              The National Centre for Health Technology Assessment (NCEHTA) was established in 2014 as part of the Saudi Food and Drug Authority. It is the only formally constituted HTA body in the GCC with published methodology guidelines, a formal review process, and the authority to produce reimbursement recommendations that directly influence SFDA product decisions and NEML listings. NCEHTA's reference case methodology specifies:
+              Saudi Arabia operates the GCC's most publicly documented economic-evaluation framework, anchored by SFDA's Economic Evaluation Studies Guideline (published July 2024) and Pharmacoeconomic Submission Portal Manual (January 2025), with the economic-evaluation requirement mandatory from 1 July 2025. Health technology assessment operates as a national HTA function within SFDA, and the country's formal HTA framework continues to be formalized — sponsors should expect the review pathway to keep evolving rather than treat today's process as fixed.
             </p>
-            <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-6">
-              <li>Cost-utility analysis (ICER expressed as cost per QALY) as the preferred economic evaluation type</li>
-              <li>Saudi public healthcare system perspective as the primary analytical perspective, with optional societal perspective analysis</li>
-              <li>Discount rate of 3.5% per annum for both costs and health outcomes</li>
-              <li>Time horizon sufficient to capture all meaningful differences in costs and outcomes — typically lifetime for chronic conditions</li>
-              <li>Probabilistic sensitivity analysis (PSA) with at least 1,000 Monte Carlo iterations, producing cost-effectiveness acceptability curves</li>
-              <li>Scenario analyses on key structural uncertainties (e.g., assumption on long-term treatment continuation, disease progression extrapolation)</li>
-              <li>Budget impact analysis as a mandatory accompanying analysis, modelling 3–5 year impact on the MOH drug budget</li>
-            </ul>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              In addition to the formal NCEHTA process, NUPCO formulary submissions require an economic argument — even where NCEHTA has not been formally engaged. NUPCO's commercial team and clinical committee review price-effectiveness arguments as part of the negotiated tender pricing process. A model demonstrating cost-effectiveness at the proposed NUPCO price strengthens the sponsor's pricing position.
+              SFDA's framework classifies cost-utility analysis (cost-effectiveness expressed as cost per QALY) as a "Full Economic Study," distinct from the lighter "Partial Economic Study" tier covering budget impact and cost-minimisation analysis. Where a Full Economic Study is required, SFDA expects a budget impact analysis as a mandatory companion document, and comparator selection consistent with SFDA's external reference-pricing framework. The full methodology — evidence tiers, comparator selection, sensitivity-analysis expectations, and the current threshold discussion — is covered in depth on <Link to="/cost-effectiveness-analysis-saudi-arabia" className="text-primary hover:underline">cost-effectiveness analysis Saudi Arabia</Link>.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              In addition to the SFDA registration process, NUPCO formulary submissions expect an economic argument as part of the negotiated tender pricing process. A model demonstrating cost-effectiveness at the proposed NUPCO price strengthens the sponsor's pricing position, independent of whether SFDA's Full Economic Study tier formally applies to the product.
             </p>
 
             <h2 className="text-2xl font-display font-semibold text-foreground mb-4 mt-8">
@@ -204,12 +199,12 @@ export default function CostEffectivenessAnalysisGcc() {
 
             <h3 className="text-xl font-semibold text-foreground mb-3">Markov cohort models</h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              The most widely used model structure for chronic conditions in GCC HTA submissions. A Markov model defines a set of mutually exclusive health states (e.g., controlled diabetes, uncontrolled diabetes, diabetic nephropathy, dialysis, dead) and models patient transitions between states over annual or quarterly cycles throughout a lifetime horizon. State-specific costs and utility values determine the cumulative ICER. Markov models are the standard for type 2 diabetes (using the UKPDS or IMS CORE Diabetes Model framework, adapted for GCC inputs), cardiovascular disease, chronic respiratory conditions, and oncology in early and late-stage disease. NCEHTA reviewers are familiar with Markov methodology and expect transparent documentation of transition probability sources, with local GCC literature cited where available.
+              The most widely used model structure for chronic conditions in GCC HTA submissions. A Markov model defines a set of mutually exclusive health states (e.g., controlled diabetes, uncontrolled diabetes, diabetic nephropathy, dialysis, dead) and models patient transitions between states over annual or quarterly cycles throughout a lifetime horizon. State-specific costs and utility values determine the cumulative ICER. Markov models are the standard for type 2 diabetes (using the UKPDS or IMS CORE Diabetes Model framework, adapted for GCC inputs), cardiovascular disease, chronic respiratory conditions, and oncology in early and late-stage disease. Saudi and UAE reviewers are familiar with Markov methodology and expect transparent documentation of transition probability sources, with local GCC literature cited where available.
             </p>
 
             <h3 className="text-xl font-semibold text-foreground mb-3">Partitioned survival models</h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Standard for oncology cost-effectiveness analyses where clinical evidence is based on progression-free survival (PFS) and overall survival (OS) curves from pivotal RCTs. The partitioned survival model divides the modelled cohort into three health state partitions — progression-free, progressed, and dead — based on fitted survival curves, and applies state-specific costs and utilities. For oncology submissions to NCEHTA, BioNixus fits standard parametric curves (exponential, Weibull, log-logistic, log-normal, Gompertz) to PFS and OS Kaplan-Meier data, selects the best-fitting extrapolation with clinical validation from GCC oncology experts, and conducts sensitivity analyses across plausible survival assumptions.
+              Standard for oncology cost-effectiveness analyses where clinical evidence is based on progression-free survival (PFS) and overall survival (OS) curves from pivotal RCTs. The partitioned survival model divides the modelled cohort into three health state partitions — progression-free, progressed, and dead — based on fitted survival curves, and applies state-specific costs and utilities. For oncology submissions, BioNixus fits standard parametric curves (exponential, Weibull, log-logistic, log-normal, Gompertz) to PFS and OS Kaplan-Meier data, selects the best-fitting extrapolation with clinical validation from GCC oncology experts, and conducts sensitivity analyses across plausible survival assumptions.
             </p>
 
             <h3 className="text-xl font-semibold text-foreground mb-3">Discrete event simulation</h3>
@@ -248,7 +243,7 @@ export default function CostEffectivenessAnalysisGcc() {
               Budget impact modelling alongside CEA
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Budget impact models (BIMs) are required alongside cost-effectiveness analyses for NCEHTA HTA submissions and are increasingly requested for Abu Dhabi DOH Essential Drug List reviews and NUPCO tender negotiations. The BIM structure for GCC submissions includes:
+              Budget impact models (BIMs) are required alongside cost-effectiveness analyses for SFDA Full Economic Study submissions and are increasingly requested for Abu Dhabi DOH Essential Drug List reviews and NUPCO tender negotiations. The BIM structure for GCC submissions includes:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-6">
               <li>
@@ -297,43 +292,21 @@ export default function CostEffectivenessAnalysisGcc() {
               <li>Systematic literature review for clinical inputs, utility values, and cost data with GCC-targeted search strategies</li>
               <li>Economic model development in Microsoft Excel — transparent, auditable, and adaptable for multi-country submissions</li>
               <li>Model validation, including technical quality review and face-validity testing with clinical and payer experts in KSA and UAE</li>
-              <li>NCEHTA HTA dossier preparation in the required format, including executive summary, clinical review section, economic model report, and budget impact analysis</li>
-              <li>Dossier submission to NCEHTA, NUPCO technical committee, DHA Health Economics, and DOH Abu Dhabi</li>
-              <li>Preparation of responses to NCEHTA clarification questions — typically the most time-critical phase of the review</li>
+              <li>HTA dossier preparation in the required format, including executive summary, clinical review section, economic model report, and budget impact analysis</li>
+              <li>Dossier submission support for SFDA, NUPCO technical committee, DHA Health Economics, and DOH Abu Dhabi</li>
+              <li>Preparation of responses to reviewer clarification questions — typically the most time-critical phase of the review</li>
               <li>Managed entry agreement (risk-sharing) design where the cost-effectiveness evidence is uncertain and a conditional access arrangement may facilitate payer acceptance</li>
             </ul>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Cost benchmarks: full CEA and budget impact model development from scratch = $35,000–$80,000 depending on model complexity, number of comparators, and data availability. Dossier writing and submission support (building on a completed model) = $20,000–$45,000. Model adaptation from an existing NICE-format model for GCC submission = $15,000–$35,000.
-            </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Related pages: <Link to="/heor-consulting-saudi-arabia" className="text-primary hover:underline">HEOR consulting Saudi Arabia</Link>, <Link to="/budget-impact-model-saudi-arabia" className="text-primary hover:underline">budget impact model Saudi Arabia</Link>, <Link to="/real-world-evidence-gcc" className="text-primary hover:underline">real world evidence GCC</Link>, <Link to="/saudi-payer-market-access-research" className="text-primary hover:underline">Saudi payer market access research</Link>, <Link to="/uae-pricing-reimbursement-strategy" className="text-primary hover:underline">UAE pricing and reimbursement strategy</Link>.
+              Related pages: <Link to="/cost-effectiveness-analysis-saudi-arabia" className="text-primary hover:underline">cost-effectiveness analysis Saudi Arabia</Link>, <Link to="/heor-consulting-saudi-arabia" className="text-primary hover:underline">HEOR consulting Saudi Arabia</Link>, <Link to="/budget-impact-model-saudi-arabia" className="text-primary hover:underline">budget impact model Saudi Arabia</Link>, <Link to="/real-world-evidence-gcc" className="text-primary hover:underline">real world evidence GCC</Link>, <Link to="/saudi-payer-market-access-research" className="text-primary hover:underline">Saudi payer market access research</Link>, <Link to="/uae-pricing-reimbursement-strategy" className="text-primary hover:underline">UAE pricing and reimbursement strategy</Link>.
             </p>
-
-            {/* Proof metrics */}
-            <div className="mt-8 rounded-xl border border-border bg-muted/20 p-5">
-              <h2 className="text-lg font-semibold text-foreground mb-3">BioNixus CEA and HTA delivery benchmarks</h2>
-              <div className="grid md:grid-cols-3 gap-3">
-                <article className="rounded-lg border border-border bg-card p-3">
-                  <p className="text-xs uppercase tracking-wide text-muted-foreground">Full CEA + BIM development</p>
-                  <p className="text-xl font-semibold text-foreground">$35,000–$80,000</p>
-                  <p className="text-xs text-muted-foreground mt-1">End-to-end model build including systematic literature review, model, and validation.</p>
-                </article>
-                <article className="rounded-lg border border-border bg-card p-3">
-                  <p className="text-xs uppercase tracking-wide text-muted-foreground">NCEHTA dossier preparation</p>
-                  <p className="text-xl font-semibold text-foreground">$20,000–$45,000</p>
-                  <p className="text-xs text-muted-foreground mt-1">Dossier writing, submission, and first-round clarification response support.</p>
-                </article>
-                <article className="rounded-lg border border-border bg-card p-3">
-                  <p className="text-xs uppercase tracking-wide text-muted-foreground">Submission-to-decision timeline</p>
-                  <p className="text-xl font-semibold text-foreground">6–12 months</p>
-                  <p className="text-xs text-muted-foreground mt-1">NCEHTA full review including clarification rounds; preparation begins 12+ months before desired listing.</p>
-                </article>
-              </div>
-            </div>
 
             {/* Internal links */}
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/heor-consulting-saudi-arabia" className="rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground">
+              <Link to="/cost-effectiveness-analysis-saudi-arabia" className="rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground">
+                Cost-effectiveness analysis Saudi Arabia
+              </Link>
+              <Link to="/heor-consulting-saudi-arabia" className="rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted">
                 HEOR consulting Saudi Arabia
               </Link>
               <Link to="/budget-impact-model-saudi-arabia" className="rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted">
