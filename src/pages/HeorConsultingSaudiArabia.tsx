@@ -11,13 +11,16 @@ export default function HeorConsultingSaudiArabia() {
       canonicalUrl="https://www.bionixus.com/heor-consulting-saudi-arabia"
       breadcrumbLabel="HEOR Consulting Saudi Arabia"
       h1="HEOR Consulting Saudi Arabia"
-      intro="HEOR only earns reimbursement in Saudi Arabia when the assumptions survive committee scrutiny. Start from our healthcare market research hub for regional context, then build budget-impact models and value narratives calibrated to the Kingdom—translated into evidence packages access, medical, and finance teams can defend together."
+      intro="HEOR only earns reimbursement in Saudi Arabia when the assumptions survive committee scrutiny. BioNixus builds budget impact analysis, cost-effectiveness analysis, HTA studies, and market access research as one coordinated evidence chain — calibrated to the Kingdom and translated into evidence packages access, medical, and finance teams can defend together."
       links={[
-        { to: '/healthcare-market-research-agency-gcc', label: 'Healthcare market research agency GCC', primary: true },
-        { to: '/biosimilar-market-entry-saudi-arabia', label: 'Biosimilar market entry Saudi Arabia', primary: true },
+        { to: '/budget-impact-model-saudi-arabia', label: 'Budget impact model Saudi Arabia', primary: true },
+        { to: '/cost-effectiveness-analysis-saudi-arabia', label: 'Cost-effectiveness analysis Saudi Arabia', primary: true },
+        { to: '/hta-studies-saudi-arabia', label: 'HTA studies Saudi Arabia', primary: true },
+        { to: '/saudi-payer-market-access-research', label: 'Saudi payer market access research', primary: true },
+        { to: '/healthcare-market-research-agency-gcc', label: 'Healthcare market research agency GCC' },
+        { to: '/biosimilar-market-entry-saudi-arabia', label: 'Biosimilar market entry Saudi Arabia' },
         { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Healthcare market research company in Saudi Arabia' },
         { to: '/contact', label: 'Request HEOR scope' },
-        { to: '/market-research-healthcare', label: 'Healthcare market research services' },
         { to: '/methodology', label: 'Our research methodology' },
       ]}
       bullets={[
