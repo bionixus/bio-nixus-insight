@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 
+import { resolveLegacyCountryIndustryMarketResearchRedirect } from '../lib/country-industry-redirects.mjs';
+
 const BASE = process.env.SEO_CHECK_BASE_URL || 'https://www.bionixus.com';
-const MUST_BE_200_NO_REDIRECT = ['/', '/de/', '/es/'];
+const MUST_BE_200_NO_REDIRECT = ['/', '/de/', '/es/', '/quantitative-healthcare-market-research'];
+const STANDALONE_MUST_NOT_LEGACY_REDIRECT = ['/quantitative-healthcare-market-research'];
 const REQUEST_TIMEOUT_MS = 15000;
 
 async function checkUrl(pathname) {
@@ -33,6 +36,15 @@ async function checkUrl(pathname) {
 async function main() {
   const results = await Promise.all(MUST_BE_200_NO_REDIRECT.map(checkUrl));
   const failures = [];
+
+  for (const pathname of STANDALONE_MUST_NOT_LEGACY_REDIRECT) {
+    const target = resolveLegacyCountryIndustryMarketResearchRedirect(pathname);
+    if (target !== null) {
+      failures.push(
+        `${pathname} must not legacy-redirect (got ${target}) — check STANDALONE_LEGACY_EXCLUSIONS`,
+      );
+    }
+  }
 
   for (const result of results) {
     if (!result.ok) {
