@@ -375,14 +375,6 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
     return { pageType: 'media-kit' };
   }
 
-  if (path === '/bionixus-industries/insights' || path === '/bionixus-industries/insights/') {
-    return {
-      pageType: 'redirect',
-      statusCode: 301,
-      redirectTo: '/bionixus-industries#insights',
-    };
-  }
-
   if (path === '/bionixus-industries' || path === '/bionixus-industries/') {
     let industriesInsights: BlogPost[] = [];
     try {
