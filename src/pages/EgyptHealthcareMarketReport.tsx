@@ -16,6 +16,11 @@ import {
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
 import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+import {
+  EGYPT_CAIRO_HOSPITAL_CLUSTERS,
+  EGYPT_HEALTHCARE_2026_CAIRO_FAQ,
+} from '@/data/egyptHealthcare2026CairoSeo';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -58,6 +63,8 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
 const REPORT_CONVERSION = getStandaloneReportConfig('/egypt-healthcare-market-report');
 const FAQ_SECTION_ID = 'egypt-healthcare-market-faq';
 
+const EGYPT_REPORT_FAQ_ITEMS = [...REPORT_FAQ_ITEMS, ...EGYPT_HEALTHCARE_2026_CAIRO_FAQ];
+
 const jsonLd = [
   buildBreadcrumbSchema(breadcrumbItems),
   {
@@ -71,14 +78,14 @@ const jsonLd = [
       logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
     },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-07-12',
     mainEntityOfPage: 'https://www.bionixus.com/egypt-healthcare-market-report',
   },
   {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     url: `https://www.bionixus.com/egypt-healthcare-market-report#${FAQ_SECTION_ID}`,
-    mainEntity: REPORT_FAQ_ITEMS.map((item) => ({
+    mainEntity: EGYPT_REPORT_FAQ_ITEMS.map((item) => ({
       '@type': 'Question',
       name: item.question,
       acceptedAnswer: { '@type': 'Answer', text: item.answer },
@@ -90,7 +97,7 @@ const jsonLd = [
     countryName: "Egypt",
     marketSlug: "egypt",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
+    modifiedDate: "2026-07-12",
   })
 ];
 
@@ -122,6 +129,20 @@ const EgyptHealthcareMarketReport = () => {
             { value: '~9%', label: 'Pharma CAGR 2026–2030' },
           ]}
         />
+
+        <section className="section-padding py-8 bg-background border-b border-border/60">
+          <div className="container-wide max-w-4xl mx-auto">
+            <GeoLLMAnswerBlock
+              question="How big is the Egypt healthcare and pharmaceutical market in 2026?"
+              answer="BioNixus estimates Egypt's healthcare market at USD 25–30 billion and the pharmaceutical market at USD 4.5–5.5 billion in 2026. Universal Health Insurance expansion, EDA registration reforms, and Cairo's tertiary hospital network are the primary drivers of branded and specialty uptake."
+              points={[
+                '105 million population — largest healthcare market in Africa and the Arab world',
+                '120+ local manufacturers supply ~93% of pharmaceutical volume domestically',
+                'UHI positive-list listing determines reimbursed prescribing across enrolled governorates',
+              ]}
+            />
+          </div>
+        </section>
 
         <ReportContentWithAside config={REPORT_CONVERSION}>
         <section className="section-padding bg-cream-dark" id="executive-summary">
@@ -204,6 +225,33 @@ const EgyptHealthcareMarketReport = () => {
 
         <MarketIntelligenceSections marketSlug="egypt" countryName="Egypt" variant="healthcare" />
 
+        <section className="section-padding" id="cairo-hospitals">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Cairo hospitals healthcare 2023–2026: hospital clusters and pharma access
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Cairo remains Egypt&apos;s clinical and regulatory hub — where university tertiary centres,
+              private hospital groups, and new capital corridor facilities concentrate insured volumes under
+              universal health insurance. Pharmaceutical teams planning Egypt launches should map prescribing
+              and formulary behaviour by cluster, not treat Greater Cairo as a single average market. For the
+              wider Egypt overview, see our{' '}
+              <Link to="/blog/healthcare-overview-egypt-market-2026" className="text-primary hover:underline font-medium">
+                Egypt healthcare market 2026 briefing
+              </Link>
+              .
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {EGYPT_CAIRO_HOSPITAL_CLUSTERS.map(({ name, detail }) => (
+                <div key={name} className="bg-white rounded-xl border border-border p-5 shadow-sm">
+                  <h3 className="text-base font-semibold text-foreground mb-2">{name}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{detail}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="section-padding bg-cream-dark" id="therapy-areas">
           <div className="container-wide max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Egypt Pharmaceutical Therapy Areas 2026</h2>
@@ -225,7 +273,12 @@ const EgyptHealthcareMarketReport = () => {
           </div>
         </section>
 
-        <FAQSection sectionId={FAQ_SECTION_ID} title="Egypt healthcare market 2026 — pharma, EDA, UHI, and commercial strategy FAQ" items={REPORT_FAQ_ITEMS} className="bg-muted/30" />
+        <FAQSection
+          sectionId={FAQ_SECTION_ID}
+          title="Egypt healthcare market 2026 — pharma, EDA, UHI, and commercial strategy FAQ"
+          items={EGYPT_REPORT_FAQ_ITEMS}
+          className="bg-muted/30"
+        />
         </ReportContentWithAside>
         <ReportConsultationBand config={REPORT_CONVERSION} />
         </main>
