@@ -174,7 +174,7 @@ const GccMarketAccessGuide = () => {
             description: 'Complete guide to pharmaceutical drug registration, pricing, and reimbursement across the 6 GCC countries: Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman.',
             url: citationUrl,
             datePublished: '2026-01-15',
-            dateModified: '2026-06-16',
+            dateModified: '2026-07-12',
             author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
             publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
           })}
@@ -494,6 +494,14 @@ const GccMarketAccessGuide = () => {
                 </Link>{' '}
                 for segment-level biologics and injectables intelligence that feeds access narratives.
               </p>
+              <p>
+                When preparing SFDA Economic Evaluation Submission (EES) dossiers, teams should pre-align clinical
+                comparators, budget-impact assumptions, and local epidemiology with committee objections surfaced
+                in payer research — GCC authorities increasingly reject imported EU models that ignore Gulf
+                hospital formularies, tender price corridors, or biosimilar substitution rules. BioNixus runs
+                objection-mapping workshops with hospital pharmacists and procurement officers so HEOR narratives
+                survive first-cycle review rather than triggering open-ended deficiency letters.
+              </p>
             </div>
           </div>
         </section>
@@ -624,6 +632,10 @@ const GccMarketAccessGuide = () => {
             </h2>
             <div className="space-y-4">
               {[
+                {
+                  q: 'What is SFDA Economic Evaluation Submission (EES) and when is it required?',
+                  a: 'SFDA EES is Saudi Arabia\'s formal pharmacoeconomic review pathway for selected high-cost and specialty medicines. Teams submit cost-effectiveness or budget-impact evidence alongside clinical dossiers; committees benchmark comparators, local epidemiology, and tender price corridors. BioNixus designs payer research and HEOR modules so EES narratives reflect real hospital formulary and NUPCO procurement constraints.',
+                },
                 {
                   q: 'How long does pharmaceutical registration take in Saudi Arabia (SFDA)?',
                   a: 'SFDA registration typically takes 8–18 months depending on product type: 8–12 months for generics (ANDA), 12–18 months for new drugs (NDA), and potentially longer for biologics and biosimilars. A local authorised representative (scientific office) is mandatory for foreign companies.',
