@@ -223,8 +223,13 @@ export const PREMIUM_INDUSTRIES_CSS = `
 .bx-ind .bx-cover-card h3 { font-family: var(--bx-font-display); font-size: 20px; font-weight: 500; color: var(--bx-navy); margin: 0 0 6px; }
 .bx-ind .bx-cover-knows { font-size: 13px; color: var(--bx-gray-500); font-weight: 300; margin: 0 0 16px; line-height: 1.6; }
 .bx-ind .bx-chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.bx-ind .bx-chip { font-size: 12.5px; font-weight: 500; color: var(--bx-navy); background: var(--bx-cream); border: 1px solid var(--bx-gray-100); border-radius: 999px; padding: 6px 14px; text-decoration: none; transition: all 0.25s; }
+.bx-ind .bx-chip { font-size: 12.5px; font-weight: 500; color: var(--bx-navy); background: var(--bx-cream); border: 1px solid var(--bx-gray-100); border-radius: 999px; padding: 6px 14px; text-decoration: none; transition: all 0.25s; display: inline-flex; align-items: center; gap: 6px; }
 .bx-ind .bx-chip:hover { border-color: var(--bx-gold); color: #A8872E; background: #FDF6E3; }
+.bx-ind .bx-chip--report { border-color: rgba(201,168,76,0.55); background: linear-gradient(180deg, #FDF6E3, var(--bx-cream)); }
+.bx-ind .bx-chip--report:hover { border-color: var(--bx-gold); }
+.bx-ind .bx-chip-tag { font-size: 8.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #A8872E; opacity: 0.85; }
+.bx-ind .bx-chip-legend { font-size: 12px; color: rgba(255,255,255,0.4); font-weight: 300; margin: 0 0 16px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.bx-ind .bx-chip-legend .bx-chip-tag { color: #C9A84C; }
 
 /* ===== COUNTRY GRID (pharma segment) ===== */
 .bx-ind .bx-country-grid { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
