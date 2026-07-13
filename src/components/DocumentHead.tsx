@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import FaviconLinks from '@/components/FaviconLinks';
 import { seoByLanguage, getCanonicalPath, getCanonicalUrl, getHreflangLinks, getGeoMeta, defaultOgImageUrl, getOgLocale, getOgLocaleAlternates } from '@/lib/seo';
 import { normalizeSeoTitle } from '@/lib/seo-meta';
 import type { Language } from '@/lib/i18n';
@@ -431,18 +432,22 @@ const DocumentHead = () => {
 
   if (routeProvidesOwnDocumentHead(pathname || '/')) {
     return (
-      <Helmet>
-        <meta name="llm-access" content="allow" />
-        <meta httpEquiv="content-language" content={contentLanguage} />
-        {gscId ? <meta name="google-site-verification" content={gscId} /> : null}
-        <link rel="dns-prefetch" href="https://cdn.sanity.io" />
-        <link rel="preconnect" href="https://cdn.sanity.io" crossOrigin="" />
-      </Helmet>
+      <>
+        <FaviconLinks />
+        <Helmet>
+          <meta name="llm-access" content="allow" />
+          <meta httpEquiv="content-language" content={contentLanguage} />
+          {gscId ? <meta name="google-site-verification" content={gscId} /> : null}
+          <link rel="dns-prefetch" href="https://cdn.sanity.io" />
+          <link rel="preconnect" href="https://cdn.sanity.io" crossOrigin="" />
+        </Helmet>
+      </>
     );
   }
 
   return (
     <>
+      <FaviconLinks />
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />

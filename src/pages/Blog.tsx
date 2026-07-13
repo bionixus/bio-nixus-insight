@@ -44,6 +44,12 @@ function buildBlogCollectionSchema(
       '@type': 'Organization',
       name: 'BioNixus',
       url: 'https://www.bionixus.com',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.bionixus.com/bionixus-logo.webp',
+        width: 512,
+        height: 512,
+      },
     },
     ...(postCount > 0
       ? {

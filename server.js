@@ -10,6 +10,7 @@ import { formatMetaDescriptionInRange } from './src/server/seo-meta.js';
 import { normalizeOgCardPath, renderOgCardSvg } from './lib/og-card-svg.mjs';
 import { buildLcpPreloadTag, getClientAssetHints } from './lib/ssr-client-asset-hints.mjs';
 import { resolveLegacyCountryIndustryMarketResearchRedirect } from './lib/country-industry-redirects.mjs';
+import { ensureFaviconTags } from './lib/faviconHead.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === 'production';
@@ -580,6 +581,20 @@ function ensureCanonicalTag(html, pathname) {
 }
 
 /**
+ * Serve a static HTML file with favicon tags guaranteed (safety net for conf pages).
+ */
+function sendHtmlFile(res, absolutePath) {
+  try {
+    const html = fs.readFileSync(absolutePath, 'utf8');
+    res.type('html').send(ensureFaviconTags(html));
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('sendHtmlFile failed:', absolutePath, error);
+    res.status(404).type('text').send('Not found');
+  }
+}
+
+/**
  * JSON.stringify rejects BigInt and other exotic values → uncaught SSR 500 during HTML injection.
  */
 function serializeInitialDataForInlineScript(initialData) {
@@ -713,14 +728,14 @@ async function startServer() {
     return next();
   });
   app.get('/strategic-portfolio', (_req, res) => {
-    res.type('html').sendFile(strategicPortfolioAbsolutePath);
+    sendHtmlFile(res, strategicPortfolioAbsolutePath);
   });
   app.get('/ar/strategic-portfolio/', (req, res, next) => {
     if (req.path.endsWith('/')) return res.redirect(301, '/ar/strategic-portfolio');
     return next();
   });
   app.get('/ar/strategic-portfolio', (_req, res) => {
-    res.type('html').sendFile(strategicPortfolioArAbsolutePath);
+    sendHtmlFile(res, strategicPortfolioArAbsolutePath);
   });
 
   app.get('/life-sciences-diagnostics-market-research', (_req, res) => {
@@ -738,7 +753,7 @@ async function startServer() {
     return next();
   });
   app.get('/clinical-diagnostics-market-assessment-proposal', (_req, res) => {
-    res.type('html').sendFile(clinicalDiagnosticsProposalPath);
+    sendHtmlFile(res, clinicalDiagnosticsProposalPath);
   });
 
   /** Static comparison page — same pattern as strategic-portfolio. */
@@ -751,7 +766,7 @@ async function startServer() {
     return next();
   });
   app.get('/bionixus-vs-iqvia-mena', (_req, res) => {
-    res.type('html').sendFile(vsIqviaAbsolutePath);
+    sendHtmlFile(res, vsIqviaAbsolutePath);
   });
 
   /** Static KOL mapping page. */
@@ -764,7 +779,7 @@ async function startServer() {
     return next();
   });
   app.get('/kol-mapping-saudi-arabia-oncology', (_req, res) => {
-    res.type('html').sendFile(kolMappingAbsolutePath);
+    sendHtmlFile(res, kolMappingAbsolutePath);
   });
 
   /** Static physician survey page. */
@@ -777,7 +792,7 @@ async function startServer() {
     return next();
   });
   app.get('/physician-survey-saudi-arabia', (_req, res) => {
-    res.type('html').sendFile(physicianSurveyAbsolutePath);
+    sendHtmlFile(res, physicianSurveyAbsolutePath);
   });
 
   /** Static SFDA market access page. */
@@ -790,7 +805,7 @@ async function startServer() {
     return next();
   });
   app.get('/sfda-market-access-strategy-saudi-arabia', (_req, res) => {
-    res.type('html').sendFile(sfdaAccessAbsolutePath);
+    sendHtmlFile(res, sfdaAccessAbsolutePath);
   });
 
   /** Static biosimilar market entry page. */
@@ -803,7 +818,7 @@ async function startServer() {
     return next();
   });
   app.get('/biosimilar-market-entry-saudi-arabia', (_req, res) => {
-    res.type('html').sendFile(biosimilarAbsolutePath);
+    sendHtmlFile(res, biosimilarAbsolutePath);
   });
 
   /** Static IQVIA alternative page. */
@@ -816,7 +831,7 @@ async function startServer() {
     return next();
   });
   app.get('/iqvia-alternative', (_req, res) => {
-    res.type('html').sendFile(iqviaAltAbsolutePath);
+    sendHtmlFile(res, iqviaAltAbsolutePath);
   });
 
   /** Static Dubai pharma market research page. */
@@ -829,7 +844,7 @@ async function startServer() {
     return next();
   });
   app.get('/pharmaceutical-market-research-dubai', (_req, res) => {
-    res.type('html').sendFile(dubaiPharmaAbsolutePath);
+    sendHtmlFile(res, dubaiPharmaAbsolutePath);
   });
 
   /** Static Kantar Health alternative GCC page. */
@@ -842,7 +857,7 @@ async function startServer() {
     return next();
   });
   app.get('/kantar-health-alternative-gcc', (_req, res) => {
-    res.type('html').sendFile(kantarAltAbsolutePath);
+    sendHtmlFile(res, kantarAltAbsolutePath);
   });
 
   /** Static GfK Alternative Egypt page. */
@@ -855,7 +870,7 @@ async function startServer() {
     return next();
   });
   app.get('/gfk-alternative-egypt', (_req, res) => {
-    res.type('html').sendFile(gfkAltEgyptAbsolutePath);
+    sendHtmlFile(res, gfkAltEgyptAbsolutePath);
   });
 
   let vite;
@@ -1063,12 +1078,14 @@ async function startServer() {
       // for real users and corrupts hydration of the surrounding subtree (the
       // "Expected server HTML to contain a matching <div> in <main>" warning). Page-level
       // imagery/social cards are handled inside the React tree and via OpenGraph meta tags.
-      const localizedPage = ensureCanonicalTag(
-        ensureMetaDescriptionTag(
-          ensureTitleTag(applyHtmlLang(page, req.path, initialData), req.path),
+      const localizedPage = ensureFaviconTags(
+        ensureCanonicalTag(
+          ensureMetaDescriptionTag(
+            ensureTitleTag(applyHtmlLang(page, req.path, initialData), req.path),
+            req.path,
+          ),
           req.path,
         ),
-        req.path,
       );
 
       res.status(statusCode).set({ 'Content-Type': 'text/html' }).end(localizedPage);
