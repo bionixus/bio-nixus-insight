@@ -237,7 +237,17 @@ function portableTextToHTML(content) {
 
 export default async function handler(req, res) {
   const rawSlug = req.query.slug;
-  const slug = decodeURIComponent(Array.isArray(rawSlug) ? rawSlug[0] : rawSlug || '');
+  const rawSlugValue = Array.isArray(rawSlug) ? rawSlug[0] : rawSlug || '';
+  // decodeURIComponent throws on malformed/double-encoded percent sequences (seen from
+  // some crawler UAs on non-Latin slugs). This runs before the handler's own try/catch,
+  // so an uncaught throw here escapes as a raw platform 500 instead of our HTML fallback.
+  let slug;
+  try {
+    slug = decodeURIComponent(rawSlugValue);
+  } catch (error) {
+    console.error('api/blog/[slug]: failed to decode slug, using raw value:', rawSlugValue, error);
+    slug = rawSlugValue;
+  }
 
   if (!slug) {
     return res.status(400).json({ error: 'Missing slug' });
