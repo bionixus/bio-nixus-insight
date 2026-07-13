@@ -75,6 +75,9 @@ export function buildProfessionalServiceSchema() {
       'Market access research',
       'KOL and stakeholder mapping',
       'Health economics and outcomes research',
+      'Budget Impact Analysis',
+      'Cost-Effectiveness Analysis',
+      'Health Technology Assessment',
     ],
   };
 }

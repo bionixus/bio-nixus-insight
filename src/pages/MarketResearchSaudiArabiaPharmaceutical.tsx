@@ -474,6 +474,23 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
               when registration and listing milestones sit on the same critical path.
             </p>
             <p>
+              EES evidence breaks into four coordinated pieces that BioNixus scopes as one program rather than
+              separate engagements:{' '}
+              <Link to="/budget-impact-model-saudi-arabia" className="text-primary underline font-medium">
+                budget impact analysis
+              </Link>{', '}
+              <Link to="/cost-effectiveness-analysis-saudi-arabia" className="text-primary underline font-medium">
+                cost-effectiveness analysis
+              </Link>{', '}
+              <Link to="/hta-studies-saudi-arabia" className="text-primary underline font-medium">
+                HTA studies
+              </Link>{', and '}
+              <Link to="/saudi-payer-market-access-research" className="text-primary underline font-medium">
+                payer market access research
+              </Link>{' '}
+              for the NUPCO tender and MOH/NGHA formulary conversations that follow registration.
+            </p>
+            <p>
               Vision 2030 continues to reshape healthcare infrastructure, local manufacturing ambition, and digital
               health adoption—creating both opportunity and operational complexity. Winning KSA strategies connect policy
               direction to account-level behaviour: which hospitals adopt first, how NUPCO tender windows align with
