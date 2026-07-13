@@ -18,6 +18,7 @@ export default function BudgetImpactModelSaudiArabia() {
         { to: '/heor-consulting-saudi-arabia', label: 'HEOR consulting Saudi Arabia', primary: true },
         { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Healthcare market research company in Saudi Arabia', primary: true },
         { to: '/saudi-payer-market-access-research', label: 'Saudi payer market access research' },
+        { to: '/cost-effectiveness-analysis-gcc', label: 'Cost effectiveness analysis GCC' },
         { to: '/contact', label: 'Request budget-impact scope' },
         { to: '/market-research-healthcare', label: 'Healthcare market research services' },
         { to: '/methodology', label: 'Our research methodology' },

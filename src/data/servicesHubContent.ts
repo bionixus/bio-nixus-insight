@@ -79,9 +79,9 @@ export const HEALTHCARE_SERVICES: HealthcareService[] = [
     slug: 'market-access',
     title: 'Market access & HTA strategy',
     summary:
-      'Evidence-led pricing, payer engagement, and value-story testing for the US, EU5, UK, and GCC — with HTA and reimbursement support mapped to NICE, G-BA, HAS, CMS, and Gulf health authority expectations.',
+      'Evidence-led pricing, payer engagement, and value-story testing for the US, EU5, UK, and GCC — with HTA, cost-effectiveness, budget impact, and market access strategy support mapped to NICE, G-BA, HAS, CMS, SFDA, and Gulf health authority expectations.',
     icon: Landmark,
-    tags: ['HTA', 'Pricing', 'GCC access'],
+    tags: ['HTA', 'CEA', 'BIA', 'Market Access'],
   },
   {
     slug: 'competitive-intelligence',

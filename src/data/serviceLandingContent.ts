@@ -1547,6 +1547,7 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
         'Timing the model to SFDA EES submission windows and NUPCO tender cycles matters as much as the model content itself. A technically sound model delivered after a tender scoring window has closed, or built without reference to the specific evidence checklist an EES reviewer will apply, forces sponsors into reactive rework under deadline pressure. BioNixus scopes the submission calendar before model build begins so the deliverable lands ready for the gate it is meant to clear rather than requiring a rushed second pass.',
         'Budget impact evidence in Saudi Arabia increasingly has to satisfy multiple internal audiences at once — market access teams defending the commercial case, medical affairs validating clinical assumptions, and finance stakeholders stress-testing the numbers before the model ever reaches an external committee. A model built for one audience and translated for the others after the fact loses credibility when the translation introduces inconsistencies; BioNixus builds the assumption architecture once and frames outputs for each internal reviewer from the same underlying model.',
         "Cross-portfolio sponsors running budget impact work across multiple Saudi indications or across the wider GCC need model architecture that stays comparable without pretending Saudi Arabia behaves like the rest of the Gulf. SFDA EES requirements, NUPCO's national tender structure, and the scale of MOH and NGHA institutional buyers are Kingdom-specific; a model built to be portable across GCC markets should isolate Saudi-specific inputs cleanly rather than blending them into a single regional average that satisfies no single regulator.",
+        "SFDA's Economic Evaluation System classifies budget impact analysis alongside cost-minimisation analysis as a 'Partial Economic Study' — the lighter of two evidence tiers, distinct from the 'Full Economic Study' tier that covers cost-utility and cost-benefit analysis. In practice this means a budget impact model rarely stands alone: where a therapy's clinical and cost profile triggers a Full Economic Study requirement, EES reviewers expect the budget impact model to arrive as a mandatory companion to the cost-effectiveness or health technology assessment dossier, not as a substitute for it. Sponsors who scope only the budget impact model because it is the smaller, faster deliverable often discover mid-review that the same submission needs a cost-effectiveness analysis alongside it — a gap that costs weeks to close under committee deadline pressure. BioNixus scopes budget impact and cost-effectiveness work together from the outset precisely because SFDA's own classification treats them as a paired requirement rather than independent options, even when only one appears in the initial submission brief.",
       ],
     },
     marketContext: {
@@ -1706,6 +1707,11 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
         answer:
           "Yes. For sponsors running budget impact or HEOR work across multiple Gulf markets, BioNixus builds the Saudi model as a structurally comparable anchor — shared modeling logic, variable definitions, and reporting formats — while keeping SFDA EES, NUPCO, MOH, and NGHA-specific inputs isolated in Saudi-specific modules rather than blended into a single regional average. This matters because Saudi Arabia's regulatory and procurement architecture is genuinely different from UAE, Kuwait, or Qatar dynamics, and a model built to be portable across the GCC by averaging away those differences ends up satisfying no single market's reviewers. The harmonized architecture lets regional portfolio teams compare budget-impact exposure and negotiating risk across markets for portfolio-level planning, while the Saudi-specific module stays fully calibrated for the SFDA, NUPCO, MOH, and NGHA conversations it actually needs to survive.",
       },
+      {
+        question: 'How does budget impact analysis relate to HTA and cost-effectiveness analysis in Saudi Arabia?',
+        answer:
+          "SFDA's Economic Evaluation System groups budget impact analysis with cost-minimisation analysis as a 'Partial Economic Study' — a narrower evidence requirement than the 'Full Economic Study' tier, which covers cost-utility (cost-effectiveness) and cost-benefit analysis. Health technology assessment is the umbrella review process both tiers feed into: reviewers use the budget impact model to answer the affordability question — what the therapy will cost NUPCO, MOH, or NGHA over the next several years — while a cost-effectiveness analysis answers a different question, whether the health outcomes gained justify that cost. For most submissions requiring a full economic evaluation, SFDA expects the budget impact model to arrive as a mandatory companion to the cost-effectiveness dossier, not as a substitute for it. BioNixus scopes budget impact and cost-effectiveness work as one coordinated HEOR evidence package for exactly this reason, so sponsors are not caught scoping a full economic evaluation only after a budget-impact-only submission stalls in review.",
+      },
     ],
   },
   'saudi-payer-market-access-research': {
@@ -1719,6 +1725,7 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
         "The private insurance channel carries its own objection architecture that public-sector evidence rarely anticipates. Insurers regulated under the mandatory health insurance framework build benefit packages and pre-authorization protocols around actuarial cost exposure, not only clinical guideline alignment — a therapy can be SFDA-approved and NUPCO-listed for government facilities while remaining outside a private insurer's standard benefit schedule, exposed instead to case-by-case pre-authorization or co-payment escalation. Depth research with private-sector medical directors and claims-policy teams at insurers such as Bupa Arabia, Tawuniya, and MedGulf surfaces which cost triggers, step-therapy requirements, or diagnostic documentation thresholds actually gate reimbursement, information that public-sector-only evidence packages do not capture and that global dossiers virtually never address.",
         "Hospital-level accreditation and governance also shape which evidence a payer conversation needs. CBAHI (the Saudi Central Board for Accreditation of Healthcare Institutions) accreditation status influences which facilities can participate in certain NUPCO-tendered programs and how MOH, NGHA, and private hospital groups structure internal pharmacy and therapeutics review, meaning payer research conducted inside accredited teaching and tertiary centers should expect a different committee cadence and documentation standard than research conducted in smaller regional MOH facilities. BioNixus maps accreditation and governance context into feasibility so stakeholder recruitment reflects the institutional layer that will actually apply the evidence, rather than treating every hospital committee as interchangeable.",
         "Vision 2030's healthcare transformation program is actively reshaping this dual-channel structure, and payer research fielded today should account for where that reshaping is headed, not only where it stands. Corporatization and privatization of government hospital operations, expansion of mandatory health insurance coverage toward more of the resident population, and the growth of private hospital groups such as Dr. Sulaiman Al Habib Medical Group and Saudi German Hospitals are gradually shifting patient volume and payer influence from a purely NUPCO-centric model toward one where private insurance and privatized hospital procurement carry more weight. Evidence programs built only around today's channel mix risk being stale by the time a launch or reimbursement decision lands; BioNixus builds channel assumptions that are explicit and revisitable rather than implicit and fixed.",
+        "NUPCO's tender scoring has historically weighed price, supply-security, and local-content criteria as the dominant inputs, but that calculus is shifting since SFDA's Economic Evaluation System made pharmacoeconomic and budget-impact evidence mandatory from 1 July 2025. A NUPCO technical committee increasingly expects to see the same economic-evaluation outcome that cleared SFDA registration — budget impact analysis at minimum, cost-effectiveness analysis where a full economic study was triggered — referenced in the tender submission itself, not treated as a separate registration-only exercise with no bearing on procurement. Sponsors who present a NUPCO pricing and volume case disconnected from the economic evidence that supported SFDA registration risk a tender evaluator asking why the numbers do not visibly connect. BioNixus builds payer market access strategy with direct reference to whatever budget-impact or cost-effectiveness evidence a sponsor has already developed for SFDA, rather than treating procurement strategy and economic evaluation as unrelated workstreams.",
       ],
     },
     marketContext: {
@@ -1869,6 +1876,11 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
         question: 'Can research distinguish MOH, NGHA, and private hospital networks?',
         answer:
           "Yes. Recruitment and analysis are channel-tagged by institutional network — MOH tertiary and regional facilities, NGHA facilities and King Abdulaziz Medical City, KFSH&RC, and private hospital groups such as Dr. Sulaiman Al Habib Medical Group and Saudi German Hospitals — because formulary governance, budget authority, and payer mix differ materially across these networks even when a therapy carries the same NUPCO tender status. Government-network committees weigh NUPCO-set pricing and MOH or NGHA clinical-protocol alignment, while private hospital committees weigh insurer reimbursement status and patient out-of-pocket affordability alongside clinical evidence, so a single undifferentiated hospital-stakeholder sample would blur two genuinely different decision logics.",
+      },
+      {
+        question: 'Does Saudi market access require an HTA submission?',
+        answer:
+          "Not every product requires a full health technology assessment, but the threshold for when one is expected has narrowed since SFDA's Economic Evaluation System became mandatory in July 2025. High-cost, chronic, oncology, or specialty products are the categories most likely to trigger a full economic evaluation — and once that tier applies, NUPCO, MOH, and NGHA reviewers increasingly expect the market access case to reference that evidence directly rather than argue price and volume in isolation from the economic case that supported registration. For lower-budget-impact products, a budget impact analysis alone may satisfy the requirement without a full cost-effectiveness dossier. BioNixus scopes market access strategy against whatever tier of economic evidence a specific product actually requires, rather than assuming every submission needs the same depth of HTA evidence.",
       },
     ],
   },
@@ -2220,109 +2232,451 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
       },
     ],
   },
+  'hta-studies-saudi-arabia': {
+    hubLink: { to: '/heor-consulting-saudi-arabia', label: 'HEOR consulting Saudi Arabia' },
+    regulatory: {
+      heading: 'The SFDA health technology assessment framework in Saudi Arabia',
+      paragraphs: [
+        "Health technology assessment (HTA) in Saudi Arabia runs on the same regulatory backbone as the country's economic-evaluation requirements: SFDA's Economic Evaluation Studies Guideline, published 10 July 2024, and the Pharmacoeconomic Submission Portal Manual, published January 2025. General dossier requirements under this framework became mandatory in January 2025, and the economic-evaluation component that sits at the core of HTA review became mandatory from 1 July 2025. A product cleared today is reviewed against a current, published guideline — not an informal or evolving expectation — which means dossier structure, evidence tier, and comparator justification all have to match what the guideline specifies rather than what a global HTA dossier template happens to produce.",
+        "SFDA's framework sorts economic evidence supporting an HTA review into two tiers. Budget impact analysis and cost-minimisation analysis are classified as \"Partial Economic Studies\" — a narrower evidence requirement. Cost-utility analysis (cost-effectiveness expressed as cost per QALY) and cost-benefit analysis are classified as \"Full Economic Studies,\" the tier expected where a product's clinical and cost profile makes comparative effectiveness against standard of care a material consideration — typically chronic-disease, oncology, and specialty therapies. Which tier a specific submission needs to satisfy is one of the first questions an HTA strategy has to answer, since scoping the wrong tier either under-prepares a submission that needed the fuller evidence base or over-invests in analysis a lighter-tier product did not require.",
+        "An HTA dossier is built from more than the economic model alone. SFDA's framework expects a systematic literature review establishing the clinical evidence base, the economic evaluation itself (Partial or Full, as the product's profile requires), a budget impact analysis as a mandatory companion to any Full Economic Study, and comparator justification consistent with SFDA's pricing procedure. Each of these components is reviewed together, not as independent submissions, which is why an HTA strategy scoped around the economic model alone — without the systematic literature review and comparator justification built to the same standard — routinely generates review queries that a properly sequenced dossier would have pre-empted.",
+        "Comparator selection sits at the center of HTA review because it anchors both the clinical-value argument and the pricing procedure the dossier also has to satisfy. SFDA's pricing framework draws on external reference pricing across roughly sixteen international markets to set the public list price, and an HTA dossier's comparator choice has to be consistent with that reference-pricing basket as well as with what Saudi clinical practice actually uses — a comparator selected purely because it produces a favorable cost-effectiveness result, without regard to reference-pricing or clinical-practice consistency, weakens the credibility of the entire dossier.",
+        "Managed entry agreements are an increasingly common feature of Saudi HTA outcomes where a product's evidence carries meaningful uncertainty. Both financial arrangements (discounts, price-volume caps) and outcomes-based arrangements tied to a measurable clinical result are used to bridge a gap between a sponsor's claimed value and a payer's willingness to accept that value without further evidence — a commonly cited example structures rebates around a hepatitis C treatment achieving a sustained virologic response threshold of 95% or higher. Where BioNixus identifies meaningful uncertainty in a product's HTA evidence base during scoping, managed entry agreement design is built as a parallel workstream rather than treated as a fallback only considered after a dossier is rejected.",
+        "NUPCO sits downstream of the HTA and registration process as the centralized public-sector procurement body — the PIF-owned National Unified Procurement Company, established 2009, with a government tender market estimated at roughly SAR 21 billion. A favorable HTA outcome and SFDA registration do not automatically translate into NUPCO formulary inclusion or favorable tender pricing; NUPCO's technical committee reviews the HTA and economic evidence alongside volume commitments and supply-security criteria that sit outside SFDA's own review scope. An HTA strategy that stops at registration, without a plan for how the same evidence carries into a NUPCO tender conversation, leaves value on the table that the dossier has already paid to build.",
+        "Regional MOH formulary committees and National Guard Health Affairs (NGHA) layer additional institutional review on top of national HTA and registration clearance. A product cleared nationally can still stall at the institutional level if the HTA evidence package does not speak to hospital-specific budget constraints and patient volumes — which is part of why BioNixus scopes HTA strategy with an explicit view toward how the evidence will be reused, or needs to be adapted, for MOH regional and NGHA institutional review after national clearance.",
+      ],
+    },
+    marketContext: {
+      heading: 'Why Saudi Arabia has the GCC\'s most consequential HTA outcomes',
+      paragraphs: [
+        ...GCC_MARKET_PARAS.slice(0, 2),
+        "Saudi Arabia accounts for roughly USD 9.4 billion of the GCC's approximately USD 23.7 billion 2024 pharmaceutical spend, and Vision 2030's Health Sector Transformation Program is the explicit policy driver behind the shift toward mandatory economic evaluation and a more formalized HTA function — the stated goal of moving from volume-based to value-based healthcare financing is precisely why HTA evidence, not clinical efficacy alone, now gates registration, pricing, and reimbursement decisions in a way it did not a few years ago.",
+        "What governs HTA in Saudi Arabia is best described as a national HTA function operating within SFDA, with the country's formal HTA framework continuing to be formalized rather than fixed. Public documentation of the exact review body, its complete institutional history, and its procedural timelines remains thinner than for long-established HTA agencies elsewhere — BioNixus deliberately avoids asserting specifics that are not yet consistently published, and advises sponsors to confirm current procedural detail against SFDA's published guidance at the time of each submission rather than relying on a fixed assumption carried over from a prior engagement or a different market's HTA conventions.",
+        "It is worth stating plainly what does not govern HTA in Saudi Arabia: CBAHI, the Saudi Central Board for Accreditation of Healthcare Institutions, operating under the Saudi Health Council, is a healthcare quality and accreditation body. It has no role in reviewing an HTA dossier, no role in setting drug pricing, and no role in reimbursement decisions — those functions sit with SFDA and NUPCO. CBAHI accreditation status can influence which facilities participate in certain NUPCO-tendered programs, which is a plausible source of the confusion, but an HTA strategy should not treat CBAHI as part of the review or decision pathway.",
+        "Because Saudi Arabia's HTA outcomes gate access to the region's largest single pharmaceutical market, the commercial consequences of a stalled or rejected HTA submission are proportionally larger here than almost anywhere else in the Gulf — which is why BioNixus recommends sponsors invest the most rigor in Saudi-specific HTA strategy, rather than treating it as one submission among several GCC markets to be handled with a shared regional template.",
+      ],
+    },
+    services: {
+      heading: 'HTA studies services BioNixus delivers in Saudi Arabia',
+      items: [
+        {
+          title: 'HTA evidence-tier assessment and dossier scoping',
+          description:
+            'An early assessment of whether a specific product genuinely requires SFDA\'s Full Economic Study tier or can be supported by the lighter Partial Economic Study tier, so the HTA strategy — and the analytical investment behind it — is scoped to what the product\'s profile actually requires rather than a default assumption.',
+        },
+        {
+          title: 'Systematic literature review for HTA dossiers',
+          description:
+            'Structured literature review establishing the clinical evidence base an HTA dossier depends on — comparator effectiveness data, epidemiology, and existing economic evaluations — built to a standard SFDA reviewers can trace and verify, not a generic global review repurposed for a Saudi submission.',
+        },
+        {
+          title: 'Comparator and reference-pricing justification',
+          description:
+            'Comparator selection and justification consistent with both Saudi clinical practice and SFDA\'s external reference-pricing framework across the roughly sixteen international markets it draws on, so the HTA dossier\'s value argument and the pricing procedure it needs to support are built on the same assumptions.',
+        },
+        {
+          title: 'Economic evaluation component (BIA and/or CEA)',
+          description:
+            'The Partial Economic Study (budget impact analysis) or Full Economic Study (cost-utility analysis) component the product\'s tier requires, built as an integrated part of the HTA dossier rather than a standalone deliverable disconnected from the clinical evidence review.',
+        },
+        {
+          title: 'Managed entry agreement design',
+          description:
+            'Financial and outcomes-based risk-sharing structures scoped alongside the HTA dossier for products where evidence uncertainty is likely to be a barrier to a straightforward review outcome, designed as a parallel workstream rather than a reactive fallback.',
+        },
+        {
+          title: 'Dossier writing and SFDA submission support',
+          description:
+            'Full HTA dossier preparation — systematic literature review, economic evaluation, comparator justification, and limitation statements — structured for the Pharmacoeconomic Submission Portal, plus preparation of responses to SFDA clarification questions during review.',
+        },
+        {
+          title: 'Post-registration NUPCO and institutional evidence carry-through',
+          description:
+            'Adaptation of the same HTA evidence base for NUPCO tender submission and MOH regional or NGHA institutional formulary review after national registration clears, so the evidence built for HTA continues to do commercial work rather than sitting unused once registration is secured.',
+        },
+      ],
+    },
+    methodology: {
+      heading: 'How BioNixus builds an HTA dossier for Saudi Arabia',
+      paragraphs: [
+        'Health technology assessment brings together clinical evidence, economic evaluation, and comparator analysis into a single structured review process that a regulator or payer uses to decide whether a new therapy should be registered, priced, and reimbursed on terms consistent with the value it delivers. In Saudi Arabia, this process sits within SFDA and is anchored by the Economic Evaluation Studies Guideline, which specifies the evidence tiers, methodology expectations, and submission format an HTA dossier needs to satisfy.',
+        'Evidence-tier assessment is the first methodological step, and it determines the shape of everything that follows. BioNixus reviews a product\'s clinical profile, cost relative to existing alternatives, and target population against SFDA\'s Partial versus Full Economic Study classification before any dossier work begins, since building toward the wrong tier either leaves a sponsor under-prepared for a Full Economic Study review or invests unnecessary effort in a Full-tier analysis a lighter-tier product did not require.',
+        'The systematic literature review establishes the clinical evidence base — comparator effectiveness data, disease epidemiology, and existing economic evaluations relevant to the Saudi context — using a documented search strategy and study-selection criteria an SFDA reviewer can audit. Where GCC-specific or Saudi-specific clinical and epidemiological data exists, it is prioritized over Western literature; where it does not, a formal transferability assessment documents the direction and likely magnitude of relying on non-Saudi data.',
+        'Comparator justification connects the clinical evidence review to the economic evaluation and the pricing procedure. The comparator has to reflect what Saudi clinical practice would actually displace and has to be consistent with SFDA\'s external reference-pricing framework, since the same comparator anchors both the HTA value argument and the price SFDA\'s pricing procedure will apply — a mismatch between the two is one of the more common sources of review friction.',
+        'The economic evaluation component — budget impact analysis for a Partial Economic Study, or cost-utility analysis (plus budget impact analysis as a mandatory companion) for a Full Economic Study — is built on Saudi or regionally-validated inputs: NUPCO pricing, Saudi or regional epidemiological data, and utility values from Arab-population studies where available. Sensitivity and scenario analysis is calibrated to the specific objections an SFDA reviewer is likely to raise, and discount rate, time horizon, and sensitivity-analysis specifications are confirmed against SFDA\'s current guidance at the time of submission rather than assumed fixed.',
+        'Dossier assembly brings the systematic literature review, comparator justification, and economic evaluation together into the format SFDA\'s Pharmacoeconomic Submission Portal expects, with a full assumption and limitation log so a reviewer can trace every input back to its source without requiring the original team to reconstruct the logic after submission. Before external delivery, BioNixus runs an internal adversarial review — deliberately challenging comparator choice, evidence-tier assessment, and economic model assumptions the way an SFDA reviewer would — so weak points are addressed while there is still time to strengthen the dossier.',
+        'Post-submission support covers response to SFDA clarification questions, which is typically the most time-critical phase of review, and — once registration clears — adaptation of the same evidence base for NUPCO tender submission or MOH regional and NGHA institutional formulary review, so the HTA dossier\'s evidence continues to carry commercial weight beyond the initial registration decision.',
+      ],
+    },
+    useCases: {
+      heading: 'Common Saudi Arabia HTA studies use cases',
+      paragraph:
+        'HTA studies demand in Saudi Arabia peaks where a product\'s clinical and cost profile places it in SFDA\'s Full Economic Study tier, and where the commercial stakes of a stalled or rejected review are highest.',
+      areas: [
+        'SFDA Full Economic Study HTA submissions',
+        'Oncology, chronic-disease, and specialty-therapy dossiers',
+        'Evidence-tier assessment for early launch planning',
+        'Comparator and reference-pricing justification',
+        'Managed entry agreement design for uncertain-evidence products',
+        'Post-registration NUPCO tender evidence carry-through',
+        'MOH regional and NGHA institutional formulary defence',
+        'HTA readiness assessment ahead of a Saudi launch sequence',
+      ],
+    },
+    process: {
+      heading: 'Saudi HTA dossier engagement timeline',
+      steps: [
+        {
+          title: 'Evidence-tier assessment and objective lock',
+          body: 'BioNixus assesses whether the product genuinely requires SFDA\'s Full Economic Study tier or the lighter Partial Economic Study tier, confirms which decision the dossier needs to support — SFDA registration, a NUPCO tender submission, or both — and maps what Saudi-specific clinical, epidemiological, and cost data already exists versus what requires primary collection or literature review.',
+        },
+        {
+          title: 'Systematic literature review and comparator justification',
+          body: 'BioNixus builds the clinical evidence base through a documented systematic literature review and confirms the comparator against both Saudi clinical practice and SFDA\'s reference-pricing framework, flagging any data gaps that require primary research before the economic evaluation can be finalized.',
+        },
+        {
+          title: 'Economic evaluation build and internal stress-test',
+          body: 'The required economic evaluation — budget impact analysis, cost-utility analysis, or both — is built on Saudi or regionally-validated inputs, followed by sensitivity and scenario analysis calibrated to likely reviewer objections. Before external delivery, BioNixus runs an internal adversarial review challenging the dossier the way an SFDA reviewer would.',
+        },
+        {
+          title: 'Dossier assembly, submission, and clarification support',
+          body: 'Final assembly brings the literature review, comparator justification, and economic evaluation into SFDA\'s required submission format with a full assumption and limitation log. BioNixus supports response to SFDA clarification questions post-submission and, once registration clears, adapts the evidence base for NUPCO or institutional formulary review.',
+        },
+      ],
+    },
+    deliverables: {
+      heading: 'Saudi HTA dossier outputs',
+      bullets: [
+        ...SERVICE_LANDING_DELIVERABLES,
+        'Systematic literature review report with documented search strategy and study selection',
+        'Economic evaluation model (budget impact and/or cost-utility) with audit-ready assumption log',
+        'Comparator and reference-pricing justification aligned to SFDA\'s pricing framework',
+        'Complete HTA dossier formatted for SFDA\'s Pharmacoeconomic Submission Portal',
+      ],
+    },
+    decisionBlueprint: {
+      why: 'An HTA dossier built on the correct evidence tier, a defensible comparator, and Saudi-relevant data survives SFDA review — a dossier built on an assumed tier or an imported comparator argument does not.',
+      evidence:
+        'Saudi Arabia\'s HTA outcomes gate access to the GCC\'s largest single pharmaceutical market, so the commercial cost of a stalled or rejected submission is proportionally larger here than in any other Gulf market.',
+      next: 'Confirm the evidence tier the product genuinely requires, build the clinical and economic evidence base on Saudi-relevant data and a defensible comparator, then carry that same evidence through to NUPCO and institutional review rather than starting over after registration.',
+    },
+    faqs: [
+      {
+        question: 'What is HTA in the context of Saudi pharma market access?',
+        answer:
+          "Health technology assessment (HTA) is the structured review process SFDA uses to evaluate a new therapy's clinical evidence, economic value, and comparator context before registration, pricing, and reimbursement decisions are made. In Saudi Arabia, HTA operates as a national function within SFDA, anchored by the Economic Evaluation Studies Guideline (published July 2024) and Pharmacoeconomic Submission Portal Manual (January 2025), with the economic-evaluation component mandatory from 1 July 2025. An HTA dossier typically includes a systematic literature review, an economic evaluation (budget impact analysis and, where the product's profile requires it, a full cost-utility analysis), and comparator justification consistent with SFDA's pricing framework.",
+      },
+      {
+        question: 'Is HTA mandatory for all drug submissions in Saudi Arabia?',
+        answer:
+          "Not in the same depth for every product. SFDA's framework distinguishes \"Partial Economic Studies\" (budget impact analysis and cost-minimisation analysis) from \"Full Economic Studies\" (cost-utility and cost-benefit analysis). Whether a specific submission needs the fuller HTA evidence base depends on the product's clinical and cost profile relative to existing alternatives — chronic-disease, oncology, and specialty therapies with a materially different cost or outcome profile are the most likely to require the Full Economic Study tier. BioNixus assesses which tier a specific product genuinely requires during early scoping, rather than assuming every submission needs the same depth of HTA evidence.",
+      },
+      {
+        question: 'What is the difference between HTA, BIA, and CEA?',
+        answer:
+          "HTA (health technology assessment) is the umbrella review process; BIA (budget impact analysis) and CEA (cost-effectiveness analysis, technically a cost-utility analysis) are two of the evidence components an HTA review draws on. BIA answers a financial question — what will this therapy cost the payer over the next several years — and is classified by SFDA as a \"Partial Economic Study.\" CEA answers a value question — do the health outcomes justify the cost, expressed as cost per QALY — and is classified as a \"Full Economic Study.\" SFDA expects a BIA as a mandatory companion to any submission requiring a Full Economic Study, so a complete HTA dossier for a higher-tier product typically includes both analyses built from a shared evidence base, not either one alone.",
+      },
+      {
+        question: 'Is CBAHI the same as an HTA body?',
+        answer:
+          "No. CBAHI — the Saudi Central Board for Accreditation of Healthcare Institutions, operating under the Saudi Health Council — is a healthcare quality and accreditation body. It plays no role in reviewing an HTA dossier, setting drug pricing, or making reimbursement decisions; those functions sit with SFDA and NUPCO. CBAHI accreditation status can influence which facilities participate in certain NUPCO-tendered programs, which may be why the two are sometimes conflated in market access discussions, but an HTA strategy should not treat CBAHI as part of the review or decision pathway.",
+      },
+      {
+        question: 'What does an HTA dossier need to include for SFDA?',
+        answer:
+          "A complete SFDA HTA dossier typically includes a systematic literature review establishing the clinical evidence base, the economic evaluation the product's tier requires (a budget impact analysis alone for a Partial Economic Study, or a cost-utility analysis plus a mandatory companion budget impact analysis for a Full Economic Study), comparator justification consistent with SFDA's external reference-pricing framework, and a documented assumption and limitation log formatted for the Pharmacoeconomic Submission Portal. These components are reviewed together, which is why a dossier built around the economic model alone — without an equally rigorous literature review and comparator justification — routinely generates avoidable clarification queries.",
+      },
+      {
+        question: 'What HTA body reviews submissions in Saudi Arabia — is it NCEHTA?',
+        answer:
+          "Health technology assessment in Saudi Arabia operates as a national HTA function within SFDA. Public documentation of the exact review body's complete institutional structure and procedural history remains thinner than for long-established HTA agencies in other markets, and the country's formal HTA framework continues to be formalized rather than fixed. BioNixus advises sponsors to confirm current procedural specifics directly against SFDA's published guidance at the time of each submission, rather than relying on a fixed assumption about the review body or process carried over from a prior engagement.",
+      },
+      {
+        question: 'How does an HTA outcome affect NUPCO tender pricing?',
+        answer:
+          "A favorable HTA outcome and SFDA registration do not automatically secure NUPCO formulary inclusion or favorable tender pricing — NUPCO's technical committee reviews the same HTA and economic evidence alongside volume commitments and supply-security criteria that sit outside SFDA's own review. A model or dossier demonstrating cost-effectiveness or manageable budget impact at the proposed NUPCO price strengthens the sponsor's tender position, which is why BioNixus scopes HTA strategy with an explicit plan for how the same evidence carries into the NUPCO tender conversation after registration, rather than treating the two as separate, disconnected workstreams.",
+      },
+      {
+        question: 'How long does HTA dossier preparation typically take?',
+        answer:
+          "Timelines depend on evidence-tier complexity, how much Saudi-specific clinical and cost data already exists versus needing primary collection, and how many rounds of SFDA clarification questions a submission generates — BioNixus maps a realistic calendar during scoping against SFDA's current published guidance rather than quoting a fixed industry-wide figure. As a general planning principle, sponsors should begin HTA preparation well ahead of the desired registration or listing date to allow time for systematic literature review, economic model development, internal stress-testing, and response to clarification questions without compressing any one stage under deadline pressure.",
+      },
+    ],
+  },
+  'cost-effectiveness-analysis-saudi-arabia': {
+    hubLink: { to: '/heor-consulting-saudi-arabia', label: 'HEOR consulting Saudi Arabia' },
+    regulatory: {
+      heading: 'SFDA cost-effectiveness analysis requirements in Saudi Arabia',
+      paragraphs: [
+        "SFDA published its Economic Evaluation Studies Guideline on 10 July 2024, followed by a Pharmacoeconomic Submission Portal Manual in January 2025, establishing the current framework for how cost-effectiveness evidence is reviewed as part of drug registration and pricing. General dossier requirements under this framework became mandatory in January 2025, and the economic evaluation component — including cost-effectiveness analysis where applicable — became mandatory from 1 July 2025. A cost-effectiveness analysis submitted today is read against a defined, current guideline rather than an informal or evolving expectation, which means model structure, comparator selection, and sensitivity reporting need to match what SFDA reviewers are specifically looking for rather than what a global submission template happens to produce.",
+        "SFDA's framework sorts economic evidence into two tiers. Budget impact analysis and cost-minimisation analysis are classified as \"Partial Economic Studies\" — the lighter evidence requirement. Cost-utility analysis (cost-effectiveness expressed as cost per quality-adjusted life year) and cost-benefit analysis are classified as \"Full Economic Studies,\" the tier SFDA expects for products where comparative clinical effectiveness against standard of care is a material consideration — typically chronic-disease, oncology, and specialty therapies with a meaningfully different cost or outcome profile from existing alternatives. A submission scoped only around budget impact because it is the smaller deliverable risks discovering mid-review that the product's profile actually triggers the Full Economic Study tier, at which point rebuilding under committee deadline pressure is far more expensive than scoping both analyses together from the outset.",
+        "SFDA and NUPCO sit on either side of the pricing question, and a cost-effectiveness analysis has to speak to both without confusing their separate roles. SFDA sets the public list price and reviews the economic evaluation dossier at registration; NUPCO, the PIF-owned National Unified Procurement Company established in 2009, centralizes public-sector tendering and negotiates confidential net pricing through its own contracts, with the government tender market estimated at roughly SAR 21 billion. A cost-effectiveness analysis built to satisfy SFDA registration is not automatically the same document a NUPCO tender evaluator wants to see — SFDA reviews the clinical-value argument against the public list price, while NUPCO's technical committee weighs the economic evidence alongside volume commitments and net-pricing structure. BioNixus scopes which audience a given cost-effectiveness deliverable is actually being built for before model architecture is finalized, rather than assuming one document serves both purposes unchanged.",
+        "Health technology assessment in Saudi Arabia is best understood as a national HTA function operating within SFDA, with the country's formal HTA framework continuing to be formalized rather than fixed. Public documentation of the exact review body, its founding history, and its procedural timelines remains thinner than for long-established HTA agencies elsewhere, and BioNixus deliberately avoids asserting specifics that are not yet consistently published — sponsors should expect the HTA review pathway to keep evolving alongside SFDA's EES rollout, and a cost-effectiveness dossier built with that trajectory in mind ages better than one that assumes today's process is permanent.",
+        "Comparator selection for a Saudi cost-effectiveness analysis has to account for SFDA's reliance on external reference pricing, which draws on public list prices across roughly sixteen international markets to anchor the Saudi price. A cost-effectiveness analysis that ignores this reference-pricing context and argues value purely on local cost offsets can miss the pricing reality the model needs to justify — the comparator, its price, and the reference-pricing basket it sits within all have to be consistent with what SFDA's pricing procedure will actually apply.",
+        "Managed entry agreements — both financial arrangements (simple discounts, price-volume caps) and outcomes-based arrangements tied to a measurable clinical result — are a growing feature of Saudi pricing and reimbursement negotiations where cost-effectiveness uncertainty is a barrier to listing. A commonly cited example structures rebates around a hepatitis C treatment achieving a sustained virologic response threshold of 95% or higher, illustrating how an outcomes-based agreement can bridge a gap between a sponsor's claimed value and a payer's willingness to accept that value without further evidence. Where a cost-effectiveness analysis carries meaningful uncertainty in its base case, BioNixus scopes managed entry agreement design as a parallel workstream rather than treating the economic model and the risk-sharing structure as sequential, unrelated deliverables.",
+        "CBAHI — the Saudi Central Board for Accreditation of Healthcare Institutions, operating under the Saudi Health Council — is a healthcare quality and accreditation body, not an HTA, pricing, or reimbursement authority. It is a distinction worth stating plainly because the two functions are easy to conflate: CBAHI accreditation status can influence which facilities participate in certain NUPCO-tendered programs, but it plays no role in reviewing a cost-effectiveness dossier or setting a reimbursement decision. A cost-effectiveness submission strategy that assumes CBAHI has a pricing or HTA role has misread the institutional map.",
+      ],
+    },
+    marketContext: {
+      heading: 'Why cost-effectiveness thresholds in Saudi Arabia require careful framing',
+      paragraphs: [
+        ...GCC_MARKET_PARAS.slice(0, 2),
+        "Saudi Arabia accounts for roughly USD 9.4 billion of the GCC's approximately USD 23.7 billion 2024 pharmaceutical spend, making it the market where a cost-effectiveness argument carries the most weight — and the most scrutiny — in the region. Vision 2030's Health Sector Transformation Program is the explicit policy rationale behind SFDA's move toward mandatory economic evaluation: the stated shift from volume-based to value-based healthcare financing is why cost-effectiveness evidence, not just clinical efficacy, is now a registration-stage requirement rather than an optional supporting exhibit.",
+        "Saudi Arabia has not published a single, officially codified cost-effectiveness threshold — no fixed willingness-to-pay figure that a submitted ICER is mechanically compared against. The most cited research-derived estimate places a plausible Saudi threshold in the range of approximately SAR 50,000 to 75,000 per QALY, equivalent to roughly 58% to 86% of GDP per capita, drawn from published health-economics literature rather than a government policy document. BioNixus treats this range as a useful analytical anchor for framing a value argument — not as a hard pass/fail line a committee applies automatically — because a formal, government-mandated threshold would need agreement across the Ministry of Health, Ministry of Finance, and wider policy stakeholders that has not yet been finalized and published as a single number.",
+        "Because no fixed threshold exists, the strength of a Saudi cost-effectiveness submission rests more heavily on the credibility of its inputs — locally sourced or locally validated data, transparent sensitivity analysis, and a comparator argument consistent with SFDA's reference-pricing framework — than on hitting a specific ICER target. A technically well-modeled ICER that a reviewer cannot trace back to defensible Saudi-relevant inputs is weaker evidence than a higher ICER built on data the reviewer can verify.",
+        "NUPCO's centralized tender scale — a government tender market of roughly SAR 21 billion — means a cost-effectiveness argument that supports a favorable NUPCO net-pricing negotiation has outsized commercial consequences relative to a comparable submission in a smaller GCC market, which is part of why Saudi Arabia is where BioNixus recommends sponsors invest the most rigor in local data sourcing rather than porting a regional or global model with minimal adaptation.",
+      ],
+    },
+    services: {
+      heading: 'Cost-effectiveness analysis services BioNixus delivers in Saudi Arabia',
+      items: [
+        {
+          title: 'Cost-utility (cost-per-QALY) model build',
+          description:
+            'A cost-utility analysis built to SFDA\'s Full Economic Study expectations, structured around defensible Saudi or regionally-validated utility inputs, transparent comparator selection, and a documented sensitivity framework — built to survive committee questioning, not just compute an ICER.',
+        },
+        {
+          title: 'Comparator and reference-pricing analysis',
+          description:
+            'Comparator selection and cost benchmarking that reflects SFDA\'s external reference-pricing framework across the roughly sixteen international markets it draws on, so the cost-effectiveness argument and the pricing procedure it needs to support are built on the same assumptions rather than reconciled after the fact.',
+        },
+        {
+          title: 'Managed entry agreement design',
+          description:
+            'Financial and outcomes-based risk-sharing structures scoped alongside the cost-effectiveness model itself, for products where base-case uncertainty is likely to be a barrier to a straightforward listing decision — designed as a parallel workstream, not an afterthought bolted onto a finished model.',
+        },
+        {
+          title: 'International model adaptation for Saudi submission',
+          description:
+            'Adaptation of an existing NICE-, EMA-, or other international HTA-format cost-effectiveness model for SFDA submission — replacing utility values, unit costs, comparator prices, and epidemiological inputs with Saudi or regionally validated data rather than presenting a Western model with a Saudi label attached.',
+        },
+        {
+          title: 'Sensitivity and scenario stress-testing',
+          description:
+            'Structured sensitivity analysis layered on the base-case cost-effectiveness result, built around the specific objections an SFDA or NUPCO reviewer is likely to raise — comparator price shifts, utility-value uncertainty, or extrapolation risk in the clinical evidence — so the stress-testing pre-empts rather than merely follows the committee\'s questions.',
+        },
+        {
+          title: 'Dossier writing and SFDA submission support',
+          description:
+            'Full dossier preparation for the cost-effectiveness component of an SFDA economic evaluation submission — methodology report, comparator justification, sensitivity output, and limitation statements — structured for the Pharmacoeconomic Submission Portal and ready to sit alongside the budget impact analysis SFDA expects as a companion document.',
+        },
+        {
+          title: 'GCC portfolio cost-effectiveness harmonization',
+          description:
+            'For sponsors running cost-effectiveness work across multiple Gulf markets, BioNixus builds the Saudi model as a structurally comparable anchor — shared modeling logic and reporting formats — while keeping SFDA-specific inputs, comparator selection, and reference-pricing assumptions isolated in a Saudi-specific module rather than blended into a regional average that satisfies no single market.',
+        },
+      ],
+    },
+    methodology: {
+      heading: 'Cost-effectiveness analysis methodology for Saudi Arabia submissions',
+      paragraphs: [
+        'A cost-effectiveness analysis evaluates whether the health benefit a new therapy delivers justifies its additional cost relative to the existing standard of care. The core output is the incremental cost-effectiveness ratio (ICER) — the additional cost divided by the additional health benefit, most commonly expressed as cost per quality-adjusted life year (QALY) gained. A QALY combines length of life and quality of life into a single measure: one QALY equals one year of life in full health, and a year lived in a health state valued at 0.7 on a standard utility scale contributes 0.7 QALYs. Utility values are typically derived from preference-based instruments such as the EQ-5D, ideally sourced from studies conducted in Arab or regional populations rather than transferred directly from UK or US tariffs, since preference-based health-state valuations can differ meaningfully across populations.',
+        'Model structure depends on the disease area and the shape of the available clinical evidence. Decision-tree models suit acute, short-duration conditions where patients move through a defined sequence of events over weeks to months. Markov cohort models — the most common structure for chronic-disease submissions — define a set of health states and model transitions between them over a lifetime or multi-year horizon, and are the standard approach for conditions like diabetes, cardiovascular disease, and many chronic respiratory or renal conditions. Partitioned survival models are the standard for oncology, built from progression-free and overall survival curves fitted to trial data. Discrete event simulation is used selectively for conditions with highly individualized patient trajectories that a Markov structure\'s memoryless assumption would misrepresent. BioNixus selects model architecture based on the clinical evidence available and the disease area\'s established modeling conventions, not a default template applied regardless of fit.',
+        'Local data sourcing is the methodological step that most distinguishes a Saudi-credible cost-effectiveness analysis from an imported one. Clinical event rates and transition probabilities are drawn from Saudi or regional published literature where available, with a documented transferability assessment when a model needs to rely on non-Saudi data. Utility values are sourced from published Arab-population studies where they exist, or generated through primary EQ-5D data collection where a meaningful gap remains. Unit costs draw on NUPCO published pricing, Saudi hospital cost data where accessible, and primary expert elicitation where public cost data is incomplete — a genuinely different exercise from NHS reference costs or US Medicare fee schedules, and one that requires purpose-built data-sourcing effort rather than a substitution exercise on an imported spreadsheet.',
+        'Comparator selection has to satisfy two audiences at once: clinical relevance (the therapy Saudi prescribers would actually displace) and consistency with SFDA\'s reference-pricing framework, since the comparator\'s price anchors both the cost-effectiveness argument and the pricing procedure the submission also has to clear. A comparator chosen purely for favorable cost-effectiveness optics, without regard to what SFDA\'s reference-pricing basket or Saudi clinical practice actually uses, weakens the credibility of the entire submission.',
+        'Sensitivity and scenario analysis is built around a base case plus stress bands rather than a single point estimate — one-way sensitivity analysis isolating which individual inputs move the ICER most, and scenario analysis stress-testing plausible combinations a skeptical reviewer might construct independently. Discount rates, time horizon, and the extent of probabilistic sensitivity analysis are aligned to what current SFDA guidance specifies at the time of submission — since these technical parameters are the kind of detail that can be updated as the Economic Evaluation Studies Guideline matures, BioNixus confirms current requirements against the live guideline rather than a fixed assumption at the start of every engagement.',
+        'Model validation includes an internal adversarial review before external delivery, where BioNixus stakeholders deliberately challenge the model\'s comparator choice, input provenance, and sensitivity coverage the way an SFDA or NUPCO reviewer would, so weak points are identified and addressed before a sponsor faces the same questions in a live review. Limitation statements are documented explicitly rather than omitted, because a model that acknowledges its own boundaries is more credible to a reviewer than one that implies false precision.',
+        'Every cost-effectiveness deliverable ships with an audit-ready methodology appendix — input provenance, sensitivity ranges, comparator justification, and limitation statements documented in a format an SFDA reviewer, a NUPCO tender evaluator, or an internal compliance team can review without requiring the original modeling team to reconstruct the logic after delivery.',
+      ],
+    },
+    useCases: {
+      heading: 'Common Saudi Arabia cost-effectiveness analysis use cases',
+      paragraph:
+        'Cost-effectiveness analysis demand in Saudi Arabia peaks where SFDA\'s Full Economic Study tier applies — chronic, oncology, and specialty submissions where comparative clinical value against standard of care is central to the registration, pricing, or reimbursement decision.',
+      areas: [
+        'SFDA Full Economic Study registration submissions',
+        'Oncology and specialty-therapy value arguments',
+        'Chronic-disease comparative-effectiveness submissions',
+        'Comparator and reference-pricing justification',
+        'Managed entry agreement design and negotiation support',
+        'NUPCO tender economic-value argument',
+        'International model adaptation for SFDA submission',
+        'GCC portfolio cost-effectiveness harmonization from a Saudi anchor model',
+      ],
+    },
+    process: {
+      heading: 'Saudi cost-effectiveness analysis engagement timeline',
+      steps: [
+        {
+          title: 'Objective and decision-gate lock',
+          body: 'BioNixus confirms which specific gate the analysis needs to clear — SFDA Full Economic Study registration, a NUPCO tender submission, or a managed entry agreement negotiation — and whether the product\'s profile genuinely triggers the Full Economic Study tier or can be supported by a lighter Partial Economic Study. This stage also maps what Saudi or regionally-validated utility, cost, and epidemiology data already exists versus what requires primary collection or adaptation from an international model, so the proposal reflects a realistic build timeline.',
+        },
+        {
+          title: 'Model architecture and comparator selection',
+          body: 'BioNixus selects model structure based on the clinical evidence and disease area, confirms the comparator against both Saudi clinical practice and SFDA\'s reference-pricing framework, and documents data sourcing strategy for utility values, unit costs, and epidemiological inputs — flagging any Saudi-specific data gaps that require primary collection before the model can be finalized.',
+        },
+        {
+          title: 'Model build, sensitivity layering, and internal stress-test',
+          body: 'The base-case model is built, followed by one-way and scenario sensitivity analysis calibrated to the objections an SFDA or NUPCO reviewer is likely to raise. Before external delivery, BioNixus runs an internal adversarial review — deliberately challenging comparator choice, input provenance, and sensitivity coverage — so weak points are addressed while there is still time to strengthen the model.',
+        },
+        {
+          title: 'Dossier handover and narrative alignment',
+          body: 'Final deliverables include the model file, a full methodology and limitation appendix, and an executive summary framed for the specific decision-maker audience — SFDA registration reviewer, NUPCO tender evaluator, or internal access and medical affairs stakeholders. BioNixus works with access, medical affairs, and HEOR stakeholders together at handover so the cost-effectiveness narrative aligns with whatever budget impact analysis or market access evidence is being submitted alongside it.',
+        },
+      ],
+    },
+    deliverables: {
+      heading: 'Saudi cost-effectiveness analysis outputs',
+      bullets: [
+        ...SERVICE_LANDING_DELIVERABLES,
+        'Executable cost-utility (cost-per-QALY) model file with documented input provenance',
+        'Comparator and reference-pricing justification aligned to SFDA\'s pricing framework',
+        'Sensitivity and scenario tables built around likely SFDA or NUPCO reviewer objections',
+      ],
+    },
+    decisionBlueprint: {
+      why: 'A cost-effectiveness analysis built on Saudi-credible comparator selection, local data inputs, and transparent sensitivity analysis is a value argument a reviewer can verify — one built on an unadapted global template is not.',
+      evidence:
+        'Since Saudi Arabia has no single published cost-effectiveness threshold, submissions succeed on the traceability of their inputs and the discipline of their sensitivity analysis at least as much as on the ICER figure itself.',
+      next: 'Confirm which economic-study tier the product genuinely triggers, lock the comparator against SFDA\'s reference-pricing framework, then build the model on Saudi or regionally-validated inputs rather than adapting a global template late in the process.',
+    },
+    faqs: [
+      {
+        question: 'What does SFDA require for a cost-effectiveness analysis submission?',
+        answer:
+          "SFDA's Economic Evaluation Studies Guideline (published 10 July 2024) and Pharmacoeconomic Submission Portal Manual (January 2025) classify cost-utility analysis — cost-effectiveness expressed as cost per QALY — as a \"Full Economic Study,\" required where a product's clinical and cost profile makes comparative effectiveness against standard of care a material consideration, typically chronic-disease, oncology, and specialty therapies. The economic evaluation component became mandatory from 1 July 2025. A Full Economic Study submission is expected to include a budget impact analysis as a companion document, comparator justification consistent with SFDA's reference-pricing framework, and sensitivity analysis built to current guideline specifications.",
+      },
+      {
+        question: 'What is the cost-effectiveness threshold in Saudi Arabia?',
+        answer:
+          "Saudi Arabia has not published a single, officially codified willingness-to-pay threshold per QALY. The most cited research-derived estimate places a plausible threshold in the range of approximately SAR 50,000 to 75,000 per QALY — roughly 58% to 86% of GDP per capita — drawn from published health-economics literature rather than a government policy document. BioNixus treats this range as a useful analytical anchor for framing a value argument rather than a hard pass/fail line, since a formal government-mandated threshold would require agreement across the Ministry of Health, Ministry of Finance, and other policy stakeholders that has not yet been finalized and published as a single figure. In the absence of a fixed threshold, the credibility of the underlying inputs and sensitivity analysis carries more weight in review than hitting a specific ICER target.",
+      },
+      {
+        question: 'What is the difference between cost-effectiveness analysis and budget impact analysis?',
+        answer:
+          "They answer different questions and sit in different SFDA evidence tiers. Cost-effectiveness analysis (a cost-utility analysis, classified as a \"Full Economic Study\") asks whether the health outcomes a new therapy delivers justify its additional cost, expressed as cost per QALY gained. Budget impact analysis (classified alongside cost-minimisation analysis as a \"Partial Economic Study\") asks a purely financial question — how much will this cost the payer over the next several years given realistic uptake. SFDA expects a budget impact analysis as a mandatory companion to any submission that requires a Full Economic Study, so a Saudi cost-effectiveness dossier is rarely a standalone deliverable; it is typically developed alongside the budget impact model from a shared dataset.",
+      },
+      {
+        question: 'What HTA body reviews cost-effectiveness submissions in Saudi Arabia?',
+        answer:
+          "Health technology assessment in Saudi Arabia operates as a national HTA function within SFDA, and the country's formal HTA framework continues to be formalized rather than fixed — public documentation of the exact review body, its procedural timelines, and its institutional history remains thinner than for long-established HTA agencies in other markets. BioNixus advises sponsors to expect the review pathway to keep evolving alongside SFDA's Economic Evaluation Studies Guideline rollout, and to confirm current procedural specifics directly against SFDA's published guidance at the time of each submission rather than relying on a fixed assumption.",
+      },
+      {
+        question: 'Can an international or NICE-format cost-effectiveness model be adapted for Saudi Arabia?',
+        answer:
+          "Yes, and an existing well-documented international model is often a reasonable starting point — but direct transfer without adaptation rarely satisfies SFDA review. The key adaptations are: replacing non-Saudi utility values with Arab-population or regionally validated data where available; replacing comparator prices and unit costs with Saudi-specific figures consistent with SFDA's reference-pricing framework and NUPCO pricing where relevant; adjusting epidemiological and clinical-event-rate inputs for the Saudi population where meaningful differences exist; and confirming discount rate, time horizon, and sensitivity-analysis requirements against SFDA's current guideline rather than the originating market's HTA conventions. A full adaptation typically requires several weeks of dedicated modeling effort depending on how much Saudi-specific data already exists.",
+      },
+      {
+        question: 'Does every drug submission to SFDA need a full cost-effectiveness analysis?',
+        answer:
+          "No. SFDA's framework distinguishes \"Partial Economic Studies\" (budget impact analysis and cost-minimisation analysis) from \"Full Economic Studies\" (cost-utility and cost-benefit analysis, which includes cost-effectiveness analysis). Whether a specific product triggers the Full Economic Study tier depends on its clinical and cost profile relative to existing alternatives — products with a materially different cost or outcome profile, particularly in chronic-disease, oncology, and specialty categories, are the most likely candidates. BioNixus assesses which tier a specific submission genuinely requires during the objective-lock stage, rather than assuming every submission needs the same depth of economic evidence.",
+      },
+      {
+        question: 'Is CBAHI the same as an HTA or pricing authority in Saudi Arabia?',
+        answer:
+          "No. CBAHI — the Saudi Central Board for Accreditation of Healthcare Institutions, operating under the Saudi Health Council — is a healthcare quality and accreditation body. It has no role in reviewing a cost-effectiveness dossier, setting drug pricing, or making reimbursement decisions; those functions sit with SFDA and NUPCO. CBAHI accreditation status can influence which facilities participate in certain NUPCO-tendered programs, which is likely why the two are sometimes conflated, but a cost-effectiveness submission strategy should not treat CBAHI as part of the HTA or pricing review pathway.",
+      },
+    ],
+  },
   'heor-consulting-saudi-arabia': {
     hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
     regulatory: {
       heading: 'SFDA and payer context for Saudi HEOR consulting',
       paragraphs: [
-        'Saudi HEOR consulting must align with SFDA Economic Evaluation System (EES) requirements effective from 1 July 2025 — pharmacoeconomic and budget-impact evidence is increasingly gatekeeping registration and reimbursement conversations.',
-        'NUPCO centralized procurement and hospital formulary committees evaluate budget impact and value narratives alongside clinical evidence; models built on imported global denominators lose credibility in local review.',
-        'Local epidemiology, treatment pathways, and pricing assumptions must be defensible to medical affairs, market access, and finance stakeholders simultaneously — not only health economists.',
-        'Cross-functional translation of model outputs into committee-ready language is as important as the spreadsheet architecture itself.',
-        'For GCC portfolios, KSA HEOR modules should harmonize core metrics with UAE and Kuwait appendices without averaging away Kingdom-specific procurement logic.',
-        'SFDA EES reviewers expect transparent limitation statements alongside tornado and scenario outputs; BioNixus packages both for committee-ready dossier support.',
-        'Cross-functional workshops lock epidemiology and pricing inputs before model build so finance reviewers can trace every assumption.',
+        "Saudi HEOR runs on a single evidence chain, and understanding how its links connect is the first step in scoping any engagement. A budget impact analysis (BIA) sizes the affordability question — what a therapy will cost the payer over the next several years. A cost-effectiveness analysis (CEA) sizes the value question — whether the health outcomes gained justify that cost, expressed as cost per QALY. Both feed into an HTA (health technology assessment) dossier, the structured review SFDA uses to decide registration and pricing. And the same evidence base then carries into market access work — NUPCO tender submissions and MOH or NGHA institutional formulary review — where it has to keep doing commercial work well after the initial registration decision. Sponsors who treat these as four unrelated deliverables routinely duplicate effort or discover a gap mid-review; BioNixus scopes them as one coordinated program from the outset.",
+        "SFDA's Economic Evaluation System (EES) — mandatory from 1 July 2025, following the Economic Evaluation Studies Guideline (published July 2024) and Pharmacoeconomic Submission Portal Manual (January 2025) — is the framework this entire evidence chain has to satisfy. EES classifies budget impact analysis and cost-minimisation analysis as \"Partial Economic Studies,\" the lighter evidence tier, and cost-utility analysis (CEA) plus cost-benefit analysis as \"Full Economic Studies,\" the tier expected where a product's clinical and cost profile makes comparative effectiveness against standard of care a material consideration. Which tier a specific product needs is the first question a HEOR program has to answer, since it determines whether a BIA alone is sufficient or a full CEA and HTA dossier is required.",
+        "NUPCO's centralized procurement model changes what HEOR evidence has to prove once SFDA registration clears. NUPCO's technical committee evaluates budget impact and value narratives alongside supply-security and volume-commitment criteria that sit outside SFDA's own review — a model built only to satisfy SFDA registration is not automatically the same document a NUPCO tender evaluator wants to see. Regional MOH formulary committees and National Guard Health Affairs (NGHA) layer additional institutional review on top of both, meaning HEOR evidence built for one gate does not automatically clear the next one without deliberate translation.",
+        "Local epidemiology, treatment pathways, and pricing assumptions have to be defensible to medical affairs, market access, and finance stakeholders simultaneously — not only health economists — because a HEOR program that satisfies a technical reviewer but cannot be explained by the access team in a committee room has not actually done its job. Cross-functional translation of model outputs into committee-ready language is as important as the underlying spreadsheet architecture, which is why BioNixus builds the assumption base once and frames outputs for each internal audience from that same source, rather than reconciling separate narratives after the fact.",
+        "For GCC portfolios, Saudi HEOR modules should harmonize core metrics with UAE and Kuwait appendices without averaging away Kingdom-specific procurement logic — SFDA's EES framework, NUPCO's national tender structure, and the scale of MOH and NGHA institutional buyers are genuinely Kingdom-specific, and a model built to be portable across the GCC by blending them into a regional average ends up satisfying no single market's reviewers.",
+        "SFDA reviewers expect transparent limitation statements alongside sensitivity and scenario outputs at every stage of the evidence chain — BIA, CEA, and HTA dossier alike. BioNixus documents input provenance and limitation statements in committee-ready appendices from the start of an engagement, not retrofitted before submission, so the same audit trail that satisfies an SFDA reviewer also satisfies an internal compliance or finance review.",
+        "Cross-functional workshops that lock epidemiology, treatment-mix, and pricing inputs before model build begins are what let a HEOR program move from BIA through CEA and into HTA dossier assembly without re-litigating the same assumptions at each stage — a discipline that saves real time across a coordinated Saudi HEOR program, where the alternative is re-deriving inputs separately for each deliverable.",
       ],
     },
     marketContext: {
       heading: 'Why local HEOR assumptions win Saudi reimbursement committees',
       paragraphs: [
         ...GCC_MARKET_PARAS.slice(0, 2),
-        'Imported global models that ignore Saudi treatment mix, dual public–private channel behaviour, and local pricing fail committee scrutiny — delaying listing even when clinical evidence is strong.',
-        'Budget impact model design with KSA market assumptions, plus value communication testing for institutional stakeholders, reduces rework before SFDA and procurement milestones.',
-        'BioNixus builds models and narratives calibrated to the Kingdom, then translates outputs into evidence packages access, medical, and finance teams can defend together.',
-        'Scenario planning should include NUPCO rescoring shocks, biosimilar entry, and step-therapy tightening—sensitivity tables that committees expect when budget impact drives listing decisions.',
+        "Saudi Arabia accounts for roughly USD 9.4 billion of the GCC's approximately USD 23.7 billion 2024 pharmaceutical spend, and Vision 2030's Health Sector Transformation Program is the explicit policy rationale behind SFDA's shift toward mandatory economic evaluation — the stated move from volume-based to value-based healthcare financing is why HEOR evidence, not clinical efficacy alone, now gates registration, pricing, and reimbursement decisions across the entire BIA-CEA-HTA-market access chain.",
+        "Imported global models that ignore Saudi treatment mix, the dual public–private channel structure, and local pricing fail committee scrutiny — delaying listing even when the underlying clinical evidence is strong. This applies as much to a cost-utility (CEA) model's QALY inputs and ICER framing as it does to a budget impact model's uptake curve: Saudi Arabia has not published a single, officially codified cost-effectiveness threshold, and the most cited research-derived estimate — roughly SAR 50,000 to 75,000 per QALY — is explicitly a research estimate, not government policy, which means the credibility of a model's inputs carries more weight in review than hitting a specific ICER target.",
+        "Budget impact model design with Saudi-specific assumptions, cost-effectiveness modeling calibrated to defensible comparator selection, and value communication testing for institutional stakeholders together reduce rework before SFDA and NUPCO milestones. BioNixus builds models and narratives calibrated to the Kingdom, then translates outputs into evidence packages access, medical, and finance teams can defend together — as one coordinated program rather than four separately-scoped deliverables.",
+        "Scenario planning across the HEOR evidence chain should include NUPCO rescoring shocks, biosimilar entry, and step-therapy tightening — sensitivity tables that committees expect to see whether the deliverable in front of them is a budget impact model, a cost-effectiveness analysis, or the combined HTA dossier those two feed into.",
       ],
     },
     services: {
-      heading: 'HEOR consulting services BioNixus delivers in Saudi Arabia',
+      heading: 'The four Saudi HEOR pillars BioNixus delivers',
       items: [
         {
-          title: 'Budget impact model design',
+          title: 'Budget Impact Analysis (BIA)',
           description:
-            'KSA-calibrated epidemiology, treatment mix, and pricing with transparent sensitivity analyses.',
+            'The affordability question: what a therapy will cost NUPCO, MOH, or NGHA over the next 3-5 years, built on Saudi-specific epidemiology, treatment mix, and pricing. Classified by SFDA as a "Partial Economic Study" — the mandatory companion to any Full Economic Study.',
         },
         {
-          title: 'Cost-effectiveness scaffolding',
+          title: 'Cost-Effectiveness Analysis (CEA)',
           description:
-            'CEA frameworks aligned to SFDA EES expectations where the decision objective requires.',
+            'The value question: whether the health outcomes a therapy delivers justify its cost, expressed as cost per QALY (ICER). Classified by SFDA as a "Full Economic Study," required where comparative effectiveness against standard of care is a material consideration.',
+        },
+        {
+          title: 'HTA Studies',
+          description:
+            'The umbrella review process SFDA uses to evaluate a product\'s clinical, economic, and comparator evidence together — a systematic literature review, the required BIA and/or CEA, and comparator justification, assembled into one submission-ready dossier.',
+        },
+        {
+          title: 'Market Access Research',
+          description:
+            'Payer-channel diagnosis and evidence carry-through once HTA and registration clear — mapping NUPCO tender scoring, MOH and NGHA institutional formulary review, and private-insurer pathways so the same evidence base keeps doing commercial work after registration.',
         },
         {
           title: 'Value narrative and message testing',
           description:
-            'Institutional stakeholder reaction modules for access and medical alignment.',
+            'Institutional stakeholder reaction modules for access and medical alignment, translating model outputs into the language a payer committee actually argues in.',
         },
         {
           title: 'RWE-to-HEOR bridge modules',
           description:
-            'Primary field or chart outputs structured to feed model inputs and limitation statements.',
+            'Primary field or chart-review outputs structured to feed BIA, CEA, and HTA model inputs with documented provenance, rather than extrapolating from clinical trial data alone.',
         },
         {
-          title: 'Cross-functional readout packs',
+          title: 'GCC harmonization from a Saudi anchor',
           description:
-            'Outputs framed for market access, medical affairs, and finance — not economist-only decks.',
-        },
-        {
-          title: 'GCC harmonization from KSA anchor',
-          description:
-            'Comparable model architecture with country appendices for regional portfolio decisions.',
+            'Comparable model architecture across BIA, CEA, and HTA work with country appendices for UAE, Kuwait, and Qatar, for regional portfolio decisions that still respect Kingdom-specific procurement logic.',
         },
       ],
     },
     methodology: {
       heading: 'Saudi HEOR consulting methodology',
       paragraphs: [
-        'Objective lock to one reimbursement or registration decision before model build prevents unfocusable spreadsheets that committees cannot act on.',
-        'Assumption workshops with access and medical stakeholders document epidemiology and pricing inputs with named owners and sensitivity ranges.',
-        'Model validation includes tornado and scenario analyses with explicit limitation statements for audit-ready dossier support.',
-        'Value narrative testing uses pre-specified objection frameworks so message variants map to institutional reactions.',
-        'Typical timeline from objective lock to first draft decision model is two to three weeks for a focused indication scope.',
-        'BioNixus documents model limitation statements and input provenance in committee-ready appendices so finance reviewers can trace every epidemiology and price assumption without economist-only narrative decks.',
+        'BioNixus scopes a Saudi HEOR program around the specific decision gate it needs to clear — SFDA EES registration, a NUPCO tender submission, an MOH regional formulary review, or an NGHA institutional listing — and confirms which tier of economic evidence that gate actually requires before any model work begins. Objective lock to one decision, rather than a generic "HEOR support" brief, is what prevents an unfocused deliverable that a committee cannot act on.',
+        'Where a product\'s profile places it in SFDA\'s Full Economic Study tier, BioNixus sequences the budget impact analysis and cost-effectiveness analysis as one coordinated build from a shared dataset — epidemiology, treatment-mix, and pricing inputs are documented once, with named owners and defensible sources, rather than re-derived separately for each analysis. This sequencing is what allows the same evidence base to carry from BIA through CEA and into HTA dossier assembly without re-litigating assumptions at each stage.',
+        'Assumption workshops bring access, medical affairs, HEOR, and finance stakeholders together to document population, treatment-mix, and pricing inputs before model architecture is finalized, so every assumption that will face committee scrutiny has a named owner who can defend it under questioning.',
+        'Model validation includes an internal adversarial review before external delivery — BioNixus stakeholders deliberately challenge comparator choice, input provenance, and sensitivity coverage the way an SFDA or NUPCO reviewer would, across whichever combination of BIA, CEA, and HTA dossier components the engagement covers, so weak points are surfaced while there is still time to strengthen the evidence.',
+        'Value narrative testing uses pre-specified objection frameworks so message variants map to institutional reactions, translating whatever combination of budget-impact and cost-effectiveness findings the model produces into language a payer committee, a NUPCO tender evaluator, or an MOH formulary reviewer actually responds to.',
+        'Every deliverable — whether a standalone BIA, a combined BIA-plus-CEA package, or a full HTA dossier — ships with an audit-ready assumption log and limitation-statement appendix documenting input provenance in a format SFDA reviewers, NUPCO tender evaluators, and internal compliance teams can review without requiring the original modeling team to reconstruct the logic after delivery.',
+        'Typical timeline from objective lock to a first executable draft is one to three weeks for a focused, single-decision scope, depending on which combination of BIA, CEA, and HTA dossier components the engagement covers and how much Saudi-specific data already exists versus needing primary collection.',
       ],
     },
     useCases: {
       heading: 'Common Saudi HEOR consulting use cases',
       paragraph:
-        'HEOR demand peaks when SFDA submission, NUPCO listing, or formulary defence requires defensible local economic evidence.',
+        'HEOR demand peaks when SFDA submission, NUPCO listing, or formulary defence requires a coordinated budget-impact, cost-effectiveness, and HTA evidence package rather than a single standalone deliverable.',
       areas: [
-        'SFDA EES dossier support',
-        'NUPCO budget impact submissions',
+        'SFDA EES dossier support across BIA, CEA, and HTA components',
+        'NUPCO budget impact and tender-facing value submissions',
+        'Full HTA dossier assembly for chronic, oncology, and specialty products',
         'Biosimilar value defence',
         'Launch sequencing economics',
         'Price–volume scenario planning',
         'Medical–access narrative alignment',
-        'RWE-informed model updates',
-        'GCC roll-up from KSA anchor model',
+        'GCC roll-up from a Saudi anchor model',
       ],
     },
     process: {
       heading: 'Saudi HEOR engagement timeline',
       steps: [
         {
-          title: 'Objective and assumption lock',
-          body: 'Confirm indication, decision gate, and data inputs — typically one week to scoped proposal.',
+          title: 'Objective, decision-gate, and evidence-tier lock',
+          body: 'BioNixus confirms which specific gate the program needs to clear and which combination of BIA, CEA, and HTA dossier components that gate genuinely requires, mapping what Saudi-specific data already exists versus what needs primary collection — typically one week to a scoped proposal.',
         },
         {
-          title: 'Model build and QA',
-          body: 'Budget impact or CEA draft with sensitivity analyses — typically two to three weeks.',
+          title: 'Coordinated model build and QA',
+          body: 'Budget impact and, where required, cost-effectiveness analysis are built from a shared dataset with sensitivity and scenario analysis, followed by an internal adversarial stress-test before external delivery — typically two to three weeks depending on scope.',
         },
         {
-          title: 'Narrative testing optional module',
-          body: 'Stakeholder reaction research aligned to model outputs where scoped.',
+          title: 'Value narrative and stakeholder testing',
+          body: 'Optional module translating model outputs into committee-ready language, tested against pre-specified objection frameworks for the specific institutional audience — SFDA, NUPCO, MOH, or NGHA.',
         },
         {
-          title: 'Committee-ready handover',
-          body: 'Model file, assumption log, executive summary, and 30/60/90 action plan.',
+          title: 'Committee-ready handover and carry-through',
+          body: 'Final deliverables include the model file(s), assumption and limitation log, executive summary, and a 30/60/90 action plan — scoped so the same evidence base can carry from HTA registration into NUPCO tender or institutional formulary review without rebuilding from scratch.',
         },
       ],
     },
@@ -2330,57 +2684,62 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
       heading: 'Saudi HEOR program outputs',
       bullets: [
         ...SERVICE_LANDING_DELIVERABLES,
-        'Audit-ready assumption log with sensitivity tables',
-        'Committee-ready executive summary and slide narrative',
+        'Audit-ready assumption log with sensitivity tables spanning BIA, CEA, and HTA components',
+        'Committee-ready executive summary and slide narrative for SFDA, NUPCO, MOH, or NGHA audiences',
         'Optional qual reaction coding aligned to model scenarios',
       ],
     },
     decisionBlueprint: {
-      why: 'A model built on Saudi epidemiology, mix, and pricing is far harder to dismiss than a global average — credibility in review is where reimbursement speed is won or lost.',
+      why: 'A HEOR program built as one coordinated BIA-CEA-HTA-market access evidence chain is far harder to dismiss than four separately-scoped deliverables — credibility in review is where reimbursement speed is won or lost.',
       evidence:
-        'Local assumption discipline and cross-functional readout framing predict fewer committee deferrals than imported templates.',
-      next: 'Start narrow with one high-impact indication and an auditable value-and-budget path before expanding to portfolio scale.',
+        'Local assumption discipline and cross-functional readout framing, applied consistently across BIA, CEA, and HTA components, predict fewer committee deferrals than imported templates or piecemeal engagements.',
+      next: 'Confirm which decision gate and evidence tier the program actually needs, lock shared epidemiology and pricing assumptions once, then build BIA, CEA, and HTA dossier components from that same base rather than re-deriving inputs for each.',
     },
     faqs: [
       {
+        question: "What's the difference between BIA, CEA, HTA, and market access research?",
+        answer:
+          "Budget impact analysis (BIA) answers a financial question — what a therapy will cost the payer over the next several years — and is classified by SFDA as a \"Partial Economic Study.\" Cost-effectiveness analysis (CEA), technically a cost-utility analysis, answers a value question — whether the health outcomes justify the cost, expressed as cost per QALY — and is classified as a \"Full Economic Study.\" Health technology assessment (HTA) is the umbrella review process that brings BIA, CEA (where required), and comparator evidence together into one SFDA submission. Market access research is the broader work of mapping payer channels — NUPCO tender scoring, MOH and NGHA institutional formularies, private insurance — and carrying HTA-cleared evidence through to an actual listing and reimbursement outcome. BioNixus treats all four as one coordinated evidence chain rather than four unrelated services.",
+      },
+      {
         question: 'Does BioNixus support SFDA Economic Evaluation System submissions?',
         answer:
-          'Yes. Model and narrative modules are scoped to EES expectations effective from July 2025, with transparent assumption documentation.',
+          "Yes. BIA, CEA, and HTA dossier modules are scoped to SFDA's Economic Evaluation System requirements, mandatory from 1 July 2025, with transparent assumption documentation and limitation statements built in from the start of an engagement rather than retrofitted before submission.",
       },
       {
         question: 'How long does a Saudi budget impact model take?',
         answer:
-          'From objective lock, a focused indication model typically reaches first draft within two to three weeks.',
+          'From objective lock, a focused indication model typically reaches first draft within one to three weeks, depending on how much Saudi-specific epidemiology and treatment-pattern data already exists versus needing primary collection.',
       },
       {
         question: 'Can HEOR modules connect to primary fieldwork or RWE?',
         answer:
-          'Yes. BioNixus structures primary outputs to feed epidemiology and treatment-pattern inputs with documented provenance.',
+          'Yes. BioNixus structures primary outputs — chart review, prescriber depth interviews, institutional data extraction where governance permits — to feed epidemiology and treatment-pattern inputs into BIA, CEA, and HTA models with documented provenance, rather than extrapolating from clinical trial enrollment or launch experience in other markets.',
       },
       {
         question: 'Are outputs usable by non-economist stakeholders?',
         answer:
-          'Yes. Deliverables include cross-functional summaries for market access, medical affairs, and finance teams.',
+          'Yes. Deliverables include cross-functional summaries for market access, medical affairs, and finance teams, built from the same underlying assumption log so all three functions can defend the same evidence base consistently rather than reconciling separate narratives after the fact.',
       },
       {
         question: 'Does BioNixus cover NUPCO-facing narratives?',
         answer:
-          'Where scoped, value and budget narratives are tested against procurement-aware objection frameworks.',
+          'Where scoped, value and budget narratives built from the BIA and CEA evidence base are tested against procurement-aware objection frameworks specific to NUPCO\'s technical committee, since a NUPCO-ready narrative is not automatically the same document that satisfied SFDA registration review.',
       },
       {
-        question: 'Can KSA HEOR roll up into GCC programs?',
+        question: 'Can Saudi HEOR work roll up into a wider GCC program?',
         answer:
-          'Yes. KSA anchor models harmonize with UAE and Kuwait appendices for regional portfolio decisions.',
+          'Yes. BioNixus builds the Saudi HEOR program as a structurally comparable anchor — shared modeling logic and reporting formats — while keeping SFDA, NUPCO, MOH, and NGHA-specific inputs isolated in Saudi-specific modules, harmonizing with UAE and Kuwait appendices for regional portfolio decisions without averaging away Kingdom-specific procurement logic.',
       },
       {
         question: 'How does BioNixus validate Saudi epidemiology and pricing assumptions?',
         answer:
-          'Assumption workshops document inputs with named owners, sensitivity ranges, and primary or desk sources. Tornado and scenario tables show committees how results move when treatment mix, uptake, or price bands change—building credibility faster than single-point estimates.',
+          'Assumption workshops document inputs with named owners, sensitivity ranges, and primary or desk sources. Tornado and scenario tables show committees how results move when treatment mix, uptake, or price bands change — building credibility faster than single-point estimates, across whichever combination of BIA, CEA, and HTA dossier components the engagement covers.',
       },
       {
         question: 'Can HEOR consulting run alongside payer qual and physician fieldwork?',
         answer:
-          'Yes. Parallel modules share coding frameworks so qual objections inform model refinement and value narrative tests within one evidence architecture—reducing rework when access teams localize global dossiers for SFDA and NUPCO milestones.',
+          'Yes. Parallel modules share coding frameworks so qualitative objections inform model refinement and value narrative tests within one evidence architecture — reducing rework when access teams localize global dossiers for SFDA and NUPCO milestones.',
       },
     ],
   },
