@@ -84,8 +84,8 @@ const TurkeyHealthcareMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="Turkey Healthcare Market Report 2026 | TİTCK, SGK Reimbursement & Europe-MENA Crossroads | BioNixus"
-      description="Turkey healthcare market at USD 50B in 2026. TİTCK drug registration, SGK SUT reimbursement, reference pricing, Health Transformation Program impact, major medical tourism hub, and BioNixus GCC expansion intelligence."
+      title="Turkey Healthcare Market Report 2026 | BioNixus"
+      description="Turkey healthcare market at USD 50B in 2026. TİTCK drug registration, SGK SUT reimbursement, reference pricing, Health Transformation Program impact."
       canonical="https://www.bionixus.com/turkey-healthcare-market-report"
       jsonLd={jsonLd}
     />
@@ -94,7 +94,7 @@ const TurkeyHealthcareMarketReport = () => (
       <div className="section-padding pt-24 pb-4"><div className="container-wide"><BreadcrumbNav items={breadcrumbItems} /></div></div>
               <ReportPremiumHero
           title="Turkey Healthcare Market Report 2026: TİTCK, SGK Reimbursement, and Europe-MENA Crossroads Market Intelligence"
-          description="BioNixus serves Turkish pharmaceutical and medical device companies with GCC and MENA market intelligence — and provides Turkey market context for global commercial teams managing EU/MENA cross-regional portfolios."
+          description="BioNixus serves Turkish pharmaceutical and medical device companies with GCC and MENA market intelligence — and provides Turkey market context for global."
           config={REPORT_CONVERSION}
           marketSlug="turkey"
           countryName="Turkey"

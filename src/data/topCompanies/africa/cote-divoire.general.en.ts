@@ -6,9 +6,9 @@ export const coteDivoireGeneralEn: CountryListicleConfig = {
   variant: 'general',
   region: 'africa',
   country: "Côte d'Ivoire",
-  title: "Best Market Research Companies in Côte d'Ivoire (2026 Guide) | BioNixus",
+  title: "Top Market Research Companies in Côte d'Ivoire 2026 | BioNixus",
   metaDescription:
-    "Independent 2026 guide to the leading market research companies in Côte d'Ivoire — healthcare, pharmaceutical, consumer, and strategic research firms compared by capability for Abidjan and the Francophone West Africa market.",
+    "Independent 2026 guide to the leading market research companies in Côte d'Ivoire — healthcare, pharmaceutical, consumer, and strategic research firms.",
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-cote-divoire-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-cote-divoire-2026' },
@@ -261,7 +261,7 @@ export const coteDivoireGeneralEn: CountryListicleConfig = {
     { to: '/contact', label: "Request a Côte d'Ivoire Research Proposal" },
   ],
   cta: {
-    title: "Plan Market Research in Côte d'Ivoire",
+    title: "Plan Market Research in Côte d'Ivoire | BioNixus",
     body: "BioNixus delivers custom market research across Côte d'Ivoire and Francophone West Africa — primary research, consumer insights, healthcare and pharmaceutical studies, competitive intelligence, and UEMOA market analysis for Abidjan and the wider region.",
     button: 'Request a Proposal',
     to: '/contact',

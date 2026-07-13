@@ -320,16 +320,13 @@ export function buildMatrixSeoCopy(
   const name = industry.displayNameShort;
   const full = industry.displayName;
   const h1 = `${full} Market Research Company in ${country.label}`;
-  const titleSuffix = industry.isHealthcareAdjacent
-    ? `${country.regulatorShort} Context`
-    : 'Fieldwork & Insights';
-  const title = `${name} Market Research Company in ${country.label} (2026) | ${titleSuffix} | BioNixus`;
+  const title = `${name} Market Research in ${country.label} 2026 | BioNixus`;
   const metaDescription = industry.isHealthcareAdjacent
-    ? `Hire a ${full.toLowerCase()} market research company in ${country.label} — ${country.regulatorShort}-aware fieldwork, bilingual Arabic–English studies, and decision-ready evidence from BioNixus.`
-    : `${name} market research company in ${country.label} for 2026 — quantitative surveys, qualitative depth, and buyer intelligence with local field teams.`;
+    ? `${full} market research in ${country.label}: ${country.regulatorShort}-aware fieldwork, bilingual studies & decision-ready evidence. Proposal in 24 hours.`
+    : `${name} market research in ${country.label} 2026 — surveys, qualitative depth & buyer intelligence with local field teams. Proposal in 24 hours.`;
   const listicleMetaDescription = industry.isHealthcareAdjacent
-    ? `Ranked 5 best ${name.toLowerCase()} market research firms in ${country.label} for 2026 — compared by local fieldwork, methodology, and ${country.regulatorShort} context.`
-    : `Ranked 5 best ${name.toLowerCase()} market research firms in ${country.label} for 2026 — compared by local fieldwork, sample design, and ${name.toLowerCase()} buyer benchmarks.`;
+    ? `Best ${name.toLowerCase()} market research firms in ${country.label} 2026 — compared by fieldwork, methods & ${country.regulatorShort} context. Read the guide.`
+    : `Best ${name.toLowerCase()} market research firms in ${country.label} 2026 — fieldwork, sample design & buyer benchmarks compared. Read the guide.`;
   return { title, metaDescription, h1, listicleMetaDescription };
 }
 

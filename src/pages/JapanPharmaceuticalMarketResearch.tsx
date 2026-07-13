@@ -124,8 +124,8 @@ export default function JapanPharmaceuticalMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Pharmaceutical Market Research Company in Japan | PMDA, MHLW & NHI Aligned | BioNixus"
-        description="BioNixus is a pharmaceutical market research company in Japan — PMDA-aligned HCP surveys, KOL mapping, NHI drug-pricing payer research, Chuikyo HTA studies, and ethics-compliant market access evidence."
+        title="Pharmaceutical Market Research Company in Japan | BioNixus"
+        description="BioNixus is a pharmaceutical market research company in Japan — PMDA-aligned HCP surveys, KOL mapping, NHI drug-pricing payer research, Chuikyo HTA."
         canonical="/pharmaceutical-market-research-japan"
         jsonLd={jsonLd}
       />

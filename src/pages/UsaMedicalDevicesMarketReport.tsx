@@ -92,7 +92,7 @@ const UsaMedicalDevicesMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="USA Medical Devices Market Report 2026 | FDA 510(k)/PMA, CMS NTAP & GPO Procurement | BioNixus"
+      title="USA Medical Devices Market Report 2026 | BioNixus"
       description="USA medical devices market at USD 180B in 2026 — world's largest. FDA regulatory pathways, CMS DRG and NTAP reimbursement, GPO/IDN procurement, and BioNixus intelligence for US medtech companies expanding to GCC and MENA."
       canonical="https://www.bionixus.com/usa-medical-devices-market-report"
       jsonLd={jsonLd}

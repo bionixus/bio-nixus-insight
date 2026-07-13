@@ -124,8 +124,8 @@ export default function BrazilHealthcareMarketResearch() {
     <div className="min-h-screen bg-background">
       <Navbar />
       <SEOHead
-        title="Healthcare Market Research Company in Brazil | SUS, ANS, ANVISA | BioNixus"
-        description="BioNixus is a healthcare market research company in Brazil — HCP surveys, KOL mapping, SUS/CONITEC access evidence, ANS private-sector research, and LGPD-compliant patient studies. USD 165B+ healthcare market."
+        title="Healthcare Market Research Company in Brazil | BioNixus"
+        description="BioNixus is a healthcare market research company in Brazil — HCP surveys, KOL mapping, SUS/CONITEC access evidence, ANS private-sector research, and."
         canonical={CANONICAL}
         jsonLd={jsonLd}
       />

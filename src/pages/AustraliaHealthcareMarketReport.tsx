@@ -96,8 +96,8 @@ const AustraliaHealthcareMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="Australia Healthcare Market Report 2026 | TGA, PBS, PBAC & Pharmaceutical Market Intelligence | BioNixus"
-      description="Australia healthcare market at USD 220B in 2026. TGA drug registration, PBAC cost-effectiveness assessment, PBS reimbursement, R&D tax incentive for clinical trials, Access Consortium, and BioNixus GCC expansion intelligence."
+      title="Australia Healthcare Market Report 2026 | BioNixus"
+      description="Australia healthcare market at USD 220B in 2026. TGA drug registration, PBAC cost-effectiveness assessment, PBS reimbursement, R&D tax incentive for."
       canonical="https://www.bionixus.com/australia-healthcare-market-report"
       jsonLd={jsonLd}
     />

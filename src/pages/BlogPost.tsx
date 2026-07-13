@@ -284,7 +284,7 @@ const CHINA_HEALTHCARE_2026_META_DESCRIPTION =
 
 const UAE_HEALTHCARE_TRENDS_2025_SLUG = 'uae-healthcare-market-trends-2025';
 const UAE_HEALTHCARE_TRENDS_2025_META_DESCRIPTION =
-  'UAE healthcare trends for 2025: pharmaceutical demand in Dubai & Abu Dhabi, MOHAP/DHA dynamics, private vs public uptake, payer signals, and growth angles for pharma and medtech—with BioNixus field context.';
+  'UAE healthcare trends: Dubai & Abu Dhabi pharma demand, MOHAP/DHA dynamics, payer signals & growth angles for pharma and medtech.';
 
 /**
  * SEO recovery overrides for the Egypt healthcare 2026 blog post.
@@ -299,20 +299,20 @@ const EGYPT_HEALTHCARE_2026_DISPLAY_TITLE =
   'Cairo Hospitals Healthcare 2023–2026: Egypt Market Overview';
 const EGYPT_HEALTHCARE_2026_TITLE = 'Cairo Hospitals Healthcare 2023–2026';
 const EGYPT_HEALTHCARE_2026_META_DESCRIPTION =
-  'Cairo hospitals healthcare 2023–2026: Kasr Al-Ainy, Cleopatra, Saudi German Cairo, EDA pharma access, UHI payer trends — BioNixus Egypt market research.';
+  'Cairo hospitals healthcare 2023–2026: Kasr Al-Ainy, Cleopatra, Saudi German Cairo, EDA pharma access, UHI payer trends — BioNixus Egypt research.';
 const EGYPT_HEALTHCARE_2026_OG_TITLE = EGYPT_HEALTHCARE_2026_DISPLAY_TITLE;
 const EGYPT_HEALTHCARE_2026_OG_DESCRIPTION =
   'Full Egypt healthcare overview for 2026 — Cairo hospital landscape, EDA regulation, pharmaceutical market size, and primary physician research from BioNixus.';
 
 const KUWAIT_HEALTHCARE_2026_SLUG = 'healthcare-overview-kuwait-market-2026';
 const KUWAIT_HEALTHCARE_2026_DISPLAY_TITLE =
-  'April Healthcare Kuwait & Kuwait Healthcare Market 2026 Overview';
-const KUWAIT_HEALTHCARE_2026_TITLE = 'April Healthcare Kuwait | Healthcare 2026';
+  'Kuwait Healthcare Market 2026 Overview';
+const KUWAIT_HEALTHCARE_2026_TITLE = 'Kuwait Healthcare Market 2026 Overview';
 const KUWAIT_HEALTHCARE_2026_META_DESCRIPTION =
-  'April healthcare Kuwait & Kuwait healthcare 2026: MOH hospitals, pharma distributors, tender policy, and physician insights from BioNixus market research.';
+  'Kuwait healthcare 2026: MOH hospitals, pharma distributors, tender policy & physician insight for Vision 2035. BioNixus market research guide.';
 const KUWAIT_HEALTHCARE_2026_OG_TITLE = KUWAIT_HEALTHCARE_2026_DISPLAY_TITLE;
 const KUWAIT_HEALTHCARE_2026_OG_DESCRIPTION =
-  'Kuwait healthcare overview for 2026 — hospital and distributor landscape, April Healthcare and peer importers, MOH regulation, and BioNixus market research context.';
+  'Kuwait healthcare overview for 2026 — hospital and distributor landscape, MOH regulation, and BioNixus market research context.';
 
 /** EN-only SEO overrides: rich blog narrative + internal equity to `/quantitative-healthcare-market-research`. */
 const QUANT_MR_MA_PAGE_TITLE =

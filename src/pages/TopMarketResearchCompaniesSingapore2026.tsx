@@ -266,8 +266,8 @@ export default function TopMarketResearchCompaniesSingapore2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Market Research Companies in Singapore 2026 | BioNixus Ranked #1"
-        description="Top market research companies in Singapore 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. HSA- and ACE-aligned HCP surveys, KOL mapping, and payer research."
+        title="Top Market Research Companies in Singapore 2026 | BioNixus"
+        description="Top market research companies in Singapore 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. HSA- and ACE-aligned HCP surveys, KOL."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}
         type="article"

@@ -237,7 +237,7 @@ export default function BestGlobalMarketResearchCompaniesPharma2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Best Global Market Research Companies for Pharma (2026) | BioNixus"
+        title="Best Global Market Research Companies for Pharma | BioNixus"
         description="Best global market research companies for pharmaceutical clients ranked for 2026 — methodology, quality, and pharma-specific expertise compared."
         image="https://www.bionixus.com/og-image.png"
         url={CANONICAL}

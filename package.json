@@ -59,6 +59,12 @@
     "refresh:q2-covers": "node scripts/refresh-q2-blog-covers-and-schema.mjs --all",
     "audit:legacy-blog": "node scripts/audit-rewrite-legacy-blog.mjs --dry-run --all",
     "audit:legacy-blog:sync": "node scripts/audit-rewrite-legacy-blog.mjs --all --sync-existing",
+    "seo:blog:rewrite": "node scripts/bulk-rewrite-blog-seo.mjs",
+    "seo:blog:rewrite:dry": "node scripts/bulk-rewrite-blog-seo.mjs --dry-run",
+    "seo:sitewide:rewrite": "node scripts/bulk-rewrite-sitewide-seo.mjs",
+    "seo:sitewide:rewrite:dry": "node scripts/bulk-rewrite-sitewide-seo.mjs --dry-run",
+    "seo:sitewide:rewrite": "node scripts/bulk-rewrite-sitewide-seo.mjs",
+    "seo:sitewide:rewrite:dry": "node scripts/bulk-rewrite-sitewide-seo.mjs --dry-run",
     "firecrawl": "firecrawl",
     "ghl:pipeline-export": "node scripts/bd/ghl-pipeline-export.mjs"
   },

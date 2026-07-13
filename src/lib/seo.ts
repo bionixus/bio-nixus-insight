@@ -10,7 +10,8 @@ export const defaultOgImageWidth = 1200;
 export const defaultOgImageHeight = 630;
 
 /** Alt text for the default OG image. */
-export const defaultOgImageAlt = 'BioNixus — pharmaceutical and healthcare market research';
+export const defaultOgImageAlt =
+  'BioNixus — global pharmaceutical and healthcare market research company';
 
 export const seoByLanguage: Record<Language, {
   title: string;
@@ -19,54 +20,67 @@ export const seoByLanguage: Record<Language, {
   canonicalPath: string;
 }> = {
   en: {
-    // Brand-first title (≤60 chars after normalizeSeoTitle) so search engines never see a
-    // truncated tail and the brand name "Bionixus" / "BioNixus" wins its own SERP at #1.
-    title: 'BioNixus | Pharmaceutical & Healthcare Market Research',
+    // Brand-first ≤60 chars; primary keyword cluster for branded + category SERPs.
+    title: 'BioNixus | Global Pharma & Healthcare Market Research',
     description:
-      'Global pharmaceutical and healthcare market research across the Americas, Europe, and the Middle East — plus B2B and B2C market research. Physician surveys, KOL mapping, payer insight, and market access strategy. US-headquartered with London and Cairo offices, serving 48 global clients across 127+ projects since 2012.',
-    keywords: 'pharmaceutical market research company, healthcare market research company, healthcare market research, MENA market research, pharmaceutical consulting, competitive intelligence, market access, clinical trials, UAE healthcare research, healthcare market research company UAE, pharma market research company UAE, Saudi Arabia pharma research, healthcare market research company Saudi Arabia, pharma market research company KSA, healthcare market research company Egypt, pharma market research company Egypt, market research company Egypt, market research Egypt, medtech market research Saudi Arabia, medtech market research UAE, medtech market research Egypt, FMCG market research Middle East, financial services market research GCC, biotech, life sciences',
+      'Global market research for pharma & medtech. Physician, payer & hospital evidence for launch and access — Americas, Europe, MENA & APAC. Proposal in 24 hours.',
+    keywords:
+      'market research company, pharmaceutical market research company, healthcare market research company, global healthcare market research, pharma market research, physician surveys, KOL mapping, market access research, MENA market research, GCC pharmaceutical research, UAE healthcare research, Saudi Arabia pharma research, Egypt market research, medtech market research, competitive intelligence',
     canonicalPath: '/',
   },
   de: {
-    title: 'Gesundheitsmarktforschung EMEA | Pharma-Insights Deutschland Europa',
-    description: 'Führende Gesundheitsmarktforschung für Pharmaunternehmen in der EMEA-Region. Quantitative und qualitative Ärztebefragungen in Deutschland, UK, Frankreich, VAE, Saudi-Arabien und Nordafrika.',
-    keywords: 'Gesundheitsmarktforschung, Pharmaforschung Deutschland, Ärztebefragungen, Krankenhausforschung, quantitative Marktforschung, qualitative Pharmaforschung, EMEA Healthcare Research, Market Access Deutschland, HTA-Forschung, G-BA Studien, IQWiG Evidenz, Ärztliche Meinungsbildner, KOL-Interviews, Pharma Insights Europa',
+    title: 'BioNixus | Pharma- & Gesundheitsmarktforschung Global',
+    description:
+      'Globale Pharma- & Healthcare-Marktforschung: Ärztebefragungen, Payer-Insights und Market Access in DE, Europa und MENA. Angebot in 24 Stunden.',
+    keywords:
+      'Gesundheitsmarktforschung, Pharmaforschung Deutschland, Ärztebefragungen, Market Access Deutschland, HTA-Forschung, G-BA, IQWiG, KOL-Interviews, Pharma Insights Europa, MENA Marktforschung',
     canonicalPath: '/de',
   },
   fr: {
-    title: 'Études de Marché Santé EMEA | Insights Pharma France Europe',
-    description: 'Études de marché santé pour l\'industrie pharmaceutique dans la région EMEA. Enquêtes médecins quantitatives et qualitatives en France, UK, Allemagne, EAU, Arabie Saoudite et Afrique du Nord.',
-    keywords: 'études de marché santé, recherche pharmaceutique France, enquêtes médecins, études hospitalières, market research EMEA, conseil accès au marché, HAS CEPS',
+    title: 'BioNixus | Études de Marché Pharma & Santé Mondiales',
+    description:
+      'Études de marché santé et pharma : enquêtes médecins, insights payeurs et accès marché en France, Europe et MENA. Proposition sous 24 h.',
+    keywords:
+      'études de marché santé, recherche pharmaceutique France, enquêtes médecins, accès au marché, HAS CEPS, market research EMEA, MENA, BioNixus',
     canonicalPath: '/fr',
   },
   es: {
-    title: 'Investigación de Mercado Sanitario EMEA | Insights Farmacéuticos España Europa',
-    description: 'Investigación de mercado sanitario para la industria farmacéutica en la región EMEA. Encuestas cuantitativas y cualitativas a médicos en España, UK, Alemania, EAU, Arabia Saudí y Norte de África.',
-    keywords: 'investigación mercado sanitario, investigación farmacéutica España, encuestas médicos, estudios hospitalarios, market research EMEA, consultoría acceso mercado, AEMPS',
+    title: 'BioNixus | Investigación de Mercado Pharma y Salud',
+    description:
+      'Investigación farmacéutica y sanitaria: encuestas a médicos, pagadores y acceso al mercado en España, Europa y MENA. Propuesta en 24 h.',
+    keywords:
+      'investigación mercado sanitario, investigación farmacéutica España, encuestas médicos, acceso mercado, AEMPS, market research EMEA, MENA, BioNixus',
     canonicalPath: '/es',
   },
   zh: {
-    title: 'EMEA医疗市场研究 | 欧洲中东非洲制药洞察',
-    description: '为EMEA地区制药行业提供医疗市场研究。在英国、德国、法国、西班牙、阿联酋、沙特和埃及进行医生定量和定性调研。',
-    keywords: '医疗市场研究, 制药研究, 医生调研, 医院研究, EMEA市场研究, 市场准入咨询',
+    title: 'BioNixus | 全球医药与医疗市场研究',
+    description:
+      '全球医药与医疗市场研究：医生调研、支付方洞察与市场准入，覆盖美洲、欧洲、中东与亚太。24小时内出具方案。',
+    keywords: '医疗市场研究, 制药市场研究, 医生调研, 市场准入, 全球市场研究, BioNixus',
     canonicalPath: '/zh',
   },
   ar: {
-    title: 'EMEA Healthcare Market Research | Pharma Insights Europe & MENA',
-    description: 'Leading UK healthcare market research firm delivering quantitative & qualitative pharmaceutical insights from physicians and hospitals across Europe, UAE, Saudi Arabia, Egypt, Kuwait & Qatar.',
-    keywords: 'healthcare market research, pharmaceutical consulting, competitive intelligence, market access, clinical trials, biotech, life sciences',
+    title: 'BioNixus | أبحاث سوق صحية ودوائية عالمية',
+    description:
+      'أبحاث سوق صحية ودوائية عالمية: استطلاعات الأطباء، رؤى جهات الدفع، ودعم الوصول للسوق عبر الخليج وأوروبا والأمريكتين. عرض خلال 24 ساعة.',
+    keywords:
+      'أبحاث سوق صحية, أبحاث سوق دوائية, أبحاث سوق الخليج, السعودية, الإمارات, مصر, الوصول للسوق, BioNixus',
     canonicalPath: '/ar',
   },
   pt: {
-    title: 'BioNixus — Pesquisa de Mercado em Saúde | Brasil, América Latina, Europa & MENA',
-    description: 'Empresa global de pesquisa de mercado em saúde com sede nos EUA e escritórios no Reino Unido e Oriente Médio. Entregamos insights quantitativos e qualitativos farmacêuticos para o Brasil, América Latina, Europa e MENA.',
-    keywords: 'pesquisa de mercado saúde Brasil, pesquisa farmacêutica Brasil, ANVISA pesquisa de mercado, acesso ao mercado Brasil, pesquisa de mercado América Latina, BioNixus Brasil, KOL mapeamento Brasil, CONITEC pesquisa',
+    title: 'BioNixus | Pesquisa de Mercado Pharma e Saúde Global',
+    description:
+      'Pesquisa farmacêutica e de saúde: médicos, pagadores e acesso ao mercado nas Américas, Europa e MENA. Proposta em 24 horas.',
+    keywords:
+      'pesquisa de mercado saúde, pesquisa farmacêutica Brasil, ANVISA, acesso ao mercado, América Latina, BioNixus',
     canonicalPath: '/pt',
   },
   ru: {
-    title: 'BioNixus — Маркетинговые исследования | Россия, Европа, MENA',
-    description: 'Глобальная компания по маркетинговым исследованиям в сфере здравоохранения. Количественные и качественные исследования для фармацевтических компаний в России, Европе и MENA.',
-    keywords: 'маркетинговые исследования здравоохранение Россия, фармацевтические исследования, исследования рынка фармацевтика, BioNixus Россия',
+    title: 'BioNixus | Маркетинговые исследования Pharma и Healthcare',
+    description:
+      'Маркетинговые исследования для фармацевтики и здравоохранения: врачи, плательщики и доступ к рынку в Европе и MENA. Предложение за 24 часа.',
+    keywords:
+      'маркетинговые исследования здравоохранение, фармацевтические исследования, доступ к рынку, BioNixus',
     canonicalPath: '/ru',
   },
 };

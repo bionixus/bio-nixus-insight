@@ -1,7 +1,7 @@
 {
   "seo": {
     "metaTitle": "Farmacoeconomía acceso mercado España 2026 | BioNixus",
-    "metaDescription": "Farmacoeconomía y acceso al mercado en España 2026: RD 415/2026, AEMPS, evaluación HTA y financiación autonómica.",
+    "metaDescription": "Farmacoeconomía y acceso al mercado en España 2026: RD 415/2026, AEMPS, evaluación HTA y financiación autonómica. BioNixus pharmaceutical and healthcare",
     "focusKeyword": "farmacoeconomía acceso mercado españa",
     "keywords": [
       "farmacoeconomía acceso mercado españa",
@@ -164,5 +164,9 @@
     "version": "2026-06-19-v1",
     "appliedAt": "2026-06-18T16:07:10.034Z",
     "anchor": "geo-answer-es-rd415"
+  },
+  "openGraph": {
+    "ogTitle": "Farmacoeconomía acceso mercado España 2026",
+    "ogDescription": "Farmacoeconomía y acceso al mercado en España 2026: RD 415/2026, AEMPS, evaluación HTA y financiación autonómica. BioNixus pharmaceutical and healthcare"
   }
 }

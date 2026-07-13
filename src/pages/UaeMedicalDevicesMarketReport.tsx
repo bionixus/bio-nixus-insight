@@ -124,8 +124,8 @@ const UaeMedicalDevicesMarketReport = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <SEOHead
-        title="UAE Medical Devices Market Report 2026 | MOHAP Registration, Dubai Hub & Hospital Intelligence | BioNixus"
-        description="UAE medical devices market at USD 1.5–1.8B in 2026, growing 9% CAGR. MOHAP, DHA, and DOH regulatory pathways, Dubai distribution hub strategy, and BioNixus hospital-level procurement intelligence."
+        title="UAE Medical Devices Market Report 2026 | BioNixus"
+        description="UAE medical devices market at USD 1.5–1.8B in 2026, growing 9% CAGR. MOHAP, DHA, and DOH regulatory pathways, Dubai distribution hub strategy, and."
         canonical="https://www.bionixus.com/uae-medical-devices-market-report"
         jsonLd={jsonLd}
       />

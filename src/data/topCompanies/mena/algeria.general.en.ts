@@ -6,9 +6,9 @@ export const algeriaGeneralEn: CountryListicleConfig = {
   variant: 'general',
   region: 'mena',
   country: 'Algeria',
-  title: 'Best Market Research Companies in Algeria (2026 Guide) | BioNixus',
+  title: 'Top Market Research Companies in Algeria 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading market research companies in Algeria — healthcare, pharmaceutical, consumer, and strategic research firms compared by capability, ANDPPM regulatory awareness, and Arabic-French bilingual delivery.',
+    'Independent 2026 guide to the leading market research companies in Algeria — healthcare, pharmaceutical, consumer, and strategic research firms compared.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-algeria-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-algeria-2026' },
@@ -247,7 +247,7 @@ export const algeriaGeneralEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request an Algeria Research Proposal' },
   ],
   cta: {
-    title: 'Plan Market Research in Algeria',
+    title: 'Plan Market Research in Algeria | BioNixus',
     body: 'BioNixus delivers custom market research across Algeria and the wider North Africa region — primary research, consumer insights, healthcare and pharmaceutical studies, competitive intelligence, and ANDPPM regulatory-aware market access strategy. Bilingual Arabic-French execution available.',
     button: 'Request a Proposal',
     to: '/contact',

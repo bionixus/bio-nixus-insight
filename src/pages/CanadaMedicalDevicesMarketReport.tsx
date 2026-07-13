@@ -96,8 +96,8 @@ const CanadaMedicalDevicesMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="Canada Medical Devices Market Report 2026 | Health Canada MDL, CADTH HTR & Provincial Reimbursement | BioNixus"
-      description="Canada medical devices market at USD 14B in 2026. Health Canada Class I–IV licensing, CADTH health technology review, provincial funding, Access Consortium, and BioNixus GCC expansion intelligence."
+      title="Canada Medical Devices Market Report 2026 | BioNixus"
+      description="Canada medical devices market at USD 14B in 2026. Health Canada Class I–IV licensing, CADTH health technology review, provincial funding, Access."
       canonical="https://www.bionixus.com/canada-medical-devices-market-report"
       jsonLd={jsonLd}
     />

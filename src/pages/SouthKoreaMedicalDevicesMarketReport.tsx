@@ -84,8 +84,8 @@ const SouthKoreaMedicalDevicesMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="South Korea Medical Devices Market Report 2026 | MFDS, NHIS Reimbursement & Dental/IVD Export | BioNixus"
-      description="South Korea medical devices market at USD 11B in 2026, growing 6% CAGR. MFDS Class I–IV regulation, NHIS HIRA coverage assessment, global dental implant and IVD export hub, and BioNixus GCC intelligence."
+      title="South Korea Medical Devices Market Report 2026 | BioNixus"
+      description="South Korea medical devices market at USD 11B in 2026, growing 6% CAGR. MFDS Class I–IV regulation, NHIS HIRA coverage assessment, global dental implant."
       canonical="https://www.bionixus.com/south-korea-medical-devices-market-report"
       jsonLd={jsonLd}
     />

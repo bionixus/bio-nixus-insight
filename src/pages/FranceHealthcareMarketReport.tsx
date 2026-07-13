@@ -96,8 +96,8 @@ const FranceHealthcareMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="France Healthcare Market Report 2026 | HAS ASMR, Assurance Maladie & Pharma Intelligence | BioNixus"
-      description="France healthcare market at EUR 260B in 2026. HAS SMR/ASMR assessment, CEPS price negotiation, Assurance Maladie reimbursement, AAP early access, and BioNixus intelligence for French pharma companies expanding to GCC."
+      title="France Healthcare Market Report 2026 | BioNixus"
+      description="France healthcare market at EUR 260B in 2026. HAS SMR/ASMR assessment, CEPS price negotiation, Assurance Maladie reimbursement, AAP early access, and."
       canonical="https://www.bionixus.com/france-healthcare-market-report"
       jsonLd={jsonLd}
     />

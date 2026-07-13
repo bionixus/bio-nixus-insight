@@ -67,7 +67,7 @@ export default function NewsHub() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="News & Press Releases | BioNixus Healthcare Market Research"
+        title="News & Press Releases | BioNixus"
         description="Official corporate announcements from BioNixus Global. Press releases for journalists and partners, with links to healthcare and industry insights."
         canonical="/news"
         jsonLd={schemas}

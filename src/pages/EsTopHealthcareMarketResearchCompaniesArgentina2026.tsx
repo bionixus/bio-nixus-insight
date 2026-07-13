@@ -216,7 +216,7 @@ export default function EsTopHealthcareMarketResearchCompaniesArgentina2026() {
       </Helmet>
 
       <OpenGraphMeta
-        title="5 Mejores Empresas de Investigación de Mercado en Salud en Argentina (2026) | BioNixus"
+        title="5 Mejores Empresas de Investigación de Mercado en | BioNixus"
         description="Top 5 empresas de investigación en salud en Argentina: BioNixus, IQVIA, Kantar, NielsenIQ, Euromonitor. ANMAT, obras sociales, PAMI, KOLs comparados."
         url={CANONICAL}
         locale="es_AR"

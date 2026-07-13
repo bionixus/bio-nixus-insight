@@ -259,7 +259,7 @@ export default function TopHealthcareMarketResearchCompaniesRiyadh2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Healthcare Market Research Companies in Riyadh (2026) | BioNixus"
+        title="Top Healthcare Market Research Companies in Riyadh | BioNixus"
         description="Leading healthcare & pharmaceutical market research firms in Riyadh 2026 — SFDA-aware, NUPCO-experienced, KFSH&RC HCP access, Vision 2030 context."
         image="https://www.bionixus.com/og-image.png"
         url={CANONICAL}

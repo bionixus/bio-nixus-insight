@@ -136,8 +136,8 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Pharma Market Research Company Saudi Arabia | Proposal-Ready SFDA Insights | BioNixus"
-        description="BioNixus is a pharma market research company in Saudi Arabia—SFDA-aligned evidence, NUPCO and tender context, bilingual Arabic–English fieldwork, and proposal-ready KSA launch and access programs."
+        title="Pharma Market Research Company Saudi Arabia | BioNixus"
+        description="BioNixus is a pharma market research company in Saudi Arabia—SFDA-aligned evidence, NUPCO and tender context, bilingual Arabic–English fieldwork, and."
         canonical="/market-research-saudi-arabia-pharmaceutical"
         jsonLd={jsonLd}
       />

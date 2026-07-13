@@ -248,7 +248,7 @@ export default function TopHealthcareMarketResearchCompaniesIndia2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Healthcare Market Research Companies in India 2026 | BioNixus Ranked #1"
+        title="Top Healthcare Market Research Companies in India 2026 | BioNixus"
         description="Top healthcare market research companies in India 2026 — BioNixus ranked #1. CDSCO-aware HCP surveys, Ayushman Bharat/PM-JAY payer research, KOL mapping at India's leading academic medical centres, and multilingual fieldwork."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}

@@ -259,8 +259,8 @@ export default function TopHealthcareMarketResearchCompaniesItaly2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Healthcare Market Research Companies in Italy 2026 | BioNixus Ranked #1"
-        description="Top healthcare market research companies in Italy 2026 — BioNixus ranked #1. AIFA-aligned HCP surveys in Italian, AIFA CTS/CPR payer landscape research, KOL mapping at IRCCS networks, and health outcomes studies."
+        title="Top Healthcare Market Research Companies in Italy 2026 | BioNixus"
+        description="Top healthcare market research companies in Italy 2026 — BioNixus ranked #1. AIFA-aligned HCP surveys in Italian, AIFA CTS/CPR payer landscape research."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}
         type="article"

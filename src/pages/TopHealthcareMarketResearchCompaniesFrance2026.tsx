@@ -260,8 +260,8 @@ export default function TopHealthcareMarketResearchCompaniesFrance2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Healthcare Market Research Companies in France 2026 | BioNixus Ranked #1"
-        description="Top healthcare market research companies in France 2026 — BioNixus ranked #1. French-language HCP surveys, HAS SMR/ASMR payer research, CEPS intelligence, KOL mapping at French CHUs, and EU5 benchmarking."
+        title="Top Healthcare Market Research Companies in France | BioNixus"
+        description="Top healthcare market research companies in France 2026 — BioNixus ranked #1. French-language HCP surveys, HAS SMR/ASMR payer research, CEPS intelligence."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}
         type="article"

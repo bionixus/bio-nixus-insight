@@ -1,9 +1,9 @@
 import type { AboutPageCopy } from './aboutPageCopy.types';
 
 export const aboutPageCopyDe: AboutPageCopy = {
-  seoTitle: 'Über BioNixus | Globale Marktforschung auf reguliertem pharmazeutischen Fundament',
+  seoTitle: 'Über BioNixus | BioNixus',
   seoDescription:
-    '2012 in London gegründet, wuchs BioNixus von britischer pharmazeutischer Marktforschung zu einem der weltweit führenden 100 Marktforschungsunternehmen — US-Hauptsitz, MENA-Regionalbüro im Großraum Kairo, tätig in 38 Ländern und 16 Branchenvertikalen.',
+    '2012 in London gegründet, wuchs BioNixus von britischer pharmazeutischer Marktforschung zu einem der weltweit führenden 100 Marktforschungsunternehmen .',
   breadcrumbHome: 'Startseite',
   breadcrumbAbout: 'Über uns',
   heroTagline: 'Globales internationales Marktforschungsunternehmen',

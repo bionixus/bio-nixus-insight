@@ -6,9 +6,9 @@ export const ukHealthcareEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'europe',
   country: 'United Kingdom',
-  title: 'Best Healthcare Market Research Companies in the UK (2026 Guide) | BioNixus',
+  title: 'Top Healthcare Market Research Companies in the UK | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the top healthcare market research companies in the United Kingdom — pharmaceutical primary research, NHS/NICE HTA support, physician surveys, HEOR, and payer research firms compared by UK capability.',
+    'Independent 2026 guide to the top healthcare market research companies in the United Kingdom — pharmaceutical primary research, NHS/NICE HTA support.',
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-uk-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-uk-2026' },
@@ -247,7 +247,7 @@ export const ukHealthcareEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request a UK Healthcare Research Proposal' },
   ],
   cta: {
-    title: 'Plan Healthcare Market Research in the UK',
+    title: 'Plan Healthcare Market Research in the UK | BioNixus',
     body: 'BioNixus delivers specialist healthcare market research across the United Kingdom — pharmaceutical primary research, NICE/SMC/AWMSG HTA evidence, physician and KOL surveys, HEOR, payer research, and post-Brexit RWE strategy for pharma and biotech companies.',
     button: 'Request a Proposal',
     to: '/contact',

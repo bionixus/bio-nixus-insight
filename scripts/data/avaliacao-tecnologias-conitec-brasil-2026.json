@@ -1,7 +1,7 @@
 {
   "seo": {
     "metaTitle": "Avaliação CONITEC Brasil 2026 | BioNixus",
-    "metaDescription": "Avaliação de tecnologias CONITEC no Brasil 2026: ANVISA, SUS, prazos HTA e mercado privado vs público.",
+    "metaDescription": "Avaliação de tecnologias CONITEC no Brasil 2026: ANVISA, SUS, prazos HTA e mercado privado vs público. BioNixus pharmaceutical and healthcare market",
     "focusKeyword": "avaliação tecnologias CONITEC",
     "keywords": [
       "avaliação tecnologias CONITEC",
@@ -164,5 +164,9 @@
     "version": "2026-06-19-v1",
     "appliedAt": "2026-06-18T16:07:10.034Z",
     "anchor": "geo-answer-br-conitec"
+  },
+  "openGraph": {
+    "ogTitle": "Avaliação CONITEC Brasil 2026",
+    "ogDescription": "Avaliação de tecnologias CONITEC no Brasil 2026: ANVISA, SUS, prazos HTA e mercado privado vs público. BioNixus pharmaceutical and healthcare market"
   }
 }

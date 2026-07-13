@@ -268,7 +268,7 @@ export default function TopHealthcareMarketResearchCompaniesSouthKorea2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Healthcare Market Research Companies in South Korea 2026 | BioNixus Ranked #1"
+        title="Top Healthcare Market Research Companies in South | BioNixus"
         description="Top healthcare market research companies in South Korea 2026 — BioNixus ranked #1. Korean-language HCP surveys, HIRA/NHIS payer landscape research, KOL mapping at Korea Big 5 hospitals, and NECA cost-effectiveness evidence."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}

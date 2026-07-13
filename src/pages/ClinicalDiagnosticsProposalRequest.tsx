@@ -90,7 +90,7 @@ export default function ClinicalDiagnosticsProposalRequest() {
     <div className="cd-proposal-site min-h-screen">
       <SEOHead
         title="Register for Clinical Diagnostics Proposal | BioNixus"
-        description="Register to receive the full BioNixus QC and immunohematology market assessment proposal for Saudi Arabia and Türkiye. Complete methodology deck without published pricing."
+        description="Register to receive the full BioNixus QC and immunohematology market assessment proposal for Saudi Arabia and Türkiye. Complete methodology deck without."
         canonical={PAGE_PATH}
         jsonLd={jsonLd}
       />

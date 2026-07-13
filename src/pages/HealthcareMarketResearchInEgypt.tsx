@@ -76,7 +76,7 @@ export default function HealthcareMarketResearchInEgypt() {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Healthcare Market Research Company in Egypt | BioNixus"
-        description="Healthcare market research firms in Egypt delivering HCP, KOL, patient, and payer studies. EDA and UHI-aligned healthcare market research for Egyptian product launches."
+        description="Healthcare market research firms in Egypt delivering HCP, KOL, patient, and payer studies. EDA and UHI-aligned healthcare market research for Egyptian."
         canonical="/egypt-healthcare-market-research"
         jsonLd={jsonLd}
       />

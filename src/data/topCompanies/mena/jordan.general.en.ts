@@ -6,9 +6,9 @@ export const jordanGeneralEn: CountryListicleConfig = {
   variant: 'general',
   region: 'mena',
   country: 'Jordan',
-  title: 'Best Market Research Companies in Jordan (2026 Guide) | BioNixus',
+  title: 'Top Market Research Companies in Jordan 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading market research companies in Jordan — healthcare, pharmaceutical, consumer, and strategic research firms compared by capability. Covers JFDA regulatory context and Levant market access.',
+    'Independent 2026 guide to the leading market research companies in Jordan — healthcare, pharmaceutical, consumer, and strategic research firms compared by.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-jordan-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-jordan-2026' },
@@ -245,7 +245,7 @@ export const jordanGeneralEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request a Jordan Research Proposal' },
   ],
   cta: {
-    title: 'Plan Market Research in Jordan',
+    title: 'Plan Market Research in Jordan | BioNixus',
     body: 'BioNixus delivers custom market research across Jordan and the wider Levant — primary research, consumer insights, healthcare and pharmaceutical studies, JFDA regulatory intelligence, and competitive analysis for the Jordanian and regional market.',
     button: 'Request a Proposal',
     to: '/contact',

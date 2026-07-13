@@ -1,7 +1,7 @@
 {
   "seo": {
     "metaTitle": "EMA HTA Evidence Requirements Europe 2026 | BioNixus",
-    "metaDescription": "How EU HTA Regulation, joint clinical assessment, and real-world evidence shape pharmaceutical market access in Europe — with country-level pricing context for 2026.",
+    "metaDescription": "How EU HTA Regulation, joint clinical assessment, and real-world evidence shape pharmaceutical market access in Europe — with country-level pricing.",
     "focusKeyword": "healthcare market research europe",
     "keywords": [
       "healthcare market research europe",
@@ -151,5 +151,9 @@
     "version": "2026-06-18-v1",
     "appliedAt": "2026-06-18T15:46:06.615Z",
     "anchor": "geo-answer-ema-hta"
+  },
+  "openGraph": {
+    "ogTitle": "EMA HTA Evidence Requirements Europe 2026",
+    "ogDescription": "How EU HTA Regulation, joint clinical assessment, and real-world evidence shape pharmaceutical market access in Europe — with country-level pricing."
   }
 }

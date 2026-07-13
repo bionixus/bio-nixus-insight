@@ -115,7 +115,7 @@ export default function FrancePharmaceuticalMarketResearch() {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Pharmaceutical Market Research France | BioNixus"
-        description="BioNixus delivers pharmaceutical market research in France — French-language HCP surveys, HAS SMR/ASMR payer research, CEPS pricing intelligence, and KOL mapping at AP-HP, HCL Lyon, APHM Marseille, CHU Bordeaux, and CHU Toulouse."
+        description="BioNixus delivers pharmaceutical market research in France — French-language HCP surveys, HAS SMR/ASMR payer research, CEPS pricing intelligence, and KOL."
         canonical="/pharmaceutical-market-research-france"
         jsonLd={jsonLd}
       />

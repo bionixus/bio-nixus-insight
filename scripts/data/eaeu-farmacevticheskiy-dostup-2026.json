@@ -1,7 +1,7 @@
 {
   "seo": {
     "metaTitle": "Доступ на рынок ЕАЭС 2026 | BioNixus",
-    "metaDescription": "Фармацевтический доступ ЕАЭС 2026: регистрация, локализация ПП 719, GRLS/VED и исследование рынка.",
+    "metaDescription": "Фармацевтический доступ ЕАЭС 2026: регистрация, локализация ПП 719, GRLS/VED и исследование рынка. BioNixus pharmaceutical and healthcare market research.",
     "focusKeyword": "eaeu pharmaceutical market access",
     "keywords": [
       "eaeu pharmaceutical market access",
@@ -161,5 +161,9 @@
     "version": "2026-06-19-v1",
     "appliedAt": "2026-06-18T16:07:10.034Z",
     "anchor": "geo-answer-ru-eaeu"
+  },
+  "openGraph": {
+    "ogTitle": "Доступ на рынок ЕАЭС 2026",
+    "ogDescription": "Фармацевтический доступ ЕАЭС 2026: регистрация, локализация ПП 719, GRLS/VED и исследование рынка. BioNixus pharmaceutical and healthcare market research."
   }
 }

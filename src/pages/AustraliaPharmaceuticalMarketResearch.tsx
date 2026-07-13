@@ -124,8 +124,8 @@ export default function AustraliaPharmaceuticalMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Pharmaceutical Market Research Company in Australia | TGA, PBAC & PBS Aligned | BioNixus"
-        description="BioNixus is a pharmaceutical market research company in Australia — TGA-aligned HCP surveys, KOL mapping, PBAC payer research, PBS formulary studies, and NHMRC-compliant market access evidence."
+        title="Pharmaceutical Market Research Company in Australia | BioNixus"
+        description="BioNixus is a pharmaceutical market research company in Australia — TGA-aligned HCP surveys, KOL mapping, PBAC payer research, PBS formulary studies, and."
         canonical="/pharmaceutical-market-research-australia"
         jsonLd={jsonLd}
       />

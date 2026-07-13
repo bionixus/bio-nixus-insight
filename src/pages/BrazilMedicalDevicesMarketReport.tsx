@@ -96,8 +96,8 @@ const BrazilMedicalDevicesMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="Brazil Medical Devices Market Report 2026 | ANVISA Registration, SUS Procurement & Commercial Intelligence | BioNixus"
-      description="Brazil medical devices market at USD 12B in 2026 — largest in Latin America. ANVISA Class I–IV registration, SUS public procurement, ANS private sector, import tax dynamics, and BioNixus GCC expansion intelligence."
+      title="Brazil Medical Devices Market Report 2026 | BioNixus"
+      description="Brazil medical devices market at USD 12B in 2026 — largest in Latin America. ANVISA Class I–IV registration, SUS public procurement, ANS private sector."
       canonical="https://www.bionixus.com/brazil-medical-devices-market-report"
       jsonLd={jsonLd}
     />

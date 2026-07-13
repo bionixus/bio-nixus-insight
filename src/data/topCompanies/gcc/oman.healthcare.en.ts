@@ -6,9 +6,9 @@ export const omanHealthcareEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'gcc',
   country: 'Oman',
-  title: 'Best Healthcare Market Research Companies in Oman (2026 Guide) | BioNixus',
+  title: 'Top Healthcare Market Research Companies in Oman 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading healthcare market research companies in Oman — pharmaceutical U&A, physician surveys, KOL mapping, MoH Oman regulatory awareness, HEOR, and market access strategy firms compared by capability.',
+    'Independent 2026 guide to the leading healthcare market research companies in Oman — pharmaceutical U&A, physician surveys, KOL mapping, MoH Oman.',
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-oman-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-oman-2026' },
@@ -251,7 +251,7 @@ export const omanHealthcareEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request an Oman Healthcare Research Proposal' },
   ],
   cta: {
-    title: 'Plan Healthcare Market Research in Oman',
+    title: 'Plan Healthcare Market Research in Oman | BioNixus',
     body: 'BioNixus delivers custom healthcare and pharmaceutical market research across Oman and the wider GCC — physician surveys, KOL mapping, payer research, HEOR, market access strategy, and Oman Vision 2040 sector intelligence.',
     button: 'Request a Proposal',
     to: '/contact',

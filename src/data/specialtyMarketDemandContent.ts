@@ -50,7 +50,7 @@ const singaporeMedtechManufacturing: SpecialtyMarketDemandContent = {
   breadcrumbLabel: 'Singapore MedTech Manufacturing Market',
   title: 'Singapore MedTech Manufacturing Market Research | BioNixus',
   description:
-    'Singapore MedTech manufacturing market intelligence — EDB and JTC manufacturing hubs, HSA manufacturing licences, CDMO capacity, ASEAN export positioning, and hospital/OEM buyer research from BioNixus.',
+    'Singapore MedTech manufacturing market intelligence — EDB and JTC manufacturing hubs, HSA manufacturing licences, CDMO capacity, ASEAN export positioning.',
   canonical: `${BASE}/singapore-medtech-manufacturing-market`,
   h1: 'Singapore MedTech Manufacturing Market: Research & Commercial Intelligence',
   intro: [
@@ -218,7 +218,7 @@ const singaporePharmaceuticalMarket: SpecialtyMarketDemandContent = {
   breadcrumbLabel: 'Singapore Pharmaceutical Market',
   title: 'Singapore Pharmaceutical Market Intelligence 2026 | BioNixus',
   description:
-    'Singapore pharmaceutical market intelligence — HSA registration, ACE HTA, MOH SDL/MAF subsidy listing, SingHealth/NUHS/NHG cluster dynamics, and APAC hub commercial research from BioNixus.',
+    'Singapore pharmaceutical market intelligence — HSA registration, ACE HTA, MOH SDL/MAF subsidy listing, SingHealth/NUHS/NHG cluster dynamics, and APAC hub.',
   canonical: `${BASE}/singapore-pharmaceutical-market`,
   h1: 'Singapore Pharmaceutical Market: Structure, Access & Commercial Intelligence',
   intro: [
@@ -376,7 +376,7 @@ const japanGeneralSurgicalDevices: SpecialtyMarketDemandContent = {
   breadcrumbLabel: 'Japan General Surgical Devices Market',
   title: 'Japan General Surgical Devices Market Research | BioNixus',
   description:
-    'Japan general surgical devices market intelligence — OR procurement, PMDA pathways, NHI functional classification, laparoscopy and energy devices, and hospital adoption research from BioNixus.',
+    'Japan general surgical devices market intelligence — OR procurement, PMDA pathways, NHI functional classification, laparoscopy and energy devices, and.',
   canonical: `${BASE}/japan-general-surgical-devices-market`,
   h1: 'Japan General Surgical Devices Market: Research & Commercial Intelligence',
   intro: [
@@ -504,7 +504,7 @@ const healthcareBioconvergence: SpecialtyMarketDemandContent = {
   breadcrumbLabel: 'Healthcare Bioconvergence Market',
   title: 'Healthcare Bioconvergence Market Research | BioNixus',
   description:
-    'Healthcare bioconvergence market research — where biotech, MedTech, digital health, and materials science converge. Stakeholder mapping, partnership diligence, and market-entry intelligence from BioNixus.',
+    'Healthcare bioconvergence market research — where biotech, MedTech, digital health, and materials science converge. Stakeholder mapping, partnership.',
   canonical: `${BASE}/healthcare-bioconvergence-market`,
   h1: 'Healthcare Bioconvergence Market: Research for Converging Life-Science Platforms',
   intro: [
@@ -634,7 +634,7 @@ const nupcoTenderCalendar: SpecialtyMarketDemandContent = {
   breadcrumbLabel: 'NUPCO Tender Calendar & Events 2026',
   title: 'NUPCO Tender Calendar & Events 2026 | BioNixus',
   description:
-    'NUPCO tender calendar and events planning for 2026 — framework-agreement cycles, conference timing, hospital pull-through signals, and primary research BioNixus runs around Saudi pharmaceutical and MedTech tenders.',
+    'NUPCO tender calendar and events planning for 2026 — framework-agreement cycles, conference timing, hospital pull-through signals, and primary research.',
   canonical: `${BASE}/nupco-tender-calendar-events-2026`,
   h1: 'NUPCO Tender Calendar & Events 2026: Planning Intelligence for Saudi Access Teams',
   intro: [
@@ -794,7 +794,7 @@ const singaporeIvdMarketAccess: SpecialtyMarketDemandContent = {
   breadcrumbLabel: 'Singapore IVD Market Access',
   title: 'Singapore IVD Market Access Research | BioNixus',
   description:
-    'Singapore IVD market access research — HSA device pathways, hospital lab procurement, cluster testing algorithms, and reimbursement-adjacent adoption intelligence from BioNixus.',
+    'Singapore IVD market access research — HSA device pathways, hospital lab procurement, cluster testing algorithms, and reimbursement-adjacent adoption.',
   canonical: `${BASE}/singapore-ivd-market-access`,
   h1: 'Singapore IVD Market Access: Lab, Hospital & Regulatory Intelligence',
   intro: [
@@ -862,7 +862,7 @@ const japanNeurologyDevices: SpecialtyMarketDemandContent = {
   breadcrumbLabel: 'Japan Neurology Devices Market',
   title: 'Japan Neurology Devices Market Research | BioNixus',
   description:
-    'Japan neurology devices market research — neurointervention, neuromonitoring, neurosurgery capital, PMDA pathways, and hospital adoption intelligence from BioNixus.',
+    'Japan neurology devices market research — neurointervention, neuromonitoring, neurosurgery capital, PMDA pathways, and hospital adoption intelligence from.',
   canonical: `${BASE}/japan-neurology-devices-market`,
   h1: 'Japan Neurology Devices Market: Clinical & Access Intelligence',
   intro: [
@@ -925,7 +925,7 @@ const japanMedicalDisposables: SpecialtyMarketDemandContent = {
   breadcrumbLabel: 'Japan Medical Disposables Market',
   title: 'Japan Medical Disposables Market Research | BioNixus',
   description:
-    'Japan medical disposables market research — hospital consumables, infection-control products, tender dynamics, and procurement behaviour intelligence from BioNixus.',
+    'Japan medical disposables market research — hospital consumables, infection-control products, tender dynamics, and procurement behaviour intelligence from.',
   canonical: `${BASE}/japan-medical-disposables-market`,
   h1: 'Japan Medical Disposables Market: Procurement & Adoption Intelligence',
   intro: [
@@ -986,9 +986,9 @@ const japanMedtechAccessAutomation: SpecialtyMarketDemandContent = {
   segmentLabel: 'Japan Medical Device Market Access',
   badge: 'Japan · Access & Automation',
   breadcrumbLabel: 'Japan Medical Device Market Access',
-  title: 'Japan Medical Device Market Access & Automation Research | BioNixus',
+  title: 'Japan Medical Device Market Access & Automation | BioNixus',
   description:
-    'Japan medical device market access and medical automation research — PMDA pathways, NHI listing, hospital automation adoption, and procurement intelligence from BioNixus.',
+    'Japan medical device market access and medical automation research — PMDA pathways, NHI listing, hospital automation adoption, and procurement.',
   canonical: `${BASE}/japan-medical-device-market-access`,
   h1: 'Japan Medical Device Market Access & Medical Automation Intelligence',
   intro: [
@@ -1051,7 +1051,7 @@ const italyClinicalTrials: SpecialtyMarketDemandContent = {
   breadcrumbLabel: 'Italy Clinical Trials Market',
   title: 'Italy Clinical Trials Market Research | BioNixus',
   description:
-    'Italy clinical trials market research — site feasibility, ethics timelines, investigator networks, AIFA-aware context, and sponsor decision intelligence from BioNixus.',
+    'Italy clinical trials market research — site feasibility, ethics timelines, investigator networks, AIFA-aware context, and sponsor decision intelligence.',
   canonical: `${BASE}/italy-clinical-trials-market`,
   h1: 'Italy Clinical Trials Market: Site, Feasibility & Sponsor Intelligence',
   intro: [
@@ -1242,7 +1242,7 @@ const italyPortableDiagnostics: SpecialtyMarketDemandContent = {
   breadcrumbLabel: 'Italy Portable Diagnostic Devices Market',
   title: 'Italy Portable Diagnostic Devices Market Research | BioNixus',
   description:
-    'Italy portable diagnostic devices market research — POCT adoption, hospital and community laboratory pathways, AIFA/notified-body context, and procurement intelligence from BioNixus.',
+    'Italy portable diagnostic devices market research — POCT adoption, hospital and community laboratory pathways, AIFA/notified-body context, and procurement.',
   canonical: `${BASE}/italy-portable-diagnostic-devices-market`,
   h1: 'Italy Portable Diagnostic Devices Market: POCT & Adoption Intelligence',
   intro: [
@@ -1305,9 +1305,9 @@ const italyDeviceConnectivity: SpecialtyMarketDemandContent = {
   segmentLabel: 'Italy Medical Device Connectivity',
   badge: 'Italy · Digital Health / Connectivity',
   breadcrumbLabel: 'Italy Medical Device Connectivity Market',
-  title: 'Italy Medical Device Connectivity & Digital Health Market Research | BioNixus',
+  title: 'Italy Medical Device Connectivity & Digital Health | BioNixus',
   description:
-    'Italy medical device connectivity and digital health market research — HIS/LIS integration, hospital microservices architectures, cybersecurity diligence, and buyer mapping from BioNixus.',
+    'Italy medical device connectivity and digital health market research — HIS/LIS integration, hospital microservices architectures, cybersecurity diligence.',
   canonical: `${BASE}/italy-medical-device-connectivity-market`,
   h1: 'Italy Medical Device Connectivity & Digital Health Market Intelligence',
   intro: [
@@ -1372,7 +1372,7 @@ const italyOncologyAntiInfectiveAccess: SpecialtyMarketDemandContent = {
   breadcrumbLabel: 'Italy Oncology & Anti-infective Market Access',
   title: 'Italy Oncology & Anti-infective Market Access Research | BioNixus',
   description:
-    'Italy oncology and anti-infective market access research — Keytruda-class IO analogues, daptomycin-class hospital antibiotics, AIFA/regional pathways, and hospital formulary intelligence from BioNixus.',
+    'Italy oncology and anti-infective market access research — Keytruda-class IO analogues, daptomycin-class hospital antibiotics, AIFA/regional pathways, and.',
   canonical: `${BASE}/italy-oncology-antiinfective-market-access`,
   h1: 'Italy Oncology & Anti-infective Market Access: AIFA, Hospital & Regional Intelligence',
   intro: [
@@ -1437,7 +1437,7 @@ const gccFspMarket: SpecialtyMarketDemandContent = {
   breadcrumbLabel: 'GCC FSP Market',
   title: 'GCC Functional Service Providers (FSP) Market Research | BioNixus',
   description:
-    'GCC functional service providers market research — FSP vs full-service outsourcing, clinical operations capacity, sponsor buyer criteria, and Gulf trial delivery intelligence from BioNixus.',
+    'GCC functional service providers market research — FSP vs full-service outsourcing, clinical operations capacity, sponsor buyer criteria, and Gulf trial.',
   canonical: `${BASE}/gcc-functional-service-providers-market`,
   h1: 'GCC Functional Service Providers (FSP) Market: Sponsor & Delivery Intelligence',
   intro: [
@@ -1511,7 +1511,7 @@ const gccMedicationManagement: SpecialtyMarketDemandContent = {
   breadcrumbLabel: 'GCC Medication Management Market',
   title: 'GCC Medication Management Market Research | BioNixus',
   description:
-    'GCC medication management market research — hospital pharmacy automation, e-prescribing, adherence programmes, Wasfaty-linked workflows, and buyer intelligence from BioNixus.',
+    'GCC medication management market research — hospital pharmacy automation, e-prescribing, adherence programmes, Wasfaty-linked workflows, and buyer.',
   canonical: `${BASE}/gcc-medication-management-market`,
   h1: 'GCC Medication Management Market: Pharmacy, Automation & Adherence Intelligence',
   intro: [
@@ -1585,7 +1585,7 @@ const doxorubicinMarket: SpecialtyMarketDemandContent = {
   breadcrumbLabel: 'Doxorubicin Market Access',
   title: 'Doxorubicin Market Access Research | BioNixus',
   description:
-    'Doxorubicin market access research — liposomal vs conventional use, oncology protocols, hospital tender dynamics, and GCC supportive oncology intelligence from BioNixus.',
+    'Doxorubicin market access research — liposomal vs conventional use, oncology protocols, hospital tender dynamics, and GCC supportive oncology intelligence.',
   canonical: `${BASE}/doxorubicin-market`,
   h1: 'Doxorubicin Market Access: Protocol, Tender & Formulation Intelligence',
   intro: [
@@ -1647,9 +1647,9 @@ const meaClinicalTrialImaging: SpecialtyMarketDemandContent = {
   segmentLabel: 'MEA Clinical Trial Imaging',
   badge: 'Middle East & Africa · Clinical Trial Imaging',
   breadcrumbLabel: 'MEA Clinical Trial Imaging Market',
-  title: 'Middle East & Africa Clinical Trial Imaging Market Research | BioNixus',
+  title: 'Middle East & Africa Clinical Trial Imaging Market | BioNixus',
   description:
-    'Middle East and Africa clinical trial imaging market research — central reads, site imaging capability, oncology and CNS endpoints, and sponsor/CRO buyer intelligence from BioNixus.',
+    'Middle East and Africa clinical trial imaging market research — central reads, site imaging capability, oncology and CNS endpoints, and sponsor/CRO buyer.',
   canonical: `${BASE}/mea-clinical-trial-imaging-market`,
   h1: 'Middle East & Africa Clinical Trial Imaging Market Intelligence',
   intro: [

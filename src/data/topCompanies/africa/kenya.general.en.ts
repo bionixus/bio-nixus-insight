@@ -6,9 +6,9 @@ export const kenyaGeneralEn: CountryListicleConfig = {
   variant: 'general',
   region: 'africa',
   country: 'Kenya',
-  title: 'Best Market Research Companies in Kenya (2026 Guide) | BioNixus',
+  title: 'Top Market Research Companies in Kenya 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading market research companies in Kenya — healthcare, pharmaceutical, consumer, and strategic research firms compared by capability, PPB regulatory awareness, and East Africa execution.',
+    'Independent 2026 guide to the leading market research companies in Kenya — healthcare, pharmaceutical, consumer, and strategic research firms compared by.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-kenya-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-kenya-2026' },
@@ -246,7 +246,7 @@ export const kenyaGeneralEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request a Kenya Research Proposal' },
   ],
   cta: {
-    title: 'Plan Market Research in Kenya',
+    title: 'Plan Market Research in Kenya | BioNixus',
     body: 'BioNixus delivers custom market research across Kenya and the wider East Africa region — primary research, consumer insights, healthcare and pharmaceutical studies, PPB regulatory awareness, Swahili-English bilingual fieldwork, digital-first mobile research, and competitive intelligence.',
     button: 'Request a Proposal',
     to: '/contact',

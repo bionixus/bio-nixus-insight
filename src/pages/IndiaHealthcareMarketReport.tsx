@@ -84,7 +84,7 @@ const IndiaHealthcareMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="India Healthcare Market Report 2026 | CDSCO, Ayushman Bharat & Pharmaceutical Market Intelligence | BioNixus"
+      title="India Healthcare Market Report 2026 | BioNixus"
       description="India healthcare market at USD 265B in 2026. CDSCO drug registration, Ayushman Bharat PMJAY coverage, NLEM pricing, world's largest generic medicine supplier, and BioNixus intelligence for Indian pharma expanding to GCC and MENA."
       canonical="https://www.bionixus.com/india-healthcare-market-report"
       jsonLd={jsonLd}

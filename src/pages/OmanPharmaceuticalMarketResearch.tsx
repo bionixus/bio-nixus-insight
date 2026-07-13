@@ -202,8 +202,8 @@ export default function OmanPharmaceuticalMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Pharmaceutical Market Research Company in Oman | MoH Oman | BioNixus"
-        description="BioNixus is a pharmaceutical and healthcare market research company in Oman — MoH Oman and MCIOMS-aligned evidence, bilingual fieldwork, and proposal-ready Oman programs."
+        title="Pharmaceutical Market Research Company in Oman | BioNixus"
+        description="BioNixus is a pharmaceutical and healthcare market research company in Oman — MoH Oman and MCIOMS-aligned evidence, bilingual fieldwork, and."
         canonical="/pharmaceutical-market-research-oman"
         jsonLd={jsonLd}
       />

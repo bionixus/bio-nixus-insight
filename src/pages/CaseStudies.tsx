@@ -128,7 +128,7 @@ const CaseStudies = () => {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Healthcare & Pharmaceutical Case Studies | BioNixus"
-        description="Explore BioNixus case studies in healthcare and pharmaceutical market research across Europe, the Middle East, and Africa."
+        description="Explore BioNixus case studies in healthcare and pharmaceutical market research across Europe, the Middle East, and Africa. Proposal in 24 hours."
         canonical="/case-studies"
       />
       <Navbar />

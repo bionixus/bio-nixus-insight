@@ -99,8 +99,8 @@ const KuwaitMedicalDevicesMarketReport = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <SEOHead
-        title="Kuwait Medical Devices Market Report 2026 | CMS Procurement & Hospital Intelligence | BioNixus"
-        description="Kuwait medical devices market at USD 480–540M in 2026. Central Medical Stores procurement intelligence, MOPH registration requirements, device segments, and primary HCP research across Kuwait government and private hospitals."
+        title="Kuwait Medical Devices Market Report 2026 | BioNixus"
+        description="Kuwait medical devices market at USD 480–540M in 2026. Central Medical Stores procurement intelligence, MOPH registration requirements, device segments."
         canonical="https://www.bionixus.com/kuwait-medical-devices-market-report"
         jsonLd={jsonLd}
       />

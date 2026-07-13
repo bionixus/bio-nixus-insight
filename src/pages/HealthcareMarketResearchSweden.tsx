@@ -77,8 +77,8 @@ export default function HealthcareMarketResearchSweden() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Market Research Company in Sweden | TLV & Läkemedelsverket Aligned | BioNixus"
-        description="BioNixus is a healthcare market research company in Sweden — ethics-authority-compliant HCP surveys, payer landscape analysis, KOL mapping, and health outcomes research aligned with Läkemedelsverket, TLV, and regional procurement requirements."
+        title="Healthcare Market Research Company in Sweden | BioNixus"
+        description="BioNixus is a healthcare market research company in Sweden — ethics-authority-compliant HCP surveys, payer landscape analysis, KOL mapping, and health."
         canonical="/healthcare-market-research-sweden"
         jsonLd={jsonLd}
       />

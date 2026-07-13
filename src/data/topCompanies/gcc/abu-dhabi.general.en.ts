@@ -8,9 +8,9 @@ export const abuDhabiGeneralEn: CountryListicleConfig = {
   country: 'Abu Dhabi',
   rtl: false,
 
-  title: 'Best Market Research Companies in Abu Dhabi (2026 Guide) | BioNixus',
+  title: 'Top Market Research Companies in Abu Dhabi 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to leading market research companies in Abu Dhabi — DoH-aware, healthcare, pharmaceutical, consumer, and strategic research firms compared.',
+    'Independent 2026 guide to leading market research companies in Abu Dhabi — DoH-aware, healthcare, pharmaceutical, consumer, and strategic research firms.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-abu-dhabi-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-abu-dhabi-2026' },
@@ -263,7 +263,7 @@ export const abuDhabiGeneralEn: CountryListicleConfig = {
   ],
 
   cta: {
-    title: 'Plan Market Research in Abu Dhabi',
+    title: 'Plan Market Research in Abu Dhabi | BioNixus',
     body: "BioNixus delivers custom market research across Abu Dhabi and the wider UAE — primary consumer research, healthcare and pharmaceutical studies, government and public sector research, FMCG intelligence, KOL mapping, HEOR, and strategic analysis. Our Abu Dhabi execution capability combines DoH regulatory awareness, Arabic-English bilingual fieldwork, and established physician, consumer, and institutional networks across the emirate.",
     button: 'Request a Proposal',
     to: '/contact',

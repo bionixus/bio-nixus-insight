@@ -6,9 +6,9 @@ export const egyptHealthcareEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'mena',
   country: 'Egypt',
-  title: 'Best Healthcare Market Research Companies in Egypt (2026 Guide) | BioNixus',
+  title: 'Top Healthcare Market Research Companies in Egypt 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to healthcare market research companies in Egypt — EDA-aware, pharmaceutical U&A, KOL mapping, HEOR, and market access firms for the Egyptian pharma market.',
+    'Independent 2026 guide to healthcare market research companies in Egypt — EDA-aware, pharmaceutical U&A, KOL mapping, HEOR, and market access firms for.',
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-egypt-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-egypt-2026' },
@@ -274,7 +274,7 @@ export const egyptHealthcareEn: CountryListicleConfig = {
     },
   ],
   cta: {
-    title: 'Plan Healthcare Market Research in Egypt',
+    title: 'Plan Healthcare Market Research in Egypt | BioNixus',
     body: 'BioNixus is a global healthcare market research company with strong Egypt and MENA capability — delivering pharmaceutical U&A, KOL mapping, payer research, HEOR, UHC impact analysis, and EDA-aware market access strategy across Egypt\'s $3B+ pharmaceutical market.',
     button: 'Request a Proposal',
     to: '/contact',

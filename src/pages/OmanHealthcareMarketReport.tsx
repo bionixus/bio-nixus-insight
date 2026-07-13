@@ -114,8 +114,8 @@ const OmanHealthcareMarketReport = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <SEOHead
-        title="Oman Healthcare Market Report 2026 | Pharma Market Size & MOH Access Intelligence | BioNixus"
-        description="Oman healthcare market at USD 5.5–6.5B in 2026. Pharmaceutical market (USD 550M), MOH registration, Vision 2040 healthcare privatization, therapy area analysis, and BioNixus primary HCP research."
+        title="Oman Healthcare Market Report 2026 | BioNixus"
+        description="Oman healthcare market at USD 5.5–6.5B in 2026. Pharmaceutical market (USD 550M), MOH registration, Vision 2040 healthcare privatization, therapy area."
         canonical="https://www.bionixus.com/oman-healthcare-market-report"
         jsonLd={jsonLd}
       />

@@ -92,7 +92,7 @@ const SingaporeHealthcareMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="Singapore Healthcare Market Report 2026 | HSA, ACE, 3Ms & Southeast Asia Pharma Hub | BioNixus"
+      title="Singapore Healthcare Market Report 2026 | BioNixus"
       description="Singapore healthcare market at USD 30B in 2026 — Southeast Asia's premier healthcare hub. HSA abridged registration, ACE cost-effectiveness assessment, MediShield Life, Biopolis life sciences cluster, and BioNixus GCC intelligence."
       canonical="https://www.bionixus.com/singapore-healthcare-market-report"
       jsonLd={jsonLd}

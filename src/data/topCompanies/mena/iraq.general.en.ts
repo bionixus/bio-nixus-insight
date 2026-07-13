@@ -6,9 +6,9 @@ export const iraqGeneralEn: CountryListicleConfig = {
   variant: 'general',
   region: 'mena',
   country: 'Iraq',
-  title: 'Best Market Research Companies in Iraq (2026 Guide) | BioNixus',
+  title: 'Top Market Research Companies in Iraq 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading market research companies in Iraq — healthcare, pharmaceutical, consumer, and strategic research firms compared by capability for Baghdad, Erbil, and the wider Iraqi market.',
+    'Independent 2026 guide to the leading market research companies in Iraq — healthcare, pharmaceutical, consumer, and strategic research firms compared by.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-iraq-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-iraq-2026' },
@@ -261,7 +261,7 @@ export const iraqGeneralEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request an Iraq Research Proposal' },
   ],
   cta: {
-    title: 'Plan Market Research in Iraq',
+    title: 'Plan Market Research in Iraq | BioNixus',
     body: 'BioNixus delivers custom market research across Iraq and the wider MENA region — primary research, consumer insights, healthcare and pharmaceutical studies, competitive intelligence, and reconstruction-sector analysis for Baghdad, Erbil, and the Kurdistan Region.',
     button: 'Request a Proposal',
     to: '/contact',

@@ -729,7 +729,7 @@ export default function SiteMapPage() {
                   id="section-global"
                   icon={Globe2}
                   title="Global websites — market entry blueprints"
-                  description="Go-to-market and commercialization intelligence by country (distinct from healthcare MR service hubs)."
+                  description="Go-to-market and commercialization intelligence by country (distinct from healthcare MR service hubs). Proposal in 24 hours."
                   countLabel={`${globalWebsitesCountryLinks.length} countries`}
                 >
                   <ul className="grid gap-2 sm:grid-cols-2">
@@ -761,7 +761,7 @@ export default function SiteMapPage() {
                   id="section-reports"
                   icon={BarChart3}
                   title="Market intelligence reports"
-                  description="Healthcare and medical devices outlooks across GCC, key EU markets, Americas, and APAC corridors."
+                  description="Healthcare and medical devices outlooks across GCC, key EU markets, Americas, and APAC corridors. Proposal in 24 hours."
                   countLabel={`${marketReportLinks.length} reports`}
                 >
                   <ul className="grid gap-2 sm:grid-cols-2 xl:grid-cols-3">
@@ -812,7 +812,7 @@ export default function SiteMapPage() {
                   id="section-locales"
                   icon={Globe2}
                   title="Languages & localized hubs"
-                  description="Regional language routes mirroring flagship healthcare positioning pages."
+                  description="Regional language routes mirroring flagship healthcare positioning pages. Proposal in 24 hours."
                   countLabel={`${localizedLinks.length} routes`}
                 >
                   <ul className="grid gap-2 sm:grid-cols-2">

@@ -155,5 +155,9 @@
     "version": "2026-06-19-v1",
     "appliedAt": "2026-06-18T16:07:10.034Z",
     "anchor": "geo-answer-heor-eu"
+  },
+  "openGraph": {
+    "ogTitle": "Pharmacoeconomics Consulting Europe 2026",
+    "ogDescription": "Pharmacoeconomics consulting in Europe for 2026: CEA, budget impact, G-BA AMNOG, HAS CEESP, and Spain RD 415/2026 — HEOR evidence for payer negotiations."
   }
 }

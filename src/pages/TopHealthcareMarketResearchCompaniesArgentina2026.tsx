@@ -216,7 +216,7 @@ export default function TopHealthcareMarketResearchCompaniesArgentina2026() {
       </Helmet>
 
       <OpenGraphMeta
-        title="5 Best Healthcare Market Research Firms in Argentina (2026) | BioNixus"
+        title="5 Best Healthcare Market Research Firms in Argentina | BioNixus"
         description="Top 5 healthcare market research firms in Argentina: BioNixus, IQVIA, Kantar, NielsenIQ, Euromonitor. ANMAT, obras sociales, PAMI, KOL mapping compared."
         url={CANONICAL}
         locale="es_AR"

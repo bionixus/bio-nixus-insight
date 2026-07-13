@@ -6,9 +6,9 @@ export const peruHealthcareEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'latam',
   country: 'Peru',
-  title: 'Best Healthcare Market Research Companies in Peru (2026 Guide) | BioNixus',
+  title: 'Top Healthcare Market Research Companies in Peru 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading healthcare market research companies in Peru — pharmaceutical, DIGEMID regulatory, SIS/EsSalud reimbursement, and HEOR research firms compared by capability.',
+    'Independent 2026 guide to the leading healthcare market research companies in Peru — pharmaceutical, DIGEMID regulatory, SIS/EsSalud reimbursement, and.',
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-peru-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-peru-2026' },
@@ -247,7 +247,7 @@ export const peruHealthcareEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request a Peru Healthcare Research Proposal' },
   ],
   cta: {
-    title: 'Plan Healthcare Market Research in Peru',
+    title: 'Plan Healthcare Market Research in Peru | BioNixus',
     body: 'BioNixus delivers custom healthcare and pharmaceutical market research across Peru and South America — physician surveys, KOL mapping, DIGEMID regulatory intelligence, SIS/EsSalud market access research, HEOR, and competitive intelligence with bilingual Spanish-English delivery.',
     button: 'Request a Proposal',
     to: '/contact',

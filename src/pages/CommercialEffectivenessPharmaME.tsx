@@ -4,7 +4,7 @@ export default function CommercialEffectivenessPharmaME() {
   return (
     <StrategicServicePage
       title="Commercial Effectiveness Pharma Middle East | SFE Middle East | BioNixus"
-      description="Sales force effectiveness and commercial excellence research for pharmaceutical companies in the Middle East. SFE studies, territory alignment, rep effectiveness measurement, and promotion response in GCC and MENA."
+      description="Sales force effectiveness and commercial excellence research for pharmaceutical companies in the Middle East. SFE studies, territory alignment, rep."
       canonicalUrl="https://www.bionixus.com/commercial-effectiveness-pharma-middle-east"
       breadcrumbLabel="Commercial Effectiveness Pharma Middle East"
       h1="Commercial Effectiveness for Pharma in the Middle East"

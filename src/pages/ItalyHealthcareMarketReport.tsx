@@ -96,8 +96,8 @@ const ItalyHealthcareMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="Italy Healthcare Market Report 2026 | AIFA, SSN Reimbursement & Regional Market Access | BioNixus"
-      description="Italy healthcare market at EUR 170B in 2026. AIFA CTS/CPR market access, SSN reimbursement (Classe A/H), regional formulary variation, managed entry agreements, and BioNixus intelligence for Italian pharma expanding to GCC."
+      title="Italy Healthcare Market Report 2026 | BioNixus"
+      description="Italy healthcare market at EUR 170B in 2026. AIFA CTS/CPR market access, SSN reimbursement (Classe A/H), regional formulary variation, managed entry."
       canonical="https://www.bionixus.com/italy-healthcare-market-report"
       jsonLd={jsonLd}
     />

@@ -114,7 +114,7 @@ export default function DenmarkPharmaceuticalMarketResearch() {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Pharmaceutical Market Research Denmark | BioNixus"
-        description="BioNixus delivers pharmaceutical market research in Denmark — HCP surveys, Medicinrådet HTA payer research, KOL mapping at Rigshospitalet, Aarhus UH, OUH, Herlev, and Aalborg University Hospital."
+        description="BioNixus delivers pharmaceutical market research in Denmark — HCP surveys, Medicinrådet HTA payer research, KOL mapping at Rigshospitalet, Aarhus UH, OUH."
         canonical="/pharmaceutical-market-research-denmark"
         jsonLd={jsonLd}
       />

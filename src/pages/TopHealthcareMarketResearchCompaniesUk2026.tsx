@@ -285,8 +285,8 @@ export default function TopHealthcareMarketResearchCompaniesUk2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Healthcare Market Research Companies in the UK (2026)"
-        description="Top healthcare market research companies in the UK 2026 — BioNixus ranked #1. HRA-compliant HCP surveys, payer landscape research, KOL mapping at UK AMCs, and NICE-aligned health outcomes studies."
+        title="Top Healthcare Market Research Companies in the UK | BioNixus"
+        description="Top healthcare market research companies in the UK 2026 — BioNixus ranked #1. HRA-compliant HCP surveys, payer landscape research, KOL mapping at UK AMCs."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}
         type="article"

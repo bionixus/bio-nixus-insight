@@ -6,9 +6,9 @@ export const spainHealthcareEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'europe',
   country: 'Spain',
-  title: 'Best Healthcare Market Research Companies in Spain (2026 Guide) | BioNixus',
+  title: 'Top Healthcare Market Research Companies in Spain 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the top healthcare market research companies in Spain — pharmaceutical primary research, AEMPS/IPT support, SNS regional health authority research, KOL mapping, and bilingual Spanish-English fieldwork firms compared.',
+    'Independent 2026 guide to the top healthcare market research companies in Spain — pharmaceutical primary research, AEMPS/IPT support, SNS regional health.',
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-spain-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-spain-2026' },
@@ -248,7 +248,7 @@ export const spainHealthcareEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request a Spain Healthcare Research Proposal' },
   ],
   cta: {
-    title: 'Plan Healthcare Market Research in Spain',
+    title: 'Plan Healthcare Market Research in Spain | BioNixus',
     body: 'BioNixus delivers specialist healthcare market research across Spain — pharmaceutical primary research, AEMPS/IPT payer evidence, regional CCAA health authority research, Spanish KOL mapping, bilingual Spanish-English fieldwork, HEOR, and patient journey studies for pharma and biotech companies operating in the Spanish market.',
     button: 'Request a Proposal',
     to: '/contact',

@@ -6,9 +6,9 @@ export const senegalGeneralEn: CountryListicleConfig = {
   variant: 'general',
   region: 'africa',
   country: 'Senegal',
-  title: 'Best Market Research Companies in Senegal (2026 Guide) | BioNixus',
+  title: 'Top Market Research Companies in Senegal 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading market research companies in Senegal — healthcare, pharmaceutical, consumer, and strategic research firms compared by capability for Dakar and the Francophone Africa market, including emerging oil economy intelligence.',
+    'Independent 2026 guide to the leading market research companies in Senegal — healthcare, pharmaceutical, consumer, and strategic research firms compared.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-senegal-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-senegal-2026' },
@@ -261,7 +261,7 @@ export const senegalGeneralEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request a Senegal Research Proposal' },
   ],
   cta: {
-    title: 'Plan Market Research in Senegal',
+    title: 'Plan Market Research in Senegal | BioNixus',
     body: 'BioNixus delivers custom market research across Senegal and Francophone West Africa — primary research, consumer insights, healthcare and pharmaceutical studies, competitive intelligence, and emerging oil economy sector analysis for Dakar and the wider region.',
     button: 'Request a Proposal',
     to: '/contact',

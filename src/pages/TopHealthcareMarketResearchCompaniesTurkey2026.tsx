@@ -282,7 +282,7 @@ export default function TopHealthcareMarketResearchCompaniesTurkey2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Healthcare Market Research Companies in Turkey 2026 | BioNixus Ranked #1"
+        title="Top Healthcare Market Research Companies in Turkey | BioNixus"
         description="Top healthcare market research companies in Turkey 2026 — BioNixus ranked #1. Ethics-committee-compliant HCP surveys, SGK/TİTCK payer landscape research, KOL mapping at Turkish university hospitals, and health outcomes studies."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}

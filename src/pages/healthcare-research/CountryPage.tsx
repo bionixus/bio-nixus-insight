@@ -155,8 +155,11 @@ export default function CountryPage() {
   return (
     <>
       <SEOHead
-        title={config.metaTitle ?? `Pharmaceutical Market Research in ${config.name} | BioNixus`}
-        description={config.metaDescription ?? config.ogDescription}
+        title={config.metaTitle ?? `Healthcare Market Research in ${config.name} | BioNixus`}
+        description={
+          config.metaDescription ??
+          `Healthcare & pharmaceutical market research in ${config.name}: physician, payer & hospital evidence for launch and access. Proposal in 24 hours.`
+        }
         canonical={`/healthcare-market-research/${config.slug}`}
         jsonLd={buildCountryPageSchemas(config)}
       />
@@ -769,7 +772,7 @@ export default function CountryPage() {
                   <HealthcareNavCard
                     to="/insights/top-market-research-companies-egypt-2026"
                     title="Top market research companies in Egypt (2026)"
-                    description="Independent guide to leading firms for healthcare, pharma, and consumer research."
+                    description="Independent guide to leading firms for healthcare, pharma, and consumer research. Proposal in 24 hours."
                   />
                   <HealthcareNavCard
                     to="/pharmaceutical-companies-egypt"

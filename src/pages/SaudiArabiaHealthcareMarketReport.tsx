@@ -99,8 +99,8 @@ const SaudiArabiaHealthcareMarketReport = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <SEOHead
-        title="Saudi Arabia Healthcare Market Report 2026 | USD 60B Market, Pharma & Vision 2030 | BioNixus"
-        description="Saudi Arabia healthcare market at USD 55–65B in 2026. Pharmaceutical market (USD 9B), SFDA registration, NUPCO procurement, Vision 2030 investment pipeline, and BioNixus hospital-level consumption intelligence."
+        title="Saudi Arabia Healthcare Market Report 2026 | BioNixus"
+        description="Saudi Arabia healthcare market ~USD 55–65B in 2026: SFDA, NUPCO, Vision 2030 & pharma intelligence. Proposal in 24 hours."
         canonical="https://www.bionixus.com/saudi-arabia-healthcare-market-report"
         jsonLd={jsonLd}
       />

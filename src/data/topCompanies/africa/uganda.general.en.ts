@@ -6,9 +6,9 @@ export const ugandaGeneralEn: CountryListicleConfig = {
   variant: 'general',
   region: 'africa',
   country: 'Uganda',
-  title: 'Best Market Research Companies in Uganda (2026 Guide) | BioNixus',
+  title: 'Top Market Research Companies in Uganda 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading market research companies in Uganda — healthcare, pharmaceutical, consumer, and strategic research firms compared by capability for the East African Community market.',
+    'Independent 2026 guide to the leading market research companies in Uganda — healthcare, pharmaceutical, consumer, and strategic research firms compared by.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-uganda-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-uganda-2026' },
@@ -246,7 +246,7 @@ export const ugandaGeneralEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request a Uganda Research Proposal' },
   ],
   cta: {
-    title: 'Plan Market Research in Uganda',
+    title: 'Plan Market Research in Uganda | BioNixus',
     body: 'BioNixus delivers custom market research across Uganda and the wider East Africa region — primary research, consumer insights, healthcare and pharmaceutical studies, competitive intelligence, and EAC regional analysis.',
     button: 'Request a Proposal',
     to: '/contact',

@@ -251,7 +251,7 @@ export default function LeadingBiologicsBiosimilarsMarketResearchCompanies2026()
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Leading Biologics and Biosimilars Market Research Companies (2026) | BioNixus"
+        title="Leading Biologics and Biosimilars Market Research | BioNixus"
         description="Top biologics & biosimilars market research firms 2026 — switching studies, tender research, payer access, originator defence expertise."
         image="https://www.bionixus.com/og-image.png"
         url={CANONICAL}

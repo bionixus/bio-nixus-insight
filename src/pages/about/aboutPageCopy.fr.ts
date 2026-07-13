@@ -1,9 +1,9 @@
 import type { AboutPageCopy } from './aboutPageCopy.types';
 
 export const aboutPageCopyFr: AboutPageCopy = {
-  seoTitle: 'À propos de BioNixus | Recherche marché mondiale fondée sur le pharma réglementé',
+  seoTitle: 'À propos de BioNixus | BioNixus',
   seoDescription:
-    'Fondée à Londres en 2012, BioNixus est passée de la recherche pharmaceutique britannique au rang des 100 premières sociétés mondiales de recherche marché — siège aux États-Unis, bureau régional MENA au Grand Caire, 38 pays et 16 verticales sectorielles.',
+    'Fondée à Londres en 2012, BioNixus est passée de la recherche pharmaceutique britannique au rang des 100 premières sociétés mondiales de recherche marché.',
   breadcrumbHome: 'Accueil',
   breadcrumbAbout: 'À propos',
   heroTagline: 'Cabinet international de recherche marché',

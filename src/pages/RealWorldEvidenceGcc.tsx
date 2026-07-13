@@ -7,7 +7,7 @@ export default function RealWorldEvidenceGcc() {
   return (
     <StrategicServicePage
       title="Real World Evidence GCC | BioNixus"
-      description="Real world evidence GCC programs for pharmaceutical launch and access strategy with practical study design, data quality governance, and stakeholder-ready outputs."
+      description="Real world evidence GCC programs for pharmaceutical launch and access strategy with practical study design, data quality governance, and stakeholder-ready."
       canonicalUrl="https://www.bionixus.com/real-world-evidence-gcc"
       breadcrumbLabel="Real World Evidence GCC"
       h1="Real World Evidence GCC"

@@ -119,8 +119,8 @@ const SaudiArabiaMedicalDevicesMarketReport = () => {
       <Navbar />
 
       <SEOHead
-        title="Saudi Arabia Medical Devices Market Report 2026 | Hospital Consumption Intelligence | BioNixus"
-        description="Saudi Arabia medical devices market valued at USD 2.8B in 2026. Hospital-level procurement data, SFDA registration intelligence, segment analysis by device type, and commercial strategy for Riyadh, Jeddah, and Dammam accounts."
+        title="Saudi Arabia Medical Devices Market Report 2026 | BioNixus"
+        description="Saudi Arabia medical devices market valued at USD 2.8B in 2026. Hospital-level procurement data, SFDA registration intelligence, segment analysis by."
         canonical="https://www.bionixus.com/saudi-arabia-medical-devices-market-report"
         jsonLd={jsonLd}
       />

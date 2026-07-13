@@ -76,8 +76,8 @@ export default function HealthcareMarketResearchItaly() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Market Research Company in Italy | AIFA & SSN Aligned | BioNixus"
-        description="BioNixus is a healthcare market research company in Italy — Italian-language HCP surveys, AIFA CPR payer landscape analysis, KOL mapping at IRCCS networks, and health outcomes research aligned with AIFA, SSN, and regional SSR requirements."
+        title="Healthcare Market Research Company in Italy | BioNixus"
+        description="BioNixus is a healthcare market research company in Italy — Italian-language HCP surveys, AIFA CPR payer landscape analysis, KOL mapping at IRCCS."
         canonical="/healthcare-market-research-italy"
         jsonLd={jsonLd}
       />

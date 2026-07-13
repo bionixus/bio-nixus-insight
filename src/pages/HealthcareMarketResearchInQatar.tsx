@@ -87,7 +87,7 @@ export default function HealthcareMarketResearchInQatar() {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Healthcare Market Research Qatar | Doha & MoPH | BioNixus"
-        description="Pharmaceutical market research firms in Qatar delivering HCP, KOL, patient, and payer studies. MoPH-aligned healthcare market research for Qatar product launches."
+        description="Pharmaceutical market research firms in Qatar delivering HCP, KOL, patient, and payer studies. MoPH-aligned healthcare market research for Qatar product."
         canonical="/healthcare-market-research-qatar"
         jsonLd={jsonLd}
       />

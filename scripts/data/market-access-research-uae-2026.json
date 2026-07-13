@@ -1,7 +1,7 @@
 {
   "seo": {
     "metaTitle": "Market Access Research UAE 2026 | BioNixus",
-    "metaDescription": "Market access research in the UAE for 2026: EDE pricing, DoH UPP reimbursement, DHA formularies, and primary research for pharma launch teams in Dubai and Abu Dhabi.",
+    "metaDescription": "Market access research in the UAE for 2026: EDE pricing, DoH UPP reimbursement, DHA formularies, and primary research for pharma launch teams in Dubai and.",
     "focusKeyword": "market access research uae",
     "keywords": [
       "market access research uae",
@@ -159,5 +159,9 @@
     "version": "2026-06-19-v1",
     "appliedAt": "2026-06-18T16:07:10.034Z",
     "anchor": "geo-answer-uae-access"
+  },
+  "openGraph": {
+    "ogTitle": "Market Access Research UAE 2026",
+    "ogDescription": "Market access research in the UAE for 2026: EDE pricing, DoH UPP reimbursement, DHA formularies, and primary research for pharma launch teams in Dubai and."
   }
 }

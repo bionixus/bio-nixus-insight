@@ -6,9 +6,9 @@ export const angolaGeneralEn: CountryListicleConfig = {
   variant: 'general',
   region: 'africa',
   country: 'Angola',
-  title: 'Best Market Research Companies in Angola (2026 Guide) | BioNixus',
+  title: 'Top Market Research Companies in Angola 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading market research companies in Angola — healthcare, pharmaceutical, consumer, and strategic research firms compared by capability in the Luanda market and across Southern Africa.',
+    'Independent 2026 guide to the leading market research companies in Angola — healthcare, pharmaceutical, consumer, and strategic research firms compared by.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-angola-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-angola-2026' },
@@ -246,7 +246,7 @@ export const angolaGeneralEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request an Angola Research Proposal' },
   ],
   cta: {
-    title: 'Plan Market Research in Angola',
+    title: 'Plan Market Research in Angola | BioNixus',
     body: 'BioNixus delivers custom market research across Angola and the wider Southern Africa region — primary research, consumer insights, healthcare and pharmaceutical studies, Portuguese-English bilingual fieldwork, INFARMED Angola regulatory intelligence, and oil diversification market strategy.',
     button: 'Request a Proposal',
     to: '/contact',

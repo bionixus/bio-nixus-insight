@@ -96,8 +96,8 @@ const ItalyMedicalDevicesMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="Italy Medical Devices Market Report 2026 | EU MDR, BDNM Registration & Regional Procurement | BioNixus"
-      description="Italy medical devices market at EUR 12–14B in 2026. EU MDR compliance, BDNM registration, regional procurement (Intercent-ER, ARCA, ESTAR), and BioNixus GCC expansion intelligence for Italian medtech companies."
+      title="Italy Medical Devices Market Report 2026 | BioNixus"
+      description="Italy medical devices market at EUR 12–14B in 2026. EU MDR compliance, BDNM registration, regional procurement (Intercent-ER, ARCA, ESTAR), and BioNixus."
       canonical="https://www.bionixus.com/italy-medical-devices-market-report"
       jsonLd={jsonLd}
     />

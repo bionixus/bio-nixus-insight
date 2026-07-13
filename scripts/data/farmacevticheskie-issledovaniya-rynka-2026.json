@@ -1,7 +1,7 @@
 {
   "seo": {
     "metaTitle": "Фарма исследования рынка 2026 | BioNixus",
-    "metaDescription": "Фармацевтические исследования рынка 2026: методология, доступ на рынок, RWE и primary research для pharma-команд.",
+    "metaDescription": "Фармацевтические исследования рынка 2026: методология, доступ на рынок, RWE и primary research для pharma-команд. BioNixus pharmaceutical and healthcare",
     "focusKeyword": "фармацевтические исследования рынка",
     "keywords": [
       "фармацевтические исследования рынка",
@@ -154,5 +154,9 @@
     "version": "2026-06-18-v1",
     "appliedAt": "2026-06-18T15:46:06.615Z",
     "anchor": "geo-answer-ru-mr"
+  },
+  "openGraph": {
+    "ogTitle": "Фарма исследования рынка 2026",
+    "ogDescription": "Фармацевтические исследования рынка 2026: методология, доступ на рынок, RWE и primary research для pharma-команд. BioNixus pharmaceutical and healthcare"
   }
 }

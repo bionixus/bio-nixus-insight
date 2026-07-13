@@ -76,8 +76,8 @@ export default function HealthcareMarketResearchSingapore() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Market Research Company in Singapore | ACE & HSA Aligned | BioNixus"
-        description="BioNixus is a healthcare market research company in Singapore — HBRA-compliant HCP surveys, payer landscape analysis, KOL mapping, and health outcomes research aligned with ACE, HSA, and MOH requirements."
+        title="Healthcare Market Research Company in Singapore | BioNixus"
+        description="BioNixus is a healthcare market research company in Singapore — HBRA-compliant HCP surveys, payer landscape analysis, KOL mapping, and health outcomes."
         canonical="/healthcare-market-research-singapore"
         jsonLd={jsonLd}
       />

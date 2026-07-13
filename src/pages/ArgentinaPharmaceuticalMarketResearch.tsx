@@ -124,8 +124,8 @@ export default function ArgentinaPharmaceuticalMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Pharmaceutical Market Research Company in Argentina | ANMAT & CONETEC Aligned | BioNixus"
-        description="BioNixus is a pharmaceutical market research company in Argentina — ANMAT-aligned HCP surveys, KOL mapping, obras sociales and PAMI payer research, and CEI-compliant market access evidence."
+        title="Pharmaceutical Market Research Company in Argentina | BioNixus"
+        description="BioNixus is a pharmaceutical market research company in Argentina — ANMAT-aligned HCP surveys, KOL mapping, obras sociales and PAMI payer research, and."
         canonical="/pharmaceutical-market-research-argentina"
         jsonLd={jsonLd}
       />

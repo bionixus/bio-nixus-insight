@@ -84,8 +84,8 @@ const SpainMedicalDevicesMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="Spain Medical Devices Market Report 2026 | AEMPS, RAMD Registration & Regional Procurement | BioNixus"
-      description="Spain medical devices market at EUR 10–12B in 2026. AEMPS regulation under EU MDR, SNS device reimbursement, autonomous community procurement variation, and BioNixus GCC expansion intelligence."
+      title="Spain Medical Devices Market Report 2026 | BioNixus"
+      description="Spain medical devices market at EUR 10–12B in 2026. AEMPS regulation under EU MDR, SNS device reimbursement, autonomous community procurement variation."
       canonical="https://www.bionixus.com/spain-medical-devices-market-report"
       jsonLd={jsonLd}
     />

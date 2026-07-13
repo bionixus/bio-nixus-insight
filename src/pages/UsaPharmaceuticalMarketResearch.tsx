@@ -124,8 +124,8 @@ export default function UsaPharmaceuticalMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Pharmaceutical Market Research Company in USA | FDA, CMS & PBM Aligned | BioNixus"
-        description="BioNixus is a pharmaceutical market research company in the USA — FDA-aligned HCP surveys, KOL mapping, PBM payer research, IRA impact studies, and IRB-compliant market access evidence."
+        title="Pharmaceutical Market Research Company in USA | BioNixus"
+        description="BioNixus is a pharmaceutical market research company in the USA — FDA-aligned HCP surveys, KOL mapping, PBM payer research, IRA impact studies, and."
         canonical="/pharmaceutical-market-research-usa"
         jsonLd={jsonLd}
       />

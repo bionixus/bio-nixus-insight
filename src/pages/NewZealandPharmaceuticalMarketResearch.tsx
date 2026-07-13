@@ -129,7 +129,7 @@ export default function NewZealandPharmaceuticalMarketResearch() {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Pharmaceutical Market Research New Zealand | BioNixus"
-        description="BioNixus delivers pharmaceutical market research in New Zealand — HDEC-compliant HCP surveys, PHARMAC payer research, KOL mapping at Auckland, Christchurch, Wellington, and Dunedin hospitals."
+        description="BioNixus delivers pharmaceutical market research in New Zealand — HDEC-compliant HCP surveys, PHARMAC payer research, KOL mapping at Auckland."
         canonical="/pharmaceutical-market-research-new-zealand"
         jsonLd={jsonLd}
       />

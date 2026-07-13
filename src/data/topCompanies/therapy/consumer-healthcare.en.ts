@@ -6,9 +6,9 @@ export const consumerHealthcareGlobalEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'mena',
   country: 'Global',
-  title: 'Top Consumer Healthcare Market Research Firms (2026 Guide) | BioNixus',
+  title: 'Top Consumer Healthcare Market Research Firms 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading consumer healthcare market research firms globally — OTC, vitamins & supplements, personal care, and consumer health brand research compared by capability.',
+    'Independent 2026 guide to the leading consumer healthcare market research firms globally — OTC, vitamins & supplements, personal care, and consumer health.',
   canonical:
     'https://www.bionixus.com/insights/top-consumer-healthcare-market-research-firms-2026',
   hreflang: [
@@ -284,7 +284,7 @@ export const consumerHealthcareGlobalEn: CountryListicleConfig = {
     },
   ],
   cta: {
-    title: 'Plan Consumer Healthcare Market Research',
+    title: 'Plan Consumer Healthcare Market Research | BioNixus',
     body: 'BioNixus delivers custom consumer healthcare market research globally — OTC brand tracking, consumer U&A studies, pharmacy shopper insight, VMS category research, and Arabic-language consumer surveys across MENA and GCC markets.',
     button: 'Request a Proposal',
     to: '/contact',

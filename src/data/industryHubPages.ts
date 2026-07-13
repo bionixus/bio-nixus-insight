@@ -23,12 +23,12 @@ export const INDUSTRY_HUB_PAGES: IndustryHubPageConfig[] = [
     slug: 'fmcg',
     displayName: 'FMCG & Consumer Goods',
     displayNameShort: 'FMCG',
-    metaTitle: 'FMCG & Consumer Goods Market Research Company | BioNixus (2026)',
+    metaTitle: 'FMCG & Consumer Goods Market Research Company | BioNixus',
     metaDescription:
-      'BioNixus delivers FMCG market research across the GCC, MENA, Europe, and the Americas — brand tracking, shopper studies, and innovation testing with bilingual local field teams.',
+      'BioNixus delivers FMCG market research across the GCC, MENA, Europe, and the Americas — brand tracking, shopper studies, and innovation testing with.',
     h1: 'FMCG & Consumer Goods Market Research Company (2026)',
     heroSubtitle:
-      'BioNixus delivers FMCG market research across the GCC, MENA, Europe, and the Americas — quantitative tracking, shopper studies, and innovation testing with local field teams.',
+      'BioNixus delivers FMCG market research across the | BioNixus',
     segment: 'b2c',
     iconName: 'ShoppingCart',
     stats: [
@@ -87,7 +87,7 @@ export const INDUSTRY_HUB_PAGES: IndustryHubPageConfig[] = [
     slug: 'retail',
     displayName: 'Retail & Shopper',
     displayNameShort: 'Retail',
-    metaTitle: 'Retail & Shopper Market Research Company | BioNixus (2026)',
+    metaTitle: 'Retail & Shopper Market Research Company | BioNixus',
     metaDescription:
       'Shopper journey mapping, mystery shopping, and in-store behavioural studies across Saudi Arabia, UAE, Egypt, and Europe — BioNixus retail market research.',
     h1: 'Retail & Shopper Market Research Company (2026)',
@@ -151,12 +151,12 @@ export const INDUSTRY_HUB_PAGES: IndustryHubPageConfig[] = [
     slug: 'financial-services',
     displayName: 'Financial Services & Banking',
     displayNameShort: 'Financial Services',
-    metaTitle: 'Financial Services Market Research Company | BioNixus (2026)',
+    metaTitle: 'Financial Services Market Research Company | BioNixus',
     metaDescription:
       'Banking, insurance, and fintech market research across the GCC and Europe — C-suite and retail customer studies with verified B2B panels. BioNixus.',
     h1: 'Financial Services Market Research Company (2026)',
     heroSubtitle:
-      'Banking, insurance, and fintech market research across the GCC and Europe — C-suite and retail customer studies with verified B2B panels.',
+      'Banking, insurance, and fintech market research | BioNixus',
     segment: 'b2c',
     iconName: 'Landmark',
     stats: [
@@ -215,7 +215,7 @@ export const INDUSTRY_HUB_PAGES: IndustryHubPageConfig[] = [
     slug: 'telecom',
     displayName: 'Telecom & Connectivity',
     displayNameShort: 'Telecom',
-    metaTitle: 'Telecom Market Research Company | BioNixus (2026)',
+    metaTitle: 'Telecom Market Research Company | BioNixus',
     metaDescription:
       'Mobile, broadband, and digital services research across MENA and Europe — churn studies, tariff testing, and customer journey analysis. BioNixus.',
     h1: 'Telecom Market Research Company (2026)',
@@ -279,7 +279,7 @@ export const INDUSTRY_HUB_PAGES: IndustryHubPageConfig[] = [
     slug: 'automotive',
     displayName: 'Automotive',
     displayNameShort: 'Automotive',
-    metaTitle: 'Automotive Market Research Company | BioNixus (2026)',
+    metaTitle: 'Automotive Market Research Company | BioNixus',
     metaDescription:
       'Vehicle purchase funnel research, EV adoption studies, and dealer experience tracking across the GCC, Europe, and North America. BioNixus.',
     h1: 'Automotive Market Research Company (2026)',
@@ -343,7 +343,7 @@ export const INDUSTRY_HUB_PAGES: IndustryHubPageConfig[] = [
     slug: 'hospitality',
     displayName: 'Hospitality & Tourism',
     displayNameShort: 'Hospitality',
-    metaTitle: 'Hospitality & Tourism Market Research Company | BioNixus (2026)',
+    metaTitle: 'Hospitality & Tourism Market Research Company | BioNixus',
     metaDescription:
       'Guest experience research, destination perception studies, and hotel brand tracking — specialist fieldwork across GCC luxury and budget segments. BioNixus.',
     h1: 'Hospitality & Tourism Market Research Company (2026)',
@@ -407,7 +407,7 @@ export const INDUSTRY_HUB_PAGES: IndustryHubPageConfig[] = [
     slug: 'technology',
     displayName: 'Technology & B2B Software',
     displayNameShort: 'Technology',
-    metaTitle: 'Technology Market Research Company | BioNixus (2026)',
+    metaTitle: 'Technology Market Research Company | BioNixus',
     metaDescription:
       'B2B technology research — CIO and IT buyer panels, enterprise software adoption studies, and SaaS pricing research across GCC and Europe. BioNixus.',
     h1: 'Technology Market Research Company (2026)',
@@ -471,7 +471,7 @@ export const INDUSTRY_HUB_PAGES: IndustryHubPageConfig[] = [
     slug: 'energy',
     displayName: 'Energy & Industrials',
     displayNameShort: 'Energy',
-    metaTitle: 'Energy & Industrials Market Research Company | BioNixus (2026)',
+    metaTitle: 'Energy & Industrials Market Research Company | BioNixus',
     metaDescription:
       'Oil & gas, renewables, and industrial B2B research — procurement and executive panels across the GCC, Europe, and emerging markets. BioNixus.',
     h1: 'Energy & Industrials Market Research Company (2026)',
@@ -535,9 +535,9 @@ export const INDUSTRY_HUB_PAGES: IndustryHubPageConfig[] = [
     slug: 'real-estate',
     displayName: 'Real Estate & Construction',
     displayNameShort: 'Real Estate',
-    metaTitle: 'Real Estate Market Research Company | BioNixus (2026)',
+    metaTitle: 'Real Estate Market Research Company | BioNixus',
     metaDescription:
-      'Property buyer behaviour, developer brand research, and commercial real estate studies across the GCC\'s high-growth residential and commercial markets. BioNixus.',
+      'Property buyer behaviour, developer brand research, and commercial real estate studies across the GCC\. Proposal in 24 hours.'s high-growth residential and commercial markets. BioNixus.',
     h1: 'Real Estate Market Research Company (2026)',
     heroSubtitle:
       'Property buyer behaviour, developer brand research, and commercial real estate studies — across the GCC\'s high-growth residential and commercial markets.',
@@ -599,7 +599,7 @@ export const INDUSTRY_HUB_PAGES: IndustryHubPageConfig[] = [
     slug: 'media',
     displayName: 'Media & Entertainment',
     displayNameShort: 'Media',
-    metaTitle: 'Media & Entertainment Market Research Company | BioNixus (2026)',
+    metaTitle: 'Media & Entertainment Market Research Company | BioNixus',
     metaDescription:
       'Audience research, content testing, and advertising effectiveness studies across digital, streaming, and broadcast platforms in MENA and Europe. BioNixus.',
     h1: 'Media & Entertainment Market Research Company (2026)',
@@ -663,9 +663,9 @@ export const INDUSTRY_HUB_PAGES: IndustryHubPageConfig[] = [
     slug: 'education',
     displayName: 'Education',
     displayNameShort: 'Education',
-    metaTitle: 'Education Market Research Company | BioNixus (2026)',
+    metaTitle: 'Education Market Research Company | BioNixus',
     metaDescription:
-      'EdTech adoption, student satisfaction, and institutional research across the GCC and Europe — surveys with parents, students, educators, and administrators. BioNixus.',
+      'EdTech adoption, student satisfaction, and institutional research across the GCC and Europe — surveys with parents, students, educators, and.',
     h1: 'Education Market Research Company (2026)',
     heroSubtitle:
       'EdTech adoption, student satisfaction, and institutional research across the GCC and Europe — surveys with parents, students, educators, and administrators.',
@@ -727,7 +727,7 @@ export const INDUSTRY_HUB_PAGES: IndustryHubPageConfig[] = [
     slug: 'public-sector',
     displayName: 'Public Sector & Government',
     displayNameShort: 'Public Sector',
-    metaTitle: 'Public Sector & Government Market Research Company | BioNixus (2026)',
+    metaTitle: 'Public Sector & Government Market Research Company | BioNixus',
     metaDescription:
       'Citizen satisfaction, policy awareness, and public opinion research — structured government-grade fieldwork across the GCC and Europe. BioNixus.',
     h1: 'Public Sector & Government Market Research Company (2026)',

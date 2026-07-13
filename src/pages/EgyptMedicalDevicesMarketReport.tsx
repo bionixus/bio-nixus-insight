@@ -99,8 +99,8 @@ const EgyptMedicalDevicesMarketReport = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <SEOHead
-        title="Egypt Medical Devices Market Report 2026 | USD 1.3B Market, UHI & Hospital Intelligence | BioNixus"
-        description="Egypt medical devices market at USD 1.2–1.5B in 2026. Universal Health Insurance program impact, EDA registration, Cairo and Alexandria hospital procurement intelligence, and BioNixus primary research."
+        title="Egypt Medical Devices Market Report 2026 | BioNixus"
+        description="Egypt medical devices market at USD 1.2–1.5B in 2026. Universal Health Insurance program impact, EDA registration, Cairo and Alexandria hospital."
         canonical="https://www.bionixus.com/egypt-medical-devices-market-report"
         jsonLd={jsonLd}
       />

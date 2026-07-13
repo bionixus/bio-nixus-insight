@@ -6,9 +6,9 @@ export const rareDiseaseGlobalEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'mena',
   country: 'Global',
-  title: 'Best Rare Disease Market Research Companies (2026 Guide) | BioNixus',
+  title: 'Top Rare Disease Market Research Companies 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the best rare disease market research companies — small patient populations, patient journey for ultra-rare diseases, HCP identification for orphan drugs, and caregiver research compared by capability.',
+    'Independent 2026 guide to the best rare disease market research companies — small patient populations, patient journey for ultra-rare diseases, HCP.',
   canonical:
     'https://www.bionixus.com/insights/best-rare-disease-market-research-companies-2026',
   hreflang: [
@@ -284,7 +284,7 @@ export const rareDiseaseGlobalEn: CountryListicleConfig = {
     },
   ],
   cta: {
-    title: 'Plan Rare Disease Market Research',
+    title: 'Plan Rare Disease Market Research | BioNixus',
     body: 'BioNixus delivers custom rare disease market research globally — HCP identification and landscape mapping, patient and caregiver journey research, orphan drug market access intelligence, and patient advocacy landscape research with dedicated MENA and GCC execution capability.',
     button: 'Request a Proposal',
     to: '/contact',

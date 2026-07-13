@@ -84,8 +84,8 @@ const GermanyMedicalDevicesMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="Germany Medical Devices Market Report 2026 | EU MDR, NUB Reimbursement & Hospital Procurement | BioNixus"
-      description="Germany medical devices market at EUR 31B in 2026 — largest in EU. EU MDR compliance, NUB additional payments, DRG hospital reimbursement, and BioNixus intelligence for German medtech companies entering GCC and MENA."
+      title="Germany Medical Devices Market Report 2026 | BioNixus"
+      description="Germany medical devices market at EUR 31B in 2026 — largest in EU. EU MDR compliance, NUB additional payments, DRG hospital reimbursement, and BioNixus."
       canonical="https://www.bionixus.com/germany-medical-devices-market-report"
       jsonLd={jsonLd}
     />

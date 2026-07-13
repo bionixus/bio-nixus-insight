@@ -214,7 +214,7 @@ export default function MarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Market Research Services Hub | Global Coverage | Healthcare & Pharma | BioNixus"
+        title="Market Research Services Hub | BioNixus"
         description={`BioNixus market research across ${COUNTRY_COUNT} countries and ${publishedIndustries.length} industries — US, Canada, Europe, Brazil, and MENA priority markets. Quantitative, qualitative, and healthcare-specific programmes for launch, access, and pricing decisions.`}
         canonical={HUB_PATH}
         jsonLd={jsonLd}

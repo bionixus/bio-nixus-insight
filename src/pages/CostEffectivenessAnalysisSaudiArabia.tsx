@@ -7,7 +7,7 @@ export default function CostEffectivenessAnalysisSaudiArabia() {
   return (
     <StrategicServicePage
       title="Cost-Effectiveness Analysis Saudi Arabia | BioNixus"
-      description="Cost-effectiveness analysis for Saudi Arabia pharma market access: SFDA reference-case methodology, QALY-based evaluation, and NCEHTA-aligned dossier support."
+      description="Cost-effectiveness analysis for Saudi Arabia pharma market access: SFDA reference-case methodology, QALY-based evaluation, and NCEHTA-aligned dossier."
       canonicalUrl="https://www.bionixus.com/cost-effectiveness-analysis-saudi-arabia"
       breadcrumbLabel="Cost-Effectiveness Analysis Saudi Arabia"
       h1="Cost-Effectiveness Analysis Saudi Arabia"

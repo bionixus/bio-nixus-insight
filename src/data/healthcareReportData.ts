@@ -302,15 +302,26 @@ function titleFor(spec: SpecRow) {
 function metaDescriptionFor(spec: SpecRow, title: string) {
   const fact = getTherapyMarketFactOrThrow(spec.marketSlug, spec.therapySlug);
   const v1 = fact.marketSize2026.value;
-  const v2 = fact.forecast2030.value;
-  const base = `${title}: ${therapyMeta(spec.therapySlug).name} sized near ${v1} in 2026 toward ${v2} by decade-end covering ${MARKET_CONTENT[spec.marketSlug].regulatoryBody.split('•')[0].trim()} registration, payer access, tenders, clinician adoption ladders.`;
-  return base.length > 165 ? `${base.slice(0, 162)}…` : base;
+  const therapy = therapyMeta(spec.therapySlug).name;
+  const regulator = MARKET_CONTENT[spec.marketSlug].regulatoryBody.split('•')[0].trim();
+  const base = `${spec.market} ${therapy} 2026 (~${v1}): registration, payer access & clinician adoption — ${regulator}. Proposal in 24 hours.`;
+  if (base.length <= 155) return base;
+  const short = `${spec.market} ${therapy} market 2026 (~${v1}): access, tenders & adoption. BioNixus research — proposal in 24 hours.`;
+  return short.length <= 155 ? short : `${short.slice(0, 152).trim()}…`;
 }
 
 function metaTitleFor(title: string) {
-  let t = `${title} | BioNixus`;
-  if (t.length > 65) t = `${title.slice(0, 54)}… | BioNixus`;
-  return t;
+  const brand = ' | BioNixus';
+  const maxPrimary = 60 - brand.length;
+  let primary = String(title || '').replace(/\s*\|\s*BioNixus.*$/i, '').trim();
+  if (primary.length > maxPrimary) {
+    const slice = primary.slice(0, maxPrimary);
+    const lastSpace = slice.lastIndexOf(' ');
+    primary = (lastSpace > Math.floor(maxPrimary * 0.5) ? slice.slice(0, lastSpace) : slice)
+      .trim()
+      .replace(/[,:;–—-]+$/, '');
+  }
+  return `${primary}${brand}`;
 }
 
 function fitWordRange(text: string, min: number, max: number): string {

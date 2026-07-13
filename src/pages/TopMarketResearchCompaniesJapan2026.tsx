@@ -266,8 +266,8 @@ export default function TopMarketResearchCompaniesJapan2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Market Research Companies in Japan 2026 | BioNixus Ranked #1"
-        description="Top market research companies in Japan 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. PMDA/MHLW-aligned HCP surveys, KOL mapping, and NHI payer research."
+        title="Top Market Research Companies in Japan 2026 | BioNixus"
+        description="Top market research companies in Japan 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. PMDA/MHLW-aligned HCP surveys, KOL mapping."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}
         type="article"

@@ -282,8 +282,8 @@ export default function TopHealthcareMarketResearchCompaniesIreland2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Healthcare Market Research Companies in Ireland 2026 | BioNixus Ranked #1"
-        description="Top healthcare market research companies in Ireland 2026 — BioNixus ranked #1. REC-compliant HCP surveys, payer landscape research, KOL mapping at Irish academic medical centres, and HPRA-aligned health outcomes studies."
+        title="Top Healthcare Market Research Companies in Ireland | BioNixus"
+        description="Top healthcare market research companies in Ireland 2026 — BioNixus ranked #1. REC-compliant HCP surveys, payer landscape research, KOL mapping at Irish."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}
         type="article"

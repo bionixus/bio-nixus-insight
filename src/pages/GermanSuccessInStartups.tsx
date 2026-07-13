@@ -25,7 +25,7 @@ export default function GermanSuccessInStartups() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Erfolg in Healthcare Startups | BioNixus Blog (DE)"
+        title="Erfolg in Healthcare Startups | BioNixus"
         description="Praxisnahe Perspektiven für Healthcare- und Pharma-Startups: Marktzugang, Evidenzstrategie und skalierbare Go-to-Market-Modelle."
         canonical="/de/success-in-startups"
         jsonLd={jsonLd}

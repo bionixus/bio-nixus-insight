@@ -1,9 +1,9 @@
 import type { AboutPageCopy } from './aboutPageCopy.types';
 
 export const aboutPageCopyEs: AboutPageCopy = {
-  seoTitle: 'Sobre BioNixus | Investigación de mercado global basada en pharma regulado',
+  seoTitle: 'Sobre BioNixus | BioNixus',
   seoDescription:
-    'Fundada en Londres en 2012, BioNixus pasó de la investigación farmacéutica británica a estar entre las 100 principales firmas globales de investigación de mercado — sede en EE. UU., oficina regional MENA en El Gran Cairo, 38 países y 16 verticales industriales.',
+    'Fundada en Londres en 2012, BioNixus pasó de la investigación farmacéutica británica a estar entre las 100 principales firmas globales de investigación de.',
   breadcrumbHome: 'Inicio',
   breadcrumbAbout: 'Sobre nosotros',
   heroTagline: 'Firma internacional global de investigación de mercado',

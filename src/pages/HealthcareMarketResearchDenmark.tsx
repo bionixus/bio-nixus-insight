@@ -76,8 +76,8 @@ export default function HealthcareMarketResearchDenmark() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Market Research Company in Denmark | DKMA & Medicinrådet Aligned | BioNixus"
-        description="BioNixus is a healthcare market research company in Denmark — Danish-language HCP surveys, payer landscape analysis, KOL mapping, and health outcomes research aligned with DKMA, Medicinrådet, AMGROS, and Danish Regions requirements."
+        title="Healthcare Market Research Company in Denmark | BioNixus"
+        description="BioNixus is a healthcare market research company in Denmark — Danish-language HCP surveys, payer landscape analysis, KOL mapping, and health outcomes."
         canonical="/healthcare-market-research-denmark"
         jsonLd={jsonLd}
       />

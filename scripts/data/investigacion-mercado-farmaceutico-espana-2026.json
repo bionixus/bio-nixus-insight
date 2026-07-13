@@ -153,5 +153,9 @@
     "version": "2026-06-18-v1",
     "appliedAt": "2026-06-18T15:46:06.615Z",
     "anchor": "geo-answer-es-hta"
+  },
+  "openGraph": {
+    "ogTitle": "Investigación mercado farmacéutico España 2026",
+    "ogDescription": "Investigación de mercado farmacéutico en España 2026: AEMPS, acceso autonómico, RWE y estudios primarios para equipos de market access."
   }
 }

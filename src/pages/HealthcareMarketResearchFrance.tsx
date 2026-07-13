@@ -95,8 +95,8 @@ export default function HealthcareMarketResearchFrance() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Market Research Company in France | HAS &amp; Assurance Maladie Aligned | BioNixus"
-        description="BioNixus is a healthcare market research company in France — French-language HCP surveys, HAS payer landscape analysis, CEPS intelligence, KOL mapping, and health outcomes research aligned with ANSM, HAS, and Assurance Maladie requirements."
+        title="Healthcare Market Research Company in France | BioNixus"
+        description="BioNixus is a healthcare market research company in France — French-language HCP surveys, HAS payer landscape analysis, CEPS intelligence, KOL mapping."
         canonical="/healthcare-market-research-france"
         jsonLd={jsonLd}
       />

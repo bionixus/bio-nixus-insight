@@ -102,8 +102,8 @@ export default function Nf1PharmaMarketResearch() {
       <Navbar />
 
       <SEOHead
-        title="NF1 Pharma Market Research Services | Competitive Intelligence | BioNixus"
-        description="NF1 pharma market research services: tumour board analogue boards, Koselugo and EZMEKLY competitive intelligence, payer workshops, and GCC tender analytics. Companion editorial briefing on market access and MEK inhibition."
+        title="NF1 Pharma Market Research Services | BioNixus"
+        description="NF1 pharma market research services: tumour board analogue boards, Koselugo and EZMEKLY competitive intelligence, payer workshops, and GCC tender."
         canonical={pageUrl}
         jsonLd={jsonLd}
       />

@@ -77,8 +77,8 @@ export default function HealthcareMarketResearchIreland() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Market Research Company in Ireland | HPRA & HSE Aligned | BioNixus"
-        description="BioNixus is a healthcare market research company in Ireland — REC-compliant HCP surveys, payer landscape analysis, KOL mapping, and health outcomes research aligned with HPRA, NCPE, and HSE requirements."
+        title="Healthcare Market Research Company in Ireland | BioNixus"
+        description="BioNixus is a healthcare market research company in Ireland — REC-compliant HCP surveys, payer landscape analysis, KOL mapping, and health outcomes."
         canonical="/healthcare-market-research-ireland"
         jsonLd={jsonLd}
       />

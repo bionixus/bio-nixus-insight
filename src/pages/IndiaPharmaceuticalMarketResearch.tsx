@@ -134,8 +134,8 @@ export default function IndiaPharmaceuticalMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Pharmaceutical Market Research Company in India | CDSCO, NPPA & DCGI Aligned | BioNixus"
-        description="BioNixus is a pharmaceutical market research company in India — CDSCO/DCGI-aware HCP surveys, KOL mapping, NPPA pricing research, state-level market access studies, and DPDP Act-compliant execution."
+        title="Pharmaceutical Market Research Company in India | BioNixus"
+        description="BioNixus is a pharmaceutical market research company in India — CDSCO/DCGI-aware HCP surveys, KOL mapping, NPPA pricing research, state-level market."
         canonical="/pharmaceutical-market-research-india"
         jsonLd={jsonLd}
       />

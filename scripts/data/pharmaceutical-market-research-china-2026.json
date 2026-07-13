@@ -1,7 +1,7 @@
 {
   "seo": {
     "metaTitle": "2026医药市场研究指南 亚太 | BioNixus",
-    "metaDescription": "2026年医药市场研究指南：全球药企亚太证据策略、NMPA、医保谈判与 primary research 方法。",
+    "metaDescription": "2026年医药市场研究指南：全球药企亚太证据策略、NMPA、医保谈判与 primary research 方法。 BioNixus pharmaceutical and healthcare market research.",
     "focusKeyword": "医药市场研究",
     "keywords": [
       "医药市场研究",
@@ -159,5 +159,9 @@
     "version": "2026-06-18-v1",
     "appliedAt": "2026-06-18T15:46:06.615Z",
     "anchor": "geo-answer-cn-nmpa"
+  },
+  "openGraph": {
+    "ogTitle": "2026医药市场研究指南 亚太",
+    "ogDescription": "2026年医药市场研究指南：全球药企亚太证据策略、NMPA、医保谈判与 primary research 方法。 BioNixus pharmaceutical and healthcare market research."
   }
 }

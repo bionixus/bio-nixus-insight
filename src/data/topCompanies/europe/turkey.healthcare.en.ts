@@ -6,9 +6,9 @@ export const turkeyHealthcareEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'europe',
   country: 'Turkey',
-  title: 'Best Healthcare Market Research Companies in Turkey (2026 Guide) | BioNixus',
+  title: 'Top Healthcare Market Research Companies in Turkey | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the top healthcare market research companies in Turkey — pharmaceutical primary research, TITCK/SGK regulatory expertise, physician surveys, HEOR, and payer research firms compared by Turkey capability.',
+    'Independent 2026 guide to the top healthcare market research companies in Turkey — pharmaceutical primary research, TITCK/SGK regulatory expertise.',
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-turkey-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-turkey-2026' },
@@ -247,7 +247,7 @@ export const turkeyHealthcareEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request a Turkey Healthcare Research Proposal' },
   ],
   cta: {
-    title: 'Plan Healthcare Market Research in Turkey',
+    title: 'Plan Healthcare Market Research in Turkey | BioNixus',
     body: 'BioNixus delivers specialist healthcare market research across Turkey and the Europe-MENA corridor — pharmaceutical primary research, TITCK/SGK regulatory and payer evidence, physician and KOL surveys, HEOR, Turkish-English bilingual fieldwork, and Turkey-to-MENA regional intelligence for pharma and biotech companies.',
     button: 'Request a Proposal',
     to: '/contact',

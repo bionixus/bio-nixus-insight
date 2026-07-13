@@ -6,9 +6,9 @@ export const lebanonGeneralEn: CountryListicleConfig = {
   variant: 'general',
   region: 'mena',
   country: 'Lebanon',
-  title: 'Best Market Research Companies in Lebanon (2026 Guide) | BioNixus',
+  title: 'Top Market Research Companies in Lebanon 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading market research companies in Lebanon — healthcare, pharmaceutical, consumer, and strategic research firms compared by capability. Covers MoPH regulatory context and Lebanon\'s trilingual research market.',
+    'Independent 2026 guide to the leading market research companies in Lebanon — healthcare, pharmaceutical, consumer, and strategic research firms compared.'s trilingual research market.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-lebanon-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-lebanon-2026' },
@@ -245,7 +245,7 @@ export const lebanonGeneralEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request a Lebanon Research Proposal' },
   ],
   cta: {
-    title: 'Plan Market Research in Lebanon',
+    title: 'Plan Market Research in Lebanon | BioNixus',
     body: 'BioNixus delivers custom market research across Lebanon and the wider Levant — primary research, consumer insights, healthcare and pharmaceutical studies, MoPH regulatory intelligence, and trilingual Arabic-French-English fieldwork capability.',
     button: 'Request a Proposal',
     to: '/contact',

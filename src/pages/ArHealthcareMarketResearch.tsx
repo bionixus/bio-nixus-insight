@@ -4,7 +4,7 @@ export default function ArHealthcareMarketResearch() {
   return (
     <StrategicServicePage
       title="أبحاث السوق الصحي | BioNixus — الشرق الأوسط والخليج"
-      description="أبحاث السوق الصحي والدوائي في منطقة الخليج والشرق الأوسط وشمال أفريقيا. تقدّم BioNixus خدمات بحثية متكاملة للشركات الدوائية وصناعة الأجهزة الطبية بالعربية والإنجليزية."
+      description="أبحاث السوق الصحي والدوائي في منطقة الخليج والشرق الأوسط وشمال أفريقيا. تقدّم BioNixus خدمات بحثية متكاملة للشركات الدوائية وصناعة الأجهزة الطبية بالعربية."
       canonicalUrl="https://www.bionixus.com/ar/healthcare-market-research"
       breadcrumbLabel="أبحاث السوق الصحي"
       h1="أبحاث السوق الصحي في الخليج والشرق الأوسط"

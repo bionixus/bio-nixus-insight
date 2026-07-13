@@ -6,9 +6,9 @@ export const colombiaHealthcareEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'latam',
   country: 'Colombia',
-  title: 'Best Healthcare Market Research Companies in Colombia (2026 Guide) | BioNixus',
+  title: 'Top Healthcare Market Research Companies in Colombia | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading healthcare market research companies in Colombia — pharmaceutical, INVIMA regulatory, EPS/PBS reimbursement, and HEOR research firms compared by capability.',
+    'Independent 2026 guide to the leading healthcare market research companies in Colombia — pharmaceutical, INVIMA regulatory, EPS/PBS reimbursement, and.',
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-colombia-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-colombia-2026' },
@@ -247,7 +247,7 @@ export const colombiaHealthcareEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request a Colombia Healthcare Research Proposal' },
   ],
   cta: {
-    title: 'Plan Healthcare Market Research in Colombia',
+    title: 'Plan Healthcare Market Research in Colombia | BioNixus',
     body: 'BioNixus delivers custom healthcare and pharmaceutical market research across Colombia and South America — physician surveys, KOL mapping, INVIMA regulatory intelligence, EPS/PBS market access research, HEOR, and competitive intelligence with bilingual Spanish-English delivery.',
     button: 'Request a Proposal',
     to: '/contact',

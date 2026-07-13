@@ -7,7 +7,7 @@ export default function HealthcareMarketResearchAgencyGcc() {
   return (
     <StrategicServicePage
       title="Pharma Market Research Company GCC | Healthcare Market Research Agency | BioNixus"
-      description="Pharma market research company GCC for launch and access teams. Healthcare market research agency evidence across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman — proposal-ready from BioNixus."
+      description="Pharma market research company GCC for launch and access teams. Healthcare market research agency evidence across Saudi Arabia, UAE, Kuwait, Qatar."
       canonicalUrl="https://www.bionixus.com/healthcare-market-research-agency-gcc"
       breadcrumbLabel="Healthcare Market Research Agency GCC"
       h1="Healthcare Market Research Companies in GCC for Pharmaceutical Launch and Access Decisions"

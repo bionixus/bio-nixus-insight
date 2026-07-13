@@ -124,8 +124,8 @@ const BahrainHealthcareMarketReport = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <SEOHead
-        title="Bahrain Healthcare Market Report 2026 | NHRA Registration & GCC Pharma Access | BioNixus"
-        description="Bahrain healthcare market at USD 2.5–3B in 2026. NHRA pharmaceutical registration (mutual recognition from SFDA/MOHAP), pharma market size, therapy areas, and BioNixus GCC market access intelligence."
+        title="Bahrain Healthcare Market Report 2026 | BioNixus"
+        description="Bahrain healthcare market at USD 2.5–3B in 2026. NHRA pharmaceutical registration (mutual recognition from SFDA/MOHAP), pharma market size, therapy areas."
         canonical="https://www.bionixus.com/bahrain-healthcare-market-report"
         jsonLd={jsonLd}
       />

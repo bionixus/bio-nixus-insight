@@ -7,7 +7,7 @@ export default function HtaStudiesSaudiArabia() {
   return (
     <StrategicServicePage
       title="HTA Studies Saudi Arabia | Health Technology Assessment | BioNixus"
-      description="Health technology assessment (HTA) studies for Saudi Arabia pharma market access: SFDA dossier requirements, evidence-tier assessment, and submission-ready evidence packages."
+      description="Health technology assessment (HTA) studies for Saudi Arabia pharma market access: SFDA dossier requirements, evidence-tier assessment, and."
       canonicalUrl="https://www.bionixus.com/hta-studies-saudi-arabia"
       breadcrumbLabel="HTA Studies Saudi Arabia"
       h1="HTA Studies Saudi Arabia"

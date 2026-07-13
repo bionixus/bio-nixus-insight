@@ -6,9 +6,9 @@ export const nigeriaGeneralEn: CountryListicleConfig = {
   variant: 'general',
   region: 'africa',
   country: 'Nigeria',
-  title: 'Best Market Research Companies in Nigeria (2026 Guide) | BioNixus',
+  title: 'Top Market Research Companies in Nigeria 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading market research companies in Nigeria — healthcare, pharmaceutical, consumer, and strategic research firms compared by capability, NAFDAC regulatory awareness, and West Africa execution.',
+    'Independent 2026 guide to the leading market research companies in Nigeria — healthcare, pharmaceutical, consumer, and strategic research firms compared.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-nigeria-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-nigeria-2026' },
@@ -246,7 +246,7 @@ export const nigeriaGeneralEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request a Nigeria Research Proposal' },
   ],
   cta: {
-    title: 'Plan Market Research in Nigeria',
+    title: 'Plan Market Research in Nigeria | BioNixus',
     body: 'BioNixus delivers custom market research across Nigeria and the wider West Africa region — primary research, consumer insights, healthcare and pharmaceutical studies, NAFDAC regulatory awareness, multilingual fieldwork across Yoruba, Hausa, and Igbo, and competitive intelligence.',
     button: 'Request a Proposal',
     to: '/contact',

@@ -99,8 +99,8 @@ const EgyptHealthcareMarketReport = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <SEOHead
-        title="Egypt Healthcare Market Report 2026 | USD 25B+ Pharma & UHI Intelligence | BioNixus"
-        description="Egypt healthcare market at USD 25–30B in 2026. Pharmaceutical market (USD 5B), UHI formulary access, EDA registration, therapy area analysis, and BioNixus Cairo-based primary HCP research."
+        title="Egypt Healthcare Market Report 2026 | BioNixus"
+        description="Egypt healthcare market at USD 25–30B in 2026. Pharmaceutical market (USD 5B), UHI formulary access, EDA registration, therapy area analysis, and BioNixus."
         canonical="https://www.bionixus.com/egypt-healthcare-market-report"
         jsonLd={jsonLd}
       />

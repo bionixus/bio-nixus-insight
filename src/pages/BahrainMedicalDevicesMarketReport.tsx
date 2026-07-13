@@ -114,8 +114,8 @@ const BahrainMedicalDevicesMarketReport = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <SEOHead
-        title="Bahrain Medical Devices Market Report 2026 | NHRA Registration & GCC Entry Strategy | BioNixus"
-        description="Bahrain medical devices market at USD 130–160M in 2026. NHRA mutual recognition strategy, Salmaniya Medical Complex, private hospital channel, and BioNixus GCC sequential entry intelligence."
+        title="Bahrain Medical Devices Market Report 2026 | BioNixus"
+        description="Bahrain medical devices market at USD 130–160M in 2026. NHRA mutual recognition strategy, Salmaniya Medical Complex, private hospital channel, and."
         canonical="https://www.bionixus.com/bahrain-medical-devices-market-report"
         jsonLd={jsonLd}
       />

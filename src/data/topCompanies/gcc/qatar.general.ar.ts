@@ -7,9 +7,9 @@ export const qatarGeneralAr: CountryListicleConfig = {
   region: 'gcc',
   country: 'قطر',
   rtl: true,
-  title: 'أفضل شركات أبحاث السوق في قطر (دليل 2026) | بيونيكسوس',
+  title: 'أفضل شركات أبحاث السوق في قطر (دليل 2026) | بيونيكسوس | BioNixus',
   metaDescription:
-    'دليل مستقل لعام 2026 حول أبرز شركات أبحاث السوق في قطر — مقارنة شاملة لشركات أبحاث الرعاية الصحية والأدوية والمستهلكين والاستراتيجية بحسب القدرات والخبرة المحلية.',
+    'دليل مستقل لعام 2026 حول أبرز شركات أبحاث السوق في قطر — مقارنة شاملة لشركات أبحاث الرعاية الصحية والأدوية والمستهلكين والاستراتيجية بحسب القدرات والخبرة.',
   canonical: 'https://www.bionixus.com/ar/insights/top-market-research-companies-qatar-2026',
   hreflang: [
     { lang: 'ar', href: 'https://www.bionixus.com/ar/insights/top-market-research-companies-qatar-2026' },

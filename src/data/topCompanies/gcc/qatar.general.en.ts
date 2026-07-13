@@ -6,9 +6,9 @@ export const qatarGeneralEn: CountryListicleConfig = {
   variant: 'general',
   region: 'gcc',
   country: 'Qatar',
-  title: 'Best Market Research Companies in Qatar (2026 Guide) | BioNixus',
+  title: 'Top Market Research Companies in Qatar 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading market research companies in Qatar — healthcare, pharmaceutical, consumer, and strategic research firms compared by capability.',
+    'Independent 2026 guide to the leading market research companies in Qatar — healthcare, pharmaceutical, consumer, and strategic research firms compared by.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-qatar-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-qatar-2026' },
@@ -247,7 +247,7 @@ export const qatarGeneralEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request a Qatar Research Proposal' },
   ],
   cta: {
-    title: 'Plan Market Research in Qatar',
+    title: 'Plan Market Research in Qatar | BioNixus',
     body: 'BioNixus delivers custom market research across Qatar and the wider GCC — primary research, consumer insights, healthcare and pharmaceutical studies, competitive intelligence, and QNV 2030 sector analysis.',
     button: 'Request a Proposal',
     to: '/contact',

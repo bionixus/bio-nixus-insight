@@ -92,8 +92,8 @@ const FranceMedicalDevicesMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="France Medical Devices Market Report 2026 | LPP Reimbursement, ANSM & GHT Procurement | BioNixus"
-      description="France medical devices market at EUR 14–16B in 2026. ANSM regulation under EU MDR, LPP reimbursement listing, Forfait Innovation early access, GHT hospital group procurement, and BioNixus GCC expansion intelligence."
+      title="France Medical Devices Market Report 2026 | BioNixus"
+      description="France medical devices market at EUR 14–16B in 2026. ANSM regulation under EU MDR, LPP reimbursement listing, Forfait Innovation early access, GHT."
       canonical="https://www.bionixus.com/france-medical-devices-market-report"
       jsonLd={jsonLd}
     />

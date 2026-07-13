@@ -6,9 +6,9 @@ export const ksaHealthcareEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'gcc',
   country: 'Saudi Arabia',
-  title: 'Best Healthcare Market Research Companies in Saudi Arabia (2026 Guide) | BioNixus',
+  title: 'Top Healthcare Market Research Companies in Saudi | BioNixus',
   metaDescription:
-    'Independent 2026 guide to leading healthcare market research companies in Saudi Arabia — SFDA-aligned, pharma U&A, KOL mapping, HEOR, and market access firms compared by capability.',
+    'Independent 2026 guide to leading healthcare market research companies in Saudi Arabia — SFDA-aligned, pharma U&A, KOL mapping, HEOR, and market access.',
   canonical:
     'https://www.bionixus.com/insights/top-healthcare-market-research-companies-saudi-arabia-2026',
   hreflang: [
@@ -288,7 +288,7 @@ export const ksaHealthcareEn: CountryListicleConfig = {
     },
   ],
   cta: {
-    title: 'Plan Healthcare Market Research in Saudi Arabia',
+    title: 'Plan Healthcare Market Research in Saudi Arabia | BioNixus',
     body: 'BioNixus delivers custom pharmaceutical and healthcare market research across Saudi Arabia — physician surveys, KOL mapping, HEOR and pharmacoeconomic modelling, SFDA-aware market access strategy, NUPCO formulary intelligence, and Arabic-English bilingual fieldwork across Riyadh, Jeddah, and Dammam.',
     button: 'Request a Proposal',
     to: '/contact',

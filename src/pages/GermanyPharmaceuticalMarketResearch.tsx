@@ -114,7 +114,7 @@ export default function GermanyPharmaceuticalMarketResearch() {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Pharmaceutical Market Research Germany | BioNixus"
-        description="BioNixus delivers pharmaceutical market research in Germany — AMNOG-aligned HCP surveys, GBA payer research, KOL mapping at Charité, LMU, UKE, Uniklinik Cologne, and Universitätsklinikum Frankfurt."
+        description="BioNixus delivers pharmaceutical market research in Germany — AMNOG-aligned HCP surveys, GBA payer research, KOL mapping at Charité, LMU, UKE, Uniklinik."
         canonical="/pharmaceutical-market-research-germany"
         jsonLd={jsonLd}
       />

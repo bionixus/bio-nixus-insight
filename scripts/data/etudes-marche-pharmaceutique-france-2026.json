@@ -154,5 +154,9 @@
     "version": "2026-06-18-v1",
     "appliedAt": "2026-06-18T15:46:06.615Z",
     "anchor": "geo-answer-fr-has"
+  },
+  "openGraph": {
+    "ogTitle": "Études marché pharmaceutique France 2026",
+    "ogDescription": "Études de marché pharmaceutique en France 2026 : HAS, accès au marché, CEESP et recherche primaire pour dossiers crédibles."
   }
 }

@@ -124,8 +124,8 @@ export default function PolandPharmaceuticalMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Pharmaceutical Market Research Company in Poland | URPL, AOTMiT & NFZ Aligned | BioNixus"
-        description="BioNixus is a pharmaceutical market research company in Poland — AOTMiT-aligned HCP surveys, KOL mapping, NFZ and Ministry of Health reimbursement payer research, and GDPR-compliant market access evidence."
+        title="Pharmaceutical Market Research Company in Poland | BioNixus"
+        description="BioNixus is a pharmaceutical market research company in Poland — AOTMiT-aligned HCP surveys, KOL mapping, NFZ and Ministry of Health reimbursement payer."
         canonical="/pharmaceutical-market-research-poland"
         jsonLd={jsonLd}
       />

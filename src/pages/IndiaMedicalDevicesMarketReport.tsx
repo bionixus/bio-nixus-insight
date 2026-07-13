@@ -84,8 +84,8 @@ const IndiaMedicalDevicesMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="India Medical Devices Market Report 2026 | MDR 2017, PLI Scheme & CDSCO Registration | BioNixus"
-      description="India medical devices market at USD 12B in 2026, growing 8% CAGR. CDSCO MDR 2017 registration, PLI manufacturing scheme, NPPA price regulation, import dependency, and BioNixus GCC expansion intelligence for Indian medtech."
+      title="India Medical Devices Market Report 2026 | BioNixus"
+      description="India medical devices market at USD 12B in 2026, growing 8% CAGR. CDSCO MDR 2017 registration, PLI manufacturing scheme, NPPA price regulation, import."
       canonical="https://www.bionixus.com/india-medical-devices-market-report"
       jsonLd={jsonLd}
     />

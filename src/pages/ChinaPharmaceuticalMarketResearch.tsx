@@ -114,7 +114,7 @@ export default function ChinaPharmaceuticalMarketResearch() {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Pharmaceutical Market Research China | BioNixus"
-        description="BioNixus delivers pharmaceutical market research in China — HCP surveys at Tier 3A hospitals, NHSA NRDL payer research, VBP procurement intelligence, and KOL mapping at PUMCH, West China Hospital, Zhongshan, Ruijin, and PLA General Hospital."
+        description="BioNixus delivers pharmaceutical market research in China — HCP surveys at Tier 3A hospitals, NHSA NRDL payer research, VBP procurement intelligence, and."
         canonical="/pharmaceutical-market-research-china"
         jsonLd={jsonLd}
       />

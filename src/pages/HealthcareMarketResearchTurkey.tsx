@@ -77,8 +77,8 @@ export default function HealthcareMarketResearchTurkey() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Market Research Company in Turkey | TİTCK & SGK Aligned | BioNixus"
-        description="BioNixus is a healthcare market research company in Turkey — ethics-committee-compliant HCP surveys, payer landscape analysis, KOL mapping, and health outcomes research aligned with TİTCK and SGK requirements."
+        title="Healthcare Market Research Company in Turkey | BioNixus"
+        description="BioNixus is a healthcare market research company in Turkey — ethics-committee-compliant HCP surveys, payer landscape analysis, KOL mapping, and health."
         canonical="/healthcare-market-research-turkey"
         jsonLd={jsonLd}
       />

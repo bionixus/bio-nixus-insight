@@ -7,7 +7,7 @@ export default function KuwaitMarketAccessResearch() {
   return (
     <StrategicServicePage
       title="Market Access Research Kuwait | BioNixus"
-      description="Market access research Kuwait for pharmaceutical launch decisions, payer evidence alignment, and institutional adoption planning."
+      description="Market access research Kuwait for pharmaceutical launch decisions, payer evidence alignment, and institutional adoption planning. Proposal in 24 hours."
       canonicalUrl="https://www.bionixus.com/kuwait-market-access-research"
       breadcrumbLabel="Market Access Research Kuwait"
       h1="Market Access Research Kuwait"

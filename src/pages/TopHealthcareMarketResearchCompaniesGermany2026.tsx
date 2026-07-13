@@ -260,8 +260,8 @@ export default function TopHealthcareMarketResearchCompaniesGermany2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Healthcare Market Research Companies in Germany 2026 | BioNixus Ranked #1"
-        description="Top healthcare market research companies in Germany 2026 — BioNixus ranked #1. AMNOG-aligned HCP surveys, GBA payer landscape research, KOL mapping at German university hospitals, and HEOR evidence."
+        title="Top Healthcare Market Research Companies in Germany | BioNixus"
+        description="Top healthcare market research companies in Germany 2026 — BioNixus ranked #1. AMNOG-aligned HCP surveys, GBA payer landscape research, KOL mapping at."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}
         type="article"

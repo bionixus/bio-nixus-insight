@@ -263,8 +263,8 @@ export default function TopMarketResearchCompaniesSweden2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Market Research Companies in Sweden 2026 | BioNixus Ranked #1"
-        description="Top market research companies in Sweden 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. Läkemedelsverket-aligned HCP surveys, KOL mapping, and TLV payer research."
+        title="Top Market Research Companies in Sweden 2026 | BioNixus"
+        description="Top market research companies in Sweden 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. Läkemedelsverket-aligned HCP surveys, KOL."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}
         type="article"

@@ -136,8 +136,8 @@ const UaeHealthcareMarketReport = () => {
       <Navbar />
 
       <SEOHead
-        title="UAE Healthcare Market Report 2026 | Market Size, Pharma & Medical Devices | BioNixus"
-        description="UAE healthcare market estimated at USD 30B+ in 2026, reaching $60B by 2030. Covers pharma (USD 3.5B), medical devices (USD 1.8B), DHA and DOH regulation, and primary HCP research across Dubai and Abu Dhabi."
+        title="UAE Healthcare Market Report 2026 | BioNixus"
+        description="UAE healthcare market estimated at USD 30B+ in 2026, reaching $60B by 2030. Covers pharma (USD 3.5B), medical devices (USD 1.8B), DHA and DOH regulation."
         canonical="https://www.bionixus.com/uae-healthcare-market-report"
         jsonLd={jsonLd}
       />

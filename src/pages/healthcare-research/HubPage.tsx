@@ -158,11 +158,11 @@ export default function HubPage() {
   const hubSeoTitle =
     typeof hubContent?.metaTitle === 'string' && hubContent.metaTitle.length > 0
       ? hubContent.metaTitle
-      : 'Healthcare Market Research | Global Pharma & MedTech | BioNixus';
+      : 'Healthcare Market Research | Pharma & MedTech Global | BioNixus';
   const hubSeoDescription =
     typeof hubContent?.metaDescription === 'string' && hubContent.metaDescription.length > 0
       ? hubContent.metaDescription
-      : 'Healthcare market research for pharmaceutical and medtech teams — physician, payer, and hospital evidence across USA, Europe, GCC, MENA, and Asia-Pacific (excluding India-only programmes). US HQ, 20+ country hubs.';
+      : 'Physician, payer & hospital evidence for pharma & medtech — launch & access across USA, Europe, GCC & MENA. Proposal in 24 hours.';
   const heroTitle =
     typeof hubContent?.title === 'string' && hubContent.title.length > 0
       ? hubContent.title

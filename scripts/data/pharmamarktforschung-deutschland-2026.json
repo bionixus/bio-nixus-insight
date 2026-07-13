@@ -1,7 +1,7 @@
 {
   "seo": {
     "metaTitle": "Pharmamarktforschung Deutschland 2026 | BioNixus",
-    "metaDescription": "Pharmamarktforschung Deutschland 2026: AMNOG, G-BA, IQWiG und Evidenzanforderungen für den Arzneimittelzugang — Leitfaden für Market Access.",
+    "metaDescription": "Leitfaden zur Pharmamarktforschung in Deutschland: GKV/PKV-Struktur, Kassenärztliche Vereinigungen, Ärztebefragungen, KOL-Mapping, RWE-Daten und.",
     "focusKeyword": "pharmamarktforschung deutschland",
     "keywords": [
       "pharmamarktforschung deutschland",
@@ -154,5 +154,9 @@
     "version": "2026-06-18-v1",
     "appliedAt": "2026-06-18T15:46:06.615Z",
     "anchor": "geo-answer-de-amnog"
+  },
+  "openGraph": {
+    "ogTitle": "Pharmamarktforschung Deutschland 2026",
+    "ogDescription": "Leitfaden zur Pharmamarktforschung in Deutschland: GKV/PKV-Struktur, Kassenärztliche Vereinigungen, Ärztebefragungen, KOL-Mapping, RWE-Daten und."
   }
 }

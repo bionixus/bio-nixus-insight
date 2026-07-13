@@ -32,7 +32,7 @@ export default function Insights() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="BioNixus Insights for Healthcare & Pharma Strategy"
+        title="BioNixus Insights for Healthcare & Pharma Strategy | BioNixus"
         description="Discover why BioNixus insights improve healthcare and pharmaceutical decisions across market access, launch planning, and growth strategy."
         canonical="/insights"
         jsonLd={insightsPageSchemas}

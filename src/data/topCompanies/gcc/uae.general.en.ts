@@ -8,9 +8,9 @@ export const uaeGeneralEn: CountryListicleConfig = {
   country: 'United Arab Emirates',
   rtl: false,
 
-  title: 'Best Market Research Companies in the UAE (2026 Guide) | BioNixus',
+  title: 'Top Market Research Companies in the UAE 2026 | BioNixus',
   metaDescription:
-    'Discover the top market research companies in the UAE for 2026. Compare BioNixus, Kantar MENAP, IQVIA MENA, NielsenIQ, and Euromonitor across primary research, healthcare, pharma, and consumer insights.',
+    'Discover the top market research companies in the UAE for 2026. Compare BioNixus, Kantar MENAP, IQVIA MENA, NielsenIQ, and Euromonitor across primary.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-uae-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-uae-2026' },
@@ -264,7 +264,7 @@ export const uaeGeneralEn: CountryListicleConfig = {
   ],
 
   cta: {
-    title: 'Plan Market Research in the UAE',
+    title: 'Plan Market Research in the UAE | BioNixus',
     body: 'BioNixus delivers custom market research across the UAE and wider GCC — primary research, consumer insights, healthcare and pharmaceutical studies, and strategic intelligence across Dubai, Abu Dhabi, and all seven emirates.',
     button: 'Request a Proposal',
     to: '/contact',

@@ -6,9 +6,9 @@ export const belgiumHealthcareEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'europe',
   country: 'Belgium',
-  title: 'Best Healthcare Market Research Companies in Belgium (2026 Guide) | BioNixus',
+  title: 'Top Healthcare Market Research Companies in Belgium | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the top healthcare market research companies in Belgium — pharmaceutical primary research, FAMHP/KCE HTA support, RIZIV/INAMI payer research, physician surveys, HEOR, and multilingual Belgian fieldwork firms compared by capability.',
+    'Independent 2026 guide to the top healthcare market research companies in Belgium — pharmaceutical primary research, FAMHP/KCE HTA support, RIZIV/INAMI.',
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-belgium-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-belgium-2026' },
@@ -247,7 +247,7 @@ export const belgiumHealthcareEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request a Belgium Healthcare Research Proposal' },
   ],
   cta: {
-    title: 'Plan Healthcare Market Research in Belgium',
+    title: 'Plan Healthcare Market Research in Belgium | BioNixus',
     body: 'BioNixus delivers specialist healthcare market research across Belgium — pharmaceutical primary research, FAMHP/KCE HTA evidence, RIZIV/INAMI payer research, bilingual physician and KOL surveys, HEOR, and patient journey studies for pharma and biotech companies.',
     button: 'Request a Proposal',
     to: '/contact',

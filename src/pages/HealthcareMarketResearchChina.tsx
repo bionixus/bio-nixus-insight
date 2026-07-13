@@ -76,8 +76,8 @@ export default function HealthcareMarketResearchChina() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Market Research Company in China | NMPA & NHSA Aligned | BioNixus"
-        description="BioNixus is a healthcare market research company in China — HCP surveys at Tier 3A hospitals, NHSA NRDL payer landscape research, VBP procurement intelligence, and KOL mapping aligned with NMPA and NHSA requirements across 34 provinces."
+        title="Healthcare Market Research Company in China | BioNixus"
+        description="BioNixus is a healthcare market research company in China — HCP surveys at Tier 3A hospitals, NHSA NRDL payer landscape research, VBP procurement."
         canonical="/healthcare-market-research-china"
         jsonLd={jsonLd}
       />

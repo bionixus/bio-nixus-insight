@@ -116,28 +116,32 @@ function buildRouteTitle(pathname: string, language: Language, fallback: string)
   const noPrefixParts = ['de', 'fr', 'es', 'ar', 'zh'].includes(parts[0]) ? parts.slice(1) : parts;
   const makeTitle = (value: string) => normalizeSeoTitle(value, 'BioNixus');
 
-  if (path === '/' || path === '/de' || path === '/fr' || path === '/es' || path === '/zh' || path === '/ar') {
+  if (path === '/' || path === '/de' || path === '/fr' || path === '/es' || path === '/zh' || path === '/ar' || path === '/pt' || path === '/ru') {
     return makeTitle(fallback);
   }
 
   if (path === '/about') {
-    return makeTitle('About BioNixus | International Healthcare Market Research — EMEA Heritage');
+    return makeTitle('About BioNixus | Global Pharma & Healthcare Market Research');
   }
 
   if (path === '/services') {
-    return makeTitle('Healthcare Market Research Services in EMEA | BioNixus');
+    return makeTitle('Market Research Services | Pharma, Healthcare & B2B | BioNixus');
+  }
+
+  if (path === '/contact' || path === '/de/contact' || path === '/fr/contacts' || path === '/ar/contacts') {
+    return makeTitle('Contact BioNixus | Research Proposal in 24 Hours');
   }
 
   if (path === '/faq') {
-    return makeTitle('FAQ | BioNixus Healthcare Market Research');
+    return makeTitle('FAQ | Healthcare & Pharma Market Research | BioNixus');
   }
 
   if (path === '/strategic-portfolio' || path === '/strategic-portfolios') {
-    return makeTitle('BioNixus — Strategic Portfolio | Market Research & Consulting');
+    return makeTitle('Strategic Portfolio | Healthcare Market Research | BioNixus');
   }
 
   if (path === '/blog' || path === '/de/blog' || path === '/fr/blog') {
-    return makeTitle('Healthcare & Pharmaceutical Blog Insights | BioNixus');
+    return makeTitle('Pharma & Healthcare Market Research Blog | BioNixus');
   }
 
   if (path.startsWith('/blog/')) {
@@ -147,7 +151,7 @@ function buildRouteTitle(pathname: string, language: Language, fallback: string)
   }
 
   if (path === '/case-studies') {
-    return makeTitle('Healthcare & Pharmaceutical Case Studies | BioNixus');
+    return makeTitle('Pharma Market Research Case Studies | BioNixus');
   }
 
   if (path.startsWith('/case-studies/')) {
@@ -163,12 +167,12 @@ function buildRouteTitle(pathname: string, language: Language, fallback: string)
 
   if (path.startsWith('/healthcare-market-research/services/')) {
     const service = titleCase(noPrefixParts[2] || 'service');
-    return makeTitle(`${service} Healthcare Research Service | BioNixus`);
+    return makeTitle(`${service} Healthcare Market Research | BioNixus`);
   }
 
   if (path.startsWith('/healthcare-market-research/therapy/')) {
     const therapy = titleCase(noPrefixParts[2] || 'therapy');
-    return makeTitle(`${therapy} Healthcare Market Research | BioNixus`);
+    return makeTitle(`${therapy} Market Research for Pharma | BioNixus`);
   }
 
   if (path.startsWith('/healthcare-market-research/')) {
@@ -177,7 +181,7 @@ function buildRouteTitle(pathname: string, language: Language, fallback: string)
   }
 
   if (path === '/real-world-evidence') {
-    return makeTitle('Real World Evidence (RWE) for Pharma | BioNixus EMEA & MENA');
+    return makeTitle('Real-World Evidence for Pharma | FDA & HTA Ready | BioNixus');
   }
 
   if (path.startsWith('/pharmaceutical-companies-')) {
@@ -194,57 +198,41 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
   const parts = path.split('/').filter(Boolean);
   const noPrefixParts = ['de', 'fr', 'es', 'ar', 'zh'].includes(parts[0]) ? parts.slice(1) : parts;
 
-  if (path === '/') {
-    return clampDescription(
-      'Pharmaceutical & healthcare market research for MENA, Europe, and GCC — physician surveys, KOL mapping, payer insight, and market access strategy.'
-    );
+  // Locale home pages: use seoByLanguage descriptions (synced with index.html / OG).
+  if (
+    path === '/'
+    || path === '/de'
+    || path === '/fr'
+    || path === '/es'
+    || path === '/zh'
+    || path === '/ar'
+    || path === '/pt'
+    || path === '/ru'
+  ) {
+    return clampDescription(fallback);
   }
 
   if (path === '/about') {
     return clampDescription(
-      'BioNixus is an international healthcare market research firm with offices in the US and UK, specializing in pharma consulting across 38 countries.'
+      'Founded in London in 2012 — now US-headquartered with Cairo regional office. Global pharma & healthcare market research across 38 countries. Meet the team.'
     );
   }
 
   if (path === '/services') {
     return clampDescription(
-      'Quantitative, qualitative, market access, KOL mapping, competitive intelligence, and clinical trial support across the UK, Europe, GCC, and MENA.'
+      'Pharma, healthcare & B2B market research: physician surveys, KOL mapping, market access, CATI/CAWI, focus groups & competitive intelligence. Scope a study in 24 hours.'
     );
   }
 
   if (path === '/faq') {
     return clampDescription(
-      'Frequently asked questions about BioNixus healthcare market research services: MENA coverage, therapeutic areas, physician surveys, HTA support, and GDPR compliance.'
+      'Answers on coverage, therapy areas, physician surveys, HTA support, Arabic–English fieldwork, GDPR, timelines & how to get a BioNixus research proposal.'
     );
   }
 
   if (path === '/strategic-portfolio' || path === '/strategic-portfolios') {
     return clampDescription(
-      'BioNixus strategic portfolio: healthcare and consumer market research, global pharma relationships, MENA field capabilities, and board-ready consulting methodology across Egypt and the region.'
-    );
-  }
-
-  if (path === '/de') {
-    return clampDescription(
-      'Gesundheits- und Pharmamarktforschung in Deutschland, Europa und MENA mit quantitativen und qualitativen Insights für fundierte Entscheidungen.'
-    );
-  }
-
-  if (path === '/fr') {
-    return clampDescription(
-      'Etudes de marche sante et pharma en France, Europe et MENA avec insights quantitatifs et qualitatifs pour decisions strategiques.'
-    );
-  }
-
-  if (path === '/es') {
-    return clampDescription(
-      'Investigacion de mercado sanitario y farmaceutico para Europa y MENA con estudios cuantitativos, cualitativos y estrategia de market access.'
-    );
-  }
-
-  if (path === '/ar') {
-    return clampDescription(
-      'أبحاث سوق صحية ودوائية من BioNixus في الخليج وأوروبا: دراسات كمية ونوعية، خرائط أصحاب تأثير، ودعم الوصول للسوق والإطلاق الدوائي لمكاتب الأدوية الإقليمية والعالمية.'
+      'See BioNixus capabilities: healthcare & consumer research, global pharma relationships, MENA fieldwork, and board-ready methodology for launch and access teams.'
     );
   }
 
@@ -256,7 +244,7 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
 
   if (path === '/blog') {
     return clampDescription(
-      'Read BioNixus healthcare and pharmaceutical market research insights on market access, physician behavior, Saudi Arabia strategy, and regional trends.'
+      'Pharma & healthcare market research insights: market access, HTA, physician behaviour, GCC strategy, and launch evidence — written for commercial and medical teams.'
     );
   }
   if (path === '/de/blog') {
@@ -288,7 +276,7 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
 
   if (path === '/case-studies') {
     return clampDescription(
-      'Explore healthcare and pharmaceutical market research case studies from BioNixus across Saudi Arabia, GCC, UK, and Europe.'
+      'See how BioNixus research programmes shaped pharma launch, access, and growth decisions across Saudi Arabia, GCC, UK, Europe, and the Americas.'
     );
   }
 
@@ -302,27 +290,27 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
   if (path.startsWith('/healthcare-market-research/services/')) {
     const service = titleCase(noPrefixParts[2] || 'service');
     return clampDescription(
-      `${service} healthcare market research service with practical outputs for pharmaceutical strategy, stakeholder alignment, and market execution.`
+      `${service} for pharma & medtech teams — decision-ready evidence for strategy, stakeholder alignment, and market execution. Request a scoped proposal.`
     );
   }
 
   if (path.startsWith('/healthcare-market-research/therapy/')) {
     const therapy = titleCase(noPrefixParts[2] || 'therapy');
     return clampDescription(
-      `${therapy} healthcare market research insights for pharmaceutical teams, including stakeholder evidence, demand signals, and market opportunity priorities.`
+      `${therapy} market research for pharma: physician & payer evidence, demand signals, and opportunity priorities for launch and access. Proposal in 24 hours.`
     );
   }
 
   if (path.startsWith('/healthcare-market-research/')) {
     const country = titleCase(noPrefixParts[1] || 'market');
     return clampDescription(
-      `Pharmaceutical market research in ${country} with localized stakeholder insights, healthcare system context, and execution-focused strategy support.`
+      `Healthcare & pharmaceutical market research in ${country}: local physician, payer & hospital insights for launch, pricing, and access. Talk to BioNixus.`
     );
   }
 
   if (path === '/real-world-evidence') {
     return clampDescription(
-      'BioNixus real world evidence (RWE) for pharma: principal-led study design, EMEA and MENA execution, HTA and payer-ready narratives, and GCC programs for medical, access, and commercial decisions.'
+      'Real-world evidence (RWE) for pharma: principal-led design, FDA & HTA-ready narratives, and multi-country execution for medical, access, and commercial teams.'
     );
   }
 
@@ -371,7 +359,7 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
 
   if (path === '/contact') {
     return clampDescription(
-      'Get a tailored healthcare market research proposal from BioNixus within 24 hours. Pharma, biotech, and access teams across the UK, EU, GCC, and MENA.',
+      'Request a healthcare or pharma market research proposal in 24 hours. Physician surveys, KOL mapping, access evidence — Americas, Europe, MENA & APAC.',
     );
   }
   if (path === '/de/contact') {
@@ -412,7 +400,7 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
   const topic = titleCase(noPrefixParts.join(' ') || slugToWords(path.replace(/\//g, ' ')));
   const langSuffix = language === 'en' ? '' : ` (${language.toUpperCase()})`;
   return clampDescription(
-    `${topic}${langSuffix} page from BioNixus with healthcare and pharmaceutical market research insight, services context, and strategic guidance.`
+    `${topic}${langSuffix}: pharmaceutical & healthcare market research insights from BioNixus — launch, access, and growth evidence. Proposal in 24 hours.`
   ) || fallback;
 }
 

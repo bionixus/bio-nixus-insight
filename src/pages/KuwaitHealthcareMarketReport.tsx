@@ -119,8 +119,8 @@ const KuwaitHealthcareMarketReport = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <SEOHead
-        title="Kuwait Healthcare Market Report 2026 | Pharma, Medical Devices & Market Access | BioNixus"
-        description="Kuwait healthcare market at USD 7.5–8.5B in 2026. Pharmaceutical market (USD 1B), CMS procurement intelligence, MOPH registration, therapy area analysis, and primary HCP research from BioNixus."
+        title="Kuwait Healthcare Market Report 2026 | BioNixus"
+        description="Kuwait healthcare market at USD 7.5–8.5B in 2026. Pharmaceutical market (USD 1B), CMS procurement intelligence, MOPH registration, therapy area analysis."
         canonical="https://www.bionixus.com/kuwait-healthcare-market-report"
         jsonLd={jsonLd}
       />

@@ -7,7 +7,7 @@ export default function GccHcpRecruitmentMarketResearch() {
   return (
     <StrategicServicePage
       title="Physician Recruitment in Saudi Arabia and GCC | BioNixus"
-      description="Physician recruitment in Saudi Arabia and GCC for pharmaceutical market research with specialist validation, quality controls, and compliant sample governance."
+      description="Physician recruitment in Saudi Arabia and GCC for pharmaceutical market research with specialist validation, quality controls, and compliant sample."
       canonicalUrl="https://www.bionixus.com/gcc-hcp-recruitment-market-research"
       breadcrumbLabel="GCC HCP Recruitment Market Research"
       h1="Physician Recruitment in Saudi Arabia and GCC"

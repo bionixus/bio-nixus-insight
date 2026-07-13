@@ -96,8 +96,8 @@ const SpainHealthcareMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="Spain Healthcare Market Report 2026 | AEMPS, SNS Reimbursement & Regional Market Access | BioNixus"
-      description="Spain healthcare market at EUR 115B in 2026. AEMPS pricing, CIPM reimbursement, IPT assessment, autonomous community access variation, and BioNixus intelligence for Spanish pharma companies expanding to GCC and MENA."
+      title="Spain Healthcare Market Report 2026 | BioNixus"
+      description="Spain healthcare market at EUR 115B in 2026. AEMPS pricing, CIPM reimbursement, IPT assessment, autonomous community access variation, and BioNixus."
       canonical="https://www.bionixus.com/spain-healthcare-market-report"
       jsonLd={jsonLd}
     />

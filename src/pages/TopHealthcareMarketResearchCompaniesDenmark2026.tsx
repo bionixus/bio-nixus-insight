@@ -250,8 +250,8 @@ export default function TopHealthcareMarketResearchCompaniesDenmark2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Healthcare Market Research Companies in Denmark 2026 | BioNixus Ranked #1"
-        description="Top healthcare market research companies in Denmark 2026 — BioNixus ranked #1. Danish-language HCP surveys, Medicinrådet payer research, AMGROS tender intelligence, and KOL mapping at Danish university hospitals."
+        title="Top Healthcare Market Research Companies in Denmark | BioNixus"
+        description="Top healthcare market research companies in Denmark 2026 — BioNixus ranked #1. Danish-language HCP surveys, Medicinrådet payer research, AMGROS tender."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}
         type="article"

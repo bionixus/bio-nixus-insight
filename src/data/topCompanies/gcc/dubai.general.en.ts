@@ -8,9 +8,9 @@ export const dubaiGeneralEn: CountryListicleConfig = {
   country: 'Dubai',
   rtl: false,
 
-  title: 'Best Market Research Companies in Dubai (2026 Guide) | BioNixus',
+  title: 'Top Market Research Companies in Dubai 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading market research companies in Dubai — DHA-aware, healthcare, pharmaceutical, consumer, and FMCG research firms compared by capability.',
+    'Independent 2026 guide to the leading market research companies in Dubai — DHA-aware, healthcare, pharmaceutical, consumer, and FMCG research firms.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-dubai-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-dubai-2026' },
@@ -263,7 +263,7 @@ export const dubaiGeneralEn: CountryListicleConfig = {
   ],
 
   cta: {
-    title: 'Plan Market Research in Dubai',
+    title: 'Plan Market Research in Dubai | BioNixus',
     body: "BioNixus delivers custom market research across Dubai and the wider UAE — primary consumer research, healthcare and pharmaceutical studies, FMCG intelligence, KOL mapping, HEOR, and strategic analysis. Our Dubai execution capability combines DHA regulatory awareness, Arabic-English bilingual fieldwork, and established physician and consumer panel networks across the city.",
     button: 'Request a Proposal',
     to: '/contact',

@@ -124,8 +124,8 @@ export default function CanadaPharmaceuticalMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Pharmaceutical Market Research Company in Canada | CADTH, pCPA & PMPRB Aligned | BioNixus"
-        description="BioNixus is a pharmaceutical market research company in Canada — CADTH-aligned HCP surveys, KOL mapping, pCPA payer research, provincial formulary studies, and TCPS 2-compliant market access evidence."
+        title="Pharmaceutical Market Research Company in Canada | BioNixus"
+        description="BioNixus is a pharmaceutical market research company in Canada — CADTH-aligned HCP surveys, KOL mapping, pCPA payer research, provincial formulary."
         canonical="/pharmaceutical-market-research-canada"
         jsonLd={jsonLd}
       />

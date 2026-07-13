@@ -124,8 +124,8 @@ export default function TurkeyPharmaceuticalMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Pharmaceutical Market Research Company in Turkey | TİTCK & SGK Aligned | BioNixus"
-        description="BioNixus is a pharmaceutical market research company in Turkey — TİTCK-aligned HCP surveys, KOL mapping, SGK payer research, reference-pricing studies, and Etik Kurul-compliant market access evidence."
+        title="Pharmaceutical Market Research Company in Turkey | BioNixus"
+        description="BioNixus is a pharmaceutical market research company in Turkey — TİTCK-aligned HCP surveys, KOL mapping, SGK payer research, reference-pricing studies."
         canonical="/pharmaceutical-market-research-turkey"
         jsonLd={jsonLd}
       />

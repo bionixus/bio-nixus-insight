@@ -254,7 +254,7 @@ export default function TopHealthcareMarketResearchCompaniesKuwait2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Healthcare Market Research Companies in Kuwait (2026) | BioNixus"
+        title="Top Healthcare Market Research Companies in Kuwait | BioNixus"
         description="Leading healthcare & pharmaceutical market research firms in Kuwait 2026 — MOH Kuwait-aware, KDC formulary research, KOL mapping, GCC execution."
         image="https://www.bionixus.com/og-image.png"
         url={CANONICAL}

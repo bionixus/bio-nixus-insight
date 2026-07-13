@@ -107,8 +107,8 @@ const GccAnesthesiaSurgicalMarket = () => {
       <Navbar />
 
       <SEOHead
-        title="GCC Anesthesia & Surgical Market Report 2026 | Hospital Procedure Intelligence | BioNixus"
-        description="GCC anesthesia market estimated at USD 850M–1B in 2026. Hospital-level surgical procedure volumes, anesthesia drug consumption by account, NUPCO formulary intelligence, and primary HCP research across Saudi Arabia and UAE."
+        title="GCC Anesthesia & Surgical Market Report 2026 | BioNixus"
+        description="GCC anesthesia market estimated at USD 850M–1B in 2026. Hospital-level surgical procedure volumes, anesthesia drug consumption by account, NUPCO formulary."
         canonical="https://www.bionixus.com/gcc-anesthesia-surgical-market-report"
         jsonLd={jsonLd}
       />

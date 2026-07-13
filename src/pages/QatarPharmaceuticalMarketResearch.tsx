@@ -187,8 +187,8 @@ export default function QatarPharmaceuticalMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Market Research Company in Qatar | MoPH & HMC | BioNixus"
-        description="BioNixus is a healthcare and pharmaceutical market research company in Qatar—MoPH-aligned evidence, HMC and Sidra Medicine aware bilingual fieldwork, and proposal-ready Qatar programs."
+        title="Healthcare Market Research Company in Qatar | BioNixus"
+        description="BioNixus is a healthcare and pharmaceutical market research company in Qatar—MoPH-aligned evidence, HMC and Sidra Medicine aware bilingual fieldwork, and."
         canonical="/pharmaceutical-market-research-qatar"
         jsonLd={jsonLd}
       />

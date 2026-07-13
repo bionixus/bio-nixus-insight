@@ -260,8 +260,8 @@ export default function TopHealthcareMarketResearchCompaniesNewZealand2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Healthcare Market Research Companies in New Zealand 2026 | BioNixus Ranked #1"
-        description="Top healthcare market research companies in New Zealand 2026 — BioNixus ranked #1. HDEC-compliant HCP surveys, PHARMAC payer landscape research, KOL mapping at NZ hospitals, and health outcomes studies."
+        title="Top Healthcare Market Research Companies in New | BioNixus"
+        description="Top healthcare market research companies in New Zealand 2026 — BioNixus ranked #1. HDEC-compliant HCP surveys, PHARMAC payer landscape research, KOL."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}
         type="article"

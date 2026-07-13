@@ -84,8 +84,8 @@ const SingaporeMedicalDevicesMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="Singapore Medical Devices Market Report 2026 | HSA Registration, ASEAN Distribution Hub & Medical Tourism | BioNixus"
-      description="Singapore medical devices market at USD 2.5B in 2026, growing 7% CAGR. HSA Class A–D registration, Access Consortium, ASEAN regional distribution hub, medical tourism device demand, and BioNixus GCC intelligence."
+      title="Singapore Medical Devices Market Report 2026 | BioNixus"
+      description="Singapore medical devices market at USD 2.5B in 2026, growing 7% CAGR. HSA Class A–D registration, Access Consortium, ASEAN regional distribution hub."
       canonical="https://www.bionixus.com/singapore-medical-devices-market-report"
       jsonLd={jsonLd}
     />

@@ -96,8 +96,8 @@ const CanadaHealthcareMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="Canada Healthcare Market Research Report 2026 | CADTH & pCPA | BioNixus"
-      description="Canada healthcare market research: USD 295B market, CADTH HTA, pCPA pricing, provincial formulary access, PMPRB controls — BioNixus pharma intelligence for Canadian teams expanding globally."
+      title="Canada Healthcare Market Research Report 2026 | BioNixus"
+      description="Canada healthcare market research: USD 295B market, CADTH HTA, pCPA pricing, provincial formulary access, PMPRB controls — BioNixus pharma intelligence."
       canonical="https://www.bionixus.com/canada-healthcare-market-report"
       jsonLd={jsonLd}
     />

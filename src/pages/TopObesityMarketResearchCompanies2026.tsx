@@ -251,8 +251,8 @@ export default function TopObesityMarketResearchCompanies2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Obesity & Weight Management Market Research Companies (2026) | BioNixus"
-        description="Leading obesity market research firms for 2026 — GLP-1 receptor agonist research, anti-obesity medication landscape, patient journey mapping, payer market access strategy."
+        title="Top Obesity & Weight Management Market Research | BioNixus"
+        description="Leading obesity market research firms for 2026 — GLP-1 receptor agonist research, anti-obesity medication landscape, patient journey mapping, payer market."
         image="https://www.bionixus.com/og-image.png"
         url={CANONICAL}
         type="article"

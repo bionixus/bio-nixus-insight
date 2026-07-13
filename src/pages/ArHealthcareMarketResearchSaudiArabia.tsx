@@ -5,7 +5,7 @@ export default function ArHealthcareMarketResearchSaudiArabia() {
   return (
     <StrategicServicePage
       title="أبحاث السوق الصحي في المملكة العربية السعودية | BioNixus"
-      description="أبحاث السوق الصحي والدوائي في المملكة العربية السعودية. خدمات BioNixus تشمل أبحاث الوصول للأسواق والتسعير والتعويض والمقابلات النوعية مع الأطباء والدراسات الكمية باللغة العربية."
+      description="أبحاث السوق الصحي والدوائي في المملكة العربية السعودية. خدمات BioNixus تشمل أبحاث الوصول للأسواق والتسعير والتعويض والمقابلات النوعية مع الأطباء والدراسات."
       canonicalUrl="https://www.bionixus.com/ar/healthcare-market-research/saudi-arabia"
       breadcrumbLabel="أبحاث السوق الصحي — المملكة العربية السعودية"
       h1="أبحاث السوق الصحي في المملكة العربية السعودية"

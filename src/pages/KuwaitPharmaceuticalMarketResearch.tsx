@@ -186,8 +186,8 @@ export default function KuwaitPharmaceuticalMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Pharmaceutical Market Research Company in Kuwait | MOH & GPADC | BioNixus"
-        description="BioNixus is a pharmaceutical market research company in Kuwait—MOH and GPADC-aligned evidence, bilingual fieldwork across public and private hospitals, and proposal-ready Kuwait programs."
+        title="Pharmaceutical Market Research Company in Kuwait | BioNixus"
+        description="BioNixus is a pharmaceutical market research company in Kuwait—MOH and GPADC-aligned evidence, bilingual fieldwork across public and private hospitals."
         canonical="/pharmaceutical-market-research-kuwait"
         jsonLd={jsonLd}
       />

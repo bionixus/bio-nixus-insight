@@ -6,9 +6,9 @@ export const riyadhGeneralEn: CountryListicleConfig = {
   variant: 'general',
   region: 'gcc',
   country: 'Riyadh',
-  title: 'Best Market Research Companies in Riyadh (2026 Guide) | BioNixus',
+  title: 'Top Market Research Companies in Riyadh 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to leading market research companies in Riyadh — SFDA-aware, healthcare, pharmaceutical, consumer, and B2B research firms operating in Saudi Arabia\'s capital.',
+    'Independent 2026 guide to leading market research companies in Riyadh — SFDA-aware, healthcare, pharmaceutical, consumer, and B2B research firms operating.'s capital.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-riyadh-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-riyadh-2026' },
@@ -252,7 +252,7 @@ export const riyadhGeneralEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request a Riyadh Research Proposal' },
   ],
   cta: {
-    title: 'Plan Market Research in Riyadh',
+    title: 'Plan Market Research in Riyadh | BioNixus',
     body: 'BioNixus delivers custom market research across Riyadh and Saudi Arabia — primary research, consumer insights, SFDA-aware healthcare and pharmaceutical studies, NUPCO formulary intelligence, Vision 2030 sector research, and bilingual Arabic-English fieldwork. Contact us to discuss your Riyadh research requirements.',
     button: 'Request a Proposal',
     to: '/contact',

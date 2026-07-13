@@ -113,7 +113,7 @@ export default function HealthcareMarketResearchInSaudiArabia() {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Healthcare Market Research Saudi Arabia | SFDA & NUPCO | BioNixus"
-        description="Saudi Arabia pharmaceutical market research for SFDA launch and NUPCO access — HCP, KOL, payer, and patient studies across Riyadh, Jeddah, and Eastern Province with Arabic fieldwork."
+        description="Saudi Arabia pharmaceutical market research for SFDA launch and NUPCO access — HCP, KOL, payer, and patient studies across Riyadh, Jeddah, and Eastern."
         canonical="/healthcare-market-research-in-saudi-arabia"
         jsonLd={jsonLd}
       />

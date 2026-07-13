@@ -1,7 +1,7 @@
 {
   "seo": {
     "metaTitle": "NMPA NRDL医药市场研究2026 | BioNixus",
-    "metaDescription": "NMPA与NRDL医药市场研究2026：注册证据、CDE受理、医保谈判与本地MR方法。",
+    "metaDescription": "NMPA与NRDL医药市场研究2026：注册证据、CDE受理、医保谈判与本地MR方法。 BioNixus pharmaceutical and healthcare market research.",
     "focusKeyword": "nmpa pharmaceutical market research china",
     "keywords": [
       "nmpa pharmaceutical market research china",
@@ -156,5 +156,9 @@
     "version": "2026-06-19-v1",
     "appliedAt": "2026-06-18T16:07:10.034Z",
     "anchor": "geo-answer-cn-nrld"
+  },
+  "openGraph": {
+    "ogTitle": "NMPA NRDL医药市场研究2026",
+    "ogDescription": "NMPA与NRDL医药市场研究2026：注册证据、CDE受理、医保谈判与本地MR方法。 BioNixus pharmaceutical and healthcare market research."
   }
 }

@@ -6,9 +6,9 @@ export const kuwaitGeneralEn: CountryListicleConfig = {
   variant: 'general',
   region: 'gcc',
   country: 'Kuwait',
-  title: 'Best Market Research Companies in Kuwait (2026 Guide) | BioNixus',
+  title: 'Top Market Research Companies in Kuwait 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading market research companies in Kuwait — healthcare, pharmaceutical, consumer, and strategic research firms compared by capability for the Kuwait Vision 2035 market.',
+    'Independent 2026 guide to the leading market research companies in Kuwait — healthcare, pharmaceutical, consumer, and strategic research firms compared by.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-kuwait-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-kuwait-2026' },
@@ -250,7 +250,7 @@ export const kuwaitGeneralEn: CountryListicleConfig = {
     { to: '/contact', label: 'Plan Market Research in Kuwait' },
   ],
   cta: {
-    title: 'Plan Market Research in Kuwait',
+    title: 'Plan Market Research in Kuwait | BioNixus',
     body: 'BioNixus delivers custom market research across Kuwait and the wider GCC — primary research, consumer insights, healthcare and pharmaceutical studies, competitive intelligence, and Vision 2035 sector analysis.',
     button: 'Request a Proposal',
     to: '/contact',

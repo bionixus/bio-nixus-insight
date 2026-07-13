@@ -76,8 +76,8 @@ export default function HealthcareMarketResearchMalaysia() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Market Research Company in Malaysia | NPRA & MaHTAS Aligned | BioNixus"
-        description="BioNixus is a healthcare market research company in Malaysia — MREC-compliant HCP surveys, payer landscape analysis, KOL mapping, and health outcomes research aligned with NPRA, MaHTAS, and Ministry of Health (KKM) requirements."
+        title="Healthcare Market Research Company in Malaysia | BioNixus"
+        description="BioNixus is a healthcare market research company in Malaysia — MREC-compliant HCP surveys, payer landscape analysis, KOL mapping, and health outcomes."
         canonical="/healthcare-market-research-malaysia"
         jsonLd={jsonLd}
       />

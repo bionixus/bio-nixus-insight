@@ -6,9 +6,9 @@ export const ghanaGeneralEn: CountryListicleConfig = {
   variant: 'general',
   region: 'africa',
   country: 'Ghana',
-  title: 'Best Market Research Companies in Ghana (2026 Guide) | BioNixus',
+  title: 'Top Market Research Companies in Ghana 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading market research companies in Ghana — healthcare, pharmaceutical, consumer, and strategic research firms compared by capability for the West Africa market.',
+    'Independent 2026 guide to the leading market research companies in Ghana — healthcare, pharmaceutical, consumer, and strategic research firms compared by.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-ghana-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-ghana-2026' },
@@ -246,7 +246,7 @@ export const ghanaGeneralEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request a Ghana Research Proposal' },
   ],
   cta: {
-    title: 'Plan Market Research in Ghana',
+    title: 'Plan Market Research in Ghana | BioNixus',
     body: 'BioNixus delivers custom market research across Ghana and the wider West Africa region — primary research, consumer insights, healthcare and pharmaceutical studies, competitive intelligence, and ECOWAS regional analysis.',
     button: 'Request a Proposal',
     to: '/contact',

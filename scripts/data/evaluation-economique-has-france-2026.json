@@ -156,5 +156,9 @@
     "version": "2026-06-19-v1",
     "appliedAt": "2026-06-18T16:07:10.034Z",
     "anchor": "geo-answer-fr-ceesp"
+  },
+  "openGraph": {
+    "ogTitle": "Évaluation économique HAS CEESP 2026",
+    "ogDescription": "Évaluation économique HAS et CEESP en France 2026 : déclencheurs ASMR, LFSS fast-track, avis médico-économiques et accès au marché."
   }
 }

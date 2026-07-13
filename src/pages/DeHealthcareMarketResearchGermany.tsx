@@ -4,7 +4,7 @@ export default function DeHealthcareMarketResearchGermany() {
   return (
     <StrategicServicePage
       title="Healthcare-Marktforschung Deutschland | BioNixus"
-      description="Healthcare-Marktforschung in Deutschland — AMNOG, G-BA, IQWiG, pharmazeutische U&A, KOL-Mapping und Marktzugangsstrategie. BioNixus liefert hochwertige Marktforschung für den deutschen Pharmamarkt."
+      description="Healthcare-Marktforschung in Deutschland — AMNOG, G-BA, IQWiG, pharmazeutische U&A, KOL-Mapping und Marktzugangsstrategie. BioNixus liefert hochwertige."
       canonicalUrl="https://www.bionixus.com/de/healthcare-market-research/germany"
       breadcrumbLabel="Healthcare-Marktforschung Deutschland"
       h1="Healthcare-Marktforschung in Deutschland"

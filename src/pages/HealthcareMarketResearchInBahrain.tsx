@@ -93,7 +93,7 @@ export default function HealthcareMarketResearchInBahrain() {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Healthcare Market Research Bahrain | NHRA-Aligned | BioNixus"
-        description="Pharmaceutical market research firms in Bahrain delivering HCP, KOL, patient, and payer studies. NHRA-aligned healthcare market research for Bahrain product launches and HTA submissions."
+        description="Pharmaceutical market research firms in Bahrain delivering HCP, KOL, patient, and payer studies. NHRA-aligned healthcare market research for Bahrain."
         canonical="/healthcare-market-research-bahrain"
         jsonLd={jsonLd}
       />

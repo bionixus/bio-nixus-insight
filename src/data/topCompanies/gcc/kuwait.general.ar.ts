@@ -7,7 +7,7 @@ export const kuwaitGeneralAr: CountryListicleConfig = {
   region: 'gcc',
   country: 'الكويت',
   rtl: true,
-  title: 'أفضل شركات أبحاث السوق في الكويت (دليل 2026) | بيونيكسوس',
+  title: 'أفضل شركات أبحاث السوق في الكويت (دليل 2026) | BioNixus',
   metaDescription:
     'دليل 2026 المستقل لأبرز شركات أبحاث السوق في الكويت — تغطي قطاعات الرعاية الصحية والأدوية والمستهلك والأبحاث الاستراتيجية مع مقارنة شاملة للقدرات.',
   canonical: 'https://www.bionixus.com/ar/insights/top-market-research-companies-kuwait-2026',

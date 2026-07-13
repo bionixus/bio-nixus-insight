@@ -460,11 +460,32 @@ ${related}
  */
 export function buildArticleMeta(topic) {
   const h1 = topic.title;
-  const metaTitle = `${h1.slice(0, 52)} | BioNixus`.slice(0, 60);
-  const metaDescription = (
+  const brand = 'BioNixus';
+  const suffix = ` | ${brand}`;
+  const maxPrimary = 60 - suffix.length;
+  let primary = String(h1 || '')
+    .replace(/\s*\|\s*BioNi\w*$/i, '')
+    .replace(/\s*\|\s*BioNixus.*$/i, '')
+    .trim();
+  if (primary.length > maxPrimary) {
+    const slice = primary.slice(0, maxPrimary);
+    const lastSpace = slice.lastIndexOf(' ');
+    primary = (lastSpace > Math.floor(maxPrimary * 0.5) ? slice.slice(0, lastSpace) : slice)
+      .trim()
+      .replace(/[,:;–—-]+$/, '');
+  }
+  const metaTitle = `${primary}${suffix}`;
+  let metaDescription = String(
     topic.excerpt ||
-    `${topic.title}: ${topic.geo} market access, payer strategy, and healthcare market research for pharmaceutical teams.`
-  ).slice(0, 155);
+      `${topic.title}: ${topic.geo} market access, payer strategy, and healthcare market research for pharmaceutical teams.`,
+  )
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (metaDescription.length > 155) {
+    const slice = metaDescription.slice(0, 155);
+    const lastSpace = slice.lastIndexOf(' ');
+    metaDescription = (lastSpace > 100 ? slice.slice(0, lastSpace) : slice).trim();
+  }
   return {
     h1,
     metaTitle,

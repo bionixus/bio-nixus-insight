@@ -124,8 +124,8 @@ export default function IrelandPharmaceuticalMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Pharmaceutical Market Research Company in Ireland | HPRA, NCPE & HSE Aligned | BioNixus"
-        description="BioNixus is a pharmaceutical market research company in Ireland — HPRA-aligned HCP surveys, KOL mapping, NCPE and HSE payer research, reimbursement scheme studies, and REC-compliant market access evidence."
+        title="Pharmaceutical Market Research Company in Ireland | BioNixus"
+        description="BioNixus is a pharmaceutical market research company in Ireland — HPRA-aligned HCP surveys, KOL mapping, NCPE and HSE payer research, reimbursement scheme."
         canonical="/pharmaceutical-market-research-ireland"
         jsonLd={jsonLd}
       />

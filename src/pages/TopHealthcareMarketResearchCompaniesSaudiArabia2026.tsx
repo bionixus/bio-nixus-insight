@@ -254,7 +254,7 @@ export default function TopHealthcareMarketResearchCompaniesSaudiArabia2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Healthcare Market Research Companies in Saudi Arabia (2026) | BioNixus"
+        title="Top Healthcare Market Research Companies in Saudi | BioNixus"
         description="Leading healthcare & pharmaceutical market research firms in Saudi Arabia 2026 — SFDA-aware, NUPCO-experienced, Vision 2030 context."
         image="https://www.bionixus.com/og-image.png"
         url={CANONICAL}

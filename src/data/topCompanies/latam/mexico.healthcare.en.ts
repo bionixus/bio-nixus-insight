@@ -6,9 +6,9 @@ export const mexicoHealthcareEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'latam',
   country: 'Mexico',
-  title: 'Best Healthcare Market Research Companies in Mexico (2026 Guide) | BioNixus',
+  title: 'Top Healthcare Market Research Companies in Mexico | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading healthcare market research companies in Mexico — pharmaceutical, clinical, COFEPRIS regulatory, and HEOR research firms compared by capability.',
+    'Independent 2026 guide to the leading healthcare market research companies in Mexico — pharmaceutical, clinical, COFEPRIS regulatory, and HEOR research.',
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-mexico-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-mexico-2026' },
@@ -247,7 +247,7 @@ export const mexicoHealthcareEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request a Mexico Healthcare Research Proposal' },
   ],
   cta: {
-    title: 'Plan Healthcare Market Research in Mexico',
+    title: 'Plan Healthcare Market Research in Mexico | BioNixus',
     body: 'BioNixus delivers custom healthcare and pharmaceutical market research across Mexico and Latin America — physician surveys, KOL mapping, COFEPRIS market access intelligence, HEOR, and competitive intelligence with bilingual Spanish-English delivery.',
     button: 'Request a Proposal',
     to: '/contact',

@@ -222,7 +222,7 @@ export default function PtTopMarketResearchCompaniesBrazil2026() {
       </Helmet>
 
       <OpenGraphMeta
-        title="5 Melhores Empresas de Pesquisa de Mercado no Brasil (2026) | BioNixus"
+        title="5 Melhores Empresas de Pesquisa de Mercado no Brasil | BioNixus"
         description="Top 5 empresas de pesquisa de mercado no Brasil: BioNixus, Kantar, Ipsos, NielsenIQ, Euromonitor. Consumo, FMCG, varejo e multissetorial comparadas."
         url={CANONICAL}
         locale="pt_BR"

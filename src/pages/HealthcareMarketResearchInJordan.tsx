@@ -83,7 +83,7 @@ export default function HealthcareMarketResearchInJordan() {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Healthcare Market Research Jordan | JFDA-Aligned | BioNixus"
-        description="Pharmaceutical market research firms in Jordan delivering HCP, KOL, patient, and payer studies. JFDA-aligned healthcare market research for Jordan and Levant product launches."
+        description="Pharmaceutical market research firms in Jordan delivering HCP, KOL, patient, and payer studies. JFDA-aligned healthcare market research for Jordan and."
         canonical="/healthcare-market-research-jordan"
         jsonLd={jsonLd}
       />

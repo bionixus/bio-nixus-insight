@@ -119,8 +119,8 @@ export default function BrazilPharmaceuticalMarketResearch() {
     <div className="min-h-screen bg-background">
       <Navbar />
       <SEOHead
-        title="Pharmaceutical Market Research Company in Brazil | ANVISA, CMED, CONITEC | BioNixus"
-        description="BioNixus is a pharmaceutical market research company in Brazil — HCP surveys, KOL mapping, CONITEC HTA evidence, pricing research, and LGPD-compliant patient studies. USD 28B pharma market, ANVISA & CMED context."
+        title="Pharmaceutical Market Research Company in Brazil | BioNixus"
+        description="BioNixus is a pharmaceutical market research company in Brazil — HCP surveys, KOL mapping, CONITEC HTA evidence, pricing research, and LGPD-compliant."
         canonical={CANONICAL}
         jsonLd={jsonLd}
       />

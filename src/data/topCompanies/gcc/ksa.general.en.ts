@@ -7,9 +7,9 @@ export const ksaGeneralEn: CountryListicleConfig = {
   region: 'gcc',
   country: 'Saudi Arabia',
 
-  title: 'Best Market Research Companies in Saudi Arabia (2026 Guide) | BioNixus',
+  title: 'Top Market Research Companies in Saudi Arabia 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading market research companies in Saudi Arabia — healthcare, pharmaceutical, consumer, and strategic research firms compared by capability across the Vision 2030 economy.',
+    'Independent 2026 guide to the leading market research companies in Saudi Arabia — healthcare, pharmaceutical, consumer, and strategic research firms.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-ksa-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-ksa-2026' },
@@ -263,7 +263,7 @@ export const ksaGeneralEn: CountryListicleConfig = {
   ],
 
   cta: {
-    title: 'Plan Market Research in Saudi Arabia',
+    title: 'Plan Market Research in Saudi Arabia | BioNixus',
     body: 'BioNixus delivers custom market research across Saudi Arabia and the wider GCC — primary research, consumer insights, healthcare and pharmaceutical studies, competitive intelligence, and Vision 2030 sector analysis aligned with SFDA and MoH frameworks.',
     button: 'Request a Proposal',
     to: '/contact',

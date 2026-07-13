@@ -76,8 +76,8 @@ export default function HealthcareMarketResearchAustralia() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Market Research Company in Australia | TGA & PBAC Aligned | BioNixus"
-        description="BioNixus is a healthcare market research company in Australia — NHMRC-compliant HCP surveys, payer landscape analysis, KOL mapping, and health outcomes research aligned with TGA, PBAC, and PBS requirements."
+        title="Healthcare Market Research Company in Australia | BioNixus"
+        description="BioNixus is a healthcare market research company in Australia — NHMRC-compliant HCP surveys, payer landscape analysis, KOL mapping, and health outcomes."
         canonical="/healthcare-market-research-australia"
         jsonLd={jsonLd}
       />

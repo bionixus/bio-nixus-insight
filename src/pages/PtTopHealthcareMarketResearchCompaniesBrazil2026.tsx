@@ -216,7 +216,7 @@ export default function PtTopHealthcareMarketResearchCompaniesBrazil2026() {
       </Helmet>
 
       <OpenGraphMeta
-        title="5 Melhores Empresas de Pesquisa de Mercado em Saúde no Brasil (2026) | BioNixus"
+        title="5 Melhores Empresas de Pesquisa de Mercado em Saúde | BioNixus"
         description="Top 5 empresas de pesquisa em saúde no Brasil: BioNixus, IQVIA, Kantar, NielsenIQ, Euromonitor. ANVISA, CONITEC, SUS, KOLs comparados."
         url={CANONICAL}
         locale="pt_BR"

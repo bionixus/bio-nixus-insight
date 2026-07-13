@@ -6,9 +6,9 @@ export const omanGeneralEn: CountryListicleConfig = {
   variant: 'general',
   region: 'gcc',
   country: 'Oman',
-  title: 'Best Market Research Companies in Oman (2026 Guide) | BioNixus',
+  title: 'Top Market Research Companies in Oman 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading market research companies in Oman — healthcare, pharmaceutical, consumer, and strategic research firms compared by capability across Vision 2040 diversification sectors.',
+    'Independent 2026 guide to the leading market research companies in Oman — healthcare, pharmaceutical, consumer, and strategic research firms compared by.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-oman-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-oman-2026' },
@@ -254,7 +254,7 @@ export const omanGeneralEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request an Oman Research Proposal' },
   ],
   cta: {
-    title: 'Plan Market Research in Oman',
+    title: 'Plan Market Research in Oman | BioNixus',
     body: 'BioNixus delivers custom market research across Oman and the wider GCC — primary research, consumer insights, healthcare and pharmaceutical studies, competitive intelligence, and Vision 2040 sector analysis. Contact us to discuss your Oman research requirements.',
     button: 'Request a Proposal',
     to: '/contact',

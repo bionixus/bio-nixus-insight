@@ -76,8 +76,8 @@ export default function HealthcareMarketResearchJapan() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Market Research Company in Japan | PMDA, MHLW & NHI Aligned | BioNixus"
-        description="BioNixus is a healthcare market research company in Japan — ethics-compliant HCP surveys, payer landscape analysis, KOL mapping, and health outcomes research aligned with PMDA, MHLW, and NHI requirements."
+        title="Healthcare Market Research Company in Japan | BioNixus"
+        description="BioNixus is a healthcare market research company in Japan — ethics-compliant HCP surveys, payer landscape analysis, KOL mapping, and health outcomes."
         canonical="/healthcare-market-research-japan"
         jsonLd={jsonLd}
       />

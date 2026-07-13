@@ -88,7 +88,7 @@ export default function HealthcareMarketResearchInUae() {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Healthcare Market Research Dubai & UAE | BioNixus"
-        description="Pharmaceutical market research firms in Dubai delivering HCP, KOL, patient, and payer studies. DHA, DoH, and MOHAP-aligned healthcare market research for UAE product launches."
+        description="Pharmaceutical market research firms in Dubai delivering HCP, KOL, patient, and payer studies. DHA, DoH, and MOHAP-aligned healthcare market research for."
         canonical="/healthcare-market-research-in-uae"
         jsonLd={jsonLd}
       />

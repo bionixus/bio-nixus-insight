@@ -114,7 +114,7 @@ export default function HealthcareMarketResearchGermany() {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Healthcare Market Research Germany | BioNixus"
-        description="BioNixus delivers healthcare market research in Germany — AMNOG-aligned HCP surveys, GKV payer research, KOL mapping at Charité, LMU, UKE, and German university hospitals across all 16 Bundesländer."
+        description="BioNixus delivers healthcare market research in Germany — AMNOG-aligned HCP surveys, GKV payer research, KOL mapping at Charité, LMU, UKE, and German."
         canonical="/healthcare-market-research-germany"
         jsonLd={jsonLd}
       />

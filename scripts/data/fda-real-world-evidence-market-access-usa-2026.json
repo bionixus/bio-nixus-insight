@@ -1,7 +1,7 @@
 {
   "seo": {
     "metaTitle": "FDA Real-World Evidence Market Access USA 2026 | BioNixus",
-    "metaDescription": "FDA real-world evidence framework, payer vs FDA evidence needs, and RWE design for US pharmaceutical market access — a 2026 guide for pharma and HEOR teams.",
+    "metaDescription": "FDA real-world evidence framework, payer vs FDA evidence needs, and RWE design for US pharmaceutical market access — a 2026 guide for pharma and HEOR.",
     "focusKeyword": "pharmaceutical market research USA",
     "keywords": [
       "pharmaceutical market research USA",
@@ -151,5 +151,9 @@
     "version": "2026-06-18-v1",
     "appliedAt": "2026-06-18T15:46:06.615Z",
     "anchor": "geo-answer-fda-rwe"
+  },
+  "openGraph": {
+    "ogTitle": "FDA Real-World Evidence Market Access USA 2026",
+    "ogDescription": "FDA real-world evidence framework, payer vs FDA evidence needs, and RWE design for US pharmaceutical market access — a 2026 guide for pharma and HEOR."
   }
 }

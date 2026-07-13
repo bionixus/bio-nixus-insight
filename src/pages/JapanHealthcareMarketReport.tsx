@@ -96,7 +96,7 @@ const JapanHealthcareMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="Japan Healthcare Market Research Report 2026 | PMDA & NHI Pricing | BioNixus"
+      title="Japan Healthcare Market Research Report 2026 | BioNixus"
       description="Japan healthcare market at USD 530B in 2026 — world's third largest. PMDA Sakigake approval, NHI biannual price revision, aging population dynamics, world's third-largest pharma market, and BioNixus GCC intelligence."
       canonical="https://www.bionixus.com/japan-healthcare-market-report"
       jsonLd={jsonLd}
@@ -106,7 +106,7 @@ const JapanHealthcareMarketReport = () => (
       <div className="section-padding pt-24 pb-4"><div className="container-wide"><BreadcrumbNav items={breadcrumbItems} /></div></div>
               <ReportPremiumHero
           title="Japan Healthcare Market Report 2026: PMDA Approval, NHI Pricing, and Pharmaceutical Market Intelligence"
-          description="BioNixus serves Japanese pharmaceutical and medical device companies with GCC and MENA market intelligence — and provides Japan market context for global commercial teams planning Asia-Pacific and multi-market strategy."
+          description="BioNixus serves Japanese pharmaceutical and medical device companies with GCC and MENA market intelligence — and provides Japan market context for global."
           config={REPORT_CONVERSION}
           marketSlug="japan"
           countryName="Japan"

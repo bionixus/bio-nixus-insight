@@ -6,9 +6,9 @@ export const bahrainHealthcareEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'gcc',
   country: 'Bahrain',
-  title: 'Best Healthcare Market Research Companies in Bahrain (2026 Guide) | BioNixus',
+  title: 'Top Healthcare Market Research Companies in Bahrain | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading healthcare market research companies in Bahrain — pharmaceutical U&A, physician surveys, KOL mapping, NHRA regulatory awareness, payer research, and market access strategy firms compared by capability.',
+    'Independent 2026 guide to the leading healthcare market research companies in Bahrain — pharmaceutical U&A, physician surveys, KOL mapping, NHRA.',
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-bahrain-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-bahrain-2026' },
@@ -251,7 +251,7 @@ export const bahrainHealthcareEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request a Bahrain Healthcare Research Proposal' },
   ],
   cta: {
-    title: 'Plan Healthcare Market Research in Bahrain',
+    title: 'Plan Healthcare Market Research in Bahrain | BioNixus',
     body: 'BioNixus delivers custom healthcare and pharmaceutical market research across Bahrain and the wider GCC — physician surveys, KOL mapping, NHRA HTA-aligned payer research, HEOR, market access strategy, and cross-border Saudi Eastern Province dynamics.',
     button: 'Request a Proposal',
     to: '/contact',

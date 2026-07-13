@@ -227,7 +227,7 @@ export default function MarketResearchByIndustry() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Market Research by Industry | Global Coverage | 16 Industries | BioNixus"
+        title="Market Research by Industry | BioNixus"
         description={`Browse BioNixus market research by industry across ${COUNTRY_COUNT} global markets — Americas, Europe, MENA, Africa, and Asia-Pacific. MedTech, healthcare, FMCG, financial services, telecom, pharma, and more.`}
         canonical="/market-research-by-industry"
         jsonLd={jsonLd}

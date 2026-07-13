@@ -98,8 +98,8 @@ export default function DesmoidTumorPharmaMarketResearch() {
       <Navbar />
 
       <SEOHead
-        title="Desmoid Tumour Pharma Market Research Services | Ogsiveo Intelligence | BioNixus"
-        description="Desmoid tumour pharma market research services: sarcoma tumour board analogue boards, Ogsiveo (nirogacestat) competitive intelligence, and GCC tender analytics. Companion editorial briefing on market access and regulatory milestones."
+        title="Desmoid Tumour Pharma Market Research Services | BioNixus"
+        description="Desmoid tumour pharma market research services: sarcoma tumour board analogue boards, Ogsiveo (nirogacestat) competitive intelligence, and GCC tender."
         canonical={pageUrl}
         jsonLd={jsonLd}
       />

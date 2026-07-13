@@ -6,9 +6,9 @@ export const bahrainGeneralEn: CountryListicleConfig = {
   variant: 'general',
   region: 'gcc',
   country: 'Bahrain',
-  title: 'Best Market Research Companies in Bahrain (2026 Guide) | BioNixus',
+  title: 'Top Market Research Companies in Bahrain 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading market research companies in Bahrain — healthcare, pharmaceutical, consumer, and strategic research firms compared by capability across the EDB investment hub and NHRA regulatory environment.',
+    'Independent 2026 guide to the leading market research companies in Bahrain — healthcare, pharmaceutical, consumer, and strategic research firms compared.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-bahrain-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-bahrain-2026' },
@@ -253,7 +253,7 @@ export const bahrainGeneralEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request a Bahrain Research Proposal' },
   ],
   cta: {
-    title: 'Plan Market Research in Bahrain',
+    title: 'Plan Market Research in Bahrain | BioNixus',
     body: "BioNixus delivers custom market research across Bahrain and the wider GCC — primary research, consumer insights, healthcare and pharmaceutical studies, NHRA regulatory intelligence, and EDB Vision 2030 sector analysis. Contact us to discuss your Bahrain research requirements.",
     button: 'Request a Proposal',
     to: '/contact',

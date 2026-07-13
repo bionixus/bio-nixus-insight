@@ -31,7 +31,7 @@ const COUNTRY_PAGE_DELIVERABLES = [
 
 const en: Record<string, MarketResearchCountryContent> = {
   uae: {
-    title: 'Market Research in UAE | Healthcare & Pharma Market Research | BioNixus',
+    title: 'Market Research in UAE | Pharma & Healthcare | BioNixus',
     description:
       'Market research in the UAE for pharma and healthcare teams: DHA, DOH, MOHAP-aligned physician, payer, and hospital evidence for launch and access.',
     canonical: '/market-research-uae',
@@ -141,7 +141,7 @@ const en: Record<string, MarketResearchCountryContent> = {
         {
           title: 'Payer and access qualitative depth',
           description:
-            'Formulary committee logic, objection handling, and evidence gaps for DHA/DOH/MOHAP-aligned narratives.',
+            'Formulary committee logic, objection handling, and evidence gaps for DHA/DOH/MOHAP-aligned narratives. Proposal in 24 hours.',
         },
         {
           title: 'Hospital and procurement mapping',
@@ -166,7 +166,7 @@ const en: Record<string, MarketResearchCountryContent> = {
         {
           title: 'Competitive tracking and share-of-voice studies',
           description:
-            'Ongoing physician and pharmacist tracking to detect early share shifts before they appear in claims or sales data.',
+            'Ongoing physician and pharmacist tracking to detect early share shifts before they appear in claims or sales data. Proposal in 24 hours.',
         },
         {
           title: 'Distributor and channel health assessment',
@@ -241,7 +241,7 @@ const en: Record<string, MarketResearchCountryContent> = {
     },
   },
   ksa: {
-    title: 'Market Research KSA | Pharma & Healthcare Intelligence | BioNixus',
+    title: 'Market Research KSA | Pharma & Healthcare | BioNixus',
     description:
       'Market research KSA for pharma teams: SFDA-aware stakeholder insight, NUPCO procurement context, and bilingual fieldwork for Saudi launch decisions.',
     canonical: '/market-research-ksa',
@@ -379,7 +379,7 @@ const en: Record<string, MarketResearchCountryContent> = {
         },
         {
           title: 'Pricing and reimbursement evidence packaging',
-          description: 'Structuring physician, payer, and procurement findings for internal pricing committees and SFDA-facing submissions.',
+          description: 'Structuring physician, payer, and procurement findings for internal pricing committees and SFDA-facing submissions. Proposal in 24 hours.',
         },
         {
           title: 'Regional and Tier 2/3 city coverage design',
@@ -433,7 +433,7 @@ const en: Record<string, MarketResearchCountryContent> = {
     },
   },
   saudi: {
-    title: 'Market Research Saudi | Healthcare & Pharma Services | BioNixus',
+    title: 'Market Research Saudi | Pharma & Healthcare | BioNixus',
     description:
       'Market research Saudi programs for healthcare and life sciences: physician, payer, and SFDA-aligned evidence for launch, pricing, and access in KSA.',
     canonical: '/market-research-saudi',
@@ -548,7 +548,7 @@ const en: Record<string, MarketResearchCountryContent> = {
         },
         {
           title: 'Medical and access narrative testing',
-          description: 'Message and evidence resonance with physicians and institutional reviewers.',
+          description: 'Message and evidence resonance with physicians and institutional reviewers. Proposal in 24 hours.',
         },
         {
           title: 'Competitive intelligence',
@@ -560,15 +560,15 @@ const en: Record<string, MarketResearchCountryContent> = {
         },
         {
           title: 'Local manufacturing and partnership perception research',
-          description: 'Testing how physicians, pharmacists, and procurement view local-partner or licensed manufacturing versus imported product.',
+          description: 'Testing how physicians, pharmacists, and procurement view local-partner or licensed manufacturing versus imported product. Proposal in 24 hours.',
         },
         {
           title: 'Retail and e-commerce channel research',
-          description: 'Understanding how growing online pharmacy and delivery channels change reach, adherence, and brand switching.',
+          description: 'Understanding how growing online pharmacy and delivery channels change reach, adherence, and brand switching. Proposal in 24 hours.',
         },
         {
           title: 'Message and claims pre-testing',
-          description: 'Qualitative screening of competitive claims for regulatory and physician credibility before full quantitative testing.',
+          description: 'Qualitative screening of competitive claims for regulatory and physician credibility before full quantitative testing. Proposal in 24 hours.',
         },
         {
           title: 'Regional launch sequencing analysis',
@@ -622,7 +622,7 @@ const en: Record<string, MarketResearchCountryContent> = {
     },
   },
   kuwait: {
-    title: 'Market Research Kuwait | Pharma & Healthcare Research | BioNixus',
+    title: 'Market Research Kuwait | Pharma & Healthcare | BioNixus',
     description:
       'Market research Kuwait for pharma and healthcare: MOH formulary context, stakeholder insight, and launch readiness in a high-value GCC market.',
     canonical: '/market-research-kuwait',
@@ -783,7 +783,7 @@ const en: Record<string, MarketResearchCountryContent> = {
     },
   },
   qatar: {
-    title: 'Market Research Qatar | Healthcare & Pharma Research | BioNixus',
+    title: 'Market Research Qatar | Pharma & Healthcare | BioNixus',
     description:
       'Market research in Qatar for pharma and healthcare teams: MOPH-aligned physician surveys, HMC stakeholder access, and launch-ready evidence.',
     canonical: '/market-research-qatar',
@@ -947,7 +947,7 @@ const en: Record<string, MarketResearchCountryContent> = {
     },
   },
   oman: {
-    title: 'Market Research Oman | Healthcare & Pharma Research | BioNixus',
+    title: 'Market Research Oman | Pharma & Healthcare | BioNixus',
     description:
       'Market research in Oman for pharma teams: MOH-aligned physician surveys, Muscat and interior governorate fieldwork, and launch evidence.',
     canonical: '/market-research-oman',
@@ -1103,7 +1103,7 @@ const en: Record<string, MarketResearchCountryContent> = {
     },
   },
   bahrain: {
-    title: 'Market Research Bahrain | Healthcare & Pharma Research | BioNixus',
+    title: 'Market Research Bahrain | Pharma & Healthcare | BioNixus',
     description:
       'Market research in Bahrain for pharma teams: NHRA-aligned physician surveys, Salmaniya stakeholder access, and compact-market fieldwork.',
     canonical: '/market-research-bahrain',
@@ -1266,7 +1266,7 @@ const en: Record<string, MarketResearchCountryContent> = {
     },
   },
   egypt: {
-    title: 'Market Research Egypt | Pharma & Healthcare Intelligence | BioNixus',
+    title: 'Market Research Egypt | Pharma & Healthcare | BioNixus',
     description:
       'Market research Egypt for pharma teams: large-scale stakeholder evidence, public and private channel insight, and MENA growth planning.',
     canonical: '/market-research-egypt',
@@ -1440,7 +1440,7 @@ const en: Record<string, MarketResearchCountryContent> = {
 const ar: Record<string, MarketResearchCountryContent> = {
   'ar-uae': {
     ...en.uae,
-    title: 'أبحاث السوق في الإمارات العربية المتحدة | أبحاث السوق الصحية والدوائية | BioNixus',
+    title: 'أبحاث السوق في الإمارات العربية المتحدة | BioNixus',
     description:
       'أبحاث السوق في الإمارات لفرق الأدوية والرعاية الصحية: أدلة ميدانية متوافقة مع هيئة الصحة بدبي ودائرة الصحة بأبوظبي ووزارة الصحة ووقاية المجتمع لدعم قرارات الإطلاق والتسعير والوصول إلى السوق.',
     canonical: '/ar/market-research-uae',
@@ -1549,7 +1549,7 @@ const ar: Record<string, MarketResearchCountryContent> = {
           description: 'لجان استشارية منظمة ومقابلات فردية مع قادة الرأي الطبي لاختبار الحجة السريرية قبل عرضها على لجان الدافعين أو المناقصات.',
         },
         {
-          title: 'أبحاث رحلة المريض والالتزام العلاجي',
+          title: 'أبحاث رحلة المريض والالتزام العلاجي | BioNixus',
           description: 'رسم رحلة المريض عبر التشخيص والإحالة وتبديل العلاج لتحديد أين تُحدث برامج الدعم فرقاً فعلياً في النتائج.',
         },
         {
@@ -1625,9 +1625,9 @@ const ar: Record<string, MarketResearchCountryContent> = {
   },
   'ar-ksa': {
     ...en.ksa,
-    title: 'أبحاث السوق في المملكة العربية السعودية (KSA) | أبحاث السوق الصحية والدوائية | BioNixus',
+    title: 'أبحاث السوق في المملكة العربية السعودية (KSA) | BioNixus',
     description:
-      'أبحاث السوق في السعودية لفرق الأدوية والرعاية الصحية: أدلة متوافقة مع الهيئة العامة للغذاء والدواء SFDA، وسياق مشتريات نوبكو NUPCO، وعمل ميداني ثنائي اللغة لدعم قرارات الإطلاق والوصول إلى السوق.',
+      'أبحاث السوق في السعودية لفرق الأدوية والرعاية الصحية: أدلة متوافقة مع الهيئة العامة للغذاء والدواء SFDA، وسياق مشتريات نوبكو NUPCO، وعمل ميداني ثنائي.',
     canonical: '/ar/market-research-ksa',
     h1: 'أبحاث السوق في السعودية (KSA)',
     intro:
@@ -1722,7 +1722,7 @@ const ar: Record<string, MarketResearchCountryContent> = {
           description: 'مسارات الوصف والتسلسل العلاجي ومخاطر التبديل التنافسي بحسب الشريحة.',
         },
         {
-          title: 'أبحاث مسار SFDA والوصول إلى السوق',
+          title: 'أبحاث مسار SFDA والوصول إلى السوق | BioNixus',
           description: 'تحديد فجوات الأدلة والاحتكاك من مرحلة التسجيل وصولاً إلى التبني المؤسسي.',
         },
         {

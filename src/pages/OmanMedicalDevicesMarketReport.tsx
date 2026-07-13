@@ -114,8 +114,8 @@ const OmanMedicalDevicesMarketReport = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <SEOHead
-        title="Oman Medical Devices Market Report 2026 | MOH Procurement & Royal Hospital Intelligence | BioNixus"
-        description="Oman medical devices market at USD 240–280M in 2026. MOH Oman registration, Royal Hospital Muscat procurement intelligence, Vision 2040 healthcare privatization, and BioNixus primary HCP research."
+        title="Oman Medical Devices Market Report 2026 | BioNixus"
+        description="Oman medical devices market at USD 240–280M in 2026. MOH Oman registration, Royal Hospital Muscat procurement intelligence, Vision 2040 healthcare."
         canonical="https://www.bionixus.com/oman-medical-devices-market-report"
         jsonLd={jsonLd}
       />

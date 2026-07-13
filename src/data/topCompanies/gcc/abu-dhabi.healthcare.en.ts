@@ -6,9 +6,9 @@ export const abuDhabiHealthcareEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'gcc',
   country: 'Abu Dhabi',
-  title: 'Best Healthcare Market Research Companies in Abu Dhabi (2026 Guide) | BioNixus',
+  title: 'Top Healthcare Market Research Companies in Abu Dhabi | BioNixus',
   metaDescription:
-    'Independent 2026 guide to healthcare market research companies in Abu Dhabi — DOH-aware, pharmaceutical U&A, KOL mapping, HEOR and market access firms compared by capability.',
+    'Independent 2026 guide to healthcare market research companies in Abu Dhabi — DOH-aware, pharmaceutical U&A, KOL mapping, HEOR and market access firms.',
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-abu-dhabi-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-abu-dhabi-2026' },
@@ -274,7 +274,7 @@ export const abuDhabiHealthcareEn: CountryListicleConfig = {
     },
   ],
   cta: {
-    title: 'Plan Healthcare Market Research in Abu Dhabi',
+    title: 'Plan Healthcare Market Research in Abu Dhabi | BioNixus',
     body: 'BioNixus is a global healthcare market research company delivering pharmaceutical U&A, KOL mapping, payer research, HEOR, and market access strategy across Abu Dhabi and the wider UAE/GCC — with DOH regulatory awareness and Arabic-English bilingual fieldwork capability.',
     button: 'Request a Proposal',
     to: '/contact',

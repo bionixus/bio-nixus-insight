@@ -104,7 +104,7 @@ const JapanMedicalDevicesMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="Japan Medical Devices Market Report 2026 | PMDA Approval, NHI Reimbursement & Device Lag | BioNixus"
+      title="Japan Medical Devices Market Report 2026 | BioNixus"
       description="Japan medical devices market at USD 40B in 2026 — world's third largest. PMDA Class I–IV approval, NHI functional category reimbursement, device lag reduction, and BioNixus GCC expansion intelligence for Japanese medtech."
       canonical="https://www.bionixus.com/japan-medical-devices-market-report"
       jsonLd={jsonLd}

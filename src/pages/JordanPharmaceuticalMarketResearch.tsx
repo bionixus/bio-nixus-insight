@@ -181,8 +181,8 @@ export default function JordanPharmaceuticalMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Pharmaceutical Market Research Company in Jordan | JFDA | BioNixus"
-        description="BioNixus is a healthcare and pharmaceutical market research company in Jordan — JFDA-aligned evidence, bilingual Amman-based fieldwork, and proposal-ready Jordan and Levant programs."
+        title="Pharmaceutical Market Research Company in Jordan | BioNixus"
+        description="BioNixus is a healthcare and pharmaceutical market research company in Jordan — JFDA-aligned evidence, bilingual Amman-based fieldwork, and proposal-ready."
         canonical="/pharmaceutical-market-research-jordan"
         jsonLd={jsonLd}
       />

@@ -84,8 +84,8 @@ const BrazilHealthcareMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="Brazil Healthcare Market Report 2026 | ANVISA, SUS, CONITEC & Pharma Market Intelligence | BioNixus"
-      description="Brazil healthcare market at USD 165B in 2026 — largest in Latin America. ANVISA registration, SUS/CONITEC incorporation, ANS private sector, USD 28B pharmaceutical market, and BioNixus intelligence for expanding to GCC and MENA."
+      title="Brazil Healthcare Market Report 2026 | BioNixus"
+      description="Brazil healthcare market at USD 165B in 2026 — largest in Latin America. ANVISA registration, SUS/CONITEC incorporation, ANS private sector, USD 28B."
       canonical="https://www.bionixus.com/brazil-healthcare-market-report"
       jsonLd={jsonLd}
     />

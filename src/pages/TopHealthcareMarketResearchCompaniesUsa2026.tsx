@@ -286,7 +286,7 @@ export default function TopHealthcareMarketResearchCompaniesUsa2026() {
       </Helmet>
       <OpenGraphMeta
         title="Top Healthcare Market Research Companies in USA (2026) | BioNixus"
-        description="Leading healthcare & pharmaceutical market research firms in the USA 2026 — IRB-compliant, US AMC KOL access, PBM payer research, IRA drug negotiation intelligence."
+        description="Leading healthcare & pharmaceutical market research firms in the USA 2026 — IRB-compliant, US AMC KOL access, PBM payer research, IRA drug negotiation."
         image="https://www.bionixus.com/og-image.png"
         url={CANONICAL}
         type="article"

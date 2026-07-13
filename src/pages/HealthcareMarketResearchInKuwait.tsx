@@ -82,7 +82,7 @@ export default function HealthcareMarketResearchInKuwait() {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Healthcare Market Research Kuwait | MOH & GPADC | BioNixus"
-        description="Pharmaceutical market research firms in Kuwait delivering HCP, KOL, patient, and payer studies. MOH- and GPADC-aligned healthcare market research for Kuwait product launches."
+        description="Pharmaceutical market research firms in Kuwait delivering HCP, KOL, patient, and payer studies. MOH- and GPADC-aligned healthcare market research for."
         canonical="/healthcare-market-research-kuwait"
         jsonLd={jsonLd}
       />

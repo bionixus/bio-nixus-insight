@@ -158,11 +158,11 @@ const Services = () => {
       <SEOHead
         title={
           copy?.seo.title ??
-          'Global Market Research Services | Pharma, Healthcare & Commercial | BioNixus'
+          'Market Research Services | Pharma, Healthcare & B2B | BioNixus'
         }
         description={
           copy?.seo.description ??
-          'BioNixus market research across 38 countries — pharma modules, CATI, CAWI, CAPI, focus groups, mystery shopping, price elasticity, and B2B/B2C programmes for financial services, retail, technology, and more.'
+          'Pharma & B2B research across 38 countries: physician surveys, KOL mapping, market access & CATI/CAWI. Proposal in 24 hours.'
         }
         canonical={copy?.seo.canonical ?? 'https://www.bionixus.com/services'}
         jsonLd={jsonLd}

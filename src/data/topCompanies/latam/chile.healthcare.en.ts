@@ -6,9 +6,9 @@ export const chileHealthcareEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'latam',
   country: 'Chile',
-  title: 'Best Healthcare Market Research Companies in Chile (2026 Guide) | BioNixus',
+  title: 'Top Healthcare Market Research Companies in Chile 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading healthcare market research companies in Chile — pharmaceutical, ISP/ANAMED regulatory, FONASA/ISAPRE system, and HEOR research firms compared by capability.',
+    'Independent 2026 guide to the leading healthcare market research companies in Chile — pharmaceutical, ISP/ANAMED regulatory, FONASA/ISAPRE system, and.',
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-chile-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-chile-2026' },
@@ -246,7 +246,7 @@ export const chileHealthcareEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request a Chile Healthcare Research Proposal' },
   ],
   cta: {
-    title: 'Plan Healthcare Market Research in Chile',
+    title: 'Plan Healthcare Market Research in Chile | BioNixus',
     body: 'BioNixus delivers custom healthcare and pharmaceutical market research across Chile and South America — physician surveys, KOL mapping, ISP/ANAMED regulatory intelligence, FONASA/ISAPRE market access research, HEOR, and competitive intelligence with bilingual Spanish-English delivery.',
     button: 'Request a Proposal',
     to: '/contact',

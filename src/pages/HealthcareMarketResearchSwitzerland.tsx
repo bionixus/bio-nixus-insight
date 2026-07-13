@@ -114,7 +114,7 @@ export default function HealthcareMarketResearchSwitzerland() {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Healthcare Market Research Switzerland | BioNixus"
-        description="BioNixus delivers healthcare market research in Switzerland — multilingual HCP surveys, Krankenkassen payer research, KOL mapping at USZ, USB, Inselspital, CHUV, and HUG, and health outcomes studies."
+        description="BioNixus delivers healthcare market research in Switzerland — multilingual HCP surveys, Krankenkassen payer research, KOL mapping at USZ, USB."
         canonical="/healthcare-market-research-switzerland"
         jsonLd={jsonLd}
       />

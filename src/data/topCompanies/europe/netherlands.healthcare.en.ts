@@ -6,9 +6,9 @@ export const netherlandsHealthcareEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'europe',
   country: 'Netherlands',
-  title: 'Best Healthcare Market Research Companies in the Netherlands (2026 Guide) | BioNixus',
+  title: 'Top Healthcare Market Research Companies in the | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the top healthcare market research companies in the Netherlands — pharmaceutical primary research, ZIN/Zorginstituut HTA support, physician surveys, HEOR, and payer research firms compared by Netherlands capability.',
+    'Independent 2026 guide to the top healthcare market research companies in the Netherlands — pharmaceutical primary research, ZIN/Zorginstituut HTA.',
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-netherlands-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-netherlands-2026' },
@@ -247,7 +247,7 @@ export const netherlandsHealthcareEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request a Netherlands Healthcare Research Proposal' },
   ],
   cta: {
-    title: 'Plan Healthcare Market Research in the Netherlands',
+    title: 'Plan Healthcare Market Research in the Netherlands | BioNixus',
     body: 'BioNixus delivers specialist healthcare market research across the Netherlands and Benelux — pharmaceutical primary research, ZIN/Zorginstituut HTA evidence, physician and KOL surveys, HEOR, NZa payer research, and Benelux market access strategy for pharma and biotech companies.',
     button: 'Request a Proposal',
     to: '/contact',

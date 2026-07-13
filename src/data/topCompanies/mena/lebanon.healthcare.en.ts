@@ -6,9 +6,9 @@ export const lebanonHealthcareEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'mena',
   country: 'Lebanon',
-  title: 'Best Healthcare Market Research Companies in Lebanon (2026 Guide) | BioNixus',
+  title: 'Top Healthcare Market Research Companies in Lebanon | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading healthcare market research companies in Lebanon — pharmaceutical U&A, physician surveys, KOL mapping at AUBMC and LAU Medical, MoPH Lebanon regulatory research, and trilingual French-Arabic-English fieldwork compared by capability.',
+    'Independent 2026 guide to the leading healthcare market research companies in Lebanon — pharmaceutical U&A, physician surveys, KOL mapping at AUBMC and.',
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-lebanon-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-lebanon-2026' },
@@ -260,7 +260,7 @@ export const lebanonHealthcareEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request a Lebanon Healthcare Research Proposal' },
   ],
   cta: {
-    title: 'Plan Healthcare Market Research in Lebanon',
+    title: 'Plan Healthcare Market Research in Lebanon | BioNixus',
     body: 'BioNixus delivers custom healthcare and pharmaceutical market research across Lebanon and the wider Levant — physician surveys, KOL mapping at AUBMC and LAU Medical, payer research, HEOR, MoPH Lebanon regulatory awareness, and trilingual French-Arabic-English fieldwork.',
     button: 'Request a Proposal',
     to: '/contact',

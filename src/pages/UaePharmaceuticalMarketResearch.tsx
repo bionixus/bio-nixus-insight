@@ -137,8 +137,8 @@ export default function UaePharmaceuticalMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Market Research Company in UAE | DHA, DOH & MOHAP | BioNixus"
-        description="BioNixus is a healthcare and pharmaceutical market research company in the UAE—DHA, DOH, and MOHAP-aligned evidence, emirate-aware bilingual fieldwork, and proposal-ready UAE programs."
+        title="Healthcare Market Research Company in UAE | BioNixus"
+        description="Healthcare market research company in the UAE — DHA, DOH & MOHAP-aligned evidence, bilingual fieldwork. Proposal in 24 hours."
         canonical="/uae-pharmaceutical-market-research"
         jsonLd={jsonLd}
       />

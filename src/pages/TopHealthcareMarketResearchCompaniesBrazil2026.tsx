@@ -216,7 +216,7 @@ export default function TopHealthcareMarketResearchCompaniesBrazil2026() {
       </Helmet>
 
       <OpenGraphMeta
-        title="5 Best Healthcare Market Research Firms in Brazil (2026) | BioNixus"
+        title="5 Best Healthcare Market Research Firms in Brazil | BioNixus"
         description="Top 5 healthcare market research firms in Brazil: BioNixus, IQVIA, Kantar, NielsenIQ, Euromonitor. ANVISA, CONITEC, KOL mapping compared."
         url={CANONICAL}
         locale="pt_BR"

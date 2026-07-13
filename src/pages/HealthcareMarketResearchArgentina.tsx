@@ -77,8 +77,8 @@ export default function HealthcareMarketResearchArgentina() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Market Research Company in Argentina | ANMAT & CONETEC Aligned | BioNixus"
-        description="BioNixus is a healthcare market research company in Argentina — CEI-compliant HCP surveys, payer landscape analysis, KOL mapping, and health outcomes research aligned with ANMAT, CONETEC, and obra social/prepaga requirements."
+        title="Healthcare Market Research Company in Argentina | BioNixus"
+        description="BioNixus is a healthcare market research company in Argentina — CEI-compliant HCP surveys, payer landscape analysis, KOL mapping, and health outcomes."
         canonical="/healthcare-market-research-argentina"
         jsonLd={jsonLd}
       />

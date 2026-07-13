@@ -6,9 +6,9 @@ export const kuwaitHealthcareEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'gcc',
   country: 'Kuwait',
-  title: 'Best Healthcare Market Research Companies in Kuwait (2026 Guide) | BioNixus',
+  title: 'Top Healthcare Market Research Companies in Kuwait | BioNixus',
   metaDescription:
-    'Independent 2026 guide to healthcare market research companies in Kuwait — MOH-aware, pharmaceutical U&A, KOL mapping, HEOR and market access firms compared by capability.',
+    'Independent 2026 guide to healthcare market research companies in Kuwait — MOH-aware, pharmaceutical U&A, KOL mapping, HEOR and market access firms.',
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-kuwait-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-kuwait-2026' },
@@ -274,7 +274,7 @@ export const kuwaitHealthcareEn: CountryListicleConfig = {
     },
   ],
   cta: {
-    title: 'Plan Healthcare Market Research in Kuwait',
+    title: 'Plan Healthcare Market Research in Kuwait | BioNixus',
     body: 'BioNixus is a global healthcare market research company delivering pharmaceutical U&A, KOL mapping, payer research, HEOR, and market access strategy across Kuwait and the wider GCC — with MOH Kuwait regulatory awareness and Arabic-English bilingual fieldwork capability.',
     button: 'Request a Proposal',
     to: '/contact',

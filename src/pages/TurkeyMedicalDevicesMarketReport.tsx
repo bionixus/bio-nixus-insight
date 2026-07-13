@@ -84,8 +84,8 @@ const TurkeyMedicalDevicesMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="Turkey Medical Devices Market Report 2026 | TİTCK CE Marking, SGK SUT & Medical Tourism | BioNixus"
-      description="Turkey medical devices market at USD 3.5B in 2026. TİTCK CE marking registration, ÜTS tracking, SGK SUT reimbursement, medical tourism device demand (hair transplants, aesthetics, robotics), and BioNixus GCC intelligence."
+      title="Turkey Medical Devices Market Report 2026 | BioNixus"
+      description="Turkey medical devices market at USD 3.5B in 2026. TİTCK CE marking registration, ÜTS tracking, SGK SUT reimbursement, medical tourism device demand (hair."
       canonical="https://www.bionixus.com/turkey-medical-devices-market-report"
       jsonLd={jsonLd}
     />

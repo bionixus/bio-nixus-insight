@@ -6,9 +6,9 @@ export const franceHealthcareEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'europe',
   country: 'France',
-  title: 'Best Healthcare Market Research Companies in France (2026 Guide) | BioNixus',
+  title: 'Top Healthcare Market Research Companies in France | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the top healthcare market research companies in France — pharmaceutical primary research, HAS/ASMR HEOR support, KOL mapping, payer research, and bilingual FR-EN fieldwork firms compared by French capability.',
+    'Independent 2026 guide to the top healthcare market research companies in France — pharmaceutical primary research, HAS/ASMR HEOR support, KOL mapping.',
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-france-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-france-2026' },
@@ -248,7 +248,7 @@ export const franceHealthcareEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request a France Healthcare Research Proposal' },
   ],
   cta: {
-    title: 'Plan Healthcare Market Research in France',
+    title: 'Plan Healthcare Market Research in France | BioNixus',
     body: 'BioNixus delivers specialist healthcare market research across France — pharmaceutical primary research, HAS/ASMR reimbursement evidence, CEPS payer research, French KOL mapping, bilingual FR-EN fieldwork, HEOR, and patient journey studies for pharma and biotech companies operating in the French market.',
     button: 'Request a Proposal',
     to: '/contact',

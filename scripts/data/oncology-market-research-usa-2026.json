@@ -153,5 +153,9 @@
     "version": "2026-06-19-v1",
     "appliedAt": "2026-06-18T16:07:10.034Z",
     "anchor": "geo-answer-oncology-us"
+  },
+  "openGraph": {
+    "ogTitle": "Oncology Market Research USA 2026",
+    "ogDescription": "Oncology market research in the USA for 2026: CMS EOM, NCCN pathways, payer prior auth, KOL insights, and launch research for pharmaceutical teams."
   }
 }

@@ -6,9 +6,9 @@ export const polandHealthcareEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'europe',
   country: 'Poland',
-  title: 'Best Healthcare Market Research Companies in Poland (2026 Guide) | BioNixus',
+  title: 'Top Healthcare Market Research Companies in Poland | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the top healthcare market research companies in Poland — pharmaceutical primary research, AOTMiT HTA support, NFZ payer research, physician surveys, HEOR, and CEE market access firms compared by Poland capability.',
+    'Independent 2026 guide to the top healthcare market research companies in Poland — pharmaceutical primary research, AOTMiT HTA support, NFZ payer.',
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-poland-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-poland-2026' },
@@ -247,7 +247,7 @@ export const polandHealthcareEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request a Poland Healthcare Research Proposal' },
   ],
   cta: {
-    title: 'Plan Healthcare Market Research in Poland',
+    title: 'Plan Healthcare Market Research in Poland | BioNixus',
     body: 'BioNixus delivers specialist healthcare market research across Poland and CEE — pharmaceutical primary research, AOTMiT HTA evidence, physician and KOL surveys, HEOR, NFZ payer research, and CEE regional market access strategy for pharma and biotech companies.',
     button: 'Request a Proposal',
     to: '/contact',

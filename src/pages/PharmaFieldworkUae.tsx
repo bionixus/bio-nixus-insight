@@ -7,7 +7,7 @@ export default function PharmaFieldworkUae() {
   return (
     <StrategicServicePage
       title="Pharma Fieldwork UAE | Physician & Payer Research | BioNixus"
-      description="Pharma fieldwork in the UAE: bilingual HCP recruitment across DHA and DOH contexts, hospital access coordination, and quality-controlled emirate-level data collection."
+      description="Pharma fieldwork in the UAE: bilingual HCP recruitment across DHA and DOH contexts, hospital access coordination, and quality-controlled emirate-level."
       canonicalUrl="https://www.bionixus.com/pharma-fieldwork-uae"
       breadcrumbLabel="Pharma Fieldwork UAE"
       h1="Pharma Fieldwork UAE"

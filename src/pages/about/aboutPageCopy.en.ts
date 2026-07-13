@@ -16,9 +16,8 @@ const COMPLIANCE = [
 ] as const;
 
 export const aboutPageCopyEn: AboutPageCopy = {
-  seoTitle: 'About BioNixus | Global Market Research Built on Regulated Pharma',
-  seoDescription:
-    'Founded in London in 2012, BioNixus grew from UK pharmaceutical market research into a top-100 global firm — US-headquartered, MENA regional office in Greater Cairo, and trusted across 38 countries and 16 industry verticals.',
+  seoTitle: 'About BioNixus | BioNixus',
+  seoDescription: 'Founded in London in 2012 — US HQ, Cairo regional office. Global pharma & healthcare market research across 38 countries. See how we work.',
   breadcrumbHome: 'Home',
   breadcrumbAbout: 'About',
   heroTagline: 'Global International Market Research Firm',

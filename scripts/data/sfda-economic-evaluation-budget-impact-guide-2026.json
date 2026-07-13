@@ -151,5 +151,9 @@
     "version": "2026-06-18-v1",
     "appliedAt": "2026-06-18T15:46:06.615Z",
     "anchor": "geo-answer-sfda-bia"
+  },
+  "openGraph": {
+    "ogTitle": "SFDA Budget Impact Model Guide 2026",
+    "ogDescription": "How to build a Saudi budget impact model for SFDA economic evaluation: payer perspective, 3–5 year horizon, local epidemiology, and NUPCO-ready scenarios."
   }
 }

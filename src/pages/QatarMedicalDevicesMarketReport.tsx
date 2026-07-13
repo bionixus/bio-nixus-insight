@@ -114,8 +114,8 @@ const QatarMedicalDevicesMarketReport = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <SEOHead
-        title="Qatar Medical Devices Market Report 2026 | HMC Procurement & Hospital Intelligence | BioNixus"
-        description="Qatar medical devices market at USD 400–460M in 2026. Hamad Medical Corporation procurement intelligence, MOPH Qatar registration, Sidra Medicine, and primary research across Qatar healthcare accounts."
+        title="Qatar Medical Devices Market Report 2026 | BioNixus"
+        description="Qatar medical devices market at USD 400–460M in 2026. Hamad Medical Corporation procurement intelligence, MOPH Qatar registration, Sidra Medicine, and."
         canonical="https://www.bionixus.com/qatar-medical-devices-market-report"
         jsonLd={jsonLd}
       />

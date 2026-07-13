@@ -40,9 +40,9 @@ type LocalizedCopy = {
 const copyByLanguage: Record<Language, LocalizedCopy> = {
   en: {
     seoTitle:
-      'Healthcare Market Research Services | Europe & the Middle East | BioNixus',
+      'Healthcare Market Research Services | Pharma Evidence | BioNixus',
     seoDescription:
-      'Healthcare market research services for pharmaceutical teams: specialist quantitative and qualitative physician, payer, and hospital evidence across Europe, the UK, and the Middle East, built for launch, market access, and growth decisions.',
+      'Pharma market research: physician, payer & hospital evidence for launch & access across Europe & MENA. Proposal in 24 hours.',
     breadcrumbHome: 'Home',
     breadcrumbCurrent: 'Healthcare Market Research Services',
     heroBadge: 'Healthcare Market Research Services',

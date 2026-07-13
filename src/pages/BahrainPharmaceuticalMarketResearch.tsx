@@ -187,8 +187,8 @@ export default function BahrainPharmaceuticalMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Market Research Company in Bahrain | NHRA & HTA | BioNixus"
-        description="BioNixus is a healthcare and pharmaceutical market research company in Bahrain—NHRA-aligned evidence, HTA pathway readiness, bilingual fieldwork, and proposal-ready Bahrain programs."
+        title="Healthcare Market Research Company in Bahrain | BioNixus"
+        description="BioNixus is a healthcare and pharmaceutical market research company in Bahrain—NHRA-aligned evidence, HTA pathway readiness, bilingual fieldwork, and."
         canonical="/pharmaceutical-market-research-bahrain"
         jsonLd={jsonLd}
       />

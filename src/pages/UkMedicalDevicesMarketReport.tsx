@@ -84,8 +84,8 @@ const UkMedicalDevicesMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="UK Medical Devices Market Report 2026 | UKCA, MHRA & NHS Supply Chain | BioNixus"
-      description="UK medical devices market at GBP 12–13B in 2026. UKCA marking post-Brexit, MHRA registration, NHS Supply Chain procurement, and BioNixus intelligence for UK medtech companies expanding to GCC and MENA."
+      title="UK Medical Devices Market Report 2026 | BioNixus"
+      description="UK medical devices market at GBP 12–13B in 2026. UKCA marking post-Brexit, MHRA registration, NHS Supply Chain procurement, and BioNixus intelligence for."
       canonical="https://www.bionixus.com/uk-medical-devices-market-report"
       jsonLd={jsonLd}
     />

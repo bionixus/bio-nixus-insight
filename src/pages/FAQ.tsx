@@ -134,10 +134,10 @@ const FAQ = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>FAQ | BioNixus Healthcare Market Research</title>
+        <title>FAQ | Healthcare & Pharma Market Research | BioNixus</title>
         <meta
           name="description"
-          content="Straight answers on BioNixus healthcare market research: where we cover, the therapy areas and methods we run, HTA and access support, Arabic–English fieldwork, GDPR and ESOMAR compliance, timelines, and how to reach us."
+          content="Answers on coverage, therapy areas, physician surveys, HTA support, Arabic–English fieldwork, GDPR, timelines & how to get a BioNixus research proposal."
         />
         <link rel="canonical" href="https://www.bionixus.com/faq" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

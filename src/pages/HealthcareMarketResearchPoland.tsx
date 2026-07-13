@@ -76,8 +76,8 @@ export default function HealthcareMarketResearchPoland() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Market Research Company in Poland | AOTMiT & URPL Aligned | BioNixus"
-        description="BioNixus is a healthcare market research company in Poland — bioethics-committee-compliant HCP surveys, payer landscape analysis, KOL mapping, and health outcomes research aligned with AOTMiT, URPL, and NFZ requirements."
+        title="Healthcare Market Research Company in Poland | BioNixus"
+        description="BioNixus is a healthcare market research company in Poland — bioethics-committee-compliant HCP surveys, payer landscape analysis, KOL mapping, and health."
         canonical="/healthcare-market-research-poland"
         jsonLd={jsonLd}
       />

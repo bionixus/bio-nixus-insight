@@ -6,9 +6,9 @@ export const biologicsBiosimilarsGlobalEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'mena',
   country: 'Global',
-  title: 'Leading Biologics and Biosimilars Market Research Companies (2026 Guide) | BioNixus',
+  title: 'Leading Biologics and Biosimilars Market Research | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading biologics and biosimilars market research companies — market access, biosimilar uptake, physician switching behaviour, and payer formulary research compared by capability.',
+    'Independent 2026 guide to the leading biologics and biosimilars market research companies — market access, biosimilar uptake, physician switching.',
   canonical:
     'https://www.bionixus.com/insights/leading-biologics-biosimilars-market-research-companies-2026',
   hreflang: [
@@ -284,7 +284,7 @@ export const biologicsBiosimilarsGlobalEn: CountryListicleConfig = {
     },
   ],
   cta: {
-    title: 'Plan Biologics and Biosimilars Market Research',
+    title: 'Plan Biologics and Biosimilars Market Research | BioNixus',
     body: 'BioNixus delivers custom biologics and biosimilars market research globally — physician prescribing behaviour studies, biosimilar uptake barrier analysis, payer formulary intelligence, and market access strategy research with dedicated MENA and GCC execution capability.',
     button: 'Request a Proposal',
     to: '/contact',

@@ -93,7 +93,7 @@ export default function HealthcareMarketResearchInOman() {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Healthcare Market Research Oman | MoH Oman & SQUH | BioNixus"
-        description="Pharmaceutical market research firms serving Oman deliver HCP, KOL, patient, and payer studies. MoH Oman and MCIOMS-aligned healthcare market research for Sultanate product launches."
+        description="Pharmaceutical market research firms serving Oman deliver HCP, KOL, patient, and payer studies. MoH Oman and MCIOMS-aligned healthcare market research for."
         canonical="/healthcare-market-research-oman"
         jsonLd={jsonLd}
       />

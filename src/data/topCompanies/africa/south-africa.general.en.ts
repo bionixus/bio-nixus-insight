@@ -6,9 +6,9 @@ export const southAfricaGeneralEn: CountryListicleConfig = {
   variant: 'general',
   region: 'africa',
   country: 'South Africa',
-  title: 'Best Market Research Companies in South Africa (2026 Guide) | BioNixus',
+  title: 'Top Market Research Companies in South Africa 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading market research companies in South Africa — healthcare, pharmaceutical, consumer, and strategic research firms compared by capability, SAHPRA regulatory awareness, and multilingual fieldwork.',
+    'Independent 2026 guide to the leading market research companies in South Africa — healthcare, pharmaceutical, consumer, and strategic research firms.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-south-africa-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-south-africa-2026' },
@@ -246,7 +246,7 @@ export const southAfricaGeneralEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request a South Africa Research Proposal' },
   ],
   cta: {
-    title: 'Plan Market Research in South Africa',
+    title: 'Plan Market Research in South Africa | BioNixus',
     body: 'BioNixus delivers custom market research across South Africa and the wider African continent — primary research, consumer insights, healthcare and pharmaceutical studies, SAHPRA regulatory awareness, multilingual fieldwork, and competitive intelligence.',
     button: 'Request a Proposal',
     to: '/contact',

@@ -237,7 +237,7 @@ export default function PtTopEmpresasPesquisaMercadoBrasil2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Empresas de Pesquisa de Mercado no Brasil (Guia 2026) | BioNixus"
+        title="Top Empresas de Pesquisa de Mercado no Brasil (Guia | BioNixus"
         description="Guia das melhores empresas de pesquisa de mercado no Brasil em 2026 — BioNixus, Kantar, Ipsos, Nielsen, DataFolha, GfK e Opinion Box comparados."
         url={CANONICAL}
         imageUrl="https://www.bionixus.com/og-image.png"

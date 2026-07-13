@@ -254,7 +254,7 @@ export default function TopHealthcareMarketResearchCompaniesAbuDhabi2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Healthcare Market Research Companies in Abu Dhabi (2026) | BioNixus"
+        title="Top Healthcare Market Research Companies in Abu Dhabi | BioNixus"
         description="Leading healthcare & pharmaceutical market research firms in Abu Dhabi 2026 — DoH-aware, SEHA access, KOL mapping, Daman payer research."
         image="https://www.bionixus.com/og-image.png"
         url={CANONICAL}

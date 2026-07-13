@@ -124,8 +124,8 @@ export default function UkPharmaceuticalMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Pharmaceutical Market Research Company in the UK | MHRA, NICE & NHS Aligned | BioNixus"
-        description="BioNixus is a pharmaceutical market research company in the UK — NICE-aligned HCP surveys, KOL mapping, NHS and VPAG payer research, ICB formulary studies, and HRA-aligned market access evidence."
+        title="Pharmaceutical Market Research Company in the UK | BioNixus"
+        description="BioNixus is a pharmaceutical market research company in the UK — NICE-aligned HCP surveys, KOL mapping, NHS and VPAG payer research, ICB formulary."
         canonical="/pharmaceutical-market-research-uk"
         jsonLd={jsonLd}
       />

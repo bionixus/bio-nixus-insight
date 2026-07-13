@@ -76,8 +76,8 @@ export default function HealthcareMarketResearchUsa() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Market Research Company in USA | IRB-Compliant HCP & Payer Research | BioNixus"
-        description="BioNixus is a healthcare market research company in the USA delivering IRB-compliant HCP surveys, KOL mapping, PBM payer research, and HEOR evidence for pharmaceutical and biotech clients."
+        title="Healthcare Market Research Company in USA | BioNixus"
+        description="BioNixus is a healthcare market research company in the USA delivering IRB-compliant HCP surveys, KOL mapping, PBM payer research, and HEOR evidence for."
         canonical="/healthcare-market-research-usa"
         jsonLd={jsonLd}
       />

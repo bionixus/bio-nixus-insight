@@ -36,7 +36,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     metaSuffix: 'KSA pharma market research with Vision 2030 healthcare expertise.',
     metaTitle: 'Healthcare Market Research Saudi Arabia | SFDA & NUPCO | BioNixus',
     metaDescription:
-      'Healthcare market research Saudi Arabia 2026: SFDA-aware physician surveys, NUPCO tender context, Arabic fieldwork, and KOL mapping across Riyadh, Jeddah, and Dammam for pharma launch and access teams.',
+      'Healthcare market research Saudi Arabia 2026: SFDA-aware physician surveys, NUPCO tender context, Arabic fieldwork, and KOL mapping across Riyadh, Jeddah.',
     ogDescription:
       'BioNixus delivers pharmaceutical market research in Saudi Arabia with SFDA-aware execution, Arabic fieldwork, and hospital stakeholder access across Riyadh, Jeddah, and Dammam.',
     h1: 'Healthcare Market Research in Saudi Arabia',
@@ -88,7 +88,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     metaSuffix: 'UAE pharmaceutical insights across Abu Dhabi, Dubai, and Sharjah healthcare systems.',
     metaTitle: 'Healthcare Market Research UAE | DHA, DOH & MOHAP | BioNixus',
     metaDescription:
-      'Pharma market research in the UAE: DHA and DOH-aligned physician surveys, hospital fieldwork in Dubai and Abu Dhabi, and MOHAP-context payer evidence for launch teams.',
+      'Pharma market research in the UAE: DHA and DOH-aligned physician surveys, hospital fieldwork in Dubai and Abu Dhabi, and MOHAP-context payer evidence for.',
     ogDescription:
       'BioNixus provides UAE pharmaceutical market research with DOH and MOHAP context, multilingual field execution, and access to major hospital networks.',
     h1: 'Healthcare Market Research in the UAE',
@@ -138,9 +138,9 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     slug: 'united-arab-emirates',
     region: 'mena',
     metaSuffix: 'Federated UAE healthcare market research across MOHAP, DHA, and DOH jurisdictions.',
-    metaTitle: 'United Arab Emirates Healthcare Market Research | MOHAP, DHA & DOH | BioNixus',
+    metaTitle: 'United Arab Emirates Healthcare Market Research | BioNixus',
     metaDescription:
-      'Healthcare market research across the United Arab Emirates: MOHAP federal context, Dubai DHA, Abu Dhabi DOH, and multi-emirate physician and payer evidence for pharmaceutical portfolios.',
+      'Healthcare market research across the United Arab Emirates: MOHAP federal context, Dubai DHA, Abu Dhabi DOH, and multi-emirate physician and payer.',
     ogDescription:
       'BioNixus delivers United Arab Emirates healthcare market research with federated regulator context, multilingual field execution, and hospital network access across Dubai, Abu Dhabi, and Northern Emirates.',
     h1: 'Healthcare Market Research Across the United Arab Emirates',
@@ -180,7 +180,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     metaSuffix: 'Kuwait pharmaceutical insight programs for public and private healthcare channels.',
     metaTitle: 'Healthcare Market Research Kuwait | MOH Fieldwork | BioNixus',
     metaDescription:
-      'Healthcare and pharmaceutical market research in Kuwait: MOH-aligned physician surveys, hospital stakeholder access, and decision-focused qualitative and quantitative designs.',
+      'Healthcare and pharmaceutical market research in Kuwait: MOH-aligned physician surveys, hospital stakeholder access, and decision-focused qualitative and.',
     ogDescription:
       'BioNixus executes Kuwait pharmaceutical market research with MOH context, hospital stakeholder access, and decision-focused qualitative and quantitative designs.',
     h1: 'Pharmaceutical Market Research in Kuwait',
@@ -390,9 +390,9 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     slug: 'dubai',
     region: 'mena',
     metaSuffix: 'Dubai healthcare market research targeting DHA regulations and DHCC operations.',
-    metaTitle: 'Healthcare Market Research Dubai | Pharma Fieldwork UAE | BioNixus',
+    metaTitle: 'Healthcare Market Research Dubai | BioNixus',
     metaDescription:
-      'Healthcare market research in Dubai: DHA-compliant physician surveys, DHCC specialist access, payer and formulary research, and pharmaceutical fieldwork across Dubai and the UAE.',
+      'Healthcare market research in Dubai: DHA-compliant physician surveys, DHCC specialist access, payer and formulary research, and pharmaceutical fieldwork.',
     ogDescription: 'BioNixus executes Dubai pharmaceutical market research, navigating DHA formularies, mandatory insurance dynamics, and the private healthcare ecosystem.',
     h1: 'Pharmaceutical Market Research in Dubai',
     relatedCountries: ['uae', 'abu-dhabi', 'saudi-arabia'],
@@ -424,9 +424,9 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     slug: 'egypt',
     region: 'mena',
     metaSuffix: 'Egypt pharmaceutical and healthcare market research with EDA-aware execution and Arabic fieldwork.',
-    metaTitle: 'Healthcare Market Research in Egypt | Pharma & Consumer | BioNixus',
+    metaTitle: 'Healthcare Market Research in Egypt | BioNixus',
     metaDescription:
-      'Healthcare and pharmaceutical market research in Egypt: EDA regulatory strategy, physician surveys, KOL mapping, competitive intelligence, and market access across Cairo, Giza, and Alexandria by BioNixus.',
+      'Healthcare and pharmaceutical market research in Egypt: EDA regulatory strategy, physician surveys, KOL mapping, competitive intelligence, and market.',
     ogDescription:
       'BioNixus delivers pharmaceutical and consumer market research in Egypt with EDA-aware execution, bilingual Arabic-English fieldwork, and access to government and private hospital networks.',
     h1: 'Healthcare Market Research in Egypt',
@@ -511,7 +511,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     metaSuffix: 'Qatar pharmaceutical market research with MOPH and HMC context.',
     metaTitle: 'Healthcare Market Research Qatar | MOPH Fieldwork | BioNixus',
     metaDescription:
-      'Healthcare and pharmaceutical market research in Qatar: MOPH-aligned physician surveys, Hamad Medical Corporation stakeholder access, and bilingual fieldwork for launch and access teams.',
+      'Healthcare and pharmaceutical market research in Qatar: MOPH-aligned physician surveys, Hamad Medical Corporation stakeholder access, and bilingual.',
     ogDescription:
       'BioNixus delivers pharmaceutical market research in Qatar with MOPH context, HMC network access, and decision-focused mixed-method designs.',
     h1: 'Healthcare Market Research in Qatar',
@@ -558,7 +558,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     metaSuffix: 'Oman pharmaceutical market research with MOH and SFDA Oman context.',
     metaTitle: 'Healthcare Market Research Oman | MOH Fieldwork | BioNixus',
     metaDescription:
-      'Healthcare and pharmaceutical market research in Oman: MOH-aligned physician surveys, hospital stakeholder access, and fieldwork across Muscat and interior governorates.',
+      'Healthcare and pharmaceutical market research in Oman: MOH-aligned physician surveys, hospital stakeholder access, and fieldwork across Muscat and.',
     ogDescription:
       'BioNixus executes pharmaceutical market research in Oman with MOH context, public and private hospital access, and practical launch and access evidence.',
     h1: 'Healthcare Market Research in Oman',
@@ -605,7 +605,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     metaSuffix: 'Bahrain pharmaceutical market research with NHRA and Salmaniya context.',
     metaTitle: 'Healthcare Market Research Bahrain | NHRA Fieldwork | BioNixus',
     metaDescription:
-      'Healthcare and pharmaceutical market research in Bahrain: NHRA-aligned physician surveys, Salmaniya Medical Complex stakeholder access, and compact-market fieldwork.',
+      'Healthcare and pharmaceutical market research in Bahrain: NHRA-aligned physician surveys, Salmaniya Medical Complex stakeholder access, and compact-market.',
     ogDescription:
       'BioNixus delivers pharmaceutical market research in Bahrain with NHRA context, public and private channel mapping, and decision-ready mixed-method outputs.',
     h1: 'Healthcare Market Research in Bahrain',
@@ -652,7 +652,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     metaSuffix: 'Germany pharmaceutical market research with AMNOG and G-BA HTA context.',
     metaTitle: 'Healthcare Market Research Germany | AMNOG & G-BA | BioNixus',
     metaDescription:
-      'Pharmaceutical market research in Germany: AMNOG-aware physician and payer evidence, hospital stakeholder access, and HTA-aligned study design for launch teams.',
+      'Pharmaceutical market research in Germany: AMNOG-aware physician and payer evidence, hospital stakeholder access, and HTA-aligned study design for launch.',
     ogDescription:
       'BioNixus delivers pharmaceutical market research in Germany with AMNOG and G-BA context, multilingual fieldwork, and decision-focused outputs.',
     h1: 'Pharmaceutical Market Research in Germany',
@@ -763,7 +763,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     metaSuffix: 'Turkey pharmaceutical market research with TITCK and SSI context.',
     metaTitle: 'Healthcare Market Research Turkey | TITCK Fieldwork | BioNixus',
     metaDescription:
-      'Healthcare and pharmaceutical market research in Turkey: TITCK-aligned physician surveys, hospital stakeholder access, and launch evidence for MENA–Europe bridge markets.',
+      'Healthcare and pharmaceutical market research in Turkey: TITCK-aligned physician surveys, hospital stakeholder access, and launch evidence for MENA–Europe.',
     ogDescription:
       'BioNixus delivers pharmaceutical market research in Turkey with TITCK context, public and private hospital access, and bilingual field execution.',
     h1: 'Healthcare Market Research in Turkey',
@@ -810,7 +810,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     metaSuffix: 'Singapore pharmaceutical market research with HSA and MOH context.',
     metaTitle: 'Healthcare Market Research Singapore | HSA Fieldwork | BioNixus',
     metaDescription:
-      'Pharmaceutical market research in Singapore: HSA-aligned physician surveys, hospital stakeholder access, and APAC launch evidence for pharma and medtech teams.',
+      'Pharmaceutical market research in Singapore: HSA-aligned physician surveys, hospital stakeholder access, and APAC launch evidence for pharma and medtech.',
     ogDescription:
       'BioNixus executes pharmaceutical market research in Singapore with HSA context and hospital network access across public and private sectors.',
     h1: 'Healthcare Market Research in Singapore',

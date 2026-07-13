@@ -6,9 +6,9 @@ export const obesityWeightGlobalEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'mena',
   country: 'Global',
-  title: 'Best Obesity & Weight Management Market Research Firms (2026 Guide) | BioNixus',
+  title: 'Top Obesity & Weight Management Market Research Firms | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the best obesity and weight management market research firms — GLP-1 research, patient journey, HCP prescribing behaviour, and payer coverage research compared by capability.',
+    'Independent 2026 guide to the best obesity and weight management market research firms — GLP-1 research, patient journey, HCP prescribing behaviour, and.',
   canonical:
     'https://www.bionixus.com/insights/best-obesity-weight-management-market-research-firms-2026',
   hreflang: [
@@ -284,7 +284,7 @@ export const obesityWeightGlobalEn: CountryListicleConfig = {
     },
   ],
   cta: {
-    title: 'Plan Obesity & Weight Management Market Research',
+    title: 'Plan Obesity & Weight Management Market Research | BioNixus',
     body: 'BioNixus delivers custom obesity and weight management market research globally — GLP-1 prescribing behaviour studies, obesity patient journey research, payer coverage intelligence, and culturally adapted research across MENA and GCC markets with the highest obesity prevalence globally.',
     button: 'Request a Proposal',
     to: '/contact',

@@ -1,7 +1,7 @@
 {
   "seo": {
     "metaTitle": "Pesquisa mercado farmacêutico Brasil 2026 | BioNixus",
-    "metaDescription": "Pesquisa de mercado farmacêutico no Brasil 2026: ANVISA, CONITEC, incorporação SUS e estudos primários para lançamento.",
+    "metaDescription": "Pesquisa de mercado farmacêutico no Brasil 2026: ANVISA, CONITEC, incorporação SUS e estudos primários para lançamento. BioNixus pharmaceutical and",
     "focusKeyword": "pesquisa de mercado farmacêutico brasil",
     "keywords": [
       "pesquisa de mercado farmacêutico brasil",
@@ -154,5 +154,9 @@
     "version": "2026-06-18-v1",
     "appliedAt": "2026-06-18T15:46:06.615Z",
     "anchor": "geo-answer-br-anvisa"
+  },
+  "openGraph": {
+    "ogTitle": "Pesquisa mercado farmacêutico Brasil 2026",
+    "ogDescription": "Pesquisa de mercado farmacêutico no Brasil 2026: ANVISA, CONITEC, incorporação SUS e estudos primários para lançamento. BioNixus pharmaceutical and"
   }
 }

@@ -76,8 +76,8 @@ export default function HealthcareMarketResearchNewZealand() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Market Research Company in New Zealand | Medsafe & PHARMAC Aligned | BioNixus"
-        description="BioNixus is a healthcare market research company in New Zealand — HDEC-compliant HCP surveys, payer landscape analysis, KOL mapping, and health outcomes research aligned with Medsafe, PHARMAC, and Health New Zealand Te Whatu Ora requirements."
+        title="Healthcare Market Research Company in New Zealand | BioNixus"
+        description="BioNixus is a healthcare market research company in New Zealand — HDEC-compliant HCP surveys, payer landscape analysis, KOL mapping, and health outcomes."
         canonical="/healthcare-market-research-new-zealand"
         jsonLd={jsonLd}
       />

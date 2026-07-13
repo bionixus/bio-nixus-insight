@@ -239,8 +239,8 @@ export default function TopPharmaMarketResearchCompaniesMiddleEast2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Pharma Market Research Companies in the Middle East (2026) | BioNixus"
-        description="Leading pharma market research companies in the Middle East ranked for 2026 — MENA pharmaceutical analytics, fieldwork, competitive intelligence, and primary research compared."
+        title="Top Pharma Market Research Companies in the Middle | BioNixus"
+        description="Leading pharma market research companies in the Middle East ranked for 2026 — MENA pharmaceutical analytics, fieldwork, competitive intelligence, and."
         image="https://www.bionixus.com/og-image.png"
         url={CANONICAL}
         type="article"

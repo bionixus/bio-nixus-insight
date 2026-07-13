@@ -6,9 +6,9 @@ export const germanyHealthcareEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'europe',
   country: 'Germany',
-  title: 'Best Healthcare Market Research Companies in Germany (2026 Guide) | BioNixus',
+  title: 'Top Healthcare Market Research Companies in Germany | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the top healthcare market research companies in Germany — pharmaceutical primary research, G-BA AMNOG support, physician surveys, HEOR, GKV payer research, and KOL mapping firms compared by German capability.',
+    'Independent 2026 guide to the top healthcare market research companies in Germany — pharmaceutical primary research, G-BA AMNOG support, physician.',
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-germany-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-germany-2026' },
@@ -248,7 +248,7 @@ export const germanyHealthcareEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request a Germany Healthcare Research Proposal' },
   ],
   cta: {
-    title: 'Plan Healthcare Market Research in Germany',
+    title: 'Plan Healthcare Market Research in Germany | BioNixus',
     body: 'BioNixus delivers specialist healthcare market research across Germany — pharmaceutical primary research, G-BA AMNOG payer evidence, GKV stakeholder research, physician and KOL surveys, HEOR, and patient journey studies for pharma and biotech companies operating in Europe\'s largest pharmaceutical market.',
     button: 'Request a Proposal',
     to: '/contact',

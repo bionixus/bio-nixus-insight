@@ -56,7 +56,7 @@ function buildServices(label: string, regulatorShort: string) {
     items: [
       {
         title: 'Hospital procurement and formulary committee research',
-        description: `Primary research with hospital pharmacy, biomedical engineering, and value-analysis committees — mapping evidence requirements, tender criteria, and total-cost-of-ownership thresholds that govern ${label} device listing decisions.`,
+        description: `Primary research with hospital pharmacy, biomedical engineering, and value-analysis committees — mapping evidence requirements, tender criteria, and.`,
       },
       {
         title: 'Clinician adoption and workflow studies',
@@ -68,7 +68,7 @@ function buildServices(label: string, regulatorShort: string) {
       },
       {
         title: 'Pricing, reimbursement, and payer-adjacent research',
-        description: `Research on provincial, national, or insurer funding pathways for device categories — including technology assessment expectations, DRG/procedure funding, and private-pay carve-outs relevant to your SKU.`,
+        description: `Research on provincial, national, or insurer funding pathways for device categories — including technology assessment expectations, DRG/procedure funding.`,
       },
       {
         title: 'KOL mapping and advisory board programmes',
@@ -76,7 +76,7 @@ function buildServices(label: string, regulatorShort: string) {
       },
       {
         title: 'GCC and MENA expansion intelligence for ${label} manufacturers',
-        description: `Comparative research linking ${label} regulatory credentials (including Access Consortium or reference-agency reliance) to SFDA, MOHAP, and GCC hospital procurement pathways — supporting international portfolio committees.`,
+        description: `Comparative research linking ${label} regulatory credentials (including Access Consortium or reference-agency reliance) to SFDA, MOHAP, and GCC hospital.`,
       },
     ],
   };

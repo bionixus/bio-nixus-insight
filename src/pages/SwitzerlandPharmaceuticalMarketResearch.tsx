@@ -114,7 +114,7 @@ export default function SwitzerlandPharmaceuticalMarketResearch() {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Pharmaceutical Market Research Switzerland | BioNixus"
-        description="BioNixus delivers pharmaceutical market research in Switzerland — multilingual HCP surveys, BAG Spezialitätenliste payer research, KOL mapping at USZ, USB, Inselspital, CHUV, and HUG."
+        description="BioNixus delivers pharmaceutical market research in Switzerland — multilingual HCP surveys, BAG Spezialitätenliste payer research, KOL mapping at USZ."
         canonical="/pharmaceutical-market-research-switzerland"
         jsonLd={jsonLd}
       />

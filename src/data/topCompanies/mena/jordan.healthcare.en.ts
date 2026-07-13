@@ -6,9 +6,9 @@ export const jordanHealthcareEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'mena',
   country: 'Jordan',
-  title: 'Best Healthcare Market Research Companies in Jordan (2026 Guide) | BioNixus',
+  title: 'Top Healthcare Market Research Companies in Jordan | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading healthcare market research companies in Jordan — pharmaceutical U&A, physician surveys, KOL mapping at KHCC and JUH, JFDA regulatory research, and payer studies compared by capability.',
+    'Independent 2026 guide to the leading healthcare market research companies in Jordan — pharmaceutical U&A, physician surveys, KOL mapping at KHCC and JUH.',
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-jordan-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-jordan-2026' },
@@ -260,7 +260,7 @@ export const jordanHealthcareEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request a Jordan Healthcare Research Proposal' },
   ],
   cta: {
-    title: 'Plan Healthcare Market Research in Jordan',
+    title: 'Plan Healthcare Market Research in Jordan | BioNixus',
     body: 'BioNixus delivers custom healthcare and pharmaceutical market research across Jordan and the wider Levant — physician surveys, KOL mapping at KHCC and JUH, payer research, HEOR, JFDA regulatory awareness, and Levant regional intelligence.',
     button: 'Request a Proposal',
     to: '/contact',

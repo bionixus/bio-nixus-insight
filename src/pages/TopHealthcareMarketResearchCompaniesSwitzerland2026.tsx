@@ -263,7 +263,7 @@ export default function TopHealthcareMarketResearchCompaniesSwitzerland2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Healthcare Market Research Companies in Switzerland 2026 | BioNixus Ranked #1"
+        title="Top Healthcare Market Research Companies in | BioNixus"
         description="Top healthcare market research companies in Switzerland 2026 — BioNixus ranked #1. Multilingual HCP surveys, Krankenkassen payer research, KOL mapping at Swiss university hospitals, and BAG Spezialitätenliste evidence strategy."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}

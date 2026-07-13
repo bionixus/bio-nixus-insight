@@ -114,7 +114,7 @@ export default function SouthKoreaPharmaceuticalMarketResearch() {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Pharmaceutical Market Research South Korea | BioNixus"
-        description="BioNixus delivers pharmaceutical market research in South Korea — HCP surveys at Korea Big 5 hospitals, HIRA/NHIS payer research, KOL mapping, and NECA cost-effectiveness evidence aligned with MFDS registration."
+        description="BioNixus delivers pharmaceutical market research in South Korea — HCP surveys at Korea Big 5 hospitals, HIRA/NHIS payer research, KOL mapping, and NECA."
         canonical="/pharmaceutical-market-research-south-korea"
         jsonLd={jsonLd}
       />

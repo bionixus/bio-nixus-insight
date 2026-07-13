@@ -76,8 +76,8 @@ export default function HealthcareMarketResearchIndia() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Market Research Company in India | CDSCO & ICMR Aligned | BioNixus"
-        description="BioNixus is a healthcare market research company in India — ethics-compliant HCP surveys, patient research, KOL mapping, and health outcomes research aligned with CDSCO, ICMR, and DPDP Act requirements."
+        title="Healthcare Market Research Company in India | BioNixus"
+        description="BioNixus is a healthcare market research company in India — ethics-compliant HCP surveys, patient research, KOL mapping, and health outcomes research."
         canonical="/healthcare-market-research-india"
         jsonLd={jsonLd}
       />

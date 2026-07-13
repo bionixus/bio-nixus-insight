@@ -1,7 +1,7 @@
 import type { AboutPageCopy } from './aboutPageCopy.types';
 
 export const aboutPageCopyZh: AboutPageCopy = {
-  seoTitle: '关于 BioNixus | 基于受监管医药的全球市场研究',
+  seoTitle: '关于 BioNixus | 基于受监管医药的全球市场研究 | BioNixus',
   seoDescription:
     'BioNixus 2012 年创立于伦敦，从英国医药市场研究成长为全球前 100 市场研究公司之一——美国总部、大开罗 MENA 区域办公室，覆盖 38 国与 16 个行业垂直领域。',
   breadcrumbHome: '首页',

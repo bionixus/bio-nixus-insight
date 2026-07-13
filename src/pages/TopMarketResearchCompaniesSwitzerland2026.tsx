@@ -245,7 +245,7 @@ export default function TopMarketResearchCompaniesSwitzerland2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Market Research Companies in Switzerland 2026 | BioNixus Ranked #1"
+        title="Top Market Research Companies in Switzerland 2026 | BioNixus"
         description="Top market research companies in Switzerland 2026 — BioNixus ranked #1. Multilingual HCP surveys, KOL mapping in the Basel biopharma cluster, BAG Spezialitätenliste payer research, and Swiss pharmaceutical market intelligence."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}

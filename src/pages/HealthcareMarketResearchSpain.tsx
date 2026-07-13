@@ -98,8 +98,8 @@ export default function HealthcareMarketResearchSpain() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Market Research Company in Spain | AEMPS & SNS Aligned | BioNixus"
-        description="BioNixus is a healthcare market research company in Spain — Spanish-language HCP surveys, SNS payer landscape analysis, KOL mapping, and health outcomes research aligned with AEMPS, CIPM, and Autonomous Community requirements."
+        title="Healthcare Market Research Company in Spain | BioNixus"
+        description="BioNixus is a healthcare market research company in Spain — Spanish-language HCP surveys, SNS payer landscape analysis, KOL mapping, and health outcomes."
         canonical="/healthcare-market-research-spain"
         jsonLd={jsonLd}
       />

@@ -6,9 +6,9 @@ export const tunisiaGeneralEn: CountryListicleConfig = {
   variant: 'general',
   region: 'mena',
   country: 'Tunisia',
-  title: 'Best Market Research Companies in Tunisia (2026 Guide) | BioNixus',
+  title: 'Top Market Research Companies in Tunisia 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading market research companies in Tunisia — healthcare, pharmaceutical, consumer, and strategic research firms compared by capability, DPHM regulatory awareness, and Arabic-French bilingual delivery.',
+    'Independent 2026 guide to the leading market research companies in Tunisia — healthcare, pharmaceutical, consumer, and strategic research firms compared.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-tunisia-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-tunisia-2026' },
@@ -247,7 +247,7 @@ export const tunisiaGeneralEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request a Tunisia Research Proposal' },
   ],
   cta: {
-    title: 'Plan Market Research in Tunisia',
+    title: 'Plan Market Research in Tunisia | BioNixus',
     body: 'BioNixus delivers custom market research across Tunisia and the wider Maghreb region — primary research, consumer insights, healthcare and pharmaceutical studies, competitive intelligence, and DPHM regulatory-aware market access strategy. Bilingual Arabic-French and digital-first research execution available.',
     button: 'Request a Proposal',
     to: '/contact',

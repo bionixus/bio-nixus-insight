@@ -6,9 +6,9 @@ export const ethiopiaGeneralEn: CountryListicleConfig = {
   variant: 'general',
   region: 'africa',
   country: 'Ethiopia',
-  title: 'Best Market Research Companies in Ethiopia (2026 Guide) | BioNixus',
+  title: 'Top Market Research Companies in Ethiopia 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading market research companies in Ethiopia — healthcare, pharmaceutical, consumer, and strategic research firms compared by capability for Africa\'s second largest population.',
+    'Independent 2026 guide to the leading market research companies in Ethiopia — healthcare, pharmaceutical, consumer, and strategic research firms compared.'s second largest population.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-ethiopia-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-ethiopia-2026' },
@@ -246,7 +246,7 @@ export const ethiopiaGeneralEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request an Ethiopia Research Proposal' },
   ],
   cta: {
-    title: 'Plan Market Research in Ethiopia',
+    title: 'Plan Market Research in Ethiopia | BioNixus',
     body: 'BioNixus delivers custom market research across Ethiopia and the wider East Africa region — primary research, consumer insights, healthcare and pharmaceutical studies, competitive intelligence, and pan-African strategic analysis.',
     button: 'Request a Proposal',
     to: '/contact',

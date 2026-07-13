@@ -80,7 +80,7 @@ export default function DiabetesMarketResearchUae() {
     <>
       <SEOHead
         title="Diabetes Market Research UAE | BioNixus"
-        description="Diabetes market research UAE: HCP prescribing behaviour, patient journey research, payer landscape analysis, and competitive intelligence across insulin, GLP-1 agonists, and SGLT2 inhibitors. UAE has 19% adult diabetes prevalence — the 4th highest globally."
+        description="Diabetes market research UAE: HCP prescribing behaviour, patient journey research, payer landscape analysis, and competitive intelligence across insulin."
         canonical={canonicalPath}
         jsonLd={jsonLd}
       />

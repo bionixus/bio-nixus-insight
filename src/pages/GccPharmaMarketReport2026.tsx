@@ -148,8 +148,8 @@ const GccPharmaMarketReport2026 = () => {
       <Navbar />
 
       <SEOHead
-        title="GCC Pharma Market Report 2026 | Biologics & Generic Drugs | BioNixus"
-        description="GCC pharma market report 2026: USD 27B market, biologics ($4.8–5.4B), generic injectables ($1.6–1.9B), generic drug segment, Saudi precision medicine — hospital consumption data from BioNixus."
+        title="GCC Pharma Market Report 2026 | BioNixus"
+        description="GCC pharma market report 2026: USD 27B market, biologics ($4.8–5.4B), generic injectables ($1.6–1.9B), generic drug segment, Saudi precision medicine ."
         canonical="https://www.bionixus.com/gcc-pharma-market-report-2026"
         jsonLd={jsonLd}
       />

@@ -6,9 +6,9 @@ export const oncologyGlobalEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'mena',
   country: 'Global',
-  title: 'Top Oncology Market Research Companies (2026 Guide) | BioNixus',
+  title: 'Top Oncology Market Research Companies 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the top oncology market research companies — launch support, tumor board dynamics, precision medicine research, biomarker testing uptake, and KOL mapping compared by capability.',
+    'Independent 2026 guide to the top oncology market research companies — launch support, tumor board dynamics, precision medicine research, biomarker.',
   canonical:
     'https://www.bionixus.com/insights/top-oncology-market-research-companies-2026',
   hreflang: [
@@ -284,7 +284,7 @@ export const oncologyGlobalEn: CountryListicleConfig = {
     },
   ],
   cta: {
-    title: 'Plan Oncology Market Research',
+    title: 'Plan Oncology Market Research | BioNixus',
     body: 'BioNixus delivers custom oncology market research globally — oncologist prescribing behaviour studies, tumor board dynamics research, biomarker testing uptake analysis, KOL mapping, and market access intelligence with dedicated MENA and GCC cancer centre execution capability.',
     button: 'Request a Proposal',
     to: '/contact',

@@ -70,8 +70,8 @@ export default function HealthcareReportsHub() {
     <div className="min-h-screen bg-background">
       <Navbar />
       <SEOHead
-        title="Healthcare Market Research Reports 2026 | GCC, MENA, Global | BioNixus"
-        description="BioNixus healthcare market research reports covering GCC, MENA, Europe, and selected comparator markets. Therapy-specific pages combine regulatory, reimbursement, and commercial planning signals."
+        title="Healthcare Market Research Reports 2026 | BioNixus"
+        description="BioNixus healthcare market research reports covering GCC, MENA, Europe, and selected comparator markets. Therapy-specific pages combine regulatory."
         canonical={canonical}
         jsonLd={jsonLd}
       />

@@ -6,9 +6,9 @@ export const moroccoGeneralEn: CountryListicleConfig = {
   variant: 'general',
   region: 'mena',
   country: 'Morocco',
-  title: 'Best Market Research Companies in Morocco (2026 Guide) | BioNixus',
+  title: 'Top Market Research Companies in Morocco 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading market research companies in Morocco — healthcare, pharmaceutical, consumer, and strategic research firms compared by capability, MAPHAR regulatory awareness, and trilingual Arabic-French-English delivery.',
+    'Independent 2026 guide to the leading market research companies in Morocco — healthcare, pharmaceutical, consumer, and strategic research firms compared.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-morocco-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-morocco-2026' },
@@ -247,7 +247,7 @@ export const moroccoGeneralEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request a Morocco Research Proposal' },
   ],
   cta: {
-    title: 'Plan Market Research in Morocco',
+    title: 'Plan Market Research in Morocco | BioNixus',
     body: 'BioNixus delivers custom market research across Morocco and the wider North Africa region — primary research, consumer insights, healthcare and pharmaceutical studies, competitive intelligence, and Africa gateway strategy analysis. Trilingual Arabic-French-English execution available.',
     button: 'Request a Proposal',
     to: '/contact',

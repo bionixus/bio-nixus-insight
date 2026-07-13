@@ -6,9 +6,9 @@ export const italyHealthcareEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'europe',
   country: 'Italy',
-  title: 'Best Healthcare Market Research Companies in Italy (2026 Guide) | BioNixus',
+  title: 'Top Healthcare Market Research Companies in Italy 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the top healthcare market research companies in Italy — pharmaceutical primary research, AIFA/SSN system expertise, physician surveys, HEOR, and payer research firms compared by Italy capability.',
+    'Independent 2026 guide to the top healthcare market research companies in Italy — pharmaceutical primary research, AIFA/SSN system expertise, physician.',
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-italy-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-italy-2026' },
@@ -248,7 +248,7 @@ export const italyHealthcareEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request an Italy Healthcare Research Proposal' },
   ],
   cta: {
-    title: 'Plan Healthcare Market Research in Italy',
+    title: 'Plan Healthcare Market Research in Italy | BioNixus',
     body: 'BioNixus delivers specialist healthcare market research across Italy — pharmaceutical primary research, AIFA/PTORS HTA evidence, Italian KOL surveys, regional payer research across ASL/ULSS structures, HEOR, and Italian-English bilingual fieldwork for pharma and biotech companies.',
     button: 'Request a Proposal',
     to: '/contact',

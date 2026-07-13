@@ -76,8 +76,8 @@ export default function HealthcareMarketResearchUk() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Market Research Company in the UK | NICE & MHRA Aligned | BioNixus"
-        description="BioNixus is a healthcare market research company in the UK — HRA-compliant HCP surveys, payer landscape analysis, KOL mapping, and health outcomes research aligned with NICE, MHRA, and NHS requirements."
+        title="Healthcare Market Research Company in the UK | BioNixus"
+        description="BioNixus is a healthcare market research company in the UK — HRA-compliant HCP surveys, payer landscape analysis, KOL mapping, and health outcomes."
         canonical="/healthcare-market-research-uk"
         jsonLd={jsonLd}
       />

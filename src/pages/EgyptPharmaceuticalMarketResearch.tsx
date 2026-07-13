@@ -136,8 +136,8 @@ export default function EgyptPharmaceuticalMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Market Research Company in Egypt | EDA & MENA Scale | BioNixus"
-        description="BioNixus is a healthcare and pharmaceutical market research company in Egypt—EDA-aligned evidence, public/private channel insight, bilingual fieldwork, and proposal-ready programs from Cairo."
+        title="Healthcare Market Research Company in Egypt | BioNixus"
+        description="BioNixus is a healthcare and pharmaceutical market research company in Egypt—EDA-aligned evidence, public/private channel insight, bilingual fieldwork."
         canonical="/egypt-pharmaceutical-market-research"
         jsonLd={jsonLd}
       />

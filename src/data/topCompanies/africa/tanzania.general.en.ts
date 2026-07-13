@@ -6,9 +6,9 @@ export const tanzaniaGeneralEn: CountryListicleConfig = {
   variant: 'general',
   region: 'africa',
   country: 'Tanzania',
-  title: 'Best Market Research Companies in Tanzania (2026 Guide) | BioNixus',
+  title: 'Top Market Research Companies in Tanzania 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading market research companies in Tanzania — healthcare, pharmaceutical, consumer, and strategic research firms compared by capability for this key East Africa hub.',
+    'Independent 2026 guide to the leading market research companies in Tanzania — healthcare, pharmaceutical, consumer, and strategic research firms compared.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-tanzania-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-tanzania-2026' },
@@ -246,7 +246,7 @@ export const tanzaniaGeneralEn: CountryListicleConfig = {
     { to: '/contact', label: 'Request a Tanzania Research Proposal' },
   ],
   cta: {
-    title: 'Plan Market Research in Tanzania',
+    title: 'Plan Market Research in Tanzania | BioNixus',
     body: 'BioNixus delivers custom market research across Tanzania and the wider East Africa region — primary research, consumer insights, healthcare and pharmaceutical studies, competitive intelligence, and EAC regional analysis.',
     button: 'Request a Proposal',
     to: '/contact',

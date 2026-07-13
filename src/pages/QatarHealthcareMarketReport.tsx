@@ -114,8 +114,8 @@ const QatarHealthcareMarketReport = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <SEOHead
-        title="Qatar Healthcare Market Report 2026 | Pharma, HTA & Market Access Intelligence | BioNixus"
-        description="Qatar healthcare market at USD 8.5–10B in 2026. Pharmaceutical market (USD 1B), HMC formulary access, Qatar HTA framework, therapy area analysis, and primary HCP research from BioNixus."
+        title="Qatar Healthcare Market Report 2026 | BioNixus"
+        description="Qatar healthcare market at USD 8.5–10B in 2026. Pharmaceutical market (USD 1B), HMC formulary access, Qatar HTA framework, therapy area analysis, and."
         canonical="https://www.bionixus.com/qatar-healthcare-market-report"
         jsonLd={jsonLd}
       />

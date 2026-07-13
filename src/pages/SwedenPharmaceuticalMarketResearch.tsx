@@ -124,8 +124,8 @@ export default function SwedenPharmaceuticalMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Pharmaceutical Market Research Company in Sweden | Läkemedelsverket & TLV Aligned | BioNixus"
-        description="BioNixus is a pharmaceutical market research company in Sweden — TLV-aligned HCP surveys, KOL mapping, NT Council payer research, regional formulary studies, and ethics-authority-compliant market access evidence."
+        title="Pharmaceutical Market Research Company in Sweden | BioNixus"
+        description="BioNixus is a pharmaceutical market research company in Sweden — TLV-aligned HCP surveys, KOL mapping, NT Council payer research, regional formulary."
         canonical="/pharmaceutical-market-research-sweden"
         jsonLd={jsonLd}
       />

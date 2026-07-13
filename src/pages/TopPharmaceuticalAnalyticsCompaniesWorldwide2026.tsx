@@ -237,8 +237,8 @@ export default function TopPharmaceuticalAnalyticsCompaniesWorldwide2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Pharmaceutical Analytics Companies Worldwide (2026) | BioNixus"
-        description="Leading pharmaceutical analytics companies ranked for 2026 — commercial analytics, predictive modelling, market access analytics, and RWE analytics compared."
+        title="Top Pharmaceutical Analytics Companies Worldwide | BioNixus"
+        description="Leading pharmaceutical analytics companies ranked for 2026 — commercial analytics, predictive modelling, market access analytics, and RWE analytics."
         image="https://www.bionixus.com/og-image.png"
         url={CANONICAL}
         type="article"

@@ -251,8 +251,8 @@ export default function TopMarketResearchCompaniesAustralia2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Market Research Companies in Australia 2026 | BioNixus Ranked #1"
-        description="Top market research companies in Australia 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. TGA-aligned HCP surveys, KOL mapping, and PBS payer research."
+        title="Top Market Research Companies in Australia 2026 | BioNixus"
+        description="Top market research companies in Australia 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. TGA-aligned HCP surveys, KOL mapping, and."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}
         type="article"

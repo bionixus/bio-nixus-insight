@@ -76,8 +76,8 @@ export default function HealthcareMarketResearchSouthKorea() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Market Research Company in South Korea | MFDS & HIRA Aligned | BioNixus"
-        description="BioNixus is a healthcare market research company in South Korea — Korean-language HCP surveys, payer landscape analysis, KOL mapping at Korea Big 5 hospitals, and health outcomes research aligned with MFDS, HIRA, and NHIS requirements."
+        title="Healthcare Market Research Company in South Korea | BioNixus"
+        description="BioNixus is a healthcare market research company in South Korea — Korean-language HCP surveys, payer landscape analysis, KOL mapping at Korea Big 5."
         canonical="/healthcare-market-research-south-korea"
         jsonLd={jsonLd}
       />

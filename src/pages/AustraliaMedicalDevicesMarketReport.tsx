@@ -92,8 +92,8 @@ const AustraliaMedicalDevicesMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="Australia Medical Devices Market Report 2026 | TGA ARTG, Prostheses List & MSAC | BioNixus"
-      description="Australia medical devices market at USD 10B in 2026. TGA ARTG registration, Prostheses List reimbursement reforms, MSAC health technology assessment, Access Consortium, and BioNixus GCC expansion intelligence."
+      title="Australia Medical Devices Market Report 2026 | BioNixus"
+      description="Australia medical devices market at USD 10B in 2026. TGA ARTG registration, Prostheses List reimbursement reforms, MSAC health technology assessment."
       canonical="https://www.bionixus.com/australia-medical-devices-market-report"
       jsonLd={jsonLd}
     />

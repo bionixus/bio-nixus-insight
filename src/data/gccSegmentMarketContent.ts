@@ -54,7 +54,7 @@ const genericInjectables: GccSegmentContent = {
   segmentLabel: 'Generic Injectables',
   title: 'GCC Generic Injectables Market Research & Intelligence | BioNixus',
   description:
-    'GCC generic injectables market intelligence — hospital tender dynamics, NUPCO and Rafed procurement, localization mandates, and biosimilar injectable adoption across Saudi Arabia, UAE, and the Gulf. BioNixus market research.',
+    'GCC generic injectables market intelligence — hospital tender dynamics, NUPCO and Rafed procurement, localization mandates, and biosimilar injectable.',
   canonical: `${BASE}/gcc-generic-injectables-market`,
   h1: 'GCC Generic Injectables Market: Research & Commercial Intelligence',
   intro: [
@@ -206,7 +206,7 @@ const genericInjectables: GccSegmentContent = {
     {
       audience: 'Hospital pharmacy & procurement committees',
       description:
-        'Chief pharmacists, formulary committee members, and procurement leads who score tenders on price, quality, and supply reliability.',
+        'Chief pharmacists, formulary committee members, and procurement leads who score tenders on price, quality, and supply reliability. Proposal in 24 hours.',
     },
     {
       audience: 'Oncologists, haematologists & intensivists',
@@ -221,7 +221,7 @@ const genericInjectables: GccSegmentContent = {
     {
       audience: 'Distributors & local manufacturers',
       description:
-        'In-market partners and domestic producers whose footprint and registration status determine tender eligibility and win probability.',
+        'In-market partners and domestic producers whose footprint and registration status determine tender eligibility and win probability. Proposal in 24 hours.',
     },
     {
       audience: 'Quality & regulatory affairs teams',
@@ -231,7 +231,7 @@ const genericInjectables: GccSegmentContent = {
     {
       audience: 'Distribution & cold-chain logistics partners',
       description:
-        'In-market distributors and cold-chain logistics providers whose serialization readiness and delivery reliability affect tender scoring and hospital receiving audits.',
+        'In-market distributors and cold-chain logistics providers whose serialization readiness and delivery reliability affect tender scoring and hospital.',
     },
   ],
   whyBionixus: [
@@ -308,9 +308,9 @@ const genericInjectables: GccSegmentContent = {
 const pharmacy: GccSegmentContent = {
   slug: 'gcc-pharmacy-market',
   segmentLabel: 'Pharmacy',
-  title: 'GCC Pharmacy Market Research — Retail, E-Pharmacy & Community | BioNixus',
+  title: 'GCC Pharmacy Market Research — Retail, E-Pharmacy | BioNixus',
   description:
-    'GCC pharmacy market intelligence — retail chains (Nahdi, Al-Dawaa, Life, Aster), e-pharmacy growth, Wasfaty dispensing, pharmacist scope, and OTC category dynamics across Saudi Arabia, UAE, and the Gulf. BioNixus market research.',
+    'GCC pharmacy market intelligence — retail chains (Nahdi, Al-Dawaa, Life, Aster), e-pharmacy growth, Wasfaty dispensing, pharmacist scope, and OTC category.',
   canonical: `${BASE}/gcc-pharmacy-market`,
   h1: 'GCC Pharmacy Market: Retail, E-Pharmacy & Community Intelligence',
   intro: [
@@ -463,12 +463,12 @@ const pharmacy: GccSegmentContent = {
     {
       audience: 'Community & chain pharmacists',
       description:
-        'Front-line pharmacists whose recommendations drive OTC, switch, and chronic-care purchases across Gulf retail.',
+        'Front-line pharmacists whose recommendations drive OTC, switch, and chronic-care purchases across Gulf retail. Proposal in 24 hours.',
     },
     {
       audience: 'Pharmacy shoppers & patients',
       description:
-        'Consumers and patients making self-care and prescription decisions across physical and digital pharmacy.',
+        'Consumers and patients making self-care and prescription decisions across physical and digital pharmacy. Proposal in 24 hours.',
     },
     {
       audience: 'Chain category & trade buyers',
@@ -565,9 +565,9 @@ const pharmacy: GccSegmentContent = {
 const clinicalTrials: GccSegmentContent = {
   slug: 'gcc-clinical-trials-market',
   segmentLabel: 'Clinical Trials',
-  title: 'GCC Clinical Trials Market — Site Feasibility & Landscape Research | BioNixus',
+  title: 'GCC Clinical Trials Market — Site Feasibility | BioNixus',
   description:
-    'GCC clinical trials market intelligence — SFDA regulation, site feasibility, investigator and KOL mapping, patient recruitment, and the Gulf genome programmes across Saudi Arabia, UAE, and Qatar. BioNixus research.',
+    'GCC clinical trials market intelligence — SFDA regulation, site feasibility, investigator and KOL mapping, patient recruitment, and the Gulf genome.',
   canonical: `${BASE}/gcc-clinical-trials-market`,
   h1: 'GCC Clinical Trials Market: Feasibility & Landscape Intelligence',
   intro: [
@@ -823,9 +823,9 @@ const clinicalTrials: GccSegmentContent = {
 const personalizedMedicine: GccSegmentContent = {
   slug: 'gcc-personalized-medicine-market',
   segmentLabel: 'Personalized Medicine',
-  title: 'GCC Personalized Medicine Market — Genomics & Precision Research | BioNixus',
+  title: 'GCC Personalized Medicine Market — Genomics | BioNixus',
   description:
-    'GCC personalized medicine market intelligence — the Saudi, Emirati, and Qatar genome programmes, precision oncology, companion diagnostics, biomarker testing, and pharmacogenomics. BioNixus market research.',
+    'GCC personalized medicine market intelligence — the Saudi, Emirati, and Qatar genome programmes, precision oncology, companion diagnostics, biomarker.',
   canonical: `${BASE}/gcc-personalized-medicine-market`,
   h1: 'GCC Personalized Medicine Market: Genomics & Precision Intelligence',
   intro: [
@@ -1081,9 +1081,9 @@ const personalizedMedicine: GccSegmentContent = {
 const biopharmaceuticals: GccSegmentContent = {
   slug: 'gcc-biopharmaceuticals-market',
   segmentLabel: 'Biopharmaceuticals',
-  title: 'GCC Biopharmaceuticals Market — Biologics & Localization Research | BioNixus',
+  title: 'GCC Biopharmaceuticals Market — Biologics | BioNixus',
   description:
-    'GCC biopharmaceuticals market intelligence — biologics access, biosimilar substitution, local biomanufacturing (Lifera, NUPCO localization), and specialty-therapy uptake across Saudi Arabia, UAE, and the Gulf. BioNixus research.',
+    'GCC biopharmaceuticals market intelligence — biologics access, biosimilar substitution, local biomanufacturing (Lifera, NUPCO localization), and.',
   canonical: `${BASE}/gcc-biopharmaceuticals-market`,
   h1: 'GCC Biopharmaceuticals Market: Biologics & Localization Intelligence',
   intro: [
@@ -1258,7 +1258,7 @@ const biopharmaceuticals: GccSegmentContent = {
     {
       audience: 'Biomanufacturing zone operators & industrial partners',
       description:
-        'Zone operators and manufacturing partners at hubs such as KAEC, KIZAD, and Dubai Biotechnology & Research Park whose capacity underpins localization strategy.',
+        'Zone operators and manufacturing partners at hubs such as KAEC, KIZAD, and Dubai Biotechnology & Research Park whose capacity underpins localization.',
     },
     {
       audience: 'Cold-chain logistics & distribution partners',
@@ -1340,9 +1340,9 @@ const biopharmaceuticals: GccSegmentContent = {
 const genericPharmaceuticals: GccSegmentContent = {
   slug: 'gcc-generic-pharmaceuticals-market',
   segmentLabel: 'Generic Pharmaceuticals',
-  title: 'GCC Generic Pharmaceuticals Market Research & Intelligence | BioNixus',
+  title: 'GCC Generic Pharmaceuticals Market Research | BioNixus',
   description:
-    'GCC generic pharmaceuticals market intelligence — retail and hospital generics, Wasfaty and SFDA dynamics, substitution behaviour, localization, and tender competition across Saudi Arabia, UAE, and the Gulf.',
+    'GCC generic pharmaceuticals market intelligence — retail and hospital generics, Wasfaty and SFDA dynamics, substitution behaviour, localization, and.',
   canonical: `${BASE}/gcc-generic-pharmaceuticals-market`,
   h1: 'GCC Generic Pharmaceuticals Market: Research & Commercial Intelligence',
   intro: [

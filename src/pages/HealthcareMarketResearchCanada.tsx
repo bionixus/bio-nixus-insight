@@ -76,8 +76,8 @@ export default function HealthcareMarketResearchCanada() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Market Research Company in Canada | CADTH & Health Canada Aligned | BioNixus"
-        description="BioNixus is a healthcare market research company in Canada — IRB-compliant HCP surveys, payer landscape analysis, KOL mapping, and health outcomes research aligned with CADTH, Health Canada, and TCPS 2 requirements."
+        title="Healthcare Market Research Company in Canada | BioNixus"
+        description="BioNixus is a healthcare market research company in Canada — IRB-compliant HCP surveys, payer landscape analysis, KOL mapping, and health outcomes."
         canonical="/healthcare-market-research-canada"
         jsonLd={jsonLd}
       />
