@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
- * Walk public HTML files and inject favicon / apple-touch link tags when missing.
+ * Walk public HTML files and normalize favicon / apple-touch link tags to the
+ * current cache-busted snippet from lib/faviconHead.js.
  * Skips fragments without a head element. Safe to run repeatedly (idempotent).
  *
  * Wired as a prebuild step so every production build ships favicons on all
