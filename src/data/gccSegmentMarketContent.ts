@@ -1334,12 +1334,181 @@ const biopharmaceuticals: GccSegmentContent = {
   ],
 };
 
+/* ------------------------------------------------------------------ */
+/* 6. GCC Generic Pharmaceuticals Market                               */
+/* ------------------------------------------------------------------ */
+const genericPharmaceuticals: GccSegmentContent = {
+  slug: 'gcc-generic-pharmaceuticals-market',
+  segmentLabel: 'Generic Pharmaceuticals',
+  title: 'GCC Generic Pharmaceuticals Market Research & Intelligence | BioNixus',
+  description:
+    'GCC generic pharmaceuticals market intelligence — retail and hospital generics, Wasfaty and SFDA dynamics, substitution behaviour, localization, and tender competition across Saudi Arabia, UAE, and the Gulf.',
+  canonical: `${BASE}/gcc-generic-pharmaceuticals-market`,
+  h1: 'GCC Generic Pharmaceuticals Market: Research & Commercial Intelligence',
+  intro: [
+    'The GCC generic pharmaceuticals market spans retail solid oral dose, hospital generics, and tender-driven therapeutic substitution — a wider arena than sterile injectables alone. BioNixus researches pharmacist substitution, physician brand loyalty, Wasfaty and insurance formularies, and central procurement rules so originators and generic houses can forecast share with field evidence.',
+    'Search demand for “GCC generic pharmaceuticals market” needs channel structure and policy levers, not a recycled injectables brief. We treat retail chronic care, hospital oral/solid dose, and framework awards as distinct decision cells, then triangulate primary interviews against public procurement signals.',
+  ],
+  researchTopics: [
+    {
+      name: 'Retail substitution & pharmacist behaviour',
+      detail:
+        'How community pharmacists switch originator chronic brands under Wasfaty, insurance, and patient OOP pressure.',
+    },
+    {
+      name: 'Hospital oral / solid-dose tender research',
+      detail:
+        'NUPCO and MOH award criteria for non-injectable generics — price, supply, and ICV weighting.',
+    },
+    {
+      name: 'Physician brand-loyalty studies',
+      detail:
+        'Where clinicians resist substitution (narrow therapeutic index, chronic specialty) versus where they accept generics.',
+    },
+    {
+      name: 'Localization & domestic manufacturer mapping',
+      detail:
+        'Saudi and UAE local producers’ competitive impact on imported generics portfolios.',
+    },
+    {
+      name: 'Originator defence modules',
+      detail:
+        'Patient-support, device, and quality narratives that retain share after patent expiry.',
+    },
+    {
+      name: 'Channel & pricing intelligence',
+      detail:
+        'Retail versus tender net-price dynamics and distributor role in pull-through.',
+    },
+  ],
+  demandDrivers: {
+    heading: 'What is driving GCC generic pharmaceuticals demand',
+    drivers: [
+      {
+        title: 'Cost-containment and insurance formularies',
+        detail: 'Payers and Wasfaty-like systems push chronic volumes toward generics.',
+      },
+      {
+        title: 'Localization policy',
+        detail: 'Domestic manufacturing preferences reshape which houses win volume.',
+      },
+      {
+        title: 'Patent and exclusivity cliffs',
+        detail: 'Wave timing determines when competitive sets open in each market.',
+      },
+      {
+        title: 'Hospital framework awards',
+        detail: 'Central procurement still sets institutional generic floors.',
+      },
+      {
+        title: 'Retail chain consolidation',
+        detail: 'Pharmacy chains standardize private-label and preferred generic lists.',
+      },
+      {
+        title: 'Quality perception gaps',
+        detail: 'Clinician and patient trust remains a brake — researched molecule by molecule.',
+      },
+    ],
+  },
+  marketStructure: {
+    heading: 'How the GCC generics market is structured',
+    paragraphs: [
+      'Retail chronic care, hospital oral generics, and sterile injectables are related but not identical games. Injectables remain tender- and hospital-led; many oral chronic brands are retail- and insurance-led. BioNixus scopes modules to the channel that owns your P&L question and links to the dedicated injectables page when sterile tenders dominate.',
+      'SFDA registration, Gulf Health Council arrangements, and country reimbursement rules create six-market variation under a shared “GCC” label. Side-by-side country cells keep forecasts honest.',
+    ],
+  },
+  countrySignals: [
+    {
+      country: 'Saudi Arabia',
+      signal:
+        'Wasfaty, SFDA, and NUPCO frameworks jointly shape chronic and hospital generic volumes; ICV increasingly matters.',
+    },
+    {
+      country: 'United Arab Emirates',
+      signal:
+        'Insurance formularies and private hospital groups drive much retail and institutional generic mix.',
+    },
+    {
+      country: 'Kuwait',
+      signal:
+        'MOH tendering and hospital pharmacies remain decisive for institutional generics.',
+    },
+    {
+      country: 'Qatar',
+      signal:
+        'Public procurement concentration with growing private specialty demand.',
+    },
+    {
+      country: 'Oman',
+      signal:
+        'MOH-centric purchasing with localization and supply-security scoring rising.',
+    },
+    {
+      country: 'Bahrain',
+      signal:
+        'NHRA registration and compact hospital network shape faster substitution cycles.',
+    },
+  ],
+  audiences: [
+    {
+      audience: 'Community & hospital pharmacists',
+      description: 'Substitution decision owners in retail and institutional settings.',
+    },
+    {
+      audience: 'Prescribing physicians',
+      description: 'Specialists and GPs whose brand loyalty slows or accelerates generic uptake.',
+    },
+    {
+      audience: 'Payers & tender bodies',
+      description: 'NUPCO, insurers, and MOH stakeholders setting formulary floors.',
+    },
+    {
+      audience: 'Local manufacturers & distributors',
+      description: 'Partners whose footprint and registration status decide win probability.',
+    },
+  ],
+  whyBionixus: [
+    'Specialist healthcare and pharmaceutical research — not a generalist FMCG panel',
+    'Pharmacist, physician, and tender panels across Saudi Arabia, UAE, and the GCC',
+    'Separate retail vs hospital vs injectable research designs',
+    'Working knowledge of Wasfaty, SFDA, NUPCO, and Gulf insurance formularies',
+    'Bilingual Arabic–English fieldwork with clinically validated instruments',
+    '15+ years of healthcare research experience across 38 countries',
+  ],
+  relatedLinks: [
+    { to: '/gcc-generic-injectables-market', label: 'GCC Generic Injectables Market' },
+    { to: '/gcc-pharmacy-market', label: 'GCC Pharmacy Market' },
+    { to: '/gcc-biopharmaceuticals-market', label: 'GCC Biopharmaceuticals Market' },
+    { to: '/gcc-pharma-market-report-2026', label: 'GCC Pharmaceutical Market Report 2026' },
+    { to: '/healthcare-market-research', label: 'Healthcare market research services' },
+    { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Market research Saudi Arabia pharmaceutical' },
+  ],
+  faqs: [
+    {
+      question: 'How big is the GCC generic pharmaceuticals market?',
+      answer:
+        'Generics account for a large share of GCC pharmaceutical packs and a rising share of tenders, but value concentration differs by channel and molecule. BioNixus sizes categories from primary channel and tender research rather than publishing one unverifiable regional total.',
+    },
+    {
+      question: 'How is this different from GCC generic injectables?',
+      answer:
+        'Injectables are hospital- and tender-led sterile products. The generic pharmaceuticals page covers the broader oral/retail and multi-channel generics arena, with cross-links where sterile tender dynamics dominate.',
+    },
+    {
+      question: 'Does localization affect generic competition in the Gulf?',
+      answer:
+        'Yes. Saudi Arabia and the UAE increasingly reward domestic manufacturing with tender and formulary preference, changing win probability for imported generics houses.',
+    },
+  ],
+};
+
 export const GCC_SEGMENT_CONTENT: Record<string, GccSegmentContent> = {
   [genericInjectables.slug]: genericInjectables,
   [pharmacy.slug]: pharmacy,
   [clinicalTrials.slug]: clinicalTrials,
   [personalizedMedicine.slug]: personalizedMedicine,
   [biopharmaceuticals.slug]: biopharmaceuticals,
+  [genericPharmaceuticals.slug]: genericPharmaceuticals,
 };
 
 export const GCC_SEGMENT_SLUGS = Object.keys(GCC_SEGMENT_CONTENT);

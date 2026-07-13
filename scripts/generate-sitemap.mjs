@@ -19,6 +19,7 @@ import {
   BLOG_LEGACY_FULL_PATH_REDIRECTS,
 } from '../blog-legacy-redirects.mjs';
 import { getIndustryMatrixSitemapPages } from './data/industry-matrix-sitemap.mjs';
+import { getSpecialtyMarketDemandSitemapPages } from './data/specialty-market-demand-sitemap.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
@@ -396,6 +397,7 @@ const staticPages = [
   { path: '/gcc-biopharmaceuticals-market', priority: '0.86', changefreq: 'monthly' },
   { path: '/gcc-clinical-trials-market', priority: '0.86', changefreq: 'monthly' },
   { path: '/gcc-generic-injectables-market', priority: '0.86', changefreq: 'monthly' },
+  { path: '/gcc-generic-pharmaceuticals-market', priority: '0.86', changefreq: 'monthly' },
   { path: '/gcc-medical-devices-market-report', priority: '0.87', changefreq: 'monthly' },
   { path: '/gcc-personalized-medicine-market', priority: '0.86', changefreq: 'monthly' },
   { path: '/gcc-pharmacy-market', priority: '0.86', changefreq: 'monthly' },
@@ -708,6 +710,9 @@ function buildStaticRoutes() {
     if (!isSitemapRedirectSourcePath(page.path)) routes.push(page);
   }
   for (const page of getIndustryMatrixSitemapPages()) {
+    if (!isSitemapRedirectSourcePath(page.path)) routes.push(page);
+  }
+  for (const page of getSpecialtyMarketDemandSitemapPages()) {
     if (!isSitemapRedirectSourcePath(page.path)) routes.push(page);
   }
   // Country detail pages under Global Websites

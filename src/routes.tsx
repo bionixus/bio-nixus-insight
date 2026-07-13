@@ -36,6 +36,7 @@ import MarketResearch from '@/pages/MarketResearch';
 import MarketResearchByIndustry from '@/pages/MarketResearchByIndustry';
 import { buildIndustryMatrixRoutes } from '@/data/industryMatrixRoutes';
 import { buildDevelopedMarketMedtechRoutes } from '@/data/developedMarketMedtechRoutes';
+import { buildSpecialtyMarketDemandRoutes } from '@/data/specialtyMarketDemandRoutes';
 import BionixusIndustries from '@/pages/industries/BionixusIndustries';
 import BionixusIndustriesInsights from '@/pages/industries/BionixusIndustriesInsights';
 import IndustrySegmentPage from '@/pages/industries/IndustrySegmentPage';
@@ -271,6 +272,7 @@ import FrancePharmaceuticalMarketResearch from '@/pages/FrancePharmaceuticalMark
 import GccBiopharmaceuticalsMarket from '@/pages/market-research-gcc/GccBiopharmaceuticalsMarket';
 import GccClinicalTrialsMarket from '@/pages/market-research-gcc/GccClinicalTrialsMarket';
 import GccGenericInjectablesMarket from '@/pages/market-research-gcc/GccGenericInjectablesMarket';
+import GccGenericPharmaceuticalsMarket from '@/pages/market-research-gcc/GccGenericPharmaceuticalsMarket';
 import GccPersonalizedMedicineMarket from '@/pages/market-research-gcc/GccPersonalizedMedicineMarket';
 import GccPharmacyMarket from '@/pages/market-research-gcc/GccPharmacyMarket';
 import GermanyPharmaceuticalMarketResearch from '@/pages/GermanyPharmaceuticalMarketResearch';
@@ -657,6 +659,7 @@ export const routes: RouteObject[] = [
   { path: '/b2c-industries', element: <IndustrySegmentPage slug="b2c" /> },
   ...buildIndustryMatrixRoutes(),
   ...buildDevelopedMarketMedtechRoutes(),
+  ...buildSpecialtyMarketDemandRoutes(),
   { path: '/admin/dashboard', element: suspensePage(<AdminDashboard />) },
   { path: '/admin/login', element: suspensePage(<AdminLogin />) },
   { path: '/admin/import-subscribers', element: suspensePage(<AdminImportSubscribers />) },
@@ -684,6 +687,7 @@ export const routes: RouteObject[] = [
   { path: '/gcc-biopharmaceuticals-market', element: <GccBiopharmaceuticalsMarket /> },
   { path: '/gcc-clinical-trials-market', element: <GccClinicalTrialsMarket /> },
   { path: '/gcc-generic-injectables-market', element: <GccGenericInjectablesMarket /> },
+  { path: '/gcc-generic-pharmaceuticals-market', element: <GccGenericPharmaceuticalsMarket /> },
   { path: '/gcc-personalized-medicine-market', element: <GccPersonalizedMedicineMarket /> },
   { path: '/gcc-pharmacy-market', element: <GccPharmacyMarket /> },
   { path: '/healthcare-market-research-australia', element: <HealthcareMarketResearchAustralia /> },
