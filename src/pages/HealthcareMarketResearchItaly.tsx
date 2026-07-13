@@ -48,6 +48,11 @@ const faqItems = [
     answer:
       'Yes. Italian modules can run with comparable cells in Germany, France, Spain, and the UK — and beyond to the USA, Canada, Japan, and other markets — using consistent instruments for global portfolio committees managing EU5 and multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How does AIFA biosimilar policy affect healthcare market research in Italy?',
+    answer:
+      'AIFA publishes national biosimilar switching policies and regional SSR PT adoption rules that shape physician confidence and hospital formulary behaviour. BioNixus Italy programmes quantify substitution intent, nota limitativa compliance, and IRCCS committee dynamics so originator and biosimilar teams align medical and access narratives before AIFA CPR negotiations and regional PT listings.',
+  },
 ];
 
 const jsonLd = [

@@ -215,6 +215,14 @@ const GccMarketAccessGuide = () => {
                 name: 'What is the GCC centralised registration procedure?',
                 acceptedAnswer: { '@type': 'Answer', text: 'The GCC Centralised Registration Procedure allows pharmaceutical companies to submit a single application reviewed by one GCC country, with the registration recognised by other GCC states. However, individual country-level pricing and import procedures still apply separately.' },
               },
+              {
+                '@type': 'Question',
+                name: 'What is the SFDA Economic Evaluation Submission (EES) pathway in Saudi Arabia?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'SFDA Economic Evaluation Submission (EES) formalises cost-effectiveness and budget-impact requirements for selected innovative medicines before national pricing and NUPCO tender eligibility. Teams align clinical dossiers, comparator choices, and pharmacoeconomic models to SFDA EES guidance in parallel with scientific-office registration timelines.',
+                },
+              },
             ],
           })}
         </script>
@@ -655,6 +663,10 @@ const GccMarketAccessGuide = () => {
                 {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
+                },
+                {
+                  q: 'What is the SFDA Economic Evaluation Submission (EES) pathway in Saudi Arabia?',
+                  a: 'SFDA\'s Economic Evaluation Submission (EES) pathway formalises cost-effectiveness and budget-impact requirements for selected innovative medicines before national pricing and NUPCO tender eligibility. Teams must align clinical dossiers, comparator choices, and pharmacoeconomic models to SFDA EES guidance — often in parallel with scientific-office registration timelines. BioNixus runs payer and physician research to stress-test value narratives before EES submission and NUPCO committee review.',
                 },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">

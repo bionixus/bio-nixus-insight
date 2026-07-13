@@ -48,6 +48,11 @@ const faqItems = [
     answer:
       'Yes. New Zealand modules can run with comparable cells in the USA, UK, EU5 (Germany, France, Italy, Spain), Canada, Japan, Singapore, South Korea, and Australia — using consistent instruments for global portfolio committees managing multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How does PHARMAC Factors for Consideration shape New Zealand healthcare market research?',
+    answer:
+      'PHARMAC applies a nine-factor Factors for Consideration framework when assessing Pharmaceutical Schedule funding — clinical benefit, health need, cost-effectiveness, budget impact, and equity each carry distinct evidence requirements. BioNixus New Zealand studies map physician prescribing intent, PTAC deliberation themes, and regional Te Whatu Ora formulary behaviour so access teams prepare Medsafe and PHARMAC submissions with payer-aligned narratives.',
+  },
 ];
 
 const jsonLd = [

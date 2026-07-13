@@ -17,7 +17,7 @@ import { ReportPremiumHero, ReportPremiumSection } from '@/components/report-pre
 const pageUrl = 'https://www.bionixus.com/gcc-pharmaceutical-market-research';
 const REPORT_CONVERSION = getStandaloneReportConfig('/gcc-pharmaceutical-market-research');
 
-const PAGE_TITLE = 'GCC Biologics & Generic Injectables Market 2026 | BioNixus';
+const PAGE_TITLE = 'GCC Pharmaceutical Market Research 2026 | Biologics & NUPCO | BioNixus';
 const PAGE_H1 =
   'GCC Biologics & Generic Injectables Market Research 2026 — Precision Medicine & Drug Repurposing';
 const PAGE_DESCRIPTION =
@@ -53,6 +53,11 @@ const FAQ_ITEMS = [
     question: 'Which GCC therapy areas drive the most pharma growth in 2026?',
     answer:
       'In 2026, the fastest-growing GCC therapy areas are oncology, diabetes and obesity (GLP-1 driven), rare disease, immunology, and cardiovascular. Saudi Arabia and the UAE concentrate the bulk of innovative-medicine spend, while Kuwait and Qatar prioritize tendered generic and hospital-administered portfolios.',
+  },
+  {
+    question: 'How does NUPCO tendering affect GCC generic injectables and biosimilar uptake in Saudi Arabia?',
+    answer:
+      'NUPCO centralized tendering determines which hospital-administered generics and biosimilars reach MOH, NGHA, and military networks at scale in Saudi Arabia. SFDA approval alone does not guarantee uptake — products must win NUPCO price corridors and tender windows. BioNixus tracks tender calendars, post-award switching behaviour, and physician confidence after interchangeability guidance so launch and defence teams align medical, access, and commercial narratives before committee season.',
   },
 ];
 
