@@ -93,7 +93,8 @@ const serviceData: Record<string, ServiceData> = {
       'Pricing and reimbursement strategy development',
       'Payer research and willingness-to-pay studies',
       'Value dossier and economic model development',
-      'Cost-effectiveness and budget impact analysis',
+      'Budget impact analysis and cost-effectiveness analysis for GCC/Saudi submissions',
+      'HTA dossier preparation for SFDA',
       'Formulary and tender strategy for GCC hospital systems',
       'Reimbursement landscape modelling',
       'Market access stakeholder mapping',
@@ -272,6 +273,11 @@ const ServiceDetail = () => {
                     title: 'Linked healthcare hub',
                     description:
                       'Country-level market research programmes via the healthcare market research hub and GCC pharmaceutical market reports.',
+                  },
+                  {
+                    title: 'Saudi HEOR pillars',
+                    description:
+                      'Dedicated Saudi Arabia pages for budget impact analysis, cost-effectiveness analysis, HTA studies, and payer market access research — the four evidence pillars SFDA\'s Economic Evaluation System requires, scoped as one coordinated program via HEOR consulting Saudi Arabia.',
                   },
                 ]}
                 summary="Request a market access proposal through BioNixus contact — scoped to your target EMEA and GCC markets."
