@@ -342,7 +342,7 @@ const BlogSection = ({
         {showViewAllLink ? (
           <div className="text-center mt-12 sr sr-up">
             <Link
-              to="/blog"
+              to={blogBasePath}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors duration-200 cursor-pointer shimmer"
             >
               {t.blog.readMoreArticles}
