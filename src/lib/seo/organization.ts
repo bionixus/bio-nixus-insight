@@ -36,6 +36,9 @@ export const ORG_KNOWS_ABOUT = [
   'Quantitative physician research',
   'Qualitative healthcare research',
   'Health economics and outcomes research',
+  'Budget Impact Analysis',
+  'Cost-Effectiveness Analysis',
+  'Health Technology Assessment',
   'Competitive intelligence',
   'Consumer health and FMCG market research',
   'Financial services market research',
@@ -79,6 +82,14 @@ export const ORG_KNOWS_ABOUT = [
   'Healthcare market research Ireland',
   'HPRA market research',
   'NCPE cost-effectiveness research',
+  'Pharmaceutical market research Saudi Arabia',
+  'Healthcare market research Saudi Arabia',
+  'SFDA market access research',
+  'NCEHTA health technology assessment research',
+  'Pharmaceutical market research Egypt',
+  'Healthcare market research Egypt',
+  'EDA market research',
+  'Egypt market access research',
 ];
 
 /** Global reach with explicit deep-fingerprint regions and countries. */
