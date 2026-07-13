@@ -1231,6 +1231,490 @@ const febrileNeutropenia: SpecialtyMarketDemandContent = {
   priority: 'next',
 };
 
+/* ------------------------------------------------------------------ */
+/* LATER                                                              */
+/* ------------------------------------------------------------------ */
+
+const italyPortableDiagnostics: SpecialtyMarketDemandContent = {
+  slug: 'italy-portable-diagnostic-devices-market',
+  segmentLabel: 'Italy Portable Diagnostic Devices',
+  badge: 'Italy · Portable Diagnostics',
+  breadcrumbLabel: 'Italy Portable Diagnostic Devices Market',
+  title: 'Italy Portable Diagnostic Devices Market Research | BioNixus',
+  description:
+    'Italy portable diagnostic devices market research — POCT adoption, hospital and community laboratory pathways, AIFA/notified-body context, and procurement intelligence from BioNixus.',
+  canonical: `${BASE}/italy-portable-diagnostic-devices-market`,
+  h1: 'Italy Portable Diagnostic Devices Market: POCT & Adoption Intelligence',
+  intro: [
+    'Italy’s portable diagnostic devices market is shaped by hospital POCT programmes, community laboratory networks, and regional procurement rules more than retail gadget demand. BioNixus researches laboratory directors, emergency and ward clinicians, and ASL/hospital buyers to show which handheld and near-patient platforms clear volume — and which remain pilots.',
+  ],
+  hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
+  researchTopics: [
+    { name: 'POCT programme mapping', detail: 'Where Italy hospitals authorize, train, and govern near-patient testing.' },
+    { name: 'Lab director adoption research', detail: 'Quality, connectivity, and reagent-contract barriers to scale.' },
+    { name: 'Clinical pathway interviews', detail: 'ED, ward, and ambulatory use cases that create real pull.' },
+    { name: 'Regional procurement signals', detail: 'How regional tenders and hospital groups score portable platforms.' },
+    { name: 'Competitive installed-base research', detail: 'Switch costs versus benchtop and central-lab alternatives.' },
+    { name: 'EU MDR / IVDR evidence needs', detail: 'Documentation and PMS expectations that affect Italy timelines.' },
+  ],
+  demandDrivers: {
+    heading: 'Demand drivers',
+    drivers: [
+      { title: 'ED and ward turnaround pressure', detail: 'Faster decisions favour near-patient panels when quality holds.' },
+      { title: 'Workforce constraints', detail: 'Staffing shortages raise interest in compact workflows.' },
+      { title: 'Regional lab consolidation', detail: 'Central labs reassess which tests stay decentralised.' },
+      { title: 'Chronic ambulatory monitoring', detail: 'Cardiometabolic and respiratory use cases expand beyond acute care.' },
+      { title: 'Reagent rental economics', detail: 'Total cost and throughput decide renewals more than list price.' },
+      { title: 'Connectivity expectations', detail: 'LIS/HIS integration is now a table-stakes evaluation criterion.' },
+    ],
+  },
+  marketStructure: {
+    heading: 'Structure',
+    paragraphs: [
+      'Portable diagnostics in Italy sit between laboratory governance and clinical urgency. BioNixus separates acute POCT, ambulatory programmes, and community pathways so manufacturers do not average incompatible buyer sets.',
+    ],
+  },
+  audiences: [
+    { audience: 'Laboratory directors', description: 'Quality and method-validation gatekeepers.' },
+    { audience: 'ED / ward clinical leads', description: 'Pathway owners who create ordering pull.' },
+    { audience: 'Hospital / ASL procurement', description: 'Contract and tender decision makers.' },
+    { audience: 'IT / connectivity owners', description: 'Integration and cybersecurity reviewers.' },
+  ],
+  whyBionixus: SHARED_WHY,
+  relatedLinks: [
+    { to: '/italy-clinical-trials-market', label: 'Italy clinical trials market' },
+    { to: '/italy-medical-device-connectivity-market', label: 'Italy medical device connectivity market' },
+    { to: '/italy-medtech-market-research', label: 'Italy MedTech market research' },
+    { to: '/clinical-diagnostics-market-research', label: 'Clinical diagnostics market research' },
+    { to: '/pharmaceutical-market-research-italy', label: 'Pharmaceutical market research Italy' },
+    { to: '/healthcare-market-research-italy', label: 'Healthcare market research Italy' },
+  ],
+  faqs: [
+    {
+      question: 'What is the Italy portable diagnostic devices market?',
+      answer:
+        'Near-patient and handheld diagnostic platforms used in hospitals, ambulatory settings, and selected community pathways — researched through laboratory, clinical, and procurement stakeholders rather than consumer gadget panels.',
+    },
+  ],
+  areaServed: ['Italy'],
+  priority: 'later',
+};
+
+const italyDeviceConnectivity: SpecialtyMarketDemandContent = {
+  slug: 'italy-medical-device-connectivity-market',
+  segmentLabel: 'Italy Medical Device Connectivity',
+  badge: 'Italy · Digital Health / Connectivity',
+  breadcrumbLabel: 'Italy Medical Device Connectivity Market',
+  title: 'Italy Medical Device Connectivity & Digital Health Market Research | BioNixus',
+  description:
+    'Italy medical device connectivity and digital health market research — HIS/LIS integration, hospital microservices architectures, cybersecurity diligence, and buyer mapping from BioNixus.',
+  canonical: `${BASE}/italy-medical-device-connectivity-market`,
+  h1: 'Italy Medical Device Connectivity & Digital Health Market Intelligence',
+  intro: [
+    'Queries for “Italy medical device connectivity market” and “Italy microservices healthcare market” point to the same commercial gap: who funds, integrates, and greets connected devices inside Italian hospital IT stacks. BioNixus interviews CIOs, clinical engineering, cybersecurity, and department heads to test whether connectivity claims survive procurement and go-live.',
+  ],
+  hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
+  researchTopics: [
+    { name: 'HIS / LIS / PACS integration research', detail: 'What interfaces and middleware hospitals actually require.' },
+    { name: 'Microservices & architecture diligence', detail: 'How IT teams evaluate modular vs monolithic vendor stacks.' },
+    { name: 'Cybersecurity and GDPR review gates', detail: 'Evidence packs that unblock connected-device tenders.' },
+    { name: 'Clinical engineering workflows', detail: 'Uptime, patching, and fleet-management expectations.' },
+    { name: 'Department buying coalitions', detail: 'Who sponsors connectivity spend beyond the IT budget.' },
+    { name: 'Competitive objection libraries', detail: 'Why incumbents retain share after RFP shortlists.' },
+  ],
+  demandDrivers: {
+    heading: 'Demand drivers',
+    drivers: [
+      { title: 'Hospital digitalisation agendas', detail: 'National and regional digital health programmes raise integration expectations.' },
+      { title: 'Cybersecurity scrutiny', detail: 'Connected fleets face longer IT approval cycles.' },
+      { title: 'Staffing productivity pressure', detail: 'Automation and remote monitoring need clean data plumbing.' },
+      { title: 'Vendor consolidation', detail: 'Hospitals prefer fewer platforms with proven interfaces.' },
+      { title: 'MDR PMS / data obligations', detail: 'Post-market surveillance pushes better device data capture.' },
+      { title: 'Regional tender complexity', detail: 'Specifications increasingly include interoperability clauses.' },
+    ],
+  },
+  marketStructure: {
+    heading: 'Structure',
+    paragraphs: [
+      'Connectivity purchases are coalition buys across IT, clinical engineering, and clinical departments. BioNixus maps those coalitions and tests microservices/interoperability claims with the people who can veto go-live.',
+    ],
+  },
+  audiences: [
+    { audience: 'Hospital CIO / IT architecture', description: 'Integration and platform decision owners.' },
+    { audience: 'Cybersecurity leads', description: 'Gatekeepers for connected-device risk acceptance.' },
+    { audience: 'Clinical engineering', description: 'Fleet, uptime, and maintenance stakeholders.' },
+    { audience: 'Clinical department heads', description: 'Sponsors who create budget and workflow pull.' },
+  ],
+  whyBionixus: SHARED_WHY,
+  relatedLinks: [
+    { to: '/italy-portable-diagnostic-devices-market', label: 'Italy portable diagnostic devices market' },
+    { to: '/italy-clinical-trials-market', label: 'Italy clinical trials market' },
+    { to: '/italy-medtech-market-research', label: 'Italy MedTech market research' },
+    { to: '/healthcare-bioconvergence-market', label: 'Healthcare bioconvergence market' },
+    { to: '/healthcare-market-research-italy', label: 'Healthcare market research Italy' },
+    { to: '/japan-medical-device-market-access', label: 'Japan medical device market access' },
+  ],
+  faqs: [
+    {
+      question: 'What does Italy medical device connectivity research cover?',
+      answer:
+        'Primary research on how Italian hospitals evaluate device-to-HIS/LIS integration, microservices architectures, cybersecurity, and clinical go-live — the gates that decide whether connected MedTech actually deploys.',
+    },
+  ],
+  areaServed: ['Italy'],
+  priority: 'later',
+};
+
+const italyOncologyAntiInfectiveAccess: SpecialtyMarketDemandContent = {
+  slug: 'italy-oncology-antiinfective-market-access',
+  segmentLabel: 'Italy Oncology & Anti-infective Access',
+  badge: 'Italy · Oncology / Anti-infective Access',
+  breadcrumbLabel: 'Italy Oncology & Anti-infective Market Access',
+  title: 'Italy Oncology & Anti-infective Market Access Research | BioNixus',
+  description:
+    'Italy oncology and anti-infective market access research — Keytruda-class IO analogues, daptomycin-class hospital antibiotics, AIFA/regional pathways, and hospital formulary intelligence from BioNixus.',
+  canonical: `${BASE}/italy-oncology-antiinfective-market-access`,
+  h1: 'Italy Oncology & Anti-infective Market Access: AIFA, Hospital & Regional Intelligence',
+  intro: [
+    'Search interest in “Italy Keytruda market” and “Italy daptomycin market” is access intent: how IO and high-value hospital anti-infectives clear AIFA, regional, and hospital formulary gates. BioNixus runs oncologist, infectious-disease, hospital pharmacy, and access interviews so commercial teams see protocol share and funding friction separately — not as a single national average.',
+  ],
+  hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
+  researchTopics: [
+    { name: 'IO / Keytruda-class access mapping', detail: 'Indication sequencing, biomarker testing, and regional funding friction.' },
+    { name: 'Hospital antibiotic formulary research', detail: 'Daptomycin-class stewardship, substitution, and tender dynamics.' },
+    { name: 'AIFA and regional pathway interviews', detail: 'What evidence and negotiation realities shape listing timelines.' },
+    { name: 'Hospital P&T behaviour', detail: 'How pharmacy and clinical committees convert listing into protocol use.' },
+    { name: 'Competitive analogue libraries', detail: 'Messaging and objection themes in crowded IO and anti-infective sets.' },
+    { name: 'RWE expectations', detail: 'Local evidence requests that delay or accelerate uptake.' },
+  ],
+  demandDrivers: {
+    heading: 'Access drivers',
+    drivers: [
+      { title: 'Indication expansion waves', detail: 'New IO labels reopen sequencing debates hospital by hospital.' },
+      { title: 'Biomarker capacity', detail: 'Testing turnaround gates eligible patient pools.' },
+      { title: 'Antimicrobial stewardship', detail: 'ID and pharmacy policy shape anti-infective choice beyond price.' },
+      { title: 'Regional budget variation', detail: 'Italy’s regionalisation creates uneven access timing.' },
+      { title: 'Tender and net-price pressure', detail: 'Hospital purchasing compresses margins after list access.' },
+      { title: 'Combination regimens', detail: 'Partner-drug access can stall or unlock protocol share.' },
+    ],
+  },
+  marketStructure: {
+    heading: 'Structure',
+    paragraphs: [
+      'Oncology IO and hospital anti-infectives share high-cost scrutiny but different clinical governors — oncology networks versus stewardship committees. BioNixus scopes modules by class and decides whether national, regional, or account-level cells are needed.',
+    ],
+  },
+  audiences: [
+    { audience: 'Medical oncologists', description: 'IO sequencing and protocol decision owners.' },
+    { audience: 'Infectious disease & stewardship leads', description: 'Anti-infective policy gatekeepers.' },
+    { audience: 'Hospital pharmacists', description: 'Formulary and tender influencers.' },
+    { audience: 'Access / HEOR teams', description: 'AIFA and regional dossier owners.' },
+  ],
+  whyBionixus: SHARED_WHY,
+  relatedLinks: [
+    { to: '/mek-inhibitors-market', label: 'MEK inhibitors market access' },
+    { to: '/doxorubicin-market', label: 'Doxorubicin market access' },
+    { to: '/febrile-neutropenia-market', label: 'Febrile neutropenia market' },
+    { to: '/pharmaceutical-market-research-italy', label: 'Pharmaceutical market research Italy' },
+    { to: '/healthcare-market-research/therapy/oncology', label: 'Oncology market research' },
+    { to: '/italy-clinical-trials-market', label: 'Italy clinical trials market' },
+  ],
+  faqs: [
+    {
+      question: 'How does BioNixus research Italy Keytruda-class or daptomycin-class markets?',
+      answer:
+        'We run primary interviews with the clinical and formulary stakeholders who control protocol and funding decisions for the relevant class — IO oncology networks for checkpoint analogues; infectious-disease and hospital pharmacy for high-value anti-infectives — mapped to AIFA and regional access context.',
+    },
+  ],
+  areaServed: ['Italy'],
+  priority: 'later',
+};
+
+const gccFspMarket: SpecialtyMarketDemandContent = {
+  slug: 'gcc-functional-service-providers-market',
+  segmentLabel: 'GCC Functional Service Providers',
+  badge: 'GCC · Clinical Development / FSP',
+  breadcrumbLabel: 'GCC FSP Market',
+  title: 'GCC Functional Service Providers (FSP) Market Research | BioNixus',
+  description:
+    'GCC functional service providers market research — FSP vs full-service outsourcing, clinical operations capacity, sponsor buyer criteria, and Gulf trial delivery intelligence from BioNixus.',
+  canonical: `${BASE}/gcc-functional-service-providers-market`,
+  h1: 'GCC Functional Service Providers (FSP) Market: Sponsor & Delivery Intelligence',
+  intro: [
+    'The GCC functional service providers market sits at the intersection of rising Gulf clinical-trial ambition and sponsor preference for modular FSP models over full-service CROs. BioNixus researches sponsor clinical-operations leaders, site networks, and in-region delivery partners to show which FSP capabilities win Gulf assignments — monitoring, data management, medical writing, pharmacovigilance — and where full-service still dominates.',
+  ],
+  hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
+  researchTopics: [
+    { name: 'Sponsor outsourcing model research', detail: 'When Gulf programmes choose FSP vs full-service vs hybrid.' },
+    { name: 'Capability-by-function mapping', detail: 'Monitoring, DM, medical writing, PV, and biostat preferences.' },
+    { name: 'In-region delivery diligence', detail: 'Arabic capability, hospital access, and travel logistics as win themes.' },
+    { name: 'Site & investigator experience research', detail: 'How FSP CRA models feel to Gulf sites versus legacy CROs.' },
+    { name: 'Pricing and governance interviews', detail: 'What KPIs and governance sponsors demand from FSP partners.' },
+    { name: 'Competitive landscape briefs', detail: 'Global FSP brands vs regional specialists in Saudi Arabia and UAE.' },
+  ],
+  demandDrivers: {
+    heading: 'Demand drivers',
+    drivers: [
+      { title: 'Gulf trial volume growth', detail: 'More Phase II–IV and RWE programmes need flexible resourcing.' },
+      { title: 'Sponsor cost pressure', detail: 'FSP models promise utilisation control versus full-service lock-in.' },
+      { title: 'Localisation expectations', detail: 'Saudi and UAE programmes favour partners with in-market presence.' },
+      { title: 'Startup timeline scrutiny', detail: 'Site activation speed is a decisive selection criterion.' },
+      { title: 'Therapeutic specialisation', detail: 'Oncology and rare-disease depth beats generic capacity claims.' },
+      { title: 'Quality / inspection readiness', detail: 'GCP inspection risk pushes sponsors toward proven oversight models.' },
+    ],
+  },
+  marketStructure: {
+    heading: 'Structure',
+    paragraphs: [
+      'FSP buying in the GCC is rarely a single RFP for “the region.” Sponsors often lock global FSP frameworks then stress-test Middle East delivery cells. BioNixus scopes research to the function and geography under evaluation.',
+    ],
+  },
+  signalGrid: {
+    heading: 'Country signals',
+    items: [
+      { label: 'Saudi Arabia', signal: 'Largest trial and RWE ambition; localisation and SFDA context matter in partner choice.' },
+      { label: 'United Arab Emirates', signal: 'Hub for regional PM and monitoring models with strong private hospital sites.' },
+      { label: 'Qatar / Kuwait / Oman / Bahrain', signal: 'Smaller but strategically used cells — capacity realism is the diligence issue.' },
+      { label: 'Egypt adjacency', signal: 'Often bundled into MENA FSP conversations for enrolment scale.' },
+    ],
+  },
+  audiences: [
+    { audience: 'Sponsor clinical operations', description: 'Outsourcing-model and vendor decision owners.' },
+    { audience: 'FSP / CRO commercial leaders', description: 'Competitors and partners seeking Gulf win themes.' },
+    { audience: 'Site / SMO leadership', description: 'Stakeholders who experience delivery quality day to day.' },
+    { audience: 'Medical / PV oversight', description: 'Quality and compliance governors of modular models.' },
+  ],
+  whyBionixus: SHARED_WHY,
+  relatedLinks: [
+    { to: '/gcc-clinical-trials-market', label: 'GCC clinical trials market' },
+    { to: '/mea-clinical-trial-imaging-market', label: 'MEA clinical trial imaging market' },
+    { to: '/healthcare-market-research', label: 'Healthcare market research hub' },
+    { to: '/gcc-market-access-guide', label: 'GCC pharmaceutical market access guide' },
+    { to: '/italy-clinical-trials-market', label: 'Italy clinical trials market' },
+    { to: '/real-world-evidence', label: 'Real world evidence' },
+  ],
+  faqs: [
+    {
+      question: 'What is the GCC functional service providers market?',
+      answer:
+        'The market for modular clinical-development services (monitoring, data management, medical writing, PV, and related functions) sold into Gulf-sponsored or Gulf-executed programmes — researched through sponsor, site, and delivery-partner stakeholders.',
+    },
+  ],
+  areaServed: ['Saudi Arabia', 'United Arab Emirates', 'Kuwait', 'Qatar', 'Oman', 'Bahrain'],
+  priority: 'later',
+};
+
+const gccMedicationManagement: SpecialtyMarketDemandContent = {
+  slug: 'gcc-medication-management-market',
+  segmentLabel: 'GCC Medication Management',
+  badge: 'GCC · Medication Management',
+  breadcrumbLabel: 'GCC Medication Management Market',
+  title: 'GCC Medication Management Market Research | BioNixus',
+  description:
+    'GCC medication management market research — hospital pharmacy automation, e-prescribing, adherence programmes, Wasfaty-linked workflows, and buyer intelligence from BioNixus.',
+  canonical: `${BASE}/gcc-medication-management-market`,
+  h1: 'GCC Medication Management Market: Pharmacy, Automation & Adherence Intelligence',
+  intro: [
+    'The GCC medication management market covers hospital pharmacy automation, e-prescribing and closed-loop medication systems, and adherence / patient-support programmes that sit between IT, pharmacy, and clinical care. BioNixus researches chief pharmacists, hospital CIOs, and ambulatory stakeholders so vendors know which Gulf buyers fund automation versus adherence software — and what evidence they demand.',
+  ],
+  hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
+  researchTopics: [
+    { name: 'Hospital pharmacy automation research', detail: 'ADC, unit-dose, and compounding workflow adoption barriers.' },
+    { name: 'E-prescribing / closed-loop meds', detail: 'HIS integration and clinician workflow friction.' },
+    { name: 'Wasfaty and retail pharmacy linkage', detail: 'Saudi ambulatory medication management dynamics.' },
+    { name: 'Adherence programme effectiveness', detail: 'What employers, payers, and hospitals will sponsor.' },
+    { name: 'Procurement and tender mapping', detail: 'Capital vs SaaS buying routes across Gulf hospitals.' },
+    { name: 'Safety and shortage-use cases', detail: 'Error-reduction and inventory claims that survive diligence.' },
+  ],
+  demandDrivers: {
+    heading: 'Demand drivers',
+    drivers: [
+      { title: 'Hospital mega-projects', detail: 'New facilities prefer modern pharmacy workflows from day one.' },
+      { title: 'Medication-error reduction targets', detail: 'Quality agendas fund closed-loop initiatives.' },
+      { title: 'Pharmacy workforce pressure', detail: 'Automation pitched as staffing leverage faces culture filters.' },
+      { title: 'Chronic disease burden', detail: 'Adherence and refill management rise on payer agendas.' },
+      { title: 'National e-health programmes', detail: 'Integration standards shape vendor shortlists.' },
+      { title: 'High-cost specialty drugs', detail: 'Inventory and cold-chain visibility become tender criteria.' },
+    ],
+  },
+  marketStructure: {
+    heading: 'Structure',
+    paragraphs: [
+      'Medication management sits across capital pharmacy automation and software/adherence layers. BioNixus scopes the decision cell first — inpatient automation, ambulatory e-Rx, or adherence — before fieldwork.',
+    ],
+  },
+  signalGrid: {
+    heading: 'Country signals',
+    items: [
+      { label: 'Saudi Arabia', signal: 'Wasfaty, Vision 2030 hospitals, and large MOH networks drive ambulatory and inpatient programmes.' },
+      { label: 'United Arab Emirates', signal: 'Private hospital groups and insurance pressures accelerate closed-loop and adherence pilots.' },
+      { label: 'Kuwait / Qatar', signal: 'Compact hospital systems can standardise quickly when leadership sponsors change.' },
+      { label: 'Oman / Bahrain', signal: 'Selective modernisation projects; localisation and service support weigh heavily.' },
+    ],
+  },
+  audiences: [
+    { audience: 'Chief pharmacists', description: 'Clinical and operational owners of medication systems.' },
+    { audience: 'Hospital CIO / IT', description: 'Integration and cybersecurity gatekeepers.' },
+    { audience: 'Quality / patient-safety leads', description: 'Error-reduction business-case sponsors.' },
+    { audience: 'Payers & ambulatory programmes', description: 'Adherence and chronic-care funding stakeholders.' },
+  ],
+  whyBionixus: SHARED_WHY,
+  relatedLinks: [
+    { to: '/gcc-pharmacy-market', label: 'GCC pharmacy market' },
+    { to: '/gcc-generic-pharmaceuticals-market', label: 'GCC generic pharmaceuticals market' },
+    { to: '/gcc-functional-service-providers-market', label: 'GCC FSP market' },
+    { to: '/healthcare-market-research-in-saudi-arabia', label: 'Healthcare market research in Saudi Arabia' },
+    { to: '/blog/nupco-saudi-arabia-tendering-guide', label: 'NUPCO tendering guide' },
+    { to: '/healthcare-market-research', label: 'Healthcare market research hub' },
+  ],
+  faqs: [
+    {
+      question: 'What is included in the GCC medication management market?',
+      answer:
+        'Hospital pharmacy automation, e-prescribing and closed-loop medication systems, inventory visibility, and adherence / patient-support programmes — researched through pharmacy, IT, and clinical stakeholders across Gulf markets.',
+    },
+  ],
+  areaServed: ['Saudi Arabia', 'United Arab Emirates', 'Kuwait', 'Qatar', 'Oman', 'Bahrain'],
+  priority: 'later',
+};
+
+const doxorubicinMarket: SpecialtyMarketDemandContent = {
+  slug: 'doxorubicin-market',
+  segmentLabel: 'Doxorubicin Market Access',
+  badge: 'Global / GCC · Oncology Access',
+  breadcrumbLabel: 'Doxorubicin Market Access',
+  title: 'Doxorubicin Market Access Research | BioNixus',
+  description:
+    'Doxorubicin market access research — liposomal vs conventional use, oncology protocols, hospital tender dynamics, and GCC supportive oncology intelligence from BioNixus.',
+  canonical: `${BASE}/doxorubicin-market`,
+  h1: 'Doxorubicin Market Access: Protocol, Tender & Formulation Intelligence',
+  intro: [
+    'The doxorubicin market is protocol- and tender-shaped: formulation choice (conventional vs liposomal), cardiotoxicity management, and hospital purchasing determine real utilisation more than awareness campaigns. BioNixus researches oncologists, oncology pharmacists, and tender stakeholders — including Gulf hospital settings — to map where brands and formulations win line placement.',
+  ],
+  hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
+  researchTopics: [
+    { name: 'Protocol and line-of-therapy research', detail: 'Where doxorubicin remains foundational versus displaced by newer regimens.' },
+    { name: 'Liposomal vs conventional preference', detail: 'Cardiotoxicity, convenience, and access barriers by formulation.' },
+    { name: 'Hospital formulary / tender modules', detail: 'Award criteria and substitution behaviour for oncology injectables.' },
+    { name: 'Supportive-care adjacency', detail: 'How FN and cardioprotection practice interact with doxorubicin use.' },
+    { name: 'Competitive analogue libraries', detail: 'Messaging themes that defend or erode share.' },
+    { name: 'GCC framework cycles', detail: 'NUPCO and hospital pull-through for listed oncology injectables.' },
+  ],
+  demandDrivers: {
+    heading: 'Demand drivers',
+    drivers: [
+      { title: 'Enduring protocol roles', detail: 'Breast, sarcoma, and lymphoma regimens keep baseline demand.' },
+      { title: 'Formulation competition', detail: 'Liposomal products compete on safety and access, not only price.' },
+      { title: 'Tender and biosimilar pressure', detail: 'Hospital pharmacies switch aggressively after awards.' },
+      { title: 'Cardiotoxicity stewardship', detail: 'Monitoring capacity and guidelines reshape regimen choice.' },
+      { title: 'Combination innovation', detail: 'Partner regimens can expand or shrink doxorubicin exposure.' },
+      { title: 'Supply reliability', detail: 'Shortage history influences dual-source policies.' },
+    ],
+  },
+  marketStructure: {
+    heading: 'Structure',
+    paragraphs: [
+      'Doxorubicin utilisation is oncology-network and hospital-pharmacy governed. BioNixus scopes by indication cluster and geography, and separates clinical preference from tender economics.',
+    ],
+  },
+  audiences: [
+    { audience: 'Medical oncologists', description: 'Protocol decision owners.' },
+    { audience: 'Oncology pharmacists', description: 'Formulary and substitution influencers.' },
+    { audience: 'Cardiology / cardio-oncology', description: 'Safety pathway stakeholders.' },
+    { audience: 'Procurement / tenders', description: 'Framework and award decision makers.' },
+  ],
+  whyBionixus: SHARED_WHY,
+  relatedLinks: [
+    { to: '/febrile-neutropenia-market', label: 'Febrile neutropenia market' },
+    { to: '/mek-inhibitors-market', label: 'MEK inhibitors market access' },
+    { to: '/italy-oncology-antiinfective-market-access', label: 'Italy oncology & anti-infective market access' },
+    { to: '/gcc-generic-injectables-market', label: 'GCC generic injectables market' },
+    { to: '/healthcare-market-research/therapy/oncology', label: 'Oncology market research' },
+    { to: '/market-reports/gcc-oncology-market-report', label: 'GCC oncology market report' },
+  ],
+  faqs: [
+    {
+      question: 'What does doxorubicin market access research include?',
+      answer:
+        'Primary research with oncology and pharmacy stakeholders on formulation choice, protocol placement, cardiotoxicity practice, and hospital tender/substitution dynamics that govern real utilisation.',
+    },
+  ],
+  priority: 'later',
+};
+
+const meaClinicalTrialImaging: SpecialtyMarketDemandContent = {
+  slug: 'mea-clinical-trial-imaging-market',
+  segmentLabel: 'MEA Clinical Trial Imaging',
+  badge: 'Middle East & Africa · Clinical Trial Imaging',
+  breadcrumbLabel: 'MEA Clinical Trial Imaging Market',
+  title: 'Middle East & Africa Clinical Trial Imaging Market Research | BioNixus',
+  description:
+    'Middle East and Africa clinical trial imaging market research — central reads, site imaging capability, oncology and CNS endpoints, and sponsor/CRO buyer intelligence from BioNixus.',
+  canonical: `${BASE}/mea-clinical-trial-imaging-market`,
+  h1: 'Middle East & Africa Clinical Trial Imaging Market Intelligence',
+  intro: [
+    'The Middle East and Africa clinical trial imaging market is defined by site scanner readiness, central-read vendor selection, and protocol endpoint complexity — not radiology equipment sales alone. BioNixus researches sponsors, CROs, imaging core labs, and high-enrolment sites across GCC and selected African hubs to show where imaging capability unlocks country inclusion versus where it becomes a startup bottleneck.',
+  ],
+  hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
+  researchTopics: [
+    { name: 'Site imaging capability audits', detail: 'Modality availability, technician training, and de-identification workflows.' },
+    { name: 'Central-read vendor research', detail: 'Sponsor criteria for MEA-capable imaging core labs.' },
+    { name: 'Oncology / CNS endpoint feasibility', detail: 'RECIST and specialised reads that strain regional capacity.' },
+    { name: 'Startup timeline mapping', detail: 'Where imaging qualification delays country activation.' },
+    { name: 'Data transfer & privacy diligence', detail: 'Cross-border imaging data handling expectations.' },
+    { name: 'CRO / FSP interface research', detail: 'How imaging vendors fit modular Gulf and Africa delivery models.' },
+  ],
+  demandDrivers: {
+    heading: 'Demand drivers',
+    drivers: [
+      { title: 'Gulf trial expansion', detail: 'More oncology and specialty trials need reliable imaging chains.' },
+      { title: 'Endpoint complexity', detail: 'Advanced reads raise the bar for site qualification.' },
+      { title: 'Centralisation of reads', detail: 'Sponsors prefer fewer core labs with MEA logistics proven.' },
+      { title: 'Africa enrolment strategies', detail: 'Imaging readiness becomes a binding feasibility constraint.' },
+      { title: 'Regulatory scrutiny', detail: 'Inspection readiness extends to imaging SOPs and archives.' },
+      { title: 'Hybrid trial designs', detail: 'Decentralised elements still depend on quality imaging sites.' },
+    ],
+  },
+  marketStructure: {
+    heading: 'Structure',
+    paragraphs: [
+      'Clinical trial imaging in MEA is a services market layered on hospital radiology capacity. BioNixus separates site feasibility from central-read vendor selection so sponsors do not confuse equipment presence with trial readiness.',
+    ],
+  },
+  signalGrid: {
+    heading: 'Regional signals',
+    items: [
+      { label: 'GCC hubs', signal: 'Strongest scanner density and growing oncology trial mix; qualification still uneven by hospital.' },
+      { label: 'Egypt / North Africa', signal: 'Enrolment scale with variable imaging SOP maturity across centres.' },
+      { label: 'Sub-Saharan selected hubs', signal: 'Strategic sites for specific programmes; imaging often the critical path.' },
+      { label: 'Central-read vendors', signal: 'Global vs regional capability claims require primary validation with sites.' },
+    ],
+  },
+  audiences: [
+    { audience: 'Sponsor imaging / clinical ops', description: 'Vendor and country-feasibility decision owners.' },
+    { audience: 'CRO imaging leads', description: 'Delivery partners balancing site load and central reads.' },
+    { audience: 'Site radiology / PI teams', description: 'Operational owners of scan quality and timelines.' },
+    { audience: 'Imaging core labs', description: 'Competitors seeking MEA expansion intelligence.' },
+  ],
+  whyBionixus: SHARED_WHY,
+  relatedLinks: [
+    { to: '/gcc-clinical-trials-market', label: 'GCC clinical trials market' },
+    { to: '/gcc-functional-service-providers-market', label: 'GCC FSP market' },
+    { to: '/italy-clinical-trials-market', label: 'Italy clinical trials market' },
+    { to: '/healthcare-market-research', label: 'Healthcare market research hub' },
+    { to: '/real-world-evidence', label: 'Real world evidence' },
+    { to: '/gcc-pharma-market-report-2026', label: 'GCC pharmaceutical market report 2026' },
+  ],
+  faqs: [
+    {
+      question: 'What is the Middle East and Africa clinical trial imaging market?',
+      answer:
+        'The services and capability ecosystem for qualifying trial sites, transferring imaging data, and delivering central reads for protocols run in GCC, North Africa, and selected Sub-Saharan hubs — researched through sponsors, CROs, core labs, and sites.',
+    },
+  ],
+  priority: 'later',
+};
+
 export const SPECIALTY_MARKET_DEMAND_CONTENT: SpecialtyMarketDemandContent[] = [
   singaporeMedtechManufacturing,
   singaporePharmaceuticalMarket,
@@ -1244,6 +1728,13 @@ export const SPECIALTY_MARKET_DEMAND_CONTENT: SpecialtyMarketDemandContent[] = [
   italyClinicalTrials,
   mekInhibitors,
   febrileNeutropenia,
+  italyPortableDiagnostics,
+  italyDeviceConnectivity,
+  italyOncologyAntiInfectiveAccess,
+  gccFspMarket,
+  gccMedicationManagement,
+  doxorubicinMarket,
+  meaClinicalTrialImaging,
 ];
 
 export const SPECIALTY_MARKET_DEMAND_BY_SLUG: Record<string, SpecialtyMarketDemandContent> =
@@ -1256,7 +1747,7 @@ export function getSpecialtyMarketDemandSitemapEntries(): Array<{
 }> {
   return SPECIALTY_MARKET_DEMAND_CONTENT.map((item) => ({
     path: `/${item.slug}`,
-    priority: item.priority === 'now' ? '0.90' : '0.86',
+    priority: item.priority === 'now' ? '0.90' : item.priority === 'next' ? '0.86' : '0.84',
     changefreq: 'monthly',
   }));
 }
