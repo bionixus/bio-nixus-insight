@@ -285,16 +285,29 @@ export function isMatrixCountrySlug(slug: string): slug is MatrixCountrySlug {
 }
 
 /**
- * B2B or B2C country entry path for the non-healthcare industries silo
- * (`/bionixus-industries`, `/b2b-industries`, `/b2c-industries`).
- * Never use {@link getHealthcareHubPathForIndexCountry} on those pages.
+ * B2B or B2C country entry link for plain country-name chips on the
+ * non-healthcare industries silo (`/bionixus-industries`, `/b2b-industries`,
+ * `/b2c-industries`). Never use {@link getHealthcareHubPathForIndexCountry}
+ * on those pages.
+ *
+ * Only the 7 MENA/GCC matrix countries have a dedicated country×industry
+ * landing page (via {@link getIndustryBofuPath}). Every other country falls
+ * back to `/market-research/{industrySlug}` inside
+ * {@link resolveCountryIndustryMarketResearchPath} — a real page, but one
+ * that ignores the country entirely, so a chip labelled "Brazil" would land
+ * on a generic, country-agnostic "Technology" hub. Route those countries to
+ * their real per-country anchor on `/market-research-by-industry` instead,
+ * which lists every industry BioNixus covers for that specific country.
  */
 export function getIndustriesHubCountryPath(
   country: MarketResearchIndexCountry,
   segment: 'b2b' | 'b2c' = 'b2b',
 ): string {
-  const industrySlug = segment === 'b2c' ? DEFAULT_B2C_INDUSTRY_SLUG : DEFAULT_B2B_INDUSTRY_SLUG;
-  return getIndustrySegmentCountryPath(country.slug, industrySlug);
+  if (isMatrixCountrySlug(country.slug)) {
+    const industrySlug = segment === 'b2c' ? DEFAULT_B2C_INDUSTRY_SLUG : DEFAULT_B2B_INDUSTRY_SLUG;
+    return getIndustrySegmentCountryPath(country.slug, industrySlug);
+  }
+  return `/market-research-by-industry#country-${country.slug}`;
 }
 
 export function getHealthcareHubPathForIndexCountry(country: MarketResearchIndexCountry): string {

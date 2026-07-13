@@ -21,8 +21,7 @@ import {
   B2B_COUNTRY_GROUPS,
   B2C_AREA_SERVED,
   B2C_COUNTRY_GROUPS,
-  DEFAULT_B2B_INDUSTRY_SLUG,
-  DEFAULT_B2C_INDUSTRY_SLUG,
+  getIndustriesHubCountryPath,
   getIndustrySegmentCountryPath,
 } from '@/data/industryHubCountries';
 import { sortBySegmentCountryPriority } from '@/data/segmentCountryOrder';
@@ -362,7 +361,7 @@ export default function IndustrySegmentPage({ slug }: IndustrySegmentPageProps) 
                       (country) => (
                         <Link
                           key={country.slug}
-                          to={getIndustrySegmentCountryPath(country.slug, DEFAULT_B2B_INDUSTRY_SLUG)}
+                          to={getIndustriesHubCountryPath(country, 'b2b')}
                           className="bx-chip"
                         >
                           {country.label}
@@ -400,7 +399,7 @@ export default function IndustrySegmentPage({ slug }: IndustrySegmentPageProps) 
                       (country) => (
                         <Link
                           key={country.slug}
-                          to={getIndustrySegmentCountryPath(country.slug, DEFAULT_B2C_INDUSTRY_SLUG)}
+                          to={getIndustriesHubCountryPath(country, 'b2c')}
                           className="bx-chip"
                         >
                           {country.label}
