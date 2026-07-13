@@ -2573,104 +2573,110 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
     regulatory: {
       heading: 'SFDA and payer context for Saudi HEOR consulting',
       paragraphs: [
-        'Saudi HEOR consulting must align with SFDA Economic Evaluation System (EES) requirements effective from 1 July 2025 — pharmacoeconomic and budget-impact evidence is increasingly gatekeeping registration and reimbursement conversations.',
-        'NUPCO centralized procurement and hospital formulary committees evaluate budget impact and value narratives alongside clinical evidence; models built on imported global denominators lose credibility in local review.',
-        'Local epidemiology, treatment pathways, and pricing assumptions must be defensible to medical affairs, market access, and finance stakeholders simultaneously — not only health economists.',
-        'Cross-functional translation of model outputs into committee-ready language is as important as the spreadsheet architecture itself.',
-        'For GCC portfolios, KSA HEOR modules should harmonize core metrics with UAE and Kuwait appendices without averaging away Kingdom-specific procurement logic.',
-        'SFDA EES reviewers expect transparent limitation statements alongside tornado and scenario outputs; BioNixus packages both for committee-ready dossier support.',
-        'Cross-functional workshops lock epidemiology and pricing inputs before model build so finance reviewers can trace every assumption.',
+        "Saudi HEOR runs on a single evidence chain, and understanding how its links connect is the first step in scoping any engagement. A budget impact analysis (BIA) sizes the affordability question — what a therapy will cost the payer over the next several years. A cost-effectiveness analysis (CEA) sizes the value question — whether the health outcomes gained justify that cost, expressed as cost per QALY. Both feed into an HTA (health technology assessment) dossier, the structured review SFDA uses to decide registration and pricing. And the same evidence base then carries into market access work — NUPCO tender submissions and MOH or NGHA institutional formulary review — where it has to keep doing commercial work well after the initial registration decision. Sponsors who treat these as four unrelated deliverables routinely duplicate effort or discover a gap mid-review; BioNixus scopes them as one coordinated program from the outset.",
+        "SFDA's Economic Evaluation System (EES) — mandatory from 1 July 2025, following the Economic Evaluation Studies Guideline (published July 2024) and Pharmacoeconomic Submission Portal Manual (January 2025) — is the framework this entire evidence chain has to satisfy. EES classifies budget impact analysis and cost-minimisation analysis as \"Partial Economic Studies,\" the lighter evidence tier, and cost-utility analysis (CEA) plus cost-benefit analysis as \"Full Economic Studies,\" the tier expected where a product's clinical and cost profile makes comparative effectiveness against standard of care a material consideration. Which tier a specific product needs is the first question a HEOR program has to answer, since it determines whether a BIA alone is sufficient or a full CEA and HTA dossier is required.",
+        "NUPCO's centralized procurement model changes what HEOR evidence has to prove once SFDA registration clears. NUPCO's technical committee evaluates budget impact and value narratives alongside supply-security and volume-commitment criteria that sit outside SFDA's own review — a model built only to satisfy SFDA registration is not automatically the same document a NUPCO tender evaluator wants to see. Regional MOH formulary committees and National Guard Health Affairs (NGHA) layer additional institutional review on top of both, meaning HEOR evidence built for one gate does not automatically clear the next one without deliberate translation.",
+        "Local epidemiology, treatment pathways, and pricing assumptions have to be defensible to medical affairs, market access, and finance stakeholders simultaneously — not only health economists — because a HEOR program that satisfies a technical reviewer but cannot be explained by the access team in a committee room has not actually done its job. Cross-functional translation of model outputs into committee-ready language is as important as the underlying spreadsheet architecture, which is why BioNixus builds the assumption base once and frames outputs for each internal audience from that same source, rather than reconciling separate narratives after the fact.",
+        "For GCC portfolios, Saudi HEOR modules should harmonize core metrics with UAE and Kuwait appendices without averaging away Kingdom-specific procurement logic — SFDA's EES framework, NUPCO's national tender structure, and the scale of MOH and NGHA institutional buyers are genuinely Kingdom-specific, and a model built to be portable across the GCC by blending them into a regional average ends up satisfying no single market's reviewers.",
+        "SFDA reviewers expect transparent limitation statements alongside sensitivity and scenario outputs at every stage of the evidence chain — BIA, CEA, and HTA dossier alike. BioNixus documents input provenance and limitation statements in committee-ready appendices from the start of an engagement, not retrofitted before submission, so the same audit trail that satisfies an SFDA reviewer also satisfies an internal compliance or finance review.",
+        "Cross-functional workshops that lock epidemiology, treatment-mix, and pricing inputs before model build begins are what let a HEOR program move from BIA through CEA and into HTA dossier assembly without re-litigating the same assumptions at each stage — a discipline that saves real time across a coordinated Saudi HEOR program, where the alternative is re-deriving inputs separately for each deliverable.",
       ],
     },
     marketContext: {
       heading: 'Why local HEOR assumptions win Saudi reimbursement committees',
       paragraphs: [
         ...GCC_MARKET_PARAS.slice(0, 2),
-        'Imported global models that ignore Saudi treatment mix, dual public–private channel behaviour, and local pricing fail committee scrutiny — delaying listing even when clinical evidence is strong.',
-        'Budget impact model design with KSA market assumptions, plus value communication testing for institutional stakeholders, reduces rework before SFDA and procurement milestones.',
-        'BioNixus builds models and narratives calibrated to the Kingdom, then translates outputs into evidence packages access, medical, and finance teams can defend together.',
-        'Scenario planning should include NUPCO rescoring shocks, biosimilar entry, and step-therapy tightening—sensitivity tables that committees expect when budget impact drives listing decisions.',
+        "Saudi Arabia accounts for roughly USD 9.4 billion of the GCC's approximately USD 23.7 billion 2024 pharmaceutical spend, and Vision 2030's Health Sector Transformation Program is the explicit policy rationale behind SFDA's shift toward mandatory economic evaluation — the stated move from volume-based to value-based healthcare financing is why HEOR evidence, not clinical efficacy alone, now gates registration, pricing, and reimbursement decisions across the entire BIA-CEA-HTA-market access chain.",
+        "Imported global models that ignore Saudi treatment mix, the dual public–private channel structure, and local pricing fail committee scrutiny — delaying listing even when the underlying clinical evidence is strong. This applies as much to a cost-utility (CEA) model's QALY inputs and ICER framing as it does to a budget impact model's uptake curve: Saudi Arabia has not published a single, officially codified cost-effectiveness threshold, and the most cited research-derived estimate — roughly SAR 50,000 to 75,000 per QALY — is explicitly a research estimate, not government policy, which means the credibility of a model's inputs carries more weight in review than hitting a specific ICER target.",
+        "Budget impact model design with Saudi-specific assumptions, cost-effectiveness modeling calibrated to defensible comparator selection, and value communication testing for institutional stakeholders together reduce rework before SFDA and NUPCO milestones. BioNixus builds models and narratives calibrated to the Kingdom, then translates outputs into evidence packages access, medical, and finance teams can defend together — as one coordinated program rather than four separately-scoped deliverables.",
+        "Scenario planning across the HEOR evidence chain should include NUPCO rescoring shocks, biosimilar entry, and step-therapy tightening — sensitivity tables that committees expect to see whether the deliverable in front of them is a budget impact model, a cost-effectiveness analysis, or the combined HTA dossier those two feed into.",
       ],
     },
     services: {
-      heading: 'HEOR consulting services BioNixus delivers in Saudi Arabia',
+      heading: 'The four Saudi HEOR pillars BioNixus delivers',
       items: [
         {
-          title: 'Budget impact model design',
+          title: 'Budget Impact Analysis (BIA)',
           description:
-            'KSA-calibrated epidemiology, treatment mix, and pricing with transparent sensitivity analyses.',
+            'The affordability question: what a therapy will cost NUPCO, MOH, or NGHA over the next 3-5 years, built on Saudi-specific epidemiology, treatment mix, and pricing. Classified by SFDA as a "Partial Economic Study" — the mandatory companion to any Full Economic Study.',
         },
         {
-          title: 'Cost-effectiveness scaffolding',
+          title: 'Cost-Effectiveness Analysis (CEA)',
           description:
-            'CEA frameworks aligned to SFDA EES expectations where the decision objective requires.',
+            'The value question: whether the health outcomes a therapy delivers justify its cost, expressed as cost per QALY (ICER). Classified by SFDA as a "Full Economic Study," required where comparative effectiveness against standard of care is a material consideration.',
+        },
+        {
+          title: 'HTA Studies',
+          description:
+            'The umbrella review process SFDA uses to evaluate a product\'s clinical, economic, and comparator evidence together — a systematic literature review, the required BIA and/or CEA, and comparator justification, assembled into one submission-ready dossier.',
+        },
+        {
+          title: 'Market Access Research',
+          description:
+            'Payer-channel diagnosis and evidence carry-through once HTA and registration clear — mapping NUPCO tender scoring, MOH and NGHA institutional formulary review, and private-insurer pathways so the same evidence base keeps doing commercial work after registration.',
         },
         {
           title: 'Value narrative and message testing',
           description:
-            'Institutional stakeholder reaction modules for access and medical alignment.',
+            'Institutional stakeholder reaction modules for access and medical alignment, translating model outputs into the language a payer committee actually argues in.',
         },
         {
           title: 'RWE-to-HEOR bridge modules',
           description:
-            'Primary field or chart outputs structured to feed model inputs and limitation statements.',
+            'Primary field or chart-review outputs structured to feed BIA, CEA, and HTA model inputs with documented provenance, rather than extrapolating from clinical trial data alone.',
         },
         {
-          title: 'Cross-functional readout packs',
+          title: 'GCC harmonization from a Saudi anchor',
           description:
-            'Outputs framed for market access, medical affairs, and finance — not economist-only decks.',
-        },
-        {
-          title: 'GCC harmonization from KSA anchor',
-          description:
-            'Comparable model architecture with country appendices for regional portfolio decisions.',
+            'Comparable model architecture across BIA, CEA, and HTA work with country appendices for UAE, Kuwait, and Qatar, for regional portfolio decisions that still respect Kingdom-specific procurement logic.',
         },
       ],
     },
     methodology: {
       heading: 'Saudi HEOR consulting methodology',
       paragraphs: [
-        'Objective lock to one reimbursement or registration decision before model build prevents unfocusable spreadsheets that committees cannot act on.',
-        'Assumption workshops with access and medical stakeholders document epidemiology and pricing inputs with named owners and sensitivity ranges.',
-        'Model validation includes tornado and scenario analyses with explicit limitation statements for audit-ready dossier support.',
-        'Value narrative testing uses pre-specified objection frameworks so message variants map to institutional reactions.',
-        'Typical timeline from objective lock to first draft decision model is two to three weeks for a focused indication scope.',
-        'BioNixus documents model limitation statements and input provenance in committee-ready appendices so finance reviewers can trace every epidemiology and price assumption without economist-only narrative decks.',
+        'BioNixus scopes a Saudi HEOR program around the specific decision gate it needs to clear — SFDA EES registration, a NUPCO tender submission, an MOH regional formulary review, or an NGHA institutional listing — and confirms which tier of economic evidence that gate actually requires before any model work begins. Objective lock to one decision, rather than a generic "HEOR support" brief, is what prevents an unfocused deliverable that a committee cannot act on.',
+        'Where a product\'s profile places it in SFDA\'s Full Economic Study tier, BioNixus sequences the budget impact analysis and cost-effectiveness analysis as one coordinated build from a shared dataset — epidemiology, treatment-mix, and pricing inputs are documented once, with named owners and defensible sources, rather than re-derived separately for each analysis. This sequencing is what allows the same evidence base to carry from BIA through CEA and into HTA dossier assembly without re-litigating assumptions at each stage.',
+        'Assumption workshops bring access, medical affairs, HEOR, and finance stakeholders together to document population, treatment-mix, and pricing inputs before model architecture is finalized, so every assumption that will face committee scrutiny has a named owner who can defend it under questioning.',
+        'Model validation includes an internal adversarial review before external delivery — BioNixus stakeholders deliberately challenge comparator choice, input provenance, and sensitivity coverage the way an SFDA or NUPCO reviewer would, across whichever combination of BIA, CEA, and HTA dossier components the engagement covers, so weak points are surfaced while there is still time to strengthen the evidence.',
+        'Value narrative testing uses pre-specified objection frameworks so message variants map to institutional reactions, translating whatever combination of budget-impact and cost-effectiveness findings the model produces into language a payer committee, a NUPCO tender evaluator, or an MOH formulary reviewer actually responds to.',
+        'Every deliverable — whether a standalone BIA, a combined BIA-plus-CEA package, or a full HTA dossier — ships with an audit-ready assumption log and limitation-statement appendix documenting input provenance in a format SFDA reviewers, NUPCO tender evaluators, and internal compliance teams can review without requiring the original modeling team to reconstruct the logic after delivery.',
+        'Typical timeline from objective lock to a first executable draft is one to three weeks for a focused, single-decision scope, depending on which combination of BIA, CEA, and HTA dossier components the engagement covers and how much Saudi-specific data already exists versus needing primary collection.',
       ],
     },
     useCases: {
       heading: 'Common Saudi HEOR consulting use cases',
       paragraph:
-        'HEOR demand peaks when SFDA submission, NUPCO listing, or formulary defence requires defensible local economic evidence.',
+        'HEOR demand peaks when SFDA submission, NUPCO listing, or formulary defence requires a coordinated budget-impact, cost-effectiveness, and HTA evidence package rather than a single standalone deliverable.',
       areas: [
-        'SFDA EES dossier support',
-        'NUPCO budget impact submissions',
+        'SFDA EES dossier support across BIA, CEA, and HTA components',
+        'NUPCO budget impact and tender-facing value submissions',
+        'Full HTA dossier assembly for chronic, oncology, and specialty products',
         'Biosimilar value defence',
         'Launch sequencing economics',
         'Price–volume scenario planning',
         'Medical–access narrative alignment',
-        'RWE-informed model updates',
-        'GCC roll-up from KSA anchor model',
+        'GCC roll-up from a Saudi anchor model',
       ],
     },
     process: {
       heading: 'Saudi HEOR engagement timeline',
       steps: [
         {
-          title: 'Objective and assumption lock',
-          body: 'Confirm indication, decision gate, and data inputs — typically one week to scoped proposal.',
+          title: 'Objective, decision-gate, and evidence-tier lock',
+          body: 'BioNixus confirms which specific gate the program needs to clear and which combination of BIA, CEA, and HTA dossier components that gate genuinely requires, mapping what Saudi-specific data already exists versus what needs primary collection — typically one week to a scoped proposal.',
         },
         {
-          title: 'Model build and QA',
-          body: 'Budget impact or CEA draft with sensitivity analyses — typically two to three weeks.',
+          title: 'Coordinated model build and QA',
+          body: 'Budget impact and, where required, cost-effectiveness analysis are built from a shared dataset with sensitivity and scenario analysis, followed by an internal adversarial stress-test before external delivery — typically two to three weeks depending on scope.',
         },
         {
-          title: 'Narrative testing optional module',
-          body: 'Stakeholder reaction research aligned to model outputs where scoped.',
+          title: 'Value narrative and stakeholder testing',
+          body: 'Optional module translating model outputs into committee-ready language, tested against pre-specified objection frameworks for the specific institutional audience — SFDA, NUPCO, MOH, or NGHA.',
         },
         {
-          title: 'Committee-ready handover',
-          body: 'Model file, assumption log, executive summary, and 30/60/90 action plan.',
+          title: 'Committee-ready handover and carry-through',
+          body: 'Final deliverables include the model file(s), assumption and limitation log, executive summary, and a 30/60/90 action plan — scoped so the same evidence base can carry from HTA registration into NUPCO tender or institutional formulary review without rebuilding from scratch.',
         },
       ],
     },
@@ -2678,57 +2684,62 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
       heading: 'Saudi HEOR program outputs',
       bullets: [
         ...SERVICE_LANDING_DELIVERABLES,
-        'Audit-ready assumption log with sensitivity tables',
-        'Committee-ready executive summary and slide narrative',
+        'Audit-ready assumption log with sensitivity tables spanning BIA, CEA, and HTA components',
+        'Committee-ready executive summary and slide narrative for SFDA, NUPCO, MOH, or NGHA audiences',
         'Optional qual reaction coding aligned to model scenarios',
       ],
     },
     decisionBlueprint: {
-      why: 'A model built on Saudi epidemiology, mix, and pricing is far harder to dismiss than a global average — credibility in review is where reimbursement speed is won or lost.',
+      why: 'A HEOR program built as one coordinated BIA-CEA-HTA-market access evidence chain is far harder to dismiss than four separately-scoped deliverables — credibility in review is where reimbursement speed is won or lost.',
       evidence:
-        'Local assumption discipline and cross-functional readout framing predict fewer committee deferrals than imported templates.',
-      next: 'Start narrow with one high-impact indication and an auditable value-and-budget path before expanding to portfolio scale.',
+        'Local assumption discipline and cross-functional readout framing, applied consistently across BIA, CEA, and HTA components, predict fewer committee deferrals than imported templates or piecemeal engagements.',
+      next: 'Confirm which decision gate and evidence tier the program actually needs, lock shared epidemiology and pricing assumptions once, then build BIA, CEA, and HTA dossier components from that same base rather than re-deriving inputs for each.',
     },
     faqs: [
       {
+        question: "What's the difference between BIA, CEA, HTA, and market access research?",
+        answer:
+          "Budget impact analysis (BIA) answers a financial question — what a therapy will cost the payer over the next several years — and is classified by SFDA as a \"Partial Economic Study.\" Cost-effectiveness analysis (CEA), technically a cost-utility analysis, answers a value question — whether the health outcomes justify the cost, expressed as cost per QALY — and is classified as a \"Full Economic Study.\" Health technology assessment (HTA) is the umbrella review process that brings BIA, CEA (where required), and comparator evidence together into one SFDA submission. Market access research is the broader work of mapping payer channels — NUPCO tender scoring, MOH and NGHA institutional formularies, private insurance — and carrying HTA-cleared evidence through to an actual listing and reimbursement outcome. BioNixus treats all four as one coordinated evidence chain rather than four unrelated services.",
+      },
+      {
         question: 'Does BioNixus support SFDA Economic Evaluation System submissions?',
         answer:
-          'Yes. Model and narrative modules are scoped to EES expectations effective from July 2025, with transparent assumption documentation.',
+          "Yes. BIA, CEA, and HTA dossier modules are scoped to SFDA's Economic Evaluation System requirements, mandatory from 1 July 2025, with transparent assumption documentation and limitation statements built in from the start of an engagement rather than retrofitted before submission.",
       },
       {
         question: 'How long does a Saudi budget impact model take?',
         answer:
-          'From objective lock, a focused indication model typically reaches first draft within two to three weeks.',
+          'From objective lock, a focused indication model typically reaches first draft within one to three weeks, depending on how much Saudi-specific epidemiology and treatment-pattern data already exists versus needing primary collection.',
       },
       {
         question: 'Can HEOR modules connect to primary fieldwork or RWE?',
         answer:
-          'Yes. BioNixus structures primary outputs to feed epidemiology and treatment-pattern inputs with documented provenance.',
+          'Yes. BioNixus structures primary outputs — chart review, prescriber depth interviews, institutional data extraction where governance permits — to feed epidemiology and treatment-pattern inputs into BIA, CEA, and HTA models with documented provenance, rather than extrapolating from clinical trial enrollment or launch experience in other markets.',
       },
       {
         question: 'Are outputs usable by non-economist stakeholders?',
         answer:
-          'Yes. Deliverables include cross-functional summaries for market access, medical affairs, and finance teams.',
+          'Yes. Deliverables include cross-functional summaries for market access, medical affairs, and finance teams, built from the same underlying assumption log so all three functions can defend the same evidence base consistently rather than reconciling separate narratives after the fact.',
       },
       {
         question: 'Does BioNixus cover NUPCO-facing narratives?',
         answer:
-          'Where scoped, value and budget narratives are tested against procurement-aware objection frameworks.',
+          'Where scoped, value and budget narratives built from the BIA and CEA evidence base are tested against procurement-aware objection frameworks specific to NUPCO\'s technical committee, since a NUPCO-ready narrative is not automatically the same document that satisfied SFDA registration review.',
       },
       {
-        question: 'Can KSA HEOR roll up into GCC programs?',
+        question: 'Can Saudi HEOR work roll up into a wider GCC program?',
         answer:
-          'Yes. KSA anchor models harmonize with UAE and Kuwait appendices for regional portfolio decisions.',
+          'Yes. BioNixus builds the Saudi HEOR program as a structurally comparable anchor — shared modeling logic and reporting formats — while keeping SFDA, NUPCO, MOH, and NGHA-specific inputs isolated in Saudi-specific modules, harmonizing with UAE and Kuwait appendices for regional portfolio decisions without averaging away Kingdom-specific procurement logic.',
       },
       {
         question: 'How does BioNixus validate Saudi epidemiology and pricing assumptions?',
         answer:
-          'Assumption workshops document inputs with named owners, sensitivity ranges, and primary or desk sources. Tornado and scenario tables show committees how results move when treatment mix, uptake, or price bands change—building credibility faster than single-point estimates.',
+          'Assumption workshops document inputs with named owners, sensitivity ranges, and primary or desk sources. Tornado and scenario tables show committees how results move when treatment mix, uptake, or price bands change — building credibility faster than single-point estimates, across whichever combination of BIA, CEA, and HTA dossier components the engagement covers.',
       },
       {
         question: 'Can HEOR consulting run alongside payer qual and physician fieldwork?',
         answer:
-          'Yes. Parallel modules share coding frameworks so qual objections inform model refinement and value narrative tests within one evidence architecture—reducing rework when access teams localize global dossiers for SFDA and NUPCO milestones.',
+          'Yes. Parallel modules share coding frameworks so qualitative objections inform model refinement and value narrative tests within one evidence architecture — reducing rework when access teams localize global dossiers for SFDA and NUPCO milestones.',
       },
     ],
   },
