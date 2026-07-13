@@ -939,8 +939,34 @@ async function startServer() {
       } catch {
         /* keep raw path */
       }
-
-      const blogRedirectTarget = REDIRECTS[req.path] ?? REDIRECTS[decodedPath];
+      // Some crawlers/CDN layers double-encode non-Latin path segments (e.g. Arabic
+      // slugs), and Unicode text can arrive in NFD form. Try a second decode pass and
+      // NFC normalization so the REDIRECTS lookup still matches in those cases instead
+      // of falling through to the full SSR render for a legacy alias.
+      let doubleDecodedPath = decodedPath;
+      try {
+        doubleDecodedPath = decodeURIComponent(decodedPath);
+      } catch {
+        /* keep single-decoded path */
+      }
+      const normalize = (value) => {
+        try {
+          return value.normalize('NFC');
+        } catch {
+          return value;
+        }
+      };
+      const redirectLookupCandidates = [
+        req.path,
+        decodedPath,
+        doubleDecodedPath,
+        normalize(req.path),
+        normalize(decodedPath),
+        normalize(doubleDecodedPath),
+      ];
+      const blogRedirectTarget = redirectLookupCandidates
+        .map((candidate) => REDIRECTS[candidate])
+        .find((target) => target);
       if (blogRedirectTarget) {
         res.redirect(301, blogRedirectTarget);
         return;
@@ -986,7 +1012,24 @@ async function startServer() {
         res.redirect(Number(initialData.statusCode) || 301, initialData.redirectTo);
         return;
       }
-      const { html: appHtml, helmetData } = render(url, initialData);
+      let renderResult;
+      try {
+        renderResult = render(url, initialData);
+      } catch (renderErr) {
+        // Safety net for legacy `/blog/{arabic-slug}` aliases: if SSR render still
+        // throws for one of these (e.g. an encoding edge case the REDIRECTS lookup
+        // above didn't catch), redirect to the canonical /ar/blog/ URL instead of
+        // surfacing a 500 to users and crawlers.
+        const cleanPath = decodedPath.split('?')[0].split('#')[0];
+        if (cleanPath.startsWith('/blog/') && ARABIC_SCRIPT_RE.test(cleanPath)) {
+          // eslint-disable-next-line no-console
+          console.error('SSR render failed for legacy Arabic /blog/ alias, redirecting to /ar/blog/:', renderErr);
+          res.redirect(301, `/ar/blog/${cleanPath.slice('/blog/'.length)}`);
+          return;
+        }
+        throw renderErr;
+      }
+      const { html: appHtml, helmetData } = renderResult;
 
       const headTags = [
         helmetData?.title?.toString() || '',
