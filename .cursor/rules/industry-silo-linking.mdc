@@ -14,7 +14,7 @@ Pages: `/bionixus-industries`, `/b2b-industries`, `/b2c-industries`, `/market-re
 
 - Country chips and regional coverage links → **B2B or B2C country pages only**.
 - Use `getIndustriesHubCountryPath(country, 'b2b' | 'b2c')` or `getIndustrySegmentCountryPath(countrySlug, industrySlug)` from `@/data/industryHubCountries`.
-- Industry insights index → on-page section `/bionixus-industries#insights` (not a standalone index URL).
+- Industry insights index → `/bionixus-industries/insights` (dedicated blog index; hub teaser at `/bionixus-industries#insights`).
 - Do **not** link country chips to `/healthcare-market-research/*`, pharmaceutical BOFU URLs, or `/blog`.
 
 ## Healthcare & pharmaceutical silo

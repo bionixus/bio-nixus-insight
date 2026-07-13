@@ -137,9 +137,9 @@ export default function BionixusIndustries() {
                 ))}
               </p>
               <div className="bx-hero-actions">
-                <a href="#insights" className="bx-btn-gold">
+                <Link to="/bionixus-industries/insights" className="bx-btn-gold">
                   {copy.ctaInsights}
-                </a>
+                </Link>
                 <Link
                   to={getLocalizedPathForLanguage('/market-research-by-industry', language)}
                   className="bx-btn-ghost"

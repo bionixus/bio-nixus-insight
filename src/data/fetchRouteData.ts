@@ -302,6 +302,19 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
     };
   }
 
+  if (path === '/bionixus-industries/insights' || path === '/bionixus-industries/insights/') {
+    let industriesInsights: BlogPost[] = [];
+    try {
+      industriesInsights = await fetchIndustriesInsightsWithClient(sanityServer);
+    } catch {
+      industriesInsights = [];
+    }
+    return {
+      pageType: 'industries-insights-index',
+      industriesInsights,
+    };
+  }
+
   const industriesInsightPostMatch = path.match(/^\/bionixus-industries\/insights\/([^/]+)\/?$/);
   if (industriesInsightPostMatch) {
     const slug = decodePathSegment(industriesInsightPostMatch[1]);

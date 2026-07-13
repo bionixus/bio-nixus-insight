@@ -379,7 +379,7 @@ const staticPages = [
   { path: '/bahrain-healthcare-market-report', priority: '0.83', changefreq: 'monthly' },
   { path: '/bahrain-medical-devices-market-report', priority: '0.83', changefreq: 'monthly' },
   { path: '/bionixus-industries', priority: '0.80', changefreq: 'monthly' },
-  { path: '/bionixus-industries/insights', priority: '0.75', changefreq: 'weekly' },
+  { path: '/bionixus-industries/insights', priority: '0.9', changefreq: 'daily' },
   { path: '/brazil-healthcare-market-report', priority: '0.88', changefreq: 'monthly' },
   { path: '/brazil-medical-devices-market-report', priority: '0.88', changefreq: 'monthly' },
   { path: '/brazil-pharmaceutical-market-research', priority: '0.88', changefreq: 'monthly' },
