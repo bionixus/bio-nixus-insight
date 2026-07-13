@@ -18,12 +18,16 @@ export const BLOG_LEGACY_FULL_PATH_REDIRECTS = Object.fromEntries(
  * Arabic-authored posts mistakenly exposed under /blog/{slug} — consolidate on /ar/blog/{slug}.
  * Fixes canonical/hreflang and crawler 307 noise vs www apex.
  */
+// Values are percent-encoded (encodeURI) because they're used directly as `res.redirect()`
+// targets — Node's http layer throws `ERR_INVALID_CHAR` if a raw non-ASCII string is set as
+// the `Location` header, which crashes the request with an uncatchable platform-level error.
 export const BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH = {
   '/blog/saudi-healthcare-market-research-firms-ar': '/ar/blog/saudi-healthcare-market-research-firms-ar',
   '/blog/gcc-pharmaceuticals-market-arabic-2026': '/ar/blog/gcc-pharmaceuticals-market-arabic-2026',
-  '/blog/أبحاث-السوق-الدوائية-في-الشرق-الأوسط-و-دول-الخليج-العربي':
+  '/blog/أبحاث-السوق-الدوائية-في-الشرق-الأوسط-و-دول-الخليج-العربي': encodeURI(
     '/ar/blog/أبحاث-السوق-الدوائية-في-الشرق-الأوسط-و-دول-الخليج-العربي',
-  '/blog/سوق-الدواء-السعودي-2026': '/ar/blog/سوق-الدواء-السعودي-2026',
+  ),
+  '/blog/سوق-الدواء-السعودي-2026': encodeURI('/ar/blog/سوق-الدواء-السعودي-2026'),
 };
 
 /**
