@@ -1229,6 +1229,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.bionixus.com/cost-effectiveness-analysis-gcc</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.bionixus.com/de</loc>
     <lastmod>2026-07-03</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/" />
@@ -2459,6 +2465,12 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/hta-studies-saudi-arabia</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/cost-effectiveness-analysis-saudi-arabia</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

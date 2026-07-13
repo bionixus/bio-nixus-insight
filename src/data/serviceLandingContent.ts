@@ -2391,6 +2391,171 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
       },
     ],
   },
+  'cost-effectiveness-analysis-saudi-arabia': {
+    hubLink: { to: '/heor-consulting-saudi-arabia', label: 'HEOR consulting Saudi Arabia' },
+    regulatory: {
+      heading: 'SFDA cost-effectiveness analysis requirements in Saudi Arabia',
+      paragraphs: [
+        "SFDA published its Economic Evaluation Studies Guideline on 10 July 2024, followed by a Pharmacoeconomic Submission Portal Manual in January 2025, establishing the current framework for how cost-effectiveness evidence is reviewed as part of drug registration and pricing. General dossier requirements under this framework became mandatory in January 2025, and the economic evaluation component — including cost-effectiveness analysis where applicable — became mandatory from 1 July 2025. A cost-effectiveness analysis submitted today is read against a defined, current guideline rather than an informal or evolving expectation, which means model structure, comparator selection, and sensitivity reporting need to match what SFDA reviewers are specifically looking for rather than what a global submission template happens to produce.",
+        "SFDA's framework sorts economic evidence into two tiers. Budget impact analysis and cost-minimisation analysis are classified as \"Partial Economic Studies\" — the lighter evidence requirement. Cost-utility analysis (cost-effectiveness expressed as cost per quality-adjusted life year) and cost-benefit analysis are classified as \"Full Economic Studies,\" the tier SFDA expects for products where comparative clinical effectiveness against standard of care is a material consideration — typically chronic-disease, oncology, and specialty therapies with a meaningfully different cost or outcome profile from existing alternatives. A submission scoped only around budget impact because it is the smaller deliverable risks discovering mid-review that the product's profile actually triggers the Full Economic Study tier, at which point rebuilding under committee deadline pressure is far more expensive than scoping both analyses together from the outset.",
+        "SFDA and NUPCO sit on either side of the pricing question, and a cost-effectiveness analysis has to speak to both without confusing their separate roles. SFDA sets the public list price and reviews the economic evaluation dossier at registration; NUPCO, the PIF-owned National Unified Procurement Company established in 2009, centralizes public-sector tendering and negotiates confidential net pricing through its own contracts, with the government tender market estimated at roughly SAR 21 billion. A cost-effectiveness analysis built to satisfy SFDA registration is not automatically the same document a NUPCO tender evaluator wants to see — SFDA reviews the clinical-value argument against the public list price, while NUPCO's technical committee weighs the economic evidence alongside volume commitments and net-pricing structure. BioNixus scopes which audience a given cost-effectiveness deliverable is actually being built for before model architecture is finalized, rather than assuming one document serves both purposes unchanged.",
+        "Health technology assessment in Saudi Arabia is best understood as a national HTA function operating within SFDA, with the country's formal HTA framework continuing to be formalized rather than fixed. Public documentation of the exact review body, its founding history, and its procedural timelines remains thinner than for long-established HTA agencies elsewhere, and BioNixus deliberately avoids asserting specifics that are not yet consistently published — sponsors should expect the HTA review pathway to keep evolving alongside SFDA's EES rollout, and a cost-effectiveness dossier built with that trajectory in mind ages better than one that assumes today's process is permanent.",
+        "Comparator selection for a Saudi cost-effectiveness analysis has to account for SFDA's reliance on external reference pricing, which draws on public list prices across roughly sixteen international markets to anchor the Saudi price. A cost-effectiveness analysis that ignores this reference-pricing context and argues value purely on local cost offsets can miss the pricing reality the model needs to justify — the comparator, its price, and the reference-pricing basket it sits within all have to be consistent with what SFDA's pricing procedure will actually apply.",
+        "Managed entry agreements — both financial arrangements (simple discounts, price-volume caps) and outcomes-based arrangements tied to a measurable clinical result — are a growing feature of Saudi pricing and reimbursement negotiations where cost-effectiveness uncertainty is a barrier to listing. A commonly cited example structures rebates around a hepatitis C treatment achieving a sustained virologic response threshold of 95% or higher, illustrating how an outcomes-based agreement can bridge a gap between a sponsor's claimed value and a payer's willingness to accept that value without further evidence. Where a cost-effectiveness analysis carries meaningful uncertainty in its base case, BioNixus scopes managed entry agreement design as a parallel workstream rather than treating the economic model and the risk-sharing structure as sequential, unrelated deliverables.",
+        "CBAHI — the Saudi Central Board for Accreditation of Healthcare Institutions, operating under the Saudi Health Council — is a healthcare quality and accreditation body, not an HTA, pricing, or reimbursement authority. It is a distinction worth stating plainly because the two functions are easy to conflate: CBAHI accreditation status can influence which facilities participate in certain NUPCO-tendered programs, but it plays no role in reviewing a cost-effectiveness dossier or setting a reimbursement decision. A cost-effectiveness submission strategy that assumes CBAHI has a pricing or HTA role has misread the institutional map.",
+      ],
+    },
+    marketContext: {
+      heading: 'Why cost-effectiveness thresholds in Saudi Arabia require careful framing',
+      paragraphs: [
+        ...GCC_MARKET_PARAS.slice(0, 2),
+        "Saudi Arabia accounts for roughly USD 9.4 billion of the GCC's approximately USD 23.7 billion 2024 pharmaceutical spend, making it the market where a cost-effectiveness argument carries the most weight — and the most scrutiny — in the region. Vision 2030's Health Sector Transformation Program is the explicit policy rationale behind SFDA's move toward mandatory economic evaluation: the stated shift from volume-based to value-based healthcare financing is why cost-effectiveness evidence, not just clinical efficacy, is now a registration-stage requirement rather than an optional supporting exhibit.",
+        "Saudi Arabia has not published a single, officially codified cost-effectiveness threshold — no fixed willingness-to-pay figure that a submitted ICER is mechanically compared against. The most cited research-derived estimate places a plausible Saudi threshold in the range of approximately SAR 50,000 to 75,000 per QALY, equivalent to roughly 58% to 86% of GDP per capita, drawn from published health-economics literature rather than a government policy document. BioNixus treats this range as a useful analytical anchor for framing a value argument — not as a hard pass/fail line a committee applies automatically — because a formal, government-mandated threshold would need agreement across the Ministry of Health, Ministry of Finance, and wider policy stakeholders that has not yet been finalized and published as a single number.",
+        "Because no fixed threshold exists, the strength of a Saudi cost-effectiveness submission rests more heavily on the credibility of its inputs — locally sourced or locally validated data, transparent sensitivity analysis, and a comparator argument consistent with SFDA's reference-pricing framework — than on hitting a specific ICER target. A technically well-modeled ICER that a reviewer cannot trace back to defensible Saudi-relevant inputs is weaker evidence than a higher ICER built on data the reviewer can verify.",
+        "NUPCO's centralized tender scale — a government tender market of roughly SAR 21 billion — means a cost-effectiveness argument that supports a favorable NUPCO net-pricing negotiation has outsized commercial consequences relative to a comparable submission in a smaller GCC market, which is part of why Saudi Arabia is where BioNixus recommends sponsors invest the most rigor in local data sourcing rather than porting a regional or global model with minimal adaptation.",
+      ],
+    },
+    services: {
+      heading: 'Cost-effectiveness analysis services BioNixus delivers in Saudi Arabia',
+      items: [
+        {
+          title: 'Cost-utility (cost-per-QALY) model build',
+          description:
+            'A cost-utility analysis built to SFDA\'s Full Economic Study expectations, structured around defensible Saudi or regionally-validated utility inputs, transparent comparator selection, and a documented sensitivity framework — built to survive committee questioning, not just compute an ICER.',
+        },
+        {
+          title: 'Comparator and reference-pricing analysis',
+          description:
+            'Comparator selection and cost benchmarking that reflects SFDA\'s external reference-pricing framework across the roughly sixteen international markets it draws on, so the cost-effectiveness argument and the pricing procedure it needs to support are built on the same assumptions rather than reconciled after the fact.',
+        },
+        {
+          title: 'Managed entry agreement design',
+          description:
+            'Financial and outcomes-based risk-sharing structures scoped alongside the cost-effectiveness model itself, for products where base-case uncertainty is likely to be a barrier to a straightforward listing decision — designed as a parallel workstream, not an afterthought bolted onto a finished model.',
+        },
+        {
+          title: 'International model adaptation for Saudi submission',
+          description:
+            'Adaptation of an existing NICE-, EMA-, or other international HTA-format cost-effectiveness model for SFDA submission — replacing utility values, unit costs, comparator prices, and epidemiological inputs with Saudi or regionally validated data rather than presenting a Western model with a Saudi label attached.',
+        },
+        {
+          title: 'Sensitivity and scenario stress-testing',
+          description:
+            'Structured sensitivity analysis layered on the base-case cost-effectiveness result, built around the specific objections an SFDA or NUPCO reviewer is likely to raise — comparator price shifts, utility-value uncertainty, or extrapolation risk in the clinical evidence — so the stress-testing pre-empts rather than merely follows the committee\'s questions.',
+        },
+        {
+          title: 'Dossier writing and SFDA submission support',
+          description:
+            'Full dossier preparation for the cost-effectiveness component of an SFDA economic evaluation submission — methodology report, comparator justification, sensitivity output, and limitation statements — structured for the Pharmacoeconomic Submission Portal and ready to sit alongside the budget impact analysis SFDA expects as a companion document.',
+        },
+        {
+          title: 'GCC portfolio cost-effectiveness harmonization',
+          description:
+            'For sponsors running cost-effectiveness work across multiple Gulf markets, BioNixus builds the Saudi model as a structurally comparable anchor — shared modeling logic and reporting formats — while keeping SFDA-specific inputs, comparator selection, and reference-pricing assumptions isolated in a Saudi-specific module rather than blended into a regional average that satisfies no single market.',
+        },
+      ],
+    },
+    methodology: {
+      heading: 'Cost-effectiveness analysis methodology for Saudi Arabia submissions',
+      paragraphs: [
+        'A cost-effectiveness analysis evaluates whether the health benefit a new therapy delivers justifies its additional cost relative to the existing standard of care. The core output is the incremental cost-effectiveness ratio (ICER) — the additional cost divided by the additional health benefit, most commonly expressed as cost per quality-adjusted life year (QALY) gained. A QALY combines length of life and quality of life into a single measure: one QALY equals one year of life in full health, and a year lived in a health state valued at 0.7 on a standard utility scale contributes 0.7 QALYs. Utility values are typically derived from preference-based instruments such as the EQ-5D, ideally sourced from studies conducted in Arab or regional populations rather than transferred directly from UK or US tariffs, since preference-based health-state valuations can differ meaningfully across populations.',
+        'Model structure depends on the disease area and the shape of the available clinical evidence. Decision-tree models suit acute, short-duration conditions where patients move through a defined sequence of events over weeks to months. Markov cohort models — the most common structure for chronic-disease submissions — define a set of health states and model transitions between them over a lifetime or multi-year horizon, and are the standard approach for conditions like diabetes, cardiovascular disease, and many chronic respiratory or renal conditions. Partitioned survival models are the standard for oncology, built from progression-free and overall survival curves fitted to trial data. Discrete event simulation is used selectively for conditions with highly individualized patient trajectories that a Markov structure\'s memoryless assumption would misrepresent. BioNixus selects model architecture based on the clinical evidence available and the disease area\'s established modeling conventions, not a default template applied regardless of fit.',
+        'Local data sourcing is the methodological step that most distinguishes a Saudi-credible cost-effectiveness analysis from an imported one. Clinical event rates and transition probabilities are drawn from Saudi or regional published literature where available, with a documented transferability assessment when a model needs to rely on non-Saudi data. Utility values are sourced from published Arab-population studies where they exist, or generated through primary EQ-5D data collection where a meaningful gap remains. Unit costs draw on NUPCO published pricing, Saudi hospital cost data where accessible, and primary expert elicitation where public cost data is incomplete — a genuinely different exercise from NHS reference costs or US Medicare fee schedules, and one that requires purpose-built data-sourcing effort rather than a substitution exercise on an imported spreadsheet.',
+        'Comparator selection has to satisfy two audiences at once: clinical relevance (the therapy Saudi prescribers would actually displace) and consistency with SFDA\'s reference-pricing framework, since the comparator\'s price anchors both the cost-effectiveness argument and the pricing procedure the submission also has to clear. A comparator chosen purely for favorable cost-effectiveness optics, without regard to what SFDA\'s reference-pricing basket or Saudi clinical practice actually uses, weakens the credibility of the entire submission.',
+        'Sensitivity and scenario analysis is built around a base case plus stress bands rather than a single point estimate — one-way sensitivity analysis isolating which individual inputs move the ICER most, and scenario analysis stress-testing plausible combinations a skeptical reviewer might construct independently. Discount rates, time horizon, and the extent of probabilistic sensitivity analysis are aligned to what current SFDA guidance specifies at the time of submission — since these technical parameters are the kind of detail that can be updated as the Economic Evaluation Studies Guideline matures, BioNixus confirms current requirements against the live guideline rather than a fixed assumption at the start of every engagement.',
+        'Model validation includes an internal adversarial review before external delivery, where BioNixus stakeholders deliberately challenge the model\'s comparator choice, input provenance, and sensitivity coverage the way an SFDA or NUPCO reviewer would, so weak points are identified and addressed before a sponsor faces the same questions in a live review. Limitation statements are documented explicitly rather than omitted, because a model that acknowledges its own boundaries is more credible to a reviewer than one that implies false precision.',
+        'Every cost-effectiveness deliverable ships with an audit-ready methodology appendix — input provenance, sensitivity ranges, comparator justification, and limitation statements documented in a format an SFDA reviewer, a NUPCO tender evaluator, or an internal compliance team can review without requiring the original modeling team to reconstruct the logic after delivery.',
+      ],
+    },
+    useCases: {
+      heading: 'Common Saudi Arabia cost-effectiveness analysis use cases',
+      paragraph:
+        'Cost-effectiveness analysis demand in Saudi Arabia peaks where SFDA\'s Full Economic Study tier applies — chronic, oncology, and specialty submissions where comparative clinical value against standard of care is central to the registration, pricing, or reimbursement decision.',
+      areas: [
+        'SFDA Full Economic Study registration submissions',
+        'Oncology and specialty-therapy value arguments',
+        'Chronic-disease comparative-effectiveness submissions',
+        'Comparator and reference-pricing justification',
+        'Managed entry agreement design and negotiation support',
+        'NUPCO tender economic-value argument',
+        'International model adaptation for SFDA submission',
+        'GCC portfolio cost-effectiveness harmonization from a Saudi anchor model',
+      ],
+    },
+    process: {
+      heading: 'Saudi cost-effectiveness analysis engagement timeline',
+      steps: [
+        {
+          title: 'Objective and decision-gate lock',
+          body: 'BioNixus confirms which specific gate the analysis needs to clear — SFDA Full Economic Study registration, a NUPCO tender submission, or a managed entry agreement negotiation — and whether the product\'s profile genuinely triggers the Full Economic Study tier or can be supported by a lighter Partial Economic Study. This stage also maps what Saudi or regionally-validated utility, cost, and epidemiology data already exists versus what requires primary collection or adaptation from an international model, so the proposal reflects a realistic build timeline.',
+        },
+        {
+          title: 'Model architecture and comparator selection',
+          body: 'BioNixus selects model structure based on the clinical evidence and disease area, confirms the comparator against both Saudi clinical practice and SFDA\'s reference-pricing framework, and documents data sourcing strategy for utility values, unit costs, and epidemiological inputs — flagging any Saudi-specific data gaps that require primary collection before the model can be finalized.',
+        },
+        {
+          title: 'Model build, sensitivity layering, and internal stress-test',
+          body: 'The base-case model is built, followed by one-way and scenario sensitivity analysis calibrated to the objections an SFDA or NUPCO reviewer is likely to raise. Before external delivery, BioNixus runs an internal adversarial review — deliberately challenging comparator choice, input provenance, and sensitivity coverage — so weak points are addressed while there is still time to strengthen the model.',
+        },
+        {
+          title: 'Dossier handover and narrative alignment',
+          body: 'Final deliverables include the model file, a full methodology and limitation appendix, and an executive summary framed for the specific decision-maker audience — SFDA registration reviewer, NUPCO tender evaluator, or internal access and medical affairs stakeholders. BioNixus works with access, medical affairs, and HEOR stakeholders together at handover so the cost-effectiveness narrative aligns with whatever budget impact analysis or market access evidence is being submitted alongside it.',
+        },
+      ],
+    },
+    deliverables: {
+      heading: 'Saudi cost-effectiveness analysis outputs',
+      bullets: [
+        ...SERVICE_LANDING_DELIVERABLES,
+        'Executable cost-utility (cost-per-QALY) model file with documented input provenance',
+        'Comparator and reference-pricing justification aligned to SFDA\'s pricing framework',
+        'Sensitivity and scenario tables built around likely SFDA or NUPCO reviewer objections',
+      ],
+    },
+    decisionBlueprint: {
+      why: 'A cost-effectiveness analysis built on Saudi-credible comparator selection, local data inputs, and transparent sensitivity analysis is a value argument a reviewer can verify — one built on an unadapted global template is not.',
+      evidence:
+        'Since Saudi Arabia has no single published cost-effectiveness threshold, submissions succeed on the traceability of their inputs and the discipline of their sensitivity analysis at least as much as on the ICER figure itself.',
+      next: 'Confirm which economic-study tier the product genuinely triggers, lock the comparator against SFDA\'s reference-pricing framework, then build the model on Saudi or regionally-validated inputs rather than adapting a global template late in the process.',
+    },
+    faqs: [
+      {
+        question: 'What does SFDA require for a cost-effectiveness analysis submission?',
+        answer:
+          "SFDA's Economic Evaluation Studies Guideline (published 10 July 2024) and Pharmacoeconomic Submission Portal Manual (January 2025) classify cost-utility analysis — cost-effectiveness expressed as cost per QALY — as a \"Full Economic Study,\" required where a product's clinical and cost profile makes comparative effectiveness against standard of care a material consideration, typically chronic-disease, oncology, and specialty therapies. The economic evaluation component became mandatory from 1 July 2025. A Full Economic Study submission is expected to include a budget impact analysis as a companion document, comparator justification consistent with SFDA's reference-pricing framework, and sensitivity analysis built to current guideline specifications.",
+      },
+      {
+        question: 'What is the cost-effectiveness threshold in Saudi Arabia?',
+        answer:
+          "Saudi Arabia has not published a single, officially codified willingness-to-pay threshold per QALY. The most cited research-derived estimate places a plausible threshold in the range of approximately SAR 50,000 to 75,000 per QALY — roughly 58% to 86% of GDP per capita — drawn from published health-economics literature rather than a government policy document. BioNixus treats this range as a useful analytical anchor for framing a value argument rather than a hard pass/fail line, since a formal government-mandated threshold would require agreement across the Ministry of Health, Ministry of Finance, and other policy stakeholders that has not yet been finalized and published as a single figure. In the absence of a fixed threshold, the credibility of the underlying inputs and sensitivity analysis carries more weight in review than hitting a specific ICER target.",
+      },
+      {
+        question: 'What is the difference between cost-effectiveness analysis and budget impact analysis?',
+        answer:
+          "They answer different questions and sit in different SFDA evidence tiers. Cost-effectiveness analysis (a cost-utility analysis, classified as a \"Full Economic Study\") asks whether the health outcomes a new therapy delivers justify its additional cost, expressed as cost per QALY gained. Budget impact analysis (classified alongside cost-minimisation analysis as a \"Partial Economic Study\") asks a purely financial question — how much will this cost the payer over the next several years given realistic uptake. SFDA expects a budget impact analysis as a mandatory companion to any submission that requires a Full Economic Study, so a Saudi cost-effectiveness dossier is rarely a standalone deliverable; it is typically developed alongside the budget impact model from a shared dataset.",
+      },
+      {
+        question: 'What HTA body reviews cost-effectiveness submissions in Saudi Arabia?',
+        answer:
+          "Health technology assessment in Saudi Arabia operates as a national HTA function within SFDA, and the country's formal HTA framework continues to be formalized rather than fixed — public documentation of the exact review body, its procedural timelines, and its institutional history remains thinner than for long-established HTA agencies in other markets. BioNixus advises sponsors to expect the review pathway to keep evolving alongside SFDA's Economic Evaluation Studies Guideline rollout, and to confirm current procedural specifics directly against SFDA's published guidance at the time of each submission rather than relying on a fixed assumption.",
+      },
+      {
+        question: 'Can an international or NICE-format cost-effectiveness model be adapted for Saudi Arabia?',
+        answer:
+          "Yes, and an existing well-documented international model is often a reasonable starting point — but direct transfer without adaptation rarely satisfies SFDA review. The key adaptations are: replacing non-Saudi utility values with Arab-population or regionally validated data where available; replacing comparator prices and unit costs with Saudi-specific figures consistent with SFDA's reference-pricing framework and NUPCO pricing where relevant; adjusting epidemiological and clinical-event-rate inputs for the Saudi population where meaningful differences exist; and confirming discount rate, time horizon, and sensitivity-analysis requirements against SFDA's current guideline rather than the originating market's HTA conventions. A full adaptation typically requires several weeks of dedicated modeling effort depending on how much Saudi-specific data already exists.",
+      },
+      {
+        question: 'Does every drug submission to SFDA need a full cost-effectiveness analysis?',
+        answer:
+          "No. SFDA's framework distinguishes \"Partial Economic Studies\" (budget impact analysis and cost-minimisation analysis) from \"Full Economic Studies\" (cost-utility and cost-benefit analysis, which includes cost-effectiveness analysis). Whether a specific product triggers the Full Economic Study tier depends on its clinical and cost profile relative to existing alternatives — products with a materially different cost or outcome profile, particularly in chronic-disease, oncology, and specialty categories, are the most likely candidates. BioNixus assesses which tier a specific submission genuinely requires during the objective-lock stage, rather than assuming every submission needs the same depth of economic evidence.",
+      },
+      {
+        question: 'Is CBAHI the same as an HTA or pricing authority in Saudi Arabia?',
+        answer:
+          "No. CBAHI — the Saudi Central Board for Accreditation of Healthcare Institutions, operating under the Saudi Health Council — is a healthcare quality and accreditation body. It has no role in reviewing a cost-effectiveness dossier, setting drug pricing, or making reimbursement decisions; those functions sit with SFDA and NUPCO. CBAHI accreditation status can influence which facilities participate in certain NUPCO-tendered programs, which is likely why the two are sometimes conflated, but a cost-effectiveness submission strategy should not treat CBAHI as part of the HTA or pricing review pathway.",
+      },
+    ],
+  },
   'heor-consulting-saudi-arabia': {
     hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
     regulatory: {
