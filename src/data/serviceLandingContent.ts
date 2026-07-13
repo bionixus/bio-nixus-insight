@@ -1553,7 +1553,8 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
     marketContext: {
       heading: 'Why Saudi-specific inputs decide whether a budget impact model survives review',
       paragraphs: [
-        ...GCC_MARKET_PARAS.slice(0, 2),
+        "Saudi Arabia's health budget is planned and reconciled on a Ministry of Finance fiscal-year cycle that both NUPCO and MOH regional buyers answer to, which means a budget impact model landing outside that planning window competes for attention against every other line item the ministry is reconciling that quarter. A model delivered mid-cycle, once allocations are already locked, faces a structurally harder path to a yes than the same model delivered ahead of the next budget-setting round — timing the deliverable to the fiscal calendar is as much a part of BIA strategy in Saudi Arabia as the epidemiology inputs feeding the spreadsheet.",
+        "Saudi Arabia's localization push under Vision 2030 — expanding in-Kingdom pharmaceutical manufacturing and prioritizing local production in NUPCO tender scoring — is starting to change the baseline cost trajectory a budget impact model has to project against. A therapy facing eventual local-manufacture competition, or a biosimilar entering under SFDA's developing biosimilar pathway, needs a budget impact model that treats future price erosion as a scenario to be modeled explicitly rather than an unstated assumption that today's list price holds for the full multi-year horizon NUPCO and MOH budget projections require.",
         "Saudi Arabia accounts for roughly USD 9.4 billion of the GCC's approximately USD 23.7 billion 2024 pharmaceutical spend, which means the stakes attached to a single budget impact submission are larger here than almost anywhere else in the region. A model that overstates or understates eligible population size, treatment mix, or uptake in the Kingdom's largest market carries proportionally larger financial consequences for both the sponsor's negotiating position and the payer's confidence in the evidence — which is exactly why NUPCO, MOH, and NGHA reviewers scrutinize Saudi-specific assumptions more closely than they would a smaller-market submission.",
         "A budget impact model built on an imported global or regional template routinely fails Saudi committee review not because the mathematics is wrong, but because the inputs describe a different healthcare system. Global epidemiology figures rarely reflect Saudi Arabia's population structure, diagnostic pathways, or the split between MOH, NGHA, military, and private-insurance-covered patients; global treatment-mix assumptions rarely reflect what Saudi prescribers actually do given local guidelines, reimbursement restrictions, and NUPCO-driven formulary composition; and global list prices rarely reflect the discounting, rebate, and volume-commitment structures that actually apply once a therapy is inside a NUPCO contract. Each of these gaps becomes a committee objection that could have been avoided by building the model on local data from the outset.",
         "Saudi Arabia's dual public–private financing structure adds a layer of complexity that a single national budget impact figure can obscure. NUPCO-negotiated pricing and volume terms apply to the public system, while CCHI-regulated private insurance behaves under different reimbursement logic and different competitive pressure. A model built to negotiate with NUPCO or an MOH formulary committee needs to isolate public-channel assumptions cleanly, even when the same therapy is also modeled for the private-insurance segment under separate terms — conflating the two channels weakens the credibility of both.",
@@ -1654,7 +1655,12 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
     deliverables: {
       heading: 'Saudi budget impact model outputs',
       bullets: [
-        ...SERVICE_LANDING_DELIVERABLES,
+        'Objective and decision-gate confirmation memo naming the specific SFDA EES, NUPCO, MOH, or NGHA gate the model targets',
+        'Assumption workshop summary with named owners for every epidemiology, treatment-mix, and pricing input',
+        'Committee-ready executive summary and slide narrative framed for the specific institutional audience',
+        '30/60/90 action plan flagging remaining evidence gaps and who owns closing each one',
+        'Institutional recalibration guide for adapting the model across NUPCO, MOH, and NGHA buyers',
+        'Limitation statement appendix documenting every modeling boundary and data gap',
         'Executable budget impact model file with modular, editable assumption architecture',
         'Base-case plus sensitivity and scenario tables (tornado diagrams and stress bands)',
         'Audit-ready assumption log with input provenance mapped to SFDA EES, NUPCO, MOH, or NGHA review expectations',
@@ -2249,7 +2255,8 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
     marketContext: {
       heading: 'Why Saudi Arabia has the GCC\'s most consequential HTA outcomes',
       paragraphs: [
-        ...GCC_MARKET_PARAS.slice(0, 2),
+        "Sponsors accustomed to NICE, G-BA, or HAS submission conventions often underestimate how young Saudi Arabia's formal HTA function still is relative to those established agencies — the Economic Evaluation Studies Guideline is little more than a year old at the time of writing, which means the volume of published precedent decisions a dossier team can benchmark against is thinner than in markets with decades of HTA case history. A dossier strategy that assumes NICE-style precedent depth exists in Saudi Arabia risks over-relying on assumptions the guideline itself has not yet had enough submissions to settle.",
+        "Because SFDA's HTA function is still building its body of precedent, individual review outcomes carry more weight in shaping what the next submission in the same therapeutic area is likely to face than they would in a more mature system with hundreds of prior decisions to average across. BioNixus tracks how comparable submissions in a given disease area have fared under the current guideline where that information is available, treating recent precedent as a live input to dossier strategy rather than assuming the published guideline text alone tells the whole story a reviewer will apply.",
         "Saudi Arabia accounts for roughly USD 9.4 billion of the GCC's approximately USD 23.7 billion 2024 pharmaceutical spend, and Vision 2030's Health Sector Transformation Program is the explicit policy driver behind the shift toward mandatory economic evaluation and a more formalized HTA function — the stated goal of moving from volume-based to value-based healthcare financing is precisely why HTA evidence, not clinical efficacy alone, now gates registration, pricing, and reimbursement decisions in a way it did not a few years ago.",
         "What governs HTA in Saudi Arabia is best described as a national HTA function operating within SFDA, with the country's formal HTA framework continuing to be formalized rather than fixed. Public documentation of the exact review body, its complete institutional history, and its procedural timelines remains thinner than for long-established HTA agencies elsewhere — BioNixus deliberately avoids asserting specifics that are not yet consistently published, and advises sponsors to confirm current procedural detail against SFDA's published guidance at the time of each submission rather than relying on a fixed assumption carried over from a prior engagement or a different market's HTA conventions.",
         "It is worth stating plainly what does not govern HTA in Saudi Arabia: CBAHI, the Saudi Central Board for Accreditation of Healthcare Institutions, operating under the Saudi Health Council, is a healthcare quality and accreditation body. It has no role in reviewing an HTA dossier, no role in setting drug pricing, and no role in reimbursement decisions — those functions sit with SFDA and NUPCO. CBAHI accreditation status can influence which facilities participate in certain NUPCO-tendered programs, which is a plausible source of the confusion, but an HTA strategy should not treat CBAHI as part of the review or decision pathway.",
@@ -2347,7 +2354,12 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
     deliverables: {
       heading: 'Saudi HTA dossier outputs',
       bullets: [
-        ...SERVICE_LANDING_DELIVERABLES,
+        'Evidence-tier assessment memo confirming Partial vs. Full Economic Study classification',
+        'Documented search strategy and study-selection log for the systematic literature review',
+        'Internal adversarial review summary flagging weak points before SFDA sees the dossier',
+        'Response drafts for anticipated SFDA clarification questions',
+        'Post-registration evidence carry-through plan for NUPCO tender or MOH/NGHA formulary review',
+        'Limitation statement and assumption log formatted for the Pharmacoeconomic Submission Portal',
         'Systematic literature review report with documented search strategy and study selection',
         'Economic evaluation model (budget impact and/or cost-utility) with audit-ready assumption log',
         'Comparator and reference-pricing justification aligned to SFDA\'s pricing framework',
@@ -2420,7 +2432,8 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
     marketContext: {
       heading: 'Why cost-effectiveness thresholds in Saudi Arabia require careful framing',
       paragraphs: [
-        ...GCC_MARKET_PARAS.slice(0, 2),
+        "Utility value scarcity is a distinctly Saudi problem for cost-effectiveness modeling, not a generic GCC one: published EQ-5D or equivalent preference-based utility studies conducted in Saudi or wider Arab populations exist for some major disease areas — diabetes, cardiovascular disease, selected oncology indications — but coverage thins quickly outside those categories, forcing a choice between a documented transferability assessment from non-Saudi data or primary utility-elicitation fieldwork before the model can be finalized. Sponsors who discover this gap only after model architecture is locked lose weeks that a scoping-stage data audit would have flagged up front.",
+        "In the absence of one published national threshold, Saudi reviewers and internal payer committees alike tend to weigh a submitted ICER against the informal pattern of what has previously been accepted for comparable disease areas and evidence quality, rather than against a fixed number — which means part of framing a defensible cost-effectiveness argument is understanding where recent Saudi and wider-GCC oncology, chronic-disease, or specialty ICERs have landed, not just computing the figure in isolation. BioNixus incorporates this comparative framing into the value narrative alongside the base-case ICER, since a number presented without context invites a committee to supply its own — usually a less favorable one.",
         "Saudi Arabia accounts for roughly USD 9.4 billion of the GCC's approximately USD 23.7 billion 2024 pharmaceutical spend, making it the market where a cost-effectiveness argument carries the most weight — and the most scrutiny — in the region. Vision 2030's Health Sector Transformation Program is the explicit policy rationale behind SFDA's move toward mandatory economic evaluation: the stated shift from volume-based to value-based healthcare financing is why cost-effectiveness evidence, not just clinical efficacy, is now a registration-stage requirement rather than an optional supporting exhibit.",
         "Saudi Arabia has not published a single, officially codified cost-effectiveness threshold — no fixed willingness-to-pay figure that a submitted ICER is mechanically compared against. The most cited research-derived estimate places a plausible Saudi threshold in the range of approximately SAR 50,000 to 75,000 per QALY, equivalent to roughly 58% to 86% of GDP per capita, drawn from published health-economics literature rather than a government policy document. BioNixus treats this range as a useful analytical anchor for framing a value argument — not as a hard pass/fail line a committee applies automatically — because a formal, government-mandated threshold would need agreement across the Ministry of Health, Ministry of Finance, and wider policy stakeholders that has not yet been finalized and published as a single number.",
         "Because no fixed threshold exists, the strength of a Saudi cost-effectiveness submission rests more heavily on the credibility of its inputs — locally sourced or locally validated data, transparent sensitivity analysis, and a comparator argument consistent with SFDA's reference-pricing framework — than on hitting a specific ICER target. A technically well-modeled ICER that a reviewer cannot trace back to defensible Saudi-relevant inputs is weaker evidence than a higher ICER built on data the reviewer can verify.",
@@ -2518,7 +2531,12 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
     deliverables: {
       heading: 'Saudi cost-effectiveness analysis outputs',
       bullets: [
-        ...SERVICE_LANDING_DELIVERABLES,
+        'Evidence-tier confirmation memo establishing whether the product triggers SFDA\'s Full Economic Study requirement',
+        'Utility-value sourcing log documenting Arab-population data used or the transferability assessment applied',
+        'Model structure rationale explaining the chosen decision-tree, Markov, or partitioned-survival architecture',
+        'Internal adversarial review summary surfacing likely SFDA or NUPCO objections before submission',
+        'Executive summary and slide narrative framed for the specific reviewer or committee audience',
+        'Limitation statement appendix documenting every input assumption and its source',
         'Executable cost-utility (cost-per-QALY) model file with documented input provenance',
         'Comparator and reference-pricing justification aligned to SFDA\'s pricing framework',
         'Sensitivity and scenario tables built around likely SFDA or NUPCO reviewer objections',
@@ -2585,7 +2603,8 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
     marketContext: {
       heading: 'Why local HEOR assumptions win Saudi reimbursement committees',
       paragraphs: [
-        ...GCC_MARKET_PARAS.slice(0, 2),
+        "Health economists with direct SFDA Economic Evaluation System submission experience and Arabic-fluent stakeholder engagement capability are a genuinely scarce combination in the Saudi market — thinner than the pool of HEOR specialists serving NICE- or IQWiG-anchored European submissions — which means sponsors who split BIA, CEA, and HTA dossier work across separate vendors often pay a hidden coordination tax: each new team re-learns the product's clinical story and re-derives epidemiology inputs the previous team already validated. Continuity of the same team across all four pillars is less a convenience than a genuine cost and timeline advantage in a market where that expertise does not scale easily.",
+        "Sequencing decisions — whether to build the budget impact model before or alongside the cost-effectiveness analysis, and when to bring market access research into the program rather than treating it as a post-registration afterthought — materially change both program cost and how defensible the evidence looks in review, because a BIA built without knowing the CEA's comparator choice, or a CEA built without knowing which NUPCO or MOH gate it ultimately has to clear, routinely needs partial rework once the fuller picture emerges. BioNixus makes the sequencing call explicit at the scoping stage rather than defaulting to whichever pillar the sponsor happened to ask about first.",
         "Saudi Arabia accounts for roughly USD 9.4 billion of the GCC's approximately USD 23.7 billion 2024 pharmaceutical spend, and Vision 2030's Health Sector Transformation Program is the explicit policy rationale behind SFDA's shift toward mandatory economic evaluation — the stated move from volume-based to value-based healthcare financing is why HEOR evidence, not clinical efficacy alone, now gates registration, pricing, and reimbursement decisions across the entire BIA-CEA-HTA-market access chain.",
         "Imported global models that ignore Saudi treatment mix, the dual public–private channel structure, and local pricing fail committee scrutiny — delaying listing even when the underlying clinical evidence is strong. This applies as much to a cost-utility (CEA) model's QALY inputs and ICER framing as it does to a budget impact model's uptake curve: Saudi Arabia has not published a single, officially codified cost-effectiveness threshold, and the most cited research-derived estimate — roughly SAR 50,000 to 75,000 per QALY — is explicitly a research estimate, not government policy, which means the credibility of a model's inputs carries more weight in review than hitting a specific ICER target.",
         "Budget impact model design with Saudi-specific assumptions, cost-effectiveness modeling calibrated to defensible comparator selection, and value communication testing for institutional stakeholders together reduce rework before SFDA and NUPCO milestones. BioNixus builds models and narratives calibrated to the Kingdom, then translates outputs into evidence packages access, medical, and finance teams can defend together — as one coordinated program rather than four separately-scoped deliverables.",
@@ -2683,7 +2702,12 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
     deliverables: {
       heading: 'Saudi HEOR program outputs',
       bullets: [
-        ...SERVICE_LANDING_DELIVERABLES,
+        'Program scoping memo naming which combination of BIA, CEA, HTA, and market access components the engagement covers',
+        'Shared assumption base with named owners, reused consistently across every pillar the program includes',
+        'Sequencing plan showing the order pillars are built in and how each carries into the next',
+        'Internal adversarial stress-test summary applied consistently across whichever pillars are in scope',
+        '30/60/90 action plan flagging evidence gaps and next steps across the full evidence chain',
+        'GCC harmonization note describing how the Saudi anchor model extends to UAE, Kuwait, or Qatar appendices where relevant',
         'Audit-ready assumption log with sensitivity tables spanning BIA, CEA, and HTA components',
         'Committee-ready executive summary and slide narrative for SFDA, NUPCO, MOH, or NGHA audiences',
         'Optional qual reaction coding aligned to model scenarios',
