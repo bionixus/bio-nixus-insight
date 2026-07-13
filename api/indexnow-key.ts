@@ -629,7 +629,17 @@ async function handleSsrRequest(
   },
 ) {
   const rawQueryUrl = getRequestParam(req, 'url');
-  const rewrittenPath = typeof rawQueryUrl === 'string' ? decodeURIComponent(rawQueryUrl) : '';
+  let rewrittenPath = '';
+  if (typeof rawQueryUrl === 'string') {
+    try {
+      rewrittenPath = decodeURIComponent(rawQueryUrl);
+    } catch (error) {
+      // Malformed/double-encoded percent sequence (seen on non-Latin slugs from some
+      // crawler UAs) — fall back to the raw value instead of failing the whole request.
+      console.error('indexnow-key: failed to decode url param, using raw value:', rawQueryUrl, error);
+      rewrittenPath = rawQueryUrl;
+    }
+  }
   const normalizedRewrittenPath = rewrittenPath
     ? (rewrittenPath.startsWith('/') ? rewrittenPath : `/${rewrittenPath}`)
     : '';
