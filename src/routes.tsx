@@ -64,6 +64,8 @@ import HealthcareFieldworkMiddleEast from '@/pages/HealthcareFieldworkMiddleEast
 import RealWorldEvidence from '@/pages/RealWorldEvidence';
 import RealWorldEvidenceGcc from '@/pages/RealWorldEvidenceGcc';
 import HeorConsultingSaudiArabia from '@/pages/HeorConsultingSaudiArabia';
+import HtaStudiesSaudiArabia from '@/pages/HtaStudiesSaudiArabia';
+import CostEffectivenessAnalysisSaudiArabia from '@/pages/CostEffectivenessAnalysisSaudiArabia';
 import CostEffectivenessAnalysisGcc from '@/pages/CostEffectivenessAnalysisGcc';
 import PharmaFieldworkSaudiArabia from '@/pages/PharmaFieldworkSaudiArabia';
 import PharmaFieldworkUae from '@/pages/PharmaFieldworkUae';
@@ -441,6 +443,8 @@ export const routes: RouteObject[] = [
   { path: '/real-world-evidence', element: <RealWorldEvidence /> },
   { path: '/real-world-evidence-gcc', element: <RealWorldEvidenceGcc /> },
   { path: '/heor-consulting-saudi-arabia', element: <HeorConsultingSaudiArabia /> },
+  { path: '/hta-studies-saudi-arabia', element: <HtaStudiesSaudiArabia /> },
+  { path: '/cost-effectiveness-analysis-saudi-arabia', element: <CostEffectivenessAnalysisSaudiArabia /> },
   { path: '/cost-effectiveness-analysis-gcc', element: <CostEffectivenessAnalysisGcc /> },
   { path: '/pharma-fieldwork-saudi-arabia', element: <PharmaFieldworkSaudiArabia /> },
   { path: '/pharma-fieldwork-uae', element: <PharmaFieldworkUae /> },
