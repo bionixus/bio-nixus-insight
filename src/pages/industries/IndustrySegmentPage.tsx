@@ -21,11 +21,11 @@ import {
   B2B_COUNTRY_GROUPS,
   B2C_AREA_SERVED,
   B2C_COUNTRY_GROUPS,
-  getIndustriesHubCountryPath,
   getIndustrySegmentCountryPath,
 } from '@/data/industryHubCountries';
 import { sortBySegmentCountryPriority } from '@/data/segmentCountryOrder';
 import { resolveCountryConfig } from '@/lib/constants/countries';
+import { CountryCoverageGrid } from './CountryCoverageGrid';
 import { PREMIUM_INDUSTRIES_CSS } from './premiumIndustriesCss';
 
 const HUB_PATH = '/bionixus-industries';
@@ -354,23 +354,18 @@ export default function IndustrySegmentPage({ slug }: IndustrySegmentPageProps) 
                   <Link to="/market-research/technology">technology market research</Link>.
                 </p>
               </div>
-              <div className="bx-country-grid bx-country-grid--flat">
-                <article className="bx-country-region bx-country-region--full">
-                  <div className="bx-chips">
-                    {sortBySegmentCountryPriority(B2B_COUNTRY_GROUPS.flatMap((group) => group.countries)).map(
-                      (country) => (
-                        <Link
-                          key={country.slug}
-                          to={getIndustriesHubCountryPath(country, 'b2b')}
-                          className="bx-chip"
-                        >
-                          {country.label}
-                        </Link>
-                      ),
-                    )}
-                  </div>
-                </article>
-              </div>
+              <CountryCoverageGrid
+                groups={[
+                  {
+                    region: 'All countries',
+                    countries: sortBySegmentCountryPriority(
+                      B2B_COUNTRY_GROUPS.flatMap((group) => group.countries),
+                    ),
+                  },
+                ]}
+                segment="b2b"
+                layout="flat"
+              />
             </div>
           </section>
         ) : null}
@@ -392,23 +387,18 @@ export default function IndustrySegmentPage({ slug }: IndustrySegmentPageProps) 
                   or browse <Link to="/market-research/fmcg">FMCG market research</Link>.
                 </p>
               </div>
-              <div className="bx-country-grid bx-country-grid--flat">
-                <article className="bx-country-region bx-country-region--full">
-                  <div className="bx-chips">
-                    {sortBySegmentCountryPriority(B2C_COUNTRY_GROUPS.flatMap((group) => group.countries)).map(
-                      (country) => (
-                        <Link
-                          key={country.slug}
-                          to={getIndustriesHubCountryPath(country, 'b2c')}
-                          className="bx-chip"
-                        >
-                          {country.label}
-                        </Link>
-                      ),
-                    )}
-                  </div>
-                </article>
-              </div>
+              <CountryCoverageGrid
+                groups={[
+                  {
+                    region: 'All countries',
+                    countries: sortBySegmentCountryPriority(
+                      B2C_COUNTRY_GROUPS.flatMap((group) => group.countries),
+                    ),
+                  },
+                ]}
+                segment="b2c"
+                layout="flat"
+              />
             </div>
           </section>
         ) : null}

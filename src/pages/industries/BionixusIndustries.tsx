@@ -7,11 +7,9 @@ import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getLocalizedPathForLanguage, localizedContactPath } from '@/lib/seo';
 import { SEGMENTS, SEGMENT_ORDER, type SegmentSlug } from '@/data/bionixusIndustrySegments';
-import {
-  BIONIXUS_INDUSTRIES_REGION_GROUPS,
-  getIndustriesHubCountryPath,
-} from '@/data/industryHubCountries';
+import { BIONIXUS_INDUSTRIES_REGION_GROUPS } from '@/data/industryHubCountries';
 import IndustriesInsightsSection from '@/pages/industries/IndustriesInsightsSection';
+import { CountryCoverageGrid } from './CountryCoverageGrid';
 import { PREMIUM_INDUSTRIES_CSS } from './premiumIndustriesCss';
 import {
   BIONIXUS_INDUSTRIES_LANGUAGE_MIRROR,
@@ -340,25 +338,7 @@ export default function BionixusIndustries() {
                 {copy.narrativeP2Part6}
               </p>
             </div>
-            <div className="bx-country-grid bx-country-grid--after-narrative">
-              {regionGroups.map((group) => (
-                <article key={group.region} className="bx-country-region">
-                  <h3>{group.region}</h3>
-                  <p className="bx-region-desc">{group.description}</p>
-                  <div className="bx-chips">
-                    {group.countries.map((country) => (
-                      <Link
-                        key={country.slug}
-                        to={getIndustriesHubCountryPath(country, 'b2b')}
-                        className="bx-chip"
-                      >
-                        {country.label}
-                      </Link>
-                    ))}
-                  </div>
-                </article>
-              ))}
-            </div>
+            <CountryCoverageGrid groups={regionGroups} segment="b2b" layout="grouped" />
           </div>
         </section>
 
