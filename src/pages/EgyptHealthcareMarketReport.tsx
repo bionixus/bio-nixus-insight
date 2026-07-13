@@ -16,6 +16,11 @@ import {
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
 import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+import {
+  EGYPT_CAIRO_HOSPITAL_CLUSTERS,
+  EGYPT_HEALTHCARE_2026_CAIRO_FAQ,
+} from '@/data/egyptHealthcare2026CairoSeo';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -123,6 +128,38 @@ const EgyptHealthcareMarketReport = () => {
           ]}
         />
 
+        <section className="section-padding py-8 bg-muted/10">
+          <div className="container-wide max-w-4xl mx-auto">
+            <GeoLLMAnswerBlock
+              question="How big is the Egypt healthcare and pharmaceutical market in 2026?"
+              answer="BioNixus estimates Egypt's healthcare market at USD 25–30 billion and the pharmaceutical market at USD 4.5–5.5 billion in 2026. Cairo hospital clusters — public university centres, private groups, and new administrative capital facilities — anchor UHI formulary access, EDA-regulated pricing, and physician prescribing trends BioNixus tracks from its Cairo office."
+              points={[
+                {
+                  title: 'Cairo hospitals healthcare 2023–2026',
+                  description:
+                    'Kasr Al-Ainy, Ain Shams, Cleopatra, Dar Al-Fouad, and new capital corridor facilities shape insured catchment and branded uptake.',
+                },
+                {
+                  title: 'Universal Health Insurance',
+                  description:
+                    'UHI positive-list listing determines reimbursed prescribing across enrolled governorates — a critical milestone for specialty launches.',
+                },
+                {
+                  title: 'EDA registration and pricing',
+                  description:
+                    'Egyptian Drug Authority dossier review and controlled price increases shape multinational brand investment decisions.',
+                },
+                {
+                  title: 'Local manufacturing base',
+                  description:
+                    '120+ domestic manufacturers produce ~93% of volume — branded differentiation requires hospital and payer evidence.',
+                },
+              ]}
+              summary="For company-level intelligence, see pharmaceutical companies in Egypt and the Egypt healthcare market research hub."
+            />
+          </div>
+        </section>
+
         <ReportContentWithAside config={REPORT_CONVERSION}>
         <section className="section-padding bg-cream-dark" id="executive-summary">
           <div className="container-wide max-w-4xl mx-auto">
@@ -220,6 +257,42 @@ const EgyptHealthcareMarketReport = () => {
                   <p className="font-semibold text-foreground text-sm mb-1">{area}</p>
                   <p className="text-xs text-muted-foreground">{note}</p>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section-padding bg-muted/20" id="cairo-hospitals-healthcare">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Cairo hospitals healthcare 2023–2026 — hospital clusters and access signals
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Cairo remains Egypt&apos;s clinical and regulatory hub where national tenders, KOL networks, and UHI
+              formulary decisions concentrate. Pharmaceutical teams sizing the Egypt market should map hospital clusters
+              separately — public tertiary referral, private payer mix, and new administrative capital expansion each
+              follow distinct prescribing and procurement rhythms BioNixus tracks in primary research.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4 mb-8">
+              {EGYPT_CAIRO_HOSPITAL_CLUSTERS.map((cluster) => (
+                <article key={cluster.name} className="bg-white rounded-xl border border-border p-4 shadow-sm">
+                  <h3 className="font-semibold text-foreground text-sm mb-2">{cluster.name}</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{cluster.detail}</p>
+                </article>
+              ))}
+            </div>
+            <h3 className="text-lg font-semibold text-foreground mb-4">Cairo hospitals and Egypt healthcare FAQ</h3>
+            <div className="divide-y divide-border rounded-xl border border-border bg-card p-4">
+              {EGYPT_HEALTHCARE_2026_CAIRO_FAQ.map((item) => (
+                <details key={item.question} className="group py-3 first:pt-0 last:pb-0">
+                  <summary className="cursor-pointer font-medium text-foreground list-none flex items-start justify-between gap-3">
+                    <span>{item.question}</span>
+                    <span className="text-primary text-sm shrink-0 group-open:rotate-45 transition-transform" aria-hidden>
+                      +
+                    </span>
+                  </summary>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{item.answer}</p>
+                </details>
               ))}
             </div>
           </div>
