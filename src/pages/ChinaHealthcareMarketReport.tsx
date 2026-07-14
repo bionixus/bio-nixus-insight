@@ -120,6 +120,51 @@ const ChinaHealthcareMarketReport = () => (
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
         </div>
       </section>
+
+        <section className="section-padding" id="market-structure">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              China pharmaceutical market structure
+            </h2>
+            <div className="space-y-4">
+              {[
+                {
+                  label: 'NHSA and three-scheme coverage',
+                  body: 'The National Healthcare Security Administration (NHSA) manages Urban Employee Basic Medical Insurance (UEBMI), Urban and Rural Resident Basic Medical Insurance (URRBMI), and merged rural schemes covering most of China\'s 1.4 billion population. Public hospital reimbursement accounts for roughly 80% of prescription drug use — NRDL listing is the commercial gate for innovative medicines.',
+                },
+                {
+                  label: 'NMPA registration reforms',
+                  body: 'NMPA (formerly CFDA) accelerated innovative drug review through Priority Review and Breakthrough Therapy Designations aligned with ICH standards. Simultaneous global development is permitted; however, NRDL negotiation and VBP procurement still determine whether approval translates into reimbursed volume.',
+                },
+                {
+                  label: 'NRDL annual negotiations',
+                  body: 'NHSA negotiates annual price concessions with manufacturers of high-value innovative medicines. Inclusion on the National Reimbursement Drug List is required for public hospital prescribing at scale — teams must model 50–70%+ price reductions from list price as a baseline scenario.',
+                },
+                {
+                  label: 'VBP centralized procurement',
+                  body: 'Volume-Based Procurement applies to off-patent generics and biosimilars through national tender with 3-year volume-guaranteed contracts. Winning tenders can secure large volumes at 70–95% discounts; losing means near-exclusion from the public hospital channel. VBP has expanded to coronary stents, orthopaedic implants, and additional device categories.',
+                },
+              ].map(({ label, body }) => (
+                <div key={label} className="bg-white rounded-xl border border-border p-5 shadow-sm">
+                  <h3 className="text-base font-semibold text-foreground mb-2">{label}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-muted-foreground leading-relaxed mt-6">
+              For device-specific intelligence, see the{' '}
+              <Link to="/china-medical-devices-market-report" className="text-primary hover:underline font-medium">
+                China medical devices market report
+              </Link>
+              . For GCC comparative strategy, see{' '}
+              <Link to="/pharmaceutical-market-research-china" className="text-primary hover:underline font-medium">
+                pharmaceutical market research China
+              </Link>
+              .
+            </p>
+          </div>
+        </section>
+
               <MarketIntelligenceSections marketSlug="china" countryName="China" variant="healthcare" />
 
         <section className="section-padding" id="related-intelligence">
