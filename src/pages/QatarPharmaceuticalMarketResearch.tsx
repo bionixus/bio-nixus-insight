@@ -112,6 +112,11 @@ const faqItems = [
     answer:
       'Yes. Qatar modules can run standalone or with comparable UAE, Saudi Arabia, or Kuwait cells using consistent instruments for regional portfolio committees.',
   },
+  {
+    question: 'How does Hamad Medical Corporation (HMC) formulary listing affect Qatar launch sequencing?',
+    answer:
+      'HMC operates the dominant public hospital network in Qatar; formulary committee decisions determine whether MoPH-registered products reach high-volume prescribing in national facilities. BioNixus maps HMC committee evidence expectations, Sidra Medicine specialist referral pathways, and private-hospital adoption curves so launch teams sequence public versus private activation with measurable adoption targets.',
+  },
 ];
 
 const geoPoints = [
@@ -188,7 +193,7 @@ export default function QatarPharmaceuticalMarketResearch() {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Healthcare Market Research Company in Qatar | BioNixus"
-        description="BioNixus is a healthcare and pharmaceutical market research company in Qatar—MoPH-aligned evidence, HMC and Sidra Medicine aware bilingual fieldwork, and."
+        description="BioNixus is a healthcare and pharmaceutical market research company in Qatar — MoPH-aligned evidence, HMC and Sidra Medicine bilingual fieldwork, and formulary intelligence."
         canonical="/pharmaceutical-market-research-qatar"
         jsonLd={jsonLd}
       />
@@ -479,6 +484,36 @@ export default function QatarPharmaceuticalMarketResearch() {
                 </p>
               </article>
             </div>
+          </div>
+        </section>
+
+        <section className="py-12 bg-muted/20">
+          <div className="container-wide max-w-5xl mx-auto space-y-5 text-muted-foreground leading-relaxed">
+            <h2 className="text-3xl font-display font-semibold text-foreground">
+              HMC formulary, MoPH procurement, and hospital committee research
+            </h2>
+            <p>
+              Qatar pharmaceutical market research must connect MoPH registration milestones to Hamad Medical Corporation
+              formulary committee behaviour — not treat regulatory approval as commercial launch. HMC pharmacy and
+              therapeutics committees evaluate clinical efficacy, budget impact versus existing formulary options, and
+              alignment with National Health Strategy 2023–2030 therapeutic priorities before listing new molecules.
+              BioNixus interviews hospital pharmacists, formulary committee members, and procurement officers to surface
+              the evidence formats and objection patterns that determine listing outcomes.
+            </p>
+            <p>
+              Private hospital groups — Aster, Al Ahli, Qatar Medical Centre — operate separate formulary and
+              procurement calendars with employer-sponsored insurance overlays. Research programmes that model HMC public
+              volume separately from private-sector adoption produce more reliable launch sequencing than national
+              averages. For integrated GCC access context, see the{' '}
+              <Link to="/gcc-market-access-guide" className="text-primary underline font-medium">
+                GCC market access guide
+              </Link>{' '}
+              and{' '}
+              <Link to="/healthcare-market-research/qatar" className="text-primary underline font-medium">
+                Qatar healthcare market research hub
+              </Link>
+              .
+            </p>
           </div>
         </section>
 
