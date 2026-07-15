@@ -8,6 +8,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { fetchCaseStudies, isCaseStudiesConfigured } from '@/lib/sanity-case-studies';
 import { SEOHead } from '@/components/seo/SEOHead';
+import { buildCanonicalOrganization } from '@/lib/seo/organization';
 import type { CaseStudy } from '@/types/caseStudy';
 import {
   Select,
@@ -36,6 +37,18 @@ const RESEARCH_AREAS = [
   { icon: '💉', label: 'Immunology Landscapes' },
   { icon: '🔬', label: 'Biosimilar Intelligence' },
   { icon: '📈', label: 'Launch Readiness' },
+];
+
+const caseStudiesPageSchemas = [
+  buildCanonicalOrganization(),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Case Studies', item: 'https://www.bionixus.com/case-studies' },
+    ],
+  },
 ];
 
 const COMING_SOON = [
@@ -130,6 +143,7 @@ const CaseStudies = () => {
         title="Healthcare & Pharmaceutical Case Studies | BioNixus"
         description="Explore BioNixus case studies in healthcare and pharmaceutical market research across Europe, the Middle East, and Africa. Proposal in 24 hours."
         canonical="/case-studies"
+        jsonLd={caseStudiesPageSchemas}
       />
       <Navbar />
       <main>

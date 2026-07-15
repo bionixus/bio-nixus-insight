@@ -1166,6 +1166,13 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
           tags: displayBlogTags.length > 0 ? displayBlogTags : post.tags,
         }}
       />
+      {
+        /* authorName/authorUrl/authorJobTitle below fall back to one
+         * consistent identity when a post has no real author data — mixing
+         * a generic name ("BioNixus Research Team") with a specific
+         * person's LinkedIn previously misattributed unsigned posts to one
+         * named individual in the Article schema's sameAs. */
+      }
       <SchemaMarkup
         pageType="blog"
         pageUrl={pageUrl}
@@ -1225,9 +1232,9 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
           '@type': 'Thing',
           name: post.category?.trim() || 'Healthcare market research',
         }]}
-        authorName={post.authorName?.trim() || 'BioNixus Research Team'}
+        authorName={post.authorName?.trim() || 'Mohammad Alsaadany'}
         authorUrl={post.authorLinkedIn || 'https://www.linkedin.com/in/mohammad-alsaadany'}
-        authorJobTitle={post.authorTitle?.trim() || 'Healthcare Market Research Lead'}
+        authorJobTitle={post.authorTitle?.trim() || 'Director, Healthcare Market Research'}
         publishedAt={post.publishedAtIso}
         modifiedAt={post.updatedAtIso || post.publishedAtIso}
         breadcrumb={

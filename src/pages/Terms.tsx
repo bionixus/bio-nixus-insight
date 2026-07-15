@@ -13,6 +13,16 @@ const Terms = () => {
           content="BioNixus terms of service for our website and healthcare market research: acceptable use, confidentiality, and client policies."
         />
         <link rel="canonical" href="https://www.bionixus.com/terms" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' },
+              { '@type': 'ListItem', position: 2, name: 'Terms of Service', item: 'https://www.bionixus.com/terms' },
+            ],
+          })}
+        </script>
       </Helmet>
       <Navbar />
       <main className="section-padding py-16">

@@ -9,6 +9,7 @@ import { useInitialData } from '@/contexts/InitialDataContext'
 import type { PressReleaseListItem } from '@/types/pressRelease'
 import { PRESS_RSS_URL } from '@/lib/pressReleaseConstants'
 import { getPressListThumbUrl } from '@/lib/pressReleaseHero'
+import { buildCanonicalOrganization } from '@/lib/seo/organization'
 import { CalendarDays, Rss } from 'lucide-react'
 
 const CANONICAL = 'https://www.bionixus.com/news'
@@ -22,6 +23,7 @@ function formatListDate(iso?: string): string {
 
 function buildNewsHubSchemas(postCount: number) {
   return [
+    buildCanonicalOrganization(),
     {
       '@context': 'https://schema.org',
       '@type': 'CollectionPage',

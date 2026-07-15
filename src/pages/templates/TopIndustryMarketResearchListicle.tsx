@@ -3,7 +3,6 @@ import { BarChart3, CheckCircle2 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { SEOHead } from '@/components/seo/SEOHead';
-import OpenGraphMeta from '@/components/OpenGraphMeta';
 import {
   buildIndustryCountryPageConfig,
   buildMatrixSeoCopy,
@@ -80,18 +79,17 @@ export default function TopIndustryMarketResearchListicle({
 
   return (
     <div className="min-h-screen bg-background">
+      {/* No separate OpenGraphMeta here: it previously rendered right after
+          SEOHead and silently overrode SEOHead's dynamic per-page og:image
+          with the generic og-image.png (react-helmet-async's last-tag-wins
+          semantics for duplicate meta tags). SEOHead already sets the full
+          set of og and twitter tags, including og:type via the ogType prop. */}
       <SEOHead
         title={pageTitle}
         description={metaDescription}
         canonical={config.listiclePath}
+        ogType="article"
         jsonLd={[breadcrumbSchema, itemListSchema, faqSchema]}
-      />
-      <OpenGraphMeta
-        title={pageTitle}
-        description={metaDescription}
-        image="https://www.bionixus.com/og-image.png"
-        url={canonical}
-        type="article"
       />
       <Navbar />
       <main>

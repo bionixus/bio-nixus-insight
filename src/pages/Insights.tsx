@@ -3,8 +3,10 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { SEOHead } from '@/components/seo/SEOHead';
+import { buildCanonicalOrganization } from '@/lib/seo/organization';
 
 const insightsPageSchemas = [
+  buildCanonicalOrganization(),
   {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
