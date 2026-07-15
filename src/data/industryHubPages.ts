@@ -537,7 +537,7 @@ export const INDUSTRY_HUB_PAGES: IndustryHubPageConfig[] = [
     displayNameShort: 'Real Estate',
     metaTitle: 'Real Estate Market Research Company | BioNixus',
     metaDescription:
-      'Property buyer behaviour, developer brand research, and commercial real estate studies across the GCC\. Proposal in 24 hours.'s high-growth residential and commercial markets. BioNixus.',
+      'Property buyer behaviour, developer brand research, and commercial real estate studies across the GCC. Proposal in 24 hours.',
     h1: 'Real Estate Market Research Company (2026)',
     heroSubtitle:
       'Property buyer behaviour, developer brand research, and commercial real estate studies — across the GCC\'s high-growth residential and commercial markets.',
