@@ -656,6 +656,14 @@ const GccMarketAccessGuide = () => {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
                 },
+                {
+                  q: 'What is the SFDA Economic Evaluation Submission (EES) pathway?',
+                  a: 'SFDA EES requires pharmacoeconomic and budget-impact evidence for selected high-cost medicines before pricing and formulary decisions. BioNixus integrates HEOR modules with GCC fieldwork — epidemiology-informed sizing, treatment-pathway mapping, willingness-to-pay proxies, and payer committee objection research structured for SFDA dossiers alongside MOHAP emirate reviews.',
+                },
+                {
+                  q: 'How do GCC biosimilar interchangeability rules affect market access research?',
+                  a: 'SFDA and MOHAP interchangeability guidance accelerates biosimilar uptake in oncology, immunology, and diabetes — but pharmacist substitution rules and physician confidence still diverge between Riyadh academic centres and Dubai private hospitals. BioNixus research tracks switching intent, tender award uptake, and account-level share shifts so access teams align medical, procurement, and pricing narratives before formulary season.',
+                },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">
                   <summary className="text-lg font-display font-semibold text-foreground cursor-pointer list-none">

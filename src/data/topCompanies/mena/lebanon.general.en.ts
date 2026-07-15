@@ -8,7 +8,7 @@ export const lebanonGeneralEn: CountryListicleConfig = {
   country: 'Lebanon',
   title: 'Top Market Research Companies in Lebanon 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading market research companies in Lebanon — healthcare, pharmaceutical, consumer, and strategic research firms compared.'s trilingual research market.',
+    'Independent 2026 guide to the leading market research companies in Lebanon — healthcare, pharmaceutical, consumer, and strategic research firms in the MENA trilingual research market.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-lebanon-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-lebanon-2026' },

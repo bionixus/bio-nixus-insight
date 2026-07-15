@@ -8,7 +8,7 @@ export const riyadhGeneralEn: CountryListicleConfig = {
   country: 'Riyadh',
   title: 'Top Market Research Companies in Riyadh 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to leading market research companies in Riyadh — SFDA-aware, healthcare, pharmaceutical, consumer, and B2B research firms operating.'s capital.',
+    'Independent 2026 guide to leading market research companies in Riyadh — SFDA-aware healthcare, pharmaceutical, consumer, and B2B research firms operating in Saudi Arabia\'s capital.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-riyadh-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-riyadh-2026' },

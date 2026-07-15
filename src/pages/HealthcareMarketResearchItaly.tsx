@@ -313,8 +313,42 @@ export default function HealthcareMarketResearchItaly() {
           </div>
         </section>
 
-        {/* Why choose BioNixus */}
+        {/* EU5 cross-market */}
         <section className="section-padding py-10">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Italy within EU5 and EMA-aligned launch sequencing
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Italy is often sequenced after Germany and France in EU5 launch plans because AIFA CTS/CPR
+                negotiations and regional SSR PT adoption can extend access timelines even when EMA centralised
+                authorisation is complete. BioNixus designs Italian modules that connect to parallel cells in{' '}
+                <Link to="/healthcare-market-research-germany" className="text-primary underline font-medium">
+                  Germany
+                </Link>
+                ,{' '}
+                <Link to="/healthcare-market-research-france" className="text-primary underline font-medium">
+                  France
+                </Link>
+                , and{' '}
+                <Link to="/healthcare-market-research-spain" className="text-primary underline font-medium">
+                  Spain
+                </Link>{' '}
+                — using consistent instruments so global access committees compare payer objections, not
+                methodology differences, when prioritising Italy versus other EU5 markets.
+              </p>
+              <p>
+                For device portfolios, Italian CEQ/MDR registration and hospital procurement research can run
+                alongside pharmaceutical payer modules when launches combine drug–device combinations or companion
+                diagnostics at IRCCS centres.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Why choose BioNixus */}
+        <section className="section-padding py-10 bg-muted/10">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
               Why pharmaceutical teams choose BioNixus in Italy

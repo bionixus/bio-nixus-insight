@@ -110,8 +110,8 @@ const GccMedicalDevicesMarketReport = () => {
       <Navbar />
 
       <SEOHead
-        title="GCC Medical Devices Market 2026 | IVD & $5.8B Size | BioNixus"
-        description="GCC medical devices & in vitro diagnostic (IVD) market ~USD 5.8B in 2026, $9B+ by 2030. Saudi Arabia, UAE, Kuwait — SFDA, MOHAP, DHA regulation, prefilled."
+        title="GCC Medical Devices Market Report 2026 | $5.8B IVD & Devices | BioNixus"
+        description="GCC medical devices market report 2026: USD 5.8B IVD, disposables, imaging & hospital procurement. Saudi Arabia, UAE, Kuwait — SFDA, MOHAP, DHA regulation and NUPCO tenders."
         canonical="https://www.bionixus.com/gcc-medical-devices-market-report"
         jsonLd={jsonLd}
       />
@@ -314,6 +314,16 @@ const GccMedicalDevicesMarketReport = () => {
                   segment: 'Diabetes Devices',
                   share: '~6% of market value',
                   body: 'CGM and insulin delivery devices. GCC\'s 18%+ diabetes prevalence rate and growing device reimbursement in Saudi Arabia and UAE create a structurally large and rapidly expanding segment.',
+                },
+                {
+                  segment: 'Medical disposables & consumables',
+                  share: '~12% of volume',
+                  body: 'Prefilled syringes, infusion sets, wound care, and OR disposables scale with hospital bed expansion under Vision 2030. NUPCO and MOHAP centralized tenders shape volume pricing for government networks; private hospitals run separate consumables contracts.',
+                },
+                {
+                  segment: 'Wearable & connected medical devices',
+                  share: 'Fastest-growing subsegment',
+                  body: 'Remote patient monitoring, wearable cardiac monitors, and hospital device connectivity platforms are accelerating as GCC health systems digitize. SFDA and MOHAP software-as-a-medical-device pathways increasingly govern connected device launches.',
                 },
               ].map(({ segment, share, body }) => (
                 <div key={segment} className="bg-white rounded-xl border border-border p-5 shadow-sm">
