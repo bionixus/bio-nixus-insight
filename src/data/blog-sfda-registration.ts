@@ -3,7 +3,7 @@ import { BlogPost as BlogPostType } from '@/types/blog';
 export const sfdaDrugRegistrationGuide: BlogPostType = {
     id: 'sfda-drug-registration-guide',
     slug: 'sfda-drug-registration-guide',
-    title: 'Complete Guide to SFDA Drug Registration in Saudi Arabia (2026)',
+    title: 'Pharmaceutical Product Registration in Saudi Arabia: SFDA Guide 2026',
     excerpt: 'A comprehensive guide for pharmaceutical companies navigating the SFDA drug registration process in Saudi Arabia, covering pathways, timelines, costs, and regulatory strategy.',
     date: 'Mar 1, 2026',
     publishedAtIso: '2026-03-01T08:00:00.000Z',
@@ -11,7 +11,7 @@ export const sfdaDrugRegistrationGuide: BlogPostType = {
     country: 'Saudi Arabia',
     tags: ['SFDA', 'Drug Registration', 'Saudi Arabia', 'Market Access', 'Regulatory Affairs'],
     authorName: 'BioNixus Research Team',
-    seoMetaTitle: 'Complete Guide to SFDA Drug Registration in Saudi Arabia (2026) | BioNixus',
+    seoMetaTitle: 'Pharmaceutical Product Registration in Saudi Arabia: SFDA Guide 2026 | BioNixus',
     seoMetaDescription: 'Navigate the SFDA drug registration process in Saudi Arabia with our complete 2026 guide for pharmaceutical companies. Learn about pathways, CTD requirements, and regulatory strategies.',
     tableOfContents: [
         { heading: 'Understanding the SFDA', anchor: 'understanding-the-sfda' },
