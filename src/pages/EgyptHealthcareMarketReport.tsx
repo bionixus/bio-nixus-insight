@@ -16,6 +16,10 @@ import {
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
 import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
+import {
+  EGYPT_CAIRO_HOSPITAL_CLUSTERS,
+  EGYPT_HEALTHCARE_2026_CAIRO_FAQ,
+} from '@/data/egyptHealthcare2026CairoSeo';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -53,6 +57,7 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
     answer:
       'BioNixus has operated a dedicated Egypt research team from Cairo since 2012. We conduct quantitative HCP surveys (oncologists, endocrinologists, cardiologists, gastroenterologists, rheumatologists), qualitative KOL depth interviews, payer and formulary research with MOH and UHI decision-makers, and hospital consumption intelligence across Cairo University Hospital, NCI, Ain Shams, and private hospital chains (Cleopatra, As-Salam International, Dar Al Fouad). Egypt-specific and regional MENA programs are both available.',
   },
+  ...EGYPT_HEALTHCARE_2026_CAIRO_FAQ.slice(0, 2),
 ], 'egypt');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/egypt-healthcare-market-report');
@@ -203,6 +208,40 @@ const EgyptHealthcareMarketReport = () => {
         </section>
 
         <MarketIntelligenceSections marketSlug="egypt" countryName="Egypt" variant="healthcare" />
+
+        <section className="section-padding" id="cairo-hospitals-healthcare">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Cairo hospitals healthcare 2023–2026 — hospital clusters and pharmaceutical access
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Cairo remains Egypt&apos;s clinical, regulatory, and commercial hub for pharmaceutical access from 2023
+              through 2026. Universal health insurance rollout, EDA pricing reforms, and new capital corridor facilities
+              shift formulary and hospital procurement decisions — teams need Cairo-specific hospital intelligence, not
+              only national averages. BioNixus maps prescribing and access signals across public tertiary centres,
+              private hospital groups, and emerging insured catchment east of Cairo.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4 mb-6">
+              {EGYPT_CAIRO_HOSPITAL_CLUSTERS.map((cluster) => (
+                <div key={cluster.name} className="bg-white rounded-xl border border-border p-5 shadow-sm">
+                  <h3 className="text-base font-semibold text-foreground mb-2">{cluster.name}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{cluster.detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-muted-foreground leading-relaxed">
+              For company-level intelligence paired with this hospital landscape, see{' '}
+              <Link to="/pharmaceutical-companies-egypt" className="text-primary hover:underline font-medium">
+                pharmaceutical companies in Egypt
+              </Link>
+              {' '}and the{' '}
+              <Link to="/healthcare-market-research/egypt" className="text-primary hover:underline font-medium">
+                Egypt healthcare market research hub
+              </Link>
+              .
+            </p>
+          </div>
+        </section>
 
         <section className="section-padding bg-cream-dark" id="therapy-areas">
           <div className="container-wide max-w-4xl mx-auto">

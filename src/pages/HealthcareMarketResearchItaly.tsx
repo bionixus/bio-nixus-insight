@@ -48,6 +48,11 @@ const faqItems = [
     answer:
       'Yes. Italian modules can run with comparable cells in Germany, France, Spain, and the UK — and beyond to the USA, Canada, Japan, and other markets — using consistent instruments for global portfolio committees managing EU5 and multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How does AIFA CTS benefit assessment affect Italian healthcare market research?',
+    answer:
+      'AIFA CTS classifies medicines as innovativo, innovativo condizionato, or non-innovativo — determining reimbursement fund access and CPR negotiation urgency. Research programmes must align HCP adoption, payer willingness-to-pay, and regional SSR PT dynamics to the CTS classification timeline. BioNixus designs Italian studies backward from CTS evidence gaps: physician treatment algorithms, nota limitativa compliance, IRCCS formulary behaviour, and regional SSR restriction patterns in Lombardia, Lazio, and Veneto.',
+  },
 ];
 
 const jsonLd = [
@@ -308,6 +313,13 @@ export default function HealthcareMarketResearchItaly() {
                 dynamics at both the AIFA level and the regional SSR level is essential for launch strategy and
                 real-world evidence programme design. BioNixus conducts nota limitativa impact research: physician
                 perception studies, prescriber compliance research, and SSR adoption barrier studies.
+              </p>
+              <p>
+                For oncology and rare-disease portfolios, Law 648/96 compassionate use and registro AIFA managed entry
+                agreements create parallel access routes that IRCCS centres activate before national PFN listing.
+                Research that maps which IRCCS networks (INT Milan, IEO, Policlinico Gemelli, Sant&apos;Orsola Bologna)
+                drive early adoption helps commercial teams sequence AIFA CTS submissions, regional SSR PT applications,
+                and medical education without conflicting narratives across Northern and Southern Italy.
               </p>
             </div>
           </div>
