@@ -191,15 +191,16 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     en: '/healthcare-market-research/saudi-arabia',
     ar: '/ar/healthcare-market-research/saudi-arabia',
   },
+  // Deliberately self-reference only: /market-research (the multi-industry
+  // hub) and /market-research-healthcare (below) are two distinct English
+  // pages. This group previously claimed the exact same de/fr/es/zh/ar/pt/ru
+  // "/xx/market-research-healthcare" URLs as /market-research-healthcare's
+  // own group — since those locale pages are actual translations of the
+  // healthcare-specific page, not this broader hub, claiming them here too
+  // produced two different English pages pointing at the same alternates
+  // (Ahrefs: "Duplicate_language"/"Incomplete_group" across the whole set).
   '/market-research': {
     en: '/market-research',
-    de: '/de/market-research-healthcare',
-    fr: '/fr/market-research-healthcare',
-    es: '/es/market-research-healthcare',
-    zh: '/zh/market-research-healthcare',
-    ar: '/ar/market-research-healthcare',
-    pt: '/pt/market-research-healthcare',
-    ru: '/ru/market-research-healthcare',
   },
   '/market-research-uae': {
     en: '/market-research-uae',
@@ -251,6 +252,11 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
   },
   '/market-research-saudi-arabia-pharmaceutical': {
     en: '/market-research-saudi-arabia-pharmaceutical',
+    ar: '/ar/abhath-suq-adwiyah-saudi-arabia',
+  },
+  '/brazil-pharmaceutical-market-research': {
+    en: '/brazil-pharmaceutical-market-research',
+    pt: '/pt/pesquisa-mercado-farmaceutico-brasil',
   },
   '/market-research-healthcare': {
     en: '/market-research-healthcare',
