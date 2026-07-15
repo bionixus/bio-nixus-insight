@@ -8,7 +8,7 @@ export const ethiopiaGeneralEn: CountryListicleConfig = {
   country: 'Ethiopia',
   title: 'Top Market Research Companies in Ethiopia 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the leading market research companies in Ethiopia — healthcare, pharmaceutical, consumer, and strategic research firms compared.'s second largest population.',
+    'Independent 2026 guide to leading market research companies in Ethiopia — healthcare, pharma, consumer & strategic firms compared. Proposal in 24 hours.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-ethiopia-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-ethiopia-2026' },
