@@ -2,9 +2,9 @@ import GeneralMarketResearchCountryPage from '@/pages/market-research-country/Ge
 import type { GeneralMRPageContent } from '@/pages/market-research-country/GeneralMarketResearchCountryPage';
 
 const content: GeneralMRPageContent = {
-  title: 'Market Research Companies Saudi Arabia | BioNixus',
+  title: 'Market Research Company in Saudi Arabia | BioNixus',
   description:
-    'Top market research companies in Saudi Arabia covering FMCG, retail, BFSI, telecom, real estate, automotive, and technology across Riyadh, Jeddah, and the Kingdom. BioNixus is an international market research company with multi-industry Saudi expertise.',
+    'BioNixus is a market research company delivering primary consumer, B2B, and industry-specific studies across FMCG, retail, BFSI, telecom, real estate, automotive, and technology in Saudi Arabia — Riyadh, Jeddah, and nationwide. See how BioNixus compares to other Saudi research firms.',
   canonical: '/market-research-in-saudi-arabia',
   h1: 'Market Research Company in Saudi Arabia',
   intro:
@@ -165,9 +165,9 @@ const content: GeneralMRPageContent = {
   },
   faqs: [
     {
-      question: 'What are the top market research companies in Saudi Arabia?',
+      question: 'How does BioNixus differ from other market research companies operating in Saudi Arabia?',
       answer:
-        'Leading market research companies in Saudi Arabia include BioNixus, Kantar Saudi Arabia, Ipsos Saudi Arabia, NielsenIQ Saudi Arabia, and Euromonitor International. Kantar leads brand tracking and consumer panels; NielsenIQ dominates FMCG retail data; Ipsos is strong in government and quantitative research; BioNixus specialises in primary, decision-specific custom research across multiple industries.',
+        'Kantar Saudi Arabia leads brand tracking and consumer panels; NielsenIQ Saudi Arabia dominates FMCG retail data; Ipsos Saudi Arabia is strong in government and quantitative research; Euromonitor International offers syndicated market sizing without primary Saudi fieldwork. BioNixus specialises in primary, decision-specific custom research across multiple industries, with Vision 2030-aware study design and Arabic-first fieldwork built in from the start. For a full side-by-side ranking of Saudi research firms, see our top market research companies in Saudi Arabia guide.',
     },
     {
       question: 'What industries do market research companies in Saudi Arabia cover?',
