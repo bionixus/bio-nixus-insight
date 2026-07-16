@@ -433,6 +433,37 @@ export default function QatarPharmaceuticalMarketResearch() {
         </section>
 
         <section className="py-12">
+          <div className="container-wide max-w-5xl mx-auto space-y-5 text-muted-foreground leading-relaxed">
+            <h2 className="text-3xl font-display font-semibold text-foreground">
+              Hamad Medical Corporation formulary and procurement intelligence
+            </h2>
+            <p>
+              Hamad Medical Corporation (HMC) operates Qatar&apos;s dominant public hospital network — roughly 14
+              hospitals plus specialist institutes — and maintains a consolidated formulary that shapes prescribing
+              for the majority of insured Qatari nationals and many expatriate patients in the public system. MoPH
+              registration grants marketing authorisation, but HMC Pharmacy &amp; Therapeutics committees determine
+              whether a molecule is listed, restricted, or deferred. BioNixus researches committee evidence
+              preferences, comparator framing, and budget-impact questions that differ from private-sector adoption
+              in Aster, Al Ahli, and employer-sponsored insurance channels.
+            </p>
+            <p>
+              HMC procurement cycles often run independently of MoPH price-approval timing. Launch teams therefore
+              need Qatar-specific intelligence on when therapeutic categories are reviewed, which KOL voices carry
+              weight inside HMC specialist networks, and how Sidra Medicine&apos;s quaternary paediatric and
+              women&apos;s health programmes influence adjacent adult indications. Pair this section with{' '}
+              <Link to="/qatar-market-access-research" className="text-primary underline font-medium">
+                Qatar market access research
+              </Link>{' '}
+              and{' '}
+              <Link to="/healthcare-market-research/qatar" className="text-primary underline font-medium">
+                healthcare market research Qatar
+              </Link>{' '}
+              for integrated MoPH-to-HMC evidence planning.
+            </p>
+          </div>
+        </section>
+
+        <section className="py-12">
           <div className="container-wide max-w-5xl mx-auto space-y-5">
             <h2 className="text-3xl font-display font-semibold text-foreground">Qatar case study patterns we solve</h2>
             <p className="text-muted-foreground leading-relaxed">

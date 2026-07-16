@@ -311,6 +311,43 @@ export default function HealthcareMarketResearchChina() {
           </div>
         </section>
 
+        {/* NHSA NRDL negotiation cycle */}
+        <section className="section-padding py-10 bg-muted/20">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              NHSA NRDL annual negotiation and hospital formulary sequencing
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                NMPA approval is only the first gate in China. Commercial outcomes depend on whether a product secures
+                NHSA National Reimbursement Drug List (NRDL) inclusion in the annual negotiation cycle, survives
+                Volume-Based Procurement (VBP) price resets for molecules in centralized tender rounds, and clears
+                individual Tier 3A hospital pharmacy committee review. Each layer can delay uptake by quarters even
+                when national registration is complete — which is why China healthcare research must map payer and
+                hospital sequencing explicitly, not infer access from approval status alone.
+              </p>
+              <p>
+                BioNixus designs pre-NRDL evidence modules (physician unmet-need indices, comparator perception,
+                pharmacoeconomic priors) and post-negotiation adoption trackers that measure how NRDL listing,
+                provincial PRLS supplementary coverage, and DRG payment reform reshape prescribing at leading
+                academic centres. This sequencing intelligence supports global teams deciding whether to prioritise
+                China in Asia-Pacific launch waves versus Japan PMDA, South Korea HIRA, or ASEAN markets.
+              </p>
+              <p>
+                For pharmaceutical BOFU context, see{' '}
+                <Link to="/pharmaceutical-market-research-china" className="text-primary hover:underline font-medium">
+                  pharmaceutical market research China
+                </Link>{' '}
+                and the{' '}
+                <Link to="/china-healthcare-market-report" className="text-primary hover:underline font-medium">
+                  China healthcare market report
+                </Link>
+                .
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Why choose BioNixus */}
         <section className="section-padding py-10">
           <div className="container-wide max-w-5xl mx-auto">

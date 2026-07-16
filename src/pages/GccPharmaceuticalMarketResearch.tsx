@@ -54,6 +54,11 @@ const FAQ_ITEMS = [
     answer:
       'In 2026, the fastest-growing GCC therapy areas are oncology, diabetes and obesity (GLP-1 driven), rare disease, immunology, and cardiovascular. Saudi Arabia and the UAE concentrate the bulk of innovative-medicine spend, while Kuwait and Qatar prioritize tendered generic and hospital-administered portfolios.',
   },
+  {
+    question: 'How does NUPCO tender intelligence shape GCC generic injectables research?',
+    answer:
+      'NUPCO publishes centralized Ministry of Health tenders that determine which hospital-administered molecules reach Saudi public networks at scale. BioNixus tracks tender calendar timing, committee evaluation criteria, post-award switching behaviour, and price-corridor dynamics — so generic injectables and biosimilar portfolios are researched against procurement outcomes, not only SFDA approval status.',
+  },
 ];
 
 const FAQ_SECTION_ID = 'gcc-pharma-research-faq';
