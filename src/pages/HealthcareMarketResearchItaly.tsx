@@ -339,6 +339,50 @@ export default function HealthcareMarketResearchItaly() {
           </div>
         </section>
 
+        {/* EU5 benchmarking */}
+        <section className="section-padding py-10 bg-muted/20">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              EU5 benchmarking: Italy alongside Germany, France, Spain, and the UK
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Italian healthcare market research rarely sits in isolation. Global portfolio committees managing EU5
+                access need comparable HCP prescribing data, payer pathway intelligence, and KOL influence maps
+                across Germany (G-BA AMNOG), France (HAS/CEPS), Spain (AEMPS and regional SNS), the UK (NICE and
+                ICS formularies), and Italy (AIFA CTS/CPR plus regional SSR PT). BioNixus runs harmonised instruments
+                so Italian findings can be read against EU5 peers without re-scoping each market from scratch.
+              </p>
+              <p>
+                Italy&apos;s regional SSR layer is the most common source of EU5 divergence: a product can achieve
+                national AIFA PFN Class A listing yet face nota limitative or PT restrictions in Lombardia, Lazio,
+                Veneto, or Emilia-Romagna. EU5 benchmarking programmes therefore include optional regional SSR modules
+                in Italy while keeping core HCP and payer cells aligned with German, French, Spanish, and UK fieldwork
+                timelines — supporting single-vendor governance for multi-market launch sequencing.
+              </p>
+              <p>
+                Explore linked EU5 hubs:{' '}
+                <Link to="/healthcare-market-research-germany" className="text-primary hover:underline font-medium">
+                  healthcare market research Germany
+                </Link>
+                ,{' '}
+                <Link to="/healthcare-market-research-france" className="text-primary hover:underline font-medium">
+                  healthcare market research France
+                </Link>
+                ,{' '}
+                <Link to="/healthcare-market-research-spain" className="text-primary hover:underline font-medium">
+                  healthcare market research Spain
+                </Link>
+                , and{' '}
+                <Link to="/healthcare-market-research-uk" className="text-primary hover:underline font-medium">
+                  healthcare market research UK
+                </Link>
+                .
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Related links */}
         <section className="section-padding py-8 bg-muted/20">
           <div className="container-wide max-w-5xl mx-auto">

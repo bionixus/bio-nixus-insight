@@ -498,6 +498,43 @@ const GccMarketAccessGuide = () => {
           </div>
         </section>
 
+        {/* SFDA Economic Evaluation System (EES) */}
+        <section className="section-padding py-12" id="sfda-ees">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              SFDA Economic Evaluation System (EES) and GCC pharmacoeconomics
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Saudi Arabia&apos;s SFDA Economic Evaluation System (EES) increasingly shapes how innovative medicines
+                are priced and listed after marketing authorisation. For products that trigger economic review,
+                launch teams must prepare budget-impact models, comparator justification, and real-world use
+                assumptions that align with SFDA reviewer expectations — not only clinical dossier content from EU or
+                US filings. EES review runs in parallel with external reference pricing and NUPCO tender planning,
+                meaning access strategy must connect pharmacoeconomic narratives to hospital procurement calendars.
+              </p>
+              <p>
+                The UAE, Kuwait, and Qatar do not mirror SFDA EES exactly, but hospital formulary committees and
+                Ministry pricing offices increasingly request pharmacoeconomic summaries for high-cost biologics,
+                oncology medicines, and rare-disease therapies. BioNixus designs GCC access research that tests which
+                economic arguments resonate with SFDA EES reviewers, MOHAP formulary committees, and Hamad Medical
+                Corporation procurement — before teams commit to global price corridors that fail locally.
+              </p>
+              <p>
+                For integrated HEOR and payer modules, see our{' '}
+                <Link to="/heor-consulting" className="text-primary underline font-medium">
+                  HEOR consulting
+                </Link>{' '}
+                programmes and the{' '}
+                <Link to="/blog/pharmacoeconomics-gcc-practical-guide" className="text-primary underline font-medium">
+                  pharmacoeconomics GCC practical guide
+                </Link>
+                .
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* NUPCO and GCC tender landscape */}
         <section className="section-padding py-12" id="nupco-tenders">
           <div className="container-wide max-w-5xl mx-auto">
@@ -655,6 +692,14 @@ const GccMarketAccessGuide = () => {
                 {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
+                },
+                {
+                  q: 'What is SFDA Economic Evaluation System (EES) and when does it apply?',
+                  a: 'SFDA EES is Saudi Arabia\'s pharmacoeconomic review pathway for selected innovative medicines after marketing authorisation. It evaluates budget impact, comparator choice, and cost-effectiveness evidence before final pricing and public-sector listing decisions. Teams should align EES dossiers with NUPCO tender timing and external reference pricing assumptions — not treat EES as a post-launch administrative step.',
+                },
+                {
+                  q: 'How do SFDA EES requirements differ from UAE MOHAP formulary review?',
+                  a: 'SFDA EES is a formal national economic evaluation gate tied to Saudi pricing and MOH listing. UAE access splits across MOHAP federal registration, DHA Dubai formulary committees, and DOH Abu Dhabi benefit decisions — with mandatory health insurance shaping private uptake. BioNixus maps which economic narrative each authority expects before teams reuse EU HTA models unchanged.',
                 },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">
