@@ -325,6 +325,43 @@ export default function HealthcareMarketResearchJapan() {
           </div>
         </section>
 
+        {/* DPC hospital economics */}
+        <section className="section-padding py-10 bg-muted/10">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              DPC hospital economics and acute-care adoption in Japan
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Japan&apos;s Diagnosis Procedure Combination (DPC) bundled-payment system shapes how acute-care hospitals
+                adopt high-cost drugs, devices, and procedures. Even after PMDA approval and NHI listing, DPC economics
+                influence whether university hospitals and regional acute centres expand use — especially for oncology,
+                cardiovascular, and specialty inpatient therapies where length of stay and procedure bundles affect
+                hospital margins. Pharmaceutical market research in Japan must therefore pair physician surveys with
+                hospital pharmacist, medical economics, and DPC manager perspectives.
+              </p>
+              <p>
+                BioNixus conducts Japanese hospital adoption research across Tokyo, Osaka, and Nagoya academic networks
+                and prefecture referral centres: formulary committee behaviour, Chuikyo price-revision sensitivity,
+                off-label use patterns where guidelines lag, and medical-device procurement within DPC procedure groups.
+                Native Japanese moderators run ethics-compliant interviews; outputs align to global brand teams managing
+                Japan alongside South Korea and Asia-Pacific benchmarks.
+              </p>
+              <p>
+                See the{' '}
+                <Link to="/japan-healthcare-market-report" className="text-primary underline font-medium">
+                  Japan healthcare market report
+                </Link>{' '}
+                and{' '}
+                <Link to="/healthcare-market-research/japan" className="text-primary underline font-medium">
+                  healthcare market research Japan hub
+                </Link>{' '}
+                for NHI listing context that complements DPC-focused fieldwork.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Related links */}
         <section className="section-padding py-8 bg-muted/20">
           <div className="container-wide max-w-5xl mx-auto">

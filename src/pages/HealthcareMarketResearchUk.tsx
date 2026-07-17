@@ -322,6 +322,47 @@ export default function HealthcareMarketResearchUk() {
           </div>
         </section>
 
+        {/* ICB formulary adoption in England */}
+        <section className="section-padding py-10 bg-muted/10">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Integrated Care Board (ICB) formulary adoption in England
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                NICE Technology Appraisal guidance does not automatically translate into uniform prescribing across
+                England. Integrated Care Boards (ICBs) — 42 systems covering NHS England — run medicines optimisation
+                programmes, local formularies, and prior-approval criteria that can delay or restrict uptake even after
+                positive NICE recommendations. For pharmaceutical teams, the commercial gap between national guidance and
+                ICB implementation is where healthcare market research in the UK delivers the highest leverage: mapping
+                which ICBs adopt quickly, which impose additional clinical criteria, and which chief pharmacists require
+                budget-impact evidence before listing.
+              </p>
+              <p>
+                BioNixus designs ICB-facing research modules that complement national payer work: chief pharmacist and
+                medicines optimisation lead interviews, DTC (drug and therapeutics committee) observation, paired
+                physician–pharmacist modules on switching behaviour, and tracker surveys measuring formulary status
+                shifts quarter over quarter. Oncology, immunology biosimilars, GLP-1 metabolic therapies, and rare-disease
+                orphan drugs are the categories where ICB variation is most pronounced — especially when VPAG pricing
+                pressure or NHS Supply Chain frameworks influence local contracting.
+              </p>
+              <p>
+                Scotland (SMC), Wales (AWMSG), and Northern Ireland (HSC) maintain separate HTA and formulary rhythms;
+                multi-nation UK launch plans should not assume an England-only ICB map generalises. Connect UK modules
+                with the{' '}
+                <Link to="/uk-healthcare-market-report" className="text-primary underline font-medium">
+                  UK healthcare market report
+                </Link>{' '}
+                and{' '}
+                <Link to="/healthcare-market-research/uk" className="text-primary underline font-medium">
+                  healthcare market research UK hub
+                </Link>{' '}
+                for devolved-nation sequencing alongside ICB intelligence.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Related links */}
         <section className="section-padding py-8 bg-muted/20">
           <div className="container-wide max-w-5xl mx-auto">

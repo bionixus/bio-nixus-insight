@@ -50,9 +50,9 @@ const FAQ_ITEMS = [
       'BioNixus runs primary physician and KOL research, quantitative tracker programs, market access and pricing studies, KOL mapping, and competitive intelligence across Saudi Arabia, the UAE, Kuwait, Qatar, Bahrain, and Oman. Programs are bilingual (Arabic/English), SFDA/MOHAP-aware, and aligned to launch, access, and growth decision windows.',
   },
   {
-    question: 'Which GCC therapy areas drive the most pharma growth in 2026?',
+    question: 'How does NUPCO tendering affect GCC pharmaceutical market research priorities?',
     answer:
-      'In 2026, the fastest-growing GCC therapy areas are oncology, diabetes and obesity (GLP-1 driven), rare disease, immunology, and cardiovascular. Saudi Arabia and the UAE concentrate the bulk of innovative-medicine spend, while Kuwait and Qatar prioritize tendered generic and hospital-administered portfolios.',
+      'NUPCO centralises Saudi Ministry of Health pharmaceutical tenders — so GCC pharmaceutical market research must align SFDA approval timing, price corridors, and clinical narratives with tender evaluation windows, not only with physician prescribing intent. BioNixus tracks NUPCO award calendars, post-tender switching behaviour, and hospital-administered uptake for biologics and generic injectables across KSA, UAE, and Kuwait procurement channels.',
   },
 ];
 

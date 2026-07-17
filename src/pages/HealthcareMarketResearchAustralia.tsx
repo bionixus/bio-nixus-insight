@@ -322,6 +322,46 @@ export default function HealthcareMarketResearchAustralia() {
           </div>
         </section>
 
+        {/* PBAC and PBS listing pathway */}
+        <section className="section-padding py-10 bg-muted/10">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              PBAC, PBS listing, and state hospital formulary dynamics
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Australian market access is often summarised as &quot;TGA then PBAC then PBS&quot; — but commercial
+                outcomes also depend on state hospital formulary decisions, MSAC pathways for devices and services, and
+                private health insurer formularies that shape community prescribing. The Pharmaceutical Benefits Advisory
+                Committee (PBAC) evaluates cost-effectiveness against the PBS; a positive recommendation still requires
+                Department of Health price negotiation and PBS listing before community reimbursement scales. Hospital-only
+                medicines and high-cost specialty therapies additionally face state health system formulary committees in
+                NSW, Victoria, Queensland, South Australia, and Western Australia.
+              </p>
+              <p>
+                BioNixus designs Australian research to bridge those layers: PBAC submission objection research,
+                post-listing uptake trackers across GP and specialist channels, hospital pharmacist and DTC interviews on
+                state formulary criteria, and private insurer medical adviser modules where employer-funded plans influence
+                GLP-1, oncology, and rare-disease access. Aboriginal and Torres Strait Islander health pathways and
+                rural/regional access variation are incorporated where programmes require nationally representative
+                evidence under NHMRC ethical standards.
+              </p>
+              <p>
+                For device and diagnostic portfolios, MSAC and state procurement frameworks run parallel to PBAC — pair
+                Australian modules with the{' '}
+                <Link to="/australia-healthcare-market-report" className="text-primary underline font-medium">
+                  Australia healthcare market report
+                </Link>{' '}
+                and{' '}
+                <Link to="/healthcare-market-research/australia" className="text-primary underline font-medium">
+                  healthcare market research Australia hub
+                </Link>{' '}
+                when sequencing pharma and medtech evidence for the same hospital account.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Related links */}
         <section className="section-padding py-8 bg-muted/20">
           <div className="container-wide max-w-5xl mx-auto">

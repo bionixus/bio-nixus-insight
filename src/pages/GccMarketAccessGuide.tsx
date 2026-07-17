@@ -649,6 +649,10 @@ const GccMarketAccessGuide = () => {
                   a: 'Yes, Arabic labelling is mandatory in Saudi Arabia, Kuwait, and Oman. UAE and Qatar require bilingual (English + Arabic) labelling. Bahrain accepts English-only labelling for some product categories but Arabic is recommended. Patient information leaflets must be in Arabic across all GCC markets.',
                 },
                 {
+                  q: 'What is the SFDA Economic Evaluation Submission (EES) pathway?',
+                  a: 'SFDA’s Economic Evaluation Submission (EES) pathway requires selected high-cost medicines — especially biologics, oncology, and rare-disease therapies — to submit pharmacoeconomic evidence alongside clinical dossiers before pricing and formulary decisions advance. Teams should align budget-impact models, comparator choices, and local epidemiology with NUPCO tender timelines so HEOR outputs support both SFDA review and hospital procurement committees.',
+                },
+                {
                   q: 'How does NUPCO affect market access in Saudi Arabia?',
                   a: 'NUPCO runs central tenders for Ministry of Health hospitals, determining which products receive large-volume public sector contracts. Launch teams must align SFDA registration timing, pricing, and clinical narratives with NUPCO evaluation cycles — often 12–18 months after initial regulatory approval.',
                 },

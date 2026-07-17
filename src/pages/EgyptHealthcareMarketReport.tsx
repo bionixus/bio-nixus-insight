@@ -16,6 +16,7 @@ import {
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
 import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -123,6 +124,33 @@ const EgyptHealthcareMarketReport = () => {
           ]}
         />
 
+        <section className="section-padding py-10 bg-muted/10 border-b border-border/60">
+          <div className="container-wide max-w-4xl mx-auto">
+            <GeoLLMAnswerBlock
+              question="Cairo hospitals and Egypt healthcare market outlook 2023–2026"
+              answer="Cairo anchors Egypt's hospital and pharmaceutical demand: major public centres (Cairo University Hospital, National Cancer Institute, Ain Shams) and private networks (Cleopatra, As-Salam International, Dar Al Fouad) drive specialty prescribing, while Universal Health Insurance expansion is widening formulary access across Greater Cairo governorates. BioNixus tracks Cairo hospital procurement, EDA pricing, and UHI listing from its Cairo office."
+              points={[
+                {
+                  title: 'Public hospital clusters',
+                  description:
+                    'Cairo University, NCI, Ain Shams, and Kasr Al Ainy anchor oncology, cardiology, and infectious-disease volume for UHI-enrolled patients.',
+                },
+                {
+                  title: 'Private hospital channel',
+                  description:
+                    'Cleopatra, As-Salam, and Dar Al Fouad provide branded specialty uptake and corporate insurance pathways distinct from MOH pricing.',
+                },
+                {
+                  title: 'UHI formulary expansion',
+                  description:
+                    'UHI positive-list updates in Cairo governorates are the primary access lever for innovative medicines after EDA registration.',
+                },
+              ]}
+              summary="For Egypt-wide pharmaceutical intelligence beyond Cairo, see the therapy sections and EDA/UHI FAQ below — and the healthcare market research Egypt hub for country programmes."
+            />
+          </div>
+        </section>
+
         <ReportContentWithAside config={REPORT_CONVERSION}>
         <section className="section-padding bg-cream-dark" id="executive-summary">
           <div className="container-wide max-w-4xl mx-auto">
@@ -183,7 +211,39 @@ const EgyptHealthcareMarketReport = () => {
           </div>
         </section>
 
-        <section className="section-padding" id="market-structure">
+        <section className="section-padding" id="cairo-hospitals-healthcare">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              Cairo hospitals and Egypt healthcare infrastructure 2023–2026
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Greater Cairo concentrates Egypt&apos;s highest-acuity hospital capacity and a disproportionate share of
+              branded pharmaceutical demand. Public anchors — Cairo University Hospital, the National Cancer Institute,
+              Ain Shams University hospitals, and Kasr Al Ainy — handle referral oncology, hepatology, and
+              cardiovascular volume that shapes national treatment guidelines and UHI formulary debates. Private groups
+              including Cleopatra Hospitals, As-Salam International, Dar Al Fouad, and Al Salam Mohandessin operate at
+              near-international standards and remain the primary channel for innovative biologics, GLP-1 therapies, and
+              corporate-insured specialty products where EDA price ceilings constrain public-sector uptake.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              For market access teams, Cairo is not a single account map: MOH facilities, UHI-enrolled hospitals,
+              military medical centres, and private networks follow different procurement rules, chief-pharmacist influence
+              patterns, and evidence expectations. BioNixus maintains Cairo-based hospital pharmacist, procurement, and
+              specialist panels to track formulary movement, tender outcomes, and prescribing shifts as UHI rolls across
+              Cairo, Giza, and Qalyubia governorates through 2026. Pair this intelligence with the{' '}
+              <Link to="/healthcare-market-research/egypt" className="text-primary hover:underline font-medium">
+                healthcare market research Egypt
+              </Link>{' '}
+              hub and{' '}
+              <Link to="/blog/healthcare-overview-egypt-market-2026" className="text-primary hover:underline font-medium">
+                Egypt healthcare market overview 2026
+              </Link>{' '}
+              for national context beyond the capital.
+            </p>
+          </div>
+        </section>
+
+        <section className="section-padding bg-muted/20" id="market-structure">
           <div className="container-wide max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Egypt Pharmaceutical Market Structure</h2>
             <div className="space-y-4">
