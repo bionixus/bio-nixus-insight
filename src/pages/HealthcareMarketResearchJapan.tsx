@@ -299,6 +299,47 @@ export default function HealthcareMarketResearchJapan() {
           </div>
         </section>
 
+        {/* Launch sequencing */}
+        <section className="section-padding py-10">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Pharmaceutical launch and access sequencing in Japan
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Japan&apos;s third-largest global pharmaceutical market demands sequencing that begins before PMDA
+                approval. Teams must align clinical development narratives with NHI listing criteria, Chuikyo pricing
+                methodology (comparator-based or cost-calculation), and useful-novelty premiums — then plan for biennial
+                NHI price revisions that systematically erode revenue over a product lifecycle. In a super-aging society
+                where more than 28% of the population is aged 65 or over, dementia, oncology, and metabolic portfolios
+                face heightened HTA scrutiny and prefecture-level budget constraints.
+              </p>
+              <p>
+                BioNixus designs Japanese research programmes in native language around these milestones. Pre-listing
+                modules map DPC hospital procurement dynamics, physician treatment algorithms, and KOL influence networks
+                at university hospitals and national centres (University of Tokyo, Kyoto, Osaka, National Cancer Center
+                Japan). NHI-facing modules test price-sensitivity narratives, substitution potential for biosimilars,
+                and Chuikyo deliberation objections. Post-listing modules track prefecture formulary behaviour, DPC
+                bundled-payment adoption, and physician switching after price revisions.
+              </p>
+              <p>
+                For medical devices, PMDA approval and NHI fee-schedule listing follow distinct timelines from
+                pharmaceuticals. BioNixus pairs surgeon and clinical engineer preference research with hospital
+                procurement committee intelligence across DPC acute-care networks. Japanese modules benchmark against
+                South Korea, China, USA, and EU5 for global portfolio committees — see also{' '}
+                <Link to="/japan-healthcare-market-report" className="text-primary underline font-medium">
+                  Japan healthcare market report
+                </Link>{' '}
+                and{' '}
+                <Link to="/pharmaceutical-market-research-japan" className="text-primary underline font-medium">
+                  Japan pharmaceutical market research
+                </Link>
+                .
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Why choose BioNixus */}
         <section className="section-padding py-10">
           <div className="container-wide max-w-5xl mx-auto">

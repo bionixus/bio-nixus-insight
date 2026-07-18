@@ -296,6 +296,47 @@ export default function HealthcareMarketResearchAustralia() {
           </div>
         </section>
 
+        {/* Launch sequencing */}
+        <section className="section-padding py-10">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Pharmaceutical launch and access sequencing in Australia
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Australian commercial success depends on sequencing TGA registration, PBAC health technology
+                assessment, Department of Health price negotiation, and PBS listing — then securing adoption across
+                state hospital formularies (NSW Health, Queensland Health, Victoria, SA Health, WA Health) and private
+                hospital networks. A positive PBAC recommendation does not guarantee rapid PBS implementation; teams
+                must plan for managed-entry agreements, risk-sharing conditions, and state-level hospital funding
+                decisions that can delay uptake by quarters.
+              </p>
+              <p>
+                BioNixus designs Australian research around these milestones. Pre-submission modules test clinical
+                positioning, comparator acceptability, and cost-effectiveness narrative comprehension among PBAC-facing
+                stakeholders. Post-listing modules track state formulary adoption, mandatory biosimilar substitution
+                behaviour, and private insurance coverage gaps — especially relevant for GLP-1, oncology, and rare
+                disease portfolios where TGA Orphan Drug Designation and MSAC pathways for devices run in parallel.
+              </p>
+              <p>
+                For medical devices and diagnostics, TGA ARTG inclusion and MSAC assessment create distinct evidence
+                requirements from pharmaceutical PBS pathways. BioNixus pairs surgeon and radiologist preference
+                research with hospital biomedical engineering and procurement intelligence. Australian programmes
+                benchmark against Japan, Singapore, South Korea, and New Zealand for Asia-Pacific portfolio committees —
+                see also{' '}
+                <Link to="/australia-healthcare-market-report" className="text-primary underline font-medium">
+                  Australia healthcare market report
+                </Link>{' '}
+                and{' '}
+                <Link to="/pharmaceutical-market-research-australia" className="text-primary underline font-medium">
+                  Australia pharmaceutical market research
+                </Link>
+                .
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Why choose BioNixus */}
         <section className="section-padding py-10">
           <div className="container-wide max-w-5xl mx-auto">
