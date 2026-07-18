@@ -296,6 +296,48 @@ export default function HealthcareMarketResearchUk() {
           </div>
         </section>
 
+        {/* Launch sequencing */}
+        <section className="section-padding py-10">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Pharmaceutical launch and access sequencing in the UK
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                UK launch planning rarely follows a single national pathway. Teams must sequence MHRA approval,
+                NICE Technology Appraisal (or Highly Specialised Technologies evaluation for rare disease), SMC
+                decisions in Scotland, AWMSG appraisals in Wales, and HSC Northern Ireland formulary decisions —
+                then translate national guidance into Integrated Care Board (ICB) adoption across England&apos;s 42
+                systems. A product can be NICE-recommended yet remain invisible in local formularies if ICB medicines
+                optimisation teams have not been engaged with budget-impact and implementation evidence.
+              </p>
+              <p>
+                BioNixus designs UK research programmes around these sequencing milestones. Pre-launch modules map
+                treatment algorithms, unmet need, and competitor positioning among NHS consultants and specialist
+                nurses. NICE-facing modules test value messages, comparator acceptability, and QALY narrative
+                comprehension among appraisal stakeholders. Post-appraisal modules track ICB formulary adoption,
+                prescribing restrictions, and biosimilar switching behaviour across trusts — critical for biologics
+                and GLP-1 portfolios where VPAG pricing dynamics and NHS Supply Chain frameworks shape uptake.
+              </p>
+              <p>
+                For medical devices, MHRA UKCA marking and NHS Supply Chain framework eligibility add parallel tracks.
+                BioNixus pairs clinician preference research with procurement committee intelligence so device
+                commercial teams understand both clinical advocacy and capital-budget constraints. UK modules
+                benchmark cleanly against EU5, USA, and Middle East cells for global portfolio committees managing
+                multi-market access from a single evidence framework — see also{' '}
+                <Link to="/uk-healthcare-market-report" className="text-primary underline font-medium">
+                  UK healthcare market report
+                </Link>{' '}
+                and{' '}
+                <Link to="/pharmaceutical-market-research-uk" className="text-primary underline font-medium">
+                  UK pharmaceutical market research
+                </Link>
+                .
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Why choose BioNixus */}
         <section className="section-padding py-10">
           <div className="container-wide max-w-5xl mx-auto">

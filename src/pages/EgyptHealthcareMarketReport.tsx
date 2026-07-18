@@ -16,6 +16,7 @@ import {
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
 import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
+import { EGYPT_CAIRO_HOSPITAL_CLUSTERS } from '@/data/egyptHealthcare2026CairoSeo';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -180,6 +181,52 @@ const EgyptHealthcareMarketReport = () => {
               .
             </p>
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
+          </div>
+        </section>
+
+        <section className="section-padding bg-muted/10" id="cairo-hospitals-healthcare">
+          <div className="container-wide max-w-4xl mx-auto">
+            <p className="text-[11px] font-extrabold tracking-[0.12em] uppercase text-primary mb-3">
+              Cairo hospitals healthcare 2023–2026
+            </p>
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Cairo hospitals healthcare 2023–2026 — hospital clusters and pharmaceutical access
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Cairo remains Egypt&apos;s clinical, regulatory, and commercial hub. From 2023 through 2026, universal
+              health insurance (UHI) expansion, EDA pricing reforms, and private hospital investment reshaped how
+              pharmaceutical teams map hospital clusters, payer mix, and prescribing pathways. BioNixus tracks these
+              dynamics through primary HCP research from our Greater Cairo office — pairing hospital footprint
+              intelligence with{' '}
+              <Link to="/pharmaceutical-companies-egypt" className="text-primary hover:underline font-medium">
+                pharmaceutical companies in Egypt
+              </Link>{' '}
+              and{' '}
+              <Link to="/healthcare-market-research/egypt" className="text-primary hover:underline font-medium">
+                Egypt healthcare market research
+              </Link>{' '}
+              programmes.
+            </p>
+            <ol className="list-decimal list-inside space-y-2 text-sm text-muted-foreground mb-6">
+              {EGYPT_CAIRO_HOSPITAL_CLUSTERS.map((cluster) => (
+                <li key={cluster.name} className="pl-1">
+                  <strong className="text-foreground font-semibold">{cluster.name}</strong>
+                  {' — '}
+                  {cluster.detail}
+                </li>
+              ))}
+            </ol>
+            <p className="text-muted-foreground leading-relaxed">
+              Public tertiary centres (Kasr Al-Ainy, Ain Shams, Nasser Institute) drive high-acuity volumes and
+              teaching-hospital research networks. Private groups (Saudi German Hospital Cairo, Cleopatra, Dar Al-Fouad,
+              As-Salam International) shape branded uptake and employer-funded insurance mix. The new administrative
+              capital corridor adds insured catchment as UHI rolls east of Cairo. For the full Egypt market narrative,
+              see our{' '}
+              <Link to="/blog/healthcare-overview-egypt-market-2026" className="text-primary hover:underline font-medium">
+                Egypt healthcare market overview 2026
+              </Link>
+              .
+            </p>
           </div>
         </section>
 

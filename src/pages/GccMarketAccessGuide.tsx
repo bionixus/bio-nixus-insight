@@ -653,6 +653,10 @@ const GccMarketAccessGuide = () => {
                   a: 'NUPCO runs central tenders for Ministry of Health hospitals, determining which products receive large-volume public sector contracts. Launch teams must align SFDA registration timing, pricing, and clinical narratives with NUPCO evaluation cycles — often 12–18 months after initial regulatory approval.',
                 },
                 {
+                  q: 'What is the SFDA Economic Evaluation Submission (EES) pathway?',
+                  a: 'SFDA\'s Economic Evaluation Submission (EES) pathway requires cost-effectiveness and budget-impact evidence for selected high-cost medicines — especially biologics, oncology, and specialty hospital-administered therapies. Dossiers must align clinical benefit with Saudi epidemiology, comparator pricing, and NUPCO tender economics. BioNixus integrates HEOR modules with physician and payer fieldwork so EES submissions reflect how MOH and NGHA committees actually evaluate alternatives.',
+                },
+                {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
                 },
