@@ -48,6 +48,16 @@ const faqItems = [
     answer:
       'Yes. Argentine modules can run with comparable cells in the USA, UK, EU5 (Germany, France, Italy, Spain), Brazil, Saudi Arabia, and UAE — using consistent instruments for global portfolio committees managing multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How should teams sequence Argentine launch across obras sociales, PAMI, and prepagas?',
+    answer:
+      'Argentine launch sequencing must map channel-specific coverage logic — obra social formulary negotiations, PAMI retiree population access, and prepaga premium uptake run on different timelines. BioNixus sequences payer depth interviews and physician adoption research by channel so commercial teams prioritise accounts with realistic reimbursement paths before scaling field investment.',
+  },
+  {
+    question: 'What role does CONETEC play in Argentine market access research?',
+    answer:
+      'CONETEC health technology assessments increasingly inform public and social-security purchasing decisions. BioNixus designs pre-CONETEC physician perception studies, budget-impact scenario research, and post-recommendation payer impact modules so access dossiers reflect how Argentine committees evaluate cost-effectiveness and substitution potential.',
+  },
 ];
 
 const jsonLd = [
@@ -302,6 +312,36 @@ export default function HealthcareMarketResearchArgentina() {
                 and public hospital procurement research to capture the segment of patients relying on the
                 free-at-point-of-use system. BioNixus designs multi-channel research programs that reflect this
                 fragmented but sophisticated payer landscape.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Launch sequencing */}
+        <section className="section-padding py-10 bg-muted/10">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Argentine launch sequencing: ANMAT, obra social coverage, and multi-channel uptake
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Argentine pharmaceutical launches rarely follow a single national payer timeline. ANMAT
+                registration establishes market authorisation, but commercial uptake depends on parallel
+                negotiations with major obras sociales, PAMI formulary decisions for the retiree population,
+                prepaga coverage for privately insured patients, and public hospital procurement for
+                free-at-point-of-use segments. BioNixus maps these channels with separate research tracks so
+                access teams do not assume uniform adoption after regulatory approval.
+              </p>
+              <p>
+                Practical sequencing covers three gates: (1) pre-launch physician and KOL perception across
+                Buenos Aires academic centres and provincial referral hospitals; (2) payer depth interviews
+                with obra social medical directors and prepaga formulary committees; and (3) post-listing
+                switching and share-shift research by channel. LATAM portfolio teams often benchmark Argentina
+                with{' '}
+                <Link to="/brazil-healthcare-market-report" className="text-primary underline font-medium">
+                  Brazil healthcare market research
+                </Link>{' '}
+                and EU5 modules using consistent cross-market instruments.
               </p>
             </div>
           </div>

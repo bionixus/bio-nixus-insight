@@ -48,6 +48,16 @@ const faqItems = [
     answer:
       'Yes. Italian modules can run with comparable cells in Germany, France, Spain, and the UK — and beyond to the USA, Canada, Japan, and other markets — using consistent instruments for global portfolio committees managing EU5 and multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How should teams sequence launch research across Italian regions?',
+    answer:
+      'Effective Italian launch sequencing typically prioritises Lombardia, Lazio, and Emilia-Romagna first — together they account for the majority of SSN pharmaceutical spend — while building parallel SSR formulary intelligence for Veneto and Campania. BioNixus maps AIFA PFN listing timing against regional PT adoption curves so commercial teams do not scale field engagement before SSR committees complete local listing.',
+  },
+  {
+    question: 'What AIFA evidence do Italian payer committees expect before CPR negotiation?',
+    answer:
+      'AIFA CTS reviewers evaluate clinical benefit, innovation classification, and budget impact before CPR price negotiation. Regional SSR committees then apply PT listing criteria that may impose nota limitative restrictions beyond national PFN decisions. BioNixus designs pre-CTS physician perception studies and post-listing SSR adoption research so access dossiers reflect how Italian prescribers and payers actually behave — not only trial endpoints.',
+  },
 ];
 
 const jsonLd = [
@@ -308,6 +318,36 @@ export default function HealthcareMarketResearchItaly() {
                 dynamics at both the AIFA level and the regional SSR level is essential for launch strategy and
                 real-world evidence programme design. BioNixus conducts nota limitativa impact research: physician
                 perception studies, prescriber compliance research, and SSR adoption barrier studies.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Launch sequencing */}
+        <section className="section-padding py-10 bg-muted/10">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Italian launch sequencing: AIFA listing, regional SSR, and field engagement gates
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Italian commercial launches fail most often at the regional SSR layer — not at AIFA registration.
+                A positive AIFA PFN Class A listing creates national reimbursement eligibility, but Lombardia,
+                Lazio, Veneto, and Emilia-Romagna SSR committees can delay PT adoption, impose nota limitative
+                prescribing restrictions, or require additional hospital formulary evidence before physicians
+                prescribe at scale. BioNixus maps these second-layer gates with regional payer interviews and
+                hospital pharmacy committee research so launch sequencing matches real adoption timelines.
+              </p>
+              <p>
+                Practical sequencing research covers three decision gates: (1) pre-CTS physician and payer
+                perception to shape AIFA evidence strategy; (2) post-PFN SSR formulary intelligence across
+                priority regions; and (3) post-launch nota limitativa compliance and switching research to
+                validate field messaging. Teams connecting Italy to EU5 programmes use consistent instruments
+                across Germany, France, Spain, and the UK — see our{' '}
+                <Link to="/healthcare-market-research" className="text-primary underline font-medium">
+                  healthcare market research hub
+                </Link>{' '}
+                for cross-market benchmarking design.
               </p>
             </div>
           </div>

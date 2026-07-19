@@ -48,6 +48,16 @@ const faqItems = [
     answer:
       "Yes. Indian research modules can run alongside comparable cells in the USA, UK, EU5, GCC markets (Saudi Arabia, UAE), and other Asia-Pacific markets — using consistent instruments so global portfolio committees can benchmark India against other priority markets from a single research partner.",
   },
+  {
+    question: 'How does BioNixus segment Indian research across Ayushman Bharat, private pay, and tier cities?',
+    answer:
+      'India requires explicit segmentation between Ayushman Bharat / PM-JAY public insurance beneficiaries, state-scheme enrollees, private insurance patients, and out-of-pocket payers — plus Tier-1 (Mumbai, Delhi, Bengaluru), Tier-2, and Tier-3 city dynamics. BioNixus designs sample frames and analysis plans that reflect these segments rather than treating India as a single average market.',
+  },
+  {
+    question: 'What launch sequencing research does BioNixus recommend for India?',
+    answer:
+      'Indian launch sequencing typically prioritises Tier-1 metro hospital networks and specialist KOL centres first, then expands to state-scheme and PM-JAY uptake corridors once CDSCO registration and pricing strategy are aligned. BioNixus maps hospital formulary committees, institutional procurement behaviour, and physician adoption barriers by tier so commercial teams scale field engagement when access gates are realistic.',
+  },
 ];
 
 const jsonLd = [
@@ -294,6 +304,42 @@ export default function HealthcareMarketResearchIndia() {
                 research. BioNixus builds DPDP Act-aligned consent, storage, and reporting practices into every
                 Indian study, alongside awareness of the public-private financing structure anchored by Ayushman
                 Bharat / PM-JAY and complementary state-level and private insurance schemes.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* PM-JAY and tier segmentation */}
+        <section className="section-padding py-10 bg-muted/10">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              India market segmentation: Ayushman Bharat, tier cities, and launch sequencing
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                India&apos;s healthcare market cannot be researched as a single homogeneous population. Ayushman
+                Bharat (PM-JAY) — covering hundreds of millions of beneficiaries through empanelled public and
+                private hospitals — operates on different adoption dynamics than corporate private insurance or
+                out-of-pocket prescribing in Tier-1 metros. State-level schemes add further variation in formulary
+                logic and hospital empanelment requirements. BioNixus designs research with explicit payer-type
+                and city-tier segmentation so sizing, messaging, and access strategy reflect how physicians
+                actually prescribe in each segment.
+              </p>
+              <p>
+                Launch sequencing research typically gates investment across three milestones: CDSCO registration
+                and DCGI labelling alignment; institutional formulary and procurement committee adoption at
+                AIIMS, Tata Memorial, PGIMER, CMC Vellore, and major private hospital chains; and PM-JAY /
+                state-scheme uptake in empanelled facilities. Multilingual fieldwork across Hindi, English, Tamil,
+                Telugu, Bengali, and other regional languages ensures respondent authenticity in each segment.
+                Connect India modules with{' '}
+                <Link to="/healthcare-market-research-singapore" className="text-primary underline font-medium">
+                  Singapore
+                </Link>{' '}
+                and{' '}
+                <Link to="/healthcare-market-research/saudi-arabia" className="text-primary underline font-medium">
+                  Saudi Arabia healthcare research
+                </Link>{' '}
+                for Asia-Pacific and GCC portfolio benchmarking.
               </p>
             </div>
           </div>

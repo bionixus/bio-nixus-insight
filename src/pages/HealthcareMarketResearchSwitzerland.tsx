@@ -42,6 +42,16 @@ const faqItems = [
     answer:
       'Yes. BioNixus covers Swiss medtech research including hospital procurement decision-maker interviews across cantonal hospital networks, medical device adoption studies, digital health platform research, and medtech KOL mapping. The Lausanne MedTech valley (EPFL/CHUV nexus), Zurich biotech corridor, and Basel biopharma cluster are all covered. Medtech regulatory intelligence includes Swissmedic MDR (Medical Device Regulation) alignment and IVDR context for diagnostic products.',
   },
+  {
+    question: 'How should pharmaceutical teams sequence Swiss launch research across language regions?',
+    answer:
+      'Swiss launch sequencing should treat Deutschschweiz, Romandie, and Ticino as distinct research cells — not one averaged Switzerland sample. BAG Spezialitätenliste listing is national, but Krankenkassen coverage decisions, cantonal hospital DRG procurement, and physician adoption vary by language region and canton. BioNixus runs trilingual fieldwork with comparable methodology so global teams see where uptake will lead versus lag after SL listing.',
+  },
+  {
+    question: 'What evidence do BAG and Krankenkassen expect before Swiss Spezialitätenliste listing?',
+    answer:
+      'BAG WZW assessments weigh therapeutic benefit, economic value, and budget impact; Krankenkassen medical directors apply KVG mandatory-coverage criteria and supplementary Zusatzversicherung formulary logic for off-label or premium products. BioNixus designs pre-SL physician perception studies, health economist interviews, and hospital pharmacy committee research aligned to these dual payer tracks.',
+  },
 ];
 
 const geoPoints = [
@@ -113,8 +123,8 @@ export default function HealthcareMarketResearchSwitzerland() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Market Research Switzerland | BioNixus"
-        description="BioNixus delivers healthcare market research in Switzerland — multilingual HCP surveys, Krankenkassen payer research, KOL mapping at USZ, USB."
+        title="Healthcare Market Research Switzerland | BAG SL & KVG Payer Research | BioNixus"
+        description="Swiss healthcare market research in German, French & Italian — BAG Spezialitätenliste, Krankenkassen payer studies, KOL mapping at USZ, Inselspital, CHUV. Launch sequencing for pharma teams."
         canonical="/healthcare-market-research-switzerland"
         jsonLd={jsonLd}
       />
@@ -354,6 +364,79 @@ export default function HealthcareMarketResearchSwitzerland() {
               generic European templates applied to Switzerland's distinctive multilingual, cantonal, and
               SL-reimbursement healthcare environment.
             </p>
+          </div>
+        </section>
+
+        <section className="py-12 bg-muted/10">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-3xl font-display font-semibold text-foreground mb-5">
+              Therapeutic areas and launch sequencing in Switzerland
+            </h2>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+              {[
+                {
+                  area: 'Oncology and haematology',
+                  detail:
+                    'KOL mapping at USZ, Inselspital, CHUV, and HUG; immuno-oncology and precision medicine adoption across Swiss university hospitals with BAG SL and hospital DRG procurement dynamics.',
+                },
+                {
+                  area: 'Immunology and biologics',
+                  detail:
+                    'Biosimilar switching attitudes, Krankenkassen coverage research, and rheumatology/dermatology prescribing research across German-, French-, and Italian-speaking regions.',
+                },
+                {
+                  area: 'Rare disease and orphan therapies',
+                  detail:
+                    'Ultra-high-cost therapy access research, supplementary insurer (Zusatzversicherung) coverage mapping, and patient advocacy network studies for orphan indications.',
+                },
+                {
+                  area: 'Cardiovascular and metabolic',
+                  detail:
+                    'GLP-1 and cardiometabolic adoption research, SL WZW cost-effectiveness evidence planning, and cantonal hospital formulary studies for high-volume chronic therapies.',
+                },
+                {
+                  area: 'Medtech and diagnostics',
+                  detail:
+                    'Hospital procurement committee interviews, Swissmedic MDR/IVDR pathway intelligence, and adoption research across cantonal hospital networks and the Lausanne MedTech cluster.',
+                },
+                {
+                  area: 'Neurology and CNS',
+                  detail:
+                    'Multiple sclerosis and neurodegeneration treatment algorithm research, neurologist surveys at Inselspital and CHUV, and payer willingness-to-pay studies for high-cost CNS therapies.',
+                },
+              ].map((item) => (
+                <article key={item.area} className="rounded-xl border border-border bg-card p-5">
+                  <h3 className="text-base font-semibold text-foreground mb-2">{item.area}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.detail}</p>
+                </article>
+              ))}
+            </div>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Swiss launch sequencing differs from EU5 single-payer models because access runs through BAG
+                Spezialitätenliste listing, approximately 50 competing Krankenkassen, and cantonal hospital DRG
+                procurement in parallel. BioNixus maps these three gates with multilingual stakeholder research so
+                commercial teams sequence medical affairs, payer engagement, and hospital account plans in the
+                correct order — SL evidence preparation first, Krankenkassen medical director engagement second,
+                cantonal hospital pharmacy committees third.
+              </p>
+              <p>
+                For cross-border EU5 portfolio committees, Swiss modules benchmark against{' '}
+                <Link to="/healthcare-market-research-germany" className="text-primary underline font-medium">
+                  Germany
+                </Link>
+                ,{' '}
+                <Link to="/healthcare-market-research-france" className="text-primary underline font-medium">
+                  France
+                </Link>
+                , and{' '}
+                <Link to="/healthcare-market-research-italy" className="text-primary underline font-medium">
+                  Italy
+                </Link>{' '}
+                using consistent instruments — essential when Switzerland is sequenced as an early-access or
+                price-reference market within EMEA launch planning.
+              </p>
+            </div>
           </div>
         </section>
 

@@ -48,6 +48,16 @@ const faqItems = [
     answer:
       'Yes. New Zealand modules can run with comparable cells in the USA, UK, EU5 (Germany, France, Italy, Spain), Canada, Japan, Singapore, South Korea, and Australia — using consistent instruments for global portfolio committees managing multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How should teams sequence New Zealand launch research around PHARMAC decisions?',
+    answer:
+      'New Zealand launch sequencing should align field engagement to PHARMAC application, PTAC deliberation, and Pharmaceutical Schedule listing milestones — not Medsafe approval alone. BioNixus maps pre-submission evidence gaps, regional Health New Zealand Te Whatu Ora implementation variation, and private insurer uptake curves so commercial teams scale investment only after funding and operational adoption gates are realistic.',
+  },
+  {
+    question: 'Does BioNixus research PHARMAC Factors for Consideration and budget impact together?',
+    answer:
+      'Yes. BioNixus integrates PHARMAC nine-factor evidence planning with primary HCP and payer research — clinical benefit, health need, cost-effectiveness, budget impact, and equity considerations are tested with surveyed stakeholders before dossier submission, reducing rework when PTAC requests additional scenario analysis.',
+  },
 ];
 
 const jsonLd = [
@@ -309,6 +319,36 @@ export default function HealthcareMarketResearchNewZealand() {
                 access teams respond effectively to PHARMAC and PTAC recommendations on New Zealand formulary and
                 hospital funding dynamics. ACC rehabilitation funding research is also available for injury treatment
                 categories with ACC coverage implications.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Launch sequencing */}
+        <section className="section-padding py-10 bg-muted/10">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              New Zealand launch sequencing: Medsafe, PHARMAC, and regional implementation gates
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                New Zealand launches are governed by PHARMAC funding decisions more than by Medsafe registration
+                timing. A product can be Medsafe-approved yet remain commercially constrained until PHARMAC
+                completes its Factors for Consideration assessment, PTAC recommendation, and Pharmaceutical
+                Schedule price negotiation. BioNixus sequences research around these milestones — pre-submission
+                physician and payer perception, PTAC objection mapping, and post-listing regional adoption across
+                Health New Zealand Te Whatu Ora&apos;s 16 health regions.
+              </p>
+              <p>
+                Private health insurance and ACC injury funding add parallel channels for selected therapy areas.
+                BioNixus designs multi-payer research tracks so access teams understand when private uptake can
+                bridge PHARMAC funding gaps — and when regional implementation delays will suppress prescribing
+                regardless of national listing. For Asia-Pacific portfolio sequencing, connect New Zealand modules
+                with{' '}
+                <Link to="/healthcare-market-research-australia" className="text-primary underline font-medium">
+                  Australia healthcare market research
+                </Link>{' '}
+                using consistent cross-market instruments.
               </p>
             </div>
           </div>
