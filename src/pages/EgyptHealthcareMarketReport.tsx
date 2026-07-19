@@ -53,6 +53,11 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
     answer:
       'BioNixus has operated a dedicated Egypt research team from Cairo since 2012. We conduct quantitative HCP surveys (oncologists, endocrinologists, cardiologists, gastroenterologists, rheumatologists), qualitative KOL depth interviews, payer and formulary research with MOH and UHI decision-makers, and hospital consumption intelligence across Cairo University Hospital, NCI, Ain Shams, and private hospital chains (Cleopatra, As-Salam International, Dar Al Fouad). Egypt-specific and regional MENA programs are both available.',
   },
+  {
+    question: 'Which Cairo hospitals matter most for pharmaceutical and healthcare research in 2026?',
+    answer:
+      'Cairo anchors Egypt\'s highest-value healthcare research because major academic, oncology, and private referral centres concentrate prescribing and procurement influence. Priority Cairo accounts include Kasr Al-Ainy (Cairo University Hospital), National Cancer Institute (NCI), Ain Shams University hospitals, Cleopatra Hospital Group, Saudi German Hospital Cairo, As-Salam International, and Dar Al Fouad. BioNixus maps physician panels, hospital pharmacy committees, and private-insurance uptake across these networks for launch sequencing, UHI formulary planning, and EDA pricing strategy.',
+  },
 ], 'egypt');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/egypt-healthcare-market-report');
@@ -199,6 +204,61 @@ const EgyptHealthcareMarketReport = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="section-padding bg-muted/20" id="cairo-hospitals">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              Cairo hospitals healthcare intelligence (2023–2026)
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Cairo concentrates Egypt&apos;s highest-value prescribing, oncology referral, and private-hospital
+              uptake — making capital-city hospital intelligence essential for pharmaceutical launch sequencing,
+              UHI formulary planning, and EDA pricing strategy. BioNixus maintains active physician and hospital
+              pharmacy panels across the accounts below, with bilingual (Arabic/English) fieldwork from our Cairo
+              office since 2012.
+            </p>
+            <div className="space-y-4">
+              {[
+                {
+                  label: 'Kasr Al-Ainy (Cairo University Hospital)',
+                  body: 'Egypt\'s flagship academic referral centre — anchor for specialist KOL mapping, teaching-hospital prescribing research, and rare-disease registry intelligence tied to Cairo University Hospital access programmes.',
+                },
+                {
+                  label: 'National Cancer Institute (NCI) Cairo',
+                  body: 'Primary oncology referral hub for UHI oncology coverage expansion — BioNixus tracks immuno-oncology adoption, biosimilar switching, and hospital consumption for branded specialty portfolios.',
+                },
+                {
+                  label: 'Cleopatra Hospital Group & Saudi German Hospital Cairo',
+                  body: 'Leading private hospital networks for corporate-insurance and out-of-pocket branded uptake — critical when UHI rollout timing differs from private-channel prescribing dynamics in Greater Cairo.',
+                },
+                {
+                  label: 'As-Salam International & Dar Al Fouad',
+                  body: 'Premium private referral centres where multinational brands compete on clinical differentiation — BioNixus conducts hospital pharmacy committee and specialist adoption research for launch sequencing.',
+                },
+              ].map(({ label, body }) => (
+                <div key={label} className="bg-white rounded-xl border border-border p-5 shadow-sm">
+                  <h3 className="text-base font-semibold text-foreground mb-2">{label}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-muted-foreground leading-relaxed mt-6">
+              For broader Egypt context, see{' '}
+              <Link to="/pharmaceutical-market-research-egypt" className="text-primary underline font-medium">
+                Egypt pharmaceutical market research
+              </Link>
+              , the{' '}
+              <Link to="/blog/healthcare-overview-egypt-market-2026" className="text-primary underline font-medium">
+                Egypt healthcare market overview 2026
+              </Link>
+              , and the central{' '}
+              <Link to="/healthcare-market-research" className="text-primary underline font-medium">
+                healthcare market research hub
+              </Link>
+              .
+            </p>
           </div>
         </section>
 

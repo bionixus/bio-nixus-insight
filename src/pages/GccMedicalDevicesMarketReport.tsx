@@ -110,8 +110,8 @@ const GccMedicalDevicesMarketReport = () => {
       <Navbar />
 
       <SEOHead
-        title="GCC Medical Devices Market 2026 | IVD & $5.8B Size | BioNixus"
-        description="GCC medical devices & in vitro diagnostic (IVD) market ~USD 5.8B in 2026, $9B+ by 2030. Saudi Arabia, UAE, Kuwait — SFDA, MOHAP, DHA regulation, prefilled."
+        title="GCC Medical Devices Market 2026 | SFDA & IVD | $5.8B Size | BioNixus"
+        description="GCC medical devices & IVD market ~USD 5.8B in 2026. Saudi 52% share, SFDA MDIR, UAE MOHAP/DHA — hospital procurement intelligence & regulatory timelines from BioNixus."
         canonical="https://www.bionixus.com/gcc-medical-devices-market-report"
         jsonLd={jsonLd}
       />
