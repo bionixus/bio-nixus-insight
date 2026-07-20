@@ -48,6 +48,16 @@ const faqItems = [
     answer:
       'Yes. Japanese modules can run with comparable cells in the USA, UK, EU5 (Germany, France, Italy, Spain), South Korea, China, Brazil, Saudi Arabia, and UAE — using consistent instruments for global portfolio committees managing multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How should teams sequence Japanese launch after PMDA approval?',
+    answer:
+      'BioNixus maps Chuikyo NHI pricing deliberations, DPC hospital procurement positioning, and prefecture-level adoption before national commercial deployment. Research clarifies initial price methodology (comparator versus cost-calculation), useful-novelty premium eligibility, and biennial NHI revision exposure — then tracks which university hospitals and DPC centres will adopt first versus wait for price stability signals.',
+  },
+  {
+    question: 'Which Japanese hospital networks matter most for specialty pharma launches?',
+    answer:
+      'National Cancer Center Japan, University of Tokyo Hospital, Kyoto University Hospital, Osaka University Hospital, and Keio University Hospital anchor oncology and rare-disease adoption; DPC acute-care hospitals drive bundled-payment procurement decisions; kenpo and kokuho channels share a national fee schedule but hospital purchasing committees still shape uptake speed. BioNixus recruits across these institution types with native Japanese fieldwork.',
+  },
 ];
 
 const jsonLd = [
@@ -294,6 +304,47 @@ export default function HealthcareMarketResearchJapan() {
                 adjustment for selected high-cost products. BioNixus conducts pre-listing evidence strategy research and
                 post-assessment payer impact studies to help access teams respond effectively to Chuikyo deliberations,
                 HTA outcomes, and NHI price-revision dynamics in the Japanese market.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Launch sequencing */}
+        <section className="section-padding py-10">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Pharmaceutical launch sequencing across NHI pricing, DPC hospitals, and prefecture adoption
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Japanese launch sequencing fails when global teams import EU or US playbooks without accounting for
+                Chuikyo NHI price setting, biennial NHI price revisions, and DPC (Diagnosis Procedure Combination)
+                hospital economics. PMDA approval opens the regulatory door — but NHI listing price, useful-novelty
+                premium eligibility, and subsequent price cuts determine whether a product remains commercially viable
+                across a super-aging population where more than 28% of citizens are aged 65 or over. BioNixus sequences
+                research backward from these pricing and procurement levers rather than from prescriber enthusiasm alone.
+              </p>
+              <p>
+                A practical Japan sequencing model runs through four modules. NHI pricing context research clarifies
+                comparator selection, cost-calculation inputs, and Chuikyo deliberation dynamics before listing.
+                DPC hospital procurement studies map which acute-care networks adopt early versus defer until price
+                revision risk stabilises — critical for hospital-administered biologics and devices. University and
+                national centre KOL mapping prioritises institutions (University of Tokyo, Kyoto, Osaka, National Cancer
+                Center Japan, Keio) that influence regional treatment algorithms and formulary committees. Prefecture
+                and kenpo/kokuho channel research explains why identical NHI prices can produce different uptake curves
+                when local hospital purchasing and physician society guidelines diverge.
+              </p>
+              <p>
+                BioNixus conducts all Japanese fieldwork in native language and connects sequencing outputs to{' '}
+                <Link to="/pharmaceutical-market-research-japan" className="text-primary underline font-medium">
+                  Japan pharmaceutical market research
+                </Link>
+                ,{' '}
+                <Link to="/healthcare-market-research/south-korea" className="text-primary underline font-medium">
+                  South Korea healthcare market research
+                </Link>
+                , and APAC benchmarking so global access committees can compare NHI dynamics with HIRA Korea or
+                Singapore ACE assessments from one partner.
               </p>
             </div>
           </div>

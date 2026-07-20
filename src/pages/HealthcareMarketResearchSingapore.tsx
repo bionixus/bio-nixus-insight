@@ -48,6 +48,16 @@ const faqItems = [
     answer:
       'Yes. Singapore modules can run with comparable cells across the wider APAC region as well as the USA, UK, EU5 (Germany, France, Italy, Spain), Brazil, Saudi Arabia, and UAE — using consistent instruments for global portfolio committees managing multi-market access strategy from one research partner. Singapore frequently serves as the APAC regional hub for these programmes.',
   },
+  {
+    question: 'How should teams sequence Singapore launch after HSA approval?',
+    answer:
+      'BioNixus maps ACE cost-effectiveness assessment timing, MOH Standard Drug List (SDL) and Medication Assistance Fund (MAF) listing windows, and ALPS hospital procurement cycles before committing ASEAN hub launch spend. Research clarifies which public clusters (SingHealth, NUHS, NHG) will adopt early and how private hospital groups absorb branded volume when subsidy listing is delayed.',
+  },
+  {
+    question: 'Which Singapore hospital clusters drive specialty medicine adoption?',
+    answer:
+      'Singapore General Hospital, National University Hospital, Tan Tock Seng Hospital, National Cancer Centre Singapore, and Duke-NUS academic networks anchor oncology and rare-disease adoption; ALPS centralised procurement shapes device and high-volume medicine access across public clusters; MediShield Life and MediSave financing schemes influence patient affordability and real-world uptake beyond HSA registration alone.',
+  },
 ];
 
 const jsonLd = [
@@ -292,6 +302,47 @@ export default function HealthcareMarketResearchSingapore() {
                 Services) group purchasing across the public clusters. BioNixus conducts pre-submission evidence strategy
                 research and post-assessment payer impact studies to help access teams respond effectively to ACE
                 recommendations and ALPS procurement dynamics across the Singapore market.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Launch sequencing */}
+        <section className="section-padding py-10">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Pharmaceutical launch sequencing across HSA, ACE, MOH subsidies, and ALPS procurement
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Singapore launch sequencing fails when ASEAN hub teams treat HSA registration as equivalent to
+                subsidised uptake. The Agency for Care Effectiveness (ACE) evaluates cost-effectiveness for MOH drug
+                subsidy listing on the Standard Drug List (SDL) and Medication Assistance Fund (MAF) — and hospital
+                procurement is increasingly centralised through ALPS (Agency for Logistics &amp; Procurement Services)
+                across SingHealth, NUHS, and NHG public clusters. Private hospital groups can absorb branded specialty
+                volume while subsidy listing matures, but only when research confirms prescriber concentration and
+                patient financing mechanics across MediShield Life, MediSave, and MediFund pathways.
+              </p>
+              <p>
+                BioNixus sequences Singapore programmes through four evidence modules. ACE readiness research
+                clarifies comparator framing, cost-effectiveness thresholds, and budget-impact expectations before
+                subsidy submission. Public-cluster formulary intelligence maps which institutions adopt early versus
+                impose prior approval after SDL listing. ALPS procurement studies explain bundled purchasing dynamics
+                for devices and hospital-administered therapies. Private-sector modules quantify uptake in insured and
+                self-pay segments when MOH subsidy timelines extend beyond HSA approval — a common pattern for
+                oncology and rare-disease portfolios positioned from Singapore as an APAC hub.
+              </p>
+              <p>
+                Outputs connect to{' '}
+                <Link to="/pharmaceutical-market-research-singapore" className="text-primary underline font-medium">
+                  Singapore pharmaceutical market research
+                </Link>
+                ,{' '}
+                <Link to="/healthcare-market-research/malaysia" className="text-primary underline font-medium">
+                  Malaysia healthcare market research
+                </Link>
+                , and wider APAC benchmarking so regional access committees compare ACE dynamics with Australia PBAC
+                or Japan NHI listing from one research partner.
               </p>
             </div>
           </div>

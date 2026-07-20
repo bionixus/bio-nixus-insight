@@ -16,6 +16,10 @@ import {
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
 import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
+import {
+  EGYPT_CAIRO_HOSPITAL_CLUSTERS,
+  EGYPT_HEALTHCARE_2026_CAIRO_FAQ,
+} from '@/data/egyptHealthcare2026CairoSeo';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -197,6 +201,53 @@ const EgyptHealthcareMarketReport = () => {
                   <h3 className="text-base font-semibold text-foreground mb-2">{label}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section-padding bg-muted/20" id="cairo-hospitals-healthcare">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Cairo hospitals healthcare 2023–2026 — hospital clusters and pharmaceutical access
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Cairo remains Egypt&apos;s clinical, regulatory, and commercial hub: public university hospitals anchor
+              high-acuity referral volumes, private hospital groups shape branded specialty uptake, and new administrative
+              capital facilities expand insured catchment under universal health insurance (UHI). BioNixus maps these
+              clusters in primary HCP and hospital-pharmacy research — pairing Cairo footprint intelligence with EDA
+              registration status and UHI formulary dynamics for launch and access planning.
+            </p>
+            <ol className="list-decimal list-inside space-y-2 text-sm text-muted-foreground mb-6 max-w-3xl">
+              {EGYPT_CAIRO_HOSPITAL_CLUSTERS.map((cluster) => (
+                <li key={cluster.name} className="pl-1">
+                  <strong className="text-foreground font-semibold">{cluster.name}</strong>
+                  {' — '}
+                  {cluster.detail}
+                </li>
+              ))}
+            </ol>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              For company-level intelligence, see{' '}
+              <Link to="/pharmaceutical-companies-egypt" className="text-primary hover:underline font-medium">
+                pharmaceutical companies in Egypt
+              </Link>{' '}
+              and the{' '}
+              <Link to="/healthcare-market-research/egypt" className="text-primary hover:underline font-medium">
+                Egypt healthcare market research hub
+              </Link>
+              . Cairo hospital research modules integrate with{' '}
+              <Link to="/egypt-pharmaceutical-market-research" className="text-primary hover:underline font-medium">
+                Egypt pharmaceutical market research
+              </Link>{' '}
+              fieldwork from BioNixus&apos;s Cairo office.
+            </p>
+            <div className="space-y-3">
+              {EGYPT_HEALTHCARE_2026_CAIRO_FAQ.slice(0, 2).map((item) => (
+                <details key={item.question} className="rounded-xl border border-border bg-card p-4">
+                  <summary className="cursor-pointer font-semibold text-foreground text-sm">{item.question}</summary>
+                  <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{item.answer}</p>
+                </details>
               ))}
             </div>
           </div>

@@ -492,7 +492,10 @@ const GccMarketAccessGuide = () => {
                 <Link to="/gcc-pharmaceutical-market-research" className="text-primary underline font-medium">
                   GCC pharmaceutical market research
                 </Link>{' '}
-                for segment-level biologics and injectables intelligence that feeds access narratives.
+                for segment-level biologics and injectables intelligence that feeds access narratives. Teams preparing
+                SFDA EES submissions should pair pharmacoeconomic models with primary committee objection research —
+                payers frequently challenge comparator selection, budget-impact assumptions, and local epidemiology
+                inputs that global templates do not validate for Saudi hospital networks.
               </p>
             </div>
           </div>

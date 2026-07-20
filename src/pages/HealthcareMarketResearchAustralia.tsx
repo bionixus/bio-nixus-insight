@@ -48,6 +48,16 @@ const faqItems = [
     answer:
       'Yes. Australian modules can run with comparable cells in the USA, UK, EU5 (Germany, France, Italy, Spain), Canada, Japan, Singapore, South Korea, and New Zealand — using consistent instruments for global portfolio committees managing multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How should teams sequence Australian launch after TGA approval?',
+    answer:
+      'BioNixus maps PBAC listing timelines, state health formulary decisions (NSW, Victoria, Queensland, WA, SA), and private health insurer coverage before national launch spend. Quantitative HCP modules size adoption by state; payer research surfaces PBAC and MSAC evidence objections; hospital procurement studies explain why TGA registration does not automatically translate into ward-level administration across public and private networks.',
+  },
+  {
+    question: 'Which Australian hospital and payer channels drive specialty uptake?',
+    answer:
+      'Major academic medical centres (Royal Melbourne, Westmead, Princess Alexandra, Peter MacCallum) anchor oncology and rare-disease adoption; state health systems operate independent hospital formularies; private insurers (Bupa, Medibank, HCF, NIB) shape branded uptake in insured segments; PBS mandatory biosimilar substitution policies affect biologic sequencing. BioNixus designs research across these channels rather than treating Australia as a single average market.',
+  },
 ];
 
 const jsonLd = [
@@ -76,8 +86,8 @@ export default function HealthcareMarketResearchAustralia() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Market Research Company in Australia | BioNixus"
-        description="BioNixus is a healthcare market research company in Australia — NHMRC-compliant HCP surveys, payer landscape analysis, KOL mapping, and health outcomes."
+        title="Healthcare Market Research Company in Australia | PBAC & PBS | BioNixus"
+        description="Healthcare market research in Australia: NHMRC-compliant HCP surveys, PBAC and state formulary research, KOL mapping, and launch sequencing across public and private channels."
         canonical="/healthcare-market-research-australia"
         jsonLd={jsonLd}
       />
@@ -291,6 +301,48 @@ export default function HealthcareMarketResearchAustralia() {
                 hospital funding decisions. BioNixus conducts pre-submission evidence strategy research and
                 post-assessment payer impact studies to help access teams respond effectively to PBAC and MSAC
                 recommendations on Australian formulary and hospital funding dynamics.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Launch sequencing */}
+        <section className="section-padding py-10">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Pharmaceutical launch sequencing across PBS, state health systems, and private insurance
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Australian launch sequencing breaks when teams assume TGA registration and a positive PBAC
+                recommendation guarantee uniform uptake. State health departments — NSW Health, Queensland Health,
+                Victoria Department of Health, SA Health, and WA Health — maintain hospital formulary committees that
+                can delay or restrict adoption even after PBS listing. Private health insurers apply separate coverage
+                rules for branded specialty medicines, creating a parallel uptake curve in insured elective and
+                specialist settings. BioNixus sequences research across these layers so access and commercial teams
+                size investment by channel rather than by national averages.
+              </p>
+              <p>
+                Effective Australian sequencing typically runs through four evidence modules. PBAC and MSAC readiness
+                research clarifies comparator framing, cost-effectiveness thresholds, and managed entry expectations
+                before submission. State formulary intelligence maps which public hospital networks will adopt early,
+                impose prior approval, or wait for national guidance to filter through local medicines committees.
+                Private payer research tracks Bupa, Medibank, HCF, and NIB coverage policies that influence branded
+                uptake outside the PBS channel. HCP adoption modules quantify prescriber readiness across AMC networks
+                when PBS listing alone does not drive ward-level administration — especially for hospital-infused
+                biologics and devices requiring MSAC review.
+              </p>
+              <p>
+                BioNixus connects Australian sequencing outputs to{' '}
+                <Link to="/pharmaceutical-market-research-australia" className="text-primary underline font-medium">
+                  Australian pharmaceutical market research
+                </Link>
+                ,{' '}
+                <Link to="/healthcare-market-research/new-zealand" className="text-primary underline font-medium">
+                  New Zealand healthcare market research
+                </Link>
+                , and APAC benchmarking cells so global portfolio committees can compare PBS dynamics with NHI Japan
+                or Singapore SDL listing without re-scoping vendor work.
               </p>
             </div>
           </div>
