@@ -94,7 +94,7 @@ type PressReleaseSchemaProps = {
   breadcrumb: BreadcrumbItem[]
 }
 
-type SchemaMarkupProps =
+export type SchemaMarkupProps =
   | HomeSchemaProps
   | BlogSchemaProps
   | PressReleaseSchemaProps
@@ -191,7 +191,7 @@ function isNonEmptyString(value: unknown): value is string {
   return typeof value === 'string' && value.trim().length > 0
 }
 
-function isValidSchemaNode(node: Record<string, unknown>): boolean {
+export function isValidSchemaNode(node: Record<string, unknown>): boolean {
   if (!isNonEmptyString(node['@context'])) return false
   if (!isNonEmptyString(node['@type'])) return false
 
@@ -279,10 +279,45 @@ function isValidSchemaNode(node: Record<string, unknown>): boolean {
     return isNonEmptyString(node.name) && Array.isArray(node.itemListElement) && node.itemListElement.length > 0
   }
 
+  if (type === 'BreadcrumbList') {
+    if (!Array.isArray(node.itemListElement) || node.itemListElement.length === 0) return false
+    return node.itemListElement.every((entry) => {
+      if (typeof entry !== 'object' || entry === null) return false
+      const item = entry as Record<string, unknown>
+      return (
+        item['@type'] === 'ListItem' &&
+        typeof item.position === 'number' &&
+        isNonEmptyString(item.name) &&
+        isNonEmptyString(item.item)
+      )
+    })
+  }
+
+  if (type === 'Dataset') {
+    return (
+      isNonEmptyString(node.name) &&
+      isNonEmptyString(node.description) &&
+      typeof node.creator === 'object' &&
+      node.creator !== null
+    )
+  }
+
+  if (type === 'NewsArticle') {
+    return (
+      isNonEmptyString(node.headline) &&
+      isNonEmptyString(node.description) &&
+      isNonEmptyString(node.datePublished) &&
+      typeof node.author === 'object' &&
+      node.author !== null &&
+      typeof node.publisher === 'object' &&
+      node.publisher !== null
+    )
+  }
+
   return true
 }
 
-function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[] {
+export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[] {
   const inLanguage = props.language
 
   if (props.pageType === 'home') {

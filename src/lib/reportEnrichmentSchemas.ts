@@ -18,9 +18,15 @@ export function buildDatasetSchema(input: ReportEnrichmentSchemaInput): object {
     description: input.pageMetaDescription,
     creator: {
       '@type': 'Organization',
+      '@id': 'https://www.bionixus.com/#organization',
       name: 'BioNixus',
       url: 'https://www.bionixus.com',
     },
+    spatialCoverage: {
+      '@type': 'Place',
+      name: input.countryName,
+    },
+    temporalCoverage: '2026',
     datePublished: input.publishedDate,
     dateModified: input.modifiedDate,
     license: 'https://www.bionixus.com/terms',

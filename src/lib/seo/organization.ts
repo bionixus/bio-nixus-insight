@@ -197,7 +197,23 @@ export const ORG_CONTACT_POINT = [
     contactType: 'customer service',
     areaServed: 'GB',
   },
+  {
+    '@type': 'ContactPoint',
+    email: 'mosama@bionixus.com',
+    contactType: 'sales',
+    availableLanguage: ['English', 'Arabic'],
+  },
 ];
+
+/**
+ * Social/profile URLs for ORG_SAME_AS.
+ * TODO: confirm real profile URLs and merge into ORG_SAME_AS below —
+ *  - X/Twitter company profile
+ *  - Crunchbase company profile
+ *  - Clutch company profile
+ *  - GoodFirms company profile
+ * Do not guess these; only add once confirmed by BioNixus.
+ */
 
 /** Canonical Organization node. Pass inLanguage for per-page locale tagging. */
 export function buildCanonicalOrganization(inLanguage?: string): Record<string, unknown> {
