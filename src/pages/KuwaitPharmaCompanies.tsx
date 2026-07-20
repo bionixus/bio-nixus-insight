@@ -230,9 +230,9 @@ const KuwaitPharmaCompanies = () => {
   const citationUrl = 'https://www.bionixus.com/pharmaceutical-companies-kuwait';
   const guideShareSlug = 'pharmaceutical-companies-kuwait';
 
-  const ogTitle = "Pharmaceutical Companies in Kuwait & Top Medical Distributors 2026 | BioNixus";
+  const ogTitle = "Pharmaceutical Companies in Kuwait: 2026 Ranked List & Market Data";
   const ogDescription =
-    "Kuwait pharma companies guide: top medical distributors (Cura Health, AAW, Almojil, Central Circle Co., Mezzan Medical, and more), $1.2B market size, MOH registration, MNC offices, and drug distribution channels.";
+    "Every major pharmaceutical company in Kuwait ranked for 2026, with market size, import structure and regulatory notes. Research by BioNixus.";
 
   const topMedicalDistributorsItemListLd = {
     '@context': 'https://schema.org',
@@ -249,10 +249,10 @@ const KuwaitPharmaCompanies = () => {
 return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Pharmaceutical Companies in Kuwait | Top Distributors 2026 | BioNixus</title>
+        <title>Pharmaceutical Companies in Kuwait: 2026 Ranked List & Market Data</title>
         <meta
           name="description"
-          content="Pharmaceutical companies in Kuwait: ranked distributors (Cura Health, AAW, Almojil, Central Circle Co.), $1.2B market, MOH registration, KSPICO manufacturing, MNC offices (2026)."
+          content="Every major pharmaceutical company in Kuwait ranked for 2026, with market size, import structure and regulatory notes. Research by BioNixus."
         />
         <link rel="canonical" href={citationUrl} />
         <script type="application/ld+json">

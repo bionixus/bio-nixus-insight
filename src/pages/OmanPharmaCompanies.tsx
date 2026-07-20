@@ -65,14 +65,14 @@ const OmanPharmaCompanies = () => {
   const basePath = languagePaths[language] || '/';
   const citationUrl = 'https://www.bionixus.com/pharmaceutical-companies-oman';
 
-  const ogTitle = "Pharmaceutical Companies in Oman — Complete Industry Guide 2026";
-  const ogDescription = "Comprehensive guide: 18+ pharmaceutical companies in Oman, $0.7B market data, MOH DGPA registration, Vision 2040, and market outlook.";
+  const ogTitle = "Oman Pharma: Top Pharmaceutical Companies & Market Size (2026)";
+  const ogDescription = "The definitive 2026 guide to Oman's pharma market — top companies, local manufacturers, market size and growth data. By BioNixus.";
 
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Pharmaceutical Companies in Oman | Industry Guide 2026 | BioNixus</title>
-        <meta name="description" content="Pharmaceutical companies in Oman: 18+ companies, $0.7B market, MOH DGPA registration, Vision 2040 — ranked manufacturers, MNC offices, and distributors (2026)." />
+        <title>Oman Pharma: Top Pharmaceutical Companies & Market Size (2026)</title>
+        <meta name="description" content="The definitive 2026 guide to Oman's pharma market — top companies, local manufacturers, market size and growth data. By BioNixus." />
         <link rel="canonical" href={citationUrl} />
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesItemListLd(citationUrl, pharmaCompanies.map((c) => c.name)))}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: 'Pharmaceutical Companies in Oman: Complete Industry Guide 2026', description: 'Comprehensive guide to pharmaceutical companies operating in Oman — local manufacturers, MNC offices, distributors, $0.7B market data, MOH DGPA regulatory landscape, and Vision 2040 outlook.', url: citationUrl, datePublished: '2026-02-15', dateModified: '2026-02-15', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' } })}</script>

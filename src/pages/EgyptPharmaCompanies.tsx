@@ -66,14 +66,14 @@ const EgyptPharmaCompanies = () => {
   const basePath = languagePaths[language] || '/';
   const citationUrl = 'https://www.bionixus.com/pharmaceutical-companies-egypt';
 
-  const ogTitle = "Pharmaceutical Companies in Egypt — Complete Industry Guide 2026";
-  const ogDescription = "Comprehensive guide: 20+ pharmaceutical companies in Egypt, $5.8B market data, EDA registration, 90% local manufacturing, and market outlook.";
+  const ogTitle = "Top 40 Pharmaceutical Companies in Egypt (2026 Ranked List)";
+  const ogDescription = "2026 ranking of Egypt's pharmaceutical companies — local giants, multinationals, market shares and pricing context. By BioNixus, Egypt healthcare research experts.";
 
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Pharmaceutical Companies in Egypt | Industry Guide 2026 | BioNixus</title>
-        <meta name="description" content="Pharmaceutical companies in Egypt: $5.8B market, EDA registration, 90% local manufacturing — EIPICO, EVA Pharma, Pharco &amp; distributors (2026)." />
+        <title>Top 40 Pharmaceutical Companies in Egypt (2026 Ranked List)</title>
+        <meta name="description" content="2026 ranking of Egypt's pharmaceutical companies — local giants, multinationals, market shares and pricing context. By BioNixus, Egypt healthcare research experts." />
         <link rel="canonical" href={citationUrl} />
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesItemListLd(citationUrl, pharmaCompanies.map((c) => c.name)))}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: 'Pharmaceutical Companies in Egypt: Complete Industry Guide 2026', description: 'Comprehensive guide to pharmaceutical companies operating in Egypt — local manufacturers, MNC offices, distributors, $5.8B market data, EDA regulatory landscape, and 90% local manufacturing dominance.', url: citationUrl, datePublished: '2026-02-15', dateModified: '2026-02-15', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' } })}</script>

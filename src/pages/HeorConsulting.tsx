@@ -3,8 +3,8 @@ import StrategicServicePage from '@/pages/templates/StrategicServicePage';
 export default function HeorConsulting() {
   return (
     <StrategicServicePage
-      title="HEOR Consulting | Health Economics & Outcomes Research | BioNixus"
-      description="HEOR consulting across GCC, Middle East, and Europe. Budget impact models, cost-effectiveness analysis, value dossiers, and HTA submissions built to survive payer scrutiny."
+      title="HEOR Consulting Services: Health Economics & Outcomes Research"
+      description="BioNixus HEOR consulting — economic models, RWE studies, payer evidence and value dossiers for pharma & medtech across emerging and developed markets."
       canonicalUrl="https://www.bionixus.com/heor-consulting"
       breadcrumbLabel="HEOR Consulting"
       h1="HEOR Consulting — GCC, Middle East & Europe"

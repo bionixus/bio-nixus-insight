@@ -63,14 +63,14 @@ const IraqPharmaCompanies = () => {
   const basePath = languagePaths[language] || '/';
   const citationUrl = 'https://www.bionixus.com/pharmaceutical-companies-iraq';
 
-  const ogTitle = "Pharmaceutical Companies in Iraq — Complete Industry Guide 2026";
-  const ogDescription = "Comprehensive guide: 18+ pharmaceutical companies in Iraq, $2.8B market data, KIMADIA regulatory landscape, KRG market, and outlook.";
+  const ogTitle = "Pharmaceutical Companies in Iraq: 2026 List, KIMADIA & Market Size";
+  const ogDescription = "Top pharmaceutical companies in Iraq, the KIMADIA tender system, and 2026 market data. Research by BioNixus.";
 
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Pharmaceutical Companies in Iraq | Industry Guide 2026 | BioNixus</title>
-        <meta name="description" content="Complete guide to pharmaceutical companies in Iraq for 2026: top pharma companies list, $2.8B market size, KIMADIA regulatory landscape, KRG market, and industry outlook." />
+        <title>Pharmaceutical Companies in Iraq: 2026 List, KIMADIA & Market Size</title>
+        <meta name="description" content="Top pharmaceutical companies in Iraq, the KIMADIA tender system, and 2026 market data. Research by BioNixus." />
         <link rel="canonical" href={citationUrl} />
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: 'Pharmaceutical Companies in Iraq: Complete Industry Guide 2026', description: 'Comprehensive guide to pharmaceutical companies operating in Iraq — local manufacturers, MNC offices, distributors, $2.8B market data, KIMADIA regulatory landscape, and dual federal-KRG market outlook.', url: citationUrl, datePublished: '2026-02-15', dateModified: '2026-02-15', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' } })}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' }, { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.bionixus.com/resources' }, { '@type': 'ListItem', position: 3, name: 'Pharmaceutical Companies in Iraq', item: citationUrl }] })}</script>

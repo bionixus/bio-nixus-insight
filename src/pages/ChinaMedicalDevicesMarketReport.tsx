@@ -96,8 +96,8 @@ const ChinaMedicalDevicesMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="China Medical Devices Market Report 2026 | BioNixus"
-      description="China medical devices market at USD 80B in 2026 — world's second largest. NMPA Class I–III registration, VBP device procurement (coronary stents, joint implants), import substitution policy, and BioNixus GCC intelligence."
+      title="China Medical Device Market 2026: Size, NMPA Access & Forecast"
+      description="China's medical device market in 2026 — market size, NMPA registration pathway, key segments and 5-year forecast. Report by BioNixus."
       canonical="https://www.bionixus.com/china-medical-devices-market-report"
       jsonLd={jsonLd}
     />
