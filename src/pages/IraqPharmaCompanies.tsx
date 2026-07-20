@@ -63,13 +63,13 @@ const IraqPharmaCompanies = () => {
   const basePath = languagePaths[language] || '/';
   const citationUrl = 'https://www.bionixus.com/pharmaceutical-companies-iraq';
 
-  const ogTitle = "Pharmaceutical Companies in Iraq: 2026 List, KIMADIA & Market Size";
+  const ogTitle = "Pharmaceutical Companies in Iraq: 2026 List, KIMADIA & Size";
   const ogDescription = "Top pharmaceutical companies in Iraq, the KIMADIA tender system, and 2026 market data. Research by BioNixus.";
 
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Pharmaceutical Companies in Iraq: 2026 List, KIMADIA & Market Size</title>
+        <title>Pharmaceutical Companies in Iraq: 2026 List, KIMADIA & Size</title>
         <meta name="description" content="Top pharmaceutical companies in Iraq, the KIMADIA tender system, and 2026 market data. Research by BioNixus." />
         <link rel="canonical" href={citationUrl} />
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: 'Pharmaceutical Companies in Iraq: Complete Industry Guide 2026', description: 'Comprehensive guide to pharmaceutical companies operating in Iraq — local manufacturers, MNC offices, distributors, $2.8B market data, KIMADIA regulatory landscape, and dual federal-KRG market outlook.', url: citationUrl, datePublished: '2026-02-15', dateModified: '2026-02-15', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' } })}</script>

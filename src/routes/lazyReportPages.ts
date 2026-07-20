@@ -50,6 +50,16 @@ export { default as SingaporeMedicalDevicesMarketReport } from '@/pages/Singapor
 export { default as TurkeyHealthcareMarketReport } from '@/pages/TurkeyHealthcareMarketReport';
 export { default as TurkeyMedicalDevicesMarketReport } from '@/pages/TurkeyMedicalDevicesMarketReport';
 
+export { default as UaePharmaCompanies } from '@/pages/UaePharmaCompanies';
+export { default as KuwaitPharmaCompanies } from '@/pages/KuwaitPharmaCompanies';
+export { default as SaudiPharmaCompanies } from '@/pages/SaudiPharmaCompanies';
+export { default as EgyptPharmaCompanies } from '@/pages/EgyptPharmaCompanies';
+export { default as QatarPharmaCompanies } from '@/pages/QatarPharmaCompanies';
+export { default as OmanPharmaCompanies } from '@/pages/OmanPharmaCompanies';
+export { default as BahrainPharmaCompanies } from '@/pages/BahrainPharmaCompanies';
+export { default as IraqPharmaCompanies } from '@/pages/IraqPharmaCompanies';
+export { default as IranPharmaCompanies } from '@/pages/IranPharmaCompanies';
+
 import { lazy } from 'react';
 
 /** Still code-split — programmatic / CMS-backed report slugs. */
@@ -58,13 +68,3 @@ export const HealthcareReportPage = lazy(() => import('@/pages/HealthcareReportP
 export const BlogPost = lazy(() => import('@/pages/BlogPost'));
 export const CaseStudy = lazy(() => import('@/pages/CaseStudy'));
 export const PressReleasePage = lazy(() => import('@/pages/PressReleasePage'));
-
-export const UaePharmaCompanies = lazy(() => import('@/pages/UaePharmaCompanies'));
-export const KuwaitPharmaCompanies = lazy(() => import('@/pages/KuwaitPharmaCompanies'));
-export const SaudiPharmaCompanies = lazy(() => import('@/pages/SaudiPharmaCompanies'));
-export const EgyptPharmaCompanies = lazy(() => import('@/pages/EgyptPharmaCompanies'));
-export const QatarPharmaCompanies = lazy(() => import('@/pages/QatarPharmaCompanies'));
-export const OmanPharmaCompanies = lazy(() => import('@/pages/OmanPharmaCompanies'));
-export const BahrainPharmaCompanies = lazy(() => import('@/pages/BahrainPharmaCompanies'));
-export const IraqPharmaCompanies = lazy(() => import('@/pages/IraqPharmaCompanies'));
-export const IranPharmaCompanies = lazy(() => import('@/pages/IranPharmaCompanies'));

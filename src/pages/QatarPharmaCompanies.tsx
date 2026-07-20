@@ -64,13 +64,13 @@ const QatarPharmaCompanies = () => {
   const basePath = languagePaths[language] || '/';
   const citationUrl = 'https://www.bionixus.com/pharmaceutical-companies-qatar';
 
-  const ogTitle = "Qatar Pharmaceutical Industries: Top Companies & 2026 Market Report";
+  const ogTitle = "Qatar Pharmaceutical Industries: Top Companies & 2026 Report";
   const ogDescription = "Ranked list of Qatar's pharmaceutical companies and industries with 2026 market size, tender system and growth outlook. By BioNixus.";
 
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Qatar Pharmaceutical Industries: Top Companies & 2026 Market Report</title>
+        <title>Qatar Pharmaceutical Industries: Top Companies & 2026 Report</title>
         <meta name="description" content="Ranked list of Qatar's pharmaceutical companies and industries with 2026 market size, tender system and growth outlook. By BioNixus." />
         <link rel="canonical" href={citationUrl} />
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesItemListLd(citationUrl, pharmaCompanies.map((c) => c.name)))}</script>

@@ -230,7 +230,7 @@ const KuwaitPharmaCompanies = () => {
   const citationUrl = 'https://www.bionixus.com/pharmaceutical-companies-kuwait';
   const guideShareSlug = 'pharmaceutical-companies-kuwait';
 
-  const ogTitle = "Pharmaceutical Companies in Kuwait: 2026 Ranked List & Market Data";
+  const ogTitle = "Pharmaceutical Companies in Kuwait: 2026 List & Market Data";
   const ogDescription =
     "Every major pharmaceutical company in Kuwait ranked for 2026, with market size, import structure and regulatory notes. Research by BioNixus.";
 
@@ -249,7 +249,7 @@ const KuwaitPharmaCompanies = () => {
 return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Pharmaceutical Companies in Kuwait: 2026 Ranked List & Market Data</title>
+        <title>Pharmaceutical Companies in Kuwait: 2026 List & Market Data</title>
         <meta
           name="description"
           content="Every major pharmaceutical company in Kuwait ranked for 2026, with market size, import structure and regulatory notes. Research by BioNixus."
