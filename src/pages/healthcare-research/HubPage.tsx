@@ -59,7 +59,7 @@ const GLOBAL_MARKETS: {
   region: string;
   blurb: string;
   regulators: string;
-  markets: { name: string; to: string }[];
+  markets: { name: string; to: string; devicesTo: string }[];
 }[] = [
   {
     region: 'Americas',
@@ -67,9 +67,9 @@ const GLOBAL_MARKETS: {
       'The world\'s largest pharmaceutical market plus high-growth Latin American demand — healthcare market research USA teams use for FDA, CMS, and PBM-context evidence.',
     regulators: 'FDA · Health Canada · ANVISA',
     markets: [
-      { name: 'United States', to: '/usa-healthcare-market-report' },
-      { name: 'Canada', to: '/canada-healthcare-market-report' },
-      { name: 'Brazil', to: '/brazil-healthcare-market-report' },
+      { name: 'United States', to: '/usa-healthcare-market-report', devicesTo: '/usa-medical-devices-market-report' },
+      { name: 'Canada', to: '/canada-healthcare-market-report', devicesTo: '/canada-medical-devices-market-report' },
+      { name: 'Brazil', to: '/brazil-healthcare-market-report', devicesTo: '/brazil-medical-devices-market-report' },
     ],
   },
   {
@@ -78,11 +78,11 @@ const GLOBAL_MARKETS: {
       'Centralised EMA approval but national HTA gatekeeping — pharmaceutical market research Europe requires NICE, G-BA/AMNOG, HAS, AIFA, and AEMPS evidence market by market.',
     regulators: 'EMA · NICE · AMNOG · HAS',
     markets: [
-      { name: 'United Kingdom', to: '/uk-healthcare-market-report' },
-      { name: 'Germany', to: '/germany-healthcare-market-report' },
-      { name: 'France', to: '/france-healthcare-market-report' },
-      { name: 'Italy', to: '/italy-healthcare-market-report' },
-      { name: 'Spain', to: '/spain-healthcare-market-report' },
+      { name: 'United Kingdom', to: '/uk-healthcare-market-report', devicesTo: '/uk-medical-devices-market-report' },
+      { name: 'Germany', to: '/germany-healthcare-market-report', devicesTo: '/germany-medical-devices-market-report' },
+      { name: 'France', to: '/france-healthcare-market-report', devicesTo: '/france-medical-devices-market-report' },
+      { name: 'Italy', to: '/italy-healthcare-market-report', devicesTo: '/italy-medical-devices-market-report' },
+      { name: 'Spain', to: '/spain-healthcare-market-report', devicesTo: '/spain-medical-devices-market-report' },
     ],
   },
   {
@@ -91,14 +91,14 @@ const GLOBAL_MARKETS: {
       'Vision-2030-era investment and tender-led procurement—fast growth governed by SFDA, MOHAP/DHA/DOH, EDA, and GCC centralised registration.',
     regulators: 'SFDA · MOHAP/DHA/DOH · EDA',
     markets: [
-      { name: 'Saudi Arabia', to: '/saudi-arabia-healthcare-market-report' },
-      { name: 'United Arab Emirates', to: '/uae-healthcare-market-report' },
-      { name: 'Egypt', to: '/egypt-healthcare-market-report' },
-      { name: 'Qatar', to: '/qatar-healthcare-market-report' },
-      { name: 'Kuwait', to: '/kuwait-healthcare-market-report' },
-      { name: 'Oman', to: '/oman-healthcare-market-report' },
-      { name: 'Bahrain', to: '/bahrain-healthcare-market-report' },
-      { name: 'Turkey', to: '/turkey-healthcare-market-report' },
+      { name: 'Saudi Arabia', to: '/saudi-arabia-healthcare-market-report', devicesTo: '/saudi-arabia-medical-devices-market-report' },
+      { name: 'United Arab Emirates', to: '/uae-healthcare-market-report', devicesTo: '/uae-medical-devices-market-report' },
+      { name: 'Egypt', to: '/egypt-healthcare-market-report', devicesTo: '/egypt-medical-devices-market-report' },
+      { name: 'Qatar', to: '/qatar-healthcare-market-report', devicesTo: '/qatar-medical-devices-market-report' },
+      { name: 'Kuwait', to: '/kuwait-healthcare-market-report', devicesTo: '/kuwait-medical-devices-market-report' },
+      { name: 'Oman', to: '/oman-healthcare-market-report', devicesTo: '/oman-medical-devices-market-report' },
+      { name: 'Bahrain', to: '/bahrain-healthcare-market-report', devicesTo: '/bahrain-medical-devices-market-report' },
+      { name: 'Turkey', to: '/turkey-healthcare-market-report', devicesTo: '/turkey-medical-devices-market-report' },
     ],
   },
   {
@@ -107,14 +107,25 @@ const GLOBAL_MARKETS: {
       'From mature reimbursement systems to the fastest-growing emerging demand—access shaped by PMDA, NMPA, CDSCO, MFDS, HSA, and TGA.',
     regulators: 'PMDA · NMPA · CDSCO · TGA',
     markets: [
-      { name: 'Japan', to: '/japan-healthcare-market-report' },
-      { name: 'China', to: '/china-healthcare-market-report' },
-      { name: 'India', to: '/india-healthcare-market-report' },
-      { name: 'South Korea', to: '/south-korea-healthcare-market-report' },
-      { name: 'Singapore', to: '/singapore-healthcare-market-report' },
-      { name: 'Australia', to: '/australia-healthcare-market-report' },
+      { name: 'Japan', to: '/japan-healthcare-market-report', devicesTo: '/japan-medical-devices-market-report' },
+      { name: 'China', to: '/china-healthcare-market-report', devicesTo: '/china-medical-devices-market-report' },
+      { name: 'India', to: '/india-healthcare-market-report', devicesTo: '/india-medical-devices-market-report' },
+      { name: 'South Korea', to: '/south-korea-healthcare-market-report', devicesTo: '/south-korea-medical-devices-market-report' },
+      { name: 'Singapore', to: '/singapore-healthcare-market-report', devicesTo: '/singapore-medical-devices-market-report' },
+      { name: 'Australia', to: '/australia-healthcare-market-report', devicesTo: '/australia-medical-devices-market-report' },
     ],
   },
+];
+
+/** The seven GCC/MENA countries that carry a dedicated pharma-companies directory. */
+const GCC_PHARMA_COMPANIES_DIRECTORIES = [
+  { to: '/pharmaceutical-companies-saudi-arabia', title: 'Pharmaceutical companies in Saudi Arabia' },
+  { to: '/pharmaceutical-companies-uae', title: 'Pharmaceutical companies in UAE' },
+  { to: '/pharmaceutical-companies-kuwait', title: 'Pharmaceutical companies in Kuwait' },
+  { to: '/pharmaceutical-companies-egypt', title: 'Pharmaceutical companies in Egypt' },
+  { to: '/pharmaceutical-companies-qatar', title: 'Pharmaceutical companies in Qatar' },
+  { to: '/pharmaceutical-companies-oman', title: 'Pharmaceutical companies in Oman' },
+  { to: '/pharmaceutical-companies-bahrain', title: 'Pharmaceutical companies in Bahrain' },
 ];
 
 /** Every live `/healthcare-market-research/{slug}` country hub, grouped for navigation. */
@@ -560,12 +571,18 @@ export default function HubPage() {
               <p className="text-sm text-muted-foreground leading-relaxed mb-4">{region.blurb}</p>
               <ul className="flex flex-wrap gap-2">
                 {region.markets.map((market) => (
-                  <li key={market.to}>
+                  <li key={market.to} className="flex flex-wrap gap-2">
                     <Link
                       to={market.to}
                       className="inline-flex items-center rounded-lg border border-border bg-background px-3 py-1.5 text-sm text-foreground hover:border-primary/40 hover:text-primary transition-colors"
                     >
                       {market.name} healthcare market report
+                    </Link>
+                    <Link
+                      to={market.devicesTo}
+                      className="inline-flex items-center rounded-lg border border-border bg-background px-3 py-1.5 text-sm text-foreground hover:border-primary/40 hover:text-primary transition-colors"
+                    >
+                      {market.name} medical devices report
                     </Link>
                   </li>
                 ))}
@@ -574,11 +591,11 @@ export default function HubPage() {
           ))}
         </div>
         <p className="text-sm text-muted-foreground mt-6 max-w-4xl">
-          Planning a device or diagnostics launch? Every market above also has a dedicated{' '}
+          Every market above has both a healthcare market report and a dedicated medical devices report, plus{' '}
           <Link to="/market-reports" className="text-primary hover:underline">
-            medical devices and IVD report
-          </Link>{' '}
-          in the reports hub. For a multi-country programme, start from{' '}
+            segment-level reports in the reports hub
+          </Link>
+          . For a multi-country programme, start from{' '}
           <Link to="/healthcare-market-research/services/market-access" className="text-primary hover:underline">
             market access research
           </Link>{' '}
@@ -596,16 +613,20 @@ export default function HubPage() {
         variant="default"
       >
         <p className="text-muted-foreground leading-relaxed mb-6 max-w-4xl">
-          Country pharma company directories link into the GCC report cluster above to pass authority from page-one
-          BOFU URLs into segment reports.
+          Country pharma company directories link into the{' '}
+          <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline">
+            GCC Pharmaceutical Market Report 2026
+          </Link>{' '}
+          and the{' '}
+          <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline">
+            GCC Medical Devices Market Report
+          </Link>{' '}
+          to pass authority from page-one BOFU URLs into segment reports.
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <HealthcareNavCard
-            to="/pharmaceutical-companies-saudi-arabia"
-            title="Pharmaceutical companies in Saudi Arabia"
-          />
-          <HealthcareNavCard to="/pharmaceutical-companies-uae" title="Pharmaceutical companies in UAE" />
-          <HealthcareNavCard to="/pharmaceutical-companies-kuwait" title="Pharmaceutical companies in Kuwait" />
+          {GCC_PHARMA_COMPANIES_DIRECTORIES.map((directory) => (
+            <HealthcareNavCard key={directory.to} to={directory.to} title={directory.title} />
+          ))}
         </div>
       </ReportPremiumSection>
 
@@ -763,6 +784,37 @@ export default function HubPage() {
               />
             ))}
           </div>
+      </ReportPremiumSection>
+
+      <ReportPremiumSection
+        id="specialist-comparisons"
+        title="Specialist services & vendor comparisons"
+        subtitle="How BioNixus compares to legacy vendors, and where HEOR and market access work fits alongside primary research."
+        variant="muted"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <HealthcareNavCard
+            to="/iqvia-alternative"
+            title="BioNixus vs. IQVIA and other legacy vendors"
+            description="A multi-vendor comparison for teams evaluating IQVIA alternatives on GCC and MENA fieldwork, turnaround, and pricing."
+          />
+          <HealthcareNavCard
+            to="/heor-consulting"
+            title="HEOR consulting"
+            description="Health economics and outcomes research — cost-effectiveness models, HTA dossiers, and payer evidence generation."
+          />
+        </div>
+      </ReportPremiumSection>
+
+      <ReportPremiumSection id="additional-country-guides" title="Additional country research guides" variant="muted">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <HealthcareNavCard to="/healthcare-market-research-bahrain" title="Healthcare market research guide — Bahrain" />
+          <HealthcareNavCard to="/healthcare-market-research-jordan" title="Healthcare market research guide — Jordan" />
+          <HealthcareNavCard to="/healthcare-market-research-kuwait" title="Healthcare market research guide — Kuwait" />
+          <HealthcareNavCard to="/healthcare-market-research-oman" title="Healthcare market research guide — Oman" />
+          <HealthcareNavCard to="/healthcare-market-research-qatar" title="Healthcare market research guide — Qatar" />
+          <HealthcareNavCard to="/medical-affairs-insight-research-gcc" title="Medical affairs insight research — GCC" />
+        </div>
       </ReportPremiumSection>
 
       <ReportPremiumSection id="therapy-areas" title="Therapy area expertise" variant="muted">

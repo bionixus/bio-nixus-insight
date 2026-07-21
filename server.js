@@ -14,6 +14,20 @@ import { resolveLegacyCountryIndustryMarketResearchRedirect } from './lib/countr
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === 'production';
 
+/**
+ * Background data fetches (e.g. Sanity CMS calls for the homepage's latest-insights
+ * teaser) can leave a raw socket that emits a late, unhandled 'error' event after the
+ * request-level rejection was already caught and handled — Node's default behavior for
+ * an EventEmitter 'error' with no listener is to crash the process. That must never take
+ * down request handling for unrelated pages.
+ */
+process.on('uncaughtException', (err) => {
+  console.error('[server] uncaughtException (process kept alive):', err?.message || err);
+});
+process.on('unhandledRejection', (reason) => {
+  console.error('[server] unhandledRejection (process kept alive):', reason);
+});
+
 /** Single source of truth for legacy redirects — also consumed by api/indexnow-key.ts. */
 const LEGACY_REDIRECTS = JSON.parse(
   fs.readFileSync(path.join(__dirname, 'config', 'legacy-redirects.json'), 'utf-8'),

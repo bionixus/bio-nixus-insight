@@ -14,6 +14,89 @@ import { ReportMidPageCta } from '@/components/report-conversion';
 import { ReportPremiumSection } from '@/components/report-premium';
 import { buildCountryPageSchemas } from '@/lib/seo/schemas';
 
+/**
+ * Hub-and-spoke triad: /healthcare-market-research/{slug} ↔ /pharmaceutical-companies-{slug} ↔
+ * the country's market report pages. Only the seven GCC/MENA countries below currently have
+ * all three legs live — this table is the single source of truth for that cross-link, so a
+ * new country only needs one row here rather than a bespoke block per page.
+ */
+const COUNTRY_TRIAD_LINKS: Record<
+  string,
+  { pharmaCompanies?: string; healthcareReport?: string; devicesReport?: string }
+> = {
+  'saudi-arabia': {
+    pharmaCompanies: '/pharmaceutical-companies-saudi-arabia',
+    healthcareReport: '/saudi-arabia-healthcare-market-report',
+    devicesReport: '/saudi-arabia-medical-devices-market-report',
+  },
+  uae: {
+    pharmaCompanies: '/pharmaceutical-companies-uae',
+    healthcareReport: '/uae-healthcare-market-report',
+    devicesReport: '/uae-medical-devices-market-report',
+  },
+  kuwait: {
+    pharmaCompanies: '/pharmaceutical-companies-kuwait',
+    healthcareReport: '/kuwait-healthcare-market-report',
+    devicesReport: '/kuwait-medical-devices-market-report',
+  },
+  qatar: {
+    pharmaCompanies: '/pharmaceutical-companies-qatar',
+    healthcareReport: '/qatar-healthcare-market-report',
+    devicesReport: '/qatar-medical-devices-market-report',
+  },
+  oman: {
+    pharmaCompanies: '/pharmaceutical-companies-oman',
+    healthcareReport: '/oman-healthcare-market-report',
+    devicesReport: '/oman-medical-devices-market-report',
+  },
+  bahrain: {
+    pharmaCompanies: '/pharmaceutical-companies-bahrain',
+    healthcareReport: '/bahrain-healthcare-market-report',
+    devicesReport: '/bahrain-medical-devices-market-report',
+  },
+  egypt: {
+    pharmaCompanies: '/pharmaceutical-companies-egypt',
+    healthcareReport: '/egypt-healthcare-market-report',
+    devicesReport: '/egypt-medical-devices-market-report',
+  },
+};
+
+function CountryTriadLinks({ slug, countryName }: { slug: string; countryName: string }) {
+  const triad = COUNTRY_TRIAD_LINKS[slug];
+  if (!triad) return null;
+  const items: { to: string; label: string }[] = [
+    ...(triad.pharmaCompanies
+      ? [{ to: triad.pharmaCompanies, label: `Pharmaceutical companies in ${countryName}` }]
+      : []),
+    ...(triad.healthcareReport
+      ? [{ to: triad.healthcareReport, label: `${countryName} Healthcare Market Report` }]
+      : []),
+    ...(triad.devicesReport
+      ? [{ to: triad.devicesReport, label: `${countryName} Medical Devices Market Report` }]
+      : []),
+  ];
+  if (items.length === 0) return null;
+  return (
+    <ReportPremiumSection
+      id="country-triad-links"
+      title={`${countryName} research directory & reports`}
+      variant="muted"
+    >
+      <div className="flex flex-wrap gap-3">
+        {items.map((item) => (
+          <Link
+            key={item.to}
+            to={item.to}
+            className="inline-flex items-center rounded-lg border border-border bg-background px-3 py-1.5 text-sm font-medium text-foreground hover:border-primary/40 hover:text-primary transition-colors"
+          >
+            {item.label}
+          </Link>
+        ))}
+      </div>
+    </ReportPremiumSection>
+  );
+}
+
 function portableTextToParagraphs(value: unknown): string[] {
   if (!Array.isArray(value)) return [];
   return value
@@ -798,6 +881,8 @@ export default function CountryPage() {
       )}
 
       <CountryMarketReferenceGuide countryName={config.name} countrySlug={config.slug} region={config.region} />
+
+      <CountryTriadLinks slug={config.slug} countryName={config.name} />
 
       <ReportMidPageCta config={conversionConfig} className="my-4" />
 

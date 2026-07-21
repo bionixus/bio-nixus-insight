@@ -181,7 +181,16 @@ const BahrainHealthcareMarketReport = () => {
               {' '}and the{' '}
               <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">
                 GCC Pharmaceutical Market Report 2026
-              </Link>.
+              </Link>
+              . For account-level directories and programme scoping, see{' '}
+              <Link to="/pharmaceutical-companies-bahrain" className="text-primary hover:underline font-medium">
+                pharmaceutical companies in Bahrain
+              </Link>
+              {' '}and{' '}
+              <Link to="/healthcare-market-research/bahrain" className="text-primary hover:underline font-medium">
+                healthcare market research in Bahrain
+              </Link>
+              .
             </p>
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
           </div>

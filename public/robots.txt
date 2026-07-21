@@ -70,6 +70,10 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
+# ByteDance / TikTok
+User-agent: Bytespider
+Allow: /
+
 # Meta AI
 User-agent: meta-externalagent
 Allow: /

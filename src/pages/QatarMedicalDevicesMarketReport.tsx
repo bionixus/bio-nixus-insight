@@ -297,7 +297,9 @@ const QatarMedicalDevicesMarketReport = () => {
               <Link to="/qatar-healthcare-market-report" className="text-primary hover:underline font-medium">Qatar healthcare market report</Link>, or widen the lens with the{' '}
               <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC medical devices market report</Link>. For methods and global coverage, see the{' '}
               <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}
-              <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>. Teams evaluating Qatar alongside neighboring markets should also weigh the country's smaller absolute device budget against its faster MOPH review sequencing and premium clinical adoption profile when prioritizing GCC launch order.
+              <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>. Teams evaluating Qatar alongside neighboring markets should also weigh the country's smaller absolute device budget against its faster MOPH review sequencing and premium clinical adoption profile when prioritizing GCC launch order. For account-level directories and programme scoping, see{' '}
+              <Link to="/pharmaceutical-companies-qatar" className="text-primary hover:underline font-medium">pharmaceutical companies in Qatar</Link>{' '}and{' '}
+              <Link to="/healthcare-market-research/qatar" className="text-primary hover:underline font-medium">healthcare market research in Qatar</Link>.
             </p>
           </div>
         </section>

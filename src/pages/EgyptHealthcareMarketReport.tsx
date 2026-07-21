@@ -177,6 +177,14 @@ const EgyptHealthcareMarketReport = () => {
               <Link to="/market-reports/egypt-diabetes-market-report" className="text-primary hover:underline font-medium">
                 Egypt diabetes market research report
               </Link>
+              . For account-level directories and programme scoping, see{' '}
+              <Link to="/pharmaceutical-companies-egypt" className="text-primary hover:underline font-medium">
+                pharmaceutical companies in Egypt
+              </Link>
+              {' '}and{' '}
+              <Link to="/healthcare-market-research/egypt" className="text-primary hover:underline font-medium">
+                healthcare market research in Egypt
+              </Link>
               .
             </p>
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />

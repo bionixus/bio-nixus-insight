@@ -89,6 +89,80 @@ const Index = () => {
         <div className="cv-auto">
           <HomePathwaysSection cards={featuredCards} />
         </div>
+        <section className="section-padding bg-cream-dark border-t border-border" aria-labelledby="home-explore-research-heading">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 id="home-explore-research-heading" className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              Explore BioNixus research
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div>
+                <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-3">Start here</h3>
+                <ul className="space-y-2">
+                  <li>
+                    <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">
+                      Global healthcare market research hub
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/iqvia-alternative" className="text-primary hover:underline font-medium">
+                      BioNixus vs. IQVIA and other legacy vendors
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-3">Featured market reports</h3>
+                <ul className="space-y-2">
+                  <li>
+                    <Link to="/saudi-arabia-healthcare-market-report" className="text-primary hover:underline font-medium">
+                      Saudi Arabia Healthcare Market Report
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/uae-healthcare-market-report" className="text-primary hover:underline font-medium">
+                      UAE Healthcare Market Report
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/usa-healthcare-market-report" className="text-primary hover:underline font-medium">
+                      USA Healthcare Market Report
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-3">Research by country</h3>
+                <ul className="space-y-2">
+                  <li>
+                    <Link to="/healthcare-market-research/united-states" className="text-primary hover:underline font-medium">
+                      Healthcare market research USA
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/healthcare-market-research/saudi-arabia" className="text-primary hover:underline font-medium">
+                      Healthcare market research Saudi Arabia
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/healthcare-market-research/uae" className="text-primary hover:underline font-medium">
+                      Healthcare market research UAE
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/healthcare-market-research/turkey" className="text-primary hover:underline font-medium">
+                      Healthcare market research Turkey
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/healthcare-market-research/egypt" className="text-primary hover:underline font-medium">
+                      Healthcare market research Egypt
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
         <div className="cv-auto">
           <MethodologySection nestUnderParentH1 />
         </div>

@@ -34,6 +34,17 @@ const HAS_COUNTRY_MR_HUB: Partial<Record<PharmaCompaniesCountrySlug, string>> = 
   egypt: 'egypt',
 };
 
+/** Country-level report slugs — completes the hub/pharma-companies/report triad. */
+const HAS_COUNTRY_REPORTS: Partial<Record<PharmaCompaniesCountrySlug, string>> = {
+  kuwait: 'kuwait',
+  oman: 'oman',
+  qatar: 'qatar',
+  bahrain: 'bahrain',
+  uae: 'uae',
+  'saudi-arabia': 'saudi-arabia',
+  egypt: 'egypt',
+};
+
 type Props = {
   country: PharmaCompaniesCountrySlug;
 };
@@ -45,6 +56,7 @@ type Props = {
 export function PharmaCompaniesGccHubLinks({ country }: Props) {
   const countryName = COUNTRY_LABELS[country];
   const mrSlug = HAS_COUNTRY_MR_HUB[country];
+  const reportSlug = HAS_COUNTRY_REPORTS[country];
   const peers = PEER_SLUGS.filter((slug) => slug !== country);
 
   return (
@@ -109,9 +121,31 @@ export function PharmaCompaniesGccHubLinks({ country }: Props) {
           {mrSlug ? (
             <Link
               to={`/healthcare-market-research/${mrSlug}`}
-              className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary sm:col-span-2"
+              className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary"
             >
               Healthcare market research in {countryName}
+              <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>
+                &rarr;
+              </span>
+            </Link>
+          ) : null}
+          {reportSlug ? (
+            <Link
+              to={`/${reportSlug}-healthcare-market-report`}
+              className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary"
+            >
+              {countryName} Healthcare Market Report
+              <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>
+                &rarr;
+              </span>
+            </Link>
+          ) : null}
+          {reportSlug ? (
+            <Link
+              to={`/${reportSlug}-medical-devices-market-report`}
+              className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary"
+            >
+              {countryName} Medical Devices Market Report
               <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>
                 &rarr;
               </span>

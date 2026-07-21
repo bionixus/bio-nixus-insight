@@ -206,6 +206,14 @@ const UaeHealthcareMarketReport = () => {
               <Link to="/market-reports/uae-diabetes-market-report" className="text-primary hover:underline font-medium">
                 UAE diabetes market research report
               </Link>
+              . For account-level directories and programme scoping, see{' '}
+              <Link to="/pharmaceutical-companies-uae" className="text-primary hover:underline font-medium">
+                pharmaceutical companies in UAE
+              </Link>
+              {' '}and{' '}
+              <Link to="/healthcare-market-research/uae" className="text-primary hover:underline font-medium">
+                healthcare market research in UAE
+              </Link>
               .
             </p>
           </div>

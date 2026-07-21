@@ -168,6 +168,14 @@ const SaudiArabiaHealthcareMarketReport = () => {
               <Link to="/market-reports/saudi-arabia-diabetes-market-report" className="text-primary hover:underline font-medium">
                 Saudi Arabia diabetes market research report
               </Link>
+              . For account-level directories and programme scoping, see{' '}
+              <Link to="/pharmaceutical-companies-saudi-arabia" className="text-primary hover:underline font-medium">
+                pharmaceutical companies in Saudi Arabia
+              </Link>
+              {' '}and{' '}
+              <Link to="/healthcare-market-research/saudi-arabia" className="text-primary hover:underline font-medium">
+                healthcare market research in Saudi Arabia
+              </Link>
               .
             </p>
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
