@@ -27,12 +27,12 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
   {
     question: 'How big is the GCC medical devices market in 2026?',
     answer:
-      'The GCC medical devices market is estimated at USD 5.5–6.2 billion in 2026, projected to exceed USD 9 billion by 2030 at approximately 8.5% CAGR. Saudi Arabia leads with ~52% regional share (USD 2.8–3.1B), followed by the UAE (~28%, USD 1.5–1.8B). Qatar, Kuwait, Bahrain, and Oman account for the remaining ~20%. Growth is driven by hospital capacity expansion under Vision 2030, rising chronic disease incidence, and increased private sector healthcare participation.',
+      'The GCC medical devices market is estimated at USD 9.0 billion in 2026, projected to reach USD 16.2 billion by 2035 at approximately 6.7% CAGR (Market Research Future). Saudi Arabia leads with ~51% regional share (USD 4.4–4.8B), followed by the UAE (~26%, USD 2.2–2.5B). Qatar, Kuwait, Bahrain, and Oman account for the remaining ~23%. Growth is driven by hospital capacity expansion under Vision 2030, rising chronic disease incidence, and increased private sector healthcare participation.',
   },
   {
     question: 'Which country has the largest medical device market in the GCC?',
     answer:
-      'Saudi Arabia has the GCC\'s largest medical devices market at USD 2.8–3.1 billion (2026 estimate), representing over half of total regional spend. Saudi Arabia\'s dominance reflects its large population (36 million), Vision 2030\'s SAR 500 billion healthcare infrastructure commitment, and a hospital network spanning MOH, NGHA, SANG, KFSH&RC, and the rapidly expanding private hospital sector in Riyadh, Jeddah, and the Eastern Province.',
+      'Saudi Arabia has the GCC\'s largest medical devices market at USD 4.4–4.8 billion (2026 estimate), representing roughly half of total regional spend. Saudi Arabia\'s dominance reflects its large population (37 million), Vision 2030\'s SAR 500 billion healthcare infrastructure commitment, and a hospital network spanning MOH, NGHA, SANG, KFSH&RC, and the rapidly expanding private hospital sector in Riyadh, Jeddah, and the Eastern Province.',
   },
   {
     question: 'What are the fastest-growing medical device categories in the GCC?',
@@ -65,14 +65,19 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: 'GCC Medical Devices Market Report 2026: Size, Segments, and Hospital Procurement Intelligence',
-    author: { '@type': 'Organization', name: 'BioNixus' },
+    author: {
+      '@type': 'Person',
+      name: 'Laura Williams',
+      jobTitle: 'Research Director',
+      worksFor: { '@type': 'Organization', name: 'BioNixus Healthcare Market Research' },
+    },
     publisher: {
       '@type': 'Organization',
       name: 'BioNixus',
       logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
     },
     datePublished: '2026-05-01',
-    dateModified: '2026-06-22',
+    dateModified: '2026-07-21',
     mainEntityOfPage: 'https://www.bionixus.com/gcc-medical-devices-market-report',
   },
   {
@@ -86,12 +91,12 @@ const jsonLd = [
     })),
   },
   ...buildReportEnrichmentSchemas({
-    pageTitle: "GCC Medical Devices Market Report 2026 | USD 5.8B Market Size, Segments & Intelligence | BioNixus",
-    pageMetaDescription: "GCC medical devices market at USD 5.8B in 2026, reaching $9B+ by 2030. Saudi Arabia, UAE, and Kuwait country-level data, regulatory requirements (SFDA, MOHAP, DHA), device segments, and hospital procurement intelligence from BioNixus.",
+    pageTitle: "GCC Medical Devices Market Report 2026 | USD 9.0B Market Size, Segments & Intelligence | BioNixus",
+    pageMetaDescription: "GCC medical devices market at USD 9.0B in 2026, reaching $16.2B by 2035 (6.7% CAGR, Market Research Future). Saudi Arabia, UAE, and Kuwait country-level data, regulatory requirements (SFDA, MOHAP, DHA), device segments, and hospital procurement intelligence from BioNixus.",
     countryName: "GCC",
     marketSlug: "gcc",
     publishedDate: "2026-05-01",
-    modifiedDate: "2026-05-27",
+    modifiedDate: "2026-07-21",
   })
 ];
 
@@ -131,9 +136,9 @@ const GccMedicalDevicesMarketReport = () => {
           marketSlug="gcc"
           countryName="GCC"
           stats={[
-            { value: '~$5.8B', label: 'GCC medical devices market 2026 (est.)' },
-            { value: '$9B+', label: 'Forecast by 2030' },
-            { value: '8.5%', label: 'CAGR 2026–2030' },
+            { value: '~$9.0B', label: 'GCC medical devices market 2026 (est.)' },
+            { value: '$16.2B', label: 'Forecast by 2035' },
+            { value: '6.7%', label: 'CAGR 2026–2035' },
           ]}
         />
 
@@ -141,12 +146,12 @@ const GccMedicalDevicesMarketReport = () => {
           <div className="container-wide max-w-4xl mx-auto">
             <GeoLLMAnswerBlock
               question="How big is the GCC medical devices and IVD market in 2026?"
-              answer="The GCC medical devices and in vitro diagnostic (IVD) market is estimated at USD 5.5–6.2 billion in 2026, with Saudi Arabia representing roughly 52% of regional spend, the UAE about 28%, and Qatar, Kuwait, Bahrain, and Oman accounting for the remainder. Growth drivers include Vision 2030 hospital expansion, rising diabetes and cardiovascular burden, and SFDA/MOHAP device registration reforms."
+              answer="The GCC medical devices and in vitro diagnostic (IVD) market is estimated at USD 9.0 billion in 2026, reaching USD 16.2 billion by 2035 at approximately 6.7% CAGR (Market Research Future). Saudi Arabia represents roughly 51% of regional spend, the UAE about 26%, and Qatar, Kuwait, Bahrain, and Oman accounting for the remainder. Growth drivers include Vision 2030 hospital expansion, rising diabetes and cardiovascular burden, and SFDA/MOHAP device registration reforms."
               points={[
                 {
                   title: 'Saudi Arabia leadership',
                   description:
-                    'USD 2.8–3.1B medtech spend anchored in MOH, NGHA, and private hospital networks across Riyadh, Jeddah, and the Eastern Province.',
+                    'USD 4.4–4.8B medtech spend anchored in MOH, NGHA, and private hospital networks across Riyadh, Jeddah, and the Eastern Province.',
                 },
                 {
                   title: 'IVD and point-of-care acceleration',
@@ -178,13 +183,13 @@ const GccMedicalDevicesMarketReport = () => {
             </h2>
             <div className="bg-white rounded-xl border border-border p-6 shadow-sm mb-6">
               <div className="grid sm:grid-cols-3 gap-6 text-center">
-                <StatCard value="~$5.8B" label="GCC medical devices market 2026 (est.)" />
-                <StatCard value="$9B+" label="Forecast by 2030" />
-                <StatCard value="8.5%" label="CAGR 2026–2030" />
+                <StatCard value="~$9.0B" label="GCC medical devices market 2026 (est.)" />
+                <StatCard value="$16.2B" label="Forecast by 2035" />
+                <StatCard value="6.7%" label="CAGR 2026–2035" />
               </div>
             </div>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              The GCC medical devices market is the fastest-growing major medical devices region globally on a
+              Market Research Future sizes the GCC medical devices market at USD 9.0 billion in 2026, reaching USD 16.2 billion by 2035 — one of the fastest-growing major medical devices regions globally on a
               percentage basis. Vision 2030 in Saudi Arabia, UAE Vision 2031, and National Health Strategies
               across Qatar, Kuwait, Bahrain, and Oman are collectively deploying hundreds of billions in
               healthcare capital — the vast majority of which flows through hospital infrastructure that directly
@@ -223,45 +228,65 @@ const GccMedicalDevicesMarketReport = () => {
               {[
                 {
                   country: 'Saudi Arabia',
-                  size: 'USD 2.8–3.1B (2026 est.)',
-                  cagr: '~8.3% CAGR 2026–2030',
+                  size: 'USD 4.4–4.8B (2026 est.)',
+                  forecast: 'USD 8.0–8.8B by 2035',
+                  cagr: '~6.9% CAGR 2026–2035',
                   regulatory: 'SFDA',
                   detail: 'MOH hospital network (240+ facilities), NGHA, KFSH&RC, and private hospital groups form the procurement landscape. Vision 2030 is adding 30,000+ hospital beds, driving diagnostic imaging, OR equipment, ICU monitoring, and consumables procurement at scale. NUPCO manages centralized MOH procurement; private hospitals tender independently.',
+                  link: '/pharmaceutical-companies-saudi-arabia',
+                  linkLabel: 'Pharmaceutical companies in Saudi Arabia',
                 },
                 {
                   country: 'United Arab Emirates',
-                  size: 'USD 1.5–1.8B (2026 est.)',
-                  cagr: '~9.1% CAGR 2026–2030',
+                  size: 'USD 2.2–2.5B (2026 est.)',
+                  forecast: 'USD 4.3–4.9B by 2035',
+                  cagr: '~7.6% CAGR 2026–2035',
                   regulatory: 'MOHAP / DHA / DOH',
                   detail: 'Private sector dominant at ~70% of device spend. Dubai functions as the MEA regional distribution hub for most global OEMs. Medical tourism at Cleveland Clinic Abu Dhabi, Mediclinic City, and UAE healthcare clusters drives premium device consumption. Three parallel regulatory pathways (MOHAP, DHA, DOH) require structured registration strategy.',
+                  link: '/pharmaceutical-companies-uae',
+                  linkLabel: 'Pharmaceutical companies in the UAE',
                 },
                 {
                   country: 'Kuwait',
-                  size: 'USD 450–520M (2026 est.)',
-                  cagr: '~5.2% CAGR 2026–2030',
+                  size: 'USD 750–850M (2026 est.)',
+                  forecast: 'USD 1.1–1.25B by 2035',
+                  cagr: '~4.3% CAGR 2026–2035',
                   regulatory: 'MOPH Kuwait',
                   detail: 'Central Medical Stores dominates procurement (~85% of volume). Government hospital upgrade programs are creating capital equipment opportunities in imaging and OR technology. Local agent structure is concentrated among a small number of approved distributors.',
+                  link: '/pharmaceutical-companies-kuwait',
+                  linkLabel: 'Pharmaceutical companies in Kuwait',
                 },
                 {
                   country: 'Qatar',
-                  size: 'USD 380–440M (2026 est.)',
-                  cagr: '~7.8% CAGR 2026–2030',
+                  size: 'USD 680–760M (2026 est.)',
+                  forecast: 'USD 1.2–1.4B by 2035',
+                  cagr: '~6.5% CAGR 2026–2035',
                   regulatory: 'MOPH Qatar',
                   detail: 'Hamad Medical Corporation is the primary procurement authority. Qatar is investing in specialty care expansion — oncology centers, heart hospitals, and rehabilitation facilities — driving specialty device demand. Post-FIFA World Cup healthcare infrastructure investment continues.',
+                  link: '/pharmaceutical-companies-qatar',
+                  linkLabel: 'Pharmaceutical companies in Qatar',
                 },
                 {
                   country: 'Bahrain & Oman',
-                  size: 'USD 220–280M combined',
-                  cagr: '~4.5% CAGR 2026–2030',
+                  size: 'USD 500–580M combined',
+                  forecast: 'USD 690–800M by 2035',
+                  cagr: '~3.7% CAGR 2026–2035',
                   regulatory: 'NHRA (Bahrain) / MOH (Oman)',
                   detail: 'Bahrain NHRA offers mutual recognition for SFDA and MOHAP-registered devices, simplifying registration for products already cleared in Saudi Arabia or UAE. Oman\'s Vision 2040 private healthcare participation targets are gradually opening channels.',
+                  link: '/pharmaceutical-companies-bahrain',
+                  linkLabel: 'Pharmaceutical companies in Bahrain',
+                  secondLink: '/pharmaceutical-companies-oman',
+                  secondLinkLabel: 'Pharmaceutical companies in Oman',
                 },
-              ].map(({ country, size, cagr, regulatory, detail }) => (
+              ].map(({ country, size, forecast, cagr, regulatory, detail, link, linkLabel, secondLink, secondLinkLabel }) => (
                 <div key={country} className="bg-white rounded-xl border border-border p-6 shadow-sm">
                   <div className="flex flex-wrap gap-2 items-center mb-3">
                     <h3 className="text-lg font-display font-semibold text-foreground mr-2">{country}</h3>
                     <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
                       {size}
+                    </span>
+                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-medium">
+                      {forecast}
                     </span>
                     <span className="inline-flex items-center px-3 py-1 rounded-full bg-amber-50 text-amber-700 text-xs font-medium">
                       {cagr}
@@ -270,7 +295,16 @@ const GccMedicalDevicesMarketReport = () => {
                       {regulatory}
                     </span>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{detail}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">{detail}</p>
+                  <p className="text-sm">
+                    <Link to={link} className="text-primary hover:underline font-medium">{linkLabel}</Link>
+                    {secondLink && (
+                      <>
+                        {' · '}
+                        <Link to={secondLink} className="text-primary hover:underline font-medium">{secondLinkLabel}</Link>
+                      </>
+                    )}
+                  </p>
                 </div>
               ))}
             </div>
@@ -325,6 +359,54 @@ const GccMedicalDevicesMarketReport = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Top Companies */}
+        <section className="section-padding" id="top-companies">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              Top Medical Device Companies Operating in the GCC
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Global OEMs supply the large majority of GCC hospital device spend, distributed through registered Saudi and UAE agents. BioNixus tracks installed base, distributor relationships, and account-level procurement cycles for each of the companies below.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-border shadow-sm">
+              <table className="w-full text-sm text-left border-collapse">
+                <thead className="bg-cream-dark">
+                  <tr>
+                    <th scope="col" className="p-4 font-display font-semibold text-foreground">Company</th>
+                    <th scope="col" className="p-4 font-display font-semibold text-foreground">Segment</th>
+                    <th scope="col" className="p-4 font-display font-semibold text-foreground">GCC Position</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border bg-white">
+                  {[
+                    { company: 'Siemens Healthineers', segment: 'Diagnostic imaging', position: 'Leading imaging OEM across MOH, NGHA, and private hospital tenders' },
+                    { company: 'GE Healthcare', segment: 'Diagnostic imaging', position: 'Major imaging and patient monitoring supplier; strong Saudi and UAE installed base' },
+                    { company: 'Philips Healthcare', segment: 'Diagnostic imaging & monitoring', position: 'Imaging, monitoring, and connected-care equipment across GCC hospital networks' },
+                    { company: 'Mindray', segment: 'Diagnostic imaging & IVD', position: 'Growing share in the mid-tier hospital and laboratory segment' },
+                    { company: 'Medtronic', segment: 'Cardiovascular & surgical', position: 'Leading cardiac rhythm management and interventional cardiology supplier' },
+                    { company: 'Abbott', segment: 'Cardiovascular & diagnostics', position: 'Structural heart, diabetes care, and point-of-care diagnostics' },
+                    { company: 'Boston Scientific', segment: 'Cardiovascular', position: 'Interventional cardiology and electrophysiology devices' },
+                    { company: 'Edwards Lifesciences', segment: 'Cardiovascular', position: 'TAVR and structural heart devices at leading GCC cardiac centres' },
+                    { company: 'Intuitive Surgical', segment: 'Surgical robotics', position: 'da Vinci systems installed at KFSH&RC, Cleveland Clinic Abu Dhabi, and leading private hospitals' },
+                    { company: 'Stryker', segment: 'Surgical & orthopaedics', position: 'Orthopaedic implants and surgical instrumentation across MOH and private networks' },
+                    { company: 'Zimmer Biomet', segment: 'Orthopaedics', position: 'Joint replacement and orthopaedic device supply' },
+                    { company: 'Johnson & Johnson MedTech', segment: 'Surgical & orthopaedics', position: 'Broad surgical, orthopaedic, and vision-care device portfolio' },
+                  ].map((row) => (
+                    <tr key={row.company}>
+                      <td className="p-4 font-medium text-foreground whitespace-nowrap">{row.company}</td>
+                      <td className="p-4 text-muted-foreground">{row.segment}</td>
+                      <td className="p-4 text-muted-foreground">{row.position}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-muted-foreground mt-3">
+              Local distribution is managed through registered Saudi and UAE agents including Al-Faisaliah, AMSCO, and Cigalah. Source: BioNixus primary research and hospital procurement mapping, 2026.
+            </p>
           </div>
         </section>
 

@@ -78,10 +78,15 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: 'Japan Medical Devices Market Report 2026: PMDA, NHI Reimbursement, and Device Lag Reduction',
-    author: { '@type': 'Organization', name: 'BioNixus' },
+    author: {
+      '@type': 'Person',
+      name: 'Laura Williams',
+      jobTitle: 'Research Director',
+      worksFor: { '@type': 'Organization', name: 'BioNixus Healthcare Market Research' },
+    },
     publisher: { '@type': 'Organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-07-21',
     mainEntityOfPage: 'https://www.bionixus.com/japan-medical-devices-market-report',
   },
   {
@@ -92,11 +97,11 @@ const jsonLd = [
   },
   ...buildReportEnrichmentSchemas({
     pageTitle: "Japan Medical Devices Market Report 2026 | PMDA Approval, NHI Reimbursement & Device Lag | BioNixus",
-    pageMetaDescription: "Japan medical devices market at USD 40B in 2026 — world's third largest. PMDA Class I–IV approval, NHI functional category reimbursement, device lag reduction, and BioNixus GCC expansion intelligence for Japanese medtech.",
+    pageMetaDescription: "Japan medical devices market at ~USD 41B in 2026 — world's third largest, reaching ~USD 64B by 2032 (6.5% CAGR, Fortune Business Insights). PMDA Class I–IV approval, NHI functional category reimbursement, device lag reduction, and BioNixus GCC expansion intelligence for Japanese medtech.",
     countryName: "Japan",
     marketSlug: "japan",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
+    modifiedDate: "2026-07-21",
   })
 ];
 
@@ -119,9 +124,9 @@ const JapanMedicalDevicesMarketReport = () => (
           marketSlug="japan"
           countryName="Japan"
           stats={[
-            { value: '~$40B', label: 'Japan medical devices market 2026' },
-            { value: '~$49B', label: 'Forecast 2030' },
-            { value: '4.5%', label: 'CAGR 2026–2030' },
+            { value: '~$41B', label: 'Japan medical devices market 2026' },
+            { value: '~$64B', label: 'Forecast 2032' },
+            { value: '6.5%', label: 'CAGR 2026–2032' },
           ]}
         />
       <ReportContentWithAside config={REPORT_CONVERSION}>
@@ -130,12 +135,12 @@ const JapanMedicalDevicesMarketReport = () => (
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Executive Summary</h2>
           <div className="bg-white rounded-xl border border-border p-6 shadow-sm mb-6">
             <div className="grid sm:grid-cols-3 gap-6 text-center">
-              <div><p className="text-3xl font-display font-bold text-primary">~$40B</p><p className="text-xs text-muted-foreground mt-1">Japan medical devices market 2026</p></div>
-              <div><p className="text-3xl font-display font-bold text-primary">~$49B</p><p className="text-xs text-muted-foreground mt-1">Forecast 2030</p></div>
-              <div><p className="text-3xl font-display font-bold text-primary">4.5%</p><p className="text-xs text-muted-foreground mt-1">CAGR 2026–2030</p></div>
+              <div><p className="text-3xl font-display font-bold text-primary">~$41B</p><p className="text-xs text-muted-foreground mt-1">Japan medical devices market 2026</p></div>
+              <div><p className="text-3xl font-display font-bold text-primary">~$64B</p><p className="text-xs text-muted-foreground mt-1">Forecast 2032</p></div>
+              <div><p className="text-3xl font-display font-bold text-primary">6.5%</p><p className="text-xs text-muted-foreground mt-1">CAGR 2026–2032</p></div>
             </div>
           </div>
-          <p className="text-muted-foreground leading-relaxed mb-4">Japan is the world's third-largest medical devices market and a global innovation hub for endoscopy, cardiovascular devices, IVD, and surgical robotics. PMDA's device lag reduction reforms have improved market access timing; NHI reimbursement and biannual price revisions continue to be the primary commercial framework for long-term volume strategy.</p>
+          <p className="text-muted-foreground leading-relaxed mb-4">Japan is the world's third-largest medical devices market and a global innovation hub for endoscopy, cardiovascular devices, IVD, and surgical robotics. Published estimates vary by research firm and scope — Fortune Business Insights, our primary reference, sizes the market at ~$41B in 2026 growing to ~$64B by 2032; other firms cite a range of roughly $31–47B today depending on methodology. PMDA's device lag reduction reforms have improved market access timing; NHI reimbursement and biannual price revisions continue to be the primary commercial framework for long-term volume strategy.</p>
           <p className="text-muted-foreground leading-relaxed mb-4">Japan's demographic profile is central to the commercial opportunity: more than 28% of the population is over 65 — the highest share of any major economy — supported by roughly 8,100 hospitals and close to 1.5 million hospital beds, a bed density (around 12.1 per 1,000 population) that is the highest in the OECD. That combination of an aging population and dense hospital infrastructure sustains structurally high per-capita utilisation of diagnostic imaging, endoscopy, cardiac rhythm management, and orthopaedic devices, even as MHLW's Sakigake priority-review designation and PMDA's broader device-lag reduction programme shorten the path from approval to hospital adoption for genuinely innovative technologies.</p>
           <p className="text-muted-foreground leading-relaxed">See also: <Link to="/japan-healthcare-market-report" className="text-primary hover:underline font-medium">Japan Healthcare Market Report</Link> and <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC Medical Devices Market Report</Link>.</p>
         </div>
@@ -169,6 +174,46 @@ const JapanMedicalDevicesMarketReport = () => (
             <p className="text-muted-foreground leading-relaxed">
               Surgical robotics is a third area of active investment: alongside a large installed base of international robotic surgical systems, Japanese manufacturers and hospital systems are developing domestic robotic-assisted surgery platforms, supported by PMDA's willingness to grant Sakigake-track review to genuinely novel domestic surgical technologies. For international manufacturers, the practical implication is that Japan's growth categories increasingly favour companies that can pair strong clinical evidence with a credible plan for JMDN classification, NHI functional-category positioning, and MAH/DMAH execution — rather than treating Japan as a simple extension of a US or European device launch.
             </p>
+          </div>
+        </section>
+
+        <section className="section-padding bg-cream-dark" id="japan-top-companies">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Top Medical Device Companies Operating in Japan</h2>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Foreign OEMs collectively supply roughly half of Japan's device market by value alongside a strong base of domestic manufacturers — Japan is genuinely open to well-prepared foreign entrants, not closed, just procedurally distinctive given the MAH/DMAH requirement.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-border shadow-sm">
+              <table className="w-full text-sm text-left border-collapse">
+                <thead className="bg-white">
+                  <tr>
+                    <th scope="col" className="p-4 font-display font-semibold text-foreground">Company</th>
+                    <th scope="col" className="p-4 font-display font-semibold text-foreground">Origin</th>
+                    <th scope="col" className="p-4 font-display font-semibold text-foreground">Position</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border bg-white">
+                  {[
+                    { company: 'Terumo Corporation', origin: 'Japan', position: 'Major domestic leader; cardiovascular/vascular intervention, blood management' },
+                    { company: 'Olympus Corporation', origin: 'Japan', position: 'Global GI endoscopy leader — reported 70%+ global share in prior analyses' },
+                    { company: 'Sysmex Corporation', origin: 'Japan', position: 'Leading domestic and global IVD/haematology testing instruments player' },
+                    { company: 'Nihon Kohden', origin: 'Japan', position: 'Leading domestic patient monitoring, defibrillators, diagnostic equipment' },
+                    { company: 'Asahi Kasei Medical', origin: 'Japan', position: 'Domestic leader in blood purification/dialysis and critical-care devices' },
+                    { company: 'Medtronic', origin: 'USA', position: 'Cardiac rhythm management, diabetes, surgical, and neuromodulation devices' },
+                    { company: 'Johnson & Johnson MedTech', origin: 'USA', position: 'Surgery, orthopaedics, and vision-care devices' },
+                    { company: 'Siemens Healthineers', origin: 'Germany', position: 'Leading foreign imaging and laboratory diagnostics supplier' },
+                    { company: 'GE HealthCare', origin: 'USA', position: 'Major foreign imaging and patient monitoring supplier' },
+                    { company: 'Philips', origin: 'Netherlands', position: 'Imaging, monitoring, and connected-care devices' },
+                  ].map((row) => (
+                    <tr key={row.company}>
+                      <td className="p-4 font-medium text-foreground whitespace-nowrap">{row.company}</td>
+                      <td className="p-4 text-muted-foreground">{row.origin}</td>
+                      <td className="p-4 text-muted-foreground">{row.position}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </section>
 

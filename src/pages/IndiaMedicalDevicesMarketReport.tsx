@@ -127,7 +127,8 @@ const IndiaMedicalDevicesMarketReport = () => (
             <p className="text-muted-foreground leading-relaxed">
               BioNixus runs medical device and MedTech market research across Asia-Pacific. Compare the India device market with our{' '}
               <Link to="/china-medical-devices-market-report" className="text-primary hover:underline font-medium">China medical devices market report</Link>{' '}and{' '}
-              <Link to="/singapore-medical-devices-market-report" className="text-primary hover:underline font-medium">Singapore medical devices market report</Link>, set it against the{' '}
+              <Link to="/singapore-medical-devices-market-report" className="text-primary hover:underline font-medium">Singapore medical devices market report</Link>{' '}and{' '}
+              <Link to="/japan-medical-devices-market-report" className="text-primary hover:underline font-medium">Japan medical devices market report</Link>, set it against the{' '}
               <Link to="/india-healthcare-market-report" className="text-primary hover:underline font-medium">India healthcare market report</Link>, or widen the lens with the{' '}
               <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC medical devices market report</Link>. For methods and global coverage, see the{' '}
               <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}
