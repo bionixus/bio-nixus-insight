@@ -19,6 +19,7 @@ import { getPageMedia } from '@/data/mediaAssets';
 import { MediaVisualBriefing } from '@/components/media/MediaVisualBriefing';
 import { ProcessWorkflowVisual } from '@/components/media/ProcessWorkflowVisual';
 import { ProofVideoEmbed } from '@/components/media/ProofVideoEmbed';
+import { ConversionCTA } from '@/components/conversion/ConversionCTA';
 
 type LinkItem = {
   to: string;
@@ -210,6 +211,17 @@ export default function StrategicServicePage({
             </div>
           </section>
 
+          <section className="section-padding pt-0">
+            <div className="container-wide max-w-4xl mx-auto">
+              <ConversionCTA
+                variant="talk-to-research"
+                market={marketName}
+                ctaId={`${slugKey}_cta_1`}
+                ctaLocation="after_delivery_priorities"
+              />
+            </div>
+          </section>
+
           {regionalLandscapes && regionalLandscapes.length ? (
             <section className="section-padding" id="regional-landscapes">
               <div className="container-wide max-w-4xl mx-auto">
@@ -247,6 +259,17 @@ export default function StrategicServicePage({
                   </article>
                 ))}
               </div>
+            </div>
+          </section>
+
+          <section className="section-padding">
+            <div className="container-wide max-w-4xl mx-auto">
+              <ConversionCTA
+                variant="talk-to-research"
+                market={marketName}
+                ctaId={`${slugKey}_cta_2`}
+                ctaLocation="after_proof_snapshot"
+              />
             </div>
           </section>
 

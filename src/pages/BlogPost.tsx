@@ -30,6 +30,7 @@ import {
   dedupePipeBioNixusTail,
 } from '@/lib/seo-meta';
 import RelatedPosts from '@/components/RelatedPosts';
+import { ConversionCTA } from '@/components/conversion/ConversionCTA';
 import { EgyptHealthcare2026CairoBlock } from '@/components/blog/EgyptHealthcare2026CairoBlock';
 import {
   getLocalizedBlogFaqItems,
@@ -1909,6 +1910,15 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
             contentSilo={resolvedSilo}
             locale={articleLocale}
           />
+
+          <div className="mt-14 max-w-3xl mx-auto">
+            <ConversionCTA
+              variant="talk-to-research"
+              market={post.country || undefined}
+              ctaId={`blog_${slug}_end`}
+              ctaLocation="blog_post_end"
+            />
+          </div>
         </div>
       </main>
 

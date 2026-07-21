@@ -27,6 +27,8 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { ConversionCTA } from '@/components/conversion/ConversionCTA';
+import { useScrollThreshold } from '@/hooks/useScrollThreshold';
 import { getPharmaGuideConfig } from '@/data/reportConversionConfig';
 import {
   ReportConsultationBand,
@@ -225,6 +227,7 @@ const faqItems = [
 ];
 
 const KuwaitPharmaCompanies = () => {
+  const past70Percent = useScrollThreshold(70);
   const { language } = useLanguage();
   const basePath = languagePaths[language] || '/';
   const citationUrl = 'https://www.bionixus.com/pharmaceutical-companies-kuwait';
@@ -541,6 +544,15 @@ return (
                   ))}
                 </tbody>
               </table>
+            </div>
+
+            <div className="mt-8">
+              <ConversionCTA
+                variant="talk-to-research"
+                market="Kuwait"
+                ctaId="pharma_companies_kuwait_after_table"
+                ctaLocation="after_first_table"
+              />
             </div>
 
             {/* Mobile card view */}
@@ -1153,6 +1165,20 @@ return (
           </div>
         </section>
       </main>
+      {past70Percent ? (
+        <div className="fixed bottom-0 left-0 right-0 z-40 bg-background border-t border-border shadow-lg p-4">
+          <div className="container-wide max-w-3xl mx-auto">
+            <ConversionCTA
+              variant="gated-asset"
+              reportName="GCC Pharma & MedTech Market Databook 2026"
+              pdfPath="/downloads/gcc-pharma-medtech-databook-2026-sample.pdf"
+              ctaId="pharma_companies_kuwait_scroll70"
+              ctaLocation="scroll_70_percent"
+              className="border-0 p-0 text-left md:flex md:items-center md:justify-between md:gap-4"
+            />
+          </div>
+        </div>
+      ) : null}
       <Footer />
     </div>
   );

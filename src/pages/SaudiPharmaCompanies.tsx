@@ -6,6 +6,8 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { ConversionCTA } from '@/components/conversion/ConversionCTA';
+import { useScrollThreshold } from '@/hooks/useScrollThreshold';
 import { getPharmaGuideConfig } from '@/data/reportConversionConfig';
 import { PharmaCompaniesGccHubLinks } from '@/components/seo/PharmaCompaniesGccHubLinks';
 import { PharmaCompaniesQuickAnswer } from '@/components/seo/PharmaCompaniesQuickAnswer';
@@ -62,6 +64,7 @@ const faqItems = [
 ];
 
 const SaudiPharmaCompanies = () => {
+  const past70Percent = useScrollThreshold(70);
   const { language } = useLanguage();
   const basePath = languagePaths[language] || '/';
   const citationUrl = 'https://www.bionixus.com/pharmaceutical-companies-saudi-arabia';
@@ -149,6 +152,15 @@ const SaudiPharmaCompanies = () => {
           <div className="overflow-x-auto rounded-xl border border-border"><table className="w-full text-sm"><thead><tr className="bg-primary/5 border-b border-border"><th className="text-left px-4 py-3 font-semibold text-foreground">Company</th><th className="text-left px-4 py-3 font-semibold text-foreground">HQ</th><th className="text-left px-4 py-3 font-semibold text-foreground hidden md:table-cell">Type</th><th className="text-left px-4 py-3 font-semibold text-foreground hidden lg:table-cell">Therapeutic Areas</th><th className="text-left px-4 py-3 font-semibold text-foreground hidden xl:table-cell">Notes</th></tr></thead><tbody>
             {pharmaCompanies.map((c, i) => (<tr key={c.name} className={`border-b border-border ${i % 2 === 0 ? 'bg-card' : 'bg-muted/20'}`}><td className="px-4 py-3 font-medium text-foreground">{c.name}</td><td className="px-4 py-3 text-muted-foreground">{c.hq}</td><td className="px-4 py-3 hidden md:table-cell"><span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${c.type === 'Local Manufacturer' ? 'bg-green-50 text-green-700' : c.type === 'MNC Office' ? 'bg-blue-50 text-blue-700' : c.type === 'Regional' ? 'bg-amber-50 text-amber-700' : 'bg-purple-50 text-purple-700'}`}>{c.type}</span></td><td className="px-4 py-3 text-muted-foreground hidden lg:table-cell">{c.therapeuticAreas}</td><td className="px-4 py-3 text-muted-foreground text-xs hidden xl:table-cell">{c.notes}</td></tr>))}
           </tbody></table></div>
+          <div className="mt-8">
+            <ConversionCTA
+              variant="talk-to-research"
+              market="Saudi Arabia"
+              ctaId="pharma_companies_saudi-arabia_after_table"
+              ctaLocation="after_first_table"
+            />
+          </div>
+
         </div></section>
 
         <ReportMidPageCta config={PHARMA_CONVERSION} />
@@ -236,6 +248,20 @@ const SaudiPharmaCompanies = () => {
         <ReportConsultationBand config={PHARMA_CONVERSION} />
       </main>
       <Footer />
+      {past70Percent ? (
+        <div className="fixed bottom-0 left-0 right-0 z-40 bg-background border-t border-border shadow-lg p-4">
+          <div className="container-wide max-w-3xl mx-auto">
+            <ConversionCTA
+              variant="gated-asset"
+              reportName="GCC Pharma & MedTech Market Databook 2026"
+              pdfPath="/downloads/gcc-pharma-medtech-databook-2026-sample.pdf"
+              ctaId="pharma_companies_saudi-arabia_scroll70"
+              ctaLocation="scroll_70_percent"
+              className="border-0 p-0 text-left md:flex md:items-center md:justify-between md:gap-4"
+            />
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 };
