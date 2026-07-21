@@ -48,6 +48,11 @@ const faqItems = [
     answer:
       'Yes. New Zealand modules can run with comparable cells in the USA, UK, EU5 (Germany, France, Italy, Spain), Canada, Japan, Singapore, South Korea, and Australia — using consistent instruments for global portfolio committees managing multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How should teams sequence New Zealand launch research with Australia and Asia-Pacific markets?',
+    answer:
+      'New Zealand launch sequencing typically runs parallel with Australia when Medsafe and TGA dossiers share clinical packages, but PHARMAC health technology assessment timelines often lag TGA PBS decisions by 12–24 months. BioNixus sequences NZ modules to surface PHARMAC Factors for Consideration evidence gaps early — connecting Auckland and Christchurch KOL research with Australia comparators so portfolio committees do not assume simultaneous Australasian access.',
+  },
 ];
 
 const jsonLd = [

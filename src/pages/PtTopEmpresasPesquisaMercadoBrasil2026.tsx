@@ -166,6 +166,10 @@ const faqItems = [
     q: 'Qual é o tamanho do mercado de pesquisa de mercado no Brasil?',
     a: 'O Brasil é o maior mercado de pesquisa de mercado da América Latina e um dos 10 maiores do mundo, com gastos estimados em pesquisa primária e sindicada de USD 800 milhões a USD 1,2 bilhão anuais. O mercado é liderado por FMCG e bens de consumo, seguido por serviços financeiros, saúde e farmacêutica, tecnologia e telecomunicações, e governo/setor público. O Brasil é também o maior mercado de pesquisa online da América Latina, com alta penetração de smartphones e painéis digitais bem desenvolvidos.',
   },
+  {
+    q: 'Quando iniciar pesquisa de acesso ao mercado farmacêutico no Brasil em relação ao registro ANVISA?',
+    a: 'Inicie pesquisa com médicos, KOLs e avaliadores CONITEC 12–18 meses antes da listagem CMED esperada. O registro ANVISA não garante acesso comercial — decisões do CONITEC e precificação CMED seguem cronogramas distintos. A BioNixus integra pesquisa primária com mapeamento de evidências HTA para que equipes de acesso não aprovem sem visibilidade de formulário hospitalar e canal SUS.',
+  },
 ];
 
 const breadcrumbSchema = {
