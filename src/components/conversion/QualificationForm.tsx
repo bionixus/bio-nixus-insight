@@ -13,8 +13,8 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xgozewew';
 const ERROR_EMAIL = 'admin@bionixus.com';
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-/** Scheduling link for the thank-you state — set once a real link is provided. */
-export const QUALIFICATION_FORM_SCHEDULING_URL: string | null = null;
+/** Scheduling link shown on the thank-you state. */
+export const QUALIFICATION_FORM_SCHEDULING_URL: string | null = 'https://schedule.bionixus.com/meeting-with-bionixus';
 
 export type QualificationFormProps = {
   /** Unique id for analytics + Formspree formVariant tagging, e.g. 'pharma_companies_uae_cta' */
