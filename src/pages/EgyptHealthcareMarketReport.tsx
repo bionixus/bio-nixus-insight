@@ -16,6 +16,8 @@ import {
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
 import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
+import { EgyptHealthcare2026CairoBlock } from '@/components/blog/EgyptHealthcare2026CairoBlock';
+import { EGYPT_HEALTHCARE_2026_CAIRO_FAQ } from '@/data/egyptHealthcare2026CairoSeo';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -53,6 +55,7 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
     answer:
       'BioNixus has operated a dedicated Egypt research team from Cairo since 2012. We conduct quantitative HCP surveys (oncologists, endocrinologists, cardiologists, gastroenterologists, rheumatologists), qualitative KOL depth interviews, payer and formulary research with MOH and UHI decision-makers, and hospital consumption intelligence across Cairo University Hospital, NCI, Ain Shams, and private hospital chains (Cleopatra, As-Salam International, Dar Al Fouad). Egypt-specific and regional MENA programs are both available.',
   },
+  ...EGYPT_HEALTHCARE_2026_CAIRO_FAQ,
 ], 'egypt');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/egypt-healthcare-market-report');
@@ -122,6 +125,10 @@ const EgyptHealthcareMarketReport = () => {
             { value: '~9%', label: 'Pharma CAGR 2026–2030' },
           ]}
         />
+
+        <div className="container-wide max-w-4xl mx-auto px-4 md:px-6 -mt-2 mb-2">
+          <EgyptHealthcare2026CairoBlock />
+        </div>
 
         <ReportContentWithAside config={REPORT_CONVERSION}>
         <section className="section-padding bg-cream-dark" id="executive-summary">

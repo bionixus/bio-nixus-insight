@@ -159,7 +159,7 @@ const GccMarketAccessGuide = () => {
         <title>GCC Pharmaceutical Market Access Guide 2026 | SFDA, MOHAP Registration & Pricing | BioNixus</title>
         <meta
           name="description"
-          content="GCC pharmaceutical market access guide 2026: SFDA, MOHAP, DHA, and MOH drug registration timelines, pricing mechanisms, reimbursement models, and regulatory requirements for Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman."
+          content="GCC market access guide 2026: SFDA EES, NUPCO tenders, MOHAP & DHA registration timelines, pricing, biosimilar HTA evidence — Saudi Arabia, UAE, Kuwait, Qatar, Bahrain & Oman."
         />
         <link rel="canonical" href={citationUrl} />
         <meta property="og:title" content="GCC Pharmaceutical Market Access Guide 2026 — Registration, Pricing & Reimbursement" />
@@ -174,7 +174,7 @@ const GccMarketAccessGuide = () => {
             description: 'Complete guide to pharmaceutical drug registration, pricing, and reimbursement across the 6 GCC countries: Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman.',
             url: citationUrl,
             datePublished: '2026-01-15',
-            dateModified: '2026-06-16',
+            dateModified: '2026-07-21',
             author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
             publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
           })}
@@ -655,6 +655,14 @@ const GccMarketAccessGuide = () => {
                 {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
+                },
+                {
+                  q: 'What is the SFDA Economic Evaluation Submission (EES) pathway in Saudi Arabia?',
+                  a: 'SFDA\'s Economic Evaluation Submission pathway requires cost-effectiveness and budget-impact evidence for selected innovative medicines before or alongside pricing approval. Teams must align clinical dossiers with pharmacoeconomic models benchmarked to SFDA reference pricing and NUPCO tender expectations. BioNixus integrates HEOR modules with physician and payer fieldwork so EES submissions reflect local treatment pathways, not imported EU models alone.',
+                },
+                {
+                  q: 'When should GCC market access research start relative to SFDA or MOHAP registration?',
+                  a: 'Start payer and hospital formulary research 12–18 months before anticipated listing — especially in Saudi Arabia where NUPCO tender calendars and SFDA EES reviews run on separate timelines. UAE teams should map MOHAP federal registration alongside DHA and DOH emirate formulary committees before assuming nationwide uptake. Early research prevents approval without procurement visibility.',
                 },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">

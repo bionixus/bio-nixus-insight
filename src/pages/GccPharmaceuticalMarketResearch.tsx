@@ -17,11 +17,11 @@ import { ReportPremiumHero, ReportPremiumSection } from '@/components/report-pre
 const pageUrl = 'https://www.bionixus.com/gcc-pharmaceutical-market-research';
 const REPORT_CONVERSION = getStandaloneReportConfig('/gcc-pharmaceutical-market-research');
 
-const PAGE_TITLE = 'GCC Biologics & Generic Injectables Market 2026 | BioNixus';
+const PAGE_TITLE = 'GCC Biologics & NUPCO Tender Guide 2026 | BioNixus';
 const PAGE_H1 =
   'GCC Biologics & Generic Injectables Market Research 2026 — Precision Medicine & Drug Repurposing';
 const PAGE_DESCRIPTION =
-  'GCC biologics market ($4.8–5.4B), generic injectables ($1.6–1.9B), drug repurposing & Saudi precision medicine — pharmaceutical market research across KSA, UAE, Kuwait, Qatar, Bahrain & Oman.';
+  'GCC biologics ($4.8–5.4B), generic injectables ($1.6–1.9B), NUPCO tendering & SFDA biosimilar access — pharmaceutical market research across KSA, UAE, Kuwait, Qatar, Bahrain & Oman.';
 
 const FAQ_ITEMS = [
   {
@@ -53,6 +53,11 @@ const FAQ_ITEMS = [
     question: 'Which GCC therapy areas drive the most pharma growth in 2026?',
     answer:
       'In 2026, the fastest-growing GCC therapy areas are oncology, diabetes and obesity (GLP-1 driven), rare disease, immunology, and cardiovascular. Saudi Arabia and the UAE concentrate the bulk of innovative-medicine spend, while Kuwait and Qatar prioritize tendered generic and hospital-administered portfolios.',
+  },
+  {
+    question: 'How do NUPCO tenders affect GCC generic injectables and biosimilar market access?',
+    answer:
+      'NUPCO centralises Ministry of Health pharmaceutical tenders in Saudi Arabia — determining which hospital-administered generics and biosimilars reach MOH, NGHA, and military networks at scale. A product can be SFDA-approved yet remain commercially invisible if it misses NUPCO tender windows, price corridors, or post-award switching requirements. BioNixus tracks tender calendars, committee evaluation criteria, and physician switching intent after award to align launch sequencing with procurement reality.',
   },
 ];
 

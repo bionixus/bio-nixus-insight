@@ -151,6 +151,10 @@ const faqItems = [
     q: 'Como devo escolher uma empresa de pesquisa de mercado para o Brasil?',
     a: 'Os principais critérios incluem: amplitude de métodos de pesquisa primária (qualitativo + quantitativo), infraestrutura de campo local em todas as regiões, capacidade de rastreamento de marcas e U&A, pesquisa de varejo/shopper quando relevante, rigor metodológico de setores regulados e relatórios bilíngues (português + inglês). A BioNixus oferece tudo isso como parceira global de pesquisa multissetorial.',
   },
+  {
+    q: 'Como sequenciar pesquisa de mercado farmacêutica no Brasil com outros mercados da América Latina?',
+    a: 'A maioria dos portfólios globais sequencia o Brasil após México ou em paralelo com Argentina e Colômbia quando o registro ANVISA depende de dados regionais. A BioNixus alinha pesquisas com médicos, KOLs e avaliações CONITEC ao calendário CMED de precificação — para que comitês de lançamento vejam como o timing brasileiro afeta a América Latina, em vez de tratar o Brasil como um mercado isolado.',
+  },
 ];
 
 const breadcrumbSchema = {

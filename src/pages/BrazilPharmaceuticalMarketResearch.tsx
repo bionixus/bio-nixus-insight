@@ -73,6 +73,11 @@ const FAQ_ITEMS = [
     answer:
       'BioNixus provides cross-regional intelligence for Brazilian and Latin American pharmaceutical companies entering GCC and MENA markets. Brazil and GCC share structural parallels — large generic medicine markets, centralised public procurement (SUS/NUPCO), and premium private hospital sectors — that make cross-regional strategy natural. From our regional offices, BioNixus delivers SFDA (Saudi Arabia), MOHAP (UAE), and MOH (Kuwait, Qatar, Oman) regulatory pathway intelligence; NUPCO tender and hospital formulary data; HCP surveys across all major therapy areas in Arabic and English; and comparative Brazil–GCC market benchmarking that informs portfolio sequencing and pricing strategy for companies launching in both regions.',
   },
+  {
+    question: 'When should pharmaceutical teams start Brazil market access research relative to ANVISA approval?',
+    answer:
+      'Start physician, KOL, and CONITEC-oriented payer research 12–18 months before expected CMED listing — ANVISA registration alone does not guarantee SUS or private channel uptake. CONITEC health technology assessments and CMED price filings run on separate timelines from regulatory approval. BioNixus sequences Brazil modules to surface CONITEC evidence gaps and SUS versus private channel dynamics early, so launch committees do not treat approval as synonymous with market access.',
+  },
 ];
 
 const FAQ_SECTION_ID = 'brazil-pharma-market-research-faq';

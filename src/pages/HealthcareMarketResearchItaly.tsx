@@ -48,6 +48,11 @@ const faqItems = [
     answer:
       'Yes. Italian modules can run with comparable cells in Germany, France, Spain, and the UK — and beyond to the USA, Canada, Japan, and other markets — using consistent instruments for global portfolio committees managing EU5 and multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How should pharmaceutical teams sequence Italy launch research versus other EU5 markets?',
+    answer:
+      'Most global portfolios sequence Italy after Germany and France when AIFA CPR price negotiations depend on EU reference pricing, but before or parallel with Spain when regional SSR formulary restrictions create a second access layer. BioNixus designs Italian modules to feed AIFA CTS/CPR evidence, IRCCS KOL mapping, and Lombardia or Lazio SSR payer interviews — so launch committees see how Italian access timing affects EU5 sequencing rather than treating Italy as a standalone survey market.',
+  },
 ];
 
 const jsonLd = [
