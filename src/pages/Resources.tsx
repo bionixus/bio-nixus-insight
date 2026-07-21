@@ -138,7 +138,7 @@ const Resources = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Resources | BioNixus — Healthcare Market Research Guides & Whitepapers</title>
+        <title>Resources | BioNixus — Market Research Guides & Whitepapers</title>
         <meta
           name="description"
           content="Download healthcare market research resources from BioNixus: MENA pharmaceutical market guides, physician survey methodology whitepapers, GCC market access guides, and KOL mapping best practices."

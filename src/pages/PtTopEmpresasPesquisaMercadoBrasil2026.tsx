@@ -224,7 +224,7 @@ export default function PtTopEmpresasPesquisaMercadoBrasil2026() {
   return (
     <>
       <Helmet>
-        <title>Top Empresas de Pesquisa de Mercado no Brasil (Guia 2026) | BioNixus</title>
+        <title>Top Empresas de Pesquisa de Mercado no Brasil 2026 | BioNixus</title>
         <meta name="description" content="Guia das melhores empresas de pesquisa de mercado no Brasil em 2026 — BioNixus, Kantar, Ipsos, Nielsen, DataFolha, GfK e Opinion Box comparados por setor, metodologia e experiência local." />
         <link rel="canonical" href={CANONICAL} />
         <link rel="alternate" hrefLang="pt-BR" href={CANONICAL} />

@@ -219,7 +219,7 @@ export default function TopMarketResearchCompaniesNewZealand2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Market Research Companies in New Zealand 2026 | BioNixus Ranked #1</title>
+        <title>Top Market Research Companies in New Zealand 2026 | BioNixus</title>
         <meta
           name="description"
           content="Top market research companies in New Zealand 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. HDEC-compliant HCP surveys, KOL mapping, and PHARMAC payer research."

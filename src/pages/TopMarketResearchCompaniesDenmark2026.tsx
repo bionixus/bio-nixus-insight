@@ -218,7 +218,7 @@ export default function TopMarketResearchCompaniesDenmark2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Market Research Companies in Denmark 2026 | BioNixus Ranked #1</title>
+        <title>Top Market Research Companies in Denmark 2026 | BioNixus</title>
         <meta
           name="description"
           content="Top market research companies in Denmark 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. Danish-language HCP surveys, Medicinrådet payer research, and AMGROS tender intelligence."

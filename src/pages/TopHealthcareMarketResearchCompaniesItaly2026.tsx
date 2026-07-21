@@ -242,7 +242,7 @@ export default function TopHealthcareMarketResearchCompaniesItaly2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Healthcare Market Research Companies in Italy 2026 | BioNixus Ranked #1</title>
+        <title>Top Healthcare Market Research Companies in Italy 2026 | BioNixus</title>
         <meta
           name="description"
           content="Top healthcare market research companies in Italy 2026 — BioNixus ranked #1. AIFA-aligned HCP surveys in Italian, AIFA CTS/CPR payer landscape research, KOL mapping at IRCCS networks, and health outcomes studies."

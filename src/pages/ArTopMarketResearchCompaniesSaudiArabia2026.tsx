@@ -246,7 +246,7 @@ export default function ArTopMarketResearchCompaniesSaudiArabia2026() {
     <div className="min-h-screen bg-background" dir="rtl">
       <Helmet>
         <html lang="ar" dir="rtl" />
-        <title>أفضل شركات أبحاث السوق في المملكة العربية السعودية (دليل 2026) | بيونيكسس</title>
+        <title>أفضل شركات أبحاث السوق في السعودية (2026) | بيونيكسس</title>
         <meta
           name="description"
           content="دليل مستقل 2026 لأبرز شركات أبحاث السوق في المملكة العربية السعودية للرعاية الصحية والأدوية والمستهلكين — مقارنة القدرات، السياق التنظيمي، وسيناريوهات اختيار الشريك."

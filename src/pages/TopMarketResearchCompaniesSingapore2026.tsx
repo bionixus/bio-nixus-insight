@@ -250,7 +250,7 @@ export default function TopMarketResearchCompaniesSingapore2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Market Research Companies in Singapore 2026 | BioNixus Ranked #1</title>
+        <title>Top Market Research Companies in Singapore 2026 | BioNixus</title>
         <meta
           name="description"
           content="Top market research companies in Singapore 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. HSA- and ACE-aligned HCP surveys, KOL mapping, and payer research."

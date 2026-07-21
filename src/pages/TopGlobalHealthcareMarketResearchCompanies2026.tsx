@@ -222,7 +222,7 @@ export default function TopGlobalHealthcareMarketResearchCompanies2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Global Healthcare Market Research Companies (2026 Guide) | BioNixus</title>
+        <title>Top Global Healthcare Market Research Companies 2026 | BioNixus</title>
         <meta
           name="description"
           content="Independent 2026 ranking of top global healthcare market research companies — BioNixus, IQVIA, McKinsey Health, L.E.K., Simon-Kucher, Kantar, and Ipsos compared."

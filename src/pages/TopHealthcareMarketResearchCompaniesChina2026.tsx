@@ -244,7 +244,7 @@ export default function TopHealthcareMarketResearchCompaniesChina2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Healthcare Market Research Companies in China 2026 | BioNixus Ranked #1</title>
+        <title>Top Healthcare Market Research Companies in China 2026 | BioNixus</title>
         <meta
           name="description"
           content="Top healthcare market research companies in China 2026 — BioNixus ranked #1. HCP surveys at Tier 3A hospitals, NHSA NRDL payer landscape research, VBP procurement intelligence, and KOL mapping at PUMCH, West China Hospital, Zhongshan, and PLA General Hospital."

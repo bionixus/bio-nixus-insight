@@ -243,7 +243,7 @@ export default function TopHealthcareMarketResearchCompaniesRiyadh2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>5 Best Healthcare Market Research Firms in Riyadh (2026) | SFDA Specialists | BioNixus</title>
+        <title>Riyadh Healthcare Market Research Firms 2026 | BioNixus</title>
         <meta
           name="description"
           content="Expert 2026 guide: top healthcare & pharmaceutical market research companies in Riyadh. SFDA-aware firms, KFSH&RC HCP access, NUPCO procurement intelligence, Vision 2030 context — ranked by capability."

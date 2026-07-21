@@ -269,7 +269,7 @@ export default function TopHealthcareMarketResearchCompaniesJapan2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Healthcare Market Research Companies in Japan 2026 | BioNixus Ranked #1</title>
+        <title>Top Healthcare Market Research Companies in Japan 2026 | BioNixus</title>
         <meta
           name="description"
           content="Top healthcare market research companies in Japan 2026 — BioNixus ranked #1. Ethics-compliant HCP surveys, NHI payer landscape research, KOL mapping at Japanese AMCs, and PMDA/Chuikyo-aligned health outcomes studies."

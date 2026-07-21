@@ -235,7 +235,7 @@ export default function TopMarketResearchCompaniesAbuDhabi2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>6 Best Market Research Companies in Abu Dhabi (2026) | UAE Agency Rankings | BioNixus</title>
+        <title>6 Best Market Research Companies in Abu Dhabi (2026) | BioNixus</title>
         <meta
           name="description"
           content="Independent 2026 guide to the leading market research companies in Abu Dhabi for consumer, FMCG, retail, and multi-industry research — compared by Abu Dhabi expertise."

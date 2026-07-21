@@ -202,7 +202,7 @@ export default function TopConsumerHealthcareMarketResearchFirms2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Consumer Healthcare Market Research Firms (2026 Guide) | BioNixus</title>
+        <title>Top Consumer Healthcare Market Research Firms 2026 | BioNixus</title>
         <meta
           name="description"
           content="Independent 2026 ranking of top consumer healthcare market research firms — BioNixus, NielsenIQ, Kantar, Euromonitor, and Ipsos compared for OTC, pharmacy channel, and wellness research."

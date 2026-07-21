@@ -242,7 +242,7 @@ export default function TopHealthcareMarketResearchCompaniesSaudiArabia2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>5 Best Healthcare Market Research Firms in Saudi Arabia (2026) | SFDA Specialists | BioNixus</title>
+        <title>Saudi Arabia Healthcare Market Research Firms 2026 | BioNixus</title>
         <meta
           name="description"
           content="Expert 2026 guide: top healthcare & pharmaceutical market research companies in Saudi Arabia. SFDA-aware firms, KOL mapping, NUPCO intelligence, Vision 2030 context — ranked by capability."

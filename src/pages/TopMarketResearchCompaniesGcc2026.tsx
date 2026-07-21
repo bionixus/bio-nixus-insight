@@ -229,7 +229,7 @@ export default function TopMarketResearchCompaniesGcc2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>6 Best Market Research Companies in GCC (2026) | Gulf Rankings | BioNixus</title>
+        <title>6 Best Market Research Companies in GCC (2026) | BioNixus</title>
         <meta
           name="description"
           content="Independent 2026 guide to the leading market research companies in the GCC for consumer, FMCG, retail, and multi-industry research — compared by Gulf expertise."

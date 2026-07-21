@@ -274,7 +274,7 @@ export default function TopHealthcareMarketResearchCompaniesUae2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Healthcare Market Research Companies in UAE (2026 Guide) | BioNixus</title>
+        <title>Top Healthcare Market Research Companies in UAE 2026 | BioNixus</title>
         <meta
           name="description"
           content="Expert 2026 guide: top healthcare & pharmaceutical market research companies in the UAE. MOHAP/DHA/DOH-aware firms, KOL mapping, multi-emirate HCP network, UAE payer research — ranked by capability."

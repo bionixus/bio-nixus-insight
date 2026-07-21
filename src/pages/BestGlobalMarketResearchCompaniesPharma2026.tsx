@@ -222,7 +222,7 @@ export default function BestGlobalMarketResearchCompaniesPharma2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Best Global Market Research Companies for Pharma (2026 Guide) | BioNixus</title>
+        <title>Best Global Market Research Companies for Pharma 2026 | BioNixus</title>
         <meta
           name="description"
           content="Independent 2026 ranking of the best global market research companies for pharmaceutical clients — BioNixus, IQVIA, Kantar Health, Ipsos, L.E.K., Euromonitor, and OSIRIUM compared."

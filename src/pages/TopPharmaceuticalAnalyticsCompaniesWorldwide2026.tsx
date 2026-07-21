@@ -222,7 +222,7 @@ export default function TopPharmaceuticalAnalyticsCompaniesWorldwide2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Pharmaceutical Analytics Companies Worldwide (2026 Guide) | BioNixus</title>
+        <title>Top Pharmaceutical Analytics Companies Worldwide 2026 | BioNixus</title>
         <meta
           name="description"
           content="Independent 2026 ranking of top pharmaceutical analytics companies worldwide — BioNixus, IQVIA, ZS Associates, Simon-Kucher, McKinsey Health, Kantar, and Clarivate compared."

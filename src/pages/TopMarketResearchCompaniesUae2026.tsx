@@ -235,7 +235,7 @@ export default function TopMarketResearchCompaniesUae2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>6 Best Market Research Companies in UAE (2026) | UAE Rankings | BioNixus</title>
+        <title>6 Best Market Research Companies in UAE (2026) | BioNixus</title>
         <meta
           name="description"
           content="Independent 2026 guide to the leading market research companies in the UAE for consumer, FMCG, retail, and multi-industry research — compared by UAE expertise."

@@ -238,7 +238,7 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>6 Best Market Research Companies in Saudi Arabia (2026) | KSA Rankings | BioNixus</title>
+        <title>6 Best Market Research Companies in Saudi Arabia 2026 | BioNixus</title>
         <meta
           name="description"
           content="Independent 2026 guide to the leading market research companies in Saudi Arabia for consumer, FMCG, retail, and multi-industry research — compared by Saudi expertise."

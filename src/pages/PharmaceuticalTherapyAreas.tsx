@@ -284,7 +284,7 @@ export default function PharmaceuticalTherapyAreas() {
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>
-          Pharmaceutical Therapy Areas Market Research | 12 Areas, 127+ Projects | BioNixus
+          Pharmaceutical Therapy Areas Market Research | BioNixus
         </title>
         <meta
           name="description"

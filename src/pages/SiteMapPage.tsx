@@ -448,7 +448,7 @@ export default function SiteMapPage() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Sitemap | BioNixus — Healthcare &amp; Pharmaceutical Intelligence Directory</title>
+        <title>Sitemap | BioNixus — Healthcare &amp; Pharmaceutical Directory</title>
         <meta
           name="description"
           content="Structured BioNixus directory of services, industry market research (KSA, UAE, Egypt), blog articles, case studies, country hubs, market reports, and pharmaceutical intelligence—organized for marketing, access, and research leaders."

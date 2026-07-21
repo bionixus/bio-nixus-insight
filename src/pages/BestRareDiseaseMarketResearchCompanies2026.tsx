@@ -202,7 +202,7 @@ export default function BestRareDiseaseMarketResearchCompanies2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Best Rare Disease Market Research Companies (2026 Guide) | BioNixus</title>
+        <title>Best Rare Disease Market Research Companies 2026 | BioNixus</title>
         <meta
           name="description"
           content="Independent 2026 ranking of the best rare disease market research companies — BioNixus, IQVIA, Kantar Health, Ipsos Healthcare, and OPEN Health compared for orphan drug research."
