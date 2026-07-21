@@ -15,6 +15,7 @@ export default function HeorConsulting() {
         { to: '/real-world-evidence', label: 'Real-World Evidence Studies' },
         { to: '/gcc-market-access-guide', label: 'GCC Market Access Guide' },
         { to: '/market-research-healthcare', label: 'Healthcare Market Research Services' },
+        { to: '/healthcare-market-research-companies', label: 'Top Healthcare Market Research Companies' },
         { to: '/contact', label: 'Scope your HEOR engagement' },
         { to: '/services', label: 'Full service portfolio' },
         { to: '/methodology', label: 'Our research methodology' },

@@ -112,6 +112,10 @@ export default function HealthcareMarketResearchInEgypt() {
               <Link to="/market-research-in-egypt" className="text-primary underline font-medium">
                 Market research in Egypt
               </Link>
+              , or compare vendors in our{' '}
+              <Link to="/blog/market-research-companies-egypt" className="text-primary underline font-medium">
+                top market research companies in Egypt guide
+              </Link>
               .
             </p>
           </div>

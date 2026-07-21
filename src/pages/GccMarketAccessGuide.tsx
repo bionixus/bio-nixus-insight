@@ -582,6 +582,12 @@ const GccMarketAccessGuide = () => {
               <Link to="/blog/market-access-strategy-uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 UAE market access strategy guide for pharmaceutical launches
               </Link>
+              <Link to="/iqvia-alternative" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                IQVIA alternatives and competitors compared
+              </Link>
+              <Link to="/healthcare-market-research-companies" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                Top healthcare market research companies (2026)
+              </Link>
               <Link to="/healthcare-market-research-agency-gcc" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 Healthcare market research agency GCC for proposal-ready decisions
               </Link>

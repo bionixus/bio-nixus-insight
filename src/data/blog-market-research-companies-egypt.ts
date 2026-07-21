@@ -77,7 +77,7 @@ export const MARKET_RESEARCH_COMPANIES_EGYPT_HARDCODED_POST: BlogPost = {
     buttonText: 'Talk to our team',
     buttonUrl: 'https://www.bionixus.com/contact',
   },
-  bodyHtml: `<p>Egypt is the largest consumer and pharmaceutical market in North Africa, and a growing number of global networks, regional players, and Cairo-based specialists now operate there. This guide compares the companies with a verifiable Egypt presence — global research networks, healthcare/pharma-focused boutiques, and general consumer research firms — so life sciences and consumer teams can shortlist the right partner for fieldwork, data, or advisory work in-market.</p>
+  bodyHtml: `<p>Egypt is the largest consumer and pharmaceutical market in North Africa, and a growing number of global networks, regional players, and Cairo-based specialists now operate there. This guide compares the companies with a verifiable Egypt presence — global research networks, healthcare/pharma-focused boutiques, and general consumer research firms — so life sciences and consumer teams can shortlist the right partner for fieldwork, data, or advisory work in-market. For BioNixus's own Egypt service pages, see <a href="/egypt-pharmaceutical-market-research">pharmaceutical market research in Egypt</a> and <a href="/healthcare-market-research/egypt">healthcare market research in Egypt</a>.</p>
 <p><em>A note on methodology: this list reflects publicly available company information (official sites, ESOMAR directory listings, and industry directories) as of mid-2026. Office locations, service lines, and group structures change — confirm current details directly with each firm before engaging them.</em></p>
 
 <h2 id="comparison-table">Comparison Table</h2>
