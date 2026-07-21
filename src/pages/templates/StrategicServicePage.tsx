@@ -47,6 +47,8 @@ type StrategicServicePageProps = {
   expandedContent?: ServiceLandingExpandedContent;
   /** Key into PAGE_MEDIA in mediaAssets.ts; defaults to slug derived from canonical URL. */
   mediaSlug?: string;
+  /** Optional per-region breakdown (e.g. payer/HTA landscape by country) — renders as its own section with one H3 per region. */
+  regionalLandscapes?: Array<{ region: string; paragraphs: string[] }>;
 };
 
 export default function StrategicServicePage({
@@ -65,6 +67,7 @@ export default function StrategicServicePage({
   faqs,
   expandedContent,
   mediaSlug,
+  regionalLandscapes,
 }: StrategicServicePageProps) {
   const resolvedFaqs = expandedContent?.faqs ?? faqs;
   const pagePath = canonicalUrl.replace('https://www.bionixus.com', '') || '/';
@@ -206,6 +209,28 @@ export default function StrategicServicePage({
               </ul>
             </div>
           </section>
+
+          {regionalLandscapes && regionalLandscapes.length ? (
+            <section className="section-padding" id="regional-landscapes">
+              <div className="container-wide max-w-4xl mx-auto">
+                <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+                  Regional payer &amp; HTA landscapes
+                </h2>
+                <div className="space-y-8">
+                  {regionalLandscapes.map((entry) => (
+                    <article key={entry.region}>
+                      <h3 className="text-lg font-display font-semibold text-foreground mb-3">{entry.region}</h3>
+                      {entry.paragraphs.map((p, i) => (
+                        <p key={i} className="text-sm text-muted-foreground leading-relaxed mb-3 last:mb-0">
+                          {p}
+                        </p>
+                      ))}
+                    </article>
+                  ))}
+                </div>
+              </div>
+            </section>
+          ) : null}
 
           {/* Proof & execution snapshot */}
           <section className="section-padding bg-cream-dark rounded-2xl border border-border/40" id="proof-snapshot">

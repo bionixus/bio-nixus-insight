@@ -121,6 +121,7 @@ import TopMarketResearchCompaniesGcc2026 from '@/pages/TopMarketResearchCompanie
 import TopPharmaMarketResearchCompaniesMiddleEast2026 from '@/pages/TopPharmaMarketResearchCompaniesMiddleEast2026';
 import TopMarketResearchCompaniesEgypt2026 from '@/pages/TopMarketResearchCompaniesEgypt2026';
 import TopMarketResearchCompaniesSaudiArabia2026 from '@/pages/TopMarketResearchCompaniesSaudiArabia2026';
+import HealthcareMarketResearchCompanies2026 from '@/pages/HealthcareMarketResearchCompanies2026';
 import TopMarketResearchCompaniesUae2026 from '@/pages/TopMarketResearchCompaniesUae2026';
 import TopMarketResearchCompaniesDubai2026 from '@/pages/TopMarketResearchCompaniesDubai2026';
 import TopMarketResearchCompaniesAbuDhabi2026 from '@/pages/TopMarketResearchCompaniesAbuDhabi2026';
@@ -489,6 +490,7 @@ export const routes: RouteObject[] = [
   { path: '/ar/insights/top-market-research-companies-egypt-2026', element: suspensePage(<ArTopMarketResearchCompaniesEgypt2026 />) },
   { path: '/insights/top-market-research-companies-ksa-2026', element: <Navigate to="/insights/top-market-research-companies-saudi-arabia-2026" replace /> },
   { path: '/insights/top-market-research-companies-saudi-arabia-2026', element: <TopMarketResearchCompaniesSaudiArabia2026 /> },
+  { path: '/healthcare-market-research-companies', element: <HealthcareMarketResearchCompanies2026 /> },
   { path: '/insights/top-market-research-companies-uae-2026', element: <TopMarketResearchCompaniesUae2026 /> },
   { path: '/insights/top-market-research-companies-dubai-2026', element: <TopMarketResearchCompaniesDubai2026 /> },
   { path: '/insights/top-market-research-companies-abudhabi-2026', element: <Navigate to="/insights/top-market-research-companies-abu-dhabi-2026" replace /> },
