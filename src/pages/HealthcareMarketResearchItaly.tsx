@@ -48,6 +48,16 @@ const faqItems = [
     answer:
       'Yes. Italian modules can run with comparable cells in Germany, France, Spain, and the UK — and beyond to the USA, Canada, Japan, and other markets — using consistent instruments for global portfolio committees managing EU5 and multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How should pharmaceutical teams sequence Italy launch and access research?',
+    answer:
+      'Italy launch sequencing should account for AIFA CTS innovation classification, CPR price negotiation, SSN PFN listing class, and regional SSR PT adoption — often in that order but with overlapping evidence needs. BioNixus typically begins with physician and payer landscape mapping in Lombardia and Lazio (highest spend regions), then layers IRCCS KOL influence research and nota limitativa impact studies before CPR submission windows. Teams planning EU5-wide launches use Italian modules as the access-complexity benchmark alongside Germany AMNOG and France HAS timelines.',
+  },
+  {
+    question: 'When is regional SSR formulary research needed after national AIFA listing?',
+    answer:
+      'Regional SSR research becomes critical when AIFA grants Class A PFN listing but Lombardia, Veneto, Lazio, or Emilia-Romagna impose PT restrictions, prior authorisation, or nota limitative regionali that delay uptake. BioNixus conducts regional payer interviews and hospital pharmacist research to map second-layer barriers — often the difference between national approval and commercially meaningful volume in Italy\'s fragmented public system.',
+  },
 ];
 
 const jsonLd = [
@@ -308,6 +318,44 @@ export default function HealthcareMarketResearchItaly() {
                 dynamics at both the AIFA level and the regional SSR level is essential for launch strategy and
                 real-world evidence programme design. BioNixus conducts nota limitativa impact research: physician
                 perception studies, prescriber compliance research, and SSR adoption barrier studies.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Launch sequencing */}
+        <section className="section-padding py-10 bg-muted/20" id="launch-sequencing">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Italy pharmaceutical launch sequencing: AIFA, CPR, and regional SSR
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Italy rewards teams that treat market access as a sequenced evidence programme — not a post-approval
+                afterthought. The practical order for most innovative medicines begins with IRCCS KOL and treating-physician
+                research to shape CTS benefit narratives, continues with paired payer modules that anticipate CPR price
+                corridors and SSN PFN class expectations, and extends into regional SSR formulary research once national
+                listing is secured. Lombardia, Lazio, and Veneto often determine whether a launch reaches commercial
+                inflection in year one.
+              </p>
+              <p>
+                BioNixus designs Italian programmes backward from the decision window: CPR negotiation date, regional PT
+                committee season, or medical affairs advisory board timing. Quantitative HCP surveys establish adoption
+                baselines and message credibility; qualitative depth interviews with hospital pharmacists and regional
+                payers explain why national AIFA approval does not automatically translate into ward-level prescribing.
+                For EU5 portfolio committees, Italian sequencing modules connect to{' '}
+                <Link to="/healthcare-market-research-germany" className="text-primary font-medium hover:underline">
+                  Germany
+                </Link>
+                ,{' '}
+                <Link to="/healthcare-market-research-france" className="text-primary font-medium hover:underline">
+                  France
+                </Link>
+                , and{' '}
+                <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">
+                  global healthcare market research
+                </Link>{' '}
+                hubs with consistent instruments.
               </p>
             </div>
           </div>

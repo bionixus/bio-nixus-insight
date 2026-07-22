@@ -656,6 +656,14 @@ const GccMarketAccessGuide = () => {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
                 },
+                {
+                  q: 'What is the SFDA Economic Evaluation Submission (EES) pathway in Saudi Arabia?',
+                  a: 'SFDA\'s EES pathway requires pharmacoeconomic and budget-impact evidence for selected innovative medicines before or alongside pricing negotiations. Submissions typically include cost-effectiveness or cost-minimisation models, budget impact forecasts calibrated to MOH and NUPCO utilisation, and sensitivity analyses on uptake assumptions. BioNixus pairs HEOR modules with primary payer and physician research so economic models reflect local treatment pathways, not imported EU templates.',
+                },
+                {
+                  q: 'How should teams sequence SFDA registration, EES, and NUPCO tender planning?',
+                  a: 'Strong GCC access programmes align SFDA dossier milestones, EES evidence generation, and NUPCO tender calendars in one integrated timeline — often 12–24 months from first filing to meaningful hospital volume. Teams that treat registration, health economics, and procurement as separate workstreams risk SFDA approval without formulary listing or tender eligibility. BioNixus maps committee questions, EES data gaps, and procurement evaluation criteria in parallel so access narratives stay consistent from scientific advice through tender defence.',
+                },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">
                   <summary className="text-lg font-display font-semibold text-foreground cursor-pointer list-none">
