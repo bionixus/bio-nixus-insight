@@ -278,6 +278,7 @@ export default function CountryPage() {
                 </>
               ) : config.slug === 'saudi-arabia' ? (
                 <>
+                  Saudi Arabia's pharmaceutical market exceeds USD 10 billion annually, the largest in the GCC, and
                   BioNixus delivers SFDA-aware physician surveys, Arabic fieldwork, and hospital stakeholder evidence
                   across KSA. For launch sequencing and NUPCO context, see the{' '}
                   <Link to="/global-websites/saudi-arabia" className="text-primary font-medium hover:underline">

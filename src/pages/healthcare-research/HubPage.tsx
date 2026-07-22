@@ -181,7 +181,7 @@ export default function HubPage() {
   const heroDescription =
     typeof hubContent?.metaDescription === 'string' && hubContent.metaDescription.length > 0
       ? hubContent.metaDescription
-      : BIONIXUS_POSITIONING_V2;
+      : `BioNixus is a global healthcare and pharmaceutical market research firm founded in London in 2012, delivering research across 48 countries. ${BIONIXUS_POSITIONING_V2}`;
   const jsonLd = [
     ...buildHubPageSchemas(hubFaqItems),
     {
@@ -802,6 +802,16 @@ export default function HubPage() {
             to="/heor-consulting"
             title="HEOR consulting"
             description="Health economics and outcomes research — cost-effectiveness models, HTA dossiers, and payer evidence generation."
+          />
+          <HealthcareNavCard
+            to="/healthcare-market-statistics"
+            title="Healthcare & Pharma Market Statistics 2026"
+            description="56 sourced statistics for MENA, Asia, and global healthcare and pharmaceutical markets, each with a cited source."
+          />
+          <HealthcareNavCard
+            to="/faq"
+            title="Frequently Asked Questions"
+            description="Direct answers on choosing a market research partner, IQVIA alternatives, and research pricing."
           />
         </div>
       </ReportPremiumSection>

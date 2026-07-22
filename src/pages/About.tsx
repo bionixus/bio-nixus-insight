@@ -81,7 +81,7 @@ function AboutOfficeBlock({
         {office.linkLabel ? (
           <>
             {' '}
-            <Link to={egyptPath} className="text-primary font-medium hover:underline">
+            <Link to={office.linkPath || egyptPath} className="text-primary font-medium hover:underline">
               {office.linkLabel}
             </Link>
           </>

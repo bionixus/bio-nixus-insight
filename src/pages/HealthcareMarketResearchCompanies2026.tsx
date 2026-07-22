@@ -392,6 +392,11 @@ export default function HealthcareMarketResearchCompanies2026() {
               Top 15 Healthcare Market Research Companies (2026)
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
+              This 2026 guide ranks 15 healthcare market research companies — spanning global data and analytics
+              providers, dedicated primary-research specialists, and regional GCC/MENA firms — to help pharma, biotech,
+              and medtech buyers shortlist a partner in minutes rather than weeks.
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
               Choosing a healthcare market research partner is different from choosing a general-purpose research
               agency. Pharma, biotech, and medtech buyers are usually evaluating vendors against a specific mix of
               requirements: access to verified physicians, payers, and patients — not general consumer panels;

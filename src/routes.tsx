@@ -8,6 +8,7 @@ import About from '@/pages/About';
 import ClientReviews from '@/pages/ClientReviews';
 import Services from '@/pages/Services';
 import FAQ from '@/pages/FAQ';
+import HealthcareMarketStatistics from '@/pages/HealthcareMarketStatistics';
 import Resources from '@/pages/Resources';
 import Insights from '@/pages/Insights';
 import NewsHub from '@/pages/NewsHub';
@@ -377,6 +378,7 @@ export const routes: RouteObject[] = [
   { path: '/de/services', element: <Services /> },
   { path: '/services/:slug', element: <ServiceDetail /> },
   { path: '/faq', element: <FAQ /> },
+  { path: '/healthcare-market-statistics', element: <HealthcareMarketStatistics /> },
   { path: '/resources', element: <Resources /> },
   { path: '/insights', element: <Insights /> },
   { path: '/sitemap', element: <SiteMapPage /> },

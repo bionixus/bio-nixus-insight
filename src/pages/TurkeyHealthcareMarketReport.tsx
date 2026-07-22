@@ -94,7 +94,7 @@ const TurkeyHealthcareMarketReport = () => (
       <div className="section-padding pt-24 pb-4"><div className="container-wide"><BreadcrumbNav items={breadcrumbItems} /></div></div>
               <ReportPremiumHero
           title="Turkey Healthcare Market Report 2026: TİTCK, SGK Reimbursement, and Europe-MENA Crossroads Market Intelligence"
-          description="BioNixus serves Turkish pharmaceutical and medical device companies with GCC and MENA market intelligence — and provides Turkey market context for global."
+          description="The Turkish healthcare market is estimated at USD 45–58 billion in 2026, with a pharmaceutical market of roughly USD 7–9 billion. BioNixus serves Turkish pharmaceutical and medical device companies with GCC and MENA market intelligence — and provides Turkey market context for global."
           config={REPORT_CONVERSION}
           marketSlug="turkey"
           countryName="Turkey"

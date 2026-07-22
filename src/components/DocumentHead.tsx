@@ -214,7 +214,7 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
 
   if (path === '/about') {
     return clampDescription(
-      'Founded in London in 2012 — now US-headquartered with Cairo regional office. Global pharma & healthcare market research across 38 countries. Meet the team.'
+      'Founded in London in 2012 — now US-headquartered with offices across the GCC, Cairo, and São Paulo. Global pharma & healthcare market research across 48 countries.'
     );
   }
 

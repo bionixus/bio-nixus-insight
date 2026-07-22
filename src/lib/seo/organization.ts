@@ -24,6 +24,8 @@ export const ORG_SAME_AS = [
   'https://www.linkedin.com/company/bionixus/',
   'https://www.facebook.com/Bionixus',
   'https://www.instagram.com/bionixus_',
+  'https://www.crunchbase.com/organization/bionixus',
+  'https://www.goodfirms.co/company/bionixus-market-research',
   BIONIXUS_UK_GBP_MAPS_URL,
 ];
 
@@ -206,13 +208,10 @@ export const ORG_CONTACT_POINT = [
 ];
 
 /**
- * Social/profile URLs for ORG_SAME_AS.
- * TODO: confirm real profile URLs and merge into ORG_SAME_AS below —
+ * Crunchbase and GoodFirms confirmed and merged into ORG_SAME_AS above.
+ * Still unconfirmed — do not add without a confirmed URL:
  *  - X/Twitter company profile
- *  - Crunchbase company profile
  *  - Clutch company profile
- *  - GoodFirms company profile
- * Do not guess these; only add once confirmed by BioNixus.
  */
 
 /** Canonical Organization node. Pass inLanguage for per-page locale tagging. */

@@ -22,6 +22,11 @@ against the real list.
 8. `/healthcare-market-research/saudi-arabia`
 9. `/pharmaceutical-companies-saudi-arabia`
 10. `/pharmaceutical-companies-uae`
+11. `/usa-healthcare-market-report`
+12. `/turkey-healthcare-market-report`
+13. `/egypt-healthcare-market-report`
+14. `/healthcare-market-research-companies`
+15. `/about`
 
 ## Internal-link crawl report
 

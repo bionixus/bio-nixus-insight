@@ -108,6 +108,16 @@ const Index = () => {
                       BioNixus vs. IQVIA and other legacy vendors
                     </Link>
                   </li>
+                  <li>
+                    <Link to="/healthcare-market-statistics" className="text-primary hover:underline font-medium">
+                      Healthcare & Pharma Market Statistics 2026
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/faq" className="text-primary hover:underline font-medium">
+                      Frequently Asked Questions
+                    </Link>
+                  </li>
                 </ul>
               </div>
               <div>

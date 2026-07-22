@@ -22,6 +22,8 @@ export interface AboutOffice {
   title: string;
   lines: string[];
   linkLabel?: string;
+  /** Defaults to the Egypt market-research path when omitted, for backward compatibility. */
+  linkPath?: string;
 }
 
 export interface AboutPageCopy {

@@ -422,7 +422,7 @@ export default function ConsumerMarketResearchPortal() {
                 { title: 'B2B Specialist Panels', description: 'Verified C-suite, CFO, and IT buyer panels across GCC and Europe — hard-to-reach audiences recruited and screened, not panel spill.' },
                 { title: 'Speed to Insight', description: 'Fieldwork-to-report in 4–6 weeks with local quota management, bilingual instruments, and executive synthesis from day one.' },
               ]}
-              summary="Trusted by ESOMAR members, 127+ projects delivered, 14+ years of in-region fieldwork across consumer and B2B verticals."
+              summary="ICC/ESOMAR-aligned methodology, 127+ projects delivered, 14+ years of in-region fieldwork across consumer and B2B verticals."
               className="mt-10"
             />
           </div>

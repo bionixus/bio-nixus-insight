@@ -160,7 +160,7 @@ export default function IndustryGlobalHubPage() {
             <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm text-muted-foreground">
               <span className="flex items-center gap-1.5">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary inline-block" />
-                ESOMAR member
+                ICC/ESOMAR-aligned
               </span>
               <span className="flex items-center gap-1.5">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary inline-block" />

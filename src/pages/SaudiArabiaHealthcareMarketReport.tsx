@@ -112,7 +112,7 @@ const SaudiArabiaHealthcareMarketReport = () => {
 
                 <ReportPremiumHero
           title="Saudi Arabia Healthcare Market Report 2026: Market Size, Pharmaceutical Intelligence, and Vision 2030 Strategy"
-          description="BioNixus delivers Saudi Arabia pharmaceutical consumption intelligence, NUPCO procurement tracking, SFDA registration monitoring, and primary HCP research across MOH, NGHA, and private hospital networks — supporting commercial, medical affairs, and market access teams across all major therapeutic areas."
+          description="The Saudi Arabia healthcare market is estimated at USD 55–65 billion in 2026, the largest in the GCC, with a pharmaceutical market of USD 8.5–9.5 billion. BioNixus delivers Saudi Arabia pharmaceutical consumption intelligence, NUPCO procurement tracking, SFDA registration monitoring, and primary HCP research across MOH, NGHA, and private hospital networks — supporting commercial, medical affairs, and market access teams across all major therapeutic areas."
           config={REPORT_CONVERSION}
           marketSlug="saudi-arabia"
           countryName="Saudi Arabia"

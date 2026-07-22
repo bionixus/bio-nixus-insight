@@ -206,7 +206,7 @@ export const INDUSTRY_HUB_PAGES: IndustryHubPageConfig[] = [
       {
         question: 'How does BioNixus handle data privacy regulations in GCC financial services research?',
         answer:
-          'BioNixus complies with the Saudi Personal Data Protection Law (PDPL), the UAE Federal Data Protection Law, and GDPR for European studies. All respondent data is anonymised before analysis, consent is obtained at the point of recruitment, and client-facing deliverables never contain personally identifiable information. BioNixus also holds ESOMAR membership and follows ICC/ESOMAR research guidelines.',
+          'BioNixus complies with the Saudi Personal Data Protection Law (PDPL), the UAE Federal Data Protection Law, and GDPR for European studies. All respondent data is anonymised before analysis, consent is obtained at the point of recruitment, and client-facing deliverables never contain personally identifiable information. BioNixus aligns its methodology to ICC/ESOMAR research guidelines.',
       },
     ],
     countryLinks: ALL_COUNTRIES,
