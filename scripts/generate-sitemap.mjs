@@ -348,6 +348,8 @@ const staticPages = [
   { path: '/blog/gcc-clinical-trials-market-2026', priority: '0.83', changefreq: 'monthly' },
   { path: '/blog/pharmacoeconomics-gcc-practical-guide', priority: '0.87', changefreq: 'monthly' },
   { path: '/blog/gcc-pharmacoeconomics', priority: '0.88', changefreq: 'monthly' },
+  { path: '/blog/medtech-singapore-2026-market-hsa-registration', priority: '0.85', changefreq: 'monthly' },
+  { path: '/blog/turkey-pharmaceutical-market-2026-titck-top-companies', priority: '0.85', changefreq: 'monthly' },
   { path: '/blog/neurofibromatosis', priority: '0.85', changefreq: 'monthly' },
   { path: '/blog/nf1-koselugo-selumetinib-pharma-market-research', priority: '0.86', changefreq: 'monthly' },
   { path: '/blog/top-healthcare-market-research-companies-kuwait', priority: '0.87', changefreq: 'monthly' },

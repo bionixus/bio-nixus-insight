@@ -4,6 +4,8 @@ import { NF1_KOSELUGO_HARDCODED_POST, NF1_KOSELUGO_DRUG_HARDCODED_POST } from '@
 import { DESMOID_BLOG_HARDCODED_POST } from '@/data/blog-desmoid-ogsiveo-market-research';
 import { SKYRIZI_HARDCODED_POST } from '@/data/blog-skyrizi-omnichannel';
 import { MARKET_RESEARCH_COMPANIES_EGYPT_HARDCODED_POST } from '@/data/blog-market-research-companies-egypt';
+import { SINGAPORE_MEDTECH_2026_HARDCODED_POST } from '@/data/blog-singapore-medtech-2026';
+import { TURKEY_PHARMA_2026_HARDCODED_POST } from '@/data/blog-turkey-pharma-2026';
 
 /**
  * Array of all hardcoded blog posts designed for SEO strategy,
@@ -17,6 +19,8 @@ export const hardcodedSeoPosts: BlogPost[] = [
   DESMOID_BLOG_HARDCODED_POST,
   SKYRIZI_HARDCODED_POST,
   MARKET_RESEARCH_COMPANIES_EGYPT_HARDCODED_POST,
+  SINGAPORE_MEDTECH_2026_HARDCODED_POST,
+  TURKEY_PHARMA_2026_HARDCODED_POST,
 ];
 
 /** Helper to find a hardcoded post by slug */
