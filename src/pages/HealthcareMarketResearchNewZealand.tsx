@@ -48,6 +48,16 @@ const faqItems = [
     answer:
       'Yes. New Zealand modules can run with comparable cells in the USA, UK, EU5 (Germany, France, Italy, Spain), Canada, Japan, Singapore, South Korea, and Australia — using consistent instruments for global portfolio committees managing multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How should pharmaceutical teams sequence New Zealand launch and PHARMAC access research?',
+    answer:
+      'New Zealand sequencing typically begins 18–24 months before expected Pharmaceutical Schedule listing: Medsafe approval is necessary but not sufficient for funded access. BioNixus maps PHARMAC Factors for Consideration evidence gaps early — clinical need, health benefits, cost-effectiveness, and budget impact — then layers HCP adoption research and regional DHB formulary intelligence once PTAC consultation opens. Teams launching across Australasia often run parallel NZ and Australia modules with harmonised instruments.',
+  },
+  {
+    question: 'When is Māori and Pacific health equity research required in New Zealand programmes?',
+    answer:
+      'PHARMAC and Health New Zealand increasingly weight equity in funding decisions. Programmes addressing conditions with disproportionate Māori or Pacific burden should embed tikanga-aligned community engagement, culturally appropriate consent processes, and subgroup analysis plans from protocol design — not as a post-hoc appendix. BioNixus coordinates HDEC ethics and community advisory input where patient or caregiver research touches priority populations.',
+  },
 ];
 
 const jsonLd = [
@@ -309,6 +319,39 @@ export default function HealthcareMarketResearchNewZealand() {
                 access teams respond effectively to PHARMAC and PTAC recommendations on New Zealand formulary and
                 hospital funding dynamics. ACC rehabilitation funding research is also available for injury treatment
                 categories with ACC coverage implications.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Launch sequencing */}
+        <section className="section-padding py-10 bg-muted/20" id="launch-sequencing">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              New Zealand pharmaceutical launch sequencing: Medsafe, PHARMAC, and DHB formularies
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                New Zealand commercial outcomes depend on sequencing Medsafe registration, PHARMAC health technology
+                assessment, and Pharmaceutical Schedule negotiation — with 16 Health New Zealand regions influencing
+                real-world uptake through DHB formulary decisions and hospital procurement. Launch teams that wait until
+                Medsafe approval to begin payer research routinely underestimate PHARMAC evidence expectations and
+                budget-impact scrutiny relative to Australia or UK NICE processes.
+              </p>
+              <p>
+                BioNixus programmes typically open with physician and specialist society landscape mapping across Auckland,
+                Wellington, and Christchurch academic networks, then add PHARMAC stakeholder research on clinical need and
+                cost-effectiveness positioning before formal funding application. Post-listing modules track regional
+                adoption variance, ACC rehabilitation pathway implications where relevant, and private insurer coverage
+                gaps. Connect NZ sequencing with{' '}
+                <Link to="/healthcare-market-research-australia" className="text-primary font-medium hover:underline">
+                  Australia healthcare market research
+                </Link>{' '}
+                and the{' '}
+                <Link to="/new-zealand-healthcare-market-report" className="text-primary font-medium hover:underline">
+                  New Zealand healthcare market report
+                </Link>{' '}
+                for integrated Australasia planning.
               </p>
             </div>
           </div>
