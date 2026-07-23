@@ -17,11 +17,11 @@ import { ReportPremiumHero, ReportPremiumSection } from '@/components/report-pre
 const pageUrl = 'https://www.bionixus.com/gcc-pharmaceutical-market-research';
 const REPORT_CONVERSION = getStandaloneReportConfig('/gcc-pharmaceutical-market-research');
 
-const PAGE_TITLE = 'GCC Biologics & Generic Injectables Market 2026 | BioNixus';
+const PAGE_TITLE = 'GCC Pharmaceutical Market Research 2026 | Biologics & Injectables | BioNixus';
 const PAGE_H1 =
   'GCC Biologics & Generic Injectables Market Research 2026 — Precision Medicine & Drug Repurposing';
 const PAGE_DESCRIPTION =
-  'GCC biologics market ($4.8–5.4B), generic injectables ($1.6–1.9B), drug repurposing & Saudi precision medicine — pharmaceutical market research across KSA, UAE, Kuwait, Qatar, Bahrain & Oman.';
+  'GCC pharmaceutical market research: biologics ($4.8–5.4B), generic injectables ($1.6–1.9B), NUPCO tenders, SFDA/MOHAP access — KSA, UAE, Kuwait, Qatar, Bahrain & Oman.';
 
 const FAQ_ITEMS = [
   {
@@ -53,6 +53,16 @@ const FAQ_ITEMS = [
     question: 'Which GCC therapy areas drive the most pharma growth in 2026?',
     answer:
       'In 2026, the fastest-growing GCC therapy areas are oncology, diabetes and obesity (GLP-1 driven), rare disease, immunology, and cardiovascular. Saudi Arabia and the UAE concentrate the bulk of innovative-medicine spend, while Kuwait and Qatar prioritize tendered generic and hospital-administered portfolios.',
+  },
+  {
+    question: 'How does NUPCO tendering affect GCC biologics and generic injectables research?',
+    answer:
+      'NUPCO central tenders determine which hospital-administered molecules reach MOH, NGHA, and military networks at scale in Saudi Arabia. BioNixus maps tender calendars, price corridors, post-award switching behaviour, and physician confidence after biosimilar awards — so launch and access teams do not treat SFDA approval as equivalent to hospital uptake.',
+  },
+  {
+    question: 'When should teams pair GCC pharmaceutical research with country-specific modules?',
+    answer:
+      'Use this GCC hub for segment sizing and cross-market themes (biologics, injectables, precision medicine, repurposing), then add Saudi Arabia or UAE country programmes when dossier sequencing, emirate formulary logic, or NUPCO defence requires institution-level evidence. BioNixus links both layers in one governance framework.',
   },
 ];
 

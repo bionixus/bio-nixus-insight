@@ -313,6 +313,47 @@ export default function HealthcareMarketResearchItaly() {
           </div>
         </section>
 
+        {/* Launch sequencing */}
+        <section className="section-padding py-10 bg-muted/10">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Launch sequencing across Italian regions and IRCCS networks
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Italian launches rarely succeed on a single national AIFA PFN listing alone. Commercial teams must
+                sequence evidence and field engagement across three layers: AIFA CTS innovation classification and CPR
+                negotiation, national SSN Class A/H/C listing, and regional SSR PT adoption in Lombardia, Lazio, Veneto,
+                Emilia-Romagna, and Campania — which together account for the majority of Italian pharmaceutical spend.
+                BioNixus maps which IRCCS and university hospitals adopt first after national listing, where nota
+                limitative restrictions slow uptake, and how MMG (primary care) networks gate community prescribing.
+              </p>
+              <p>
+                Effective launch sequencing research pairs quantitative physician adoption intent with qualitative payer
+                and formulary committee modules. Teams use outputs to prioritise KOL engagement at INT Milan, IEO,
+                Policlinico Gemelli, and Sant&apos;Orsola before expanding to regional SSR committees — avoiding wasted
+                medical affairs spend in regions where PT restrictions still block reimbursement despite national approval.
+              </p>
+              <p>
+                For EU5 portfolio committees, Italian modules benchmark against{' '}
+                <Link to="/healthcare-market-research-germany" className="text-primary font-medium hover:underline">
+                  Germany
+                </Link>
+                ,{' '}
+                <Link to="/healthcare-market-research-france" className="text-primary font-medium hover:underline">
+                  France
+                </Link>
+                , and{' '}
+                <Link to="/healthcare-market-research-uk" className="text-primary font-medium hover:underline">
+                  UK
+                </Link>{' '}
+                programmes using consistent instruments — so leadership sees where Italy&apos;s regional SSR complexity
+                requires distinct access investment versus other EU5 markets.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Why choose BioNixus */}
         <section className="section-padding py-10">
           <div className="container-wide max-w-5xl mx-auto">
