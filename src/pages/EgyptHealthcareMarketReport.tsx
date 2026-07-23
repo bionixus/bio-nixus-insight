@@ -16,6 +16,8 @@ import {
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
 import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
+import { EgyptHealthcare2026CairoBlock } from '@/components/blog/EgyptHealthcare2026CairoBlock';
+import { EGYPT_HEALTHCARE_2026_CAIRO_FAQ } from '@/data/egyptHealthcare2026CairoSeo';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -53,6 +55,7 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
     answer:
       'BioNixus has operated a dedicated Egypt research team from Cairo since 2012. We conduct quantitative HCP surveys (oncologists, endocrinologists, cardiologists, gastroenterologists, rheumatologists), qualitative KOL depth interviews, payer and formulary research with MOH and UHI decision-makers, and hospital consumption intelligence across Cairo University Hospital, NCI, Ain Shams, and private hospital chains (Cleopatra, As-Salam International, Dar Al Fouad). Egypt-specific and regional MENA programs are both available.',
   },
+  ...EGYPT_HEALTHCARE_2026_CAIRO_FAQ,
 ], 'egypt');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/egypt-healthcare-market-report');
@@ -71,7 +74,7 @@ const jsonLd = [
       logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
     },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-07-23',
     mainEntityOfPage: 'https://www.bionixus.com/egypt-healthcare-market-report',
   },
   {
@@ -183,7 +186,13 @@ const EgyptHealthcareMarketReport = () => {
           </div>
         </section>
 
-        <section className="section-padding" id="market-structure">
+        <section className="section-padding" id="cairo-hospitals-healthcare">
+          <div className="container-wide max-w-4xl mx-auto">
+            <EgyptHealthcare2026CairoBlock />
+          </div>
+        </section>
+
+        <section className="section-padding bg-cream-dark" id="market-structure">
           <div className="container-wide max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Egypt Pharmaceutical Market Structure</h2>
             <div className="space-y-4">

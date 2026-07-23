@@ -314,6 +314,48 @@ export default function HealthcareMarketResearchNewZealand() {
           </div>
         </section>
 
+        {/* Launch sequencing */}
+        <section className="section-padding py-10 bg-muted/10">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Launch sequencing across New Zealand health regions and payer channels
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                New Zealand launches depend on Medsafe approval, PHARMAC Pharmaceutical Schedule listing, and
+                real-world uptake across Health New Zealand Te Whatu Ora&apos;s 16 regions — each with distinct
+                hospital formulary rhythms and rural access patterns. Private insurers (Southern Cross, nib NZ, AIA)
+                and ACC injury funding add parallel channels that shape prescribing outside the public schedule.
+                BioNixus sequences research so teams know whether to prioritise PTAC evidence preparation, regional
+                hospital committee engagement, or private-payer value narratives first.
+              </p>
+              <p>
+                Quantitative modules measure physician adoption intent across Auckland, Canterbury, Waikato, and
+                Southern regions; qualitative payer interviews explain how PHARMAC&apos;s nine Factors for Consideration
+                weight clinical benefit, equity, and budget impact for your therapeutic class. Outputs translate into
+                account lists, messaging guardrails, and a quarter-by-quarter field plan aligned to PHARMAC meeting
+                calendars — not a generic global launch deck.
+              </p>
+              <p>
+                For Asia-Pacific portfolio teams, New Zealand studies connect to{' '}
+                <Link to="/healthcare-market-research-australia" className="text-primary font-medium hover:underline">
+                  Australia
+                </Link>
+                ,{' '}
+                <Link to="/new-zealand-healthcare-market-report" className="text-primary font-medium hover:underline">
+                  New Zealand healthcare market report
+                </Link>
+                , and{' '}
+                <Link to="/healthcare-market-research/singapore" className="text-primary font-medium hover:underline">
+                  Singapore
+                </Link>{' '}
+                benchmarking cells — giving leadership a single evidence thread across public single-payer and mixed
+                payer markets in the region.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Why choose BioNixus */}
         <section className="section-padding py-10">
           <div className="container-wide max-w-5xl mx-auto">

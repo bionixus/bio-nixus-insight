@@ -656,6 +656,18 @@ const GccMarketAccessGuide = () => {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
                 },
+                {
+                  q: 'What is SFDA Economic Evaluation Submission (EES) and when is it required?',
+                  a: 'SFDA EES is Saudi Arabia\'s pharmacoeconomic review pathway for selected high-cost or budget-sensitive medicines. Submissions typically include cost-effectiveness or budget-impact models calibrated to KSA epidemiology, comparators available on MOH and NUPCO formularies, and sensitivity analyses payers use in CPR-style negotiations. BioNixus pairs HEOR modelling with physician and payer fieldwork so economic narratives match real prescribing behaviour.',
+                },
+                {
+                  q: 'How do UAE emirate formularies differ from MOHAP federal listing?',
+                  a: 'MOHAP registration enables nationwide marketing, but DHA (Dubai) and DOH (Abu Dhabi) maintain separate hospital formularies and insurance-linked listing rules. A product can be federally registered yet face delayed uptake in SEHA or DHA networks until emirate committees complete their reviews — research must map each channel separately.',
+                },
+                {
+                  q: 'What budget-impact evidence do Kuwait and Qatar tenders expect?',
+                  a: 'Kuwait MOH tender stores and Qatar Hamad procurement increasingly request explicit budget-impact forecasts versus therapeutic alternatives, especially for biologics and hospital-administered generics. BioNixus integrates epidemiology-informed sizing with committee objection research so tender dossiers reflect how local payers actually evaluate substitution and price corridors.',
+                },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">
                   <summary className="text-lg font-display font-semibold text-foreground cursor-pointer list-none">
