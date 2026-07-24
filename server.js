@@ -104,6 +104,7 @@ const SKYRIZI_ROOT_DESCRIPTION =
 const GENERIC_DEFAULT_TITLES = new Set([
   'BioNixus | Healthcare & Pharmaceutical Market Research',
   'BioNixus | Global Pharmaceutical & Healthcare Market Research',
+  'BioNixus | Global Pharma & Healthcare Market Research',
   'BioNixus',
   'Healthcare & Pharmaceutical Market Research | BioNixus',
 ]);
@@ -516,7 +517,7 @@ function ensureTitleTag(html, pathname) {
   // data is fetched async from Sanity), replace it with the path-specific
   // fallback so each URL ships a unique <title>.
   const isGeneric = chosen
-    ? GENERIC_DEFAULT_TITLES.has(chosen) || /^BioNixus \| Global Pharmaceutical/i.test(chosen)
+    ? GENERIC_DEFAULT_TITLES.has(chosen) || /^BioNixus \| Global Pharma(maceutical)? & Healthcare/i.test(chosen)
     : false;
   const forceLocale = shouldForceLocaleFallback(pathname, chosen);
   const strengthened =
