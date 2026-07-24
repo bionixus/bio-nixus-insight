@@ -7,13 +7,13 @@
  * reports/weekly-report-<date>.md.
  *
  * INPUT CONVENTION (place exported files exactly here — filenames matter):
- *   data/gsc/current-week/Dates.csv     — GSC Performance report, grouped by date,
- *                                          export as CSV (Search Console UI:
- *                                          Performance > date range > Export > CSV,
- *                                          "Dates.csv" from the zip)
+ *   data/gsc/current-week/Chart.csv     — GSC Performance report, grouped by date
+ *                                          ("Chart.csv" in the export zip; a file
+ *                                          literally named "Dates.csv" also works
+ *                                          if you rename it)
  *   data/gsc/current-week/Queries.csv   — GSC Performance report grouped by query
  *   data/gsc/current-week/Pages.csv     — GSC Performance report grouped by page
- *   data/gsc/previous-week/Dates.csv    — same 3 files for the prior comparable
+ *   data/gsc/previous-week/Chart.csv    — same 3 files for the prior comparable
  *   data/gsc/previous-week/Queries.csv     week (same day-count date range, shifted
  *   data/gsc/previous-week/Pages.csv       back 7 days)
  *
@@ -110,6 +110,11 @@ function readCsvIfExists(filePath) {
   return parseCsv(fs.readFileSync(filePath, 'utf8'));
 }
 
+/** GSC's own export zip actually names the by-date file "Chart.csv", not "Dates.csv" — accept either. */
+function readDatesCsv(weekDir) {
+  return readCsvIfExists(path.join(weekDir, 'Dates.csv')) || readCsvIfExists(path.join(weekDir, 'Chart.csv'));
+}
+
 function pctToNumber(raw) {
   if (raw == null) return null;
   const n = Number(String(raw).replace('%', '').trim());
@@ -130,6 +135,12 @@ function pick(row, candidates) {
   return undefined;
 }
 
+/** Some GSC query strings contain a literal embedded newline (valid CSV, breaks markdown tables). */
+function cleanText(raw) {
+  if (raw == null) return raw;
+  return String(raw).replace(/\s+/g, ' ').trim();
+}
+
 function normalizeDatesRows(rows) {
   if (!rows) return null;
   return rows
@@ -147,7 +158,7 @@ function normalizeQueryRows(rows) {
   if (!rows) return null;
   return rows
     .map((r) => ({
-      query: pick(r, ['Top queries', 'Query', 'Queries']),
+      query: cleanText(pick(r, ['Top queries', 'Query', 'Queries'])),
       clicks: numOrNull(pick(r, ['Clicks'])),
       impressions: numOrNull(pick(r, ['Impressions'])),
       ctr: pctToNumber(pick(r, ['CTR'])),
@@ -160,7 +171,7 @@ function normalizePageRows(rows) {
   if (!rows) return null;
   return rows
     .map((r) => ({
-      page: pick(r, ['Top pages', 'Page', 'Pages']),
+      page: cleanText(pick(r, ['Top pages', 'Page', 'Pages'])),
       clicks: numOrNull(pick(r, ['Clicks'])),
       impressions: numOrNull(pick(r, ['Impressions'])),
       ctr: pctToNumber(pick(r, ['CTR'])),
@@ -276,8 +287,8 @@ function fmtDelta(n, digits = 1, suffix = '') {
 }
 
 function main() {
-  const currentDates = normalizeDatesRows(readCsvIfExists(path.join(GSC_DIR, 'current-week', 'Dates.csv')));
-  const previousDates = normalizeDatesRows(readCsvIfExists(path.join(GSC_DIR, 'previous-week', 'Dates.csv')));
+  const currentDates = normalizeDatesRows(readDatesCsv(path.join(GSC_DIR, 'current-week')));
+  const previousDates = normalizeDatesRows(readDatesCsv(path.join(GSC_DIR, 'previous-week')));
   const currentQueries = normalizeQueryRows(readCsvIfExists(path.join(GSC_DIR, 'current-week', 'Queries.csv')));
   const previousQueries = normalizeQueryRows(readCsvIfExists(path.join(GSC_DIR, 'previous-week', 'Queries.csv')));
   const currentPages = normalizePageRows(readCsvIfExists(path.join(GSC_DIR, 'current-week', 'Pages.csv')));
@@ -286,7 +297,7 @@ function main() {
   if (!currentDates && !currentQueries && !currentPages) {
     console.error(
       `No GSC data found in ${path.join(GSC_DIR, 'current-week')}.\n` +
-        'Export Dates.csv, Queries.csv, and Pages.csv from Search Console > Performance and place them there ' +
+        'Export Chart.csv, Queries.csv, and Pages.csv from Search Console > Performance and place them there ' +
         '(and the prior week\'s equivalents in data/gsc/previous-week/) before running this script.',
     );
     process.exitCode = 1;
@@ -365,7 +376,7 @@ function buildMarkdown(r) {
     );
     lines.push('', '_Position deltas shown as "vs target/last week": positive = closer to #1 (improved)._', '');
   } else {
-    lines.push('_No Dates.csv found for the current week — cannot compute daily traffic metrics._', '');
+    lines.push('_No Chart.csv (or Dates.csv) found for the current week — cannot compute daily traffic metrics._', '');
   }
 
   lines.push('## Biggest query position changes (top 10 by magnitude)', '');
