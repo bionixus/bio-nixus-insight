@@ -1,11 +1,11 @@
 # Internal Link Crawl Report
-Generated: 2026-07-21T22:46:51.618Z
+Generated: 2026-07-24T22:41:30.520Z
 - Sitemap pages: 854
 - Crawled via SSR: 854
 - Sanity-driven pages crawled (per-post accuracy caveat applies): 136
 - Failed crawls (errored during render): 0
 - Indexable pages checked for inbound links: 854
-- **Orphan pages (0 inbound internal links): 73**
+- **Orphan pages (0 inbound internal links): 72**
 - **Pages with <3 inbound internal links: 129**
 - Possibly-broken internal link targets: 0
 ## Orphan pages
@@ -80,14 +80,12 @@ Generated: 2026-07-21T22:46:51.618Z
 - /blog/vijoice-alpelisib-pros-ema-chmp-2026
 - /blog/zepbound-kwikpen-goodrx-self-pay-2026
 - /blog/zepzelca-lurbinectedin-sclc-ema-chmp-2026
-- /news/bionixus-brazil-office-latam-expansion-2026
 - /zh/blog
 ## Low inbound-link pages (<3)
 - /ar/insights/top-market-research-companies-qatar-2026 — 1 inbound (from: /ar/insights/top-market-research-companies-kuwait-2026)
 - /ar/market-research-egypt — 1 inbound (from: /sitemap)
 - /ar/market-research-kuwait — 1 inbound (from: /sitemap)
 - /ar/market-research-saudi — 1 inbound (from: /sitemap)
-- /ar/market-research-uae — 1 inbound (from: /sitemap)
 - /blog/quantitative-healthcare-market-research-ksa — 1 inbound (from: /quantitative-healthcare-market-research)
 - /blog/quantitative-healthcare-market-research-uae — 1 inbound (from: /quantitative-healthcare-market-research)
 - /blog/saudi-arabia-in-vitro-diagnostics-market — 1 inbound (from: /gcc-medical-devices-market-report)
@@ -129,6 +127,7 @@ Generated: 2026-07-21T22:46:51.618Z
 - /insights/top-oncology-market-research-companies-2026 — 1 inbound (from: /insights)
 - /media — 1 inbound (from: /news)
 - /medical-affairs-insight-research-gcc — 1 inbound (from: /healthcare-market-research)
+- /news/bionixus-brazil-office-latam-expansion-2026 — 1 inbound (from: /brazil-healthcare-market-report)
 - /pharmaceutical-market-research-argentina — 1 inbound (from: /healthcare-market-research-argentina)
 - /pharmaceutical-market-research-bahrain — 1 inbound (from: /healthcare-market-research-bahrain)
 - /pharmaceutical-market-research-jordan — 1 inbound (from: /healthcare-market-research-jordan)

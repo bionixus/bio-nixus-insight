@@ -242,7 +242,7 @@ export const angolaGeneralEn: CountryListicleConfig = {
     { to: '/insights/top-market-research-companies-south-africa-2026', label: 'Best Market Research Companies in South Africa' },
     { to: '/insights/top-market-research-companies-nigeria-2026', label: 'Best Market Research Companies in Nigeria' },
     { to: '/insights/top-market-research-companies-kenya-2026', label: 'Best Market Research Companies in Kenya' },
-    { to: '/pharmaceutical-market-research', label: 'Pharmaceutical Market Research Services' },
+    { to: '/market-research', label: 'Pharmaceutical Market Research Services' },
     { to: '/contact', label: 'Request an Angola Research Proposal' },
   ],
   cta: {

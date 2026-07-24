@@ -242,8 +242,8 @@ export const peruHealthcareEn: CountryListicleConfig = {
     { to: '/insights/top-healthcare-market-research-companies-mexico-2026', label: 'Best Healthcare Market Research Companies in Mexico' },
     { to: '/insights/top-healthcare-market-research-companies-colombia-2026', label: 'Best Healthcare Market Research Companies in Colombia' },
     { to: '/insights/top-healthcare-market-research-companies-chile-2026', label: 'Best Healthcare Market Research Companies in Chile' },
-    { to: '/insights/top-market-research-companies-latam-2026', label: 'Top Market Research Companies in Latin America' },
-    { to: '/pharmaceutical-market-research', label: 'Pharmaceutical Market Research Services' },
+    { to: '/healthcare-market-research', label: 'Global Healthcare Market Research Hub' },
+    { to: '/market-research', label: 'Pharmaceutical Market Research Services' },
     { to: '/contact', label: 'Request a Peru Healthcare Research Proposal' },
   ],
   cta: {

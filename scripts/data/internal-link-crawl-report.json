@@ -1,12 +1,12 @@
 {
-  "scannedAt": "2026-07-21T22:46:51.618Z",
+  "scannedAt": "2026-07-24T22:41:30.520Z",
   "counts": {
     "sitemapPages": 854,
     "crawled": 854,
     "sanityDrivenPages": 136,
     "failedCrawls": 0,
     "indexablePages": 854,
-    "orphans": 73,
+    "orphans": 72,
     "lowLink": 129,
     "possiblyBroken": 0
   },
@@ -296,10 +296,6 @@
       "inbound": 0
     },
     {
-      "path": "/news/bionixus-brazil-office-latam-expansion-2026",
-      "inbound": 0
-    },
-    {
       "path": "/zh/blog",
       "inbound": 0
     }
@@ -328,13 +324,6 @@
     },
     {
       "path": "/ar/market-research-saudi",
-      "inbound": 1,
-      "from": [
-        "/sitemap"
-      ]
-    },
-    {
-      "path": "/ar/market-research-uae",
       "inbound": 1,
       "from": [
         "/sitemap"
@@ -625,6 +614,13 @@
       "inbound": 1,
       "from": [
         "/healthcare-market-research"
+      ]
+    },
+    {
+      "path": "/news/bionixus-brazil-office-latam-expansion-2026",
+      "inbound": 1,
+      "from": [
+        "/brazil-healthcare-market-report"
       ]
     },
     {

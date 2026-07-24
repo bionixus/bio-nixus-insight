@@ -258,7 +258,7 @@ export const abuDhabiGeneralEn: CountryListicleConfig = {
     { to: '/insights/top-market-research-companies-dubai-2026', label: 'Best Market Research Companies in Dubai' },
     { to: '/insights/top-market-research-companies-ksa-2026', label: 'Best Market Research Companies in Saudi Arabia' },
     { to: '/insights/top-healthcare-market-research-companies-uae-2026', label: 'Healthcare Market Research Companies in the UAE' },
-    { to: '/insights/gcc-market-access-guide', label: 'GCC Market Access Guide' },
+    { to: '/gcc-market-access-guide', label: 'GCC Market Access Guide' },
     { to: '/contact', label: 'Request an Abu Dhabi Research Proposal' },
   ],
 

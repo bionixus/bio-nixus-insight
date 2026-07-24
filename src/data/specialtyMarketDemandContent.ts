@@ -178,11 +178,10 @@ const singaporeMedtechManufacturing: SpecialtyMarketDemandContent = {
   ],
   whyBionixus: SHARED_WHY,
   relatedLinks: [
-    { to: '/singapore-medtech-market-research', label: 'Singapore MedTech market research' },
     { to: '/singapore-medical-devices-market-report', label: 'Singapore medical devices market report' },
     { to: '/pharmaceutical-market-research-singapore', label: 'Pharmaceutical market research Singapore' },
     { to: '/healthcare-market-research-singapore', label: 'Healthcare market research Singapore' },
-    { to: '/japan-medtech-market-research', label: 'Japan MedTech market research' },
+    { to: '/japan-medical-devices-market-report', label: 'Japan MedTech market research' },
     { to: '/clinical-diagnostics-market-research', label: 'Clinical diagnostics market research' },
   ],
   faqs: [
@@ -469,8 +468,7 @@ const japanGeneralSurgicalDevices: SpecialtyMarketDemandContent = {
   ],
   whyBionixus: SHARED_WHY,
   relatedLinks: [
-    { to: '/japan-medtech-market-research', label: 'Japan MedTech market research' },
-    { to: '/japan-medical-devices-market-report', label: 'Japan medical devices market report' },
+    { to: '/japan-medical-devices-market-report', label: 'Japan MedTech market research' },
     { to: '/pharmaceutical-market-research-japan', label: 'Pharmaceutical market research Japan' },
     { to: '/healthcare-market-research-japan', label: 'Healthcare market research Japan' },
     { to: '/singapore-medtech-manufacturing-market', label: 'Singapore MedTech manufacturing market' },
@@ -605,7 +603,7 @@ const healthcareBioconvergence: SpecialtyMarketDemandContent = {
     { to: '/real-world-evidence', label: 'Real world evidence' },
     { to: '/healthcare-market-research', label: 'Healthcare market research hub' },
     { to: '/bionixus-industries', label: 'BioNixus industries hub' },
-    { to: '/japan-medtech-market-research', label: 'Japan MedTech market research' },
+    { to: '/japan-medical-devices-market-report', label: 'Japan MedTech market research' },
   ],
   faqs: [
     {
@@ -837,7 +835,6 @@ const singaporeIvdMarketAccess: SpecialtyMarketDemandContent = {
     { to: '/clinical-diagnostics-market-research', label: 'Clinical diagnostics market research' },
     { to: '/singapore-medtech-manufacturing-market', label: 'Singapore MedTech manufacturing market' },
     { to: '/singapore-medical-devices-market-report', label: 'Singapore medical devices market report' },
-    { to: '/singapore-medtech-market-research', label: 'Singapore MedTech market research' },
   ],
   faqs: [
     {
@@ -903,8 +900,7 @@ const japanNeurologyDevices: SpecialtyMarketDemandContent = {
   whyBionixus: SHARED_WHY,
   relatedLinks: [
     { to: '/japan-general-surgical-devices-market', label: 'Japan general surgical devices market' },
-    { to: '/japan-medtech-market-research', label: 'Japan MedTech market research' },
-    { to: '/japan-medical-devices-market-report', label: 'Japan medical devices market report' },
+    { to: '/japan-medical-devices-market-report', label: 'Japan MedTech market research' },
     { to: '/healthcare-market-research-japan', label: 'Healthcare market research Japan' },
   ],
   faqs: [
@@ -966,8 +962,7 @@ const japanMedicalDisposables: SpecialtyMarketDemandContent = {
   whyBionixus: SHARED_WHY,
   relatedLinks: [
     { to: '/japan-general-surgical-devices-market', label: 'Japan general surgical devices market' },
-    { to: '/japan-medtech-market-research', label: 'Japan MedTech market research' },
-    { to: '/japan-medical-devices-market-report', label: 'Japan medical devices market report' },
+    { to: '/japan-medical-devices-market-report', label: 'Japan MedTech market research' },
     { to: '/gcc-medical-devices-market-report', label: 'GCC medical devices market report' },
   ],
   faqs: [
@@ -1028,8 +1023,7 @@ const japanMedtechAccessAutomation: SpecialtyMarketDemandContent = {
   ],
   whyBionixus: SHARED_WHY,
   relatedLinks: [
-    { to: '/japan-medtech-market-research', label: 'Japan MedTech market research' },
-    { to: '/japan-medical-devices-market-report', label: 'Japan medical devices market report' },
+    { to: '/japan-medical-devices-market-report', label: 'Japan MedTech market research' },
     { to: '/japan-general-surgical-devices-market', label: 'Japan general surgical devices market' },
     { to: '/healthcare-bioconvergence-market', label: 'Healthcare bioconvergence market' },
   ],
@@ -1094,7 +1088,7 @@ const italyClinicalTrials: SpecialtyMarketDemandContent = {
     { to: '/gcc-clinical-trials-market', label: 'GCC clinical trials market' },
     { to: '/healthcare-market-research-italy', label: 'Healthcare market research Italy' },
     { to: '/pharmaceutical-market-research-italy', label: 'Pharmaceutical market research Italy' },
-    { to: '/italy-medtech-market-research', label: 'Italy MedTech market research' },
+    { to: '/italy-medical-devices-market-report', label: 'Italy MedTech market research' },
   ],
   faqs: [
     {
@@ -1284,7 +1278,7 @@ const italyPortableDiagnostics: SpecialtyMarketDemandContent = {
   relatedLinks: [
     { to: '/italy-clinical-trials-market', label: 'Italy clinical trials market' },
     { to: '/italy-medical-device-connectivity-market', label: 'Italy medical device connectivity market' },
-    { to: '/italy-medtech-market-research', label: 'Italy MedTech market research' },
+    { to: '/italy-medical-devices-market-report', label: 'Italy MedTech market research' },
     { to: '/clinical-diagnostics-market-research', label: 'Clinical diagnostics market research' },
     { to: '/pharmaceutical-market-research-italy', label: 'Pharmaceutical market research Italy' },
     { to: '/healthcare-market-research-italy', label: 'Healthcare market research Italy' },
@@ -1349,7 +1343,7 @@ const italyDeviceConnectivity: SpecialtyMarketDemandContent = {
   relatedLinks: [
     { to: '/italy-portable-diagnostic-devices-market', label: 'Italy portable diagnostic devices market' },
     { to: '/italy-clinical-trials-market', label: 'Italy clinical trials market' },
-    { to: '/italy-medtech-market-research', label: 'Italy MedTech market research' },
+    { to: '/italy-medical-devices-market-report', label: 'Italy MedTech market research' },
     { to: '/healthcare-bioconvergence-market', label: 'Healthcare bioconvergence market' },
     { to: '/healthcare-market-research-italy', label: 'Healthcare market research Italy' },
     { to: '/japan-medical-device-market-access', label: 'Japan medical device market access' },

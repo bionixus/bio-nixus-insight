@@ -34,6 +34,7 @@ import KantarHealthAlternativeGcc from '@/pages/KantarHealthAlternativeGcc';
 import GfkAlternativeEgypt from '@/pages/GfkAlternativeEgypt';
 import NotFound from '@/pages/NotFound';
 import MarketResearch from '@/pages/MarketResearch';
+import WhatIsMarketStudy from '@/pages/WhatIsMarketStudy';
 import MarketResearchByIndustry from '@/pages/MarketResearchByIndustry';
 import { buildIndustryMatrixRoutes } from '@/data/industryMatrixRoutes';
 import { buildDevelopedMarketMedtechRoutes } from '@/data/developedMarketMedtechRoutes';
@@ -65,6 +66,7 @@ import QatarMarketAccessResearch from '@/pages/QatarMarketAccessResearch';
 import HealthcareFieldworkMiddleEast from '@/pages/HealthcareFieldworkMiddleEast';
 import RealWorldEvidence from '@/pages/RealWorldEvidence';
 import RealWorldEvidenceGcc from '@/pages/RealWorldEvidenceGcc';
+import RealWorldDataHealthcareMiddleEast from '@/pages/RealWorldDataHealthcareMiddleEast';
 import HeorConsultingSaudiArabia from '@/pages/HeorConsultingSaudiArabia';
 import HtaStudiesSaudiArabia from '@/pages/HtaStudiesSaudiArabia';
 import CostEffectivenessAnalysisSaudiArabia from '@/pages/CostEffectivenessAnalysisSaudiArabia';
@@ -386,6 +388,7 @@ export const routes: RouteObject[] = [
   { path: '/gcc-market-access-guide', element: <GccMarketAccessGuide /> },
   { path: '/market-research-home', element: <MarketResearchHome /> },
   { path: '/market-research', element: <MarketResearch /> },
+  { path: '/market-study', element: <WhatIsMarketStudy /> },
   { path: '/market-research-uae', element: <MarketResearchUae /> },
   { path: '/diabetes-market-research-uae', element: <DiabetesMarketResearchUae /> },
   { path: '/specialist-physician-panel-uae', element: <SpecialistPhysicianPanelUae /> },
@@ -447,6 +450,7 @@ export const routes: RouteObject[] = [
   { path: '/healthcare-fieldwork-middle-east', element: <HealthcareFieldworkMiddleEast /> },
   { path: '/real-world-evidence', element: <RealWorldEvidence /> },
   { path: '/real-world-evidence-gcc', element: <RealWorldEvidenceGcc /> },
+  { path: '/real-world-data-healthcare-middle-east', element: <RealWorldDataHealthcareMiddleEast /> },
   { path: '/heor-consulting-saudi-arabia', element: <HeorConsultingSaudiArabia /> },
   { path: '/hta-studies-saudi-arabia', element: <HtaStudiesSaudiArabia /> },
   { path: '/cost-effectiveness-analysis-saudi-arabia', element: <CostEffectivenessAnalysisSaudiArabia /> },

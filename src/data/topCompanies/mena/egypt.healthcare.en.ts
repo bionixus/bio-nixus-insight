@@ -257,7 +257,7 @@ export const egyptHealthcareEn: CountryListicleConfig = {
       label: 'Healthcare Market Research Companies in Jordan',
     },
     {
-      to: '/insights/top-healthcare-market-research-companies-morocco-2026',
+      to: '/healthcare-market-research/morocco',
       label: 'Healthcare Market Research Companies in Morocco',
     },
     {

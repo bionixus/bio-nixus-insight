@@ -261,7 +261,7 @@ export const kuwaitHealthcareEn: CountryListicleConfig = {
       label: 'Best Market Research Companies in the UAE',
     },
     {
-      to: '/insights/top-healthcare-market-research-companies-ksa-2026',
+      to: '/insights/top-healthcare-market-research-companies-saudi-arabia-2026',
       label: 'Healthcare Market Research Companies in Saudi Arabia',
     },
     {
