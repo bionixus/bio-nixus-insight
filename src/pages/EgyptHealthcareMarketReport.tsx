@@ -53,6 +53,11 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
     answer:
       'BioNixus has operated a dedicated Egypt research team from Cairo since 2012. We conduct quantitative HCP surveys (oncologists, endocrinologists, cardiologists, gastroenterologists, rheumatologists), qualitative KOL depth interviews, payer and formulary research with MOH and UHI decision-makers, and hospital consumption intelligence across Cairo University Hospital, NCI, Ain Shams, and private hospital chains (Cleopatra, As-Salam International, Dar Al Fouad). Egypt-specific and regional MENA programs are both available.',
   },
+  {
+    question: 'How does Cairo hospitals healthcare 2023–2026 research inform pharma access in Egypt?',
+    answer:
+      'Cairo concentrates Egypt\'s flagship public hospitals (Kasr Al-Ainy, NCI, Ain Shams), major private groups (Cleopatra, Saudi German, As-Salam International), and EDA registration decision-makers — making Cairo hospital prescribing and formulary behaviour the anchor for national launch models. BioNixus tracks Cairo hospital procurement, UHI rollout by governorate, and physician adoption from 2023 through 2026 so brand, access, and medical affairs teams align EDA pricing assumptions with real Cairo uptake. See also the BioNixus Egypt healthcare market overview blog for hospital-level context.',
+  },
 ], 'egypt');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/egypt-healthcare-market-report');

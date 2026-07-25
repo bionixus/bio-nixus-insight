@@ -48,6 +48,16 @@ const faqItems = [
     answer:
       'Yes. Italian modules can run with comparable cells in Germany, France, Spain, and the UK — and beyond to the USA, Canada, Japan, and other markets — using consistent instruments for global portfolio committees managing EU5 and multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How does AIFA CPR negotiation research support Italian market access?',
+    answer:
+      'After AIFA CTS classifies innovation, CPR negotiates reimbursed price and SSN PFN listing — often conditioned on managed-entry registries or nota limitative. BioNixus runs payer and health-economist interviews, physician willingness-to-prescribe modules, and regional SSR barrier studies so CPR submissions reflect Italian budget impact and real-world comparator use, not exported EU5 averages alone.',
+  },
+  {
+    question: 'What hospital networks does BioNixus cover for Italian healthcare market research?',
+    answer:
+      'Fieldwork spans IRCCS oncology and specialty centres (INT Milan, IEO, Gemelli Rome), university hospitals in Bologna, Turin, and Naples, and high-volume regional hospitals in Lombardia, Lazio, Veneto, and Campania — enabling nationally representative samples for AIFA-aligned launch, biosimilar switching, and medical device CEQ evidence programmes.',
+  },
 ];
 
 const jsonLd = [
