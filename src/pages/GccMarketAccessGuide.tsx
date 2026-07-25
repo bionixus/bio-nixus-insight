@@ -656,6 +656,14 @@ const GccMarketAccessGuide = () => {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
                 },
+                {
+                  q: 'What is the SFDA Economic Evaluation Submission (EES) pathway in 2026?',
+                  a: 'SFDA EES is Saudi Arabia\'s structured pharmacoeconomic review for selected medicines — requiring cost-effectiveness or budget-impact evidence alongside clinical dossiers before pricing and formulary decisions advance. Launch teams should align epidemiology, comparator choice, and local treatment pathways with SFDA templates early; BioNixus pairs HEOR modelling with physician and payer interviews so EES narratives reflect real Saudi prescribing and NUPCO tender dynamics.',
+                },
+                {
+                  q: 'How long does GCC pharmaceutical market access take end-to-end?',
+                  a: 'Most multinational assets require 12–24 months from scientific-office appointment through SFDA or MOHAP registration, external-reference pricing, and hospital formulary or NUPCO tender listing — longer for biologics, biosimilars, or products needing SFDA EES. UAE programmes often split MOHAP national registration from DHA or DOH emirate formulary steps. BioNixus maps milestone-critical research (KOL adoption, payer objections, tender win drivers) to each gate on the GCC market access guide timeline.',
+                },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">
                   <summary className="text-lg font-display font-semibold text-foreground cursor-pointer list-none">

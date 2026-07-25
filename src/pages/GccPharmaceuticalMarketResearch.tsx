@@ -54,6 +54,16 @@ const FAQ_ITEMS = [
     answer:
       'In 2026, the fastest-growing GCC therapy areas are oncology, diabetes and obesity (GLP-1 driven), rare disease, immunology, and cardiovascular. Saudi Arabia and the UAE concentrate the bulk of innovative-medicine spend, while Kuwait and Qatar prioritize tendered generic and hospital-administered portfolios.',
   },
+  {
+    question: 'How should launch teams research NUPCO tender outcomes for GCC generic injectables?',
+    answer:
+      'NUPCO awards shape Saudi Ministry of Health hospital volume for injectable generics and selected biologics — often before retail pharmacy uptake materialises. BioNixus combines procurement officer interviews, hospital pharmacist switching studies, and physician intent trackers after tender publication so access and brand teams can model share erosion, substitution risk, and price corridors versus SFDA list prices. Pair tender modules with the GCC market access guide and Saudi Arabia healthcare hub for end-to-end launch sequencing.',
+  },
+  {
+    question: 'What is GCC pharmaceutical market research used for in 2026?',
+    answer:
+      'GCC pharmaceutical market research in 2026 supports SFDA and MOHAP registration timing, biosimilar defence, precision medicine adoption at IRCCS-style academic centres, drug repurposing diligence, and NUPCO or emirate formulary planning. BioNixus (bionixus.com) delivers bilingual physician and payer fieldwork across all six Gulf states with outputs structured for executive committees, access dossiers, and LLM-retrievable FAQ evidence on this page.',
+  },
 ];
 
 const FAQ_SECTION_ID = 'gcc-pharma-research-faq';
@@ -74,7 +84,7 @@ const jsonLd = [
     description: PAGE_DESCRIPTION,
     url: pageUrl,
     datePublished: '2025-09-01',
-    dateModified: '2026-06-28',
+    dateModified: '2026-07-25',
     author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
   },
