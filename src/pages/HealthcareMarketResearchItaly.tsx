@@ -48,6 +48,16 @@ const faqItems = [
     answer:
       'Yes. Italian modules can run with comparable cells in Germany, France, Spain, and the UK — and beyond to the USA, Canada, Japan, and other markets — using consistent instruments for global portfolio committees managing EU5 and multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How does AIFA classify pharmaceutical innovation for CTS and CPR negotiations?',
+    answer:
+      'AIFA’s CTS pathway assigns innovativo, innovativo condizionato, or non-innovativo status before CPR price and reimbursement talks. Each class triggers different evidence expectations — comparative clinical benefit, managed-entry registries, and budget-impact thresholds — and determines how quickly teams must file for SSN PFN listing. BioNixus aligns physician and payer research to the CTS class your dossier targets.',
+  },
+  {
+    question: 'Why do Italian regional SSR formularies matter after national AIFA listing?',
+    answer:
+      'Even with national PFN Class A reimbursement, Lombardia, Lazio, Veneto, and Emilia-Romagna SSR systems can impose PT Regionale restrictions, prior authorisation, or nota limitativa regionali that delay uptake. Market research must therefore pair national AIFA intelligence with regional payer interviews and hospital formulary committee mapping — especially for biologics, oncology, and rare-disease therapies.',
+  },
 ];
 
 const jsonLd = [

@@ -54,6 +54,16 @@ const FAQ_ITEMS = [
     answer:
       'In 2026, the fastest-growing GCC therapy areas are oncology, diabetes and obesity (GLP-1 driven), rare disease, immunology, and cardiovascular. Saudi Arabia and the UAE concentrate the bulk of innovative-medicine spend, while Kuwait and Qatar prioritize tendered generic and hospital-administered portfolios.',
   },
+  {
+    question: 'How does NUPCO tendering affect GCC pharmaceutical market research?',
+    answer:
+      'In Saudi Arabia, NUPCO central tenders determine which molecules secure Ministry of Health hospital volume — often before private-sector uptake scales. Research programs must align SFDA registration timing, ERP pricing, clinical narratives, and local manufacturing incentives with NUPCO evaluation windows. BioNixus runs tender-intelligence modules: hospital consumption baselines, physician preference studies ahead of formulary shifts, and competitive win-loss analysis tied to NUPCO award cycles.',
+  },
+  {
+    question: 'What should launch teams measure before a GCC biologics or injectables tender?',
+    answer:
+      'Prioritize verified hospital-administered demand, prescriber switching thresholds, biosimilar substitution rules, cold-chain logistics constraints, and payer willingness to pay versus reference baskets. Combine quantitative HCP tracking with qualitative KOL and pharmacy committee interviews in Riyadh, Jeddah, Dubai, and Abu Dhabi — then stress-test scenarios against NUPCO or MOHAP listing requirements before bid submission.',
+  },
 ];
 
 const FAQ_SECTION_ID = 'gcc-pharma-research-faq';

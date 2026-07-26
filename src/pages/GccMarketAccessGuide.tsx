@@ -215,6 +215,16 @@ const GccMarketAccessGuide = () => {
                 name: 'What is the GCC centralised registration procedure?',
                 acceptedAnswer: { '@type': 'Answer', text: 'The GCC Centralised Registration Procedure allows pharmaceutical companies to submit a single application reviewed by one GCC country, with the registration recognised by other GCC states. However, individual country-level pricing and import procedures still apply separately.' },
               },
+              {
+                '@type': 'Question',
+                name: 'What is SFDA’s EES framework for pharmaceutical economic evaluation in Saudi Arabia?',
+                acceptedAnswer: { '@type': 'Answer', text: 'SFDA’s Economic Evaluation Standard (EES) requires budget-impact and cost-effectiveness evidence for selected innovative medicines before pricing and formulary decisions. Teams should align clinical value dossiers, local epidemiology, and comparator pricing with SFDA HTA expectations — often in parallel with NUPCO hospital tender planning.' },
+              },
+              {
+                '@type': 'Question',
+                name: 'How do SFDA EES submissions interact with NUPCO procurement in KSA?',
+                acceptedAnswer: { '@type': 'Answer', text: 'Registration and EES approval establish the regulatory and economic baseline, while NUPCO tenders allocate MOH hospital volume. Launch teams sequence SFDA scientific review, EES filing, ERP price approval, and NUPCO technical-commercial bids so hospital committees see consistent clinical and economic narratives.' },
+              },
             ],
           })}
         </script>
@@ -655,6 +665,14 @@ const GccMarketAccessGuide = () => {
                 {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
+                },
+                {
+                  q: 'What is SFDA’s EES framework for pharmaceutical economic evaluation in Saudi Arabia?',
+                  a: 'SFDA’s Economic Evaluation Standard (EES) requires structured budget-impact and cost-effectiveness evidence for selected innovative medicines before national pricing and formulary decisions. Dossiers should use Saudi epidemiology, MOH-relevant comparators, and transparent model assumptions — often reviewed alongside clinical modules already submitted in the CTD.',
+                },
+                {
+                  q: 'How do SFDA EES submissions interact with NUPCO procurement?',
+                  a: 'EES and ERP pricing set the economic envelope regulators expect, while NUPCO tenders award hospital volume. Teams that align clinical value stories, Arabic patient materials, and tender technical scores with the same economic model reduce rework between SFDA review, price approval, and NUPCO bid defence.',
                 },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">
