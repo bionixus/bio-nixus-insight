@@ -502,6 +502,13 @@ const GccMarketAccessGuide = () => {
                 </Link>{' '}
                 for segment-level biologics and injectables intelligence that feeds access narratives.
               </p>
+              <p>
+                When global teams reuse EU or US health technology assessment templates, GCC committees often reject
+                comparators, endpoints, or budget horizons that do not reflect local practice. BioNixus localises
+                epidemiology, treatment pathways, and pricing benchmarks before models enter SFDA EES or emirate
+                formulary workflows — reducing rework cycles and keeping medical, access, and finance aligned on a
+                single evidence storyline across Saudi Arabia, the UAE, and smaller Gulf markets.
+              </p>
             </div>
           </div>
         </section>

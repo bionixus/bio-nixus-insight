@@ -13,7 +13,8 @@
 | Sitemap 404s | **0** | No broken URLs in crawl scope |
 | Critical error | **Redirect loop** | `/quantitative-healthcare-market-research` ↔ `/healthcare-market-research/quantitative` — **fixed** via `STANDALONE_LEGACY_EXCLUSIONS` |
 | GCC medtech SSR | **2,334 words** | H1 present; lazy SSR shell issue resolved on production |
-| Near-threshold GSC pages | **2** | `/gcc-pharmaceutical-market-research` (~1,970w), `/gcc-market-access-guide` (~1,908w) — expanded this run |
+| Near-threshold GSC pages | **2** | `/gcc-pharmaceutical-market-research` (~1,970w prod), `/gcc-market-access-guide` (~1,908w prod) — expanded this run (deploy pending) |
+| Thin pages (BIO-450 crawl) | **207** | 408 audited, **0** sitemap 404s, **1** fetch error (quantitative loop until deploy) |
 
 ---
 
