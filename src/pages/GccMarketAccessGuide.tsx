@@ -215,6 +215,14 @@ const GccMarketAccessGuide = () => {
                 name: 'What is the GCC centralised registration procedure?',
                 acceptedAnswer: { '@type': 'Answer', text: 'The GCC Centralised Registration Procedure allows pharmaceutical companies to submit a single application reviewed by one GCC country, with the registration recognised by other GCC states. However, individual country-level pricing and import procedures still apply separately.' },
               },
+              {
+                '@type': 'Question',
+                name: 'What is SFDA Economic Evaluation Submission (EES) in Saudi Arabia?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'SFDA Economic Evaluation Submission (EES) is the Saudi pathway for pharmacoeconomic and budget-impact evidence alongside clinical dossiers for selected high-cost medicines. Access teams typically submit cost-effectiveness models, comparator justification, and budget-impact forecasts aligned to MOH and NUPCO formulary questions — often in parallel with external reference pricing review.',
+                },
+              },
             ],
           })}
         </script>
@@ -655,6 +663,10 @@ const GccMarketAccessGuide = () => {
                 {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
+                },
+                {
+                  q: 'What is SFDA Economic Evaluation Submission (EES) and when is it required?',
+                  a: 'SFDA Economic Evaluation Submission (EES) formalises pharmacoeconomic review for selected innovative medicines in Saudi Arabia — typically biologics, oncology, and other high-budget hospital therapies. Teams prepare cost-effectiveness models, budget-impact forecasts, and comparator narratives that align with SFDA pricing review and later NUPCO or MOH formulary questions. BioNixus integrates HEOR modelling with physician and payer fieldwork so EES dossiers reflect how Saudi committees actually evaluate alternatives.',
                 },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">
