@@ -26,7 +26,7 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
   {
     question: 'How big is the Egypt healthcare market in 2026?',
     answer:
-      'The Egypt healthcare market is estimated at USD 25–30 billion in 2026, making it the largest healthcare market in Africa and the Middle East by volume. Egypt\'s 105 million population, Universal Health Insurance rollout, government investment in new capital city healthcare infrastructure, and expanding private hospital sector are the primary market drivers. Growth is estimated at 8–10% CAGR through 2030, with pharmaceutical and medical device subsectors growing faster than total market average.',
+      'The Egypt healthcare market is estimated at USD 25–30 billion in 2026, making it the largest healthcare market in Africa and the Middle East by volume. Egypt\'s 105 million population, Universal Health Insurance rollout, government investment in new capital city healthcare infrastructure, and expanding private hospital sector are the primary market drivers. Cairo hospital clusters remain the main commercial battleground for innovative medicines and medtech adoption. Growth is estimated at 8–10% CAGR through 2030, with pharmaceutical and medical device subsectors growing faster than total market average.',
   },
   {
     question: 'What is the Egypt pharmaceutical market size in 2026?',

@@ -162,7 +162,7 @@ export default function HubPage() {
   const hubSeoDescription =
     typeof hubContent?.metaDescription === 'string' && hubContent.metaDescription.length > 0
       ? hubContent.metaDescription
-      : 'Physician, payer & hospital evidence for pharma & medtech — launch & access across USA, Europe, GCC & MENA. Proposal in 24 hours.';
+      : 'Healthcare market research company for pharma & medtech — physician, payer & hospital evidence for launch & access across USA, Europe, GCC & MENA. Proposal in 24 hours.';
   const heroTitle =
     typeof hubContent?.title === 'string' && hubContent.title.length > 0
       ? hubContent.title
