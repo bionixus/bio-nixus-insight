@@ -656,6 +656,14 @@ const GccMarketAccessGuide = () => {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
                 },
+                {
+                  q: 'How does SFDA economic evaluation (EES) affect Saudi market access in 2026?',
+                  a: 'SFDA and NUPCO increasingly expect pharmacoeconomic dossiers — budget impact models, cost-effectiveness summaries, or structured justifications for premium pricing — before large hospital tenders list innovative medicines. Teams should align clinical modules with HEOR timelines so registration, pricing, and NUPCO submission windows do not slip by a full tender cycle.',
+                },
+                {
+                  q: 'Do UAE payers require health technology assessment (HTA) style evidence?',
+                  a: 'Abu Dhabi and Dubai insurance-based systems use formulary and prior-authorization rules that mirror HTA logic even when the process is not labelled HTA. DOH and DHA committees ask for comparative effectiveness, budget impact, and real-world adherence data; MOHAP national listing may still apply for products marketed outside emirate-only channels.',
+                },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">
                   <summary className="text-lg font-display font-semibold text-foreground cursor-pointer list-none">
