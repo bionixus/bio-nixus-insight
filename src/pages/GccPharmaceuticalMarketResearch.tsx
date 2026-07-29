@@ -59,6 +59,11 @@ const FAQ_ITEMS = [
     answer:
       'Programs combine bilingual physician and payer fieldwork, NUPCO and MOHAP-aware access modules, biosimilar and tender-defence trackers, KOL mapping, and competitive intelligence across all six GCC states. Deliverables are built for launch committees — account prioritization, message testing, pricing narratives, and scenario planning — not syndicated chart decks alone.',
   },
+  {
+    question: 'How do GCC teams use pharmaceutical market research before NUPCO or MOHAP tenders?',
+    answer:
+      'Commercial and access teams run pricing corridor tests, physician adoption forecasts, and payer narrative workshops before tender submission windows open. BioNixus maps hospital account priorities, biosimilar switching risk, and budget-impact storylines so NUPCO and MOHAP dossiers reflect how committees actually evaluate generic injectables, biologics, and precision-medicine portfolios in 2026.',
+  },
 ];
 
 const FAQ_SECTION_ID = 'gcc-pharma-research-faq';

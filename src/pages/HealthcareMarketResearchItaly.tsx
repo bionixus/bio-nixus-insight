@@ -48,6 +48,11 @@ const faqItems = [
     answer:
       'Yes. Italian modules can run with comparable cells in Germany, France, Spain, and the UK — and beyond to the USA, Canada, Japan, and other markets — using consistent instruments for global portfolio committees managing EU5 and multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How should teams align Italian healthcare research with AIFA CTS and regional SSR timelines?',
+    answer:
+      'Italian access moves in two layers: national AIFA CTS benefit classification and CPR negotiation, then regional SSR PT listings and nota limitative restrictions. BioNixus sequences physician, payer, and formulary modules so evidence lands before CTS dossier deadlines and before Lombardia, Lazio, or Veneto SSR committees set PT conditions. Mixed-method programmes typically field Italian HCP surveys first, then payer depth interviews once prescribing patterns are validated — keeping launch sequencing and real-world evidence plans synchronized with AIFA and SSR calendars.',
+  },
 ];
 
 const jsonLd = [

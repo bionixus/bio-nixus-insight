@@ -1,0 +1,43 @@
+date,prompt_id,prompt,funnel_tag,platform,language,location,bionixus_mentioned,bionixus_cited,cited_url,citation_score,position,brands_mentioned,sentiment,delta_vs_prior,feedback,captured_at
+2026-07-29,BIO222-01,Top healthcare market research companies in Kuwait,middle_of_funnel,chatgpt,en-US,United Arab Emirates,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-01,Top healthcare market research companies in Kuwait,middle_of_funnel,gemini,en-US,United Arab Emirates,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-01,Top healthcare market research companies in Kuwait,middle_of_funnel,claude,en-US,United Arab Emirates,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-02,Top market research companies in Kuwait,top_of_funnel,chatgpt,en-US,United States,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-02,Top market research companies in Kuwait,top_of_funnel,gemini,en-US,United States,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-02,Top market research companies in Kuwait,top_of_funnel,claude,en-US,United States,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-03,Top market research companies in pharma in Saudi,middle_of_funnel,chatgpt,en-US,Saudi Arabia,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-03,Top market research companies in pharma in Saudi,middle_of_funnel,gemini,en-US,Saudi Arabia,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-03,Top market research companies in pharma in Saudi,middle_of_funnel,claude,en-US,Saudi Arabia,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-04,Top market research companies in pharma in UAE,middle_of_funnel,chatgpt,en-US,United Arab Emirates,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-04,Top market research companies in pharma in UAE,middle_of_funnel,gemini,en-US,United Arab Emirates,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-04,Top market research companies in pharma in UAE,middle_of_funnel,claude,en-US,United Arab Emirates,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-05,Top healthcare market research companies in Egypt,top_of_funnel,chatgpt,en-US,Egypt,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-05,Top healthcare market research companies in Egypt,top_of_funnel,gemini,en-US,Egypt,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-05,Top healthcare market research companies in Egypt,top_of_funnel,claude,en-US,Egypt,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-06,best market research companies in Egypt?,top_of_funnel,chatgpt,en-US,Egypt,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-06,best market research companies in Egypt?,top_of_funnel,gemini,en-US,Egypt,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-06,best market research companies in Egypt?,top_of_funnel,claude,en-US,Egypt,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-07,Top market research companies in Saudi Arabia,top_of_funnel,chatgpt,en-US,United States,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-07,Top market research companies in Saudi Arabia,top_of_funnel,gemini,en-US,United States,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-07,Top market research companies in Saudi Arabia,top_of_funnel,claude,en-US,United States,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-08,Best market research company in Saudi Arabia,top_of_funnel,chatgpt,en-US,United Arab Emirates,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-08,Best market research company in Saudi Arabia,top_of_funnel,gemini,en-US,United Arab Emirates,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-08,Best market research company in Saudi Arabia,top_of_funnel,claude,en-US,United Arab Emirates,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-09,Top market research companies in UAE,top_of_funnel,chatgpt,en-US,United Arab Emirates,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-09,Top market research companies in UAE,top_of_funnel,gemini,en-US,United Arab Emirates,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-09,Top market research companies in UAE,top_of_funnel,claude,en-US,United Arab Emirates,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-10,Who are the top healthcare market research firms in 2026?,top_of_funnel,chatgpt,en-US,United Arab Emirates,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-10,Who are the top healthcare market research firms in 2026?,top_of_funnel,gemini,en-US,United Arab Emirates,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-10,Who are the top healthcare market research firms in 2026?,top_of_funnel,claude,en-US,United Arab Emirates,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-11,Best budget impact analysis consultancy in Saudi Arabia,middle_of_funnel,chatgpt,en-US,Saudi Arabia,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-11,Best budget impact analysis consultancy in Saudi Arabia,middle_of_funnel,gemini,en-US,Saudi Arabia,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-11,Best budget impact analysis consultancy in Saudi Arabia,middle_of_funnel,claude,en-US,Saudi Arabia,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-12,Top cost-effectiveness analysis firms for Saudi Arabia pharma market access,middle_of_funnel,chatgpt,en-US,Saudi Arabia,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-12,Top cost-effectiveness analysis firms for Saudi Arabia pharma market access,middle_of_funnel,gemini,en-US,Saudi Arabia,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-12,Top cost-effectiveness analysis firms for Saudi Arabia pharma market access,middle_of_funnel,claude,en-US,Saudi Arabia,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-13,Who conducts HTA studies for pharma companies in Saudi Arabia,middle_of_funnel,chatgpt,en-US,Saudi Arabia,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-13,Who conducts HTA studies for pharma companies in Saudi Arabia,middle_of_funnel,gemini,en-US,Saudi Arabia,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-13,Who conducts HTA studies for pharma companies in Saudi Arabia,middle_of_funnel,claude,en-US,Saudi Arabia,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-14,Best market access research company for Saudi Arabia pharmaceutical launches,middle_of_funnel,chatgpt,en-US,Saudi Arabia,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-14,Best market access research company for Saudi Arabia pharmaceutical launches,middle_of_funnel,gemini,en-US,Saudi Arabia,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z
+2026-07-29,BIO222-14,Best market access research company for Saudi Arabia pharmaceutical launches,middle_of_funnel,claude,en-US,Saudi Arabia,PENDING,PENDING,,,PENDING,,PENDING,,,2026-07-29T04:04:32.738Z

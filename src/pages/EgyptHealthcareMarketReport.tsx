@@ -202,6 +202,18 @@ const EgyptHealthcareMarketReport = () => {
                 </div>
               ))}
             </div>
+            <p className="text-muted-foreground leading-relaxed mt-6">
+              For Cairo hospital healthcare intelligence aligned to 2023–2026 demand, see our{' '}
+              <Link to="/blog/healthcare-overview-egypt-market-2026" className="text-primary font-medium hover:underline">
+                Egypt healthcare market overview 2026
+              </Link>{' '}
+              and the{' '}
+              <Link to="/healthcare-market-research/egypt" className="text-primary font-medium hover:underline">
+                Egypt healthcare market research
+              </Link>{' '}
+              hub — both connect hospital cluster context with pharmaceutical sizing, EDA registration, and UHI formulary
+              milestones on this report.
+            </p>
           </div>
         </section>
 
