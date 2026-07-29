@@ -191,7 +191,10 @@ const EgyptHealthcareMarketReport = () => {
                 { label: 'Local Manufacturing (~93% of volume)', body: 'Egypt\'s 120+ local pharmaceutical manufacturers produce the vast majority of volume consumed. Major local players include EIPICO, Pharco, Eva Pharma, Amoun, and Sigma. Multinationals compete through brand equity, specialty portfolios, and innovation that local manufacturers cannot replicate.' },
                 { label: 'EDA Pricing Controls', body: 'EDA sets maximum retail prices for all registered pharmaceuticals. Price increases require formal application and are typically granted in tranches during currency adjustment cycles. Pricing dynamics significantly affect P&L modeling for multinational brands operating in Egypt.' },
                 { label: 'UHI Formulary Access', body: 'The Universal Health Insurance positive list determines which products are prescribed and reimbursed for enrolled patients. UHI formulary listing is a critical commercial milestone — BioNixus tracks listing requirements, assessment timelines, and clinical evidence expectations per therapeutic category.' },
-                { label: 'Private Hospital Sector', body: 'Cairo\'s private hospital sector — Cleopatra, As-Salam International, Dar Al Fouad, Al Salam (Mohandessin) — operates at near-international clinical standards and provides a premium prescription channel for branded specialty products. Private insurance penetration is growing across corporate employers.' },
+                {
+                  label: 'Private Hospital Sector',
+                  body: 'Cairo\'s private hospital sector — Cleopatra, As-Salam International, Dar Al Fouad, Al Salam (Mohandessin) — operates at near-international clinical standards and provides a premium prescription channel for branded specialty products. Private insurance penetration is growing across corporate employers. For a numbered map of Cairo hospital clusters and payer mix from 2023 through 2026, see our healthcare overview on pharmaceutical companies in Egypt and the Egypt healthcare market research hub.',
+                },
               ].map(({ label, body }) => (
                 <div key={label} className="bg-white rounded-xl border border-border p-5 shadow-sm">
                   <h3 className="text-base font-semibold text-foreground mb-2">{label}</h3>
@@ -199,6 +202,18 @@ const EgyptHealthcareMarketReport = () => {
                 </div>
               ))}
             </div>
+            <p className="text-muted-foreground leading-relaxed mt-6">
+              For Cairo hospital healthcare intelligence aligned to 2023–2026 demand, see our{' '}
+              <Link to="/blog/healthcare-overview-egypt-market-2026" className="text-primary font-medium hover:underline">
+                Egypt healthcare market overview 2026
+              </Link>{' '}
+              and the{' '}
+              <Link to="/healthcare-market-research/egypt" className="text-primary font-medium hover:underline">
+                Egypt healthcare market research
+              </Link>{' '}
+              hub — both connect hospital cluster context with pharmaceutical sizing, EDA registration, and UHI formulary
+              milestones on this report.
+            </p>
           </div>
         </section>
 

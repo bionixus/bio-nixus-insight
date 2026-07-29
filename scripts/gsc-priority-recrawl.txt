@@ -1,4 +1,10 @@
 # GSC URL Inspection priority recrawl list — Global Country MR sprint
+# Updated 2026-07-29 — redirect-loop fix + P0 thin/CTR pages.
+# Submit via Google Search Console → URL Inspection → Request Indexing.
+# Also ping via: npm run indexnow:priority
+
+https://www.bionixus.com/quantitative-healthcare-market-research
+
 # Updated 2026-06-23 — MENA country MR + Dubai cluster + GCC BOFU refresh.
 # Submit via Google Search Console → URL Inspection → Request Indexing.
 # Also ping via: npm run indexnow:priority
