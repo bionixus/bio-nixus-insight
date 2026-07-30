@@ -8,6 +8,8 @@ import { ReportInsightGrid } from '@/components/report-premium';
 import { ReportPremiumSection } from '@/components/report-premium';
 import { buildFAQSchema, buildServicePageSchemas } from '@/lib/seo/schemas';
 import { ServiceMarketReferenceGuide } from '@/components/seo/ServiceMarketReferenceGuide';
+import { ExpandedServiceLandingContent } from '@/components/page/ExpandedServiceLandingContent';
+import { getServiceLandingContent } from '@/data/serviceLandingContent';
 import { SERVICE_EXPANDED_FAQS } from '@/data/seo/serviceExpandedPageContent';
 
 function mergeServiceFaqs(
@@ -174,6 +176,7 @@ export default function ServicePage() {
   const conversionConfig = getHealthcareMarketResearchServiceConfig(titleService, service);
   const faqSectionId = `healthcare-mr-service-${service}-faq`;
   const displayTitle = `${titleService.charAt(0).toUpperCase() + titleService.slice(1)} research service`;
+  const expandedLandingContent = getServiceLandingContent(service);
 
   return (
     <>
@@ -1037,6 +1040,10 @@ export default function ServicePage() {
             </div>
           </ReportPremiumSection>
         )}
+
+        {expandedLandingContent ? (
+          <ExpandedServiceLandingContent content={expandedLandingContent} />
+        ) : null}
 
         <ServiceMarketReferenceGuide serviceSlug={service} />
         <ReportMidPageCta config={conversionConfig} className="my-4" />
