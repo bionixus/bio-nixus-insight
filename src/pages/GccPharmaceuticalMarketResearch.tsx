@@ -17,11 +17,11 @@ import { ReportPremiumHero, ReportPremiumSection } from '@/components/report-pre
 const pageUrl = 'https://www.bionixus.com/gcc-pharmaceutical-market-research';
 const REPORT_CONVERSION = getStandaloneReportConfig('/gcc-pharmaceutical-market-research');
 
-const PAGE_TITLE = 'GCC Biologics & Generic Injectables Market 2026 | BioNixus';
+const PAGE_TITLE = 'GCC Pharmaceutical Market Research 2026 | BioNixus';
 const PAGE_H1 =
   'GCC Biologics & Generic Injectables Market Research 2026 — Precision Medicine & Drug Repurposing';
 const PAGE_DESCRIPTION =
-  'GCC biologics market ($4.8–5.4B), generic injectables ($1.6–1.9B), drug repurposing & Saudi precision medicine — pharmaceutical market research across KSA, UAE, Kuwait, Qatar, Bahrain & Oman.';
+  'GCC pharmaceutical market research 2026: biologics ($4.8–5.4B), generic injectables, drug repurposing & precision medicine across KSA, UAE, Kuwait, Qatar, Bahrain & Oman.';
 
 const FAQ_ITEMS = [
   {
@@ -53,6 +53,16 @@ const FAQ_ITEMS = [
     question: 'Which GCC therapy areas drive the most pharma growth in 2026?',
     answer:
       'In 2026, the fastest-growing GCC therapy areas are oncology, diabetes and obesity (GLP-1 driven), rare disease, immunology, and cardiovascular. Saudi Arabia and the UAE concentrate the bulk of innovative-medicine spend, while Kuwait and Qatar prioritize tendered generic and hospital-administered portfolios.',
+  },
+  {
+    question: 'What is the GCC pharmaceutical market size in 2026?',
+    answer:
+      'The combined GCC pharmaceutical market is estimated at USD 18–22 billion in 2026, with Saudi Arabia contributing roughly 45–50% of regional value, the UAE about 22–25%, and Kuwait, Qatar, Bahrain, and Oman sharing the remainder. Innovative biologics, hospital-administered injectables, and precision-medicine programmes are the fastest-growing subsegments — each requiring country-specific tender, formulary, and physician evidence rather than a single Gulf average.',
+  },
+  {
+    question: 'How do NUPCO tenders affect GCC generic pharmaceuticals and injectables research?',
+    answer:
+      'In Saudi Arabia, NUPCO centralized procurement determines which generic and injectable molecules reach MOH, NGHA, and military networks at scale — SFDA approval alone does not guarantee hospital uptake. BioNixus tracks tender calendars, price corridors, biosimilar switching after award, and account-level share shifts so commercial and access teams can defend originator share or plan biosimilar entry before committee season. UAE MOHAP listing and emirate formulary decisions create parallel curves that must be researched separately from KSA tender outcomes.',
   },
 ];
 
