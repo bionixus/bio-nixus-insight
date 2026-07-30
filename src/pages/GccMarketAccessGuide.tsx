@@ -156,10 +156,10 @@ const GccMarketAccessGuide = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>GCC Pharmaceutical Market Access Guide 2026 | SFDA, MOHAP Registration & Pricing | BioNixus</title>
+        <title>GCC Market Access Guide 2026 | SFDA EES, NUPCO Tenders & MOHAP Pricing | BioNixus</title>
         <meta
           name="description"
-          content="GCC pharmaceutical market access guide 2026: SFDA, MOHAP, DHA, and MOH drug registration timelines, pricing mechanisms, reimbursement models, and regulatory requirements for Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman."
+          content="GCC market access guide 2026: SFDA Economic Evaluation Submission (EES), NUPCO tender calendars, MOHAP/DHA registration timelines, biosimilar formulary evidence, and pricing mechanisms across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman."
         />
         <link rel="canonical" href={citationUrl} />
         <meta property="og:title" content="GCC Pharmaceutical Market Access Guide 2026 — Registration, Pricing & Reimbursement" />
@@ -174,7 +174,7 @@ const GccMarketAccessGuide = () => {
             description: 'Complete guide to pharmaceutical drug registration, pricing, and reimbursement across the 6 GCC countries: Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman.',
             url: citationUrl,
             datePublished: '2026-01-15',
-            dateModified: '2026-06-16',
+            dateModified: '2026-07-09',
             author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
             publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
           })}
@@ -493,6 +493,41 @@ const GccMarketAccessGuide = () => {
                   GCC pharmaceutical market research
                 </Link>{' '}
                 for segment-level biologics and injectables intelligence that feeds access narratives.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SFDA Economic Evaluation Submission */}
+        <section className="section-padding py-12 bg-muted/10" id="sfda-ees">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              SFDA Economic Evaluation Submission (EES) and GCC pharmacoeconomic evidence
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Saudi Arabia&apos;s SFDA Economic Evaluation Submission pathway requires cost-effectiveness
+                and budget-impact evidence for selected innovative medicines before pricing and formulary
+                listing — especially oncology biologics, rare-disease therapies, and high-cost hospital-administered
+                products. Teams that treat EES as a post-registration afterthought often discover that NUPCO
+                tender committees and MOH hospital formulary leads expect locally contextualised models, not
+                EU-origin spreadsheets translated without epidemiology adjustment.
+              </p>
+              <p>
+                BioNixus pairs HEOR modelling with primary payer and physician fieldwork: treatment-pathway
+                mapping, comparator selection aligned to SFDA-approved alternatives, willingness-to-pay proxies,
+                and committee objection research that surfaces the questions economic reviewers ask before
+                recommending listing. UAE emirate formularies apply parallel scrutiny through MOHAP pricing
+                reviews and DHA/DOH hospital committees — the same integrated evidence thread should span KSA
+                EES dossiers and Dubai–Abu Dhabi launch sequencing.
+              </p>
+              <p>
+                For biosimilar and generic injectable portfolios, economic evidence must connect interchangeability
+                confidence, pharmacist substitution rules, and post-tender uptake — see the{' '}
+                <Link to="/gcc-pharmaceutical-market-research" className="text-primary underline font-medium">
+                  GCC pharmaceutical market research
+                </Link>{' '}
+                hub for NUPCO tender intelligence and biosimilar penetration modules.
               </p>
             </div>
           </div>

@@ -48,6 +48,11 @@ const faqItems = [
     answer:
       'Yes. Italian modules can run with comparable cells in Germany, France, Spain, and the UK — and beyond to the USA, Canada, Japan, and other markets — using consistent instruments for global portfolio committees managing EU5 and multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How does AIFA CTS innovation classification affect Italian market research design?',
+    answer:
+      'AIFA classifies products as innovativo, innovativo condizionato, or non-innovativo during CTS benefit assessment — each tier carries distinct CPR negotiation urgency, SSN PFN listing class, and regional SSR adoption timelines. BioNixus designs Italian research programmes backward from the target CTS classification: physician evidence for innovativo claims, managed-entry and registry research for condizionato products, and biosimilar switching studies for non-innovativo comparators.',
+  },
 ];
 
 const jsonLd = [
@@ -313,8 +318,37 @@ export default function HealthcareMarketResearchItaly() {
           </div>
         </section>
 
-        {/* Why choose BioNixus */}
+        {/* AIFA CTS innovation tiers */}
         <section className="section-padding py-10">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              AIFA CTS innovation tiers and research implications for Italian launches
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Italy&apos;s AIFA CTS process assigns an innovation classification that determines reimbursement
+                fund access, CPR price negotiation priority, and the evidence burden regional SSR systems apply
+                after national PFN listing. Innovativo products require differentiated clinical value narratives
+                and physician adoption research at IRCCS centres; innovativo condizionato programmes need
+                registry-ready real-world evidence and managed-entry tracking; non-innovativo and biosimilar
+                portfolios demand switching-intent studies and hospital formulary committee research.
+              </p>
+              <p>
+                BioNixus maps each classification to instrument design — quantitative HCP surveys for adoption
+                forecasting, qualitative payer modules for CPR objection research, and regional SSR formulary
+                studies across Lombardia, Lazio, Veneto, and Emilia-Romagna where PT listing delays persist
+                after national approval. Pair this with{' '}
+                <Link to="/pharmaceutical-market-research-italy" className="text-primary underline font-medium">
+                  Italy pharmaceutical market research
+                </Link>{' '}
+                for therapy-specific AIFA evidence planning.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Why choose BioNixus */}
+        <section className="section-padding py-10 bg-muted/20">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
               Why pharmaceutical teams choose BioNixus in Italy
