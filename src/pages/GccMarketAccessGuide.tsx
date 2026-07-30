@@ -215,6 +215,22 @@ const GccMarketAccessGuide = () => {
                 name: 'What is the GCC centralised registration procedure?',
                 acceptedAnswer: { '@type': 'Answer', text: 'The GCC Centralised Registration Procedure allows pharmaceutical companies to submit a single application reviewed by one GCC country, with the registration recognised by other GCC states. However, individual country-level pricing and import procedures still apply separately.' },
               },
+              {
+                '@type': 'Question',
+                name: 'What is the SFDA Economic Evaluation Submission (EES) and when does it matter?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Saudi Arabia SFDA EES formalises cost-effectiveness and budget-impact expectations for selected high-cost products. Launch teams should treat EES as a parallel workstream to CTD registration, with HEOR assumptions aligned to NUPCO and hospital committee evaluation.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'How do UAE emirate dual pathways and localization incentives affect access research?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'MOHAP federal registration coexists with DHA Dubai and DOH Abu Dhabi formulary gates, so uptake curves differ by emirate. Localization incentives change tender scoring; research must quota emirates separately rather than report a single UAE average.',
+                },
+              },
             ],
           })}
         </script>
@@ -245,7 +261,13 @@ const GccMarketAccessGuide = () => {
               GCC pharmaceutical market access guide 2026 — registration, pricing, and reimbursement
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
-              Everything pharmaceutical companies need to know about drug registration, pricing, and reimbursement across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman. Regulatory authority requirements, timelines, and practical guidance from BioNixus.
+              Everything pharmaceutical companies need to know about drug registration, pricing, and reimbursement across
+              Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman. Regulatory authority requirements, timelines, and
+              practical guidance from BioNixus — start from our{' '}
+              <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">
+                healthcare market research hub
+              </Link>{' '}
+              for regional programme context, then use the country tables below for authority-specific pathways.
             </p>
             <p className="text-sm text-muted-foreground">
               Last updated: February 2026 &middot; Sources: SFDA, MOHAP, DHA, DOH, MOPH, NHRA, MOH regulatory publications
@@ -656,12 +678,53 @@ const GccMarketAccessGuide = () => {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
                 },
+                {
+                  q: 'What is the SFDA Economic Evaluation Submission (EES) and when does it matter?',
+                  a: (
+                    <>
+                      Saudi Arabia&apos;s SFDA Economic Evaluation Submission (EES) pathway formalises cost-effectiveness
+                      and budget-impact expectations for selected high-cost products — especially biologics, oncology,
+                      and specialty medicines entering government channels. Launch teams should treat EES as a parallel
+                      workstream to CTD registration: epidemiology assumptions, comparator choice, and willingness-to-pay
+                      proxies must match how NUPCO and hospital committees later evaluate therapeutic alternatives.
+                      BioNixus pairs HEOR modules with primary physician and payer fieldwork so models are not built in
+                      isolation from real prescribing and tender behaviour. For Saudi-specific access sequencing, see our{' '}
+                      <Link to="/sfda-market-access-strategy-saudi-arabia" className="text-primary underline font-medium">
+                        SFDA market access strategy for Saudi Arabia
+                      </Link>{' '}
+                      guide alongside the{' '}
+                      <Link to="/healthcare-market-research" className="text-primary underline font-medium">
+                        healthcare market research hub
+                      </Link>
+                      .
+                    </>
+                  ),
+                },
+                {
+                  q: 'How do UAE emirate dual pathways and localization incentives affect access research?',
+                  a: (
+                    <>
+                      In the UAE, MOHAP federal registration coexists with DHA (Dubai) and DOH (Abu Dhabi) formulary,
+                      medical-policy, and hospital-committee gates — so the same molecule can follow different uptake
+                      curves by emirate. Research designs must quota Dubai private groups, Abu Dhabi SEHA-linked accounts,
+                      and Northern Emirates MOHAP contexts separately rather than reporting a single national average.
+                      Localization and local manufacturing incentives across the GCC (priority review, preferential
+                      procurement, and Vision 2030-aligned capacity) further change tender scoring and timeline
+                      assumptions; BioNixus maps how authorised-representative, warehouse, and pharmacovigilance
+                      obligations interact with pricing and listing. Pair this guide with{' '}
+                      <Link to="/uae-market-access-research" className="text-primary underline font-medium">
+                        UAE market access research
+                      </Link>{' '}
+                      when emirate dual pathways drive sequencing.
+                    </>
+                  ),
+                },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">
                   <summary className="text-lg font-display font-semibold text-foreground cursor-pointer list-none">
                     {faq.q}
                   </summary>
-                  <p className="text-sm text-muted-foreground leading-relaxed mt-3">{faq.a}</p>
+                  <div className="text-sm text-muted-foreground leading-relaxed mt-3">{faq.a}</div>
                 </details>
               ))}
             </div>

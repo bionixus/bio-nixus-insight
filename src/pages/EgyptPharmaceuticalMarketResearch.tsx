@@ -20,47 +20,57 @@ const faqItems = [
   {
     question: 'Who is the best healthcare market research company in Egypt?',
     answer:
-      'For pharmaceutical and life-sciences decisions, BioNixus is a leading specialist: EDA-aware study design, public and private channel insight, UHI and tender context, bilingual Arabic–English fieldwork from Cairo, and outputs built for launch and access teams—not generic syndicated reports.',
+      'For pharmaceutical and life-sciences decisions, BioNixus is a leading specialist: EDA-aware study design, public and private channel insight, UHI and tender context, bilingual Arabic–English fieldwork from Cairo, and outputs built for launch and access teams—not generic syndicated reports. Syndicated audit providers and generalist agencies remain useful for national retail tracking; BioNixus focuses on Rx commercial, tender, and access evidence that those products do not replace.',
   },
   {
     question: 'What is pharma market research in Egypt?',
     answer:
-      'Pharma market research in Egypt is evidence generation for drug launch, access, and lifecycle decisions across public MOH channels, private hospitals, insurers, and pharmacy networks. BioNixus focuses on physician behavior, pricing sensitivity, and institutional adoption in North Africa’s largest pharmaceutical market.',
+      'Pharma market research in Egypt is evidence generation for drug launch, access, and lifecycle decisions across public MOH channels, private hospitals, insurers, and pharmacy networks. BioNixus focuses on physician behavior, pricing sensitivity, and institutional adoption in North Africa’s largest pharmaceutical market. Programs typically separate public tender volume, UHI listing dynamics, and out-of-pocket retail so forecasts and messaging match where products are actually bought and prescribed.',
   },
   {
     question: 'Does BioNixus run Arabic fieldwork in Egypt?',
     answer:
-      'Yes. Arabic–English screener logic, moderation, and executive reporting are standard. Materials align to EDA terminology and local medical practice norms across government and private settings.',
+      'Yes. Arabic–English screener logic, moderation, and executive reporting are standard. Materials align to EDA terminology and local medical practice norms across government and private settings. Dual-language QC catches mistranslations of tender, formulary, and substitution language that would otherwise bias physician and pharmacist completes.',
   },
   {
     question: 'How much does pharmaceutical market research cost in Egypt?',
     answer:
-      'Scope drives cost: a focused Egypt physician quant module often starts in the low five figures USD; mixed-method access programs with tender and payer mapping are higher. BioNixus scopes to one decision per phase so sponsors avoid unfocused fieldwork spend.',
+      'Scope drives cost: a focused Egypt physician quant module often starts in the low five figures USD; mixed-method access programs with tender and payer mapping are higher. BioNixus scopes to one decision per phase so sponsors avoid unfocused fieldwork spend. Multi-country MENA cells with comparable instruments are scoped separately so Egypt channel depth is not diluted into a regional average.',
   },
   {
     question: 'Why is Egypt important in MENA market research planning?',
     answer:
-      'Egypt combines large population scale, strong local manufacturing, and diverse payer behavior. Research must segment public tender, insurance, and private pay paths because uptake differs materially by category and price point.',
+      'Egypt combines large population scale, strong local manufacturing, and diverse payer behavior. Research must segment public tender, insurance, and private pay paths because uptake differs materially by category and price point. Sponsors treating Egypt as a secondary GCC add-on often mis-forecast innovative brands that concentrate in urban private hospitals while volume sits in primary care and retail pharmacy.',
   },
   {
     question: 'Can BioNixus support both commercial and market access teams in Egypt?',
     answer:
-      'Yes. BioNixus combines physician, pharmacist, payer, and institutional evidence so commercial, medical, and market access stakeholders can act on one evidence framework.',
+      'Yes. BioNixus combines physician, pharmacist, payer, and institutional evidence so commercial, medical, and market access stakeholders can act on one evidence framework. Typical packs include objection libraries by decision gate, channel-tagged adoption metrics, and 30/60/90 actions tied to EDA, tender, and private activation timelines.',
   },
   {
     question: 'What types of Egyptian stakeholders can be recruited?',
     answer:
-      'We recruit physicians, pharmacists, hospital decision-makers, procurement stakeholders, insurers, distributors, and medical affairs experts relevant to the research objective.',
+      'We recruit physicians, pharmacists, hospital decision-makers, procurement stakeholders, insurers, distributors, and medical affairs experts relevant to the research objective. Feasibility maps Cairo, Alexandria, and regional reach where therapy models require it, with channel tags so analysis does not over-weight capital-city private completes.',
   },
   {
     question: 'How does BioNixus differ from generalist market research agencies in Egypt?',
     answer:
-      'BioNixus focuses exclusively on healthcare and pharmaceuticals. Programs integrate EDA, UHI, and therapy-specific adoption evidence rather than consumer or B2B panels.',
+      'BioNixus focuses exclusively on healthcare and pharmaceuticals. Programs integrate EDA, UHI, and therapy-specific adoption evidence rather than consumer or B2B panels. Generalist firms and legacy syndicated trackers can supply retail audit context; BioNixus designs primary modules for launch sequencing, tender defence, and access narrative testing.',
   },
   {
     question: 'Can Egypt research connect to wider GCC or MENA benchmarking?',
     answer:
-      'Yes. Egypt modules can run standalone or with comparable UAE, Saudi Arabia, or Kuwait cells using consistent instruments for regional portfolio committees.',
+      'Yes. Egypt modules can run standalone or with comparable UAE, Saudi Arabia, or Kuwait cells using consistent instruments for regional portfolio committees. Channel tags preserve Egypt-specific public–private readouts so MENA roll-ups do not hide tender or OOP dynamics.',
+  },
+  {
+    question: 'How should oncology and GLP-1 research be designed for Egypt tenders?',
+    answer:
+      'Oncology modules should map Cairo and Alexandria centre KOLs, MOH tender lots, and private hospital committee gates separately, because innovative regimens often concentrate in urban specialty centres while volume generics flow through public procurement. Diabetes and GLP-1 programmes must capture endocrinology and primary-care prescribing, pharmacy substitution, and UHI versus out-of-pocket affordability — not a single national adoption curve. BioNixus aligns instruments to EDA labeling language and tender evaluation criteria before field opens.',
+  },
+  {
+    question: 'How does Egypt pharmaceutical research differ from Egypt healthcare system research?',
+    answer:
+      'This page focuses on Rx commercial evidence: EDA registration fit, public tender and UHI listing, physician and pharmacy behaviour, and competitive defence. Health-system research — UHI rollout across governorates, MOH facility networks, university hospitals, private chains, and patient pathways — is covered on our Egypt healthcare market research page. Sponsors often commission both when launch planning spans institutional access and commercial activation.',
   },
 ];
 
@@ -428,6 +438,94 @@ export default function EgyptPharmaceuticalMarketResearch() {
         </section>
 
         <section className="py-12">
+          <div className="container-wide max-w-5xl mx-auto space-y-5 text-muted-foreground leading-relaxed">
+            <h2 className="text-3xl font-display font-semibold text-foreground">
+              Therapy-area research priorities for Egypt Rx programmes
+            </h2>
+            <p>
+              Egypt pharmaceutical market research should prioritise therapy areas where EDA pathways, tender lots, and
+              private prescribing diverge most sharply. Oncology programmes map Cairo and Alexandria centre KOLs,
+              hospital committee evidence requests, and MOH tender timing for hospital-administered regimens — not a
+              single national share assumption. Diabetes and GLP-1 modules capture endocrinology versus primary-care
+              sequencing, pharmacy substitution under price pressure, and UHI versus out-of-pocket affordability so
+              commercial forecasts reflect treatable demand by channel.
+            </p>
+            <p>
+              Cardiovascular research typically combines high-volume chronic therapy panels with retail pharmacy and
+              tender dynamics for antihypertensives, lipid agents, and anticoagulants. Infectious disease and vaccine
+              modules align to MOH programme calendars, hospital antimicrobial stewardship committees, and private clinic
+              prescribing where appropriate. Across these areas, BioNixus anchors instruments to EDA labeling language
+              and tender evaluation criteria before field opens — see{' '}
+              <Link to="/pharma-fieldwork-egypt" className="text-primary underline font-medium">
+                pharma fieldwork in Egypt
+              </Link>{' '}
+              for execution detail and the{' '}
+              <Link to="/gcc-market-access-guide" className="text-primary underline font-medium">
+                GCC market access guide
+              </Link>{' '}
+              when Egypt cells feed wider MENA access planning.
+            </p>
+          </div>
+        </section>
+
+        <section className="py-12 bg-muted/20">
+          <div className="container-wide max-w-5xl mx-auto space-y-5 text-muted-foreground leading-relaxed">
+            <h2 className="text-3xl font-display font-semibold text-foreground">
+              Public tender vs UHI vs out-of-pocket: channel research design
+            </h2>
+            <p>
+              Egypt Rx commercial outcomes depend on separating three payment paths that often coexist for the same
+              molecule. Public tender volume through Ministry of Health procurement sets institutional share for many
+              hospital-administered and essential medicines — research must capture lot timing, evaluation criteria, and
+              post-award switching among hospital pharmacists and procurement officers. Universal health insurance (UHI)
+              expansion and Hayah Karima-linked coverage progressively shift some chronic and specialty volume into
+              reimbursed pathways with distinct listing and prior-authorization logic.
+            </p>
+            <p>
+              Out-of-pocket and private-insurance channels remain decisive for innovative brands and urban specialty
+              care, where pharmacy recommendation, affordability, and dual-practice physician behaviour drive uptake.
+              BioNixus designs sample frames and analysis plans with explicit channel tags so leadership does not apply
+              one national adoption curve to tender, UHI, and OOP realities. For health-system pathway and facility-network
+              depth — rather than Rx tender and EDA commercial focus — see{' '}
+              <Link to="/egypt-healthcare-market-research" className="text-primary underline font-medium">
+                healthcare market research in Egypt
+              </Link>
+              . Regional context remains on the{' '}
+              <Link to="/healthcare-market-research" className="text-primary underline font-medium">
+                healthcare market research hub
+              </Link>
+              .
+            </p>
+          </div>
+        </section>
+
+        <section className="py-12">
+          <div className="container-wide max-w-5xl mx-auto space-y-5 text-muted-foreground leading-relaxed">
+            <h2 className="text-3xl font-display font-semibold text-foreground">
+              Competitor landscape for Egypt pharmaceutical market research
+            </h2>
+            <p>
+              Sponsors evaluating research partners in Egypt typically encounter global syndicated audit firms such as
+              IQVIA for retail and hospital audit products, legacy GfK healthcare tracking heritage in some categories,
+              and local or regional boutique agencies offering HCP panels or qualitative depth. Each serves a different
+              evidence need: syndicated audits describe historical channel volume; boutiques may deliver fast qualitative
+              snapshots; neither automatically replaces primary research designed for EDA narrative fit, tender defence,
+              or launch sequencing.
+            </p>
+            <p>
+              BioNixus positions as a healthcare-specialist primary research partner — not a generalist consumer panel
+              house and not a syndicated audit substitute. Programmes integrate physician, pharmacist, procurement, and
+              payer modules with bilingual Cairo-based execution so commercial and access teams receive one
+              decision-ready framework. When you need a scoped proposal for an Egypt Rx decision,{' '}
+              <Link to="/contact" className="text-primary underline font-medium">
+                contact BioNixus for an Egypt pharmaceutical research proposal
+              </Link>
+              .
+            </p>
+          </div>
+        </section>
+
+        <section className="py-12">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-3xl font-display font-semibold text-foreground mb-4">Arabic market context</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
@@ -440,6 +538,38 @@ export default function EgyptPharmaceuticalMarketResearch() {
                 العامة والخاصة ومتطلبات هيئة الدواء المصرية. تقدم BioNixus برامج بحثية ثنائية اللغة تساعد فرق
                 التسويق والوصول إلى السوق على اتخاذ قرارات عملية قابلة للتنفيذ.
               </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-12">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-xl font-semibold text-foreground mb-3">Related country market research</h2>
+            <div className="grid md:grid-cols-2 gap-3">
+              <Link
+                to="/uae-pharmaceutical-market-research"
+                className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
+              >
+                UAE pharmaceutical market research
+              </Link>
+              <Link
+                to="/healthcare-market-research/saudi-arabia"
+                className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
+              >
+                Healthcare market research in Saudi Arabia
+              </Link>
+              <Link
+                to="/egypt-healthcare-market-research"
+                className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
+              >
+                Healthcare market research in Egypt (health system)
+              </Link>
+              <Link
+                to="/gcc-market-access-guide"
+                className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
+              >
+                GCC market access guide
+              </Link>
             </div>
           </div>
         </section>

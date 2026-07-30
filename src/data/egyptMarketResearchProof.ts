@@ -17,6 +17,10 @@ export const EGYPT_MR_COMPANY_PROOF = [
     title: 'Proposal-ready in weeks',
     body: 'Typical Egypt modules move from scoped objective to field-ready instruments in 2–4 weeks for priority therapy areas and channel mixes.',
   },
+  {
+    title: 'Channel-tagged Rx commercial design',
+    body: 'Egypt programmes separate public tender, UHI listing, and out-of-pocket pharmacy paths so oncology, diabetes/GLP-1, cardiovascular, and infectious disease forecasts reflect treatable demand by channel—not a single national average.',
+  },
 ] as const;
 
 export const EGYPT_REGULATORY_STEPS = [
