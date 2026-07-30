@@ -48,6 +48,11 @@ const faqItems = [
     answer:
       'Yes. Italian modules can run with comparable cells in Germany, France, Spain, and the UK — and beyond to the USA, Canada, Japan, and other markets — using consistent instruments for global portfolio committees managing EU5 and multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How does AIFA pricing and regional SSR formulary access affect Italian pharma research?',
+    answer:
+      'AIFA\'s CTS innovation classification and CPR price negotiation set the national reimbursement ceiling, but Italy\'s 20 regional SSR systems can impose additional restrictions on top of PFN listing — creating a second access layer in Lombardia, Lazio, Veneto, and Emilia-Romagna. BioNixus maps both national AIFA dynamics and regional payer committees so forecasting, KOL mapping, and launch sequencing reflect where products are actually prescribed, not only where they are nationally approved.',
+  },
 ];
 
 const jsonLd = [
