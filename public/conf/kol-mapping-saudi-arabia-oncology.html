@@ -386,6 +386,69 @@ section { padding: 72px 24px; }
   border-top: 1px solid var(--line-soft);
 }
 .footer-note a { color: var(--blue-accent); text-decoration: none; }
+
+/* FAQ */
+.faq-section details {
+  border-bottom: 1px solid var(--line-soft);
+  padding: 16px 0;
+}
+.faq-section summary {
+  font-family: 'Source Serif 4', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--navy);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.faq-section summary::before {
+  content: '+';
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--blue-accent);
+  flex-shrink: 0;
+  width: 20px;
+  text-align: center;
+}
+.faq-section details[open] summary::before { content: '−'; }
+.faq-section summary::-webkit-details-marker { display: none; }
+.faq-section .faq-answer {
+  margin-top: 12px;
+  padding-left: 32px;
+  font-size: .88rem;
+  color: var(--slate);
+  line-height: 1.7;
+}
+.faq-section .faq-answer a { color: var(--blue-accent); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(26,77,124,.35); }
+
+.del-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .84rem;
+  border: 1px solid rgba(255,255,255,.15);
+  margin-top: 28px;
+}
+.del-table thead { background: rgba(255,255,255,.08); }
+.del-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: .74rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.6);
+}
+.del-table td {
+  padding: 11px 16px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  vertical-align: top;
+  color: rgba(255,255,255,.75);
+}
+.del-table tr:nth-child(even) { background: rgba(255,255,255,.03); }
+.del-table td:first-child { font-weight: 600; color: var(--white); }
 </style>
 </head>
 <body>
@@ -402,12 +465,13 @@ section { padding: 72px 24px; }
   </div>
 </nav>
 
+<main>
 <header class="hero">
   <div class="hero-inner">
     <div class="hero-kicker"><span></span>KOL INTELLIGENCE · SAUDI ARABIA<span></span></div>
     <h1>KOL Mapping for Oncology in Saudi Arabia: Methodology, Data, and Engagement Strategy</h1>
-    <p class="hero-lead">KOL mapping in Saudi Arabia's oncology market is a strategic intelligence programme — not a database search. With fewer than 200 specialist oncologists driving the majority of prescribing and treatment protocol decisions across the Kingdom, identifying the right physicians, understanding their influence networks, and engaging them at the right moment in your launch timeline is the single highest-ROI commercial activity a pharma or biotech team can execute in KSA.</p>
-    <p class="hero-lead" style="margin-bottom:0">BioNixus has delivered KOL mapping and stakeholder engagement programmes across MENA since 2012, from offices in London and Cairo. What distinguishes our approach is the integration of KOL identification with hospital-level and department-level consumption data — connecting influence mapping directly to prescribing reality.</p>
+    <p class="hero-lead">KOL mapping in Saudi Arabia's oncology market is a strategic intelligence programme — not a database search. With fewer than 200 specialist oncologists driving the majority of prescribing and treatment protocol decisions across the Kingdom, identifying the right physicians, understanding their influence networks, and engaging them at the right moment in your launch timeline is among the highest-ROI activities a pharma or biotech team can execute in KSA. This page sits within BioNixus <a href="/healthcare-market-research" style="color:rgba(255,255,255,.9);text-decoration:underline;text-underline-offset:3px">healthcare market research</a> for Saudi Arabia.</p>
+    <p class="hero-lead" style="margin-bottom:0">BioNixus has delivered KOL mapping and stakeholder engagement programmes across MENA since 2012, from offices in London and Cairo. What distinguishes our approach is the integration of KOL identification with hospital-level and department-level consumption data — connecting influence mapping directly to prescribing reality. Country context continues on <a href="/healthcare-market-research/saudi-arabia" style="color:rgba(255,255,255,.9);text-decoration:underline;text-underline-offset:3px">pharma market research in Saudi Arabia</a>.</p>
     <div class="hero-meta">
       <span>Founded 2012</span>
       <span>London · Cairo</span>
@@ -537,12 +601,18 @@ section { padding: 72px 24px; }
   </div>
 </section>
 
-<!-- Oncology Sub-Specialties -->
+<!-- Oncology Sub-Specialties / Tumour-type scoping -->
 <section>
   <div class="container">
     <div class="section-head">
       <div class="section-label">Coverage</div>
-      <div class="section-title">Oncology Sub-Specialties Covered in Saudi Arabia</div>
+      <div class="section-title">Tumour-Type Scoping: Breast, Lung, and Haematologic Oncology</div>
+      <p class="section-sub">Generic “oncology KOL lists” underperform in Saudi Arabia because influence networks diverge sharply by tumour type. BioNixus scopes each mandate to the prescribing communities that actually decide protocols, trial referral, and formulary input for your molecule.</p>
+    </div>
+    <div class="prose">
+      <p><strong>Breast cancer:</strong> The densest female oncology community in the Kingdom, with protocol leadership concentrated at KFSH&amp;RC and KAMC and strong private-sector volume in Jeddah and Riyadh. Mapping typically separates medical oncology, surgical oncology, and radiation oncology influencers, then overlays department-level HER2, CDK, and immuno-oncology consumption where available. Early engagement often focuses on guideline interpreters and tumour-board chairs rather than publication volume alone.</p>
+      <p><strong>Lung cancer:</strong> A faster-evolving specialist set driven by biomarker testing access, CT screening programmes, and immuno-oncology adoption. Influence is less centralised than breast; regional centres in the Eastern Province and Jeddah matter alongside Riyadh. BioNixus scores pulmonology-adjacent referrers separately from medical oncologists when staging and molecular testing pathways shape product choice.</p>
+      <p><strong>Haematologic malignancies:</strong> AML, CLL, lymphoma, and myeloma expertise is highly concentrated — often a small number of KFSH&amp;RC and academic haematologists set national practice tone. Transplant and CAR-T adjacency create additional stakeholder layers (pharmacy, lab, and hospital leadership). Consumption overlays here are especially valuable because a handful of accounts may represent a disproportionate share of category volume.</p>
     </div>
     <table class="tumour-table">
       <thead><tr><th>Tumour Type</th><th>Notes</th></tr></thead>
@@ -559,14 +629,80 @@ section { padding: 72px 24px; }
   </div>
 </section>
 
+<!-- Influence vs volume matrix -->
+<section class="alt-bg">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">Prioritisation</div>
+      <div class="section-title">Influence versus Volume Matrix</div>
+      <p class="section-sub">BioNixus places each physician into a two-axis matrix — scientific and peer influence on one axis, account-linked prescribing or protocol volume on the other — so medical affairs budgets follow commercial reality.</p>
+    </div>
+    <table class="score-table">
+      <thead><tr><th>Quadrant</th><th>Profile</th><th>Engagement implication</th></tr></thead>
+      <tbody>
+        <tr><td>High influence · High volume</td><td>National protocol leaders practising in top-consumption centres</td><td>Priority advisory and early access partners; protect relationship continuity</td></tr>
+        <tr><td>High influence · Lower volume</td><td>Publishers, society leaders, committee members in lower-volume sites</td><td>Critical for guidelines, NUPCO advisory optics, and peer signalling — not always for unit volume</td></tr>
+        <tr><td>Lower influence · High volume</td><td>High-throughput clinicians under-recognised in publications</td><td>Account-level KAM and medical science liaison focus; often missed by database-only maps</td></tr>
+        <tr><td>Emerging</td><td>Rising speakers and trial sub-investigators</td><td>Long-horizon investment; bilingual nurturing before national visibility peaks</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:.88rem;color:var(--slate);line-height:1.65;margin-top:24px">Volume scores draw on BioNixus hospital and pharmacy consumption overlays mapped to institutional affiliation — not claimed personal prescriptions. Influence scores remain multi-dimensional (scientific, peer, commercial, digital). The matrix is the bridge between those layers.</p>
+  </div>
+</section>
+
+<!-- Engagement sequencing -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">Launch Calendar</div>
+      <div class="section-title">Engagement Sequencing Pre- and Post-SFDA and NUPCO</div>
+      <p class="section-sub">Timing matters as much as who you engage. BioNixus sequences KOL activity against regulatory and procurement milestones so scientific exchange supports — rather than precedes without purpose — access decisions. Align with the <a href="/sfda-market-access-strategy-saudi-arabia" style="color:var(--blue-accent);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(26,77,124,.35)">SFDA market access strategy Saudi Arabia</a> calendar.</p>
+    </div>
+    <ul class="del-list">
+      <li><div class="dot"></div><div><strong>Pre-SFDA registration</strong><span>Quiet scientific exchange with Tier 1 protocol leaders; advisory input on unmet need framing; avoid promotional claims. Useful for dossier clinical narrative and early trial-site readiness.</span></div></li>
+      <li><div class="dot"></div><div><strong>Post-SFDA · Pre-NUPCO</strong><span>Expand to formulary-influential physicians and pharmacy directors; validate budget-impact assumptions; prepare peer-endorsed clinical summaries for tender packages.</span></div></li>
+      <li><div class="dot"></div><div><strong>NUPCO review and award window</strong><span>Concentrate on committee-adjacent KOLs and high-volume account champions; synchronise medical affairs with tender commercial messaging.</span></div></li>
+      <li><div class="dot"></div><div><strong>Post-NUPCO implementation</strong><span>Shift to department-level adopters and high-volume / lower-influence clinicians who determine day-to-day utilisation; measure engagement against consumption uptake.</span></div></li>
+      <li><div class="dot"></div><div><strong>NGHA and private parallel tracks</strong><span>Run separate sequencing — these formularies do not move on the MOH/NUPCO clock. Map distinct KOLs rather than recycling the MOH list.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- Bilingual fieldwork -->
+<section class="alt-bg">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">Fieldwork</div>
+      <div class="section-title">Bilingual Fieldwork: Arabic and English</div>
+    </div>
+    <div class="prose">
+      <p>Primary validation interviews and quantitative modules are offered in Arabic or English according to physician preference. Many senior Saudi oncologists operate comfortably in English for scientific discussion, yet Arabic remains essential for nuanced views on patient communication, family decision dynamics, and institutional politics. BioNixus moderators are healthcare-trained bilingual researchers — not general consumer interviewers — which preserves clinical depth and reduces social-desirability bias.</p>
+      <p>Discussion guides are dual-language from the design stage so constructs (for example, “switching confidence” or “protocol influence”) are culturally and clinically equivalent. Recruitment uses BioNixus verified HCP panels across MOH, NGHA, military, and private centres. For survey-heavy modules that complement KOL mapping, see <a href="/physician-survey-saudi-arabia" style="color:var(--blue-accent);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(26,77,124,.35)">physician surveys in Saudi Arabia</a>.</p>
+    </div>
+  </div>
+</section>
+
 <!-- Deliverables -->
 <section class="dark-section">
   <div class="container" style="position:relative;z-index:1">
     <div class="section-head">
       <div class="section-label">Deliverables</div>
       <div class="section-title">Programme Deliverables</div>
+      <p class="section-sub">Every oncology KOL programme closes with decision-ready artefacts — not a static contact sheet.</p>
     </div>
-    <ul class="del-list">
+    <table class="del-table">
+      <thead><tr><th>Deliverable</th><th>Contents</th></tr></thead>
+      <tbody>
+        <tr><td>Scored, tiered KOL list</td><td>Tier 1 national/regional leaders, Tier 2 institutional leaders, Tier 3 emerging — with affiliation and specialty tags</td></tr>
+        <tr><td>Influence × volume matrix</td><td>Quadrant placement with engagement priority and rationale</td></tr>
+        <tr><td>Network visualisation</td><td>Co-authorship, institutional, and mentorship pathways</td></tr>
+        <tr><td>Formulary influence map</td><td>NUPCO, MOH, NGHA, and private P&amp;T relevant roles</td></tr>
+        <tr><td>Primary validation synthesis</td><td>15–25 bilingual interviews — themes, quotes, and implications</td></tr>
+        <tr><td>Engagement roadmap</td><td>Format, message, and timing by SFDA/NUPCO phase and KOL tier</td></tr>
+        <tr><td>Optional refresh</td><td>Annual or pre-tender update when committees or protocols shift</td></tr>
+      </tbody>
+    </table>
+    <ul class="del-list" style="margin-top:32px">
       <li><div class="dot"></div><div><strong style="color:#fff">Scored, tiered KOL list</strong><span style="color:rgba(255,255,255,.6)">Tier 1 (national and regional leaders), Tier 2 (institutional leaders), Tier 3 (emerging)</span></div></li>
       <li><div class="dot"></div><div><strong style="color:#fff">Consumption-validated prioritisation matrix</strong><span style="color:rgba(255,255,255,.6)">Influence score overlaid with actual prescribing volume from hospital and pharmacy data</span></div></li>
       <li><div class="dot"></div><div><strong style="color:#fff">Network visualisation</strong><span style="color:rgba(255,255,255,.6)">Relationships, co-authorship links, institutional connections, and influence pathways</span></div></li>
@@ -574,6 +710,44 @@ section { padding: 72px 24px; }
       <li><div class="dot"></div><div><strong style="color:#fff">Primary validation interview synthesis</strong><span style="color:rgba(255,255,255,.6)">Transcripts and thematic analysis from 15–25 physician interviews</span></div></li>
       <li><div class="dot"></div><div><strong style="color:#fff">Engagement strategy document</strong><span style="color:rgba(255,255,255,.6)">Format, timing, and messaging recommendations by KOL tier and launch phase</span></div></li>
     </ul>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Oncology KOL Mapping — Frequently Asked Questions</h2>
+    </div>
+    <details>
+      <summary>How is BioNixus KOL mapping different from a publication database export?</summary>
+      <p class="faq-answer">We combine multi-source identification with hospital consumption overlays and bilingual primary validation. Publication volume alone misses high-prescribing clinicians and formulary influencers who rarely publish. Start from <a href="/healthcare-market-research">healthcare market research</a> for the wider Saudi evidence stack.</p>
+    </details>
+    <details>
+      <summary>Can you map only one tumour type (for example breast or lung)?</summary>
+      <p class="faq-answer">Yes — tumour-type scoping is the default. Breast, lung, and haematologic programmes use distinct sample frames and scoring weights. Multi-tumour portfolios can share institutional layers while keeping separate influence networks.</p>
+    </details>
+    <details>
+      <summary>How does KOL work connect to SFDA and NUPCO timelines?</summary>
+      <p class="faq-answer">Engagement sequencing is aligned to pre-registration scientific exchange, post-SFDA formulary preparation, tender windows, and post-award utilisation. See the <a href="/sfda-market-access-strategy-saudi-arabia">SFDA market access strategy</a> page for the access calendar.</p>
+    </details>
+    <details>
+      <summary>Are interviews conducted in Arabic?</summary>
+      <p class="faq-answer">Yes. Physicians choose Arabic or English. Guides are designed bilingually so constructs remain equivalent. Quantitative companion work is available via <a href="/physician-survey-saudi-arabia">physician surveys in Saudi Arabia</a>.</p>
+    </details>
+    <details>
+      <summary>Do you cover NGHA and private hospitals as well as MOH?</summary>
+      <p class="faq-answer">Yes. Parallel formulary systems require separate KOL maps. A MOH-only list will miss NGHA and private oncology networks that drive meaningful volume.</p>
+    </details>
+    <details>
+      <summary>What is a typical turnaround for an oncology KOL programme?</summary>
+      <p class="faq-answer">Scoped proposals usually return within 48 hours. Full mapping with primary validation commonly fits an 8–12 week window depending on tumour breadth and interview depth. <a href="/contact">Contact BioNixus</a> to start.</p>
+    </details>
+    <details>
+      <summary>Where can I read country-level Saudi research context?</summary>
+      <p class="faq-answer">See <a href="/healthcare-market-research/saudi-arabia">pharma market research in Saudi Arabia</a> and the hub at <a href="/healthcare-market-research">healthcare market research</a>.</p>
+    </details>
   </div>
 </section>
 
@@ -590,13 +764,17 @@ section { padding: 72px 24px; }
   <div style="max-width:1100px;margin:0 auto;">
     <h2 style="font-family:Georgia,serif;font-size:1.25rem;color:#0C1B33;margin:0 0 16px;">Related BioNixus pages</h2>
     <ul style="list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:12px 28px;font-size:0.98rem;">
+      <li><a href="/healthcare-market-research" style="color:#0C1B33;text-decoration:underline;">Healthcare market research</a></li>
+      <li><a href="/healthcare-market-research/saudi-arabia" style="color:#0C1B33;text-decoration:underline;">Saudi Arabia healthcare market research</a></li>
+      <li><a href="/sfda-market-access-strategy-saudi-arabia" style="color:#0C1B33;text-decoration:underline;">SFDA market access strategy Saudi Arabia</a></li>
       <li><a href="/physician-survey-saudi-arabia" style="color:#0C1B33;text-decoration:underline;">Physician surveys in Saudi Arabia</a></li>
       <li><a href="/saudi-arabia-healthcare-market-report" style="color:#0C1B33;text-decoration:underline;">Saudi Arabia healthcare market report</a></li>
       <li><a href="/healthcare-fieldwork-middle-east" style="color:#0C1B33;text-decoration:underline;">Healthcare fieldwork in the Middle East</a></li>
-      <li><a href="/pharmaceutical-companies-saudi-arabia" style="color:#0C1B33;text-decoration:underline;">Top pharma companies in Saudi Arabia</a></li>
+      <li><a href="/contact" style="color:#0C1B33;text-decoration:underline;">Contact BioNixus</a></li>
     </ul>
   </div>
 </section>
+</main>
 
 <footer class="footer-note">
   <p>© 2026 <a href="/">BioNixus</a>. Healthcare &amp; Pharmaceutical Market Research.</p>
