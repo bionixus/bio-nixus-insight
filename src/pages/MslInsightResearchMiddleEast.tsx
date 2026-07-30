@@ -91,6 +91,7 @@ export default function MslInsightResearchMiddleEast() {
           h1="MSL Insight Research Middle East"
           intro="BioNixus designs and executes MSL insight research programmes for pharma medical affairs teams operating across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, Oman, and Egypt — turning field MA intelligence into structured, actionable outputs for publication planning, IIS prioritisation, and HCP engagement strategy."
           links={[
+            { to: '/healthcare-market-research', label: 'Healthcare market research hub' },
             { to: '/medical-affairs-insight-research-gcc', label: 'Medical affairs insight research GCC' },
             { to: '/kol-mapping-saudi-arabia-oncology', label: 'KOL mapping Saudi Arabia oncology' },
             { to: '/brand-tracking-pharma-gcc', label: 'Brand tracking pharma GCC' },
@@ -98,6 +99,19 @@ export default function MslInsightResearchMiddleEast() {
             { to: '/gcc-hcp-recruitment-market-research', label: 'GCC HCP recruitment market research' },
           ]}
         />
+
+        <section className="section-padding py-2">
+          <div className="container-wide max-w-5xl mx-auto">
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              For regional context and related services, start from our{' '}
+              <Link to="/healthcare-market-research" className="text-primary underline font-medium">
+                healthcare market research hub
+              </Link>{' '}
+              before scoping MSL insight work.
+            </p>
+          </div>
+        </section>
+
         <ExecutiveDecisionBlock
           heading="MSL insight decision framework"
           points={[

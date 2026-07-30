@@ -139,6 +139,18 @@ export default function StrategicServicePage({
           heroImage={pageMedia?.heroImage}
         />
 
+        <div className="section-padding pt-0 pb-2">
+          <div className="container-wide max-w-4xl">
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              For regional context and related services, start from our{' '}
+              <Link to="/healthcare-market-research" className="text-primary underline font-medium">
+                healthcare market research hub
+              </Link>{' '}
+              before scoping this engagement.
+            </p>
+          </div>
+        </div>
+
         {pageMedia?.visualBriefing ? (
           <MediaVisualBriefing
             heading={pageMedia.visualBriefing.heading}
@@ -158,13 +170,6 @@ export default function StrategicServicePage({
         ) : null}
 
         <ReportContentWithAside config={config}>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-8">
-            For regional context and related services, start from our{' '}
-            <Link to="/healthcare-market-research" className="text-primary underline font-medium">
-              healthcare market research hub
-            </Link>{' '}
-            before scoping this engagement.
-          </p>
           {expandedContent ? <ExpandedServiceLandingContent content={expandedContent} /> : null}
 
           {/* Decision framework */}
