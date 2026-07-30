@@ -15,6 +15,7 @@ export default function BrandTrackingPharmaGcc() {
       h1="Brand Tracking Pharma GCC"
       intro="BioNixus designs and delivers longitudinal pharma brand tracking programmes across GCC markets — Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman — capturing the HCP and patient metrics that predict commercial performance. From quarterly competitive intelligence to annual awareness benchmarks, our GCC brand tracking programmes are calibrated to the pace and dynamics of each therapy area."
       links={[
+        { to: '/healthcare-market-research', label: 'Healthcare market research hub', primary: true },
         { to: '/commercial-effectiveness-pharma-middle-east', label: 'Commercial effectiveness pharma Middle East', primary: true },
         { to: '/healthcare-market-research-agency-gcc', label: 'Healthcare market research agency GCC', primary: true },
         { to: '/gcc-hcp-recruitment-market-research', label: 'GCC HCP recruitment market research' },
