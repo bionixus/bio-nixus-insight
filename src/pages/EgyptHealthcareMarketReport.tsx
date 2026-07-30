@@ -16,6 +16,7 @@ import {
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
 import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
+import { EGYPT_CAIRO_HOSPITAL_CLUSTERS } from '@/data/egyptHealthcare2026CairoSeo';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -203,6 +204,36 @@ const EgyptHealthcareMarketReport = () => {
         </section>
 
         <MarketIntelligenceSections marketSlug="egypt" countryName="Egypt" variant="healthcare" />
+
+        <section className="section-padding" id="cairo-hospitals">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              Cairo hospitals healthcare landscape 2023–2026
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Cairo concentrates Egypt&apos;s tertiary referral volume, private hospital premium channels, and UHI
+              formulary decision-making. Pharmaceutical teams planning Egypt launches need hospital-cluster
+              intelligence — not national averages — because prescribing, procurement, and payer mix diverge sharply
+              between public university centres and private groups. BioNixus maps Cairo hospital networks in primary
+              HCP and hospital-pharmacy research programmes.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {EGYPT_CAIRO_HOSPITAL_CLUSTERS.map(({ name, detail }) => (
+                <div key={name} className="bg-white rounded-xl border border-border p-4 shadow-sm">
+                  <p className="font-semibold text-foreground text-sm mb-1">{name}</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-muted-foreground leading-relaxed mt-6">
+              For the full Cairo hospital and UHI policy narrative, see our{' '}
+              <Link to="/blog/healthcare-overview-egypt-market-2026" className="text-primary hover:underline font-medium">
+                Egypt healthcare market overview 2026
+              </Link>
+              .
+            </p>
+          </div>
+        </section>
 
         <section className="section-padding bg-cream-dark" id="therapy-areas">
           <div className="container-wide max-w-4xl mx-auto">

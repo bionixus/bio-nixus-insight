@@ -3,6 +3,9 @@
 # Submit via Google Search Console → URL Inspection → Request Indexing.
 # Also ping via: npm run indexnow:priority
 
+# --- Redirect-loop fix (post-deploy verify) ---
+https://www.bionixus.com/quantitative-healthcare-market-research
+
 # --- Tier 1: Dubai MR cluster (~1.5k impr, 0 clicks) ---
 https://www.bionixus.com/pharmaceutical-market-research-dubai
 https://www.bionixus.com/insights/top-healthcare-market-research-companies-dubai-2026

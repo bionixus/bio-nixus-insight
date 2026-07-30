@@ -280,6 +280,33 @@ export default function BrazilPharmaceuticalMarketResearch() {
             </div>
           </section>
 
+          <section className="section-padding bg-white" id="local-manufacturing">
+            <div className="container-wide max-w-4xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+                Local manufacturing, generics, and competitive dynamics
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Brazil&apos;s pharmaceutical market is shaped by 220+ ANVISA-registered domestic manufacturers that
+                dominate volume in cardiovascular, anti-infectives, and metabolic therapies. Multinationals compete on
+                innovation, specialty portfolios, and private-channel branded uptake — while SUS procurement and CMED
+                price ceilings compress margins on molecules where local generics already satisfy PCDT protocols.
+                BioNixus research maps where branded differentiation still wins (oncology biologics, GLP-1 in
+                supplementary insurance, rare disease) versus where tender dynamics favour lowest-cost suppliers.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                For cross-regional teams comparing Brazil with GCC markets, see our{' '}
+                <Link to="/gcc-pharmaceutical-market-research" className="text-primary hover:underline font-medium">
+                  GCC pharmaceutical market research
+                </Link>{' '}
+                hub and{' '}
+                <Link to="/brazil-healthcare-market-research" className="text-primary hover:underline font-medium">
+                  Brazil healthcare market research
+                </Link>{' '}
+                services page.
+              </p>
+            </div>
+          </section>
+
           {/* Related intelligence */}
           <section className="section-padding bg-white" id="related-intelligence">
             <div className="container-wide max-w-4xl mx-auto">
