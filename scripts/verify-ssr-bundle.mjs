@@ -21,6 +21,7 @@ const CRITICAL_PATHS = [
   '/gcc-medical-devices-market-report',
   '/bionixus-market-research-middle-east',
   '/gcc-pharmaceutical-market-research',
+  '/quantitative-healthcare-market-research',
   '/saudi-arabia-medical-devices-market-report',
 ];
 
