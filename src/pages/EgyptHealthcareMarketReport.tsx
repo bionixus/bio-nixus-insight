@@ -15,7 +15,7 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
-import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -122,6 +122,33 @@ const EgyptHealthcareMarketReport = () => {
             { value: '~9%', label: 'Pharma CAGR 2026–2030' },
           ]}
         />
+
+        <section className="section-padding py-10 bg-background border-b border-border/60">
+          <div className="container-wide max-w-5xl">
+            <GeoLLMAnswerBlock
+              question="What is the Egypt healthcare and pharmaceutical market size in 2026?"
+              answer="BioNixus estimates Egypt's healthcare market at USD 25–30 billion and the pharmaceutical market at USD 4.5–5.5 billion in 2026 — Africa's largest healthcare market by volume. Universal Health Insurance (UHI) formulary expansion, EDA registration pathways, and Cairo-based hospital networks drive growth across oncology, diabetes, and specialty biologics."
+              points={[
+                {
+                  title: 'UHI formulary access',
+                  description:
+                    'Products must be listed on the UHI positive list to reach enrolled governorates — BioNixus tracks formulary updates and reimbursement conditions by therapy area.',
+                },
+                {
+                  title: 'EDA registration',
+                  description:
+                    'The Egyptian Drug Authority reviews CTD dossiers for NCEs, biologics, and generics with controlled pricing — timelines range from 12 months (generics) to 36 months (innovative medicines).',
+                },
+                {
+                  title: 'Cairo hospital intelligence',
+                  description:
+                    'Primary HCP and payer research covers Cairo University Hospital, NCI, Ain Shams, Cleopatra, and private chains — see our Egypt healthcare market overview for hospital-level context.',
+                },
+              ]}
+              summary="For Cairo hospital networks and payer dynamics, see the Egypt healthcare market overview blog and our Egypt pharmaceutical market research execution page."
+            />
+          </div>
+        </section>
 
         <ReportContentWithAside config={REPORT_CONVERSION}>
         <section className="section-padding bg-cream-dark" id="executive-summary">

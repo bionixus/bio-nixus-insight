@@ -48,6 +48,11 @@ const faqItems = [
     answer:
       'Yes. Italian modules can run with comparable cells in Germany, France, Spain, and the UK — and beyond to the USA, Canada, Japan, and other markets — using consistent instruments for global portfolio committees managing EU5 and multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How does BioNixus support AIFA CTS and CPR market access research in Italy?',
+    answer:
+      'BioNixus designs payer and physician research aligned to AIFA\'s CTS innovation classification and CPR price negotiation milestones — mapping which clinical endpoints, comparator choices, and budget-impact narratives resonate with AIFA reviewers and regional SSR formulary committees. Programmes typically combine KOL advisory boards at IRCCS reference centres, pharmacist and hospital procurement interviews, and SSN/SSR restriction tracking so launch teams understand both national PFN listing requirements and the second-layer regional access barriers that delay uptake after AIFA approval.',
+  },
 ];
 
 const jsonLd = [
