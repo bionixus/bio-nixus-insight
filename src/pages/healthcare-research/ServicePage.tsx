@@ -143,6 +143,7 @@ export default function ServicePage() {
   const copy =
     SERVICE_COPY[service] ||
     'Service-specific healthcare market research programs for pharmaceutical strategy and execution decisions.';
+  const expandedLandingContent = getServiceLandingContent(service);
   const serviceFaqs = mergeServiceFaqs(service, [
     {
       question: `What outcomes does the ${titleService} service support?`,
@@ -159,6 +160,7 @@ export default function ServicePage() {
       answer:
         'Yes. Service-specific programs are often integrated into broader quantitative and qualitative research plans to provide both measurable confidence and deeper decision rationale.',
     },
+    ...(expandedLandingContent?.faqs ?? []),
   ]);
   const jsonLd = [...buildServicePageSchemas(service, copy), buildFAQSchema(serviceFaqs)];
   const content = SERVICE_SECTIONS[service] || {
@@ -176,7 +178,6 @@ export default function ServicePage() {
   const conversionConfig = getHealthcareMarketResearchServiceConfig(titleService, service);
   const faqSectionId = `healthcare-mr-service-${service}-faq`;
   const displayTitle = `${titleService.charAt(0).toUpperCase() + titleService.slice(1)} research service`;
-  const expandedLandingContent = getServiceLandingContent(service);
 
   return (
     <>
