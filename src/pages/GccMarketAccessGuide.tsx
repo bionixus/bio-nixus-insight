@@ -159,7 +159,7 @@ const GccMarketAccessGuide = () => {
         <title>GCC Pharmaceutical Market Access Guide 2026 | SFDA, MOHAP Registration & Pricing | BioNixus</title>
         <meta
           name="description"
-          content="GCC pharmaceutical market access guide 2026: SFDA, MOHAP, DHA, and MOH drug registration timelines, pricing mechanisms, reimbursement models, and regulatory requirements for Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman."
+          content="GCC pharmaceutical market access 2026: SFDA EES cost-effectiveness, MOHAP/DHA registration, NUPCO tender timelines, biosimilar HTA evidence, and pricing for Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman."
         />
         <link rel="canonical" href={citationUrl} />
         <meta property="og:title" content="GCC Pharmaceutical Market Access Guide 2026 — Registration, Pricing & Reimbursement" />
@@ -624,6 +624,10 @@ const GccMarketAccessGuide = () => {
             </h2>
             <div className="space-y-4">
               {[
+                {
+                  q: 'What is the SFDA Economic Evaluation Submission (EES) pathway?',
+                  a: 'SFDA EES is Saudi Arabia\'s formal pharmacoeconomic review for selected innovative and high-cost medicines. Manufacturers submit cost-effectiveness models, budget-impact forecasts, and comparator evidence alongside the clinical dossier. Committees evaluate incremental cost per QALY, local epidemiology, and affordability against MOH and NUPCO procurement budgets. BioNixus designs HEOR modules and payer objection research aligned to EES templates so access teams do not commission disconnected economic models and physician surveys.',
+                },
                 {
                   q: 'How long does pharmaceutical registration take in Saudi Arabia (SFDA)?',
                   a: 'SFDA registration typically takes 8–18 months depending on product type: 8–12 months for generics (ANDA), 12–18 months for new drugs (NDA), and potentially longer for biologics and biosimilars. A local authorised representative (scientific office) is mandatory for foreign companies.',

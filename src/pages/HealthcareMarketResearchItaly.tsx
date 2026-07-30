@@ -48,6 +48,11 @@ const faqItems = [
     answer:
       'Yes. Italian modules can run with comparable cells in Germany, France, Spain, and the UK — and beyond to the USA, Canada, Japan, and other markets — using consistent instruments for global portfolio committees managing EU5 and multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How does AIFA CTS innovation classification affect Italian market research design?',
+    answer:
+      'AIFA CTS assigns innovativo, innovativo condizionato, or non-innovativo status — each with distinct CPR negotiation urgency, SSN PFN listing class, and evidence requirements. BioNixus aligns HCP surveys, payer depth interviews, and HEOR modules to the CTS pathway your asset is targeting, including regional SSR PT adoption research in Lombardia, Lazio, and Veneto where second-layer formulary barriers persist after national listing.',
+  },
 ];
 
 const jsonLd = [
