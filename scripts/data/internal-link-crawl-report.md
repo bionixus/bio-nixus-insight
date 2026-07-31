@@ -1,32 +1,27 @@
 # Internal Link Crawl Report
-Generated: 2026-07-25T08:14:20.864Z
+Generated: 2026-07-31T10:21:25.873Z
 - Sitemap pages: 854
 - Crawled via SSR: 854
 - Sanity-driven pages crawled (per-post accuracy caveat applies): 136
 - Failed crawls (errored during render): 0
 - Indexable pages checked for inbound links: 854
-- **Orphan pages (0 inbound internal links): 72**
-- **Pages with <3 inbound internal links: 129**
+- **Orphan pages (0 inbound internal links): 59**
+- **Pages with <3 inbound internal links: 142**
 - Possibly-broken internal link targets: 0
 ## Orphan pages
 - /ar/insights/top-market-research-companies-kuwait-2026
 - /bionixus-industries/insights/financial-services-market-research-egypt-2026
 - /bionixus-industries/insights/online-market-research-social-listening-brand-growth-2026
-- /blog/adstiladrin-nadofaragene-nmibc-ema-chmp-2026
 - /blog/ai-drug-discovery-machine-learning-pharma-2026
 - /blog/amnog-frueher-nutzen-marktzugang-2026
 - /blog/awiqli-insulin-icodec-weekly-fda-2026
 - /blog/baxfendy-baxdrostat-hypertension-fda-2026
 - /blog/beqalzi-sonrotoclax-mcl-fda-2026
 - /blog/camizestrant-pdufa-extension-astrazeneca-2026
-- /blog/cenrifki-tolebrutinib-nrspms-ema-chmp-2026
 - /blog/datroway-datopotamab-tnbc-fda-approval-2026
 - /blog/decnupaz-pivekimab-bpdcn-fda-approval-2026
 - /blog/digital-therapeutics-regulation-mena-markets
-- /blog/eli-lilly-vaccine-acquisitions-curevo-limmatech-2026
 - /blog/ema-hta-evidence-requirements-europe-2026
-- /blog/ema-orphan-drug-designation-guide-europe-2026
-- /blog/european-hta-regulation-2026-pharmaceutical-market-access-guide
 - /blog/evaluation-economique-has-france-2026
 - /blog/farmacevticheskie-issledovaniya-rynka-2026
 - /blog/farmacoeconomia-acceso-mercado-espana-2026
@@ -34,7 +29,6 @@ Generated: 2026-07-25T08:14:20.864Z
 - /blog/flovent-hfa-fluticasone-generic-fda-2026
 - /blog/foundayo-orforglipron-fda-approval-2026
 - /blog/gcc-clinical-trials-market-2026
-- /blog/gcc-pharmacy-market-2026
 - /blog/heor-consulting-saudi-arabia-ar-2026
 - /blog/hepcludex-bulevirtide-hdv-fda-approval-2026
 - /blog/icotyde-icotrokinra-psoriasis-fda-2026
@@ -47,7 +41,6 @@ Generated: 2026-07-25T08:14:20.864Z
 - /blog/kresladi-marnetegragene-lad1-fda-2026
 - /blog/langlara-insulin-glargine-biosimilar-fda-2026
 - /blog/lifyorli-relacorilant-ovarian-cancer-fda-2026
-- /blog/lynarvo-linerixibat-pbc-fda-2026
 - /blog/market-access-research-uae-2026
 - /blog/nmpa-pharmaceutical-market-research-china-2026
 - /blog/obesity-pbm-coverage-lilly-portfolio-q2-2026
@@ -55,14 +48,9 @@ Generated: 2026-07-25T08:14:20.864Z
 - /blog/pesquisa-mercado-farmaceutico-brasil-anvisa-2026
 - /blog/pharmaceutical-market-research-china-2026
 - /blog/pharmaceutical-market-research-methods-mena
-- /blog/pharmacies-saudi-arabia-market-research-marketing-automation
-- /blog/pharmacoeconomics-consulting-europe-2026
 - /blog/pharmamarktforschung-deutschland-2026
-- /blog/quantitative-market-research-and-market-access-impact
 - /blog/real-world-evidence-fda-guide-pharmaceutical-2026
-- /blog/redemplo-plozasiran-fcs-ema-chmp-2026
 - /blog/roche-pathai-acquisition-digital-pathology-2026
-- /blog/saudi-arabia-gcc-pharmaceutical-market-guide-2026
 - /blog/saudi-arabia-healthcare-market-2026
 - /blog/saudi-arabia-pharmaceutical-market-research-2026-ar
 - /blog/saudi-healthcare-market-research-guide-ar-2026
@@ -70,7 +58,6 @@ Generated: 2026-07-25T08:14:20.864Z
 - /blog/souk-adwiya-saudiya-dalil-shamel-rueya-2030-2026
 - /blog/tecartus-brexucabtagene-mcl-full-approval-2026
 - /blog/top-healthcare-market-research-companies-2026
-- /blog/top-healthcare-market-research-companies-kuwait
 - /blog/top-healthcare-market-research-companies-uae
 - /blog/top-healthcare-market-research-firms-mena-europe
 - /blog/top-healthcare-market-research-firms-saudi-arabia
@@ -86,9 +73,22 @@ Generated: 2026-07-25T08:14:20.864Z
 - /ar/market-research-egypt — 1 inbound (from: /sitemap)
 - /ar/market-research-kuwait — 1 inbound (from: /sitemap)
 - /ar/market-research-saudi — 1 inbound (from: /sitemap)
+- /blog/adstiladrin-nadofaragene-nmibc-ema-chmp-2026 — 1 inbound (from: /saudi-arabia-healthcare-market-report)
+- /blog/cenrifki-tolebrutinib-nrspms-ema-chmp-2026 — 1 inbound (from: /saudi-arabia-healthcare-market-report)
+- /blog/eli-lilly-vaccine-acquisitions-curevo-limmatech-2026 — 1 inbound (from: /saudi-arabia-healthcare-market-report)
+- /blog/ema-orphan-drug-designation-guide-europe-2026 — 1 inbound (from: /heor-consulting)
+- /blog/european-hta-regulation-2026-pharmaceutical-market-access-guide — 1 inbound (from: /heor-consulting)
+- /blog/gcc-pharmacy-market-2026 — 1 inbound (from: /saudi-arabia-healthcare-market-report)
+- /blog/lynarvo-linerixibat-pbc-fda-2026 — 1 inbound (from: /saudi-arabia-healthcare-market-report)
+- /blog/pharmacies-saudi-arabia-market-research-marketing-automation — 1 inbound (from: /pharmacies-saudi-arabia-marketing)
+- /blog/pharmacoeconomics-consulting-europe-2026 — 1 inbound (from: /heor-consulting)
 - /blog/quantitative-healthcare-market-research-ksa — 1 inbound (from: /quantitative-healthcare-market-research)
 - /blog/quantitative-healthcare-market-research-uae — 1 inbound (from: /quantitative-healthcare-market-research)
+- /blog/quantitative-market-research-and-market-access-impact — 1 inbound (from: /quantitative-healthcare-market-research)
+- /blog/redemplo-plozasiran-fcs-ema-chmp-2026 — 1 inbound (from: /saudi-arabia-healthcare-market-report)
+- /blog/saudi-arabia-gcc-pharmaceutical-market-guide-2026 — 1 inbound (from: /saudi-arabia-healthcare-market-report)
 - /blog/saudi-arabia-in-vitro-diagnostics-market — 1 inbound (from: /gcc-medical-devices-market-report)
+- /blog/top-healthcare-market-research-companies-kuwait — 1 inbound (from: /healthcare-market-research-kuwait)
 - /clinical-diagnostics-proposal-request — 1 inbound (from: /clinical-diagnostics-market-research)
 - /es/insights/top-empresas-investigacion-mercado-argentina-2026 — 1 inbound (from: /es/insights/top-empresas-investigacion-mercado-salud-argentina-2026)
 - /es/insights/top-empresas-investigacion-mercado-salud-argentina-2026 — 1 inbound (from: /es/insights/top-empresas-investigacion-mercado-argentina-2026)

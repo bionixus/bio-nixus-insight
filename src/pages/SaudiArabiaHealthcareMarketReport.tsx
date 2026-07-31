@@ -233,6 +233,37 @@ const SaudiArabiaHealthcareMarketReport = () => {
           </div>
         </section>
 
+        <section className="section-padding" id="recent-briefings">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              Recent SFDA & NUPCO Access Briefings
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              BioNixus tracks new EMA/FDA drug approvals for their Saudi Arabia SFDA registration and NUPCO
+              formulary access implications, alongside the wider GCC pharmaceutical and pharmacy landscape.
+            </p>
+            <div className="grid md:grid-cols-2 gap-3">
+              {[
+                { to: '/blog/adstiladrin-nadofaragene-nmibc-ema-chmp-2026', label: 'Adstiladrin (nadofaragene firadenovec): SFDA & NUPCO Access' },
+                { to: '/blog/cenrifki-tolebrutinib-nrspms-ema-chmp-2026', label: 'Cenrifki (tolebrutinib): SFDA & NUPCO Access' },
+                { to: '/blog/lynarvo-linerixibat-pbc-fda-2026', label: 'Lynarvo (linerixibat): SFDA & NUPCO Access' },
+                { to: '/blog/redemplo-plozasiran-fcs-ema-chmp-2026', label: 'Redemplo (plozasiran): SFDA & NUPCO Access' },
+                { to: '/blog/eli-lilly-vaccine-acquisitions-curevo-limmatech-2026', label: "Eli Lilly's Vaccine Platform: SFDA & NUPCO Access" },
+                { to: '/blog/gcc-pharmacy-market-2026', label: 'GCC Pharmacy Market 2026' },
+                { to: '/blog/saudi-arabia-gcc-pharmaceutical-market-guide-2026', label: 'Saudi Arabia & GCC Pharmaceutical Market Guide' },
+              ].map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <FAQSection sectionId={FAQ_SECTION_ID} title="Saudi Arabia healthcare market 2026 — pharma, SFDA, NUPCO, Vision 2030, and commercial strategy FAQ" items={REPORT_FAQ_ITEMS} className="bg-muted/30" />
         </ReportContentWithAside>
         <ReportConsultationBand config={REPORT_CONVERSION} />

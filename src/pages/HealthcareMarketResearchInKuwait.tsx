@@ -348,6 +348,7 @@ export default function HealthcareMarketResearchInKuwait() {
                 { to: '/kuwait-market-access-research', label: 'Kuwait market access research' },
                 { to: '/market-research-kuwait', label: 'Healthcare & pharma market research Kuwait (hub)' },
                 { to: '/insights/top-healthcare-market-research-companies-kuwait-2026', label: 'Top healthcare market research companies in Kuwait (2026)' },
+                { to: '/blog/top-healthcare-market-research-companies-kuwait', label: 'Top Kuwait healthcare market research companies (briefing)' },
                 { to: '/healthcare-market-research-in-saudi-arabia', label: 'Healthcare market research in Saudi Arabia' },
               ].map((link) => (
                 <Link

@@ -1,13 +1,13 @@
 {
-  "scannedAt": "2026-07-25T08:14:20.864Z",
+  "scannedAt": "2026-07-31T10:21:25.873Z",
   "counts": {
     "sitemapPages": 854,
     "crawled": 854,
     "sanityDrivenPages": 136,
     "failedCrawls": 0,
     "indexablePages": 854,
-    "orphans": 72,
-    "lowLink": 129,
+    "orphans": 59,
+    "lowLink": 142,
     "possiblyBroken": 0
   },
   "orphans": [
@@ -21,10 +21,6 @@
     },
     {
       "path": "/bionixus-industries/insights/online-market-research-social-listening-brand-growth-2026",
-      "inbound": 0
-    },
-    {
-      "path": "/blog/adstiladrin-nadofaragene-nmibc-ema-chmp-2026",
       "inbound": 0
     },
     {
@@ -52,10 +48,6 @@
       "inbound": 0
     },
     {
-      "path": "/blog/cenrifki-tolebrutinib-nrspms-ema-chmp-2026",
-      "inbound": 0
-    },
-    {
       "path": "/blog/datroway-datopotamab-tnbc-fda-approval-2026",
       "inbound": 0
     },
@@ -68,19 +60,7 @@
       "inbound": 0
     },
     {
-      "path": "/blog/eli-lilly-vaccine-acquisitions-curevo-limmatech-2026",
-      "inbound": 0
-    },
-    {
       "path": "/blog/ema-hta-evidence-requirements-europe-2026",
-      "inbound": 0
-    },
-    {
-      "path": "/blog/ema-orphan-drug-designation-guide-europe-2026",
-      "inbound": 0
-    },
-    {
-      "path": "/blog/european-hta-regulation-2026-pharmaceutical-market-access-guide",
       "inbound": 0
     },
     {
@@ -109,10 +89,6 @@
     },
     {
       "path": "/blog/gcc-clinical-trials-market-2026",
-      "inbound": 0
-    },
-    {
-      "path": "/blog/gcc-pharmacy-market-2026",
       "inbound": 0
     },
     {
@@ -164,10 +140,6 @@
       "inbound": 0
     },
     {
-      "path": "/blog/lynarvo-linerixibat-pbc-fda-2026",
-      "inbound": 0
-    },
-    {
       "path": "/blog/market-access-research-uae-2026",
       "inbound": 0
     },
@@ -196,19 +168,7 @@
       "inbound": 0
     },
     {
-      "path": "/blog/pharmacies-saudi-arabia-market-research-marketing-automation",
-      "inbound": 0
-    },
-    {
-      "path": "/blog/pharmacoeconomics-consulting-europe-2026",
-      "inbound": 0
-    },
-    {
       "path": "/blog/pharmamarktforschung-deutschland-2026",
-      "inbound": 0
-    },
-    {
-      "path": "/blog/quantitative-market-research-and-market-access-impact",
       "inbound": 0
     },
     {
@@ -216,15 +176,7 @@
       "inbound": 0
     },
     {
-      "path": "/blog/redemplo-plozasiran-fcs-ema-chmp-2026",
-      "inbound": 0
-    },
-    {
       "path": "/blog/roche-pathai-acquisition-digital-pathology-2026",
-      "inbound": 0
-    },
-    {
-      "path": "/blog/saudi-arabia-gcc-pharmaceutical-market-guide-2026",
       "inbound": 0
     },
     {
@@ -253,10 +205,6 @@
     },
     {
       "path": "/blog/top-healthcare-market-research-companies-2026",
-      "inbound": 0
-    },
-    {
-      "path": "/blog/top-healthcare-market-research-companies-kuwait",
       "inbound": 0
     },
     {
@@ -330,6 +278,69 @@
       ]
     },
     {
+      "path": "/blog/adstiladrin-nadofaragene-nmibc-ema-chmp-2026",
+      "inbound": 1,
+      "from": [
+        "/saudi-arabia-healthcare-market-report"
+      ]
+    },
+    {
+      "path": "/blog/cenrifki-tolebrutinib-nrspms-ema-chmp-2026",
+      "inbound": 1,
+      "from": [
+        "/saudi-arabia-healthcare-market-report"
+      ]
+    },
+    {
+      "path": "/blog/eli-lilly-vaccine-acquisitions-curevo-limmatech-2026",
+      "inbound": 1,
+      "from": [
+        "/saudi-arabia-healthcare-market-report"
+      ]
+    },
+    {
+      "path": "/blog/ema-orphan-drug-designation-guide-europe-2026",
+      "inbound": 1,
+      "from": [
+        "/heor-consulting"
+      ]
+    },
+    {
+      "path": "/blog/european-hta-regulation-2026-pharmaceutical-market-access-guide",
+      "inbound": 1,
+      "from": [
+        "/heor-consulting"
+      ]
+    },
+    {
+      "path": "/blog/gcc-pharmacy-market-2026",
+      "inbound": 1,
+      "from": [
+        "/saudi-arabia-healthcare-market-report"
+      ]
+    },
+    {
+      "path": "/blog/lynarvo-linerixibat-pbc-fda-2026",
+      "inbound": 1,
+      "from": [
+        "/saudi-arabia-healthcare-market-report"
+      ]
+    },
+    {
+      "path": "/blog/pharmacies-saudi-arabia-market-research-marketing-automation",
+      "inbound": 1,
+      "from": [
+        "/pharmacies-saudi-arabia-marketing"
+      ]
+    },
+    {
+      "path": "/blog/pharmacoeconomics-consulting-europe-2026",
+      "inbound": 1,
+      "from": [
+        "/heor-consulting"
+      ]
+    },
+    {
       "path": "/blog/quantitative-healthcare-market-research-ksa",
       "inbound": 1,
       "from": [
@@ -344,10 +355,38 @@
       ]
     },
     {
+      "path": "/blog/quantitative-market-research-and-market-access-impact",
+      "inbound": 1,
+      "from": [
+        "/quantitative-healthcare-market-research"
+      ]
+    },
+    {
+      "path": "/blog/redemplo-plozasiran-fcs-ema-chmp-2026",
+      "inbound": 1,
+      "from": [
+        "/saudi-arabia-healthcare-market-report"
+      ]
+    },
+    {
+      "path": "/blog/saudi-arabia-gcc-pharmaceutical-market-guide-2026",
+      "inbound": 1,
+      "from": [
+        "/saudi-arabia-healthcare-market-report"
+      ]
+    },
+    {
       "path": "/blog/saudi-arabia-in-vitro-diagnostics-market",
       "inbound": 1,
       "from": [
         "/gcc-medical-devices-market-report"
+      ]
+    },
+    {
+      "path": "/blog/top-healthcare-market-research-companies-kuwait",
+      "inbound": 1,
+      "from": [
+        "/healthcare-market-research-kuwait"
       ]
     },
     {
