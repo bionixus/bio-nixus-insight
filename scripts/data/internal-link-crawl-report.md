@@ -1,12 +1,12 @@
 # Internal Link Crawl Report
-Generated: 2026-07-31T10:21:25.873Z
+Generated: 2026-07-31T10:30:51.476Z
 - Sitemap pages: 854
 - Crawled via SSR: 854
 - Sanity-driven pages crawled (per-post accuracy caveat applies): 136
 - Failed crawls (errored during render): 0
 - Indexable pages checked for inbound links: 854
-- **Orphan pages (0 inbound internal links): 59**
-- **Pages with <3 inbound internal links: 142**
+- **Orphan pages (0 inbound internal links): 60**
+- **Pages with <3 inbound internal links: 141**
 - Possibly-broken internal link targets: 0
 ## Orphan pages
 - /ar/insights/top-market-research-companies-kuwait-2026
@@ -67,7 +67,8 @@ Generated: 2026-07-31T10:21:25.873Z
 - /blog/vijoice-alpelisib-pros-ema-chmp-2026
 - /blog/zepbound-kwikpen-goodrx-self-pay-2026
 - /blog/zepzelca-lurbinectedin-sclc-ema-chmp-2026
-- /zh/blog
+- /pt/market-research-healthcare
+- /ru/market-research-healthcare
 ## Low inbound-link pages (<3)
 - /ar/insights/top-market-research-companies-qatar-2026 — 1 inbound (from: /ar/insights/top-market-research-companies-kuwait-2026)
 - /ar/market-research-egypt — 1 inbound (from: /sitemap)
@@ -136,8 +137,6 @@ Generated: 2026-07-31T10:21:25.873Z
 - /pharmaceutical-market-research-qatar — 1 inbound (from: /healthcare-market-research-qatar)
 - /pt/insights/top-empresas-pesquisa-mercado-brasil-2026 — 1 inbound (from: /pt/insights/top-market-research-companies-brasil-2026)
 - /pt/insights/top-market-research-companies-brasil-2026 — 1 inbound (from: /pt/insights/top-empresas-pesquisa-mercado-saude-brasil-2026)
-- /pt/market-research-healthcare — 1 inbound (from: /pt)
-- /ru/market-research-healthcare — 1 inbound (from: /ru)
 - /specialist-physician-panel-uae — 1 inbound (from: /healthcare-market-research/services/physician-insights)
 - /ar/abhath-suq-adwiyah-saudi-arabia — 2 inbound (from: /ar/insights/top-sharaket-abhath-alsuq-alsaudia-2026, /ar/insights/top-sharaket-abhath-sihha-alsaudia-2026)
 - /ar/insights/top-market-research-companies-egypt-2026 — 2 inbound (from: /ar, /sitemap)
@@ -211,5 +210,6 @@ Generated: 2026-07-31T10:21:25.873Z
 - /pt/pesquisa-mercado-farmaceutico-brasil — 2 inbound (from: /pt/insights/top-empresas-pesquisa-mercado-brasil-2026, /pt/pesquisa-mercado-saude-brasil)
 - /pt/pesquisa-mercado-saude-brasil — 2 inbound (from: /brazil-healthcare-market-research, /pt/insights/top-empresas-pesquisa-mercado-brasil-2026)
 - /respiratory-market-access-gcc — 2 inbound (from: /gcc-market-access-guide, /healthcare-market-research/therapy/respiratory)
+- /zh/market-research-healthcare — 2 inbound (from: /global-websites/china, /sitemap)
 ## Possibly-broken internal links
 _None found among crawled, non-Sanity targets._

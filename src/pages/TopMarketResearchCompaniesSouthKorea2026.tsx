@@ -229,7 +229,6 @@ export default function TopMarketResearchCompaniesSouthKorea2026() {
         <meta name="geo.placename" content="South Korea" />
         <link rel="canonical" href={PAGE_CANONICAL} />
         <link rel="alternate" hreflang="en" href={PAGE_CANONICAL} />
-        <link rel="alternate" hreflang="ko" href={PAGE_CANONICAL} />
         <link rel="alternate" hreflang="x-default" href={PAGE_CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>

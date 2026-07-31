@@ -250,7 +250,6 @@ export default function TopHealthcareMarketResearchCompaniesItaly2026() {
         <meta name="geo.region" content="IT" />
         <meta name="geo.placename" content="Italy" />
         <link rel="canonical" href={PAGE_CANONICAL} />
-        <link rel="alternate" hreflang="it" href={PAGE_CANONICAL} />
         <link rel="alternate" hreflang="en" href={PAGE_CANONICAL} />
         <link rel="alternate" hreflang="x-default" href={PAGE_CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>

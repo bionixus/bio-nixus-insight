@@ -1,13 +1,13 @@
 {
-  "scannedAt": "2026-07-31T10:21:25.873Z",
+  "scannedAt": "2026-07-31T10:30:51.476Z",
   "counts": {
     "sitemapPages": 854,
     "crawled": 854,
     "sanityDrivenPages": 136,
     "failedCrawls": 0,
     "indexablePages": 854,
-    "orphans": 59,
-    "lowLink": 142,
+    "orphans": 60,
+    "lowLink": 141,
     "possiblyBroken": 0
   },
   "orphans": [
@@ -244,7 +244,11 @@
       "inbound": 0
     },
     {
-      "path": "/zh/blog",
+      "path": "/pt/market-research-healthcare",
+      "inbound": 0
+    },
+    {
+      "path": "/ru/market-research-healthcare",
       "inbound": 0
     }
   ],
@@ -716,20 +720,6 @@
       "inbound": 1,
       "from": [
         "/pt/insights/top-empresas-pesquisa-mercado-saude-brasil-2026"
-      ]
-    },
-    {
-      "path": "/pt/market-research-healthcare",
-      "inbound": 1,
-      "from": [
-        "/pt"
-      ]
-    },
-    {
-      "path": "/ru/market-research-healthcare",
-      "inbound": 1,
-      "from": [
-        "/ru"
       ]
     },
     {
@@ -1313,6 +1303,14 @@
       "from": [
         "/gcc-market-access-guide",
         "/healthcare-market-research/therapy/respiratory"
+      ]
+    },
+    {
+      "path": "/zh/market-research-healthcare",
+      "inbound": 2,
+      "from": [
+        "/global-websites/china",
+        "/sitemap"
       ]
     }
   ],

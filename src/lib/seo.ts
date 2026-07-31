@@ -170,6 +170,8 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     en: '/blog',
     de: '/de/blog',
     fr: '/fr/blog',
+    es: '/es/blog',
+    zh: '/zh/blog',
     ar: '/ar/blog',
     pt: '/pt/blog',
     ru: '/ru/blog',
@@ -192,13 +194,6 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
   },
   '/market-research': {
     en: '/market-research',
-    de: '/de/market-research-healthcare',
-    fr: '/fr/market-research-healthcare',
-    es: '/es/market-research-healthcare',
-    zh: '/zh/market-research-healthcare',
-    ar: '/ar/market-research-healthcare',
-    pt: '/pt/market-research-healthcare',
-    ru: '/ru/market-research-healthcare',
   },
   '/market-research-uae': {
     en: '/market-research-uae',
