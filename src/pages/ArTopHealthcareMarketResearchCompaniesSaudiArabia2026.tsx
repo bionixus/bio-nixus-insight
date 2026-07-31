@@ -246,7 +246,7 @@ export default function ArTopHealthcareMarketResearchCompaniesSaudiArabia2026() 
     <div className="min-h-screen bg-background" dir="rtl">
       <Helmet>
         <html lang="ar" dir="rtl" />
-        <title>أفضل شركات أبحاث سوق الرعاية الصحية في المملكة العربية السعودية (2026) | بيونيكسس</title>
+        <title>أفضل شركات أبحاث سوق الرعاية الصحية في السعودية (2026) | بيونيكسس</title>
         <meta
           name="description"
           content="دليل مستقل 2026 لأبرز شركات أبحاث سوق الرعاية الصحية في المملكة: أدوية، هيئة الغذاء والدواء، NUPCO، ورؤية 2030 — مقارنة القدرات واختيار الشريك المناسب."

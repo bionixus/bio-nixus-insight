@@ -269,7 +269,7 @@ export default function TopHealthcareMarketResearchCompaniesUsa2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Healthcare Market Research Companies in USA (2026 Guide) | BioNixus</title>
+        <title>Top Healthcare Market Research Companies in USA 2026 | BioNixus</title>
         <meta
           name="description"
           content="Expert 2026 guide: top healthcare & pharmaceutical market research companies in the USA. IRB-compliant firms, KOL mapping across US AMCs, PBM payer research, IRA impact intelligence — ranked by capability."

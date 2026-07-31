@@ -242,7 +242,7 @@ export default function TopHealthcareMarketResearchCompaniesDubai2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Healthcare Market Research Dubai | Top Firms 2026 | DHA | BioNixus</title>
+        <title>Healthcare Market Research Dubai | Top Firms 2026 | BioNixus</title>
         <meta
           name="description"
           content="Expert 2026 guide: top healthcare & pharmaceutical market research companies in Dubai. DHA-aware firms, KOL mapping, DHCC network, UAE payer research — ranked by capability."

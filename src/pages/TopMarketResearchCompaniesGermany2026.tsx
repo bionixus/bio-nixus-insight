@@ -243,7 +243,7 @@ export default function TopMarketResearchCompaniesGermany2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Market Research Companies in Germany 2026 | BioNixus Ranked #1</title>
+        <title>Top Market Research Companies in Germany 2026 | BioNixus</title>
         <meta
           name="description"
           content="Top market research companies in Germany 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. AMNOG-aligned HCP surveys, GBA payer research, KOL mapping at German university hospitals, and HEOR evidence."

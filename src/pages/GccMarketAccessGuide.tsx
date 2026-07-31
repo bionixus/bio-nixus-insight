@@ -156,14 +156,14 @@ const GccMarketAccessGuide = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>GCC Pharmaceutical Market Access Guide 2026 | SFDA, MOHAP Registration & Pricing | BioNixus</title>
+        <title>GCC Market Access 2026: Pharma & MedTech Entry Guide (All 6 Countries)</title>
         <meta
           name="description"
-          content="GCC pharmaceutical market access guide 2026: SFDA, MOHAP, DHA, and MOH drug registration timelines, pricing mechanisms, reimbursement models, and regulatory requirements for Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman."
+          content="How to enter GCC healthcare markets in 2026 — registration, pricing, tenders and distributors for Saudi, UAE, Qatar, Kuwait, Oman, Bahrain."
         />
         <link rel="canonical" href={citationUrl} />
-        <meta property="og:title" content="GCC Pharmaceutical Market Access Guide 2026 — Registration, Pricing & Reimbursement" />
-        <meta property="og:description" content="Free guide: How to register pharmaceuticals in Saudi Arabia, UAE, Kuwait, Qatar, Bahrain & Oman. Registration timelines, pricing mechanisms, and regulatory requirements." />
+        <meta property="og:title" content="GCC Market Access 2026: Pharma & MedTech Entry Guide (All 6 Countries)" />
+        <meta property="og:description" content="How to enter GCC healthcare markets in 2026 — registration, pricing, tenders and distributors for Saudi, UAE, Qatar, Kuwait, Oman, Bahrain." />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={citationUrl} />
         <script type="application/ld+json">
@@ -581,6 +581,12 @@ const GccMarketAccessGuide = () => {
               </Link>
               <Link to="/blog/market-access-strategy-uae" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 UAE market access strategy guide for pharmaceutical launches
+              </Link>
+              <Link to="/iqvia-alternative" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                IQVIA alternatives and competitors compared
+              </Link>
+              <Link to="/healthcare-market-research-companies" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                Top healthcare market research companies (2026)
               </Link>
               <Link to="/healthcare-market-research-agency-gcc" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 Healthcare market research agency GCC for proposal-ready decisions

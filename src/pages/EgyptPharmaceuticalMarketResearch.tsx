@@ -136,8 +136,8 @@ export default function EgyptPharmaceuticalMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Market Research Company in Egypt | BioNixus"
-        description="BioNixus is a healthcare and pharmaceutical market research company in Egypt—EDA-aligned evidence, public/private channel insight, bilingual fieldwork."
+        title="Pharmaceutical Market Research in Egypt | EDA & UHI | BioNixus"
+        description="BioNixus pharmaceutical market research in Egypt—EDA registration context, UHI payer insight, public/private channel evidence, bilingual fieldwork."
         canonical="/egypt-pharmaceutical-market-research"
         jsonLd={jsonLd}
       />
@@ -352,9 +352,13 @@ export default function EgyptPharmaceuticalMarketResearch() {
               <Link to="/pharmaceutical-companies-egypt" className="text-primary underline">
                 pharmaceutical companies in Egypt
               </Link>
-              , and the{' '}
+              , the{' '}
               <Link to="/insights/top-market-research-companies-egypt-2026" className="text-primary underline">
                 top market research companies in Egypt (2026) guide
+              </Link>
+              , and our{' '}
+              <Link to="/blog/market-research-companies-egypt" className="text-primary underline">
+                comparison of market research companies in Egypt
               </Link>{' '}
               for landscape context—with BioNixus as your execution partner.
             </p>

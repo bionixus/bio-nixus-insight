@@ -236,6 +236,7 @@ export function getRelatedResearchLinksForLocale(
       { to: '/de/healthcare-market-research/germany', label: 'Gesundheitsmarktforschung Deutschland' },
       { to: '/europe', label: 'Healthcare-Marktforschung Europa' },
       { to: '/uk', label: 'Pharmamarktforschung UK' },
+      { to: '/germany-healthcare-market-report', label: 'Deutschland Healthcare-Marktbericht 2026' },
       { to: '/de/blog/pharmamarktforschung-deutschland-2026', label: 'Pharmamarktforschung Deutschland 2026' },
       { to: '/de/contact', label: 'BioNixus kontaktieren' },
     ];
@@ -247,6 +248,7 @@ export function getRelatedResearchLinksForLocale(
       { to: '/ar/blog/gcc-pharmaceuticals-market-arabic-2026', label: 'سوق الأدوية في الخليج 2026' },
       { to: '/ar/arabic-blog-alsawdyh', label: 'دليل أبحاث السوق الدوائي في السعودية' },
       { to: '/gcc-pharmaceutical-market-research', label: 'أبحاث السوق الدوائي في GCC' },
+      { to: '/gcc-pharma-market-report-2026', label: 'تقرير سوق الأدوية في دول الخليج 2026' },
       { to: '/ar/contact', label: 'تواصل مع BioNixus' },
     ];
   }
@@ -255,6 +257,7 @@ export function getRelatedResearchLinksForLocale(
       { to: '/fr/market-research-healthcare', label: 'Études de marché santé' },
       { to: '/healthcare-market-research/france', label: 'Recherche pharma France' },
       { to: '/europe', label: 'Hub Europe healthcare' },
+      { to: '/france-healthcare-market-report', label: 'Rapport marché santé France 2026' },
       { to: '/fr/contact', label: 'Contacter BioNixus' },
     ];
   }
@@ -263,6 +266,7 @@ export function getRelatedResearchLinksForLocale(
       { to: '/es/market-research-healthcare', label: 'Investigación de mercado sanitario' },
       { to: '/healthcare-market-research/spain', label: 'Investigación pharma España' },
       { to: '/europe', label: 'Hub Europa healthcare' },
+      { to: '/spain-healthcare-market-report', label: 'Informe del mercado sanitario de España 2026' },
       { to: '/es/contact', label: 'Contactar BioNixus' },
     ];
   }
@@ -271,6 +275,7 @@ export function getRelatedResearchLinksForLocale(
       { to: '/pt/market-research-healthcare', label: 'Pesquisa de mercado de saúde' },
       { to: '/healthcare-market-research/brazil', label: 'Pesquisa pharma Brasil' },
       { to: '/europe', label: 'Hub Europa healthcare' },
+      { to: '/brazil-healthcare-market-report', label: 'Relatório do mercado de saúde do Brasil 2026' },
       { to: '/pt/contact', label: 'Contactar BioNixus' },
     ];
   }
@@ -279,6 +284,7 @@ export function getRelatedResearchLinksForLocale(
       { to: '/ru/market-research-healthcare', label: 'Исследования рынка здравоохранения' },
       { to: '/europe', label: 'Healthcare hub Europe' },
       { to: '/uk', label: 'Pharma research UK' },
+      { to: '/uk-healthcare-market-report', label: 'Отчёт о рынке здравоохранения Великобритании 2026' },
       { to: '/ru/contact', label: 'Связаться с BioNixus' },
     ];
   }
@@ -287,6 +293,7 @@ export function getRelatedResearchLinksForLocale(
       { to: '/zh/market-research-healthcare', label: '医疗健康市场研究' },
       { to: '/healthcare-market-research/china', label: '中国医药市场研究' },
       { to: '/blog/healthcare-overview-china-market-2026', label: '2026 中国医疗市场概览' },
+      { to: '/china-healthcare-market-report', label: '2026 中国医疗健康市场报告' },
       { to: '/zh/contact', label: '联系 BioNixus' },
     ];
   }
@@ -304,5 +311,6 @@ export function getRelatedResearchLinksForLocale(
     { to: '/healthcare-market-research/saudi-arabia', label: 'Pharma market research in Saudi Arabia' },
     { to: '/healthcare-market-research/uae', label: 'Healthcare market research in the UAE' },
     { to: '/healthcare-market-research/therapy/oncology', label: 'Oncology market research in MENA' },
+    { to: '/gcc-pharma-market-report-2026', label: 'GCC Pharmaceutical Market Report 2026' },
   ];
 }

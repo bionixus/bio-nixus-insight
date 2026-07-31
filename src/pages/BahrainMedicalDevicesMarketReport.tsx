@@ -295,7 +295,9 @@ const BahrainMedicalDevicesMarketReport = () => {
               <Link to="/bahrain-healthcare-market-report" className="text-primary hover:underline font-medium">Bahrain healthcare market report</Link>, or widen the lens with the{' '}
               <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC medical devices market report</Link>. For methods and global coverage, see the{' '}
               <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}
-              <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>.
+              <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>.{' '}For account-level directories and programme scoping, see{' '}
+              <Link to="/pharmaceutical-companies-bahrain" className="text-primary hover:underline font-medium">pharmaceutical companies in Bahrain</Link>{' '}and{' '}
+              <Link to="/healthcare-market-research/bahrain" className="text-primary hover:underline font-medium">healthcare market research in Bahrain</Link>.
             </p>
           </div>
         </section>

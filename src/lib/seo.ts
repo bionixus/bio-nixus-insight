@@ -21,9 +21,9 @@ export const seoByLanguage: Record<Language, {
 }> = {
   en: {
     // Brand-first ≤60 chars; primary keyword cluster for branded + category SERPs.
-    title: 'BioNixus | Global Pharma & Healthcare Market Research',
+    title: 'BioNixus — Healthcare & Pharma Market Research Firm (MENA, Asia, Global)',
     description:
-      'Global market research for pharma & medtech. Physician, payer & hospital evidence for launch and access — Americas, Europe, MENA & APAC. Proposal in 24 hours.',
+      'Primary healthcare market research and market access consulting for pharma & medical devices — GCC, USA, Turkey, Europe, Brazil & Asia. Request a proposal.',
     keywords:
       'market research company, pharmaceutical market research company, healthcare market research company, global healthcare market research, pharma market research, physician surveys, KOL mapping, market access research, MENA market research, GCC pharmaceutical research, UAE healthcare research, Saudi Arabia pharma research, Egypt market research, medtech market research, competitive intelligence',
     canonicalPath: '/',
@@ -170,6 +170,8 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     en: '/blog',
     de: '/de/blog',
     fr: '/fr/blog',
+    es: '/es/blog',
+    zh: '/zh/blog',
     ar: '/ar/blog',
     pt: '/pt/blog',
     ru: '/ru/blog',
@@ -182,7 +184,6 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     en: '/healthcare-market-research',
     de: '/de/healthcare-market-research/germany',
     fr: '/fr/healthcare-market-research',
-    es: '/es/healthcare-market-research',
     ar: '/ar/healthcare-market-research',
     zh: '/zh/healthcare-market-research',
     ru: '/ru/healthcare-market-research',
@@ -193,13 +194,6 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
   },
   '/market-research': {
     en: '/market-research',
-    de: '/de/market-research-healthcare',
-    fr: '/fr/market-research-healthcare',
-    es: '/es/market-research-healthcare',
-    zh: '/zh/market-research-healthcare',
-    ar: '/ar/market-research-healthcare',
-    pt: '/pt/market-research-healthcare',
-    ru: '/ru/market-research-healthcare',
   },
   '/market-research-uae': {
     en: '/market-research-uae',

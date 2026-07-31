@@ -263,7 +263,7 @@ export default function BestObesityWeightManagementMarketResearchFirms2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Best Obesity & Weight Management Market Research Firms (2026) | BioNixus</title>
+        <title>Best Obesity & Weight Management Research Firms (2026) | BioNixus</title>
         <meta
           name="description"
           content="Expert 2026 guide: best obesity & weight management market research firms. GLP-1 market research, anti-obesity medication access studies, patient journey research, prescriber behaviour analysis — ranked by capability."

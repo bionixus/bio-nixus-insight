@@ -232,7 +232,7 @@ export default function TopHealthcareMarketResearchCompaniesIndia2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Healthcare Market Research Companies in India 2026 | BioNixus Ranked #1</title>
+        <title>Top Healthcare Market Research Companies in India 2026 | BioNixus</title>
         <meta
           name="description"
           content="Top healthcare market research companies in India 2026 — BioNixus ranked #1. CDSCO-aware HCP surveys, Ayushman Bharat/PM-JAY payer research, KOL mapping at India's leading academic medical centres, and multilingual fieldwork."

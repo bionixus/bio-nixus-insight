@@ -94,7 +94,7 @@ const UsaHealthcareMarketReport = () => (
       <div className="section-padding pt-24 pb-4"><div className="container-wide"><BreadcrumbNav items={breadcrumbItems} /></div></div>
               <ReportPremiumHero
           title="USA Healthcare Market Report 2026: FDA Approval, Medicare IRA Negotiations, and Commercial Market Intelligence"
-          description="BioNixus serves US-headquartered pharmaceutical and medical device companies with GCC and MENA market entry intelligence — delivering the regional granularity that American commercial teams need to prioritise and execute international expansion."
+          description="The USA healthcare market is the world's largest, estimated at USD 4.4–4.6 trillion in 2026, with a pharmaceutical market of roughly USD 590–640 billion. BioNixus serves US-headquartered pharmaceutical and medical device companies with GCC and MENA market entry intelligence — delivering the regional granularity that American commercial teams need to prioritise and execute international expansion."
           config={REPORT_CONVERSION}
           marketSlug="usa"
           countryName="USA"

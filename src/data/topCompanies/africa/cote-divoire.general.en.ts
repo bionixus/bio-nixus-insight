@@ -12,7 +12,6 @@ export const coteDivoireGeneralEn: CountryListicleConfig = {
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-cote-divoire-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-cote-divoire-2026' },
-    { lang: 'fr', href: 'https://www.bionixus.com/fr/insights/top-market-research-companies-cote-divoire-2026' },
     { lang: 'x-default', href: 'https://www.bionixus.com/insights/top-market-research-companies-cote-divoire-2026' },
   ],
   ogLocale: 'en_CI',

@@ -242,7 +242,7 @@ export default function TopHealthcareMarketResearchCompaniesKuwait2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>5 Best Healthcare Market Research Firms in Kuwait (2026) | MOH Specialists | BioNixus</title>
+        <title>Kuwait Healthcare Market Research Firms 2026 | BioNixus</title>
         <meta
           name="description"
           content="Expert 2026 guide: top healthcare & pharmaceutical market research companies in Kuwait. MOH Kuwait-aware firms, KDC formulary research, KOL mapping, GCC execution — ranked by capability."

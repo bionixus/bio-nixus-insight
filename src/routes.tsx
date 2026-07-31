@@ -8,6 +8,7 @@ import About from '@/pages/About';
 import ClientReviews from '@/pages/ClientReviews';
 import Services from '@/pages/Services';
 import FAQ from '@/pages/FAQ';
+import HealthcareMarketStatistics from '@/pages/HealthcareMarketStatistics';
 import Resources from '@/pages/Resources';
 import Insights from '@/pages/Insights';
 import NewsHub from '@/pages/NewsHub';
@@ -33,6 +34,7 @@ import KantarHealthAlternativeGcc from '@/pages/KantarHealthAlternativeGcc';
 import GfkAlternativeEgypt from '@/pages/GfkAlternativeEgypt';
 import NotFound from '@/pages/NotFound';
 import MarketResearch from '@/pages/MarketResearch';
+import WhatIsMarketStudy from '@/pages/WhatIsMarketStudy';
 import MarketResearchByIndustry from '@/pages/MarketResearchByIndustry';
 import { buildIndustryMatrixRoutes } from '@/data/industryMatrixRoutes';
 import { buildDevelopedMarketMedtechRoutes } from '@/data/developedMarketMedtechRoutes';
@@ -64,6 +66,7 @@ import QatarMarketAccessResearch from '@/pages/QatarMarketAccessResearch';
 import HealthcareFieldworkMiddleEast from '@/pages/HealthcareFieldworkMiddleEast';
 import RealWorldEvidence from '@/pages/RealWorldEvidence';
 import RealWorldEvidenceGcc from '@/pages/RealWorldEvidenceGcc';
+import RealWorldDataHealthcareMiddleEast from '@/pages/RealWorldDataHealthcareMiddleEast';
 import HeorConsultingSaudiArabia from '@/pages/HeorConsultingSaudiArabia';
 import HtaStudiesSaudiArabia from '@/pages/HtaStudiesSaudiArabia';
 import CostEffectivenessAnalysisSaudiArabia from '@/pages/CostEffectivenessAnalysisSaudiArabia';
@@ -121,6 +124,7 @@ import TopMarketResearchCompaniesGcc2026 from '@/pages/TopMarketResearchCompanie
 import TopPharmaMarketResearchCompaniesMiddleEast2026 from '@/pages/TopPharmaMarketResearchCompaniesMiddleEast2026';
 import TopMarketResearchCompaniesEgypt2026 from '@/pages/TopMarketResearchCompaniesEgypt2026';
 import TopMarketResearchCompaniesSaudiArabia2026 from '@/pages/TopMarketResearchCompaniesSaudiArabia2026';
+import HealthcareMarketResearchCompanies2026 from '@/pages/HealthcareMarketResearchCompanies2026';
 import TopMarketResearchCompaniesUae2026 from '@/pages/TopMarketResearchCompaniesUae2026';
 import TopMarketResearchCompaniesDubai2026 from '@/pages/TopMarketResearchCompaniesDubai2026';
 import TopMarketResearchCompaniesAbuDhabi2026 from '@/pages/TopMarketResearchCompaniesAbuDhabi2026';
@@ -376,6 +380,7 @@ export const routes: RouteObject[] = [
   { path: '/de/services', element: <Services /> },
   { path: '/services/:slug', element: <ServiceDetail /> },
   { path: '/faq', element: <FAQ /> },
+  { path: '/healthcare-market-statistics', element: <HealthcareMarketStatistics /> },
   { path: '/resources', element: <Resources /> },
   { path: '/insights', element: <Insights /> },
   { path: '/sitemap', element: <SiteMapPage /> },
@@ -383,6 +388,7 @@ export const routes: RouteObject[] = [
   { path: '/gcc-market-access-guide', element: <GccMarketAccessGuide /> },
   { path: '/market-research-home', element: <MarketResearchHome /> },
   { path: '/market-research', element: <MarketResearch /> },
+  { path: '/market-study', element: <WhatIsMarketStudy /> },
   { path: '/market-research-uae', element: <MarketResearchUae /> },
   { path: '/diabetes-market-research-uae', element: <DiabetesMarketResearchUae /> },
   { path: '/specialist-physician-panel-uae', element: <SpecialistPhysicianPanelUae /> },
@@ -444,6 +450,7 @@ export const routes: RouteObject[] = [
   { path: '/healthcare-fieldwork-middle-east', element: <HealthcareFieldworkMiddleEast /> },
   { path: '/real-world-evidence', element: <RealWorldEvidence /> },
   { path: '/real-world-evidence-gcc', element: <RealWorldEvidenceGcc /> },
+  { path: '/real-world-data-healthcare-middle-east', element: <RealWorldDataHealthcareMiddleEast /> },
   { path: '/heor-consulting-saudi-arabia', element: <HeorConsultingSaudiArabia /> },
   { path: '/hta-studies-saudi-arabia', element: <HtaStudiesSaudiArabia /> },
   { path: '/cost-effectiveness-analysis-saudi-arabia', element: <CostEffectivenessAnalysisSaudiArabia /> },
@@ -489,6 +496,7 @@ export const routes: RouteObject[] = [
   { path: '/ar/insights/top-market-research-companies-egypt-2026', element: suspensePage(<ArTopMarketResearchCompaniesEgypt2026 />) },
   { path: '/insights/top-market-research-companies-ksa-2026', element: <Navigate to="/insights/top-market-research-companies-saudi-arabia-2026" replace /> },
   { path: '/insights/top-market-research-companies-saudi-arabia-2026', element: <TopMarketResearchCompaniesSaudiArabia2026 /> },
+  { path: '/healthcare-market-research-companies', element: <HealthcareMarketResearchCompanies2026 /> },
   { path: '/insights/top-market-research-companies-uae-2026', element: <TopMarketResearchCompaniesUae2026 /> },
   { path: '/insights/top-market-research-companies-dubai-2026', element: <TopMarketResearchCompaniesDubai2026 /> },
   { path: '/insights/top-market-research-companies-abudhabi-2026', element: <Navigate to="/insights/top-market-research-companies-abu-dhabi-2026" replace /> },

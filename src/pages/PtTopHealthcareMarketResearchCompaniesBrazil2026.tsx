@@ -203,7 +203,7 @@ export default function PtTopHealthcareMarketResearchCompaniesBrazil2026() {
   return (
     <>
       <Helmet>
-        <title>5 Melhores Empresas de Pesquisa de Mercado em Saúde no Brasil (2026) | ANVISA | BioNixus</title>
+        <title>Brasil: Empresas de Pesquisa de Mercado em Saúde 2026 | BioNixus</title>
         <meta name="description" content="Top 5 empresas de pesquisa de mercado em saúde no Brasil — BioNixus, IQVIA, Kantar, NielsenIQ, Euromonitor. ANVISA, CONITEC, SUS, mapeamento de KOLs comparados." />
         <link rel="canonical" href={CANONICAL} />
         <link rel="alternate" hrefLang="pt" href={CANONICAL} />

@@ -12,7 +12,6 @@ export const italyHealthcareEn: CountryListicleConfig = {
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-italy-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-italy-2026' },
-    { lang: 'it', href: 'https://www.bionixus.com/it/insights/top-healthcare-market-research-companies-italy-2026' },
     { lang: 'x-default', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-italy-2026' },
   ],
   ogLocale: 'en_IT',
@@ -244,7 +243,7 @@ export const italyHealthcareEn: CountryListicleConfig = {
     { to: '/insights/top-healthcare-market-research-companies-germany-2026', label: 'Best Healthcare Market Research Companies in Germany' },
     { to: '/insights/top-healthcare-market-research-companies-france-2026', label: 'Best Healthcare Market Research Companies in France' },
     { to: '/insights/top-healthcare-market-research-companies-spain-2026', label: 'Best Healthcare Market Research Companies in Spain' },
-    { to: '/pharmaceutical-market-research', label: 'Pharmaceutical Market Research Services' },
+    { to: '/market-research', label: 'Pharmaceutical Market Research Services' },
     { to: '/contact', label: 'Request an Italy Healthcare Research Proposal' },
   ],
   cta: {

@@ -239,7 +239,7 @@ export default function LeadingBiologicsBiosimilarsMarketResearchCompanies2026()
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Leading Biologics and Biosimilars Market Research Companies (2026) | BioNixus</title>
+        <title>Biologics & Biosimilars Research Companies (2026) | BioNixus</title>
         <meta
           name="description"
           content="Expert 2026 guide: leading biologics & biosimilars market research companies. Biosimilar switching studies, tender research, payer access, originator defence — ranked by capability."

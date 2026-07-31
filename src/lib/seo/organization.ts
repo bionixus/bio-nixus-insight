@@ -24,6 +24,8 @@ export const ORG_SAME_AS = [
   'https://www.linkedin.com/company/bionixus/',
   'https://www.facebook.com/Bionixus',
   'https://www.instagram.com/bionixus_',
+  'https://www.crunchbase.com/organization/bionixus',
+  'https://www.goodfirms.co/company/bionixus-market-research',
   BIONIXUS_UK_GBP_MAPS_URL,
 ];
 
@@ -197,7 +199,20 @@ export const ORG_CONTACT_POINT = [
     contactType: 'customer service',
     areaServed: 'GB',
   },
+  {
+    '@type': 'ContactPoint',
+    email: 'mosama@bionixus.com',
+    contactType: 'sales',
+    availableLanguage: ['English', 'Arabic'],
+  },
 ];
+
+/**
+ * Crunchbase and GoodFirms confirmed and merged into ORG_SAME_AS above.
+ * Still unconfirmed — do not add without a confirmed URL:
+ *  - X/Twitter company profile
+ *  - Clutch company profile
+ */
 
 /** Canonical Organization node. Pass inLanguage for per-page locale tagging. */
 export function buildCanonicalOrganization(inLanguage?: string): Record<string, unknown> {

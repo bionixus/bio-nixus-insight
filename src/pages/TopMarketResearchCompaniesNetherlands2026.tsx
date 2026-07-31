@@ -247,7 +247,7 @@ export default function TopMarketResearchCompaniesNetherlands2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Market Research Companies in the Netherlands 2026 | BioNixus Ranked #1</title>
+        <title>Top Market Research Companies in the Netherlands 2026 | BioNixus</title>
         <meta
           name="description"
           content="Top market research companies in the Netherlands 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. CBG-MEB-aligned HCP surveys, KOL mapping, and payer research."

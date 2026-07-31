@@ -189,7 +189,16 @@ const KuwaitHealthcareMarketReport = () => {
               {' '}and{' '}
               <Link to="/kuwait-medical-devices-market-report" className="text-primary hover:underline font-medium">
                 Kuwait Medical Devices Market Report
-              </Link>.
+              </Link>
+              . For account-level directories and programme scoping, see{' '}
+              <Link to="/pharmaceutical-companies-kuwait" className="text-primary hover:underline font-medium">
+                pharmaceutical companies in Kuwait
+              </Link>
+              {' '}and{' '}
+              <Link to="/healthcare-market-research/kuwait" className="text-primary hover:underline font-medium">
+                healthcare market research in Kuwait
+              </Link>
+              .
             </p>
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
           </div>

@@ -242,7 +242,7 @@ export default function TopHealthcareMarketResearchCompaniesAbuDhabi2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>5 Best Healthcare Market Research Firms in Abu Dhabi (2026) | DoH Specialists | BioNixus</title>
+        <title>Abu Dhabi Healthcare Market Research Firms 2026 | BioNixus</title>
         <meta
           name="description"
           content="Expert 2026 guide: top healthcare & pharmaceutical market research companies in Abu Dhabi. DoH-aware firms, SEHA hospital access, KOL mapping, Daman payer research — ranked by capability."

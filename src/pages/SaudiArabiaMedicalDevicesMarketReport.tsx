@@ -373,8 +373,9 @@ const SaudiArabiaMedicalDevicesMarketReport = () => {
               <Link to="/qatar-medical-devices-market-report" className="text-primary hover:underline font-medium">Qatar medical devices market report</Link>, set it against the{' '}
               <Link to="/saudi-arabia-healthcare-market-report" className="text-primary hover:underline font-medium">Saudi Arabia healthcare market report</Link>, or widen the lens with the{' '}
               <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC medical devices market report</Link>. For methods and global coverage, see the{' '}
-              <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}
-              <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>.
+              <Link to="/healthcare-market-research/saudi-arabia" className="text-primary hover:underline font-medium">Saudi Arabia healthcare market research hub</Link>{' '}and our{' '}
+              <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>.{' '}For account-level directories and programme scoping, see{' '}
+              <Link to="/pharmaceutical-companies-saudi-arabia" className="text-primary hover:underline font-medium">pharmaceutical companies in Saudi Arabia</Link>.
             </p>
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
           </div>

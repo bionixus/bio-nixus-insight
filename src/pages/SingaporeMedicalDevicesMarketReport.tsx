@@ -131,7 +131,8 @@ const SingaporeMedicalDevicesMarketReport = () => (
               <Link to="/singapore-healthcare-market-report" className="text-primary hover:underline font-medium">Singapore healthcare market report</Link>, or widen the lens with the{' '}
               <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC medical devices market report</Link>. For methods and global coverage, see the{' '}
               <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}
-              <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>.
+              <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>. For Singapore's manufacturing base and key device makers, see{' '}
+              <Link to="/blog/medtech-singapore-2026-market-hsa-registration" className="text-primary hover:underline font-medium">MedTech in Singapore 2026: Market Size, HSA Registration &amp; Key Players</Link>.
             </p>
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
           </div>

@@ -6,6 +6,8 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { ConversionCTA } from '@/components/conversion/ConversionCTA';
+import { useScrollThreshold } from '@/hooks/useScrollThreshold';
 import { getPharmaGuideConfig } from '@/data/reportConversionConfig';
 import { PharmaCompaniesGccHubLinks } from '@/components/seo/PharmaCompaniesGccHubLinks';
 import { PharmaCompaniesQuickAnswer } from '@/components/seo/PharmaCompaniesQuickAnswer';
@@ -63,18 +65,19 @@ const faqItems = [
 ];
 
 const UaePharmaCompanies = () => {
+  const past70Percent = useScrollThreshold(70);
   const { language } = useLanguage();
   const basePath = languagePaths[language] || '/';
   const citationUrl = 'https://www.bionixus.com/pharmaceutical-companies-uae';
 
-  const ogTitle = "Pharmaceutical Companies in the UAE — Complete Industry Guide 2026";
-  const ogDescription = "Comprehensive guide: 20+ pharmaceutical companies in the UAE, $4.5B market data, MOHAP/DHA/DOH registration (fastest in GCC), medical tourism hub, and market outlook.";
+  const ogTitle = "Top 30 Pharmaceutical Companies in UAE (2026 Ranked List)";
+  const ogDescription = "Complete 2026 list of pharmaceutical companies in UAE & Dubai — rankings, market size, manufacturers vs distributors. By BioNixus, GCC pharma research specialists.";
 
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Pharmaceutical Companies in the UAE | Industry Guide 2026 | BioNixus</title>
-        <meta name="description" content="Pharmaceutical companies in the UAE: $4.5B market, MOHAP/DHA/DOH registration, Julphar &amp; Neopharma — MNC offices, distributors, pharmacy chains (2026)." />
+        <title>Top 30 Pharmaceutical Companies in UAE (2026 Ranked List)</title>
+        <meta name="description" content="Complete 2026 list of pharmaceutical companies in UAE &amp; Dubai — rankings, market size, manufacturers vs distributors. By BioNixus, GCC pharma research specialists." />
         <link rel="canonical" href={citationUrl} />
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesItemListLd(citationUrl, pharmaCompanies.map((c) => c.name)))}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: 'Pharmaceutical Companies in the UAE: Complete Industry Guide 2026', description: 'Comprehensive guide to pharmaceutical companies operating in the United Arab Emirates — local manufacturers, MNC offices, distributors, $4.5B market data, MOHAP/DHA/DOH regulatory landscape, and medical tourism outlook.', url: citationUrl, datePublished: '2026-02-15', dateModified: '2026-02-15', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' } })}</script>
@@ -98,7 +101,7 @@ const UaePharmaCompanies = () => {
         <section className="section-padding pt-0 pb-12"><div className="container-wide max-w-5xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6"><Building2 className="w-4 h-4" />Industry Guide 2026</div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">Pharmaceutical Companies in the UAE</h1>
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">Pharmaceutical companies in the UAE anchor the fastest-growing GCC spend curve — start from <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">healthcare market research</Link> for regional programmes. This guide covers major pharma companies, MOHAP/DHA/DOH regulatory framework, medical tourism, market data, distribution channels, and strategic opportunities.</p>
+          <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">The UAE pharmaceutical market is valued at approximately USD 4.5 billion in 2026 and is growing at 17.5% year-over-year, the fastest rate in the GCC, with around 20 major pharmaceutical companies operating across manufacturers, multinational offices, and distributors. Pharmaceutical companies in the UAE anchor the fastest-growing GCC spend curve — start from <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">healthcare market research</Link> for regional programmes. This guide covers major pharma companies, MOHAP/DHA/DOH regulatory framework, medical tourism, market data, distribution channels, and strategic opportunities.</p>
           <p className="text-sm text-muted-foreground">Last updated: February 2026 &middot; Sources: MOHAP, DHA, DOH, BioNixus MEA, company filings</p>
           <div className="mt-8 p-5 bg-muted/50 border border-border rounded-xl"><div className="flex items-start gap-3"><Share2 className="w-5 h-5 text-primary mt-0.5 shrink-0" /><div><p className="font-semibold text-foreground text-sm mb-1">Cite this guide</p><p className="text-sm text-muted-foreground leading-relaxed">BioNixus. &quot;Pharmaceutical Companies in the UAE: Complete Industry Guide 2026.&quot; BioNixus Healthcare Market Research, Feb. 2026, <a href={citationUrl} className="text-primary hover:underline break-all">{citationUrl}</a>.<br />Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">CC BY 4.0</a> — free to share and adapt with attribution.</p></div></div></div>
           <ReportEarlyCtaBar config={PHARMA_CONVERSION} className="mt-8" /></div></section>
@@ -148,6 +151,15 @@ const UaePharmaCompanies = () => {
           <div className="overflow-x-auto rounded-xl border border-border"><table className="w-full text-sm"><thead><tr className="bg-primary/5 border-b border-border"><th className="text-left px-4 py-3 font-semibold text-foreground">Company</th><th className="text-left px-4 py-3 font-semibold text-foreground">HQ</th><th className="text-left px-4 py-3 font-semibold text-foreground hidden md:table-cell">Type</th><th className="text-left px-4 py-3 font-semibold text-foreground hidden lg:table-cell">Therapeutic Areas</th><th className="text-left px-4 py-3 font-semibold text-foreground hidden xl:table-cell">Notes</th></tr></thead><tbody>
             {pharmaCompanies.map((c, i) => (<tr key={c.name} className={`border-b border-border ${i % 2 === 0 ? 'bg-card' : 'bg-muted/20'}`}><td className="px-4 py-3 font-medium text-foreground">{c.name}</td><td className="px-4 py-3 text-muted-foreground">{c.hq}</td><td className="px-4 py-3 hidden md:table-cell"><span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${c.type === 'Local Manufacturer' ? 'bg-green-50 text-green-700' : c.type === 'MNC Office' ? 'bg-blue-50 text-blue-700' : c.type === 'Regional' ? 'bg-amber-50 text-amber-700' : 'bg-purple-50 text-purple-700'}`}>{c.type}</span></td><td className="px-4 py-3 text-muted-foreground hidden lg:table-cell">{c.therapeuticAreas}</td><td className="px-4 py-3 text-muted-foreground text-xs hidden xl:table-cell">{c.notes}</td></tr>))}
           </tbody></table></div>
+          <div className="mt-8">
+            <ConversionCTA
+              variant="talk-to-research"
+              market="the UAE"
+              ctaId="pharma_companies_uae_after_table"
+              ctaLocation="after_first_table"
+            />
+          </div>
+
         </div></section>
 
         <ReportMidPageCta config={PHARMA_CONVERSION} />
@@ -268,6 +280,20 @@ const UaePharmaCompanies = () => {
         <ReportConsultationBand config={PHARMA_CONVERSION} />
         </main>
       <Footer />
+      {past70Percent ? (
+        <div className="fixed bottom-0 left-0 right-0 z-40 bg-background border-t border-border shadow-lg p-4">
+          <div className="container-wide max-w-3xl mx-auto">
+            <ConversionCTA
+              variant="gated-asset"
+              reportName="GCC Pharma & MedTech Market Databook 2026"
+              pdfPath="/downloads/gcc-pharma-medtech-databook-2026-sample.pdf"
+              ctaId="pharma_companies_uae_scroll70"
+              ctaLocation="scroll_70_percent"
+              className="border-0 p-0 text-left md:flex md:items-center md:justify-between md:gap-4"
+            />
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 };

@@ -11,6 +11,9 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'neurofibromatosis',
   'nf1-koselugo-selumetinib-pharma-market-research',
   'skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement',
+  'market-research-companies-egypt',
+  'medtech-singapore-2026-market-hsa-registration',
+  'turkey-pharmaceutical-market-2026-titck-top-companies',
 ]);
 
 export const BLOG_HARDCODED_SEO_SLUGS = new Set([
@@ -19,6 +22,9 @@ export const BLOG_HARDCODED_SEO_SLUGS = new Set([
   'nf1-koselugo-selumetinib-pharma-market-research',
   'desmoid-tumors-nirogacestat-pharma-market-access',
   'skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement',
+  'market-research-companies-egypt',
+  'medtech-singapore-2026-market-hsa-registration',
+  'turkey-pharmaceutical-market-2026-titck-top-companies',
 ]);
 
 export function isHardcodedSeoBlogSlug(slug: string | undefined): boolean {

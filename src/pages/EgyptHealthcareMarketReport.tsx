@@ -112,7 +112,7 @@ const EgyptHealthcareMarketReport = () => {
 
                 <ReportPremiumHero
           title="Egypt Healthcare Market Report 2026: Pharmaceutical Intelligence, UHI Access, and EDA Registration"
-          description="BioNixus delivers Egypt pharmaceutical consumption intelligence, UHI formulary access research, and primary HCP surveys from our Cairo office — covering government hospitals, UHI-enrolled facilities, and Egypt's expanding private hospital sector across all 27 governorates."
+          description="The Egypt healthcare market is estimated at USD 25–30 billion in 2026, the largest in Africa and the Middle East by volume, with a pharmaceutical market of USD 4.5–5.5 billion. BioNixus delivers Egypt pharmaceutical consumption intelligence, UHI formulary access research, and primary HCP surveys from our Cairo office — covering government hospitals, UHI-enrolled facilities, and Egypt's expanding private hospital sector across all 27 governorates."
           config={REPORT_CONVERSION}
           marketSlug="egypt"
           countryName="Egypt"
@@ -176,6 +176,14 @@ const EgyptHealthcareMarketReport = () => {
               {' '}and{' '}
               <Link to="/market-reports/egypt-diabetes-market-report" className="text-primary hover:underline font-medium">
                 Egypt diabetes market research report
+              </Link>
+              . For account-level directories and programme scoping, see{' '}
+              <Link to="/pharmaceutical-companies-egypt" className="text-primary hover:underline font-medium">
+                pharmaceutical companies in Egypt
+              </Link>
+              {' '}and{' '}
+              <Link to="/healthcare-market-research/egypt" className="text-primary hover:underline font-medium">
+                healthcare market research in Egypt
               </Link>
               .
             </p>

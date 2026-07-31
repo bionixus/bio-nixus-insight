@@ -349,7 +349,7 @@ export default function HealthcareMarketResearchNewZealand() {
             <div className="grid md:grid-cols-2 gap-3">
               {[
                 { to: '/pharmaceutical-market-research-new-zealand', label: 'New Zealand pharmaceutical market research' },
-                { to: '/new-zealand-healthcare-market-report', label: 'New Zealand healthcare market report' },
+                { to: '/australia-healthcare-market-report', label: 'Australia healthcare market report' },
                 { to: '/healthcare-market-research-australia', label: 'Healthcare market research Australia' },
                 { to: '/healthcare-market-research-canada', label: 'Healthcare market research Canada' },
                 { to: '/healthcare-market-research-usa', label: 'Healthcare market research USA' },

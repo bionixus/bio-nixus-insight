@@ -84,8 +84,8 @@ const BrazilHealthcareMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="Brazil Healthcare Market Report 2026 | BioNixus"
-      description="Brazil healthcare market at USD 165B in 2026 — largest in Latin America. ANVISA registration, SUS/CONITEC incorporation, ANS private sector, USD 28B."
+      title="Brazil Healthcare & Pharma Market 2026: Size, ANVISA & Outlook"
+      description="Brazil's healthcare and pharmaceutical market in 2026 — market size, ANVISA regulation, top companies and forecast. By BioNixus."
       canonical="https://www.bionixus.com/brazil-healthcare-market-report"
       jsonLd={jsonLd}
     />
@@ -130,7 +130,8 @@ const BrazilHealthcareMarketReport = () => (
               <Link to="/canada-healthcare-market-report" className="text-primary hover:underline font-medium">Canada healthcare market report</Link>, or start from the{' '}
               <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}
               <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>. For therapy-segmented demand and access analysis, see our{' '}
-              <Link to="/pharmaceutical-therapy-areas" className="text-primary hover:underline font-medium">pharmaceutical therapy-area coverage</Link>.
+              <Link to="/pharmaceutical-therapy-areas" className="text-primary hover:underline font-medium">pharmaceutical therapy-area coverage</Link>. Read about our{' '}
+              <Link to="/news/bionixus-brazil-office-latam-expansion-2026" className="text-primary hover:underline font-medium">Brazil office and LatAm expansion</Link>.
             </p>
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
           </div>

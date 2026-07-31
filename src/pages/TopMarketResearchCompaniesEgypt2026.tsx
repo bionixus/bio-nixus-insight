@@ -220,7 +220,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>5 Best Market Research Companies in Egypt (2026) | Egypt Rankings | BioNixus</title>
+        <title>5 Best Market Research Companies in Egypt (2026) | BioNixus</title>
         <meta
           name="description"
           content="Independent 2026 guide to the leading market research companies in Egypt for consumer, FMCG, retail, and multi-industry research — compared by Egypt expertise."

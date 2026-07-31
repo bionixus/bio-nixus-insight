@@ -209,7 +209,7 @@ export default function PtTopMarketResearchCompaniesBrazil2026() {
   return (
     <>
       <Helmet>
-        <title>5 Melhores Empresas de Pesquisa de Mercado no Brasil (2026) | Rankings | BioNixus</title>
+        <title>Brasil: Empresas de Pesquisa de Mercado 2026 | BioNixus</title>
         <meta name="description" content="Guia das top 5 empresas de pesquisa de mercado no Brasil — BioNixus, Kantar, Ipsos, NielsenIQ, Euromonitor. Consumo, FMCG, varejo e pesquisa multissetorial comparadas." />
         <link rel="canonical" href={CANONICAL} />
         <link rel="alternate" hrefLang="pt" href={CANONICAL} />

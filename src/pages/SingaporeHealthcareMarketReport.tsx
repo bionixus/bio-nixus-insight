@@ -168,7 +168,8 @@ const SingaporeHealthcareMarketReport = () => (
               <Link to="/australia-healthcare-market-report" className="text-primary hover:underline font-medium">Australia healthcare market report</Link>, or start from the{' '}
               <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}
               <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>. For therapy-segmented demand and access analysis, see our{' '}
-              <Link to="/pharmaceutical-therapy-areas" className="text-primary hover:underline font-medium">pharmaceutical therapy-area coverage</Link>.
+              <Link to="/pharmaceutical-therapy-areas" className="text-primary hover:underline font-medium">pharmaceutical therapy-area coverage</Link>. For Singapore's manufacturing base and key device makers, see{' '}
+              <Link to="/blog/medtech-singapore-2026-market-hsa-registration" className="text-primary hover:underline font-medium">MedTech in Singapore 2026: Market Size, HSA Registration &amp; Key Players</Link>.
             </p>
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
           </div>

@@ -13,7 +13,6 @@ export const ksaGeneralEn: CountryListicleConfig = {
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-ksa-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-ksa-2026' },
-    { lang: 'ar', href: 'https://www.bionixus.com/ar/insights/top-market-research-companies-ksa-2026' },
     { lang: 'x-default', href: 'https://www.bionixus.com/insights/top-market-research-companies-ksa-2026' },
   ],
   ogLocale: 'en_SA',

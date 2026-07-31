@@ -123,7 +123,6 @@ function isSitemapRedirectSourcePath(pathname) {
  */
 const extraStaticSitemapPages = [
   { path: '/ar/blog', priority: '0.85', changefreq: 'weekly' },
-  { path: '/zh/blog', priority: '0.85', changefreq: 'weekly' },
   {
     path: '/ar/blog/gcc-pharmaceuticals-market-arabic-2026',
     priority: '0.7',
@@ -196,6 +195,7 @@ const staticPages = [
   { path: '/de/blog', priority: '0.8', changefreq: 'weekly' },
   { path: '/zh/blog', priority: '0.85', changefreq: 'weekly' },
   { path: '/fr/blog', priority: '0.8', changefreq: 'weekly' },
+  { path: '/es/blog', priority: '0.8', changefreq: 'weekly' },
   { path: '/de/success-in-startups', priority: '0.7', changefreq: 'monthly' },
   { path: '/ar/arabic-blog-alsawdyh', priority: '0.7', changefreq: 'monthly' },
   { path: '/case-studies', priority: '0.9', changefreq: 'weekly' },
@@ -259,6 +259,7 @@ const staticPages = [
   { path: '/pharma-fieldwork-uae', priority: '0.8', changefreq: 'monthly' },
   { path: '/real-world-evidence', priority: '0.9', changefreq: 'weekly' },
   { path: '/real-world-evidence-gcc', priority: '0.8', changefreq: 'monthly' },
+  { path: '/heor-consulting', priority: '0.9', changefreq: 'weekly' },
   { path: '/heor-consulting-saudi-arabia', priority: '0.8', changefreq: 'monthly' },
   { path: '/hta-studies-saudi-arabia', priority: '0.8', changefreq: 'monthly' },
   { path: '/cost-effectiveness-analysis-saudi-arabia', priority: '0.8', changefreq: 'monthly' },
@@ -347,6 +348,8 @@ const staticPages = [
   { path: '/blog/gcc-clinical-trials-market-2026', priority: '0.83', changefreq: 'monthly' },
   { path: '/blog/pharmacoeconomics-gcc-practical-guide', priority: '0.87', changefreq: 'monthly' },
   { path: '/blog/gcc-pharmacoeconomics', priority: '0.88', changefreq: 'monthly' },
+  { path: '/blog/medtech-singapore-2026-market-hsa-registration', priority: '0.85', changefreq: 'monthly' },
+  { path: '/blog/turkey-pharmaceutical-market-2026-titck-top-companies', priority: '0.85', changefreq: 'monthly' },
   { path: '/blog/neurofibromatosis', priority: '0.85', changefreq: 'monthly' },
   { path: '/blog/nf1-koselugo-selumetinib-pharma-market-research', priority: '0.86', changefreq: 'monthly' },
   { path: '/blog/top-healthcare-market-research-companies-kuwait', priority: '0.87', changefreq: 'monthly' },
@@ -355,6 +358,7 @@ const staticPages = [
   { path: '/nf1-pharma-market-research', priority: '0.88', changefreq: 'monthly' },
   { path: '/desmoid-tumor-pharma-market-research', priority: '0.88', changefreq: 'monthly' },
   { path: '/faq', priority: '0.7', changefreq: 'monthly' },
+  { path: '/healthcare-market-statistics', priority: '0.85', changefreq: 'monthly' },
   { path: '/resources', priority: '0.7', changefreq: 'monthly' },
   { path: '/fr/contacts', priority: '0.7', changefreq: 'monthly' },
   { path: '/ar/contacts', priority: '0.7', changefreq: 'monthly' },
@@ -380,6 +384,9 @@ const staticPages = [
   { path: '/bahrain-medical-devices-market-report', priority: '0.83', changefreq: 'monthly' },
   { path: '/bionixus-industries', priority: '0.80', changefreq: 'monthly' },
   { path: '/bionixus-industries/insights', priority: '0.9', changefreq: 'daily' },
+  { path: '/pharma-healthcare-industries', priority: '0.7', changefreq: 'monthly' },
+  { path: '/b2b-industries', priority: '0.7', changefreq: 'monthly' },
+  { path: '/b2c-industries', priority: '0.7', changefreq: 'monthly' },
   { path: '/brazil-healthcare-market-report', priority: '0.88', changefreq: 'monthly' },
   { path: '/brazil-medical-devices-market-report', priority: '0.88', changefreq: 'monthly' },
   { path: '/brazil-pharmaceutical-market-research', priority: '0.88', changefreq: 'monthly' },
@@ -704,7 +711,7 @@ function buildStaticRoutes() {
     if (!isSitemapRedirectSourcePath(page.path)) routes.push(page);
   }
   for (const page of topCompaniesManifest) {
-    routes.push({ path: page.path, priority: page.priority, changefreq: page.changefreq });
+    routes.push({ path: page.path, priority: page.priority, changefreq: page.changefreq, lastmod: page.lastmod });
   }
   for (const page of extraStaticSitemapPages) {
     if (!isSitemapRedirectSourcePath(page.path)) routes.push(page);
@@ -790,7 +797,7 @@ const hreflangGroups = [
   { en: '/contact', pt: '/pt/contact', de: '/de/contact', fr: '/fr/contacts', es: '/es/contact', ar: '/ar/contacts', 'zh-CN': '/zh/contact', ru: '/ru/contact', 'x-default': '/contact' },
   { en: '/about', pt: '/pt/about', de: '/de/about', fr: '/fr/about', es: '/es/about', ar: '/ar/about', 'zh-CN': '/zh/about', ru: '/ru/about', 'x-default': '/about' },
   // Only list languages that actually have distinct localized URLs.
-  { en: '/blog', pt: '/pt/blog', de: '/de/blog', fr: '/fr/blog', ar: '/ar/blog', 'zh-CN': '/zh/blog', ru: '/ru/blog', 'x-default': '/blog' },
+  { en: '/blog', pt: '/pt/blog', de: '/de/blog', fr: '/fr/blog', es: '/es/blog', ar: '/ar/blog', 'zh-CN': '/zh/blog', ru: '/ru/blog', 'x-default': '/blog' },
   { en: '/services/market-access', es: '/es/market-access', 'x-default': '/services/market-access' },
   { en: '/market-research-uae', ar: '/ar/market-research-uae', 'x-default': '/market-research-uae' },
   { en: '/market-research-ksa', ar: '/ar/market-research-ksa', 'x-default': '/market-research-ksa' },
@@ -1169,6 +1176,7 @@ const STATIC_PAGE_FILES = {
   '/contact': ['src/pages/Contact.tsx'],
   '/methodology': ['src/pages/Methodology.tsx'],
   '/faq': ['src/pages/FAQ.tsx'],
+  '/healthcare-market-statistics': ['src/pages/HealthcareMarketStatistics.tsx'],
   '/resources': ['src/pages/Resources.tsx'],
   '/privacy': ['src/pages/Privacy.tsx'],
   '/market-research-home': ['src/pages/MarketResearchHome.tsx'],
@@ -1245,7 +1253,11 @@ const STATIC_PAGE_FILES = {
   '/pharma-fieldwork-uae': ['src/pages/PharmaFieldworkUae.tsx'],
   '/real-world-evidence': ['src/pages/RealWorldEvidence.tsx'],
   '/real-world-evidence-gcc': ['src/pages/RealWorldEvidenceGcc.tsx'],
+  '/heor-consulting': ['src/pages/HeorConsulting.tsx'],
   '/heor-consulting-saudi-arabia': ['src/pages/HeorConsultingSaudiArabia.tsx'],
+  '/pharma-healthcare-industries': ['src/pages/industries/IndustrySegmentPage.tsx'],
+  '/b2b-industries': ['src/pages/industries/IndustrySegmentPage.tsx'],
+  '/b2c-industries': ['src/pages/industries/IndustrySegmentPage.tsx'],
   '/hta-studies-saudi-arabia': ['src/pages/HtaStudiesSaudiArabia.tsx'],
   '/cost-effectiveness-analysis-saudi-arabia': ['src/pages/CostEffectivenessAnalysisSaudiArabia.tsx'],
   '/cost-effectiveness-analysis-gcc': ['src/pages/CostEffectivenessAnalysisGcc.tsx'],
@@ -1415,7 +1427,7 @@ async function main() {
   const candidates = new Map();
 
   const staticRoutes = buildStaticRoutes();
-  for (const { path, priority, changefreq } of staticRoutes) {
+  for (const { path, priority, changefreq, lastmod: providedLastmod } of staticRoutes) {
     const url = BASE + path;
     // Try to get the real last-modified date from git for the source file
     let sourceFiles = STATIC_PAGE_FILES[path] || [];
@@ -1425,10 +1437,14 @@ async function main() {
     if (sourceFiles.length === 0 && path.startsWith('/market-reports')) {
       sourceFiles = MARKET_REPORTS_GIT_FILES;
     }
-    let lastmod = null;
-    for (const relFile of sourceFiles) {
-      lastmod = getGitLastModified(join(root, relFile));
-      if (lastmod) break;
+    // A route-level lastmod (e.g. from a data manifest) is a real content-change
+    // date and takes priority over the git-derived source-file date.
+    let lastmod = providedLastmod || null;
+    if (!lastmod) {
+      for (const relFile of sourceFiles) {
+        lastmod = getGitLastModified(join(root, relFile));
+        if (lastmod) break;
+      }
     }
     candidates.set(url, {
       priority: priority || '0.8',

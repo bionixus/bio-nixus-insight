@@ -222,7 +222,7 @@ export default function TopPharmaMarketResearchCompaniesMiddleEast2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Pharma Market Research Companies in the Middle East (2026 Guide) | BioNixus</title>
+        <title>Middle East Pharma Market Research Companies 2026 | BioNixus</title>
         <meta
           name="description"
           content="Independent 2026 ranking of top pharma market research companies in the Middle East — BioNixus, IQVIA, Ipsos, Sapience Analytics, IDS, Kantar, and OSIRIUM Analytics compared for MENA pharmaceutical research."

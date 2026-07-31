@@ -7,7 +7,7 @@ export function PortableTextToHTML(portableText: any) {
     components: {
       types: {
         image: ({ value }: any) => {
-          return `<img src="${value.url}" alt="${value.alt || ''}" style="max-width: 100%; height: auto; margin: 20px 0;" />`
+          return `<img src="${value.url}" alt="${value.alt || 'Article illustration'}" style="max-width: 100%; height: auto; margin: 20px 0;" />`
         },
       },
       marks: {
