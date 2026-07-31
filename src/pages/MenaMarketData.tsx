@@ -1,10 +1,12 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, TrendingUp, Globe, Building2, Pill, Users, BarChart3, ArrowRight, Share2, BookOpen } from 'lucide-react';
+import { TrendingUp, Globe, Building2, Pill, Users, BarChart3, ArrowRight, Share2, BookOpen } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { Helmet } from 'react-helmet-async';
+import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
+import { buildFAQSchema } from '@/lib/seo/schemas';
 
 /* ------------------------------------------------------------------ */
 /* Citable data points — sourced from BioNixus MEA Q3-2024, Grand View */
@@ -112,6 +114,49 @@ const therapeuticAreas: TherapeuticArea[] = [
   { name: 'Infectious Disease', growthRate: '7.4%', keyDrivers: 'Hepatitis B/C programmes, TB in North Africa, vaccine infrastructure expansion' },
 ];
 
+const menaMarketFaqItems = [
+  {
+    question: 'How should pharmaceutical teams interpret MENA market size estimates?',
+    answer:
+      'Treat MENA market size estimates as a directional planning input, not a launch forecast by themselves. The headline value shows the scale of regional pharmaceutical demand, while country-level growth, spending per capita, channel structure, and regulator context explain where that demand can be reached. BioNixus recommends validating the most relevant markets with therapy-specific physician research, payer interviews, and distributor checks before final investment decisions.',
+  },
+  {
+    question: 'Why do Saudi Arabia, UAE, and Egypt require different research designs?',
+    answer:
+      'Saudi Arabia, UAE, and Egypt differ in payer mix, procurement influence, physician concentration, private-sector maturity, and local manufacturing policy. Saudi Arabia often requires careful mapping of public procurement, institutional treatment pathways, and SFDA timing. UAE research usually needs emirate-level segmentation across MOHAP, DHA, and DOH environments. Egypt adds scale, affordability, and local generics dynamics. A shared regional questionnaire rarely captures these differences without country-specific modules.',
+  },
+  {
+    question: 'Can this page be used for a GCC pharma market forecast?',
+    answer:
+      'Yes, but only as a starting point. The GCC market figures on this page should be translated into forecast assumptions using ranges, scenarios, and clearly stated evidence limits. For new GCC market figures, BioNixus uses range-based estimates and BioNixus market analysis attribution because access, tender timing, insurance coverage, and specialty adoption can shift quickly. Forecasts should then be pressure-tested with local clinicians, payers, and channel experts.',
+  },
+  {
+    question: 'What evidence is needed before entering a MENA therapy area?',
+    answer:
+      'Teams should combine epidemiology, treatment pathway mapping, physician behavior, payer criteria, channel access, and competitor share. For specialty therapies, evidence should also include referral dynamics, diagnostic bottlenecks, center-of-excellence concentration, biologic or biosimilar substitution rules, and patient affordability constraints. BioNixus typically converts high-level market data into a focused research brief that identifies the evidence gaps most likely to affect launch sequence, positioning, pricing, and field execution.',
+  },
+  {
+    question: 'How does market access shape MENA pharmaceutical opportunity?',
+    answer:
+      'Market access determines whether demand becomes reimbursed, prescribed, and repeatable revenue. In many MENA countries, regulatory approval is only one gate. Teams also need to understand formulary inclusion, hospital tender cycles, private insurance coverage, distributor incentives, physician confidence, and patient out-of-pocket exposure. A country may look attractive in market value but remain difficult if access decision makers are fragmented or if procurement rules favor established alternatives.',
+  },
+  {
+    question: 'How often should MENA market data be refreshed?',
+    answer:
+      'Refresh cadence depends on the decision. Annual updates may be enough for early portfolio screening, while active launch planning, acquisition diligence, and tender strategy often need quarterly or event-driven updates. BioNixus usually recommends refreshing assumptions when a new competitor launches, a regulator changes review pathways, a major payer revises coverage, or government procurement policy shifts. Static numbers become more useful when paired with a trigger-based monitoring plan.',
+  },
+  {
+    question: 'When should teams commission custom BioNixus research instead of relying on public data?',
+    answer:
+      'Commission custom research when the answer will influence resource allocation, launch timing, pricing, partner selection, or clinical messaging. Public data can show market scale, but it rarely explains prescribing barriers, payer trade-offs, KOL influence, account readiness, or competitor vulnerability. BioNixus custom research is most valuable when teams need decision-ready evidence from physicians, payers, pharmacists, hospital leaders, distributors, or other stakeholders in specific MENA countries.',
+  },
+  {
+    question: 'How should teams handle uncertainty in MENA market data?',
+    answer:
+      'Uncertainty should be made explicit rather than hidden behind overly precise numbers. BioNixus recommends using low, base, and high scenarios for demand, access timing, price realization, and channel uptake. New GCC figures should be expressed as ranges with BioNixus market analysis attribution, then challenged through stakeholder interviews. This approach helps leadership see which assumptions are robust and which ones require more evidence before capital, headcount, or partnership decisions are made.',
+  },
+];
+
 const MenaMarketData = () => {
   const { language } = useLanguage();
   const basePath = languagePaths[language] || '/';
@@ -170,19 +215,23 @@ const MenaMarketData = () => {
             ],
           })}
         </script>
+        <script type="application/ld+json">
+          {JSON.stringify(buildFAQSchema(menaMarketFaqItems, { pageUrl: citationUrl, sectionId: 'mena-market-data-faq' }))}
+        </script>
       </Helmet>
       <Navbar />
       <main>
         {/* Breadcrumb */}
         <div className="section-padding pt-24 pb-4">
           <div className="container-wide">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
-              <Link to={basePath} className="hover:text-primary transition-colors">Home</Link>
-              <span>/</span>
-              <Link to="/resources" className="hover:text-primary transition-colors">Resources</Link>
-              <span>/</span>
-              <span className="text-foreground">MENA Pharma Market Data</span>
-            </div>
+            <BreadcrumbNav
+              items={[
+                { name: 'Home', href: basePath },
+                { name: 'Resources', href: '/resources' },
+                { name: 'MENA Pharma Market Data', href: '/mena-pharma-market-data' },
+              ]}
+              className="px-0 py-0 mb-6"
+            />
           </div>
         </div>
 
@@ -197,7 +246,11 @@ const MenaMarketData = () => {
               MENA Pharmaceutical Market Data 2026
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
-              Comprehensive market intelligence on the pharmaceutical landscape across the Middle East and North Africa. Country-by-country breakdown of market size, growth rates, per-capita spending, regulatory bodies, and therapeutic area trends.
+              Comprehensive market intelligence on the pharmaceutical landscape across the Middle East and North Africa. Use this page alongside BioNixus{' '}
+              <Link to="/healthcare-market-research" className="text-primary font-semibold underline">
+                healthcare market research
+              </Link>{' '}
+              services to translate country-by-country market size, growth rates, per-capita spending, regulatory bodies, and therapeutic area trends into evidence-led launch and access decisions.
             </p>
             <p className="text-sm text-muted-foreground">
               Last updated: {lastUpdated} &middot; Sources: BioNixus MEA Market Report, WHO EMRO, national health authority filings
@@ -564,6 +617,293 @@ const MenaMarketData = () => {
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Per-capita pharmaceutical spending figures are estimated by BioNixus based on market value divided by mid-year population estimates. Growth rates are year-over-year unless otherwise stated. All values in USD.
               </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="section-padding py-16 bg-muted/30" id="how-to-use-mena-market-data">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              How to use this MENA market data page
+            </h2>
+            <p className="text-muted-foreground leading-relaxed max-w-4xl mb-8">
+              This resource is designed as a decision framework, not a static fact sheet. Start with the market data to understand scale,
+              then move quickly into the evidence questions that determine whether a country, therapy area, or channel can support your
+              strategic objective. BioNixus clients use this page to brief regional leadership, shortlist priority markets, and decide
+              where deeper primary research is needed before committing budget.
+            </p>
+            <p className="text-muted-foreground leading-relaxed max-w-4xl mb-8">
+              Read the page in layers. First, review the country table to identify where value, growth, and spending intensity appear
+              strongest. Second, compare those indicators with therapy-area growth and market structure. Third, list the assumptions that
+              would change your decision if proven wrong. That final list becomes the backbone of a practical research plan.
+            </p>
+            <div className="grid md:grid-cols-3 gap-6">
+              <article className="bg-card border border-border rounded-xl p-6">
+                <h3 className="text-lg font-display font-semibold text-foreground mb-3">Why it matters</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  MENA pharmaceutical opportunity is uneven. A country can show attractive growth while still presenting slow formulary
+                  access, fragmented private coverage, or limited specialty-center reach. Comparing market value with policy direction,
+                  channel structure, and per-capita spending helps teams avoid treating the region as one blended opportunity. It also
+                  creates a more disciplined basis for choosing between Saudi Arabia, UAE, Egypt, and smaller GCC markets.
+                </p>
+              </article>
+              <article className="bg-card border border-border rounded-xl p-6">
+                <h3 className="text-lg font-display font-semibold text-foreground mb-3">What the evidence says</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  The evidence points to a high-growth region where demand is shaped by chronic disease burden, government health
+                  investment, local manufacturing policy, and regulatory modernization. New GCC opportunity estimates should be framed
+                  as ranges, such as mid-single-digit to low-double-digit annual growth bands by therapy and country, with BioNixus
+                  market analysis attribution. Ranges are more honest than false precision when tender timing and reimbursement evolve.
+                </p>
+              </article>
+              <article className="bg-card border border-border rounded-xl p-6">
+                <h3 className="text-lg font-display font-semibold text-foreground mb-3">What to do next</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Convert the data into a ranked set of decisions: which markets need immediate validation, which assumptions require
+                  physician or payer evidence, and which access barriers could change the business case. Teams often begin with a focused
+                  hypothesis workshop, then commission country-specific work such as{' '}
+                  <Link to="/healthcare-market-research/saudi-arabia" className="text-primary underline">
+                    Saudi Arabia healthcare market research
+                  </Link>{' '}
+                  or UAE launch-readiness research.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section className="section-padding py-16" id="decision-lenses">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Decision lenses for MENA pharmaceutical planning
+            </h2>
+            <p className="text-muted-foreground leading-relaxed max-w-4xl mb-8">
+              The best market plans combine quantitative indicators with practical execution lenses. Use the views below to connect
+              headline market size to a more usable commercial, medical, or market access brief.
+            </p>
+            <p className="text-muted-foreground leading-relaxed max-w-4xl mb-8">
+              Each lens should be scored against evidence strength. A strong score means the available data, stakeholder feedback, and
+              operational pathway all point in the same direction. A weak score means the opportunity may still be real, but the team
+              should pause before allocating major resources. This prevents broad regional enthusiasm from masking country-level friction.
+            </p>
+            <div className="grid md:grid-cols-2 gap-6">
+              <article className="rounded-xl border border-border bg-card p-6">
+                <h3 className="text-lg font-display font-semibold text-foreground mb-3">Country prioritization</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Prioritization starts with scale, growth, affordability, regulatory momentum, and execution feasibility. Saudi Arabia
+                  may lead on value and policy ambition, while UAE can be a faster specialty-access proving ground and Egypt can provide
+                  population scale with sharper affordability questions. Compare this page with the{' '}
+                  <Link to="/gcc-pharmaceutical-market-research" className="text-primary underline">
+                    GCC pharmaceutical market research
+                  </Link>{' '}
+                  overview when separating Gulf-wide opportunity from country-specific evidence needs.
+                </p>
+              </article>
+              <article className="rounded-xl border border-border bg-card p-6">
+                <h3 className="text-lg font-display font-semibold text-foreground mb-3">Therapy focus</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Therapy area attractiveness depends on more than prevalence. Oncology, diabetes, immunology, rare disease, and
+                  cardiovascular categories each require different evidence on diagnosis, referral, treatment sequencing, biologic uptake,
+                  and guideline influence. A therapy lens should identify which clinicians shape adoption, where unmet need is visible,
+                  and whether local stakeholders see enough value to support premium positioning.
+                </p>
+              </article>
+              <article className="rounded-xl border border-border bg-card p-6">
+                <h3 className="text-lg font-display font-semibold text-foreground mb-3">Channel and access</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Retail, hospital, tender, private insurance, and cash-pay channels create different routes to uptake. A medicine with
+                  strong physician interest can still stall if distributor economics, tender windows, or reimbursement documentation are
+                  weak. Access research should map the decision makers, evidence expectations, and bottlenecks that determine whether
+                  demand converts into consistent prescribing.
+                </p>
+              </article>
+              <article className="rounded-xl border border-border bg-card p-6">
+                <h3 className="text-lg font-display font-semibold text-foreground mb-3">Competitive share</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Share analysis should distinguish multinational brands, regional manufacturers, generics, biosimilars, and local
+                  tender-preferred suppliers. The question is not only who sells today, but which competitors have clinical loyalty,
+                  account access, contracting leverage, or patient-support infrastructure. For country depth, compare UAE dynamics in{' '}
+                  <Link to="/uae-pharmaceutical-market-research" className="text-primary underline">
+                    UAE pharmaceutical market research
+                  </Link>{' '}
+                  with larger-population markets.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section className="section-padding py-16 bg-muted/30" id="research-briefs">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              How BioNixus clients convert this data into research briefs
+            </h2>
+            <p className="text-muted-foreground leading-relaxed max-w-4xl mb-8">
+              A useful research brief turns broad market facts into evidence requirements. BioNixus helps pharmaceutical, biotech, and
+              medical technology teams move from "the market looks attractive" to a clear list of research questions, respondent groups,
+              countries, and outputs that can support an investment decision.
+            </p>
+            <p className="text-muted-foreground leading-relaxed max-w-4xl mb-8">
+              The strongest briefs also separate what is known, what is assumed, and what must be tested. That distinction matters in
+              MENA because the same therapy can face different reimbursement expectations, prescribing authorities, private-sector access,
+              and distributor realities across neighboring countries. Clear assumptions make final recommendations easier to trust.
+            </p>
+            <div className="space-y-5">
+              <article className="rounded-xl border border-border bg-card p-6">
+                <h3 className="text-lg font-display font-semibold text-foreground mb-2">1. Define the decision and the risk</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  The brief begins by naming the decision: enter a country, sequence launches, refine positioning, test access evidence,
+                  select distributors, or benchmark competitors. Each decision carries different risk. For example, a{' '}
+                  <Link to="/saudi-arabia-healthcare-market-report" className="text-primary underline">
+                    Saudi Arabia healthcare market report
+                  </Link>{' '}
+                  may need to clarify procurement pathways, while Egypt diligence may focus on affordability, local manufacturing, and
+                  prescriber confidence in branded versus generic options.
+                </p>
+              </article>
+              <article className="rounded-xl border border-border bg-card p-6">
+                <h3 className="text-lg font-display font-semibold text-foreground mb-2">2. Translate market data into hypotheses</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Teams convert each data point into a testable hypothesis. High growth may suggest unmet need, but it may also reflect
+                  price inflation, recent reimbursement, or a narrow specialty segment. Strong per-capita spending can indicate access
+                  capacity, but it does not prove payer willingness for a new indication. Hypotheses keep the research focused and make
+                  later recommendations easier to defend.
+                </p>
+              </article>
+              <article className="rounded-xl border border-border bg-card p-6">
+                <h3 className="text-lg font-display font-semibold text-foreground mb-2">3. Choose respondent groups and methods</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  A MENA brief usually combines specialist physicians, pharmacists, hospital decision makers, payers, procurement
+                  stakeholders, distributors, and sometimes patient-advocacy or diagnostics experts. Methods can include qualitative
+                  interviews, quantitative physician surveys, payer depth, KOL mapping, and secondary evidence synthesis. BioNixus selects
+                  methods according to decision weight, budget, timeline, and the sensitivity of the question.
+                </p>
+              </article>
+              <article className="rounded-xl border border-border bg-card p-6">
+                <h3 className="text-lg font-display font-semibold text-foreground mb-2">4. Package findings for action</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  The final output should support decisions, not simply report fieldwork. BioNixus briefs typically include market
+                  prioritization, evidence gaps, stakeholder maps, opportunity and risk scenarios, and next-step recommendations for
+                  launch planning. Teams comparing North Africa and Gulf markets can pair this page with{' '}
+                  <Link to="/egypt-pharmaceutical-market-research" className="text-primary underline">
+                    Egypt pharmaceutical market research
+                  </Link>{' '}
+                  or a custom Gulf access assessment, then{' '}
+                  <Link to="/contact" className="text-primary underline">
+                    contact BioNixus
+                  </Link>{' '}
+                  for a scoped proposal.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section className="section-padding py-16" id="mena-market-data-faq">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              MENA pharmaceutical market data FAQ
+            </h2>
+            <p className="text-muted-foreground leading-relaxed max-w-4xl mb-8">
+              These questions explain how to interpret the figures, when to validate them with primary research, and how to convert
+              regional market intelligence into action for strategy, access, and launch planning.
+            </p>
+            <div className="space-y-4">
+              <details className="rounded-xl border border-border bg-card p-5">
+                <summary className="cursor-pointer font-semibold text-foreground">
+                  How should pharmaceutical teams interpret MENA market size estimates?
+                </summary>
+                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+                  Treat MENA market size estimates as a directional planning input, not a launch forecast by themselves. The headline
+                  value shows the scale of regional pharmaceutical demand, while country-level growth, spending per capita, channel
+                  structure, and regulator context explain where that demand can be reached. BioNixus recommends validating the most
+                  relevant markets with therapy-specific physician research, payer interviews, and distributor checks before final
+                  investment decisions.
+                </p>
+              </details>
+              <details className="rounded-xl border border-border bg-card p-5">
+                <summary className="cursor-pointer font-semibold text-foreground">
+                  Why do Saudi Arabia, UAE, and Egypt require different research designs?
+                </summary>
+                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+                  Saudi Arabia, UAE, and Egypt differ in payer mix, procurement influence, physician concentration, private-sector
+                  maturity, and local manufacturing policy. Saudi Arabia often requires careful mapping of public procurement,
+                  institutional treatment pathways, and SFDA timing. UAE research usually needs emirate-level segmentation across MOHAP,
+                  DHA, and DOH environments. Egypt adds scale, affordability, and local generics dynamics. A shared regional questionnaire
+                  rarely captures these differences without country-specific modules.
+                </p>
+              </details>
+              <details className="rounded-xl border border-border bg-card p-5">
+                <summary className="cursor-pointer font-semibold text-foreground">
+                  Can this page be used for a GCC pharma market forecast?
+                </summary>
+                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+                  Yes, but only as a starting point. The GCC market figures on this page should be translated into forecast assumptions
+                  using ranges, scenarios, and clearly stated evidence limits. For new GCC market figures, BioNixus uses range-based
+                  estimates and BioNixus market analysis attribution because access, tender timing, insurance coverage, and specialty
+                  adoption can shift quickly. Forecasts should then be pressure-tested with local clinicians, payers, and channel experts.
+                </p>
+              </details>
+              <details className="rounded-xl border border-border bg-card p-5">
+                <summary className="cursor-pointer font-semibold text-foreground">
+                  What evidence is needed before entering a MENA therapy area?
+                </summary>
+                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+                  Teams should combine epidemiology, treatment pathway mapping, physician behavior, payer criteria, channel access, and
+                  competitor share. For specialty therapies, evidence should also include referral dynamics, diagnostic bottlenecks,
+                  center-of-excellence concentration, biologic or biosimilar substitution rules, and patient affordability constraints.
+                  BioNixus typically converts high-level market data into a focused research brief that identifies the evidence gaps most
+                  likely to affect launch sequence, positioning, pricing, and field execution.
+                </p>
+              </details>
+              <details className="rounded-xl border border-border bg-card p-5">
+                <summary className="cursor-pointer font-semibold text-foreground">
+                  How does market access shape MENA pharmaceutical opportunity?
+                </summary>
+                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+                  Market access determines whether demand becomes reimbursed, prescribed, and repeatable revenue. In many MENA countries,
+                  regulatory approval is only one gate. Teams also need to understand formulary inclusion, hospital tender cycles, private
+                  insurance coverage, distributor incentives, physician confidence, and patient out-of-pocket exposure. A country may look
+                  attractive in market value but remain difficult if access decision makers are fragmented or if procurement rules favor
+                  established alternatives.
+                </p>
+              </details>
+              <details className="rounded-xl border border-border bg-card p-5">
+                <summary className="cursor-pointer font-semibold text-foreground">
+                  How often should MENA market data be refreshed?
+                </summary>
+                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+                  Refresh cadence depends on the decision. Annual updates may be enough for early portfolio screening, while active launch
+                  planning, acquisition diligence, and tender strategy often need quarterly or event-driven updates. BioNixus usually
+                  recommends refreshing assumptions when a new competitor launches, a regulator changes review pathways, a major payer
+                  revises coverage, or government procurement policy shifts. Static numbers become more useful when paired with a
+                  trigger-based monitoring plan.
+                </p>
+              </details>
+              <details className="rounded-xl border border-border bg-card p-5">
+                <summary className="cursor-pointer font-semibold text-foreground">
+                  When should teams commission custom BioNixus research instead of relying on public data?
+                </summary>
+                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+                  Commission custom research when the answer will influence resource allocation, launch timing, pricing, partner
+                  selection, or clinical messaging. Public data can show market scale, but it rarely explains prescribing barriers, payer
+                  trade-offs, KOL influence, account readiness, or competitor vulnerability. BioNixus custom research is most valuable when
+                  teams need decision-ready evidence from physicians, payers, pharmacists, hospital leaders, distributors, or other
+                  stakeholders in specific MENA countries.
+                </p>
+              </details>
+              <details className="rounded-xl border border-border bg-card p-5">
+                <summary className="cursor-pointer font-semibold text-foreground">
+                  How should teams handle uncertainty in MENA market data?
+                </summary>
+                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+                  Uncertainty should be made explicit rather than hidden behind overly precise numbers. BioNixus recommends using low,
+                  base, and high scenarios for demand, access timing, price realization, and channel uptake. New GCC figures should be
+                  expressed as ranges with BioNixus market analysis attribution, then challenged through stakeholder interviews. This
+                  approach helps leadership see which assumptions are robust and which ones require more evidence before capital,
+                  headcount, or partnership decisions are made.
+                </p>
+              </details>
             </div>
           </div>
         </section>
