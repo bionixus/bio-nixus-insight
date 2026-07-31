@@ -17,11 +17,11 @@ import { ReportPremiumHero, ReportPremiumSection } from '@/components/report-pre
 const pageUrl = 'https://www.bionixus.com/gcc-pharmaceutical-market-research';
 const REPORT_CONVERSION = getStandaloneReportConfig('/gcc-pharmaceutical-market-research');
 
-const PAGE_TITLE = 'GCC Biologics & Generic Injectables Market 2026 | BioNixus';
+const PAGE_TITLE = 'GCC Pharmaceutical Market Research 2026 | Biologics & Injectables | BioNixus';
 const PAGE_H1 =
   'GCC Biologics & Generic Injectables Market Research 2026 — Precision Medicine & Drug Repurposing';
 const PAGE_DESCRIPTION =
-  'GCC biologics market ($4.8–5.4B), generic injectables ($1.6–1.9B), drug repurposing & Saudi precision medicine — pharmaceutical market research across KSA, UAE, Kuwait, Qatar, Bahrain & Oman.';
+  'GCC pharmaceutical market research for biologics ($4.8–5.4B), generic injectables ($1.6–1.9B), drug repurposing & Saudi precision medicine — primary HCP research across KSA, UAE, Kuwait, Qatar, Bahrain & Oman.';
 
 const FAQ_ITEMS = [
   {
@@ -53,6 +53,11 @@ const FAQ_ITEMS = [
     question: 'Which GCC therapy areas drive the most pharma growth in 2026?',
     answer:
       'In 2026, the fastest-growing GCC therapy areas are oncology, diabetes and obesity (GLP-1 driven), rare disease, immunology, and cardiovascular. Saudi Arabia and the UAE concentrate the bulk of innovative-medicine spend, while Kuwait and Qatar prioritize tendered generic and hospital-administered portfolios.',
+  },
+  {
+    question: 'What does GCC pharmaceutical market research include?',
+    answer:
+      'GCC pharmaceutical market research covers primary physician and payer studies, quantitative tracker programmes, KOL mapping, pricing and access scenario modelling, biosimilar and tender-defence intelligence, and launch-sequencing recommendations across Saudi Arabia, the UAE, Kuwait, Qatar, Bahrain, and Oman. BioNixus programmes are bilingual (Arabic/English), SFDA/MOHAP-aware, and designed to connect survey evidence to NUPCO tender calendars, MOHAP listing requirements, and account-level commercial decisions rather than generic regional averages.',
   },
 ];
 

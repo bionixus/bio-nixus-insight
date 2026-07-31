@@ -48,6 +48,11 @@ const faqItems = [
     answer:
       'Yes. Italian modules can run with comparable cells in Germany, France, Spain, and the UK — and beyond to the USA, Canada, Japan, and other markets — using consistent instruments for global portfolio committees managing EU5 and multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How does the AIFA registration and pricing process affect pharmaceutical market research in Italy?',
+    answer:
+      'AIFA (Agenzia Italiana del Farmaco) governs all pharmaceutical registration, pricing, and reimbursement in Italy. New medicines follow a CTS (Commissione Tecnico Scientifica) innovation assessment, then CPR (Comitato Prezzi e Rimborso) price negotiation for SSN reimbursement. Market research must map where a product sits in this pathway — pre-CTS evidence generation, CPR price corridor modelling, or post-PFN regional SSR formulary adoption. BioNixus designs Italian HCP and payer studies aligned to AIFA dossier timelines, Law 648/96 compassionate-use programmes, and regional SSR restrictions in Lombardia, Lazio, Veneto, and Emilia-Romagna that can block national listing uptake.',
+  },
 ];
 
 const jsonLd = [
