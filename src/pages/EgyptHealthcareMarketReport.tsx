@@ -53,6 +53,11 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
     answer:
       'BioNixus has operated a dedicated Egypt research team from Cairo since 2012. We conduct quantitative HCP surveys (oncologists, endocrinologists, cardiologists, gastroenterologists, rheumatologists), qualitative KOL depth interviews, payer and formulary research with MOH and UHI decision-makers, and hospital consumption intelligence across Cairo University Hospital, NCI, Ain Shams, and private hospital chains (Cleopatra, As-Salam International, Dar Al Fouad). Egypt-specific and regional MENA programs are both available.',
   },
+  {
+    question: 'How does Egyptian pound (EGP) currency volatility affect pharmaceutical market planning?',
+    answer:
+      'Egypt\'s pharmaceutical market operates under EDA price controls denominated in Egyptian pounds, while many multinationals import active pharmaceutical ingredients and finished goods priced in USD or EUR. Periodic EGP devaluations trigger EDA price-adjustment cycles that can compress margins and delay new product launches until currency pass-through is approved. BioNixus models EGP/USD exposure scenarios for brand P&L planning, tracks EDA price-increase application outcomes by therapeutic category, and advises on local manufacturing partnership structures that reduce forex settlement risk for imported portfolios.',
+  },
 ], 'egypt');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/egypt-healthcare-market-report');
