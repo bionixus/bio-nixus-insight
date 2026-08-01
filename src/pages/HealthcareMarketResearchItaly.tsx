@@ -48,6 +48,11 @@ const faqItems = [
     answer:
       'Yes. Italian modules can run with comparable cells in Germany, France, Spain, and the UK — and beyond to the USA, Canada, Japan, and other markets — using consistent instruments for global portfolio committees managing EU5 and multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How does BioNixus support AIFA market access research in Italy?',
+    answer:
+      'BioNixus designs Italian programmes that align with AIFA CTS innovation classification, CPR price negotiation evidence needs, and regional SSR formulary barriers. Studies typically combine IRCCS KOL depth, national HCP surveys, and regional payer modules so launch teams understand both PFN listing requirements and post-listing adoption friction in Lombardia, Lazio, Veneto, and other high-spend regions.',
+  },
 ];
 
 const jsonLd = [
