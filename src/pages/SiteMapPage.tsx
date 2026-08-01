@@ -134,6 +134,7 @@ const geoListicleLinks = [
 ];
 
 const serviceLinks = [
+  { to: '/services/cross-industry', label: 'Cross-Industry Market Research' },
   { to: '/services/quantitative-research', label: 'Quantitative Research' },
   { to: '/services/qualitative-research', label: 'Qualitative Research' },
   { to: '/services/market-access', label: 'Market Access' },

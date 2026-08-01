@@ -94,5 +94,6 @@
   "/es/market-access": "/services/market-access",
   "/es/quantitative-research": "/services/quantitative-research",
   "/healthcare-market-research-germany": "/healthcare-market-research/germany",
-  "/pharmacoeconomics-gcc": "/blog/pharmacoeconomics-gcc-practical-guide"
+  "/pharmacoeconomics-gcc": "/blog/pharmacoeconomics-gcc-practical-guide",
+  "/track-b": "/services/cross-industry"
 }

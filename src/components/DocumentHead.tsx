@@ -346,6 +346,12 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
     );
   }
 
+  if (path === '/services/cross-industry') {
+    return clampDescription(
+      'Multi-country quantitative and qualitative market research for FMCG, financial services, technology, industrial, and public-sector teams across MENA and Europe.'
+    );
+  }
+
   if (path === '/market-research') {
     return clampDescription(
       'Complete healthcare and pharmaceutical market research services hub with quantitative, qualitative, Saudi-focused, and market access strategy options.'

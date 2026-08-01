@@ -30,6 +30,7 @@ const STATIC_ROUTES = [
   '/about',
   '/client-reviews',
   '/services',
+  '/services/cross-industry',
   '/services/quantitative-research',
   '/services/qualitative-research',
   '/services/market-access',
