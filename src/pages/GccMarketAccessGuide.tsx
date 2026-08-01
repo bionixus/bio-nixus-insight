@@ -656,6 +656,14 @@ const GccMarketAccessGuide = () => {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
                 },
+                {
+                  q: 'How do SFDA EES and evidence requirements differ for biosimilars versus novel biologics in Saudi Arabia?',
+                  a: 'SFDA expects comparability evidence packages for biosimilars that demonstrate analytical, functional, and clinical similarity to reference biologics, while novel biologics require full clinical efficacy and safety dossiers. NUPCO and hospital formulary committees often request local budget-impact narratives alongside regulatory approval — BioNixus designs payer research that surfaces the economic questions each committee asks before listing.',
+                },
+                {
+                  q: 'When should teams commission GCC HTA-style evidence before pricing workshops?',
+                  a: 'Commission HTA-aligned evidence when products face external reference pricing, tender price ceilings, or hospital committee scrutiny that goes beyond registration. Early modules should define comparator sets, endpoint relevance, and budget-impact framing per country before CPR-style negotiations or NUPCO cycles begin — especially for oncology, rare disease, and high-cost biologics.',
+                },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">
                   <summary className="text-lg font-display font-semibold text-foreground cursor-pointer list-none">
