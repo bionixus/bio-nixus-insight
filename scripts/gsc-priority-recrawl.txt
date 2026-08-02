@@ -57,4 +57,8 @@ https://www.bionixus.com/premium-home-page
 https://www.bionixus.com/home-staging
 https://www.bionixus.com/sitemap.xml
 https://www.bionixus.com/bionixus-market-research-middle-east
-https://www.bionixus.com/gcc-market-access-guide
+# --- Tier 7: Redirect-loop fix + high-impression CTR refresh (2026-08-02) ---
+https://www.bionixus.com/quantitative-healthcare-market-research
+https://www.bionixus.com/gcc-medical-devices-market-report
+https://www.bionixus.com/kantar-health-alternative-gcc
+https://www.bionixus.com/blog/healthcare-overview-egypt-market-2026
