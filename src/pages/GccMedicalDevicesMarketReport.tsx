@@ -54,6 +54,16 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
     answer:
       'BioNixus supports GCC medical device commercial strategy through three primary intelligence products: (1) Account-level procurement intelligence — hospital-specific budget cycles, procurement head contacts, and device replacement schedules sourced from biomedical engineering and procurement department primary research; (2) Clinical user research — quantitative and qualitative surveys with surgeons, intensivists, radiologists, and clinical engineers mapping device preference, switching barriers, and competitive positioning; and (3) Regulatory and access tracking — systematic monitoring of SFDA, MOHAP, DHA, and DOH device registration timelines, approval outcomes, and formulary listing status.',
   },
+  {
+    question: 'What is the GCC in vitro diagnostics (IVD) market size in 2026?',
+    answer:
+      'The GCC IVD segment represents roughly 16% of total medical device market value — approximately USD 900M–1.0B in 2026. Growth is driven by national diabetes screening programmes, cardiac biomarker adoption, molecular diagnostics at major academic centres, and point-of-care testing expansion in primary care. Saudi Arabia and the UAE account for the majority of IVD capital equipment and reagent spend.',
+  },
+  {
+    question: 'How long does SFDA medical device registration take in Saudi Arabia?',
+    answer:
+      'SFDA MDIR registration timelines vary by risk class: Class A devices may complete notification in weeks; Class B–D devices typically require 6–18 months including technical review, local agent appointment, and Arabic labelling compliance. Hospital procurement listing is separate from registration — BioNixus tracks both regulatory approval and biomedical engineering evaluation cycles at MOH, NGHA, and private hospital networks.',
+  },
 ], 'gcc');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/gcc-medical-devices-market-report');
@@ -110,8 +120,8 @@ const GccMedicalDevicesMarketReport = () => {
       <Navbar />
 
       <SEOHead
-        title="GCC Medical Devices Market 2026 | IVD & $5.8B Size | BioNixus"
-        description="GCC medical devices & in vitro diagnostic (IVD) market ~USD 5.8B in 2026, $9B+ by 2030. Saudi Arabia, UAE, Kuwait — SFDA, MOHAP, DHA regulation, prefilled."
+        title="GCC Medical Devices Market Report 2026 | $5.8B IVD & Medtech | BioNixus"
+        description="GCC medical devices market report 2026: ~USD 5.8B medtech and IVD market, $9B+ by 2030. Saudi Arabia, UAE, Kuwait — SFDA, MOHAP, DHA regulation, hospital procurement intelligence from BioNixus."
         canonical="https://www.bionixus.com/gcc-medical-devices-market-report"
         jsonLd={jsonLd}
       />

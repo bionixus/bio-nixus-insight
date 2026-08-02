@@ -656,6 +656,18 @@ const GccMarketAccessGuide = () => {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
                 },
+                {
+                  q: 'How do GCC countries handle biosimilar pricing and interchangeability?',
+                  a: 'Saudi Arabia and the UAE have published biosimilar interchangeability guidance, but pharmacist substitution rules and payer incentives still vary by institution. NUPCO tender awards in KSA often set the reference price corridor for hospital-administered biologics. Research programmes should measure physician confidence, switching intent, and account-level share shifts after tender outcomes — not only regulatory approval status.',
+                },
+                {
+                  q: 'What is health technology assessment (HTA) adoption in the GCC?',
+                  a: 'Formal HTA is most mature in Saudi Arabia (SFDA economic evaluation requirements for selected products) and the UAE (DHA and DOH pharmacoeconomic dossiers for high-cost medicines). Kuwait, Qatar, Bahrain, and Oman increasingly request budget-impact and cost-effectiveness summaries for oncology and rare-disease therapies. BioNixus connects HEOR evidence generation with qualitative payer research so dossiers reflect how committees actually deliberate.',
+                },
+                {
+                  q: 'How should pharmaceutical teams sequence GCC market access research?',
+                  a: 'Start with regulatory pathway mapping and payer stakeholder identification 12–18 months before launch, then layer pricing research, physician adoption studies, and tender calendar intelligence as SFDA or MOHAP approval approaches. Post-launch, tracker programmes monitor formulary movement, competitive biosimilar entry, and account-level switching — keeping access and commercial teams aligned on the same evidence base.',
+                },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">
                   <summary className="text-lg font-display font-semibold text-foreground cursor-pointer list-none">
