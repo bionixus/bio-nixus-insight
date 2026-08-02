@@ -17,11 +17,11 @@ import { ReportPremiumHero, ReportPremiumSection } from '@/components/report-pre
 const pageUrl = 'https://www.bionixus.com/gcc-pharmaceutical-market-research';
 const REPORT_CONVERSION = getStandaloneReportConfig('/gcc-pharmaceutical-market-research');
 
-const PAGE_TITLE = 'GCC Biologics & Generic Injectables Market 2026 | BioNixus';
+const PAGE_TITLE = 'GCC Pharmaceutical Market Research 2026 | KSA, UAE & Biologics | BioNixus';
 const PAGE_H1 =
-  'GCC Biologics & Generic Injectables Market Research 2026 — Precision Medicine & Drug Repurposing';
+  'GCC Pharmaceutical Market Research 2026 — Biologics, Generic Injectables & Precision Medicine';
 const PAGE_DESCRIPTION =
-  'GCC biologics market ($4.8–5.4B), generic injectables ($1.6–1.9B), drug repurposing & Saudi precision medicine — pharmaceutical market research across KSA, UAE, Kuwait, Qatar, Bahrain & Oman.';
+  'GCC pharmaceutical market research across KSA, UAE, Kuwait, Qatar, Bahrain & Oman — biologics ($4.8–5.4B), generic injectables, biosimilars, precision medicine, and NUPCO tender intelligence from BioNixus.';
 
 const FAQ_ITEMS = [
   {
@@ -53,6 +53,21 @@ const FAQ_ITEMS = [
     question: 'Which GCC therapy areas drive the most pharma growth in 2026?',
     answer:
       'In 2026, the fastest-growing GCC therapy areas are oncology, diabetes and obesity (GLP-1 driven), rare disease, immunology, and cardiovascular. Saudi Arabia and the UAE concentrate the bulk of innovative-medicine spend, while Kuwait and Qatar prioritize tendered generic and hospital-administered portfolios.',
+  },
+  {
+    question: 'What does GCC pharmaceutical market research typically include?',
+    answer:
+      'GCC pharmaceutical market research programmes typically combine market sizing and segmentation, physician and KOL surveys, payer and formulary committee interviews, NUPCO and MOH tender tracking, biosimilar uptake measurement, pricing and access scenario modelling, and competitive intelligence across Saudi Arabia, the UAE, Kuwait, Qatar, Bahrain, and Oman. BioNixus designs bilingual Arabic–English studies aligned to SFDA, MOHAP, DHA, and DOH evidence expectations.',
+  },
+  {
+    question: 'How do biosimilar and biologics launches differ between Saudi Arabia and the UAE?',
+    answer:
+      'Saudi Arabia routes most hospital biologics and injectables through NUPCO centralized tenders — uptake depends on tender award timing, price corridors, and interchangeability guidance from SFDA. The UAE splits between MOHAP federal listing and emirate-specific DHA (Dubai) and DOH (Abu Dhabi) formularies, with private hospital groups often adopting branded biologics faster than public facilities. Research must map institution type, not country averages.',
+  },
+  {
+    question: 'When should pharmaceutical teams commission GCC market research before launch?',
+    answer:
+      'Commission GCC pharmaceutical market research 12–18 months before planned launch to align SFDA/MOHAP registration sequencing, NUPCO tender windows, KOL engagement, and pricing narratives. Late-stage research still helps defend tender outcomes, monitor biosimilar erosion, and refine account prioritization — but early programmes reduce rework when access assumptions change after first committee feedback.',
   },
 ];
 
