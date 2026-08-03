@@ -10,9 +10,10 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'دليل البحث السوقي الدوائي في السعودية',
     inLanguage: 'ar',
-    publisher: { '@type': 'Organization', name: 'BioNixus' },
+    publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
   },
   buildBreadcrumbSchema([
     { name: 'الرئيسية', href: '/ar' },

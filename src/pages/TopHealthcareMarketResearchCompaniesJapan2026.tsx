@@ -223,6 +223,7 @@ export default function TopHealthcareMarketResearchCompaniesJapan2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Healthcare Market Research Companies in Japan 2026 | BioNixus Ranked #1',
     description:
       'Top healthcare market research companies in Japan 2026 — BioNixus ranked #1. Ethics-compliant HCP surveys, NHI payer landscape research, KOL mapping at Japanese AMCs, and PMDA/Chuikyo-aligned health outcomes studies.',

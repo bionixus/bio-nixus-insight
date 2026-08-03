@@ -196,6 +196,7 @@ export default function TopHealthcareMarketResearchCompaniesDubai2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Healthcare Market Research Companies in Dubai (2026 Guide)',
     description:
       'Expert guide to the leading healthcare and pharmaceutical market research companies in Dubai for 2026. Covers DHA-aware research firms, KOL mapping, DHCC network access, UAE payer dynamics, and how to evaluate a research partner for Dubai.',

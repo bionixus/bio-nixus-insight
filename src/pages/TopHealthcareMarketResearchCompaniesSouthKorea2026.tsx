@@ -204,6 +204,7 @@ export default function TopHealthcareMarketResearchCompaniesSouthKorea2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Healthcare Market Research Companies in South Korea 2026 | BioNixus Ranked #1',
     description:
       'Top healthcare market research companies in South Korea 2026 — BioNixus ranked #1. Korean-language HCP surveys, HIRA/NHIS payer landscape research, KOL mapping at Korea Big 5 hospitals, and NECA cost-effectiveness evidence.',

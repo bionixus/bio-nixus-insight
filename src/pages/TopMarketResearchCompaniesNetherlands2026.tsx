@@ -208,6 +208,7 @@ export default function TopMarketResearchCompaniesNetherlands2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Market Research Companies in the Netherlands 2026 | BioNixus Ranked #1',
     description:
       'Top market research companies in the Netherlands 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. CBG-MEB-aligned HCP surveys, KOL mapping, and payer research.',

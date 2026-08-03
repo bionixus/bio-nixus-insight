@@ -836,7 +836,7 @@ export default function SiteMapPage() {
                       <ul className="grid gap-2">
                         {blogPosts.map((post) => (
                           <li key={post.id}>
-                            <PremiumInternalLink to={`/blog/${post.slug}`}>{post.title}</PremiumInternalLink>
+                            <PremiumInternalLink to={getBlogPostPath(post)}>{post.title}</PremiumInternalLink>
                           </li>
                         ))}
                       </ul>

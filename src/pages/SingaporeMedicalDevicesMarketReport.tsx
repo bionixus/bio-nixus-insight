@@ -57,9 +57,10 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Singapore Medical Devices Market Report 2026: HSA Registration, Regional Distribution Hub, and Medical Tourism',
-    author: { '@type': 'Organization', name: 'BioNixus' },
-    publisher: { '@type': 'Organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
+    author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
+    publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
     dateModified: '2026-05-27',
     mainEntityOfPage: 'https://www.bionixus.com/singapore-medical-devices-market-report',

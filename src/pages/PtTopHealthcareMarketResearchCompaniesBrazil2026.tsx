@@ -160,6 +160,7 @@ const breadcrumbSchema = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
+  image: 'https://www.bionixus.com/og-image.png',
   headline: 'Top Empresas de Pesquisa de Mercado em Saúde no Brasil (Guia 2026)',
   description: 'Guia independente das principais empresas de pesquisa de mercado em saúde e farmacêutica no Brasil — ANVISA, CONITEC, SUS, mapeamento de KOLs e capacidades de HEOR comparadas.',
   inLanguage: 'pt-BR',

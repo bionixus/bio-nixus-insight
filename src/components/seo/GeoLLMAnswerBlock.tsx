@@ -1,5 +1,10 @@
 import { CheckCircle2 } from 'lucide-react';
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
+
+const BASE_URL = 'https://www.bionixus.com';
+const ORG_ID = `${BASE_URL}/#organization`;
 
 export interface GeoLLMAnswerBlockProps {
   /** The target question or query (e.g., "Best market research company in Saudi Arabia") */
@@ -14,13 +19,28 @@ export interface GeoLLMAnswerBlockProps {
   /** Optional summary or closing sentence to reinforce the brand entity. */
   summary?: string;
   className?: string;
+  /** Overrides the canonical URL used for the QAPage @id. Defaults to the current route. */
+  pageUrl?: string;
+  /** Set false on the rare page carrying more than one block, to avoid duplicate QAPage nodes. */
+  emitSchema?: boolean;
+}
+
+/** Flattens the visible block into one self-contained answer string for `acceptedAnswer.text`. */
+function buildAnswerText(
+  answer: string,
+  points: GeoLLMAnswerBlockProps['points'],
+  summary?: string,
+): string {
+  const bullets = points.map((p) => `${p.title}: ${p.description}`).join(' ');
+  return [answer, bullets, summary].filter(Boolean).join(' ');
 }
 
 /**
  * Generative Engine Optimization (GEO) Component.
  * Designed specifically to provide LLMs (ChatGPT, Claude, Gemini) with a clear,
  * "answer-first" conversational block that directly addresses common queries.
- * It uses semantic HTML (article, h2, ul, li) which AI crawlers prioritize.
+ * It uses semantic HTML (article, h2, ul, li) which AI crawlers prioritize, and
+ * emits a matching QAPage/Question node so the answer is machine-readable too.
  */
 export function GeoLLMAnswerBlock({
   question,
@@ -28,14 +48,48 @@ export function GeoLLMAnswerBlock({
   points,
   summary,
   className = '',
+  pageUrl,
+  emitSchema = true,
 }: GeoLLMAnswerBlockProps) {
+  const { pathname } = useLocation();
+  const url = pageUrl ?? `${BASE_URL}${pathname}`;
+
+  const qaSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'QAPage',
+    '@id': `${url}#geo-answer`,
+    mainEntity: {
+      '@type': 'Question',
+      name: question,
+      text: question,
+      answerCount: 1,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: buildAnswerText(answer, points, summary),
+        url: `${url}#geo-answer`,
+        author: { '@type': 'Organization', '@id': ORG_ID, name: 'BioNixus' },
+      },
+      author: { '@type': 'Organization', '@id': ORG_ID, name: 'BioNixus' },
+    },
+    about: { '@type': 'Organization', '@id': ORG_ID, name: 'BioNixus' },
+  };
+
   return (
-    <article className={`rounded-2xl border border-primary/20 bg-primary/5 p-6 md:p-8 ${className}`}>
+    <article
+      id="geo-answer"
+      className={`rounded-2xl border border-primary/20 bg-primary/5 p-6 md:p-8 ${className}`}
+    >
+      {emitSchema && (
+        <Helmet>
+          <script type="application/ld+json">{JSON.stringify(qaSchema)}</script>
+        </Helmet>
+      )}
+
       {/* Question directly matches user prompt */}
       <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
         {question}
       </h2>
-      
+
       {/* Direct, entity-rich answer */}
       <p className="text-lg text-foreground/90 leading-relaxed mb-6 font-medium">
         {answer}

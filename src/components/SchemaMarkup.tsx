@@ -125,8 +125,8 @@ function toIsoDate(value?: string): string | undefined {
   return d.toISOString()
 }
 
-function buildOrganization(inLanguage: string) {
-  return buildCanonicalOrganization(inLanguage);
+function buildOrganization() {
+  return buildCanonicalOrganization();
 }
 
 function buildWebsite(inLanguage: string) {
@@ -153,10 +153,8 @@ function buildWebsite(inLanguage: string) {
   }
 }
 
-function buildBreadcrumb(
-  breadcrumb: BreadcrumbItem[],
-  inLanguage: string
-) {
+// BreadcrumbList is an ItemList, not a CreativeWork, so it takes no inLanguage.
+function buildBreadcrumb(breadcrumb: BreadcrumbItem[]) {
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -166,7 +164,6 @@ function buildBreadcrumb(
       name: entry.name,
       item: toHttpsUrl(entry.item),
     })),
-    inLanguage,
   }
 }
 
@@ -287,7 +284,7 @@ function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[] {
 
   if (props.pageType === 'home') {
     const nodes: Record<string, unknown>[] = [
-      buildOrganization(inLanguage),
+      buildOrganization(),
       buildWebsite(inLanguage),
     ]
     if (props.faqItems && props.faqItems.length > 0) {
@@ -367,7 +364,7 @@ function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[] {
       isAccessibleForFree: true,
     }
 
-    const nodes: Record<string, unknown>[] = [articleNode, buildBreadcrumb(props.breadcrumb, inLanguage)]
+    const nodes: Record<string, unknown>[] = [articleNode, buildBreadcrumb(props.breadcrumb)]
 
     if (props.faqItems && props.faqItems.length > 0) {
       nodes.push(buildFaq(props.faqItems, inLanguage, pageUrlHttps))
@@ -447,23 +444,22 @@ function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[] {
         : {}),
     }
 
-    return [newsArticle, buildBreadcrumb(props.breadcrumb, inLanguage)]
+    return [newsArticle, buildBreadcrumb(props.breadcrumb)]
   }
 
   if (props.pageType === 'service') {
     const nodes: Record<string, unknown>[] = [
       {
         '@context': 'https://schema.org',
-        '@type': 'ProfessionalService',
+        '@type': 'Service',
         name: props.serviceName,
         description: props.serviceDescription,
         url: toHttpsUrl(props.pageUrl),
         provider: { '@id': ORG_ID },
         areaServed: props.providerAreaServed || 'EMEA',
         serviceType: props.serviceName,
-        inLanguage,
       },
-      buildBreadcrumb(props.breadcrumb, inLanguage),
+      buildBreadcrumb(props.breadcrumb),
     ]
 
     if (props.faqItems && props.faqItems.length > 0) {
@@ -486,7 +482,7 @@ function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[] {
       inLanguage,
     }))
 
-  return [buildOrganization(inLanguage), ...personNodes]
+  return [buildOrganization(), ...personNodes]
 }
 
 export default function SchemaMarkup(props: SchemaMarkupProps) {

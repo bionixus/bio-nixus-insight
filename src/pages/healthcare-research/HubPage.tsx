@@ -9,6 +9,7 @@ import { ReportMidPageCta } from '@/components/report-conversion';
 import { ReportPremiumSection } from '@/components/report-premium';
 import { buildHubPageSchemas } from '@/lib/seo/schemas';
 import { COUNTRY_CONFIGS, resolveCountryConfig } from '@/lib/constants/countries';
+import { SPECIALTY_MARKET_DEMAND_CONTENT } from '@/data/specialtyMarketDemandContent';
 import { healthcareCountryRecoveryPaths } from '@/lib/internalLinkRecovery';
 import { HubMarketReferenceGuide } from '@/components/seo/HubMarketReferenceGuide';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
@@ -155,14 +156,10 @@ export default function HubPage() {
     Array.isArray(hubContent?.faq) && hubContent?.faq.length > 0
       ? (hubContent.faq as { question: string; answer: string }[])
       : HUB_FAQS;
-  const hubSeoTitle =
-    typeof hubContent?.metaTitle === 'string' && hubContent.metaTitle.length > 0
-      ? hubContent.metaTitle
-      : 'Healthcare Market Research | Pharma & MedTech Global | BioNixus';
+  // CTR-engineered exact title/description (SEOHead also forces via getCtrSeo).
+  const hubSeoTitle = 'Healthcare Market Research Company | Bionixus';
   const hubSeoDescription =
-    typeof hubContent?.metaDescription === 'string' && hubContent.metaDescription.length > 0
-      ? hubContent.metaDescription
-      : 'Physician, payer & hospital evidence for pharma & medtech — launch & access across USA, Europe, GCC & MENA. Proposal in 24 hours.';
+    'Bionixus is a healthcare market research company specializing in pharma, medical devices & patient studies across the Middle East, Asia, Europe & Americas. Get a proposal.';
   const heroTitle =
     typeof hubContent?.title === 'string' && hubContent.title.length > 0
       ? hubContent.title
@@ -437,6 +434,26 @@ export default function HubPage() {
             <HealthcareNavCard to="/market-research-qatar" title="Market research in Qatar" />
             <HealthcareNavCard to="/market-research-oman" title="Market research in Oman" />
             <HealthcareNavCard to="/market-research-bahrain" title="Market research in Bahrain" />
+            <HealthcareNavCard
+              to="/healthcare-market-research-kuwait"
+              title="Kuwait healthcare market research — MOH &amp; GPADC"
+            />
+            <HealthcareNavCard
+              to="/healthcare-market-research-qatar"
+              title="Qatar healthcare market research — Doha &amp; MoPH"
+            />
+            <HealthcareNavCard
+              to="/healthcare-market-research-oman"
+              title="Oman healthcare market research — MoH &amp; SQUH"
+            />
+            <HealthcareNavCard
+              to="/healthcare-market-research-bahrain"
+              title="Bahrain healthcare market research — NHRA-aligned"
+            />
+            <HealthcareNavCard
+              to="/healthcare-market-research-jordan"
+              title="Jordan healthcare market research — JFDA-aligned"
+            />
             <HealthcareNavCard
               to="/pharmaceutical-market-research-dubai"
               title="Healthcare market research Dubai"
@@ -870,6 +887,30 @@ export default function HubPage() {
                 className="px-3 py-2 rounded-md border border-border bg-card text-sm text-foreground hover:border-primary/40 transition-colors"
               >
                 {path.replace('/pharmaceutical-companies-', '').replaceAll('-', ' ')} pharma companies
+              </Link>
+            ))}
+          </div>
+      </ReportPremiumSection>
+
+      <ReportPremiumSection
+        id="specialty-demand"
+        title="Specialty and segment market research"
+        subtitle="Device, diagnostic, and procurement segments where buyers search by segment rather than by country."
+        variant="muted"
+      >
+          <p className="text-muted-foreground leading-relaxed mb-6 max-w-4xl">
+            These pages go one level below a country programme, into a single segment — manufacturing, diagnostics,
+            disposables, tender calendars — with the regulators, buyers, and procurement cycles that govern it. Use them
+            when your question is about a segment rather than a whole market.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {SPECIALTY_MARKET_DEMAND_CONTENT.map((content) => (
+              <Link
+                key={content.slug}
+                to={`/${content.slug}`}
+                className="px-3 py-2 rounded-md border border-border bg-card text-sm text-foreground hover:border-primary/40 transition-colors"
+              >
+                {content.segmentLabel}
               </Link>
             ))}
           </div>

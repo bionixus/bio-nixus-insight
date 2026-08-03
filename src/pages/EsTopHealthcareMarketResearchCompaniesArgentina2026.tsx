@@ -160,6 +160,7 @@ const breadcrumbSchema = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
+  image: 'https://www.bionixus.com/og-image.png',
   headline: 'Top Empresas de Investigación de Mercado en Salud en Argentina (Guía 2026)',
   description: 'Guía independiente de las principales empresas de investigación de mercado en salud y farmacéutica en Argentina — ANMAT, obras sociales, PAMI, mapeo de KOLs y capacidades de HEOR comparadas.',
   inLanguage: 'es-AR',

@@ -57,7 +57,6 @@ const jsonLd = [
     name: 'Healthcare Market Research in Turkey',
     serviceType: 'Healthcare Market Research Turkey',
     areaServed: { '@type': 'Country', name: 'Turkey', sameAs: 'https://www.wikidata.org/wiki/Q43' },
-    inLanguage: 'en',
     provider: {
       '@type': 'Organization',
       '@id': 'https://www.bionixus.com/#organization',

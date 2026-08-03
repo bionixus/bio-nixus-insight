@@ -248,6 +248,7 @@ export const omanGeneralEn: CountryListicleConfig = {
   ],
   relatedTitle: 'Related Resources',
   related: [
+    { to: '/insights/top-pharmaceutical-market-research-companies-oman-2026', label: 'Top Pharmaceutical Market Research Companies in Oman' },
     { to: '/insights/top-market-research-companies-uae-2026', label: 'Best Market Research Companies in the UAE' },
     { to: '/insights/top-market-research-companies-ksa-2026', label: 'Best Market Research Companies in Saudi Arabia' },
     { to: '/gcc-market-access-guide', label: 'GCC Market Access Guide' },

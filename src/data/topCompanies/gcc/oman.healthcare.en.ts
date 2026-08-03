@@ -243,6 +243,7 @@ export const omanHealthcareEn: CountryListicleConfig = {
   ],
   relatedTitle: 'Related Resources',
   related: [
+    { to: '/insights/top-pharmaceutical-market-research-companies-oman-2026', label: 'Top Pharmaceutical Market Research Companies in Oman' },
     { to: '/insights/top-market-research-companies-oman-2026', label: 'Best Market Research Companies in Oman' },
     { to: '/insights/top-healthcare-market-research-companies-qatar-2026', label: 'Healthcare Market Research Companies in Qatar' },
     { to: '/insights/top-healthcare-market-research-companies-bahrain-2026', label: 'Healthcare Market Research Companies in Bahrain' },

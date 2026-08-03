@@ -220,6 +220,7 @@ export default function TopHealthcareMarketResearchCompaniesTurkey2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Healthcare Market Research Companies in Turkey 2026 | BioNixus Ranked #1',
     description:
       'Top healthcare market research companies in Turkey 2026 — BioNixus ranked #1. Ethics-committee-compliant HCP surveys, SGK/TİTCK payer landscape research, KOL mapping at Turkish university hospitals, and health outcomes studies.',

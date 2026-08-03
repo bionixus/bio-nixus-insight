@@ -20,6 +20,13 @@ import {
 } from '../blog-legacy-redirects.mjs';
 import { getIndustryMatrixSitemapPages } from './data/industry-matrix-sitemap.mjs';
 import { getSpecialtyMarketDemandSitemapPages } from './data/specialty-market-demand-sitemap.mjs';
+import {
+  marketReportSlugs,
+  marketReportTherapyHubSlugs,
+  marketReportCountryHubSlugs,
+  industryGlobalHubSlugs,
+  developedMarketMedtechPaths,
+} from './data/app-route-registries.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
@@ -123,7 +130,6 @@ function isSitemapRedirectSourcePath(pathname) {
  */
 const extraStaticSitemapPages = [
   { path: '/ar/blog', priority: '0.85', changefreq: 'weekly' },
-  { path: '/zh/blog', priority: '0.85', changefreq: 'weekly' },
   {
     path: '/ar/blog/gcc-pharmaceuticals-market-arabic-2026',
     priority: '0.7',
@@ -144,6 +150,39 @@ const extraStaticSitemapPages = [
     priority: '0.75',
     changefreq: 'monthly',
   },
+
+  // Localized routes declared in src/routes.tsx that no generator loop covered.
+  { path: '/ar/bionixus-industries', priority: '0.75', changefreq: 'monthly' },
+  { path: '/de/bionixus-industries', priority: '0.75', changefreq: 'monthly' },
+  { path: '/es/bionixus-industries', priority: '0.75', changefreq: 'monthly' },
+  { path: '/fr/bionixus-industries', priority: '0.75', changefreq: 'monthly' },
+  { path: '/pt/bionixus-industries', priority: '0.75', changefreq: 'monthly' },
+  { path: '/ru/bionixus-industries', priority: '0.75', changefreq: 'monthly' },
+  { path: '/zh/bionixus-industries', priority: '0.75', changefreq: 'monthly' },
+  { path: '/de/services', priority: '0.75', changefreq: 'monthly' },
+  { path: '/ar/healthcare-market-research', priority: '0.8', changefreq: 'monthly' },
+  { path: '/ru/healthcare-market-research', priority: '0.75', changefreq: 'monthly' },
+  { path: '/zh/healthcare-market-research', priority: '0.75', changefreq: 'monthly' },
+  { path: '/ar/healthcare-market-research/saudi-arabia', priority: '0.8', changefreq: 'monthly' },
+  { path: '/de/healthcare-market-research/germany', priority: '0.8', changefreq: 'monthly' },
+  { path: '/es/healthcare-market-research/spain', priority: '0.8', changefreq: 'monthly' },
+
+  // Localized blog posts. The Sanity loop only emits `/blog/{slug}`, so posts served
+  // from `/de/blog/*` and `/fr/blog/*` never reached the sitemap.
+  { path: '/de/blog/gesundheitsmarkt-deutschland-2026', priority: '0.7', changefreq: 'monthly' },
+  { path: '/de/blog/amnog-frueher-nutzen-marktzugang-2026', priority: '0.7', changefreq: 'monthly' },
+  { path: '/de/blog/pharmamarktforschung-deutschland-2026', priority: '0.7', changefreq: 'monthly' },
+  { path: '/de/blog/deutsche-pharmaunternehmen-2026-pipeline-updates', priority: '0.7', changefreq: 'monthly' },
+  { path: '/fr/blog/etudes-marche-pharmaceutique-france-2026', priority: '0.7', changefreq: 'monthly' },
+  { path: '/fr/blog/evaluation-economique-has-france-2026', priority: '0.7', changefreq: 'monthly' },
+  { path: '/ar/blog/saudi-healthcare-market-research-guide-ar-2026', priority: '0.7', changefreq: 'monthly' },
+
+  // Standalone routes with no backing registry.
+  { path: '/b2b-industries', priority: '0.8', changefreq: 'monthly' },
+  { path: '/b2c-industries', priority: '0.8', changefreq: 'monthly' },
+  { path: '/pharma-healthcare-industries', priority: '0.8', changefreq: 'monthly' },
+  { path: '/msl-insight-research-middle-east', priority: '0.8', changefreq: 'monthly' },
+  { path: '/heor-consulting', priority: '0.85', changefreq: 'monthly' },
 ];
 
 function urlEntry(loc, lastmod = null, changefreq = 'weekly', priority = '0.8', alternates = []) {
@@ -194,7 +233,6 @@ const staticPages = [
   { path: '/media', priority: '0.6', changefreq: 'monthly' },
   { path: '/insights', priority: '0.8', changefreq: 'weekly' },
   { path: '/de/blog', priority: '0.8', changefreq: 'weekly' },
-  { path: '/zh/blog', priority: '0.85', changefreq: 'weekly' },
   { path: '/fr/blog', priority: '0.8', changefreq: 'weekly' },
   { path: '/de/success-in-startups', priority: '0.7', changefreq: 'monthly' },
   { path: '/ar/arabic-blog-alsawdyh', priority: '0.7', changefreq: 'monthly' },
@@ -328,12 +366,10 @@ const staticPages = [
   { path: '/insights/top-pharma-market-research-companies-middle-east-2026', priority: '0.87', changefreq: 'monthly' },
   { path: '/pt', priority: '0.9', changefreq: 'weekly' },
   { path: '/pt/market-research-healthcare', priority: '0.85', changefreq: 'weekly' },
-  { path: '/pt/blog', priority: '0.8', changefreq: 'weekly' },
   { path: '/pt/contact', priority: '0.7', changefreq: 'monthly' },
   { path: '/pt/methodology', priority: '0.6', changefreq: 'monthly' },
   { path: '/ru', priority: '0.9', changefreq: 'weekly' },
   { path: '/ru/market-research-healthcare', priority: '0.85', changefreq: 'weekly' },
-  { path: '/ru/blog', priority: '0.8', changefreq: 'weekly' },
   { path: '/ru/contact', priority: '0.7', changefreq: 'monthly' },
   { path: '/ru/methodology', priority: '0.6', changefreq: 'monthly' },
   { path: '/pt/insights/top-market-research-companies-brasil-2026', priority: '0.85', changefreq: 'monthly' },
@@ -351,6 +387,12 @@ const staticPages = [
   { path: '/blog/nf1-koselugo-selumetinib-pharma-market-research', priority: '0.86', changefreq: 'monthly' },
   { path: '/blog/top-healthcare-market-research-companies-kuwait', priority: '0.87', changefreq: 'monthly' },
   { path: '/blog/desmoid-tumors-nirogacestat-pharma-market-access', priority: '0.85', changefreq: 'monthly' },
+  // Hardcoded post (not in Sanity) listed in BLOG_FORCE_INDEX_SLUGS, so the Sanity loop never reached it.
+  {
+    path: '/blog/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement',
+    priority: '0.85',
+    changefreq: 'monthly',
+  },
   // Rare-tumour service pillars (hub) — blogs above are editorial spokes; distinct titles/schema.
   { path: '/nf1-pharma-market-research', priority: '0.88', changefreq: 'monthly' },
   { path: '/desmoid-tumor-pharma-market-research', priority: '0.88', changefreq: 'monthly' },
@@ -569,18 +611,34 @@ const staticPages = [
   { path: '/usa-medical-devices-market-report', priority: '0.88', changefreq: 'monthly' },
 ];
 
+/**
+ * Source of truth: THERAPY_COPY in src/pages/healthcare-research/TherapyPage.tsx.
+ * Slugs outside that map still render, but only as generic fallback copy, so keep
+ * this list aligned with THERAPY_COPY rather than with the linked-from-nav set.
+ */
 const healthcareTherapySlugs = [
   'aesthetic-medicine',
   'biologics',
+  'biosimilars',
   'cardiology',
+  'cardiovascular',
+  'dermatology',
   'diabetes',
+  'digital-health',
   'immunology',
+  'neurology-cns',
   'oncology',
   'rare-diseases',
   'respiratory',
   'vaccines',
 ];
 
+/**
+ * Source of truth: SERVICE_COPY in src/pages/healthcare-research/ServicePage.tsx.
+ *
+ * `heor-rwe` is deliberately absent: TherapyPage links to it but it has no entry in
+ * SERVICE_COPY, so it renders fallback boilerplate. Give it real copy before listing it.
+ */
 const healthcareServiceSlugs = [
   'market-access',
   'physician-insights',
@@ -643,48 +701,30 @@ const healthcareMarketResearchCountrySlugs = [
     'jeddah',
     'dubai',
     'abu-dhabi',
+    // Promoted in the hub's regional grid (ALL_HUB_COUNTRY_GROUPS) but absent from
+    // globalWebsiteCountrySlugs, so they were crawlable and linked yet never listed.
+    'brazil',
+    'south-korea',
+    'australia',
+    'india',
   ]),
 ].sort((a, b) => a.localeCompare(b));
 
-const MARKET_REPORT_THERAPY_HUB_SLUGS = [
-  'oncology',
-  'diabetes-metabolic',
-  'cardiovascular',
-  'immunology-biologics',
-  'respiratory',
-  'rare-diseases',
-  'neurology-cns',
-  'biosimilars',
-  'digital-health',
-  'vaccines',
-  'dermatology',
-];
+/** Derived from THERAPY_AREA_CONTENT — the registry HealthcareReportsByTherapy validates against. */
+const MARKET_REPORT_THERAPY_HUB_SLUGS = marketReportTherapyHubSlugs;
 
-const MARKET_REPORT_COUNTRY_HUB_SLUGS = [
-  'gcc',
-  'saudi-arabia',
-  'uae',
-  'kuwait',
-  'qatar',
-  'bahrain',
-  'oman',
-  'egypt',
-  'turkey',
-];
+/** Derived from MARKET_CONTENT — the registry HealthcareReportsByCountry validates against. */
+const MARKET_REPORT_COUNTRY_HUB_SLUGS = marketReportCountryHubSlugs;
 
+/**
+ * Every `/market-reports/{slug}` page, from REPORT_ENTRIES.
+ *
+ * This previously regex-matched `row('slug',` in healthcareReportData.ts, which
+ * silently skipped the 30 pharma insight reports that are merged in from
+ * pharmaInsightsData.ts rather than declared via `row(...)`.
+ */
 function extractProgrammaticHealthcareReportSlugs() {
-  try {
-    const fp = join(root, 'src/data/healthcareReportData.ts');
-    const txt = readFileSync(fp, 'utf8');
-    /** @type {string[]} */
-    const slugs = [];
-    const re = /\brow\(\s*'([^']+)'\s*,/g;
-    let m;
-    while ((m = re.exec(txt))) slugs.push(m[1]);
-    return slugs;
-  } catch {
-    return [];
-  }
+  return marketReportSlugs;
 }
 
 // Data-driven country listicle pages (src/data/topCompanies), emitted by
@@ -766,6 +806,14 @@ function buildStaticRoutes() {
       changefreq: 'weekly',
     });
   }
+  for (const slug of industryGlobalHubSlugs) {
+    routes.push({
+      path: `/market-research/${slug}`,
+      priority: '0.8',
+      changefreq: 'monthly',
+    });
+  }
+  routes.push(...developedMarketMedtechPaths);
   return routes;
 }
 
@@ -790,7 +838,9 @@ const hreflangGroups = [
   { en: '/contact', pt: '/pt/contact', de: '/de/contact', fr: '/fr/contacts', es: '/es/contact', ar: '/ar/contacts', 'zh-CN': '/zh/contact', ru: '/ru/contact', 'x-default': '/contact' },
   { en: '/about', pt: '/pt/about', de: '/de/about', fr: '/fr/about', es: '/es/about', ar: '/ar/about', 'zh-CN': '/zh/about', ru: '/ru/about', 'x-default': '/about' },
   // Only list languages that actually have distinct localized URLs.
-  { en: '/blog', pt: '/pt/blog', de: '/de/blog', fr: '/fr/blog', ar: '/ar/blog', 'zh-CN': '/zh/blog', ru: '/ru/blog', 'x-default': '/blog' },
+  // pt/ru/zh blog indexes render English content and canonicalise to /blog, so they
+  // are neither listed nor referenced as alternates.
+  { en: '/blog', de: '/de/blog', fr: '/fr/blog', ar: '/ar/blog', 'x-default': '/blog' },
   { en: '/services/market-access', es: '/es/market-access', 'x-default': '/services/market-access' },
   { en: '/market-research-uae', ar: '/ar/market-research-uae', 'x-default': '/market-research-uae' },
   { en: '/market-research-ksa', ar: '/ar/market-research-ksa', 'x-default': '/market-research-ksa' },

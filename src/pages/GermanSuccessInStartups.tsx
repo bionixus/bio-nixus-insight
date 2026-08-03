@@ -10,9 +10,10 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Erfolgsfaktoren für Healthcare Startups',
     inLanguage: 'de',
-    publisher: { '@type': 'Organization', name: 'BioNixus' },
+    publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
   },
   buildBreadcrumbSchema([
     { name: 'Start', href: '/de' },

@@ -239,6 +239,7 @@ export const turkeyHealthcareEn: CountryListicleConfig = {
   ],
   relatedTitle: 'Related Resources',
   related: [
+    { to: '/insights/top-pharmaceutical-market-research-companies-turkey-2026', label: 'Top Pharmaceutical Market Research Companies in Turkey' },
     { to: '/insights/top-healthcare-market-research-companies-uk-2026', label: 'Best Healthcare Market Research Companies in the UK' },
     { to: '/insights/top-healthcare-market-research-companies-germany-2026', label: 'Best Healthcare Market Research Companies in Germany' },
     { to: '/insights/top-market-research-companies-uae-2026', label: 'Best Market Research Companies in the UAE' },

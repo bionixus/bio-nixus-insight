@@ -1,42 +1,34 @@
-/** Keep in sync with src/data/industryMarketResearchMatrix.ts published industries. */
+/**
+ * Industry-matrix sitemap entries, derived from src/data/industryMarketResearchMatrix.ts.
+ *
+ * This file previously hand-duplicated the country and industry lists and drifted:
+ * it emitted only saudi-arabia/uae/egypt while the matrix served seven countries,
+ * so 128 live, indexable pages never reached the sitemap. Bundling the real module
+ * keeps the two in sync by construction.
+ */
+import { build } from 'esbuild';
+import { join, dirname } from 'path';
+import { fileURLToPath, pathToFileURL } from 'url';
+import { tmpdir } from 'os';
 
-const MATRIX_COUNTRIES = ['saudi-arabia', 'uae', 'egypt'];
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const root = join(__dirname, '..', '..');
 
-const MATRIX_INDUSTRIES = [
-  'medtech',
-  'healthcare',
-  'biotech',
-  'consumer-health',
-  'fmcg',
-  'retail',
-  'financial-services',
-  'telecom',
-  'technology',
-  'energy',
-  'real-estate',
-  'automotive',
-  'hospitality',
-  'public-sector',
-  'education',
-  'media',
-];
+const outfile = join(tmpdir(), `industry-matrix-${Date.now()}.mjs`);
 
-/** @returns {{ path: string, priority: string, changefreq: string }[]}} */
+await build({
+  entryPoints: [join(root, 'src/data/industryMarketResearchMatrix.ts')],
+  bundle: true,
+  format: 'esm',
+  platform: 'node',
+  outfile,
+  alias: { '@': join(root, 'src') },
+  logLevel: 'silent',
+});
+
+const { getMatrixSitemapEntries } = await import(pathToFileURL(outfile).href);
+
+/** @returns {{ path: string, priority: string, changefreq: string }[]} */
 export function getIndustryMatrixSitemapPages() {
-  const pages = [];
-  for (const country of MATRIX_COUNTRIES) {
-    for (const industry of MATRIX_INDUSTRIES) {
-      pages.push({
-        path: `/${country}-${industry}-market-research`,
-        priority: '0.85',
-        changefreq: 'weekly',
-      });
-      pages.push({
-        path: `/insights/top-${industry}-market-research-companies-${country}-2026`,
-        priority: '0.8',
-        changefreq: 'monthly',
-      });
-    }
-  }
-  return pages;
+  return getMatrixSitemapEntries();
 }

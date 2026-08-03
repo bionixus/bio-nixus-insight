@@ -254,6 +254,7 @@ export const dubaiGeneralEn: CountryListicleConfig = {
 
   relatedTitle: 'Related Market Research Resources',
   related: [
+    { to: '/insights/top-pharmaceutical-market-research-companies-uae-2026', label: 'Top Pharmaceutical Market Research Companies in the UAE' },
     { to: '/insights/top-market-research-companies-uae-2026', label: 'Best Market Research Companies in the UAE' },
     { to: '/insights/top-market-research-companies-abu-dhabi-2026', label: 'Best Market Research Companies in Abu Dhabi' },
     { to: '/insights/top-market-research-companies-ksa-2026', label: 'Best Market Research Companies in Saudi Arabia' },

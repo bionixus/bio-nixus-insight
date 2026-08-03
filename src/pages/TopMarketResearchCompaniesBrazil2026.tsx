@@ -176,6 +176,7 @@ const breadcrumbSchema = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
+  image: 'https://www.bionixus.com/og-image.png',
   headline: 'Best Market Research Companies in Brazil (2026 Guide)',
   description: 'Independent guide to the top market research companies in Brazil — covering FMCG, consumer, and healthcare research capabilities, methodology, and best-fit use cases for multinational clients.',
   inLanguage: 'en',

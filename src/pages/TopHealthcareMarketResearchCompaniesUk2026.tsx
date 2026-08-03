@@ -223,6 +223,7 @@ export default function TopHealthcareMarketResearchCompaniesUk2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Healthcare Market Research Companies in the UK 2026 | BioNixus Ranked #1',
     description:
       'Top healthcare market research companies in the UK 2026 — BioNixus ranked #1. HRA-compliant HCP surveys, payer landscape research, KOL mapping at UK AMCs, and NICE-aligned health outcomes studies.',

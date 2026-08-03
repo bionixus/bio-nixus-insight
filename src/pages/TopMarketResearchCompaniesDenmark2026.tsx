@@ -179,6 +179,7 @@ export default function TopMarketResearchCompaniesDenmark2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Market Research Companies in Denmark 2026 | BioNixus Ranked #1',
     description:
       'Top market research companies in Denmark 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. Danish-language HCP surveys, Medicinrådet payer research, AMGROS tender intelligence, and KOL mapping at Danish university hospitals.',

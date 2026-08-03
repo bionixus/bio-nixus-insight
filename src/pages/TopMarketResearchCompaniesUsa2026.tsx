@@ -171,6 +171,7 @@ export default function TopMarketResearchCompaniesUsa2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Market Research Companies in the USA (2026 Guide)',
     description:
       'Independent guide to the leading market research companies in the USA for 2026: healthcare, pharma, and consumer research firms compared by capability, methodology, and US expertise.',

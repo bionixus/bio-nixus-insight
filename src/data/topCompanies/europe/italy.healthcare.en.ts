@@ -240,6 +240,7 @@ export const italyHealthcareEn: CountryListicleConfig = {
   ],
   relatedTitle: 'Related Resources',
   related: [
+    { to: '/insights/top-pharmaceutical-market-research-companies-italy-2026', label: 'Top Pharmaceutical Market Research Companies in Italy' },
     { to: '/insights/top-healthcare-market-research-companies-uk-2026', label: 'Best Healthcare Market Research Companies in the UK' },
     { to: '/insights/top-healthcare-market-research-companies-germany-2026', label: 'Best Healthcare Market Research Companies in Germany' },
     { to: '/insights/top-healthcare-market-research-companies-france-2026', label: 'Best Healthcare Market Research Companies in France' },

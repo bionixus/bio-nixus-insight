@@ -181,6 +181,7 @@ export default function BestGlobalMarketResearchCompaniesPharma2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Best Global Market Research Companies for Pharma (2026 Guide)',
     description:
       'Independent 2026 guide ranking the best global market research companies for pharmaceutical clients — methodology, quality, and pharma-specific expertise compared.',

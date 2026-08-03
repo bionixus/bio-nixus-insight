@@ -248,6 +248,7 @@ export const dubaiHealthcareEn: CountryListicleConfig = {
   ],
   relatedTitle: 'Related Resources',
   related: [
+    { to: '/insights/top-pharmaceutical-market-research-companies-uae-2026', label: 'Top Pharmaceutical Market Research Companies in the UAE' },
     {
       to: '/insights/top-market-research-companies-dubai-2026',
       label: 'Best Market Research Companies in Dubai',

@@ -77,6 +77,31 @@ function buildSvgIcon() {
 
 const WHITE = { r: 255, g: 255, b: 255, alpha: 1 };
 
+/**
+ * to-ico@1.0.1 writes the ICONDIRENTRY width/height byte as 0 whenever the
+ * source image is <=256px, instead of only when it's exactly 256 (the ICO
+ * spec's "0 means 256" convention) — so every real favicon size it produces
+ * (16/32/48) ends up mislabeled as 256x256 in the file's own directory,
+ * even though the embedded bitmap data is the correct size. Browsers read
+ * the bitmap header directly and don't notice, but crawlers/validators that
+ * trust the declared directory size (including, we suspect, Google's
+ * favicon pipeline) can reject or mis-parse the file. Patch the directory
+ * bytes after the fact using each image's real DIB header width/height,
+ * rather than depending on a fix landing upstream.
+ */
+function fixIcoSizes(ico) {
+  const count = ico.readUInt16LE(4);
+  for (let i = 0; i < count; i++) {
+    const entryOffset = 6 + i * 16;
+    const dibOffset = ico.readUInt32LE(entryOffset + 12);
+    const width = ico.readInt32LE(dibOffset + 4);
+    const height = ico.readInt32LE(dibOffset + 8) / 2; // DIB doubles height for the AND mask
+    ico.writeUInt8(width === 256 ? 0 : width, entryOffset);
+    ico.writeUInt8(height === 256 ? 0 : height, entryOffset + 1);
+  }
+  return ico;
+}
+
 (async () => {
   const heart = await heartBuffer();
 
@@ -84,7 +109,7 @@ const WHITE = { r: 255, g: 255, b: 255, alpha: 1 };
   const ico16 = await squareIcon(heart, 16, 0.06, null);
   const ico32 = await squareIcon(heart, 32, 0.06, null);
   const ico48 = await squareIcon(heart, 48, 0.06, null);
-  writeFileSync(join(pub, 'favicon.ico'), await toIco([ico16, ico32, ico48]));
+  writeFileSync(join(pub, 'favicon.ico'), fixIcoSizes(await toIco([ico16, ico32, ico48])));
   writeFileSync(join(pub, 'favicon-16x16.png'), ico16);
   writeFileSync(join(pub, 'favicon-32x32.png'), ico32);
   writeFileSync(join(pub, 'favicon-48x48.png'), ico48);

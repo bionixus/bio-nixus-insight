@@ -173,6 +173,7 @@ export default function TopMarketResearchCompaniesFrance2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Market Research Companies in France 2026 | BioNixus Ranked #1',
     description:
       'Top market research companies in France 2026 — BioNixus ranked #1. HAS SMR/ASMR-aligned HCP surveys in French, CEPS payer research, KOL mapping at French CHUs, and EU5 multi-market benchmarking.',

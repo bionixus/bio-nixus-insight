@@ -57,7 +57,6 @@ const jsonLd = [
     name: 'Healthcare Market Research in Argentina',
     serviceType: 'Healthcare Market Research Argentina',
     areaServed: { '@type': 'Country', name: 'Argentina', sameAs: 'https://www.wikidata.org/wiki/Q414' },
-    inLanguage: 'en',
     provider: {
       '@type': 'Organization',
       '@id': 'https://www.bionixus.com/#organization',

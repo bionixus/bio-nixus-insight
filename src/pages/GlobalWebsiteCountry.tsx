@@ -1672,9 +1672,7 @@ const GlobalWebsiteCountry = () => {
                 description:
                   'Pharmaceutical market research in the UAE with Dubai and Abu Dhabi health system coverage, MOHAP, DHA, and DOH-aligned studies, and Emirates-wide physician and payer intelligence.',
                 url: canonicalUrl,
-                telephone: '+971-4-XXX-XXXX',
                 areaServed: ['Dubai', 'Abu Dhabi', 'Sharjah', 'United Arab Emirates'],
-                serviceType: 'Pharmaceutical Market Research',
                 address: {
                   '@type': 'PostalAddress',
                   streetAddress: 'Unit 2406, Swiss Tower, Cluster Y, JLT',
@@ -1742,9 +1740,7 @@ const GlobalWebsiteCountry = () => {
                 '@type': 'ProfessionalService',
                 name: 'BioNixus Saudi Arabia - Pharmaceutical Market Research',
                 url: canonicalUrl,
-                telephone: '+966-12-XXX-XXXX',
                 areaServed: ['Riyadh', 'Jeddah', 'Dammam', 'Saudi Arabia'],
-                serviceType: 'Pharmaceutical Market Research',
                 address: {
                   '@type': 'PostalAddress',
                   streetAddress: 'Al Andalus District',
@@ -1781,7 +1777,6 @@ const GlobalWebsiteCountry = () => {
                 url: canonicalUrl,
                 telephone: '+1-888-465-5557',
                 areaServed: ['United States'],
-                serviceType: 'Pharmaceutical Market Research',
                 address: {
                   '@type': 'PostalAddress',
                   streetAddress: '30 N Gould St, Suite R',
@@ -1815,7 +1810,6 @@ const GlobalWebsiteCountry = () => {
                 url: canonicalUrl,
                 telephone: '+44-7727-666682',
                 areaServed: ['England', 'Scotland', 'Wales', 'Northern Ireland', 'United Kingdom'],
-                serviceType: 'Pharmaceutical Market Research',
                 address: {
                   '@type': 'PostalAddress',
                   streetAddress: '128 City Road',
@@ -1853,7 +1847,6 @@ const GlobalWebsiteCountry = () => {
                 name: 'BioNixus Germany - Pharmaceutical Market Research',
                 url: canonicalUrl,
                 areaServed: ['Germany'],
-                serviceType: 'Pharmaceutical Market Research',
                 address: {
                   '@type': 'PostalAddress',
                   addressCountry: 'DE',
@@ -1882,7 +1875,6 @@ const GlobalWebsiteCountry = () => {
                 name: 'BioNixus France - Pharmaceutical Market Research',
                 url: canonicalUrl,
                 areaServed: ['France'],
-                serviceType: 'Pharmaceutical Market Research',
                 address: {
                   '@type': 'PostalAddress',
                   addressCountry: 'FR',
@@ -1911,7 +1903,6 @@ const GlobalWebsiteCountry = () => {
                 name: 'BioNixus Spain - Pharmaceutical Market Research',
                 url: canonicalUrl,
                 areaServed: ['Spain'],
-                serviceType: 'Pharmaceutical Market Research',
                 address: {
                   '@type': 'PostalAddress',
                   addressCountry: 'ES',
@@ -1940,7 +1931,6 @@ const GlobalWebsiteCountry = () => {
                 name: 'BioNixus Italy - Pharmaceutical Market Research',
                 url: canonicalUrl,
                 areaServed: ['Italy'],
-                serviceType: 'Pharmaceutical Market Research',
                 address: {
                   '@type': 'PostalAddress',
                   addressCountry: 'IT',
@@ -1970,7 +1960,6 @@ const GlobalWebsiteCountry = () => {
                 url: canonicalUrl,
                 telephone: '+44-7727-666682',
                 areaServed: ['Kuwait'],
-                serviceType: 'Pharmaceutical Market Research',
                 address: {
                   '@type': 'PostalAddress',
                   addressCountry: 'KW',
@@ -2000,7 +1989,6 @@ const GlobalWebsiteCountry = () => {
                 url: canonicalUrl,
                 telephone: '+44-7727-666682',
                 areaServed: ['Qatar'],
-                serviceType: 'Pharmaceutical Market Research',
                 address: {
                   '@type': 'PostalAddress',
                   addressCountry: 'QA',
@@ -2030,7 +2018,6 @@ const GlobalWebsiteCountry = () => {
                 url: canonicalUrl,
                 telephone: '+44-7727-666682',
                 areaServed: ['Bahrain'],
-                serviceType: 'Pharmaceutical Market Research',
                 address: {
                   '@type': 'PostalAddress',
                   addressCountry: 'BH',
@@ -2060,7 +2047,6 @@ const GlobalWebsiteCountry = () => {
                 url: canonicalUrl,
                 telephone: '+44-7727-666682',
                 areaServed: ['Oman'],
-                serviceType: 'Pharmaceutical Market Research',
                 address: {
                   '@type': 'PostalAddress',
                   addressCountry: 'OM',
@@ -2090,7 +2076,6 @@ const GlobalWebsiteCountry = () => {
                 url: canonicalUrl,
                 telephone: '+20-120-688-2323',
                 areaServed: ['Cairo', 'Alexandria', 'Egypt', 'MENA'],
-                serviceType: 'Pharmaceutical Market Research',
                 address: {
                   '@type': 'PostalAddress',
                   streetAddress: '22 Beverly Hills, Sheikh Zayed',

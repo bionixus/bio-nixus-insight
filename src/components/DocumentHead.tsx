@@ -4,6 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { seoByLanguage, getCanonicalPath, getCanonicalUrl, getHreflangLinks, getGeoMeta, defaultOgImageUrl, getOgLocale, getOgLocaleAlternates } from '@/lib/seo';
 import { normalizeSeoTitle } from '@/lib/seo-meta';
+import { getCtrSeo } from '@/data/ctr-seo-overrides';
 import type { Language } from '@/lib/i18n';
 import { MATRIX_COUNTRY_SLUGS_ORDERED } from '@/data/industryMarketResearchMatrix';
 
@@ -117,7 +118,8 @@ function buildRouteTitle(pathname: string, language: Language, fallback: string)
   const makeTitle = (value: string) => normalizeSeoTitle(value, 'BioNixus');
 
   if (path === '/' || path === '/de' || path === '/fr' || path === '/es' || path === '/zh' || path === '/ar' || path === '/pt' || path === '/ru') {
-    return makeTitle(fallback);
+    const ctr = language === 'en' && path === '/' ? getCtrSeo('/') : null;
+    return ctr ? ctr.title : makeTitle(fallback);
   }
 
   if (path === '/about') {
@@ -209,7 +211,8 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
     || path === '/pt'
     || path === '/ru'
   ) {
-    return clampDescription(fallback);
+    const ctr = language === 'en' && path === '/' ? getCtrSeo('/') : null;
+    return ctr ? ctr.description : clampDescription(fallback);
   }
 
   if (path === '/about') {

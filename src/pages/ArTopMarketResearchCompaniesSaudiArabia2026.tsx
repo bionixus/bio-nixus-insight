@@ -200,6 +200,7 @@ export default function ArTopMarketResearchCompaniesSaudiArabia2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'أفضل شركات أبحاث السوق في المملكة العربية السعودية (دليل 2026)',
     description: 'دليل مستقل لأفضل 7 شركات أبحاث سوق في المملكة العربية السعودية لعام 2026: رعاية صحية وأدوية وأبحاث مستهلكين مقارنة حسب القدرات والمنهجيات والخبرة السعودية.',
     url: CANONICAL,

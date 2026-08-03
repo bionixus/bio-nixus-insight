@@ -77,9 +77,10 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Japan Medical Devices Market Report 2026: PMDA, NHI Reimbursement, and Device Lag Reduction',
-    author: { '@type': 'Organization', name: 'BioNixus' },
-    publisher: { '@type': 'Organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
+    author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
+    publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
     dateModified: '2026-05-27',
     mainEntityOfPage: 'https://www.bionixus.com/japan-medical-devices-market-report',
@@ -104,8 +105,8 @@ const JapanMedicalDevicesMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="Japan Medical Devices Market Report 2026 | BioNixus"
-      description="Japan medical devices market at USD 40B in 2026 — world's third largest. PMDA Class I–IV approval, NHI functional category reimbursement, device lag reduction, and BioNixus GCC expansion intelligence for Japanese medtech."
+      title="Japan Medical Device Market 2026: Size, PMDA Access & Forecast"
+      description="Japan's medical device market in 2026 — market size, PMDA/Shonin registration, reimbursement and forecasts. Report by Bionixus."
       canonical="https://www.bionixus.com/japan-medical-devices-market-report"
       jsonLd={jsonLd}
     />

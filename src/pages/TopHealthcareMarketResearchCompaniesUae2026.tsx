@@ -228,6 +228,7 @@ export default function TopHealthcareMarketResearchCompaniesUae2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Healthcare Market Research Companies in UAE (2026 Guide)',
     description:
       'Expert guide to the leading healthcare and pharmaceutical market research companies in the UAE for 2026. Covers MOHAP/DHA/DOH-aware research firms, KOL mapping across all seven emirates, UAE payer dynamics, and how to evaluate a research partner for the UAE.',

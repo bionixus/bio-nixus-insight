@@ -166,6 +166,7 @@ const breadcrumbSchema = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
+  image: 'https://www.bionixus.com/og-image.png',
   headline: 'Melhores Empresas de Pesquisa de Mercado no Brasil (Guia 2026)',
   description: 'Guia independente das principais empresas de pesquisa de mercado no Brasil — consumo, FMCG, varejo e pesquisa multissetorial para clientes multinacionais.',
   inLanguage: 'pt-BR',

@@ -52,7 +52,6 @@ function buildServiceDescription(item: ServiceItemShape): string {
 
 export function buildHomeServiceJsonLdNodes(language: Language): Record<string, unknown>[] {
   const items = pickServiceItems(language);
-  const inLanguage = language;
 
   return HOME_SERVICE_PATHS.map((path, index) => {
     const item = items[index] ?? items[items.length - 1];
@@ -60,14 +59,13 @@ export function buildHomeServiceJsonLdNodes(language: Language): Record<string, 
     const description = buildServiceDescription(item).slice(0, 8000);
     return {
       '@context': 'https://schema.org',
-      '@type': 'ProfessionalService',
+      '@type': 'Service',
       name,
       description,
       url: toHttpsUrl(path),
       provider: { '@id': ORG_ID },
       serviceType: 'Healthcare market research',
       areaServed: ORG_AREA_SERVED,
-      inLanguage,
     };
   });
 }

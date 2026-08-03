@@ -861,7 +861,7 @@ const PHARMA_INSIGHTS_RAW: ReportEntry[] = [
     "modifiedDate": "2026-03-26"
   },
   {
-    "slug": "adstiladrin- bladder-cancer-2026",
+    "slug": "adstiladrin-bladder-cancer-2026",
     "title": "Adstiladrin (nadofaragene firadenovec) Q2 2026: Commercial Strategy, Clinical Milestones, and GCC Market Access Impact",
     "metaTitle": "Adstiladrin (nadofaragene firadenovec) Q2 2026 Commercial & GCC Market Access | BioNixus",
     "metaDescription": "Adstiladrin (nadofaragene firadenovec) Q2 2026 regulatory action, clinical data, and GCC market access strategy. NUPCO tenders, SFDA accelerated approvals, and commercial outlook.",

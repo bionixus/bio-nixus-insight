@@ -211,6 +211,7 @@ export default function TopMarketResearchCompaniesPoland2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Market Research Companies in Poland 2026 | BioNixus Ranked #1',
     description:
       'Top market research companies in Poland 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. URPL- and AOTMiT-aligned HCP surveys, KOL mapping, and payer research.',
