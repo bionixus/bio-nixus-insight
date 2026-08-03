@@ -53,6 +53,11 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
     answer:
       'BioNixus has operated a dedicated Egypt research team from Cairo since 2012. We conduct quantitative HCP surveys (oncologists, endocrinologists, cardiologists, gastroenterologists, rheumatologists), qualitative KOL depth interviews, payer and formulary research with MOH and UHI decision-makers, and hospital consumption intelligence across Cairo University Hospital, NCI, Ain Shams, and private hospital chains (Cleopatra, As-Salam International, Dar Al Fouad). Egypt-specific and regional MENA programs are both available.',
   },
+  {
+    question: 'What is the state of Cairo hospitals healthcare in 2023–2026?',
+    answer:
+      'Cairo hospitals healthcare from 2023 through 2026 reflects UHI rollout across Greater Cairo governorates, EDA pricing reforms, and private hospital expansion (Cleopatra, As-Salam, Dar Al Fouad, Saudi-German). Academic clusters — Cairo University, Ain Shams, NCI — anchor oncology and specialty prescribing while MOH facilities scale UHI-enrolled volume. BioNixus maps Cairo hospital formulary committees, procurement cycles, and payer mix for pharmaceutical and device accounts launching in Egypt.',
+  },
 ], 'egypt');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/egypt-healthcare-market-report');
@@ -99,8 +104,8 @@ const EgyptHealthcareMarketReport = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <SEOHead
-        title="Egypt Healthcare Market Report 2026 | BioNixus"
-        description="Egypt healthcare market at USD 25–30B in 2026. Pharmaceutical market (USD 5B), UHI formulary access, EDA registration, therapy area analysis, and BioNixus."
+        title="Egypt Healthcare Market Report 2026 | Cairo Hospitals & UHI | BioNixus"
+        description="Egypt healthcare market at USD 25–30B in 2026. Cairo hospitals healthcare 2023–2026, pharmaceutical market (USD 5B), UHI formulary access, EDA registration, and BioNixus Cairo HCP research."
         canonical="https://www.bionixus.com/egypt-healthcare-market-report"
         jsonLd={jsonLd}
       />
