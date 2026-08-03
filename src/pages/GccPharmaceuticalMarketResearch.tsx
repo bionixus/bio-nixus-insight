@@ -17,7 +17,7 @@ import { ReportPremiumHero, ReportPremiumSection } from '@/components/report-pre
 const pageUrl = 'https://www.bionixus.com/gcc-pharmaceutical-market-research';
 const REPORT_CONVERSION = getStandaloneReportConfig('/gcc-pharmaceutical-market-research');
 
-const PAGE_TITLE = 'GCC Biologics & Generic Injectables Market 2026 | BioNixus';
+const PAGE_TITLE = 'GCC Pharmaceutical Market Research 2026 | Biologics & Biosimilars | BioNixus';
 const PAGE_H1 =
   'GCC Biologics & Generic Injectables Market Research 2026 — Precision Medicine & Drug Repurposing';
 const PAGE_DESCRIPTION =
@@ -53,6 +53,16 @@ const FAQ_ITEMS = [
     question: 'Which GCC therapy areas drive the most pharma growth in 2026?',
     answer:
       'In 2026, the fastest-growing GCC therapy areas are oncology, diabetes and obesity (GLP-1 driven), rare disease, immunology, and cardiovascular. Saudi Arabia and the UAE concentrate the bulk of innovative-medicine spend, while Kuwait and Qatar prioritize tendered generic and hospital-administered portfolios.',
+  },
+  {
+    question: 'Who provides GCC pharmaceutical market research for launch and access teams?',
+    answer:
+      'BioNixus is a GCC pharmaceutical market research company with bilingual (Arabic/English) physician surveys, KOL mapping, NUPCO and MOHAP payer research, and quantitative tracker programmes across Saudi Arabia, the UAE, Kuwait, Qatar, Bahrain, and Oman. Programmes align to SFDA and emirate registration timelines, tender calendars, and formulary committee evidence requirements.',
+  },
+  {
+    question: 'How does GCC pharmaceutical market research differ from a single-country study?',
+    answer:
+      'GCC pharmaceutical market research must separate procurement authorities (NUPCO, MOHAP, DHA, DOH, Hamad, NHRA) and pricing corridors that look similar on paper but diverge in committee behaviour. BioNixus designs multi-country GCC studies with harmonised sampling, country-specific weighting, and account-level tender intelligence so launch sequencing does not assume one average Gulf uptake curve.',
   },
 ];
 

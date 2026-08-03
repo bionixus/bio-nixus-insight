@@ -656,6 +656,14 @@ const GccMarketAccessGuide = () => {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
                 },
+                {
+                  q: 'How do GCC biosimilar and HTA pathways affect market access in 2026?',
+                  a: 'Saudi SFDA and UAE MOHAP have published interchangeability guidance that accelerates biosimilar uptake in oncology and immunology, but hospital committees still weigh physician confidence, pharmacist substitution rules, and tender price corridors separately from originator dossiers. Health technology assessment-style evidence — budget impact, local epidemiology, and comparator justification — is increasingly requested before NUPCO awards and emirate formulary listings even when formal HTA agencies do not exist Gulf-wide.',
+                },
+                {
+                  q: 'What is the SFDA Establishment Evaluation System (EES) and how does it change GCC access?',
+                  a: 'SFDA\'s Establishment Evaluation System benchmarks manufacturing sites and can shorten review cycles for companies with strong quality track records, while flagging facilities that need corrective action before new SKUs list. For multi-GCC launches, BioNixus pairs EES readiness checks with pricing and tender research so teams do not assume registration alone unlocks NUPCO or MOHAP volume.',
+                },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">
                   <summary className="text-lg font-display font-semibold text-foreground cursor-pointer list-none">
