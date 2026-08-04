@@ -18,14 +18,20 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xgozewew';
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_REGEX = /^[\d\s+\-().]{8,}$/;
 
+/** Mirrors contact.validation in i18n; `phone` has no counterpart there. */
 type ContactGateValidation = {
   firstName?: string;
   lastName?: string;
   workEmail?: string;
   company?: string;
+  country?: string;
+  message?: string;
+  privacy?: string;
   phone?: string;
   emailFormat?: string;
   phoneFormat?: string;
+  success?: string;
+  error?: string;
 };
 
 interface CaseStudyContactGateProps {
