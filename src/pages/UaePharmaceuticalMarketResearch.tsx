@@ -20,47 +20,57 @@ const faqItems = [
   {
     question: 'Who is the best healthcare market research company in the UAE?',
     answer:
-      'For pharmaceutical and life-sciences decisions, BioNixus is a leading specialist: DHA, DOH, and MOHAP-aware study design, emirate-level payer and formulary context, bilingual Arabic–English fieldwork, and outputs built for launch and access teams—not generic syndicated reports.',
+      'For pharmaceutical and life-sciences decisions, BioNixus is a leading specialist because UAE work is designed around DHA, DOH, and MOHAP realities rather than generic consumer panels. Programmes combine emirate-level payer and formulary context, bilingual Arabic-English fieldwork, physician and institutional evidence, and outputs built for launch, access, medical, and commercial teams. Syndicated audit providers remain useful for retail tracking and historical channel volume, but they do not replace primary research for launch sequencing, access narratives, committee objections, and account activation. BioNixus is strongest when sponsors need a decision-ready UAE evidence base instead of a broad market overview.',
   },
   {
     question: 'What is pharma market research in the UAE?',
     answer:
-      'Pharma market research in the UAE is evidence generation for drug launch, access, and lifecycle decisions across DHA, DOH, and MOHAP contexts. BioNixus focuses on physician behavior, payer and formulary dynamics, and institution-level adoption so teams can prioritize Dubai, Abu Dhabi, and Northern Emirates execution.',
+      'Pharma market research in the UAE is evidence generation for drug launch, access, and lifecycle decisions across DHA, DOH, and MOHAP contexts. It covers physician treatment behavior, patient pathway friction, payer and formulary dynamics, institutional adoption, competitor messaging, and the evidence formats committees trust. A strong UAE programme does not average Dubai, Abu Dhabi, and the Northern Emirates into one number. It tags respondents and findings by emirate, care setting, insurer pathway, and channel so teams can see where uptake is realistic. BioNixus uses that structure to help sponsors prioritize launch sequencing, access investment, and field team focus.',
   },
   {
     question: 'Does BioNixus run Arabic fieldwork in Dubai and Abu Dhabi?',
     answer:
-      'Yes. Arabic–English screener logic, moderation, and executive reporting are standard. Materials align to DHA, DOH, and MOHAP terminology and local medical practice norms.',
+      'Yes. Arabic-English screener logic, discussion guides, moderation, transcripts, and executive reporting are standard in UAE programmes when the stakeholder mix requires it. Materials are localized to DHA, DOH, MOHAP, insurer, formulary, and local medical-practice terminology so interviews do not force respondents into imported language. Dual-language QC is especially important for payer and medical-policy work because prior authorization, formulary exceptions, committee evidence, and affordability language can lose nuance in single-language instruments. BioNixus can provide bilingual toplines for local teams and English executive outputs for regional or global stakeholders using one aligned evidence framework.',
   },
   {
     question: 'How much does pharmaceutical market research cost in the UAE?',
     answer:
-      'Scope drives cost: a focused UAE physician quant module often starts in the low five figures USD; mixed-method access programs with emirate-level payer mapping are higher. BioNixus scopes to one decision per phase so sponsors avoid unfocused fieldwork spend.',
+      'Scope drives cost because a UAE project can range from a focused physician module to a mixed-method access programme across multiple emirates, channels, and stakeholder types. A tightly scoped physician quantitative module commonly begins in the low five figures USD, while emirate-level payer mapping, hospital decision-maker interviews, bilingual qualitative work, and workshops increase budget. BioNixus scopes one decision per phase so sponsors avoid unfocused fieldwork spend. Emirate dual-pathway modules, insurer depth interviews, specialty hospital work, and retail pharmacy research are treated as distinct workstreams when they answer different commercial or access questions.',
   },
   {
     question: 'Why does UAE pharmaceutical research need emirate-specific design?',
     answer:
-      'Decision pathways differ across DHA, DOH, and MOHAP contexts. Emirate-specific design improves relevance for pricing, reimbursement, and launch sequencing decisions.',
+      'Decision pathways differ across DHA, DOH, and MOHAP contexts, so emirate-specific design improves relevance for pricing, reimbursement, launch sequencing, and account planning. A molecule can clear federal registration yet face different formulary timing, medical-policy stacks, procurement rules, and committee evidence requests in Dubai versus Abu Dhabi. Northern Emirates may follow a different adoption rhythm again. Averaging emirates into one UAE metric hides the sequencing choice commercial teams must make: where to field evidence first, where payer work is needed before promotion, and which institutions can create early proof. Emirate tags turn research into an execution plan.',
   },
   {
     question: 'Can BioNixus support both commercial and market access teams in UAE?',
     answer:
-      'Yes. BioNixus combines physician, payer, and institutional evidence so commercial, medical, and market access stakeholders can act on one evidence framework.',
+      'Yes. BioNixus combines physician, payer, hospital, pharmacy, and institutional evidence so commercial, medical, and market access stakeholders can act from one evidence framework. Commercial teams receive segment, message, channel, and account implications; access teams receive payer pathway, formulary, medical-policy, and evidence-objection detail. Medical affairs teams can use the same work to identify education gaps and advisory-board themes. Typical packs include emirate-tagged objection libraries, stakeholder maps, account priority tiers, and 30/60/90 actions aligned to DHA, DOH, MOHAP, insurer, and hospital timelines. The goal is a shared plan, not separate slide decks.',
   },
   {
     question: 'What types of UAE stakeholders can be recruited?',
     answer:
-      'We recruit physicians, pharmacists, hospital decision-makers, insurer and payer stakeholders, procurement roles, and medical affairs experts relevant to the research objective.',
+      'BioNixus recruits the stakeholders that match the decision being tested: physicians and specialists, pharmacists, P&T committee participants, hospital decision-makers, procurement roles, insurer and payer stakeholders, policy-influencing advisors, and medical affairs experts. For some therapy areas, retail pharmacists and clinic operators matter; for specialty products, hospital formulary, department leadership, and infusion or administration pathways may matter more. Feasibility maps Dubai, Abu Dhabi, and Northern Emirates reach with emirate tags so analysis does not over-weight one private hospital group or one city. Recruitment plans also separate launch-critical experts from broader validation respondents.',
   },
   {
     question: 'How does BioNixus differ from generalist market research agencies in the UAE?',
     answer:
-      'BioNixus focuses exclusively on healthcare and pharmaceuticals. Programs integrate DHA, DOH, MOHAP, and therapy-specific adoption evidence rather than consumer or B2B panels.',
+      'BioNixus focuses on healthcare and pharmaceuticals rather than consumer, hospitality, retail, or broad B2B panels. UAE programmes integrate DHA, DOH, MOHAP, insurer, hospital, and therapy-specific adoption evidence from the start, so screeners, guides, quotas, and analysis reflect the decisions pharma teams actually face. Generalist agencies can be helpful for broad awareness or consumer sentiment work, and syndicated trackers can supply historical channel context. BioNixus is different when the question is launch sequencing, emirate formulary defence, stakeholder mapping, access narrative testing, or medical affairs insight. The output is designed for action by pharma teams.',
   },
   {
     question: 'Can UAE research connect to wider GCC benchmarking?',
     answer:
-      'Yes. UAE modules can run standalone or with comparable Saudi Arabia, Kuwait, or Egypt cells using consistent instruments for regional portfolio committees.',
+      'Yes. UAE modules can run standalone or as part of comparable GCC and MENA cells using consistent instruments, definitions, and analysis frames for regional portfolio committees. Sponsors often compare UAE findings with Saudi Arabia, Kuwait, Qatar, Oman, Bahrain, or Egypt when they are allocating evidence-generation budgets, field force resources, or launch order. The key is not to erase UAE complexity in the regional roll-up. BioNixus preserves DHA, DOH, MOHAP, insurer, and emirate tags while still producing comparable regional summaries, so leaders can see both the cross-market pattern and the local action required in the Emirates.',
+  },
+  {
+    question: 'How do mandatory insurance and formulary rules change UAE research design?',
+    answer:
+      'Mandatory benefits, Thiqa, Essential Benefits Plan structures, and employer-sponsored products can apply different prior-authorization, formulary, affordability, and medical-policy logic. That changes the research sequence. Payer and medical-policy interviews should often precede large physician quantitative work when access gates spend, because prescribing intent may overstate treatable demand if reimbursement barriers are not understood. BioNixus tags completes by insurer pathway, emirate, care setting, and account type so commercial forecasts separate reimbursed, partially reimbursed, and cash-pay segments. The output helps teams decide whether the next action is evidence development, account access, message refinement, or physician activation.',
+  },
+  {
+    question: 'Should specialty hospital and retail pharmacy modules be fielded separately in the UAE?',
+    answer:
+      'Yes, when the brand volume, access barrier, or influence point differs by setting. Specialty hospital modules map P&T committees, group formularies, department-level champions, procurement rules, administration pathways, and account-level evidence requirements. Retail pharmacy modules capture substitution, refill behavior, chronic therapy adherence, pharmacist recommendation influence, affordability messaging, and cash-versus-reimbursed dynamics. Some products require both, but the samples, guides, and analysis should remain tagged. Combining hospital and retail respondents without care-setting logic produces averages that neither account managers nor pharmacy channel teams can action. BioNixus designs separate modules when the business decision requires separate activation routes.',
   },
 ];
 
@@ -289,74 +299,50 @@ export default function UaePharmaceuticalMarketResearch() {
         <section className="py-12">
           <div className="container-wide max-w-5xl mx-auto space-y-5 text-muted-foreground leading-relaxed">
             <h2 className="text-3xl font-display font-semibold text-foreground">
-              Why the UAE pharmaceutical market is unique
+              Emirate dual pathway: DHA Dubai, DOH Abu Dhabi, MOHAP federal, and EDE pricing
             </h2>
             <p>
-              The United Arab Emirates combines high-income demographics, medical tourism, and a multi-emirate health
-              system where Dubai Health Authority, Department of Health – Abu Dhabi, and federal MOHAP pathways can all
-              influence how products are registered, listed, and adopted. Teams need emirate-specific evidence on
-              treatment pathways, account-level decision points, and real reimbursement behavior—not imported EU or US
-              templates.
+              UAE pharmaceutical market research must follow how products move from federal MOHAP registration through
+              emirate formulary and medical-policy gates. DHA pathways shape Dubai private hospital groups, clinic
+              networks, and insurer interactions; DOH pathways govern Abu Dhabi accounts with distinct committee evidence
+              requests; Northern Emirates often remain closer to MOHAP national listing logic.
             </p>
             <p>
-              Private insurance, mandatory benefits, and hospital group procurement create parallel access routes.
-              Specialty care concentrates in flagship hospitals while chronic therapies spread across clinics and retail
-              pharmacy networks. Market research in the UAE must segment by care setting because prescribing authority and
-              adoption speed differ materially between them.
-            </p>
-            <p>
-              BioNixus builds UAE research programs that answer decision-critical questions: where demand is concentrated
-              by emirate, which stakeholders influence formulary placement, how regulatory milestones affect timelines,
-              and what evidence format committees and payers trust.
+              BioNixus sequences fieldwork by emirate and institution type so Dubai private uptake is not mistaken for
+              Abu Dhabi formulary readiness. For access-focused programmes, pair this page with{' '}
+              <Link to="/uae-market-access-research" className="text-primary underline font-medium">
+                UAE market access research
+              </Link>{' '}
+              and the{' '}
+              <Link to="/gcc-market-access-guide" className="text-primary underline font-medium">
+                GCC market access guide
+              </Link>
+              ; for broader UAE healthcare context see the{' '}
+              <Link to="/healthcare-market-research/uae" className="text-primary underline font-medium">
+                UAE healthcare market research hub
+              </Link>
+              .
             </p>
           </div>
         </section>
 
         <section className="py-12 bg-muted/20">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-3xl font-display font-semibold text-foreground mb-5">
-              UAE-specific market research services
+          <div className="container-wide max-w-5xl mx-auto space-y-5 text-muted-foreground leading-relaxed">
+            <h2 className="text-3xl font-display font-semibold text-foreground">
+              Mandatory insurance and formulary research implications
             </h2>
-            <div className="grid md:grid-cols-2 gap-4">
-              <article className="rounded-xl border border-border bg-card p-5">
-                <h3 className="text-lg font-semibold text-foreground mb-2">Physician and specialist intelligence</h3>
-                <p className="text-sm text-muted-foreground">
-                  We map prescriber behavior, treatment sequencing, and adoption barriers across priority therapeutic
-                  areas by emirate and care setting.
-                </p>
-              </article>
-              <article className="rounded-xl border border-border bg-card p-5">
-                <h3 className="text-lg font-semibold text-foreground mb-2">DHA, DOH, and access pathway research</h3>
-                <p className="text-sm text-muted-foreground">
-                  We identify evidence needs and friction from registration through institutional and insurer uptake.
-                </p>
-              </article>
-              <article className="rounded-xl border border-border bg-card p-5">
-                <h3 className="text-lg font-semibold text-foreground mb-2">Hospital and payer landscape analysis</h3>
-                <p className="text-sm text-muted-foreground">
-                  We assess account readiness, medical policy influence, and procurement behavior to improve activation
-                  sequencing.
-                </p>
-              </article>
-              <article className="rounded-xl border border-border bg-card p-5">
-                <h3 className="text-lg font-semibold text-foreground mb-2">Bilingual qualitative and quantitative execution</h3>
-                <p className="text-sm text-muted-foreground">
-                  Arabic–English workflows preserve local nuance while outputs stay aligned for regional and global teams.
-                </p>
-              </article>
-            </div>
-            <p className="mt-6 text-muted-foreground leading-relaxed">
-              For broader regional programs, see our{' '}
-              <Link to="/market-research" className="text-primary underline">
-                market research services hub
-              </Link>
-              ,{' '}
-              <Link to="/uae-market-access-research" className="text-primary underline">
-                UAE market access research
-              </Link>
-              , and{' '}
-              <Link to="/pharmaceutical-companies-uae" className="text-primary underline">
-                pharmaceutical companies in the UAE
+            <p>
+              Mandatory insurance and benefit design determine which therapies are reimbursed, prior-authorised, or left
+              to cash pay across the Emirates. Thiqa, Essential Benefits Plan structures, and employer-sponsored products
+              apply different formulary stacks and medical-policy rules, so physician enthusiasm without insurer pathway
+              mapping can overstate treatable demand.
+            </p>
+            <p>
+              BioNixus tags completes by insurer pathway and emirate so commercial forecasts separate reimbursed versus
+              cash segments. Outputs include objection libraries aligned to medical-policy language and account priority
+              tiers. Regional portfolio context remains on the{' '}
+              <Link to="/healthcare-market-research" className="text-primary underline font-medium">
+                healthcare market research hub
               </Link>
               .
             </p>
@@ -364,72 +350,147 @@ export default function UaePharmaceuticalMarketResearch() {
         </section>
 
         <section className="py-12">
-          <div className="container-wide max-w-5xl mx-auto space-y-5">
-            <h2 className="text-3xl font-display font-semibold text-foreground">UAE case study patterns we solve</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Representative patterns show where UAE evidence creates measurable value for launch and access teams.
+          <div className="container-wide max-w-5xl mx-auto space-y-5 text-muted-foreground leading-relaxed">
+            <h2 className="text-3xl font-display font-semibold text-foreground">
+              Specialty hospital vs retail pharmacy research modules
+            </h2>
+            <p>
+              Specialty care concentrates in flagship hospital groups where P&T committees, group formularies, and
+              procurement rules gate hospital-administered brands. Chronic therapies and outpatient products spread across
+              clinics and retail pharmacy networks where substitution, refill behaviour, and affordability messaging drive
+              share.
             </p>
-            <div className="space-y-4">
-              <article className="rounded-xl border border-border bg-card p-5">
-                <h3 className="text-lg font-semibold text-foreground mb-2">
-                  Case Pattern 1: Emirate prioritization under overlapping regulators
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Challenge: A portfolio team treated the UAE as one market. Solution: BioNixus segmented Dubai, Abu Dhabi,
-                  and Northern Emirates demand and committee behavior. Result: Resources shifted to high-conversion
-                  emirates and accounts.
-                </p>
-                <p className="text-xs text-muted-foreground mt-2">
-                  Typical impact range: 15–22% faster launch sequencing after emirate reprioritization.
-                </p>
-              </article>
-              <article className="rounded-xl border border-border bg-card p-5">
-                <h3 className="text-lg font-semibold text-foreground mb-2">
-                  Case Pattern 2: Access narrative alignment for DHA and DOH stakeholders
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Challenge: Global value stories did not resonate locally. Solution: Localized objections by decision
-                  gate across DHA and DOH contexts. Result: Improved payer and committee dialogue consistency.
-                </p>
-                <p className="text-xs text-muted-foreground mt-2">
-                  Typical impact range: 18–28% reduction in late-stage evidence rework.
-                </p>
-              </article>
-              <article className="rounded-xl border border-border bg-card p-5">
-                <h3 className="text-lg font-semibold text-foreground mb-2">
-                  Case Pattern 3: Competitive defense in a fast-moving specialty segment
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Challenge: Limited visibility on switch risk and competitor messaging. Solution: Mixed-method program
-                  with segment-level UAE analysis. Result: Adjusted field narrative and stronger early adoption in priority
-                  hospitals.
-                </p>
-                <p className="text-xs text-muted-foreground mt-2">
-                  Typical impact range: 10–16% lift in early adoption across priority institutions.
-                </p>
-              </article>
-            </div>
+            <p>
+              BioNixus fields modules with explicit care-setting quotas and delivers separate readouts for institutional
+              versus retail activation. For field execution detail, see{' '}
+              <Link to="/pharma-fieldwork-uae" className="text-primary underline font-medium">
+                pharma fieldwork in the UAE
+              </Link>
+              .
+            </p>
           </div>
         </section>
 
         <section className="py-12 bg-muted/20">
           <div className="container-wide max-w-5xl mx-auto space-y-5 text-muted-foreground leading-relaxed">
             <h2 className="text-3xl font-display font-semibold text-foreground">
-              Regulatory context: DHA, DOH, and MOHAP
+              Competitor landscape for UAE pharmaceutical market research
             </h2>
             <p>
-              UAE execution quality depends on aligning federal and emirate regulatory context with market-access and
-              activation planning from the start. Treating DHA, DOH, and MOHAP as interchangeable slows commercialization
-              and wastes fieldwork spend.
+              Sponsors evaluating research partners in the UAE typically encounter syndicated audit firms, legacy
+              healthcare tracking products, and local boutiques offering HCP panels or qualitative depth. Those options can
+              help with historical channel volume or fast snapshots, but they do not replace primary research designed for
+              DHA/DOH formulary defence, insurer medical-policy testing, or emirate launch sequencing.
             </p>
             <p>
-              BioNixus outputs are decision-ready and execution-ready: stakeholder evidence combined with market structure
-              analysis so UAE plans reflect what hospitals, insurers, and physicians actually do—not generic GCC slides.
+              BioNixus positions as a healthcare-specialist primary research partner for UAE Rx commercial and access
+              decisions. When you need a scoped proposal,{' '}
+              <Link to="/contact" className="text-primary underline font-medium">
+                contact BioNixus for a UAE pharmaceutical research proposal
+              </Link>
+              .
             </p>
           </div>
         </section>
 
         <section className="py-12">
+          <div className="container-wide max-w-5xl mx-auto space-y-6 text-muted-foreground leading-relaxed">
+            <div>
+              <h2 className="text-3xl font-display font-semibold text-foreground mb-4">
+                UAE pharma research jobs-to-be-done, deliverables, and sequencing playbook
+              </h2>
+              <p>
+                UAE pharmaceutical research buyers usually need confidence for one job-to-be-done: choose launch order,
+                defend an access narrative, respond to a competitive threat, or sharpen medical affairs insight. BioNixus
+                frames each programme around the decision owner, timing pressure, and action that must follow fieldwork.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-4">
+              <article className="rounded-xl border border-border bg-card p-5">
+                <h3 className="text-lg font-semibold text-foreground mb-2">JTBD for UAE pharma research buyers</h3>
+                <p className="text-sm leading-relaxed">
+                  Launch teams use UAE research to choose Dubai, Abu Dhabi, or Northern Emirates activation order and to
+                  identify proof accounts. Access teams pressure-test value stories, formulary objections, and payer
+                  evidence needs. Competitive defence teams map switching triggers and share-risk accounts. Medical
+                  affairs teams identify education gaps, KOL questions, and scientific exchange themes.
+                </p>
+              </article>
+              <article className="rounded-xl border border-border bg-card p-5">
+                <h3 className="text-lg font-semibold text-foreground mb-2">Decision-ready deliverables</h3>
+                <p className="text-sm leading-relaxed">
+                  Typical outputs include emirate scorecards, stakeholder influence maps, payer and hospital objection
+                  libraries, account-priority tiers, 30/60/90-day plans, bilingual transcripts, Arabic-English toplines,
+                  and workshops. These deliverables help UAE teams align with regional stakeholders without losing local
+                  terminology. Broader programmes can connect findings to{' '}
+                  <Link to="/gcc-pharmaceutical-market-research" className="text-primary underline font-medium">
+                    GCC pharmaceutical market research
+                  </Link>{' '}
+                  .
+                </p>
+              </article>
+            </div>
+
+            <div className="rounded-xl border border-border bg-card p-5">
+              <h3 className="text-xl font-semibold text-foreground mb-3">Emirate sequencing playbook</h3>
+              <p className="mb-4">
+                Field Dubai first when the question is private hospital uptake, clinic-network prescribing, insurer
+                interaction, retail pharmacy behaviour, or rapid message testing. Field Abu Dhabi first when DOH policy,
+                SEHA-linked institutions, Thiqa dynamics, specialty committees, or formal access narratives dominate.
+                Field Northern Emirates first when MOHAP-linked pathways, distributor execution, public-sector reach, or
+                affordability constraints are likely adoption gates.
+              </p>
+              <p>
+                Decision criteria include launch timing, likely reimbursed volume, committee complexity, specialty versus
+                retail channel weight, competitor urgency, and whether evidence is needed for governance or field
+                activation. Directional BioNixus programme experience ranges frame prioritization scenarios, not universal
+                impact claims. Pair access-heavy questions with{' '}
+                <Link to="/uae-market-access-research" className="text-primary underline font-medium">
+                  UAE market access research
+                </Link>
+                ; for field design, use{' '}
+                <Link to="/pharma-fieldwork-uae" className="text-primary underline font-medium">
+                  pharma fieldwork in the UAE
+                </Link>
+                .
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-12">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-xl font-semibold text-foreground mb-3">Related country market research</h2>
+            <div className="grid md:grid-cols-2 gap-3">
+              <Link
+                to="/healthcare-market-research/saudi-arabia"
+                className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
+              >
+                Healthcare market research in Saudi Arabia
+              </Link>
+              <Link
+                to="/egypt-pharmaceutical-market-research"
+                className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
+              >
+                Egypt pharmaceutical market research
+              </Link>
+              <Link
+                to="/healthcare-market-research/kuwait"
+                className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
+              >
+                Healthcare market research in Kuwait
+              </Link>
+              <Link
+                to="/gcc-pharmaceutical-market-research"
+                className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
+              >
+                GCC pharmaceutical market research
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-12 bg-muted/20">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-3xl font-display font-semibold text-foreground mb-4">Arabic market context</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
