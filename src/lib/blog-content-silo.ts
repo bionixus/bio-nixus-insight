@@ -1,6 +1,6 @@
-import type { BlogPost } from '@/types/blog';
+import type { BlogPost, ContentSilo } from '@/types/blog';
 
-export type ContentSilo = 'healthcare' | 'industries';
+export type { ContentSilo };
 
 export const HEALTHCARE_SILO_GROQ = '(contentSilo == "healthcare" || !defined(contentSilo))';
 export const INDUSTRIES_SILO_GROQ = 'contentSilo == "industries"';
