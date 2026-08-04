@@ -83,6 +83,7 @@ import {
   GCC_PHARMACOECONOMICS_TABLE_OF_CONTENTS,
   GCC_PHARMACOECONOMICS_TAGS,
 } from '@/data/blog-gcc-pharmacoeconomics';
+import { EGYPT_HEALTHCARE_2026_CAIRO_FAQ } from '@/data/egyptHealthcare2026CairoSeo';
 import { getTherapyStaticBlogBundle } from '@/data/therapy-static-blog-registry';
 import { getQ2PharmaSchemaBundle } from '@/data/q2-pharma-blog-schema';
 import { getCtrSeo } from '@/data/ctr-seo-overrides';
