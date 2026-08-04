@@ -184,10 +184,14 @@ export const translations = {
       cta: 'Read all client reviews',
     },
     contactPage: {
-      heroTitle: "One conversation can change your launch.",
-      heroSubtitle: "Join pharmaceutical teams worldwide who use BioNixus for healthcare market research across 20+ countries. Get a tailored proposal within 24 hours.",
-      statLine: "Global headquarters — Sheridan, Wyoming (USA) · Regional offices London, Dubai, Riyadh, Cairo",
-      badges: ['24h proposal turnaround', '20+ country fieldwork', 'GDPR & ESOMAR-aligned'],
+      brandLine: 'BioNixus',
+      heroTitle: 'Brief the team shaping your next market move.',
+      heroSubtitle:
+        'Pharmaceutical and healthcare research across the US, Europe, GCC, and MENA—scoped proposals typically within one business day.',
+      primaryCta: 'Request a proposal',
+      secondaryCta: 'Email the team',
+      statLine: '',
+      badges: [],
     },
     methodologyEn: {
       title: 'Healthcare market research methodology, data quality, and regulatory compliance',

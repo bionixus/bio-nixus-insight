@@ -1,7 +1,7 @@
 import type { ReportEntry } from '@/data/healthcareReportTypes';
-import { localizePharmaInsightEntries } from '@/data/pharmaInsightCopy';
+import { localizePharmaInsightEntries, type PharmaInsightSeed } from '@/data/pharmaInsightCopy';
 
-const PHARMA_INSIGHTS_RAW: ReportEntry[] = [
+const PHARMA_INSIGHTS_RAW: PharmaInsightSeed[] = [
   {
     "slug": "lilly-obesity-pbm-coverage-2026",
     "title": "Obesity Portfolio PBM Coverage (Foundayo & Zepbound) Q2 2026: Commercial Strategy, Clinical Milestones, and GCC Market Access Impact",
@@ -1174,4 +1174,5 @@ const PHARMA_INSIGHTS_RAW: ReportEntry[] = [
   }
 ];
 
-export const PHARMA_INSIGHTS_ENTRIES: ReportEntry[] = localizePharmaInsightEntries(PHARMA_INSIGHTS_RAW);
+export const PHARMA_INSIGHTS_ENTRIES: Omit<ReportEntry, 'relatedSlugs'>[] =
+  localizePharmaInsightEntries(PHARMA_INSIGHTS_RAW);

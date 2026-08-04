@@ -110,9 +110,9 @@ export default function ArBahthSuqAdwiyahSaudiArabia() {
           content="أبحاث سوق الأدوية الأولية في المملكة العربية السعودية من بيونيكسس: مسوحات الأطباء باللغة العربية، رسم خرائط قادة الرأي الطبي، أبحاث NUPCO ووصول السوق وفق اشتراطات هيئة الغذاء والدواء."
         />
         <link rel="canonical" href={CANONICAL} />
-        <link rel="alternate" hreflang="ar" href={CANONICAL} />
-        <link rel="alternate" hreflang="en" href={EN_CANONICAL} />
-        <link rel="alternate" hreflang="x-default" href={EN_CANONICAL} />
+        <link rel="alternate" hrefLang="ar" href={CANONICAL} />
+        <link rel="alternate" hrefLang="en" href={EN_CANONICAL} />
+        <link rel="alternate" hrefLang="x-default" href={EN_CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

@@ -230,13 +230,13 @@ export default function TopMarketResearchCompaniesEgypt2026() {
         <meta name="geo.placename" content="Egypt" />
         <meta name="author" content="Haidy Yahia" />
         <link rel="canonical" href={CANONICAL} />
-        <link rel="alternate" hreflang="en" href={CANONICAL} />
+        <link rel="alternate" hrefLang="en" href={CANONICAL} />
         <link
           rel="alternate"
-          hreflang="ar"
+          hrefLang="ar"
           href="https://www.bionixus.com/ar/insights/top-market-research-companies-egypt-2026"
         />
-        <link rel="alternate" hreflang="x-default" href={CANONICAL} />
+        <link rel="alternate" hrefLang="x-default" href={CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>

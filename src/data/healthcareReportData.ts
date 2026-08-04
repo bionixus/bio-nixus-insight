@@ -485,12 +485,12 @@ function assembleEntry(spec: SpecRow): Omit<ReportEntry, 'relatedSlugs'> {
 
 const BASE_ENTRIES = SPECS.map(assembleEntry);
 
-function attachRelated(entries: ReportEntry[]): ReportEntry[] {
+function attachRelated(entries: Omit<ReportEntry, 'relatedSlugs'>[]): ReportEntry[] {
   return entries.map((e) => {
     const pool = entries.filter((x) => x.slug !== e.slug);
     const sameTherapy = pool.filter((x) => x.therapyAreaSlug === e.therapyAreaSlug);
     const sameMarket = pool.filter((x) => x.marketSlug === e.marketSlug);
-    const picks: ReportEntry[] = [];
+    const picks: Omit<ReportEntry, 'relatedSlugs'>[] = [];
     sameTherapy.forEach((x) => {
       if (!picks.find((y) => y.slug === x.slug)) picks.push(x);
     });

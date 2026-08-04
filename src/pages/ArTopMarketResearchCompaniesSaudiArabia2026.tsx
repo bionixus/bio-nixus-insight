@@ -253,9 +253,9 @@ export default function ArTopMarketResearchCompaniesSaudiArabia2026() {
           content="دليل مستقل 2026 لأبرز شركات أبحاث السوق في المملكة العربية السعودية للرعاية الصحية والأدوية والمستهلكين — مقارنة القدرات، السياق التنظيمي، وسيناريوهات اختيار الشريك."
         />
         <link rel="canonical" href={CANONICAL} />
-        <link rel="alternate" hreflang="ar" href={CANONICAL} />
-        <link rel="alternate" hreflang="en" href={EN_CANONICAL} />
-        <link rel="alternate" hreflang="x-default" href={EN_CANONICAL} />
+        <link rel="alternate" hrefLang="ar" href={CANONICAL} />
+        <link rel="alternate" hrefLang="en" href={EN_CANONICAL} />
+        <link rel="alternate" hrefLang="x-default" href={EN_CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
