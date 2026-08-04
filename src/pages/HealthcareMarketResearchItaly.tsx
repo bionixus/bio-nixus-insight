@@ -48,6 +48,11 @@ const faqItems = [
     answer:
       'Yes. Italian modules can run with comparable cells in Germany, France, Spain, and the UK — and beyond to the USA, Canada, Japan, and other markets — using consistent instruments for global portfolio committees managing EU5 and multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How does AIFA Law 648/96 compassionate use research support Italian launch strategy?',
+    answer:
+      'AIFA Law 648/96 allows pre-reimbursement access to medicines for life-threatening conditions without therapeutic alternatives. Italian compassionate-use (uso compassionevole) and registro AIFA managed-entry programmes create real-world prescribing data that formulary committees and regional SSR payers review before PFN Class A listing. BioNixus conducts physician adoption tracking, patient eligibility mapping, and SSR nota limitativa impact research for products in 648/96 or managed-entry pathways — bridging clinical access and commercial evidence ahead of CPR negotiation.',
+  },
 ];
 
 const jsonLd = [
