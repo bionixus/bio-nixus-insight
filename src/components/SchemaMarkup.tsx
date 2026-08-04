@@ -90,6 +90,8 @@ type PressReleaseSchemaProps = {
   publishedAt?: string
   modifiedAt?: string
   dateline?: string
+  releaseType?: string
+  keywords?: string[]
   relatedReportUrl?: string
   breadcrumb: BreadcrumbItem[]
 }
@@ -433,7 +435,12 @@ function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[] {
       },
       inLanguage,
       isAccessibleForFree: true,
-      ...(props.dateline?.trim() ? { articleSection: 'Press release' } : {}),
+      ...(props.keywords && props.keywords.length > 0
+        ? { keywords: props.keywords.join(', ') }
+        : {}),
+      ...(props.releaseType?.trim() || props.dateline?.trim()
+        ? { articleSection: props.releaseType?.trim() || 'Press release' }
+        : {}),
       ...(props.relatedReportUrl
         ? {
             about: {
