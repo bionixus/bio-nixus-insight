@@ -46,19 +46,37 @@ function objectEnd(source, start) {
   return -1;
 }
 
-/** Keys declared directly on the object body, ignoring nested objects and arrays. */
+/**
+ * Keys declared directly on the object body, ignoring nested objects and arrays.
+ * Handles both `key: value` and ES6 shorthand (`inLanguage,`), which is how the
+ * LocalBusiness node smuggled an invalid property past an earlier version of this.
+ */
 function topLevelKeys(body) {
-  const keys = [];
+  const segments = [];
   let depth = 0;
   let buffer = '';
   for (const char of body) {
     if (char === '{' || char === '[') depth += 1;
     else if (char === '}' || char === ']') depth -= 1;
-    else if (depth === 0 && char === ':') {
-      const match = buffer.match(/(?:'([^']+)'|([A-Za-z@][A-Za-z0-9@_-]*))\s*$/);
-      if (match) keys.push(match[1] ?? match[2]);
+
+    if (char === ',' && depth === 0) {
+      segments.push(buffer);
+      buffer = '';
+    } else {
+      buffer += char;
     }
-    buffer = depth === 0 && char !== ',' ? buffer + char : '';
+  }
+  segments.push(buffer);
+
+  const keys = [];
+  for (const segment of segments) {
+    const explicit = segment.match(/^\s*(?:'([^']+)'|"([^"]+)"|([A-Za-z@$_][\w@$-]*))\s*:/);
+    if (explicit) {
+      keys.push(explicit[1] ?? explicit[2] ?? explicit[3]);
+      continue;
+    }
+    const shorthand = segment.match(/^\s*([A-Za-z$_][\w$]*)\s*$/);
+    if (shorthand) keys.push(shorthand[1]);
   }
   return keys;
 }

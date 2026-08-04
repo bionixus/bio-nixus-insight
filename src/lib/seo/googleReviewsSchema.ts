@@ -8,8 +8,11 @@ import { ORG_ID } from '@/lib/seo/organization';
 const BASE_URL = 'https://www.bionixus.com';
 export const UK_LOCAL_BUSINESS_ID = `${BASE_URL}/#uk-localbusiness`;
 
-/** LocalBusiness node with AggregateRating + Review snippets for BioNixus UK (Google GBP). */
-export function buildUkGoogleReviewsLocalBusiness(inLanguage = 'en'): Record<string, unknown> {
+/**
+ * LocalBusiness node with AggregateRating + Review snippets for BioNixus UK (Google GBP).
+ * Carries no locale: `inLanguage` is a CreativeWork property, invalid on LocalBusiness.
+ */
+export function buildUkGoogleReviewsLocalBusiness(): Record<string, unknown> {
   return {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
@@ -56,6 +59,5 @@ export function buildUkGoogleReviewsLocalBusiness(inLanguage = 'en'): Record<str
         worstRating: '1',
       },
     })),
-    inLanguage,
   };
 }

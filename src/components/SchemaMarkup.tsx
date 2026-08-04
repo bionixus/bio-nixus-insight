@@ -479,7 +479,6 @@ function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[] {
       ...(isNonEmptyString(person.jobTitle) ? { jobTitle: person.jobTitle } : {}),
       ...(isNonEmptyString(person.sameAs) ? { sameAs: [toHttpsUrl(person.sameAs)] } : {}),
       worksFor: { '@id': ORG_ID },
-      inLanguage,
     }))
 
   return [buildOrganization(), ...personNodes]

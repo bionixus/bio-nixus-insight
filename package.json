@@ -24,6 +24,7 @@
     "verify:redirects": "node scripts/seo/verify-redirect-safety.mjs",
     "verify:hreflang": "node scripts/seo/verify-hreflang-reciprocity.mjs",
     "verify:article-schema": "node scripts/seo/verify-article-schema.mjs",
+    "typecheck": "tsc -p tsconfig.app.json --noEmit",
     "verify:schema-props": "node scripts/seo/verify-schema-builders.mjs",
     "verify:schema-props:live": "node scripts/seo/verify-schema-properties.mjs",
     "verify:listicle-aeo": "node scripts/verify-listicle-aeo.mjs",
