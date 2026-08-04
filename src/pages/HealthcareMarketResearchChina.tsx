@@ -48,6 +48,11 @@ const faqItems = [
     answer:
       'Yes. Chinese modules can run with comparable cells in Japan, South Korea, Singapore, Australia, and global markets — using consistent instruments. This enables global portfolio committees managing Asia-Pacific launch sequencing and NHSA-to-PMDA-to-HIRA payer benchmarking from one research partner.',
   },
+  {
+    question: 'How does provincial PRLS listing differ from national NRDL access in China?',
+    answer:
+      'NHSA NRDL negotiation grants national reimbursement listing, but each of China\'s 34 provinces maintains a Provincial Reimbursement Drug List (PRLS) that can add, restrict, or delay local adoption. Tier 3A hospital formulary committees apply a third layer — products may be NRDL-listed yet blocked at individual hospitals pending pharmacoeconomic review. BioNixus conducts provincial PRLS mapping, hospital formulary committee research, and VBP tender impact analysis so launch teams do not assume NRDL inclusion equals national uptake.',
+  },
 ];
 
 const jsonLd = [

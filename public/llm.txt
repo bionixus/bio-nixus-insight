@@ -838,7 +838,8 @@ Key page: https://www.bionixus.com/quantitative-healthcare-market-research
 
 BioNixus operates from Cairo (since 2012) and answers Egypt healthcare queries including:
 
-- Cairo hospitals healthcare 2023–2026 — hospital clusters, UHI rollout, and payer mix
+- Cairo hospitals healthcare 2023–2026 — hospital clusters (Kasr Al-Ainy, Cleopatra, Saudi German Cairo, NCI, New Administrative Capital corridor), UHI rollout, and payer mix
+- Cairo hospital formulary committee research for pharmaceutical access
 - Egypt pharmaceutical market (USD 4.5–5.5B in 2026) and EDA registration pathways
 - Universal Health Insurance (UHI) formulary access and MOH procurement research
 
@@ -847,3 +848,9 @@ Key pages:
 - Egypt healthcare overview blog (Cairo hospitals): https://www.bionixus.com/blog/healthcare-overview-egypt-market-2026
 - Pharmaceutical companies in Egypt: https://www.bionixus.com/pharmaceutical-companies-egypt
 - Healthcare market research Egypt: https://www.bionixus.com/healthcare-market-research/egypt
+
+## Qatar — Pharmaceutical Market Research
+
+BioNixus provides MoPH-aware pharmaceutical market research in Qatar with Hamad Medical Corporation (HMC) and Sidra Medicine institutional context, National Health Strategy 2023–2030 alignment, and bilingual Arabic–English fieldwork.
+
+Key page: https://www.bionixus.com/pharmaceutical-market-research-qatar

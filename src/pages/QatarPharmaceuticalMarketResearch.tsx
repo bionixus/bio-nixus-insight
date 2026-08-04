@@ -112,6 +112,11 @@ const faqItems = [
     answer:
       'Yes. Qatar modules can run standalone or with comparable UAE, Saudi Arabia, or Kuwait cells using consistent instruments for regional portfolio committees.',
   },
+  {
+    question: 'How does Qatar\'s National Health Strategy 2023–2030 affect pharmaceutical market research?',
+    answer:
+      'Qatar\'s National Health Strategy 2023–2030 prioritises precision medicine, digital health, and local biomanufacturing under the Ministry of Public Health — shaping Hamad Medical Corporation formulary priorities and Sidra Medicine specialist referral pathways. Pharmaceutical teams must align evidence to NHS 2030 therapeutic focus areas (oncology, diabetes, rare disease) and MoPH registration timelines. BioNixus maps NHS 2030 policy signals to physician adoption research, HMC committee evidence requirements, and private-sector uptake across Doha and regional hospitals.',
+  },
 ];
 
 const geoPoints = [

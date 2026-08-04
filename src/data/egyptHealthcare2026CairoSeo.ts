@@ -21,6 +21,11 @@ export const EGYPT_CAIRO_HOSPITAL_CLUSTERS = [
     detail:
       'Alexandria University hospitals and regional MOH facilities feeding Cairo tertiary centres for oncology, cardiology, and rare-disease pathways.',
   },
+  {
+    name: 'Cairo oncology & specialty institutes',
+    detail:
+      'National Cancer Institute (NCI) Fom El-Khalig, Children\'s Cancer Hospital Egypt 57357, and Cairo specialty institutes — anchor high-acuity oncology, haematology, and rare-disease prescribing that shapes national EDA formulary and UHI reimbursement decisions.',
+  },
 ] as const;
 
 export const EGYPT_HEALTHCARE_2026_CAIRO_FAQ: ReadonlyArray<{ question: string; answer: string }> = [
@@ -43,5 +48,15 @@ export const EGYPT_HEALTHCARE_2026_CAIRO_FAQ: ReadonlyArray<{ question: string; 
     question: 'Where can I find pharmaceutical companies operating in Egypt?',
     answer:
       'See the BioNixus directory of pharmaceutical companies in Egypt for EDA-registered manufacturers, importers, and MNC affiliates — paired with this Cairo hospital landscape for launch and access planning.',
+  },
+  {
+    question: 'Which Cairo hospitals saw the biggest healthcare investment from 2023 to 2026?',
+    answer:
+      'From 2023 through 2026, Cairo healthcare investment concentrated on the New Administrative Capital medical city, Cleopatra Hospitals Group expansion, Saudi German Hospital Cairo upgrades, and UHI-enrolled MOH facilities in Greater Cairo governorates. NCI and Kasr Al-Ainy remain the highest-volume oncology and tertiary referral nodes — BioNixus maps procurement cycles, formulary committees, and physician adoption at each cluster for pharmaceutical launch teams.',
+  },
+  {
+    question: 'How do Cairo hospital formulary committees affect pharmaceutical access in Egypt?',
+    answer:
+      'Cairo hospital formulary and therapeutics committees gate inpatient and high-cost outpatient prescribing before UHI reimbursement scales nationally. Public university hospitals (Kasr Al-Ainy, Ain Shams) and private groups (Cleopatra, Dar Al-Fouad) apply different evidence thresholds — EDA registration alone does not guarantee listing. BioNixus runs hospital-pharmacy and committee stakeholder research to surface local adoption barriers and payer mix by Cairo cluster.',
   },
 ];
