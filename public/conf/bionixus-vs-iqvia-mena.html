@@ -440,6 +440,43 @@ section { padding: 72px 24px; }
   line-height: 1.7;
 }
 .agility-pullout strong { color: var(--navy); }
+
+/* FAQ */
+.faq-section details {
+  border-bottom: 1px solid var(--line-soft);
+  padding: 16px 0;
+}
+.faq-section summary {
+  font-family: 'Source Serif 4', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--navy);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.faq-section summary::before {
+  content: '+';
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--blue-accent);
+  flex-shrink: 0;
+  width: 20px;
+  text-align: center;
+}
+.faq-section details[open] summary::before { content: '−'; }
+.faq-section summary::-webkit-details-marker { display: none; }
+.faq-section .faq-answer {
+  margin-top: 12px;
+  padding-left: 32px;
+  font-size: .88rem;
+  color: var(--slate);
+  line-height: 1.7;
+}
+.faq-section .faq-answer a { color: var(--blue-accent); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(26,77,124,.35); }
 </style>
 </head>
 <body>
@@ -454,11 +491,12 @@ section { padding: 72px 24px; }
   </div>
 </nav>
 
+<main>
 <header class="hero">
   <div class="hero-inner">
     <div class="hero-kicker"><span></span>DIRECT COMPARISON 2026<span></span></div>
     <h1>BioNixus vs IQVIA for MENA Healthcare Research: Direct Comparison 2026</h1>
-    <p class="hero-lead">If you are a pharmaceutical, biotech, or MedTech team evaluating research and data partners for a MENA mandate, the comparison between BioNixus and IQVIA deserves an honest, detailed look. Pharma teams researching <strong style="font-weight:600;color:rgba(255,255,255,.88)">IQVIA alternatives in MENA</strong> or <strong style="font-weight:600;color:rgba(255,255,255,.88)">IQVIA alternatives in GCC</strong> often land here alongside standard vendor evaluations: BioNixus offers a regional specialist-led model with hospital sales data, consumption analytics, quantitative research, and market access depth without global enterprise thresholds.</p>
+    <p class="hero-lead">If you are a pharmaceutical, biotech, or MedTech team evaluating research and data partners for a MENA mandate, the comparison between BioNixus and IQVIA deserves an honest, detailed look. This page sits within BioNixus <a href="/healthcare-market-research" style="color:rgba(255,255,255,.9);text-decoration:underline;text-underline-offset:3px">healthcare market research</a> for GCC and Egypt. Pharma teams researching <strong style="font-weight:600;color:rgba(255,255,255,.88)">IQVIA alternatives in MENA</strong> or <strong style="font-weight:600;color:rgba(255,255,255,.88)">IQVIA alternatives in GCC</strong> often land here alongside standard vendor evaluations: BioNixus offers a regional specialist-led model with hospital sales data, consumption analytics, quantitative research, and market access depth without global enterprise thresholds.</p>
     <p class="hero-lead">Both firms operate across GCC and Egypt. Both deliver sales intelligence, consumption data, and primary research. The differences — in methodology, granularity, price point, and regional depth — are what determine which is the right fit for your specific mandate.</p>
     <p class="hero-lead" style="margin-bottom:0">Founded in 2012 and operating from offices in the United States, London, and Cairo, BioNixus has spent over a decade building a genuinely MENA-specific data and research capability. This page lays out where each firm leads, where they compete directly, and how to decide.</p>
     <div class="hero-meta">
@@ -691,8 +729,37 @@ section { padding: 72px 24px; }
   </div>
 </section>
 
-<!-- About -->
+<!-- When BioNixus is the better fit -->
 <section class="alt-bg">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">Fit Assessment</div>
+      <h2 class="section-title">When BioNixus Is the Better Fit</h2>
+      <p class="section-sub">IQVIA remains a strong choice for multi-decade panel benchmarks and global MSA continuity. BioNixus is typically the better fit when your mandate is MENA-account specific: hospital or department consumption pulls, pharmacy- and procurement-sourced sales tied to NUPCO or HMC cycles, bilingual physician research integrated with those data streams, or a single-country study that should not wait on enterprise vendor onboarding. For broader service context, see the <a href="/healthcare-market-research" style="color:var(--blue-accent);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(26,77,124,.35)">healthcare market research</a> hub and the <a href="/iqvia-alternative" style="color:var(--blue-accent);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(26,77,124,.35)">IQVIA alternative</a> overview.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">BioNixus vs IQVIA — Quick Answers</h2>
+    </div>
+    <details>
+      <summary>Does BioNixus replace IQVIA for total-market trend tracking?</summary>
+      <p class="faq-answer">Not as a like-for-like substitute for IQVIA's long-running audit panels. BioNixus is built for primary-source hospital, pharmacy, and physician intelligence in MENA. Teams that need five-plus years of panel-style market trend series often keep IQVIA for that layer and use BioNixus for account-level depth.</p>
+    </details>
+    <details>
+      <summary>When should a mid-size pharma team shortlist BioNixus instead of an enterprise MSA?</summary>
+      <p class="faq-answer">When you need GCC or Egypt fieldwork and data without clearing a global spend threshold, when proposal turnaround must fit formulary or tender windows, or when quantitative research must sit in the same workstream as consumption analytics. Start from <a href="/healthcare-market-research">healthcare market research</a> or <a href="/contact">contact BioNixus</a> for a scoped brief.</p>
+    </details>
+  </div>
+</section>
+
+<!-- About -->
+<section>
   <div class="container">
     <div class="section-head">
       <div class="section-label">About</div>
@@ -720,9 +787,11 @@ section { padding: 72px 24px; }
       <li><a href="/gcc-pharmaceutical-market-research" style="color:#0C1B33;text-decoration:underline;">GCC pharmaceutical market research</a></li>
       <li><a href="/bionixus-market-research-middle-east" style="color:#0C1B33;text-decoration:underline;">Middle East market research pillar</a></li>
       <li><a href="/market-research-healthcare" style="color:#0C1B33;text-decoration:underline;">Healthcare market research services</a></li>
+      <li><a href="/healthcare-market-research" style="color:#0C1B33;text-decoration:underline;">Healthcare market research hub</a></li>
     </ul>
   </div>
 </section>
+</main>
 
 <footer class="footer-note">
   <p>© 2026 <a href="/">BioNixus</a>. Healthcare &amp; Pharmaceutical Market Research.</p>

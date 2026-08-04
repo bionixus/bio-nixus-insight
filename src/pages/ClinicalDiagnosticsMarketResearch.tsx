@@ -15,9 +15,12 @@ import {
   CLINICAL_DIAGNOSTICS_PATH,
   CLINICAL_DIAGNOSTICS_PROPOSAL_REQUEST_PATH,
   clinicalDiagnosticsMeta,
+  decisionFramework,
   faqItems,
   fieldVolumeStats,
   governanceCadence,
+  ksaProcurementAccreditation,
+  menaGccIvdContext,
   phase1BranchMatrix,
   phase2ProcurementMatrix,
   phaseOverview,
@@ -27,6 +30,7 @@ import {
   teamRoster,
   timelineMilestones,
   trackRecordStats,
+  turkiyePathwayNuance,
   whyBioNixus,
 } from '@/data/clinicalDiagnosticsOffering';
 import '@/styles/clinical-diagnostics-proposal.css';
@@ -96,9 +100,17 @@ export default function ClinicalDiagnosticsMarketResearch() {
             </p>
             <p className="cd-cover-sub">{clinicalDiagnosticsMeta.heroIntro}</p>
             <p className="text-sm text-white/75 mt-6 max-w-2xl">
-              Saudi Arabia &amp; Türkiye · For the broader map see the{' '}
+              Saudi Arabia &amp; Türkiye · Start from the{' '}
               <Link to="/healthcare-market-research" className="underline text-[#D4A84B]">
                 healthcare market research hub
+              </Link>
+              , deepen Kingdom context on{' '}
+              <Link to="/healthcare-market-research/saudi-arabia" className="underline text-[#D4A84B]">
+                Saudi Arabia healthcare market research
+              </Link>
+              , or layer regional device framing via the{' '}
+              <Link to="/gcc-medical-devices-market-report" className="underline text-[#D4A84B]">
+                GCC medical devices market report
               </Link>
               .
             </p>
@@ -110,6 +122,78 @@ export default function ClinicalDiagnosticsMarketResearch() {
                 Speak with research director
               </Link>
             </div>
+          </section>
+
+          <section className="cd-page cd-page--break">
+            <div className="cd-page-rule">
+              <span className="cd-page-rule-text">02 · Market context</span>
+            </div>
+            <h2 className="cd-section-title">
+              MENA and GCC IVD,<em> QC and immunohematology</em>
+            </h2>
+            <p className="cd-section-lede">{menaGccIvdContext.lede}</p>
+            {menaGccIvdContext.paragraphs.map((p, i) => (
+              <p key={`mena-p-${i}`} className="text-sm text-[#3D4A5C] mb-4 max-w-3xl leading-relaxed">
+                {p}
+              </p>
+            ))}
+            <ul className="text-sm text-[#3D4A5C] list-disc pl-5 space-y-2 max-w-3xl mb-6">
+              {menaGccIvdContext.bullets.map((b) => (
+                <li key={b}>{b}</li>
+              ))}
+            </ul>
+            <p className="text-sm text-[#3D4A5C] max-w-3xl">
+              For regional device sequencing see the{' '}
+              <Link to="/gcc-medical-devices-market-report" className="text-[#0069A3] underline">
+                GCC medical devices market report
+              </Link>
+              ; for Kingdom hospital and access context see{' '}
+              <Link to="/healthcare-market-research/saudi-arabia" className="text-[#0069A3] underline">
+                Saudi Arabia healthcare market research
+              </Link>
+              .
+            </p>
+          </section>
+
+          <section className="cd-page cd-page--break">
+            <div className="cd-page-rule">
+              <span className="cd-page-rule-text">02 · Saudi Arabia</span>
+            </div>
+            <h2 className="cd-section-title">
+              NUPCO, SFDA, CBAHI<em> — research design implications</em>
+            </h2>
+            <p className="cd-section-lede">{ksaProcurementAccreditation.lede}</p>
+            {ksaProcurementAccreditation.paragraphs.map((p, i) => (
+              <p key={`ksa-p-${i}`} className="text-sm text-[#3D4A5C] mb-4 max-w-3xl leading-relaxed">
+                {p}
+              </p>
+            ))}
+            <p className="text-sm text-[#3D4A5C] max-w-3xl">
+              Ready to lock a Kingdom sample grid?{' '}
+              <Link to={CLINICAL_DIAGNOSTICS_PROPOSAL_REQUEST_PATH} className="text-[#0069A3] underline">
+                Request the clinical diagnostics proposal
+              </Link>{' '}
+              or{' '}
+              <Link to="/contact" className="text-[#0069A3] underline">
+                contact the research director
+              </Link>
+              .
+            </p>
+          </section>
+
+          <section className="cd-page cd-page--break">
+            <div className="cd-page-rule">
+              <span className="cd-page-rule-text">02 · Türkiye</span>
+            </div>
+            <h2 className="cd-section-title">
+              TİTCK, EKAP, SGK<em> — pathway nuance</em>
+            </h2>
+            <p className="cd-section-lede">{turkiyePathwayNuance.lede}</p>
+            {turkiyePathwayNuance.paragraphs.map((p, i) => (
+              <p key={`tr-p-${i}`} className="text-sm text-[#3D4A5C] mb-4 max-w-3xl leading-relaxed">
+                {p}
+              </p>
+            ))}
           </section>
 
           <section className="cd-page cd-page--break">
@@ -367,13 +451,49 @@ export default function ClinicalDiagnosticsMarketResearch() {
             </div>
           </section>
 
+          <section className="cd-page cd-page--break">
+            <div className="cd-page-rule">
+              <span className="cd-page-rule-text">09 · Decision framework</span>
+            </div>
+            <h2 className="cd-section-title">
+              Why this assessment,<em> evidence modules, next steps</em>
+            </h2>
+            <p className="cd-section-lede">{decisionFramework.lede}</p>
+            <div className="space-y-6 max-w-3xl">
+              {decisionFramework.stages.map((stage, index) => (
+                <div key={stage.title} className="cd-why-item">
+                  <span className="cd-why-num">{String(index + 1).padStart(2, '0')}</span>
+                  <div>
+                    <h3 className="font-semibold text-[#002244] mb-1">{stage.title}</h3>
+                    <p className="text-sm text-[#3D4A5C] leading-relaxed">{stage.body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="cd-request-panel mt-10">
+              <h3 className="cd-section-title mb-2">Move from assessment to commercial action</h3>
+              <p className="cd-section-lede cd-section-lede--blue-grade mb-4 max-w-lg mx-auto">
+                Align sample grids and Phase 2 timing with the research director, or register for the full proposal
+                document when you need methodology depth before a statement of work.
+              </p>
+              <div className="flex flex-wrap gap-3 justify-center">
+                <Link to={CLINICAL_DIAGNOSTICS_PROPOSAL_REQUEST_PATH} className="cd-btn-gold">
+                  Register for the full proposal
+                </Link>
+                <Link to="/contact" className="cd-btn-outline">
+                  Contact the research director
+                </Link>
+              </div>
+            </div>
+          </section>
+
           <section className="cd-page">
             <h2 className="cd-section-title mb-4">Frequently asked questions</h2>
             <div className="space-y-3">
               {faqItems.map((item) => (
                 <details key={item.question} className="border border-[#D0D6DE] bg-white px-4 py-3 rounded-sm">
                   <summary className="cursor-pointer font-semibold text-[#002244]">{item.question}</summary>
-                  <p className="mt-2 text-sm text-[#3D4A5C]">{item.answer}</p>
+                  <p className="mt-2 text-sm text-[#3D4A5C] leading-relaxed">{item.answer}</p>
                 </details>
               ))}
             </div>
