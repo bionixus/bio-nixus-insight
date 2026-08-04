@@ -10,13 +10,26 @@ export interface AboutDifferentiator {
   body: string;
 }
 
-export interface AboutValue {
-  title: string;
-  body: string;
-  bodyBeforeLink?: string;
-  linkLabel?: string;
-  bodyAfterLink?: string;
-}
+/**
+ * A value is written either as one plain paragraph or as a paragraph split
+ * around an inline link. About.tsx branches on `bodyBeforeLink`, so the two
+ * shapes are kept exclusive to let that check narrow which fields are present.
+ */
+export type AboutValue =
+  | {
+      title: string;
+      body: string;
+      bodyBeforeLink?: undefined;
+      linkLabel?: undefined;
+      bodyAfterLink?: undefined;
+    }
+  | {
+      title: string;
+      body?: undefined;
+      bodyBeforeLink: string;
+      linkLabel: string;
+      bodyAfterLink: string;
+    };
 
 export interface AboutOffice {
   title: string;

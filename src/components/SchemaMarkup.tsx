@@ -1,10 +1,14 @@
 import { Helmet } from 'react-helmet-async'
 import type { BlogPost } from '@/types/blog'
+import type { Language } from '@/lib/i18n'
 import { HOME_FAQ_SECTION_ID } from '@/lib/homePageFaq'
 import { buildHomeArticleJsonLdNodes, buildHomeServiceJsonLdNodes } from '@/lib/homePageJsonLd'
 import { buildCanonicalOrganization } from '@/lib/seo/organization'
 
-type LanguageCode = 'en' | 'ar' | 'de' | 'fr' | 'es' | 'zh'
+// Mirrors the site's Language union rather than restating it — the local copy
+// had drifted and was missing pt and ru, so those pages could not pass their
+// own locale through to inLanguage.
+type LanguageCode = Language
 
 type BreadcrumbItem = {
   name: string
