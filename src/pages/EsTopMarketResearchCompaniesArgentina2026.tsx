@@ -170,6 +170,7 @@ const breadcrumbSchema = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
+  image: 'https://www.bionixus.com/og-image.png',
   headline: 'Mejores Empresas de Investigación de Mercado en Argentina (Guía 2026)',
   description: 'Guía independiente de las principales empresas de investigación de mercado en Argentina — FMCG, consumidor y capacidades de investigación en salud para clientes multinacionales.',
   inLanguage: 'es-AR',

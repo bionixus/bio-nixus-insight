@@ -92,11 +92,13 @@ export default function HealthcareReportPage() {
     {
       '@context': 'https://schema.org',
       '@type': 'Article',
+      image: 'https://www.bionixus.com/og-image.png',
       headline: report.title,
-      author: { '@type': 'Organization', name: 'BioNixus' },
+      author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
       publisher: {
         '@type': 'Organization',
         name: 'BioNixus',
+        url: 'https://www.bionixus.com',
         logo: {
           '@type': 'ImageObject',
           url: 'https://www.bionixus.com/bionixus-logo.webp',

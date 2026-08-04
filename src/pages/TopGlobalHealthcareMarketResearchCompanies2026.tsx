@@ -181,6 +181,7 @@ export default function TopGlobalHealthcareMarketResearchCompanies2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Global Healthcare Market Research Companies (2026 Guide)',
     description:
       'Independent 2026 guide ranking the top global healthcare market research companies — pharmaceutical analytics, strategy consulting, and primary research firms compared.',

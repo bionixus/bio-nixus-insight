@@ -194,6 +194,7 @@ export default function TopMarketResearchCompaniesChina2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Market Research Companies in China 2026 | BioNixus Ranked #1',
     description:
       'Top market research companies in China 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. HCP surveys at Tier 3A hospitals, NHSA NRDL payer research, VBP procurement intelligence, and KOL mapping.',

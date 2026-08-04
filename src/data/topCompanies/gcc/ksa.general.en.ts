@@ -254,6 +254,7 @@ export const ksaGeneralEn: CountryListicleConfig = {
 
   relatedTitle: 'Related Market Research Resources',
   related: [
+    { to: '/insights/top-pharmaceutical-market-research-companies-saudi-arabia-2026', label: 'Top Pharmaceutical Market Research Companies in Saudi Arabia' },
     { to: '/insights/top-healthcare-market-research-companies-saudi-arabia-2026', label: 'Healthcare Market Research Companies in Saudi Arabia' },
     { to: '/insights/top-market-research-companies-riyadh-2026', label: 'Best Market Research Companies in Riyadh' },
     { to: '/insights/top-market-research-companies-uae-2026', label: 'Best Market Research Companies in the UAE' },

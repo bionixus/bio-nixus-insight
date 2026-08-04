@@ -194,6 +194,7 @@ export default function LeadingBiologicsBiosimilarsMarketResearchCompanies2026()
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Leading Biologics and Biosimilars Market Research Companies (2026)',
     description:
       'Expert 2026 guide to the leading biologics and biosimilars market research companies. Covers biosimilar switching research, institutional tender and procurement intelligence, payer and formulary access studies, and originator defence strategy.',

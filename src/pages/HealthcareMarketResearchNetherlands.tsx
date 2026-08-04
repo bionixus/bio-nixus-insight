@@ -63,7 +63,6 @@ const jsonLd = [
       name: 'BioNixus',
       url: 'https://www.bionixus.com',
     },
-    inLanguage: 'en',
   },
   buildBreadcrumbSchema([
     { name: 'Home', href: '/' },

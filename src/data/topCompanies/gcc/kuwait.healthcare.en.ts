@@ -248,6 +248,7 @@ export const kuwaitHealthcareEn: CountryListicleConfig = {
   ],
   relatedTitle: 'Related Resources',
   related: [
+    { to: '/insights/top-pharmaceutical-market-research-companies-kuwait-2026', label: 'Top Pharmaceutical Market Research Companies in Kuwait' },
     {
       to: '/insights/top-market-research-companies-kuwait-2026',
       label: 'Best Market Research Companies in Kuwait',

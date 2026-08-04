@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { getHreflangLinks, getGeoMeta } from '@/lib/seo';
 import { buildSeoDescription, normalizeSeoTitle } from '@/lib/seo-meta';
+import { getCtrSeo } from '@/data/ctr-seo-overrides';
 
 interface SEOHeadProps {
   title: string;
@@ -11,6 +12,8 @@ interface SEOHeadProps {
   ogType?: string;
   noindex?: boolean;
   jsonLd?: object[];
+  /** When true, skip title/description length normalization (caller already finalized copy). */
+  exactMeta?: boolean;
 }
 
 export function SEOHead({
@@ -21,13 +24,19 @@ export function SEOHead({
   ogType = 'website',
   noindex = false,
   jsonLd = [],
+  exactMeta = false,
 }: SEOHeadProps) {
   const { pathname } = useLocation();
-  const safeTitle = normalizeSeoTitle(title, 'BioNixus');
-  const safeDescription = buildSeoDescription({
-    preferred: description,
-    fallback: 'BioNixus healthcare and pharmaceutical market research insights and services.',
-  });
+  const ctr = getCtrSeo(pathname);
+  const safeTitle = ctr?.title
+    ?? (exactMeta ? String(title || '').trim() || 'BioNixus' : normalizeSeoTitle(title, 'BioNixus'));
+  const safeDescription = ctr?.description
+    ?? (exactMeta
+      ? String(description || '').replace(/\s+/g, ' ').trim()
+      : buildSeoDescription({
+          preferred: description,
+          fallback: 'BioNixus healthcare and pharmaceutical market research insights and services.',
+        }));
   const canonicalPath = (() => {
     const clean = (pathname || '/').split('?')[0].split('#')[0] || '/';
     return clean === '/' ? '/' : clean.replace(/\/+$/, '');

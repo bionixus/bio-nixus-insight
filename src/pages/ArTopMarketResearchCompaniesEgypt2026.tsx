@@ -165,6 +165,7 @@ export default function ArTopMarketResearchCompaniesEgypt2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'أفضل شركات أبحاث السوق في مصر (دليل 2026)',
     description: 'دليل مستقل لأفضل 5 شركات أبحاث سوق في مصر لعام 2026: مستهلكين وFMCG وتجزئة وقطاعات متعددة مقارنة حسب القدرات والمنهجيات والخبرة المصرية.',
     url: CANONICAL,

@@ -162,6 +162,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Market Research Companies in Egypt (2026 Guide)',
     description:
       'Independent guide to the leading market research companies in Egypt for 2026: consumer, FMCG, retail, and multi-industry firms compared by capability, methodology, and Egypt expertise.',

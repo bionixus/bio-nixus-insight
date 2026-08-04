@@ -161,6 +161,7 @@ export default function BestRareDiseaseMarketResearchCompanies2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Best Rare Disease Market Research Companies (2026 Guide)',
     description:
       'Independent 2026 guide ranking the best rare disease market research companies — patient-finding research, orphan drug market access, KOL mapping, and diagnostic pathway specialists compared.',

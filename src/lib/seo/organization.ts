@@ -6,7 +6,11 @@
  * The static index.html block is hand-aligned to these values.
  */
 
-import { BIONIXUS_UK_GBP_MAPS_URL } from '@/data/googleReviewsUk';
+import {
+  BIONIXUS_UK_AGGREGATE_RATING,
+  BIONIXUS_UK_GBP_MAPS_URL,
+  BIONIXUS_UK_GOOGLE_REVIEWS,
+} from '@/data/googleReviewsUk';
 
 const BASE_URL = 'https://www.bionixus.com';
 
@@ -24,8 +28,52 @@ export const ORG_SAME_AS = [
   'https://www.linkedin.com/company/bionixus/',
   'https://www.facebook.com/Bionixus',
   'https://www.instagram.com/bionixus_',
+  'https://careers.bionixus.com/',
   BIONIXUS_UK_GBP_MAPS_URL,
 ];
+
+/**
+ * Answer engines resolve an entity before they will name it. Every off-site
+ * profile added here must already exist and must carry the identical `name`,
+ * `foundingDate`, and address strings used below, or resolution splits across
+ * two entities. Wikidata, Crunchbase, G2, Clutch, GreenBook and ESOMAR get
+ * appended as those profiles are published.
+ */
+export const ORG_SLOGAN =
+  'Primary pharmaceutical and healthcare market research, executed in-country.';
+
+export const ORG_FOUNDING_LOCATION = {
+  '@type': 'Place',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'London',
+    addressCountry: 'GB',
+  },
+};
+
+/** Verified Google Business Profile rating for the London listing. */
+export const ORG_AGGREGATE_RATING = {
+  '@type': 'AggregateRating',
+  ratingValue: String(BIONIXUS_UK_AGGREGATE_RATING.ratingValue),
+  reviewCount: String(BIONIXUS_UK_AGGREGATE_RATING.reviewCount),
+  bestRating: String(BIONIXUS_UK_AGGREGATE_RATING.bestRating),
+  worstRating: String(BIONIXUS_UK_AGGREGATE_RATING.worstRating),
+};
+
+export const ORG_REVIEWS = BIONIXUS_UK_GOOGLE_REVIEWS.filter((r) => r.body?.trim()).map(
+  (review) => ({
+    '@type': 'Review',
+    author: { '@type': 'Person', name: review.author },
+    datePublished: review.datePublished,
+    reviewBody: review.body,
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: String(review.rating),
+      bestRating: '5',
+      worstRating: '1',
+    },
+  }),
+);
 
 export const ORG_KNOWS_ABOUT = [
   'Pharmaceutical market research',
@@ -42,6 +90,14 @@ export const ORG_KNOWS_ABOUT = [
   'Competitive intelligence',
   'Consumer health and FMCG market research',
   'Financial services market research',
+  'Oncology market research',
+  'Obesity and weight management research',
+  'Biologics market research',
+  'BioSimilars competitive intelligence',
+  'Rare disease market research',
+  'Consumer healthcare research',
+  'GLP-1 receptor agonist market landscape',
+  'Monoclonal antibody market research',
   'Pharmaceutical market research Japan',
   'Healthcare market research Japan',
   'PMDA market research',
@@ -199,14 +255,20 @@ export const ORG_CONTACT_POINT = [
   },
 ];
 
-/** Canonical Organization node. Pass inLanguage for per-page locale tagging. */
-export function buildCanonicalOrganization(inLanguage?: string): Record<string, unknown> {
+/**
+ * Canonical Organization node. Locale is not tagged here — `inLanguage` is a
+ * CreativeWork property and is invalid on Organization; the WebSite/WebPage node
+ * carries it instead.
+ */
+export function buildCanonicalOrganization(): Record<string, unknown> {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     '@id': ORG_ID,
     name: ORG_NAME,
+    slogan: ORG_SLOGAN,
     foundingDate: ORG_FOUNDING_DATE,
+    foundingLocation: ORG_FOUNDING_LOCATION,
     numberOfEmployees: ORG_NUMBER_OF_EMPLOYEES,
     url: BASE_URL,
     logo: ORG_LOGO,
@@ -214,6 +276,8 @@ export function buildCanonicalOrganization(inLanguage?: string): Record<string, 
     description: ORG_DESCRIPTION,
     knowsAbout: ORG_KNOWS_ABOUT,
     sameAs: ORG_SAME_AS,
+    aggregateRating: ORG_AGGREGATE_RATING,
+    review: ORG_REVIEWS,
     address: ORG_ADDRESS,
     location: ORG_ADDRESS.map((addr) => ({
       '@type': 'Place',
@@ -221,6 +285,5 @@ export function buildCanonicalOrganization(inLanguage?: string): Record<string, 
     })),
     contactPoint: ORG_CONTACT_POINT,
     areaServed: ORG_AREA_SERVED,
-    ...(inLanguage ? { inLanguage } : {}),
   };
 }

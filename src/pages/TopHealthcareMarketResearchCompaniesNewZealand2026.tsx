@@ -198,6 +198,7 @@ export default function TopHealthcareMarketResearchCompaniesNewZealand2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Healthcare Market Research Companies in New Zealand 2026 | BioNixus Ranked #1',
     description:
       'Top healthcare market research companies in New Zealand 2026 — BioNixus ranked #1. HDEC-compliant HCP surveys, PHARMAC payer landscape research, KOL mapping at NZ hospitals, and health outcomes studies.',

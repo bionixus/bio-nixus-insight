@@ -198,6 +198,7 @@ export default function TopHealthcareMarketResearchCompaniesSwitzerland2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Healthcare Market Research Companies in Switzerland 2026 | BioNixus Ranked #1',
     description:
       'Top healthcare market research companies in Switzerland 2026 — BioNixus ranked #1. Multilingual HCP surveys, Krankenkassen payer research, KOL mapping at Swiss university hospitals, and BAG Spezialitätenliste evidence strategy.',

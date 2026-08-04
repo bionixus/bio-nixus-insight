@@ -180,6 +180,7 @@ export default function TopMarketResearchCompaniesSwitzerland2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Market Research Companies in Switzerland 2026 | BioNixus Ranked #1',
     description:
       'Top market research companies in Switzerland 2026 — BioNixus ranked #1. Multilingual HCP surveys, KOL mapping in the Basel biopharma cluster, BAG Spezialitätenliste payer research, and Swiss pharmaceutical market intelligence.',

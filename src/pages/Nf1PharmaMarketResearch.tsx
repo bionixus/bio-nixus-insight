@@ -80,6 +80,7 @@ const jsonLd = [
     url: pageUrl,
     isRelatedTo: {
       '@type': 'Article',
+      image: 'https://www.bionixus.com/og-image.png',
       name: 'NF1 Market Access Briefing',
       url: `https://www.bionixus.com${nf1BlogHref}`,
     },

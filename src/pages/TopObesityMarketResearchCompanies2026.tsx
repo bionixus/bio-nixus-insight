@@ -194,6 +194,7 @@ export default function TopObesityMarketResearchCompanies2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Obesity & Weight Management Market Research Companies (2026)',
     description:
       'Expert 2026 guide to the leading obesity market research companies. Covers GLP-1 receptor agonist research, anti-obesity medication landscape, patient journey mapping, payer market access, and how to select an obesity research partner.',

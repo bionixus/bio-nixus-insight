@@ -66,17 +66,17 @@ const SaudiPharmaCompanies = () => {
   const basePath = languagePaths[language] || '/';
   const citationUrl = 'https://www.bionixus.com/pharmaceutical-companies-saudi-arabia';
 
-  const ogTitle = "Pharmaceutical Companies in Saudi Arabia — Complete Industry Guide 2026";
-  const ogDescription = "Comprehensive guide: 20+ pharmaceutical companies in Saudi Arabia, $12.4B market data, SFDA registration, Vision 2030 targets, and market outlook.";
+  const ogTitle = "Top Pharmaceutical Companies in Saudi Arabia (2026 List + Data)";
+  const ogDescription = "Ranked 2026 list of pharmaceutical companies in Saudi Arabia with localization status, NUPCO context and market size. By Bionixus.";
 
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Pharmaceutical Companies in Saudi Arabia | Top Manufacturers 2026 | BioNixus</title>
-        <meta name="description" content="Pharmaceutical companies in Saudi Arabia: $12.4B market, SPIMACO and top manufacturers, SFDA registration, NUPCO channels � MNC offices and distributors (2026)." />
+        <title>Top Pharmaceutical Companies in Saudi Arabia (2026 List + Data)</title>
+        <meta name="description" content="Ranked 2026 list of pharmaceutical companies in Saudi Arabia with localization status, NUPCO context and market size. By Bionixus." />
         <link rel="canonical" href={citationUrl} />
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesItemListLd(citationUrl, pharmaCompanies.map((c) => c.name)))}</script>
-        <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: 'Pharmaceutical Companies in Saudi Arabia: Complete Industry Guide 2026', description: 'Comprehensive guide to pharmaceutical companies operating in Saudi Arabia — local manufacturers, MNC offices, distributors, $12.4B market data, SFDA regulatory landscape, and Vision 2030 outlook.', url: citationUrl, datePublished: '2026-02-15', dateModified: '2026-02-15', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' } })}</script>
+        <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', image: 'https://www.bionixus.com/og-image.png', headline: 'Pharmaceutical Companies in Saudi Arabia: Complete Industry Guide 2026', description: 'Comprehensive guide to pharmaceutical companies operating in Saudi Arabia — local manufacturers, MNC offices, distributors, $12.4B market data, SFDA regulatory landscape, and Vision 2030 outlook.', url: citationUrl, datePublished: '2026-02-15', dateModified: '2026-02-15', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' } })}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' }, { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.bionixus.com/resources' }, { '@type': 'ListItem', position: 3, name: 'Pharmaceutical Companies in Saudi Arabia', item: citationUrl }] })}</script>
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesFaqLd(citationUrl, faqItems))}</script>
       </Helmet>

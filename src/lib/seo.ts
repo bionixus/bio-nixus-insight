@@ -20,10 +20,10 @@ export const seoByLanguage: Record<Language, {
   canonicalPath: string;
 }> = {
   en: {
-    // Brand-first ≤60 chars; primary keyword cluster for branded + category SERPs.
-    title: 'BioNixus | Global Pharma & Healthcare Market Research',
+    // CTR-engineered homepage title/description (exact; server skips length clamps).
+    title: 'Bionixus — Healthcare & Pharma Market Research Firm (MENA, Asia, Global)',
     description:
-      'Global market research for pharma & medtech. Physician, payer & hospital evidence for launch and access — Americas, Europe, MENA & APAC. Proposal in 24 hours.',
+      'Primary healthcare market research and market access consulting for pharma & medical devices — GCC, USA, Turkey, Europe, Brazil & Asia. Request a proposal.',
     keywords:
       'market research company, pharmaceutical market research company, healthcare market research company, global healthcare market research, pharma market research, physician surveys, KOL mapping, market access research, MENA market research, GCC pharmaceutical research, UAE healthcare research, Saudi Arabia pharma research, Egypt market research, medtech market research, competitive intelligence',
     canonicalPath: '/',
@@ -182,7 +182,8 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     en: '/healthcare-market-research',
     de: '/de/healthcare-market-research/germany',
     fr: '/fr/healthcare-market-research',
-    es: '/es/healthcare-market-research',
+    // No Spanish translation of this hub exists; /es/market-research-healthcare
+    // belongs to the /market-research-healthcare group.
     ar: '/ar/healthcare-market-research',
     zh: '/zh/healthcare-market-research',
     ru: '/ru/healthcare-market-research',
@@ -191,15 +192,29 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     en: '/healthcare-market-research/saudi-arabia',
     ar: '/ar/healthcare-market-research/saudi-arabia',
   },
+  // The /{lang}/market-research-healthcare pages translate /market-research-healthcare,
+  // not this services hub. Claiming them here put every one of those URLs in two
+  // hreflang groups, so neither group reciprocated.
   '/market-research': {
     en: '/market-research',
-    de: '/de/market-research-healthcare',
-    fr: '/fr/market-research-healthcare',
-    es: '/es/market-research-healthcare',
-    zh: '/zh/market-research-healthcare',
-    ar: '/ar/market-research-healthcare',
-    pt: '/pt/market-research-healthcare',
-    ru: '/ru/market-research-healthcare',
+  },
+  // Localized pages with transliterated slugs. Without these groups the localized
+  // page pointed at its English counterpart while the English page pointed nowhere.
+  '/insights/top-healthcare-market-research-companies-saudi-arabia-2026': {
+    en: '/insights/top-healthcare-market-research-companies-saudi-arabia-2026',
+    ar: '/ar/insights/top-sharaket-abhath-sihha-alsaudia-2026',
+  },
+  '/insights/top-market-research-companies-saudi-arabia-2026': {
+    en: '/insights/top-market-research-companies-saudi-arabia-2026',
+    ar: '/ar/insights/top-sharaket-abhath-alsuq-alsaudia-2026',
+  },
+  '/market-research-saudi-arabia-pharmaceutical': {
+    en: '/market-research-saudi-arabia-pharmaceutical',
+    ar: '/ar/abhath-suq-adwiyah-saudi-arabia',
+  },
+  '/brazil-pharmaceutical-market-research': {
+    en: '/brazil-pharmaceutical-market-research',
+    pt: '/pt/pesquisa-mercado-farmaceutico-brasil',
   },
   '/market-research-uae': {
     en: '/market-research-uae',

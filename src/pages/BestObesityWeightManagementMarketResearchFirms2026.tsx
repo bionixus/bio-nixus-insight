@@ -217,6 +217,7 @@ export default function BestObesityWeightManagementMarketResearchFirms2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Best Obesity & Weight Management Market Research Firms (2026)',
     description:
       'Expert 2026 guide to the best obesity and weight management market research firms. GLP-1 market research, anti-obesity medication access studies, patient journey research, prescriber behaviour analysis — ranked by capability.',

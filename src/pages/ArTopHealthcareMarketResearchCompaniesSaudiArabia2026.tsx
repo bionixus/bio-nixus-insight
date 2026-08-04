@@ -200,6 +200,7 @@ export default function ArTopHealthcareMarketResearchCompaniesSaudiArabia2026() 
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'أفضل شركات أبحاث سوق الرعاية الصحية في المملكة العربية السعودية (دليل 2026)',
     description: 'دليل مستقل لأفضل 7 شركات أبحاث سوق رعاية صحية في المملكة العربية السعودية لعام 2026: أدوية ورعاية صحية وهيئة الغذاء والدواء وNUPCO ورؤية 2030.',
     url: CANONICAL,

@@ -49,11 +49,12 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline:
       'Market Research & Marketing Automation for Pharmacies in Saudi Arabia: How to Grow Retail Sales and Customer Satisfaction',
     description:
       'Comprehensive guide to leveraging market research and marketing automation for pharmacy retail sales growth in Saudi Arabia. Case study showing 40% sales increase.',
-    author: { '@type': 'Organization', name: 'BioNixus Market Research' },
+    author: { '@type': 'Organization', name: 'BioNixus Market Research', url: 'https://www.bionixus.com' },
     publisher: {
       '@type': 'Organization',
       name: 'BioNixus',

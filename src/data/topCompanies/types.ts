@@ -1,6 +1,13 @@
 export type ListicleLang = 'en' | 'ar' | 'fr' | 'es' | 'pt' | 'de' | 'it';
-export type ListicleVariant = 'general' | 'healthcare';
-export type ListicleRegion = 'mena' | 'gcc' | 'africa' | 'europe' | 'latam';
+export type ListicleVariant = 'general' | 'healthcare' | 'pharma';
+export type ListicleRegion =
+  | 'mena'
+  | 'gcc'
+  | 'africa'
+  | 'europe'
+  | 'latam'
+  | 'northamerica'
+  | 'apac';
 
 export interface ListicleHreflang {
   lang: string;
@@ -45,6 +52,18 @@ export interface ListicleRelatedLink {
   label: string;
 }
 
+/**
+ * Answer-first block phrased as the literal query an answer engine receives.
+ * The `answer` must be self-contained: engines lift the first declarative
+ * sentence without surrounding page context.
+ */
+export interface ListicleAeoAnswer {
+  question: string;
+  answer: string;
+  points: { title: string; description: string }[];
+  summary?: string;
+}
+
 export interface CountryListicleConfig {
   slug: string;
   lang: ListicleLang;
@@ -76,6 +95,8 @@ export interface CountryListicleConfig {
   considerations: ListicleConsiderationCard[];
   faqTitle: string;
   faqItems: ListicleFaqItem[];
+  /** Rendered as a GeoLLMAnswerBlock with matching QAPage JSON-LD. */
+  aeoAnswer?: ListicleAeoAnswer;
   relatedTitle: string;
   related: ListicleRelatedLink[];
   cta: { title: string; body: string; button: string; to: string };

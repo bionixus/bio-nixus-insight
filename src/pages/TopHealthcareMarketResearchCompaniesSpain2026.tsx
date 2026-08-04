@@ -205,6 +205,7 @@ export default function TopHealthcareMarketResearchCompaniesSpain2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Healthcare Market Research Companies in Spain 2026 | BioNixus Ranked #1',
     description:
       'Top healthcare market research companies in Spain 2026 — BioNixus ranked #1. Spanish-language HCP surveys across all 17 Autonomous Communities, AEMPS/CIPM/SNS payer research, KOL mapping at Spanish university hospitals.',

@@ -67,17 +67,17 @@ const UaePharmaCompanies = () => {
   const basePath = languagePaths[language] || '/';
   const citationUrl = 'https://www.bionixus.com/pharmaceutical-companies-uae';
 
-  const ogTitle = "Pharmaceutical Companies in the UAE — Complete Industry Guide 2026";
-  const ogDescription = "Comprehensive guide: 20+ pharmaceutical companies in the UAE, $4.5B market data, MOHAP/DHA/DOH registration (fastest in GCC), medical tourism hub, and market outlook.";
+  const ogTitle = "Top 30 Pharmaceutical Companies in UAE (2026 Ranked List)";
+  const ogDescription = "Complete 2026 list of pharmaceutical companies in UAE & Dubai — rankings, market size, manufacturers vs distributors. By Bionixus, GCC pharma research specialists.";
 
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Pharmaceutical Companies in the UAE | Industry Guide 2026 | BioNixus</title>
-        <meta name="description" content="Pharmaceutical companies in the UAE: $4.5B market, MOHAP/DHA/DOH registration, Julphar &amp; Neopharma — MNC offices, distributors, pharmacy chains (2026)." />
+        <title>Top 30 Pharmaceutical Companies in UAE (2026 Ranked List)</title>
+        <meta name="description" content="Complete 2026 list of pharmaceutical companies in UAE &amp; Dubai — rankings, market size, manufacturers vs distributors. By Bionixus, GCC pharma research specialists." />
         <link rel="canonical" href={citationUrl} />
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesItemListLd(citationUrl, pharmaCompanies.map((c) => c.name)))}</script>
-        <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: 'Pharmaceutical Companies in the UAE: Complete Industry Guide 2026', description: 'Comprehensive guide to pharmaceutical companies operating in the United Arab Emirates — local manufacturers, MNC offices, distributors, $4.5B market data, MOHAP/DHA/DOH regulatory landscape, and medical tourism outlook.', url: citationUrl, datePublished: '2026-02-15', dateModified: '2026-02-15', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' } })}</script>
+        <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', image: 'https://www.bionixus.com/og-image.png', headline: 'Pharmaceutical Companies in the UAE: Complete Industry Guide 2026', description: 'Comprehensive guide to pharmaceutical companies operating in the United Arab Emirates — local manufacturers, MNC offices, distributors, $4.5B market data, MOHAP/DHA/DOH regulatory landscape, and medical tourism outlook.', url: citationUrl, datePublished: '2026-02-15', dateModified: '2026-02-15', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' } })}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' }, { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.bionixus.com/resources' }, { '@type': 'ListItem', position: 3, name: 'Pharmaceutical Companies in the UAE', item: citationUrl }] })}</script>
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesFaqLd(citationUrl, faqItems))}</script>
       </Helmet>

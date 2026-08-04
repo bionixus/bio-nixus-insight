@@ -196,6 +196,7 @@ export default function TopHealthcareMarketResearchCompaniesItaly2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Healthcare Market Research Companies in Italy 2026 | BioNixus Ranked #1',
     description:
       'Top healthcare market research companies in Italy 2026 — BioNixus ranked #1. AIFA-aligned HCP surveys in Italian, AIFA CTS/CPR payer landscape research, KOL mapping at IRCCS networks, and health outcomes studies.',

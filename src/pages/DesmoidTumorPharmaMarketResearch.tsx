@@ -76,6 +76,7 @@ const jsonLd = [
     url: pageUrl,
     isRelatedTo: {
       '@type': 'Article',
+      image: 'https://www.bionixus.com/og-image.png',
       name: 'Desmoid Ogsiveo Market Access Briefing',
       url: `https://www.bionixus.com${desmoidBlogHref}`,
     },

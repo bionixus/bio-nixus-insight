@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Building2, Globe, BarChart3, ShieldCheck, BookOpen, CheckCircle2 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import type { CountryListicleConfig } from '@/data/topCompanies/types';
+import { resolvePublishedHreflang, resolvePublishedRelated } from '@/data/topCompanies/registry';
 
 interface Props {
   config: CountryListicleConfig;
@@ -12,13 +14,16 @@ interface Props {
 
 export default function TopCompaniesCountryPage({ config }: Props) {
   const {
-    title, metaDescription, canonical, hreflang, ogLocale, inLanguage,
+    title, metaDescription, canonical, ogLocale, inLanguage,
     datePublished, dateModified, badge, h1, heroIntro, heroStats,
     quickAnswerTitle, landscapeTitle, landscapeParagraphs, profilesTitle,
     firms, comparisonTitle, comparisonHeaders, comparisonRows,
-    considerationsTitle, considerations, faqTitle, faqItems,
-    relatedTitle, related, cta, breadcrumb, uiLabels, rtl,
+    considerationsTitle, considerations, faqTitle, faqItems, aeoAnswer,
+    relatedTitle, cta, breadcrumb, uiLabels, rtl,
   } = config;
+
+  const hreflang = resolvePublishedHreflang(config);
+  const related = resolvePublishedRelated(config);
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -33,6 +38,7 @@ export default function TopCompaniesCountryPage({ config }: Props) {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: title,
     description: metaDescription,
     url: canonical,
@@ -167,6 +173,21 @@ export default function TopCompaniesCountryPage({ config }: Props) {
             </div>
           </div>
         </section>
+
+        {/* Answer-first block for AI answer engines */}
+        {aeoAnswer && (
+          <section className="section-padding py-6">
+            <div className="container-wide max-w-5xl mx-auto">
+              <GeoLLMAnswerBlock
+                question={aeoAnswer.question}
+                answer={aeoAnswer.answer}
+                points={aeoAnswer.points}
+                summary={aeoAnswer.summary}
+                pageUrl={canonical}
+              />
+            </div>
+          </section>
+        )}
 
         {/* Table of contents */}
         <section className="section-padding py-8 bg-muted/30">

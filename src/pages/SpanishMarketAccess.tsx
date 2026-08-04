@@ -11,7 +11,7 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Market Access en Mercados Sanitarios',
-    provider: { '@type': 'Organization', name: 'BioNixus' },
+    provider: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     areaServed: ['España', 'LatAm', 'EMEA'],
   },
   buildBreadcrumbSchema([

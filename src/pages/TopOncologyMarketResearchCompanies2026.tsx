@@ -194,6 +194,7 @@ export default function TopOncologyMarketResearchCompanies2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Oncology Market Research Companies (2026)',
     description:
       'Expert 2026 guide to the leading oncology market research companies. Covers biomarker research, KOL mapping, tumour board dynamics, immuno-oncology evidence, and how to select an oncology research partner.',

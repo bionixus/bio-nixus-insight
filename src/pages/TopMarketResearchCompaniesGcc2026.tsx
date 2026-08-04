@@ -171,6 +171,7 @@ export default function TopMarketResearchCompaniesGcc2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Market Research Companies in GCC (2026 Guide)',
     description:
       'Independent 2026 guide ranking the top market research companies in the GCC — consumer, FMCG, retail, and multi-industry firms across Saudi Arabia, UAE, Kuwait, Oman, Qatar, and Bahrain compared.',

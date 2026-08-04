@@ -57,7 +57,6 @@ const jsonLd = [
     name: 'Healthcare Market Research in Ireland',
     serviceType: 'Healthcare Market Research Ireland',
     areaServed: { '@type': 'Country', name: 'Ireland', sameAs: 'https://www.wikidata.org/wiki/Q27' },
-    inLanguage: 'en',
     provider: {
       '@type': 'Organization',
       '@id': 'https://www.bionixus.com/#organization',

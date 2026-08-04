@@ -248,6 +248,7 @@ export const egyptHealthcareEn: CountryListicleConfig = {
   ],
   relatedTitle: 'Related Resources',
   related: [
+    { to: '/insights/top-pharmaceutical-market-research-companies-egypt-2026', label: 'Top Pharmaceutical Market Research Companies in Egypt' },
     {
       to: '/insights/top-market-research-companies-egypt-2026',
       label: 'Best Market Research Companies in Egypt',

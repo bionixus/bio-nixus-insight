@@ -161,6 +161,7 @@ export default function TopConsumerHealthcareMarketResearchFirms2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Consumer Healthcare Market Research Firms (2026 Guide)',
     description:
       'Independent 2026 guide ranking the top consumer healthcare market research firms — OTC, pharmacy channel, wellness, and FMCG-health crossover research firms compared.',

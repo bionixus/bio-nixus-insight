@@ -70,6 +70,7 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: PAGE_H1,
     description: PAGE_DESCRIPTION,
     url: pageUrl,

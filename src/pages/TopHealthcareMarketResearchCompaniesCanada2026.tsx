@@ -223,6 +223,7 @@ export default function TopHealthcareMarketResearchCompaniesCanada2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Healthcare Market Research Companies in Canada 2026 | BioNixus Ranked #1',
     description:
       'Top healthcare market research companies in Canada 2026 — BioNixus ranked #1. TCPS 2-compliant HCP surveys, payer landscape research, KOL mapping at Canadian AMCs, and CADTH-aligned health outcomes studies.',

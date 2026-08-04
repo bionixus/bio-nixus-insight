@@ -181,6 +181,7 @@ export default function TopPharmaMarketResearchCompaniesMiddleEast2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Pharma Market Research Companies in the Middle East (2026 Guide)',
     description:
       'Independent 2026 guide ranking the top pharmaceutical market research companies in the Middle East — MENA pharma analytics, fieldwork, competitive intelligence, and primary research firms compared.',

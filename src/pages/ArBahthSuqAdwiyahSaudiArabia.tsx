@@ -87,7 +87,6 @@ const articleSchema = {
   url: CANONICAL,
   provider: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
   areaServed: ['المملكة العربية السعودية', 'الرياض', 'جدة', 'المنطقة الشرقية'],
-  inLanguage: 'ar',
 };
 
 const faqSchema = {
