@@ -86,6 +86,20 @@ async function validateUrl(url) {
     ...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g),
   ];
   const issues = [];
+
+  if (!response.ok) issues.push(`HTTP ${response.status}`);
+
+  // A page with no JSON-LD must fail rather than report clean. Otherwise an auth
+  // wall or an error page silently passes, which is worse than no check at all.
+  if (blocks.length === 0) {
+    const blocked = /vercel\.com\/login|sso-api|Authentication Required/i.test(html);
+    issues.push(
+      blocked
+        ? 'no JSON-LD found — response is a deployment-protection login page, not the site'
+        : 'no JSON-LD found on the page',
+    );
+    return { url, issues };
+  }
   for (const [, raw] of blocks) {
     let doc;
     try {
