@@ -54,6 +54,16 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
     answer:
       'BioNixus supports GCC medical device commercial strategy through three primary intelligence products: (1) Account-level procurement intelligence — hospital-specific budget cycles, procurement head contacts, and device replacement schedules sourced from biomedical engineering and procurement department primary research; (2) Clinical user research — quantitative and qualitative surveys with surgeons, intensivists, radiologists, and clinical engineers mapping device preference, switching barriers, and competitive positioning; and (3) Regulatory and access tracking — systematic monitoring of SFDA, MOHAP, DHA, and DOH device registration timelines, approval outcomes, and formulary listing status.',
   },
+  {
+    question: 'How do GCC biosimilar and HTA pathways affect market access in 2026?',
+    answer:
+      'Saudi SFDA and UAE MOHAP have published interchangeability guidance that accelerates biosimilar uptake in oncology and immunology, but hospital committees still weigh physician confidence, pharmacist substitution rules, and tender price corridors separately from originator dossiers. Health technology assessment-style evidence — budget impact, local epidemiology, and comparator justification — is increasingly requested before NUPCO awards and emirate formulary listings even when formal HTA agencies do not exist Gulf-wide.',
+  },
+  {
+    question: 'What is the SFDA Establishment Evaluation System (EES) and how does it change GCC access?',
+    answer:
+      'SFDA\'s Establishment Evaluation System benchmarks manufacturing sites and can shorten review cycles for companies with strong quality track records, while flagging facilities that need corrective action before new SKUs list. For multi-GCC launches, BioNixus pairs EES readiness checks with pricing and tender research so teams do not assume registration alone unlocks NUPCO or MOHAP volume.',
+  },
 ], 'gcc');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/gcc-medical-devices-market-report');
@@ -74,7 +84,7 @@ const jsonLd = [
       logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
     },
     datePublished: '2026-05-01',
-    dateModified: '2026-06-22',
+    dateModified: '2026-08-05',
     mainEntityOfPage: 'https://www.bionixus.com/gcc-medical-devices-market-report',
   },
   {
@@ -93,7 +103,7 @@ const jsonLd = [
     countryName: "GCC",
     marketSlug: "gcc",
     publishedDate: "2026-05-01",
-    modifiedDate: "2026-05-27",
+    modifiedDate: "2026-08-05",
   })
 ];
 
