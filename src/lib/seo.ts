@@ -262,9 +262,6 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     en: '/insights/top-healthcare-market-research-companies-argentina-2026',
     es: '/es/insights/top-empresas-investigacion-mercado-salud-argentina-2026',
   },
-  '/market-research-saudi-arabia-pharmaceutical': {
-    en: '/market-research-saudi-arabia-pharmaceutical',
-  },
   '/market-research-healthcare': {
     en: '/market-research-healthcare',
     de: '/de/market-research-healthcare',
