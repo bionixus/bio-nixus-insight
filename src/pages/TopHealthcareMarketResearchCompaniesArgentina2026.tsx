@@ -220,6 +220,7 @@ export default function TopHealthcareMarketResearchCompaniesArgentina2026() {
         title="5 Best Healthcare Market Research Firms in Argentina | BioNixus"
         description="Top 5 healthcare market research firms in Argentina: BioNixus, IQVIA, Kantar, NielsenIQ, Euromonitor. ANMAT, obras sociales, PAMI, KOL mapping compared."
         url={CANONICAL}
+        image="https://www.bionixus.com/og-image.png"
         locale="es_AR"
       />
 

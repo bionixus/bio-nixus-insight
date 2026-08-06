@@ -105,6 +105,8 @@ const ClientReviews = () => {
         title="Client Reviews | BioNixus"
         description="Verified Google reviews and client testimonials from pharmaceutical and medical device partners across the US, Europe, G5, and LATAM."
         url={PAGE_URL}
+        image="https://www.bionixus.com/og-image.png"
+        locale="en_US"
       />
 
       <Navbar />

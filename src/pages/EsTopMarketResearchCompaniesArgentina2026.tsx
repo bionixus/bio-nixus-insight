@@ -230,6 +230,7 @@ export default function EsTopMarketResearchCompaniesArgentina2026() {
         title="5 Mejores Empresas de Investigación de Mercado en | BioNixus"
         description="Top 5 empresas de investigación de mercado en Argentina: BioNixus, Kantar, Ipsos, NielsenIQ, Euromonitor. FMCG, consumidor y salud comparadas."
         url={CANONICAL}
+        image="https://www.bionixus.com/og-image.png"
         locale="es_AR"
       />
 

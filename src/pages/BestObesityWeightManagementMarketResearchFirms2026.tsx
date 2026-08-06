@@ -275,7 +275,13 @@ export default function BestObesityWeightManagementMarketResearchFirms2026() {
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
-      <OpenGraphMeta locale="en" />
+      <OpenGraphMeta
+        title="Best Obesity & Weight Management Market Research Firms (2026) | BioNixus"
+        description="Expert 2026 guide: best obesity & weight management market research firms. GLP-1 market research, anti-obesity medication access studies, patient journey research, prescriber behaviour analysis — ranked by capability."
+        url={CANONICAL}
+        image="https://www.bionixus.com/og-image.png"
+        locale="en_US"
+      />
       <Navbar />
       <main>
         {/* Breadcrumb */}

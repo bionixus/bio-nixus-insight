@@ -108,7 +108,8 @@ export default function PtBrazilPharmaceuticalMarketResearch() {
         title={PAGE_TITLE}
         description={PAGE_DESC}
         url={CANONICAL}
-        imageUrl="https://www.bionixus.com/og-image.png"
+        image="https://www.bionixus.com/og-image.png"
+        locale="pt_BR"
       />
       <Navbar />
 

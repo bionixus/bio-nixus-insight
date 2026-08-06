@@ -16,7 +16,7 @@ export function resolveRelatedReportPath(relatedReportSlug: string | undefined):
     const entry = getReportSafe(slug)
     return {
       href: `/market-reports/${slug}`,
-      label: entry ? `${entry.market} ${entry.therapyName ?? 'market'} report` : 'Related market report',
+      label: entry ? `${entry.market} ${entry.therapyArea ?? 'market'} report` : 'Related market report',
     }
   }
 

@@ -236,6 +236,7 @@ export default function TopMarketResearchCompaniesBrazil2026() {
         title="5 Best Market Research Companies in Brazil (2026) | BioNixus"
         description="Top 5 market research firms in Brazil: BioNixus, Kantar, Ipsos, NielsenIQ, Euromonitor. Consumer, FMCG, retail, and multi-industry capabilities compared."
         url={CANONICAL}
+        image="https://www.bionixus.com/og-image.png"
         locale="pt_BR"
       />
 

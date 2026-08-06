@@ -220,6 +220,7 @@ export default function TopHealthcareMarketResearchCompaniesBrazil2026() {
         title="5 Best Healthcare Market Research Firms in Brazil | BioNixus"
         description="Top 5 healthcare market research firms in Brazil: BioNixus, IQVIA, Kantar, NielsenIQ, Euromonitor. ANVISA, CONITEC, KOL mapping compared."
         url={CANONICAL}
+        image="https://www.bionixus.com/og-image.png"
         locale="pt_BR"
       />
 

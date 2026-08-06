@@ -220,6 +220,7 @@ export default function PtTopHealthcareMarketResearchCompaniesBrazil2026() {
         title="5 Melhores Empresas de Pesquisa de Mercado em Saúde | BioNixus"
         description="Top 5 empresas de pesquisa em saúde no Brasil: BioNixus, IQVIA, Kantar, NielsenIQ, Euromonitor. ANVISA, CONITEC, SUS, KOLs comparados."
         url={CANONICAL}
+        image="https://www.bionixus.com/og-image.png"
         locale="pt_BR"
       />
 
