@@ -79,6 +79,7 @@ export default function DevelopedMarketMedtechListiclePage({
         description={metaDescription}
         image="https://www.bionixus.com/og-image.png"
         url={canonical}
+        locale="en_US"
         type="article"
       />
       <Navbar />
