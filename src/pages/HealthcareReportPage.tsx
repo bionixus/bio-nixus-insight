@@ -155,9 +155,9 @@ export default function HealthcareReportPage() {
           therapyName={report.therapyArea}
           countryName={report.market}
           stats={[
-            { value: report.stat1Value, label: report.stat1Label, source: report.stat1Source },
-            { value: report.stat2Value, label: report.stat2Label, source: report.stat2Source },
-            { value: report.stat3Value, label: report.stat3Label, source: report.stat3Source },
+            { value: report.stat1Value, label: report.stat1Label },
+            { value: report.stat2Value, label: report.stat2Label },
+            { value: report.stat3Value, label: report.stat3Label },
           ]}
           metaLinks={
             <ReportHeroMetaLinks
