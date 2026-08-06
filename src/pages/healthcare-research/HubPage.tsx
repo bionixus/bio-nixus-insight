@@ -921,7 +921,7 @@ export default function HubPage() {
             Looking beyond healthcare or routing to a specific country? The global directory maps our full market coverage. Staying in pharma and devices? Keep to this hub and pick the service or market you need to plan.
           </p>
           <div className="grid md:grid-cols-2 gap-3">
-            <HealthcareNavCard to="/global-websites" title="Open global websites directory" />
+            <HealthcareNavCard to="/healthcare-market-research" title="Open healthcare market research hub" />
             <HealthcareNavCard to="/services" title="Compare healthcare research services" />
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-2 mt-4">

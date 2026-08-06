@@ -18,6 +18,7 @@ import {
   BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH,
   BLOG_LEGACY_FULL_PATH_REDIRECTS,
 } from '../blog-legacy-redirects.mjs';
+import { resolveGlobalWebsitesRedirect } from '../lib/global-websites-redirects.mjs';
 import { getIndustryMatrixSitemapPages } from './data/industry-matrix-sitemap.mjs';
 import { getSpecialtyMarketDemandSitemapPages } from './data/specialty-market-demand-sitemap.mjs';
 import {
@@ -94,9 +95,13 @@ const SAUDI_PHARMA_MARKET_2026_AR_SLUG = 'سوق-الدواء-السعودي-202
  */
 const BLOG_SLUG_SITEMAP_STATIC_ONLY = new Set(['gcc-pharmaceuticals-market-arabic-2026']);
 
+const LEGACY_REDIRECT_PATHS = Object.keys(
+  JSON.parse(readFileSync(join(root, 'config', 'legacy-redirects.json'), 'utf8')),
+);
+
 /**
  * Paths that 301 elsewhere — never list in sitemap (Ahrefs: 3xx redirect in sitemap).
- * Synced with blog-legacy-redirects.mjs + server.js portfolio aliases.
+ * Synced with blog-legacy-redirects.mjs + config/legacy-redirects.json + global-websites map.
  */
 const SITEMAP_REDIRECT_SOURCE_PATHS = new Set([
   '/conf',
@@ -107,6 +112,8 @@ const SITEMAP_REDIRECT_SOURCE_PATHS = new Set([
   '/insights/top-market-research-companies-ksa-2026',
   '/insights/top-market-research-companies-abudhabi-2026',
   '/insights/top-obesity-market-research-companies-2026',
+  '/global-websites',
+  ...LEGACY_REDIRECT_PATHS,
   ...Object.keys(BLOG_LEGACY_FULL_PATH_REDIRECTS),
   ...Object.keys(BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH),
 ]);
@@ -121,7 +128,9 @@ const CASE_STUDY_FALLBACK_SLUGS = [
 
 function isSitemapRedirectSourcePath(pathname) {
   const path = pathname.endsWith('/') && pathname.length > 1 ? pathname.slice(0, -1) : pathname;
-  return SITEMAP_REDIRECT_SOURCE_PATHS.has(path);
+  if (SITEMAP_REDIRECT_SOURCE_PATHS.has(path)) return true;
+  if (resolveGlobalWebsitesRedirect(path)) return true;
+  return false;
 }
 
 /**
@@ -601,6 +610,9 @@ const staticPages = [
   { path: '/south-korea-medical-devices-market-report', priority: '0.85', changefreq: 'monthly' },
   { path: '/spain-healthcare-market-report', priority: '0.88', changefreq: 'monthly' },
   { path: '/spain-medical-devices-market-report', priority: '0.88', changefreq: 'monthly' },
+  { path: '/sweden-healthcare-market-report', priority: '0.85', changefreq: 'monthly' },
+  { path: '/uae-influenza-vaccine-report', priority: '0.85', changefreq: 'monthly' },
+  { path: '/market-access', priority: '0.8', changefreq: 'monthly' },
   { path: '/turkey-healthcare-market-report', priority: '0.83', changefreq: 'monthly' },
   { path: '/turkey-medical-devices-market-report', priority: '0.83', changefreq: 'monthly' },
   { path: '/uae-healthcare-market-report', priority: '0.88', changefreq: 'monthly' },
@@ -755,13 +767,16 @@ function buildStaticRoutes() {
   for (const page of getSpecialtyMarketDemandSitemapPages()) {
     if (!isSitemapRedirectSourcePath(page.path)) routes.push(page);
   }
-  // Country detail pages under Global Websites
+  // Country detail pages under Global Websites — 301 to /healthcare-market-research (excluded)
   for (const slug of globalWebsiteCountrySlugs) {
-    routes.push({
-      path: `/global-websites/${slug}`,
-      priority: '0.6',
-      changefreq: 'monthly',
-    });
+    const path = `/global-websites/${slug}`;
+    if (!isSitemapRedirectSourcePath(path)) {
+      routes.push({
+        path,
+        priority: '0.6',
+        changefreq: 'monthly',
+      });
+    }
   }
   for (const slug of healthcareMarketResearchCountrySlugs) {
     routes.push({
@@ -835,7 +850,7 @@ const hreflangGroups = [
     fr: '/fr/healthcare-market-research',
     'x-default': '/healthcare-market-research',
   },
-  { en: '/contact', pt: '/pt/contact', de: '/de/contact', fr: '/fr/contacts', es: '/es/contact', ar: '/ar/contacts', 'zh-CN': '/zh/contact', ru: '/ru/contact', 'x-default': '/contact' },
+  { en: '/contact', pt: '/pt/contact', de: '/de/contact', fr: '/fr/contact', es: '/es/contact', ar: '/ar/contact', 'zh-CN': '/zh/contact', ru: '/ru/contact', 'x-default': '/contact' },
   { en: '/about', pt: '/pt/about', de: '/de/about', fr: '/fr/about', es: '/es/about', ar: '/ar/about', 'zh-CN': '/zh/about', ru: '/ru/about', 'x-default': '/about' },
   // Only list languages that actually have distinct localized URLs.
   // pt/ru/zh blog indexes render English content and canonicalise to /blog, so they

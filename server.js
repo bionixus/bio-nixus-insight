@@ -11,6 +11,7 @@ import { getCtrSeo, isCtrSeoPath } from './lib/ctr-seo-overrides.mjs';
 import { normalizeOgCardPath, renderOgCardSvg } from './lib/og-card-svg.mjs';
 import { buildLcpPreloadTag, getClientAssetHints } from './lib/ssr-client-asset-hints.mjs';
 import { resolveLegacyCountryIndustryMarketResearchRedirect } from './lib/country-industry-redirects.mjs';
+import { resolveGlobalWebsitesRedirect } from './lib/global-websites-redirects.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === 'production';
@@ -888,6 +889,7 @@ async function startServer() {
         'Content-Type': 'image/svg+xml; charset=utf-8',
         'Cache-Control': 'public, max-age=86400, s-maxage=31536000, immutable',
         'X-Content-Type-Options': 'nosniff',
+        'X-Robots-Tag': 'noindex, nofollow',
       })
       .send(svg);
   });
@@ -911,6 +913,12 @@ async function startServer() {
       const blogRedirectTarget = REDIRECTS[req.path] ?? REDIRECTS[decodedPath];
       if (blogRedirectTarget) {
         res.redirect(301, blogRedirectTarget);
+        return;
+      }
+
+      const globalWebsitesTarget = resolveGlobalWebsitesRedirect(req.path) ?? resolveGlobalWebsitesRedirect(decodedPath);
+      if (globalWebsitesTarget) {
+        res.redirect(301, globalWebsitesTarget);
         return;
       }
 

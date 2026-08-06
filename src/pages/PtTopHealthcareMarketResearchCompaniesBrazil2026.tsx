@@ -38,7 +38,7 @@ const firms: FirmProfile[] = [
       'Mapeamento de KOLs e pesquisas com profissionais de saúde por área terapêutica',
       'Segmentação SUS vs. plano privado e pesquisa de formulários',
       'FMCG, consumidor e saúde diversificados sob o mesmo teto',
-      'Rede em 17+ países, 48+ clientes globais, 15+ anos de experiência em pesquisa primária',
+      'Rede em 38 países, 48+ clientes globais, 15+ anos de experiência em pesquisa primária',
     ],
     overview: 'BioNixus é uma empresa global de pesquisa de mercado e insights, com sede nos EUA e escritórios no Reino Unido e no Oriente Médio. No Brasil, a BioNixus combina de forma única experiência em pesquisa farmacêutica e de saúde com capacidades mais amplas em FMCG e insights do consumidor — permitindo que clientes multinacionais contratam ambos os tipos de pesquisa por meio de um único parceiro global. A BioNixus oferece design de pesquisa com consciência da ANVISA, suporte a inteligência de submissões à CONITEC, identificação de KOLs, pesquisas de engajamento com profissionais de saúde e segmentação SUS/plano privado — tudo construído sobre padrões globais de pesquisa primária adaptados ao mercado brasileiro.',
   },

@@ -98,8 +98,6 @@ export const languagePaths: Record<Language, string> = {
 
 /** Canonical localized path for the dedicated Contact page (matches `localizedRouteGroups['/contact']`). */
 export function localizedContactPath(language: Language): string {
-  if (language === 'fr') return '/fr/contacts';
-  if (language === 'ar') return '/ar/contacts';
   const base = languagePaths[language] || '/';
   return base === '/' ? '/contact' : `${base}/contact`;
 }
@@ -125,10 +123,10 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
   '/contact': {
     en: '/contact',
     de: '/de/contact',
-    fr: '/fr/contacts',
+    fr: '/fr/contact',
     es: '/es/contact',
     zh: '/zh/contact',
-    ar: '/ar/contacts',
+    ar: '/ar/contact',
     pt: '/pt/contact',
     ru: '/ru/contact',
   },

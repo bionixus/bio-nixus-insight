@@ -87,7 +87,7 @@ const staticLinks = [
   { to: '/quantitative-healthcare-market-research', label: 'Quantitative Healthcare Market Research' },
   { to: '/bionixus-market-research-middle-east', label: 'Middle East Market Research' },
   { to: '/healthcare-market-research', label: 'Healthcare Research Hub' },
-  { to: '/global-websites', label: 'Global Websites' },
+  { to: '/healthcare-market-research', label: 'Healthcare Market Research' },
   { to: '/gcc-market-access-guide', label: 'GCC Market Access Guide' },
   { to: '/mena-pharma-market-data', label: 'MENA Pharma Market Data' },
   { to: '/blog', label: 'Blog' },
@@ -107,13 +107,13 @@ const staticLinks = [
 ];
 
 const globalWebsitesCountryLinks = [
-  { to: '/global-websites/saudi-arabia', label: 'Saudi Arabia — pharma market entry blueprint' },
-  { to: '/global-websites/united-arab-emirates', label: 'UAE — pharmaceutical go-to-market blueprint' },
-  { to: '/global-websites/united-states', label: 'United States — pharmaceutical market entry' },
-  { to: '/global-websites/united-kingdom', label: 'United Kingdom — pharmaceutical market entry' },
-  { to: '/global-websites/germany', label: 'Germany — pharmaceutical market entry' },
-  { to: '/global-websites/france', label: 'France — pharmaceutical market entry' },
-  { to: '/global-websites/egypt', label: 'Egypt — pharmaceutical market entry' },
+  { to: '/healthcare-market-research/saudi-arabia', label: 'Saudi Arabia — pharma market entry blueprint' },
+  { to: '/healthcare-market-research/uae', label: 'UAE — pharmaceutical go-to-market blueprint' },
+  { to: '/healthcare-market-research/united-states', label: 'United States — pharmaceutical market entry' },
+  { to: '/healthcare-market-research/uk', label: 'United Kingdom — pharmaceutical market entry' },
+  { to: '/healthcare-market-research/germany', label: 'Germany — pharmaceutical market entry' },
+  { to: '/healthcare-market-research/france', label: 'France — pharmaceutical market entry' },
+  { to: '/healthcare-market-research/egypt', label: 'Egypt — pharmaceutical market entry' },
 ];
 
 const geoListicleLinks = [
@@ -292,7 +292,8 @@ function pathToLabel(path: string) {
 function categorizePath(path: string) {
   if (path.startsWith('/blog/')) return 'Blog Insights';
   if (path.startsWith('/case-studies/')) return 'Case Studies';
-  if (path.startsWith('/global-websites/')) return 'Global Websites';
+  if (path.startsWith('/healthcare-market-research/')) return 'Healthcare Market Research';
+  if (path.startsWith('/global-websites/')) return 'Healthcare Market Research';
   if (path.startsWith('/healthcare-market-research/')) return 'Healthcare Country Pages';
   if (path.startsWith('/pharmaceutical-companies-')) return 'Pharmaceutical Company Guides';
   if (path.startsWith('/insights/top-') && path.includes('-market-research-companies-')) {

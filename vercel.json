@@ -3,7 +3,7 @@
   "outputDirectory": "dist/client",
   "functions": {
     "api/indexnow-key.ts": {
-      "includeFiles": "{dist/**,seo-noise-query.mjs,lib/og-card-svg.mjs,lib/ssr-client-asset-hints.mjs,lib/country-industry-redirects.mjs,lib/ctr-seo-overrides.mjs}"
+      "includeFiles": "{dist/**,seo-noise-query.mjs,lib/og-card-svg.mjs,lib/ssr-client-asset-hints.mjs,lib/country-industry-redirects.mjs,lib/global-websites-redirects.mjs,lib/ctr-seo-overrides.mjs}"
     }
   },
   "headers": [
@@ -65,6 +65,68 @@
     }
   ],
   "redirects": [
+    {
+      "source": "/global-websites",
+      "destination": "/healthcare-market-research",
+      "statusCode": 301
+    },
+    {
+      "source": "/global-websites/united-arab-emirates",
+      "destination": "/healthcare-market-research/uae",
+      "statusCode": 301
+    },
+    {
+      "source": "/global-websites/united-kingdom",
+      "destination": "/healthcare-market-research/uk",
+      "statusCode": 301
+    },
+    {
+      "source": "/global-websites/:slug",
+      "destination": "/healthcare-market-research/:slug",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path((?!api/).*)",
+      "has": [{ "type": "query", "key": "__ssr" }],
+      "destination": "/:path",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path((?!api/).*)",
+      "has": [{ "type": "query", "key": "trk" }],
+      "destination": "/:path",
+      "statusCode": 301
+    },
+    {
+      "source": "/market-research/healthcare",
+      "destination": "/healthcare-market-research",
+      "statusCode": 301
+    },
+    {
+      "source": "/market-research/biotech",
+      "destination": "/healthcare-market-research",
+      "statusCode": 301
+    },
+    {
+      "source": "/market-research/medtech",
+      "destination": "/healthcare-market-research",
+      "statusCode": 301
+    },
+    {
+      "source": "/market-research/consumer-health",
+      "destination": "/healthcare-market-research",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/contacts",
+      "destination": "/fr/contact",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/contacts",
+      "destination": "/ar/contact",
+      "statusCode": 301
+    },
     {
       "source": "/market-reports/adstiladrin- bladder-cancer-2026",
       "destination": "/market-reports/adstiladrin-bladder-cancer-2026",

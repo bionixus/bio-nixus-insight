@@ -31,6 +31,7 @@ export const MARKET_STANDALONE_HEALTH_REPORT: Record<string, string> = {
   australia: '/australia-healthcare-market-report',
   singapore: '/singapore-healthcare-market-report',
   canada: '/canada-healthcare-market-report',
+  sweden: '/sweden-healthcare-market-report',
 };
 
 type TherapyKey =

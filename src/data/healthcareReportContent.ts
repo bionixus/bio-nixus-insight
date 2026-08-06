@@ -286,6 +286,18 @@ export const MARKET_CONTENT: Record<string, MarketContent> = {
     marketContext:
       'UK pharmaceutical market at GBP 21 billion in 2026 underpins NHS aspirations toward genomic medicine leadership—100,000 Genomes Project sequelae, newborn genomes programme, and AI diagnostics partnerships at NHS Genomics Medicine Service position UK as leading precision oncology clinical trial ecosystem globally alongside top US academic centres.',
   },
+  sweden: {
+    name: 'Sweden',
+    slug: 'sweden',
+    region: 'Europe',
+    regulatoryBody: 'Läkemedelsverket / TLV / NT-rådet',
+    regulatoryOverview:
+      'Sweden combines EMA (or national Läkemedelsverket) marketing authorisation with a dual access pathway: TLV evaluates ambulatory medicines for inclusion in the national benefit scheme (förmånssystemet) using health-economic cost-effectiveness analysis, while high-cost specialised hospital therapies are guided by NT-rådet (New Therapies Council) recommendations that shape regional introduction. Unlike Germany\'s free-pricing-then-AMNOG sequence, Swedish commercial uptake depends on TLV listing decisions and regional budget adoption across 21 self-governing regions.',
+    payerLandscape:
+      'Tax-funded regional budgets dominate hospital and specialist care. TLV decisions determine outpatient reimbursement and patient co-payment rules. Regions retain material discretion on hospital formulary timing, managed introduction programmes, and specialty drug budgets—so national recommendation is necessary but not always sufficient for rapid uptake.',
+    marketContext:
+      'Sweden\'s ~SEK 650–700 billion healthcare system and ~SEK 55–62 billion pharmaceutical market combine Nordic evidence standards with concentrated university-hospital demand. Strong biosimilar culture, GLP-1 budget scrutiny, and advanced therapy capability at Karolinska and peer centres make Sweden a reference market for Nordic sequencing and a frequent EU5+Nordics launch companion.',
+  },
   germany: {
     name: 'Germany',
     slug: 'germany',

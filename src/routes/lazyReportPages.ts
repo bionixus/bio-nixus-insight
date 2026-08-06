@@ -29,6 +29,8 @@ export { default as ItalyHealthcareMarketReport } from '@/pages/ItalyHealthcareM
 export { default as ItalyMedicalDevicesMarketReport } from '@/pages/ItalyMedicalDevicesMarketReport';
 export { default as SpainHealthcareMarketReport } from '@/pages/SpainHealthcareMarketReport';
 export { default as SpainMedicalDevicesMarketReport } from '@/pages/SpainMedicalDevicesMarketReport';
+export { default as SwedenHealthcareMarketReport } from '@/pages/SwedenHealthcareMarketReport';
+export { default as UaeInfluenzaVaccineReport } from '@/pages/UaeInfluenzaVaccineReport';
 export { default as UsaHealthcareMarketReport } from '@/pages/UsaHealthcareMarketReport';
 export { default as UsaMedicalDevicesMarketReport } from '@/pages/UsaMedicalDevicesMarketReport';
 export { default as BrazilHealthcareMarketReport } from '@/pages/BrazilHealthcareMarketReport';

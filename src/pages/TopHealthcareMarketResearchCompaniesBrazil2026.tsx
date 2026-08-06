@@ -38,7 +38,7 @@ const firms: FirmProfile[] = [
       'KOL mapping and HCP surveys across therapy areas',
       'SUS vs private payer segmentation and formulary research',
       'Diversified FMCG, consumer, and healthcare under one roof',
-      '17+ country network, 48+ global clients, 15+ years primary research experience',
+      '38-country network, 48+ global clients, 15+ years primary research experience',
     ],
     overview: 'BioNixus is a global market research and insights firm headquartered in the USA with offices in the UK and the Middle East. In Brazil, BioNixus uniquely combines pharmaceutical and healthcare research expertise with broader FMCG and consumer insights capabilities — enabling multinational clients to commission both types of research through a single global partner. BioNixus brings ANVISA-aware research design, CONITEC submission support intelligence, KOL identification, HCP engagement surveys, and SUS/private payer segmentation — all built on global primary research standards adapted to the Brazilian market.',
   },

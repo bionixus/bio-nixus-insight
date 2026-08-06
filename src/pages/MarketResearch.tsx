@@ -496,14 +496,17 @@ export default function MarketResearch() {
                 <div className="bx-cover-grid">
                   {slugs.map((industrySlug) => {
                     const industry = MATRIX_INDUSTRIES[industrySlug];
+                    const hubPath = industry.isHealthcareAdjacent
+                      ? '/healthcare-market-research'
+                      : `/market-research/${industrySlug}`;
                     return (
                       <article key={industrySlug} className="bx-cover-card">
                         <h3>
-                          <Link to={`/market-research/${industrySlug}`}>{industry.displayName}</Link>
+                          <Link to={hubPath}>{industry.displayName}</Link>
                         </h3>
                         <p className="bx-cover-knows">{industry.knowsAbout.slice(0, 3).join(' · ')}</p>
                         <div className="bx-chips">
-                          <Link to={`/market-research/${industrySlug}`} className="bx-chip">
+                          <Link to={hubPath} className="bx-chip">
                             Global hub
                           </Link>
                           <Link to="/market-research-by-industry" className="bx-chip">

@@ -5,6 +5,7 @@ import { BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH, BLOG_LEGACY_FULL_PATH_REDIRECTS 
 import { normalizeOgCardPath, renderOgCardSvg } from '../lib/og-card-svg.mjs';
 import { buildLcpPreloadTag, getClientAssetHints } from '../lib/ssr-client-asset-hints.mjs';
 import { resolveLegacyCountryIndustryMarketResearchRedirect } from '../lib/country-industry-redirects.mjs';
+import { resolveGlobalWebsitesRedirect } from '../lib/global-websites-redirects.mjs';
 import { getCtrSeo, isCtrSeoPath } from '../lib/ctr-seo-overrides.mjs';
 
 /** Single source of truth for legacy redirects — also consumed by server.js. */
@@ -699,9 +700,30 @@ async function handleSsrRequest(
     : '';
   const fallbackUrl = req.url || '/';
 
+  /** Merge rewrite path with passthrough public query (trk/utm). Skip Vercel SSR internals. */
+  const buildPublicPathAndQuery = (pathWithOptionalQuery: string): string => {
+    const pathOnly = (pathWithOptionalQuery.split('?')[0] || '/').split('#')[0];
+    const params = new URLSearchParams(
+      pathWithOptionalQuery.includes('?')
+        ? pathWithOptionalQuery.slice(pathWithOptionalQuery.indexOf('?') + 1).split('#')[0]
+        : '',
+    );
+    const q = req.query ?? {};
+    for (const [key, raw] of Object.entries(q)) {
+      const lower = key.toLowerCase();
+      // `__ssr` + `url` are Vercel rewrite internals — never treat as public query.
+      if (lower === 'url' || lower === '__ssr') continue;
+      const val = Array.isArray(raw) ? raw[0] : raw;
+      if (typeof val === 'string') params.set(key, val);
+    }
+    const qs = params.toString();
+    return qs ? `${pathOnly}?${qs}` : pathOnly;
+  };
+
   let url: string;
   if (normalizedRewrittenPath) {
-    const cr = canonicalRedirectTarget(normalizedRewrittenPath.split('#')[0]);
+    const publicPath = buildPublicPathAndQuery(normalizedRewrittenPath.split('#')[0]);
+    const cr = canonicalRedirectTarget(publicPath);
     if (cr.changed) {
       res.setHeader('Cache-Control', 'public, max-age=3600');
       res.redirect(301, cr.full);
@@ -726,6 +748,14 @@ async function handleSsrRequest(
   if (redirectTarget) {
     res.setHeader('Cache-Control', 'public, max-age=3600');
     res.redirect(301, redirectTarget);
+    return;
+  }
+
+  const globalWebsitesTarget =
+    resolveGlobalWebsitesRedirect(pathname) ?? resolveGlobalWebsitesRedirect(decodedPathname);
+  if (globalWebsitesTarget) {
+    res.setHeader('Cache-Control', 'public, max-age=3600');
+    res.redirect(301, globalWebsitesTarget);
     return;
   }
 

@@ -76,11 +76,14 @@ import ClinicalDiagnosticsProposalRequest from '@/pages/ClinicalDiagnosticsPropo
 import PatientSupportProgramResearchGcc from '@/pages/PatientSupportProgramResearchGcc';
 import BudgetImpactModelSaudiArabia from '@/pages/BudgetImpactModelSaudiArabia';
 import SpanishMarketAccess from '@/pages/SpanishMarketAccess';
+import MarketAccess from '@/pages/MarketAccess';
 import GermanSuccessInStartups from '@/pages/GermanSuccessInStartups';
 import ArabicBlogAlsawdyh from '@/pages/ArabicBlogAlsawdyh';
 import PharmaciesSaudiArabiaMarketing from '@/pages/PharmaciesSaudiArabiaMarketing';
-import GlobalWebsites from '@/pages/GlobalWebsites';
-import GlobalWebsiteCountry from '@/pages/GlobalWebsiteCountry';
+import {
+  GlobalWebsitesCountryRedirect,
+  GlobalWebsitesRedirect,
+} from '@/components/seo/GlobalWebsitesRedirect';
 import PremiumHomePreview from '@/pages/PremiumHomePreview';
 import ConfPortfolio from '@/pages/ConfPortfolio';
 import MarketResearchUae from '@/pages/MarketResearchUae';
@@ -157,6 +160,8 @@ import {
   ItalyMedicalDevicesMarketReport,
   SpainHealthcareMarketReport,
   SpainMedicalDevicesMarketReport,
+  SwedenHealthcareMarketReport,
+  UaeInfluenzaVaccineReport,
   UsaHealthcareMarketReport,
   UsaMedicalDevicesMarketReport,
   BrazilHealthcareMarketReport,
@@ -457,8 +462,8 @@ export const routes: RouteObject[] = [
     path: '/quantitative-healthcare-market-research',
     element: <QuantitativeHealthcareMarketResearchGuide />,
   },
-  { path: '/global-websites', element: <GlobalWebsites /> },
-  { path: '/global-websites/:countrySlug', element: <GlobalWebsiteCountry /> },
+  { path: '/global-websites', element: <GlobalWebsitesRedirect /> },
+  { path: '/global-websites/:countrySlug', element: <GlobalWebsitesCountryRedirect /> },
   { path: '/new-home', element: <PremiumHomePreview /> },
   { path: '/premium-home-preview', element: <PremiumHomePreview /> },
   { path: '/strategic-portfolio', element: <ConfPortfolio /> },
@@ -556,6 +561,8 @@ export const routes: RouteObject[] = [
   { path: '/italy-healthcare-market-report', element: suspensePage(<ItalyHealthcareMarketReport />) },
   { path: '/italy-medical-devices-market-report', element: suspensePage(<ItalyMedicalDevicesMarketReport />) },
   { path: '/spain-healthcare-market-report', element: suspensePage(<SpainHealthcareMarketReport />) },
+  { path: '/sweden-healthcare-market-report', element: suspensePage(<SwedenHealthcareMarketReport />) },
+  { path: '/uae-influenza-vaccine-report', element: suspensePage(<UaeInfluenzaVaccineReport />) },
   { path: '/spain-medical-devices-market-report', element: suspensePage(<SpainMedicalDevicesMarketReport />) },
   { path: '/usa-healthcare-market-report', element: suspensePage(<UsaHealthcareMarketReport />) },
   { path: '/usa-medical-devices-market-report', element: suspensePage(<UsaMedicalDevicesMarketReport />) },
@@ -596,6 +603,7 @@ export const routes: RouteObject[] = [
   { path: '/zh/blog', element: <Blog /> },
   { path: '/zh/blog/:slug', element: suspensePage(<BlogPost />) },
   { path: '/es/market-access', element: <SpanishMarketAccess /> },
+  { path: '/market-access', element: <MarketAccess /> },
   { path: '/de/success-in-startups', element: <GermanSuccessInStartups /> },
   { path: '/ar/arabic-blog-alsawdyh', element: <ArabicBlogAlsawdyh /> },
   { path: '/ar/blog', element: <Blog /> },
@@ -613,9 +621,9 @@ export const routes: RouteObject[] = [
   { path: '/terms', element: suspensePage(<Terms />) },
   { path: '/contact', element: <Contact /> },
   { path: '/de/contact', element: <Contact /> },
-  { path: '/fr/contacts', element: <Contact /> },
+  { path: '/fr/contacts', element: <Navigate to="/fr/contact" replace /> },
   { path: '/fr/contact', element: <Contact /> },
-  { path: '/ar/contacts', element: <Contact /> },
+  { path: '/ar/contacts', element: <Navigate to="/ar/contact" replace /> },
   { path: '/es/contact', element: <Contact /> },
   { path: '/zh/contact', element: <Contact /> },
   { path: '/ar/contact', element: <Contact /> },
