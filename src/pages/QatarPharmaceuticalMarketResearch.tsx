@@ -117,6 +117,11 @@ const faqItems = [
     answer:
       'Qatar\'s National Health Strategy 2023–2030 prioritises precision medicine, digital health, and local biomanufacturing under the Ministry of Public Health — shaping Hamad Medical Corporation formulary priorities and Sidra Medicine specialist referral pathways. Pharmaceutical teams must align evidence to NHS 2030 therapeutic focus areas (oncology, diabetes, rare disease) and MoPH registration timelines. BioNixus maps NHS 2030 policy signals to physician adoption research, HMC committee evidence requirements, and private-sector uptake across Doha and regional hospitals.',
   },
+  {
+    question: 'What is Sidra Medicine\'s role in Qatar pharmaceutical adoption research?',
+    answer:
+      'Sidra Medicine is Qatar\'s specialist women\'s and children\'s hospital and a major academic referral centre for rare disease, genetics, and paediatric oncology. Formulary and protocol decisions at Sidra influence national paediatric and maternal-fetal prescribing patterns beyond Doha. BioNixus recruits Sidra specialists and maps referral pathways from primary HMC facilities to Sidra for specialty therapies requiring coordinated evidence.',
+  },
 ];
 
 const geoPoints = [

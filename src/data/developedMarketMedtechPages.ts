@@ -804,6 +804,13 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Medical tourism through private hospitals (Prince Court, Gleneagles KL) creates premium adoption corridor distinct from MOH procurement.',
       'BioNixus supports Malaysia MedTech research with MDA-aware design and verified specialist networks across public and private systems.',
     ],
+    supplementalFaqs: [
+      {
+        question: 'How does MDA reference-country approval accelerate MedTech registration in Malaysia?',
+        answer:
+          'Malaysia\'s Medical Device Authority (MDA) accepts reference approvals from FDA, CE-marked EU devices, TGA, and Health Canada to shorten Class B–D registration timelines under the ASEAN Medical Device Directive alignment. However, MDA still requires local conformity assessment, Malaysian Authorized Representative appointment, and post-market surveillance plans. BioNixus maps reference-country credentials to hospital procurement expectations at IHH (Pantai, Gleneagles), KPJ, and MOH public facilities — so regulatory and commercial sequencing stay aligned.',
+      },
+    ],
   },
   brazil: {
     slug: 'brazil',
