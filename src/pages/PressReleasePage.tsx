@@ -255,7 +255,7 @@ export default function PressReleasePage() {
           </Link>
         </div>
 
-        <CTASection />
+        <CTASection variant="service" />
       </main>
       <Footer />
     </div>

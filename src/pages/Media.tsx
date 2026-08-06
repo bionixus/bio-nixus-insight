@@ -166,7 +166,7 @@ export default function Media() {
           </ul>
         </section>
 
-        <CTASection />
+        <CTASection variant="service" />
       </main>
       <Footer />
     </div>
