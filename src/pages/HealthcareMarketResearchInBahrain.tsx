@@ -58,6 +58,16 @@ const faqItems = [
     answer:
       "King Hamad University Hospital (KHUH) is a major private academic hospital affiliated with the Royal College of Surgeons in Ireland (RCSI) Bahrain campus. Its academic mission and internationally trained specialist base make KHUH physicians disproportionately influential in guideline development and formulary decisions, making it a priority node in any Bahrain KOL mapping exercise.",
   },
+  {
+    question: 'How does Bahrain\'s Sehati national health insurance programme affect pharmaceutical access?',
+    answer:
+      'Bahrain\'s Sehati programme is expanding mandatory health insurance coverage beyond government-funded care, creating new formulary and prior-authorisation pathways for branded specialty medicines. Private insurers and employer-sponsored plans increasingly mirror NHRA HTA expectations when setting medical policy. BioNixus designs payer and physician research that segments government hospital, Sehati-insured, and out-of-pocket channels rather than treating Bahrain as a single reimbursement environment.',
+  },
+  {
+    question: 'What is the NHRA biosimilar interchangeability pathway in Bahrain?',
+    answer:
+      'Bahrain\'s NHRA was the first GCC regulator to publish formal biosimilar interchangeability guidance, allowing pharmacy-level substitution for approved biosimilars in selected categories. This creates distinct research needs around pharmacist confidence, physician switching intent, and tender pricing versus originator biologics. BioNixus tracks NHRA biosimilar approvals and maps substitution acceptance across Salmaniya Medical Complex and private hospital formularies.',
+  },
 ];
 
 const jsonLd = [

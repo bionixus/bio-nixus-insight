@@ -175,7 +175,7 @@ const GccMarketAccessGuide = () => {
             description: 'Complete guide to pharmaceutical drug registration, pricing, and reimbursement across the 6 GCC countries: Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman.',
             url: citationUrl,
             datePublished: '2026-01-15',
-            dateModified: '2026-06-16',
+            dateModified: '2026-08-06',
             author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
             publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
           })}
@@ -656,6 +656,14 @@ const GccMarketAccessGuide = () => {
                 {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
+                },
+                {
+                  q: 'How does SFDA Establishment Evaluation System (EES) affect GCC market access?',
+                  a: 'Saudi Arabia\'s SFDA Establishment Evaluation System (EES) scores pharmaceutical manufacturers on quality systems, pharmacovigilance, and supply reliability — influencing NUPCO tender eligibility and hospital procurement preference. Foreign companies must demonstrate EES compliance through their local scientific office before high-volume government contracts. BioNixus tracks EES scoring criteria and maps them to launch sequencing alongside SFDA registration and pricing milestones.',
+                },
+                {
+                  q: 'Which GCC country has the most advanced biosimilar regulatory pathway?',
+                  a: 'Bahrain\'s NHRA was the first GCC regulator to publish a formal biosimilar interchangeability pathway, followed by Saudi SFDA and UAE MOHAP guidance. Biosimilar substitution rules differ by country — some permit pharmacy-level switching while others require physician initiation. BioNixus designs payer and pharmacist research to test substitution acceptance and formulary committee evidence expectations per GCC market.',
                 },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">

@@ -47,6 +47,14 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
     question: 'How does BioNixus serve pharmaceutical companies with China and MENA strategy?',
     answer: 'BioNixus supports pharmaceutical and medical device companies with China-to-MENA or MENA-to-China comparative intelligence. For companies operating in China\'s complex VBP and NRDL environment, the GCC presents an alternative growth market with premium pricing, fewer price controls, and rapidly expanding healthcare investment. BioNixus provides SFDA (Saudi Arabia), MOHAP (UAE), and GCC-wide regulatory pathway intelligence; NUPCO tender and hospital formulary data; physician panel surveys; and comparative China vs. GCC market intelligence to inform global portfolio and market prioritization decisions.',
   },
+  {
+    question: 'What is the NHSA NRDL annual negotiation cycle and how should pharma teams prepare?',
+    answer: 'NHSA updates the National Reimbursement Drug List annually through direct price negotiations with manufacturers — typically achieving 50–70%+ reductions from list price for innovative medicines. Products not included in the NRDL cycle face near-exclusive out-of-pocket or charitable-access channels in public hospitals. BioNixus tracks NRDL inclusion outcomes, provincial PRLS adoption lag, and physician prescribing shifts post-negotiation — giving commercial and access teams China-specific evidence before each NHSA cycle rather than extrapolating from global launch analogues.',
+  },
+  {
+    question: 'How do Tier 3A hospital formulary committees affect innovative drug adoption in China?',
+    answer: 'Approximately 3,000 Tier 3 Grade A (三甲) hospitals in China drive innovator adoption, clinical trial activity, and NRDL negotiation leverage. Each hospital maintains its own pharmacotherapy committee that reviews evidence beyond national NRDL listing — including local budget impact, department workflow, and VBP-excluded premium positioning. BioNixus maps Tier 3A committee evidence requirements and KOL influence networks for therapy-specific launch sequencing.',
+  },
 ], 'china');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/china-healthcare-market-report');
@@ -62,7 +70,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-08-06',
     mainEntityOfPage: 'https://www.bionixus.com/china-healthcare-market-report',
   },
   {

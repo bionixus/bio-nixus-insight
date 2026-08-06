@@ -39,6 +39,8 @@ export type DevelopedMarketMedtechCountry = {
   regulatoryParagraphs: string[];
   marketParagraphs: string[];
   executivePoints: Array<{ title: string; body: string }>;
+  /** Optional country-specific FAQs appended after the shared MedTech FAQ set. */
+  supplementalFaqs?: Array<{ question: string; answer: string }>;
 };
 
 const SHARED_DELIVERABLES = [
@@ -184,7 +186,7 @@ function buildExpandedContent(country: DevelopedMarketMedtechCountry): ServiceLa
       evidence: `BioNixus primary research across ${country.label} device categories consistently shows procurement committee objections and workflow friction explain adoption gaps that prescriber surveys alone miss.`,
       next: `Define your target segment, account type, and commercial decision; BioNixus delivers a written feasibility and methodology proposal within one week.`,
     },
-    faqs: buildFaqs(country),
+    faqs: [...buildFaqs(country), ...(country.supplementalFaqs ?? [])],
   };
 }
 
@@ -479,6 +481,13 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'VBP reforms reshaped commodity segment economics; innovator manufacturers focus on Tier 3 centres, private hospitals, and direct-to-patient channels where permitted. Robotic surgery and advanced imaging remain high-growth premium segments.',
       'BioNixus supports China market intelligence with NMPA/VBP-aware research design and verified hospital stakeholder access at major referral centres.',
     ],
+    supplementalFaqs: [
+      {
+        question: 'How does NMPA Unique Device Identification (UDI) affect MedTech market research in China?',
+        answer:
+          'NMPA\'s national UDI system requires Class II and III devices to carry standardised identifiers traceable through production, distribution, and hospital use — tightening recall management and procurement audit trails. Hospital biomedical engineering teams increasingly reference UDI data in tender scoring and maintenance contract renewals. BioNixus maps how UDI compliance, local agent registration, and provincial tender calendars interact so manufacturers do not treat NMPA clearance as the only adoption gate.',
+      },
+    ],
   },
   singapore: {
     slug: 'singapore',
@@ -511,6 +520,13 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Access Consortium membership enables efficient multi-market launch with Australia, Canada, and UK. EDB actively recruits medtech manufacturers to regional headquarters.',
       'BioNixus supports Singapore and ASEAN expansion research with HSA-aware design and verified KOL access at NCCS, NUH, and major private centres.',
     ],
+    supplementalFaqs: [
+      {
+        question: 'How does ACE SDL and MAF subsidy research shape Singapore MedTech adoption?',
+        answer:
+          'Agency for Care Effectiveness (ACE) evaluates high-cost devices and diagnostics for MOH Standard Drug List (SDL) subsidy and Medication Assistance Fund (MAF) support — separate from HSA registration. Public cluster committees (SingHealth, NHG, NUHS) reference ACE reports when prioritising capital equipment and implant budgets. BioNixus pairs HSA pathway intelligence with ACE-aware clinician and biomedical engineering research so launch teams understand subsidy eligibility, patient co-pay, and private-hospital premium uptake in parallel.',
+      },
+    ],
   },
   italy: {
     slug: 'italy',
@@ -542,6 +558,13 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Italy\'s EUR 12–14 billion devices market operates within EUR 175–190 billion health expenditure. Aging population and orthopaedic demand drive implant volumes; robotic surgery adoption concentrates at IRCCS and large regional hospitals.',
       'Regional variation in PTR adoption creates multi-speed market — national syndicated data obscures Lombardy versus Calabria dynamics that determine realistic launch sequencing.',
       'BioNixus Italy programmes deliver EU MDR-aware research with regional segmentation and verified KOL access.',
+    ],
+    supplementalFaqs: [
+      {
+        question: 'How do regional PTR formularies affect MedTech listing in Italy?',
+        answer:
+          'Italy\'s twenty-one regions implement Piano Terapeutico Regionale (PTR) at different speeds — Lombardy and Emilia-Romagna often adopt high-cost devices before southern regions. EU MDR certification and national SSN listing do not guarantee regional PTR inclusion or Consip tender awards. BioNixus maps regional PTR committee evidence requirements, IRCCS versus community hospital procurement rhythms, and Consip capital-equipment calendars so device launches sequence by realistic regional uptake rather than national averages.',
+      },
     ],
   },
   spain: {
@@ -671,6 +694,13 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Health NZ consolidation creates national procurement scale — research must map new committee structures versus legacy DHB behaviour.',
       'BioNixus supports New Zealand MedTech research with Medsafe context and Australia comparative modules.',
     ],
+    supplementalFaqs: [
+      {
+        question: 'How does PHARMAC device listing differ from Medsafe WAND registration in New Zealand?',
+        answer:
+          'Medsafe WAND registration establishes device safety notification, but PHARMAC and Health NZ procurement govern whether hospitals fund implants, capital equipment, and high-cost diagnostics at scale. PHARMAC\'s nine-factor assessment and Named Patient Programme routes create parallel access paths for devices not on the Pharmaceutical Schedule. BioNixus designs NZ MedTech research that stress-tests hospital committee evidence against PHARMAC criteria and maps Te Whatu Ora regional procurement variation.',
+      },
+    ],
   },
   'south-korea': {
     slug: 'south-korea',
@@ -702,6 +732,13 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'South Korea\'s USD 10–12 billion devices market serves 51.7 million population with world-leading hospital bed density and fast MFDS/NHIS access pathways for innovative technologies.',
       'K-beauty adjacent aesthetic device market and dental implant segments add distinct research needs beyond hospital capital equipment.',
       'BioNixus supports Korea MedTech research with MFDS/NHIS context and verified Big 5 hospital network access.',
+    ],
+    supplementalFaqs: [
+      {
+        question: 'How does HIRA economic evaluation shape South Korea MedTech reimbursement?',
+        answer:
+          'After MFDS approval, NHIS listing and HIRA (Health Insurance Review and Assessment Service) pharmacoeconomic review determine whether devices receive positive reimbursement and at what co-pay level. HIRA frequently requests budget-impact models and risk-sharing agreements for high-cost implants and capital equipment. BioNixus pairs Big 5 hospital formulary research with HIRA evidence expectations so manufacturers understand clinical champion support and economic dossier requirements before NHIS submission.',
+      },
     ],
   },
   poland: {
@@ -766,6 +803,13 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Malaysia\'s MYR 8–10 billion medtech market serves 34 million population with dual public-private healthcare pathways and ASEAN distribution hub ambitions.',
       'Medical tourism through private hospitals (Prince Court, Gleneagles KL) creates premium adoption corridor distinct from MOH procurement.',
       'BioNixus supports Malaysia MedTech research with MDA-aware design and verified specialist networks across public and private systems.',
+    ],
+    supplementalFaqs: [
+      {
+        question: 'How does MDA reference-country approval accelerate MedTech registration in Malaysia?',
+        answer:
+          'Malaysia\'s Medical Device Authority (MDA) accepts reference approvals from FDA, CE-marked EU devices, TGA, and Health Canada to shorten Class B–D registration timelines under the ASEAN Medical Device Directive alignment. However, MDA still requires local conformity assessment, Malaysian Authorized Representative appointment, and post-market surveillance plans. BioNixus maps reference-country credentials to hospital procurement expectations at IHH (Pantai, Gleneagles), KPJ, and MOH public facilities — so regulatory and commercial sequencing stay aligned.',
+      },
     ],
   },
   brazil: {
