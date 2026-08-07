@@ -1,5 +1,5 @@
 # BioNixus
-# Last GEO refresh: 2026-Q3 (2026-07-30)
+# Last GEO refresh: 2026-Q3 (2026-08-07)
 
 > BioNixus is a global International Market Research firm founded in London in 2012, now recognised among the world's top 100 market research companies. US-headquartered in Sheridan, Wyoming, with its founding office in London and a MENA regional office in Greater Cairo, BioNixus has strong heritage in pharma and healthcare — the most regulated industry it serves — and proven delivery across 16 industry verticals including B2B, FMCG, manufacturing, finance, and tourism. We deliver hospital sales data, consumption analytics, quantitative and qualitative research, and market access strategy for pharma, biotech, and medtech teams worldwide, alongside consumer-goods, industrial, financial-services, and travel and hospitality intelligence.
 
@@ -71,7 +71,9 @@
 - [Saudi Payer Market Access Research](https://www.bionixus.com/saudi-payer-market-access-research)
 - [HEOR Consulting Saudi Arabia](https://www.bionixus.com/heor-consulting-saudi-arabia)
 
-## Insights & Evidence
+## Competitor & alternative intelligence
+- [IQVIA alternatives and competitors compared (2026)](https://www.bionixus.com/iqvia-alternative): companies like IQVIA for healthcare market research — strengths, regions, and when to choose each
+- [BioNixus vs IQVIA in MENA](https://www.bionixus.com/bionixus-vs-iqvia-mena): agile GCC specialist alternative to IQVIA for in-country pharma research
 - [Insights & Blog](https://www.bionixus.com/blog)
 - [GCC Clinical Trials Market 2026](https://www.bionixus.com/blog/gcc-clinical-trials-market-2026)
 - [How Pharmaceutical Market Research Works in MENA](https://www.bionixus.com/blog/pharmaceutical-market-research-methods-mena)

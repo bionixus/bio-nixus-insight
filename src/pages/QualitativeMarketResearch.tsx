@@ -1,173 +1,66 @@
-import { Link } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { SEOHead } from '@/components/seo/SEOHead';
-import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
-import { CTASection } from '@/components/shared/CTASection';
-import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
+import StrategicServicePage from '@/pages/templates/StrategicServicePage';
+import { getServiceLandingContent } from '@/data/serviceLandingContent';
 
-const qualFaq = [
-  {
-    question: 'When should pharmaceutical teams use qualitative research?',
-    answer:
-      'Use qualitative methods when you need to understand why decisions happen: physician rationale, payer objections, implementation barriers, and unmet stakeholder needs.',
-  },
-  {
-    question: 'How is qualitative different from quantitative research?',
-    answer:
-      'Quantitative methods measure scale and statistical confidence, while qualitative methods explain decision logic and context. Most strategic programs benefit from both.',
-  },
-];
-
-const jsonLd = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: 'Qualitative Market Research',
-    serviceType: 'Qualitative healthcare and pharmaceutical research',
-    provider: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
-    areaServed: ['MENA', 'United Kingdom', 'Europe'],
-  },
-  buildBreadcrumbSchema([
-    { name: 'Home', href: '/' },
-    { name: 'Qualitative Market Research', href: '/qualitative-market-research' },
-  ]),
-  buildFAQSchema(qualFaq),
-];
+const expandedContent = getServiceLandingContent('qualitative-market-research');
 
 export default function QualitativeMarketResearch() {
   return (
-    <div className="min-h-screen bg-background">
-      <SEOHead
-        title="Qualitative Market Research for Healthcare and Pharma | BioNixus"
-        description="Qualitative healthcare market research programs including IDIs, focus groups, ethnographic insight, and strategy-oriented synthesis for pharmaceutical."
-        canonical="/qualitative-market-research"
-        jsonLd={jsonLd}
-      />
-      <Navbar />
-      <main>
-        <BreadcrumbNav
-          items={[
-            { name: 'Home', href: '/' },
-            { name: 'Qualitative Market Research', href: '/qualitative-market-research' },
-          ]}
-        />
-
-        <section className="py-16 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-display font-semibold mb-4">
-              Qualitative Market Research for Pharmaceutical Strategy
-            </h1>
-            <p className="text-lg text-primary-foreground/90 leading-relaxed">
-              Qualitative research explains decision behavior. BioNixus helps teams understand the motivations, barriers,
-              and context that drive adoption outcomes across healthcare markets.
-            </p>
-          </div>
-        </section>
-
-        <section className="py-12">
-          <div className="container-wide max-w-5xl mx-auto space-y-5 text-muted-foreground leading-relaxed">
-            <h2 className="text-3xl font-display font-semibold text-foreground">Why qualitative methodology matters</h2>
-            <p>
-              In complex healthcare markets, strategic failure often comes from misunderstanding stakeholder logic rather
-              than lacking data volume. Qualitative methods uncover the reasons behind treatment decisions, evidence
-              skepticism, adoption hesitation, and implementation friction.
-            </p>
-            <p>
-              We use qualitative programs to identify what quantitative dashboards cannot explain on their own. This is
-              especially useful when teams need to clarify physician perception shifts, payer narrative gaps, or pathway
-              barriers before scaling investment.
-            </p>
-          </div>
-        </section>
-
-        <section className="py-12 bg-muted/20">
-          <div className="container-wide max-w-6xl mx-auto">
-            <h2 className="text-3xl font-display font-semibold text-foreground mb-6">Core qualitative methods</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-              <article className="rounded-xl border border-border bg-card p-5">
-                <h3 className="font-semibold text-foreground mb-2">In-depth interviews (IDIs)</h3>
-                <p className="text-sm text-muted-foreground">Detailed one-to-one conversations for high-context insight.</p>
-              </article>
-              <article className="rounded-xl border border-border bg-card p-5">
-                <h3 className="font-semibold text-foreground mb-2">Focus groups</h3>
-                <p className="text-sm text-muted-foreground">Group dynamics to test messaging and surface collective views.</p>
-              </article>
-              <article className="rounded-xl border border-border bg-card p-5">
-                <h3 className="font-semibold text-foreground mb-2">Ethnographic workflow insight</h3>
-                <p className="text-sm text-muted-foreground">Real-world context for pathway and implementation bottlenecks.</p>
-              </article>
-              <article className="rounded-xl border border-border bg-card p-5">
-                <h3 className="font-semibold text-foreground mb-2">Advisory and expert boards</h3>
-                <p className="text-sm text-muted-foreground">Structured expert feedback for strategic option testing.</p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-12">
-          <div className="container-wide max-w-5xl mx-auto space-y-5 text-muted-foreground leading-relaxed">
-            <h2 className="text-3xl font-display font-semibold text-foreground">Qualitative analysis frameworks we apply</h2>
-            <p>
-              We apply thematic coding, decision-journey analysis, and barrier/facilitator matrices to organize qualitative
-              data into strategic patterns. Outputs are designed for action: what to change, where to focus, and how to
-              sequence interventions.
-            </p>
-            <p>
-              Findings are translated into practical recommendations for commercial teams, medical strategy leaders, and
-              market-access stakeholders. This reduces the gap between insight and execution.
-            </p>
-          </div>
-        </section>
-
-        <section className="py-12 bg-muted/20">
-          <div className="container-wide max-w-5xl mx-auto space-y-5 text-muted-foreground leading-relaxed">
-            <h2 className="text-3xl font-display font-semibold text-foreground">Qualitative vs quantitative: when to use each</h2>
-            <p>
-              Use qualitative methods when you need to diagnose behavior and messaging fit. Use quantitative methods when
-              you need scale, segment sizing, and statistical confidence. High-stakes programs usually combine both.
-            </p>
-            <p>
-              If you need broader service orchestration, start with{' '}
-              <Link to="/market-research" className="text-primary underline">
-                market research services
-              </Link>{' '}
-              and then align qualitative workstreams with relevant quantitative modules.
-            </p>
-          </div>
-        </section>
-
-        <section className="py-12">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-3xl font-display font-semibold text-foreground mb-6">Related research capabilities</h2>
-            <div className="grid sm:grid-cols-2 gap-3 text-sm">
-              <Link to="/quantitative-healthcare-market-research" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline font-medium">Quantitative healthcare market research</Link>
-              <Link to="/market-research-healthcare" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline font-medium">Healthcare market research services</Link>
-              <Link to="/healthcare-fieldwork-middle-east" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline font-medium">Healthcare fieldwork in the Middle East</Link>
-              <Link to="/gcc-hcp-recruitment-market-research" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline font-medium">GCC HCP recruitment standards</Link>
-              <Link to="/real-world-evidence" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline font-medium">Real-world evidence programmes</Link>
-              <Link to="/methodology" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline font-medium">Our research methodology</Link>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-12">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-3xl font-display font-semibold text-foreground mb-6">Frequently asked questions</h2>
-            <div className="space-y-3">
-              {qualFaq.map((item) => (
-                <details key={item.question} className="rounded-xl border border-border bg-card p-4">
-                  <summary className="cursor-pointer font-semibold text-foreground">{item.question}</summary>
-                  <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{item.answer}</p>
-                </details>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <CTASection variant="service" />
-      </main>
-      <Footer />
-    </div>
+    <StrategicServicePage
+      title="Qualitative Market Research for Healthcare and Pharma | BioNixus"
+      description="Qualitative healthcare market research — IDIs, focus groups, payer interviews, and advisory boards for pharmaceutical launch, access, and medical strategy."
+      canonicalUrl="https://www.bionixus.com/qualitative-market-research"
+      breadcrumbLabel="Qualitative Market Research"
+      h1="Qualitative Market Research for Pharmaceutical Strategy"
+      serviceType="Qualitative healthcare and pharmaceutical research"
+      areaServed={['GCC', 'MENA', 'United Kingdom', 'Europe', 'United States']}
+      intro="Quantitative dashboards explain scale; qualitative research explains behaviour. BioNixus helps pharmaceutical, biotech, and medtech teams understand physician rationale, payer objections, patient-pathway friction, and message fit through bilingual Arabic–English depth interviews, advisory boards, and thematic synthesis scoped to one commercial, access, or medical decision."
+      links={[
+        { to: '/healthcare-market-research', label: 'Healthcare market research hub', primary: true },
+        { to: '/quantitative-healthcare-market-research', label: 'Quantitative healthcare research guide', primary: true },
+        { to: '/services/qualitative-research', label: 'Qualitative research services' },
+        { to: '/healthcare-fieldwork-middle-east', label: 'Healthcare fieldwork Middle East' },
+        { to: '/methodology', label: 'Our research methodology' },
+        { to: '/contact', label: 'Request qualitative research scope' },
+      ]}
+      bullets={[
+        'Physician, payer, patient, and caregiver modules with pre-specified thematic coding.',
+        'Bilingual Arabic–English moderation with medical terminology QA before field.',
+        'Advisory boards and focus groups with IFPMA-aligned honoraria disclosure.',
+        'Objection libraries and pathway maps mapped to 30/60/90 action owners.',
+      ]}
+      decisionPoints={[
+        {
+          title: 'Diagnose behaviour before you scale investment',
+          body: 'Launch and access teams need to know why physicians hesitate, how payers frame objections, and where journeys break — not only what percentage would prescribe in a forced-choice survey.',
+        },
+        {
+          title: 'Triangulate institutional and prescriber logic',
+          body: 'In GCC markets, NUPCO tenders, DHA and DOH formularies, and MOH listings often gate uptake before prescriber enthusiasm converts to volume. Qualitative modules must sample procurement-aware stakeholders alongside clinicians.',
+        },
+        {
+          title: 'Harmonize qual and quant in one evidence pack',
+          body: 'The strongest programs share coding frameworks and readout formats so affiliates receive integrated insight — not incompatible vendor silos that delay committee and launch decisions.',
+        },
+      ]}
+      metrics={[
+        {
+          label: 'Moderation',
+          value: 'Arabic + English',
+          detail: 'Native-language depth interviews with harmonized English synthesis for global portfolio teams.',
+        },
+        {
+          label: 'Quality governance',
+          value: 'Daily QC',
+          detail: 'Screener pass-through, exclusion logs, and thematic coding documented for audit-ready handover.',
+        },
+        {
+          label: 'Typical timeline',
+          value: '4–6 weeks',
+          detail: 'Specialist IDI programs from instrument finalisation to thematic synthesis across GCC markets.',
+        },
+      ]}
+      expandedContent={expandedContent}
+      mediaSlug="qualitative-market-research"
+    />
   );
 }
