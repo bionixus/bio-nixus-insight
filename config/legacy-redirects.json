@@ -92,5 +92,7 @@
   "/market-research/medtech": "/healthcare-market-research",
   "/market-research/consumer-health": "/healthcare-market-research",
   "/es/market-access": "/services/market-access",
-  "/es/quantitative-research": "/services/quantitative-research"
+  "/es/quantitative-research": "/services/quantitative-research",
+  "/iqvia-competitors": "/iqvia-alternative",
+  "/companies-like-iqvia": "/iqvia-alternative"
 }

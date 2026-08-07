@@ -3069,6 +3069,154 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
       },
     ],
   },
+
+  'qualitative-market-research': {
+    hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
+    regulatory: {
+      heading: 'Ethics, consent, and governance for qualitative healthcare research',
+      paragraphs: [
+        'Qualitative pharmaceutical research must satisfy the same ethics and data-protection standards as quantitative programs — with additional scrutiny on verbatim disclosure, recording consent, and therapeutic-area sensitivity. BioNixus documents informed-consent workflows specifying research purpose, commissioning organisation category, data storage location, and intended use before any depth interview, focus group, or advisory board begins.',
+        'In GCC markets, hospital ethics committees, MOH research permissions, and institutional review board (IRB) approvals can gate access to specialist cohorts when studies qualify as research under local definitions. Feasibility sprints map these gates before recruitment calendars lock so qualitative fieldwork does not stall mid-program.',
+        'Arabic–English bilingual moderation is standard for Middle East qualitative work. Medical terminology is reviewed with country-based clinical advisors before field so instruments preserve clinical nuance while global portfolio teams receive harmonized English synthesis packs.',
+        'KOL and advisory-board modules require IFPMA-aligned honoraria disclosure and conflict-of-interest documentation. BioNixus maintains audit-ready consent trails and exclusion logs suitable for medical affairs and compliance review — not slide-only summaries that fail diligence.',
+        'Recording, transcription, and verbatim handling follow sponsor data-retention policies with role-based access controls. Sensitive therapeutic areas (oncology, rare disease, mental health) receive additional screener safeguards and moderator briefing on trauma-informed interviewing where patient or caregiver modules are scoped.',
+      ],
+    },
+    marketContext: {
+      heading: 'Why pharmaceutical teams invest in qualitative research now',
+      paragraphs: [
+        'Quantitative dashboards explain scale; qualitative methods explain behaviour. In crowded therapy areas — GLP-1 obesity, immuno-oncology, biosimilars, rare disease — launch and access teams need to understand why physicians hesitate, how payers frame objections, and where patient journeys break before scaling investment.',
+        'GCC and MENA markets amplify qualitative value because institutional access (NUPCO tenders, DHA and DOH formularies, MOH Kuwait listings) often determines uptake before prescriber enthusiasm translates to volume. Qualitative modules with procurement-aware stakeholders surface committee logic that physician-only samples miss.',
+        'Against global syndicated vendors, BioNixus differentiates on in-country bilingual moderation, therapy-specific moderator briefing, access and HEOR depth, and proposal speed — scoped to the decision in front of you rather than a generic discussion guide imported unchanged from Western markets.',
+        'High-stakes programs usually combine qualitative depth with quantitative sizing. BioNixus harmonizes coding frameworks and readout formats so affiliates receive one integrated evidence pack instead of incompatible vendor silos.',
+        'Post-launch lifecycle teams use qualitative research for message refinement, competitive defence, and patient-support-program design when prescription data alone cannot explain switching or persistence patterns in local populations.',
+        'For multinational sponsors running parallel GCC cells within global qualitative mandates, harmonized variable dictionaries and thematic coding schemes let regional roll-ups compare Saudi, UAE, Kuwait, and Egypt insight without forcing identical institutional assumptions that distort local access realism.',
+      ],
+    },
+    services: {
+      heading: 'Qualitative research services BioNixus delivers',
+      items: [
+        {
+          title: 'Physician and specialist depth interviews (IDIs)',
+          description:
+            'One-to-one interviews with oncologists, endocrinologists, cardiologists, and other specialists — bilingual Arabic–English moderation with pre-specified thematic coding aligned to launch, access, or medical strategy objectives.',
+        },
+        {
+          title: 'Payer and formulary stakeholder interviews',
+          description:
+            'Qualitative modules with pharmacy directors, HTA reviewers, procurement committee members, and insurance medical directors to map objection hierarchies and evidence gaps before dossier or tender milestones.',
+        },
+        {
+          title: 'Patient, caregiver, and advocacy journey research',
+          description:
+            'Culturally adapted patient journey interviews and caregiver modules for chronic, rare, and specialty therapies — with trauma-informed moderation where therapeutic sensitivity requires additional screener safeguards.',
+        },
+        {
+          title: 'Advisory boards and expert panels',
+          description:
+            'Structured eight-to-twelve specialist sessions for clinical positioning, access validation, and competitive differentiation — in-person or virtual with full logistics and IFPMA-aligned honoraria disclosure.',
+        },
+        {
+          title: 'Focus groups and message testing',
+          description:
+            'Group dynamics research for promotional concept testing, treatment-pathway validation, and objection surfacing — with neutral vignettes and pre-specified reaction coding to support compliance review.',
+        },
+        {
+          title: 'Ethnographic and workflow observation',
+          description:
+            'Clinic workflow observation, tumor-board exit interviews, and pathway friction mapping where real-world context explains adoption barriers quantitative surveys cannot capture with sufficient granularity.',
+        },
+      ],
+    },
+    methodology: {
+      heading: 'BioNixus qualitative methodology and quality governance',
+      paragraphs: [
+        'Discussion guides and screener logic undergo pre-field quality assurance with country-based clinical advisors to ensure lexical appropriateness across Arabic and English instruments. Cognitive pilots validate complex eligibility rules before recruitment calendars launch.',
+        'Moderators receive therapy-specific briefing packs covering competitive landscape, access context, and compliance constraints before each field window. This reduces generic probing that misses formulary, tender, or patient-pathway nuance in GCC markets.',
+        'Thematic coding uses pre-specified code frames aligned to sponsor decision objectives — objection hierarchies, pathway friction points, message resonance themes — supplemented by emergent codes documented with exemplar verbatims for audit-ready handover.',
+        'Daily field governance tracks completion rates, screener pass-through, specialty-segment progress, and exclusion volumes against feasibility projections. Duplicate and ineligible completes are flagged before final analytic inclusion.',
+        'Deliverables include coded transcript packs, thematic synthesis memos, objection libraries ranked by decision stage, and executive readouts mapped to 30/60/90 action owners — not raw transcript dumps that leave affiliates weeks to reconcile narratives.',
+      ],
+    },
+    useCases: {
+      heading: 'When teams commission qualitative healthcare research',
+      paragraph:
+        'Qualitative programs are commissioned when teams need to diagnose behaviour, test narratives, or validate access assumptions before scaling quantitative investment or committee submissions.',
+      areas: [
+        'Pre-launch concept and positioning testing',
+        'Formulary and payer objection mapping',
+        'Treatment-pathway and referral friction analysis',
+        'KOL influence and engagement strategy inputs',
+        'Competitive defence and switching research',
+        'Patient identification and adherence barriers',
+        'Medical affairs message refinement',
+        'Biosimilar and lifecycle defence qualitative modules',
+      ],
+    },
+    process: {
+      heading: 'Typical qualitative engagement timeline',
+      steps: [
+        {
+          title: 'Week 1: scoping and instrument design',
+          body: 'Align on decision objective, stakeholder mix, geography, and discussion guide architecture — with optional cognitive pilots for complex instruments.',
+        },
+        {
+          title: 'Weeks 2–3: recruitment and fieldwork',
+          body: 'Specialist, payer, or patient recruitment with daily QC dashboards; advisory boards often complete in forty-eight to seventy-two hours for common specialties.',
+        },
+        {
+          title: 'Week 4: analysis and synthesis',
+          body: 'Thematic coding, objection ranking, and executive synthesis memo — bilingual readouts available where sponsor teams require Arabic and English packs.',
+        },
+        {
+          title: 'Week 5: action roadmap',
+          body: '30/60/90 recommendations with evidence gaps flagged and optional integration hooks for quantitative or HEOR follow-on modules.',
+        },
+      ],
+    },
+    deliverables: {
+      heading: 'Qualitative research outputs',
+      bullets: SERVICE_LANDING_DELIVERABLES,
+    },
+    decisionBlueprint: {
+      why: 'Strategic failure in healthcare markets often comes from misunderstanding stakeholder logic — not from lacking data volume.',
+      evidence:
+        'Thematic coding, objection libraries, and pathway friction maps explain why adoption hesitates before teams scale quantitative investment or committee submissions.',
+      next: 'Book a scoping call to align on stakeholder mix, geography, and the single decision qualitative evidence must support.',
+    },
+    faqs: [
+      {
+        question: 'When should pharmaceutical teams use qualitative versus quantitative research?',
+        answer:
+          'Use qualitative methods when you need to understand why decisions happen — physician rationale, payer objections, pathway barriers, and message fit. Use quantitative methods when you need scale, segment sizing, and statistical confidence. High-stakes launch, access, and lifecycle programs usually combine both within one evidence architecture.',
+      },
+      {
+        question: 'Does BioNixus support bilingual Arabic–English qualitative fieldwork?',
+        answer:
+          'Yes. Moderation, transcription, and sponsor readouts can be delivered in Arabic, English, or dual-language packs. Medical terminology receives pre-field QA from country-based clinical advisors so nuance is preserved while global teams receive harmonized synthesis.',
+      },
+      {
+        question: 'How does BioNixus recruit scarce specialists for qualitative studies in GCC markets?',
+        answer:
+          'Recruitment combines licence-verified physician panels, hospital network partnerships, association rosters, and KOL referral chains. Feasibility assessments document achievable sample depth and timeline before project commitment — especially for oncology sub-specialties and rare-disease cohorts.',
+      },
+      {
+        question: 'Can qualitative modules feed market access or HEOR workstreams?',
+        answer:
+          'Yes. Objection themes, treatment-sequence narratives, and resource-use insights from qualitative fieldwork can inform budget-impact assumptions, value-story testing, and dossier gap analysis within one integrated evidence pack.',
+      },
+      {
+        question: 'How long does a typical GCC qualitative study take from scoping to deliverables?',
+        answer:
+          'A standard specialist IDI program (fifteen to twenty-five interviews across one or two GCC countries) typically requires four to six weeks from instrument finalisation to thematic synthesis. Advisory boards and smaller payer modules can complete in two to three weeks when specialty depth permits.',
+      },
+      {
+        question: 'How does BioNixus handle ethics and consent for qualitative healthcare research?',
+        answer:
+          'All programs follow documented informed-consent workflows, IFPMA-aligned honoraria disclosure, and audit-ready exclusion logs. IRB or hospital ethics approvals are mapped during feasibility when local definitions require formal research classification.',
+      },
+    ],
+  },
 };
 
 /** Shared expansion blocks merged at read time so every P0 landing page clears 2,000 words ([BIO-503]). */
@@ -3145,7 +3293,9 @@ function mergeLandingContent(
   key: string,
 ): ServiceLandingExpandedContent {
   const isFieldwork =
-    key.includes('fieldwork') || key === 'healthcare-fieldwork-middle-east';
+    key.includes('fieldwork') ||
+    key === 'healthcare-fieldwork-middle-east' ||
+    key === 'qualitative-market-research';
   const isAccessHeor =
     key.includes('market-access') || key.includes('heor-consulting');
 
