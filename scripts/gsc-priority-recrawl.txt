@@ -51,6 +51,17 @@ https://www.bionixus.com/healthcare-market-research/turkey
 https://www.bionixus.com/healthcare-market-research/singapore
 https://www.bionixus.com/healthcare-market-research/japan
 
+# --- Tier 7: Pharmaceutical company directories (SSR fix 2026-08-07) ---
+https://www.bionixus.com/pharmaceutical-companies-saudi-arabia
+https://www.bionixus.com/pharmaceutical-companies-uae
+https://www.bionixus.com/pharmaceutical-companies-egypt
+https://www.bionixus.com/pharmaceutical-companies-kuwait
+https://www.bionixus.com/pharmaceutical-companies-qatar
+https://www.bionixus.com/pharmaceutical-companies-oman
+https://www.bionixus.com/pharmaceutical-companies-bahrain
+https://www.bionixus.com/qualitative-market-research
+https://www.bionixus.com/iqvia-alternative
+
 # --- Secondary ---
 https://www.bionixus.com/
 https://www.bionixus.com/premium-home-page
