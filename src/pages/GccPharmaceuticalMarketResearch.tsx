@@ -54,6 +54,11 @@ const FAQ_ITEMS = [
     answer:
       'In 2026, the fastest-growing GCC therapy areas are oncology, diabetes and obesity (GLP-1 driven), rare disease, immunology, and cardiovascular. Saudi Arabia and the UAE concentrate the bulk of innovative-medicine spend, while Kuwait and Qatar prioritize tendered generic and hospital-administered portfolios.',
   },
+  {
+    question: 'How are GLP-1 and obesity medicines reshaping GCC pharmaceutical research priorities in 2026?',
+    answer:
+      'GLP-1 receptor agonists and dual incretin therapies are among the fastest-growing GCC pharmaceutical segments in 2026, with private hospital adoption in Dubai and Abu Dhabi outpacing MOH facilities in Saudi Arabia and Kuwait. BioNixus tracks prescriber intent, payer coverage conditions, and NUPCO tender risk for obesity and diabetes portfolios — helping manufacturers separate premium private-channel uptake from public formulary constraints before committing launch sequencing across the six GCC markets.',
+  },
 ];
 
 const FAQ_SECTION_ID = 'gcc-pharma-research-faq';
@@ -75,7 +80,7 @@ const jsonLd = [
     description: PAGE_DESCRIPTION,
     url: pageUrl,
     datePublished: '2025-09-01',
-    dateModified: '2026-06-28',
+    dateModified: '2026-08-08',
     author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
   },
