@@ -22,6 +22,9 @@ const CRITICAL_PATHS = [
   '/bionixus-market-research-middle-east',
   '/gcc-pharmaceutical-market-research',
   '/saudi-arabia-medical-devices-market-report',
+  '/pharmaceutical-companies-egypt',
+  '/pharmaceutical-companies-saudi-arabia',
+  '/pharmaceutical-companies-uae',
 ];
 
 let serverEntry;

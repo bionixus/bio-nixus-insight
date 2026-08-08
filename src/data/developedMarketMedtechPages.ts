@@ -144,6 +144,10 @@ function buildFaqs(country: DevelopedMarketMedtechCountry): ServiceLandingExpand
       question: `How does BioNixus ensure data quality in ${country.label} physician research?`,
       answer: `BioNixus verifies physician credentials, specialty, and practice setting before inclusion; uses structured screeners aligned to procedure volume where relevant; and applies daily quality-funnel governance during fieldwork. For hospital procurement stakeholders, verification includes role confirmation and institution type. This three-layer approach consistently outperforms unverified panels on specialty alignment and ${country.label}-specific clinical experience.`,
     },
+    {
+      question: `What deliverables should MedTech teams expect from a ${country.label} market research programme?`,
+      answer: `Typical outputs include an executive summary tied to one commercial decision, segment-level adoption forecasts, competitive objection libraries, hospital account prioritisation maps, and a thirty/sixty/ninety-day action plan with evidence gaps flagged. BioNixus also provides audit-ready methodology appendices suitable for internal medical affairs review and optional GCC expansion modules when ${country.label} manufacturers plan parallel Gulf launches.`,
+    },
   ];
 }
 

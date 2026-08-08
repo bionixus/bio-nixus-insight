@@ -654,6 +654,10 @@ const GccMarketAccessGuide = () => {
                   a: 'NUPCO runs central tenders for Ministry of Health hospitals, determining which products receive large-volume public sector contracts. Launch teams must align SFDA registration timing, pricing, and clinical narratives with NUPCO evaluation cycles — often 12–18 months after initial regulatory approval.',
                 },
                 {
+                  q: 'How do biosimilars and HTA requirements differ across GCC markets?',
+                  a: 'Saudi SFDA and UAE MOHAP publish interchangeability guidance for selected biologics, but hospital substitution rules and payer incentives still diverge by emirate and institution type. Kuwait and Qatar rely on MOH tender stores with different evidence thresholds for biosimilar listing than originator maintenance. BioNixus maps these country-specific HTA and procurement rhythms so launch teams do not assume a single Gulf-wide access playbook after one regulator approval.',
+                },
+                {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
                 },
