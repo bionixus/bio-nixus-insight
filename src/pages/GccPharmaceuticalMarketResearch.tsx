@@ -54,6 +54,11 @@ const FAQ_ITEMS = [
     answer:
       'In 2026, the fastest-growing GCC therapy areas are oncology, diabetes and obesity (GLP-1 driven), rare disease, immunology, and cardiovascular. Saudi Arabia and the UAE concentrate the bulk of innovative-medicine spend, while Kuwait and Qatar prioritize tendered generic and hospital-administered portfolios.',
   },
+  {
+    question: 'How is the GCC GLP-1 and obesity market evolving in 2026?',
+    answer:
+      'GLP-1 receptor agonists are reshaping diabetes and obesity prescribing across Saudi Arabia and the UAE, where private insurance and specialist obesity clinics accelerate uptake faster than tender-only channels in Kuwait or Oman. BioNixus tracks HCP adoption barriers, payer step-therapy rules, and competitive switching between semaglutide, tirzepatide, and emerging oral GLP-1 assets — giving launch teams evidence for both retail and hospital-administered positioning before formulary and procurement cycles close.',
+  },
 ];
 
 const FAQ_SECTION_ID = 'gcc-pharma-research-faq';
@@ -75,7 +80,7 @@ const jsonLd = [
     description: PAGE_DESCRIPTION,
     url: pageUrl,
     datePublished: '2025-09-01',
-    dateModified: '2026-06-28',
+    dateModified: '2026-08-09',
     author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
   },
@@ -355,6 +360,19 @@ export default function GccPharmaceuticalMarketResearch() {
                     Saudi Arabia rare diseases and precision medicine report
                   </Link>{' '}
                   for orphan and biomarker-defined programmes.
+                </p>
+              </article>
+              <article className="rounded-xl border border-border bg-card p-5 md:col-span-2">
+                <h3 className="font-semibold text-foreground mb-2">GCC GLP-1, obesity, and metabolic disease research</h3>
+                <p className="text-sm text-muted-foreground">
+                  Obesity and type 2 diabetes programmes now dominate GCC commercial planning as GLP-1 and dual incretin
+                  assets move from specialist endocrinology into primary care and employer-sponsored wellness channels.
+                  Research must separate emirate-level private uptake (UAE, Saudi retail and clinic networks) from
+                  MOH tender dynamics where injectable diabetes portfolios still flow through hospital stores. BioNixus
+                  pairs HCP adoption tracking with payer and pharmacy substitution research so brand, access, and medical
+                  teams align narratives before the next DHA, DoH, or NUPCO listing window — particularly where
+                  step-therapy and prior-authorisation rules differ between countries that otherwise share similar
+                  epidemiology profiles.
                 </p>
               </article>
             </div>

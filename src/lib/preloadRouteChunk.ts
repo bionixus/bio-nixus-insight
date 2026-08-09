@@ -30,6 +30,19 @@ const IRREGULAR_IMPORTS: Record<string, Importer> = {
     import('@/pages/BlogPost'),
 };
 
+/** Pharmaceutical BOFU pages — file names do not match URL slugs one-to-one. */
+const PHARMA_COMPANY_IMPORTS: Record<string, Importer> = {
+  '/pharmaceutical-companies-uae': () => import('@/pages/UaePharmaCompanies'),
+  '/pharmaceutical-companies-kuwait': () => import('@/pages/KuwaitPharmaCompanies'),
+  '/pharmaceutical-companies-saudi-arabia': () => import('@/pages/SaudiPharmaCompanies'),
+  '/pharmaceutical-companies-egypt': () => import('@/pages/EgyptPharmaCompanies'),
+  '/pharmaceutical-companies-qatar': () => import('@/pages/QatarPharmaCompanies'),
+  '/pharmaceutical-companies-oman': () => import('@/pages/OmanPharmaCompanies'),
+  '/pharmaceutical-companies-bahrain': () => import('@/pages/BahrainPharmaCompanies'),
+  '/pharmaceutical-companies-iraq': () => import('@/pages/IraqPharmaCompanies'),
+  '/pharmaceutical-companies-iran': () => import('@/pages/IranPharmaCompanies'),
+};
+
 /** Dynamic-slug routes matched by prefix. */
 const PREFIX_IMPORTS: Array<{ test: (path: string) => boolean; load: Importer }> = [
   {
@@ -86,6 +99,7 @@ const PREFIX_IMPORTS: Array<{ test: (path: string) => boolean; load: Importer }>
 
 function resolveImporter(pathname: string): Importer | undefined {
   if (IRREGULAR_IMPORTS[pathname]) return IRREGULAR_IMPORTS[pathname];
+  if (PHARMA_COMPANY_IMPORTS[pathname]) return PHARMA_COMPANY_IMPORTS[pathname];
 
   if (/-market-report$/.test(pathname)) {
     const file = slugToComponentName(pathname.slice(1));

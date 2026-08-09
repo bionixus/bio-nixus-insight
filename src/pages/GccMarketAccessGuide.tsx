@@ -175,7 +175,7 @@ const GccMarketAccessGuide = () => {
             description: 'Complete guide to pharmaceutical drug registration, pricing, and reimbursement across the 6 GCC countries: Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman.',
             url: citationUrl,
             datePublished: '2026-01-15',
-            dateModified: '2026-06-16',
+            dateModified: '2026-08-09',
             author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
             publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
           })}
@@ -481,6 +481,13 @@ const GccMarketAccessGuide = () => {
                 physician switching intent after NUPCO or MOH tender awards.
               </p>
               <p>
+                For medical device and combination-product accounts, GCC access teams should align pharmaceutical
+                dossier timing with medtech registration and hospital capital cycles — particularly where infusion
+                pumps, prefilled syringes, or companion diagnostics influence tender scoring. Cross-functional research
+                that links formulary outcomes to procurement behaviour reduces the risk of winning registration while
+                losing the hospital-administered channel that drives volume.
+              </p>
+              <p>
                 See also{' '}
                 <Link to="/heor-consulting-saudi-arabia" className="text-primary underline font-medium">
                   HEOR consulting Saudi Arabia
@@ -656,6 +663,10 @@ const GccMarketAccessGuide = () => {
                 {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
+                },
+                {
+                  q: 'How do GCC biosimilar substitution rules affect market access?',
+                  a: 'Biosimilar uptake varies by country: Saudi Arabia\'s NUPCO tenders increasingly score interchangeability and local manufacturing; the UAE allows pharmacist-led substitution in select categories under MOHAP guidance; Kuwait and Qatar route most hospital biologics through central stores with tender-driven switching. Launch teams should map substitution policy, naming conventions, and procurement scoring separately for each GCC market rather than assuming a single regional playbook.',
                 },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">

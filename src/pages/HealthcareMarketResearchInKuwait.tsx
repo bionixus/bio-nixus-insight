@@ -6,6 +6,7 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { CTASection } from '@/components/shared/CTASection';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+import { CountryMarketReferenceGuide } from '@/components/seo/CountryMarketReferenceGuide';
 
 const faqItems = [
   {
@@ -361,6 +362,8 @@ export default function HealthcareMarketResearchInKuwait() {
             </div>
           </div>
         </section>
+
+        <CountryMarketReferenceGuide countryName="Kuwait" countrySlug="kuwait" region="mena" />
 
         {/* FAQ */}
         <section className="section-padding py-8">
