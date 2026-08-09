@@ -22,6 +22,8 @@ const EGYPT_REGULATORY: string[] = [
   'Cross-MENA harmonization helps regional portfolios, but Egypt-specific channel mix and payer behaviour require local primary research rather than imported GCC averages.',
   'Hospital accreditation, quality metrics, and service-line expansion plans increasingly shape administrator priorities; research should capture operational KPIs alongside clinical adoption when medtech or specialty care is in scope.',
   'Seasonal demand spikes (Ramadan staffing, summer expatriate flows) can shift outpatient volumes; tracking studies should document field windows so conclusions are not attributed to structural change.',
+  'Universal health insurance (UHI) expansion and Hayah Karima-linked primary-care access change patient entry points by governorate; provider modules should tag coverage assumptions rather than assume a single national reimbursement curve.',
+  'Medical devices and diagnostics adjacency often depends on administrator capital-expenditure gates and biomedical engineering capacity; include these stakeholders when service-line expansion is the decision.',
 ];
 
 const UAE_REGULATORY: string[] = [
@@ -379,6 +381,16 @@ export const HEALTHCARE_INDUSTRY_EXPANDED: Partial<
         answer:
           'BioNixus recommends refresh before major tender windows, hospital network mergers, or service-line expansions—typically annually for active portfolios and quarterly when UHIA or ministry procurement rules shift. Stakeholder maps with channel tags let teams re-field only the segments that changed rather than repeating full national scopes.',
       },
+      {
+        question: 'How does UHI rollout change Egypt provider research design?',
+        answer:
+          'UHI expansion shifts some volume into publicly covered pathways at different speeds by governorate and facility type. BioNixus tags completes by coverage context and channel so utilization models stress-test when patients enter reimbursed pathways versus remaining in private insurance or out-of-pocket segments—avoiding a single national reimbursement assumption.',
+      },
+      {
+        question: 'Should university hospitals be sampled separately from MOH facilities?',
+        answer:
+          'Yes when the decision depends on teaching KOLs, complex referral pathways, or academic-centre protocols. University hospitals often concentrate influence and scarce specialty capacity differently from ministry volume sites; separate quotas prevent Cairo academic completes from being mistaken for national public-facility behaviour.',
+      },
     ],
     execution: {
       heading: 'From Egypt provider insight to network and access alignment',
@@ -388,6 +400,7 @@ export const HEALTHCARE_INDUSTRY_EXPANDED: Partial<
         'Workshop deliverables include institution priority tiers, procurement risk registers, and bilingual objection libraries administrators and clinicians can validate—reducing rework when global decks arrive without Egypt channel nuance.',
         'When portfolios include medtech or specialty care, administrator modules capture bed-capacity, staffing, and capital expenditure gates that determine whether service-line expansion proceeds even when clinical demand is visible in physician interviews alone.',
         'Regional sponsors should review Cairo versus Upper Egypt completes separately in workshop readouts; BioNixus flags channel skew before sign-off so network prioritization reflects treatable demand where facilities can operationalize change.',
+        'Hayah Karima and UHI-linked primary-care expansion can redirect referral timing in underserved regions; tracking or pathway modules should document field windows and coverage assumptions so structural access change is not attributed to brand messaging alone.',
       ],
     },
   },

@@ -17,6 +17,10 @@ export const UAE_MR_COMPANY_PROOF = [
     title: 'Proposal-ready in weeks',
     body: 'Typical UAE modules move from scoped objective to field-ready instruments in 2–4 weeks for priority therapy areas.',
   },
+  {
+    title: 'Insurance- and setting-aware modules',
+    body: 'UAE programmes tag mandatory insurance pathways and separate specialty hospital versus retail pharmacy modules so formulary and adoption evidence matches how DHA, DOH, and MOHAP contexts actually gate spend.',
+  },
 ] as const;
 
 export const UAE_REGULATORY_STEPS = [

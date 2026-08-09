@@ -54,6 +54,11 @@ const FAQ_ITEMS = [
     answer:
       'In 2026, the fastest-growing GCC therapy areas are oncology, diabetes and obesity (GLP-1 driven), rare disease, immunology, and cardiovascular. Saudi Arabia and the UAE concentrate the bulk of innovative-medicine spend, while Kuwait and Qatar prioritize tendered generic and hospital-administered portfolios.',
   },
+  {
+    question: 'How should launch teams research Kuwait, Qatar, Oman, and Bahrain access?',
+    answer:
+      'These markets concentrate hospital demand through MOH tender stores (Kuwait), Hamad procurement (Qatar), and MOH/NHRA pathways (Oman and Bahrain). Mutual recognition can shorten registration relative to a full SFDA dossier, but formulary inclusion and tender timing still determine commercial visibility. BioNixus maps each authority’s evidence expectations, bilingual HCP modules, and account-level tender calendars so smaller GCC cells inform sequencing without being averaged into Saudi or UAE forecasts.',
+  },
 ];
 
 const FAQ_SECTION_ID = 'gcc-pharma-research-faq';
@@ -470,6 +475,24 @@ export default function GccPharmaceuticalMarketResearch() {
                 </Link>{' '}
                 when your portfolio spans biologics, hospital-administered generics, and companion diagnostics in the
                 same institution.
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection
+            id="smaller-gcc-access-nuance"
+            title="Kuwait, Qatar, Oman, and Bahrain: access nuance beyond KSA and UAE averages"
+            variant="cream"
+          >
+            <div className="space-y-4 text-muted-foreground leading-relaxed max-w-4xl">
+              <p>
+                Kuwait MOH tender stores, Qatar’s Hamad Medical Corporation procurement, Oman MOH channels, and Bahrain
+                NHRA listing each run independent evidence and timing rhythms. Mutual recognition can accelerate
+                paperwork after a Saudi or UAE approval, yet hospital formulary inclusion still depends on local
+                epidemiology narratives, budget-impact packs, and tender windows that do not mirror NUPCO or DHA cycles.
+                BioNixus treats these markets as decision cells—mapping KOLs, procurement officers, and bilingual
+                physician modules—so launch teams sequence smaller GCC opportunities with the same rigor applied to
+                Riyadh and Dubai accounts, without inventing a single “Gulf average” that hides access friction.
               </p>
             </div>
           </ReportPremiumSection>

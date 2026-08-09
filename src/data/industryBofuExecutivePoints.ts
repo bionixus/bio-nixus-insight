@@ -110,6 +110,16 @@ const EXECUTIVE_POINTS: ExecutivePointsMatrix = {
         body:
           'Cairo-centric specialist concentration versus delta and upper-Egypt access changes reachable prescriber panels. Feasibility should be scored upfront, not after contracting.',
       },
+      {
+        title: 'Hayah Karima and primary-care access shifts',
+        body:
+          'National development initiatives expand primary-care touchpoints in underserved regions, altering referral timing into specialty centres. Pathway research should tag governorate tiers so utilization change is not mistaken for brand-driven adoption.',
+      },
+      {
+        title: 'Administrator gates for service-line expansion',
+        body:
+          'Bed capacity, staffing, and capital-expenditure constraints often block service-line growth even when clinician demand is visible. Include hospital administrator depth before scaling physician-only panels for network decisions.',
+      },
     ],
   },
   biotech: {
