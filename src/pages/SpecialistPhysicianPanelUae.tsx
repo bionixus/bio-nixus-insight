@@ -15,6 +15,7 @@ export default function SpecialistPhysicianPanelUae() {
       h1="Specialist Physician Panel UAE"
       intro="BioNixus maintains validated UAE specialist physician panels across twelve plus therapy areas, with active licence verification against DHA, DOH, and MOHAP databases. Whether you need ten specialists for an advisory board in seventy-two hours or eighty for a quarterly brand tracking wave, our UAE physician panels deliver credible, verified respondents matched to your research objectives."
       links={[
+        { to: '/healthcare-market-research', label: 'Healthcare market research hub', primary: true },
         { to: '/gcc-hcp-recruitment-market-research', label: 'GCC HCP recruitment market research', primary: true },
         { to: '/pharma-fieldwork-uae', label: 'Pharma fieldwork UAE', primary: true },
         { to: '/uae-pharmaceutical-market-research', label: 'UAE pharmaceutical market research' },

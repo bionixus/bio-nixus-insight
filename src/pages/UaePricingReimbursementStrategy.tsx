@@ -97,6 +97,7 @@ export default function UaePricingReimbursementStrategy() {
           h1="UAE Pricing and Reimbursement Strategy"
           intro="Achieving formulary access in the UAE requires navigating three independent health authorities — DHA, DOH, and MOHAP — each with distinct evidence requirements, committee review cycles, and price-sensitivity thresholds. BioNixus delivers payer primary research, international reference pricing analysis, and value dossier development that translate clinical evidence into the decision-ready formats UAE formulary committees expect."
           links={[
+            { to: '/healthcare-market-research', label: 'Healthcare market research hub' },
             { to: '/uae-market-access-research', label: 'UAE market access research' },
             { to: '/uae-pharmaceutical-market-research', label: 'UAE pharmaceutical market research' },
             { to: '/heor-consulting-saudi-arabia', label: 'HEOR consulting Saudi Arabia' },
@@ -104,6 +105,18 @@ export default function UaePricingReimbursementStrategy() {
             { to: '/contact', label: 'Request pricing and reimbursement scope' },
           ]}
         />
+
+        <section className="section-padding py-2">
+          <div className="container-wide max-w-5xl mx-auto">
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              For regional context and related services, start from our{' '}
+              <Link to="/healthcare-market-research" className="text-primary underline font-medium">
+                healthcare market research hub
+              </Link>{' '}
+              before scoping UAE pricing and reimbursement work.
+            </p>
+          </div>
+        </section>
 
         <ExecutiveDecisionBlock
           heading="UAE pricing and reimbursement: decision framework"
