@@ -848,18 +848,37 @@ const hreflangGroups = [
     ru: '/ru/market-research-healthcare',
     'x-default': '/market-research-healthcare',
   },
-  {
-    en: '/healthcare-market-research',
-    fr: '/fr/healthcare-market-research',
-    'x-default': '/healthcare-market-research',
-  },
   { en: '/contact', pt: '/pt/contact', de: '/de/contact', fr: '/fr/contact', es: '/es/contact', ar: '/ar/contact', 'zh-CN': '/zh/contact', ru: '/ru/contact', 'x-default': '/contact' },
   { en: '/about', pt: '/pt/about', de: '/de/about', fr: '/fr/about', es: '/es/about', ar: '/ar/about', 'zh-CN': '/zh/about', ru: '/ru/about', 'x-default': '/about' },
   // Only list languages that actually have distinct localized URLs.
   // pt/ru/zh blog indexes render English content and canonicalise to /blog, so they
   // are neither listed nor referenced as alternates.
   { en: '/blog', de: '/de/blog', fr: '/fr/blog', ar: '/ar/blog', 'x-default': '/blog' },
-  { en: '/services/market-access', es: '/es/market-access', 'x-default': '/services/market-access' },
+  { en: '/services/market-access', 'x-default': '/services/market-access' },
+  {
+    en: '/healthcare-market-research',
+    es: '/es/healthcare-market-research',
+    fr: '/fr/healthcare-market-research',
+    'x-default': '/healthcare-market-research',
+  },
+  {
+    en: '/bionixus-market-research-middle-east',
+    fr: '/fr/bionixus-market-research-middle-east',
+    'zh-CN': '/zh/bionixus-market-research-middle-east',
+    'x-default': '/bionixus-market-research-middle-east',
+  },
+  {
+    en: '/quantitative-healthcare-market-research',
+    fr: '/fr/quantitative-healthcare-market-research',
+    'x-default': '/quantitative-healthcare-market-research',
+  },
+  {
+    en: '/strategic-portfolio',
+    ar: '/ar/strategic-portfolio',
+    fr: '/fr/strategic-portfolio',
+    'zh-CN': '/zh/strategic-portfolio',
+    'x-default': '/strategic-portfolio',
+  },
   { en: '/market-research-uae', ar: '/ar/market-research-uae', 'x-default': '/market-research-uae' },
   { en: '/market-research-ksa', ar: '/ar/market-research-ksa', 'x-default': '/market-research-ksa' },
   { en: '/market-research-saudi', ar: '/ar/market-research-saudi', 'x-default': '/market-research-saudi' },
@@ -868,6 +887,7 @@ const hreflangGroups = [
   {
     en: '/insights/top-market-research-companies-egypt-2026',
     ar: '/ar/insights/top-market-research-companies-egypt-2026',
+    'zh-CN': '/zh/insights/top-market-research-companies-egypt-2026',
     'x-default': '/insights/top-market-research-companies-egypt-2026',
   },
   {
@@ -892,7 +912,6 @@ const hreflangGroups = [
   },
   {
     en: '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
-    de: '/de/success-in-startups',
     ar: '/ar/arabic-blog-alsawdyh',
     'x-default': '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
   },
