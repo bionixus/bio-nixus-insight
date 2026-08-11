@@ -26,7 +26,7 @@ import {
 import { sortBySegmentCountryPriority } from '@/data/segmentCountryOrder';
 import { resolveCountryConfig } from '@/lib/constants/countries';
 import { CountryCoverageGrid } from './CountryCoverageGrid';
-import { PREMIUM_INDUSTRIES_CSS } from './premiumIndustriesCss';
+import { PremiumIndustriesStyles } from './PremiumIndustriesStyles';
 
 const HUB_PATH = '/bionixus-industries';
 
@@ -147,7 +147,7 @@ export default function IndustrySegmentPage({ slug }: IndustrySegmentPageProps) 
         canonical={segment.path}
         jsonLd={jsonLd}
       />
-      <style dangerouslySetInnerHTML={{ __html: PREMIUM_INDUSTRIES_CSS }} />
+      <PremiumIndustriesStyles />
       <Navbar />
       <main className="bx-ind">
         {/* ===== HERO ===== */}

@@ -176,12 +176,18 @@ function sectionForPath(path: string): string {
 }
 
 /** Master path list: internal-link targets + canonical hub/therapy/service additions, de-duped. */
+function isCleanExplorerPath(path: string): boolean {
+  return /^\/[a-z0-9\-/_]*$/i.test(path) && !/[\s<>]/.test(path);
+}
+
 export function getAllSiteExplorerPaths(): string[] {
   const set = new Set<string>();
   for (const t of LOW_INTERNAL_LINK_TARGETS) {
-    if (!t.to.startsWith('/admin')) set.add(t.to);
+    if (!t.to.startsWith('/admin') && isCleanExplorerPath(t.to)) set.add(t.to);
   }
-  for (const p of CANONICAL_EXTRA_PATHS) set.add(p);
+  for (const p of CANONICAL_EXTRA_PATHS) {
+    if (isCleanExplorerPath(p)) set.add(p);
+  }
   return [...set].sort((a, b) => a.localeCompare(b));
 }
 

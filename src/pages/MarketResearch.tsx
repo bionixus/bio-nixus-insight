@@ -20,7 +20,7 @@ import {
   type MarketResearchIndexCountry,
 } from '@/data/industryHubCountries';
 import { MARKET_RESEARCH_HUB_SECTIONS } from '@/data/marketResearchCountryContent';
-import { PREMIUM_INDUSTRIES_CSS } from '@/pages/industries/premiumIndustriesCss';
+import { PremiumIndustriesStyles } from '@/pages/industries/PremiumIndustriesStyles';
 
 const HUB_PATH = '/market-research';
 const COUNTRY_COUNT = MARKET_RESEARCH_BY_INDUSTRY_COUNTRIES.length;
@@ -219,7 +219,7 @@ export default function MarketResearch() {
         canonical={HUB_PATH}
         jsonLd={jsonLd}
       />
-      <style dangerouslySetInnerHTML={{ __html: PREMIUM_INDUSTRIES_CSS }} />
+      <PremiumIndustriesStyles />
       <Navbar />
 
       <main className="bx-ind">

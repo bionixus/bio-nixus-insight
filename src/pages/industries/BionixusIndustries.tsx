@@ -10,7 +10,7 @@ import { SEGMENTS, SEGMENT_ORDER, type SegmentSlug } from '@/data/bionixusIndust
 import { BIONIXUS_INDUSTRIES_REGION_GROUPS } from '@/data/industryHubCountries';
 import IndustriesInsightsSection from '@/pages/industries/IndustriesInsightsSection';
 import { CountryCoverageGrid } from './CountryCoverageGrid';
-import { PREMIUM_INDUSTRIES_CSS } from './premiumIndustriesCss';
+import { PremiumIndustriesStyles } from './PremiumIndustriesStyles';
 import {
   BIONIXUS_INDUSTRIES_LANGUAGE_MIRROR,
   getBionixusIndustriesPageCopy,
@@ -80,7 +80,7 @@ export default function BionixusIndustries() {
         canonical={hubPath}
         jsonLd={jsonLd}
       />
-      <style dangerouslySetInnerHTML={{ __html: PREMIUM_INDUSTRIES_CSS }} />
+      <PremiumIndustriesStyles />
       <Navbar />
       <main className="bx-ind">
         <section className="bx-hero">

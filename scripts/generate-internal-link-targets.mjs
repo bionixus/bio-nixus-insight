@@ -39,6 +39,13 @@ function pathFromUrl(urlStr) {
   }
 }
 
+/** Reject crawl noise (HTML leaked into URLs, spaces, angle brackets). */
+function isCleanInternalPath(pathname) {
+  if (typeof pathname !== 'string' || !pathname.startsWith('/')) return false;
+  if (/[\s<>]|&lt;|&gt;/i.test(pathname)) return false;
+  return /^\/[a-z0-9\-/_]*$/i.test(pathname);
+}
+
 /** Title-case-ish label without breaking Arabic slug segments too aggressively */
 function pathnameToLabel(pathname) {
   if (pathname === '/') return 'Home';
@@ -96,7 +103,7 @@ function main() {
   for (const { url, count } of parsed) {
     if (!Number.isFinite(count) || count >= threshold) continue;
     const to = pathFromUrl(url);
-    if (!to || to === '/') continue;
+    if (!to || to === '/' || !isCleanInternalPath(to)) continue;
     if (!byPath.has(to)) {
       byPath.set(to, pathnameToLabel(to));
     }
