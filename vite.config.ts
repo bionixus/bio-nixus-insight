@@ -73,7 +73,8 @@ export default defineConfig(({ mode, isSsrBuild }) => ({
             !/(?:^|\/)charts-[^/]+\.js$/.test(dep) &&
             !/(?:^|\/)statsig-[^/]+\.js$/.test(dep) &&
             !/(?:^|\/)sanitize-html-[^/]+\.js$/.test(dep) &&
-            !/(?:^|\/)toast-[^/]+\.js$/.test(dep),
+            !/(?:^|\/)toast-[^/]+\.js$/.test(dep) &&
+            !/(?:^|\/)sanity-[^/]+\.js$/.test(dep),
         ),
     },
     rollupOptions: isSsrBuild
