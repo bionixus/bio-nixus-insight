@@ -441,7 +441,7 @@ export default function ArTopMarketResearchCompaniesEgypt2026() {
                 { to: '/healthcare-market-research/egypt', label: 'أبحاث سوق الرعاية الصحية في مصر', desc: 'محور الدولة مع الأسئلة الشائعة والإحصاءات والتركيز العلاجي.' },
                 { to: '/ar/market-research-egypt', label: 'أبحاث السوق في مصر', desc: 'صفحة استخبارات القطاع الصحي والدوائي.' },
                 { to: '/insights/top-market-research-companies-egypt-2026', label: 'English rankings guide', desc: 'Read the ranked buyer guide in English.' },
-                { to: '/ar/contacts', label: 'طلب عرض سعر', desc: 'تواصل معنا لمشروع أبحاث مخصص في مصر.' },
+                { to: '/ar/contact', label: 'طلب عرض سعر', desc: 'تواصل معنا لمشروع أبحاث مخصص في مصر.' },
               ].map((r) => (
                 <Link
                   key={r.to}
@@ -468,7 +468,7 @@ export default function ArTopMarketResearchCompaniesEgypt2026() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                to="/ar/contacts"
+                to="/ar/contact"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors"
               >
                 طلب عرض سعر <ArrowRight className="w-4 h-4 rotate-180" />

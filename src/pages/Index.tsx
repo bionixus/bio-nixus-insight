@@ -43,7 +43,7 @@ const Index = () => {
   const homeCanonicalUrl = new URL(seoByLanguage[language].canonicalPath, 'https://www.bionixus.com').toString();
   const basePath = languagePaths[language] || '/';
   const contactHref =
-    language === 'fr' ? '/fr/contacts' : language === 'ar' ? '/ar/contacts' : `${basePath === '/' ? '' : basePath}/contact`;
+    language === 'fr' ? '/fr/contact' : language === 'ar' ? '/ar/contact' : `${basePath === '/' ? '' : basePath}/contact`;
 
   const featuredCards = buildHomePathwayCards(language, t.homePage.pathwayCards);
 

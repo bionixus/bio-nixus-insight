@@ -16,7 +16,7 @@ const jsonLd = [
   },
   buildBreadcrumbSchema([
     { name: 'Inicio', href: '/es' },
-    { name: 'Market Access', href: '/es/market-access' },
+    { name: 'Market Access', href: '/services/market-access' },
   ]),
 ];
 
@@ -26,7 +26,7 @@ export default function SpanishMarketAccess() {
       <SEOHead
         title="Market Access en Salud y Farma | BioNixus"
         description="Servicios de market access para farma y healthcare con evidencia, insights de pagadores y estrategia práctica para Europa y mercados internacionales."
-        canonical="/es/market-access"
+        canonical="/services/market-access"
         jsonLd={jsonLd}
       />
       <Navbar />
@@ -34,7 +34,7 @@ export default function SpanishMarketAccess() {
         <BreadcrumbNav
           items={[
             { name: 'Inicio', href: '/es' },
-            { name: 'Market Access', href: '/es/market-access' },
+            { name: 'Market Access', href: '/services/market-access' },
           ]}
         />
 

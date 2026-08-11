@@ -33,12 +33,31 @@ export const BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH = {
 /**
  * Internal href rewrites for URLs that 301 elsewhere (Ahrefs page-has-links-to-redirect).
  * Applied at render time and by scripts/fix-redirect-internal-links.mjs.
+ * Prefer linking to destinations in React; these catch CMS/HTML leftovers.
  */
 export const REDIRECT_HREF_REWRITES = {
   '/conf': '/strategic-portfolio',
   '/ar/conf': '/ar/strategic-portfolio',
   '/healthcare-market-research/united-kingdom': '/healthcare-market-research/uk',
   '/ar/': '/ar',
+  '/ar/contacts': '/ar/contact',
+  '/fr/contacts': '/fr/contact',
+  '/de/contacts': '/de/contact',
+  '/de/success-in-startups': '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
+  '/es/market-access': '/services/market-access',
+  '/es/quantitative-research': '/services/quantitative-research',
+  '/market-research/healthcare': '/healthcare-market-research',
+  '/market-research/biotech': '/healthcare-market-research',
+  '/market-research/medtech': '/healthcare-market-research',
+  '/market-research/consumer-health': '/healthcare-market-research',
+  '/market-reports/uae-medical-devices-market-report': '/uae-medical-devices-market-report',
+  '/top-market-research-companies-brazil-2026': '/insights/top-market-research-companies-brazil-2026',
+  '/blog/financial-services-market-research-egypt-2026':
+    '/bionixus-industries/insights/financial-services-market-research-egypt-2026',
+  '/blog/mdf-wood-manufacturing-market-research-trackers-mea':
+    '/bionixus-industries/insights/mdf-wood-manufacturing-market-research-trackers-mea',
+  '/blog/online-market-research-social-listening-brand-growth-2026':
+    '/bionixus-industries/insights/online-market-research-social-listening-brand-growth-2026',
   ...BLOG_LEGACY_FULL_PATH_REDIRECTS,
   ...BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH,
 };

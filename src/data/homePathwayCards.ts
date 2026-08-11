@@ -15,7 +15,7 @@ const PATHWAY_ROUTES: {
   { to: '/insights/top-market-research-companies-egypt-2026', highlight: true },
   { to: '/quantitative-healthcare-market-research', highlight: true },
   { to: '/bionixus-industries', highlight: true },
-  { to: '/global-websites', highlight: true },
+  { to: '/healthcare-market-research', highlight: true },
 ];
 
 const ARABIC_BONUS_CARD: PathwayCard = {

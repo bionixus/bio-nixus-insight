@@ -174,17 +174,30 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
   },
   '/market-access': {
     en: '/services/market-access',
-    es: '/es/market-access',
+    es: '/services/market-access',
   },
   '/healthcare-market-research': {
     en: '/healthcare-market-research',
     de: '/de/healthcare-market-research/germany',
     fr: '/fr/healthcare-market-research',
-    // No Spanish translation of this hub exists; /es/market-research-healthcare
-    // belongs to the /market-research-healthcare group.
+    es: '/es/healthcare-market-research',
     ar: '/ar/healthcare-market-research',
     zh: '/zh/healthcare-market-research',
     ru: '/ru/healthcare-market-research',
+  },
+  '/bionixus-market-research-middle-east': {
+    en: '/bionixus-market-research-middle-east',
+    fr: '/fr/bionixus-market-research-middle-east',
+    zh: '/zh/bionixus-market-research-middle-east',
+  },
+  '/global-websites': {
+    en: '/healthcare-market-research',
+    ar: '/ar/healthcare-market-research',
+    fr: '/fr/healthcare-market-research',
+  },
+  '/quantitative-healthcare-market-research': {
+    en: '/quantitative-healthcare-market-research',
+    fr: '/fr/quantitative-healthcare-market-research',
   },
   '/healthcare-market-research/saudi-arabia': {
     en: '/healthcare-market-research/saudi-arabia',
@@ -237,14 +250,18 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
   '/strategic-portfolio': {
     en: '/strategic-portfolio',
     ar: '/ar/strategic-portfolio',
+    fr: '/fr/strategic-portfolio',
+    zh: '/zh/strategic-portfolio',
   },
   '/insights/top-market-research-companies-egypt-2026': {
     en: '/insights/top-market-research-companies-egypt-2026',
     ar: '/ar/insights/top-market-research-companies-egypt-2026',
+    zh: '/zh/insights/top-market-research-companies-egypt-2026',
   },
   '/blog/top-market-research-companies-egypt-2026': {
     en: '/insights/top-market-research-companies-egypt-2026',
     ar: '/ar/insights/top-market-research-companies-egypt-2026',
+    zh: '/zh/insights/top-market-research-companies-egypt-2026',
   },
   '/insights/top-market-research-companies-brazil-2026': {
     en: '/insights/top-market-research-companies-brazil-2026',
@@ -280,7 +297,7 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
   },
   '/bionixus-ai-chatbots-increase-sales-and-lead-generation': {
     en: '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
-    de: '/de/success-in-startups',
+    de: '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
     fr: '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
     es: '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
     zh: '/bionixus-ai-chatbots-increase-sales-and-lead-generation',

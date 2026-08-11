@@ -130,7 +130,7 @@ function buildRouteTitle(pathname: string, language: Language, fallback: string)
     return makeTitle('Market Research Services | Pharma, Healthcare & B2B | BioNixus');
   }
 
-  if (path === '/contact' || path === '/de/contact' || path === '/fr/contacts' || path === '/ar/contacts') {
+  if (path === '/contact' || path === '/de/contact' || path === '/fr/contact' || path === '/ar/contact') {
     return makeTitle('Contact BioNixus | Research Proposal in 24 Hours');
   }
 
@@ -370,12 +370,12 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
       'Kontakt zu BioNixus: Markt- und Gesundheitsforschung für Pharma in DACH, UK und MENA—Angebote, Feldforschung und evidenzbasierte Strategieberatung.',
     );
   }
-  if (path === '/fr/contacts') {
+  if (path === '/fr/contact') {
     return clampDescription(
       'Contactez BioNixus pour études de marché santé et pharma: couverture Europe, UK et MENA, méthodes quantitatives et qualitatives, et intelligence accès marché.',
     );
   }
-  if (path === '/ar/contacts') {
+  if (path === '/ar/contact') {
     return clampDescription(
       'تواصل مع BioNixus لطلبات أبحاث السوق الصحي والدوائي في السعودية والخليج والمملكة المتحدة وأوروبا—برامج كمية ونوعية ودعم استراتيجي للوصول إلى السوق.',
     );

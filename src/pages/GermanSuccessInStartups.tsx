@@ -18,7 +18,7 @@ const jsonLd = [
   buildBreadcrumbSchema([
     { name: 'Start', href: '/de' },
     { name: 'Blog', href: '/de/blog' },
-    { name: 'Success in Startups', href: '/de/success-in-startups' },
+    { name: 'Success in Startups', href: '/bionixus-ai-chatbots-increase-sales-and-lead-generation' },
   ]),
 ];
 
@@ -28,7 +28,7 @@ export default function GermanSuccessInStartups() {
       <SEOHead
         title="Erfolg in Healthcare Startups | BioNixus"
         description="Praxisnahe Perspektiven für Healthcare- und Pharma-Startups: Marktzugang, Evidenzstrategie und skalierbare Go-to-Market-Modelle."
-        canonical="/de/success-in-startups"
+        canonical="/bionixus-ai-chatbots-increase-sales-and-lead-generation"
         jsonLd={jsonLd}
       />
       <Navbar />
@@ -37,7 +37,7 @@ export default function GermanSuccessInStartups() {
           items={[
             { name: 'Start', href: '/de' },
             { name: 'Blog', href: '/de/blog' },
-            { name: 'Success in Startups', href: '/de/success-in-startups' },
+            { name: 'Success in Startups', href: '/bionixus-ai-chatbots-increase-sales-and-lead-generation' },
           ]}
         />
 

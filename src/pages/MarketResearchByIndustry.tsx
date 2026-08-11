@@ -401,7 +401,7 @@ export default function MarketResearchByIndustry() {
                 {' · '}
                 <Link to="/healthcare-market-research">Healthcare market research</Link>
                 {' · '}
-                <Link to="/global-websites">Global websites directory</Link>
+                <Link to="/healthcare-market-research">Global websites directory</Link>
               </p>
             </div>
             <nav aria-label="Jump to region" className="bx-index-jump-grid">

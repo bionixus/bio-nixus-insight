@@ -15,7 +15,7 @@ export default function ArHealthcareMarketResearchSaudiArabia() {
         { to: '/ar/healthcare-market-research', label: 'أبحاث السوق الصحي في الخليج', primary: true },
         { to: '/healthcare-market-research/saudi-arabia', label: 'Saudi Arabia Healthcare Market Research (English)' },
         { to: '/heor-consulting-saudi-arabia', label: 'استشارات HEOR في المملكة' },
-        { to: '/ar/contacts', label: 'تواصل مع الفريق' },
+        { to: '/ar/contact', label: 'تواصل مع الفريق' },
         { to: '/services', label: 'قائمة خدماتنا' },
       ]}
       bullets={[

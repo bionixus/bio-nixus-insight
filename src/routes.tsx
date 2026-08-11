@@ -75,9 +75,7 @@ import ClinicalDiagnosticsMarketResearch from '@/pages/ClinicalDiagnosticsMarket
 import ClinicalDiagnosticsProposalRequest from '@/pages/ClinicalDiagnosticsProposalRequest';
 import PatientSupportProgramResearchGcc from '@/pages/PatientSupportProgramResearchGcc';
 import BudgetImpactModelSaudiArabia from '@/pages/BudgetImpactModelSaudiArabia';
-import SpanishMarketAccess from '@/pages/SpanishMarketAccess';
 import MarketAccess from '@/pages/MarketAccess';
-import GermanSuccessInStartups from '@/pages/GermanSuccessInStartups';
 import ArabicBlogAlsawdyh from '@/pages/ArabicBlogAlsawdyh';
 import PharmaciesSaudiArabiaMarketing from '@/pages/PharmaciesSaudiArabiaMarketing';
 import {
@@ -602,9 +600,9 @@ export const routes: RouteObject[] = [
   { path: '/ru/blog/:slug', element: suspensePage(<BlogPost />) },
   { path: '/zh/blog', element: <Blog /> },
   { path: '/zh/blog/:slug', element: suspensePage(<BlogPost />) },
-  { path: '/es/market-access', element: <SpanishMarketAccess /> },
+  { path: '/es/market-access', element: <Navigate to="/services/market-access" replace /> },
   { path: '/market-access', element: <MarketAccess /> },
-  { path: '/de/success-in-startups', element: <GermanSuccessInStartups /> },
+  { path: '/de/success-in-startups', element: <Navigate to="/bionixus-ai-chatbots-increase-sales-and-lead-generation" replace /> },
   { path: '/ar/arabic-blog-alsawdyh', element: <ArabicBlogAlsawdyh /> },
   { path: '/ar/blog', element: <Blog /> },
   { path: '/ar/blog/:slug', element: suspensePage(<BlogPost />) },

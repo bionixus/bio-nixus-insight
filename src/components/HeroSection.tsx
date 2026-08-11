@@ -13,7 +13,7 @@ const HeroSection = () => {
   };
   const basePath = languagePaths[language] || '/';
   const contactPath =
-    language === 'fr' ? '/fr/contacts' : language === 'ar' ? '/ar/contacts' : `${basePath === '/' ? '' : basePath}/contact`;
+    language === 'fr' ? '/fr/contact' : language === 'ar' ? '/ar/contact' : `${basePath === '/' ? '' : basePath}/contact`;
 
   return (
     <section

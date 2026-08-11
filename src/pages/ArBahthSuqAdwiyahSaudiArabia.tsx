@@ -156,7 +156,7 @@ export default function ArBahthSuqAdwiyahSaudiArabia() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                to="/ar/contacts"
+                to="/ar/contact"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
               >
                 طلب عرض سعر <ArrowRight className="w-4 h-4 rotate-180" />
@@ -298,7 +298,7 @@ export default function ArBahthSuqAdwiyahSaudiArabia() {
                 { to: '/ar/insights/top-sharaket-abhath-alsuq-alsaudia-2026', label: 'أفضل شركات أبحاث السوق في المملكة', desc: 'دليل 2026 لأبرز شركات أبحاث السوق في المملكة العربية السعودية.' },
                 { to: '/ar/insights/top-sharaket-abhath-sihha-alsaudia-2026', label: 'أفضل شركات أبحاث سوق الصحة', desc: 'دليل 2026 لأبرز شركات أبحاث سوق الرعاية الصحية في المملكة.' },
                 { to: '/saudi-arabia-healthcare-market-report', label: 'Saudi Arabia Healthcare Market Report', desc: 'Market size, Vision 2030, and commercial intelligence.' },
-                { to: '/ar/contacts', label: 'طلب عرض سعر', desc: 'تواصل معنا لمشروع أبحاث مخصص في المملكة العربية السعودية.' },
+                { to: '/ar/contact', label: 'طلب عرض سعر', desc: 'تواصل معنا لمشروع أبحاث مخصص في المملكة العربية السعودية.' },
               ].map((r) => (
                 <Link
                   key={r.to}
@@ -324,7 +324,7 @@ export default function ArBahthSuqAdwiyahSaudiArabia() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                to="/ar/contacts"
+                to="/ar/contact"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors"
               >
                 طلب عرض سعر <ArrowRight className="w-4 h-4 rotate-180" />

@@ -42,7 +42,7 @@ const resources: Resource[] = [
     description: 'Browse BioNixus websites by top markets and region groups, including language routes and global resource entry points.',
     type: 'Navigation Hub',
     icon: <Globe className="w-6 h-6" />,
-    href: '/global-websites',
+    href: '/healthcare-market-research',
   },
   {
     title: 'Pharmaceutical Companies in Saudi Arabia: Industry Guide 2026',

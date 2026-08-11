@@ -1444,7 +1444,7 @@ const GlobalWebsiteCountry = () => {
             <p className="text-muted-foreground mb-8">
               The requested country page is not available. Browse all countries from the global websites hub.
             </p>
-            <Link to="/global-websites" className="inline-flex items-center gap-2 text-primary font-medium hover:underline">
+            <Link to="/healthcare-market-research" className="inline-flex items-center gap-2 text-primary font-medium hover:underline">
               <ArrowLeft className="w-4 h-4" /> Back to Global Websites
             </Link>
           </div>
@@ -1454,7 +1454,7 @@ const GlobalWebsiteCountry = () => {
     );
   }
 
-  const canonicalUrl = `https://www.bionixus.com/global-websites/${country.slug}`;
+  const canonicalUrl = `https://www.bionixus.com/healthcare-market-research/${country.slug}`;
   const isUaePage = country.slug === 'united-arab-emirates';
   const isSaudiPage = country.slug === 'saudi-arabia';
   const isUsPage = country.slug === 'united-states';
@@ -1701,9 +1701,9 @@ const GlobalWebsiteCountry = () => {
               {JSON.stringify({
                 '@context': 'https://schema.org',
                 '@type': 'LocalBusiness',
-                '@id': 'https://www.bionixus.com/global-websites/united-arab-emirates#dubai',
+                '@id': 'https://www.bionixus.com/healthcare-market-research/uae#dubai',
                 name: 'BioNixus — Pharmaceutical & Healthcare Market Research (Dubai)',
-                url: 'https://www.bionixus.com/global-websites/united-arab-emirates',
+                url: 'https://www.bionixus.com/healthcare-market-research/uae',
                 image: 'https://www.bionixus.com/og-image.png',
                 priceRange: '$$$',
                 address: {
@@ -2107,7 +2107,7 @@ const GlobalWebsiteCountry = () => {
       <Navbar />
 
       <main>
-        <GlobalSitesHero backTo={{ to: '/global-websites', label: 'Back to Global Websites' }}>
+        <GlobalSitesHero backTo={{ to: '/healthcare-market-research', label: 'Back to Healthcare Market Research' }}>
             <div className="mb-6 inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-full border border-white/15 bg-white/6 px-4 py-2 text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-gold-light/95 shadow-inner shadow-black/10 md:text-xs">
               <span className="normal-case tracking-normal text-primary-foreground/90">{country.regionName}</span>
               <span className="text-white/35" aria-hidden>
@@ -2828,7 +2828,7 @@ const GlobalWebsiteCountry = () => {
                   <h2 className="text-2xl font-display font-semibold text-foreground mb-4">Related Resources</h2>
                   <div className="grid md:grid-cols-2 gap-3">
                     <Link
-                      to={isUaePage ? '/healthcare-market-research/saudi-arabia' : isSaudiPage ? '/healthcare-market-research/uae' : isUsPage ? '/global-websites/united-kingdom' : isUkPage ? '/global-websites/germany' : isGermanyPage ? '/global-websites/france' : isFrancePage ? '/global-websites/spain' : isSpainPage ? '/global-websites/italy' : isItalyPage ? '/global-websites/kuwait' : isKuwaitPage ? '/global-websites/qatar' : isQatarPage ? '/global-websites/bahrain' : isBahrainPage ? '/global-websites/oman' : '/healthcare-market-research/saudi-arabia'}
+                      to={isUaePage ? '/healthcare-market-research/saudi-arabia' : isSaudiPage ? '/healthcare-market-research/uae' : isUsPage ? '/healthcare-market-research/uk' : isUkPage ? '/healthcare-market-research/germany' : isGermanyPage ? '/healthcare-market-research/france' : isFrancePage ? '/healthcare-market-research/spain' : isSpainPage ? '/healthcare-market-research/italy' : isItalyPage ? '/healthcare-market-research/kuwait' : isKuwaitPage ? '/healthcare-market-research/qatar' : isQatarPage ? '/healthcare-market-research/bahrain' : isBahrainPage ? '/healthcare-market-research/oman' : '/healthcare-market-research/saudi-arabia'}
                       className="text-primary hover:underline"
                     >
                       {isUaePage
@@ -2857,7 +2857,7 @@ const GlobalWebsiteCountry = () => {
                     </Link>
                     {isKuwaitPage || isQatarPage || isBahrainPage || isOmanPage ? (
                       <>
-                        <Link to="/global-websites/qatar" className="text-primary hover:underline">
+                        <Link to="/healthcare-market-research/qatar" className="text-primary hover:underline">
                           Qatar Pharmaceutical Market Research
                         </Link>
                         <Link to="/healthcare-market-research/uae" className="text-primary hover:underline">
@@ -2872,7 +2872,7 @@ const GlobalWebsiteCountry = () => {
                         <Link to="/healthcare-market-research/uae" className="text-primary hover:underline">
                           UAE Pharmaceutical Market Research
                         </Link>
-                        <Link to="/global-websites/qatar" className="text-primary hover:underline">
+                        <Link to="/healthcare-market-research/qatar" className="text-primary hover:underline">
                           Qatar Pharmaceutical Market Research
                         </Link>
                       </>
@@ -2977,7 +2977,7 @@ const GlobalWebsiteCountry = () => {
                     {relatedCountries.map((item) => (
                       <Link
                         key={item.slug}
-                        to={`/global-websites/${item.slug}`}
+                        to={`/healthcare-market-research/${item.slug === 'united-arab-emirates' ? 'uae' : item.slug === 'united-kingdom' ? 'uk' : item.slug}`}
                         className="rounded-lg border border-border bg-card p-4 text-primary hover:border-primary/40 transition-colors"
                       >
                         {item.countryName} pharmaceutical market research
