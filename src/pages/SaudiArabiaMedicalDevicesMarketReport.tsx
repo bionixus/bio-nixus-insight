@@ -63,7 +63,7 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    image: 'https://www.bionixus.com/og-image.png',
+    image: 'https://www.bionixus.com/og-linkedin.png',
     headline: 'Saudi Arabia Medical Devices Market Report 2026: Hospital Consumption and Commercial Intelligence',
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: {
@@ -245,7 +245,7 @@ const SaudiArabiaMedicalDevicesMarketReport = () => {
                 { area: 'Cardiovascular', note: 'Leading application — interventional cardiology growth driven by high CVD prevalence' },
                 { area: 'Diabetes Care', note: 'Glucose monitoring and insulin delivery devices scaling with 4M+ diabetic population' },
                 { area: 'Orthopedics', note: 'Joint replacement and spine surgery volumes growing with aging population and sports medicine' },
-                { area: 'Oncology', note: 'Linear accelerators, biopsy devices, and infusion equipment tracking oncology bed expansion' },
+                { area: 'Oncology', note: 'Linear accelerators, biopsy devices, and infusion equipment tracking oncology bed expansion — see also the Saudi Arabia cancer diagnostics market report for IVD and imaging pathways' },
                 { area: 'Neurology', note: 'Neuromonitoring and neurovascular devices accelerating in academic medical centers' },
                 { area: 'Respiratory', note: 'Ventilators and nebulization equipment; post-COVID infrastructure investments driving growth' },
               ].map(({ area, note }) => (
@@ -373,7 +373,8 @@ const SaudiArabiaMedicalDevicesMarketReport = () => {
               BioNixus runs medical device and MedTech market research across the GCC. Compare the Saudi Arabia device market with our{' '}
               <Link to="/uae-medical-devices-market-report" className="text-primary hover:underline font-medium">UAE medical devices market report</Link>{' '}and{' '}
               <Link to="/qatar-medical-devices-market-report" className="text-primary hover:underline font-medium">Qatar medical devices market report</Link>, set it against the{' '}
-              <Link to="/saudi-arabia-healthcare-market-report" className="text-primary hover:underline font-medium">Saudi Arabia healthcare market report</Link>, or widen the lens with the{' '}
+              <Link to="/saudi-arabia-healthcare-market-report" className="text-primary hover:underline font-medium">Saudi Arabia healthcare market report</Link>, or the{' '}
+              <Link to="/market-reports/saudi-arabia-cancer-diagnostics-market-report" className="text-primary hover:underline font-medium">Saudi Arabia cancer diagnostics market</Link>{' '}report for oncology IVD and imaging pathways, or widen the lens with the{' '}
               <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC medical devices market report</Link>. For methods and global coverage, see the{' '}
               <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}
               <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>.

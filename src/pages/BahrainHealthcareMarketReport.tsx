@@ -88,7 +88,7 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    image: 'https://www.bionixus.com/og-image.png',
+    image: 'https://www.bionixus.com/og-linkedin.png',
     headline: 'Bahrain Healthcare Market Report 2026: Pharma, NHRA Registration, and GCC Market Access',
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: {

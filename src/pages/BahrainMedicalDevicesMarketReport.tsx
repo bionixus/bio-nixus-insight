@@ -78,7 +78,7 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    image: 'https://www.bionixus.com/og-image.png',
+    image: 'https://www.bionixus.com/og-linkedin.png',
     headline: 'Bahrain Medical Devices Market Report 2026: NHRA Registration and GCC Sequential Entry Strategy',
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: {

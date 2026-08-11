@@ -63,7 +63,7 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    image: 'https://www.bionixus.com/og-image.png',
+    image: 'https://www.bionixus.com/og-linkedin.png',
     headline: 'Egypt Healthcare Market Report 2026: Pharma, UHI, EDA Registration, and Commercial Intelligence',
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: {

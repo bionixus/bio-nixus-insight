@@ -223,6 +223,8 @@ import EsTopHealthcareMarketResearchCompaniesArgentina2026 from '@/pages/EsTopHe
 import TopOncologyMarketResearchCompanies2026 from '@/pages/TopOncologyMarketResearchCompanies2026';
 import BestObesityWeightManagementMarketResearchFirms2026 from '@/pages/BestObesityWeightManagementMarketResearchFirms2026';
 import LeadingBiologicsBiosimilarsMarketResearchCompanies2026 from '@/pages/LeadingBiologicsBiosimilarsMarketResearchCompanies2026';
+import SaudiArabiaBiosimilarMarketSizeMethodology2026 from '@/pages/SaudiArabiaBiosimilarMarketSizeMethodology2026';
+import SaudiArabiaCancerDiagnosticsMarketSizeMethodology2026 from '@/pages/SaudiArabiaCancerDiagnosticsMarketSizeMethodology2026';
 import BestRareDiseaseMarketResearchCompanies2026 from '@/pages/BestRareDiseaseMarketResearchCompanies2026';
 import TopConsumerHealthcareMarketResearchFirms2026 from '@/pages/TopConsumerHealthcareMarketResearchFirms2026';
 // --- ported SEO page imports ---
@@ -421,7 +423,7 @@ export const routes: RouteObject[] = [
   { path: '/pt/market-research-healthcare', element: <MarketResearchHealthcare /> },
   { path: '/ru/market-research-healthcare', element: <MarketResearchHealthcare /> },
   { path: '/qualitative-market-research', element: <QualitativeMarketResearch /> },
-  { path: '/bionixus-market-research-middle-east', element: <BionixusMarketResearchMiddleEast /> },
+  { path: '/bionixus-market-research-middle-east', element: suspensePage(<BionixusMarketResearchMiddleEast />) },
   { path: '/fr/bionixus-market-research-middle-east', element: <FrBionixusMarketResearchMiddleEast /> },
   { path: '/zh/bionixus-market-research-middle-east', element: <ZhBionixusMarketResearchMiddleEast /> },
   { path: '/bionixus-vs-iqvia-mena', element: <BionixusVsIqviaMena /> },
@@ -541,6 +543,8 @@ export const routes: RouteObject[] = [
   { path: '/insights/top-obesity-market-research-companies-2026', element: <Navigate to="/insights/best-obesity-weight-management-market-research-firms-2026" replace /> },
   { path: '/insights/best-obesity-weight-management-market-research-firms-2026', element: <BestObesityWeightManagementMarketResearchFirms2026 /> },
   { path: '/insights/leading-biologics-biosimilars-market-research-companies-2026', element: <LeadingBiologicsBiosimilarsMarketResearchCompanies2026 /> },
+  { path: '/insights/saudi-arabia-biosimilar-market-size-methodology-2026', element: <SaudiArabiaBiosimilarMarketSizeMethodology2026 /> },
+  { path: '/insights/saudi-arabia-cancer-diagnostics-market-size-methodology-2026', element: <SaudiArabiaCancerDiagnosticsMarketSizeMethodology2026 /> },
   { path: '/insights/best-rare-disease-market-research-companies-2026', element: <BestRareDiseaseMarketResearchCompanies2026 /> },
   { path: '/insights/top-consumer-healthcare-market-research-firms-2026', element: <TopConsumerHealthcareMarketResearchFirms2026 /> },
   { path: '/pharmaceutical-companies-egypt', element: suspensePage(<EgyptPharmaCompanies />) },
@@ -554,7 +558,7 @@ export const routes: RouteObject[] = [
   { path: '/uae-healthcare-market-report', element: suspensePage(<UaeHealthcareMarketReport />) },
   { path: '/uae-medical-devices-market-report', element: suspensePage(<UaeMedicalDevicesMarketReport />) },
   { path: '/gcc-anesthesia-surgical-market-report', element: suspensePage(<GccAnesthesiaSurgicalMarket />) },
-  { path: '/gcc-medical-devices-market-report', element: <GccMedicalDevicesMarketReport /> },
+  { path: '/gcc-medical-devices-market-report', element: suspensePage(<GccMedicalDevicesMarketReport />) },
   { path: '/kuwait-medical-devices-market-report', element: suspensePage(<KuwaitMedicalDevicesMarketReport />) },
   { path: '/kuwait-healthcare-market-report', element: suspensePage(<KuwaitHealthcareMarketReport />) },
   { path: '/qatar-medical-devices-market-report', element: suspensePage(<QatarMedicalDevicesMarketReport />) },

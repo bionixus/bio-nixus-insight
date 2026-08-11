@@ -4,8 +4,8 @@ import type { HospitalEntry } from '@/data/marketIntelligence/types';
 import {
   ReportSectionVisual,
   ReportSourcesBlock,
-  ReportTherapySpendChart,
 } from '@/components/report-premium';
+import { ReportTherapySpendChartLazy } from '@/components/report-premium/ReportTherapySpendChartLazy';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 type MarketIntelligenceSectionsProps = {
@@ -195,7 +195,7 @@ export function MarketIntelligenceSections({
 
             <div className="grid lg:grid-cols-2 gap-6 mb-6">
               <div className="rounded-xl border border-border/70 bg-card p-4 shadow-sm sr sr-up">
-                <ReportTherapySpendChart segments={data.therapySegments ?? []} countryName={countryName} />
+                <ReportTherapySpendChartLazy segments={data.therapySegments ?? []} countryName={countryName} />
               </div>
               <div className="hidden lg:block sr sr-right">
                 <ReportSectionVisual

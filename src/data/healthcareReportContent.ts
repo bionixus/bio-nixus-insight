@@ -37,6 +37,16 @@ export const THERAPY_AREA_CONTENT: Record<string, TherapyAreaContent> = {
     menaMarketDynamics:
       'GCC and Egyptian oncology corridors concentrate infusion capacity inside national cancer institutes, armed forces medical complexes, multinational joint‑venture hospitals (Cleveland Clinic Abu Dhabi, Johns Hopkins Aramco, King Faisal Specialist & Research Hospital networks), alongside Hamad Medical Corporation’s National Center for Cancer Care and Sidra Medicine in Qatar.\n\nPayer adjudication intertwines oncology with radiology budgeting, implying that radiopharmaceutical and theranostic diffusion will lag innovators unless centralized procurement tenders secure vial pooling. Genome initiatives (Saudi Genome Program) accelerate rare tumour profiling but create pricing tension for orphanized targeted therapies.',
   },
+  'cancer-diagnostics': {
+    name: 'Cancer Diagnostics',
+    slug: 'cancer-diagnostics',
+    overviewParagraph:
+      'Cancer diagnostics spans the technologies that detect, characterise, and monitor malignancy before and during therapy: imaging (MRI, CT, PET, mammography, ultrasound), biopsy and cytology, and in-vitro diagnostics including IHC, PCR, NGS, flow cytometry, and immunoassay biomarker panels. Commercial value sits in both capital instruments and recurring consumables—kits, reagents, antibodies, and probes—so forecasts must separate one-time imaging/pathology installs from reagent pull-through tied to case volume.\n\nGlobally, growth is driven by earlier screening programmes, companion-diagnostic requirements for targeted oncology drugs, liquid-biopsy and multi-gene panel adoption, and AI-assisted imaging/pathology workflows. Published country totals diverge sharply when publishers mix all-channel imaging plus IVD versus hospital oncology-pathway diagnostics alone.',
+    clinicalLandscape:
+      'Clinical pathways link tumour boards to molecular pathology: PD-L1 IHC and NGS panels gate immuno-oncology and kinase-inhibitor starts; HER2, BRCA, EGFR, ALK, and MSI testing decide sequencing; staging CT/PET and mammography programmes set upstream case mix. Biopsy quality, pathology turnaround, and cold-chain for specialised assays often delay therapy more than formulary listing. Competitive dynamics therefore hinge on SFDA device/IVD registration, hospital capital tenders, reagent framework awards, laboratory accreditation, and centre-of-excellence concentration—not on drug list price alone.',
+    menaMarketDynamics:
+      'In Saudi Arabia and the wider GCC, Vision 2030 cancer-centre build-outs, KFSH&RC and MOH/NGHA tertiary networks, and national genome initiatives concentrate advanced NGS and imaging capacity in Riyadh, Jeddah, and Dammam corridors. NUPCO capital and reagent procurement reshapes hospital access; companion-diagnostic turnaround outside major hubs still gates targeted-therapy initiation. BioNixus programmes measure laboratory and imaging capacity alongside oncologist adoption so diagnostics and drug forecasts stay consistent.',
+  },
   'diabetes-metabolic': {
     name: 'Diabetes & Metabolic',
     slug: 'diabetes-metabolic',

@@ -75,7 +75,7 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    image: 'https://www.bionixus.com/og-image.png',
+    image: 'https://www.bionixus.com/og-linkedin.png',
     headline: 'GCC Pharmaceutical Market Report 2026: Sales, Consumption, and Strategic Intelligence',
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: {
@@ -586,8 +586,12 @@ const GccPharmaMarketReport2026 = () => {
                   Biosimilar adoption is accelerating in Saudi Arabia and UAE following 14 SFDA approvals
                   between 2023 and 2025. BioNixus consumption data tracks biosimilar uptake at hospital
                   department level — adoption by institution, department, and indication — supporting both
-                  launch planning and reference biologic defence at account resolution. Teams planning Saudi
-                  entry should read BioNixus&apos;s{' '}
+                  launch planning and reference biologic defence at account resolution. For sizing and NUPCO
+                  framework context, start with the{' '}
+                  <Link to="/market-reports/saudi-arabia-biosimilars-market-report" className="text-primary font-semibold underline underline-offset-2 hover:no-underline">
+                    Saudi Arabia biosimilar market
+                  </Link>{' '}
+                  report; teams planning Saudi entry should also read BioNixus&apos;s{' '}
                   <Link to="/biosimilar-market-entry-saudi-arabia" className="text-primary font-semibold underline underline-offset-2 hover:no-underline">
                     biosimilar market entry Saudi Arabia strategy guide
                   </Link>

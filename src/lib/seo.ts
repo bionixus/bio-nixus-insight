@@ -4,10 +4,23 @@ function getBaseUrl() {
   return 'https://www.bionixus.com';
 }
 
-/** Social share image (Facebook, Twitter, LinkedIn): 1200×630, full logo visible. */
+/** Social share image (Open Graph / Facebook / Twitter): 1200×630, full BioNixus logo. */
 export const defaultOgImageUrl = 'https://www.bionixus.com/og-image.png';
 export const defaultOgImageWidth = 1200;
 export const defaultOgImageHeight = 630;
+
+/**
+ * LinkedIn link-preview image (1.91:1). Prefer this for market reports —
+ * LinkedIn often ignores SVG /api/og-card URLs.
+ */
+export const linkedInOgImageUrl = 'https://www.bionixus.com/og-linkedin.png';
+export const linkedInOgImageWidth = 1200;
+export const linkedInOgImageHeight = 627;
+
+/** Market report share image — BioNixus logo at LinkedIn-recommended dimensions. */
+export const marketReportOgImageUrl = linkedInOgImageUrl;
+export const marketReportOgImageWidth = linkedInOgImageWidth;
+export const marketReportOgImageHeight = linkedInOgImageHeight;
 
 /** Alt text for the default OG image. */
 export const defaultOgImageAlt =

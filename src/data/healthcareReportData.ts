@@ -36,6 +36,7 @@ export const MARKET_STANDALONE_HEALTH_REPORT: Record<string, string> = {
 
 type TherapyKey =
   | 'oncology'
+  | 'cancer-diagnostics'
   | 'diabetes-metabolic'
   | 'cardiovascular'
   | 'immunology-biologics'
@@ -60,6 +61,7 @@ type SpecRow = {
 function therapyMeta(th: TherapyKey) {
   const names: Record<TherapyKey, string> = {
     oncology: 'Oncology',
+    'cancer-diagnostics': 'Cancer Diagnostics',
     'diabetes-metabolic': 'Diabetes & Metabolic',
     cardiovascular: 'Cardiovascular',
     'immunology-biologics': 'Immunology & Biologics',
@@ -124,6 +126,7 @@ function row(
 const SPECS: SpecRow[] = [
   row('gcc-oncology-market-report', 'gcc', 'GCC', 'GCC', 'oncology', 'radiopharm throughput, genome programme adjacency uplift, Hajj oncology surge preparedness, tertiary expansion megaprojects, multinational parallel submission harmonization stress tests.', '[GCC pharmaceutical market outlook 2026](/gcc-pharma-market-report-2026) • [Healthcare research hub](/healthcare-market-research) • [Oncology therapy programmes](/healthcare-market-research/therapy/oncology) • [GCC market access dossier rehearsals](/gcc-market-access-guide).'),
   row('saudi-arabia-oncology-market-report', 'saudi-arabia', 'Saudi Arabia', 'GCC', 'oncology', 'NUPCO award cyclicalities, Vision 2030 cancer centre rollout, Saudi Genome tumour board adoption, insured expansion steering PA intensity.', '[Saudi Arabia healthcare outlook](/saudi-arabia-healthcare-market-report) • [GCC pharma briefing](/gcc-pharma-market-report-2026) • [KOL mapping oncology Saudi](/kol-mapping-saudi-arabia-oncology).'),
+  row('saudi-arabia-cancer-diagnostics-market-report', 'saudi-arabia', 'Saudi Arabia', 'GCC', 'cancer-diagnostics', 'SFDA IVD and imaging device pathways, NUPCO capital and reagent tenders, KFSH&RC and Vision 2030 cancer-centre build-out, companion diagnostic and NGS turnaround gating targeted therapy starts.', '[Saudi Arabia oncology drug report](/market-reports/saudi-arabia-oncology-market-report) • [Saudi medical devices](/saudi-arabia-medical-devices-market-report) • [SFDA market access](/sfda-market-access-strategy-saudi-arabia).'),
   row('uae-oncology-market-report', 'uae', 'United Arab Emirates', 'GCC', 'oncology', 'dual DHA versus DOH PA pathways, infusion chair premium ward stratification, medical tourism oncology referrals, multinational reinsurance behavioural carve-outs.', '[UAE healthcare report](/uae-healthcare-market-report) • [Pharma research Dubai](/pharmaceutical-market-research-dubai) • [GCC pharma outlook](/gcc-pharma-market-report-2026).'),
   row('kuwait-oncology-market-report', 'kuwait', 'Kuwait', 'GCC', 'oncology', 'MOH oncology centre queues, dialysis overlapping cardio‑renal trial eligibility, reinsurer stop‑loss biologic carve-outs episodic resets.', '[Kuwait healthcare market report](/kuwait-healthcare-market-report) • [GCC pharma outlook](/gcc-pharma-market-report-2026) • [Kuwait market access programmes](/kuwait-market-access-research).'),
   row('qatar-oncology-market-report', 'qatar', 'Qatar', 'GCC', 'oncology', 'Sidra genomics interplay, Hamad tumour board dossier rehearsals, sovereign health security stockpiling analogue influences on award cadence.', '[Qatar healthcare market report](/qatar-healthcare-market-report) • [Qatar payer access roadmap](/qatar-market-access-research) • [GCC pharma outlook](/gcc-pharma-market-report-2026).'),

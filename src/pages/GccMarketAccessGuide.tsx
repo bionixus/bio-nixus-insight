@@ -574,6 +574,9 @@ const GccMarketAccessGuide = () => {
               <Link to="/healthcare-market-research/oman" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 Healthcare market research Oman and MOH pathway insights
               </Link>
+              <Link to="/market-reports/saudi-arabia-biosimilars-market-report" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                Saudi Arabia biosimilar market report (size, SFDA, NUPCO)
+              </Link>
               <Link to="/biosimilar-market-entry-saudi-arabia" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 Biosimilar market entry in Saudi Arabia strategy guide (2026)
               </Link>

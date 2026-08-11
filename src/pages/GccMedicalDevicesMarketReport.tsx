@@ -17,6 +17,12 @@ import {
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
 import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
+import {
+  marketReportOgImageUrl,
+  marketReportOgImageWidth,
+  marketReportOgImageHeight,
+  defaultOgImageAlt,
+} from '@/lib/seo';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -64,7 +70,7 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    image: 'https://www.bionixus.com/og-image.png',
+    image: [marketReportOgImageUrl],
     headline: 'GCC Medical Devices Market Report 2026: Size, Segments, and Hospital Procurement Intelligence',
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: {
@@ -74,7 +80,7 @@ const jsonLd = [
       logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
     },
     datePublished: '2026-05-01',
-    dateModified: '2026-06-22',
+    dateModified: '2026-08-11',
     mainEntityOfPage: 'https://www.bionixus.com/gcc-medical-devices-market-report',
   },
   {
@@ -93,7 +99,7 @@ const jsonLd = [
     countryName: "GCC",
     marketSlug: "gcc",
     publishedDate: "2026-05-01",
-    modifiedDate: "2026-05-27",
+    modifiedDate: "2026-08-11",
   })
 ];
 
@@ -115,6 +121,11 @@ const GccMedicalDevicesMarketReport = () => {
         title="GCC Medical Devices Market 2026: Size, Share & Country Forecasts"
         description="GCC medical device market report 2026 — Saudi, UAE, Qatar, Kuwait, Oman & Bahrain market sizes, regulations and forecasts. By Bionixus."
         canonical="https://www.bionixus.com/gcc-medical-devices-market-report"
+        ogType="article"
+        ogImage={marketReportOgImageUrl}
+        ogImageWidth={marketReportOgImageWidth}
+        ogImageHeight={marketReportOgImageHeight}
+        ogImageAlt={defaultOgImageAlt}
         jsonLd={jsonLd}
       />
       <ReportReadingProgress progressId="report-rp-gcc-medical-devices-market-report" />

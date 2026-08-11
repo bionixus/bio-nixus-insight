@@ -455,11 +455,15 @@ export default function GccPharmaceuticalMarketResearch() {
                 <Link to="/gcc-market-access-guide" className="text-primary font-medium hover:underline">
                   GCC market access guide
                 </Link>{' '}
-                and{' '}
+                and the{' '}
+                <Link to="/market-reports/saudi-arabia-biosimilars-market-report" className="text-primary font-medium hover:underline">
+                  Saudi Arabia biosimilar market
+                </Link>{' '}
+                report plus the{' '}
                 <Link to="/biosimilar-market-entry-saudi-arabia" className="text-primary font-medium hover:underline">
                   biosimilar market entry Saudi Arabia
                 </Link>{' '}
-                resources — giving launch teams a single evidence thread from registration through tender defence.
+                strategy guide — giving launch teams a single evidence thread from sizing through tender defence.
               </p>
               <p>
                 For combined pharma–device accounts, hospital procurement intelligence on prefilled syringes, infusion

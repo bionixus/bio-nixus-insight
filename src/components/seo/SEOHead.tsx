@@ -1,14 +1,30 @@
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
-import { getHreflangLinks, getGeoMeta } from '@/lib/seo';
+import {
+  getHreflangLinks,
+  getGeoMeta,
+  defaultOgImageUrl,
+  defaultOgImageWidth,
+  defaultOgImageHeight,
+  defaultOgImageAlt,
+  marketReportOgImageUrl,
+  marketReportOgImageWidth,
+  marketReportOgImageHeight,
+  getOgLocale,
+  getOgLocaleAlternates,
+} from '@/lib/seo';
 import { buildSeoDescription, normalizeSeoTitle } from '@/lib/seo-meta';
 import { getCtrSeo } from '@/data/ctr-seo-overrides';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface SEOHeadProps {
   title: string;
   description: string;
   canonical: string;
   ogImage?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
+  ogImageAlt?: string;
   ogType?: string;
   noindex?: boolean;
   jsonLd?: object[];
@@ -16,17 +32,28 @@ interface SEOHeadProps {
   exactMeta?: boolean;
 }
 
+function isMarketReportPath(pathname: string): boolean {
+  const path = (pathname || '/').split('?')[0].split('#')[0] || '/';
+  if (path.startsWith('/market-reports')) return true;
+  // Standalone market / therapy report URLs (e.g. …-market-report, …-vaccine-report)
+  return /-(?:market|vaccine)-report(?:\/|$)/.test(path) || /market-report/.test(path);
+}
+
 export function SEOHead({
   title,
   description,
   canonical: _canonical,
   ogImage,
+  ogImageWidth,
+  ogImageHeight,
+  ogImageAlt,
   ogType = 'website',
   noindex = false,
   jsonLd = [],
   exactMeta = false,
 }: SEOHeadProps) {
   const { pathname } = useLocation();
+  const { language } = useLanguage();
   const ctr = getCtrSeo(pathname);
   const safeTitle = ctr?.title
     ?? (exactMeta ? String(title || '').trim() || 'BioNixus' : normalizeSeoTitle(title, 'BioNixus'));
@@ -42,10 +69,25 @@ export function SEOHead({
     return clean === '/' ? '/' : clean.replace(/\/+$/, '');
   })();
   const canonicalUrl = `https://www.bionixus.com${canonicalPath}`;
+  const reportShare = isMarketReportPath(canonicalPath);
   const resolvedOgImage =
-    ogImage ?? `https://www.bionixus.com/api/og-card?path=${encodeURIComponent(canonicalPath)}`;
+    ogImage
+    ?? (reportShare ? marketReportOgImageUrl : defaultOgImageUrl);
+  const resolvedOgWidth =
+    ogImageWidth
+    ?? (resolvedOgImage === marketReportOgImageUrl || reportShare
+      ? marketReportOgImageWidth
+      : defaultOgImageWidth);
+  const resolvedOgHeight =
+    ogImageHeight
+    ?? (resolvedOgImage === marketReportOgImageUrl || reportShare
+      ? marketReportOgImageHeight
+      : defaultOgImageHeight);
+  const resolvedOgAlt = ogImageAlt ?? defaultOgImageAlt;
   const hreflangLinks = getHreflangLinks(pathname);
   const geoMeta = getGeoMeta(pathname);
+  const ogLocale = getOgLocale(language);
+  const ogLocaleAlternates = getOgLocaleAlternates(language);
 
   return (
     <Helmet>
@@ -66,12 +108,21 @@ export function SEOHead({
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:type" content={ogType} />
       <meta property="og:image" content={resolvedOgImage} />
+      <meta property="og:image:width" content={String(resolvedOgWidth)} />
+      <meta property="og:image:height" content={String(resolvedOgHeight)} />
+      <meta property="og:image:alt" content={resolvedOgAlt} />
       <meta property="og:site_name" content="BioNixus" />
+      <meta property="og:locale" content={ogLocale} />
+      {ogLocaleAlternates.map((alt) => (
+        <meta key={alt} property="og:locale:alternate" content={alt} />
+      ))}
 
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@BioNixus" />
       <meta name="twitter:title" content={safeTitle} />
       <meta name="twitter:description" content={safeDescription} />
       <meta name="twitter:image" content={resolvedOgImage} />
+      <meta name="twitter:image:alt" content={resolvedOgAlt} />
 
       {jsonLd.map((schema, index) => (
         <script key={`json-ld-${index}`} type="application/ld+json">
@@ -81,4 +132,3 @@ export function SEOHead({
     </Helmet>
   );
 }
-

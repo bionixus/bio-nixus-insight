@@ -2049,12 +2049,6 @@
     <priority>0.90</priority>
   </url>
 <url>
-    <loc>https://www.bionixus.com/healthcare-market-research-germany</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
-  </url>
-<url>
     <loc>https://www.bionixus.com/healthcare-market-research-in-saudi-arabia</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
@@ -2451,6 +2445,12 @@
     <priority>0.75</priority>
   </url>
 <url>
+    <loc>https://www.bionixus.com/healthcare-market-research/therapy/cancer-diagnostics</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+<url>
     <loc>https://www.bionixus.com/healthcare-market-research/therapy/cardiology</loc>
     <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
@@ -2611,6 +2611,18 @@
     <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
+  </url>
+<url>
+    <loc>https://www.bionixus.com/insights/saudi-arabia-biosimilar-market-size-methodology-2026</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+<url>
+    <loc>https://www.bionixus.com/insights/saudi-arabia-cancer-diagnostics-market-size-methodology-2026</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
 <url>
     <loc>https://www.bionixus.com/insights/top-automotive-market-research-companies-bahrain-2026</loc>
@@ -5076,6 +5088,12 @@
     <priority>0.87</priority>
   </url>
 <url>
+    <loc>https://www.bionixus.com/market-reports/saudi-arabia-cancer-diagnostics-market-report</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.87</priority>
+  </url>
+<url>
     <loc>https://www.bionixus.com/market-reports/saudi-arabia-cardiovascular-market-report</loc>
     <lastmod>2026-06-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -5174,6 +5192,12 @@
 <url>
     <loc>https://www.bionixus.com/market-reports/therapy/biosimilars</loc>
     <lastmod>2026-06-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+  </url>
+<url>
+    <loc>https://www.bionixus.com/market-reports/therapy/cancer-diagnostics</loc>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.88</priority>
   </url>

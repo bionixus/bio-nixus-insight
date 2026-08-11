@@ -208,6 +208,8 @@ export default function HealthcareMarketResearchInSaudiArabia() {
                   area: 'Biosimilars',
                   detail:
                     "Biosimilar substitution attitudes, MoH tender dynamics, and physician switching intent research across Saudi Arabia's growing biosimilar market.",
+                  href: '/market-reports/saudi-arabia-biosimilars-market-report',
+                  linkLabel: 'Saudi Arabia biosimilar market',
                 },
                 {
                   area: 'Pharmacovigilance',
@@ -228,6 +230,8 @@ export default function HealthcareMarketResearchInSaudiArabia() {
                   area: 'Oncology & hematology',
                   detail:
                     'KOL mapping, prescribing pattern research, and tumor board dynamics across King Faisal Medical Complex, King Fahad Medical City, and Jeddah oncology centers.',
+                  href: '/market-reports/saudi-arabia-cancer-diagnostics-market-report',
+                  linkLabel: 'Saudi Arabia cancer diagnostics market',
                 },
                 {
                   area: 'Medical devices & diagnostics',
@@ -238,6 +242,13 @@ export default function HealthcareMarketResearchInSaudiArabia() {
                 <article key={item.area} className="rounded-xl border border-border bg-card p-5">
                   <h3 className="text-base font-semibold text-foreground mb-2">{item.area}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{item.detail}</p>
+                  {'href' in item && item.href ? (
+                    <p className="mt-3 text-sm">
+                      <Link to={item.href} className="text-primary font-medium hover:underline">
+                        {item.linkLabel}
+                      </Link>
+                    </p>
+                  ) : null}
                 </article>
               ))}
             </div>
@@ -495,6 +506,7 @@ export default function HealthcareMarketResearchInSaudiArabia() {
                   to: '/insights/top-healthcare-market-research-companies-saudi-arabia-2026',
                   label: 'Top healthcare market research companies in Saudi Arabia (2026)',
                 },
+                { to: '/market-reports/saudi-arabia-cancer-diagnostics-market-report', label: 'Saudi Arabia cancer diagnostics market' },
                 { to: '/kol-mapping-saudi-arabia-oncology', label: 'KOL mapping Saudi Arabia — oncology' },
               ].map((link) => (
                 <Link

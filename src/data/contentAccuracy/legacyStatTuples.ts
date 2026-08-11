@@ -96,6 +96,9 @@ export const LEGACY_STAT_TUPLES: Record<string, StatTuple> = {
   "saudi-arabia:immunology-biologics": ["~$986M","Market size 2026","~$1.61B","Forecast 2030","12.6%","CAGR 2026–2030"] as StatTuple,
   "saudi-arabia:neurology-cns": ["~$448M","Market size 2026","~$706M","Forecast 2030","13.6%","CAGR 2026–2030"] as StatTuple,
   "saudi-arabia:oncology": ["~$1.28B","Market size 2026","~$2.06B","Forecast 2030","10.9%","CAGR 2026–2030"] as StatTuple,
+  // Triangulated hospital + oncology-lab diagnostics band (IVD + imaging + biopsy in oncology pathways)
+  // vs Grand View (~USD 938M 2023 → ~USD 1.39B 2030 @ 5.8%) and IMARC broader total (USD 2.1B 2025 → USD 4.1B 2034 @ 7.7%).
+  "saudi-arabia:cancer-diagnostics": ["~$1.25B","Market size 2026","~$1.75B","Forecast 2030","~7.0%","CAGR 2026–2030"] as StatTuple,
   "saudi-arabia:rare-diseases": ["~$392M","Market size 2026","~$685M","Forecast 2030","17.9%","CAGR 2026–2030"] as StatTuple,
   "saudi-arabia:respiratory": ["~$698M","Market size 2026","~$1.06B","Forecast 2030","13.6%","CAGR 2026–2030"] as StatTuple,
   "saudi-arabia:vaccines": ["~$248M","Market size 2026","~$438M","Forecast 2030","17.2%","CAGR 2026–2030"] as StatTuple,

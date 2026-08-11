@@ -81,8 +81,12 @@ function routeProvidesOwnDocumentHead(pathname: string): boolean {
   if (new RegExp(`^\\/insights\\/top-[\\w-]+-market-research-companies-(${MATRIX_COUNTRY_PATH_PATTERN})-2026$`).test(path)) return true;
   if (new RegExp(`^\\/(${MATRIX_COUNTRY_PATH_PATTERN})-[\\w-]+-market-research$`).test(path)) return true;
 
-  /** SEOHead-based market report hub and category index pages. */
-  if (path === '/market-reports' || path.startsWith('/market-reports/therapy/') || path.startsWith('/market-reports/country/')) {
+  /** SEOHead-based market report hub, category indexes, and report detail pages. */
+  if (path === '/market-reports' || path.startsWith('/market-reports/')) {
+    return true;
+  }
+  /** Standalone country / therapy market report routes (e.g. /gcc-medical-devices-market-report). */
+  if (/market-report/.test(path) || /-(?:market|vaccine)-report(?:\/|$)/.test(path)) {
     return true;
   }
 

@@ -369,6 +369,8 @@ const staticPages = [
   { path: '/insights/top-oncology-market-research-companies-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/best-obesity-weight-management-market-research-firms-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/leading-biologics-biosimilars-market-research-companies-2026', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/saudi-arabia-biosimilar-market-size-methodology-2026', priority: '0.85', changefreq: 'monthly' },
+  { path: '/insights/saudi-arabia-cancer-diagnostics-market-size-methodology-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/insights/best-rare-disease-market-research-companies-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-consumer-healthcare-market-research-firms-2026', priority: '0.90', changefreq: 'monthly' },
   // Global / regional GEO listicles (distinct intent — no overlap with industry-matrix country pages).

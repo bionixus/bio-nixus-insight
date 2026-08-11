@@ -565,7 +565,11 @@ export default function CountryPage() {
                 </Link>
                 , the{' '}
                 <Link to="/market-reports/saudi-arabia-biosimilars-market-report" className="text-primary underline font-medium">
-                  Saudi biosimilars market report
+                  Saudi Arabia biosimilar market
+                </Link>
+                , the{' '}
+                <Link to="/market-reports/saudi-arabia-cancer-diagnostics-market-report" className="text-primary underline font-medium">
+                  Saudi Arabia cancer diagnostics market
                 </Link>
                 , and the{' '}
                 <Link to="/gcc-pharma-market-report-2026" className="text-primary underline font-medium">

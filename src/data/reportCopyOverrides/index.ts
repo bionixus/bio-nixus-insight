@@ -16,6 +16,7 @@ import { UAE_RESPIRATORY_COPY } from '@/data/reportCopyOverrides/uaeRespiratoryM
 import { UAE_RARE_DISEASES_COPY } from '@/data/reportCopyOverrides/uaeRareDiseasesMarketReport';
 import { SAUDI_ARABIA_NEUROLOGY_CNS_COPY } from '@/data/reportCopyOverrides/saudiArabiaNeurologyCnsMarketReport';
 import { SAUDI_ARABIA_BIOSIMILARS_COPY } from '@/data/reportCopyOverrides/saudiArabiaBiosimilarsMarketReport';
+import { SAUDI_ARABIA_CANCER_DIAGNOSTICS_COPY } from '@/data/reportCopyOverrides/saudiArabiaCancerDiagnosticsMarketReport';
 import { UAE_NEUROLOGY_CNS_COPY } from '@/data/reportCopyOverrides/uaeNeurologyCnsMarketReport';
 import { UAE_BIOSIMILARS_COPY } from '@/data/reportCopyOverrides/uaeBiosimilarsMarketReport';
 import { KUWAIT_BIOSIMILARS_COPY } from '@/data/reportCopyOverrides/kuwaitBiosimilarsMarketReport';
@@ -49,6 +50,7 @@ const OVERRIDES: OverrideCopy[] = [
   UAE_RARE_DISEASES_COPY,
   SAUDI_ARABIA_NEUROLOGY_CNS_COPY,
   SAUDI_ARABIA_BIOSIMILARS_COPY,
+  SAUDI_ARABIA_CANCER_DIAGNOSTICS_COPY,
   UAE_NEUROLOGY_CNS_COPY,
   UAE_BIOSIMILARS_COPY,
   KUWAIT_BIOSIMILARS_COPY,

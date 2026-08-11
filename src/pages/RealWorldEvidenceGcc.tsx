@@ -18,6 +18,7 @@ export default function RealWorldEvidenceGcc() {
         { to: '/healthcare-market-research', label: 'Healthcare market research hub', primary: true },
         { to: '/healthcare-market-research-agency-gcc', label: 'Healthcare market research agency GCC', primary: true },
         { to: '/patient-support-program-research-gcc', label: 'Patient support program research GCC' },
+        { to: '/market-reports/saudi-arabia-biosimilars-market-report', label: 'Saudi Arabia biosimilar market' },
         { to: '/biosimilar-market-entry-saudi-arabia', label: 'Biosimilar market entry Saudi Arabia' },
         { to: '/heor-consulting-saudi-arabia', label: 'HEOR consulting in Saudi Arabia' },
         { to: '/gcc-market-access-guide', label: 'GCC market access guide' },

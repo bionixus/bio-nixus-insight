@@ -53,7 +53,7 @@ export const GCC_THERAPY_ENRICHMENT: Record<string, GccTherapyEnrichment> = {
     executiveParagraphs: [
       'Gulf immunology spend is not one market: Saudi hospital tenders can move adalimumab net price across hundreds of MOH-linked facilities in a single award cycle, while Dubai and Abu Dhabi insurers maintain separate prior-authorization templates for IL-17, IL-23, and oral JAK classes. Dermatology, rheumatology, and gastroenterology often compete for the same biologic budget even when your asset is registered for a single label.',
       'BioNixus models that fragmentation with account-level procurement context where available, specialist quantitative adoption work, and payer interviews that separate “listed on formulary” from “paid for in practice.” That is the gap between audit-style panel data and intelligence your access and medical teams can execute.',
-      'For country drill-down, pair this page with the Saudi Arabia and UAE immunology market reports; for biosimilar defence, use the GCC biosimilars report and the Saudi biosimilar entry playbook when NUPCO timing drives your revenue case.',
+      'For country drill-down, pair this page with the Saudi Arabia and UAE immunology market reports; for biosimilar defence, use the GCC biosimilars report and the Saudi Arabia biosimilar market report when NUPCO timing drives your revenue case.',
     ],
     tenderHeading: 'Tenders, prior authorization, and infusion economics',
     tenderParagraphs: [

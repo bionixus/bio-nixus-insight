@@ -602,6 +602,7 @@ export default function LeadingBiologicsBiosimilarsMarketResearchCompanies2026()
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
                 { to: '/healthcare-market-research/therapy/biologics', label: 'Biologics Therapy Research', desc: 'Biologics-specific research methodology, switching studies, and lifecycle intelligence.' },
+                { to: '/market-reports/saudi-arabia-biosimilars-market-report', label: 'Saudi Arabia Biosimilar Market Report', desc: 'Hospital-administered market size, SFDA pathway, and NUPCO framework intelligence for 2026.' },
                 { to: '/biosimilar-market-entry-saudi-arabia', label: 'Biosimilar Market Entry — Saudi Arabia', desc: 'SFDA-aware biosimilar market entry research and institutional procurement intelligence.' },
                 { to: '/healthcare-market-research', label: 'Healthcare Market Research Hub', desc: 'Full-service pharmaceutical and healthcare market research across 38 countries.' },
                 { to: '/pharmaceutical-therapy-areas', label: 'Pharmaceutical Therapy Areas', desc: 'Research capabilities across oncology, immunology, rare diseases, and specialty biologics.' },

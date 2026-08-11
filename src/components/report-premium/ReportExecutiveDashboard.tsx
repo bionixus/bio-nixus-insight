@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { ReportGrowthChart } from '@/components/report-premium/ReportGrowthChart';
+import { ReportGrowthChartLazy } from '@/components/report-premium/ReportGrowthChartLazy';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export type ExecutiveStat = {
@@ -74,7 +74,7 @@ export function ReportExecutiveDashboard({
 
           <div className="space-y-4">
             <div className="rounded-xl border border-border/70 bg-card p-4 shadow-sm sr sr-right">
-              <ReportGrowthChart
+              <ReportGrowthChartLazy
                 cagrLabel={cagrSource}
                 title="Growth trajectory"
                 mode={chartMode}
