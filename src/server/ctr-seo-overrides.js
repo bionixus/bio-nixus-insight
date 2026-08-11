@@ -93,6 +93,26 @@ export const CTR_SEO_BY_PATH = {
     description:
       'How to enter GCC healthcare markets in 2026 — registration, pricing, tenders and distributors for Saudi, UAE, Qatar, Kuwait, Oman, Bahrain.',
   },
+  '/gcc-pharmaceutical-market-research': {
+    title: 'GCC Pharmaceutical Market Research 2026: Biologics & Injectables',
+    description:
+      'GCC biologics ($4.8–5.4B), generic injectables, biosimilars & precision medicine — primary pharma research across Saudi, UAE, Kuwait, Qatar, Bahrain & Oman.',
+  },
+  '/heor-consulting-saudi-arabia': {
+    title: 'HEOR Consulting Saudi Arabia: SFDA EES & Payer Evidence (2026)',
+    description:
+      'Saudi HEOR consulting — budget-impact models, cost-effectiveness analysis, RWE and SFDA Economic Evaluation System dossiers. BioNixus GCC health economics team.',
+  },
+  '/healthcare-market-research-in-uae': {
+    title: 'Healthcare Market Research Dubai & UAE | DHA, DoH & MOHAP',
+    description:
+      'Pharmaceutical market research in Dubai and UAE — HCP surveys, KOL mapping, payer studies aligned to DHA, DoH Abu Dhabi and MOHAP. Request a proposal.',
+  },
+  '/market-research-companies-in-egypt': {
+    title: 'Market Research Companies in Egypt (2026): Healthcare & Pharma',
+    description:
+      'Compare market research companies in Egypt for pharma and healthcare — primary studies, payer access, physician panels and Cairo fieldwork. By BioNixus.',
+  },
   '/healthcare-market-research': {
     title: 'Healthcare Market Research Company | Bionixus',
     description:

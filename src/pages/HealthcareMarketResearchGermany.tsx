@@ -7,6 +7,7 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { CTASection } from '@/components/shared/CTASection';
 import { buildBreadcrumbSchema, buildFAQSchema, buildItemListSchema } from '@/lib/seo/schemas';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+import { CountryMarketReferenceGuide } from '@/components/seo/CountryMarketReferenceGuide';
 
 const PAGE_URL = 'https://www.bionixus.com/healthcare-market-research-germany';
 const ORG_ID = 'https://www.bionixus.com/#organization';
@@ -326,6 +327,8 @@ export default function HealthcareMarketResearchGermany() {
             </div>
           </div>
         </section>
+
+        <CountryMarketReferenceGuide countryName="Germany" countrySlug="germany" region="europe" />
 
         <CTASection variant="country" countryName="Germany" />
       </main>

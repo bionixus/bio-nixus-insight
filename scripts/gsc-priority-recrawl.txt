@@ -58,3 +58,19 @@ https://www.bionixus.com/home-staging
 https://www.bionixus.com/sitemap.xml
 https://www.bionixus.com/bionixus-market-research-middle-east
 https://www.bionixus.com/gcc-market-access-guide
+
+# --- Tier 7: Pharma BOFU SSR fix + expanded HMR country pages (2026-08-11) ---
+https://www.bionixus.com/pharmaceutical-companies-egypt
+https://www.bionixus.com/pharmaceutical-companies-uae
+https://www.bionixus.com/pharmaceutical-companies-saudi-arabia
+https://www.bionixus.com/pharmaceutical-companies-kuwait
+https://www.bionixus.com/pharmaceutical-companies-qatar
+https://www.bionixus.com/pharmaceutical-companies-oman
+https://www.bionixus.com/healthcare-market-research-in-uae
+https://www.bionixus.com/healthcare-market-research-jordan
+https://www.bionixus.com/healthcare-market-research-oman
+https://www.bionixus.com/healthcare-market-research-qatar
+https://www.bionixus.com/healthcare-market-research-kuwait
+https://www.bionixus.com/healthcare-market-research-germany
+https://www.bionixus.com/healthcare-market-research-france
+https://www.bionixus.com/heor-consulting-saudi-arabia

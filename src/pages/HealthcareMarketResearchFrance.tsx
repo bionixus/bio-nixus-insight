@@ -7,6 +7,7 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { CTASection } from '@/components/shared/CTASection';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+import { CountryMarketReferenceGuide } from '@/components/seo/CountryMarketReferenceGuide';
 
 const faqItems = [
   {
@@ -306,6 +307,8 @@ export default function HealthcareMarketResearchFrance() {
             </div>
           </div>
         </section>
+
+        <CountryMarketReferenceGuide countryName="France" countrySlug="france" region="europe" />
 
         <CTASection variant="country" countryName="France" />
       </main>
