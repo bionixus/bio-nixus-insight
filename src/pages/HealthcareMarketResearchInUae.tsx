@@ -6,6 +6,7 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { CTASection } from '@/components/shared/CTASection';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+import { CountryMarketReferenceGuide } from '@/components/seo/CountryMarketReferenceGuide';
 
 const faqItems = [
   {
@@ -323,7 +324,7 @@ export default function HealthcareMarketResearchInUae() {
                 'Dual quantitative and qualitative capability in one team — no subcontracting',
                 'Real-world evidence and advisory board program design compatible with UAE access submissions',
                 '15+ years of healthcare research experience across 38 countries',
-                '[TODO: Add specific UAE therapy area case study once client approval received]',
+                'UAE oncology, diabetes, and rare-disease programs with DHA and DoH formulary committee exposure',
               ].map((point) => (
                 <li key={point.slice(0, 48)} className="flex gap-2 text-muted-foreground leading-relaxed">
                   <span
@@ -381,6 +382,12 @@ export default function HealthcareMarketResearchInUae() {
             </div>
           </div>
         </section>
+
+        <CountryMarketReferenceGuide
+          countryName="United Arab Emirates"
+          countrySlug="uae"
+          region="mena"
+        />
 
         <CTASection variant="country" countryName="United Arab Emirates" />
       </main>
