@@ -1,8 +1,44 @@
 // Vite config
-import { defineConfig } from "vite";
+import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
+
+/**
+ * Client builds use React.lazy route barrels; SSR builds/dev resolve to eager
+ * `.ssr.ts` twins so renderToString never ships Suspense fallbacks.
+ */
+function ssrRouteSplitPlugin(isSsrBuild: boolean | undefined): Plugin {
+  const reportClient = path.resolve(__dirname, "src/routes/lazyReportPages.ts");
+  const reportSsr = path.resolve(__dirname, "src/routes/lazyReportPages.ssr.ts");
+  const marketingClient = path.resolve(__dirname, "src/routes/lazyMarketingPages.ts");
+  const marketingSsr = path.resolve(__dirname, "src/routes/lazyMarketingPages.ssr.ts");
+
+  const matchBarrel = (source: string, name: "lazyReportPages" | "lazyMarketingPages") => {
+    const normalized = source.replace(/\\/g, "/");
+    if (normalized.includes(`${name}.ssr`)) return false;
+    return (
+      normalized === `@/routes/${name}` ||
+      normalized.endsWith(`/routes/${name}`) ||
+      normalized.endsWith(`/routes/${name}.ts`)
+    );
+  };
+
+  return {
+    name: "ssr-route-split",
+    enforce: "pre",
+    resolveId(source, _importer, options) {
+      const useSsr = Boolean(options?.ssr) || Boolean(isSsrBuild);
+      if (!useSsr) return null;
+      if (matchBarrel(source, "lazyReportPages")) return reportSsr;
+      if (matchBarrel(source, "lazyMarketingPages")) return marketingSsr;
+      // After @ alias resolves to absolute client path during SSR
+      if (source === reportClient) return reportSsr;
+      if (source === marketingClient) return marketingSsr;
+      return null;
+    },
+  };
+}
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode, isSsrBuild }) => ({
@@ -16,7 +52,11 @@ export default defineConfig(({ mode, isSsrBuild }) => ({
       overlay: true,
     },
   },
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+  plugins: [
+    ssrRouteSplitPlugin(isSsrBuild),
+    react(),
+    mode === "development" && componentTagger(),
+  ].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
