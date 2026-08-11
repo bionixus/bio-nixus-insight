@@ -64,6 +64,18 @@ export default defineConfig(({ mode, isSsrBuild }) => ({
   },
   build: {
     target: 'esnext',
+    modulePreload: {
+      // Do not sitewide-preload below-fold vendors (recharts, etc.) — they steal
+      // bandwidth from LCP on report/marketing pages that only need the H1 + CSS.
+      resolveDependencies: (_filename, deps) =>
+        deps.filter(
+          (dep) =>
+            !/(?:^|\/)charts-[^/]+\.js$/.test(dep) &&
+            !/(?:^|\/)statsig-[^/]+\.js$/.test(dep) &&
+            !/(?:^|\/)sanitize-html-[^/]+\.js$/.test(dep) &&
+            !/(?:^|\/)toast-[^/]+\.js$/.test(dep),
+        ),
+    },
     rollupOptions: isSsrBuild
       ? {}
       : {
