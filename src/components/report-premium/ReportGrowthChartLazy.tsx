@@ -26,6 +26,7 @@ function GrowthChartPlaceholder({ title = 'Growth trajectory' }: { title?: strin
   );
 }
 
+/** Code-splits recharts. Inner Suspense keeps the route shell from thinning on SSR. */
 export function ReportGrowthChartLazy({
   cagrLabel,
   title = 'Growth trajectory',
