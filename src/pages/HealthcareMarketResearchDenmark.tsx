@@ -346,7 +346,7 @@ export default function HealthcareMarketResearchDenmark() {
               {[
                 { to: '/pharmaceutical-market-research-denmark', label: 'Denmark pharmaceutical market research' },
                 { to: '/insights/top-healthcare-market-research-companies-denmark-2026', label: 'Top healthcare market research companies Denmark 2026' },
-                { to: '/healthcare-market-research-germany', label: 'Healthcare market research Germany' },
+                { to: '/healthcare-market-research/germany', label: 'Healthcare market research Germany' },
                 { to: '/healthcare-market-research-uk', label: 'Healthcare market research UK' },
                 { to: '/healthcare-market-research-usa', label: 'Healthcare market research USA' },
                 { to: '/healthcare-market-research', label: 'Global healthcare market research' },

@@ -98,6 +98,16 @@
       "statusCode": 301
     },
     {
+      "source": "/healthcare-market-research-germany",
+      "destination": "/healthcare-market-research/germany",
+      "statusCode": 301
+    },
+    {
+      "source": "/pharmacoeconomics-gcc",
+      "destination": "/blog/pharmacoeconomics-gcc-practical-guide",
+      "statusCode": 301
+    },
+    {
       "source": "/market-research/healthcare",
       "destination": "/healthcare-market-research",
       "statusCode": 301

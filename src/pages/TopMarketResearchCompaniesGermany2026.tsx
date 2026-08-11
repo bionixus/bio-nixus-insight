@@ -661,7 +661,7 @@ export default function TopMarketResearchCompaniesGermany2026() {
                   desc: 'AMNOG-aligned pharmaceutical research covering HCP surveys, KOL mapping, GBA payer research, and IQWiG evidence strategy in Germany.',
                 },
                 {
-                  to: '/healthcare-market-research-germany',
+                  to: '/healthcare-market-research/germany',
                   label: 'Healthcare Market Research Germany',
                   desc: 'Healthcare market research in Germany — HCP surveys, GKV payer research, KOL mapping, and HEOR evidence across all 16 Bundesländer.',
                 },

@@ -287,7 +287,6 @@ import HealthcareMarketResearchIndia from '@/pages/HealthcareMarketResearchIndia
 import HealthcareMarketResearchChina from '@/pages/HealthcareMarketResearchChina';
 import HealthcareMarketResearchDenmark from '@/pages/HealthcareMarketResearchDenmark';
 import HealthcareMarketResearchFrance from '@/pages/HealthcareMarketResearchFrance';
-import HealthcareMarketResearchGermany from '@/pages/HealthcareMarketResearchGermany';
 import HealthcareMarketResearchInSaudiArabia from '@/pages/HealthcareMarketResearchInSaudiArabia';
 import HealthcareMarketResearchInUae from '@/pages/HealthcareMarketResearchInUae';
 import HealthcareMarketResearchInKuwait from '@/pages/HealthcareMarketResearchInKuwait';
@@ -450,6 +449,7 @@ export const routes: RouteObject[] = [
   { path: '/real-world-evidence', element: <RealWorldEvidence /> },
   { path: '/real-world-evidence-gcc', element: <RealWorldEvidenceGcc /> },
   { path: '/heor-consulting-saudi-arabia', element: <HeorConsultingSaudiArabia /> },
+  { path: '/pharmacoeconomics-gcc', element: <Navigate to="/blog/pharmacoeconomics-gcc-practical-guide" replace /> },
   { path: '/hta-studies-saudi-arabia', element: <HtaStudiesSaudiArabia /> },
   { path: '/cost-effectiveness-analysis-saudi-arabia', element: <CostEffectivenessAnalysisSaudiArabia /> },
   { path: '/cost-effectiveness-analysis-gcc', element: <CostEffectivenessAnalysisGcc /> },
@@ -704,7 +704,7 @@ export const routes: RouteObject[] = [
   { path: '/healthcare-market-research-china', element: <HealthcareMarketResearchChina /> },
   { path: '/healthcare-market-research-denmark', element: <HealthcareMarketResearchDenmark /> },
   { path: '/healthcare-market-research-france', element: <HealthcareMarketResearchFrance /> },
-  { path: '/healthcare-market-research-germany', element: <HealthcareMarketResearchGermany /> },
+  { path: '/healthcare-market-research-germany', element: <Navigate to="/healthcare-market-research/germany" replace /> },
   { path: '/healthcare-market-research-in-saudi-arabia', element: <HealthcareMarketResearchInSaudiArabia /> },
   { path: '/healthcare-market-research-in-uae', element: <HealthcareMarketResearchInUae /> },
   { path: '/healthcare-market-research-kuwait', element: <HealthcareMarketResearchInKuwait /> },

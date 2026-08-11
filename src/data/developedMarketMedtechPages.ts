@@ -358,7 +358,7 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
     regulatorShort: 'BfArM / EU MDR',
     marketSize: 'EUR 30–33 billion',
     domesticFirms: 'BVMed member companies including Siemens Healthineers, B. Braun, Dräger',
-    healthcareResearchPath: '/healthcare-market-research-germany',
+    healthcareResearchPath: '/healthcare-market-research/germany',
     medDevicesReportPath: '/germany-medical-devices-market-report',
     relatedSlugs: ['france', 'switzerland'],
     languages: 'German (English for international KOL programmes)',

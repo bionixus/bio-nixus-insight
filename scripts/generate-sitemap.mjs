@@ -494,7 +494,6 @@ const staticPages = [
   { path: '/healthcare-market-research-china', priority: '0.90', changefreq: 'monthly' },
   { path: '/healthcare-market-research-denmark', priority: '0.90', changefreq: 'monthly' },
   { path: '/healthcare-market-research-france', priority: '0.90', changefreq: 'monthly' },
-  { path: '/healthcare-market-research-germany', priority: '0.90', changefreq: 'monthly' },
   { path: '/healthcare-market-research-in-saudi-arabia', priority: '0.92', changefreq: 'monthly' },
   { path: '/healthcare-market-research-in-uae', priority: '0.92', changefreq: 'monthly' },
   { path: '/healthcare-market-research-kuwait', priority: '0.92', changefreq: 'monthly' },
