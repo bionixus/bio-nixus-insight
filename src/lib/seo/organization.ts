@@ -6,11 +6,7 @@
  * The static index.html block is hand-aligned to these values.
  */
 
-import {
-  BIONIXUS_UK_AGGREGATE_RATING,
-  BIONIXUS_UK_GBP_MAPS_URL,
-  BIONIXUS_UK_GOOGLE_REVIEWS,
-} from '@/data/googleReviewsUk';
+import { BIONIXUS_UK_GBP_MAPS_URL } from '@/data/googleReviewsUk';
 
 const BASE_URL = 'https://www.bionixus.com';
 
@@ -51,29 +47,11 @@ export const ORG_FOUNDING_LOCATION = {
   },
 };
 
-/** Verified Google Business Profile rating for the London listing. */
-export const ORG_AGGREGATE_RATING = {
-  '@type': 'AggregateRating',
-  ratingValue: String(BIONIXUS_UK_AGGREGATE_RATING.ratingValue),
-  reviewCount: String(BIONIXUS_UK_AGGREGATE_RATING.reviewCount),
-  bestRating: String(BIONIXUS_UK_AGGREGATE_RATING.bestRating),
-  worstRating: String(BIONIXUS_UK_AGGREGATE_RATING.worstRating),
-};
-
-export const ORG_REVIEWS = BIONIXUS_UK_GOOGLE_REVIEWS.filter((r) => r.body?.trim()).map(
-  (review) => ({
-    '@type': 'Review',
-    author: { '@type': 'Person', name: review.author },
-    datePublished: review.datePublished,
-    reviewBody: review.body,
-    reviewRating: {
-      '@type': 'Rating',
-      ratingValue: String(review.rating),
-      bestRating: '5',
-      worstRating: '1',
-    },
-  }),
-);
+/**
+ * Review / AggregateRating live only on the UK LocalBusiness node
+ * (`buildUkGoogleReviewsLocalBusiness`). Nesting the same rating on Organization
+ * sitewide caused Google Search Console “Reviews has multiple aggregate ratings”.
+ */
 
 export const ORG_KNOWS_ABOUT = [
   'Pharmaceutical market research',
@@ -276,8 +254,6 @@ export function buildCanonicalOrganization(): Record<string, unknown> {
     description: ORG_DESCRIPTION,
     knowsAbout: ORG_KNOWS_ABOUT,
     sameAs: ORG_SAME_AS,
-    aggregateRating: ORG_AGGREGATE_RATING,
-    review: ORG_REVIEWS,
     address: ORG_ADDRESS,
     location: ORG_ADDRESS.map((addr) => ({
       '@type': 'Place',

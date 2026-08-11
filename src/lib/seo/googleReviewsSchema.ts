@@ -9,8 +9,9 @@ const BASE_URL = 'https://www.bionixus.com';
 export const UK_LOCAL_BUSINESS_ID = `${BASE_URL}/#uk-localbusiness`;
 
 /**
- * LocalBusiness node with AggregateRating + Review snippets for BioNixus UK (Google GBP).
- * Carries no locale: `inLanguage` is a CreativeWork property, invalid on LocalBusiness.
+ * Sole AggregateRating + Review owner for BioNixus UK Google Business Profile.
+ * Do not also nest these on Organization — duplicate AggregateRating nodes trigger
+ * Google Search Console “Reviews has multiple aggregate ratings”.
  */
 export function buildUkGoogleReviewsLocalBusiness(): Record<string, unknown> {
   return {

@@ -201,10 +201,17 @@ import { SKYRIZI_ROOT_SLUG } from '@/data/blog-skyrizi-omnichannel';
 import BlogPostPage from '@/pages/BlogPost';
 import HubPage from '@/pages/healthcare-research/HubPage';
 import FrHubPage from '@/pages/healthcare-research/FrHubPage';
+import EsHubPage from '@/pages/healthcare-research/EsHubPage';
 import FrFranceCountryPage from '@/pages/healthcare-research/FrFranceCountryPage';
 import CountryPage from '@/pages/healthcare-research/CountryPage';
 import TherapyPage from '@/pages/healthcare-research/TherapyPage';
 import ServicePage from '@/pages/healthcare-research/ServicePage';
+import FrBionixusMarketResearchMiddleEast from '@/pages/FrBionixusMarketResearchMiddleEast';
+import ZhBionixusMarketResearchMiddleEast from '@/pages/ZhBionixusMarketResearchMiddleEast';
+import FrStrategicPortfolio from '@/pages/FrStrategicPortfolio';
+import ZhStrategicPortfolio from '@/pages/ZhStrategicPortfolio';
+import FrQuantitativeHealthcareMarketResearch from '@/pages/FrQuantitativeHealthcareMarketResearch';
+import ZhTopMarketResearchCompaniesEgypt2026 from '@/pages/ZhTopMarketResearchCompaniesEgypt2026';
 import TopMarketResearchCompaniesBrazil2026 from '@/pages/TopMarketResearchCompaniesBrazil2026';
 import TopHealthcareMarketResearchCompaniesBrazil2026 from '@/pages/TopHealthcareMarketResearchCompaniesBrazil2026';
 import TopMarketResearchCompaniesArgentina2026 from '@/pages/TopMarketResearchCompaniesArgentina2026';
@@ -415,6 +422,8 @@ export const routes: RouteObject[] = [
   { path: '/ru/market-research-healthcare', element: <MarketResearchHealthcare /> },
   { path: '/qualitative-market-research', element: <QualitativeMarketResearch /> },
   { path: '/bionixus-market-research-middle-east', element: <BionixusMarketResearchMiddleEast /> },
+  { path: '/fr/bionixus-market-research-middle-east', element: <FrBionixusMarketResearchMiddleEast /> },
+  { path: '/zh/bionixus-market-research-middle-east', element: <ZhBionixusMarketResearchMiddleEast /> },
   { path: '/bionixus-vs-iqvia-mena', element: <BionixusVsIqviaMena /> },
   { path: '/gcc-pharma-market-report-2026', element: <GccPharmaMarketReport2026 /> },
   { path: '/nf1-pharma-market-research', element: <Nf1PharmaMarketResearch /> },
@@ -468,8 +477,13 @@ export const routes: RouteObject[] = [
   { path: '/strategic-portfolios', element: <ConfPortfolio /> },
   { path: '/ar/strategic-portfolio', element: <ConfPortfolio locale="ar" /> },
   { path: '/ar/strategic-portfolios', element: <ConfPortfolio locale="ar" /> },
+  { path: '/fr/strategic-portfolio', element: <FrStrategicPortfolio /> },
+  { path: '/fr/strategic-portfolios', element: <FrStrategicPortfolio /> },
+  { path: '/zh/strategic-portfolio', element: <ZhStrategicPortfolio /> },
+  { path: '/zh/strategic-portfolios', element: <ZhStrategicPortfolio /> },
   { path: '/healthcare-market-research', element: <HubPage /> },
   { path: '/fr/healthcare-market-research', element: <FrHubPage /> },
+  { path: '/fr/quantitative-healthcare-market-research', element: <FrQuantitativeHealthcareMarketResearch /> },
   { path: '/fr/healthcare-market-research/france', element: <FrFranceCountryPage /> },
   { path: '/healthcare-market-research/therapy/:area', element: <TherapyPage /> },
   { path: '/healthcare-market-research/services/:service', element: <ServicePage /> },
@@ -490,6 +504,7 @@ export const routes: RouteObject[] = [
   { path: '/insights/top-pharma-market-research-companies-middle-east-2026', element: <TopPharmaMarketResearchCompaniesMiddleEast2026 /> },
   { path: '/insights/top-market-research-companies-egypt-2026', element: <TopMarketResearchCompaniesEgypt2026 /> },
   { path: '/ar/insights/top-market-research-companies-egypt-2026', element: suspensePage(<ArTopMarketResearchCompaniesEgypt2026 />) },
+  { path: '/zh/insights/top-market-research-companies-egypt-2026', element: <ZhTopMarketResearchCompaniesEgypt2026 /> },
   { path: '/insights/top-market-research-companies-ksa-2026', element: <Navigate to="/insights/top-market-research-companies-saudi-arabia-2026" replace /> },
   { path: '/insights/top-market-research-companies-saudi-arabia-2026', element: <TopMarketResearchCompaniesSaudiArabia2026 /> },
   { path: '/insights/top-market-research-companies-uae-2026', element: <TopMarketResearchCompaniesUae2026 /> },
@@ -687,8 +702,9 @@ export const routes: RouteObject[] = [
   { path: '/de/healthcare-market-research/germany', element: <DeHealthcareMarketResearchGermany /> },
   { path: '/es/blog', element: <Blog /> },
   { path: '/es/blog/:slug', element: suspensePage(<BlogPost />) },
-  { path: '/es/healthcare-market-research/:country', element: <CountryPage /> },
+  { path: '/es/healthcare-market-research', element: <EsHubPage /> },
   { path: '/es/healthcare-market-research/spain', element: <EsHealthcareMarketResearchSpain /> },
+  { path: '/es/healthcare-market-research/:country', element: <CountryPage /> },
   { path: '/fr/healthcare-market-research/:country', element: <CountryPage /> },
   { path: '/gcc-biopharmaceuticals-market', element: <GccBiopharmaceuticalsMarket /> },
   { path: '/gcc-clinical-trials-market', element: <GccClinicalTrialsMarket /> },
