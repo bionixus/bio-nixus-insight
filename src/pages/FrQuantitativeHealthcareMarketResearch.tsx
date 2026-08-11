@@ -193,6 +193,7 @@ export default function FrQuantitativeHealthcareMarketResearch() {
     description:
       "Guide 2026 sur la recherche quantitative auprès des professionnels de santé : méthodologies CATI, CAPI, CAWI et hybrides, échantillonnage, contrôle qualité et applications décisionnelles pour les équipes pharmaceutiques.",
     url: CANONICAL,
+    image: 'https://www.bionixus.com/og-image.png',
     inLanguage: 'fr',
     datePublished: '2026-04-01',
     dateModified: '2026-04-01',
