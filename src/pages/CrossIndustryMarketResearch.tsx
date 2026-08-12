@@ -109,7 +109,7 @@ const jsonLd = [
     url: CANONICAL,
   },
   buildBreadcrumbSchema(breadcrumbItems),
-  buildFAQSchema(faqs, { pageUrl: CANONICAL }),
+  buildFAQSchema([...faqs], { pageUrl: CANONICAL }),
 ];
 
 export default function CrossIndustryMarketResearch() {
