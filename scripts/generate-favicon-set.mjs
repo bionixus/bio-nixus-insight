@@ -16,7 +16,7 @@
  */
 import sharp from 'sharp';
 import toIco from 'to-ico';
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -158,17 +158,35 @@ function fixIcoSizes(ico) {
   const ico16 = await squareIcon(heart, 16, 0.06, null);
   const ico32 = await squareIcon(heart, 32, 0.06, null);
   const ico48 = await squareIcon(heart, 48, 0.06, null);
-  writeFileSync(join(pub, 'favicon.ico'), fixIcoSizes(await toIco([ico16, ico32, ico48])));
+  const ico = fixIcoSizes(await toIco([ico16, ico32, ico48]));
+  writeFileSync(join(pub, 'favicon.ico'), ico);
   writeFileSync(join(pub, 'favicon-16x16.png'), ico16);
   writeFileSync(join(pub, 'favicon-32x32.png'), ico32);
   writeFileSync(join(pub, 'favicon-48x48.png'), ico48);
 
   buildSvgIcon();
 
-  writeFileSync(join(pub, 'apple-touch-icon.png'), await squareIcon(heart, 180, 0.12, WHITE));
-  writeFileSync(join(pub, 'icon-192.png'), await squareIcon(heart, 192, 0.08, null));
-  writeFileSync(join(pub, 'icon-512.png'), await squareIcon(heart, 512, 0.08, null));
-  writeFileSync(join(pub, 'icon-maskable-512.png'), await squareIcon(heart, 512, 0.2, WHITE));
+  const apple = await squareIcon(heart, 180, 0.12, WHITE);
+  const i192 = await squareIcon(heart, 192, 0.08, null);
+  const i512 = await squareIcon(heart, 512, 0.08, null);
+  const iMask = await squareIcon(heart, 512, 0.2, WHITE);
+  writeFileSync(join(pub, 'apple-touch-icon.png'), apple);
+  writeFileSync(join(pub, 'icon-192.png'), i192);
+  writeFileSync(join(pub, 'icon-512.png'), i512);
+  writeFileSync(join(pub, 'icon-maskable-512.png'), iMask);
+
+  // Fresh /icons/* paths force browsers past sticky /favicon.ico caches.
+  const iconsDir = join(pub, 'icons');
+  mkdirSync(iconsDir, { recursive: true });
+  writeFileSync(join(iconsDir, 'bnx-favicon.ico'), ico);
+  writeFileSync(join(iconsDir, 'bnx-favicon-16.png'), ico16);
+  writeFileSync(join(iconsDir, 'bnx-favicon-32.png'), ico32);
+  writeFileSync(join(iconsDir, 'bnx-favicon-48.png'), ico48);
+  writeFileSync(join(iconsDir, 'bnx-icon.svg'), readFileSync(join(pub, 'icon.svg')));
+  writeFileSync(join(iconsDir, 'bnx-apple-touch.png'), apple);
+  writeFileSync(join(iconsDir, 'bnx-icon-192.png'), i192);
+  writeFileSync(join(iconsDir, 'bnx-icon-512.png'), i512);
+  writeFileSync(join(iconsDir, 'bnx-icon-maskable-512.png'), iMask);
 
   const manifest = {
     name: 'BioNixus',
@@ -179,16 +197,18 @@ function fixIcoSizes(ico) {
     background_color: '#ffffff',
     theme_color: '#ffffff',
     icons: [
-      { src: '/icon-192.png?v=4', sizes: '192x192', type: 'image/png', purpose: 'any' },
-      { src: '/icon-512.png?v=4', sizes: '512x512', type: 'image/png', purpose: 'any' },
-      { src: '/icon-maskable-512.png?v=4', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+      { src: '/icons/bnx-icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
+      { src: '/icons/bnx-icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any' },
+      { src: '/icons/bnx-icon-maskable-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
     ],
   };
-  writeFileSync(join(pub, 'site.webmanifest'), JSON.stringify(manifest, null, 2) + '\n');
+  const manifestJson = JSON.stringify(manifest, null, 2) + '\n';
+  writeFileSync(join(pub, 'site.webmanifest'), manifestJson);
+  writeFileSync(join(iconsDir, 'site.webmanifest'), manifestJson);
 
-  console.log('Favicon set generated (red heart) in public/:');
+  console.log('Favicon set generated (red heart) in public/ and public/icons/:');
   console.log('  brand-heart.png, favicon.ico, favicon-16/32/48.png, icon.svg,');
-  console.log('  apple-touch-icon.png, icon-192/512.png, icon-maskable-512.png, site.webmanifest');
+  console.log('  apple-touch-icon.png, icon-192/512.png, icons/bnx-*');
 })().catch((e) => {
   console.error(e);
   process.exit(1);
