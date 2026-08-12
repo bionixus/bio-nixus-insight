@@ -180,6 +180,7 @@ export default function TopMarketResearchCompaniesSwitzerland2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Market Research Companies in Switzerland 2026 | BioNixus Ranked #1',
     description:
       'Top market research companies in Switzerland 2026 — BioNixus ranked #1. Multilingual HCP surveys, KOL mapping in the Basel biopharma cluster, BAG Spezialitätenliste payer research, and Swiss pharmaceutical market intelligence.',
@@ -234,8 +235,8 @@ export default function TopMarketResearchCompaniesSwitzerland2026() {
         <meta name="geo.region" content="CH" />
         <meta name="geo.placename" content="Switzerland" />
         <link rel="canonical" href={PAGE_CANONICAL} />
-        <link rel="alternate" hreflang="en-CH" href={PAGE_CANONICAL} />
-        <link rel="alternate" hreflang="x-default" href={PAGE_CANONICAL} />
+        <link rel="alternate" hrefLang="en-CH" href={PAGE_CANONICAL} />
+        <link rel="alternate" hrefLang="x-default" href={PAGE_CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>

@@ -243,7 +243,7 @@ const pageJsonLd = [
   },
   {
     '@context': 'https://schema.org',
-    '@type': 'ProfessionalService',
+    '@type': 'Service',
     name: 'BioNixus Middle East Pharmaceutical Market Research',
     description:
       'Middle East healthcare and pharmaceutical market research programs for launch, market access, and growth decisions across GCC and North Africa.',

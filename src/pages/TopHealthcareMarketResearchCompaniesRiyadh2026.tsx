@@ -196,6 +196,7 @@ export default function TopHealthcareMarketResearchCompaniesRiyadh2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Healthcare Market Research Companies in Riyadh (2026 Guide)',
     description:
       'Expert guide to the leading healthcare and pharmaceutical market research companies in Riyadh for 2026. Covers SFDA-aware firms, KFSH&RC and KAMC HCP access, NUPCO procurement intelligence, Vision 2030 healthcare context, and how to evaluate a research partner for the Saudi capital.',
@@ -251,8 +252,8 @@ export default function TopHealthcareMarketResearchCompaniesRiyadh2026() {
         <meta name="geo.region" content="SA-01" />
         <meta name="geo.placename" content="Riyadh" />
         <link rel="canonical" href={CANONICAL} />
-        <link rel="alternate" hreflang="en" href={CANONICAL} />
-        <link rel="alternate" hreflang="x-default" href={CANONICAL} />
+        <link rel="alternate" hrefLang="en" href={CANONICAL} />
+        <link rel="alternate" hrefLang="x-default" href={CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>

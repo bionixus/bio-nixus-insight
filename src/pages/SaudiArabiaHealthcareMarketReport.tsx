@@ -63,11 +63,13 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-linkedin.png',
     headline: 'Saudi Arabia Healthcare Market Report 2026: Pharma, Vision 2030, and Commercial Intelligence',
-    author: { '@type': 'Organization', name: 'BioNixus' },
+    author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: {
       '@type': 'Organization',
       name: 'BioNixus',
+      url: 'https://www.bionixus.com',
       logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
     },
     datePublished: '2026-05-27',
@@ -164,7 +166,11 @@ const SaudiArabiaHealthcareMarketReport = () => {
               <Link to="/market-reports/saudi-arabia-oncology-market-report" className="text-primary hover:underline font-medium">
                 Saudi Arabia oncology market research report
               </Link>
-              {' '}and{' '}
+              {', the '}
+              <Link to="/market-reports/saudi-arabia-cancer-diagnostics-market-report" className="text-primary hover:underline font-medium">
+                Saudi Arabia cancer diagnostics market
+              </Link>
+              {' report, and '}
               <Link to="/market-reports/saudi-arabia-diabetes-market-report" className="text-primary hover:underline font-medium">
                 Saudi Arabia diabetes market research report
               </Link>

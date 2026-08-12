@@ -170,6 +170,7 @@ const breadcrumbSchema = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
+  image: 'https://www.bionixus.com/og-image.png',
   headline: 'Mejores Empresas de Investigación de Mercado en Argentina (Guía 2026)',
   description: 'Guía independiente de las principales empresas de investigación de mercado en Argentina — FMCG, consumidor y capacidades de investigación en salud para clientes multinacionales.',
   inLanguage: 'es-AR',
@@ -229,6 +230,7 @@ export default function EsTopMarketResearchCompaniesArgentina2026() {
         title="5 Mejores Empresas de Investigación de Mercado en | BioNixus"
         description="Top 5 empresas de investigación de mercado en Argentina: BioNixus, Kantar, Ipsos, NielsenIQ, Euromonitor. FMCG, consumidor y salud comparadas."
         url={CANONICAL}
+        image="https://www.bionixus.com/og-image.png"
         locale="es_AR"
       />
 

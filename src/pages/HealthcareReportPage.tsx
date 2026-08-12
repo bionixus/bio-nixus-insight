@@ -9,6 +9,12 @@ import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
 import { getMarketHealthcarePath, getReportSafe } from '@/data/healthcareReportData';
 import {
+  marketReportOgImageUrl,
+  marketReportOgImageWidth,
+  marketReportOgImageHeight,
+  defaultOgImageAlt,
+} from '@/lib/seo';
+import {
   getGccTherapyEnrichment,
   gccTherapyReportPath,
 } from '@/data/gccTherapyReportEnrichment';
@@ -33,6 +39,8 @@ import {
 import { MarketReportWhitePaperBand } from '@/components/report-premium/MarketReportWhitePaperBand';
 import { getMarketReportWhitePaper } from '@/data/marketReportWhitePapers';
 import { ReportTherapySpendChartLazy } from '@/components/report-premium/ReportTherapySpendChartLazy';
+import { SAUDI_BIOSIMILARS_REPORT_ENRICHMENT } from '@/data/saudiBiosimilarsReportEnrichment';
+import { SAUDI_CANCER_DIAGNOSTICS_REPORT_ENRICHMENT } from '@/data/saudiCancerDiagnosticsReportEnrichment';
 
 function pickVariant(seed: string, options: [string, string, string]) {
   const score = seed.split('').reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
@@ -92,11 +100,13 @@ export default function HealthcareReportPage() {
     {
       '@context': 'https://schema.org',
       '@type': 'Article',
+      image: [marketReportOgImageUrl],
       headline: report.title,
-      author: { '@type': 'Organization', name: 'BioNixus' },
+      author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
       publisher: {
         '@type': 'Organization',
         name: 'BioNixus',
+        url: 'https://www.bionixus.com',
         logo: {
           '@type': 'ImageObject',
           url: 'https://www.bionixus.com/bionixus-logo.webp',
@@ -135,6 +145,10 @@ export default function HealthcareReportPage() {
         description={report.metaDescription}
         canonical={`https://www.bionixus.com/market-reports/${report.slug}`}
         ogType="article"
+        ogImage={marketReportOgImageUrl}
+        ogImageWidth={marketReportOgImageWidth}
+        ogImageHeight={marketReportOgImageHeight}
+        ogImageAlt={defaultOgImageAlt}
         jsonLd={jsonLd}
       />
       <main>
@@ -153,9 +167,9 @@ export default function HealthcareReportPage() {
           therapyName={report.therapyArea}
           countryName={report.market}
           stats={[
-            { value: report.stat1Value, label: report.stat1Label, source: report.stat1Source },
-            { value: report.stat2Value, label: report.stat2Label, source: report.stat2Source },
-            { value: report.stat3Value, label: report.stat3Label, source: report.stat3Source },
+            { value: report.stat1Value, label: report.stat1Label },
+            { value: report.stat2Value, label: report.stat2Label },
+            { value: report.stat3Value, label: report.stat3Label },
           ]}
           metaLinks={
             <ReportHeroMetaLinks
@@ -174,7 +188,12 @@ export default function HealthcareReportPage() {
               { value: report.stat2Value, label: report.stat2Label, source: report.stat2Source },
               { value: report.stat3Value, label: report.stat3Label, source: report.stat3Source },
             ]}
-            cagrStatLabel={report.stat3Value}
+            cagrStatLabel={
+              report.slug === 'saudi-arabia-biosimilars-market-report' ||
+              report.slug === 'saudi-arabia-cancer-diagnostics-market-report'
+                ? report.stat2Value
+                : report.stat3Value
+            }
             chartMode="modelled"
             sourcesBlock={<ReportSourcesBlock sources={report.sourceNotes} />}
             therapySpendChart={
@@ -223,6 +242,201 @@ export default function HealthcareReportPage() {
               )}
             </p>
           </ReportExecutiveDashboard>
+
+          {report.slug === 'saudi-arabia-biosimilars-market-report'
+            ? SAUDI_BIOSIMILARS_REPORT_ENRICHMENT.map((section) => (
+                <ReportPremiumSection
+                  key={section.id}
+                  id={section.id}
+                  title={section.title}
+                  subtitle={section.subtitle}
+                  visualTheme="market"
+                  marketSlug={report.marketSlug}
+                  therapySlug={report.therapyAreaSlug}
+                  countryName={report.market}
+                  therapyName={report.therapyArea}
+                  visualAlt={`${section.title} — BioNixus Saudi Arabia biosimilar market intelligence`}
+                >
+                  {section.paragraphs.map((para) => (
+                    <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed mb-6">
+                      {para}
+                    </p>
+                  ))}
+                  {section.table ? (
+                    <div className="overflow-x-auto mb-6 rounded-xl border border-border/60">
+                      <table className="w-full text-sm text-left">
+                        <caption className="sr-only">{section.table.caption}</caption>
+                        <thead className="bg-muted/50 text-foreground">
+                          <tr>
+                            {section.table.headers.map((header) => (
+                              <th key={header} scope="col" className="px-3 py-2 font-semibold">
+                                {header}
+                              </th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {section.table.rows.map((row) => (
+                            <tr key={row.join('|')} className="border-t border-border/50 text-muted-foreground">
+                              {row.map((cell, cellIdx) => (
+                                <td key={`${row[0]}-${cellIdx}`} className="px-3 py-2 align-top">
+                                  {cell}
+                                </td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  ) : null}
+                  {section.listItems?.length ? (
+                    <ul className="list-disc pl-6 space-y-2 text-muted-foreground leading-relaxed mb-4">
+                      {section.listItems.map((item) => (
+                        <li key={item.slice(0, 64)}>{item}</li>
+                      ))}
+                    </ul>
+                  ) : null}
+                  {section.id === 'sfda-pathway-interchangeability' ? (
+                    <p className="text-muted-foreground leading-relaxed">
+                      Read the{' '}
+                      <Link
+                        className="font-medium text-primary hover:underline"
+                        to="/sfda-market-access-strategy-saudi-arabia"
+                      >
+                        SFDA market access strategy for Saudi Arabia
+                      </Link>{' '}
+                      for registration sequencing detail.
+                    </p>
+                  ) : null}
+                  {section.id === 'nupco-framework-agreements' ? (
+                    <p className="text-muted-foreground leading-relaxed">
+                      For launch sequencing, see the{' '}
+                      <Link
+                        className="font-medium text-primary hover:underline"
+                        to="/biosimilar-market-entry-saudi-arabia"
+                      >
+                        biosimilar market entry Saudi Arabia strategy guide
+                      </Link>
+                      . For sizing and molecule waves, stay on this{' '}
+                      <Link
+                        className="font-medium text-primary hover:underline"
+                        to="/market-reports/saudi-arabia-biosimilars-market-report"
+                      >
+                        Saudi Arabia biosimilar market
+                      </Link>{' '}
+                      report.
+                    </p>
+                  ) : null}
+                </ReportPremiumSection>
+              ))
+            : null}
+
+          {report.slug === 'saudi-arabia-cancer-diagnostics-market-report'
+            ? SAUDI_CANCER_DIAGNOSTICS_REPORT_ENRICHMENT.map((section) => (
+                <ReportPremiumSection
+                  key={section.id}
+                  id={section.id}
+                  title={section.title}
+                  subtitle={section.subtitle}
+                  visualTheme="market"
+                  marketSlug={report.marketSlug}
+                  therapySlug={report.therapyAreaSlug}
+                  countryName={report.market}
+                  therapyName={report.therapyArea}
+                  visualAlt={`${section.title} — BioNixus Saudi Arabia cancer diagnostics market intelligence`}
+                >
+                  {section.paragraphs.map((para) => (
+                    <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed mb-6">
+                      {para}
+                    </p>
+                  ))}
+                  {section.table ? (
+                    <div className="overflow-x-auto mb-6 rounded-xl border border-border/60">
+                      <table className="w-full text-sm text-left">
+                        <caption className="sr-only">{section.table.caption}</caption>
+                        <thead className="bg-muted/50 text-foreground">
+                          <tr>
+                            {section.table.headers.map((header) => (
+                              <th key={header} scope="col" className="px-3 py-2 font-semibold">
+                                {header}
+                              </th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {section.table.rows.map((row) => (
+                            <tr key={row.join('|')} className="border-t border-border/50 text-muted-foreground">
+                              {row.map((cell, cellIdx) => (
+                                <td key={`${row[0]}-${cellIdx}`} className="px-3 py-2 align-top">
+                                  {cell}
+                                </td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  ) : null}
+                  {section.listItems?.length ? (
+                    <ul className="list-disc pl-6 space-y-2 text-muted-foreground leading-relaxed mb-4">
+                      {section.listItems.map((item) => (
+                        <li key={item.slice(0, 64)}>{item}</li>
+                      ))}
+                    </ul>
+                  ) : null}
+                  {section.id === 'sfda-ivd-device-pathway' ? (
+                    <p className="text-muted-foreground leading-relaxed">
+                      Read the{' '}
+                      <Link
+                        className="font-medium text-primary hover:underline"
+                        to="/sfda-market-access-strategy-saudi-arabia"
+                      >
+                        SFDA market access strategy for Saudi Arabia
+                      </Link>{' '}
+                      for registration sequencing detail.
+                    </p>
+                  ) : null}
+                  {section.id === 'nupco-cancer-centres' ? (
+                    <p className="text-muted-foreground leading-relaxed">
+                      For oncology drugs and formularies, see the{' '}
+                      <Link
+                        className="font-medium text-primary hover:underline"
+                        to="/market-reports/saudi-arabia-oncology-market-report"
+                      >
+                        Saudi Arabia oncology market report
+                      </Link>
+                      . For capital equipment adjacency, see the{' '}
+                      <Link
+                        className="font-medium text-primary hover:underline"
+                        to="/saudi-arabia-medical-devices-market-report"
+                      >
+                        Saudi Arabia medical devices market report
+                      </Link>
+                      .
+                    </p>
+                  ) : null}
+                  {section.id === 'companion-dx-gating' ? (
+                    <p className="text-muted-foreground leading-relaxed">
+                      Pair diagnostics enablement with the{' '}
+                      <Link
+                        className="font-medium text-primary hover:underline"
+                        to="/market-reports/saudi-arabia-oncology-market-report"
+                      >
+                        Saudi Arabia oncology market report
+                      </Link>{' '}
+                      and{' '}
+                      <Link
+                        className="font-medium text-primary hover:underline"
+                        to="/kol-mapping-saudi-arabia-oncology"
+                      >
+                        oncology KOL mapping in Saudi Arabia
+                      </Link>
+                      .
+                    </p>
+                  ) : null}
+                </ReportPremiumSection>
+              ))
+            : null}
 
           {gccEnrichment ? (
             <>

@@ -38,7 +38,7 @@ const firms: FirmProfile[] = [
       'KOL mapping and HCP surveys across therapy areas',
       'SUS vs private payer segmentation and formulary research',
       'Diversified FMCG, consumer, and healthcare under one roof',
-      '17+ country network, 48+ global clients, 15+ years primary research experience',
+      '38-country network, 48+ global clients, 15+ years primary research experience',
     ],
     overview: 'BioNixus is a global market research and insights firm headquartered in the USA with offices in the UK and the Middle East. In Brazil, BioNixus uniquely combines pharmaceutical and healthcare research expertise with broader FMCG and consumer insights capabilities — enabling multinational clients to commission both types of research through a single global partner. BioNixus brings ANVISA-aware research design, CONITEC submission support intelligence, KOL identification, HCP engagement surveys, and SUS/private payer segmentation — all built on global primary research standards adapted to the Brazilian market.',
   },
@@ -160,6 +160,7 @@ const breadcrumbSchema = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
+  image: 'https://www.bionixus.com/og-image.png',
   headline: 'Best Healthcare Market Research Companies in Brazil (2026 Guide)',
   description: 'Independent guide to the top healthcare and pharmaceutical market research companies in Brazil — ANVISA, CONITEC, SUS, KOL mapping, HEOR capabilities compared.',
   inLanguage: 'en',
@@ -219,6 +220,7 @@ export default function TopHealthcareMarketResearchCompaniesBrazil2026() {
         title="5 Best Healthcare Market Research Firms in Brazil | BioNixus"
         description="Top 5 healthcare market research firms in Brazil: BioNixus, IQVIA, Kantar, NielsenIQ, Euromonitor. ANVISA, CONITEC, KOL mapping compared."
         url={CANONICAL}
+        image="https://www.bionixus.com/og-image.png"
         locale="pt_BR"
       />
 

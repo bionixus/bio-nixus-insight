@@ -194,6 +194,7 @@ export default function TopOncologyMarketResearchCompanies2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Oncology Market Research Companies (2026)',
     description:
       'Expert 2026 guide to the leading oncology market research companies. Covers biomarker research, KOL mapping, tumour board dynamics, immuno-oncology evidence, and how to select an oncology research partner.',
@@ -568,6 +569,7 @@ export default function TopOncologyMarketResearchCompanies2026() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
                 { to: '/healthcare-market-research/therapy/oncology', label: 'Oncology Therapy Area Research', desc: 'BioNixus oncology research capabilities and methodology.' },
+                { to: '/market-reports/saudi-arabia-cancer-diagnostics-market-report', label: 'Saudi Arabia Cancer Diagnostics Market Report', desc: 'IVD, imaging, biopsy, SFDA pathways, and companion-diagnostic gating for 2026.' },
                 { to: '/kol-mapping-saudi-arabia-oncology', label: 'Oncology KOL Mapping — Saudi Arabia', desc: 'KOL identification and mapping for oncology in KSA.' },
                 { to: '/healthcare-market-research', label: 'Healthcare Market Research', desc: 'Full-service pharmaceutical market research across 38 countries.' },
                 { to: '/gcc-pharmaceutical-market-research', label: 'GCC Pharmaceutical Research', desc: 'Pharma market research across Saudi Arabia, UAE, Kuwait, and the Gulf.' },

@@ -17,7 +17,7 @@ import {
 } from '@/data/industryCommercialExpandedContent';
 import { INDUSTRY_SEGMENT } from '@/data/bionixusIndustrySegments';
 import { BIONIXUS_MARKETING_CLAIMS } from '@/data/marketingClaims';
-import { PREMIUM_INDUSTRIES_CSS } from '@/pages/industries/premiumIndustriesCss';
+import { PremiumIndustriesStyles } from '@/pages/industries/PremiumIndustriesStyles';
 import { WhyBioNixusIntro } from '@/components/shared/WhyBioNixusIntro';
 import type { ServiceLandingExpandedContent } from '@/data/serviceLandingContent';
 
@@ -261,7 +261,7 @@ export default function IndustryCountryBofuPage({ countrySlug, industrySlug }: I
         canonical={config.bofuPath}
         jsonLd={jsonLd}
       />
-      <style dangerouslySetInnerHTML={{ __html: PREMIUM_INDUSTRIES_CSS }} />
+      <PremiumIndustriesStyles />
       <Navbar />
 
       <main className="bx-ind">

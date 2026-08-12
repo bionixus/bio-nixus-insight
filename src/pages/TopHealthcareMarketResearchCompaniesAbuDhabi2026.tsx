@@ -196,6 +196,7 @@ export default function TopHealthcareMarketResearchCompaniesAbuDhabi2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Healthcare Market Research Companies in Abu Dhabi (2026 Guide)',
     description:
       'Expert guide to the leading healthcare and pharmaceutical market research companies in Abu Dhabi for 2026. Covers DoH-compliant firms, SEHA hospital access, KOL mapping, Daman payer research, and how to evaluate a research partner for Abu Dhabi.',

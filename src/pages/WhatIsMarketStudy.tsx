@@ -78,6 +78,7 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'What is Market Study? Types, Methods and Industry Applications',
     description:
       'A complete guide to market studies: definition, types (qualitative, quantitative, competitive intelligence, market sizing, brand tracking, market access), industries, methodology, costs, and timelines.',
@@ -92,6 +93,7 @@ const jsonLd = [
     publisher: {
       '@type': 'Organization',
       name: 'BioNixus',
+      url: 'https://www.bionixus.com',
       logo: { '@type': 'ImageObject', url: `${BASE_URL}/bionixus-logo.webp` },
     },
     about: [
@@ -175,7 +177,12 @@ const jsonLd = [
     offers: {
       '@type': 'Offer',
       priceCurrency: 'USD',
-      priceRange: '$18,000–$120,000',
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        priceCurrency: 'USD',
+        minPrice: 18000,
+        maxPrice: 120000,
+      },
     },
   },
   buildBreadcrumbSchema([

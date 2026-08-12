@@ -5,6 +5,8 @@ import { BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH, BLOG_LEGACY_FULL_PATH_REDIRECTS 
 import { normalizeOgCardPath, renderOgCardSvg } from '../lib/og-card-svg.mjs';
 import { buildLcpPreloadTag, getClientAssetHints } from '../lib/ssr-client-asset-hints.mjs';
 import { resolveLegacyCountryIndustryMarketResearchRedirect } from '../lib/country-industry-redirects.mjs';
+import { resolveGlobalWebsitesRedirect } from '../lib/global-websites-redirects.mjs';
+import { getCtrSeo, isCtrSeoPath } from '../lib/ctr-seo-overrides.mjs';
 
 /** Single source of truth for legacy redirects — also consumed by server.js. */
 const LEGACY_REDIRECTS: Record<string, string> = JSON.parse(
@@ -248,9 +250,11 @@ function decodeTitleEntities(s: string): string {
     .replace(/&#39;|&apos;/g, "'");
 }
 
-function normalizeTitleLength(title: string, max = 60): string {
+function normalizeTitleLength(title: string, max = 60, pathname?: string): string {
   const clean = decodeTitleEntities(String(title || '').replace(/\s+/g, ' ').trim());
   if (!clean) return 'BioNixus';
+  // CTR-engineered titles must ship exact (often >60 chars); do not clamp.
+  if (pathname && isCtrSeoPath(pathname)) return clean;
   if (/[\u0590-\u08FF]/.test(clean)) return clean;
   if (clean.length <= max) return clean;
 
@@ -384,8 +388,10 @@ function buildFallbackDescription(pathname: string): string {
   return `${titleCaseFromSlug(segment)} page from BioNixus with healthcare and pharmaceutical market research insights and services context.`;
 }
 
-function normalizeDescriptionLength(description: string, max = 155): string {
+function normalizeDescriptionLength(description: string, max = 155, pathname?: string): string {
   const clean = String(description || '').replace(/\s+/g, ' ').trim();
+  // CTR-engineered descriptions must ship exact (often outside the clamp band).
+  if (pathname && isCtrSeoPath(pathname)) return clean;
   if (!clean) return 'BioNixus healthcare and pharmaceutical market research insights.';
   if (clean.length <= max) return clean;
   const cut = clean.slice(0, max - 1);
@@ -415,10 +421,19 @@ function extractDocumentTitles(html: string): string[] {
 }
 
 function ensureTitleTag(html: string, pathname: string): string {
-  const fallbackTitle = normalizeTitleLength(buildFallbackTitle(pathname));
+  const ctr = getCtrSeo(pathname);
+  const fallbackTitle = normalizeTitleLength(buildFallbackTitle(pathname), 60, pathname);
   const headTitles = extractDocumentTitles(html);
   const chosen = headTitles.at(-1) ?? '';
-  const normalized = normalizeTitleLength(chosen || fallbackTitle);
+  // Force CTR-engineered titles so view-source matches the approved copy.
+  if (ctr) {
+    const withoutTitles = html.replace(/<title[^>]*>[\s\S]*?<\/title>/ig, '');
+    return withoutTitles.replace(
+      /<meta name="viewport"[^>]*>/i,
+      `$&\n<title>${ctr.title}</title>`,
+    );
+  }
+  const normalized = normalizeTitleLength(chosen || fallbackTitle, 60, pathname);
   // If the rendered title is a generic site default (the index.html fallback
   // that React-Helmet didn't override at SSR time, typically because page
   // data is fetched async from Sanity), replace it with the path-specific
@@ -513,7 +528,8 @@ function escapeHtmlAttribute(value: string): string {
 }
 
 function ensureMetaDescriptionTag(html: string, pathname: string): string {
-  const fallbackDescription = normalizeDescriptionLength(buildFallbackDescription(pathname));
+  const ctr = getCtrSeo(pathname);
+  const fallbackDescription = normalizeDescriptionLength(buildFallbackDescription(pathname), 155, pathname);
   const matches = Array.from(html.matchAll(/<meta[^>]+name=(["'])description\1[^>]*>/ig));
   const chosen = matches
     .map((m) => {
@@ -524,8 +540,12 @@ function ensureMetaDescriptionTag(html: string, pathname: string): string {
     .filter(Boolean)
     .at(-1);
   const forceArDescription = shouldForceArabicMetaDescription(pathname, chosen);
-  const base = forceArDescription ? fallbackDescription : (chosen || fallbackDescription);
-  const normalizedContent = normalizeDescriptionLength(base);
+  const base = ctr
+    ? ctr.description
+    : forceArDescription
+      ? fallbackDescription
+      : (chosen || fallbackDescription);
+  const normalizedContent = normalizeDescriptionLength(base, 155, pathname);
   const safeContent = escapeHtmlAttribute(normalizedContent);
 
   const withoutDescriptions = html.replace(/<meta[^>]+name=(["'])description\1[^>]*>\s*/ig, '');
@@ -551,6 +571,38 @@ function ensureCanonicalTag(html: string, pathname: string): string {
     return html.replace(headClose, `  ${linkTag}\n</head>`);
   }
   return html.replace(/<meta name="viewport"[^>]*>/i, `$&\n${linkTag}`);
+}
+
+/** Force og:title / og:description (and twitter mirrors) for CTR-engineered paths. */
+function ensureCtrOgTags(html: string, pathname: string): string {
+  const ctr = getCtrSeo(pathname);
+  if (!ctr) return html;
+  const title = escapeHtmlAttribute(ctr.title);
+  const description = escapeHtmlAttribute(ctr.description);
+  let out = html;
+  const upsertProperty = (property: string, content: string) => {
+    const re = new RegExp(`<meta\\b[^>]*property=(["'])${property}\\1[^>]*>`, 'i');
+    const tag = `<meta property="${property}" content="${content}" />`;
+    if (re.test(out)) {
+      out = out.replace(re, tag);
+    } else {
+      out = out.replace(/<\/head>/i, `  ${tag}\n</head>`);
+    }
+  };
+  const upsertName = (name: string, content: string) => {
+    const re = new RegExp(`<meta\\b[^>]*name=(["'])${name}\\1[^>]*>`, 'i');
+    const tag = `<meta name="${name}" content="${content}" />`;
+    if (re.test(out)) {
+      out = out.replace(re, tag);
+    } else {
+      out = out.replace(/<\/head>/i, `  ${tag}\n</head>`);
+    }
+  };
+  upsertProperty('og:title', title);
+  upsertProperty('og:description', description);
+  upsertName('twitter:title', title);
+  upsertName('twitter:description', description);
+  return out;
 }
 
 function getTemplate(): string {
@@ -594,12 +646,15 @@ function injectHtml(
       '<!--ssr-data-->',
       `<script>window.__INITIAL_DATA__ = ${JSON.stringify(initialData).replace(/</g, '\\u003c')}</script>`,
     );
-  return ensureCanonicalTag(
-    ensureImageTitleAttributes(
-      ensureMainContentImage(
-        ensureMetaDescriptionTag(ensureTitleTag(applyHtmlLang(page, pathname), pathname), pathname),
-        pathname,
+  return ensureCtrOgTags(
+    ensureCanonicalTag(
+      ensureImageTitleAttributes(
+        ensureMainContentImage(
+          ensureMetaDescriptionTag(ensureTitleTag(applyHtmlLang(page, pathname), pathname), pathname),
+          pathname,
+        ),
       ),
+      pathname,
     ),
     pathname,
   );
@@ -645,9 +700,30 @@ async function handleSsrRequest(
     : '';
   const fallbackUrl = req.url || '/';
 
+  /** Merge rewrite path with passthrough public query (trk/utm). Skip Vercel SSR internals. */
+  const buildPublicPathAndQuery = (pathWithOptionalQuery: string): string => {
+    const pathOnly = (pathWithOptionalQuery.split('?')[0] || '/').split('#')[0];
+    const params = new URLSearchParams(
+      pathWithOptionalQuery.includes('?')
+        ? pathWithOptionalQuery.slice(pathWithOptionalQuery.indexOf('?') + 1).split('#')[0]
+        : '',
+    );
+    const q = req.query ?? {};
+    for (const [key, raw] of Object.entries(q)) {
+      const lower = key.toLowerCase();
+      // `__ssr` + `url` are Vercel rewrite internals — never treat as public query.
+      if (lower === 'url' || lower === '__ssr') continue;
+      const val = Array.isArray(raw) ? raw[0] : raw;
+      if (typeof val === 'string') params.set(key, val);
+    }
+    const qs = params.toString();
+    return qs ? `${pathOnly}?${qs}` : pathOnly;
+  };
+
   let url: string;
   if (normalizedRewrittenPath) {
-    const cr = canonicalRedirectTarget(normalizedRewrittenPath.split('#')[0]);
+    const publicPath = buildPublicPathAndQuery(normalizedRewrittenPath.split('#')[0]);
+    const cr = canonicalRedirectTarget(publicPath);
     if (cr.changed) {
       res.setHeader('Cache-Control', 'public, max-age=3600');
       res.redirect(301, cr.full);
@@ -672,6 +748,14 @@ async function handleSsrRequest(
   if (redirectTarget) {
     res.setHeader('Cache-Control', 'public, max-age=3600');
     res.redirect(301, redirectTarget);
+    return;
+  }
+
+  const globalWebsitesTarget =
+    resolveGlobalWebsitesRedirect(pathname) ?? resolveGlobalWebsitesRedirect(decodedPathname);
+  if (globalWebsitesTarget) {
+    res.setHeader('Cache-Control', 'public, max-age=3600');
+    res.redirect(301, globalWebsitesTarget);
     return;
   }
 

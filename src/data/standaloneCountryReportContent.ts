@@ -7,6 +7,7 @@ export const STANDALONE_EXPORT_HUB_SLUGS = new Set([
   'turkey',
   'uk',
   'germany',
+  'sweden',
   'france',
   'italy',
   'spain',

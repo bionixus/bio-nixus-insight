@@ -1,6 +1,6 @@
-import type { BlogPost } from '@/types/blog';
+import type { BlogPost, ContentSilo } from '@/types/blog';
 
-export type ContentSilo = 'healthcare' | 'industries';
+export type { ContentSilo };
 
 export const HEALTHCARE_SILO_GROQ = '(contentSilo == "healthcare" || !defined(contentSilo))';
 export const INDUSTRIES_SILO_GROQ = 'contentSilo == "industries"';
@@ -59,12 +59,17 @@ const LOCALIZED_BLOG_PREFIX: Record<string, string> = {
   zh: '/zh/blog',
 };
 
+const ARABIC_SCRIPT = /[\u0600-\u06FF]/;
+
 export function getBlogPostPath(
   post: Pick<BlogPost, 'slug' | 'contentSilo' | 'language'>,
 ): string {
   const prefix = post.language ? LOCALIZED_BLOG_PREFIX[post.language] : undefined;
   if (prefix) return `${prefix}/${post.slug}`;
   if (isIndustriesPost(post)) return getIndustriesInsightPostPath(post.slug);
+  // Arabic-slug posts canonicalise to /ar/blog/. Some CMS records omit `language`,
+  // and linking them under /blog/ sends every reference through a 301.
+  if (ARABIC_SCRIPT.test(post.slug)) return `${LOCALIZED_BLOG_PREFIX.ar}/${post.slug}`;
   return `/blog/${post.slug}`;
 }
 

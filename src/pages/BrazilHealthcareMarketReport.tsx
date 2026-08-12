@@ -57,9 +57,10 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-linkedin.png',
     headline: 'Brazil Healthcare Market Report 2026: ANVISA, SUS, CONITEC, and Pharmaceutical Market Intelligence',
-    author: { '@type': 'Organization', name: 'BioNixus' },
-    publisher: { '@type': 'Organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
+    author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
+    publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
     dateModified: '2026-05-27',
     mainEntityOfPage: 'https://www.bionixus.com/brazil-healthcare-market-report',
@@ -85,8 +86,7 @@ const BrazilHealthcareMarketReport = () => (
     <Navbar />
     <SEOHead
       title="Brazil Healthcare & Pharma Market 2026: Size, ANVISA & Outlook"
-      description="Brazil's healthcare and pharmaceutical market in 2026 — market size, ANVISA regulation, top companies and forecast. By BioNixus."
-      canonical="https://www.bionixus.com/brazil-healthcare-market-report"
+      description="Brazil's healthcare and pharmaceutical market in 2026 — market size, ANVISA regulation, top companies and forecast. By Bionixus."      canonical="https://www.bionixus.com/brazil-healthcare-market-report"
       jsonLd={jsonLd}
     />
       <ReportReadingProgress progressId="report-rp-brazil-healthcare-market-report" />

@@ -1,10 +1,14 @@
 import { Helmet } from 'react-helmet-async'
 import type { BlogPost } from '@/types/blog'
+import type { Language } from '@/lib/i18n'
 import { HOME_FAQ_SECTION_ID } from '@/lib/homePageFaq'
 import { buildHomeArticleJsonLdNodes, buildHomeServiceJsonLdNodes } from '@/lib/homePageJsonLd'
 import { buildCanonicalOrganization } from '@/lib/seo/organization'
 
-type LanguageCode = 'en' | 'ar' | 'de' | 'fr' | 'es' | 'zh'
+// Mirrors the site's Language union rather than restating it — the local copy
+// had drifted and was missing pt and ru, so those pages could not pass their
+// own locale through to inLanguage.
+type LanguageCode = Language
 
 type BreadcrumbItem = {
   name: string
@@ -90,6 +94,8 @@ type PressReleaseSchemaProps = {
   publishedAt?: string
   modifiedAt?: string
   dateline?: string
+  releaseType?: string
+  keywords?: string[]
   relatedReportUrl?: string
   breadcrumb: BreadcrumbItem[]
 }
@@ -125,8 +131,8 @@ function toIsoDate(value?: string): string | undefined {
   return d.toISOString()
 }
 
-function buildOrganization(inLanguage: string) {
-  return buildCanonicalOrganization(inLanguage);
+function buildOrganization() {
+  return buildCanonicalOrganization();
 }
 
 function buildWebsite(inLanguage: string) {
@@ -153,10 +159,8 @@ function buildWebsite(inLanguage: string) {
   }
 }
 
-function buildBreadcrumb(
-  breadcrumb: BreadcrumbItem[],
-  inLanguage: string
-) {
+// BreadcrumbList is an ItemList, not a CreativeWork, so it takes no inLanguage.
+function buildBreadcrumb(breadcrumb: BreadcrumbItem[]) {
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -166,7 +170,6 @@ function buildBreadcrumb(
       name: entry.name,
       item: toHttpsUrl(entry.item),
     })),
-    inLanguage,
   }
 }
 
@@ -322,7 +325,7 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
 
   if (props.pageType === 'home') {
     const nodes: Record<string, unknown>[] = [
-      buildOrganization(inLanguage),
+      buildOrganization(),
       buildWebsite(inLanguage),
     ]
     if (props.faqItems && props.faqItems.length > 0) {
@@ -402,7 +405,7 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
       isAccessibleForFree: true,
     }
 
-    const nodes: Record<string, unknown>[] = [articleNode, buildBreadcrumb(props.breadcrumb, inLanguage)]
+    const nodes: Record<string, unknown>[] = [articleNode, buildBreadcrumb(props.breadcrumb)]
 
     if (props.faqItems && props.faqItems.length > 0) {
       nodes.push(buildFaq(props.faqItems, inLanguage, pageUrlHttps))
@@ -471,7 +474,12 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
       },
       inLanguage,
       isAccessibleForFree: true,
-      ...(props.dateline?.trim() ? { articleSection: 'Press release' } : {}),
+      ...(props.keywords && props.keywords.length > 0
+        ? { keywords: props.keywords.join(', ') }
+        : {}),
+      ...(props.releaseType?.trim() || props.dateline?.trim()
+        ? { articleSection: props.releaseType?.trim() || 'Press release' }
+        : {}),
       ...(props.relatedReportUrl
         ? {
             about: {
@@ -482,23 +490,22 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
         : {}),
     }
 
-    return [newsArticle, buildBreadcrumb(props.breadcrumb, inLanguage)]
+    return [newsArticle, buildBreadcrumb(props.breadcrumb)]
   }
 
   if (props.pageType === 'service') {
     const nodes: Record<string, unknown>[] = [
       {
         '@context': 'https://schema.org',
-        '@type': 'ProfessionalService',
+        '@type': 'Service',
         name: props.serviceName,
         description: props.serviceDescription,
         url: toHttpsUrl(props.pageUrl),
         provider: { '@id': ORG_ID },
         areaServed: props.providerAreaServed || 'EMEA',
         serviceType: props.serviceName,
-        inLanguage,
       },
-      buildBreadcrumb(props.breadcrumb, inLanguage),
+      buildBreadcrumb(props.breadcrumb),
     ]
 
     if (props.faqItems && props.faqItems.length > 0) {
@@ -518,10 +525,9 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
       ...(isNonEmptyString(person.jobTitle) ? { jobTitle: person.jobTitle } : {}),
       ...(isNonEmptyString(person.sameAs) ? { sameAs: [toHttpsUrl(person.sameAs)] } : {}),
       worksFor: { '@id': ORG_ID },
-      inLanguage,
     }))
 
-  return [buildOrganization(inLanguage), ...personNodes]
+  return [buildOrganization(), ...personNodes]
 }
 
 export default function SchemaMarkup(props: SchemaMarkupProps) {

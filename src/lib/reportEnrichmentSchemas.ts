@@ -54,7 +54,7 @@ export function buildMedicalWebPageSchema(input: ReportEnrichmentSchemaInput): o
         'Pharmaceutical commercial professionals, market access directors, healthcare investors, regional business development managers',
     },
     lastReviewed: input.modifiedDate,
-    reviewedBy: { '@type': 'Organization', name: 'BioNixus' },
+    reviewedBy: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
   };
 }
 

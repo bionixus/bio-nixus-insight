@@ -15,7 +15,7 @@ export default function ArHealthcareMarketResearch() {
         { to: '/market-research-healthcare', label: 'خدمات أبحاث السوق الصحي' },
         { to: '/healthcare-market-research/saudi-arabia', label: 'أبحاث سوق الرعاية الصحية في السعودية' },
         { to: '/services', label: 'قائمة خدماتنا الكاملة' },
-        { to: '/ar/contacts', label: 'تواصل معنا' },
+        { to: '/ar/contact', label: 'تواصل معنا' },
       ]}
       bullets={[
         'أبحاث نوعية متعمّقة مع الأطباء المتخصصين وأطباء الرعاية الأولية في أسواق الخليج، تُجرَى باللغة العربية لضمان تمثيل شامل للمجتمع الطبي بما فيه أطباء القطاع الحكومي العاملون بالعربية.',

@@ -1,5 +1,6 @@
 import { COMPANY_BOILERPLATE_PRESS } from '@/data/companyStory'
 import { useQuery } from '@tanstack/react-query'
+import { Link, useParams } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { PortableText } from '@portabletext/react'
 import type { PortableTextBlock } from '@portabletext/types'
@@ -118,7 +119,7 @@ export default function PressRelease() {
   return (
     <>
       <SchemaMarkup
-        pageType="pressRelease"
+        pageType="press-release"
         pageUrl={pageUrl}
         language="en"
         headline={release.title}

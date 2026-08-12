@@ -264,7 +264,6 @@ export const DE_PATH_LABEL_OVERRIDES: Readonly<Record<string, string>> = {
   '/healthcare-market-research': 'Hub Gesundheitsmarktforschung',
   '/healthcare-market-research/germany': 'Gesundheitsmarktforschung Deutschland',
   '/healthcare-market-research/europe': 'Gesundheitsmarktforschung Europa',
-  '/healthcare-market-research-germany': 'Gesundheitsmarktforschung Deutschland',
   '/pharmaceutical-market-research-germany': 'Pharmazeutische Marktforschung Deutschland',
   '/germany-healthcare-market-report': 'Deutschland-Gesundheitsmarktbericht',
   '/germany-medical-devices-market-report': 'Deutschland MedTech-Marktbericht',

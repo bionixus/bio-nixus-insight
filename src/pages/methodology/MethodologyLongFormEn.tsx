@@ -57,6 +57,41 @@ export function MethodologyLongFormEn({ lang }: Props): JSX.Element {
             EMEA and GCC markets, supplemented by partnerships with accredited panel providers who meet ESOMAR and BHBIA sourcing standards. We recruit
             from verified physician databases, hospital registries, and specialty society membership lists — never from open-internet opt-in pools.
           </p>
+          <h3 className="text-xl font-display font-semibold text-foreground mt-6 mb-4">
+            Panel Sourcing Operational Methods
+          </h3>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            <strong className="text-foreground">Licensing authority verification.</strong> We recruit directly from regulatory databases —
+            the DHA physician register in Dubai, the DOH Abu Dhabi practitioner database, SFDA Saudi Arabia, MOHAP UAE, and MOH Kuwait registers.
+            Each register provides licence number, specialty classification, and practice setting, giving every panellist an auditable credential
+            trail before first contact.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            <strong className="text-foreground">Hospital and clinic network partnerships.</strong> Direct specialist referral runs through medical
+            education departments and clinic coordinators at major facilities, including SEHA hospitals (Abu Dhabi), Mediclinic, Aster Hospitals,
+            NMC Healthcare, Cleveland Clinic Abu Dhabi, and Saudi German Hospital networks. These partnerships support therapy-area depth where
+            licence registers alone do not surface active high-prescribers.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            <strong className="text-foreground">Professional association recruitment.</strong> Specialty society rosters — including the Emirates
+            Diabetes and Endocrine Society, Emirates Cardiology Society, Saudi Thoracic Society, and regional oncology associations — are
+            cross-referenced with licensing registers so membership lists never stand alone as a verification source.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            <strong className="text-foreground">LinkedIn professional outreach.</strong> Specialty-targeted recruitment uses physician-specific
+            messaging rather than generic survey invitations. Typical yield is 15–25% connection acceptance and 8–12% survey completion from
+            initial outreach, and the channel is particularly effective for DHA-registered private hospital specialists.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            <strong className="text-foreground">Panel re-contact.</strong> Verified panellists from previous research who consented to future
+            contact achieve 35–55% completion rates — the fastest route for advisory board recruitment when timeline is the priority.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            <strong className="text-foreground">Three-layer validation protocol.</strong> Every panellist passes licence verification against
+            authority registers, specialty confirmation matching declared versus registered specialty, and practice-setting validation through
+            facility directories. Quarterly refresh cycles remove relocated or retired physicians so panels reflect clinicians actively treating
+            patients today.
+          </p>
           <p className="text-muted-foreground leading-relaxed mb-4">
             Sample sizes are calculated against predefined statistical power targets. For most quantitative programmes, we target a minimum of ±5%
             margin of error at the 95% confidence level within each reportable sub-group. Where the target population is inherently small —

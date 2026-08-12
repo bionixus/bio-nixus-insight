@@ -96,8 +96,9 @@ const ClientReviews = () => {
           content="Read verified Google reviews and client testimonials for BioNixus. Recommended by more than 40 happy pharmaceutical, biotech, and medical device clients across the US, Europe, and LATAM."
         />
         <link rel="canonical" href={PAGE_URL} />
-        <script type="application/ld+json">{JSON.stringify(buildCanonicalOrganization('en'))}</script>
-        <script type="application/ld+json">{JSON.stringify(buildUkGoogleReviewsLocalBusiness('en'))}</script>
+        {/* Organization has no AggregateRating — ratings live only on UK LocalBusiness below. */}
+        <script type="application/ld+json">{JSON.stringify(buildCanonicalOrganization())}</script>
+        <script type="application/ld+json">{JSON.stringify(buildUkGoogleReviewsLocalBusiness())}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
@@ -105,6 +106,8 @@ const ClientReviews = () => {
         title="Client Reviews | BioNixus"
         description="Verified Google reviews and client testimonials from pharmaceutical and medical device partners across the US, Europe, G5, and LATAM."
         url={PAGE_URL}
+        image="https://www.bionixus.com/og-image.png"
+        locale="en_US"
       />
 
       <Navbar />

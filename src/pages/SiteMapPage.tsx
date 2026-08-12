@@ -87,7 +87,7 @@ const staticLinks = [
   { to: '/quantitative-healthcare-market-research', label: 'Quantitative Healthcare Market Research' },
   { to: '/bionixus-market-research-middle-east', label: 'Middle East Market Research' },
   { to: '/healthcare-market-research', label: 'Healthcare Research Hub' },
-  { to: '/global-websites', label: 'Global Websites' },
+  { to: '/healthcare-market-research', label: 'Healthcare Market Research' },
   { to: '/gcc-market-access-guide', label: 'GCC Market Access Guide' },
   { to: '/mena-pharma-market-data', label: 'MENA Pharma Market Data' },
   { to: '/blog', label: 'Blog' },
@@ -107,13 +107,13 @@ const staticLinks = [
 ];
 
 const globalWebsitesCountryLinks = [
-  { to: '/global-websites/saudi-arabia', label: 'Saudi Arabia — pharma market entry blueprint' },
-  { to: '/global-websites/united-arab-emirates', label: 'UAE — pharmaceutical go-to-market blueprint' },
-  { to: '/global-websites/united-states', label: 'United States — pharmaceutical market entry' },
-  { to: '/global-websites/united-kingdom', label: 'United Kingdom — pharmaceutical market entry' },
-  { to: '/global-websites/germany', label: 'Germany — pharmaceutical market entry' },
-  { to: '/global-websites/france', label: 'France — pharmaceutical market entry' },
-  { to: '/global-websites/egypt', label: 'Egypt — pharmaceutical market entry' },
+  { to: '/healthcare-market-research/saudi-arabia', label: 'Saudi Arabia — pharma market entry blueprint' },
+  { to: '/healthcare-market-research/uae', label: 'UAE — pharmaceutical go-to-market blueprint' },
+  { to: '/healthcare-market-research/united-states', label: 'United States — pharmaceutical market entry' },
+  { to: '/healthcare-market-research/uk', label: 'United Kingdom — pharmaceutical market entry' },
+  { to: '/healthcare-market-research/germany', label: 'Germany — pharmaceutical market entry' },
+  { to: '/healthcare-market-research/france', label: 'France — pharmaceutical market entry' },
+  { to: '/healthcare-market-research/egypt', label: 'Egypt — pharmaceutical market entry' },
 ];
 
 const geoListicleLinks = [
@@ -172,6 +172,11 @@ const marketReportLinks = [
   { to: '/gcc-medical-devices-market-report', label: 'GCC Medical Devices Market Report 2026' },
   { to: '/gcc-anesthesia-surgical-market-report', label: 'GCC Anesthesia & Surgical Market Report 2026' },
   { to: '/saudi-arabia-healthcare-market-report', label: 'Saudi Arabia Healthcare Market Report 2026' },
+  { to: '/market-reports/saudi-arabia-biosimilars-market-report', label: 'Saudi Arabia Biosimilar Market Report 2026' },
+  { to: '/market-reports/saudi-arabia-cancer-diagnostics-market-report', label: 'Saudi Arabia Cancer Diagnostics Market Report 2026' },
+  { to: '/insights/saudi-arabia-biosimilar-market-size-methodology-2026', label: 'Saudi Arabia Biosimilar Market Size Methodology' },
+  { to: '/insights/saudi-arabia-cancer-diagnostics-market-size-methodology-2026', label: 'Saudi Arabia Cancer Diagnostics Market Size Methodology' },
+  { to: '/biosimilar-market-entry-saudi-arabia', label: 'Biosimilar Market Entry — Saudi Arabia' },
   { to: '/saudi-arabia-medical-devices-market-report', label: 'Saudi Arabia Medical Devices Market Report 2026' },
   { to: '/uae-healthcare-market-report', label: 'UAE Healthcare Market Report 2026' },
   { to: '/uae-medical-devices-market-report', label: 'UAE Medical Devices Market Report 2026' },
@@ -188,6 +193,9 @@ const marketReportLinks = [
   { to: '/uk-healthcare-market-report', label: 'UK Healthcare Market Report 2026' },
   { to: '/uk-medical-devices-market-report', label: 'UK Medical Devices Market Report 2026' },
   { to: '/germany-healthcare-market-report', label: 'Germany Healthcare Market Report 2026' },
+  { to: '/sweden-healthcare-market-report', label: 'Sweden Healthcare Market Report 2026' },
+  { to: '/uae-influenza-vaccine-report', label: 'UAE Influenza Vaccine Report 2026' },
+  { to: '/market-access', label: 'Market Access Research Hub' },
   { to: '/germany-medical-devices-market-report', label: 'Germany Medical Devices Market Report 2026' },
   { to: '/france-healthcare-market-report', label: 'France Healthcare Market Report 2026' },
   { to: '/france-medical-devices-market-report', label: 'France Medical Devices Market Report 2026' },
@@ -217,6 +225,7 @@ const marketReportLinks = [
   { to: '/turkey-medical-devices-market-report', label: 'Turkey Medical Devices Market Report 2026' },
   { to: '/market-reports', label: 'Healthcare Market Research Reports Hub' },
   { to: '/market-reports/therapy/oncology', label: 'Oncology Market Research Reports' },
+  { to: '/market-reports/therapy/cancer-diagnostics', label: 'Cancer Diagnostics Market Research Reports' },
   { to: '/market-reports/therapy/diabetes-metabolic', label: 'Diabetes & Metabolic Market Research Reports' },
   { to: '/market-reports/therapy/cardiovascular', label: 'Cardiovascular Market Research Reports' },
   { to: '/market-reports/therapy/immunology-biologics', label: 'Immunology & Biologics Market Research Reports' },
@@ -292,7 +301,8 @@ function pathToLabel(path: string) {
 function categorizePath(path: string) {
   if (path.startsWith('/blog/')) return 'Blog Insights';
   if (path.startsWith('/case-studies/')) return 'Case Studies';
-  if (path.startsWith('/global-websites/')) return 'Global Websites';
+  if (path.startsWith('/healthcare-market-research/')) return 'Healthcare Market Research';
+  if (path.startsWith('/global-websites/')) return 'Healthcare Market Research';
   if (path.startsWith('/healthcare-market-research/')) return 'Healthcare Country Pages';
   if (path.startsWith('/pharmaceutical-companies-')) return 'Pharmaceutical Company Guides';
   if (path.startsWith('/insights/top-') && path.includes('-market-research-companies-')) {
@@ -836,7 +846,7 @@ export default function SiteMapPage() {
                       <ul className="grid gap-2">
                         {blogPosts.map((post) => (
                           <li key={post.id}>
-                            <PremiumInternalLink to={`/blog/${post.slug}`}>{post.title}</PremiumInternalLink>
+                            <PremiumInternalLink to={getBlogPostPath(post)}>{post.title}</PremiumInternalLink>
                           </li>
                         ))}
                       </ul>

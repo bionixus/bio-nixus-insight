@@ -181,6 +181,7 @@ export default function TopPharmaMarketResearchCompaniesMiddleEast2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Pharma Market Research Companies in the Middle East (2026 Guide)',
     description:
       'Independent 2026 guide ranking the top pharmaceutical market research companies in the Middle East — MENA pharma analytics, fieldwork, competitive intelligence, and primary research firms compared.',
@@ -231,8 +232,8 @@ export default function TopPharmaMarketResearchCompaniesMiddleEast2026() {
         <meta name="geo.region" content="ME" />
         <meta name="geo.placename" content="Middle East" />
         <link rel="canonical" href={CANONICAL} />
-        <link rel="alternate" hreflang="en" href={CANONICAL} />
-        <link rel="alternate" hreflang="x-default" href={CANONICAL} />
+        <link rel="alternate" hrefLang="en" href={CANONICAL} />
+        <link rel="alternate" hrefLang="x-default" href={CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>

@@ -77,15 +77,10 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-linkedin.png',
     headline: 'Japan Medical Devices Market Report 2026: PMDA, NHI Reimbursement, and Device Lag Reduction',
-    author: {
-      '@type': 'Person',
-      name: 'Laura Williams',
-      jobTitle: 'Research Director',
-      worksFor: { '@type': 'Organization', name: 'BioNixus Healthcare Market Research' },
-    },
-    publisher: { '@type': 'Organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
-    datePublished: '2026-05-27',
+    author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
+    publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },    datePublished: '2026-05-27',
     dateModified: '2026-07-21',
     mainEntityOfPage: 'https://www.bionixus.com/japan-medical-devices-market-report',
   },
@@ -110,8 +105,7 @@ const JapanMedicalDevicesMarketReport = () => (
     <Navbar />
     <SEOHead
       title="Japan Medical Device Market 2026: Size, PMDA Access & Forecast"
-      description="Japan's medical device market in 2026 — market size, PMDA/Shonin registration, reimbursement and forecasts. Report by BioNixus."
-      canonical="https://www.bionixus.com/japan-medical-devices-market-report"
+      description="Japan's medical device market in 2026 — market size, PMDA/Shonin registration, reimbursement and forecasts. Report by Bionixus."      canonical="https://www.bionixus.com/japan-medical-devices-market-report"
       jsonLd={jsonLd}
     />
       <ReportReadingProgress progressId="report-rp-japan-medical-devices-market-report" />

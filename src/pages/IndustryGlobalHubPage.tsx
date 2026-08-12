@@ -1,7 +1,8 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, Navigate } from 'react-router-dom';
 import { ChevronRight, ArrowRight } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import NotFound from '@/pages/NotFound';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { buildCanonicalOrganization } from '@/lib/seo/organization';
@@ -13,6 +14,7 @@ import {
 import { INDUSTRY_HUB_PAGES } from '@/data/industryHubPages';
 import { resolveCountryIndustryMarketResearchPath } from '@/data/industryHubCountries';
 import type { MatrixIndustrySlug } from '@/data/industryMarketResearchMatrix';
+import { MATRIX_INDUSTRIES } from '@/data/industryMarketResearchMatrix';
 
 const BASE_URL = 'https://www.bionixus.com';
 
@@ -38,21 +40,11 @@ export default function IndustryGlobalHubPage() {
   const config = INDUSTRY_HUB_PAGES.find((p) => p.slug === industrySlug);
 
   if (!config) {
-    return (
-      <div className="min-h-screen bg-background">
-        <Navbar />
-        <main className="container-wide py-24 text-center">
-          <h1 className="text-2xl font-semibold text-foreground mb-4">Page not found</h1>
-          <p className="text-muted-foreground mb-8">
-            The industry page you requested does not exist.
-          </p>
-          <Link to="/market-research" className="text-primary underline">
-            Back to Market Research
-          </Link>
-        </main>
-        <Footer />
-      </div>
-    );
+    const matrix = industrySlug ? MATRIX_INDUSTRIES[industrySlug as MatrixIndustrySlug] : undefined;
+    if (matrix?.isHealthcareAdjacent) {
+      return <Navigate to="/healthcare-market-research" replace />;
+    }
+    return <NotFound />;
   }
 
   const canonicalUrl = `${BASE_URL}/market-research/${config.slug}`;

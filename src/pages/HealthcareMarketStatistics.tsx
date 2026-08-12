@@ -42,9 +42,11 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: 'Healthcare & Pharma Market Statistics 2026 (MENA, Asia & Global)',
+    image: 'https://www.bionixus.com/og-image.png',
     author: {
       '@type': 'Organization',
       name: 'BioNixus',
+      url: 'https://www.bionixus.com',
     },
     publisher: {
       '@type': 'Organization',

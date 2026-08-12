@@ -84,8 +84,10 @@ import {
   GCC_PHARMACOECONOMICS_TABLE_OF_CONTENTS,
   GCC_PHARMACOECONOMICS_TAGS,
 } from '@/data/blog-gcc-pharmacoeconomics';
+import { EGYPT_HEALTHCARE_2026_CAIRO_FAQ } from '@/data/egyptHealthcare2026CairoSeo';
 import { getTherapyStaticBlogBundle } from '@/data/therapy-static-blog-registry';
 import { getQ2PharmaSchemaBundle } from '@/data/q2-pharma-blog-schema';
+import { getCtrSeo } from '@/data/ctr-seo-overrides';
 
 /** Helper to convert PortableText block to a URL-friendly slug */
 function slugifyHeading(value: any): string {
@@ -966,8 +968,11 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
             ? therapyStaticBlogBundle!.displayTitle
             : post.title;
   const bodySourceForMeta = typeof post.body === 'string' ? post.body : post.excerpt || post.title;
+  const ctrSeo = slug ? getCtrSeo(`/blog/${slug}`) : null;
   let titleCore = dedupePipeBioNixusTail(post.seoMetaTitle || post.title || 'BioNixus');
-  if (isEgyptHealthcare2026) {
+  if (ctrSeo) {
+    titleCore = ctrSeo.title;
+  } else if (isEgyptHealthcare2026) {
     titleCore = EGYPT_HEALTHCARE_2026_TITLE;
   } else if (isKuwaitHealthcare2026) {
     titleCore = KUWAIT_HEALTHCARE_2026_TITLE;
@@ -992,7 +997,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
   } else if (slug === SAUDI_HCR_FIRMS_AR_SLUG && isArabicArticle) {
     titleCore = SAUDI_HCR_FIRMS_AR_TITLE_CORE;
   }
-  const documentTitle = seoTitleWithBrandOnce(titleCore);
+  const documentTitle = ctrSeo ? ctrSeo.title : seoTitleWithBrandOnce(titleCore);
   const metaDescription = buildSeoDescription({
     preferred: post.seoMetaDescription,
     bodySource: bodySourceForMeta,
@@ -1012,7 +1017,9 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
     : isGccMeastPharmaHealthArticleAr
       ? GCC_MEAST_PHARMA_HEALTH_AR_META_DESCRIPTION
       : null;
-  const finalMetaDescription = isEgyptHealthcare2026
+  const finalMetaDescription = ctrSeo
+    ? ctrSeo.description
+    : isEgyptHealthcare2026
     ? EGYPT_HEALTHCARE_2026_META_DESCRIPTION
     : isKuwaitHealthcare2026
       ? KUWAIT_HEALTHCARE_2026_META_DESCRIPTION
@@ -1031,7 +1038,9 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
               : slug === CHINA_HEALTHCARE_2026_SLUG
               ? CHINA_HEALTHCARE_2026_META_DESCRIPTION
               : arabicBlogOnEnPathMetaDescription ?? arBlogMetaOverride ?? metaDescription;
-  const socialTitle = isEgyptHealthcare2026
+  const socialTitle = ctrSeo
+    ? ctrSeo.title
+    : isEgyptHealthcare2026
     ? EGYPT_HEALTHCARE_2026_OG_TITLE
     : isKuwaitHealthcare2026
       ? KUWAIT_HEALTHCARE_2026_OG_TITLE
@@ -1046,7 +1055,9 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
             : isTherapyStaticBlogEn
               ? therapyStaticBlogBundle!.metaTitle
               : dedupePipeBioNixusTail(post.ogTitle || documentTitle);
-  const socialDescription = isEgyptHealthcare2026
+  const socialDescription = ctrSeo
+    ? ctrSeo.description
+    : isEgyptHealthcare2026
     ? EGYPT_HEALTHCARE_2026_OG_DESCRIPTION
     : isKuwaitHealthcare2026
       ? KUWAIT_HEALTHCARE_2026_OG_DESCRIPTION

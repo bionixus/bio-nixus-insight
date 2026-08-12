@@ -2,7 +2,7 @@
 
 export const SAUDI_MR_COMPANY_PROOF = [
   {
-    title: '17+ countries, GCC-native fieldwork',
+    title: '38 countries, GCC-native fieldwork',
     body: 'BioNixus runs physician, payer, and institutional research across Saudi Arabia with bilingual Arabic–English execution—not imported GCC averages.',
   },
   {

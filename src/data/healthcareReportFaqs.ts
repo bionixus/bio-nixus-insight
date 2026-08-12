@@ -28,6 +28,8 @@ function therapyDrugLeadersGlobal(slug: string): string {
   const m: Record<string, string> = {
     oncology:
       'PD-1/PD-L1 inhibitors, HER2-directed biologics and biosimilars, CDK4/6 agents, EGFR and ALK TKIs, KRAS G12C targeted therapy, PARP maintenance, and haematology-oncology intensification pathways anchor modern boards.',
+    'cancer-diagnostics':
+      'IHC and NGS companion panels, PCR and flow cytometry, biopsy/cytology workflows, and staging imaging (MRI, CT, PET, mammography) decide case mix and therapy eligibility before formulary debates begin.',
     'diabetes-metabolic':
       'GLP-1 receptor agonists, dual GIP/GLP-1 agents, basal insulin analogues, rapid-acting insulin biosimilars, SGLT2 inhibitors, metformin extended-release, PCSK9 adjuncts, and finerenone in diabetic kidney disease shape prescribing.',
     cardiovascular:

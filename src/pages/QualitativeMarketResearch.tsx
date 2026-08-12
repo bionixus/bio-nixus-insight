@@ -25,7 +25,7 @@ const jsonLd = [
     '@type': 'Service',
     name: 'Qualitative Market Research',
     serviceType: 'Qualitative healthcare and pharmaceutical research',
-    provider: { '@type': 'Organization', name: 'BioNixus' },
+    provider: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     areaServed: ['MENA', 'United Kingdom', 'Europe'],
   },
   buildBreadcrumbSchema([

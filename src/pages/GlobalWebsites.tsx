@@ -20,7 +20,7 @@ import {
 } from '@/lib/globalWebsitesData';
 import { healthcareCountryRecoveryPaths, languageRecoveryPaths } from '@/lib/internalLinkRecovery';
 
-const canonicalUrl = 'https://www.bionixus.com/global-websites';
+const canonicalUrl = 'https://www.bionixus.com/healthcare-market-research';
 
 const GlobalWebsites = () => {
   const { language } = useLanguage();
@@ -32,7 +32,7 @@ const GlobalWebsites = () => {
     '@type': 'ListItem',
     position: index + 1,
     name: `${item.countryName} - ${formatLanguages(item.languages)}`,
-    url: `https://www.bionixus.com/global-websites/${item.slug}`,
+    url: `https://www.bionixus.com/healthcare-market-research/${item.slug}`,
   }));
 
   return (
@@ -132,7 +132,7 @@ const GlobalWebsites = () => {
               {topMarkets.map((item) => (
                 <li key={item.countryCode}>
                   <Link
-                    to={`/global-websites/${countryByCode.get(item.countryCode)?.slug ?? item.countryCode.toLowerCase()}`}
+                    to={`/healthcare-market-research/${(() => { const s = countryByCode.get(item.countryCode)?.slug ?? item.countryCode.toLowerCase(); return s === 'united-arab-emirates' ? 'uae' : s === 'united-kingdom' ? 'uk' : s; })()}`}
                     className={globalSitesHubCardLink}
                   >
                     <span className="font-display text-lg font-semibold text-foreground tracking-tight group-hover:text-primary">
@@ -166,7 +166,7 @@ const GlobalWebsites = () => {
                     {group.countries.map((item) => (
                       <li key={`${group.regionKey}-${item.countryCode}`}>
                         <Link
-                          to={`/global-websites/${countryByCode.get(item.countryCode)?.slug ?? item.countryCode.toLowerCase()}`}
+                          to={`/healthcare-market-research/${(() => { const s = countryByCode.get(item.countryCode)?.slug ?? item.countryCode.toLowerCase(); return s === 'united-arab-emirates' ? 'uae' : s === 'united-kingdom' ? 'uk' : s; })()}`}
                           className={globalSitesHubCardLink}
                         >
                           <span className="font-semibold tracking-tight text-foreground group-hover:text-primary">{item.countryName}</span>

@@ -78,7 +78,20 @@ function scrubPharmaBodyText(text: string, marketSlug: string): string {
 
 const PHARMA_SOURCE_DEFAULT = 'Company disclosure / BioNixus synthesis';
 
-export function localizePharmaInsightEntry(entry: ReportEntry): ReportEntry {
+/**
+ * A pharma insight row as authored, before the pipeline completes it. The four
+ * source fields are defaulted below, and `relatedSlugs` is attached later by
+ * attachRelated, so a seed is not yet a full ReportEntry.
+ */
+export type PharmaInsightSeed = Omit<
+  ReportEntry,
+  'stat1Source' | 'stat2Source' | 'stat3Source' | 'sourceNotes' | 'relatedSlugs'
+> &
+  Partial<Pick<ReportEntry, 'stat1Source' | 'stat2Source' | 'stat3Source' | 'sourceNotes'>>;
+
+export function localizePharmaInsightEntry(
+  entry: PharmaInsightSeed,
+): Omit<ReportEntry, 'relatedSlugs'> {
   const productLabel = entry.title.split(' Q2')[0]?.split(' Q1')[0] ?? entry.title;
   const marketName = MARKET_CONTENT[entry.marketSlug]?.name ?? entry.market;
   const scrub = (t: string) => scrubPharmaBodyText(t, entry.marketSlug);
@@ -98,6 +111,8 @@ export function localizePharmaInsightEntry(entry: ReportEntry): ReportEntry {
   };
 }
 
-export function localizePharmaInsightEntries(entries: ReportEntry[]): ReportEntry[] {
+export function localizePharmaInsightEntries(
+  entries: PharmaInsightSeed[],
+): Omit<ReportEntry, 'relatedSlugs'>[] {
   return entries.map(localizePharmaInsightEntry);
 }

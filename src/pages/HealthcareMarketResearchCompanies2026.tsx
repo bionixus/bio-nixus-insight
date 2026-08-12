@@ -352,8 +352,8 @@ export default function HealthcareMarketResearchCompanies2026() {
         />
         <meta name="author" content="BioNixus" />
         <link rel="canonical" href={CANONICAL} />
-        <link rel="alternate" hreflang="en" href={CANONICAL} />
-        <link rel="alternate" hreflang="x-default" href={CANONICAL} />
+        <link rel="alternate" hrefLang="en" href={CANONICAL} />
+        <link rel="alternate" hrefLang="x-default" href={CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>

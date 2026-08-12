@@ -21,8 +21,10 @@ const BODY_SANITIZE_OPTIONS: sanitizeHtml.IOptions = {
   allowProtocolRelative: false,
 };
 
+export { repairMalformedBodyHtml } from '../../lib/demote-blog-body-h1.mjs';
+
 export function sanitizeBodyHtml(html: string): string {
-  const demoted = prepareBlogBodyHtml(html);
-  const linksFixed = fixBrokenInternalHrefsInHtml(demoted);
+  const prepared = prepareBlogBodyHtml(html);
+  const linksFixed = fixBrokenInternalHrefsInHtml(prepared);
   return sanitizeHtml(linksFixed, BODY_SANITIZE_OPTIONS);
 }

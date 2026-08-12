@@ -223,6 +223,7 @@ export default function TopHealthcareMarketResearchCompaniesMalaysia2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Healthcare Market Research Companies in Malaysia 2026 | BioNixus Ranked #1',
     description:
       'Top healthcare market research companies in Malaysia 2026 — BioNixus ranked #1. MREC-compliant HCP surveys, payer and formulary research, KOL mapping at Malaysian university hospitals, and MaHTAS-aligned health outcomes studies.',
@@ -277,8 +278,8 @@ export default function TopHealthcareMarketResearchCompaniesMalaysia2026() {
         <meta name="geo.region" content="MY" />
         <meta name="geo.placename" content="Malaysia" />
         <link rel="canonical" href={PAGE_CANONICAL} />
-        <link rel="alternate" hreflang="en" href={PAGE_CANONICAL} />
-        <link rel="alternate" hreflang="x-default" href={PAGE_CANONICAL} />
+        <link rel="alternate" hrefLang="en" href={PAGE_CANONICAL} />
+        <link rel="alternate" hrefLang="x-default" href={PAGE_CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>

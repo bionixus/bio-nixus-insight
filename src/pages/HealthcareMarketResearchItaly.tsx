@@ -348,7 +348,7 @@ export default function HealthcareMarketResearchItaly() {
             <div className="grid md:grid-cols-2 gap-3">
               {[
                 { to: '/pharmaceutical-market-research-italy', label: 'Italy pharmaceutical market research' },
-                { to: '/healthcare-market-research-germany', label: 'Healthcare market research Germany' },
+                { to: '/healthcare-market-research/germany', label: 'Healthcare market research Germany' },
                 { to: '/healthcare-market-research-france', label: 'Healthcare market research France' },
                 { to: '/healthcare-market-research-spain', label: 'Healthcare market research Spain' },
                 { to: '/healthcare-market-research-uk', label: 'Healthcare market research UK' },

@@ -162,6 +162,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Market Research Companies in Egypt (2026 Guide)',
     description:
       'Independent guide to the leading market research companies in Egypt for 2026: consumer, FMCG, retail, and multi-industry firms compared by capability, methodology, and Egypt expertise.',
@@ -229,13 +230,13 @@ export default function TopMarketResearchCompaniesEgypt2026() {
         <meta name="geo.placename" content="Egypt" />
         <meta name="author" content="Haidy Yahia" />
         <link rel="canonical" href={CANONICAL} />
-        <link rel="alternate" hreflang="en" href={CANONICAL} />
+        <link rel="alternate" hrefLang="en" href={CANONICAL} />
         <link
           rel="alternate"
-          hreflang="ar"
+          hrefLang="ar"
           href="https://www.bionixus.com/ar/insights/top-market-research-companies-egypt-2026"
         />
-        <link rel="alternate" hreflang="x-default" href={CANONICAL} />
+        <link rel="alternate" hrefLang="x-default" href={CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>

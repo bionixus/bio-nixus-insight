@@ -181,6 +181,7 @@ const breadcrumbSchema = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
+  image: 'https://www.bionixus.com/og-image.png',
   headline: 'Top Empresas de Pesquisa de Mercado no Brasil (Guia 2026)',
   description: 'Guia independente das principais empresas de pesquisa de mercado no Brasil — FMCG, consumidor, saúde, tecnologia e serviços financeiros comparados por metodologia, cobertura setorial e capacidade local.',
   inLanguage: 'pt-BR',
@@ -240,7 +241,8 @@ export default function PtTopEmpresasPesquisaMercadoBrasil2026() {
         title="Top Empresas de Pesquisa de Mercado no Brasil (Guia | BioNixus"
         description="Guia das melhores empresas de pesquisa de mercado no Brasil em 2026 — BioNixus, Kantar, Ipsos, Nielsen, DataFolha, GfK e Opinion Box comparados."
         url={CANONICAL}
-        imageUrl="https://www.bionixus.com/og-image.png"
+        image="https://www.bionixus.com/og-image.png"
+        locale="pt_BR"
       />
       <Navbar />
 

@@ -42,3 +42,5 @@ tmp/
 
 # Google Search Console local CSV exports
 .gsc-tmp/
+# TypeScript incremental build info
+*.tsbuildinfo

@@ -197,6 +197,7 @@ export default function TopMarketResearchCompaniesGermany2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Market Research Companies in Germany 2026 | BioNixus Ranked #1',
     description:
       'Top market research companies in Germany 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. AMNOG-aligned HCP surveys, GBA payer research, KOL mapping at German university hospitals, and HEOR evidence.',
@@ -251,8 +252,8 @@ export default function TopMarketResearchCompaniesGermany2026() {
         <meta name="geo.region" content="DE" />
         <meta name="geo.placename" content="Germany" />
         <link rel="canonical" href={PAGE_CANONICAL} />
-        <link rel="alternate" hreflang="en" href={PAGE_CANONICAL} />
-        <link rel="alternate" hreflang="x-default" href={PAGE_CANONICAL} />
+        <link rel="alternate" hrefLang="en" href={PAGE_CANONICAL} />
+        <link rel="alternate" hrefLang="x-default" href={PAGE_CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
@@ -660,7 +661,7 @@ export default function TopMarketResearchCompaniesGermany2026() {
                   desc: 'AMNOG-aligned pharmaceutical research covering HCP surveys, KOL mapping, GBA payer research, and IQWiG evidence strategy in Germany.',
                 },
                 {
-                  to: '/healthcare-market-research-germany',
+                  to: '/healthcare-market-research/germany',
                   label: 'Healthcare Market Research Germany',
                   desc: 'Healthcare market research in Germany — HCP surveys, GKV payer research, KOL mapping, and HEOR evidence across all 16 Bundesländer.',
                 },

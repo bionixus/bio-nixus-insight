@@ -196,6 +196,7 @@ export default function TopMarketResearchCompaniesCanada2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Market Research Companies in Canada 2026 | BioNixus Ranked #1',
     description:
       'Top market research companies in Canada 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. CADTH-aligned HCP surveys, KOL mapping, and provincial payer research.',
@@ -243,8 +244,8 @@ export default function TopMarketResearchCompaniesCanada2026() {
         <meta name="geo.region" content="CA" />
         <meta name="geo.placename" content="Canada" />
         <link rel="canonical" href={PAGE_CANONICAL} />
-        <link rel="alternate" hreflang="en" href={PAGE_CANONICAL} />
-        <link rel="alternate" hreflang="x-default" href={PAGE_CANONICAL} />
+        <link rel="alternate" hrefLang="en" href={PAGE_CANONICAL} />
+        <link rel="alternate" hrefLang="x-default" href={PAGE_CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>

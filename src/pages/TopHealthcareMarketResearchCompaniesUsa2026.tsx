@@ -223,6 +223,7 @@ export default function TopHealthcareMarketResearchCompaniesUsa2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Healthcare Market Research Companies in USA (2026 Guide)',
     description:
       'Expert guide to the leading healthcare and pharmaceutical market research companies in the USA for 2026. Covers IRB-compliant HCP firms, KOL mapping across US academic medical centres, payer and PBM research, IRA impact intelligence, and how to evaluate a US research partner.',
@@ -277,8 +278,8 @@ export default function TopHealthcareMarketResearchCompaniesUsa2026() {
         <meta name="geo.region" content="US" />
         <meta name="geo.placename" content="United States" />
         <link rel="canonical" href={CANONICAL} />
-        <link rel="alternate" hreflang="en" href={CANONICAL} />
-        <link rel="alternate" hreflang="x-default" href={CANONICAL} />
+        <link rel="alternate" hrefLang="en" href={CANONICAL} />
+        <link rel="alternate" hrefLang="x-default" href={CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>

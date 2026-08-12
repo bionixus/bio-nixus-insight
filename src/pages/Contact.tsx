@@ -1,70 +1,178 @@
+import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import type { Language } from '@/lib/i18n';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ContactSection from '@/components/ContactSection';
-import { OptimizedImage } from '@/components/media/OptimizedImage';
-import { getPageMedia } from '@/data/mediaAssets';
-import { ArrowRight, Zap, Globe, FileCheck } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
+import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
+import { SEOHead } from '@/components/seo/SEOHead';
+import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { ArrowDown, ArrowRight } from 'lucide-react';
 
 type ContactPageCopy = {
   heroTitle?: string;
   heroSubtitle?: string;
-  statLine?: string;
-  badges?: string[];
+  brandLine?: string;
+  primaryCta?: string;
+  secondaryCta?: string;
 };
 
-const contactGuideByLanguage: Record<
+const engagementByLanguage: Record<
   Language,
-  { heading: string; paragraphs: string[] }
+  { heading: string; lead: string; paragraphs: string[] }
 > = {
   en: {
-    heading: 'What happens after you contact BioNixus',
+    heading: 'What a BioNixus engagement looks like',
+    lead: 'We treat every inquiry as the start of a scoped research partnership—not a generic sales queue.',
     paragraphs: [
-      'Share your objective market, timeline, and evidence standard—whether you need a GCC physician survey, EU5 payer interviews, or a blended qualitative and quantitative program. Our team triages requests the same day and aligns you with a research director who has executed comparable studies in your geography and therapy area.',
-      'Typical engagements span launch readiness, market access evidence design, competitive intelligence, KOL mapping, and post-launch adoption tracking. We translate field protocols into decision-ready outputs: executive summaries, segment narratives, and data cuts that connect to pricing, access, and medical affairs milestones.',
-      'BioNixus maintains bilingual Arabic–English capabilities for Gulf programs alongside GDPR-aligned European fieldwork. If you are comparing vendors, ask for methodology notes, sample governance, and recent anonymized deliverable structures—we respond with concrete examples rather than generic capability decks.',
+      'Share the decision you need to make, the markets that matter, and the evidence standard your stakeholders expect. A research director with relevant geography and therapy experience reviews your brief the same day.',
+      'Engagements typically cover launch readiness, market access evidence, competitive intelligence, KOL mapping, and post-launch adoption. Deliverables stay decision-ready: executive narratives, segment cuts, and outputs tied to pricing, access, and medical affairs milestones.',
+      'Gulf programs run with bilingual Arabic–English fieldwork; European work follows GDPR-aligned protocols. When you are comparing partners, ask for methodology notes, sample governance, and anonymized deliverable structures—we answer with specifics.',
     ],
   },
   de: {
-    heading: 'Ablauf nach Ihrer Kontaktaufnahme',
+    heading: 'So beginnt eine Zusammenarbeit mit BioNixus',
+    lead: 'Jede Anfrage ist der Start einer klar abgegrenzten Research-Partnerschaft—kein generischer Vertriebsprozess.',
     paragraphs: [
-      'Beschreiben Sie Zielmarkt, Zeitplan und Evidenzstandard—ob Golf-Ärztebefragung, EU5-Payer-Interviews oder ein kombiniertes qualitatives und quantitatives Programm. Wir priorisieren Anfragen am selben Tag und verbinden Sie mit einer Research-Führungskraft mit nachweislicher Erfahrung in Ihrer Region und Indikation.',
-      'Typische Mandate umfassen Launch-Readiness, Marktzugang, Wettbewerbsintelligenz, KOL-Mapping und Post-Launch-Adoption. Wir liefern entscheidungsreife Ausgaben: Management-Summarys, Segmentnarrative und Daten-Schnitte, die zu Pricing-, Zugangs- und Medical-Affairs-Meilensteinen passen.',
-      'Für Golfprogramme stehen zweisprachige arabisch-englische Teams zur Verfügung; in Europa arbeiten wir DSGVO-konform. Bei Vendor-Vergleichen erhalten Sie Methodik, Sample-Governance und Beispielstrukturen—konkret statt generischer Folien.',
+      'Beschreiben Sie die Entscheidung, die Märkte und den Evidenzstandard. Eine Research-Führungskraft mit passender Regional- und Indikationserfahrung prüft Ihr Briefing noch am selben Tag.',
+      'Typische Mandate: Launch-Readiness, Marktzugang, Wettbewerbsintelligenz, KOL-Mapping und Post-Launch-Adoption. Die Liefergegenstände bleiben entscheidungsreif.',
+      'Golfprogramme zweisprachig arabisch–englisch; Europa DSGVO-konform. Bei Vendor-Vergleichen liefern wir Methodik, Sample-Governance und Beispielstrukturen.',
     ],
   },
   fr: {
-    heading: 'Après votre message : comment nous travaillons',
+    heading: 'Comment commence une mission BioNixus',
+    lead: 'Chaque demande ouvre un partenariat de recherche cadré—pas une file d’attente commerciale générique.',
     paragraphs: [
-      'Indiquez marché cible, calendrier et niveau de preuve—enquête médecins GCC, entretiens payeurs EU5 ou programme mixte quali/quant. Nous priorisons le jour même et vous mettons en relation avec un directeur de recherche ayant mené des études comparables.',
-      'Les missions couvrent préparation de lancement, market access, intelligence concurrentielle, cartographie des KOL et suivi d’adoption post-lancement. Les livrables restent orientés décision : synthèses exécutives, récits par segment et jeux de données alignés pricing, accès et affaires médicales.',
-      'Capacités bilingues arabe–anglais pour le Golfe et terrain européen aligné RGPD. Pour comparer des prestataires, nous fournissons méthodologie, gouvernance d’échantillon et exemples de structures de livrables.',
+      'Précisez la décision, les marchés et le niveau de preuve attendu. Un directeur de recherche compétent pour votre zone et votre indication examine le brief le jour même.',
+      'Missions typiques : préparation de lancement, market access, intelligence concurrentielle, cartographie KOL et suivi post-lancement. Les livrables restent orientés décision.',
+      'Programmes Golfe bilingues arabe–anglais ; Europe alignée RGPD. Pour comparer des partenaires, nous fournissons méthodologie, gouvernance d’échantillon et exemples de structures.',
     ],
   },
   es: {
-    heading: 'Qué ocurre cuando contactas con BioNixus',
+    heading: 'Cómo empieza un engagement con BioNixus',
+    lead: 'Cada consulta inicia una colaboración de investigación acotada—no una cola comercial genérica.',
     paragraphs: [
-      'Indica mercado objetivo, plazo y estándar de evidencia—encuesta a médicos en GCC, entrevistas con pagadores en EU5 o un programa mixto cualitativo y cuantitativo. Priorizamos el mismo día y te conectamos con un director de investigación con experiencia comparable.',
-      'Los encargos típicos cubren preparación de lanzamiento, market access, inteligencia competitiva, mapeo de KOL y seguimiento post-lanzamiento. Los entregables son accionables: resúmenes ejecutivos, narrativas por segmento y cortes de datos alineados con pricing, acceso y asuntos médicos.',
-      'Capacidad bilingüe árabe–inglés para el Golfo y trabajo de campo en Europa alineado con RGPD. Si comparas proveedores, compartimos metodología, gobernanza de muestra y ejemplos de estructura de informes.',
+      'Indica la decisión, los mercados y el estándar de evidencia. Un director de investigación con experiencia comparable revisa tu brief el mismo día.',
+      'Encargos habituales: preparación de lanzamiento, market access, inteligencia competitiva, mapeo de KOL y seguimiento post-lanzamiento.',
+      'Programas del Golfo en árabe–inglés; Europa alineada con RGPD. En comparativas de proveedores compartimos metodología, gobernanza de muestra y ejemplos de entregables.',
     ],
   },
   zh: {
-    heading: '提交咨询后的流程',
+    heading: '与 BioNixus 合作如何展开',
+    lead: '每一条咨询都是一次明确范围的研究合作起点，而非通用销售队列。',
     paragraphs: [
-      '请说明目标市场、时间线与证据标准——无论是GCC医生调研、EU5支付方访谈，还是定量定性混合项目。我们会在当日完成分流，并由在相应地区与适应症有执行经验的研究负责人对接。',
-      '常见项目涵盖上市准备、市场准入证据设计、竞争情报、KOL图谱与上市后采用追踪。交付物强调可决策：高管摘要、细分叙事以及与定价、准入和医学事务里程碑对齐的数据切片。',
-      '海湾项目支持阿英双语执行，欧洲现场遵循GDPR。若在做供应商比选，我们可提供方法论、样本治理与匿名化交付结构示例，而非泛泛的能力介绍。',
+      '请说明需要支持的决策、关键市场与证据标准。具备相应地区与适应症经验的研究负责人将于当日审阅您的需求。',
+      '常见项目涵盖上市准备、市场准入、竞争情报、KOL 图谱与上市后采用追踪，交付物强调可决策。',
+      '海湾项目支持阿英双语；欧洲现场遵循 GDPR。供应商比选时可提供方法论、样本治理与匿名交付结构示例。',
     ],
   },
   ar: {
-    heading: 'ماذا يحدث بعد تواصلك مع BioNixus',
+    heading: 'كيف تبدأ شراكة البحث مع BioNixus',
+    lead: 'كل استفسار هو بداية شراكة بحثية محددة النطاق—وليس طابور مبيعات عام.',
     paragraphs: [
-      'اذكر السوق المستهدف والجدول الزمني ومستوى الأدلة المطلوب—سواء كان ذلك استطلاع أطباء في دول الخليج، أو مقابلات جهات دفع في أوروبا، أو برنامج كمي ونوعي مدمج. نقوم بفرز الطلبات في نفس اليوم ونوصلك بمدير بحث لديه خبرة تنفيذ مماثلة في جغرافيتك ومجال علاجك.',
-      'تشمل المشاريع الشائعة جاهزية الإطلاق، تصميم أدلة الوصول إلى السوق، استخبارات تنافسية، خرائط أصحاب التأثير، ومتابعة التبني بعد الإطلاق. نحول بروتوكولات الميدان إلى مخرجات جاهزة للقرار: ملخصات تنفيذية، سرديات شرائح، وتقطيعات بيانات ترتبط بمحاور التسعير والوصول والشؤون الطبية.',
-      'نوفر قدرات ثنائية اللغة عربية–إنجليزية لبرامج الخليج، مع عمل ميداني أوروبي متوافق مع GDPR. عند مقارنة الموردين يمكننا تزويدك بملاحظات منهجية وحوكمة عينة وأمثلة هياكل تسليم—بشكل ملموس لا عروض عامة.',
+      'شارك القرار الذي تحتاج اتخاذه والأسواق ومعيار الأدلة. يراجع مدير بحث بخبرة جغرافية وعلاجية مناسبة موجزك في اليوم نفسه.',
+      'تشمل المشاريع الشائعة جاهزية الإطلاق والوصول إلى السوق والاستخبارات التنافسية وخرائط أصحاب التأثير ومتابعة التبني بعد الإطلاق.',
+      'برامج الخليج ثنائية اللغة عربية–إنجليزية؛ العمل الأوروبي متوافق مع GDPR. عند مقارنة الشركاء نقدم منهجية وحوكمة عينة وأمثلة هياكل تسليم.',
+    ],
+  },
+};
+
+const processStepsByLanguage: Record<
+  Language,
+  { heading: string; steps: { title: string; body: string }[] }
+> = {
+  en: {
+    heading: 'From inquiry to briefing',
+    steps: [
+      {
+        title: 'Share the decision',
+        body: 'Country, therapy, stakeholders, and the question leadership needs answered.',
+      },
+      {
+        title: 'Meet a research director',
+        body: 'Same-day triage with someone who has run comparable Gulf, MENA, or European work.',
+      },
+      {
+        title: 'Receive a scoped proposal',
+        body: 'Methodology, sample frame, timeline, and investment—typically within one business day.',
+      },
+    ],
+  },
+  de: {
+    heading: 'Vom Kontakt zum Briefing',
+    steps: [
+      {
+        title: 'Entscheidung skizzieren',
+        body: 'Land, Indikation, Stakeholder und die Führungsfrage.',
+      },
+      {
+        title: 'Research-Direktor treffen',
+        body: 'Priorisierung am selben Tag mit vergleichbarer Regionalerfahrung.',
+      },
+      {
+        title: 'Scoped Proposal erhalten',
+        body: 'Methodik, Sample, Zeitplan und Investment—meist innerhalb eines Werktags.',
+      },
+    ],
+  },
+  fr: {
+    heading: 'De la demande au briefing',
+    steps: [
+      {
+        title: 'Clarifier la décision',
+        body: 'Pays, indication, parties prenantes et question de direction.',
+      },
+      {
+        title: 'Parler à un directeur',
+        body: 'Priorisation le jour même avec une expérience comparable.',
+      },
+      {
+        title: 'Recevoir une proposition',
+        body: 'Méthode, échantillon, calendrier et investissement—souvent sous un jour ouvré.',
+      },
+    ],
+  },
+  es: {
+    heading: 'De la consulta al briefing',
+    steps: [
+      {
+        title: 'Definir la decisión',
+        body: 'País, terapia, stakeholders y la pregunta de liderazgo.',
+      },
+      {
+        title: 'Hablar con un director',
+        body: 'Priorización el mismo día con experiencia comparable.',
+      },
+      {
+        title: 'Recibir una propuesta',
+        body: 'Metodología, muestra, plazos e inversión—habitualmente en un día laborable.',
+      },
+    ],
+  },
+  zh: {
+    heading: '从咨询到立项沟通',
+    steps: [
+      { title: '说明决策需求', body: '国家、治疗领域、利益相关方与管理层待回答的问题。' },
+      { title: '对接研究负责人', body: '当日分流，由具备同类项目经验的负责人对接。' },
+      { title: '获取范围提案', body: '方法、样本、时间表与预算—通常一个工作日内。' },
+    ],
+  },
+  ar: {
+    heading: 'من الاستفسار إلى الإحاطة',
+    steps: [
+      {
+        title: 'حدد القرار',
+        body: 'الدولة والعلاج وأصحاب المصلحة والسؤال الذي تحتاجه القيادة.',
+      },
+      {
+        title: 'التقِ بمدير البحث',
+        body: 'فرز في اليوم نفسه مع خبرة تنفيذ مماثلة.',
+      },
+      {
+        title: 'استلم مقترحاً محدداً',
+        body: 'المنهجية والعينة والجدول والاستثمار—عادة خلال يوم عمل.',
+      },
     ],
   },
 };
@@ -74,101 +182,195 @@ const Contact = () => {
   const cp = (t as { contactPage?: ContactPageCopy }).contactPage;
   const heroTitle = cp?.heroTitle ?? t.contact.title;
   const heroSubtitle = cp?.heroSubtitle ?? t.contact.subtitle;
-  const statLine = cp?.statLine ?? '';
-  const badges = cp?.badges ?? [];
-  const guide = contactGuideByLanguage[language] ?? contactGuideByLanguage.en;
-  const contactMedia = getPageMedia('contact');
+  const brandLine = cp?.brandLine ?? 'BioNixus';
+  const primaryCta = cp?.primaryCta ?? 'Request a proposal';
+  const secondaryCta = cp?.secondaryCta ?? 'Email the team';
+  const engagement = engagementByLanguage[language] ?? engagementByLanguage.en;
+  const process = processStepsByLanguage[language] ?? processStepsByLanguage.en;
+  const heroRef = useScrollReveal<HTMLElement>({ stagger: 70, threshold: 0.05 });
+  const processRef = useScrollReveal<HTMLElement>({ stagger: 90 });
+  const engagementRef = useScrollReveal<HTMLElement>({ stagger: 80 });
+
+  const breadcrumbItems = [
+    { name: 'Home', href: '/' },
+    { name: 'Contact', href: '/contact' },
+  ];
+
+  const jsonLd = [
+    buildBreadcrumbSchema(breadcrumbItems),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ContactPage',
+      name: 'Contact BioNixus',
+      url: 'https://www.bionixus.com/contact',
+      description:
+        'Request a pharmaceutical market research proposal from BioNixus—global headquarters in Sheridan, Wyoming, with regional coverage across the US, Europe, GCC, and MENA.',
+      mainEntity: {
+        '@type': 'Organization',
+        '@id': 'https://www.bionixus.com/#organization',
+        name: 'BioNixus',
+        url: 'https://www.bionixus.com',
+        email: 'admin@bionixus.com',
+        contactPoint: [
+          {
+            '@type': 'ContactPoint',
+            contactType: 'sales',
+            email: 'admin@bionixus.com',
+            availableLanguage: ['English', 'Arabic', 'German', 'French', 'Spanish', 'Chinese'],
+          },
+        ],
+      },
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-background">
-      <Helmet>
-        <script type="application/ld+json">{JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' },
-            { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://www.bionixus.com/contact' },
-          ],
-        })}</script>
-      </Helmet>
+      <SEOHead
+        title="Contact BioNixus | Healthcare Market Research Proposal"
+        description="Contact BioNixus for pharmaceutical market research across the US, Europe, GCC, and MENA. Share your brief and receive a scoped proposal within one business day."
+        canonical="/contact"
+        jsonLd={jsonLd}
+      />
       <Navbar />
       <main>
-        {/* Catchy hero for pharma – encourage get in touch */}
-        <section className="relative section-padding pt-28 pb-16 bg-gradient-to-b from-primary/5 to-background border-b border-border">
-          <div className="container-wide max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-              <div className={`${isRTL ? 'text-right lg:order-2' : ''}`}>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-                  Get in touch
-                </div>
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-4 text-balance">
-                  {heroTitle}
-                </h1>
-                <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-8 leading-relaxed">
-                  {heroSubtitle}
-                </p>
-                {statLine && (
-                  <p className="text-sm text-muted-foreground mb-8">
-                    {statLine}
-                  </p>
-                )}
-                {badges.length > 0 && (
-                  <div className={`flex flex-wrap gap-3 ${isRTL ? 'justify-end' : ''}`}>
-                    {badges.map((badge, i) => (
-                      <span
-                        key={i}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-card border border-border text-foreground/90 text-sm font-medium"
-                      >
-                        {i === 0 && <Zap className="w-4 h-4 text-primary" />}
-                        {i === 1 && <Globe className="w-4 h-4 text-primary" />}
-                        {i === 2 && <FileCheck className="w-4 h-4 text-primary" />}
-                        {badge}
-                      </span>
-                    ))}
-                  </div>
-                )}
-                <a
-                  href="#contact"
-                  className={`inline-flex items-center gap-2 mt-8 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-opacity group ${isRTL ? 'flex-row-reverse' : ''}`}
-                >
-                  Request a proposal
-                  <ArrowRight className={`w-5 h-5 ${isRTL ? 'rtl:scale-x-[-1] group-hover:-translate-x-1' : 'group-hover:translate-x-1'}`} />
-                </a>
-              </div>
+        <section
+          ref={heroRef}
+          className="relative overflow-hidden text-primary-foreground"
+          aria-labelledby="contact-hero-heading"
+        >
+          <div
+            className="absolute inset-0"
+            style={{ background: 'var(--gradient-hero)' }}
+            aria-hidden
+          />
+          <div
+            className="absolute inset-0 opacity-[0.35] pointer-events-none"
+            style={{
+              backgroundImage:
+                'radial-gradient(ellipse 80% 60% at 15% 20%, hsl(38 92% 50% / 0.18), transparent 55%), radial-gradient(ellipse 70% 50% at 85% 75%, hsl(220 40% 40% / 0.35), transparent 50%)',
+            }}
+            aria-hidden
+          />
+          <div
+            className="absolute inset-0 opacity-[0.07] pointer-events-none"
+            style={{
+              backgroundImage:
+                'linear-gradient(hsl(0 0% 100% / 0.06) 1px, transparent 1px), linear-gradient(90deg, hsl(0 0% 100% / 0.06) 1px, transparent 1px)',
+              backgroundSize: '72px 72px',
+            }}
+            aria-hidden
+          />
+          <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent opacity-80" aria-hidden />
 
-              {contactMedia?.heroImage ? (
-                <figure className={`rounded-2xl border border-border bg-card overflow-hidden shadow-lg ${isRTL ? 'lg:order-1' : ''}`}>
-                  <OptimizedImage
-                    src={contactMedia.heroImage.src}
-                    alt={contactMedia.heroImage.alt}
-                    width={contactMedia.heroImage.width}
-                    height={contactMedia.heroImage.height}
-                    className="w-full aspect-[4/3] object-cover"
-                    loading="eager"
-                    fetchPriority="high"
-                    sizes="hero"
-                  />
-                  <figcaption className="p-4 text-xs text-muted-foreground leading-relaxed">
-                    {contactMedia.heroImage.caption}
-                  </figcaption>
-                </figure>
-              ) : null}
+          <div className="relative container-wide pt-28 pb-20 md:pt-32 md:pb-28">
+            <BreadcrumbNav
+              items={breadcrumbItems}
+              className="px-0 mb-10 text-primary-foreground/55 [&_a]:text-primary-foreground/70 [&_a:hover]:text-accent [&_span[aria-current=page]]:text-primary-foreground [&_.text-border]:text-primary-foreground/25"
+            />
+
+            <p className="sr sr-up font-display text-2xl md:text-3xl lg:text-4xl tracking-tight text-accent mb-6">
+              {brandLine}
+            </p>
+            <h1
+              id="contact-hero-heading"
+              className="sr-lcp sr sr-up max-w-3xl text-4xl md:text-5xl lg:text-[3.5rem] font-display font-semibold leading-[1.08] text-balance mb-6"
+            >
+              {heroTitle}
+            </h1>
+            <p className="sr sr-up max-w-xl text-lg md:text-xl text-primary-foreground/75 leading-relaxed mb-10">
+              {heroSubtitle}
+            </p>
+
+            <div
+              className={`sr sr-up flex flex-col sm:flex-row gap-3 ${isRTL ? 'sm:flex-row-reverse' : ''}`}
+            >
+              <a
+                href="#request-proposal"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-accent text-accent-foreground font-semibold rounded-md hover:brightness-105 transition-[filter,transform] duration-300 hover:-translate-y-0.5"
+              >
+                {primaryCta}
+                <ArrowDown className="w-4 h-4" aria-hidden />
+              </a>
+              <a
+                href="mailto:admin@bionixus.com?subject=Research%20proposal%20inquiry"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 border border-primary-foreground/25 text-primary-foreground font-semibold rounded-md hover:bg-primary-foreground/10 transition-colors duration-300"
+              >
+                {secondaryCta}
+                <ArrowRight className={`w-4 h-4 ${isRTL ? 'rotate-180' : ''}`} aria-hidden />
+              </a>
             </div>
           </div>
         </section>
 
-        <section className="section-padding py-12 border-b border-border bg-muted/20" aria-labelledby="contact-guide-heading">
-          <div className={`container-wide max-w-3xl mx-auto space-y-4 text-muted-foreground leading-relaxed ${isRTL ? 'text-right' : ''}`}>
-            <h2 id="contact-guide-heading" className="text-2xl font-display font-semibold text-foreground">
-              {guide.heading}
+        <section
+          ref={processRef}
+          className="border-b border-border bg-background"
+          aria-labelledby="contact-process-heading"
+        >
+          <div className="container-wide py-16 md:py-20">
+            <h2
+              id="contact-process-heading"
+              className={`sr sr-up text-2xl md:text-3xl font-display font-semibold text-foreground mb-12 ${isRTL ? 'text-right' : ''}`}
+            >
+              {process.heading}
             </h2>
-            {guide.paragraphs.map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
+            <ol className="grid md:grid-cols-3 gap-10 md:gap-8">
+              {process.steps.map((step, index) => (
+                <li
+                  key={step.title}
+                  className={`sr sr-up relative ${isRTL ? 'text-right' : ''}`}
+                >
+                  <span className="block font-display text-5xl text-accent/40 leading-none mb-4 tabular-nums">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <h3 className="text-lg font-display font-semibold text-foreground mb-2">{step.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{step.body}</p>
+                  {index < process.steps.length - 1 ? (
+                    <span
+                      className="hidden md:block absolute top-6 end-0 w-px h-16 bg-border translate-x-4 rtl:-translate-x-4"
+                      aria-hidden
+                    />
+                  ) : null}
+                </li>
+              ))}
+            </ol>
           </div>
         </section>
 
-        <ContactSection />
+        <ContactSection premium />
+
+        <section
+          ref={engagementRef}
+          className="section-padding py-16 md:py-20 border-t border-border bg-[hsl(var(--navy-deep))] text-primary-foreground"
+          aria-labelledby="contact-engagement-heading"
+        >
+          <div className={`container-wide max-w-3xl ${isRTL ? 'text-right' : ''}`}>
+            <h2
+              id="contact-engagement-heading"
+              className="sr sr-up text-2xl md:text-3xl font-display font-semibold mb-4"
+            >
+              {engagement.heading}
+            </h2>
+            <p className="sr sr-up text-lg text-accent mb-8 leading-relaxed">{engagement.lead}</p>
+            <div className="space-y-5 text-primary-foreground/75 leading-relaxed">
+              {engagement.paragraphs.map((paragraph) => (
+                <p key={paragraph.slice(0, 48)} className="sr sr-up">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+            <p className="sr sr-up mt-10 text-sm text-primary-foreground/55">
+              Prefer a direct line?{' '}
+              <a href="mailto:admin@bionixus.com" className="text-accent hover:underline font-medium">
+                admin@bionixus.com
+              </a>
+              {' · '}
+              <Link to="/case-studies" className="text-primary-foreground/80 hover:text-accent transition-colors">
+                Review case studies
+              </Link>
+            </p>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>

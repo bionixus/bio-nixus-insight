@@ -54,6 +54,12 @@ function upsertStamp(content, quarter) {
   return { content: lines.join('\n'), changed: true };
 }
 
+/**
+ * Static routes are literal `path:` entries in routes.tsx, but the country
+ * listicles are spread in from the topCompanies registry and never appear as
+ * literals. Both sources are merged so registry-driven URLs are not reported
+ * as broken links.
+ */
 function extractRoutes() {
   const src = readFileSync(routesPath, 'utf8');
   const paths = new Set();
@@ -61,6 +67,19 @@ function extractRoutes() {
     const p = m[1];
     if (!p.includes(':') && !p.includes('*')) paths.add(p);
   }
+
+  const manifestPath = join(root, 'scripts/data/topcompanies-manifest.json');
+  if (existsSync(manifestPath)) {
+    for (const entry of JSON.parse(readFileSync(manifestPath, 'utf8'))) {
+      if (entry.path) paths.add(entry.path);
+    }
+  } else {
+    console.warn(
+      'WARN — scripts/data/topcompanies-manifest.json missing; listicle routes will look unresolved.\n' +
+        '       Run: node scripts/emit-topcompanies-manifest.mjs',
+    );
+  }
+
   return paths;
 }
 

@@ -69,9 +69,10 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-linkedin.png',
     headline: 'China Medical Devices Market Report 2026: NMPA, VBP Procurement, and Import Substitution Intelligence',
-    author: { '@type': 'Organization', name: 'BioNixus' },
-    publisher: { '@type': 'Organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
+    author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
+    publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
     dateModified: '2026-05-27',
     mainEntityOfPage: 'https://www.bionixus.com/china-medical-devices-market-report',
@@ -97,8 +98,7 @@ const ChinaMedicalDevicesMarketReport = () => (
     <Navbar />
     <SEOHead
       title="China Medical Device Market 2026: Size, NMPA Access & Forecast"
-      description="China's medical device market in 2026 — market size, NMPA registration pathway, key segments and 5-year forecast. Report by BioNixus."
-      canonical="https://www.bionixus.com/china-medical-devices-market-report"
+      description="China's medical device market in 2026 — market size, NMPA registration pathway, key segments and 5-year forecast. Report by Bionixus."      canonical="https://www.bionixus.com/china-medical-devices-market-report"
       jsonLd={jsonLd}
     />
       <ReportReadingProgress progressId="report-rp-china-medical-devices-market-report" />

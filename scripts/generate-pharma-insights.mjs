@@ -330,7 +330,7 @@ const INSIGHTS_DATA = [
     stats: ['1x', 'Weekly Frequency', '$6.5B', 'Basal Insulin Market', 'Vision 2030', 'SFDA Accelerated']
   },
   {
-    slug: 'adstiladrin- bladder-cancer-2026',
+    slug: 'adstiladrin-bladder-cancer-2026',
     compound: 'Adstiladrin (nadofaragene firadenovec)',
     sponsor: 'Ferring Pharmaceuticals',
     date: '2026-03-26',

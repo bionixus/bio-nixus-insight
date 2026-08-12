@@ -12,6 +12,10 @@ const HERO_OVERRIDES: Record<string, { src: string; alt: string }> = {
     src: '/images/press/bionixus-brazil-latam-press-2026-cover.jpg',
     alt: 'BioNixus corporate press image — global healthcare and pharmaceutical market research with Latin America expansion',
   },
+  'bionixus-egypt-new-administrative-capital-office-2026': {
+    src: '/images/press/bionixus-egypt-nac-office-2026-cover.jpg',
+    alt: 'Dr. Mohammad Alsaadany, MEA Director at BioNixus, speaking at Bibliotheca Alexandrina',
+  },
 }
 
 export function resolvePressReleaseHero(

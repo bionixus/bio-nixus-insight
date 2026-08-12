@@ -18,8 +18,16 @@ import {
   BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH,
   BLOG_LEGACY_FULL_PATH_REDIRECTS,
 } from '../blog-legacy-redirects.mjs';
+import { resolveGlobalWebsitesRedirect } from '../lib/global-websites-redirects.mjs';
 import { getIndustryMatrixSitemapPages } from './data/industry-matrix-sitemap.mjs';
 import { getSpecialtyMarketDemandSitemapPages } from './data/specialty-market-demand-sitemap.mjs';
+import {
+  marketReportSlugs,
+  marketReportTherapyHubSlugs,
+  marketReportCountryHubSlugs,
+  industryGlobalHubSlugs,
+  developedMarketMedtechPaths,
+} from './data/app-route-registries.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
@@ -87,9 +95,13 @@ const SAUDI_PHARMA_MARKET_2026_AR_SLUG = 'سوق-الدواء-السعودي-202
  */
 const BLOG_SLUG_SITEMAP_STATIC_ONLY = new Set(['gcc-pharmaceuticals-market-arabic-2026']);
 
+const LEGACY_REDIRECT_PATHS = Object.keys(
+  JSON.parse(readFileSync(join(root, 'config', 'legacy-redirects.json'), 'utf8')),
+);
+
 /**
  * Paths that 301 elsewhere — never list in sitemap (Ahrefs: 3xx redirect in sitemap).
- * Synced with blog-legacy-redirects.mjs + server.js portfolio aliases.
+ * Synced with blog-legacy-redirects.mjs + config/legacy-redirects.json + global-websites map.
  */
 const SITEMAP_REDIRECT_SOURCE_PATHS = new Set([
   '/conf',
@@ -100,6 +112,8 @@ const SITEMAP_REDIRECT_SOURCE_PATHS = new Set([
   '/insights/top-market-research-companies-ksa-2026',
   '/insights/top-market-research-companies-abudhabi-2026',
   '/insights/top-obesity-market-research-companies-2026',
+  '/global-websites',
+  ...LEGACY_REDIRECT_PATHS,
   ...Object.keys(BLOG_LEGACY_FULL_PATH_REDIRECTS),
   ...Object.keys(BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH),
 ]);
@@ -114,7 +128,9 @@ const CASE_STUDY_FALLBACK_SLUGS = [
 
 function isSitemapRedirectSourcePath(pathname) {
   const path = pathname.endsWith('/') && pathname.length > 1 ? pathname.slice(0, -1) : pathname;
-  return SITEMAP_REDIRECT_SOURCE_PATHS.has(path);
+  if (SITEMAP_REDIRECT_SOURCE_PATHS.has(path)) return true;
+  if (resolveGlobalWebsitesRedirect(path)) return true;
+  return false;
 }
 
 /**
@@ -143,6 +159,39 @@ const extraStaticSitemapPages = [
     priority: '0.75',
     changefreq: 'monthly',
   },
+
+  // Localized routes declared in src/routes.tsx that no generator loop covered.
+  { path: '/ar/bionixus-industries', priority: '0.75', changefreq: 'monthly' },
+  { path: '/de/bionixus-industries', priority: '0.75', changefreq: 'monthly' },
+  { path: '/es/bionixus-industries', priority: '0.75', changefreq: 'monthly' },
+  { path: '/fr/bionixus-industries', priority: '0.75', changefreq: 'monthly' },
+  { path: '/pt/bionixus-industries', priority: '0.75', changefreq: 'monthly' },
+  { path: '/ru/bionixus-industries', priority: '0.75', changefreq: 'monthly' },
+  { path: '/zh/bionixus-industries', priority: '0.75', changefreq: 'monthly' },
+  { path: '/de/services', priority: '0.75', changefreq: 'monthly' },
+  { path: '/ar/healthcare-market-research', priority: '0.8', changefreq: 'monthly' },
+  { path: '/ru/healthcare-market-research', priority: '0.75', changefreq: 'monthly' },
+  { path: '/zh/healthcare-market-research', priority: '0.75', changefreq: 'monthly' },
+  { path: '/ar/healthcare-market-research/saudi-arabia', priority: '0.8', changefreq: 'monthly' },
+  { path: '/de/healthcare-market-research/germany', priority: '0.8', changefreq: 'monthly' },
+  { path: '/es/healthcare-market-research/spain', priority: '0.8', changefreq: 'monthly' },
+
+  // Localized blog posts. The Sanity loop only emits `/blog/{slug}`, so posts served
+  // from `/de/blog/*` and `/fr/blog/*` never reached the sitemap.
+  { path: '/de/blog/gesundheitsmarkt-deutschland-2026', priority: '0.7', changefreq: 'monthly' },
+  { path: '/de/blog/amnog-frueher-nutzen-marktzugang-2026', priority: '0.7', changefreq: 'monthly' },
+  { path: '/de/blog/pharmamarktforschung-deutschland-2026', priority: '0.7', changefreq: 'monthly' },
+  { path: '/de/blog/deutsche-pharmaunternehmen-2026-pipeline-updates', priority: '0.7', changefreq: 'monthly' },
+  { path: '/fr/blog/etudes-marche-pharmaceutique-france-2026', priority: '0.7', changefreq: 'monthly' },
+  { path: '/fr/blog/evaluation-economique-has-france-2026', priority: '0.7', changefreq: 'monthly' },
+  { path: '/ar/blog/saudi-healthcare-market-research-guide-ar-2026', priority: '0.7', changefreq: 'monthly' },
+
+  // Standalone routes with no backing registry.
+  { path: '/b2b-industries', priority: '0.8', changefreq: 'monthly' },
+  { path: '/b2c-industries', priority: '0.8', changefreq: 'monthly' },
+  { path: '/pharma-healthcare-industries', priority: '0.8', changefreq: 'monthly' },
+  { path: '/msl-insight-research-middle-east', priority: '0.8', changefreq: 'monthly' },
+  { path: '/heor-consulting', priority: '0.85', changefreq: 'monthly' },
 ];
 
 function urlEntry(loc, lastmod = null, changefreq = 'weekly', priority = '0.8', alternates = []) {
@@ -179,9 +228,15 @@ const staticPages = [
   { path: '/es/contact', priority: '0.7', changefreq: 'monthly' },
   { path: '/zh/contact', priority: '0.7', changefreq: 'monthly' },
   { path: '/methodology', priority: '0.8' },
-  { path: '/global-websites', priority: '0.9', changefreq: 'weekly' },
   { path: '/healthcare-market-research', priority: '0.9', changefreq: 'weekly' },
   { path: '/fr/healthcare-market-research', priority: '0.9', changefreq: 'weekly' },
+  { path: '/es/healthcare-market-research', priority: '0.9', changefreq: 'weekly' },
+  { path: '/fr/quantitative-healthcare-market-research', priority: '0.85', changefreq: 'monthly' },
+  { path: '/fr/bionixus-market-research-middle-east', priority: '0.85', changefreq: 'monthly' },
+  { path: '/zh/bionixus-market-research-middle-east', priority: '0.85', changefreq: 'monthly' },
+  { path: '/fr/strategic-portfolio', priority: '0.8', changefreq: 'monthly' },
+  { path: '/zh/strategic-portfolio', priority: '0.8', changefreq: 'monthly' },
+  { path: '/zh/insights/top-market-research-companies-egypt-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/fr/healthcare-market-research/france', priority: '0.88', changefreq: 'weekly' },
   {
     path: '/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement',
@@ -193,17 +248,14 @@ const staticPages = [
   { path: '/media', priority: '0.6', changefreq: 'monthly' },
   { path: '/insights', priority: '0.8', changefreq: 'weekly' },
   { path: '/de/blog', priority: '0.8', changefreq: 'weekly' },
-  { path: '/zh/blog', priority: '0.85', changefreq: 'weekly' },
   { path: '/fr/blog', priority: '0.8', changefreq: 'weekly' },
   { path: '/es/blog', priority: '0.8', changefreq: 'weekly' },
-  { path: '/de/success-in-startups', priority: '0.7', changefreq: 'monthly' },
   { path: '/ar/arabic-blog-alsawdyh', priority: '0.7', changefreq: 'monthly' },
   { path: '/case-studies', priority: '0.9', changefreq: 'weekly' },
   { path: '/services', priority: '0.9', changefreq: 'monthly' },
   { path: '/services/quantitative-research', priority: '0.8', changefreq: 'monthly' },
   { path: '/services/qualitative-research', priority: '0.8', changefreq: 'monthly' },
   { path: '/services/market-access', priority: '0.8', changefreq: 'monthly' },
-  { path: '/es/market-access', priority: '0.8', changefreq: 'monthly' },
   { path: '/services/competitive-intelligence', priority: '0.8', changefreq: 'monthly' },
   { path: '/services/clinical-trial-support', priority: '0.8', changefreq: 'monthly' },
   { path: '/services/kol-stakeholder-mapping', priority: '0.8', changefreq: 'monthly' },
@@ -319,6 +371,8 @@ const staticPages = [
   { path: '/insights/top-oncology-market-research-companies-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/best-obesity-weight-management-market-research-firms-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/leading-biologics-biosimilars-market-research-companies-2026', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/saudi-arabia-biosimilar-market-size-methodology-2026', priority: '0.85', changefreq: 'monthly' },
+  { path: '/insights/saudi-arabia-cancer-diagnostics-market-size-methodology-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/insights/best-rare-disease-market-research-companies-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-consumer-healthcare-market-research-firms-2026', priority: '0.90', changefreq: 'monthly' },
   // Global / regional GEO listicles (distinct intent — no overlap with industry-matrix country pages).
@@ -329,12 +383,10 @@ const staticPages = [
   { path: '/insights/top-pharma-market-research-companies-middle-east-2026', priority: '0.87', changefreq: 'monthly' },
   { path: '/pt', priority: '0.9', changefreq: 'weekly' },
   { path: '/pt/market-research-healthcare', priority: '0.85', changefreq: 'weekly' },
-  { path: '/pt/blog', priority: '0.8', changefreq: 'weekly' },
   { path: '/pt/contact', priority: '0.7', changefreq: 'monthly' },
   { path: '/pt/methodology', priority: '0.6', changefreq: 'monthly' },
   { path: '/ru', priority: '0.9', changefreq: 'weekly' },
   { path: '/ru/market-research-healthcare', priority: '0.85', changefreq: 'weekly' },
-  { path: '/ru/blog', priority: '0.8', changefreq: 'weekly' },
   { path: '/ru/contact', priority: '0.7', changefreq: 'monthly' },
   { path: '/ru/methodology', priority: '0.6', changefreq: 'monthly' },
   { path: '/pt/insights/top-market-research-companies-brasil-2026', priority: '0.85', changefreq: 'monthly' },
@@ -354,6 +406,12 @@ const staticPages = [
   { path: '/blog/nf1-koselugo-selumetinib-pharma-market-research', priority: '0.86', changefreq: 'monthly' },
   { path: '/blog/top-healthcare-market-research-companies-kuwait', priority: '0.87', changefreq: 'monthly' },
   { path: '/blog/desmoid-tumors-nirogacestat-pharma-market-access', priority: '0.85', changefreq: 'monthly' },
+  // Hardcoded post (not in Sanity) listed in BLOG_FORCE_INDEX_SLUGS, so the Sanity loop never reached it.
+  {
+    path: '/blog/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement',
+    priority: '0.85',
+    changefreq: 'monthly',
+  },
   // Rare-tumour service pillars (hub) — blogs above are editorial spokes; distinct titles/schema.
   { path: '/nf1-pharma-market-research', priority: '0.88', changefreq: 'monthly' },
   { path: '/desmoid-tumor-pharma-market-research', priority: '0.88', changefreq: 'monthly' },
@@ -450,7 +508,6 @@ const staticPages = [
   { path: '/healthcare-market-research-china', priority: '0.90', changefreq: 'monthly' },
   { path: '/healthcare-market-research-denmark', priority: '0.90', changefreq: 'monthly' },
   { path: '/healthcare-market-research-france', priority: '0.90', changefreq: 'monthly' },
-  { path: '/healthcare-market-research-germany', priority: '0.90', changefreq: 'monthly' },
   { path: '/healthcare-market-research-in-saudi-arabia', priority: '0.92', changefreq: 'monthly' },
   { path: '/healthcare-market-research-in-uae', priority: '0.92', changefreq: 'monthly' },
   { path: '/healthcare-market-research-kuwait', priority: '0.92', changefreq: 'monthly' },
@@ -566,6 +623,9 @@ const staticPages = [
   { path: '/south-korea-medical-devices-market-report', priority: '0.85', changefreq: 'monthly' },
   { path: '/spain-healthcare-market-report', priority: '0.88', changefreq: 'monthly' },
   { path: '/spain-medical-devices-market-report', priority: '0.88', changefreq: 'monthly' },
+  { path: '/sweden-healthcare-market-report', priority: '0.85', changefreq: 'monthly' },
+  { path: '/uae-influenza-vaccine-report', priority: '0.85', changefreq: 'monthly' },
+  { path: '/market-access', priority: '0.8', changefreq: 'monthly' },
   { path: '/turkey-healthcare-market-report', priority: '0.83', changefreq: 'monthly' },
   { path: '/turkey-medical-devices-market-report', priority: '0.83', changefreq: 'monthly' },
   { path: '/uae-healthcare-market-report', priority: '0.88', changefreq: 'monthly' },
@@ -576,18 +636,34 @@ const staticPages = [
   { path: '/usa-medical-devices-market-report', priority: '0.88', changefreq: 'monthly' },
 ];
 
+/**
+ * Source of truth: THERAPY_COPY in src/pages/healthcare-research/TherapyPage.tsx.
+ * Slugs outside that map still render, but only as generic fallback copy, so keep
+ * this list aligned with THERAPY_COPY rather than with the linked-from-nav set.
+ */
 const healthcareTherapySlugs = [
   'aesthetic-medicine',
   'biologics',
+  'biosimilars',
   'cardiology',
+  'cardiovascular',
+  'dermatology',
   'diabetes',
+  'digital-health',
   'immunology',
+  'neurology-cns',
   'oncology',
   'rare-diseases',
   'respiratory',
   'vaccines',
 ];
 
+/**
+ * Source of truth: SERVICE_COPY in src/pages/healthcare-research/ServicePage.tsx.
+ *
+ * `heor-rwe` is deliberately absent: TherapyPage links to it but it has no entry in
+ * SERVICE_COPY, so it renders fallback boilerplate. Give it real copy before listing it.
+ */
 const healthcareServiceSlugs = [
   'market-access',
   'physician-insights',
@@ -650,48 +726,30 @@ const healthcareMarketResearchCountrySlugs = [
     'jeddah',
     'dubai',
     'abu-dhabi',
+    // Promoted in the hub's regional grid (ALL_HUB_COUNTRY_GROUPS) but absent from
+    // globalWebsiteCountrySlugs, so they were crawlable and linked yet never listed.
+    'brazil',
+    'south-korea',
+    'australia',
+    'india',
   ]),
 ].sort((a, b) => a.localeCompare(b));
 
-const MARKET_REPORT_THERAPY_HUB_SLUGS = [
-  'oncology',
-  'diabetes-metabolic',
-  'cardiovascular',
-  'immunology-biologics',
-  'respiratory',
-  'rare-diseases',
-  'neurology-cns',
-  'biosimilars',
-  'digital-health',
-  'vaccines',
-  'dermatology',
-];
+/** Derived from THERAPY_AREA_CONTENT — the registry HealthcareReportsByTherapy validates against. */
+const MARKET_REPORT_THERAPY_HUB_SLUGS = marketReportTherapyHubSlugs;
 
-const MARKET_REPORT_COUNTRY_HUB_SLUGS = [
-  'gcc',
-  'saudi-arabia',
-  'uae',
-  'kuwait',
-  'qatar',
-  'bahrain',
-  'oman',
-  'egypt',
-  'turkey',
-];
+/** Derived from MARKET_CONTENT — the registry HealthcareReportsByCountry validates against. */
+const MARKET_REPORT_COUNTRY_HUB_SLUGS = marketReportCountryHubSlugs;
 
+/**
+ * Every `/market-reports/{slug}` page, from REPORT_ENTRIES.
+ *
+ * This previously regex-matched `row('slug',` in healthcareReportData.ts, which
+ * silently skipped the 30 pharma insight reports that are merged in from
+ * pharmaInsightsData.ts rather than declared via `row(...)`.
+ */
 function extractProgrammaticHealthcareReportSlugs() {
-  try {
-    const fp = join(root, 'src/data/healthcareReportData.ts');
-    const txt = readFileSync(fp, 'utf8');
-    /** @type {string[]} */
-    const slugs = [];
-    const re = /\brow\(\s*'([^']+)'\s*,/g;
-    let m;
-    while ((m = re.exec(txt))) slugs.push(m[1]);
-    return slugs;
-  } catch {
-    return [];
-  }
+  return marketReportSlugs;
 }
 
 // Data-driven country listicle pages (src/data/topCompanies), emitted by
@@ -722,13 +780,16 @@ function buildStaticRoutes() {
   for (const page of getSpecialtyMarketDemandSitemapPages()) {
     if (!isSitemapRedirectSourcePath(page.path)) routes.push(page);
   }
-  // Country detail pages under Global Websites
+  // Country detail pages under Global Websites — 301 to /healthcare-market-research (excluded)
   for (const slug of globalWebsiteCountrySlugs) {
-    routes.push({
-      path: `/global-websites/${slug}`,
-      priority: '0.6',
-      changefreq: 'monthly',
-    });
+    const path = `/global-websites/${slug}`;
+    if (!isSitemapRedirectSourcePath(path)) {
+      routes.push({
+        path,
+        priority: '0.6',
+        changefreq: 'monthly',
+      });
+    }
   }
   for (const slug of healthcareMarketResearchCountrySlugs) {
     routes.push({
@@ -773,6 +834,14 @@ function buildStaticRoutes() {
       changefreq: 'weekly',
     });
   }
+  for (const slug of industryGlobalHubSlugs) {
+    routes.push({
+      path: `/market-research/${slug}`,
+      priority: '0.8',
+      changefreq: 'monthly',
+    });
+  }
+  routes.push(...developedMarketMedtechPaths);
   return routes;
 }
 
@@ -789,16 +858,40 @@ const hreflangGroups = [
     ru: '/ru/market-research-healthcare',
     'x-default': '/market-research-healthcare',
   },
-  {
-    en: '/healthcare-market-research',
-    fr: '/fr/healthcare-market-research',
-    'x-default': '/healthcare-market-research',
-  },
   { en: '/contact', pt: '/pt/contact', de: '/de/contact', fr: '/fr/contacts', es: '/es/contact', ar: '/ar/contacts', 'zh-CN': '/zh/contact', ru: '/ru/contact', 'x-default': '/contact' },
   { en: '/about', pt: '/pt/about', de: '/de/about', fr: '/fr/about', es: '/es/about', ar: '/ar/about', 'zh-CN': '/zh/about', ru: '/ru/about', 'x-default': '/about' },
   // Only list languages that actually have distinct localized URLs.
+  // pt/ru/zh/es blog indexes self-canonicalize (see src/pages/Blog.tsx) rather than
+  // pointing at /blog, so they're valid distinct hreflang targets even though they
+  // currently render the same English copy as /blog.
   { en: '/blog', pt: '/pt/blog', de: '/de/blog', fr: '/fr/blog', es: '/es/blog', ar: '/ar/blog', 'zh-CN': '/zh/blog', ru: '/ru/blog', 'x-default': '/blog' },
-  { en: '/services/market-access', es: '/es/market-access', 'x-default': '/services/market-access' },
+  // /es/market-access redirects to /services/market-access itself -- excluded to
+  // avoid a "hreflang to redirect" error.
+  { en: '/services/market-access', 'x-default': '/services/market-access' },
+  {
+    en: '/healthcare-market-research',
+    es: '/es/healthcare-market-research',
+    fr: '/fr/healthcare-market-research',
+    'x-default': '/healthcare-market-research',
+  },
+  {
+    en: '/bionixus-market-research-middle-east',
+    fr: '/fr/bionixus-market-research-middle-east',
+    'zh-CN': '/zh/bionixus-market-research-middle-east',
+    'x-default': '/bionixus-market-research-middle-east',
+  },
+  {
+    en: '/quantitative-healthcare-market-research',
+    fr: '/fr/quantitative-healthcare-market-research',
+    'x-default': '/quantitative-healthcare-market-research',
+  },
+  {
+    en: '/strategic-portfolio',
+    ar: '/ar/strategic-portfolio',
+    fr: '/fr/strategic-portfolio',
+    'zh-CN': '/zh/strategic-portfolio',
+    'x-default': '/strategic-portfolio',
+  },
   { en: '/market-research-uae', ar: '/ar/market-research-uae', 'x-default': '/market-research-uae' },
   { en: '/market-research-ksa', ar: '/ar/market-research-ksa', 'x-default': '/market-research-ksa' },
   { en: '/market-research-saudi', ar: '/ar/market-research-saudi', 'x-default': '/market-research-saudi' },
@@ -807,6 +900,7 @@ const hreflangGroups = [
   {
     en: '/insights/top-market-research-companies-egypt-2026',
     ar: '/ar/insights/top-market-research-companies-egypt-2026',
+    'zh-CN': '/zh/insights/top-market-research-companies-egypt-2026',
     'x-default': '/insights/top-market-research-companies-egypt-2026',
   },
   {
@@ -831,7 +925,6 @@ const hreflangGroups = [
   },
   {
     en: '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
-    de: '/de/success-in-startups',
     ar: '/ar/arabic-blog-alsawdyh',
     'x-default': '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
   },

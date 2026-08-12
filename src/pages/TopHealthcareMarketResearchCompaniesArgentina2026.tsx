@@ -160,6 +160,7 @@ const breadcrumbSchema = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
+  image: 'https://www.bionixus.com/og-image.png',
   headline: 'Best Healthcare Market Research Companies in Argentina (2026 Guide)',
   description: 'Independent guide to the top healthcare and pharmaceutical market research companies in Argentina — ANMAT, obras sociales, PAMI, KOL mapping, and HEOR capabilities compared.',
   inLanguage: 'en',
@@ -219,6 +220,7 @@ export default function TopHealthcareMarketResearchCompaniesArgentina2026() {
         title="5 Best Healthcare Market Research Firms in Argentina | BioNixus"
         description="Top 5 healthcare market research firms in Argentina: BioNixus, IQVIA, Kantar, NielsenIQ, Euromonitor. ANMAT, obras sociales, PAMI, KOL mapping compared."
         url={CANONICAL}
+        image="https://www.bionixus.com/og-image.png"
         locale="es_AR"
       />
 

@@ -13,7 +13,7 @@ export const FR_HUB_CONTENT = {
   heroDescription:
     'BioNixus transforme les signaux fragmentés — comportement des prescripteurs, logique des payeurs, parcours patients et mouvements concurrentiels — en décisions défendables. Notre méthode est cohérente mondialement ; ce qui change, c\'est le contexte réglementaire et l\'acheteur local.',
   stats: [
-    { value: '17+', label: 'Pays couverts' },
+    { value: '38', label: 'Pays couverts' },
     { value: '14+', label: 'Aires thérapeutiques' },
     { value: '4 régions', label: 'Amériques · Europe · MENA · Asie' },
   ],
@@ -31,7 +31,7 @@ export const FR_HUB_CONTENT = {
     },
     {
       title: 'Comparabilité transfrontalière',
-      description: 'Instruments harmonisés sur 17+ pays pour des roll-ups régionaux cohérents.',
+      description: 'Instruments harmonisés sur 38 pays pour des roll-ups régionaux cohérents.',
     },
     {
       title: 'Hub rapports et services',
@@ -103,7 +103,7 @@ export const FR_HUB_CONTENT = {
     { to: '/healthcare-market-research/uae', label: 'Émirats arabes unis' },
     { to: '/gcc-pharmaceutical-market-research', label: 'Recherche pharma GCC' },
     { to: '/heor-consulting', label: 'Conseil HEOR' },
-    { to: '/fr/contacts', label: 'Contacter BioNixus' },
+    { to: '/fr/contact', label: 'Contacter BioNixus' },
   ] as FrNavLink[],
   faqs: [
     {
@@ -188,7 +188,7 @@ export const FR_FRANCE_CONTENT = {
     { to: '/healthcare-market-research/france', label: 'France healthcare market research (EN)' },
     { to: '/healthcare-market-research/europe', label: 'Europe healthcare market research' },
     { to: '/heor-consulting', label: 'Conseil HEOR' },
-    { to: '/fr/contacts', label: 'Demander un briefing France' },
+    { to: '/fr/contact', label: 'Demander un briefing France' },
   ] as FrNavLink[],
   faqs: [
     {

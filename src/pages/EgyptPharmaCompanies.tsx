@@ -70,16 +70,14 @@ const EgyptPharmaCompanies = () => {
   const citationUrl = 'https://www.bionixus.com/pharmaceutical-companies-egypt';
 
   const ogTitle = "Top 40 Pharmaceutical Companies in Egypt (2026 Ranked List)";
-  const ogDescription = "2026 ranking of Egypt's pharmaceutical companies — local giants, multinationals, market shares and pricing context. By BioNixus, Egypt healthcare research experts.";
-
+  const ogDescription = "2026 ranking of Egypt's pharmaceutical companies — local giants, multinationals, market shares and pricing context. By Bionixus, Egypt healthcare research experts.";
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Top 40 Pharmaceutical Companies in Egypt (2026 Ranked List)</title>
-        <meta name="description" content="2026 ranking of Egypt's pharmaceutical companies — local giants, multinationals, market shares and pricing context. By BioNixus, Egypt healthcare research experts." />
-        <link rel="canonical" href={citationUrl} />
+        <meta name="description" content="2026 ranking of Egypt's pharmaceutical companies — local giants, multinationals, market shares and pricing context. By Bionixus, Egypt healthcare research experts." />        <link rel="canonical" href={citationUrl} />
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesItemListLd(citationUrl, pharmaCompanies.map((c) => c.name)))}</script>
-        <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: 'Pharmaceutical Companies in Egypt: Complete Industry Guide 2026', description: 'Comprehensive guide to pharmaceutical companies operating in Egypt — local manufacturers, MNC offices, distributors, $5.8B market data, EDA regulatory landscape, and 90% local manufacturing dominance.', url: citationUrl, datePublished: '2026-02-15', dateModified: '2026-02-15', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' } })}</script>
+        <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', image: 'https://www.bionixus.com/og-image.png', headline: 'Pharmaceutical Companies in Egypt: Complete Industry Guide 2026', description: 'Comprehensive guide to pharmaceutical companies operating in Egypt — local manufacturers, MNC offices, distributors, $5.8B market data, EDA regulatory landscape, and 90% local manufacturing dominance.', url: citationUrl, datePublished: '2026-02-15', dateModified: '2026-02-15', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' } })}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' }, { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.bionixus.com/resources' }, { '@type': 'ListItem', position: 3, name: 'Pharmaceutical Companies in Egypt', item: citationUrl }] })}</script>
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesFaqLd(citationUrl, faqItems))}</script>
       </Helmet>

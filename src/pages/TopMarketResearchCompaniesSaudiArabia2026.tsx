@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { getHreflangLinks } from '@/lib/seo';
 import { GeoListicleClusterCallout } from '@/components/seo/GeoListicleClusterCallout';
 import { GEO_LISTICLE_CLUSTERS } from '@/data/geo-listicle-clusters';
 import {
@@ -177,6 +178,7 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Market Research Companies in Saudi Arabia (2026 Guide)',
     description:
       'Independent guide to the leading market research companies in Saudi Arabia for 2026: consumer, FMCG, retail, and multi-industry firms compared by capability, methodology, and Saudi expertise.',
@@ -247,8 +249,11 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
         <meta name="geo.placename" content="Saudi Arabia" />
         <meta name="author" content="Haidy Yahia" />
         <link rel="canonical" href={CANONICAL} />
-        <link rel="alternate" hreflang="en" href={CANONICAL} />
-        <link rel="alternate" hreflang="x-default" href={CANONICAL} />
+        {getHreflangLinks('/insights/top-market-research-companies-saudi-arabia-2026').map(
+          ({ lang, href }) => (
+            <link key={lang} rel="alternate" hrefLang={lang} href={href} />
+          ),
+        )}
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>

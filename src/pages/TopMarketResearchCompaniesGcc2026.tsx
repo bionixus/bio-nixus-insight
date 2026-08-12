@@ -171,6 +171,7 @@ export default function TopMarketResearchCompaniesGcc2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Market Research Companies in GCC (2026 Guide)',
     description:
       'Independent 2026 guide ranking the top market research companies in the GCC — consumer, FMCG, retail, and multi-industry firms across Saudi Arabia, UAE, Kuwait, Oman, Qatar, and Bahrain compared.',
@@ -238,8 +239,8 @@ export default function TopMarketResearchCompaniesGcc2026() {
         <meta name="geo.region" content="GCC" />
         <meta name="geo.placename" content="Gulf Cooperation Council" />
         <link rel="canonical" href={CANONICAL} />
-        <link rel="alternate" hreflang="en" href={CANONICAL} />
-        <link rel="alternate" hreflang="x-default" href={CANONICAL} />
+        <link rel="alternate" hrefLang="en" href={CANONICAL} />
+        <link rel="alternate" hrefLang="x-default" href={CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>

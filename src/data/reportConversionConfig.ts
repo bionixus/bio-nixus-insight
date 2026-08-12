@@ -365,6 +365,7 @@ const COUNTRY_STANDALONE_HINTS: Record<string, string> = {
   france: 'Mention ANSM or HAS assessment context for faster routing.',
   italy: 'Mention AIFA pricing or regional formulary context for faster routing.',
   spain: 'Mention AEMPS or regional HTA for faster routing.',
+  sweden: 'Mention TLV, NT-rådet, or regional formulary priorities for faster routing.',
   india: 'Mention CDSCO or NPPA pricing context for faster routing.',
   japan: 'Mention PMDA or Chuikyo reimbursement for faster routing.',
   australia: 'Mention TGA or PBS listing context for faster routing.',

@@ -271,7 +271,7 @@ export default function CountryPage() {
                     UAE emirate-focused market research
                   </Link>{' '}
                   or the{' '}
-                  <Link to="/global-websites/united-arab-emirates" className="text-primary font-medium hover:underline">
+                  <Link to="/healthcare-market-research/uae" className="text-primary font-medium hover:underline">
                     UAE go-to-market blueprint
                   </Link>
                   .
@@ -281,7 +281,7 @@ export default function CountryPage() {
                   Saudi Arabia's pharmaceutical market exceeds USD 10 billion annually, the largest in the GCC, and
                   BioNixus delivers SFDA-aware physician surveys, Arabic fieldwork, and hospital stakeholder evidence
                   across KSA. For launch sequencing and NUPCO context, see the{' '}
-                  <Link to="/global-websites/saudi-arabia" className="text-primary font-medium hover:underline">
+                  <Link to="/healthcare-market-research/saudi-arabia" className="text-primary font-medium hover:underline">
                     Saudi Arabia market entry blueprint
                   </Link>
                   .
@@ -649,7 +649,11 @@ export default function CountryPage() {
                 </Link>
                 , the{' '}
                 <Link to="/market-reports/saudi-arabia-biosimilars-market-report" className="text-primary underline font-medium">
-                  Saudi biosimilars market report
+                  Saudi Arabia biosimilar market
+                </Link>
+                , the{' '}
+                <Link to="/market-reports/saudi-arabia-cancer-diagnostics-market-report" className="text-primary underline font-medium">
+                  Saudi Arabia cancer diagnostics market
                 </Link>
                 , and the{' '}
                 <Link to="/gcc-pharma-market-report-2026" className="text-primary underline font-medium">

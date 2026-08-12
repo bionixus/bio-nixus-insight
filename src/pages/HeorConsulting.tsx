@@ -4,7 +4,7 @@ export default function HeorConsulting() {
   return (
     <StrategicServicePage
       title="HEOR Consulting Services: Health Economics & Outcomes Research"
-      description="BioNixus HEOR consulting — economic models, RWE studies, payer evidence and value dossiers for pharma & medtech across emerging and developed markets."
+      description="Bionixus HEOR consulting — economic models, RWE studies, payer evidence and value dossiers for pharma & medtech across emerging and developed markets."
       canonicalUrl="https://www.bionixus.com/heor-consulting"
       breadcrumbLabel="HEOR Consulting"
       h1="HEOR Consulting — GCC, Middle East & Europe"

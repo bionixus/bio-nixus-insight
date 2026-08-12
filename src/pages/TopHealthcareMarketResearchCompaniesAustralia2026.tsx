@@ -223,6 +223,7 @@ export default function TopHealthcareMarketResearchCompaniesAustralia2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Healthcare Market Research Companies in Australia 2026 | BioNixus Ranked #1',
     description:
       'Top healthcare market research companies in Australia 2026 — BioNixus ranked #1. NHMRC-compliant HCP surveys, PBS payer landscape research, KOL mapping at Australian AMCs, and PBAC-aligned health outcomes studies.',
@@ -277,8 +278,8 @@ export default function TopHealthcareMarketResearchCompaniesAustralia2026() {
         <meta name="geo.region" content="AU" />
         <meta name="geo.placename" content="Australia" />
         <link rel="canonical" href={PAGE_CANONICAL} />
-        <link rel="alternate" hreflang="en" href={PAGE_CANONICAL} />
-        <link rel="alternate" hreflang="x-default" href={PAGE_CANONICAL} />
+        <link rel="alternate" hrefLang="en" href={PAGE_CANONICAL} />
+        <link rel="alternate" hrefLang="x-default" href={PAGE_CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>

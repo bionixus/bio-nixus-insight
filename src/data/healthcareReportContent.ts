@@ -37,6 +37,16 @@ export const THERAPY_AREA_CONTENT: Record<string, TherapyAreaContent> = {
     menaMarketDynamics:
       'GCC and Egyptian oncology corridors concentrate infusion capacity inside national cancer institutes, armed forces medical complexes, multinational joint‑venture hospitals (Cleveland Clinic Abu Dhabi, Johns Hopkins Aramco, King Faisal Specialist & Research Hospital networks), alongside Hamad Medical Corporation’s National Center for Cancer Care and Sidra Medicine in Qatar.\n\nPayer adjudication intertwines oncology with radiology budgeting, implying that radiopharmaceutical and theranostic diffusion will lag innovators unless centralized procurement tenders secure vial pooling. Genome initiatives (Saudi Genome Program) accelerate rare tumour profiling but create pricing tension for orphanized targeted therapies.',
   },
+  'cancer-diagnostics': {
+    name: 'Cancer Diagnostics',
+    slug: 'cancer-diagnostics',
+    overviewParagraph:
+      'Cancer diagnostics spans the technologies that detect, characterise, and monitor malignancy before and during therapy: imaging (MRI, CT, PET, mammography, ultrasound), biopsy and cytology, and in-vitro diagnostics including IHC, PCR, NGS, flow cytometry, and immunoassay biomarker panels. Commercial value sits in both capital instruments and recurring consumables—kits, reagents, antibodies, and probes—so forecasts must separate one-time imaging/pathology installs from reagent pull-through tied to case volume.\n\nGlobally, growth is driven by earlier screening programmes, companion-diagnostic requirements for targeted oncology drugs, liquid-biopsy and multi-gene panel adoption, and AI-assisted imaging/pathology workflows. Published country totals diverge sharply when publishers mix all-channel imaging plus IVD versus hospital oncology-pathway diagnostics alone.',
+    clinicalLandscape:
+      'Clinical pathways link tumour boards to molecular pathology: PD-L1 IHC and NGS panels gate immuno-oncology and kinase-inhibitor starts; HER2, BRCA, EGFR, ALK, and MSI testing decide sequencing; staging CT/PET and mammography programmes set upstream case mix. Biopsy quality, pathology turnaround, and cold-chain for specialised assays often delay therapy more than formulary listing. Competitive dynamics therefore hinge on SFDA device/IVD registration, hospital capital tenders, reagent framework awards, laboratory accreditation, and centre-of-excellence concentration—not on drug list price alone.',
+    menaMarketDynamics:
+      'In Saudi Arabia and the wider GCC, Vision 2030 cancer-centre build-outs, KFSH&RC and MOH/NGHA tertiary networks, and national genome initiatives concentrate advanced NGS and imaging capacity in Riyadh, Jeddah, and Dammam corridors. NUPCO capital and reagent procurement reshapes hospital access; companion-diagnostic turnaround outside major hubs still gates targeted-therapy initiation. BioNixus programmes measure laboratory and imaging capacity alongside oncologist adoption so diagnostics and drug forecasts stay consistent.',
+  },
   'diabetes-metabolic': {
     name: 'Diabetes & Metabolic',
     slug: 'diabetes-metabolic',
@@ -285,6 +295,18 @@ export const MARKET_CONTENT: Record<string, MarketContent> = {
       'NHS England represents a monopsony payer with commercial agreements negotiated through VPAS pricing scheme and confidential patient access schemes—net effective prices frequently 30–60% below list for oncology biologics. NICE cost‑effectiveness threshold operates nominally around £20,000–£30,000 per QALY with end‑of‑life weighting and severity modifier adjustments broadening acceptance ranges for oncology and rare disease indications.\n\nIntegrated Care Boards (ICBs) execute local formulary decisions post‑NICE approval—creating implementation lag variation across England regions that commercial teams must map for realistic volume ramp assumptions. Scotland (SMC), Wales (AWMSG), and Northern Ireland operate distinct reimbursement committees requiring parallel submissions extending timeline arithmetic.',
     marketContext:
       'UK pharmaceutical market at GBP 21 billion in 2026 underpins NHS aspirations toward genomic medicine leadership—100,000 Genomes Project sequelae, newborn genomes programme, and AI diagnostics partnerships at NHS Genomics Medicine Service position UK as leading precision oncology clinical trial ecosystem globally alongside top US academic centres.',
+  },
+  sweden: {
+    name: 'Sweden',
+    slug: 'sweden',
+    region: 'Europe',
+    regulatoryBody: 'Läkemedelsverket / TLV / NT-rådet',
+    regulatoryOverview:
+      'Sweden combines EMA (or national Läkemedelsverket) marketing authorisation with a dual access pathway: TLV evaluates ambulatory medicines for inclusion in the national benefit scheme (förmånssystemet) using health-economic cost-effectiveness analysis, while high-cost specialised hospital therapies are guided by NT-rådet (New Therapies Council) recommendations that shape regional introduction. Unlike Germany\'s free-pricing-then-AMNOG sequence, Swedish commercial uptake depends on TLV listing decisions and regional budget adoption across 21 self-governing regions.',
+    payerLandscape:
+      'Tax-funded regional budgets dominate hospital and specialist care. TLV decisions determine outpatient reimbursement and patient co-payment rules. Regions retain material discretion on hospital formulary timing, managed introduction programmes, and specialty drug budgets—so national recommendation is necessary but not always sufficient for rapid uptake.',
+    marketContext:
+      'Sweden\'s ~SEK 650–700 billion healthcare system and ~SEK 55–62 billion pharmaceutical market combine Nordic evidence standards with concentrated university-hospital demand. Strong biosimilar culture, GLP-1 budget scrutiny, and advanced therapy capability at Karolinska and peer centres make Sweden a reference market for Nordic sequencing and a frequent EU5+Nordics launch companion.',
   },
   germany: {
     name: 'Germany',

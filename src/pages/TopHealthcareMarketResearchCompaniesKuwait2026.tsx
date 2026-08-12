@@ -196,6 +196,7 @@ export default function TopHealthcareMarketResearchCompaniesKuwait2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Healthcare Market Research Companies in Kuwait (2026 Guide)',
     description:
       'Expert guide to the leading healthcare and pharmaceutical market research companies in Kuwait for 2026. Covers MOH Kuwait-aware firms, Kuwait Drug Committee (KDC), KOL mapping, government formulary research, and how to evaluate a research partner for Kuwait.',

@@ -1,6 +1,9 @@
+/**
+ * Client-side code-split marketing landings (React.lazy).
+ * SSR uses lazyMarketingPages.ssr.ts (eager) via the Vite `ssr-route-split` plugin.
+ */
 import { lazy } from 'react';
 
-/** Code-split marketing landings that were bloating the main entry bundle. */
 export const ArMarketResearchUae = lazy(() => import('@/pages/ArMarketResearchUae'));
 export const ArMarketResearchKsa = lazy(() => import('@/pages/ArMarketResearchKsa'));
 export const ArMarketResearchSaudi = lazy(() => import('@/pages/ArMarketResearchSaudi'));
@@ -10,5 +13,6 @@ export const AiChatbotsLeadGeneration = lazy(() => import('@/pages/AiChatbotsLea
 export const ArTopMarketResearchCompaniesEgypt2026 = lazy(
   () => import('@/pages/ArTopMarketResearchCompaniesEgypt2026'),
 );
-/** Eager import — SEO pillar; lazy()+Suspense breaks renderToString SSR. */
-export { default as BionixusMarketResearchMiddleEast } from '@/pages/BionixusMarketResearchMiddleEast';
+export const BionixusMarketResearchMiddleEast = lazy(
+  () => import('@/pages/BionixusMarketResearchMiddleEast'),
+);

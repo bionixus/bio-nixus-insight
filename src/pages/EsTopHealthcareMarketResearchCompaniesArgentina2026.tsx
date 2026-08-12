@@ -160,6 +160,7 @@ const breadcrumbSchema = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
+  image: 'https://www.bionixus.com/og-image.png',
   headline: 'Top Empresas de Investigación de Mercado en Salud en Argentina (Guía 2026)',
   description: 'Guía independiente de las principales empresas de investigación de mercado en salud y farmacéutica en Argentina — ANMAT, obras sociales, PAMI, mapeo de KOLs y capacidades de HEOR comparadas.',
   inLanguage: 'es-AR',
@@ -219,6 +220,7 @@ export default function EsTopHealthcareMarketResearchCompaniesArgentina2026() {
         title="5 Mejores Empresas de Investigación de Mercado en | BioNixus"
         description="Top 5 empresas de investigación en salud en Argentina: BioNixus, IQVIA, Kantar, NielsenIQ, Euromonitor. ANMAT, obras sociales, PAMI, KOLs comparados."
         url={CANONICAL}
+        image="https://www.bionixus.com/og-image.png"
         locale="es_AR"
       />
 

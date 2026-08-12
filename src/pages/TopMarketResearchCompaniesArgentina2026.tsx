@@ -176,6 +176,7 @@ const breadcrumbSchema = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
+  image: 'https://www.bionixus.com/og-image.png',
   headline: 'Best Market Research Companies in Argentina (2026 Guide)',
   description: 'Independent guide to the top market research companies in Argentina — covering FMCG, consumer, and healthcare research capabilities for multinational clients.',
   inLanguage: 'en',
@@ -235,6 +236,7 @@ export default function TopMarketResearchCompaniesArgentina2026() {
         title="5 Best Market Research Companies in Argentina (2026) | BioNixus"
         description="Top 5 market research firms in Argentina: BioNixus, Kantar, Ipsos, NielsenIQ, Euromonitor. Consumer, FMCG, retail, and multi-industry capabilities."
         url={CANONICAL}
+        image="https://www.bionixus.com/og-image.png"
         locale="es_AR"
       />
 

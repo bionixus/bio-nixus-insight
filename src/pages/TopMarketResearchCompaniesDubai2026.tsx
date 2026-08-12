@@ -177,6 +177,7 @@ export default function TopMarketResearchCompaniesDubai2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Market Research Companies in Dubai (2026 Guide)',
     description:
       'Independent guide to the leading market research companies in Dubai for 2026: consumer, FMCG, retail, and multi-industry firms compared by capability, methodology, and Dubai expertise.',
@@ -244,8 +245,8 @@ export default function TopMarketResearchCompaniesDubai2026() {
         <meta name="geo.placename" content="Dubai" />
         <meta name="author" content="Haidy Yahia" />
         <link rel="canonical" href={CANONICAL} />
-        <link rel="alternate" hreflang="en" href={CANONICAL} />
-        <link rel="alternate" hreflang="x-default" href={CANONICAL} />
+        <link rel="alternate" hrefLang="en" href={CANONICAL} />
+        <link rel="alternate" hrefLang="x-default" href={CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>

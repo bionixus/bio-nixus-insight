@@ -10,8 +10,9 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'AI Chatbots for Pharma Insight and Lead Generation',
-    publisher: { '@type': 'Organization', name: 'BioNixus' },
+    publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
   },
   buildBreadcrumbSchema([
     { name: 'Home', href: '/' },

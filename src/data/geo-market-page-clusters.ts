@@ -17,7 +17,7 @@ export interface GeoMarketPageCluster {
 export const GEO_MARKET_PAGE_CLUSTERS: Record<string, GeoMarketPageCluster> = {
   'saudi-arabia': {
     countryName: 'Saudi Arabia',
-    globalWebsitesPath: '/global-websites/saudi-arabia',
+    globalWebsitesPath: '/healthcare-market-research/saudi-arabia',
     globalWebsitesLabel: 'Saudi Arabia pharma market entry blueprint',
     globalRole:
       'Vision 2030 context, SFDA registration logic, NUPCO procurement, and commercialization sequencing for KSA launches',
@@ -28,7 +28,7 @@ export const GEO_MARKET_PAGE_CLUSTERS: Record<string, GeoMarketPageCluster> = {
   },
   uae: {
     countryName: 'United Arab Emirates',
-    globalWebsitesPath: '/global-websites/united-arab-emirates',
+    globalWebsitesPath: '/healthcare-market-research/uae',
     globalWebsitesLabel: 'UAE pharmaceutical go-to-market blueprint',
     globalRole:
       'Dubai DHA, Abu Dhabi DOH, MOHAP, and Emirates-wide launch sequencing for pharma commercialization teams',

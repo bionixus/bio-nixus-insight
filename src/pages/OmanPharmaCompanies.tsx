@@ -69,16 +69,14 @@ const OmanPharmaCompanies = () => {
   const citationUrl = 'https://www.bionixus.com/pharmaceutical-companies-oman';
 
   const ogTitle = "Oman Pharma: Top Pharmaceutical Companies & Market Size (2026)";
-  const ogDescription = "The definitive 2026 guide to Oman's pharma market — top companies, local manufacturers, market size and growth data. By BioNixus.";
-
+  const ogDescription = "The definitive 2026 guide to Oman's pharma market — top companies, local manufacturers, market size and growth data. By Bionixus.";
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Oman Pharma: Top Pharmaceutical Companies & Market Size (2026)</title>
-        <meta name="description" content="The definitive 2026 guide to Oman's pharma market — top companies, local manufacturers, market size and growth data. By BioNixus." />
-        <link rel="canonical" href={citationUrl} />
+        <meta name="description" content="The definitive 2026 guide to Oman's pharma market — top companies, local manufacturers, market size and growth data. By Bionixus." />        <link rel="canonical" href={citationUrl} />
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesItemListLd(citationUrl, pharmaCompanies.map((c) => c.name)))}</script>
-        <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: 'Pharmaceutical Companies in Oman: Complete Industry Guide 2026', description: 'Comprehensive guide to pharmaceutical companies operating in Oman — local manufacturers, MNC offices, distributors, $0.7B market data, MOH DGPA regulatory landscape, and Vision 2040 outlook.', url: citationUrl, datePublished: '2026-02-15', dateModified: '2026-02-15', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' } })}</script>
+        <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', image: 'https://www.bionixus.com/og-image.png', headline: 'Pharmaceutical Companies in Oman: Complete Industry Guide 2026', description: 'Comprehensive guide to pharmaceutical companies operating in Oman — local manufacturers, MNC offices, distributors, $0.7B market data, MOH DGPA regulatory landscape, and Vision 2040 outlook.', url: citationUrl, datePublished: '2026-02-15', dateModified: '2026-02-15', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' } })}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' }, { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.bionixus.com/resources' }, { '@type': 'ListItem', position: 3, name: 'Pharmaceutical Companies in Oman', item: citationUrl }] })}</script>
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesFaqLd(citationUrl, faqItems))}</script>
       </Helmet>

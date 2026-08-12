@@ -243,6 +243,7 @@ export const riyadhGeneralEn: CountryListicleConfig = {
   ],
   relatedTitle: 'Related Resources',
   related: [
+    { to: '/insights/top-pharmaceutical-market-research-companies-saudi-arabia-2026', label: 'Top Pharmaceutical Market Research Companies in Saudi Arabia' },
     { to: '/insights/top-market-research-companies-ksa-2026', label: 'Best Market Research Companies in Saudi Arabia' },
     { to: '/insights/top-healthcare-market-research-companies-saudi-arabia-2026', label: 'Healthcare Market Research Companies in Saudi Arabia' },
     { to: '/insights/top-market-research-companies-uae-2026', label: 'Best Market Research Companies in the UAE' },

@@ -32,6 +32,7 @@ function ChartPlaceholder({ segments, countryName }: Props) {
   );
 }
 
+/** Code-splits recharts. Inner Suspense keeps the route shell from thinning on SSR. */
 export function ReportTherapySpendChartLazy({ segments, countryName, className = '' }: Props) {
   if (segments.length === 0) return null;
 

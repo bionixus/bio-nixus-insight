@@ -19,7 +19,7 @@ const Navbar = () => {
   const { language, setLanguage, t } = useLanguage();
   const basePath = languagePaths[language] || '/';
   const localizedContactPath =
-    language === 'fr' ? '/fr/contacts' : language === 'ar' ? '/ar/contacts' : `${basePath === '/' ? '' : basePath}/contact`;
+    language === 'fr' ? '/fr/contact' : language === 'ar' ? '/ar/contact' : `${basePath === '/' ? '' : basePath}/contact`;
 
   const normalizedPathname = pathname.split('?')[0].replace(/\/$/, '') || '/';
 
@@ -76,8 +76,8 @@ const Navbar = () => {
               className="h-9 w-auto object-contain"
               width={126}
               height={36}
-              fetchPriority="high"
               decoding="async"
+              fetchPriority="low"
             />
           </Link>
 
@@ -100,7 +100,7 @@ const Navbar = () => {
           {/* Language Selector & CTA */}
           <div className="hidden md:flex items-center gap-4">
             <Link
-              to="/global-websites"
+              to="/healthcare-market-research"
               aria-label="Global Sites"
               className="group relative p-2 rounded-lg border border-border bg-background text-foreground/80 hover:bg-muted hover:text-foreground transition-colors"
             >
@@ -180,7 +180,7 @@ const Navbar = () => {
                 </Link>
               ))}
               <Link
-                to="/global-websites"
+                to="/healthcare-market-research"
                 className="text-foreground/80 hover:text-foreground font-medium"
                 onClick={() => setIsOpen(false)}
               >

@@ -53,6 +53,36 @@ export const THERAPY_AREA_ENRICHMENT: Record<
       "Biosimilar trastuzumab and bevacizumab tender awards in KSA/UAE reduce originator revenue but require safety profile differentiation dossiers for oncology portfolio defence",
     ],
   },
+  "cancer-diagnostics": {
+    keyDrugClasses: [
+      {
+        className: "Molecular IVD / Companion Diagnostics",
+        examples: "NGS solid-tumour panels, PD-L1 IHC assays, EGFR/ALK/ROS1 PCR and FISH, BRCA and MSI tests, liquid biopsy ctDNA assays",
+        mechanismBrief: "Detects actionable genomic and protein biomarkers that gate targeted and immuno-oncology therapy selection",
+        gccStatus: "Concentrated at KFSH&RC and major MOH/NGHA tertiary labs; SFDA IVD registration and reagent tenders pace adoption",
+      },
+      {
+        className: "Oncology Imaging",
+        examples: "MRI, CT, PET/CT, mammography, ultrasound",
+        mechanismBrief: "Staging, screening, and treatment-response imaging across solid tumours",
+        gccStatus: "Vision 2030 cancer-centre capital programmes and NUPCO imaging tenders reshape installed base",
+      },
+      {
+        className: "Biopsy and Pathology Consumables",
+        examples: "Core-needle biopsy devices, cytology kits, antibodies, probes, staining reagents",
+        mechanismBrief: "Tissue acquisition and pathology workflows feeding molecular and morphological diagnosis",
+        gccStatus: "Hospital pathology volumes drive recurring consumable demand under framework procurement",
+      },
+    ],
+    epidemiologyHighlights:
+      "BioNixus sizes the Saudi Arabia hospital and oncology-laboratory cancer diagnostics opportunity at roughly USD 1.25 billion in 2026 (~7% CAGR toward ~USD 1.75 billion by 2030), triangulated against Grand View Research (USD 938.4M in 2023 → USD 1,394.7M by 2030 at 5.8% CAGR) and IMARC’s broader market (USD 2.1B in 2025 → USD 4.1B by 2034 at 7.70% CAGR). Scope differences—not forecast error—explain the spread.",
+    accessChallenges: [
+      "Advanced NGS and PET capacity concentrates in Riyadh, Jeddah, and Dammam tertiary corridors",
+      "SFDA device/IVD registration and NUPCO capital or reagent awards pace hospital adoption",
+      "Companion-diagnostic turnaround outside major hubs gates targeted oncology drug starts",
+      "Pathology workforce and biopsy quality vary by region, distorting national averages",
+    ],
+  },
   "diabetes-metabolic": {
     keyDrugClasses: [
       {

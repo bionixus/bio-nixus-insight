@@ -198,6 +198,7 @@ export default function TopHealthcareMarketResearchCompaniesChina2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Healthcare Market Research Companies in China 2026 | BioNixus Ranked #1',
     description:
       'Top healthcare market research companies in China 2026 — BioNixus ranked #1. HCP surveys at Tier 3A hospitals, NHSA NRDL payer landscape research, VBP procurement intelligence, and KOL mapping at PUMCH, West China Hospital, Zhongshan, and PLA General Hospital.',
@@ -252,8 +253,8 @@ export default function TopHealthcareMarketResearchCompaniesChina2026() {
         <meta name="geo.region" content="CN" />
         <meta name="geo.placename" content="China" />
         <link rel="canonical" href={PAGE_CANONICAL} />
-        <link rel="alternate" hreflang="en" href={PAGE_CANONICAL} />
-        <link rel="alternate" hreflang="x-default" href={PAGE_CANONICAL} />
+        <link rel="alternate" hrefLang="en" href={PAGE_CANONICAL} />
+        <link rel="alternate" hrefLang="x-default" href={PAGE_CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>

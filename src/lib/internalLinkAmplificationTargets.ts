@@ -52,6 +52,50 @@ export const INTERNAL_LINK_PRIORITY_TARGETS: ReadonlyArray<{ to: string; label: 
     to: '/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement',
     label: 'Blog — Skyrizi omnichannel engagement rankings',
   },
+  {
+    to: '/healthcare-market-research-kuwait',
+    label: 'Healthcare market research Kuwait — MOH & GPADC fieldwork',
+  },
+  {
+    to: '/healthcare-market-research-qatar',
+    label: 'Healthcare market research Qatar — Doha & MoPH stakeholders',
+  },
+  {
+    to: '/healthcare-market-research-oman',
+    label: 'Healthcare market research Oman — MoH Oman & SQUH access',
+  },
+  {
+    to: '/healthcare-market-research-bahrain',
+    label: 'Healthcare market research Bahrain — NHRA-aligned studies',
+  },
+  {
+    to: '/healthcare-market-research-jordan',
+    label: 'Healthcare market research Jordan — JFDA-aligned studies',
+  },
+  {
+    to: '/singapore-pharmaceutical-market',
+    label: 'Singapore pharmaceutical market intelligence — ACE & subsidy gating',
+  },
+  {
+    to: '/singapore-ivd-market-access',
+    label: 'Singapore IVD market access research — HSA & cluster hospitals',
+  },
+  {
+    to: '/gcc-medication-management-market',
+    label: 'GCC medication management market research',
+  },
+  {
+    to: '/nupco-tender-calendar-events-2026',
+    label: 'NUPCO tender calendar & events 2026 — Saudi procurement cycles',
+  },
+  {
+    to: '/japan-neurology-devices-market',
+    label: 'Japan neurology devices market research — PMDA & reimbursement',
+  },
+  {
+    to: '/japan-medical-disposables-market',
+    label: 'Japan medical disposables market research',
+  },
 ];
 
 const priorityTo = new Set(INTERNAL_LINK_PRIORITY_TARGETS.map((t) => t.to));

@@ -4,6 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { seoByLanguage, getCanonicalPath, getCanonicalUrl, getHreflangLinks, getGeoMeta, defaultOgImageUrl, getOgLocale, getOgLocaleAlternates } from '@/lib/seo';
 import { normalizeSeoTitle } from '@/lib/seo-meta';
+import { getCtrSeo } from '@/data/ctr-seo-overrides';
 import type { Language } from '@/lib/i18n';
 import { MATRIX_COUNTRY_SLUGS_ORDERED } from '@/data/industryMarketResearchMatrix';
 
@@ -80,8 +81,12 @@ function routeProvidesOwnDocumentHead(pathname: string): boolean {
   if (new RegExp(`^\\/insights\\/top-[\\w-]+-market-research-companies-(${MATRIX_COUNTRY_PATH_PATTERN})-2026$`).test(path)) return true;
   if (new RegExp(`^\\/(${MATRIX_COUNTRY_PATH_PATTERN})-[\\w-]+-market-research$`).test(path)) return true;
 
-  /** SEOHead-based market report hub and category index pages. */
-  if (path === '/market-reports' || path.startsWith('/market-reports/therapy/') || path.startsWith('/market-reports/country/')) {
+  /** SEOHead-based market report hub, category indexes, and report detail pages. */
+  if (path === '/market-reports' || path.startsWith('/market-reports/')) {
+    return true;
+  }
+  /** Standalone country / therapy market report routes (e.g. /gcc-medical-devices-market-report). */
+  if (/market-report/.test(path) || /-(?:market|vaccine)-report(?:\/|$)/.test(path)) {
     return true;
   }
 
@@ -117,7 +122,8 @@ function buildRouteTitle(pathname: string, language: Language, fallback: string)
   const makeTitle = (value: string) => normalizeSeoTitle(value, 'BioNixus');
 
   if (path === '/' || path === '/de' || path === '/fr' || path === '/es' || path === '/zh' || path === '/ar' || path === '/pt' || path === '/ru') {
-    return makeTitle(fallback);
+    const ctr = language === 'en' && path === '/' ? getCtrSeo('/') : null;
+    return ctr ? ctr.title : makeTitle(fallback);
   }
 
   if (path === '/about') {
@@ -128,7 +134,7 @@ function buildRouteTitle(pathname: string, language: Language, fallback: string)
     return makeTitle('Market Research Services | Pharma, Healthcare & B2B | BioNixus');
   }
 
-  if (path === '/contact' || path === '/de/contact' || path === '/fr/contacts' || path === '/ar/contacts') {
+  if (path === '/contact' || path === '/de/contact' || path === '/fr/contact' || path === '/ar/contact') {
     return makeTitle('Contact BioNixus | Research Proposal in 24 Hours');
   }
 
@@ -209,7 +215,8 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
     || path === '/pt'
     || path === '/ru'
   ) {
-    return clampDescription(fallback);
+    const ctr = language === 'en' && path === '/' ? getCtrSeo('/') : null;
+    return ctr ? ctr.description : clampDescription(fallback);
   }
 
   if (path === '/about') {
@@ -367,12 +374,12 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
       'Kontakt zu BioNixus: Markt- und Gesundheitsforschung für Pharma in DACH, UK und MENA—Angebote, Feldforschung und evidenzbasierte Strategieberatung.',
     );
   }
-  if (path === '/fr/contacts') {
+  if (path === '/fr/contact') {
     return clampDescription(
       'Contactez BioNixus pour études de marché santé et pharma: couverture Europe, UK et MENA, méthodes quantitatives et qualitatives, et intelligence accès marché.',
     );
   }
-  if (path === '/ar/contacts') {
+  if (path === '/ar/contact') {
     return clampDescription(
       'تواصل مع BioNixus لطلبات أبحاث السوق الصحي والدوائي في السعودية والخليج والمملكة المتحدة وأوروبا—برامج كمية ونوعية ودعم استراتيجي للوصول إلى السوق.',
     );

@@ -170,6 +170,7 @@ const GccMarketAccessGuide = () => {
           {JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Article',
+            image: 'https://www.bionixus.com/og-image.png',
             headline: 'GCC Pharmaceutical Market Access Guide 2026',
             description: 'Complete guide to pharmaceutical drug registration, pricing, and reimbursement across the 6 GCC countries: Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman.',
             url: citationUrl,
@@ -572,6 +573,9 @@ const GccMarketAccessGuide = () => {
               </Link>
               <Link to="/healthcare-market-research/oman" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 Healthcare market research Oman and MOH pathway insights
+              </Link>
+              <Link to="/market-reports/saudi-arabia-biosimilars-market-report" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                Saudi Arabia biosimilar market report (size, SFDA, NUPCO)
               </Link>
               <Link to="/biosimilar-market-entry-saudi-arabia" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 Biosimilar market entry in Saudi Arabia strategy guide (2026)

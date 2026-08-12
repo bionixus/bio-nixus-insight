@@ -1,4 +1,5 @@
 import { LOW_INTERNAL_LINK_TARGETS } from '@/lib/lowInternalLinkTargets.generated';
+import { fixBrokenInternalHref } from '@/lib/fixBrokenInternalHrefs';
 
 const THERAPY_SLUGS = [
   'oncology',
@@ -168,7 +169,7 @@ function sectionForPath(path: string): string {
     path.startsWith('/de/') ||
     path.startsWith('/fr/') ||
     path.startsWith('/es/') ||
-    path.startsWith('/ar/contacts')
+    path.startsWith('/ar/contact')
   ) {
     return 'localized';
   }
@@ -176,12 +177,30 @@ function sectionForPath(path: string): string {
 }
 
 /** Master path list: internal-link targets + canonical hub/therapy/service additions, de-duped. */
+function isCleanExplorerPath(path: string): boolean {
+  return /^\/[a-z0-9\-/_]*$/i.test(path) || /^\/(ar|de|fr|es|zh|pt|ru)(\/|$)/i.test(path);
+}
+
+function canonicalizeExplorerPath(path: string): string | null {
+  if (!path || path.startsWith('/admin')) return null;
+  const resolved = fixBrokenInternalHref(path);
+  const canonical = resolved.split(/[?#]/)[0] || resolved;
+  if (!isCleanExplorerPath(canonical)) return null;
+  // Drop redirect leftovers that still resolve to themselves incorrectly
+  if (canonical.startsWith('/global-websites')) return null;
+  return canonical;
+}
+
 export function getAllSiteExplorerPaths(): string[] {
   const set = new Set<string>();
   for (const t of LOW_INTERNAL_LINK_TARGETS) {
-    if (!t.to.startsWith('/admin')) set.add(t.to);
+    const canonical = canonicalizeExplorerPath(t.to);
+    if (canonical) set.add(canonical);
   }
-  for (const p of CANONICAL_EXTRA_PATHS) set.add(p);
+  for (const p of CANONICAL_EXTRA_PATHS) {
+    const canonical = canonicalizeExplorerPath(p);
+    if (canonical) set.add(canonical);
+  }
   return [...set].sort((a, b) => a.localeCompare(b));
 }
 

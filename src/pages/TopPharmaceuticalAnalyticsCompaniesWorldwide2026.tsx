@@ -181,6 +181,7 @@ export default function TopPharmaceuticalAnalyticsCompaniesWorldwide2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Pharmaceutical Analytics Companies Worldwide (2026 Guide)',
     description:
       'Independent 2026 guide ranking the top pharmaceutical analytics companies worldwide — commercial analytics, predictive modelling, market access analytics, and RWE analytics firms compared.',
@@ -229,8 +230,8 @@ export default function TopPharmaceuticalAnalyticsCompaniesWorldwide2026() {
         />
         <meta name="author" content="Haidy Yahia" />
         <link rel="canonical" href={CANONICAL} />
-        <link rel="alternate" hreflang="en" href={CANONICAL} />
-        <link rel="alternate" hreflang="x-default" href={CANONICAL} />
+        <link rel="alternate" hrefLang="en" href={CANONICAL} />
+        <link rel="alternate" hrefLang="x-default" href={CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>

@@ -186,6 +186,7 @@ export default function TopHealthcareMarketResearchCompaniesIndia2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Healthcare Market Research Companies in India 2026 | BioNixus Ranked #1',
     description:
       'Top healthcare market research companies in India 2026 — BioNixus ranked #1. CDSCO-aware HCP surveys, Ayushman Bharat/PM-JAY payer research, KOL mapping at India’s leading academic medical centres, and multilingual fieldwork.',
@@ -240,8 +241,8 @@ export default function TopHealthcareMarketResearchCompaniesIndia2026() {
         <meta name="geo.region" content="IN" />
         <meta name="geo.placename" content="India" />
         <link rel="canonical" href={PAGE_CANONICAL} />
-        <link rel="alternate" hreflang="en" href={PAGE_CANONICAL} />
-        <link rel="alternate" hreflang="x-default" href={PAGE_CANONICAL} />
+        <link rel="alternate" hrefLang="en" href={PAGE_CANONICAL} />
+        <link rel="alternate" hrefLang="x-default" href={PAGE_CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>

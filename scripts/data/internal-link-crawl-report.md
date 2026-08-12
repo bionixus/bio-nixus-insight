@@ -1,19 +1,19 @@
 # Internal Link Crawl Report
-Generated: 2026-07-31T10:30:51.476Z
-- Sitemap pages: 854
-- Crawled via SSR: 854
-- Sanity-driven pages crawled (per-post accuracy caveat applies): 136
+Generated: 2026-08-12T18:10:42.654Z
+- Sitemap pages: 1114
+- Crawled via SSR: 1114
+- Sanity-driven pages crawled (per-post accuracy caveat applies): 144
 - Failed crawls (errored during render): 0
-- Indexable pages checked for inbound links: 854
-- **Orphan pages (0 inbound internal links): 60**
-- **Pages with <3 inbound internal links: 141**
+- Indexable pages checked for inbound links: 1114
+- **Orphan pages (0 inbound internal links): 74**
+- **Pages with <3 inbound internal links: 52**
 - Possibly-broken internal link targets: 0
 ## Orphan pages
 - /ar/insights/top-market-research-companies-kuwait-2026
 - /bionixus-industries/insights/financial-services-market-research-egypt-2026
+- /bionixus-industries/insights/mdf-wood-manufacturing-market-research-trackers-mea
 - /bionixus-industries/insights/online-market-research-social-listening-brand-growth-2026
 - /blog/ai-drug-discovery-machine-learning-pharma-2026
-- /blog/amnog-frueher-nutzen-marktzugang-2026
 - /blog/awiqli-insulin-icodec-weekly-fda-2026
 - /blog/baxfendy-baxdrostat-hypertension-fda-2026
 - /blog/beqalzi-sonrotoclax-mcl-fda-2026
@@ -22,15 +22,12 @@ Generated: 2026-07-31T10:30:51.476Z
 - /blog/decnupaz-pivekimab-bpdcn-fda-approval-2026
 - /blog/digital-therapeutics-regulation-mena-markets
 - /blog/ema-hta-evidence-requirements-europe-2026
-- /blog/evaluation-economique-has-france-2026
-- /blog/farmacevticheskie-issledovaniya-rynka-2026
-- /blog/farmacoeconomia-acceso-mercado-espana-2026
 - /blog/fda-real-world-evidence-market-access-usa-2026
 - /blog/flovent-hfa-fluticasone-generic-fda-2026
 - /blog/foundayo-orforglipron-fda-approval-2026
 - /blog/gcc-clinical-trials-market-2026
-- /blog/heor-consulting-saudi-arabia-ar-2026
 - /blog/hepcludex-bulevirtide-hdv-fda-approval-2026
+- /blog/hta-dossier-saudi-arabia-market-access
 - /blog/icotyde-icotrokinra-psoriasis-fda-2026
 - /blog/idvynso-doravirine-islatravir-hiv-fda-2026
 - /blog/imdylltra-tarlatamab-sclc-ema-chmp-2026
@@ -45,17 +42,12 @@ Generated: 2026-07-31T10:30:51.476Z
 - /blog/nmpa-pharmaceutical-market-research-china-2026
 - /blog/obesity-pbm-coverage-lilly-portfolio-q2-2026
 - /blog/oncology-market-research-usa-2026
-- /blog/pesquisa-mercado-farmaceutico-brasil-anvisa-2026
 - /blog/pharmaceutical-market-research-china-2026
 - /blog/pharmaceutical-market-research-methods-mena
-- /blog/pharmamarktforschung-deutschland-2026
 - /blog/real-world-evidence-fda-guide-pharmaceutical-2026
 - /blog/roche-pathai-acquisition-digital-pathology-2026
 - /blog/saudi-arabia-healthcare-market-2026
-- /blog/saudi-arabia-pharmaceutical-market-research-2026-ar
-- /blog/saudi-healthcare-market-research-guide-ar-2026
 - /blog/sfda-economic-evaluation-budget-impact-guide-2026
-- /blog/souk-adwiya-saudiya-dalil-shamel-rueya-2030-2026
 - /blog/tecartus-brexucabtagene-mcl-full-approval-2026
 - /blog/top-healthcare-market-research-companies-2026
 - /blog/top-healthcare-market-research-companies-uae
@@ -67,149 +59,82 @@ Generated: 2026-07-31T10:30:51.476Z
 - /blog/vijoice-alpelisib-pros-ema-chmp-2026
 - /blog/zepbound-kwikpen-goodrx-self-pay-2026
 - /blog/zepzelca-lurbinectedin-sclc-ema-chmp-2026
+- /de/blog/amnog-frueher-nutzen-marktzugang-2026
+- /de/services
+- /insights/top-medtech-market-research-companies-australia-2026
+- /insights/top-medtech-market-research-companies-brazil-2026
+- /insights/top-medtech-market-research-companies-canada-2026
+- /insights/top-medtech-market-research-companies-china-2026
+- /insights/top-medtech-market-research-companies-denmark-2026
+- /insights/top-medtech-market-research-companies-france-2026
+- /insights/top-medtech-market-research-companies-germany-2026
+- /insights/top-medtech-market-research-companies-italy-2026
+- /insights/top-medtech-market-research-companies-japan-2026
+- /insights/top-medtech-market-research-companies-malaysia-2026
+- /insights/top-medtech-market-research-companies-new-zealand-2026
+- /insights/top-medtech-market-research-companies-poland-2026
+- /insights/top-medtech-market-research-companies-singapore-2026
+- /insights/top-medtech-market-research-companies-south-korea-2026
+- /insights/top-medtech-market-research-companies-spain-2026
+- /insights/top-medtech-market-research-companies-switzerland-2026
+- /insights/top-medtech-market-research-companies-uk-2026
+- /insights/top-medtech-market-research-companies-usa-2026
+- /market-reports/country/sweden
+- /news/bionixus-egypt-new-administrative-capital-office-2026
 - /pt/market-research-healthcare
 - /ru/market-research-healthcare
 ## Low inbound-link pages (<3)
-- /ar/insights/top-market-research-companies-qatar-2026 — 1 inbound (from: /ar/insights/top-market-research-companies-kuwait-2026)
-- /ar/market-research-egypt — 1 inbound (from: /sitemap)
-- /ar/market-research-kuwait — 1 inbound (from: /sitemap)
-- /ar/market-research-saudi — 1 inbound (from: /sitemap)
-- /blog/adstiladrin-nadofaragene-nmibc-ema-chmp-2026 — 1 inbound (from: /saudi-arabia-healthcare-market-report)
-- /blog/cenrifki-tolebrutinib-nrspms-ema-chmp-2026 — 1 inbound (from: /saudi-arabia-healthcare-market-report)
-- /blog/eli-lilly-vaccine-acquisitions-curevo-limmatech-2026 — 1 inbound (from: /saudi-arabia-healthcare-market-report)
-- /blog/ema-orphan-drug-designation-guide-europe-2026 — 1 inbound (from: /heor-consulting)
-- /blog/european-hta-regulation-2026-pharmaceutical-market-access-guide — 1 inbound (from: /heor-consulting)
-- /blog/gcc-pharmacy-market-2026 — 1 inbound (from: /saudi-arabia-healthcare-market-report)
-- /blog/lynarvo-linerixibat-pbc-fda-2026 — 1 inbound (from: /saudi-arabia-healthcare-market-report)
-- /blog/pharmacies-saudi-arabia-market-research-marketing-automation — 1 inbound (from: /pharmacies-saudi-arabia-marketing)
-- /blog/pharmacoeconomics-consulting-europe-2026 — 1 inbound (from: /heor-consulting)
-- /blog/quantitative-healthcare-market-research-ksa — 1 inbound (from: /quantitative-healthcare-market-research)
-- /blog/quantitative-healthcare-market-research-uae — 1 inbound (from: /quantitative-healthcare-market-research)
-- /blog/quantitative-market-research-and-market-access-impact — 1 inbound (from: /quantitative-healthcare-market-research)
-- /blog/redemplo-plozasiran-fcs-ema-chmp-2026 — 1 inbound (from: /saudi-arabia-healthcare-market-report)
-- /blog/saudi-arabia-gcc-pharmaceutical-market-guide-2026 — 1 inbound (from: /saudi-arabia-healthcare-market-report)
+- /ar/market-research-healthcare — 1 inbound (from: /sitemap)
 - /blog/saudi-arabia-in-vitro-diagnostics-market — 1 inbound (from: /gcc-medical-devices-market-report)
-- /blog/top-healthcare-market-research-companies-kuwait — 1 inbound (from: /healthcare-market-research-kuwait)
-- /clinical-diagnostics-proposal-request — 1 inbound (from: /clinical-diagnostics-market-research)
-- /es/insights/top-empresas-investigacion-mercado-argentina-2026 — 1 inbound (from: /es/insights/top-empresas-investigacion-mercado-salud-argentina-2026)
-- /es/insights/top-empresas-investigacion-mercado-salud-argentina-2026 — 1 inbound (from: /es/insights/top-empresas-investigacion-mercado-argentina-2026)
-- /fr/healthcare-market-research/france — 1 inbound (from: /fr/healthcare-market-research)
-- /gcc-anesthesia-surgical-market-report — 1 inbound (from: /sitemap)
-- /gcc-clinical-trials-market — 1 inbound (from: /gcc-personalized-medicine-market)
-- /gcc-pharmacy-market — 1 inbound (from: /gcc-generic-injectables-market)
-- /healthcare-market-research-argentina — 1 inbound (from: /pharmaceutical-market-research-argentina)
-- /healthcare-market-research-bahrain — 1 inbound (from: /healthcare-market-research)
-- /healthcare-market-research-china — 1 inbound (from: /insights/top-market-research-companies-china-2026)
-- /healthcare-market-research-italy — 1 inbound (from: /insights/top-market-research-companies-italy-2026)
-- /healthcare-market-research-jordan — 1 inbound (from: /healthcare-market-research)
-- /healthcare-market-research-kuwait — 1 inbound (from: /healthcare-market-research)
-- /healthcare-market-research-new-zealand — 1 inbound (from: /insights/top-market-research-companies-new-zealand-2026)
-- /healthcare-market-research-oman — 1 inbound (from: /healthcare-market-research)
-- /healthcare-market-research-qatar — 1 inbound (from: /healthcare-market-research)
-- /healthcare-market-research/mexico — 1 inbound (from: /services)
-- /insights/best-obesity-weight-management-market-research-firms-2026 — 1 inbound (from: /insights)
-- /insights/best-rare-disease-market-research-companies-2026 — 1 inbound (from: /insights)
-- /insights/leading-biologics-biosimilars-market-research-companies-2026 — 1 inbound (from: /insights)
-- /insights/top-consumer-healthcare-market-research-firms-2026 — 1 inbound (from: /insights)
-- /insights/top-healthcare-market-research-companies-belgium-2026 — 1 inbound (from: /insights)
-- /insights/top-healthcare-market-research-companies-lebanon-2026 — 1 inbound (from: /insights/top-healthcare-market-research-companies-jordan-2026)
-- /insights/top-market-research-companies-angola-2026 — 1 inbound (from: /insights)
-- /insights/top-market-research-companies-china-2026 — 1 inbound (from: /insights/top-healthcare-market-research-companies-china-2026)
-- /insights/top-market-research-companies-cote-divoire-2026 — 1 inbound (from: /insights/top-market-research-companies-senegal-2026)
-- /insights/top-market-research-companies-denmark-2026 — 1 inbound (from: /insights/top-healthcare-market-research-companies-denmark-2026)
-- /insights/top-market-research-companies-france-2026 — 1 inbound (from: /insights/top-healthcare-market-research-companies-france-2026)
-- /insights/top-market-research-companies-ghana-2026 — 1 inbound (from: /insights)
-- /insights/top-market-research-companies-iraq-2026 — 1 inbound (from: /insights)
-- /insights/top-market-research-companies-italy-2026 — 1 inbound (from: /insights/top-healthcare-market-research-companies-italy-2026)
-- /insights/top-market-research-companies-kuwait-2026 — 1 inbound (from: /pharmaceutical-market-research-kuwait)
-- /insights/top-market-research-companies-senegal-2026 — 1 inbound (from: /insights/top-market-research-companies-cote-divoire-2026)
-- /insights/top-market-research-companies-south-korea-2026 — 1 inbound (from: /insights/top-healthcare-market-research-companies-south-korea-2026)
-- /insights/top-market-research-companies-uganda-2026 — 1 inbound (from: /insights/top-market-research-companies-tanzania-2026)
-- /insights/top-oncology-market-research-companies-2026 — 1 inbound (from: /insights)
+- /denmark-medtech-market-research — 1 inbound (from: /insights/top-medtech-market-research-companies-denmark-2026)
+- /insights/top-pharmaceutical-market-research-companies-australia-2026 — 1 inbound (from: /insights/top-pharmaceutical-market-research-companies-brazil-2026)
+- /insights/top-pharmaceutical-market-research-companies-canada-2026 — 1 inbound (from: /insights/top-pharmaceutical-market-research-companies-usa-2026)
+- /insights/top-pharmaceutical-market-research-companies-egypt-2026 — 1 inbound (from: /insights/top-pharmaceutical-market-research-companies-turkey-2026)
+- /insights/top-pharmaceutical-market-research-companies-turkey-2026 — 1 inbound (from: /insights/top-pharmaceutical-market-research-companies-egypt-2026)
+- /insights/top-pharmaceutical-market-research-companies-usa-2026 — 1 inbound (from: /insights/top-pharmaceutical-market-research-companies-canada-2026)
+- /market-access — 1 inbound (from: /sitemap)
 - /media — 1 inbound (from: /news)
-- /medical-affairs-insight-research-gcc — 1 inbound (from: /healthcare-market-research)
-- /news/bionixus-brazil-office-latam-expansion-2026 — 1 inbound (from: /brazil-healthcare-market-report)
-- /pharmaceutical-market-research-argentina — 1 inbound (from: /healthcare-market-research-argentina)
-- /pharmaceutical-market-research-bahrain — 1 inbound (from: /healthcare-market-research-bahrain)
-- /pharmaceutical-market-research-jordan — 1 inbound (from: /healthcare-market-research-jordan)
-- /pharmaceutical-market-research-kuwait — 1 inbound (from: /healthcare-market-research-kuwait)
-- /pharmaceutical-market-research-oman — 1 inbound (from: /healthcare-market-research-oman)
-- /pharmaceutical-market-research-qatar — 1 inbound (from: /healthcare-market-research-qatar)
-- /pt/insights/top-empresas-pesquisa-mercado-brasil-2026 — 1 inbound (from: /pt/insights/top-market-research-companies-brasil-2026)
-- /pt/insights/top-market-research-companies-brasil-2026 — 1 inbound (from: /pt/insights/top-empresas-pesquisa-mercado-saude-brasil-2026)
-- /specialist-physician-panel-uae — 1 inbound (from: /healthcare-market-research/services/physician-insights)
+- /poland-medtech-market-research — 1 inbound (from: /insights/top-medtech-market-research-companies-poland-2026)
+- /pt/insights/melhores-empresas-pesquisa-mercado-farmaceutico-brasil-2026 — 1 inbound (from: /insights/top-pharmaceutical-market-research-companies-brazil-2026)
+- /uae-influenza-vaccine-report — 1 inbound (from: /sitemap)
+- /zh/market-research-healthcare — 1 inbound (from: /sitemap)
 - /ar/abhath-suq-adwiyah-saudi-arabia — 2 inbound (from: /ar/insights/top-sharaket-abhath-alsuq-alsaudia-2026, /ar/insights/top-sharaket-abhath-sihha-alsaudia-2026)
-- /ar/insights/top-market-research-companies-egypt-2026 — 2 inbound (from: /ar, /sitemap)
+- /ar/insights/top-sharaket-abhath-alsuq-alsaudia-2026 — 2 inbound (from: /ar/abhath-suq-adwiyah-saudi-arabia, /ar/insights/top-sharaket-abhath-sihha-alsaudia-2026)
 - /ar/insights/top-sharaket-abhath-sihha-alsaudia-2026 — 2 inbound (from: /ar/abhath-suq-adwiyah-saudi-arabia, /ar/insights/top-sharaket-abhath-alsuq-alsaudia-2026)
-- /ar/market-research-ksa — 2 inbound (from: /ar/abhath-suq-adwiyah-saudi-arabia, /sitemap)
 - /blog/etudes-marche-pharmaceutique-france-2026 — 2 inbound (from: /fr/healthcare-market-research, /fr/healthcare-market-research/france)
 - /blog/top-market-research-companies-egypt-2026 — 2 inbound (from: /healthcare-market-research/egypt, /insights/top-market-research-companies-egypt-2026)
 - /brazil-healthcare-market-research — 2 inbound (from: /brazil-pharmaceutical-market-research, /pt/pesquisa-mercado-saude-brasil)
-- /clinical-diagnostics-market-research — 2 inbound (from: /clinical-diagnostics-proposal-request, /pharma-healthcare-industries)
-- /commercial-effectiveness-pharma-middle-east — 2 inbound (from: /bionixus-market-research-middle-east, /brand-tracking-pharma-gcc)
-- /consumer-market-research — 2 inbound (from: /insights/top-consumer-healthcare-market-research-firms-2026, /services)
+- /de/market-research-healthcare — 2 inbound (from: /de/healthcare-market-research/germany, /sitemap)
 - /diabetes-market-research-uae — 2 inbound (from: /healthcare-market-research/therapy/cardiology, /healthcare-market-research/therapy/diabetes)
-- /fr/healthcare-market-research — 2 inbound (from: /fr, /fr/healthcare-market-research/france)
-- /gcc-generic-injectables-market — 2 inbound (from: /gcc-biopharmaceuticals-market, /gcc-pharmacy-market)
+- /es/healthcare-market-research — 2 inbound (from: /es, /es/bionixus-industries)
+- /es/market-research-healthcare — 2 inbound (from: /es/healthcare-market-research/spain, /sitemap)
+- /fr/bionixus-market-research-middle-east — 2 inbound (from: /fr, /fr/bionixus-industries)
+- /fr/market-research-healthcare — 2 inbound (from: /fr/blog, /sitemap)
+- /fr/quantitative-healthcare-market-research — 2 inbound (from: /fr, /fr/strategic-portfolio)
+- /gcc-anesthesia-surgical-market-report — 2 inbound (from: /japan-general-surgical-devices-market, /sitemap)
 - /gcc-personalized-medicine-market — 2 inbound (from: /gcc-biopharmaceuticals-market, /gcc-clinical-trials-market)
-- /healthcare-fieldwork-gcc — 2 inbound (from: /healthcare-fieldwork-middle-east, /quantitative-healthcare-market-research)
-- /healthcare-market-research-denmark — 2 inbound (from: /insights/top-market-research-companies-denmark-2026, /pharmaceutical-market-research-denmark)
-- /healthcare-market-research-france — 2 inbound (from: /healthcare-market-research-italy, /pharmaceutical-market-research-france)
-- /healthcare-market-research-spain — 2 inbound (from: /healthcare-market-research-italy, /pharmaceutical-market-research-spain)
-- /healthcare-market-research-switzerland — 2 inbound (from: /insights/top-market-research-companies-switzerland-2026, /pharmaceutical-market-research-switzerland)
+- /healthcare-market-research/therapy/cardiovascular — 2 inbound (from: /market-reports/saudi-arabia-cardiovascular-market-report, /market-reports/uae-cardiovascular-market-report)
+- /healthcare-market-research/therapy/digital-health — 2 inbound (from: /market-reports/saudi-arabia-digital-health-market-report, /market-reports/uae-digital-health-market-report)
+- /healthcare-market-research/therapy/neurology-cns — 2 inbound (from: /market-reports/saudi-arabia-neurology-cns-market-report, /market-reports/uae-neurology-cns-market-report)
 - /hta-studies-saudi-arabia — 2 inbound (from: /heor-consulting-saudi-arabia, /market-research-saudi-arabia-pharmaceutical)
+- /insights/saudi-arabia-biosimilar-market-size-methodology-2026 — 2 inbound (from: /market-reports/saudi-arabia-biosimilars-market-report, /sitemap)
+- /insights/saudi-arabia-cancer-diagnostics-market-size-methodology-2026 — 2 inbound (from: /market-reports/saudi-arabia-cancer-diagnostics-market-report, /sitemap)
 - /insights/top-healthcare-market-research-companies-china-2026 — 2 inbound (from: /insights/top-healthcare-market-research-companies-south-korea-2026, /insights/top-market-research-companies-china-2026)
 - /insights/top-healthcare-market-research-companies-denmark-2026 — 2 inbound (from: /healthcare-market-research-denmark, /insights/top-market-research-companies-denmark-2026)
 - /insights/top-healthcare-market-research-companies-switzerland-2026 — 2 inbound (from: /insights/top-healthcare-market-research-companies-germany-2026, /insights/top-market-research-companies-switzerland-2026)
 - /insights/top-market-research-companies-ethiopia-2026 — 2 inbound (from: /insights/top-market-research-companies-tanzania-2026, /insights/top-market-research-companies-uganda-2026)
 - /insights/top-market-research-companies-lebanon-2026 — 2 inbound (from: /insights/top-healthcare-market-research-companies-lebanon-2026, /insights/top-market-research-companies-iraq-2026)
 - /insights/top-market-research-companies-new-zealand-2026 — 2 inbound (from: /insights/top-healthcare-market-research-companies-new-zealand-2026, /insights/top-market-research-companies-denmark-2026)
-- /insights/top-market-research-companies-oman-2026 — 2 inbound (from: /healthcare-market-research-oman, /insights)
-- /insights/top-market-research-companies-qatar-2026 — 2 inbound (from: /healthcare-market-research-qatar, /pharmaceutical-market-research-qatar)
 - /insights/top-market-research-companies-switzerland-2026 — 2 inbound (from: /insights/top-healthcare-market-research-companies-switzerland-2026, /insights/top-market-research-companies-germany-2026)
 - /insights/top-market-research-companies-tanzania-2026 — 2 inbound (from: /insights/top-market-research-companies-ethiopia-2026, /insights/top-market-research-companies-uganda-2026)
 - /insights/top-market-research-companies-tunisia-2026 — 2 inbound (from: /insights/top-market-research-companies-algeria-2026, /insights/top-market-research-companies-morocco-2026)
-- /market-reports/australia-diabetes-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/diabetes-metabolic)
-- /market-reports/australia-oncology-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/oncology)
-- /market-reports/brazil-cardiovascular-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/cardiovascular)
-- /market-reports/brazil-diabetes-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/diabetes-metabolic)
-- /market-reports/brazil-oncology-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/oncology)
-- /market-reports/canada-oncology-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/oncology)
-- /market-reports/china-cardiovascular-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/cardiovascular)
-- /market-reports/china-diabetes-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/diabetes-metabolic)
-- /market-reports/china-immunology-biologics-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/immunology-biologics)
-- /market-reports/china-oncology-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/oncology)
-- /market-reports/germany-cardiovascular-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/cardiovascular)
-- /market-reports/germany-diabetes-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/diabetes-metabolic)
-- /market-reports/germany-immunology-biologics-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/immunology-biologics)
-- /market-reports/germany-oncology-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/oncology)
-- /market-reports/germany-respiratory-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/respiratory)
-- /market-reports/india-cardiovascular-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/cardiovascular)
-- /market-reports/india-diabetes-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/diabetes-metabolic)
-- /market-reports/india-immunology-biologics-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/immunology-biologics)
-- /market-reports/india-oncology-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/oncology)
-- /market-reports/japan-cardiovascular-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/cardiovascular)
-- /market-reports/japan-diabetes-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/diabetes-metabolic)
-- /market-reports/japan-oncology-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/oncology)
-- /market-reports/singapore-diabetes-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/diabetes-metabolic)
-- /market-reports/singapore-oncology-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/oncology)
-- /market-reports/south-korea-cardiovascular-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/cardiovascular)
-- /market-reports/south-korea-diabetes-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/diabetes-metabolic)
-- /market-reports/south-korea-oncology-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/oncology)
-- /market-reports/uk-cardiovascular-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/cardiovascular)
-- /market-reports/uk-diabetes-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/diabetes-metabolic)
-- /market-reports/uk-immunology-biologics-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/immunology-biologics)
-- /market-reports/uk-oncology-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/oncology)
-- /market-reports/uk-respiratory-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/respiratory)
-- /market-reports/usa-cardiovascular-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/cardiovascular)
-- /market-reports/usa-diabetes-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/diabetes-metabolic)
-- /market-reports/usa-immunology-biologics-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/immunology-biologics)
-- /market-reports/usa-oncology-market-report — 2 inbound (from: /market-reports, /market-reports/therapy/oncology)
+- /insights/top-pharmaceutical-market-research-companies-brazil-2026 — 2 inbound (from: /insights/top-pharmaceutical-market-research-companies-australia-2026, /pt/insights/melhores-empresas-pesquisa-mercado-farmaceutico-brasil-2026)
+- /market-reports/country/australia — 2 inbound (from: /market-reports/australia-diabetes-market-report, /market-reports/australia-oncology-market-report)
+- /market-reports/country/singapore — 2 inbound (from: /market-reports/singapore-diabetes-market-report, /market-reports/singapore-oncology-market-report)
 - /patient-adherence-research-middle-east — 2 inbound (from: /healthcare-market-research/therapy/respiratory, /patient-journey-research-gcc)
 - /physician-survey-saudi-arabia — 2 inbound (from: /insights/top-healthcare-market-research-companies-riyadh-2026, /insights/top-healthcare-market-research-companies-saudi-arabia-2026)
-- /pt/pesquisa-mercado-farmaceutico-brasil — 2 inbound (from: /pt/insights/top-empresas-pesquisa-mercado-brasil-2026, /pt/pesquisa-mercado-saude-brasil)
-- /pt/pesquisa-mercado-saude-brasil — 2 inbound (from: /brazil-healthcare-market-research, /pt/insights/top-empresas-pesquisa-mercado-brasil-2026)
-- /respiratory-market-access-gcc — 2 inbound (from: /gcc-market-access-guide, /healthcare-market-research/therapy/respiratory)
-- /zh/market-research-healthcare — 2 inbound (from: /global-websites/china, /sitemap)
+- /ru/healthcare-market-research — 2 inbound (from: /ru, /ru/bionixus-industries)
+- /sweden-healthcare-market-report — 2 inbound (from: /market-reports/country/sweden, /sitemap)
+- /zh/insights/top-market-research-companies-egypt-2026 — 2 inbound (from: /zh, /zh/healthcare-market-research)
 ## Possibly-broken internal links
 _None found among crawled, non-Sanity targets._

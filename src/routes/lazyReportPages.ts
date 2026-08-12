@@ -1,74 +1,71 @@
 /**
- * Country / medical-device market report pages.
- * Eager imports (not React.lazy) so renderToString SSR includes full page HTML —
- * lazy()+Suspense only ships the fallback during server render.
+ * Client-side code-split route pages (React.lazy).
+ * SSR uses lazyReportPages.ssr.ts (eager) via the Vite `ssr-route-split` plugin so
+ * renderToString always emits full HTML. Client preloadRouteChunk() resolves the
+ * matching chunk before hydrateRoot to avoid Suspense flashes.
  */
-export { default as SaudiArabiaMedicalDevicesMarketReport } from '@/pages/SaudiArabiaMedicalDevicesMarketReport';
-export { default as SaudiArabiaHealthcareMarketReport } from '@/pages/SaudiArabiaHealthcareMarketReport';
-export { default as UaeHealthcareMarketReport } from '@/pages/UaeHealthcareMarketReport';
-export { default as UaeMedicalDevicesMarketReport } from '@/pages/UaeMedicalDevicesMarketReport';
-export { default as GccAnesthesiaSurgicalMarket } from '@/pages/GccAnesthesiaSurgicalMarket';
-export { default as GccMedicalDevicesMarketReport } from '@/pages/GccMedicalDevicesMarketReport';
-export { default as KuwaitMedicalDevicesMarketReport } from '@/pages/KuwaitMedicalDevicesMarketReport';
-export { default as KuwaitHealthcareMarketReport } from '@/pages/KuwaitHealthcareMarketReport';
-export { default as QatarMedicalDevicesMarketReport } from '@/pages/QatarMedicalDevicesMarketReport';
-export { default as QatarHealthcareMarketReport } from '@/pages/QatarHealthcareMarketReport';
-export { default as BahrainMedicalDevicesMarketReport } from '@/pages/BahrainMedicalDevicesMarketReport';
-export { default as BahrainHealthcareMarketReport } from '@/pages/BahrainHealthcareMarketReport';
-export { default as OmanMedicalDevicesMarketReport } from '@/pages/OmanMedicalDevicesMarketReport';
-export { default as OmanHealthcareMarketReport } from '@/pages/OmanHealthcareMarketReport';
-export { default as EgyptMedicalDevicesMarketReport } from '@/pages/EgyptMedicalDevicesMarketReport';
-export { default as EgyptHealthcareMarketReport } from '@/pages/EgyptHealthcareMarketReport';
-export { default as UkHealthcareMarketReport } from '@/pages/UkHealthcareMarketReport';
-export { default as UkMedicalDevicesMarketReport } from '@/pages/UkMedicalDevicesMarketReport';
-export { default as GermanyHealthcareMarketReport } from '@/pages/GermanyHealthcareMarketReport';
-export { default as GermanyMedicalDevicesMarketReport } from '@/pages/GermanyMedicalDevicesMarketReport';
-export { default as FranceHealthcareMarketReport } from '@/pages/FranceHealthcareMarketReport';
-export { default as FranceMedicalDevicesMarketReport } from '@/pages/FranceMedicalDevicesMarketReport';
-export { default as ItalyHealthcareMarketReport } from '@/pages/ItalyHealthcareMarketReport';
-export { default as ItalyMedicalDevicesMarketReport } from '@/pages/ItalyMedicalDevicesMarketReport';
-export { default as SpainHealthcareMarketReport } from '@/pages/SpainHealthcareMarketReport';
-export { default as SpainMedicalDevicesMarketReport } from '@/pages/SpainMedicalDevicesMarketReport';
-export { default as UsaHealthcareMarketReport } from '@/pages/UsaHealthcareMarketReport';
-export { default as UsaMedicalDevicesMarketReport } from '@/pages/UsaMedicalDevicesMarketReport';
-export { default as BrazilHealthcareMarketReport } from '@/pages/BrazilHealthcareMarketReport';
-export { default as BrazilMedicalDevicesMarketReport } from '@/pages/BrazilMedicalDevicesMarketReport';
-export { default as CanadaHealthcareMarketReport } from '@/pages/CanadaHealthcareMarketReport';
-export { default as CanadaMedicalDevicesMarketReport } from '@/pages/CanadaMedicalDevicesMarketReport';
-export { default as IndiaHealthcareMarketReport } from '@/pages/IndiaHealthcareMarketReport';
-export { default as IndiaMedicalDevicesMarketReport } from '@/pages/IndiaMedicalDevicesMarketReport';
-export { default as ChinaHealthcareMarketReport } from '@/pages/ChinaHealthcareMarketReport';
-export { default as ChinaMedicalDevicesMarketReport } from '@/pages/ChinaMedicalDevicesMarketReport';
-export { default as JapanHealthcareMarketReport } from '@/pages/JapanHealthcareMarketReport';
-export { default as JapanMedicalDevicesMarketReport } from '@/pages/JapanMedicalDevicesMarketReport';
-export { default as SouthKoreaHealthcareMarketReport } from '@/pages/SouthKoreaHealthcareMarketReport';
-export { default as SouthKoreaMedicalDevicesMarketReport } from '@/pages/SouthKoreaMedicalDevicesMarketReport';
-export { default as AustraliaHealthcareMarketReport } from '@/pages/AustraliaHealthcareMarketReport';
-export { default as AustraliaMedicalDevicesMarketReport } from '@/pages/AustraliaMedicalDevicesMarketReport';
-export { default as SingaporeHealthcareMarketReport } from '@/pages/SingaporeHealthcareMarketReport';
-export { default as SingaporeMedicalDevicesMarketReport } from '@/pages/SingaporeMedicalDevicesMarketReport';
-export { default as TurkeyHealthcareMarketReport } from '@/pages/TurkeyHealthcareMarketReport';
-export { default as TurkeyMedicalDevicesMarketReport } from '@/pages/TurkeyMedicalDevicesMarketReport';
+import { lazy } from 'react';
 
-export { default as UaePharmaCompanies } from '@/pages/UaePharmaCompanies';
-export { default as KuwaitPharmaCompanies } from '@/pages/KuwaitPharmaCompanies';
-export { default as SaudiPharmaCompanies } from '@/pages/SaudiPharmaCompanies';
-export { default as EgyptPharmaCompanies } from '@/pages/EgyptPharmaCompanies';
-export { default as QatarPharmaCompanies } from '@/pages/QatarPharmaCompanies';
-export { default as OmanPharmaCompanies } from '@/pages/OmanPharmaCompanies';
-export { default as BahrainPharmaCompanies } from '@/pages/BahrainPharmaCompanies';
-export { default as IraqPharmaCompanies } from '@/pages/IraqPharmaCompanies';
-export { default as IranPharmaCompanies } from '@/pages/IranPharmaCompanies';
+export const SaudiArabiaMedicalDevicesMarketReport = lazy(() => import('@/pages/SaudiArabiaMedicalDevicesMarketReport'));
+export const SaudiArabiaHealthcareMarketReport = lazy(() => import('@/pages/SaudiArabiaHealthcareMarketReport'));
+export const UaeHealthcareMarketReport = lazy(() => import('@/pages/UaeHealthcareMarketReport'));
+export const UaeMedicalDevicesMarketReport = lazy(() => import('@/pages/UaeMedicalDevicesMarketReport'));
+export const GccAnesthesiaSurgicalMarket = lazy(() => import('@/pages/GccAnesthesiaSurgicalMarket'));
+export const GccMedicalDevicesMarketReport = lazy(() => import('@/pages/GccMedicalDevicesMarketReport'));
+export const KuwaitMedicalDevicesMarketReport = lazy(() => import('@/pages/KuwaitMedicalDevicesMarketReport'));
+export const KuwaitHealthcareMarketReport = lazy(() => import('@/pages/KuwaitHealthcareMarketReport'));
+export const QatarMedicalDevicesMarketReport = lazy(() => import('@/pages/QatarMedicalDevicesMarketReport'));
+export const QatarHealthcareMarketReport = lazy(() => import('@/pages/QatarHealthcareMarketReport'));
+export const BahrainMedicalDevicesMarketReport = lazy(() => import('@/pages/BahrainMedicalDevicesMarketReport'));
+export const BahrainHealthcareMarketReport = lazy(() => import('@/pages/BahrainHealthcareMarketReport'));
+export const OmanMedicalDevicesMarketReport = lazy(() => import('@/pages/OmanMedicalDevicesMarketReport'));
+export const OmanHealthcareMarketReport = lazy(() => import('@/pages/OmanHealthcareMarketReport'));
+export const EgyptMedicalDevicesMarketReport = lazy(() => import('@/pages/EgyptMedicalDevicesMarketReport'));
+export const EgyptHealthcareMarketReport = lazy(() => import('@/pages/EgyptHealthcareMarketReport'));
+export const UkHealthcareMarketReport = lazy(() => import('@/pages/UkHealthcareMarketReport'));
+export const UkMedicalDevicesMarketReport = lazy(() => import('@/pages/UkMedicalDevicesMarketReport'));
+export const GermanyHealthcareMarketReport = lazy(() => import('@/pages/GermanyHealthcareMarketReport'));
+export const GermanyMedicalDevicesMarketReport = lazy(() => import('@/pages/GermanyMedicalDevicesMarketReport'));
+export const FranceHealthcareMarketReport = lazy(() => import('@/pages/FranceHealthcareMarketReport'));
+export const FranceMedicalDevicesMarketReport = lazy(() => import('@/pages/FranceMedicalDevicesMarketReport'));
+export const ItalyHealthcareMarketReport = lazy(() => import('@/pages/ItalyHealthcareMarketReport'));
+export const ItalyMedicalDevicesMarketReport = lazy(() => import('@/pages/ItalyMedicalDevicesMarketReport'));
+export const SpainHealthcareMarketReport = lazy(() => import('@/pages/SpainHealthcareMarketReport'));
+export const SpainMedicalDevicesMarketReport = lazy(() => import('@/pages/SpainMedicalDevicesMarketReport'));
+export const SwedenHealthcareMarketReport = lazy(() => import('@/pages/SwedenHealthcareMarketReport'));
+export const UaeInfluenzaVaccineReport = lazy(() => import('@/pages/UaeInfluenzaVaccineReport'));
+export const UsaHealthcareMarketReport = lazy(() => import('@/pages/UsaHealthcareMarketReport'));
+export const UsaMedicalDevicesMarketReport = lazy(() => import('@/pages/UsaMedicalDevicesMarketReport'));
+export const BrazilHealthcareMarketReport = lazy(() => import('@/pages/BrazilHealthcareMarketReport'));
+export const BrazilMedicalDevicesMarketReport = lazy(() => import('@/pages/BrazilMedicalDevicesMarketReport'));
+export const CanadaHealthcareMarketReport = lazy(() => import('@/pages/CanadaHealthcareMarketReport'));
+export const CanadaMedicalDevicesMarketReport = lazy(() => import('@/pages/CanadaMedicalDevicesMarketReport'));
+export const IndiaHealthcareMarketReport = lazy(() => import('@/pages/IndiaHealthcareMarketReport'));
+export const IndiaMedicalDevicesMarketReport = lazy(() => import('@/pages/IndiaMedicalDevicesMarketReport'));
+export const ChinaHealthcareMarketReport = lazy(() => import('@/pages/ChinaHealthcareMarketReport'));
+export const ChinaMedicalDevicesMarketReport = lazy(() => import('@/pages/ChinaMedicalDevicesMarketReport'));
+export const JapanHealthcareMarketReport = lazy(() => import('@/pages/JapanHealthcareMarketReport'));
+export const JapanMedicalDevicesMarketReport = lazy(() => import('@/pages/JapanMedicalDevicesMarketReport'));
+export const SouthKoreaHealthcareMarketReport = lazy(() => import('@/pages/SouthKoreaHealthcareMarketReport'));
+export const SouthKoreaMedicalDevicesMarketReport = lazy(() => import('@/pages/SouthKoreaMedicalDevicesMarketReport'));
+export const AustraliaHealthcareMarketReport = lazy(() => import('@/pages/AustraliaHealthcareMarketReport'));
+export const AustraliaMedicalDevicesMarketReport = lazy(() => import('@/pages/AustraliaMedicalDevicesMarketReport'));
+export const SingaporeHealthcareMarketReport = lazy(() => import('@/pages/SingaporeHealthcareMarketReport'));
+export const SingaporeMedicalDevicesMarketReport = lazy(() => import('@/pages/SingaporeMedicalDevicesMarketReport'));
+export const TurkeyHealthcareMarketReport = lazy(() => import('@/pages/TurkeyHealthcareMarketReport'));
+export const TurkeyMedicalDevicesMarketReport = lazy(() => import('@/pages/TurkeyMedicalDevicesMarketReport'));
 
-/**
- * Programmatic / CMS-backed report slugs — previously React.lazy(), which meant
- * every /blog/:slug, /market-reports/:slug, /case-studies/:slug, and /news/:slug
- * page (hundreds of URLs) served only the Suspense fallback (~2.8KB, no content,
- * no internal links) to renderToString SSR — invisible to any crawler that
- * doesn't execute JavaScript, including GPTBot, ClaudeBot, and PerplexityBot.
- * Eager imports so SSR includes full page HTML, matching the pattern above.
- */
-export { default as HealthcareReportPage } from '@/pages/HealthcareReportPage';
-export { default as BlogPost } from '@/pages/BlogPost';
-export { default as CaseStudy } from '@/pages/CaseStudy';
-export { default as PressReleasePage } from '@/pages/PressReleasePage';
+export const HealthcareReportPage = lazy(() => import('@/pages/HealthcareReportPage'));
+export const BlogPost = lazy(() => import('@/pages/BlogPost'));
+export const CaseStudy = lazy(() => import('@/pages/CaseStudy'));
+export const PressReleasePage = lazy(() => import('@/pages/PressReleasePage'));
+
+export const UaePharmaCompanies = lazy(() => import('@/pages/UaePharmaCompanies'));
+export const KuwaitPharmaCompanies = lazy(() => import('@/pages/KuwaitPharmaCompanies'));
+export const SaudiPharmaCompanies = lazy(() => import('@/pages/SaudiPharmaCompanies'));
+export const EgyptPharmaCompanies = lazy(() => import('@/pages/EgyptPharmaCompanies'));
+export const QatarPharmaCompanies = lazy(() => import('@/pages/QatarPharmaCompanies'));
+export const OmanPharmaCompanies = lazy(() => import('@/pages/OmanPharmaCompanies'));
+export const BahrainPharmaCompanies = lazy(() => import('@/pages/BahrainPharmaCompanies'));
+export const IraqPharmaCompanies = lazy(() => import('@/pages/IraqPharmaCompanies'));
+export const IranPharmaCompanies = lazy(() => import('@/pages/IranPharmaCompanies'));

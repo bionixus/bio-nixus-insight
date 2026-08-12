@@ -254,7 +254,7 @@ export const DE_RECOVERY_LINK_LABELS: Record<string, string> = {
   '/blog/hospital-market-research': 'Krankenhaus-Marktforschung für Pharma',
   '/healthcare-market-research/germany': 'Gesundheitsmarktforschung Deutschland',
   '/healthcare-market-research/france': 'Gesundheitsmarktforschung Frankreich',
-  '/healthcare-market-research/united-kingdom': 'Gesundheitsmarktforschung Vereinigtes Königreich',
+  '/healthcare-market-research/uk': 'Gesundheitsmarktforschung Vereinigtes Königreich',
 };
 
 export const DE_SERVICES_HUB_COPY = {

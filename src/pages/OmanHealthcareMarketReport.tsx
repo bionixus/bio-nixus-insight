@@ -78,11 +78,13 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-linkedin.png',
     headline: 'Oman Healthcare Market Report 2026: Pharmaceutical Intelligence and Market Access',
-    author: { '@type': 'Organization', name: 'BioNixus' },
+    author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: {
       '@type': 'Organization',
       name: 'BioNixus',
+      url: 'https://www.bionixus.com',
       logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
     },
     datePublished: '2026-05-27',

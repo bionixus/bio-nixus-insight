@@ -173,6 +173,7 @@ export default function TopMarketResearchCompaniesFrance2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Market Research Companies in France 2026 | BioNixus Ranked #1',
     description:
       'Top market research companies in France 2026 — BioNixus ranked #1. HAS SMR/ASMR-aligned HCP surveys in French, CEPS payer research, KOL mapping at French CHUs, and EU5 multi-market benchmarking.',
@@ -227,8 +228,8 @@ export default function TopMarketResearchCompaniesFrance2026() {
         <meta name="geo.region" content="FR" />
         <meta name="geo.placename" content="France" />
         <link rel="canonical" href={PAGE_CANONICAL} />
-        <link rel="alternate" hreflang="en" href={PAGE_CANONICAL} />
-        <link rel="alternate" hreflang="x-default" href={PAGE_CANONICAL} />
+        <link rel="alternate" hrefLang="en" href={PAGE_CANONICAL} />
+        <link rel="alternate" hrefLang="x-default" href={PAGE_CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>

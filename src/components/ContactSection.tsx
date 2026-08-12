@@ -106,9 +106,11 @@ function sendErrorEmail(fields: ErrorEmailFields, errorDetails: string) {
 type ContactSectionProps = {
   /** When true (homepage only), show a short CTA instead of the full proposal form to avoid near-duplicate HTML vs `/contact`. */
   embedOnHomePage?: boolean;
+  /** Premium layout for `/contact`: navy channel rail + refined form, without repeating the page hero title. */
+  premium?: boolean;
 };
 
-const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
+const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSectionProps) => {
   const { t, language, isRTL } = useLanguage();
   const phoneRegionLabels = t.homePage.cta.phoneRegionLabels;
   const phoneLines = [
@@ -277,135 +279,170 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
     );
   }
 
-  return (
-    <section id="contact" className="section-padding bg-background" ref={sectionRef}>
-      <div className="container-wide">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left Content */}
-          <div className="sr sr-left">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6">
-              {t.contact.title}
-            </h2>
-            <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
-              {t.contact.subtitle}
-            </p>
-
-            <div className="space-y-6 mb-10">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center">
-                  <Mail className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <div className="text-sm text-muted-foreground">{t.contact.emailLabel}</div>
-                  <a href="mailto:admin@bionixus.com" className="text-foreground font-medium hover:text-primary transition-colors">
-                    {t.contact.email}
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center">
-                  <MapPin className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <div className="text-sm text-muted-foreground">{t.contact.headquartersLabel}</div>
-                  <div className="text-foreground font-medium">{t.contact.headquarters}</div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center">
-                  <MapPin className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <div className="text-sm text-muted-foreground">Regional Representation</div>
-                  <div className="text-foreground font-medium mt-1">
-                    Dubai, UAE<br />
-                    Jeddah, Saudi Arabia<br />
-                    Kuwait City, Kuwait<br />
-                    Cairo, Egypt
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center">
-                  <Phone className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <div className="text-sm text-muted-foreground">{t.contact.phoneLabel}</div>
-                  <div className="flex flex-col gap-1">
-                    {phoneLines.map((line) => (
-                      <a
-                        key={line.tel}
-                        href={`tel:${line.tel}`}
-                        className="text-foreground font-medium hover:text-primary transition-colors"
-                      >
-                        {line.label}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <TrustCoverageMap />
-
-            <div className="flex flex-wrap gap-4 mt-10">
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-opacity group"
-              >
-                {t.contact.cta}
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-              {(t.contact as { ctaSecondary?: string }).ctaSecondary && (
-                <Link
-                  to={basePath === '/' ? '/#services' : `${basePath}#services`}
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-foreground rounded-lg font-semibold border border-border hover:bg-secondary/80 transition-colors group"
-                >
-                  {(t.contact as { ctaSecondary: string }).ctaSecondary}
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              )}
-            </div>
+  const channelBlock = (
+    <div className={premium ? 'space-y-8' : 'space-y-6 mb-10'}>
+      <div className={`flex ${premium ? 'items-start' : 'items-center'} gap-4`}>
+        <div
+          className={`w-11 h-11 rounded-md flex items-center justify-center shrink-0 ${
+            premium ? 'bg-primary-foreground/10' : 'bg-primary/5'
+          }`}
+        >
+          <Mail className={`w-5 h-5 ${premium ? 'text-accent' : 'text-primary'}`} aria-hidden />
+        </div>
+        <div>
+          <div className={`text-sm ${premium ? 'text-primary-foreground/55' : 'text-muted-foreground'}`}>
+            {t.contact.emailLabel}
           </div>
+          <a
+            href="mailto:admin@bionixus.com"
+            className={`font-medium transition-colors ${
+              premium
+                ? 'text-primary-foreground hover:text-accent'
+                : 'text-foreground hover:text-primary'
+            }`}
+          >
+            {t.contact.email}
+          </a>
+        </div>
+      </div>
 
-          {/* Right - Contact Form Card or Success Message */}
-          <div id="request-proposal" className="bg-card p-8 lg:p-10 rounded-2xl shadow-elegant border border-border sr sr-right scroll-mt-24">
-            {submitted ? (
-              <div className="success-message text-center" lang={language}>
-                <div className="success-icon w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-primary">
-                  ✓
-                </div>
-                <h3 className="text-xl font-display font-semibold text-foreground mb-4">
-                  {t.contact.successTitle}
-                </h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  {t.contact.successBody}
-                </p>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {c.successFollowUpIntro}
-                  <Link to="/case-studies" className="text-primary font-medium hover:underline">
-                    {t.contact.successCaseStudiesText}
-                  </Link>
-                  {c.successFollowUpBetween}
-                  <Link to={`${basePath === '/' ? '' : basePath}/methodology`} className="text-primary font-medium hover:underline">
-                    {t.contact.successMethodologyText}
-                  </Link>
-                  {c.successFollowUpEnd}
-                </p>
-              </div>
-            ) : (
-              <>
-                <h3 className="text-xl font-semibold text-foreground mb-6">{t.contact.formTitle}</h3>
-                <form
-                  action={FORMSPREE_ENDPOINT}
-                  method="POST"
-                  className="space-y-6"
-                  onSubmit={handleSubmit}
-                  noValidate
-                >
+      <div className={`flex ${premium ? 'items-start' : 'items-center'} gap-4`}>
+        <div
+          className={`w-11 h-11 rounded-md flex items-center justify-center shrink-0 ${
+            premium ? 'bg-primary-foreground/10' : 'bg-primary/5'
+          }`}
+        >
+          <MapPin className={`w-5 h-5 ${premium ? 'text-accent' : 'text-primary'}`} aria-hidden />
+        </div>
+        <div>
+          <div className={`text-sm ${premium ? 'text-primary-foreground/55' : 'text-muted-foreground'}`}>
+            {t.contact.headquartersLabel}
+          </div>
+          <div className={`font-medium ${premium ? 'text-primary-foreground' : 'text-foreground'}`}>
+            {t.contact.headquarters}
+          </div>
+        </div>
+      </div>
+
+      <div className={`flex ${premium ? 'items-start' : 'items-center'} gap-4`}>
+        <div
+          className={`w-11 h-11 rounded-md flex items-center justify-center shrink-0 ${
+            premium ? 'bg-primary-foreground/10' : 'bg-primary/5'
+          }`}
+        >
+          <MapPin className={`w-5 h-5 ${premium ? 'text-accent' : 'text-primary'}`} aria-hidden />
+        </div>
+        <div>
+          <div className={`text-sm ${premium ? 'text-primary-foreground/55' : 'text-muted-foreground'}`}>
+            Regional representation
+          </div>
+          <div
+            className={`font-medium mt-1 leading-relaxed ${
+              premium ? 'text-primary-foreground/90' : 'text-foreground'
+            }`}
+          >
+            Dubai, UAE
+            <br />
+            Jeddah, Saudi Arabia
+            <br />
+            Kuwait City, Kuwait
+            <br />
+            Cairo, Egypt
+          </div>
+        </div>
+      </div>
+
+      <div className={`flex ${premium ? 'items-start' : 'items-center'} gap-4`}>
+        <div
+          className={`w-11 h-11 rounded-md flex items-center justify-center shrink-0 ${
+            premium ? 'bg-primary-foreground/10' : 'bg-primary/5'
+          }`}
+        >
+          <Phone className={`w-5 h-5 ${premium ? 'text-accent' : 'text-primary'}`} aria-hidden />
+        </div>
+        <div>
+          <div className={`text-sm ${premium ? 'text-primary-foreground/55' : 'text-muted-foreground'}`}>
+            {t.contact.phoneLabel}
+          </div>
+          <div className="flex flex-col gap-1.5 mt-1">
+            {phoneLines.map((line) => (
+              <a
+                key={line.tel}
+                href={`tel:${line.tel}`}
+                className={`font-medium transition-colors ${
+                  premium
+                    ? 'text-primary-foreground hover:text-accent'
+                    : 'text-foreground hover:text-primary'
+                }`}
+              >
+                {line.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  const formPanel = (
+    <div
+      id="request-proposal"
+      className={
+        premium
+          ? 'bg-background p-8 lg:p-10 border border-border scroll-mt-28 sr sr-right'
+          : 'bg-card p-8 lg:p-10 rounded-2xl shadow-elegant border border-border sr sr-right scroll-mt-24'
+      }
+    >
+      {submitted ? (
+        <div className="success-message text-center" lang={language}>
+          <div className="success-icon w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-primary">
+            ✓
+          </div>
+          <h3 className="text-xl font-display font-semibold text-foreground mb-4">
+            {t.contact.successTitle}
+          </h3>
+          <p className="text-muted-foreground mb-6 leading-relaxed">{t.contact.successBody}</p>
+          <p className="text-muted-foreground text-sm leading-relaxed">
+            {c.successFollowUpIntro}
+            <Link to="/case-studies" className="text-primary font-medium hover:underline">
+              {t.contact.successCaseStudiesText}
+            </Link>
+            {c.successFollowUpBetween}
+            <Link
+              to={`${basePath === '/' ? '' : basePath}/methodology`}
+              className="text-primary font-medium hover:underline"
+            >
+              {t.contact.successMethodologyText}
+            </Link>
+            {c.successFollowUpEnd}
+          </p>
+        </div>
+      ) : (
+        <>
+          <div className={premium ? 'mb-8 pb-6 border-b border-border' : 'mb-6'}>
+            <h3
+              className={
+                premium
+                  ? 'text-2xl font-display font-semibold text-foreground mb-2'
+                  : 'text-xl font-semibold text-foreground'
+              }
+            >
+              {t.contact.formTitle}
+            </h3>
+            {premium ? (
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Tell us the market, therapy, and decision at stake. We respond with a scoped plan—typically within
+                one business day.
+              </p>
+            ) : null}
+          </div>
+          <form
+            action={FORMSPREE_ENDPOINT}
+            method="POST"
+            className="space-y-6"
+            onSubmit={handleSubmit}
+            noValidate
+          >
                   {/* Name */}
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div>
@@ -635,14 +672,87 @@ const ContactSection = ({ embedOnHomePage = false }: ContactSectionProps) => {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="w-full py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-opacity disabled:opacity-70 disabled:cursor-not-allowed"
+                    className={`w-full py-4 font-semibold transition-opacity disabled:opacity-70 disabled:cursor-not-allowed ${
+                      premium
+                        ? 'bg-accent text-accent-foreground rounded-md hover:brightness-105'
+                        : 'bg-primary text-primary-foreground rounded-lg hover:opacity-90'
+                    }`}
                   >
                     {submitting ? '...' : t.contact.submitButton}
                   </button>
                 </form>
               </>
             )}
+    </div>
+  );
+
+  if (premium) {
+    return (
+      <section
+        id="contact"
+        className="bg-background border-b border-border"
+        ref={sectionRef}
+        aria-labelledby="contact-form-heading"
+      >
+        <div className="container-wide py-16 md:py-20">
+          <div className="grid lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.15fr)] gap-10 lg:gap-14 items-start">
+            <aside
+              className={`sr sr-left rounded-md p-8 lg:p-10 text-primary-foreground ${isRTL ? 'text-right' : ''}`}
+              style={{ background: 'var(--gradient-hero)' }}
+            >
+              <p className="font-display text-accent text-lg mb-2">Direct channels</p>
+              <h2
+                id="contact-form-heading"
+                className="text-2xl md:text-3xl font-display font-semibold mb-3"
+              >
+                Talk with the research team
+              </h2>
+              <p className="text-primary-foreground/70 leading-relaxed mb-10">
+                Prefer email or a call before the form? Reach BioNixus headquarters and regional desks below.
+              </p>
+              {channelBlock}
+              <div className="mt-10 pt-8 border-t border-primary-foreground/15">
+                <TrustCoverageMap />
+              </div>
+            </aside>
+            {formPanel}
           </div>
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section id="contact" className="section-padding bg-background" ref={sectionRef}>
+      <div className="container-wide">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className={`sr sr-left ${isRTL ? 'text-right' : ''}`}>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6">
+              {t.contact.title}
+            </h2>
+            <p className="text-lg text-muted-foreground mb-10 leading-relaxed">{t.contact.subtitle}</p>
+            {channelBlock}
+            <TrustCoverageMap />
+            <div className="flex flex-wrap gap-4 mt-10">
+              <a
+                href="#request-proposal"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-opacity group"
+              >
+                {t.contact.cta}
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
+              {(t.contact as { ctaSecondary?: string }).ctaSecondary && (
+                <Link
+                  to={basePath === '/' ? '/#services' : `${basePath}#services`}
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-foreground rounded-lg font-semibold border border-border hover:bg-secondary/80 transition-colors group"
+                >
+                  {(t.contact as { ctaSecondary: string }).ctaSecondary}
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              )}
+            </div>
+          </div>
+          {formPanel}
         </div>
       </div>
     </section>

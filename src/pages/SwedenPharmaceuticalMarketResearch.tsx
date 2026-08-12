@@ -248,7 +248,7 @@ export default function SwedenPharmaceuticalMarketResearch() {
                 {
                   step: '1. Läkemedelsverket approval',
                   detail: 'Läkemedelsverket (the Swedish Medical Products Agency) conducts scientific review of clinical evidence for new medicines, alongside centralised European Medicines Agency procedures where applicable. Läkemedelsverket approval grants market authorisation but does not confer regional formulary coverage or reimbursement — the beginning of a multi-stage access journey.',
-                  link: { to: '/healthcare-market-research/sweden', label: 'Sweden healthcare market research' },
+                  link: { to: '/healthcare-market-research-sweden', label: 'Sweden healthcare market research' },
                 },
                 {
                   step: '2. TLV health technology assessment',

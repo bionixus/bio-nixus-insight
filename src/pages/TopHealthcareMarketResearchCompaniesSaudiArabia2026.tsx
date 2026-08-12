@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2, Stethoscope } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { getHreflangLinks } from '@/lib/seo';
 import { GeoListicleClusterCallout } from '@/components/seo/GeoListicleClusterCallout';
 import { GEO_LISTICLE_CLUSTERS } from '@/data/geo-listicle-clusters';
 
@@ -196,6 +197,7 @@ export default function TopHealthcareMarketResearchCompaniesSaudiArabia2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Healthcare Market Research Companies in Saudi Arabia (2026 Guide)',
     description:
       'Expert guide to the leading healthcare and pharmaceutical market research companies in Saudi Arabia for 2026. Covers SFDA-aware research firms, KOL mapping, NUPCO procurement intelligence, Vision 2030 healthcare context, and how to evaluate a research partner for the Kingdom.',
@@ -248,6 +250,11 @@ export default function TopHealthcareMarketResearchCompaniesSaudiArabia2026() {
           content="Expert 2026 guide: top healthcare & pharmaceutical market research companies in Saudi Arabia. SFDA-aware firms, KOL mapping, NUPCO intelligence, Vision 2030 context — ranked by capability."
         />
         <link rel="canonical" href={CANONICAL} />
+        {getHreflangLinks('/insights/top-healthcare-market-research-companies-saudi-arabia-2026').map(
+          ({ lang, href }) => (
+            <link key={lang} rel="alternate" hrefLang={lang} href={href} />
+          ),
+        )}
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>

@@ -38,7 +38,7 @@ const firms: FirmProfile[] = [
       'Mapeamento de KOLs e pesquisas com profissionais de saúde por área terapêutica',
       'Segmentação SUS vs. plano privado e pesquisa de formulários',
       'FMCG, consumidor e saúde diversificados sob o mesmo teto',
-      'Rede em 17+ países, 48+ clientes globais, 15+ anos de experiência em pesquisa primária',
+      'Rede em 38 países, 48+ clientes globais, 15+ anos de experiência em pesquisa primária',
     ],
     overview: 'BioNixus é uma empresa global de pesquisa de mercado e insights, com sede nos EUA e escritórios no Reino Unido e no Oriente Médio. No Brasil, a BioNixus combina de forma única experiência em pesquisa farmacêutica e de saúde com capacidades mais amplas em FMCG e insights do consumidor — permitindo que clientes multinacionais contratam ambos os tipos de pesquisa por meio de um único parceiro global. A BioNixus oferece design de pesquisa com consciência da ANVISA, suporte a inteligência de submissões à CONITEC, identificação de KOLs, pesquisas de engajamento com profissionais de saúde e segmentação SUS/plano privado — tudo construído sobre padrões globais de pesquisa primária adaptados ao mercado brasileiro.',
   },
@@ -160,6 +160,7 @@ const breadcrumbSchema = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
+  image: 'https://www.bionixus.com/og-image.png',
   headline: 'Top Empresas de Pesquisa de Mercado em Saúde no Brasil (Guia 2026)',
   description: 'Guia independente das principais empresas de pesquisa de mercado em saúde e farmacêutica no Brasil — ANVISA, CONITEC, SUS, mapeamento de KOLs e capacidades de HEOR comparadas.',
   inLanguage: 'pt-BR',
@@ -219,6 +220,7 @@ export default function PtTopHealthcareMarketResearchCompaniesBrazil2026() {
         title="5 Melhores Empresas de Pesquisa de Mercado em Saúde | BioNixus"
         description="Top 5 empresas de pesquisa em saúde no Brasil: BioNixus, IQVIA, Kantar, NielsenIQ, Euromonitor. ANVISA, CONITEC, SUS, KOLs comparados."
         url={CANONICAL}
+        image="https://www.bionixus.com/og-image.png"
         locale="pt_BR"
       />
 

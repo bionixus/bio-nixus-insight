@@ -6,8 +6,8 @@ const StickyCTA = () => {
   const hidden =
     pathname === '/contact' ||
     pathname === '/de/contact' ||
-    pathname === '/fr/contacts' ||
-    pathname === '/ar/contacts';
+    pathname === '/fr/contact' ||
+    pathname === '/ar/contact';
 
   if (hidden) return null;
 

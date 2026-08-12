@@ -160,7 +160,7 @@ export default function FrFranceCountryPage() {
               hub recherche de marché santé
             </Link>{' '}
             ou{' '}
-            <Link to="/fr/contacts" className="text-primary underline font-medium">
+            <Link to="/fr/contact" className="text-primary underline font-medium">
               contactez BioNixus
             </Link>{' '}
             pour une proposition France.

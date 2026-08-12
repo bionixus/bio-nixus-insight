@@ -369,7 +369,7 @@ const THERAPY_FAQS: Record<string, { question: string; answer: string }[]> = {
     {
       question: 'How does BioNixus support biosimilar and originator strategy?',
       answer:
-        'We run prescriber confidence and switching studies, insurer and hospital-formulary interviews, substitution-incentive mapping, and KOL mapping tied to real formulary influence, with bilingual fieldwork across MENA. Outputs include molecule-wave models, payer and switching maps, and objection libraries that connect to the biologics guide and country biosimilar reports.',
+        'We run prescriber confidence and switching studies, insurer and hospital-formulary interviews, substitution-incentive mapping, and KOL mapping tied to real formulary influence, with bilingual fieldwork across MENA. Outputs include molecule-wave models, payer and switching maps, and objection libraries that connect to the biologics guide, the Saudi Arabia biosimilar market report, and country biosimilar reports.',
     },
   ],
   cardiology: [
@@ -695,11 +695,15 @@ export default function TherapyPage() {
                 <Link to="/gcc-pharmaceutical-market-research" className="text-primary underline">
                   GCC pharmaceutical market research
                 </Link>
-                . When launch planning centers on Saudi Arabia’s biosimilar access environment, our{' '}
+                . When launch planning centers on Saudi Arabia’s biosimilar access environment, start with the{' '}
+                <Link to="/market-reports/saudi-arabia-biosimilars-market-report" className="text-primary underline">
+                  Saudi Arabia biosimilar market
+                </Link>{' '}
+                report for size, SFDA, and NUPCO context, then use our{' '}
                 <Link to="/biosimilar-market-entry-saudi-arabia" className="text-primary underline">
                   biosimilar market entry in Saudi Arabia
                 </Link>{' '}
-                perspective connects policy and stakeholder behavior to practical sequencing.
+                perspective for stakeholder sequencing.
               </p>
             </div>
           ) : isImmunology ? (
@@ -727,11 +731,15 @@ export default function TherapyPage() {
                 <Link to="/gcc-pharmaceutical-market-research" className="text-primary underline">
                   GCC pharmaceutical market research
                 </Link>
-                . Where Saudi tendering and biosimilar listing shape chronic immune-mediated categories, our{' '}
+                . Where Saudi tendering and biosimilar listing shape chronic immune-mediated categories, use the{' '}
+                <Link to="/market-reports/saudi-arabia-biosimilars-market-report" className="text-primary underline">
+                  Saudi Arabia biosimilar market
+                </Link>{' '}
+                report plus our{' '}
                 <Link to="/biosimilar-market-entry-saudi-arabia" className="text-primary underline">
                   biosimilar market entry in Saudi Arabia
                 </Link>{' '}
-                note grounds policy in prescriber and pharmacist behavior. Browse all therapy routes on{' '}
+                note for prescriber and pharmacist behaviour. Browse all therapy routes on{' '}
                 <Link to="/pharmaceutical-therapy-areas" className="text-primary underline">
                   pharmaceutical therapy areas
                 </Link>
@@ -992,6 +1000,10 @@ export default function TherapyPage() {
               </p>
               <p>
                 Pair this guide with{' '}
+                <Link to="/market-reports/saudi-arabia-cancer-diagnostics-market-report" className="text-primary underline">
+                  Saudi Arabia cancer diagnostics market
+                </Link>
+                ,{' '}
                 <Link to="/kol-mapping-saudi-arabia-oncology" className="text-primary underline">
                   KOL mapping for oncology in Saudi Arabia
                 </Link>

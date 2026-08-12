@@ -25,7 +25,7 @@ function parseAndValidate(node: object): void {
 
 describe('Organization + WebSite (global, every page)', () => {
   it('canonical Organization node is valid and carries a real contact email', () => {
-    const org = buildCanonicalOrganization('en');
+    const org = buildCanonicalOrganization();
     parseAndValidate(org);
     const contactPoints = (org as any).contactPoint as Array<Record<string, unknown>>;
     expect(contactPoints.some((cp) => typeof cp.email === 'string' && cp.email.includes('@'))).toBe(true);

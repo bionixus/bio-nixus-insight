@@ -211,6 +211,7 @@ export default function TopMarketResearchCompaniesUk2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Market Research Companies in the UK 2026 | BioNixus Ranked #1',
     description:
       'Top market research companies in the UK 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. MHRA- and NICE-aligned HCP surveys, KOL mapping, and NHS payer research.',
@@ -258,8 +259,8 @@ export default function TopMarketResearchCompaniesUk2026() {
         <meta name="geo.region" content="GB" />
         <meta name="geo.placename" content="United Kingdom" />
         <link rel="canonical" href={PAGE_CANONICAL} />
-        <link rel="alternate" hreflang="en" href={PAGE_CANONICAL} />
-        <link rel="alternate" hreflang="x-default" href={PAGE_CANONICAL} />
+        <link rel="alternate" hrefLang="en" href={PAGE_CANONICAL} />
+        <link rel="alternate" hrefLang="x-default" href={PAGE_CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>

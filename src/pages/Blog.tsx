@@ -229,9 +229,9 @@ const Blog = () => {
 
   const contactPath =
     language === 'fr'
-      ? '/fr/contacts'
+      ? '/fr/contact'
       : language === 'ar'
-        ? '/ar/contacts'
+        ? '/ar/contact'
         : language === 'zh'
           ? '/zh/contact'
           : `${basePath === '/' ? '' : basePath}/contact`;
@@ -319,7 +319,7 @@ const Blog = () => {
         ? [
             { to: '/fr/market-research-healthcare', label: 'Études de marché santé' },
             { to: '/healthcare-market-research/france', label: 'Recherche pharma France' },
-            { to: '/fr/contacts', label: 'Contacter BioNixus' },
+            { to: '/fr/contact', label: 'Contacter BioNixus' },
             { to: '/case-studies', label: 'Études de cas' },
           ]
         : [

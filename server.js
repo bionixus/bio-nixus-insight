@@ -7,9 +7,11 @@ import { canonicalRedirectTarget, isSsrNotFoundPage } from './seo-noise-query.mj
 import { BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH, BLOG_LEGACY_FULL_PATH_REDIRECTS } from './blog-legacy-redirects.mjs';
 import { getBlogMetaDescriptionOverride } from './blog-crawler-stubs.mjs';
 import { formatMetaDescriptionInRange } from './src/server/seo-meta.js';
+import { getCtrSeo, isCtrSeoPath } from './lib/ctr-seo-overrides.mjs';
 import { normalizeOgCardPath, renderOgCardSvg } from './lib/og-card-svg.mjs';
 import { buildLcpPreloadTag, getClientAssetHints } from './lib/ssr-client-asset-hints.mjs';
 import { resolveLegacyCountryIndustryMarketResearchRedirect } from './lib/country-industry-redirects.mjs';
+import { resolveGlobalWebsitesRedirect } from './lib/global-websites-redirects.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === 'production';
@@ -332,9 +334,11 @@ function truncateAtWordBoundary(text, max) {
 }
 
 /** Keep in sync with TITLE_MAX in src/lib/seo-meta.ts. */
-function normalizeTitleLength(title, max = 65) {
+function normalizeTitleLength(title, max = 60, pathname) {
   const clean = decodeTitleEntities(String(title || '').replace(/\s+/g, ' ').trim());
   if (!clean) return 'BioNixus';
+  // CTR-engineered titles must ship exact (often >60 chars); do not clamp.
+  if (pathname && isCtrSeoPath(pathname)) return clean;
   // Hebrew / Arabic scripts: truncate by UTF-16 code units mangles SSR titles vs visible text.
   if (/[\u0590-\u08FF]/.test(clean)) return clean;
   if (clean.length <= max) return clean;
@@ -504,7 +508,10 @@ function buildFallbackDescription(pathname) {
   return `${titleCaseFromSlug(segment)} page from BioNixus with healthcare and pharmaceutical market research insights and services context.`;
 }
 
-function normalizeDescriptionLength(description) {
+function normalizeDescriptionLength(description, pathname) {
+  const clean = String(description || '').replace(/\s+/g, ' ').trim();
+  // CTR-engineered descriptions must ship exact (often outside 120–130 band).
+  if (pathname && isCtrSeoPath(pathname)) return clean;
   return formatMetaDescriptionInRange(description);
 }
 
@@ -530,10 +537,19 @@ function extractDocumentTitles(html) {
 }
 
 function ensureTitleTag(html, pathname) {
-  const fallbackTitle = normalizeTitleLength(buildFallbackTitle(pathname));
+  const ctr = getCtrSeo(pathname);
+  const fallbackTitle = normalizeTitleLength(buildFallbackTitle(pathname), 60, pathname);
   const headTitles = extractDocumentTitles(html);
   const chosen = headTitles.at(-1) ?? '';
-  const normalized = normalizeTitleLength(chosen || fallbackTitle);
+  // Force CTR-engineered titles so view-source matches the approved copy.
+  if (ctr) {
+    const withoutTitles = html.replace(/<title[^>]*>[\s\S]*?<\/title>/ig, '');
+    return withoutTitles.replace(
+      /<meta name="viewport"[^>]*>/i,
+      `$&\n<title>${ctr.title}</title>`,
+    );
+  }
+  const normalized = normalizeTitleLength(chosen || fallbackTitle, 60, pathname);
   // If the rendered title is a generic site default (the index.html fallback
   // that React-Helmet didn't override at SSR time, typically because page
   // data is fetched async from Sanity), replace it with the path-specific
@@ -568,7 +584,8 @@ function escapeHtmlAttribute(value) {
 }
 
 function ensureMetaDescriptionTag(html, pathname) {
-  const fallbackDescription = normalizeDescriptionLength(buildFallbackDescription(pathname));
+  const ctr = getCtrSeo(pathname);
+  const fallbackDescription = normalizeDescriptionLength(buildFallbackDescription(pathname), pathname);
   const matches = Array.from(html.matchAll(/<meta[^>]+name=(["'])description\1[^>]*>/ig));
   const chosen = matches
     .map((m) => {
@@ -579,8 +596,12 @@ function ensureMetaDescriptionTag(html, pathname) {
     .filter(Boolean)
     .at(-1);
   const forceArDescription = shouldForceArabicMetaDescription(pathname, chosen);
-  const base = forceArDescription ? fallbackDescription : (chosen || fallbackDescription);
-  const normalizedContent = normalizeDescriptionLength(base);
+  const base = ctr
+    ? ctr.description
+    : forceArDescription
+      ? fallbackDescription
+      : (chosen || fallbackDescription);
+  const normalizedContent = normalizeDescriptionLength(base, pathname);
   const safeContent = escapeHtmlAttribute(normalizedContent);
 
   const withoutDescriptions = html.replace(/<meta[^>]+name=(["'])description\1[^>]*>\s*/ig, '');
@@ -607,6 +628,40 @@ function ensureCanonicalTag(html, pathname) {
     return html.replace(headClose, `  ${linkTag}\n</head>`);
   }
   return html.replace(/<meta name="viewport"[^>]*>/i, `$&\n${linkTag}`);
+}
+
+/**
+ * Force og:title / og:description (and twitter mirrors) for CTR-engineered paths.
+ */
+function ensureCtrOgTags(html, pathname) {
+  const ctr = getCtrSeo(pathname);
+  if (!ctr) return html;
+  const title = escapeHtmlAttribute(ctr.title);
+  const description = escapeHtmlAttribute(ctr.description);
+  let out = html;
+  const upsertProperty = (property, content) => {
+    const re = new RegExp(`<meta\\b[^>]*property=(["'])${property}\\1[^>]*>`, 'i');
+    const tag = `<meta property="${property}" content="${content}" />`;
+    if (re.test(out)) {
+      out = out.replace(re, tag);
+    } else {
+      out = out.replace(/<\/head>/i, `  ${tag}\n</head>`);
+    }
+  };
+  const upsertName = (name, content) => {
+    const re = new RegExp(`<meta\\b[^>]*name=(["'])${name}\\1[^>]*>`, 'i');
+    const tag = `<meta name="${name}" content="${content}" />`;
+    if (re.test(out)) {
+      out = out.replace(re, tag);
+    } else {
+      out = out.replace(/<\/head>/i, `  ${tag}\n</head>`);
+    }
+  };
+  upsertProperty('og:title', title);
+  upsertProperty('og:description', description);
+  upsertName('twitter:title', title);
+  upsertName('twitter:description', description);
+  return out;
 }
 
 /**
@@ -857,6 +912,7 @@ async function startServer() {
         'Content-Type': 'image/svg+xml; charset=utf-8',
         'Cache-Control': 'public, max-age=86400, s-maxage=31536000, immutable',
         'X-Content-Type-Options': 'nosniff',
+        'X-Robots-Tag': 'noindex, nofollow',
       })
       .send(svg);
   });
@@ -880,6 +936,12 @@ async function startServer() {
       const blogRedirectTarget = REDIRECTS[req.path] ?? REDIRECTS[decodedPath];
       if (blogRedirectTarget) {
         res.redirect(301, blogRedirectTarget);
+        return;
+      }
+
+      const globalWebsitesTarget = resolveGlobalWebsitesRedirect(req.path) ?? resolveGlobalWebsitesRedirect(decodedPath);
+      if (globalWebsitesTarget) {
+        res.redirect(301, globalWebsitesTarget);
         return;
       }
 
@@ -957,9 +1019,12 @@ async function startServer() {
       // for real users and corrupts hydration of the surrounding subtree (the
       // "Expected server HTML to contain a matching <div> in <main>" warning). Page-level
       // imagery/social cards are handled inside the React tree and via OpenGraph meta tags.
-      const localizedPage = ensureCanonicalTag(
-        ensureMetaDescriptionTag(
-          ensureTitleTag(applyHtmlLang(page, req.path, initialData), req.path),
+      const localizedPage = ensureCtrOgTags(
+        ensureCanonicalTag(
+          ensureMetaDescriptionTag(
+            ensureTitleTag(applyHtmlLang(page, req.path, initialData), req.path),
+            req.path,
+          ),
           req.path,
         ),
         req.path,

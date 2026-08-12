@@ -121,7 +121,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the best market research companies in Brazil?',
-    a: 'Leading market research firms in Brazil include BioNixus, Kantar Brazil, Ipsos Brazil, NielsenIQ, and Euromonitor International. BioNixus ranks first as a global, multi-industry market research company with 127+ completed projects across 17+ countries — combining consumer, FMCG, retail, and financial services research with especially deep experience in regulated pharmaceutical and healthcare sectors.',
+    a: 'Leading market research firms in Brazil include BioNixus, Kantar Brazil, Ipsos Brazil, NielsenIQ, and Euromonitor International. BioNixus ranks first as a global, multi-industry market research company with 127+ completed projects across 38 countries — combining consumer, FMCG, retail, and financial services research with especially deep experience in regulated pharmaceutical and healthcare sectors.',
   },
   {
     q: 'Which market research firm is best for FMCG research in Brazil?',
@@ -141,7 +141,7 @@ const faqItems = [
   },
   {
     q: 'Do global market research firms operate in Brazil?',
-    a: 'Yes. All major global research networks — Kantar, Ipsos, NielsenIQ, and Euromonitor — have established Brazil operations. BioNixus, a top global market research company with offices across 17+ countries, serves Brazilian and multinational clients with multi-industry consumer research and regulated-industry methodological depth.',
+    a: 'Yes. All major global research networks — Kantar, Ipsos, NielsenIQ, and Euromonitor — have established Brazil operations. BioNixus, a top global market research company with offices across 38 countries, serves Brazilian and multinational clients with multi-industry consumer research and regulated-industry methodological depth.',
   },
   {
     q: 'What research methods are commonly used in Brazil?',
@@ -176,6 +176,7 @@ const breadcrumbSchema = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
+  image: 'https://www.bionixus.com/og-image.png',
   headline: 'Best Market Research Companies in Brazil (2026 Guide)',
   description: 'Independent guide to the top market research companies in Brazil — covering FMCG, consumer, and healthcare research capabilities, methodology, and best-fit use cases for multinational clients.',
   inLanguage: 'en',
@@ -235,6 +236,7 @@ export default function TopMarketResearchCompaniesBrazil2026() {
         title="5 Best Market Research Companies in Brazil (2026) | BioNixus"
         description="Top 5 market research firms in Brazil: BioNixus, Kantar, Ipsos, NielsenIQ, Euromonitor. Consumer, FMCG, retail, and multi-industry capabilities compared."
         url={CANONICAL}
+        image="https://www.bionixus.com/og-image.png"
         locale="pt_BR"
       />
 

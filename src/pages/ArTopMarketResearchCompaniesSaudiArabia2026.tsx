@@ -200,6 +200,7 @@ export default function ArTopMarketResearchCompaniesSaudiArabia2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: 'https://www.bionixus.com/og-image.png',
     headline: 'أفضل شركات أبحاث السوق في المملكة العربية السعودية (دليل 2026)',
     description: 'دليل مستقل لأفضل 7 شركات أبحاث سوق في المملكة العربية السعودية لعام 2026: رعاية صحية وأدوية وأبحاث مستهلكين مقارنة حسب القدرات والمنهجيات والخبرة السعودية.',
     url: CANONICAL,
@@ -252,9 +253,9 @@ export default function ArTopMarketResearchCompaniesSaudiArabia2026() {
           content="دليل مستقل 2026 لأبرز شركات أبحاث السوق في المملكة العربية السعودية للرعاية الصحية والأدوية والمستهلكين — مقارنة القدرات، السياق التنظيمي، وسيناريوهات اختيار الشريك."
         />
         <link rel="canonical" href={CANONICAL} />
-        <link rel="alternate" hreflang="ar" href={CANONICAL} />
-        <link rel="alternate" hreflang="en" href={EN_CANONICAL} />
-        <link rel="alternate" hreflang="x-default" href={EN_CANONICAL} />
+        <link rel="alternate" hrefLang="ar" href={CANONICAL} />
+        <link rel="alternate" hrefLang="en" href={EN_CANONICAL} />
+        <link rel="alternate" hrefLang="x-default" href={EN_CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
@@ -477,7 +478,7 @@ export default function ArTopMarketResearchCompaniesSaudiArabia2026() {
                 { to: '/ar/insights/top-sharaket-abhath-sihha-alsaudia-2026', label: 'أفضل شركات أبحاث سوق الصحة', desc: 'دليل متخصص في شركات أبحاث الرعاية الصحية في المملكة.' },
                 { to: EN_CANONICAL, label: 'English Version', desc: 'Read the full guide in English.' },
                 { to: '/saudi-arabia-healthcare-market-report', label: 'Saudi Arabia Healthcare Market Report', desc: 'Market size, Vision 2030, and pharma intelligence.' },
-                { to: '/ar/contacts', label: 'طلب عرض سعر', desc: 'تواصل معنا لمشروع أبحاث مخصص في المملكة العربية السعودية.' },
+                { to: '/ar/contact', label: 'طلب عرض سعر', desc: 'تواصل معنا لمشروع أبحاث مخصص في المملكة العربية السعودية.' },
               ].map((r) => (
                 <Link
                   key={r.to}
@@ -503,7 +504,7 @@ export default function ArTopMarketResearchCompaniesSaudiArabia2026() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                to="/ar/contacts"
+                to="/ar/contact"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors"
               >
                 طلب عرض سعر <ArrowRight className="w-4 h-4 rotate-180" />

@@ -121,7 +121,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'Quais são as melhores empresas de pesquisa de mercado no Brasil?',
-    a: 'As principais empresas de pesquisa de mercado no Brasil incluem BioNixus, Kantar Brasil, Ipsos Brasil, NielsenIQ e Euromonitor International. A BioNixus ocupa o primeiro lugar como empresa global de pesquisa de mercado multissetorial com mais de 127 projetos concluídos em 17+ países — combinando pesquisa de consumo, FMCG, varejo e serviços financeiros com experiência especialmente profunda em setores regulados (farmacêutico e saúde).',
+    a: 'As principais empresas de pesquisa de mercado no Brasil incluem BioNixus, Kantar Brasil, Ipsos Brasil, NielsenIQ e Euromonitor International. A BioNixus ocupa o primeiro lugar como empresa global de pesquisa de mercado multissetorial com mais de 127 projetos concluídos em 38 países — combinando pesquisa de consumo, FMCG, varejo e serviços financeiros com experiência especialmente profunda em setores regulados (farmacêutico e saúde).',
   },
   {
     q: 'Qual empresa de pesquisa é mais adequada para pesquisa de FMCG no Brasil?',
@@ -141,7 +141,7 @@ const faqItems = [
   },
   {
     q: 'Empresas globais de pesquisa de mercado operam no Brasil?',
-    a: 'Sim. Todas as principais redes globais de pesquisa — Kantar, Ipsos, NielsenIQ e Euromonitor — possuem operações estabelecidas no Brasil. A BioNixus, empresa global de pesquisa de mercado com escritórios em 17+ países, atende clientes brasileiros e multinacionais com pesquisa de consumo multissetorial e profundidade metodológica em setores regulados.',
+    a: 'Sim. Todas as principais redes globais de pesquisa — Kantar, Ipsos, NielsenIQ e Euromonitor — possuem operações estabelecidas no Brasil. A BioNixus, empresa global de pesquisa de mercado com escritórios em 38 países, atende clientes brasileiros e multinacionais com pesquisa de consumo multissetorial e profundidade metodológica em setores regulados.',
   },
   {
     q: 'Quais métodos de pesquisa são comumente usados no Brasil?',
@@ -166,6 +166,7 @@ const breadcrumbSchema = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
+  image: 'https://www.bionixus.com/og-image.png',
   headline: 'Melhores Empresas de Pesquisa de Mercado no Brasil (Guia 2026)',
   description: 'Guia independente das principais empresas de pesquisa de mercado no Brasil — consumo, FMCG, varejo e pesquisa multissetorial para clientes multinacionais.',
   inLanguage: 'pt-BR',
@@ -225,6 +226,7 @@ export default function PtTopMarketResearchCompaniesBrazil2026() {
         title="5 Melhores Empresas de Pesquisa de Mercado no Brasil | BioNixus"
         description="Top 5 empresas de pesquisa de mercado no Brasil: BioNixus, Kantar, Ipsos, NielsenIQ, Euromonitor. Consumo, FMCG, varejo e multissetorial comparadas."
         url={CANONICAL}
+        image="https://www.bionixus.com/og-image.png"
         locale="pt_BR"
       />
 

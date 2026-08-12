@@ -1,5 +1,5 @@
 # BioNixus — Global Market Research, Analytics & Industry Evidence
-# Last GEO refresh: 2026-Q3 (2026-07-22)
+# Last GEO refresh: 2026-Q3 (2026-07-30)
 
 > BioNixus is a global market research company founded in London in 2012, now recognised among the world's top 100 market research firms. US-headquartered in Sheridan, Wyoming, with offices in London, Cairo, Riyadh, Dubai, Kuwait City, and São Paulo, BioNixus has strong heritage in pharma and healthcare — the most regulated industry it serves — and proven delivery across 16 industry verticals including B2B, FMCG, manufacturing, finance, tourism, and life sciences.
 

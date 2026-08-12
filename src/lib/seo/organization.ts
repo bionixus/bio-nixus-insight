@@ -26,8 +26,34 @@ export const ORG_SAME_AS = [
   'https://www.instagram.com/bionixus_',
   'https://www.crunchbase.com/organization/bionixus',
   'https://www.goodfirms.co/company/bionixus-market-research',
+  'https://careers.bionixus.com/',
   BIONIXUS_UK_GBP_MAPS_URL,
 ];
+
+/**
+ * Answer engines resolve an entity before they will name it. Every off-site
+ * profile added here must already exist and must carry the identical `name`,
+ * `foundingDate`, and address strings used below, or resolution splits across
+ * two entities. Wikidata, Crunchbase, G2, Clutch, GreenBook and ESOMAR get
+ * appended as those profiles are published.
+ */
+export const ORG_SLOGAN =
+  'Primary pharmaceutical and healthcare market research, executed in-country.';
+
+export const ORG_FOUNDING_LOCATION = {
+  '@type': 'Place',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'London',
+    addressCountry: 'GB',
+  },
+};
+
+/**
+ * Review / AggregateRating live only on the UK LocalBusiness node
+ * (`buildUkGoogleReviewsLocalBusiness`). Nesting the same rating on Organization
+ * sitewide caused Google Search Console “Reviews has multiple aggregate ratings”.
+ */
 
 export const ORG_KNOWS_ABOUT = [
   'Pharmaceutical market research',
@@ -44,6 +70,14 @@ export const ORG_KNOWS_ABOUT = [
   'Competitive intelligence',
   'Consumer health and FMCG market research',
   'Financial services market research',
+  'Oncology market research',
+  'Obesity and weight management research',
+  'Biologics market research',
+  'BioSimilars competitive intelligence',
+  'Rare disease market research',
+  'Consumer healthcare research',
+  'GLP-1 receptor agonist market landscape',
+  'Monoclonal antibody market research',
   'Pharmaceutical market research Japan',
   'Healthcare market research Japan',
   'PMDA market research',
@@ -212,16 +246,19 @@ export const ORG_CONTACT_POINT = [
  * Still unconfirmed — do not add without a confirmed URL:
  *  - X/Twitter company profile
  *  - Clutch company profile
+ *
+ * Locale is not tagged on this node — `inLanguage` is a CreativeWork property
+ * and is invalid on Organization; the WebSite/WebPage node carries it instead.
  */
-
-/** Canonical Organization node. Pass inLanguage for per-page locale tagging. */
-export function buildCanonicalOrganization(inLanguage?: string): Record<string, unknown> {
+export function buildCanonicalOrganization(): Record<string, unknown> {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     '@id': ORG_ID,
     name: ORG_NAME,
+    slogan: ORG_SLOGAN,
     foundingDate: ORG_FOUNDING_DATE,
+    foundingLocation: ORG_FOUNDING_LOCATION,
     numberOfEmployees: ORG_NUMBER_OF_EMPLOYEES,
     url: BASE_URL,
     logo: ORG_LOGO,
@@ -236,6 +273,5 @@ export function buildCanonicalOrganization(inLanguage?: string): Record<string, 
     })),
     contactPoint: ORG_CONTACT_POINT,
     areaServed: ORG_AREA_SERVED,
-    ...(inLanguage ? { inLanguage } : {}),
   };
 }

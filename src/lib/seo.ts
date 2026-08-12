@@ -4,10 +4,23 @@ function getBaseUrl() {
   return 'https://www.bionixus.com';
 }
 
-/** Social share image (Facebook, Twitter, LinkedIn): 1200×630, full logo visible. */
+/** Social share image (Open Graph / Facebook / Twitter): 1200×630, full BioNixus logo. */
 export const defaultOgImageUrl = 'https://www.bionixus.com/og-image.png';
 export const defaultOgImageWidth = 1200;
 export const defaultOgImageHeight = 630;
+
+/**
+ * LinkedIn link-preview image (1.91:1). Prefer this for market reports —
+ * LinkedIn often ignores SVG /api/og-card URLs.
+ */
+export const linkedInOgImageUrl = 'https://www.bionixus.com/og-linkedin.png';
+export const linkedInOgImageWidth = 1200;
+export const linkedInOgImageHeight = 627;
+
+/** Market report share image — BioNixus logo at LinkedIn-recommended dimensions. */
+export const marketReportOgImageUrl = linkedInOgImageUrl;
+export const marketReportOgImageWidth = linkedInOgImageWidth;
+export const marketReportOgImageHeight = linkedInOgImageHeight;
 
 /** Alt text for the default OG image. */
 export const defaultOgImageAlt =
@@ -20,8 +33,8 @@ export const seoByLanguage: Record<Language, {
   canonicalPath: string;
 }> = {
   en: {
-    // Brand-first ≤60 chars; primary keyword cluster for branded + category SERPs.
-    title: 'BioNixus — Healthcare & Pharma Market Research Firm (MENA, Asia, Global)',
+    // CTR-engineered homepage title/description (exact; server skips length clamps).
+    title: 'Bionixus — Healthcare & Pharma Market Research Firm (MENA, Asia, Global)',
     description:
       'Primary healthcare market research and market access consulting for pharma & medical devices — GCC, USA, Turkey, Europe, Brazil & Asia. Request a proposal.',
     keywords:
@@ -98,8 +111,6 @@ export const languagePaths: Record<Language, string> = {
 
 /** Canonical localized path for the dedicated Contact page (matches `localizedRouteGroups['/contact']`). */
 export function localizedContactPath(language: Language): string {
-  if (language === 'fr') return '/fr/contacts';
-  if (language === 'ar') return '/ar/contacts';
   const base = languagePaths[language] || '/';
   return base === '/' ? '/contact' : `${base}/contact`;
 }
@@ -125,10 +136,10 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
   '/contact': {
     en: '/contact',
     de: '/de/contact',
-    fr: '/fr/contacts',
+    fr: '/fr/contact',
     es: '/es/contact',
     zh: '/zh/contact',
-    ar: '/ar/contacts',
+    ar: '/ar/contact',
     pt: '/pt/contact',
     ru: '/ru/contact',
   },
@@ -178,22 +189,58 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
   },
   '/market-access': {
     en: '/services/market-access',
-    es: '/es/market-access',
+    es: '/services/market-access',
   },
   '/healthcare-market-research': {
     en: '/healthcare-market-research',
     de: '/de/healthcare-market-research/germany',
     fr: '/fr/healthcare-market-research',
+    es: '/es/healthcare-market-research',
     ar: '/ar/healthcare-market-research',
     zh: '/zh/healthcare-market-research',
     ru: '/ru/healthcare-market-research',
+  },
+  '/bionixus-market-research-middle-east': {
+    en: '/bionixus-market-research-middle-east',
+    fr: '/fr/bionixus-market-research-middle-east',
+    zh: '/zh/bionixus-market-research-middle-east',
+  },
+  '/global-websites': {
+    en: '/healthcare-market-research',
+    ar: '/ar/healthcare-market-research',
+    fr: '/fr/healthcare-market-research',
+  },
+  '/quantitative-healthcare-market-research': {
+    en: '/quantitative-healthcare-market-research',
+    fr: '/fr/quantitative-healthcare-market-research',
   },
   '/healthcare-market-research/saudi-arabia': {
     en: '/healthcare-market-research/saudi-arabia',
     ar: '/ar/healthcare-market-research/saudi-arabia',
   },
+  // The /{lang}/market-research-healthcare pages translate /market-research-healthcare,
+  // not this services hub. Claiming them here put every one of those URLs in two
+  // hreflang groups, so neither group reciprocated.
   '/market-research': {
     en: '/market-research',
+  },
+  // Localized pages with transliterated slugs. Without these groups the localized
+  // page pointed at its English counterpart while the English page pointed nowhere.
+  '/insights/top-healthcare-market-research-companies-saudi-arabia-2026': {
+    en: '/insights/top-healthcare-market-research-companies-saudi-arabia-2026',
+    ar: '/ar/insights/top-sharaket-abhath-sihha-alsaudia-2026',
+  },
+  '/insights/top-market-research-companies-saudi-arabia-2026': {
+    en: '/insights/top-market-research-companies-saudi-arabia-2026',
+    ar: '/ar/insights/top-sharaket-abhath-alsuq-alsaudia-2026',
+  },
+  '/market-research-saudi-arabia-pharmaceutical': {
+    en: '/market-research-saudi-arabia-pharmaceutical',
+    ar: '/ar/abhath-suq-adwiyah-saudi-arabia',
+  },
+  '/brazil-pharmaceutical-market-research': {
+    en: '/brazil-pharmaceutical-market-research',
+    pt: '/pt/pesquisa-mercado-farmaceutico-brasil',
   },
   '/market-research-uae': {
     en: '/market-research-uae',
@@ -218,14 +265,18 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
   '/strategic-portfolio': {
     en: '/strategic-portfolio',
     ar: '/ar/strategic-portfolio',
+    fr: '/fr/strategic-portfolio',
+    zh: '/zh/strategic-portfolio',
   },
   '/insights/top-market-research-companies-egypt-2026': {
     en: '/insights/top-market-research-companies-egypt-2026',
     ar: '/ar/insights/top-market-research-companies-egypt-2026',
+    zh: '/zh/insights/top-market-research-companies-egypt-2026',
   },
   '/blog/top-market-research-companies-egypt-2026': {
     en: '/insights/top-market-research-companies-egypt-2026',
     ar: '/ar/insights/top-market-research-companies-egypt-2026',
+    zh: '/zh/insights/top-market-research-companies-egypt-2026',
   },
   '/insights/top-market-research-companies-brazil-2026': {
     en: '/insights/top-market-research-companies-brazil-2026',
@@ -242,9 +293,6 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
   '/insights/top-healthcare-market-research-companies-argentina-2026': {
     en: '/insights/top-healthcare-market-research-companies-argentina-2026',
     es: '/es/insights/top-empresas-investigacion-mercado-salud-argentina-2026',
-  },
-  '/market-research-saudi-arabia-pharmaceutical': {
-    en: '/market-research-saudi-arabia-pharmaceutical',
   },
   '/market-research-healthcare': {
     en: '/market-research-healthcare',
@@ -264,7 +312,7 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
   },
   '/bionixus-ai-chatbots-increase-sales-and-lead-generation': {
     en: '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
-    de: '/de/success-in-startups',
+    de: '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
     fr: '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
     es: '/bionixus-ai-chatbots-increase-sales-and-lead-generation',
     zh: '/bionixus-ai-chatbots-increase-sales-and-lead-generation',

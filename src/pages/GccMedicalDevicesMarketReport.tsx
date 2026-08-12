@@ -17,6 +17,12 @@ import {
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
 import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
+import {
+  marketReportOgImageUrl,
+  marketReportOgImageWidth,
+  marketReportOgImageHeight,
+  defaultOgImageAlt,
+} from '@/lib/seo';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -64,21 +70,16 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    image: [marketReportOgImageUrl],
     headline: 'GCC Medical Devices Market Report 2026: Size, Segments, and Hospital Procurement Intelligence',
-    author: {
-      '@type': 'Person',
-      name: 'Laura Williams',
-      jobTitle: 'Research Director',
-      worksFor: { '@type': 'Organization', name: 'BioNixus Healthcare Market Research' },
-    },
-    publisher: {
+    author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },    publisher: {
       '@type': 'Organization',
       name: 'BioNixus',
+      url: 'https://www.bionixus.com',
       logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
     },
     datePublished: '2026-05-01',
-    dateModified: '2026-07-21',
-    mainEntityOfPage: 'https://www.bionixus.com/gcc-medical-devices-market-report',
+    dateModified: '2026-08-11',    mainEntityOfPage: 'https://www.bionixus.com/gcc-medical-devices-market-report',
   },
   {
     '@context': 'https://schema.org',
@@ -96,8 +97,7 @@ const jsonLd = [
     countryName: "GCC",
     marketSlug: "gcc",
     publishedDate: "2026-05-01",
-    modifiedDate: "2026-07-21",
-  })
+    modifiedDate: "2026-08-11",  })
 ];
 
 function StatCard({ value, label }: { value: string; label: string }) {
@@ -116,8 +116,12 @@ const GccMedicalDevicesMarketReport = () => {
 
       <SEOHead
         title="GCC Medical Devices Market 2026: Size, Share & Country Forecasts"
-        description="GCC medical device market report 2026 — Saudi, UAE, Qatar, Kuwait, Oman & Bahrain market sizes, regulations and forecasts. By BioNixus."
-        canonical="https://www.bionixus.com/gcc-medical-devices-market-report"
+        description="GCC medical device market report 2026 — Saudi, UAE, Qatar, Kuwait, Oman & Bahrain market sizes, regulations and forecasts. By Bionixus."        canonical="https://www.bionixus.com/gcc-medical-devices-market-report"
+        ogType="article"
+        ogImage={marketReportOgImageUrl}
+        ogImageWidth={marketReportOgImageWidth}
+        ogImageHeight={marketReportOgImageHeight}
+        ogImageAlt={defaultOgImageAlt}
         jsonLd={jsonLd}
       />
       <ReportReadingProgress progressId="report-rp-gcc-medical-devices-market-report" />

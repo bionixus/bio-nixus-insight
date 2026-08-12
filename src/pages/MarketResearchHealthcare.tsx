@@ -384,7 +384,7 @@ export default function MarketResearchHealthcare() {
   const copy = copyByLanguage[language] ?? copyByLanguage.en;
   const basePath = languagePaths[language] || '/';
   const contactPath =
-    language === 'fr' ? '/fr/contacts' : language === 'ar' ? '/ar/contacts' : `${basePath === '/' ? '' : basePath}/contact`;
+    language === 'fr' ? '/fr/contact' : language === 'ar' ? '/ar/contact' : `${basePath === '/' ? '' : basePath}/contact`;
 
   const jsonLd = [
     {
@@ -506,7 +506,7 @@ export default function MarketResearchHealthcare() {
                 <h3 className="font-semibold text-foreground mb-2">Saudi pharmaceutical market research</h3>
                 <p className="text-sm text-muted-foreground">Review country-level pharmaceutical strategy and access priorities for KSA.</p>
               </Link>
-              <Link to="/global-websites" className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 transition-colors">
+              <Link to="/healthcare-market-research" className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 transition-colors">
                 <h3 className="font-semibold text-foreground mb-2">Global websites directory</h3>
                 <p className="text-sm text-muted-foreground">Navigate market pages across Europe and Middle East coverage zones.</p>
               </Link>

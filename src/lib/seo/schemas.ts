@@ -56,10 +56,17 @@ export function buildItemListSchema(items: { name: string; description?: string;
   };
 }
 
+/**
+ * Typed as Service, not ProfessionalService: the node describes an offering with a
+ * `provider`, not a physical premises. ProfessionalService is a LocalBusiness, so
+ * `serviceType` and `provider` are invalid on it. `priceRange` and `knowsAbout` are
+ * the mirror case — LocalBusiness/Organization only — so they live on the
+ * Organization node instead.
+ */
 export function buildProfessionalServiceSchema() {
   return {
     '@context': 'https://schema.org',
-    '@type': 'ProfessionalService',
+    '@type': 'Service',
     '@id': `${BASE_URL}/#professionalService`,
     name: 'BioNixus Healthcare Market Research',
     serviceType: 'Healthcare Market Research',
@@ -68,17 +75,6 @@ export function buildProfessionalServiceSchema() {
     description:
       'Comprehensive pharmaceutical and healthcare market research — physician insights, KOL mapping, market access research, and quantitative and qualitative studies — with deep regional expertise across MENA, Latin America, Eastern Europe, the UK, and the wider EMEA region.',
     url: BASE_URL,
-    priceRange: '$$$$',
-    knowsAbout: [
-      'Pharmaceutical market research',
-      'Healthcare market research',
-      'Market access research',
-      'KOL and stakeholder mapping',
-      'Health economics and outcomes research',
-      'Budget Impact Analysis',
-      'Cost-Effectiveness Analysis',
-      'Health Technology Assessment',
-    ],
   };
 }
 
