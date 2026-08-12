@@ -157,6 +157,74 @@ const AESTHETIC_TAIL: ReferenceSection[] = [
   },
 ];
 
+const NEUROLOGY_CNS_TAIL: ReferenceSection[] = [
+  {
+    title: 'Neurology and CNS: diagnostic delay, sequencing, and caregiver leverage',
+    paragraphs: [
+      'Neurology franchises face elongated diagnostic intervals, heterogeneous phenotyping, specialist-gated initiation, monitoring burden, caregiver decision weight, and access committees sceptical of high-cost chronic therapies without clear functional endpoints. Research must map where patients stall before reaching a treatable cohort—not only whether specialists endorse a molecule in principle.',
+      'Multidisciplinary dynamics differ materially between MS, epilepsy, movement disorders, migraine, and neurodegenerative corridors. Instruments should reflect realistic next-best alternatives, titration rituals, relapse fear, cognitive side-effect intolerance, and institutional infusion or home-administration capacity rather than abstract efficacy scales.',
+    ],
+  },
+  {
+    title: 'Operationalizing neurology insight for launch, expansion, and lifecycle defence',
+    paragraphs: [
+      'Deliverables may include diagnostic pathway maps, referral bottleneck registers, KOL and centre concentration dossiers, persistence and discontinuation drivers, caregiver burden narratives validated for payer conversations, and access-risk overlays tied to step therapy or high-cost drug committees.',
+      'BioNixus links neurology programmes to rare-disease hubs, biosimilar substitution modules where relevant, and country reports across MENA, the UK, and Europe so affiliates plan from one behavioural evidence base.',
+    ],
+  },
+];
+
+const DIGITAL_HEALTH_TAIL: ReferenceSection[] = [
+  {
+    title: 'Digital health and SaMD: adoption friction beyond clinical enthusiasm',
+    paragraphs: [
+      'Connected devices, software-as-a-medical-device, and care-pathway tools fail commercially when reimbursement codes, liability allocation, EHR integration, data-governance anxiety, and workflow interruption outweigh perceived clinical benefit. Research must document who blocks adoption—IT, procurement, nursing operations, payer medical policy—not only whether physicians find dashboards interesting.',
+      'GCC and European markets differ in telehealth reimbursement maturity, national digital-health strategies, and hospital autonomy to pilot without central mandate. Comparable survey cores with local access modules prevent a single global playbook from misreading institutional readiness.',
+    ],
+  },
+  {
+    title: 'Evidence, pricing, and partnership models for digital health portfolios',
+    paragraphs: [
+      'Payers and hospital committees increasingly request operational outcome evidence, total-cost-of-care narratives, and cybersecurity assurances alongside clinical validation. BioNixus pairs clinician adoption studies with payer-adjacent interviews and procurement stakeholder mapping so digital portfolios align evidence generation with the gates that actually control budget release.',
+      'Teams escalating from pilots to regional rollout should connect digital-health insight with diabetes, cardiology, or respiratory therapy hubs where companion services intersect with pharmaceutical franchises.',
+    ],
+  },
+];
+
+const DERMATOLOGY_TAIL: ReferenceSection[] = [
+  {
+    title: 'Dermatology: immune-mediated disease, step therapy, and patient activation',
+    paragraphs: [
+      'Dermatology markets blend immune-mediated biologic corridors with medical-aesthetic crossover where patient activation, social visibility of disease, and discretionary spend cycles reshape adoption. Research must separate prescriber enthusiasm from step-therapy friction, pharmacist substitution, and payer prior-authorization burden that delay biologic initiation despite guideline alignment.',
+      'GP gateways, dermatologist concentration, and nursing administration roles differ across MENA private corridors versus NHS or EU5 systems. Sampling should reflect who initiates, who maintains, and who authorises switches for chronic inflammatory skin disease versus acute or cosmetic-adjacent categories.',
+    ],
+  },
+  {
+    title: 'From dermatology insight to access, medical, and commercial alignment',
+    paragraphs: [
+      'Deliverables include step-therapy and PA friction maps, patient-driven demand registers, KOL and centre archetypes, message tests on safety monitoring and flare fear, and competitive scenarios when biosimilars or small molecules enter the same corridor.',
+      'Pair dermatology modules with aesthetic-medicine research and GCC pharmaceutical context when portfolios span immune-mediated and consumer-medical positioning within one affiliate.',
+    ],
+  },
+];
+
+const BIOSIMILARS_TAIL: ReferenceSection[] = [
+  {
+    title: 'Biosimilars: substitution confidence, tender mechanics, and originator defence',
+    paragraphs: [
+      'Biosimilar uptake depends on pharmacist substitution mandates, interchangeability stigma, device familiarity, patient-support continuity, tender scoring in hospital systems, and physician confidence after therapeutic switching—not headline price gaps alone. Research must quantify where substitution is policy-permitted versus clinically resisted in daily practice.',
+      'Originator defence requires understanding which levers retain volume: indication breadth, real-world persistence narratives, nurse training investment, device ergonomics, or contractual bundling with procurement. BioNixus models both sides with institution-type segmentation across GCC tender corridors and European rebate-sensitive markets.',
+    ],
+  },
+  {
+    title: 'Forecasting biosimilar erosion and launch sequencing across markets',
+    paragraphs: [
+      'Erosion curves fail when analogues differ on administration setting, cold-chain logistics, centre concentration, or payer incentive structures. BioNixus pairs analogue review with measured substitution confidence, tender calendar intelligence, and account-level procurement behaviour so forecasts reflect operational reality.',
+      'Escalate biosimilar programmes through biologics and immunology hubs, Saudi biosimilar market reports, and healthcare market research country pages where hospital tendering dominates access.',
+    ],
+  },
+];
+
 const DEFAULT_TAIL: ReferenceSection[] = [
   {
     title: 'Therapeutic area execution checklist',
@@ -173,6 +241,11 @@ const TAILS: Record<string, ReferenceSection[] | undefined> = {
   respiratory: RESPIRATORY_TAIL,
   vaccines: VACCINES_TAIL,
   cardiology: CARDIO_TAIL,
+  cardiovascular: CARDIO_TAIL,
+  'neurology-cns': NEUROLOGY_CNS_TAIL,
+  'digital-health': DIGITAL_HEALTH_TAIL,
+  dermatology: DERMATOLOGY_TAIL,
+  biosimilars: BIOSIMILARS_TAIL,
   'rare-diseases': RARE_TAIL,
   'aesthetic-medicine': AESTHETIC_TAIL,
 };

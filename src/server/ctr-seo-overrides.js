@@ -83,6 +83,31 @@ export const CTR_SEO_BY_PATH = {
     description:
       'GCC medical device market report 2026 — Saudi, UAE, Qatar, Kuwait, Oman & Bahrain market sizes, regulations and forecasts. By Bionixus.',
   },
+  '/gcc-pharmaceutical-market-research': {
+    title: 'GCC Biologics & Generic Injectables Market 2026 | BioNixus',
+    description:
+      'GCC biologics ($4.8–5.4B), generic injectables, precision medicine & drug repurposing — pharmaceutical market research across KSA, UAE, Kuwait, Qatar, Bahrain & Oman.',
+  },
+  '/uae-healthcare-market-report': {
+    title: 'UAE Healthcare Market Report 2026: Size, Pharma & Devices',
+    description:
+      'UAE healthcare market $30–33B in 2026 — pharma ($3.5B), medical devices ($1.8B), DHA, DOH & MOHAP regulation. Commercial intelligence by BioNixus.',
+  },
+  '/saudi-arabia-medical-devices-market-report': {
+    title: 'Saudi Arabia Medical Devices Market 2026 | SFDA & Vision 2030',
+    description:
+      "Saudi medical devices market $2.8–3.1B in 2026 — SFDA registration, NUPCO procurement, hospital consumption data and segment forecasts. Report by BioNixus.",
+  },
+  '/healthcare-market-research-kuwait': {
+    title: 'Healthcare Market Research Kuwait | MOH & GPADC | BioNixus',
+    description:
+      'Pharmaceutical market research in Kuwait — HCP surveys, KOL mapping, NHIS payer studies, and MOH/GPADC-aligned healthcare research by BioNixus.',
+  },
+  '/gcc-anesthesia-surgical-market-report': {
+    title: 'GCC Anesthesia & Surgical Market 2026: Size & Country Data',
+    description:
+      'GCC anesthesia market $850M–1B and 1.8–2.2M annual surgical procedures — Saudi, UAE, Kuwait, Qatar, Oman & Bahrain intelligence by BioNixus.',
+  },
   '/japan-medical-devices-market-report': {
     title: 'Japan Medical Device Market 2026: Size, PMDA Access & Forecast',
     description:

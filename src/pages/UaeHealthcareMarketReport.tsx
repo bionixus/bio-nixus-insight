@@ -73,7 +73,7 @@ const jsonLd = [
       logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
     },
     datePublished: '2026-05-01',
-    dateModified: '2026-05-27',
+    dateModified: '2026-08-12',
     mainEntityOfPage: 'https://www.bionixus.com/uae-healthcare-market-report',
   },
   {
@@ -267,6 +267,8 @@ const UaeHealthcareMarketReport = () => {
             </div>
           </div>
         </section>
+
+        <MarketIntelligenceSections marketSlug="uae" countryName="United Arab Emirates" variant="healthcare" />
 
         {/* Therapy Areas */}
         <section className="section-padding bg-cream-dark" id="therapy-areas">
