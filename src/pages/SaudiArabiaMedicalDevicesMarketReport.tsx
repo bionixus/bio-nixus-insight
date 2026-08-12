@@ -73,7 +73,7 @@ const jsonLd = [
       logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
     },
     datePublished: '2026-05-01',
-    dateModified: '2026-05-27',
+    dateModified: '2026-08-12',
     mainEntityOfPage: 'https://www.bionixus.com/saudi-arabia-medical-devices-market-report',
   },
   {
@@ -257,6 +257,8 @@ const SaudiArabiaMedicalDevicesMarketReport = () => {
             </div>
           </div>
         </section>
+
+        <MarketIntelligenceSections marketSlug="saudi-arabia" countryName="Saudi Arabia" variant="medical-devices" />
 
         {/* How BioNixus Data Is Different */}
         <section className="section-padding bg-cream-dark" id="data-methodology">

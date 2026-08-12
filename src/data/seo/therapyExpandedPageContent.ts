@@ -10,6 +10,11 @@ export const THIN_THERAPY_SLUGS = [
   'diabetes',
   'cardiology',
   'respiratory',
+  'cardiovascular',
+  'neurology-cns',
+  'digital-health',
+  'dermatology',
+  'biosimilars',
 ] as const;
 
 export type ThinTherapySlug = (typeof THIN_THERAPY_SLUGS)[number];
@@ -207,6 +212,131 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       question: 'How does BioNixus map rare-disease KOL and centre networks?',
       answer:
         'We identify the small, concentrated treatment nodes—genetics clinics, specialist centres, patient organisations—that initiate and sustain therapy, then align field and medical plans to those networks instead of broad physician panels with little patient flow.',
+    },
+  ],
+  cardiovascular: [
+    {
+      question: 'What does cardiovascular market research focus on for pharmaceutical teams?',
+      answer:
+        'It examines acute, secondary-prevention, and chronic pathways—lipid management, anticoagulation, heart failure, hypertension—where guideline-aligned care breaks down in routine practice. BioNixus measures initiation, titration, persistence, and payer or formulary realities across MENA, the UK, and Europe.',
+    },
+    {
+      question: 'Why is the cardiology–primary-care interface so important?',
+      answer:
+        'Many cardiovascular therapies are started by specialists but maintained in primary care for years. Persistence and titration depend on who owns the patient over time; studies that ignore this handoff misread adherence and undertreatment. BioNixus maps ownership across the pathway to find where intervention changes outcomes.',
+    },
+    {
+      question: 'How do procedural and device intersections affect cardiology research?',
+      answer:
+        'Interventional culture, cath-lab throughput, and post-event prescribing rituals influence pharmaceutical uptake alongside outpatient chronic management. Research should reconcile acute and chronic corridors so forecasts do not assume instantaneous cascade after guideline publication or hospital discharge.',
+    },
+    {
+      question: 'How does cardiovascular research vary across markets?',
+      answer:
+        'MENA carries early cardiometabolic burden with mixed public–private access; UK and European systems apply structured guideline and HTA frameworks with different rebate and substitution norms. BioNixus combines comparable cores with local access and channel modules.',
+    },
+    {
+      question: 'How does BioNixus support cardiovascular brand and access teams?',
+      answer:
+        'We deliver stakeholder segmentation, value-narrative testing, undertreatment analysis, and access-risk mapping. Findings connect to country reports and the healthcare market research hub so launch, medical, and access strategies share one evidence base.',
+    },
+    {
+      question: 'Can cardiovascular research integrate with diabetes or metabolic programmes?',
+      answer:
+        'Yes. Cardiometabolic overlap is common; combined modules reduce duplicate fieldwork and clarify where messaging, access, and medical education should coordinate across specialty boundaries rather than compete for clinician attention.',
+    },
+  ],
+  'neurology-cns': [
+    {
+      question: 'What does neurology and CNS market research cover?',
+      answer:
+        'It maps diagnostic delay, treatment sequencing, monitoring burden, caregiver dynamics, and access realities for MS, epilepsy, movement disorders, migraine, and neurodegenerative categories across MENA, the UK, and Europe—grounded in specialist-gated pathways rather than primary-care averages.',
+    },
+    {
+      question: 'Why is diagnostic delay a central neurology research question?',
+      answer:
+        'Many CNS franchises address treatable cohorts far smaller than epidemiologic prevalence because referral, testing throughput, and payer criteria shrink the addressable population. Research must quantify where patients exit the pathway before reaching initiation-eligible status.',
+    },
+    {
+      question: 'Which stakeholders matter most in neurology studies?',
+      answer:
+        'Neurologists, generalists who gate referral, nurses managing infusions or home administration, pharmacists with substitution authority, and high-cost drug committees often outweigh title-based sampling. BioNixus weights stakeholders by pathway leverage for each indication.',
+    },
+    {
+      question: 'How does BioNixus support neurology and CNS strategy?',
+      answer:
+        'We deliver centre concentration maps, KOL connectivity dossiers, persistence and discontinuation analysis, caregiver burden narratives, and access-risk registers tied to step therapy or funding exceptions—outputs medical, access, and brand teams can operationalise without reinterpretation.',
+    },
+  ],
+  'digital-health': [
+    {
+      question: 'What does digital health market research measure?',
+      answer:
+        'It quantifies clinician and payer adoption of connected devices, SaMD, remote monitoring, and care-pathway tools—integration friction, reimbursement readiness, liability concerns, workflow interruption, and procurement scoring that block rollout despite clinical interest.',
+    },
+    {
+      question: 'Why do digital health pilots fail to scale commercially?',
+      answer:
+        'Pilots often succeed clinically but stall at IT security review, coding and reimbursement ambiguity, nursing operational burden, or fragmented hospital budgeting. Research isolates the gate that stops budget release so product and access teams invest in fixes that change purchasing—not demo enthusiasm alone.',
+    },
+    {
+      question: 'How does digital health research differ across GCC, UK, and Europe?',
+      answer:
+        'National digital-health strategies, telehealth reimbursement maturity, and hospital autonomy to procure without central mandate vary widely. BioNixus uses comparable cores for regional governance with local modules on payer policy, data governance, and EHR integration norms.',
+    },
+    {
+      question: 'How does BioNixus support digital health commercialisation?',
+      answer:
+        'We pair clinician adoption studies with payer-adjacent interviews, procurement stakeholder mapping, and pricing scenario tests—linking findings to diabetes, cardiology, or respiratory hubs where companion services intersect pharmaceutical franchises.',
+    },
+  ],
+  dermatology: [
+    {
+      question: 'What does dermatology market research cover?',
+      answer:
+        'It spans immune-mediated skin disease, biologics and small molecules, and medical-aesthetic crossover—measuring prescriber behaviour, step-therapy friction, patient-driven demand, and payer prior-authorization burden across MENA, the UK, and Europe.',
+    },
+    {
+      question: 'How does step therapy shape dermatology biologic access?',
+      answer:
+        'Many systems require failed conventional therapy documentation before biologic approval, creating months of delay even when specialists intend to escalate. Research quantifies where PA friction—not clinical rejection—suppresses uptake and which evidence formats accelerate committee approval.',
+    },
+    {
+      question: 'How does patient-driven demand affect dermatology strategy?',
+      answer:
+        'Visible disease and social-media awareness make dermatology unusually patient-activated: patients research options and request specific treatments, accelerating uptake where coverage allows. Studies capture this demand alongside dermatologist, GP, and pharmacy channel behaviour for realistic adoption models.',
+    },
+    {
+      question: 'How does BioNixus support dermatology teams?',
+      answer:
+        'We deliver step-therapy maps, KOL and centre archetypes, message tests on safety monitoring and flare fear, and competitive scenarios for biosimilar or small-molecule entry—linked to aesthetic-medicine and GCC pharmaceutical context where portfolios overlap.',
+    },
+  ],
+  biosimilars: [
+    {
+      question: 'What does biosimilars market research measure?',
+      answer:
+        'It quantifies substitution confidence, interchangeability narratives, pharmacist-led switching, hospital tender scoring, device familiarity, and originator-defence levers—separating policy-permitted substitution from clinically resisted switching in daily practice.',
+    },
+    {
+      question: 'Why do biosimilar forecasts often overestimate erosion speed?',
+      answer:
+        'Analogues differ on administration setting, cold-chain logistics, centre concentration, nurse training investment, and payer incentive structures. BioNixus pairs analogue review with measured substitution behaviour and tender calendar intelligence so erosion curves reflect operational reality.',
+    },
+    {
+      question: 'How can originators defend share against biosimilars?',
+      answer:
+        'Research isolates which levers retain volume—indication breadth, persistence narratives, patient-support continuity, device ergonomics, or contractual bundling—and tests them with procurement and clinical stakeholders before defence budgets are committed.',
+    },
+    {
+      question: 'How does biosimilar research vary across GCC and European markets?',
+      answer:
+        'GCC hospital tendering and pharmacist substitution mandates accelerate switching in some categories; European rebate and regional autonomy create different erosion rhythms. Comparable cores with local procurement modules prevent a single global erosion assumption.',
+    },
+    {
+      question: 'How does BioNixus support biosimilar launch and defence planning?',
+      answer:
+        'We deliver account-level substitution confidence maps, tender scenario notes, physician and pharmacist objection libraries, and uptake models linked to biologics hubs, immunology research, and country reports where hospital procurement dominates access.',
     },
   ],
 };

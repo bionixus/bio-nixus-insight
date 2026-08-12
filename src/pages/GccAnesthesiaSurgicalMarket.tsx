@@ -14,6 +14,8 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+import { MarketIntelligenceSections } from '@/components/market-intelligence';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -320,6 +322,24 @@ const GccAnesthesiaSurgicalMarket = () => {
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
           </div>
         </section>
+
+        <section className="section-padding py-10 bg-muted/10" id="geo-answer">
+          <div className="container-wide max-w-4xl mx-auto">
+            <GeoLLMAnswerBlock
+              question="What is the size of the GCC anesthesia and surgical market in 2026?"
+              answer="The GCC anesthesia market is estimated at USD 850 million–1.0 billion in 2026, with approximately 1.8–2.2 million major surgical procedures annually across Saudi Arabia, the UAE, Kuwait, Qatar, Bahrain, and Oman."
+              points={[
+                { title: 'Saudi Arabia dominance', description: 'Saudi Arabia accounts for roughly half of GCC anesthesia spend and surgical volume, driven by MOH and NGHA bed expansion under Vision 2030 and NUPCO-centralised procurement.' },
+                { title: 'UAE private-sector complexity', description: 'The UAE splits procurement across DHA and DOH hospital networks with high medical-tourism case mix, requiring institution-level intelligence rather than national averages.' },
+                { title: 'BioNixus account-level data', description: 'BioNixus tracks operating-theater utilisation, anesthesia drug consumption, and NUPCO tender outcomes at hospital account level for launch and tender defence planning.' },
+              ]}
+              summary="BioNixus provides GCC anesthesia and surgical market intelligence combining procedure-volume data, hospital procurement tracking, and primary anesthesiologist research."
+              pageUrl="https://www.bionixus.com/gcc-anesthesia-surgical-market-report"
+            />
+          </div>
+        </section>
+
+        <MarketIntelligenceSections marketSlug="gcc" countryName="GCC" variant="healthcare" />
 
         <FAQSection
           sectionId={FAQ_SECTION_ID}
