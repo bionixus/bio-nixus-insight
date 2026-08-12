@@ -18,6 +18,7 @@ import {
   Building2,
   ShoppingBag,
   Cpu,
+  Globe2,
   type LucideIcon,
 } from 'lucide-react';
 import type { Language } from '@/lib/i18n';
@@ -198,6 +199,14 @@ export const METHODOLOGY_SERVICES: MethodologyService[] = [
 
 export const COMMERCIAL_OFFERINGS: CommercialOffering[] = [
   {
+    to: '/services/cross-industry',
+    title: 'Cross-industry market research',
+    summary:
+      'Dedicated Track B landing for non-healthcare buyers — multi-country quantitative and qualitative research across MENA and Europe for FMCG, financial services, technology, industrial, and public sector.',
+    icon: Globe2,
+    examples: 'FMCG · banking · tech · industrial · public sector',
+  },
+  {
     to: '/pharma-healthcare-industries',
     title: 'Pharma, biotech & MedTech',
     summary:
@@ -233,6 +242,7 @@ export const COMMERCIAL_OFFERINGS: CommercialOffering[] = [
 
 export const HUB_LINKS = [
   { to: '/healthcare-market-research', label: 'Healthcare market research hub' },
+  { to: '/services/cross-industry', label: 'Cross-industry market research (Track B)' },
   { to: '/bionixus-industries', label: 'BioNixus across industries' },
   { to: '/market-research-by-industry', label: 'Market research by industry (global index)' },
   { to: '/market-research', label: 'Market research services overview' },

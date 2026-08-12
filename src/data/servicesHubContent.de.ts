@@ -18,6 +18,7 @@ import {
   Building2,
   ShoppingBag,
   Cpu,
+  Globe2,
 } from 'lucide-react';
 import type {
   CommercialOffering,
@@ -172,6 +173,14 @@ export const DE_METHODOLOGY_SERVICES: MethodologyService[] = [
 
 export const DE_COMMERCIAL_OFFERINGS: CommercialOffering[] = [
   {
+    to: '/services/cross-industry',
+    title: 'Branchenübergreifende Marktforschung',
+    summary:
+      'Dedizierte Track-B-Landingpage für Nicht-Healthcare-Auftraggeber — multi-country quantitative und qualitative Forschung in MENA und Europa für FMCG, Finanzdienstleistungen, Technologie, Industrie und den öffentlichen Sektor.',
+    icon: Globe2,
+    examples: 'FMCG · Banking · Tech · Industrie · öffentlicher Sektor',
+  },
+  {
     to: '/pharma-healthcare-industries',
     title: 'Pharmazeutik, Biotechnologie & Medizintechnik',
     summary:
@@ -208,6 +217,7 @@ export const DE_COMMERCIAL_OFFERINGS: CommercialOffering[] = [
 export const DE_HUB_LINKS = [
   { to: '/healthcare-market-research/germany', label: 'Gesundheitsmarktforschung Deutschland' },
   { to: '/healthcare-market-research', label: 'Gesundheitsmarktforschungs-Hub Europa' },
+  { to: '/services/cross-industry', label: 'Branchenübergreifende Marktforschung (Track B)' },
   { to: '/blog/pharmaceutical-market-research-uk-2026', label: 'Pharmazeutische Marktforschung UK (2026)' },
   { to: '/blog/healthcare-market-research-europe-2026', label: 'Gesundheitsmarktforschung Europa (2026)' },
   { to: '/methodology', label: 'Methodik & Compliance' },

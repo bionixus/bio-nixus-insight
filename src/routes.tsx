@@ -7,6 +7,7 @@ import CaseStudies from '@/pages/CaseStudies';
 import About from '@/pages/About';
 import ClientReviews from '@/pages/ClientReviews';
 import Services from '@/pages/Services';
+import CrossIndustryMarketResearch from '@/pages/CrossIndustryMarketResearch';
 import FAQ from '@/pages/FAQ';
 import HealthcareMarketStatistics from '@/pages/HealthcareMarketStatistics';
 import Resources from '@/pages/Resources';
@@ -389,6 +390,7 @@ export const routes: RouteObject[] = [
   { path: '/client-reviews', element: <ClientReviews /> },
   { path: '/services', element: <Services /> },
   { path: '/de/services', element: <Services /> },
+  { path: '/services/cross-industry', element: <CrossIndustryMarketResearch /> },
   { path: '/services/:slug', element: <ServiceDetail /> },
   { path: '/faq', element: <FAQ /> },
   { path: '/healthcare-market-statistics', element: <HealthcareMarketStatistics /> },
