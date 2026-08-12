@@ -244,7 +244,7 @@ export const turkeyHealthcareEn: CountryListicleConfig = {
     { to: '/insights/top-healthcare-market-research-companies-germany-2026', label: 'Best Healthcare Market Research Companies in Germany' },
     { to: '/insights/top-market-research-companies-uae-2026', label: 'Best Market Research Companies in the UAE' },
     { to: '/insights/top-market-research-companies-ksa-2026', label: 'Best Market Research Companies in Saudi Arabia' },
-    { to: '/pharmaceutical-market-research', label: 'Pharmaceutical Market Research Services' },
+    { to: '/market-research', label: 'Pharmaceutical Market Research Services' },
     { to: '/contact', label: 'Request a Turkey Healthcare Research Proposal' },
   ],
   cta: {

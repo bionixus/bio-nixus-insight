@@ -255,7 +255,7 @@ export const lebanonHealthcareEn: CountryListicleConfig = {
     { to: '/insights/top-market-research-companies-lebanon-2026', label: 'Best Market Research Companies in Lebanon' },
     { to: '/insights/top-healthcare-market-research-companies-jordan-2026', label: 'Healthcare Market Research Companies in Jordan' },
     { to: '/insights/top-healthcare-market-research-companies-egypt-2026', label: 'Healthcare Market Research Companies in Egypt' },
-    { to: '/insights/top-healthcare-market-research-companies-morocco-2026', label: 'Healthcare Market Research Companies in Morocco' },
+    { to: '/healthcare-market-research/morocco', label: 'Healthcare Market Research Companies in Morocco' },
     { to: '/gcc-market-access-guide', label: 'GCC Market Access Guide' },
     { to: '/contact', label: 'Request a Lebanon Healthcare Research Proposal' },
   ],

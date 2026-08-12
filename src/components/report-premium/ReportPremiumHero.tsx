@@ -7,6 +7,7 @@ import { OptimizedImage } from '@/components/media/OptimizedImage';
 import { ReportEarlyCtaBar } from '@/components/report-conversion/ReportEarlyCtaBar';
 import { ReportSectionVisual } from '@/components/report-premium/ReportSectionVisual';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { ConversionCTA } from '@/components/conversion/ConversionCTA';
 
 export type ReportHeroStat = {
   value: string;
@@ -94,6 +95,16 @@ export function ReportPremiumHero({
             {metaLinks ? <div className="text-sm text-muted-foreground leading-relaxed mb-8 sr sr-up">{metaLinks}</div> : null}
 
             <ReportEarlyCtaBar config={config} className="sr sr-up" />
+
+            <div className="mt-6 sr sr-up">
+              <ConversionCTA
+                variant="gated-asset"
+                reportName="GCC Pharma & MedTech Market Databook 2026"
+                pdfPath="/downloads/gcc-pharma-medtech-databook-2026-sample.pdf"
+                ctaId={`${config.canonicalPath.replace(/[^a-z0-9]+/gi, '_')}_hero_gated`}
+                ctaLocation="report_hero"
+              />
+            </div>
           </div>
 
           <div className="sr-lcp min-w-0">

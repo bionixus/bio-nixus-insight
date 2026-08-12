@@ -24,6 +24,8 @@ export const ORG_SAME_AS = [
   'https://www.linkedin.com/company/bionixus/',
   'https://www.facebook.com/Bionixus',
   'https://www.instagram.com/bionixus_',
+  'https://www.crunchbase.com/organization/bionixus',
+  'https://www.goodfirms.co/company/bionixus-market-research',
   'https://careers.bionixus.com/',
   BIONIXUS_UK_GBP_MAPS_URL,
 ];
@@ -231,12 +233,22 @@ export const ORG_CONTACT_POINT = [
     contactType: 'customer service',
     areaServed: 'GB',
   },
+  {
+    '@type': 'ContactPoint',
+    email: 'mosama@bionixus.com',
+    contactType: 'sales',
+    availableLanguage: ['English', 'Arabic'],
+  },
 ];
 
 /**
- * Canonical Organization node. Locale is not tagged here — `inLanguage` is a
- * CreativeWork property and is invalid on Organization; the WebSite/WebPage node
- * carries it instead.
+ * Crunchbase and GoodFirms confirmed and merged into ORG_SAME_AS above.
+ * Still unconfirmed — do not add without a confirmed URL:
+ *  - X/Twitter company profile
+ *  - Clutch company profile
+ *
+ * Locale is not tagged on this node — `inLanguage` is a CreativeWork property
+ * and is invalid on Organization; the WebSite/WebPage node carries it instead.
  */
 export function buildCanonicalOrganization(): Record<string, unknown> {
   return {

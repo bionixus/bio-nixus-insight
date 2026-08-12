@@ -19,6 +19,7 @@ import { getPageMedia } from '@/data/mediaAssets';
 import { MediaVisualBriefing } from '@/components/media/MediaVisualBriefing';
 import { ProcessWorkflowVisual } from '@/components/media/ProcessWorkflowVisual';
 import { ProofVideoEmbed } from '@/components/media/ProofVideoEmbed';
+import { ConversionCTA } from '@/components/conversion/ConversionCTA';
 
 type LinkItem = {
   to: string;
@@ -47,6 +48,8 @@ type StrategicServicePageProps = {
   expandedContent?: ServiceLandingExpandedContent;
   /** Key into PAGE_MEDIA in mediaAssets.ts; defaults to slug derived from canonical URL. */
   mediaSlug?: string;
+  /** Optional per-region breakdown (e.g. payer/HTA landscape by country) — renders as its own section with one H3 per region. */
+  regionalLandscapes?: Array<{ region: string; paragraphs: string[] }>;
 };
 
 export default function StrategicServicePage({
@@ -65,6 +68,7 @@ export default function StrategicServicePage({
   faqs,
   expandedContent,
   mediaSlug,
+  regionalLandscapes,
 }: StrategicServicePageProps) {
   const resolvedFaqs = expandedContent?.faqs ?? faqs;
   const pagePath = canonicalUrl.replace('https://www.bionixus.com', '') || '/';
@@ -207,6 +211,39 @@ export default function StrategicServicePage({
             </div>
           </section>
 
+          <section className="section-padding pt-0">
+            <div className="container-wide max-w-4xl mx-auto">
+              <ConversionCTA
+                variant="talk-to-research"
+                market={marketName}
+                ctaId={`${slugKey}_cta_1`}
+                ctaLocation="after_delivery_priorities"
+              />
+            </div>
+          </section>
+
+          {regionalLandscapes && regionalLandscapes.length ? (
+            <section className="section-padding" id="regional-landscapes">
+              <div className="container-wide max-w-4xl mx-auto">
+                <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+                  Regional payer &amp; HTA landscapes
+                </h2>
+                <div className="space-y-8">
+                  {regionalLandscapes.map((entry) => (
+                    <article key={entry.region}>
+                      <h3 className="text-lg font-display font-semibold text-foreground mb-3">{entry.region}</h3>
+                      {entry.paragraphs.map((p, i) => (
+                        <p key={i} className="text-sm text-muted-foreground leading-relaxed mb-3 last:mb-0">
+                          {p}
+                        </p>
+                      ))}
+                    </article>
+                  ))}
+                </div>
+              </div>
+            </section>
+          ) : null}
+
           {/* Proof & execution snapshot */}
           <section className="section-padding bg-cream-dark rounded-2xl border border-border/40" id="proof-snapshot">
             <div className="container-wide max-w-4xl mx-auto">
@@ -222,6 +259,17 @@ export default function StrategicServicePage({
                   </article>
                 ))}
               </div>
+            </div>
+          </section>
+
+          <section className="section-padding">
+            <div className="container-wide max-w-4xl mx-auto">
+              <ConversionCTA
+                variant="talk-to-research"
+                market={marketName}
+                ctaId={`${slugKey}_cta_2`}
+                ctaLocation="after_proof_snapshot"
+              />
             </div>
           </section>
 

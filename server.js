@@ -16,6 +16,20 @@ import { resolveGlobalWebsitesRedirect } from './lib/global-websites-redirects.m
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === 'production';
 
+/**
+ * Background data fetches (e.g. Sanity CMS calls for the homepage's latest-insights
+ * teaser) can leave a raw socket that emits a late, unhandled 'error' event after the
+ * request-level rejection was already caught and handled — Node's default behavior for
+ * an EventEmitter 'error' with no listener is to crash the process. That must never take
+ * down request handling for unrelated pages.
+ */
+process.on('uncaughtException', (err) => {
+  console.error('[server] uncaughtException (process kept alive):', err?.message || err);
+});
+process.on('unhandledRejection', (reason) => {
+  console.error('[server] unhandledRejection (process kept alive):', reason);
+});
+
 /** Single source of truth for legacy redirects — also consumed by api/indexnow-key.ts. */
 const LEGACY_REDIRECTS = JSON.parse(
   fs.readFileSync(path.join(__dirname, 'config', 'legacy-redirects.json'), 'utf-8'),
@@ -305,6 +319,21 @@ function decodeTitleEntities(s) {
     .replace(/&#39;|&apos;/g, "'");
 }
 
+/**
+ * Word-boundary-aware truncation with an explicit ellipsis marker — mirrors
+ * `withEllipsis()` in src/lib/seo-meta.ts so the SSR-rendered title matches
+ * what the client re-renders after hydration (no title flicker), and so a
+ * truncated title reads as visibly truncated rather than silently cut off
+ * mid-word.
+ */
+function truncateAtWordBoundary(text, max) {
+  const slice = text.slice(0, Math.max(0, max - 1))
+  const lastSpace = slice.lastIndexOf(' ')
+  const cut = lastSpace > Math.floor(max * 0.45) ? slice.slice(0, lastSpace) : slice
+  return `${cut.trim().replace(/[|,;:\-–—\s]+$/, '')}…`
+}
+
+/** Keep in sync with TITLE_MAX in src/lib/seo-meta.ts. */
 function normalizeTitleLength(title, max = 60, pathname) {
   const clean = decodeTitleEntities(String(title || '').replace(/\s+/g, ' ').trim());
   if (!clean) return 'BioNixus';
@@ -318,17 +347,11 @@ function normalizeTitleLength(title, max = 60, pathname) {
     if (!clean.endsWith(suffix)) continue;
     const prefix = clean.slice(0, clean.length - suffix.length).trim();
     const prefixMax = Math.max(12, max - suffix.length - 1);
-    const truncated = prefix
-      .slice(0, prefixMax)
-      .trim()
-      .replace(/[|,;:\-–—\s]+$/, '');
-    return `${truncated} ${suffix}`;
+    if (prefix.length <= prefixMax) return `${prefix} ${suffix}`;
+    return `${truncateAtWordBoundary(prefix, prefixMax)} ${suffix}`;
   }
 
-  return clean
-    .slice(0, Math.max(0, max - 1))
-    .trim()
-    .replace(/[|,;:\-–—\s]+$/, '');
+  return truncateAtWordBoundary(clean, max);
 }
 
 function buildFallbackDescription(pathname) {

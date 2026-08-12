@@ -243,7 +243,7 @@ export const polandHealthcareEn: CountryListicleConfig = {
     { to: '/insights/top-healthcare-market-research-companies-germany-2026', label: 'Best Healthcare Market Research Companies in Germany' },
     { to: '/insights/top-healthcare-market-research-companies-france-2026', label: 'Best Healthcare Market Research Companies in France' },
     { to: '/insights/top-healthcare-market-research-companies-turkey-2026', label: 'Best Healthcare Market Research Companies in Turkey' },
-    { to: '/pharmaceutical-market-research', label: 'Pharmaceutical Market Research Services' },
+    { to: '/market-research', label: 'Pharmaceutical Market Research Services' },
     { to: '/contact', label: 'Request a Poland Healthcare Research Proposal' },
   ],
   cta: {

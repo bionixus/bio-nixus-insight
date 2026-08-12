@@ -154,7 +154,7 @@ const UaeHealthcareMarketReport = () => {
         {/* Hero */}
                 <ReportPremiumHero
           title="UAE Healthcare Market Report 2026: Market Size, Pharmaceutical Intelligence, and Commercial Strategy"
-          description="BioNixus delivers UAE pharmaceutical consumption data, HCP research, and market access intelligence across Dubai (DHA), Abu Dhabi (DOH), and federal MOHAP-regulated channels — covering hospital formularies, retail pharmacy, and specialist prescribing across all major therapeutic areas."
+          description="The UAE healthcare market is estimated at USD 30–33 billion in 2026, on track for approximately USD 60 billion by 2030. BioNixus delivers UAE pharmaceutical consumption data, HCP research, and market access intelligence across Dubai (DHA), Abu Dhabi (DOH), and federal MOHAP-regulated channels — covering hospital formularies, retail pharmacy, and specialist prescribing across all major therapeutic areas."
           config={REPORT_CONVERSION}
           marketSlug="uae"
           countryName="UAE"
@@ -207,6 +207,14 @@ const UaeHealthcareMarketReport = () => {
               {' '}and{' '}
               <Link to="/market-reports/uae-diabetes-market-report" className="text-primary hover:underline font-medium">
                 UAE diabetes market research report
+              </Link>
+              . For account-level directories and programme scoping, see{' '}
+              <Link to="/pharmaceutical-companies-uae" className="text-primary hover:underline font-medium">
+                pharmaceutical companies in UAE
+              </Link>
+              {' '}and{' '}
+              <Link to="/healthcare-market-research/uae" className="text-primary hover:underline font-medium">
+                healthcare market research in UAE
               </Link>
               .
             </p>

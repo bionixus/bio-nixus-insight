@@ -17,6 +17,40 @@ import { buildSeoDescription, normalizeSeoTitle } from '@/lib/seo-meta';
 import { getCtrSeo } from '@/data/ctr-seo-overrides';
 import { useLanguage } from '@/contexts/LanguageContext';
 
+const ARTICLE_TYPES = new Set(['Article', 'BlogPosting', 'NewsArticle']);
+
+/**
+ * Backfills required Article/BlogPosting/NewsArticle properties (image,
+ * description, url, mainEntityOfPage) from page-level SEO data when a caller
+ * hand-rolls a bare Article-type JSON-LD node (headline, author, publisher,
+ * etc.) without them into `jsonLd`. Non-Article nodes and already-complete
+ * fields pass through untouched.
+ */
+export function normalizeJsonLdNode(
+  schema: object,
+  ctx: { title: string; description: string; canonicalUrl: string; ogImage: string },
+): object {
+  const node = schema as Record<string, unknown>;
+  if (!ARTICLE_TYPES.has(String(node['@type']))) return schema;
+
+  const url = typeof node.url === 'string' && node.url.trim() ? node.url : ctx.canonicalUrl;
+  const mainEntityOfPage =
+    node.mainEntityOfPage &&
+    typeof node.mainEntityOfPage === 'object' &&
+    (node.mainEntityOfPage as Record<string, unknown>)['@type'] === 'WebPage'
+      ? node.mainEntityOfPage
+      : { '@type': 'WebPage', '@id': `${url}#webpage`, url };
+
+  return {
+    ...node,
+    headline: node.headline ?? ctx.title,
+    description: typeof node.description === 'string' && node.description.trim() ? node.description : ctx.description,
+    image: node.image ?? { '@type': 'ImageObject', url: ctx.ogImage },
+    url,
+    mainEntityOfPage,
+  };
+}
+
 interface SEOHeadProps {
   title: string;
   description: string;
@@ -86,6 +120,14 @@ export function SEOHead({
   const resolvedOgAlt = ogImageAlt ?? defaultOgImageAlt;
   const hreflangLinks = getHreflangLinks(pathname);
   const geoMeta = getGeoMeta(pathname);
+  const normalizedJsonLd = jsonLd.map((schema) =>
+    normalizeJsonLdNode(schema, {
+      title: safeTitle,
+      description: safeDescription,
+      canonicalUrl,
+      ogImage: resolvedOgImage,
+    }),
+  );
   const ogLocale = getOgLocale(language);
   const ogLocaleAlternates = getOgLocaleAlternates(language);
 
@@ -124,7 +166,7 @@ export function SEOHead({
       <meta name="twitter:image" content={resolvedOgImage} />
       <meta name="twitter:image:alt" content={resolvedOgAlt} />
 
-      {jsonLd.map((schema, index) => (
+      {normalizedJsonLd.map((schema, index) => (
         <script key={`json-ld-${index}`} type="application/ld+json">
           {JSON.stringify(schema)}
         </script>

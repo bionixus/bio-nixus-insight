@@ -14,7 +14,6 @@ export const dubaiGeneralEn: CountryListicleConfig = {
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-dubai-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-dubai-2026' },
-    { lang: 'ar', href: 'https://www.bionixus.com/ar/insights/top-market-research-companies-dubai-2026' },
     { lang: 'x-default', href: 'https://www.bionixus.com/insights/top-market-research-companies-dubai-2026' },
   ],
   ogLocale: 'en_AE',
@@ -259,7 +258,7 @@ export const dubaiGeneralEn: CountryListicleConfig = {
     { to: '/insights/top-market-research-companies-abu-dhabi-2026', label: 'Best Market Research Companies in Abu Dhabi' },
     { to: '/insights/top-market-research-companies-ksa-2026', label: 'Best Market Research Companies in Saudi Arabia' },
     { to: '/pharmaceutical-market-research-dubai', label: 'Pharmaceutical Market Research Dubai' },
-    { to: '/insights/gcc-market-access-guide', label: 'GCC Market Access Guide' },
+    { to: '/gcc-market-access-guide', label: 'GCC Market Access Guide' },
     { to: '/contact', label: 'Request a Dubai Research Proposal' },
   ],
 

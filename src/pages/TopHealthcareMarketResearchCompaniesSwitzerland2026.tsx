@@ -245,7 +245,7 @@ export default function TopHealthcareMarketResearchCompaniesSwitzerland2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Healthcare Market Research Companies in Switzerland 2026 | BioNixus Ranked #1</title>
+        <title>Switzerland Healthcare Market Research Companies 2026 | BioNixus</title>
         <meta
           name="description"
           content="Top healthcare market research companies in Switzerland 2026 — BioNixus ranked #1. Multilingual HCP surveys, Krankenkassen payer research, KOL mapping at Swiss university hospitals, and BAG Spezialitätenliste evidence strategy."
@@ -254,9 +254,6 @@ export default function TopHealthcareMarketResearchCompaniesSwitzerland2026() {
         <meta name="geo.placename" content="Switzerland" />
         <link rel="canonical" href={PAGE_CANONICAL} />
         <link rel="alternate" hrefLang="en-CH" href={PAGE_CANONICAL} />
-        <link rel="alternate" hrefLang="de-CH" href={PAGE_CANONICAL} />
-        <link rel="alternate" hrefLang="fr-CH" href={PAGE_CANONICAL} />
-        <link rel="alternate" hrefLang="it-CH" href={PAGE_CANONICAL} />
         <link rel="alternate" hrefLang="x-default" href={PAGE_CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>

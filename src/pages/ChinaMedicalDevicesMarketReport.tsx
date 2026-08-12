@@ -98,8 +98,7 @@ const ChinaMedicalDevicesMarketReport = () => (
     <Navbar />
     <SEOHead
       title="China Medical Device Market 2026: Size, NMPA Access & Forecast"
-      description="China's medical device market in 2026 — market size, NMPA registration pathway, key segments and 5-year forecast. Report by Bionixus."
-      canonical="https://www.bionixus.com/china-medical-devices-market-report"
+      description="China's medical device market in 2026 — market size, NMPA registration pathway, key segments and 5-year forecast. Report by Bionixus."      canonical="https://www.bionixus.com/china-medical-devices-market-report"
       jsonLd={jsonLd}
     />
       <ReportReadingProgress progressId="report-rp-china-medical-devices-market-report" />

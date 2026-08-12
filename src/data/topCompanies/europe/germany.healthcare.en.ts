@@ -12,7 +12,6 @@ export const germanyHealthcareEn: CountryListicleConfig = {
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-germany-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-germany-2026' },
-    { lang: 'de', href: 'https://www.bionixus.com/de/insights/top-healthcare-market-research-companies-germany-2026' },
     { lang: 'x-default', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-germany-2026' },
   ],
   ogLocale: 'en_DE',
@@ -245,7 +244,7 @@ export const germanyHealthcareEn: CountryListicleConfig = {
     { to: '/insights/top-healthcare-market-research-companies-france-2026', label: 'Best Healthcare Market Research Companies in France' },
     { to: '/insights/top-healthcare-market-research-companies-spain-2026', label: 'Best Healthcare Market Research Companies in Spain' },
     { to: '/insights/top-market-research-companies-uae-2026', label: 'Best Market Research Companies in the UAE' },
-    { to: '/pharmaceutical-market-research', label: 'Pharmaceutical Market Research Services' },
+    { to: '/market-research', label: 'Pharmaceutical Market Research Services' },
     { to: '/contact', label: 'Request a Germany Healthcare Research Proposal' },
   ],
   cta: {

@@ -121,7 +121,7 @@ const MenaMarketData = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>MENA Pharmaceutical Market Data 2026 | Statistics, Size & Growth by Country | BioNixus</title>
+        <title>MENA Pharmaceutical Market Data 2026 | BioNixus</title>
         <meta
           name="description"
           content="Comprehensive MENA pharmaceutical market data for 2026: market size by country ($33.9B+ total), growth rates, per-capita spending, regulatory bodies, and therapeutic area trends across Saudi Arabia, UAE, Egypt, Kuwait, Qatar, Bahrain & Oman."

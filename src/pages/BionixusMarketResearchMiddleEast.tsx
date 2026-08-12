@@ -279,7 +279,7 @@ const BionixusMarketResearchMiddleEast = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Middle East Pharmaceutical Market Research | GCC Evidence Programs | BioNixus</title>
+        <title>Middle East Pharmaceutical Market Research | BioNixus</title>
         <meta
           name="description"
           content="Middle East pharmaceutical market research for GCC launch, access, and growth decisions. BioNixus delivers country-specific evidence programs across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman."

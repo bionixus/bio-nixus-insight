@@ -8,8 +8,11 @@ import { fileURLToPath } from 'url';
 import { collectSourceFiles } from './source-files.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
-const files = [...collectSourceFiles(join(root, 'src'))].filter((file) =>
-  readFileSync(file, 'utf8').includes("'@type': 'Article'"),
+// Test fixtures intentionally construct incomplete Article literals to verify
+// the SEOHead backfill logic fills in the missing fields -- they are not real
+// page output, so they would be permanent false positives here.
+const files = [...collectSourceFiles(join(root, 'src'))].filter(
+  (file) => !/__tests__|\.test\.tsx?$/.test(file) && readFileSync(file, 'utf8').includes("'@type': 'Article'"),
 );
 
 function endOfObject(text, start) {

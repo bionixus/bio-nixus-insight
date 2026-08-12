@@ -12,7 +12,6 @@ export const colombiaHealthcareEn: CountryListicleConfig = {
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-colombia-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-colombia-2026' },
-    { lang: 'es', href: 'https://www.bionixus.com/es/insights/top-healthcare-market-research-companies-colombia-2026' },
     { lang: 'x-default', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-colombia-2026' },
   ],
   ogLocale: 'en_CO',
@@ -242,8 +241,8 @@ export const colombiaHealthcareEn: CountryListicleConfig = {
     { to: '/insights/top-healthcare-market-research-companies-mexico-2026', label: 'Best Healthcare Market Research Companies in Mexico' },
     { to: '/insights/top-healthcare-market-research-companies-chile-2026', label: 'Best Healthcare Market Research Companies in Chile' },
     { to: '/insights/top-healthcare-market-research-companies-peru-2026', label: 'Best Healthcare Market Research Companies in Peru' },
-    { to: '/insights/top-market-research-companies-latam-2026', label: 'Top Market Research Companies in Latin America' },
-    { to: '/pharmaceutical-market-research', label: 'Pharmaceutical Market Research Services' },
+    { to: '/healthcare-market-research', label: 'Global Healthcare Market Research Hub' },
+    { to: '/market-research', label: 'Pharmaceutical Market Research Services' },
     { to: '/contact', label: 'Request a Colombia Healthcare Research Proposal' },
   ],
   cta: {

@@ -4,6 +4,7 @@ import type { ReportConversionConfig } from '@/data/reportConversionConfig';
 import { BIONIXUS_EMAIL, mailtoHref } from '@/components/report-conversion/constants';
 import { ReportPhoneLinks } from '@/components/report-conversion/ReportPhoneLinks';
 import { trackCtaClick } from '@/lib/analytics';
+import { ConversionCTA } from '@/components/conversion/ConversionCTA';
 
 type ReportConsultationBandProps = {
   config: ReportConversionConfig;
@@ -63,6 +64,14 @@ export function ReportConsultationBand({ config }: ReportConsultationBandProps) 
           >
             Email proposal requests: {BIONIXUS_EMAIL}
           </a>
+        </div>
+        <div className="mt-10 max-w-md mx-auto text-left">
+          <ConversionCTA
+            variant="talk-to-research"
+            market={config.marketName}
+            ctaId={`${config.canonicalPath.replace(/[^a-z0-9]+/gi, '_')}_consultation_band`}
+            ctaLocation="consultation_band"
+          />
         </div>
       </div>
     </section>

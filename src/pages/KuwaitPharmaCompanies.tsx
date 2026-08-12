@@ -27,6 +27,8 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { ConversionCTA } from '@/components/conversion/ConversionCTA';
+import { useScrollThreshold } from '@/hooks/useScrollThreshold';
 import { getPharmaGuideConfig } from '@/data/reportConversionConfig';
 import {
   ReportConsultationBand,
@@ -225,6 +227,7 @@ const faqItems = [
 ];
 
 const KuwaitPharmaCompanies = () => {
+  const past70Percent = useScrollThreshold(70);
   const { language } = useLanguage();
   const basePath = languagePaths[language] || '/';
   const citationUrl = 'https://www.bionixus.com/pharmaceutical-companies-kuwait';
@@ -232,7 +235,6 @@ const KuwaitPharmaCompanies = () => {
 
   const ogTitle = "Pharmaceutical Companies in Kuwait: 2026 Ranked List & Market Data";
   const ogDescription = "Every major pharmaceutical company in Kuwait ranked for 2026, with market size, import structure and regulatory notes. Research by Bionixus.";
-
   const topMedicalDistributorsItemListLd = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -251,8 +253,7 @@ return (
         <title>Pharmaceutical Companies in Kuwait: 2026 Ranked List & Market Data</title>
         <meta
           name="description"
-          content="Every major pharmaceutical company in Kuwait ranked for 2026, with market size, import structure and regulatory notes. Research by Bionixus."
-        />
+          content="Every major pharmaceutical company in Kuwait ranked for 2026, with market size, import structure and regulatory notes. Research by Bionixus."        />
         <link rel="canonical" href={citationUrl} />
         <script type="application/ld+json">
           {JSON.stringify({
@@ -541,6 +542,15 @@ return (
                   ))}
                 </tbody>
               </table>
+            </div>
+
+            <div className="mt-8">
+              <ConversionCTA
+                variant="talk-to-research"
+                market="Kuwait"
+                ctaId="pharma_companies_kuwait_after_table"
+                ctaLocation="after_first_table"
+              />
             </div>
 
             {/* Mobile card view */}
@@ -952,6 +962,9 @@ return (
             <Link to="/pharmaceutical-companies-bahrain" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in Bahrain <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
             <Link to="/gcc-pharma-market-report-2026" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">GCC pharma market report 2026 <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
             <Link to="/market-reports/gcc-biosimilars-market-report" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">GCC biosimilars &amp; generic injectables market report <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
+            <Link to="/healthcare-market-research/kuwait" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Healthcare market research in Kuwait <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
+            <Link to="/kuwait-healthcare-market-report" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Kuwait Healthcare Market Report <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
+            <Link to="/kuwait-medical-devices-market-report" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Kuwait Medical Devices Market Report <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
           </div>
         </div></section>
 
@@ -1153,6 +1166,20 @@ return (
           </div>
         </section>
       </main>
+      {past70Percent ? (
+        <div className="fixed bottom-0 left-0 right-0 z-40 bg-background border-t border-border shadow-lg p-4">
+          <div className="container-wide max-w-3xl mx-auto">
+            <ConversionCTA
+              variant="gated-asset"
+              reportName="GCC Pharma & MedTech Market Databook 2026"
+              pdfPath="/downloads/gcc-pharma-medtech-databook-2026-sample.pdf"
+              ctaId="pharma_companies_kuwait_scroll70"
+              ctaLocation="scroll_70_percent"
+              className="border-0 p-0 text-left md:flex md:items-center md:justify-between md:gap-4"
+            />
+          </div>
+        </div>
+      ) : null}
       <Footer />
     </div>
   );

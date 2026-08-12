@@ -95,7 +95,7 @@ const TurkeyHealthcareMarketReport = () => (
       <div className="section-padding pt-24 pb-4"><div className="container-wide"><BreadcrumbNav items={breadcrumbItems} /></div></div>
               <ReportPremiumHero
           title="Turkey Healthcare Market Report 2026: TİTCK, SGK Reimbursement, and Europe-MENA Crossroads Market Intelligence"
-          description="BioNixus serves Turkish pharmaceutical and medical device companies with GCC and MENA market intelligence — and provides Turkey market context for global."
+          description="The Turkish healthcare market is estimated at USD 45–58 billion in 2026, with a pharmaceutical market of roughly USD 7–9 billion. BioNixus serves Turkish pharmaceutical and medical device companies with GCC and MENA market intelligence — and provides Turkey market context for global."
           config={REPORT_CONVERSION}
           marketSlug="turkey"
           countryName="Turkey"
@@ -131,7 +131,8 @@ const TurkeyHealthcareMarketReport = () => (
               <Link to="/uae-healthcare-market-report" className="text-primary hover:underline font-medium">UAE healthcare market report</Link>, or start from the{' '}
               <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}
               <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>. For therapy-segmented demand and access analysis, see our{' '}
-              <Link to="/pharmaceutical-therapy-areas" className="text-primary hover:underline font-medium">pharmaceutical therapy-area coverage</Link>.
+              <Link to="/pharmaceutical-therapy-areas" className="text-primary hover:underline font-medium">pharmaceutical therapy-area coverage</Link>. For TITCK registration steps and a Turkey pharma company directory, see{' '}
+              <Link to="/blog/turkey-pharmaceutical-market-2026-titck-top-companies" className="text-primary hover:underline font-medium">Turkey Pharmaceutical Market 2026: Size, TITCK &amp; Top Companies</Link>.
             </p>
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
           </div>

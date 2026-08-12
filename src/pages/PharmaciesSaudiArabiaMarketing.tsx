@@ -527,6 +527,10 @@ export default function PharmaciesSaudiArabiaMarketing() {
                   <h3 className="font-semibold text-foreground mb-1">NUPCO Saudi Arabia Tendering Guide</h3>
                   <p className="text-sm text-muted-foreground">Navigate Saudi procurement and institutional pharmacy supply chains.</p>
                 </Link>
+                <Link to="/blog/pharmacies-saudi-arabia-market-research-marketing-automation" className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 transition-colors">
+                  <h3 className="font-semibold text-foreground mb-1">Market Research & Marketing Automation for Saudi Pharmacies</h3>
+                  <p className="text-sm text-muted-foreground">How pharmacy chains combine primary research with marketing automation to drive footfall and basket size.</p>
+                </Link>
                 <Link to="/pharmaceutical-companies-saudi-arabia" className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 transition-colors">
                   <h3 className="font-semibold text-foreground mb-1">Top Pharmaceutical Companies in Saudi Arabia</h3>
                   <p className="text-sm text-muted-foreground">Directory of leading pharma players in the Saudi market including local and multinational companies.</p>

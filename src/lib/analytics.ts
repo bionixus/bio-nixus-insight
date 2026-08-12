@@ -26,3 +26,13 @@ export function trackLeadSubmitted(params: { formId?: string }) {
     page_path: typeof window !== 'undefined' ? window.location.pathname : undefined,
   });
 }
+
+/** Fires when a lead-capture form becomes visible/opens (dialog opened, section scrolled into view). */
+export function trackFormView(params: { formId: string }) {
+  trackGaEvent('form_view', { form_id: params.formId });
+}
+
+/** Fires on the first field interaction within a lead-capture form (once per open). */
+export function trackFormStart(params: { formId: string }) {
+  trackGaEvent('form_start', { form_id: params.formId });
+}

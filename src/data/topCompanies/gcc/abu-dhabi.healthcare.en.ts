@@ -12,7 +12,6 @@ export const abuDhabiHealthcareEn: CountryListicleConfig = {
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-abu-dhabi-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-abu-dhabi-2026' },
-    { lang: 'ar', href: 'https://www.bionixus.com/ar/insights/top-healthcare-market-research-companies-abu-dhabi-2026' },
     { lang: 'x-default', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-abu-dhabi-2026' },
   ],
   ogLocale: 'en_AE',
@@ -258,7 +257,7 @@ export const abuDhabiHealthcareEn: CountryListicleConfig = {
       label: 'Healthcare Market Research Companies in Dubai',
     },
     {
-      to: '/insights/top-healthcare-market-research-companies-ksa-2026',
+      to: '/insights/top-healthcare-market-research-companies-saudi-arabia-2026',
       label: 'Healthcare Market Research Companies in Saudi Arabia',
     },
     {

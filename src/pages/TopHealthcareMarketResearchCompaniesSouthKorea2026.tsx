@@ -252,7 +252,7 @@ export default function TopHealthcareMarketResearchCompaniesSouthKorea2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Healthcare Market Research Companies in South Korea 2026 | BioNixus Ranked #1</title>
+        <title>South Korea Healthcare Market Research Companies 2026 | BioNixus</title>
         <meta
           name="description"
           content="Top healthcare market research companies in South Korea 2026 — BioNixus ranked #1. Korean-language HCP surveys, HIRA/NHIS payer landscape research, KOL mapping at Korea Big 5 hospitals, and NECA cost-effectiveness evidence."
@@ -261,7 +261,6 @@ export default function TopHealthcareMarketResearchCompaniesSouthKorea2026() {
         <meta name="geo.placename" content="South Korea" />
         <link rel="canonical" href={PAGE_CANONICAL} />
         <link rel="alternate" hrefLang="en" href={PAGE_CANONICAL} />
-        <link rel="alternate" hrefLang="ko" href={PAGE_CANONICAL} />
         <link rel="alternate" hrefLang="x-default" href={PAGE_CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>

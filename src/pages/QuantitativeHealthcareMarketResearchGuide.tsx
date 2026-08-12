@@ -647,6 +647,12 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
                 >
                   More from this author (UAE)
                 </Link>
+                <Link
+                  to="/blog/quantitative-market-research-and-market-access-impact"
+                  className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2 text-sm font-semibold text-foreground hover:bg-muted transition-colors"
+                >
+                  Quantitative research & market access impact
+                </Link>
               </div>
             </article>
 

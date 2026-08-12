@@ -114,7 +114,7 @@ const SaudiArabiaHealthcareMarketReport = () => {
 
                 <ReportPremiumHero
           title="Saudi Arabia Healthcare Market Report 2026: Market Size, Pharmaceutical Intelligence, and Vision 2030 Strategy"
-          description="BioNixus delivers Saudi Arabia pharmaceutical consumption intelligence, NUPCO procurement tracking, SFDA registration monitoring, and primary HCP research across MOH, NGHA, and private hospital networks — supporting commercial, medical affairs, and market access teams across all major therapeutic areas."
+          description="The Saudi Arabia healthcare market is estimated at USD 55–65 billion in 2026, the largest in the GCC, with a pharmaceutical market of USD 8.5–9.5 billion. BioNixus delivers Saudi Arabia pharmaceutical consumption intelligence, NUPCO procurement tracking, SFDA registration monitoring, and primary HCP research across MOH, NGHA, and private hospital networks — supporting commercial, medical affairs, and market access teams across all major therapeutic areas."
           config={REPORT_CONVERSION}
           marketSlug="saudi-arabia"
           countryName="Saudi Arabia"
@@ -174,6 +174,14 @@ const SaudiArabiaHealthcareMarketReport = () => {
               <Link to="/market-reports/saudi-arabia-diabetes-market-report" className="text-primary hover:underline font-medium">
                 Saudi Arabia diabetes market research report
               </Link>
+              . For account-level directories and programme scoping, see{' '}
+              <Link to="/pharmaceutical-companies-saudi-arabia" className="text-primary hover:underline font-medium">
+                pharmaceutical companies in Saudi Arabia
+              </Link>
+              {' '}and{' '}
+              <Link to="/healthcare-market-research/saudi-arabia" className="text-primary hover:underline font-medium">
+                healthcare market research in Saudi Arabia
+              </Link>
               .
             </p>
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
@@ -226,6 +234,37 @@ const SaudiArabiaHealthcareMarketReport = () => {
                   <div className="shrink-0 w-40 text-xs font-semibold text-primary pt-0.5">{label}</div>
                   <p className="text-sm text-muted-foreground leading-relaxed">{value}</p>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section-padding" id="recent-briefings">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              Recent SFDA & NUPCO Access Briefings
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              BioNixus tracks new EMA/FDA drug approvals for their Saudi Arabia SFDA registration and NUPCO
+              formulary access implications, alongside the wider GCC pharmaceutical and pharmacy landscape.
+            </p>
+            <div className="grid md:grid-cols-2 gap-3">
+              {[
+                { to: '/blog/adstiladrin-nadofaragene-nmibc-ema-chmp-2026', label: 'Adstiladrin (nadofaragene firadenovec): SFDA & NUPCO Access' },
+                { to: '/blog/cenrifki-tolebrutinib-nrspms-ema-chmp-2026', label: 'Cenrifki (tolebrutinib): SFDA & NUPCO Access' },
+                { to: '/blog/lynarvo-linerixibat-pbc-fda-2026', label: 'Lynarvo (linerixibat): SFDA & NUPCO Access' },
+                { to: '/blog/redemplo-plozasiran-fcs-ema-chmp-2026', label: 'Redemplo (plozasiran): SFDA & NUPCO Access' },
+                { to: '/blog/eli-lilly-vaccine-acquisitions-curevo-limmatech-2026', label: "Eli Lilly's Vaccine Platform: SFDA & NUPCO Access" },
+                { to: '/blog/gcc-pharmacy-market-2026', label: 'GCC Pharmacy Market 2026' },
+                { to: '/blog/saudi-arabia-gcc-pharmaceutical-market-guide-2026', label: 'Saudi Arabia & GCC Pharmaceutical Market Guide' },
+              ].map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
+                >
+                  {link.label}
+                </Link>
               ))}
             </div>
           </div>

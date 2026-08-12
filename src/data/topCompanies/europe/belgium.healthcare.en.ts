@@ -243,7 +243,7 @@ export const belgiumHealthcareEn: CountryListicleConfig = {
     { to: '/insights/top-healthcare-market-research-companies-france-2026', label: 'Best Healthcare Market Research Companies in France' },
     { to: '/insights/top-healthcare-market-research-companies-netherlands-2026', label: 'Best Healthcare Market Research Companies in the Netherlands' },
     { to: '/insights/top-healthcare-market-research-companies-uk-2026', label: 'Best Healthcare Market Research Companies in the UK' },
-    { to: '/pharmaceutical-market-research', label: 'Pharmaceutical Market Research Services' },
+    { to: '/market-research', label: 'Pharmaceutical Market Research Services' },
     { to: '/contact', label: 'Request a Belgium Healthcare Research Proposal' },
   ],
   cta: {

@@ -70,7 +70,7 @@ export default function PatientAdherenceResearchMiddleEast() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Patient Adherence Research Middle East | MPR & Persistence Studies | BioNixus</title>
+        <title>Patient Adherence Research Middle East | BioNixus</title>
         <meta
           name="description"
           content="Patient adherence research Middle East measuring MPR, PDC, and persistence rates across GCC and MENA markets with Ramadan dosing analysis, pharmacy claims data, and payer-ready evidence outputs."

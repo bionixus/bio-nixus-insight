@@ -12,7 +12,6 @@ export const egyptHealthcareEn: CountryListicleConfig = {
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-egypt-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-egypt-2026' },
-    { lang: 'ar', href: 'https://www.bionixus.com/ar/insights/top-healthcare-market-research-companies-egypt-2026' },
     { lang: 'x-default', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-egypt-2026' },
   ],
   ogLocale: 'en_EG',
@@ -258,7 +257,7 @@ export const egyptHealthcareEn: CountryListicleConfig = {
       label: 'Healthcare Market Research Companies in Jordan',
     },
     {
-      to: '/insights/top-healthcare-market-research-companies-morocco-2026',
+      to: '/healthcare-market-research/morocco',
       label: 'Healthcare Market Research Companies in Morocco',
     },
     {
