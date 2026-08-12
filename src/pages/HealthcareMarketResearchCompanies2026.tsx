@@ -295,6 +295,7 @@ export default function HealthcareMarketResearchCompanies2026() {
     headline: 'Top 15 Healthcare Market Research Companies (2026)',
     description:
       'Independent 2026 guide to the leading healthcare and pharmaceutical market research companies — global data platforms, dedicated healthcare agencies, and regional specialists compared by capability.',
+    image: 'https://www.bionixus.com/og-image.png',
     url: CANONICAL,
     datePublished: '2026-07-21',
     dateModified: '2026-07-21',

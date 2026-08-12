@@ -29,6 +29,21 @@ import {
   developedMarketMedtechPaths,
 } from './data/app-route-registries.mjs';
 
+// Sanity fetches below race a manual timeout (see fetchSanitySlugs) and log a
+// warning + continue when they lose the race. But the losing `client.fetch()`
+// call keeps running in the background holding an open socket; if that socket
+// later errors (ECONNRESET, blocked connection, etc.) after the race/try-catch
+// has already moved on, Node treats it as an unhandled 'error' event and kills
+// the whole process -- silently failing prebuild and the entire deploy over a
+// transient Sanity network blip that the script already intended to tolerate.
+// Same failure class fixed in server.js; mirrored here for the build step.
+process.on('uncaughtException', (err) => {
+  console.warn('Sitemap: ignoring late/orphaned error after a Sanity fetch lost its timeout race:', err?.message || err);
+});
+process.on('unhandledRejection', (err) => {
+  console.warn('Sitemap: ignoring late/orphaned rejection after a Sanity fetch lost its timeout race:', err?.message || err);
+});
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
 const publicDir = join(root, 'public');

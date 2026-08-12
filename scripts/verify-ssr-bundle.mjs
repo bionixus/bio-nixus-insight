@@ -7,6 +7,21 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+// Despite the "offline-safe" design intent above, rendering '/' triggers a
+// background Sanity fetch for the homepage's latest-insights section even
+// with no seeded initialData. If that fetch's underlying socket errors out
+// asynchronously (ECONNRESET, blocked connection, etc.) after the request
+// itself already failed/caught, Node treats it as an unhandled 'error' event
+// and kills this process -- failing the whole `npm run build` (and the
+// deploy) over a transient network blip this script was never meant to
+// depend on. Same failure class fixed in server.js and generate-sitemap.mjs.
+process.on('uncaughtException', (err) => {
+  console.warn('verify-ssr-bundle: ignoring late/orphaned error from a background fetch:', err?.message || err);
+});
+process.on('unhandledRejection', (err) => {
+  console.warn('verify-ssr-bundle: ignoring late/orphaned rejection from a background fetch:', err?.message || err);
+});
+
 const root = path.dirname(fileURLToPath(import.meta.url));
 const entryPath = path.join(root, '..', 'dist', 'server', 'server-entry.js');
 

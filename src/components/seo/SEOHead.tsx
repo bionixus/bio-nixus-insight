@@ -22,10 +22,9 @@ const ARTICLE_TYPES = new Set(['Article', 'BlogPosting', 'NewsArticle']);
 /**
  * Backfills required Article/BlogPosting/NewsArticle properties (image,
  * description, url, mainEntityOfPage) from page-level SEO data when a caller
- * hand-rolls a JSON-LD node without them — e.g. the market-report pages that
- * pass a bare `{ '@type': 'Article', headline, author, publisher, ... }`
- * literal into `jsonLd`. Non-Article nodes and already-complete fields pass
- * through untouched.
+ * hand-rolls a bare Article-type JSON-LD node (headline, author, publisher,
+ * etc.) without them into `jsonLd`. Non-Article nodes and already-complete
+ * fields pass through untouched.
  */
 export function normalizeJsonLdNode(
   schema: object,
