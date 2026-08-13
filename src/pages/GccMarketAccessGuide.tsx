@@ -666,6 +666,18 @@ const GccMarketAccessGuide = () => {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
                 },
+                {
+                  q: 'How long does GCC pharmaceutical registration typically take?',
+                  a: 'Timelines vary by country and product class: Saudi SFDA often runs 8–18 months for pharmaceuticals; UAE MOHAP/DHA/DOH pathways may complete in 6–14 months when dossiers are complete; Kuwait and Oman can extend to 12–24 months when local testing or Arabic labelling revisions are required. BioNixus maps realistic sequencing across all six GCC markets rather than assuming parallel approval.',
+                },
+                {
+                  q: 'Should MedTech and pharma companies use different GCC access strategies?',
+                  a: 'Yes. Medical devices face SFDA/MOHAP device classification, hospital biomedical engineering committees, and tender scoring distinct from drug formulary processes. BioNixus runs separate procurement and clinician modules for MedTech while linking pharma programmes to Wasfaty, insurance formularies, and NUPCO frameworks where relevant.',
+                },
+                {
+                  q: 'How does BioNixus support GCC pricing and reimbursement research?',
+                  a: 'We interview payer-adjacent stakeholders, map external reference pricing baskets, and test willingness-to-pay and budget-impact narratives with hospital and insurer reviewers. Outputs connect to country healthcare market reports and HEOR consulting modules so economic models reflect field-validated assumptions.',
+                },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">
                   <summary className="text-lg font-display font-semibold text-foreground cursor-pointer list-none">
