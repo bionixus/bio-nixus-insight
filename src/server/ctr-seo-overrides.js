@@ -128,6 +128,36 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Bionixus HEOR consulting — economic models, RWE studies, payer evidence and value dossiers for pharma & medtech across emerging and developed markets.',
   },
+  '/insights/top-market-research-companies-italy-2026': {
+    title: 'Top Market Research Companies in Italy (2026 Ranked List)',
+    description:
+      'Ranked 2026 list of healthcare market research firms in Italy — AIFA payer research, IRCCS KOL access, EU5 benchmarking. Compare IQVIA, Ipsos & specialists.',
+  },
+  '/italy-portable-diagnostic-devices-market': {
+    title: 'Italy Portable Diagnostics Market 2026: POCT & Hospital Research',
+    description:
+      'Italy portable diagnostic devices market — POCT adoption, IRCCS vs ASL pathways, IVDR evidence, and hospital procurement intelligence by BioNixus.',
+  },
+  '/italy-medical-device-connectivity-market': {
+    title: 'Italy MedTech Connectivity 2026: HIS Integration & Digital Health',
+    description:
+      'Italy medical device connectivity market — HIS/LIS integration, cybersecurity gates, microservices adoption, and hospital IT coalition research by BioNixus.',
+  },
+  '/gcc-generic-pharmaceuticals-market': {
+    title: 'GCC Generic Pharmaceuticals Market 2026: Retail & Tender Intelligence',
+    description:
+      'GCC generic pharmaceuticals market — Wasfaty, pharmacist substitution, NUPCO tenders, and retail vs hospital channel research across all six Gulf states.',
+  },
+  '/bionixus-vs-iqvia-mena': {
+    title: 'BioNixus vs IQVIA MENA: GCC Healthcare Research Comparison (2026)',
+    description:
+      'Compare BioNixus and IQVIA for MENA pharma research — primary HCP fieldwork, hospital procurement, SFDA/MOHAP access, and agile GCC delivery vs syndicated data.',
+  },
+  '/bionixus-market-research-middle-east': {
+    title: 'BioNixus Middle East Market Research | GCC Pharma & Healthcare',
+    description:
+      'BioNixus Middle East market research — primary healthcare and pharmaceutical studies across GCC, Egypt, and wider MENA with bilingual fieldwork and access expertise.',
+  },
   '/blog/awiqli-insulin-icodec-weekly-fda-2026': {
     title: 'Awiqli (Insulin Icodec) FDA Approval 2026: What It Means',
     description:

@@ -245,6 +245,16 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       answer:
         'Yes. Cardiometabolic overlap is common; combined modules reduce duplicate fieldwork and clarify where messaging, access, and medical education should coordinate across specialty boundaries rather than compete for clinician attention.',
     },
+    {
+      question: 'How do lipid and anticoagulation inertia affect cardiovascular forecasts?',
+      answer:
+        'Many patients remain on suboptimal regimens because of monitoring burden, formulary step edits, or primary-care bandwidth—not clinical rejection of newer options. Research must measure where inertia sits in the pathway so medical and access teams target the right lever rather than repeating efficacy claims that do not move behaviour.',
+    },
+    {
+      question: 'How does BioNixus research post-event prescribing rituals?',
+      answer:
+        'Post-MI statin intensification, anticoagulation bridging after AF diagnosis, and GDMT uptitration after heart-failure admission often determine long-term share more than acute intervention enthusiasm. BioNixus maps who owns titration after the index event and where persistence decays across MENA, UK, and European systems.',
+    },
   ],
   'neurology-cns': [
     {
@@ -267,6 +277,16 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       answer:
         'We deliver centre concentration maps, KOL connectivity dossiers, persistence and discontinuation analysis, caregiver burden narratives, and access-risk registers tied to step therapy or funding exceptions—outputs medical, access, and brand teams can operationalise without reinterpretation.',
     },
+    {
+      question: 'How should neurology forecasts treat diagnostic delay and referral bottlenecks?',
+      answer:
+        'Treatable cohorts are often far smaller than epidemiologic prevalence because referral compression, testing throughput, and payer criteria shrink the initiation-eligible population. BioNixus builds bottom-up models from diagnosed, treatment-ready segments and maps where patients exit before reaching specialist initiation—not from top-down prevalence alone.',
+    },
+    {
+      question: 'Can neurology research integrate rare-disease and biosimilar modules?',
+      answer:
+        'Yes. Orphan franchises and biosimilar substitution corridors intersect neurology programmes (MS, epilepsy, migraine). Combined modules reduce duplicate fieldwork and clarify where messaging, access, and medical education should coordinate across specialty boundaries rather than compete for clinician attention.',
+    },
   ],
   'digital-health': [
     {
@@ -288,6 +308,16 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       question: 'How does BioNixus support digital health commercialisation?',
       answer:
         'We pair clinician adoption studies with payer-adjacent interviews, procurement stakeholder mapping, and pricing scenario tests—linking findings to diabetes, cardiology, or respiratory hubs where companion services intersect pharmaceutical franchises.',
+    },
+    {
+      question: 'What evidence do hospital IT committees require before connected-device budgets release?',
+      answer:
+        'Cybersecurity attestations, interoperability with HIS/LIS/PACS stacks, liability allocation, nursing workflow impact, and post-market surveillance data plans increasingly gate connected-device tenders. BioNixus interviews CIO, clinical engineering, and cybersecurity stakeholders to isolate which documentation pack unlocks budget—not only whether clinicians like dashboards.',
+    },
+    {
+      question: 'How does digital health research support SaMD and companion-app launches?',
+      answer:
+        'Software-as-a-medical-device and companion diagnostics need reimbursement coding clarity, clinical validation narratives, and operational outcome metrics that hospital committees can score. BioNixus aligns digital portfolios with the gates that control purchasing rather than demo enthusiasm alone.',
     },
   ],
   dermatology: [
@@ -337,6 +367,16 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       question: 'How does BioNixus support biosimilar launch and defence planning?',
       answer:
         'We deliver account-level substitution confidence maps, tender scenario notes, physician and pharmacist objection libraries, and uptake models linked to biologics hubs, immunology research, and country reports where hospital procurement dominates access.',
+    },
+    {
+      question: 'Which stakeholders matter most in biosimilar substitution research?',
+      answer:
+        'Hospital pharmacists with substitution authority, procurement scoring committees, nurses managing device familiarity, and physicians who retain originator preference often outweigh title-based specialist sampling. BioNixus weights stakeholders by pathway leverage for each molecule and administration setting.',
+    },
+    {
+      question: 'How should originators model biosimilar erosion in GCC tender markets?',
+      answer:
+        'Pair measured substitution confidence with NUPCO, MOH, and hospital framework calendars, cold-chain logistics constraints, and nurse training investment. Erosion curves that ignore tender rescoring or pharmacist mandate timing routinely overstate speed versus BioNixus field evidence.',
     },
   ],
 };

@@ -118,8 +118,42 @@ function buildProcess(label: string) {
   };
 }
 
+/** Extra FAQ blocks for pages within ~100 words of the 2,000-word SEO threshold (Aug 2026 audit). */
+const NEAR_THRESHOLD_MEDTECH_EXTRA_FAQS: Partial<
+  Record<DevelopedMarketMedtechSlug, Array<{ question: string; answer: string }>>
+> = {
+  spain: [
+    {
+      question: 'How do autonomous community procurement rules affect MedTech research in Spain?',
+      answer:
+        'CatSalut, SERMAS Madrid, and SAS Andalusia run distinct tender calendars and formulary adoption rhythms — often twelve to eighteen months apart for the same AEMPS-listed device. BioNixus segments hospital pharmacy, biomedical engineering, and regional procurement interviews by target autonomous community so adoption forecasts do not treat Spain as a single national average.',
+    },
+  ],
+  denmark: [
+    {
+      question: 'How does Danish hospital procurement differ from other EU5 MedTech markets?',
+      answer:
+        'Denmark\'s five regional health authorities (Regioner) coordinate procurement through Amgros and hospital pharmacy consortia with strong pharmacoeconomic scoring. BioNixus maps which evidence formats — Danish Medicines Council assessments, regional tender specs, and hospital value-analysis committee questions — actually gate listing for your device class.',
+    },
+  ],
+  malaysia: [
+    {
+      question: 'What regulatory context should Malaysia MedTech research include?',
+      answer:
+        'Medical Device Authority (MDA) classification, Conformity Assessment Body pathways, and Ministry of Health hospital procurement scoring shape how quickly imported devices reach Malaysian procedure volumes. BioNixus pairs clinician adoption modules with distributor and hospital procurement research so launch plans reflect MDA documentation and public-hospital tender reality — not ASEAN desk averages alone.',
+    },
+  ],
+  poland: [
+    {
+      question: 'How does NFZ reimbursement affect MedTech adoption research in Poland?',
+      answer:
+        'NFZ (Narodowy Fundusz Zdrowia) benefit packages and hospital tariff rules determine whether novel devices move beyond pilot use in Polish public hospitals. BioNixus researches URPL registration context alongside NFZ-funded procedure economics and regional hospital group procurement so manufacturers understand both regulatory clearance and funded-utilisation pathways.',
+    },
+  ],
+};
+
 function buildFaqs(country: DevelopedMarketMedtechCountry): ServiceLandingExpandedContent['faqs'] {
-  return [
+  const base: ServiceLandingExpandedContent['faqs'] = [
     {
       question: `Who is the best MedTech market research company in ${country.label}?`,
       answer: `BioNixus is a specialist MedTech and medical devices market research company in ${country.label}, delivering ${country.regulatorShort}-aware hospital procurement research, clinician adoption studies, KOL mapping, and competitive intelligence for manufacturers launching or defending device portfolios. BioNixus combines primary research depth with verified specialist networks across ${country.label} academic health science centres and high-volume community hospitals — with governance suitable for multinational medical affairs and commercial teams.`,
@@ -145,6 +179,8 @@ function buildFaqs(country: DevelopedMarketMedtechCountry): ServiceLandingExpand
       answer: `BioNixus verifies physician credentials, specialty, and practice setting before inclusion; uses structured screeners aligned to procedure volume where relevant; and applies daily quality-funnel governance during fieldwork. For hospital procurement stakeholders, verification includes role confirmation and institution type. This three-layer approach consistently outperforms unverified panels on specialty alignment and ${country.label}-specific clinical experience.`,
     },
   ];
+  const extra = NEAR_THRESHOLD_MEDTECH_EXTRA_FAQS[country.slug];
+  return extra ? [...base, ...extra] : base;
 }
 
 function buildExpandedContent(country: DevelopedMarketMedtechCountry): ServiceLandingExpandedContent {

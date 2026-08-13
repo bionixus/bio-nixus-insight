@@ -48,6 +48,11 @@ const faqItems = [
     answer:
       'Yes. Chinese modules can run with comparable cells in Japan, South Korea, Singapore, Australia, and global markets — using consistent instruments. This enables global portfolio committees managing Asia-Pacific launch sequencing and NHSA-to-PMDA-to-HIRA payer benchmarking from one research partner.',
   },
+  {
+    question: 'How do NHSA NRDL and VBP procurement affect China market research design?',
+    answer:
+      'NMPA approval alone does not predict commercial uptake — NHSA NRDL annual negotiation, VBP centralized tendering, and provincial PRLS supplementary listing each reset price and access assumptions. BioNixus embeds payer-adjacent and procurement modules so forecasts reflect NRDL listing probability, VBP price-reset risk, and Tier 3A hospital formulary behaviour rather than physician enthusiasm in isolation.',
+  },
 ];
 
 const jsonLd = [

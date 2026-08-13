@@ -48,6 +48,11 @@ const faqItems = [
     answer:
       'Yes. Italian modules can run with comparable cells in Germany, France, Spain, and the UK — and beyond to the USA, Canada, Japan, and other markets — using consistent instruments for global portfolio committees managing EU5 and multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How does AIFA CTS and CPR pricing affect Italian healthcare research design?',
+    answer:
+      'AIFA classifies innovation through CTS (Commissione Tecnico Scientifica) and negotiates price through CPR (Commissione Prezzi e Rimborsi). Research programmes must reflect which evidence formats — budget impact, comparative effectiveness, and regional SSR add-on requirements — committees request before PFN listing. BioNixus embeds payer-adjacent modules so commercial narratives align with negotiation reality rather than clinical enthusiasm alone.',
+  },
 ];
 
 const jsonLd = [
