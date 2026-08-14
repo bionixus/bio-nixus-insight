@@ -335,6 +335,8 @@ export default function HealthcareMarketResearchSweden() {
                 { to: '/pharmaceutical-market-research-sweden', label: 'Swedish pharmaceutical market research' },
                 { to: '/insights/top-market-research-companies-sweden-2026', label: 'Top market research companies Sweden 2026' },
                 { to: '/insights/top-healthcare-market-research-companies-sweden-2026', label: 'Top healthcare MR companies Sweden 2026' },
+                { to: '/insights/top-healthcare-market-research-companies-norway-2026', label: 'Top healthcare MR companies Norway 2026' },
+                { to: '/healthcare-market-research-norway', label: 'Healthcare market research Norway' },
                 { to: '/healthcare-market-research', label: 'Healthcare market research' },
               ].map((link) => (
                 <Link

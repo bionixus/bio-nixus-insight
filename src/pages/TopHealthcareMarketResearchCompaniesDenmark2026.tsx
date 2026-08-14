@@ -704,19 +704,19 @@ export default function TopHealthcareMarketResearchCompaniesDenmark2026() {
                   desc: 'DKMA-aligned pharmaceutical research covering HCP surveys, KOL mapping, Medicinrådet payer research, and AMGROS tender intelligence.',
                 },
                 {
-                  to: '/insights/top-market-research-companies-denmark-2026',
-                  label: 'Top Market Research Companies Denmark 2026',
-                  desc: 'General and consumer market research firms across Denmark for 2026.',
+                  to: '/insights/top-healthcare-market-research-companies-norway-2026',
+                  label: 'Top Healthcare Market Research Companies Norway 2026',
+                  desc: 'Leading healthcare and pharmaceutical market research firms in Norway — NoMA-aligned, Nye Metoder / Sykehusinnkjøp payer research, and HELFO reimbursement studies.',
                 },
                 {
-                  to: '/insights/top-healthcare-market-research-companies-germany-2026',
-                  label: 'Top Healthcare Market Research Companies Germany 2026',
-                  desc: 'Leading healthcare and pharmaceutical market research firms in Germany — G-BA/AMNOG-aligned, German hospital KOL access, and GKV payer research.',
+                  to: '/insights/top-healthcare-market-research-companies-sweden-2026',
+                  label: 'Top Healthcare Market Research Companies Sweden 2026',
+                  desc: 'Leading healthcare and pharmaceutical market research firms in Sweden — TLV-aligned Nordic peer guide.',
                 },
                 {
-                  to: '/insights/top-healthcare-market-research-companies-new-zealand-2026',
-                  label: 'Top Healthcare Market Research Companies New Zealand 2026',
-                  desc: 'Leading healthcare and pharmaceutical market research firms in New Zealand — HDEC-compliant, NZ hospital KOL access, PHARMAC payer research, and Pharmaceutical Schedule intelligence.',
+                  to: '/insights/top-healthcare-market-research-companies-europe-2026',
+                  label: 'Top Healthcare Market Research Companies Europe 2026',
+                  desc: 'Europe healthcare market research companies — Nordic and EU5 buyer guide.',
                 },
               ].map((r) => (
                 <Link

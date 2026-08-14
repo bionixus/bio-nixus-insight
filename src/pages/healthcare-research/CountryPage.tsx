@@ -881,6 +881,13 @@ export default function CountryPage() {
                   description="Securing NHS commissioning and managing cost-effectiveness."
                 />
               )}
+              {config.slug === 'europe' && (
+                <HealthcareNavCard
+                  to="/insights/top-healthcare-market-research-companies-europe-2026"
+                  title="Top healthcare market research companies in Europe (2026)"
+                  description="EMA/HTA-aware firms ranked for EU5 HCP research, KOL mapping, and MENA↔EU bridge programmes."
+                />
+              )}
             </div>
         </ReportPremiumSection>
       )}

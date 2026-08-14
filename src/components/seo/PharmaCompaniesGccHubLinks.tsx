@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { PHARMA_GUIDE_INNER, PHARMA_GUIDE_SECTION_X } from '@/components/report-conversion/constants';
+import { COUNTRY_LABELS } from '@/components/seo/pharmaCompaniesCountryLabels';
 
 export type PharmaCompaniesCountrySlug =
   | 'kuwait'
@@ -9,11 +10,20 @@ export type PharmaCompaniesCountrySlug =
   | 'uae'
   | 'saudi-arabia'
   | 'egypt'
-  | 'iran';
+  | 'iran'
+  | 'usa'
+  | 'uk'
+  | 'germany'
+  | 'brazil'
+  | 'canada';
 
-import { COUNTRY_LABELS } from '@/components/seo/pharmaCompaniesCountryLabels';
+/** GCC/MENA slugs that share the Gulf hub-link cluster (not USA/UK/EU/LATAM/CA). */
+export type PharmaCompaniesGccSlug = Extract<
+  PharmaCompaniesCountrySlug,
+  'kuwait' | 'oman' | 'qatar' | 'bahrain' | 'uae' | 'saudi-arabia' | 'egypt' | 'iran'
+>;
 
-const PEER_SLUGS: PharmaCompaniesCountrySlug[] = [
+export const PHARMA_COMPANIES_GCC_SLUGS: PharmaCompaniesGccSlug[] = [
   'kuwait',
   'oman',
   'qatar',
@@ -24,7 +34,9 @@ const PEER_SLUGS: PharmaCompaniesCountrySlug[] = [
   'iran',
 ];
 
-const HAS_COUNTRY_MR_HUB: Partial<Record<PharmaCompaniesCountrySlug, string>> = {
+const PEER_SLUGS: PharmaCompaniesGccSlug[] = PHARMA_COMPANIES_GCC_SLUGS;
+
+const HAS_COUNTRY_MR_HUB: Partial<Record<PharmaCompaniesGccSlug, string>> = {
   kuwait: 'kuwait',
   oman: 'oman',
   qatar: 'qatar',
@@ -35,7 +47,7 @@ const HAS_COUNTRY_MR_HUB: Partial<Record<PharmaCompaniesCountrySlug, string>> = 
 };
 
 /** Country-level report slugs — completes the hub/pharma-companies/report triad. */
-const HAS_COUNTRY_REPORTS: Partial<Record<PharmaCompaniesCountrySlug, string>> = {
+const HAS_COUNTRY_REPORTS: Partial<Record<PharmaCompaniesGccSlug, string>> = {
   kuwait: 'kuwait',
   oman: 'oman',
   qatar: 'qatar',
@@ -46,7 +58,7 @@ const HAS_COUNTRY_REPORTS: Partial<Record<PharmaCompaniesCountrySlug, string>> =
 };
 
 type Props = {
-  country: PharmaCompaniesCountrySlug;
+  country: PharmaCompaniesGccSlug;
 };
 
 /**

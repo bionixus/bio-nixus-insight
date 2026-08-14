@@ -129,6 +129,15 @@ const GCC_PHARMA_COMPANIES_DIRECTORIES = [
   { to: '/pharmaceutical-companies-bahrain', title: 'Pharmaceutical companies in Bahrain' },
 ];
 
+/** Major non-GCC pharmaceutical company directories (Wave 2). */
+const GLOBAL_PHARMA_COMPANIES_DIRECTORIES = [
+  { to: '/pharmaceutical-companies-usa', title: 'Pharmaceutical companies in USA' },
+  { to: '/pharmaceutical-companies-uk', title: 'Pharmaceutical companies in UK' },
+  { to: '/pharmaceutical-companies-germany', title: 'Pharmaceutical companies in Germany' },
+  { to: '/pharmaceutical-companies-brazil', title: 'Pharmaceutical companies in Brazil' },
+  { to: '/pharmaceutical-companies-canada', title: 'Pharmaceutical companies in Canada' },
+];
+
 /** Every live `/healthcare-market-research/{slug}` country hub, grouped for navigation. */
 const ALL_HUB_COUNTRY_GROUPS: { region: string; slugs: string[] }[] = [
   {
@@ -137,7 +146,7 @@ const ALL_HUB_COUNTRY_GROUPS: { region: string; slugs: string[] }[] = [
   },
   {
     region: 'Europe',
-    slugs: ['uk', 'germany', 'france', 'italy', 'spain', 'europe'],
+    slugs: ['uk', 'germany', 'france', 'italy', 'spain', 'denmark', 'sweden', 'norway', 'europe'],
   },
   {
     region: 'MENA & GCC',
@@ -342,6 +351,14 @@ export default function HubPage() {
             ]}
             summary="Use the country and therapy entry points below to scope a programme — or request a tailored proposal through BioNixus contact."
           />
+          <div className="mt-8">
+            <HealthcareNavCard
+              to="/healthcare-market-research-companies"
+              title="Top healthcare market research companies"
+              description="Vendor selection shortlist for healthcare market research companies and agencies — global ranking plus USA, Europe, and MENA gateways."
+              featured
+            />
+          </div>
         </div>
       </section>
 
@@ -472,6 +489,7 @@ export default function HubPage() {
             <HealthcareNavCard
               to="/healthcare-market-research-agency-gcc"
               title="Healthcare market research agency GCC"
+              description="GCC-agency long-tail only — SFDA, MOHAP, and Gulf fieldwork for regional launch and access programmes (not the global companies shortlist)."
             />
             <HealthcareNavCard
               to="/healthcare-market-research/therapy/oncology"
@@ -642,6 +660,25 @@ export default function HubPage() {
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {GCC_PHARMA_COMPANIES_DIRECTORIES.map((directory) => (
+            <HealthcareNavCard key={directory.to} to={directory.to} title={directory.title} />
+          ))}
+        </div>
+      </ReportPremiumSection>
+
+      <ReportPremiumSection
+        id="global-pharma-company-directories"
+        title="Pharmaceutical company directories — USA, UK, Europe &amp; Americas"
+        variant="muted"
+      >
+        <p className="text-muted-foreground leading-relaxed mb-6 max-w-4xl">
+          Ranked pharmaceutical company guides for major non-GCC markets, cross-linked to the{' '}
+          <Link to="/healthcare-market-research" className="text-primary hover:underline">
+            healthcare market research hub
+          </Link>{' '}
+          and country healthcare research listicles.
+        </p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {GLOBAL_PHARMA_COMPANIES_DIRECTORIES.map((directory) => (
             <HealthcareNavCard key={directory.to} to={directory.to} title={directory.title} />
           ))}
         </div>
@@ -907,7 +944,7 @@ export default function HubPage() {
               className="block p-5 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors"
             >
               <h3 className="text-base font-semibold text-foreground mb-2">Healthcare Market Research Agency GCC</h3>
-              <p className="text-sm text-muted-foreground">BOFU guide for selecting a GCC healthcare and pharma research partner.</p>
+              <p className="text-sm text-muted-foreground">GCC-agency long-tail for selecting a Gulf healthcare and pharma research partner — not the global companies ranking.</p>
             </Link>
             <Link
               to="/market-research-saudi-arabia-pharmaceutical"

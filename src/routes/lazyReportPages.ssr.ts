@@ -66,3 +66,8 @@ export { default as OmanPharmaCompanies } from '@/pages/OmanPharmaCompanies';
 export { default as BahrainPharmaCompanies } from '@/pages/BahrainPharmaCompanies';
 export { default as IraqPharmaCompanies } from '@/pages/IraqPharmaCompanies';
 export { default as IranPharmaCompanies } from '@/pages/IranPharmaCompanies';
+export { default as UsaPharmaCompanies } from '@/pages/UsaPharmaCompanies';
+export { default as UkPharmaCompanies } from '@/pages/UkPharmaCompanies';
+export { default as GermanyPharmaCompanies } from '@/pages/GermanyPharmaCompanies';
+export { default as BrazilPharmaCompanies } from '@/pages/BrazilPharmaCompanies';
+export { default as CanadaPharmaCompanies } from '@/pages/CanadaPharmaCompanies';

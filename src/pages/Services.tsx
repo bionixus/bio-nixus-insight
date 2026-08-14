@@ -26,7 +26,7 @@ const recoveryLinkLabels: Record<string, string> = {
   '/blog/pharmaceutical-healthcare-market-research-gcc': 'Pharmaceutical Market Research in the GCC',
   '/blog/pharmaceutical-market-research-uk-2026': 'Pharmaceutical Market Research in the UK (2026 Guide)',
   '/blog/quantitative-market-research-and-market-access': 'Quantitative Market Research and Market Access',
-  '/blog/top-healthcare-market-research-companies-mena': 'Top Healthcare Market Research Companies in MENA',
+  '/insights/top-healthcare-market-research-companies-mena-2026': 'Top Healthcare Market Research Companies in MENA',
   '/healthcare-market-research/algeria': 'Healthcare Market Research in Algeria',
   '/healthcare-market-research/bahrain': 'Healthcare Market Research in Bahrain',
 };
