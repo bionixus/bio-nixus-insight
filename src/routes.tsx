@@ -42,6 +42,7 @@ import { buildIndustryMatrixRoutes } from '@/data/industryMatrixRoutes';
 import { buildDevelopedMarketMedtechRoutes } from '@/data/developedMarketMedtechRoutes';
 import { buildSpecialtyMarketDemandRoutes } from '@/data/specialtyMarketDemandRoutes';
 import { buildCountryKeywordRoutes } from '@/data/countryKeywordRoutes';
+import { SEGMENT_MARKET_SLUGS } from '@/data/segmentMarketIndex';
 import BionixusIndustries from '@/pages/industries/BionixusIndustries';
 import BionixusIndustriesInsights from '@/pages/industries/BionixusIndustriesInsights';
 import IndustrySegmentPage from '@/pages/industries/IndustrySegmentPage';
@@ -193,6 +194,7 @@ import {
   TurkeyHealthcareMarketReport,
   TurkeyMedicalDevicesMarketReport,
   HealthcareReportPage,
+  SegmentMarketRoute,
   BlogPost,
   CaseStudy,
   PressReleasePage,
@@ -723,6 +725,11 @@ export const routes: RouteObject[] = [
   ...buildDevelopedMarketMedtechRoutes(),
   ...buildSpecialtyMarketDemandRoutes(),
   ...buildCountryKeywordRoutes(),
+  /** Geography x segment market pages; one shared lazy chunk holds all page copy. */
+  ...SEGMENT_MARKET_SLUGS.map((slug) => ({
+    path: `/${slug}`,
+    element: suspensePage(<SegmentMarketRoute />),
+  })),
   { path: '/admin/dashboard', element: suspensePage(<AdminDashboard />) },
   { path: '/admin/login', element: suspensePage(<AdminLogin />) },
   { path: '/admin/import-subscribers', element: suspensePage(<AdminImportSubscribers />) },

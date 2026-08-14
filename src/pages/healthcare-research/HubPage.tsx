@@ -14,6 +14,7 @@ import {
   PHARMA_INSIGHTS_PAGES,
   RWE_COUNTRY_PAGES,
 } from '@/data/countryKeywordPages';
+import { getGroupedSegmentMarketIndex } from '@/data/segmentMarketIndex';
 import { healthcareCountryRecoveryPaths } from '@/lib/internalLinkRecovery';
 import { HubMarketReferenceGuide } from '@/components/seo/HubMarketReferenceGuide';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
@@ -1013,6 +1014,40 @@ export default function HubPage() {
               >
                 {page.countryName}
               </Link>
+            ))}
+          </div>
+      </ReportPremiumSection>
+
+      <ReportPremiumSection
+        id="segment-market-intelligence"
+        title="Market segment intelligence by geography"
+        subtitle="Commissioned primary research on specific market segments across Saudi Arabia, the GCC, the wider Middle East, and Turkey."
+      >
+          <p className="text-muted-foreground leading-relaxed mb-6 max-w-4xl">
+            Each page below covers one geography and one market segment — what we research, how the segment is structured,
+            who we interview, and how we size it. These are commissioned study scopes, not syndicated reports. For the
+            regional solutions map, start from{' '}
+            <Link to="/bionixus-middle-east-africa" className="text-primary font-medium hover:underline">
+              BioNixus Middle East &amp; Africa
+            </Link>
+            .
+          </p>
+          <div className="space-y-6">
+            {getGroupedSegmentMarketIndex().map((section) => (
+              <div key={section.group}>
+                <h3 className="text-base font-semibold text-foreground mb-2">{section.label}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {section.entries.map((entry) => (
+                    <Link
+                      key={entry.slug}
+                      to={`/${entry.slug}`}
+                      className="px-3 py-2 rounded-md border border-border bg-card text-sm text-foreground hover:border-primary/40 transition-colors"
+                    >
+                      {entry.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
       </ReportPremiumSection>

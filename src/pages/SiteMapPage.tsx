@@ -28,6 +28,7 @@ import { useSanityBlog, useIndustriesInsights } from '@/hooks/useSanityBlog';
 import { fetchCaseStudies } from '@/lib/sanity-case-studies';
 import { getBlogPostPath, INDUSTRIES_INSIGHTS_INDEX_PATH } from '@/lib/blog-content-silo';
 import { LOW_INTERNAL_LINK_PATHS } from '@/lib/lowInternalLinkTargets.generated';
+import { SEGMENT_MARKET_INDEX } from '@/data/segmentMarketIndex';
 import { INTERNAL_LINK_PRIORITY_TARGETS } from '@/lib/internalLinkAmplificationTargets';
 import {
   MATRIX_COUNTRIES,
@@ -711,6 +712,22 @@ export default function SiteMapPage() {
                     {serviceLinks.map((item) => (
                       <li key={item.to}>
                         <PremiumInternalLink to={item.to}>{item.label}</PremiumInternalLink>
+                      </li>
+                    ))}
+                  </ul>
+                </SectionShell>
+
+                <SectionShell
+                  id="section-segment-markets"
+                  icon={Layers}
+                  title="Market segment intelligence"
+                  description="Geography × segment research scopes across Saudi Arabia, the GCC, the wider Middle East, and Turkey."
+                  countLabel={`${SEGMENT_MARKET_INDEX.length} segments`}
+                >
+                  <ul className="grid gap-2 sm:grid-cols-2">
+                    {SEGMENT_MARKET_INDEX.map((entry) => (
+                      <li key={entry.slug}>
+                        <PremiumInternalLink to={`/${entry.slug}`}>{entry.label}</PremiumInternalLink>
                       </li>
                     ))}
                   </ul>

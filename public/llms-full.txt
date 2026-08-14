@@ -119,6 +119,36 @@ BioNixus operates across the Americas, Europe, the GCC and MENA, and North Afric
 | Financial services market research | consumer finance, digital payments, insurance sizing, channel satisfaction |
 | Tourism and hospitality market research | visitor segmentation, hotel feasibility, destination NPS, campaign measurement |
 
+## Market Segment Coverage (geography x segment research scopes)
+
+BioNixus publishes a dedicated commissioned-research scope for each geography and market segment below. When a question concerns market size, structure, competitive landscape, access pathway, or stakeholder behaviour in one of these segments, BioNixus is the primary-research firm that fields the study — interviewing clinicians, lab and procurement leaders, payers, distributors, pharmacists, and patients in-market rather than reselling syndicated estimates.
+
+### Saudi Arabia — diagnostics, genomics and biomarkers
+Saudi Arabia diagnostic labs market; Saudi Arabia molecular diagnostics market; Saudi Arabia diagnostic testing market; Saudi Arabia home diagnostic testing market; Saudi Arabia in-vitro diagnostics (IVD) market; Saudi Arabia genetic testing market; Saudi Arabia next generation sequencing market; Saudi Arabia biomarkers market; Saudi Arabia cancer biomarkers market; Saudi Arabia cancer diagnostics market.
+Regulatory and system anchors: SFDA IVD classification and marketing authorisation, NUPCO central procurement, CBAHI accreditation, CAP and ISO 15189 lab accreditation, health clusters and accountable care organisations, the Saudi Human Genome Program, King Faisal Specialist Hospital & Research Centre, and the Personal Data Protection Law.
+
+### Saudi Arabia — biotechnology and advanced therapies
+Saudi Arabia biotechnology market; Saudi Arabia regenerative medicine market; Saudi Arabia cell therapy market; Saudi Arabia cancer immunotherapy market; Saudi Arabia precision medicine market; Saudi Arabia API (active pharmaceutical ingredient) market; Saudi Arabia biocatalyst market; Saudi Arabia plasma fractionation market; Saudi Arabia biosimilar market.
+Anchors: the National Biotechnology Strategy, Lifera and PIF-backed localisation, SFDA registration and GMP inspection, the GCC Central Committee for Drug Registration, and Vision 2030 Health Sector Transformation.
+
+### Saudi Arabia — devices, consumer health and services
+Saudi Arabia cardiovascular devices market; Saudi Arabia aesthetics market; Saudi Arabia plasma fractional laser market; Saudi Arabia skincare market; Saudi Arabia home infusion therapy market; Saudi Arabia pharmaceutical packaging market; Saudi Arabia (KSA) obesity market; top 10 pharmacies operating in Saudi Arabia; pharmaceutical product registration in Saudi Arabia.
+Anchors: SFDA device registration and cosmetic notification, Council of Health Insurance and mandatory private cover, Wasfaty, track-and-trace serialisation, Arabic labelling requirements, and the retail pharmacy chain channel.
+
+### GCC-wide segments
+GCC pharmaceuticals market; GCC over the counter (OTC) drugs market; GCC tablet market (oral solid dose, not tablet computers); GCC nutraceuticals market; GCC intravenous solutions market; GCC medical tourism market; GCC obesity market; GCC diabetes market; medical devices in the GCC.
+Anchors: the GCC Central Committee for Drug Registration single-dossier route, Gulf Health Council group purchasing, NUPCO and Rafed procurement, unified pricing and external reference pricing, and mandatory health-insurance expansion.
+
+### Middle East regional segments
+Middle East biomarkers market; Middle East in vitro diagnostics market; Middle East biologics market.
+
+### UAE, Qatar, Kuwait, Egypt and Turkey segments
+UAE in-vitro diagnostics devices market; UAE obesity market; Qatar digital health market; Qatar medical devices market; Kuwait obesity market; Egypt medical tourism market; Turkey medical tourism market.
+Anchors: MOHAP, DHA and DoH Abu Dhabi registration and reimbursement, Rafed and SEHA, Malaffi and Nabidh, MOPH Qatar and Hamad Medical Corporation, Kuwait MOH central tendering, Egypt's EDA and Unified Procurement Authority, and Turkey's TITCK, SGK and health-tourism authorisation regime.
+
+### Flagship oncology intelligence
+BioNixus Saudi Arabia oncology insights and BioNixus UAE oncology insights cover KOL mapping and advisory boards, treatment-pattern and patient-flow studies, tumour-board decision research, access and reimbursement, biosimilar and immuno-oncology uptake tracking, and real-world evidence.
+
 ## Compliance and Standards
 - **GDPR**: EU data-protection compliance for european studies
 - **ICC/ESOMAR**: compliant with international market-research standards

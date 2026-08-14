@@ -28,6 +28,7 @@ import {
   marketReportCountryHubSlugs,
   industryGlobalHubSlugs,
   developedMarketMedtechPaths,
+  segmentMarketPaths,
 } from './data/app-route-registries.mjs';
 
 // Sanity fetches below race a manual timeout (see fetchSanitySlugs) and log a
@@ -876,6 +877,7 @@ function buildStaticRoutes() {
     });
   }
   routes.push(...developedMarketMedtechPaths);
+  routes.push(...segmentMarketPaths);
   return routes;
 }
 

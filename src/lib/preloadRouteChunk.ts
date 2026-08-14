@@ -11,6 +11,8 @@
  * calls in lazyReportPages.ts, so there is no extra network cost.
  */
 
+import { isSegmentMarketPath } from '@/data/segmentMarketIndex';
+
 type Importer = () => Promise<unknown>;
 
 /** Standalone country / medical-device report pages (file name follows the slug). */
@@ -70,6 +72,10 @@ const PREFIX_IMPORTS: Array<{ test: (path: string) => boolean; load: Importer }>
       !path.startsWith('/market-reports/therapy/') &&
       !path.startsWith('/market-reports/country/'),
     load: () => import('@/pages/HealthcareReportPage'),
+  },
+  {
+    test: (path) => isSegmentMarketPath(path),
+    load: () => import('@/pages/SegmentMarketRoute'),
   },
   {
     test: (path) => path.startsWith('/news/') && path !== '/news/feed.xml',

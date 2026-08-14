@@ -32,12 +32,15 @@ async function loadModule(relativeEntry) {
   return import(pathToFileURL(outfile).href);
 }
 
-const [reportData, reportContent, industryHubs, medtechPages] = await Promise.all([
-  loadModule('src/data/healthcareReportData.ts'),
-  loadModule('src/data/healthcareReportContent.ts'),
-  loadModule('src/data/industryHubPages.ts'),
-  loadModule('src/data/developedMarketMedtechPages.ts'),
-]);
+const [reportData, reportContent, industryHubs, medtechPages, segmentMarkets, segmentMarketIndex] =
+  await Promise.all([
+    loadModule('src/data/healthcareReportData.ts'),
+    loadModule('src/data/healthcareReportContent.ts'),
+    loadModule('src/data/industryHubPages.ts'),
+    loadModule('src/data/developedMarketMedtechPages.ts'),
+    loadModule('src/data/segmentMarketPages.ts'),
+    loadModule('src/data/segmentMarketIndex.ts'),
+  ]);
 
 /** Every `/market-reports/{slug}` page: country x therapy rows plus pharma insight reports. */
 export const marketReportSlugs = reportData.REPORT_ENTRIES.map((entry) => entry.slug);
@@ -66,3 +69,29 @@ export const developedMarketMedtechPaths = medtechPages.DEVELOPED_MARKET_MEDTECH
   { path: medtechPages.getDevelopedMarketMedtechPath(slug), priority: '0.85', changefreq: 'monthly' },
   { path: medtechPages.getDevelopedMarketMedtechListiclePath(slug), priority: '0.8', changefreq: 'monthly' },
 ]);
+
+/**
+ * Geography x segment market landing pages (e.g. /saudi-arabia-molecular-diagnostics-market).
+ *
+ * Routing uses the lightweight segmentMarketIndex so the ~800KB content registry stays
+ * behind the lazy chunk. That means two lists exist, so fail the build the moment they
+ * diverge — a slug present in only one of them is either a 404 or an orphaned page.
+ */
+const contentSlugs = segmentMarkets.SEGMENT_MARKET_PAGES.map((page) => page.slug);
+const routedSlugs = segmentMarketIndex.SEGMENT_MARKET_SLUGS;
+const missingFromIndex = contentSlugs.filter((slug) => !routedSlugs.includes(slug));
+const missingFromContent = routedSlugs.filter((slug) => !contentSlugs.includes(slug));
+
+if (missingFromIndex.length > 0 || missingFromContent.length > 0) {
+  throw new Error(
+    'segmentMarketIndex.ts is out of sync with segmentMarketPages.ts.\n'
+      + `  Content pages with no route: ${missingFromIndex.join(', ') || 'none'}\n`
+      + `  Routed slugs with no content: ${missingFromContent.join(', ') || 'none'}`,
+  );
+}
+
+export const segmentMarketPaths = contentSlugs.map((slug) => ({
+  path: `/${slug}`,
+  priority: '0.88',
+  changefreq: 'monthly',
+}));

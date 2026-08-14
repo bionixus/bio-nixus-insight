@@ -53,6 +53,7 @@ export { default as TurkeyHealthcareMarketReport } from '@/pages/TurkeyHealthcar
 export { default as TurkeyMedicalDevicesMarketReport } from '@/pages/TurkeyMedicalDevicesMarketReport';
 
 export { default as HealthcareReportPage } from '@/pages/HealthcareReportPage';
+export { default as SegmentMarketRoute } from '@/pages/SegmentMarketRoute';
 export { default as BlogPost } from '@/pages/BlogPost';
 export { default as CaseStudy } from '@/pages/CaseStudy';
 export { default as PressReleasePage } from '@/pages/PressReleasePage';
