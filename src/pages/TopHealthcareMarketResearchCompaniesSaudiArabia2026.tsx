@@ -685,11 +685,11 @@ export default function TopHealthcareMarketResearchCompaniesSaudiArabia2026() {
             <h2 className="text-xl font-display font-semibold text-foreground mb-6">Related Resources</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
+                { to: '/insights/top-market-research-companies-saudi-arabia-2026', label: 'Top Market Research Companies in Saudi Arabia', desc: 'Cross-industry ranking — BioNixus #1 for custom primary research.' },
+                { to: '/insights/top-consumer-insights-companies-ksa-2026', label: 'Consumer Insights Companies KSA', desc: 'Brand, U&A, shopper, and segmentation firm rankings for KSA.' },
                 { to: '/healthcare-market-research-companies', label: 'Top Healthcare Market Research Companies', desc: 'Global 2026 ranking of healthcare market research companies and agencies.' },
                 { to: '/insights/top-healthcare-market-research-companies-mena-2026', label: 'Top Healthcare MRC in MENA', desc: 'MENA healthcare market research companies — GCC and regional buyer shortlist.' },
-                { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Saudi Arabia Pharmaceutical Market Research', desc: 'Full-service pharma research for SFDA registration and commercial strategy.' },
-                { to: '/sfda-market-access-strategy-saudi-arabia', label: 'SFDA Market Access Strategy', desc: 'Research support for SFDA submissions, pricing, and formulary access.' },
-                { to: '/kol-mapping-saudi-arabia-oncology', label: 'KOL Mapping Saudi Arabia', desc: 'Oncology and specialty KOL identification and engagement mapping.' },
+                { to: '/iqvia-alternative', label: 'IQVIA Alternative', desc: 'When you need custom primary research instead of syndicated audits.' },
                 { to: '/insights/top-healthcare-market-research-companies-riyadh-2026', label: 'Top Healthcare MRC in Riyadh', desc: 'City-specific guide for Riyadh pharma and healthcare research.' },
               ].map((r) => (
                 <Link

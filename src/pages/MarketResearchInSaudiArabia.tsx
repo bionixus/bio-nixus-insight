@@ -211,6 +211,10 @@ const content: GeneralMRPageContent = {
       to: '/insights/top-market-research-companies-saudi-arabia-2026',
       label: 'Top market research companies in Saudi Arabia (2026 guide)',
     },
+    {
+      to: '/insights/top-consumer-insights-companies-ksa-2026',
+      label: 'Consumer insights companies KSA (2026 guide)',
+    },
     { to: '/market-research-ksa', label: 'Pharma & healthcare market research KSA (hub)' },
     { to: '/pharmaceutical-companies-saudi-arabia', label: 'Top pharmaceutical companies in Saudi Arabia' },
     { to: '/market-research-in-uae', label: 'Research companies in UAE' },

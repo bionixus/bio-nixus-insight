@@ -66,6 +66,11 @@
   ],
   "redirects": [
     {
+      "source": "/insights/top-consumer-insights-companies-saudi-arabia-2026",
+      "destination": "/insights/top-consumer-insights-companies-ksa-2026",
+      "statusCode": 301
+    },
+    {
       "source": "/global-websites",
       "destination": "/healthcare-market-research",
       "statusCode": 301

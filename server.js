@@ -176,7 +176,8 @@ function buildFallbackTitle(pathname) {
   if (path === '/pt/insights/top-empresas-pesquisa-mercado-saude-brasil-2026') return '5 Melhores Empresas de Pesquisa de Mercado em Saúde no Brasil (2026) | ANVISA | BioNixus';
   if (path === '/es/insights/top-empresas-investigacion-mercado-argentina-2026') return '5 Mejores Empresas de Investigación de Mercado en Argentina (2026) | Rankings | BioNixus';
   if (path === '/es/insights/top-empresas-investigacion-mercado-salud-argentina-2026') return '5 Mejores Empresas de Investigación de Mercado en Salud en Argentina (2026) | ANMAT | BioNixus';
-  if (path === '/insights/top-market-research-companies-saudi-arabia-2026') return '6 Best Market Research Companies in Saudi Arabia (2026) | KSA Agency Rankings | BioNixus';
+  if (path === '/insights/top-market-research-companies-saudi-arabia-2026') return 'Top Market Research Companies in Saudi Arabia 2026 | BioNixus';
+  if (path === '/insights/top-consumer-insights-companies-ksa-2026') return 'Consumer Insights Companies KSA 2026 | BioNixus';
   if (path === '/insights/top-market-research-companies-uae-2026') return '6 Best Market Research Companies in the UAE (2026) | Agency Rankings | BioNixus';
   if (path === '/insights/top-market-research-companies-dubai-2026') return '6 Best Market Research Companies in Dubai (2026) | UAE Agency Rankings | BioNixus';
   if (path === '/insights/top-market-research-companies-abu-dhabi-2026') return '6 Best Market Research Companies in Abu Dhabi (2026) | UAE Agency Rankings | BioNixus';

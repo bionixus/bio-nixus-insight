@@ -67,6 +67,7 @@ function routeProvidesOwnDocumentHead(pathname: string): boolean {
   if (path === '/es/insights/top-empresas-investigacion-mercado-argentina-2026') return true;
   if (path === '/es/insights/top-empresas-investigacion-mercado-salud-argentina-2026') return true;
   if (path === '/insights/top-market-research-companies-saudi-arabia-2026') return true;
+  if (path === '/insights/top-consumer-insights-companies-ksa-2026') return true;
   if (path === '/insights/top-market-research-companies-uae-2026') return true;
   if (path === '/insights/top-market-research-companies-dubai-2026') return true;
   if (path === '/insights/top-market-research-companies-abu-dhabi-2026') return true;

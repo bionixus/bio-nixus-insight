@@ -13,6 +13,7 @@ export const DEDICATED_INDUSTRY_LISTICLE_PATHS = new Set<string>([
   '/insights/top-healthcare-market-research-companies-kuwait-2026',
   '/insights/top-healthcare-market-research-companies-riyadh-2026',
   '/insights/top-market-research-companies-saudi-arabia-2026',
+  '/insights/top-consumer-insights-companies-ksa-2026',
   '/insights/top-market-research-companies-uae-2026',
   '/insights/top-market-research-companies-dubai-2026',
   '/insights/top-market-research-companies-abu-dhabi-2026',

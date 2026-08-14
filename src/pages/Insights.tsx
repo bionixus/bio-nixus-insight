@@ -159,6 +159,12 @@ export default function Insights() {
                 Top Market Research Companies in Saudi Arabia (2026)
               </Link>
               <Link
+                to="/insights/top-consumer-insights-companies-ksa-2026"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Consumer Insights Companies KSA (2026)
+              </Link>
+              <Link
                 to="/insights/top-market-research-companies-uae-2026"
                 className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
               >
