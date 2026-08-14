@@ -34,8 +34,11 @@
 
 | Date | Query | Impr | Clicks | CTR | Pos | Notes |
 |------|-------|------|--------|-----|-----|-------|
-| 2026-08-14 | saudi arabia vaccine market | ~41/wk (baseline) | — | — | ~63.1 | Plan ship; on-page + links + methodology live pending deploy |
-| | | | | | | |
+| 2026-08-14 | saudi arabia vaccine market | ~41/wk (baseline) | — | — | ~63.1 | **Week 0 ship:** prod `b46105a` Ready (`dpl_B3K25rD7Rxm52u2uc3RL21F8wfLH`). Live title/FAQ/methodology verified. SERP spot-check (DDG): BioNixus already #3 behind IMARC/Expert Market Research — citation sprint next. |
+| 2026-08-21 | saudi arabia vaccine market | | | | | Week 2 target: indexed refresh / confirm H2+table in HTML |
+| 2026-09-04 | saudi arabia vaccine market | | | | | Week 4 target: pos ≤20, CTR ≥2% |
+| 2026-10-02 | saudi arabia vaccine market | | | | | Week 8 target: pos ≤5 |
+| 2026-10-30 | saudi arabia vaccine market | | | | | Week 12 target: pos 1–3, CTR ≥3% |
 | | | | | | | |
 
 ## If stuck at positions 4–10 after week 8
