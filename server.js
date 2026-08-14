@@ -288,6 +288,10 @@ function buildFallbackTitle(pathname) {
     return 'BioNixus vs IQVIA MENA Research (2026) | BioNixus';
   }
 
+  if (path === '/bionixus-middle-east-africa') {
+    return 'BioNixus Middle East & Africa | Pharma Insights, RWE & Market Research';
+  }
+
   if (path === '/biosimilar-market-entry-saudi-arabia') {
     return 'Biosimilar Entry Saudi Arabia (2026) | BioNixus';
   }
@@ -490,6 +494,9 @@ function buildFallbackDescription(pathname) {
   }
   if (path === '/bionixus-vs-iqvia-mena') {
     return 'Compare BioNixus and IQVIA for MENA healthcare research, including hospital data, analytics, and market access support tailored for Saudi Arabia and the GCC.';
+  }
+  if (path === '/bionixus-middle-east-africa') {
+    return 'BioNixus solutions across Middle East & Africa — pharmaceutical business insights, RWE, commercial analytics, market access, and HCP research for KSA, UAE, Egypt, and the GCC.';
   }
   if (path === '/physician-survey-saudi-arabia') {
     return 'Saudi physician surveys for pharma: Arabic fieldwork, verified HCP samples, SFDA-aware design, and consumption data from BioNixus.';
@@ -796,6 +803,21 @@ async function startServer() {
   });
   app.get('/biosimilar-market-entry-saudi-arabia', (_req, res) => {
     res.type('html').sendFile(biosimilarAbsolutePath);
+  });
+
+  /** Static BioNixus Middle East & Africa solutions hub. */
+  const meaHubAbsolutePath = path.resolve(
+    __dirname,
+    isProduction
+      ? path.join('dist/client', 'conf/bionixus-middle-east-africa.html')
+      : path.join('public', 'conf/bionixus-middle-east-africa.html'),
+  );
+  app.get('/bionixus-middle-east-africa/', (req, res, next) => {
+    if (req.path.endsWith('/')) return res.redirect(301, '/bionixus-middle-east-africa');
+    return next();
+  });
+  app.get('/bionixus-middle-east-africa', (_req, res) => {
+    res.type('html').sendFile(meaHubAbsolutePath);
   });
 
   /** Static IQVIA alternative page. */

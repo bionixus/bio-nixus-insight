@@ -30,6 +30,7 @@ import PhysicianSurveySaudiArabia from '@/pages/PhysicianSurveySaudiArabia';
 import SfdaMarketAccessStrategySaudiArabia from '@/pages/SfdaMarketAccessStrategySaudiArabia';
 import BiosimilarMarketEntrySaudiArabia from '@/pages/BiosimilarMarketEntrySaudiArabia';
 import IqviaAlternative from '@/pages/IqviaAlternative';
+import BionixusMiddleEastAfrica from '@/pages/BionixusMiddleEastAfrica';
 import PharmaceuticalMarketResearchDubai from '@/pages/PharmaceuticalMarketResearchDubai';
 import KantarHealthAlternativeGcc from '@/pages/KantarHealthAlternativeGcc';
 import GfkAlternativeEgypt from '@/pages/GfkAlternativeEgypt';
@@ -40,6 +41,7 @@ import MarketResearchByIndustry from '@/pages/MarketResearchByIndustry';
 import { buildIndustryMatrixRoutes } from '@/data/industryMatrixRoutes';
 import { buildDevelopedMarketMedtechRoutes } from '@/data/developedMarketMedtechRoutes';
 import { buildSpecialtyMarketDemandRoutes } from '@/data/specialtyMarketDemandRoutes';
+import { buildCountryKeywordRoutes } from '@/data/countryKeywordRoutes';
 import BionixusIndustries from '@/pages/industries/BionixusIndustries';
 import BionixusIndustriesInsights from '@/pages/industries/BionixusIndustriesInsights';
 import IndustrySegmentPage from '@/pages/industries/IndustrySegmentPage';
@@ -444,6 +446,7 @@ export const routes: RouteObject[] = [
   { path: '/bionixus-market-research-middle-east', element: suspensePage(<BionixusMarketResearchMiddleEast />) },
   { path: '/fr/bionixus-market-research-middle-east', element: <FrBionixusMarketResearchMiddleEast /> },
   { path: '/zh/bionixus-market-research-middle-east', element: <ZhBionixusMarketResearchMiddleEast /> },
+  { path: '/bionixus-middle-east-africa', element: <BionixusMiddleEastAfrica /> },
   { path: '/bionixus-vs-iqvia-mena', element: <BionixusVsIqviaMena /> },
   { path: '/gcc-pharma-market-report-2026', element: <GccPharmaMarketReport2026 /> },
   { path: '/nf1-pharma-market-research', element: <Nf1PharmaMarketResearch /> },
@@ -712,6 +715,7 @@ export const routes: RouteObject[] = [
   ...buildIndustryMatrixRoutes(),
   ...buildDevelopedMarketMedtechRoutes(),
   ...buildSpecialtyMarketDemandRoutes(),
+  ...buildCountryKeywordRoutes(),
   { path: '/admin/dashboard', element: suspensePage(<AdminDashboard />) },
   { path: '/admin/login', element: suspensePage(<AdminLogin />) },
   { path: '/admin/import-subscribers', element: suspensePage(<AdminImportSubscribers />) },

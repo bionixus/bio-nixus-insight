@@ -6,6 +6,7 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { CTASection } from '@/components/shared/CTASection';
 import { WhyBioNixusIntro } from '@/components/shared/WhyBioNixusIntro';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
+import { RWE_COUNTRY_PAGES } from '@/data/countryKeywordPages';
 
 const pageUrl = 'https://www.bionixus.com/real-world-evidence';
 
@@ -235,6 +236,36 @@ export default function RealWorldEvidence() {
                     programs for access and lifecycle decisions in Gulf markets.
                   </li>
                 </ul>
+              </section>
+
+              <section aria-labelledby="rwe-by-country" className="rounded-2xl border border-border bg-muted/20 p-6 md:p-8">
+                <h2 id="rwe-by-country" className="text-xl font-display font-semibold text-foreground mb-4">
+                  Real-world evidence by country
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Country spokes for practice-pattern and pathway RWE. Each page links back to this hub and to the matching{' '}
+                  <Link to="/healthcare-market-research" className="text-primary underline">
+                    healthcare market research
+                  </Link>{' '}
+                  country programme.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {RWE_COUNTRY_PAGES.map((page) => (
+                    <Link
+                      key={page.slug}
+                      to={`/${page.slug}`}
+                      className="px-3 py-2 rounded-lg border border-border bg-background text-sm text-primary hover:underline"
+                    >
+                      {page.countryName}
+                    </Link>
+                  ))}
+                  <Link
+                    to="/real-world-evidence-gcc"
+                    className="px-3 py-2 rounded-lg border border-border bg-background text-sm text-primary hover:underline"
+                  >
+                    GCC regional RWE
+                  </Link>
+                </div>
               </section>
 
               <section aria-labelledby="related" className="rounded-2xl border border-border bg-muted/20 p-6 md:p-8">

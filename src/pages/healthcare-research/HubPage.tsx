@@ -10,6 +10,10 @@ import { ReportPremiumSection } from '@/components/report-premium';
 import { buildHubPageSchemas } from '@/lib/seo/schemas';
 import { COUNTRY_CONFIGS, resolveCountryConfig } from '@/lib/constants/countries';
 import { SPECIALTY_MARKET_DEMAND_CONTENT } from '@/data/specialtyMarketDemandContent';
+import {
+  PHARMA_INSIGHTS_PAGES,
+  RWE_COUNTRY_PAGES,
+} from '@/data/countryKeywordPages';
 import { healthcareCountryRecoveryPaths } from '@/lib/internalLinkRecovery';
 import { HubMarketReferenceGuide } from '@/components/seo/HubMarketReferenceGuide';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
@@ -967,6 +971,49 @@ export default function HubPage() {
               <h3 className="text-base font-semibold text-foreground mb-2">Healthcare Market Research Company in Egypt</h3>
               <p className="text-sm text-muted-foreground">BOFU page for EDA, UHI, bilingual fieldwork, and Egypt launch evidence.</p>
             </Link>
+          </div>
+      </ReportPremiumSection>
+
+      <ReportPremiumSection
+        id="pharma-insights-rwe"
+        title="Pharma insights &amp; real-world evidence by country"
+        subtitle="Country spokes for pharmaceutical insight briefs and RWE programmes — each links back into the matching healthcare market research hub."
+      >
+          <p className="text-muted-foreground leading-relaxed mb-4 max-w-4xl">
+            Use these when your search intent is “pharma insights” or “real-world evidence” for a specific market. For full
+            country programme design, start from the healthcare hubs above; for GCC-wide RWE execution, see{' '}
+            <Link to="/real-world-evidence-gcc" className="text-primary font-medium hover:underline">
+              real-world evidence GCC
+            </Link>
+            . For the Middle East &amp; Africa solutions map, see{' '}
+            <Link to="/bionixus-middle-east-africa" className="text-primary font-medium hover:underline">
+              BioNixus Middle East &amp; Africa
+            </Link>
+            .
+          </p>
+          <h3 className="text-base font-semibold text-foreground mb-2">Pharma insights</h3>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {PHARMA_INSIGHTS_PAGES.map((page) => (
+              <Link
+                key={page.slug}
+                to={`/${page.slug}`}
+                className="px-3 py-2 rounded-md border border-border bg-card text-sm text-foreground hover:border-primary/40 transition-colors"
+              >
+                {page.countryName}
+              </Link>
+            ))}
+          </div>
+          <h3 className="text-base font-semibold text-foreground mb-2">Real-world evidence</h3>
+          <div className="flex flex-wrap gap-2">
+            {RWE_COUNTRY_PAGES.map((page) => (
+              <Link
+                key={page.slug}
+                to={`/${page.slug}`}
+                className="px-3 py-2 rounded-md border border-border bg-card text-sm text-foreground hover:border-primary/40 transition-colors"
+              >
+                {page.countryName}
+              </Link>
+            ))}
           </div>
       </ReportPremiumSection>
 

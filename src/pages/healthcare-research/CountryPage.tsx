@@ -13,6 +13,11 @@ import { getHealthcareMarketResearchCountryConfig } from '@/data/reportConversio
 import { ReportMidPageCta } from '@/components/report-conversion';
 import { ReportPremiumSection } from '@/components/report-premium';
 import { buildCountryPageSchemas } from '@/lib/seo/schemas';
+import {
+  isPharmaInsightsRweCountry,
+  pharmaInsightsPath,
+  rweCountryPath,
+} from '@/data/countryKeywordPages';
 
 /**
  * Hub-and-spoke triad: /healthcare-market-research/{slug} ↔ /pharmaceutical-companies-{slug} ↔
@@ -895,6 +900,30 @@ export default function CountryPage() {
       <CountryMarketReferenceGuide countryName={config.name} countrySlug={config.slug} region={config.region} />
 
       <CountryTriadLinks slug={config.slug} countryName={config.name} />
+
+      {isPharmaInsightsRweCountry(config.slug) ? (
+        <ReportPremiumSection
+          id="pharma-insights-rwe"
+          title={`Pharma insights & RWE — ${config.name}`}
+          subtitle="Country spokes for pharmaceutical insight briefs and real-world evidence programmes."
+          variant="muted"
+        >
+          <div className="grid sm:grid-cols-2 gap-3">
+            <Link
+              to={pharmaInsightsPath(config.slug)}
+              className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
+            >
+              Pharma insights in {config.name}
+            </Link>
+            <Link
+              to={rweCountryPath(config.slug)}
+              className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
+            >
+              Real-world evidence in {config.name}
+            </Link>
+          </div>
+        </ReportPremiumSection>
+      ) : null}
 
       <ReportMidPageCta config={conversionConfig} className="my-4" />
 

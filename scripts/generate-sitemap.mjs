@@ -21,6 +21,7 @@ import {
 import { resolveGlobalWebsitesRedirect } from '../lib/global-websites-redirects.mjs';
 import { getIndustryMatrixSitemapPages } from './data/industry-matrix-sitemap.mjs';
 import { getSpecialtyMarketDemandSitemapPages } from './data/specialty-market-demand-sitemap.mjs';
+import { getCountryKeywordSitemapPages } from './data/country-keyword-sitemap.mjs';
 import {
   marketReportSlugs,
   marketReportTherapyHubSlugs,
@@ -304,6 +305,7 @@ const staticPages = [
   { path: '/pharmacies-saudi-arabia-marketing', priority: '0.9', changefreq: 'weekly' },
   { path: '/bionixus-ai-chatbots-increase-sales-and-lead-generation', priority: '0.7', changefreq: 'monthly' },
   { path: '/bionixus-market-research-middle-east', priority: '0.9', changefreq: 'monthly' },
+  { path: '/bionixus-middle-east-africa', priority: '0.9', changefreq: 'monthly' },
   { path: '/gcc-pharmaceutical-market-research', priority: '0.8', changefreq: 'monthly' },
   { path: '/uae-pharmaceutical-market-research', priority: '0.8', changefreq: 'monthly' },
   { path: '/pharmaceutical-market-research-kuwait', priority: '0.8', changefreq: 'monthly' },
@@ -805,6 +807,9 @@ function buildStaticRoutes() {
     if (!isSitemapRedirectSourcePath(page.path)) routes.push(page);
   }
   for (const page of getSpecialtyMarketDemandSitemapPages()) {
+    if (!isSitemapRedirectSourcePath(page.path)) routes.push(page);
+  }
+  for (const page of getCountryKeywordSitemapPages()) {
     if (!isSitemapRedirectSourcePath(page.path)) routes.push(page);
   }
   // Country detail pages under Global Websites — 301 to /healthcare-market-research (excluded)
@@ -1341,6 +1346,7 @@ const STATIC_PAGE_FILES = {
   '/mena-pharma-market-data': ['src/pages/MenaMarketData.tsx'],
   '/gcc-market-access-guide': ['src/pages/GccMarketAccessGuide.tsx'],
   '/bionixus-market-research-middle-east': ['src/pages/BionixusMarketResearchMiddleEast.tsx'],
+  '/bionixus-middle-east-africa': ['public/conf/bionixus-middle-east-africa.html'],
   '/gcc-pharmaceutical-market-research': ['src/pages/GccPharmaceuticalMarketResearch.tsx'],
   '/uae-pharmaceutical-market-research': ['src/pages/UaePharmaceuticalMarketResearch.tsx'],
   '/pharmaceutical-market-research-kuwait': ['src/pages/KuwaitPharmaceuticalMarketResearch.tsx'],

@@ -16,6 +16,7 @@ export default function RealWorldEvidenceGcc() {
       intro="BioNixus helps teams generate real world evidence in GCC markets with fit-for-purpose design, local relevance, and decision-ready outputs for market access and lifecycle strategy. Start from our healthcare market research hub for regional context, then scope one RWE objective aligned to your access or medical milestone."
       links={[
         { to: '/healthcare-market-research', label: 'Healthcare market research hub', primary: true },
+        { to: '/bionixus-middle-east-africa', label: 'BioNixus Middle East & Africa solutions', primary: true },
         { to: '/healthcare-market-research-agency-gcc', label: 'Healthcare market research agency GCC', primary: true },
         { to: '/patient-support-program-research-gcc', label: 'Patient support program research GCC' },
         { to: '/market-reports/saudi-arabia-biosimilars-market-report', label: 'Saudi Arabia biosimilar market' },

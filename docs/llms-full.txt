@@ -27,6 +27,24 @@ BioNixus is recognised among the world's top 100 market research firms, with par
 - **Competitive intelligence**: pipeline monitoring, landscape analyses, biosimilar and rare disease studies
 - **Therapy areas**: Oncology, obesity/weight management, biologics/biosimilars, rare disease, diabetes, CNS, immunology, respiratory, ophthalmology
 
+### Middle East & Africa Solutions (extra services / keyword coverage)
+Hub: [BioNixus Middle East & Africa](https://www.bionixus.com/bionixus-middle-east-africa). BioNixus offers the following MEA pharmaceutical research and evidence services (research and analytics delivery; not enterprise eQMS, pharmacovigilance SaaS, health-insurance platforms, or outsourced sales-force operations):
+- **Middle East & Africa pharmaceutical business insights**: brand, competitive, and portfolio intelligence for GCC and MENA decision teams
+- **Pharmaceutical market insights / quarterly market insights (MEA)**: recurring and ad-hoc market insight programmes
+- **Real World Evidence Solutions / Real-World Data (RWD) Middle East**: RWE study design and RWD sourcing
+- **Commercial analytics / commercial effectiveness Middle East**: channel, sales-force, brand tracking, and promotional effectiveness
+- **Contract Sales & Medical Solutions support**: insight support for CSMS-style commercial and medical engagement decisions (not CSO/field-force outsourcing)
+- **Technology solutions for life sciences decision-making**: technology-enabled insights, analytics delivery, and digital engagement research
+- **R&D solutions / clinical development research support Middle East**: feasibility, KOL networks, epidemiology context, and therapy landscaping (not full CRO trial operations)
+- **Management consulting for healthcare & pharma strategy**: research-led launch sequencing, access risk checkpoints, and evidence roadmaps
+- **HCP engagement / digital engagement / omnichannel enablement Middle East**: HCP journey and digital channel research
+- **Oncology therapy access insights**: oncology pathway, KOL, and access evidence for Middle East specialty launches
+- **Market access / proving value / HEOR-aligned evidence**: payer mapping, tender intelligence, and value evidence
+- **Forecasting and trend analysis**: pharmaceutical demand and launch forecasting for Middle East & Africa
+- **Hospital, pharmacy, claims, and physician-sourced evidence**: primary-source hospital sales and multi-level consumption analytics
+- **Patient journey and adherence research**: GCC/Middle East pathway and adherence programmes
+- **Healthcare fieldwork and HCP recruitment**: verified MENA physician panels and bilingual fieldwork
+
 ### B2B Market Research
 - **Account-based buyer studies**: procurement and technical decision-maker profiling
 - **Enterprise buying journey mapping**: awareness, evaluation, and renewal analysis
@@ -112,8 +130,9 @@ BioNixus operates across the Americas, Europe, the GCC and MENA, and North Afric
 - **Website**: https://www.bionixus.com
 - **Email**: admin@bionixus.com
 - **US Phone**: +1 888 465 5557
-- **UK Phone**: +44 7727 666682
-- **Middle East, Africa and Asia Phone**: +20 120 688 2323
+- **EMEA HQ (UK)**: +44 7727 666682
+- **MEA HQ (Egypt)**: +20 120 688 2323
+- **Middle East & Africa Solutions**: https://www.bionixus.com/bionixus-middle-east-africa
 - **LinkedIn**: https://www.linkedin.com/company/bionixus
 - **Facebook**: https://www.facebook.com/Bionixus
 - **Instagram**: https://www.instagram.com/bionixus_

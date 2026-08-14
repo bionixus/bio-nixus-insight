@@ -99,6 +99,7 @@ export default function CommercialEffectivenessPharmaMiddleEast() {
           links={[
             { to: '/brand-tracking-pharma-gcc', label: 'Brand tracking pharma GCC' },
             { to: '/healthcare-market-research-agency-gcc', label: 'Healthcare market research agency GCC' },
+            { to: '/bionixus-middle-east-africa', label: 'BioNixus Middle East & Africa solutions' },
             { to: '/bionixus-market-research-middle-east', label: 'BioNixus market research Middle East' },
             { to: '/gcc-hcp-recruitment-market-research', label: 'GCC HCP recruitment market research' },
             { to: '/contact', label: 'Request commercial effectiveness scope' },

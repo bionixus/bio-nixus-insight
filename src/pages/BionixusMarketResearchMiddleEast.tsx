@@ -333,7 +333,12 @@ const BionixusMarketResearchMiddleEast = () => {
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 BioNixus builds decision-ready pharmaceutical market research and middle east healthcare market research
-                programs for teams operating across the GCC and wider Middle East. For broader service context, start with our{' '}
+                programs for teams operating across the GCC and wider Middle East. For the full regional solutions map
+                (RWE, commercial analytics, market access, and more), see{' '}
+                <Link to="/bionixus-middle-east-africa" className="text-primary underline">
+                  BioNixus Middle East &amp; Africa
+                </Link>
+                . For broader service context, start with our{' '}
                 <Link to="/healthcare-market-research" className="text-primary underline">
                   healthcare market research hub
                 </Link>{' '}
@@ -987,6 +992,13 @@ const BionixusMarketResearchMiddleEast = () => {
                   className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg border border-white/30 text-primary-foreground font-semibold hover:bg-white/10 transition-colors"
                 >
                   Explore healthcare market research hub
+                </Link>
+                <Link
+                  to="/bionixus-middle-east-africa"
+                  onClick={() => trackCtaClick('visit_mea_hub', 'final_cta')}
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg border border-white/30 text-primary-foreground font-semibold hover:bg-white/10 transition-colors"
+                >
+                  BioNixus Middle East &amp; Africa solutions
                 </Link>
               </div>
             </div>
