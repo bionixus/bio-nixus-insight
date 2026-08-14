@@ -301,7 +301,7 @@ const regenerativeMedicine: SegmentMarketContent = {
   segmentLabel: 'Regenerative Medicine',
   badge: 'Saudi Arabia · Regenerative Medicine',
   breadcrumbLabel: 'Saudi Arabia Regenerative Medicine Market',
-  title: 'Saudi Arabia Regenerative Medicine Market Research | BioNixus',
+    title: 'Saudi Arabia Regenerative Medicine Market | BioNixus',
   description:
     'Saudi Arabia regenerative medicine market research from BioNixus: SFDA advanced therapy rules, hospital adoption, reimbursement, and distributor intelligence.',
   canonical: `${SEGMENT_MARKET_BASE}/saudi-arabia-regenerative-medicine-market`,
@@ -1361,7 +1361,7 @@ const apiMarket: SegmentMarketContent = {
   segmentLabel: 'Active Pharmaceutical Ingredients (API)',
   badge: 'Saudi Arabia · Active Pharmaceutical Ingredients',
   breadcrumbLabel: 'Saudi Arabia API Market',
-  title: 'Saudi Arabia API Market: Pharmaceutical Ingredients | BioNixus',
+    title: 'Saudi Arabia API Market Research | BioNixus',
   description:
     'Saudi Arabia API market research by BioNixus — active pharmaceutical ingredient sourcing, GMP and SFDA dossiers, localisation, and tender pricing insight.',
   canonical: `${SEGMENT_MARKET_BASE}/saudi-arabia-api-market`,

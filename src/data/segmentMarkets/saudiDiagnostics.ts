@@ -296,7 +296,7 @@ const molecularDiagnostics: SegmentMarketContent = {
   segmentLabel: 'Molecular Diagnostics',
   badge: 'Saudi Arabia · Molecular Diagnostics Research',
   breadcrumbLabel: 'Saudi Arabia Molecular Diagnostics Market',
-  title: 'Saudi Arabia Molecular Diagnostics Market Research | BioNixus',
+    title: 'Saudi Arabia Molecular Diagnostics Market | BioNixus',
   description:
     'Saudi Arabia Molecular Diagnostics Market research from BioNixus: PCR, NAAT and oncology assay demand, SFDA IVD routes and laboratory adoption interviews.',
   canonical: `${SEGMENT_MARKET_BASE}/saudi-arabia-molecular-diagnostics-market`,

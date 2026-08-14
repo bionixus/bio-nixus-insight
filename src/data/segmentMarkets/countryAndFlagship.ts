@@ -1409,7 +1409,7 @@ const bionixusSaudiOncologyInsights: SegmentMarketContent = {
   segmentLabel: 'Oncology Insights',
   badge: 'BioNixus Oncology Intelligence',
   breadcrumbLabel: 'BioNixus Saudi Arabia Oncology Insights',
-  title: 'BioNixus Saudi Arabia Oncology Insights & Research | BioNixus',
+    title: 'BioNixus Saudi Arabia Oncology Insights & Research',
   description:
     'BioNixus Saudi Arabia oncology insights: KOL mapping, treatment-pattern studies, SFDA and NUPCO access research, biosimilar tracking, and real-world evidence.',
   canonical: `${SEGMENT_MARKET_BASE}/bionixus-saudi-arabia-oncology-insights`,
@@ -1703,7 +1703,7 @@ const bionixusUaeOncologyInsights: SegmentMarketContent = {
   segmentLabel: 'Oncology Insights',
   badge: 'BioNixus Oncology Intelligence',
   breadcrumbLabel: 'BioNixus UAE Oncology Insights',
-  title: 'BioNixus UAE Oncology Insights & Research | BioNixus',
+    title: 'BioNixus UAE Oncology Insights & Research',
   description:
     'BioNixus UAE oncology insights: KOL mapping, treatment patterns, DoH and DHA reimbursement, Thiqa and Daman, Rafed procurement, and real-world evidence.',
   canonical: `${SEGMENT_MARKET_BASE}/bionixus-uae-oncology-insights`,
@@ -2276,7 +2276,7 @@ const pharmaceuticalProductRegistrationSaudiArabia: SegmentMarketContent = {
   segmentLabel: 'Pharmaceutical Product Registration',
   badge: 'SFDA Regulatory Intelligence',
   breadcrumbLabel: 'Pharmaceutical Product Registration in Saudi Arabia',
-  title: 'Pharmaceutical Product Registration in Saudi Arabia | BioNixus',
+    title: 'Pharmaceutical Product Registration in Saudi Arabia',
   description:
     'Pharmaceutical product registration in Saudi Arabia: SFDA pathway steps, eCTD submission, GMP inspection, pricing, track and trace, and launch research.',
   canonical: `${SEGMENT_MARKET_BASE}/pharmaceutical-product-registration-saudi-arabia`,

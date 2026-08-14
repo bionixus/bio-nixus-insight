@@ -80,6 +80,30 @@ for (const slug of routedSlugs) {
   if (!contentSlugs.includes(slug)) errors.push(`routed slug has no content: /${slug}`);
 }
 
+/**
+ * server.js clamps any <title> over 60 chars and chops mid-word ("...Market Researc"),
+ * so an over-length title ships broken copy to the SERP rather than being rejected.
+ */
+const TITLE_MAX = 60;
+const DESC_MIN = 150;
+const DESC_MAX = 160;
+
+const seenTitles = new Map();
+for (const page of pages.SEGMENT_MARKET_PAGES) {
+  if (page.title.length > TITLE_MAX) {
+    errors.push(`${page.slug}: title is ${page.title.length} chars, server truncates over ${TITLE_MAX}`);
+  }
+  if (page.description.length < DESC_MIN || page.description.length > DESC_MAX) {
+    errors.push(
+      `${page.slug}: description is ${page.description.length} chars, expected ${DESC_MIN}-${DESC_MAX}`,
+    );
+  }
+  if (seenTitles.has(page.title)) {
+    errors.push(`${page.slug}: duplicate title shared with ${seenTitles.get(page.title)}`);
+  }
+  seenTitles.set(page.title, page.slug);
+}
+
 for (const page of pages.SEGMENT_MARKET_PAGES) {
   for (const link of page.relatedLinks) {
     linkCount += 1;

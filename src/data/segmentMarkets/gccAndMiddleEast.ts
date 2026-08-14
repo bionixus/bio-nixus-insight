@@ -1162,7 +1162,7 @@ const gccMedicalTourism: SegmentMarketContent = {
   segmentLabel: 'Medical Tourism',
   badge: 'GCC · Medical Travel & Patient Flows',
   breadcrumbLabel: 'GCC Medical Tourism Market',
-  title: 'GCC Medical Tourism Market Research & Patient Flows | BioNixus',
+    title: 'GCC Medical Tourism Market Research | BioNixus',
   description:
     'GCC Medical Tourism Market research from BioNixus — inbound and outbound patient flows, Dubai Health Experience, facilitators, insurance and treatment mix.',
   canonical: `${SEGMENT_MARKET_BASE}/gcc-medical-tourism-market`,

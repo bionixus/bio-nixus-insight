@@ -1628,7 +1628,7 @@ const obesity: SegmentMarketContent = {
   segmentLabel: 'Obesity',
   badge: 'Saudi Arabia · Obesity & Metabolic Research',
   breadcrumbLabel: 'Saudi Arabia Obesity Market',
-  title: 'Saudi Arabia Obesity Market Research & GLP-1 Access | BioNixus',
+    title: 'Saudi Arabia Obesity Market & GLP-1 Access | BioNixus',
   description:
     'Saudi Arabia obesity market research — GLP-1 prescribing and access, bariatric surgery pathways, obesity clinics, insurance cover, and patient journeys.',
   canonical: `${SEGMENT_MARKET_BASE}/saudi-arabia-obesity-market`,
