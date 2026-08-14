@@ -4,23 +4,24 @@ const SLUG = 'uae-vaccines-market-report';
 
 /**
  * Curated copy for the UAE vaccines programmatic report.
- * Market sizing: BioNixus market analysis, 2026 (aligned with factRegistry: ~USD 142M 2026 → ~USD 238M 2030, ~16.9% CAGR).
- * Detail: MOHAP/DHA/DOH immunisation, mandatory childhood schedule, travel/transit-hub vaccine demand; figures attributed to BioNixus analysis.
+ * SEO target query: "uae vaccine market" (singular) — title/H1 use exact phrase; URL slug unchanged.
+ * Market sizing: BioNixus market analysis, 2026 (~USD 142M → ~USD 238M 2030, ~16.9% CAGR).
  */
 type OverrideCopy = Partial<ReportEntry> & Pick<ReportEntry, 'slug'>;
 
 export const UAE_VACCINES_COPY: OverrideCopy = {
   slug: SLUG,
-  title: 'UAE Vaccines Market Report 2026',
-  metaTitle: 'UAE Vaccines Market Report 2026 | BioNixus',
+  title: 'UAE Vaccine Market Report 2026',
+  metaTitle: 'UAE Vaccine Market 2026 | Size & MOHAP | BioNixus',
   metaDescription:
-    'UAE vaccines market ~USD 142M in 2026 (BioNixus analysis), ~16.9% CAGR: MOHAP/DHA/DOH childhood schedule, strong travel-vaccine demand from a transit hub, HPV/adult growth, private vaccination—decision-ready Gulf intelligence.',
+    'UAE vaccine market ~USD 142M in 2026 (BioNixus analysis), ~16.9% CAGR: MOHAP/DHA/DOH schedule, travel vaccines, HPV/adult growth—Gulf decision-ready intelligence.',
+  modifiedDate: '2026-08-14',
   heroLead:
-    'This briefing reads UAE vaccines through its distinctive demand mix: a strong government childhood immunisation schedule across MOHAP, DHA, and DOH, plus an unusually large travel-vaccine market created by a young expatriate population and the country’s role as a global aviation and transit hub—layered with growing HPV and adult immunisation.',
+    'The UAE vaccine market pairs a strong government childhood immunisation schedule across MOHAP, DHA, and DOH with one of the region’s largest private and travel-vaccine channels—driven by a young expatriate population and the country’s role as a global aviation hub.',
   summaryPara1:
-    'Vaccines in the UAE combine a robust government childhood programme with one of the region’s most developed private and travel-vaccine markets. BioNixus sizes the market at roughly USD 142 million in 2026, advancing toward about USD 238 million by 2030 at roughly 16.9% CAGR. MOHAP, DHA, and DOH administer a comprehensive mandatory childhood schedule, while a large, mobile expatriate population and the UAE’s position as a global aviation hub drive substantial travel-vaccine and catch-up demand through private clinics. Growth areas include HPV expansion, adult pneumococcal and influenza, and RSV entrants. Registration runs through MOHAP, with DHA and DOH facility and procurement rules. Sizing reflects BioNixus market analysis, 2026.',
+    'Vaccines in the UAE combine a robust government childhood programme with one of the region’s most developed private and travel-vaccine markets. BioNixus sizes the UAE vaccine market at roughly USD 142 million in 2026, advancing toward about USD 238 million by 2030 at roughly 16.9% CAGR. MOHAP, DHA, and DOH administer a comprehensive mandatory childhood schedule, while a large, mobile expatriate population and the UAE’s position as a global aviation hub drive substantial travel-vaccine and catch-up demand through private clinics. Growth areas include HPV expansion, adult pneumococcal and influenza, and RSV entrants. Registration runs through MOHAP, with DHA and DOH facility and procurement rules. Sizing reflects BioNixus market analysis, 2026.',
   summaryPara2:
-    'Use this report as the UAE-specific companion to BioNixus’s wider Gulf vaccines coverage: pair it with the [UAE healthcare market report](/uae-healthcare-market-report) for macro context, the [GCC vaccines market report](/market-reports/gcc-vaccines-market-report) for Gulf-wide benchmarking, the [Saudi Arabia vaccines market report](/market-reports/saudi-arabia-vaccines-market-report) for the contrasting Hajj and Umrah mass-gathering model, [vaccines research](/healthcare-market-research/therapy/vaccines) for programme design, and the [healthcare market research hub](/healthcare-market-research) to scope bilingual public-health and private-clinic fieldwork across the Gulf.',
+    'Use this report as the UAE-specific companion to BioNixus’s wider Gulf vaccines coverage: pair it with the [UAE healthcare market report](/uae-healthcare-market-report) for macro context, the [UAE influenza vaccine report](/uae-influenza-vaccine-report) for seasonal flu depth, the [GCC vaccines market report](/market-reports/gcc-vaccines-market-report) for Gulf-wide benchmarking, the [Saudi Arabia vaccine market report](/market-reports/saudi-arabia-vaccines-market-report) for the contrasting Hajj and Umrah mass-gathering model, [vaccines research](/healthcare-market-research/therapy/vaccines) for programme design, and the [healthcare market research hub](/healthcare-market-research) to scope bilingual public-health and private-clinic fieldwork across the Gulf. BioNixus vaccine trackers sit alongside biologics, biosimilars, oncology, and rare-disease insight programmes.',
   marketAccessNotes:
     'MOHAP, DHA, and DOH administering a comprehensive mandatory childhood immunisation schedule through government channels; large expatriate population and global aviation/transit-hub status driving an unusually strong travel-vaccine and catch-up market via private clinics; MOHAP registration plus DHA/DOH facility and procurement rules; HPV expansion, adult/elderly pneumococcal and influenza, and RSV entrants as growth areas; private vaccination sector providing a commercial route beyond government tenders; cold-chain and clinic capacity supporting both public schedule and private/travel demand',
   fieldIntelligenceParagraph:
@@ -31,9 +32,9 @@ export const UAE_VACCINES_COPY: OverrideCopy = {
     'Methodology combines BioNixus market analysis for sizing and CAGR bands with structured desk review of MOHAP, DHA, DOH, and emirate immunisation-programme public guidance, plus primary modules—public-health, private-provider, and procurement interviews where data is available. Schedule and travel-requirement references are used as planning inputs rather than patient-level forecasts, and the private/travel segment is assessed separately from government volume. Because schedules, procurement, and travel requirements change on short cycles, access statements should be revalidated before launch decisions. Outputs are built for market access, public-health, and commercial leadership and do not constitute regulatory or clinical advice.',
   faqs: [
     {
-      question: 'How large is the UAE vaccines market in 2026?',
+      question: 'How large is the UAE vaccine market in 2026?',
       answer:
-        'BioNixus market analysis sizes the UAE vaccines market at roughly USD 142 million in 2026, advancing toward about USD 238 million by 2030 at roughly 16.9% CAGR. The base is a government childhood schedule administered across MOHAP, DHA, and DOH, but what distinguishes the UAE is the scale of its private and travel-vaccine market: a young, highly mobile expatriate population and the country’s role as a global aviation hub generate catch-up and travel demand that flows through private clinics rather than government tenders. The fastest-growing segments are HPV, adult and elderly pneumococcal and influenza, and RSV entrants. Because the public and private channels behave so differently, BioNixus sizes them separately and treats the figure as a planning band, not an audited total. Use the GCC vaccines report for Gulf-wide context and the UAE healthcare market report for macro sizing.',
+        'BioNixus market analysis sizes the UAE vaccine market at roughly USD 142 million in 2026, advancing toward about USD 238 million by 2030 at roughly 16.9% CAGR. The base is a government childhood schedule administered across MOHAP, DHA, and DOH, but what distinguishes the UAE is the scale of its private and travel-vaccine market: a young, highly mobile expatriate population and the country’s role as a global aviation hub generate catch-up and travel demand that flows through private clinics rather than government tenders. The fastest-growing segments are HPV, adult and elderly pneumococcal and influenza, and RSV entrants. Because the public and private channels behave so differently, BioNixus sizes them separately and treats the figure as a planning band, not an audited total. Use the GCC vaccines report for Gulf-wide context and the UAE healthcare market report for macro sizing.',
     },
     {
       question: 'Why is the travel-vaccine market significant in the UAE?',

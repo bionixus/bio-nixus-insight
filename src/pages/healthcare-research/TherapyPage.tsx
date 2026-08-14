@@ -105,6 +105,7 @@ const THERAPY_SECTIONS: Record<string, { title: string; points: string[] }> = {
       'Assess vaccine confidence drivers and adoption constraints in prioritized populations.',
       'Map healthcare provider communication needs for stronger uptake programs.',
       'Support rollout strategy with targeted evidence on channel and stakeholder differences.',
+      'Anchor Gulf programmes to BioNixus vaccine trackers alongside biologics, biosimilars, oncology, and rare-disease insight work—starting with the Saudi Arabia vaccine market report.',
     ],
   },
   cardiology: {
@@ -732,6 +733,10 @@ export default function TherapyPage() {
                   GCC pharmaceutical market research
                 </Link>
                 . Where Saudi tendering and biosimilar listing shape chronic immune-mediated categories, use the{' '}
+                <Link to="/market-reports/saudi-arabia-immunology-biologics-market-report" className="text-primary underline">
+                  Saudi Arabia immunology & biologics market
+                </Link>{' '}
+                report, the{' '}
                 <Link to="/market-reports/saudi-arabia-biosimilars-market-report" className="text-primary underline">
                   Saudi Arabia biosimilar market
                 </Link>{' '}
@@ -999,7 +1004,11 @@ export default function TherapyPage() {
                 the access realism that determines whether launch sequencing matches committee calendars.
               </p>
               <p>
-                Pair this guide with{' '}
+                Pair this guide with the{' '}
+                <Link to="/market-reports/saudi-arabia-oncology-market-report" className="text-primary underline">
+                  Saudi Arabia oncology market
+                </Link>{' '}
+                report,{' '}
                 <Link to="/market-reports/saudi-arabia-cancer-diagnostics-market-report" className="text-primary underline">
                   Saudi Arabia cancer diagnostics market
                 </Link>
@@ -1073,7 +1082,11 @@ export default function TherapyPage() {
                 precede field scale-up so uptake forecasts reflect treatable cohorts rather than theoretical prevalence.
               </p>
               <p>
-                For Gulf context, link to{' '}
+                For Gulf context, link to the{' '}
+                <Link to="/market-reports/saudi-arabia-rare-diseases-market-report" className="text-primary underline">
+                  Saudi Arabia rare diseases market
+                </Link>{' '}
+                report,{' '}
                 <Link to="/heor-consulting-saudi-arabia" className="text-primary underline">
                   HEOR consulting in Saudi Arabia
                 </Link>{' '}
@@ -1530,7 +1543,31 @@ export default function TherapyPage() {
                 operational levers that change doses delivered.
               </p>
               <p>
-                Cross-refer to{' '}
+                Cross-refer to the{' '}
+                <Link to="/market-reports/saudi-arabia-vaccines-market-report" className="text-primary underline">
+                  Saudi Arabia vaccine market
+                </Link>{' '}
+                report for NIP, Hajj/Umrah, and SFDA lot-release intelligence, the{' '}
+                <Link to="/market-reports/uae-vaccines-market-report" className="text-primary underline">
+                  UAE vaccine market report
+                </Link>{' '}
+                for a public–private comparator, and BioNixus’s adjacent Saudi pharma-insights cluster—{' '}
+                <Link to="/market-reports/saudi-arabia-biosimilars-market-report" className="text-primary underline">
+                  biosimilars
+                </Link>
+                ,{' '}
+                <Link to="/market-reports/saudi-arabia-immunology-biologics-market-report" className="text-primary underline">
+                  immunology & biologics
+                </Link>
+                ,{' '}
+                <Link to="/market-reports/saudi-arabia-oncology-market-report" className="text-primary underline">
+                  oncology
+                </Link>
+                , and{' '}
+                <Link to="/market-reports/saudi-arabia-rare-diseases-market-report" className="text-primary underline">
+                  rare diseases
+                </Link>
+                —plus{' '}
                 <Link to="/healthcare-market-research" className="text-primary underline">
                   healthcare market research
                 </Link>{' '}

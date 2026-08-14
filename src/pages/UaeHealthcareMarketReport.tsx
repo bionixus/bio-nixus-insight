@@ -204,7 +204,11 @@ const UaeHealthcareMarketReport = () => {
               <Link to="/market-reports/uae-oncology-market-report" className="text-primary hover:underline font-medium">
                 UAE oncology market research report
               </Link>
-              {' '}and{' '}
+              {', the '}
+              <Link to="/market-reports/uae-vaccines-market-report" className="text-primary hover:underline font-medium">
+                UAE vaccine market report
+              </Link>
+              {', and '}
               <Link to="/market-reports/uae-diabetes-market-report" className="text-primary hover:underline font-medium">
                 UAE diabetes market research report
               </Link>

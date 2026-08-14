@@ -170,6 +170,10 @@ const SaudiArabiaHealthcareMarketReport = () => {
               <Link to="/market-reports/saudi-arabia-cancer-diagnostics-market-report" className="text-primary hover:underline font-medium">
                 Saudi Arabia cancer diagnostics market
               </Link>
+              {' report, the '}
+              <Link to="/market-reports/saudi-arabia-vaccines-market-report" className="text-primary hover:underline font-medium">
+                Saudi Arabia vaccine market
+              </Link>
               {' report, and '}
               <Link to="/market-reports/saudi-arabia-diabetes-market-report" className="text-primary hover:underline font-medium">
                 Saudi Arabia diabetes market research report

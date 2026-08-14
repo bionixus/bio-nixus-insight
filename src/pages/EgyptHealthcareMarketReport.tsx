@@ -175,7 +175,11 @@ const EgyptHealthcareMarketReport = () => {
               <Link to="/market-reports/egypt-oncology-market-report" className="text-primary hover:underline font-medium">
                 Egypt oncology market research report
               </Link>
-              {' '}and{' '}
+              {', the '}
+              <Link to="/market-reports/egypt-vaccines-market-report" className="text-primary hover:underline font-medium">
+                Egypt vaccine market report
+              </Link>
+              {', and '}
               <Link to="/market-reports/egypt-diabetes-market-report" className="text-primary hover:underline font-medium">
                 Egypt diabetes market research report
               </Link>

@@ -189,6 +189,8 @@ const marketReportLinks = [
   { to: '/market-reports/saudi-arabia-cancer-diagnostics-market-report', label: 'Saudi Arabia Cancer Diagnostics Market Report 2026' },
   { to: '/insights/saudi-arabia-biosimilar-market-size-methodology-2026', label: 'Saudi Arabia Biosimilar Market Size Methodology' },
   { to: '/insights/saudi-arabia-cancer-diagnostics-market-size-methodology-2026', label: 'Saudi Arabia Cancer Diagnostics Market Size Methodology' },
+  { to: '/insights/saudi-arabia-vaccine-market-size-methodology-2026', label: 'Saudi Arabia Vaccine Market Size Methodology' },
+  { to: '/market-reports/saudi-arabia-vaccines-market-report', label: 'Saudi Arabia Vaccine Market Report 2026' },
   { to: '/biosimilar-market-entry-saudi-arabia', label: 'Biosimilar Market Entry — Saudi Arabia' },
   { to: '/saudi-arabia-medical-devices-market-report', label: 'Saudi Arabia Medical Devices Market Report 2026' },
   { to: '/uae-healthcare-market-report', label: 'UAE Healthcare Market Report 2026' },

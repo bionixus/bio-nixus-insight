@@ -29,6 +29,12 @@ import { SAUDI_ARABIA_DERMATOLOGY_COPY } from '@/data/reportCopyOverrides/saudiA
 import { UAE_DIGITAL_HEALTH_COPY } from '@/data/reportCopyOverrides/uaeDigitalHealthMarketReport';
 import { UAE_VACCINES_COPY } from '@/data/reportCopyOverrides/uaeVaccinesMarketReport';
 import { UAE_DERMATOLOGY_COPY } from '@/data/reportCopyOverrides/uaeDermatologyMarketReport';
+import { GCC_VACCINES_COPY } from '@/data/reportCopyOverrides/gccVaccinesMarketReport';
+import { EGYPT_VACCINES_COPY } from '@/data/reportCopyOverrides/egyptVaccinesMarketReport';
+import { KUWAIT_VACCINES_COPY } from '@/data/reportCopyOverrides/kuwaitVaccinesMarketReport';
+import { QATAR_VACCINES_COPY } from '@/data/reportCopyOverrides/qatarVaccinesMarketReport';
+import { OMAN_VACCINES_COPY } from '@/data/reportCopyOverrides/omanVaccinesMarketReport';
+import { BAHRAIN_VACCINES_COPY } from '@/data/reportCopyOverrides/bahrainVaccinesMarketReport';
 
 type OverrideCopy = Partial<ReportEntry> & { slug: string };
 
@@ -63,6 +69,12 @@ const OVERRIDES: OverrideCopy[] = [
   UAE_DIGITAL_HEALTH_COPY,
   UAE_VACCINES_COPY,
   UAE_DERMATOLOGY_COPY,
+  GCC_VACCINES_COPY,
+  EGYPT_VACCINES_COPY,
+  KUWAIT_VACCINES_COPY,
+  QATAR_VACCINES_COPY,
+  OMAN_VACCINES_COPY,
+  BAHRAIN_VACCINES_COPY,
 ];
 
 const BY_SLUG = new Map<string, OverrideCopy>(OVERRIDES.map((o) => [o.slug, o]));

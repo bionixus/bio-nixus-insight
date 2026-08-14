@@ -242,6 +242,7 @@ import BestObesityWeightManagementMarketResearchFirms2026 from '@/pages/BestObes
 import LeadingBiologicsBiosimilarsMarketResearchCompanies2026 from '@/pages/LeadingBiologicsBiosimilarsMarketResearchCompanies2026';
 import SaudiArabiaBiosimilarMarketSizeMethodology2026 from '@/pages/SaudiArabiaBiosimilarMarketSizeMethodology2026';
 import SaudiArabiaCancerDiagnosticsMarketSizeMethodology2026 from '@/pages/SaudiArabiaCancerDiagnosticsMarketSizeMethodology2026';
+import SaudiArabiaVaccineMarketSizeMethodology2026 from '@/pages/SaudiArabiaVaccineMarketSizeMethodology2026';
 import BestRareDiseaseMarketResearchCompanies2026 from '@/pages/BestRareDiseaseMarketResearchCompanies2026';
 import TopConsumerHealthcareMarketResearchFirms2026 from '@/pages/TopConsumerHealthcareMarketResearchFirms2026';
 // --- ported SEO page imports ---
@@ -575,6 +576,7 @@ export const routes: RouteObject[] = [
   { path: '/insights/leading-biologics-biosimilars-market-research-companies-2026', element: <LeadingBiologicsBiosimilarsMarketResearchCompanies2026 /> },
   { path: '/insights/saudi-arabia-biosimilar-market-size-methodology-2026', element: <SaudiArabiaBiosimilarMarketSizeMethodology2026 /> },
   { path: '/insights/saudi-arabia-cancer-diagnostics-market-size-methodology-2026', element: <SaudiArabiaCancerDiagnosticsMarketSizeMethodology2026 /> },
+  { path: '/insights/saudi-arabia-vaccine-market-size-methodology-2026', element: <SaudiArabiaVaccineMarketSizeMethodology2026 /> },
   { path: '/insights/best-rare-disease-market-research-companies-2026', element: <BestRareDiseaseMarketResearchCompanies2026 /> },
   { path: '/insights/top-consumer-healthcare-market-research-firms-2026', element: <TopConsumerHealthcareMarketResearchFirms2026 /> },
   { path: '/pharmaceutical-companies-egypt', element: suspensePage(<EgyptPharmaCompanies />) },
