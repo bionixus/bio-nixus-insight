@@ -69,3 +69,8 @@ export const OmanPharmaCompanies = lazy(() => import('@/pages/OmanPharmaCompanie
 export const BahrainPharmaCompanies = lazy(() => import('@/pages/BahrainPharmaCompanies'));
 export const IraqPharmaCompanies = lazy(() => import('@/pages/IraqPharmaCompanies'));
 export const IranPharmaCompanies = lazy(() => import('@/pages/IranPharmaCompanies'));
+export const UsaPharmaCompanies = lazy(() => import('@/pages/UsaPharmaCompanies'));
+export const UkPharmaCompanies = lazy(() => import('@/pages/UkPharmaCompanies'));
+export const GermanyPharmaCompanies = lazy(() => import('@/pages/GermanyPharmaCompanies'));
+export const BrazilPharmaCompanies = lazy(() => import('@/pages/BrazilPharmaCompanies'));
+export const CanadaPharmaCompanies = lazy(() => import('@/pages/CanadaPharmaCompanies'));

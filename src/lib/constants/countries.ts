@@ -719,6 +719,43 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
       },
     ],
   },
+  norway: {
+    name: 'Norway',
+    slug: 'norway',
+    region: 'europe',
+    metaSuffix: 'Norway pharmaceutical market research with NoMA, Nye Metoder, and HELFO context.',
+    metaTitle: 'Healthcare Market Research Norway | NoMA & HTA | BioNixus',
+    metaDescription:
+      'Pharmaceutical market research in Norway: NoMA-aware HCP surveys, Nye Metoder / Sykehusinnkjøp HTA, HELFO reimbursement, and university hospital KOL access.',
+    ogDescription:
+      'BioNixus delivers pharmaceutical market research in Norway with NoMA, Nye Metoder / Sykehusinnkjøp, and HELFO context plus Norwegian-language fieldwork.',
+    h1: 'Pharmaceutical Market Research in Norway',
+    relatedCountries: ['sweden', 'denmark', 'germany'],
+    relatedTherapies: ['oncology', 'immunology', 'biologics', 'rare-diseases'],
+    keyStats: [
+      { label: 'Health System', value: 'Public specialist care (4 RHFs)' },
+      { label: 'Key Bodies', value: 'NoMA / Nye Metoder / HELFO' },
+      { label: 'Language Coverage', value: 'Norwegian–English fieldwork' },
+      { label: 'Research Focus', value: 'HTA, procurement, hospital access' },
+    ],
+    faqQuestions: [
+      {
+        question: 'How does BioNixus support pharmaceutical market research in Norway?',
+        answer:
+          'BioNixus designs Norway studies around NoMA regulatory realities, Nye Metoder HTA decisions, Sykehusinnkjøp hospital procurement, and HELFO reimbursement pathways — with outputs mapped to launch and access decisions.',
+      },
+      {
+        question: 'Which hospitals and stakeholders are prioritised in Norway studies?',
+        answer:
+          'Programs commonly include Oslo University Hospital (OUS), Haukeland University Hospital (Bergen), St. Olavs Hospital (Trondheim), and the University Hospital of Northern Norway (UNN), plus RHF formulary and HELFO pathway influencers depending on therapy.',
+      },
+      {
+        question: 'Can Norway modules integrate with wider Nordic programmes?',
+        answer:
+          'Yes. Harmonised Nordic instruments with Norway-specific Nye Metoder / HELFO modules support regional portfolio planning alongside Sweden and Denmark.',
+      },
+    ],
+  },
   spain: {
     name: 'Spain',
     slug: 'spain',
@@ -885,7 +922,16 @@ const COUNTRY_NAME_OVERRIDES: Record<string, string> = {
   'united-arab-emirates': 'United Arab Emirates',
 };
 
-const EUROPE_SLUGS = new Set(['germany', 'france', 'italy', 'spain', 'sweden', 'denmark', 'switzerland']);
+const EUROPE_SLUGS = new Set([
+  'germany',
+  'france',
+  'italy',
+  'spain',
+  'sweden',
+  'denmark',
+  'norway',
+  'switzerland',
+]);
 const UK_SLUGS = new Set(['united-kingdom', 'uk']);
 
 function slugToCountryName(slug: string): string {

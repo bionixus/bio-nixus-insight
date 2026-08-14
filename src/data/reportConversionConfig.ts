@@ -100,7 +100,12 @@ type PharmaCountryKey =
   | 'bahrain'
   | 'iraq'
   | 'iran'
-  | 'kuwait';
+  | 'kuwait'
+  | 'usa'
+  | 'uk'
+  | 'germany'
+  | 'brazil'
+  | 'canada';
 
 const PHARMA_GUIDE_CONFIG: Record<PharmaCountryKey, ReportConversionConfig> = {
   'saudi-arabia': {
@@ -214,6 +219,78 @@ const PHARMA_GUIDE_CONFIG: Record<PharmaCountryKey, ReportConversionConfig> = {
     midPageHeadline: 'Need proprietary Kuwait physician, payer, or tender intelligence?',
     midPageBody:
       'Book a 30-minute briefing with BioNixus to align on formulary hypotheses, stakeholder mapping across MOH CMS and leading distributors, or competitive intelligence timelines for Kuwait.',
+  },
+  usa: {
+    marketName: 'United States',
+    reportLabel: 'USA pharmaceutical companies',
+    canonicalPath: '/pharmaceutical-companies-usa',
+    shareSlug: 'pharmaceutical-companies-usa',
+    emailSubject: 'USA pharma market research — BioNixus',
+    routingHint: 'Mention FDA/CMS formulary, Part D, or specialty pharmacy priorities for faster routing.',
+    primaryCtaLabel: 'Schedule a USA research briefing',
+    consultationHeadline: 'Ready for a USA pharma market intelligence engagement?',
+    consultationBody:
+      'BioNixus designs instruments for US physicians, payers, and specialty pharmacy stakeholders, monitors formulary and channel dynamics, and packages board-ready narratives for pharma and biotech teams.',
+    asideDeskLabel: 'USA market desk',
+    midPageHeadline: 'Need proprietary US physician, payer, or channel intelligence?',
+    midPageBody:
+      'Book a 30-minute briefing to align on FDA/CMS-aligned stakeholder mapping, specialty pharmacy access, or competitive intelligence timelines for the United States.',
+  },
+  uk: {
+    marketName: 'United Kingdom',
+    reportLabel: 'UK pharmaceutical companies',
+    canonicalPath: '/pharmaceutical-companies-uk',
+    shareSlug: 'pharmaceutical-companies-uk',
+    emailSubject: 'UK pharma market research — BioNixus',
+    routingHint: 'Mention MHRA registration or NICE/NHS formulary priorities for faster routing.',
+    primaryCtaLabel: 'Schedule a UK research briefing',
+    consultationHeadline: 'Ready for a UK pharma market intelligence engagement?',
+    asideDeskLabel: 'UK market desk',
+    midPageHeadline: 'Need proprietary UK physician, NHS, or NICE intelligence?',
+    midPageBody:
+      'Book a briefing on MHRA, NICE, and NHS-aligned stakeholder mapping and reimbursement dynamics in the United Kingdom.',
+  },
+  germany: {
+    marketName: 'Germany',
+    reportLabel: 'Germany pharmaceutical companies',
+    canonicalPath: '/pharmaceutical-companies-germany',
+    shareSlug: 'pharmaceutical-companies-germany',
+    emailSubject: 'Germany pharma market research — BioNixus',
+    routingHint: 'Mention BfArM registration or G-BA/AMNOG pricing priorities for faster routing.',
+    primaryCtaLabel: 'Schedule a Germany research briefing',
+    consultationHeadline: 'Ready for a Germany pharma market intelligence engagement?',
+    asideDeskLabel: 'Germany market desk',
+    midPageHeadline: 'Need proprietary German physician, G-BA, or AMNOG intelligence?',
+    midPageBody:
+      'Book a briefing on BfArM, G-BA, and SHI-aligned stakeholder mapping and pricing dynamics in Germany.',
+  },
+  brazil: {
+    marketName: 'Brazil',
+    reportLabel: 'Brazil pharmaceutical companies',
+    canonicalPath: '/pharmaceutical-companies-brazil',
+    shareSlug: 'pharmaceutical-companies-brazil',
+    emailSubject: 'Brazil pharma market research — BioNixus',
+    routingHint: 'Mention ANVISA registration or CONITEC/SUS reimbursement priorities for faster routing.',
+    primaryCtaLabel: 'Schedule a Brazil research briefing',
+    consultationHeadline: 'Ready for a Brazil pharma market intelligence engagement?',
+    asideDeskLabel: 'Brazil market desk',
+    midPageHeadline: 'Need proprietary Brazilian physician, CONITEC, or retail intelligence?',
+    midPageBody:
+      'Book a briefing on ANVISA, CONITEC, and SUS/private-channel stakeholder mapping for Brazil.',
+  },
+  canada: {
+    marketName: 'Canada',
+    reportLabel: 'Canada pharmaceutical companies',
+    canonicalPath: '/pharmaceutical-companies-canada',
+    shareSlug: 'pharmaceutical-companies-canada',
+    emailSubject: 'Canada pharma market research — BioNixus',
+    routingHint: 'Mention Health Canada registration or CADTH/pCPA priorities for faster routing.',
+    primaryCtaLabel: 'Schedule a Canada research briefing',
+    consultationHeadline: 'Ready for a Canada pharma market intelligence engagement?',
+    asideDeskLabel: 'Canada market desk',
+    midPageHeadline: 'Need proprietary Canadian physician, CADTH, or provincial payer intelligence?',
+    midPageBody:
+      'Book a briefing on Health Canada, CADTH, and provincial formulary stakeholder mapping for Canada.',
   },
 };
 
