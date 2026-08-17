@@ -3,6 +3,7 @@
  * Slug: /blog/china-device-vbp-rounds-explained
  */
 import type { BlogPost } from '@/types/blog';
+import { NMPA_CLASS_III_TIMELINE_SLUG } from '@/data/blog-nmpa-class-iii-timeline-2026';
 
 export const CHINA_DEVICE_VBP_EXPLAINED_SLUG = 'china-device-vbp-rounds-explained';
 
