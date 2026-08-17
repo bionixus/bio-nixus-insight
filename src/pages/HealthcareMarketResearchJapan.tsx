@@ -335,6 +335,8 @@ export default function HealthcareMarketResearchJapan() {
               {[
                 { to: '/pharmaceutical-market-research-japan', label: 'Japanese pharmaceutical market research' },
                 { to: '/japan-healthcare-market-report', label: 'Japan healthcare market report' },
+                { to: '/japan-medical-devices-market-report', label: 'Japan medical devices market report 2026' },
+                { to: '/japan-medtech-market-research', label: 'Japan MedTech market research' },
                 { to: '/insights/top-healthcare-market-research-companies-japan-2026', label: 'Top healthcare MR companies Japan 2026' },
                 { to: '/insights/top-market-research-companies-japan-2026', label: 'Top market research companies Japan 2026' },
                 { to: '/healthcare-market-research-south-korea', label: 'Healthcare market research South Korea' },

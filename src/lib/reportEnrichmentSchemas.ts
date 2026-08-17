@@ -1,4 +1,4 @@
-import type { MarketIntelligence } from '@/data/marketIntelligence/types';
+import type { MarketIntelligence, RegulatoryStep } from '@/data/marketIntelligence/types';
 import { MARKET_INTELLIGENCE } from '@/data/marketIntelligenceData';
 
 export interface ReportEnrichmentSchemaInput {
@@ -8,6 +8,14 @@ export interface ReportEnrichmentSchemaInput {
   marketSlug?: string;
   publishedDate: string;
   modifiedDate: string;
+  /** When medical-devices, never emit pharmaceutical drug HowTo. */
+  variant?: 'healthcare' | 'medical-devices';
+}
+
+function isMedicalDevicesReport(input: ReportEnrichmentSchemaInput): boolean {
+  if (input.variant === 'medical-devices') return true;
+  const haystack = `${input.pageTitle} ${input.pageMetaDescription}`;
+  return /medical\s*device/i.test(haystack) || /medtech/i.test(haystack);
 }
 
 export function buildDatasetSchema(input: ReportEnrichmentSchemaInput): object {
@@ -58,6 +66,14 @@ export function buildMedicalWebPageSchema(input: ReportEnrichmentSchemaInput): o
   };
 }
 
+function mapHowToSteps(steps: RegulatoryStep[]) {
+  return steps.map((s) => ({
+    '@type': 'HowToStep',
+    name: s.action,
+    text: `${s.action}. Responsible body: ${s.body}. Typical timeline: ${s.timeline}. ${s.notes}`,
+  }));
+}
+
 export function buildHowToSchema(
   intelligence: MarketIntelligence,
   countryName: string,
@@ -67,11 +83,20 @@ export function buildHowToSchema(
     '@type': 'HowTo',
     name: `How to register a pharmaceutical drug in ${countryName}: Step-by-step regulatory guide 2026`,
     description: `Complete step-by-step guide to pharmaceutical drug registration in ${countryName} including dossier submission, technical review, pricing approval, and formulary listing.`,
-    step: intelligence.registrationSteps.map((s) => ({
-      '@type': 'HowToStep',
-      name: s.action,
-      text: `${s.action}. Responsible body: ${s.body}. Typical timeline: ${s.timeline}. ${s.notes}`,
-    })),
+    step: mapHowToSteps(intelligence.registrationSteps),
+  };
+}
+
+export function buildDeviceHowToSchema(
+  steps: RegulatoryStep[],
+  countryName: string,
+): object {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: `How to register a medical device in ${countryName}: Step-by-step regulatory guide 2026`,
+    description: `Complete step-by-step guide to medical device registration in ${countryName} including classification, marketing authorization, quality system compliance, and reimbursement listing.`,
+    step: mapHowToSteps(steps),
   };
 }
 
@@ -80,11 +105,20 @@ export function buildReportEnrichmentSchemas(input: ReportEnrichmentSchemaInput)
     buildDatasetSchema(input),
     buildMedicalWebPageSchema(input),
   ];
-  if (input.marketSlug) {
-    const intelligence = MARKET_INTELLIGENCE[input.marketSlug];
-    if (intelligence?.registrationSteps.length) {
-      schemas.push(buildHowToSchema(intelligence, input.countryName));
+  if (!input.marketSlug) return schemas;
+
+  const intelligence = MARKET_INTELLIGENCE[input.marketSlug];
+  if (!intelligence) return schemas;
+
+  if (isMedicalDevicesReport(input)) {
+    if (intelligence.deviceRegistrationSteps?.length) {
+      schemas.push(buildDeviceHowToSchema(intelligence.deviceRegistrationSteps, input.countryName));
     }
+    return schemas;
+  }
+
+  if (intelligence.registrationSteps.length) {
+    schemas.push(buildHowToSchema(intelligence, input.countryName));
   }
   return schemas;
 }

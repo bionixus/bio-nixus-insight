@@ -181,7 +181,7 @@ const singaporeMedtechManufacturing: SpecialtyMarketDemandContent = {
     { to: '/singapore-medical-devices-market-report', label: 'Singapore medical devices market report' },
     { to: '/pharmaceutical-market-research-singapore', label: 'Pharmaceutical market research Singapore' },
     { to: '/healthcare-market-research-singapore', label: 'Healthcare market research Singapore' },
-    { to: '/japan-medical-devices-market-report', label: 'Japan MedTech market research' },
+    { to: '/japan-medical-devices-market-report', label: 'Japan medical devices market report' },
     { to: '/clinical-diagnostics-market-research', label: 'Clinical diagnostics market research' },
   ],
   faqs: [
@@ -468,7 +468,7 @@ const japanGeneralSurgicalDevices: SpecialtyMarketDemandContent = {
   ],
   whyBionixus: SHARED_WHY,
   relatedLinks: [
-    { to: '/japan-medical-devices-market-report', label: 'Japan MedTech market research' },
+    { to: '/japan-medical-devices-market-report', label: 'Japan medical devices market report' },
     { to: '/pharmaceutical-market-research-japan', label: 'Pharmaceutical market research Japan' },
     { to: '/healthcare-market-research-japan', label: 'Healthcare market research Japan' },
     { to: '/singapore-medtech-manufacturing-market', label: 'Singapore MedTech manufacturing market' },
@@ -603,7 +603,7 @@ const healthcareBioconvergence: SpecialtyMarketDemandContent = {
     { to: '/real-world-evidence', label: 'Real world evidence' },
     { to: '/healthcare-market-research', label: 'Healthcare market research hub' },
     { to: '/bionixus-industries', label: 'BioNixus industries hub' },
-    { to: '/japan-medical-devices-market-report', label: 'Japan MedTech market research' },
+    { to: '/japan-medical-devices-market-report', label: 'Japan medical devices market report' },
   ],
   faqs: [
     {
@@ -756,7 +756,7 @@ const nupcoTenderCalendar: SpecialtyMarketDemandContent = {
     { to: '/blog/nupco-saudi-arabia-tendering-guide', label: 'NUPCO Saudi Arabia tendering guide' },
     { to: '/gcc-market-access-guide', label: 'GCC pharmaceutical market access guide' },
     { to: '/sfda-market-access-strategy-saudi-arabia', label: 'SFDA market access strategy Saudi Arabia' },
-    { to: '/healthcare-market-research-in-saudi-arabia', label: 'Healthcare market research in Saudi Arabia' },
+    { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare market research Saudi Arabia' },
     { to: '/gcc-generic-injectables-market', label: 'GCC generic injectables market' },
     { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Market research Saudi Arabia pharmaceutical' },
   ],
@@ -900,7 +900,7 @@ const japanNeurologyDevices: SpecialtyMarketDemandContent = {
   whyBionixus: SHARED_WHY,
   relatedLinks: [
     { to: '/japan-general-surgical-devices-market', label: 'Japan general surgical devices market' },
-    { to: '/japan-medical-devices-market-report', label: 'Japan MedTech market research' },
+    { to: '/japan-medical-devices-market-report', label: 'Japan medical devices market report' },
     { to: '/healthcare-market-research-japan', label: 'Healthcare market research Japan' },
   ],
   faqs: [
@@ -962,7 +962,7 @@ const japanMedicalDisposables: SpecialtyMarketDemandContent = {
   whyBionixus: SHARED_WHY,
   relatedLinks: [
     { to: '/japan-general-surgical-devices-market', label: 'Japan general surgical devices market' },
-    { to: '/japan-medical-devices-market-report', label: 'Japan MedTech market research' },
+    { to: '/japan-medical-devices-market-report', label: 'Japan medical devices market report' },
     { to: '/gcc-medical-devices-market-report', label: 'GCC medical devices market report' },
   ],
   faqs: [
@@ -1023,7 +1023,7 @@ const japanMedtechAccessAutomation: SpecialtyMarketDemandContent = {
   ],
   whyBionixus: SHARED_WHY,
   relatedLinks: [
-    { to: '/japan-medical-devices-market-report', label: 'Japan MedTech market research' },
+    { to: '/japan-medical-devices-market-report', label: 'Japan medical devices market report' },
     { to: '/japan-general-surgical-devices-market', label: 'Japan general surgical devices market' },
     { to: '/healthcare-bioconvergence-market', label: 'Healthcare bioconvergence market' },
   ],
@@ -1557,7 +1557,7 @@ const gccMedicationManagement: SpecialtyMarketDemandContent = {
     { to: '/gcc-pharmacy-market', label: 'GCC pharmacy market' },
     { to: '/gcc-generic-pharmaceuticals-market', label: 'GCC generic pharmaceuticals market' },
     { to: '/gcc-functional-service-providers-market', label: 'GCC FSP market' },
-    { to: '/healthcare-market-research-in-saudi-arabia', label: 'Healthcare market research in Saudi Arabia' },
+    { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare market research Saudi Arabia' },
     { to: '/blog/nupco-saudi-arabia-tendering-guide', label: 'NUPCO tendering guide' },
     { to: '/healthcare-market-research', label: 'Healthcare market research hub' },
   ],

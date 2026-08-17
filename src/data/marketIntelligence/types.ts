@@ -31,6 +31,8 @@ export interface MarketIntelligence {
   country: string;
   kpis: MarketKPI[];
   registrationSteps: RegulatoryStep[];
+  /** Device-specific pathway steps for medical-devices report HowTo schema (avoids pharma HowTo on device pages). */
+  deviceRegistrationSteps?: RegulatoryStep[];
   therapySegments?: TherapySegment[];
   majorHospitals: HospitalEntry[];
   keyCompanies?: string[];

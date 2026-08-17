@@ -114,7 +114,7 @@ const JapanHealthcareMarketReport = () => (
           stats={[
             { value: '~$530B', label: 'Japan healthcare market 2026' },
             { value: '~$90B', label: 'Pharmaceutical market 2026' },
-            { value: '~$40B', label: 'Medical devices market 2026' },
+            { value: '~$41B', label: 'Medical devices market 2026' },
           ]}
         />
       <ReportContentWithAside config={REPORT_CONVERSION}>
@@ -125,7 +125,7 @@ const JapanHealthcareMarketReport = () => (
             <div className="grid sm:grid-cols-3 gap-6 text-center">
               <div><p className="text-3xl font-display font-bold text-primary">~$530B</p><p className="text-xs text-muted-foreground mt-1">Japan healthcare market 2026</p></div>
               <div><p className="text-3xl font-display font-bold text-primary">~$90B</p><p className="text-xs text-muted-foreground mt-1">Pharmaceutical market 2026</p></div>
-              <div><p className="text-3xl font-display font-bold text-primary">~$40B</p><p className="text-xs text-muted-foreground mt-1">Medical devices market 2026</p></div>
+              <div><p className="text-3xl font-display font-bold text-primary">~$41B</p><p className="text-xs text-muted-foreground mt-1">Medical devices market 2026</p></div>
             </div>
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">Japan is the world's third-largest pharmaceutical market and the leading market for aging population-driven healthcare demand. PMDA's Sakigake pathway has largely eliminated Japan drug lag; the biannual NHI price revision system and market expansion re-pricing remain the defining commercial headwinds for high-volume products. Universal NHI coverage — delivered through employer-based Kenpo societies, municipal Kokumin Kenko Hoken, and the Late-Stage Medical Care System for residents aged 75 and above — keeps patient cost-sharing low and channels virtually all prescription volume through a single, centrally negotiated formulary overseen jointly by MHLW and Chuikyo. For hospital-administered products, the DPC (Diagnosis Procedure Combination) bundled payment system, which covers the large majority of acute-care beds, means commercial planning must account for both the NHI list price and whether a given drug is bundled into the per-diem DPC rate or billed separately as a specified high-cost drug — a distinction that materially affects hospital-level adoption economics.</p>
@@ -210,7 +210,8 @@ const JapanHealthcareMarketReport = () => (
           <div className="container-wide max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Related BioNixus market intelligence</h2>
             <p className="text-muted-foreground leading-relaxed">
-              BioNixus runs healthcare and pharmaceutical market research across Asia-Pacific. Benchmark Japan against our{' '}
+              BioNixus runs healthcare and pharmaceutical market research across Asia-Pacific. For Japan medtech size, PMDA pathways, and NHI device listing, see the{' '}
+              <Link to="/japan-medical-devices-market-report" className="text-primary hover:underline font-medium">Japan medical devices market report</Link>. Benchmark overall healthcare against our{' '}
               <Link to="/china-healthcare-market-report" className="text-primary hover:underline font-medium">China healthcare market report</Link>{' '}and{' '}
               <Link to="/south-korea-healthcare-market-report" className="text-primary hover:underline font-medium">South Korea healthcare market report</Link>, or start from the{' '}
               <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}

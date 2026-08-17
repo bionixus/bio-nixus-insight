@@ -420,13 +420,13 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
     slug: 'japan',
     label: 'Japan',
     regulatorShort: 'PMDA',
-    marketSize: 'USD 38–43 billion',
+    marketSize: '~USD 41 billion',
     domesticFirms: 'Olympus, Terumo, and multinational subsidiaries',
     healthcareResearchPath: '/healthcare-market-research-japan',
     medDevicesReportPath: '/japan-medical-devices-market-report',
     relatedSlugs: ['south-korea', 'china'],
     languages: 'Japanese (English for global HQ coordination)',
-    metricOne: { label: 'MedTech market 2026', value: 'USD 38–43B', detail: 'Third largest globally.' },
+    metricOne: { label: 'MedTech market 2026', value: '~USD 41B', detail: 'Third largest globally; Fortune Business Insights–aligned (peer range ~USD 31–47B).' },
     metricTwo: { label: 'Hospital beds', value: '12.1/1,000', detail: 'Highest bed density in OECD.' },
     metricThree: { label: 'Sakigake review', value: '6 months', detail: 'Priority pathway for innovative devices.' },
     executivePoints: [
@@ -443,9 +443,9 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'BioNixus Japan programmes coordinate with Japanese-language field partners for verified specialist recruitment — supporting PMDA-aware launch and Asia-Pacific portfolio strategy.',
     ],
     marketParagraphs: [
-      'Japan\'s USD 38–43 billion medical devices market is third largest globally, driven by super-ageing demographics (124 million population, >28% over sixty-five). Olympus and Terumo anchor domestic industry; import dependence remains significant in high-technology segments.',
+      'Japan\'s ~USD 41 billion medical devices market is third largest globally (Fortune Business Insights–aligned; peer desk estimates often USD 31–47B), driven by super-ageing demographics (124 million population, >28% over sixty-five). Olympus and Terumo anchor domestic industry; import dependence remains significant in high-technology segments.',
       'Robotic surgery, endoscopy, and diagnostic imaging represent high-value categories. Home-care and remote monitoring devices grow as community-based care expands under regional integrated care reforms.',
-      'BioNixus supports Japan market entry research with PMDA/NHI context and verified KOL networks at major university hospitals.',
+      'BioNixus supports Japan market entry research with PMDA/NHI context and verified KOL networks at major university hospitals. For market size and access briefing, see the Japan medical devices market report; for custom primary research programmes, use Japan MedTech market research.',
     ],
   },
   china: {

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
 import { MarketIntelligenceSections } from '@/components/market-intelligence';
@@ -17,15 +18,21 @@ import {
 import { ReportPremiumHero } from '@/components/report-premium';
 import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
 
+const PAGE_TITLE = 'Japan Medical Devices Market Report 2026 | Size, PMDA & NHI';
+const PAGE_DESCRIPTION =
+  'Japan medical devices market report 2026 — ~USD 41B market size, PMDA Class I–IV (todokede/ninsho/shonin), NHI listing, forecast to ~USD 64B. BioNixus.';
+const PAGE_MODIFIED = '2026-08-18';
+
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
+  { name: 'Healthcare Market Research', href: '/healthcare-market-research' },
   { name: 'Japan Medical Devices Market Report', href: '/japan-medical-devices-market-report' },
 ];
 
 const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
   {
     question: 'How big is the Japan medical devices market in 2026?',
-    answer: 'The Japanese medical devices market is estimated at USD 38–43 billion in 2026 — the world\'s third-largest, after the United States and China. Japan combines a massive hospital infrastructure (8,300+ hospitals, 1.6 million hospital beds — the highest bed density per capita of any major economy), with NHI reimbursement covering virtually all approved medical procedures and devices. Japan is also a major medical device manufacturer, home to global companies including Olympus (endoscopy, surgical), Terumo (cardiovascular, blood management), Hoya (optics, surgical), Omron (blood pressure, diabetes monitoring), and Sysmex (haematology IVD).',
+    answer: 'This Japan medical devices market report sizes the market at approximately USD 41 billion in 2026 — the world\'s third-largest after the United States and China — with a Fortune Business Insights–aligned path to roughly USD 64 billion by 2032 (~6.5% CAGR). Peer desk estimates commonly fall in a USD 31–47 billion band depending on product scope. Japan combines dense hospital infrastructure (~8,100 hospitals, ~1.5 million beds — among the highest OECD bed densities) with NHI reimbursement covering virtually all approved procedures and devices, plus a strong domestic OEM base (Olympus, Terumo, Hoya, Omron, Sysmex).',
   },
   {
     question: 'How does PMDA regulate medical devices in Japan?',
@@ -78,126 +85,405 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-linkedin.png',
-    headline: 'Japan Medical Devices Market Report 2026: PMDA, NHI Reimbursement, and Device Lag Reduction',
+    headline: 'Japan Medical Devices Market Report 2026: Size, PMDA, NHI Reimbursement, and Device Lag Reduction',
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
-    publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },    datePublished: '2026-05-27',
-    dateModified: '2026-07-21',
+    publisher: {
+      '@type': 'Organization',
+      name: 'BioNixus',
+      url: 'https://www.bionixus.com',
+      logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
+    },
+    datePublished: '2026-05-27',
+    dateModified: PAGE_MODIFIED,
+    description: PAGE_DESCRIPTION,
     mainEntityOfPage: 'https://www.bionixus.com/japan-medical-devices-market-report',
   },
   {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     url: `https://www.bionixus.com/japan-medical-devices-market-report#${FAQ_SECTION_ID}`,
-    mainEntity: REPORT_FAQ_ITEMS.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
+    mainEntity: REPORT_FAQ_ITEMS.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
   },
   ...buildReportEnrichmentSchemas({
-    pageTitle: "Japan Medical Devices Market Report 2026 | PMDA Approval, NHI Reimbursement & Device Lag | BioNixus",
-    pageMetaDescription: "Japan medical devices market at ~USD 41B in 2026 — world's third largest, reaching ~USD 64B by 2032 (6.5% CAGR, Fortune Business Insights). PMDA Class I–IV approval, NHI functional category reimbursement, device lag reduction, and BioNixus GCC expansion intelligence for Japanese medtech.",
-    countryName: "Japan",
-    marketSlug: "japan",
-    publishedDate: "2026-05-27",
-    modifiedDate: "2026-07-21",
-  })
+    pageTitle: PAGE_TITLE,
+    pageMetaDescription: PAGE_DESCRIPTION,
+    countryName: 'Japan',
+    marketSlug: 'japan',
+    publishedDate: '2026-05-27',
+    modifiedDate: PAGE_MODIFIED,
+    variant: 'medical-devices',
+  }),
 ];
+
+function SegmentRow({ segment, share, note }: { segment: string; share: string; note: string }) {
+  return (
+    <tr className="border-b border-border">
+      <td className="py-3 pr-4 font-medium text-primary text-sm">{segment}</td>
+      <td className="py-3 px-4 text-sm text-muted-foreground">{share}</td>
+      <td className="py-3 pl-4 text-sm text-muted-foreground">{note}</td>
+    </tr>
+  );
+}
 
 const JapanMedicalDevicesMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="Japan Medical Device Market 2026: Size, PMDA Access & Forecast"
-      description="Japan's medical device market in 2026 — market size, PMDA/Shonin registration, reimbursement and forecasts. Report by Bionixus."      canonical="https://www.bionixus.com/japan-medical-devices-market-report"
+      title={PAGE_TITLE}
+      description={PAGE_DESCRIPTION}
+      canonical="https://www.bionixus.com/japan-medical-devices-market-report"
       jsonLd={jsonLd}
     />
-      <ReportReadingProgress progressId="report-rp-japan-medical-devices-market-report" />
-      <main>
-      <div className="section-padding pt-24 pb-4"><div className="container-wide"><BreadcrumbNav items={breadcrumbItems} /></div></div>
-              <ReportPremiumHero
-          title="Japan Medical Devices Market Report 2026: PMDA Regulation, NHI Reimbursement, and Commercial Intelligence"
-          description="BioNixus delivers Japan medical device market intelligence — PMDA regulatory tracking, NHI pricing strategies, hospital procurement research, and GCC/MENA market entry intelligence for Japanese and international medtech companies."
-          config={REPORT_CONVERSION}
-          marketSlug="japan"
-          countryName="Japan"
-          stats={[
-            { value: '~$41B', label: 'Japan medical devices market 2026' },
-            { value: '~$64B', label: 'Forecast 2032' },
-            { value: '6.5%', label: 'CAGR 2026–2032' },
-          ]}
-        />
+    <ReportReadingProgress progressId="report-rp-japan-medical-devices-market-report" />
+    <main>
+      <div className="section-padding pt-24 pb-4">
+        <div className="container-wide">
+          <BreadcrumbNav items={breadcrumbItems} />
+        </div>
+      </div>
+      <ReportPremiumHero
+        title="Japan Medical Devices Market Report 2026: Size, PMDA Regulation & NHI Intelligence"
+        description="BioNixus Japan medical devices market report — ~USD 41B market size, PMDA Class I–IV pathways, NHI functional pricing, hospital procurement intelligence, and GCC/MENA entry support for Japanese and international medtech."
+        config={REPORT_CONVERSION}
+        marketSlug="japan"
+        countryName="Japan"
+        stats={[
+          { value: '~$41B', label: 'Japan medical devices market 2026' },
+          { value: '~$64B', label: 'Forecast 2032' },
+          { value: '6.5%', label: 'CAGR 2026–2032' },
+        ]}
+      />
+
       <ReportContentWithAside config={REPORT_CONVERSION}>
-        <section className="section-padding bg-cream-dark" id="executive-summary">
-        <div className="container-wide max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Executive Summary</h2>
-          <div className="bg-white rounded-xl border border-border p-6 shadow-sm mb-6">
-            <div className="grid sm:grid-cols-3 gap-6 text-center">
-              <div><p className="text-3xl font-display font-bold text-primary">~$41B</p><p className="text-xs text-muted-foreground mt-1">Japan medical devices market 2026</p></div>
-              <div><p className="text-3xl font-display font-bold text-primary">~$64B</p><p className="text-xs text-muted-foreground mt-1">Forecast 2032</p></div>
-              <div><p className="text-3xl font-display font-bold text-primary">6.5%</p><p className="text-xs text-muted-foreground mt-1">CAGR 2026–2032</p></div>
+        <section className="section-padding bg-cream-dark" id="geo-answer-section">
+          <div className="container-wide max-w-4xl mx-auto">
+            <GeoLLMAnswerBlock
+              question="What is the Japan medical devices market size in 2026?"
+              answer="The Japan medical devices market is approximately USD 41 billion in 2026 — the world's third-largest — on a path toward roughly USD 64 billion by 2032 (~6.5% CAGR). PMDA Class I–IV pathways (todokede, ninsho, shonin), MAH/DMAH execution, and Chuikyo/NHI functional listing govern commercial access."
+              points={[
+                {
+                  title: 'Market size',
+                  description:
+                    '~USD 41B in 2026 (Fortune Business Insights–aligned); peer estimates typically USD 31–47B depending on scope.',
+                },
+                {
+                  title: 'Regulatory pathway',
+                  description:
+                    'Class I todokede, Class II ninsho, Class III/IV shonin under PMDA/MHLW, with Sakigake priority review for unmet need.',
+                },
+                {
+                  title: 'Commercial access',
+                  description:
+                    'NHI functional-category listing on biannual Chuikyo cycles plus DPC hospital economics drive reimbursed volume.',
+                },
+                {
+                  title: 'BioNixus intelligence',
+                  description:
+                    'Primary hospital and PMDA-aware research for OEMs entering Japan, and GCC/MENA entry programmes for Japanese medtech.',
+                },
+              ]}
+              summary="Use this Japan medical devices market report for size, PMDA/NHI access, and segment intelligence — and BioNixus Japan MedTech market research when you need custom fieldwork."
+            />
+          </div>
+        </section>
+
+        <section className="section-padding" id="executive-summary">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Executive Summary</h2>
+            <div className="bg-white rounded-xl border border-border p-6 shadow-sm mb-6">
+              <div className="grid sm:grid-cols-3 gap-6 text-center">
+                <div>
+                  <p className="text-3xl font-display font-bold text-primary">~$41B</p>
+                  <p className="text-xs text-muted-foreground mt-1">Japan medical devices market 2026</p>
+                </div>
+                <div>
+                  <p className="text-3xl font-display font-bold text-primary">~$64B</p>
+                  <p className="text-xs text-muted-foreground mt-1">Forecast 2032</p>
+                </div>
+                <div>
+                  <p className="text-3xl font-display font-bold text-primary">6.5%</p>
+                  <p className="text-xs text-muted-foreground mt-1">CAGR 2026–2032</p>
+                </div>
+              </div>
+            </div>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              This Japan medical devices market report is part of BioNixus{' '}
+              <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">
+                global healthcare market research
+              </Link>{' '}
+              coverage. It focuses on market size, PMDA pathways, and NHI commercial access — distinct from our{' '}
+              <Link to="/japan-medtech-market-research" className="text-primary hover:underline font-medium">
+                Japan MedTech market research
+              </Link>{' '}
+              service page (custom primary research) and{' '}
+              <Link to="/japan-medical-device-market-access" className="text-primary hover:underline font-medium">
+                Japan medical device market access
+              </Link>{' '}
+              how-to intelligence.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Japan is the world&apos;s third-largest medical devices market and a global innovation hub for endoscopy,
+              cardiovascular devices, IVD, and surgical robotics. Our primary size reference is ~USD 41 billion in 2026
+              growing to ~USD 64 billion by 2032 (Fortune Business Insights–aligned; ~6.5% CAGR). Desk estimates from
+              other firms typically land between USD 31–47 billion depending on whether capital imaging, IVD, and
+              consumables are fully in scope. PMDA device-lag reforms have improved concurrent-launch timing; NHI
+              functional categories and biannual Chuikyo revisions remain the core volume framework.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Japan&apos;s demographic profile anchors demand: more than 28% of the population is over 65 — the highest
+              share of any major economy — supported by roughly 8,100 hospitals and close to 1.5 million hospital beds
+              (around 12.1 beds per 1,000). That combination sustains high per-capita utilisation of diagnostic imaging,
+              endoscopy, cardiac rhythm management, and orthopaedics, while Sakigake priority review shortens the path
+              from approval to hospital adoption for genuine innovation.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              BioNixus methodology combines regulator- and pathway-aware desk synthesis with primary hospital
+              procurement and clinician research — not syndicated table dumps alone. See also the{' '}
+              <Link to="/japan-healthcare-market-report" className="text-primary hover:underline font-medium">
+                Japan healthcare market report
+              </Link>{' '}
+              and{' '}
+              <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">
+                GCC medical devices market report
+              </Link>
+              . Request a scoped proposal at{' '}
+              <a href="mailto:admin@bionixus.com" className="text-primary hover:underline font-medium">
+                admin@bionixus.com
+              </a>
+              .
+            </p>
+          </div>
+        </section>
+
+        <MarketIntelligenceSections marketSlug="japan" countryName="Japan" variant="medical-devices" />
+
+        <section className="section-padding bg-cream-dark" id="market-segments">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              Japan Medical Device Market Segments 2026
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Segment value concentrates in imaging/endoscopy, IVD, cardiovascular, orthopaedics, and surgical
+              robotics — categories where aging demographics, NHI coverage, and domestic OEM strength reinforce
+              installed-base stickiness.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-border bg-white shadow-sm mb-8">
+              <table className="w-full text-left">
+                <thead>
+                  <tr className="border-b-2 border-primary/20 bg-primary/5">
+                    <th className="py-3 pl-4 pr-4 text-sm font-semibold text-foreground">Segment</th>
+                    <th className="py-3 px-4 text-sm font-semibold text-foreground">Relative weight</th>
+                    <th className="py-3 pl-4 pr-4 text-sm font-semibold text-foreground">Key drivers</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <SegmentRow
+                    segment="Diagnostic imaging & endoscopy"
+                    share="Largest by capital + procedure value"
+                    note="Highest per-capita endoscopy rates; Olympus global endoscopy leadership; MRI/CT density"
+                  />
+                  <SegmentRow
+                    segment="In vitro diagnostics"
+                    share="Top-tier volume category"
+                    note="Clinical chemistry, haematology, immunoassay — Sysmex domestic and export strength"
+                  />
+                  <SegmentRow
+                    segment="Cardiovascular devices"
+                    share="High-growth aging category"
+                    note="Stents, CRM, TAVR — among the world's largest elderly structural-heart procedure bases"
+                  />
+                  <SegmentRow
+                    segment="Orthopaedics & joints"
+                    share="Structurally rising"
+                    note="Joint replacement and spine volumes tied to super-aging demographics"
+                  />
+                  <SegmentRow
+                    segment="Surgical instruments & robotics"
+                    share="Premium capital growth"
+                    note="Large robotic installed base; domestic robotics programmes seeking Sakigake tracks"
+                  />
+                  <SegmentRow
+                    segment="Consumables & home monitoring"
+                    share="Recurring volume"
+                    note="Diabetes CGM/insulin delivery, home care, remote monitoring under community-care policy"
+                  />
+                </tbody>
+              </table>
             </div>
           </div>
-          <p className="text-muted-foreground leading-relaxed mb-4">Japan is the world's third-largest medical devices market and a global innovation hub for endoscopy, cardiovascular devices, IVD, and surgical robotics. Published estimates vary by research firm and scope — Fortune Business Insights, our primary reference, sizes the market at ~$41B in 2026 growing to ~$64B by 2032; other firms cite a range of roughly $31–47B today depending on methodology. PMDA's device lag reduction reforms have improved market access timing; NHI reimbursement and biannual price revisions continue to be the primary commercial framework for long-term volume strategy.</p>
-          <p className="text-muted-foreground leading-relaxed mb-4">Japan's demographic profile is central to the commercial opportunity: more than 28% of the population is over 65 — the highest share of any major economy — supported by roughly 8,100 hospitals and close to 1.5 million hospital beds, a bed density (around 12.1 per 1,000 population) that is the highest in the OECD. That combination of an aging population and dense hospital infrastructure sustains structurally high per-capita utilisation of diagnostic imaging, endoscopy, cardiac rhythm management, and orthopaedic devices, even as MHLW's Sakigake priority-review designation and PMDA's broader device-lag reduction programme shorten the path from approval to hospital adoption for genuinely innovative technologies.</p>
-          <p className="text-muted-foreground leading-relaxed">See also: <Link to="/japan-healthcare-market-report" className="text-primary hover:underline font-medium">Japan Healthcare Market Report</Link> and <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC Medical Devices Market Report</Link>.</p>
-        </div>
-      </section>
-              <MarketIntelligenceSections marketSlug="japan" countryName="Japan" variant="medical-devices" />
-
-        <section className="section-padding bg-cream-dark" id="japan-device-regulatory-pathway">
-          <div className="container-wide max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Japan Medical Device Regulatory Pathway</h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Market entry planning for Japan should treat the PMDA pre-submission consultation (sōdan) as a distinct project phase rather than a formality. Manufacturers typically engage PMDA six to nine months before formal filing to confirm which risk class and JMDN code applies, whether existing overseas clinical data will be accepted or a Japan-specific bridging study is required, and which of the three approval routes — todokede notification, ninsho certification, or shonin review — governs the device. Skipping or compressing this consultation is one of the most common causes of delayed Japanese launches, because a misjudged classification discovered mid-review can force a manufacturer to restart under a different pathway.
-            </p>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Once filed, standard PMDA review for a Class III or Class IV device runs approximately twelve months, followed by roughly three months for formal MHLW ministerial approval. Devices that qualify for the Sakigake priority-review designation — reserved for technologies addressing genuine unmet medical need with a credible plan for early Japanese development — can compress PMDA review to around six months, a meaningful advantage in categories where global competitors are also targeting NHI listing. Throughout commercial life, the manufacturer's Marketing Authorization Holder or Designated Marketing Authorization Holder must maintain compliance with Japan's QMS Ordinance (the domestic equivalent of ISO 13485), operate post-market surveillance and adverse-event reporting to PMDA, and manage any subsequent labeling, design, or manufacturing-site variations through the same regulatory relationship.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Because NHI listing timing is tied to MHLW's Chuikyo (Central Social Insurance Medical Council) biannual cycle, the gap between PMDA/MHLW marketing approval and the next scheduled NHI listing window can add several months to effective launch timing even after approval is secured — a scheduling detail that experienced Japan market-access teams build into launch plans from the outset rather than treating as a post-approval surprise.
-            </p>
-          </div>
         </section>
 
-        <section className="section-padding" id="japan-device-growth-categories">
+        <section className="section-padding" id="japan-device-regulatory-pathway">
           <div className="container-wide max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Growth Device Categories Tied to Japan's Aging Population</h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Japan's disease burden gives a clear read on where device demand concentrates. With roughly 350,000 acute cardiovascular events recorded annually and one of the world's highest per-capita rates of structural heart disease among the elderly, cardiac rhythm management, drug-eluting stents, and transcatheter valve technologies such as TAVR remain priority categories for hospital capital planning and NHI functional-category pricing attention. Japan's diabetes population — an estimated 10.5 million patients on pharmacotherapy, with a comparable number thought to be undiagnosed — likewise sustains durable demand for continuous glucose monitoring, insulin delivery systems, and connected diabetes-management devices, an area where Japanese manufacturers such as Terumo and Omron already hold strong domestic positions.
-            </p>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Software as a Medical Device (SaMD) is a fast-emerging category under PMDA's review framework, covering AI-assisted diagnostic imaging support, digital therapeutics, and remote patient-monitoring software — categories that did not fit cleanly into the traditional hardware-centric classification system and that PMDA has worked to accommodate through dedicated review guidance. Home healthcare and remote-monitoring devices are a second structural growth area: with the world's highest share of over-65 residents and government policy actively encouraging in-home and community-based care to manage hospital capacity, devices that support chronic-disease monitoring, fall detection, and home dialysis or respiratory therapy outside the hospital setting are attracting sustained institutional and payer interest.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Surgical robotics is a third area of active investment: alongside a large installed base of international robotic surgical systems, Japanese manufacturers and hospital systems are developing domestic robotic-assisted surgery platforms, supported by PMDA's willingness to grant Sakigake-track review to genuinely novel domestic surgical technologies. For international manufacturers, the practical implication is that Japan's growth categories increasingly favour companies that can pair strong clinical evidence with a credible plan for JMDN classification, NHI functional-category positioning, and MAH/DMAH execution — rather than treating Japan as a simple extension of a US or European device launch.
-            </p>
-          </div>
-        </section>
-
-        <section className="section-padding bg-cream-dark" id="japan-top-companies">
-          <div className="container-wide max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Top Medical Device Companies Operating in Japan</h2>
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              Japan Medical Device Regulatory Pathway
+            </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Foreign OEMs collectively supply roughly half of Japan's device market by value alongside a strong base of domestic manufacturers — Japan is genuinely open to well-prepared foreign entrants, not closed, just procedurally distinctive given the MAH/DMAH requirement.
+              Treat the PMDA pre-submission consultation (sōdan) as a distinct project phase. Manufacturers typically
+              engage PMDA six to nine months before filing to lock risk class, JMDN code, bridging-study needs, and the
+              correct route among todokede, ninsho, and shonin. Misjudged classification mid-review is a common cause
+              of delayed Japanese launches.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4 mb-8">
+              {[
+                {
+                  title: 'Todokede (届出) — Class I',
+                  body: 'Prefectural notification for general medical devices; no pre-market PMDA technical review. Fastest path when classification is correctly assigned.',
+                },
+                {
+                  title: 'Ninsho (認証) — Class II',
+                  body: 'Third-party certification by a Registered Certification Body against Japan Certification Standards mapped to JMDN codes — only when a JCS exists for that code.',
+                },
+                {
+                  title: 'Shonin (承認) — Class III/IV',
+                  body: 'Full PMDA review and MHLW marketing approval, typically ~12 months plus ~3 months ministerial approval; clinical evidence for novel high-risk technologies.',
+                },
+                {
+                  title: 'Sakigake priority review',
+                  body: 'Unmet-need designation targeting ~6-month PMDA review with dedicated consultation — shortens the clock to NHI listing when Japan is an early launch market.',
+                },
+              ].map(({ title, body }) => (
+                <div key={title} className="bg-primary/5 rounded-xl border border-primary/20 p-5">
+                  <h3 className="text-base font-semibold text-foreground mb-2">{title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Throughout commercial life, the MAH or DMAH must maintain Japan QMS Ordinance compliance, post-market
+              surveillance, and adverse-event reporting to PMDA. Because NHI listing follows Chuikyo&apos;s biannual
+              cycle, the gap between MHLW approval and the next listing window can add months to effective launch —
+              a scheduling detail experienced Japan access teams build into plans from day one.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              For access-focused primary research (committee evidence, automation buyers, CIO/biomed scoring), see{' '}
+              <Link to="/japan-medical-device-market-access" className="text-primary hover:underline font-medium">
+                Japan medical device market access
+              </Link>
+              .
+            </p>
+          </div>
+        </section>
+
+        <section className="section-padding bg-cream-dark" id="japan-device-growth-categories">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              Growth Device Categories Tied to Japan&apos;s Aging Population
+            </h2>
+            <div className="grid sm:grid-cols-2 gap-4 mb-6">
+              {[
+                {
+                  title: 'Cardiovascular & structural heart',
+                  body: '~350,000 acute CV events annually and high elderly structural-heart burden sustain CRM, DES, and TAVR demand in hospital capital plans.',
+                },
+                {
+                  title: 'Diabetes technology',
+                  body: '~10.5 million patients on pharmacotherapy (plus a large undiagnosed pool) drive CGM, insulin delivery, and connected monitoring — Terumo and Omron hold strong domestic positions.',
+                },
+                {
+                  title: 'SaMD & AI diagnostics',
+                  body: 'PMDA guidance increasingly accommodates AI imaging support, digital therapeutics, and remote-monitoring software that did not fit legacy hardware-centric classes.',
+                },
+                {
+                  title: 'Home care & robotics',
+                  body: 'Community-based care policy plus a large robotic surgical installed base favour remote monitoring, home dialysis/respiratory devices, and Sakigake-track domestic robotics.',
+                },
+              ].map(({ title, body }) => (
+                <div key={title} className="bg-white rounded-xl border border-border p-5 shadow-sm">
+                  <h3 className="text-base font-semibold text-foreground mb-2">{title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-muted-foreground leading-relaxed">
+              For international manufacturers, Japan&apos;s growth categories favour teams that pair clinical evidence
+              with credible JMDN classification, NHI functional-category positioning, and MAH/DMAH execution — rather
+              than treating Japan as a simple extension of a US or European device launch.
+            </p>
+          </div>
+        </section>
+
+        <section className="section-padding" id="japan-top-companies">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              Top Medical Device Companies Operating in Japan
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Foreign OEMs collectively supply roughly half of Japan&apos;s device market by value alongside a strong
+              domestic manufacturing base — Japan is open to well-prepared foreign entrants, procedurally distinctive
+              mainly because of the MAH/DMAH requirement.
             </p>
             <div className="overflow-x-auto rounded-xl border border-border shadow-sm">
               <table className="w-full text-sm text-left border-collapse">
                 <thead className="bg-white">
                   <tr>
-                    <th scope="col" className="p-4 font-display font-semibold text-foreground">Company</th>
-                    <th scope="col" className="p-4 font-display font-semibold text-foreground">Origin</th>
-                    <th scope="col" className="p-4 font-display font-semibold text-foreground">Position</th>
+                    <th scope="col" className="p-4 font-display font-semibold text-foreground">
+                      Company
+                    </th>
+                    <th scope="col" className="p-4 font-display font-semibold text-foreground">
+                      Origin
+                    </th>
+                    <th scope="col" className="p-4 font-display font-semibold text-foreground">
+                      Position
+                    </th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border bg-white">
                   {[
-                    { company: 'Terumo Corporation', origin: 'Japan', position: 'Major domestic leader; cardiovascular/vascular intervention, blood management' },
-                    { company: 'Olympus Corporation', origin: 'Japan', position: 'Global GI endoscopy leader — reported 70%+ global share in prior analyses' },
-                    { company: 'Sysmex Corporation', origin: 'Japan', position: 'Leading domestic and global IVD/haematology testing instruments player' },
-                    { company: 'Nihon Kohden', origin: 'Japan', position: 'Leading domestic patient monitoring, defibrillators, diagnostic equipment' },
-                    { company: 'Asahi Kasei Medical', origin: 'Japan', position: 'Domestic leader in blood purification/dialysis and critical-care devices' },
-                    { company: 'Medtronic', origin: 'USA', position: 'Cardiac rhythm management, diabetes, surgical, and neuromodulation devices' },
-                    { company: 'Johnson & Johnson MedTech', origin: 'USA', position: 'Surgery, orthopaedics, and vision-care devices' },
-                    { company: 'Siemens Healthineers', origin: 'Germany', position: 'Leading foreign imaging and laboratory diagnostics supplier' },
-                    { company: 'GE HealthCare', origin: 'USA', position: 'Major foreign imaging and patient monitoring supplier' },
-                    { company: 'Philips', origin: 'Netherlands', position: 'Imaging, monitoring, and connected-care devices' },
+                    {
+                      company: 'Terumo Corporation',
+                      origin: 'Japan',
+                      position: 'Major domestic leader; cardiovascular/vascular intervention, blood management',
+                    },
+                    {
+                      company: 'Olympus Corporation',
+                      origin: 'Japan',
+                      position: 'Global GI endoscopy leader — reported 70%+ global share in prior analyses',
+                    },
+                    {
+                      company: 'Sysmex Corporation',
+                      origin: 'Japan',
+                      position: 'Leading domestic and global IVD/haematology testing instruments player',
+                    },
+                    {
+                      company: 'Nihon Kohden',
+                      origin: 'Japan',
+                      position: 'Leading domestic patient monitoring, defibrillators, diagnostic equipment',
+                    },
+                    {
+                      company: 'Asahi Kasei Medical',
+                      origin: 'Japan',
+                      position: 'Domestic leader in blood purification/dialysis and critical-care devices',
+                    },
+                    {
+                      company: 'Medtronic',
+                      origin: 'USA',
+                      position: 'Cardiac rhythm management, diabetes, surgical, and neuromodulation devices',
+                    },
+                    {
+                      company: 'Johnson & Johnson MedTech',
+                      origin: 'USA',
+                      position: 'Surgery, orthopaedics, and vision-care devices',
+                    },
+                    {
+                      company: 'Siemens Healthineers',
+                      origin: 'Germany',
+                      position: 'Leading foreign imaging and laboratory diagnostics supplier',
+                    },
+                    {
+                      company: 'GE HealthCare',
+                      origin: 'USA',
+                      position: 'Major foreign imaging and patient monitoring supplier',
+                    },
+                    {
+                      company: 'Philips',
+                      origin: 'Netherlands',
+                      position: 'Imaging, monitoring, and connected-care devices',
+                    },
                   ].map((row) => (
                     <tr key={row.company}>
                       <td className="p-4 font-medium text-foreground whitespace-nowrap">{row.company}</td>
@@ -211,25 +497,55 @@ const JapanMedicalDevicesMarketReport = () => (
           </div>
         </section>
 
-        <section className="section-padding" id="related-intelligence">
+        <section className="section-padding bg-cream-dark" id="related-intelligence">
           <div className="container-wide max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Related BioNixus market intelligence</h2>
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              Related BioNixus market intelligence
+            </h2>
             <p className="text-muted-foreground leading-relaxed">
-              BioNixus runs medical device and MedTech market research across Asia-Pacific. Compare the Japan device market with our{' '}
-              <Link to="/china-medical-devices-market-report" className="text-primary hover:underline font-medium">China medical devices market report</Link>{' '}and{' '}
-              <Link to="/south-korea-medical-devices-market-report" className="text-primary hover:underline font-medium">South Korea medical devices market report</Link>, set it against the{' '}
-              <Link to="/japan-healthcare-market-report" className="text-primary hover:underline font-medium">Japan healthcare market report</Link>, or widen the lens with the{' '}
-              <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC medical devices market report</Link>. For methods and global coverage, see the{' '}
-              <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}
-              <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>.
+              Compare this Japan medical devices market report with our{' '}
+              <Link to="/china-medical-devices-market-report" className="text-primary hover:underline font-medium">
+                China medical devices market report
+              </Link>{' '}
+              and{' '}
+              <Link to="/south-korea-medical-devices-market-report" className="text-primary hover:underline font-medium">
+                South Korea medical devices market report
+              </Link>
+              , set it against the{' '}
+              <Link to="/japan-healthcare-market-report" className="text-primary hover:underline font-medium">
+                Japan healthcare market report
+              </Link>
+              , commission custom fieldwork via{' '}
+              <Link to="/japan-medtech-market-research" className="text-primary hover:underline font-medium">
+                Japan MedTech market research
+              </Link>
+              , or dig into{' '}
+              <Link to="/japan-medical-device-market-access" className="text-primary hover:underline font-medium">
+                Japan medical device market access
+              </Link>
+              . Widen the lens with the{' '}
+              <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">
+                GCC medical devices market report
+              </Link>{' '}
+              and the{' '}
+              <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">
+                global healthcare market research hub
+              </Link>
+              .
             </p>
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
           </div>
         </section>
 
-        <FAQSection sectionId={FAQ_SECTION_ID} title="Japan medical devices market 2026 — PMDA, NHI reimbursement, device lag, and GCC expansion FAQ" items={REPORT_FAQ_ITEMS} className="bg-muted/30" />        </ReportContentWithAside>
+        <FAQSection
+          sectionId={FAQ_SECTION_ID}
+          title="Japan medical devices market 2026 — PMDA, NHI reimbursement, device lag, and GCC expansion FAQ"
+          items={REPORT_FAQ_ITEMS}
+          className="bg-muted/30"
+        />
+      </ReportContentWithAside>
       <ReportConsultationBand config={REPORT_CONVERSION} />
-        </main>
+    </main>
     <Footer />
   </div>
 );

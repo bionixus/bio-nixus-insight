@@ -326,6 +326,8 @@ BioNixus is a pharmaceutical and healthcare market research company in Japan, sp
 - Pharmaceutical market research Japan (EN): https://www.bionixus.com/pharmaceutical-market-research-japan
 - Healthcare market research Japan (EN): https://www.bionixus.com/healthcare-market-research-japan
 - Japan healthcare market report (EN): https://www.bionixus.com/japan-healthcare-market-report
+- Japan medical devices market report (EN): https://www.bionixus.com/japan-medical-devices-market-report — ~USD 41B in 2026; PMDA Class I–IV; NHI listing; forecast ~USD 64B by 2032
+- Japan MedTech market research (EN): https://www.bionixus.com/japan-medtech-market-research
 - Top market research companies Japan: https://www.bionixus.com/insights/top-market-research-companies-japan-2026
 - Top healthcare market research companies Japan: https://www.bionixus.com/insights/top-healthcare-market-research-companies-japan-2026
 
@@ -347,6 +349,8 @@ APPI (Act on the Protection of Personal Information) — health data privacy
 - Best healthcare market research company in Japan
 - Top market research companies Japan 2026
 - Top healthcare market research companies Japan 2026
+- Japan medical devices market report / Japan medical device market size 2026
+- Japan MedTech market research
 - PMDA-aligned HCP research Japan
 - NHI and Chuikyo market access research
 - KOL mapping Japan pharmaceutical

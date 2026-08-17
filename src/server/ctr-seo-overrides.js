@@ -94,10 +94,13 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Complete SFDA drug registration guide for Saudi Arabia — requirements, dossier format, fees and realistic timelines. Updated for 2026.',
   },
+  // GSC iterate (China devices): baseline ~0.25% CTR @ ~pos 18 (2026-08).
+  // Targets: CTR ≥3% in 2–4 weeks; primary cluster avg pos ≤8 then ≤3; head "market report" top 10→3.
+  // If CTR <2% after 14 days indexed, A/B title only via this override (keep URL/H1 stable).
   '/china-medical-devices-market-report': {
-    title: 'China Medical Device Market 2026: Size, NMPA Access & Forecast',
+    title: 'China Medical Devices Market 2026 | NMPA, VBP & Size',
     description:
-      "China's medical device market in 2026 — market size, NMPA registration pathway, key segments and 5-year forecast. Report by Bionixus.",
+      'China medical devices market 2026 (~$75–90B): NMPA Class I–III registration, NHSA VBP price cuts, import substitution, and hospital procurement intelligence from BioNixus.',
   },
   '/brazil-healthcare-market-report': {
     title: 'Brazil Healthcare & Pharma Market 2026: Size, ANVISA & Outlook',
@@ -105,9 +108,9 @@ export const CTR_SEO_BY_PATH = {
       "Brazil's healthcare and pharmaceutical market in 2026 — market size, ANVISA regulation, top companies and forecast. By Bionixus.",
   },
   '/gcc-medical-devices-market-report': {
-    title: 'GCC Medical Devices Market 2026: Size, Share & Country Forecasts',
+    title: 'GCC Medical Devices Market 2026: $9.0B Size & Forecast',
     description:
-      'GCC medical device market report 2026 — Saudi, UAE, Qatar, Kuwait, Oman & Bahrain market sizes, regulations and forecasts. By Bionixus.',
+      'GCC medical devices market $9.0B in 2026 → $16.2B by 2035 (6.7% CAGR). Saudi & UAE share, IVD, hospital procurement & SFDA/MOHAP pathways — BioNixus.',
   },
   '/gcc-pharmaceutical-market-research': {
     title: 'GCC Biologics & Generic Injectables Market 2026 | BioNixus',
@@ -135,9 +138,9 @@ export const CTR_SEO_BY_PATH = {
       'GCC anesthesia market $850M–1B and 1.8–2.2M annual surgical procedures — Saudi, UAE, Kuwait, Qatar, Oman & Bahrain intelligence by BioNixus.',
   },
   '/japan-medical-devices-market-report': {
-    title: 'Japan Medical Device Market 2026: Size, PMDA Access & Forecast',
+    title: 'Japan Medical Devices Market Report 2026 | Size, PMDA & NHI',
     description:
-      "Japan's medical device market in 2026 — market size, PMDA/Shonin registration, reimbursement and forecasts. Report by Bionixus.",
+      'Japan medical devices market report 2026 — ~USD 41B market size, PMDA Class I–IV (todokede/ninsho/shonin), NHI listing, forecast to ~USD 64B. BioNixus.',
   },
   '/gcc-market-access-guide': {
     title: 'GCC Market Access 2026: Pharma & MedTech Entry Guide (All 6 Countries)',
