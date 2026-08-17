@@ -73,6 +73,16 @@ const FAQ_ITEMS = [
     answer:
       'BioNixus provides cross-regional intelligence for Brazilian and Latin American pharmaceutical companies entering GCC and MENA markets. Brazil and GCC share structural parallels — large generic medicine markets, centralised public procurement (SUS/NUPCO), and premium private hospital sectors — that make cross-regional strategy natural. From our regional offices, BioNixus delivers SFDA (Saudi Arabia), MOHAP (UAE), and MOH (Kuwait, Qatar, Oman) regulatory pathway intelligence; NUPCO tender and hospital formulary data; HCP surveys across all major therapy areas in Arabic and English; and comparative Brazil–GCC market benchmarking that informs portfolio sequencing and pricing strategy for companies launching in both regions.',
   },
+  {
+    question: 'How does the SUS versus ANS private channel split affect Brazil pharma research design?',
+    answer:
+      'SUS covers roughly 75% of the population through universal public care while ANS-regulated private plans serve about 50 million supplementary lives with faster innovator adoption. Research must segment public hospital committees, CONITEC assessors, and private plan medical directors separately — averaging channels produces launch forecasts that fracture when brands target premium private corridors or SUS incorporation simultaneously.',
+  },
+  {
+    question: 'What LGPD and ethics requirements apply to patient research in Brazil?',
+    answer:
+      'Patient and caregiver studies require LGPD-compliant consent, secure data handling, and CEP ethics approval under Resolution CNS 510/2016. BioNixus partners with CEP-registered academic hospitals to sponsor ethics clearance efficiently and designs de-identified reporting suitable for ANVISA, medical affairs, and market access dossiers.',
+  },
 ];
 
 const FAQ_SECTION_ID = 'brazil-pharma-market-research-faq';
@@ -92,7 +102,7 @@ const jsonLd = [
       logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
     },
     datePublished: '2026-06-25',
-    dateModified: '2026-06-25',
+    dateModified: '2026-08-17',
     mainEntityOfPage: CANONICAL,
   },
   {

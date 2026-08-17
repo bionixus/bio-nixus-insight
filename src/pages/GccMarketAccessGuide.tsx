@@ -175,7 +175,7 @@ const GccMarketAccessGuide = () => {
             description: 'Complete guide to pharmaceutical drug registration, pricing, and reimbursement across the 6 GCC countries: Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman.',
             url: citationUrl,
             datePublished: '2026-01-15',
-            dateModified: '2026-06-16',
+            dateModified: '2026-08-17',
             author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
             publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
           })}
@@ -540,6 +540,41 @@ const GccMarketAccessGuide = () => {
           </div>
         </section>
 
+        {/* MedTech and device market access */}
+        <section className="section-padding py-12 bg-muted/10" id="medtech-access">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              MedTech and medical device market access in the GCC
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Pharmaceutical and MedTech access in the GCC follow parallel but distinct pathways. SFDA, MOHAP, and
+                emirate-level regulators classify devices under risk-based frameworks; hospital value-analysis committees
+                evaluate total cost of ownership, training burden, maintenance contracts, and procedure funding—not only
+                clinical efficacy. NUPCO and MOH central tenders treat capital equipment and implant categories with
+                scoring dimensions that differ from drug formulary reviews.
+              </p>
+              <p>
+                BioNixus supports device manufacturers with procurement committee research, clinician adoption studies,
+                and SFDA or MOHAP registration sequencing intelligence linked to tender calendars. For segment-specific
+                context, see our{' '}
+                <Link to="/gcc-medical-devices-market-report" className="text-primary underline font-medium">
+                  GCC medical devices market report
+                </Link>
+                ,{' '}
+                <Link to="/saudi-arabia-medical-devices-market-report" className="text-primary underline font-medium">
+                  Saudi Arabia medical devices market report
+                </Link>
+                , and{' '}
+                <Link to="/uae-medical-devices-market-report" className="text-primary underline font-medium">
+                  UAE medical devices market report
+                </Link>
+                .
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Internal links */}
         <section className="section-padding py-12 bg-muted/20">
           <div className="container-wide max-w-5xl mx-auto">
@@ -665,6 +700,14 @@ const GccMarketAccessGuide = () => {
                 {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
+                },
+                {
+                  q: 'How does SFDA regulate medical devices versus pharmaceuticals in Saudi Arabia?',
+                  a: 'SFDA manages separate registration tracks for pharmaceuticals and medical devices under risk-based classification. Devices require conformity assessment, Arabic labelling, and often SFDA listing before NUPCO or MOH hospital procurement. BioNixus maps device classification, evidence gaps, and tender timing alongside drug access programmes.',
+                },
+                {
+                  q: 'Do GCC countries accept reference-country device approvals?',
+                  a: 'Saudi SFDA, UAE MOHAP, and several GCC regulators offer accelerated pathways when FDA, EU MDR, or other reference approvals exist — but local authorised representatives, Arabic labelling, and country-specific pricing filings remain mandatory. Parallel country submissions still require separate pricing and import permits.',
                 },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">

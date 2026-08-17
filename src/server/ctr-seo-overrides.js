@@ -144,6 +144,11 @@ export const CTR_SEO_BY_PATH = {
     description:
       'How to enter GCC healthcare markets in 2026 — registration, pricing, tenders and distributors for Saudi, UAE, Qatar, Kuwait, Oman, Bahrain.',
   },
+  '/bionixus-vs-iqvia-mena': {
+    title: 'BioNixus vs IQVIA MENA: Data Depth & Speed Compared (2026)',
+    description:
+      'Compare BioNixus and IQVIA for MENA healthcare research — hospital-level consumption data, primary research integration, Cairo GCC fieldwork, and agile proposals vs enterprise MSAs.',
+  },
   '/healthcare-market-research': {
     title: 'Healthcare Market Research Company | Bionixus',
     description:
