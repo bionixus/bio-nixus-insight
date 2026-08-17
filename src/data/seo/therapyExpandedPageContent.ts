@@ -255,6 +255,16 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       answer:
         'Segment dossiers with undertreatment quantification, persistence and titration barriers by channel, value-narrative tests calibrated to formulary objections, and account prioritisation maps tied to procedure volume and committee influence — linked to country reports and the healthcare market research hub for coordinated rollout.',
     },
+    {
+      question: 'How do anticoagulation and lipid pathways differ in research design?',
+      answer:
+        'Anticoagulation studies must capture bleeding-risk narratives, reversal confidence, and monitoring burden that shape persistence after index events. Lipid and PCSK9 programmes focus on statin intolerance, payer step edits, and primary-care maintenance ownership. BioNixus separates acute interventional corridors from chronic outpatient management so forecasts do not assume uniform cascade after guideline updates.',
+    },
+    {
+      question: 'Which hospital and payer stakeholders matter for cardiovascular device–drug intersections?',
+      answer:
+        'Cath-lab directors, heart-failure nurses, anticoagulation clinics, and pharmacy-led substitution committees often determine uptake alongside cardiologists. Research maps who authorises initiation versus maintenance, especially when procedural culture or bundled DRG payments shape pharmaceutical pull-through after device-led episodes.',
+    },
   ],
   'neurology-cns': [
     {
@@ -287,6 +297,21 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       answer:
         'Yes. Concentrated treatment nodes, genetics clinics, and patient organisation networks define addressable cohorts far smaller than epidemiology suggests. BioNixus maps centre flow, diagnostic delay, and committee evidence expectations so HEOR and medical teams refine dossiers before high-cost drug gates reject incomplete narratives.',
     },
+    {
+      question: 'How should migraine versus neurodegenerative programmes be sampled differently?',
+      answer:
+        'Migraine pathways emphasise primary-care gateways, pharmacy substitution, and patient self-advocacy shaped by disability and workplace burden. Neurodegenerative programmes concentrate in specialist centres with caregiver modules and long-horizon persistence analysis. Combining both in one sample frame misreads initiation authority and access friction for each corridor.',
+    },
+    {
+      question: 'What role do MS nurses and home-infusion teams play in CNS uptake?',
+      answer:
+        'For MS, epilepsy, and movement disorders, nurses administering infusions or training home administration often gate throughput when clinic capacity is fixed. Research documents operational bottlenecks — not only neurologist enthusiasm — so medical education and access investments target workflow fixes that change treated patient counts.',
+    },
+    {
+      question: 'How does BioNixus localise neurology research across GCC, UK, and Europe?',
+      answer:
+        'Comparable survey cores roll up for regional governance while local modules capture referral delay, step therapy, and high-cost drug committee criteria that differ between NHS NICE pathways, EU5 regional autonomy, and GCC hospital tender overlays.',
+    },
   ],
   'digital-health': [
     {
@@ -318,6 +343,16 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       question: 'How does reimbursement coding maturity differ for SaMD across markets?',
       answer:
         'Telehealth reimbursement, remote monitoring codes, and national digital-health strategies vary between GCC public hospitals, UK NHS frameworks, and EU5 regional autonomy. BioNixus embeds payer-adjacent modules that map coding readiness and budget-holder accountability before commercial teams assume cross-border rollout parity.',
+    },
+    {
+      question: 'How should digital therapeutics evidence differ from wellness app research?',
+      answer:
+        'Regulated SaMD and digital therapeutics require clinical endpoint credibility, cybersecurity review, and integration with EHR workflows — not consumer satisfaction scores alone. Studies should test prescriber confidence in outcome claims, liability allocation, and whether institutions fund remote monitoring beyond pilot budgets.',
+    },
+    {
+      question: 'Can digital-health research link pharmaceutical companion programmes?',
+      answer:
+        'Yes. Connected devices, adherence apps, and remote monitoring often bundle with diabetes, cardiology, or respiratory franchises. BioNixus designs modular studies that quantify whether digital companions accelerate initiation or persistence — and which payer or procurement gate blocks scale when apps are clinically accepted but unfunded.',
     },
   ],
   dermatology: [
@@ -377,6 +412,16 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       question: 'When should biosimilar research include tender calendar intelligence?',
       answer:
         'Hospital tender windows, NUPCO cycles, and regional rebate negotiations can move share months before physician attitude shifts. BioNixus aligns qualitative objection libraries with procurement calendars so launch and defence budgets land before awards close—not after originator contracts renew.',
+    },
+    {
+      question: 'How do interchangeability claims affect pharmacist substitution confidence?',
+      answer:
+        'Regulatory interchangeability, device familiarity, and cold-chain logistics shape whether pharmacists switch confidently even when policy permits substitution. Research separates policy-enabled switching from clinically resisted switching — preventing erosion models that assume immediate share transfer after tender award.',
+    },
+    {
+      question: 'What originator defence levers still retain volume against biosimilars?',
+      answer:
+        'Indication breadth, patient-support continuity, nurse training investment, and contractual bundling often outweigh price in hospital and retail channels. BioNixus tests defence narratives with procurement and clinical stakeholders before originator teams commit retention budgets to the wrong lever.',
     },
   ],
 };
