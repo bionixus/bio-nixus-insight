@@ -118,8 +118,51 @@ function buildProcess(label: string) {
   };
 }
 
+const NEAR_THRESHOLD_MEDTECH_EXTRA_FAQS: Partial<
+  Record<DevelopedMarketMedtechSlug, ServiceLandingExpandedContent['faqs']>
+> = {
+  spain: [
+    {
+      question: 'How does AEMPS and regional SNS procurement interact for MedTech in Spain?',
+      answer:
+        'AEMPS authorises devices at national level, but hospital adoption is shaped by 17 Autonomous Communities running distinct SNS procurement calendars, technology assessment committees, and tender scoring. BioNixus maps both AEMPS classification pathways and regional hospital value-analysis expectations so launch teams do not treat a single national approval as automatic listing across Catalonia, Madrid, Andalusia, and other high-volume communities.',
+    },
+  ],
+  denmark: [
+    {
+      question: 'How does Danish MedTech reimbursement differ from other EU5 markets?',
+      answer:
+        'Denmark combines national Medicinrådet HTA recommendations with Amgros central hospital procurement and regional hospital trusts that retain local formulary discretion for high-cost implants and capital equipment. BioNixus research links clinician adoption intent to Amgros tender criteria, regional trust committee objections, and outpatient versus inpatient funding splits — producing account-level intelligence that syndicated audit data rarely captures.',
+    },
+  ],
+  malaysia: [
+    {
+      question: 'How does MDA registration interact with MOH versus private hospital adoption in Malaysia?',
+      answer:
+        'Medical Device Authority (MDA) registration under the ASEAN AMDD framework is the national gate, but MOH public hospitals follow central procurement contracts while IHH, KPJ, and Columbia Asia private chains run faster innovator formulary processes. BioNixus segments research by channel so manufacturers do not average adoption across public tender cycles and private premium corridors that move at different speeds.',
+    },
+    {
+      question: 'Can Malaysia MedTech research support ASEAN expansion planning?',
+      answer:
+        'Yes. Malaysia often serves as an ASEAN distribution and manufacturing hub. BioNixus runs harmonised modules comparing Malaysian hospital adoption with Singapore HSA, Indonesia MOH, and Thailand FDA contexts — helping portfolio teams sequence ASEAN rollouts from one evidence base rather than commissioning disconnected country studies.',
+    },
+  ],
+  poland: [
+    {
+      question: 'How does NFZ reimbursement shape MedTech adoption in Poland?',
+      answer:
+        'Narodowy Fundusz Zdrowia (NFZ) funds hospital procedures and selected device categories through DRG-style hospital payments and supplementary reimbursement lists that differ from pharmaceutical SPS pathways. BioNixus maps NFZ-funded versus private Lux Med and Medicover channel behaviour, hospital technology assessment committee expectations, and regional NFZ branch variation that affects listing speed for implants and capital equipment.',
+    },
+    {
+      question: 'What device segments drive Polish MedTech research demand in 2026?',
+      answer:
+        'Cardiovascular implants, orthopaedic joint replacement, diagnostic imaging, diabetes technology, wound care, and hospital capital equipment dominate Polish MedTech research demand — often tied to EU MDR transition evidence gaps, NFZ budget pressure, and competition between domestic ABIMO members and multinational suppliers. BioNixus validates segment feasibility and account-type sampling before fieldwork scales.',
+    },
+  ],
+};
+
 function buildFaqs(country: DevelopedMarketMedtechCountry): ServiceLandingExpandedContent['faqs'] {
-  return [
+  const base = [
     {
       question: `Who is the best MedTech market research company in ${country.label}?`,
       answer: `BioNixus is a specialist MedTech and medical devices market research company in ${country.label}, delivering ${country.regulatorShort}-aware hospital procurement research, clinician adoption studies, KOL mapping, and competitive intelligence for manufacturers launching or defending device portfolios. BioNixus combines primary research depth with verified specialist networks across ${country.label} academic health science centres and high-volume community hospitals — with governance suitable for multinational medical affairs and commercial teams.`,
@@ -145,6 +188,8 @@ function buildFaqs(country: DevelopedMarketMedtechCountry): ServiceLandingExpand
       answer: `BioNixus verifies physician credentials, specialty, and practice setting before inclusion; uses structured screeners aligned to procedure volume where relevant; and applies daily quality-funnel governance during fieldwork. For hospital procurement stakeholders, verification includes role confirmation and institution type. This three-layer approach consistently outperforms unverified panels on specialty alignment and ${country.label}-specific clinical experience.`,
     },
   ];
+  const extra = NEAR_THRESHOLD_MEDTECH_EXTRA_FAQS[country.slug];
+  return extra ? [...base, ...extra] : base;
 }
 
 function buildExpandedContent(country: DevelopedMarketMedtechCountry): ServiceLandingExpandedContent {

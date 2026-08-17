@@ -48,6 +48,16 @@ const faqItems = [
     answer:
       'Yes. Italian modules can run with comparable cells in Germany, France, Spain, and the UK — and beyond to the USA, Canada, Japan, and other markets — using consistent instruments for global portfolio committees managing EU5 and multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How does AIFA Law 648/96 compassionate use affect launch sequencing in Italy?',
+    answer:
+      'AIFA Law 648/96 allows pre-reimbursement access for therapies without standard SSN funding, often through IRCCS centres before national PFN listing. Research should map which centres run 648/96 programmes, how long compassionate use bridges to CPR negotiation, and whether early adoption creates KOL momentum or formulary inertia once national pricing begins.',
+  },
+  {
+    question: 'What regional SSR differences matter most for Italian market access research?',
+    answer:
+      'Lombardia, Lazio, Veneto, and Emilia-Romagna impose distinct regional formulary restrictions atop national AIFA listings — including nota limitativa patterns, biosimilar switching mandates, and hospital budget caps. BioNixus designs regional payer modules so national forecasts do not assume uniform uptake after AIFA approval alone.',
+  },
 ];
 
 const jsonLd = [

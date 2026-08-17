@@ -245,6 +245,16 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       answer:
         'Yes. Cardiometabolic overlap is common; combined modules reduce duplicate fieldwork and clarify where messaging, access, and medical education should coordinate across specialty boundaries rather than compete for clinician attention.',
     },
+    {
+      question: 'How should cardiovascular studies handle GLP-1 and obesity pharmacotherapy crosswinds?',
+      answer:
+        'Rising obesity pharmacotherapy reshapes cardiometabolic budgets, referral patterns, and primary-care attention. Cardiovascular research should capture whether prescribers view lipid, anticoagulation, or heart-failure therapies as competing for the same visit bandwidth — and how payer step edits reorder initiation when metabolic agents absorb formulary priority.',
+    },
+    {
+      question: 'What outputs do cardiovascular commercial teams expect from primary research?',
+      answer:
+        'Segment dossiers with undertreatment quantification, persistence and titration barriers by channel, value-narrative tests calibrated to formulary objections, and account prioritisation maps tied to procedure volume and committee influence — linked to country reports and the healthcare market research hub for coordinated rollout.',
+    },
   ],
   'neurology-cns': [
     {
@@ -267,6 +277,16 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       answer:
         'We deliver centre concentration maps, KOL connectivity dossiers, persistence and discontinuation analysis, caregiver burden narratives, and access-risk registers tied to step therapy or funding exceptions—outputs medical, access, and brand teams can operationalise without reinterpretation.',
     },
+    {
+      question: 'How do infusion and home-administration logistics affect neurology uptake?',
+      answer:
+        'MS, migraine, and neurodegenerative pathways increasingly split between clinic infusion, home nursing, and self-administered devices. Research must document nurse bandwidth, cold-chain constraints, and caregiver burden that determine whether labelled eligibility converts to treated patients — not only neurologist stated preference.',
+    },
+    {
+      question: 'Can neurology research support rare disease and orphan drug programmes?',
+      answer:
+        'Yes. Concentrated treatment nodes, genetics clinics, and patient organisation networks define addressable cohorts far smaller than epidemiology suggests. BioNixus maps centre flow, diagnostic delay, and committee evidence expectations so HEOR and medical teams refine dossiers before high-cost drug gates reject incomplete narratives.',
+    },
   ],
   'digital-health': [
     {
@@ -288,6 +308,16 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       question: 'How does BioNixus support digital health commercialisation?',
       answer:
         'We pair clinician adoption studies with payer-adjacent interviews, procurement stakeholder mapping, and pricing scenario tests—linking findings to diabetes, cardiology, or respiratory hubs where companion services intersect pharmaceutical franchises.',
+    },
+    {
+      question: 'What evidence do hospital IT and security teams require before digital health pilots scale?',
+      answer:
+        'EHR integration specs, cybersecurity review, data residency, clinician liability, and nursing workflow burden often gate budget release after successful clinical pilots. Research should interview biomedical engineering, IT security, and nursing operations alongside clinical champions so product teams fix procurement blockers—not only demo enthusiasm.',
+    },
+    {
+      question: 'How does reimbursement coding maturity differ for SaMD across markets?',
+      answer:
+        'Telehealth reimbursement, remote monitoring codes, and national digital-health strategies vary between GCC public hospitals, UK NHS frameworks, and EU5 regional autonomy. BioNixus embeds payer-adjacent modules that map coding readiness and budget-holder accountability before commercial teams assume cross-border rollout parity.',
     },
   ],
   dermatology: [
@@ -337,6 +367,16 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       question: 'How does BioNixus support biosimilar launch and defence planning?',
       answer:
         'We deliver account-level substitution confidence maps, tender scenario notes, physician and pharmacist objection libraries, and uptake models linked to biologics hubs, immunology research, and country reports where hospital procurement dominates access.',
+    },
+    {
+      question: 'How do device familiarity and cold-chain logistics affect biosimilar switching?',
+      answer:
+        'Injectable biosimilars compete on pen design, storage requirements, nurse training investment, and centre concentration—not only price. Research quantifies where device ergonomics or logistics suppress switching that policy already permits, preventing erosion forecasts that assume instantaneous pharmacist substitution.',
+    },
+    {
+      question: 'When should biosimilar research include tender calendar intelligence?',
+      answer:
+        'Hospital tender windows, NUPCO cycles, and regional rebate negotiations can move share months before physician attitude shifts. BioNixus aligns qualitative objection libraries with procurement calendars so launch and defence budgets land before awards close—not after originator contracts renew.',
     },
   ],
 };
