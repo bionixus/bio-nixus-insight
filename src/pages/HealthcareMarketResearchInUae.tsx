@@ -354,7 +354,7 @@ export default function HealthcareMarketResearchInUae() {
                 { to: '/pharmaceutical-market-research-dubai', label: 'Pharmaceutical market research Dubai' },
                 { to: '/market-research-uae', label: 'Healthcare & pharma market research UAE (hub)' },
                 { to: '/market-research-in-uae', label: 'All-industry market research in the UAE' },
-                { to: '/healthcare-market-research-in-saudi-arabia', label: 'Healthcare market research in Saudi Arabia' },
+                { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare market research Saudi Arabia' },
               ].map((link) => (
                 <Link
                   key={link.to}

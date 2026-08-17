@@ -35,7 +35,7 @@ const COUNTRY_LINKS: Record<string, { heading: string; links: EquityLink[] }> = 
   'saudi-arabia': {
     heading: 'Market research partners for Saudi Arabia',
     links: [
-      { to: '/healthcare-market-research-in-saudi-arabia', label: 'Healthcare market research in Saudi Arabia' },
+      { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare market research Saudi Arabia' },
       { to: '/market-research-in-saudi-arabia', label: 'All-industry market research in Saudi Arabia' },
       { to: '/gcc-biopharmaceuticals-market', label: 'GCC biopharmaceuticals market' },
       { to: '/gcc-personalized-medicine-market', label: 'GCC personalized medicine market' },
@@ -68,7 +68,7 @@ const COUNTRY_LINKS: Record<string, { heading: string; links: EquityLink[] }> = 
       { to: '/gcc-generic-injectables-market', label: 'GCC generic injectables market' },
       { to: '/gcc-biopharmaceuticals-market', label: 'GCC biopharmaceuticals market' },
       { to: '/gcc-clinical-trials-market', label: 'GCC clinical trials market' },
-      { to: '/healthcare-market-research-in-saudi-arabia', label: 'Healthcare market research in Saudi Arabia' },
+      { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare market research Saudi Arabia' },
       HUB,
     ],
   },
@@ -88,7 +88,7 @@ const COUNTRY_LINKS: Record<string, { heading: string; links: EquityLink[] }> = 
       { to: '/gcc-pharmacy-market', label: 'GCC pharmacy market' },
       { to: '/gcc-generic-injectables-market', label: 'GCC generic injectables market' },
       { to: '/gcc-biopharmaceuticals-market', label: 'GCC biopharmaceuticals market' },
-      { to: '/healthcare-market-research-in-saudi-arabia', label: 'Healthcare market research in Saudi Arabia' },
+      { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare market research Saudi Arabia' },
       HUB,
     ],
   },

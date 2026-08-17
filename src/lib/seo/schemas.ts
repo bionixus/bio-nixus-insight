@@ -104,10 +104,41 @@ export function buildHubPageSchemas(faqItems: { question: string; answer: string
 }
 
 export function buildCountryPageSchemas(config: CountryConfig) {
+  const pageUrl = `${BASE_URL}/healthcare-market-research/${config.slug}`;
+  const serviceSchema =
+    config.slug === 'saudi-arabia'
+      ? {
+          ...buildProfessionalServiceSchema(),
+          '@id': `${pageUrl}#service`,
+          name: 'Healthcare Market Research Saudi Arabia',
+          serviceType: 'Healthcare Market Research',
+          description:
+            'Primary healthcare and pharmaceutical market research in Saudi Arabia — SFDA-aware HCP surveys, NUPCO tender context, Arabic fieldwork across Riyadh, Jeddah, and Eastern Province.',
+          url: pageUrl,
+          areaServed: [
+            {
+              '@type': 'City',
+              name: 'Riyadh',
+              containedInPlace: { '@type': 'Country', name: 'Saudi Arabia' },
+            },
+            {
+              '@type': 'City',
+              name: 'Jeddah',
+              containedInPlace: { '@type': 'Country', name: 'Saudi Arabia' },
+            },
+            {
+              '@type': 'City',
+              name: 'Al Khobar',
+              containedInPlace: { '@type': 'Country', name: 'Saudi Arabia' },
+            },
+          ],
+        }
+      : buildServiceSchema();
+
   return [
     buildOrganizationSchema(),
-    buildServiceSchema(),
-    buildFAQSchema(config.faqQuestions),
+    serviceSchema,
+    buildFAQSchema(config.faqQuestions, { pageUrl, sectionId: `healthcare-mr-country-${config.slug}-faq` }),
     buildBreadcrumbSchema([
       { name: 'Home', href: '/' },
       { name: 'Healthcare Market Research', href: '/healthcare-market-research' },

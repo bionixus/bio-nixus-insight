@@ -379,7 +379,7 @@ export default function HubPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           <HealthcareNavCard to="/gcc-pharma-market-report-2026" title="GCC pharma market report 2026" featured />
           <HealthcareNavCard to="/gcc-pharmaceutical-market-research" title="GCC biologics &amp; injectables research" />
-          <HealthcareNavCard to="/gcc-medical-devices-market-report" title="GCC medical devices &amp; IVD report" />
+          <HealthcareNavCard to="/gcc-medical-devices-market-report" title="GCC medical devices market report 2026" />
           <HealthcareNavCard
             to="/market-reports/gcc-immunology-biologics-market-report"
             title="GCC immunology &amp; biologics market report"
@@ -515,7 +515,7 @@ export default function HubPage() {
             />
             <HealthcareNavCard
               to="/gcc-medical-devices-market-report"
-              title="GCC medical devices & IVD market report"
+              title="GCC medical devices market report 2026"
               featured
             />
             <HealthcareNavCard
@@ -659,7 +659,7 @@ export default function HubPage() {
           </Link>{' '}
           and the{' '}
           <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline">
-            GCC Medical Devices Market Report
+            GCC medical devices market report 2026
           </Link>{' '}
           to pass authority from page-one BOFU URLs into segment reports.
         </p>

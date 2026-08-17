@@ -105,6 +105,8 @@ const staticLinks = [
   { to: '/blog/nf1-koselugo-selumetinib-pharma-market-research', label: 'NF1 Koselugo / selumetinib market research (blog)' },
   { to: '/blog/neurofibromatosis', label: 'Neurofibromatosis market access briefing (blog)' },
   { to: '/blog/desmoid-tumors-nirogacestat-pharma-market-access', label: 'Desmoid tumors / Ogsiveo market access (blog)' },
+  { to: '/blog/nmpa-class-iii-registration-timeline-2026', label: 'NMPA Class III registration timeline 2026 (blog)' },
+  { to: '/blog/china-device-vbp-rounds-explained', label: 'China device VBP rounds explained (blog)' },
 ];
 
 const globalWebsitesCountryLinks = [

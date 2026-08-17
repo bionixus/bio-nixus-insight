@@ -10,7 +10,7 @@ const content: GeneralMRPageContent = {
   intro:
     "Market research companies in Saudi Arabia operate in the GCC's largest and fastest-transforming economy. Vision 2030 is reshaping consumer behaviour, female workforce participation, entertainment spending, and digital adoption across every sector simultaneously — creating conditions where research built on current fieldwork matters more than ever. BioNixus is a global market research company delivering primary consumer, B2B, and industry-specific studies across Riyadh, Jeddah, the Eastern Province, and national samples for international and regional clients.",
   countryLabel: 'Saudi Arabia',
-  healthcarePageLink: '/healthcare-market-research-in-saudi-arabia',
+  healthcarePageLink: '/healthcare-market-research/saudi-arabia',
   healthcarePageLabel: 'Healthcare & pharmaceutical market research in Saudi Arabia',
   industries: [
     {
@@ -206,7 +206,7 @@ const content: GeneralMRPageContent = {
     },
   ],
   relatedLinks: [
-    { to: '/healthcare-market-research-in-saudi-arabia', label: 'Healthcare market research in Saudi Arabia' },
+    { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare market research Saudi Arabia' },
     {
       to: '/insights/top-market-research-companies-saudi-arabia-2026',
       label: 'Top market research companies in Saudi Arabia (2026 guide)',

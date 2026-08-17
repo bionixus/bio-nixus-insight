@@ -127,7 +127,8 @@ const ChinaHealthcareMarketReport = () => (
           <div className="container-wide max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Related BioNixus market intelligence</h2>
             <p className="text-muted-foreground leading-relaxed">
-              BioNixus runs healthcare and pharmaceutical market research across Asia-Pacific. Benchmark China against our{' '}
+              BioNixus runs healthcare and pharmaceutical market research across Asia-Pacific. For device-specific NMPA, VBP, and import-substitution intelligence, see our{' '}
+              <Link to="/china-medical-devices-market-report" className="text-primary hover:underline font-medium">China medical devices market report</Link>. Benchmark China against our{' '}
               <Link to="/japan-healthcare-market-report" className="text-primary hover:underline font-medium">Japan healthcare market report</Link>{' '}and{' '}
               <Link to="/india-healthcare-market-report" className="text-primary hover:underline font-medium">India healthcare market report</Link>, or start from the{' '}
               <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}

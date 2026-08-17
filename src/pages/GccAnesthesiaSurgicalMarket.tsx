@@ -178,7 +178,12 @@ const GccAnesthesiaSurgicalMarket = () => {
               For pharmaceutical procurement context, see our{' '}
               <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">
                 GCC Pharmaceutical Market Report 2026
-              </Link>.
+              </Link>
+              . For medtech capital and IVD adjacency, see the{' '}
+              <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">
+                GCC medical devices market report 2026
+              </Link>
+              .
             </p>
           </div>
         </section>

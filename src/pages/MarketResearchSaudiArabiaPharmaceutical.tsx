@@ -148,7 +148,7 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
             { name: 'Home', href: '/' },
             { name: 'Market Research', href: '/market-research' },
             {
-              name: 'Healthcare Market Research Company Saudi Arabia',
+              name: 'Pharma Market Research Company Saudi Arabia',
               href: '/market-research-saudi-arabia-pharmaceutical',
             },
           ]}
@@ -157,12 +157,16 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
         <section className="py-16 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
           <div className="container-wide max-w-5xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-display font-semibold mb-4">
-              Healthcare &amp; Pharmaceutical Market Research Company in Saudi Arabia
+              Pharma Market Research Company in Saudi Arabia
             </h1>
             <p className="text-lg leading-relaxed text-primary-foreground/90 mb-4">
-              BioNixus is a specialist healthcare and pharmaceutical market research company in Saudi Arabia. We help
+              BioNixus is a specialist pharmaceutical market research company in Saudi Arabia. We help
               launch, access, and medical teams translate SFDA requirements, NUPCO procurement behavior, and physician
-              decision dynamics into practical KSA strategies with execution-ready evidence.
+              decision dynamics into practical KSA strategies with execution-ready evidence. For the country hub, see{' '}
+              <Link to="/healthcare-market-research/saudi-arabia" className="underline font-medium text-primary-foreground">
+                healthcare market research Saudi Arabia
+              </Link>
+              .
             </p>
             <p className="text-base leading-relaxed text-primary-foreground/85">
               For regional context, start from the{' '}

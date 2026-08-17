@@ -315,7 +315,6 @@ import HealthcareMarketResearchChina from '@/pages/HealthcareMarketResearchChina
 import HealthcareMarketResearchDenmark from '@/pages/HealthcareMarketResearchDenmark';
 import HealthcareMarketResearchNorway from '@/pages/HealthcareMarketResearchNorway';
 import HealthcareMarketResearchFrance from '@/pages/HealthcareMarketResearchFrance';
-import HealthcareMarketResearchInSaudiArabia from '@/pages/HealthcareMarketResearchInSaudiArabia';
 import HealthcareMarketResearchInUae from '@/pages/HealthcareMarketResearchInUae';
 import HealthcareMarketResearchInKuwait from '@/pages/HealthcareMarketResearchInKuwait';
 import HealthcareMarketResearchInQatar from '@/pages/HealthcareMarketResearchInQatar';
@@ -769,7 +768,6 @@ export const routes: RouteObject[] = [
   { path: '/healthcare-market-research-norway', element: <HealthcareMarketResearchNorway /> },
   { path: '/healthcare-market-research-france', element: <HealthcareMarketResearchFrance /> },
   { path: '/healthcare-market-research-germany', element: <Navigate to="/healthcare-market-research/germany" replace /> },
-  { path: '/healthcare-market-research-in-saudi-arabia', element: <HealthcareMarketResearchInSaudiArabia /> },
   { path: '/healthcare-market-research-in-uae', element: <HealthcareMarketResearchInUae /> },
   { path: '/healthcare-market-research-kuwait', element: <HealthcareMarketResearchInKuwait /> },
   { path: '/healthcare-market-research-qatar', element: <HealthcareMarketResearchInQatar /> },

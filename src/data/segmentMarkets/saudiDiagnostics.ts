@@ -1046,7 +1046,7 @@ const homeDiagnosticTesting: SegmentMarketContent = {
     { to: '/saudi-arabia-genetic-testing-market', label: 'Saudi Arabia Genetic Testing Market' },
     { to: '/saudi-arabia-medical-devices-market-report', label: 'Saudi Arabia Medical Devices Market Report' },
     { to: '/clinical-diagnostics-market-research', label: 'Clinical Diagnostics Market Research' },
-    { to: '/healthcare-market-research-in-saudi-arabia', label: 'Healthcare Market Research in Saudi Arabia' },
+    { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare Market Research in Saudi Arabia' },
   ],
   faqs: [
     {

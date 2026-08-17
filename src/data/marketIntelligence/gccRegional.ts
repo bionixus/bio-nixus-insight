@@ -17,8 +17,8 @@ export const gccRegionalMarketIntelligence: Record<string, MarketIntelligence> =
       },
       {
         label: 'Combined medical devices market 2026',
-        value: 'USD 8–10 billion',
-        note: 'BioNixus estimate',
+        value: 'USD 9.0 billion',
+        note: 'Market Research Future; forecast USD 16.2B by 2035 at 6.7% CAGR',
       },
       {
         label: 'Saudi Arabia pharmaceutical market 2026',
@@ -78,6 +78,52 @@ export const gccRegionalMarketIntelligence: Record<string, MarketIntelligence> =
         timeline: '—',
         notes:
           'BioNixus recommends parallel SFDA + MOHAP filings for simultaneous KSA and UAE access',
+      },
+    ],
+    deviceRegistrationSteps: [
+      {
+        step: 1,
+        action: 'Classify device risk class and appoint GCC authorized representative',
+        body: 'Manufacturer + local AR / importer',
+        timeline: 'Before dossier prep',
+        notes:
+          'Saudi SFDA MDIR Class A–D; UAE MOHAP with DHA/DOH emirate pathways; Qatar MOPH; Kuwait MOPH; Bahrain NHRA; Oman MOH',
+      },
+      {
+        step: 2,
+        action: 'Prepare technical file / QMS evidence (ISO 13485) and labeling',
+        body: 'Manufacturer quality & regulatory',
+        timeline: '2–6 months',
+        notes: 'CE/FDA clearances often accepted as supporting evidence; Arabic IFU requirements vary by country',
+      },
+      {
+        step: 3,
+        action: 'Submit country medical device marketing authorization',
+        body: 'SFDA / MOHAP / MOPH / NHRA / MOH',
+        timeline: '6–18 months by risk class (Class A notification faster)',
+        notes:
+          'NHRA Bahrain may mutual-recognize SFDA/MOHAP clearances; parallel SFDA + MOHAP filings accelerate KSA+UAE launches',
+      },
+      {
+        step: 4,
+        action: 'Register with public procurement / CMS / hospital networks',
+        body: 'NUPCO (KSA), CMS (Kuwait), HMC (Qatar), MOH/SEHA hospital systems',
+        timeline: '3–12 months post-authorization',
+        notes: 'Capital equipment and high-value consumables often require biomedical engineering evaluation before tender award',
+      },
+      {
+        step: 5,
+        action: 'Private hospital and insurer formulary / capital budget adoption',
+        body: 'Private hospital procurement + payer committees',
+        timeline: '2–9 months',
+        notes: 'UAE private sector (~70% of device spend) and Saudi private expansion are parallel to public tenders',
+      },
+      {
+        step: 6,
+        action: 'Commercial launch and post-market vigilance',
+        body: 'Local AR + OEM',
+        timeline: 'Ongoing',
+        notes: 'Adverse event reporting and field-safety corrective actions follow each national vigilance system',
       },
     ],
     therapySegments: [

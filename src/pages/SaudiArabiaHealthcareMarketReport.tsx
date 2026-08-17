@@ -184,7 +184,7 @@ const SaudiArabiaHealthcareMarketReport = () => {
               </Link>
               {' '}and{' '}
               <Link to="/healthcare-market-research/saudi-arabia" className="text-primary hover:underline font-medium">
-                healthcare market research in Saudi Arabia
+                healthcare market research Saudi Arabia
               </Link>
               .
             </p>

@@ -170,6 +170,7 @@ const UsaMedicalDevicesMarketReport = () => (
               <Link to="/canada-medical-devices-market-report" className="text-primary hover:underline font-medium">Canada medical devices market report</Link>{' '}and{' '}
               <Link to="/brazil-medical-devices-market-report" className="text-primary hover:underline font-medium">Brazil medical devices market report</Link>, set it against the{' '}
               <Link to="/usa-healthcare-market-report" className="text-primary hover:underline font-medium">USA healthcare market report</Link>, or widen the lens with the{' '}
+              <Link to="/china-medical-devices-market-report" className="text-primary hover:underline font-medium">China medical devices market report</Link>{' '}and the{' '}
               <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC medical devices market report</Link>. For methods and global coverage, see the{' '}
               <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}
               <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>.

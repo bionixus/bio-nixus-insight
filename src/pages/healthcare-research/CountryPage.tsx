@@ -18,6 +18,7 @@ import {
   pharmaInsightsPath,
   rweCountryPath,
 } from '@/data/countryKeywordPages';
+import { SAUDI_ARABIA_COUNTRY_HUB_ENRICHMENT } from '@/data/saudiArabiaCountryHubEnrichment';
 
 /**
  * Hub-and-spoke triad: /healthcare-market-research/{slug} ↔ /pharmaceutical-companies-{slug} ↔
@@ -202,7 +203,9 @@ export default function CountryPage() {
   const faqItems =
     Array.isArray(countryContent?.faq) && countryContent.faq.length > 0
       ? (countryContent.faq as { question: string; answer: string }[])
-      : buildCountryFaqFallback(config);
+      : config.faqQuestions.length > 0
+        ? config.faqQuestions
+        : buildCountryFaqFallback(config);
   const evidenceSafeStats = buildEvidenceSafeStats(config);
   const heroHeading =
     typeof countryContent?.title === 'string' && countryContent.title.length > 0
@@ -285,9 +288,13 @@ export default function CountryPage() {
                 <>
                   Saudi Arabia's pharmaceutical market exceeds USD 10 billion annually, the largest in the GCC, and
                   BioNixus delivers SFDA-aware physician surveys, Arabic fieldwork, and hospital stakeholder evidence
-                  across KSA. For launch sequencing and NUPCO context, see the{' '}
-                  <Link to="/healthcare-market-research/saudi-arabia" className="text-primary font-medium hover:underline">
-                    Saudi Arabia market entry blueprint
+                  across KSA. For registration and tender sequencing, see the{' '}
+                  <Link to="/sfda-market-access-strategy-saudi-arabia" className="text-primary font-medium hover:underline">
+                    SFDA market access strategy for Saudi Arabia
+                  </Link>{' '}
+                  and the{' '}
+                  <Link to="/blog/pharma-market-entry-saudi-arabia-playbook" className="text-primary font-medium hover:underline">
+                    pharma market entry Saudi Arabia playbook
                   </Link>
                   .
                 </>
@@ -397,6 +404,69 @@ export default function CountryPage() {
             </div>
           </section>
         )}
+
+        {config.slug === 'saudi-arabia'
+          ? SAUDI_ARABIA_COUNTRY_HUB_ENRICHMENT.map((section) => (
+              <ReportPremiumSection
+                key={section.id}
+                id={section.id}
+                title={section.title}
+                countryName={config.name}
+                marketSlug={config.slug}
+              >
+                {section.paragraphs.map((para) => (
+                  <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed mb-4">
+                    {para}
+                  </p>
+                ))}
+                {section.listItems?.length ? (
+                  <ul className="list-disc pl-6 space-y-2 text-muted-foreground leading-relaxed mb-4">
+                    {section.listItems.map((item) => (
+                      <li key={item.slice(0, 48)}>{item}</li>
+                    ))}
+                  </ul>
+                ) : null}
+                {section.id === 'therapy-programmes-saudi-hub' ? (
+                  <p className="text-muted-foreground leading-relaxed">
+                    Cross-link BioNixus Saudi programmes:{' '}
+                    <Link to="/market-reports/saudi-arabia-vaccines-market-report" className="text-primary underline font-medium">
+                      vaccines
+                    </Link>
+                    ,{' '}
+                    <Link to="/market-reports/saudi-arabia-biosimilars-market-report" className="text-primary underline font-medium">
+                      biosimilars
+                    </Link>
+                    ,{' '}
+                    <Link to="/market-reports/saudi-arabia-oncology-market-report" className="text-primary underline font-medium">
+                      oncology
+                    </Link>
+                    ,{' '}
+                    <Link to="/market-reports/saudi-arabia-immunology-biologics-market-report" className="text-primary underline font-medium">
+                      immunology &amp; biologics
+                    </Link>
+                    , and{' '}
+                    <Link to="/market-reports/saudi-arabia-rare-diseases-market-report" className="text-primary underline font-medium">
+                      rare diseases
+                    </Link>
+                    .
+                  </p>
+                ) : null}
+                {section.id === 'bionixus-vs-syndicated-saudi' ? (
+                  <p className="text-muted-foreground leading-relaxed">
+                    Related positioning:{' '}
+                    <Link to="/iqvia-alternative" className="text-primary underline font-medium">
+                      IQVIA alternative
+                    </Link>{' '}
+                    and{' '}
+                    <Link to="/bionixus-vs-iqvia-mena" className="text-primary underline font-medium">
+                      BioNixus vs IQVIA MENA
+                    </Link>
+                    .
+                  </p>
+                ) : null}
+              </ReportPremiumSection>
+            ))
+          : null}
 
         {config.slug === 'uae' && (
           <section className="mb-8">
@@ -589,7 +659,7 @@ export default function CountryPage() {
             <p className="text-base leading-relaxed text-muted-foreground">
               For BOFU company-intent searches, use our{' '}
               <Link to="/market-research-saudi-arabia-pharmaceutical" className="text-primary underline font-medium">
-                healthcare market research company in Saudi Arabia
+                pharma market research company Saudi Arabia
               </Link>{' '}
               page; for KSA keyword variants see{' '}
               <Link to="/market-research-ksa" className="text-primary underline font-medium">

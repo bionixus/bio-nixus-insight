@@ -512,7 +512,7 @@ const aesthetics: SegmentMarketContent = {
     { to: '/saudi-arabia-plasma-fractional-laser-market', label: 'Saudi Arabia Plasma & Fractional Laser Market' },
     { to: '/saudi-arabia-skincare-market', label: 'Saudi Arabia Skincare Market' },
     { to: '/gcc-medical-tourism-market', label: 'GCC Medical Tourism Market' },
-    { to: '/healthcare-market-research-in-saudi-arabia', label: 'Healthcare Market Research in Saudi Arabia' },
+    { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare Market Research in Saudi Arabia' },
   ],
   faqs: [
     {
@@ -1580,7 +1580,7 @@ const pharmaceuticalPackaging: SegmentMarketContent = {
     },
     { to: '/sfda-market-access-strategy-saudi-arabia', label: 'SFDA Market Access Strategy' },
     { to: '/gcc-pharma-market-report-2026', label: 'GCC Pharma Market Report' },
-    { to: '/healthcare-market-research-in-saudi-arabia', label: 'Healthcare Market Research in Saudi Arabia' },
+    { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare Market Research in Saudi Arabia' },
     { to: '/qualitative-market-research', label: 'Qualitative Market Research' },
   ],
   faqs: [

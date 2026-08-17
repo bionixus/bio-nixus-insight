@@ -41,6 +41,9 @@ export function MarketIntelligenceSections({
   const isDevices = variant === 'medical-devices';
   // On device reports, drop the pharma-only KPI so the indicator set stays accurate to the device market.
   const kpis = isDevices ? data.kpis.filter((k) => !/pharmac/i.test(k.label)) : data.kpis;
+  const registrationSteps = isDevices
+    ? data.deviceRegistrationSteps
+    : data.registrationSteps;
   const showTherapySegments = variant === 'healthcare' && (data.therapySegments?.length ?? 0) > 0;
   const sourceNotes = [
     ...new Set(
@@ -123,7 +126,7 @@ export function MarketIntelligenceSections({
         </div>
       </section>
 
-      {!isDevices && (
+      {registrationSteps && registrationSteps.length > 0 ? (
       <section
         ref={regRef}
         className="py-10 md:py-12 rounded-2xl bg-gradient-to-br from-cream to-cream-dark/40 border border-border/50 px-4 md:px-8"
@@ -133,13 +136,17 @@ export function MarketIntelligenceSections({
           <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(220px,260px)] gap-8 items-start">
             <div>
               <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-2 sr sr-up sr-line">
-                Drug Registration Process in {countryName} — Step by Step
+                {isDevices
+                  ? `Medical Device Registration in ${countryName} — Step by Step`
+                  : `Drug Registration Process in ${countryName} — Step by Step`}
               </h2>
               <p className="text-sm text-muted-foreground mb-8 sr sr-up">
-                Regulatory pathway from dossier submission through pricing and formulary listing.
+                {isDevices
+                  ? 'Device classification, marketing authorization, procurement listing, and hospital adoption pathways.'
+                  : 'Regulatory pathway from dossier submission through pricing and formulary listing.'}
               </p>
               <ol className="space-y-5 timeline-step sr sr-up">
-                {data.registrationSteps.map((step) => (
+                {registrationSteps.map((step) => (
                   <li key={step.step} className="flex gap-4 sr sr-up">
                     <div
                       className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground text-sm font-bold flex items-center justify-center mt-0.5 shadow-md"
@@ -175,13 +182,17 @@ export function MarketIntelligenceSections({
                 marketSlug={marketSlug}
                 therapySlug={therapySlug}
                 countryName={countryName}
-                alt={`${countryName} pharmaceutical drug registration and regulatory approval process illustration`}
+                alt={
+                  isDevices
+                    ? `${countryName} medical device registration and regulatory approval process illustration`
+                    : `${countryName} pharmaceutical drug registration and regulatory approval process illustration`
+                }
               />
             </div>
           </div>
         </div>
       </section>
-      )}
+      ) : null}
 
       {showTherapySegments ? (
         <section ref={therapyRef} className="py-10 md:py-12" id="therapy-segments">

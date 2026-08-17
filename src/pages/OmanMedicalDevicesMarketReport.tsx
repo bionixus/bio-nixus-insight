@@ -173,7 +173,7 @@ const OmanMedicalDevicesMarketReport = () => {
             <p className="text-muted-foreground leading-relaxed">
               See the{' '}
               <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">
-                GCC Medical Devices Market Report
+                GCC medical devices market report 2026
               </Link>
               {' '}for the full regional context.
             </p>
@@ -277,7 +277,7 @@ const OmanMedicalDevicesMarketReport = () => {
               <Link to="/uae-medical-devices-market-report" className="text-primary hover:underline font-medium">UAE medical devices market report</Link>{' '}and{' '}
               <Link to="/saudi-arabia-medical-devices-market-report" className="text-primary hover:underline font-medium">Saudi Arabia medical devices market report</Link>, set it against the{' '}
               <Link to="/oman-healthcare-market-report" className="text-primary hover:underline font-medium">Oman healthcare market report</Link>, or widen the lens with the{' '}
-              <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC medical devices market report</Link>. For methods and global coverage, see the{' '}
+              <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC medical devices market report 2026</Link>. For methods and global coverage, see the{' '}
               <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}
               <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>.{' '}For account-level directories and programme scoping, see{' '}
               <Link to="/pharmaceutical-companies-oman" className="text-primary hover:underline font-medium">pharmaceutical companies in Oman</Link>{' '}and{' '}

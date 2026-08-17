@@ -513,7 +513,7 @@ const regenerativeMedicine: SegmentMarketContent = {
     'Senior-led commissioned studies designed around a single launch or investment decision, delivered faster than global syndicated alternatives.',
   ],
   relatedLinks: [
-    { to: '/healthcare-market-research-in-saudi-arabia', label: 'Healthcare market research in Saudi Arabia' },
+    { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare market research in Saudi Arabia' },
     { to: '/saudi-arabia-cell-therapy-market', label: 'Saudi Arabia cell therapy market' },
     { to: '/saudi-arabia-biotechnology-market', label: 'Saudi Arabia biotechnology market' },
     { to: '/saudi-payer-market-access-research', label: 'Saudi payer and market access research' },

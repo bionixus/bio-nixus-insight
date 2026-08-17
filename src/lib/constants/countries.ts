@@ -34,12 +34,12 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     slug: 'saudi-arabia',
     region: 'mena',
     metaSuffix: 'KSA pharma market research with Vision 2030 healthcare expertise.',
-    metaTitle: 'Healthcare Market Research Saudi Arabia | SFDA & NUPCO | BioNixus',
+    metaTitle: 'Healthcare Market Research Saudi Arabia | BioNixus',
     metaDescription:
-      'Healthcare market research Saudi Arabia 2026: SFDA-aware physician surveys, NUPCO tender context, Arabic fieldwork, and KOL mapping across Riyadh, Jeddah.',
+      'Healthcare market research Saudi Arabia: SFDA-aware HCP surveys, NUPCO tender context, Arabic fieldwork across Riyadh, Jeddah & Eastern Province. Request a proposal.',
     ogDescription:
       'BioNixus delivers pharmaceutical market research in Saudi Arabia with SFDA-aware execution, Arabic fieldwork, and hospital stakeholder access across Riyadh, Jeddah, and Dammam.',
-    h1: 'Healthcare Market Research in Saudi Arabia',
+    h1: 'Healthcare Market Research Saudi Arabia',
     relatedCountries: ['uae', 'kuwait'],
     relatedTherapies: ['diabetes', 'oncology', 'respiratory', 'immunology'],
     keyStats: [
@@ -50,34 +50,40 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     ],
     faqQuestions: [
       {
+        question: 'Who provides healthcare market research in Saudi Arabia?',
+        answer:
+          'BioNixus provides healthcare market research Saudi Arabia programmes for pharmaceutical and medical device teams: Arabic-first HCP, KOL, payer, and patient studies across Riyadh, Jeddah, and Eastern Province with SFDA-aware design and NUPCO tender intelligence. Engagements are primary research — not syndicated desk reports alone — and typically complete in 3–8 weeks depending on method mix and specialty scarcity.',
+      },
+      {
+        question: 'What is healthcare market research Saudi Arabia used for?',
+        answer:
+          'Teams use healthcare market research Saudi Arabia to de-risk launch sequencing, message fit, formulary and NUPCO access assumptions, and therapy adoption before committing budget. BioNixus maps who influences prescribing and procurement, how SFDA registration stage shapes intent, and where Riyadh, Jeddah, and Eastern Province channels differ — so commercial, medical, and market access owners act on local evidence.',
+      },
+      {
+        question: 'What is the best healthcare market research company in Saudi Arabia?',
+        answer:
+          'BioNixus is among the leading specialist healthcare market research companies in Saudi Arabia for pharmaceutical and medical device teams. The firm combines Arabic-first HCP fieldwork across Riyadh, Jeddah, and Eastern Province with SFDA-aware study design, NUPCO tender intelligence, and mixed-method programmes that link physician insight to formulary and procurement outcomes — rather than syndicated panel data alone.',
+      },
+      {
+        question: 'How does healthcare market research in Riyadh differ from Jeddah?',
+        answer:
+          'Riyadh hosts SFDA headquarters and MoH central directorates, making it the primary centre for regulatory affairs and public-sector procurement research. Jeddah is the Western region hub with a large private hospital cluster and life-sciences adjacency — better suited for private-sector and academic KOL studies. BioNixus samples both when national coverage is required.',
+      },
+      {
+        question: 'How does NUPCO affect pharmaceutical market research in Saudi Arabia?',
+        answer:
+          'NUPCO (National Unified Procurement Company) centralises Ministry of Health drug and device tenders, making tender-cycle timing, committee criteria, and competitive positioning core research questions for Saudi launch teams. BioNixus designs studies that capture hospital procurement committee behaviour, tender win/loss drivers, and physician prescribing intent in the months before and after NUPCO award announcements.',
+      },
+      {
         question:
           'How does BioNixus run pharmaceutical market research in Saudi Arabia under SFDA requirements?',
         answer:
-          'BioNixus structures Saudi pharmaceutical market research around local regulatory and institutional realities rather than generic global templates. We start each study by mapping the exact business decisions your team must make, then align respondent strategy, methodology, and analysis outputs to those decisions. Our field teams are trained for compliant, culturally appropriate engagement and can execute Arabic and English interviews with physicians, procurement stakeholders, and decision influencers. We account for Saudi public and private channel dynamics, formulary pathways, and treatment adoption patterns across major healthcare networks. Every project includes quality controls for sampling, recruitment verification, and data integrity. This SFDA-aware operating model helps clients move from raw data to practical launch, access, and brand decisions with confidence.',
+          'BioNixus structures Saudi pharmaceutical market research around local regulatory and institutional realities rather than generic global templates. We start each study by mapping the exact business decisions your team must make, then align respondent strategy, methodology, and analysis outputs to those decisions. Our field teams execute Arabic and English interviews with physicians, procurement stakeholders, and decision influencers, with quality controls for sampling, recruitment verification, and data integrity.',
       },
       {
-        question:
-          'Which healthcare stakeholders should be included in Saudi Arabia pharma insight studies?',
+        question: 'How does healthcare research in the Eastern Province (Al Khobar / Dammam) differ?',
         answer:
-          'Effective Saudi studies include stakeholders based on real decision influence, not only job titles. BioNixus typically includes prescribing specialists, department heads, hospital pharmacy leaders, purchasing stakeholders, and market access influencers where relevant. We also segment by care setting because decision logic in a large tertiary center can differ from that of a private network facility. In therapy areas with complex pathways, we include upstream and downstream treatment influencers to avoid narrow conclusions. Our stakeholder architecture is designed to support specific outcomes: message optimization, launch sequencing, evidence planning, and account prioritization. By identifying who drives adoption and who creates friction, we give commercial and medical teams clearer engagement priorities and reduce strategy gaps between headquarters assumptions and Saudi market reality.',
-      },
-      {
-        question:
-          'How can Saudi market research improve diabetes and oncology strategy outcomes?',
-        answer:
-          'Saudi Arabia is a priority market for both diabetes and oncology, and evidence quality directly influences strategy success. BioNixus combines quantitative and qualitative approaches to reveal not only what stakeholders do, but why they do it. In diabetes, we study treatment sequencing, adherence constraints, and switch behavior across relevant provider segments. In oncology, we assess evidence expectations, protocol behavior, and access barriers that shape adoption speed. We contextualize findings within Saudi institutional structures so teams can identify feasible action plans instead of generic recommendations. The output includes segment prioritization, value proposition guidance, and risk-aware rollout scenarios. This helps clients improve resource allocation, reduce launch uncertainty, and align cross-functional plans around measurable market realities in one of the region’s most important healthcare economies.',
-      },
-      {
-        question:
-          'What research methods are most reliable in Saudi Arabia for pharma decision-making?',
-        answer:
-          'The most reliable approach in Saudi Arabia is usually a mixed-method design tailored to the question, timeline, and target stakeholders. BioNixus uses quantitative surveys for confidence measurement and trend visibility, plus in-depth interviews to uncover decision rationale, practical barriers, and evidence interpretation behavior. We deploy CATI, online surveys, and targeted qualitative studies with strict recruitment standards and respondent validation controls. Method selection is guided by business utility: for example, launch readiness may require segmented physician quant plus stakeholder depth interviews, while access strategy may prioritize payer-adjacent qualitative insight. We also use iterative synthesis workshops to connect findings to actions. This approach ensures data quality while producing decision-ready outputs that commercial, medical, and market access teams can apply quickly in Saudi planning cycles.',
-      },
-      {
-        question:
-          'Why is local market intelligence critical for Vision 2030-aligned healthcare growth in KSA?',
-        answer:
-          'Vision 2030 is accelerating structural shifts in healthcare delivery, procurement expectations, and investment priorities, so static assumptions become outdated quickly. BioNixus provides local market intelligence that helps teams adapt strategy to moving conditions without losing commercial focus. We track adoption drivers, stakeholder behavior shifts, and evidence requirements in ways that inform near-term tactical moves and longer-term portfolio planning. Our research programs support launch, expansion, and optimization decisions by identifying where opportunities are scalable and where country-specific adaptation is required. This is especially important in Saudi Arabia, where institutional modernization and disease burden priorities can reshape go-to-market logic. With decision-linked evidence, leadership teams can align strategy with local realities, improve execution quality, and protect investment during transformation periods.',
+          'Eastern Province healthcare research often centres on JHAH for occupational and petrochemical workforce health, and the Dammam metro hospital system for population-level studies. The region also concentrates specialist physicians and medical device decision-makers tied to Aramco and government hospital procurement. BioNixus includes Eastern Province modules when national or occupational-health coverage is in scope.',
       },
     ],
   },

@@ -766,7 +766,7 @@ const clinicalTrials: GccSegmentContent = {
     { to: '/real-world-evidence', label: 'Real-world evidence research' },
     { to: '/kol-mapping-saudi-arabia-oncology', label: 'KOL mapping — Saudi Arabia oncology' },
     { to: '/healthcare-market-research', label: 'Healthcare market research services' },
-    { to: '/healthcare-market-research-in-saudi-arabia', label: 'Healthcare market research in Saudi Arabia' },
+    { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare market research Saudi Arabia' },
   ],
   faqs: [
     {
@@ -1024,7 +1024,7 @@ const personalizedMedicine: GccSegmentContent = {
     { to: '/gcc-pharma-market-report-2026', label: 'GCC Pharmaceutical Market Report 2026' },
     { to: '/healthcare-market-research/therapy/oncology', label: 'Oncology market research' },
     { to: '/healthcare-market-research', label: 'Healthcare market research services' },
-    { to: '/healthcare-market-research-in-saudi-arabia', label: 'Healthcare market research in Saudi Arabia' },
+    { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare market research Saudi Arabia' },
   ],
   faqs: [
     {
@@ -1283,7 +1283,7 @@ const biopharmaceuticals: GccSegmentContent = {
     { to: '/market-reports/gcc-biosimilars-market-report', label: 'GCC Biosimilars Market Report' },
     { to: '/gcc-pharma-market-report-2026', label: 'GCC Pharmaceutical Market Report 2026' },
     { to: '/healthcare-market-research', label: 'Healthcare market research services' },
-    { to: '/healthcare-market-research-in-saudi-arabia', label: 'Healthcare market research in Saudi Arabia' },
+    { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare market research Saudi Arabia' },
   ],
   faqs: [
     {

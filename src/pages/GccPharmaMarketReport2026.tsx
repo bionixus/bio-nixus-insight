@@ -519,9 +519,9 @@ const GccPharmaMarketReport2026 = () => {
                 <p className="text-muted-foreground leading-relaxed">
                   IVD, prefilled syringes, and hospital device procurement are sized in the{' '}
                   <Link to="/gcc-medical-devices-market-report" className="text-primary font-medium hover:underline">
-                    GCC medical devices market report
+                    GCC medical devices market report 2026
                   </Link>{' '}
-                  (~USD 5.8B devices market, 2026).
+                  (~USD 9.0B devices market, 2026 → USD 16.2B by 2035).
                 </p>
               </div>
               <div>
