@@ -143,14 +143,19 @@ export const CTR_SEO_BY_PATH = {
       'GCC anesthesia market $850M–1B and 1.8–2.2M annual surgical procedures — Saudi, UAE, Kuwait, Qatar, Oman & Bahrain intelligence by BioNixus.',
   },
   '/japan-medical-devices-market-report': {
-    title: 'Japan Medical Devices Market Report 2026 | Size, PMDA & NHI',
+    title: 'Japan Medical Devices Market 2026: $41B Size, PMDA & NHI Guide',
     description:
-      'Japan medical devices market report 2026 — ~USD 41B market size, PMDA Class I–IV (todokede/ninsho/shonin), NHI listing, forecast to ~USD 64B. BioNixus.',
+      'Japan medical devices market 2026 — ~USD 41B size, PMDA shonin/ninsho pathways, NHI listing, Sakigake priority review, and segment forecasts. BioNixus report.',
   },
   '/gcc-market-access-guide': {
     title: 'GCC Market Access 2026: Pharma & MedTech Entry Guide (All 6 Countries)',
     description:
-      'How to enter GCC healthcare markets in 2026 — registration, pricing, tenders and distributors for Saudi, UAE, Qatar, Kuwait, Oman, Bahrain.',
+      'How to enter GCC healthcare markets in 2026 — SFDA/MOHAP registration, NUPCO tenders, ERP pricing, and MedTech listing for Saudi, UAE, Qatar, Kuwait, Oman, Bahrain.',
+  },
+  '/bionixus-vs-iqvia-mena': {
+    title: 'BioNixus vs IQVIA MENA (2026): GCC Healthcare Research Compared',
+    description:
+      'Compare BioNixus vs IQVIA for MENA healthcare research — hospital consumption data, HCP surveys, GCC tenders, and when each firm fits Saudi, UAE, and Egypt mandates.',
   },
   '/healthcare-market-research': {
     title: 'Healthcare Market Research Company | Bionixus',

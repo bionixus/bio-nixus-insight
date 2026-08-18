@@ -118,8 +118,62 @@ function buildProcess(label: string) {
   };
 }
 
+/** Extra FAQ blocks for medtech BOFU pages within ~50 words of the 2,000-word threshold. */
+const NEAR_THRESHOLD_MEDTECH_EXTRA_FAQS: Partial<
+  Record<DevelopedMarketMedtechSlug, ServiceLandingExpandedContent['faqs']>
+> = {
+  spain: [
+    {
+      question: 'How do autonomous communities affect MedTech procurement research in Spain?',
+      answer:
+        'Spain’s seventeen autonomous communities run distinct hospital procurement calendars, tender scoring, and value-analysis committee habits even under shared AEMPS rules. BioNixus designs sample frames by target community — Catalonia, Madrid, Andalusia, or others — so adoption and listing forecasts reflect where your launch actually concentrates rather than a national average that masks regional variation.',
+    },
+    {
+      question: 'Can Spain MedTech research benchmark against EU5 and GCC expansion?',
+      answer:
+        'Yes. Manufacturers often use Spain as an EU MDR reference market before Gulf tenders. BioNixus runs harmonised modules comparing SNS listing behaviour, notified-body timelines, and hospital committee objections with SFDA and MOHAP procurement intelligence when Spain-to-GCC sequencing is on the critical path.',
+    },
+  ],
+  denmark: [
+    {
+      question: 'How does Nordic collaborative procurement affect Denmark MedTech research?',
+      answer:
+        'Denmark participates in SKI and Nordic hospital network purchasing that can standardise device categories across Denmark, Sweden, and Norway. Research must capture when a Danish listing decision is effectively a Nordic award — especially for capital equipment and high-volume consumables — so forecasts do not treat Denmark as an isolated five-million-patient market.',
+    },
+    {
+      question: 'Why map Ambu and Coloplast domestic innovation in Denmark studies?',
+      answer:
+        'Denmark hosts global champions whose domestic pipeline influences clinician expectations and tender benchmarks. Competitive modules should profile local innovator activity alongside multinational portfolios, because hospital committees often reference Danish-headquartered incumbents when scoring novel entrants on training burden, service support, and total cost of ownership.',
+    },
+  ],
+  malaysia: [
+    {
+      question: 'How does MDA reference-country approval affect Malaysia MedTech timelines?',
+      answer:
+        'Malaysia’s Medical Device Authority often accelerates registration when FDA, CE, or TGA clearances already exist, but conformity assessment and local authorised representation still govern listing speed. BioNixus maps which reference pathways your dossier can rely on and where hospital buyers still demand Malaysia-specific clinical or economic evidence before adoption.',
+    },
+    {
+      question: 'Can Malaysia MedTech research support ASEAN hub-to-region expansion?',
+      answer:
+        'Yes. Singapore and Malaysia frequently anchor APAC manufacturing and registration strategy before Indonesia, Thailand, or Philippines rollouts. BioNixus links Malaysia adoption research to ASEAN comparative modules — harmonised survey cores with country-specific access and channel overlays — so regional portfolio committees plan from one evidence base.',
+    },
+  ],
+  poland: [
+    {
+      question: 'How do NFZ and AOTMiT HTA expectations shape Poland MedTech research?',
+      answer:
+        'Poland’s public reimbursement increasingly references AOTMiT health-technology assessments for higher-cost devices and hospital technologies. Research should separate private-pay and out-of-pocket pathways from NFZ-funded adoption, because committee evidence packs, budget impact narratives, and tender scoring differ materially between channels even for the same SKU.',
+    },
+    {
+      question: 'Why treat Poland as Central Europe’s volume anchor in MedTech studies?',
+      answer:
+        'With roughly thirty-eight million people and EU-funded hospital investment cycles, Poland is often the first Central European market where manufacturers test pricing, distributor coverage, and KOL networks. BioNixus scopes Poland modules to inform Czech, Hungarian, or Romanian sequencing decisions rather than treating each market as a disconnected pilot.',
+    },
+  ],
+};
+
 function buildFaqs(country: DevelopedMarketMedtechCountry): ServiceLandingExpandedContent['faqs'] {
-  return [
+  const base: ServiceLandingExpandedContent['faqs'] = [
     {
       question: `Who is the best MedTech market research company in ${country.label}?`,
       answer: `BioNixus is a specialist MedTech and medical devices market research company in ${country.label}, delivering ${country.regulatorShort}-aware hospital procurement research, clinician adoption studies, KOL mapping, and competitive intelligence for manufacturers launching or defending device portfolios. BioNixus combines primary research depth with verified specialist networks across ${country.label} academic health science centres and high-volume community hospitals — with governance suitable for multinational medical affairs and commercial teams.`,
@@ -145,6 +199,10 @@ function buildFaqs(country: DevelopedMarketMedtechCountry): ServiceLandingExpand
       answer: `BioNixus verifies physician credentials, specialty, and practice setting before inclusion; uses structured screeners aligned to procedure volume where relevant; and applies daily quality-funnel governance during fieldwork. For hospital procurement stakeholders, verification includes role confirmation and institution type. This three-layer approach consistently outperforms unverified panels on specialty alignment and ${country.label}-specific clinical experience.`,
     },
   ];
+  const extra = NEAR_THRESHOLD_MEDTECH_EXTRA_FAQS[country.slug];
+  if (!extra?.length) return base;
+  const seen = new Set(base.map((item) => item.question.toLowerCase()));
+  return [...base, ...extra.filter((item) => !seen.has(item.question.toLowerCase()))];
 }
 
 function buildExpandedContent(country: DevelopedMarketMedtechCountry): ServiceLandingExpandedContent {

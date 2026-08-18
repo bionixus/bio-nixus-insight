@@ -267,6 +267,21 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       answer:
         'We deliver centre concentration maps, KOL connectivity dossiers, persistence and discontinuation analysis, caregiver burden narratives, and access-risk registers tied to step therapy or funding exceptions—outputs medical, access, and brand teams can operationalise without reinterpretation.',
     },
+    {
+      question: 'How should neurology research handle rare versus high-prevalence indications?',
+      answer:
+        'Rare CNS franchises need centre-of-excellence mapping and realistic diagnosed-patient funnels; higher-prevalence categories such as migraine or epilepsy require primary-care gateway and pharmacist substitution modules. BioNixus scopes one decision cell per programme so sample design matches where patients actually enter and exit the pathway.',
+    },
+    {
+      question: 'How should MS and neuromuscular programmes model centre concentration?',
+      answer:
+        'Neurology franchises often depend on a small number of specialist centres that initiate and maintain therapy. BioNixus maps centre throughput, referral leakage, and funding-committee behaviour so forecasts use treatment-ready cohorts rather than epidemiologic prevalence alone.',
+    },
+    {
+      question: 'How does diagnostic delay affect orphan drug forecasts in neurology?',
+      answer:
+        'Rare and specialist-gated neurology categories often address cohorts far smaller than prevalence because referral, genetic testing, and payer criteria shrink the treatment-ready population. Bottom-up diagnosed-patient models prevent launch plans that treat epidemiology as addressable revenue.',
+    },
   ],
   'digital-health': [
     {
@@ -288,6 +303,21 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       question: 'How does BioNixus support digital health commercialisation?',
       answer:
         'We pair clinician adoption studies with payer-adjacent interviews, procurement stakeholder mapping, and pricing scenario tests—linking findings to diabetes, cardiology, or respiratory hubs where companion services intersect pharmaceutical franchises.',
+    },
+    {
+      question: 'What evidence do hospital IT teams require before connected-device pilots scale?',
+      answer:
+        'Security review packs, interoperability standards (HL7 FHIR, DICOM where relevant), uptime SLAs, and clear data-ownership clauses typically gate budget release after successful clinical pilots. Research documents which artefacts each institution’s CIO and clinical engineering teams treat as mandatory versus negotiable.',
+    },
+    {
+      question: 'How should digital health pilots be designed for GCC hospital buyers?',
+      answer:
+        'Pilots should pre-specify integration owners, cybersecurity artefacts, nursing workflow impact, and budget-release criteria before clinical start — Gulf CIOs rarely expand connected-device contracts on clinical outcomes alone when IT gates were not designed into the pilot charter.',
+    },
+    {
+      question: 'Can digital health research support pharma companion services?',
+      answer:
+        'Yes. Connected adherence tools, remote monitoring, and nurse-support apps increasingly attach to chronic pharmaceutical franchises. BioNixus links digital-health modules to diabetes, cardiology, and respiratory hubs when companion services intersect launch or lifecycle strategy.',
     },
   ],
   dermatology: [
