@@ -1,0 +1,456 @@
+{
+  "generatedAt": "2026-08-18",
+  "hasCurrentDates": true,
+  "hasPreviousDates": false,
+  "hasCurrentQueries": true,
+  "hasPreviousQueries": false,
+  "hasCurrentPages": true,
+  "hasPreviousPages": false,
+  "current": {
+    "days": 7,
+    "clicksPerDay": 37,
+    "impressionsPerDay": 4784.857142857143,
+    "ctrPct": 0.7732728249835791,
+    "avgPosition": 28.357547620469333,
+    "totalClicks": 259,
+    "totalImpressions": 33494
+  },
+  "previous": null,
+  "targets": {
+    "impressionsPerDay": 15000,
+    "clicksPerDay": 450,
+    "ctrPct": 3,
+    "position": 5
+  },
+  "vsTargets": {
+    "impressionsPerDay": {
+      "value": 4784.857142857143,
+      "target": 15000,
+      "delta": -10215.142857142857,
+      "status": "below target"
+    },
+    "clicksPerDay": {
+      "value": 37,
+      "target": 450,
+      "delta": -413,
+      "status": "below target"
+    },
+    "ctrPct": {
+      "value": 0.7732728249835791,
+      "target": 3,
+      "delta": -2.226727175016421,
+      "status": "below target"
+    },
+    "avgPosition": {
+      "value": 28.357547620469333,
+      "target": 5,
+      "delta": -23.357547620469333,
+      "status": "below target"
+    }
+  },
+  "vsLastWeek": null,
+  "topPositionChanges": null,
+  "top10PageChurn": null,
+  "lowCtrPage1Queries": [
+    {
+      "query": "cairo hospitals healthcare 2023-2026",
+      "clicks": 0,
+      "impressions": 165,
+      "ctr": 0,
+      "position": 1.82
+    },
+    {
+      "query": "latest pharmaceutical market news brazil regulation science health",
+      "clicks": 0,
+      "impressions": 119,
+      "ctr": 0,
+      "position": 6.37
+    },
+    {
+      "query": "\"prk pharmaceutical\" egypt",
+      "clicks": 0,
+      "impressions": 107,
+      "ctr": 0,
+      "position": 7.86
+    },
+    {
+      "query": "health medicine news brazil 2026",
+      "clicks": 0,
+      "impressions": 95,
+      "ctr": 0,
+      "position": 6.26
+    },
+    {
+      "query": "pharmaceutical companies in uae",
+      "clicks": 0,
+      "impressions": 58,
+      "ctr": 0,
+      "position": 7.03
+    },
+    {
+      "query": "iqvia competitors",
+      "clicks": 0,
+      "impressions": 40,
+      "ctr": 0,
+      "position": 6.1
+    },
+    {
+      "query": "pharmaceutical companies",
+      "clicks": 0,
+      "impressions": 40,
+      "ctr": 0,
+      "position": 9.03
+    },
+    {
+      "query": "febrile neutropenia market",
+      "clicks": 0,
+      "impressions": 38,
+      "ctr": 0,
+      "position": 8.79
+    },
+    {
+      "query": "pharmaceutical companies in dubai",
+      "clicks": 0,
+      "impressions": 37,
+      "ctr": 0,
+      "position": 7.19
+    },
+    {
+      "query": "pharmaceutical companies in kuwait",
+      "clicks": 0,
+      "impressions": 32,
+      "ctr": 0,
+      "position": 7.56
+    },
+    {
+      "query": "gcc generic injectables market",
+      "clicks": 0,
+      "impressions": 29,
+      "ctr": 0,
+      "position": 7.28
+    },
+    {
+      "query": "kantar egypt market research",
+      "clicks": 0,
+      "impressions": 29,
+      "ctr": 0,
+      "position": 7.59
+    },
+    {
+      "query": "pharmaceutical companies in egypt",
+      "clicks": 0,
+      "impressions": 25,
+      "ctr": 0,
+      "position": 5.28
+    },
+    {
+      "query": "companies like iqvia",
+      "clicks": 0,
+      "impressions": 25,
+      "ctr": 0,
+      "position": 9.76
+    },
+    {
+      "query": "oman pharma",
+      "clicks": 0,
+      "impressions": 24,
+      "ctr": 0,
+      "position": 8.25
+    },
+    {
+      "query": "japan general surgical devices market",
+      "clicks": 0,
+      "impressions": 23,
+      "ctr": 0,
+      "position": 7.87
+    },
+    {
+      "query": "italy microservices healthcare market",
+      "clicks": 0,
+      "impressions": 22,
+      "ctr": 0,
+      "position": 1.95
+    },
+    {
+      "query": "japan medical disposables market",
+      "clicks": 0,
+      "impressions": 22,
+      "ctr": 0,
+      "position": 9.45
+    },
+    {
+      "query": "leading company in health sector colombia",
+      "clicks": 0,
+      "impressions": 22,
+      "ctr": 0,
+      "position": 9.55
+    },
+    {
+      "query": "oman pharmaceutical company",
+      "clicks": 0,
+      "impressions": 21,
+      "ctr": 0,
+      "position": 8.71
+    },
+    {
+      "query": "pharma packaging companies in uae",
+      "clicks": 0,
+      "impressions": 21,
+      "ctr": 0,
+      "position": 9.62
+    },
+    {
+      "query": "oman pharma company",
+      "clicks": 0,
+      "impressions": 20,
+      "ctr": 0,
+      "position": 7
+    },
+    {
+      "query": "nupco tender",
+      "clicks": 0,
+      "impressions": 20,
+      "ctr": 0,
+      "position": 7.85
+    },
+    {
+      "query": "\"mhlw-2026-7714\"",
+      "clicks": 0,
+      "impressions": 19,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "query": "pharmaceutical companies in oman",
+      "clicks": 0,
+      "impressions": 19,
+      "ctr": 0,
+      "position": 2.89
+    },
+    {
+      "query": "pharmaceutical companies dubai",
+      "clicks": 0,
+      "impressions": 19,
+      "ctr": 0,
+      "position": 7
+    },
+    {
+      "query": "gcc respiratory drugs market",
+      "clicks": 0,
+      "impressions": 18,
+      "ctr": 0,
+      "position": 2.78
+    },
+    {
+      "query": "bahrain consumer behavior and unmet needs 2026",
+      "clicks": 0,
+      "impressions": 18,
+      "ctr": 0,
+      "position": 8.17
+    },
+    {
+      "query": "prk pharma egypt company",
+      "clicks": 0,
+      "impressions": 17,
+      "ctr": 0,
+      "position": 6.47
+    },
+    {
+      "query": "awiqli insulin uae",
+      "clicks": 0,
+      "impressions": 17,
+      "ctr": 0,
+      "position": 7.88
+    },
+    {
+      "query": "oman pharmaceutical products",
+      "clicks": 0,
+      "impressions": 17,
+      "ctr": 0,
+      "position": 8.88
+    },
+    {
+      "query": "qatar pharmaceutical industries",
+      "clicks": 0,
+      "impressions": 16,
+      "ctr": 0,
+      "position": 9.44
+    },
+    {
+      "query": "italy medical device connectivity market",
+      "clicks": 0,
+      "impressions": 15,
+      "ctr": 0,
+      "position": 6.87
+    },
+    {
+      "query": "best services for pharmaceutical market access besides iqvia",
+      "clicks": 0,
+      "impressions": 15,
+      "ctr": 0,
+      "position": 7.13
+    },
+    {
+      "query": "gcc biologics market",
+      "clicks": 0,
+      "impressions": 15,
+      "ctr": 0,
+      "position": 7.8
+    },
+    {
+      "query": "pharmaceutical analytics companies",
+      "clicks": 0,
+      "impressions": 15,
+      "ctr": 0,
+      "position": 8.47
+    },
+    {
+      "query": "nupco tenders",
+      "clicks": 0,
+      "impressions": 15,
+      "ctr": 0,
+      "position": 9.2
+    },
+    {
+      "query": "gcc medical device devices market",
+      "clicks": 0,
+      "impressions": 14,
+      "ctr": 0,
+      "position": 3.36
+    },
+    {
+      "query": "pharma companies in dubai",
+      "clicks": 0,
+      "impressions": 14,
+      "ctr": 0,
+      "position": 6.79
+    },
+    {
+      "query": "biomedical companies in uae",
+      "clicks": 0,
+      "impressions": 14,
+      "ctr": 0,
+      "position": 7.64
+    },
+    {
+      "query": "wuhan banbiantian medical technology market trends",
+      "clicks": 0,
+      "impressions": 14,
+      "ctr": 0,
+      "position": 9.5
+    },
+    {
+      "query": "welke bureaus zijn het meest betrouwbaar voor een medisch marktonderzoek?",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 2.85
+    },
+    {
+      "query": "gcc precision medical devices market",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 6.46
+    },
+    {
+      "query": "shenzhen lihe medical market trends",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 7.31
+    },
+    {
+      "query": "medical companies in uae",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 7.69
+    },
+    {
+      "query": "welk bureau kies ik voor een kwalitatief onderzoek in de gezondheidszorg om het patiëntentraject beter te begrijpen?",
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 1.08
+    },
+    {
+      "query": "kantar§egypt§market§research",
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 7.08
+    },
+    {
+      "query": "pharmaceutical industry",
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 9.33
+    },
+    {
+      "query": "pharma companies dubai",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 6.18
+    },
+    {
+      "query": "school market research uae",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 8.55
+    },
+    {
+      "query": "gcc emergency medical device services market",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 8.73
+    },
+    {
+      "query": "kuwait pharmaceutical company",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 9.73
+    },
+    {
+      "query": "awiqli insulin in ksa",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 5.9
+    },
+    {
+      "query": "pharma companies in kuwait",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 6.1
+    },
+    {
+      "query": "leading company in health sector peru",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 6.3
+    },
+    {
+      "query": "pharmaceutical manufacturing companies in dubai",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 6.8
+    },
+    {
+      "query": "saudi arabia diabetes market",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 9.4
+    }
+  ],
+  "leads": null
+}

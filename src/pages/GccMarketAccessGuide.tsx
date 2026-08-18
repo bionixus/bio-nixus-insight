@@ -626,6 +626,47 @@ const GccMarketAccessGuide = () => {
           </div>
         </section>
 
+        {/* MedTech market access */}
+        <section className="section-padding py-16 bg-muted/30">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              GCC medical device and MedTech market access
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-6 max-w-4xl">
+              Pharmaceutical access rules differ from MedTech pathways across the Gulf. Device manufacturers must plan SFDA, MOHAP, DHA, and DOH medical-device registration, hospital biomedical engineering review, and tender scoring that weights localization, service support, and total cost of ownership — not only clinical efficacy claims. BioNixus maps these parallel tracks so launch teams do not treat device listing as a pharma dossier with a different form number.
+            </p>
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <div className="bg-card border border-border rounded-xl p-6">
+                <h3 className="text-lg font-display font-semibold text-foreground mb-3">Saudi Arabia (SFDA devices)</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  SFDA classifies devices by risk; authorized representatives and quality-system documentation are mandatory for foreign manufacturers. NUPCO and MOH hospital tenders increasingly score local content and maintenance contracts alongside price. Research should align registration timing with framework award calendars.
+                </p>
+              </div>
+              <div className="bg-card border border-border rounded-xl p-6">
+                <h3 className="text-lg font-display font-semibold text-foreground mb-3">UAE (MOHAP / DHA / DOH)</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Emirates-level registration and hospital value-analysis committees create separate listing hurdles even after federal clearance. Private hospital groups in Dubai and Abu Dhabi often run independent technology assessments before capital equipment adoption.
+                </p>
+              </div>
+            </div>
+            <p className="text-muted-foreground leading-relaxed max-w-4xl">
+              For device-specific intelligence, see our{' '}
+              <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">
+                GCC medical devices market report
+              </Link>
+              ,{' '}
+              <Link to="/saudi-arabia-medical-devices-market-report" className="text-primary hover:underline font-medium">
+                Saudi Arabia medical devices market report
+              </Link>
+              , and{' '}
+              <Link to="/uae-healthcare-market-report" className="text-primary hover:underline font-medium">
+                UAE healthcare market report
+              </Link>
+              .
+            </p>
+          </div>
+        </section>
+
         {/* FAQ */}
         <section className="section-padding py-16" id="faq">
           <div className="container-wide max-w-5xl mx-auto">
@@ -665,6 +706,18 @@ const GccMarketAccessGuide = () => {
                 {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
+                },
+                {
+                  q: 'How does MedTech registration differ from pharmaceutical registration in the GCC?',
+                  a: 'Devices follow SFDA, MOHAP, DHA, and DOH medical-device pathways with risk classification, authorized-representative rules, and hospital biomedical engineering review distinct from drug CTD dossiers. Tender scoring often weights service contracts, training, and localization — BioNixus maps device and pharma tracks separately when portfolios span both.',
+                },
+                {
+                  q: 'When should manufacturers use the GCC Centralised Registration Procedure for devices?',
+                  a: 'The GCC Centralised Registration Procedure can streamline multi-state recognition for some products, but country-level import permits, pricing, and hospital listing still apply independently. Device teams should validate whether their classification and intended use qualify before assuming a single filing covers all six markets.',
+                },
+                {
+                  q: 'How do ERP reference baskets affect launch sequencing across GCC countries?',
+                  a: 'Because several states benchmark prices against overlapping EU and regional reference baskets, launch order in Europe or neighbouring Gulf markets can shift net prices downstream. Access strategy should model ERP ripple effects before committing first-country pricing that becomes the reference ceiling elsewhere.',
                 },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">
