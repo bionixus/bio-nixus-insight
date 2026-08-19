@@ -48,6 +48,11 @@ const faqItems = [
     answer:
       'Yes. Italian modules can run with comparable cells in Germany, France, Spain, and the UK — and beyond to the USA, Canada, Japan, and other markets — using consistent instruments for global portfolio committees managing EU5 and multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How do AIFA Law 648/96 compassionate use and regional SSR formularies interact in Italy?',
+    answer:
+      'AIFA Law 648/96 enables pre-reimbursement compassionate access for selected oncology and rare-disease products, but regional SSR formularies can still delay routine SSN funding after national listing. BioNixus Italy research maps where 648/96 cohorts convert to reimbursed volumes versus remain compassionate-only — and which Lombardia, Lazio, or Campania SSR committees impose additional restrictions. This prevents launch plans that treat national AIFA approval as immediate regional uptake.',
+  },
 ];
 
 const jsonLd = [

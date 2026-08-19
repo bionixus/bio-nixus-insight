@@ -163,6 +163,7 @@ const NEUROLOGY_CNS_TAIL: ReferenceSection[] = [
     paragraphs: [
       'Neurology franchises face elongated diagnostic intervals, heterogeneous phenotyping, specialist-gated initiation, monitoring burden, caregiver decision weight, and access committees sceptical of high-cost chronic therapies without clear functional endpoints. Research must map where patients stall before reaching a treatable cohort—not only whether specialists endorse a molecule in principle.',
       'Multidisciplinary dynamics differ materially between MS, epilepsy, movement disorders, migraine, and neurodegenerative corridors. Instruments should reflect realistic next-best alternatives, titration rituals, relapse fear, cognitive side-effect intolerance, and institutional infusion or home-administration capacity rather than abstract efficacy scales.',
+      'Across GCC private corridors, NHS specialist commissioning, and EU5 regional autonomy, the same molecule can face three different access rhythms. BioNixus keeps comparable survey cores for portfolio governance while embedding local modules on high-cost drug committees, referral compression, and caregiver burden narratives that payer conversations actually require.',
     ],
   },
   {
@@ -180,6 +181,7 @@ const DIGITAL_HEALTH_TAIL: ReferenceSection[] = [
     paragraphs: [
       'Connected devices, software-as-a-medical-device, and care-pathway tools fail commercially when reimbursement codes, liability allocation, EHR integration, data-governance anxiety, and workflow interruption outweigh perceived clinical benefit. Research must document who blocks adoption—IT, procurement, nursing operations, payer medical policy—not only whether physicians find dashboards interesting.',
       'GCC and European markets differ in telehealth reimbursement maturity, national digital-health strategies, and hospital autonomy to pilot without central mandate. Comparable survey cores with local access modules prevent a single global playbook from misreading institutional readiness.',
+      'Hospital digital transformation budgets, cybersecurity review cycles, and nursing operational capacity often determine scale faster than clinical trial readouts. BioNixus maps these operational gates alongside prescriber intent so digital portfolios invest in evidence and integration fixes that unlock procurement—not additional pilot enthusiasm alone.',
     ],
   },
   {

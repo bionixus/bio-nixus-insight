@@ -540,6 +540,42 @@ const GccMarketAccessGuide = () => {
           </div>
         </section>
 
+        {/* Medical devices and diagnostics access */}
+        <section className="section-padding py-12 bg-muted/10" id="medtech-access">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              MedTech, IVD, and diagnostics access across the GCC
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Device and diagnostics manufacturers face parallel but distinct access pathways: SFDA and MOHAP classify
+                products by risk tier; hospital value-analysis committees evaluate total cost of ownership, training burden,
+                and maintenance contracts; and NUPCO or emirate procurement offices score tender submissions on criteria
+                that rarely appear in pharmaceutical pricing reviews. IVD programmes additionally navigate laboratory
+                accreditation, reagent contracting, and Ministry of Health central laboratory approval cycles that differ
+                from drug formulary listing.
+              </p>
+              <p>
+                BioNixus GCC access research maps these device-specific gates alongside pharmaceutical registration —
+                interviewing biomedical engineers, hospital procurement officers, and laboratory directors on evidence
+                expectations, tender win/loss drivers, and post-award uptake. Pair this guide with{' '}
+                <Link to="/gcc-medical-devices-market-report" className="text-primary underline font-medium">
+                  GCC medical devices market report
+                </Link>
+                ,{' '}
+                <Link to="/gcc-ivd-diagnostics-market-report" className="text-primary underline font-medium">
+                  GCC IVD diagnostics market report
+                </Link>
+                , and{' '}
+                <Link to="/services/market-access" className="text-primary underline font-medium">
+                  market access consulting services
+                </Link>{' '}
+                when your portfolio spans drugs, devices, and diagnostics in the same launch window.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Internal links */}
         <section className="section-padding py-12 bg-muted/20">
           <div className="container-wide max-w-5xl mx-auto">
@@ -665,6 +701,14 @@ const GccMarketAccessGuide = () => {
                 {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
+                },
+                {
+                  q: 'How does MedTech market access differ from pharmaceutical registration in the GCC?',
+                  a: 'Medical devices follow SFDA, MOHAP, and NHRA device classification pathways distinct from drug CTD dossiers — often with faster review when FDA or CE certificates exist but separate hospital value-analysis committee requirements. BioNixus access programmes map device classification, local authorised representative obligations, and hospital procurement scoring alongside pharmaceutical registration timelines so MedTech teams do not assume drug-style access playbooks.',
+                },
+                {
+                  q: 'When should teams commission GCC market access research versus desk regulatory review?',
+                  a: 'Desk review establishes registration mechanics; primary research becomes essential when tender calendars, formulary committee objections, pharmacist substitution, or physician switching intent will determine revenue after approval. BioNixus combines regulatory tables on this page with hospital procurement interviews, payer landscape modules, and HTA-style evidence planning tied to SFDA EES, NUPCO, or emirate formulary gates.',
                 },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">
