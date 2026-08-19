@@ -73,6 +73,11 @@ const FAQ_ITEMS = [
     answer:
       'BioNixus provides cross-regional intelligence for Brazilian and Latin American pharmaceutical companies entering GCC and MENA markets. Brazil and GCC share structural parallels — large generic medicine markets, centralised public procurement (SUS/NUPCO), and premium private hospital sectors — that make cross-regional strategy natural. From our regional offices, BioNixus delivers SFDA (Saudi Arabia), MOHAP (UAE), and MOH (Kuwait, Qatar, Oman) regulatory pathway intelligence; NUPCO tender and hospital formulary data; HCP surveys across all major therapy areas in Arabic and English; and comparative Brazil–GCC market benchmarking that informs portfolio sequencing and pricing strategy for companies launching in both regions.',
   },
+  {
+    question: 'How should Brazil pharmaceutical research segment SUS public versus ANS private channels?',
+    answer:
+      'SUS and ANS supplementary insurance follow different evidence, pricing, and prescribing pathways — treating Brazil as a single market misprices launch strategy. BioNixus designs Brazil pharma programmes with explicit public–private cells: CONITEC and PCDT dynamics for SUS incorporation versus ANS Rol de Procedimentos and private hospital formulary behaviour for premium brands. This segmentation prevents forecasts that assume private-channel adoption curves apply to public hospital volumes, or vice versa.',
+  },
 ];
 
 const FAQ_SECTION_ID = 'brazil-pharma-market-research-faq';
@@ -92,7 +97,7 @@ const jsonLd = [
       logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
     },
     datePublished: '2026-06-25',
-    dateModified: '2026-06-25',
+    dateModified: '2026-08-19',
     mainEntityOfPage: CANONICAL,
   },
   {

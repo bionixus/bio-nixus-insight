@@ -267,6 +267,26 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       answer:
         'We deliver centre concentration maps, KOL connectivity dossiers, persistence and discontinuation analysis, caregiver burden narratives, and access-risk registers tied to step therapy or funding exceptions—outputs medical, access, and brand teams can operationalise without reinterpretation.',
     },
+    {
+      question: 'How do infusion capacity and home-administration pathways affect CNS uptake?',
+      answer:
+        'Many neurology biologics depend on infusion suite throughput, nurse training investment, or home-administration programmes that hospitals approve unevenly. Research should measure where operational capacity—not clinical rejection—blocks initiation, particularly in GCC private hospitals versus NHS or EU5 public corridors with different nursing budget models.',
+    },
+    {
+      question: 'Can neurology research support rare-disease and biosimilar portfolio decisions together?',
+      answer:
+        'Yes. Orphan neurology franchises and biosimilar defence in MS or migraine corridors share diagnostic-delay and centre-concentration dynamics. BioNixus combines rare-disease patient-finding modules with substitution-confidence research so affiliates do not commission disconnected studies that miss shared referral bottlenecks.',
+    },
+    {
+      question: 'How does neurology research differ across GCC, UK, and European markets?',
+      answer:
+        'GCC markets combine specialist scarcity with high-cost drug committee scrutiny and mixed public–private routing; the UK applies NICE-aligned cost-effectiveness gates with regional variation; EU5 systems differ on regional autonomy and rebate structures. Comparable cores with local access modules prevent a single global playbook from misreading where patients actually receive therapy.',
+    },
+    {
+      question: 'What neurology research deliverables help medical affairs and access teams align?',
+      answer:
+        'Typical outputs include diagnostic pathway maps, referral bottleneck registers, KOL centre dossiers, persistence drivers, caregiver burden narratives for payer conversations, and access-risk overlays tied to step therapy or funding exceptions — structured so affiliates execute one plan rather than reinterpret separate survey readouts.',
+    },
   ],
   'digital-health': [
     {
@@ -288,6 +308,21 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       question: 'How does BioNixus support digital health commercialisation?',
       answer:
         'We pair clinician adoption studies with payer-adjacent interviews, procurement stakeholder mapping, and pricing scenario tests—linking findings to diabetes, cardiology, or respiratory hubs where companion services intersect pharmaceutical franchises.',
+    },
+    {
+      question: 'What evidence do payers and hospital committees require for SaMD and connected devices?',
+      answer:
+        'Committees increasingly request operational outcome evidence, cybersecurity assurances, total-cost-of-care narratives, and clarity on liability allocation—not clinical validation alone. BioNixus maps which evidence formats each gate accepts so medical affairs and access teams refine dossiers before procurement review rather than after rejection.',
+    },
+    {
+      question: 'How should digital health research segment clinician versus IT and procurement stakeholders?',
+      answer:
+        'Clinician enthusiasm rarely converts to purchase when IT security, EHR integration, or nursing workflow objections remain unresolved. Studies should include biomedical engineering, nursing operations, and procurement scoring dimensions alongside prescriber surveys so adoption models reflect who actually releases budget.',
+    },
+    {
+      question: 'Can digital health research support pharmaceutical companion-service strategies?',
+      answer:
+        'Yes. Connected monitoring, adherence apps, and remote patient management often attach to diabetes, cardiology, respiratory, or oncology franchises. BioNixus links digital-health modules to therapy hubs and country reports so brand, medical, and access teams coordinate companion-service evidence with core drug launch sequencing.',
     },
   ],
   dermatology: [
