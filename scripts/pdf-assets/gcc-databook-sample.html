@@ -2,224 +2,589 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>GCC Pharma & MedTech Market Databook 2026 — Sample</title>
+<title>GCC Healthcare Market Report 2026 — Pharma &amp; MedTech Databook | BioNixus</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&amp;display=swap" rel="stylesheet">
 <style>
+  :root {
+    --navy: #0b1f33;
+    --navy-mid: #153a5c;
+    --blue-accent: #1a4d7c;
+    --slate: #3d4f60;
+    --muted: #6b7c8c;
+    --line: #dde3ea;
+    --line-soft: #eceff3;
+    --paper: #fbfbfc;
+    --paper-warm: #f4f6f8;
+    --gold: #c9a84c;
+    --gold-soft: #e8d9a8;
+    --white: #ffffff;
+    --serif: "Source Serif 4", Georgia, serif;
+    --sans: Inter, system-ui, sans-serif;
+  }
   @page { size: A4; margin: 0; }
   * { box-sizing: border-box; }
-  body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    color: #0b1f33;
-    font-size: 11px;
-    line-height: 1.55;
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #e8ecf0;
+    color: var(--navy);
+    font-family: var(--sans);
+    font-size: 10.5px;
+    line-height: 1.5;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
   .page {
     position: relative;
     width: 210mm;
+    min-height: 297mm;
     height: 297mm;
-    padding: 20mm 18mm;
+    padding: 16mm 16mm 18mm;
+    background: var(--white);
     overflow: hidden;
+    page-break-after: always;
+    break-after: page;
   }
-  .page:not(:first-child) { page-break-before: always; break-before: page; }
-  h1 { font-size: 26px; margin: 0 0 8px; color: #0b1f33; }
-  h2 { font-size: 18px; margin: 0 0 12px; color: #153a5c; border-bottom: 2px solid #c9a84c; padding-bottom: 6px; }
-  h3 { font-size: 13px; margin: 16px 0 6px; color: #153a5c; }
-  p { margin: 0 0 8px; }
-  .eyebrow { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #c9a84c; font-weight: 700; margin-bottom: 10px; }
-  .cover { display: flex; flex-direction: column; justify-content: center; text-align: center; }
-  .cover h1 { font-size: 34px; margin-bottom: 16px; }
-  .cover .sub { font-size: 14px; color: #6b7c8c; margin-bottom: 40px; }
-  .cover .meta { font-size: 11px; color: #6b7c8c; }
-  .stat-grid { display: flex; gap: 12px; margin: 16px 0 20px; }
-  .stat-card { flex: 1; border: 1px solid #dde3ea; border-radius: 8px; padding: 14px; text-align: center; background: #fbfbfc; }
-  .stat-card .value { font-size: 20px; font-weight: 700; color: #153a5c; }
-  .stat-card .label { font-size: 9px; color: #6b7c8c; margin-top: 4px; }
-  table { width: 100%; border-collapse: collapse; margin: 10px 0 16px; font-size: 10px; }
-  th, td { border: 1px solid #dde3ea; padding: 6px 8px; text-align: left; }
-  th { background: #153a5c; color: #fff; font-weight: 600; }
-  tr:nth-child(even) { background: #f4f6f8; }
-  .toc-item { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eceff3; font-size: 12px; }
-  .footer-note { position: absolute; bottom: 0; left: 0; right: 0; font-size: 9px; color: #6b7c8c; border-top: 1px solid #eceff3; padding-top: 6px; }
-  .page-num { position: absolute; bottom: -14px; right: 0; font-size: 9px; color: #6b7c8c; }
-  .callout { background: #f4f6f8; border-left: 3px solid #c9a84c; padding: 10px 14px; margin: 12px 0; font-size: 10px; }
-  .sample-watermark { position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%) rotate(-25deg); font-size: 70px; color: rgba(201,168,76,0.12); font-weight: 800; letter-spacing: 8px; z-index: 0; pointer-events: none; }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+  .page.cover, .page.closing { padding: 0; color: var(--white); background: linear-gradient(155deg, #071422 0%, var(--navy) 42%, var(--navy-mid) 100%); }
+  .cover-inner, .closing-inner { padding: 22mm 18mm 18mm; height: 100%; display: flex; flex-direction: column; }
+  .doc-topbar { position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--navy), var(--gold), var(--navy-mid)); }
+  .brand-row { display: flex; align-items: baseline; gap: 12px; }
+  .logo-name { font-family: var(--serif); font-size: 28px; font-weight: 700; letter-spacing: -0.03em; }
+  .logo-slogan { font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+  h1 { font-family: var(--serif); font-weight: 600; margin: 0; line-height: 1.12; }
+  h2 { font-family: var(--serif); font-size: 20px; font-weight: 600; color: var(--navy); margin: 0 0 10px; }
+  h3 { font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--blue-accent); margin: 12px 0 6px; }
+  p { margin: 0 0 8px; color: var(--slate); }
+  .kicker { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 8px; }
+  .section-head { display: grid; grid-template-columns: 54px 1fr; gap: 10px; margin-bottom: 12px; align-items: end; }
+  .section-num { font-family: var(--serif); font-size: 36px; line-height: 0.8; color: var(--gold-soft); font-weight: 700; }
+  .foot { position: absolute; left: 16mm; right: 16mm; bottom: 8mm; display: flex; justify-content: space-between; font-size: 8px; color: var(--muted); border-top: 1px solid var(--line-soft); padding-top: 5px; }
+  .cover .foot, .closing .foot { border-top-color: rgba(255,255,255,0.18); color: rgba(255,255,255,0.55); left: 18mm; right: 18mm; }
+  .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 10px 0 14px; }
+  .stat-grid.three { grid-template-columns: repeat(3, 1fr); }
+  .stat { background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--navy); padding: 10px 10px 9px; }
+  .stat .v { font-family: var(--serif); font-size: 18px; font-weight: 700; color: var(--navy); line-height: 1.1; }
+  .stat .l { font-size: 8px; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 12px; font-size: 9.5px; }
+  th, td { border-bottom: 1px solid var(--line); padding: 6px 7px; text-align: left; vertical-align: top; }
+  th { background: var(--navy); color: var(--white); font-weight: 600; font-size: 8.5px; letter-spacing: 0.06em; text-transform: uppercase; border: 0; }
+  tr:nth-child(even) td { background: var(--paper); }
+  .callout { background: var(--paper-warm); border-left: 3px solid var(--gold); padding: 8px 12px; margin: 8px 0 12px; color: var(--slate); font-size: 10px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .bar { display: grid; grid-template-columns: 78px 1fr 52px; gap: 8px; align-items: center; margin: 4px 0; font-size: 9px; }
+  .bar-track { height: 8px; background: var(--line-soft); }
+  .bar-fill { height: 8px; background: linear-gradient(90deg, var(--navy), var(--blue-accent)); }
+  .chip { display: inline-block; border: 1px solid var(--line); padding: 3px 8px; font-size: 8.5px; color: var(--navy-mid); margin: 0 4px 4px 0; background: var(--paper); }
+  .toc { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 28px; }
+  .toc-item { display: flex; justify-content: space-between; border-bottom: 1px dotted var(--line); padding: 6px 0; font-size: 11px; }
+  .src { font-size: 8px; color: var(--muted); font-style: italic; }
+  .hosp { font-size: 9.5px; margin: 0 0 5px; color: var(--slate); }
+  .hosp strong { color: var(--navy); }
+  .step { display: grid; grid-template-columns: 22px 1fr; gap: 8px; margin: 0 0 7px; }
+  .n { width: 18px; height: 18px; border-radius: 50%; background: var(--navy); color: #fff; font-size: 9px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+  @media print {
+    html, body { background: #fff; }
+    .page { box-shadow: none; }
+  }
 </style>
 </head>
 <body>
 
-<!-- Page 1: Cover -->
+<!-- 01 Cover -->
 <div class="page cover">
-  <div class="eyebrow">BioNixus Healthcare &amp; Pharmaceutical Market Research</div>
-  <h1>GCC Pharma &amp; MedTech<br>Market Databook 2026</h1>
-  <p class="sub">Sample edition — pharmaceutical &amp; medical devices market sizing, country intelligence, and regulatory context across Saudi Arabia, UAE, Qatar, Kuwait, Oman &amp; Bahrain</p>
-  <p class="meta">Prepared by BioNixus Research Team · 2026 Edition · This is a sample excerpt of the full databook</p>
-</div>
-
-<!-- Page 2: TOC + Key Facts -->
-<div class="page">
-  <div class="eyebrow">In This Sample</div>
-  <h2>Table of Contents</h2>
-  <div class="toc-item"><span>1. Key Facts Summary</span><span>3</span></div>
-  <div class="toc-item"><span>2. GCC Pharmaceutical Market Overview</span><span>4</span></div>
-  <div class="toc-item"><span>3. GCC Medical Devices Market Overview</span><span>5</span></div>
-  <div class="toc-item"><span>4. Country Deep-Dive — Saudi Arabia</span><span>6</span></div>
-  <div class="toc-item"><span>5. Country Deep-Dive — UAE</span><span>7</span></div>
-  <div class="toc-item"><span>6. Country Snapshots — Qatar, Kuwait, Oman, Bahrain</span><span>8</span></div>
-  <div class="toc-item"><span>7. Regulatory Landscape Summary</span><span>9</span></div>
-  <div class="toc-item"><span>8. Methodology &amp; Sources</span><span>10</span></div>
-  <div class="toc-item"><span>9. About BioNixus</span><span>11</span></div>
-  <div class="footer-note">GCC Pharma &amp; MedTech Market Databook 2026 — Sample · bionixus.com</div>
-</div>
-
-<!-- Page 3: Key Facts -->
-<div class="page">
-  <div class="eyebrow">Section 1</div>
-  <h2>Key Facts Summary</h2>
-  <div class="stat-grid">
-    <div class="stat-card"><div class="value">$23.7B</div><div class="label">GCC pharma market 2024</div></div>
-    <div class="stat-card"><div class="value">~$5.8B</div><div class="label">GCC medtech/IVD market 2026 est.</div></div>
-    <div class="stat-card"><div class="value">7.6% / 8.5%</div><div class="label">Pharma / medtech CAGR</div></div>
+  <div class="doc-topbar"></div>
+  <div class="cover-inner">
+    <div class="brand-row">
+      <div>
+        <div class="logo-name">BioNixus</div>
+        <div class="logo-slogan">intelligence for Business Growth</div>
+      </div>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; justify-content:flex-end; padding-bottom:8mm;">
+      <div class="kicker">Sample edition · August 2026</div>
+      <h1 style="font-size:36px; max-width:150mm;">GCC Healthcare<br>Market Report <em style="font-style:italic; color:var(--gold);">2026</em></h1>
+      <p style="color:rgba(255,255,255,0.78); font-size:13px; max-width:150mm; margin-top:14px;">
+        Country-by-country intelligence for Saudi Arabia, the UAE, Qatar, Kuwait, Oman and Bahrain —
+        pharmaceutical, medical devices, regulation, procurement and hospital access.
+      </p>
+      <div style="display:flex; gap:28px; margin-top:28px; font-size:11px; color:rgba(255,255,255,0.72);">
+        <div><div style="color:var(--gold); font-size:8px; letter-spacing:0.14em; text-transform:uppercase; font-weight:700;">Coverage</div>6 GCC member states</div>
+        <div><div style="color:var(--gold); font-size:8px; letter-spacing:0.14em; text-transform:uppercase; font-weight:700;">Focus</div>Pharma · MedTech · Access</div>
+        <div><div style="color:var(--gold); font-size:8px; letter-spacing:0.14em; text-transform:uppercase; font-weight:700;">Use</div>Launch &amp; tender planning</div>
+      </div>
+    </div>
+    <div class="foot">
+      <span>Confidential sample excerpt · Not for redistribution</span>
+      <span>bionixus.com</span>
+    </div>
   </div>
-  <h3>Pharmaceutical market</h3>
-  <p>The six-country GCC pharmaceutical market was valued at roughly USD 23.7 billion in 2024, growing at a 7.6% CAGR toward approximately USD 37 billion by 2030 and close to USD 49 billion by 2033. Saudi Arabia accounts for around 46% of regional spend.</p>
-  <h3>Medical devices &amp; IVD market</h3>
-  <p>The GCC medical devices and in vitro diagnostic market is estimated at USD 5.5–6.2 billion in 2026, projected to exceed USD 9 billion by 2030 at approximately 8.5% CAGR. Saudi Arabia leads with ~52% regional share, followed by the UAE (~28%).</p>
-  <div class="callout">Growth across both markets is driven by Vision 2030-era hospital capacity expansion, rising chronic disease burden (diabetes, cardiovascular, oncology), and growing private-sector healthcare participation.</div>
-  <div class="footer-note">GCC Pharma &amp; MedTech Market Databook 2026 — Sample · bionixus.com</div>
 </div>
 
-<!-- Page 4: Pharma overview -->
+<!-- 02 Contents -->
 <div class="page">
-  <div class="eyebrow">Section 2</div>
-  <h2>GCC Pharmaceutical Market Overview</h2>
-  <table>
-    <thead><tr><th>Metric</th><th>2024</th><th>2030 (Projected)</th><th>2033 (Projected)</th></tr></thead>
-    <tbody>
-      <tr><td>GCC pharma market size</td><td>$23.7B</td><td>~$37B</td><td>~$49B</td></tr>
-      <tr><td>CAGR</td><td colspan="3">7.6% (2024–2030)</td></tr>
-      <tr><td>Saudi Arabia share</td><td colspan="3">~46% of regional spend</td></tr>
-    </tbody>
-  </table>
-  <h3>Country share of GCC pharma spend (2024 est.)</h3>
-  <table>
-    <thead><tr><th>Country</th><th>Approx. Share</th><th>Key Regulator</th></tr></thead>
-    <tbody>
-      <tr><td>Saudi Arabia</td><td>~46%</td><td>SFDA</td></tr>
-      <tr><td>United Arab Emirates</td><td>~24%</td><td>MOHAP / DHA / DOH</td></tr>
-      <tr><td>Qatar</td><td>~10%</td><td>MOPH</td></tr>
-      <tr><td>Kuwait</td><td>~9%</td><td>MOH Kuwait</td></tr>
-      <tr><td>Oman</td><td>~6%</td><td>MOH Oman</td></tr>
-      <tr><td>Bahrain</td><td>~5%</td><td>NHRA</td></tr>
-    </tbody>
-  </table>
-  <div class="footer-note">GCC Pharma &amp; MedTech Market Databook 2026 — Sample · bionixus.com</div>
-</div>
-
-<!-- Page 5: Medtech overview -->
-<div class="page">
-  <div class="eyebrow">Section 3</div>
-  <h2>GCC Medical Devices Market Overview</h2>
-  <table>
-    <thead><tr><th>Metric</th><th>2026 (est.)</th><th>2030 (Projected)</th></tr></thead>
-    <tbody>
-      <tr><td>GCC medtech/IVD market size</td><td>$5.5–6.2B</td><td>$9B+</td></tr>
-      <tr><td>CAGR</td><td colspan="2">~8.5% (2026–2030)</td></tr>
-    </tbody>
-  </table>
-  <h3>Country share of GCC medtech spend (2026 est.)</h3>
-  <table>
-    <thead><tr><th>Country</th><th>Market Size</th><th>Approx. CAGR</th></tr></thead>
-    <tbody>
-      <tr><td>Saudi Arabia</td><td>$2.8–3.1B (~52%)</td><td>~8.3%</td></tr>
-      <tr><td>United Arab Emirates</td><td>$1.5–1.8B (~28%)</td><td>~9.1%</td></tr>
-      <tr><td>Qatar, Kuwait, Bahrain, Oman</td><td>~20% combined</td><td>4.5%–7.8%</td></tr>
-    </tbody>
-  </table>
-  <p>Growth drivers include hospital capacity expansion under Vision 2030-era programs, rising chronic disease incidence, and increased private-sector healthcare participation.</p>
-  <div class="footer-note">GCC Pharma &amp; MedTech Market Databook 2026 — Sample · bionixus.com</div>
-</div>
-
-<!-- Page 6: Saudi deep dive -->
-<div class="page">
-  <div class="eyebrow">Section 4</div>
-  <h2>Country Deep-Dive — Saudi Arabia</h2>
-  <div class="stat-grid">
-    <div class="stat-card"><div class="value">$55–65B</div><div class="label">Healthcare market 2026</div></div>
-    <div class="stat-card"><div class="value">$8.5–9.5B</div><div class="label">Pharma market 2026</div></div>
-    <div class="stat-card"><div class="value">SFDA</div><div class="label">Key regulator</div></div>
+  <div class="doc-topbar"></div>
+  <div class="section-head"><div class="section-num">01</div><div><div class="kicker">How to read this sample</div><h2>Contents</h2></div></div>
+  <div class="toc">
+    <div class="toc-item"><span>GCC at a glance</span><span>03</span></div>
+    <div class="toc-item"><span>Pharmaceutical market</span><span>04</span></div>
+    <div class="toc-item"><span>Medical devices market</span><span>05</span></div>
+    <div class="toc-item"><span>Therapy landscape</span><span>06</span></div>
+    <div class="toc-item"><span>Regulatory &amp; procurement map</span><span>07</span></div>
+    <div class="toc-item"><span>Saudi Arabia</span><span>08</span></div>
+    <div class="toc-item"><span>United Arab Emirates</span><span>10</span></div>
+    <div class="toc-item"><span>Qatar</span><span>12</span></div>
+    <div class="toc-item"><span>Kuwait</span><span>13</span></div>
+    <div class="toc-item"><span>Oman</span><span>14</span></div>
+    <div class="toc-item"><span>Bahrain</span><span>15</span></div>
+    <div class="toc-item"><span>Six-country comparison</span><span>16</span></div>
+    <div class="toc-item"><span>Methodology &amp; sources</span><span>17</span></div>
+    <div class="toc-item"><span>About BioNixus</span><span>18</span></div>
   </div>
-  <p>Saudi Arabia is the largest healthcare and pharmaceutical market in the GCC. Vision 2030's SAR 500 billion healthcare investment program is delivering new hospital capacity, private-sector participation, and insurance-funded consumption. The hospital channel accounts for approximately 42% of pharma spend through NUPCO centralized procurement.</p>
-  <p>Medical devices: Saudi Arabia's medtech market is estimated at $2.8–3.1 billion (2026), roughly 52% of GCC regional share, growing at approximately 8.3% CAGR — supported by a hospital network spanning MOH, NGHA, SANG, and KFSH&amp;RC.</p>
-  <p><strong>See the full country report:</strong> bionixus.com/saudi-arabia-healthcare-market-report</p>
-  <div class="footer-note">GCC Pharma &amp; MedTech Market Databook 2026 — Sample · bionixus.com</div>
-</div>
-
-<!-- Page 7: UAE deep dive -->
-<div class="page">
-  <div class="eyebrow">Section 5</div>
-  <h2>Country Deep-Dive — United Arab Emirates</h2>
-  <div class="stat-grid">
-    <div class="stat-card"><div class="value">$22B</div><div class="label">Healthcare market 2024</div></div>
-    <div class="stat-card"><div class="value">$4.5B</div><div class="label">Pharma market</div></div>
-    <div class="stat-card"><div class="value">MOHAP/DHA/DOH</div><div class="label">Key regulators</div></div>
+  <div class="callout" style="margin-top:18px;">
+    This PDF is a <strong>gated sample</strong> of BioNixus GCC healthcare intelligence, aligned to figures published on bionixus.com country and regional reports (August 2026). Country chapters are not snapshots — each market has its own size, regulator, tender system and hospital map. The full databook and custom primary research are scoped separately.
   </div>
-  <p>The UAE healthcare market reached approximately USD 22 billion in 2024, with projections toward USD 26.8 billion by 2030. Three regulatory bodies govern healthcare across the Emirates: MOHAP (federal), DHA (Dubai), and DOH (Abu Dhabi) — each with distinct requirements for market research, registration, and clinical engagement.</p>
-  <p>Medical devices: the UAE medtech market is estimated at $1.5–1.8 billion (2026), around 28% of GCC regional share, growing at approximately 9.1% CAGR — the fastest of the major GCC markets.</p>
-  <div class="footer-note">GCC Pharma &amp; MedTech Market Databook 2026 — Sample · bionixus.com</div>
+  <h3>What this sample is — and is not</h3>
+  <p>It is a board-ready briefing drawn from BioNixus published market intelligence: sizing bands, regulators, access steps, epidemiology and named hospital systems. It is not a syndicated SKU database, not a tender award dump, and not medical, legal or investment advice. Ranges reflect triangulation across BioNixus estimates and cited secondary sources (Market Research Future for GCC devices; IDF Diabetes Atlas 2023 for prevalence).</p>
+  <p class="src">Full country reports: bionixus.com/saudi-arabia-healthcare-market-report · /uae-healthcare-market-report · /qatar-healthcare-market-report · /kuwait-healthcare-market-report · /oman-healthcare-market-report · /bahrain-healthcare-market-report · /gcc-medical-devices-market-report</p>
+  <div class="foot"><span>GCC Healthcare Market Report 2026 — Sample · BioNixus</span><span>02</span></div>
 </div>
 
-<!-- Page 8: Other countries -->
+<!-- 03 Glance -->
 <div class="page">
-  <div class="eyebrow">Section 6</div>
-  <h2>Country Snapshots — Qatar, Kuwait, Oman, Bahrain</h2>
+  <div class="doc-topbar"></div>
+  <div class="section-head"><div class="section-num">02</div><div><div class="kicker">Regional snapshot</div><h2>GCC at a glance</h2></div></div>
+  <div class="stat-grid">
+    <div class="stat"><div class="v">~62M</div><div class="l">Population (6 states)</div></div>
+    <div class="stat"><div class="v">$18–22B</div><div class="l">Pharma market 2026</div></div>
+    <div class="stat"><div class="v">$9.0B</div><div class="l">MedTech / IVD 2026</div></div>
+    <div class="stat"><div class="v">6.7%</div><div class="l">Devices CAGR to 2035</div></div>
+  </div>
+  <p>The six GCC states — Saudi Arabia, UAE, Qatar, Kuwait, Oman and Bahrain — remain sovereign markets. Gulf Health Council dialogues do not replace national marketing authorisations. Hydrocarbon fiscal capacity, Vision-era hospital build-out, and among the world’s highest diabetes prevalence rates concentrate specialty spend in oncology, metabolic disease, cardiovascular and biologics.</p>
+  <h3>Where spend sits</h3>
+  <div class="bar"><span>Saudi Arabia</span><div class="bar-track"><div class="bar-fill" style="width:51%"></div></div><span>~51% devices</span></div>
+  <div class="bar"><span>UAE</span><div class="bar-track"><div class="bar-fill" style="width:26%"></div></div><span>~26% devices</span></div>
+  <div class="bar"><span>Qatar–Bahrain</span><div class="bar-track"><div class="bar-fill" style="width:23%"></div></div><span>~23% combined</span></div>
+  <p class="src" style="margin-top:8px;">Device shares: BioNixus GCC medical devices report, Market Research Future rollup ($9.0B → $16.2B by 2035). Pharma rollup: BioNixus GCC estimate; Saudi Arabia ~45% of GCC pharma spend.</p>
+  <h3>Healthcare market size by country (2026, published BioNixus country reports)</h3>
   <table>
-    <thead><tr><th>Country</th><th>Key Regulator</th><th>Tender/Procurement System</th></tr></thead>
+    <thead><tr><th>Country</th><th>Healthcare spend</th><th>Pharma</th><th>Headline system</th></tr></thead>
     <tbody>
-      <tr><td>Qatar</td><td>MOPH</td><td>Hamad Medical Corporation-led procurement</td></tr>
-      <tr><td>Kuwait</td><td>MOH Kuwait</td><td>Central Medical Stores tendering</td></tr>
-      <tr><td>Oman</td><td>MOH Oman</td><td>Directorate General procurement</td></tr>
-      <tr><td>Bahrain</td><td>NHRA</td><td>Ministry of Health tendering</td></tr>
+      <tr><td>Saudi Arabia</td><td>USD 55–65B</td><td>USD 8.5–9.5B</td><td>SFDA · NUPCO · Vision 2030</td></tr>
+      <tr><td>United Arab Emirates</td><td>USD 30–33B</td><td>USD 3.8–4.5B</td><td>MOHAP · DHA · DOH</td></tr>
+      <tr><td>Qatar</td><td>USD 8.5–10B</td><td>USD 900M–1.05B</td><td>MOPH · HMC</td></tr>
+      <tr><td>Kuwait</td><td>USD 7.5–8.5B</td><td>USD 950M–1.1B</td><td>MOH/DGPA · CMS</td></tr>
+      <tr><td>Oman</td><td>USD 5.5–6.5B</td><td>USD 520–580M</td><td>MOH · Central Pharmacy</td></tr>
+      <tr><td>Bahrain</td><td>USD 2.5–3.0B</td><td>USD 420–480M</td><td>NHRA · MOH tenders</td></tr>
     </tbody>
   </table>
-  <p>Together these four markets represent approximately 20% of GCC pharma and medtech spend. Smaller absolute market size is offset by high per-capita healthcare investment and, in Qatar and Kuwait, concentrated public-sector procurement that rewards vendors with strong institutional relationships.</p>
-  <div class="footer-note">GCC Pharma &amp; MedTech Market Databook 2026 — Sample · bionixus.com</div>
+  <p class="src">Country healthcare and pharma bands are taken from each BioNixus country healthcare market report. UAE pharma band is the BioNixus market-intelligence KPI (USD 3.8–4.5B). GCC pharma USD 18–22B is a separate triangulated rollup and is not a simple sum of country midpoints.</p>
+  <div class="foot"><span>GCC Healthcare Market Report 2026 — Sample · BioNixus</span><span>03</span></div>
 </div>
 
-<!-- Page 9: Regulatory summary -->
+<!-- 04 Pharma -->
 <div class="page">
-  <div class="eyebrow">Section 7</div>
-  <h2>Regulatory Landscape Summary</h2>
+  <div class="doc-topbar"></div>
+  <div class="section-head"><div class="section-num">03</div><div><div class="kicker">Pharmaceuticals</div><h2>GCC pharmaceutical market</h2></div></div>
+  <p>BioNixus sizes the combined GCC pharmaceutical market at <strong>USD 18–22 billion in 2026</strong>, with Saudi Arabia about 45% of regional spend and the UAE the clear second market. Hospital tenders (NUPCO, HMC, CMS, MOH central stores) still dominate public volume; private insurance and retail matter most in the UAE and in Saudi Vision 2030 privatisation corridors.</p>
+  <div class="two">
+    <div>
+      <h3>Structural drivers</h3>
+      <p>Vision 2030 SAR 500 billion healthcare investment in Saudi Arabia; UAE Vision 2031 medical tourism and mandatory insurance; GLP-1 and oncology specialty intensity; biosimilar tendering (adalimumab and others) resetting net price; localisation and JV manufacturing KPIs on SFDA dossiers.</p>
+    </div>
+    <div>
+      <h3>Adjacent GCC pharma cuts (2026)</h3>
+      <p>Biologics <strong>USD 4.8–5.4B</strong> (Saudi ~55%, UAE ~20%). Generic injectables <strong>USD 1.6–1.9B</strong>, shaped by NUPCO and MOHAP hospital volume. Precision medicine and companion diagnostics are fastest in Saudi Genome Program corridors.</p>
+    </div>
+  </div>
+  <h3>Access is sequential — not a single GCC licence</h3>
+  <div class="step"><div class="n">1</div><div><strong>National MA</strong> — SFDA, MOHAP, MOPH, NHRA or MOH. Typical 12–30 months by country and product class. Gulf Health Council harmonisation does not replace the dossier.</div></div>
+  <div class="step"><div class="n">2</div><div><strong>Price approval</strong> — SFDA Pricing, MOHAP Pricing Committee, MOPH National Drug Committee. Reference baskets differ. 2–6 months post-technical clearance.</div></div>
+  <div class="step"><div class="n">3</div><div><strong>Central procurement</strong> — NUPCO (KSA), HMC/HHC (Qatar), CMS (Kuwait), MOH tenders (Bahrain, Oman). INN-based single-winner lots are standard in Saudi Arabia and Qatar.</div></div>
+  <div class="step"><div class="n">4</div><div><strong>Private payer / hospital P&amp;T</strong> — CCHI, Daman, AXA Gulf, private hospital committees. Parallel track is essential for UAE dual-emirate launches.</div></div>
+  <div class="callout">BioNixus recommendation: file SFDA and MOHAP in parallel when the commercial plan requires simultaneous KSA and UAE access. Sequencing only through one “reference” GCC agency still leaves pricing and tender clocks untouched in the second market.</div>
+  <p class="src">Sources: BioNixus GCC market intelligence; /gcc-pharmaceutical-market-research; /gcc-market-access-guide.</p>
+  <div class="foot"><span>GCC Healthcare Market Report 2026 — Sample · BioNixus</span><span>04</span></div>
+</div>
+
+<!-- 05 Devices -->
+<div class="page">
+  <div class="doc-topbar"></div>
+  <div class="section-head"><div class="section-num">04</div><div><div class="kicker">MedTech</div><h2>GCC medical devices market</h2></div></div>
+  <div class="stat-grid three">
+    <div class="stat"><div class="v">$9.0B</div><div class="l">Market size 2026</div></div>
+    <div class="stat"><div class="v">$16.2B</div><div class="l">Forecast 2035</div></div>
+    <div class="stat"><div class="v">6.7%</div><div class="l">CAGR 2026–2035</div></div>
+  </div>
+  <p>The GCC medical devices market is <strong>USD 9.0 billion in 2026</strong>, projected to <strong>USD 16.2 billion by 2035</strong> at approximately 6.7% CAGR (Market Research Future; BioNixus GCC devices report). Scope is capital equipment, consumables and IVD. Competing vendor totals diverge when digital health, dental or refurbished channels are folded in.</p>
   <table>
-    <thead><tr><th>Country</th><th>Pharma Regulator</th><th>Device Regulator</th></tr></thead>
+    <thead><tr><th>Country</th><th>2026 devices</th><th>Share / note</th><th>Device regulator</th></tr></thead>
     <tbody>
-      <tr><td>Saudi Arabia</td><td>SFDA</td><td>SFDA (Medical Devices Sector)</td></tr>
-      <tr><td>UAE</td><td>MOHAP</td><td>MOHAP / DHA / DOH</td></tr>
-      <tr><td>Qatar</td><td>MOPH</td><td>MOPH</td></tr>
-      <tr><td>Kuwait</td><td>MOH Kuwait</td><td>MOH Kuwait</td></tr>
-      <tr><td>Oman</td><td>MOH Oman</td><td>MOH Oman</td></tr>
-      <tr><td>Bahrain</td><td>NHRA</td><td>NHRA</td></tr>
+      <tr><td>Saudi Arabia</td><td>USD 4.4–4.8B</td><td>~51% of GCC</td><td>SFDA Medical Devices Sector (MDIR Class A–D)</td></tr>
+      <tr><td>United Arab Emirates</td><td>USD 2.2–2.5B</td><td>~26% of GCC</td><td>MOHAP + DHA / DOH emirate pathways</td></tr>
+      <tr><td>Qatar, Kuwait, Oman, Bahrain</td><td>~23% combined</td><td>High per-capita, tender-concentrated</td><td>MOPH · MOH/NHRA</td></tr>
     </tbody>
   </table>
-  <p>Saudi Arabia's SFDA introduced a mandatory Economic Evaluation System (EES) from July 2025, raising the evidentiary bar for pharmacoeconomic and budget-impact submissions at registration — a structural shift research and market access teams should plan around early.</p>
-  <div class="footer-note">GCC Pharma &amp; MedTech Market Databook 2026 — Sample · bionixus.com</div>
+  <h3>Fastest-growing device categories</h3>
+  <p>Minimally invasive / robotic surgery; point-of-care diagnostics (HbA1c, cardiac biomarkers, infectious disease); continuous glucose monitoring; connected / remote monitoring; AI-powered imaging upgrade cycles.</p>
+  <h3>Device access (compressed)</h3>
+  <p>Classify risk and appoint a GCC authorised representative → technical file / ISO 13485 and Arabic IFU as required → country MA (6–18 months by class; Class A notification faster) → public procurement / CMS / hospital biomedical evaluation → private hospital and insurer adoption. NHRA Bahrain may mutual-recognise SFDA/MOHAP clearances.</p>
+  <p>OEM landscape: Siemens Healthineers, GE Healthcare, Philips, Mindray; Medtronic, Abbott, Boston Scientific, Edwards; Intuitive, Stryker, Zimmer Biomet, J&amp;J MedTech. Local distribution through registered Saudi and UAE agents (including Al-Faisaliah, AMSCO, Cigalah).</p>
+  <p class="src">Source: bionixus.com/gcc-medical-devices-market-report (updated August 2026). Country device KPIs on some country pages still show older bands; this sample uses the GCC devices report as the regional source of truth.</p>
+  <div class="foot"><span>GCC Healthcare Market Report 2026 — Sample · BioNixus</span><span>05</span></div>
 </div>
 
-<!-- Page 10: Methodology -->
+<!-- 06 Therapy -->
 <div class="page">
-  <div class="eyebrow">Section 8</div>
-  <h2>Methodology &amp; Sources</h2>
-  <p>Figures in this sample are drawn from BioNixus market analysis (2026), triangulating hospital procurement records, pharmacy dispensing data, physician panel surveys, and public regulatory/industry sources per market. Where a range is shown (e.g. $5.5–6.2B), it reflects the spread across BioNixus's own estimation methodology and available third-party benchmarks.</p>
-  <p>This is a sample excerpt only. The full databook includes therapy-area breakdowns, top-company market share estimates, tender calendar tracking, and quarter-by-quarter update cadence.</p>
-  <div class="footer-note">GCC Pharma &amp; MedTech Market Databook 2026 — Sample · bionixus.com</div>
+  <div class="doc-topbar"></div>
+  <div class="section-head"><div class="section-num">05</div><div><div class="kicker">Clinical demand</div><h2>Therapy landscape (GCC combined)</h2></div></div>
+  <table>
+    <thead><tr><th>Therapy</th><th>2026 size</th><th>Growth</th><th>What moves the market</th></tr></thead>
+    <tbody>
+      <tr><td>Oncology</td><td>USD 3.5–4.2B</td><td>11–12% CAGR</td><td>KFSHRC, HMC NCCCR, Cleveland Clinic Abu Dhabi, Sidra CAR-T / genomics</td></tr>
+      <tr><td>Diabetes &amp; metabolic</td><td>USD 3.0–3.6B</td><td>13–14% CAGR</td><td>Kuwait 23.1%, UAE 19.3%, KSA 18.4% T2DM (IDF 2023); GLP-1 surge</td></tr>
+      <tr><td>Cardiovascular</td><td>USD 2.8–3.4B</td><td>10–11% CAGR</td><td>CVD 28–38% of mortality; NOACs, SGLT-2 cardiac indications</td></tr>
+      <tr><td>Immunology &amp; biologics</td><td>USD 2.2–2.8B</td><td>~11% CAGR</td><td>Adalimumab biosimilar NUPCO tenders reshaping net price</td></tr>
+      <tr><td>Respiratory</td><td>USD 1.4–1.8B</td><td>~9% CAGR</td><td>Hajj seasonal burden, asthma biologics, GOLD triple therapy</td></tr>
+    </tbody>
+  </table>
+  <h3>Epidemiology that commercial teams under-weight</h3>
+  <p><strong>Type 2 diabetes</strong> — Kuwait 23.1%, UAE 19.3%, Saudi Arabia 18.4% adult prevalence (IDF Diabetes Atlas 2023). Qatar ~20%; Bahrain 18.9%; Oman 14.6%. This is not a “lifestyle footnote”; it is the GLP-1, SGLT-2, insulin and CGM demand engine.</p>
+  <p><strong>Cardiovascular disease</strong> — leading cause of death across all six states (about 28–38% of deaths; Kuwait ~38%, Saudi ~35%, Bahrain 32%, Oman 28%).</p>
+  <p><strong>Cancer</strong> — ~35,000+ new GCC diagnoses per year combined; breast and colorectal most prevalent (national registries 2023). Saudi Cancer Registry: ~25,000 new cases/year.</p>
+  <div class="callout">Ramadan dosing, Hajj surge, migrant uninsured segments (especially UAE construction corridors), and TB-screening delays before first biologic are operational variables global forecasts usually omit. BioNixus measures them in primary HCP and hospital analogue work.</div>
+  <p class="src">Sources: BioNixus GCC market intelligence therapy segments; IDF Diabetes Atlas 2023; MOH national statistics 2023–2024; national cancer registries.</p>
+  <div class="foot"><span>GCC Healthcare Market Report 2026 — Sample · BioNixus</span><span>06</span></div>
 </div>
 
-<!-- Page 11: About / CTA -->
+<!-- 07 Regulatory -->
 <div class="page">
-  <div class="eyebrow">Section 9</div>
-  <h2>About BioNixus</h2>
-  <p>BioNixus is a healthcare and pharmaceutical market research firm founded in 2012, headquartered in the United States with regional offices in London and Cairo, and field networks across Saudi Arabia, the UAE, Kuwait, Qatar, Bahrain, and Oman. We run primary research — physician, payer, and patient surveys and qualitative studies — as well as market access and HEOR consulting, calibrated to the regulatory and commercial realities of each market rather than a single global template.</p>
-  <h3>Want the full databook, or a custom study?</h3>
-  <p>Contact our team at admin@bionixus.com or visit bionixus.com/contact to scope a proposal — typically within 48 hours.</p>
-  <div class="footer-note">GCC Pharma &amp; MedTech Market Databook 2026 — Sample · bionixus.com</div>
+  <div class="doc-topbar"></div>
+  <div class="section-head"><div class="section-num">06</div><div><div class="kicker">Market access</div><h2>Regulatory &amp; procurement map</h2></div></div>
+  <table>
+    <thead><tr><th>Country</th><th>Pharma regulator</th><th>Device regulator</th><th>Central procurement</th><th>Typical MA → access</th></tr></thead>
+    <tbody>
+      <tr><td>Saudi Arabia</td><td>SFDA</td><td>SFDA MDIR</td><td>NUPCO + NGHA parallel</td><td>36–54 months</td></tr>
+      <tr><td>UAE</td><td>MOHAP</td><td>MOHAP / DHA / DOH</td><td>Emirate formularies + insurers</td><td>18–30 months</td></tr>
+      <tr><td>Qatar</td><td>MOPH</td><td>MOPH</td><td>HMC / Health Holding Co.</td><td>18–36 months</td></tr>
+      <tr><td>Kuwait</td><td>MOH / DGPA</td><td>MOH</td><td>Central Medical Stores</td><td>24–45 months</td></tr>
+      <tr><td>Oman</td><td>MOH Drug Control</td><td>MOH</td><td>Central Pharmacy / CSSD</td><td>24–45 months</td></tr>
+      <tr><td>Bahrain</td><td>NHRA</td><td>NHRA</td><td>MOH Central Pharmacy</td><td>18–30 months</td></tr>
+    </tbody>
+  </table>
+  <p>Saudi SFDA introduced a mandatory Economic Evaluation System (EES) from July 2025, raising the bar for pharmacoeconomic and budget-impact evidence at registration. UAE innovators still version dossiers for DHA and DOH in parallel with federal MA. Qatar concentrates high-cost oncology behind HMC global budgets. Kuwait CMS single-winner tenders make price the dominant public-channel criterion. Bahrain NHRA’s lean review and GCC reference pathway is the fastest small-market on-ramp — pricing and tenders remain national.</p>
+  <h3>Insurance architecture (simplified)</h3>
+  <p>UAE: mandatory insurance (Abu Dhabi Thiqa since 2007; Dubai since 2014; federal expansion ongoing). Saudi: mandatory for non-nationals since 2006, expanding to nationals under Vision 2030 / CCHI. Qatar and Kuwait remain public-dominant with private carve-outs. Oman Vision 2040 is expanding coverage. Private share is structurally highest in the UAE (~65% of healthcare expenditure).</p>
+  <div class="foot"><span>GCC Healthcare Market Report 2026 — Sample · BioNixus</span><span>07</span></div>
+</div>
+
+<!-- 08 Saudi A -->
+<div class="page">
+  <div class="doc-topbar"></div>
+  <div class="section-head"><div class="section-num">07</div><div><div class="kicker">Country 1 of 6</div><h2>Saudi Arabia</h2></div></div>
+  <div class="stat-grid">
+    <div class="stat"><div class="v">37.2M</div><div class="l">Population 2026</div></div>
+    <div class="stat"><div class="v">$55–65B</div><div class="l">Healthcare market</div></div>
+    <div class="stat"><div class="v">$8.5–9.5B</div><div class="l">Pharma 2026</div></div>
+    <div class="stat"><div class="v">$4.4–4.8B</div><div class="l">Devices 2026</div></div>
+  </div>
+  <p>Saudi Arabia is the largest healthcare and pharmaceutical market in the Arab world and the GCC. The healthcare market is estimated at <strong>USD 55–65 billion in 2026</strong>, on a path toward <strong>USD 90–110 billion by 2030</strong> as Vision 2030’s SAR 500 billion healthcare programme adds capacity, private participation and insurance-funded consumption. Government spend is about 62% of total healthcare expenditure; private is 38% and rising. Target: 35% private healthcare participation; 40% local pharmaceutical manufacturing by 2030; 30,000+ additional hospital beds.</p>
+  <p>The pharmaceutical market is <strong>USD 8.5–9.5 billion</strong>. The hospital channel is about 42% of pharma spend through NUPCO. Oncology, diabetes, cardiovascular and immunology/biologics are the four largest therapy areas; GLP-1 is the fastest individual class (prescriptions growing 40%+ annually on the published country report).</p>
+  <h3>Therapy value (BioNixus 2026)</h3>
+  <table>
+    <thead><tr><th>Area</th><th>Size</th><th>CAGR</th><th>Anchor</th></tr></thead>
+    <tbody>
+      <tr><td>Oncology</td><td>USD 1.2–1.4B</td><td>12%</td><td>KFSHRC; 14+ new cancer centres by 2030</td></tr>
+      <tr><td>Cardiovascular</td><td>USD 1.0–1.2B</td><td>10%</td><td>NGHA cardiac volumes; NOACs</td></tr>
+      <tr><td>Diabetes &amp; metabolic</td><td>USD 950M–1.1B</td><td>14%</td><td>18.4% adult T2DM (IDF)</td></tr>
+      <tr><td>Immunology &amp; biologics</td><td>USD 700–850M</td><td>11%</td><td>Adalimumab biosimilar net-price reset</td></tr>
+      <tr><td>Respiratory</td><td>USD 500–650M</td><td>9%</td><td>Hajj pulmonology; asthma biologics</td></tr>
+    </tbody>
+  </table>
+  <p class="src">bionixus.com/saudi-arabia-healthcare-market-report · /saudi-arabia-medical-devices-market-report</p>
+  <div class="foot"><span>GCC Healthcare Market Report 2026 — Sample · BioNixus</span><span>08</span></div>
+</div>
+
+<!-- 09 Saudi B -->
+<div class="page">
+  <div class="doc-topbar"></div>
+  <div class="kicker">Saudi Arabia · continued</div>
+  <h2 style="margin-top:4px;">Access, hospitals, epidemiology</h2>
+  <h3>SFDA → NUPCO clock</h3>
+  <p>Pre-submission (4–8 weeks) → eCTD Modules 1–5 Arabic + English → technical review 18–30 months (NME) or 12–18 months (generic/biosimilar) → SFDA pricing vs 16 reference countries / NEPA (3–6 months) → 5-year MA → NUPCO formulary uplift with HE dossier (6–12 months) → MOH National Drug Formulary Committee (3–6 months, including biosimilar interchangeability) → NUPCO annual INN tender (3–9 months). Full launch-to-access: <strong>36–54 months</strong>.</p>
+  <div class="two">
+    <div>
+      <h3>System capacity</h3>
+      <p>Total health expenditure USD 60–65B (~6.5% of GDP). ~70,000 beds (1.9 / 1,000). ~95,000 physicians. 500+ hospitals (MOH ~287, private ~185, other government ~80). GDP per capita USD 26,800 (IMF 2025).</p>
+      <h3>Epidemiology</h3>
+      <p>T2DM 18.4% adults — 4th highest globally (IDF 2023). CVD ~35% of deaths (MOH 2024). Cancer ~25,000 new cases/year; colorectal (males) and breast (females) lead (Saudi Cancer Registry 2023).</p>
+    </div>
+    <div>
+      <h3>Hospitals that set analogue</h3>
+      <p class="hosp"><strong>KFSHRC</strong> — 1,200 beds; oncology, transplant, CAR-T, genomics.</p>
+      <p class="hosp"><strong>KAMC / NGHA</strong> — 1,500 beds; largest government network.</p>
+      <p class="hosp"><strong>King Salman Hospital Riyadh</strong> — 1,500 beds; tertiary general.</p>
+      <p class="hosp"><strong>KFMC</strong> — 1,100 beds; oncology, paediatrics, neurosciences.</p>
+      <p class="hosp"><strong>Dr Sulaiman Al Habib (HMG)</strong> — 3,000+ beds; largest private group.</p>
+      <p class="hosp"><strong>Saudi German · Mouwasat</strong> — multi-site private tertiary.</p>
+    </div>
+  </div>
+  <div class="callout">NUPCO governs MOH lots; NGHA runs a partially parallel captive. Private syndicates compress net price but keep premium biologic carve-outs. SFDA EES (from July 2025) should be in the registration plan, not a post-MA surprise.</div>
+  <span class="chip">Pfizer</span><span class="chip">Roche</span><span class="chip">Novartis</span><span class="chip">AstraZeneca</span><span class="chip">MSD</span><span class="chip">Sanofi</span><span class="chip">AbbVie</span><span class="chip">Lilly</span><span class="chip">Novo Nordisk</span><span class="chip">J&amp;J</span>
+  <div class="foot"><span>GCC Healthcare Market Report 2026 — Sample · BioNixus</span><span>09</span></div>
+</div>
+
+<!-- 10 UAE A -->
+<div class="page">
+  <div class="doc-topbar"></div>
+  <div class="section-head"><div class="section-num">08</div><div><div class="kicker">Country 2 of 6</div><h2>United Arab Emirates</h2></div></div>
+  <div class="stat-grid">
+    <div class="stat"><div class="v">10.3M</div><div class="l">Population · ~89% expats</div></div>
+    <div class="stat"><div class="v">$30–33B</div><div class="l">Healthcare 2026</div></div>
+    <div class="stat"><div class="v">$3.8–4.5B</div><div class="l">Pharma 2026</div></div>
+    <div class="stat"><div class="v">$2.2–2.5B</div><div class="l">Devices 2026</div></div>
+  </div>
+  <p>The UAE healthcare market is estimated at <strong>USD 30–33 billion in 2026</strong>, on a path toward about <strong>USD 60 billion by 2030</strong> (7–8% CAGR on the country report). Split: Abu Dhabi ~45%, Dubai ~40%, other emirates ~15%. Private spend is roughly <strong>65%</strong> of healthcare expenditure — the GCC’s most insurance-driven mix. Medical tourism exceeded 350,000 visitors in 2025 on the published UAE report.</p>
+  <p>Pharma (BioNixus KPI): <strong>USD 3.8–4.5 billion</strong>, second in the GCC. Devices: <strong>USD 2.2–2.5 billion</strong> (~26% of the GCC $9.0B rollup); Dubai remains the regional distribution hub. Dual regulation is the commercial fact: <strong>MOHAP</strong> issues federal MA; <strong>DHA</strong> and <strong>DOH</strong> still govern emirate facility, formulary and pharmacovigilance overlays.</p>
+  <h3>Therapy value (BioNixus 2026)</h3>
+  <table>
+    <thead><tr><th>Area</th><th>Size</th><th>CAGR</th><th>Anchor</th></tr></thead>
+    <tbody>
+      <tr><td>Oncology</td><td>USD 450–520M</td><td>11.5%</td><td>Cleveland Clinic AD, Burjeel Medical City, American Hospital Dubai</td></tr>
+      <tr><td>Cardiovascular</td><td>USD 400–460M</td><td>11.7%</td><td>Medical tourism cardiac; TAVI / MitraClip</td></tr>
+      <tr><td>Diabetes &amp; metabolic</td><td>USD 380–440M</td><td>14%</td><td>19.3% adult T2DM; 37% adult obesity</td></tr>
+      <tr><td>Immunology &amp; biologics</td><td>USD 320–380M</td><td>12%</td><td>High-income expat + private payer coverage</td></tr>
+      <tr><td>Ophthalmology</td><td>USD 180–240M</td><td>10%</td><td>LASIK, cataract, AMD; MENA hub</td></tr>
+    </tbody>
+  </table>
+  <p class="src">bionixus.com/uae-healthcare-market-report · /uae-medical-devices-market-report</p>
+  <div class="foot"><span>GCC Healthcare Market Report 2026 — Sample · BioNixus</span><span>10</span></div>
+</div>
+
+<!-- 11 UAE B -->
+<div class="page">
+  <div class="doc-topbar"></div>
+  <div class="kicker">United Arab Emirates · continued</div>
+  <h2 style="margin-top:4px;">MOHAP, DHA, DOH — and who pays</h2>
+  <p>Federal MA: eCTD, Arabic labelling, GCC CTD accepted. Technical review 12–18 months (innovative) or 6–12 months (generic); EMA/FDA/Health Canada can abridge. Price committee 2–4 months (references include KSA, Jordan, France, UK). Then <strong>separate</strong> DHA and DOH facility/formulary tracks (4–8 weeks each post-MOHAP) plus insurer listing (Daman, AXA Gulf, Allianz Care, Bupa — 2–6 months). Total launch-to-access: <strong>18–30 months</strong> if DHA and DOH run in parallel.</p>
+  <div class="two">
+    <div>
+      <h3>Payer texture</h3>
+      <p>Thiqa covers Abu Dhabi nationals with rich floors. Dubai Essential Benefits Plan scaffolds lower-income expatriates. DIFC employer captives add a third rule set. DOH value-based pilots can bundle diabetes drug spend with HbA1c outcomes — GLP-1 ceilings are not tender unit-price alone.</p>
+      <h3>Capacity</h3>
+      <p>THE USD 32–36B band in market-intelligence KPIs; ~USD 3,200 per capita. ~9,500 beds (0.9 / 1,000 — medical tourism augments). ~25,000 physicians. 150+ hospitals (public 50+, private 100+). GDP per capita ~USD 50,000.</p>
+    </div>
+    <div>
+      <h3>Hospitals</h3>
+      <p class="hosp"><strong>Cleveland Clinic Abu Dhabi</strong> — 364 beds; oncology, cardiology, neurology.</p>
+      <p class="hosp"><strong>Burjeel Medical City</strong> — 450 beds; oncology, transplant.</p>
+      <p class="hosp"><strong>SKMC</strong> — 700 beds; Abu Dhabi public tertiary / trauma.</p>
+      <p class="hosp"><strong>Dubai Hospital</strong> — 650 beds; main Dubai public tertiary.</p>
+      <p class="hosp"><strong>Tawam Hospital Al Ain</strong> — 487 beds; oncology reference.</p>
+      <p class="hosp"><strong>American Hospital Dubai · Mediclinic City</strong> — 254 / 280 beds.</p>
+    </div>
+  </div>
+  <p><strong>Epidemiology:</strong> T2DM 19.3% (2nd in GCC, IDF 2023); obesity 37% of adults (UAE NCD Survey 2022); cancer ~5,000 new cases/year (UAE National Cancer Registry 2023).</p>
+  <div class="foot"><span>GCC Healthcare Market Report 2026 — Sample · BioNixus</span><span>11</span></div>
+</div>
+
+<!-- 12 Qatar -->
+<div class="page">
+  <div class="doc-topbar"></div>
+  <div class="section-head"><div class="section-num">09</div><div><div class="kicker">Country 3 of 6</div><h2>Qatar</h2></div></div>
+  <div class="stat-grid">
+    <div class="stat"><div class="v">2.84M</div><div class="l">Population</div></div>
+    <div class="stat"><div class="v">$8.5–10B</div><div class="l">Healthcare 2026</div></div>
+    <div class="stat"><div class="v">$0.90–1.05B</div><div class="l">Pharma 2026</div></div>
+    <div class="stat"><div class="v">$300–450M</div><div class="l">Devices (country KPI)</div></div>
+  </div>
+  <p>Qatar’s healthcare market is estimated at <strong>USD 8.5–10 billion in 2026</strong> (USD 14–16 billion by 2030 on the country report). Healthcare is about 4% of GDP but per-capita spend is among the world’s highest (~USD 4,500+). Government dominates ~80% of spend. <strong>Hamad Medical Corporation</strong> is the system operator; Hamad General hosts one of the region’s largest hospital pharmacies. Pharma: <strong>USD 900M–1.05 billion</strong>, ~6.5% CAGR through 2030; ~98% imported. Qatarpharm is the primary domestic producer.</p>
+  <p>MOPH issues MA (WHO PQ or EMA/FDA/MHRA/TGA abridges). Then HMC P&amp;T (covers 12 HMC sites including NCCCR), a <strong>separate Sidra</strong> P&amp;T for paediatric/genomic indications, MOPH National Drug Committee HEA for high-cost assets, and Health Holding Company INN tenders. Private (Al Ahli, Aster) can run in parallel. Launch-to-access: <strong>18–36 months</strong>.</p>
+  <div class="two">
+    <div>
+      <h3>Therapy (2026)</h3>
+      <p>Oncology USD 150–200M (12% CAGR) — NCCCR, Sidra paediatrics, genomics. Diabetes USD 120–160M. CV USD 100–140M (Heart Hospital). Immunology USD 90–130M. Respiratory USD 60–90M (dust environment).</p>
+    </div>
+    <div>
+      <h3>Hospitals</h3>
+      <p class="hosp"><strong>Hamad General</strong> — 750 beds; trauma / tertiary.</p>
+      <p class="hosp"><strong>NCCCR</strong> — 200 beds; oncology + transplant.</p>
+      <p class="hosp"><strong>Sidra Medicine</strong> — 400 beds; paediatrics, genomics, women’s health.</p>
+      <p class="hosp"><strong>Heart Hospital (HMC)</strong> — 174 beds.</p>
+      <p class="hosp"><strong>Al Rumailah</strong> — 550 beds; rehab / LTC.</p>
+    </div>
+  </div>
+  <p><strong>Epidemiology:</strong> T2DM ~20% (IDF 2023); obesity 42% of adults — highest in GCC (Qatar STEPS 2022); cancer ~2,000 new cases/year (NCCCR 2023). GDP per capita USD 85,000–90,000 — highest in the GCC. ~3,200 beds; ~15,000 physicians (5.3 / 1,000).</p>
+  <p class="src">bionixus.com/qatar-healthcare-market-report</p>
+  <div class="foot"><span>GCC Healthcare Market Report 2026 — Sample · BioNixus</span><span>12</span></div>
+</div>
+
+<!-- 13 Kuwait -->
+<div class="page">
+  <div class="doc-topbar"></div>
+  <div class="section-head"><div class="section-num">10</div><div><div class="kicker">Country 4 of 6</div><h2>Kuwait</h2></div></div>
+  <div class="stat-grid">
+    <div class="stat"><div class="v">4.8M</div><div class="l">Population · ~69% non-nationals</div></div>
+    <div class="stat"><div class="v">$7.5–8.5B</div><div class="l">Healthcare 2026</div></div>
+    <div class="stat"><div class="v">$0.95–1.1B</div><div class="l">Pharma 2026</div></div>
+    <div class="stat"><div class="v">$400–520M</div><div class="l">Devices (country KPI)</div></div>
+  </div>
+  <p>Kuwait healthcare is estimated at <strong>USD 7.5–8.5 billion in 2026</strong> (USD 11–13 billion by 2030). Government is ~78% of spend; 5–6% of GDP. Pharma: <strong>USD 950M–1.1 billion</strong>. About <strong>85% of pharma spend</strong> flows through <strong>Central Medical Stores</strong>. Generics &gt;70% by volume; specialty value sits in oncology, immunology and diabetes. ~95% of medicines are imported.</p>
+  <p>DGPA (MOH) reviews CTD over 12–24 months; GCC CTD and SFDA/MOHAP reference shortens the clock. Pricing committee +2–4 months. CMS formulary then annual single-winner tenders. KOC and Kuwait Airways run smaller parallel employee formularies. Launch-to-access: <strong>24–45 months</strong>. Vision 2035 targets ~30% private healthcare share (from ~15%), 11 new government hospitals, Jaber Al-Ahmad expansion and Sabah Al-Ahmad Medical City.</p>
+  <div class="two">
+    <div>
+      <h3>Hospitals</h3>
+      <p class="hosp"><strong>Mubarak Al-Kabeer</strong> — 700 beds; cardiology, nephrology.</p>
+      <p class="hosp"><strong>Al Sabah</strong> — 550 beds; trauma / emergency.</p>
+      <p class="hosp"><strong>Kuwait Cancer Control Centre</strong> — oncology / transplant reference.</p>
+      <p class="hosp"><strong>Adan</strong> — 450 beds; south Kuwait tertiary.</p>
+      <p class="hosp"><strong>Al Amiri</strong> — 350 beds; IM / GI.</p>
+      <p class="hosp"><strong>Royale Hayat</strong> — 130 beds; premium private.</p>
+    </div>
+    <div>
+      <h3>Epidemiology &amp; demand</h3>
+      <p>T2DM <strong>23.1%</strong> — highest in the GCC (IDF 2023). Obesity 47% of adults (WHO 2022). CVD ~38% of deaths (MOH 2023). Fastest therapy growth: oncology (KCCC, Chest Disease Hospital), metabolic intensification, rare disease (consanguinity), immunology. CV remains largest by volume.</p>
+      <p>~7,500 beds; ~20,000 physicians (4.1 / 1,000). GDP per capita USD 32,000. Al-Afya insurance covers many expatriates; private plans feed Royale Hayat-type facilities faster than CMS.</p>
+    </div>
+  </div>
+  <div class="callout">GCC mutual recognition helps DGPA review. It does <strong>not</strong> replace MOH pricing or CMS tendering. Winning the molecule lot is still the public-channel P&amp;L.</div>
+  <p class="src">bionixus.com/kuwait-healthcare-market-report · /healthcare-market-research-kuwait</p>
+  <div class="foot"><span>GCC Healthcare Market Report 2026 — Sample · BioNixus</span><span>13</span></div>
+</div>
+
+<!-- 14 Oman -->
+<div class="page">
+  <div class="doc-topbar"></div>
+  <div class="section-head"><div class="section-num">11</div><div><div class="kicker">Country 5 of 6</div><h2>Oman</h2></div></div>
+  <div class="stat-grid">
+    <div class="stat"><div class="v">4.9–5.0M</div><div class="l">Population</div></div>
+    <div class="stat"><div class="v">$5.5–6.5B</div><div class="l">Healthcare 2026</div></div>
+    <div class="stat"><div class="v">$520–580M</div><div class="l">Pharma 2026</div></div>
+    <div class="stat"><div class="v">$200–280M</div><div class="l">Devices (country KPI)</div></div>
+  </div>
+  <p>Oman healthcare is estimated at <strong>USD 5.5–6.5 billion in 2026</strong> (~6.2% CAGR through 2030). Government is ~70% of spend. Pharma: <strong>USD 520–580 million</strong> (6.5–7% CAGR); ~97% imported. MOH Central Medical Stores supply government hospitals; private pharmacies and groups (Aster, Badr Al Samaa) take the rest. Vision 2040 is expanding insurance to all residents — the retail channel thesis, not a UAE-style private glide path overnight.</p>
+  <p>MOH Drug Registration &amp; Control: CTD, GCC mutual recognition, technical review often <strong>18–30 months</strong>, then pricing, MA, Central Pharmacy / CSSD listing, annual tenders. Dual MOCI import licensing plus clinical facility credentialing lengthens monoclonal cold-chain onboarding when Muscat logistics are disrupted. Launch-to-access: <strong>24–45 months</strong>. Sultan Qaboos University Hospital is the academic gatekeeper for early neurology DMT switches.</p>
+  <div class="two">
+    <div>
+      <h3>Hospitals</h3>
+      <p class="hosp"><strong>Royal Hospital Muscat</strong> — 600 beds; national referral, oncology, cardiology, neurology.</p>
+      <p class="hosp"><strong>SQUH</strong> — 500 beds; academic, genomics, neurology research.</p>
+      <p class="hosp"><strong>Khoula Hospital</strong> — 500 beds; Level 1 trauma, orthopaedics.</p>
+      <p class="hosp"><strong>National Oncology Centre</strong> — radiotherapy / chemotherapy (Royal Hospital campus).</p>
+      <p class="hosp"><strong>Al Shifa · Muscat Private</strong> — 170 / 120 beds.</p>
+    </div>
+    <div>
+      <h3>Capacity &amp; epidemiology</h3>
+      <p>THE ~USD 5–6B in KPI tables (~5.5% of GDP). ~7,000 beds (1.4 / 1,000). ~14,000 physicians. GDP per capita ~USD 20,000. T2DM 14.6% (IDF 2023). CVD 28% of deaths (MOH 2023). Cancer ~3,500 new cases/year (Oman National Cancer Registry 2022).</p>
+      <p>Interior mountain transport still delays STEMI cath-lab arrival versus coastal Muscat — a device and thrombolytic logistics issue, not a “small market” abstraction.</p>
+    </div>
+  </div>
+  <p class="src">bionixus.com/oman-healthcare-market-report</p>
+  <div class="foot"><span>GCC Healthcare Market Report 2026 — Sample · BioNixus</span><span>14</span></div>
+</div>
+
+<!-- 15 Bahrain -->
+<div class="page">
+  <div class="doc-topbar"></div>
+  <div class="section-head"><div class="section-num">12</div><div><div class="kicker">Country 6 of 6</div><h2>Bahrain</h2></div></div>
+  <div class="stat-grid">
+    <div class="stat"><div class="v">1.63M</div><div class="l">Population</div></div>
+    <div class="stat"><div class="v">$2.5–3.0B</div><div class="l">Healthcare 2026</div></div>
+    <div class="stat"><div class="v">$420–480M</div><div class="l">Pharma 2026</div></div>
+    <div class="stat"><div class="v">$150–200M</div><div class="l">Devices (country KPI)</div></div>
+  </div>
+  <p>Bahrain healthcare is estimated at <strong>USD 2.5–3.0 billion in 2026</strong> (~5.5% CAGR through 2030). Government ~65% of spend; private share is rising with insurance and medical tourism. Pharma: <strong>USD 420–480 million</strong>, almost entirely imported. NHRA’s compact review is an advantage for mid-size exporters with clean first-cycle dossiers. Products already registered with SFDA or MOHAP can use a mutual-recognition pathway that cuts time and cost — <strong>pricing and MOH tenders remain Bahraini</strong>.</p>
+  <p>Pathway: NHRA application (eCTD / GCC CTD) → technical review typically 12–18 months → pricing unit 2–3 months → MA → MOH Central Pharmacy listing covering <strong>Salmaniya Medical Complex</strong> and BDF Hospital (3–6 months) → national tender. Launch-to-access: <strong>18–30 months</strong>. Salmaniya–BDF formulary synchronicity is unusually tight versus other GCC pairs.</p>
+  <div class="two">
+    <div>
+      <h3>Hospitals</h3>
+      <p class="hosp"><strong>Salmaniya Medical Complex</strong> — 1,200 beds; main tertiary (oncology, cardiology, nephrology).</p>
+      <p class="hosp"><strong>King Hamad University Hospital</strong> — 380 beds; JCI academic tertiary.</p>
+      <p class="hosp"><strong>BDF Hospital</strong> — 350 beds; military–civilian oncology bridge.</p>
+      <p class="hosp"><strong>American Mission Hospital</strong> — 140 beds; oldest private hospital in the Gulf.</p>
+      <p class="hosp"><strong>Awali Hospital</strong> — 150 beds; private.</p>
+    </div>
+    <div>
+      <h3>Capacity &amp; epidemiology</h3>
+      <p>THE USD 2.5–3.0B (~6.5% of GDP). ~1,800 beds (1.1 / 1,000). GDP per capita ~USD 22,000. T2DM 18.9% (IDF 2023). CVD 32% of deaths (MOH 2023). Cancer ~900 new cases/year (National Cancer Registry Bahrain).</p>
+      <p>Eastern Province (Saudi) commuter leakage distorts inpatient-day attribution if residency is assumed from claims geofences. Model both directions.</p>
+    </div>
+  </div>
+  <p class="src">bionixus.com/bahrain-healthcare-market-report</p>
+  <div class="foot"><span>GCC Healthcare Market Report 2026 — Sample · BioNixus</span><span>15</span></div>
+</div>
+
+<!-- 16 Comparison -->
+<div class="page">
+  <div class="doc-topbar"></div>
+  <div class="section-head"><div class="section-num">13</div><div><div class="kicker">Decision table</div><h2>Six-country comparison</h2></div></div>
+  <table>
+    <thead><tr><th></th><th>KSA</th><th>UAE</th><th>Qatar</th><th>Kuwait</th><th>Oman</th><th>Bahrain</th></tr></thead>
+    <tbody>
+      <tr><td>Population</td><td>37.2M</td><td>10.3M</td><td>2.84M</td><td>4.8M</td><td>~5.0M</td><td>1.63M</td></tr>
+      <tr><td>Healthcare 2026</td><td>$55–65B</td><td>$30–33B</td><td>$8.5–10B</td><td>$7.5–8.5B</td><td>$5.5–6.5B</td><td>$2.5–3.0B</td></tr>
+      <tr><td>Pharma 2026</td><td>$8.5–9.5B</td><td>$3.8–4.5B</td><td>$0.90–1.05B</td><td>$0.95–1.1B</td><td>$520–580M</td><td>$420–480M</td></tr>
+      <tr><td>Devices 2026</td><td>$4.4–4.8B</td><td>$2.2–2.5B</td><td>$300–450M*</td><td>$400–520M*</td><td>$200–280M*</td><td>$150–200M*</td></tr>
+      <tr><td>T2DM (IDF)</td><td>18.4%</td><td>19.3%</td><td>~20%</td><td>23.1%</td><td>14.6%</td><td>18.9%</td></tr>
+      <tr><td>Public vs private</td><td>Gov ~62%</td><td>Private ~65%</td><td>Gov ~80%</td><td>Gov ~78%</td><td>Gov ~70%</td><td>Gov ~65%</td></tr>
+      <tr><td>Tender anchor</td><td>NUPCO</td><td>Emirate + insurers</td><td>HMC / HHC</td><td>CMS</td><td>MOH Central</td><td>MOH tenders</td></tr>
+      <tr><td>Access clock</td><td>36–54 mo</td><td>18–30 mo</td><td>18–36 mo</td><td>24–45 mo</td><td>24–45 mo</td><td>18–30 mo</td></tr>
+    </tbody>
+  </table>
+  <p class="src">*Qatar–Bahrain device figures are BioNixus country KPIs; KSA/UAE device bands are the GCC devices report shares of the $9.0B regional total. Do not add country device KPIs and expect $9.0B — scope and vintage differ.</p>
+  <h3>How BioNixus typically sequences a GCC launch study</h3>
+  <p>1. SFDA + NUPCO analogue (largest P&amp;L). 2. MOHAP with parallel DHA/DOH (fastest private mix). 3. HMC/NCCCR if oncology or paediatric genomics. 4. CMS if public-volume generics or hospital injectables. 5. Oman/Bahrain as follower markets using GCC reference — unless a named account (Royal Hospital, SMC) is the buyer.</p>
+  <div class="foot"><span>GCC Healthcare Market Report 2026 — Sample · BioNixus</span><span>16</span></div>
+</div>
+
+<!-- 17 Methodology -->
+<div class="page">
+  <div class="doc-topbar"></div>
+  <div class="section-head"><div class="section-num">14</div><div><div class="kicker">Evidence</div><h2>Methodology &amp; sources</h2></div></div>
+  <p>Figures in this sample are taken from BioNixus published website intelligence (country healthcare market reports, GCC medical devices report, GCC pharmaceutical market research, and GCC market-intelligence KPIs) as of <strong>August 2026</strong>. Where a range is shown, it is the published BioNixus band, not a single-point vendor forecast.</p>
+  <h3>Primary construction (full programmes — not this PDF)</h3>
+  <p>Hospital procurement analogues, pharmacy dispensing, bilingual HCP panels, formulary-committee interviews, and tender-notice monitoring (NUPCO, CMS, HMC/HHC, MOH). This sample does not reproduce those microdata tables.</p>
+  <h3>Cited secondary sources</h3>
+  <p>Market Research Future — GCC medical devices USD 9.0B (2026) to USD 16.2B (2035), 6.7% CAGR. IDF Diabetes Atlas 2023 — adult T2DM prevalence. IMF 2025 — GDP per capita. World Bank / national statistics agencies — population. MOH / national cancer registries 2022–2024 — mortality and incidence. UAE NCD Survey 2022; Qatar STEPS 2022; WHO Kuwait country profile 2022 — obesity.</p>
+  <h3>Reconciliation rules used in this edition</h3>
+  <p>GCC devices total and KSA/UAE device shares follow <em>/gcc-medical-devices-market-report</em> (August 2026 update). Country healthcare and pharma bands follow each country’s healthcare market report FAQ, except UAE pharma which uses the BioNixus market-intelligence KPI (USD 3.8–4.5B) for consistency with the GCC pharma rollup. GCC pharma USD 18–22B is a triangulated regional estimate (Saudi ~45% of spend) and will not equal an arithmetic sum of country midpoints.</p>
+  <div class="callout">This document is a sample excerpt for gated download. Therapy SKU shares, tender calendars, and hospital-level consumption remain in commissioned BioNixus work. Nothing herein is legal, medical, pricing, or investment advice.</div>
+  <p>Date published on-site for core GCC pages: Saudi healthcare 27 May 2026; UAE healthcare modified 12 August 2026; GCC devices modified 18 August 2026. This sample edition: August 2026.</p>
+  <div class="foot"><span>GCC Healthcare Market Report 2026 — Sample · BioNixus</span><span>17</span></div>
+</div>
+
+<!-- 18 Close -->
+<div class="page closing">
+  <div class="doc-topbar"></div>
+  <div class="closing-inner">
+    <div>
+      <div class="logo-name">BioNixus</div>
+      <div class="logo-slogan">intelligence for Business Growth</div>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; justify-content:center; max-width:160mm;">
+      <div class="kicker">Next step</div>
+      <h1 style="font-size:32px; margin-bottom:14px;">Primary research,<br>not a spreadsheet export.</h1>
+      <p style="color:rgba(255,255,255,0.78); font-size:13px;">
+        BioNixus is a healthcare and pharmaceutical market research firm founded in 2012 — USA headquarters,
+        London and Cairo offices, field networks across all six GCC states. We run physician, payer and patient
+        primary research plus market access and HEOR, calibrated to SFDA, MOHAP, NUPCO, HMC and CMS reality.
+      </p>
+      <p style="color:rgba(255,255,255,0.78); font-size:13px; margin-top:10px;">
+        Minimum engagement USD 20,000. Typical proposal turnaround: 48 hours.
+      </p>
+      <p style="margin-top:22px; font-size:14px; color:var(--gold);">
+        admin@bionixus.com · +20 120 688 2323 (Cairo) · bionixus.com/contact
+      </p>
+    </div>
+    <div>
+      <p style="color:rgba(255,255,255,0.55); font-size:10px; margin:0;">Market Research &amp; Consulting (Middle East)</p>
+      <p style="color:rgba(255,255,255,0.55); font-size:10px; margin:4px 0 0;">Cairo · Riyadh · Dubai | London · Sheridan (USA) | www.bionixus.com</p>
+    </div>
+    <div class="foot">
+      <span>© 2026 BioNixus. Sample for recipient use only. No redistribution without consent.</span>
+      <span>18</span>
+    </div>
+  </div>
 </div>
 
 </body>

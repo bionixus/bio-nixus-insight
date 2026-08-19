@@ -99,7 +99,7 @@ export function ReportPremiumHero({
             <div className="mt-6 sr sr-up">
               <ConversionCTA
                 variant="gated-asset"
-                reportName="GCC Pharma & MedTech Market Databook 2026"
+                reportName="GCC Healthcare Market Report 2026"
                 pdfPath="/downloads/gcc-pharma-medtech-databook-2026-sample.pdf"
                 ctaId={`${config.canonicalPath.replace(/[^a-z0-9]+/gi, '_')}_hero_gated`}
                 ctaLocation="report_hero"
