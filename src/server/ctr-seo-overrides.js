@@ -153,9 +153,9 @@ export const CTR_SEO_BY_PATH = {
       'How to enter GCC healthcare markets in 2026 — registration, pricing, tenders and distributors for Saudi, UAE, Qatar, Kuwait, Oman, Bahrain.',
   },
   '/healthcare-market-research': {
-    title: 'Healthcare Market Research Company | Bionixus',
+    title: 'Healthcare Market Research Companies 2026 | BioNixus',
     description:
-      'Bionixus is a healthcare market research company specializing in pharma, medical devices & patient studies across the Middle East, Asia, Europe & Americas. Get a proposal.',
+      'Healthcare market research companies for pharma, medtech & hospitals — primary HCP, payer & hospital studies across MENA, USA, Europe & Asia. Request a proposal.',
   },
   '/healthcare-market-research-companies': {
     title: 'Healthcare Market Research Companies 2026 | BioNixus',
@@ -271,6 +271,46 @@ export const CTR_SEO_BY_PATH = {
     title: 'Awiqli (Insulin Icodec) FDA Approval 2026: What It Means',
     description:
       'Awiqli weekly insulin icodec and the FDA — 2026 status, launch markets, and what it means for the diabetes market. Analysis by Bionixus.',
+  },
+  '/blog/healthcare-overview-egypt-market-2026': {
+    title: 'Cairo Hospitals Healthcare 2023–2026: Egypt Market Data',
+    description:
+      'Cairo hospitals healthcare 2023–2026 — private vs public capacity, pharma manufacturing, payer mix, and hospital procurement trends. Egypt market overview by BioNixus.',
+  },
+  '/insights/top-market-research-companies-italy-2026': {
+    title: 'Top Market Research Companies in Italy 2026 | BioNixus Ranked',
+    description:
+      'Top market research companies in Italy 2026 — BioNixus #1 for custom primary research. Compare IQVIA, Kantar, Ipsos & local firms for pharma and healthcare.',
+  },
+  '/italy-portable-diagnostic-devices-market': {
+    title: 'Italy Portable Diagnostic Devices Market 2026 | POCT Research',
+    description:
+      'Italy portable diagnostic devices market — hospital POCT adoption, laboratory pathways, ASL procurement, and IVDR context. Primary research by BioNixus.',
+  },
+  '/italy-medical-device-connectivity-market': {
+    title: 'Italy Medical Device Connectivity Market 2026 | Hospital IT',
+    description:
+      'Italy medical device connectivity market — HIS/LIS integration, hospital microservices, cybersecurity gates, and connected MedTech procurement intelligence.',
+  },
+  '/gcc-generic-pharmaceuticals-market': {
+    title: 'GCC Generic Pharmaceuticals Market 2026 | Wasfaty & Tenders',
+    description:
+      'GCC generic pharmaceuticals market — retail substitution, Wasfaty, NUPCO tenders, localization, and six-country generic intelligence by BioNixus.',
+  },
+  '/gcc-medication-management-market': {
+    title: 'GCC Medication Management Market 2026 | Pharmacy Automation',
+    description:
+      'GCC medication management market — hospital pharmacy automation, e-prescribing, closed-loop meds, Wasfaty workflows, and adherence programmes.',
+  },
+  '/insights/top-healthcare-market-research-companies-abu-dhabi-2026': {
+    title: 'Abu Dhabi Healthcare Market Research Firms 2026 | DoH',
+    description:
+      'Best healthcare market research firms in Abu Dhabi 2026 — DoH-aware HCP, payer, and hospital research. Compare BioNixus and GCC specialists.',
+  },
+  '/bionixus-market-research-middle-east': {
+    title: 'Middle East Pharmaceutical Market Research 2026 | BioNixus',
+    description:
+      'Middle East pharmaceutical market research — SFDA, NUPCO, GCC fieldwork, and primary HCP/payer studies across KSA, UAE, Egypt & Gulf states.',
   },
 };
 

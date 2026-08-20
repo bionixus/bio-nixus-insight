@@ -25,9 +25,9 @@ export const EGYPT_VACCINES_COPY: OverrideCopy = {
   marketAccessNotes:
     'UHI expanded childhood immunization driving government schedule volume; EDA registration and price controls gating launch economics; HPV school programmes with rural cultural gatekeepers; Cairo private and international-school rapid uptake; local manufacturing and cold-chain capacity shaping supply security',
   fieldIntelligenceParagraph:
-    'BioNixus field programmes treat Egypt vaccines as a dual public–private market. UHI schedule inclusion and EDA pricing set the government floor; private clinics and international schools create a premium optional channel. We pair public-health and school-programme stakeholder interviews with private-provider and payer depth, and we map Upper Egypt cultural and logistics friction that forecasts often miss.',
+    'BioNixus field programmes treat Egypt vaccines as a dual public–private market. UHI schedule inclusion and EDA pricing set the government floor; private clinics and international schools create a premium optional channel. We pair public-health and school-programme stakeholder interviews with private-provider and payer depth, and we map Upper Egypt cultural and logistics friction that forecasts often miss. Cairo corridor clinics can adopt HPV and adult vaccines faster than rural governorates where cold-chain distance and community gatekeepers slow school campaigns — BioNixus sizes those gaps explicitly rather than applying Cairo uptake curves nationally.',
   commercialOutlookParagraph:
-    'The outlook to 2030 is strong-growth and policy-sensitive. Childhood base expands with UHI coverage; upside comes from HPV school programmes and adult immunisation. Manufacturers should stress-test volume against EDA pricing, UHI formulary timing, and rural–urban uptake gaps before locking Egypt revenue targets.',
+    'The outlook to 2030 is strong-growth and policy-sensitive. Childhood base expands with UHI coverage; upside comes from HPV school programmes and adult immunisation. Manufacturers should stress-test volume against EDA pricing, UHI formulary timing, and rural–urban uptake gaps before locking Egypt revenue targets. Scenario planning should separate government schedule volume, school-mandate execution years, and private optional uptake because each channel follows different evidence and budget gates under Egypt’s Universal Health Insurance rollout.',
   methodologyParagraph:
     'Methodology combines BioNixus market analysis for sizing and CAGR bands with desk review of UHI, EDA, and ministry immunisation guidance, plus primary modules where data is available. Outputs support market access and commercial leadership and do not constitute regulatory or clinical advice.',
   faqs: [
@@ -45,6 +45,11 @@ export const EGYPT_VACCINES_COPY: OverrideCopy = {
       question: 'How does BioNixus help vaccine teams in Egypt?',
       answer:
         'BioNixus designs bilingual Egypt vaccines programmes: public-health and school-programme interviews, EDA and UHI access mapping, private-clinic demand sizing, and KOL mapping tied to real immunisation influence. Begin from the healthcare market research hub or request a scoped briefing through the contact page.',
+    },
+    {
+      question: 'What vaccines drive Egypt market growth to 2030?',
+      answer:
+        'HPV school programmes, adult pneumococcal and influenza expansion, and continued UHI childhood schedule coverage are the primary growth corridors BioNixus tracks for Egypt through 2030. Optional private-channel vaccines in Cairo and Alexandria add premium upside but do not replace government schedule volume in national forecasts. Pair this briefing with the GCC vaccines report when comparing Gulf pilgrimage-driven demand with Egypt UHI expansion dynamics.',
     },
   ],
 };
