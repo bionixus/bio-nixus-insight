@@ -33,6 +33,24 @@ try {
     'src/data/healthcareReportContent.ts',
   );
   const { getTherapyMarketDynamics } = await loadModuleBundle('src/data/marketTherapyOverlays.ts');
+  const { REPORT_ENRICHMENT_BY_SLUG } = await loadModuleBundle('src/data/reportEnrichmentRegistry.ts');
+
+  function enrichmentWordCount(slug) {
+    const sections = REPORT_ENRICHMENT_BY_SLUG[slug];
+    if (!sections?.length) return 0;
+    return sections.reduce((n, section) => {
+      const parts = [
+        section.title,
+        section.subtitle ?? '',
+        ...section.paragraphs,
+        ...(section.listItems ?? []),
+        ...(section.table
+          ? [section.table.caption, ...section.table.headers, ...section.table.rows.flat()]
+          : []),
+      ];
+      return n + parts.reduce((sum, p) => sum + wc(stripMd(p)), 0);
+    }, 0);
+  }
 
   let minTotal = Infinity;
   let maxTotal = 0;
@@ -81,7 +99,10 @@ try {
       ...report.faqs.flatMap((f) => [f.question, f.answer]),
     ];
 
-    const total = visibleParts.reduce((n, p) => n + wc(stripMd(p)), 0) + TEMPLATE_CHROME_WC;
+    const total =
+      visibleParts.reduce((n, p) => n + wc(stripMd(p)), 0) +
+      TEMPLATE_CHROME_WC +
+      enrichmentWordCount(report.slug);
 
     minTotal = Math.min(minTotal, total);
     maxTotal = Math.max(maxTotal, total);

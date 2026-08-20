@@ -42,6 +42,13 @@ import { ReportTherapySpendChartLazy } from '@/components/report-premium/ReportT
 import { SAUDI_BIOSIMILARS_REPORT_ENRICHMENT } from '@/data/saudiBiosimilarsReportEnrichment';
 import { SAUDI_CANCER_DIAGNOSTICS_REPORT_ENRICHMENT } from '@/data/saudiCancerDiagnosticsReportEnrichment';
 import { SAUDI_VACCINES_REPORT_ENRICHMENT } from '@/data/saudiVaccinesReportEnrichment';
+import { REPORT_ENRICHMENT_BY_SLUG } from '@/data/reportEnrichmentRegistry';
+
+const SAUDI_LEGACY_ENRICHMENT_SLUGS = new Set([
+  'saudi-arabia-biosimilars-market-report',
+  'saudi-arabia-cancer-diagnostics-market-report',
+  'saudi-arabia-vaccines-market-report',
+]);
 
 function pickVariant(seed: string, options: [string, string, string]) {
   const score = seed.split('').reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
@@ -549,6 +556,63 @@ export default function HealthcareReportPage() {
                       </Link>
                       .
                     </p>
+                  ) : null}
+                </ReportPremiumSection>
+              ))
+            : null}
+
+          {REPORT_ENRICHMENT_BY_SLUG[report.slug] && !SAUDI_LEGACY_ENRICHMENT_SLUGS.has(report.slug)
+            ? REPORT_ENRICHMENT_BY_SLUG[report.slug].map((section) => (
+                <ReportPremiumSection
+                  key={section.id}
+                  id={section.id}
+                  title={section.title}
+                  subtitle={section.subtitle}
+                  visualTheme="market"
+                  marketSlug={report.marketSlug}
+                  therapySlug={report.therapyAreaSlug}
+                  countryName={report.market}
+                  therapyName={report.therapyArea}
+                  visualAlt={`${section.title} — BioNixus ${report.market} ${report.therapyArea} market intelligence`}
+                >
+                  {section.paragraphs.map((para) => (
+                    <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed mb-6">
+                      {para}
+                    </p>
+                  ))}
+                  {section.table ? (
+                    <div className="overflow-x-auto mb-6 rounded-xl border border-border/60">
+                      <table className="w-full text-sm text-left">
+                        <caption className="sr-only">{section.table.caption}</caption>
+                        <thead className="bg-muted/50 text-foreground">
+                          <tr>
+                            {section.table.headers.map((header) => (
+                              <th key={header} scope="col" className="px-3 py-2 font-semibold">
+                                {header}
+                              </th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {section.table.rows.map((row) => (
+                            <tr key={row.join('|')} className="border-t border-border/50 text-muted-foreground">
+                              {row.map((cell, cellIdx) => (
+                                <td key={`${row[0]}-${cellIdx}`} className="px-3 py-2 align-top">
+                                  {cell}
+                                </td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  ) : null}
+                  {section.listItems?.length ? (
+                    <ul className="list-disc pl-6 space-y-2 text-muted-foreground leading-relaxed mb-4">
+                      {section.listItems.map((item) => (
+                        <li key={item.slice(0, 64)}>{item}</li>
+                      ))}
+                    </ul>
                   ) : null}
                 </ReportPremiumSection>
               ))
