@@ -4,6 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { OptimizedImage } from '@/components/media/OptimizedImage';
 import { SHARED_FIGURES } from '@/data/mediaAssets';
+import { formatTemplate } from '@/lib/uiChromeStrings';
 
 const TESTIMONIAL_THUMBNAILS = [
   SHARED_FIGURES.hcpWorkshop,
@@ -22,7 +23,7 @@ const TestimonialsSection = () => {
         {/* Trusted by Industry Leaders – continuous marquee ticker */}
         <div className="mb-16 pb-12 border-b border-border">
           <p className="text-center text-sm text-foreground/70 mb-8 uppercase tracking-widest">
-            Industry Leaders We Serve Alongside
+            {t.homePage.testimonials.marquee}
           </p>
           <div className="overflow-hidden select-none w-full" aria-hidden="true">
             <div
@@ -31,7 +32,7 @@ const TestimonialsSection = () => {
             >
               {[...Array(3)].map((_, set) => (
                 <div key={set} className="flex items-center gap-16 shrink-0 px-8">
-                  {['Pfizer', 'Roche', 'Novartis', 'Sanofi', 'AstraZeneca', 'Merck'].map((company) => (
+                  {t.ui.brands.companies.map((company) => (
                     <span
                       key={`${set}-${company}`}
                       className="text-xl font-display font-semibold text-foreground/75 whitespace-nowrap"
@@ -65,7 +66,9 @@ const TestimonialsSection = () => {
             >
               <OptimizedImage
                 src={TESTIMONIAL_THUMBNAILS[index % TESTIMONIAL_THUMBNAILS.length].src}
-                alt={`${testimonial.company} pharmaceutical market research case study preview`}
+                alt={formatTemplate(t.homePage.testimonials.altTemplate, {
+                  company: testimonial.company,
+                })}
                 width={400}
                 height={240}
                 className="w-full h-40 object-cover"

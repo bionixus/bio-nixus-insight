@@ -792,6 +792,9 @@ export const translations = {
         'Panorama des études de marché pharmaceutiques et santé en Europe, au Moyen-Orient et en Afrique',
     },
     hero: {
+      titleLead: 'La recherche qui façonne',
+      titleEmphasis: 'votre stratégie',
+      ctaPremium: 'Réserver un appel de cadrage →',
       tagline: 'Études de Marché Santé EMEA',
       title: "BioNixus — Services d'études de marché santé pour l'industrie pharmaceutique",
       subtitle: 'Transformez les insights médecins et hôpitaux en intelligence stratégique sur les marchés UK, Europe et MENA',
@@ -1065,6 +1068,9 @@ export const translations = {
         'Panorama de la investigación de mercado farmacéutico y sanitario en Europa, Oriente Medio y África',
     },
     hero: {
+      titleLead: 'La investigación que define',
+      titleEmphasis: 'su estrategia',
+      ctaPremium: 'Reservar una llamada inicial →',
       tagline: 'Investigación de Mercado Sanitario EMEA',
       title: 'BioNixus — Servicios de investigación de mercado sanitario y farmacéutico en EMEA',
       subtitle: 'Transforme los insights de médicos y hospitales en inteligencia estratégica en mercados UK, Europa y MENA',
@@ -1337,6 +1343,9 @@ export const translations = {
       emeaSignalsH2: '欧洲、中东与非洲医药及医疗健康市场研究概览',
     },
     hero: {
+      titleLead: '以研究塑造',
+      titleEmphasis: '您的战略',
+      ctaPremium: '预约需求沟通 →',
       tagline: '欧洲、中东和非洲医疗市场研究',
       title: 'BioNixus医疗健康市场研究服务（欧洲、中东与非洲）',
       subtitle: '将医生和医院洞察转化为英国、欧洲及中东和非洲市场的战略智能',
@@ -1463,9 +1472,9 @@ export const translations = {
       title: '精选案例研究',
       subtitle: '我们与全球制药和生物技术团队合作的真实成果',
       items: [
-        { quote: '了解BioNixus如何通过定量医生调研和竞争情报，为一家Top-10跨国药企制定GCC肿瘤产品上市策略。', author: 'GCC肿瘤上市', role: '案例研究', company: '跨国制药企业' },
-        { quote: '看BioNixus如何帮助一家中型生物科技公司，通过多国KOL映射和市场准入诊断加速EMEA扩张。', author: 'EMEA扩张', role: '案例研究', company: '中型生物科技' },
-        { quote: '发现BioNixus如何为一家专科制药公司进入三个欧洲市场提供上市准备证据，涵盖支付方和医院研究。', author: '欧洲上市准备', role: '案例研究', company: '专科制药企业' },
+        { quote: '了解 BioNixus 如何通过定量医生调研和竞争情报，为一家全球前十大跨国药企制定海湾国家肿瘤产品上市策略。', author: '海湾国家肿瘤上市', role: '案例研究', company: '跨国制药企业' },
+        { quote: '看 BioNixus 如何帮助一家中型生物科技公司，通过多国 KOL 图谱与市场准入诊断加速欧洲、中东和非洲市场扩张。', author: '欧洲、中东和非洲扩张', role: '案例研究', company: '中型生物科技企业' },
+        { quote: '了解 BioNixus 如何为一家专科制药公司进入三个欧洲市场提供上市准备证据，涵盖支付方与医院研究。', author: '欧洲上市准备', role: '案例研究', company: '专科制药企业' },
       ],
     },
     clientReviewsTeaser: {
@@ -1604,6 +1613,9 @@ export const translations = {
       emeaSignalsH2: 'لمحة عن أبحاث السوق الصحية والدوائية في أوروبا والشرق الأوسط وإفريقيا',
     },
     hero: {
+      titleLead: 'أبحاث تصنع',
+      titleEmphasis: 'استراتيجيتك',
+      ctaPremium: 'احجز مكالمة استكشافية ←',
       tagline: 'أبحاث السوق الصحية في الشرق الأوسط والخليج',
       title: 'خدمات BioNixus لأبحاث السوق الصحية والدوائية',
       subtitle: 'حوّل رؤى الأطباء والمستشفيات إلى ذكاء استراتيجي عبر أسواق الخليج وشمال أفريقيا',
@@ -1982,6 +1994,9 @@ export const translations = {
       emeaSignalsH2: 'Visão geral do mercado farmacêutico e de saúde no Brasil, América Latina, Europa e MENA',
     },
     hero: {
+      titleLead: 'A pesquisa que molda',
+      titleEmphasis: 'a sua estratégia',
+      ctaPremium: 'Agendar uma conversa inicial →',
       tagline: 'Pesquisa de Mercado em Saúde — Brasil, América Latina, Europa & MENA',
       title: 'Serviços de Pesquisa de Mercado em Saúde da BioNixus',
       subtitle: 'Transforme insights de saúde em decisões mais rápidas de lançamento e acesso ao mercado com inteligência de médicos, pagadores e hospitais para equipes farmacêuticas no Brasil, América Latina, Europa e MENA.',
@@ -2160,6 +2175,9 @@ export const translations = {
       emeaSignalsH2: 'Обзор фармацевтического и медицинского рынка России, Восточной Европы и MENA',
     },
     hero: {
+      titleLead: 'Исследования, формирующие',
+      titleEmphasis: 'вашу стратегию',
+      ctaPremium: 'Записаться на консультацию →',
       tagline: 'Маркетинговые исследования в фармацевтике — Россия, Восточная Европа, MENA',
       title: 'Маркетинговые исследования в сфере здравоохранения для фармацевтических компаний',
       subtitle: 'BioNixus — глобальная компания по маркетинговым исследованиям в сфере здравоохранения. Мы помогаем фармацевтическим, биотехнологическим и медицинским командам преобразовывать данные врачей, плательщиков и больниц в стратегические решения — с глубоким охватом России, Восточной Европы, MENA и стран GCC.',

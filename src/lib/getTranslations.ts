@@ -1,11 +1,16 @@
 import { translations, type Language } from './i18n';
 import { homePageHardcoded, type HomePageHardcodedCopy } from './homePageHardcoded';
 import { homePageUiStrings } from './homePageUiStrings';
+import { getUiChromeStrings, type UiChromeStrings } from './uiChromeStrings';
 
 type EnglishTranslations = (typeof translations)['en'];
 
+type CtaVariantCopy = NonNullable<(typeof homePageUiStrings)['en']['ctaVariants']>;
+
 export type MergedTranslations = EnglishTranslations & {
   homePage: HomePageHardcodedCopy;
+  ui: UiChromeStrings;
+  ctaVariants: CtaVariantCopy;
 };
 
 /**
@@ -40,6 +45,11 @@ export function getTranslations(lang: Language): MergedTranslations {
   return {
     ...base,
     homePage: homePageHardcoded[lang],
+    ui: getUiChromeStrings(lang),
+    ctaVariants: withEnglishFallback(
+      homePageUiStrings.en.ctaVariants as CtaVariantCopy,
+      overlay.ctaVariants,
+    ),
     hero: {
       ...base.hero,
       ...(overlay.heroTrust

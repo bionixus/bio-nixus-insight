@@ -26,7 +26,7 @@ import type { BlogPost } from '@/types/blog';
 import { filterPostsBySilo } from '@/lib/blog-content-silo';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { getHomePageFaq, HOME_FAQ_SECTION_ID } from '@/lib/homePageFaq';
-import { languagePaths, seoByLanguage } from '@/lib/seo';
+import { getLocalizedPathForLanguage, localizedContactPath, seoByLanguage } from '@/lib/seo';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { buildHomePathwayCards } from '@/data/homePathwayCards';
 
@@ -41,11 +41,40 @@ const Index = () => {
   const homeArticlePosts = filterPostsBySilo(sanityPosts ?? ssrHomeInsights ?? [], 'healthcare');
   const homeFaq = getHomePageFaq(language);
   const homeCanonicalUrl = new URL(seoByLanguage[language].canonicalPath, 'https://www.bionixus.com').toString();
-  const basePath = languagePaths[language] || '/';
-  const contactHref =
-    language === 'fr' ? '/fr/contact' : language === 'ar' ? '/ar/contact' : `${basePath === '/' ? '' : basePath}/contact`;
+  const contactHref = localizedContactPath(language);
 
   const featuredCards = buildHomePathwayCards(language, t.homePage.pathwayCards);
+
+  const explore = t.ui.exploreResearch;
+  const exploreColumns = [
+    {
+      heading: explore.startHere,
+      links: [
+        { to: getLocalizedPathForLanguage('/healthcare-market-research', language), label: explore.hub },
+        { to: '/iqvia-alternative', label: explore.iqvia },
+        { to: '/healthcare-market-statistics', label: explore.statistics },
+        { to: '/faq', label: explore.faq },
+      ],
+    },
+    {
+      heading: explore.featuredReports,
+      links: [
+        { to: '/saudi-arabia-healthcare-market-report', label: explore.saudiReport },
+        { to: '/uae-healthcare-market-report', label: explore.uaeReport },
+        { to: '/usa-healthcare-market-report', label: explore.usaReport },
+      ],
+    },
+    {
+      heading: explore.byCountry,
+      links: [
+        { to: '/healthcare-market-research/united-states', label: explore.countryUsa },
+        { to: '/healthcare-market-research/saudi-arabia', label: explore.countrySaudi },
+        { to: '/healthcare-market-research/uae', label: explore.countryUae },
+        { to: '/healthcare-market-research/turkey', label: explore.countryTurkey },
+        { to: '/healthcare-market-research/egypt', label: explore.countryEgypt },
+      ],
+    },
+  ];
 
   useEffect(() => {
     if (!hash) return;
@@ -92,84 +121,25 @@ const Index = () => {
         <section className="section-padding bg-cream-dark border-t border-border" aria-labelledby="home-explore-research-heading">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 id="home-explore-research-heading" className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
-              Explore BioNixus research
+              {explore.heading}
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <div>
-                <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-3">Start here</h3>
-                <ul className="space-y-2">
-                  <li>
-                    <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">
-                      Global healthcare market research hub
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/iqvia-alternative" className="text-primary hover:underline font-medium">
-                      BioNixus vs. IQVIA and other legacy vendors
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/healthcare-market-statistics" className="text-primary hover:underline font-medium">
-                      Healthcare & Pharma Market Statistics 2026
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/faq" className="text-primary hover:underline font-medium">
-                      Frequently Asked Questions
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-3">Featured market reports</h3>
-                <ul className="space-y-2">
-                  <li>
-                    <Link to="/saudi-arabia-healthcare-market-report" className="text-primary hover:underline font-medium">
-                      Saudi Arabia Healthcare Market Report
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/uae-healthcare-market-report" className="text-primary hover:underline font-medium">
-                      UAE Healthcare Market Report
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/usa-healthcare-market-report" className="text-primary hover:underline font-medium">
-                      USA Healthcare Market Report
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-3">Research by country</h3>
-                <ul className="space-y-2">
-                  <li>
-                    <Link to="/healthcare-market-research/united-states" className="text-primary hover:underline font-medium">
-                      Healthcare market research USA
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/healthcare-market-research/saudi-arabia" className="text-primary hover:underline font-medium">
-                      Healthcare market research Saudi Arabia
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/healthcare-market-research/uae" className="text-primary hover:underline font-medium">
-                      Healthcare market research UAE
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/healthcare-market-research/turkey" className="text-primary hover:underline font-medium">
-                      Healthcare market research Turkey
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/healthcare-market-research/egypt" className="text-primary hover:underline font-medium">
-                      Healthcare market research Egypt
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+              {exploreColumns.map((column) => (
+                <div key={column.heading}>
+                  <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-3">
+                    {column.heading}
+                  </h3>
+                  <ul className="space-y-2">
+                    {column.links.map((link) => (
+                      <li key={link.to}>
+                        <Link to={link.to} className="text-primary hover:underline font-medium">
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </div>
         </section>

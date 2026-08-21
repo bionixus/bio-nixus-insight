@@ -3,7 +3,13 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Globe2, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languages } from '@/lib/i18n';
-import { getLocalizedPathForLanguage, languagePaths, resolveLanguageSwitchPath } from '@/lib/seo';
+import {
+  getLocalizedPathForLanguage,
+  languagePaths,
+  localizedContactPath,
+  resolveLanguageSwitchPath,
+} from '@/lib/seo';
+import { formatTemplate } from '@/lib/uiChromeStrings';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,9 +23,10 @@ const Navbar = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const { language, setLanguage, t } = useLanguage();
+  const ui = t.ui;
   const basePath = languagePaths[language] || '/';
-  const localizedContactPath =
-    language === 'fr' ? '/fr/contact' : language === 'ar' ? '/ar/contact' : `${basePath === '/' ? '' : basePath}/contact`;
+  const contactPath = localizedContactPath(language);
+  const globalSitesHref = getLocalizedPathForLanguage('/healthcare-market-research', language);
 
   const normalizedPathname = pathname.split('?')[0].replace(/\/$/, '') || '/';
 
@@ -54,14 +61,19 @@ const Navbar = () => {
 
   const currentLang = languages.find(l => l.code === language);
 
-  const insightsHref = getLocalizedPathForLanguage('/blog', language);
-
+  // Every entry resolves through the localized route groups so navigating never drops the
+  // language prefix — LanguageContext derives the UI language from the URL, so a bare
+  // /about link silently flips the whole site back to English.
   const navItems = [
     { key: 'home', href: basePath, label: t.nav.home },
-    { key: 'about', href: '/about', label: t.nav.about },
-    { key: 'services', href: '/services', label: t.nav.services },
-    { key: 'industries', href: '/bionixus-industries', label: t.nav.industries },
-    { key: 'insights', href: insightsHref, label: t.nav.insights },
+    { key: 'about', href: getLocalizedPathForLanguage('/about', language), label: t.nav.about },
+    { key: 'services', href: getLocalizedPathForLanguage('/services', language), label: t.nav.services },
+    {
+      key: 'industries',
+      href: getLocalizedPathForLanguage('/bionixus-industries', language),
+      label: t.nav.industries,
+    },
+    { key: 'insights', href: getLocalizedPathForLanguage('/blog', language), label: t.nav.insights },
   ];
 
   return (
@@ -100,20 +112,20 @@ const Navbar = () => {
           {/* Language Selector & CTA */}
           <div className="hidden md:flex items-center gap-4">
             <Link
-              to="/healthcare-market-research"
-              aria-label="Global Sites"
+              to={globalSitesHref}
+              aria-label={ui.nav.globalSites}
               className="group relative p-2 rounded-lg border border-border bg-background text-foreground/80 hover:bg-muted hover:text-foreground transition-colors"
             >
               <Globe2 className="w-4 h-4" />
               <span className="pointer-events-none absolute left-1/2 top-full mt-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-foreground px-2 py-1 text-xs text-background opacity-0 shadow-sm transition-opacity group-hover:opacity-100">
-                Global Sites
+                {ui.nav.globalSites}
               </span>
             </Link>
             <DropdownMenu>
               <DropdownMenuTrigger
                 type="button"
                 className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-muted transition-colors text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                aria-label={`Language: ${currentLang?.name ?? 'English'}`}
+                aria-label={`${ui.nav.language}: ${currentLang?.name ?? 'English'}`}
               >
                 <span aria-hidden>{currentLang?.flag}</span>
                 <span className="text-foreground/80">{currentLang?.code.toUpperCase()}</span>
@@ -134,9 +146,9 @@ const Navbar = () => {
             </DropdownMenu>
 
             <Link
-              to={localizedContactPath}
+              to={contactPath}
               className="px-5 py-2.5 bg-primary text-primary-foreground rounded-lg font-medium text-sm hover:opacity-90 transition-opacity"
-              aria-current={isActiveHref(localizedContactPath) ? 'page' : undefined}
+              aria-current={isActiveHref(contactPath) ? 'page' : undefined}
             >
               {t.nav.contact}
             </Link>
@@ -149,7 +161,7 @@ const Navbar = () => {
             onClick={() => setIsOpen(!isOpen)}
             aria-expanded={isOpen}
             {...(isOpen ? { 'aria-controls': 'mobile-primary-nav' } : {})}
-            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            aria-label={isOpen ? ui.nav.closeMenu : ui.nav.openMenu}
           >
             {isOpen ? (
               <X className="w-6 h-6 text-foreground" />
@@ -180,29 +192,30 @@ const Navbar = () => {
                 </Link>
               ))}
               <Link
-                to="/healthcare-market-research"
+                to={globalSitesHref}
                 className="text-foreground/80 hover:text-foreground font-medium"
                 onClick={() => setIsOpen(false)}
               >
-                Global Sites
+                {ui.nav.globalSites}
               </Link>
               <Link
-                to={localizedContactPath}
+                to={contactPath}
                 className="px-5 py-3 bg-primary text-primary-foreground rounded-lg font-medium text-sm text-center hover:opacity-90 transition-opacity"
                 onClick={() => setIsOpen(false)}
               >
                 {t.nav.contact}
               </Link>
               <div className="flex flex-wrap items-center gap-2 pt-4 border-t border-border">
-                <span className="text-xs text-muted-foreground w-full sm:w-auto">Language</span>
+                <span className="text-xs text-muted-foreground w-full sm:w-auto">{ui.nav.language}</span>
                 {languages.map((lang) => (
                   <button
                     key={lang.code}
                     type="button"
                     onClick={() => handleLanguageChange(lang.code)}
-                    aria-label={
-                      language === lang.code ? `${lang.name}, current language` : `Switch language to ${lang.name}`
-                    }
+                    aria-label={formatTemplate(
+                      language === lang.code ? ui.nav.languageCurrent : ui.nav.languageSwitchTo,
+                      { language: lang.name },
+                    )}
                     aria-pressed={language === lang.code}
                     className={`px-3 py-2 rounded-lg text-sm ${
                       language === lang.code

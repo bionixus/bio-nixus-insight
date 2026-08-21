@@ -1,9 +1,22 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 
+const AXIS_X = [20, 100, 180, 260, 340, 420, 470];
+const AXIS_YEARS = ['2020', '2021', '2022', '2023', '2024', '2025'];
+/** Chinese convention spells years out digit by digit rather than as a cardinal number. */
+const ZH_DIGITS = ['〇', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
+
 /** Market intelligence dashboard card — matches premium-home-preview.html hero visual. */
 export function PremiumHeroDashboard({ className = '' }: { className?: string }) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const d = t.homePage.heroDashboard;
+
+  const axisYears = [...AXIS_YEARS, t.ui.chart.forecastYear].map((year, index) => ({
+    label:
+      language === 'zh' && index < AXIS_YEARS.length
+        ? [...year].map((digit) => ZH_DIGITS[Number(digit)]).join('')
+        : year,
+    x: AXIS_X[index],
+  }));
 
   return (
     <div
@@ -41,15 +54,7 @@ export function PremiumHeroDashboard({ className = '' }: { className?: string })
           {[45, 90, 135].map((y) => (
             <line key={y} x1="0" y1={y} x2="500" y2={y} stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
           ))}
-          {[
-            ['2020', 20],
-            ['2021', 100],
-            ['2022', 180],
-            ['2023', 260],
-            ['2024', 340],
-            ['2025', 420],
-            ['26E', 470],
-          ].map(([label, x]) => (
+          {axisYears.map(({ label, x }) => (
             <text key={label} x={x} y="175" fill="rgba(255,255,255,0.25)" fontSize="10" fontFamily="Inter, sans-serif">
               {label}
             </text>

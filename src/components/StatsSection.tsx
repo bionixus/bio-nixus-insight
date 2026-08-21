@@ -1,11 +1,21 @@
 import { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { formatLocalizedNumber } from '@/lib/localizedNumbers';
 
-function parseStatValue(value: string): { number: number; suffix: string } {
-  const num = parseInt(value.replace(/\D/g, ''), 10);
-  if (Number.isNaN(num)) return { number: 0, suffix: value };
-  const suffix = value.includes('+') ? '+' : value.replace(/[\d]/g, '') || '';
-  return { number: num, suffix };
+/**
+ * Splits "127+" into its numeric target and the decoration around it, keeping the affix on the
+ * side it was authored on — the Arabic bundle writes "+38" rather than "38+".
+ */
+function parseStatValue(value: string): { number: number; prefix: string; suffix: string } {
+  const match = value.match(/(\d[\d,.\s]*)/);
+  if (!match) return { number: 0, prefix: value, suffix: '' };
+  const numeric = Number(match[1].replace(/[^\d]/g, ''));
+  if (Number.isNaN(numeric)) return { number: 0, prefix: value, suffix: '' };
+  return {
+    number: numeric,
+    prefix: value.slice(0, match.index ?? 0),
+    suffix: value.slice((match.index ?? 0) + match[1].length),
+  };
 }
 
 function easeOutExpo(t: number): number {
@@ -15,7 +25,7 @@ function easeOutExpo(t: number): number {
 const DURATION_MS = 1800;
 
 const StatsSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const sectionRef = useRef<HTMLElement>(null);
   const [hydrated, setHydrated] = useState(false);
   const [inView, setInView] = useState(false);
@@ -82,7 +92,8 @@ const StatsSection = () => {
               style={{ transitionDelay: hydrated ? `${index * 150}ms` : undefined }}
             >
               <div className={`text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gold-warm mb-3 tabular-nums ${done ? 'glow-pop' : ''}`}>
-                {counts[index] ?? parsed[index]?.number ?? 0}
+                {parsed[index]?.prefix ?? ''}
+                {formatLocalizedNumber(counts[index] ?? parsed[index]?.number ?? 0, language)}
                 {parsed[index]?.suffix ?? ''}
               </div>
               <div className={`text-primary-foreground/80 font-medium transition-all duration-500 ${done ? 'opacity-100' : 'opacity-60'}`}>

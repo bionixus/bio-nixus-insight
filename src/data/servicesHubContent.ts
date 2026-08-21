@@ -32,6 +32,66 @@ import {
   DE_SERVICE_FAQ,
   DE_SERVICES_HUB_COPY,
 } from './servicesHubContent.de';
+import {
+  FR_COMMERCIAL_OFFERINGS,
+  FR_HEALTHCARE_SERVICES,
+  FR_HERO_METRICS,
+  FR_HUB_LINKS,
+  FR_METHODOLOGY_SERVICES,
+  FR_RECOVERY_LINK_LABELS,
+  FR_SERVICE_FAQ,
+  FR_SERVICES_HUB_COPY,
+} from './servicesHubContent.fr';
+import {
+  ES_COMMERCIAL_OFFERINGS,
+  ES_HEALTHCARE_SERVICES,
+  ES_HERO_METRICS,
+  ES_HUB_LINKS,
+  ES_METHODOLOGY_SERVICES,
+  ES_RECOVERY_LINK_LABELS,
+  ES_SERVICE_FAQ,
+  ES_SERVICES_HUB_COPY,
+} from './servicesHubContent.es';
+import {
+  PT_COMMERCIAL_OFFERINGS,
+  PT_HEALTHCARE_SERVICES,
+  PT_HERO_METRICS,
+  PT_HUB_LINKS,
+  PT_METHODOLOGY_SERVICES,
+  PT_RECOVERY_LINK_LABELS,
+  PT_SERVICE_FAQ,
+  PT_SERVICES_HUB_COPY,
+} from './servicesHubContent.pt';
+import {
+  RU_COMMERCIAL_OFFERINGS,
+  RU_HEALTHCARE_SERVICES,
+  RU_HERO_METRICS,
+  RU_HUB_LINKS,
+  RU_METHODOLOGY_SERVICES,
+  RU_RECOVERY_LINK_LABELS,
+  RU_SERVICE_FAQ,
+  RU_SERVICES_HUB_COPY,
+} from './servicesHubContent.ru';
+import {
+  ZH_COMMERCIAL_OFFERINGS,
+  ZH_HEALTHCARE_SERVICES,
+  ZH_HERO_METRICS,
+  ZH_HUB_LINKS,
+  ZH_METHODOLOGY_SERVICES,
+  ZH_RECOVERY_LINK_LABELS,
+  ZH_SERVICE_FAQ,
+  ZH_SERVICES_HUB_COPY,
+} from './servicesHubContent.zh';
+import {
+  AR_COMMERCIAL_OFFERINGS,
+  AR_HEALTHCARE_SERVICES,
+  AR_HERO_METRICS,
+  AR_HUB_LINKS,
+  AR_METHODOLOGY_SERVICES,
+  AR_RECOVERY_LINK_LABELS,
+  AR_SERVICE_FAQ,
+  AR_SERVICES_HUB_COPY,
+} from './servicesHubContent.ar';
 
 export type HealthcareService = {
   slug: string;
@@ -290,19 +350,83 @@ export const HERO_METRICS = [
   { value: '9+', label: 'Fieldwork modes' },
 ] as const;
 
+const LOCALIZED_BUNDLES = {
+  de: {
+    copy: DE_SERVICES_HUB_COPY,
+    heroMetrics: DE_HERO_METRICS,
+    healthcareServices: DE_HEALTHCARE_SERVICES,
+    methodologyServices: DE_METHODOLOGY_SERVICES,
+    commercialOfferings: DE_COMMERCIAL_OFFERINGS,
+    hubLinks: DE_HUB_LINKS,
+    serviceFaq: DE_SERVICE_FAQ,
+    recoveryLabels: DE_RECOVERY_LINK_LABELS,
+  },
+  fr: {
+    copy: FR_SERVICES_HUB_COPY,
+    heroMetrics: FR_HERO_METRICS,
+    healthcareServices: FR_HEALTHCARE_SERVICES,
+    methodologyServices: FR_METHODOLOGY_SERVICES,
+    commercialOfferings: FR_COMMERCIAL_OFFERINGS,
+    hubLinks: FR_HUB_LINKS,
+    serviceFaq: FR_SERVICE_FAQ,
+    recoveryLabels: FR_RECOVERY_LINK_LABELS,
+  },
+  es: {
+    copy: ES_SERVICES_HUB_COPY,
+    heroMetrics: ES_HERO_METRICS,
+    healthcareServices: ES_HEALTHCARE_SERVICES,
+    methodologyServices: ES_METHODOLOGY_SERVICES,
+    commercialOfferings: ES_COMMERCIAL_OFFERINGS,
+    hubLinks: ES_HUB_LINKS,
+    serviceFaq: ES_SERVICE_FAQ,
+    recoveryLabels: ES_RECOVERY_LINK_LABELS,
+  },
+  pt: {
+    copy: PT_SERVICES_HUB_COPY,
+    heroMetrics: PT_HERO_METRICS,
+    healthcareServices: PT_HEALTHCARE_SERVICES,
+    methodologyServices: PT_METHODOLOGY_SERVICES,
+    commercialOfferings: PT_COMMERCIAL_OFFERINGS,
+    hubLinks: PT_HUB_LINKS,
+    serviceFaq: PT_SERVICE_FAQ,
+    recoveryLabels: PT_RECOVERY_LINK_LABELS,
+  },
+  ru: {
+    copy: RU_SERVICES_HUB_COPY,
+    heroMetrics: RU_HERO_METRICS,
+    healthcareServices: RU_HEALTHCARE_SERVICES,
+    methodologyServices: RU_METHODOLOGY_SERVICES,
+    commercialOfferings: RU_COMMERCIAL_OFFERINGS,
+    hubLinks: RU_HUB_LINKS,
+    serviceFaq: RU_SERVICE_FAQ,
+    recoveryLabels: RU_RECOVERY_LINK_LABELS,
+  },
+  zh: {
+    copy: ZH_SERVICES_HUB_COPY,
+    heroMetrics: ZH_HERO_METRICS,
+    healthcareServices: ZH_HEALTHCARE_SERVICES,
+    methodologyServices: ZH_METHODOLOGY_SERVICES,
+    commercialOfferings: ZH_COMMERCIAL_OFFERINGS,
+    hubLinks: ZH_HUB_LINKS,
+    serviceFaq: ZH_SERVICE_FAQ,
+    recoveryLabels: ZH_RECOVERY_LINK_LABELS,
+  },
+  ar: {
+    copy: AR_SERVICES_HUB_COPY,
+    heroMetrics: AR_HERO_METRICS,
+    healthcareServices: AR_HEALTHCARE_SERVICES,
+    methodologyServices: AR_METHODOLOGY_SERVICES,
+    commercialOfferings: AR_COMMERCIAL_OFFERINGS,
+    hubLinks: AR_HUB_LINKS,
+    serviceFaq: AR_SERVICE_FAQ,
+    recoveryLabels: AR_RECOVERY_LINK_LABELS,
+  },
+} as const;
+
 export function getServicesHubBundle(language: Language) {
-  if (language === 'de') {
-    return {
-      copy: DE_SERVICES_HUB_COPY,
-      heroMetrics: DE_HERO_METRICS,
-      healthcareServices: DE_HEALTHCARE_SERVICES,
-      methodologyServices: DE_METHODOLOGY_SERVICES,
-      commercialOfferings: DE_COMMERCIAL_OFFERINGS,
-      hubLinks: DE_HUB_LINKS,
-      serviceFaq: DE_SERVICE_FAQ,
-      recoveryLabels: DE_RECOVERY_LINK_LABELS,
-    };
-  }
+  const localized = LOCALIZED_BUNDLES[language as keyof typeof LOCALIZED_BUNDLES];
+  if (localized) return localized;
+
   return {
     copy: null,
     heroMetrics: HERO_METRICS,

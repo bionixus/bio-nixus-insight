@@ -176,6 +176,12 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
   '/services': {
     en: '/services',
     de: '/de/services',
+    fr: '/fr/services',
+    es: '/es/services',
+    zh: '/zh/services',
+    ar: '/ar/services',
+    pt: '/pt/services',
+    ru: '/ru/services',
   },
   '/blog': {
     en: '/blog',

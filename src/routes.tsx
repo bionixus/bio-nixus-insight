@@ -15,6 +15,7 @@ import Insights from '@/pages/Insights';
 import NewsHub from '@/pages/NewsHub';
 import Media from '@/pages/Media';
 import SiteMapPage from '@/pages/SiteMapPage';
+import VideosIndex from '@/pages/VideosIndex';
 import ServiceDetail from '@/pages/ServiceDetail';
 import Privacy from '@/pages/Privacy';
 import Terms from '@/pages/Terms';
@@ -381,6 +382,7 @@ const AdminAnalytics = lazy(() => import('@/pages/AdminAnalytics'));
 const AdminCalendar = lazy(() => import('@/pages/AdminCalendar'));
 const AdminCalendarNew = lazy(() => import('@/pages/AdminCalendarNew'));
 const AdminSendNewsletter = lazy(() => import('@/pages/AdminSendNewsletter'));
+const VideoWatchPage = lazy(() => import('@/pages/VideoWatchPage'));
 
 function suspensePage(node: ReactNode) {
   return <Suspense fallback={<RouteLoadingFallback />}>{node}</Suspense>;
@@ -407,6 +409,12 @@ export const routes: RouteObject[] = [
   { path: '/client-reviews', element: <ClientReviews /> },
   { path: '/services', element: <Services /> },
   { path: '/de/services', element: <Services /> },
+  { path: '/fr/services', element: <Services /> },
+  { path: '/es/services', element: <Services /> },
+  { path: '/zh/services', element: <Services /> },
+  { path: '/ar/services', element: <Services /> },
+  { path: '/pt/services', element: <Services /> },
+  { path: '/ru/services', element: <Services /> },
   { path: '/services/cross-industry', element: <CrossIndustryMarketResearch /> },
   { path: '/services/:slug', element: <ServiceDetail /> },
   { path: '/faq', element: <FAQ /> },
@@ -646,6 +654,8 @@ export const routes: RouteObject[] = [
   { path: '/news', element: <NewsHub /> },
   { path: '/news/:slug', element: suspensePage(<PressReleasePage />) },
   { path: '/media', element: <Media /> },
+  { path: '/videos', element: <VideosIndex /> },
+  { path: '/videos/:slug', element: suspensePage(<VideoWatchPage />) },
   { path: '/blog', element: <Blog /> },
   { path: '/de/blog', element: <Blog /> },
   { path: '/de/blog/:slug', element: suspensePage(<BlogPost />) },

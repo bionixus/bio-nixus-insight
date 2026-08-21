@@ -101,7 +101,7 @@ const HeroSection = () => {
 
             <div className="flex items-center gap-5">
               <div className="flex -space-x-2.5" aria-hidden="true">
-                {['PF', 'RO', 'NV', 'AZ'].map((initials, i) => (
+                {t.ui.brands.initials.map((initials, i) => (
                   <span
                     key={initials}
                     className={`flex h-[38px] w-[38px] items-center justify-center rounded-full border-2 border-[#06101F] text-[11px] font-semibold text-white ${

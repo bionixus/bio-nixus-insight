@@ -97,7 +97,7 @@ const faqJsonLd = (items: readonly { question: string; answer: string }[]) => ({
 });
 
 const Services = () => {
-  const { language } = useLanguage();
+  const { language, isRTL } = useLanguage();
   const bundle = getServicesHubBundle(language);
   const copy = bundle.copy;
   const healthcareServices = bundle.healthcareServices;
@@ -168,7 +168,7 @@ const Services = () => {
         jsonLd={jsonLd}
       />
       <Navbar />
-      <main dir="ltr" lang={language}>
+      <main dir={isRTL ? 'rtl' : 'ltr'} lang={language}>
         <div className="section-padding pt-24 pb-2">
           <div className="container-wide">
             <BreadcrumbNav items={breadcrumbItems} />

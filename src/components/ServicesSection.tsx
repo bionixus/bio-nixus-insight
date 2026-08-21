@@ -9,6 +9,10 @@ import {
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import type { HomePageUiOverlay } from '@/lib/homePageUiStrings';
+import { localizedContactPath } from '@/lib/seo';
+
+type ServicesOverlayCopy = NonNullable<HomePageUiOverlay['services']>;
 
 const icons = [TrendingUp, Target, Users, Microscope, Rocket, BarChart3];
 
@@ -30,6 +34,9 @@ type SecondaryDeBlock = { title: string; intro: string; items: string[] };
 const ServicesSection = () => {
   const { t, language } = useLanguage();
   const sectionRef = useScrollReveal<HTMLElement>({ stagger: 100 });
+  // getTranslations layers homePageUiStrings over t.services, but the English bundle type
+  // does not declare those keys, so read them through the overlay shape.
+  const servicesCopy = t.services as typeof t.services & ServicesOverlayCopy;
   const rawPrimaryAr = 'servicePrimaryAr' in t.services ? (t.services as { servicePrimaryAr?: PrimaryArBlock | PrimaryArBlock[] }).servicePrimaryAr : undefined;
   const primaryBlocks: PrimaryArBlock[] = Array.isArray(rawPrimaryAr) ? rawPrimaryAr : (rawPrimaryAr ? [rawPrimaryAr] : []);
   const rawSecondaryAr = 'serviceSecondaryAr' in t.services ? (t.services as { serviceSecondaryAr?: SecondaryArBlock | SecondaryArBlock[] }).serviceSecondaryAr : undefined;
@@ -391,7 +398,7 @@ const ServicesSection = () => {
               <>
                 {showCountryDepthBadge ? (
                   <span className="inline-flex mb-3 rounded-full bg-primary/15 px-2.5 py-1 text-[11px] font-semibold text-primary">
-                    Country-Level Depth
+                    {servicesCopy.countryDepthBadge}
                   </span>
                 ) : null}
                 <div className="w-14 h-14 rounded-xl bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors">
@@ -437,14 +444,12 @@ const ServicesSection = () => {
         </div>
 
         <div className="mt-10 rounded-xl border border-primary/20 bg-primary/5 p-6 text-center sr sr-up">
-          <p className="text-foreground font-medium mb-4">
-            Need a tailored healthcare market research scope for your pharmaceutical priorities?
-          </p>
+          <p className="text-foreground font-medium mb-4">{servicesCopy.bottomCtaPrompt}</p>
           <Link
-            to="/contact"
+            to={localizedContactPath(language)}
             className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
           >
-            Request a proposal
+            {servicesCopy.bottomCtaButton}
           </Link>
         </div>
       </div>

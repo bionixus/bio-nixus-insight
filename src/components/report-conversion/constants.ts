@@ -51,6 +51,23 @@ export function getReportPhoneLines(): ReportPhoneLine[] {
   return BIONIXUS_PHONE_LINES;
 }
 
+const PHONE_ENTRIES = [
+  { tel: BIONIXUS_PHONE_US, display: BIONIXUS_PHONE_US_DISPLAY },
+  { tel: BIONIXUS_PHONE_UK, display: BIONIXUS_PHONE_UK_DISPLAY },
+  { tel: BIONIXUS_PHONE_EG, display: BIONIXUS_PHONE_EG_DISPLAY },
+] as const;
+
+/** Same numbers as BIONIXUS_PHONE_LINES with the region prefix in the active UI language. */
+export function localizedPhoneLines(
+  regionLabels: readonly [string, string, string],
+): ReportPhoneLine[] {
+  return PHONE_ENTRIES.map((entry, index) => ({
+    tel: entry.tel,
+    regionLabel: regionLabels[index],
+    label: `${regionLabels[index]} ${entry.display}`,
+  }));
+}
+
 export function mailtoHref(subject: string): string {
   return `mailto:${BIONIXUS_EMAIL}?subject=${encodeURIComponent(subject)}`;
 }

@@ -4,11 +4,13 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { BIONIXUS_UK_AGGREGATE_RATING } from '@/data/googleReviewsUk';
 import { HAPPY_CLIENTS_COUNT } from '@/data/clientReviews';
+import { formatLocalizedDecimal, formatLocalizedNumber } from '@/lib/localizedNumbers';
 
 export function ClientReviewsTeaser() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const copy = t.clientReviewsTeaser as typeof t.clientReviewsTeaser & { happyClientsCount?: string };
-  const clientCount = copy.happyClientsCount ?? String(HAPPY_CLIENTS_COUNT);
+  const clientCount =
+    copy.happyClientsCount ?? formatLocalizedNumber(HAPPY_CLIENTS_COUNT, language);
   const sectionRef = useScrollReveal<HTMLElement>({ stagger: 80 });
 
   return (
@@ -35,7 +37,8 @@ export function ClientReviewsTeaser() {
             </span>
             <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2">
               <Star className="w-4 h-4 fill-amber-400 text-amber-400" aria-hidden="true" />
-              {BIONIXUS_UK_AGGREGATE_RATING.ratingValue.toFixed(1)} {copy.googleRatingSuffix}
+              {formatLocalizedDecimal(BIONIXUS_UK_AGGREGATE_RATING.ratingValue, language)}{' '}
+              {copy.googleRatingSuffix}
             </span>
           </div>
           <Link
