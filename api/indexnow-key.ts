@@ -80,6 +80,60 @@ function applyHtmlLang(template: string, pathname: string): string {
   return template.replace(/<html[^>]*>/i, `<html lang="${lang}" dir="${dir}">`);
 }
 
+type ShareCardCopy = {
+  caption: string;
+  /** Takes the canonical URL so the alt text stays unique per page. */
+  alt: (url: string) => string;
+  openInNewTab: string;
+};
+
+const SHARE_CARD_COPY: Record<string, ShareCardCopy> = {
+  en: {
+    caption: 'Share this page —',
+    alt: (url) => `BioNixus share card for ${url}`,
+    openInNewTab: 'Open the share card for this page in a new tab',
+  },
+  de: {
+    caption: 'Diese Seite teilen —',
+    alt: (url) => `BioNixus-Sharekarte für ${url}`,
+    openInNewTab: 'Die Sharekarte dieser Seite in einem neuen Tab öffnen',
+  },
+  fr: {
+    caption: 'Partager cette page —',
+    alt: (url) => `Carte de partage BioNixus pour ${url}`,
+    openInNewTab: 'Ouvrir la carte de partage de cette page dans un nouvel onglet',
+  },
+  es: {
+    caption: 'Compartir esta página —',
+    alt: (url) => `Tarjeta para compartir de BioNixus para ${url}`,
+    openInNewTab: 'Abrir la tarjeta para compartir de esta página en una pestaña nueva',
+  },
+  pt: {
+    caption: 'Compartilhar esta página —',
+    alt: (url) => `Cartão de compartilhamento da BioNixus para ${url}`,
+    openInNewTab: 'Abrir o cartão de compartilhamento desta página em uma nova aba',
+  },
+  ru: {
+    caption: 'Поделиться этой страницей —',
+    alt: (url) => `Карточка BioNixus для публикации страницы ${url}`,
+    openInNewTab: 'Открыть карточку публикации этой страницы в новой вкладке',
+  },
+  'zh-CN': {
+    caption: '分享本页 —',
+    alt: (url) => `${url} 的 BioNixus 分享卡片`,
+    openInNewTab: '在新标签页中打开本页的分享卡片',
+  },
+  ar: {
+    caption: 'شارك هذه الصفحة —',
+    alt: (url) => `بطاقة مشاركة بيونكسس للصفحة ${url}`,
+    openInNewTab: 'فتح بطاقة مشاركة هذه الصفحة في تبويب جديد',
+  },
+};
+
+function getShareCardCopy(pathname: string): ShareCardCopy {
+  return SHARE_CARD_COPY[inferHtmlLang(pathname).lang] ?? SHARE_CARD_COPY.en;
+}
+
 const TITLE_UPPERCASE_TOKENS = new Set([
   'uae', 'ksa', 'gcc', 'mena', 'emea', 'heor', 'rwe', 'kol', 'hta', 'nice',
   'ai', 'amnog', 'sfda', 'hcv', 'moh', 'mohap', 'kfda', 'fda', 'cns', 'usa',
@@ -475,13 +529,14 @@ function ensureMainContentImage(html: string, pathname: string): string {
   const normalizedPath = cleanPath === '/' ? '/' : cleanPath.replace(/\/+$/, '');
   const encodedPath = encodeURIComponent(normalizedPath);
   const fullUrl = `https://www.bionixus.com${normalizedPath === '/' ? '' : normalizedPath}`;
-  const altText = `BioNixus share card for ${fullUrl}`;
+  const copy = getShareCardCopy(pathname);
+  const altText = escapeHtmlAttribute(copy.alt(fullUrl));
   const figureHtml = `<aside data-page-share class="mt-10 mb-8">
   <figure class="mx-auto max-w-sm rounded-lg overflow-hidden border border-border bg-card shadow-sm">
-    <a href="/api/og-card?path=${encodedPath}" target="_blank" rel="noopener" class="block" aria-label="Open the share card for this page in a new tab">
+    <a href="/api/og-card?path=${encodedPath}" target="_blank" rel="noopener" class="block" aria-label="${escapeHtmlAttribute(copy.openInNewTab)}">
       <img src="/api/og-card?path=${encodedPath}" alt="${altText}" title="${altText}" width="400" height="210" loading="lazy" decoding="async" fetchpriority="low" class="block w-full h-auto max-w-sm" />
     </a>
-    <figcaption class="px-3 py-2 text-xs text-muted-foreground border-t border-border">Share this page — <strong class="text-foreground">BioNixus</strong></figcaption>
+    <figcaption class="px-3 py-2 text-xs text-muted-foreground border-t border-border">${copy.caption} <strong class="text-foreground">BioNixus</strong></figcaption>
   </figure>
 </aside>`;
 
