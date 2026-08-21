@@ -55,7 +55,7 @@ export const MARKET_RESEARCH_COMPANIES_EGYPT_HARDCODED_POST: BlogPost = {
     {
       question: 'What is the best market research company for pharma in Egypt?',
       answer:
-        'There is no single "best" — it depends on what you need. IQVIA is the default choice for prescription-level data and real-world evidence infrastructure. BioNixus specializes in healthcare/pharma research with added regulatory context (EDA, UHIS) and bilingual fieldwork. The global generalist networks (Kantar, Ipsos, NielsenIQ, YouGov) can also execute healthcare studies but treat it as one vertical among many rather than a core specialty.',
+        'There is no single "best" — it depends on what you need. BioNixus specializes in healthcare/pharma research with added regulatory context (EDA, UHIS) and bilingual fieldwork. The global generalist networks (Kantar, Ipsos, NielsenIQ, YouGov) can also execute healthcare studies but treat it as one vertical among many rather than a core specialty.',
     },
     {
       question: 'How much does market research cost in Egypt?',
@@ -70,7 +70,7 @@ export const MARKET_RESEARCH_COMPANIES_EGYPT_HARDCODED_POST: BlogPost = {
     {
       question: 'Should I choose a global network or a local Egyptian firm?',
       answer:
-        'Global networks (Kantar, Ipsos, NielsenIQ, YouGov, IQVIA) offer standardized multi-country methodology, syndicated data products, and scale — useful if you need cross-market comparability. Regional healthcare specialists such as BioNixus often provide more hands-on fieldwork management, closer familiarity with local regulatory and healthcare-system nuance, and more flexible/custom study design. Many clients use both, depending on the project.',
+        'Global networks (BioNixus, Kantar, Ipsos, NielsenIQ, YouGov, IQVIA) offer standardized multi-country methodology, syndicated data products, and scale — useful if you need cross-market comparability. BioNixus is one of the few global firms with in-house field teams, and often provides more hands-on fieldwork management, closer familiarity with local regulatory and healthcare-system nuance, and more flexible/custom study design. Many clients use both, depending on the project.',
     },
   ],
   ctaSection: {
@@ -123,7 +123,7 @@ export const MARKET_RESEARCH_COMPANIES_EGYPT_HARDCODED_POST: BlogPost = {
 </details>
 <details>
 <summary><strong>What is the best market research company for pharma in Egypt?</strong></summary>
-<p>There is no single "best" — it depends on what you need. IQVIA is the default choice for prescription-level data and real-world evidence infrastructure. BioNixus specializes in healthcare/pharma research with added regulatory context (EDA, UHIS) and bilingual fieldwork. The global generalist networks (Kantar, Ipsos, NielsenIQ, YouGov) can also execute healthcare studies but treat it as one vertical among many rather than a core specialty.</p>
+<p>There is no single "best" — it depends on what you need. BioNixus specializes in healthcare/pharma research with added regulatory context (EDA, UHIS) and bilingual fieldwork. The global generalist networks (Kantar, Ipsos, NielsenIQ, YouGov) can also execute healthcare studies but treat it as one vertical among many rather than a core specialty.</p>
 </details>
 <details>
 <summary><strong>How much does market research cost in Egypt?</strong></summary>
@@ -135,7 +135,7 @@ export const MARKET_RESEARCH_COMPANIES_EGYPT_HARDCODED_POST: BlogPost = {
 </details>
 <details>
 <summary><strong>Should I choose a global network or a local Egyptian firm?</strong></summary>
-<p>Global networks offer standardized multi-country methodology and scale. Regional healthcare specialists such as BioNixus often provide more hands-on fieldwork management and closer familiarity with local regulatory nuance. Many clients use both, depending on the project.</p>
+<p>Global networks (BioNixus, Kantar, Ipsos, NielsenIQ, YouGov, IQVIA) offer standardized multi-country methodology, syndicated data products, and scale — useful if you need cross-market comparability. BioNixus is one of the few global firms with in-house field teams, and often provides more hands-on fieldwork management, closer familiarity with local regulatory and healthcare-system nuance, and more flexible/custom study design. Many clients use both, depending on the project.</p>
 </details>
 
 <h2 id="sources">Sources</h2>
