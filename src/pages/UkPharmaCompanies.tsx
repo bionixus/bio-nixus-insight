@@ -194,7 +194,7 @@ const UkPharmaCompanies = () => {
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">How BioNixus Supports Pharma Companies in the UK</h2>
           <p className="text-muted-foreground mb-10 max-w-3xl">
             BioNixus supports pharma and biotech programmes in the UK and globally. For company-level UK programmes, see our{' '}
-            <Link to="/uk-pharmaceutical-market-research" className="text-primary hover:underline font-medium">market research company for UK pharma</Link>. We help with:
+            <Link to="/pharmaceutical-market-research-uk" className="text-primary hover:underline font-medium">market research company for UK pharma</Link>. We help with:
           </p>
           <div className="grid md:grid-cols-2 gap-6 mb-10">{[
             { title: 'Physician Surveys & KOL Mapping', desc: 'Research with UK physicians across NHS Trusts, primary care, and specialty centres.' },

@@ -8,6 +8,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { resolveRedirectHrefPath } from '../lib/fix-broken-internal-hrefs.mjs';
+import { collectRegisteredRoutes, isRoutablePath } from './lib/registered-routes.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
@@ -91,15 +92,17 @@ function parseReportRows(text) {
   return rows;
 }
 
-function main() {
+async function main() {
   if (!fs.existsSync(csvPath)) {
     throw new Error(`internal-link-report.csv missing: ${csvPath}`);
   }
   const csvText = fs.readFileSync(csvPath, 'utf8').replace(/^\uFEFF/, '');
   const parsed = parseReportRows(csvText);
+  const routeSet = await collectRegisteredRoutes();
   const threshold = 5;
   /** @type {Map<string,string>} */
   const byPath = new Map();
+  const dropped = [];
 
   for (const { url, count } of parsed) {
     if (!Number.isFinite(count) || count >= threshold) continue;
@@ -108,9 +111,21 @@ function main() {
     const resolved = resolveRedirectHrefPath(to);
     if (resolved) to = resolved;
     if (to.startsWith('/global-websites')) continue;
+    // A crawl-report URL with no registered route would send sitewide
+    // internal links straight to the NotFound catch-all — skip it.
+    if (!isRoutablePath(to, routeSet)) {
+      dropped.push(to);
+      continue;
+    }
     if (!byPath.has(to)) {
       byPath.set(to, pathnameToLabel(to));
     }
+  }
+
+  if (dropped.length > 0) {
+    console.warn(
+      `[generate-internal-link-targets] dropped ${dropped.length} unroutable targets:\n  ${dropped.join('\n  ')}`,
+    );
   }
 
   const sorted = [...byPath.entries()].sort((a, b) => a[0].localeCompare(b[0]));
@@ -144,4 +159,4 @@ export const LOW_INTERNAL_LINK_PATHS: readonly string[] = LOW_INTERNAL_LINK_TARG
   console.info(`[generate-internal-link-targets] wrote ${sorted.length} targets → ${path.relative(root, outPath)}`);
 }
 
-main();
+await main();

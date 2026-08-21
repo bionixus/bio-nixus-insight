@@ -72,8 +72,8 @@ const BahrainPharmaCompanies = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Pharmaceutical Companies in Bahrain: 2026 Ranked List & Data</title>
-        <meta name="description" content="Every major pharmaceutical company in Bahrain ranked for 2026, with market size, NHRA regulation and import structure. Research by BioNixus." />
+        <title>Top 16 Pharmaceutical Companies in Bahrain (2026 Ranked)</title>
+        <meta name="description" content="Top 16 pharmaceutical companies in Bahrain ranked for 2026 — NHRA regulation, import structure and market size. Research by BioNixus." />
         <link rel="canonical" href={citationUrl} />
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesItemListLd(citationUrl, pharmaCompanies.map((c) => c.name)))}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', image: 'https://www.bionixus.com/og-image.png', headline: 'Pharmaceutical Companies in Bahrain: Complete Industry Guide 2026', description: 'Comprehensive guide to pharmaceutical companies operating in Bahrain — local manufacturers, MNC offices, distributors, $0.3B market data, NHRA regulatory landscape, and Vision 2030 outlook.', url: citationUrl, datePublished: '2026-02-15', dateModified: '2026-02-15', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' } })}</script>

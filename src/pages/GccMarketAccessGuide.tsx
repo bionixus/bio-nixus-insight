@@ -175,7 +175,7 @@ const GccMarketAccessGuide = () => {
             description: 'Complete guide to pharmaceutical drug registration, pricing, and reimbursement across the 6 GCC countries: Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman.',
             url: citationUrl,
             datePublished: '2026-01-15',
-            dateModified: '2026-06-16',
+            dateModified: '2026-08-22',
             author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
             publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
           })}
@@ -246,10 +246,11 @@ const GccMarketAccessGuide = () => {
               GCC pharmaceutical market access guide 2026 — registration, pricing, and reimbursement
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
-              Everything pharmaceutical companies need to know about drug registration, pricing, and reimbursement across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman. Regulatory authority requirements, timelines, and practical guidance from BioNixus.
+              Everything pharmaceutical companies need to know about drug registration, pricing, and reimbursement across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman. Regulatory authority requirements, timelines, and practical guidance from BioNixus — part of our{' '}
+              <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">healthcare market research</Link> coverage.
             </p>
             <p className="text-sm text-muted-foreground">
-              Last updated: February 2026 &middot; Sources: SFDA, MOHAP, DHA, DOH, MOPH, NHRA, MOH regulatory publications
+              Last updated: August 2026 &middot; Sources: SFDA, MOHAP, DHA, DOH, MOPH, NHRA, MOH regulatory publications
             </p>
 
             {/* Citation box */}

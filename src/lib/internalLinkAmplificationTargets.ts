@@ -49,7 +49,7 @@ export const INTERNAL_LINK_PRIORITY_TARGETS: ReadonlyArray<{ to: string; label: 
     label: 'Saudi Arabian pharmaceutical market 2026 (Arabic canonical)',
   },
   {
-    to: '/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement',
+    to: '/blog/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement',
     label: 'Blog — Skyrizi omnichannel engagement rankings',
   },
   {

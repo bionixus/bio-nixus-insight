@@ -1,0 +1,118 @@
+import { CountryCompaniesGuide, type CountryCompaniesGuideConfig } from '@/components/seo/CountryCompaniesGuide';
+
+const config: CountryCompaniesGuideConfig = {
+  path: '/medical-device-companies-japan',
+  countryName: 'Japan',
+  industry: 'medical device',
+  title: 'Top 18 Medical Device Companies in Japan (2026 Ranked)',
+  metaDescription:
+    'Top 18 medical device companies in Japan ranked for 2026 — Terumo, Olympus, Nipro, Canon Medical, PMDA Shonin pathways and market size. Research by BioNixus.',
+  h1: 'Medical Device Companies in Japan',
+  introLead: 'Medical device companies in Japan compete in the world\'s third-largest device market — roughly US$32–35 billion',
+  introRest: 'This guide ranks Terumo, Olympus, Nipro, Canon Medical and the other leaders, and explains PMDA Shonin/Ninsho approvals, the biennial reimbursement price revisions, and the distributor structure foreign entrants must navigate.',
+  stats: [
+    { value: '~$32–35B', label: 'Japan device market 2026' },
+    { value: '#3', label: 'Largest device market globally' },
+    { value: '29.3%', label: 'Population aged 65+' },
+    { value: '~12 months', label: 'Typical PMDA Shonin review' },
+  ],
+  quickAnswer: {
+    marketSize: 'approximately USD 32–35 billion',
+    growthRate: '~3–4% YoY',
+    regulatorLabel: 'the PMDA under Japan\'s PMD Act, with MHLW setting reimbursement prices',
+    extraSentence: 'Japan is roughly 50% import-dependent in devices, and the biennial MHLW price revisions systematically compress reimbursement — pricing strategy matters as much as approval.',
+  },
+  marketOverviewParagraphs: [
+    'Japan is the world\'s third-largest medical device market at approximately US$32–35 billion in 2026, driven by the most aged population on earth — 29.3% over 65 — universal insurance coverage, and one of the highest per-capita imaging and endoscopy densities globally.',
+    'Domestic champions lead specific categories: Terumo (vascular, blood management), Olympus (global endoscopy monopoly-scale share), Nipro (dialysis, injectables), Canon Medical and Fujifilm (imaging), Asahi Intecc (guidewires), Sysmex (hematology IVD), and Hoya (endoscopy, optics). Yet Japan imports roughly half its devices — US and European majors hold strong positions in orthopaedics, cardiology, and surgical robotics.',
+    'Approval runs through the PMDA: Ninsho (certification) for controlled Class II devices via registered certification bodies, and Shonin (approval) for higher-risk devices — typically ~12 months for new devices with foreign clinical data increasingly accepted. Reimbursement listing under MHLW\'s functional category system, with biennial price revisions and the Foreign Average Price rule, defines the commercial ceiling.',
+  ],
+  companies: [
+    { name: 'Terumo', hq: 'Japan', type: 'Local Manufacturer', therapeuticAreas: 'Vascular intervention, blood & cell tech, cardiovascular', notes: 'Japan\'s largest device maker' },
+    { name: 'Olympus', hq: 'Japan', type: 'Local Manufacturer', therapeuticAreas: 'GI endoscopy, surgical, respiratory', notes: '~70% global GI endoscopy share' },
+    { name: 'Nipro', hq: 'Japan', type: 'Local Manufacturer', therapeuticAreas: 'Dialysis, injectables, regenerative', notes: 'Renal care leader' },
+    { name: 'Canon Medical Systems', hq: 'Japan', type: 'Local Manufacturer', therapeuticAreas: 'CT, MRI, ultrasound, healthcare IT', notes: 'Imaging major (ex-Toshiba)' },
+    { name: 'Fujifilm Healthcare', hq: 'Japan', type: 'Local Manufacturer', therapeuticAreas: 'Imaging, endoscopy, IVD, AI', notes: 'Acquired Hitachi imaging' },
+    { name: 'Sysmex', hq: 'Japan', type: 'Local Manufacturer', therapeuticAreas: 'Hematology, urinalysis, liquid biopsy', notes: 'Global hematology IVD leader' },
+    { name: 'Asahi Intecc', hq: 'Japan', type: 'Local Manufacturer', therapeuticAreas: 'PTCA guidewires, catheters', notes: 'Global interventional guidewire leader' },
+    { name: 'Hoya', hq: 'Japan', type: 'Local Manufacturer', therapeuticAreas: 'Endoscopes, IOLs, optics', notes: 'Pentax Medical parent' },
+    { name: 'Nihon Kohden', hq: 'Japan', type: 'Local Manufacturer', therapeuticAreas: 'Patient monitoring, EEG, defibrillators', notes: 'Monitoring market leader in Japan' },
+    { name: 'Omron Healthcare', hq: 'Japan', type: 'Local Manufacturer', therapeuticAreas: 'BP monitors, home health', notes: 'Consumer-medical crossover' },
+    { name: 'Medtronic Japan', hq: 'USA / Ireland', type: 'MNC Office', therapeuticAreas: 'CRM, spine, surgical, diabetes', notes: 'Largest foreign device MNC in Japan' },
+    { name: 'Johnson & Johnson MedTech Japan', hq: 'USA', type: 'MNC Office', therapeuticAreas: 'Surgery, orthopaedics, vision', notes: 'Major surgical franchise' },
+    { name: 'Abbott Japan', hq: 'USA', type: 'MNC Office', therapeuticAreas: 'Cardiovascular, diagnostics, CGM', notes: 'Libre growth market' },
+    { name: 'Boston Scientific Japan', hq: 'USA', type: 'MNC Office', therapeuticAreas: 'Cardiology, endoscopy, urology', notes: 'Fast-growing interventional franchise' },
+    { name: 'Siemens Healthineers Japan', hq: 'Germany', type: 'MNC Office', therapeuticAreas: 'Imaging, diagnostics', notes: 'Competes with domestic imaging trio' },
+    { name: 'GE HealthCare Japan', hq: 'USA', type: 'MNC Office', therapeuticAreas: 'Imaging, ultrasound, monitoring', notes: 'Long-established local manufacturing' },
+    { name: 'Stryker Japan', hq: 'USA', type: 'MNC Office', therapeuticAreas: 'Orthopaedics, med-surg', notes: 'Ortho import leader' },
+    { name: 'Suzuken / Medipal (device arms)', hq: 'Japan', type: 'Distributor', therapeuticAreas: 'Device & pharma distribution', notes: 'National distribution networks' },
+  ],
+  categoryBlurbs: {
+    local: 'Domestic manufacturers dominate endoscopy, imaging, monitoring, IVD, and interventional consumables: Terumo, Olympus, Nipro, Canon Medical, Fujifilm, Sysmex, Asahi Intecc, Hoya, Nihon Kohden, and Omron.',
+    mnc: 'US and European majors — Medtronic, J&J MedTech, Abbott, Boston Scientific, Siemens Healthineers, GE HealthCare, Stryker — supply roughly half the market, strongest in orthopaedics, cardiology, and robotics.',
+    regional: 'Category specialists such as JMS, Kaneka, and Toray Medical hold strong niches in dialysis, interventional, and blood purification.',
+    distributor: 'Device distribution runs through dealer networks tied to Suzuken, Medipal, and regional specialty dealers — most foreign entrants appoint a Marketing Authorization Holder (MAH/D-MAH) plus dealers.',
+  },
+  regulator: {
+    short: 'PMDA',
+    full: 'Pharmaceuticals and Medical Devices Agency (PMD Act; MHLW sets reimbursement)',
+    registrationTimeline: 'Ninsho certification 4–6 months; Shonin approval ~12 months for new devices',
+    renewalPeriod: 'No routine re-approval; QMS conformity every 5 years',
+    pricingModel: 'MHLW functional-category reimbursement with biennial price revisions and Foreign Average Price cap',
+    requirements: [
+      'Marketing Authorization Holder (MAH or Designated MAH) in Japan',
+      'Class-based pathway: Todokede notification, Ninsho certification, or Shonin approval',
+      'QMS ordinance (ISO 13485-based) conformity assessment',
+      'Japanese-language labelling and UDI',
+      'Reimbursement listing application to MHLW (functional category or new-category C1/C2)',
+      'Post-market GVP/GQP obligations',
+    ],
+    note: 'The commercial constraint in Japan is pricing, not approval: MHLW\'s biennial revisions cut listed prices, and the Foreign Average Price rule caps reimbursement at 1.25–1.5x the average of US/EU prices. New-function C1/C2 categories can earn premiums; foreign clinical data is broadly accepted, and Sakigake/priority review accelerates innovative devices.',
+  },
+  growthDrivers: [
+    { title: 'Super-Aged Demographics', desc: '29.3% of Japanese are 65+ — sustained volume growth in cardiology, orthopaedics, and chronic monitoring.' },
+    { title: 'Surgical Robotics Expansion', desc: 'Reimbursed robotic procedures keep expanding; Medicaroid\'s hinotori adds domestic competition to da Vinci.' },
+    { title: 'Endoscopy & Early Cancer Screening', desc: 'National screening programs sustain the world\'s densest endoscopy market — Olympus, Fujifilm, Hoya home turf.' },
+    { title: 'Imaging AI & SaMD', desc: 'PMDA\'s SaMD pathway and imaging AI reimbursement additions open software-driven categories.' },
+    { title: 'Home & Remote Care', desc: 'Government policy shifts care to home settings — monitoring, dialysis, and telehealth devices benefit.' },
+    { title: 'Domestic Innovation Policy', desc: 'METI/AMED funding and priority review push Japanese-origin innovation in regenerative and robotic devices.' },
+  ],
+  bionixusServices: [
+    { title: 'Physician & KOL Research', desc: 'Japanese-language fieldwork with surgeons, cardiologists, and endoscopists across university and community hospitals.' },
+    { title: 'Reimbursement & Pricing Research', desc: 'Functional-category mapping, C1/C2 premium assessment, and biennial revision impact modelling.' },
+    { title: 'Distributor & MAH Assessment', desc: 'D-MAH selection support and dealer network evaluation for market entry.' },
+    { title: 'Japan vs Global Benchmarking', desc: 'Launch-sequencing research weighing Japan against US, EU, and Asian market entries.' },
+  ],
+  faq: [
+    { q: 'What are the top medical device companies in Japan?', a: 'Domestic leaders are Terumo, Olympus, Nipro, Canon Medical, Fujifilm Healthcare, Sysmex, Asahi Intecc, Hoya, Nihon Kohden, and Omron Healthcare. Among foreign MNCs, Medtronic, J&J MedTech, Abbott, Boston Scientific, GE HealthCare, Siemens Healthineers, and Stryker hold the largest Japan franchises.' },
+    { q: 'How big is Japan\'s medical device market?', a: 'Approximately US$32–35 billion in 2026 — the third-largest globally after the USA and China — growing 3–4% annually on demographics and technology adoption, with roughly half of demand met by imports.' },
+    { q: 'How does PMDA device approval work?', a: 'Japan uses three class-based routes: Todokede self-notification for Class I, Ninsho third-party certification for controlled Class II (4–6 months), and PMDA Shonin approval for higher-risk devices (~12 months for new devices). A Japan-based Marketing Authorization Holder (MAH or D-MAH) is mandatory.' },
+    { q: 'How does device reimbursement work in Japan?', a: 'Devices are reimbursed under MHLW functional categories. Existing-category products take the listed price; novel devices apply for C1/C2 new-function categories with possible premiums. Prices are revised (usually downward) every two years, and the Foreign Average Price rule caps prices relative to US/EU averages.' },
+    { q: 'Can foreign device companies sell directly in Japan?', a: 'Yes — either by establishing a subsidiary as MAH or appointing a Designated MAH (D-MAH), then selling through Japan\'s dealer networks. Foreign clinical data is broadly accepted, but Japanese-language labelling, QMS conformity, and local vigilance are required.' },
+    { q: 'Which segments are growing fastest in Japan?', a: 'Surgical robotics, SaMD/imaging AI, structural heart and electrophysiology, CGM, and home-care devices are the fastest growers — all supported by reimbursement additions and Japan\'s aging demographics.' },
+  ],
+  relatedLinks: [
+    { to: '/japan-medical-devices-market-report', label: 'Japan medical devices market report 2026' },
+    { to: '/medical-device-companies-usa', label: 'Medical device companies in USA' },
+    { to: '/medical-device-companies-saudi-arabia', label: 'Medical device companies in Saudi Arabia' },
+    { to: '/pharmaceutical-companies-japan', label: 'Pharmaceutical companies in Japan' },
+    { to: '/china-medical-devices-market-report', label: 'China medical devices market report 2026' },
+  ],
+  sources: [
+    'PMDA approval and certification databases',
+    'MHLW reimbursement price listings',
+    'JFMDA (Japan Federation of Medical Devices Associations) statistics',
+    'Company filings (TSE-listed manufacturers)',
+    'BioNixus proprietary research (Japan, 2024–2026)',
+  ],
+  publishedDate: '2026-08-22',
+  modifiedDate: '2026-08-22',
+  conversion: {
+    routingHint: 'Mention PMDA pathway, reimbursement category, or KOL research priorities for a faster routed response.',
+    emailSubject: 'Japan medical device market research — BioNixus',
+  },
+};
+
+const JapanMedicalDeviceCompanies = () => <CountryCompaniesGuide config={config} />;
+
+export default JapanMedicalDeviceCompanies;

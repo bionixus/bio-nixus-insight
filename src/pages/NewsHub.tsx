@@ -1,11 +1,14 @@
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
+import { useQuery } from '@tanstack/react-query'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav'
 import { SEOHead } from '@/components/seo/SEOHead'
 import { CTASection } from '@/components/shared/CTASection'
 import { useInitialData } from '@/contexts/InitialDataContext'
+import { fetchSanityPressReleases } from '@/lib/sanity-press'
+import { isSanityConfigured } from '@/lib/sanity'
 import type { PressReleaseListItem } from '@/types/pressRelease'
 import { PRESS_RSS_URL } from '@/lib/pressReleaseConstants'
 import { getPressListThumbUrl } from '@/lib/pressReleaseHero'
@@ -57,10 +60,22 @@ function buildNewsHubSchemas(postCount: number) {
 
 export default function NewsHub() {
   const { data: routeData } = useInitialData()
-  const releases: PressReleaseListItem[] =
+  const ssrReleases: PressReleaseListItem[] | undefined =
     routeData.pageType === 'press-index' && Array.isArray(routeData.pressReleases)
       ? (routeData.pressReleases as PressReleaseListItem[])
-      : []
+      : undefined
+
+  // SSR only seeds the very first route; on client-side navigation to /news
+  // there is no press-index data, so fetch the list from Sanity directly.
+  const { data: fetchedReleases } = useQuery({
+    queryKey: ['sanity-press-releases'],
+    queryFn: fetchSanityPressReleases,
+    enabled: isSanityConfigured(),
+    initialData: ssrReleases,
+    staleTime: 60_000,
+  })
+
+  const releases: PressReleaseListItem[] = fetchedReleases ?? ssrReleases ?? []
 
   const schemas = buildNewsHubSchemas(releases.length)
 

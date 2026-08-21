@@ -176,11 +176,14 @@ export default function CountryPage() {
   const { country } = useParams<{ country: string }>();
   const location = useLocation();
   const { data } = useInitialData();
-  const aliasSlug = location.pathname.match(/^\/(saudi-arabia|uae|kuwait|uk|europe|riyadh|jeddah|dubai|abu-dhabi)$/)?.[1];
+  const aliasSlug = location.pathname.match(/^\/(saudi-arabia|uae|kuwait|uk|europe|egypt|riyadh|jeddah|dubai|abu-dhabi)$/)?.[1];
+  // Route params/alias must win over SSR initial data: after a client-side
+  // navigation, data.slug still holds the previously SSR-rendered country and
+  // would otherwise keep rendering the old page while the URL changes.
   const resolvedSlug =
     country ||
-    (typeof data.slug === 'string' ? data.slug : undefined) ||
-    aliasSlug;
+    aliasSlug ||
+    (typeof data.slug === 'string' ? data.slug : undefined);
 
   if (resolvedSlug && NON_COUNTRY_SLUG_REDIRECTS[resolvedSlug]) {
     return <Navigate to={NON_COUNTRY_SLUG_REDIRECTS[resolvedSlug]} replace />;

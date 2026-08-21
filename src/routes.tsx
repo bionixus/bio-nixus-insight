@@ -44,6 +44,7 @@ import { buildDevelopedMarketMedtechRoutes } from '@/data/developedMarketMedtech
 import { buildSpecialtyMarketDemandRoutes } from '@/data/specialtyMarketDemandRoutes';
 import { buildCountryKeywordRoutes } from '@/data/countryKeywordRoutes';
 import { SEGMENT_MARKET_SLUGS } from '@/data/segmentMarketIndex';
+import legacyRedirects from '../config/legacy-redirects.json';
 import BionixusIndustries from '@/pages/industries/BionixusIndustries';
 import BionixusIndustriesInsights from '@/pages/industries/BionixusIndustriesInsights';
 import IndustrySegmentPage from '@/pages/industries/IndustrySegmentPage';
@@ -213,6 +214,20 @@ import {
   GermanyPharmaCompanies,
   BrazilPharmaCompanies,
   CanadaPharmaCompanies,
+  TurkeyPharmaCompanies,
+  JordanPharmaCompanies,
+  MoroccoPharmaCompanies,
+  IndiaPharmaCompanies,
+  ChinaPharmaCompanies,
+  JapanPharmaCompanies,
+  SouthKoreaPharmaCompanies,
+  SingaporePharmaCompanies,
+  MalaysiaPharmaCompanies,
+  SwitzerlandPharmaCompanies,
+  SaudiMedicalDeviceCompanies,
+  UaeMedicalDeviceCompanies,
+  UsaMedicalDeviceCompanies,
+  JapanMedicalDeviceCompanies,
 } from '@/routes/lazyReportPages';
 import HealthcareReportsHub from '@/pages/HealthcareReportsHub';
 import HealthcareReportsByTherapy from '@/pages/HealthcareReportsByTherapy';
@@ -388,7 +403,7 @@ function suspensePage(node: ReactNode) {
   return <Suspense fallback={<RouteLoadingFallback />}>{node}</Suspense>;
 }
 
-export const routes: RouteObject[] = [
+const rawRoutes: RouteObject[] = [
   { path: '/', element: <Index /> },
   { path: '/de', element: <Index /> },
   { path: '/fr', element: <Index /> },
@@ -405,7 +420,7 @@ export const routes: RouteObject[] = [
   { path: '/ar/about', element: <About /> },
   { path: '/pt/about', element: <About /> },
   { path: '/ru/about', element: <About /> },
-  { path: '/zh/healthcare-market-research', element: <Index /> },
+  { path: '/zh/healthcare-market-research', element: <HubPage /> },
   { path: '/client-reviews', element: <ClientReviews /> },
   { path: '/services', element: <Services /> },
   { path: '/de/services', element: <Services /> },
@@ -599,6 +614,20 @@ export const routes: RouteObject[] = [
   { path: '/pharmaceutical-companies-germany', element: suspensePage(<GermanyPharmaCompanies />) },
   { path: '/pharmaceutical-companies-brazil', element: suspensePage(<BrazilPharmaCompanies />) },
   { path: '/pharmaceutical-companies-canada', element: suspensePage(<CanadaPharmaCompanies />) },
+  { path: '/pharmaceutical-companies-turkey', element: suspensePage(<TurkeyPharmaCompanies />) },
+  { path: '/pharmaceutical-companies-jordan', element: suspensePage(<JordanPharmaCompanies />) },
+  { path: '/pharmaceutical-companies-morocco', element: suspensePage(<MoroccoPharmaCompanies />) },
+  { path: '/pharmaceutical-companies-india', element: suspensePage(<IndiaPharmaCompanies />) },
+  { path: '/pharmaceutical-companies-china', element: suspensePage(<ChinaPharmaCompanies />) },
+  { path: '/pharmaceutical-companies-japan', element: suspensePage(<JapanPharmaCompanies />) },
+  { path: '/pharmaceutical-companies-south-korea', element: suspensePage(<SouthKoreaPharmaCompanies />) },
+  { path: '/pharmaceutical-companies-singapore', element: suspensePage(<SingaporePharmaCompanies />) },
+  { path: '/pharmaceutical-companies-malaysia', element: suspensePage(<MalaysiaPharmaCompanies />) },
+  { path: '/pharmaceutical-companies-switzerland', element: suspensePage(<SwitzerlandPharmaCompanies />) },
+  { path: '/medical-device-companies-saudi-arabia', element: suspensePage(<SaudiMedicalDeviceCompanies />) },
+  { path: '/medical-device-companies-uae', element: suspensePage(<UaeMedicalDeviceCompanies />) },
+  { path: '/medical-device-companies-usa', element: suspensePage(<UsaMedicalDeviceCompanies />) },
+  { path: '/medical-device-companies-japan', element: suspensePage(<JapanMedicalDeviceCompanies />) },
   { path: '/saudi-arabia-medical-devices-market-report', element: suspensePage(<SaudiArabiaMedicalDevicesMarketReport />) },
   { path: '/saudi-arabia-healthcare-market-report', element: suspensePage(<SaudiArabiaHealthcareMarketReport />) },
   { path: '/uae-healthcare-market-report', element: suspensePage(<UaeHealthcareMarketReport />) },
@@ -885,6 +914,40 @@ export const routes: RouteObject[] = [
     path: config.slug,
     element: <TopCompaniesCountryPage config={config} />,
   })),
+  /**
+   * Client-side mirror of the server 301 map (config/legacy-redirects.json):
+   * without these, an in-app click on a legacy URL lands on NotFound even
+   * though a full page load would redirect correctly. Registered last (before
+   * the catch-all) so real routes always win; dedupeRoutesByPath drops any
+   * redirect whose source path is also a live page.
+   */
+  ...Object.entries(legacyRedirects as Record<string, string>).map(([from, to]) => ({
+    path: from,
+    element: <Navigate to={to} replace />,
+  })),
   { path: '*', element: suspensePage(<NotFound />) },
 ];
+
+/**
+ * Keep only the first registration for any duplicated path. Generated spreads
+ * (country keyword pages, listicle registry) can collide with dedicated pages
+ * declared earlier; the dedicated page must win and each path must resolve to
+ * exactly one element.
+ */
+function dedupeRoutesByPath(list: RouteObject[]): RouteObject[] {
+  const seen = new Set<string>();
+  return list.filter((route) => {
+    if (!route.path) return true;
+    if (seen.has(route.path)) {
+      if (import.meta.env.DEV) {
+        console.warn(`[routes] duplicate route path dropped: ${route.path}`);
+      }
+      return false;
+    }
+    seen.add(route.path);
+    return true;
+  });
+}
+
+export const routes: RouteObject[] = dedupeRoutesByPath(rawRoutes);
 

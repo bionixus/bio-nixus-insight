@@ -6,6 +6,8 @@ Paste fresh Google Search Console CSV exports here for the weekly report
 ## Where to put files
 
 - `current-week/Dates.csv`, `current-week/Queries.csv`, `current-week/Pages.csv`
+- `current-week/Countries.csv`, `current-week/Devices.csv` (optional — enables CTR mix
+  diagnostics in the weekly report: excl US, desktop/mobile, deep-rank pages)
 - `previous-week/Dates.csv`, `previous-week/Queries.csv`, `previous-week/Pages.csv`
   (the prior comparable week — same number of days, shifted back 7 days)
 

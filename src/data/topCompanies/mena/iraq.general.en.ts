@@ -6,9 +6,9 @@ export const iraqGeneralEn: CountryListicleConfig = {
   variant: 'general',
   region: 'mena',
   country: 'Iraq',
-  title: 'Top Market Research Companies in Iraq 2026 | BioNixus',
+  title: '5 Best Market Research Companies in Iraq (2026) | Ranked Guide',
   metaDescription:
-    'Independent 2026 guide to the leading market research companies in Iraq — healthcare, pharmaceutical, consumer, and strategic research firms compared by.',
+    'Top market research companies in Iraq 2026 — ranked buyer guide for Baghdad, Erbil & KRG fieldwork. Compare BioNixus, Kantar, Ipsos & regional partners.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-iraq-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-iraq-2026' },

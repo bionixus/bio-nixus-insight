@@ -210,7 +210,7 @@ const UsaPharmaCompanies = () => {
           <p className="text-muted-foreground mb-10 max-w-3xl">
             BioNixus is a healthcare market research company supporting pharma and biotech programmes in the United States and globally.
             For company-level US programmes, see our{' '}
-            <Link to="/usa-pharmaceutical-market-research" className="text-primary hover:underline font-medium">
+            <Link to="/pharmaceutical-market-research-usa" className="text-primary hover:underline font-medium">
               market research company for USA pharma
             </Link>
             . We help pharma, biotech, and medtech companies with:

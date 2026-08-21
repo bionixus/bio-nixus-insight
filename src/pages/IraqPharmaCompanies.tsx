@@ -9,7 +9,7 @@ import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { ConversionCTA } from '@/components/conversion/ConversionCTA';
 import { useScrollThreshold } from '@/hooks/useScrollThreshold';
 import { getPharmaGuideConfig } from '@/data/reportConversionConfig';
-import { buildPharmaCompaniesFaqLd } from '@/components/seo/pharmaCompaniesSeo';
+import { buildPharmaCompaniesFaqLd, buildPharmaCompaniesItemListLd } from '@/components/seo/pharmaCompaniesSeo';
 import { PharmaCompaniesFaqSection } from '@/components/seo/PharmaCompaniesFaqSection';
 import {
   ReportConsultationBand,
@@ -71,10 +71,11 @@ const IraqPharmaCompanies = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Pharmaceutical Companies in Iraq: 2026 List, KIMADIA & Market Size</title>
-        <meta name="description" content="Top pharmaceutical companies in Iraq, the KIMADIA tender system, and 2026 market data. Research by Bionixus." />        <link rel="canonical" href={citationUrl} />
+        <title>Top Pharmaceutical Companies in Iraq (2026 KIMADIA Guide)</title>
+        <meta name="description" content="Top pharmaceutical companies in Iraq ranked for 2026 — KIMADIA tender system, local manufacturers, MNC offices and market size. Research by BioNixus." />        <link rel="canonical" href={citationUrl} />
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', image: 'https://www.bionixus.com/og-image.png', headline: 'Pharmaceutical Companies in Iraq: Complete Industry Guide 2026', description: 'Comprehensive guide to pharmaceutical companies operating in Iraq — local manufacturers, MNC offices, distributors, $2.8B market data, KIMADIA regulatory landscape, and dual federal-KRG market outlook.', url: citationUrl, datePublished: '2026-02-15', dateModified: '2026-02-15', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' } })}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' }, { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.bionixus.com/resources' }, { '@type': 'ListItem', position: 3, name: 'Pharmaceutical Companies in Iraq', item: citationUrl }] })}</script>
+        <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesItemListLd(citationUrl, pharmaCompanies.map((c) => c.name)))}</script>
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesFaqLd(citationUrl, faqItems))}</script>
       </Helmet>
       <OpenGraphMeta
@@ -94,7 +95,7 @@ const IraqPharmaCompanies = () => {
         <section className="section-padding pt-0 pb-12"><div className="container-wide max-w-5xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6"><Building2 className="w-4 h-4" />Industry Guide 2026</div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">Pharmaceutical Companies in Iraq</h1>
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">A comprehensive guide to the pharmaceutical industry in Iraq — a large population market (44.5M, second-largest Arab state) with $2.8B market growing at 8.5%. Post-conflict reconstruction is driving investment; KIMADIA dominates government procurement; dual market (federal + KRG); ~80% imports; $63/capita shows massive growth potential.</p>
+          <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">A comprehensive guide to the pharmaceutical industry in Iraq — a large population market (44.5M, second-largest Arab state) with $2.8B market growing at 8.5% — from BioNixus's <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">healthcare market research</Link> coverage. Post-conflict reconstruction is driving investment; KIMADIA dominates government procurement; dual market (federal + KRG); ~80% imports; $63/capita shows massive growth potential.</p>
           <p className="text-sm text-muted-foreground">Last updated: February 2026 &middot; Sources: MOH, KIMADIA, BioNixus MEA, company and industry reports</p>
           <div className="mt-8 p-5 bg-muted/50 border border-border rounded-xl"><div className="flex items-start gap-3"><Share2 className="w-5 h-5 text-primary mt-0.5 shrink-0" /><div><p className="font-semibold text-foreground text-sm mb-1">Cite this guide</p><p className="text-sm text-muted-foreground leading-relaxed">BioNixus. &quot;Pharmaceutical Companies in Iraq: Complete Industry Guide 2026.&quot; BioNixus Healthcare Market Research, Feb. 2026, <a href={citationUrl} className="text-primary hover:underline break-all">{citationUrl}</a>.<br />Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">CC BY 4.0</a> — free to share and adapt with attribution.</p></div></div></div>
           <ReportEarlyCtaBar config={PHARMA_CONVERSION} className="mt-8" /></div></section>

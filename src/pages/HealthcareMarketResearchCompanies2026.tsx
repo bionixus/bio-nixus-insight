@@ -271,10 +271,10 @@ export default function HealthcareMarketResearchCompanies2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Healthcare Market Research Companies 2026 | BioNixus</title>
+        <title>Top Healthcare Market Research Companies (2026) | Ranked Guide</title>
         <meta
           name="description"
-          content="Top healthcare market research companies & agencies 2026 — BioNixus #1 for primary HCP/payer research. Compare IQVIA, Ipsos, Kantar + USA, Europe, MENA gateways."
+          content="Healthcare market research companies 2026 — ranked agency guide for primary HCP & payer research. BioNixus vs IQVIA, Ipsos, Kantar. USA, Europe & MENA country listicles."
         />
         <meta name="author" content="BioNixus" />
         <link rel="canonical" href={CANONICAL} />

@@ -18,10 +18,10 @@ import {
 import { ReportPremiumHero } from '@/components/report-premium';
 import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
 
-const PAGE_TITLE = 'Japan Medical Devices Market Report 2026 | Size, PMDA & NHI';
+const PAGE_TITLE = 'Japan Medical Devices Market 2026: $41B Size & PMDA Forecast';
 const PAGE_DESCRIPTION =
-  'Japan medical devices market report 2026 — ~USD 41B market size, PMDA Class I–IV (todokede/ninsho/shonin), NHI listing, forecast to ~USD 64B. BioNixus.';
-const PAGE_MODIFIED = '2026-08-18';
+  'Japan medical devices market $41B in 2026 → ~$64B by 2032. PMDA Class I–IV (todokede/ninsho/shonin), NHI listing & hospital procurement — BioNixus market report.';
+const PAGE_MODIFIED = '2026-08-19';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -85,7 +85,7 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-linkedin.png',
-    headline: 'Japan Medical Devices Market Report 2026: Size, PMDA, NHI Reimbursement, and Device Lag Reduction',
+    headline: 'Japan Medical Devices Market 2026: $41B Size, PMDA, NHI Reimbursement, and Device Lag Reduction',
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: {
       '@type': 'Organization',
@@ -146,8 +146,8 @@ const JapanMedicalDevicesMarketReport = () => (
         </div>
       </div>
       <ReportPremiumHero
-        title="Japan Medical Devices Market Report 2026: Size, PMDA Regulation & NHI Intelligence"
-        description="BioNixus Japan medical devices market report — ~USD 41B market size, PMDA Class I–IV pathways, NHI functional pricing, hospital procurement intelligence, and GCC/MENA entry support for Japanese and international medtech."
+        title="Japan Medical Devices Market 2026: $41B Size, PMDA & NHI Intelligence"
+        description="BioNixus Japan medical devices market report — $41B market size in 2026, PMDA Class I–IV pathways, NHI functional pricing, hospital procurement intelligence, and GCC/MENA entry support for Japanese and international medtech."
         config={REPORT_CONVERSION}
         marketSlug="japan"
         countryName="Japan"

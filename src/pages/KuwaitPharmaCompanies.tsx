@@ -250,7 +250,7 @@ const KuwaitPharmaCompanies = () => {
 return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Pharmaceutical Companies in Kuwait: 2026 Ranked List & Market Data</title>
+        <title>Top 15 Pharmaceutical Companies in Kuwait (2026 Ranked List)</title>
         <meta
           name="description"
           content="Every major pharmaceutical company in Kuwait ranked for 2026, with market size, import structure and regulatory notes. Research by Bionixus."        />

@@ -10,6 +10,16 @@ export type PharmaCompaniesGlobalSlug = Extract<
 
 const GLOBAL_PEER_SLUGS: PharmaCompaniesGlobalSlug[] = ['usa', 'uk', 'germany', 'brazil', 'canada'];
 
+/** Newer company-guide markets that live outside the PharmaCompaniesCountrySlug union. */
+const EXPANSION_MARKET_LINKS: { to: string; label: string }[] = [
+  { to: '/pharmaceutical-companies-turkey', label: 'Turkey' },
+  { to: '/pharmaceutical-companies-india', label: 'India' },
+  { to: '/pharmaceutical-companies-china', label: 'China' },
+  { to: '/pharmaceutical-companies-japan', label: 'Japan' },
+  { to: '/pharmaceutical-companies-switzerland', label: 'Switzerland' },
+  { to: '/pharmaceutical-companies-south-korea', label: 'South Korea' },
+];
+
 export const HC_LISTICLE_BY_COUNTRY: Record<PharmaCompaniesGlobalSlug, string> = {
   usa: '/insights/top-healthcare-market-research-companies-usa-2026',
   uk: '/insights/top-healthcare-market-research-companies-uk-2026',
@@ -91,6 +101,18 @@ export function PharmaCompaniesGlobalHubLinks({ country }: Props) {
               className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary"
             >
               Pharmaceutical companies in {COUNTRY_LABELS[slug]}
+              <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>
+                &rarr;
+              </span>
+            </Link>
+          ))}
+          {EXPANSION_MARKET_LINKS.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary"
+            >
+              Pharmaceutical companies in {link.label}
               <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>
                 &rarr;
               </span>

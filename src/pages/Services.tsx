@@ -14,7 +14,7 @@ import { serviceRecoveryPaths } from '@/lib/internalLinkRecovery';
 import {
   getServicesHubBundle,
 } from '@/data/servicesHubContent';
-import { languagePaths, localizedContactPath } from '@/lib/seo';
+import { getLocalizedPathForLanguage, languagePaths, localizedContactPath } from '@/lib/seo';
 
 const recoveryLinkLabels: Record<string, string> = {
   '/bionixus-market-research-middle-east': 'Middle East Pharmaceutical Market Research',
@@ -97,7 +97,7 @@ const faqJsonLd = (items: readonly { question: string; answer: string }[]) => ({
 });
 
 const Services = () => {
-  const { language, isRTL } = useLanguage();
+  const { language, isRTL, t } = useLanguage();
   const bundle = getServicesHubBundle(language);
   const copy = bundle.copy;
   const healthcareServices = bundle.healthcareServices;
@@ -267,8 +267,11 @@ const Services = () => {
                   {index === 2 ? (
                     <>
                       {' '}
-                      <Link to="/bionixus-industries" className="text-primary font-medium hover:underline">
-                        {language === 'de' ? 'Branchen-Hub' : 'industries hub'}
+                      <Link
+                        to={getLocalizedPathForLanguage('/bionixus-industries', language)}
+                        className="text-primary font-medium hover:underline"
+                      >
+                        {t.ui.services.industriesHubLink}
                       </Link>
                       .
                     </>

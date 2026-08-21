@@ -264,10 +264,10 @@ export default function BestObesityWeightManagementMarketResearchFirms2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Best Obesity & Weight Management Research Firms (2026) | BioNixus</title>
+        <title>Best Obesity Market Research Firms 2026 | GLP-1 Ranked Guide</title>
         <meta
           name="description"
-          content="Expert 2026 guide: best obesity & weight management market research firms. GLP-1 market research, anti-obesity medication access studies, patient journey research, prescriber behaviour analysis — ranked by capability."
+          content="Best obesity & weight management market research firms 2026 — GLP-1, anti-obesity medication access, prescriber behaviour & patient journey studies ranked."
         />
         <link rel="canonical" href={CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>

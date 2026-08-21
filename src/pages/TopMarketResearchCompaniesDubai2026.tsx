@@ -236,10 +236,10 @@ export default function TopMarketResearchCompaniesDubai2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>6 Best Market Research Companies in Dubai (2026) | BioNixus</title>
+        <title>6 Best Market Research Companies in Dubai (2026) | Ranked Guide</title>
         <meta
           name="description"
-          content="Independent 2026 guide to the leading market research companies in Dubai for consumer, FMCG, retail, and multi-industry research — compared by Dubai expertise."
+          content="Top market research companies in Dubai 2026 — ranked UAE buyer guide for consumer, healthcare & pharma fieldwork. Compare BioNixus, Kantar, Ipsos & NielsenIQ."
         />
         <meta name="geo.region" content="AE-DU" />
         <meta name="geo.placename" content="Dubai" />

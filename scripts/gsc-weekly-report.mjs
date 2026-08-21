@@ -13,7 +13,9 @@
  *                                          if you rename it)
  *   data/gsc/current-week/Queries.csv   — GSC Performance report grouped by query
  *   data/gsc/current-week/Pages.csv     — GSC Performance report grouped by page
- *   data/gsc/previous-week/Chart.csv    — same 3 files for the prior comparable
+ *   data/gsc/current-week/Countries.csv — optional; enables CTR excl US slice
+ *   data/gsc/current-week/Devices.csv   — optional; enables desktop/mobile mix
+ *   data/gsc/previous-week/Chart.csv    — same files for the prior comparable
  *   data/gsc/previous-week/Queries.csv     week (same day-count date range, shifted
  *   data/gsc/previous-week/Pages.csv       back 7 days)
  *
@@ -180,6 +182,125 @@ function normalizePageRows(rows) {
     .filter((r) => r.page);
 }
 
+function normalizeCountryRows(rows) {
+  if (!rows) return null;
+  return rows
+    .map((r) => ({
+      country: cleanText(pick(r, ['Country', 'Countries', 'Top countries'])),
+      clicks: numOrNull(pick(r, ['Clicks'])),
+      impressions: numOrNull(pick(r, ['Impressions'])),
+      ctr: pctToNumber(pick(r, ['CTR'])),
+      position: numOrNull(pick(r, ['Position', 'Avg. Pos', 'Average Position'])),
+    }))
+    .filter((r) => r.country);
+}
+
+function normalizeDeviceRows(rows) {
+  if (!rows) return null;
+  return rows
+    .map((r) => ({
+      device: cleanText(pick(r, ['Device', 'Devices'])),
+      clicks: numOrNull(pick(r, ['Clicks'])),
+      impressions: numOrNull(pick(r, ['Impressions'])),
+      ctr: pctToNumber(pick(r, ['CTR'])),
+      position: numOrNull(pick(r, ['Position', 'Avg. Pos', 'Average Position'])),
+    }))
+    .filter((r) => r.device);
+}
+
+function aggregateCtr(rows) {
+  if (!rows || rows.length === 0) return null;
+  const clicks = rows.reduce((s, r) => s + (r.clicks || 0), 0);
+  const impressions = rows.reduce((s, r) => s + (r.impressions || 0), 0);
+  if (impressions === 0) return null;
+  return { clicks, impressions, ctrPct: (clicks / impressions) * 100 };
+}
+
+function pagePathFromUrl(url) {
+  try {
+    const u = new URL(url);
+    return u.pathname.replace(/\/+$/, '') || '/';
+  } catch {
+    return null;
+  }
+}
+
+function computeMixMetrics({ currentPages, currentCountries, currentDevices, siteCtrPct }) {
+  if (!currentPages && !currentCountries && !currentDevices) return null;
+
+  const metrics = {};
+
+  if (currentCountries) {
+    const us = currentCountries.find((r) => r.country === 'United States');
+    const nonUs = currentCountries.filter((r) => r.country !== 'United States');
+    metrics.exclUs = aggregateCtr(nonUs);
+    metrics.us = us
+      ? { clicks: us.clicks, impressions: us.impressions, ctrPct: us.ctr, sharePct: null }
+      : null;
+    const totalCountryImpr = currentCountries.reduce((s, r) => s + (r.impressions || 0), 0);
+    if (metrics.us && totalCountryImpr > 0) {
+      metrics.us.sharePct = ((metrics.us.impressions || 0) / totalCountryImpr) * 100;
+    }
+  }
+
+  if (currentDevices) {
+    const desktop = currentDevices.find((r) => /desktop/i.test(r.device));
+    const mobile = currentDevices.find((r) => /mobile/i.test(r.device));
+    const totalDeviceImpr = currentDevices.reduce((s, r) => s + (r.impressions || 0), 0);
+    metrics.desktop = desktop
+      ? {
+          clicks: desktop.clicks,
+          impressions: desktop.impressions,
+          ctrPct: desktop.ctr,
+          sharePct: totalDeviceImpr > 0 ? ((desktop.impressions || 0) / totalDeviceImpr) * 100 : null,
+        }
+      : null;
+    metrics.mobile = mobile
+      ? {
+          clicks: mobile.clicks,
+          impressions: mobile.impressions,
+          ctrPct: mobile.ctr,
+          sharePct: totalDeviceImpr > 0 ? ((mobile.impressions || 0) / totalDeviceImpr) * 100 : null,
+        }
+      : null;
+  }
+
+  if (currentPages) {
+    const deepRank = currentPages.filter((r) => r.position != null && r.position > 40 && (r.impressions || 0) >= 200);
+    const shallow = currentPages.filter((r) => !(r.position != null && r.position > 40 && (r.impressions || 0) >= 200));
+    metrics.exclDeepRankPages = aggregateCtr(shallow);
+    metrics.deepRankPages = aggregateCtr(deepRank);
+
+    const japanDevices = currentPages.filter((r) =>
+      pagePathFromUrl(r.page) === '/japan-medical-devices-market-report',
+    );
+    const gccDevices = currentPages.filter((r) =>
+      pagePathFromUrl(r.page) === '/gcc-medical-devices-market-report',
+    );
+    const withoutJapanGccDevices = currentPages.filter((r) => {
+      const p = pagePathFromUrl(r.page);
+      return p !== '/japan-medical-devices-market-report' && p !== '/gcc-medical-devices-market-report';
+    });
+    metrics.exclJapanGccDevices = aggregateCtr(withoutJapanGccDevices);
+    metrics.japanDevices = japanDevices[0] || null;
+    metrics.gccDevices = gccDevices[0] || null;
+
+    const listiclePages = currentPages.filter((r) => {
+      const p = pagePathFromUrl(r.page);
+      return p && p.startsWith('/insights/') && /companies|firms|agencies/i.test(p);
+    });
+    const pharmaCompanyPages = currentPages.filter((r) => {
+      const p = pagePathFromUrl(r.page);
+      return p && /^\/pharmaceutical-companies-/.test(p);
+    });
+    metrics.listicleCluster = aggregateCtr(listiclePages);
+    metrics.pharmaCompaniesCluster = aggregateCtr(pharmaCompanyPages);
+  }
+
+  metrics.siteCtrPct = siteCtrPct ?? null;
+  return metrics;
+}
+
 function weekSummary(datesRows) {
   if (!datesRows || datesRows.length === 0) return null;
   const days = datesRows.length;
@@ -293,6 +414,8 @@ function main() {
   const previousQueries = normalizeQueryRows(readCsvIfExists(path.join(GSC_DIR, 'previous-week', 'Queries.csv')));
   const currentPages = normalizePageRows(readCsvIfExists(path.join(GSC_DIR, 'current-week', 'Pages.csv')));
   const previousPages = normalizePageRows(readCsvIfExists(path.join(GSC_DIR, 'previous-week', 'Pages.csv')));
+  const currentCountries = normalizeCountryRows(readCsvIfExists(path.join(GSC_DIR, 'current-week', 'Countries.csv')));
+  const currentDevices = normalizeDeviceRows(readCsvIfExists(path.join(GSC_DIR, 'current-week', 'Devices.csv')));
 
   if (!currentDates && !currentQueries && !currentPages) {
     console.error(
@@ -338,6 +461,12 @@ function main() {
     topPositionChanges: topPositionChanges(currentQueries, previousQueries),
     top10PageChurn: top10PageChurn(currentPages, previousPages),
     lowCtrPage1Queries: ctrFlags(currentQueries),
+    mixMetrics: computeMixMetrics({
+      currentPages,
+      currentCountries,
+      currentDevices,
+      siteCtrPct: curSummary?.ctrPct ?? null,
+    }),
     leads: parseLeads(),
   };
 
@@ -377,6 +506,76 @@ function buildMarkdown(r) {
     lines.push('', '_Position deltas shown as "vs target/last week": positive = closer to #1 (improved)._', '');
   } else {
     lines.push('_No Chart.csv (or Dates.csv) found for the current week — cannot compute daily traffic metrics._', '');
+  }
+
+  lines.push('## CTR mix diagnostics (headline vs structural slices)', '');
+  if (r.mixMetrics) {
+    const m = r.mixMetrics;
+    lines.push('| Slice | Clicks | Impressions | CTR | Notes |', '|---|---|---|---|---|');
+    if (m.siteCtrPct != null) {
+      lines.push(`| Site (Chart.csv) | — | — | ${fmt(m.siteCtrPct, 2)}% | Headline average |`);
+    }
+    if (m.exclUs) {
+      lines.push(
+        `| Excl. United States (Countries.csv) | ${fmt(m.exclUs.clicks)} | ${fmt(m.exclUs.impressions)} | ${fmt(m.exclUs.ctrPct, 2)}% | US share ${m.us?.sharePct != null ? fmt(m.us.sharePct, 1) + '% impr @ ' + fmt(m.us.ctrPct, 2) + '% CTR' : 'see US row'} |`,
+      );
+    }
+    if (m.us) {
+      lines.push(
+        `| United States only | ${fmt(m.us.clicks)} | ${fmt(m.us.impressions)} | ${fmt(m.us.ctrPct, 2)}% | Largest single-country CTR drag |`,
+      );
+    }
+    if (m.desktop) {
+      lines.push(
+        `| Desktop | ${fmt(m.desktop.clicks)} | ${fmt(m.desktop.impressions)} | ${fmt(m.desktop.ctrPct, 2)}% | ${m.desktop.sharePct != null ? fmt(m.desktop.sharePct, 0) + '% of device impr' : ''} |`,
+      );
+    }
+    if (m.mobile) {
+      lines.push(
+        `| Mobile | ${fmt(m.mobile.clicks)} | ${fmt(m.mobile.impressions)} | ${fmt(m.mobile.ctrPct, 2)}% | ${m.mobile.sharePct != null ? fmt(m.mobile.sharePct, 0) + '% of device impr' : ''} |`,
+      );
+    }
+    if (m.deepRankPages) {
+      lines.push(
+        `| Pages pos >40 (≥200 impr) | ${fmt(m.deepRankPages.clicks)} | ${fmt(m.deepRankPages.impressions)} | ${fmt(m.deepRankPages.ctrPct, 2)}% | Deep-SERP dilution bucket |`,
+      );
+    }
+    if (m.exclDeepRankPages) {
+      lines.push(
+        `| Excl. deep-rank pages above | ${fmt(m.exclDeepRankPages.clicks)} | ${fmt(m.exclDeepRankPages.impressions)} | ${fmt(m.exclDeepRankPages.ctrPct, 2)}% | Remaining page-level mix |`,
+      );
+    }
+    if (m.japanDevices) {
+      lines.push(
+        `| /japan-medical-devices-market-report | ${fmt(m.japanDevices.clicks)} | ${fmt(m.japanDevices.impressions)} | ${fmt(m.japanDevices.ctr, 2)}% | Pos ${fmt(m.japanDevices.position, 1)} |`,
+      );
+    }
+    if (m.gccDevices) {
+      lines.push(
+        `| /gcc-medical-devices-market-report | ${fmt(m.gccDevices.clicks)} | ${fmt(m.gccDevices.impressions)} | ${fmt(m.gccDevices.ctr, 2)}% | Pos ${fmt(m.gccDevices.position, 1)} |`,
+      );
+    }
+    if (m.exclJapanGccDevices) {
+      lines.push(
+        `| Excl. Japan + GCC device reports | ${fmt(m.exclJapanGccDevices.clicks)} | ${fmt(m.exclJapanGccDevices.impressions)} | ${fmt(m.exclJapanGccDevices.ctrPct, 2)}% | Device-report drag removed |`,
+      );
+    }
+    if (m.listicleCluster) {
+      lines.push(
+        `| Insights listicle cluster | ${fmt(m.listicleCluster.clicks)} | ${fmt(m.listicleCluster.impressions)} | ${fmt(m.listicleCluster.ctrPct, 2)}% | /insights/* companies/firms URLs |`,
+      );
+    }
+    if (m.pharmaCompaniesCluster) {
+      lines.push(
+        `| /pharmaceutical-companies-* cluster | ${fmt(m.pharmaCompaniesCluster.clicks)} | ${fmt(m.pharmaCompaniesCluster.impressions)} | ${fmt(m.pharmaCompaniesCluster.ctrPct, 2)}% | Winning directory cluster |`,
+      );
+    }
+    lines.push('');
+  } else {
+    lines.push(
+      '_Add Countries.csv and Devices.csv to current-week/ (and Pages.csv) to populate mix diagnostics._',
+      '',
+    );
   }
 
   lines.push('## Biggest query position changes (top 10 by magnitude)', '');

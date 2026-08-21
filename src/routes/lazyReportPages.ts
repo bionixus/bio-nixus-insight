@@ -75,3 +75,17 @@ export const UkPharmaCompanies = lazy(() => import('@/pages/UkPharmaCompanies'))
 export const GermanyPharmaCompanies = lazy(() => import('@/pages/GermanyPharmaCompanies'));
 export const BrazilPharmaCompanies = lazy(() => import('@/pages/BrazilPharmaCompanies'));
 export const CanadaPharmaCompanies = lazy(() => import('@/pages/CanadaPharmaCompanies'));
+export const TurkeyPharmaCompanies = lazy(() => import('@/pages/TurkeyPharmaCompanies'));
+export const JordanPharmaCompanies = lazy(() => import('@/pages/JordanPharmaCompanies'));
+export const MoroccoPharmaCompanies = lazy(() => import('@/pages/MoroccoPharmaCompanies'));
+export const IndiaPharmaCompanies = lazy(() => import('@/pages/IndiaPharmaCompanies'));
+export const ChinaPharmaCompanies = lazy(() => import('@/pages/ChinaPharmaCompanies'));
+export const JapanPharmaCompanies = lazy(() => import('@/pages/JapanPharmaCompanies'));
+export const SouthKoreaPharmaCompanies = lazy(() => import('@/pages/SouthKoreaPharmaCompanies'));
+export const SingaporePharmaCompanies = lazy(() => import('@/pages/SingaporePharmaCompanies'));
+export const MalaysiaPharmaCompanies = lazy(() => import('@/pages/MalaysiaPharmaCompanies'));
+export const SwitzerlandPharmaCompanies = lazy(() => import('@/pages/SwitzerlandPharmaCompanies'));
+export const SaudiMedicalDeviceCompanies = lazy(() => import('@/pages/SaudiMedicalDeviceCompanies'));
+export const UaeMedicalDeviceCompanies = lazy(() => import('@/pages/UaeMedicalDeviceCompanies'));
+export const UsaMedicalDeviceCompanies = lazy(() => import('@/pages/UsaMedicalDeviceCompanies'));
+export const JapanMedicalDeviceCompanies = lazy(() => import('@/pages/JapanMedicalDeviceCompanies'));

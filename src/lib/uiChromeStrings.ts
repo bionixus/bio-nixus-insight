@@ -54,6 +54,10 @@ export type UiChromeStrings = {
     countryTurkey: string;
     countryEgypt: string;
   };
+  services: {
+    /** Inline anchor text closing the third intro column on the Services hub. */
+    industriesHubLink: string;
+  };
 };
 
 type DeepPartial<T> = { [K in keyof T]?: T[K] extends object ? DeepPartial<T[K]> : T[K] };
@@ -103,6 +107,9 @@ const en: UiChromeStrings = {
     countryTurkey: 'Healthcare market research Turkey',
     countryEgypt: 'Healthcare market research Egypt',
   },
+  services: {
+    industriesHubLink: 'industries hub',
+  },
 };
 
 const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> = {
@@ -147,6 +154,9 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       countryTurkey: 'Gesundheitsmarktforschung Türkei',
       countryEgypt: 'Gesundheitsmarktforschung Ägypten',
     },
+    services: {
+      industriesHubLink: 'Branchen-Hub',
+    },
   },
   fr: {
     nav: {
@@ -188,6 +198,9 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       countryUae: 'Études de marché santé Émirats arabes unis',
       countryTurkey: 'Études de marché santé Turquie',
       countryEgypt: 'Études de marché santé Égypte',
+    },
+    services: {
+      industriesHubLink: 'hub sectoriel',
     },
   },
   es: {
@@ -231,6 +244,9 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       countryTurkey: 'Investigación de mercado sanitario Turquía',
       countryEgypt: 'Investigación de mercado sanitario Egipto',
     },
+    services: {
+      industriesHubLink: 'hub de sectores',
+    },
   },
   pt: {
     nav: {
@@ -272,6 +288,9 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       countryUae: 'Pesquisa de mercado em saúde Emirados Árabes Unidos',
       countryTurkey: 'Pesquisa de mercado em saúde Turquia',
       countryEgypt: 'Pesquisa de mercado em saúde Egito',
+    },
+    services: {
+      industriesHubLink: 'hub de setores',
     },
   },
   ru: {
@@ -319,6 +338,9 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       countryTurkey: 'Исследования рынка здравоохранения Турции',
       countryEgypt: 'Исследования рынка здравоохранения Египта',
     },
+    services: {
+      industriesHubLink: 'отраслевой хаб',
+    },
   },
   zh: {
     nav: {
@@ -365,6 +387,9 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       countryTurkey: '土耳其医疗健康市场研究',
       countryEgypt: '埃及医疗健康市场研究',
     },
+    services: {
+      industriesHubLink: '行业中心页',
+    },
   },
   ar: {
     nav: {
@@ -410,6 +435,9 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       countryUae: 'أبحاث سوق الرعاية الصحية في الإمارات',
       countryTurkey: 'أبحاث سوق الرعاية الصحية في تركيا',
       countryEgypt: 'أبحاث سوق الرعاية الصحية في مصر',
+    },
+    services: {
+      industriesHubLink: 'مركز القطاعات',
     },
   },
 };

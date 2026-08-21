@@ -1,0 +1,116 @@
+import { CountryCompaniesGuide, type CountryCompaniesGuideConfig } from '@/components/seo/CountryCompaniesGuide';
+
+const config: CountryCompaniesGuideConfig = {
+  path: '/pharmaceutical-companies-singapore',
+  countryName: 'Singapore',
+  industry: 'pharmaceutical',
+  title: 'Top Pharmaceutical Companies in Singapore (2026 Ranked)',
+  metaDescription:
+    'Top pharmaceutical companies in Singapore ranked for 2026 — MNC manufacturing hubs, Zuellig Pharma, Hyphens, HSA regulation and market size. By BioNixus.',
+  h1: 'Pharmaceutical Companies in Singapore',
+  introLead: 'Pharmaceutical companies in Singapore run Asia\'s premier manufacturing, regional HQ, and distribution hub',
+  introRest: 'This guide covers the MNC plants, regional headquarters, HSA regulation, ACE health technology assessments, and a domestic market of roughly $1.3–1.6 billion that punches far above its weight as Asia\'s pharma gateway.',
+  stats: [
+    { value: '~$1.3–1.6B', label: 'Domestic pharma market 2026' },
+    { value: '60+', label: 'Regional HQs of global pharma/medtech' },
+    { value: '~$12B+', label: 'Annual pharma manufacturing output' },
+    { value: '9–12 mo', label: 'HSA full registration timeline' },
+  ],
+  quickAnswer: {
+    marketSize: 'approximately USD 1.3–1.6 billion domestically, with USD 12+ billion in manufacturing output',
+    growthRate: '~5% YoY',
+    regulatorLabel: 'the HSA (Health Sciences Authority)',
+    extraSentence: 'Most global pharma companies run their Asia-Pacific headquarters and regional distribution from Singapore — the market is small, but the decisions made there are not.',
+  },
+  marketOverviewParagraphs: [
+    'Singapore\'s domestic pharmaceutical market is modest — approximately US$1.3–1.6 billion for 5.9 million residents — but the country is Asia\'s pharmaceutical nerve centre: 60+ regional headquarters, world-scale manufacturing plants (GSK, Pfizer, Novartis, Sanofi, Amgen, MSD), and Zuellig Pharma\'s pan-Asian distribution platform are all based there.',
+    'The HSA (Health Sciences Authority) is one of Asia\'s most respected regulators, offering abridged and verification routes that leverage prior FDA/EMA approvals — full new-drug registration takes 9–12 months, abridged significantly less. ACE (Agency for Care Effectiveness) conducts health technology assessment for public subsidy listing.',
+    'Public healthcare (MOH clusters: SingHealth, NUHS, NHG) dominates volume through restructured hospitals and polyclinics, with drug subsidies tiered by ACE recommendations. The private sector — Raffles, Mount Elizabeth, Gleneagles — serves premium and medical-tourism demand at free pricing.',
+  ],
+  companies: [
+    { name: 'GSK Singapore', hq: 'UK', type: 'MNC Office', therapeuticAreas: 'Vaccines, respiratory (regional HQ + plants)', notes: 'Major vaccine manufacturing site and APAC hub' },
+    { name: 'Pfizer Singapore', hq: 'USA', type: 'MNC Office', therapeuticAreas: 'API & biologics manufacturing, full portfolio', notes: 'Tuas manufacturing; regional operations' },
+    { name: 'Novartis Singapore', hq: 'Switzerland', type: 'MNC Office', therapeuticAreas: 'Biologics manufacturing, innovative portfolio', notes: 'Large-scale cell culture site' },
+    { name: 'Sanofi Singapore', hq: 'France', type: 'MNC Office', therapeuticAreas: 'Vaccines, specialty (APAC HQ)', notes: 'Evolutive vaccine facility investment' },
+    { name: 'Amgen Singapore', hq: 'USA', type: 'MNC Office', therapeuticAreas: 'Biologics manufacturing', notes: 'Next-gen biomanufacturing site' },
+    { name: 'MSD Singapore', hq: 'USA', type: 'MNC Office', therapeuticAreas: 'Manufacturing + regional operations', notes: 'Multiple manufacturing facilities' },
+    { name: 'Takeda Singapore', hq: 'Japan', type: 'MNC Office', therapeuticAreas: 'Regional HQ, rare disease, GI', notes: 'APAC headquarters functions' },
+    { name: 'Roche Singapore', hq: 'Switzerland', type: 'MNC Office', therapeuticAreas: 'Oncology, diagnostics (regional)', notes: 'Regional pharma + diagnostics operations' },
+    { name: 'AstraZeneca Singapore', hq: 'UK / Sweden', type: 'MNC Office', therapeuticAreas: 'Oncology, respiratory, CVRM', notes: 'Regional hub; announced manufacturing investment' },
+    { name: 'Hyphens Pharma', hq: 'Singapore', type: 'Local Manufacturer', therapeuticAreas: 'Dermatology, specialty pharma, consumer', notes: 'Largest listed Singapore specialty pharma' },
+    { name: 'Beacons Pharmaceuticals', hq: 'Singapore', type: 'Local Manufacturer', therapeuticAreas: 'Generics, OTC', notes: 'Local manufacturer with ASEAN exports' },
+    { name: 'LF Asia / DKSH Healthcare', hq: 'Singapore / Switzerland', type: 'Distributor', therapeuticAreas: 'Regional healthcare distribution', notes: 'Pan-Asian market expansion services' },
+    { name: 'Zuellig Pharma', hq: 'Singapore', type: 'Distributor', therapeuticAreas: 'Pan-Asian pharma distribution', notes: 'Asia\'s largest healthcare distribution platform' },
+    { name: 'Apex Pharma Marketing', hq: 'Singapore', type: 'Distributor', therapeuticAreas: 'Pharma & consumer distribution', notes: 'Established local distributor' },
+    { name: 'Pharmaforte', hq: 'Singapore', type: 'Distributor', therapeuticAreas: 'Specialty & hospital distribution', notes: 'Hospital channel specialist' },
+  ],
+  categoryBlurbs: {
+    local: 'Home-grown players are specialty-focused: Hyphens Pharma (dermatology/specialty) and Beacons (generics/OTC) lead a small but growing local segment.',
+    mnc: 'MNCs dominate — GSK, Pfizer, Novartis, Sanofi, Amgen, and MSD run world-scale plants, and most global companies place APAC headquarters in Singapore.',
+    regional: 'Singapore serves as the regional coordination point rather than hosting regional MENA/Asian manufacturers.',
+    distributor: 'Zuellig Pharma — headquartered in Singapore — is Asia\'s largest healthcare distributor; DKSH and local specialists complete the channel.',
+  },
+  regulator: {
+    short: 'HSA',
+    full: 'Health Sciences Authority',
+    registrationTimeline: '9–12 months (full route); faster abridged/verification routes',
+    renewalPeriod: 'Annual licence retention',
+    pricingModel: 'Free pricing; public subsidy via ACE HTA recommendations (SDL/MAF listings)',
+    requirements: [
+      'ICH CTD dossier via PRISM e-portal',
+      'Abridged/verification routes leverage FDA/EMA/TGA approvals',
+      'Singapore registrant (local company) required',
+      'GMP evidence; overseas site audits recognised via PIC/S',
+      'English labelling',
+      'ACE evaluation separate for public subsidy listing',
+    ],
+    note: 'Singapore rewards regulatory quality: verification routes can cut approval to months for FDA/EMA-approved drugs. Public-sector volume flows through MOH cluster group procurement (ALPS), where ACE subsidy tiers determine uptake; the private/medical-tourism channel prices freely.',
+  },
+  growthDrivers: [
+    { title: 'Regional HQ Concentration', desc: 'APAC portfolio, pricing, and launch decisions for half of Asia are made in Singapore offices.' },
+    { title: 'Biomanufacturing Investment', desc: 'Continuous new plant investment (biologics, vaccines, cell therapy) under EDB incentives.' },
+    { title: 'Aging Population', desc: 'One of Asia\'s fastest-aging populations lifts oncology and chronic-care demand.' },
+    { title: 'Medical Tourism Hub', desc: 'Premium private hospitals attract regional patients paying free-market prices.' },
+    { title: 'HSA Reference Effect', desc: 'HSA approval accelerates ASEAN registrations through reliance frameworks.' },
+    { title: 'Healthier SG Reform', desc: 'Primary-care capitation reform shifts chronic management and preventive-care drug volume.' },
+  ],
+  bionixusServices: [
+    { title: 'Physician Surveys & KOL Mapping', desc: 'Fieldwork with Singapore physicians across SingHealth, NUHS, NHG clusters and private hospitals.' },
+    { title: 'Market Access & ACE Strategy', desc: 'ACE HTA dossier intelligence, subsidy-tier benchmarking, and ALPS procurement insight.' },
+    { title: 'Regional HQ Decision Research', desc: 'APAC-level payer and portfolio research with Singapore-based regional decision-makers.' },
+    { title: 'ASEAN Benchmarking', desc: 'Comparative access analysis across Singapore, Malaysia, Thailand, Indonesia, and Vietnam.' },
+  ],
+  faq: [
+    { q: 'Which pharmaceutical companies operate in Singapore?', a: 'Nearly every global pharma company operates in Singapore: GSK, Pfizer, Novartis, Sanofi, Amgen, and MSD run manufacturing plants; Takeda, Roche, and AstraZeneca run regional headquarters. Local players include Hyphens Pharma and Beacons, with Zuellig Pharma anchoring pan-Asian distribution.' },
+    { q: 'What is the size of Singapore\'s pharmaceutical market?', a: 'The domestic market is approximately US$1.3–1.6 billion in 2026, but manufacturing output exceeds US$12 billion annually — pharmaceuticals are among Singapore\'s largest manufacturing exports.' },
+    { q: 'How does HSA drug registration work?', a: 'The HSA offers three routes: full (9–12 months), abridged (approved by a reference agency), and verification (approved by two reference agencies including FDA/EMA — a few months). A Singapore-registered company must hold the licence via the PRISM portal.' },
+    { q: 'How does drug reimbursement work in Singapore?', a: 'Singapore has free pricing but tiered public subsidies: ACE (Agency for Care Effectiveness) evaluates drugs for the Standard Drug List and Medication Assistance Fund. Subsidy listing drives public-hospital volume; unsubsidised drugs face out-of-pocket and MediShield/Integrated Shield dynamics.' },
+    { q: 'Why do pharma companies put regional HQs in Singapore?', a: 'Tax incentives, IP protection, talent, connectivity, and regulatory reputation. APAC pricing corridors, launch sequencing, and distributor management for Southeast Asia are typically governed from Singapore — making it a strategic research venue even when the domestic market is small.' },
+    { q: 'Is Singapore a good ASEAN market-entry base?', a: 'Yes — HSA approval supports ASEAN reliance pathways, Zuellig/DKSH distribution reaches every regional market, and Singapore\'s medical-tourism channel provides early premium adoption evidence for regional payers.' },
+  ],
+  relatedLinks: [
+    { to: '/singapore-healthcare-market-report', label: 'Singapore healthcare market report 2026' },
+    { to: '/singapore-medical-devices-market-report', label: 'Singapore medical devices market report' },
+    { to: '/pharmaceutical-companies-malaysia', label: 'Pharmaceutical companies in Malaysia' },
+    { to: '/pharmaceutical-companies-japan', label: 'Pharmaceutical companies in Japan' },
+    { to: '/pharmaceutical-companies-india', label: 'Pharmaceutical companies in India' },
+    { to: '/gcc-market-access-guide', label: 'GCC market access guide 2026' },
+  ],
+  sources: [
+    'HSA — Health Sciences Authority',
+    'ACE — Agency for Care Effectiveness listings',
+    'EDB Singapore biomedical manufacturing statistics',
+    'Company announcements and filings',
+    'BioNixus proprietary research (ASEAN, 2024–2026)',
+  ],
+  publishedDate: '2026-08-22',
+  modifiedDate: '2026-08-22',
+  conversion: {
+    routingHint: 'Mention HSA registration, ACE subsidy strategy, or APAC regional research for a faster routed response.',
+    emailSubject: 'Singapore pharma market research — BioNixus',
+  },
+};
+
+const SingaporePharmaCompanies = () => <CountryCompaniesGuide config={config} />;
+
+export default SingaporePharmaCompanies;

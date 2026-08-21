@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useParams, Link, useLocation, useNavigate } from 'react-router-dom';
+import { useInternalLinkInterceptor } from '@/hooks/useInternalLinkInterceptor';
 import { useQuery } from '@tanstack/react-query';
 import { sanitizeBodyHtml } from '@/lib/sanitize-body-html';
 import { PortableText } from '@portabletext/react';
@@ -299,13 +300,13 @@ const UAE_HEALTHCARE_TRENDS_2025_META_DESCRIPTION =
  */
 const EGYPT_HEALTHCARE_2026_SLUG = 'healthcare-overview-egypt-market-2026';
 const EGYPT_HEALTHCARE_2026_DISPLAY_TITLE =
-  'Cairo Hospitals Healthcare 2023–2026: Egypt Market Overview';
-const EGYPT_HEALTHCARE_2026_TITLE = 'Cairo Hospitals Healthcare 2023–2026';
+  'Cairo Hospitals Healthcare 2023–2026: Ranked Hospital Guide';
+const EGYPT_HEALTHCARE_2026_TITLE = 'Cairo Hospitals Healthcare 2023–2026: Ranked Hospital Guide';
 const EGYPT_HEALTHCARE_2026_META_DESCRIPTION =
-  'Cairo hospitals healthcare 2023–2026: Kasr Al-Ainy, Cleopatra, Saudi German Cairo, EDA pharma access, UHI payer trends — BioNixus Egypt research.';
+  'Cairo hospitals healthcare 2023–2026 — Kasr Al-Ainy, Cleopatra, Saudi German, UHI rollout & EDA pharma access. Free Egypt hospital market overview by BioNixus.';
 const EGYPT_HEALTHCARE_2026_OG_TITLE = EGYPT_HEALTHCARE_2026_DISPLAY_TITLE;
 const EGYPT_HEALTHCARE_2026_OG_DESCRIPTION =
-  'Full Egypt healthcare overview for 2026 — Cairo hospital landscape, EDA regulation, pharmaceutical market size, and primary physician research from BioNixus.';
+  'Cairo hospitals healthcare 2023–2026 — public tertiary, private groups & UHI rollout mapped with EDA pharma access context from BioNixus Egypt research.';
 
 const KUWAIT_HEALTHCARE_2026_SLUG = 'healthcare-overview-kuwait-market-2026';
 const KUWAIT_HEALTHCARE_2026_DISPLAY_TITLE =
@@ -781,6 +782,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
   const slug = fixedSlug ?? paramSlug;
   const { pathname } = useLocation();
   const navigate = useNavigate();
+  const interceptInternalLinks = useInternalLinkInterceptor();
   const errorLocale = resolveBlogArticleLocale(null, pathname);
   const errorUi = getBlogPostUiStrings(errorLocale);
   const errorBlogIndexPath = getBlogArticleIndexPath(errorLocale);
@@ -1158,7 +1160,10 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
           : [];
 
   return (
-    <div className="min-h-screen bg-background">
+    // Delegated handler: internal <a href="/..."> links inside HTML bodies
+    // SPA-navigate instead of triggering a full page reload.
+    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/click-events-have-key-events
+    <div className="min-h-screen bg-background" onClick={interceptInternalLinks}>
       <OpenGraphMeta
         title={socialTitle}
         description={socialDescription}

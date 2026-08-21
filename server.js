@@ -126,9 +126,9 @@ const GENERIC_DEFAULT_TITLES = new Set([
 
 /** GSC CTR overrides — keep in sync with BlogPost.tsx EGYPT/KUWAIT constants */
 const EGYPT_HEALTHCARE_2026_SLUG = 'healthcare-overview-egypt-market-2026';
-const EGYPT_HEALTHCARE_2026_TITLE = 'Cairo Hospitals Healthcare 2023–2026 | BioNixus';
+const EGYPT_HEALTHCARE_2026_TITLE = 'Cairo Hospitals Healthcare 2023–2026: Ranked Hospital Guide';
 const EGYPT_HEALTHCARE_2026_META =
-  'Cairo hospitals healthcare 2023–2026: Kasr Al-Ainy, Cleopatra, Saudi German Cairo, EDA pharma access, UHI payer trends — BioNixus Egypt market research.';
+  'Cairo hospitals healthcare 2023–2026 — Kasr Al-Ainy, Cleopatra, Saudi German, UHI rollout & EDA pharma access. Free Egypt hospital market overview by BioNixus.';
 const KUWAIT_HEALTHCARE_2026_SLUG = 'healthcare-overview-kuwait-market-2026';
 const KUWAIT_HEALTHCARE_2026_TITLE = 'April Healthcare Kuwait | Healthcare 2026 | BioNixus';
 const KUWAIT_HEALTHCARE_2026_META =

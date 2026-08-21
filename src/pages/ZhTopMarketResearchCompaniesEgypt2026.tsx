@@ -157,7 +157,7 @@ export default function ZhTopMarketResearchCompaniesEgypt2026() {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: '首页', item: 'https://www.bionixus.com/zh' },
-      { '@type': 'ListItem', position: 2, name: '洞察', item: 'https://www.bionixus.com/zh/insights' },
+      { '@type': 'ListItem', position: 2, name: '洞察', item: 'https://www.bionixus.com/insights' },
       {
         '@type': 'ListItem',
         position: 3,
@@ -258,7 +258,7 @@ export default function ZhTopMarketResearchCompaniesEgypt2026() {
             <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
               <Link to="/zh" className="hover:text-primary transition-colors">首页</Link>
               <span>/</span>
-              <Link to="/zh/insights" className="hover:text-primary transition-colors">洞察</Link>
+              <Link to="/insights" className="hover:text-primary transition-colors">洞察</Link>
               <span>/</span>
               <span className="text-foreground">埃及最佳市场研究公司</span>
             </div>

@@ -1,4 +1,24 @@
 import type { ReactNode } from 'react'
+import { Link } from 'react-router-dom'
+
+const LINK_CLASS =
+  'font-medium text-primary underline decoration-primary/30 underline-offset-2 hover:no-underline'
+
+/** Internal site links must SPA-navigate via react-router; only external URLs open a new tab. */
+function isInternalHref(href: string): boolean {
+  if (href.startsWith('/')) return true
+  try {
+    return new URL(href).hostname.replace(/^www\./, '') === 'bionixus.com'
+  } catch {
+    return false
+  }
+}
+
+function toInternalPath(href: string): string {
+  if (href.startsWith('/')) return href
+  const url = new URL(href)
+  return `${url.pathname}${url.search}${url.hash}`
+}
 
 export const pressPortableTextComponents = {
   block: {
@@ -24,15 +44,20 @@ export const pressPortableTextComponents = {
       <strong className="font-semibold text-foreground">{children}</strong>
     ),
     em: ({ children }: { children?: ReactNode }) => <em>{children}</em>,
-    link: ({ children, value }: { children?: ReactNode; value?: { href?: string } }) => (
-      <a
-        href={value?.href}
-        className="font-medium text-primary underline decoration-primary/30 underline-offset-2 hover:no-underline"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {children}
-      </a>
-    ),
+    link: ({ children, value }: { children?: ReactNode; value?: { href?: string } }) => {
+      const href = value?.href ?? ''
+      if (href && isInternalHref(href)) {
+        return (
+          <Link to={toInternalPath(href)} className={LINK_CLASS}>
+            {children}
+          </Link>
+        )
+      }
+      return (
+        <a href={href} className={LINK_CLASS} target="_blank" rel="noopener noreferrer">
+          {children}
+        </a>
+      )
+    },
   },
 }

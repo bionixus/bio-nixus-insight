@@ -112,7 +112,7 @@ const staticLinks = [
 const globalWebsitesCountryLinks = [
   { to: '/healthcare-market-research/saudi-arabia', label: 'Saudi Arabia — pharma market entry blueprint' },
   { to: '/healthcare-market-research/uae', label: 'UAE — pharmaceutical go-to-market blueprint' },
-  { to: '/healthcare-market-research/united-states', label: 'United States — pharmaceutical market entry' },
+  { to: '/healthcare-market-research-usa', label: 'United States — pharmaceutical market entry' },
   { to: '/healthcare-market-research/uk', label: 'United Kingdom — pharmaceutical market entry' },
   { to: '/healthcare-market-research/germany', label: 'Germany — pharmaceutical market entry' },
   { to: '/healthcare-market-research/france', label: 'France — pharmaceutical market entry' },
@@ -168,6 +168,20 @@ const pharmaCountryLinks = [
   { to: '/pharmaceutical-companies-germany', label: 'Pharmaceutical Companies in Germany' },
   { to: '/pharmaceutical-companies-brazil', label: 'Pharmaceutical Companies in Brazil' },
   { to: '/pharmaceutical-companies-canada', label: 'Pharmaceutical Companies in Canada' },
+  { to: '/pharmaceutical-companies-turkey', label: 'Pharmaceutical Companies in Turkey' },
+  { to: '/pharmaceutical-companies-jordan', label: 'Pharmaceutical Companies in Jordan' },
+  { to: '/pharmaceutical-companies-morocco', label: 'Pharmaceutical Companies in Morocco' },
+  { to: '/pharmaceutical-companies-india', label: 'Pharmaceutical Companies in India' },
+  { to: '/pharmaceutical-companies-china', label: 'Pharmaceutical Companies in China' },
+  { to: '/pharmaceutical-companies-japan', label: 'Pharmaceutical Companies in Japan' },
+  { to: '/pharmaceutical-companies-south-korea', label: 'Pharmaceutical Companies in South Korea' },
+  { to: '/pharmaceutical-companies-singapore', label: 'Pharmaceutical Companies in Singapore' },
+  { to: '/pharmaceutical-companies-malaysia', label: 'Pharmaceutical Companies in Malaysia' },
+  { to: '/pharmaceutical-companies-switzerland', label: 'Pharmaceutical Companies in Switzerland' },
+  { to: '/medical-device-companies-saudi-arabia', label: 'Medical Device Companies in Saudi Arabia' },
+  { to: '/medical-device-companies-uae', label: 'Medical Device Companies in UAE' },
+  { to: '/medical-device-companies-usa', label: 'Medical Device Companies in USA' },
+  { to: '/medical-device-companies-japan', label: 'Medical Device Companies in Japan' },
 ];
 
 const healthcareCountryLinks = [
@@ -323,6 +337,7 @@ function categorizePath(path: string) {
   if (path.startsWith('/global-websites/')) return 'Healthcare Market Research';
   if (path.startsWith('/healthcare-market-research/')) return 'Healthcare Country Pages';
   if (path.startsWith('/pharmaceutical-companies-')) return 'Pharmaceutical Company Guides';
+  if (path.startsWith('/medical-device-companies-')) return 'Medical Device Company Guides';
   if (path.startsWith('/insights/top-') && path.includes('-market-research-companies-')) {
     return 'Industry Market Research';
   }
