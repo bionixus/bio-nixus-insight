@@ -281,6 +281,21 @@ export const SERVICE_FAQ = [
     answer:
       'Share your objective, audience, industry, and timeline via the contact form. We typically return a tailored methodology outline within one business day.',
   },
+  {
+    question: 'How does BioNixus differ from IQVIA or Kantar for healthcare research?',
+    answer:
+      'BioNixus specialises in custom primary research with verified specialist recruitment, hospital procurement depth, and decision-linked synthesis — particularly in GCC, Egypt, and priority EU markets. Global syndicated vendors excel at longitudinal panel benchmarks; BioNixus wins when teams need account-level evidence, bilingual Arabic–English fieldwork, or integrated qual-and-quant without enterprise MSA thresholds.',
+  },
+  {
+    question: 'What minimum engagement size does BioNixus accept?',
+    answer:
+      'Focused modules typically start from USD 20,000 depending on geography and sample complexity — scoped to one commercial, access, or medical decision rather than open-ended tracker maintenance. Multi-country programmes scale from validated feasibility without requiring a minimum annual spend commitment.',
+  },
+  {
+    question: 'Does BioNixus support MedTech and medical devices research?',
+    answer:
+      'Yes. BioNixus runs hospital procurement, clinician adoption, and KOL mapping programmes for MedTech manufacturers across GCC, Europe, and priority Asia-Pacific markets — with SFDA, MOHAP, FDA, and EU MDR-aware study design. See our MedTech country pages and GCC medical devices market report for segment-level intelligence.',
+  },
 ] as const;
 
 export const HERO_METRICS = [

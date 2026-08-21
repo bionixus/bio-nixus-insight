@@ -128,6 +128,13 @@ const CARDIO_TAIL: ReferenceSection[] = [
       'Teams ready to escalate should route into country cardiovascular reports, market access research services, and the healthcare hub for coherent multi-market expansion across MENA, the UK, and Europe.',
     ],
   },
+  {
+    title: 'GCC and EU5 cardiovascular access realities for 2026 planning',
+    paragraphs: [
+      'In GCC hospital systems, tender scoring and pharmacist substitution can accelerate generic or biosimilar cardiovascular switches independently of specialist preference. EU5 markets apply regional HTA, rebate, and step-therapy overlays that delay novel therapy uptake even after regulatory approval. BioNixus embeds local procurement and payer modules so cardiovascular forecasts reflect institutional gates—not prescriber intent alone.',
+      'Residual-risk and cardiometabolic narratives compete for the same clinician attention budgets as GLP-1 adoption; combined research modules clarify where messaging, access, and medical education should coordinate rather than fragment across specialty silos.',
+    ],
+  },
 ];
 
 const RARE_TAIL: ReferenceSection[] = [
@@ -172,6 +179,13 @@ const NEUROLOGY_CNS_TAIL: ReferenceSection[] = [
       'BioNixus links neurology programmes to rare-disease hubs, biosimilar substitution modules where relevant, and country reports across MENA, the UK, and Europe so affiliates plan from one behavioural evidence base.',
     ],
   },
+  {
+    title: 'Neurology fieldwork design: centres, caregivers, and access committees',
+    paragraphs: [
+      'Effective neurology programmes combine tertiary centre depth with primary-care gateway sampling where referral compression shrinks treatable cohorts. Caregiver-inclusive qualitative modules capture home-administration burden and discontinuation drivers that HCP surveys alone miss. Payer and high-cost drug committee interviews should precede scale-up messaging so access narratives align with the exceptions committees actually grant.',
+      'Infusion-chair capacity, home-administration training, and monitoring burden often explain persistence gaps better than efficacy claims alone—BioNixus maps these operational constraints alongside prescriber intent for launch and lifecycle planning.',
+    ],
+  },
 ];
 
 const DIGITAL_HEALTH_TAIL: ReferenceSection[] = [
@@ -187,6 +201,13 @@ const DIGITAL_HEALTH_TAIL: ReferenceSection[] = [
     paragraphs: [
       'Payers and hospital committees increasingly request operational outcome evidence, total-cost-of-care narratives, and cybersecurity assurances alongside clinical validation. BioNixus pairs clinician adoption studies with payer-adjacent interviews and procurement stakeholder mapping so digital portfolios align evidence generation with the gates that actually control budget release.',
       'Teams escalating from pilots to regional rollout should connect digital-health insight with diabetes, cardiology, or respiratory therapy hubs where companion services intersect with pharmaceutical franchises.',
+    ],
+  },
+  {
+    title: 'Scaling digital health beyond pilot enthusiasm',
+    paragraphs: [
+      'Successful pilots often stall at IT security review, ambiguous CPT or DRG coding, nursing operational burden, or fragmented hospital budgeting. Research should identify which gate blocks budget release in each account archetype so product, medical, and access teams invest in fixes that change purchasing—not demo satisfaction scores alone.',
+      'SaMD and AI-enabled diagnostics add validation, liability, and post-market surveillance expectations that standard app adoption studies miss; BioNixus maps these alongside prescriber workflow research.',
     ],
   },
 ];
@@ -221,6 +242,7 @@ const BIOSIMILARS_TAIL: ReferenceSection[] = [
     paragraphs: [
       'Erosion curves fail when analogues differ on administration setting, cold-chain logistics, centre concentration, or payer incentive structures. BioNixus pairs analogue review with measured substitution confidence, tender calendar intelligence, and account-level procurement behaviour so forecasts reflect operational reality.',
       'Escalate biosimilar programmes through biologics and immunology hubs, Saudi biosimilar market reports, and healthcare market research country pages where hospital tendering dominates access.',
+      'Post-tender persistence tracking separates awarded volume from treated patients—critical when NUPCO or MOH awards accelerate listing but nurse training or cold-chain gaps suppress real-world switching.',
     ],
   },
 ];
