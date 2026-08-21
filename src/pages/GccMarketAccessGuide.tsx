@@ -175,7 +175,7 @@ const GccMarketAccessGuide = () => {
             description: 'Complete guide to pharmaceutical drug registration, pricing, and reimbursement across the 6 GCC countries: Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman.',
             url: citationUrl,
             datePublished: '2026-01-15',
-            dateModified: '2026-06-16',
+            dateModified: '2026-08-21',
             author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
             publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
           })}
@@ -540,6 +540,53 @@ const GccMarketAccessGuide = () => {
           </div>
         </section>
 
+        {/* MedTech and medical devices market access */}
+        <section className="section-padding py-12 bg-muted/10" id="medtech-access">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              MedTech and medical devices market access in the GCC (2026)
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Medical device manufacturers entering GCC markets navigate parallel regulatory and procurement
+                pathways distinct from pharmaceutical dossiers. Saudi SFDA classifies devices under risk-based
+                categories with Medical Device Marketing Authorization (MDMA) requirements; UAE MOHAP, DHA, and DOH
+                each maintain device registration lists with emirate-specific import permits; Qatar MOPH and Kuwait MOH
+                evaluate GMP evidence, stability under Zone IVB climate conditions, and local agent warehouse capacity
+                before listing high-risk implantables and IVD platforms.
+              </p>
+              <p>
+                Hospital procurement for capital equipment and implantables often runs through NUPCO (Saudi Arabia),
+                MOH tender offices (Kuwait, Oman), and Hamad Medical Corporation committees (Qatar) — with
+                value-analysis expectations on total cost of ownership, training burden, maintenance contracts, and
+                disposables pull-through. BioNixus supports MedTech teams with clinician adoption research, biomedical
+                engineering committee interviews, competitive switching analysis, and optional linkage to our{' '}
+                <Link to="/gcc-medical-devices-market-report" className="text-primary underline font-medium">
+                  GCC medical devices market report
+                </Link>{' '}
+                and country-specific{' '}
+                <Link to="/saudi-arabia-medical-devices-market-report" className="text-primary underline font-medium">
+                  Saudi Arabia medical devices report
+                </Link>
+                .
+              </p>
+              <p>
+                For surgical robotics, structural heart, diabetes technology (CGM and insulin pumps), and diagnostic
+                imaging, research should align SFDA or MOHAP clearance timing with hospital budget cycles — committees
+                rarely list devices ahead of capital budget windows even when regulatory approval exists. See{' '}
+                <Link to="/healthcare-market-research/saudi-arabia" className="text-primary underline font-medium">
+                  healthcare market research Saudi Arabia
+                </Link>{' '}
+                and{' '}
+                <Link to="/uae-pharmaceutical-market-research" className="text-primary underline font-medium">
+                  UAE pharmaceutical and MedTech research
+                </Link>{' '}
+                for integrated pharma and device programmes from one regional partner.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Internal links */}
         <section className="section-padding py-12 bg-muted/20">
           <div className="container-wide max-w-5xl mx-auto">
@@ -665,6 +712,18 @@ const GccMarketAccessGuide = () => {
                 {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
+                },
+                {
+                  q: 'How does SFDA regulate medical devices differently from pharmaceuticals in Saudi Arabia?',
+                  a: 'SFDA classifies devices by risk (Class A–D) with MDMA requirements, GMP inspection or PIC/S evidence, and Arabic IFU for selected categories. Listing on the SFDA device register does not guarantee NUPCO tender inclusion — hospital value-analysis and budget cycles remain separate gates BioNixus maps in procurement research.',
+                },
+                {
+                  q: 'Do GCC countries accept EU CE or US FDA clearance for MedTech registration?',
+                  a: 'GCC regulators frequently reference FDA, CE, or other reference-agency clearances to accelerate review, but local registration, agent appointment, Arabic labelling, and stability data for hot climates remain mandatory. BioNixus aligns competitive intelligence with reference-agency status so launch sequencing reflects both regulatory reliance and hospital listing realism.',
+                },
+                {
+                  q: 'When should MedTech teams commission market access research versus syndicated audit data?',
+                  a: 'Syndicated audits track aggregate share; access research explains committee objections, training gaps, and tender scoring that determine whether cleared devices convert to treated patients. BioNixus recommends primary research when launch, competitive defence, or distributor selection decisions require account-level evidence within one planning cycle.',
                 },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">

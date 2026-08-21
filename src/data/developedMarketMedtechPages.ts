@@ -802,6 +802,54 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
   },
 };
 
+/** Extra FAQs for MedTech pages within ~50 words of the 2,000-word SEO threshold ([BIO-450]). */
+const NEAR_THRESHOLD_MEDTECH_EXTRA_FAQS: Partial<
+  Record<DevelopedMarketMedtechSlug, ServiceLandingExpandedContent['faqs']>
+> = {
+  brazil: [
+    {
+      question: 'How does ANVISA device classification affect MedTech research design in Brazil?',
+      answer:
+        'Class III and IV devices face longer ANVISA GGMED review and Portuguese Module 1 requirements — shaping what hospital committees expect at listing. BioNixus maps classification alongside SUS versus ANS private pathways so research reflects the evidence procurement teams actually weigh, not generic Latin America averages.',
+    },
+  ],
+  switzerland: [
+    {
+      question: 'How does Swissmedic MedTech regulation interact with EU MDR for research in Switzerland?',
+      answer:
+        'Post-MRA adjustments mean Swiss manufacturers and importers navigate Swissmedic requirements alongside EU MDR for cross-border portfolios. BioNixus programmes document notified-body status, classification, and hospital HTA expectations so competitive and adoption research aligns with the regulatory credentials committees reference.',
+    },
+  ],
+  spain: [
+    {
+      question: 'How do autonomous communities affect MedTech procurement research in Spain?',
+      answer:
+        'Hospital device funding and tender calendars vary by comunidad autónoma — Catalonia, Madrid, Andalusia, and Basque Country each implement distinct procurement rhythms. BioNixus segments sample frames by region and account type so adoption and pricing research reflects where procedures concentrate, not blended national averages.',
+    },
+  ],
+  denmark: [
+    {
+      question: 'How does Danish hospital procurement differ from other EU5 MedTech markets?',
+      answer:
+        'Denmark\'s five regional health authorities and centralized tendering for selected device categories create distinct listing dynamics versus Germany or France. BioNixus maps regional procurement calendars, Amgros tender participation, and hospital committee evidence expectations for device categories under evaluation.',
+    },
+  ],
+  malaysia: [
+    {
+      question: 'How does Malaysia\'s dual public–private MedTech pathway affect research sampling?',
+      answer:
+        'Ministry of Health public hospitals and private hospital chains follow different procurement and adoption sequences — particularly for premium implantables and diagnostic capital. BioNixus segments research by channel and account archetype so manufacturers understand where innovator adoption precedes public formulary listing.',
+    },
+  ],
+  poland: [
+    {
+      question: 'How does NFZ reimbursement influence MedTech adoption research in Poland?',
+      answer:
+        'Narodowy Fundusz Zdrowia reimbursement decisions and hospital budget caps gate high-cost device uptake even after URPL registration. BioNixus integrates NFZ tariff context, tender participation patterns, and clinician adoption modules so research explains listing outcomes syndicated audits miss.',
+    },
+  ],
+};
+
 export function getDevelopedMarketMedtechPath(slug: DevelopedMarketMedtechSlug): string {
   return `/${slug}-medtech-market-research`;
 }
@@ -810,7 +858,10 @@ export function getDevelopedMarketMedtechExpandedContent(
   slug: DevelopedMarketMedtechSlug,
 ): ServiceLandingExpandedContent {
   const country = DEVELOPED_MARKET_MEDTECH_COUNTRIES[slug];
-  return buildExpandedContent(country);
+  const content = buildExpandedContent(country);
+  const extra = NEAR_THRESHOLD_MEDTECH_EXTRA_FAQS[slug];
+  if (!extra?.length) return content;
+  return { ...content, faqs: [...content.faqs, ...extra] };
 }
 
 export function getDevelopedMarketMedtechCountry(slug: DevelopedMarketMedtechSlug): DevelopedMarketMedtechCountry {

@@ -245,6 +245,16 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       answer:
         'Yes. Cardiometabolic overlap is common; combined modules reduce duplicate fieldwork and clarify where messaging, access, and medical education should coordinate across specialty boundaries rather than compete for clinician attention.',
     },
+    {
+      question: 'How do GLP-1 and obesity pharmacotherapy trends affect cardiovascular device research?',
+      answer:
+        'Rising obesity pharmacotherapy reshapes cardiometabolic procedure volumes, device candidacy, and cath-lab prioritisation. Studies should capture cross-category competition and institutional protocol shifts so structural heart and electrophysiology forecasts reflect current practice, not pre-GLP-1 analogues alone.',
+    },
+    {
+      question: 'Which cardiovascular stakeholders should research prioritise in GCC hospital systems?',
+      answer:
+        'Interventional cardiologists, heart-failure nurses, hospital pharmacists with substitution authority, and biomedical procurement leads often carry more listing leverage than title alone suggests. BioNixus weights stakeholders by tender scoring influence and pathway ownership for each SKU under evaluation.',
+    },
   ],
   'neurology-cns': [
     {
@@ -267,6 +277,21 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       answer:
         'We deliver centre concentration maps, KOL connectivity dossiers, persistence and discontinuation analysis, caregiver burden narratives, and access-risk registers tied to step therapy or funding exceptions—outputs medical, access, and brand teams can operationalise without reinterpretation.',
     },
+    {
+      question: 'How should neurology research handle rare versus high-prevalence indications?',
+      answer:
+        'Rare CNS categories require centre-of-excellence concentration maps and caregiver-inclusive qual; high-prevalence migraine or epilepsy programmes need primary-care gateway sampling and persistence modules at scale. BioNixus calibrates design to addressable cohort size and referral compression rather than applying one template across the neurology portfolio.',
+    },
+    {
+      question: 'What real-world endpoints matter most in CNS market research?',
+      answer:
+        'Time-to-diagnosis, time-to-treatment, monitoring burden, infusion-chair capacity, and step-therapy documentation gaps often explain uptake better than efficacy claims alone. We measure operational frictions alongside prescriber intent so forecasts and medical education plans target constraints that block treated patients.',
+    },
+    {
+      question: 'How long does a neurology market research programme typically take?',
+      answer:
+        'Focused specialist surveys often complete in four to six weeks; mixed-method programmes with caregiver depth, centre mapping, and payer modules typically run eight to twelve weeks depending on indication rarity and geography. BioNixus documents feasibility before commitment so affiliates align fieldwork to launch or access gates.',
+    },
   ],
   'digital-health': [
     {
@@ -288,6 +313,21 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       question: 'How does BioNixus support digital health commercialisation?',
       answer:
         'We pair clinician adoption studies with payer-adjacent interviews, procurement stakeholder mapping, and pricing scenario tests—linking findings to diabetes, cardiology, or respiratory hubs where companion services intersect pharmaceutical franchises.',
+    },
+    {
+      question: 'How do SaMD and AI-enabled diagnostics change digital health research design?',
+      answer:
+        'Software-as-a-medical-device and AI diagnostics add liability, validation, and post-market surveillance expectations that standard app adoption studies miss. BioNixus maps regulator posture, clinical validation requirements, and hospital IT security review steps alongside prescriber workflow research.',
+    },
+    {
+      question: 'Can digital health research support both B2B hospital sales and D2C companion apps?',
+      answer:
+        'Yes. Hospital procurement modules differ materially from consumer activation and adherence research. BioNixus runs parallel tracks with harmonised KPIs so product teams see where clinical enthusiasm converts to budget release versus where patient-facing features drive persistence without payer funding.',
+    },
+    {
+      question: 'What evidence do GCC hospital IT committees require before approving digital health tools?',
+      answer:
+        'Committees typically review cybersecurity posture, data residency, EHR integration effort, nursing workflow impact, and liability allocation—not clinical abstracts alone. BioNixus maps these gates in procurement stakeholder interviews alongside clinician adoption studies so digital portfolios invest in fixes that unlock budget.',
     },
   ],
   dermatology: [
@@ -337,6 +377,16 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       question: 'How does BioNixus support biosimilar launch and defence planning?',
       answer:
         'We deliver account-level substitution confidence maps, tender scenario notes, physician and pharmacist objection libraries, and uptake models linked to biologics hubs, immunology research, and country reports where hospital procurement dominates access.',
+    },
+    {
+      question: 'How should biosimilar research differ for hospital tenders versus retail pharmacy?',
+      answer:
+        'Hospital tender scoring, cold-chain logistics, nurse training, and committee interchangeability narratives drive institutional switching; retail channels emphasise pharmacist substitution confidence and patient-support continuity. BioNixus segments modules by channel so erosion models reflect where volume actually moves.',
+    },
+    {
+      question: 'What evidence do GCC payers expect before accelerating biosimilar uptake?',
+      answer:
+        'NUPCO, MOHAP, and emirate formularies increasingly weigh local budget impact, interchangeability confidence, and post-tender persistence—not only registration status. Research tracks committee objections and pharmacist behaviour after award so access teams calibrate price and medical narratives to observable switching.',
     },
   ],
 };
