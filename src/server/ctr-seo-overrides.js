@@ -170,9 +170,9 @@ export const CTR_SEO_BY_PATH = {
       'Bionixus is a healthcare market research company specializing in pharma, medical devices & patient studies across the Middle East, Asia, Europe & Americas. Get a proposal.',
   },
   '/healthcare-market-research-companies': {
-    title: 'Top Healthcare Market Research Companies (2026) | Ranked Guide',
+    title: 'Healthcare Market Research Agency Guide (2026) | BioNixus',
     description:
-      'Healthcare market research companies 2026 — ranked agency guide for primary HCP & payer research. BioNixus vs IQVIA, Ipsos, Kantar. USA, Europe & MENA country listicles.',
+      'Healthcare market research agency hiring guide 2026 — how to choose an agency for HCP surveys, payer research & KOL mapping, what it costs, and when BioNixus fits.',
   },
   '/insights/top-market-research-companies-iraq-2026': {
     title: '5 Best Market Research Companies in Iraq (2026) | Ranked Guide',
@@ -289,6 +289,13 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Kuwait healthcare market research companies 2026 — MOH/GPADC-aware HCP, KOL, and payer research. Compare BioNixus and GCC partners.',
   },
+  // Absorbs /blog/top-healthcare-market-research-companies-uae (515 impr/wk at pos 31)
+  // via config/legacy-redirects.json; this destination already sits at pos 9.6.
+  '/insights/top-healthcare-market-research-companies-uae-2026': {
+    title: 'Healthcare Market Research Companies UAE & Dubai 2026',
+    description:
+      'UAE healthcare market research companies 2026 — DHA, DOH and MOHAP-aware HCP, KOL and payer research across Dubai and Abu Dhabi. Compare BioNixus and peers.',
+  },
   '/insights/top-healthcare-market-research-companies-netherlands-2026': {
     title: 'Healthcare Market Research Companies Netherlands | BioNixus',
     description:
@@ -313,6 +320,11 @@ export const CTR_SEO_BY_PATH = {
     title: 'HEOR Consulting Services: Health Economics & Outcomes Research',
     description:
       'Bionixus HEOR consulting — economic models, RWE studies, payer evidence and value dossiers for pharma & medtech across emerging and developed markets.',
+  },
+  '/services/competitive-intelligence': {
+    title: 'Pharma Competitive Intelligence Services (2026) | BioNixus',
+    description:
+      'Pharmaceutical competitive intelligence services — pipeline monitoring, launch readiness, prescriber switching and landscape assessments across EMEA. By BioNixus.',
   },
   '/blog/awiqli-insulin-icodec-weekly-fda-2026': {
     title: 'Awiqli (Insulin Icodec) FDA Approval 2026: What It Means',
