@@ -27,6 +27,7 @@ import {
   buildFAQSchema,
   buildBreadcrumbSchema,
 } from '@/lib/seo/schemas';
+import { CONSUMER_RESEARCH_WATCH_PATH } from '@/data/videos';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -499,6 +500,14 @@ export default function ConsumerMarketResearchPortal() {
                 className="absolute inset-0 w-full h-full"
               />
             </div>
+            <p className="mt-4 text-sm text-gray-500">
+              <Link
+                to={CONSUMER_RESEARCH_WATCH_PATH}
+                className="font-medium text-primary hover:underline"
+              >
+                Open full watch page
+              </Link>
+            </p>
           </div>
         </section>
 

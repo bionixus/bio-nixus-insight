@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://www.bionixus.com/videos/healthcare-market-research-overview</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/9zPvYCZJQIY/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>BioNixus Healthcare Market Research Overview</video:title>
+      <video:description>A short overview of how BioNixus designs quantitative, qualitative, and access programs for pharmaceutical teams in global markets including the Americas, Europe, and the Middle East.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/9zPvYCZJQIY</video:player_loc>
+      <video:content_loc>https://www.bionixus.com/media/healthcare-market-research-overview.mp4</video:content_loc>
+      <video:duration>90</video:duration>
+      <video:publication_date>2026-06-24T15:10:12-07:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/videos/consumer-b2b-market-research</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/XEFjIQRUkCk/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>BioNixus Consumer &amp; B2B Market Research</video:title>
+      <video:description>See how BioNixus designs and delivers consumer and B2B research programmes across MENA, Africa, and Europe for healthcare and pharmaceutical decision-makers.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/XEFjIQRUkCk</video:player_loc>
+      <video:duration>187</video:duration>
+      <video:publication_date>2026-06-24T15:13:48-07:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+</urlset>

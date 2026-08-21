@@ -6,9 +6,17 @@ import { YouTubeEmbed } from '@/components/media/YouTubeEmbed';
 type ProofVideoEmbedProps = {
   config: ProofVideoConfig;
   className?: string;
+  /** Dedicated Google watch-page URL (e.g. /videos/healthcare-market-research-overview). */
+  watchHref?: string;
+  watchLabel?: string;
 };
 
-export function ProofVideoEmbed({ config, className = '' }: ProofVideoEmbedProps) {
+export function ProofVideoEmbed({
+  config,
+  className = '',
+  watchHref,
+  watchLabel = 'Open full watch page',
+}: ProofVideoEmbedProps) {
   const { src, youtubeId, poster, title, description, transcript, fallbackHref, fallbackLabel } = config;
 
   return (
@@ -24,6 +32,13 @@ export function ProofVideoEmbed({ config, className = '' }: ProofVideoEmbedProps
             <YouTubeEmbed videoId={youtubeId} title={title} />
             <figcaption className="p-4 text-xs text-muted-foreground leading-relaxed">
               {transcript}
+              {watchHref ? (
+                <p className="mt-3">
+                  <Link to={watchHref} className="text-primary font-medium hover:underline text-sm">
+                    {watchLabel}
+                  </Link>
+                </p>
+              ) : null}
             </figcaption>
           </figure>
         ) : src ? (
@@ -41,6 +56,13 @@ export function ProofVideoEmbed({ config, className = '' }: ProofVideoEmbedProps
             </video>
             <figcaption className="p-4 text-xs text-muted-foreground leading-relaxed">
               {transcript}
+              {watchHref ? (
+                <p className="mt-3">
+                  <Link to={watchHref} className="text-primary font-medium hover:underline text-sm">
+                    {watchLabel}
+                  </Link>
+                </p>
+              ) : null}
             </figcaption>
           </figure>
         ) : (

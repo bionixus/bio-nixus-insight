@@ -7,7 +7,10 @@ import {
   buildFAQSchema,
   buildProfessionalServiceSchema,
   buildOrganizationSchema,
+  buildVideoObjectSchema,
+  buildVideoWatchPageSchemas,
 } from '@/lib/seo/schemas';
+import { getAllVideos } from '@/data/videos';
 import { buildDatasetSchema, buildMedicalWebPageSchema } from '@/lib/reportEnrichmentSchemas';
 
 /**
@@ -178,5 +181,27 @@ describe('Breadcrumb + FAQ + Service builders used across service/country/therap
 
   it('ProfessionalService (Service pages) is valid', () => {
     parseAndValidate(buildProfessionalServiceSchema());
+  });
+});
+
+describe('VideoObject watch-page builders', () => {
+  const video = getAllVideos()[0];
+
+  it('buildVideoObjectSchema is valid JSON-LD', () => {
+    expect(video).toBeTruthy();
+    parseAndValidate(buildVideoObjectSchema(video));
+  });
+
+  it('every node in the watch-page bundle is valid', () => {
+    buildVideoWatchPageSchemas(video).forEach(parseAndValidate);
+  });
+
+  it('VideoObject includes required name, thumbnailUrl, uploadDate, and a media URL', () => {
+    const node = buildVideoObjectSchema(video) as Record<string, unknown>;
+    expect(node['@type']).toBe('VideoObject');
+    expect(typeof node.name).toBe('string');
+    expect(Array.isArray(node.thumbnailUrl) || typeof node.thumbnailUrl === 'string').toBe(true);
+    expect(typeof node.uploadDate).toBe('string');
+    expect(Boolean(node.embedUrl || node.contentUrl)).toBe(true);
   });
 });

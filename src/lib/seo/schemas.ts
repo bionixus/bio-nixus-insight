@@ -1,4 +1,5 @@
 import type { CountryConfig } from '@/lib/constants/countries';
+import type { SiteVideo } from '@/data/videos';
 import { ORG_AREA_SERVED, buildCanonicalOrganization } from '@/lib/seo/organization';
 
 const BASE_URL = 'https://www.bionixus.com';
@@ -181,6 +182,70 @@ export function buildServicePageSchemas(service: string, description: string) {
       { name: 'Home', href: '/' },
       { name: 'Healthcare Market Research', href: '/healthcare-market-research' },
       { name: `${label} service`, href: `/healthcare-market-research/services/${service}` },
+    ]),
+  ];
+}
+
+/**
+ * VideoObject for dedicated watch pages only.
+ * Required for Google video eligibility: name, thumbnailUrl, uploadDate.
+ * Prefer embedUrl and/or contentUrl so Google can resolve the media.
+ */
+export function buildVideoObjectSchema(video: SiteVideo) {
+  const watchUrl = `${BASE_URL}/videos/${video.slug}`;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    '@id': `${watchUrl}#video`,
+    name: video.name,
+    description: video.description,
+    thumbnailUrl: [video.thumbnailUrl],
+    uploadDate: video.uploadDate,
+    duration: video.durationIso,
+    ...(video.embedUrl ? { embedUrl: video.embedUrl } : {}),
+    ...(video.contentUrl ? { contentUrl: video.contentUrl } : {}),
+    url: watchUrl,
+    publisher: {
+      '@type': 'Organization',
+      name: 'BioNixus',
+      url: BASE_URL,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${BASE_URL}/bionixus-logo.webp`,
+      },
+    },
+  };
+}
+
+export function buildVideoWatchPageSchemas(video: SiteVideo) {
+  return [
+    buildOrganizationSchema(),
+    buildVideoObjectSchema(video),
+    buildBreadcrumbSchema([
+      { name: 'Home', href: '/' },
+      { name: 'Videos', href: '/videos' },
+      { name: video.name, href: `/videos/${video.slug}` },
+    ]),
+  ];
+}
+
+export function buildVideosIndexSchemas(videos: SiteVideo[]) {
+  return [
+    buildOrganizationSchema(),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'BioNixus market research videos',
+      itemListElement: videos.map((video, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: video.name,
+        url: `${BASE_URL}/videos/${video.slug}`,
+      })),
+    },
+    buildBreadcrumbSchema([
+      { name: 'Home', href: '/' },
+      { name: 'Videos', href: '/videos' },
     ]),
   ];
 }

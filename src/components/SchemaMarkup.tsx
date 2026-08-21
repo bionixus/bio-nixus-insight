@@ -305,6 +305,20 @@ export function isValidSchemaNode(node: Record<string, unknown>): boolean {
     )
   }
 
+  if (type === 'VideoObject') {
+    const hasThumb =
+      (typeof node.thumbnailUrl === 'string' && isNonEmptyString(node.thumbnailUrl)) ||
+      (Array.isArray(node.thumbnailUrl) &&
+        node.thumbnailUrl.length > 0 &&
+        node.thumbnailUrl.every((u) => isNonEmptyString(String(u))))
+    return (
+      isNonEmptyString(node.name) &&
+      hasThumb &&
+      isNonEmptyString(node.uploadDate) &&
+      (isNonEmptyString(node.embedUrl) || isNonEmptyString(node.contentUrl))
+    )
+  }
+
   if (type === 'NewsArticle') {
     return (
       isNonEmptyString(node.headline) &&

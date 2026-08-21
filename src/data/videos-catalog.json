@@ -1,0 +1,37 @@
+[
+  {
+    "slug": "healthcare-market-research-overview",
+    "name": "BioNixus Healthcare Market Research Overview",
+    "description": "A short overview of how BioNixus designs quantitative, qualitative, and access programs for pharmaceutical teams in global markets including the Americas, Europe, and the Middle East.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/9zPvYCZJQIY/hqdefault.jpg",
+    "uploadDate": "2026-06-24T15:10:12-07:00",
+    "durationIso": "PT1M30S",
+    "durationSeconds": 90,
+    "youtubeId": "9zPvYCZJQIY",
+    "embedUrl": "https://www.youtube.com/embed/9zPvYCZJQIY",
+    "contentUrl": "https://www.bionixus.com/media/healthcare-market-research-overview.mp4",
+    "transcript": "BioNixus supports pharmaceutical and healthcare teams with market research built for real decisions — launch readiness, market access, payer evidence, and competitive intelligence. Programs combine senior-led design, bilingual Arabic–English fieldwork, and audit-ready governance across global markets including the Americas, Europe, and the Middle East.",
+    "relatedLinks": [
+      { "href": "/healthcare-market-research", "label": "Healthcare market research hub" },
+      { "href": "/case-studies", "label": "Anonymized case studies" },
+      { "href": "/consumer-market-research", "label": "Consumer & B2B market research" }
+    ]
+  },
+  {
+    "slug": "consumer-b2b-market-research",
+    "name": "BioNixus Consumer & B2B Market Research",
+    "description": "See how BioNixus designs and delivers consumer and B2B research programmes across MENA, Africa, and Europe for healthcare and pharmaceutical decision-makers.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/XEFjIQRUkCk/hqdefault.jpg",
+    "uploadDate": "2026-06-24T15:13:48-07:00",
+    "durationIso": "PT3M7S",
+    "durationSeconds": 187,
+    "youtubeId": "XEFjIQRUkCk",
+    "embedUrl": "https://www.youtube.com/embed/XEFjIQRUkCk",
+    "transcript": "BioNixus is a global market research firm serving pharmaceutical, healthcare, and consumer brands. Teams design consumer and B2B programmes with regional fieldwork depth across MENA, Africa, and Europe, then convert findings into launch, access, and commercial decisions.",
+    "relatedLinks": [
+      { "href": "/consumer-market-research", "label": "Consumer market research portal" },
+      { "href": "/healthcare-market-research", "label": "Healthcare market research hub" },
+      { "href": "/market-research", "label": "Market research services" }
+    ]
+  }
+]

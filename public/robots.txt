@@ -99,3 +99,4 @@ LLMs-Full-Txt: https://www.bionixus.com/llms-full.txt
 # Sitemap
 # ----------------------------------------------------------------------
 Sitemap: https://www.bionixus.com/sitemap.xml
+Sitemap: https://www.bionixus.com/sitemap-videos.xml
