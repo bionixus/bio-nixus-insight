@@ -48,6 +48,16 @@ const faqItems = [
     answer:
       'Yes. Italian modules can run with comparable cells in Germany, France, Spain, and the UK — and beyond to the USA, Canada, Japan, and other markets — using consistent instruments for global portfolio committees managing EU5 and multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How do AIFA Law 648/96 and regional SSR formularies affect launch research in Italy?',
+    answer:
+      'Law 648/96 compassionate-use pathways and regional SSR restrictions can accelerate or delay uptake before national PFN listing completes. BioNixus maps where products travel through 648, registro AIFA, or regional exceptions — so forecasts treat AIFA approval as necessary but not sufficient for treated-patient estimates.',
+  },
+  {
+    question: 'What MedTech and device research does BioNixus conduct in Italy?',
+    answer:
+      'BioNixus runs CE-mark and MDR-aware hospital procurement research, cath-lab and OR adoption studies, and diagnostic imaging pathway work across IRCCS and regional hospital networks — linked to Italy medical devices market intelligence and EU5 benchmarking when manufacturers coordinate pharma and device portfolios.',
+  },
 ];
 
 const jsonLd = [

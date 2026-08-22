@@ -73,6 +73,11 @@ const FAQ_ITEMS = [
     answer:
       'BioNixus provides cross-regional intelligence for Brazilian and Latin American pharmaceutical companies entering GCC and MENA markets. Brazil and GCC share structural parallels — large generic medicine markets, centralised public procurement (SUS/NUPCO), and premium private hospital sectors — that make cross-regional strategy natural. From our regional offices, BioNixus delivers SFDA (Saudi Arabia), MOHAP (UAE), and MOH (Kuwait, Qatar, Oman) regulatory pathway intelligence; NUPCO tender and hospital formulary data; HCP surveys across all major therapy areas in Arabic and English; and comparative Brazil–GCC market benchmarking that informs portfolio sequencing and pricing strategy for companies launching in both regions.',
   },
+  {
+    question: 'What deliverables should Brazil pharma teams expect from a BioNixus programme?',
+    answer:
+      'Typical deliverables include an executive synthesis tied to one launch or access decision, therapy-area segment readouts, CONITEC-oriented evidence summaries where SUS incorporation is in scope, KOL influence maps by institution type, competitive objection libraries, and a thirty/sixty/ninety-day action plan with fieldwork appendix suitable for medical affairs and market access governance. Optional GCC comparator modules use harmonised instruments when Brazilian manufacturers sequence LATAM and Middle East rollouts from one research partner.',
+  },
 ];
 
 const FAQ_SECTION_ID = 'brazil-pharma-market-research-faq';

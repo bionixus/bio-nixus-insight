@@ -95,6 +95,10 @@ export default function DeHealthcareMarketResearchGermany() {
           question: 'Wie unterstützt Marktforschung die Marktzugangsstrategie in Deutschland?',
           answer: 'Marktforschung ist ein unverzichtbares Instrument zur Entwicklung einer erfolgreichen Marktzugangsstrategie in Deutschland. In der frühen Phase der klinischen Entwicklung liefern qualitative Studien mit Fachärzten und Patienten wichtige Erkenntnisse zur Krankheitslast, zu ungedeckten Versorgungsbedürfnissen und zur wahrgenommenen Positionierung des neuen Produkts gegenüber der zweckmäßigen Vergleichstherapie — zentrale Elemente des AMNOG-Dossiers. Payer-Befragungen bei GKV-Kassenvertretern und G-BA-nahen Experten ermöglichen es, die Perspektive der Kostenträger zu verstehen und die Nutzendossier-Argumentation entsprechend zu gestalten. Nach der Markteinführung messen Tracking-Studien die Wahrnehmung und Verschreibungsbereitschaft der Ärzte, während Real-World-Evidence-Studien die im Dossier beschriebenen klinischen Vorteile in der Praxis belegen. BioNixus begleitet Pharmaunternehmen durch den gesamten Zulassungs- und Marktzugangszyklus in Deutschland.',
         },
+        {
+          question: 'Wie differenziert BioNixus GKV- und PKV-Segmente in deutschen Studien?',
+          answer: 'GKV- und PKV-Patienten folgen unterschiedlichen Erstattungslogiken, Arztgruppen und Preisarchitekturen. BioNixus segmentiert Stichproben und Analysen entlang dieser Kanäle — niedergelassene versus stationäre Versorgung, Kassenformulare versus Privatliquidation — damit Launch- und Access-Teams nicht mit aggregierten Durchschnittswerten planen, die in der Praxis an Erstattungsgrenzen scheitern.',
+        },
       ]}
     />
   );

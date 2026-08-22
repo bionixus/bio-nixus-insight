@@ -500,6 +500,52 @@ const GccMarketAccessGuide = () => {
           </div>
         </section>
 
+        {/* MedTech and device registration across GCC */}
+        <section className="section-padding py-12" id="medtech-registration">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              MedTech and medical device registration in the GCC
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Pharmaceutical and MedTech teams often underestimate how device pathways diverge from drug
+                registration in GCC markets. SFDA, MOHAP, NHRA, and MOPH each classify devices under national
+                medical device regulations — with classification rules, local authorised representative requirements,
+                and post-market surveillance expectations that differ from CTD-style drug dossiers. Saudi Arabia&apos;s
+                SFDA medical device framework aligns with GCC harmonisation initiatives; UAE requires MOHAP device
+                registration plus emirate-level notifications for Dubai (DHA) and Abu Dhabi (DOH) when products enter
+                private hospital networks.
+              </p>
+              <p>
+                Pricing and reimbursement for devices frequently routes through hospital procurement and tender scoring
+                rather than national external reference pricing alone — especially for capital equipment, surgical
+                robotics, and high-value implantables. BioNixus MedTech access research links regulator milestones to
+                biomedical engineering committee behaviour, value-analysis scoring, and maintenance-contract economics
+                that determine whether a cleared device actually wins tender share.
+              </p>
+              <p>
+                For integrated pharma–device portfolios, see{' '}
+                <Link to="/gcc-medical-devices-market-report" className="text-primary underline font-medium">
+                  GCC medical devices market report
+                </Link>
+                ,{' '}
+                <Link to="/saudi-arabia-medical-devices-market-report" className="text-primary underline font-medium">
+                  Saudi Arabia medical devices market report
+                </Link>
+                , and{' '}
+                <Link to="/uae-medical-devices-market-report" className="text-primary underline font-medium">
+                  UAE medical devices market report
+                </Link>
+                . For cross-country registration sequencing, pair this guide with{' '}
+                <Link to="/services/market-access" className="text-primary underline font-medium">
+                  market access consulting services
+                </Link>
+                .
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* NUPCO and GCC tender landscape */}
         <section className="section-padding py-12" id="nupco-tenders">
           <div className="container-wide max-w-5xl mx-auto">

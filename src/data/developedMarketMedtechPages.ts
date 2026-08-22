@@ -806,11 +806,64 @@ export function getDevelopedMarketMedtechPath(slug: DevelopedMarketMedtechSlug):
   return `/${slug}-medtech-market-research`;
 }
 
+/** Supplemental FAQs for MedTech BOFU pages within ~35 words of the 2,000-word SEO threshold. */
+export const NEAR_THRESHOLD_MEDTECH_EXTRA_FAQS: Partial<
+  Record<DevelopedMarketMedtechSlug, NonNullable<ServiceLandingExpandedContent['faqs']>>
+> = {
+  brazil: [
+    {
+      question: 'How does ANVISA RDC 751/2022 affect MedTech market research in Brazil?',
+      answer:
+        'RDC 751/2022 modernised Brazil’s medical device framework — aligning risk classification with IMDRF, clarifying UDI expectations, and tightening post-market surveillance obligations for Class III and IV devices. BioNixus programmes map how these rules change hospital evidence requests, ANVISA registration timelines, and distributor qualification before fieldwork scales — so commercial teams do not message against outdated regulatory assumptions.',
+    },
+  ],
+  switzerland: [
+    {
+      question: 'How does Swissmedic EU MDR reliance affect MedTech research in Switzerland?',
+      answer:
+        'Swissmedic continues mutual-recognition pathways with EU notified bodies for many device categories, but Switzerland-specific labelling, CH-REP obligations, and tariff-sensitive procurement can diverge from EU5 analogues. BioNixus pairs Swiss hospital procurement research with regulator-aware competitive landscaping so manufacturers understand both clinical enthusiasm and listing friction in Swiss university hospitals and cantonal systems.',
+    },
+  ],
+  spain: [
+    {
+      question: 'How do AEMPS and regional autonomy shape MedTech studies in Spain?',
+      answer:
+        'AEMPS national registration interacts with 17 autonomous communities that manage hospital budgets and formulary decisions independently. BioNixus designs Spain MedTech research with regional modules — Catalonia, Madrid, Andalusia, and Basque Country — capturing where procurement scoring and HTA-style reviews differ, rather than treating “Spain” as a single homogeneous account list.',
+    },
+  ],
+  denmark: [
+    {
+      question: 'What role does Danish Medicines Agency and hospital procurement play in Denmark MedTech research?',
+      answer:
+        'Denmark’s concentrated hospital landscape (regions own most acute capacity) and Medicinrådet-style assessments for high-cost devices mean adoption research must include regional procurement committees alongside specialist prescribers. BioNixus maps Danish region tender calendars, substitution policy, and digital-health integration norms that syndicated audits rarely explain at account level.',
+    },
+  ],
+  malaysia: [
+    {
+      question: 'How does MDA registration and public–private hospital split affect Malaysia MedTech research?',
+      answer:
+        'Medical Device Authority (MDA) classification, ASEAN harmonisation, and a dual public–private hospital market create distinct adoption corridors — MOH central tenders versus private hospital value committees. BioNixus Malaysia programmes segment by channel, verify procedure volume at target accounts, and link findings to GCC expansion modules when manufacturers use Malaysia as an ASEAN launch hub.',
+    },
+  ],
+  poland: [
+    {
+      question: 'How does URPL and NFZ reimbursement shape Poland MedTech market research?',
+      answer:
+        'URPL device registration, NFZ tariff decisions, and growing private hospital investment create layered access — public reimbursement gates versus private pay acceleration for premium devices. BioNixus Poland research captures procurement committee evidence expectations, distributor coverage gaps outside Warsaw, and how EU MDR transition affects hospital willingness to dual-source.',
+    },
+  ],
+};
+
 export function getDevelopedMarketMedtechExpandedContent(
   slug: DevelopedMarketMedtechSlug,
 ): ServiceLandingExpandedContent {
   const country = DEVELOPED_MARKET_MEDTECH_COUNTRIES[slug];
-  return buildExpandedContent(country);
+  const content = buildExpandedContent(country);
+  const extra = NEAR_THRESHOLD_MEDTECH_EXTRA_FAQS[slug];
+  if (extra?.length) {
+    content.faqs = [...(content.faqs ?? []), ...extra];
+  }
+  return content;
 }
 
 export function getDevelopedMarketMedtechCountry(slug: DevelopedMarketMedtechSlug): DevelopedMarketMedtechCountry {
