@@ -372,6 +372,16 @@ const THERAPY_FAQS: Record<string, { question: string; answer: string }[]> = {
       answer:
         'We run prescriber confidence and switching studies, insurer and hospital-formulary interviews, substitution-incentive mapping, and KOL mapping tied to real formulary influence, with bilingual fieldwork across MENA. Outputs include molecule-wave models, payer and switching maps, and objection libraries that connect to the biologics guide, the Saudi Arabia biosimilar market report, and country biosimilar reports.',
     },
+    {
+      question: 'How should teams model biosimilar erosion when interchangeability rules differ by country?',
+      answer:
+        'Erosion speed depends on pharmacist substitution mandates, tender bundle scoring, device familiarity, and originator defence levers—not a single global curve. BioNixus pairs policy review with measured switching behaviour and tender calendars so forecasts reflect operational substitution rather than theoretical price parity alone.',
+    },
+    {
+      question: 'What role do nurses and pharmacy stakeholders play in biosimilar switching studies?',
+      answer:
+        'Nurses manage infusion preparation and training; pharmacists execute substitution and cold-chain decisions in many systems. BioNixus includes these stakeholders when they control the vial that reaches the patient—preventing over-weighting physician intent that never converts to administered doses in hospital tender environments.',
+    },
   ],
   cardiology: [
     {
@@ -416,6 +426,16 @@ const THERAPY_FAQS: Record<string, { question: string; answer: string }[]> = {
       answer:
         'We deliver stakeholder segmentation, value-narrative and outcome-message testing, undertreatment and adherence analysis, and access-risk mapping. Findings connect to country reports and the healthcare market research hub so launch, medical, and access strategies share one evidence base across MENA, the UK, and Europe.',
     },
+    {
+      question: 'How should teams measure undertreatment in cardiovascular pathways?',
+      answer:
+        'Undertreatment often hides in primary-care maintenance—suboptimal statin intensity, delayed anticoagulation after events, or heart-failure regimens below guideline dose. BioNixus triangulates chart-audit analogues, prescriber surveys, and pharmacist substitution behaviour to locate where clinical intent fails to convert to treated cohorts.',
+    },
+    {
+      question: 'What deliverables do cardiovascular programmes typically include?',
+      answer:
+        'Executive synthesis tied to one launch or access decision, stakeholder heatmaps by account type, persistence and switch-intent readouts, value-narrative test results, and a prioritised action plan with evidence gaps flagged for medical affairs and market access. Optional GCC or EU5 comparator cells use harmonised instruments for portfolio committees.',
+    },
   ],
   'neurology-cns': [
     {
@@ -438,6 +458,26 @@ const THERAPY_FAQS: Record<string, { question: string; answer: string }[]> = {
       answer:
         'We deliver pathway and eligible-population mapping, sequencing and persistence analysis, KOL and specialist-centre maps, and access-risk assessments for high-cost therapies. Outputs connect to country reports and the healthcare market research hub so launch and access planning rest on realistic, pathway-aware evidence.',
     },
+    {
+      question: 'How do rare and progressive CNS indications change study design?',
+      answer:
+        'Small diagnosed cohorts, long diagnostic delay, and caregiver-mediated administration require centre-based sampling and ethnographic depth—not broad GP panels. BioNixus maps referral nodes, genetic testing throughput, and funding-committee behaviour so forecasts treat prevalence as an upper bound rather than a treated-patient assumption.',
+    },
+    {
+      question: 'Can neurology research support launch sequencing across MENA and EU5?',
+      answer:
+        'Yes. Comparable survey cores across GCC, UK, and EU5 affiliates roll up for governance while local modules capture step therapy, home-infusion logistics, and high-cost drug committee formats. Findings link to rare-disease hubs and country reports when orphan franchises share KOL networks.',
+    },
+    {
+      question: 'How does monitoring burden shape CNS therapy persistence in practice?',
+      answer:
+        'MRI schedules, infusion chair capacity, home-nursing requirements, and lab monitoring for safety programmes often cap treatable cohorts below labelled eligibility. Research quantifies where monitoring logistics—not clinical rejection—drive discontinuation so medical and access teams invest in operational fixes alongside efficacy messaging.',
+    },
+    {
+      question: 'Which centre types should neurology sampling prioritise?',
+      answer:
+        'Academic MS and movement-disorder hubs, regional epilepsy networks, and private neuro-oncology corridors carry different patient flow and funding rules. BioNixus weights sampling toward centres that initiate and maintain therapy for your indication rather than broad neurologist panels with low eligible throughput.',
+    },
   ],
   'digital-health': [
     {
@@ -459,6 +499,26 @@ const THERAPY_FAQS: Record<string, { question: string; answer: string }[]> = {
       question: 'How does BioNixus support digital health commercialisation?',
       answer:
         'We deliver adoption and workflow-fit studies, payer and procurement-readiness analysis, evidence-requirement mapping, and stakeholder segmentation across clinicians, administrators, and patients. Findings connect to the healthcare market research hub so product, clinical, and commercial teams align on a realistic route to scale.',
+    },
+    {
+      question: 'What evidence do hospital IT and procurement teams require before SaMD budget release?',
+      answer:
+        'Security review, EHR interoperability, liability allocation, nursing workflow time studies, and clear reimbursement or DRG linkage often gate budget even when clinicians support adoption. BioNixus documents these gates with procurement and clinical informatics stakeholders so product teams fix operational blockers—not only clinical value propositions.',
+    },
+    {
+      question: 'How does remote monitoring research differ from traditional device adoption studies?',
+      answer:
+        'Remote monitoring depends on patient onboarding, connectivity in target demographics, alert-fatigue management, and downstream prescribing behaviour—not device ergonomics alone. BioNixus captures adherence to monitoring protocols and clinician response patterns, linking digital uptake to pharmaceutical pull-through where companion therapies apply.',
+    },
+    {
+      question: 'How do GCC and EU5 digital-health procurement models differ in research design?',
+      answer:
+        'GCC hospital tenders and insurer mandates can accelerate central procurement of connected devices; EU5 systems vary by regional autonomy, DRG linkage, and DiGA-style app reimbursement pilots. Comparable survey cores roll up for governance while local modules capture budget holder, IT security review, and nursing operational burden in each market.',
+    },
+    {
+      question: 'Can digital-health research support pharma companion programmes?',
+      answer:
+        'Yes. When apps, sensors, or adherence tools accompany a pharmaceutical franchise, BioNixus links clinician adoption of the digital companion to prescribing and persistence outcomes—so commercial teams do not fund digital pilots that fail to move script behaviour.',
     },
   ],
   diabetes: [
@@ -577,6 +637,41 @@ const THERAPY_FAQS: Record<string, { question: string; answer: string }[]> = {
       question: 'How does BioNixus support dermatology teams?',
       answer:
         'We deliver prescriber and channel segmentation, step-therapy and access-risk mapping, message and objection testing, and KOL mapping across MENA, the UK, and Europe. Outputs connect to immunology research and country reports so launch, medical, and access strategy share one evidence base.',
+    },
+    {
+      question: 'How do biologic versus small-molecule dermatology corridors differ in research design?',
+      answer:
+        'Biologic pathways carry infusion or home-administration logistics, monitoring protocols, and prior-authorization burden; small molecules may compete on convenience and price with faster GP adoption. BioNixus segments studies by corridor so messaging targets the friction that actually limits share—not a blended dermatology average.',
+    },
+    {
+      question: 'Can dermatology research capture patient-activated demand fairly?',
+      answer:
+        'Yes, with privacy-aware patient and caregiver modules that measure information sources, treatment expectations, and willingness to switch—balanced with prescriber and payer interviews so adoption models reflect both activation and coverage constraints in each market.',
+    },
+    {
+      question: 'How does the medical-aesthetic overlap affect dermatology portfolio research?',
+      answer:
+        'Injectables and energy-based devices compete in discretionary channels with different training ecosystems and promotion rules than hospital biologic pathways. BioNixus routes questions to the provider type that actually competes for your SKU—dermatology clinic, medi-spa, or plastic surgery—so forecasts do not mix elective spend cycles with chronic immune-mediated demand.',
+    },
+    {
+      question: 'How should teams research biologic step therapy in dermatology without overstating GP intent?',
+      answer:
+        'GPs may express willingness to escalate while prior-authorization documentation and dermatology referral queues delay biologic initiation for months. Studies should capture PA friction, referral interval, and pharmacist substitution where applicable—not only specialist stated preference at academic centres.',
+    },
+    {
+      question: 'What KOL archetypes matter most in dermatology market research?',
+      answer:
+        'Academic psoriasis and atopic dermatitis experts, high-volume community dermatologists who control biologic starts, and nurse-led injection clinics each influence different portfolio stages. BioNixus maps influence by pathway leverage—initiation versus maintenance versus substitution—rather than publication counts alone.',
+    },
+    {
+      question: 'How does BioNixus connect dermatology research to immunology and GCC access programmes?',
+      answer:
+        'Immune-mediated dermatology franchises often share KOL networks, hospital tender calendars, and step-therapy policy with rheumatology and gastroenterology biologics. BioNixus links dermatology modules to immunology therapy research, biosimilar hubs, and GCC pharmaceutical market access guides so brand, medical, and access teams sequence messaging and evidence across overlapping stakeholder panels without duplicate fieldwork.',
+    },
+    {
+      question: 'What timeline should teams expect for dermatology fieldwork in MENA and EU5?',
+      answer:
+        'Focused HCP surveys typically complete in four to six weeks; mixed qual–quant programmes with patient modules and payer depth run eight to twelve weeks depending on biologic scarcity, ethics review, and multi-country harmonisation. Feasibility is documented before commitment so affiliates approve sample frames with realistic recruitment risk.',
     },
   ],
 };

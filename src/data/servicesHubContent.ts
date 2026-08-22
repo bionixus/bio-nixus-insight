@@ -341,6 +341,21 @@ export const SERVICE_FAQ = [
     answer:
       'Share your objective, audience, industry, and timeline via the contact form. We typically return a tailored methodology outline within one business day.',
   },
+  {
+    question: 'How does BioNixus govern data quality across CATI, CAWI, and CAPI modes?',
+    answer:
+      'Every mode uses documented screeners, respondent verification (licence, role, institution type), daily recruitment funnel review, and supervisor QC on mystery-shopping and CAPI programmes. Healthcare modules add therapeutic-area alignment checks; B2B modules validate company size and purchase authority. Deliverables include an audit-ready methodology appendix for internal compliance review.',
+  },
+  {
+    question: 'Can BioNixus run healthcare and non-healthcare modules in one global programme?',
+    answer:
+      'Yes. Multinational teams often pair pharmaceutical HCP surveys with adjacent B2B or consumer trackers—shared governance, harmonised reporting templates, and one senior-led team across geographies. Scoping separates modules by audience and compliance requirements while avoiding duplicate vendor management.',
+  },
+  {
+    question: 'What is included in a typical BioNixus services proposal?',
+    answer:
+      'Proposals specify objective, audience, geography, methodology (CATI, CAWI, CAPI, qual, or mixed), sample frame, timeline, quality controls, and deliverable format—executive synthesis, segment readouts, and audit-ready methodology appendix. Healthcare modules note ethics and HCP verification steps; commercial modules document B2B screeners and supervisor QC for mystery-shopping programmes.',
+  },
 ] as const;
 
 export const HERO_METRICS = [
