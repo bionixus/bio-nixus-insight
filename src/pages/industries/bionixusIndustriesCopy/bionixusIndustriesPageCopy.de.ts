@@ -69,8 +69,12 @@ export const bionixusIndustriesPageCopyDe: BionixusIndustriesPageCopy = {
   insightsEyebrow: 'B2B- & B2C-Insights',
   insightsH2Before: 'Branchen-Insights-',
   insightsH2Em: 'Portal',
-  insightsLead:
-    'Fieldwork-geführte Artikel für Nicht-Gesundheits-Einkäufer — filtern nach Branchenvertikal und Land. Gesundheits- und pharmazeutische Forschung bleibt auf unserem dedizierten Blog.',
+  insightsLeadBeforeLink:
+    'Feldforschungsbasierte Artikel für Einkäufer außerhalb des Gesundheitswesens — filtern Sie nach Branchenvertikale und Land. Gesundheits- und Pharmaforschung bleibt in unserem ',
+  insightsLeadLinkLabel: 'eigenen Gesundheits-Blog',
+  insightsLeadAfterLink: '.',
+  insightsCountOne: '{count} veröffentlichter Artikel · Fokus GCC & MENA',
+  insightsCountMany: '{count} veröffentlichte Artikel · Fokus GCC & MENA',
   insightsCtaOpen: 'Insights-Portal öffnen →',
   insightsCtaProposal: 'Angebot anfordern',
   insightsPanelHead: 'Neueste Branchenartikel',

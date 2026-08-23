@@ -156,7 +156,7 @@ const GccMarketAccessGuide = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>GCC Market Access 2026: Pharma & MedTech Entry Guide (All 6 Countries)</title>
+        <title>GCC Market Access 2026: Pharma & MedTech Entry Guide</title>
         <meta
           name="description"
           content="How to enter GCC healthcare markets in 2026 — registration, pricing, tenders and distributors for Saudi, UAE, Qatar, Kuwait, Oman, Bahrain."
@@ -590,7 +590,7 @@ const GccMarketAccessGuide = () => {
               <Link to="/iqvia-alternative" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 IQVIA alternatives and competitors compared
               </Link>
-              <Link to="/healthcare-market-research-companies" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+              <Link to="/insights/top-global-healthcare-market-research-companies-2026" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 Top healthcare market research companies (2026)
               </Link>
               <Link to="/healthcare-market-research-agency-gcc" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">

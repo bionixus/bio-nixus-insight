@@ -301,10 +301,17 @@ export default function TopHealthcareMarketResearchCompaniesSaudiArabia2026() {
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
               An expert guide to the leading{' '}
               <strong className="text-foreground">healthcare market research companies Saudi Arabia</strong> buyers
-              shortlist in 2026. This guide profiles 5 firms with demonstrated capability in SFDA-aware pharmaceutical
+              shortlist in 2026. For <strong className="text-foreground">all-industry</strong> rankings, see{' '}
+              <Link
+                to="/insights/top-market-research-companies-saudi-arabia-2026"
+                className="text-primary hover:underline"
+              >
+                top market research companies in Saudi Arabia
+              </Link>
+              . This guide profiles 5 firms with demonstrated capability in SFDA-aware pharmaceutical
               research, HCP surveys, KOL mapping, NUPCO procurement intelligence, HEOR evidence generation, and Vision
               2030 healthcare market intelligence. For the global vendor shortlist see{' '}
-              <Link to="/healthcare-market-research-companies" className="text-primary hover:underline">
+              <Link to="/insights/top-global-healthcare-market-research-companies-2026" className="text-primary hover:underline">
                 top healthcare market research companies
               </Link>
               ; for regional MENA context see{' '}

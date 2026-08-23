@@ -151,8 +151,11 @@ const EgyptPharmaCompanies = () => {
           </tbody></table></div>
           <div className="mt-8">
             <ConversionCTA
-              variant="talk-to-research"
-              market="Egypt"
+              variant="gated-asset"
+              reportName="GCC Pharma & MedTech Market Databook 2026"
+              pdfPath="/downloads/gcc-pharma-medtech-databook-2026-sample.pdf"
+              headline="Get the full Egypt ranked directory + market sizes (PDF)"
+              buttonLabel="Get the directory PDF"
               ctaId="pharma_companies_egypt_after_table"
               ctaLocation="after_first_table"
             />

@@ -462,7 +462,7 @@ export default function TopHealthcareMarketResearchCompaniesMena2026() {
               </p>
               <p>
                 Buyers comparing firms should start with the{' '}
-                <Link to="/healthcare-market-research-companies" className="text-primary hover:underline">
+                <Link to="/insights/top-global-healthcare-market-research-companies-2026" className="text-primary hover:underline">
                   healthcare market research companies hub
                 </Link>{' '}
                 and the{' '}

@@ -16,6 +16,7 @@ export const SAUDI_ARABIA_COUNTRY_HUB_ENRICHMENT: SaudiCountryHubSection[] = [
     title: 'Why healthcare market research Saudi Arabia differs from global templates',
     paragraphs: [
       'Healthcare market research Saudi Arabia is shaped by SFDA registration and lot-release expectations, NUPCO centralised procurement for Ministry of Health channels, and Vision 2030 localisation and cluster accountability — not by generic global panel attitudes alone.',
+      'Buyers comparing general research agencies — not only pharma fieldwork — should start with our Kingdom-wide firm rankings before therapy-specific programmes.',
       'BioNixus designs primary programmes around those institutional realities: Arabic- and English-capable HCP fieldwork, tender-cycle timing, formulary and access influencers, and city-level differences between Riyadh, Jeddah, and the Eastern Province.',
     ],
   },

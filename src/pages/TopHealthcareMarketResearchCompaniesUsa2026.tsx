@@ -143,12 +143,63 @@ const firms: FirmProfile[] = [
       'MedTech market sizing and device adoption forecasts',
     ],
   },
+  {
+    rank: 8,
+    name: 'Trinity Life Sciences',
+    type: 'Life Sciences Commercial Strategy & Insights Firm',
+    hq: 'USA (Waltham, MA)',
+    anchor: 'trinity',
+    url: 'https://www.trinitylifesciences.com',
+    bestFor: 'Commercial strategy consulting with embedded primary research, launch planning, pricing and market access advisory for US biotech',
+    overview:
+      'Trinity Life Sciences combines commercial strategy consulting with primary market research for US pharmaceutical and biotech clients. Trinity\'s model integrates advisory work — launch strategy, forecasting, pricing and contracting — with supporting HCP and payer research, making it well suited to emerging biotech teams that want strategy and evidence from one partner. Trinity is strongest in launch-stage commercial planning; clients needing standalone large-scale fieldwork or multi-country programs typically pair Trinity\'s advisory output with dedicated fieldwork partners.',
+    strengths: [
+      'Integrated commercial strategy plus supporting primary research',
+      'US launch planning, forecasting, and pricing advisory depth',
+      'Strong emerging-biotech client base and analog benchmarking',
+      'Payer contracting and gross-to-net advisory capability',
+    ],
+  },
+  {
+    rank: 9,
+    name: 'ZS Associates',
+    type: 'Sales & Marketing Analytics Consultancy',
+    hq: 'USA (Evanston, IL)',
+    anchor: 'zs',
+    url: 'https://www.zs.com',
+    bestFor: 'US sales force sizing and deployment analytics, omnichannel marketing analytics, segmentation and targeting models',
+    overview:
+      'ZS Associates is the leading US sales and marketing analytics consultancy for pharmaceutical companies, specialising in sales force design, territory alignment, incentive compensation, segmentation/targeting, and omnichannel analytics. ZS conducts supporting primary research within its analytics engagements but its core value is quantitative commercial operations modelling rather than attitudinal insight or payer strategy fieldwork. Best paired with a primary research specialist when qualitative HCP or payer depth is required alongside commercial analytics.',
+    strengths: [
+      'Sales force sizing, territory design, and incentive compensation modelling',
+      'Omnichannel and HCP digital engagement analytics',
+      'Segmentation, targeting, and prescriber-level data modelling',
+      'Deep integration with US claims and prescriber datasets',
+    ],
+  },
+  {
+    rank: 10,
+    name: 'Schlesinger Group',
+    type: 'Qualitative Fieldwork & Facility Network',
+    hq: 'USA (Iselin, NJ)',
+    anchor: 'schlesinger',
+    url: 'https://www.schlesingergroup.com',
+    bestFor: 'US qualitative fieldwork logistics — focus group facilities, HCP and patient recruitment, and online qualitative platforms',
+    overview:
+      'Schlesinger Group operates one of the largest US qualitative research facility and recruitment networks, providing focus group facilities in major metros, verified HCP and patient recruitment, and online qualitative platforms. Schlesinger is a fieldwork and logistics partner rather than a full-service insights firm — study design, moderation, and analysis are typically provided by the sponsoring research agency. Best suited as the execution layer under a research partner that owns design and interpretation.',
+    strengths: [
+      'National focus group facility network across major US metros',
+      'Verified HCP and patient recruitment panels',
+      'Online qualitative and usability testing platforms',
+      'Rapid multi-market qualitative logistics coordination',
+    ],
+  },
 ];
 
 const faqItems = [
   {
     q: 'What are the top healthcare market research companies in the USA?',
-    a: 'The leading healthcare market research companies in the USA for 2026 are: BioNixus (global insights firm with IRB-compliant HCP, KOL, payer, and HEOR research across all major US therapeutic areas), IQVIA (prescription data and real-world evidence analytics), Ipsos Healthcare (consumer health and HCP research), Kantar Health (consumer brand health tracking), M3 Global Research (digital physician panels), RTI Health Solutions (HEOR and outcomes research), and Decision Resources Group/Clarivate (secondary pharma intelligence). For custom primary research requiring IRB compliance, HCP recruitment across US academic medical centres, KOL mapping, or PBM payer strategy, BioNixus offers full-service delivery.',
+    a: 'The leading healthcare market research companies in the USA for 2026 are: BioNixus (global insights firm with IRB-compliant HCP, KOL, payer, and HEOR research across all major US therapeutic areas), IQVIA (prescription data and real-world evidence analytics), Ipsos Healthcare (consumer health and HCP research), Kantar Health (consumer brand health tracking), M3 Global Research (digital physician panels), RTI Health Solutions (HEOR and outcomes research), Decision Resources Group/Clarivate (secondary pharma intelligence), Trinity Life Sciences (commercial strategy with embedded research), ZS Associates (sales and marketing analytics), and Schlesinger Group (qualitative fieldwork logistics). For custom primary research requiring IRB compliance, HCP recruitment across US academic medical centres, KOL mapping, or PBM payer strategy, BioNixus offers full-service delivery.',
   },
   {
     q: 'How does the IRA (Inflation Reduction Act) affect US healthcare market research?',
@@ -229,7 +280,7 @@ export default function TopHealthcareMarketResearchCompaniesUsa2026() {
       'Expert guide to the leading healthcare and pharmaceutical market research companies in the USA for 2026. Covers IRB-compliant HCP firms, KOL mapping across US academic medical centres, payer and PBM research, IRA impact intelligence, and how to evaluate a US research partner.',
     url: CANONICAL,
     datePublished: '2026-06-25',
-    dateModified: '2026-08-14',
+    dateModified: '2026-08-22',
     author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
     inLanguage: 'en',
@@ -321,7 +372,7 @@ export default function TopHealthcareMarketResearchCompaniesUsa2026() {
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
               An expert guide to the leading{' '}
               <strong className="text-foreground">healthcare market research companies USA</strong> buyers shortlist
-              in 2026. This guide profiles 7 firms with demonstrated capability in IRB-compliant US HCP surveys, KOL
+              in 2026. This guide profiles 10 firms with demonstrated capability in IRB-compliant US HCP surveys, KOL
               mapping across major academic medical centres, PBM and CMS payer research, IRA drug negotiation
               intelligence, HEOR evidence generation, and multi-region US healthcare research. For methodology and
               coverage, start from our{' '}
@@ -329,7 +380,7 @@ export default function TopHealthcareMarketResearchCompaniesUsa2026() {
                 healthcare market research
               </Link>{' '}
               hub; for the global vendor shortlist, see{' '}
-              <Link to="/healthcare-market-research-companies" className="text-primary hover:underline">
+              <Link to="/insights/top-global-healthcare-market-research-companies-2026" className="text-primary hover:underline">
                 top healthcare market research companies
               </Link>
               .
@@ -357,7 +408,7 @@ export default function TopHealthcareMarketResearchCompaniesUsa2026() {
                 <p className="text-primary-foreground/70 text-sm mt-1">Formulary gatekeepers</p>
               </div>
               <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">7</p>
+                <p className="text-3xl md:text-4xl font-display font-bold">10</p>
                 <p className="text-primary-foreground/70 text-sm mt-1">Firms profiled</p>
               </div>
             </div>
@@ -419,7 +470,7 @@ export default function TopHealthcareMarketResearchCompaniesUsa2026() {
                 <ShieldCheck className="w-4 h-4" /> FDA, CMS, PBMs, and IRA dynamics
               </a>
               <a href="#firm-profiles" className="text-sm text-primary hover:underline flex items-center gap-2">
-                <Building2 className="w-4 h-4" /> 7 healthcare research firm profiles
+                <Building2 className="w-4 h-4" /> 10 healthcare research firm profiles
               </a>
               <a href="#buyer-criteria" className="text-sm text-primary hover:underline flex items-center gap-2">
                 <BarChart3 className="w-4 h-4" /> How to evaluate a US research partner
@@ -540,11 +591,33 @@ export default function TopHealthcareMarketResearchCompaniesUsa2026() {
         <section className="section-padding py-16 bg-muted/30" id="firm-profiles">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">
-              7 Top Healthcare Market Research Companies in USA (2026)
+              10 Top Healthcare Market Research Companies in USA (2026)
             </h2>
-            <p className="text-muted-foreground mb-10 max-w-3xl">
+            <p className="text-muted-foreground mb-8 max-w-3xl">
               The following profiles cover firms with demonstrated healthcare and pharmaceutical market research capability in the US. Each is assessed by use case and market positioning — select based on your research type, therapeutic area, and US engagement requirements.
             </p>
+            <div className="overflow-x-auto rounded-xl border border-border mb-10">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-primary/5 border-b border-border">
+                    <th className="text-left px-4 py-3 font-semibold text-foreground">#</th>
+                    <th className="text-left px-4 py-3 font-semibold text-foreground">Company</th>
+                    <th className="text-left px-4 py-3 font-semibold text-foreground hidden md:table-cell">Type</th>
+                    <th className="text-left px-4 py-3 font-semibold text-foreground">Best for</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {firms.map((f, i) => (
+                    <tr key={f.anchor} className={`border-b border-border ${i % 2 === 0 ? 'bg-card' : 'bg-muted/20'}`}>
+                      <td className="px-4 py-3 font-semibold text-foreground">{f.rank}</td>
+                      <td className="px-4 py-3 font-medium text-foreground"><a href={`#${f.anchor}`} className="text-primary hover:underline">{f.name}</a></td>
+                      <td className="px-4 py-3 text-muted-foreground hidden md:table-cell">{f.type}</td>
+                      <td className="px-4 py-3 text-muted-foreground">{f.bestFor}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
             <div className="space-y-8">
               {firms.map((firm) => (
                 <div
@@ -690,6 +763,8 @@ export default function TopHealthcareMarketResearchCompaniesUsa2026() {
                 { to: '/pharmaceutical-market-research-usa', label: 'US Pharmaceutical Market Research', desc: 'FDA-aligned pharmaceutical research covering HCP surveys, KOL mapping, PBM payer research, and IRA impact studies.' },
                 { to: '/healthcare-market-research-usa', label: 'Healthcare Market Research USA', desc: 'Comprehensive US healthcare market research overview — HCP surveys, payer research, HEOR, and patient studies.' },
                 { to: '/usa-healthcare-market-report', label: 'USA Healthcare Market Report', desc: 'Market sizing, FDA/CMS landscape, IRA impact, and regulatory outlook for the US healthcare market.' },
+                { to: '/pharmaceutical-companies-usa', label: 'Pharmaceutical Companies in USA', desc: 'Ranked 2026 directory of US pharma manufacturers, biotech majors, and the Big Three wholesalers.' },
+                { to: '/medical-device-companies-usa', label: 'Medical Device Companies in USA', desc: 'Top 20 US medtech companies with FDA 510(k)/PMA pathways, GPO channels, and market sizing.' },
               ].map((r) => (
                 <Link
                   key={r.to}

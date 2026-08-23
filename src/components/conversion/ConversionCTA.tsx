@@ -26,6 +26,10 @@ type GatedAssetCtaProps = {
   ctaId: string;
   ctaLocation: string;
   className?: string;
+  /** Optional intent-specific headline replacing the default "Download the full … sample (PDF)". */
+  headline?: string;
+  /** Optional intent-specific button label replacing "Get the sample PDF". */
+  buttonLabel?: string;
 };
 
 type ConversionCtaProps = TalkToResearchCtaProps | GatedAssetCtaProps;
@@ -78,7 +82,7 @@ export function ConversionCTA(props: ConversionCtaProps) {
       <div className={`rounded-2xl border border-border bg-card p-6 md:p-8 text-center ${props.className || ''}`}>
         <h3 className="text-xl md:text-2xl font-display font-semibold text-foreground mb-2 flex items-center justify-center gap-2">
           <Download className="w-5 h-5 text-primary" />
-          Download the full {props.reportName} sample (PDF)
+          {props.headline || `Download the full ${props.reportName} sample (PDF)`}
         </h3>
         <p className="text-sm text-muted-foreground mb-5 max-w-xl mx-auto">
           Work email, company, and country of interest — that's it.
@@ -88,7 +92,7 @@ export function ConversionCTA(props: ConversionCtaProps) {
           onClick={handleOpen}
           className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity"
         >
-          Get the sample PDF <Download className="w-4 h-4" />
+          {props.buttonLabel || 'Get the sample PDF'} <Download className="w-4 h-4" />
         </button>
       </div>
       <Dialog open={open} onOpenChange={setOpen}>

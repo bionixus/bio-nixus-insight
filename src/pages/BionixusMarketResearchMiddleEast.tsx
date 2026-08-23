@@ -531,6 +531,8 @@ const BionixusMarketResearchMiddleEast = () => {
                 src="/images/quant-hcp-survey-executive.png"
                 alt="Middle East pharmaceutical market research workshop with GCC commercial and market access leaders"
                 className="w-full h-56 object-cover"
+                width={1376}
+                height={768}
                 loading="lazy"
               />
               <figcaption className="p-4 text-xs text-muted-foreground">
@@ -542,6 +544,8 @@ const BionixusMarketResearchMiddleEast = () => {
                 src="/images/quant-ai-validation-lab.png"
                 alt="GCC pharmaceutical data validation workflow combining quantitative analytics and AI-assisted quality review"
                 className="w-full h-56 object-cover"
+                width={1376}
+                height={768}
                 loading="lazy"
               />
               <figcaption className="p-4 text-xs text-muted-foreground">

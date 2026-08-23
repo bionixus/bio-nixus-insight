@@ -187,7 +187,7 @@ export default function TopGlobalHealthcareMarketResearchCompanies2026() {
       'Independent 2026 guide ranking the top global healthcare market research companies — pharmaceutical analytics, strategy consulting, and primary research firms compared.',
     url: CANONICAL,
     datePublished: '2026-06-12',
-    dateModified: '2026-06-12',
+    dateModified: '2026-08-22',
     author: {
       '@type': 'Person',
       name: 'Haidy Yahia',
@@ -496,6 +496,7 @@ export default function TopGlobalHealthcareMarketResearchCompanies2026() {
                 { to: '/insights/top-market-research-companies-uae-2026', label: 'Top Market Research Companies in UAE', desc: 'UAE research firms compared for healthcare and pharma.' },
                 { to: '/insights/top-market-research-companies-brazil-2026', label: 'Top Market Research Companies in Brazil', desc: 'LATAM pharma research guide with ANVISA context.' },
                 { to: '/healthcare-market-research', label: 'Healthcare Market Research Hub', desc: 'Full portfolio of BioNixus healthcare research capabilities.' },
+                { to: '/healthcare-market-research-companies', label: 'Healthcare Market Research Agency Guide', desc: 'How to choose and hire an agency — capabilities, costs, and engagement models.' },
                 { to: '/contact', label: 'Request a Proposal', desc: 'Scope a custom pharmaceutical research engagement.' },
               ].map((r) => (
                 <Link key={r.to} to={r.to} className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 hover:shadow-md transition-all">

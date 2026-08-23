@@ -31,7 +31,7 @@ const HEALTHCARE_ADJACENT: ReadonlySet<MatrixIndustrySlug> = new Set([
 const GEO_GENERAL_LISTICLE: Partial<Record<MatrixCountrySlug, IndustryListicleCrossLink>> = {
   'saudi-arabia': {
     to: '/insights/top-market-research-companies-saudi-arabia-2026',
-    label: 'Cross-industry market research firms in Saudi Arabia (2026)',
+    label: 'top market research companies in Saudi Arabia',
   },
   uae: {
     to: '/insights/top-market-research-companies-uae-2026',

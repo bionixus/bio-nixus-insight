@@ -123,7 +123,21 @@ export default function TopIndustryMarketResearchListicle({
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
               A ranked comparison of market research firms serving {config.industry.displayNameShort.toLowerCase()}{' '}
-              clients in {config.country.label} for 2026. For regional context, see our{' '}
+              clients in {config.country.label} for 2026.
+              {countrySlug === 'saudi-arabia' && industrySlug !== 'healthcare' ? (
+                <>
+                  {' '}
+                  For Kingdom-wide all-industry rankings, see{' '}
+                  <Link
+                    to="/insights/top-market-research-companies-saudi-arabia-2026"
+                    className="text-primary underline font-medium"
+                  >
+                    top market research companies in Saudi Arabia
+                  </Link>
+                  .
+                </>
+              ) : null}{' '}
+              For regional context, see our{' '}
               <Link to={hubPath} className="text-primary underline font-medium">
                 {hubLabel}
               </Link>

@@ -10,10 +10,11 @@ import {
   BIONIXUS_PHONE_US_DISPLAY,
 } from '@/components/report-conversion/constants';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { languagePaths, localizedContactPath } from '@/lib/seo';
+import { getLocalizedPathForLanguage, languagePaths, localizedContactPath } from '@/lib/seo';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { TrustCoverageMap } from '@/components/media/TrustCoverageMap';
 import { CONTACT_FORM_COUNTRIES } from '@/data/contactFormCountries';
+import { getContactFormStrings } from '@/lib/contactFormStrings';
 import { trackLeadSubmitted } from '@/lib/analytics';
 
 type ContactValidation = {
@@ -32,6 +33,7 @@ type ContactValidation = {
   error?: string;
 };
 
+/** Submitted values. Visitor-facing labels come from `getContactFormStrings(language)`. */
 const RESEARCH_INTERESTS = [
   'Quantitative',
   'Qualitative',
@@ -124,6 +126,7 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const basePath = languagePaths[language] || '/';
+  const form = getContactFormStrings(language);
   const c = t.contact as Record<string, string | undefined>;
   const validation = (t.contact as { validation?: ContactValidation }).validation;
   const v = (key: keyof ContactValidation) => validation?.[key] ?? '';
@@ -334,20 +337,19 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
         </div>
         <div>
           <div className={`text-sm ${premium ? 'text-primary-foreground/55' : 'text-muted-foreground'}`}>
-            Regional representation
+            {form.regionalRepresentationLabel}
           </div>
           <div
             className={`font-medium mt-1 leading-relaxed ${
               premium ? 'text-primary-foreground/90' : 'text-foreground'
             }`}
           >
-            Dubai, UAE
-            <br />
-            Jeddah, Saudi Arabia
-            <br />
-            Kuwait City, Kuwait
-            <br />
-            Cairo, Egypt
+            {form.regionalOffices.map((office, index) => (
+              <span key={office}>
+                {index > 0 ? <br /> : null}
+                {office}
+              </span>
+            ))}
           </div>
         </div>
       </div>
@@ -431,8 +433,7 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
             </h3>
             {premium ? (
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Tell us the market, therapy, and decision at stake. We respond with a scoped plan—typically within
-                one business day.
+                {form.premiumFormSubcopy}
               </p>
             ) : null}
           </div>
@@ -533,7 +534,7 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
                     </div>
                     <div>
                       <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                        Phone <span className="text-destructive">*</span>
+                        {form.phoneFieldLabel} <span className="text-destructive">*</span>
                       </label>
                       <input
                         id="phone"
@@ -551,7 +552,7 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
                   {/* Research Interest — multi-select checkboxes */}
                   <fieldset>
                     <legend className="block text-sm font-medium text-foreground mb-3">
-                      Research Interest
+                      {form.researchInterestLegend}
                     </legend>
                     <div className="grid sm:grid-cols-2 gap-x-6 gap-y-2">
                       {RESEARCH_INTERESTS.map((interest) => (
@@ -562,7 +563,7 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
                             value={interest}
                             className="h-4 w-4 rounded border-input text-primary focus:ring-primary/20"
                           />
-                          {interest}
+                          {form.researchInterestOptions[interest] ?? interest}
                         </label>
                       ))}
                     </div>
@@ -572,7 +573,7 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="timeline" className="block text-sm font-medium text-foreground mb-2">
-                        Project Timeline
+                        {form.timelineLabel}
                       </label>
                       <select
                         id="timeline"
@@ -580,15 +581,15 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
                         className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
                         defaultValue=""
                       >
-                        <option value="">Select timeline…</option>
+                        <option value="">{form.selectTimeline}</option>
                         {TIMELINE_OPTIONS.map((opt) => (
-                          <option key={opt} value={opt}>{opt}</option>
+                          <option key={opt} value={opt}>{form.timelineOptions[opt] ?? opt}</option>
                         ))}
                       </select>
                     </div>
                     <div>
                       <label htmlFor="budget" className="block text-sm font-medium text-foreground mb-2">
-                        Indicative Budget
+                        {form.budgetLabel}
                       </label>
                       <select
                         id="budget"
@@ -596,9 +597,9 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
                         className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
                         defaultValue=""
                       >
-                        <option value="">Select budget…</option>
+                        <option value="">{form.selectBudget}</option>
                         {BUDGET_OPTIONS.map((opt) => (
-                          <option key={opt} value={opt}>{opt}</option>
+                          <option key={opt} value={opt}>{form.budgetOptions[opt] ?? opt}</option>
                         ))}
                       </select>
                     </div>
@@ -607,7 +608,7 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
                   {/* Referral Source */}
                   <div>
                     <label htmlFor="referralSource" className="block text-sm font-medium text-foreground mb-2">
-                      How did you hear about us? <span className="text-destructive">*</span>
+                      {form.referralLabel} <span className="text-destructive">*</span>
                     </label>
                     <select
                       id="referralSource"
@@ -617,9 +618,9 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
                       className={`w-full px-4 py-3 rounded-lg border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.referralSource ? 'border-destructive' : 'border-input'}`}
                       defaultValue=""
                     >
-                      <option value="" disabled>Select…</option>
+                      <option value="" disabled>{form.selectReferral}</option>
                       {REFERRAL_OPTIONS.map((opt) => (
-                        <option key={opt} value={opt}>{opt}</option>
+                        <option key={opt} value={opt}>{form.referralOptions[opt] ?? opt}</option>
                       ))}
                     </select>
                     {errors.referralSource && (
@@ -655,11 +656,14 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
                         className="h-4 w-4 mt-0.5 rounded border-input text-primary focus:ring-primary/20 shrink-0"
                       />
                       <span className="text-sm text-muted-foreground leading-snug">
-                        I agree to BioNixus processing my information per the{' '}
-                        <Link to="/privacy" className="text-primary font-medium hover:underline">
-                          Privacy Policy
+                        {form.consentBefore}
+                        <Link
+                          to={getLocalizedPathForLanguage('/privacy', language)}
+                          className="text-primary font-medium hover:underline"
+                        >
+                          {form.consentPrivacyLabel}
                         </Link>
-                        . <span className="text-destructive">*</span>
+                        {form.consentAfter} <span className="text-destructive">*</span>
                       </span>
                     </label>
                     {errors.consent && <p className="text-sm text-destructive mt-1">{errors.consent}</p>}
@@ -700,16 +704,14 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
               className={`sr sr-left rounded-md p-8 lg:p-10 text-primary-foreground ${isRTL ? 'text-right' : ''}`}
               style={{ background: 'var(--gradient-hero)' }}
             >
-              <p className="font-display text-accent text-lg mb-2">Direct channels</p>
+              <p className="font-display text-accent text-lg mb-2">{form.premiumEyebrow}</p>
               <h2
                 id="contact-form-heading"
                 className="text-2xl md:text-3xl font-display font-semibold mb-3"
               >
-                Talk with the research team
+                {form.premiumHeading}
               </h2>
-              <p className="text-primary-foreground/70 leading-relaxed mb-10">
-                Prefer email or a call before the form? Reach BioNixus headquarters and regional desks below.
-              </p>
+              <p className="text-primary-foreground/70 leading-relaxed mb-10">{form.premiumIntro}</p>
               {channelBlock}
               <div className="mt-10 pt-8 border-t border-primary-foreground/15">
                 <TrustCoverageMap />

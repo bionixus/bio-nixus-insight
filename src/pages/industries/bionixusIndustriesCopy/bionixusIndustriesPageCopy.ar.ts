@@ -69,8 +69,12 @@ export const bionixusIndustriesPageCopyAr: BionixusIndustriesPageCopy = {
   insightsEyebrow: 'رؤى B2B وB2C',
   insightsH2Before: 'بوابة الرؤى ',
   insightsH2Em: 'القطاعية',
-  insightsLead:
-    'مقالات مبنية على العمل الميداني للمشترين خارج الرعاية الصحية — رشّح حسب القطاع الصناعي والدولة. أبحاث الرعاية الصحية والأدوية تبقى في مدونتنا المخصصة.',
+  insightsLeadBeforeLink:
+    'مقالات مبنية على العمل الميداني للمشترين خارج قطاع الرعاية الصحية — رشّح حسب القطاع الصناعي والدولة. تبقى أبحاث الرعاية الصحية والأدوية في ',
+  insightsLeadLinkLabel: 'مدونتنا المخصصة للرعاية الصحية',
+  insightsLeadAfterLink: '.',
+  insightsCountOne: '{count} مقال منشور · تركيز على الخليج والشرق الأوسط',
+  insightsCountMany: '{count} مقالاً منشوراً · تركيز على الخليج والشرق الأوسط',
   insightsCtaOpen: 'فتح بوابة الرؤى →',
   insightsCtaProposal: 'طلب عرض',
   insightsPanelHead: 'أحدث المقالات القطاعية',

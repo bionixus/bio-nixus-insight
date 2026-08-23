@@ -3,119 +3,136 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { SEOHead } from '@/components/seo/SEOHead';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { getInsightsHubCopy } from '@/data/insightsHubContent';
+import { getLocalizedPathForLanguage, languagePaths } from '@/lib/seo';
 
-const insightsPageSchemas = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    name: 'BioNixus Insights for Healthcare and Pharmaceutical Teams',
-    description:
-      'Learn why BioNixus insights help healthcare and pharmaceutical teams make better launch, access, and growth decisions.',
-    url: 'https://www.bionixus.com/insights',
-    isPartOf: {
-      '@type': 'WebSite',
-      name: 'BioNixus',
-      url: 'https://www.bionixus.com',
-    },
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' },
-      { '@type': 'ListItem', position: 2, name: 'Insights', item: 'https://www.bionixus.com/insights' },
-    ],
-  },
-];
+const PRIMARY_LINK_CLASS =
+  'inline-flex items-center rounded-xl bg-primary px-5 py-3 text-primary-foreground font-semibold hover:opacity-90 transition-opacity';
+const SECONDARY_LINK_CLASS =
+  'inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors';
 
 export default function Insights() {
+  const { language, isRTL } = useLanguage();
+  const copy = getInsightsHubCopy(language);
+  const homePath = languagePaths[language] || '/';
+  const insightsPath = getLocalizedPathForLanguage('/insights', language);
+  const blogPath = getLocalizedPathForLanguage('/blog', language);
+  const caseStudiesPath = getLocalizedPathForLanguage('/case-studies', language);
+
+  const insightsPageSchemas = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: copy.jsonLd.name,
+      description: copy.jsonLd.description,
+      url: `https://www.bionixus.com${insightsPath}`,
+      inLanguage: language,
+      isPartOf: {
+        '@type': 'WebSite',
+        name: 'BioNixus',
+        url: 'https://www.bionixus.com',
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: copy.breadcrumb.home,
+          item: `https://www.bionixus.com${homePath === '/' ? '/' : homePath}`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: copy.breadcrumb.insights,
+          item: `https://www.bionixus.com${insightsPath}`,
+        },
+      ],
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="BioNixus Insights for Healthcare & Pharma Strategy | BioNixus"
-        description="Discover why BioNixus insights improve healthcare and pharmaceutical decisions across market access, launch planning, and growth strategy."
-        canonical="/insights"
+        title={copy.seo.title}
+        description={copy.seo.description}
+        canonical={insightsPath}
         jsonLd={insightsPageSchemas}
       />
       <Navbar />
-      <main>
+      <main dir={isRTL ? 'rtl' : 'ltr'}>
         <div className="container-wide max-w-6xl mx-auto pt-6">
           <BreadcrumbNav
             items={[
-              { name: 'Home', href: '/' },
-              { name: 'Insights', href: '/insights' },
+              { name: copy.breadcrumb.home, href: homePath },
+              { name: copy.breadcrumb.insights, href: insightsPath },
             ]}
           />
         </div>
 
         <section className="section-padding pt-6">
-          <article className="container-wide max-w-4xl mx-auto">
+          <article className={`container-wide max-w-4xl mx-auto ${isRTL ? 'text-right' : ''}`}>
             <header>
               <h1 className="text-4xl md:text-5xl font-display font-semibold text-foreground mb-6">
-                Why BioNixus Insights Matter in Healthcare and Pharmaceuticals
+                {copy.hero.h1}
               </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                BioNixus insights connect market signals, stakeholder behavior, and regulatory context into
-                decision-ready guidance for healthcare and pharmaceutical teams. These insights reduce uncertainty and
-                improve the quality of launch, access, and growth decisions across complex markets.
-              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">{copy.hero.lead}</p>
             </header>
 
-            <section className="mt-10 space-y-6 text-muted-foreground leading-relaxed">
-              <h2 className="text-2xl font-display font-semibold text-foreground">
-                Better Decisions Across the Product Lifecycle
-              </h2>
-              <p>
-                In pharmaceutical strategy, timing and evidence quality directly affect commercial outcomes. BioNixus
-                insights help teams prioritize the right opportunities, understand clinician and payer expectations,
-                and align internal plans with real market conditions.
-              </p>
-              <p>
-                In healthcare services, insight depth is equally important. Decision-makers need clarity on demand
-                patterns, treatment pathways, and access barriers. BioNixus translates this complexity into practical
-                actions that leadership teams can apply immediately.
-              </p>
-            </section>
-
-            <section className="mt-10 space-y-6 text-muted-foreground leading-relaxed">
-              <h2 className="text-2xl font-display font-semibold text-foreground">
-                Insight Quality Drives Commercial and Access Performance
-              </h2>
-              <p>
-                High-impact insight programs support market entry planning, message optimization, competitive
-                positioning, and market access readiness. With stronger evidence, teams can improve stakeholder
-                alignment, reduce strategic rework, and accelerate informed execution.
-              </p>
-              <p>
-                BioNixus combines quantitative and qualitative methods to ensure the insight output is both rigorous
-                and actionable. This makes insights usable not only for research teams, but also for commercial,
-                medical, and market access leaders.
-              </p>
-            </section>
+            {copy.sections.map((section) => (
+              <section
+                key={section.heading}
+                className="mt-10 space-y-6 text-muted-foreground leading-relaxed"
+              >
+                <h2 className="text-2xl font-display font-semibold text-foreground">
+                  {section.heading}
+                </h2>
+                {section.paragraphs.map((paragraph) => (
+                  <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+                ))}
+              </section>
+            ))}
           </article>
         </section>
 
         <section className="section-padding pt-0">
-          <div className="container-wide max-w-4xl mx-auto rounded-2xl border border-border bg-card p-8 md:p-10">
+          <div
+            className={`container-wide max-w-4xl mx-auto rounded-2xl border border-border bg-card p-8 md:p-10 ${
+              isRTL ? 'text-right' : ''
+            }`}
+          >
             <h2 className="text-2xl font-display font-semibold text-foreground mb-3">
-              Explore BioNixus Insight Resources
+              {copy.resources.heading}
             </h2>
-            <p className="text-muted-foreground mb-6">
-              Continue with our latest thought leadership in the blog or review practical outcomes in our case studies.
-            </p>
+            <p className="text-muted-foreground mb-6">{copy.resources.lead}</p>
             <div className="flex flex-wrap gap-3">
-              <Link
-                to="/blog"
-                className="inline-flex items-center rounded-xl bg-primary px-5 py-3 text-primary-foreground font-semibold hover:opacity-90 transition-opacity"
-              >
-                Explore the Blog
+              <Link to={blogPath} className={PRIMARY_LINK_CLASS}>
+                {copy.resources.blog}
               </Link>
-              <Link
-                to="/case-studies"
-                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
-              >
-                View Case Studies
+              <Link to={caseStudiesPath} className={SECONDARY_LINK_CLASS}>
+                {copy.resources.caseStudies}
               </Link>
+              {language !== 'en' ? (
+                <>
+                  <Link
+                    to={getLocalizedPathForLanguage('/services', language)}
+                    className={SECONDARY_LINK_CLASS}
+                  >
+                    {copy.resources.services}
+                  </Link>
+                  <Link
+                    to={getLocalizedPathForLanguage('/bionixus-industries', language)}
+                    className={SECONDARY_LINK_CLASS}
+                  >
+                    {copy.resources.industries}
+                  </Link>
+                </>
+              ) : null}
+              {language === 'en' ? (
+                <>
               <Link
                 to="/insights/top-global-healthcare-market-research-companies-2026"
                 className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
@@ -266,6 +283,8 @@ export default function Insights() {
               >
                 Best Market Research Companies in Bahrain (2026)
               </Link>
+                </>
+              ) : null}
             </div>
           </div>
         </section>

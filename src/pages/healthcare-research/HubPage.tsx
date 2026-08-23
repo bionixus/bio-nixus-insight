@@ -358,7 +358,7 @@ export default function HubPage() {
           />
           <div className="mt-8">
             <HealthcareNavCard
-              to="/healthcare-market-research-companies"
+              to="/insights/top-global-healthcare-market-research-companies-2026"
               title="Top healthcare market research companies"
               description="Vendor selection shortlist for healthcare market research companies and agencies — global ranking plus USA, Europe, and MENA gateways."
               featured

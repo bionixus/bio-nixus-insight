@@ -52,6 +52,11 @@ const pharmaCompanies: PharmaCompany[] = [
   { name: 'Novo Nordisk', hq: 'Denmark', type: 'MNC Office', therapeuticAreas: 'Diabetes, obesity, rare diseases', notes: 'GLP-1 franchise driving US growth' },
   { name: 'Takeda', hq: 'Japan', type: 'MNC Office', therapeuticAreas: 'GI, rare diseases, oncology, plasma', notes: 'US specialty and plasma focus' },
   { name: 'Bayer', hq: 'Germany', type: 'MNC Office', therapeuticAreas: 'Cardiology, oncology, women\'s health, consumer', notes: 'US pharma and consumer health' },
+  { name: 'Boehringer Ingelheim', hq: 'Germany', type: 'MNC Office', therapeuticAreas: 'CVRM, respiratory, oncology', notes: 'Jardiance franchise; large US operations' },
+  { name: 'Daiichi Sankyo', hq: 'Japan', type: 'MNC Office', therapeuticAreas: 'Oncology (ADCs), cardiovascular', notes: 'Enhertu-led US oncology growth' },
+  { name: 'Astellas', hq: 'Japan', type: 'MNC Office', therapeuticAreas: 'Oncology, urology, transplant', notes: 'Xtandi and cell therapy investment' },
+  { name: 'Teva Pharmaceuticals USA', hq: 'Israel', type: 'MNC Office', therapeuticAreas: 'Generics, biosimilars, CNS specialty', notes: 'Largest US generics supplier' },
+  { name: 'Viatris', hq: 'USA', type: 'Local Manufacturer', therapeuticAreas: 'Generics, biosimilars, established brands', notes: 'Mylan-Upjohn merged portfolio' },
   { name: 'McKesson', hq: 'USA', type: 'Distributor', therapeuticAreas: 'Wholesale distribution, specialty pharmacy', notes: 'Leading US pharmaceutical wholesaler' },
   { name: 'Cencora (AmerisourceBergen)', hq: 'USA', type: 'Distributor', therapeuticAreas: 'Wholesale distribution, specialty', notes: 'Big Three wholesaler' },
   { name: 'Cardinal Health', hq: 'USA', type: 'Distributor', therapeuticAreas: 'Wholesale distribution, specialty', notes: 'Big Three wholesaler and specialty services' },
@@ -64,6 +69,21 @@ const faqItems = [
   { q: 'How do drugs reach patients in the USA?', a: 'Most prescription medicines flow through national wholesalers (McKesson, Cencora, Cardinal Health) into retail chains, independent pharmacies, hospitals, and specialty pharmacies. Specialty products increasingly use limited-distribution and specialty pharmacy channels.' },
   { q: 'Do foreign companies need a local presence to sell in the USA?', a: 'Foreign manufacturers typically establish a US affiliate or partner for FDA submissions, labelling, pharmacovigilance, and commercial operations. Distribution agreements with wholesalers and specialty pharmacies are standard for national reach.' },
   { q: 'Which therapeutic areas dominate US pharma growth?', a: 'Oncology, immunology, rare diseases, and metabolic diseases (notably GLP-1 obesity/diabetes therapies) are among the strongest growth drivers. Vaccines and infectious disease remain strategically important for several majors.' },
+  { q: 'What are the largest pharmaceutical companies in the USA by revenue?', a: 'By 2026 US-market revenue, the leaders are Eli Lilly, Pfizer, Merck & Co., AbbVie, Johnson & Johnson, Bristol Myers Squibb, Amgen, and Gilead among US-headquartered firms — with Novo Nordisk, Roche/Genentech, AstraZeneca, and Novartis the largest foreign players by US sales.' },
+  { q: 'How is the Inflation Reduction Act changing US pharma?', a: 'The IRA introduced Medicare price negotiation for selected high-spend drugs, a $2,000 Part D out-of-pocket cap, and inflation rebates. Manufacturers are responding with revised launch sequencing, indication strategies, and portfolio decisions weighted toward earlier lifecycle value capture.' },
+];
+
+const TOP_10_US_PHARMA: { name: string; note: string }[] = [
+  { name: 'Eli Lilly', note: 'GLP-1 franchise (Mounjaro, Zepbound) has made Lilly the most valuable pharma company globally' },
+  { name: 'Pfizer', note: 'broadest US commercial infrastructure; oncology and vaccine anchor' },
+  { name: 'Merck & Co. (MSD)', note: 'Keytruda remains the world\'s top-selling drug' },
+  { name: 'AbbVie', note: 'Skyrizi and Rinvoq successfully replaced Humira revenue' },
+  { name: 'Johnson & Johnson', note: 'diversified pharma + medtech leader' },
+  { name: 'Novo Nordisk (US)', note: 'Ozempic/Wegovy drive the largest foreign-company US franchise' },
+  { name: 'Bristol Myers Squibb', note: 'oncology, haematology, and cardiovascular specialty depth' },
+  { name: 'Amgen', note: 'biotech pioneer with expanding biosimilar and obesity pipeline' },
+  { name: 'AstraZeneca (US)', note: 'fastest-growing large-cap oncology portfolio' },
+  { name: 'Gilead Sciences', note: 'HIV leadership plus growing oncology franchise' },
 ];
 
 const UsaPharmaCompanies = () => {
@@ -81,7 +101,7 @@ const UsaPharmaCompanies = () => {
         <meta name="description" content="Complete 2026 list of pharmaceutical companies in the USA — Big Pharma, biotech, wholesalers, FDA/CMS context. Research by BioNixus." />
         <link rel="canonical" href={citationUrl} />
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesItemListLd(citationUrl, pharmaCompanies.map((c) => c.name)))}</script>
-        <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', image: 'https://www.bionixus.com/og-image.png', headline: 'Pharmaceutical Companies in the USA: Complete Industry Guide 2026', description: 'Guide to pharmaceutical companies in the United States — major manufacturers, biotech leaders, wholesalers, FDA/CMS landscape, and market structure for 2026.', url: citationUrl, datePublished: '2026-08-14', dateModified: '2026-08-14', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' } })}</script>
+        <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', image: 'https://www.bionixus.com/og-image.png', headline: 'Pharmaceutical Companies in the USA: Complete Industry Guide 2026', description: 'Guide to pharmaceutical companies in the United States — major manufacturers, biotech leaders, wholesalers, FDA/CMS landscape, and market structure for 2026.', url: citationUrl, datePublished: '2026-08-14', dateModified: '2026-08-22', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' } })}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' }, { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.bionixus.com/resources' }, { '@type': 'ListItem', position: 3, name: 'Pharmaceutical Companies in the USA', item: citationUrl }] })}</script>
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesFaqLd(citationUrl, faqItems))}</script>
       </Helmet>
@@ -148,6 +168,14 @@ const UsaPharmaCompanies = () => {
 
         <section className="section-padding py-16 bg-muted/30" id="top-companies"><div className="container-wide max-w-5xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">Top Pharmaceutical Companies in the USA</h2>
+          <div className="bg-card border border-border rounded-xl p-6 mb-8 max-w-4xl">
+            <h3 className="text-lg font-display font-semibold text-foreground mb-4">Top 10 pharmaceutical companies in the USA (2026, by US-market revenue)</h3>
+            <ol className="list-decimal pl-5 space-y-2 text-sm text-foreground">
+              {TOP_10_US_PHARMA.map((c) => (
+                <li key={c.name}><strong>{c.name}</strong> — <span className="text-muted-foreground">{c.note}</span></li>
+              ))}
+            </ol>
+          </div>
           <p className="text-muted-foreground mb-8 max-w-3xl">The following table lists major pharmaceutical companies operating in the USA — including US-headquartered manufacturers, foreign multinational affiliates, and national wholesalers.</p>
           <div className="overflow-x-auto rounded-xl border border-border"><table className="w-full text-sm"><thead><tr className="bg-primary/5 border-b border-border"><th className="text-left px-4 py-3 font-semibold text-foreground">Company</th><th className="text-left px-4 py-3 font-semibold text-foreground">HQ</th><th className="text-left px-4 py-3 font-semibold text-foreground hidden md:table-cell">Type</th><th className="text-left px-4 py-3 font-semibold text-foreground hidden lg:table-cell">Therapeutic Areas</th><th className="text-left px-4 py-3 font-semibold text-foreground hidden xl:table-cell">Notes</th></tr></thead><tbody>
             {pharmaCompanies.map((c, i) => (<tr key={c.name} className={`border-b border-border ${i % 2 === 0 ? 'bg-card' : 'bg-muted/20'}`}><td className="px-4 py-3 font-medium text-foreground">{c.name}</td><td className="px-4 py-3 text-muted-foreground">{c.hq}</td><td className="px-4 py-3 hidden md:table-cell"><span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${c.type === 'Local Manufacturer' ? 'bg-green-50 text-green-700' : c.type === 'MNC Office' ? 'bg-blue-50 text-blue-700' : c.type === 'Regional' ? 'bg-amber-50 text-amber-700' : 'bg-purple-50 text-purple-700'}`}>{c.type}</span></td><td className="px-4 py-3 text-muted-foreground hidden lg:table-cell">{c.therapeuticAreas}</td><td className="px-4 py-3 text-muted-foreground text-xs hidden xl:table-cell">{c.notes}</td></tr>))}
@@ -241,8 +269,9 @@ const UsaPharmaCompanies = () => {
             <Link to="/pharmaceutical-companies-germany" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in Germany <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
             <Link to="/pharmaceutical-companies-brazil" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in Brazil <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
             <Link to="/pharmaceutical-companies-canada" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in Canada <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
-            <Link to="/healthcare-market-research-companies" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Healthcare market research companies <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
+            <Link to="/insights/top-global-healthcare-market-research-companies-2026" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Healthcare market research companies <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
             <Link to="/insights/top-healthcare-market-research-companies-usa-2026" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">USA healthcare MR companies 2026 <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
+            <Link to="/medical-device-companies-usa" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Medical device companies in USA <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
           </div>
         </div></section>
 

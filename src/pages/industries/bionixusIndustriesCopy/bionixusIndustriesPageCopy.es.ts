@@ -69,8 +69,12 @@ export const bionixusIndustriesPageCopyEs: BionixusIndustriesPageCopy = {
   insightsEyebrow: 'Insights B2B y B2C',
   insightsH2Before: 'Portal de insights ',
   insightsH2Em: 'sectoriales',
-  insightsLead:
-    'Artículos basados en fieldwork para compradores no sanitarios — filtre por vertical industrial y país. La investigación sanitaria y farmacéutica permanece en nuestro blog dedicado.',
+  insightsLeadBeforeLink:
+    'Artículos basados en trabajo de campo para compradores ajenos al sector sanitario — filtre por vertical industrial y país. La investigación sanitaria y farmacéutica permanece en nuestro ',
+  insightsLeadLinkLabel: 'blog sanitario específico',
+  insightsLeadAfterLink: '.',
+  insightsCountOne: '{count} artículo publicado · Enfoque CCG y MENA',
+  insightsCountMany: '{count} artículos publicados · Enfoque CCG y MENA',
   insightsCtaOpen: 'Abrir portal de insights →',
   insightsCtaProposal: 'Solicitar propuesta',
   insightsPanelHead: 'Últimos artículos sectoriales',

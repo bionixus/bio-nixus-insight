@@ -291,7 +291,14 @@ export default function CountryPage() {
                 <>
                   Saudi Arabia's pharmaceutical market exceeds USD 10 billion annually, the largest in the GCC, and
                   BioNixus delivers SFDA-aware physician surveys, Arabic fieldwork, and hospital stakeholder evidence
-                  across KSA. For registration and tender sequencing, see the{' '}
+                  across KSA. For agency shortlists beyond healthcare, see our{' '}
+                  <Link
+                    to="/insights/top-market-research-companies-saudi-arabia-2026"
+                    className="text-primary font-medium hover:underline"
+                  >
+                    top market research companies in Saudi Arabia
+                  </Link>
+                  . For registration and tender sequencing, see the{' '}
                   <Link to="/sfda-market-access-strategy-saudi-arabia" className="text-primary font-medium hover:underline">
                     SFDA market access strategy for Saudi Arabia
                   </Link>{' '}
@@ -428,6 +435,18 @@ export default function CountryPage() {
                       <li key={item.slice(0, 48)}>{item}</li>
                     ))}
                   </ul>
+                ) : null}
+                {section.id === 'why-healthcare-mr-saudi-differs' ? (
+                  <p className="text-muted-foreground leading-relaxed mb-4">
+                    For agency-intent buyers shortlisting{' '}
+                    <Link
+                      to="/insights/top-market-research-companies-saudi-arabia-2026"
+                      className="text-primary underline font-medium"
+                    >
+                      top market research companies in Saudi Arabia
+                    </Link>
+                    , see our 2026 Kingdom-wide rankings — then return here for SFDA-aware healthcare fieldwork design.
+                  </p>
                 ) : null}
                 {section.id === 'therapy-programmes-saudi-hub' ? (
                   <p className="text-muted-foreground leading-relaxed">
@@ -887,6 +906,11 @@ export default function CountryPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {config.slug === 'saudi-arabia' && (
                 <>
+                  <HealthcareNavCard
+                    to="/insights/top-market-research-companies-saudi-arabia-2026"
+                    title="Top market research companies in Saudi Arabia (2026)"
+                    description="Kingdom-wide agency rankings for consumer, FMCG, retail, and multi-industry buyers."
+                  />
                   <HealthcareNavCard
                     to="/blog/pharma-market-entry-saudi-arabia-playbook"
                     title="Saudi market entry playbook"

@@ -112,11 +112,11 @@ const serviceData: Record<string, ServiceData> = {
     ctaText: 'Discuss Your Market Access Strategy',
   },
   'competitive-intelligence': {
-    title: 'Competitive Intelligence',
-    metaTitle: 'Pharmaceutical Competitive Intelligence | Pipeline Analysis — BioNixus',
+    title: 'Pharmaceutical Competitive Intelligence',
+    metaTitle: 'Pharma Competitive Intelligence Services (2026) | BioNixus',
     metaDescription: 'Real-time pharmaceutical competitive intelligence: competitor monitoring, pipeline analysis, launch readiness assessments, and strategic landscape evaluations across EMEA markets.',
     heroSubtitle: 'Stay ahead with real-time competitor monitoring and strategic landscape assessments for pharmaceutical brands.',
-    overview: 'BioNixus provides pharmaceutical competitive intelligence that enables strategic decision-making. Our analysts combine primary physician research with secondary intelligence to deliver comprehensive landscape assessments, pipeline analyses, and launch readiness evaluations tailored to EMEA markets.',
+    overview: 'BioNixus provides pharma competitive intelligence services that enable strategic decision-making. Our analysts combine primary physician research with secondary intelligence to deliver comprehensive landscape assessments, pipeline analyses, and launch readiness evaluations tailored to EMEA markets — the competitive intelligence pharmaceutical commercial, medical affairs, and new-product-planning teams rely on for launch and lifecycle decisions.',
     capabilities: [
       'Real-time competitor pipeline monitoring',
       'Landscape and SWOT analyses for pharmaceutical brands',
@@ -298,6 +298,16 @@ const ServiceDetail = () => {
                   className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
                 >
                   Read the 2026 methodology guide <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            )}
+            {slug === 'market-access' && (
+              <div className="mt-6">
+                <Link
+                  to="/heor-consulting"
+                  className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
+                >
+                  Explore HEOR consulting — models, RWE &amp; value dossiers <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             )}

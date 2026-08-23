@@ -296,7 +296,7 @@ export default function TopHealthcareMarketResearchCompaniesBrazil2026() {
                 healthcare market research
               </Link>{' '}
               hub; for the global vendor shortlist see{' '}
-              <Link to="/healthcare-market-research-companies" className="text-white underline hover:text-teal-50">
+              <Link to="/insights/top-global-healthcare-market-research-companies-2026" className="text-white underline hover:text-teal-50">
                 top healthcare market research companies
               </Link>
               ; for USA and Europe benchmarking see{' '}
@@ -480,7 +480,7 @@ export default function TopHealthcareMarketResearchCompaniesBrazil2026() {
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Related Resources</h2>
             <div className="grid md:grid-cols-2 gap-4">
-              <Link to="/healthcare-market-research-companies" className="flex items-center gap-3 p-4 border border-gray-200 rounded-lg hover:border-teal-400 hover:bg-teal-50 transition-colors">
+              <Link to="/insights/top-global-healthcare-market-research-companies-2026" className="flex items-center gap-3 p-4 border border-gray-200 rounded-lg hover:border-teal-400 hover:bg-teal-50 transition-colors">
                 <Building2 className="w-5 h-5 text-teal-700 flex-shrink-0" />
                 <div>
                   <div className="font-medium text-gray-900">Top Healthcare Market Research Companies</div>

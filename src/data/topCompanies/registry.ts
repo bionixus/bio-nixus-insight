@@ -12,7 +12,6 @@ import type { CountryListicleConfig, ListicleHreflang } from './types';
 import { uaeGeneralEn } from './gcc/uae.general.en';
 import { dubaiGeneralEn } from './gcc/dubai.general.en';
 import { abuDhabiGeneralEn } from './gcc/abu-dhabi.general.en';
-import { ksaGeneralEn } from './gcc/ksa.general.en';
 import { ksaHealthcareEn } from './gcc/ksa.healthcare.en';
 import { riyadhGeneralEn } from './gcc/riyadh.general.en';
 import { qatarGeneralEn } from './gcc/qatar.general.en';
@@ -108,7 +107,6 @@ export const allListicleConfigs: CountryListicleConfig[] = [
   uaeGeneralEn,
   dubaiGeneralEn,
   abuDhabiGeneralEn,
-  ksaGeneralEn,
   ksaHealthcareEn,
   riyadhGeneralEn,
   qatarGeneralEn,

@@ -649,7 +649,7 @@ export default function TopHealthcareMarketResearchCompaniesDubai2026() {
               </p>
               <p>
                 For the global agencies and companies ranking, see{' '}
-                <Link to="/healthcare-market-research-companies" className="text-primary hover:underline">
+                <Link to="/insights/top-global-healthcare-market-research-companies-2026" className="text-primary hover:underline">
                   top healthcare market research companies
                 </Link>
                 ; for regional context, see{' '}

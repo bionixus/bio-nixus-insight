@@ -7,6 +7,8 @@ import ContactSection from '@/components/ContactSection';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
+import { getContactFormStrings } from '@/lib/contactFormStrings';
+import { getLocalizedPathForLanguage, languagePaths, localizedContactPath } from '@/lib/seo';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { ArrowDown, ArrowRight } from 'lucide-react';
 
@@ -65,6 +67,24 @@ const engagementByLanguage: Record<
       '请说明需要支持的决策、关键市场与证据标准。具备相应地区与适应症经验的研究负责人将于当日审阅您的需求。',
       '常见项目涵盖上市准备、市场准入、竞争情报、KOL 图谱与上市后采用追踪，交付物强调可决策。',
       '海湾项目支持阿英双语；欧洲现场遵循 GDPR。供应商比选时可提供方法论、样本治理与匿名交付结构示例。',
+    ],
+  },
+  pt: {
+    heading: 'Como começa uma colaboração com a BioNixus',
+    lead: 'Cada contacto abre uma parceria de pesquisa delimitada — não uma fila comercial genérica.',
+    paragraphs: [
+      'Descreva a decisão que precisa de tomar, os mercados relevantes e o padrão de evidência que os seus stakeholders esperam. Um diretor de pesquisa com experiência na geografia e na área terapêutica analisa o seu briefing no próprio dia.',
+      'Os projetos cobrem tipicamente preparação de lançamento, evidência para acesso ao mercado, inteligência competitiva, mapeamento de KOL e adoção pós-lançamento. As entregas permanecem prontas para decisão.',
+      'Os programas do Golfo decorrem com trabalho de campo bilíngue árabe–inglês; o trabalho europeu segue protocolos alinhados com o RGPD. Ao comparar parceiros, peça notas metodológicas, governação da amostra e estruturas de entrega anonimizadas — respondemos com especificidade.',
+    ],
+  },
+  ru: {
+    heading: 'Как начинается работа с BioNixus',
+    lead: 'Каждый запрос — начало исследовательского партнёрства с чёткими границами, а не общая очередь продаж.',
+    paragraphs: [
+      'Опишите решение, которое вам предстоит принять, значимые рынки и требуемый стандарт доказательности. Директор по исследованиям с опытом в нужном регионе и терапевтической области рассмотрит ваш бриф в тот же день.',
+      'Проекты обычно охватывают готовность к запуску, доказательную базу для доступа на рынок, конкурентную разведку, картирование ключевых экспертов и динамику назначений после запуска. Результаты остаются пригодными для принятия решений.',
+      'Программы в странах Персидского залива ведутся на арабском и английском языках; европейские проекты соответствуют требованиям GDPR. При сравнении подрядчиков запрашивайте методологию, управление выборкой и обезличенные примеры отчётов — мы отвечаем конкретикой.',
     ],
   },
   ar: {
@@ -158,6 +178,40 @@ const processStepsByLanguage: Record<
       { title: '获取范围提案', body: '方法、样本、时间表与预算—通常一个工作日内。' },
     ],
   },
+  pt: {
+    heading: 'Do contacto ao briefing',
+    steps: [
+      {
+        title: 'Descreva a decisão',
+        body: 'País, área terapêutica, stakeholders e a pergunta que a direção precisa de responder.',
+      },
+      {
+        title: 'Fale com um diretor de pesquisa',
+        body: 'Triagem no próprio dia com quem já conduziu projetos comparáveis no Golfo, MENA ou Europa.',
+      },
+      {
+        title: 'Receba uma proposta delimitada',
+        body: 'Metodologia, amostra, cronograma e investimento — normalmente dentro de um dia útil.',
+      },
+    ],
+  },
+  ru: {
+    heading: 'От запроса до брифинга',
+    steps: [
+      {
+        title: 'Опишите решение',
+        body: 'Страна, терапевтическая область, заинтересованные стороны и вопрос, на который нужен ответ.',
+      },
+      {
+        title: 'Познакомьтесь с директором по исследованиям',
+        body: 'Разбор запроса в тот же день специалистом с опытом сопоставимых проектов.',
+      },
+      {
+        title: 'Получите проработанное предложение',
+        body: 'Методология, выборка, сроки и бюджет — как правило, в течение одного рабочего дня.',
+      },
+    ],
+  },
   ar: {
     heading: 'من الاستفسار إلى الإحاطة',
     steps: [
@@ -182,18 +236,20 @@ const Contact = () => {
   const cp = (t as { contactPage?: ContactPageCopy }).contactPage;
   const heroTitle = cp?.heroTitle ?? t.contact.title;
   const heroSubtitle = cp?.heroSubtitle ?? t.contact.subtitle;
+  const page = getContactFormStrings(language).page;
   const brandLine = cp?.brandLine ?? 'BioNixus';
-  const primaryCta = cp?.primaryCta ?? 'Request a proposal';
-  const secondaryCta = cp?.secondaryCta ?? 'Email the team';
+  const primaryCta = cp?.primaryCta ?? page.primaryCta;
+  const secondaryCta = cp?.secondaryCta ?? page.secondaryCta;
   const engagement = engagementByLanguage[language] ?? engagementByLanguage.en;
   const process = processStepsByLanguage[language] ?? processStepsByLanguage.en;
   const heroRef = useScrollReveal<HTMLElement>({ stagger: 70, threshold: 0.05 });
   const processRef = useScrollReveal<HTMLElement>({ stagger: 90 });
   const engagementRef = useScrollReveal<HTMLElement>({ stagger: 80 });
 
+  const contactPath = localizedContactPath(language);
   const breadcrumbItems = [
-    { name: 'Home', href: '/' },
-    { name: 'Contact', href: '/contact' },
+    { name: page.breadcrumbHome, href: languagePaths[language] || '/' },
+    { name: page.breadcrumbContact, href: contactPath },
   ];
 
   const jsonLd = [
@@ -201,10 +257,10 @@ const Contact = () => {
     {
       '@context': 'https://schema.org',
       '@type': 'ContactPage',
-      name: 'Contact BioNixus',
-      url: 'https://www.bionixus.com/contact',
-      description:
-        'Request a pharmaceutical market research proposal from BioNixus—global headquarters in Sheridan, Wyoming, with regional coverage across the US, Europe, GCC, and MENA.',
+      name: page.jsonLdName,
+      url: `https://www.bionixus.com${contactPath}`,
+      inLanguage: language,
+      description: page.seoDescription,
       mainEntity: {
         '@type': 'Organization',
         '@id': 'https://www.bionixus.com/#organization',
@@ -226,9 +282,9 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Contact BioNixus | Healthcare Market Research Proposal"
-        description="Contact BioNixus for pharmaceutical market research across the US, Europe, GCC, and MENA. Share your brief and receive a scoped proposal within one business day."
-        canonical="/contact"
+        title={page.seoTitle}
+        description={page.seoDescription}
+        canonical={contactPath}
         jsonLd={jsonLd}
       />
       <Navbar />
@@ -360,13 +416,16 @@ const Contact = () => {
               ))}
             </div>
             <p className="sr sr-up mt-10 text-sm text-primary-foreground/55">
-              Prefer a direct line?{' '}
+              {page.directLinePrompt}{' '}
               <a href="mailto:admin@bionixus.com" className="text-accent hover:underline font-medium">
                 admin@bionixus.com
               </a>
               {' · '}
-              <Link to="/case-studies" className="text-primary-foreground/80 hover:text-accent transition-colors">
-                Review case studies
+              <Link
+                to={getLocalizedPathForLanguage('/case-studies', language)}
+                className="text-primary-foreground/80 hover:text-accent transition-colors"
+              >
+                {page.caseStudiesLink}
               </Link>
             </p>
           </div>

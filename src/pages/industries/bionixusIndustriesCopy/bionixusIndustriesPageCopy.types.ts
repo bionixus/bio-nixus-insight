@@ -61,7 +61,14 @@ export interface BionixusIndustriesPageCopy {
   insightsEyebrow: string;
   insightsH2Before: string;
   insightsH2Em: string;
-  insightsLead: string;
+  /** Lead paragraph, split so the healthcare-blog link keeps descriptive anchor text. */
+  insightsLeadBeforeLink: string;
+  insightsLeadLinkLabel: string;
+  insightsLeadAfterLink: string;
+  /** `{count}` placeholder; used when one article is published. */
+  insightsCountOne: string;
+  /** `{count}` placeholder; used for zero or many published articles. */
+  insightsCountMany: string;
   insightsCtaOpen: string;
   insightsCtaProposal: string;
   insightsPanelHead: string;

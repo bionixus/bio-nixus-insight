@@ -126,7 +126,7 @@ const geoListicleLinks = [
   { to: '/insights/top-healthcare-market-research-companies-norway-2026', label: 'Top healthcare MR companies in Norway (2026)' },
   { to: '/healthcare-market-research-norway', label: 'Healthcare market research Norway' },
   { to: '/pharmaceutical-market-research-provider', label: 'Pharmaceutical / Rx market research provider' },
-  { to: '/insights/top-market-research-companies-saudi-arabia-2026', label: 'Best market research companies in Saudi Arabia (2026)' },
+  { to: '/insights/top-market-research-companies-saudi-arabia-2026', label: 'Top market research companies in Saudi Arabia (2026)' },
   { to: '/insights/top-consumer-insights-companies-ksa-2026', label: 'Consumer insights companies KSA (2026)' },
   { to: '/insights/top-healthcare-market-research-companies-saudi-arabia-2026', label: 'Best healthcare MR firms in Saudi Arabia (2026)' },
   { to: '/insights/top-market-research-companies-uae-2026', label: 'Best market research companies in UAE (2026)' },

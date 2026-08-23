@@ -280,7 +280,14 @@ export default function TopMarketResearchCompaniesGcc2026() {
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
               An independent guide to the leading market research companies operating across the Gulf Cooperation Council for 2026.
-              This article profiles six firms across consumer, FMCG, retail, and multi-industry research — comparing
+              For Saudi Arabia specifically, see{' '}
+              <Link
+                to="/insights/top-market-research-companies-saudi-arabia-2026"
+                className="text-primary hover:underline"
+              >
+                top market research companies in Saudi Arabia
+              </Link>
+              . This article profiles six firms across consumer, FMCG, retail, and multi-industry research — comparing
               capabilities, methodologies, GCC-specific expertise, and what to look for when shortlisting a
               research partner for the Gulf&apos;s fast-growing consumer economy.
             </p>

@@ -72,10 +72,10 @@ export function PharmaCompaniesGlobalHubLinks({ country }: Props) {
             </span>
           </Link>
           <Link
-            to="/healthcare-market-research-companies"
+            to="/insights/top-global-healthcare-market-research-companies-2026"
             className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary"
           >
-            Healthcare market research companies
+            Top healthcare market research companies (2026)
             <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>
               &rarr;
             </span>

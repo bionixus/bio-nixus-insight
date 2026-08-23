@@ -2,11 +2,15 @@ import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useIndustriesInsights } from '@/hooks/useSanityBlog';
 import { useInitialData } from '@/contexts/InitialDataContext';
+import { useLanguage } from '@/contexts/LanguageContext';
 import {
   INDUSTRIES_INSIGHTS_INDEX_PATH,
   INDUSTRIES_INSIGHT_POST_PATH_PREFIX,
 } from '@/lib/blog-content-silo';
 import { industrySlugLabel } from '@/lib/industries-insights-filters';
+import { getLocalizedPathForLanguage, localizedContactPath } from '@/lib/seo';
+import { formatTemplate } from '@/lib/uiChromeStrings';
+import { getBionixusIndustriesPageCopy } from './bionixusIndustriesCopy';
 import type { BlogPost } from '@/types/blog';
 
 /**
@@ -14,6 +18,8 @@ import type { BlogPost } from '@/types/blog';
  * Full listing, filters, and magazine layout live on `/bionixus-industries/insights`.
  */
 export default function IndustriesInsightsSection() {
+  const { language } = useLanguage();
+  const copy = getBionixusIndustriesPageCopy(language);
   const { data: routeData } = useInitialData();
   const ssrPosts =
     routeData.pageType === 'bionixus-industries' && Array.isArray(routeData.industriesInsights)
@@ -37,38 +43,45 @@ export default function IndustriesInsightsSection() {
         <div className="bx-insights-portal-grid">
           <div className="bx-insights-portal-copy">
             <div className="bx-eyebrow gold">
-              <span className="bx-line" /> B2B &amp; B2C insights
+              <span className="bx-line" /> {copy.insightsEyebrow}
             </div>
             <h2 id="bx-insights-portal-heading" className="bx-h2">
-              Industry insights <em>blog</em>
+              {copy.insightsH2Before}
+              <em>{copy.insightsH2Em}</em>
             </h2>
             <p className="bx-lead">
-              Fieldwork-led articles for non-healthcare buyers — filter by industry vertical and country on our
-              dedicated insights index. Healthcare and pharmaceutical research stays on our{' '}
-              <Link to="/blog" className="font-medium text-primary hover:underline">
-                dedicated healthcare blog
+              {copy.insightsLeadBeforeLink}
+              <Link
+                to={getLocalizedPathForLanguage('/blog', language)}
+                className="font-medium text-primary hover:underline"
+              >
+                {copy.insightsLeadLinkLabel}
               </Link>
-              .
+              {copy.insightsLeadAfterLink}
             </p>
             {!isLoading && postCount > 0 ? (
               <p className="mt-4 text-sm text-muted-foreground">
-                {postCount} published {postCount === 1 ? 'article' : 'articles'} · GCC &amp; MENA focus
+                {formatTemplate(postCount === 1 ? copy.insightsCountOne : copy.insightsCountMany, {
+                  count: String(postCount),
+                })}
               </p>
             ) : null}
             <div className="bx-cta-actions mt-8">
               <Link to={INDUSTRIES_INSIGHTS_INDEX_PATH} className="bx-btn-gold">
-                Open industry insights blog →
+                {copy.insightsCtaOpen}
               </Link>
-              <Link to="/contact" className="bx-btn-ghost dark">
-                Request a proposal
+              <Link to={localizedContactPath(language)} className="bx-btn-ghost dark">
+                {copy.insightsCtaProposal}
               </Link>
             </div>
           </div>
           <div className="bx-insights-portal-panel">
             <div className="bx-insights-portal-panel-head">
-              <h3>Latest industry articles</h3>
+              <h3>{copy.insightsPanelHead}</h3>
               {!isLoading && postCount > 0 ? (
-                <span className="bx-insights-count">{postCount} published</span>
+                <span className="bx-insights-count">
+                  {postCount} {copy.insightsPublishedSuffix}
+                </span>
               ) : null}
             </div>
             {isLoading ? (
@@ -98,12 +111,10 @@ export default function IndustriesInsightsSection() {
                 ))}
               </ul>
             ) : (
-              <p className="bx-insights-empty">
-                Articles publishing soon — explore country × industry service pages in the meantime.
-              </p>
+              <p className="bx-insights-empty">{copy.insightsEmpty}</p>
             )}
             <Link to={INDUSTRIES_INSIGHTS_INDEX_PATH} className="bx-insights-portal-foot">
-              Browse all industry insights →
+              {copy.insightsBrowseAll}
             </Link>
           </div>
         </div>

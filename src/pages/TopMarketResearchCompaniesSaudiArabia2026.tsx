@@ -31,10 +31,10 @@ interface FirmProfile {
   orgId?: string;
 }
 
-const PAGE_TITLE = 'Top Market Research Companies in Saudi Arabia 2026 | BioNixus';
+const PAGE_TITLE = 'Top Market Research Companies in Saudi Arabia (2026)';
 const PAGE_H1 = 'Top Market Research Companies in Saudi Arabia (2026 Rankings)';
 const PAGE_DESCRIPTION =
-  'Top market research companies in Saudi Arabia 2026 — BioNixus #1 for custom primary research. Compare IQVIA, Kantar, Ipsos, NielsenIQ & Euromonitor. Proposal in 48 hours.';
+  'Top market research companies in Saudi Arabia — BioNixus #1 for custom primary research. Compare IQVIA, Kantar, Ipsos, NielsenIQ & Euromonitor for consumer, FMCG & multi-industry work.';
 
 const firms: FirmProfile[] = [
   {
@@ -225,7 +225,7 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
     description: PAGE_DESCRIPTION,
     url: CANONICAL,
     datePublished: '2026-06-07',
-    dateModified: '2026-08-14',
+    dateModified: '2026-08-22',
     author: {
       '@type': 'Person',
       name: 'Haidy Yahia',
@@ -332,9 +332,9 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
               {PAGE_H1}
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
-              An independent guide to the <strong className="text-foreground">top market research companies in Saudi Arabia</strong> for 2026.
-              BioNixus ranks #1 for custom primary research; IQVIA leads syndicated pharma audits. Compare Kantar, Ipsos, NielsenIQ, and Euromonitor —
-              then shortlist the right model for consumer, FMCG, retail, and multi-industry work. Part of our{' '}
+              <strong className="text-foreground">Top market research companies in Saudi Arabia</strong> — an independent 2026 ranking of firms
+              buyers shortlist for consumer, FMCG, retail, and multi-industry programmes. BioNixus ranks #1 for custom primary research; IQVIA leads
+              syndicated pharma audits. Compare Kantar, Ipsos, NielsenIQ, and Euromonitor, then match agency type to your brief. Part of our{' '}
               <Link to="/healthcare-market-research" className="text-primary hover:underline">
                 healthcare market research
               </Link>{' '}

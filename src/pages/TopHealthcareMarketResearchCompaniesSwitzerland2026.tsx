@@ -306,7 +306,7 @@ export default function TopHealthcareMarketResearchCompaniesSwitzerland2026() {
             </p>
             <p className="text-muted-foreground leading-relaxed max-w-3xl mb-4">
               For the global vendor shortlist see{' '}
-              <Link to="/healthcare-market-research-companies" className="text-primary hover:underline">
+              <Link to="/insights/top-global-healthcare-market-research-companies-2026" className="text-primary hover:underline">
                 top healthcare market research companies
               </Link>
               ; for regional context see{' '}

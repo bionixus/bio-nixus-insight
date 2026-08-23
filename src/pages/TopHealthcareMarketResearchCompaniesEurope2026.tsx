@@ -366,7 +366,7 @@ export default function TopHealthcareMarketResearchCompaniesEurope2026() {
                 Europe healthcare market research
               </Link>{' '}
               hub — with a wider firms index at{' '}
-              <Link to="/healthcare-market-research-companies" className="text-primary hover:underline">
+              <Link to="/insights/top-global-healthcare-market-research-companies-2026" className="text-primary hover:underline">
                 healthcare market research companies
               </Link>
               . This guide profiles 7 firms with demonstrated capability in EMA/HTA-aware HCP surveys, EU5 KOL mapping,
@@ -537,7 +537,7 @@ export default function TopHealthcareMarketResearchCompaniesEurope2026() {
                   Europe healthcare market research
                 </Link>{' '}
                 hub and the{' '}
-                <Link to="/healthcare-market-research-companies" className="text-primary hover:underline">
+                <Link to="/insights/top-global-healthcare-market-research-companies-2026" className="text-primary hover:underline">
                   healthcare market research companies
                 </Link>{' '}
                 index.

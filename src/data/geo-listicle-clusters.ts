@@ -28,7 +28,7 @@ export const GEO_LISTICLE_CLUSTERS: Record<string, GeoListicleCluster> = {
   'saudi-arabia': {
     geoLabel: 'Saudi Arabia',
     generalPath: '/insights/top-market-research-companies-saudi-arabia-2026',
-    generalLabel: 'Top market research companies in Saudi Arabia (all industries)',
+    generalLabel: 'top market research companies in Saudi Arabia',
     generalRole: 'FMCG, tech, and pharma buyers comparing general research agencies in KSA',
     healthcarePath: '/insights/top-healthcare-market-research-companies-saudi-arabia-2026',
     healthcareLabel: 'Top healthcare market research companies in Saudi Arabia',

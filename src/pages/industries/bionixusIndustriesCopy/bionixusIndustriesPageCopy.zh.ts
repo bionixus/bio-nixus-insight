@@ -69,8 +69,12 @@ export const bionixusIndustriesPageCopyZh: BionixusIndustriesPageCopy = {
   insightsEyebrow: 'B2B 与 B2C 洞察',
   insightsH2Before: '行业洞察',
   insightsH2Em: '门户',
-  insightsLead:
-    '面向非医疗健康采购方的现场研究驱动文章——按行业垂直与国家筛选。医药与健康研究保留于专属博客。',
+  insightsLeadBeforeLink:
+    '面向非医疗健康采购方的实地研究文章——可按行业垂直领域与国家筛选。医药与医疗健康研究仍保留在我们的',
+  insightsLeadLinkLabel: '医疗健康专属博客',
+  insightsLeadAfterLink: '。',
+  insightsCountOne: '已发布 {count} 篇文章 · 聚焦海湾与中东北非',
+  insightsCountMany: '已发布 {count} 篇文章 · 聚焦海湾与中东北非',
   insightsCtaOpen: '打开洞察门户 →',
   insightsCtaProposal: '索取方案',
   insightsPanelHead: '最新行业文章',

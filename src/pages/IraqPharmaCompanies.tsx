@@ -139,8 +139,11 @@ const IraqPharmaCompanies = () => {
           </tbody></table></div>
           <div className="mt-8">
             <ConversionCTA
-              variant="talk-to-research"
-              market="Iraq"
+              variant="gated-asset"
+              reportName="GCC Pharma & MedTech Market Databook 2026"
+              pdfPath="/downloads/gcc-pharma-medtech-databook-2026-sample.pdf"
+              headline="Get the full Iraq ranked directory + market sizes (PDF)"
+              buttonLabel="Get the directory PDF"
               ctaId="pharma_companies_iraq_after_table"
               ctaLocation="after_first_table"
             />
