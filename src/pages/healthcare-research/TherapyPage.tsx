@@ -146,6 +146,7 @@ const THERAPY_SECTIONS: Record<string, { title: string; points: string[] }> = {
       'Trace the diagnostic delay and referral pathway that shape eligible, treatment-ready populations in complex CNS categories.',
       'Assess treatment sequencing, monitoring burden, and tolerability trade-offs that drive real-world persistence beyond trial efficacy.',
       'Capture caregiver and multidisciplinary dynamics, and the specialist-centre access and funding hurdles that gate high-cost therapy.',
+      'Segment episodic conditions (migraine, epilepsy) from progressive neurodegeneration so sampling reflects the pathway that actually controls initiation.',
     ],
   },
   'digital-health': {

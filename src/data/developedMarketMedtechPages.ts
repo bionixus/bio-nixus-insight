@@ -118,6 +118,37 @@ function buildProcess(label: string) {
   };
 }
 
+/** One extra FAQ per near-threshold country page (BIO-450 gap ≤20 words). */
+const NEAR_THRESHOLD_MEDTECH_EXTRA_FAQS: Partial<
+  Record<DevelopedMarketMedtechSlug, { question: string; answer: string }>
+> = {
+  brazil: {
+    question: 'How does ANVISA medical device registration differ from drug registration in Brazil?',
+    answer:
+      'ANVISA classifies devices into risk Classes I–IV under RDC 751/2022, with Portuguese Module 1 dossiers and GGMED review timelines that differ from pharmaceutical CTD pathways. SUS procurement through CONITEC applies to selected high-cost technologies, while ANS private hospitals adopt innovator devices faster. BioNixus Brazil MedTech programmes map both public tender and supplementary-insurance corridors so launch teams size the addressable market by channel—not a single national average.',
+  },
+  switzerland: {
+    question: 'How do Swissmedic and EU MDR interact for MedTech market research in Switzerland?',
+    answer:
+      'Swissmedic maintains national conformity assessment while mutual recognition with the EU eases CE-marked device circulation for many categories. Hospital procurement through Inselspital, USZ, and cantonal purchasing groups still demands local evidence on total cost of ownership and maintenance. BioNixus Switzerland studies align Swissmedic classification with committee objections observed in German and French reference hospitals when manufacturers plan DACH-wide rollouts.',
+  },
+  spain: {
+    question: 'What makes Spanish hospital procurement unique for medical device launches?',
+    answer:
+      'AEMPS registration sits alongside autonomous-community hospital budgets and regional tender calendars that can diverge from Madrid-centric policy headlines. CatSalut in Catalonia, SERMAS in Madrid, and Andalusian health-service procurement each apply distinct value-analysis criteria. BioNixus Spain fieldwork segments by autonomous community so national forecasts reflect where procedure volume and innovator adoption actually concentrate.',
+  },
+  denmark: {
+    question: 'How does the Danish Medicines Council affect MedTech adoption research?',
+    answer:
+      'Denmark evaluates selected hospital technologies through Medicinrådet and regional hospital procurement cooperatives, with high digital maturity and EHR-linked outcomes data. Device studies must capture when national recommendations translate to regional formulary listing—not assume instant uptake after HTA publication. BioNixus Denmark modules pair clinician interviews with procurement stakeholders to document the lag between guidance and budget release.',
+  },
+  malaysia: {
+    question: 'How does MDA registration interact with ASEAN expansion from Malaysia?',
+    answer:
+      'Medical Device Authority (MDA) registration under the Medical Device Act 2012 references FDA, CE, and TGA approvals to accelerate review, but MOH central contracts and private chains (IHH, KPJ) follow different listing paths. Malaysia’s ASEAN hub ambitions mean manufacturers often use local research to sequence Indonesia, Thailand, and Philippines entry. BioNixus harmonises Malaysia instruments with GCC comparative cells when portfolios span Asia and MENA.',
+  },
+};
+
 function buildFaqs(country: DevelopedMarketMedtechCountry): ServiceLandingExpandedContent['faqs'] {
   return [
     {
@@ -184,7 +215,12 @@ function buildExpandedContent(country: DevelopedMarketMedtechCountry): ServiceLa
       evidence: `BioNixus primary research across ${country.label} device categories consistently shows procurement committee objections and workflow friction explain adoption gaps that prescriber surveys alone miss.`,
       next: `Define your target segment, account type, and commercial decision; BioNixus delivers a written feasibility and methodology proposal within one week.`,
     },
-    faqs: buildFaqs(country),
+    faqs: [
+      ...buildFaqs(country),
+      ...(NEAR_THRESHOLD_MEDTECH_EXTRA_FAQS[country.slug]
+        ? [NEAR_THRESHOLD_MEDTECH_EXTRA_FAQS[country.slug]!]
+        : []),
+    ],
   };
 }
 

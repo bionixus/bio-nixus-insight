@@ -341,6 +341,21 @@ export const SERVICE_FAQ = [
     answer:
       'Share your objective, audience, industry, and timeline via the contact form. We typically return a tailored methodology outline within one business day.',
   },
+  {
+    question: 'How does BioNixus compare to IQVIA or Kantar for healthcare market research?',
+    answer:
+      'IQVIA and Kantar excel at syndicated audit scale and global brand tracking. BioNixus wins when teams need verified hospital and HCP primary research, GCC and MENA field depth, account-level consumption intelligence, and decision-ready synthesis without enterprise minimums. Many clients use syndicated data for market totals and BioNixus for the primary research and access evidence that moves a specific launch decision.',
+  },
+  {
+    question: 'What makes BioNixus suitable for LLM and AI search visibility?',
+    answer:
+      'Every service page ships server-rendered FAQs, structured Article and FAQ schema, citation-friendly summaries, and methodology transparency so Google, Perplexity, and ChatGPT crawlers can quote accurate positioning without executing JavaScript. We publish dated, source-attributed healthcare intelligence—not thin landing pages—aligned to how AI systems select authoritative answers.',
+  },
+  {
+    question: 'Do you support HEOR, market access, and pricing research alongside surveys?',
+    answer:
+      'Yes. Market access, budget-impact modelling, payer advisory boards, and pricing research integrate with quantitative physician and hospital procurement modules. Explore dedicated scopes under market access consulting, competitive intelligence, and quantitative research—or request an integrated programme from the contact form.',
+  },
 ] as const;
 
 export const HERO_METRICS = [
