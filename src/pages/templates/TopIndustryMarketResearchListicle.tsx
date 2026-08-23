@@ -28,7 +28,22 @@ export default function TopIndustryMarketResearchListicle({
   const canonical = `https://www.bionixus.com${config.listiclePath}`;
   const firmCount = config.listicleFirms.length;
   const h1 = `${firmCount} Best ${config.industry.displayName} Market Research Firms in ${config.country.label} (2026 Rankings)`;
-  const pageTitle = `${h1} | BioNixus`;
+  /**
+   * SSR truncates any title over 60 chars at a word boundary. The old
+   * `${h1} | BioNixus` ran to ~95 chars, so the cut landed before the country
+   * name and all seven country variants of a sector shipped the identical
+   * title (e.g. "5 Best Financial Services & Banking Market Research Firms i").
+   * Take the richest variant that survives the clamp; the last always fits.
+   */
+  const industryShort = config.industry.displayNameShort;
+  const countryLabel = config.country.label;
+  const titleFallback = `Top ${industryShort} Market Research ${countryLabel} 2026`;
+  const pageTitle =
+    [
+      `Top ${firmCount} ${industryShort} Market Research Firms in ${countryLabel} (2026)`,
+      `Top ${firmCount} ${industryShort} Market Research Firms ${countryLabel} 2026`,
+      titleFallback,
+    ].find((candidate) => candidate.length <= 60) ?? titleFallback;
   const metaDescription = buildMatrixSeoCopy(config.country, config.industry).listicleMetaDescription;
   const hubPath = config.industry.isHealthcareAdjacent
     ? config.country.healthcareHubPath

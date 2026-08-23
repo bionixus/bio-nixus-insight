@@ -493,6 +493,10 @@
       "destination": "/conf/iqvia-alternative.html"
     },
     {
+      "source": "/bionixus-middle-east-africa",
+      "destination": "/conf/bionixus-middle-east-africa.html"
+    },
+    {
       "source": "/clinical-diagnostics-market-assessment-proposal",
       "destination": "/conf/clinical-diagnostics-market-assessment-proposal.html"
     },
