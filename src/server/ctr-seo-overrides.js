@@ -487,6 +487,31 @@ export const CTR_SEO_BY_PATH = {
     description:
       'UAE drug pricing and reimbursement 2026 — MOHAP pricing rules, DHA/DOH formularies, Thiqa/Daman coverage and launch pricing strategy. By BioNixus.',
   },
+  '/bionixus-vs-iqvia-mena': {
+    title: 'BioNixus vs IQVIA MENA: Hospital Data & Primary Research (2026)',
+    description:
+      'BioNixus vs IQVIA for MENA healthcare research — when account-level hospital consumption data and GCC primary research beat syndicated audit panels. Side-by-side 2026 comparison.',
+  },
+  '/services': {
+    title: 'Healthcare Market Research Services 2026 | Pharma & MedTech | BioNixus',
+    description:
+      'Pharma and healthcare market research services — HCP surveys, KOL mapping, market access, CATI/CAWI fieldwork across GCC, USA, Europe & Asia. Request a proposal.',
+  },
+  '/bionixus-market-research-middle-east': {
+    title: 'Middle East Pharmaceutical Market Research 2026 | GCC & MENA | BioNixus',
+    description:
+      'Pharmaceutical market research Middle East — SFDA/MOHAP-aware fieldwork, NUPCO tender context, hospital consumption data across GCC and Egypt. By BioNixus.',
+  },
+  '/healthcare-market-research-italy': {
+    title: 'Healthcare Market Research Italy 2026 | AIFA & EU5 | BioNixus',
+    description:
+      'Healthcare and pharmaceutical market research in Italy — AIFA pricing, regional HTA, hospital procurement and clinician surveys. EU5 specialist by BioNixus.',
+  },
+  '/brazil-pharmaceutical-market-research': {
+    title: 'Pharmaceutical Market Research Brazil 2026 | ANVISA & SUS | BioNixus',
+    description:
+      'Pharmaceutical market research company in Brazil — ANVISA context, SUS/CONITEC access, ANS private channel, Portuguese HCP fieldwork. Request a proposal.',
+  },
 };
 
 /**

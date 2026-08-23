@@ -267,6 +267,26 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       answer:
         'We deliver centre concentration maps, KOL connectivity dossiers, persistence and discontinuation analysis, caregiver burden narratives, and access-risk registers tied to step therapy or funding exceptions—outputs medical, access, and brand teams can operationalise without reinterpretation.',
     },
+    {
+      question: 'How should neurology research handle rare versus high-prevalence indications?',
+      answer:
+        'Rare CNS franchises need centre-of-excellence mapping and caregiver-inclusive qual; high-prevalence categories such as migraine or epilepsy require primary-care gateway and pharmacy substitution modules. BioNixus scopes sampling to the pathway that governs initiation in each market rather than defaulting to neurologist-only panels that overstate addressable volume.',
+    },
+    {
+      question: 'Can neurology studies integrate digital monitoring and adherence tools?',
+      answer:
+        'Yes. Remote monitoring, ePRO, and digital therapeutic companions change persistence narratives and payer evidence expectations. We pair adoption research with workflow friction analysis so digital add-ons are sized against nursing burden and coding reality—not assumed to lift adherence because the app exists.',
+    },
+    {
+      question: 'How do GCC neurology pathways differ from UK NICE-gated access?',
+      answer:
+        'GCC centres concentrate rare neurology cases in tertiary hubs with faster innovator uptake in private hospitals, while UK access waits on NICE technology appraisals and regional funding. Comparable cores track specialist intent; local modules document step therapy, high-cost drug committee calendars, and caregiver reimbursement gaps that shrink treatable cohorts in each system.',
+    },
+    {
+      question: 'How should migraine and epilepsy programmes differ from neurodegenerative research?',
+      answer:
+        'High-prevalence episodic conditions need primary-care gateway, pharmacy substitution, and patient self-advocacy modules; neurodegenerative franchises need centre-of-excellence mapping, caregiver burden narratives, and slow diagnostic funnel quantification. BioNixus avoids one-size neurology panels by scoping stakeholders to the pathway that governs initiation for each indication rather than title-based neurologist sampling alone.',
+    },
   ],
   'digital-health': [
     {
@@ -288,6 +308,21 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       question: 'How does BioNixus support digital health commercialisation?',
       answer:
         'We pair clinician adoption studies with payer-adjacent interviews, procurement stakeholder mapping, and pricing scenario tests—linking findings to diabetes, cardiology, or respiratory hubs where companion services intersect pharmaceutical franchises.',
+    },
+    {
+      question: 'What evidence do hospital IT committees require before buying digital health tools?',
+      answer:
+        'Security attestations, interoperability with dominant EHR stacks, liability allocation, nursing time impact, and clear ROI within annual capital cycles outweigh feature lists in committee scoring. BioNixus maps these gates with biomedical engineering and CIO-adjacent stakeholders so vendors prepare dossiers committees actually score—not slide decks that stall at pilot.',
+    },
+    {
+      question: 'How does GCC digital health adoption differ from UK and EU5 markets?',
+      answer:
+        'National digital-health strategies in Saudi Arabia and the UAE accelerate telehealth reimbursement and hospital innovation budgets, while European adoption varies by regional autonomy and GDPR-driven data governance. Comparable survey cores roll up for portfolio reviews; local modules capture SFDA/MOHAP software classification and insurer coding where SaMD intersects pharma companion services.',
+    },
+    {
+      question: 'What should digital health vendors measure before a GCC hospital pilot?',
+      answer:
+        'Pilot success requires baseline workflow time studies, IT security questionnaire readiness, Arabic clinical documentation norms, and clarity on whether MOH or emirate insurers will reimburse remote monitoring codes. BioNixus pre-pilot research interviews nursing leads, biomedical engineers, and payer reviewers so vendors fix operational blockers before capital committees review scale-up budgets.',
     },
   ],
   dermatology: [

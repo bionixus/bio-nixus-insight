@@ -175,7 +175,7 @@ const GccMarketAccessGuide = () => {
             description: 'Complete guide to pharmaceutical drug registration, pricing, and reimbursement across the 6 GCC countries: Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman.',
             url: citationUrl,
             datePublished: '2026-01-15',
-            dateModified: '2026-08-22',
+            dateModified: '2026-08-23',
             author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
             publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
           })}
@@ -315,6 +315,7 @@ const GccMarketAccessGuide = () => {
               <a href="#regulatory-overview" className="text-sm text-primary hover:underline flex items-center gap-2"><ShieldCheck className="w-4 h-4" /> Regulatory Bodies by Country</a>
               <a href="#registration-timeline" className="text-sm text-primary hover:underline flex items-center gap-2"><Clock className="w-4 h-4" /> Typical Registration Timeline</a>
               <a href="#country-details" className="text-sm text-primary hover:underline flex items-center gap-2"><Globe className="w-4 h-4" /> Country-by-Country Requirements</a>
+              <a href="#medtech-access" className="text-sm text-primary hover:underline flex items-center gap-2"><Building2 className="w-4 h-4" /> MedTech &amp; IVD Access</a>
               <a href="#faq" className="text-sm text-primary hover:underline flex items-center gap-2"><BookOpen className="w-4 h-4" /> Frequently Asked Questions</a>
             </div>
           </div>
@@ -541,6 +542,53 @@ const GccMarketAccessGuide = () => {
           </div>
         </section>
 
+        {/* MedTech and IVD access */}
+        <section className="section-padding py-12 bg-muted/30" id="medtech-access">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              MedTech, IVD, and digital health access in the GCC
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Medical device and in vitro diagnostic (IVD) manufacturers follow parallel but distinct pathways from
+                small-molecule drugs. SFDA, MOHAP, DHA, DOH, NHRA, and peer authorities classify devices by risk,
+                require conformity assessment or reference-country clearance, and route hospital adoption through
+                biomedical engineering committees and capital-equipment tenders—not community pharmacy substitution.
+                Pricing for devices often references tender benchmarks and total cost of ownership rather than the
+                external-reference baskets used for many pharmaceuticals.
+              </p>
+              <p>
+                IVD and laboratory franchises add another layer: hospital laboratory directors, central lab contracts,
+                and Ministry reference-lab networks influence menu adoption as much as regulatory listing. GCC
+                governments are expanding local manufacturing incentives for devices and diagnostics under Vision 2030
+                and national industrial strategies, which can accelerate review for firms committing to in-country
+                assembly or technology transfer. BioNixus MedTech research maps committee evidence requirements,
+                maintenance-contract expectations, and NUPCO or emirate tender scoring alongside SFDA or MOHAP
+                registration status.
+              </p>
+              <p>
+                For device market sizing and procurement intelligence, see the{' '}
+                <Link to="/gcc-medical-devices-market-report" className="text-primary underline font-medium">
+                  GCC medical devices market report
+                </Link>
+                ,{' '}
+                <Link to="/saudi-arabia-medical-devices-market-report" className="text-primary underline font-medium">
+                  Saudi Arabia medical devices report
+                </Link>
+                , and{' '}
+                <Link to="/healthcare-market-research/saudi-arabia" className="text-primary underline font-medium">
+                  Saudi healthcare market research
+                </Link>
+                . For IQVIA-scale syndicated data versus account-level primary research, compare{' '}
+                <Link to="/bionixus-vs-iqvia-mena" className="text-primary underline font-medium">
+                  BioNixus vs IQVIA MENA
+                </Link>
+                .
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Internal links */}
         <section className="section-padding py-12 bg-muted/20">
           <div className="container-wide max-w-5xl mx-auto">
@@ -666,6 +714,14 @@ const GccMarketAccessGuide = () => {
                 {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
+                },
+                {
+                  q: 'How does MedTech registration differ from pharmaceutical registration in the GCC?',
+                  a: 'Device and IVD manufacturers face risk-based classification, conformity assessment, and hospital capital-equipment tenders rather than community pharmacy ERP pricing alone. Biomedical engineering committees evaluate total cost of ownership, training, and maintenance contracts. BioNixus maps both regulatory listing and procurement committee behaviour for SFDA, MOHAP, DHA, and NHRA contexts.',
+                },
+                {
+                  q: 'When should teams commission GCC access research versus desk regulatory review?',
+                  a: 'Desk review covers dossier checklists; primary research is essential when tender calendars, formulary committee objections, or pharmacist substitution rules will determine uptake after approval. BioNixus links registration milestones to NUPCO, MOH, and emirate procurement intelligence so launch plans reflect observable hospital behaviour—not assumed cascade after marketing authorisation.',
                 },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">
