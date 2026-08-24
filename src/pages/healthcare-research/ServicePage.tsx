@@ -8,6 +8,8 @@ import { ReportInsightGrid } from '@/components/report-premium';
 import { ReportPremiumSection } from '@/components/report-premium';
 import { buildFAQSchema, buildServicePageSchemas } from '@/lib/seo/schemas';
 import { ServiceMarketReferenceGuide } from '@/components/seo/ServiceMarketReferenceGuide';
+import { ExpandedServiceLandingContent } from '@/components/page/ExpandedServiceLandingContent';
+import { getServiceLandingContent } from '@/data/serviceLandingContent';
 import { SERVICE_EXPANDED_FAQS } from '@/data/seo/serviceExpandedPageContent';
 
 function mergeServiceFaqs(
@@ -141,6 +143,7 @@ export default function ServicePage() {
   const copy =
     SERVICE_COPY[service] ||
     'Service-specific healthcare market research programs for pharmaceutical strategy and execution decisions.';
+  const expandedLandingContent = getServiceLandingContent(service);
   const serviceFaqs = mergeServiceFaqs(service, [
     {
       question: `What outcomes does the ${titleService} service support?`,
@@ -157,6 +160,7 @@ export default function ServicePage() {
       answer:
         'Yes. Service-specific programs are often integrated into broader quantitative and qualitative research plans to provide both measurable confidence and deeper decision rationale.',
     },
+    ...(expandedLandingContent?.faqs ?? []),
   ]);
   const jsonLd = [...buildServicePageSchemas(service, copy), buildFAQSchema(serviceFaqs)];
   const content = SERVICE_SECTIONS[service] || {
@@ -1037,6 +1041,10 @@ export default function ServicePage() {
             </div>
           </ReportPremiumSection>
         )}
+
+        {expandedLandingContent ? (
+          <ExpandedServiceLandingContent content={expandedLandingContent} />
+        ) : null}
 
         <ServiceMarketReferenceGuide serviceSlug={service} />
         <ReportMidPageCta config={conversionConfig} className="my-4" />
