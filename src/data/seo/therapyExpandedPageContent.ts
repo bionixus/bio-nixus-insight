@@ -245,6 +245,11 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       answer:
         'Yes. Cardiometabolic overlap is common; combined modules reduce duplicate fieldwork and clarify where messaging, access, and medical education should coordinate across specialty boundaries rather than compete for clinician attention.',
     },
+    {
+      question: 'How do hospital value-analysis committees influence cardiovascular uptake?',
+      answer:
+        'High-cost implantables and long-acting injectables face total-cost-of-ownership scrutiny beyond guideline endorsement. BioNixus maps committee scoring habits, training requirements, and substitution confidence so access narratives match how budgets are actually released.',
+    },
   ],
   'neurology-cns': [
     {
@@ -267,6 +272,26 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       answer:
         'We deliver centre concentration maps, KOL connectivity dossiers, persistence and discontinuation analysis, caregiver burden narratives, and access-risk registers tied to step therapy or funding exceptions—outputs medical, access, and brand teams can operationalise without reinterpretation.',
     },
+    {
+      question: 'How should neurology research handle infusion and home-administration logistics?',
+      answer:
+        'Site-of-care constraints, nurse capacity, cold-chain requirements, and patient travel burden often cap uptake before clinical rejection. BioNixus quantifies operational ceilings alongside prescriber intent so launch and access teams size addressable cohorts realistically.',
+    },
+    {
+      question: 'Can neurology programmes integrate caregiver and patient-reported modules?',
+      answer:
+        'Yes. Caregiver burden, adherence anxiety, and cognitive monitoring expectations shape persistence in many CNS categories. Modules are designed with ethics and privacy guardrails while preserving comparability across MENA, UK, and EU5 affiliates.',
+    },
+    {
+      question: 'How should rare and ultra-rare CNS indications size treatable cohorts?',
+      answer:
+        'Epidemiology alone overstates revenue when genetic testing throughput, centre concentration, and funding exceptions shrink the treatment-ready population. BioNixus builds bottom-up models from diagnosed and funded cohorts, documenting where patients exit before initiation eligibility.',
+    },
+    {
+      question: 'What role do MS and epilepsy registries play in CNS research design?',
+      answer:
+        'Registries and centre networks reveal where volume concentrates, but they rarely explain switching or discontinuation drivers. Primary research layers behavioural rationale on top of registry counts so medical and access teams interpret persistence gaps correctly.',
+    },
   ],
   'digital-health': [
     {
@@ -288,6 +313,26 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       question: 'How does BioNixus support digital health commercialisation?',
       answer:
         'We pair clinician adoption studies with payer-adjacent interviews, procurement stakeholder mapping, and pricing scenario tests—linking findings to diabetes, cardiology, or respiratory hubs where companion services intersect pharmaceutical franchises.',
+    },
+    {
+      question: 'How should SaMD and connected-device studies segment hospital IT stakeholders?',
+      answer:
+        'CIO, clinical informatics, biomedical engineering, and nursing operations often veto purchases after clinical champions endorse pilots. BioNixus maps veto chains and security-review calendars so commercial teams do not scale messaging to physicians alone.',
+    },
+    {
+      question: 'Can digital health research support pricing and reimbursement dossiers?',
+      answer:
+        'Yes. Willingness-to-adopt, workflow time savings, and downstream utilisation offsets can be structured for HTA and hospital value-analysis conversations when paired with transparent methods and conservative scenario framing.',
+    },
+    {
+      question: 'How do GCC digital-health strategies differ from UK NHS and EU hospital procurement?',
+      answer:
+        'GCC systems often pilot nationally branded programmes while hospitals retain device budgets; the UK routes many tools through NICE MedTech guidance and ICB implementation lag; EU5 fragmentation affects EHR integration and data-governance review. Comparable survey cores with local procurement modules prevent a single global adoption curve.',
+    },
+    {
+      question: 'When should digital health studies include patient and caregiver modules?',
+      answer:
+        'Remote monitoring, adherence apps, and companion diagnostics frequently fail when patient burden or caregiver training is underestimated. Including end-user modules early surfaces abandonment drivers before scale-up budgets are committed.',
     },
   ],
   dermatology: [
@@ -337,6 +382,11 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       question: 'How does BioNixus support biosimilar launch and defence planning?',
       answer:
         'We deliver account-level substitution confidence maps, tender scenario notes, physician and pharmacist objection libraries, and uptake models linked to biologics hubs, immunology research, and country reports where hospital procurement dominates access.',
+    },
+    {
+      question: 'When should biosimilar research run before versus after tender calendar publication?',
+      answer:
+        'Pre-tender waves test defence levers and price corridors; post-award waves validate erosion curves and account switching. BioNixus aligns field timing to procurement calendars so insight arrives while negotiation strategy can still change.',
     },
   ],
 };

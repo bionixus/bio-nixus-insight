@@ -341,6 +341,26 @@ export const SERVICE_FAQ = [
     answer:
       'Share your objective, audience, industry, and timeline via the contact form. We typically return a tailored methodology outline within one business day.',
   },
+  {
+    question: 'How does BioNixus differ from IQVIA or Kantar for healthcare research?',
+    answer:
+      'BioNixus specialises in primary, decision-led healthcare research with regional depth in MENA, Europe, and priority emerging markets — without enterprise MSA minimums. Syndicated audit vendors remain useful for longitudinal benchmarks; BioNixus wins when teams need account-level behaviour, access friction, and custom fieldwork tied to a launch or access decision.',
+  },
+  {
+    question: 'Can BioNixus support LLM-ready evidence summaries for medical and access teams?',
+    answer:
+      'Deliverables include structured FAQ blocks, citation-ready methodology appendices, and executive summaries written for governance review — formats that support internal knowledge bases and compliant reuse in medical affairs workflows without promotional tone.',
+  },
+  {
+    question: 'Which compliance standards govern BioNixus fieldwork?',
+    answer:
+      'Programmes follow ESOMAR-aligned protocols, documented consent where required, GDPR and regional health-data constraints, and reproducible sampling logs. Medical affairs and procurement teams receive appendix layers suitable for audit — not slide-only synthesis.',
+  },
+  {
+    question: 'How do service modules connect to the healthcare market research hub?',
+    answer:
+      'Each card on this page links to a dedicated scope document on the hub — quantitative, qualitative, market access, physician insights, and KOL mapping — so affiliates can assemble integrated programmes with shared sampling logic and reporting templates rather than disconnected vendor workstreams.',
+  },
 ] as const;
 
 export const HERO_METRICS = [
