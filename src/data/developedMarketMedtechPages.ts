@@ -806,11 +806,58 @@ export function getDevelopedMarketMedtechPath(slug: DevelopedMarketMedtechSlug):
   return `/${slug}-medtech-market-research`;
 }
 
+/** Extra FAQs for MedTech BOFU pages within ~20 words of the 2,000-word SEO threshold. */
+const NEAR_THRESHOLD_MEDTECH_EXTRA_FAQS: Partial<
+  Record<DevelopedMarketMedtechSlug, Array<{ question: string; answer: string }>>
+> = {
+  brazil: [
+    {
+      question: 'How does ANVISA classification affect MedTech research sampling in Brazil?',
+      answer:
+        'Class I–IV risk tiers determine hospital committee evidence expectations and registration timelines. BioNixus maps ANVISA pathways alongside procurement research so launch teams align clinical claims, training investment, and tender scoring before fieldwork scales.',
+    },
+  ],
+  switzerland: [
+    {
+      question: 'How do Swissmedic and cantonal procurement interact for device launches?',
+      answer:
+        'Swissmedic clearance is necessary but not sufficient — cantonal hospital budgets and MedTech guidance from BAG shape listing speed. BioNixus pairs regulator-aware sampling with procurement depth so forecasts reflect both approval and reimbursement reality.',
+    },
+  ],
+  spain: [
+    {
+      question: 'What makes Spain MedTech research distinct from EU5 averages?',
+      answer:
+        'Autonomous community variation in HTA implementation and hospital autonomy means national averages misprice access. BioNixus embeds regional modules while keeping comparable cores for Iberian and EU portfolio governance.',
+    },
+  ],
+  denmark: [
+    {
+      question: 'How does Denmark MedTech research account for hospital procurement centralisation?',
+      answer:
+        'Amgros and regional procurement bodies concentrate tender power for many device categories. Research must trace scoring dimensions and substitution confidence at committee level — not prescriber preference alone.',
+    },
+  ],
+  malaysia: [
+    {
+      question: 'How does Malaysia MedTech research support ASEAN expansion planning?',
+      answer:
+        'Malaysia often serves as an ASEAN reference market for SFDA and GCC dossier narratives. BioNixus harmonises Malaysia fieldwork with optional Singapore and Gulf comparator cells so regional committees read one evidence storyline.',
+    },
+  ],
+};
+
 export function getDevelopedMarketMedtechExpandedContent(
   slug: DevelopedMarketMedtechSlug,
 ): ServiceLandingExpandedContent {
   const country = DEVELOPED_MARKET_MEDTECH_COUNTRIES[slug];
-  return buildExpandedContent(country);
+  const content = buildExpandedContent(country);
+  const extraFaqs = NEAR_THRESHOLD_MEDTECH_EXTRA_FAQS[slug];
+  if (!extraFaqs?.length) return content;
+  return {
+    ...content,
+    faqs: [...(content.faqs ?? []), ...extraFaqs],
+  };
 }
 
 export function getDevelopedMarketMedtechCountry(slug: DevelopedMarketMedtechSlug): DevelopedMarketMedtechCountry {

@@ -1,72 +1,98 @@
 # Sitewide Audit Phase 2
 
-Generated: 2026-07-03T04:01:56.128Z
+Generated: 2026-08-24T04:02:38.402Z
 Base URL: https://www.bionixus.com
 
 ## Summary
 
-- Total URLs: 710
-- PASS: 613
-- MINOR: 12
-- MAJOR: 85
+- Total URLs: 1113
+- PASS: 1088
+- MINOR: 21
+- MAJOR: 4
 
 ## Top Issue Patterns
 
-- Missing H1: 82
-- Low internal links (3): 82
-- Short title: 7
-- Long title: 5
-- Long meta description: 3
-- Missing canonical: 2
-- Fetch error: fetch failed: 1
+- Short title: 8
+- Short meta description: 5
+- Long meta description: 5
+- Missing H1: 4
+- Long title: 3
 
 ## Prefix Breakdown
 
 | Prefix | Total | PASS | MINOR | MAJOR |
 |---|---:|---:|---:|---:|
-| `/market-reports` | 150 | 136 | 0 | 14 |
-| `/insights` | 145 | 145 | 0 | 0 |
-| `/healthcare-market-research` | 53 | 53 | 0 | 0 |
-| `/global-websites` | 33 | 33 | 0 | 0 |
-| `/ar` | 23 | 12 | 2 | 9 |
-| `/blog/:slug` | 11 | 6 | 0 | 5 |
-| `/pt` | 11 | 9 | 2 | 0 |
-| `/es` | 8 | 8 | 0 | 0 |
-| `/fr` | 8 | 8 | 0 | 0 |
-| `/de` | 7 | 7 | 0 | 0 |
+| `/insights` | 245 | 242 | 3 | 0 |
+| `/market-reports` | 195 | 195 | 0 | 0 |
+| `/blog/:slug` | 127 | 127 | 0 | 0 |
+| `/healthcare-market-research` | 62 | 62 | 0 | 0 |
+| `/ar` | 27 | 26 | 1 | 0 |
+| `/de` | 13 | 9 | 1 | 3 |
+| `/fr` | 13 | 12 | 0 | 1 |
+| `/market-research` | 13 | 13 | 0 | 0 |
+| `/pt` | 12 | 11 | 1 | 0 |
+| `/es` | 10 | 9 | 1 | 0 |
+| `/zh` | 10 | 6 | 4 | 0 |
+| `/ru` | 7 | 6 | 1 | 0 |
 | `/services` | 7 | 7 | 0 | 0 |
-| `/ru` | 6 | 4 | 2 | 0 |
-| `/zh` | 6 | 4 | 2 | 0 |
-| `/bionixus-industries` | 2 | 2 | 0 | 0 |
-| `/` | 1 | 1 | 0 | 0 |
-| `/about` | 1 | 1 | 0 | 0 |
-| `/australia-healthcare-market-report` | 1 | 0 | 0 | 1 |
-| `/australia-medical-devices-market-report` | 1 | 0 | 0 | 1 |
+| `/bionixus-industries` | 5 | 5 | 0 | 0 |
+| `/case-studies` | 5 | 5 | 0 | 0 |
+| `/news` | 3 | 3 | 0 | 0 |
+| `/` | 1 | 0 | 1 | 0 |
+| `/about` | 1 | 0 | 1 | 0 |
+| `/australia-healthcare-market-report` | 1 | 1 | 0 | 0 |
+| `/australia-medical-devices-market-report` | 1 | 1 | 0 | 0 |
+| `/australia-medtech-market-research` | 1 | 1 | 0 | 0 |
+| `/b2b-industries` | 1 | 1 | 0 | 0 |
+| `/b2c-industries` | 1 | 1 | 0 | 0 |
+| `/bahrain-automotive-market-research` | 1 | 1 | 0 | 0 |
+| `/bahrain-biotech-market-research` | 1 | 1 | 0 | 0 |
+| `/bahrain-consumer-health-market-research` | 1 | 1 | 0 | 0 |
+| `/bahrain-education-market-research` | 1 | 1 | 0 | 0 |
+| `/bahrain-energy-market-research` | 1 | 1 | 0 | 0 |
+| `/bahrain-financial-services-market-research` | 1 | 1 | 0 | 0 |
+| `/bahrain-fmcg-market-research` | 1 | 1 | 0 | 0 |
 | `/bahrain-healthcare-market-report` | 1 | 1 | 0 | 0 |
-| `/bahrain-medical-devices-market-report` | 1 | 0 | 0 | 1 |
-| `/bionixus-ai-chatbots-increase-sales-and-lead-generation` | 1 | 0 | 0 | 1 |
-| `/bionixus-market-research-middle-east` | 1 | 0 | 0 | 1 |
+| `/bahrain-healthcare-market-research` | 1 | 1 | 0 | 0 |
+| `/bahrain-hospitality-market-research` | 1 | 1 | 0 | 0 |
+| `/bahrain-media-market-research` | 1 | 1 | 0 | 0 |
+| `/bahrain-medical-devices-market-report` | 1 | 1 | 0 | 0 |
+| `/bahrain-medtech-market-research` | 1 | 1 | 0 | 0 |
+| `/bahrain-public-sector-market-research` | 1 | 1 | 0 | 0 |
+| `/bahrain-real-estate-market-research` | 1 | 1 | 0 | 0 |
+| `/bahrain-retail-market-research` | 1 | 1 | 0 | 0 |
+| `/bahrain-technology-market-research` | 1 | 1 | 0 | 0 |
+| `/bahrain-telecom-market-research` | 1 | 1 | 0 | 0 |
+| `/bionixus-ai-chatbots-increase-sales-and-lead-generation` | 1 | 1 | 0 | 0 |
+| `/bionixus-market-research-middle-east` | 1 | 1 | 0 | 0 |
 | `/bionixus-vs-iqvia-mena` | 1 | 1 | 0 | 0 |
 | `/biosimilar-market-entry-saudi-arabia` | 1 | 1 | 0 | 0 |
 | `/blog` | 1 | 1 | 0 | 0 |
 | `/brand-tracking-pharma-gcc` | 1 | 1 | 0 | 0 |
-| `/brazil-healthcare-market-report` | 1 | 1 | 0 | 0 |
+| `/brazil-healthcare-market-report` | 1 | 0 | 1 | 0 |
+| `/brazil-healthcare-market-research` | 1 | 1 | 0 | 0 |
 | `/brazil-medical-devices-market-report` | 1 | 1 | 0 | 0 |
+| `/brazil-medtech-market-research` | 1 | 1 | 0 | 0 |
 | `/brazil-pharmaceutical-market-research` | 1 | 1 | 0 | 0 |
 | `/budget-impact-model-saudi-arabia` | 1 | 1 | 0 | 0 |
-| `/canada-healthcare-market-report` | 1 | 0 | 0 | 1 |
-| `/canada-medical-devices-market-report` | 1 | 0 | 0 | 1 |
-| `/case-studies` | 1 | 1 | 0 | 0 |
-| `/china-healthcare-market-report` | 1 | 0 | 0 | 1 |
-| `/china-medical-devices-market-report` | 1 | 0 | 0 | 1 |
+| `/canada-healthcare-market-report` | 1 | 1 | 0 | 0 |
+| `/canada-medical-devices-market-report` | 1 | 1 | 0 | 0 |
+| `/canada-medtech-market-research` | 1 | 1 | 0 | 0 |
+| `/china-healthcare-market-report` | 1 | 1 | 0 | 0 |
+| `/china-medical-devices-market-report` | 1 | 0 | 1 | 0 |
+| `/china-medtech-market-research` | 1 | 1 | 0 | 0 |
 | `/client-reviews` | 1 | 1 | 0 | 0 |
 | `/clinical-diagnostics-market-research` | 1 | 1 | 0 | 0 |
 | `/clinical-diagnostics-proposal-request` | 1 | 1 | 0 | 0 |
 | `/commercial-effectiveness-pharma-middle-east` | 1 | 1 | 0 | 0 |
 | `/consumer-market-research` | 1 | 1 | 0 | 0 |
 | `/contact` | 1 | 1 | 0 | 0 |
+| `/cost-effectiveness-analysis-gcc` | 1 | 1 | 0 | 0 |
+| `/cost-effectiveness-analysis-saudi-arabia` | 1 | 1 | 0 | 0 |
+| `/denmark-medtech-market-research` | 1 | 1 | 0 | 0 |
 | `/desmoid-tumor-pharma-market-research` | 1 | 1 | 0 | 0 |
 | `/diabetes-market-research-uae` | 1 | 1 | 0 | 0 |
+| `/doxorubicin-market` | 1 | 1 | 0 | 0 |
 | `/egypt-automotive-market-research` | 1 | 1 | 0 | 0 |
 | `/egypt-biotech-market-research` | 1 | 1 | 0 | 0 |
 | `/egypt-consumer-health-market-research` | 1 | 1 | 0 | 0 |
@@ -74,11 +100,11 @@ Base URL: https://www.bionixus.com
 | `/egypt-energy-market-research` | 1 | 1 | 0 | 0 |
 | `/egypt-financial-services-market-research` | 1 | 1 | 0 | 0 |
 | `/egypt-fmcg-market-research` | 1 | 1 | 0 | 0 |
-| `/egypt-healthcare-market-report` | 1 | 0 | 0 | 1 |
+| `/egypt-healthcare-market-report` | 1 | 1 | 0 | 0 |
 | `/egypt-healthcare-market-research` | 1 | 1 | 0 | 0 |
 | `/egypt-hospitality-market-research` | 1 | 1 | 0 | 0 |
 | `/egypt-media-market-research` | 1 | 1 | 0 | 0 |
-| `/egypt-medical-devices-market-report` | 1 | 0 | 0 | 1 |
+| `/egypt-medical-devices-market-report` | 1 | 1 | 0 | 0 |
 | `/egypt-medtech-market-research` | 1 | 1 | 0 | 0 |
 | `/egypt-pharmaceutical-market-research` | 1 | 1 | 0 | 0 |
 | `/egypt-public-sector-market-research` | 1 | 1 | 0 | 0 |
@@ -87,41 +113,52 @@ Base URL: https://www.bionixus.com
 | `/egypt-technology-market-research` | 1 | 1 | 0 | 0 |
 | `/egypt-telecom-market-research` | 1 | 1 | 0 | 0 |
 | `/faq` | 1 | 1 | 0 | 0 |
-| `/france-healthcare-market-report` | 1 | 0 | 0 | 1 |
-| `/france-medical-devices-market-report` | 1 | 0 | 0 | 1 |
-| `/gcc-anesthesia-surgical-market-report` | 1 | 0 | 0 | 1 |
+| `/febrile-neutropenia-market` | 1 | 1 | 0 | 0 |
+| `/france-healthcare-market-report` | 1 | 1 | 0 | 0 |
+| `/france-medical-devices-market-report` | 1 | 1 | 0 | 0 |
+| `/france-medtech-market-research` | 1 | 1 | 0 | 0 |
+| `/gcc-anesthesia-surgical-market-report` | 1 | 1 | 0 | 0 |
 | `/gcc-biopharmaceuticals-market` | 1 | 1 | 0 | 0 |
 | `/gcc-clinical-trials-market` | 1 | 1 | 0 | 0 |
+| `/gcc-functional-service-providers-market` | 1 | 1 | 0 | 0 |
 | `/gcc-generic-injectables-market` | 1 | 1 | 0 | 0 |
+| `/gcc-generic-pharmaceuticals-market` | 1 | 1 | 0 | 0 |
 | `/gcc-hcp-recruitment-market-research` | 1 | 1 | 0 | 0 |
 | `/gcc-market-access-guide` | 1 | 1 | 0 | 0 |
-| `/gcc-medical-devices-market-report` | 1 | 0 | 0 | 1 |
+| `/gcc-medical-devices-market-report` | 1 | 1 | 0 | 0 |
+| `/gcc-medication-management-market` | 1 | 1 | 0 | 0 |
 | `/gcc-personalized-medicine-market` | 1 | 1 | 0 | 0 |
 | `/gcc-pharma-market-report-2026` | 1 | 1 | 0 | 0 |
-| `/gcc-pharmaceutical-market-research` | 1 | 1 | 0 | 0 |
+| `/gcc-pharmaceutical-market-research` | 1 | 0 | 1 | 0 |
 | `/gcc-pharmacy-market` | 1 | 1 | 0 | 0 |
-| `/germany-healthcare-market-report` | 1 | 0 | 0 | 1 |
-| `/germany-medical-devices-market-report` | 1 | 0 | 0 | 1 |
+| `/germany-healthcare-market-report` | 1 | 1 | 0 | 0 |
+| `/germany-medical-devices-market-report` | 1 | 1 | 0 | 0 |
+| `/germany-medtech-market-research` | 1 | 1 | 0 | 0 |
 | `/gfk-alternative-egypt` | 1 | 0 | 1 | 0 |
+| `/healthcare-bioconvergence-market` | 1 | 1 | 0 | 0 |
 | `/healthcare-fieldwork-gcc` | 1 | 1 | 0 | 0 |
 | `/healthcare-fieldwork-middle-east` | 1 | 1 | 0 | 0 |
 | `/healthcare-market-research-agency-gcc` | 1 | 1 | 0 | 0 |
 | `/healthcare-market-research-argentina` | 1 | 1 | 0 | 0 |
 | `/healthcare-market-research-australia` | 1 | 1 | 0 | 0 |
+| `/healthcare-market-research-bahrain` | 1 | 1 | 0 | 0 |
 | `/healthcare-market-research-canada` | 1 | 1 | 0 | 0 |
 | `/healthcare-market-research-china` | 1 | 1 | 0 | 0 |
 | `/healthcare-market-research-denmark` | 1 | 1 | 0 | 0 |
 | `/healthcare-market-research-france` | 1 | 1 | 0 | 0 |
-| `/healthcare-market-research-germany` | 1 | 1 | 0 | 0 |
-| `/healthcare-market-research-in-saudi-arabia` | 1 | 1 | 0 | 0 |
 | `/healthcare-market-research-in-uae` | 1 | 1 | 0 | 0 |
+| `/healthcare-market-research-india` | 1 | 1 | 0 | 0 |
 | `/healthcare-market-research-ireland` | 1 | 1 | 0 | 0 |
 | `/healthcare-market-research-italy` | 1 | 1 | 0 | 0 |
 | `/healthcare-market-research-japan` | 1 | 1 | 0 | 0 |
+| `/healthcare-market-research-jordan` | 1 | 1 | 0 | 0 |
+| `/healthcare-market-research-kuwait` | 1 | 1 | 0 | 0 |
 | `/healthcare-market-research-malaysia` | 1 | 1 | 0 | 0 |
 | `/healthcare-market-research-netherlands` | 1 | 1 | 0 | 0 |
 | `/healthcare-market-research-new-zealand` | 1 | 1 | 0 | 0 |
+| `/healthcare-market-research-oman` | 1 | 1 | 0 | 0 |
 | `/healthcare-market-research-poland` | 1 | 1 | 0 | 0 |
+| `/healthcare-market-research-qatar` | 1 | 1 | 0 | 0 |
 | `/healthcare-market-research-singapore` | 1 | 1 | 0 | 0 |
 | `/healthcare-market-research-south-korea` | 1 | 1 | 0 | 0 |
 | `/healthcare-market-research-spain` | 1 | 1 | 0 | 0 |
@@ -130,21 +167,49 @@ Base URL: https://www.bionixus.com
 | `/healthcare-market-research-turkey` | 1 | 1 | 0 | 0 |
 | `/healthcare-market-research-uk` | 1 | 1 | 0 | 0 |
 | `/healthcare-market-research-usa` | 1 | 1 | 0 | 0 |
+| `/heor-consulting` | 1 | 1 | 0 | 0 |
 | `/heor-consulting-saudi-arabia` | 1 | 1 | 0 | 0 |
-| `/home-staging` | 1 | 0 | 0 | 1 |
-| `/india-healthcare-market-report` | 1 | 0 | 0 | 1 |
-| `/india-medical-devices-market-report` | 1 | 0 | 0 | 1 |
-| `/iqvia-alternative` | 1 | 0 | 1 | 0 |
-| `/italy-healthcare-market-report` | 1 | 0 | 0 | 1 |
-| `/italy-medical-devices-market-report` | 1 | 0 | 0 | 1 |
+| `/hta-studies-saudi-arabia` | 1 | 1 | 0 | 0 |
+| `/india-healthcare-market-report` | 1 | 1 | 0 | 0 |
+| `/india-medical-devices-market-report` | 1 | 1 | 0 | 0 |
+| `/iqvia-alternative` | 1 | 1 | 0 | 0 |
+| `/italy-clinical-trials-market` | 1 | 1 | 0 | 0 |
+| `/italy-healthcare-market-report` | 1 | 1 | 0 | 0 |
+| `/italy-medical-device-connectivity-market` | 1 | 1 | 0 | 0 |
+| `/italy-medical-devices-market-report` | 1 | 1 | 0 | 0 |
+| `/italy-medtech-market-research` | 1 | 1 | 0 | 0 |
+| `/italy-oncology-antiinfective-market-access` | 1 | 1 | 0 | 0 |
+| `/italy-portable-diagnostic-devices-market` | 1 | 1 | 0 | 0 |
+| `/japan-general-surgical-devices-market` | 1 | 1 | 0 | 0 |
 | `/japan-healthcare-market-report` | 1 | 1 | 0 | 0 |
-| `/japan-medical-devices-market-report` | 1 | 0 | 0 | 1 |
+| `/japan-medical-device-market-access` | 1 | 1 | 0 | 0 |
+| `/japan-medical-devices-market-report` | 1 | 1 | 0 | 0 |
+| `/japan-medical-disposables-market` | 1 | 1 | 0 | 0 |
+| `/japan-medtech-market-research` | 1 | 1 | 0 | 0 |
+| `/japan-neurology-devices-market` | 1 | 1 | 0 | 0 |
 | `/kantar-health-alternative-gcc` | 1 | 1 | 0 | 0 |
 | `/kol-mapping-saudi-arabia-oncology` | 1 | 1 | 0 | 0 |
-| `/kuwait-healthcare-market-report` | 1 | 0 | 0 | 1 |
+| `/kuwait-automotive-market-research` | 1 | 1 | 0 | 0 |
+| `/kuwait-biotech-market-research` | 1 | 1 | 0 | 0 |
+| `/kuwait-consumer-health-market-research` | 1 | 1 | 0 | 0 |
+| `/kuwait-education-market-research` | 1 | 1 | 0 | 0 |
+| `/kuwait-energy-market-research` | 1 | 1 | 0 | 0 |
+| `/kuwait-financial-services-market-research` | 1 | 1 | 0 | 0 |
+| `/kuwait-fmcg-market-research` | 1 | 1 | 0 | 0 |
+| `/kuwait-healthcare-market-report` | 1 | 1 | 0 | 0 |
+| `/kuwait-healthcare-market-research` | 1 | 1 | 0 | 0 |
+| `/kuwait-hospitality-market-research` | 1 | 1 | 0 | 0 |
 | `/kuwait-market-access-research` | 1 | 1 | 0 | 0 |
-| `/kuwait-medical-devices-market-report` | 1 | 0 | 0 | 1 |
-| `/market-research` | 1 | 1 | 0 | 0 |
+| `/kuwait-media-market-research` | 1 | 1 | 0 | 0 |
+| `/kuwait-medical-devices-market-report` | 1 | 1 | 0 | 0 |
+| `/kuwait-medtech-market-research` | 1 | 1 | 0 | 0 |
+| `/kuwait-public-sector-market-research` | 1 | 1 | 0 | 0 |
+| `/kuwait-real-estate-market-research` | 1 | 1 | 0 | 0 |
+| `/kuwait-retail-market-research` | 1 | 1 | 0 | 0 |
+| `/kuwait-technology-market-research` | 1 | 1 | 0 | 0 |
+| `/kuwait-telecom-market-research` | 1 | 1 | 0 | 0 |
+| `/malaysia-medtech-market-research` | 1 | 1 | 0 | 0 |
+| `/market-access` | 1 | 1 | 0 | 0 |
 | `/market-research-bahrain` | 1 | 1 | 0 | 0 |
 | `/market-research-by-industry` | 1 | 1 | 0 | 0 |
 | `/market-research-egypt` | 1 | 1 | 0 | 0 |
@@ -160,43 +225,71 @@ Base URL: https://www.bionixus.com
 | `/market-research-saudi` | 1 | 1 | 0 | 0 |
 | `/market-research-saudi-arabia-pharmaceutical` | 1 | 1 | 0 | 0 |
 | `/market-research-uae` | 1 | 1 | 0 | 0 |
+| `/mea-clinical-trial-imaging-market` | 1 | 1 | 0 | 0 |
 | `/media` | 1 | 1 | 0 | 0 |
+| `/medical-affairs-insight-research-gcc` | 1 | 1 | 0 | 0 |
+| `/mek-inhibitors-market` | 1 | 1 | 0 | 0 |
 | `/mena-pharma-market-data` | 1 | 1 | 0 | 0 |
 | `/methodology` | 1 | 1 | 0 | 0 |
-| `/news` | 1 | 1 | 0 | 0 |
+| `/msl-insight-research-middle-east` | 1 | 1 | 0 | 0 |
+| `/new-zealand-medtech-market-research` | 1 | 1 | 0 | 0 |
 | `/nf1-pharma-market-research` | 1 | 1 | 0 | 0 |
-| `/oman-healthcare-market-report` | 1 | 0 | 0 | 1 |
-| `/oman-medical-devices-market-report` | 1 | 0 | 0 | 1 |
+| `/nupco-tender-calendar-events-2026` | 1 | 1 | 0 | 0 |
+| `/oman-automotive-market-research` | 1 | 1 | 0 | 0 |
+| `/oman-biotech-market-research` | 1 | 1 | 0 | 0 |
+| `/oman-consumer-health-market-research` | 1 | 1 | 0 | 0 |
+| `/oman-education-market-research` | 1 | 1 | 0 | 0 |
+| `/oman-energy-market-research` | 1 | 1 | 0 | 0 |
+| `/oman-financial-services-market-research` | 1 | 1 | 0 | 0 |
+| `/oman-fmcg-market-research` | 1 | 1 | 0 | 0 |
+| `/oman-healthcare-market-report` | 1 | 1 | 0 | 0 |
+| `/oman-healthcare-market-research` | 1 | 1 | 0 | 0 |
+| `/oman-hospitality-market-research` | 1 | 1 | 0 | 0 |
+| `/oman-media-market-research` | 1 | 1 | 0 | 0 |
+| `/oman-medical-devices-market-report` | 1 | 1 | 0 | 0 |
+| `/oman-medtech-market-research` | 1 | 1 | 0 | 0 |
+| `/oman-public-sector-market-research` | 1 | 1 | 0 | 0 |
+| `/oman-real-estate-market-research` | 1 | 1 | 0 | 0 |
+| `/oman-retail-market-research` | 1 | 1 | 0 | 0 |
+| `/oman-technology-market-research` | 1 | 1 | 0 | 0 |
+| `/oman-telecom-market-research` | 1 | 1 | 0 | 0 |
 | `/patient-adherence-research-middle-east` | 1 | 1 | 0 | 0 |
 | `/patient-journey-research-gcc` | 1 | 1 | 0 | 0 |
 | `/patient-support-program-research-gcc` | 1 | 1 | 0 | 0 |
 | `/pharma-fieldwork-egypt` | 1 | 1 | 0 | 0 |
 | `/pharma-fieldwork-saudi-arabia` | 1 | 1 | 0 | 0 |
 | `/pharma-fieldwork-uae` | 1 | 1 | 0 | 0 |
-| `/pharmaceutical-companies-bahrain` | 1 | 0 | 0 | 1 |
-| `/pharmaceutical-companies-egypt` | 1 | 0 | 0 | 1 |
-| `/pharmaceutical-companies-iran` | 1 | 0 | 0 | 1 |
-| `/pharmaceutical-companies-iraq` | 1 | 0 | 0 | 1 |
-| `/pharmaceutical-companies-kuwait` | 1 | 0 | 0 | 1 |
-| `/pharmaceutical-companies-oman` | 1 | 0 | 0 | 1 |
-| `/pharmaceutical-companies-qatar` | 1 | 0 | 0 | 1 |
-| `/pharmaceutical-companies-saudi-arabia` | 1 | 0 | 0 | 1 |
-| `/pharmaceutical-companies-uae` | 1 | 0 | 0 | 1 |
+| `/pharma-healthcare-industries` | 1 | 1 | 0 | 0 |
+| `/pharmaceutical-companies-bahrain` | 1 | 1 | 0 | 0 |
+| `/pharmaceutical-companies-egypt` | 1 | 0 | 1 | 0 |
+| `/pharmaceutical-companies-iran` | 1 | 1 | 0 | 0 |
+| `/pharmaceutical-companies-iraq` | 1 | 1 | 0 | 0 |
+| `/pharmaceutical-companies-kuwait` | 1 | 1 | 0 | 0 |
+| `/pharmaceutical-companies-oman` | 1 | 1 | 0 | 0 |
+| `/pharmaceutical-companies-qatar` | 1 | 1 | 0 | 0 |
+| `/pharmaceutical-companies-saudi-arabia` | 1 | 1 | 0 | 0 |
+| `/pharmaceutical-companies-uae` | 1 | 1 | 0 | 0 |
 | `/pharmaceutical-market-research-argentina` | 1 | 1 | 0 | 0 |
 | `/pharmaceutical-market-research-australia` | 1 | 1 | 0 | 0 |
+| `/pharmaceutical-market-research-bahrain` | 1 | 1 | 0 | 0 |
 | `/pharmaceutical-market-research-canada` | 1 | 1 | 0 | 0 |
 | `/pharmaceutical-market-research-china` | 1 | 1 | 0 | 0 |
 | `/pharmaceutical-market-research-denmark` | 1 | 1 | 0 | 0 |
 | `/pharmaceutical-market-research-dubai` | 1 | 0 | 1 | 0 |
 | `/pharmaceutical-market-research-france` | 1 | 1 | 0 | 0 |
 | `/pharmaceutical-market-research-germany` | 1 | 1 | 0 | 0 |
+| `/pharmaceutical-market-research-india` | 1 | 1 | 0 | 0 |
 | `/pharmaceutical-market-research-ireland` | 1 | 1 | 0 | 0 |
 | `/pharmaceutical-market-research-italy` | 1 | 1 | 0 | 0 |
 | `/pharmaceutical-market-research-japan` | 1 | 1 | 0 | 0 |
+| `/pharmaceutical-market-research-jordan` | 1 | 1 | 0 | 0 |
+| `/pharmaceutical-market-research-kuwait` | 1 | 1 | 0 | 0 |
 | `/pharmaceutical-market-research-malaysia` | 1 | 1 | 0 | 0 |
 | `/pharmaceutical-market-research-netherlands` | 1 | 1 | 0 | 0 |
 | `/pharmaceutical-market-research-new-zealand` | 1 | 1 | 0 | 0 |
+| `/pharmaceutical-market-research-oman` | 1 | 1 | 0 | 0 |
 | `/pharmaceutical-market-research-poland` | 1 | 1 | 0 | 0 |
+| `/pharmaceutical-market-research-qatar` | 1 | 1 | 0 | 0 |
 | `/pharmaceutical-market-research-singapore` | 1 | 1 | 0 | 0 |
 | `/pharmaceutical-market-research-south-korea` | 1 | 1 | 0 | 0 |
 | `/pharmaceutical-market-research-spain` | 1 | 1 | 0 | 0 |
@@ -208,14 +301,29 @@ Base URL: https://www.bionixus.com
 | `/pharmaceutical-therapy-areas` | 1 | 1 | 0 | 0 |
 | `/pharmacies-saudi-arabia-marketing` | 1 | 1 | 0 | 0 |
 | `/physician-survey-saudi-arabia` | 1 | 1 | 0 | 0 |
-| `/premium-home-page` | 1 | 0 | 0 | 1 |
-| `/premium-home-preview` | 1 | 0 | 0 | 1 |
+| `/poland-medtech-market-research` | 1 | 1 | 0 | 0 |
 | `/privacy` | 1 | 1 | 0 | 0 |
-| `/qatar-healthcare-market-report` | 1 | 0 | 0 | 1 |
+| `/qatar-automotive-market-research` | 1 | 1 | 0 | 0 |
+| `/qatar-biotech-market-research` | 1 | 1 | 0 | 0 |
+| `/qatar-consumer-health-market-research` | 1 | 1 | 0 | 0 |
+| `/qatar-education-market-research` | 1 | 1 | 0 | 0 |
+| `/qatar-energy-market-research` | 1 | 1 | 0 | 0 |
+| `/qatar-financial-services-market-research` | 1 | 1 | 0 | 0 |
+| `/qatar-fmcg-market-research` | 1 | 1 | 0 | 0 |
+| `/qatar-healthcare-market-report` | 1 | 1 | 0 | 0 |
+| `/qatar-healthcare-market-research` | 1 | 1 | 0 | 0 |
+| `/qatar-hospitality-market-research` | 1 | 1 | 0 | 0 |
 | `/qatar-market-access-research` | 1 | 1 | 0 | 0 |
-| `/qatar-medical-devices-market-report` | 1 | 0 | 0 | 1 |
+| `/qatar-media-market-research` | 1 | 1 | 0 | 0 |
+| `/qatar-medical-devices-market-report` | 1 | 1 | 0 | 0 |
+| `/qatar-medtech-market-research` | 1 | 1 | 0 | 0 |
+| `/qatar-public-sector-market-research` | 1 | 1 | 0 | 0 |
+| `/qatar-real-estate-market-research` | 1 | 1 | 0 | 0 |
+| `/qatar-retail-market-research` | 1 | 1 | 0 | 0 |
+| `/qatar-technology-market-research` | 1 | 1 | 0 | 0 |
+| `/qatar-telecom-market-research` | 1 | 1 | 0 | 0 |
 | `/qualitative-market-research` | 1 | 1 | 0 | 0 |
-| `/quantitative-healthcare-market-research` | 1 | 0 | 0 | 1 |
+| `/quantitative-healthcare-market-research` | 1 | 1 | 0 | 0 |
 | `/real-world-evidence` | 1 | 1 | 0 | 0 |
 | `/real-world-evidence-gcc` | 1 | 1 | 0 | 0 |
 | `/resources` | 1 | 1 | 0 | 0 |
@@ -227,11 +335,11 @@ Base URL: https://www.bionixus.com
 | `/saudi-arabia-energy-market-research` | 1 | 1 | 0 | 0 |
 | `/saudi-arabia-financial-services-market-research` | 1 | 1 | 0 | 0 |
 | `/saudi-arabia-fmcg-market-research` | 1 | 1 | 0 | 0 |
-| `/saudi-arabia-healthcare-market-report` | 1 | 0 | 0 | 1 |
+| `/saudi-arabia-healthcare-market-report` | 1 | 1 | 0 | 0 |
 | `/saudi-arabia-healthcare-market-research` | 1 | 1 | 0 | 0 |
 | `/saudi-arabia-hospitality-market-research` | 1 | 1 | 0 | 0 |
 | `/saudi-arabia-media-market-research` | 1 | 1 | 0 | 0 |
-| `/saudi-arabia-medical-devices-market-report` | 1 | 0 | 0 | 1 |
+| `/saudi-arabia-medical-devices-market-report` | 1 | 1 | 0 | 0 |
 | `/saudi-arabia-medtech-market-research` | 1 | 1 | 0 | 0 |
 | `/saudi-arabia-public-sector-market-research` | 1 | 1 | 0 | 0 |
 | `/saudi-arabia-real-estate-market-research` | 1 | 1 | 0 | 0 |
@@ -240,19 +348,27 @@ Base URL: https://www.bionixus.com
 | `/saudi-arabia-telecom-market-research` | 1 | 1 | 0 | 0 |
 | `/saudi-payer-market-access-research` | 1 | 1 | 0 | 0 |
 | `/sfda-market-access-strategy-saudi-arabia` | 1 | 1 | 0 | 0 |
-| `/singapore-healthcare-market-report` | 1 | 0 | 0 | 1 |
-| `/singapore-medical-devices-market-report` | 1 | 0 | 0 | 1 |
+| `/singapore-healthcare-market-report` | 1 | 1 | 0 | 0 |
+| `/singapore-ivd-market-access` | 1 | 1 | 0 | 0 |
+| `/singapore-medical-devices-market-report` | 1 | 1 | 0 | 0 |
+| `/singapore-medtech-manufacturing-market` | 1 | 1 | 0 | 0 |
+| `/singapore-medtech-market-research` | 1 | 1 | 0 | 0 |
+| `/singapore-pharmaceutical-market` | 1 | 1 | 0 | 0 |
 | `/sitemap` | 1 | 1 | 0 | 0 |
 | `/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement` | 1 | 1 | 0 | 0 |
-| `/south-korea-healthcare-market-report` | 1 | 0 | 0 | 1 |
-| `/south-korea-medical-devices-market-report` | 1 | 0 | 0 | 1 |
-| `/spain-healthcare-market-report` | 1 | 0 | 0 | 1 |
-| `/spain-medical-devices-market-report` | 1 | 0 | 0 | 1 |
+| `/south-korea-healthcare-market-report` | 1 | 1 | 0 | 0 |
+| `/south-korea-medical-devices-market-report` | 1 | 1 | 0 | 0 |
+| `/south-korea-medtech-market-research` | 1 | 1 | 0 | 0 |
+| `/spain-healthcare-market-report` | 1 | 1 | 0 | 0 |
+| `/spain-medical-devices-market-report` | 1 | 1 | 0 | 0 |
+| `/spain-medtech-market-research` | 1 | 1 | 0 | 0 |
 | `/specialist-physician-panel-uae` | 1 | 1 | 0 | 0 |
 | `/strategic-portfolio` | 1 | 1 | 0 | 0 |
+| `/sweden-healthcare-market-report` | 1 | 1 | 0 | 0 |
+| `/switzerland-medtech-market-research` | 1 | 1 | 0 | 0 |
 | `/terms` | 1 | 0 | 1 | 0 |
-| `/turkey-healthcare-market-report` | 1 | 0 | 0 | 1 |
-| `/turkey-medical-devices-market-report` | 1 | 0 | 0 | 1 |
+| `/turkey-healthcare-market-report` | 1 | 1 | 0 | 0 |
+| `/turkey-medical-devices-market-report` | 1 | 1 | 0 | 0 |
 | `/uae-automotive-market-research` | 1 | 1 | 0 | 0 |
 | `/uae-biotech-market-research` | 1 | 1 | 0 | 0 |
 | `/uae-consumer-health-market-research` | 1 | 1 | 0 | 0 |
@@ -260,12 +376,13 @@ Base URL: https://www.bionixus.com
 | `/uae-energy-market-research` | 1 | 1 | 0 | 0 |
 | `/uae-financial-services-market-research` | 1 | 1 | 0 | 0 |
 | `/uae-fmcg-market-research` | 1 | 1 | 0 | 0 |
-| `/uae-healthcare-market-report` | 1 | 0 | 0 | 1 |
+| `/uae-healthcare-market-report` | 1 | 1 | 0 | 0 |
 | `/uae-healthcare-market-research` | 1 | 1 | 0 | 0 |
 | `/uae-hospitality-market-research` | 1 | 1 | 0 | 0 |
+| `/uae-influenza-vaccine-report` | 1 | 1 | 0 | 0 |
 | `/uae-market-access-research` | 1 | 1 | 0 | 0 |
 | `/uae-media-market-research` | 1 | 1 | 0 | 0 |
-| `/uae-medical-devices-market-report` | 1 | 0 | 0 | 1 |
+| `/uae-medical-devices-market-report` | 1 | 1 | 0 | 0 |
 | `/uae-medtech-market-research` | 1 | 1 | 0 | 0 |
 | `/uae-pharmaceutical-market-research` | 1 | 1 | 0 | 0 |
 | `/uae-pricing-reimbursement-strategy` | 1 | 1 | 0 | 0 |
@@ -274,95 +391,16 @@ Base URL: https://www.bionixus.com
 | `/uae-retail-market-research` | 1 | 1 | 0 | 0 |
 | `/uae-technology-market-research` | 1 | 1 | 0 | 0 |
 | `/uae-telecom-market-research` | 1 | 1 | 0 | 0 |
-| `/uk-healthcare-market-report` | 1 | 0 | 0 | 1 |
-| `/uk-medical-devices-market-report` | 1 | 0 | 0 | 1 |
-| `/usa-healthcare-market-report` | 1 | 0 | 0 | 1 |
-| `/usa-medical-devices-market-report` | 1 | 0 | 0 | 1 |
+| `/uk-healthcare-market-report` | 1 | 1 | 0 | 0 |
+| `/uk-medical-devices-market-report` | 1 | 1 | 0 | 0 |
+| `/uk-medtech-market-research` | 1 | 1 | 0 | 0 |
+| `/usa-healthcare-market-report` | 1 | 1 | 0 | 0 |
+| `/usa-medical-devices-market-report` | 1 | 1 | 0 | 0 |
+| `/usa-medtech-market-research` | 1 | 1 | 0 | 0 |
 
 ## MAJOR URLs (First 120)
 
-- https://www.bionixus.com/ar/blog/%d8%a3%d8%a8%d8%ad%d8%a7%d8%ab-%d8%a7%d9%84%d8%b3%d9%88%d9%82-%d8%a7%d9%84%d8%af%d9%88%d8%a7%d8%a6%d9%8a%d8%a9-%d9%81%d9%8a-%d8%a7%d9%84%d8%b4%d8%b1%d9%82-%d8%a7%d9%84%d8%a3%d9%88%d8%b3%d8%b7-%d9%88-%d8%af%d9%88%d9%84-%d8%a7%d9%84%d8%ae%d9%84%d9%8a%d8%ac-%d8%a7%d9%84%d8%b9%d8%b1%d8%a8%d9%8a — Missing H1; Low internal links (3)
-- https://www.bionixus.com/ar/blog/%d8%b3%d9%88%d9%82-%d8%a7%d9%84%d8%af%d9%88%d8%a7%d8%a1-%d8%a7%d9%84%d8%b3%d8%b9%d9%88%d8%af%d9%8a-2026 — Missing H1; Low internal links (3)
-- https://www.bionixus.com/ar/blog/gcc-pharmaceuticals-market-arabic-2026 — Missing H1; Low internal links (3)
-- https://www.bionixus.com/ar/blog/quantitative-market-research-and-market-access — Missing H1; Low internal links (3)
-- https://www.bionixus.com/ar/insights/top-market-research-companies-egypt-2026 — Missing H1; Low internal links (3)
-- https://www.bionixus.com/ar/market-research-egypt — Missing H1; Low internal links (3)
-- https://www.bionixus.com/ar/market-research-ksa — Missing H1; Low internal links (3)
-- https://www.bionixus.com/ar/market-research-kuwait — Missing H1; Low internal links (3)
-- https://www.bionixus.com/ar/market-research-saudi — Missing H1; Low internal links (3)
-- https://www.bionixus.com/australia-healthcare-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/australia-medical-devices-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/bahrain-medical-devices-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/bionixus-ai-chatbots-increase-sales-and-lead-generation — Missing H1; Low internal links (3)
-- https://www.bionixus.com/bionixus-market-research-middle-east — Missing H1; Low internal links (3)
-- https://www.bionixus.com/blog/neurofibromatosis — Missing H1; Low internal links (3)
-- https://www.bionixus.com/blog/nf1-koselugo-selumetinib-pharma-market-research — Missing H1; Low internal links (3)
-- https://www.bionixus.com/blog/pharmaceutical-market-research-methods-mena — Missing H1; Low internal links (3)
-- https://www.bionixus.com/blog/pharmacoeconomics-gcc-practical-guide — Missing H1; Low internal links (3)
-- https://www.bionixus.com/blog/uae-healthcare-market-overview-2026 — Missing H1; Low internal links (3)
-- https://www.bionixus.com/canada-healthcare-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/canada-medical-devices-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/china-healthcare-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/china-medical-devices-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/egypt-healthcare-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/egypt-medical-devices-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/france-healthcare-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/france-medical-devices-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/gcc-anesthesia-surgical-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/gcc-medical-devices-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/germany-healthcare-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/germany-medical-devices-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/home-staging — Missing canonical; Long meta description
-- https://www.bionixus.com/india-healthcare-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/india-medical-devices-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/italy-healthcare-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/italy-medical-devices-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/japan-medical-devices-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/kuwait-healthcare-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/kuwait-medical-devices-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/market-reports/australia-diabetes-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/market-reports/australia-oncology-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/market-reports/bahrain-biosimilars-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/market-reports/bahrain-cardiovascular-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/market-reports/bahrain-dermatology-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/market-reports/bahrain-diabetes-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/market-reports/bahrain-digital-health-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/market-reports/bahrain-immunology-biologics-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/market-reports/bahrain-neurology-cns-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/market-reports/bahrain-vaccines-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/market-reports/brazil-diabetes-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/market-reports/canada-oncology-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/market-reports/egypt-cardiovascular-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/market-reports/gcc-neurology-cns-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/oman-healthcare-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/oman-medical-devices-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/pharmaceutical-companies-bahrain — Missing H1; Low internal links (3)
-- https://www.bionixus.com/pharmaceutical-companies-egypt — Missing H1; Low internal links (3)
-- https://www.bionixus.com/pharmaceutical-companies-iran — Missing H1; Low internal links (3)
-- https://www.bionixus.com/pharmaceutical-companies-iraq — Missing H1; Low internal links (3)
-- https://www.bionixus.com/pharmaceutical-companies-kuwait — Missing H1; Low internal links (3)
-- https://www.bionixus.com/pharmaceutical-companies-oman — Missing H1; Low internal links (3)
-- https://www.bionixus.com/pharmaceutical-companies-qatar — Missing H1; Low internal links (3)
-- https://www.bionixus.com/pharmaceutical-companies-saudi-arabia — Missing H1; Low internal links (3)
-- https://www.bionixus.com/pharmaceutical-companies-uae — Missing H1; Low internal links (3)
-- https://www.bionixus.com/premium-home-page — Missing canonical; Long meta description
-- https://www.bionixus.com/premium-home-preview — Missing H1; Low internal links (3)
-- https://www.bionixus.com/qatar-healthcare-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/qatar-medical-devices-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/quantitative-healthcare-market-research — Fetch error: fetch failed
-- https://www.bionixus.com/saudi-arabia-healthcare-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/saudi-arabia-medical-devices-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/singapore-healthcare-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/singapore-medical-devices-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/south-korea-healthcare-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/south-korea-medical-devices-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/spain-healthcare-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/spain-medical-devices-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/turkey-healthcare-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/turkey-medical-devices-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/uae-healthcare-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/uae-medical-devices-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/uk-healthcare-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/uk-medical-devices-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/usa-healthcare-market-report — Missing H1; Low internal links (3)
-- https://www.bionixus.com/usa-medical-devices-market-report — Missing H1; Low internal links (3)
+- https://www.bionixus.com/de/blog/amnog-frueher-nutzen-marktzugang-2026 — Missing H1
+- https://www.bionixus.com/de/blog/deutsche-pharmaunternehmen-2026-pipeline-updates — Missing H1
+- https://www.bionixus.com/de/blog/gesundheitsmarkt-deutschland-2026 — Missing H1
+- https://www.bionixus.com/fr/blog/etudes-marche-pharmaceutique-france-2026 — Missing H1

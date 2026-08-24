@@ -667,6 +667,14 @@ const GccMarketAccessGuide = () => {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
                 },
+                {
+                  q: 'How do SFDA and MOHAP registration timelines affect GCC launch sequencing?',
+                  a: 'Saudi SFDA and UAE MOHAP cycles rarely align with European approvals. Teams that map registration, pricing, and tender windows in parallel — rather than sequentially — avoid stranded inventory and affiliate spend ahead of listing.',
+                },
+                {
+                  q: 'When should market access research run relative to HEOR dossier finalisation?',
+                  a: 'Payer-adjacent qualitative waves should inform comparator choice and budget-impact assumptions before dossier lock — not after rejection. BioNixus links objection libraries from GCC committees directly to HEOR refinement sprints.',
+                },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">
                   <summary className="text-lg font-display font-semibold text-foreground cursor-pointer list-none">
