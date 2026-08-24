@@ -15,6 +15,7 @@ export default function BudgetImpactModelSaudiArabia() {
       areaServed={['Saudi Arabia']}
       intro="A budget impact model in Saudi Arabia is a negotiation tool, not a spreadsheet exercise — it has to survive a payer committee, not just compute a number. BioNixus builds models on Kingdom-specific uptake, mix, and pricing assumptions, stress-tests them with sensitivity bands, and frames the output so it stands up in the reimbursement and procurement conversations that actually decide access."
       links={[
+        { to: '/healthcare-market-research', label: 'Healthcare market research hub', primary: true },
         { to: '/heor-consulting-saudi-arabia', label: 'HEOR consulting Saudi Arabia', primary: true },
         { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Healthcare market research company in Saudi Arabia', primary: true },
         { to: '/saudi-payer-market-access-research', label: 'Saudi payer market access research' },

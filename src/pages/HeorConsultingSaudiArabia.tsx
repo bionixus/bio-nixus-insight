@@ -13,6 +13,7 @@ export default function HeorConsultingSaudiArabia() {
       h1="HEOR Consulting Saudi Arabia"
       intro="HEOR only earns reimbursement in Saudi Arabia when the assumptions survive committee scrutiny. BioNixus builds budget impact analysis, cost-effectiveness analysis, HTA studies, and market access research as one coordinated evidence chain — calibrated to the Kingdom and translated into evidence packages access, medical, and finance teams can defend together."
       links={[
+        { to: '/healthcare-market-research', label: 'Healthcare market research hub', primary: true },
         { to: '/budget-impact-model-saudi-arabia', label: 'Budget impact model Saudi Arabia', primary: true },
         { to: '/cost-effectiveness-analysis-saudi-arabia', label: 'Cost-effectiveness analysis Saudi Arabia', primary: true },
         { to: '/hta-studies-saudi-arabia', label: 'HTA studies Saudi Arabia', primary: true },

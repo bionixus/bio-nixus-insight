@@ -15,6 +15,7 @@ export default function QatarMarketAccessResearch() {
       areaServed={['Qatar', 'GCC']}
       intro="Qatar is a small, affluent market where demand concentrates in a handful of institutions and the evidence bar is high. That concentration cuts both ways: access can move quickly when the value story fits, and one weak evidence point is immediately visible. BioNixus maps institutional influence, pressure-tests the value narrative, and sequences engagement so launch teams carry less execution risk into the room."
       links={[
+        { to: '/healthcare-market-research', label: 'Healthcare market research hub', primary: true },
         { to: '/healthcare-market-research-agency-gcc', label: 'Healthcare market research agency GCC', primary: true },
         { to: '/gcc-market-access-guide', label: 'GCC market access guide', primary: true },
         { to: '/market-research-kuwait', label: 'Compare with Kuwait pathway' },
