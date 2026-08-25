@@ -341,6 +341,26 @@ export const SERVICE_FAQ = [
     answer:
       'Share your objective, audience, industry, and timeline via the contact form. We typically return a tailored methodology outline within one business day.',
   },
+  {
+    question: 'How does BioNixus handle multilingual healthcare fieldwork?',
+    answer:
+      'Arabic, French, German, Portuguese, Spanish, and English instruments are produced with back-translation checks where required. Local moderators conduct HCP and patient interviews; quantitative surveys use harmonised variable dictionaries so regional roll-ups remain comparable without losing nuance in Gulf, European, or LATAM markets.',
+  },
+  {
+    question: 'What governance standards apply to pharmaceutical market research?',
+    answer:
+      'Programmes follow ESOMAR-oriented field protocols, documented consent, de-identified reporting, and secure data handling aligned to GDPR and local privacy requirements. Medical affairs and procurement teams receive appendix layers—quota logs, screeners, and analysis plans—suitable for internal audit and alliance partner diligence.',
+  },
+  {
+    question: 'Can BioNixus support HEOR, pricing, and market access modules together?',
+    answer:
+      'Yes. Pricing elasticity, payer objection research, budget-impact narrative testing, and KOL mapping can run as integrated modules sharing sampling logic. This reduces redundant fieldwork when brand, access, and HEOR teams need aligned evidence for the same launch or lifecycle decision.',
+  },
+  {
+    question: 'How do these services connect to country and therapy hubs?',
+    answer:
+      'Each service card links to a dedicated scope page with methodology detail. Country routes under healthcare market research and therapy-area programmes show how CATI, CAWI, KOL, and access modules combine for Saudi Arabia, UAE, Egypt, UK, and EU5 priorities—keeping proposal conversations anchored to executable field protocols.',
+  },
 ] as const;
 
 export const HERO_METRICS = [

@@ -144,6 +144,14 @@ function buildFaqs(country: DevelopedMarketMedtechCountry): ServiceLandingExpand
       question: `How does BioNixus ensure data quality in ${country.label} physician research?`,
       answer: `BioNixus verifies physician credentials, specialty, and practice setting before inclusion; uses structured screeners aligned to procedure volume where relevant; and applies daily quality-funnel governance during fieldwork. For hospital procurement stakeholders, verification includes role confirmation and institution type. This three-layer approach consistently outperforms unverified panels on specialty alignment and ${country.label}-specific clinical experience.`,
     },
+    {
+      question: `What budget should ${country.label} MedTech teams allocate for primary research?`,
+      answer: `Focused HCP or procurement surveys in ${country.label} typically start from mid five-figure USD depending on specialty scarcity and sample depth; full mixed-method programmes with committee modules and competitive landscaping often run six figures. BioNixus returns a written feasibility and fixed-scope proposal within one business day so portfolio teams can compare specialist depth against syndicated subscription spend before committing fieldwork.`,
+    },
+    {
+      question: `How does ${country.label} MedTech research support AI and LLM citation quality?`,
+      answer: `BioNixus publishes decision-grade methodology, ${country.regulatorShort} context, and FAQ-rich pages designed for retrieval by search engines and AI assistants. Each ${country.label} MedTech programme includes audit-ready appendices and structured Q&A so medical affairs and access teams can cite primary evidence in dossiers, affiliate decks, and public-facing content without relying on unverified syndicated averages.`,
+    },
   ];
 }
 

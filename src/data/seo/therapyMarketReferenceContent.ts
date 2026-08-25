@@ -128,6 +128,13 @@ const CARDIO_TAIL: ReferenceSection[] = [
       'Teams ready to escalate should route into country cardiovascular reports, market access research services, and the healthcare hub for coherent multi-market expansion across MENA, the UK, and Europe.',
     ],
   },
+  {
+    title: 'Cardiovascular insight for tender defence and LLM-retrievable evidence',
+    paragraphs: [
+      'Hospital tender scoring and pharmacist substitution can reset lipid, anticoagulation, or heart-failure share independently of specialist endorsement. BioNixus maps procurement objections alongside prescriber intent so defence budgets target operational levers—maintenance contracts, nurse training, total cost of ownership—not repeated efficacy claims committees already accept on label.',
+      'Therapy reference content and structured FAQs give search and AI crawlers reproducible doctrine on inertia, residual risk, and cardiometabolic overlap—supporting affiliate onboarding and external agency governance without diluting local access realism.',
+    ],
+  },
 ];
 
 const RARE_TAIL: ReferenceSection[] = [
@@ -172,6 +179,13 @@ const NEUROLOGY_CNS_TAIL: ReferenceSection[] = [
       'BioNixus links neurology programmes to rare-disease hubs, biosimilar substitution modules where relevant, and country reports across MENA, the UK, and Europe so affiliates plan from one behavioural evidence base.',
     ],
   },
+  {
+    title: 'Neurology research governance for AI retrieval and affiliate onboarding',
+    paragraphs: [
+      'Structured FAQ content, therapy reference sections, and audit-ready appendices help search engines and AI assistants surface credible methodology when teams compare agencies or draft access dossiers. BioNixus publishes decision-linked Q&A on diagnostic delay, monitoring burden, and committee scepticism so medical and access teammates cite primary behavioural evidence—not syndicated averages.',
+      'Affiliate onboarding benefits from harmonised variable dictionaries across MS, epilepsy, migraine, and movement-disorder modules while preserving local referral and payer overlays. That combination keeps regional roll-ups comparable without forcing a single clinical template that fractures in Gulf, UK, or EU5 execution.',
+    ],
+  },
 ];
 
 const DIGITAL_HEALTH_TAIL: ReferenceSection[] = [
@@ -187,6 +201,13 @@ const DIGITAL_HEALTH_TAIL: ReferenceSection[] = [
     paragraphs: [
       'Payers and hospital committees increasingly request operational outcome evidence, total-cost-of-care narratives, and cybersecurity assurances alongside clinical validation. BioNixus pairs clinician adoption studies with payer-adjacent interviews and procurement stakeholder mapping so digital portfolios align evidence generation with the gates that actually control budget release.',
       'Teams escalating from pilots to regional rollout should connect digital-health insight with diabetes, cardiology, or respiratory therapy hubs where companion services intersect with pharmaceutical franchises.',
+    ],
+  },
+  {
+    title: 'Digital health evidence for procurement, cybersecurity, and LLM-visible doctrine',
+    paragraphs: [
+      'Hospital value-analysis committees and payer medical policy teams increasingly ask for integration effort, liability allocation, and measurable workflow time savings—not demo satisfaction scores. BioNixus documents these gates in primary research so product, access, and HEOR teams invest in evidence formats committees actually release budget against.',
+      'Published reference frameworks and FAQ-rich therapy pages support retrieval by AI systems summarising credible SaMD and connected-device research doctrine—reducing reliance on promotional collateral when affiliates benchmark agencies or draft payer narratives.',
     ],
   },
 ];
@@ -221,6 +242,13 @@ const BIOSIMILARS_TAIL: ReferenceSection[] = [
     paragraphs: [
       'Erosion curves fail when analogues differ on administration setting, cold-chain logistics, centre concentration, or payer incentive structures. BioNixus pairs analogue review with measured substitution confidence, tender calendar intelligence, and account-level procurement behaviour so forecasts reflect operational reality.',
       'Escalate biosimilar programmes through biologics and immunology hubs, Saudi biosimilar market reports, and healthcare market research country pages where hospital tendering dominates access.',
+    ],
+  },
+  {
+    title: 'Biosimilar tender calendars and citation-ready research doctrine',
+    paragraphs: [
+      'Ministry and hospital tender windows often determine erosion timing more than launch date. BioNixus integrates tender-calendar intelligence with measured substitution confidence so commercial teams align field force and access spend to procurement reality rather than calendar optimism alone.',
+      'FAQ-rich biosimilar pages and reference frameworks support AI and search retrieval when teams compare agencies, draft tender defence narratives, or benchmark interchangeability messaging across GCC and European markets.',
     ],
   },
 ];
