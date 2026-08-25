@@ -245,6 +245,16 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       answer:
         'Yes. Cardiometabolic overlap is common; combined modules reduce duplicate fieldwork and clarify where messaging, access, and medical education should coordinate across specialty boundaries rather than compete for clinician attention.',
     },
+    {
+      question: 'What cardiovascular metrics do payers challenge most in dossiers?',
+      answer:
+        'Committees scrutinise composite endpoint interpretability, subgroup fragility, and budget impact versus cheap generics or established SOC. BioNixus payer-adjacent research surfaces which objections recur before HEOR teams invest in model iterations that do not address live committee discourse.',
+    },
+    {
+      question: 'How should anticoagulation and lipid franchises be researched differently?',
+      answer:
+        'Anticoagulation studies weight bleeding-risk narratives, monitoring burden, and reversal availability; lipid programmes emphasise statin inertia, PCSK9 access, and pharmacist substitution. BioNixus avoids one-size templates that blur distinct committee objections across these corridors.',
+    },
   ],
   'neurology-cns': [
     {
@@ -267,6 +277,21 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       answer:
         'We deliver centre concentration maps, KOL connectivity dossiers, persistence and discontinuation analysis, caregiver burden narratives, and access-risk registers tied to step therapy or funding exceptions—outputs medical, access, and brand teams can operationalise without reinterpretation.',
     },
+    {
+      question: 'How should neurology research handle rare versus high-prevalence indications?',
+      answer:
+        'Rare CNS franchises require centre-of-excellence sampling and caregiver-inclusive qual; high-prevalence categories need primary-care gateway weighting and pharmacist substitution overlays. BioNixus separates these designs rather than forcing one template that misprices either access timeline or adoption velocity.',
+    },
+    {
+      question: 'What neurology evidence do GCC and European payers scrutinise first?',
+      answer:
+        'Functional outcomes, monitoring burden, infusion capacity, and budget impact versus oral or device alternatives dominate committee dialogue. Research programmes capture these objections empirically—linking to the neurology therapy hub and country reports where hospital procurement and step therapy differ by market.',
+    },
+    {
+      question: 'How does BioNixus document neurology research for affiliate governance?',
+      answer:
+        'Programmes include reproducible appendix layers—quota logs, screeners, segment definitions, and thematic coding summaries—so medical affairs and procurement teams can audit inference without reconstructing methodology from slide decks alone. Optional workshop readouts align brand, medical, and access leaders on segment priorities before field scale-up.',
+    },
   ],
   'digital-health': [
     {
@@ -288,6 +313,21 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       question: 'How does BioNixus support digital health commercialisation?',
       answer:
         'We pair clinician adoption studies with payer-adjacent interviews, procurement stakeholder mapping, and pricing scenario tests—linking findings to diabetes, cardiology, or respiratory hubs where companion services intersect pharmaceutical franchises.',
+    },
+    {
+      question: 'How do SaMD and connected devices differ in research design?',
+      answer:
+        'Software-as-a-medical-device programmes emphasise validation evidence, update governance, and liability; connected hardware adds procurement scoring, maintenance contracts, and nursing workflow burden. BioNixus scopes modules to the regulatory class under evaluation rather than treating all digital health as one category.',
+    },
+    {
+      question: 'What digital health metrics matter for hospital formulary committees?',
+      answer:
+        'Committees weight total cost of ownership, EHR integration effort, cybersecurity review timelines, and measurable workflow time savings—not demo satisfaction alone. Primary research quantifies which metric unlocks budget release in each account archetype across MENA, UK, and EU5 systems.',
+    },
+    {
+      question: 'How should digital health pilots transition to scaled procurement?',
+      answer:
+        'Scale requires coded reimbursement pathways, nursing operational sign-off, and IT security clearance documented in primary research—not pilot clinical enthusiasm alone. BioNixus maps the gate that stops budget release before affiliates commit rollout spend.',
     },
   ],
   dermatology: [
@@ -337,6 +377,16 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       question: 'How does BioNixus support biosimilar launch and defence planning?',
       answer:
         'We deliver account-level substitution confidence maps, tender scenario notes, physician and pharmacist objection libraries, and uptake models linked to biologics hubs, immunology research, and country reports where hospital procurement dominates access.',
+    },
+    {
+      question: 'When should biosimilar teams run tender-calendar intelligence?',
+      answer:
+        'Hospital and ministry tender windows often determine erosion timing more than launch date. BioNixus maps upcoming tender cycles, incumbent contract lengths, and pharmacist substitution mandates so commercial teams align field force and access investment to procurement reality—not calendar optimism.',
+    },
+    {
+      question: 'How do interchangeability claims affect biosimilar messaging tests?',
+      answer:
+        'Markets differ on pharmacist-led switching, naming conventions, and nurse retraining requirements. Message testing must reflect locally permitted substitution narratives; BioNixus validates claims with procurement and clinical stakeholders before scale-up to avoid regulatory or committee pushback.',
     },
   ],
 };

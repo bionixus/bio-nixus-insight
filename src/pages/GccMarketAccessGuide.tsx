@@ -175,7 +175,7 @@ const GccMarketAccessGuide = () => {
             description: 'Complete guide to pharmaceutical drug registration, pricing, and reimbursement across the 6 GCC countries: Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman.',
             url: citationUrl,
             datePublished: '2026-01-15',
-            dateModified: '2026-08-22',
+            dateModified: '2026-08-25',
             author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
             publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
           })}
@@ -666,6 +666,14 @@ const GccMarketAccessGuide = () => {
                 {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
+                },
+                {
+                  q: 'How should MedTech teams sequence GCC registration after pharma approval?',
+                  a: 'SFDA, MOHAP, and NHRA device pathways often reference pharmaceutical dossiers for companion diagnostics or drug–device combinations, but procurement scoring differs. Teams should plan hospital value-analysis evidence and tender calendars separately from drug formulary wins—BioNixus maps both tracks in integrated access programmes.',
+                },
+                {
+                  q: 'What is changing in GCC biosimilar and biologics access in 2026?',
+                  a: 'Consolidated hospital tenders, pharmacist substitution mandates, and localization incentives are accelerating biosimilar uptake in Saudi Arabia and the UAE while pricing baskets remain linked to external reference markets. Launch teams need tender-calendar intelligence and substitution-confidence research—not syndicated volume averages alone.',
                 },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">
