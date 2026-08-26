@@ -307,6 +307,29 @@ const GccMarketAccessGuide = () => {
           </div>
         </section>
 
+        <section className="section-padding py-12" id="launch-sequencing">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              GCC pharmaceutical launch sequencing and evidence planning
+            </h2>
+            <div className="prose-body text-muted-foreground leading-relaxed space-y-4 max-w-4xl">
+              <p>
+                Successful GCC market access rarely follows a single registration-then-launch playbook. Saudi Arabia&apos;s SFDA Economic Evaluation System (EES), mandatory from 1 July 2025, raises the bar for pharmacoeconomic and budget-impact evidence at registration — meaning HEOR modules should be designed into the clinical development and access strategy before dossier submission, not retrofitted when SFDA requests additional economic files. Manufacturers that treat Saudi registration as a paperwork exercise routinely underestimate the evidence committees expect at NUPCO tender evaluation.
+              </p>
+              <p>
+                Launch sequencing typically anchors on Saudi Arabia (largest market, SFDA reference status for neighbouring regulators) and the UAE (dual emirate registration through MOHAP, DHA, and DOH with insurance-based private channels in Abu Dhabi and Dubai). Kuwait, Qatar, Bahrain, and Oman follow with country-specific pricing baskets and local-agent logistics. The GCC Centralised Registration Procedure can accelerate multi-country approval, but import permits, Arabic labelling, and tender calendars remain country-specific — a registration win in Riyadh does not automatically translate to formulary listing in Doha or Muscat without local evidence and pricing work.
+              </p>
+              <p>
+                For MedTech portfolios, hospital capital-equipment procurement through NUPCO and emirate health authorities follows different rhythms than pharmaceutical formulary committees. Device classification under SFDA MDMA, MOHAP medical device regulations, and hospital value-analysis committee expectations should be researched in parallel with pharma access planning when portfolios span both categories. BioNixus designs integrated GCC access research — payer interviews, hospital committee modules, and tender intelligence — scoped to the commercial decision in front of you. See our{' '}
+                <Link to="/gcc-pharmaceutical-market-research" className="text-primary hover:underline font-medium">GCC pharmaceutical market research</Link>{' '}
+                hub and{' '}
+                <Link to="/saudi-payer-market-access-research" className="text-primary hover:underline font-medium">Saudi payer market access research</Link>{' '}
+                for country-specific execution.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Table of Contents */}
         <section className="section-padding py-8 bg-muted/30">
           <div className="container-wide max-w-5xl mx-auto">
@@ -666,6 +689,18 @@ const GccMarketAccessGuide = () => {
                 {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
+                },
+                {
+                  q: 'How does SFDA\'s Economic Evaluation System (EES) affect GCC market access?',
+                  a: 'From 1 July 2025, SFDA\'s Economic Evaluation System requires pharmacoeconomic and budget-impact evidence at registration for many products in Saudi Arabia. Manufacturers entering the GCC should anticipate EES-aligned HEOR modules early — not retrofit them at submission — and map how Saudi evidence expectations influence pricing and tender positioning across neighbouring Gulf markets.',
+                },
+                {
+                  q: 'What is the difference between pharma and MedTech registration in the GCC?',
+                  a: 'Pharmaceutical registration follows CTD dossier pathways through SFDA, MOHAP, and country MOH authorities with External Reference Pricing. Medical devices follow SFDA MDMA (Saudi), MOHAP/MOPH device classification, and hospital procurement pathways that differ from drug formularies. MedTech teams must map both regulatory classification and hospital capital-equipment procurement cycles — especially NUPCO tenders for devices and consumables in Saudi Arabia.',
+                },
+                {
+                  q: 'How should companies sequence GCC country launches?',
+                  a: 'Most manufacturers anchor on Saudi Arabia (largest market, SFDA reference status) and UAE (dual emirate registration, insurance-based private channel), then expand to Kuwait, Qatar, Bahrain, and Oman. The GCC Centralised Registration Procedure can accelerate multi-country approval, but pricing, import permits, and local-agent logistics remain country-specific. BioNixus recommends mapping tender calendars and formulary committee windows before committing launch sequencing.',
                 },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">

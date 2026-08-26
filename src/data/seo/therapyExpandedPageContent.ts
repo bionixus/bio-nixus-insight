@@ -311,6 +311,31 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       answer:
         'We deliver step-therapy maps, KOL and centre archetypes, message tests on safety monitoring and flare fear, and competitive scenarios for biosimilar or small-molecule entry—linked to aesthetic-medicine and GCC pharmaceutical context where portfolios overlap.',
     },
+    {
+      question: 'How do dermatology research needs differ across GCC, UK, and European markets?',
+      answer:
+        'GCC markets blend specialist-led prescribing with growing private dermatology chains and insurance prior-authorization friction; the UK applies NICE-aligned cost-effectiveness gates for systemic therapies; EU5 systems vary in regional autonomy, pharmacist substitution, and biologic tender scoring. BioNixus keeps comparable survey cores for regional governance while embedding local modules on access, channel mix, and prescribing culture.',
+    },
+    {
+      question: 'Which stakeholders should dermatology studies prioritise?',
+      answer:
+        'Dermatologists, GP gateways, clinical nurse specialists, pharmacists with substitution authority, and payer reviewers where step therapy applies often carry more decision weight than title alone suggests. Sampling should reflect who initiates biologics, who maintains chronic therapy, and who authorises switches across the visible-disease pathway.',
+    },
+    {
+      question: 'How does the medical-aesthetic crossover affect dermatology research design?',
+      answer:
+        'Injectable and energy-based aesthetic demand influences how patients discover and request dermatology treatments, especially in UAE and Saudi private channels. Research must separate medical-necessity prescribing from discretionary aesthetic uptake so forecasts do not conflate reimbursement-gated biologics with cash-pay cosmetic procedures.',
+    },
+    {
+      question: 'Can dermatology research support both launch planning and biosimilar defence?',
+      answer:
+        'Yes. Launch modules focus on centre prioritisation, step-therapy evidence gaps, and message testing; defence modules stress-test substitution confidence, device familiarity, and persistence narratives when biosimilars or next-generation small molecules enter. BioNixus links both modes to measurable adoption and committee outcomes rather than awareness alone.',
+    },
+    {
+      question: 'How does BioNixus ensure data quality in dermatology physician research?',
+      answer:
+        'We verify specialty, practice setting, and procedure or prescribing volume before inclusion; use structured screeners aligned to biologic experience where relevant; and apply daily quality-funnel governance during fieldwork. This three-layer approach consistently outperforms unverified panels on dermatology alignment and market-specific clinical experience.',
+    },
   ],
   biosimilars: [
     {
@@ -337,6 +362,16 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       question: 'How does BioNixus support biosimilar launch and defence planning?',
       answer:
         'We deliver account-level substitution confidence maps, tender scenario notes, physician and pharmacist objection libraries, and uptake models linked to biologics hubs, immunology research, and country reports where hospital procurement dominates access.',
+    },
+    {
+      question: 'How do GCC hospital tenders accelerate biosimilar switching?',
+      answer:
+        'Centralised procurement in Saudi Arabia (NUPCO), Kuwait, and Qatar often scores biosimilars on price and interchangeability evidence — accelerating switching independent of prescriber preference. Research must map tender calendar timing, scoring criteria, and pharmacist substitution authority alongside clinician adoption to forecast erosion accurately.',
+    },
+    {
+      question: 'What evidence do formulary committees expect for biosimilar listing?',
+      answer:
+        'Committees typically request comparative clinical efficacy summaries, immunogenicity data, device familiarity for SC formulations, budget-impact versus originator, and local real-world switching experience where available. BioNixus designs payer and hospital committee modules that surface the specific evidence gaps each market requires before listing.',
     },
   ],
 };

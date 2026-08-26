@@ -341,6 +341,26 @@ export const SERVICE_FAQ = [
     answer:
       'Share your objective, audience, industry, and timeline via the contact form. We typically return a tailored methodology outline within one business day.',
   },
+  {
+    question: 'How does BioNixus compare to IQVIA or Kantar for healthcare market research?',
+    answer:
+      'IQVIA and Kantar excel at global syndicated audits and enterprise MSAs. BioNixus specialises in primary research depth — verified HCP and payer fieldwork, hospital procurement intelligence, and market access modules across GCC, MENA, Europe, and the Americas — with proposal turnaround in 48 hours and no enterprise spend floor. Many teams use syndicated data for market sizing and BioNixus for decision-linked primary evidence.',
+  },
+  {
+    question: 'What industries beyond pharma does BioNixus cover?',
+    answer:
+      'Beyond pharmaceutical and healthcare, BioNixus runs programmes for medical devices, diagnostics, financial services, real estate, tourism, manufacturing, technology, retail, and FMCG. The same senior-led methodology — CATI, CAWI, CAPI, focus groups, mystery shopping, and conjoint — applies across verticals with industry-calibrated screeners and reporting.',
+  },
+  {
+    question: 'Does BioNixus support Arabic and multilingual fieldwork?',
+    answer:
+      'Yes. Arabic–English bilingual execution is standard across GCC and Egypt physician, payer, and patient research. French, German, Portuguese, Spanish, and Mandarin modules are available for multi-country programmes with harmonised instruments and localised discussion guides reviewed by native-speaking medical advisors.',
+  },
+  {
+    question: 'What deliverables should we expect from a healthcare research programme?',
+    answer:
+      'Typical outputs include an executive summary tied to one commercial decision, stakeholder segmentation with objection themes, quantitative adoption or sizing readouts where applicable, qualitative depth for pathway questions, competitive landscape analysis, and a 30/60/90 action plan with evidence gaps flagged. Audit-ready methodology appendices are included for governance review.',
+  },
 ] as const;
 
 export const HERO_METRICS = [
