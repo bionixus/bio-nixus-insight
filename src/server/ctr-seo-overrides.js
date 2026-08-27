@@ -102,9 +102,9 @@ export const CTR_SEO_BY_PATH = {
       'Cairo hospitals healthcare 2023–2026 — Kasr Al-Ainy, Cleopatra, Saudi German, UHI rollout & EDA pharma access. Free Egypt hospital market overview by BioNixus.',
   },
   '/blog/nupco-saudi-arabia-tendering-guide': {
-    title: 'NUPCO Tenders 2026: Register & Win Saudi Procurement',
+    title: 'NUPCO Tender Guide 2026: Win Saudi Hospital Procurement',
     description:
-      'Step-by-step NUPCO tender guide — registration, e-portal, timelines, pricing rules and win strategies for Saudi Arabia. Updated 2026.',
+      'How to win NUPCO tenders in Saudi Arabia — registration, e-portal steps, ICV scoring, framework timing and hospital pull-through. Updated 2026 guide by BioNixus.',
   },
   '/blog/sfda-drug-registration-guide': {
     title: 'SFDA Drug Registration 2026: Process, Timeline & Fees Explained',
@@ -483,9 +483,34 @@ export const CTR_SEO_BY_PATH = {
       'Japan healthcare market 2026 — market size, PMDA regulation, NHI pricing revisions, aging demand and hospital landscape. Report by BioNixus.',
   },
   '/febrile-neutropenia-market': {
-    title: 'Febrile Neutropenia Market 2026: Size, G-CSF & Forecast',
+    title: 'Febrile Neutropenia Market 2026: G-CSF Size & Forecast',
     description:
-      'Febrile neutropenia market 2026 — G-CSF market size, biosimilar filgrastim/pegfilgrastim competition and oncology demand forecast. By BioNixus.',
+      'Febrile neutropenia market 2026 — G-CSF market size, biosimilar filgrastim/pegfilgrastim competition, hospital protocols and oncology demand forecast. By BioNixus.',
+  },
+  '/singapore-ivd-market-access': {
+    title: 'Singapore IVD Market Access 2026: HSA, Labs & Hospitals',
+    description:
+      'Singapore IVD market access 2026 — HSA registration pathways, cluster lab procurement (SingHealth, NUHS, NHG), assay adoption and reimbursement-adjacent evidence. By BioNixus.',
+  },
+  '/japan-neurology-devices-market': {
+    title: 'Japan Neurology Devices Market 2026: Size & PMDA Forecast',
+    description:
+      'Japan neurology devices market 2026 — stroke intervention, neurosurgery capital, PMDA pathways, NHI pricing and hospital adoption intelligence. By BioNixus.',
+  },
+  '/japan-medical-disposables-market': {
+    title: 'Japan Medical Disposables Market 2026: Size & Forecast',
+    description:
+      'Japan medical disposables market 2026 — hospital procurement, NHI reimbursement, domestic manufacturer share and import dynamics. Research by BioNixus.',
+  },
+  '/insights/top-market-research-companies-dubai-2026': {
+    title: 'Top 5 Market Research Companies in Dubai (2026 Ranked)',
+    description:
+      'Top market research companies in Dubai ranked for 2026 — healthcare and pharma specialists, GCC fieldwork capability and buyer selection criteria. By BioNixus.',
+  },
+  '/insights/top-healthcare-market-research-companies-dubai-2026': {
+    title: 'Top Healthcare MR Companies in Dubai (2026 Ranked)',
+    description:
+      'Top healthcare market research companies in Dubai ranked for 2026 — HCP surveys, payer research, KOL mapping and GCC pharma expertise. By BioNixus.',
   },
   '/uae-pricing-reimbursement-strategy': {
     title: 'UAE Drug Pricing & Reimbursement 2026: MOHAP, DHA & DOH',

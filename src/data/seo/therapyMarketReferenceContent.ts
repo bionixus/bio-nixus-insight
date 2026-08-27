@@ -118,6 +118,7 @@ const CARDIO_TAIL: ReferenceSection[] = [
       'Cardiovascular categories often entail interactions between inpatient intervention culture, lipid or hypertension inertia in outpatient stewardship, pharmacist-led substitution corridors, wearable adoption differences, guideline update cadence shocks, residual risk narratives competing for clinician attention budgets.',
       'Research bridging acute and chronic corridors prevents exaggerated adoption curves that assume instantaneous cascade after guideline publication or hospital discharge.',
       'Post-event prescribing rituals—statin intensification after MI, anticoagulation bridging after AF diagnosis, GDMT uptitration after heart-failure admission—often determine long-term share more than acute intervention enthusiasm alone. Studies should map who owns titration after the index event and where persistence decays.',
+      'Structural heart and electrophysiology device adoption intersects with pharmaceutical GDMT in heart failure — research programmes should segment device committee behaviour from outpatient prescribing stewardship to avoid conflating capital equipment cycles with drug lifecycle dynamics.',
     ],
   },
   {
@@ -163,6 +164,7 @@ const NEUROLOGY_CNS_TAIL: ReferenceSection[] = [
     paragraphs: [
       'Neurology franchises face elongated diagnostic intervals, heterogeneous phenotyping, specialist-gated initiation, monitoring burden, caregiver decision weight, and access committees sceptical of high-cost chronic therapies without clear functional endpoints. Research must map where patients stall before reaching a treatable cohort—not only whether specialists endorse a molecule in principle.',
       'Multidisciplinary dynamics differ materially between MS, epilepsy, movement disorders, migraine, and neurodegenerative corridors. Instruments should reflect realistic next-best alternatives, titration rituals, relapse fear, cognitive side-effect intolerance, and institutional infusion or home-administration capacity rather than abstract efficacy scales.',
+      'Biomarker adoption and companion diagnostic pathways reshape treatable population denominators — research should quantify where testing throughput, insurance coverage, and specialist referral bottlenecks narrow eligible cohorts below epidemiologic prevalence estimates.',
     ],
   },
   {
@@ -180,6 +182,7 @@ const DIGITAL_HEALTH_TAIL: ReferenceSection[] = [
     paragraphs: [
       'Connected devices, software-as-a-medical-device, and care-pathway tools fail commercially when reimbursement codes, liability allocation, EHR integration, data-governance anxiety, and workflow interruption outweigh perceived clinical benefit. Research must document who blocks adoption—IT, procurement, nursing operations, payer medical policy—not only whether physicians find dashboards interesting.',
       'GCC and European markets differ in telehealth reimbursement maturity, national digital-health strategies, and hospital autonomy to pilot without central mandate. Comparable survey cores with local access modules prevent a single global playbook from misreading institutional readiness.',
+      'SFDA, MOHAP, and DHA digital health frameworks in GCC markets create distinct evidence and cybersecurity expectations for SaMD — research should map regulator-specific validation requirements before assuming FDA or CE clearance translates to hospital committee approval.',
     ],
   },
   {
@@ -214,6 +217,7 @@ const BIOSIMILARS_TAIL: ReferenceSection[] = [
     paragraphs: [
       'Biosimilar uptake depends on pharmacist substitution mandates, interchangeability stigma, device familiarity, patient-support continuity, tender scoring in hospital systems, and physician confidence after therapeutic switching—not headline price gaps alone. Research must quantify where substitution is policy-permitted versus clinically resisted in daily practice.',
       'Originator defence requires understanding which levers retain volume: indication breadth, real-world persistence narratives, nurse training investment, device ergonomics, or contractual bundling with procurement. BioNixus models both sides with institution-type segmentation across GCC tender corridors and European rebate-sensitive markets.',
+      'GCC hospital tender frameworks (NUPCO, MOHAP, HMC) increasingly score biosimilar awards on ICV, supply reliability, and clinical confidence documentation — not price alone. Research should map tender calendar timing against hospital pharmacy substitution policies to forecast erosion curves that spreadsheet models miss.',
     ],
   },
   {
@@ -221,6 +225,7 @@ const BIOSIMILARS_TAIL: ReferenceSection[] = [
     paragraphs: [
       'Erosion curves fail when analogues differ on administration setting, cold-chain logistics, centre concentration, or payer incentive structures. BioNixus pairs analogue review with measured substitution confidence, tender calendar intelligence, and account-level procurement behaviour so forecasts reflect operational reality.',
       'Escalate biosimilar programmes through biologics and immunology hubs, Saudi biosimilar market reports, and healthcare market research country pages where hospital tendering dominates access.',
+      'Longitudinal tracking of pharmacist substitution confidence and tender award patterns provides leading indicators before IQVIA or syndicated audit data reflects share shifts — particularly in GCC markets where framework agreements reset category economics within quarters.',
     ],
   },
 ];
