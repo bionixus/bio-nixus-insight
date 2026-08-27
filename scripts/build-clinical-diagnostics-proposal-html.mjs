@@ -15,6 +15,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { FAVICON_HEAD_HTML } from '../lib/faviconHead.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
@@ -173,6 +174,17 @@ function enhancePhase2Presentation(html) {
   return html.replace(anchor, `</div>\n\n${snippet}\n\n  <div class="sub-subhead">Phase 1A — Hospital &amp; lab branches (core quantitative sample: 50 total)</div>`);
 }
 
+function injectFaviconHead(html) {
+  if (html.includes('href="/icons/bnx-favicon.ico"')) return html;
+  const viewport = html.match(/<meta name="viewport"[^>]*>\s*/i);
+  if (!viewport || viewport.index == null) {
+    console.warn('Viewport meta not found; skipping favicon injection.');
+    return html;
+  }
+  const at = viewport.index + viewport[0].length;
+  return `${html.slice(0, at)}${FAVICON_HEAD_HTML}\n${html.slice(at)}`;
+}
+
 function injectStickyCta(html) {
   const bar = `
 <div id="bnx-proposal-cta" style="position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#002244;color:#fff;padding:12px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;font-family:Barlow,sans-serif;font-size:13px;box-shadow:0 -4px 24px rgba(0,34,68,.2);">
@@ -212,6 +224,7 @@ function writePublicDeckFrom(sourcePath) {
   html = injectScreenStyles(html);
   html = enhancePhase2Presentation(html);
   html = injectStickyCta(html);
+  html = injectFaviconHead(html);
   fs.mkdirSync(path.dirname(PUBLIC_OUT), { recursive: true });
   fs.writeFileSync(PUBLIC_OUT, html, 'utf8');
   console.log(`Wrote public deck ${PUBLIC_OUT} (${(html.length / 1024).toFixed(1)} KB, redacted)`);
