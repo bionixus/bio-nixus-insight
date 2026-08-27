@@ -302,6 +302,12 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
     };
   }
 
+  const blogPostMatchLocalized = path.match(/^\/(de|fr|zh|es|pt|ru)\/blog\/([^/]+)\/?$/);
+  if (blogPostMatchLocalized) {
+    const slug = decodePathSegment(blogPostMatchLocalized[2]);
+    return fetchBlogPostRouteData(slug);
+  }
+
   if (path === '/bionixus-industries/insights' || path === '/bionixus-industries/insights/') {
     let industriesInsights: BlogPost[] = [];
     try {

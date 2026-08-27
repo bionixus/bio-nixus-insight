@@ -574,6 +574,9 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Spain\'s EUR 10–12 billion devices market within EUR 120–130 billion health expenditure serves 47.9 million population. High diabetes prevalence (14.8% adults) drives monitoring and therapeutic device demand.',
       'Regional adoption variation is among the widest in EU5 — Catalonia and Madrid versus slower rural communities require segmented research, not national averages.',
       'BioNixus supports Spain MedTech research with AEMPS context and verified hospital networks across target autonomous communities.',
+      'Hospital Group Purchasing Organisations and regional health service (SNS) procurement cycles differ materially by comunidad autónoma — Andalusia, Valencia, and Castilla y León operate distinct tender calendars that national syndicated audits collapse into misleading averages.',
+      'Spanish medical device exports exceed EUR 4 billion annually; domestic champions in orthopaedics, dental, and diagnostic imaging compete with German and US imports. Research should map local manufacturer relationships with hospital biomedical engineering departments before assuming multinational pull-through.',
+      'Digital health and connected device adoption accelerated through the Recovery, Transformation and Resilience Plan (PRTR) hospital modernisation funds — creating procurement windows for remote monitoring, surgical robotics, and imaging platforms that require account-level timing intelligence.',
     ],
   },
   switzerland: {
@@ -606,6 +609,9 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Switzerland\'s CHF 6–7 billion medtech market punches above population weight (8.7 million) with highest OECD health spending per capita. Roche, Zambon, and dense SME ecosystem characterise domestic industry.',
       'Access Consortium credentials make Switzerland a strategic parallel market with Canada and Australia for global launch sequencing.',
       'BioNixus supports Swiss MedTech research with Swissmedic context and verified KOL networks at major university hospitals.',
+      'Cantonal health insurance (Krankenkassen) and hospital tariff negotiations (TARMED/TARPSY) create distinct reimbursement logic from EU5 neighbours — device manufacturers must research canton-level adoption before extrapolating from Zurich or Geneva early adopters.',
+      'Swiss university hospitals (CHUV Lausanne, Inselspital Bern, USZ Zurich) anchor national KOL networks and early adoption for structural heart, neurointervention, and robotic surgery platforms. Procedural volume concentration means sample frames must overweight these centres without ignoring regional hospital diffusion patterns.',
+      'MedTech Switzerland (formerly Swiss Medtech) advocates for regulatory alignment and procurement reform — manufacturers benefit from research connecting association policy positions to hospital committee behaviour during capital budget cycles.',
     ],
   },
   denmark: {
@@ -638,6 +644,9 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Denmark\'s medtech sector exports globally through Ambu, Coloplast, and William Demant (Demant) — domestic market size belies international strategic importance. 5.9 million population with high health expenditure per capita.',
       'Regional hospital groups concentrate procedural volume; digital health leadership creates differentiated adoption pathways for connected devices.',
       'BioNixus supports Denmark MedTech research with EU MDR context and Nordic expansion intelligence.',
+      'The five Danish regions (Region Hovedstaden, Region Midtjylland, Region Syddanmark, Region Sjælland, Region Nordjylland) govern hospital procurement with distinct committee structures — national averages obscure whether Copenhagen university hospitals or provincial centres drive adoption for your device category.',
+      'Denmark\'s Medicon Valley cluster and strong public-private innovation ecosystem accelerate digital health and connected device pilots — research should segment early-adopter hospital IT integration requirements from mainstream regional rollout barriers.',
+      'Nordic reference pricing and cross-border patient flows with Sweden and Norway affect tender outcomes for high-cost implantables — BioNixus programmes can run harmonised Denmark-Sweden comparative modules for manufacturers planning Scandinavian launch sequencing.',
     ],
   },
   'new-zealand': {
@@ -734,6 +743,9 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Poland\'s PLN 18–22 billion medtech market is Central Europe\'s largest by population (38 million) with EU-funded hospital investment driving capital equipment cycles.',
       'NFZ cost-containment pressure increases alongside private pay growth — dual-pathway research prevents mispriced access strategy.',
       'BioNixus supports Poland MedTech research with URPL/NFZ context and EU5 comparative modules.',
+      'EU cohesion and recovery funds through 2027 drive hospital modernisation tenders in voivodeships including Mazowieckie, Śląskie, and Wielkopolskie — procurement calendars align to fund disbursement, creating predictable windows for capital equipment research.',
+      'Private healthcare chains (Lux Med, Medicover, Enel-Med) adopt innovator devices faster than NFZ public hospitals — segmenting research by public versus private setting reveals adoption sequencing invisible in blended national data.',
+      'Cross-border patient flows under EU directive affect border region utilisation patterns in Germany-adjacent voivodeships — relevant for manufacturers planning Poland-Germany comparative launch strategy.',
     ],
   },
   malaysia: {
@@ -766,6 +778,9 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Malaysia\'s MYR 8–10 billion medtech market serves 34 million population with dual public-private healthcare pathways and ASEAN distribution hub ambitions.',
       'Medical tourism through private hospitals (Prince Court, Gleneagles KL) creates premium adoption corridor distinct from MOH procurement.',
       'BioNixus supports Malaysia MedTech research with MDA-aware design and verified specialist networks across public and private systems.',
+      'MOH central contracts and state health department procurement operate on different timelines — device manufacturers must research both pathways when planning Malaysia entry, particularly for capital equipment and high-cost disposables.',
+      'Halal certification and patient-facing cultural considerations affect adoption research for implantable and patient-contact devices — multilingual fieldwork across Malay, English, Mandarin, and Tamil communities prevents sampling bias in urban versus rural settings.',
+      'Malaysia\'s role as ASEAN regulatory reference market means HSA Singapore and MDA Malaysia dossiers often sequence together — BioNixus supports comparative ASEAN expansion research linking Malaysia hospital adoption data to Singapore cluster validation requirements.',
     ],
   },
   brazil: {
@@ -798,6 +813,9 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Brazil\'s USD 11–13 billion devices market serves 218 million population — Latin America\'s largest. Dual SUS/public and ANS/private pathways require segmented research design.',
       'Domestic orthopaedic and dental manufacturers compete aggressively; import tariffs reshape multinational pricing strategy.',
       'BioNixus supports Brazil MedTech research with ANVISA context, Portuguese fieldwork, and LATAM expansion intelligence.',
+      'CONITEC HTA evaluations for high-cost technologies gate SUS public procurement — research must map CONITEC recommendation timing against ANS Rol de Procedimentos updates for private plan coverage to avoid mispriced dual-pathway forecasts.',
+      'Rede D\'Or, Hapvida, and Fleury anchor private hospital adoption; USP, UNIFESP, and UFRJ university hospitals drive KOL activity and clinical trial volume — sample frames should reflect this public-private concentration.',
+      'Mercosur regulatory harmonisation and local manufacturing incentives (thirty to sixty percent effective import tariffs) reshape distributor and assembly strategy — BioNixus programmes connect prescriber intent with procurement committee behaviour across both channels.',
     ],
   },
 };
