@@ -90,17 +90,18 @@ const en: ContactFormStrings = {
   regionalRepresentationLabel: 'Regional representation',
   regionalOffices: ['Dubai, UAE', 'Jeddah, Saudi Arabia', 'Kuwait City, Kuwait', 'Cairo, Egypt'],
   premiumFormSubcopy:
-    'Tell us the market, therapy, and decision at stake. We respond with a scoped plan — typically within one business day.',
+    'Tell us the markets, sector, and decision at stake. We respond with a scoped plan — typically within one business day.',
   premiumEyebrow: 'Direct channels',
   premiumHeading: 'Talk with the research team',
   premiumIntro:
-    'Prefer email or a call before the form? Reach BioNixus headquarters and regional desks below.',
+    'BioNixus delivers market research across healthcare, pharma, B2B, and B2C in EMEA, the Americas, and APAC. Prefer email or a call before the form? Reach headquarters and regional desks below.',
   consentBefore: 'I agree to BioNixus processing my information per the ',
   consentPrivacyLabel: 'Privacy Policy',
   consentAfter: '.',
   page: {
-    seoTitle: 'Contact BioNixus | Healthcare Market Research Proposal',
-    seoDescription: 'Contact BioNixus for pharmaceutical market research across the US, Europe, GCC, and MENA. Share your brief and receive a scoped proposal within one business day.',
+    seoTitle: 'Contact BioNixus | Global Market Research Company',
+    seoDescription:
+      'Contact BioNixus for market research across healthcare, pharma, B2B, and B2C in EMEA, the Americas, and APAC. Share your brief and receive a scoped proposal within one business day.',
     breadcrumbHome: 'Home',
     breadcrumbContact: 'Contact',
     jsonLdName: 'Contact BioNixus',

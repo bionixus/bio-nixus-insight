@@ -699,7 +699,7 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
         aria-labelledby="contact-form-heading"
       >
         <div className="container-wide py-16 md:py-20">
-          <div className="grid lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.15fr)] gap-10 lg:gap-14 items-start">
+          <div className="grid lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.15fr)] gap-10 lg:gap-14 items-start min-w-0">
             <aside
               className={`sr sr-left rounded-md p-8 lg:p-10 text-primary-foreground ${isRTL ? 'text-right' : ''}`}
               style={{ background: 'var(--gradient-hero)' }}

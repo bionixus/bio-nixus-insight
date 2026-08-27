@@ -28,7 +28,7 @@ const CookieConsent = () => {
       role="dialog"
       aria-label="Cookie consent"
     >
-      <div className="container-wide section-padding py-4">
+      <div className="container-wide py-4">
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <p className="text-sm text-muted-foreground flex-1">
             {t.cookieConsent.message}{' '}

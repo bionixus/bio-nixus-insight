@@ -78,7 +78,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
-      <div className="container-wide section-padding py-4">
+      <div className="container-wide py-4">
         <div className="flex items-center justify-between">
           {/* Logo – links to home, scrolls to hero when already on home */}
           <Link to={basePath} className="flex items-center gap-3" onClick={handleLogoClick}>

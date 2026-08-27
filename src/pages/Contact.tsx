@@ -26,11 +26,11 @@ const engagementByLanguage: Record<
 > = {
   en: {
     heading: 'What a BioNixus engagement looks like',
-    lead: 'We treat every inquiry as the start of a scoped research partnership—not a generic sales queue.',
+    lead: 'Every inquiry starts a scoped research partnership with a team that executes across EMEA, the Americas, and APAC—not a generic sales queue.',
     paragraphs: [
-      'Share the decision you need to make, the markets that matter, and the evidence standard your stakeholders expect. A research director with relevant geography and therapy experience reviews your brief the same day.',
-      'Engagements typically cover launch readiness, market access evidence, competitive intelligence, KOL mapping, and post-launch adoption. Deliverables stay decision-ready: executive narratives, segment cuts, and outputs tied to pricing, access, and medical affairs milestones.',
-      'Gulf programs run with bilingual Arabic–English fieldwork; European work follows GDPR-aligned protocols. When you are comparing partners, ask for methodology notes, sample governance, and anonymized deliverable structures—we answer with specifics.',
+      'Share the decision you need to make, the markets that matter, and the evidence standard your stakeholders expect. A research director with relevant geography and sector experience reviews your brief the same day.',
+      'Programs span healthcare and pharma, B2B and B2C: launch readiness, market access, competitive intelligence, KOL mapping, brand tracking, and post-launch adoption. Deliverables stay decision-ready—executive narratives, segment cuts, and outputs tied to commercial milestones.',
+      'Fieldwork runs in-market with local-language capability across our regions. When you are comparing partners, ask for methodology notes, sample governance, and anonymized deliverable structures—we answer with specifics.',
     ],
   },
   de: {
@@ -107,11 +107,11 @@ const processStepsByLanguage: Record<
     steps: [
       {
         title: 'Share the decision',
-        body: 'Country, therapy, stakeholders, and the question leadership needs answered.',
+        body: 'Markets, sector, stakeholders, and the question leadership needs answered.',
       },
       {
         title: 'Meet a research director',
-        body: 'Same-day triage with someone who has run comparable Gulf, MENA, or European work.',
+        body: 'Same-day triage with someone who has run comparable work in EMEA, the Americas, or APAC.',
       },
       {
         title: 'Receive a scoped proposal',
@@ -280,7 +280,7 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-clip">
       <SEOHead
         title={page.seoTitle}
         description={page.seoDescription}
@@ -288,7 +288,7 @@ const Contact = () => {
         jsonLd={jsonLd}
       />
       <Navbar />
-      <main>
+      <main className="min-w-0">
         <section
           ref={heroRef}
           className="relative overflow-hidden text-primary-foreground"
@@ -329,27 +329,27 @@ const Contact = () => {
             </p>
             <h1
               id="contact-hero-heading"
-              className="sr-lcp sr sr-up max-w-3xl text-4xl md:text-5xl lg:text-[3.5rem] font-display font-semibold leading-[1.08] text-balance mb-6"
+              className="sr-lcp sr sr-up max-w-3xl text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-display font-semibold leading-[1.08] text-balance break-words mb-6"
             >
               {heroTitle}
             </h1>
-            <p className="sr sr-up max-w-xl text-lg md:text-xl text-primary-foreground/75 leading-relaxed mb-10">
+            <p className="sr sr-up max-w-xl text-base sm:text-lg md:text-xl text-primary-foreground/75 leading-relaxed mb-10 break-words">
               {heroSubtitle}
             </p>
 
             <div
-              className={`sr sr-up flex flex-col sm:flex-row gap-3 ${isRTL ? 'sm:flex-row-reverse' : ''}`}
+              className={`sr sr-up flex flex-col sm:flex-row gap-3 w-full max-w-xl ${isRTL ? 'sm:flex-row-reverse' : ''}`}
             >
               <a
                 href="#request-proposal"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-accent text-accent-foreground font-semibold rounded-md hover:brightness-105 transition-[filter,transform] duration-300 hover:-translate-y-0.5"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-7 py-3.5 bg-accent text-accent-foreground font-semibold rounded-md hover:brightness-105 transition-[filter,transform] duration-300 hover:-translate-y-0.5"
               >
                 {primaryCta}
                 <ArrowDown className="w-4 h-4" aria-hidden />
               </a>
               <a
                 href="mailto:admin@bionixus.com?subject=Research%20proposal%20inquiry"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 border border-primary-foreground/25 text-primary-foreground font-semibold rounded-md hover:bg-primary-foreground/10 transition-colors duration-300"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-7 py-3.5 border border-primary-foreground/25 text-primary-foreground font-semibold rounded-md hover:bg-primary-foreground/10 transition-colors duration-300"
               >
                 {secondaryCta}
                 <ArrowRight className={`w-4 h-4 ${isRTL ? 'rotate-180' : ''}`} aria-hidden />

@@ -126,15 +126,21 @@
   
   html {
     scroll-behavior: smooth;
+    overflow-x: clip;
+    max-width: 100%;
   }
   
   body {
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-body);
+    overflow-x: clip;
+    max-width: 100%;
   }
 
   #root {
     min-height: 100vh;
+    overflow-x: clip;
+    max-width: 100%;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -153,11 +159,16 @@
   }
   
   .section-padding {
-    @apply px-6 py-20 md:px-12 lg:px-24 xl:px-32;
+    @apply py-20 md:py-24 lg:py-28 px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Horizontal inset on section shells; nested containers span the padded area. */
+  .section-padding .container-wide {
+    @apply px-0;
   }
   
   .container-wide {
-    @apply max-w-7xl mx-auto;
+    @apply w-full max-w-7xl mx-auto min-w-0 px-4 sm:px-6 lg:px-8;
   }
   
   .nav-link {
@@ -515,6 +526,13 @@
   .sr-scale-up    { transform: scale(0.92) translateY(30px); }
   .sr-rotate-left { transform: rotate(-3deg) translateY(30px); }
   .sr-rotate-right{ transform: rotate(3deg) translateY(30px); }
+
+  @media (max-width: 767px) {
+    .sr-left,
+    .sr-right {
+      transform: translateY(30px);
+    }
+  }
 
   /* --- Speed modifiers --- */
   .sr-fast  { transition-duration: 0.45s; }

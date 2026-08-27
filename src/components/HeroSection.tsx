@@ -54,7 +54,7 @@ const HeroSection = () => {
 
       <PremiumHeroOrbitals />
 
-      <div className="relative z-10 container-wide mx-auto w-full max-w-[1260px] px-6 pb-20 pt-32 sm:px-10">
+      <div className="relative z-10 container-wide mx-auto w-full max-w-[1260px] pb-20 pt-32 sm:pt-32">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <div className="max-w-[500px] premium-fade-up">
             <div className="mb-8 inline-flex items-center gap-2.5">

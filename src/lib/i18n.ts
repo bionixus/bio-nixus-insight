@@ -185,9 +185,9 @@ export const translations = {
     },
     contactPage: {
       brandLine: 'BioNixus',
-      heroTitle: 'Brief the team shaping your next market move.',
+      heroTitle: 'Connect with a global market research team.',
       heroSubtitle:
-        'Pharmaceutical and healthcare research across the US, Europe, GCC, and MENA—scoped proposals typically within one business day.',
+        'BioNixus is a global market research company with strong experience across EMEA, the Americas, and APAC—especially in healthcare, pharma, B2B, and B2C. Share your brief and receive a scoped proposal, typically within one business day.',
       primaryCta: 'Request a proposal',
       secondaryCta: 'Email the team',
       statLine: '',
@@ -204,7 +204,8 @@ export const translations = {
     },
     contact: {
       title: "Let's Connect",
-      subtitle: 'Ready to scope healthcare market research anywhere in the world? Tell us your target country and timeline—our team responds within one business day.',
+      subtitle:
+        'BioNixus is a global market research company with strong experience across EMEA, the Americas, and APAC—especially in healthcare, pharma, B2B, and B2C. Tell us your markets and timeline; our team responds within one business day.',
       cta: 'Schedule a Consultation',
       ctaSecondary: 'Explore Our Services',
       email: 'admin@bionixus.com',
