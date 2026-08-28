@@ -316,6 +316,9 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Smith+Nephew, Siemens Healthineers UK operations, and a dense SME base characterise domestic industry. Import dependence remains significant; Brexit-related supply chain adjustments shifted some sourcing patterns toward UK Responsible Person-registered distributors.',
       'Orthopaedic waiting lists exceeding seven hundred thousand patients (2024) drive demand for joint replacement and surgical capacity — affecting implant tender volumes and robotic-assisted surgery adoption. Diagnostic backlogs post-COVID accelerate POCT and imaging capital cycles.',
       'Private healthcare (Bupa, HCA, Spire) provides premium adoption corridors for innovator devices ahead of NHS formulary listing — segmenting research by public versus private setting reveals adoption sequencing invisible in blended national data.',
+      'NICE MedTech Guidance (MTG) and Diagnostics Guidance (DG) increasingly gate NHS commissioning for novel technologies — positive guidance accelerates adoption; absence creates committee hesitation even after MHRA clearance. Research must align evidence packs with NICE evaluation criteria.',
+      'Integrated Care Boards (42 in England) implement formulary decisions at different speeds — London and Manchester versus rural ICBs can differ by twelve to eighteen months post-national guidance. Sample design must reflect target ICB geography.',
+      'NHS Supply Chain framework agreements govern commodity device categories; capital equipment aligns to Trust budget cycles and Net Zero sustainability criteria that increasingly affect single-use device specifications.',
       'BioNixus UK programmes combine MHRA/NICE-aware research design with verified NHS consultant and biomedical engineering networks — delivering decision-ready evidence for launch, competitive defence, and international expansion planning.',
     ],
   },
@@ -509,7 +512,11 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
     marketParagraphs: [
       'Singapore\'s USD 2.3–2.8 billion medical devices market punches above its weight as an ASEAN regulatory and commercial hub. 5.9 million population with USD 85,000+ GDP per capita and world-class public hospital infrastructure.',
       'Access Consortium membership enables efficient multi-market launch with Australia, Canada, and UK. EDB actively recruits medtech manufacturers to regional headquarters.',
-      'BioNixus supports Singapore and ASEAN expansion research with HSA-aware design and verified KOL access at NCCS, NUH, and major private centres.',
+      'Three public clusters (SingHealth, NHG, NUHS) standardise device adoption across sister hospitals — cluster formulary decisions predict national diffusion for high-technology categories.',
+      'ACE health technology assessment governs MOH subsidy for high-cost technologies — SDL listing and MAF coverage affect patient co-pay and adoption curves for diabetes, cardiac, and oncology device segments.',
+      'Medical tourism through Parkway, Raffles, and Mount Elizabeth creates a premium private-hospital adoption corridor distinct from public cluster procurement timelines.',
+      'HSA PRISM registration with Access Consortium verification pathway can compress review to approximately six months for eligible devices — making Singapore a strategic ASEAN pilot market.',
+      'BioNixus supports Singapore and ASEAN expansion research with HSA-aware design, cluster-aware sample frames, and verified KOL access at NCCS, NUH, and major private centres.',
     ],
   },
   italy: {
@@ -573,7 +580,11 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
     marketParagraphs: [
       'Spain\'s EUR 10–12 billion devices market within EUR 120–130 billion health expenditure serves 47.9 million population. High diabetes prevalence (14.8% adults) drives monitoring and therapeutic device demand.',
       'Regional adoption variation is among the widest in EU5 — Catalonia and Madrid versus slower rural communities require segmented research, not national averages.',
-      'BioNixus supports Spain MedTech research with AEMPS context and verified hospital networks across target autonomous communities.',
+      'Seventeen autonomous communities operate distinct SNS procurement pathways — CatSalut (Catalonia), SERMAS (Madrid), and SAS (Andalusia) adopt IPT positioning and CIPM pricing at different speeds.',
+      'IPT (Informe de Posicionamiento Terapéutico) positions devices within therapeutic classes before CIPM price negotiation — research must map IPT timing for target communities.',
+      'Hospital Guía Farmacoterapéutica committees implement listing three to six months post-regional adoption — account-level research captures committee behaviour syndicated data misses.',
+      'EU Next Generation EU recovery fund healthcare investments (2021–2026) created capital equipment procurement windows — aligning research to regional budget cycles improves forecast accuracy.',
+      'BioNixus supports Spain MedTech research with AEMPS context, autonomous community-aware sample design, and verified hospital networks across target regions.',
     ],
   },
   switzerland: {
@@ -701,7 +712,11 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
     marketParagraphs: [
       'South Korea\'s USD 10–12 billion devices market serves 51.7 million population with world-leading hospital bed density and fast MFDS/NHIS access pathways for innovative technologies.',
       'K-beauty adjacent aesthetic device market and dental implant segments add distinct research needs beyond hospital capital equipment.',
-      'BioNixus supports Korea MedTech research with MFDS/NHIS context and verified Big 5 hospital network access.',
+      'Big 5 Seoul hospitals (Samsung Medical Center, Asan, Severance, SNUH, ASGMC) formulary decisions predict national KOL diffusion for high-technology devices — research sample frames should overweight these accounts.',
+      'MFDS approval followed by NHIS Essential Drug List and HIRA economic evaluation creates among the fastest OECD access pathways when evidence packages are strong.',
+      'Domestic champions (Samsung Medison, Osstem Implant) compete aggressively in imaging and dental — competitive sets must include local manufacturers, not only US and EU portfolios.',
+      'HIRA risk-sharing agreements are common for high-cost implantables and capital equipment — economic evidence expectations should be mapped before message testing.',
+      'BioNixus supports Korea MedTech research with MFDS/NHIS context, Big 5 hospital network access, and Korean-language fieldwork for verified specialist recruitment.',
     ],
   },
   poland: {

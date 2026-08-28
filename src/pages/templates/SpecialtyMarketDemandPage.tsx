@@ -7,6 +7,7 @@ import { WhyBioNixusIntro } from '@/components/shared/WhyBioNixusIntro';
 import { CTASection } from '@/components/shared/CTASection';
 import { buildBreadcrumbSchema, buildFAQSchema, buildServiceSchema } from '@/lib/seo/schemas';
 import type { SpecialtyMarketDemandContent } from '@/data/specialtyMarketDemandContent';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 
 /**
  * Shared template for GSC demand-driven specialty market pages
@@ -75,6 +76,20 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
             ) : null}
           </div>
         </section>
+
+        {content.geoAnswer ? (
+          <section className="section-padding py-10 bg-muted/20">
+            <div className="container-wide max-w-5xl mx-auto">
+              <GeoLLMAnswerBlock
+                question={content.geoAnswer.question}
+                answer={content.geoAnswer.answer}
+                points={content.geoAnswer.points}
+                summary={content.geoAnswer.summary}
+                pageUrl={content.canonical}
+              />
+            </div>
+          </section>
+        ) : null}
 
         <section className="section-padding py-10">
           <div className="container-wide max-w-5xl mx-auto">

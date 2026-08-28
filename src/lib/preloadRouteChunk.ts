@@ -84,9 +84,13 @@ const PREFIX_IMPORTS: Array<{ test: (path: string) => boolean; load: Importer }>
   {
     test: (path) =>
       path.startsWith('/blog/') ||
-      path.startsWith('/ar/blog/') ||
+      /^\/(ar|de|fr|zh|es|pt|ru)\/blog\//.test(path) ||
       path.startsWith('/bionixus-industries/insights/'),
     load: () => import('@/pages/BlogPost'),
+  },
+  {
+    test: (path) => path.startsWith('/videos/') && path !== '/videos/' && path !== '/videos',
+    load: () => import('@/pages/VideoWatchPage'),
   },
 ];
 
