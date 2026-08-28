@@ -7,11 +7,7 @@ import { buildLcpPreloadTag, getClientAssetHints } from '../lib/ssr-client-asset
 import { resolveLegacyCountryIndustryMarketResearchRedirect } from '../lib/country-industry-redirects.mjs';
 import { resolveGlobalWebsitesRedirect } from '../lib/global-websites-redirects.mjs';
 import { getCtrSeo, isCtrSeoPath } from '../lib/ctr-seo-overrides.mjs';
-
-/** Single source of truth for legacy redirects — also consumed by server.js. */
-const LEGACY_REDIRECTS: Record<string, string> = JSON.parse(
-  fs.readFileSync(path.join(process.cwd(), 'config', 'legacy-redirects.json'), 'utf-8'),
-) as Record<string, string>;
+import { LEGACY_REDIRECTS } from '../lib/legacy-redirects.mjs';
 
 type HelmetLike = {
   title?: { toString: () => string };

@@ -18,6 +18,7 @@ import {
   BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH,
   BLOG_LEGACY_FULL_PATH_REDIRECTS,
 } from '../blog-legacy-redirects.mjs';
+import { LEGACY_REDIRECTS } from '../lib/legacy-redirects.mjs';
 import { resolveGlobalWebsitesRedirect } from '../lib/global-websites-redirects.mjs';
 import { getIndustryMatrixSitemapPages } from './data/industry-matrix-sitemap.mjs';
 import { getSpecialtyMarketDemandSitemapPages } from './data/specialty-market-demand-sitemap.mjs';
@@ -112,9 +113,7 @@ const SAUDI_PHARMA_MARKET_2026_AR_SLUG = 'سوق-الدواء-السعودي-202
  */
 const BLOG_SLUG_SITEMAP_STATIC_ONLY = new Set(['gcc-pharmaceuticals-market-arabic-2026']);
 
-const LEGACY_REDIRECT_PATHS = Object.keys(
-  JSON.parse(readFileSync(join(root, 'config', 'legacy-redirects.json'), 'utf8')),
-);
+const LEGACY_REDIRECT_PATHS = Object.keys(LEGACY_REDIRECTS);
 
 /**
  * Paths that 301 elsewhere — never list in sitemap (Ahrefs: 3xx redirect in sitemap).
@@ -1165,6 +1164,9 @@ async function fetchSanityContent(
     }
     return [...map.values()];
   } catch (err) {
+    // Returning [] keeps the build green but can omit an entire content type
+    // (e.g. ~139 blog URLs). The shrink guard below fails the write if the
+    // committed sitemap would lose more than 2% of its URLs.
     console.warn(`Sitemap: could not fetch ${label} content:`, err.message);
     return [];
   }
@@ -1617,6 +1619,48 @@ const HEALTHCARE_HUB_GIT_FILES = [
 
 const CASE_STUDY_GIT_FILES = ['src/pages/CaseStudy.tsx', 'src/pages/CaseStudies.tsx'];
 
+/**
+ * Fail the write if the newly generated URL set is more than 2% smaller than
+ * the committed sitemap. Live blog probes and fetchSanityContent's empty-array
+ * catch can silently drop an entire content type (~139 blog URLs) while the
+ * build stays green.
+ */
+function assertSitemapNotShrunk(newLocs) {
+  if (process.env.ALLOW_SITEMAP_SHRINK === '1') {
+    console.warn('Sitemap shrink guard skipped: ALLOW_SITEMAP_SHRINK=1');
+    return;
+  }
+
+  let committedXml;
+  try {
+    committedXml = execSync('git show HEAD:public/sitemap.xml', {
+      encoding: 'utf8',
+      cwd: root,
+      stdio: ['pipe', 'pipe', 'pipe'],
+    });
+  } catch {
+    console.warn(
+      'Sitemap shrink guard skipped: git show HEAD:public/sitemap.xml failed (shallow clone or missing history).',
+    );
+    return;
+  }
+
+  const oldLocs = [...committedXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+  const oldCount = oldLocs.length;
+  const newCount = newLocs.length;
+  if (oldCount === 0) return;
+  if (newCount >= oldCount * 0.98) return;
+
+  const newSet = new Set(newLocs);
+  const dropped = oldLocs.filter((u) => !newSet.has(u));
+  console.error(
+    `Sitemap shrink guard: ${newCount} URLs is more than 2% below committed ${oldCount}.`,
+  );
+  console.error('Dropped URLs:');
+  for (const u of dropped) console.error(`  ${u}`);
+  process.exit(1);
+}
+
 async function main() {
   loadEnv();
 
@@ -1818,6 +1862,8 @@ async function main() {
 ${urls.join('\n')}
 </urlset>
 `;
+
+  assertSitemapNotShrunk([...finalUrls.keys()]);
 
   writeFileSync(outPath, xml, 'utf8');
   await writePressRssFeed(blogProjectId, blogDataset);

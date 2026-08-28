@@ -12,6 +12,7 @@ import { normalizeOgCardPath, renderOgCardSvg } from './lib/og-card-svg.mjs';
 import { buildLcpPreloadTag, getClientAssetHints } from './lib/ssr-client-asset-hints.mjs';
 import { resolveLegacyCountryIndustryMarketResearchRedirect } from './lib/country-industry-redirects.mjs';
 import { resolveGlobalWebsitesRedirect } from './lib/global-websites-redirects.mjs';
+import { LEGACY_REDIRECTS } from './lib/legacy-redirects.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === 'production';
@@ -30,10 +31,6 @@ process.on('unhandledRejection', (reason) => {
   console.error('[server] unhandledRejection (process kept alive):', reason);
 });
 
-/** Single source of truth for legacy redirects — also consumed by api/indexnow-key.ts. */
-const LEGACY_REDIRECTS = JSON.parse(
-  fs.readFileSync(path.join(__dirname, 'config', 'legacy-redirects.json'), 'utf-8'),
-);
 const port = Number(process.env.PORT || 5173);
 
 function inferHtmlLang(pathname, initialData) {

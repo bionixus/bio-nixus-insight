@@ -17,6 +17,7 @@ import {
 import { prepareBlogBodyHtml } from '../../lib/demote-blog-body-h1.mjs';
 import { fixBrokenInternalHref, fixBrokenInternalHrefsInHtml } from '../../lib/fix-broken-internal-hrefs.mjs';
 import { handlePressReleaseCrawler } from '../../lib/press-crawler-html.mjs';
+import { resolveLegacyRedirect } from '../../lib/legacy-redirects.mjs';
 
 const sanityClient = createClient({
   projectId: process.env.VITE_SANITY_PROJECT_ID || 'h2whvvpo',
@@ -260,6 +261,16 @@ export default async function handler(req, res) {
 
   const industriesInsight =
     req.query.industriesInsight === '1' || req.query.industriesInsight === 'true';
+
+  // Same map as server.js / api/indexnow-key — crawlers must get the same 301.
+  if (!industriesInsight) {
+    const blogPath = `/blog/${slug}`;
+    const encodedBlogPath = `/blog/${encodeURIComponent(slug)}`;
+    const pathTarget = resolveLegacyRedirect(blogPath, encodedBlogPath);
+    if (pathTarget) {
+      return res.redirect(301, pathTarget);
+    }
+  }
 
   const legacyTarget = LEGACY_BLOG_SLUG_TO_CANONICAL[slug];
   if (legacyTarget) {
