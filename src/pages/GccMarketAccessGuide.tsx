@@ -628,6 +628,33 @@ const GccMarketAccessGuide = () => {
         </section>
 
         {/* FAQ */}
+        <section className="section-padding py-16" id="biologics-biosimilars">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              GCC Biologics &amp; Biosimilars Market Access (2026)
+            </h2>
+            <div className="prose-body text-muted-foreground leading-relaxed space-y-4 max-w-4xl">
+              <p>
+                The GCC biologics market is expanding as oncology, immunology, and diabetes portfolios shift from small molecules to biologics and biosimilars — but access is not uniform across the six Gulf states. Saudi Arabia&apos;s SFDA Economic Evaluation System (EES), mandatory from July 2025, requires pharmacoeconomic evidence for many high-cost biologics at registration. UAE emirate authorities (MOHAP, DHA, DOH) apply distinct formulary and insurance coverage rules that affect outpatient biologic uptake differently from inpatient NUPCO tender awards.
+              </p>
+              <p>
+                Biosimilar penetration varies sharply by category: insulin and erythropoietin biosimilars achieved high hospital substitution rates in several Gulf markets after centralized tender awards, while monoclonal antibody biosimilars face slower switching where originator contracts, clinician training, and cold-chain logistics create inertia. BioNixus researches oncology pharmacists, rheumatology KOLs, and hospital procurement committees to map where biosimilar substitution is policy-driven versus clinician-resisted.
+              </p>
+              <p>
+                Local manufacturing incentives under Saudi Vision 2030 and UAE biopharma campus initiatives create parallel access pathways — products manufactured in-Kingdom may receive preferential NUPCO evaluation and faster SFDA review. Manufacturers planning GCC biologics launches should sequence registration, pricing reference baskets, and tender calendars across Saudi Arabia and UAE before committing to smaller Gulf markets. See our{' '}
+                <Link to="/gcc-pharmaceutical-market-research" className="text-primary font-medium hover:underline">
+                  GCC pharmaceutical market research
+                </Link>{' '}
+                hub and{' '}
+                <Link to="/healthcare-market-research/therapy/biosimilars" className="text-primary font-medium hover:underline">
+                  biosimilars therapy research
+                </Link>{' '}
+                page for programme design.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <section className="section-padding py-16" id="faq">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-10">

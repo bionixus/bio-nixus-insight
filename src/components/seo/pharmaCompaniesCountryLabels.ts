@@ -9,6 +9,7 @@ export const COUNTRY_LABELS: Record<PharmaCompaniesCountrySlug, string> = {
   'saudi-arabia': 'Saudi Arabia',
   egypt: 'Egypt',
   iran: 'Iran',
+  iraq: 'Iraq',
   usa: 'USA',
   uk: 'UK',
   germany: 'Germany',

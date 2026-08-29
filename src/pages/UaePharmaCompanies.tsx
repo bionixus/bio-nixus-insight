@@ -11,6 +11,7 @@ import { useScrollThreshold } from '@/hooks/useScrollThreshold';
 import { getPharmaGuideConfig } from '@/data/reportConversionConfig';
 import { PharmaCompaniesGccHubLinks } from '@/components/seo/PharmaCompaniesGccHubLinks';
 import { PharmaCompaniesQuickAnswer } from '@/components/seo/PharmaCompaniesQuickAnswer';
+import { PharmaCompaniesDepthSection } from '@/components/seo/PharmaCompaniesDepthSection';
 import { PharmaCompaniesFaqSection } from '@/components/seo/PharmaCompaniesFaqSection';
 import { buildPharmaCompaniesFaqLd, buildPharmaCompaniesItemListLd } from '@/components/seo/pharmaCompaniesSeo';
 import {
@@ -118,6 +119,8 @@ const UaePharmaCompanies = () => {
           regulatorLabel="MOHAP, DHA, and DOH"
           topCompanyNames={pharmaCompanies.map((c) => c.name)}
         />
+
+        <PharmaCompaniesDepthSection country="uae" />
 
         <ReportContentWithAside config={PHARMA_CONVERSION}>
         <section className="section-padding py-8 bg-muted/30"><div className="container-wide max-w-5xl mx-auto">
