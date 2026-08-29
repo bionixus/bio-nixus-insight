@@ -11,6 +11,7 @@ export type PharmaCompaniesCountrySlug =
   | 'saudi-arabia'
   | 'egypt'
   | 'iran'
+  | 'iraq'
   | 'usa'
   | 'uk'
   | 'germany'

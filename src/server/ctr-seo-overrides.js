@@ -14,9 +14,9 @@ export const CTR_SEO_BY_PATH = {
       'Primary healthcare market research and market access consulting for pharma & medical devices — GCC, USA, Turkey, Europe, Brazil & Asia. Request a proposal.',
   },
   '/pharmaceutical-companies-uae': {
-    title: 'Top 30 Pharmaceutical Companies in UAE (2026 Ranked List)',
+    title: 'Pharmaceutical Companies in Dubai & UAE (2026 Ranked)',
     description:
-      'Complete 2026 list of pharmaceutical companies in UAE & Dubai — rankings, market size, manufacturers vs distributors. By Bionixus, GCC pharma research specialists.',
+      'Pharma companies in Dubai & UAE ranked for 2026 — manufacturers, distributors, MOHAP/DHA/DOH context, market size & growth. Dubai pharma company directory by BioNixus.',
   },
   // CTR sprint wave 3 (2026-08-22): "Top N + year + Ranked List" formula — matches
   // winning query pattern ("top 20 pharmaceutical companies in saudi arabia" = 37.5% CTR @ pos 5).
@@ -483,14 +483,29 @@ export const CTR_SEO_BY_PATH = {
       'Japan healthcare market 2026 — market size, PMDA regulation, NHI pricing revisions, aging demand and hospital landscape. Report by BioNixus.',
   },
   '/febrile-neutropenia-market': {
-    title: 'Febrile Neutropenia Market 2026: Size, G-CSF & Forecast',
+    title: 'Febrile Neutropenia Market 2026: G-CSF Size & Biosimilar Guide',
     description:
-      'Febrile neutropenia market 2026 — G-CSF market size, biosimilar filgrastim/pegfilgrastim competition and oncology demand forecast. By BioNixus.',
+      'Febrile neutropenia market 2026 — G-CSF prophylaxis protocols, pegfilgrastim/filgrastim biosimilar competition, hospital tender intelligence & oncology demand. By BioNixus.',
   },
   '/uae-pricing-reimbursement-strategy': {
     title: 'UAE Drug Pricing & Reimbursement 2026: MOHAP, DHA & DOH',
     description:
       'UAE drug pricing and reimbursement 2026 — MOHAP pricing rules, DHA/DOH formularies, Thiqa/Daman coverage and launch pricing strategy. By BioNixus.',
+  },
+  '/japan-neurology-devices-market': {
+    title: 'Japan Neurology Devices Market 2026: Stroke & Neurointervention',
+    description:
+      'Japan neurology devices market 2026 — neurointervention, neuromonitoring, PMDA/NHI pathways & stroke-centre adoption intelligence. Research by BioNixus.',
+  },
+  '/japan-medical-disposables-market': {
+    title: 'Japan Medical Disposables Market 2026: Hospital Procurement Guide',
+    description:
+      'Japan medical disposables market 2026 — infection-control, procedure packs, hospital tender dynamics & nursing workflow research. By BioNixus.',
+  },
+  '/healthcare-market-research/saudi-arabia': {
+    title: 'Healthcare Market Research Saudi Arabia 2026 | BioNixus',
+    description:
+      'Healthcare market research Saudi Arabia 2026 — SFDA-aware HCP surveys, NUPCO tender context, Arabic fieldwork in Riyadh, Jeddah & Dammam. Request a proposal.',
   },
 };
 

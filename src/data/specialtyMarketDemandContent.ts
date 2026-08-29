@@ -889,6 +889,17 @@ const japanNeurologyDevices: SpecialtyMarketDemandContent = {
     heading: 'Structure',
     paragraphs: [
       'Volume concentrates in designated stroke and university neurosurgery centres. Distributor technical specialists and proctors are part of the commercial system BioNixus maps alongside clinical preference.',
+      'Japan\'s stroke centre designation system concentrates neurointerventional volume in roughly 330 certified hospitals — manufacturers that treat "Japan neurology devices" as a national average misallocate field resources. BioNixus segments by designation tier, procedure mix (thrombectomy, aneurysm coiling, neuromonitoring), and capital versus disposable revenue split.',
+      'PMDA approval timing and NHI reimbursement category assignment can diverge by years for the same device family — launch sequencing research must align regulatory clearance with fiscal-year price listing windows, not assume concurrent US and Japan availability.',
+    ],
+  },
+  signalGrid: {
+    heading: 'Category signals in Japan',
+    items: [
+      { label: 'Neurointervention', signal: 'Stroke centre designation and thrombectomy protocol adoption drive disposable volume.' },
+      { label: 'Neuromonitoring', signal: 'ICU and OR integration requirements gate adoption beyond KOL enthusiasm.' },
+      { label: 'Neurosurgery capital', signal: 'Biennial hospital budget cycles and domestic OEM relationships shape robot and navigation purchases.' },
+      { label: 'Implantables', signal: 'NHI category compression affects net price more than procedural volume growth.' },
     ],
   },
   audiences: [
@@ -951,6 +962,17 @@ const japanMedicalDisposables: SpecialtyMarketDemandContent = {
     heading: 'Structure',
     paragraphs: [
       'Disposables decisions mix nursing preference, infection-control policy, and purchasing contracts. Successful research treats those lanes explicitly instead of averaging them.',
+      'Japan Medical Materials Association (JMMA) members and major domestic suppliers (Terumo, Nipro, Asahi Kasei) set quality and packaging baselines that foreign entrants must match before price competition begins. Hospital group purchasing organizations (GPOs) such as those linked to major university chains negotiate annual framework contracts that lock SKUs for 12–24 months.',
+      'Infection-control categories saw sustained premium demand post-COVID, but hospitals now scrutinize unit economics and waste volume — research must capture both clinical preference and sustainability committee influence on tender scoring.',
+    ],
+  },
+  signalGrid: {
+    heading: 'Disposable category signals',
+    items: [
+      { label: 'Infection-control / PPE', signal: 'QI programme mandates sustain volume; green-procurement criteria emerging in evaluations.' },
+      { label: 'Procedure packs & drapes', signal: 'Surgeon and nurse workflow veto power is high — poor kit design fails despite price advantage.' },
+      { label: 'IV / infusion consumables', signal: 'Safety-engineered designs mandated; domestic suppliers hold reference status.' },
+      { label: 'Dialysis & renal disposables', signal: 'Concentrated provider networks create oligopsony buying power.' },
     ],
   },
   audiences: [
@@ -1200,6 +1222,17 @@ const febrileNeutropenia: SpecialtyMarketDemandContent = {
     heading: 'Structure',
     paragraphs: [
       'FN markets are protocol- and tender-shaped. BioNixus isolates prophylaxis choice, secondary treatment, and tender award as distinct research questions.',
+      'Primary prophylaxis with pegfilgrastim or biosimilar filgrastim is governed by oncology protocol committees and hospital pharmacy substitution policies — not individual physician preference alone. Secondary prophylaxis decisions involve infectious-disease and haematology-oncology joint pathways that differ between academic centres and community hospitals.',
+      'In GCC settings, supportive-care injectables often move through centralized tender frameworks where a single biosimilar award can reset protocol defaults across a hospital group within one quarter. BioNixus maps tender calendar, dual-source policy, and pharmacist substitution authority before forecasting share shifts.',
+    ],
+  },
+  signalGrid: {
+    heading: 'Market signals by setting',
+    items: [
+      { label: 'Academic oncology centres', signal: 'Protocol committees set prophylaxis thresholds; KOL training drives early adoption of long-acting G-CSF.' },
+      { label: 'Community / regional hospitals', signal: 'Tender awards and pharmacy substitution dominate — brand loyalty is weaker than in tertiary centres.' },
+      { label: 'GCC hospital groups', signal: 'Centralized injectables tenders can flip entire networks to biosimilars within one award cycle.' },
+      { label: 'Outpatient day clinics', signal: 'Administration convenience and nurse workflow shape preference as regimens shift off inpatient wards.' },
     ],
   },
   audiences: [
@@ -1220,6 +1253,16 @@ const febrileNeutropenia: SpecialtyMarketDemandContent = {
       question: 'What drives the febrile neutropenia market?',
       answer:
         'Oncology regimen myelosuppression, prophylaxis guidelines, hospital pharmacy substitution, and tender awards for G-CSF and related supportive care — researched by BioNixus through clinical and procurement stakeholders.',
+    },
+    {
+      question: 'How large is the febrile neutropenia / G-CSF market?',
+      answer:
+        'Market size tracks myelosuppressive chemotherapy volume, prophylaxis guideline adoption, and biosimilar G-CSF penetration — not a single retail category. BioNixus sizes addressable patient pools and protocol-driven demand by hospital type and geography rather than publishing unverifiable global dollar totals.',
+    },
+    {
+      question: 'Who are the main G-CSF competitors in hospital tenders?',
+      answer:
+        'Originator pegfilgrastim and filgrastim face biosimilar competition from multiple manufacturers; hospital pharmacies evaluate clinical equivalence, administration schedule, cold-chain requirements, and tender price. BioNixus maps switching drivers through oncology pharmacist and procurement interviews.',
     },
   ],
   priority: 'next',
