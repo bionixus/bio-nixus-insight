@@ -7,6 +7,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { ServiceMarketReferenceGuide } from '@/components/seo/ServiceMarketReferenceGuide';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+import { SERVICE_DETAIL_DEPTH } from '@/data/serviceDetailDepthContent';
 
 interface ServiceData {
   title: string;
@@ -313,6 +314,19 @@ const ServiceDetail = () => {
             )}
           </div>
         </section>
+
+        {(SERVICE_DETAIL_DEPTH[slug ?? ''] ?? []).map((section) => (
+          <section key={section.heading} className="section-padding py-12 border-t border-border/60">
+            <div className="container-wide max-w-4xl mx-auto">
+              <h2 className="text-2xl font-display font-semibold text-foreground mb-4">{section.heading}</h2>
+              <div className="space-y-4 text-muted-foreground leading-relaxed">
+                {section.paragraphs.map((para) => (
+                  <p key={para.slice(0, 48)}>{para}</p>
+                ))}
+              </div>
+            </div>
+          </section>
+        ))}
 
         {/* Capabilities */}
         <section className="section-padding py-12">

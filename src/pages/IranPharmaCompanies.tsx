@@ -11,6 +11,7 @@ import { useScrollThreshold } from '@/hooks/useScrollThreshold';
 import { getPharmaGuideConfig } from '@/data/reportConversionConfig';
 import { PharmaCompaniesGccHubLinks } from '@/components/seo/PharmaCompaniesGccHubLinks';
 import { PharmaCompaniesQuickAnswer } from '@/components/seo/PharmaCompaniesQuickAnswer';
+import { PharmaCompaniesDepthSection } from '@/components/seo/PharmaCompaniesDepthSection';
 import { buildPharmaCompaniesFaqLd, buildPharmaCompaniesItemListLd } from '@/components/seo/pharmaCompaniesSeo';
 import { PharmaCompaniesFaqSection } from '@/components/seo/PharmaCompaniesFaqSection';
 import {
@@ -109,6 +110,8 @@ const IranPharmaCompanies = () => {
           regulatorLabel="Iranian Food and Drug Administration (IFDA)"
           topCompanyNames={pharmaCompanies.map((c) => c.name)}
         />
+
+        <PharmaCompaniesDepthSection country="iran" />
 
         <ReportContentWithAside config={PHARMA_CONVERSION}>
         <section className="section-padding py-12 bg-primary text-primary-foreground"><div className="container-wide max-w-5xl mx-auto"><div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">

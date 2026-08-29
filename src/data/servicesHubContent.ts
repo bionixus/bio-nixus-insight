@@ -343,6 +343,16 @@ export const SERVICE_FAQ = [
   },
 ] as const;
 
+/** English-only depth block for /services hub (LLM + SEO). */
+export const SERVICES_HUB_DEPTH = {
+  heading: 'Healthcare market research agency capabilities (2026)',
+  paragraphs: [
+    'BioNixus is a healthcare market research company specialising in primary research for pharmaceutical, biotech, and medical device teams — not syndicated data resale. Senior-led programmes span quantitative physician surveys, qualitative KOL depth, market access and HEOR support, competitive intelligence, and clinical trial feasibility across 38 countries with field offices in the US, UK, Egypt, Saudi Arabia, UAE, Kuwait, and Brazil.',
+    'Teams comparing healthcare market research companies or IQVIA alternatives typically need faster, region-specific evidence than global subscription products provide. BioNixus scopes modules to one decision — launch positioning, payer objection mapping, tender defence, biosimilar switching — with GCC Arabic–English fieldwork and EU5 HTA context in the same governance framework.',
+    'Every service card below links to a dedicated scope page with methodology detail, deliverables, and geographic coverage. For cross-industry FMCG, B2B, and technology programmes, see commercial research sections or the cross-industry market research landing.',
+  ],
+} as const;
+
 export const HERO_METRICS = [
   { value: '38', label: 'Countries fielded' },
   { value: '16', label: 'Industry verticals' },

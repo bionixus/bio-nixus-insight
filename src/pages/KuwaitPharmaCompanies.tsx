@@ -38,6 +38,7 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { PharmaCompaniesQuickAnswer } from '@/components/seo/PharmaCompaniesQuickAnswer';
+import { PharmaCompaniesDepthSection } from '@/components/seo/PharmaCompaniesDepthSection';
 import { buildPharmaCompaniesFaqLd } from '@/components/seo/pharmaCompaniesSeo';
 
 const PHARMA_CONVERSION = getPharmaGuideConfig('kuwait');
@@ -369,6 +370,8 @@ return (
           topCompanyNames={[...TOP_MEDICAL_DISTRIBUTORS_KUWAIT_RANKED_DISPLAY]}
           extraSentence="See the ranked medical distributors section below for importer–wholesaler detail and tender context."
         />
+
+        <PharmaCompaniesDepthSection country="kuwait" />
 
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-[minmax(0,1fr)_272px] gap-10 lg:gap-14 pb-16 items-start">
