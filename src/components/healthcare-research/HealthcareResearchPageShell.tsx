@@ -10,6 +10,8 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero, type ReportHeroStat } from '@/components/report-premium';
+import { MarketReportWhitePaperBand } from '@/components/report-premium/MarketReportWhitePaperBand';
+import { getMarketReportWhitePaperForPath } from '@/data/marketReportWhitePapers';
 
 type BreadcrumbItem = { name: string; href: string };
 
@@ -48,6 +50,8 @@ export function HealthcareResearchPageShell({
   faq,
   children,
 }: HealthcareResearchPageShellProps) {
+  const whitePaper = getMarketReportWhitePaperForPath(config.canonicalPath);
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -84,6 +88,8 @@ export function HealthcareResearchPageShell({
             />
           ) : null}
         </ReportContentWithAside>
+
+        {whitePaper ? <MarketReportWhitePaperBand whitePaper={whitePaper} /> : null}
 
         <ReportConsultationBand config={config} />
       </main>

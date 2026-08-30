@@ -30,6 +30,8 @@ type GatedAssetCtaProps = {
   headline?: string;
   /** Optional intent-specific button label replacing "Get the sample PDF". */
   buttonLabel?: string;
+  /** Optional gate-form submit label; defaults to "Get the sample PDF". */
+  submitLabel?: string;
 };
 
 type ConversionCtaProps = TalkToResearchCtaProps | GatedAssetCtaProps;
@@ -98,10 +100,17 @@ export function ConversionCTA(props: ConversionCtaProps) {
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-w-md">
           <DialogHeader>
-            <DialogTitle>Get the {props.reportName} sample</DialogTitle>
-            <DialogDescription>We'll email the PDF and notify our team of your interest.</DialogDescription>
+            <DialogTitle>Get the {props.reportName}</DialogTitle>
+            <DialogDescription>
+              We&apos;ll start the download and notify our team of your interest.
+            </DialogDescription>
           </DialogHeader>
-          <GatedAssetForm formId={props.ctaId} reportName={props.reportName} pdfPath={props.pdfPath} />
+          <GatedAssetForm
+            formId={props.ctaId}
+            reportName={props.reportName}
+            pdfPath={props.pdfPath}
+            submitLabel={props.submitLabel || props.buttonLabel}
+          />
         </DialogContent>
       </Dialog>
     </>

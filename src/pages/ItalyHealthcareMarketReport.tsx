@@ -15,6 +15,8 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { MarketReportWhitePaperBand } from '@/components/report-premium/MarketReportWhitePaperBand';
+import { getMarketReportWhitePaper } from '@/data/marketReportWhitePapers';
 import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
 
 const breadcrumbItems = [
@@ -62,7 +64,9 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
 ], 'italy');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/italy-healthcare-market-report');
+const REPORT_WHITE_PAPER = getMarketReportWhitePaper('italy-healthcare-market-report');
 const FAQ_SECTION_ID = 'italy-healthcare-market-faq';
+const PAGE_MODIFIED = '2026-08-30';
 
 const jsonLd = [
   buildBreadcrumbSchema(breadcrumbItems),
@@ -74,7 +78,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: PAGE_MODIFIED,
     mainEntityOfPage: 'https://www.bionixus.com/italy-healthcare-market-report',
   },
   {
@@ -89,7 +93,7 @@ const jsonLd = [
     countryName: "Italy",
     marketSlug: "italy",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
+    modifiedDate: PAGE_MODIFIED,
   })
 ];
 
@@ -217,6 +221,7 @@ const ItalyHealthcareMarketReport = () => (
         </section>
 
         <FAQSection sectionId={FAQ_SECTION_ID} title="Italy healthcare market 2026 — AIFA, SSN, regional access, and MEA FAQ" items={REPORT_FAQ_ITEMS} className="bg-muted/30" />        </ReportContentWithAside>
+      {REPORT_WHITE_PAPER ? <MarketReportWhitePaperBand whitePaper={REPORT_WHITE_PAPER} /> : null}
       <ReportConsultationBand config={REPORT_CONVERSION} />
         </main>
     <Footer />

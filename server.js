@@ -870,6 +870,29 @@ async function startServer() {
     res.type('html').sendFile(gfkAltEgyptAbsolutePath);
   });
 
+  const serveGatedHtmlReport = (publicPath, confRelativePath) => {
+    const absolutePath = path.resolve(
+      __dirname,
+      isProduction ? path.join('dist/client', confRelativePath) : path.join('public', confRelativePath),
+    );
+    app.get(`${publicPath}/`, (req, res, next) => {
+      if (req.path.endsWith('/')) return res.redirect(301, publicPath);
+      return next();
+    });
+    app.get(publicPath, (_req, res) => {
+      res.setHeader('X-Robots-Tag', 'noindex, follow');
+      res.type('html').sendFile(absolutePath);
+    });
+  };
+  serveGatedHtmlReport(
+    '/japan-medical-devices-white-paper-2026',
+    'conf/bionixus-japan-medical-devices-market-report-2026.html',
+  );
+  serveGatedHtmlReport(
+    '/italy-healthcare-white-paper-2026',
+    'conf/bionixus-italy-healthcare-market-report-2026.html',
+  );
+
   let vite;
   if (!isProduction) {
     // eslint-disable-next-line no-console

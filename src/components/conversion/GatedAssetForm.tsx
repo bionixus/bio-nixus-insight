@@ -10,9 +10,10 @@ type GatedAssetFormProps = {
   formId: string;
   reportName: string;
   pdfPath: string;
+  submitLabel?: string;
 };
 
-export function GatedAssetForm({ formId, reportName, pdfPath }: GatedAssetFormProps) {
+export function GatedAssetForm({ formId, reportName, pdfPath, submitLabel }: GatedAssetFormProps) {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -58,7 +59,8 @@ export function GatedAssetForm({ formId, reportName, pdfPath }: GatedAssetFormPr
     const currentPath = window.location.pathname;
     const params = new URL(currentUrl).searchParams;
 
-    data.set('_subject', `PDF sample request — ${reportName} (${company})`);
+    const isHtmlAsset = pdfPath.toLowerCase().endsWith('.html');
+    data.set('_subject', `${isHtmlAsset ? 'Report download request' : 'PDF sample request'} — ${reportName} (${company})`);
     data.set('requestType', 'Gated Asset Download');
     data.set('formVariant', formId);
     data.set('reportName', reportName);
@@ -173,7 +175,7 @@ export function GatedAssetForm({ formId, reportName, pdfPath }: GatedAssetFormPr
         disabled={submitting}
         className="w-full py-3 bg-primary text-primary-foreground rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity disabled:opacity-70 disabled:cursor-not-allowed"
       >
-        {submitting ? 'Sending…' : 'Get the sample PDF'}
+        {submitting ? 'Sending…' : submitLabel || 'Get the sample PDF'}
       </button>
     </form>
   );

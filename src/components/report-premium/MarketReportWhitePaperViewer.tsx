@@ -14,7 +14,7 @@ export function MarketReportWhitePaperViewer({
   onOpenChange,
   whitePaper,
 }: MarketReportWhitePaperViewerProps) {
-  const docUrl = whitePaper.publicPath;
+  const docUrl = whitePaper.htmlPath;
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>

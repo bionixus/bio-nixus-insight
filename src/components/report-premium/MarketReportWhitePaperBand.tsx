@@ -30,14 +30,14 @@ export function MarketReportWhitePaperBand({ whitePaper }: MarketReportWhitePape
         return;
       }
       const anchor = document.createElement('a');
-      anchor.href = whitePaper.publicPath;
+      anchor.href = whitePaper.htmlPath;
       anchor.download = `${whitePaper.reportSlug}.html`;
       anchor.rel = 'noopener';
       document.body.appendChild(anchor);
       anchor.click();
       anchor.remove();
     },
-    [whitePaper.publicPath, whitePaper.reportSlug],
+    [whitePaper.htmlPath, whitePaper.reportSlug],
   );
 
   const requestAccess = (action: 'browse' | 'download') => {

@@ -8,6 +8,7 @@ import { ReportEarlyCtaBar } from '@/components/report-conversion/ReportEarlyCta
 import { ReportSectionVisual } from '@/components/report-premium/ReportSectionVisual';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { ConversionCTA } from '@/components/conversion/ConversionCTA';
+import { getMarketReportWhitePaperForPath } from '@/data/marketReportWhitePapers';
 
 export type ReportHeroStat = {
   value: string;
@@ -46,6 +47,7 @@ export function ReportPremiumHero({
   heroImage,
 }: ReportPremiumHeroProps) {
   const heroRef = useScrollReveal<HTMLElement>({ stagger: 90, threshold: 0.08 });
+  const whitePaper = getMarketReportWhitePaperForPath(config.canonicalPath);
 
   const visualAlt = `${countryName ?? therapyName ?? 'Healthcare'} market research intelligence dashboard with growth analytics for ${title}`;
 
@@ -99,8 +101,11 @@ export function ReportPremiumHero({
             <div className="mt-6 sr sr-up">
               <ConversionCTA
                 variant="gated-asset"
-                reportName="GCC Healthcare Market Report 2026"
-                pdfPath="/downloads/gcc-pharma-medtech-databook-2026-sample.pdf"
+                reportName={whitePaper?.title ?? 'GCC Healthcare Market Report 2026'}
+                pdfPath={whitePaper?.htmlPath ?? '/downloads/gcc-pharma-medtech-databook-2026-sample.pdf'}
+                headline={whitePaper ? `Download the ${whitePaper.title}` : undefined}
+                buttonLabel={whitePaper ? 'Get the full report' : undefined}
+                submitLabel={whitePaper ? 'Get the full report' : undefined}
                 ctaId={`${config.canonicalPath.replace(/[^a-z0-9]+/gi, '_')}_hero_gated`}
                 ctaLocation="report_hero"
               />

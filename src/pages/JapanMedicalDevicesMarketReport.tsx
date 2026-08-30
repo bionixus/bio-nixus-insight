@@ -16,12 +16,14 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
+import { MarketReportWhitePaperBand } from '@/components/report-premium/MarketReportWhitePaperBand';
+import { getMarketReportWhitePaper } from '@/data/marketReportWhitePapers';
 import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
 
 const PAGE_TITLE = 'Japan Medical Devices Market 2026: $41B Size & PMDA Forecast';
 const PAGE_DESCRIPTION =
   'Japan medical devices market $41B in 2026 → ~$64B by 2032. PMDA Class I–IV (todokede/ninsho/shonin), NHI listing & hospital procurement — BioNixus market report.';
-const PAGE_MODIFIED = '2026-08-19';
+const PAGE_MODIFIED = '2026-08-30';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -77,6 +79,7 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
 ], 'japan');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/japan-medical-devices-market-report');
+const REPORT_WHITE_PAPER = getMarketReportWhitePaper('japan-medical-devices-market-report');
 const FAQ_SECTION_ID = 'japan-medical-devices-faq';
 
 const jsonLd = [
@@ -544,6 +547,7 @@ const JapanMedicalDevicesMarketReport = () => (
           className="bg-muted/30"
         />
       </ReportContentWithAside>
+      {REPORT_WHITE_PAPER ? <MarketReportWhitePaperBand whitePaper={REPORT_WHITE_PAPER} /> : null}
       <ReportConsultationBand config={REPORT_CONVERSION} />
     </main>
     <Footer />

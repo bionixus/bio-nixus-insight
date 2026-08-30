@@ -489,6 +489,14 @@
       "destination": "/conf/uae-biosimilars-market-report-2026.html"
     },
     {
+      "source": "/japan-medical-devices-white-paper-2026",
+      "destination": "/conf/bionixus-japan-medical-devices-market-report-2026.html"
+    },
+    {
+      "source": "/italy-healthcare-white-paper-2026",
+      "destination": "/conf/bionixus-italy-healthcare-market-report-2026.html"
+    },
+    {
       "source": "/iqvia-alternative",
       "destination": "/conf/iqvia-alternative.html"
     },

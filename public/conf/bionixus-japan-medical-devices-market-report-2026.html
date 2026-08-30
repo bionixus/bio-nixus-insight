@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BioNixus — Japan Medical Devices Market Report 2026 · Premium Edition</title>
+<meta name="description" content="Japan medical devices market ~USD 41B in 2026: PMDA Class I–IV, NHI functional pricing, hospital procurement, and official shipment statistics — BioNixus premium report.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://www.bionixus.com/japan-medical-devices-market-report">
+<link rel="icon" href="/icons/bnx-favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/icons/bnx-icon.svg">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#001F3F; --navy2:#002D5A; --navy3:#00152B; --blue:#005B9A; --blue2:#1A78BE;
+  --pale:#EBF3FA; --pale2:#F4F7FB; --gold:#B07D2A; --goldlt:#D4A84B; --goldhi:#F0C869; --golddp:#8A6A25;
+  --goldpale:#FBF5E6; --text:#253048; --muted:#566175; --light:#8898AA;
+  --rule:#D4DAE4; --rulelt:#ECF0F5; --bg:#F6F8FB; --white:#FFFFFF;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{background:#D8DCE4;font-family:'Barlow',sans-serif;color:var(--text);-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+
+.page{
+  width:210mm;height:297mm;margin:0 auto;background:#fff;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;box-shadow:0 1px 0 rgba(0,0,0,.08);
+  page-break-after:always;page-break-inside:avoid;break-after:page;break-inside:avoid;
+}
+.page:last-child{page-break-after:auto;}
+
+.rh{background:var(--navy);padding:8px 52px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;}
+.rh-left{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.14em;color:rgba(255,255,255,.5);display:flex;align-items:center;gap:10px;}
+.rh-right{font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,.22);}
+.rh-mono{width:20px;height:20px;flex-shrink:0;}
+.rh-rule{height:2px;background:linear-gradient(90deg,var(--gold),var(--goldlt) 50%,var(--gold));flex-shrink:0;}
+.rf{background:var(--navy);padding:8px 52px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;margin-top:auto;}
+.rf-left{font-size:10px;color:rgba(255,255,255,.22);}
+.rf-right{font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,.2);}
+.rf-rule{height:2px;background:linear-gradient(90deg,var(--gold),var(--goldlt) 50%,var(--gold));flex-shrink:0;}
+.pb{padding:16px 48px 12px;flex:1;display:flex;flex-direction:column;overflow:hidden;gap:8px;}
+.grow{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;}
+
+.slbl{display:flex;align-items:center;gap:14px;margin-bottom:0;flex-shrink:0;}
+.snum{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--blue);letter-spacing:.1em;min-width:26px;}
+.sbrow{font-size:8px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
+.stitle{font-family:'EB Garamond',serif;font-size:22px;font-weight:500;color:var(--navy);line-height:1.15;}
+.stitle em{color:var(--gold);font-style:italic;font-weight:500;}
+.srule{flex:1;height:1px;background:linear-gradient(90deg,var(--rule),transparent);}
+
+.lede{font-family:'EB Garamond',serif;font-size:15px;font-style:italic;color:var(--navy);line-height:1.5;font-weight:400;max-width:72ch;letter-spacing:-.005em;margin-bottom:0;}
+.lede em{font-style:normal;color:var(--gold);font-weight:600;}
+.prose{font-size:11.5px;color:var(--text);line-height:1.62;}
+.prose p+p{margin-top:8px;}
+.prose strong{color:var(--navy);font-weight:600;}
+.cap{font-size:9px;color:var(--muted);line-height:1.45;margin-top:0;font-style:italic;}
+.cap a{color:var(--blue);text-decoration:none;}
+
+/* COVER */
+.cover-bg{background:radial-gradient(ellipse at 30% 20%,#002D5A 0%,var(--navy) 55%,#00152B 100%);position:absolute;inset:0;}
+.cover-dot{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.035) 1px,transparent 1px);background-size:26px 26px;}
+.cover-tri1{position:absolute;top:0;right:0;width:0;height:0;border-style:solid;border-width:0 340px 340px 0;border-color:transparent var(--navy2) transparent transparent;}
+.cover-tri2{position:absolute;top:0;right:0;width:0;height:0;border-style:solid;border-width:0 180px 180px 0;border-color:transparent rgba(0,91,154,.22) transparent transparent;}
+.cover-sheen{position:absolute;inset:0;background:linear-gradient(135deg,transparent 55%,rgba(212,168,75,.045) 75%,transparent 100%);pointer-events:none;z-index:2;}
+.cover-gold{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--goldlt) 50%,var(--gold));}
+.cover-gold-top{position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(212,168,75,.5) 50%,transparent);z-index:4;}
+.cover-corner{position:absolute;width:36px;height:36px;z-index:6;pointer-events:none;}
+.cover-corner.tl{top:24px;left:24px;border-top:1px solid rgba(212,168,75,.55);border-left:1px solid rgba(212,168,75,.55);}
+.cover-corner.tr{top:24px;right:24px;border-top:1px solid rgba(212,168,75,.55);border-right:1px solid rgba(212,168,75,.55);}
+.cover-corner.bl{bottom:46px;left:24px;border-bottom:1px solid rgba(212,168,75,.55);border-left:1px solid rgba(212,168,75,.55);}
+.cover-corner.br{bottom:46px;right:24px;border-bottom:1px solid rgba(212,168,75,.55);border-right:1px solid rgba(212,168,75,.55);}
+.cover-spine{position:absolute;left:16px;top:50%;transform:translate(-50%,-50%) rotate(-90deg);transform-origin:center;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.42em;color:rgba(212,168,75,.4);text-transform:uppercase;white-space:nowrap;z-index:5;}
+.cover-spine-r{position:absolute;right:16px;top:50%;transform:translate(50%,-50%) rotate(90deg);transform-origin:center;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.42em;color:rgba(212,168,75,.28);text-transform:uppercase;white-space:nowrap;z-index:5;}
+.cover-seal{position:absolute;bottom:64px;right:40px;width:200px;height:200px;z-index:5;filter:drop-shadow(0 18px 36px rgba(0,0,0,.4));}
+.cover-seal svg{width:100%;height:100%;display:block;}
+.cover-wm{position:absolute;right:44px;top:42%;transform:translateY(-40%);width:240px;z-index:3;opacity:.9;pointer-events:none;filter:drop-shadow(0 24px 48px rgba(0,0,0,.35));}
+.cover-wm svg{width:100%;height:auto;display:block;}
+.cover-top{position:absolute;top:0;left:0;right:0;padding:44px 62px 38px;display:flex;justify-content:space-between;align-items:flex-start;z-index:5;}
+.clogorow{display:flex;align-items:center;gap:14px;}
+.clogosvg{width:48px;height:48px;flex-shrink:0;}
+.clogoname{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;letter-spacing:.2em;color:#fff;display:inline-block;padding-bottom:3px;border-bottom:1px solid rgba(212,168,75,.45);}
+.clogosub{font-size:8px;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:5px;font-weight:300;}
+.ctop-r{text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:8px;}
+.cref{font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:rgba(255,255,255,.32);letter-spacing:.08em;line-height:1.6;}
+.cbadge{display:inline-flex;align-items:center;gap:7px;font-size:8px;letter-spacing:.26em;text-transform:uppercase;font-weight:600;color:var(--goldlt);border:1px solid rgba(212,168,75,.42);padding:4px 12px;background:rgba(212,168,75,.04);}
+.cbadge::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--goldlt);box-shadow:0 0 6px rgba(212,168,75,.6);}
+.cover-body{position:absolute;top:50%;left:0;right:0;transform:translateY(-54%);padding:0 62px;z-index:5;max-width:74%;}
+.cover-ornament{display:flex;align-items:center;gap:10px;margin:10px 0 18px;}
+.cover-ornament .or-line{flex:1;height:1px;background:linear-gradient(90deg,rgba(212,168,75,.55),transparent);max-width:120px;}
+.cover-ornament .or-diamond{width:5px;height:5px;background:var(--goldlt);transform:rotate(45deg);flex-shrink:0;}
+.cover-ornament .or-txt{font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:rgba(212,168,75,.75);font-weight:500;}
+.ckicker{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
+.ckline{width:34px;height:1px;background:var(--gold);}
+.cktext{font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--goldlt);font-weight:500;}
+.ctitle{font-family:'EB Garamond',serif;font-size:52px;font-weight:500;color:#fff;line-height:1.02;margin-bottom:12px;letter-spacing:-.01em;text-shadow:0 4px 30px rgba(0,0,0,.35);}
+.ctitle em{color:rgba(212,168,75,.85);font-style:italic;font-weight:400;}
+.csub{font-size:13px;font-weight:300;color:rgba(255,255,255,.5);margin-bottom:22px;letter-spacing:.03em;max-width:58ch;line-height:1.55;}
+.csub::before{content:'';display:inline-block;width:18px;height:1px;background:rgba(212,168,75,.5);vertical-align:middle;margin-right:10px;margin-bottom:3px;}
+.cover-mkts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px;}
+.cmkt{display:flex;align-items:baseline;gap:8px;padding:7px 11px;border:1px solid rgba(212,168,75,.22);background:rgba(0,8,22,.28);}
+.cmkt .iso{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--goldlt);}
+.cmkt .nm{font-size:10.5px;color:rgba(255,255,255,.7);}
+.cmkt.live{border-color:rgba(212,168,75,.45);background:rgba(212,168,75,.08);}
+.cdrow{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(212,168,75,.18);border-bottom:1px solid rgba(212,168,75,.18);background:linear-gradient(180deg,rgba(212,168,75,.025),transparent);max-width:640px;margin-top:22px;}
+.cdcell{padding:12px 14px;border-right:1px solid rgba(255,255,255,.06);position:relative;}
+.cdcell:last-child{border-right:none;}
+.cdcell::before{content:'';position:absolute;top:0;left:0;width:14px;height:1px;background:var(--goldlt);opacity:.5;}
+.cdlbl{font-size:7.5px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:5px;font-weight:500;}
+.cdval{font-size:12px;font-weight:500;color:rgba(255,255,255,.85);line-height:1.3;}
+.cdval.g{color:var(--goldlt);font-weight:600;}
+.cover-foot{position:absolute;bottom:0;left:0;right:0;padding:18px 62px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;z-index:5;background:linear-gradient(180deg,transparent,rgba(0,0,0,.15));}
+.cf-l{font-size:10px;color:rgba(255,255,255,.32);}
+.cf-l strong{color:rgba(255,255,255,.7);font-weight:500;}
+.cf-r{font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,.32);}
+
+.toc-list{list-style:none;padding:0;margin:0;border-top:1.5px solid var(--navy);}
+.toc-list li{display:grid;grid-template-columns:42px 1fr auto;gap:14px;align-items:baseline;padding:7px 0;border-bottom:1px solid var(--rulelt);}
+.toc-list .n{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--gold);letter-spacing:.1em;font-weight:500;}
+.toc-list .t{font-family:'EB Garamond',serif;font-weight:500;font-size:14.5px;letter-spacing:-.005em;color:var(--navy);line-height:1.25;}
+.toc-list .t small{display:block;font-family:'Barlow',sans-serif;font-weight:400;font-size:10px;color:var(--muted);margin-top:2px;font-style:normal;}
+.toc-list .p{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--light);letter-spacing:.08em;}
+
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:0;flex-shrink:0;}
+.stats-cell{background:#fff;padding:10px 12px;position:relative;}
+.stats-cell::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--navy);}
+.stats-cell:nth-child(2)::before{background:var(--blue);}
+.stats-cell:nth-child(3)::before{background:#3A6D9C;}
+.stats-cell:nth-child(4)::before{background:var(--gold);}
+.stats-num{font-family:'EB Garamond',serif;font-size:28px;font-weight:500;color:var(--navy);line-height:1;letter-spacing:-.02em;}
+.stats-lbl{font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:6px;font-weight:600;line-height:1.35;}
+
+.pquote{background:var(--navy);color:#fff;padding:12px 16px;margin-top:0;border-left:3px solid var(--goldlt);display:flex;gap:14px;align-items:flex-start;flex-shrink:0;}
+.pquote .qmk{font-family:'EB Garamond',serif;font-size:42px;line-height:.8;color:var(--goldlt);font-style:italic;flex-shrink:0;}
+.pquote .qtx{font-family:'EB Garamond',serif;font-size:13px;font-style:italic;color:rgba(255,255,255,.85);line-height:1.5;}
+.pquote .qat{display:block;font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--goldlt);margin-top:8px;font-style:normal;font-weight:500;}
+
+.tbl{width:100%;border-collapse:collapse;font-size:10.5px;margin-top:0;}
+.tbl thead th{background:linear-gradient(180deg,#003058 0%,var(--navy) 100%);color:#fff;padding:8px 10px;text-align:left;font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;}
+.tbl thead th.num,.tbl tbody td.num{text-align:right;font-family:'IBM Plex Mono',monospace;white-space:nowrap;}
+.tbl tbody tr{border-bottom:1px solid var(--rulelt);}
+.tbl tbody tr:nth-child(even){background:var(--pale2);}
+.tbl tbody td{padding:7px 10px;color:var(--muted);vertical-align:top;line-height:1.4;}
+.tbl tbody td:first-child{color:var(--navy);font-weight:600;font-family:'EB Garamond',serif;font-size:12px;}
+
+.comp-bars{display:flex;flex-direction:column;gap:8px;margin-top:8px;flex:1;justify-content:space-evenly;}
+.comp-row{display:grid;grid-template-columns:118px 1fr 58px;gap:8px;align-items:center;}
+.comp-row .cl{font-size:10px;color:var(--text);font-weight:500;}
+.comp-row .ct{height:8px;background:var(--rulelt);overflow:hidden;}
+.comp-row .cf{height:100%;background:var(--navy);}
+.comp-row .cf.b{background:var(--blue);}
+.comp-row .cf.g{background:var(--gold);}
+.comp-row .cf.s{background:#3A6D9C;}
+.comp-row .cv{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;color:var(--navy);text-align:right;}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:12px;flex:1;min-height:0;}
+.split.fixed{flex:none;}
+.card{border:1px solid var(--rule);background:#fff;padding:12px 14px;position:relative;height:100%;display:flex;flex-direction:column;}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--navy);}
+.card.g::before{background:linear-gradient(90deg,var(--gold),var(--goldlt),var(--gold));}
+.card.b::before{background:var(--blue);}
+.card h4{font-family:'EB Garamond',serif;font-size:14px;font-weight:500;color:var(--navy);margin-bottom:4px;}
+.card h4 em{font-style:italic;color:var(--gold);}
+.card p{font-size:10.5px;color:var(--muted);line-height:1.5;}
+.card-k{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:4px;}
+
+.phases{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--rule);margin-top:0;}
+.phase{padding:10px 11px;border-right:1px solid var(--rule);position:relative;}
+.phase:last-child{border-right:none;}
+.phase::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--navy);}
+.phase.p2::before{background:var(--blue);}
+.phase.p3::before{background:#3A6D9C;}
+.phase.p4::before{background:var(--gold);}
+.phase .num{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.14em;color:var(--muted);margin-bottom:4px;}
+.phase h4{font-family:'EB Garamond',serif;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:5px;line-height:1.2;}
+.phase p{font-size:10px;line-height:1.45;color:var(--muted);}
+
+.force-row{display:grid;grid-template-columns:36px 1fr;gap:10px;padding:8px 0;border-bottom:1px solid var(--rulelt);align-items:center;}
+.force-row:last-child{border-bottom:none;}
+.force-stack{flex:1;display:flex;flex-direction:column;min-height:0;}
+.force-stack .force-row{flex:1;}
+.force-num{font-family:'EB Garamond',serif;font-size:22px;font-weight:500;color:var(--gold);line-height:1;}
+.force-body h4{font-family:'EB Garamond',serif;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:2px;}
+.force-body p{font-size:10.5px;line-height:1.5;color:var(--muted);}
+
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--rule);margin-top:0;flex:1;}
+.why-cell{padding:10px 12px;border-bottom:1px solid var(--rule);border-right:1px solid var(--rule);background:#fff;}
+.why-cell:nth-child(2n){border-right:none;}
+.why-cell:nth-last-child(-n+2){border-bottom:none;}
+.why-cell .n{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1.2px;color:var(--gold);font-weight:500;margin-bottom:2px;}
+.why-cell h4{font-family:'EB Garamond',serif;font-size:13.5px;font-weight:600;color:var(--navy);margin-bottom:3px;line-height:1.2;}
+.why-cell p{font-size:10.5px;line-height:1.45;color:var(--muted);}
+
+.fit-band{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--rule);margin-top:0;}
+.fit-cell{padding:9px 10px;border-right:1px solid var(--rule);position:relative;}
+.fit-cell:last-child{border-right:none;}
+.fit-cell::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--navy);}
+.fit-cell.g::before{background:var(--gold);}
+.fit-cell.b::before{background:var(--blue);}
+.fit-cell.s::before{background:#3A6D9C;}
+.fit-cell .k{font-family:'Barlow Condensed',sans-serif;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:3px;}
+.fit-cell .v{font-family:'EB Garamond',serif;font-size:13px;font-weight:600;color:var(--navy);line-height:1.3;}
+
+.badge-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:8px;}
+.badge{font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.1em;color:var(--navy);border:1px solid var(--rule);padding:4px 8px;background:#fff;text-transform:uppercase;font-weight:600;}
+.badge.g{color:var(--gold);border-color:rgba(176,125,42,.45);background:var(--goldpale);}
+
+.bundle{border-left:4px solid var(--gold);background:linear-gradient(90deg,rgba(212,168,75,.1) 0%,var(--pale2) 55%);padding:10px 14px;margin-top:0;}
+.bundle h4{font-family:'EB Garamond',serif;font-size:14px;color:var(--navy);margin-bottom:3px;}
+.bundle p{font-size:11px;color:var(--muted);line-height:1.5;}
+
+.refund-box{background:var(--navy);color:#fff;padding:12px 16px;margin-top:0;border-left:3px solid var(--goldlt);flex-shrink:0;}
+.refund-box .rk{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--goldlt);font-weight:600;margin-bottom:5px;}
+.refund-box p{font-size:10.5px;color:rgba(255,255,255,.82);line-height:1.5;}
+
+.closing-sign{margin-top:0;padding:16px 18px;background:linear-gradient(158deg,#000d18 0%,#001a2e 28%,#002244 55%,#063558 92%);color:#fff;border:1px solid rgba(212,168,75,.35);position:relative;}
+.closing-sign::before{content:'';position:absolute;top:0;left:8%;right:8%;height:2px;background:linear-gradient(90deg,transparent,rgba(212,168,75,.85),rgba(0,105,163,.5),transparent);}
+.closing-sign h3{font-family:'EB Garamond',serif;font-size:20px;font-weight:500;color:#fff;margin-bottom:8px;}
+.closing-sign h3 em{color:var(--goldlt);font-style:italic;font-weight:400;}
+.closing-sign > p{font-size:11.5px;line-height:1.55;color:rgba(255,255,255,.82);margin-bottom:12px;}
+.closing-contact{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+.closing-contact .label{font-family:'Barlow Condensed',sans-serif;font-size:8px;letter-spacing:1.6px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:3px;font-weight:600;}
+.closing-contact .value{font-family:'EB Garamond',serif;font-size:12px;font-weight:500;color:#fff;line-height:1.3;}
+.closing-contact .value.mono{font-family:'IBM Plex Mono',monospace;font-size:9.5px;font-weight:400;}
+
+.creds-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--rule);margin:0;}
+.cred-stat{padding:10px 12px;border-right:1px solid var(--rule);background:#fff;}
+.cred-stat:last-child{border-right:none;}
+.cred-stat .num{font-family:'EB Garamond',serif;font-size:26px;font-weight:500;color:var(--navy);line-height:1;letter-spacing:-.02em;}
+.cred-stat .num em{font-style:italic;color:var(--gold);font-size:16px;}
+.cred-stat .label{font-family:'Barlow Condensed',sans-serif;font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:4px;}
+
+.src-list{list-style:none;margin-top:0;flex:1;display:flex;flex-direction:column;}
+.src-list li{padding:6px 0;border-bottom:1px solid var(--rulelt);font-size:10px;color:var(--muted);line-height:1.45;flex:1;display:flex;align-items:center;}
+.src-list strong{color:var(--navy);}
+.src-list a{color:var(--blue);text-decoration:none;}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;flex:1;min-height:0;}
+.cap-list{list-style:none;border-top:1px solid var(--rule);}
+.cap-list li{padding:8px 0;border-bottom:1px solid var(--rulelt);display:grid;grid-template-columns:26px 1fr;gap:8px;}
+.cap-num{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--gold);padding-top:2px;font-weight:600;}
+.cap-body strong{display:block;font-family:'EB Garamond',serif;font-size:12.5px;color:var(--navy);}
+.cap-body span{font-size:10px;color:var(--muted);line-height:1.45;}
+
+@media print{
+  @page{size:A4;margin:0;}
+  html,body{background:#fff;margin:0;padding:0;}
+  .page{margin:0 !important;box-shadow:none;width:210mm;height:297mm;}
+  .page:last-child{page-break-after:auto;}
+}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 · COVER -->
+<div class="page">
+  <div class="cover-bg"></div><div class="cover-dot"></div><div class="cover-tri1"></div><div class="cover-tri2"></div><div class="cover-sheen"></div>
+  <div class="cover-gold-top"></div><div class="cover-gold"></div>
+  <div class="cover-corner tl"></div><div class="cover-corner tr"></div><div class="cover-corner bl"></div><div class="cover-corner br"></div>
+  <div class="cover-spine">Japan Medical Devices Market Report · Premium Edition · BNX-JP-MD-2026-083</div>
+  <div class="cover-spine-r">BioNixus · Market Intelligence · Private</div>
+
+  <div class="cover-wm" aria-hidden="true">
+    <svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="wmGlow" cx="42%" cy="48%" r="55%"><stop offset="0%" stop-color="#D4A84B" stop-opacity=".28"/><stop offset="100%" stop-color="#D4A84B" stop-opacity="0"/></radialGradient>
+        <linearGradient id="wmStroke" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F0C869"/><stop offset="100%" stop-color="#8A6A25"/></linearGradient>
+      </defs>
+      <circle cx="132" cy="138" r="108" fill="url(#wmGlow)"/>
+      <rect x="72" y="168" width="28" height="52" fill="none" stroke="url(#wmStroke)" stroke-width="1.4" opacity=".75"/>
+      <rect x="108" y="128" width="28" height="92" fill="none" stroke="#D4A84B" stroke-width="1.6" opacity=".85"/>
+      <rect x="144" y="188" width="28" height="32" fill="none" stroke="rgba(240,200,105,.55)" stroke-width="1.2"/>
+      <rect x="180" y="118" width="28" height="102" fill="none" stroke="#F0C869" stroke-width="1.4" opacity=".7"/>
+      <text x="86" y="228" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8" fill="#F0C869" opacity=".7">P</text>
+      <text x="122" y="228" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8" fill="#F0C869" opacity=".7">I</text>
+      <text x="158" y="228" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8" fill="#F0C869" opacity=".7">E</text>
+      <text x="194" y="228" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8" fill="#F0C869" opacity=".7">S</text>
+    </svg>
+  </div>
+  <div class="cover-seal" aria-hidden="true">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="sealBg" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#D4A84B" stop-opacity=".24"/><stop offset="70%" stop-color="#D4A84B" stop-opacity=".07"/><stop offset="100%" stop-color="#D4A84B" stop-opacity="0"/></radialGradient>
+        <path id="sealArc" d="M 50 50 m -42 0 a 42 42 0 1 1 84 0 a 42 42 0 1 1 -84 0"/>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#sealBg)"/>
+      <circle cx="50" cy="50" r="47" fill="none" stroke="#D4A84B" stroke-width="1.1"/>
+      <circle cx="50" cy="50" r="36.8" fill="none" stroke="#D4A84B" stroke-width="1.1"/>
+      <circle cx="50" cy="50" r="34.3" fill="none" stroke="#D4A84B" stroke-width=".3" opacity=".4" stroke-dasharray=".7,1.1"/>
+      <circle cx="50" cy="50" r="32.8" fill="none" stroke="#D4A84B" stroke-width=".7" opacity=".75"/>
+      <text font-family="Barlow Condensed,sans-serif" font-size="4.2" fill="#F0C869" letter-spacing="2.2" font-weight="700"><textPath href="#sealArc" startOffset="0">GLOBALLY TRUSTED &#9830; UK FOUNDED &#9830; US HQ &#9830; PRIVATE INTELLIGENCE &#9830;</textPath></text>
+      <text x="50" y="49" text-anchor="middle" font-family="EB Garamond,serif" font-size="9.2" fill="#D4A84B" font-weight="600" letter-spacing="1.5">BIONIXUS</text>
+      <line x1="26" y1="55" x2="44.5" y2="55" stroke="#D4A84B" stroke-width=".45" opacity=".7"/>
+      <line x1="55.5" y1="55" x2="74" y2="55" stroke="#D4A84B" stroke-width=".45" opacity=".7"/>
+      <path d="M 50 53 l 2 2 l -2 2 l -2 -2 z" fill="#D4A84B" opacity=".85"/>
+      <text x="50" y="62" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="3.6" fill="#D4A84B" letter-spacing="1.4" font-weight="600">MARKET INTELLIGENCE</text>
+      <text x="50" y="67.5" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="2.8" fill="#D4A84B" letter-spacing=".8" opacity=".65">WY, USA</text>
+    </svg>
+  </div>
+
+  <div class="cover-top">
+    <div class="clogorow">
+      <svg class="clogosvg" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs><linearGradient id="hgC" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F07090"/><stop offset="55%" stop-color="#D41848"/><stop offset="100%" stop-color="#8B0A2A"/></linearGradient></defs>
+        <path d="M25 43C25 43 5 29 5 17c0-6.5 5.5-11.5 11-11.5 3.8 0 7.2 2.3 9 5.7 1.8-3.4 5.2-5.7 9-5.7C39.5 5.5 45 10.5 45 17c0 12-20 26-20 26z" fill="url(#hgC)"/>
+        <polyline points="9,25 14,25 17.5,19 21,30 23.5,22 25.5,27 29,25 41,25" fill="none" stroke="#C8E8F4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div>
+        <div class="clogoname">BIONIXUS</div>
+        <div class="clogosub">Intelligence For Business Growth</div>
+      </div>
+    </div>
+    <div class="ctop-r">
+      <div class="cref">BNX-JP-MD-2026-083 · Rev. 1.0<br>30 August 2026</div>
+      <div class="cbadge">Strictly Confidential</div>
+    </div>
+  </div>
+
+  <div class="cover-body">
+    <div class="cover-ornament">
+      <span class="or-diamond"></span>
+      <span class="or-txt">Japan MedTech · Official Ledger · Issued August 2026</span>
+      <span class="or-line"></span>
+    </div>
+    <div class="ckicker"><div class="ckline"></div><div class="cktext">Premium Comprehensive Report · MHLW · PMDA · NHI</div></div>
+    <div class="ctitle">Japan Medical<br>Devices <em>Market</em><br>Report 2026</div>
+    <div class="csub">The closed-year ledger of Japan’s device market — production, imports, shipments and hospital infrastructure — taken from the MHLW yearbook, not a syndicated vendor dump.</div>
+    <div class="cover-mkts">
+      <div class="cmkt live"><span class="iso">JP</span><span class="nm">Japan</span></div>
+      <div class="cmkt live"><span class="iso">MHLW</span><span class="nm">Yearbook CY2024</span></div>
+      <div class="cmkt"><span class="iso">PMDA</span><span class="nm">Class I–IV</span></div>
+      <div class="cmkt"><span class="iso">NHI</span><span class="nm">Chuikyo / FAP</span></div>
+    </div>
+    <div class="cdrow">
+      <div class="cdcell"><div class="cdlbl">Closed Year</div><div class="cdval g">CY 2024 revised</div></div>
+      <div class="cdcell"><div class="cdlbl">Domestic Shipments</div><div class="cdval">¥4.71 trillion</div></div>
+      <div class="cdcell"><div class="cdlbl">Apparent Consumption</div><div class="cdval">USD 32.8 billion</div></div>
+      <div class="cdcell"><div class="cdlbl">Hospitals</div><div class="cdval">8,060 · 1.47M beds</div></div>
+    </div>
+  </div>
+
+  <div class="cover-foot">
+    <div class="cf-l"><strong>Global HQ</strong> Sheridan, Wyoming · USA &nbsp;·&nbsp; London · Cairo · Riyadh · Dubai &nbsp;·&nbsp; admin@bionixus.com</div>
+    <div class="cf-r">Est. London · MMX · bionixus.com</div>
+  </div>
+</div>
+
+<!-- PAGE 2 · CONTENTS -->
+<div class="page">
+  <div class="rh">
+    <div class="rh-left">
+      <svg class="rh-mono" viewBox="0 0 50 50"><defs><linearGradient id="hg2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F07090"/><stop offset="55%" stop-color="#D41848"/><stop offset="100%" stop-color="#8B0A2A"/></linearGradient></defs><path d="M25 43C25 43 5 29 5 17c0-6.5 5.5-11.5 11-11.5 3.8 0 7.2 2.3 9 5.7 1.8-3.4 5.2-5.7 9-5.7C39.5 5.5 45 10.5 45 17c0 12-20 26-20 26z" fill="url(#hg2)"/><polyline points="9,25 14,25 17.5,19 21,30 23.5,22 25.5,27 29,25 41,25" fill="none" stroke="#C8E8F4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      BIONIXUS · Japan Medical Devices Market Report
+    </div>
+    <div class="rh-right">BNX-JP-MD-2026-083 · Private</div>
+  </div>
+  <div class="rh-rule"></div>
+  <div class="pb">
+    <div class="slbl"><span class="snum">00</span><div><div class="sbrow">Contents &amp; How to Read</div><div class="stitle">Official statistics, not a <em>vendor average.</em></div></div><div class="srule"></div></div>
+    <p class="lede">Headline figures in this edition are taken from the Ministry of Health, Labour and Welfare Annual Pharmaceutical Production Statistics for calendar 2024 — the April 2026 revised yearbook. Competing syndicated dollar totals are shown only in triangulation, with scope labelled. <em>— BioNixus Japan MedTech desk</em></p>
+    <div class="split fixed">
+      <ul class="toc-list">
+        <li><span class="n">01</span><span class="t">Japan at a glance<small>Population, hospitals, OECD</small></span><span class="p">03</span></li>
+        <li><span class="n">02</span><span class="t">Official market size<small>MHLW shipments vs apparent consumption</small></span><span class="p">04</span></li>
+        <li><span class="n">03</span><span class="t">Trade structure<small>Import origin · export destination</small></span><span class="p">05</span></li>
+        <li><span class="n">04</span><span class="t">Domestic shipment mix<small>What hospitals actually buy</small></span><span class="p">06</span></li>
+        <li><span class="n">05</span><span class="t">Demand architecture<small>Ageing, beds, imaging density</small></span><span class="p">07</span></li>
+      </ul>
+      <ul class="toc-list">
+        <li><span class="n">06</span><span class="t">PMDA pathway<small>Todokede · ninsho · shonin · Sakigake</small></span><span class="p">08</span></li>
+        <li><span class="n">07</span><span class="t">NHI &amp; access sequence<small>Chuikyo, FAP, MAH / DMAH</small></span><span class="p">09</span></li>
+        <li><span class="n">08</span><span class="t">Competitive landscape<small>Domestic OEMs and named US subsidiaries</small></span><span class="p">10</span></li>
+        <li><span class="n">09</span><span class="t">Growth corridors<small>Imports, SaMD, caregiving tech</small></span><span class="p">11</span></li>
+        <li><span class="n">10</span><span class="t">Sources &amp; close<small>Named public datasets · next step</small></span><span class="p">12</span></li>
+      </ul>
+    </div>
+    <div class="why-grid">
+      <div class="why-cell"><div class="n">01 · Ledger</div><h4>Yen is the official print</h4><p>MHLW publishes in yen. USD in this edition uses the CS Japan table rate of 151.46 JPY/USD. Do not mix Fortune-dollar headlines with the yearbook.</p></div>
+      <div class="why-cell"><div class="n">02 · Revision</div><h4>April 2026 is the ledger</h4><p>MHLW issued a first 2024 yearbook in December 2025 and a corrected edition on 27 April 2026. Every yen total here is the revised print.</p></div>
+      <div class="why-cell"><div class="n">03 · Trade print</div><h4>Licence-holder shipments</h4><p>Import/export are not Japan Customs. A product made in Ireland and sold by a Japanese MAH can print as a Japanese “import.”</p></div>
+      <div class="why-cell"><div class="n">04 · Time series</div><h4>2019 is a survey break</h4><p>The +28% production print in 2019 reflects a new survey from January 2019, not a one-year boom. Do not annualise it.</p></div>
+    </div>
+    <div class="pquote foot">
+      <span class="qmk">“</span>
+      <div><span class="qtx">Japan is a net importer on value. Endoscopy and IVD look like the domestic P&amp;L because that is what Japan is famous for. The hospital wallet is catheters and orthopaedics.</span><span class="qat">— How to read the shipment mix</span></div>
+    </div>
+  </div>
+  <div class="rf-rule"></div>
+  <div class="rf"><div class="rf-left">BioNixus · Market Research &amp; Consulting</div><div class="rf-right">02 / 12</div></div>
+</div>
+
+<!-- PAGE 3 · GLANCE -->
+<div class="page">
+  <div class="rh">
+    <div class="rh-left">
+      <svg class="rh-mono" viewBox="0 0 50 50"><defs><linearGradient id="hg3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F07090"/><stop offset="55%" stop-color="#D41848"/><stop offset="100%" stop-color="#8B0A2A"/></linearGradient></defs><path d="M25 43C25 43 5 29 5 17c0-6.5 5.5-11.5 11-11.5 3.8 0 7.2 2.3 9 5.7 1.8-3.4 5.2-5.7 9-5.7C39.5 5.5 45 10.5 45 17c0 12-20 26-20 26z" fill="url(#hg3)"/><polyline points="9,25 14,25 17.5,19 21,30 23.5,22 25.5,27 29,25 41,25" fill="none" stroke="#C8E8F4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      BIONIXUS · Japan Medical Devices Market Report
+    </div>
+    <div class="rh-right">BNX-JP-MD-2026-083 · Private</div>
+  </div>
+  <div class="rh-rule"></div>
+  <div class="pb">
+    <div class="slbl"><span class="snum">01</span><div><div class="sbrow">National Snapshot</div><div class="stitle">Japan at a <em>glance.</em></div></div><div class="srule"></div></div>
+    <p class="lede">A high-income, super-aged, universal-coverage hospital market. Device demand is anchored by bed density and NHI, not by population growth. Domestic manufacturing is strong in endoscopy, imaging and IVD — and structurally import-dependent in orthopaedics and catheters.</p>
+    <div class="stats-row">
+      <div class="stats-cell"><div class="stats-num">123.2M</div><div class="stats-lbl">Population · 1 Oct 2025</div></div>
+      <div class="stats-cell"><div class="stats-num">29.4%</div><div class="stats-lbl">Aged 65+ · 36.22 million</div></div>
+      <div class="stats-cell"><div class="stats-num">8,060</div><div class="stats-lbl">Hospitals · −62 vs 2023</div></div>
+      <div class="stats-cell"><div class="stats-num">12.5</div><div class="stats-lbl">Beds / 1,000 · OECD 4.2</div></div>
+    </div>
+    <div class="split">
+      <div class="card">
+        <div class="card-k">Official flow · CY2024</div>
+        <h4>Shipments, not slogans</h4>
+        <div class="comp-bars">
+          <div class="comp-row"><span class="cl">Domestic shipments</span><div class="ct"><div class="cf" style="width:100%"></div></div><span class="cv">¥4.71T</span></div>
+          <div class="comp-row"><span class="cl">Imports</span><div class="ct"><div class="cf b" style="width:73%"></div></div><span class="cv">¥3.45T</span></div>
+          <div class="comp-row"><span class="cl">Production</span><div class="ct"><div class="cf s" style="width:57%"></div></div><span class="cv">¥2.66T</span></div>
+          <div class="comp-row"><span class="cl">Exports</span><div class="ct"><div class="cf g" style="width:24%"></div></div><span class="cv">¥1.14T</span></div>
+          <div class="comp-row"><span class="cl">Apparent consumption</span><div class="ct"><div class="cf" style="width:100%;opacity:.45"></div></div><span class="cv">¥4.97T</span></div>
+        </div>
+      </div>
+      <div class="card g">
+        <div class="card-k">OECD Health at a Glance 2025</div>
+        <h4>Equipment-rich, physician-thin</h4>
+        <p style="margin-top:8px;">Health spend <strong>10.6% of GDP</strong> (OECD 9.3%). Per capita <strong>$5,790 PPP</strong>. Practising physicians <strong>2.6 / 1,000</strong> (OECD 3.9); nurses 12.2. CT/MRI/PET density <strong>184 per million</strong> (OECD 51). Life expectancy <strong>84.1 years</strong>. Mandatory prepayment covers <strong>85%</strong> of health spending. 75+ already outnumber 65–74 (17.3% vs 12.1%).</p>
+        <div class="badge-row">
+          <span class="badge g">IDF diabetes 8.1%</span>
+          <span class="badge">Occupancy 77.0%</span>
+          <span class="badge">ALOS 25.6 days</span>
+        </div>
+      </div>
+    </div>
+    <p class="cap">Population: Statistics Bureau / Cabinet Office 2026 Ageing White Paper (1 Oct 2025). Hospitals and beds: MHLW 2024 Medical Facility Survey (26 Sep 2025) — 8,060 hospitals, 1,469,845 beds, 105,207 clinics. OECD country note 2025.</p>
+  </div>
+  <div class="rf-rule"></div>
+  <div class="rf"><div class="rf-left">BioNixus · Market Research &amp; Consulting</div><div class="rf-right">03 / 12</div></div>
+</div>
+
+<!-- PAGE 4 · SIZE -->
+<div class="page">
+  <div class="rh">
+    <div class="rh-left">
+      <svg class="rh-mono" viewBox="0 0 50 50"><defs><linearGradient id="hg4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F07090"/><stop offset="55%" stop-color="#D41848"/><stop offset="100%" stop-color="#8B0A2A"/></linearGradient></defs><path d="M25 43C25 43 5 29 5 17c0-6.5 5.5-11.5 11-11.5 3.8 0 7.2 2.3 9 5.7 1.8-3.4 5.2-5.7 9-5.7C39.5 5.5 45 10.5 45 17c0 12-20 26-20 26z" fill="url(#hg4)"/><polyline points="9,25 14,25 17.5,19 21,30 23.5,22 25.5,27 29,25 41,25" fill="none" stroke="#C8E8F4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      BIONIXUS · Japan Medical Devices Market Report
+    </div>
+    <div class="rh-right">BNX-JP-MD-2026-083 · Private</div>
+  </div>
+  <div class="rh-rule"></div>
+  <div class="pb">
+    <div class="slbl"><span class="snum">02</span><div><div class="sbrow">Closed-Year Statistics</div><div class="stitle">Official market <em>size.</em></div></div><div class="srule"></div></div>
+    <p class="lede">MHLW published the 2024 yearbook on 24 December 2025 and issued a corrected edition on 27 April 2026. This report uses the corrected figures throughout. Two official identities describe “the market.” They are not interchangeable.</p>
+    <div class="stats-row">
+      <div class="stats-cell"><div class="stats-num">¥4.708T</div><div class="stats-lbl">Domestic shipments 2024</div></div>
+      <div class="stats-cell"><div class="stats-num">¥4.974T</div><div class="stats-lbl">Apparent consumption P+I−E</div></div>
+      <div class="stats-cell"><div class="stats-num">$34.2B</div><div class="stats-lbl">CS Japan 2025 estimate</div></div>
+      <div class="stats-cell"><div class="stats-num">4.4%</div><div class="stats-lbl">Fitch CAGR 2024–29</div></div>
+    </div>
+    <table class="tbl">
+      <thead><tr><th>Measure</th><th class="num">2023 (CY)</th><th class="num">2024 revised</th><th class="num">YoY</th><th class="num">USD 2024</th></tr></thead>
+      <tbody>
+        <tr><td>Domestic production</td><td class="num">¥2,674.8B</td><td class="num">¥2,664.2B</td><td class="num">−0.4%</td><td class="num">$17.6B</td></tr>
+        <tr><td>Imports (final-product)</td><td class="num">¥3,321.7B</td><td class="num">¥3,454.2B</td><td class="num">+4.0%</td><td class="num">$22.8B</td></tr>
+        <tr><td>Exports (direct overseas shipment)</td><td class="num">¥1,125.5B</td><td class="num">¥1,144.5B</td><td class="num">+1.7%</td><td class="num">$7.6B</td></tr>
+        <tr><td>Domestic shipments</td><td class="num">¥4,549.0B</td><td class="num">¥4,708.3B</td><td class="num">+3.7%</td><td class="num">$31.1B</td></tr>
+        <tr><td>Apparent consumption (P+I−E)</td><td class="num">¥4,871.0B</td><td class="num">¥4,973.8B</td><td class="num">+2.1%</td><td class="num">$32.8B</td></tr>
+      </tbody>
+    </table>
+    <div class="prose" >
+      <p><strong>Domestic shipments</strong> (国内出荷金額) are devices shipped for use in Japan: ¥4,708.3 billion in 2024, up 3.7%. <strong>Apparent consumption</strong> — production plus imports minus exports, the identity used by CS Japan — is ¥4,973.8 billion, or about USD 32.8 billion at 151.46 yen per dollar. The USD 1.7 billion gap is definition, not an error. Imports are ~69% of apparent consumption. Japan is a net importer on value.</p>
+    </div>
+    <div class="split">
+      <div class="card">
+        <div class="card-k">Identity A · 国内出荷</div>
+        <h4>Domestic shipments</h4>
+        <p>Devices shipped for use inside Japan. The commercial planning number for hospital demand. <strong>¥4,708.3B · +3.7% · $31.1B</strong>.</p>
+      </div>
+      <div class="card g">
+        <div class="card-k">Identity B · P+I−E</div>
+        <h4>Apparent consumption</h4>
+        <p>Production plus imports minus exports — the CS Japan identity. <strong>¥4,973.8B · +2.1% · $32.8B</strong>. The USD 1.7B gap is definition.</p>
+      </div>
+    </div>
+    <div class="bundle" >
+      <h4>2026 planning figure — labelled as a carry-forward</h4>
+      <p>CS Japan estimates 2025 at <strong>USD 34.24 billion</strong>. Applying the Fitch 4.4% CAGR cited in the same guide gives an illustrative 2026 point of about <strong>USD 35.7 billion</strong>. It is not an MHLW print. It is not Fortune Business Insights’ $41 billion — see page 11.</p>
+    </div>
+    <p class="cap">MHLW Reiwa 5 announcement (25 Dec 2024) and Reiwa 6 revised yearbook (Apr 2026). USD at 151.46 JPY — U.S. Commercial Service Japan, 18 Nov 2025. MHLW cautions that import/export are manufacturing-and-marketing-licence shipments, not customs. Imports ≈ 69% of apparent consumption; ≈ 43% of production is exported.</p>
+  </div>
+  <div class="rf-rule"></div>
+  <div class="rf"><div class="rf-left">BioNixus · Market Research &amp; Consulting</div><div class="rf-right">04 / 12</div></div>
+</div>
+
+<!-- PAGE 5 · TRADE -->
+<div class="page">
+  <div class="rh">
+    <div class="rh-left">
+      <svg class="rh-mono" viewBox="0 0 50 50"><defs><linearGradient id="hg5" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F07090"/><stop offset="55%" stop-color="#D41848"/><stop offset="100%" stop-color="#8B0A2A"/></linearGradient></defs><path d="M25 43C25 43 5 29 5 17c0-6.5 5.5-11.5 11-11.5 3.8 0 7.2 2.3 9 5.7 1.8-3.4 5.2-5.7 9-5.7C39.5 5.5 45 10.5 45 17c0 12-20 26-20 26z" fill="url(#hg5)"/><polyline points="9,25 14,25 17.5,19 21,30 23.5,22 25.5,27 29,25 41,25" fill="none" stroke="#C8E8F4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      BIONIXUS · Japan Medical Devices Market Report
+    </div>
+    <div class="rh-right">BNX-JP-MD-2026-083 · Private</div>
+  </div>
+  <div class="rh-rule"></div>
+  <div class="pb">
+    <div class="slbl"><span class="snum">03</span><div><div class="sbrow">Import Dependence &amp; Export Strength</div><div class="stitle">Trade <em>structure.</em></div></div><div class="srule"></div></div>
+    <p class="lede">Japan exports what it makes well — endoscopes, blood-testing instruments, X-ray — and imports what hospitals consume at volume: orthopaedics, catheters and physical-therapy devices. The United States is both the largest export destination and, by a wide margin, the largest import origin.</p>
+    <div class="split">
+      <div class="card">
+        <div class="card-k">Import origin · ¥3,454.2B</div>
+        <h4>Who supplies Japan</h4>
+        <div class="comp-bars">
+          <div class="comp-row"><span class="cl">United States</span><div class="ct"><div class="cf" style="width:100%"></div></div><span class="cv">38.7%</span></div>
+          <div class="comp-row"><span class="cl">China</span><div class="ct"><div class="cf b" style="width:27%"></div></div><span class="cv">10.6%</span></div>
+          <div class="comp-row"><span class="cl">Ireland</span><div class="ct"><div class="cf s" style="width:22%"></div></div><span class="cv">8.7%</span></div>
+          <div class="comp-row"><span class="cl">Germany</span><div class="ct"><div class="cf g" style="width:14%"></div></div><span class="cv">5.6%</span></div>
+          <div class="comp-row"><span class="cl">Mexico</span><div class="ct"><div class="cf s" style="width:12%"></div></div><span class="cv">4.8%</span></div>
+        </div>
+      </div>
+      <div class="card g">
+        <div class="card-k">Export destination · ¥1,144.5B</div>
+        <h4>Where Japan ships</h4>
+        <div class="comp-bars">
+          <div class="comp-row"><span class="cl">United States</span><div class="ct"><div class="cf" style="width:100%"></div></div><span class="cv">14.5%</span></div>
+          <div class="comp-row"><span class="cl">China</span><div class="ct"><div class="cf b" style="width:64%"></div></div><span class="cv">9.3%</span></div>
+          <div class="comp-row"><span class="cl">Germany</span><div class="ct"><div class="cf s" style="width:54%"></div></div><span class="cv">7.9%</span></div>
+          <div class="comp-row"><span class="cl">Netherlands</span><div class="ct"><div class="cf g" style="width:42%"></div></div><span class="cv">6.1%</span></div>
+          <div class="comp-row"><span class="cl">South Korea</span><div class="ct"><div class="cf s" style="width:21%"></div></div><span class="cv">3.1%</span></div>
+        </div>
+      </div>
+    </div>
+    <table class="tbl">
+      <thead><tr><th>Top exports 2024</th><th class="num">Value</th><th class="num">Share</th><th>Top imports 2024</th><th class="num">Value</th><th class="num">Share</th></tr></thead>
+      <tbody>
+        <tr><td>Medical endoscopes (医療用鏡)</td><td class="num">¥259.3B</td><td class="num">22.7%</td><td>Orthopaedics (整形用品)</td><td class="num">¥523.7B</td><td class="num">15.2%</td></tr>
+        <tr><td>Blood-testing instruments</td><td class="num">¥182.4B</td><td class="num">15.9%</td><td>Tubes &amp; catheters</td><td class="num">¥511.6B</td><td class="num">14.8%</td></tr>
+        <tr><td>Medical X-ray systems &amp; tubes</td><td class="num">¥126.7B</td><td class="num">11.1%</td><td>Physical-therapy devices</td><td class="num">¥431.6B</td><td class="num">12.5%</td></tr>
+        <tr><td>Internal-organ substitutes</td><td class="num">¥101.4B</td><td class="num">8.9%</td><td>Vision-correction lenses</td><td class="num">¥385.1B</td><td class="num">11.1%</td></tr>
+      </tbody>
+    </table>
+    <p class="cap">MHLW Reiwa 6 yearbook, Tables 38, 40, 42, 44. Top three exports = 49.7% of export value; top three imports = 42.5%. North America is 48.4% of import value (¥1,672.4B). AMDD, cited by CS Japan, estimates U.S.-origin products including local production may reach ~60% of the Japanese device market — higher than the 38.7% import-origin print.</p>
+  </div>
+  <div class="rf-rule"></div>
+  <div class="rf"><div class="rf-left">BioNixus · Market Research &amp; Consulting</div><div class="rf-right">05 / 12</div></div>
+</div>
+
+<!-- PAGE 6 · MIX -->
+<div class="page">
+  <div class="rh">
+    <div class="rh-left">
+      <svg class="rh-mono" viewBox="0 0 50 50"><defs><linearGradient id="hg6" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F07090"/><stop offset="55%" stop-color="#D41848"/><stop offset="100%" stop-color="#8B0A2A"/></linearGradient></defs><path d="M25 43C25 43 5 29 5 17c0-6.5 5.5-11.5 11-11.5 3.8 0 7.2 2.3 9 5.7 1.8-3.4 5.2-5.7 9-5.7C39.5 5.5 45 10.5 45 17c0 12-20 26-20 26z" fill="url(#hg6)"/><polyline points="9,25 14,25 17.5,19 21,30 23.5,22 25.5,27 29,25 41,25" fill="none" stroke="#C8E8F4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      BIONIXUS · Japan Medical Devices Market Report
+    </div>
+    <div class="rh-right">BNX-JP-MD-2026-083 · Private</div>
+  </div>
+  <div class="rh-rule"></div>
+  <div class="pb">
+    <div class="slbl"><span class="snum">04</span><div><div class="sbrow">What Hospitals Actually Buy</div><div class="stitle">Domestic shipment <em>mix.</em></div></div><div class="srule"></div></div>
+    <p class="lede">Domestic shipment value — not production — is the right lens for commercial planning inside Japan. Catheters and orthopaedics dominate hospital consumption. Endoscopy and haematology look smaller on the domestic ledger because a large share of what Japan makes is exported.</p>
+    <div class="split">
+      <div class="card">
+        <div class="card-k">Share of ¥4,708.3B domestic shipments</div>
+        <h4>Hospital wallet</h4>
+        <div class="comp-bars">
+          <div class="comp-row"><span class="cl">Tubes &amp; catheters</span><div class="ct"><div class="cf" style="width:100%"></div></div><span class="cv">14.6%</span></div>
+          <div class="comp-row"><span class="cl">Orthopaedics</span><div class="ct"><div class="cf b" style="width:86%"></div></div><span class="cv">12.5%</span></div>
+          <div class="comp-row"><span class="cl">Vision lenses</span><div class="ct"><div class="cf s" style="width:67%"></div></div><span class="cv">9.8%</span></div>
+          <div class="comp-row"><span class="cl">Organ substitutes</span><div class="ct"><div class="cf g" style="width:66%"></div></div><span class="cv">9.7%</span></div>
+          <div class="comp-row"><span class="cl">Physical therapy</span><div class="ct"><div class="cf s" style="width:63%"></div></div><span class="cv">9.2%</span></div>
+          <div class="comp-row"><span class="cl">X-ray systems</span><div class="ct"><div class="cf" style="width:27%;opacity:.7"></div></div><span class="cv">3.9%</span></div>
+          <div class="comp-row"><span class="cl">Endoscopes</span><div class="ct"><div class="cf g" style="width:19%"></div></div><span class="cv">2.8%</span></div>
+        </div>
+      </div>
+      <div class="card g">
+        <div class="card-k">Share of ¥2,664.2B production</div>
+        <h4>What Japan makes</h4>
+        <div class="comp-bars">
+          <div class="comp-row"><span class="cl">Endoscopes</span><div class="ct"><div class="cf g" style="width:100%"></div></div><span class="cv">9.9%</span></div>
+          <div class="comp-row"><span class="cl">Organ substitutes</span><div class="ct"><div class="cf" style="width:99%"></div></div><span class="cv">9.8%</span></div>
+          <div class="comp-row"><span class="cl">X-ray systems</span><div class="ct"><div class="cf b" style="width:86%"></div></div><span class="cv">8.5%</span></div>
+          <div class="comp-row"><span class="cl">Blood-testing kit</span><div class="ct"><div class="cf s" style="width:86%"></div></div><span class="cv">8.5%</span></div>
+          <div class="comp-row"><span class="cl">Tubes &amp; catheters</span><div class="ct"><div class="cf" style="width:83%"></div></div><span class="cv">8.2%</span></div>
+        </div>
+        <p >Largest generic names: whole-body X-ray CT <strong>¥88.1B</strong> (3.3%); discrete clinical-chemistry analysers <strong>¥85.6B</strong> (3.2%); dental Au-Ag-Pd alloy <strong>¥79.9B</strong>.</p>
+      </div>
+    </div>
+    <div class="prose" >
+      <p>The dual structure is the commercial fact. Endoscopes are 9.9% of <strong>production</strong> and 22.7% of <strong>exports</strong>, but only 2.8% of <strong>domestic shipments</strong>. Blood-testing instruments are 8.5% of production and 15.9% of exports, but 1.3% of domestic shipments. The inverse is orthopaedics and catheters. A launch plan that treats imaging as the domestic P&amp;L will mis-size the hospital wallet.</p>
+    </div>
+    <div class="bundle">
+      <h4>Industrial concentration</h4>
+      <p>MHLW counts <strong>1,725</strong> device manufacturers in 2024. Forty-six firms with monthly production of ¥1 billion or more account for <strong>64.5%</strong> of production value. Leading prefectures: Tochigi, Shizuoka, Ibaraki, Fukushima, Saitama, Aichi, Chiba.</p>
+    </div>
+  </div>
+  <div class="rf-rule"></div>
+  <div class="rf"><div class="rf-left">BioNixus · Market Research &amp; Consulting</div><div class="rf-right">06 / 12</div></div>
+</div>
+
+<!-- PAGE 7 · DEMAND -->
+<div class="page">
+  <div class="rh">
+    <div class="rh-left">
+      <svg class="rh-mono" viewBox="0 0 50 50"><defs><linearGradient id="hg7" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F07090"/><stop offset="55%" stop-color="#D41848"/><stop offset="100%" stop-color="#8B0A2A"/></linearGradient></defs><path d="M25 43C25 43 5 29 5 17c0-6.5 5.5-11.5 11-11.5 3.8 0 7.2 2.3 9 5.7 1.8-3.4 5.2-5.7 9-5.7C39.5 5.5 45 10.5 45 17c0 12-20 26-20 26z" fill="url(#hg7)"/><polyline points="9,25 14,25 17.5,19 21,30 23.5,22 25.5,27 29,25 41,25" fill="none" stroke="#C8E8F4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      BIONIXUS · Japan Medical Devices Market Report
+    </div>
+    <div class="rh-right">BNX-JP-MD-2026-083 · Private</div>
+  </div>
+  <div class="rh-rule"></div>
+  <div class="pb">
+    <div class="slbl"><span class="snum">05</span><div><div class="sbrow">Demography &amp; Installed Base</div><div class="stitle">Demand <em>architecture.</em></div></div><div class="srule"></div></div>
+    <p class="lede">Device volume in Japan is a function of age structure, bed density and near-universal NHI coverage — not of population growth. The population is already shrinking; the 75+ cohort is still rising.</p>
+    <div class="why-grid">
+      <div class="why-cell">
+        <div class="n">01 · Population</div>
+        <h4>Super-aged, still ageing at the top</h4>
+        <p>On 1 October 2025 Japan had 123.22 million people. Those aged 65+ numbered 36.22 million (29.4%); those aged 75+ numbered 21.27 million (17.3%) and already outnumber the 65–74 group (14.95 million). The 2026 ageing white paper projects the 65+ share at 38.7% by 2070.</p>
+      </div>
+      <div class="why-cell">
+        <div class="n">02 · Hospitals</div>
+        <h4>Fewer facilities, still enormous capacity</h4>
+        <p>The 2024 MHLW facility survey counted 8,060 hospitals (−62), 1,469,845 hospital beds (−11,338), 105,207 general clinics (+313) and 66,378 dental clinics. Medical corporations hold 56.3% of hospital beds. Occupancy 77.0%; average length of stay 25.6 days; daily inpatients 1,133,196.</p>
+      </div>
+      <div class="why-cell">
+        <div class="n">03 · OECD</div>
+        <h4>The densest imaging park in the club</h4>
+        <p>12.5 hospital beds per 1,000 (OECD 4.2) and 184 CT, MRI and PET units per million (OECD 51). Practising physicians 2.6 per 1,000 (OECD 3.9). Health spend 10.6% of GDP. Life expectancy 84.1 years. 100% population coverage for a core set of services.</p>
+      </div>
+      <div class="why-cell">
+        <div class="n">04 · Labour &amp; disease</div>
+        <h4>Care technology is policy</h4>
+        <p>IDF Atlas 11th edition: adult (20–79) diabetes prevalence 8.1% in 2024. CS Japan records a projected shortfall of 570,000 caregivers by 2040. In June 2024 the government published Priority Areas for Caregiving Technology — transfer, mobility, toileting, bathing, monitoring, dementia.</p>
+      </div>
+    </div>
+    <div class="fit-band" >
+      <div class="fit-cell"><div class="k">75+ share</div><div class="v">17.3% · already &gt; 65–74</div></div>
+      <div class="fit-cell g"><div class="k">Hospital beds</div><div class="v">1,469,845 · −11,338 YoY</div></div>
+      <div class="fit-cell b"><div class="k">Imaging density</div><div class="v">184 CT/MRI/PET per million</div></div>
+      <div class="fit-cell s"><div class="k">Caregiver gap</div><div class="v">570,000 short by 2040</div></div>
+    </div>
+    <p class="cap" >Statistics Bureau; Cabinet Office 令和8年版 高齢社会白書; MHLW 医療施設調査 2024; OECD Health at a Glance 2025 Japan note; IDF Diabetes Atlas 11th edition; CS Japan medical-devices guide (18 Nov 2025).</p>
+  </div>
+  <div class="rf-rule"></div>
+  <div class="rf"><div class="rf-left">BioNixus · Market Research &amp; Consulting</div><div class="rf-right">07 / 12</div></div>
+</div>
+
+<!-- PAGE 8 · PMDA -->
+<div class="page">
+  <div class="rh">
+    <div class="rh-left">
+      <svg class="rh-mono" viewBox="0 0 50 50"><defs><linearGradient id="hg8" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F07090"/><stop offset="55%" stop-color="#D41848"/><stop offset="100%" stop-color="#8B0A2A"/></linearGradient></defs><path d="M25 43C25 43 5 29 5 17c0-6.5 5.5-11.5 11-11.5 3.8 0 7.2 2.3 9 5.7 1.8-3.4 5.2-5.7 9-5.7C39.5 5.5 45 10.5 45 17c0 12-20 26-20 26z" fill="url(#hg8)"/><polyline points="9,25 14,25 17.5,19 21,30 23.5,22 25.5,27 29,25 41,25" fill="none" stroke="#C8E8F4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      BIONIXUS · Japan Medical Devices Market Report
+    </div>
+    <div class="rh-right">BNX-JP-MD-2026-083 · Private</div>
+  </div>
+  <div class="rh-rule"></div>
+  <div class="pb">
+    <div class="slbl"><span class="snum">06</span><div><div class="sbrow">Pharmaceuticals and Medical Devices Agency</div><div class="stitle">PMDA regulatory <em>pathway.</em></div></div><div class="srule"></div></div>
+    <p class="lede">MHLW issues the marketing authorisation. PMDA reviews the dossier. Classification into Class I–IV determines whether the file is a prefectural notification, a third-party certification, or a full PMDA/MHLW approval. Getting the class wrong is the most expensive unforced error in a Japan launch.</p>
+    <div class="phases">
+      <div class="phase"><div class="num">Class I</div><h4>Todokede · 届出</h4><p>Prefectural notification. No pre-market PMDA technical review. Fastest path when the JMDN code is correctly assigned.</p></div>
+      <div class="phase p2"><div class="num">Class II</div><h4>Ninsho · 認証</h4><p>Registered Certification Body against Japan Certification Standards mapped to JMDN. Only when a JCS exists for that code.</p></div>
+      <div class="phase p3"><div class="num">Class III / IV</div><h4>Shonin · 承認</h4><p>Full PMDA review and MHLW approval. Clinical evidence for novel high-risk technologies. This is still “device lag.”</p></div>
+      <div class="phase p4"><div class="num">Unmet need</div><h4>Sakigake · 先駆け</h4><p>Japan among earliest markets. Dedicated consultation; review target on the order of six months versus twelve.</p></div>
+    </div>
+    <table class="tbl">
+      <thead><tr><th>Review class</th><th class="num">Target</th><th class="num">FY2024 actual</th><th>Volume note</th></tr></thead>
+      <tbody>
+        <tr><td>New devices — standard</td><td class="num">12 months</td><td class="num">11.7 months</td><td>Median total review, applicant clock included</td></tr>
+        <tr><td>New devices — priority</td><td class="num">9 months</td><td class="num">8.5 / 5.8 mo</td><td>Small-n; two reported series</td></tr>
+        <tr><td>Improved, with clinical data</td><td class="num">9 months</td><td class="num">PMDA data book</td><td>Inside 989 total FY2024 approvals</td></tr>
+        <tr><td>Improved, no clinical data</td><td class="num">6–7 months</td><td class="num">PMDA data book</td><td>Largest improved-device bucket</td></tr>
+        <tr><td>Generic / me-too</td><td class="num">4 months</td><td class="num">PMDA data book</td><td>Majority of annual approvals</td></tr>
+        <tr><td>All medical-device files FY2024</td><td class="num">—</td><td class="num">982 / 989</td><td>Applications / approvals</td></tr>
+      </tbody>
+    </table>
+    <div class="two-col" >
+      <ul class="cap-list">
+        <li><span class="cap-num">01</span><div class="cap-body"><strong>MAH / DMAH is the legal face</strong><span>A foreign manufacturer cannot hold the Japanese MA. Appoint a 製造販売業者 or 選任製造販売業者. They own QMS Ordinance, Japanese labelling, malfunction reporting and recall.</span></div></li>
+        <li><span class="cap-num">02</span><div class="cap-body"><strong>JMDN is a pricing decision</strong><span>The code selected at filing determines class, whether ninsho is available, and which NHI functional category the device is priced against.</span></div></li>
+      </ul>
+      <ul class="cap-list">
+        <li><span class="cap-num">03</span><div class="cap-body"><strong>DASH for SaMD 2</strong><span>MHLW, September 2023. Two-stage approval: limited initial use on test performance, then full approval on real-world evidence. PMDA FY2024–28 plan: six-month goal for priority SaMD.</span></div></li>
+        <li><span class="cap-num">04</span><div class="cap-body"><strong>Consultation is a project phase</strong><span>Engage PMDA six to nine months before filing. Lock class, JMDN, bridging studies and the todokede / ninsho / shonin route.</span></div></li>
+      </ul>
+    </div>
+    <div class="pquote foot">
+      <span class="qmk">“</span>
+      <div><span class="qtx">Getting the class wrong is the most expensive unforced error in a Japan launch. Todokede, ninsho and shonin are not interchangeable clocks.</span><span class="qat">— PMDA desk note</span></div>
+    </div>
+  </div>
+  <div class="rf-rule"></div>
+  <div class="rf"><div class="rf-left">BioNixus · Market Research &amp; Consulting</div><div class="rf-right">08 / 12</div></div>
+</div>
+
+<!-- PAGE 9 · NHI -->
+<div class="page">
+  <div class="rh">
+    <div class="rh-left">
+      <svg class="rh-mono" viewBox="0 0 50 50"><defs><linearGradient id="hg9" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F07090"/><stop offset="55%" stop-color="#D41848"/><stop offset="100%" stop-color="#8B0A2A"/></linearGradient></defs><path d="M25 43C25 43 5 29 5 17c0-6.5 5.5-11.5 11-11.5 3.8 0 7.2 2.3 9 5.7 1.8-3.4 5.2-5.7 9-5.7C39.5 5.5 45 10.5 45 17c0 12-20 26-20 26z" fill="url(#hg9)"/><polyline points="9,25 14,25 17.5,19 21,30 23.5,22 25.5,27 29,25 41,25" fill="none" stroke="#C8E8F4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      BIONIXUS · Japan Medical Devices Market Report
+    </div>
+    <div class="rh-right">BNX-JP-MD-2026-083 · Private</div>
+  </div>
+  <div class="rh-rule"></div>
+  <div class="pb">
+    <div class="slbl"><span class="snum">07</span><div><div class="sbrow">Chuikyo, FAP &amp; Hospital Conversion</div><div class="stitle">NHI reimbursement &amp; <em>access sequence.</em></div></div><div class="srule"></div></div>
+    <p class="lede">PMDA approval is not a sale. Almost all hospital procedures are reimbursed through the National Health Insurance fee schedule. Devices are priced by functional category, not by brand, and the Foreign Average Price rule compresses premiums on imported innovation.</p>
+    <div class="force-stack">
+    <div class="force-row"><div class="force-num">01</div><div class="force-body"><h4>Functional classification</h4><p>Each NHI category carries a single reimbursement price. A differentiated product coded into a generic category inherits that ceiling. JMDN selection at filing is a pricing decision.</p></div></div>
+    <div class="force-row"><div class="force-num">02</div><div class="force-body"><h4>Listing windows — C1 / C2 and A / B / C</h4><p>C1 and C2 are the premium tracks for genuine innovation. Missing the next Chuikyo window after MHLW approval can add months of approved-but-unreimbursed inventory.</p></div></div>
+    <div class="force-row"><div class="force-num">03</div><div class="force-body"><h4>Foreign Average Price (FAP) rule</h4><p>Since 2002 Japan has referenced average list prices in the US, UK, France, Germany and Australia. CS Japan (Nov 2025) notes successive revisions have been used to reduce reimbursement on innovative imported devices.</p></div></div>
+    <div class="force-row"><div class="force-num">04</div><div class="force-body"><h4>DPC / PDPS and Advanced Medical Care</h4><p>Inpatient economics sit inside a bundled daily payment. 先進医療 allows specified technologies at hospital cost while NHI evidence is collected — a bridge, not a commercial end-state.</p></div></div>
+    </div>
+    <div class="phases" >
+      <div class="phase"><div class="num">Step 01</div><h4>Consultation</h4><p>PMDA 相談 six to nine months before file. Lock class, JMDN, bridging, route.</p></div>
+      <div class="phase p2"><div class="num">Step 02</div><h4>MAH / QMS</h4><p>Appoint the in-country holder. Confirm QMS Ordinance covers the overseas site.</p></div>
+      <div class="phase p3"><div class="num">Step 03</div><h4>File the clock</h4><p>FY2024 standard new-device total review: 11.7 months vs 12-month target.</p></div>
+      <div class="phase p4"><div class="num">Step 04</div><h4>Chuikyo then PO</h4><p>Sakigake shortens review; it does not move Chuikyo or hospital conversion.</p></div>
+    </div>
+    <div class="refund-box" >
+      <div class="rk">BioNixus layer</div>
+      <p>Public and private hospital groups buy on different clocks. DPC economics, biomedical-engineering scoring and clinician preference sit between listing and purchase order. That is the layer BioNixus primary research is built for.</p>
+    </div>
+    <div class="fit-band" >
+      <div class="fit-cell"><div class="k">Legal face</div><div class="v">MAH or DMAH · QMS Ordinance</div></div>
+      <div class="fit-cell g"><div class="k">Pricing rule</div><div class="v">FAP · US UK FR DE AU</div></div>
+      <div class="fit-cell b"><div class="k">Listing tracks</div><div class="v">C1 / C2 · A / B / C</div></div>
+      <div class="fit-cell s"><div class="k">Inpatient</div><div class="v">DPC / PDPS · 先進医療</div></div>
+    </div>
+  </div>
+  <div class="rf-rule"></div>
+  <div class="rf"><div class="rf-left">BioNixus · Market Research &amp; Consulting</div><div class="rf-right">09 / 12</div></div>
+</div>
+
+<!-- PAGE 10 · PLAYERS -->
+<div class="page">
+  <div class="rh">
+    <div class="rh-left">
+      <svg class="rh-mono" viewBox="0 0 50 50"><defs><linearGradient id="hg10" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F07090"/><stop offset="55%" stop-color="#D41848"/><stop offset="100%" stop-color="#8B0A2A"/></linearGradient></defs><path d="M25 43C25 43 5 29 5 17c0-6.5 5.5-11.5 11-11.5 3.8 0 7.2 2.3 9 5.7 1.8-3.4 5.2-5.7 9-5.7C39.5 5.5 45 10.5 45 17c0 12-20 26-20 26z" fill="url(#hg10)"/><polyline points="9,25 14,25 17.5,19 21,30 23.5,22 25.5,27 29,25 41,25" fill="none" stroke="#C8E8F4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      BIONIXUS · Japan Medical Devices Market Report
+    </div>
+    <div class="rh-right">BNX-JP-MD-2026-083 · Private</div>
+  </div>
+  <div class="rh-rule"></div>
+  <div class="pb">
+    <div class="slbl"><span class="snum">08</span><div><div class="sbrow">Who Operates Here</div><div class="stitle">Competitive <em>landscape.</em></div></div><div class="srule"></div></div>
+    <p class="lede">Japan has a genuine domestic OEM base and is open to foreign manufacturers who execute MAH and NHI correctly. CS Japan names GE HealthCare, Johnson &amp; Johnson, Abbott, Edwards Lifesciences, Medtronic, Stryker, Zimmer and 3M among U.S. firms with Japanese subsidiaries. AMDD has more than 60 member companies.</p>
+    <table class="tbl">
+      <thead><tr><th>Company</th><th>Origin</th><th>Position in Japan — verified description only</th></tr></thead>
+      <tbody>
+        <tr><td>Olympus</td><td>Japan</td><td>Global GI endoscopy leader. Medical endoscopes are Japan’s largest production class and largest export class in the 2024 MHLW yearbook.</td></tr>
+        <tr><td>Terumo</td><td>Japan</td><td>Cardiovascular, vascular-intervention and blood-management manufacturer with a substantial hospital installed base.</td></tr>
+        <tr><td>Sysmex</td><td>Japan</td><td>Haematology / IVD. Blood-testing devices are the second-largest export class (¥182.4B, 15.9% of 2024 exports).</td></tr>
+        <tr><td>Nihon Kohden</td><td>Japan</td><td>Patient monitoring, defibrillators and diagnostic equipment.</td></tr>
+        <tr><td>Fujifilm / Canon Medical / Shimadzu</td><td>Japan</td><td>Imaging. Whole-body CT is the single largest generic production name (¥88.1B).</td></tr>
+        <tr><td>Medtronic</td><td>USA</td><td>Named by CS Japan as a U.S. subsidiary — CRM, diabetes, surgical, neuromodulation.</td></tr>
+        <tr><td>J&amp;J MedTech</td><td>USA</td><td>Named by CS Japan — surgery, orthopaedics and vision, sitting in Japan’s two largest import classes.</td></tr>
+        <tr><td>Abbott / Edwards</td><td>USA</td><td>Named by CS Japan — diagnostics and structural heart.</td></tr>
+        <tr><td>Stryker / Zimmer Biomet</td><td>USA</td><td>Named by CS Japan — orthopaedics, Japan’s largest import class at ¥523.7B.</td></tr>
+        <tr><td>Siemens / GE / Philips</td><td>DE / US / NL</td><td>Foreign imaging and monitoring against a dense domestic CT/MRI/PET park (OECD: 184 / million).</td></tr>
+      </tbody>
+    </table>
+    <div class="badge-row">
+      <span class="badge g">Olympus</span><span class="badge g">Terumo</span><span class="badge g">Sysmex</span>
+      <span class="badge">Medtronic</span><span class="badge">J&amp;J</span><span class="badge">Abbott</span>
+      <span class="badge">Stryker</span><span class="badge">GE HealthCare</span><span class="badge">Siemens</span>
+    </div>
+    <div class="bundle" >
+      <h4>AMDD, not a share table</h4>
+      <p>The American Medical Devices and Diagnostics Association has more than <strong>60 member companies</strong> in Japan. CS Japan, citing AMDD, estimates U.S.-origin products including local production may reach ~<strong>60%</strong> of the Japanese device market — higher than the 38.7% import-origin print, because local manufacture of U.S. designs is not an “import.”</p>
+    </div>
+    <p class="cap">Company roles are descriptive, not share-of-market claims. No OEM revenue split is published in the MHLW yearbook. Olympus “70%+ global endoscopy share” is widely repeated; it is omitted here because it was not re-verified from Olympus IR in this pass.</p>
+  </div>
+  <div class="rf-rule"></div>
+  <div class="rf"><div class="rf-left">BioNixus · Market Research &amp; Consulting</div><div class="rf-right">10 / 12</div></div>
+</div>
+
+<!-- PAGE 11 · GROWTH + TRIANGULATION -->
+<div class="page">
+  <div class="rh">
+    <div class="rh-left">
+      <svg class="rh-mono" viewBox="0 0 50 50"><defs><linearGradient id="hg11" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F07090"/><stop offset="55%" stop-color="#D41848"/><stop offset="100%" stop-color="#8B0A2A"/></linearGradient></defs><path d="M25 43C25 43 5 29 5 17c0-6.5 5.5-11.5 11-11.5 3.8 0 7.2 2.3 9 5.7 1.8-3.4 5.2-5.7 9-5.7C39.5 5.5 45 10.5 45 17c0 12-20 26-20 26z" fill="url(#hg11)"/><polyline points="9,25 14,25 17.5,19 21,30 23.5,22 25.5,27 29,25 41,25" fill="none" stroke="#C8E8F4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      BIONIXUS · Japan Medical Devices Market Report
+    </div>
+    <div class="rh-right">BNX-JP-MD-2026-083 · Private</div>
+  </div>
+  <div class="rh-rule"></div>
+  <div class="pb">
+    <div class="slbl"><span class="snum">09</span><div><div class="sbrow">Where a 2026–29 Plan Should Concentrate</div><div class="stitle">Growth corridors &amp; <em>vendor triangulation.</em></div></div><div class="srule"></div></div>
+    <div class="why-grid">
+      <div class="why-cell"><div class="n">Import-filled demand</div><h4>Orthopaedics, catheters, structural heart</h4><p>The three largest import classes — orthopaedics ¥523.7B, tubes/catheters ¥511.6B, physical-therapy ¥431.6B — are also among the largest domestic shipment classes. Addressable for well-prepared foreign OEMs if FAP and functional coding are modelled before the file.</p></div>
+      <div class="why-cell"><div class="n">SaMD</div><h4>DASH for SaMD 2 is a live pathway</h4><p>September 2023 MHLW programme and PMDA’s six-month priority-SaMD review goal. Two-stage approval is the practical mechanism. Software finally has a named track rather than a hardware-centric class.</p></div>
+      <div class="why-cell"><div class="n">Care technology</div><h4>570,000 caregivers short by 2040</h4><p>June 2024 priority-area policy is a demand map. It often sits in long-term-care insurance, not NHI hospital fees — adjacent to the device yearbook, not inside it.</p></div>
+      <div class="why-cell"><div class="n">Export platform</div><h4>Japan as manufacturing base</h4><p>43% of 2024 production value was exported (¥1.14T of ¥2.66T). Japanese OEMs entering GCC/MENA — Olympus, Terumo, Sysmex — are a separate BioNixus workstream.</p></div>
+    </div>
+    <table class="tbl">
+      <thead><tr><th>Source</th><th>Figure</th><th>What it is</th></tr></thead>
+      <tbody>
+        <tr><td>MHLW yearbook — this edition’s source of truth</td><td>¥4.71T shipments / ¥4.97T P+I−E (~$32.8B)</td><td>Census of licensed holders. CY2024 revised Apr 2026. Primary.</td></tr>
+        <tr><td>U.S. Commercial Service Japan</td><td>$32.6B (2024) · $34.2B (2025e)</td><td>Same MHLW identity, converted at 151.46.</td></tr>
+        <tr><td>Fitch Solutions, via CS Japan</td><td>4.4% CAGR 2024–2029</td><td>Growth rate only. Used for the ~$35.7B 2026 carry-forward.</td></tr>
+        <tr><td>Fortune Business Insights</td><td>$39.06B (2024) → $41.36B (2025) → $64.40B (2032)</td><td>Broader commercial scope. On some BioNixus web FAQs; not official.</td></tr>
+        <tr><td>IMARC</td><td>$34.17B (2025) → $56.80B (2034)</td><td>Closer to the official USD print. Different slope.</td></tr>
+        <tr><td>Towards Healthcare / Expert Market / MRFR</td><td>$29.8B–$49.7B for 2025/26</td><td>Different baskets. Do not average them into MHLW.</td></tr>
+      </tbody>
+    </table>
+    <div class="refund-box" >
+      <div class="rk">Working rule for this edition</div>
+      <p>Quote MHLW yen as the fact. Quote CS Japan dollars when a USD headline is required. Never present Fortune’s $41B / $64B as an official 2026 size. Do not average IMARC, Towards Healthcare, Expert Market and MRFR into the yearbook.</p>
+    </div>
+    <p class="cap">Fortune remains on some BioNixus web FAQs from an earlier edition. This premium report supersedes that headline for Japan device size.</p>
+  </div>
+  <div class="rf-rule"></div>
+  <div class="rf"><div class="rf-left">BioNixus · Market Research &amp; Consulting</div><div class="rf-right">11 / 12</div></div>
+</div>
+
+<!-- PAGE 12 · SOURCES + CLOSE -->
+<div class="page">
+  <div class="rh">
+    <div class="rh-left">
+      <svg class="rh-mono" viewBox="0 0 50 50"><defs><linearGradient id="hg12" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F07090"/><stop offset="55%" stop-color="#D41848"/><stop offset="100%" stop-color="#8B0A2A"/></linearGradient></defs><path d="M25 43C25 43 5 29 5 17c0-6.5 5.5-11.5 11-11.5 3.8 0 7.2 2.3 9 5.7 1.8-3.4 5.2-5.7 9-5.7C39.5 5.5 45 10.5 45 17c0 12-20 26-20 26z" fill="url(#hg12)"/><polyline points="9,25 14,25 17.5,19 21,30 23.5,22 25.5,27 29,25 41,25" fill="none" stroke="#C8E8F4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      BIONIXUS · Japan Medical Devices Market Report
+    </div>
+    <div class="rh-right">BNX-JP-MD-2026-083 · Private</div>
+  </div>
+  <div class="rh-rule"></div>
+  <div class="pb">
+    <div class="slbl"><span class="snum">10</span><div><div class="sbrow">Evidence &amp; Next Step</div><div class="stitle">Sources, methodology, <em>close.</em></div></div><div class="srule"></div></div>
+    <ul class="src-list">
+      <li><strong>MHLW Annual Pharmaceutical Production Statistics, Reiwa 6 (CY2024), revised April 2026</strong> — production ¥2,664.2B; imports ¥3,454.2B; exports ¥1,144.5B; domestic shipments ¥4,708.3B. <a href="https://www.mhlw.go.jp/stf/newpage_67099.html">Announcement</a> · <a href="https://www.mhlw.go.jp/toukei/list/dl/yakuji_nenpou_all.pdf">Yearbook</a></li>
+      <li><strong>MHLW Reiwa 5 (CY2023)</strong> — prior-year comparators. <a href="https://www.mhlw.go.jp/stf/newpage_47794.html">mhlw.go.jp/stf/newpage_47794.html</a></li>
+      <li><strong>U.S. Commercial Service Japan, “Japan — Medical Devices,” 18 Nov 2025</strong> — USD table, FAP, AMDD, DASH for SaMD 2, caregiver shortfall, Fitch 4.4%. <a href="https://www.trade.gov/country-commercial-guides/japan-medical-devices">trade.gov</a></li>
+      <li><strong>MHLW 2024 Medical Facility Survey, 26 Sep 2025</strong> — 8,060 hospitals; 1,469,845 beds; occupancy 77.0%; ALOS 25.6 days. <a href="https://www.mhlw.go.jp/toukei/saikin/hw/iryosd/24/">Survey hub</a></li>
+      <li><strong>Statistics Bureau / Cabinet Office 2026 Ageing White Paper</strong> — 123.22M (1 Oct 2025); 65+ 36.22M (29.4%); 75+ 21.27M (17.3%).</li>
+      <li><strong>OECD Health at a Glance 2025 — Japan</strong> — 10.6% of GDP; 12.5 beds/1,000; 2.6 physicians; 184 imaging units/million; LE 84.1. <a href="https://www.oecd.org/en/publications/health-at-a-glance-2025_15a55280-en/japan_319bfc39-en.html">OECD note</a></li>
+      <li><strong>PMDA FY2024 numerical performance data book</strong> — 982 applications, 989 approvals. <a href="https://www.pmda.go.jp/files/000281086.pdf">PMDA PDF</a></li>
+      <li><strong>IDF Diabetes Atlas, 11th edition</strong> — Japan adult 20–79 prevalence 8.1% (2024).</li>
+    </ul>
+    <div class="bundle">
+      <h4>Claims this edition declined</h4>
+      <p>Fortune-aligned $41B / $64B as official size. Olympus 70%+ global endoscopy share. Unsourced “~10.5 million diabetes patients on pharmacotherapy.” Hospital count “~8,100 / ~1.5 million beds” — replaced with the 2024 census.</p>
+    </div>
+    <div class="creds-stats" aria-label="BioNixus track record">
+      <div class="cred-stat"><div class="num">127<em>+</em></div><div class="label">Projects Delivered</div></div>
+      <div class="cred-stat"><div class="num">48</div><div class="label">Clients Served</div></div>
+      <div class="cred-stat"><div class="num">38</div><div class="label">Countries Covered</div></div>
+      <div class="cred-stat"><div class="num">15<em>yr</em></div><div class="label">Sector Experience</div></div>
+    </div>
+    <div class="closing-sign">
+      <h3>Thank you — we look forward to <em>scoping the Japan field.</em></h3>
+      <p>Therapy SKU shares, hospital-level consumption, Chuikyo calendars and KOL maps remain in commissioned BioNixus primary research. Minimum engagement USD 20,000. Typical proposal turnaround: 48 hours.</p>
+      <div class="closing-contact">
+        <div><div class="label">Research Director</div><div class="value">Mr. Mohammad Alsaadany</div></div>
+        <div><div class="label">Email</div><div class="value mono">admin@bionixus.com</div></div>
+        <div><div class="label">Phone</div><div class="value mono">+44 7727 666682</div></div>
+        <div><div class="label">Firm</div><div class="value">BioNixus · USA Global HQ</div></div>
+      </div>
+    </div>
+    <p class="cap" >Confidential premium edition — for recipient use only. Yen totals from MHLW are official statistics; USD conversions and 2026 planning carry-forwards are labelled as such. Not legal, medical, pricing or investment advice. Cairo · Riyadh · Dubai | London · Sheridan (USA) | www.bionixus.com</p>
+  </div>
+  <div class="rf-rule"></div>
+  <div class="rf"><div class="rf-left">BioNixus · Market Research &amp; Consulting</div><div class="rf-right">12 / 12</div></div>
+</div>
+
+</body>
+</html>
