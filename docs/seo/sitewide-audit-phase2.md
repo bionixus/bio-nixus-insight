@@ -1,45 +1,44 @@
 # Sitewide Audit Phase 2
 
-Generated: 2026-08-29T04:02:26.747Z
-Base URL: https://www.bionixus.com
+Generated: 2026-08-30T04:25:05.188Z
+Base URL: http://127.0.0.1:5173
 
 ## Summary
 
-- Total URLs: 1234
-- PASS: 1201
-- MINOR: 25
-- MAJOR: 8
+- Total URLs: 1236
+- PASS: 1206
+- MINOR: 27
+- MAJOR: 3
 
 ## Top Issue Patterns
 
+- Long meta description: 11
 - Short title: 10
-- Missing H1: 8
-- Long meta description: 7
-- Short meta description: 5
-- Long title: 4
-- Low internal links (1): 2
+- Long title: 6
+- Fetch error: fetch failed: 3
+- Short meta description: 2
 
 ## Prefix Breakdown
 
 | Prefix | Total | PASS | MINOR | MAJOR |
 |---|---:|---:|---:|---:|
 | `/insights` | 249 | 245 | 4 | 0 |
-| `/market-reports` | 195 | 195 | 0 | 0 |
-| `/blog/:slug` | 127 | 127 | 0 | 0 |
+| `/market-reports` | 195 | 194 | 1 | 0 |
+| `/blog/:slug` | 126 | 126 | 0 | 0 |
 | `/healthcare-market-research` | 63 | 63 | 0 | 0 |
-| `/ar` | 29 | 28 | 1 | 0 |
-| `/fr` | 16 | 14 | 0 | 2 |
-| `/de` | 14 | 9 | 1 | 4 |
+| `/ar` | 32 | 31 | 1 | 0 |
+| `/fr` | 16 | 16 | 0 | 0 |
+| `/de` | 14 | 13 | 1 | 0 |
 | `/pt` | 14 | 13 | 1 | 0 |
 | `/es` | 13 | 12 | 1 | 0 |
 | `/market-research` | 13 | 13 | 0 | 0 |
-| `/zh` | 12 | 6 | 6 | 0 |
+| `/zh` | 12 | 9 | 3 | 0 |
 | `/ru` | 9 | 8 | 1 | 0 |
 | `/services` | 7 | 7 | 0 | 0 |
 | `/bionixus-industries` | 5 | 5 | 0 | 0 |
 | `/case-studies` | 5 | 5 | 0 | 0 |
-| `/news` | 3 | 3 | 0 | 0 |
-| `/videos` | 3 | 1 | 0 | 2 |
+| `/news` | 3 | 2 | 0 | 1 |
+| `/videos` | 3 | 2 | 0 | 1 |
 | `/` | 1 | 0 | 1 | 0 |
 | `/about` | 1 | 0 | 1 | 0 |
 | `/australia-healthcare-market-report` | 1 | 1 | 0 | 0 |
@@ -70,8 +69,8 @@ Base URL: https://www.bionixus.com
 | `/bionixus-middle-east-africa` | 1 | 0 | 1 | 0 |
 | `/bionixus-saudi-arabia-oncology-insights` | 1 | 1 | 0 | 0 |
 | `/bionixus-uae-oncology-insights` | 1 | 1 | 0 | 0 |
-| `/bionixus-vs-iqvia-mena` | 1 | 1 | 0 | 0 |
-| `/biosimilar-market-entry-saudi-arabia` | 1 | 1 | 0 | 0 |
+| `/bionixus-vs-iqvia-mena` | 1 | 0 | 1 | 0 |
+| `/biosimilar-market-entry-saudi-arabia` | 1 | 0 | 1 | 0 |
 | `/blog` | 1 | 1 | 0 | 0 |
 | `/brand-tracking-pharma-gcc` | 1 | 1 | 0 | 0 |
 | `/brazil-healthcare-market-report` | 1 | 0 | 1 | 0 |
@@ -119,7 +118,7 @@ Base URL: https://www.bionixus.com
 | `/egypt-technology-market-research` | 1 | 1 | 0 | 0 |
 | `/egypt-telecom-market-research` | 1 | 1 | 0 | 0 |
 | `/faq` | 1 | 1 | 0 | 0 |
-| `/febrile-neutropenia-market` | 1 | 1 | 0 | 0 |
+| `/febrile-neutropenia-market` | 1 | 0 | 1 | 0 |
 | `/france-healthcare-market-report` | 1 | 1 | 0 | 0 |
 | `/france-medical-devices-market-report` | 1 | 1 | 0 | 0 |
 | `/france-medtech-market-research` | 1 | 1 | 0 | 0 |
@@ -242,7 +241,7 @@ Base URL: https://www.bionixus.com
 | `/market-research-saudi-arabia-pharmaceutical` | 1 | 1 | 0 | 0 |
 | `/market-research-uae` | 1 | 1 | 0 | 0 |
 | `/mea-clinical-trial-imaging-market` | 1 | 1 | 0 | 0 |
-| `/media` | 1 | 1 | 0 | 0 |
+| `/media` | 1 | 0 | 0 | 1 |
 | `/medical-affairs-insight-research-gcc` | 1 | 1 | 0 | 0 |
 | `/medical-device-companies-japan` | 1 | 1 | 0 | 0 |
 | `/medical-device-companies-saudi-arabia` | 1 | 1 | 0 | 0 |
@@ -320,7 +319,7 @@ Base URL: https://www.bionixus.com
 | `/pharmaceutical-companies-south-korea` | 1 | 1 | 0 | 0 |
 | `/pharmaceutical-companies-switzerland` | 1 | 1 | 0 | 0 |
 | `/pharmaceutical-companies-turkey` | 1 | 1 | 0 | 0 |
-| `/pharmaceutical-companies-uae` | 1 | 1 | 0 | 0 |
+| `/pharmaceutical-companies-uae` | 1 | 0 | 1 | 0 |
 | `/pharmaceutical-companies-uk` | 1 | 1 | 0 | 0 |
 | `/pharmaceutical-companies-usa` | 1 | 1 | 0 | 0 |
 | `/pharmaceutical-market-research-argentina` | 1 | 1 | 0 | 0 |
@@ -500,11 +499,6 @@ Base URL: https://www.bionixus.com
 
 ## MAJOR URLs (First 120)
 
-- https://www.bionixus.com/de/blog/amnog-frueher-nutzen-marktzugang-2026 — Missing H1
-- https://www.bionixus.com/de/blog/deutsche-pharmaunternehmen-2026-pipeline-updates — Missing H1
-- https://www.bionixus.com/de/blog/gesundheitsmarkt-deutschland-2026 — Missing H1
-- https://www.bionixus.com/de/blog/pharmamarktforschung-deutschland-2026 — Missing H1
-- https://www.bionixus.com/fr/blog/etudes-marche-pharmaceutique-france-2026 — Missing H1
-- https://www.bionixus.com/fr/blog/evaluation-economique-has-france-2026 — Missing H1
-- https://www.bionixus.com/videos/consumer-b2b-market-research — Missing H1; Low internal links (1)
-- https://www.bionixus.com/videos/healthcare-market-research-overview — Missing H1; Low internal links (1)
+- http://127.0.0.1:5173/media — Fetch error: fetch failed
+- http://127.0.0.1:5173/news — Fetch error: fetch failed
+- http://127.0.0.1:5173/videos — Fetch error: fetch failed
