@@ -13,6 +13,7 @@ import { PremiumComplianceRibbon } from '@/components/home/PremiumComplianceRibb
 import { serviceRecoveryPaths } from '@/lib/internalLinkRecovery';
 import {
   getServicesHubBundle,
+  SERVICES_HUB_DEPTH,
 } from '@/data/servicesHubContent';
 import { getLocalizedPathForLanguage, languagePaths, localizedContactPath } from '@/lib/seo';
 
@@ -282,6 +283,21 @@ const Services = () => {
             </div>
           </div>
         </section>
+
+        {!copy && (
+          <section className="section-padding py-12 bg-muted/30 border-y border-border/60">
+            <div className="container-wide max-w-4xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+                {SERVICES_HUB_DEPTH.heading}
+              </h2>
+              <div className="space-y-4 text-muted-foreground leading-relaxed">
+                {SERVICES_HUB_DEPTH.paragraphs.map((para) => (
+                  <p key={para.slice(0, 48)}>{para}</p>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         <section className="section-padding py-14" ref={healthcareRef}>
           <div className="container-wide max-w-6xl mx-auto">

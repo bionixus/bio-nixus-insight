@@ -797,40 +797,75 @@ const singaporeIvdMarketAccess: SpecialtyMarketDemandContent = {
   h1: 'Singapore IVD Market Access: Lab, Hospital & Regulatory Intelligence',
   intro: [
     'IVD market access in Singapore is won inside hospital laboratories and cluster testing algorithms as much as at HSA registration. BioNixus researches pathologists, lab directors, and procurement committees to show which assays clear volume barriers — and which stall as “registered but unused.”',
+    'Buyers searching “Singapore IVD market access” need cluster-specific procurement logic — SingHealth, NUHS, and NHG each standardise platforms differently — plus HSA classification expectations for companion diagnostics, molecular panels, and point-of-care assays. Our programmes map the gate that blocks volume: regulatory listing, lab validation, clinical ordering, or tender award.',
+    'For broader Singapore device context, pair this page with our Singapore medical devices market report and healthcare market research hub. BioNixus runs primary research across ASEAN when Singapore dossiers travel into regional tenders.',
+    'Singapore IVD market access research is most valuable when tied to a single commercial gate: HSA evidence gaps, cluster validation failure, low ordering despite listing, or tender loss on reagent economics. We interview the stakeholders who own each gate — not generic survey panels — and deliver synthesis that portfolio committees can act on within the current planning cycle.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
   researchTopics: [
-    { name: 'Lab director & pathologist interviews', detail: 'Algorithm fit, turnaround, and trust barriers for new assays.' },
-    { name: 'HSA IVD pathway mapping', detail: 'Classification and evidence expectations for commercial sequencing.' },
-    { name: 'Cluster lab procurement', detail: 'SingHealth / NUHS / NHG tender and standardization logic.' },
-    { name: 'Competitive installed-base research', detail: 'Analyser platforms and switching costs that lock share.' },
-    { name: 'Clinical utility message testing', detail: 'What changes ordering behaviour among specialists.' },
-    { name: 'ASEAN expansion linkage', detail: 'When Singapore IVD dossiers travel into ASEAN tenders.' },
+    { name: 'Lab director & pathologist interviews', detail: 'Algorithm fit, turnaround, QC burden, and trust barriers for new assays — mapped by cluster and hospital type.' },
+    { name: 'HSA IVD pathway mapping', detail: 'Classification and evidence expectations for commercial sequencing, companion diagnostics, and POCT devices.' },
+    { name: 'Cluster lab procurement', detail: 'SingHealth, NUHS, and NHG tender and standardization logic — including reagent rental and service SLAs.' },
+    { name: 'Competitive installed-base research', detail: 'Analyser platforms, switching costs, and dual-source policies that lock incumbent share.' },
+    { name: 'Clinical utility message testing', detail: 'What changes ordering behaviour among oncologists, cardiologists, and infectious-disease specialists.' },
+    { name: 'ASEAN expansion linkage', detail: 'When Singapore IVD dossiers travel into Malaysia, Thailand, and Indonesia tenders — comparable fieldwork modules.' },
+    { name: 'Private-hospital pilot pathways', detail: 'Faster validation cycles but smaller volumes; premium pricing and payer coverage research.' },
+    { name: 'LIS / interfacing diligence', detail: 'Biomedical IT and lab informatics stakeholders who gate technical validation.' },
   ],
   demandDrivers: {
     heading: 'Access drivers for IVD in Singapore',
     drivers: [
-      { title: 'Cluster lab consolidation', detail: 'Central labs tighten platform and assay standardisation.' },
-      { title: 'Precision oncology demand', detail: 'Companion and high-complexity tests raise evidence bars.' },
-      { title: 'Cost-per-test scrutiny', detail: 'Procurement weighs reagent rental and throughput closely.' },
-      { title: 'Point-of-care expansion', detail: 'Ward and clinic settings create parallel buyer sets.' },
-      { title: 'Quality accreditation pressure', detail: 'Accreditation drives method validation timelines.' },
-      { title: 'Regional HQ spotlight', detail: 'APAC teams pilot IVD stories in Singapore before ASEAN scale.' },
+      { title: 'Cluster lab consolidation', detail: 'Central labs tighten platform and assay standardisation — vendors must win technical validation, not only HSA listing.' },
+      { title: 'Precision oncology demand', detail: 'Companion and high-complexity tests raise evidence bars; ordering clinicians and pathologists must align on algorithm fit.' },
+      { title: 'Cost-per-test scrutiny', detail: 'Procurement weighs reagent rental, throughput, QC burden, and service SLAs before awarding cluster contracts.' },
+      { title: 'Point-of-care expansion', detail: 'Ward and clinic settings create parallel buyer sets with nursing-workflow and infection-control priorities.' },
+      { title: 'Quality accreditation pressure', detail: 'SAC-SINGLAS and hospital accreditation drive method-validation timelines and documentation depth.' },
+      { title: 'Regional HQ spotlight', detail: 'APAC commercial teams pilot Singapore before ASEAN scale — research must reflect cluster-specific gates.' },
+      { title: 'LIS interfacing requirements', detail: 'Biomedical IT stakeholders gate validation when results do not flow cleanly into hospital systems.' },
+      { title: 'Dual-source and shortage policy', detail: 'Hospitals maintain backup assays when supply risk or QC failures threaten continuity.' },
     ],
   },
   marketStructure: {
     heading: 'IVD access structure in Singapore',
     paragraphs: [
       'Access is multi-gated: HSA clearance, lab technical validation, clinical ordering behaviour, and budget owners. BioNixus scopes research to the gate that is currently blocking volume.',
+      'Cluster laboratories increasingly bind sister hospitals to a single analyser platform and reagent contract. A vendor may win HSA listing yet fail validation because turnaround, QC burden, or interfacing with the hospital information system does not meet cluster standards. BioNixus interviews lab directors and biomedical IT stakeholders to quantify those friction points before commercial teams commit launch resources.',
+      'Companion and high-complexity assays add a clinical-evidence layer: oncologists and subspecialists must trust algorithm fit and reporting format before routine ordering begins. BioNixus runs message and workflow tests with ordering clinicians alongside pathology leadership so access plans reflect how tests are actually requested in Singapore public and private settings.',
+      'Point-of-care and ward-side testing creates a parallel buyer set — nursing leads, infection-control committees, and emergency departments — with different evidence thresholds than central-lab molecular panels. Vendors often win HSA listing for POCT yet stall because nursing workflow, cartridge storage, and quality documentation do not survive cluster validation.',
+      'BioNixus programmes are scoped to one commercial decision: which cluster to prioritise, which assay category to defend, or which ASEAN market to enter after Singapore validation. We recruit verified stakeholders — not generic “healthcare professionals” — and deliver board-ready synthesis with evidence gaps and owners flagged.',
+    ],
+  },
+  signalGrid: {
+    heading: 'IVD access signals by cluster',
+    items: [
+      { label: 'SingHealth cluster', signal: 'Strong central lab influence; platform standardisation binds multiple hospitals.' },
+      { label: 'NUHS cluster', signal: 'Academic pathology depth; evidence bars higher for novel molecular assays.' },
+      { label: 'NHG cluster', signal: 'Community-hospital mix; POCT and ward-side testing adoption varies by site.' },
+      { label: 'Private hospitals', signal: 'Faster pilot pathways but smaller volumes; premium pricing tolerance differs by payer.' },
+    ],
+  },
+  calendarBlocks: {
+    heading: 'Typical IVD access milestones in Singapore',
+    items: [
+      { period: 'Months 0–3', detail: 'HSA classification, predicate mapping, and evidence-gap assessment for the assay category.' },
+      { period: 'Months 3–9', detail: 'Lab validation, QC protocol alignment, and LIS interfacing with cluster IT stakeholders.' },
+      { period: 'Months 6–12', detail: 'Clinical champion engagement and ordering-algorithm placement with subspecialty societies.' },
+      { period: 'Months 9–18', detail: 'Procurement tender or reagent-rental negotiation; volume ramps only after award and training.' },
     ],
   },
   audiences: [
-    { audience: 'Lab directors & pathologists', description: 'Technical and clinical gatekeepers for assay adoption.' },
-    { audience: 'Hospital procurement', description: 'Buyers scoring contracts, reagent deals, and service.' },
-    { audience: 'Ordering specialists', description: 'Oncologists and other clinicians who create pull.' },
-    { audience: 'IVD commercial / medical teams', description: 'Teams building Singapore and ASEAN access plans.' },
+    { audience: 'Lab directors & pathologists', description: 'Technical and clinical gatekeepers for assay adoption, algorithm design, and QC acceptance.' },
+    { audience: 'Hospital procurement & value analysis', description: 'Buyers scoring reagent contracts, service levels, and total cost per reportable result.' },
+    { audience: 'Ordering specialists', description: 'Oncologists, cardiologists, and ID physicians who create clinical pull for new assays.' },
+    { audience: 'Biomedical engineering & LIS teams', description: 'Stakeholders who validate interfacing, maintenance, and inventory workflows.' },
+    { audience: 'IVD commercial / medical teams', description: 'Teams building Singapore-first and ASEAN roll-out access plans.' },
+    { audience: 'Private-hospital innovation offices', description: 'Pilot sponsors evaluating premium assays before cluster standardisation.' },
   ],
-  whyBionixus: SHARED_WHY,
+  whyBionixus: [
+    ...SHARED_WHY,
+    'Singapore cluster-lab and HSA pathway experience across diagnostics and MedTech',
+    'Comparable ASEAN modules when Singapore dossiers expand regionally',
+  ],
   relatedLinks: [
     { to: '/clinical-diagnostics-market-research', label: 'Clinical diagnostics market research' },
     { to: '/singapore-medtech-manufacturing-market', label: 'Singapore MedTech manufacturing market' },
@@ -847,9 +882,34 @@ const singaporeIvdMarketAccess: SpecialtyMarketDemandContent = {
       answer:
         'Typically laboratory leadership plus clinical champions and procurement — with cluster standardization often binding sister hospitals.',
     },
+    {
+      question: 'How does HSA regulation affect IVD market access?',
+      answer:
+        'HSA classifies IVDs and sets evidence expectations before listing, but hospital adoption still requires lab validation, clinical ordering fit, and procurement award — researched by BioNixus through pathologist and procurement interviews.',
+    },
+    {
+      question: 'What is Singapore IVD market access research?',
+      answer:
+        'Primary research with lab directors, pathologists, procurement, and ordering clinicians that maps which regulatory, technical, clinical, and budget gates block assay volume after HSA clearance.',
+    },
+    {
+      question: 'Does BioNixus cover ASEAN expansion from Singapore IVD dossiers?',
+      answer:
+        'Yes — when sponsors plan Singapore-first then ASEAN roll-out, we design comparable modules for Malaysia, Thailand, and Indonesia tender and lab-validation contexts, including hospital-group procurement differences and local reference-lab relationships.',
+    },
+    {
+      question: 'How long does Singapore IVD market access take?',
+      answer:
+        'HSA listing may complete in months for lower-risk categories, but cluster lab validation, LIS interfacing, and clinical ordering adoption often add 9–18 months before sustained volume. BioNixus maps which gate is blocking share in the current quarter rather than publishing generic “time to market” averages.',
+    },
+    {
+      question: 'What IVD categories are most competitive in Singapore?',
+      answer:
+        'Molecular oncology panels, infectious-disease multiplex assays, and high-throughput immunoassays on installed analysers face the strongest incumbent lock-in. POCT categories compete on nursing workflow and infection-control priorities. Research design must match the category — platform switching studies differ from new-algorithm adoption studies.',
+    },
   ],
   areaServed: ['Singapore'],
-  priority: 'next',
+  priority: 'now',
 };
 
 const japanNeurologyDevices: SpecialtyMarketDemandContent = {
@@ -889,6 +949,17 @@ const japanNeurologyDevices: SpecialtyMarketDemandContent = {
     heading: 'Structure',
     paragraphs: [
       'Volume concentrates in designated stroke and university neurosurgery centres. Distributor technical specialists and proctors are part of the commercial system BioNixus maps alongside clinical preference.',
+      'Japan\'s stroke centre designation system concentrates neurointerventional volume in roughly 330 certified hospitals — manufacturers that treat "Japan neurology devices" as a national average misallocate field resources. BioNixus segments by designation tier, procedure mix (thrombectomy, aneurysm coiling, neuromonitoring), and capital versus disposable revenue split.',
+      'PMDA approval timing and NHI reimbursement category assignment can diverge by years for the same device family — launch sequencing research must align regulatory clearance with fiscal-year price listing windows, not assume concurrent US and Japan availability.',
+    ],
+  },
+  signalGrid: {
+    heading: 'Category signals in Japan',
+    items: [
+      { label: 'Neurointervention', signal: 'Stroke centre designation and thrombectomy protocol adoption drive disposable volume.' },
+      { label: 'Neuromonitoring', signal: 'ICU and OR integration requirements gate adoption beyond KOL enthusiasm.' },
+      { label: 'Neurosurgery capital', signal: 'Biennial hospital budget cycles and domestic OEM relationships shape robot and navigation purchases.' },
+      { label: 'Implantables', signal: 'NHI category compression affects net price more than procedural volume growth.' },
     ],
   },
   audiences: [
@@ -951,6 +1022,17 @@ const japanMedicalDisposables: SpecialtyMarketDemandContent = {
     heading: 'Structure',
     paragraphs: [
       'Disposables decisions mix nursing preference, infection-control policy, and purchasing contracts. Successful research treats those lanes explicitly instead of averaging them.',
+      'Japan Medical Materials Association (JMMA) members and major domestic suppliers (Terumo, Nipro, Asahi Kasei) set quality and packaging baselines that foreign entrants must match before price competition begins. Hospital group purchasing organizations (GPOs) such as those linked to major university chains negotiate annual framework contracts that lock SKUs for 12–24 months.',
+      'Infection-control categories saw sustained premium demand post-COVID, but hospitals now scrutinize unit economics and waste volume — research must capture both clinical preference and sustainability committee influence on tender scoring.',
+    ],
+  },
+  signalGrid: {
+    heading: 'Disposable category signals',
+    items: [
+      { label: 'Infection-control / PPE', signal: 'QI programme mandates sustain volume; green-procurement criteria emerging in evaluations.' },
+      { label: 'Procedure packs & drapes', signal: 'Surgeon and nurse workflow veto power is high — poor kit design fails despite price advantage.' },
+      { label: 'IV / infusion consumables', signal: 'Safety-engineered designs mandated; domestic suppliers hold reference status.' },
+      { label: 'Dialysis & renal disposables', signal: 'Concentrated provider networks create oligopsony buying power.' },
     ],
   },
   audiences: [
@@ -1200,6 +1282,17 @@ const febrileNeutropenia: SpecialtyMarketDemandContent = {
     heading: 'Structure',
     paragraphs: [
       'FN markets are protocol- and tender-shaped. BioNixus isolates prophylaxis choice, secondary treatment, and tender award as distinct research questions.',
+      'Primary prophylaxis with pegfilgrastim or biosimilar filgrastim is governed by oncology protocol committees and hospital pharmacy substitution policies — not individual physician preference alone. Secondary prophylaxis decisions involve infectious-disease and haematology-oncology joint pathways that differ between academic centres and community hospitals.',
+      'In GCC settings, supportive-care injectables often move through centralized tender frameworks where a single biosimilar award can reset protocol defaults across a hospital group within one quarter. BioNixus maps tender calendar, dual-source policy, and pharmacist substitution authority before forecasting share shifts.',
+    ],
+  },
+  signalGrid: {
+    heading: 'Market signals by setting',
+    items: [
+      { label: 'Academic oncology centres', signal: 'Protocol committees set prophylaxis thresholds; KOL training drives early adoption of long-acting G-CSF.' },
+      { label: 'Community / regional hospitals', signal: 'Tender awards and pharmacy substitution dominate — brand loyalty is weaker than in tertiary centres.' },
+      { label: 'GCC hospital groups', signal: 'Centralized injectables tenders can flip entire networks to biosimilars within one award cycle.' },
+      { label: 'Outpatient day clinics', signal: 'Administration convenience and nurse workflow shape preference as regimens shift off inpatient wards.' },
     ],
   },
   audiences: [
@@ -1220,6 +1313,16 @@ const febrileNeutropenia: SpecialtyMarketDemandContent = {
       question: 'What drives the febrile neutropenia market?',
       answer:
         'Oncology regimen myelosuppression, prophylaxis guidelines, hospital pharmacy substitution, and tender awards for G-CSF and related supportive care — researched by BioNixus through clinical and procurement stakeholders.',
+    },
+    {
+      question: 'How large is the febrile neutropenia / G-CSF market?',
+      answer:
+        'Market size tracks myelosuppressive chemotherapy volume, prophylaxis guideline adoption, and biosimilar G-CSF penetration — not a single retail category. BioNixus sizes addressable patient pools and protocol-driven demand by hospital type and geography rather than publishing unverifiable global dollar totals.',
+    },
+    {
+      question: 'Who are the main G-CSF competitors in hospital tenders?',
+      answer:
+        'Originator pegfilgrastim and filgrastim face biosimilar competition from multiple manufacturers; hospital pharmacies evaluate clinical equivalence, administration schedule, cold-chain requirements, and tender price. BioNixus maps switching drivers through oncology pharmacist and procurement interviews.',
     },
   ],
   priority: 'next',
@@ -1436,6 +1539,9 @@ const gccFspMarket: SpecialtyMarketDemandContent = {
   h1: 'GCC Functional Service Providers (FSP) Market: Sponsor & Delivery Intelligence',
   intro: [
     'The GCC functional service providers market sits at the intersection of rising Gulf clinical-trial ambition and sponsor preference for modular FSP models over full-service CROs. BioNixus researches sponsor clinical-operations leaders, site networks, and in-region delivery partners to show which FSP capabilities win Gulf assignments — monitoring, data management, medical writing, pharmacovigilance — and where full-service still dominates.',
+    'Search interest in “GCC functional service providers market” reflects sponsor diligence on modular outsourcing — not syndicated CRO market-size tables. Buyers need evidence on Arabic monitoring capacity, SFDA-aware site relationships, travel logistics across Riyadh–Dubai corridors, and governance models that survive inspection. BioNixus interviews the stakeholders who award and experience FSP delivery.',
+    'Link this intelligence to our GCC clinical trials market page and healthcare market research hub when building a Gulf clinical or RWE programme business case.',
+    'FSP diligence in the Gulf should stress-test delivery cells on Arabic monitoring capacity, investigator relationship depth, therapeutic experience, and inspection-readiness — not slide-deck claims. BioNixus runs sponsor, site, and delivery-partner interviews with verified roles so outsourcing decisions reflect how FSP models perform in Saudi Arabia and the UAE in practice.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
   researchTopics: [
@@ -1443,8 +1549,8 @@ const gccFspMarket: SpecialtyMarketDemandContent = {
     { name: 'Capability-by-function mapping', detail: 'Monitoring, DM, medical writing, PV, and biostat preferences.' },
     { name: 'In-region delivery diligence', detail: 'Arabic capability, hospital access, and travel logistics as win themes.' },
     { name: 'Site & investigator experience research', detail: 'How FSP CRA models feel to Gulf sites versus legacy CROs.' },
-    { name: 'Pricing and governance interviews', detail: 'What KPIs and governance sponsors demand from FSP partners.' },
-    { name: 'Competitive landscape briefs', detail: 'Global FSP brands vs regional specialists in Saudi Arabia and UAE.' },
+    { name: 'Governance and KPI design', detail: 'What metrics sponsors embed in FSP contracts — startup time, query rate, monitoring visit quality, and escalation paths.' },
+    { name: 'Hybrid model research', detail: 'When sponsors keep strategic functions in-house while outsourcing monitoring or DM to Gulf delivery cells.' },
   ],
   demandDrivers: {
     heading: 'Demand drivers',
@@ -1461,6 +1567,17 @@ const gccFspMarket: SpecialtyMarketDemandContent = {
     heading: 'Structure',
     paragraphs: [
       'FSP buying in the GCC is rarely a single RFP for “the region.” Sponsors often lock global FSP frameworks then stress-test Middle East delivery cells. BioNixus scopes research to the function and geography under evaluation.',
+      'Monitoring FSP models face site-relationship tests in Saudi Arabia and the UAE where investigator turnover and private-hospital access differ from Western norms. Data-management and medical-writing FSP cells compete on turnaround SLAs and therapeutic depth — oncology and rare-disease experience outweigh generic capacity claims in sponsor shortlists.',
+      'Pharmacovigilance FSP assignments in the Gulf increasingly require Arabic case-processing capability and familiarity with SFDA, MOHAP, and NHRA reporting cadences. BioNixus maps which delivery partners sponsors trust for Gulf PV versus those used only for global hub processing.',
+    ],
+  },
+  calendarBlocks: {
+    heading: 'FSP diligence timeline (typical Gulf programme)',
+    items: [
+      { period: 'Weeks 1–4', detail: 'Outsourcing-model decision: FSP vs full-service vs hybrid for the Gulf footprint.' },
+      { period: 'Weeks 4–10', detail: 'Capability RFI: function-by-function scoring of in-region delivery cells.' },
+      { period: 'Weeks 8–14', detail: 'Reference calls with Gulf sites and prior sponsor clinical-ops leads.' },
+      { period: 'Weeks 12–20', detail: 'Governance design: KPIs, inspection readiness, and escalation paths before award.' },
     ],
   },
   signalGrid: {
@@ -1493,9 +1610,29 @@ const gccFspMarket: SpecialtyMarketDemandContent = {
       answer:
         'The market for modular clinical-development services (monitoring, data management, medical writing, PV, and related functions) sold into Gulf-sponsored or Gulf-executed programmes — researched through sponsor, site, and delivery-partner stakeholders.',
     },
+    {
+      question: 'When do sponsors choose FSP over full-service CROs in the GCC?',
+      answer:
+        'When they need utilisation control, already own data standards, or want to keep strategic functions in-house while outsourcing monitoring or DM — researched by BioNixus through clinical-operations leader interviews.',
+    },
+    {
+      question: 'What capabilities win Gulf FSP assignments?',
+      answer:
+        'Arabic-capable monitoring, proven Gulf site relationships, inspection-ready quality systems, and therapeutic depth — especially oncology and rare disease — outweigh generic global FSP branding in sponsor diligence.',
+    },
+    {
+      question: 'How is the GCC FSP market structured?',
+      answer:
+        'Sponsors often award global FSP frameworks then evaluate Middle East delivery cells separately. Saudi Arabia drives volume and localisation scrutiny; UAE hosts regional PM and monitoring hubs; smaller Gulf markets are bundled into MENA cells where capacity realism is the key diligence question.',
+    },
+    {
+      question: 'Does BioNixus research FSP vendors or only sponsors?',
+      answer:
+        'Both — sponsor clinical-ops leaders define selection criteria; site and delivery-partner stakeholders reveal where FSP models succeed or fail in practice. Competitive landscape modules map global FSP brands against regional specialists when commercial teams need win-theme intelligence.',
+    },
   ],
   areaServed: ['Saudi Arabia', 'United Arab Emirates', 'Kuwait', 'Qatar', 'Oman', 'Bahrain'],
-  priority: 'later',
+  priority: 'now',
 };
 
 const gccMedicationManagement: SpecialtyMarketDemandContent = {

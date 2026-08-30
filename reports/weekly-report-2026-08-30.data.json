@@ -1,0 +1,512 @@
+{
+  "generatedAt": "2026-08-30",
+  "hasCurrentDates": true,
+  "hasPreviousDates": true,
+  "hasCurrentQueries": true,
+  "hasPreviousQueries": true,
+  "hasCurrentPages": true,
+  "hasPreviousPages": true,
+  "current": {
+    "days": 7,
+    "clicksPerDay": 33.42857142857143,
+    "impressionsPerDay": 4448.142857142857,
+    "ctrPct": 0.7515174872338376,
+    "avgPosition": 25.80586761730417,
+    "totalClicks": 234,
+    "totalImpressions": 31137
+  },
+  "previous": {
+    "days": 7,
+    "clicksPerDay": 37,
+    "impressionsPerDay": 4784.857142857143,
+    "ctrPct": 0.7732728249835791,
+    "avgPosition": 28.357547620469333,
+    "totalClicks": 259,
+    "totalImpressions": 33494
+  },
+  "targets": {
+    "impressionsPerDay": 15000,
+    "clicksPerDay": 450,
+    "ctrPct": 3,
+    "position": 5
+  },
+  "vsTargets": {
+    "impressionsPerDay": {
+      "value": 4448.142857142857,
+      "target": 15000,
+      "delta": -10551.857142857143,
+      "status": "below target"
+    },
+    "clicksPerDay": {
+      "value": 33.42857142857143,
+      "target": 450,
+      "delta": -416.57142857142856,
+      "status": "below target"
+    },
+    "ctrPct": {
+      "value": 0.7515174872338376,
+      "target": 3,
+      "delta": -2.2484825127661625,
+      "status": "below target"
+    },
+    "avgPosition": {
+      "value": 25.80586761730417,
+      "target": 5,
+      "delta": -20.80586761730417,
+      "status": "below target"
+    }
+  },
+  "vsLastWeek": {
+    "impressionsPerDay": -336.71428571428623,
+    "clicksPerDay": -3.5714285714285694,
+    "ctrPct": -0.021755337749741477,
+    "avgPosition": -2.5516800031651634
+  },
+  "topPositionChanges": [
+    {
+      "query": "saudi arabia medical devices market",
+      "previousPosition": 37.48,
+      "currentPosition": 82,
+      "delta": 44.52
+    },
+    {
+      "query": "gulf cooperation council in vitro diagnostic market",
+      "previousPosition": 16.13,
+      "currentPosition": 54.89,
+      "delta": 38.760000000000005
+    },
+    {
+      "query": "italy microservices healthcare market",
+      "previousPosition": 1.95,
+      "currentPosition": 39.93,
+      "delta": 37.98
+    },
+    {
+      "query": "gcc generic injectables market",
+      "previousPosition": 7.28,
+      "currentPosition": 43.73,
+      "delta": 36.449999999999996
+    },
+    {
+      "query": "italy medical automation market",
+      "previousPosition": 22.94,
+      "currentPosition": 59.38,
+      "delta": 36.44
+    },
+    {
+      "query": "gcc clinical trials market",
+      "previousPosition": 10.53,
+      "currentPosition": 46.69,
+      "delta": 36.16
+    },
+    {
+      "query": "gcc keytruda market",
+      "previousPosition": 35.38,
+      "currentPosition": 65.83,
+      "delta": 30.449999999999996
+    },
+    {
+      "query": "italy medical device connectivity market",
+      "previousPosition": 6.87,
+      "currentPosition": 34.4,
+      "delta": 27.529999999999998
+    },
+    {
+      "query": "gcc medical device devices market",
+      "previousPosition": 3.36,
+      "currentPosition": 26.5,
+      "delta": 23.14
+    },
+    {
+      "query": "italy daptomycin market",
+      "previousPosition": 28.13,
+      "currentPosition": 49.2,
+      "delta": 21.070000000000004
+    }
+  ],
+  "top10PageChurn": {
+    "entered": [
+      "https://www.bionixus.com/iqvia-alternative",
+      "https://www.bionixus.com/pharmaceutical-companies-bahrain",
+      "https://www.bionixus.com/insights/top-market-research-companies-egypt-2026"
+    ],
+    "left": [
+      "https://www.bionixus.com/pharmaceutical-companies-oman",
+      "https://www.bionixus.com/india-medical-devices-market-report",
+      "https://www.bionixus.com/china-medical-devices-market-report"
+    ],
+    "curTop10": [
+      "https://www.bionixus.com/pharmaceutical-companies-egypt",
+      "https://www.bionixus.com/pharmaceutical-companies-uae",
+      "https://www.bionixus.com/pharmaceutical-companies-iraq",
+      "https://www.bionixus.com/pharmaceutical-companies-saudi-arabia",
+      "https://www.bionixus.com/pharmaceutical-companies-iran",
+      "https://www.bionixus.com/",
+      "https://www.bionixus.com/pharmaceutical-companies-kuwait",
+      "https://www.bionixus.com/iqvia-alternative",
+      "https://www.bionixus.com/pharmaceutical-companies-bahrain",
+      "https://www.bionixus.com/insights/top-market-research-companies-egypt-2026"
+    ],
+    "prevTop10": [
+      "https://www.bionixus.com/pharmaceutical-companies-egypt",
+      "https://www.bionixus.com/pharmaceutical-companies-uae",
+      "https://www.bionixus.com/pharmaceutical-companies-oman",
+      "https://www.bionixus.com/pharmaceutical-companies-saudi-arabia",
+      "https://www.bionixus.com/",
+      "https://www.bionixus.com/pharmaceutical-companies-iran",
+      "https://www.bionixus.com/pharmaceutical-companies-iraq",
+      "https://www.bionixus.com/pharmaceutical-companies-kuwait",
+      "https://www.bionixus.com/india-medical-devices-market-report",
+      "https://www.bionixus.com/china-medical-devices-market-report"
+    ]
+  },
+  "lowCtrPage1Queries": [
+    {
+      "query": "cairo hospitals healthcare 2023-2026",
+      "clicks": 0,
+      "impressions": 152,
+      "ctr": 0,
+      "position": 1.91
+    },
+    {
+      "query": "\"prk pharmaceutical\" egypt",
+      "clicks": 0,
+      "impressions": 111,
+      "ctr": 0,
+      "position": 9.3
+    },
+    {
+      "query": "latest pharmaceutical market news brazil regulation science health",
+      "clicks": 0,
+      "impressions": 99,
+      "ctr": 0,
+      "position": 7.26
+    },
+    {
+      "query": "febrile neutropenia market",
+      "clicks": 0,
+      "impressions": 38,
+      "ctr": 0,
+      "position": 8.53
+    },
+    {
+      "query": "kantar egypt market research",
+      "clicks": 0,
+      "impressions": 37,
+      "ctr": 0,
+      "position": 8.38
+    },
+    {
+      "query": "iqvia competitors",
+      "clicks": 0,
+      "impressions": 36,
+      "ctr": 0,
+      "position": 6.28
+    },
+    {
+      "query": "pharmaceutical companies in dubai",
+      "clicks": 0,
+      "impressions": 35,
+      "ctr": 0,
+      "position": 8.86
+    },
+    {
+      "query": "gcc functional service providers market",
+      "clicks": 0,
+      "impressions": 28,
+      "ctr": 0,
+      "position": 4.57
+    },
+    {
+      "query": "prk pharma egypt company",
+      "clicks": 0,
+      "impressions": 28,
+      "ctr": 0,
+      "position": 4.71
+    },
+    {
+      "query": "japan general surgical devices market",
+      "clicks": 0,
+      "impressions": 25,
+      "ctr": 0,
+      "position": 4.56
+    },
+    {
+      "query": "japan neurology devices market",
+      "clicks": 0,
+      "impressions": 25,
+      "ctr": 0,
+      "position": 8.56
+    },
+    {
+      "query": "health medicine news brazil 2026",
+      "clicks": 0,
+      "impressions": 23,
+      "ctr": 0,
+      "position": 6.61
+    },
+    {
+      "query": "turkey diabetes market",
+      "clicks": 0,
+      "impressions": 23,
+      "ctr": 0,
+      "position": 7.17
+    },
+    {
+      "query": "gcc biologics market",
+      "clicks": 0,
+      "impressions": 20,
+      "ctr": 0,
+      "position": 6
+    },
+    {
+      "query": "pharma companies in dubai",
+      "clicks": 0,
+      "impressions": 20,
+      "ctr": 0,
+      "position": 6.75
+    },
+    {
+      "query": "nupco tender",
+      "clicks": 0,
+      "impressions": 19,
+      "ctr": 0,
+      "position": 7.58
+    },
+    {
+      "query": "japan medical disposables market",
+      "clicks": 0,
+      "impressions": 19,
+      "ctr": 0,
+      "position": 9.63
+    },
+    {
+      "query": "leading company in health sector peru",
+      "clicks": 0,
+      "impressions": 17,
+      "ctr": 0,
+      "position": 6.71
+    },
+    {
+      "query": "saudi arabia biosimilar market",
+      "clicks": 0,
+      "impressions": 15,
+      "ctr": 0,
+      "position": 4.27
+    },
+    {
+      "query": "pharmaceutical analytics companies",
+      "clicks": 0,
+      "impressions": 15,
+      "ctr": 0,
+      "position": 8.4
+    },
+    {
+      "query": "biomedical companies in uae",
+      "clicks": 0,
+      "impressions": 15,
+      "ctr": 0,
+      "position": 9.6
+    },
+    {
+      "query": "pharmaceutical companies in kuwait",
+      "clicks": 0,
+      "impressions": 14,
+      "ctr": 0,
+      "position": 5.36
+    },
+    {
+      "query": "singapore ivd market access",
+      "clicks": 0,
+      "impressions": 14,
+      "ctr": 0,
+      "position": 6.64
+    },
+    {
+      "query": "best services for pharmaceutical market access besides iqvia",
+      "clicks": 0,
+      "impressions": 14,
+      "ctr": 0,
+      "position": 7.86
+    },
+    {
+      "query": "medical companies in uae",
+      "clicks": 0,
+      "impressions": 14,
+      "ctr": 0,
+      "position": 8.14
+    },
+    {
+      "query": "gcc vaccine market",
+      "clicks": 0,
+      "impressions": 14,
+      "ctr": 0,
+      "position": 9.5
+    },
+    {
+      "query": "pharma packaging companies in uae",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 9.85
+    },
+    {
+      "query": "dubai pharma company",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 9.92
+    },
+    {
+      "query": "pharmaceutical industry",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 9.92
+    },
+    {
+      "query": "brk pharma egypt company",
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 6.33
+    },
+    {
+      "query": "pharmaceutical industries in dubai",
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 7.17
+    },
+    {
+      "query": "awiqli insulin uae",
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 8.67
+    },
+    {
+      "query": "marketing research companies warsaw",
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 9.92
+    },
+    {
+      "query": "top 10 pharmaceutical companies in egypt",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 6.73
+    },
+    {
+      "query": "kuwait pharmaceutical companies",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 7.27
+    },
+    {
+      "query": "looking for something better than iqvia",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 7.91
+    },
+    {
+      "query": "pharmaceutical companies dubai",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 6.8
+    },
+    {
+      "query": "pharmaceutical companies in dubai uae",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 7.2
+    },
+    {
+      "query": "medicine company in dubai",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 8.3
+    },
+    {
+      "query": "bahrain pharma",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 8.8
+    },
+    {
+      "query": "pharmaceutical companies near me",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 9.8
+    }
+  ],
+  "mixMetrics": {
+    "exclUs": {
+      "clicks": 225,
+      "impressions": 20757,
+      "ctrPct": 1.0839716722069663
+    },
+    "us": {
+      "clicks": 9,
+      "impressions": 10380,
+      "ctrPct": 0.09,
+      "sharePct": 33.336544946526644
+    },
+    "desktop": {
+      "clicks": 134,
+      "impressions": 26674,
+      "ctrPct": 0.5,
+      "sharePct": 85.66657031827086
+    },
+    "mobile": {
+      "clicks": 98,
+      "impressions": 4400,
+      "ctrPct": 2.23,
+      "sharePct": 14.131098050550792
+    },
+    "exclDeepRankPages": {
+      "clicks": 223,
+      "impressions": 22679,
+      "ctrPct": 0.9832885047841615
+    },
+    "deepRankPages": {
+      "clicks": 11,
+      "impressions": 11559,
+      "ctrPct": 0.09516394151743231
+    },
+    "exclJapanGccDevices": {
+      "clicks": 232,
+      "impressions": 31727,
+      "ctrPct": 0.7312383774072556
+    },
+    "japanDevices": {
+      "page": "https://www.bionixus.com/japan-medical-devices-market-report",
+      "clicks": 2,
+      "impressions": 2511,
+      "ctr": 0.08,
+      "position": 44.25
+    },
+    "gccDevices": null,
+    "listicleCluster": {
+      "clicks": 22,
+      "impressions": 3148,
+      "ctrPct": 0.6988564167725541
+    },
+    "pharmaCompaniesCluster": {
+      "clicks": 140,
+      "impressions": 8756,
+      "ctrPct": 1.5989036089538604
+    },
+    "siteCtrPct": 0.7515174872338376
+  },
+  "leads": null
+}

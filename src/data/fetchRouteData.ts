@@ -239,16 +239,12 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
     };
   }
 
+  const LOCALIZED_BLOG_LOCALES = ['ar', 'de', 'fr', 'zh', 'es', 'pt', 'ru'] as const;
+
   const blogIndexPaths = new Set([
     '/blog',
     '/blog/',
-    '/de/blog',
-    '/de/blog/',
-    '/fr/blog',
-    '/fr/blog/',
-    '/ar/blog/',
-    '/zh/blog',
-    '/zh/blog/',
+    ...LOCALIZED_BLOG_LOCALES.flatMap((locale) => [`/${locale}/blog`, `/${locale}/blog/`]),
   ]);
   if (blogIndexPaths.has(path)) {
     let blogPosts: BlogPost[] = [];
@@ -257,12 +253,11 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
     } catch {
       blogPosts = [];
     }
-    if (path.startsWith('/ar/blog')) {
-      blogPosts = blogPosts.filter((p) => !p.language || p.language === 'ar');
-    } else if (path.startsWith('/zh/blog')) {
-      blogPosts = blogPosts.filter((p) => !p.language || p.language === 'zh');
-    } else if (path.startsWith('/de/blog')) {
-      blogPosts = blogPosts.filter((p) => !p.language || p.language === 'de');
+    const indexLocale = LOCALIZED_BLOG_LOCALES.find(
+      (locale) => path === `/${locale}/blog` || path === `/${locale}/blog/`,
+    );
+    if (indexLocale) {
+      blogPosts = blogPosts.filter((p) => !p.language || p.language === indexLocale);
     }
     return {
       pageType: 'blog-index',
@@ -270,36 +265,10 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
     };
   }
 
-  const blogPostMatchAr = path.match(/^\/ar\/blog\/([^/]+)\/?$/);
-  if (blogPostMatchAr) {
-    const slug = decodePathSegment(blogPostMatchAr[1]);
-    const sanitySlug = resolveSanityBlogSlug(slug);
-    let blogPost: BlogPost | null = null;
-    let relatedPosts: RelatedPostsData = { related: [], prev: null, next: null };
-    try {
-      blogPost = await fetchSanityPostBySlugWithClient(sanitySlug, sanityServer);
-      if (blogPost) {
-        relatedPosts = await fetchRelatedPostsWithClient(
-          sanitySlug,
-          blogPost.category,
-          blogPost.publishedAtIso || blogPost.date,
-          blogPost.country,
-          blogPost.tags ?? [],
-          sanityServer,
-          resolveContentSilo(blogPost),
-        );
-      }
-    } catch {
-      blogPost = null;
-    }
-    blogPost = resolveBlogPostForRoute(slug, blogPost);
-    return {
-      pageType: 'blog-post',
-      blogSlug: slug,
-      blogPost,
-      relatedPosts,
-      lcpPreloadImageUrl: getBlogHeroPreloadUrl(blogPost?.coverImage),
-    };
+  const localizedBlogPostMatch = path.match(/^\/(ar|de|fr|zh|es|pt|ru)\/blog\/([^/]+)\/?$/);
+  if (localizedBlogPostMatch) {
+    const slug = decodePathSegment(localizedBlogPostMatch[2]);
+    return fetchBlogPostRouteData(slug);
   }
 
   if (path === '/bionixus-industries/insights' || path === '/bionixus-industries/insights/') {

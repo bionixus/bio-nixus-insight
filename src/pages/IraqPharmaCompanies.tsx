@@ -11,6 +11,7 @@ import { useScrollThreshold } from '@/hooks/useScrollThreshold';
 import { getPharmaGuideConfig } from '@/data/reportConversionConfig';
 import { buildPharmaCompaniesFaqLd, buildPharmaCompaniesItemListLd } from '@/components/seo/pharmaCompaniesSeo';
 import { PharmaCompaniesFaqSection } from '@/components/seo/PharmaCompaniesFaqSection';
+import { PharmaCompaniesDepthSection } from '@/components/seo/PharmaCompaniesDepthSection';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -99,6 +100,8 @@ const IraqPharmaCompanies = () => {
           <p className="text-sm text-muted-foreground">Last updated: February 2026 &middot; Sources: MOH, KIMADIA, BioNixus MEA, company and industry reports</p>
           <div className="mt-8 p-5 bg-muted/50 border border-border rounded-xl"><div className="flex items-start gap-3"><Share2 className="w-5 h-5 text-primary mt-0.5 shrink-0" /><div><p className="font-semibold text-foreground text-sm mb-1">Cite this guide</p><p className="text-sm text-muted-foreground leading-relaxed">BioNixus. &quot;Pharmaceutical Companies in Iraq: Complete Industry Guide 2026.&quot; BioNixus Healthcare Market Research, Feb. 2026, <a href={citationUrl} className="text-primary hover:underline break-all">{citationUrl}</a>.<br />Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">CC BY 4.0</a> — free to share and adapt with attribution.</p></div></div></div>
           <ReportEarlyCtaBar config={PHARMA_CONVERSION} className="mt-8" /></div></section>
+
+        <PharmaCompaniesDepthSection country="iraq" />
 
         <ReportContentWithAside config={PHARMA_CONVERSION}>
         <section className="section-padding py-12 bg-primary text-primary-foreground"><div className="container-wide max-w-5xl mx-auto"><div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
