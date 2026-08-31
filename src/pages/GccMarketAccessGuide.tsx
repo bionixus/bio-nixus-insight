@@ -520,14 +520,16 @@ const GccMarketAccessGuide = () => {
                 outcomes: hospital pharmacist and procurement officer interviews on tender win/loss drivers, physician
                 switching intent after award, biosimilar substitution in government formularies, and pricing sensitivity
                 relative to SFDA- or MOHAP-approved list prices. These modules complement standard payer landscape
-                analysis and HTA-style evidence planning described in the country tables above.
+                analysis and HTA-style evidence planning described in the country tables above. Launch teams should
+                align SFDA registration, ERP pricing submissions, and NUPCO or MOH tender calendars in one integrated
+                timeline — treating registration approval and procurement award as separate gates with distinct evidence needs.
               </p>
               <p>
                 For Saudi-specific tender mechanics, see our{' '}
                 <Link to="/blog/nupco-saudi-arabia-tendering-guide" className="text-primary underline font-medium">
                   NUPCO tendering guide
                 </Link>
-                . For integrated GCC fieldwork on access decisions, see{' '}
+                . MedTech and IVD categories follow parallel SFDA registration and NUPCO device tender calendars — hospital biomedical engineering and procurement committees evaluate service networks, spare parts, and training burden alongside list price, especially for imaging-adjacent surgical and diagnostic platforms entering MOH networks under Vision 2030 hospital expansions. For integrated GCC fieldwork on access decisions, see{' '}
                 <Link to="/healthcare-market-research-agency-gcc" className="text-primary underline font-medium">
                   healthcare market research agency GCC
                 </Link>{' '}

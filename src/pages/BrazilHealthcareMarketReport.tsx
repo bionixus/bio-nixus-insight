@@ -63,7 +63,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-08-22',
+    dateModified: '2026-08-31',
     mainEntityOfPage: 'https://www.bionixus.com/brazil-healthcare-market-report',
   },
   {
@@ -135,6 +135,32 @@ const BrazilHealthcareMarketReport = () => (
               <Link to="/news/bionixus-brazil-office-latam-expansion-2026" className="text-primary hover:underline font-medium">Brazil office and LatAm expansion</Link>.
             </p>
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
+          </div>
+        </section>
+
+        <section className="section-padding" id="brazil-medtech-context">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              Brazil medical devices and diagnostics in 2026
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Brazil&apos;s medical devices market is estimated at roughly USD 11–13 billion in 2026 — the largest in
+              Latin America — governed by ANVISA RDC medical device regulations, CONITEC incorporation for selected
+              high-cost technologies in SUS, and a premium private channel through ANS-regulated insurers and
+              international-standard hospitals. Device launches must navigate both SUS procurement logic and private
+              hospital preference for international brands at full price points.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              For GCC and MENA expansion intelligence from Brazilian sponsors, see our{' '}
+              <Link to="/brazil-medical-devices-market-report" className="text-primary hover:underline font-medium">
+                Brazil medical devices market report
+              </Link>{' '}
+              and{' '}
+              <Link to="/healthcare-market-research/brazil" className="text-primary hover:underline font-medium">
+                healthcare market research Brazil hub
+              </Link>
+              .
+            </p>
           </div>
         </section>
 
