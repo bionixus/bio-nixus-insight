@@ -214,7 +214,7 @@ export default function TopHealthcareMarketResearchCompaniesSaudiArabia2026() {
     inLanguage: 'en',
     about: { '@type': 'Country', name: 'Saudi Arabia' },
     keywords:
-      'healthcare market research Saudi Arabia, pharmaceutical market research KSA, SFDA market research, NUPCO formulary research, top market research companies Saudi Arabia, BioNixus Saudi Arabia, KOL mapping Saudi Arabia, Vision 2030 healthcare research',
+      'healthcare market research Saudi Arabia, pharmaceutical market research KSA, SFDA market research, NUPCO formulary research, BioNixus Saudi Arabia, KOL mapping Saudi Arabia, Vision 2030 healthcare research',
   };
 
   const itemListSchema = {

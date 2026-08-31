@@ -296,7 +296,7 @@ export default function CountryPage() {
                     to="/insights/top-market-research-companies-saudi-arabia-2026"
                     className="text-primary font-medium hover:underline"
                   >
-                    top market research companies in Saudi Arabia
+                    market research firms KSA
                   </Link>
                   . For registration and tender sequencing, see the{' '}
                   <Link to="/sfda-market-access-strategy-saudi-arabia" className="text-primary font-medium hover:underline">
@@ -908,7 +908,7 @@ export default function CountryPage() {
                 <>
                   <HealthcareNavCard
                     to="/insights/top-market-research-companies-saudi-arabia-2026"
-                    title="Top market research companies in Saudi Arabia (2026)"
+                    title="Market research firms KSA (2026)"
                     description="Kingdom-wide agency rankings for consumer, FMCG, retail, and multi-industry buyers."
                   />
                   <HealthcareNavCard

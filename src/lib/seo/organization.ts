@@ -26,6 +26,7 @@ export const ORG_SAME_AS = [
   'https://www.instagram.com/bionixus_',
   'https://www.crunchbase.com/organization/bionixus',
   'https://www.goodfirms.co/company/bionixus-market-research',
+  'https://www.wikidata.org/wiki/Q140188264',
   'https://careers.bionixus.com/',
   BIONIXUS_UK_GBP_MAPS_URL,
 ];
@@ -120,6 +121,8 @@ export const ORG_KNOWS_ABOUT = [
   'NCPE cost-effectiveness research',
   'Pharmaceutical market research Saudi Arabia',
   'Healthcare market research Saudi Arabia',
+  'Market research KSA',
+  'Market research Saudi Arabia',
   'SFDA market access research',
   'NCEHTA health technology assessment research',
   'Pharmaceutical market research Egypt',
@@ -137,7 +140,7 @@ export const ORG_AREA_SERVED: Array<Record<string, string>> = [
   { '@type': 'Place', name: 'Eastern Europe' },
   { '@type': 'Place', name: 'Asia-Pacific' },
   // MENA
-  { '@type': 'Country', name: 'Saudi Arabia' },
+  { '@type': 'Country', name: 'Saudi Arabia', sameAs: 'https://www.wikidata.org/wiki/Q851' },
   { '@type': 'Country', name: 'United Arab Emirates' },
   { '@type': 'Country', name: 'Egypt' },
   { '@type': 'Country', name: 'Kuwait' },

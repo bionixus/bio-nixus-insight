@@ -126,6 +126,7 @@ const SITEMAP_REDIRECT_SOURCE_PATHS = new Set([
   '/blog/gcc-pharmaceuticals-market-arabic-2026',
   // Alias / duplicate insight URLs — canonical targets only in sitemap (avoid keyword cannibalization).
   '/insights/top-market-research-companies-ksa-2026',
+  '/insights/market-research-firms-ksa',
   '/insights/top-market-research-companies-abudhabi-2026',
   '/insights/top-obesity-market-research-companies-2026',
   '/global-websites',

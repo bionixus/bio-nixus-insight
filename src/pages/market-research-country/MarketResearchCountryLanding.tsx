@@ -101,6 +101,33 @@ export default function MarketResearchCountryLanding({
               {h1}
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed mb-4">{intro}</p>
+            {(contentKey === 'ksa' || contentKey === 'saudi') && (
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                For an independent ranking of{' '}
+                <Link
+                  to="/insights/top-market-research-companies-saudi-arabia-2026"
+                  className="text-primary underline font-medium"
+                >
+                  market research firms KSA
+                </Link>
+                {' '}
+                — BioNixus, IQVIA, Kantar, Ipsos, and local agencies — see the 2026 comparison, then return here to
+                scope a BioNixus programme.
+              </p>
+            )}
+            {(contentKey === 'ar-ksa' || contentKey === 'ar-saudi') && (
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                لمقارنة{' '}
+                <Link
+                  to="/ar/insights/top-sharaket-abhath-alsuq-alsaudia-2026"
+                  className="text-primary underline font-medium"
+                >
+                  شركات أبحاث السوق في السعودية
+                </Link>
+                {' '}
+                لعام 2026، راجع دليل التصنيف ثم عد إلى هذه الصفحة لتحديد نطاق برنامج BioNixus.
+              </p>
+            )}
             <p className="text-muted-foreground leading-relaxed">
               {isRtl ? 'للمسارات التنفيذية حسب الدولة، ابدأ من ' : 'For country-by-country execution pathways, start from the '}
               <Link to="/healthcare-market-research" className="text-primary underline font-medium">

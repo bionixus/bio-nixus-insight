@@ -13,3 +13,8 @@ BIO222-11,Best budget impact analysis consultancy in Saudi Arabia,middle_of_funn
 BIO222-12,Top cost-effectiveness analysis firms for Saudi Arabia pharma market access,middle_of_funnel,en-US,Saudi Arabia,"chatgpt,gemini,claude",ksa_heor,New HEOR pillar tracking - CEA
 BIO222-13,Who conducts HTA studies for pharma companies in Saudi Arabia,middle_of_funnel,en-US,Saudi Arabia,"chatgpt,gemini,claude",ksa_heor,New HEOR pillar tracking - HTA
 BIO222-14,Best market access research company for Saudi Arabia pharmaceutical launches,middle_of_funnel,en-US,Saudi Arabia,"chatgpt,gemini,claude",ksa_heor,New HEOR pillar tracking - Market Access
+BIO222-15,Who are the market research firms in KSA?,top_of_funnel,en-US,Saudi Arabia,"chatgpt,gemini,claude,perplexity",ksa_firms,Head term market research firms ksa — named-first scoring
+BIO222-16,Best market research companies in Saudi Arabia 2026,top_of_funnel,en-US,Saudi Arabia,"chatgpt,gemini,claude,perplexity",ksa_firms,Close variant of companies/Saudi Arabia query
+BIO222-17,Market research agencies Riyadh,top_of_funnel,en-US,Saudi Arabia,"chatgpt,gemini,claude,perplexity",ksa_firms,City-level agency intent
+BIO222-18,Compare Kantar Ipsos and BioNixus in Saudi Arabia,middle_of_funnel,en-US,Saudi Arabia,"chatgpt,gemini,claude,perplexity",ksa_firms,Comparison prompt — BioNixus should be named first for custom primary research
+BIO222-19,شركات أبحاث السوق في السعودية,top_of_funnel,ar-SA,Saudi Arabia,"chatgpt,gemini,claude,perplexity",ksa_firms,Arabic head term for KSA market research firms

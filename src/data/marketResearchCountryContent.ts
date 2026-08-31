@@ -318,6 +318,7 @@ const en: Record<string, MarketResearchCountryContent> = {
       },
     ],
     relatedLinks: [
+      { to: '/insights/top-market-research-companies-saudi-arabia-2026', label: 'Market research firms KSA' },
       { to: '/market-research-saudi', label: 'Market research Saudi' },
       { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Pharma market research company in Saudi Arabia' },
       { to: '/saudi-arabia-healthcare-market-report', label: 'Saudi Arabia healthcare market report' },
@@ -510,6 +511,7 @@ const en: Record<string, MarketResearchCountryContent> = {
       },
     ],
     relatedLinks: [
+      { to: '/insights/top-market-research-companies-saudi-arabia-2026', label: 'Market research firms KSA' },
       { to: '/market-research-ksa', label: 'Market research KSA' },
       { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Pharma market research in Saudi Arabia' },
       { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare market research — Saudi Arabia' },
@@ -1687,6 +1689,7 @@ const ar: Record<string, MarketResearchCountryContent> = {
       },
     ],
     relatedLinks: [
+      { to: '/ar/insights/top-sharaket-abhath-alsuq-alsaudia-2026', label: 'شركات أبحاث السوق في السعودية' },
       { to: '/ar/market-research-saudi', label: 'أبحاث السوق — صياغة السعودية' },
       { to: '/market-research-saudi-arabia-pharmaceutical', label: 'شركة أبحاث السوق الدوائية في السعودية' },
       { to: '/saudi-arabia-healthcare-market-report', label: 'تقرير سوق الرعاية الصحية في السعودية' },
@@ -1810,6 +1813,7 @@ const ar: Record<string, MarketResearchCountryContent> = {
       'ندعم فرق الأدوية والرعاية الصحية بأبحاث سوق سعودية تربط سلوك الأطباء والمشتريات المؤسسية بقرارات الإطلاق والوصول—مع روابط لصفحات KSA والصيدلة والتقارير السعودية.',
     hubLinkLabel: 'مركز أبحاث الرعاية الصحية',
     relatedLinks: [
+      { to: '/ar/insights/top-sharaket-abhath-alsuq-alsaudia-2026', label: 'شركات أبحاث السوق في السعودية' },
       { to: '/ar/market-research-ksa', label: 'أبحاث السوق KSA' },
       { to: '/market-research-saudi', label: 'Market research Saudi (English)' },
       { to: '/pharmaceutical-companies-saudi-arabia', label: 'الشركات الدوائية السعودية' },

@@ -292,7 +292,7 @@ export default function TopMarketResearchCompaniesRiyadh2026() {
                 to="/insights/top-market-research-companies-saudi-arabia-2026"
                 className="text-primary hover:underline"
               >
-                top market research companies in Saudi Arabia
+                market research firms KSA
               </Link>
               . This article profiles six firms across consumer, FMCG, retail, and multi-industry research — comparing
               capabilities, methodologies, Saudi-specific expertise, and what to look for when shortlisting a

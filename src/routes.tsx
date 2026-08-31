@@ -566,6 +566,7 @@ const rawRoutes: RouteObject[] = [
   { path: '/insights/top-market-research-companies-egypt-2026', element: <TopMarketResearchCompaniesEgypt2026 /> },
   { path: '/ar/insights/top-market-research-companies-egypt-2026', element: suspensePage(<ArTopMarketResearchCompaniesEgypt2026 />) },
   { path: '/zh/insights/top-market-research-companies-egypt-2026', element: <ZhTopMarketResearchCompaniesEgypt2026 /> },
+  { path: '/insights/market-research-firms-ksa', element: <Navigate to="/insights/top-market-research-companies-saudi-arabia-2026" replace /> },
   { path: '/insights/top-market-research-companies-ksa-2026', element: <Navigate to="/insights/top-market-research-companies-saudi-arabia-2026" replace /> },
   { path: '/insights/top-market-research-companies-saudi-arabia-2026', element: <TopMarketResearchCompaniesSaudiArabia2026 /> },
   { path: '/insights/top-consumer-insights-companies-saudi-arabia-2026', element: <TopConsumerInsightsCompaniesSaudiArabiaRedirect /> },

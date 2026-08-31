@@ -195,6 +195,8 @@ export const allListicleConfigs: CountryListicleConfig[] = [
 const REDIRECTED_LISTICLE_SLUGS: Record<string, string> = {
   '/insights/top-market-research-companies-ksa-2026':
     '/insights/top-market-research-companies-saudi-arabia-2026',
+  '/insights/market-research-firms-ksa':
+    '/insights/top-market-research-companies-saudi-arabia-2026',
 };
 
 const publishedListicleSlugs = new Set(

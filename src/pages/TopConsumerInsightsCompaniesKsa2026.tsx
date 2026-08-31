@@ -281,7 +281,7 @@ export default function TopConsumerInsightsCompaniesKsa2026() {
               and shopper research with bilingual Arabic-English fieldwork. Compare Kantar, Ipsos, NielsenIQ, and
               Euromonitor — then see our{' '}
               <Link to="/insights/top-market-research-companies-saudi-arabia-2026" className="text-primary hover:underline">
-                top market research companies in Saudi Arabia
+                market research firms KSA
               </Link>{' '}
               guide for the broader multi-industry shortlist.
             </p>

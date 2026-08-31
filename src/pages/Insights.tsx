@@ -173,7 +173,7 @@ export default function Insights() {
                 to="/insights/top-market-research-companies-saudi-arabia-2026"
                 className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
               >
-                Top Market Research Companies in Saudi Arabia (2026)
+                Market research firms KSA (2026)
               </Link>
               <Link
                 to="/insights/top-consumer-insights-companies-ksa-2026"
