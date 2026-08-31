@@ -159,6 +159,77 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
           </section>
         ) : null}
 
+        {content.methodologySteps ? (
+          <section className="section-padding py-10">
+            <div className="container-wide max-w-5xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+                {content.methodologySteps.heading}
+              </h2>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {content.methodologySteps.steps.map((step, index) => (
+                  <article key={step.title} className="rounded-xl border border-border bg-card p-5">
+                    <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-2">
+                      Step {index + 1}
+                    </p>
+                    <h3 className="text-base font-semibold text-foreground mb-2">{step.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{step.detail}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        <section className="section-padding py-10 bg-muted/20">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              Decision blueprint: {content.segmentLabel.toLowerCase()}
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                <strong className="text-foreground">Why it matters.</strong> Teams searching the{' '}
+                {content.segmentLabel.toLowerCase()} market usually face a near-term launch, tender, access, or
+                portfolio defence decision — not academic curiosity. Mis-timed fieldwork or syndicated averages that
+                ignore local regulator and procurement context create expensive false confidence.
+              </p>
+              <p>
+                <strong className="text-foreground">What the evidence says.</strong> BioNixus primary research with
+                verified stakeholders shows that uptake, switching, and budget release in this segment are governed by
+                committee coalitions, service requirements, and evidence gates — not awareness alone. Desk sizing without
+                those gates systematically overstates addressable opportunity.
+              </p>
+              <p>
+                <strong className="text-foreground">What to do next.</strong> Start from our{' '}
+                {content.hubLink ? (
+                  <>
+                    <Link to={content.hubLink.to} className="text-primary font-medium hover:underline">
+                      {content.hubLink.label}
+                    </Link>{' '}
+                  </>
+                ) : (
+                  <>healthcare market research hub </>
+                )}
+                to frame regional context, then request a scoped briefing for one country, account archetype, or
+                decision milestone. BioNixus returns a feasibility-backed proposal — not a generic subscription pitch.
+              </p>
+              <p>
+                Typical deliverables include stakeholder interview summaries, committee objection libraries, procurement
+                or access timing notes, and scenario bands tied to your launch or tender milestone — formatted for
+                commercial, medical, and access reviewers in the same readout.
+              </p>
+              <p>
+                Minimum engagement sizes vary by country and stakeholder rarity, but BioNixus avoids selling
+                undifferentiated syndicated reports for these questions — every programme is scoped to one decision
+                owner, one milestone, and verified recruitment rules documented before fieldwork begins.
+              </p>
+              <p>
+                Request a scoped briefing via our contact form — typical proposals return within one business day once
+                therapy, country, and decision milestone are confirmed.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <section className="section-padding py-10 bg-muted/20">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
