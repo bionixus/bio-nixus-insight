@@ -8,6 +8,8 @@ import { SINGAPORE_MEDTECH_2026_HARDCODED_POST } from '@/data/blog-singapore-med
 import { TURKEY_PHARMA_2026_HARDCODED_POST } from '@/data/blog-turkey-pharma-2026';
 import { NMPA_CLASS_III_TIMELINE_HARDCODED_POST } from '@/data/blog-nmpa-class-iii-timeline-2026';
 import { CHINA_DEVICE_VBP_EXPLAINED_HARDCODED_POST } from '@/data/blog-china-device-vbp-explained';
+import { UAE_HEALTHCARE_TRENDS_2025_HARDCODED_POST } from '@/data/blog-uae-healthcare-trends-2025';
+import { UAE_HEALTHCARE_TRENDS_2026_HARDCODED_POST } from '@/data/blog-uae-healthcare-trends-2026';
 
 /**
  * Array of all hardcoded blog posts designed for SEO strategy,
@@ -25,6 +27,8 @@ export const hardcodedSeoPosts: BlogPost[] = [
   TURKEY_PHARMA_2026_HARDCODED_POST,
   NMPA_CLASS_III_TIMELINE_HARDCODED_POST,
   CHINA_DEVICE_VBP_EXPLAINED_HARDCODED_POST,
+  UAE_HEALTHCARE_TRENDS_2025_HARDCODED_POST,
+  UAE_HEALTHCARE_TRENDS_2026_HARDCODED_POST,
 ];
 
 /** Helper to find a hardcoded post by slug */

@@ -7,6 +7,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'pharmacoeconomics-gcc-practical-guide',
   'gcc-pharmacoeconomics',
   'uae-healthcare-market-trends-2025',
+  'uae-healthcare-market-trends-2026',
   'desmoid-tumors-nirogacestat-pharma-market-access',
   'neurofibromatosis',
   'nf1-koselugo-selumetinib-pharma-market-research',
@@ -25,6 +26,8 @@ export const BLOG_HARDCODED_SEO_SLUGS = new Set([
   'market-research-companies-egypt',
   'medtech-singapore-2026-market-hsa-registration',
   'turkey-pharmaceutical-market-2026-titck-top-companies',
+  'uae-healthcare-market-trends-2025',
+  'uae-healthcare-market-trends-2026',
 ]);
 
 export function isHardcodedSeoBlogSlug(slug: string | undefined): boolean {

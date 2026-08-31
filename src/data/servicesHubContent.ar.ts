@@ -131,7 +131,7 @@ export const AR_METHODOLOGY_SERVICES: MethodologyService[] = [
       'برامج تدقيق خدمة منظّمة لفروع البنوك والفنادق والصيدليات ومكاتب الاستقبال في المرافق الصحية — تُقيَّم وفق معايير الخدمة الخاصة بك.',
     icon: Eye,
     industries: 'البنوك · التجزئة · الضيافة',
-    href: '/contact',
+    href: '/ar/contact',
   },
   {
     id: 'price-elasticity',
@@ -140,7 +140,7 @@ export const AR_METHODOLOGY_SERVICES: MethodologyService[] = [
       'نماذج Van Westendorp وGabor-Granger وتجارب الاختيار المنفصل لقياس حساسية السعر والاستعداد للدفع — لإطلاق الأدوية وسيناريوهات المناقصات الحكومية وتسعير السلع الاستهلاكية والمنتجات التأمينية.',
     icon: TrendingUp,
     industries: 'الأدوية · السلع الاستهلاكية · التأمين',
-    href: '/contact',
+    href: '/ar/contact',
   },
   {
     id: 'online-behaviour',
@@ -149,7 +149,7 @@ export const AR_METHODOLOGY_SERVICES: MethodologyService[] = [
       'تحليل الرحلة الرقمية ودراسات تدفق النقرات — مدمجة مع بيانات الاستبيانات لقطاعات التجارة الإلكترونية والبنوك والمنصات الصحية.',
     icon: MousePointerClick,
     industries: 'المستهلك · التجارة الإلكترونية · التقنية الصحية',
-    href: '/contact',
+    href: '/ar/contact',
   },
   {
     id: 'brand-tracking',
@@ -205,7 +205,7 @@ export const AR_COMMERCIAL_OFFERINGS: CommercialOffering[] = [
     examples: 'البنوك · التجزئة · السفر · السلع الاستهلاكية · الاتصالات',
   },
   {
-    to: '/bionixus-industries',
+    to: '/ar/bionixus-industries',
     title: 'الذكاء الاصطناعي وتقنية المعلومات والشركات النامية',
     summary:
       'تحليل الفوز والخسارة، وأبحاث شخصية المشتري، والتحقق من استراتيجية الدخول إلى السوق لبرمجيات الأعمال والأمن السيبراني والذكاء الاصطناعي الصحي وخدمات تقنية المعلومات.',
@@ -216,11 +216,11 @@ export const AR_COMMERCIAL_OFFERINGS: CommercialOffering[] = [
 
 export const AR_HUB_LINKS = [
   { to: '/healthcare-market-research/saudi-arabia', label: 'أبحاث السوق الصحية في السعودية' },
-  { to: '/healthcare-market-research', label: 'مركز أبحاث السوق الصحية' },
+  { to: '/ar/healthcare-market-research', label: 'مركز أبحاث السوق الصحية' },
   { to: '/services/cross-industry', label: 'أبحاث السوق متعددة القطاعات (المسار B)' },
-  { to: '/bionixus-industries', label: 'BioNixus عبر القطاعات' },
+  { to: '/ar/bionixus-industries', label: 'BioNixus عبر القطاعات' },
   { to: '/market-research-by-industry', label: 'أبحاث السوق حسب القطاع (الفهرس العالمي)' },
-  { to: '/methodology', label: 'منهجية البحث والامتثال' },
+  { to: '/ar/methodology', label: 'منهجية البحث والامتثال' },
   { to: '/case-studies', label: 'دراسات حالة العملاء' },
 ] as const;
 

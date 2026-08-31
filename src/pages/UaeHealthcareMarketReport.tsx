@@ -73,7 +73,7 @@ const jsonLd = [
       logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
     },
     datePublished: '2026-05-01',
-    dateModified: '2026-08-12',
+    dateModified: '2026-08-31',
     mainEntityOfPage: 'https://www.bionixus.com/uae-healthcare-market-report',
   },
   {
@@ -92,7 +92,7 @@ const jsonLd = [
     countryName: "United Arab Emirates",
     marketSlug: "uae",
     publishedDate: "2026-05-01",
-    modifiedDate: "2026-05-27",
+    modifiedDate: "2026-08-31",
   })
 ];
 
@@ -199,6 +199,14 @@ const UaeHealthcareMarketReport = () => {
               {' '}and{' '}
               <Link to="/uae-pharmaceutical-market-research" className="text-primary hover:underline font-medium">
                 healthcare market research company in UAE
+              </Link>
+              . For the year-ahead commercial agenda, see{' '}
+              <Link to="/blog/uae-healthcare-market-trends-2026" className="text-primary hover:underline font-medium">
+                UAE healthcare market trends 2026
+              </Link>
+              {' '}and the{' '}
+              <Link to="/blog/uae-healthcare-market-trends-2025" className="text-primary hover:underline font-medium">
+                2025 trends archive
               </Link>
               . For therapy-focused briefings spanning DHA, DOH, and MOHAP dynamics, see{' '}
               <Link to="/market-reports/uae-oncology-market-report" className="text-primary hover:underline font-medium">

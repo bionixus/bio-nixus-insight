@@ -234,7 +234,7 @@ export default function TopHealthcareMarketResearchCompaniesUae2026() {
       'Expert guide to the leading healthcare and pharmaceutical market research companies in the UAE for 2026. Covers MOHAP/DHA/DOH-aware research firms, KOL mapping across all seven emirates, UAE payer dynamics, and how to evaluate a research partner for the UAE.',
     url: CANONICAL,
     datePublished: '2026-06-25',
-    dateModified: '2026-06-25',
+    dateModified: '2026-08-31',
     author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
     inLanguage: 'en',
@@ -461,11 +461,20 @@ export default function TopHealthcareMarketResearchCompaniesUae2026() {
                 For additional UAE context, see our{' '}
                 <Link to="/uae-pharmaceutical-market-research" className="text-primary hover:underline">
                   UAE pharmaceutical market research guide
-                </Link>{' '}
-                and{' '}
+                </Link>
+                ,{' '}
+                <Link to="/blog/uae-healthcare-market-trends-2026" className="text-primary hover:underline">
+                  UAE healthcare market trends 2026
+                </Link>
+                ,{' '}
+                <Link to="/blog/uae-healthcare-market-trends-2025" className="text-primary hover:underline">
+                  2025 trends archive
+                </Link>
+                , and{' '}
                 <Link to="/uae-healthcare-market-report" className="text-primary hover:underline">
                   UAE healthcare market report
-                </Link>.
+                </Link>
+                .
               </p>
             </div>
           </div>
@@ -687,6 +696,7 @@ export default function TopHealthcareMarketResearchCompaniesUae2026() {
                 { to: '/insights/top-healthcare-market-research-companies-dubai-2026', label: 'Top Healthcare MRC in Dubai', desc: 'City-specific guide for Dubai pharmaceutical and healthcare research (DHA).' },
                 { to: '/insights/top-healthcare-market-research-companies-abu-dhabi-2026', label: 'Top Healthcare MRC in Abu Dhabi', desc: 'City-specific guide for Abu Dhabi pharma and healthcare research (DOH).' },
                 { to: '/uae-healthcare-market-report', label: 'UAE Healthcare Market Report', desc: 'Market sizing, growth drivers, and regulatory outlook for the UAE healthcare market.' },
+                { to: '/blog/uae-healthcare-market-trends-2026', label: 'UAE Healthcare Market Trends 2026', desc: 'Payer tightening, dual-emirate DHA/DOH access, specialty mix, and 2026 research design.' },
                 { to: '/insights/top-healthcare-market-research-companies-saudi-arabia-2026', label: 'Top Healthcare MRC in Saudi Arabia', desc: 'SFDA-aware healthcare research companies in the KSA market.' },
               ].map((r) => (
                 <Link

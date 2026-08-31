@@ -10,7 +10,7 @@ import {
   BIONIXUS_PHONE_US_DISPLAY,
 } from '@/components/report-conversion/constants';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { languagePaths } from '@/lib/seo';
+import { languagePaths, getLocalizedPathForLanguage, localizedContactPath } from '@/lib/seo';
 import { ClientPortalDialog } from '@/components/ClientPortalDialog';
 
 const Footer = () => {
@@ -23,6 +23,12 @@ const Footer = () => {
     { tel: BIONIXUS_PHONE_EG, label: `${phoneRegionLabels[2]} ${BIONIXUS_PHONE_EG_DISPLAY}` },
   ];
   const basePath = languagePaths[language] || '/';
+  const contactPath = localizedContactPath(language);
+  const aboutPath = getLocalizedPathForLanguage('/about', language);
+  const servicesPath = getLocalizedPathForLanguage('/services', language);
+  const healthcareHubPath = getLocalizedPathForLanguage('/healthcare-market-research', language);
+  const industriesHubPath = getLocalizedPathForLanguage('/bionixus-industries', language);
+  const blogPath = getLocalizedPathForLanguage('/blog', language);
   const [portalOpen, setPortalOpen] = useState(false);
   const [nlName, setNlName] = useState('');
   const [nlEmail, setNlEmail] = useState('');
@@ -218,7 +224,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <Link
-                  to="/contact"
+                  to={contactPath}
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
                   {t.nav.contact}
@@ -226,7 +232,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/about"
+                  to={aboutPath}
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
                   {f.about}
@@ -242,7 +248,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/services"
+                  to={servicesPath}
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
                   {f.services}
@@ -250,7 +256,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/healthcare-market-research"
+                  to={healthcareHubPath}
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
                   {f.healthcareHub ?? 'Healthcare market research hub'}
@@ -258,7 +264,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/bionixus-industries"
+                  to={industriesHubPath}
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
                   {f.industriesHub ?? 'Industries'}
@@ -274,7 +280,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/blog"
+                  to={blogPath}
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
                   {f.blogAndInsights ?? 'Blog & insights'}

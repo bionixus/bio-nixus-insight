@@ -5,7 +5,7 @@
 
 import type { SanityClient } from '@sanity/client';
 import { getSanityClient } from './sanity';
-import { resolveBlogSeoNoIndex } from '@/lib/blog-robots';
+import { resolveBlogSeoNoIndex, isHardcodedSeoBlogSlug } from '@/lib/blog-robots';
 import type { BlogPost } from '@/types/blog';
 import {
   type ContentSilo,
@@ -14,6 +14,11 @@ import {
   INDUSTRIES_SILO_GROQ,
 } from '@/lib/blog-content-silo';
 import { hardcodedSeoPosts, getHardcodedPostBySlug } from '@/data/blog-posts-index';
+
+function overlayHardcodedSeoPost(post: BlogPost): BlogPost {
+  if (!isHardcodedSeoBlogSlug(post.slug)) return post;
+  return getHardcodedPostBySlug(post.slug) ?? post;
+}
 
 function stripHtml(input: string): string {
   return input.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
@@ -282,7 +287,7 @@ export async function fetchSanityPostsWithClient(
     const raw = await client.fetch<RawSanityPost[]>(buildPostsQuery(silo), {
       limit: Math.max(1, Math.min(effectiveLimit, BLOG_INDEX_POST_LIMIT)),
     });
-    const sanityPosts = raw.map((p) => mapRawToPost(p)!).filter(Boolean);
+    const sanityPosts = raw.map((p) => mapRawToPost(p)!).filter(Boolean).map(overlayHardcodedSeoPost);
     const sanitySlugs = new Set(sanityPosts.map((p) => p.slug));
     const newHardcoded = hardcodedSeoPosts.filter(
       (p) => !sanitySlugs.has(p.slug) && (silo === 'healthcare' ? true : false),
@@ -327,7 +332,7 @@ export async function fetchSanityLatestInsightsWithClient(
       language,
       limit: Math.max(1, Math.min(limit, 6)),
     });
-    const sanityPosts = raw.map((p) => mapRawToPost(p)!).filter(Boolean);
+    const sanityPosts = raw.map((p) => mapRawToPost(p)!).filter(Boolean).map(overlayHardcodedSeoPost);
 
     const sanitySlugs = new Set(sanityPosts.map((p) => p.slug));
     const newHardcoded = hardcodedSeoPosts.filter(
@@ -365,6 +370,7 @@ export async function fetchSanityPostBySlugWithClient(
   client: SanityClient,
 ): Promise<BlogPost | null> {
   const hardcodedFallback = getHardcodedPostBySlug(slug);
+  if (hardcodedFallback && isHardcodedSeoBlogSlug(slug)) return hardcodedFallback;
 
   try {
     const raw = await client.fetch<RawSanityPost | null>(POST_BY_SLUG_QUERY, { slug });

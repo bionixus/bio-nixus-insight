@@ -89,6 +89,10 @@ import { EGYPT_HEALTHCARE_2026_CAIRO_FAQ } from '@/data/egyptHealthcare2026Cairo
 import { getTherapyStaticBlogBundle } from '@/data/therapy-static-blog-registry';
 import { getQ2PharmaSchemaBundle } from '@/data/q2-pharma-blog-schema';
 import { getCtrSeo } from '@/data/ctr-seo-overrides';
+import {
+  UAE_HEALTHCARE_TRENDS_2025_SLUG,
+  UAE_HEALTHCARE_TRENDS_2025_META_DESCRIPTION,
+} from '@/data/blog-uae-healthcare-trends-2025';
 
 /** Helper to convert PortableText block to a URL-friendly slug */
 function slugifyHeading(value: any): string {
@@ -285,10 +289,6 @@ const CHINA_HEALTHCARE_2026_SLUG = 'healthcare-overview-china-market-2026';
 const CHINA_HEALTHCARE_2026_TITLE_CORE = 'China Healthcare Market Overview 2026';
 const CHINA_HEALTHCARE_2026_META_DESCRIPTION =
   '深度解析2026年中国医疗健康市场全景：医保支付改革、创新药出海与生物药增长、AI智慧医疗落地、老龄化诊疗需求变化、医院与基层竞争格局，及跨国药企本地化策略。BioNixus为中国药企、投资人与决策者提供可执行洞察。涵盖器械、数字医疗与支付改革路径。';
-
-const UAE_HEALTHCARE_TRENDS_2025_SLUG = 'uae-healthcare-market-trends-2025';
-const UAE_HEALTHCARE_TRENDS_2025_META_DESCRIPTION =
-  'UAE healthcare trends: Dubai & Abu Dhabi pharma demand, MOHAP/DHA dynamics, payer signals & growth angles for pharma and medtech.';
 
 /**
  * SEO recovery overrides for the Egypt healthcare 2026 blog post.

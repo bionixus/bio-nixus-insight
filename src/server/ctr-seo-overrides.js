@@ -492,6 +492,16 @@ export const CTR_SEO_BY_PATH = {
     description:
       'UAE drug pricing and reimbursement 2026 — MOHAP pricing rules, DHA/DOH formularies, Thiqa/Daman coverage and launch pricing strategy. By BioNixus.',
   },
+  '/blog/uae-healthcare-market-trends-2025': {
+    title: 'UAE Healthcare Market Trends 2025 Guide | BioNixus',
+    description:
+      'UAE healthcare trends 2025: Dubai and Abu Dhabi demand, MOHAP/DHA/DOH access, insurance coverage, and specialty signals for pharma and medtech. BioNixus.',
+  },
+  '/blog/uae-healthcare-market-trends-2026': {
+    title: 'UAE Healthcare Market Trends 2026 Guide | BioNixus',
+    description:
+      'UAE healthcare trends 2026: payer tightening, DHA vs DOH access, specialty and biosimilars, and digital-health signals for pharma and medtech. BioNixus.',
+  },
 };
 
 /**

@@ -40,6 +40,7 @@ export const LEGACY_SLUG_CLUSTERS = {
   'healthcare-market-research-uae-guide-2025': 'uae',
   'uae-healthcare-market-overview-2026': 'uae',
   'uae-healthcare-market-trends-2025': 'uae',
+  'uae-healthcare-market-trends-2026': 'uae',
   'oncology-uae-2026-cancer-care-outlook': 'uae',
   'quantitative-healthcare-market-research-uae': 'uae',
   'top-healthcare-market-research-companies-uae': 'uae',
@@ -206,6 +207,8 @@ export const CLUSTER_RELATED_SLUGS = {
   ],
   uae: [
     'uae-healthcare-market-overview-2026',
+    'uae-healthcare-market-trends-2026',
+    'uae-healthcare-market-trends-2025',
     'market-access-strategy-uae',
     'abu-dhabi-doh-vs-dubai-dha-formulary-guide',
     'oncology-uae-2026-cancer-care-outlook',

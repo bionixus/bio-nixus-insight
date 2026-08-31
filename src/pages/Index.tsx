@@ -51,6 +51,7 @@ const Index = () => {
       heading: explore.startHere,
       links: [
         { to: getLocalizedPathForLanguage('/healthcare-market-research', language), label: explore.hub },
+        { to: getLocalizedPathForLanguage('/services', language), label: t.nav.services },
         { to: '/iqvia-alternative', label: explore.iqvia },
         { to: '/healthcare-market-statistics', label: explore.statistics },
         { to: '/faq', label: explore.faq },
