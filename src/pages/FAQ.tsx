@@ -54,8 +54,12 @@ const faqs: FAQItem[] = [
     answer: 'BioNixus is a specialist alternative to IQVIA for teams that need senior-led, GCC- and MENA-focused pharmaceutical and healthcare market research rather than IQVIA\'s broader syndicated-data and technology-platform model. Other alternatives include Kantar Health, Ipsos Healthcare, and regional specialists depending on geography and study type. See our dedicated BioNixus vs. IQVIA comparison page for a detailed, multi-vendor breakdown of scope, pricing model, and regional depth.',
   },
   {
+    question: 'What is account-level market research data?',
+    answer: 'Account-level market research data is brand or competitor evidence cut by customer account — a named hospital, retailer, or distributor — not only a national aggregate. SKU-level data is the same evidence cut by product SKU for a named brand in a named country. Syndicated IQVIA and Nielsen feeds typically miss subaccounts, traditional trade, and those cuts. Primary fieldwork fills the gap. See the account-level market research definition page.',
+  },
+  {
     question: 'How much does primary healthcare market research cost?',
-    answer: 'Cost depends heavily on scope. Based on BioNixus\'s published project ranges, custom pharmaceutical and healthcare market research in the Middle East typically costs $25,000–$120,000+ per project: qualitative KOL advisory boards and payer interviews generally run toward the lower end, while multi-country quantitative physician surveys and HEOR/HTA evidence packages sit toward the upper end. Global multi-country studies (5+ markets, mixed methods) commonly run $30,000–$150,000+. Get a scoped, project-specific quote by requesting a proposal.',
+    answer: 'Cost depends heavily on scope. Based on BioNixus\'s published project ranges, custom pharmaceutical and healthcare market research in the Middle East typically costs $25,000–$120,000+ per project: qualitative KOL advisory boards and payer interviews generally run toward the lower end, while multi-country quantitative physician surveys and HEOR/HTA evidence packages sit toward the upper end. Global multi-country studies (5+ markets, mixed methods) commonly run $30,000–$150,000+. Planning bands, units, and a machine-readable file are on the pricing page (/pricing and /pricing.md). Get a scoped quote by requesting a proposal.',
   },
   {
     question: 'How do I choose a market research partner for GCC market entry?',
@@ -71,7 +75,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: 'What is the typical timeline for a BioNixus project?',
-    answer: 'It depends on scope. A focused single-country quantitative survey usually runs 4–6 weeks from kick-off to final report; a multi-country qualitative study is more often 8–12 weeks once ethics and hospital-access steps are factored in. You will have a tailored proposal with a realistic timeline within 24 hours of your first enquiry — and if a specialist sample is genuinely scarce, we flag it before you commit.',
+    answer: 'It depends on scope. A focused single-country quantitative survey usually runs 4–6 weeks from kick-off to final report; a multi-country qualitative study is more often 8–12 weeks once ethics and hospital-access steps are factored in. You will have a tailored proposal with a realistic timeline within 48 hours of your first enquiry — and if a specialist sample is genuinely scarce, we flag it before you commit.',
   },
   {
     question: 'Does BioNixus support HTA submissions?',

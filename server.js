@@ -492,6 +492,12 @@ function buildFallbackDescription(pathname) {
   if (path === '/iqvia-alternative') {
     return 'BioNixus IQVIA alternative: hospital sales data, consumption analytics, and flexible global studies for pharmaceutical teams.';
   }
+  if (path === '/pricing') {
+    return 'BioNixus market research pricing is by project and country. Typical 2026 bands: $20k–$75k single-country, $45k–$120k+ multi-country GCC. Proposal in 48 hours.';
+  }
+  if (path === '/account-level-market-research') {
+    return 'Account-level market research cuts brand vs competitor data by customer account — not only a national average. SKU-level adds the product cut syndicated audits miss.';
+  }
   if (path === '/bionixus-vs-iqvia-mena') {
     return 'Compare BioNixus and IQVIA for MENA healthcare research, including hospital data, analytics, and market access support tailored for Saudi Arabia and the GCC.';
   }
@@ -922,6 +928,14 @@ async function startServer() {
 
   app.get('/llms-full.txt', (_req, res) => {
     res.type('text/plain').sendFile(path.resolve(__dirname, 'public/llms-full.txt'));
+  });
+
+  app.get('/pricing.md', (_req, res) => {
+    res.type('text/markdown; charset=utf-8').sendFile(path.resolve(__dirname, 'public/pricing.md'));
+  });
+
+  app.get('/pricing.txt', (_req, res) => {
+    res.type('text/plain; charset=utf-8').sendFile(path.resolve(__dirname, 'public/pricing.txt'));
   });
 
   // Fallback canonicalization for non-edge environments.

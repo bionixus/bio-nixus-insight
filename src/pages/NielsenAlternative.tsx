@@ -286,6 +286,8 @@ export default function NielsenAlternative() {
             <h2 className="text-xl font-display font-semibold text-foreground mb-6">Related resources</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
+                { to: '/account-level-market-research', label: 'Account-level data', desc: 'What account- and SKU-level cuts are — and what syndicated feeds miss.' },
+                { to: '/pricing', label: 'Pricing bands', desc: 'Project- and country-based ranges, plus /pricing.md.' },
                 { to: '/iqvia-alternative', label: 'IQVIA alternative', desc: 'Pharma audits and syndicated healthcare data.' },
                 { to: '/insights/top-market-research-companies-saudi-arabia-2026', label: 'Market research firms KSA', desc: 'Country ranking — includes NielsenIQ.' },
                 { to: '/insights/top-market-research-companies-uae-2026', label: 'Market research firms UAE', desc: 'Country ranking — includes NielsenIQ.' },

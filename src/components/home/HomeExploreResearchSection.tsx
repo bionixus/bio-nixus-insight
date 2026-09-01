@@ -57,6 +57,7 @@ export function HomeExploreResearchSection({
   const spotlight: ExploreLink[] = [
     { to: hub, label: explore.hub, featured: true },
     { to: '/iqvia-alternative', label: explore.iqvia, featured: true },
+    { to: '/account-level-market-research', label: 'What account-level and SKU-level data is', featured: true },
   ];
 
   const rankings: ExploreLink[] = [
@@ -84,6 +85,7 @@ export function HomeExploreResearchSection({
   const more: ExploreLink[] = [
     { to: services, label: servicesLabel },
     { to: '/nielsen-alternative', label: explore.nielsen },
+    { to: '/pricing', label: 'Market research pricing' },
     { to: '/healthcare-market-statistics', label: explore.statistics },
     { to: '/faq', label: explore.faq },
   ];

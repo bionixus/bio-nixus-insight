@@ -53,9 +53,14 @@ const byLanguage: Record<Language, HomeFaqBlock> = {
           'Yes. BioNixus supports multi-country physician, payer, and hospital programs with consistent instruments where appropriate, plus locally adapted recruitment and moderation. The objective is defensible comparability across markets without forcing a one-size template that ignores local treatment, access, or regulatory context.',
       },
       {
+        question: 'What is account-level market research data, and why do syndicated audits miss it?',
+        answer:
+          'Account-level market research data is brand versus competitor evidence cut by customer account — a named hospital, retailer, or distributor — not only a national average. SKU-level data adds the product cut for a named brand in a named country. Syndicated IQVIA and Nielsen feeds typically miss subaccounts, traditional trade, and those cuts. BioNixus fields the primary study; typical 2026 pricing bands and a machine-readable /pricing.md file are on the pricing page.',
+      },
+      {
         question: 'How quickly can we receive a proposal, and what influences healthcare market research study timelines?',
         answer:
-          'After a short scope alignment on objectives, audiences, markets, and methods, BioNixus typically provides a proposal on a fast cadence. Timelines depend on incidence and screening, ethics or institutional requirements where applicable, survey length, qualitative depth, and field seasonality; milestones and dependencies are spelled out up front so teams can plan launches, advisory boards, and access workstreams realistically.',
+          'After a short scope alignment on objectives, audiences, markets, and methods, BioNixus typically provides a proposal within 48 hours. Timelines depend on incidence and screening, ethics or institutional requirements where applicable, survey length, qualitative depth, and field seasonality; milestones and dependencies are spelled out up front so teams can plan launches, advisory boards, and access workstreams realistically.',
       },
       {
         question: 'Where can pharmaceutical teams learn more about BioNixus methodology, case studies, and market insights?',

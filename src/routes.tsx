@@ -31,6 +31,8 @@ import SfdaMarketAccessStrategySaudiArabia from '@/pages/SfdaMarketAccessStrateg
 import BiosimilarMarketEntrySaudiArabia from '@/pages/BiosimilarMarketEntrySaudiArabia';
 import IqviaAlternative from '@/pages/IqviaAlternative';
 import NielsenAlternative from '@/pages/NielsenAlternative';
+import Pricing from '@/pages/Pricing';
+import AccountLevelMarketResearch from '@/pages/AccountLevelMarketResearch';
 import BionixusMiddleEastAfrica from '@/pages/BionixusMiddleEastAfrica';
 import PharmaceuticalMarketResearchDubai from '@/pages/PharmaceuticalMarketResearchDubai';
 import KantarHealthAlternativeGcc from '@/pages/KantarHealthAlternativeGcc';
@@ -494,6 +496,8 @@ const rawRoutes: RouteObject[] = [
   { path: '/biosimilar-market-entry-saudi-arabia', element: <BiosimilarMarketEntrySaudiArabia /> },
   { path: '/iqvia-alternative', element: <IqviaAlternative /> },
   { path: '/nielsen-alternative', element: <NielsenAlternative /> },
+  { path: '/pricing', element: <Pricing /> },
+  { path: '/account-level-market-research', element: <AccountLevelMarketResearch /> },
   { path: '/pharmaceutical-market-research-dubai', element: <PharmaceuticalMarketResearchDubai /> },
   { path: '/kantar-health-alternative-gcc', element: <KantarHealthAlternativeGcc /> },
   { path: '/gfk-alternative-egypt', element: <GfkAlternativeEgypt /> },

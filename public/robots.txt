@@ -94,6 +94,9 @@ Disallow: /api/
 # ----------------------------------------------------------------------
 LLMs-Txt: https://www.bionixus.com/llms.txt
 LLMs-Full-Txt: https://www.bionixus.com/llms-full.txt
+# Machine-readable pricing for AI agents (also /pricing)
+# https://www.bionixus.com/pricing.md
+# https://www.bionixus.com/pricing.txt
 
 # ----------------------------------------------------------------------
 # Sitemap

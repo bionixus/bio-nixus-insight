@@ -184,6 +184,45 @@ describe('Breadcrumb + FAQ + Service builders used across service/country/therap
   });
 });
 
+describe('AI SEO pages (pricing + account-level definition)', () => {
+  it('pricing FAQ + breadcrumb + Service nodes are valid JSON-LD', () => {
+    parseAndValidate(buildBreadcrumbSchema([{ name: 'Home', href: '/' }, { name: 'Pricing', href: '/pricing' }]));
+    parseAndValidate(
+      buildFAQSchema(
+        [{ question: 'How much does BioNixus cost?', answer: 'Project- and country-based planning bands.' }],
+        { pageUrl: 'https://www.bionixus.com/pricing' },
+      ),
+    );
+    parseAndValidate({
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: 'BioNixus primary market research',
+      description: 'Project- and country-based primary market research pricing.',
+    });
+  });
+
+  it('account-level Article node is valid JSON-LD', () => {
+    parseAndValidate({
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: 'What is account-level (and SKU-level) market research data?',
+      description: 'Account-level market research cuts brand vs competitor data by customer account.',
+      url: 'https://www.bionixus.com/account-level-market-research',
+      datePublished: '2026-09-02',
+      dateModified: '2026-09-02',
+      image: { '@type': 'ImageObject', url: 'https://www.bionixus.com/og-image.png' },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.bionixus.com/account-level-market-research' },
+      author: { '@type': 'Person', name: 'Haidy Yahia' },
+      publisher: {
+        '@type': 'Organization',
+        '@id': 'https://www.bionixus.com/#organization',
+        name: 'BioNixus',
+        logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
+      },
+    });
+  });
+});
+
 describe('VideoObject watch-page builders', () => {
   const video = getAllVideos()[0];
 

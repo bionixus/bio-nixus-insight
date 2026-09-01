@@ -4474,6 +4474,18 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.bionixus.com/pricing</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/account-level-market-research</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.bionixus.com/italy-clinical-trials-market</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>

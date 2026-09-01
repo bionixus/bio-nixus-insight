@@ -26,11 +26,11 @@ export const translations = {
     },
     hero: {
       tagline: 'Global International Market Research Firm',
-      titleLead: 'Research That Shapes',
-      titleEmphasis: 'Your Strategy',
-      title: 'Pharmaceutical and healthcare market research for confident launch, access, and growth',
+      titleLead: 'Account-level data',
+      titleEmphasis: 'for launch decisions',
+      title: 'Account-level market research for healthcare and pharma',
       subtitle:
-        'BioNixus is a global healthcare and pharmaceutical market research firm founded in London in 2012, now delivering research for 118 clients across 48 countries in the Americas, EMEA, and APAC. We advise pharmaceutical, biotech, and medtech leaders on launch, access, and growth; and extend the same evidence discipline to B2B, consumer, and industrial clients where market entry, pricing, and stakeholder behaviour shape commercial outcomes. Our work turns KOL, payer, and hospital intelligence — alongside customer, channel, and competitive insight — into decisions leadership teams can act on with confidence.',
+        'BioNixus is a primary market research firm that delivers account-level and SKU-level brand versus competitor data in 48 countries. Syndicated IQVIA and Nielsen feeds miss subaccounts, traditional trade, and country-level cuts. Field teams run the study; a proposal is ready within 48 hours of your brief.',
       trustStripPrimary: 'Trusted by',
       trustStripStats: '118 global clients · 120+ projects annually · 127 in 2025 · 48 countries · founded 2012',
       valueProposition: 'Every engagement starts from a real commercial question, not a generic data dump. You get defensible quantitative and qualitative evidence — scoped to the decision, the market, and the regulatory reality you actually operate in — from pre-launch sizing through post-launch optimization.',
